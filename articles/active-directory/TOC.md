@@ -13,7 +13,7 @@
 
 # Начало работы
 ## [Приступая к работе с Azure AD](fundamentals/get-started-azure-ad.md)
-## [Регистрация для использования Azure AD Premium](active-directory-get-started-premium.md)
+## [Регистрация для использования Azure AD Premium](fundamentals/active-directory-get-started-premium.md)
 ## [Добавление имени личного домена](fundamentals/add-custom-domain.md)
 ## [Настройка фирменной символики компании](fundamentals/customize-branding.md)
 ## [Добавление пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
@@ -82,10 +82,10 @@
 
 ## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
 ### Управление группами
-#### [портал Azure](active-directory-groups-create-azure-portal.md)
+#### [портал Azure](fundamentals/active-directory-groups-create-azure-portal.md)
 #### [Azure AD PowerShell для Graph (версия 2)](active-directory-accessmanagement-groups-settings-v2-cmdlets.md)
 #### [Azure AD PowerShell MSOnline](active-directory-accessmanagement-groups-settings-cmdlets.md)
-### [Управление членами группы](active-directory-groups-members-azure-portal.md)
+### [Управление членами группы](fundamentals/active-directory-groups-members-azure-portal.md)
 ### [Управление владельцами групп](fundamentals/active-directory-accessmanagement-managing-group-owners.md)
 ### [Управление членством в группах](fundamentals/active-directory-groups-membership-azure-portal.md)
 ### [Назначение лицензий с помощью групп](fundamentals/active-directory-licensing-whatis-azure-portal.md)
