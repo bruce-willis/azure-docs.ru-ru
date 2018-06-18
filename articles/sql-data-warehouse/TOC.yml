@@ -63,6 +63,8 @@
           href: sql-data-warehouse-overview-manage-security.md
         - name: Authentication
           href: sql-data-warehouse-authentication.md
+        - name: Защита на уровне столбцов
+          href: column-level-security.md
     - name: Миграция в хранилище данных SQL.
       items:
         - name: Обзор

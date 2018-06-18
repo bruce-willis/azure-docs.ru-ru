@@ -202,6 +202,30 @@
           href: sql-database-xevent-db-diff-from-svr.md
         - name: Мониторинг в памяти
           href: sql-database-in-memory-oltp-monitoring.md
+    - name: Задания обработки эластичных баз данных
+      items:
+        - name: Обзор
+          href: elastic-jobs-overview.md
+        - name: Создание и управление (Powershell)
+          href: elastic-jobs-powershell.md
+        - name: Создание управление (T-SQL)
+          href: elastic-jobs-tsql.md
+        - name: Перенос данных (из старых заданий обработки эластичных БД)
+          href: elastic-jobs-migrate.md
+        - name: Задания обработки эластичных баз данных (устарело)
+          items:
+            - name: Обзор (устарело)
+              href: sql-database-elastic-jobs-overview.md
+            - name: Установка задания обработки эластичных баз данных (устарело)
+              href: sql-database-elastic-jobs-service-installation.md
+            - name: Создание задания с помощью портала (устарело)
+              href: sql-database-elastic-jobs-create-and-manage.md
+            - name: Создание задания с помощью Azure PowerShell (устарело)
+              href: sql-database-elastic-jobs-powershell.md
+            - name: 'Создание задания, пример приложения (устарело)'
+              href: sql-database-elastic-jobs-getting-started.md
+            - name: Удаление задания обработки эластичных баз данных (устарело)
+              href: sql-database-elastic-jobs-uninstall.md
     - name: Масштабирование
       items:
         - name: Обзор
@@ -212,8 +236,6 @@
           href: sql-database-elastic-query-overview.md
         - name: Эластичные транзакции
           href: sql-database-elastic-transactions-overview.md
-        - name: Задания обработки эластичных БД
-          href: sql-database-elastic-jobs-overview.md
         - name: Карты сегментов
           href: sql-database-elastic-scale-shard-map-management.md
         - name: Маршрутизация запросов
@@ -276,16 +298,6 @@
       items:
         - name: Обновление клиентской библиотеки эластичной базы данных
           href: sql-database-elastic-scale-upgrade-client-library.md
-        - name: Установка эластичных заданий
-          href: sql-database-elastic-jobs-service-installation.md
-        - name: 'Создание задания: портал'
-          href: sql-database-elastic-jobs-create-and-manage.md
-        - name: Создание задания с помощью Azure PowerShell
-          href: sql-database-elastic-jobs-powershell.md
-        - name: 'Создание задания: пример приложения'
-          href: sql-database-elastic-jobs-getting-started.md
-        - name: Удаление эластичных заданий
-          href: sql-database-elastic-jobs-uninstall.md
         - name: Запрос вертикально секционированных данных
           href: sql-database-elastic-query-getting-started-vertical.md
         - name: Отчеты по масштабируемым уровням данных
@@ -454,8 +466,6 @@
   items:
     - name: Azure PowerShell
       href: '/powershell/module/azurerm.sql/#sql'
-    - name: PowerShell (эластичная база данных)
-      href: '/powershell/module/elasticdatabasejobs/#elasticdatabasejobs'
     - name: "Azure CLI\_2.0"
       href: /cli/azure/sql
     - name: .NET

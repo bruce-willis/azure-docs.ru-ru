@@ -1,22 +1,22 @@
 # [Документация по Azure Active Directory](index.md)
 
 # Обзор
-## [Что такое Microsoft Azure Active Directory](active-directory-whatis.md)
+## [Что такое Microsoft Azure Active Directory](fundamentals/active-directory-whatis.md)
 ## [Об управлении удостоверениями Azure](fundamentals/identity-fundamentals.md)
 ## [Основные сведения о решениях для идентификации в Azure](fundamentals/understand-azure-identity-solutions.md)
 ## [Выбор решения для гибридной идентификации](choose-hybrid-identity-solution.md)
-## [Сопоставление подписок Azure](active-directory-how-subscriptions-associated-directory.md)
+## [Сопоставление подписок Azure](fundamentals/active-directory-how-subscriptions-associated-directory.md)
 ## [Рекомендации по хранению данных и работе с данными](fundamentals/active-directory-data-storage-eu.md)
 ## [Часто задаваемые вопросы](fundamentals/active-directory-faq.md)
 ## [Новые возможности](fundamentals/whats-new.md)
 
 
 # Начало работы
-## [Приступая к работе с Azure AD](get-started-azure-ad.md)
+## [Приступая к работе с Azure AD](fundamentals/get-started-azure-ad.md)
 ## [Регистрация для использования Azure AD Premium](active-directory-get-started-premium.md)
-## [Добавление имени личного домена](add-custom-domain.md)
-## [Настройка фирменной символики компании](customize-branding.md)
-## [Добавление пользователей в Azure AD](add-users-azure-active-directory.md)
+## [Добавление имени личного домена](fundamentals/add-custom-domain.md)
+## [Настройка фирменной символики компании](fundamentals/customize-branding.md)
+## [Добавление пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
 ## [Назначение лицензий пользователям](fundamentals/license-users-groups.md)
 ## [Настройка самостоятельного сброса пароля](authentication/quickstart-sspr.md)
 ## [Добавление конфиденциальных данных организации в Azure Active Directory](active-directory-properties-area.md)
@@ -44,11 +44,11 @@
 #### [Сравнение инструментов](active-directory-hybrid-identity-design-considerations-tools-comparison.md)
 
 ## Управление пользователями
-### [Добавление новых пользователей в Azure AD](add-users-azure-active-directory.md)
-### [Управление профилями пользователей](active-directory-users-profile-azure-portal.md)
+### [Добавление новых пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
+### [Управление профилями пользователей](fundamentals/active-directory-users-profile-azure-portal.md)
 ### [Совместное использование учетных записей](active-directory-sharing-accounts.md)
-### [Назначение пользователям ролей администратора](active-directory-users-assign-role-azure-portal.md)
-### [Восстановление удаленного пользователя](active-directory-users-restore.md)
+### [Назначение пользователям ролей администратора](fundamentals/active-directory-users-assign-role-azure-portal.md)
+### [Восстановление удаленного пользователя](fundamentals/active-directory-users-restore.md)
 ### [Добавление гостевых пользователей из другого каталога (B2B)](b2b/what-is-b2b.md)
 #### [Добавление пользователей B2B администраторами](b2b/add-users-administrator.md)
 #### [Добавление пользователей B2B информационными работниками](b2b/add-users-information-worker.md)
@@ -80,15 +80,15 @@
 #### [Сравнение совместной работы B2B и B2C](b2b/compare-with-b2c.md)
 #### [Получение технической поддержки для B2B](b2b/get-support.md)
 
-## [Управление группами и членами](active-directory-manage-groups.md)
+## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
 ### Управление группами
 #### [портал Azure](active-directory-groups-create-azure-portal.md)
 #### [Azure AD PowerShell для Graph (версия 2)](active-directory-accessmanagement-groups-settings-v2-cmdlets.md)
 #### [Azure AD PowerShell MSOnline](active-directory-accessmanagement-groups-settings-cmdlets.md)
 ### [Управление членами группы](active-directory-groups-members-azure-portal.md)
-### [Управление владельцами групп](active-directory-accessmanagement-managing-group-owners.md)
+### [Управление владельцами групп](fundamentals/active-directory-accessmanagement-managing-group-owners.md)
 ### [Управление членством в группах](fundamentals/active-directory-groups-membership-azure-portal.md)
-### [Назначение лицензий с помощью групп](active-directory-licensing-whatis-azure-portal.md)
+### [Назначение лицензий с помощью групп](fundamentals/active-directory-licensing-whatis-azure-portal.md)
 #### [Назначение лицензий группе](active-directory-licensing-group-assignment-azure-portal.md)
 #### [Поиск и устранение проблем с лицензированием групп](active-directory-licensing-group-problem-resolution-azure-portal.md)
 #### [Перевод отдельных лицензированных пользователей на групповое лицензирование](active-directory-licensing-group-migration-azure-portal.md)
@@ -98,10 +98,10 @@
 #### [Справочник по продуктам и планам службы в Azure AD](active-directory-licensing-product-and-service-plan-reference.md)
 ### [Настройка срока действия групп Office 365](active-directory-groups-lifecycle-azure-portal.md)
 ### [Принудительное применение политики именования для групп](groups-naming-policy.md)
-### [Просмотр всех групп](active-directory-groups-view-azure-portal.md)
+### [Просмотр всех групп](fundamentals/active-directory-groups-view-azure-portal.md)
 ### [Включение доступа для групп в приложениях SaaS](active-directory-accessmanagement-group-saasapps.md)
 ### [Восстановление удаленной группы Office 365](fundamentals/active-directory-groups-restore-azure-portal.md)
-### [Управление параметрами группы](active-directory-groups-settings-azure-portal.md) 
+### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md) 
 ### Создание дополнительных правил
 #### [портал Azure](active-directory-groups-dynamic-membership-azure-portal.md)
 ### [Настройка групп самообслуживания](active-directory-accessmanagement-self-service-group-management.md)
@@ -153,7 +153,7 @@
 ### [Требования к данным SSPR](authentication/howto-sspr-authenticationdata.md)
 ### [Отчеты SSPR](authentication/howto-sspr-reporting.md)
 ### ИТ-администрирование. Сброс паролей
-#### [портал Azure](active-directory-users-reset-password-azure-portal.md)
+#### [портал Azure](fundamentals/active-directory-users-reset-password-azure-portal.md)
 ### [Лицензия SSPR](authentication/concept-sspr-licensing.md)
 ### [Обратная запись паролей](authentication/howto-sspr-writeback.md)
 ### [Устранение неполадок](authentication/active-directory-passwords-troubleshoot.md)
@@ -277,7 +277,7 @@
 ## Управление каталогом
 ### [Azure AD Connect](./connect/active-directory-aadconnect.md)
 ### Имена пользовательских доменов
-#### [Краткое руководство](add-custom-domain.md)
+#### [Краткое руководство](fundamentals/add-custom-domain.md)
 #### [Добавление имен личных доменов](active-directory-domains-manage-azure-portal.md)
 ### [Администрирование каталога](fundamentals/active-directory-administer.md)
 ### [Удаление каталога](directory-delete-howto.md)
@@ -294,11 +294,9 @@
 
 ### [Интеграция локальных удостоверений с помощью Azure AD Connect](./connect/active-directory-aadconnect.md)
 
-## [Управление доступом к Azure](../role-based-access-control/toc.yml)
-
 ## Делегирование доступа к ресурсам
 ### [Роли администратора](active-directory-assign-admin-roles-azure-portal.md)
-#### [Назначение роли администратора пользователю](active-directory-users-assign-role-azure-portal.md) 
+#### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md) 
 #### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md) 
 ### [Защита привилегированного доступа](admin-roles-best-practices.md)  
 ### [Создание учетных записей администратора для аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md) 
@@ -325,6 +323,7 @@
 #### [Начало работы](active-directory-conditional-access-azure-portal-get-started.md)
 #### Быстрое начало работы
 ##### [Настройка отдельных облачных приложений MFA](active-directory-conditional-access-app-based-mfa.md)
+##### [Обеспечение принятия условий использования](active-directory-conditional-access-tou.md)
 #### Учебники
 ##### [Перенос классической политики MFA](active-directory-conditional-access-migration-mfa.md)
 #### Основные понятия
@@ -371,7 +370,7 @@
 ### [Высокая доступность](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
 ### [Изменение хэш-алгоритма подписи](active-directory-federation-sha256-guidance.md)
 
-## [Устранение неполадок](active-directory-troubleshooting-support-howto.md)
+## [Устранение неполадок](fundamentals/active-directory-troubleshooting-support-howto.md)
 
 ## Развертывание подтверждения концепции Azure AD (PoC)
 ### [Сборник тренировочных заданий по PoC: введение](active-directory-playbook-intro.md)
