@@ -6,24 +6,24 @@ services: cosmos-db
 author: moderakh
 manager: kfile
 editor: monicar
-documentationcenter: nodejs
-ms.assetid: d87d97be-47a5-4928-8d46-a541fbb33213
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
+ms.component: cosmosdb-sql
 ms.devlang: na
-ms.topic: article
+ms.topic: sample
 ms.date: 05/23/2017
 ms.author: moderakh
-ms.openlocfilehash: 3d18e9bde7c8e5a5b8c3f192678f62eedf5fb693
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 4d7f16fd62d8d46c1c802dfeb1f226d023349adc
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34833150"
 ---
 # <a name="azure-cosmos-db-nodejs-examples"></a>Примеры Node.js для Azure Cosmos DB
 > [!div class="op_single_selector"]
 > * [Примеры .NET](sql-api-dotnet-samples.md)
+> * [Примеры Java](sql-api-java-samples.md)
+> * [Примеры Async Java](sql-api-async-java-samples.md)
 > * [Примеры Node.js](sql-api-nodejs-samples.md)
 > * [Примеры Python](sql-api-python-samples.md)
 > * [Коллекция примеров кода Azure](https://azure.microsoft.com/resources/samples/?sort=0&service=cosmos-db)

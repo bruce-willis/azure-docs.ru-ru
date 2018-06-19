@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/12/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: fc589b79cf91dcbe24e6d99da44aeee883b58e5f
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: b98c1995aa9051029049711ece18aeb23c444f1a
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365391"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34642800"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application"></a>Руководство. Упаковка и развертывание контейнеров в виде приложения Service Fabric
 
@@ -237,7 +237,7 @@ openssl pkcs12 -in party-cluster-1277863181-client-cert.pfx -out party-cluster-1
 ## <a name="build-and-deploy-the-application-to-the-cluster"></a>Выполнение сборки приложения и его развертывание в кластере
 Приложение можно развернуть в кластере Azure с помощью интерфейса командной строки Service Fabric. На вашем компьютере не установлен интерфейс командной строки Service Fabric, следуйте [этим](service-fabric-get-started-linux.md#set-up-the-service-fabric-cli) инструкциям, чтобы установить его. 
 
-Подключитесь к кластеру Service Fabric в Azure. Замените заполнитель конечной точки своей конечной точкой. Конечная точка должна быть в формате полного URL-адреса, как показано ниже.
+Подключитесь к кластеру Service Fabric в Azure. Замените конечную точку собственной. Конечная точка должна быть в формате полного URL-адреса, как показано ниже.
 
 ```bash
 sfctl cluster select --endpoint https://linh1x87d1d.westus.cloudapp.azure.com:19080 --pem party-cluster-1277863181-client-cert.pem --no-verify

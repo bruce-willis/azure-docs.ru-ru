@@ -1,26 +1,20 @@
 ---
-title: Обзор Azure Monitor | Документация Майкрософт
+title: Обзор Azure Monitor
 description: Azure Monitor собирает статистику, которую можно использовать для оповещений, объектов webhook, автомасштабирования и автоматизации. В статье также перечислены другие возможности мониторинга Майкрософт.
 author: rboucher
-manager: carmonm
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: overview
 ms.date: 03/28/2018
 ms.author: robb
 ms.custom: mvc
-ms.openlocfilehash: 9a9166e93d24f6402d849b1bee3bcf470685c814
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.component: ''
+ms.openlocfilehash: a96991c424b4709002d46b6b7abe1e884c3605dd
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32312174"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264591"
 ---
 # <a name="overview-of-azure-monitor"></a>Обзор Azure Monitor
 В этой статье приведены общие сведения о службе Azure Monitor в Microsoft Azure. В ней объясняется назначение Azure Monitor, а также содержатся ссылки на дополнительные сведения об использовании этой службы.  Если вы желаете просмотреть видеоролик, ознакомьтесь с разделом "Дальнейшие действия" в конце этой статьи. 

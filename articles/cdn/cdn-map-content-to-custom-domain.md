@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/15/2018
+ms.date: 06/11/2018
 ms.author: v-deasim
 ms.custom: mvc
-ms.openlocfilehash: d20dca9a1248cfb2915ebbc456fba80aadcf81f5
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f66aaa23a631bd71494587683aab87a74a5aef20
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34196510"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261276"
 ---
 # <a name="tutorial-add-a-custom-domain-to-your-azure-cdn-endpoint"></a>Руководство. Добавление личного домена к конечной точке CDN Azure
 Из этого руководства вы узнаете, как добавить личный домен к конечной точке сети доставки содержимого (CDN) Azure. При использовании конечной точки CDN для доставки содержимого личный домен требуется, если вы хотите обеспечить видимость своего доменного имени в URL-адресе CDN. Видимое доменное имя удобно для клиентов и эффективно используется для популяризации бренда. 
@@ -134,7 +134,7 @@ ms.locfileid: "34196510"
    Для применения новых параметров личного домена на всех граничных узлах CDN может потребоваться некоторое время: 
     - Для профилей **Azure CDN категории "Стандартный" от Майкрософт** распространение обычно выполняется в течение 10 минут. 
     - Для профилей **Azure CDN уровня "Стандартный" от Akamai** распространение обычно завершается в течение одной минуты. 
-    - Для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon** распространение обычно выполняется в течение 90 минут.   
+    - Для профилей **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon** распространение обычно выполняется в течение 10 минут.   
 
 
 ## <a name="verify-the-custom-domain"></a>Проверка личного домена.

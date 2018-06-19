@@ -12,13 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/02/2018
+ms.date: 06/07/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: d7d1beff419ed2bf4c58f0646cd6c8aacf8e5e7b
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: f40f2102729cc317f74bd5a91b17a349a7824476
+ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34849997"
 ---
 # <a name="custom-installation-of-azure-ad-connect"></a>Выборочная установка Azure AD Connect
 **Настраиваемые параметры** в Azure AD Connect используются, когда для установки необходимо указать больше параметров. В частности, если есть несколько лесов или требуется настроить дополнительные компоненты, которые не входят в экспресс-установку. Они также используются в тех случаях, когда [**экспресс-установка**](active-directory-aadconnect-get-started-express.md) не соответствует требованиям развертывания или топологии.
@@ -214,12 +216,11 @@ ms.lasthandoff: 05/11/2018
 1.  Откройте средства управления групповыми политиками.
 2.  Измените групповую политику, которая будет применяться ко всем пользователям. Например, политику домена по умолчанию.
 3.  Перейдите в раздел **Конфигурация пользователя\Административные шаблоны\Компоненты Windows\Internet Explorer\Панель управления браузером\Вкладка безопасности** и выберите **Список назначений зоны для веб-сайтов**, как на рисунке ниже.
-4.  Включите политику и введите следующие два элемента в диалоговом окне.
+4.  Включите политику и введите указанный ниже элемент в диалоговом окне.
 
         Value: `https://autologon.microsoftazuread-sso.com`  
         Data: 1  
-        Value: `https://aadg.windows.net.nsatc.net`  
-        Data: 1
+    
 
 5.  Это должно выглядеть следующим образом:  
 ![Зоны интрасети](./media/active-directory-aadconnect-get-started-custom/sitezone.png)
@@ -227,7 +228,7 @@ ms.lasthandoff: 05/11/2018
 6.  Нажмите кнопку **ОК** дважды.
 
 ## <a name="configuring-federation-with-ad-fs"></a>Настройка федерации с AD FS
-Вы можете легко настроить службы федерации Active Directory с Azure AD Connect. Ниже приведены компоненты, требуемые для настройки.
+Вы можете легко настроить службы федерации Active Directory с Azure AD Connect. Для этого достаточно нескольких щелчков. Ниже приведены компоненты, требуемые для настройки.
 
 * Сервер Windows Server 2012 R2 или более поздней версии с поддержкой удаленного управления для сервера федерации.
 * Сервер Windows Server 2012 R2 или более поздней версии с поддержкой удаленного управления для прокси-сервера веб-приложения.
@@ -303,7 +304,7 @@ ms.lasthandoff: 05/11/2018
 >
 
 ## <a name="configuring-federation-with-pingfederate"></a>Настройка федерации с PingFederate
-Вы можете легко настроить федерацию PingFederate с Azure AD Connect. Ниже приведены компоненты, требуемые для настройки.  Обязательными являются следующие компоненты:
+Вы можете легко настроить PingFederate с Azure AD Connect. Для этого достаточно нескольких щелчков. Ниже перечислены обязательные компоненты.
 - PingFederate 8.4 или более поздней версии.  Дополнительные сведения см. в статье [об интеграции PingFederate с Azure Active Directory и Office 365](https://docs.pingidentity.com/bundle/O365IG20_sm_integrationGuide/page/O365IG_c_integrationGuide.html).
 - Сертификат SSL для имени службы федерации, которое предполагается использовать (например, sts.contoso.com).
 

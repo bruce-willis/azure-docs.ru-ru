@@ -15,11 +15,12 @@ ms.workload: NA
 ms.date: 04/30/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: d78dbc9a32e804e37eb76047edcc050482df5761
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: b868ac82951a831013d66fc0ca0a420cb94968d5
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34642069"
 ---
 # <a name="quickstart-deploy-a-service-fabric-windows-container-application-on-azure"></a>Краткое руководство по развертыванию приложения-контейнера Service Fabric для Windows в Azure
 Azure Service Fabric — это платформа распределенных систем для развертывания масштабируемых надежных микрослужб и контейнеров и управления ими. 
@@ -57,6 +58,26 @@ Azure Service Fabric — это платформа распределенных 
 Присвойте службе имя MyContainerService и нажмите кнопку **ОК**.
 
 ![Диалоговое окно создания службы][new-service]
+
+## <a name="specify-the-os-build-for-your-container-image"></a>Укажите сборку операционной системы для образа контейнера
+Контейнеры, созданные с помощью одной версии Windows Server могут не работать на узле под управлением другой версии Windows Server. Например, созданные с помощью Windows Server версии 1709 контейнеры, не работают в Windows Server 2016. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
+
+В версии 6.1 среды выполнения Service Fabric и более поздних можно указать несколько образов операционной системы на контейнер и отметить каждый из них, указав версию сборки операционной системы, для которой он будет развертываться. Это помогает обеспечить запуск приложения на узлах под управлением других версий ОС Windows. Дополнительные сведения см. в разделе [Указание сборок ОС для образов контейнеров](service-fabric-get-started-containers.md#specify-os-build-specific-container-images). 
+
+Корпорация Майкрософт публикует различные образы для версий IIS, встроенных в разных версиях Windows Server. Чтобы убедиться в том, что Service Fabric развертывает контейнер, совместимый с версией Windows Server на узлах кластера, где он развертывает приложение, добавьте следующие строки в файл *ApplicationManifest.xml*. Версия сборки для Windows Server 2016 — 14393, а версия сборки для Windows Server версии 1709 — 16299. 
+
+```xml
+    <ContainerHostPolicies CodePackageRef="Code"> 
+      <ImageOverrides> 
+        ...
+          <Image Name="microsoft/iis:nanoserverDefault" /> 
+          <Image Name= "microsoft/iis:nanoserver" Os="14393" /> 
+          <Image Name="microsoft/iis:windowsservercore-1709" Os="16299" /> 
+      </ImageOverrides> 
+    </ContainerHostPolicies> 
+```
+
+Манифест служб продолжает указывать только один образ для наносервера, `microsoft/iis:nanoserver`. 
 
 ## <a name="create-a-cluster"></a>Создание кластера
 Для развертывания приложения в кластере Azure можно использовать кластер сообщества. Кластеры сообщества — это бесплатные кластеры Service Fabric, которые доступны в течение ограниченного времени. Эти кластеры размещены в Azure и поддерживаются командой Service Fabric. Любой пользователь может развертывать приложения на этих кластерах и знакомиться с платформой.  Кластер использует один самозаверяющий сертификат для обмена данными между узлами и обеспечения безопасности при взаимодействии между клиентом и узлом. Контейнеры с поддержкой кластеров сообщества. Чтобы настроить и использовать собственный кластер, связанный с ним номер SKU должен поддерживать контейнеры (например, Windows Server Datacenter 2016 с контейнерами).

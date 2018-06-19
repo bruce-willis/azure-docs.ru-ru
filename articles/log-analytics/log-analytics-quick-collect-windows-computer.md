@@ -15,16 +15,17 @@ ms.topic: quickstart
 ms.date: 04/02/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: de94735676934af21dc08a0953987729fba756aa
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: ec85f2c473fa0c4ac4d69599a24b878278309577
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637234"
 ---
 # <a name="collect-data-from-windows-computers-hosted-in-your-environment"></a>Сбор данных с компьютеров Windows, размещенных в вашей среде
 [Azure Log Analytics](log-analytics-overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Windows и других ресурсов в вашей среде в один репозиторий для подробного анализа и корреляции.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Windows с помощью нескольких простых действий.  Сведения о виртуальных машинах Windows в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
 
-Чтобы узнать о сетевых и системных требованиях для развертывания агента Windows, см. описание [необходимых компонентов для операционных систем Windows](log-analytics-concept-hybrid.md#prerequisites).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Windows](log-analytics-concept-hybrid.md#supported-windows-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-concept-hybrid.md#network-firewall-requirements).
  
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

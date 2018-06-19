@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 09/06/2017
+ms.date: 05/22/2018
 ms.topic: quickstart
 ms.author: tomfitz
-ms.openlocfilehash: f05b0baee3f11f498976377c69c38b3118f3c922
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 190d4713f5c84281bc2637fc0d8323a2dabf6f21
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358665"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34603769"
 ---
 # <a name="use-visual-studio-code-extension-to-create-azure-resource-manager-template"></a>Создание шаблона Azure Resource Manager c помощью расширения Visual Studio Code
 В этой статье описаны преимущества установки и использования расширения "Средства Azure Resource Manager" в Visual Studio Code. Шаблоны Resource Manager в VS Code можно создавать и без расширения. Но расширение предоставляет варианты автозаполнения, которые упрощают разработку шаблона. Расширение предлагает функции шаблона, параметры и переменные, доступные в шаблоне.
@@ -171,7 +171,18 @@ ms.locfileid: "34358665"
 
    ![Отображение переменных](./media/resource-manager-vscode-extension/show-variables.png) 
 
-10. Выберите переменную **storageName**. Добавьте закрывающую квадратную скобку. В следующем примере показан раздел выходных данных.
+10. Выберите переменную **storageName**. Код теперь будет выглядеть так:
+
+   ```json
+   "storageUri": {
+      "type": "string",
+      "value": "[reference(variables('storageName'))"
+   }
+   ```
+   
+11. Приведенный выше код не будет работать, так как `reference` возвращает объект, а для выходного значения задано значение *string*. Необходимо указать одно из значений этого объекта. Ссылочная функция может использоваться с любым типом ресурса, так что VS Code не предлагает свойства объекта. Вместо этого можно увидеть, что [одно значение возвращается для учетной записи хранилища](/rest/api/storagerp/storageaccounts/getproperties) — `.primaryEndpoints.blob`. 
+
+   Добавьте это свойство после последней скобки. Добавьте закрывающую квадратную скобку. В следующем примере показан раздел выходных данных.
 
    ```json
    "outputs": { 
@@ -181,7 +192,7 @@ ms.locfileid: "34358665"
        },
        "storageUri": {
          "type": "string",
-         "value": "[reference(concat('Microsoft.Storage/storageAccounts/',variables('storageName'))).primaryEndpoints.blob]"
+         "value": "[reference(variables('storageName')).primaryEndpoints.blob]"
        }
    }
    ```
@@ -249,7 +260,7 @@ ms.locfileid: "34358665"
     },
     "storageUri": {
       "type": "string",
-      "value": "[reference(concat('Microsoft.Storage/storageAccounts/',variables('storageName'))).primaryEndpoints.blob]"
+      "value": "[reference(variables('storageName')).primaryEndpoints.blob]"
     }
   }
 }

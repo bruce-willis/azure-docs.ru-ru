@@ -16,11 +16,12 @@ ms.workload: na
 ms.date: 03/27/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 3508631336ac322268f12ff97e35827767ae1bb9
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 27b8c9391de4014f45257e3808647b3e49c250b2
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34651953"
 ---
 # <a name="azure-powershell-samples-for-virtual-machine-scale-sets"></a>Примеры для Azure PowerShell для масштабируемых наборов виртуальных машин
 
@@ -29,7 +30,8 @@ ms.lasthandoff: 03/28/2018
 | | |
 |---|---|
 |**Создание масштабируемого набора и управление им**||
-| [Создание масштабируемого набора виртуальных машин](scripts/powershell-sample-create-simple-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин с минимальной конфигурацией. |
+| [Создание простого масштабируемого набора виртуальных машин](scripts/powershell-sample-create-simple-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин с минимальной конфигурацией. |
+| [Создание полного масштабируемого набора виртуальных машин](scripts/powershell-sample-create-complete-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин и связанных ресурсов с помощью файла конфигурации. |
 | [Создание масштабируемого набора на основе пользовательского образа виртуальной машины](scripts/powershell-sample-create-scale-set-from-custom-image.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создание масштабируемого набора виртуальных машин, использующего пользовательский образ виртуальной машины. |
 | [Установка приложений в масштабируемом наборе](scripts/powershell-sample-install-apps.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Чтобы установить простое веб-приложение в масштабируемом наборе, используйте расширение пользовательских скриптов Azure. |
 |**Управление хранилищем**||

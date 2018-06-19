@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: jgao
-ms.openlocfilehash: 4cf20dacf66ee334dcd455ce1770609c175d3b88
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 48dbd89216d27e9495a9129c6b873f86a9a23338
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34763261"
 ---
 # <a name="quickstart-get-started-with-hadoop-and-hive-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство по началу работы с Hadoop и Hive в Azure HDInsight с помощью шаблона Resource Manager
 
@@ -77,6 +78,110 @@ ms.lasthandoff: 05/07/2018
 > Сведения о других способах создания кластеров, а также о свойствах, используемых в этом руководстве, см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).       
 > 
 >
+
+## <a name="use-vscode-to-run-hive-queries"></a>Использование VS Code для выполнения запросов Hive
+
+Дополнительные сведения о средствах HDInsight для VS Code см. в статье [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
+
+### <a name="submit-interactive-hive-queries"></a>Отправка интерактивных запросов Hive
+
+С помощью средств HDInsight для VS Code можно отправлять интерактивные запросы Hive в кластеры интерактивных запросов HDInsight.
+
+1. Создайте рабочую папку и файл сценария Hive, если у вас их еще нет.
+
+2. Подключитесь к учетной записи Azure, а затем настройте кластер по умолчанию, если вы еще этого не сделали.
+
+3. Скопируйте следующий код и вставьте его в файл Hive, а затем сохраните файл.
+
+    ```hiveql
+    SELECT * FROM hivesampletable;
+    ```
+4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Interactive** (HDInsight: интерактивный запрос Hive), чтобы отправить запрос. Средства также позволяют отправить блок кода вместо целого файла сценария с помощью контекстного меню. Вскоре после этого результаты запроса появятся на новой вкладке.
+
+   ![Результат Interactive Hive](./media/apache-hadoop-linux-tutorial-get-started/interactive-hive-result.png)
+
+    - Область **результатов**: вы можете сохранить все результаты в виде файла CSV, JSON или Excel по локальному пути или просто выбрать несколько строк.
+
+    - Область **сообщений**: выбрав номер **строки**, можно перейти к нужной строке выполняемого скрипта.
+
+Выполнение интерактивного запроса занимает гораздо меньше времени, чем [выполнение пакетного задания Hive](#submit-hive-batch-scripts).
+
+### <a name="submit-hive-batch-scripts"></a>Отправка пакетных сценариев Hive
+
+1. Создайте рабочую папку и файл сценария Hive, если у вас их еще нет.
+
+2. Подключитесь к учетной записи Azure, а затем настройте кластер по умолчанию, если вы еще этого не сделали.
+
+3. Скопируйте следующий код и вставьте его в файл Hive, а затем сохраните файл.
+
+    ```hiveql
+    SELECT * FROM hivesampletable;
+    ```
+4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Batch** (HDInsight: пакет Hive), чтобы отправить задание Hive. 
+
+5. Выберите кластер для отправки.  
+
+    После отправки задания Hive сведения о состоянии отправки и идентификатор задания появятся в области **вывода**. Задание Hive также открывает **веб-браузер**, в котором показаны журналы заданий и их состояние в режиме реального времени.
+
+   ![отправка результатов задания Hive](./media/apache-hadoop-linux-tutorial-get-started/submit-Hivejob-result.png)
+
+[Отправка интерактивных запросов Hive](#submit-interactive-hive-queries) происходит намного быстрее, чем отправка пакетного задания.
+
+## <a name="use-visualstudio-to-run-hive-queries"></a>Использование Visual Studio для выполнения запросов Hive
+
+Как получить средства HDInsight в Visual Studio см. в разделе [Use Data Lake Tools for Visual Studio](./apache-hadoop-visual-studio-tools-get-started.md) (Использование средств Data Lake для Visual Studio).
+
+### <a name="run-hive-queries"></a>Выполнение запросов Hive
+
+Есть два способа создания и выполнения запросов Hive.
+
+* Создание ad-hoc-запросов
+* Создание приложения Hive
+
+Чтобы создать и выполнить ad-hoc-запросы необходимо выполнить следующие шаги.
+
+1. В **обозревателе сервера** последовательно выберите пункты **Azure** > **Кластеры HDInsight**.
+
+2. Правой кнопкой мыши щелкните кластер, в котором вы хотите выполнить запрос, и выберите **Write a Hive Query** (Написать запрос Hive).  
+
+3. Введите запросы Hive. 
+
+    Редактор Hive поддерживает технологию IntelliSense. Средства Data Lake для Visual Studio поддерживают загрузку удаленных метаданных при редактировании скрипта Hive. Например, если ввести **SELECT * FROM**, IntelliSense отобразит все предлагаемые имена таблиц. Если указано имя таблицы, IntelliSense выведет список имен столбцов. Эти инструменты поддерживают почти все инструкции, подзапросы и встроенные определяемые пользователем функции Hive DML.
+   
+    ![Снимок экрана примера 1 IntelliSense в средствах HDInsight для Visual Studio](./media/apache-hadoop-linux-tutorial-get-started/vs-intellisense-table-name.png "U-SQL IntelliSense")
+   
+    ![Снимок экрана примера 2 IntelliSense в средствах HDInsight для Visual Studio](./media/apache-hadoop-linux-tutorial-get-started/vs-intellisense-column-name.png "U-SQL IntelliSense")
+   
+   > [!NOTE]
+   > IntelliSense предлагает только метаданные кластеров, выбранных на панели инструментов HDInsight.
+   > 
+   
+4. Выберите **Отправить** или выполните **расширенную отправку**. 
+   
+    ![Снимок экрана "Отправка запроса Hive"](./media/apache-hadoop-linux-tutorial-get-started/vs-batch-query.png)
+
+   С помощью расширенной отправки можно настроить **имя задания**, **аргументы**, **дополнительные конфигурации** и **каталог состояния** скрипта.
+
+    ![Снимок экрана запроса Hive в HDInsight Hadoop](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.submit.jobs.advanced.png "Отправка запросов")
+
+   Выполнение интерактивных запросов Hive
+
+   * Чтобы выбрать **интерактивный**, щелкните стрелку вниз. 
+   
+   * Нажмите **Execute (Выполнить)**.
+
+   ![Снимок экрана "Выполнения интерактивных запросов Hive"](./media/apache-hadoop-linux-tutorial-get-started/vs-execute-hive-query.png)
+
+Для создания и запуска решения Hive сделайте следующее:
+
+1. В меню **Файл** выберите **Создать**, а затем — **Проект**.
+2. В левой области выберите **HDInsight**. В средней области выберите **Hive Application** (Приложение Hive). Введите свойства, а затем нажмите кнопку **ОК**.
+   
+    ![Снимок экрана нового проекта Hive в средствах HDInsight для Visual Studio](./media/apache-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.new.hive.project.png "Создание приложений Hive из Visual Studio")
+3. В **обозревателе решений** дважды щелкните файл **Script.hql**, чтобы открыть его.
+4. После введения запросов Hive их необходимо отправить. (См. предыдущие шаги 3 и 4)  
+
+
 
 ## <a name="run-hive-queries"></a>Выполнение запросов Hive
 
@@ -158,7 +263,7 @@ ms.lasthandoff: 05/07/2018
 * Дополнительные сведения о Pig — языке, который используется для преобразования данных, — см. в статье [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md).
 * Дополнительные сведения о MapReduce, — способе написания программ, которые обрабатывают данные в Hadoop, — см. в статье [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 * Дополнительные сведения об анализе данных в HDInsight с помощью средств HDInsight для Visual Studio см. в статье [Приступая к работе с инструментами Hadoop в Visual Studio для HDInsight для выполнения запроса Hive](apache-hadoop-visual-studio-tools-get-started.md).
-
+* Дополнительные сведения о HDInsight для VS Code, который используется для анализа данных HDInsight, см. в статье [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
 
 
 Дополнительные сведения о создании кластера HDInsight и управлении этим кластером см. в следующих статьях:

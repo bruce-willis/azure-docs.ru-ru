@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: nitinme
-ms.openlocfilehash: 69c3ebf5a51151cd8e77c637ddd57eb18c8a9d15
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: b9cf3ae3417b993cd721460484d6228daf7b283c
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627353"
 ---
 # <a name="quickstart-get-started-with-hadoop-and-hive-in-azure-hdinsight-using-the-azure-portal"></a>Краткое руководство по началу работы с Hadoop и Hive в Azure HDInsight с помощью портала Azure
 
@@ -65,7 +66,7 @@ ms.lasthandoff: 05/07/2018
     
     |Свойство  |ОПИСАНИЕ  |
     |---------|---------|
-    |**Тип кластера**     | Введите имя кластера Hadoop. Так как все кластеры в HDInsight используют одно пространство имен DNS, это имя должно быть уникальным. Имя может содержать до 59 символов, включая буквы, цифры и дефисы. Первый и последний знаки в имени не могут быть дефисами. |
+    |**Тип кластера**     | Выберите **Hadoop**. |
     |**Операционная система**     |  Выберите подписку Azure. |
     |**Версия**     | Выберите **Hadoop 2.7.3 (HDI 3.6)**.|
 

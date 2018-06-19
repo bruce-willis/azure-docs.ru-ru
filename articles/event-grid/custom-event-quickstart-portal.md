@@ -5,15 +5,15 @@ services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 04/05/2018
+ms.date: 06/04/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: a16a9bdb866803a65bf7204628b735bd9ac60aee
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: fa6a232c657d9d96943f241eb05221e42f0f599b
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302565"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34763346"
 ---
 # <a name="create-and-route-custom-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"
 
@@ -71,7 +71,7 @@ ms.locfileid: "34302565"
 
    ![Создание функции](./media/custom-event-quickstart-portal/create-function.png)
 
-1. Укажите уникальное имя функции Azure. Не используйте имя, указанное на изображении. Выберите группу ресурсов, созданную в этой статье. Для плана размещения используйте **План потребления**. Используйте предложенную новую учетную запись хранения. После предоставления значений нажмите кнопку **Создать**.
+1. Укажите уникальное имя функции Azure. Не используйте имя, указанное на изображении. Выберите группу ресурсов, созданную в этой статье. Для плана размещения используйте **План потребления**. Используйте предложенную новую учетную запись хранения. Application Insights можно отключить. После предоставления значений нажмите кнопку **Создать**.
 
    ![Указание значений функции](./media/custom-event-quickstart-portal/provide-function-values.png)
 

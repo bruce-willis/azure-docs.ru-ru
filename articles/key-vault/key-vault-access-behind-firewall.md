@@ -1,8 +1,8 @@
 ---
-title: "Доступ к хранилищу ключей под защитой брандмауэра | Документация Майкрософт"
-description: "Сведения о получении доступа к хранилищу ключей Azure из приложения, защищенного брандмауэром."
+title: Доступ к хранилищу ключей под защитой брандмауэра | Документация Майкрософт
+description: Сведения о получении доступа к хранилищу ключей Azure из приложения, защищенного брандмауэром.
 services: key-vault
-documentationcenter: 
+documentationcenter: ''
 author: amitbapat
 manager: mbaldwin
 tags: azure-resource-manager
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-ms.openlocfilehash: ad31e869d998d29d403ff97c17150c5078ce856d
-ms.sourcegitcommit: 7edfa9fbed0f9e274209cec6456bf4a689a4c1a6
+ms.openlocfilehash: d017c0d9940288cb5eeaa45694b324f93b9bb144
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736254"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 ### <a name="q-my-key-vault-client-application-needs-to-be-behind-a-firewall-what-ports-hosts-or-ip-addresses-should-i-open-to-enable-access-to-a-key-vault"></a>Вопрос. Мое клиентское приложение хранилища ключей должно находиться за брандмауэром. Какие порты, узлы или IP-адреса следует открыть для получения доступа к хранилищу ключей?
@@ -26,7 +27,7 @@ ms.lasthandoff: 01/17/2018
 
 * Проверка подлинности с помощью Azure Active Directory (Azure AD).
 * Управление хранилищем ключей Azure. Это включает в себя создание, чтение, обновление, удаление и настройку политик доступа с помощью Azure Resource Manager.
-* Доступ к объектам (ключи и секреты), хранящимся в хранилище ключей, и управление ими осуществляется через определенную конечную точку хранилища ключей (например, [https://имя_вашего_хранилища.vault.azure.net](https://yourvaultname.vault.azure.net)).  
+* Доступ к объектам (ключи и секреты), хранящимся в хранилище ключей, и управление ими осуществляется через определенную конечную точку хранилища ключей (например, [https://yourvaultname.vault.azure.net](https://yourvaultname.vault.azure.net)).  
 
 Требования отличаются в зависимости от конфигурации и среды.   
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 01/17/2018
 | Операции, в том числе криптографические операции для ключей; создание, чтение, обновление и удаление ключей и секретов; задание или получение тегов и других атрибутов для объектов хранилища ключей (ключи и секреты) |**Глобально:**<br> &lt;vault-name&gt;.vault.azure.net:443<br><br> **Azure для Китая:**<br> &lt;vault-name&gt;.vault.azure.cn:443<br><br> **Azure для правительства США:**<br> &lt;vault-name&gt;.vault.usgovcloudapi.net:443<br><br> **Azure для Германии:**<br> &lt;vault-name&gt;.vault.microsoftazure.de:443 |
 
 ## <a name="ip-address-ranges"></a>Диапазоны IP-адресов
-В службе хранилища ключей используются другие ресурсы Azure, такие как инфраструктура PaaS. Поэтому невозможно предоставить определенный диапазон IP-адресов, которые будут иметь конечные точки службы хранилища ключей в любой определенный момент времени. Если брандмауэр поддерживает только диапазоны IP-адресов, ознакомьтесь с документом [Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure). Для проверки подлинности и идентификации (в Azure Active Directory) приложение должно иметь доступ к конечным точкам, описанным в статье [URL-адреса и диапазоны IP-адресов Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2).
+В службе хранилища ключей используются другие ресурсы Azure, такие как инфраструктура PaaS. Поэтому невозможно предоставить определенный диапазон IP-адресов, которые будут иметь конечные точки службы хранилища ключей в любой определенный момент времени. Если брандмауэр поддерживает только диапазоны IP-адресов, ознакомьтесь с документом [Microsoft Azure Datacenter IP Ranges](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure). Служба аутентификации и идентификации (Azure Active Directory) является глобальным решением, для которого без уведомления может выполняться отработка отказа в другие регионы или перемещаться трафик. В таком случае в брандмауэр нужно добавить все диапазоны IP-адресов, перечисленные в разделе для [службы аутентификации и идентификации](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity_ip).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Если у вас возникли вопросы о хранилище ключей, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault).

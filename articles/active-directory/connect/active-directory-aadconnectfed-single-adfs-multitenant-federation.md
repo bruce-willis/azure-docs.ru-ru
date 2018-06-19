@@ -14,12 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/17/2017
+ms.component: hybrid
 ms.author: anandy; billmath
-ms.openlocfilehash: c55a4232c54308c5d000cfefc2c7dca2800b462c
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: f9a8abc6e5d66f31a59ba895250861708689aa6d
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34593111"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
 
@@ -43,7 +45,7 @@ ms.lasthandoff: 03/23/2018
  
 ## <a name="step-2-modify-contosocom-federation-settings"></a>Шаг 2. Изменение параметров федерации contoso.com 
  
-Издателем отдельного домена, включенного в федерацию AD FS, по умолчанию является http://ADFSServiceFQDN/adfs/services/trust, например http://fs.contoso.com/adfs/services/trust. Служба Azure Active Directory требует отдельного издателя для каждого федеративного домена. Так как один и тот же экземпляр AD FS будет включать в федерацию два домена, значение издателя должно быть изменено, чтобы оно было уникальным для каждого домена AD FS, которое входит в федерацию с Azure Active Directory. 
+Издателем отдельного домена, включенного в федерацию AD FS, по умолчанию выступает http://ADFSServiceFQDN/adfs/services/trust, например http://fs.contoso.com/adfs/services/trust. Служба Azure Active Directory требует отдельного издателя для каждого федеративного домена. Так как один и тот же экземпляр AD FS будет включать в федерацию два домена, значение издателя должно быть изменено, чтобы оно было уникальным для каждого домена AD FS, которое входит в федерацию с Azure Active Directory. 
  
 На сервере AD FS откройте Azure AD PowerShell и выполните следующие действия.
  

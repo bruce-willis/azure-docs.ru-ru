@@ -1,23 +1,21 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Java) | Документация Майкрософт
 description: В этом кратком руководстве выполняется два примера приложений Java по отправке имитированной телеметрии в Центр Интернета вещей и чтению телеметрии из Центра Интернета вещей для обработки в облаке.
-services: iot-hub
 author: dominicbetts
 manager: timlt
-editor: ''
 ms.service: iot-hub
+services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
 ms.date: 04/30/2018
 ms.author: dobett
-ms.openlocfilehash: 36005988611e7ec3f16146919e3ab3f04755e7e5
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: fd610af3d1b29b78ef89b8f523ef880696031bf2
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637656"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-java"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Java)
 
@@ -94,7 +92,7 @@ mvn --version
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства Центра Интернета вещей и отправляет имитированную телеметрию температуры и влажности.
 
-1. В окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите к папке **Quickstarts\simulated-device**.
+1. В окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device**.
 
 1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/SimulatedDevice.java** в любом текстовом редакторе.
 
@@ -120,7 +118,7 @@ mvn --version
 
 Внутреннее приложение подключается к конечной точке на стороне службы **События** в Центре Интернета вещей. Приложение получает сообщения с устройства в облако, отправленные с имитированного устройства. Внутреннее приложение Центра Интернета вещей обычно запускается в облаке, чтобы получать сообщения с устройства в облако и обрабатывать их.
 
-1. В другом окне терминала перейдите в корневую папку примера проекта Java. Перейдите к папке **Quickstarts\read-d2c-messages**.
+1. В другом окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\read-d2c-messages**.
 
 1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/ReadDeviceToCloudMessages.java** в любом текстовом редакторе.
 

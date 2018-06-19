@@ -15,11 +15,12 @@ ms.workload: NA
 ms.date: 02/06/2018
 ms.author: adegeo
 ms.custom: mvc
-ms.openlocfilehash: e80fad4d0bddff89ff4dda7feed90fc622369ee9
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 678ca45d12fd10a02d967cd32743b4d7b6ea26af
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34642705"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster"></a>Руководство. Масштабирование кластера Service Fabric
 
@@ -85,7 +86,7 @@ sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.az
 --pem ./aztestcluster201709151446.pem --no-verify
 ```
 
-Теперь, когда вы подключены, можно использовать команду для получения информации о состоянии каждого узла в кластере. Для PowerShell используйте команду `Get-ServiceFabricClusterHealth`, а для **sfctl** — `sfctl cluster select`.
+Теперь, когда вы подключены, можно использовать команду для получения информации о состоянии каждого узла в кластере. Для **PowerShell** используйте команду `Get-ServiceFabricClusterHealth`, а для **sfctl** — `sfctl cluster select`.
 
 ## <a name="scale-out"></a>Масштабирование
 
@@ -131,15 +132,15 @@ sfctl node list --query "sort_by(items[*], &name)[-1]"
 
 1. Отключить узел, чтобы он больше не использовался для репликации данных.  
 PowerShell: `Disable-ServiceFabricNode`  
-sfcli: `sfctl node disable`
+sfctl: `sfctl node disable`
 
 2. Остановить узел, после чего работа среды выполнения Service Fabric будет полностью завершена и ваше приложение получит запрос на завершение.  
 PowerShell: `Start-ServiceFabricNodeTransition -Stop`  
-sfcli: `sfctl node transition --node-transition-type Stop`
+sfctl: `sfctl node transition --node-transition-type Stop`
 
 2. Удалить узел из кластера.  
 PowerShell: `Remove-ServiceFabricNodeState`  
-sfcli: `sfctl node remove-state`
+sfctl: `sfctl node remove-state`
 
 После применения этих шагов узел можно удалить из масштабируемого набора. Если вы используете любой уровень устойчивости, кроме [Bronze][durability], эти шаги будут выполнены, когда экземпляр масштабируемого набора будет удален.
 

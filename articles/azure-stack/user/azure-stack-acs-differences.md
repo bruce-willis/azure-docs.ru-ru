@@ -1,40 +1,40 @@
 ---
-title: Хранилище Azure Stack. Отличия и рекомендации
+title: Хранилище Azure Stack. Особенности и рекомендации | Документация Майкрософт
 description: Сведения о различиях между хранилищем Azure Stack и службой хранилища Azure, а также рекомендации по развертыванию Azure Stack.
 services: azure-stack
 documentationcenter: ''
 author: jeffgilb
 manager: femila
-ms.reviwer: xiaofmao
 ms.assetid: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/14/2018
+ms.date: 05/21/2018
 ms.author: jeffgilb
-ms.openlocfilehash: 5a4d3312d6574f761da9a28bfb01a34acf11c9cc
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.reviwer: xiaofmao
+ms.openlocfilehash: 2a6cb3f1a1f8009af411ba4d97a23194f6f089ae
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34197816"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34604466"
 ---
 # <a name="azure-stack-storage-differences-and-considerations"></a>Хранилище Azure Stack. Отличия и рекомендации
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Хранилище Azure Stack — это набор облачных служб хранилища в Microsoft Azure Stack. Хранилище Azure Stack предоставляет такие согласованные с Azure компоненты и функции: большой двоичный объект, таблицу, очередь и функцию управления учетными записями.
+Хранилище Azure Stack — это набор облачных служб хранилища в Microsoft Azure Stack. Хранилище Azure Stack предоставляет согласованные с Azure функции управления большими двоичными объектами, таблицами, очередями и учетными записями.
 
-В этой статье перечислены известные различия между хранилищем Azure Stack и службой хранилища Azure. Кроме того, статья содержит рекомендации по развертыванию Azure Stack. См. дополнительные сведения о [ключевых различиях](azure-stack-considerations.md) между Azure Stack и Azure.
+В этой статье перечислены известные различия между хранилищем Azure Stack и службой хранилища Azure. Кроме того, статья содержит рекомендации по развертыванию Azure Stack. См. дополнительные сведения о [ключевых различиях](azure-stack-considerations.md) между глобальной средой Azure и Azure Stack.
 
 ## <a name="cheat-sheet-storage-differences"></a>Памятка. Различия хранилищ
 
 | Функция | Azure (глобальная) | Azure Stack |
 | --- | --- | --- |
 |Хранилище файлов|Поддерживаются облачные общие папки с файлами SMB|Еще не поддерживается
-|Шифрование службы хранилища Azure для неактивных данных (предварительная версия)|256-битное шифрование AES|128-битное шифрование AES BitLocker
+|Шифрование службы хранилища Azure для неактивных данных|256-битное шифрование AES|128-битное шифрование AES BitLocker
 |Тип учетной записи хранения|Учетные записи хранения общего назначения и учетные записи хранения BLOB-объектов Azure|Только общего назначения.
 |Варианты репликации|Локально избыточное хранилище, геоизбыточное хранилище, геоизбыточное хранилище с доступом для чтения и хранилище, избыточное в пределах зоны.|Локально избыточное хранилище.
 |Хранилище уровня "Премиум"|Полностью поддерживается|Может быть подготовлено, но не имеет ограничений производительности или гарантий.

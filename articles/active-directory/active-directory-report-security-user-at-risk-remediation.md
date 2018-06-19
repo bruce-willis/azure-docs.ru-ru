@@ -1,23 +1,25 @@
 ---
-title: "Отчет системы безопасности о пользователях под угрозой на портале Azure Active Directory | Документация Майкрософт"
-description: "Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory"
+title: Отчет системы безопасности о пользователях под угрозой на портале Azure Active Directory | Документация Майкрософт
+description: Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory
 services: active-directory
-author: MarkusVi
-manager: femila
+author: rolyon
+manager: mtillman
 ms.assetid: addd60fe-d5ac-4b8b-983c-0736c80ace02
 ms.service: active-directory
 ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/24/2017
-ms.author: markvi
+ms.component: compliance-reports
+ms.date: 05/23/2018
+ms.author: rolyon
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ed6201e9edcef39b14b948b6b2f6e0b5da01ec60
-ms.sourcegitcommit: 0b02e180f02ca3acbfb2f91ca3e36989df0f2d9c
+ms.openlocfilehash: 030a45335f06c4f15a5136842a7f6477bac8253b
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34588715"
 ---
 # <a name="remediate-users-flagged-for-risk-in-the-azure-active-directory-portal"></a>Применение защитных мер к пользователям, находящимся в группе риска на портале Azure Active Directory
 
@@ -29,12 +31,20 @@ ms.lasthandoff: 03/05/2018
 При обнаружении необычных действий, которые могут указывать на несанкционированный доступ к некоторым учетным записям пользователей, вы получите уведомления, позволяющие принять соответствующие меры. Отправка уведомлений не означает, что собственные системы Майкрософт были скомпрометированы каким-либо образом.
  
 
-## <a name="azure-active-directory-report-access"></a>Доступ к отчетам Azure Active Directory
+## <a name="access-the-users-flagged-for-risk-report"></a>Доступ к отчету о пользователях, находящихся в группе риска
 
-Просмотреть пользователей, находящихся в группе риска, можно в интерактивном отчете Azure Active Directory. Если вы не являетесь подписчиком Azure, вы можете пройти процесс регистрации подписки без каких-либо затрат здесь: [http://aka.ms/AccessAAD](http://aka.ms/AccessAAD).  
-После завершения регистрации можно использовать учетные данные Office 365 для доступа к центру администрирования Azure. Обратите внимание, что на уровне подписки уровня "Базовый" ограничен объем предоставляемых сведений. Дополнительные данные и аналитика доступны для подписчиков Azure уровня "Премиум". Дополнительные сведения см. в статье [Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory](active-directory-reporting-security-user-at-risk.md).
+Просмотреть пользователей, находящихся в группе риска, можно в соответствующем [отчете](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UsersAtRisk) в Azure Active Directory (AD). При отсутствии подписки на Azure AD, можно пройти через разовый процесс подписки (который является бесплатным) по адресу [https://aka.ms/AccessAAD](https://aka.ms/AccessAAD). В этом отчете можно выполнять следующие действия.
 
-После активации доступа в Azure AD вы будете перенаправлены на [портал Azure AD](https://portal.azure.com). Чтобы напрямую открыть отчет, перейдите по следующему URL-адресу: [https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UsersAtRisk](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/UsersAtRisk).
+- Создавать временный пароль.
+- Требовать от пользователя безопасного сброса пароля при следующем входе в систему.
+- Отклонить риск пользователя без выполнения действий исправления.
+
+Дополнительные сведения см. в статье [Описание отчета системы безопасности о пользователях под угрозой на портале Azure Active Directory](active-directory-reporting-security-user-at-risk.md).
+
+### <a name="azure-ad-subscription-for-office-365-customers"></a>Подписка Azure AD для клиентов Office 365
+
+После завершения регистрации можно использовать учетные данные Office 365 для доступа к центру администрирования Azure. После активации доступа в Azure AD вы будете перенаправлены на портал Azure AD. На уровне подписки "Базовый" ограничен объем предоставляемых в отчетах сведений. Дополнительные данные и аналитика доступны для подписчиков Azure уровня "Премиум".
+
 
 **Чтобы получить доступ к отчетам о пользователях, находящихся в группе риска, в центре администрирования Office 365 сделайте следующее:**
 

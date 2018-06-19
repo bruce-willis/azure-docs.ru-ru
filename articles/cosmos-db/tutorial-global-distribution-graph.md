@@ -3,26 +3,24 @@ title: Руководство по настройке глобального р�
 description: Сведения о настройке глобального распределения Azure Cosmos DB с помощью API Graph.
 services: cosmos-db
 keywords: глобальное распределение, graph, gremlin
-documentationcenter: ''
 author: luisbosquez
 manager: kfile
 editor: cgronlun
-ms.assetid: 8b815047-2868-4b10-af1d-40a1af419a70
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
+ms.component: cosmosdb-graph
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/02/2018
 ms.author: lbosq
 ms.custom: mvc
-ms.openlocfilehash: 273b5aeafbf67016259da787f4dfef078ec0a669
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 61004a735f731cfd1303cf40b6e60cba496e942a
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34763686"
 ---
-# <a name="how-to-setup-azure-cosmos-db-global-distribution-using-the-graph-api"></a>Как настроить глобальное распределение Azure Cosmos DB с помощью API Graph
+# <a name="set-up-azure-cosmos-db-global-distribution-using-the-graph-api"></a>Настройка глобального распределения Azure Cosmos DB с помощью API Graph
 
 В этой статье показано, как настроить глобальное распределение базы данных Azure Cosmos DB и подключиться к ней с помощью API Graph на портале Azure.
 

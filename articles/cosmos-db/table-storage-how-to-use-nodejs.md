@@ -1,27 +1,25 @@
 ---
-title: Как использовать хранилище таблиц Azure или Azure Cosmos DB из Node.js | Документация Майкрософт
-description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или Azure Cosmos DB.
+title: Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB | Документация Майкрософт
+description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 services: cosmos-db
-documentationcenter: nodejs
 author: SnehaGunda
 manager: kfile
-ms.assetid: fc2e33d2-c5da-4861-8503-53fdc25750de
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
+ms.component: cosmosdb-table
 ms.devlang: nodejs
-ms.topic: article
+ms.topic: sample
 ms.date: 04/05/2018
 ms.author: sngun
-ms.openlocfilehash: 3f1908a6c2d129da44e0719b2cf69cf09baef356
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 19e152b8cb8f18a616af647b31a4f35998f47858
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34798225"
 ---
-# <a name="how-to-use-azure-table-storage-from-nodejs"></a>Использование табличного хранилища Azure из Node.js
+# <a name="how-to-use-azure-table-storage-or-the-azure-cosmos-db-table-api-from-nodejs"></a>Как использовать в Node.js Хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
-[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
+[!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
 ## <a name="overview"></a>Обзор
 В этой статье рассматривается реализация типичных сценариев с использованием службы таблиц в службе хранилища Azure или Azure Cosmos DB в приложении Node.js.
@@ -38,7 +36,7 @@ ms.lasthandoff: 04/16/2018
 
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
 
-## <a name="configure-your-application-to-access-azure-storage"></a>Настройка приложения для доступа к хранилищу Azure
+## <a name="configure-your-application-to-access-azure-storage-or-the-azure-cosmos-db-table-api"></a>Настройка приложения для доступа к службе хранилища Azure или API таблиц Azure Cosmos DB
 Чтобы использовать службу хранилища Azure или Azure Cosmos DB, вам понадобится пакет SDK службы хранилища Azure для Node.js, который содержит набор вспомогательных библиотек, взаимодействующих со службами REST хранилища.
 
 ### <a name="use-node-package-manager-npm-to-install-the-package"></a>Использование диспетчера пакета Node (NPM) для установки пакета

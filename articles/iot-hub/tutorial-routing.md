@@ -1,31 +1,26 @@
 ---
 title: Настройка маршрутизации сообщений с помощью Центра Интернета вещей Azure | Документация Майкрософт
 description: Настройка маршрутизации сообщений с помощью Центра Интернета вещей Azure
-services: iot-hub
-documentationcenter: .net
 author: robinsh
 manager: timlt
-editor: tysonn
-ms.assetid: ''
 ms.service: iot-hub
-ms.devlang: dotnet
+services: iot-hub
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 05/01/2018
 ms.author: robinsh
 ms.custom: mvc
-ms.openlocfilehash: 0674ed033f77d7d2eca319d0b1e82171dfa4256d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ab354410ba3b0b37ae630a2b68daec63a9051555
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34700831"
 ---
 # <a name="tutorial-configure-message-routing-with-iot-hub"></a>Руководство. Настройка маршрутизации сообщений с Центром Интернета вещей
 
-Маршрутизация сообщений позволяет отправлять данные телеметрии с устройств Центра Интернета вещей на встроенные конечные точки, совместимые с центрами событий, или на настраиваемые конечные точки, такие как хранилище больших двоичных объектов, очередь служебной шины, раздел служебной шины и концентраторы событий. При настройке маршрутизации сообщений можно создать правила маршрутизации для настройки маршрута, соответствующего определенному правилу. После выполнения настройки входящие данные автоматически направляются на конечные точки Центра Интернета вещей. 
+Маршрутизация сообщений позволяет отправлять данные телеметрии с устройств Центра Интернета вещей на встроенные конечные точки, совместимые с центрами событий, или на настраиваемые конечные точки, такие как хранилище больших двоичных объектов, очередь служебной шины, раздел служебной шины и концентраторы событий. При настройке маршрутизации сообщений вы можете создать правила маршрутизации для собственного маршрута, соответствующего определенному правилу. После выполнения настройки входящие данные автоматически направляются на конечные точки Центра Интернета вещей. 
 
-Из этого руководства вы узнаете, как настроить и использовать правила маршрутизации с Центром Интернета вещей. Сообщения будут направляться от устройств IoT к одной из нескольких служб, включая хранилище больших двоичных объектов и очередь служебной шины. Сообщения в очередь служебной шины будут подхвачены приложением логики и отправлены по электронной почте. Сообщения, которые не имеют специально настроенной маршрутизации, отправляются на конечную точку по умолчанию и просматриваются в визуализации PowerBI.
+Из этого руководства вы узнаете, как настроить и использовать правила маршрутизации с Центром Интернета вещей. Сообщения будут направляться от устройств IoT к одной из нескольких служб, включая хранилище больших двоичных объектов и очередь служебной шины. Сообщения в очередь служебной шины будут подхвачены приложением логики и отправлены по электронной почте. Сообщения, для которых нет специально настроенной маршрутизации, отправляются на конечную точку по умолчанию и отображаются в визуализации Power BI.
 
 Вот какие шаги выполняются в этом руководстве:
 
@@ -34,7 +29,7 @@ ms.lasthandoff: 05/07/2018
 > * Настройка конечных точек и маршрутов в центр IoT для учетной записи хранения и очереди служебной шины.
 > * Создание приложения логики, которое запущено и отправляет сообщение по электронной почте, когда сообщение добавляется в очередь служебной шины.
 > * Загрузка и запуск приложения, которое имитирует устройство IoT отправки сообщений в концентратор для различных параметров маршрутизации.
-> * Создание визуализации PowerBI отправленных к конечной точке по умолчанию данных.
+> * Создайте визуализацию Power BI для данных, отправляемых в конечную точку по умолчанию.
 > * Просмотр результатов ...
 > * ... в очереди служебной шины и в сообщениях электронной почты.
 > * ... в учетной записи хранения.
@@ -46,7 +41,7 @@ ms.lasthandoff: 05/07/2018
 
 - Установите [Visual Studio для Windows](https://www.visualstudio.com/). 
 
-- Учетная запись Power BI для анализа потока аналитики конечных точек по умолчанию. ([Попробуйте Power BI бесплатно](https://app.powerbi.com/signupredirect?pbi_source=web))
+- Учетная запись Power BI для анализа потока аналитики конечных точек по умолчанию. (Доступна [бесплатная пробная версия Power BI](https://app.powerbi.com/signupredirect?pbi_source=web).)
 
 - Учетная запись Office 365 для отправки уведомлений по электронной почте. 
 
@@ -104,24 +99,24 @@ Cloud Shell можно открыть разными способами:
 # You need it to create the device identity. 
 az extension add --name azure-cli-iot-ext
 
-# Set the values for the resource names.
+# Set the values for the resource names that don't have to be globally unique.
+# The resources that have to have unique names are named in the script below
+#   with a random number concatenated to the name so you can probably just
+#   run this script, and it will work with no conflicts.
 location=westus
 resourceGroup=ContosoResources
 iotHubConsumerGroup=ContosoConsumers
 containerName=contosoresults
 iotDeviceName=Contoso-Test-Device 
 
-# These resource names must be globally unique.
-# You might need to change these if they are already in use by someone else.
-iotHubName=ContosoTestHub 
-storageAccountName=contosoresultsstorage 
-sbNameSpace=ContosoSBNamespace 
-sbQueueName=ContosoSBQueue
-
 # Create the resource group to be used
 #   for all the resources for this tutorial.
 az group create --name $resourceGroup \
     --location $location
+
+# The IoT hub name must be globally unique, so add a random number to the end.
+iotHubName=ContosoTestHub$RANDOM
+echo "IoT hub name = " $iotHubName
 
 # Create the IoT hub.
 az iot hub create --name $iotHubName \
@@ -131,6 +126,10 @@ az iot hub create --name $iotHubName \
 # Add a consumer group to the IoT hub.
 az iot hub consumer-group create --hub-name $iotHubName \
     --name $iotHubConsumerGroup
+
+# The storage account name must be globally unique, so add a random number to the end.
+storageAccountName=contosostorage$RANDOM
+echo "Storage account name = " $storageAccountName
 
 # Create the storage account to be used as a routing destination.
 az storage account create --name $storageAccountName \
@@ -154,11 +153,19 @@ az storage container create --name $containerName \
     --account-key $storageAccountKey \
     --public-access off 
 
+# The Service Bus namespace must be globally unique, so add a random number to the end.
+sbNameSpace=ContosoSBNamespace$RANDOM
+echo "Service Bus namespace = " $sbNameSpace
+
 # Create the Service Bus namespace.
 az servicebus namespace create --resource-group $resourceGroup \
     --name $sbNameSpace \
     --location $location
     
+# The Service Bus queue name must be globally unique, so add a random number to the end.
+sbQueueName=ContosoSBQueue$RANDOM
+echo "Service Bus queue name = " $sbQueueName
+
 # Create the Service Bus queue to be used as a routing destination.
 az servicebus queue create --name $sbQueueName \
     --namespace-name $sbNameSpace \
@@ -183,23 +190,23 @@ az iot hub device-identity show --device-id $iotDeviceName \
 # Log into Azure account.
 Login-AzureRMAccount
 
-# Set the values for the resource names.
+# Set the values for the resource names that don't have to be globally unique.
+# The resources that have to have unique names are named in the script below
+#   with a random number concatenated to the name so you can probably just
+#   run this script, and it will work with no conflicts.
 $location = "West US"
 $resourceGroup = "ContosoResources"
 $iotHubConsumerGroup = "ContosoConsumers"
 $containerName = "contosoresults"
 $iotDeviceName = "Contoso-Test-Device"
 
-# These resource names must be globally unique.
-# You might need to change these if they are already in use by someone else.
-$iotHubName = "ContosoTestHub"
-$storageAccountName = "contosoresultsstorage"
-$serviceBusNamespace = "ContosoSBNamespace"
-$serviceBusQueueName  = "ContosoSBQueue"
-
-# Create the resource group to be used  
+# Create the resource group to be used 
 #   for all resources for this tutorial.
 New-AzureRmResourceGroup -Name $resourceGroup -Location $location
+
+# The IoT hub name must be globally unique, so add a random number to the end.
+$iotHubName = "ContosoTestHub$(Get-Random)"
+Write-Host "IoT hub name is " $iotHubName
 
 # Create the IoT hub.
 New-AzureRmIotHub -ResourceGroupName $resourceGroup `
@@ -213,6 +220,10 @@ Add-AzureRmIotHubEventHubConsumerGroup -ResourceGroupName $resourceGroup `
   -Name $iotHubName `
   -EventHubConsumerGroupName $iotHubConsumerGroup `
   -EventHubEndpointName "events"
+
+# The storage account name must be globally unique, so add a random number to the end.
+$storageAccountName = "contosostorage$(Get-Random)"
+Write-Host "storage account name is " $storageAccountName
 
 # Create the storage account to be used as a routing destination.
 # Save the context for the storage account 
@@ -228,10 +239,20 @@ $storageContext = $storageAccount.Context
 New-AzureStorageContainer -Name $containerName `
     -Context $storageContext
 
+# The Service Bus namespace must be globally unique,
+#   so add a random number to the end.
+$serviceBusNamespace = "ContosoSBNamespace$(Get-Random)"
+Write-Host "Service Bus namespace is " $serviceBusNamespace
+
 # Create the Service Bus namespace.
 New-AzureRmServiceBusNamespace -ResourceGroupName $resourceGroup `
     -Location $location `
     -Name $serviceBusNamespace 
+
+# The Service Bus queue name must be globally unique,
+#  so add a random number to the end.
+$serviceBusQueueName  = "ContosoSBQueue$(Get-Random)"
+Write-Host "Service Bus queue name is " $serviceBusQueueName 
 
 # Create the Service Bus queue to be used as a routing destination.
 New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
@@ -256,8 +277,6 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
    ![Снимок экрана сведений об устройстве, включая ключи.](./media/tutorial-routing/device-details.png)
 
-
-
 ## <a name="set-up-message-routing"></a>Настройка маршрутизации сообщений
 
 Вы собираетесь направлять сообщения на разные ресурсы на основе свойств, прикрепленных к сообщению имитируемым устройством. Сообщения, которые не являются настраиваемыми, отправляются к конечной точке по умолчанию (сообщения и события). 
@@ -266,7 +285,7 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 |------|------|
 |level="storage" |Запись в хранилище Azure.|
 |level="critical" |Запись в очередь служебной шины. Приложение логики извлекает сообщение из очереди и использует Office 365 для отправки сообщения по электронной почте.|
-|по умолчанию |Отображение эти данных с помощью Power BI.|
+|по умолчанию |Отобразите эти данные с помощью Power BI.|
 
 ### <a name="routing-to-a-storage-account"></a>Маршрутизация к учетной записи хранения 
 
@@ -278,7 +297,7 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
    
    **Тип конечной точки**. Из раскрывающегося списка выберите **Контейнер хранилища Azure**.
 
-   Для просмотра списка учетных записей хранения нажмите кнопку **Выберите контейнер**. Затем выберите учетную запись хранения. В этом руководстве используется **contosoresultsstorage**. Затем выберите контейнер. В этом руководстве используется **contosoresults**. Нажмите кнопку **Выбрать**, чтобы вернуться в панель добавления конечной точки. 
+   Для просмотра списка учетных записей хранения нажмите кнопку **Выберите контейнер**. Затем выберите учетную запись хранения. В этом руководстве используется **contosostorage**. Затем выберите контейнер. В этом руководстве используется **contosoresults**. Щелкните **Выбрать**, чтобы вернуться на панель **Добавление конечной точки**. 
    
    ![Снимок экрана добавления конечной точки.](./media/tutorial-routing/add-endpoint-storage-account.png)
    
@@ -390,7 +409,7 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 ## <a name="set-up-azure-stream-analytics"></a>Настройка Azure Stream Analytics
 
-Чтобы просмотреть данные в визуализации PowerBI, сначала настройте задание Stream Analytics для извлечения данных. Помните, что в конечную точку по умолчанию отправляются только сообщения, где **level** является **normal**, и они будут извлекаться заданием Stream Analytics для визуализации PowerBI.
+Чтобы просмотреть данные в визуализации Power BI, прежде всего настройте задание Stream Analytics для извлечения данных. Помните, что в конечную точку по умолчанию отправляются только те сообщения, у которых параметр **level** имеет значение **normal**, и именно они будут извлекаться заданием Stream Analytics для визуализации Power BI.
 
 ### <a name="create-the-stream-analytics-job"></a>Создание задания Stream Analytics
 
@@ -405,6 +424,8 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
    **Расположение**. Используйте то же расположение, которое используется в сценарии установки. В этом руководстве используется **Западная часть США**. 
 
    ![Снимок экрана, показывающий, как создать задание Stream Analytics.](./media/tutorial-routing/stream-analytics-create-job.png)
+
+3. Щелкните **Создать**, чтобы создать задание. Чтобы вернуться к заданию, щелкните **Группа ресурсов**. В этом руководстве используется **ContosoResources**. Выберите группу ресурсов, а затем выберите задание Stream Analytics в списке ресурсов. 
 
 ### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
@@ -434,17 +455,17 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 1. В разделе **Топология задания** щелкните **Выходные данные**.
 
-2. В панели **выходов** нажмите кнопку **Добавить**и выберите **PowerBI**. На появившемся экране заполните следующие поля:
+2. На панели **выходных данных** щелкните **Добавить** и выберите **Power BI**. На появившемся экране заполните следующие поля:
 
    **Выходной псевдоним**. Уникальный псевдоним для выходных данных. В этом руководстве используется **contosooutputs**. 
 
-   **Имя набора данных**. Имя набора данных для использования в PowerBI. В этом руководстве используется **contosodataset**. 
+   **Имя набора данных**. Имя набора данных для использования в Power BI. В этом руководстве используется **contosodataset**. 
 
-   **Имя таблицы**. Имя таблицы для использования в PowerBI. В этом руководстве используется **contosotable**.
+   **Имя таблицы**. Имя таблицы для использования в Power BI. В этом руководстве используется **contosotable**.
 
    Для остальных полей примите параметры по умолчанию.
 
-3. Нажмите кнопку **Авторизация** и войдите в учетную запись PowerBI.
+3. Щелкните **Авторизация** и войдите в учетную запись Power BI.
 
    ![Снимок экрана, показывающий, как настроить выходы для задания Stream Analytics.](./media/tutorial-routing/stream-analytics-job-outputs.png)
 
@@ -462,19 +483,19 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 4. Выберите команду **Сохранить**.
 
-5. Закройте панель запроса.
+5. Закройте панель запроса. Это действие вернет вас в представление ресурсов в группе ресурсов. Щелкните задание Stream Analytics. В этом руководстве оно имеет имя **contosoJob**.
 
 ### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
 В задании Stream Analytics щелкните **Запуск** > **Сейчас** > **Запустить**. После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
 
-Чтобы настроить отчет PowerBI, нужны данные. Поэтому настройка PowerBI будет происходить после создания устройства и запуска приложения имитации устройства.
+Чтобы настроить отчет Power BI, нужны данные. Поэтому настройка Power BI будет происходить после создания устройства и запуска приложения имитации устройства.
 
 ## <a name="run-simulated-device-app"></a>Запуск приложения имитации устройства
 
 Ранее в разделе настройки скрипта было настроено устройство для имитации с использованием устройства IoT. В этом разделе происходит загрузка консольного приложения .NET, которое имитирует устройство, отправляющее сообщения с устройства в облако в Центре Интернета вещей. Это приложение отправляет сообщения для каждого из различных методов маршрутизации. 
 
-Загрузите решение для [имитации устройств IoT](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip). Загрузится репозиторий с несколькими приложениями. Решение, которое понадобится, находится в Tutorials/Routing/SimulatedDevice/.
+Загрузите решение для [имитации устройств IoT](https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip). Загрузится репозиторий с несколькими приложениями. Нужное решение находится в папке iot-hub/Tutorials/Routing/SimulatedDevice/.
 
 Дважды щелкните файл решения (SimulatedDevice.sln), чтобы открыть код в Visual Studio, а затем откройте файл Program.cs. Замените `{iot hub hostname}` на имя узла Центра IoT. Формат имени узла Центра IoT **{iot-hub-name}.azure-devices.net**. В этом руководстве имя узла концентратора **ContosoTestHub.azure-devices.net**. Затем замените `{device key}` ранее сохраненным ключом устройства при настройке имитированного устройства. 
 
@@ -512,9 +533,9 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
    * Маршрутизация к учетной записи хранения работает правильно.
 
-Теперь, когда приложение все еще работает, настройте визуализацию Power BI, чтобы увидеть сообщения, поступающие через маршрутизацию по умолчанию. 
+Теперь, не останавливая приложение, настройте визуализацию Power BI, чтобы увидеть сообщения, поступающие через маршруты по умолчанию. 
 
-## <a name="set-up-the-powerbi-visualizations"></a>Настройка визуализаций PowerBI
+## <a name="set-up-the-power-bi-visualizations"></a>Настройка визуализаций Power BI
 
 1. Выполните вход в учетную запись [Power BI](https://powerbi.microsoft.com/).
 
@@ -526,7 +547,7 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 4. В разделе **Действия** щелкните первый значок для создания отчета.
 
-   ![Снимок экрана, показывающий рабочую область PowerBI с выделенными ярлыками "Действия" и "Отчет".](./media/tutorial-routing/power-bi-actions.png)
+   ![Снимок экрана с рабочей областью Power BI, на которой выделены меню "Действия" и значок отчета.](./media/tutorial-routing/power-bi-actions.png)
 
 5. Создайте график для отображения данных температуры в реальном времени за определенный период времени.
 
@@ -544,7 +565,7 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
 7. Создайте другой график для отображения влажности в реальном времени за определенный период времени. Чтобы настроить второй график, выполните действия, аналогичные действиям выше, и перетащите **EventEnqueuedUtcTime** на ось Х, а **влажность** на ось Y.
 
-   ![Снимок экрана, показывающий окончательный отчет PowerBI с двумя графиками.](./media/tutorial-routing/power-bi-report.png)
+   ![Снимок экрана, демонстрирующий итоговый отчет Power BI с двумя графиками.](./media/tutorial-routing/power-bi-report.png)
 
 8. Нажмите кнопку **Сохранить**, чтобы сохранить отчет.
 
@@ -552,17 +573,17 @@ New-AzureRmServiceBusQueue -ResourceGroupName $resourceGroup `
 
    * Маршрутизация в конечной точке по умолчанию работает правильно.
    * Задание Azure Stream Analytics выполняется правильно.
-   * Визуализация PowerBI настроена правильно.
+   * Визуализация Power BI настроена правильно.
 
-Чтобы увидеть последние данные, можно обновить графики, нажав кнопку «Обновить» в верхней части окна PowerBI. 
+Чтобы увидеть последние данные, можно обновить графики, нажав кнопку "Обновить" в верхней части окна PowerBI. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 
 Если требуется удалить все ресурсы, которые были созданы, удалите группу ресурсов. При этом будут также удалены все ресурсы, содержащиеся в группе. В этом случае действие удаляет Центр IoT, пространство имен служебной шины и очереди, приложение логики, учетную запись хранения и саму группу ресурсов. 
 
-### <a name="clean-up-resources-in-the-powerbi-visualization"></a>Очистка ресурсов в визуализации PowerBI
+### <a name="clean-up-resources-in-the-power-bi-visualization"></a>Очистка ресурсов в визуализации Power BI
 
-Войдите в учетную запись [PowerBI](https://powerbi.microsoft.com/). Перейдите в рабочую область. В этом руководстве используется **Моя рабочая область**. Чтобы удалить визуализацию PowerBI, перейдите к наборам данных и щелкните значок корзины для удаления набора данных. В этом руководстве используется **contosodataset**. При удалении набора данных отчет будет также удален.
+Войдите в учетную запись [Power BI](https://powerbi.microsoft.com/). Перейдите в рабочую область. В этом руководстве используется **Моя рабочая область**. Чтобы удалить визуализацию Power BI, перейдите к наборам данных и щелкните значок корзины для удаления набора данных. В этом руководстве используется **contosodataset**. При удалении набора данных отчет будет также удален.
 
 ### <a name="clean-up-resources-using-azure-cli"></a>Очистка ресурсов с помощью Azure CLI
 
@@ -589,7 +610,7 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 > * Настройка конечных точек и маршрутов в центр IoT для учетной записи хранения и очереди служебной шины.
 > * Создание приложения логики, которое запущено и отправляет сообщение по электронной почте, когда сообщение добавляется в очередь служебной шины.
 > * Загрузка и запуск приложения, которое имитирует устройство IoT отправки сообщений в концентратор для различных параметров маршрутизации.
-> * Создание визуализации PowerBI отправленных к конечной точке по умолчанию данных.
+> * Создайте визуализацию Power BI для данных, отправляемых в конечную точку по умолчанию.
 > * Просмотр результатов ...
 > * ... в очереди служебной шины и в сообщениях электронной почты.
 > * ... в учетной записи хранения.
@@ -598,6 +619,6 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 Перейдите к следующему руководству, чтобы узнать, как управлять состоянием устройств IoT. 
 
 > [!div class="nextstepaction"]
-[Начало работы с двойниками устройств Центра Интернета вещей Azure](iot-hub-node-node-twin-getstarted.md)
+[Настройка устройств из внутренней службы](tutorial-device-twins.md)
 
  <!--  [Manage the state of a device](./tutorial-manage-state.md) -->

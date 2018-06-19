@@ -1,25 +1,24 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей | Документация Майкрософт
 description: В этом кратком руководстве выполняется пример приложения iOS по отправке имитированной телеметрии в Центр Интернета вещей и чтение телеметрии из Центра Интернета вещей для обработки в облаке.
-services: iot-hub
 author: kgremban
 manager: timlt
-editor: ''
 ms.service: iot-hub
-ms.devlang: ''
+services: iot-hub
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
-ms.date: 04/20//2018
+ms.date: 04/20/2018
 ms.author: kgremban
-ms.openlocfilehash: 0f1d3a5f714a2202836f477e78a30aa080947239
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 7b7f8e1805850861b30eb2a54991e5ab7fa96335
+ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34808185"
 ---
-# <a name="send-telemetry-from-a-device-to-an-iot-hub-swift"></a>Отправка данных телеметрии с устройства в Центр Интернета вещей (Swift)
+# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей (iOS)
+
+[!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
 Центр Интернета вещей — это служба Azure, которая позволяет получать большие объемы телеметрии с ваших устройств Центра Интернета вещей в облаке на хранение или обработку. В этой статье телеметрия отправляется из приложения имитированного устройства в Центр Интернета вещей. Затем можно просмотреть данные из серверной части приложения. 
 
@@ -42,32 +41,8 @@ ms.lasthandoff: 05/14/2018
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Сначала нужно создать Центр Интернета вещей в подписке с помощью портала Azure. Центр Интернета вещей позволяет принимать большие объемы телеметрии в облако с разных устройств. Затем концентратор включает одну или несколько серверных служб, выполняемых в облаке, для чтения и обработки этой телеметрии.
+[!INCLUDE [iot-hub-quickstarts-create-hub](../../includes/iot-hub-quickstarts-create-hub.md)]
 
-1. Войдите на [портале Azure](http://portal.azure.com).
-
-1. Выберите **Создать ресурс** > **Интернет вещей** > **Центр Интернета вещей**. 
-
-   ![Выбор параметра для установки Центра Интернета вещей](media/quickstart-send-telemetry-ios/selectiothub.png)
-
-1. Чтобы создать Центр Интернета вещей, используйте значения из следующей таблицы:
-
-    | Параметр | Значение |
-    | ------- | ----- |
-    | ИМЯ | Уникальное имя концентратора |
-    | Ценовая категория и категория масштабирования | Бесплатный F1 |
-    | Единицы Центра Интернета вещей | 1 |
-    | Разделы "Из устройства в облако" | 2 раздела |
-    | Подписка | Вашу подписку Azure. |
-    | Группа ресурсов | Создайте группу ресурсов и введите ее имя. |
-    | Расположение | Ближайшее расположение. |
-    | Закрепить на панели мониторинга | Yes |
-
-1. Нажмите кнопку **Создать**.  
-
-   ![Параметры концентратора](media/quickstart-send-telemetry-ios/hubdefinition.png)
-
-1. Запишите имена Центров Интернета вещей и групп ресурсов. Они потребуются вам далее в этом кратком руководстве.
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -80,7 +55,7 @@ ms.lasthandoff: 05/14/2018
    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id myiOSdevice
    ```
 
-    Если вы выбрали другое имя для своего устройства, обновите имя устройства в примерах приложений перед их запуском.
+    Если вы выбрали другое имя для устройства, обновите имя устройства в примерах приложений перед их запуском.
 
 1. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
 
@@ -168,10 +143,13 @@ iothub-explorer monitor-events myiOSdevice --login "{your hub service connection
 
 В этой статье вы настраивали Центр Интернета вещей, регистрировали устройство, отправляли имитируемую телеметрию в концентратор из устройства iOS, а также читали телеметрию из концентратора. 
 
-Дополнительные сведения о принципах работы устройств iOS с Центром Интернета вещей см. в статье [Send cloud-to-device messages with IoT Hub (iOS)](iot-hub-ios-swift-c2d.md) (Отправка сообщений с устройства в облако с помощью iOS (Swift)).
+Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
+
+> [!div class="nextstepaction"]
+> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-node.md)
 
 <!-- Links -->
-[lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
+[lnk-process-d2c-tutorial]: tutorial-routing.md
 [lnk-device-management]: iot-hub-node-node-device-management-get-started.md
 [lnk-iot-edge]: ../iot-edge/tutorial-simulate-device-linux.md
 [lnk-connect-device]: https://azure.microsoft.com/develop/iot/

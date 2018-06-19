@@ -5,29 +5,29 @@ services: cosmos-db
 author: SnehaGunda
 manager: kfile
 tags: azure-service-management
-ms.assetid: ''
 ms.service: cosmos-db
 ms.custom: mvc
 ms.devlang: na
 ms.topic: sample
-ms.tgt_pltfrm: na
-ms.workload: database
 ms.date: 10/16/2017
 ms.author: sngun
-ms.openlocfilehash: fc2ae1ee87b525f2ec6725cea2b19a8b8b3cef86
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 71e75b4b2bb60ad2c1ae1a468991fe1f5520136c
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34700372"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db"></a>Примеры Azure PowerShell для базы данных Azure Cosmos DB
 
-В следующей таблице содержатся ссылки на примеры скриптов Azure PowerShell для базы данных Azure Cosmos DB. В настоящее время с помощью PowerShell можно управлять только учетной записью Azure Cosmos DB. Другими ресурсами, например базами данных и коллекциями, нельзя управлять с помощью PowerShell.
+В следующей таблице содержатся ссылки на примеры скриптов Azure PowerShell для базы данных Azure Cosmos DB. Сейчас с помощью PowerShell можно управлять только учетной записью Azure Cosmos DB. Другими ресурсами, например базами данных и коллекциями, нельзя управлять с помощью PowerShell.
 
 | |  |
 |---|---|
 |**Создание учетной записи Azure Cosmos DB**||
 |[Создание учетной записи API SQL](scripts/create-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API SQL. |
+|[Создание учетной записи API MongoDB](scripts/create-mongodb-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API MongoDB. |
+|[Создание учетной записи API Gremlin](scripts/create-graph-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Gremlin. |
 |**Масштабирование Azure Cosmos DB**||
 |[Replicate an Azure Cosmos DB database account in multiple regions and configure failover priorities using PowerShell](scripts/scale-multiregion-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Репликация учетной записи базы данных Azure Cosmos DB в нескольких регионах и настройка приоритетов отработки отказа с помощью PowerShell)|Глобально реплицирует данные учетной записи в нескольких регионах с указанным приоритетом отработки отказа.|
 |**Безопасность базы данных Azure Cosmos DB**||

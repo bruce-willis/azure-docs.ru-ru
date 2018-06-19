@@ -10,21 +10,18 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: e4bde4f521e0e19e7acd36260c98cfe80973e284
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0d0ec1520c91c0c1dcdac4660130917bb63065cc
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34198241"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34825566"
 ---
-## <a name="initialize-debug-assets-with-the-vs-code-extension"></a>Инициализация ресурсов отладки с помощью расширения VS Code
-Сначала необходимо настроить проект кода, чтобы редактор VS Code мог взаимодействовать с нашей среде разработки в Azure. Расширение VS Code для Azure Dev Spaces содержит вспомогательную команду для настройки конфигурации отладки. 
+### <a name="initialize-debug-assets-with-the-vs-code-extension"></a>Инициализация ресурсов отладки с помощью расширения VS Code
+Сначала необходимо настроить проект кода, чтобы редактор VS Code мог взаимодействовать с нашим пространством разработки в Azure. Расширение VS Code для Azure Dev Spaces содержит вспомогательную команду для настройки конфигурации отладки. 
 
 Откройте **палитру команд** (с помощью меню **Вид | Палитра команд**), включите автоматическое завершение ввода и выберите эту команду: `Azure Dev Spaces: Create configuration files for connected development`. 
 
 В папку `.vscode` будет добавлена конфигурация отладки для Azure Dev Spaces.
 
 ![](../media/common/command-palette.png)
-
-> [!Important]
-> Прежде чем продолжить, закройте и снова откройте VS Code (это нужно делать из-за ошибки).

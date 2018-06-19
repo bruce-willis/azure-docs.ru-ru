@@ -15,17 +15,17 @@ ms.workload: NA
 ms.date: 11/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 6c84b60018ec03b7f9bc572db9181b8a47a0c595
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 860d28cb6726a86194460977b822197a37ab7279
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365412"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34642875"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-application-to-azure"></a>Краткое руководство: развертывание приложения Java Spring Boot в Azure
 Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими. 
 
-В этом руководстве объясняется, как развернуть приложение Spring Boot в Service Fabric на компьютере для разработки под управлением Mac OS или Linux. Это краткое руководство использует пример [Начало работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring Boot. В этом кратком руководстве приведены пошаговые инструкции по развертыванию Spring Boot в виде приложения Service Fabric с использованием знакомых средств командной строки. Когда вы завершите работу с руководством, у вас будет пример Spring Boot, работающий на Service Fabric. 
+В задачах этого краткого руководства используются привычные средства командной строки. Из него вы узнаете, как развернуть функциональное приложение Spring Boot в Service Fabric на компьютере разработки Mac или Linux с помощью примера для [начала работы](https://spring.io/guides/gs/spring-boot/) с веб-сайта Spring.
 
 ![Снимок экрана приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsflocalhost.png)
 
@@ -224,7 +224,7 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
 Теперь вы можете получить доступ к приложению Spring Boot, работающему в кластере Service Fabric в Azure.  
     
 ## <a name="scale-applications-and-services-in-a-cluster"></a>Масштабирование приложений и служб в кластере
-Службы могут легко масштабироваться в кластере с учетом изменения нагрузки на них. Масштабирование службы осуществляется путем изменения числа экземпляров, запущенных в кластере. Существует множество способов масштабирования служб. Например, можно использовать скрипты или команды интерфейса командной строки Service Fabric (sfctl). В приведенных далее шагах используйте Service Fabric Explorer.
+Службы могут легко масштабироваться в кластере с учетом изменения нагрузки на них. Масштабирование службы осуществляется путем изменения числа экземпляров, запущенных в кластере. Существует множество способов масштабирования служб. Например, можно использовать скрипты или команды интерфейса командной строки Service Fabric (sfctl). В описанных далее действиях предполагается использование Service Fabric Explorer.
 
 Средство Service Fabric Explorer работает во всех кластерах Service Fabric. Чтобы его открыть, укажите адрес кластера и порт управления HTTP (19080) для кластера в адресной строке браузера, например `http://localhost:19080`.
 
@@ -246,7 +246,7 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
     sfctl cluster select --endpoint https://<ConnectionIPOrURL>:19080 --pem <path_to_certificate> --no-verify
 
     # Run Bash command to scale instance count for your service
-    sfctl service update --service-id 'SpringServiceFabric~SpringGettingStarted` --instance-count 3 --stateless 
+    sfctl service update --service-id 'SpringServiceFabric~SpringGettingStarted' --instance-count 3 --stateless 
     ``` 
 
 4. Щелкните узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).

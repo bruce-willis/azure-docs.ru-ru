@@ -13,14 +13,15 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: na
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 12/15/2017
+ms.date: 06/01/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 741cabd37a5a508257f0307dfec25b5bb2d25153
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 305c8b46f82409257061e1cb0ab79b3bf958384d
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34839611"
 ---
 # <a name="tutorial-create-a-virtual-machine-scale-set-and-deploy-a-highly-available-app-on-linux-with-the-azure-cli-20"></a>Руководство. Создание масштабируемого набора виртуальных машин и развертывание высокодоступного приложения в Linux с помощью Azure CLI 2.0
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 04/28/2018
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI версии 2.0.30 и выше. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.30 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="scale-set-overview"></a>Обзор масштабируемого набора
 Масштабируемый набор виртуальных машин обеспечивает развертывание и администрирование набора идентичных автомасштабируемых виртуальных машин. Виртуальные машины распределяются по логическим доменам сбоя и обновления в одной или нескольких *группах размещения*. Это группы одинаково настроенных виртуальных машин, похожие на [группы доступности](tutorial-availability-sets.md).
@@ -49,7 +50,7 @@ ms.lasthandoff: 04/28/2018
 ## <a name="create-an-app-to-scale"></a>Создание приложения для масштабирования
 Для использования в рабочей среде может потребоваться [создать пользовательский образ виртуальной машины](tutorial-custom-images.md), включающий установленное и настроенное приложение. В этом учебнике виртуальные машины настраиваются при первом запуске для быстрого ознакомления с работой масштабируемого набора.
 
-В предыдущем руководстве вы узнали, [Как настроить виртуальную машину Linux при первой загрузке](tutorial-automate-vm-deployment.md) с помощью cloud-init. Тот же самый файл конфигурации cloud-init можно использовать и для установки NGINX, а также для запуска простого приложения Node.js "Hello World". 
+В предыдущем руководстве вы узнали, [Как настроить виртуальную машину Linux при первой загрузке](tutorial-automate-vm-deployment.md) с помощью cloud-init. Тот же самый файл конфигурации cloud-init можно использовать и для установки NGINX, а также для запуска простого приложения Node.js "Hello World".
 
 В текущей оболочке создайте файл *cloud-init.txt* и вставьте в него следующую конфигурацию. Например, создайте файл в Cloud Shell, не на локальном компьютере. Введите `sensible-editor cloud-init.txt`, чтобы создать файл и просмотреть список доступных редакторов. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка:
 
@@ -97,15 +98,15 @@ runcmd:
 
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
-Прежде чем создать масштабируемый набор, выполните команду [az group create](/cli/azure/group#az_group_create) для создания группы ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupScaleSet* в расположении *eastus*.
+Прежде чем создать масштабируемый набор, выполните команду [az group create](/cli/azure/group#az-group-create) для создания группы ресурсов. В следующем примере создается группа ресурсов с именем *myResourceGroupScaleSet* в расположении *eastus*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create --name myResourceGroupScaleSet --location eastus
 ```
 
-Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss#az_vmss_create). В следующем примере создается масштабируемый набор *myScaleSet*, используется пакет cloud-int для настройки виртуальной машины и создаются ключи SSH, если они не существуют.
+Создайте масштабируемый набор виртуальных машин с помощью команды [az vmss create](/cli/azure/vmss#az-vmss-create). В следующем примере создается масштабируемый набор *myScaleSet*, используется пакет cloud-int для настройки виртуальной машины и создаются ключи SSH, если они не существуют.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss create \
   --resource-group myResourceGroupScaleSet \
   --name myScaleSet \
@@ -122,9 +123,9 @@ az vmss create \
 ## <a name="allow-web-traffic"></a>Разрешение веб-трафика
 Подсистема балансировки нагрузки была создана автоматически в составе масштабируемого набора виртуальных машин. Она распределяет трафик в наборе определенных виртуальных машин с помощью правил подсистемы балансировки нагрузки. Дополнительные сведения о принципах работы с балансировщиком нагрузки и его настройки см. в следующем руководстве [Балансировка нагрузки между виртуальными машинами в Azure](tutorial-load-balancer.md).
 
-Чтобы разрешить передачу трафика в веб-приложение, нужно создать правило командой [az network lb rule create](/cli/azure/network/lb/rule#az_network_lb_rule_create). В следующем примере создается правило *myLoadBalancerRuleWeb*.
+Чтобы разрешить передачу трафика в веб-приложение, нужно создать правило командой [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create). В следующем примере создается правило *myLoadBalancerRuleWeb*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network lb rule create \
   --resource-group myResourceGroupScaleSet \
   --name myLoadBalancerRuleWeb \
@@ -137,9 +138,9 @@ az network lb rule create \
 ```
 
 ## <a name="test-your-app"></a>Тестирование приложения
-Чтобы просмотреть приложение Node.js в Интернете, получите общедоступный IP-адрес балансировщика нагрузки с помощью команды [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). Следующий пример получает IP-адрес для *myScaleSetLBPublicIP*, созданного ранее вместе с масштабируемым набором.
+Чтобы просмотреть приложение Node.js в Интернете, получите общедоступный IP-адрес балансировщика нагрузки с помощью команды [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Следующий пример получает IP-адрес для *myScaleSetLBPublicIP*, созданного ранее вместе с масштабируемым набором.
 
-```azurecli-interactive 
+```azurecli-interactive
 az network public-ip show \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSetLBPublicIP \
@@ -158,9 +159,9 @@ az network public-ip show \
 На протяжении жизненного цикла масштабируемого набора может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. CLI Azure 2.0 позволяет быстро выполнять эти задачи. Ниже приведено несколько распространенных задач.
 
 ### <a name="view-vms-in-a-scale-set"></a>Просмотр виртуальных машин в масштабируемом наборе
-Чтобы просмотреть список виртуальных машин, запущенных в масштабируемом наборе, используйте команду [az vmss list-instances](/cli/azure/vmss#az_vmss_list_instances) следующим образом:
+Чтобы просмотреть список виртуальных машин, запущенных в масштабируемом наборе, используйте команду [az vmss list-instances](/cli/azure/vmss#az-vmss-list-instances) следующим образом:
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss list-instances \
   --resource-group myResourceGroupScaleSet \
   --name myScaleSet \
@@ -169,7 +170,7 @@ az vmss list-instances \
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```azurecli-interactive 
+```bash
   InstanceId  LatestModelApplied    Location    Name          ProvisioningState    ResourceGroup            VmId
 ------------  --------------------  ----------  ------------  -------------------  -----------------------  ------------------------------------
            1  True                  eastus      myScaleSet_1  Succeeded            MYRESOURCEGROUPSCALESET  c72ddc34-6c41-4a53-b89e-dd24f27b30ab
@@ -177,10 +178,10 @@ az vmss list-instances \
 ```
 
 
-### <a name="increase-or-decrease-vm-instances"></a>Увеличение или уменьшение числа экземпляров виртуальной машины
-Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, используйте команду [az vmss show](/cli/azure/vmss#az_vmss_show) и отправьте запрос для *sku.capacity*.
+### <a name="manually-increase-or-decrease-vm-instances"></a>Увеличение или уменьшение числа экземпляров виртуальной машины вручную
+Чтобы просмотреть количество экземпляров, присутствующих в масштабируемом наборе, используйте команду [az vmss show](/cli/azure/vmss#az-vmss-show) и отправьте запрос для *sku.capacity*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss show \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSet \
@@ -188,93 +189,19 @@ az vmss show \
     --output table
 ```
 
-После этого можно вручную увеличить или уменьшить число виртуальных машин в масштабируемом наборе, выполнив команду [az vmss scale](/cli/azure/vmss#az_vmss_scale). В следующем примере число виртуальных машин в масштабируемом наборе определяется равным *3*:
+После этого можно вручную увеличить или уменьшить число виртуальных машин в масштабируемом наборе, выполнив команду [az vmss scale](/cli/azure/vmss#az-vmss-scale). В следующем примере число виртуальных машин в масштабируемом наборе определяется равным *3*:
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss scale \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSet \
     --new-capacity 3
 ```
 
-
-### <a name="configure-autoscale-rules"></a>Настройка правил автомасштабирования
-Чтобы не устанавливать число экземпляров в масштабируемом наборе вручную, можно определить правила автомасштабирования. С помощью правил среда отслеживает экземпляры в масштабируемом наборе и реагирует соответствующим образом на основе определенных метрик и пороговых значений. Приведенный ниже пример увеличивает число экземпляров на один, когда средняя загрузка ЦП превышает 60 % в течение 5 минут. Если затем средняя загрузка ЦП не превышает 30 % в течение 5 минут, число экземпляров уменьшается на один. Идентификатор подписки используется для создания URI ресурсов для разных компонентов масштабируемого набора. Для создания этих правил с помощью команды [az monitor autoscale-settings create](/cli/azure/monitor/autoscale-settings#az_monitor_autoscale_settings_create) скопируйте и вставьте следующий профиль команды автомасштабирования:
-
-```azurecli-interactive 
-sub=$(az account show --query id -o tsv)
-
-az monitor autoscale-settings create \
-    --resource-group myResourceGroupScaleSet \
-    --name autoscale \
-    --parameters '{"autoscale_setting_resource_name": "autoscale",
-      "enabled": true,
-      "location": "East US",
-      "notifications": [],
-      "profiles": [
-        {
-          "name": "Auto created scale condition",
-          "capacity": {
-            "minimum": "2",
-            "maximum": "10",
-            "default": "2"
-          },
-          "rules": [
-            {
-              "metricTrigger": {
-                "metricName": "Percentage CPU",
-                "metricNamespace": "",
-                "metricResourceUri": "/subscriptions/'$sub'/resourceGroups/myResourceGroupScaleSet/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet",
-                "metricResourceLocation": "eastus",
-                "timeGrain": "PT1M",
-                "statistic": "Average",
-                "timeWindow": "PT5M",
-                "timeAggregation": "Average",
-                "operator": "GreaterThan",
-                "threshold": 70
-              },
-              "scaleAction": {
-                "direction": "Increase",
-                "type": "ChangeCount",
-                "value": "1",
-                "cooldown": "PT5M"
-              }
-            },
-            {
-              "metricTrigger": {
-                "metricName": "Percentage CPU",
-                "metricNamespace": "",
-                "metricResourceUri": "/subscriptions/'$sub'/resourceGroups/myResourceGroupScaleSet/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet",
-                "metricResourceLocation": "eastus",
-                "timeGrain": "PT1M",
-                "statistic": "Average",
-                "timeWindow": "PT5M",
-                "timeAggregation": "Average",
-                "operator": "LessThan",
-                "threshold": 30
-              },
-              "scaleAction": {
-                "direction": "Decrease",
-                "type": "ChangeCount",
-                "value": "1",
-                "cooldown": "PT5M"
-              }
-            }
-          ]
-        }
-      ],
-      "tags": {},
-      "target_resource_uri": "/subscriptions/'$sub'/resourceGroups/myResourceGroupScaleSet/providers/Microsoft.Compute/virtualMachineScaleSets/myScaleSet"
-    }'
-```
-
-Чтобы повторно использовать профиль автомасштабирования, можно создать файл JSON (JavaScript Object Notation) и передать его команде `az monitor autoscale-settings create` с параметром `--parameters @autoscale.json`. Дополнительные сведения см. в [рекомендациях по автомасштабированию](/azure/architecture/best-practices/auto-scaling).
-
-
 ### <a name="get-connection-info"></a>Получение сведений о подключении
-Чтобы получить сведения о подключении для виртуальных машин в масштабируемых наборах, выполните команду [az vmss list-instance-connection-info](/cli/azure/vmss#az_vmss_list_instance_connection_info). Эта команда выводит общедоступный IP-адрес и порт для каждой виртуальной машины, которая разрешает подключение по протоколу SSH:
+Чтобы получить сведения о подключении для виртуальных машин в масштабируемых наборах, выполните команду [az vmss list-instance-connection-info](/cli/azure/vmss#az-vmss-list-instance-connection-info). Эта команда выводит общедоступный IP-адрес и порт для каждой виртуальной машины, которая разрешает подключение по протоколу SSH:
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss list-instance-connection-info \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSet
@@ -285,9 +212,9 @@ az vmss list-instance-connection-info \
 Можно создавать диски данных и использовать их с масштабируемыми наборами. В предыдущем руководстве вы узнали, как [управлять дисками Azure](tutorial-manage-disks.md), и ознакомились с рекомендациями и способами повышения производительности для создания приложений на дисках данных, а не на диске ОС.
 
 ### <a name="create-scale-set-with-data-disks"></a>Создание масштабируемого набора с дисками данных
-Чтобы создать масштабируемый набор и подключить к нему диски данных, добавьте параметр `--data-disk-sizes-gb` в команду [az vmss create](/cli/azure/vmss#az_vmss_create). В следующем примере создается масштабируемый набор, в котором к каждому экземпляру подключен диск данных объемом в *50* ГБ.
+Чтобы создать масштабируемый набор и подключить к нему диски данных, добавьте параметр `--data-disk-sizes-gb` в команду [az vmss create](/cli/azure/vmss#az-vmss-create). В следующем примере создается масштабируемый набор, в котором к каждому экземпляру подключен диск данных объемом в *50* ГБ.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss create \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSetDisks \
@@ -302,9 +229,9 @@ az vmss create \
 Когда экземпляры удаляются из масштабируемого набора, также удаляются подключенные к ним диски данных.
 
 ### <a name="add-data-disks"></a>Добавление дисков данных
-Чтобы добавить диск данных к экземплярам в масштабируемом наборе, выполните команду [az vmss disk attach](/cli/azure/vmss/disk#az_vmss_disk_attach). В следующем примере к каждому экземпляру добавляется диск данных объемом в *50* ГБ.
+Чтобы добавить диск данных к экземплярам в масштабируемом наборе, выполните команду [az vmss disk attach](/cli/azure/vmss/disk#az-vmss-disk-attach). В следующем примере к каждому экземпляру добавляется диск данных объемом в *50* ГБ.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss disk attach \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSet \
@@ -313,9 +240,9 @@ az vmss disk attach \
 ```
 
 ### <a name="detach-data-disks"></a>Отключение дисков данных
-Чтобы удалить диск данных из экземпляра в масштабируемом наборе, выполните команду [az vmss disk detach](/cli/azure/vmss/disk#az_vmss_disk_detach). В следующем примере из каждого экземпляра удаляется диск данных LUN *2*.
+Чтобы удалить диск данных из экземпляра в масштабируемом наборе, выполните команду [az vmss disk detach](/cli/azure/vmss/disk#az-vmss-disk-detach). В следующем примере из каждого экземпляра удаляется диск данных LUN *2*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az vmss disk detach \
     --resource-group myResourceGroupScaleSet \
     --name myScaleSet \

@@ -12,11 +12,12 @@ ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: jgao
 ms.custom: mvc
-ms.openlocfilehash: ca44354b6aa51cae9218594ba5120d9c4a6f5ece
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 06d711c99a6aaffe85adf740d2041c9fcc35ac23
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34628102"
 ---
 # <a name="quickstart-create-a-spark-cluster-in-hdinsight-using-template"></a>Краткое руководство по созданию кластера Spark в HDInsight с помощью шаблона
 
@@ -53,6 +54,12 @@ ms.lasthandoff: 05/07/2018
 3. Установите флажки **Я принимаю указанные выше условия** и **Закрепить на панели мониторинга**, а затем нажмите кнопку **Приобрести**. Вы увидите новый элемент под названием **Развертывание для развертывания шаблона**. Процесс создания кластеров занимает около 20 минут. Прежде чем перейти к следующему сеансу, вы должны создать кластер.
 
 Если при создании кластера HDInsight возникают проблемы, возможно, у вас нет необходимых разрешений. Дополнительные сведения см. в разделе [Требования к контролю доступа](../hdinsight-administer-use-portal-linux.md#create-clusters).
+
+## <a name="install-intellijeclipse-for-spark-application"></a>Установка IntelliJ/Eclipse для приложения Spark
+Подключаемый модуль из набора средств Azure для IntelliJ или Eclipse позволяет разрабатывать приложения Spark на языке Scala и отправлять их в кластер Azure HDInsight Spark непосредственно из интегрированной среды разработки (IDE) IntelliJ или Eclipse. Дополнительные сведения см. в статьях [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](./apache-spark-intellij-tool-plugin.md) и [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для Eclipse](./apache-spark-eclipse-tool-plugin.md).
+
+## <a name="install-vscode-for-pysparkhive-applications"></a>Установка VS Code для приложений Hive и pySpark
+Сведения об использовании средств Azure HDInsight для Visual Studio Code (VS Code) для создания и отправки пакетных заданий Hive, интерактивных запросов Hive, пакета pySpark и интерактивных сценариев pySpark. Средства Azure HDInsight можно устанавливать на всех платформах, поддерживаемых VS Code. К ним относятся Windows, Linux и macOS. Дополнительные сведения см. в статье [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
 
 ## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
 

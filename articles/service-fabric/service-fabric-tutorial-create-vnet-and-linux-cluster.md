@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/22/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: ff57aec76171b45dbebff928f2898bd5f91ec1c2
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 53adf8045e1c947466cf5080b8c967a928d2dc24
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365548"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34643232"
 ---
 # <a name="tutorial-deploy-a-service-fabric-linux-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Linux в виртуальной сети Azure
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть кластер Service Fabric Linux в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md) и [группе безопасности сети (NSG)](../virtual-network/security-overview.md) с помощью шаблона и интерфейса командной строки Azure. После окончания этого учебника у вас будет кластер в облаке, в который можно разворачивать приложения. Создание кластера Windows с помощью PowerShell описывается в разделе [Развертывание безопасного кластера Service Fabric на платформе Windows в виртуальной сети Azure](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
@@ -157,7 +157,7 @@ az sf cluster create --resource-group $ResourceGroupName --location $Location \
 ```
 
 ## <a name="connect-to-the-secure-cluster"></a>Подключение к безопасному кластеру
-Подключитесь к кластеру, выполнив команду `sfctl cluster select` в интерфейсе командной строки Service Fabric и указав свой ключ.  Примечание. Используйте параметр **--no-verify** только для самозаверяющего сертификата.
+Подключитесь к кластеру, выполнив в командной строке Service Fabric команду `sfctl cluster select` и указав свой ключ.  Примечание. Используйте параметр **--no-verify** только для самозаверяющего сертификата.
 
 ```azurecli
 sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 \

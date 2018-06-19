@@ -1,52 +1,56 @@
 ---
 title: Управление несколькими модулями Azure IoT Edge в VS Code | Документация Майкрософт
-description: Использование Visual Studio Code для разработки решений IoT Edge, использующих несколько модулей.
-services: iot-edge
-keywords: ''
+description: Использование Visual Studio Code для разработки решений Azure IoT Edge, использующих несколько модулей.
 author: shizn
-manager: timlt
+manager: ''
 ms.author: xshi
 ms.date: 03/18/2018
-ms.topic: article
+ms.topic: tutorial
 ms.service: iot-edge
-ms.openlocfilehash: 4d9caa7aa95c99fa30e8ec76c5b6362615725622
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+services: iot-edge
+ms.custom: mvc
+ms.openlocfilehash: 4a624994f93e7a3cbb04db2a0ec0b2b823a12ee7
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34166358"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34763040"
 ---
-# <a name="develop-an-iot-edge-solution-with-multiple-modules-in-visual-studio-code---preview"></a>Разработка решения IoT Edge с несколькими модулями в Visual Studio Code — предварительная версия
-Visual Studio Code можно использовать для разработки решения IoT Edge с несколькими модулями. В этой статье приводятся пошаговые инструкции, с помощью которых вы сможете создать, обновить и развернуть решение IoT Edge, которое передает данные от датчиков на имитированное устройство IoT Edge, в Visual Studio Code. 
+# <a name="develop-an-iot-edge-solution-with-multiple-modules-in-visual-studio-code-preview"></a>Разработка решения IoT Edge с несколькими модулями в Visual Studio Code (предварительная версия)
+
+Visual Studio Code можно использовать для разработки решения Azure IoT Edge с несколькими модулями. В этой статье показано, как с помощью VS Code создать, обновить и развернуть решение IoT Edge для передачи данных с датчиков на имитированное устройство IoT Edge. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы выполнить все действия, описанные в этой статье, необходимо следующее:
+Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-- [Visual Studio Code](https://code.visualstudio.com/) 
-- [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) 
-- [Расширение C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge);
+- [расширение C# для Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp);
 - [Docker](https://docs.docker.com/engine/installation/)
-- [Пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/core#windowscmd) 
-- Шаблон AzureIoTEdgeModule (`dotnet new -i Microsoft.Azure.IoT.Edge.Module`).
+- [пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/core#windowscmd);
+- шаблон AzureIoTEdgeModule (`dotnet new -i Microsoft.Azure.IoT.Edge.Module`);
 - активный Центр Интернета вещей с устройством IoT Edge (как минимум).
 
-
-* Установите [Docker для VS Code](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) с интеграцией в обозреватель для управления образами и контейнерами.
-
+Вам также понадобится средство [Docker для VS Code](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker), интегрированное с обозревателем устройств Azure IoT Hub для управления образами и контейнерами.
 
 ## <a name="prepare-your-first-iot-edge-solution"></a>Подготовка первого решения IoT Edge
-1. В палитре команд VS Code введите и выполните команду **Edge: New IoT Edge solution**. Затем выберите папку рабочей области, введите имя решения (по умолчанию используется имя **EdgeSolution**) и создайте в этом решении первый модуль C# (**SampleModule**). Кроме того, для первого модуля следует указать репозиторий образов Docker. По умолчанию используется репозиторий образов на базе локального реестра Docker (`localhost:5000/<first module name>`). Также вместо него можно использовать реестр контейнеров Azure или Docker Hub.
+
+1. В **палитре команд** VS Code введите и выполните команду **Edge: New IoT Edge solution**. Выберите папку рабочей области и укажите имя решения (по умолчанию используется EdgeSolution). Создайте модуль C# с именем **SampleModule**, который будет первым пользовательским модулем в этом решении. Кроме того, для первого модуля следует указать репозиторий образов Docker. По умолчанию используется репозиторий образов на базе локального реестра Docker (**localhost:5000/<first module name>**). Вместо него можно использовать реестр контейнеров Azure или Docker Hub.
 
    > [!NOTE]
-   > Если вы используете локальный реестр Docker, обязательно запускайте его с помощью команды `docker run -d -p 5000:5000 --restart=always --name registry registry:2` в окне консоли.
+   > Если вы используете локальный реестр Docker, убедитесь, что этот реестр запущен. Введите в окне консоли следующую команду:
+   > 
+   > `docker run -d -p 5000:5000 --restart=always --name registry registry:2`
 
-2. Окно VS Code загружает рабочую область решения IoT Edge. Корневая папка содержит папку `modules`, папку `.vscode` и файл шаблона манифеста развертывания. Конфигурации отладки размещаются в папке `.vscode`. Коды всех пользовательских модулей находятся во вложенных папках каталога `modules`. `deployment.template.json` — это шаблон манифеста развертывания. Для некоторых параметров в этом файле значения извлекаются из файла `module.json`, который есть в папке каждого модуля.
+2. Окно VS Code загружает рабочую область решения IoT Edge. Корневая папка содержит папку **modules**, папку **.vscode** и файл шаблона с манифестом развертывания. Конфигурации отладки хранятся в папке .vscode. Весь код пользовательских модулей находится во вложенных папках модулей. Файл deployment.template.json представляет собой шаблон манифеста развертывания. Для некоторых параметров в этом файле значения извлекаются из файла module.json, который есть в папке каждого модуля.
 
-3. Добавьте в этот проект решения второй модуль. Для этого введите и выполните команду **Edge: Add IoT Edge module** и выберите файл шаблона развертывания для обновления. Теперь выберите элемент **Azure Function - C#** (Функция Azure — C#) с именем **SampleFunction**, а также соответствующий репозиторий образов Docker.
+3. Добавьте второй модуль в этот проект решения. Введите и выполните команду **Edge: Add IoT Edge module**. Выберите файл шаблона развертывания, который вы намерены обновить. Выберите модуль **Azure Function — C#** (Функция Azure на C#) с именем **SampleFunction**, а также соответствующий репозиторий образов Docker.
 
-4. Откройте файл `deployment.template.json` и убедитесь, что он объявляет три модуля в дополнение к среде выполнения. Сообщение создается в модуле `tempSensor` и передается напрямую через `SampleModule` и `SampleFunction`, а затем отправляется в центр Интернета вещей. 
-5. Измените маршруты этих модулей, используя приведенное ниже содержимое.
+4. Откройте файл deployment.template.json. Убедитесь, что файл объявляет три модуля и среду выполнения. Сообщение создается из модуля tempSensor. Сообщение передается по конвейеру напрямую в модули SampleModule и SampleFunction, а затем отправляется в Центр Интернета вещей. 
+
+5. Измените маршруты для этих модулей, используя приведенное ниже содержимое.
+
    ```json
    "routes": {
       "SensorToPipeModule": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/SampleModule/inputs/input1\")",
@@ -58,20 +62,21 @@ Visual Studio Code можно использовать для разработк
 6. Сохраните этот файл.
 
 ## <a name="build-and-deploy-your-iot-edge-solution"></a>Сборка и развертывание решения IoT Edge
-1. В палитре команд VS Code введите и выполните команду **Edge: Build IoT Edge solution**. Используя файлы `module.json` в каждой папке, эта команда выполнит сборку, контейнеризацию и отправку образов Docker для каждого модуля. Затем она передаст обязательное значение для `deployment.template.json` и создаст файл `deployment.json` с информацией из папки `config`. Ход сборки можно отслеживать во встроенном терминале VS Code.
 
-2. В обозревателе устройств Центра Интернета вещей Azure щелкните правой кнопкой мыши идентификатор устройства IoT Edge и выберите **Create deployment for Edge device** (Создать развертывание для устройства Edge). Выберите `deployment.json` в папке `config`. Ход развертывания можно отслеживать с помощью идентификатора развертывания во встроенном терминале VS Code.
+1. В **палитре команд** VS Code введите и выполните команду **Edge: Build IoT Edge solution**. Используя файлы module.json в каждой папке модуля, эта команда выполняет сборку, контейнеризацию и отправку образов Docker для каждого модуля. Затем команда передает требуемое значение в файл deployment.template.json и создает файл deployment.json с информацией из папки config. Во встроенном терминале VS Code можно отслеживать ход сборки.
 
-3. Если вы моделируете устройство IoT Edge на компьютере разработки, то через несколько минут вы увидите, что запущены все контейнеры образов модулей.
+2. В **обозревателе устройств** Центра Интернета вещей Azure щелкните правой кнопкой мыши идентификатор устройства IoT Edge и выберите **Create deployment for Edge device** (Создать развертывание для устройства Edge). Выберите файл deployment.json в папке config. Встроенный терминал в VS Code отображает успешное завершение развертывания и идентификатор этого развертывания.
 
-## <a name="view-generated-data"></a>Просмотр сформированных данных
+3. Если вы создаете имитацию устройства IoT Edge на компьютере разработки, через несколько минут на нем будут запущены контейнеры образов модулей.
 
-1. Чтобы отслеживать данные, поступающие в Центр Интернета вещей, выберите **Вид** > **Палитра команд** и щелкните **IoT: Start monitoring D2C message** (Интернет вещей: начать мониторинг сообщений D2C). 
-2. Чтобы перестать отслеживать данные, используйте команду **IoT: Stop monitoring D2C message** (Центр Интернета вещей: остановить мониторинг сообщений D2C) в палитре команд. 
+## <a name="view-the-generated-data"></a>Просмотр созданных данных
+
+1. Для просмотра данных, поступающих в Центр Интернета вещей, выберите **Представление** > **Палитра команд**. Затем выберите команду **IoT: Start monitoring D2C message**. 
+2. Чтобы прекратить мониторинг данных, используйте команду **IoT: Stop monitoring D2C message** на **палитре команд**. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте о других сценариях разработки для Azure IoT Edge в VS Code:
+Изучите другие сценарии разработки для Azure IoT Edge в VS Code:
 
 * [Отладка модуля C# в VS Code](how-to-vscode-debug-csharp-module.md)
 * [Отладка функции C# в VS Code](how-to-vscode-debug-azure-function.md)

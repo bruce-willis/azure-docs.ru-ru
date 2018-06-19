@@ -12,13 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/05/2018
+ms.date: 06/06/2018
 ms.author: cherylmc
-ms.openlocfilehash: 9ebdbb8958779e074195623aec90b7a6f6de2bb4
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 99ecf8af278823fbae41cb14df5c2372d6451e0c
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35236201"
 ---
 # <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
@@ -166,13 +167,13 @@ VPN Azure использует проверку подлинности с пом
 
 Другие программные решения VPN должны работать с нашим шлюзом при условии, что они соответствуют реализации промышленного стандарта IPsec. Для получения инструкций по настройке и поддержке обратитесь к поставщику программного обеспечения.
 
-## <a name="P2S"></a>Собственная аутентификация Azure на основе сертификата при подключениях типа "точка — сеть"
+## <a name="P2S"></a>Собственная аутентификация Azure с использованием сертификата для подключений типа "точка — сеть"
 
 Этот раздел посвящен модели развертывания с помощью Resource Manager.
 
 [!INCLUDE [P2S Azure cert](../../includes/vpn-gateway-faq-p2s-azurecert-include.md)]
 
-## <a name="P2SRADIUS"></a>Аутентификация RADIUS при подключениях типа "точка — сеть"
+## <a name="P2SRADIUS"></a>Аутентификация RADIUS для подключений типа "точка — сеть"
 
 Этот раздел посвящен модели развертывания с помощью Resource Manager.
 

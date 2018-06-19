@@ -10,12 +10,12 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: f77a036d41ce551d9eab0250eaf4dc16444b24da
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 484567dd9d9c3d050e7be25bd685a5b8d3de0687
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34371139"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34825555"
 ---
 ## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
 Давайте запустим код! В окне терминала запустите следующую команду из **корневой папки кода**, webfrontend:
@@ -25,7 +25,7 @@ azds up
 ```
 
 Следите за выходными данными команды, и по мере ее выполнения вы заметите следующее:
-- Исходный код синхронизируется со средой разработки в Azure.
+- Исходный код синхронизируется в пространство разработки в Azure.
 - Образ контейнера создается в Azure, как указано в ресурсах Docker в вашей папке кода.
 - Создаются объекты Kubernetes, использующие образ контейнера в соответствии с диаграммой Helm в вашей папке кода.
 - Отображаются сведения о конечной точке контейнера. В нашем случае нам необходим общедоступный URL-адрес HTTP.
@@ -34,9 +34,9 @@ azds up
 > [!Note]
 > При первом запуске команды `up` на выполнение этих шагов потребуется больше времени, но последующие запуски должны выполняться быстрее.
 
-## <a name="test-the-web-app"></a>Тестирование веб-приложения
+### <a name="test-the-web-app"></a>Тестирование веб-приложения
 Просмотрите выходные данные консоли, чтобы найти сведения об общедоступном URL-адресе, который был создан командой `up`. Он будет выглядеть следующим образом: 
 
-`Running at public URL: http://<servicename>-<environmentname>.<guid>.<region>.aksapp.io` 
+`Running at public URL: http://<servicename>-<cluster-name>.<guid>.<region>.aksapp.io` 
 
 При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. По мере выполнения контейнера в окно терминала передаются выходные данные `stdout` и `stderr`.

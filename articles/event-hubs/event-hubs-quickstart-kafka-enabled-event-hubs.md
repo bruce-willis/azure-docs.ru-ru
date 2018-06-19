@@ -5,23 +5,22 @@ services: event-hubs
 documentationcenter: ''
 author: basilhariri
 manager: timlt
-editor: ''
-ms.assetid: ''
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/03/2018
+ms.date: 06/08/2018
 ms.author: bahariri
-ms.openlocfilehash: cabbb7ed6157a6c68530ab6b5f405aa67b31a1b2
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 8ef6240d19ce1ac1b891c95ce525a8bd211a2900
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35297229"
 ---
-# <a name="stream-into-event-hubs-for-kafka-ecosystem"></a>Потоковая передача данных в концентраторы событий для экосистемы Kafka
+# <a name="stream-into-event-hubs-for-the-kafka-ecosystem"></a>Потоковая передача данных в концентраторы событий для экосистемы Kafka
 
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs).
@@ -30,12 +29,12 @@ ms.lasthandoff: 05/10/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-В рамках этого краткого руководства вам потребуются:
+Ниже указаны требования для работы с этим кратким руководством.
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начать работу.
 * [Комплект разработчика Java (JDK) 1.7+](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 * [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив Maven.
-* [Git.](https://www.git-scm.com/)
+* [Git](https://www.git-scm.com/)
 * [Пространство имен концентраторов событий с поддержкой Kafka](event-hubs-create.md).
 
 ## <a name="send-and-receive-messages-with-kafka-in-event-hubs"></a>Отправка и получение сообщений с использованием Kafka в концентраторах событий
@@ -44,7 +43,7 @@ ms.lasthandoff: 05/10/2018
 
 2. Перейдите на страницу `azure-event-hubs/samples/kafka/quickstart/producer`.
 
-3. Обновите сведения о конфигурации для отправителя в файле src/main/resources/producer.config, как показано ниже.
+3. Обновите сведения о конфигурации для отправителя в файле по адресу `src/main/resources/producer.config` следующим образом:
 
     ```xml
     bootstrap.servers={YOUR.EVENTHUBS.FQDN}:9093
@@ -54,13 +53,13 @@ ms.lasthandoff: 05/10/2018
     ```
 4. Выполните код отправителя и потоковую передачу данных в концентраторы событий с поддержкой Kafka.
    
-    ```java
+    ```shell
     mvn clean package
     mvn exec:java -Dexec.mainClass="TestProducer"                                    
     ```
-5. Перейдите в папку azure-event-hubs/samples/kafka/quickstart/consumer.
+5. Перейдите на страницу `azure-event-hubs/samples/kafka/quickstart/consumer`.
 
-6. Обновите сведения о конфигурации для объекта-получателя в файле src/main/resources/consumer.config, как показано ниже.
+6. Обновите для объекта-получателя сведения о конфигурации в файле по адресу `src/main/resources/consumer.config` следующим образом.
    
     ```xml
     bootstrap.servers={YOUR.EVENTHUBS.FQDN}:9093
@@ -69,17 +68,18 @@ ms.lasthandoff: 05/10/2018
     sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="{YOUR.EVENTHUBS.CONNECTION.STRING}";
     ```
 
-7. Используя клиенты Kafka, выполните код объекта-получателя и обработку из концентраторов событий с поддержкой Kafka.
+7. Используя клиенты Kafka, запустите код объекта-получателя и обработку из включенных концентраторов событий с поддержкой Kafka.
 
     ```java
     mvn clean package
     mvn exec:java -Dexec.mainClass="TestConsumer"                                    
     ```
 
-Если на кластере Kafka концентраторов событий есть события в очереди, полученные от отправителя, начните их принимать на объекте-получателе.
+Если у кластера концентратора событий с поддержкой Kafka появятся события, можно начать получать их от объекта-получателя.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+* [Что такое концентраторы событий?](event-hubs-what-is-event-hubs.md)
 * [Подробнее о концентраторах событий для экосистемы Kafka](event-hubs-for-kafka-ecosystem-overview.md)
-* [Сведения о концентраторах событий](event-hubs-what-is-event-hubs.md)
-* Использование [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для потоковой передачи событий из локальных концентраторов событий с поддержкой Kafka в облачные.](event-hubs-kafka-mirror-maker-tutorial.md)
+* Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к включенным концентраторам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
+* Дополнительные сведения о потоковой передаче во включенные концентраторы событий с поддержкой Kafka с помощью фреймворка [Apache Flink ](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).

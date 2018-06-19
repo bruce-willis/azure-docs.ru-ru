@@ -1,5 +1,5 @@
 ---
-title: Создание среды разработки Kubernetes в облаке с помощью .NET Core и VS Code | Документация Майкрософт
+title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и VS Code | Документация Майкрософт
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: a57118feb85a010e38d73b758ebfb84d1cc463fa
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: bd42268c36f44dc20b88d27d19cbf378e848b82f
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34361258"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34823152"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
@@ -32,7 +32,7 @@ ms.locfileid: "34361258"
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
 > [!IMPORTANT]
-> Если у вас уже установлен интерфейс Azure CLI, убедитесь, что вы используете версию 2.0.32 или выше.
+> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.33 или новее.
 
 [!INCLUDE[](includes/sign-into-azure.md)]
 
@@ -42,7 +42,11 @@ ms.locfileid: "34361258"
 
 Пока вы ждете создания кластера, вы можете начать писать код.
 
-## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
+## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
+
+В этом разделе вы создадите веб-приложение ASP.NET Core и запустите его в контейнере в Kubernetes.
+
+### <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 Если у вас установлен [.NET Core](https://www.microsoft.com/net), вы можете быстро создать веб-приложение ASP.NET Core в папке с именем `webfrontend`.
     
 ```cmd
@@ -55,7 +59,7 @@ dotnet new mvc --name webfrontend
 
 [!INCLUDE[](includes/build-run-k8s-cli.md)]
 
-## <a name="update-a-content-file"></a>Обновление файла содержимого
+### <a name="update-a-content-file"></a>Обновление файла содержимого
 Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
 
 1. Найдите файл `./Views/Home/Index.cshtml` и внесите изменения в HTML. Например, измените строку 70 `<h2>Application uses</h2>` строкой примерно такого содержания: `<h2>Hello k8s in Azure!</h2>`
@@ -64,7 +68,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 Что произошло? Изменения файлов содержимого, таких как HTML и CSS, не требуют перекомпиляции в веб-приложении .NET Core, поэтому активная команда `azds up` автоматически синхронизирует любые измененные файлы содержимого в запущенный контейнер в Azure, чтобы можно было сразу же видеть изменения содержимого.
 
-## <a name="update-a-code-file"></a>Обновление файла кода
+### <a name="update-a-code-file"></a>Обновление файла кода
 Для обновления файлов кода требуется немного больше работы, так как приложение .NET Core должно перестроить и создать обновленные двоичные файлы приложений.
 
 1. В окне терминала нажмите клавишу `Ctrl+C` (чтобы остановить `azds up`).
@@ -152,23 +156,25 @@ public IActionResult About()
     {
         ViewData["Message"] = "Hello from webfrontend";
         
-        // Use HeaderPropagatingHttpClient instead of HttpClient so we can propagate
-        // headers in the incoming request to any outgoing requests
-        using (var client = new HeaderPropagatingHttpClient(this.Request))
-        {
-            // Call *mywebapi*, and display its response in the page
-            var response = await client.GetAsync("http://mywebapi/api/values/1");
-            ViewData["Message"] += " and " + await response.Content.ReadAsStringAsync();
-        }
+        using (var client = new System.Net.Http.HttpClient())
+            {
+                // Call *mywebapi*, and display its response in the page
+                var request = new System.Net.Http.HttpRequestMessage();
+                request.RequestUri = new Uri("http://mywebapi/api/values/1");
+                if (this.Request.Headers.ContainsKey("azds-route-as"))
+                {
+                    // Propagate the dev space routing header
+                    request.Headers.Add("azds-route-as", this.Request.Headers["azds-route-as"] as IEnumerable<string>);
+                }
+                var response = await client.SendAsync(request);
+                ViewData["Message"] += " and " + await response.Content.ReadAsStringAsync();
+            }
 
         return View();
     }
     ```
 
-Обратите внимание на то, как используется обнаружение службы DNS Kubernetes для обращения к службе в качестве `http://mywebapi`. **Код в вашей среде разработки выполняется так же, как он будет выполняться в рабочей среде**.
-
-В приведенном выше примере кода также используется класс `HeaderPropagatingHttpClient`. Этот вспомогательный класс был добавлен в папку кода при выполнении `azds prep`. `HeaderPropagatingHttpClient` получен из известного класса `HttpClient` и добавляет функции для распространения определенных заголовков из существующего объекта ASP.NET HttpRequest в исходящий объект HttpRequestMessage. Позже вы увидите, как использование этого производного класса повышает эффективность разработки в сценариях командной работы.
-
+В предыдущем примере код перенаправляет заголовок `azds-route-as` из входящего запроса в исходящий. Позже вы увидите, как это помогает повысить производительность при коллективной разработке.
 
 ### <a name="debug-across-multiple-services"></a>Отладка в нескольких службах
 1. На этом этапе служба `mywebapi` по-прежнему должна выполняться с подключенным отладчиком. Если это не так, нажмите клавишу F5 в проекте `mywebapi`.

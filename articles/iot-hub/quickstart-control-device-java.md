@@ -1,23 +1,21 @@
 ---
 title: Краткое руководство по управлению устройством из Центра Интернета вещей (Java) | Документация Майкрософт
 description: 'В этом кратком руководстве описано, как запустить два примера приложений Java: внутреннее приложение, которое может удаленно управлять подключенными к центру устройствами, и приложение, которое имитирует подключенное к центру устройство, которым можно управлять удаленно.'
-services: iot-hub
 author: dominicbetts
 manager: timlt
-editor: ''
 ms.service: iot-hub
+services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
 ms.date: 04/30/2018
 ms.author: dobett
-ms.openlocfilehash: 6dcbf954fdfd6f5b6f65b54edf33e9da234c7d0f
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 5025eeda46f36982266a0bc3357b3d1e9249884a
+ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34808212"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-java"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)
 
@@ -99,7 +97,7 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства в Центре Интернета вещей, отправляет имитированные данные телеметрии и ожидает передачи данных при вызове прямого метода из центра. В рамках этого краткого руководства вызов прямого метода из центра инициирует изменение интервала, с которым устройство отправляет данные телеметрии. После выполнения прямого метода имитированное устройство отправляет подтверждение в центр.
 
-1. В окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите к папке **Quickstarts\simulated-device-2**.
+1. В окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device-2**.
 
 1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/SimulatedDevice.java** в любом текстовом редакторе.
 
@@ -125,9 +123,9 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 
 Внутреннее приложение подключается к конечной точке на стороне службы в Центре Интернета вещей. Приложение выполняет вызовы прямых методов к устройству через Центр Интернета вещей и ожидает подтверждений. Внутреннее приложение Центра Интернета вещей обычно работает в облаке.
 
-1. В другом окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите к папке **Quickstarts\back-end-application**.
+1. В другом окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\back-end-application**.
 
-1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/ReadDeviceToCloudMessages.java** в любом текстовом редакторе.
+1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/BackEndApplication.java** в любом текстовом редакторе.
 
     Замените значение переменной `iotHubConnectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **BackEndApplication.java**.
 
@@ -164,4 +162,4 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 Чтобы узнать, как маршрутизировать сообщения с устройства в облако в разные расположения в облаке, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Маршрутизация сообщений с помощью Центра Интернета вещей (Java)](iot-hub-java-java-process-d2c.md)
+> [Маршрутизация сообщений с помощью Центра Интернета вещей (Java)](tutorial-routing.md)

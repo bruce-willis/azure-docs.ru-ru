@@ -1,23 +1,21 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (C#) | Документация Майкрософт
 description: В этом кратком руководстве выполняется два примера приложений C# по отправке имитированной телеметрии в Центр Интернета вещей и чтению телеметрии из Центра Интернета вещей для обработки в облаке.
-services: iot-hub
 author: dominicbetts
 manager: timlt
-editor: ''
 ms.service: iot-hub
+services: iot-hub
 ms.devlang: csharp
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
 ms.date: 04/30/2018
 ms.author: dobett
-ms.openlocfilehash: 560ad6049391be1b9618f41a35f46510329a16e7
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3fe783f8b5a7955ebe117df02edcdc6aafeff4f8
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34636857"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (C#)
 
@@ -57,13 +55,15 @@ dotnet --version
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
-    az iot hub device-identity create --hub-name {YourIoTHubName}--device-id MyDotnetDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyDotnetDevice
     ```
+
+    Если вы выбрали другое имя для устройства, обновите имя устройства в примерах приложений перед их запуском.
 
 1. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyJavaDevice --output table
+    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDotnetDevice --output table
     ```
 
     Запишите строку подключения устройства, которая выглядит как `Hostname=...=`. Это значение понадобится позже в рамках этого краткого руководства.
@@ -84,7 +84,7 @@ dotnet --version
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства Центра Интернета вещей и отправляет имитированную телеметрию температуры и влажности.
 
-1. В окне терминала перейдите в корневую папку примера проекта C#. Затем перейдите к папке **Quickstarts\simulated-device**.
+1. В окне терминала перейдите в корневую папку примера проекта C#. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device**.
 
 1. Откройте файл **SimulatedDevice.cs** в любом текстовом редакторе.
 
@@ -110,7 +110,7 @@ dotnet --version
 
 Внутреннее приложение подключается к конечной точке на стороне службы **События** в Центре Интернета вещей. Приложение получает сообщения с устройства в облако, отправленные с имитированного устройства. Внутреннее приложение Центра Интернета вещей обычно запускается в облаке, чтобы получать сообщения с устройства в облако и обрабатывать их.
 
-1. В другом окне терминала перейдите в корневую папку примера проекта C#. Перейдите к папке **Quickstarts\read-d2c-messages**.
+1. В другом окне терминала перейдите в корневую папку примера проекта C#. Затем перейдите в папку **iot-hub\Quickstarts\read-d2c-messages**.
 
 1. Откройте файл **ReadDeviceToCloudMessages.cs** в любом текстовом редакторе.
 
@@ -149,4 +149,4 @@ dotnet --version
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (.NET)](quickstart-control-device-dotnet.md)
+> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-dotnet.md)
