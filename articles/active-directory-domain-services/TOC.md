@@ -27,7 +27,7 @@
 ### [Виртуальная машина Windows Server на основе шаблона](active-directory-ds-join-windows-vm-template.md)
 ### [CentOS](active-directory-ds-join-centos-linux-vm.md)
 ### [CoreOS](active-directory-ds-join-coreos-linux-vm.md)
-### [RedHat Enterprise Linux](active-directory-ds-join-rhel-linux-vm.md)
+### [Подготовка виртуальной машины на основе Red Hat для Azure](active-directory-ds-join-rhel-linux-vm.md)
 ### [Сервер Ubuntu](active-directory-ds-join-ubuntu-linux-vm.md)
 ## Администрирование управляемого домена
 ### [Администрирование управляемого домена](active-directory-ds-admin-guide-administer-domain.md)

@@ -1,4 +1,4 @@
-# [Принципы работы Azure IoT](../iot-fundamentals/index.yml)
+# [Принципы работы Azure IoT](/azure/iot-fundamentals)
 # [Документация по Центру Интернета вещей](index.yml)
 
 # Обзор
@@ -84,10 +84,10 @@
 ### [Использование IoTHubClient](iot-hub-device-sdk-c-iothubclient.md)
 ### [Использование сериализатора](iot-hub-device-sdk-c-serializer.md)
 
-## [Все аспекты безопасности](iot-hub-security-ground-up.md)
-## [Рекомендации по обеспечению безопасности](iot-hub-security-best-practices.md)
-## [Архитектура безопасности](iot-hub-security-architecture.md)
-## [Защита развертывания Интернета вещей](iot-hub-security-deployment.md)
+## [Все аспекты безопасности](/azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-hub/rc/rc)
+## [Рекомендации по обеспечению безопасности](/azure/iot-fundamentals/iot-security-best-practices?context=azure/iot-hub/rc/rc)
+## [Архитектура безопасности](/azure/iot-fundamentals/iot-security-architecture?context=azure/iot-hub/rc/rc)
+## [Защита развертывания Интернета вещей](/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-hub/rc/rc)
 ## Защита с помощью сертификатов X.509 ЦС
 ### [Общие сведения о безопасности, обеспечиваемой сертификатами X.509 ЦС](iot-hub-x509ca-overview.md)
 #### [Понятия безопасности в контексте сертификатов X.509 ЦС](iot-hub-x509ca-concept.md)
@@ -206,7 +206,7 @@
 ### [Перенос в параметры диагностики](iot-hub-migrate-to-diagnostics-settings.md)
 ### [Мониторинг операций](iot-hub-operations-monitoring.md)
 ## Использование реальных устройств
-### [Начало работы](iot-hub-get-started.md)
+### [Приступите к работе](iot-hub-get-started.md)
 ### [Использование онлайн-симулятора](iot-hub-raspberry-pi-web-simulator-get-started.md)
 ### [Использование физического устройства](iot-hub-get-started-physical.md)
 #### [Raspberry Pi с Python](iot-hub-raspberry-pi-kit-python-get-started.md)

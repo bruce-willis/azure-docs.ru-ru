@@ -17,6 +17,7 @@
 ### [Разделы шаблона](resource-group-authoring-templates.md)
 #### [Параметры](resource-manager-templates-parameters.md)
 #### [Переменные](resource-manager-templates-variables.md)
+#### [Функции](resource-group-authoring-templates.md#functions)
 #### [Ресурсы](resource-manager-templates-resources.md)
 #### [Outputs](resource-manager-templates-outputs.md)
 ### [Связанные и вложенные шаблоны](resource-group-linked-templates.md)

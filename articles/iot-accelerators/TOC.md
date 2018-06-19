@@ -1,4 +1,4 @@
-# [Принципы работы Azure IoT](../iot-fundamentals/index.yml)
+# [Принципы работы Azure IoT](/azure/iot-fundamentals)
 # [Документация по акселераторам решений Интернета вещей](index.md)
 
 # Обзор
@@ -94,10 +94,10 @@
 # Справочные материалы
 ## [Справочник разработчика](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide)
 ## [Руководство по устранению неполадок для разработчиков](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide)
-## [Архитектура безопасности](iot-security-architecture.md)
-## [Рекомендации по обеспечению безопасности](iot-security-best-practices.md)
-## [Защита развертывания Интернета вещей](iot-accelerators-security-deployment.md)
-## [Все аспекты безопасности](securing-iot-ground-up.md)
+## [Все аспекты безопасности](/azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-accelerators/rc/rc)
+## [Рекомендации по обеспечению безопасности](/azure/iot-fundamentals/iot-security-best-practices?context=azure/iot-accelerators/rc/rc)
+## [Архитектура безопасности](/azure/iot-fundamentals/iot-security-architecture?context=azure/iot-accelerators/rc/rc)
+## [Защита развертывания Интернета вещей](/azure/iot-fundamentals/iot-security-deployment?context=azure/iot-accelerators/rc/rc)
 
 # Сопутствующие материалы
 ## Решения 

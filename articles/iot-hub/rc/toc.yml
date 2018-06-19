@@ -1,0 +1,11 @@
+- name: Таблицы Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Интернет вещей
+      tocHref: /azure/iot-fundamentals/
+      topicHref: /azure/iot-fundamentals/
+      items:
+        - name: Центр Интернета вещей
+          tocHref: /azure/iot-fundamentals/
+          topicHref: /azure/iot-hub/
