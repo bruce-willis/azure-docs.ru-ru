@@ -54,7 +54,7 @@
           href: stream-analytics-login-credentials-inputs-outputs.md
         - name: Настройка оповещений
           href: stream-analytics-set-up-alerts.md
-        - name: Тестирование задания
+        - name: Проверка задания
           href: stream-analytics-test-query.md
         - name: Просмотр результатов на панели мониторинга
           href: stream-analytics-power-bi-dashboard.md

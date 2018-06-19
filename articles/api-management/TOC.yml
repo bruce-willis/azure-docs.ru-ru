@@ -97,6 +97,8 @@
           href: api-management-howto-integrate-internal-vnet-appgateway.md
         - name: Взаимная проверка подлинности на основе сертификата
           href: api-management-howto-mutual-certificates.md
+        - name: Управление протоколами и шифрами
+          href: api-management-howto-manage-protocols-ciphers.md
     - name: Настройка процесса разработки
       items:
         - name: Изменение содержимого и макета страницы

@@ -8,7 +8,7 @@
       href: iot-services-and-technologies.md
 - name: Решения
   items:
-    - name: Акселераторы решений Интернета вещей
+    - name: Акселераторы решений для Интернета вещей
       href: /azure/iot-suite
     - name: IoT Central
       href: 'https://docs.microsoft.com/microsoft-iot-central/'
@@ -30,3 +30,13 @@
       href: /azure/iot-edge
     - name: Пакеты SDK для устройств IoT
       href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+- name: Безопасность
+  items:
+    - name: Архитектура безопасности
+      href: iot-security-architecture.md
+    - name: Рекомендации по обеспечению безопасности
+      href: iot-security-best-practices.md
+    - name: Безопасное развертывание
+      href: iot-security-deployment.md
+    - name: Все аспекты безопасности
+      href: iot-security-ground-up.md

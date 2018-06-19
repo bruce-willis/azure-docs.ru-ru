@@ -1,5 +1,5 @@
-- name: Обзор возможностей для управления доступом
-  href: manage-access-to-azure-resources.md
+- name: Документация по управлению доступом на основе ролей
+  href: index.yml
   items: null
 - name: Обзор
   items:
@@ -36,6 +36,7 @@
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
 - name: Практические руководства
+  expanded: true
   items:
     - name: Управление доступом
       items:

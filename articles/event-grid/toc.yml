@@ -69,6 +69,8 @@
       href: post-to-custom-topic.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
+    - name: Управление доставкой событий
+      href: manage-event-delivery.md
     - name: Мониторинг доставки событий
       href: monitor-event-delivery.md
     - name: Обращение к подпискам на события

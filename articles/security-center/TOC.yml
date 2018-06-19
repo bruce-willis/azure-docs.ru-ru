@@ -53,7 +53,7 @@
     - name: Отслеживание состояния системы безопасности
       href: security-center-monitoring.md
       items:
-        - name: Защита вычислений
+        - name: Безопасность вычислений и приложений
           href: security-center-virtual-machine-recommendations.md
           items:
             - name: Применение шифрования дисков
@@ -74,6 +74,10 @@
               href: security-center-update-os-version.md
             - name: Решение для оценки уязвимостей не установлено
               href: security-center-vulnerability-assessment-recommendations.md
+            - name: Добавление брандмауэра веб-приложения
+              href: security-center-add-web-application-firewall.md
+            - name: Завершение подготовки защиты приложений
+              href: 'security-center-add-web-application-firewall.md#finalize-application-protection'
         - name: Безопасность сети
           href: security-center-network-recommendations.md
           items:
@@ -94,13 +98,6 @@
               href: security-center-enable-auditing-on-sql-servers.md
             - name: Включение прозрачного шифрования данных
               href: security-center-enable-transparent-data-encryption.md
-        - name: Безопасность приложения
-          href: security-center-application-recommendations.md
-          items:
-            - name: Добавление брандмауэра веб-приложения
-              href: security-center-add-web-application-firewall.md
-            - name: Завершение подготовки защиты приложений
-              href: 'security-center-add-web-application-firewall.md#finalize-application-protection'
         - name: Удостоверение и доступ
           href: security-center-identity-access.md
     - name: Применение средств защиты в облаке

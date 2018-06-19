@@ -16,6 +16,8 @@
   items:
     - name: Добавление Azure CDN в веб-приложение
       href: cdn-add-to-web-app.md
+    - name: Доступ к BLOB-объектам с использованием личного домена и протокола HTTPS
+      href: cdn-storage-custom-domain-https.md
     - name: Добавление личного домена
       href: cdn-map-content-to-custom-domain.md
     - name: Настройка HTTPS в личном домене

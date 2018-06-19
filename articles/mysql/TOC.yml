@@ -184,7 +184,19 @@
     - name: Переполнение стека
       href: 'http://stackoverflow.com/questions/tagged/azure-database-mysql'
     - name: Видеоролики
-      href: videos.md
+      items:
+        - name: Видеоролики о продукте
+          href: videos.md
+        - name: Серия видеоинструкций
+          items:
+            - name: Возможности и преимущества продукта
+              href: 'https://aka.ms/mysql-intro-vid'
+            - name: Перенос приложения MySQL в Azure
+              href: 'https://aka.ms/mysql-migrate-vid'
+            - name: Создание и развертывание веб-приложений
+              href: 'https://aka.ms/mysql-webapps-vid'
+            - name: Подключение контейнеров с помощью OSBA
+              href: 'https://aka.ms/mysql-osba-vid'
     - name: Запрос функции
       href: 'https://feedback.azure.com/forums/597982-azure-database-for-mysql'
     - name: Регионы доступности

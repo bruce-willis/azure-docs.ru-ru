@@ -122,7 +122,6 @@
 ### Справочные материалы
 #### [Сохранение](active-directory-reporting-retention.md)
 #### [Задержки](active-directory-reporting-latencies-azure-portal.md)
-#### [Уведомления](active-directory-reporting-notifications.md)
 #### [Справочные материалы по действиям аудита](active-directory-reporting-activity-audit-reference.md)
 #### [Коды ошибок входа в систему](active-directory-reporting-activity-sign-ins-errors.md)
 #### [Многофакторная проверка подлинности](active-directory-reporting-activity-sign-ins-mfa.md)
@@ -152,6 +151,12 @@
 ### [Настройка SSPR](authentication/concept-sspr-customization.md)
 ### [Требования к данным SSPR](authentication/howto-sspr-authenticationdata.md)
 ### [Отчеты SSPR](authentication/howto-sspr-reporting.md)
+### [Исключение простых паролей](authentication/concept-password-ban-bad.md)
+### [Настройка списка запрещенных паролей](authentication/howto-password-ban-bad.md)
+### [Интеграция с локальной средой](authentication/concept-password-ban-bad-on-premises.md)
+### [Развертывание защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises.md)
+### [Настройка защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises-operations.md)
+### [Мониторинг защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises-troubleshoot.md)
 ### ИТ-администрирование. Сброс паролей
 #### [портал Azure](fundamentals/active-directory-users-reset-password-azure-portal.md)
 ### [Лицензия SSPR](authentication/concept-sspr-licensing.md)
@@ -178,14 +183,14 @@
 ## Управление приложениями
 ### [Обзор](manage-apps/what-is-application-management.md)
 ### [Приступая к работе](manage-apps/plan-an-application-integration.md)
-### [Руководства по интеграции приложений SaaS](active-directory-saas-tutorial-list.md)
+### [Руководства по интеграции приложений SaaS](saas-apps/tutorial-list.md)
 ### [Обнаружение облачных приложений](manage-apps/cloud-app-discovery.md)
 #### [Создание отчетов о моментальных снимках](manage-apps/cloud-app-discovery-create-snapshot-reports.md)
 #### [Настройка непрерывного создания отчетов](https://docs.microsoft.com/cloud-app-security/discovery-docker)
 #### [Использование настраиваемого средства синтаксического анализа журналов](https://docs.microsoft.com/cloud-app-security/custom-log-parser)
 
 ### [Подготовка пользователей и отзыв подготовки для приложений SaaS](active-directory-saas-app-provisioning.md) 
-#### [Руководства по интеграции приложений](active-directory-saas-tutorial-list.md) 
+#### [Руководства по интеграции приложений](saas-apps/tutorial-list.md) 
 #### [Автоматизация подготовки для приложений с поддержкой SCIM](manage-apps/use-scim-to-provision-users-and-groups.md) 
 #### [Настройка сопоставлений атрибутов](active-directory-saas-customizing-attribute-mappings.md) 
 #### [Запись выражений для сопоставления атрибутов в Azure Active Directory](active-directory-saas-writing-expressions-for-attribute-mappings.md) 
