@@ -290,6 +290,13 @@
           href: logic-apps-enterprise-integration-b2b.md
 - name: Справочные материалы
   items:
+    - name: Шаблоны архитектуры
+      href: logic-apps-architectures-simple-enterprise-integration.md
+      items:
+        - name: Простая корпоративная интеграция
+          href: logic-apps-architectures-simple-enterprise-integration.md
+        - name: Корпоративная интеграция с использованием очередей и событий
+          href: logic-apps-architectures-enterprise-integration-with-queues-events.md
     - name: 'Соединители: подробные сведения'
       href: 'https://docs.microsoft.com/connectors/'
     - name: Ограничения и конфигурация

@@ -1,0 +1,26 @@
+- name: Документация по виртуальным машинам
+  href: index.md
+- name: Виртуальные машины Linux в Azure
+  href: linux/overview.md
+- name: Виртуальные машины Windows в Azure
+  href: windows/overview.md
+- name: Документация по расширениям виртуальных машин
+  href: extensions/overview.md
+- name: Рабочие нагрузки
+  items:
+    - name: Oracle
+      href: workloads/oracle/oracle-considerations.md
+    - name: SAP
+      href: workloads/sap/get-started.md
+- name: Классические развертывания
+  items:
+    - name: Виртуальные машины Linux (классическое развертывание)
+      href: linux/overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2fclassic%2ftoc.json
+    - name: Виртуальные машины Windows (классическое развертывание)
+      href: windows/overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=compute'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'

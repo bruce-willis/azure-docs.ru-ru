@@ -18,6 +18,7 @@
 ### [Установка новой версии](active-directory-aadconnect-upgrade-previous-version.md)
 ### [Установка с помощью существующей базы данных ADSync](active-directory-aadconnect-existing-database.md)
 ### [Установка с помощью разрешений делегированного администратора SQL](active-directory-aadconnect-sql-delegation.md)
+### [Перемещение базы данных Azure AD Connect на удаленный экземпляр SQL Server](active-directory-aadconnect-move-db.md)
 
 # Практическое руководство
 ## Планирование и проектирование

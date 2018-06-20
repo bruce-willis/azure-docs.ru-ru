@@ -184,6 +184,8 @@
 ### [Обзор](manage-apps/what-is-application-management.md)
 ### [Приступая к работе](manage-apps/plan-an-application-integration.md)
 ### [Руководства по интеграции приложений SaaS](saas-apps/tutorial-list.md)
+
+
 ### [Обнаружение облачных приложений](manage-apps/cloud-app-discovery.md)
 #### [Создание отчетов о моментальных снимках](manage-apps/cloud-app-discovery-create-snapshot-reports.md)
 #### [Настройка непрерывного создания отчетов](https://docs.microsoft.com/cloud-app-security/discovery-docker)
@@ -255,27 +257,110 @@
 #### [Ограничения клиента](manage-apps/tenant-restrictions.md)
 #### [Использование SCIM подготовки пользователей](manage-apps/use-scim-to-provision-users-and-groups.md)
 
-### [Устранение неполадок](active-directory-application-troubleshoot-content-map.md)
-#### [Разработка приложений](active-directory-application-dev-troubleshoot-content-map.md)
-##### [Настройка и регистрация](active-directory-application-dev-config-content-map.md)
-##### [Разработка](active-directory-application-dev-development-content-map.md)
-#### [Управление приложениями](active-directory-application-management-troubleshoot-content-map.md)
-##### [Конфигурация](active-directory-application-config-content-map.md)
-##### [Вход](active-directory-application-sign-in-content-map.md)
-##### [Подготовка](active-directory-application-provisioning-content-map.md)
 
-###### [Проверка подготовки пользователя](application-provisioning-when-will-provisioning-finish-specific-user.md) 
-###### [Подготовка выполняется слишком долго](application-provisioning-when-will-provisioning-finish.md) 
-###### [Как настроить подготовку пользователей](application-provisioning-config-how-to.md) 
-###### [Проблемы с подготовкой пользователей](application-provisioning-config-problem.md) 
-###### [Проблема с сохранением учетных данных администратора](application-provisioning-config-problem-storage-limit.md) 
-###### [Подготовка пользователей не выполняется](application-provisioning-config-problem-no-users-provisioned.md) 
-###### [Выполняется подготовка ненадлежащих пользователей](application-provisioning-config-problem-wrong-users-provisioned.md) 
+### Устранение неполадок
 
-##### [Управление доступом](active-directory-application-access-content-map.md)
-##### [Панель доступа](active-directory-application-access-panel-content-map.md)
-##### [Прокси приложения](active-directory-application-proxy-content-map.md)
-##### [Условный доступ](active-directory-application-conditional-access-content-map.md)
+
+
+#### Панель доступа
+##### [Приложение не отображается](application-access-panel-unexpected-application-not-appearing.md)
+##### [Непредусмотренное отображение приложения](application-access-panel-unexpected-application-appears.md)
+##### [Не удается войти](application-access-panel-web-sign-in-problem.md)
+##### [Ошибка при установке расширения браузера](application-access-panel-extension-problem-installing.md)
+##### [Использование самостоятельного доступа к приложению](application-access-panel-self-service-applications-how-to.md)
+##### [Ошибка при использовании самостоятельного доступа к приложению](application-access-panel-self-service-applications-problem.md)
+
+#### Добавление приложения
+##### [Выбор типа приложения](application-config-add-app-problem-how-to-choose-application-type.md)
+##### [Распространенные проблемы — приложения из коллекции](application-config-add-app-problem-problem-adding-gallery-app.md)
+##### [Распространенные проблемы — приложения не из коллекции](application-config-add-app-problem-problem-adding-non-gallery-app.md)
+
+#### Прокси приложения
+##### [Проблемы при отображении страницы приложения](application-proxy-page-appearance-broken-problem.md)
+##### [Слишком долгая загрузка приложения](application-proxy-page-load-speed-problem.md)
+##### [Ссылки на странице приложения не работают](application-proxy-page-links-broken-problem.md)
+##### [Порты, которые необходимо открыть для приложения](application-proxy-connectivity-ports-how-to.md)
+##### [Не удается найти рабочий соединитель в группе соединителей для приложения](application-proxy-connectivity-no-working-connector.md)
+##### [Настройка на портале администрирования](application-proxy-config-how-to.md)
+##### [Настройка единого входа в приложение](application-proxy-config-sso-how-to.md)
+##### [Проблема при создании приложения на портале администрирования](application-proxy-config-problem.md)
+##### [Настройка ограниченного делегирования Kerberos](application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
+##### [Настройка для использования PingAccess](application-proxy-back-end-ping-access-how-to.md)
+##### [Ошибка "Can't Access this Corporate Application" (Нет доступа к этому корпоративному приложению)](application-proxy-sign-in-bad-gateway-timeout-error.md)
+##### [Проблема при установке соединителя агента Application Proxy](application-proxy-connector-installation-problem.md)
+
+
+#### Регистрация приложения
+##### [Заполнение полей для объекта приложения](application-dev-registration-config-specific-application-property-how-to.md)
+##### [Изменение значений по умолчанию для времени существования маркера](application-dev-registration-config-change-token-lifetime-how-to.md)
+
+#### Authentication
+##### [Настройка конечных точек](application-dev-registration-config-how-to.md)
+
+#### условный доступ;
+##### [Клиент не соответствует предварительным требованиям для регистрации устройства](active-directory-conditional-access.md)
+##### [Клиент блокируется из-за неправильной настройки политик условного доступа](active-directory-conditional-access-device-remediation.md)
+##### [Как и когда перестают действовать правила корпоративной сети?](https://aka.ms/calocation)
+##### [Как увеличить количество устройств, которые пользователь может зарегистрироваться в Azure AD?](active-directory-azureadjoin-setup.md)
+##### [Как настроить политику условного доступа для Exchange Online?](https://aka.ms/csforexchange)
+##### [Как настроить условный доступ для устройств Windows 7?](active-directory-conditional-access.md#device-based-conditional-access)
+##### [Какие приложения поддерживают условный доступ?](active-directory-conditional-access-supported-apps.md)
+
+#### Поиск API
+##### [Поиск API](application-dev-api-find-an-api-how-to.md)
+
+#### Управление доступом
+##### [Назначение приложения пользователям и группам](application-access-assignment-how-to-add-assignment.md)
+##### [Запрет доступа пользователей к приложению](application-access-assignment-how-to-remove-assignment.md)
+##### [Настройка самостоятельного назначения приложения](application-access-self-service-how-to.md)
+##### [Непредусмотренное назначение пользователю](application-access-unexpected-user-assignment.md)
+##### [Непредусмотренное приложение в списке приложений](application-access-unexpected-application.md)
+
+#### Мультитенантные приложения
+##### [Настройка нового приложения](application-dev-setup-multi-tenant-app.md)
+##### [Добавление приложения в коллекцию](application-dev-registration-config-multi-tenant-application-add-to-gallery-how-to.md)
+
+#### Разрешения
+##### [Выбор разрешений для API](application-dev-perms-for-given-api.md)
+##### [Предоставление разрешений приложению](application-dev-registration-config-grant-permissions-how-to.md)
+##### [Делегированные разрешения и разрешения, предоставляемые приложениям](application-dev-delegated-and-app-perms.md)
+##### [Согласие для приложения](application-dev-consent-framework.md)
+
+#### Подготовка
+##### [Сколько времени это занимает](application-provisioning-when-will-provisioning-finish-specific-user.md)
+##### [Подготовка в течение нескольких часов для приложения из коллекции](application-provisioning-when-will-provisioning-finish.md)
+##### [Настройка подготовки пользователей для приложения из коллекции](application-provisioning-config-how-to.md)
+##### [Проблема при настройке подготовки пользователей для приложения из коллекции](application-provisioning-config-problem.md)
+##### [Проблема при сохранении учетных данных администратора во время настройки подготовки пользователей для приложения из коллекции](application-provisioning-config-problem-storage-limit.md)
+##### [Не удается подготовить пользователей для приложения из коллекции](application-provisioning-config-problem-no-users-provisioned.md)
+##### [Для приложения из коллекции подготовлены не те пользователи](application-provisioning-config-problem-wrong-users-provisioned.md)
+
+#### Единый вход
+##### [Выбор метода](application-config-sso-how-to-choose-sign-on-method.md)
+##### [Настройка](application-dev-registration-config-sso-how-to.md)
+##### [Настройка федеративного единого входа в приложения из коллекции](application-config-sso-how-to-configure-federated-sso-gallery.md)
+##### [Настройка федеративного единого входа в приложения из коллекции. Распространенные проблемы](application-config-sso-problem-configure-federated-sso-gallery.md)
+##### [Настройка федеративного единого входа в приложения не из коллекции](application-config-sso-how-to-configure-federated-sso-non-gallery.md)
+##### [Настройка федеративного единого входа в приложения не из коллекции. Распространенные проблемы](application-config-sso-problem-configure-federated-sso-non-gallery.md)
+##### [Настройка входа по паролю для приложений из коллекции](application-config-sso-how-to-configure-password-sso-gallery.md)
+##### [Настройка входа по паролю для приложений из коллекции. Распространенные проблемы](application-config-sso-problem-configure-password-sso-gallery.md)
+##### [Настройка входа по паролю для приложений не из коллекции](application-config-sso-how-to-configure-password-sso-non-gallery.md)
+##### [Настройка входа по паролю для приложений не из коллекции. Распространенные проблемы](application-config-sso-problem-configure-password-sso-non-gallery.md)
+
+#### Проблемы при входе пользователей
+##### [Непредусмотренный запрос на продолжение](application-sign-in-unexpected-user-consent-prompt.md)
+##### [Ошибка при предоставлении согласия пользователем](application-sign-in-unexpected-user-consent-error.md)
+##### [Проблемы при входе с пользовательского портала](application-sign-in-other-problem-deeplink.md)
+##### [Проблемы при входе с панели доступа](application-sign-in-other-problem-access-panel.md)
+##### [Ошибка на странице входа в приложение](application-sign-in-problem-application-error.md)
+##### [Проблема при едином входе с помощью пароля — приложение не из коллекции](application-sign-in-problem-password-sso-non-gallery.md)
+##### [Проблема при едином входе с помощью пароля — приложение из коллекции](application-sign-in-problem-password-sso-gallery.md)
+##### [Проблема при входе в приложение Майкрософт](application-sign-in-problem-first-party-microsoft.md)
+##### [Проблема при федеративном едином входе в приложение не из коллекции](application-sign-in-problem-federated-sso-non-gallery.md)
+##### [Проблема при федеративном едином входе в приложение из коллекции](application-sign-in-problem-federated-sso-gallery.md)
+##### [Проблемы со специально разработанным приложением](application-sign-in-problem-custom-dev.md)
+##### [Проблема с локальным приложением — Application Proxy](application-sign-in-problem-on-premises-application-proxy.md)
+
 ### [Разработка приложений](active-directory-applications-guiding-developers-for-lob-applications.md)
 ### [Библиотека документов](active-directory-apps-index.md)
 
