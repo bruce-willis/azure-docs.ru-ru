@@ -12,13 +12,14 @@ ms.devlang: other
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 4/30/2018
+ms.date: 6/10/2018
 ms.author: subramar
-ms.openlocfilehash: 2d98cff1a5869091aa81097bbb34da6e525a2ad5
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: d6195eda43dfd6ad249e82dabd0b314fc162b8c6
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35301088"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
 Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы файлов Azure для других контейнерных приложений Service Fabric, развернутых в кластере.
@@ -30,6 +31,8 @@ ms.lasthandoff: 05/16/2018
 ## <a name="prerequisites"></a>предварительным требованиям
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий. Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
 
+* Подключаемый модуль тома службы файлов Azure работает с Service Fabric версии 6.2 и новее.
+
 * Следуйте инструкциям в [документации по службе файлов Azure](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
 
 * Вам потребуется установить [PowerShell с модулем Service Fabric](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cli).
@@ -38,9 +41,9 @@ ms.lasthandoff: 05/16/2018
 
 Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с помощью этой [ссылки](https://aka.ms/sfvolume). Это приложение можно развернуть в кластере с помощью [PowerShell](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-deploy-remove-applications), [интерфейса командной строки](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-application-lifecycle-sfctl) или [интерфейсов API FabricClient](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-deploy-remove-applications-fabricclient).
 
-1. С помощью командной строки перейдите в корневой каталог скачанного пакета приложения. 
+1. С помощью командной строки перейдите в корневой каталог скачанного пакета приложения.
 
-    ```powershell 
+    ```powershell
     cd .\AzureFilesVolume\
     ```
 
@@ -81,7 +84,7 @@ ms.lasthandoff: 05/16/2018
 
 > [!NOTE]
 
-> Windows Server 2016 Datacenter не поддерживает сопоставление подключений SMB с контейнерами ([поддерживается только в Windows Server версии 1709](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-storage)). Это ограничение предотвращает сопоставление сетевых томов и использование драйверов томов службы файлов Azure в версиях, предшествующих версии 1709. 
+> Windows Server 2016 Datacenter не поддерживает сопоставление подключений SMB с контейнерами ([поддерживается только в Windows Server версии 1709](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/container-storage)). Это ограничение предотвращает сопоставление сетевых томов и использование драйверов томов службы файлов Azure в версиях, предшествующих версии 1709.
 >   
 
 ### <a name="deploy-the-application-on-a-local-development-cluster"></a>Развертывание приложения в локальном кластере разработки
@@ -109,7 +112,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
     <ServiceManifestImport>
         <ServiceManifestRef ServiceManifestName="NodeServicePackage" ServiceManifestVersion="1.0"/>
      <Policies>
-       <ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="hyperv"> 
+       <ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="hyperv">
             <PortBinding ContainerPort="8905" EndpointRef="Endpoint1"/>
             <RepositoryCredentials PasswordEncrypted="false" Password="****" AccountName="test"/>
             <Volume Source="azfiles" Destination="c:\VolumeTest\Data" Driver="sfazurefile">
@@ -130,9 +133,9 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 
 Имя драйвера для подключаемого модуля тома службы файлов Azure — **sfazurefile**. Это значение устанавливается для атрибута **Driver** элемента **Volume** в манифесте приложения.
 
-В элементе **Volume** в приведенном выше фрагменте кода для подключаемого модуля тома службы файлов Azure требуются следующие теги. 
-- **Source**. Указывает исходную папку, которой может быть папка на виртуальной машине, в которой размещаются контейнеры, или постоянное удаленное хранилище.
-- **Destination**. Этот тег указывает расположение, к которому подключается исходная папка (**Source**) в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
+В элементе **Volume** в приведенном выше фрагменте кода для подключаемого модуля тома службы файлов Azure требуются следующие теги:
+- **Source**. Это имя тома. Для тома можно выбрать любое имя.
+- **Destination**. Этот тег указывает расположение, к которому подключается том в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
 
 Как показано в элементах **DriverOption** в приведенном выше фрагменте кода, подключаемый модуль тома службы файлов Azure поддерживает следующие параметры драйвера.
 
@@ -140,10 +143,10 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 - **storageAccountName**. Имя учетной записи хранения Azure, которая содержит файловый ресурс службы файлов Azure.
 - **storageAccountKey**. Ключ доступа учетной записи хранения Azure, которая содержит файловый ресурс службы файлов Azure.
 
-Все перечисленные выше параметры драйвера являются обязательными. 
+Все перечисленные выше параметры драйвера являются обязательными.
 
 ## <a name="using-your-own-volume-or-logging-driver"></a>Использование драйвера собственного тома или ведения журнала
-Service Fabric также дает возможность использовать драйверы собственных пользовательских томов или ведения журнала. Если в кластере не установлен драйвер тома или ведения журнала Docker, его можно установить вручную с помощью протоколов RDP и SSH. Используя эти протоколы, можно выполнить установку с помощью [скрипта запуска масштабируемого набора виртуальных машин](https://azure.microsoft.com/resources/templates/201-vmss-custom-script-windows/) или [скрипта SetupEntryPoint](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model#describe-a-service).
+Service Fabric дает возможность использовать драйверы пользовательских [томов](https://docs.docker.com/engine/extend/plugins_volume/) и драйверы [ведения журналов](https://docs.docker.com/engine/admin/logging/overview/). Если в кластере не установлен драйвер тома или ведения журнала Docker, его можно установить вручную с помощью протоколов RDP и SSH. Используя эти протоколы, можно выполнить установку с помощью [скрипта запуска масштабируемого набора виртуальных машин](https://azure.microsoft.com/resources/templates/201-vmss-custom-script-windows/) или [скрипта SetupEntryPoint](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model#describe-a-service).
 
 Пример скрипта установки [драйвера тома Docker для Azure](https://docs.docker.com/docker-for-azure/persistent-data-volumes/):
 
@@ -155,10 +158,10 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
     DEBUG=1
 ```
 
-Чтобы использовать установленный драйвер тома или ведения журнала в своих приложениях, потребуется указать соответствующие значения в элементах **Volume** и **LogConfig** в разделе  **ContainerHostPolicies** в манифесте приложения. 
+Чтобы использовать установленный драйвер тома или ведения журнала в своих приложениях, потребуется указать соответствующие значения в элементах **Volume** и **LogConfig** в разделе  **ContainerHostPolicies** в манифесте приложения.
 
 ```xml
-<ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="hyperv"> 
+<ContainerHostPolicies CodePackageRef="NodeService.Code" Isolation="hyperv">
     <PortBinding ContainerPort="8905" EndpointRef="Endpoint1"/>
     <RepositoryCredentials PasswordEncrypted="false" Password="****" AccountName="test"/>
     <LogConfig Driver="[YOUR_LOG_DRIVER]" >
@@ -172,8 +175,18 @@ docker plugin install --alias azure --grant-all-permissions docker4x/cloudstor:1
 </ContainerHostPolicies>
 ```
 
+При указании подключаемого модуля тома Service Fabric автоматически создает том, используя заданные параметры. Тег **Source** в элементе **Volume** — это имя тома, а тег **Driver** — подключаемый модуль драйвера тома. Тег **Destination** указывает на расположение, к которому подключается исходная папка (**Source**) в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение. Параметры можно указать с помощью тега **DriverOption** следующим образом:
+
+```xml
+<Volume Source="myvolume1" Destination="c:\testmountlocation4" Driver="azure" IsReadOnly="true">
+           <DriverOption Name="share" Value="models"/>
+</Volume>
+```
+
+Параметры приложения поддерживаются для томов, как показано в предыдущем фрагменте кода манифеста (пример использования можно найти по тексту `MyStorageVar`).
+
+Если задан драйвер ведения журналов Docker, необходимо развернуть агенты (или контейнеры) для обработки журналов в кластере. Чтобы указать параметры драйвера ведения журналов можно использовать тег **DriverOption**.
+
 ## <a name="next-steps"></a>Дополнительная информация
 * Примеры контейнеров, включая драйвер тома, приведены в разделе [Примеры контейнеров Service Fabric](https://github.com/Azure-Samples/service-fabric-containers).
 * Развертывание контейнеров в кластере Service Fabric описывается в разделе [Развертывание контейнера в Service Fabric](service-fabric-deploy-container.md).
-
-

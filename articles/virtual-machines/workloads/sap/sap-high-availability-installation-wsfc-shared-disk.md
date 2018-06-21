@@ -4,7 +4,7 @@ description: Узнайте, как установить SAP NetWeaver высо�
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: goraco
-manager: timlt
+manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -17,11 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 419bbdd57a391dbbf01c2110a1609cb3d0ded003
-ms.sourcegitcommit: 732e5df390dea94c363fc99b9d781e64cb75e220
+ms.openlocfilehash: d5d52653d68c6ebfca7e35a134da263eee99fd3e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34657083"
 ---
 # <a name="install-sap-netweaver-ha-on-a-windows-failover-cluster-and-shared-disk-for-an-sap-ascsscs-instance-in-azure"></a>Установка SAP NetWeaver высокого уровня доступности в отказоустойчивом кластере Windows на общем диске для экземпляра SAP ASCS/SCS в Azure
 
@@ -374,7 +375,7 @@ _**Рис. 5.** Изменение типа службы для экземпля
 
 ## <a name="0ba4a6c1-cc37-4bcf-a8dc-025de4263772"></a> Установка дополнительного сервера приложений SAP
 
-Установите дополнительный сервер приложений SAP (AAS) на все виртуальные машины, предназначенные для размещения экземпляра сервера приложений SAP. В нашем примере это диапазон с \<SID\>-di-1 по \<SID\>-di-&lt;n&gt;.
+Установите дополнительный сервер приложений SAP (AAS) на все виртуальные машины, предназначенные для размещения экземпляра сервера приложений SAP. Например, с \<SID\>-di-1 по \<SID\>-di-&lt;n&gt;.
 
 > [!NOTE]
 > После этого установка системы SAP NetWeaver с высоким уровнем доступности будет завершена. Затем перейдите к тестированию отработки отказа.

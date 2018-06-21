@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/16/2018
 ms.author: iainfou
-ms.openlocfilehash: ec330570604494503de2fa3f5484a1e41ddf4603
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 96cc7aeb5fd1c64dc3793a801a4a5b759e7558b9
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34271966"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34652878"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -112,6 +112,9 @@ az role assignment create \
     --assignee $username \
     --scope $vm
 ```
+
+> [!NOTE]
+> Если домен AAD и домен имени пользователя для входа не совпадают, необходимо указать идентификатор объекта учетной записи пользователя, предоставив *идентификатор объекта уполномоченного*, а не только имя пользователя *уполномоченного*. Идентификатор объекта учетной записи пользователя можно получить с помощью команды [az ad user list](/cli/azure/ad/user#az-ad-user-list).
 
 Дополнительные сведения об использовании RBAC для управления доступом к ресурсам подписки Azure см. в статьях об использовании [Azure CLI 2.0](../../role-based-access-control/role-assignments-cli.md), [портала Azure](../../role-based-access-control/role-assignments-portal.md) или [Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md).
 

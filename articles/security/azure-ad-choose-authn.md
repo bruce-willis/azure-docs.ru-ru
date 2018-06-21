@@ -9,12 +9,12 @@ ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: 062b5e48cfba5de64aa11f79629e82645df87f96
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 7e2eb9bad8c95e61d5b750cacd0724fc2536f2c5
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809266"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294115"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
@@ -41,6 +41,8 @@ ms.locfileid: "34809266"
 При использовании решения для гибридной идентификации Azure AD в качестве новой плоскости управления аутентификация является основой доступа к облаку. Выбор правильного метода аутентификации является основным первым решением при настройке решения для гибридной идентификации Azure AD. Реализация метода аутентификации настраивается с помощью Azure AD Connect, что также дает возможность подготовить пользователей в облаке.
 
 Чтобы выбрать метод аутентификации, необходимо учитывать время, имеющуюся инфраструктуру, сложность и стоимость реализации решения. Эти факторы отличаются для каждой организации и могут изменяться с течением времени. 
+
+>[!VIDEO https://www.youtube.com/embed/YtW2cmVqSEw]
 
 Azure AD поддерживает следующие методы аутентификации для решений для гибридной идентификации.
 

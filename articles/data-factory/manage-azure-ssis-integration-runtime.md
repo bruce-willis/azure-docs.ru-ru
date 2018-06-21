@@ -3,22 +3,22 @@ title: Перенастройка среды выполнения интегра
 description: Узнайте, как перенастроить среду выполнения интеграции Azure-SSIS в фабрике данных Azure после ее подготовки.
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: ''
-editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/22/2018
-ms.author: douglasl
-ms.openlocfilehash: bb33f2f5062749510906957fda5c8b0eeecdee60
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+author: swinarko
+ms.author: sawinark
+ms.reviewer: douglasl
+manager: craigg
+ms.openlocfilehash: 91887bad9c3ca976612522c161663fb0b35f587c
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297776"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36266929"
 ---
 # <a name="reconfigure-the-azure-ssis-integration-runtime"></a>Перенастройка среды выполнения интеграции SQL Server Integration Services Azure
 Из этой статьи вы узнаете, как перенастроить существующую среду выполнения интеграции SQL Server Integration Services Azure. Сведения о создании среды выполнения интеграции SQL Server Integration Services Azure в Фабрике данных Azure см. в [этой статье](create-azure-ssis-integration-runtime.md).  

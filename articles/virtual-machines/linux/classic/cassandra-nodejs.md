@@ -1,11 +1,11 @@
 ---
-title: "Запуск кластера Cassandra под управлением Linux в Azure из приложения Node.js"
-description: "Как запустить кластер Cassandra под управлением Linux в Виртуальных машинах Azure из приложения Node.js."
+title: Запуск кластера Cassandra под управлением Linux в Azure из приложения Node.js
+description: Как запустить кластер Cassandra под управлением Linux в Виртуальных машинах Azure из приложения Node.js.
 services: virtual-machines-linux
 documentationcenter: nodejs
 author: craigshoemaker
 manager: routlaw
-editor: 
+editor: ''
 tags: azure-service-management
 ms.assetid: 30de1f29-e97d-492f-ae34-41ec83488de0
 ms.service: virtual-machines-linux
@@ -15,11 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: cshoe
-ms.openlocfilehash: 00e42a00dffd1be37073f10f6ff7bff619fdee85
-ms.sourcegitcommit: be9a42d7b321304d9a33786ed8e2b9b972a5977e
+ms.openlocfilehash: 5d800daa2589effe342cb2bf8b1d59d7bfce6d8c
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34652844"
 ---
 # <a name="run-a-cassandra-cluster-on-linux-in-azure-with-nodejs"></a>Запуск кластера Cassandra под управлением Linux в Azure из приложения Node.js
 
@@ -355,7 +356,7 @@ Azure требует открытый ключ X509, который во вре�
         #Tested with Azure Powershell - November 2014
         #This powershell script deployes a number of VMs from an existing image inside an Azure region
         #Import your Azure subscription into the current Powershell session before proceeding
-        #The process: 1. create Azure Storage account, 2. create virtual network, 3.create the VM template, 2. crate a list of VMs from the template
+        #The process: 1. create Azure Storage account, 2. create virtual network, 3.create the VM template, 2. create a list of VMs from the template
 
         #fundamental variables - change these to reflect your subscription
         $country="us"; $region="west"; $vnetName = "your_vnet_name";$storageAccount="your_storage_account"

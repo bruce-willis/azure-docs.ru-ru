@@ -14,20 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: cephalin
-ms.openlocfilehash: 58c27c0872978c3a6a4c47be37e6fa6078309286
-ms.sourcegitcommit: a0be2dc237d30b7f79914e8adfb85299571374ec
+ms.openlocfilehash: 0c1cea1646c71698318e94932248e08955359b9e
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35234532"
 ---
 # <a name="configure-web-apps-in-azure-app-service"></a>Настройка веб-приложений в службе приложений Azure
 
-В этом разделе рассматривается настройка веб-приложения с помощью [портала Azure].
+В этом разделе рассматривается настройка веб-приложения с помощью [портал Azure].
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="application-settings"></a>Параметры приложения
-1. На [портала Azure]откройте колонку для веб-приложения.
+1. На [портал Azure]откройте колонку для веб-приложения.
 3. Щелкните **Параметры приложения**.
 
 ![Параметры приложения][configure01]
@@ -67,6 +68,8 @@ ms.lasthandoff: 03/12/2018
 * Для приложений .NET эти параметры вносятся в конфигурацию .NET `AppSettings` во время выполнения, переопределяя текущие настройки. 
 * Во время выполнения приложения PHP, Python, Java и Node могут обращаться к этим параметрам как к переменным среды. Для каждого параметра приложения создаются две переменные среды: одна с именем, указанным в параметре приложения, и другая с префиксом APPSETTING_. Обе содержат одинаковое значение.
 
+Параметры приложения всегда шифруются при хранении.
+
 ### <a name="connection-strings"></a>Строки подключения
 Строки подключения для связанных ресурсов. 
 
@@ -80,6 +83,8 @@ ms.lasthandoff: 03/12/2018
 * Пользовательская: `CUSTOMCONNSTR_`
 
 Например, если строка подключения MySql будет иметь имя `connectionstring1`, доступ к ней будет выполняться через переменную среды `MYSQLCONNSTR_connectionString1`.
+
+Строки подключения всегда шифруются при хранении.
 
 ### <a name="default-documents"></a>Стандартные документы
 Документ по умолчанию — это веб-страница, которая отображается при открытии корневого URL-адреса веб-сайта.  Используется первый найденный файл в списке. 
@@ -163,7 +168,7 @@ ms.lasthandoff: 03/12/2018
 <!-- URL List -->
 
 [ASP.NET SignalR]: http://www.asp.net/signalr
-[портала Azure]: https://portal.azure.com/
+[портал Azure]: https://portal.azure.com/
 [Настройка личного доменного имени в службе приложений Azure]: ./app-service-web-tutorial-custom-domain.md
 [Настройка промежуточных сред для веб-приложений в службе приложений Azure]: ./web-sites-staged-publishing.md
 [Включение протокола HTTPS для приложения в службе приложений Azure]: ./app-service-web-tutorial-custom-ssl.md

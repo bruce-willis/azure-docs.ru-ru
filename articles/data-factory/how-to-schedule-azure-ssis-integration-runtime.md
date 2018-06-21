@@ -1,5 +1,5 @@
 ---
-title: Как планировать среду выполнения интеграции Azure SSIS | Документация Майкрософт
+title: Как планировать среду выполнения интеграции Azure–SSIS | Документация Майкрософт
 description: В этой статье описан процесс планирования запуска и остановки среды выполнения интеграции Azure SSIS с использованием службы автоматизации Azure и фабрики данных.
 services: data-factory
 documentationcenter: ''
@@ -10,18 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
-ms.topic: article
-ms.date: 05/18/2018
+ms.topic: conceptual
+ms.date: 06/01/2018
 ms.author: douglasl
-ms.openlocfilehash: dfb54aeeff1b1f1640609be708e1b9d767a18c3a
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 7bffc7aed0c06267a39e2b0a2ee178806c071ab8
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360331"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35297800"
 ---
-# <a name="how-to-schedule-starting-and-stopping-of-an-azure-ssis-integration-runtime"></a>Как планировать запуск и остановку среды выполнения интеграции Azure SSIS 
-Запуск среды выполнения интеграции (IR) Azure SSIS (SQL Server Integration Services) связан с издержками. Поэтому следует запускать IR только в том случае, когда требуется выполнение пакетов SSIS в Azure, и останавливать ее при ненадобности. Вы можете [запустить или остановить IR Azure SSIS вручную](manage-azure-ssis-integration-runtime.md) с помощью пользовательского интерфейса фабрики данных или Azure PowerShell. В этой статье описан процесс планирования запуска и остановки IR Azure SSIS с помощью службы автоматизации Azure и фабрики данных Azure. Ниже приведены общие шаги, описанные в этой статье:
+# <a name="how-to-start-and-stop-the-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка среды выполнения интеграции Azure–SSIS по расписанию
+В этой статье описан процесс планирования запуска и остановки IR Azure SSIS с помощью службы автоматизации Azure и фабрики данных Azure. Запуск среды выполнения интеграции (IR) Azure–SSIS (SQL Server Integration Services) связан с издержками. Поэтому следует запускать среду выполнения интеграции только в том случае, когда требуется выполнение пакетов SSIS в Azure, и останавливать среду выполнения интеграции при ненадобности. Вы можете [запустить или остановить IR Azure SSIS вручную](manage-azure-ssis-integration-runtime.md) с помощью пользовательского интерфейса фабрики данных или Azure PowerShell.
+
+Например, можно создать веб-действия с веб-перехватчиками для runbook автоматизации Azure PowerShell и прикрепить действие "Выполнить пакет SSIS" между ними. Действия в сети могут запускать и останавливать IR Azure–SSIS вовремя до и после запуска пакета. Дополнительные сведения о действии "Выполнить пакет SSIS" см. в разделе [Запуск пакета SSIS с использованием Действия "Выполнить пакет SSIS" в Azure Data Factory](how-to-invoke-ssis-package-ssis-activity.md).
+
+## <a name="overview-of-the-steps"></a>Описание действий
+
+Ниже приведены общие шаги, описанные в этой статье:
 
 1. **Создание и тестирование модуля runbook службы автоматизации Azure.** На этом шаге с помощью скрипта, который запускает или останавливает IR Azure SSIS, создается модуль runbook PowerShell. Затем необходимо протестировать runbook в сценариях START и STOP и убедиться в том, что IR запускается или останавливается. 
 2. **Создание двух расписаний для runbook.** Для первого расписания вы настраиваете runbook, используя START в качестве значения для операции. Для второго расписания вы настраиваете runbook, используя STOP в качестве значения для операции. Для обоих расписаний укажите периодичность, с которой выполняется runbook. Например, можно запланировать запуск первого расписания на 8:00 ежедневно, а второго — 23:00 ежедневно. При выполнении первого runbook среда IR Azure SSIS запускается. При выполнении второго runbook среда IR Azure SSIS останавливается. 
@@ -74,11 +80,11 @@ ms.locfileid: "34360331"
 
     ![Проверка необходимых модулей](media/how-to-schedule-azure-ssis-integration-runtime/automation-fix-image1.png)
 
-2.  Перейдите в коллекцию PowerShell для [модуля AzureRM.DataFactoryV2 0.5.2](https://www.powershellgallery.com/packages/AzureRM.DataFactoryV2/0.5.2), выберите **Deploy to Azure Automation** (Развертывание в службе автоматизации Azure), выберите учетную запись автоматизации, а затем выберите **ОК**. Вернитесь к представлению **модулей** в разделе **Общие ресурсы** в меню слева и подождите, пока **состояние** модуля **AzureRM.DataFactoryV2 0.5.2** не изменится на **Доступно**.
+2.  Перейдите в коллекцию PowerShell для [модуля AzureRM.DataFactoryV2](https://www.powershellgallery.com/packages/AzureRM.DataFactoryV2/), выберите **Deploy to Azure Automation** (Развертывание в службе автоматизации Azure), выберите учетную запись автоматизации, а затем выберите **ОК**. Вернитесь к представлению **модулей** в разделе **Общие ресурсы** в меню слева и подождите, пока **состояние** модуля **AzureRM.DataFactoryV2** не изменится на **Доступно**.
 
     ![Проверка модуля фабрики данных](media/how-to-schedule-azure-ssis-integration-runtime/automation-fix-image2.png)
 
-3.  Перейдите в коллекцию PowerShell для [модуля AzureRM.DataFactory4.5.0](https://www.powershellgallery.com/packages/AzureRM.profile/4.5.0), выберите **Deploy to Azure Automation** (Развертывание в службе автоматизации Azure), выберите учетную запись автоматизации, а затем нажмите кнопку **ОК**. Вернитесь к представлению **модулей** в разделе **Общие ресурсы** в меню слева и дождитесь, пока **состояние** модуля **AzureRM.Profile 4.5.0** не изменится на **Доступно**.
+3.  Перейдите в коллекцию PowerShell для [модуля AzureRM.Profile](https://www.powershellgallery.com/packages/AzureRM.profile/), выберите **Deploy to Azure Automation** (Развертывание в службе автоматизации Azure), выберите учетную запись автоматизации, а затем нажмите кнопку **ОК**. Вернитесь к представлению **модулей** в разделе **Общие ресурсы** в меню слева и дождитесь, пока **состояние** модуля **AzureRM.Profile** не изменится на **Доступно**.
 
     ![Проверка модуля профиля](media/how-to-schedule-azure-ssis-integration-runtime/automation-fix-image3.png)
 
@@ -240,7 +246,7 @@ ms.locfileid: "34360331"
  
    Имя фабрики данных Azure должно быть **глобально уникальным**. Если вы получите указанную ниже ошибку, введите другое имя фабрики данных (например, ваше_имя_MyAzureSsisDataFactory) и попробуйте создать фабрику данных снова. Ознакомьтесь со статьей [Фабрика данных Azure — правила именования](naming-rules.md), чтобы узнать правила именования для артефактов службы "Фабрика данных".
   
-       `Data factory name “MyAzureSsisDataFactory” is not available`
+       `Data factory name �MyAzureSsisDataFactory� is not available`
 3. Выберите **подписку** Azure, в рамках которой вы хотите создать фабрику данных. 
 4. Для **группы ресурсов** выполните одно из следующих действий.
      
@@ -382,6 +388,9 @@ ms.locfileid: "34360331"
     ![Выполнения триггеров](./media/how-to-schedule-azure-ssis-integration-runtime/trigger-runs.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+См. в следующей записи блога:
+-   [Модернизация и расширение рабочих процессов ETL/ELT с помощью операций MSSQL Integration Services в конвейерах ADF](https://blogs.msdn.microsoft.com/ssis/2018/05/23/modernize-and-extend-your-etlelt-workflows-with-ssis-activities-in-adf-pipelines/)
+
 См. документацию SSIS в следующих статьях: 
 
 - [Deploy, run, and monitor an SSIS package on Azure](/sql/integration-services/lift-shift/ssis-azure-deploy-run-monitor-tutorial) (Развертывание, запуск и отслеживание пакета SSIS в Azure)   

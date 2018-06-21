@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial;anavin
-ms.openlocfilehash: 9a8e4e95f2f4de6475243de196519d94e87a9297
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 85919ccdc13ab363b32e593159abe54498ca98c9
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34366551"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34702039"
 ---
 # <a name="create-change-or-delete-a-virtual-network-peering"></a>Создание, изменение и удаление пиринга в виртуальной сети
 
@@ -116,6 +116,7 @@ ms.locfileid: "34366551"
     - Виртуальные сети могут существовать в любом регионе общедоступного облака Azure, но не в национальных облаках Azure.
     - Ресурсы в одной виртуальной сети не могут взаимодействовать с IP-адресом внутренней подсистемы балансировки нагрузки Azure в пиринговой виртуальной сети. Подсистема балансировки нагрузки и ресурсы, которые обмениваются с ней данными, должны находиться в одной виртуальной сети.
     - Невозможно использовать удаленные шлюзы или разрешить транзит шлюзов. Чтобы можно было использовать удаленные шлюзы или разрешить транзит шлюзов, обе виртуальные сети в пиринге должны существовать в одном регионе. 
+    - Связь между пиринговыми виртуальными сетями, которые находятся в разных регионах, не поддерживается для следующих типов виртуальных машин: [оптимизированные для высокопроизводительных вычислений](../virtual-machines/windows/sizes-hpc.md) и [с поддержкой GPU](../virtual-machines/windows/sizes-gpu.md). Сюда относятся виртуальные машины серии H, NC, NV, NCv2, NCv3 и ND.
 - Виртуальные сети могут быть в одной или разных подписках. Если они в разных подписках, обе подписки должны быть связаны с одним клиентом Azure Active Directory. Если у вас еще нет клиента AD, можно быстро [создать его](../active-directory/develop/active-directory-howto-tenant.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-new-azure-ad-tenant). С помощью [VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fvirtual-network%2ftoc.json#V2V) можно подключить две виртуальные сети, которые находятся в разных подписках, связанных с разными клиентами Active Directory.
 - Пространства IP-адресов виртуальных сетей, между которыми устанавливается пиринг, не должны перекрываться.
 - Диапазоны адресов нельзя добавить в виртуальную сеть или удалить из нее после создания пиринговой связи с другой виртуальной сетью. Чтобы добавить или удалить диапазоны адресов, удалите пиринг, добавьте или удалите диапазоны, затем повторно создайте пиринг. Дополнительные сведения см. в разделе [Создание, изменение или удаление виртуальной сети](manage-virtual-network.md).
@@ -162,6 +163,6 @@ ms.locfileid: "34366551"
     |Одна — диспетчер ресурсов, вторая — классическая  |[Та же](create-peering-different-deployment-models.md)|
     |                                   |[Разные](create-peering-different-deployment-models-subscriptions.md)|
 
-* Сведения о создании [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json#virtual network-peering)
+* Сведения о создании [звездообразной топологии сети](/azure/architecture/reference-architectures/hybrid-networking/hub-spoke?toc=%2fazure%2fvirtual-network%2ftoc.json)
 * Создание пиринга виртуальных сетей с помощью образцов скриптов [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md)
 * Создание и применение [политики Azure](policy-samples.md) для виртуальных сетей

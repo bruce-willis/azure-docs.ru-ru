@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 12/18/2017
+ms.date: 05/30/2018
 ms.author: iainfou
-ms.openlocfilehash: 22b580e74ec412763b9c34a7fa2fea97c8a277d0
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: d3514b57b5dc3541dd0a3c0f584fd689749ada7c
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33896186"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34716464"
 ---
 # <a name="create-a-complete-linux-virtual-machine-environment-in-azure-with-ansible"></a>Создание готовой среды виртуальных машин Linux в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления виртуальными машинами в Azure так же, как любым другим ресурсом. В этой статье показано, как создать готовую среду Linux и вспомогательные ресурсы с помощью Ansible. Вы также можете узнать, как [создать простейшую виртуальную машину с помощью Ansible](ansible-create-vm.md).
@@ -38,6 +38,8 @@ Ansible позволяет автоматизировать развертыва
 
 
 ## <a name="create-virtual-network"></a>Создание виртуальной сети
+Рассмотрим каждый раздел записной книжки Ansible и создадим отдельные ресурсы Azure. Полную записную книжку см. в [этом разделе статьи](#complete-ansible-playbook).
+
 Следующий раздел в скрипте playbook Ansible создает виртуальную сеть с именем *myVnet* в адресном пространстве *10.0.0.0/16*:
 
 ```yaml
@@ -116,14 +118,14 @@ Ansible позволяет автоматизировать развертыва
     vm_size: Standard_DS1_v2
     admin_username: azureuser
     ssh_password_enabled: false
-    ssh_public_keys: 
+    ssh_public_keys:
       - path: /home/azureuser/.ssh/authorized_keys
         key_data: "ssh-rsa AAAAB3Nz{snip}hwhqT9h"
     network_interfaces: myNIC
     image:
       offer: CentOS
       publisher: OpenLogic
-      sku: '7.3'
+      sku: '7.5'
       version: latest
 ```
 
@@ -177,18 +179,18 @@ Ansible позволяет автоматизировать развертыва
       vm_size: Standard_DS1_v2
       admin_username: azureuser
       ssh_password_enabled: false
-      ssh_public_keys: 
+      ssh_public_keys:
         - path: /home/azureuser/.ssh/authorized_keys
           key_data: "ssh-rsa AAAAB3Nz{snip}hwhqT9h"
       network_interfaces: myNIC
       image:
         offer: CentOS
         publisher: OpenLogic
-        sku: '7.3'
+        sku: '7.5'
         version: latest
 ```
 
-Ansible требуется группа ресурсов, в которой будут развертываться все ресурсы. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/vm#az_vm_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Ansible требуется группа ресурсов, в которой будут развертываться все ресурсы. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli
 az group create --name myResourceGroup --location eastus

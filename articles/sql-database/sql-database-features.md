@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: 09595c19622eaabe0838c52bc1226fcdfe60d4ba
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: d49cd0096eb173c0f483a7b7ab1f3def745f56a6
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248815"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36231616"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
@@ -39,7 +39,7 @@ ms.locfileid: "35248815"
 | [Автоматическое резервное копирование](sql-database-automated-backups.md) | Yes | Yes |
 | [Автоматическая настройка (принудительное применение плана)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| [Да](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning) |
 | [Автоматическая настройка (индексы)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| Нет  |
-| [BACPAC-файл (экспорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). | Yes |
+| [BACPAC-файл (экспорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). | Нет  |
 | [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). | Нет  |
 | [Команда BACKUP](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql) | Нет, только инициируемое системой автоматическое резервное копирование. См. раздел [Подробнее об автоматически создаваемых резервных копиях в Базе данных SQL](sql-database-automated-backups.md). | Инициируемое системой автоматическое резервное копирование и инициируемое пользователем резервное копирование (только копирование). См. раздел [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование). |
 | [Встроенные функции](https://docs.microsoft.com/sql/t-sql/functions/functions) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |

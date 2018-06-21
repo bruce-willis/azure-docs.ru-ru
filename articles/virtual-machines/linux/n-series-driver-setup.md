@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 04/27/2018
+ms.date: 05/29/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 20bcb822ff39b9587a479fd6cc43b7daa9b83627
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 807af10c0655d9d1728a80a47d1f8f9c2a16fb84
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32190685"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34654289"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>Установка драйверов GPU NVIDIA на виртуальные машины серии N под управлением Linux
 
@@ -31,7 +31,7 @@ ms.locfileid: "32190685"
 
 [!INCLUDE [virtual-machines-n-series-linux-support](../../../includes/virtual-machines-n-series-linux-support.md)]
 
-## <a name="install-cuda-drivers-for-nc-ncv2-ncv3-and-nd-series-vms"></a>Установка драйверов CUDA для виртуальных машин серий NC, NCv2, NCv3 и ND
+## <a name="install-cuda-drivers-on-n-series-vms"></a>Установка драйверов CUDA на виртуальные машины серии N
 
 Ниже приведены инструкции по установке драйверов CUDA из набора средств NVIDIA CUDA Toolkit на виртуальные машины серии N. 
 
@@ -156,7 +156,7 @@ sudo reboot
 
 ## <a name="rdma-network-connectivity"></a>Сетевое подключение RDMA
 
-Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одном масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
+Сетевое подключение RDMA можно включить на виртуальных машинах серии N с поддержкой RDMA, таких как NC24r, развернутых в одной группе доступности или в одной группе размещения в масштабируемом наборе виртуальных машин. Сеть RDMA поддерживает трафик MPI (Message Passing Interface) для приложений, использующих Intel MPI 5.x или более поздней версии. Дополнительные требования приведены ниже.
 
 ### <a name="distributions"></a>Дистрибутивы
 
@@ -168,7 +168,7 @@ sudo reboot
 
 * **HPC версии 7.4 на основе CentOS.** Драйверы RDMA и Intel MPI 5.1 будут установлены на виртуальной машине.
 
-## <a name="install-grid-drivers-for-nv-series-vms"></a>Установка драйверов GRID для виртуальных машин серии NV
+## <a name="install-grid-drivers-on-nv-series-vms"></a>Установка драйверов CUDA на виртуальные машины серии NV
 
 Чтобы установить драйверы NVIDIA GRID на виртуальных машинах серии NV, подключитесь по протоколу SSH к каждой виртуальной машине и выполните действия, необходимые для дистрибутива Linux. 
 

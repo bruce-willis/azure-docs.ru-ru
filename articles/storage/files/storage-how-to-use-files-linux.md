@@ -1,27 +1,28 @@
 ---
-title: "Использование файлов Azure в Linux | Документы Майкрософт"
-description: "Узнайте, как подключить файловый ресурс Azure через протокол SMB в Linux."
+title: Использование файлов Azure в Linux | Документы Майкрософт
+description: Узнайте, как подключить файловый ресурс Azure через протокол SMB в Linux.
 services: storage
 documentationcenter: na
 author: RenaShahMSFT
 manager: aungoo
-editor: tysonn
+editor: tamram
 ms.assetid: 6edc37ce-698f-4d50-8fc1-591ad456175d
 ms.service: storage
 ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/20/2017
+ms.date: 03/29/2018
 ms.author: renash
-ms.openlocfilehash: cca0d315a815faca5db07099b8e8e451ef55fad5
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.openlocfilehash: ec900182e2fe201ee598518076c6a75a7ac057c2
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34839575"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование файлов Azure в Linux
-[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [CIFS-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
+[Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.
 
 > [!NOTE]  
 > Чтобы подключить файловый ресурс Azure за пределами региона Azure, в котором она размещается, например локально или в другом регионе Azure, операционная система должна поддерживать функции шифрования SMB 3.0.
@@ -42,21 +43,21 @@ ms.lasthandoff: 01/19/2018
 
     В дистрибутивах **Ubuntu** и **на основе Debian** используйте диспетчер пакетов `apt-get`:
 
-    ```
+    ```bash
     sudo apt-get update
     sudo apt-get install cifs-utils
     ```
 
     В **RHEL** и **CentOS** используйте диспетчер пакетов `yum`:
 
-    ```
-    sudo yum install samba-client samba-common cifs-utils
+    ```bash
+    sudo yum install cifs-utils
     ```
 
     В **openSUSE** используйте диспетчер пакетов `zypper`:
 
-    ```
-    sudo zypper install samba*
+    ```bash
+    sudo zypper install cifs-utils
     ```
 
     В других дистрибутивах используйте соответствующий диспетчер пакетов или выполните [компиляцию из источника](https://wiki.samba.org/index.php/LinuxCIFS_utils#Download).
@@ -72,7 +73,7 @@ ms.lasthandoff: 01/19/2018
     
     Если ваш дистрибутив Linux отсутствует в списке, можно проверить версию ядра Linux с помощью следующей команды.
 
-    ```
+    ```bash
     uname -r
     ```
 
@@ -89,13 +90,13 @@ ms.lasthandoff: 01/19/2018
 
 2. **Создайте папку для точки подключения**. Папку для точки подключения можно создать в любом месте файловой системы, но общепринято создавать ее в папке `/mnt`. Например: 
 
-    ```
+    ```bash
     mkdir /mnt/MyAzureFileShare
     ```
 
 3. **Используйте команду mount для подключения файлового ресурса Azure**. Не забудьте заменить значения `<storage-account-name>`, `<share-name>`, `<smb-version>`, `<storage-account-key>` и `<mount-point>` соответствующими значениями для своей среды. Если ваш дистрибутив Linux поддерживает SMB 3.0 с шифрованием (дополнительные сведения см. в разделе [Использование файлов Azure в Linux](#smb-client-reqs)), укажите `3.0` для `<smb-version>`. Для дистрибутивов Linux, которые не поддерживают SMB 3.0 с шифрованием, укажите `2.1` для `<smb-version>`. Обратите внимание на то, что с помощью SMB 3.0 файловый ресурс Azure может быть подключен только за пределами региона Azure (включая локальную среду или другой регион Azure). 
 
-    ```
+    ```bash
     sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <mount-point> -o vers=<smb-version>,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino
     ```
 
@@ -107,14 +108,33 @@ ms.lasthandoff: 01/19/2018
 
 2. **Создайте папку для точки подключения**. Папку для точки подключения можно создать в любом месте файловой системы, но общепринято создавать ее в папке `/mnt`. Где бы вы ни создали ее, запишите абсолютный путь к этой папке. Например, следующая команда создает новую папку в папке `/mnt` (путь является абсолютным).
 
-    ```
+    ```bash
     sudo mkdir /mnt/MyAzureFileShare
     ```
 
-3. **Используйте следующую команду, чтобы добавить следующую строку в `/etc/fstab`**. Не забудьте заменить значения `<storage-account-name>`, `<share-name>`, `<smb-version>`, `<storage-account-key>` и `<mount-point>` соответствующими значениями для своей среды. Если ваш дистрибутив Linux поддерживает SMB 3.0 с шифрованием (дополнительные сведения см. в разделе [Использование файлов Azure в Linux](#smb-client-reqs)), укажите `3.0` для `<smb-version>`. Для дистрибутивов Linux, которые не поддерживают SMB 3.0 с шифрованием, укажите `2.1` для `<smb-version>`. Обратите внимание на то, что с помощью SMB 3.0 файловый ресурс Azure может быть подключен только за пределами региона Azure (включая локальную среду или другой регион Azure). 
+3. **Создайте файл учетных данных, в котором будет храниться имя пользователя (имя учетной записи хранения) и пароль (ключ учетной записи хранения) для имени файлового ресурса.** Не забудьте заменить `<storage-account-name>` и `<storage-account-key>` на соответствующую информацию из вашей среды. 
 
+    ```bash
+    if [ -d "/etc/smbcredentials" ]; then
+        sudo mkdir /etc/smbcredentials
+    fi
+
+    if [ ! -f "/etc/smbcredentials/<storage-account-name>.cred" ]; then
+        sudo bash -c 'echo "username=<storage-account-name>" >> /etc/smbcredentials/<storage-account-name>.cred'
+        sudo bash -c 'echo "password=<storage-account-key>" >> /etc/smbcredentials/<storage-account-name>.cred'
+    fi
     ```
-    sudo bash -c 'echo "//<storage-account-name>.file.core.windows.net/<share-name> <mount-point> cifs nofail,vers=<smb-version>,username=<storage-account-name>,password=<storage-account-key>,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+
+4. **Измените разрешения для файла учетных данных таким образом, чтобы только пользователь с правами root мог читать или изменять файл пароля.** Поскольку ключ учетной записи хранения является паролем управляющего администратора учетной записи хранения, необходимо установить разрешения для файла, чтобы только у пользователя с правами root был доступ к файлу, а пользователи с более низким статусом прав не могли получать ключ учетной записи хранения.   
+
+    ```bash
+    sudo chmod 600 /etc/smbcredentials/<storage-account-name>.cred
+    ```
+
+5. **Используйте следующую команду, чтобы добавить следующую строку в `/etc/fstab`**. Не забудьте заменить значения `<storage-account-name>`, `<share-name>`, `<smb-version>`, `<mount-point>` соответствующими значениями для своей среды. Если ваш дистрибутив Linux поддерживает SMB 3.0 с шифрованием (дополнительные сведения см. в разделе [Использование файлов Azure в Linux](#smb-client-reqs)), укажите `3.0` для `<smb-version>`. Для дистрибутивов Linux, которые не поддерживают SMB 3.0 с шифрованием, укажите `2.1` для `<smb-version>`. Обратите внимание на то, что с помощью SMB 3.0 файловый ресурс Azure может быть подключен только за пределами региона Azure (включая локальную среду или другой регион Azure). 
+
+    ```bash
+    sudo bash -c 'echo "//<storage-account-name>.file.core.windows.net/<share-name> <mount-point> cifs nofail,vers=<smb-version>,credentials=/etc/smbcredentials/<storage-account-name>.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
     ```
 
 > [!Note]  
@@ -128,6 +148,6 @@ ms.lasthandoff: 01/19/2018
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительную информацию о службе файлов Azure см. по следующим ссылкам.
 * [Общие сведения о службе файлов Azure](storage-files-introduction.md)
-* [Planning for an Azure Files deployment](storage-files-planning.md) (Планирование развертывания службы файлов Azure)
+* [Планирование развертывания службы файлов Azure](storage-files-planning.md)
 * [Часто задаваемые вопросы](../storage-files-faq.md)
 * [Устранение неполадок](storage-troubleshoot-linux-file-connection-problems.md)

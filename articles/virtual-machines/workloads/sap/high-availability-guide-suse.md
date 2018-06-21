@@ -4,7 +4,7 @@ description: Руководство по обеспечению высокой �
 services: virtual-machines-windows,virtual-network,storage
 documentationcenter: saponazure
 author: mssedusch
-manager: timlt
+manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -16,11 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/27/2017
 ms.author: sedusch
-ms.openlocfilehash: f1d2725237d2cf059450ce7e2c1600b24d17f35c
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 12efeba68f30aa8723acc32449ae05ffac4c1ac4
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34658763"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -264,9 +265,9 @@ SAP NetWeaver требует общее хранилище для каталог
    # IP address of the load balancer frontend configuration for NFS
    <b>10.0.0.4 nw1-nfs</b>
    # IP address of the load balancer frontend configuration for SAP NetWeaver ASCS
-   <b>10.0.0.11 nw1-ascs</b>
+   <b>10.0.0.7 nw1-ascs</b>
    # IP address of the load balancer frontend configuration for SAP NetWeaver ASCS ERS
-   <b>10.0.0.12 nw1-aers</b>
+   <b>10.0.0.8 nw1-aers</b>
    # IP address of the load balancer frontend configuration for database
    <b>10.0.0.13 nw1-db</b>
    </code></pre>
@@ -349,7 +350,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo crm node standby <b>nw1-cl-1</b>
    
    sudo crm configure primitive vip_<b>NW1</b>_ASCS IPaddr2 \
-     params ip=<b>10.0.0.11</b> cidr_netmask=<b>24</b> \
+     params ip=<b>10.0.0.7</b> cidr_netmask=<b>24</b> \
      op monitor interval=10 timeout=20
    
    sudo crm configure primitive nc_<b>NW1</b>_ASCS anything \
@@ -379,7 +380,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. **[1]** Установите SAP NetWeaver ASCS.  
 
-   Установите SAP NetWeaver ASCS в качестве корневого на первом узле, используя виртуальное имя узла, которое сопоставляется с внешним IP-адресом подсистемы балансировки нагрузки ASCS (например, <b>nw1-ascs</b>, <b>10.0.0.11</b>) и экземпляром номера, который использовался для проверки подсистемы балансировки нагрузки, например <b>00</b>.
+   Установите SAP NetWeaver ASCS в качестве корневого на первом узле, используя виртуальное имя узла, которое сопоставляется с внешним IP-адресом подсистемы балансировки нагрузки ASCS (например, <b>nw1-ascs</b>, <b>10.0.0.7</b>) и экземпляром номера, который использовался для проверки подсистемы балансировки нагрузки, например <b>00</b>.
 
    Чтобы разрешить непривилегированному пользователю подключаться к SAPinst, можно использовать параметр SAPINST_REMOTE_ACCESS_USER.
 
@@ -401,7 +402,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo crm node standby <b>nw1-cl-0</b>
    
    sudo crm configure primitive vip_<b>NW1</b>_ERS IPaddr2 \
-     params ip=<b>10.0.0.12</b> cidr_netmask=<b>24</b> \
+     params ip=<b>10.0.0.8</b> cidr_netmask=<b>24</b> \
      op monitor interval=10 timeout=20
    
    sudo crm configure primitive nc_<b>NW1</b>_ERS anything \
@@ -436,7 +437,7 @@ SAP NetWeaver требует общее хранилище для каталог
 
 1. **[2]** Установите SAP NetWeaver ERS.  
 
-   Установите SAP NetWeaver ERS в качестве корневого на втором узле, используя виртуальное имя узла, которое сопоставляется с внешним IP-адресом подсистемы балансировки нагрузки ERS (например, <b>nw1-aers</b>, <b>10.0.0.12</b>) и экземпляром номера, который использовался для проверки подсистемы балансировки нагрузки, например <b>02</b>.
+   Установите SAP NetWeaver ERS в качестве корневого на втором узле, используя виртуальное имя узла, которое сопоставляется с внешним IP-адресом подсистемы балансировки нагрузки ERS (например, <b>nw1-aers</b>, <b>10.0.0.8</b>) и экземпляром номера, который использовался для проверки подсистемы балансировки нагрузки, например <b>02</b>.
 
    Чтобы разрешить непривилегированному пользователю подключаться к SAPinst, можно использовать параметр SAPINST_REMOTE_ACCESS_USER.
 
@@ -581,14 +582,14 @@ SAP NetWeaver требует общее хранилище для каталог
    # IP address of the load balancer frontend configuration for NFS
    <b>10.0.0.4 nw1-nfs</b>
    # IP address of the load balancer frontend configuration for SAP NetWeaver ASCS/SCS
-   <b>10.0.0.11 nw1-ascs</b>
+   <b>10.0.0.7 nw1-ascs</b>
    # IP address of the load balancer frontend configuration for SAP NetWeaver ERS
-   <b>10.0.0.12 nw1-aers</b>
+   <b>10.0.0.8 nw1-aers</b>
    # IP address of the load balancer frontend configuration for database
    <b>10.0.0.13 nw1-db</b>
    # IP address of all application servers
-   <b>10.0.0.8 nw1-di-0</b>
-   <b>10.0.0.7 nw1-di-1</b>
+   <b>10.0.0.20 nw1-di-0</b>
+   <b>10.0.0.21 nw1-di-1</b>
    </code></pre>
 
 1. Создайте каталог sapmnt:

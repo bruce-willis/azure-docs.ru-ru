@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/09/2018
 ms.author: jomolesk
-ms.openlocfilehash: 1b77aee3bceef13128ada34fb325240dda98bc41
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 03f13c0b1ae209cc3da211a252a9a735faad34d0
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895492"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35301377"
 ---
 # <a name="azure-security-and-compliance-blueprint---pci-dss-compliant-payment-processing-environments"></a>Схема безопасности и соответствия требованиям Azure. Среды для обработки платежей, соответствующие стандарту PCI DSS
 
@@ -44,7 +44,7 @@ ms.locfileid: "33895492"
 - **Шаблоны развертывания**. В этом развертывании [шаблоны Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview#template-deployment) используются для автоматического развертывания компонентов архитектуры в Microsoft Azure путем указания параметров конфигурации во время установки.
 - **Автоматизированное развертывание скриптов**. Эти скрипты помогают развернуть комплексное решение. Скрипты состоят из:
     - Скрипт установки модуля и настройки [глобального администратора](/azure/active-directory/active-directory-assign-admin-roles-azure-portal) позволяет установить и проверить правильность настройки необходимых модулей PowerShell и ролей глобального администратора.
-    - Сценарий установки PowerShell используется для развертывания комплексного решения, предоставляемого в виде ZIP-файла и BACPAC-файла, которые содержат предварительно созданную демонстрационную версию веб-приложения с [примером содержимого базы данных SQL](https://github.com/Microsoft/azure-sql-security-sample) . Исходный код этого решения доступен для изучения в [репозитории кода схемы][code-repo]. 
+    - Скрипт установки PowerShell используется для развертывания комплексного решения, предоставляемого в файлах ZIP и BACPAC, которые содержат готовое демонстрационное веб-приложение с [примером содержимого базы данных SQL](https://github.com/Microsoft/azure-sql-security-sample). Исходный код этого решения можно просмотреть на сайте [GitHub](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms). 
 
 ## <a name="architectural-diagram"></a>Схема архитектуры
 
@@ -169,8 +169,6 @@ ms.locfileid: "33895492"
 - группа безопасности сети периметра для брандмауэра и WAF шлюза приложения;
 - группа безопасности сети для среды управления Jumpbox (узел-бастион);
 - группа безопасности сети для среды службы приложений.
-
-В каждой группе безопасности сети (NSG) открыты определенные порты и протоколы для безопасной и правильной работы решения. Дополнительные сведения см. в разделе [Группы безопасности сети](#network-security-groups).
 
 В каждой группе безопасности сети (NSG) открыты определенные порты и протоколы для безопасной и правильной работы решения. Кроме того, для каждой NSG настроены следующие конфигурации:
 - включенные [журналы диагностики и события](/azure/virtual-network/virtual-network-nsg-manage-log) хранятся в учетной записи хранения; 

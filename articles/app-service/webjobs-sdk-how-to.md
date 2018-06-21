@@ -1,5 +1,5 @@
 ---
-title: Использование пакета SDK WebJobs для фоновой обработки на основе событий в Azure
+title: Использование пакета SDK WebJobs Azure
 description: Ознакомьтесь со сведениями о написании кода для пакета SDK WebJobs. Создавайте задания фоновой обработки на основе событий, с помощью которых можно получить доступ к данным в службах Azure и сторонних службах.
 services: app-service\web, storage
 documentationcenter: .net
@@ -13,15 +13,16 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: tdykstra
-ms.openlocfilehash: 3adf725f76f744fd1d321668fe892b9703de25de
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: 08272ba7d828f744336723f25b482bf06b9e43dc
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35234656"
 ---
-# <a name="how-to-use-the-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs для фоновой обработки на основе событий
+# <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
-В этой статье приводятся рекомендации по написанию кода для [пакета SDK WebJobs](webjobs-sdk-get-started.md). Документация относится к версиям 2.x и 3.x, если не указано иное. Основное отличие, представленное в версии 3.x, заключается в использовании класса .NET Core вместо .NET Framework.
+В этой статье приводятся рекомендации по написанию кода для [пакета SDK WebJobs Azure](webjobs-sdk-get-started.md). Документация относится к версиям 2.x и 3.x, если не указано иное. Основное отличие версии 3.x заключается в использовании .NET Core вместо .NET Framework.
 
 >[!NOTE]
 > [Функции Azure](../azure-functions/functions-overview.md) основаны на пакете SDK WebJobs, и эта статья содержит ссылки на документацию предложения "Функции Azure" для некоторых тем. Обратите внимание на следующие отличия между службой "Функции" и пакетом SDK WebJobs:
@@ -322,7 +323,7 @@ public static void CreateQueueMessage(
 
 Справочная информация о каждом типе привязки содержится в документации по решению "Функции Azure". Используя в качестве примера очередь службы хранилища, в каждой справочной статье о привязке вы найдете следующие сведения:
 
-* [Пакеты](../azure-functions/functions-bindings-storage-queue.md#packages) — сведения о том, какой пакет установить, чтобы включить поддержку привязки в проекте пакета SDK WebJobs.
+* [Пакеты](../azure-functions/functions-bindings-storage-queue.md#packages---functions-1x) — сведения о том, какой пакет установить, чтобы включить поддержку привязки в проекте пакета SDK WebJobs.
 * [Пример триггера](../azure-functions/functions-bindings-storage-queue.md#trigger---example) — пример библиотеки классов C# применяется к пакету SDK WebJobs. Просто опустите атрибут `FunctionName`.
 * [Атрибуты триггера](../azure-functions/functions-bindings-storage-queue.md#trigger---attributes) — атрибуты, используемые для типа привязки.
 * [Конфигурация триггера](../azure-functions/functions-bindings-storage-queue.md#trigger---configuration) — объяснения свойств атрибута и параметров конструктора.
@@ -390,6 +391,26 @@ public static async Task ProcessImage([BlobTrigger("images")] Stream image)
 * **FileTrigger** — задайте значение 1 для параметра `FileProcessor.MaxDegreeOfParallelism`.
 
 Эти параметры можно использовать для обеспечения отдельного выполнения функции в одном экземпляре. Чтобы гарантировать, что запущен только один экземпляр функции, если веб-приложение масштабируется до нескольких экземпляров, примените блокировку Singleton для уровня прослушивателя в функции (`[Singleton(Mode = SingletonMode.Listener)]`). Блокировки прослушивателя инициируются при запуске узла JobHost. Если все три горизонтально масштабированные экземпляры запускаются одновременно, блокировки требует только один из экземпляров, а запускается только один прослушиватель.
+
+### <a name="scope-values"></a>Значения области
+
+Можно указать **выражение/значение области** на отдельном экземпляре, который обеспечит сериализацию всех выполнений функции в этой области. Реализация более специализированной блокировки может обеспечить некоторый уровень параллелизма функции при сохранении сериализации других вызовов соответственно с вашими требованиями. В следующем примере рассматриваются привязки выражения области к значению `Region` входящего сообщения. Если очередь содержит 3 сообщения в регионах "Восток", "Восток" и "Запад", тогда сообщения с регионом "Восток" будут выполняться последовательно, в то время как сообщение с регионом "Запад" будет выполняться параллельно с ними.
+
+```csharp
+[Singleton("{Region}")]
+public static async Task ProcessWorkItem([QueueTrigger("workitems")] WorkItem workItem)
+{
+     // Process the work item
+}
+
+public class WorkItem
+{
+     public int ID { get; set; }
+     public string Region { get; set; }
+     public int Category { get; set; }
+     public string Description { get; set; }
+}
+```
 
 ### <a name="singletonscopehost"></a>SingletonScope.Host
 

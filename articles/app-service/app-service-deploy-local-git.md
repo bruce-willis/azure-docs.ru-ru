@@ -11,13 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/05/2018
+ms.date: 06/05/2018
 ms.author: dariagrigoriu;cephalin
-ms.openlocfilehash: 842cd6f67a04bec0ed06282bdeeea8b8a51c0667
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: a614dadae40fcfc28eba85e5943f60a38653224b
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35233909"
 ---
 # <a name="local-git-deployment-to-azure-app-service"></a>Развертывание локального репозитория Git в службе приложений Azure
 
@@ -38,36 +39,21 @@ ms.lasthandoff: 04/19/2018
 git clone https://github.com/Azure-Samples/nodejs-docs-hello-world.git
 ```
 
-## <a name="prepare-your-repository"></a>Подготовка репозитория
-
-Убедитесь, что корень репозитория содержит нужные файлы проекта.
-
-| Среда выполнения | Файлы в корневом каталоге |
-|-|-|
-| ASP.NET (только для Windows) | _SLN_-файлы, _CSPROJ_-файлы или _default.aspx_ |
-| ASP.NET Core; | _SLN_-файлы или _CSPROJ_-файлы |
-| PHP | _index.php_ |
-| Ruby (только для Linux) | _Gemfile_ |
-| Node.js | _server.js_, _app.js_ или _package.json_ со сценарием запуска |
-| Python (только для Windows) | _\*PY_-файлы, _requirements.txt_ или _runtime.txt_ |
-| HTML | _default.htm_, _default.html_, _default.asp_, _index.htm_, _index.html_ или _iisstart.htm_ |
-| Веб-задания | _\<имя_задания>/run.\<extension>_ в папке _App\_Data/jobs/continuous_ (для непрерывных веб-заданий) или в папке _App\_Data/jobs/triggered_ (для активируемых веб-заданий). Дополнительные сведения см. в [документации по веб-заданиям Kudu](https://github.com/projectkudu/kudu/wiki/WebJobs). |
-| Functions | Ознакомьтесь с разделом [Непрерывное развертывание для Функций Azure](../azure-functions/functions-continuous-deployment.md#continuous-deployment-requirements). |
-
-Чтобы настроить развертывание, можно добавить в корень репозитория _DEPLOYMENT_-файл. Дополнительные сведения см. в статьях [Customizing deployments](https://github.com/projectkudu/kudu/wiki/Customizing-deployments) (Настройка развертываний) и [Custom deployment script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) (Настраиваемый сценарий развертывания).
-
-> [!NOTE]
-> Не забудьте выполнить команду `git commit` для фиксации всех изменений, которые вы хотите развернуть.
->
->
+[!INCLUDE [Prepare repository](../../includes/app-service-deploy-prepare-repo.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-[!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user.md)]
+## <a name="deploy-from-local-git-with-kudu-builds"></a>Развертывание из локального Git с помощью сборок Kudu
 
-## <a name="enable-git-for-your-app"></a>Включение использования репозитория Git для приложения
+Включить локальное развертывание Git для вашего приложения с сервера сборки Kudu проще всего с помощью облачной среды.
 
-Чтобы обеспечить развертывание Git для существующего приложения службы приложений, выполните команду [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az_webapp_deployment_source_config_local_git) в Cloud Shell.
+### <a name="create-a-deployment-user"></a>Создание пользователя развертывания
+
+[!INCLUDE [Configure a deployment user](../../includes/configure-deployment-user-no-h.md)]
+
+### <a name="enable-local-git-with-kudu"></a>Включить локальный Git с помощью Kudu
+
+Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки Kudu, выполните [`az webapp deployment source config-local-git`](/cli/azure/webapp/deployment/source?view=azure-cli-latest#az_webapp_deployment_source_config_local_git) в Cloud Shell.
 
 ```azurecli-interactive
 az webapp deployment source config-local-git --name <app_name> --resource-group <group_name>
@@ -97,7 +83,7 @@ Local git is configured with url of 'https://<username>@<app_name>.scm.azurewebs
 }
 ```
 
-## <a name="deploy-your-project"></a>Развертывание проекта
+### <a name="deploy-your-project"></a>Развертывание проекта
 
 Вернитесь к _окну терминала (в локальном расположении)_ и добавьте удаленное приложение Azure в локальный репозиторий Git. Замените _\<url>_ URL-адресом удаленного репозитория Git, полученным на шаге [Включение использования репозитория Git для приложения](#enable-git-for-you-app).
 
@@ -113,13 +99,58 @@ git push azure master
 
 В выходных данных могут отображаться автоматизированные операции времени выполнения, например MSBuild для ASP.NET, `npm install` для Node.js и `pip install` для Python. 
 
-После завершения развертывания приложения на портале Azure должна быть запись вашей операции `git push` на странице **Варианты развертывания**.
+Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
 
-![](./media/app-service-deploy-local-git/deployment_history.png)
+## <a name="deploy-from-local-git-with-vsts-builds"></a>Развертывание из локального Git с помощью сборок VSTS
+
+> [!NOTE]
+> Чтобы служба приложений создавала необходимые сборки и определяла выпуск в учетной записи VSTS, ваша учетная запись Azure должна иметь роль **владельца** в подписке Azure.
+>
+
+Чтобы включить локальное развертывание Git для вашего приложения с сервера сборки с помощью Kudu, перейдите в свое приложение на [портале Azure](https://portal.azure.com).
+
+На левой навигационной панели страницы приложения щелкните **Центр развертывания** > **Локальный Git** > **Продолжить**. 
+
+![](media/app-service-deploy-local-git/portal-enable.png)
+
+Щелкните **Непрерывная поставка VSTS** > **Продолжить**.
+
+![](media/app-service-deploy-local-git/vsts-build-server.png)
+
+На странице **Настройка** настройте новую учетную запись VSTS или укажите существующую учетную запись. По завершении нажмите кнопку **Продолжить**.
+
+> [!NOTE]
+> Если хотите использовать существующую учетную запись VSTS, которая не указана в списке, необходимо [связать учетную запись VSTS с подпиской Azure](https://github.com/projectkudu/kudu/wiki/Setting-up-a-VSTS-account-so-it-can-deploy-to-a-Web-App).
+
+На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
+
+В зависимости от [ценовой категории](/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, где нужно включить слоты развертывания, затем щелкните **Продолжить**.
+
+На странице **Сводка** проверьте параметры и нажмите **Готово**.
+
+Подготовка учетной записи VSTS занимает несколько минут. Когда она будет готова, скопируйте URL-адрес репозитория Git в центре развертывания.
+
+![](media/app-service-deploy-local-git/vsts-repo-ready.png)
+
+Вернитесь к _окну терминала (в локальном расположении)_ и добавьте удаленное приложение Azure в локальный репозиторий Git. Замените _\<url>_ на URL-адрес, полученный на последнем шаге.
+
+```bash
+git remote add vsts <url>
+```
+
+Отправьте код в удаленное приложение Azure, чтобы развернуть приложение. При запросе диспетчера ввода учетных данных Git войдите с помощью пользователя visualstudio.com. Дополнительные методы проверки подлинности см. в разделе [Обзор проверки подлинности VSTS](/vsts/git/auth-overview?view=vsts).
+
+```bash
+git push vsts master
+```
+
+После завершения развертывания можно увидеть выполнение сборки в `https://<vsts_account>.visualstudio.com/<project_name>/_build` и выполнение развертывания в `https://<vsts_account>.visualstudio.com/<project_name>/_release`.
 
 Перейдите к своему приложению, чтобы убедиться, что содержимое развернуто.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+[!INCLUDE [What happens to my app during deployment?](../../includes/app-service-deploy-atomicity.md)]
+
+## <a name="troubleshooting-kudu-deployment"></a>Устранение неполадок при развертывании Kudu
 
 Ниже перечислены распространенные ошибки или проблемы, возникающие при использовании Git для публикации в приложение службы приложений в Azure.
 

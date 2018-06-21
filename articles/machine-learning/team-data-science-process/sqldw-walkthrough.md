@@ -8,17 +8,19 @@ manager: cgronlun
 editor: cgronlun
 ms.assetid: 88ba8e28-0bd7-49fe-8320-5dfa83b65724
 ms.service: machine-learning
+ms.component: team-data-science-process
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/24/2017
 ms.author: deguhath
-ms.openlocfilehash: b6b78c5ae4506c1405428b60887567f272d6e268
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 12eb182c859617139fce6553496c6aa6e9bcdc98
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34839067"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-data-warehouse"></a>Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL
 В этом руководстве описаны шаги по созданию и развертыванию модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Модель двоичной классификации позволяет спрогнозировать получение чаевых за поездку. Кроме того, здесь рассматриваются модели многоклассовой классификации и регрессии, которые помогают спрогнозировать распространение сумм чаевых, оплачиваемых за поездку.
@@ -883,8 +885,8 @@ ms.lasthandoff: 05/03/2018
 Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Дополнительные сведения см. в файле LICENSE.txt в каталоге примеров кода на сайте GitHub.
 
 ## <a name="references"></a>Ссылки
-•    [Страница загрузки данных о поездках такси Нью-Йорка (Andrés Monroy)](http://www.andresmh.com/nyctaxitrips/)  
-•    [Получение данных о поездках такси Нью-Йорка на основании FOIL (Chris Whong)](http://chriswhong.com/open-data/foil_nyc_taxi/)   
+•    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/)  
+•    [Получение данных о поездках такси в Нью-Йорка на основании FOIL (Chris Whong)](http://chriswhong.com/open-data/foil_nyc_taxi/)   
 •    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
 
 [1]: ./media/sqldw-walkthrough/sql-walkthrough_26_1.png
