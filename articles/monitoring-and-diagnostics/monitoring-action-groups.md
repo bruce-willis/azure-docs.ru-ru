@@ -1,31 +1,25 @@
 ---
-title: Создание групп действий и управление ими на портале Azure | Документация Майкрософт
+title: Создание групп действий и управление ими на портале Azure
 description: Узнайте, как создавать группы действий и управлять ими на портале Azure.
 author: dkamstra
-manager: chrad
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/20/2018
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
+ms.date: 06/1/2018
 ms.author: dukek
-ms.openlocfilehash: 07e3c1a95aa223121117f3deba0269fb6cc280c2
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: alerts
+ms.openlocfilehash: 63216d56fb3acbb954086fbf026441e69073621e
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32170382"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35263071"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
-В этой статье показано, как создавать группы действий и управлять ими на портале Azure.
+Группа действий — это совокупность параметров уведомлений, которые определяет пользователь. Когда активируется какое-то оповещение, службы Azure Monitor и "Работоспособность служб" используют определенную группу действий. Для разных оповещений может использоваться как одна группа действий, так разные. Это зависит от требований пользователя.
 
-Группы действий дают возможность настроить список действий. Эти группы можно использовать в каждом определенном оповещении, чтобы при появлении такого оповещения предпринимались одинаковые действия.
+В этой статье показано, как создавать группы действий и управлять ими на портале Azure.
 
 Каждое действие состоит из следующих свойств:
 
@@ -70,7 +64,14 @@ ms.locfileid: "32170382"
 <dd>В настоящее время действие приложения Azure поддерживает только оповещение о работоспособности службы. Любое другое оповещение будет игнорироваться. Ознакомьтесь со статьей [Создание оповещений журнала действий для уведомлений службы](monitoring-activity-log-alerts-on-service-notifications.md).</dd>
 
 <dt>Электронная почта</dt>
-<dd>Можно иметь не более 50 действий электронной почты в группе действий.</dd>
+<dd>Электронная почта будет отправляться на следующие адреса (правильно настройте фильтрацию электронной почты):
+
+    - azure-noreply@microsoft.com
+    - azureemail-noreply@microsoft.com
+    - alerts-noreply@mail.windowsazure.com
+    
+</dd>
+<dd>Группа действий может состоять максимум из 1000 действий с электронной почтой.</dd>
 <dd>Дополнительные сведения см. в статье [Ограничение частоты отправки для голосовых сообщений, SMS-сообщений, сообщений электронной почты, push-уведомлений приложений Azure и записей веб-перехватчиков](./monitoring-alerts-rate-limiting.md).</dd>
 
 <dt>ITSM</dt>

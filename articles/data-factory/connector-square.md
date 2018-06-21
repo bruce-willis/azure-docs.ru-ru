@@ -10,14 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 3181ee143ac655606b5e9c98d743e30aef28b8cc
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 81da88c019ff46e98e0f8811c846ab7488fa1910
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34618151"
 ---
 # <a name="copy-data-from-square-using-azure-data-factory-beta"></a>Копирование данных из Square с помощью фабрики данных Azure (бета-версия)
 
@@ -51,7 +52,7 @@ ms.lasthandoff: 03/23/2018
 | host | URL-адрес экземпляра Square. (т. е. mystore.mysquare.com)  | Yes |
 | clientid | Идентификатор клиента, связанный с приложением Square.  | Yes |
 | clientSecret | Секрет клиента, связанный с приложением Square. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| redirectUri | URL-адрес перенаправления, назначенный на панели мониторинга приложения Square. (т. е. http://localhost:2500)  | Yes |
+| redirectUri | URL-адрес перенаправления, назначенный на панели мониторинга приложения Square. (Например, http://localhost:2500)  | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет  |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет  |

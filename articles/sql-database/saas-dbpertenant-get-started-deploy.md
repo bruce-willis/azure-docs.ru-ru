@@ -7,14 +7,15 @@ author: MightyPen
 manager: craigg
 ms.service: sql-database
 ms.custom: scale out apps
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: genemi
-ms.openlocfilehash: 84e6f2303bcfd6a2c91f29e9e9afdc2b84f990ca
-ms.sourcegitcommit: 3a4ebcb58192f5bf7969482393090cb356294399
+ms.openlocfilehash: 95d4fc1886e16785b6de8f3a395b218b66d193ff
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34645367"
 ---
 # <a name="deploy-and-explore-a-multitenant-saas-app-that-uses-the-database-per-tenant-pattern-with-sql-database"></a>Разверните и изучите мультитенантное приложение SaaS на основе базы данных SQL, в котором используется отдельная база данных для каждого клиента.
 
@@ -108,7 +109,7 @@ ms.lasthandoff: 04/06/2018
 
 Центральная страница **Концентратор событий** содержит список клиентов в вашем развертывании со ссылками.
 
-1. Откройте концентратор событий в веб-браузере по адресу: http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net. Значение &lt;пользователь&gt; замените именем пользователя для своего развертывания.
+1. Откройте концентратор событий в веб-браузере по адресу:http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net. Значение &lt;пользователь&gt; замените именем пользователя для своего развертывания.
 
     ![Концентратор событий](media/saas-dbpertenant-get-started-deploy/events-hub.png)
 
@@ -120,7 +121,7 @@ ms.lasthandoff: 04/06/2018
 
 Приложение Wingtip использует [*диспетчер трафика Azure*](../traffic-manager/traffic-manager-overview.md), чтобы управлять распределением входящих запросов. URL-адрес для доступа к странице событий для конкретного клиента указывается в следующем формате:
 
-- http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net/fabrikamjazzclub
+- http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/fabrikamjazzclub
 
     В следующей таблице описываются элементы предыдущего формата.
 

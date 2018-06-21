@@ -1,24 +1,19 @@
 ---
-title: Использование данных мониторинга из Azure | Документация Майкрософт
+title: Источники данных мониторинга в Azure
 description: Узнайте о всех источниках данных мониторинга, доступных в Azure в настоящее время.
 author: johnkemnetz
-manager: orenr
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 3/27/2017
 ms.author: johnkem
-ms.openlocfilehash: b10e95cd6b335468201b4cd123b3a29fb5d1bcdb
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.component: ''
+ms.openlocfilehash: 7b3cb869f3c220c20db53216c96449d01c16eaf6
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35263183"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
@@ -45,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 | Оповещения о метриках Azure Monitor | Уведомления | [Список доступен здесь](monitoring-supported-metrics.md). | <ul><li>**Webhook:** [оповещения о метриках Azure](insights-webhooks-alerts.md).</li></ul> |
 | Оповещения журнала действий Azure Monitor | Уведомления | Все службы Azure. | <ul><li>**Webhook**: оповещения журнала действий Azure.</li></ul> |
 | Уведомления об автомасштабировании | Уведомления | [Список доступен здесь](monitoring-overview-autoscale.md#supported-services-for-autoscale). | <ul><li>**Webhook:** [схема полезных данных webhook уведомлений об автомасштабировании](insights-autoscale-to-webhook-email.md#autoscale-notification-webhook-payload-schema).</li></ul> |
-| Оповещения о запросах поиска по журналам | Уведомления | Служба Log Analytics | <ul><li>**Webhook:** [оповещения Log Analytics](../log-analytics/log-analytics-alerts-actions.md#webhook-actions).</li></ul> |
+| Оповещения о запросах поиска по журналам | Уведомления | Log Analytics | <ul><li>**Webhook:** [оповещения Log Analytics](../log-analytics/log-analytics-alerts-actions.md#webhook-actions).</li></ul> |
 | Оповещения о метриках Application Insights | Уведомления | Application Insights | <ul><li>**Webhook:** [оповещения Application Insights](../application-insights/app-insights-alerts.md).</li></ul> |
 | Веб-тесты Application Insights | Уведомления | Application Insights | <ul><li>**Webhook:** [оповещения Application Insights](../application-insights/app-insights-alerts.md).</li></ul> |
 

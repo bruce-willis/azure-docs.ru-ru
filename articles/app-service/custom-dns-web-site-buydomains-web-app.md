@@ -1,11 +1,11 @@
 ---
-title: "Приобретение имени личного домена для веб-приложений Azure"
-description: "Информация о приобретении личного доменного имени для веб-приложения в службе приложение Azure."
+title: Приобретение имени личного домена для веб-приложений Azure
+description: Информация о приобретении личного доменного имени для веб-приложения в службе приложение Azure.
 services: app-service\web
-documentationcenter: 
+documentationcenter: ''
 author: cephalin
 manager: cfowler
-editor: 
+editor: ''
 ms.assetid: 70fb0e6e-8727-4cca-ba82-98a4d21586ff
 ms.service: app-service-web
 ms.workload: web
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/24/2017
 ms.author: cephalin
-ms.openlocfilehash: 152dbb6d47dfdf3bf5df945b823f64e58e7d91e2
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 16a6d8e34bdec6e597c5f04faf421d387a877bff
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34714890"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-web-apps"></a>Приобретение имени личного домена для веб-приложений Azure
 
@@ -57,17 +58,17 @@ ms.lasthandoff: 02/21/2018
 
 ![Меню увеличения масштаба](./media/app-service-web-tutorial-custom-domain/scale-up-menu.png)
 
-Текущий уровень приложения выделен синей рамкой. Убедитесь, что приложение не находится в ценовой категории **Бесплатный**. Использование личного домена DNS не поддерживается на уровне **Бесплатный**. 
+Текущий уровень приложения выделен синей рамкой. Убедитесь, что приложение не находится в ценовой категории **F1**. Использование личного домена DNS не поддерживается на уровне **F1**. 
 
 ![Проверка ценовой категории](./media/app-service-web-tutorial-custom-domain/check-pricing-tier.png)
 
-Если план службы приложений не **бесплатный**, закройте страницу **Выбор ценовой категории** и перейдите к разделу [Приобретение домена](#buy-the-domain).
+Если план службы приложений не **F1**, закройте страницу **увеличения масштаба** и перейдите к разделу [Приобретение домена](#buy-the-domain).
 
 ### <a name="scale-up-the-app-service-plan"></a>Изменение уровня плана службы приложений
 
-Выберите любой из платных уровней (**Общий**, **Базовый**, **Стандартный** или **Премиум**). 
+Выберите любой платный уровень (**D1**, **B1**, **B2**, **B3** или любой уровень в категории **Рабочие**). Чтобы просмотреть дополнительные параметры, щелкните **См. дополнительные параметры**.
 
-Нажмите кнопку **Выбрать**.
+Нажмите кнопку **Применить**.
 
 ![Проверка ценовой категории](./media/app-service-web-tutorial-custom-domain/choose-pricing-tier.png)
 

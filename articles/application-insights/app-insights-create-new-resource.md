@@ -1,8 +1,8 @@
 ---
-title: "Создание ресурса Azure Application Insights | Документация Майкрософт"
-description: "Вручную настройте мониторинг Application Insights для нового работающего приложения."
+title: Создание ресурса Azure Application Insights | Документация Майкрософт
+description: Вручную настройте мониторинг Application Insights для нового работающего приложения.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 878b007e-161c-4e36-8ab2-3d7047d8a92d
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: mbullwin
-ms.openlocfilehash: 9023f3d9ae3ddd4d75b5853a08177cba7718cec1
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 59bb8564613e9a0cebda00c2c847283ff218b882
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294723"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. Во многих случаях создать ресурс можно автоматически с помощью IDE. Однако в некоторых случаях создавать ресурс необходимо вручную. Например, чтобы иметь отдельные ресурсы для сборок разработки и производственных сборок приложения.
@@ -29,7 +30,7 @@ ms.lasthandoff: 11/01/2017
 
 Вам также потребуется подписка [Microsoft Azure](http://azure.com). Если у вашей группы или организации есть подписка Azure, владелец может добавить вас в нее с помощью вашей учетной записи Windows Live ID. Плата взимается только за используемый объем, а базовый план по умолчанию предусматривает бесплатное использование определенного объема в экспериментальных целях.
 
-Если у вас есть доступ к подписке, войдите в Application Insights по адресу [http://portal.azure.com](https://portal.azure.com)и используйте свой Live ID для входа.
+Если у вас есть доступ к подписке, войдите в Application Insights по адресу [http://portal.azure.com](https://portal.azure.com) с помощью Live ID.
 
 ## <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 Перейдите по адресу [portal.azure.com](https://portal.azure.com)и добавьте новый ресурс Application Insights.

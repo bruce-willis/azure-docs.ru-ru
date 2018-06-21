@@ -1,24 +1,20 @@
 ---
 title: Обновление встроенного ПО устройства c помощью Центра Интернета вещей Azure (.NET и .NET) | Документация Майкрософт
 description: Запуск обновления встроенного ПО устройства с помощью функции управления устройствами в Центре Интернета вещей. С помощью пакета SDK для устройств Azure IoT для .NET можно реализовать приложение имитации устройства и пакет SDK для служб Azure IoT для .NET, чтобы реализовать приложение-службу, которое запустит процесс обновления встроенного ПО.
-services: iot-hub
-documentationcenter: .net
 author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: ''
 ms.service: iot-hub
-ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.devlang: csharp
+ms.topic: conceptual
 ms.date: 10/19/2017
-ms.author: v-jamebr;dobett
-ms.openlocfilehash: 50bb2ada9cf848bdcfb4f958272ff918996bf411
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.author: dobett
+ms.openlocfilehash: cd669a9585ac5aecf935202a04065a828a2174be
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736761"
 ---
 # <a name="use-device-management-to-initiate-a-device-firmware-update-netnet"></a>Использование функции управления устройствами для начала обновления встроенного ПО устройства (.NET и .NET)
 [!INCLUDE [iot-hub-selector-firmware-update](../../includes/iot-hub-selector-firmware-update.md)]

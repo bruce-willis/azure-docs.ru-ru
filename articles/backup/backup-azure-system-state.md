@@ -1,25 +1,20 @@
 ---
-title: Резервное копирование состояния системы Windows в Azure | Документация Майкрософт
+title: Резервное копирование состояния системы Windows в Azure
 description: Узнайте, как выполнить резервное копирование состояния системы компьютеров Windows Server и/или Windows в Azure.
 services: backup
-documentationcenter: ''
 author: saurabhsensharma
-manager: carmonm
-editor: ''
+manager: shivamg
 keywords: как выполнять резервное копирование, резервное копирование файлов и папок
-ms.assetid: 5b15ebf1-2214-4722-b937-96e2be8872bb
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 07/31/2017
-ms.author: saurse;markgal
-ms.openlocfilehash: b4847a4b2d8397530d8a6bb4bc4729a6966634f2
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.topic: conceptual
+ms.date: 05/23/2018
+ms.author: saurse
+ms.openlocfilehash: 61ee1ce7d5cc6dc2aa4b7a8b02c2e5ba77539725
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34606075"
 ---
 # <a name="back-up-windows-system-state-in-resource-manager-deployment"></a>Резервное копирование состояния системы Windows с использованием модели развертывания Resource Manager
 В этой статье описано, как выполнить резервное копирование состояния системы Windows Server в Azure. В этом руководстве приведены общие сведения,
@@ -175,6 +170,11 @@ ms.lasthandoff: 04/03/2018
 * Первое резервное копирование состояния системы.
 
 Чтобы выполнить первоначальное резервное копирование, используйте агент служб восстановления Microsoft Azure.
+
+> [!NOTE]
+> Создать резервную копию состояния системы в Windows Server 2008 R2 можно с помощью Windows Server 2016. Резервное копирование состояния системы не поддерживается в клиентских номерах SKU. Состояние системы не указывается в качестве альтернативы для клиентов под управлением Windows и на компьютерах Windows Server 2008 с пакетом обновления 2.
+>
+>
 
 ### <a name="to-schedule-the-backup-job"></a>Планирование задания резервного копирования
 

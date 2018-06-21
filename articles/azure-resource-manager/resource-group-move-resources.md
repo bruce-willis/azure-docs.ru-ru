@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: tomfitz
-ms.openlocfilehash: 6c0e9c96840995c7d5a067e60264c66ce987af93
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 2326f37afcb845b8c484bdf57db0876026f8e8a1
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360093"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34602726"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -92,6 +92,8 @@ ms.locfileid: "34360093"
 
    * **Microsoft.Resources/subscriptions/resourceGroups/moveResources/action** для исходной группы ресурсов;
    * **Microsoft.Resources/subscriptions/resourceGroups/write** для целевой группы ресурсов.
+
+5. Если это возможно, разделите большие перемещения на несколько операций перемещения. В диспетчере ресурсов попытка перемещения более чем 800 ресурсов за одну операцию немедленно завершается ошибкой. Однако перемещение менее чем 800 ресурсов может также завершиться со сбоем из-за превышения времени ожидания.
 
 ## <a name="when-to-call-support"></a>Когда обращаться в службу поддержки
 

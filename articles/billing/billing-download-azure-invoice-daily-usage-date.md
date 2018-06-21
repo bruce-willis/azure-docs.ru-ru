@@ -2,13 +2,12 @@
 title: Скачивание счета на оплату и данных о ежедневном использовании в Azure | Документация Майкрософт
 description: Описывается, как скачать или просмотреть счет на оплату и данные о ежедневном использовании в Azure.
 keywords: счет на оплату,скачать счет,счет azure,использование azure
-services: ''
+services: billing
 documentationcenter: ''
 author: genlin
 manager: tonguyen
 editor: ''
 tags: billing
-ms.assetid: 6d568d1d-3bd6-4348-97d0-1098b5fe0661
 ms.service: billing
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -16,19 +15,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: genli
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e57e3898c5e843dcc130746a10e78b0681303670
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 59ee992518b5e529f486415f962c6f26881875f1
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34607418"
 ---
 # <a name="download-or-view-your-azure-billing-invoice-and-daily-usage-data"></a>Скачивание или просмотр счета на оплату и данных о ежедневном использовании в Azure
 Счет можно скачать на [портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) или получить по электронной почте. Чтобы скачать данные о ежедневном использовании, перейдите в [Центр управления учетной записью Azure](https://account.azure.com/Subscriptions). Получать сведения о выставлении счетов и использовании разрешено только определенным ролям, например администратору учетной записи. Дополнительные сведения о доступе к сведениям о выставлении счетов см. в статье [Управление доступом для выставления счетов Azure с помощью ролей](billing-manage-access.md).
 
 Эта статья не относится к клиентам с соглашением Enterprise (EA). Если вы являетесь клиентом EA, ваши счета отправляются непосредственно администраторам регистрации.
 
-[!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="get-your-invoice-in-email-pdf"></a>Получение счета по электронной почте (в формате PDF)
 Вы можете согласиться и настроить дополнительных получателей Azure для получения счета по электронной почте. Эта функция может быть недоступна для определенных подписок, например для предложений о планах поддержки, соглашений Enterprise или Azure с открытой лицензией.
@@ -39,13 +38,18 @@ ms.lasthandoff: 05/20/2018
     
 2. Щелкните **Согласиться** и примите условия.
 
-    ![Снимок экрана, на котором отображается процесс предоставления согласия](./media/billing-download-azure-invoice-daily-usage-date/InvoiceArticleStep2.PNG)
+    ![Снимок экрана, на котором отображается процесс предоставления согласия (шаг 2)](./media/billing-download-azure-invoice-daily-usage-date/InvoiceArticleStep2.PNG)
  
-3. Приняв условия соглашения, можно настроить дополнительных получателей.
+3. Приняв условия соглашения, можно настроить дополнительных получателей. При удалении получателей адреса их электронной почты больше не сохраняются. Если вы передумаете, их необходимо добавить повторно.
 
-    ![Снимок экрана, на котором отображается процесс предоставления согласия](./media/billing-download-azure-invoice-daily-usage-date/InvoiceArticleStep3.PNG)
+    ![Снимок экрана, на котором отображается процесс предоставления согласия (шаг 3)](./media/billing-download-azure-invoice-daily-usage-date/InvoiceArticleStep3.PNG)
     
 Если после выполнения этих действий вы не получили сообщение, то проверьте правильность своего адреса электронной почты в [настройках общения в профиле](https://account.windowsazure.com/profile).
+
+### <a name="opt-out-from-getting-your-invoice-in-email"></a>Отказ от получения накладной в сообщении электронной почты
+Если вы не хотите получать накладные в сообщениях электронной почты, щелкните "Отказаться от отправки счетов по электронной почте". После этого удаляются все адреса электронной почты, на которые могли отправляться накладные. При повторной настройке необходимо снова указать получателей.
+
+ ![Снимок экрана, на котором отображается процесс отказа от отправки](./media/billing-download-azure-invoice-daily-usage-date/InvoiceArticleStep4.PNG)
 
 ## <a name="download-invoice-from-azure-portal-pdf"></a>Скачивание счета с портала Azure (в формате PDF)
 

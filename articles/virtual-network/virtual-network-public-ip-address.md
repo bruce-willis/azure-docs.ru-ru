@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial
-ms.openlocfilehash: c28d409bbdb7a4100f2bb9f00ff6f58a13855ea4
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 30b4a7ea0d3f68e48d02e5cb72e70de74dc2addf
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34305061"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34658695"
 ---
 # <a name="create-change-or-delete-a-public-ip-address"></a>Создание, изменение и удаление общедоступного IP-адреса
 
@@ -70,7 +70,7 @@ ms.locfileid: "34305061"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip?toc=%2fazure%2fvirtual-network%2ftoc.json#az_network_public_ip_create)|
+|Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create)|
 |PowerShell|[New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress)|
 
 ## <a name="view-change-settings-for-or-delete-a-public-ip-address"></a>Просмотр, изменение параметров или удаление общедоступного IP-адреса
@@ -89,7 +89,7 @@ ms.locfileid: "34305061"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|Команда [az network public-ip-list](/cli/azure/network/public-ip#az_network_public_ip_list) выводит список общедоступных IP-адресов, [az network public-ip-show](/cli/azure/network/public-ip#az_network_public_ip_show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az_network_public_ip_update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az_network_public_ip_delete) — удаляет IP-адрес.|
+|Интерфейс командной строки|Команда [az network public-ip list](/cli/azure/network/public-ip#az-network-public-ip-list) выводит список общедоступных IP-адресов, [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az-network-public-ip-update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az-network-public-ip-delete) — удаляет IP-адрес.|
 |PowerShell|Командлет [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) позволяет извлечь объект общедоступного IP-адреса и просмотреть его параметры, [Set-AzureRmPublicIpAddress](/powershell/resourcemanager/azurerm.network/set-azurermpublicipaddress) позволяет обновить параметры IP-адреса, а [Remove-AzureRmPublicIpAddress](/powershell/module/azurerm.network/remove-azurermpublicipaddress) — удалить IP-адрес.|
 
 ## <a name="permissions"></a>Разрешения

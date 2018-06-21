@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/13/2018
 ms.author: magoedte
-ms.openlocfilehash: 04c56b7b7726d9ca603f2ff38acfabc887ecaf34
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: a34a4be75488aca46fe232331e4bac3e0ac414b0
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637775"
 ---
 # <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-oms-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix из агента OMS для Linux в Log Analytics 
 [Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](log-analytics-alerts.md).  В этой статье описано, как настроить сбор оповещений из этих средств в агенте OMS для Linux.
@@ -56,7 +57,7 @@ ms.lasthandoff: 04/16/2018
     ```
 
 ### <a name="configuring-zabbix-alert-collection"></a>Настройка сбора оповещений Zabbix
-Для сбора оповещений сервера Zabbix необходимо указать имя пользователя и пароль в формате *открытого текста*.  Это не идеальное решение, но мы рекомендуем создать отдельного пользователя и предоставить ему разрешения только для мониторинга.
+Для сбора оповещений сервера Zabbix необходимо указать имя пользователя и пароль в формате *открытого текста*.  Хотя это и не оптимально, рекомендуется создать пользователя Zabbix с разрешениями только для чтения для перехвата соответствующих предупреждений.
 
 Для сбора оповещений выполните следующие действия на сервере Nagios.
 
@@ -73,7 +74,7 @@ ms.lasthandoff: 04/16/2018
 
 2. Перезапустите управляющую программу omsagent
 
-    sudo sh /opt/microsoft/omsagent/bin/service_control restart
+    `sudo sh /opt/microsoft/omsagent/bin/service_control restart`
 
 
 ## <a name="alert-records"></a>Записи оповещений

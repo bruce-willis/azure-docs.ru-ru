@@ -1,11 +1,11 @@
 ---
-title: "Настройка высокого уровня доступности с помощью STONITH для SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт"
-description: "Установка высокого уровня доступности для SAP HANA в Azure (крупные экземпляры) в SUSE с помощью STONITH."
+title: Настройка высокого уровня доступности с помощью STONITH для SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт
+description: Установка высокого уровня доступности для SAP HANA в Azure (крупные экземпляры) в SUSE с помощью STONITH.
 services: virtual-machines-linux
-documentationcenter: 
+documentationcenter: ''
 author: saghorpa
-manager: timlt
-editor: 
+manager: jeconnoc
+editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
 ms.topic: article
@@ -14,11 +14,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d710fe24673c6ddc581d36e4f0cacdb750ff74f9
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.openlocfilehash: 344a48ff82bd93bf8dc9924e09399e72b9f88e2f
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34656369"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -34,8 +35,8 @@ ms.lasthandoff: 11/22/2017
 - NTP (сервер времени) настроен.
 - Вы ознакомились с последней версией документации SUSE по настройке HA.
 
-### <a name="set-up-details"></a>Подробные сведения о настройке
-- В этом руководстве использованы следующие настройки:
+### <a name="setup-details"></a>Сведения о настройке
+В этом руководстве используется следующая конфигурация:
 - операционная система: SLES 12 с пакетом обновления 1 (SP1) для SAP;
 - крупные экземпляры HANA: 2xS192 (4 сокета, 2 ТБ);
 - Версия HANA: HANA 2.0 с пакетом обновления 1.
@@ -261,7 +262,7 @@ crm_mon
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств кластера и ресурсов 
 В этом разделе описаны действия по настройке кластерных ресурсов.
-В этом примере мы настроили ресурс ниже, остальные можно настроить (при необходимости) с помощью руководства SUSE HA. Эту настройку необходимо выполнить только на **одном из узлов**. Выполните ее на первичном узле.
+В этом примере мы настроим ресурс ниже, остальные можно настроить (при необходимости) с помощью руководства SUSE HA. Эту настройку необходимо выполнить только на **одном из узлов**. Выполните ее на первичном узле.
 
 - Начальная загрузка кластера
 - Устройство STONITH

@@ -6,15 +6,14 @@ author: tdykstra
 manager: cfowler
 ms.service: functions
 ms.topic: include
-ms.date: 03/12/2018
+ms.date: 05/23/2018
 ms.author: tdykstra
 ms.custom: include file
-ms.openlocfilehash: c306c52ff6f76e09312995974013df6840a5a1a1
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.openlocfilehash: 4bffe811dcee6a92e97c66b5813211e58004bb73
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34726725"
 ---
-Для локальной разработки в решении "Функции Azure" версии 2.x пакет автоматически [регистрируется как расширение привязки](../articles/azure-functions/functions-triggers-bindings.md#local-development-azure-functions-core-tools). Для разработки библиотеки классов C# в решении "Функции Azure" версий 1.x и 2.x пакет автоматически [устанавливается в проекте](../articles/azure-functions/functions-triggers-bindings.md#local-c-development-using-visual-studio-or-vs-code). 
-
-Обратите внимание, что в исходном коде применяется нумерация версий пакета SDK WebJobs: пакет SDK WebJobs версии 2.x эквивалентен решению "Функции Azure" версии 1.x. Поэтому код решения "Функции Azure" версии 1.x находится в ветви репозитория для версий 2.x. Главная ветвь и ветвь разработки содержат код для WebJobs версии 3.x, который эквивалентен коду решения "Функции Azure" версии 2.x.
+Поддержка этой привязки автоматически предоставляется во всех средах разработки. Не нужно вручную устанавливать пакет или регистрировать расширение.

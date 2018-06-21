@@ -8,11 +8,12 @@ ms.topic: include
 ms.date: 03/11/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 5940be8c13a85e256055d6bd6362c9cd93323ee4
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: da24c0e616bbd5961edd4cfcb72040f66627c982
+ms.sourcegitcommit: 8659efc885be98f42edae0b516ca576e38940c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35568115"
 ---
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](../articles/virtual-network/virtual-networks-overview.md). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как в этой виртуальной сети будет предоставляться доступ к виртуальным машинам. Очень важно [спланировать это перед созданием ресурсов](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md), а также ознакомиться с [ограничениями, применяемыми к сетевым ресурсам](../articles/azure-subscription-service-limits.md#networking-limits).
 
@@ -170,4 +171,4 @@ ms.lasthandoff: 05/20/2018
 
 - Дополнительные сведения об [определяемых пользователем маршрутах и IP-пересылке](../articles/virtual-network/virtual-networks-udr-overview.md). 
 - Дополнительные сведения о [настройке подключения между виртуальными сетями](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
-- Дополнительные сведения об [устранении проблем с маршрутами](../articles/virtual-network/virtual-network-routes-troubleshoot-portal.md).
+- Дополнительные сведения об [устранении проблем с маршрутами](../articles/virtual-network/diagnose-network-routing-problem.md).

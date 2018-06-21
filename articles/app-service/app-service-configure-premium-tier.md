@@ -1,12 +1,12 @@
 ---
-title: "Настройка ценовой категории Премиум V2 для службы приложений Azure | Документы Майкрософт"
-description: "Вы можете узнать, как улучшить производительность для веб-приложений, мобильных приложений и приложений API в службе приложений Azure с помощью новой ценовой категории Премиум V2."
-keywords: "служба приложений, служба приложений azure, масштабировать, масштабируемый, план службы приложений, стоимость службы приложений"
+title: Настройка ценовой категории Премиум V2 для службы приложений Azure | Документы Майкрософт
+description: Вы можете узнать, как улучшить производительность для веб-приложений, мобильных приложений и приложений API в службе приложений Azure с помощью новой ценовой категории Премиум V2.
+keywords: служба приложений, служба приложений azure, масштабировать, масштабируемый, план службы приложений, стоимость службы приложений
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: cephalin
 manager: cfowler
-editor: 
+editor: ''
 ms.assetid: ff00902b-9858-4bee-ab95-d3406018c688
 ms.service: app-service
 ms.workload: na
@@ -15,11 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: cephalin
-ms.openlocfilehash: 76897173d9fdfffe7139e7c5648ad0efb1c05b97
-ms.sourcegitcommit: 95500c068100d9c9415e8368bdffb1f1fd53714e
+ms.openlocfilehash: 4c157ed905b7dc48c886b26987c164ef9a47f3c3
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34714567"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 
@@ -51,9 +52,9 @@ az appservice list-locations --sku P1V2
 
 При настройке плана службы приложений на <a href="https://portal.azure.com" target="_blank">портале Azure</a> выберите **Ценовая категория**. 
 
-Выберите один из параметров **Премиум V2** и нажмите кнопку **Выбрать**.
+Выберите **Производство**, а затем выберите **P1V2**, **P2V2** или **P3V2** и щелкните **Применить**.
 
-![](media/app-service-configure-premium-tier/pick-premium-tier.png)
+![](media/app-service-configure-premium-tier/scale-up-tier-select.png)
 
 > [!IMPORTANT] 
 > Если вы не видите параметры **P1V2**, **P2V2** и **P3V2**, значит, категория **Премиум V2** недоступна в выбранном регионе либо вы настраиваете план службы приложений Linux, не поддерживающий **эту категорию**.
@@ -70,7 +71,7 @@ az appservice list-locations --sku P1V2
 
 ![](media/app-service-configure-premium-tier/scale-up-tier-portal.png)
 
-Выберите один из размеров **Премиум V2** и нажмите кнопку **Выбрать**.
+Выберите **Производство**, а затем выберите **P1V2**, **P2V2** или **P3V2** и щелкните **Применить**.
 
 ![](media/app-service-configure-premium-tier/scale-up-tier-select.png)
 

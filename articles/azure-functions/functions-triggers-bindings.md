@@ -13,13 +13,14 @@ ms.devlang: multiple
 ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 02/07/2018
+ms.date: 05/24/2018
 ms.author: tdykstra
-ms.openlocfilehash: 56b0f8e24dfc38b542f4bbfc7975f1704d70f22c
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: c5211b43a85383c7c9f42a1d56271addae6d956e
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34725349"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -45,38 +46,39 @@ ms.lasthandoff: 04/23/2018
 
 ## <a name="register-binding-extensions"></a>Регистрация расширений привязки
 
-В версии 2.х среды выполнения решения "Функции Azure" нужно явно зарегистрировать [расширения привязки](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/dev/README.md), используемые в приложении-функции. 
+В версии 2.х среды выполнения решения "Функции Azure" нужно явно зарегистрировать расширения привязки (типы привязки), используемые в приложении-функции. 
 
-Расширения предоставляются как пакеты NuGet, имя которых обычно начинается с [microsoft.azure.webjobs.extensions](https://www.nuget.org/packages?q=microsoft.azure.webjobs.extensions).  Способ установки и регистрации расширений привязки зависит от способа разработки функций: 
+Версия 2.х среды выполнения решения "Функции" в настоящее время находится в предварительной версии. Сведения о настройке приложения-функции для использования среды выполнения Функций версии 2.x см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md).
+
+В версии 2.x есть базовый набор привязок, которые регистрируются автоматически, поэтому явно делать этого не нужно. К ним относятся HTTP, таймер и служба хранилища Azure (большие двоичные объекты, очереди и таблицы). 
+
+Расширения предоставляются как пакеты NuGet, имя которых обычно начинается с [microsoft.azure.webjobs.extensions](https://www.nuget.org/packages?q=microsoft.azure.webjobs.extensions).  Способ регистрации расширений привязки зависит от способа разработки функций: 
 
 + [локально в C# с использованием Visual Studio или VS Code](#local-c-development-using-visual-studio-or-vs-code);
 + [локально с использованием основных инструментов решения "Функции Azure"](#local-development-azure-functions-core-tools);
 + [на портале Azure](#azure-portal-development). 
 
-В версии 2.x существует базовый набор привязок, которые не предоставляются как расширения. Для следующих триггеров и привязок не нужно регистрировать расширения: HTTP, таймер и служба хранилища Azure. 
-
-Сведения о настройке приложения-функции для использования среды выполнения Функций версии 2.x см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md). Версия 2.х среды выполнения решения "Функции" в настоящее время находится в предварительной версии. 
-
 Версии пакетов, упомянутые в этом разделе, приведены только в качестве примеров. Перейдите на сайт [NuGet.org](https://www.nuget.org/packages?q=microsoft.azure.webjobs.extensions), чтобы определить, какая версия данного расширения требуется для других зависимостей в приложении-функции.    
 
-###  <a name="local-c-development-using-visual-studio-or-vs-code"></a>Локальная разработка на C# с помощью Visual Studio или VS Code 
+### <a name="local-csharp"></a>Локальная разработка на языке C# с помощью Visual Studio или VS Code
 
-При использовании Visual Studio или Visual Studio Code для разработки функций в C# локально необходимо просто добавить пакет NuGet для расширения. 
+При локальной разработке функций на языке C# с помощью Visual Studio или Visual Studio Code необходимо установить пакет NuGet для расширения. 
 
 + **Visual Studio**. Воспользуйтесь диспетчером пакетов NuGet. Следующая команда [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) устанавливает расширение Azure Cosmos DB из консоли диспетчера пакетов:
 
-    ```
+    ```powershell
     Install-Package Microsoft.Azure.WebJobs.Extensions.CosmosDB -Version 3.0.0-beta6 
     ```
+
 + **Visual Studio Code**. Пакеты можно установить из командной строки, используя команду [dotnet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET CLI, как показано ниже.
 
-    ```
+    ```terminal
     dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.0-beta6 
     ```
 
 ### <a name="local-development-azure-functions-core-tools"></a>Локальная разработка основных инструментов решения "Функции Azure"
 
-[!INCLUDE [Full bindings table](../../includes/functions-core-tools-install-extension.md)]
+[!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
 
 ### <a name="azure-portal-development"></a>Разработка на портале Azure
 
@@ -654,7 +656,7 @@ public class BlobName
 - [Хранилище таблиц](functions-bindings-storage-table.md)
 - [Концентратор событий](functions-bindings-event-hubs.md)
 - [Служебная шина](functions-bindings-service-bus.md)
-- [База данных Azure Cosmos](functions-bindings-cosmosdb.md)
+- [Azure Cosmos DB](functions-bindings-cosmosdb.md)
 - [Microsoft Graph](functions-bindings-microsoft-graph.md)
 - [SendGrid](functions-bindings-sendgrid.md)
 - [Twilio](functions-bindings-twilio.md)

@@ -1,24 +1,19 @@
 ---
-title: "Вызов веб-перехватчика с помощью оповещений журнала действий Azure | Документация Майкрософт"
-description: "Узнайте, как перенаправлять события журнала действий в другие службы для выполнения пользовательских действий. Например, можно отправлять SMS, вести журнал ошибок или уведомлять команду через службу чата или обмена сообщениями."
+title: Вызов веб-перехватчика для классического оповещения журнала действий Azure
+description: Узнайте, как перенаправлять события журнала действий в другие службы для выполнения пользовательских действий. Например, можно отправлять SMS, вести журнал ошибок или уведомлять команду через службу чата или обмена сообщениями.
 author: johnkemnetz
-manager: orenr
-editor: 
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: 64d333d1-7f37-4a00-9d16-dda6e69a113b
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: johnkem
-ms.openlocfilehash: 9872c30d123f0a7443e28dc58ee0d4e16572a390
-ms.sourcegitcommit: 95500c068100d9c9415e8368bdffb1f1fd53714e
+ms.component: alerts
+ms.openlocfilehash: e825d0f2487c20c8c7f3d210d7180b07742d7173
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262466"
 ---
 # <a name="call-a-webhook-on-an-azure-activity-log-alert"></a>Вызов веб-перехватчика для оповещений журнала действий Azure
 С помощью веб-перехватчиков можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. Кроме того, можно настроить отправку сообщения электронной почты при активации оповещения журнала действий.

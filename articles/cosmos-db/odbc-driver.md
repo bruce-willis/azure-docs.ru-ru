@@ -5,20 +5,17 @@ keywords: ODBC, драйвер ODBC
 services: cosmos-db
 author: SnehaGunda
 manager: kfile
-documentationcenter: ''
-ms.assetid: 9967f4e5-4b71-4cd7-8324-221a8c789e6b
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: rest-api
-ms.topic: article
+ms.devlang: na
+ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 360161ec0485259029be0bbd5194911e484a57e5
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 11e0a4e38739a775d977cf76b72d4dc92942a7b0
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34725097"
 ---
 # <a name="connect-to-azure-cosmos-db-using-bi-analytics-tools-with-the-odbc-driver"></a>Подключение к Azure Cosmos DB с помощью драйвера ODBC с использованием инструментов бизнес-аналитики
 
@@ -123,7 +120,7 @@ Azure Cosmos DB — это база данных без схемы, поэто�
 Можно отправить запрос к базе данных Azure Cosmos DB из среды SQL Server Management Studio (SSMS), настроив подключение связанного сервера.
 
 1. Создайте системный источник данных, как описано на [шаге 2](#connect), например, с именем `SDS Name`.
-2. [Установите SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
+2. [Установите SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) и подключитесь к первому серверу SQL Server. 
 3. В редакторе запросов SSMS создайте объект связанного сервера `DEMOCOSMOS` для источника данных с помощью следующих команд. Замените `DEMOCOSMOS` именем связанного сервера, а `SDS Name` — именем системного источника данных.
 
     ```sql

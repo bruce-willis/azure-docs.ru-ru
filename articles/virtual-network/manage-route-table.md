@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial
-ms.openlocfilehash: 065ac8b2e9cb48408c7922a1937e541521ccd8cf
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 93ecd0264413e0eb719c9d33f0a0b756bcee6552
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895601"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34726454"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
 
@@ -94,6 +94,8 @@ Azure автоматически направляет трафик между п
 3. В разделе **параметров** выберите **Подсети**.
 4. Выберите подсеть, с которой нужно связать таблицу маршрутов.
 5. Выберите **таблицу маршрутов**, с которой нужно связать подсеть, а затем нажмите кнопку **Сохранить**.
+
+Если виртуальная сеть подключена к шлюзу Azure VPN, не связывайте таблицу маршрутов с [подсетью шлюза](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md?toc=%2fazure%2fvirtual-network%2ftoc.json#gwsub), включающей маршрут с назначением 0.0.0.0/0. Это может привести к неправильной работе шлюза. Дополнительные сведения об использовании префикса 0.0.0.0/0 в маршруте см. в разделе [Префикс адреса 0.0.0.0/0](virtual-networks-udr-overview.md#default-route).
 
 **Команды**
 

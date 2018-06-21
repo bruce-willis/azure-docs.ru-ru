@@ -1,25 +1,20 @@
 ---
-title: Часто задаваемые вопросы об агенте службы Azure Backup | Документация Майкрософт
+title: Часто задаваемые вопросы об агенте службы Azure Backup
 description: Ответы на часто задаваемые вопросы о принципе работы агента службы Azure Backup, а также об ограничениях хранения и резервного копирования.
 services: backup
-documentationcenter: ''
 author: trinadhk
 manager: shreeshd
-editor: ''
 keywords: резервное копирование и аварийное восстановление; служба архивации
-ms.assetid: 778c6ccf-3e57-4103-a022-367cc60c411a
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 7/18/2017
-ms.author: trinadhk;pullabhk;
-ms.openlocfilehash: 8777b2265666a4505a3432aca6683e2510519cac
-ms.sourcegitcommit: a36a1ae91968de3fd68ff2f0c1697effbb210ba8
+ms.author: trinadhk
+ms.openlocfilehash: 4234b76c192ba3bbeaca9593250cc855c073e380
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34605537"
 ---
 # <a name="questions-about-the-azure-backup-agent"></a>Вопросы об агенте службы Azure Backup
 В этой статье содержатся ответы на часто задаваемые вопросы, которые помогут вам быстро ознакомиться с компонентами агента службы Azure Backup. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -71,7 +66,7 @@ ms.lasthandoff: 03/17/2018
 ### <a name="does-the-azure-backup-agent-work-on-a-server-that-uses-windows-server-2012-deduplication-br"></a>Работает ли агент службы архивации Azure на сервере, где используется дедупликация Windows Server 2012? <br/>
 Да. При подготовке операции резервного копирования служба агента преобразует дедуплицированные данные в обычные. Затем она оптимизирует данные для резервного копирования, шифрует их и отправляет зашифрованные данные в службу онлайн-архивации.
 
-## <a name="backup"></a>Архивация
+## <a name="backup"></a>Azure Backup
 ### <a name="how-do-i-change-the-cache-location-specified-for-the-azure-backup-agentbr"></a>Как изменить расположение кэша, указанное для агента службы архивации Azure?<br/>
 Выполните действия ниже, чтобы изменить расположение кэша.
 

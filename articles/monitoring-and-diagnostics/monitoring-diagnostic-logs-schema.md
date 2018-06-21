@@ -1,24 +1,19 @@
 ---
-title: Поддерживаемые службы и схемы в журналах диагностики Azure | Документация Майкрософт
+title: Поддерживаемые службы и схемы в журналах Системы диагностики Azure
 description: Узнайте о поддерживаемых схемах служб и событий для журналов диагностики Azure.
 author: johnkemnetz
-manager: orenr
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: fe8887df-b0e6-46f8-b2c0-11994d28e44f
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 4/12/2018
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: reference
+ms.date: 6/08/2018
 ms.author: johnkem
-ms.openlocfilehash: 91c3f1507bb4fb64d5395917e8e431951f77e72b
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.component: logs
+ms.openlocfilehash: 45595893a199b845c8b010bc1e2545b89aa688cd
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264985"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -29,30 +24,34 @@ ms.lasthandoff: 04/16/2018
 
 | Service | Схемы и документы |
 | --- | --- |
-| службы Analysis Services | Схема недоступна. |
+| Analysis Services | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
 | Управление API | [Журналы диагностики управления API](../api-management/api-management-howto-use-azure-monitor.md#diagnostic-logs) |
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md) |
 | Служба автоматизации Azure |[Log Analytics для службы автоматизации Azure](../automation/automation-manage-send-joblogs-log-analytics.md) |
 | Пакетная служба Azure |[Ведение журналов диагностики пакетной службы Azure](../batch/batch-diagnostics.md) |
-| Customer Insights | Схема недоступна. |
-| Сеть доставки содержимого | Схема недоступна. |
+| Сеть доставки содержимого | [Журналы Системы диагностики Azure для CDN](../cdn/cdn-azure-diagnostic-logs.md) |
 | Cosmos DB | [Журнал ведения диагностики Azure Cosmos DB](../cosmos-db/logging.md) |
+| Фабрика данных | [Мониторинг фабрик данных с помощью Azure Monitor](../data-factory/monitor-using-azure-monitor.md) |
 | Data Lake Analytics |[Доступ к журналам диагностики для Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Store |[Доступ к журналам диагностики Azure Data Lake Store](../data-lake-store/data-lake-store-diagnostic-logs.md) |
+| База данных для PostgreSQL |  Схема недоступна. |
 | Концентраторы событий |[Журналы диагностики концентраторов событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
+| ExpressRoute | Схема недоступна. |
 | Центр Интернета вещей | [Использование Azure Monitor](../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
-| хранилище ключей; |[Ведение журнала хранилища ключей Azure](../key-vault/key-vault-logging.md) |
-| Подсистема балансировки нагрузки |[Log Analytics для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md) |
-| приложения логики; |[Настраиваемая схема отслеживания сообщений B2B для приложений логики](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
+| Key Vault |[Ведение журнала хранилища ключей Azure](../key-vault/key-vault-logging.md) |
+| Load Balancer |[Log Analytics для Azure Load Balancer](../load-balancer/load-balancer-monitor-log.md) |
+| Logic Apps |[Настраиваемая схема отслеживания сообщений B2B для приложений логики](../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md) |
 | группы сетевой безопасности; |[Аналитика журналов для групп безопасности сети](../virtual-network/virtual-network-nsg-manage-log.md) |
-| Защита от атак DDoS | Схема недоступна. |
+| Защита от атак DDoS | [Управление службой "Защита от атак DDoS Azure" уровня "Стандартный"](../virtual-network/manage-ddos-protection.md) |
+| Выделенная служба PowerBI | Схема недоступна. |
 | Службы восстановления | [Модель данных для Azure Backup](../backup/backup-azure-reports-data-model.md)|
 | поиска |[Включение и использование аналитики поискового трафика](../search/search-traffic-analytics.md) |
-| Управление сервером | Схема недоступна. |
-| Служебная шина |[Журналы диагностики служебной шины Azure](../service-bus-messaging/service-bus-diagnostic-logs.md) |
+| Служебная шина Azure |[Журналы диагностики служебной шины Azure](../service-bus-messaging/service-bus-diagnostic-logs.md) |
 | База данных SQL | [Метрики и журналы диагностики базы данных SQL Azure](../sql-database/sql-database-metrics-diag-logging.md) |
 | Stream Analytics |[Журналы диагностики задания](../stream-analytics/stream-analytics-job-diagnostic-logs.md) |
+| Диспетчер трафика | Схема недоступна. |
 | Виртуальные сети | Схема недоступна. |
+| Шлюзы виртуальной сети | Схема недоступна. |
 
 ## <a name="supported-log-categories-per-resource-type"></a>Поддерживаемые категории журнала для каждого типа ресурса
 |Тип ресурса|Категория|Отображаемое имя категории|
@@ -74,6 +73,7 @@ ms.lasthandoff: 04/16/2018
 |Microsoft.DataLakeStore/accounts|Аудит|Журналы аудита|
 |Microsoft.DataLakeStore/accounts|Requests|Журналы запросов|
 |Microsoft.DBforPostgreSQL/servers|PostgreSQLLogs|Журналы сервера PostgreSQL|
+|Microsoft.DBforPostgreSQL/servers|PostgreSQLBackupEvents|События резервного копирования PostgreSQL|
 |Microsoft.Devices/IotHubs|Подключения|Подключения|
 |Microsoft.Devices/IotHubs|DeviceTelemetry|Телеметрия устройства|
 |Microsoft.Devices/IotHubs|C2DCommands|Команды, отправляемые из облака на устройство|
@@ -90,6 +90,7 @@ ms.lasthandoff: 04/16/2018
 |Microsoft.Devices/provisioningServices|ServiceOperations|Операции со службой|
 |Microsoft.DocumentDB/databaseAccounts|DataPlaneRequests|DataPlaneRequests|
 |Microsoft.DocumentDB/databaseAccounts|MongoRequests|MongoRequests|
+|Microsoft.DocumentDB/databaseAccounts|QueryRuntimeStatistics|QueryRuntimeStatistics|
 |Microsoft.EventHub/namespaces|ArchiveLogs|Журналы архивации|
 |Microsoft.EventHub/namespaces|OperationalLogs|Журналы операций|
 |Microsoft.EventHub/namespaces|AutoScaleLogs|Журналы автомасштабирования.|
@@ -112,6 +113,7 @@ ms.lasthandoff: 04/16/2018
 |Microsoft.Network/virtualNetworkGateways|P2SDiagnosticLog|Журналы диагностики P2S|
 |Microsoft.Network/trafficManagerProfiles|ProbeHealthStatusEvents|Событие вывода результатов проверки работоспособности диспетчера трафика|
 |Microsoft.Network/expressRouteCircuits|GWMCountersTable|Таблица счетчиков GWM.|
+|Microsoft.PowerBIDedicated/capacities|Двигатель|Двигатель|
 |Microsoft.RecoveryServices/Vaults|AzureBackupReport|Данные отчетов службы архивации Azure|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryJobs|Задания Azure Site Recovery|
 |Microsoft.RecoveryServices/Vaults|AzureSiteRecoveryEvents|События Azure Site Recovery|

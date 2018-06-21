@@ -1,24 +1,19 @@
 ---
-title: "Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика. | Документация Майкрософт"
-description: "Узнайте, как использовать действия автомасштабирования для вызова URL-адресов веб-сайтов или отправки уведомлений по электронной почте в Azure Monitor. "
+title: Использование автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика
+description: 'Узнайте, как использовать действия автомасштабирования для вызова URL-адресов веб-сайтов или отправки уведомлений по электронной почте в Azure Monitor. '
 author: anirudhcavale
-manager: orenr
-editor: 
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: eb9a4c98-0894-488c-8ee8-5df0065d094f
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: ancav
-ms.openlocfilehash: 16caf14028494800e9259f0296c292b606d0210a
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: autoscale
+ms.openlocfilehash: 65405a6d7f1d49911da1e2a5d26b02098a261c01
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262228"
 ---
 # <a name="use-autoscale-actions-to-send-email-and-webhook-alert-notifications-in-azure-monitor"></a>Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Monitor
 В этой статье показано, как настраиваются триггеры, позволяющие вам обращаться к определенным URL-адресам или отправлять сообщения электронной почты на основе действий автоматического масштабирования в Azure.  
@@ -72,7 +67,7 @@ ms.lasthandoff: 10/11/2017
 | customEmails |Да |Значение может быть null или массивом строк с адресами электронной почты. |
 | Объекты Webhook |Да |Значение может быть null или допустимым универсальным кодом ресурса (URI). |
 | serviceUri |Да |Допустимый универсальный код ресурса (URI) HTTPS. |
-| properties |Да |Значение должно быть пустым {} или может содержать пары "ключ — значение". |
+| properties |Да |Значение должно быть пустым, {}, или может содержать пары "ключ — значение". |
 
 ## <a name="authentication-in-webhooks"></a>Проверка подлинности в веб-перехватчиках
 Для webhook может использоваться аутентификация на основе маркеров, заключающаяся в сохранении универсального кода ресурса (URI) webhook с идентификатором маркера в качестве параметра запроса. Например, https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue

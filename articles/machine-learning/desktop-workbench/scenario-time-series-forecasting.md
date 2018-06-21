@@ -9,17 +9,19 @@ editor: anta
 ms.assetid: ''
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
+ms.component: desktop-workbench
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: anta
-ms.openlocfilehash: b40ebba3c85760d947861b4215dab6e16a86002b
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 19e62364599ec9f1d0571e6f6e35205b0bb93b4b
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34832539"
 ---
 # <a name="energy-demand-time-series-forecasting"></a>Прогнозирование потребности в энергии с использованием временных рядов
 
@@ -87,7 +89,7 @@ Azure Machine Learning Workbench упрощает процесс моделир�
 | 2012-01-01 02:00:00 | 4542,6 |
 | 2012-01-01 03:00:00 | 4357,7 |
 
-Значения потребления указаны в мегаватт-часах (МВт·ч). Ниже приведена диаграмма потребления энергии за 7 дней (июль 2017 г.).
+Значения потребления приведены в мегаватт-часах (МВт·ч). Ниже приведена диаграмма потребления энергии за 7 дней (июль 2017 г.).
 
 ![Потребление энергии](./media/scenario-time-series-forecasting/energy_demand.png  "Energy demand")
 

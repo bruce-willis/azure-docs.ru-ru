@@ -1,35 +1,35 @@
 ---
 title: Сравнение функций Базы данных SQL Azure | Документация Майкрософт
-description: В данной статье сравниваются возможности Базы данных SQL Azure и управляемых экземпляров между собой и с SQL Server.
+description: В этой статье сравниваются функции SQL Server, которые доступны в разных вариантах баз данных SQL Azure.
 services: sql-database
 author: jovanpop-msft
 ms.reviewer: bonova, carlrab
 ms.service: sql-database
-ms.topic: article
-ms.date: 05/15/2018
+ms.topic: conceptual
+ms.date: 06/08/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: 8144f70737e5f78f568a8a6dd35ddc7d43ced0fd
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 09595c19622eaabe0838c52bc1226fcdfe60d4ba
+ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34210061"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35248815"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
-В Базе данных SQL Azure и SQL Server используется общая база кода. Компоненты SQL Server, поддерживаемые в Базе данных SQL Azure, зависят от типа создаваемой базы данных SQL Azure. С помощью Базы данных SQL Azure можно создать базу данных в составе [управляемого экземпляра](sql-database-managed-instance.md) (в настоящее время эта функция находится на этапе общедоступной предварительной версии), а также можно создать отдельную базу данных либо базу данных в составе эластичного пула. 
+В Базе данных SQL Azure и SQL Server используется общая база кода. Компоненты SQL Server, поддерживаемые базой данных SQL Azure, зависят от типа создаваемой базы данных SQL Azure. С помощью базы данных SQL Azure можно создать базу данных в составе [управляемого экземпляра](sql-database-managed-instance.md) (в настоящее время эта функция находится на этапе общедоступной предварительной версии), а также можно создать базу данных в составе логического сервера и (если нужно) поместить в эластичный пул. 
 
 Корпорация Майкрософт продолжает расширять возможности Базы данных SQL Azure. Посетите веб-страницу обновлений служб для Azure, чтобы получить последние обновления с помощью приведенных ниже фильтров.
 
 * Фильтруйте обновления по [службе базы данных SQL](https://azure.microsoft.com/updates/?service=sql-database).
 * Фильтруйте обновления по [объявлениям об общедоступных версиях](http://azure.microsoft.com/updates/?service=sql-database&update-type=general-availability) функций базы данных SQL.
 
-## <a name="sql-server-and-sql-database-feature-support"></a>Поддержка функций в SQL Server и базе данных SQL
+## <a name="sql-server-feature-support-in-azure-sql-database"></a>Поддержка функций в SQL Server в базе данных SQL Microsoft Azure
 
 В следующей таблице перечислены основные функции SQL Server, а также приведены сведения о поддержке каждой конкретной функции и ссылки на дополнительные сведения о ней. 
 
-| **Функция SQL** | **Поддержка в базе данных SQL Azure** | **Управляемый экземпляр (предварительная версия)** |
+| **Функция SQL** | **В базе данных SQL Azure/логическом сервере поддерживается** | **В базе данных SQL Azure/управляемом экземпляре (предварительная версия) поддерживается** |
 | --- | --- | --- |
 | [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). |
 | [Группы доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
@@ -40,7 +40,7 @@ ms.locfileid: "34210061"
 | [Автоматическая настройка (принудительное применение плана)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| [Да](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning) |
 | [Автоматическая настройка (индексы)](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning)| [Да](sql-database-automatic-tuning.md)| Нет  |
 | [BACPAC-файл (экспорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/export-a-data-tier-application) | Да. Дополнительные сведения см. в статье [Экспорт базы данных SQL Azure в BACPAC-файл](sql-database-export.md). | Yes |
-| [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). | Yes |
+| [BACPAC-файл (импорт)](https://docs.microsoft.com/sql/relational-databases/data-tier-applications/import-a-bacpac-file-to-create-a-new-user-database) | Да. Дополнительные сведения см. в статье [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md). | Нет  |
 | [Команда BACKUP](https://docs.microsoft.com/sql/t-sql/statements/backup-transact-sql) | Нет, только инициируемое системой автоматическое резервное копирование. См. раздел [Подробнее об автоматически создаваемых резервных копиях в Базе данных SQL](sql-database-automated-backups.md). | Инициируемое системой автоматическое резервное копирование и инициируемое пользователем резервное копирование (только копирование). См. раздел [Backup](sql-database-managed-instance-transact-sql-information.md#backup) (Резервное копирование). |
 | [Встроенные функции](https://docs.microsoft.com/sql/t-sql/functions/functions) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |
 | [Запись измененных данных](https://docs.microsoft.com/sql/relational-databases/track-changes/about-change-data-capture-sql-server) | Нет  | Yes |
@@ -137,7 +137,7 @@ ms.locfileid: "34210061"
 |Обнаружение угроз|  [Да](sql-database-threat-detection.md)|[Да](sql-database-managed-instance-threat-detection.md)|
 | [Флаги трассировки](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql) | Нет  | Нет  |
 | [Переменные](https://docs.microsoft.com/sql/t-sql/language-elements/variables-transact-sql) | Yes | Yes |
-| [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Yes | Нет, не на этапе общедоступной предварительной версии. |
+| [Прозрачное шифрование данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption-tde) | Yes | Частично, только с использованием управляемого службой шифрования |
 [Виртуальная сеть](../virtual-network/virtual-networks-overview.md) | Частично. См. раздел [Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure](sql-database-vnet-service-endpoint-rule-overview.md). | Да, только для модели Azure Resource Manager. |
 | [Отказоустойчивая кластеризация Windows Server](https://docs.microsoft.com/sql/sql-server/failover-clusters/windows/windows-server-failover-clustering-wsfc-with-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [XML-индексы](https://docs.microsoft.com/sql/t-sql/statements/create-xml-index-transact-sql) | Yes | Yes |

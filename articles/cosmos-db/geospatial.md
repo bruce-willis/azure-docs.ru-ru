@@ -2,23 +2,20 @@
 title: Работа с геопространственными данными в Azure Cosmos DB | Документация Майкрософт
 description: Сведения о создании, индексировании и запрашивании пространственных объектов в Azure Cosmos DB и API SQL.
 services: cosmos-db
-documentationcenter: ''
 author: SnehaGunda
 manager: kfile
-ms.assetid: 82ce2898-a9f9-4acf-af4d-8ca4ba9c7b8f
 ms.service: cosmos-db
 ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
+ms.topic: conceptual
 ms.date: 10/20/2017
 ms.author: sngun
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 858d6c2154a74a6e5fe16c9392827cc8a6354f9c
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 893b985514f4c812da673a90fc40148e8ac9ce81
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34611373"
 ---
 # <a name="working-with-geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Работа с геопространственными данными и данными расположений GeoJSON в Azure Cosmos DB
 Эта статья содержит вводную информацию о геопространственной функциональности [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). После прочтения этой статьи вы сможете ответить на следующие вопросы:
@@ -98,7 +95,7 @@ Azure Cosmos DB поддерживает индексацию и запросы 
 Наряду с точками, объектами LineString и многоугольниками в GeoJSON также определяется способ группировки нескольких геопространственных местоположений, а также способ задания произвольных свойств географического положения в качестве **Функций**. Так как эти объекты являются действительными объектами JSON, их можно хранить и обрабатывать в Azure Cosmos DB. Однако Azure Cosmos DB поддерживает только автоматическую индексацию точек.
 
 ### <a name="coordinate-reference-systems"></a>Системы координат
-Поскольку Земля имеет неправильную форму, координаты геопространственных данных представляются во многих системах координат, каждая из которых имеет собственные границы отсчета и единицы измерения. Например, "Национальная система координат Великобритании" (National Grid of Britain) обладает высокой точностью в Великобритании, но не за ее пределами. 
+Поскольку Земля имеет неправильную форму, координаты геопространственных данных представляются во многих системах координат, каждая из которых имеет собственные границы отсчета и единицы измерения. Например, "Национальная система координат Великобритании" (National Grid of Britain) обладает точностью в Великобритании, но не за ее пределами. 
 
 Самой популярной системой координат на данный момент является [WGS-84](http://earth-info.nga.mil/GandG/wgs84/). WGS-84 используют устройства GPS и многие службы географических карт, в том числе Карты Google и API-интерфейсы Карт Bing. Azure Cosmos DB поддерживает индексирование и опрашивание геопространственных данных только с использованием WGS-84. 
 

@@ -5,14 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: include
-ms.date: 03/22/2018
+ms.date: 06/12/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 36f48e4cc321b534c0fd2e896bf3f43623c540bb
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 6e0d2b881e00acc6b1fccd3196187309fc36cba2
+ms.sourcegitcommit: 8659efc885be98f42edae0b516ca576e38940c97
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35568149"
 ---
 #### <a name="expressroute-limits"></a>Ограничения ExpressRoute
 Ниже приведены ограничения, которые применяются к ресурсам ExpressRoute для каждой подписки.
@@ -27,6 +28,7 @@ ms.lasthandoff: 04/05/2018
 | Максимальное количество маршрутов для общедоступного пиринга Azure с надстройкой ExpressRoute Premium |200 |
 | Максимальное количество маршрутов для общедоступного пиринга Майкрософт в Azure со стандартом ExpressRoute |200 |
 | Максимальное количество маршрутов для общедоступного пиринга Майкрософт в Azure с надстройкой ExpressRoute Premium |200 |
+| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4. |
 | Количество связей виртуальных сетей на канал ExpressRoute |см. таблицу ниже |
 
 #### <a name="number-of-virtual-networks-per-expressroute-circuit"></a>Количество виртуальных сетей на канал ExpressRoute

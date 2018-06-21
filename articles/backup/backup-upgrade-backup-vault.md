@@ -1,25 +1,19 @@
 ---
-title: Обновление резервного хранилища до хранилища служб восстановления Azure Backup | Документация Майкрософт
+title: Обновление резервного хранилища до хранилища служб восстановления Azure Backup
 description: Обновление резервного хранилища до хранилища служб восстановления предоставляет новые возможности, такие как резервное копирование виртуальных машин Resource Manager, усиление защиты, резервное копирование виртуальных машин VMware и резервное копирование состояния системы для серверов Windows
 services: backup
-documentationcenter: ''
 author: trinadhk
 manager: vijayts
-editor: ''
-keyword: backup vault; upgrade vault; recovery services vault
-ms.assetid: d037a8bf-49f2-4578-974a-3471d87ca278
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/10/2017
-ms.author: trinadhk, sogup
-ms.openlocfilehash: ffc5f11a324b5ac65c872ca2c033f039c129c5f8
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.author: trinadhk
+ms.openlocfilehash: 358c7b0e61d1c85e236007c2495941a31502431a
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34606865"
 ---
 # <a name="backup-vault-upgraded-to-recovery-services-vault"></a>Обновление резервного хранилища до хранилища служб восстановления
 В этой статье описаны основные возможности, которые предоставляет хранилище служб восстановления. Также здесь рассматриваются распространенные вопросы об обновлении существующего резервного хранилища до хранилища служб восстановления и действия после обновления. Хранилище служб восстановления является эквивалентом резервного хранилища для Azure Resource Manager, в котором содержатся данные резервных копий. Обычно это копии рабочих данных или сведения о конфигурации для виртуальных машин, рабочих нагрузок, серверов или рабочих станций, размещаемых локально или в Azure.

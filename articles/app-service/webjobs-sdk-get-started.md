@@ -1,5 +1,5 @@
 ---
-title: Начало работы с пакетом SDK WebJobs в Azure
+title: Начало работы с пакетом SDK для Веб-заданий Azure
 description: Знакомство с пакетом SDK WebJobs для фоновой обработки на основе событий. Получение доступа к данным в службах Azure и службах сторонних разработчиков.
 services: app-service\web, storage
 documentationcenter: .net
@@ -13,19 +13,20 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: tdykstra
-ms.openlocfilehash: b1de898ec4f661c54b5227367ad416a5edec80ed
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: d0afc8b6f8e0b7ef73e5d1c3cbabf2e1542f47f4
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35234530"
 ---
-# <a name="get-started-with-the-webjobs-sdk"></a>Начало работы с пакетом SDK WebJobs
+# <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
-В этой статье описано создание проекта с помощью пакета SDK WebJobs, его локальный запуск и развертывание в Azure.
+Из этой статьи вы узнаете, как с помощью пакета SDK для Веб-заданий Azure создать проект , запустить его локально, а затем — развернуть в Службе приложений Azure.
 
 Эти инструкции касаются [Visual Studio 2017](https://www.visualstudio.com/vs/), но аналогичные задачи можно решить и с помощью других средств, таких как [Visual Studio Code](https://code.visualstudio.com/).
 
-## <a name="what-is-the-webjobs-sdk"></a>Сведения о пакете SDK WebJobs
+## <a name="what-is-the-azure-webjobs-sdk"></a>Информация о пакете SDK веб-заданий
 
 Пакет SDK WebJobs Azure WebJobs — это платформа, упрощающая задачу написания кода для фоновой обработки данных из служб Azure. Пакет SDK поддерживает декларативный синтаксис для описания событий, активирующих функцию, например добавление нового сообщения в очередь. Аналогичный декларативный синтаксис управляет чтением и записью данных в результате активации функции. Эта система триггеров и привязок отвечает за большинство низкоуровневых задач кодирования, связанных с доступом к службам Azure и сторонних разработчиков.
 
@@ -179,7 +180,7 @@ public static void Run(
 
    Параметр `message` не должен быть строкой. Также можно выполнить привязку к объекту JSON, массиву байтов или [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage). [См. "Использование триггера очереди"](../azure-functions/functions-bindings-storage-queue.md#trigger---usage). Каждый тип привязки (например, очереди, BLOB-объекты или таблицы) обладает своим набором типов параметров привязки.
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Эмулятор службы хранилища Azure, работающий локально, не обладает всеми возможностями, необходимыми пакету SDK WebJobs. Поэтому здесь описывается создание учетной записи хранилища в Azure и настройка проекта для его использования.
 

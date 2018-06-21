@@ -1,6 +1,6 @@
 ---
-title: Обновление интерфейса для входа в систему (Майкрософт)
-description: Узнайте о предстоящих обновлениях в интерфейсе для входа в систему (Майкрософт).
+title: Обновление интерфейса для входа в систему Майкрософт
+description: Узнайте о предстоящих обновлениях в интерфейсе для входа в систему Майкрософт.
 services: multi-factor-authentication
 documentationcenter: ''
 author: eross-msft
@@ -15,12 +15,12 @@ ms.author: lizross
 ms.reviewer: kexia
 ms.custom: end-user
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 571fa77a22effacbeb495a4c05089c515be9d3d4
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 97dec128c162cd2793227adc9cb321564382743a
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34367986"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34824818"
 ---
 # <a name="updates-to-the-sign-in-experience-for-online-services"></a>Обновление интерфейса для входа в систему для веб-служб
 
@@ -30,9 +30,9 @@ ms.locfileid: "34367986"
 
 Ознакомьтесь с различиями между существующим и новым пользовательскими интерфейсами. Новый пользовательский интерфейс стал проще и понятнее, а его оформление было обновлено.
 
-![Старый интерфейс для входа в систему (Майкрософт)](media/microsoft-sign-in-experience-old.jpg)
+![Старый интерфейс для входа в систему Майкрософт](media/microsoft-sign-in-experience-old.jpg)
 
-![Новый интерфейс для входа в систему (Майкрософт)](media/microsoft-sign-in-experience-new.jpg)
+![Новый интерфейс для входа в систему Майкрософт](media/microsoft-sign-in-experience-new.jpg)
 
 ## <a name="when-will-the-new-ui-appear"></a>Когда станет доступен новый пользовательский интерфейс?
 

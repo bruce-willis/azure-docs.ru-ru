@@ -1,24 +1,20 @@
 ---
-title: Схема конфигурации системы диагностики Azure версии 1.2 | Документация Майкрософт
+title: Схема конфигурации расширения 1.2 для Системы диагностики Azure
 description: Применимо ТОЛЬКО при использовании пакета Azure SDK 2.5 с виртуальными машинами Azure, масштабируемыми наборами виртуальных машин, Service Fabric или облачными службами.
-services: monitoring-and-diagnostics
-documentationcenter: .net
+services: azure-monitor
 author: rboucher
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: reference
 ms.date: 05/15/2017
 ms.author: robb
-ms.openlocfilehash: 1e9cc6d0950945df8c4fba74d8e1f6196be224f0
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: diagnostic-extension
+ms.openlocfilehash: 32fcd3171f1adcfd565c38ca1191342e7afaf5a9
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35267702"
 ---
 # <a name="azure-diagnostics-12-configuration-schema"></a>Схема конфигурации системы диагностики Azure 1.2
 > [!NOTE]

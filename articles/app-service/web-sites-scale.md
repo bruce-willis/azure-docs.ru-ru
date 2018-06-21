@@ -1,8 +1,8 @@
 ---
-title: "Увеличение масштаба приложения в Azure | Документация Майкрософт"
-description: "Узнайте, как увеличить масштаб приложения в службе приложений Azure для добавления емкости и расширения функций."
+title: Увеличение масштаба приложения в Azure | Документация Майкрософт
+description: Узнайте, как увеличить масштаб приложения в службе приложений Azure для добавления емкости и расширения функций.
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: cephalin
 manager: erikre
 editor: mollybos
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2016
 ms.author: cephalin
-ms.openlocfilehash: f6244e3f739424be169f1ea117500159bd5e4254
-ms.sourcegitcommit: 95500c068100d9c9415e8368bdffb1f1fd53714e
+ms.openlocfilehash: c07105a34f6778fcd62f6f1bc1d3930f6a8bf173
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34714941"
 ---
 # <a name="scale-up-an-app-in-azure"></a>Увеличение масштаба приложения в Azure
 
@@ -50,7 +51,7 @@ ms.lasthandoff: 02/14/2018
 2. На странице приложения службы приложений щелкните **Все параметры**, а затем — **Увеличить масштаб**.
    
     ![Переход для увеличения масштаба приложения Azure][ChooseWHP]
-3. Выберите нужную категорию, а затем щелкните **Выбрать**.
+3. Выберите нужную категорию, а затем щелкните **Применить**.
    
     После завершения операции на вкладке **Уведомления** появится зеленая надпись **Выполнено**.
 

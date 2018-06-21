@@ -9,17 +9,17 @@ editor: vturecek
 ms.assetid: ''
 ms.service: service-fabric
 ms.devlang: dotNet
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 5fcd42a2453bddbfc1c1d1939dd9e63e7e09bdb0
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 8511af935eb2427724ace1f39ec9948e3b0b5537
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34366534"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34643215"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 > [!div class="op_single_selector"]
@@ -29,14 +29,21 @@ ms.locfileid: "34366534"
 Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этой статье описано создание образа Docker, содержащего веб-приложение [Flask](http://flask.pocoo.org/) Python, и его развертывание в кластер Service Fabric. Кроме того, вы предоставите общий доступ к контейнерному приложению через [реестр контейнеров Azure](/azure/container-registry/). Для работы с этой статьей необходимо знание основных понятий Docker. Чтобы ознакомиться с Docker, см. этот [обзор Docker](https://docs.docker.com/engine/understanding-docker/).
 
 ## <a name="prerequisites"></a>предварительным требованиям
-Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
-* Visual Studio 2015 или Visual Studio 2017.
-* [Пакет SDK и средства для Service Fabric](service-fabric-get-started.md).
-*  Docker для Windows. [Скачать Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
+* Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
+  * Visual Studio 2015 или Visual Studio 2017.
+  * [Пакет SDK и средства для Service Fabric](service-fabric-get-started.md).
+  *  Docker для Windows. [Скачать Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
-Кластер Windows минимум с тремя узлами под управлением Windows Server 2016 с контейнерами. [Создайте кластер](service-fabric-cluster-creation-via-portal.md) или [используйте бесплатную ознакомительную версию Service Fabric](https://aka.ms/tryservicefabric).
+* Кластер Windows с тремя или более узлами под управлением Windows Server с контейнерами. 
 
-Реестр контейнеров Azure. [Создайте реестр контейнеров](../container-registry/container-registry-get-started-portal.md) в своей подписке Azure.
+  В этой статье версия (сборка) Windows Server с контейнерами, запущенная на узлах кластера, должна соответствовать версии на компьютере разработки. Это связано с тем, что вы создаете образ Docker на компьютере разработки и между версиями ОС контейнера и ОС узла, где он развертывается, есть ограничения совместимости. Дополнительные сведения см. в разделе [Совместимость ОС контейнера Windows Server и ОС узла](#windows-server-container-os-and-host-os-compatibility). 
+  
+  Чтобы определить версию Windows Server с контейнерами, необходимую для кластера, запустите команду `ver` из командной строки Windows на компьютере разработки:
+
+  * Если версия содержит *x.x.14323.x*, [создайте кластер](service-fabric-cluster-creation-via-portal.md), выбрав ОС *WindowsServer 2016-Datacenter-with-Containers*, или [бесплатно воспользуйтесь Service Fabric](https://aka.ms/tryservicefabric) со сторонним кластером.
+  * Если версия содержит *x.x.16299.x*, [создайте кластер](service-fabric-cluster-creation-via-portal.md), выбрав ОС *WindowsServerSemiAnnual Datacenter-Core-1709-with-Containers*. Вы не можете использовать сторонний кластер.
+
+* Реестр контейнеров Azure. [Создайте реестр контейнеров](../container-registry/container-registry-get-started-portal.md) в своей подписке Azure.
 
 > [!NOTE]
 > Развертывание контейнеров в кластере Service Fabric в Windows 10 или кластере с Docker CE не поддерживается. В этом пошаговом руководстве выполняется локальное тестирование с использованием подсистемы Docker в Windows 10 и развертывание служб контейнеров в кластере Windows Server в Azure под управлением Docker EE. 
@@ -316,7 +323,7 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 ```
 
 ## <a name="configure-isolation-mode"></a>Настройка режима изоляции
-Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В режиме изоляции процесса все контейнеры, запущенные на одном хост-компьютере, совместно используют ядро и узел. В режиме изоляции Hyper-V все контейнеры Hyper-V и узлы контейнера используют отдельные ядра. Режим изоляции указывается в элементе `ContainerHostPolicies` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. Режим изоляции на узлах Windows Server по умолчанию имеет значение `process`, а на узлах Windows 10 — значение `hyperv`. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
+Windows поддерживает два режима изоляции для контейнеров: режим изоляции процессов и Hyper-V. В режиме изоляции процесса все контейнеры, запущенные на одном хост-компьютере, совместно используют ядро и узел. В режиме изоляции Hyper-V все контейнеры Hyper-V и узлы контейнера используют отдельные ядра. Режим изоляции указывается в элементе `ContainerHostPolicies` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию на узлах Windows Server используется режим изоляции процессов. На узлах Windows 10 поддерживается только режим изоляции Hyper-V, поэтому контейнер работает в этом режиме независимо от параметра режима изоляции. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
 
 ```xml
 <ContainerHostPolicies CodePackageRef="Code" Isolation="hyperv">
@@ -387,19 +394,44 @@ docker rmi helloworldapp
 docker rmi myregistry.azurecr.io/samples/helloworldapp
 ```
 
+## <a name="windows-server-container-os-and-host-os-compatibility"></a>Совместимость ОС контейнера Windows Server и ОС узла
+
+Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Например: 
+ 
+- Контейнеры Windows Server, созданные с использованием Windows Server 1709, не работают на узле с ОС Windows Server версии 2016. 
+- Контейнеры Windows Server, созданные с использованием Windows Server 2016, работают в режиме изоляции Hyper-V только на узле с ОС Windows Server версии 1709. 
+- Для контейнеров Windows Server, созданных с использованием Windows Server 2016, может потребоваться убедиться, что номера редакции версии ОС контейнера и узла ОС совпадают при работе в режиме изоляции процессов на узле под управлением Windows Server 2016.
+ 
+Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
+
+Учитывайте совместимость ОС узла и контейнера при создании и развертывании контейнеров в кластере Service Fabric. Например: 
+
+- Развертывайте контейнеры с ОС, совместимой с ОС на узлах кластера.
+- Убедитесь, что режим изоляции, указанный для приложения-контейнера, поддерживается для ОС контейнера на узле, где оно развертывается.
+- Рассмотрите, как обновления операционной системы на узлах кластера или контейнерах могут повлиять на их совместимость. 
+
+Ниже приведены рекомендации, которые помогут гарантировать правильное развертывание контейнеров в кластере Service Fabric.
+
+- Добавляйте к образам Docker явные теги, содержащие версию ОС Windows Server, на основе которой создан контейнер. 
+- Укажите [теги ОС](#specify-os-build-specific-container-images) в файле манифеста приложения, чтобы обеспечить совместимость приложения между различными версиями Windows Server и обновлениями.
+
+> [!NOTE]
+> В Service Fabric 6.2 и более поздних версий можно развернуть контейнеры, основанные на Windows Server 2016, локально на узле Windows 10. В Windows 10 контейнеры работают в режиме изоляции Hyper-V, независимо от режима изоляции, заданного в манифесте приложения. Дополнительные сведения см. в разделе о [настройке режима изоляции](#configure-isolation-mode).   
+>
+ 
 ## <a name="specify-os-build-specific-container-images"></a>Указание образов контейнеров для конкретной сборки ОС 
 
-Контейнеры Windows Server (режим изоляции процессов) могут оказаться несовместимыми с более поздними версиями операционной системы. Например, контейнеры Windows Server, созданные с помощью Windows Server 2016, не работают в Windows Server версии 1709. Таким образом, если узлы кластера обновлены до последней версии, в службах контейнеров, созданных с использованием предыдущих версий операционной системы, может произойти сбой. Для решения этой проблемы в версии среды выполнения 6.1 и более поздних в Service Fabric поддерживается указание нескольких образов ОС для одного контейнера и добавление к ним тегов версии сборки ОС (чтобы узнать ее, выполните команду `winver` в командной строке Windows). Перед обновлением операционной системы на узлах обновите манифесты приложений и укажите переопределения образов для каждой версии ОС. В следующем фрагменте кода показано, как указать несколько образов контейнеров в манифесте приложения **ApplicationManifest.xml**:
+Контейнеры Windows Server могут быть несовместимы с отдельными версиями операционной системы. Например, контейнеры Windows Server, созданные с помощью Windows Server 2016, не работают в Windows Server версии 1709 в режиме изоляции. Таким образом, если узлы кластера обновлены до последней версии, в службах контейнеров, созданных с использованием предыдущих версий операционной системы, может произойти сбой. Для решения этой проблемы в версии среды выполнения 6.1 и более поздних в Service Fabric поддерживается указание нескольких образов ОС для одного контейнера и добавление к ним тегов версии сборки ОС в манифесте приложения. Вы можете узнать версию сборки операционной системы, выполнив в командной строке Windows команду `winver`. Перед обновлением операционной системы на узлах обновите манифесты приложений и укажите переопределения образов для каждой версии ОС. В следующем фрагменте кода показано, как указать несколько образов контейнеров в манифесте приложения **ApplicationManifest.xml**:
 
 
 ```xml
-<ContainerHostPolicies> 
+      <ContainerHostPolicies> 
          <ImageOverrides> 
            <Image Name="myregistry.azurecr.io/samples/helloworldappDefault" /> 
                <Image Name="myregistry.azurecr.io/samples/helloworldapp1701" Os="14393" /> 
                <Image Name="myregistry.azurecr.io/samples/helloworldapp1709" Os="16299" /> 
          </ImageOverrides> 
-     </ContainerHostPolicies> 
+      </ContainerHostPolicies> 
 ```
 Версия сборки для Windows Server 2016 — 14393, а для Windows Server версии 1709 — 16299. В манифесте службы по-прежнему указывается только один образ на службу контейнеров:
 

@@ -1,24 +1,20 @@
 ---
 title: Создание переводчика IoT DevKit при помощи решения "Функции Azure" и Cognitive Services | Документация Майкрософт
-description: Использование микрофона в IoT DevKit для получения голосовых сообщений и их преобразование в текст на английском языке при помощи Azure Cognitive Services.
-services: iot-hub
-documentationcenter: ''
+description: Использование микрофона в IoT DevKit для получения голосовых сообщений и их преобразование в текст на английском языке при помощи Azure Cognitive Services
 author: liydu
-manager: timlt
-tags: ''
-keywords: ''
-ms.service: iot-hube
-ms.devlang: arduino
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+manager: jeffya
+ms.service: iot-hub
+services: iot-hub
+ms.topic: conceptual
+ms.tgt_pltfrm: arduino
 ms.date: 02/28/2018
 ms.author: liydu
-ms.openlocfilehash: 20e5a5f4fb381dedc42d698464819a6098c3579b
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: b65888ced67ba3c236c31678cf452d40489bf028
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34631784"
 ---
 # <a name="use-iot-devkit-az3166-with-azure-function-and-cognitive-services-to-make-a-language-translator"></a>Использование IoT DevKit AZ3166 с решением "Функции Azure" и Cognitive Services для создания переводчика
 

@@ -1,24 +1,20 @@
 ---
-title: "Служба архивации Azure: согласованное с приложениями резервное копирование виртуальных машин Linux | Документы Майкрософт"
-description: "Создание согласованных с приложениями резервных копий виртуальных машин Linux в Azure. В этой статье объясняется настройка платформы сценариев для резервного копирования виртуальных машин Linux, развернутых в Azure. В этой статье также приведены сведения об устранении неполадок."
+title: 'Azure Backup: согласованное с приложениями резервное копирование виртуальных машин Linux'
+description: Создание согласованных с приложениями резервных копий виртуальных машин Linux в Azure. В этой статье объясняется настройка платформы сценариев для резервного копирования виртуальных машин Linux, развернутых в Azure. В этой статье также приведены сведения об устранении неполадок.
 services: backup
-documentationcenter: dev-center-name
 author: anuragmehrotra
 manager: shivamg
-keywords: "согласованное с приложениями резервное копирование; согласованное с приложениями резервное копирование виртуальных машин Azure; резервное копирование виртуальных машин Linux; служба архивации Azure"
-ms.assetid: bbb99cf2-d8c7-4b3d-8b29-eadc0fed3bef
+keywords: согласованное с приложениями резервное копирование; согласованное с приложениями резервное копирование виртуальных машин Azure; резервное копирование виртуальных машин Linux; служба архивации Azure
 ms.service: backup
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage-backup-recovery
+ms.topic: conceptual
 ms.date: 1/12/2018
-ms.author: anuragm;markgal
-ms.openlocfilehash: c2437b4cd90deda3e7239d87837a47a072f52835
-ms.sourcegitcommit: e19f6a1709b0fe0f898386118fbef858d430e19d
+ms.author: anuragm
+ms.openlocfilehash: 027fc4098e7760de276a8548453bb83599ed0521
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34605218"
 ---
 # <a name="application-consistent-backup-of-azure-linux-vms"></a>Согласованное с приложениями резервное копирование виртуальных машин Linux в Azure
 

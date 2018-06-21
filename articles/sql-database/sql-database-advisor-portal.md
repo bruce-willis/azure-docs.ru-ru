@@ -6,15 +6,15 @@ author: stevestein
 manager: craigg
 ms.service: sql-database
 ms.custom: monitor & tune
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: sstein
-ms.openlocfilehash: 3361519c260fe842ae362814cbee62aa9257b9f8
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: d52838aa65ade8e2dfac75089ee82b4b1bae5257
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34364358"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34644201"
 ---
 # <a name="find-and-apply-performance-recommendations"></a>Поиск и применение рекомендаций по производительности
 
@@ -104,6 +104,8 @@ ms.locfileid: "34364358"
 > [!NOTE]
 > Обратите внимание, что параметр **DROP_INDEX** сейчас не поддерживается в приложениях, использующих переключения секций и подсказки индекса. В этих случаях его следует отключить.
 >
+
+После выбора соответствующей конфигурации щелкните "Применить".
 
 ### <a name="manually-run-the-recommended-t-sql-script"></a>Выполнение рекомендованного сценария T-SQL вручную
 Выберите рекомендацию и щелкните **Показать скрипт**. Выполните этот сценарий для базы данных, чтобы применить рекомендацию вручную.

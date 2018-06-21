@@ -10,14 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/23/2017
 ms.author: douglasl
-ms.openlocfilehash: 4c857af02e104940559cb86daa3ccd208d8e35a1
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 956bd89a993a019d7a5a4dd28efec4116b174334
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35297263"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:
@@ -166,7 +167,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -
 | CatalogAdminUserName | Имя пользователя администратора имеющегося сервера базы данных или Управляемого экземпляра SQL Azure (предварительная версия). Служба фабрики данных использует эти сведения для подготовки SSISDB и управления ею от вашего имени. |
 | CatalogAdminPassword | Пароль администратора имеющегося сервера базы данных или Управляемого экземпляра SQL Azure (предварительная версия). |
 | CatalogPricingTier | Ценовая категория для SSISDB, размещенной на имеющемся сервере базы данных SQL Azure.  Неприменимо к Управляемому экземпляру Базы данных SQL Azure (предварительная версия), на котором размещена SSISDB. |
-| VNetId | Идентификатор ресурса виртуальной сети, к которой нужно присоединить среду выполнения интеграции SSIS Azure. |
+| VNetId | Идентификатор ресурса виртуальной сети, к которой нужно присоединить среду выполнения интеграции SQL Server Integration Services Azure. |
 | Подсеть | Имя подсети, к которой нужно присоединить среду выполнения интеграции SSIS Azure. |
 | ИД | Идентификатор ресурса среды выполнения интеграции SSIS Azure. |
 | type | Тип (управляемая или локальная) среды выполнения интеграции SSIS Azure. |
@@ -199,9 +200,9 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -
 
 - [Среда выполнения интеграции Azure SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime). В этой статье содержатся общие сведения о средах выполнения интеграции в целом, включая Azure SSIS IR. 
 - [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md). Эта статья содержит пошаговые инструкции для создания Azure SSIS IR и использует базу данных SQL Azure для размещения каталога SSIS. 
-- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также содержит инструкции по использованию управляемого экземпляра SQL Azure (предварительная версия) и присоединению среды выполнения интеграции к виртуальной сети. 
+- [Создание среды выполнения интеграции Azure SSIS](create-azure-ssis-integration-runtime.md). Эта статья дополняет соответствующее руководство, а также предоставляет инструкции по использованию Управляемого экземпляра Базы данных SQL Azure (предварительная версия) и присоединению среды выполнения интеграции к виртуальной сети. 
 - [Manage an Azure-SSIS integration runtime](manage-azure-ssis-integration-runtime.md) (Управление средой выполнения интеграции Azure SSIS). В этой статье показано, как остановить, запустить или удалить Azure SSIS IR. В ней также показано, как развернуть Azure SSIS IR путем добавления дополнительных узлов в среду выполнения интеграции. 
-- [Join an Azure-SSIS integration runtime to a virtual network](join-azure-ssis-integration-runtime-virtual-network.md) (Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети). В этой статье содержатся общие сведения о присоединении среды выполнения интеграции SSIS Azure к виртуальной сети Azure. В ней также показано, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции SSIS Azure к виртуальной сети с помощью портала Azure. 
+- [Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети](join-azure-ssis-integration-runtime-virtual-network.md) В этой статье содержатся общие сведения о присоединении среды выполнения интеграции SQL Server Integration Services Azure к виртуальной сети Azure. Из статьи вы также узнаете, как настроить виртуальную сеть, чтобы присоединить среду выполнения интеграции SQL Server Integration Services Azure к виртуальной сети с помощью портала Azure. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 В следующих статьях представлены сведения о способах мониторинга конвейеров: 

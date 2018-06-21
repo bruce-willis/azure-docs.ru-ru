@@ -2,23 +2,20 @@
 title: Журнал ведения диагностики Azure Cosmos DB | Документация Майкрософт
 description: Это руководство поможет вам приступить к работе с журналами Azure Cosmos DB.
 services: cosmos-db
-documentationcenter: ''
 author: SnehaGunda
 manager: kfile
 tags: azure-resource-manager
-ms.assetid: ''
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/07/2018
 ms.author: sngun
-ms.openlocfilehash: 103d9d36ae1290f7af18be83f41bd9b83dbd3fbe
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 66ee0856851a301a6849b71b64cb904c925ad18d
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34612220"
 ---
 # <a name="azure-cosmos-db-diagnostic-logging"></a>Журнал ведения диагностики Azure Cosmos DB
 
@@ -47,7 +44,7 @@ ms.lasthandoff: 04/28/2018
 
 Журналы действий отличаются от журналов диагностики. Журнал действий предоставляет внешние данные об операциях с ресурсами (_уровня управления_). В рамках Azure Cosmos DB операции уровня управления включают в себя создание коллекций, отображение списка ключей, удаление ключей, отображение списка баз данных и т. д. Журналы диагностики выдаются ресурсом и содержат данные о его работе (_плоскость данных_). Примерами некоторых операций уровня данных в журнале диагностики являются Delete, Insert и ReadFeed.
 
-Журналы действий (операции уровня управления) могут быть более насыщенными и включать в себя полный адрес электронной почты вызывающего объекта, IP-адрес вызывающего объекта, имя ресурса, имя операции, идентификатор клиента и многое другое. Журнал действий содержит несколько [категорий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-activity-log-schema) данных. Подробные сведения см. в статье [Схема событий журнала действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-activity-log-schema). Тем не менее из журналов диагностики могут часто удаляться личные сведения. У вас может быть IP-адрес вызывающего объекта, но в нем будет отсутствовать последний октет.
+Журналы действий (операции уровня управления) могут быть более насыщенными и включать в себя полный адрес электронной почты вызывающего объекта, IP-адрес вызывающего объекта, имя ресурса, имя операции, идентификатор клиента и многое другое. Журнал действий содержит несколько [категорий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-activity-log-schema) данных. Подробные сведения см. в статье [Схема событий журнала действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-activity-log-schema). Тем не менее из журналов диагностики могут часто удаляться пользовательские сведения. У вас может быть IP-адрес вызывающего объекта, но в нем будет отсутствовать последний октет.
 
 ### <a name="azure-metrics"></a>Метрики Azure
 

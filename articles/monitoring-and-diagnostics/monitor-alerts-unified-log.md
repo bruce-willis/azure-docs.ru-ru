@@ -1,25 +1,19 @@
 ---
-title: Оповещения журнала в Azure Monitor. Интерфейс оповещений | Документация Майкрософт
+title: Оповещения журнала в Azure Monitor
 description: Узнайте, как активировать сообщения электронной почты и уведомления, вызывать URL-адреса веб-сайтов (использовать веб-перехватчики) или автоматизировать операции при выполнении заданных вами условий запросов аналитики в интерфейсе оповещений Azure.
 author: msvijayn
-manager: kmadnani1
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: f7457655-ced6-4102-a9dd-7ddf2265c0e2
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: monitoring
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
-ms.openlocfilehash: 8bf534177e8236a7d72d6dfdd4612b5f6f492b17
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.component: alerts
+ms.openlocfilehash: aab3c843493048291583bea111a52fe3356dc0f0
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34057327"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264380"
 ---
 # <a name="log-alerts-in-azure-monitor---alerts"></a>Оповещения журнала в Azure Monitor. Интерфейс оповещений 
 В это статье рассматриваются оповещения журнала — один из типов оповещений, которые поддерживаются в новом интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений. См. дополнительные сведения об [использовании оповещений на основе метрик практически в реальном времени и журналов](monitoring-near-real-time-metric-alerts.md).
@@ -36,7 +30,7 @@ ms.locfileid: "34057327"
 - **Запрос к журналу.**  Это запрос, который будет запускаться каждый раз при срабатывании правила генерации оповещений.  Определить, создается ли оповещение, можно с помощью записей, возвращаемых этим запросом. Кроме того, запрос *Azure Application Insights* может включать [вызовы между приложениями](https://dev.applicationinsights.io/ai/documentation/2-Using-the-API/CrossResourceQuery) при условии, что у пользователя есть права доступа к внешним приложениям. 
 
     > [!IMPORTANT]
-    > Поддержка [запроса между приложениями для Application Insights](https://dev.applicationinsights.io/ai/documentation/2-Using-the-API/CrossResourceQuery) реализована в предварительной версии — функции и пользовательский интерфейс могут быть изменены. Сейчас в интерфейсе оповещений Azure **не поддерживаются** [запросы между рабочими областями](https://dev.loganalytics.io/oms/documentation/3-Using-the-API/CrossResourceQuery) и [запросы между ресурсами для Log Analytics](../log-analytics/log-analytics-cross-workspace-search.md).
+    > Поддержка [запросов между приложениями для Application Insights](https://dev.applicationinsights.io/ai/documentation/2-Using-the-API/CrossResourceQuery) пока находится на стадии предварительной версии. Функция работает между 2 и более приложениями. Пользовательский интерфейс может измениться. Сейчас в интерфейсе оповещений Azure **не поддерживаются** [запросы между рабочими областями](https://dev.loganalytics.io/oms/documentation/3-Using-the-API/CrossResourceQuery) и [запросы между ресурсами для Log Analytics](../log-analytics/log-analytics-cross-workspace-search.md).
 
 - **Период.**  Указывает диапазон времени для запроса. Запрос возвращает только те записи, которые были созданы в течение этого периода, предшествующего настоящему времени. Период ограничивает данные, полученные при запросе журнала, чтобы предотвратить нарушения, и обходит любую команду времени (например, ago), используемую в запросе журнала. <br>*Например, если задан период 60 минут, а запрос выполняется в 13:15, то для запроса журнала возвращаются только записи, созданные между 12:15 и 13:15. Если в запросе журнала будет использована команда времени, например ago (7d), запрос журнала будет выполняться только для данных между 12:15 и 13:15 — как если бы данные существовали только за последние 60 минут. Данные за семь дней, как указано в запросе журнала, не будут выводиться.*
 - **Частота**.  Указывает, как часто должен выполняться запрос. Это значение может составлять от 5 минут до 24 часов. Оно не должно превышать указанный период.  Если значение больше, чем указанный период, записи могут быть пропущены.<br>*Например, рассмотрим период в 30 минут и частоту в 60 минут.  Если запрос выполняется в 13:00, он возвращает записи между 12:30 и 13:00.  В следующий раз этот запрос будет выполнен в 14:00, а записи возвратятся между 13:30 и 14:00.  Записи, созданные между 13:00 и 13:30, не будут учитываться.*
@@ -126,7 +120,7 @@ API-интерфейсы, предоставляемые для оповещен
 
 Подробные сведения и примеры использования REST API, см. в следующих документах:
 - [REST API оповещений в Log Analytics](../log-analytics/log-analytics-api-alerts.md) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Log Analytics.
-- [REST API правил запросов Azure Monitor по расписанию](https://docs.microsoft.com/en-us/rest/api/monitorr/scheduledqueryrules/) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Application Insights.
+- [REST API правил запросов Azure Monitor по расписанию](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Application Insights.
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 Воспользуйтесь гибкими возможностями [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для создания или обновления оповещений журнала.

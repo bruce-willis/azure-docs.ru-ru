@@ -1,39 +1,22 @@
 ---
-title: Новые оповещения на основе метрик в поддерживаемых ресурсах Azure Monitor | Документация Майкрософт
+title: Поддерживаемые ресурсы для новой версии оповещений о метриках Azure Monitor
 description: Справочник по поддерживаемым метрикам и журналам для новых оповещений на основе метрик Azure почти в реальном времени.
 author: snehithm
-manager: kmadnani1
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: monitoring
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 04/27/2018
-ms.author: snmuvva, vinagara
-ms.custom: ''
-ms.openlocfilehash: c4a4a82eedc41b7690af005faecc1505257183ab
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.author: snmuvva
+ms.component: alerts
+ms.openlocfilehash: d5eaa4dafc9c155d3e6f85bc67c578c8a12da7cf
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778119"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264516"
 ---
-# <a name="newer-metric-alerts-for-azure-services-in-the-azure-portal"></a>Новые оповещения на основе метрик для служб Azure на портале Azure
-Azure Monitor теперь поддерживает новый тип оповещений на основе метрик. Далее приведены сведения об отличиях новых оповещений от [классических оповещений метрик](insights-alerts-portal.md).
-
-- **Уменьшение задержки.** Новые оповещения метрик могут выполняться каждую минуту. Раньше оповещения метрик всегда проверялись с частотой в 5 минут. Задержка для оповещений журналов по-прежнему составляет более 1 минуты из-за времени, необходимого для приема журналов. 
-- **Поддержка многомерных метрик.** Вы можете создать оповещение по многомерным метрикам, чтобы отслеживать только конкретный сегмент метрики. 
-- **Дополнительный контроль метрик.** Вы можете определить расширенные правила генерации оповещений. Новые оповещения поддерживают мониторинг максимальных, минимальных, средних и общих значений метрик. 
-- **Объединенный мониторинг нескольких метрик.** Вы сможете выполнять мониторинг нескольких метрик (пока только двух метрик) с помощью одного правила. Оповещение активируется, если обе метрики превышают соответствующие пороговые значения для заданного периода времени. 
-- **Усовершенствованная система уведомлений.** Во всех новых оповещениях используются [группы действий](monitoring-action-groups.md). Это именованные группы уведомлений и действий, которые можно использовать в нескольких оповещениях. В классических оповещениях на основе метрик и старых оповещениях Log Analytics группы действий не используются. 
-- **Метрики из журналов** (ограниченная общедоступная предварительная версия). Данные журналов, поступающие в службу Log Analytics, теперь можно извлекать и преобразовывать в метрики Azure Monitor и создавать на их основе оповещения, так же как и на основе других метрик. 
-
-Сведения о том, как создать на портале Azure оповещение практически в реальном времени, см. в разделе [Создание правила оповещений с помощью портала Azure](monitor-alerts-unified-usage.md#create-an-alert-rule-with-the-azure-portal). После создания оповещением можно управлять с помощью шагов, описанных в разделе об [управлении оповещениями на портале Azure](monitor-alerts-unified-usage.md#managing-your-alerts-in-azure-portal).
-
+# <a name="supported-metrics-and-creation-methods-for-new-metric-alerts"></a>Поддерживаемые метрики и способы создания новых оповещений о метриках
+Azure Monitor теперь поддерживает [новый тип оповещений о метриках](monitoring-overview-unified-alerts.md), который имеет ряд преимуществ перед [классическими оповещениями](insights-alerts-portal.md). Старые оповещения поддерживают [большой список метрик](monitoring-supported-metrics.md). Новые же оповещения поддерживают не только этот список, но и постоянно добавляемые новые возможности. В этой статье рассматриваются новые возможности. 
 
 ## <a name="portal-powershell-cli-rest-support"></a>Поддержка портала, PowerShell, CLI и REST
 В настоящее время новые оповещения на основе метрик можно создать только на портале Azure, с помощью [REST API](https://docs.microsoft.com/en-us/rest/api/monitor/metricalerts/createorupdate) или [шаблонов диспетчера ресурсов](monitoring-create-metric-alerts-with-templates.md). Скоро будет доступна возможность настраивать новые оповещения с помощью PowerShell и интерфейса командной строки Azure (Azure CLI 2.0).

@@ -9,16 +9,16 @@ ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: 6d107b9264a80c7b280ffed9a50b7bb0ffe354be
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 062b5e48cfba5de64aa11f79629e82645df87f96
+ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365531"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34809266"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
-Эта статья является первой в цикле статей, написанных, чтобы помочь организациям реализовать полное гибридное решение для идентификации Azure Active Directory (Azure AD). Это решение для представлено в виде гибридной платформы цифрового преобразования для идентификации. Она охватывает результаты и цели, на которых могут сосредоточиться организации, чтобы реализовать надежное и безопасное гибридное решение для идентификации. 
+Эта статья является первой в цикле статей, написанных, чтобы помочь организациям реализовать полное гибридное решение для идентификации Azure Active Directory (Azure AD). Такое решение было представлено в виде [гибридной платформы цифрового преобразования для идентификации](https://aka.ms/aadframework). Она охватывает результаты и цели, на которых могут сосредоточиться организации, чтобы реализовать надежное и безопасное гибридное решение для идентификации. 
 
 Первый бизнес-результат этой платформы разъясняет требования к организациям для обеспечения аутентификации при доступе пользователей к облачным приложениям. Первой целью организации, стремящейся обеспечить защиту с помощью аутентификации, является способность пользователей входить в облачные приложения с помощью локальных имен пользователей и паролей. Этот процесс входа в систему и способ аутентификации пользователей делает возможным выполнение других операций в облаке.
 
@@ -167,7 +167,7 @@ Azure AD поддерживает следующие методы аутенти
 |Какие варианты многофакторной проверки подлинности существуют?|[Многофакторная идентификация Azure](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/)|[Многофакторная идентификация Azure](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/)|[Многофакторная идентификация Azure](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/)<br><br>[Сервер Azure MFA](https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfaserver-deploy)<br><br>[Стороннее решение многофакторной идентификации](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-additional-authentication-methods-for-ad-fs)|
 |Какие состояния учетной записи пользователя поддерживаются?|Отключенные учетные записи<br>(до 30-минутной задержки)|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия пароля истек<br><br>Время входа|Отключенные учетные записи<br><br>Учетная запись заблокирована<br><br>Срок действия пароля истек<br><br>Время входа|
 |Какие варианты условного доступа поддерживаются?|[Условный доступ Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal)|[Условный доступ Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal)|[Условный доступ Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-azure-portal)<br><br>[Правила утверждений AD FS](https://adfshelp.microsoft.com/AadTrustClaims/ClaimsGenerator)|
-|Поддерживается ли блокировка устаревших протоколов?|Нет |Нет |[Да](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
+|Поддерживается ли блокировка устаревших протоколов?|[Да](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication)|[Да](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-conditional-access-conditions#legacy-authentication)|[Да](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/access-control-policies-w2k12)|
 |Можно ли настроить логотип, изображение и описание на страницах входа?|[Да, в Azure AD Premium](https://docs.microsoft.com/en-us/azure/active-directory/customize-branding)|[Да, в Azure AD Premium](https://docs.microsoft.com/en-us/azure/active-directory/customize-branding)|[Да](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-federation-management#customlogo)|
 |Какие дополнительные сценарии поддерживаются?|[Интеллектуальная блокировка паролей](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-secure-passwords)<br><br>[Отчеты об утерянных учетных данных](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-reporting-risk-events)|[Интеллектуальная блокировка паролей](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication-smart-lockout)|Система аутентификации нескольких сайтов с низкой задержкой<br><br>[Блокировка экстрасети AD FS](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-lockout-protection)<br><br>[Интеграция со сторонними системами идентификации](https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-federation-compatibility)|
 

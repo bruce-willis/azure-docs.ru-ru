@@ -1,13 +1,13 @@
 ---
-title: "Установка между компьютером и виртуальной сетью подключения типа \"точка — сеть\" с использованием аутентификации RADIUS и PowerShell | Документация Майкрософт"
-description: "Безопасное подключение клиентов Windows и Mac OS X к виртуальной сети с помощью подключения типа \"точка — сеть\" и аутентификации RADIUS."
+title: Установка между компьютером и виртуальной сетью подключения типа "точка — сеть" с использованием аутентификации RADIUS и PowerShell | Документация Майкрософт
+description: Безопасное подключение клиентов Windows и Mac OS X к виртуальной сети с помощью подключения типа "точка — сеть" и аутентификации RADIUS.
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
 manager: jpconnock
-editor: 
+editor: ''
 tags: azure-resource-manager
-ms.assetid: 
+ms.assetid: ''
 ms.service: vpn-gateway
 ms.devlang: na
 ms.topic: article
@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2018
 ms.author: anzaman
-ms.openlocfilehash: 3b7315aaa57d1387e3cea31e8b306131a59a7006
-ms.sourcegitcommit: 95500c068100d9c9415e8368bdffb1f1fd53714e
+ms.openlocfilehash: df7afe9324831ffb8e79d7320f2c716ed18a7b4f
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35267355"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell
 

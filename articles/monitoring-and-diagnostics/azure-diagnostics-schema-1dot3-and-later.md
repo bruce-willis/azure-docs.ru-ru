@@ -1,30 +1,26 @@
 ---
-title: Схема конфигурации расширения системы диагностики Azure версии 1.3 и более поздней версии | Документация Майкрософт
+title: 'Схема конфигурации расширения для Системы диагностики Azure: версия 1.3 и новее'
 description: Схема версии 1.3 и более поздние версии для системы диагностики Azure поставляются в составе пакета SDK 2.4 и более поздней версии для Microsoft Azure.
-services: monitoring-and-diagnostics
-documentationcenter: .net
+services: azure-monitor
 author: rboucher
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: reference
 ms.date: 05/15/2017
 ms.author: robb
-ms.openlocfilehash: 02656c5bb4d2acd944f565d1397984ce94ced0bd
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: diagnostic-extension
+ms.openlocfilehash: b4fba492a57471df737896956e0b37e3da772cce
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262381"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
 > [!NOTE]
 > Расширение системы диагностики Azure — это компонент, который используется для сбора данных счетчиков производительности и других статистических данных из:
 > - Виртуальные машины Azure 
-> - Наборы для масштабирования виртуальных машин
+> - Масштабируемые наборы виртуальных машин Microsoft Azure
 > - Service Fabric 
 > - Облачные службы 
 > - группы сетевой безопасности;

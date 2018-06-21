@@ -5,15 +5,16 @@ ms.service: sql-database
 author: srdjan-bozovic
 manager: craigg
 ms.custom: managed instance
-ms.topic: article
-ms.date: 04/10/2018
+ms.topic: conceptual
+ms.date: 05/21/2018
 ms.author: srbozovi
 ms.reviewer: bonova, carlrab
-ms.openlocfilehash: 1eecd28d5e7043acae5cfd52edf93e8d301bd31e
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: bea1dc88d66717717cdeacbc8504f5df7e37ba04
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34647839"
 ---
 # <a name="connect-your-application-to-azure-sql-database-managed-instance"></a>Подключение приложения к Управляемому экземпляру Базы данных SQL
 
@@ -39,10 +40,10 @@ ms.lasthandoff: 04/16/2018
 - [Пиринговая связь между виртуальными сетями Azure](../virtual-network/virtual-network-peering-overview.md). 
 - VPN-шлюз между виртуальными сетями ([портал Azure](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md), [PowerShell](../vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md), [Azure CLI](../vpn-gateway/vpn-gateway-howto-vnet-vnet-cli.md)). 
  
-Лучше использовать пиринговую связь, поскольку она использует магистральную сеть корпорации Майкрософт и не добавляет существенных задержек по сравнению с подключением виртуальных машин в одной виртуальной сети. Пиринговую связь между виртуальными сетями можно применять только в пределах одного региона, но в некоторых регионах в режиме предварительной версии уже доступна пиринговая связь между регионами.  
+Лучше использовать пиринговую связь, поскольку она использует магистральную сеть корпорации Майкрософт и не добавляет существенных задержек по сравнению с подключением виртуальных машин в одной виртуальной сети. Пиринг виртуальной сети ограничен сетями в том же регионе.  
  
 > [!IMPORTANT]
-> Пиринговая связь между виртуальными сетями в разных регионах не всегда обеспечит такой же уровень доступности и надежности, как в общедоступной версии. Пиринговая связь между виртуальными сетями может иметь определенные ограничения или быть недоступной в некоторых регионах Azure. Актуальные сведения о доступности и состоянии этого компонента см. на странице обновлений для  [виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network). 
+> Сценарий пиринга виртуальной сети для службы "Управляемый экземпляр" ограничен сетями в том же регионе из-за [ограничений пиринга глобальной виртуальной сети](../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). 
 
 ## <a name="connect-an-on-premises-application"></a>Подключение локального приложения 
 

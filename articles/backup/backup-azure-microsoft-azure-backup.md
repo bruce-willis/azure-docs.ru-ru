@@ -1,26 +1,20 @@
 ---
-title: Резервное копирование рабочих нагрузок в Azure с помощью Azure Backup Server | Документация Майкрософт
+title: Резервное копирование рабочих нагрузок в Azure с помощью Azure Backup Server
 description: Узнайте, как с помощью Azure Backup Server защитить рабочие нагрузки или выполнить для них резервное копирование на портале Azure.
 services: backup
-documentationcenter: ''
 author: PVRK
 manager: shivamg
-editor: ''
 keywords: сервер резервного копирования Azure; защита рабочих нагрузок; резервное копирование рабочих нагрузок
-ms.assetid: e7fb1907-9dc1-4ca1-8c61-50423d86540c
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 5/14/2018
-ms.author: masaran;trinadhk;pullabhk;markgal;adigan
-ms.openlocfilehash: ef6be97144d05f18362ef707ef255b93c8cf21d9
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.author: adigan
+ms.openlocfilehash: 13b3a5f8530c9f91ca23072c320513b8107df061
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34196684"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34605813"
 ---
 # <a name="preparing-to-back-up-workloads-using-azure-backup-server"></a>Подготовка к резервному копированию рабочих нагрузок с использованием Azure Backup Server
 > [!div class="op_single_selector"]

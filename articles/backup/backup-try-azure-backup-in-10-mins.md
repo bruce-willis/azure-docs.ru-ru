@@ -1,25 +1,20 @@
 ---
-title: Архивация файлов и папок Windows в Azure (Resource Manager) | Документация Майкрософт
+title: Архивация файлов и папок Windows в Azure (Resource Manager)
 description: Описание архивации файлов и папок Windows в Azure с использованием модели развертывания с помощью Resource Manager.
 services: backup
-documentationcenter: ''
 author: markgalioto
 manager: carmonm
-editor: ''
 keywords: как выполнять резервное копирование, резервное копирование файлов и папок
-ms.assetid: 5b15ebf1-2214-4722-b937-96e2be8872bb
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: hero-article
+ms.topic: conceptual
 ms.date: 8/15/2017
-ms.author: markgal;
-ms.openlocfilehash: 55f83bda1a9de9274194ec220fa9a4a5c8b7f0fb
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.author: markgal
+ms.openlocfilehash: 7abdf06d1b5a4361da9ddb75cec01d6fd1630d08
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34606976"
 ---
 # <a name="first-look-back-up-files-and-folders-in-resource-manager-deployment"></a>Первое знакомство. Резервное копирование файлов и папок с использованием модели развертывания с помощью Resource Manager
 В этой статье описывается, как выполнить резервное копирование файлов и папок Windows Server (на компьютере с Windows) в Azure с помощью службы архивации Azure, используя модель развертывания с помощью Resource Manager. В этом руководстве приведены общие сведения, и с помощью него вы сможете опробовать службу архивации Azure.

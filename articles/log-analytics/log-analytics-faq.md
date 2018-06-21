@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/27/2018
 ms.author: magoedte
-ms.openlocfilehash: 22da58df653b31c46145ebbbd1f6f6a26b0e9f29
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.openlocfilehash: 33998d72ae2a57ae5226c2ec7a1d5dbcebef155e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637180"
 ---
 # <a name="log-analytics-faq"></a>Часто задаваемые вопросы по Log Analytics
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы о Log Analytics в Microsoft Azure. Если у вас возникли дополнительные вопросы о Log Analytics, задайте их на [форуме](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -96,7 +97,7 @@ Log Analytics использует время в формате UTC и кажд�
 
 О. В основе службы Log Analytics лежит Azure. IP-адреса Log Analytics находятся в [диапазонах IP-адресов центра обработки данных Microsoft Azure](http://www.microsoft.com/download/details.aspx?id=41653).
 
-При развертывании службы фактические IP-адреса службы Log Analytics изменяются. DNS-имена, обеспечивающие передачу данных через брандмауэр, описаны в [требованиях к системе](log-analytics-concept-hybrid.md#prerequisites).
+При развертывании службы фактические IP-адреса службы Log Analytics изменяются. DNS-имена, обеспечивающие передачу данных через брандмауэр, описаны в [требованиях к сети](log-analytics-concept-hybrid.md#network-firewall-requirements).
 
 ### <a name="q-i-use-expressroute-for-connecting-to-azure-does-my-log-analytics-traffic-use-my-expressroute-connection"></a>В. Я применяю ExpressRoute для подключения к Azure. Будет ли трафик Log Analytics использовать подключение ExpressRoute?
 

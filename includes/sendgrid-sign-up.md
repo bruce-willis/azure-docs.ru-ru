@@ -61,9 +61,9 @@
 
 Чтобы настроить параметры доставки электронной почты, нажмите кнопку **Управление**. Откроется панель мониторинга SendGrid.
 
-    ![manage][manage]
+![управление][manage]
 
-    For more information on sending email through SendGrid, visit the [Email API Overview][Email API Overview].
+Дополнительные сведения об отправке по электронной почте посредством SendGrid см. в [обзоре API электронной почты][Email API Overview].
 
 <!--images-->
 

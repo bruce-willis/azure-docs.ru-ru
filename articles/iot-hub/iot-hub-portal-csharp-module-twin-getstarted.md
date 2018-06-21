@@ -1,26 +1,20 @@
 ---
 title: Приступая к работе с удостоверением и двойником модуля Центра Интернета вещей Azure (портал и .NET) | Документация Майкрософт
 description: Сведения о создании удостоверения модуля и обновлении двойника модуля с помощью портала и .NET.
-services: iot-hub
-documentationcenter: .net
-author: chrissie926
+author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: f40604ff-8fd6-4969-9e99-8574fbcf036c
 ms.service: iot-hub
-ms.devlang: dotnet
-ms.topic: hero-article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.devlang: csharp
+ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: dobett
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 30a53620a640b0122286a6ac69c0f98cd0bbde40
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: b4502dfc8f856516989326c8d748a5d13fdba02b
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34361694"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34634596"
 ---
 # <a name="get-started-with-iot-hub-module-identity-and-module-twin-using-the-portal-and-net-device"></a>Начало работы с удостоверением модуля Центра Интернета вещей и двойником модуля с использованием портала и устройства .NET
 
@@ -74,7 +68,7 @@ ms.locfileid: "34361694"
 
     ![Создание проекта Visual Studio][13]
 
-2. **Установите пакет SDK V1.16.0-preview-005 .NET для Центра Интернета вещей Azure**. Удостоверение модуля и двойник модуля предоставляются в общедоступной предварительной версии. Они доступны только через пакеты SDK предварительного выпуска для Центра Интернета вещей. В Visual Studio выберите для решения элементы "Сервис > Диспетчер пакетов NuGet > Управление пакетами NuGet". Найдите Microsoft.Azure.Devices.Client. Обязательно установите флажок "Включить предварительные выпуски". Выберите версию V1.16.0-preview-005 и установите ее. Теперь у вас есть доступ ко всем возможностям этого модуля. 
+2. **Установите последний пакет SDK для .NET для Центра Интернета вещей Azure**. Удостоверение и двойник модуля предоставляются в общедоступной предварительной версии. Они доступны только через пакеты SDK предварительного выпуска для Центра Интернета вещей. В Visual Studio выберите для решения элементы "Сервис > Диспетчер пакетов NuGet > Управление пакетами NuGet". Найдите Microsoft.Azure.Devices.Client. Обязательно установите флажок "Включить предварительные выпуски". Выберите последнюю версию и установите ее. Теперь у вас есть доступ ко всем возможностям этого модуля. 
 
     ![IУстановка пакета SDK версии 1.16.0-preview-005 .NET для Центра Интернета вещей Azure][14]
 

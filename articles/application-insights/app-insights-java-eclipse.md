@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2016
 ms.author: mbullwin
-ms.openlocfilehash: 3cddfb918f98dfd41e84a6cc5473df6e26d1a482
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8e8e63b053cb5bd504a41da9b537354a1dd42968
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34795566"
 ---
 # <a name="get-started-with-application-insights-with-java-in-eclipse"></a>Приступая к работе с Application Insights на Java в Eclipse
 Пакет SDK Application Insights передает телеметрию из веб-приложения Java, что позволяет вам анализировать параметры использования и производительности. Подключаемый модуль Eclipse для Application Insights автоматически устанавливает пакет SDK в проекте (что позволяет вам получать актуальную телеметрию) и интерфейс API, который можно использовать для написания пользовательских элементов телеметрии.   
@@ -32,6 +33,8 @@ ms.lasthandoff: 04/16/2018
 * подписка на [Microsoft Azure](https://azure.microsoft.com/).
 * [интегрированная среда разработки Eclipse для разработчиков Java EE](http://www.eclipse.org/downloads/), версия Indigo или более поздняя;
 * Windows 7 или более поздней версии либо Windows Server 2008 или более поздней версии.
+
+Если вы предпочитаете платформу Spring, попробуйте [настроить Application Insights в приложении-инициализаторе Spring Boot](https://docs.microsoft.com/java/azure/spring-framework/configure-spring-boot-java-applicationinsights).
 
 ## <a name="install-the-sdk-on-eclipse-one-time"></a>Установка пакета SDK для Eclipse (один раз)
 Необходимо выполнить один раз на каждом из компьютеров. На этом шаге устанавливается набор средств, который позволит добавить пакет SDK для каждого динамического веб-проекта.

@@ -1,25 +1,19 @@
 ---
 title: Общие сведения о пакетах SDK для Azure IoT | Документация Майкрософт
 description: Руководство разработчика. Сведения и ссылки на различные пакеты SDK для устройств и служб Azure IoT, которые можно использовать для создания приложений для устройств и внутренних приложений.
-services: iot-hub
-documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: c5c9a497-bb03-4301-be2d-00edfb7d308f
 ms.service: iot-hub
-ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: dobett
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 71d02e3f8bf0757d7ea0622e76b95acda1fefc95
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 718bf82a921ec3b70939b7a70205a4c650702dd0
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34823356"
 ---
 # <a name="understand-and-use-azure-iot-hub-sdks"></a>Понимание и использование пакетов SDK для Центра Интернета вещей Azure
 
@@ -61,6 +55,10 @@ ms.lasthandoff: 04/16/2018
 * установка из [pip][lnk-pip-device];
 * [исходный код][lnk-python-sdk].
 
+Пакет SDK для устройств Центра Интернета вещей для iOS: 
+* установка из [CocoaPod][lnk-cocoa-device];
+* [примеры][lnk-ios-sample].
+
 > [!NOTE]
 > Сведения об установке двоичных файлов и зависимостей на компьютере для разработки с помощью диспетчера пакетов, зависящего от языка или платформы, см. в файле сведений в репозиториях GitHub.
 > 
@@ -96,6 +94,10 @@ ms.lasthandoff: 04/16/2018
 Пакет SDK для службы Центра Интернета вещей для C: 
 * скачивание с помощью [apt-get, MBED, Arduino IDE или Nuget][lnk-c-package];
 * [исходный код][lnk-c-sdk].
+
+Пакет SDK для служб Центра Интернета вещей для iOS: 
+* установка из [CocoaPod][lnk-cocoa-service];
+* [примеры][lnk-ios-sample].
 
 > [!NOTE]
 > Сведения об установке двоичных файлов и зависимостей на компьютере для разработки с помощью диспетчера пакетов, зависящего от языка или платформы, см. в файле сведений в репозиториях GitHub.
@@ -145,3 +147,6 @@ ms.lasthandoff: 04/16/2018
 [lnk-devguide-query]: iot-hub-devguide-query-language.md
 [lnk-devguide-mqtt]: iot-hub-mqtt-support.md
 [lnk-benefits-blog]: https://azure.microsoft.com/blog/benefits-of-using-the-azure-iot-sdks-in-your-azure-iot-solution/
+[lnk-cocoa-device]: https://cocoapods.org/pods/AzureIoTHubClient
+[lnk-ios-sample]: https://github.com/Azure-Samples/azure-iot-samples-ios
+[lnk-cocoa-service]: https://cocoapods.org/pods/AzureIoTHubServiceClient

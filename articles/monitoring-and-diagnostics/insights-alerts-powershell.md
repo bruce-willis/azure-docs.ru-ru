@@ -1,24 +1,19 @@
 ---
-title: Создание оповещений для служб Azure с помощью PowerShell | Документация Майкрософт
+title: Создание классических оповещений для служб Azure с помощью PowerShell
 description: Узнайте, как активировать сообщения электронной почты, уведомления, вызовы URL-адресов веб-сайтов (webhook) или автоматизированные операции при выполнении заданных условий.
 author: rboucher
-manager: carmonm
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: d26ab15b-7b7e-42a9-81c8-3ce9ead5d252
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: robb
-ms.openlocfilehash: ca9df36c642334d9323736abb51a931a6610fd3e
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.component: alerts
+ms.openlocfilehash: bf9535c53b006469ef93bf7e3b947edd97e9efc7
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262160"
 ---
 # <a name="create-classic-metric-alerts-in-azure-monitor-for-azure-services---powershell"></a>Создание классических оповещений на основе метрик в Azure Monitor для служб Azure с помощью PowerShell
 > [!div class="op_single_selector"]

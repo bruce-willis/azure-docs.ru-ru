@@ -3,19 +3,19 @@ title: Конечные точки службы и правила виртуал
 description: Пометьте подсеть как конечную точку службы виртуальной сети. Затем внесите конечную точку в виде правила виртуальной сети в список управления доступом к базе данных SQL Azure. После этого база данных SQL будет принимать подключения от всех виртуальных машин и других узлов в этой подсети.
 services: sql-database
 ms.service: sql-database
-author: MightyPen
+author: DhruvMsft
 manager: craigg
 ms.custom: VNet Service endpoints
-ms.topic: article
-ms.date: 04/19/2018
+ms.topic: conceptual
+ms.date: 06/05/2018
 ms.reviewer: genemi
 ms.author: dmalik
-ms.openlocfilehash: 9f72ce802f5a2a07ad310968152ab359b4a6c31b
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: d708d55c64306636910a85b5b490e25ecc794bd6
+ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32778178"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34802601"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure
 
@@ -187,7 +187,7 @@ PolyBase часто используют для загрузки данных в
 
 ## <a name="adding-a-vnet-firewall-rule-to-your-server-without-turning-on-vnet-service-endpoints"></a>Добавление правила брандмауэра виртуальной сети к серверу без включения конечных точек службы виртуальной сети
 
-Пока возможности этой функции не были расширены, необходимо было включать конечные точки службы виртуальной сети, прежде чем реализовать динамическое правило виртуальной сети в брандмауэре. Конечные точки связывают данную подсеть виртуальной сети с базой данных SQL Azure. По состоянию на январь 2018 г. это требование можно обойти, задав параметр **IgnoreMissingServiceEndpoint**.
+Пока возможности этой функции не были расширены, вам нужно было включить конечные точки службы виртуальной сети, чтобы реализовать динамическое правило виртуальной сети в брандмауэре. Конечные точки связывают данную подсеть виртуальной сети с базой данных SQL Azure. По состоянию на январь 2018 г. это требование можно обойти, задав параметр **IgnoreMissingServiceEndpoint**.
 
 Если задать лишь правило брандмауэра, вы не сможете обеспечить безопасность сервера. Для этого вам также потребуется включить конечные точки службы виртуальной сети. При включении конечных точек службы подсеть виртуальной сети будет простаивать, пока не будет выполнен переход из состояния "Выкл." в состояние "Вкл.". Это особенно верно в случае с большими виртуальными сетями. С помощью параметра **IgnoreMissingServiceEndpoint** можно уменьшить или исключить время простоя во время перехода.
 
@@ -319,7 +319,7 @@ PolyBase часто используют для загрузки данных в
 
 [arm-deployment-model-568f]: ../azure-resource-manager/resource-manager-deployment-model.md
 
-[expressroute-indexmd-744v]: ../expressroute/index.md
+[expressroute-indexmd-744v]: ../expressroute/index.yml
 
 [rbac-what-is-813s]:../role-based-access-control/overview.md
 

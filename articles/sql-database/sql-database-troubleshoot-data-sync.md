@@ -3,17 +3,18 @@ title: Устранение неполадок синхронизации дан
 description: Узнайте, как устранять распространенные неполадки синхронизации данных SQL Azure (предварительная версия).
 services: sql-database
 ms.date: 04/01/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: sql-database
 author: douglaslMS
 ms.author: douglasl
 manager: craigg
 ms.custom: data-sync
-ms.openlocfilehash: 6e29c93f37017a88aa4b6d69168e649f7397d56b
-ms.sourcegitcommit: 3a4ebcb58192f5bf7969482393090cb356294399
+ms.openlocfilehash: 8c3476a81c10c9e1754302da4ac5c703ce7375bc
+ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34757542"
 ---
 # <a name="troubleshoot-issues-with-sql-data-sync-preview"></a>Устранение неполадок с синхронизацией данных SQL (предварительная версия)
 
@@ -240,9 +241,8 @@ ms.lasthandoff: 04/06/2018
 
 -   Запущена служба синхронизации данных SQL Windows (предварительная версия).  
 -   Учетная запись службы предварительного просмотра синхронизации данных SQL (предварительная версия) Windows имеет доступ к сети.    
--   Агент клиента может связаться со службой указателя. Убедитесь, что следующий раздел реестра имеет значение https://locator.sync.azure.com/LocatorServiceApi.svc:  
-    -   На компьютере x86: `HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\SQL Azure Data Sync\\LOCATORSVCURI`  
-    -   На компьютере x64: `HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\SQL Azure Data Sync\\LOCATORSVCURI`
+-   Исходящий порт 1433 открыт в локальном правиле брандмауэра.
+-   Локальный IP-адрес добавляется к серверу или в правило брандмауэра базы данных для синхронизации базы данных метаданных.
 
 #### <a name="cause"></a>Причина:
 

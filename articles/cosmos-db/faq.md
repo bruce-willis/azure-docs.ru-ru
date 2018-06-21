@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/14/2018
 ms.author: sngun
-ms.openlocfilehash: e20e360fc1bfb839476a1f4dccf6acf0f25174d2
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: ed69d4de56d23210cc9133d74ab81530f924b5ae
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34735170"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261565"
 ---
 # <a name="azure-cosmos-db-faq"></a>Вопросы и ответы об Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Основные сведения об Azure Cosmos DB
@@ -159,8 +159,9 @@ API SQL поддерживает оптимистическое параллел
 API SQL поддерживает транзакции LINQ через хранимые процедуры и триггеры JavaScript. Все операции с базой данных в скрипте выполняются в режиме изоляции моментального снимка. Если это коллекция одной секции, выполнение ограничивается такой коллекцией. Если коллекция секционирована, выполнение ограничивается документами с одним тем же значением ключа секции в пределах коллекции. Моментальный снимок версий документов (ETag) выполняется в начале транзакции и фиксируется только в случае успешного выполнения скрипта. Если JavaScript выдает ошибку, выполняется откат транзакции. Дополнительные сведения см. в статье [Программирование Azure Cosmos DB на стороне сервера: хранимые процедуры, триггеры баз данных и определяемые пользователем функции](programming.md).
 
 ### <a name="how-can-i-bulk-insert-documents-into-cosmos-db"></a>Как выполнять массовую вставку документов в Cosmos DB?
-Массовую вставку документов в Azure Cosmos DB можно выполнять так:
+Массовую вставку документов в Azure Cosmos DB можно выполнить одним из следующих способов:
 
+* С помощью библиотеки BulkExecutor, как описано в статьях [Использование библиотеки BulkExecutor .NET для выполнения массовых операций в Azure Cosmos DB](bulk-executor-dot-net.md) и [Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки BulkExecutor Java](bulk-executor-java.md).
 * С помощью инструмента миграции данных, как описано в статье [Как импортировать данные в Azure Cosmos DB для API DocumentDB](import-data.md).
 * С помощью хранимых процедур, как описано в статье [Программирование Azure Cosmos DB на стороне сервера: хранимые процедуры, триггеры баз данных и определяемые пользователем функции](programming.md).
 

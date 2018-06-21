@@ -6,7 +6,6 @@ documentationcenter: .net
 author: v-rachiw
 manager: navya
 editor: ''
-ms.assetid: 5441e7e0-d842-4398-b060-8c9d34b07c48
 ms.service: service-fabric
 ms.devlang: dotnet
 ms.topic: article
@@ -14,26 +13,35 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/08/2018
 ms.author: v-rachiw
-ms.openlocfilehash: 8d5b560068a9e0bc0169bfdb98c5e939e34a3b8c
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 96956543a44b6d5d967e3bae3fd833b08baf3d6f
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34274033"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34642739"
 ---
 # <a name="upgrademigrate-the-sku-for-primary-node-type-to-higher-sku"></a>Обновление или перенос номера SKU для основного типа узла на больший номер SKU
 
 В этой статье описывается, как обновить или перенести номер SKU основного типа узла кластера Service Fabric на больший номер SKU с помощью Azure PowerShell.
 
-## <a name="add-a-new-virtual-machine-scale-set"></a>Добавление нового масштабируемого набора виртуальных машин 
+## <a name="add-a-new-virtual-machine-scale-set"></a>Добавление нового масштабируемого набора виртуальных машин
 
-Разверните новый масштабируемый набор виртуальных машин и подсистему балансировки нагрузки. Конфигурация расширения Service Fabric (особенно тип узла) нового масштабируемого набора виртуальных машин должна быть такой же, как и у старого масштабируемого набора, который вы обновляете. В обозревателе SF убедитесь, что новые узлы доступны. 
+Разверните новый масштабируемый набор виртуальных машин и подсистему балансировки нагрузки. Конфигурация расширения Service Fabric (особенно тип узла) нового масштабируемого набора виртуальных машин должна быть такой же, как и у старого масштабируемого набора, который вы обновляете. В обозревателе Service Fabric убедитесь, что новые узлы доступны
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
+
 В следующем примере используется Azure PowerShell для развертывания обновленного шаблона Resource Manager *template.json* с помощью группы ресурсов *myResourceGroup*.
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName myResourceGroup -TemplateFile \template\template.json 
+New-AzureRmResourceGroupDeployment -ResourceGroupName myResourceGroup -TemplateFile template.json -TemplateParameterFile parameters.json
+```
+
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+В следующей команде Azure Service Fabric CLI используется для развертывания обновленного шаблона Resource Manager *template.json* с помощью группы ресурсов *myResourceGroup*:
+
+```CLI
+az group deployment create --resource-group myResourceGroup --template-file template.json --parameters parameters.json
 ```
 
 В следующем примере показано, как изменить шаблон json, чтобы добавить в существующий кластер ресурс нового масштабируемого набора виртуальных машин с указанным типом основного узла.
@@ -214,43 +222,58 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName myResourceGroup -TemplateF
         },
 ```
 
-
 ## <a name="remove-old-virtual-machine-scale-set"></a>Удаление старого масштабируемого набора виртуальных машин
 
-Отключите экземпляры виртуальных машин старого масштабируемого набора виртуальных машин набор, из которого вы собираетесь удалить узлы. Для выполнения этой операции потребоваться длительное время. Вы можете отключить все узлы сразу или по очереди. Подождите, пока все узлы не будут отключены. 
-
-### <a name="azure-powershell"></a>Azure PowerShell
+1. Отключите экземпляры виртуальных машин старого масштабируемого набора виртуальных машин набор, из которого вы собираетесь удалить узлы. Для выполнения этой операции потребоваться длительное время. Вы можете отключить все узлы сразу или по очереди. Подождите, пока все узлы не будут отключены. 
+#### <a name="azure-powershell"></a>Azure PowerShell
 В следующем примере используется PowerShell для Azure Service Fabric для отключения экземпляра узла *NTvm1_0* из старого масштабируемого набора виртуальных машин *NTvm1*.
-
 ```powershell
-Disable-ServiceFabricNode -NodeName NTvm1_0 -Intent RemoveNode 
+Disable-ServiceFabricNode -NodeName NTvm1_0 -Intent RemoveNode
 ```
-
-Удалите весь масштабируемый набор. Подождите, пока состояние подготовки масштабируемого набора не станет успешным. 
-
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+В следующей команде Azure Service Fabric CLI используется для отключения экземпляра узла *NTvm1_0* из старого масштабируемого набора виртуальных машин *NTvm1*:
+```CLI
+sfctl node disable --node-name "_NTvm1_0" --deactivation-intent RemoveNode
+```
+2. Удалите весь масштабируемый набор. Подождите, пока состояние подготовки масштабируемого набора не станет успешным.
+#### <a name="azure-powershell"></a>Azure PowerShell
 В следующем примере используется Azure PowerShell для удаления всего масштабируемого набора *NTvm1* из группы ресурсов *myResourceGroup*.
-
 ```powershell
 Remove-AzureRmVmss -ResourceGroupName myResourceGroup -VMScaleSetName NTvm1
+```
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+В следующей команде Azure Service Fabric CLI используется для удаления всего масштабируемого набора *NTvm1* из группы ресурсов *myResourceGroup*:
+
+```CLI
+az vmss delete --name NTvm1 --resource-group myResourceGroup
 ```
 
 ## <a name="remove-load-balancer-related-to-old-scale-set"></a>Удаление подсистемы балансировки нагрузки, связанной со старым масштабируемым набором
 
 Удалите подсистему балансировки нагрузки, связанную со старым масштабируемым набором. Это действие приведет к кратковременному простою кластера.
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
+
 В следующем примере используется Azure PowerShell для удаления подсистемы балансировки нагрузки *LB-myCluster-NTvm1*, связанной со старым масштабируемым набором из группы ресурсов *myResourceGroup*.
 
 ```powershell
 Remove-AzureRmLoadBalancer -Name LB-myCluster-NTvm1 -ResourceGroupName myResourceGroup
 ```
 
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+В следующей команде Azure Service Fabric CLI используется для удаления подсистемы балансировки нагрузки *LB-myCluster-NTvm1*, связанной со старым масштабируемым набором из группы ресурсов *myResourceGroup*:
+
+```CLI
+az network lb delete --name LB-myCluster-NTvm1 --resource-group myResourceGroup
+```
+
 ## <a name="remove-public-ip-related-to-old-scale-set"></a>Удаление общедоступного IP-адреса, связанного со старым масштабируемым набором
 
 Сохраните параметры DNS общедоступного IP-адреса, связанного со старым масштабируемым набором, в переменной, а затем удалите этот общедоступный IP-адрес.
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
+
 В следующем примере используется Azure PowerShell для сохранения параметров DNS общедоступного IP-адреса *LBIP-myCluster-NTvm1* в переменной и удаления этого IP-адреса.
 
 ```powershell
@@ -260,27 +283,52 @@ $primaryDNSFqdn = $oldprimaryPublicIP.DnsSettings.Fqdn
 Remove-AzureRmPublicIpAddress -Name LBIP-myCluster-NTvm1 -ResourceGroupName myResourceGroup
 ```
 
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+В следующей команде Azure Service Fabric CLI используется для получения параметров DNS общедоступного IP-адреса *LBIP-myCluster-NTvm1* и удаления этого IP-адреса:
+
+```CLI
+az network public-ip show --name LBIP-myCluster-NTvm1 --resource-group myResourceGroup
+az network public-ip delete --name LBIP-myCluster-NTvm1 --resource-group myResourceGroup
+```
+
 ## <a name="update-public-ip-address-related-to-new-scale-set"></a>Обновление общедоступного IP-адреса, связанного со старым масштабируемым набором
 
 Обновите параметры DNS общедоступного IP-адреса, связанного с новым масштабируемым набором, с помощью параметров DNS общедоступного IP-адреса, связанного со старым масштабируемым набором.
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
 В следующем примере используется Azure PowerShell для обновления параметров DNS общедоступного IP-адреса *LBIP-myCluster-NTvm3* с помощью параметров DNS, сохраненных в переменных на предыдущем шаге.
 
 ```powershell
-$PublicIP = Get-AzureRmPublicIpAddress -Name LBIP-myCluster-NTvm1  -ResourceGroupName myResourceGroup
+$PublicIP = Get-AzureRmPublicIpAddress -Name LBIP-myCluster-NTvm3  -ResourceGroupName myResourceGroup
 $PublicIP.DnsSettings.DomainNameLabel = $primaryDNSName
 $PublicIP.DnsSettings.Fqdn = $primaryDNSFqdn
-Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP 
+Set-AzureRmPublicIpAddress -PublicIpAddress $PublicIP
+```
+
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+В следующей команде Azure Service Fabric CLI используется для обновления параметров DNS общедоступного IP-адреса *LBIP-myCluster-NTvm3* с DNS-параметрами старых общедоступных IP-адресов, полученных на предыдущем шаге:
+
+```CLI
+az network public-ip update --name LBIP-myCluster-NTvm3 --resource-group myResourceGroup --dns-name myCluster
 ```
 
 ## <a name="remove-knowledge-of-service-fabric-node-from-fm"></a>Удаление сведений об узле Service Fabric из диспетчера отработки отказов
 
 Сообщите Service Fabric, что узлы, которые не работают, были удалены из кластера. (Выполните эту команду для всех экземпляров виртуальных машин старого масштабируемого набора. Если уровень устойчивости старого масштабируемого набора виртуальных машин — серебряный или золотой, этот шаг может не понадобиться, так как он выполняется системой автоматически.)
 
-### <a name="azure-powershell"></a>Azure PowerShell
+#### <a name="azure-powershell"></a>Azure PowerShell
 В следующем примере используется PowerShell для Azure Service Fabric для уведомления Service Fabric о том, что узел *NTvm1_0* был удален.
 
 ```powershell
 Remove-ServiceFabricNodeState -NodeName NTvm1_0
+```
+
+#### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+В следующей команде Azure Service Fabric CLI используется для уведомления Service Fabric о том, что узел *NTvm1_0* удален:
+
+```CLI
+sfctl node remove-state --node-name _NTvm1_0
 ```

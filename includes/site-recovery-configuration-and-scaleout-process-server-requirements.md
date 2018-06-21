@@ -3,41 +3,46 @@ title: включение файла
 description: включение файла
 services: site-recovery
 author: rayne-wiselman
+manager: carmonm
 ms.service: site-recovery
 ms.topic: include
-ms.date: 05/03/2018
+ms.date: 06/10/2018
 ms.author: raynew
 ms.custom: include file
-ms.openlocfilehash: 2464fa41deaa1e9c43e5f53e1a900ca11b582040
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 601819756b78ffe8762bdfbfd5f802bc2d76e9c5
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33901301"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35268059"
 ---
 **Требования к серверам конфигурации и обработки**
 
 **Компонент** | **Требование** 
 --- | ---
-**Оборудование** | 
-**Ядра ЦП** | 8 
-**ОЗУ** | 16 ГБ
-**Количество дисков** | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) 
-**Свободное место на диске (кэш сервера обработки)** | 600 ГБ
-**Свободное место на диске (диск хранения)** | 600 ГБ
-**Программное обеспечение** | 
-**Операционная система** | Windows Server 2012 R2 <br> Windows Server 2016
-**Язык операционной системы** | Английский (en-us)
-**Роли Windows Server** | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. 
-**Групповые политики** | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Подробнее](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
-**IIS** | — должен отсутствовать предварительно созданный веб-сайт по умолчанию; <br> — должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных через порт 443. <br>— включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx); 
-**Сеть** | 
-**Тип IP-адреса** | Статическое 
-**Доступ к Интернету** | Сервер должен иметь доступ к этим URL-адресам (напрямую или через прокси-сервер) <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> — https://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi (если вы настраиваете сервер конфигурации) <br> time.nist.gov <br> time.windows.com 
-**Порты** | 443 (оркестрация канала управления)<br>9443 (передача данных) 
-****Тип сетевого адаптера** VMWARE (при настройке сервера конфигурации или обработке в качестве виртуальной машины VMware)**
- | VMXNET3  
-**Служба VMware vSphere PowerCLI, запущенная на виртуальной машине* | [PowerCLI версии 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1 "PowerCLI 6.0")
+**Параметры оборудования** | 
+Ядра ЦП | 8 
+ОЗУ | 16 ГБ
+Количество дисков | 3 (диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения)) 
+Свободное место на диске (кэш сервера обработки) | 600 ГБ
+Свободное место на диске (диск хранения) | 600 ГБ
+ | 
+**Параметры программного обеспечения** | 
+Операционная система | Windows Server 2012 R2 <br> Windows Server 2016
+Язык операционной системы | Английский (en-us)
+Роли Windows Server | Не включайте эти роли: <br> — доменные службы Active Directory; <br>— службы IIS; <br> — Hyper-V. 
+Групповые политики | Не включать эти групповые политики: <br> — запрет на использование командной строки; <br> — запрет на использование инструментов редактирования реестра; <br> — логика доверия для вложенных файлов; <br> — включение выполнения скриптов. <br> [Подробнее](https://technet.microsoft.com/library/gg176671(v=ws.10).aspx)
+IIS | — должен отсутствовать предварительно созданный веб-сайт по умолчанию; <br> — должен отсутствовать предварительно созданный веб-сайт или приложение, ожидающее передачи данных через порт 443. <br>— включите [анонимную аутентификацию](https://technet.microsoft.com/library/cc731244(v=ws.10).aspx); <br> — включите параметр [FastCGI](https://technet.microsoft.com/library/cc753077(v=ws.10).aspx); 
+| 
+**Параметры сети** | 
+Тип IP-адреса | Статическое 
+Доступ к Интернету | Сервер должен иметь доступ к этим URL-адресам (напрямую или через прокси-сервер) <br> - \*.accesscontrol.windows.net<br> - \*.backup.windowsazure.com <br>- \*.store.core.windows.net<br> - \*.blob.core.windows.net<br> - \*.hypervrecoverymanager.windowsazure.com <br> - https://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi (если вы настраиваете сервер конфигурации) <br> time.nist.gov <br> time.windows.com 
+порты; | 443 (оркестрация канала управления)<br>9443 (передача данных) 
+Тип сетевой карты | VMXNET3 (если сервером конфигурации является виртуальная машина VMware)
+ | 
+**Устанавливаемое программное обеспечение** | 
+VMware vSphere PowerCLI | Если сервер конфигурации работает на виртуальной машине VMware, должен быть установлен компонент [PowerCLI версии 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1).
+MySQL | Должен быть установлен компонент MySQL. Его можно установить вручную, или его может установить Site Recovery.
 
 **Требования к размеру серверов конфигурации и обработки**
 

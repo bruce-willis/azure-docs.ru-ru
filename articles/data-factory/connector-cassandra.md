@@ -10,15 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/02/2018
+ms.topic: conceptual
+ms.date: 06/07/2018
 ms.author: jingwang
-ms.openlocfilehash: fe68797090926f2e0e0e2fbb66ba2bb7f6d940e7
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 94312edaa97a5d9a7502eed4c0551151ce2a06cc
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32770967"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35235283"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -37,8 +37,11 @@ ms.locfileid: "32770967"
 
 В частности, этот соединитель Cassandra поддерживает:
 
-- Cassandra **версии 2.X**.
+- Cassandra **версий 2.x и 3.x**.
 - Копирование данных с использованием **базовой** или **анонимной** проверки подлинности.
+
+>[!NOTE]
+>Если действие выполняется в локальной среде IR, поддержка Cassandra начинается с версии 3.7.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -63,6 +66,9 @@ ms.locfileid: "32770967"
 | Имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | password |Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да (если для свойства authenticationType задано значение Basic) |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!NOTE]
+>Подключение к Cassandra по протоколу SSL пока не поддерживается.
 
 **Пример.**
 

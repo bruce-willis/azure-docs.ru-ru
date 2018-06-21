@@ -2,13 +2,12 @@
 title: Настройка оповещений о выставлении счетов или предоставлении кредитов для подписок Azure | Документация Майкрософт
 description: Описывает процесс настройки предупреждений на счете Azure, помогая избежать непредвиденных счетов.
 keywords: оповещение о предоставлении кредита,оповещение о выставлении счета
-services: ''
+services: billing
 documentationcenter: ''
 author: adpick
 manager: adpick
 editor: ''
 tags: billing
-ms.assetid: 9b7b3eeb-cd9d-4690-86a3-51b1e2a8974f
 ms.service: billing
 ms.workload: na
 ms.tgt_pltfrm: na
@@ -16,20 +15,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/9/2017
 ms.author: adpick
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fa7d1853226647917925e8c75e01a1c83d84daeb
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 981cb1153e0268e6572207f8d2401edb23485863
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359056"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34607809"
 ---
 # <a name="set-up-billing-or-credit-alerts-for-your-microsoft-azure-subscriptions"></a>Настройка оповещений о выставлении счетов или предоставлении кредитов для подписок Microsoft Azure
 Если вы являетесь администратором учетной записи для подписки Azure, с помощью службы оповещений о выставлении счетов Azure можно создать пользовательские оповещения, которые помогут отслеживать и контролировать действия по выставлению счетов для учетных записей Azure.
 
 Эта служба доступна в предварительной версии, поэтому сначала ее нужно включить на странице "Функции предварительной версии".
 
-[!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="set-the-alert-threshold-and-email-recipients"></a>Укажите адресатов электронной почты и пороговое значение для отправки предупреждений
 1. Посетите [страницу "Функции предварительной версии"](https://account.windowsazure.com/PreviewFeatures) и включите **службы оповещений о выставлении счетов**.
@@ -51,6 +49,11 @@ Azure поддерживает любой адрес электронной по
 ## <a name="check-on-your-alerts"></a>Проверка настроенных предупреждений
 После настройки предупреждения они появятся в центре учетных записей. Кроме того, там будет показано, сколько предупреждений еще можно добавить. Показывается дата и время отправки каждого предупреждения, его тип (по общему счету или по денежному кредиту) и настроенное предельное значение. Время показывается в 24-часовом формате (UTC), дата в формате "гггг-мм-дд". Щелкните значок "плюс" рядом с оповещением в списке, чтобы изменить его. Чтобы удалить, щелкните значок корзины.
 
+## <a name="delete-alerts-or-email-addresses-from-the-azure-billing-alert-service"></a>Удаление оповещений или адресов электронной почты из Службы оповещений о выставлении счетов Azure
+Если когда-либо придется удалить все сведения из службы, обновите адрес электронной почты в файле или полностью удалите оповещение.
+
+   ![Снимок экрана представления с удалением оповещения, в котором можно удалить пользовательские данные][Image4]
+
 ## <a name="billing-alerts-for-enterprise-agreement-ea-customers"></a>Оповещения о выставлении счетов для клиентов с соглашением Enterprise (EA)
 Подписки ЕА не поддерживаются этой службой, зато клиенты с соглашением Enterprise (ЕА) могут получать оповещения по каждому зарегистрированному отделу, задав параметры квот на расход. Для начала ознакомьтесь со статьей о [квотах на расход для отделов](https://ea.azure.com/helpdocs/departmentSpendingQuotas) на портале EA.
 
@@ -64,3 +67,4 @@ Azure поддерживает любой адрес электронной по
 [Image1]: ./media/azure-billing-set-up-alerts/billingalert1.png 
 [Image2]: ./media/azure-billing-set-up-alerts/billingalert2.png
 [Image3]: ./media/azure-billing-set-up-alerts/billingalerts3.png 
+[Image4]: ./media/azure-billing-set-up-alerts/AlertsDeleteScreen1.PNG

@@ -6,13 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/08/2018
+ms.date: 05/23/2018
 ms.author: raynew
-ms.openlocfilehash: 207ff17f7b113bf4a94bb6c157cf53e7b1c46b45
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: a4c83e495e269cdca35844a699d714b55cf1f500
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34643317"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -27,18 +28,25 @@ ms.lasthandoff: 04/16/2018
 > * Создание политики репликации
 > * Включение репликации для сервера.
 
+[Изучение архитектуры](concepts-hyper-v-to-azure-architecture.md) этого сценария аварийного восстановления.
+
 ## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством:
 
-- Вам должны быть понятны [архитектура и компоненты сценария](physical-azure-architecture.md).
+- Рассмотрите [архитектуру и компоненты этого сценария](physical-azure-architecture.md).
 - [Ознакомьтесь](vmware-physical-secondary-support-matrix.md) с требованиями поддержки для всех компонентов.
 - Убедитесь, что серверы, которые необходимо реплицировать, соответствуют требованиям [виртуальных машин Azure](vmware-physical-secondary-support-matrix.md#replicated-vm-support).
 - Подготовьте Azure. Требуется подписка Azure, виртуальная сеть Azure и учетная запись хранения.
 - Подготовьте учетную запись для автоматической установки службы Mobility Service на каждом сервере, который требуется реплицировать.
 
-> [!NOTE]
-> Перед началом важно отметить, что после отработки отказа в Azure физические серверы невозможно восстановить на локальных физических компьютерах. Их можно восстановить только на виртуальных машинах VMware. 
+Перед началом работы обратите внимание на следующее:
+
+- После отработки отказа в Azure физические серверы невозможно восстановить на локальных физических компьютерах. Их можно восстановить только на виртуальных машинах VMware. 
+- В этом руководстве рассматривается настройка аварийного восстановления физического сервера в Azure с использованием наиболее простых параметров. Сведения о других операциях см. в практических руководствах, посвященных таким вопросам:
+    - настройка [источника репликации](physical-azure-set-up-source.md), в том числе сервер конфигурации Site Recovery;
+    - настройка [целевого объекта репликации](physical-azure-set-up-target.md);
+    - настройка [политики репликации](vmware-azure-set-up-replication.md) и [включение репликации](vmware-azure-enable-replication.md).
 
 
 ### <a name="set-up-an-azure-account"></a>Настройка учетной записи Azure
