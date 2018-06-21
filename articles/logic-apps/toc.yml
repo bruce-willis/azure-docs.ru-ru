@@ -268,14 +268,14 @@
       items:
         - name: Мониторинг состояния приложений логики
           href: logic-apps-monitor-your-logic-apps.md
-        - name: Мониторинг состояния приложений логики в OMS с помощью Log Analytics
+        - name: Мониторинг состояния приложений логики с помощью Azure Log Analytics
           href: logic-apps-monitor-your-logic-apps-oms.md
         - name: Мониторинг сообщений B2B
           href: logic-apps-monitor-b2b-message.md
           items:
-            - name: Отслеживание сообщений B2B в OMS
+            - name: Отслеживание сообщений B2B в Azure Log Analytics
               href: logic-apps-track-b2b-messages-omsportal.md
-            - name: Запрашивание сообщений B2B в OMS
+            - name: Запрос сообщений B2B в Azure Log Analytics
               href: logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md
     - name: 'Примеры, сценарии и пошаговые руководства'
       href: logic-apps-examples-and-scenarios.md

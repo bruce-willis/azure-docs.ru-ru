@@ -54,15 +54,17 @@
     - name: Машинное обучение Azure
       href: walkthroughs-aml-with-tdsp.md
       items:
-        - name: Классификация тональностей
+        - name: Классификация тональностей с помощью Keras & Scikit-Learn
           href: predict-twitter-sentiment.md
+        - name: Классификация тональностей с помощью пакета текстовой аналитики AML
+          href: predict-twitter-sentiment-amltextpackage.md
         - name: Классификация доходов в США
           href: ../desktop-workbench/scenario-tdsp-classifying-us-incomes.md
           maintainContext: true
         - name: Распознавание биомедицинских форм
           href: ../desktop-workbench/scenario-tdsp-biomedical-recognition.md
           maintainContext: true
-        - name: Классификация изображений рака кожи
+        - name: Классификация изображений рака кожи с помощью пакета визуализации AML
           href: isic-image-classification.md
           maintainContext: true
     - name: Spark с PySpark и Scala;

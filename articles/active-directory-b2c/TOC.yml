@@ -16,8 +16,8 @@
       href: active-directory-b2c-quickstarts-spa.md
 - name: Учебники
   items:
-    - name: 1. Регистрация приложений
-      href: tutorial-register-applications.md
+    - name: 1. Создание клиента B2C
+      href: tutorial-create-tenant.md
     - name: 2. Аутентификация учетных записей
       items:
         - name: 'ASP.NET:'

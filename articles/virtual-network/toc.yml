@@ -161,12 +161,8 @@
               href: virtual-networks-dmz-nsg.md
     - name: Настройка
       items:
-        - name: Виртуальные машины
-          items:
-            - name: Добавление и удаление сетевых интерфейсов
-              href: virtual-network-network-interface-vm.md
-            - name: Разрешение имен для виртуальных машин и облачных служб
-              href: virtual-networks-name-resolution-for-vms-and-role-instances.md
+        - name: Разрешение имен для виртуальных машин и облачных служб
+          href: virtual-networks-name-resolution-for-vms-and-role-instances.md
         - name: Использование динамического DNS с собственным DNS-сервером
           href: virtual-networks-name-resolution-ddns.md
         - name: Оптимизация пропускной способности сети
@@ -191,17 +187,16 @@
               href: virtual-network-nsg-manage-log.md
         - name: Таблицы маршрутов
           href: manage-route-table.md
-        - name: Сетевые интерфейсы
-          href: virtual-network-network-interface.md
+        - name: Сетевые подключения виртуальных машин
           items:
-            - name: IP-адреса;
+            - name: Создание и удаление сетевых интерфейсов
+              href: virtual-network-network-interface.md
+            - name: Добавление и удаление сетевых интерфейсов
+              href: virtual-network-network-interface-vm.md
+            - name: Создание и удаление IP-адресов
               href: virtual-network-network-interface-addresses.md
         - name: Общедоступные IP-адреса
           href: virtual-network-public-ip-address.md
-        - name: Виртуальные машины
-          items:
-            - name: Перемещение виртуальной машины в другую подсеть
-              href: virtual-networks-move-vm-role-to-subnet.md
     - name: Устранение неполадок
       items:
         - name: Группы безопасности сети
@@ -277,6 +272,8 @@
                       href: ../virtual-machines/windows/classic/setup-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json
                     - name: Azure PowerShell
                       href: virtual-networks-acl-powershell.md
+                - name: Перемещение виртуальной машины в другую подсеть
+                  href: virtual-networks-move-vm-role-to-subnet.md
         - name: Облачная служба и сетевая безопасность
           href: ../best-practices-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json
           items:
