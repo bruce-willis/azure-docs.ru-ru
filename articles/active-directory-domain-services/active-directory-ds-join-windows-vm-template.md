@@ -8,19 +8,19 @@ manager: mtillman
 editor: curtand
 ms.assetid: 4eabfd8e-5509-4acd-86b5-1318147fddb5
 ms.service: active-directory
-ms.component: domains
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: maheshu
-ms.openlocfilehash: b5d9e724fcbe3f872eee2f64bdec6894ef97e2e1
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 56e22877b48788bfb15bd2fb85caa08015665732
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34587203"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36217982"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблона Resource Manager
 В этой статье показано, как с помощью шаблонов Azure Resource Manager присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure AD.

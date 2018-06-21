@@ -205,6 +205,8 @@
           href: backup-azure-mars-troubleshoot.md
         - name: Общий файловый ресурс Azure
           href: troubleshoot-azure-files.md
+        - name: SQL Server;
+          href: backup-sql-server-azure-troubleshoot.md
 - name: Справочные материалы
   items:
     - name: .NET

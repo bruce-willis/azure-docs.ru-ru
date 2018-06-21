@@ -1,19 +1,19 @@
 ---
 title: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 description: Сведения о клиентской библиотеке JavaScript для службы "Аналитика временных рядов Azure" и соответствующей модели программирования.
-author: BryanLa
+author: ashannon7
 manager: timlt
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: tutorial
 ms.date: 06/05/2018
 ms.author: bryanla
-ms.openlocfilehash: 6bd8b10100f8cdabca5f87addfea1690dc5fac6c
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 70e29b1a6b8a4443ae6545ec7960f1d2370218e3
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809504"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36295402"
 ---
 # <a name="tutorial-explore-the-azure-time-series-insights-javascript-client-library"></a>Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 

@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.date: 2/13/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 4caa4dfcfdc468c69241c5cf61d3c520609a088a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: e52674014a888913e288f7b0749d9b2e05bedf45
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34710271"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36292792"
 ---
 # <a name="quickstart-set-up-sign-in-for-an-aspnet-application-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в приложение ASP.NET с помощью Azure Active Directory B2C
 
@@ -124,4 +124,4 @@ Azure Active Directory B2C предоставляет функциональны
 Перейдите к изучению следующего руководства, чтобы узнать, как настроить пример ASP.NET для использования собственного клиента Azure AD B2C.
 
 > [!div class="nextstepaction"]
-> [Руководство по выполнению аутентификации пользователей в веб-приложении ASP.NET с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-web-app.md)
+> [Создание клиента Azure Active Directory B2C на портале Azure](tutorial-create-tenant.md)

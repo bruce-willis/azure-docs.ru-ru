@@ -3,17 +3,18 @@ title: Создание набора навыков в конвейере ког
 description: Определение этапов извлечения данных, обработки естественного языка или анализа изображений для обогащения и извлечения структурированной информации из данных для использования в службе "Поиск Azure".
 manager: pablocas
 author: luiscabrer
+services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: luisca
-ms.openlocfilehash: 816951ac128fb76d748262cfbc5f064a44e6376c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 997b106f748a2f18e8141f77f3b9ff8bb6b9d971
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34640932"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36268026"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
 
@@ -106,11 +107,11 @@ Content-Type: application/json
       "httpHeaders": {
           "Ocp-Apim-Subscription-Key": "foobar"
       },
-      "context": "/document/content/organizations/*",
+      "context": "/document/organizations/*",
       "inputs": [
         {
           "name": "query",
-          "source": "/document/content/organizations/*"
+          "source": "/document/organizations/*"
         }
       ],
       "outputs": [
@@ -210,11 +211,11 @@ Content-Type: application/json
       "httpHeaders": {
           "Ocp-Apim-Subscription-Key": "foobar"
       }
-      "context": "/document/content/organizations/*",
+      "context": "/document/organizations/*",
       "inputs": [
         {
           "name": "query",
-          "source": "/document/content/organizations/*"
+          "source": "/document/organizations/*"
         }
       ],
       "outputs": [
@@ -228,9 +229,9 @@ Content-Type: application/json
 
 Это определение представляет собой настраиваемый навык, который вызывает веб-API в ходе обогащения. Для каждой организации, идентифицированной при распознавании именованных сущностей, этот навык вызывает веб-API, чтобы найти описание организации. Оркестрация времени вызова веб-API и включения в последовательность полученной информации обрабатывается внутренним модулем обогащения. При этом инициализация, необходимая для вызова этого настраиваемого API, должна быть задана в JSON (например, uri, httpHeaders и ожидаемые входные данные). Инструкции по созданию настраиваемого веб-API для конвейера обогащения см. в руководстве по [определению настраиваемого интерфейса](cognitive-search-custom-skill-interface.md).
 
-Обратите внимание, что в поле context задается значение ```"/document/content/organizations/*"``` со звездочкой. Это означает, что этап обогащения вызывается *для каждой* организации из ```"/document/content/organizations"```. 
+Обратите внимание, что в поле context задается значение ```"/document/organizations/*"``` со звездочкой. Это означает, что этап обогащения вызывается *для каждой* организации из ```"/document/organizations"```. 
 
-Выходные данные (в этом случае описание компании) создаются для каждой идентифицированной организации. При создании ссылки на описание в нижестоящем шаге (например, при извлечении ключевых фраз) следует использовать путь ```"/document/content/organizations/*/description"```. 
+Выходные данные (в этом случае описание компании) создаются для каждой идентифицированной организации. При создании ссылки на описание в нижестоящем шаге (например, при извлечении ключевых фраз) следует использовать путь ```"/document/organizations/*/description"```. 
 
 ## <a name="enrichments-create-structure-out-of-unstructured-information"></a>Обогащения создают структуру из неструктурированной информации
 

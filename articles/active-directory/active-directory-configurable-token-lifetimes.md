@@ -16,12 +16,12 @@ ms.date: 04/19/2018
 ms.author: hirsin
 ms.custom: aaddev
 ms.reviewer: anchitn
-ms.openlocfilehash: 086a2fde5905321da7d5689b6f1ee2f5139209ba
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 95a3c1d3effe6d4b73354fb3ef871aeb7767bfb4
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34588868"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36228575"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-public-preview"></a>Настройка времени жизни маркеров в Azure Active Directory (общедоступная предварительная версия)
 Вы можете указать время жизни маркера, выданного Azure Active Directory (Azure AD). Время жизни маркеров можно настроить для всех приложений в организации, для многопользовательского приложения (приложения для нескольких организаций) или для определенного субъекта-службы в организации.
@@ -335,7 +335,7 @@ ms.locfileid: "34588868"
 
     Теперь у нас есть политика, которая применяется ко всей организации. Предположим, мы хотим сохранить эту политику со сроком действия 30 дней для определенного субъекта-службы, но изменить максимальное ограничение стандартной политики для организации, указав значение until-revoked (пока не будет отозван).
 
-    1.  Чтобы просмотреть все субъекты-службы в организации, запросите [Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/serviceprincipal#properties) или [Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Также это можно проверить в [обозревателе Azure AD Graph](https://graphexplorer.cloudapp.net/)и [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) с помощью учетной записи Azure AD.
+    1.  Чтобы просмотреть все субъекты-службы в организации, запросите [Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/serviceprincipal#properties) или [Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Также это можно проверить в [обозревателе Azure AD Graph](https://graphexplorer.azurewebsites.net/)и [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) с помощью учетной записи Azure AD.
 
     2.  Получив **идентификатор объекта** субъекта-службы, выполните следующую команду:
 

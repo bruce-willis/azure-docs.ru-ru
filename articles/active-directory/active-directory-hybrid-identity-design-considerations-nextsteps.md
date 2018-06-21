@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 07/18/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e63df0832431ddc1502ab7b07c60c8d4abf59ac4
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 4ac8e517e68f7cbba3019fa27065468b387c1b65
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801496"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36284676"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations--next-steps"></a>Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги
 После завершения определения требований и проверки всех вариантов решения управления мобильными устройствами вы готовы к дальнейшим действиям по развертыванию инфраструктуры поддержки, которая идеально подходит вам и вашей организации.
@@ -42,7 +42,7 @@ ms.locfileid: "34801496"
 ## <a name="hybrid-identity-resources"></a>Информационные ресурсы о гибридной идентификации
 Мониторинг следующих ресурсов часто помогает получить последние новости и обновления, связанные с решением для управления мобильными устройствами:
 
-* [Блог Microsoft Enterprise Mobility](http://blogs.technet.com/b/enterprisemobility/)
+* [Блог Microsoft Enterprise Mobility](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
 * [Блог "Майкрософт в облаке"](http://blogs.technet.com/b/in_the_cloud/)
 * [Блог Microsoft Intune](http://blogs.technet.com/b/microsoftintune/)
 * [Блог Microsoft System Center Configuration Manager](http://blogs.technet.com/b/configurationmgr/)

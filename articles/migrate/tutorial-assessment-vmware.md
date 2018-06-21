@@ -4,15 +4,15 @@ description: В этой статье описывается, как обнар�
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: tutorial
-ms.date: 06/08/2018
+ms.date: 06/19/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: e8d4380087e826a4f1332c0a39670c2309a10861
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 71d4bc0aa1ea2658c4cd40834a769eaaac649bc3
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35236150"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36228379"
 ---
 # <a name="discover-and-assess-on-premises-vmware-vms-for-migration-to-azure"></a>Обнаружение и оценка локальных виртуальных машин VMware для миграции в Azure
 

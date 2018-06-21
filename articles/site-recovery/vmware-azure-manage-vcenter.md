@@ -1,20 +1,18 @@
 ---
 title: " Управление серверами VMware vCenter в Azure Site Recovery | Документация Майкрософт"
 description: В этой статье описывается добавление и администрирование сервера VMware vCenter Server в Azure Site Recovery.
-services: site-recovery
 author: AnoopVasudavan
-manager: gauravd
 ms.service: site-recovery
 ms.devlang: na
-ms.topic: article
-ms.date: 03/05/2018
+ms.topic: conceptual
+ms.date: 06/20/2018
 ms.author: anoopkv
-ms.openlocfilehash: be415340da09043eccd361b0168bb304d8904bef
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 48b6cf9b90b429520df435aee00f57ea7b588748
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29852308"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36285004"
 ---
 # <a name="manage-vmware-vcenter-servers"></a>Управление серверами VMware vCenter 
 

@@ -4,14 +4,14 @@ description: В этой статье описывается, как получ�
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 06/19/2018
 ms.author: raynew
-ms.openlocfilehash: 242a8b95e7eb278a7884eec7d0cc6a607bdf24d4
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 571bd2424d1d38e6c0048a95b263dda000477e44
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204064"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36221885"
 ---
 # <a name="migrate-machines-after-assessment"></a>Миграция компьютеров после оценки
 

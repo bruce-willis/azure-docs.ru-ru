@@ -16,12 +16,12 @@ ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5771d3319194ff4952f4c93140594db2d93bb7f8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 46d4d095ef71870c7f5b3eabaf66e26797b7331e
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34593560"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36286325"
 ---
 # <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Общедоступная предварительная версия Azure AD Connect в Microsoft Cloud для Германии
 ## <a name="introduction"></a>Введение
@@ -34,9 +34,7 @@ Azure AD Connect обеспечивает синхронизацию локал�
   * *.windows.net
   * * списки отзыва сертификатов.
 * При входе в каталог Azure AD необходимо использовать учетную запись в домене onmicrosoft.de.
-* Следующие функции сейчас не поддерживаются:
-  * Azure AD Connect Health,
-  * Автоматическое обновление
+
  
 ## <a name="download"></a>Загрузка
 Вы можете загрузить Azure AD Connect из колонки Azure AD Connect на портале.  Чтобы найти колонку Azure AD Connect, следуйте указанным ниже инструкциям.
