@@ -3,21 +3,22 @@ title: Запуск пакета Integration Services с помощью дейс
 description: В этой статье рассматривается запуск пакета SQL Server Integration Services (SSIS) в конвейере фабрики данных Azure с помощью действия "Выполнить пакет SSIS".
 services: data-factory
 documentationcenter: ''
-author: douglaslMS
-manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/25/2018
-ms.author: douglasl
-ms.openlocfilehash: ce041813d52e645c336869ef04c9522962c80cf5
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+author: swinarko
+ms.author: sawinark
+ms.reviewer: douglasl
+manager: craigg
+ms.openlocfilehash: ffe65260e73aa2daa4ab63840a00076000f8e6a8
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297161"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36264911"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure
 В этой статье описывается, как запустить пакет MSSQL Integration Services в конвейере фабрики данных Azure, используя действие "Выполнить пакет SSIS". 

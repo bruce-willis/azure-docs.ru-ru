@@ -1,30 +1,25 @@
 ---
-title: "Восстановление данных с Azure Backup Server | Документация Майкрософт"
-description: "Восстановление данных, защищенных в службах восстановления Microsoft Azure, с любого сервера Azure Backup Server, зарегистрированного в этом хранилище."
+title: 'Для восстановления данных с сервера Azure Backup Server сделайте следующее:'
+description: Восстановление данных, защищенных в службах восстановления Microsoft Azure, с любого сервера Azure Backup Server, зарегистрированного в этом хранилище.
 services: backup
-documentationcenter: 
 author: nkolli1
 manager: shreeshd
-editor: 
-ms.assetid: a55f8c6b-3627-42e1-9d25-ed3e4ab17b1f
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/18/2017
-ms.author: adigan;giridham;trinadhk;markgal
-ms.openlocfilehash: 688d155b68bc2d76d53f78d251bc2f659582845f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: adigan
+ms.openlocfilehash: 8559532f873e8073e736f881374fec1c080d08c3
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34604409"
 ---
 # <a name="recover-data-from-azure-backup-server"></a>Восстановление данных с сервера Azure Backup Server
 Вы можете использовать Azure Backup Server, чтобы восстановить данные, резервная копия которых была создана в хранилище служб восстановления. Это можно сделать с помощью интегрированной консоли управления Azure Backup Server. Сам процесс похож на процедуру восстановления других компонентов Microsoft Azure Backup.
 
 > [!NOTE]
-> Эта статья применима к [System Center Data Protection Manager 2012 R2 с накопительным пакетом обновления 7 (UR7) или выше] (https://support.microsoft.com/en-us/kb/3065246) с [последней версией агента Microsoft Azure Backup](http://aka.ms/azurebackup_agent).
+> Эта статья применима к [System Center Data Protection Manager 2012 R2 с накопительным пакетом обновления 7 (UR7) или выше] с https://support.microsoft.com/en-us/kb/3065246)последней версией агента [Microsoft Azure Backup](http://aka.ms/azurebackup_agent).
 >
 >
 
