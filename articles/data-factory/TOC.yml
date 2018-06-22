@@ -356,6 +356,8 @@
           href: monitor-visually.md
         - name: Мониторинг с помощью Azure Monitor
           href: monitor-using-azure-monitor.md
+        - name: Мониторинг с помощью OMS
+          href: data-factory-monitor-oms.md
         - name: Мониторинг с помощью пакетов SDK
           href: monitor-programmatically.md
         - name: Мониторинг среды выполнения интеграции
