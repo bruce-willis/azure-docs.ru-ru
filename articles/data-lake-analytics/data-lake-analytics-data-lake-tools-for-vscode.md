@@ -10,27 +10,27 @@ ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 02/09/2018
-ms.openlocfilehash: 4f5d51a2a34e89223f51f456f2c730835b1e2451
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 79cd1a04c99891e5146ad20cfd36b8bd4fe4d893
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34735193"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261490"
 ---
 # <a name="use-azure-data-lake-tools-for-visual-studio-code"></a>Использование средств Azure Data Lake для Visual Studio Code
 
-Узнайте, как с помощью средств Azure Data Lake для Visual Studio Code (VS Code) создавать, тестировать и выполнять скрипты U-SQL. Эти сведения также представлены в следующем видеоролике:
+Из этой статьи вы узнаете, как создавать, тестировать и запускать скрипты U-SQL, используя средства Azure Data Lake для Visual Studio Code (VS Code). Эти сведения также представлены в следующем видеоролике:
 
 <a href="https://channel9.msdn.com/Series/AzureDataLake/Azure-Data-Lake-Tools-for-VSCode?term=ADL%20Tools%20for%20VSCode"><img src="./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-video.png"></a>
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Средства Azure Data Lake для VSCode поддерживают Windows, Linux и MacOS.  
+Средства Azure Data Lake для VS Code поддерживают Windows, Linux и MacOS.  
 
-- [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx).
+- [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx)
 
 Для MacOS и Linux:
-- [Пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/download/core); 
+- [пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/download/core);
 - [Mono 5.2.x](http://www.mono-project.com/download/).
 
 ## <a name="install-azure-data-lake-tools"></a>Установка средств озера данных Azure
@@ -40,12 +40,14 @@ ms.locfileid: "34735193"
 **Установка Средств Azure Data Lake**
 
 1. Откройте Visual Studio Code.
-2. Щелкните **Расширения** в левой области. В поле поиска введите **Средства Azure Data Lake**.
-3. Щелкните **Установить** рядом с элементом **Средства Azure Data Lake**. Через несколько секунд вместо кнопки **Установить** появится кнопка **Перезагрузить**.
-4. Нажмите кнопку **Перезагрузить**, чтобы активировать расширение **Средства Azure Data Lake**.
-5. Щелкните **Перезагрузить окно** для подтверждения. **Средства Azure Data Lake** появятся в области расширений.
+2. Выберите **Расширения** в области слева. В поле поиска введите **Средства Azure Data Lake**.
+3. Выберите **Установить** рядом с элементом **Средства Azure Data Lake**. 
 
-    ![Область "Расширения" в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extensions.png)
+   ![Выбранные параметры для установки средств Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extensions.png)
+
+   Через несколько секунд кнопка **Установить** изменится на **Перезагрузить**.
+4. Нажмите кнопку **Перезагрузить**, чтобы активировать расширение **Средства Azure Data Lake**.
+5. Выберите **Перезагрузить окно** для подтверждения. **Средства Azure Data Lake** появятся в области **Расширения**.
 
  
 ## <a name="activate-azure-data-lake-tools"></a>Активация Средств Azure Data Lake
@@ -58,14 +60,14 @@ ms.locfileid: "34735193"
 
 **Открытие примера скрипта**
 
-Откройте палитру команд (CTRL+SHIFT+P) и введите **ADL: Open Sample Script**. При этом откроется другой экземпляр этого примера. Также можно изменять, настраивать и отправлять скрипт в этом экземпляре.
+Откройте палитру команд (CTRL+SHIFT+P) и введите **ADL: Open Sample Script**. При этом откроется другой экземпляр этого примера. Вы также можете изменить, настроить и отправить скрипт в этом экземпляре.
 
 **Открытие папки для проекта U-SQL**
 
 1. В Visual Studio Code выберите меню **Файл**, а затем — **Открыть папку**.
-2. Укажите папку и выберите **Выбрать папку**.
-3. Выберите меню **Файл**, а затем **Создать**. К проекту будет добавлен файл с именем Untitled-1.
-4. Введите следующий код в файл Untitled-1:
+2. Укажите папку и выберите **Выбор папки**.
+3. Выберите меню **Файл**, а затем **Новый файл**. К проекту будет добавлен файл с именем Untitled-1.
+4. Введите следующий код в файле Untitled-1:
 
         @departments  = 
             SELECT * FROM 
@@ -93,56 +95,58 @@ ms.locfileid: "34735193"
 **Отправка скрипта U-SQL**
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд. 
-2. Введите **ADL: Submit Job**.  Также можно щелкнуть правой кнопкой мыши файл скрипта и выбрать **ADL: Submit Job**. 
+2. Введите **ADL: Submit Job**. Также можно щелкнуть правой кнопкой мыши файл скрипта и выбрать **ADL: Submit Job**. 
 
- После отправки задания U-SQL отобразятся журналы отправки в окне **Вывод** в VS Code. Представление задания отображается в области справа. Если отправка пройдет успешно, отобразится URL-адрес задания. URL-адрес задания можно открыть в веб-браузере, чтобы отслеживать состояние задания в реальном времени. На вкладке сводки представления задания содержатся сведения о задании. К основным функциям относится повторная отправка сценария, его дублирование и открытие на портале. На вкладке данных представления задания можно просмотреть входные и выходные файлы, а также файл ресурсов. Файлы можно загрузить на локальный компьютер.
+После отправки задания U-SQL отобразятся журналы отправки в окне **Вывод** в VS Code. В области справа появится представление задания. Если отправка пройдет успешно, также появится URL-адрес задания. URL-адрес задания можно открыть в веб-браузере, чтобы отслеживать состояние задания в реальном времени. 
 
-   ![Файл конфигурации средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/job-view-summary.png)
+На вкладке **СВОДКА** в представлении задания отображаются сведения о задании. К основным функциям относятся повторная отправка, дублирование и открытие скрипта на портале. На вкладке **ДАННЫЕ** в представлении задания можно просмотреть входные и выходные файлы, а также файлы ресурсов. Файлы можно скачать на локальный компьютер.
 
-   ![Файл конфигурации средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/job-view-data.png)
+![Вкладка "Сводка" в представлении задания](./media/data-lake-analytics-data-lake-tools-for-vscode/job-view-summary.png)
+
+![Вкладка "Данные" в представлении задания](./media/data-lake-analytics-data-lake-tools-for-vscode/job-view-data.png)
 
 **Установка контекста по умолчанию**
 
- Если для файла не заданы параметры, можно задать контекст по умолчанию, чтобы применить этот параметр ко всем файлам сценария.
+Если параметры для отдельных файлов не заданы, вы можете задать контекст по умолчанию, чтобы применять эти параметры ко всем файлам скриптов.
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд. 
-2. Введите команду **ADL: Set Default Context**.
-3. Или щелкните правой кнопкой мыши редактор сценариев и выберите **ADL: Set Default Context**, а затем необходимые учетную запись, базу данных и схему. Параметр сохранится в файл конфигурации xxx_settings.json.
+2. Введите команду **ADL: Set Default Context**. Вы также можете щелкнуть редактор скриптов правой кнопкой мыши и выбрать **ADL: Set Default Context**.
+3. Выберите учетную запись, базу данных и схему. Параметры сохранятся в файле конфигурации xxx_settings.json.
 
-    ![Файл конфигурации средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/default-context-sequence.png)
+   ![Учетная запись, база данных и схема, заданные в качестве контекста по умолчанию](./media/data-lake-analytics-data-lake-tools-for-vscode/default-context-sequence.png)
 
-**Установка параметров сценария**
+**Установка параметров скрипта**
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд. 
 2. Введите команду **ADL: Set Script Parameters**.
-3. Файл xxx_settings.json откроется со свойствами ниже.
+3. Откроется файл xxx_settings.json со следующими свойствами:
 
-  - Учетная запись. Учетная запись Data Lake Analytics в вашей подписке Azure, необходимая для компиляции и запуска заданий U-SQL, поэтому необходимо настроить учетную запись компьютера перед компиляцией и запуском заданий U-SQL.
-    - Database: база данных в вашей учетной записи. По умолчанию используется база данных **master**.
-    - Schema: схема в базе данных. Значение по умолчанию — **dbo**.
-    - Необязательные параметры:
-        - Priority. Значение приоритета в диапазоне от 1 до 1000, где 1 — наивысший приоритет. По умолчанию используется значение **1000**.
-        - Parallelism: коэффициент параллелизма в диапазоне от 1 до 150. Значением по умолчанию является максимально допустимый коэффициент параллелизма в учетной записи Azure Data Lake Analytics. 
+   - **account**. Учетная запись Azure Data Lake Analytics из подписки Azure, необходимая для компиляции и запуска заданий U-SQL. Необходимо настроить учетную запись вычислений, прежде чем компилировать и запускать задания U-SQL.
+   - **database**. База данных в вашей учетной записи. По умолчанию используется база данных **master**.
+   - **schema**. Схема в базе данных. Значение по умолчанию — **dbo**.
+   - **optionalSettings**:
+        - **priority**. Значение приоритета в диапазоне от 1 до 1000, где 1 — наивысший приоритет. По умолчанию используется значение **1000**.
+        - **degreeOfParallelism**. Значение степени параллелизма в диапазоне от 1 до 150. Значением по умолчанию является максимально допустимый коэффициент параллелизма в учетной записи Azure Data Lake Analytics. 
 
-        ![Файл конфигурации средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/default-context-setting.png)
+   ![Содержимое JSON-файла](./media/data-lake-analytics-data-lake-tools-for-vscode/default-context-setting.png)
       
-        > [!NOTE] 
-        > Если вы не настроили контекст по умолчанию, после сохранения конфигурации сведения учетной записи, базы данных и схемы отобразятся в строке состояния в левом нижнем углу соответствующего файла USQL.
+> [!NOTE] 
+> Если контекст по умолчанию не задан, после сохранения конфигурации сведения об учетной записи, базе данных и схеме появятся в строке состояния в левом нижнем углу соответствующего USQL-файла.
 
 **Установка игнорирования Git**
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд. 
-2. Введите команду **ADL: Set Git Ignore**.
+2. Введите **ADL: Set Git Ignore**.
 
-    - Если в вашей рабочей папке VSCode отсутствует файл **.gitIgnore**, в папке будет создан файл с именем **.gitIgnor**. По умолчанию в файл будут добавлены четыре элемента (**usqlCodeBehindReference**, **usqlCodeBehindGenerated**, **.cache**, **obj**). При необходимости можно внести другие обновления.
-    - Если у вас уже есть файл **.gitIgnore** в рабочей папке VSCode, в файл **.gitIgnore** будут добавлены четыре элемента (**usqlCodeBehindReference**, **usqlCodeBehindGenerated**, **.cache**, **obj**), если они не были добавлены ранее.
+   - Если в вашей рабочей папке VS Code нет файла **.gitIgnore**, в ней будет создан файл с именем **.gitIgnore**. По умолчанию в файл будут добавлены четыре элемента (**usqlCodeBehindReference**, **usqlCodeBehindGenerated**, **.cache**, **obj**). По мере необходимости можно вносить другие изменения.
+   - Если в рабочей папке VS Code уже есть файл **.gitIgnore**, то в файл **.gitIgnore** будут добавлены четыре элемента (**usqlCodeBehindReference**, **usqlCodeBehindGenerated**, **.cache**, **obj**), если они не были добавлены ранее.
 
-    ![Файл конфигурации средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-gitignore.png)
+   ![Элементы в файле .gitIgnore](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-gitignore.png)
 
 
-## <a name="work-with-code-behind-file-csharp-python-and-r"></a>Работа с файлами кода программной части С#, Python и R
+## <a name="work-with-code-behind-files-c-sharp-python-and-r"></a>Работа с файлами кода программной части: С#, Python и R
 
-Средство Azure Data Lake поддерживает несколько вариантов пользовательских кодов. Ознакомьтесь с инструкцией в статье [Разработка U-SQL с помощью Python, R, и CSharp для Azure Data Lake Analytics в VSCode](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md).
+Средства Azure Data Lake поддерживают разные пользовательские коды. Инструкции см. в статье [Разработка U-SQL с помощью Python, R, и C Sharp для Azure Data Lake Analytics в VS Code](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md).
 
 ## <a name="work-with-assemblies"></a>Работа со сборками
 
@@ -152,7 +156,7 @@ ms.locfileid: "34735193"
 
 **Регистрация сборки**
 
-Зарегистрировать сборку можно с помощью команд **ADL: Register Assembly** или **ADL: Register Assembly (Advanced)**.
+Зарегистрировать сборку можно с помощью команды **ADL: Register Assembly** или **ADL: Register Assembly (Advanced)**.
 
 **Для регистрации с помощью команды ADL: Register Assembly**
 1.  Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
@@ -161,9 +165,9 @@ ms.locfileid: "34735193"
 4.  Выберите учетную запись Data Lake Analytics.
 5.  Выберите базу данных.
 
-Результат: портал откроется в браузере и отобразит процесс регистрации сборки.  
+В браузере откроется портал и начнется процесс регистрации сборки.  
 
-Еще один удобный способ запуска команды **ADL: Register Assembly** — щелкнуть правой кнопкой мыши DLL-файл в Проводнике. 
+Более удобный способ вызова команды **ADL: Register Assembly** — щелкнуть правой кнопкой мыши DLL-файл в обозревателе. 
 
 **Регистрация с помощью команды ADL: Register Assembly (Advanced)**
 1.  Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
@@ -171,11 +175,11 @@ ms.locfileid: "34735193"
 3.  Укажите локальный путь к сборке. 
 4.  Отобразится JSON-файл. Просмотрите и при необходимости измените зависимости сборки и параметры ресурсов. Инструкции отображаются в окне **Вывод**. Чтобы перейти к регистрации сборки, сохраните (CTRL+S) JSON-файл.
 
-    ![Код программной части в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-register-assembly-advance.png)
+    ![JSON-файл с зависимостями сборки и параметрами ресурсов](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-register-assembly-advance.png)
     
-   >[!NOTE]
-   >- Зависимости сборки. Средства Azure Data Lake автоматически определяют наличие любых зависимостей в библиотеке DLL. После обнаружения зависимости отображаются в JSON-файле. 
-   >- Ресурсы. Ресурсы DLL (например, TXT, PNG и CSV) можно отправить как часть регистрации сборки. 
+>[!NOTE]
+>- Средства Azure Data Lake автоматически определяют, есть ли у библиотеки DLL зависимости сборки. Обнаруженные зависимости отображаются в JSON-файле. 
+>- Ресурсы DLL (например, TXT, PNG и CSV) можно отправлять в ходе регистрации сборки. 
 
 Еще один способ запуска команды **ADL: Register Assembly (Advanced)** — щелкнуть правой кнопкой мыши DLL-файл в проводнике. 
 
@@ -212,8 +216,8 @@ ms.locfileid: "34735193"
             USING Outputters.Tsv();
 
 
-## <a name="u-sql-local-run-and-local-debug-for-windows-users"></a>Локальное выполнение и локальная отладка U-SQL для пользователей Windows
-Локальное выполнение U-SQL тестирует локальные данные и проверяет скрипт локально перед публикацией кода в Data Lake Analytics. Функция локальной отладки позволяет завершить следующие задачи перед отправкой кода в Data Lake Analytics: 
+## <a name="use-u-sql-local-run-and-local-debug-for-windows-users"></a>Локальные запуск и отладка U-SQL для пользователей Windows
+Локальное выполнение U-SQL тестирует локальные данные и проверяет скрипт локально перед публикацией кода в Data Lake Analytics. С помощью функции локальной отладки можно завершить следующие задачи перед отправкой кода в Data Lake Analytics: 
 - Отладка кода программной части C#. 
 - Пошаговая отладка кода. 
 - Проверка скрипта локально.
@@ -228,64 +232,64 @@ ms.locfileid: "34735193"
 <b id="sign-in-by-command">Подключение к Azure с помощью команды</b>
 
 1.  Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд. 
-2.  Введите текст **ADL: Login**. Сведения для входа отобразятся справа внизу.
+2.  Введите текст **ADL: Login**. Сведения для входа появятся в правом нижнем углу.
 
-    ![Палитра команд средств Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extension-login.png)
+    ![Ввод команды входа](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extension-login.png)
 
-    ![Сведения для входа на устройство со Средствами Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-login-info.png)
+    ![Уведомление о входе и аутентификации](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-login-info.png)
 
-3.  Щелкните команду **Copy & Open** (Копировать и открыть), чтобы открыть веб-страницу входа с URL-адресом https://aka.ms/devicelogin. Вставьте код в текстовое поле, а затем выберите **Продолжить**.
+3.  Выберите **Копировать и открыть**, чтобы открыть [веб-страницу входа](https://aka.ms/devicelogin). Вставьте код в поле, а затем нажмите **Продолжить**.
 
-    ![Вставка кода для входа в Средства Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extension-login-paste-code.png )  
+    ![Веб-страница входа](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-extension-login-paste-code.png)  
      
-4.  Следуйте инструкциям, предоставленным на веб-странице входа. При подключении имя учетной записи Azure отображается в строке состояния в нижнем левом углу окна **VS Code**. 
+4.  Следуйте инструкциям, предоставленным на веб-странице входа. Когда соединение установлено, имя учетной записи Azure отображается в левом нижнем углу окна VS Code. 
 
-    > [!NOTE] 
-    >- Средство Data Lake автоматически выполнит вход следующий раз, если вы прежде входили в систему и не вышли из нее.
-    >- Если для учетной записи используется двухфакторная проверка подлинности, мы советуем использовать проверку подлинности через телефон, а не PIN-код.
+> [!NOTE] 
+>- В следующий раз средства Data Lake автоматически выполнят вход, если вы не выйдете из системы.
+>- Если для учетной записи используется двухфакторная проверка подлинности, мы советуем использовать проверку подлинности через телефон, а не PIN-код.
 
 
 Для выхода введите команду **ADL: Logout**.
 
 **Подключение к Azure из обозревателя**
 
-Чтобы войти из обозревателя, разверните **AZURE DATALAKE**, нажмите кнопку **Войти в Azure**, а затем выполните шаг 3 и шаг 4 из инструкций по [**подключению к Azure с помощью команды**](#sign-in-by-command).
+Разверните узел **AZURE DATALAKE**, нажмите **Войти в Azure**, а затем выполните действия 3 и 4 из раздела [Подключение к Azure с помощью команды](#sign-in-by-command).
 
-![Подключение к Azure из обозревателя](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-sign-in-from-explorer.png )  
+![Выбор команды "Войти в Azure" в обозревателе](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-sign-in-from-explorer.png )  
 
-Вы не можете выйти из обозревателя. Чтобы выйти, см. инструкции по [**подключению к Azure с помощью команды**](#sign-in-by-command).
+Выйти из обозревателя нельзя. Чтобы выйти, следуйте инструкциями из раздела [Подключение к Azure с помощью команды](#sign-in-by-command).
 
 
-## <a name="create-extract-script"></a>Создание скрипта EXTRACT 
-Скрипт EXTRACT можно создать для файлов CVS, TSV, TXT с помощью команды **ADL: Create EXTRACT Script** (ADL: создать скрипт EXTRACT) или обозревателя **AZURE DATALAKE**.
+## <a name="create-an-extraction-script"></a>Создание скрипта извлечения 
+Вы можете создать скрипт для извлечения CSV-, TSV- и TXT-файлов с помощью команды **ADL: Create EXTRACT Script** или обозревателя Azure Data Lake.
 
-**Создание скрипта EXTRACT с помощью команды**
+**Создание скрипта извлечения с помощью команды**
 
-1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, и введите **ADL: Create EXTRACT Script** (ADL: создать скрипт EXTRACT).
-2. Укажите полный путь к файлу хранилища Azure и нажмите клавишу **ВВОД**.
+1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, и введите **ADL: Create EXTRACT Script**.
+2. Укажите полный путь к файлу службы хранилища Azure и нажмите клавишу ВВОД.
 3. Выберите одну учетную запись.
-4. Выберите разделитель, чтобы извлечь файл ТХТ. 
+4. Выберите разделитель, чтобы извлечь ТХТ-файл. 
 
-    ![Процесс создания скрипта EXTRACT](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-process.png)
+![Процесс создания скрипта извлечения](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-process.png)
 
-Скрипт EXTRACT создается на основе ваших записей. Для скрипта, который не может обнаружить столбцы, выберите один из этих двух параметров. В противном случае будет создан только один скрипт.
+Скрипт извлечения создается на основе ваших записей. Для скрипта, который не может обнаружить столбцы, выберите один из этих двух параметров. В противном случае будет создан только один скрипт.
 
-![Результат создания скрипта EXTRACT](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-result.png)
+![Результат создания скрипта извлечения](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-result.png)
 
-**Создание скрипта EXTRACT из обозревателя**
+**Создание скрипта извлечения из обозревателя**
 
-Создать скрипт EXTRACT также можно, используя контекстное меню файла CSV, TSV или TXT-файла в хранилище Data Lake или BLOB-объектов.
+Еще один способ создать скрипт извлечения — с помощью контекстного меню CSV-, TSV- или TXT-файла в Azure Data Lake Store или хранилище BLOB-объектов Azure.
 
-![Создание скрипта EXTRACT из контекстного меню](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-from-context-menu.png)
+![Команда "Создать скрипт EXTRACT" в контекстном меню](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-from-context-menu.png)
 
-## <a name="integrate-with-azure-data-lake-analytics-through-command"></a>Интеграция с Azure Data Lake Analytics с помощью команды
+## <a name="integrate-with-azure-data-lake-analytics-through-a-command"></a>Интеграция с Azure Data Lake Analytics с помощью команды
 
-Вы можете получить доступ к ресурсам Azure Data Lake Analytics, включая список учетных записей, метаданные и задания аналитики. 
+Вы можете использовать ресурсы Azure Data Lake Analytics, чтобы отобразить учетные записи, получить доступ к метаданным и просмотреть задания аналитики. 
 
 **Получение списка учетных записей Azure Data Lake Analytics в подписке Azure**
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
-2. Введите команду **ADL: List Accounts**. Учетные записи отображаются в области **Вывода**.
+2. Введите команду **ADL: List Accounts**. Учетные записи отображаются в области **Вывод**.
 
 **Доступ к метаданным Azure Data Lake Analytics**
 
@@ -297,161 +301,169 @@ ms.locfileid: "34735193"
 **Просмотр заданий Azure Data Lake Analytics**
 1.  Откройте палитру команд (CTRL+SHIFT+P) и выберите **ADL: Show Jobs**. 
 2.  Выберите Data Lake Analytics или локальную учетную запись. 
-3.  Подождите, пока отобразится список заданий для учетной записи.
-4.  Выберите задание из списка заданий, в средстве Data Lake откроется представление задания в правой области и в области **выходных данных** VS Code появятся некоторые сведения.
+3.  Подождите, пока появится список заданий для учетной записи.
+4.  Выберите задание из списка. В правой области средств Data Lake откроется представление задания, а в выходных данных VS Code будут показаны некоторые сведения.
 
-    ![Типы объектов IntelliSencse в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-show-job.png)
+    ![Список заданий](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-show-job.png)
 
-## <a name="integrate-with-azure-data-lake-storage-through-command"></a>Интеграция с хранилищем Azure Data Lake с помощью команды
+## <a name="integrate-with-azure-data-lake-store-through-a-command"></a>Интеграция с Azure Data Lake Store при помощи команды
 
-Связанные с Azure Data Lake Store команды можно использовать для:
- - просмотра ресурсов Azure Data Lake Storage; [Вывод пути к хранилищу.](#list-the-storage-path) 
- - предварительного просмотра файла Azure Data Lake Storage; [Предварительный просмотр файла хранилища.](#preview-the-storage-file) 
- - отправки файла напрямую в Azure Data Lake Store в VS Code. [Отправка папки или файла](#upload-file-or-folder).
- - загрузки файла напрямую из службы хранилища Azure Data Lake в VS Code. [Загрузка файла.](#download-file)
+С помощью команд для Azure Data Lake Store можно выполнять следующие действия:
+ - [Просмотр ресурсов Azure Data Lake Store](#list-the-storage-path) 
+ - [Просмотр файла Azure Data Lake Store](#preview-the-storage-file) 
+ - [Отправка файла непосредственно в Azure Data Lake Store в VS Code](#upload-file-or-folder)
+ - [Скачивание файла непосредственно из Azure Data Lake Store в VS Code](#download-file)
 
 ### <a name="list-the-storage-path"></a>Вывод пути к хранилищу 
 
 **Вывод пути к хранилищу через палитру команд**
 
-Щелкните редактор сценариев правой кнопкой мыши и выберите **ADL: List Path** (ADL: путь к списку).
+1. Щелкните редактор сценариев правой кнопкой мыши и выберите **ADL: List Path** (ADL: путь к списку).
+2. Выберите папку из списка либо выберите **Enter a path** или **Browse from root path**. В этом примере выбран вариант **Enter a path**. 
+3. Выберите учетную запись Data Lake Analytics.
+4. Перейдите к папке хранилища или укажите путь к ней (например, /output/).  
 
-Выберите папку из списка или щелкните **Enter Path** (Укажите путь) или **Browse from Root**  (Перейти от корня) (в качестве примера используется 1 вариант). Выберите **учетную запись ADLA**. Перейдите или укажите путь к папке хранилища (например, /output/). В палитре команд выводятся сведения о пути в соответствии с записями.
+В палитре команд выводятся сведения о пути на основе ваших записей.
 
-![Результат вывода пути к хранилищу в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/list-storage-path.png)
+![Результаты из пути к хранилищу](./media/data-lake-analytics-data-lake-tools-for-vscode/list-storage-path.png)
 
-Более удобный способ вывода относительного пути — открыть контекстное меню.
+Более удобный способ вывода относительного пути — через контекстное меню.
 
-**Вывод пути к хранилищу с помощью щелчка правой кнопкой мыши**
+**Вывод пути к хранилищу через контекстное меню**
 
-Чтобы продолжить, щелкните строку пути правой кнопкой мыши и выберите **List Path** (Путь к списку).
+Щелкните строку пути правой кнопкой мыши и выберите **List Path**.
 
-![Контекстное меню в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-right-click-path.png)
+![Пункт "List Path" в контекстном меню](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-right-click-path.png)
 
 
 ### <a name="preview-the-storage-file"></a>Предварительный просмотр файла хранилища
 
-Щелкните редактор сценариев правой кнопкой мыши и выберите **ADL: Preview File** (ADL: предварительный просмотр файла).
+1. Щелкните редактор сценариев правой кнопкой мыши и выберите **ADL: Preview File** (ADL: предварительный просмотр файла).
+2. Выберите учетную запись Data Lake Analytics. 
+3. Введите путь к файлу службы хранилища Azure (например, /output/SearchLog.txt). 
 
-Выберите **учетную запись ADLA**. Введите путь к файлу хранилища Azure (например, /output/SearchLog.txt). В результате файл откроется в VSCode.
+В VS Code откроется файл.
 
-   ![Результат предварительного просмотра файла в Средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/preview-storage-file.png)
+![Шаги и результат просмотра файла хранилища](./media/data-lake-analytics-data-lake-tools-for-vscode/preview-storage-file.png)
 
-Еще один способ предварительно просмотреть файл — открыть контекстное меню полного или относительного пути к файлу в редакторе скриптов. 
+Просмотреть файл также можно через контекстное меню полного или относительного пути к файлу в редакторе скриптов. 
 
-### <a name="upload-file-or-folder"></a>Отправка папки или файла
+### <a name="upload-a-file-or-folder"></a>Отправка файла или папки
 
 1. Щелкните редактор сценариев правой кнопкой мыши и выберите **Upload File** (Отправить файл) или **Upload Folder** (Отправить папку).
+2. Выберите один или несколько файлов (если выбрана команда **Upload File**) или целую папку (если выбрана команда **Upload Folder**). Затем нажмите кнопку **Отправить**. 
+3. Выберите папку хранилища из списка либо выберите **Enter a path** или **Browse from root path**. В этом примере выбран вариант **Enter a path**. 
+4. Выберите учетную запись Data Lake Analytics. 
+5. Перейдите к папке хранилища или укажите путь к ней (например, /output/). 
+6. Нажмите **Выбрать текущую папку**, чтобы указать цель отправки.
 
-2. Если вы выбрали отправку файла, выберите один или несколько файлов, а если вы выбрали отправку папки, выберите всю папку. Затем щелкните **Отправить**. Выберите папку хранилища из списка или щелкните **Enter Path** (Укажите путь) или **Browse from Root** (Перейти от корня) (в качестве примера используется 1 вариант). Выберите **учетную запись ADLA**. Перейдите или укажите путь к папке хранилища (например, /output/). Щелкните **Choose Current Folder** (Выбрать текущую папку), чтобы указать место назначения отправки.
+![Действия и результаты отправки файла или папки](./media/data-lake-analytics-data-lake-tools-for-vscode/upload-file.png)    
 
-   ![Состояние отправки в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/upload-file.png)    
+Отправить файлы в хранилище также можно через контекстное меню полного или относительного пути к файлу в редакторе скриптов.
 
-
-   Еще один способ отправки файлов в хранилище — открыть контекстное меню полного или относительного пути к файлу в редакторе скриптов.
-
-В то же время вы можете отслеживать [состояние отправки](#check-storage-tasks-status).
+Вы можете [отслеживать состояние отправки](#check-storage-tasks-status).
 
 
-### <a name="download-file"></a>Загрузка файла 
-Скачать файлы можно с помощью команд **ADL: Download File** (ADL: скачать файл) или **ADL: Download File (Advanced)** (ADL: скачать файл (Дополнительно)).
+### <a name="download-a-file"></a>скачать файл; 
+Скачать файл можно с помощью команды **ADL: Download File** или **ADL: Download File (Advanced)**.
 
-**Скачивание файлов с использованием команды ADL: Download File (Advanced) (ADL: скачивание файла (Дополнительно))**
+**Скачивание файла с помощью команды ADL: Download File (Advanced)**
 1. Щелкните правой кнопкой мыши редактор скриптов, а затем выберите **Download File (Advanced)** (Скачать файл (Дополнительно)).
-2. В VS Code отобразится JSON-файл. Вы можете ввести несколько путей к файлам, чтобы загрузить несколько файлов одновременно. Инструкции отображаются в окне **Вывод**. Чтобы продолжить загрузку файла, сохраните (CTRL+S) JSON-файл.
+2. В VS Code отобразится JSON-файл. Вы можете ввести несколько путей к файлам, чтобы загрузить несколько файлов одновременно. Инструкции отображаются в окне **Вывод**. Чтобы продолжить скачивание файлов, сохраните (CTRL+S) JSON-файл.
 
-    ![Загрузка файлов с помощью конфигурации в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-files.png)
+    ![JSON-файл с путями для скачивания файлов](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-files.png)
 
-3.  Результат: в окне **Вывод** отобразится состояние отправки файла.
+В окне **Вывод** отобразится состояние скачивания файла.
 
-    ![Результаты загрузки нескольких файлов в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-file-result.png)     
+![Окно вывода с состоянием скачивания](./media/data-lake-analytics-data-lake-tools-for-vscode/download-multi-file-result.png)     
 
-В то же время вы можете отслеживать [состояние загрузки](#check-storage-tasks-status).
+Вы можете [отслеживать состояние скачивания](#check-storage-tasks-status).
 
-**Скачивание файлов с использованием команды ADL: Download File (ADL: скачать файл)**
+**Скачивание файла с помощью команды ADL: Download File**
 
-1. Щелкните редактор сценариев правой кнопкой мыши, а затем выберите **Загрузить файл**, далее укажите папку назначения в диалоговом окне **Выбор папки**.
+1. Щелкните редактор сценариев правой кнопкой мыши, выберите **Download File**, а затем выберите целевую папку в диалоговом окне **Выбор папки**.
+2. Выберите папку из списка либо выберите **Enter a path** или **Browse from root path**. В этом примере выбран вариант **Enter a path**. 
+3. Выберите учетную запись Data Lake Analytics. 
+4. Перейдите к папке хранилища или введите путь к ней (например, /output/) и выберите файл для скачивания.
 
-2. Выберите папку из списка или щелкните **Enter Path** (Укажите путь) или **Browse from Root**  (Перейти от корня) (в качестве примера используется 1 вариант). Выберите **учетную запись ADLA**. Перейдите или укажите путь к папке хранилища (например, /output/) и выберите файл для загрузки.
+![Действия и результат скачивания файла](./media/data-lake-analytics-data-lake-tools-for-vscode/download-file.png) 
 
-   ![Состояние загрузки в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/download-file.png) 
+Скачать файлы хранилища также можно через контекстное меню полного или относительного пути к файлу в редакторе скриптов.
 
-   
-   Еще один способ загрузки файлов хранилища — открыть контекстное меню полного или относительного пути к файлу в редакторе скриптов.
-
-В то же время вы можете отслеживать [состояние загрузки](#check-storage-tasks-status).
+Вы можете [отслеживать состояние скачивания](#check-storage-tasks-status).
 
 ### <a name="check-storage-tasks-status"></a>Проверка состояния задач хранилища
-После завершения загрузки и отправки состояние отображается в нижней строке состояния.
-1. Щелкните строку состояния, и информация о загрузке и отправке отобразится на панели **OUTPUT** (ВЫХОДНЫЕ ДАННЫЕ).
+В строке состояния отображается состояние отправки и скачивания. Выберите строку состояния, и состояние появится на вкладке **ВЫВОД**.
 
-   ![Проверка состояния хранилища в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-status.png)
+![Строка состояния и выходные данные](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-status.png)
 
 
-## <a name="integrate-with-azure-data-lake-analytics-from-explorer"></a>Интеграция с Azure Data Lake Analytics из обозревателя
+## <a name="integrate-with-azure-data-lake-analytics-from-the-explorer"></a>Интеграция с Azure Data Lake Analytics из обозревателя
 
-- После входа в систему вы увидите, что все подписки в учетной записи Azure будут указаны на левой панели **AZURE DATALAKE**. 
+После входа все подписки для учетной записи Azure будут перечислены в области слева, в разделе **AZURE DATALAKE**. 
 
-   ![Обозреватель Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer.png)
+![Обозреватель Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer.png)
 
-**Навигация по метаданным ADLA**
+### <a name="data-lake-analytics-metadata-navigation"></a>Навигация по метаданным Data Lake Analytics
 
-- Развернув свою подписку Azure, в узле базы данных U-SQL можно перейти в базу данных U-SQL, просмотреть **схемы**, **учетные данные**, **сборки**, **таблицы**, **индекс** и многое другое.
+Разверните узел своей подписки Azure. В узле **Базы данных U-SQL** вы можете просматривать свою базу данных U-SQL, в том числе такие папки, как **Схемы**, **Учетные данные**, **Сборки**, **Таблицы** и **Индекс**.
 
-**Управление сущностями метаданных ADLA**
+### <a name="data-lake-analytics-metadata-entity-management"></a>Управление объектами метаданных Data Lake Analytics
 
-- Разверните узел **Базы данных U SQL**, чтобы создать базу данных, схему, таблицу, типы таблиц, индекс, статистику. Для этого щелкните правой кнопкой мыши и выберите в контекстном меню команду **Script to Create** (Сценарий для создания) в соответствующем узле. На открытой странице сценария измените данные сценария в соответствии со своими требованиями, а затем отправьте задание, открыв правой кнопкой мыши контекстное меню и выбрав **ADL: Submit Job**. После создания сценария выберите в контекстном меню команду **Обновить**, чтобы отобразился новый элемент. Элемент также можно удалить, открыв правой кнопкой мыши контекстное меню и выбрав **Удалить**.
+Разверните узел **Базы данных U-SQL**. Вы можете создать базу данных, схему, таблицу, тип таблицы, индекс или статистику, щелкнув соответствующий узел правой кнопкой мыши и выбрав **Скрипт для создания** в контекстном меню. На открывшейся странице отредактируйте скрипт в соответствии со своими потребностями. Затем отправьте задание, щелкнув его правой кнопкой мыши и выбрав команду **ADL: Submit Job**. 
 
-   ![Меню создания элемента в обозревателе DataLake](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-explorer-script-create.png)
+Завершив создание элемента, щелкните узел правой кнопкой мыши и выберите **Обновить**, чтобы элемент появился в списке. Вы также можете удалить элемент, открыв правой кнопкой мыши контекстное меню и выбрав **Удалить**.
 
-   ![Создание сценария для нового элемента в обозревателе DataLake](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-explorer-script-create-snippet.png)
+![Команда "Скрипт для создания" в контекстном меню обозревателя Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-explorer-script-create.png)
 
-**Регистрация сборки ADLA**
+![Страница скрипта для нового элемента](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-code-explorer-script-create-snippet.png)
 
- - Вы можете **зарегистрировать сборку** в соответствующей базе данных, щелкнув правой кнопкой мыши узел **Сборки**.
+### <a name="data-lake-analytics-assembly-registration"></a>Регистрация сборки Data Lake Analytics
 
-    ![Обозреватель Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer-register-assembly.png)
+Вы можете зарегистрировать сборку в соответствующей базе данных, щелкнув правой кнопкой мыши узел **Assemblies** и выбрав **Register assembly**.
 
-## <a name="integrate-with-azure-data-lake-storage-from-explorer"></a>Интеграция с хранилищем Azure Data Lake из обозревателя
+![Команда "Зарегистрировать сборку" в контекстном меню узла Assemblies](./media/data-lake-analytics-data-lake-tools-for-vscode/datalake-explorer-register-assembly.png)
 
-Переход к **Data Lake Store**
+## <a name="integrate-with-azure-data-lake-store-from-the-explorer"></a>Интеграция с Azure Data Lake Store из обозревателя
 
- - В контекстном меню узла папки, вызываемом щелчком правой кнопкой мыши, доступны операции **Обновить**, **Удалить**, **Отправить**, **Загрузить папку**, **Копировать относительный путь** и **Копировать полный путь**.
+Перейдите в **Data Lake Store**:
 
-   ![Обозреватель Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-account-folder-menu.png)
+- Вы можете щелкнуть узел папки правой кнопкой мыши, а затем использовать команды **Обновить**, **Удалить**, **Отправить**, **Загрузить папку**, **Копировать относительный путь** и **Копировать полный путь** в контекстном меню.
 
-- В контекстном меню узла файла, вызываемом щелчком правой кнопкой мыши, доступны операции **Просмотреть**, **Скачать**, **Удалить**, **Создать скрипт EXTRACT** (доступно только для файлов CSV, TSV и TXT), а также **Копировать относительный путь** и **Копировать полный путь**.
+   ![Команды контекстного меню для узла папки в обозревателе Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-account-folder-menu.png)
 
-    ![Обозреватель Data Lake: извлечение](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-account-extract.png)
+- Вы можете щелкнуть узел файла правой кнопкой мыши, а затем использовать команды **Просмотреть**, **Скачать**, **Удалить**, **Создать скрипт EXTRACT** (доступна только для CSV-, TSV- и TXT-файлов), **Копировать относительный путь** и **Копировать полный путь** в контекстном меню.
 
-## <a name="integrate-with-azure-blob-storage-from-explorer"></a>Интеграция с хранилищем BLOB-объектов Azure из обозревателя
+   ![Команды контекстного меню для узла файла в обозревателе Data Lake](./media/data-lake-analytics-data-lake-tools-for-vscode/storage-account-extract.png)
 
-Переход к **хранилищу BLOB-объектов**
+## <a name="integrate-with-azure-blob-storage-from-the-explorer"></a>Интеграция с хранилищем BLOB-объектов Azure из обозревателя
 
-- В контекстном меню узла контейнера больших двоичных объектов, вызываемом щелчком правой кнопкой мыши, доступны операции **Обновить**, **Удалить контейнер BLOB-объектов** и **Передать BLOB-объект**.
+Перейдите в хранилище BLOB-объектов:
 
-    ![Узел контейнера хранилища BLOB-объектов Azure](./media/data-lake-analytics-data-lake-tools-for-vscode/blob-storage-blob-container-node.png)
+- Вы можете щелкнуть правой кнопкой мыши узел контейнера BLOB-объектов, а затем использовать команды **Refresh**, **Delete Blob Container** и **Upload Blob** в контекстном меню.
 
-- В контекстном меню узла папки, вызываемом щелчком правой кнопкой мыши, доступны операции **Обновить** и **Передать BLOB-объект**.
+   ![Команды контекстного меню для узла контейнера в хранилище BLOB-объектов](./media/data-lake-analytics-data-lake-tools-for-vscode/blob-storage-blob-container-node.png)
 
-    ![Узел папки хранилища BLOB-объектов](./media/data-lake-analytics-data-lake-tools-for-vscode/blob-storage-folder-node.png)
+- Вы можете щелкнуть правой кнопкой мыши узел папки, а затем использовать команды **Обновить** и **Отправить BLOB-объект** в контекстном меню.
 
-- В контекстном меню узла файла, вызываемом щелчком правой кнопкой мыши, доступны операции **Просмотреть/Изменить**, **Скачать**, **Удалить**, **Создать скрипт EXTRACT** (доступно только для файлов CSV, TSV и TXT), а также **Копировать относительный путь** и **Копировать полный путь**.
+   ![Команды контекстного меню для узла папки в хранилище BLOB-объектов](./media/data-lake-analytics-data-lake-tools-for-vscode/blob-storage-folder-node.png)
 
-    ![Создание скрипта EXTRACT из контекстного меню](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-from-context-menu-2.png)
+- Вы можете щелкнуть узел файла правой кнопкой мыши, а затем использовать команды **Просмотреть/Изменить**, **Скачать**, **Удалить**, **Создать сценарий EXTRACT** (доступна только для CSV-, TSV- и TXT-файлов), **Копировать относительный путь** и **Копировать полный путь** в контекстном меню.
 
-## <a name="open-adl-storage-explorer-in-portal"></a>Открытие обозревателя хранилища ADL на портале
+    ![Команды контекстного меню для узла файла в хранилище BLOB-объектов](./media/data-lake-analytics-data-lake-tools-for-vscode/create-extract-script-from-context-menu-2.png)
+
+## <a name="open-the-data-lake-explorer-in-the-portal"></a>Открытие обозревателя Data Lake на портале
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд.
-2. Введите команду **Open Web Azure Storage Explorer** или щелкните правой кнопкой мыши относительный либо полный путь в редакторе скриптов, а затем выберите **Open Web Azure Storage Explorer** (Открыть обозреватель веб-хранилищ Azure).
+2. Введите команду **Open Web Azure Storage Explorer** либо щелкните правой кнопкой мыши относительный или полный путь в редакторе скриптов, а затем выберите пункт **Open Web Azure Storage Explorer**.
 3. Выберите учетную запись Data Lake Analytics.
 
-Средства Data Lake откроют путь к хранилищу Azure на портале Azure. Можно найти путь и предварительно просмотреть файл в Интернете.
+В средствах Data Lake откроется путь к хранилищу Azure на портале Azure. Можно найти путь и предварительно просмотреть файл в Интернете.
 
 ## <a name="additional-features"></a>Дополнительные функции
 
 Средства Data Lake для VS Code поддерживают следующие функции:
 
--   Автоматическое завершение IntelliSense: предлагаемые варианты отображаются во всплывающих окнах вокруг элементов, таких как ключевые слова, методы и переменные. Разные значки обозначают объекты разных типов:
+-   **Автозаполнение IntelliSense**. Предлагаемые варианты отображаются во всплывающих окнах вокруг ключевых слов, методов и переменных. Разные значки обозначают разные объекты:
 
     - тип данных Scala;
     - сложный тип данных;
@@ -460,24 +472,24 @@ ms.locfileid: "34735193"
     - выражения C#;
     - встроенные функции и объекты C#, определяемые пользователем; 
     - функции U-SQL;
-    - функции U-SQL для работы с окнами.
+    - функции U-SQL для работы с окнами;
  
-    ![Типы объектов IntelliSencse в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-objects.png)
+    ![типы объектов IntelliSense.](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-objects.png)
  
--   Автоматическое завершение IntelliSense в метаданных Data Lake Analytics: средства Data Lake скачивают сведения метаданных Data Lake Analytics локально. Функция IntelliSense автоматически заполняет объекты, включая базы данных, схемы, таблицы, представления, функции, функции с табличным значением, процедуры и сборки C#, на основе метаданных Data Lake Analytics.
+-   **Автозаполнение IntelliSense для метаданных Data Lake Analytics**. Средства Data Lake загружают сведения о метаданных Data Lake Analytics локально. Функция IntelliSense автоматически заполняет объекты метаданными Data Lake Analytics. К этим объектам относятся база данных, схема, таблица, представление, функция с табличным значением, процедуры и сборки C#.
  
-    ![Метаданные IntelliSense в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-metastore.png)
+    ![Метаданные IntelliSense](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-auto-complete-metastore.png)
 
--   Маркер ошибки IntelliSense: средства Data Lake подчеркивают ошибки ввода в файлах U-SQL и C#. 
--   Выделение синтаксиса: средства Data Lake используют различные цвета для выделения элементов, таких как переменные, ключевые слова, типы данных и функции. 
+-   **Маркер ошибки IntelliSense**. Средства Data Lake подчеркивают ошибки при редактировании файлов U-SQL и C#. 
+-   **Выделение синтаксиса**. Средства Data Lake используют цвета для выделения переменных, ключевых слов, типов данных и функций. 
 
-    ![Подсветка синтаксиса в средствах Data Lake для Visual Studio Code](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-syntax-highlights.png)
+    ![Синтаксис с различными цветами](./media/data-lake-analytics-data-lake-tools-for-vscode/data-lake-tools-for-vscode-syntax-highlights.png)
 
-   > [!NOTE]
-   > Корпорация Майкрософт рекомендует обновить Средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 и выше. Предыдущие версии являются устаревшими и недоступными для скачивания.  
+> [!NOTE]
+> Рекомендуем обновить средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 или выше. Предыдущие версии являются устаревшими и недоступными для скачивания.  
    
 ## <a name="next-steps"></a>Дополнительная информация
-- [Разработка U-SQL с помощью Python, R, и CSharp для Azure Data Lake Analytics в VSCode](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
+- [Разработка U-SQL с помощью Python, R, и C Sharp для Azure Data Lake Analytics в VS Code](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 - [Локальный запуск и локальная отладка U-SQL в Visual Studio Code](data-lake-tools-for-vscode-local-run-and-debug.md)
 - [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)
 - [Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
