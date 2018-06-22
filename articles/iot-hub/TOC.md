@@ -206,7 +206,7 @@
 ### [Перенос в параметры диагностики](iot-hub-migrate-to-diagnostics-settings.md)
 ### [Мониторинг операций](iot-hub-operations-monitoring.md)
 ## Использование реальных устройств
-### [Приступите к работе](iot-hub-get-started.md)
+### [Начало работы](iot-hub-get-started.md)
 ### [Использование онлайн-симулятора](iot-hub-raspberry-pi-web-simulator-get-started.md)
 ### [Использование физического устройства](iot-hub-get-started-physical.md)
 #### [Raspberry Pi с Python](iot-hub-raspberry-pi-kit-python-get-started.md)
@@ -259,6 +259,7 @@
 ## [Центре разработчика для Центра Интернета вещей Azure](https://azure.microsoft.com/develop/iot/)
 ## [Запросы данных клиентов](iot-hub-customer-data-requests.md)
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/?category=internet-of-things)
+## [Набор средств Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
 ## [Средство DeviceExplorer](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer)
 ## [Средство iothub-diagnostics (диагностика Центра Интернета вещей)](https://github.com/Azure/iothub-diagnostics)
 ## [Средство iothub-explorer (обозреватель Центра Интернета вещей)](https://github.com/Azure/iothub-explorer)

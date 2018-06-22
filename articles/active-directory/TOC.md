@@ -417,6 +417,7 @@
 #### Учебники
 ##### [Перенос классической политики MFA](active-directory-conditional-access-migration-mfa.md)
 #### Основные понятия
+##### [Базовая защита](active-directory-conditional-access-baseline-protection.md)
 ##### [Условия](active-directory-conditional-access-conditions.md)
 ##### [Условия расположения](active-directory-conditional-access-locations.md)
 ##### [Элементы управления](active-directory-conditional-access-controls.md)
