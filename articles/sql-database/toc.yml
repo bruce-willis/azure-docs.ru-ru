@@ -98,22 +98,22 @@
           href: sql-database-dtu-resource-limits-single-databases.md
         - name: Масштабирование ресурсов отдельных баз данных
           href: sql-database-single-database-scale.md
-        - name: Эластичные пулы и базы данных в составе пула
-          items:
-            - name: Эластичные пулы и базы данных в составе пула
-              href: sql-database-elastic-pool.md
-            - name: Управление пулами и базами данных в составе пула
-              href: sql-database-elastic-pool-manage.md
-            - name: Ограничения ресурсов на основе виртуальных ядер
-              href: sql-database-vcore-resource-limits-elastic-pools.md
-            - name: Ограничения ресурсов на основе DTU
-              href: sql-database-dtu-resource-limits-elastic-pools.md
-        - name: Масштабирование ресурсов эластичного пула
-          href: sql-database-elastic-pool-scale.md
         - name: Архитектура подключения
           href: sql-database-connectivity-architecture.md
         - name: Отличия T-SQL
           href: sql-database-transact-sql-information.md
+    - name: Эластичные пулы и базы данных в составе пула
+      items:
+        - name: Эластичные пулы и базы данных в составе пула
+          href: sql-database-elastic-pool.md
+        - name: Управление пулами и базами данных в составе пула
+          href: sql-database-elastic-pool-manage.md
+        - name: Ограничения ресурсов на основе виртуальных ядер
+          href: sql-database-vcore-resource-limits-elastic-pools.md
+        - name: Ограничения ресурсов на основе DTU
+          href: sql-database-dtu-resource-limits-elastic-pools.md
+        - name: Масштабирование ресурсов эластичного пула
+          href: sql-database-elastic-pool-scale.md
     - name: Управляемые экземпляры
       items:
         - name: Управляемые экземпляры

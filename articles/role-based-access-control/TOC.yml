@@ -27,8 +27,6 @@
       href: role-definitions.md
     - name: Встроенные роли
       href: built-in-roles.md
-    - name: Пользовательские роли
-      href: custom-roles.md
     - name: Операции с поставщиками ресурсов
       href: resource-provider-operations.md
     - name: Управление привилегированными пользователями (PIM) для RBAC
@@ -42,12 +40,21 @@
       items:
         - name: Microsoft Azure
           href: role-assignments-portal.md
-        - name: Инфраструктура CLI Azure
-          href: role-assignments-cli.md
         - name: PowerShell
           href: role-assignments-powershell.md
-        - name: REST
+        - name: Инфраструктура CLI Azure
+          href: role-assignments-cli.md
+        - name: ИНТЕРФЕЙС REST API
           href: role-assignments-rest.md
+    - name: Пользовательские роли
+      href: custom-roles.md
+      items:
+        - name: PowerShell
+          href: custom-roles-powershell.md
+        - name: Инфраструктура CLI Azure
+          href: custom-roles-cli.md
+        - name: ИНТЕРФЕЙС REST API
+          href: custom-roles-rest.md
     - name: Просмотр журналов действий
       href: change-history-report.md
     - name: Повышение прав доступа для глобального администратора

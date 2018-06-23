@@ -117,6 +117,22 @@
       href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
     - name: Обратитесь в службу поддержки.
       href: ../azure-supportability/how-to-create-azure-support-request.md
+- name: Примеры
+  items:
+    - name: ИНТЕРФЕЙС REST API
+      items:
+        - name: Просмотр корпоративных затрат
+          href: billing-review-enterprise-billing.md
+        - name: Просмотр данных об использовании подписки
+          href: billing-review-subscription-billing.md
+    - name: Примеры для .NET
+      items:
+        - name: Пример кода API счетов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+        - name: Пример кода API использования ресурсов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+        - name: Пример кода API RateCard
+          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
 - name: Справочные материалы
   items:
     - name: Сценарии автоматизации выставления счетов
@@ -142,11 +158,3 @@
       items:
         - name: REST API для корпоративной отчетности
           href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
-    - name: Примеры кода для выставления счетов
-      items:
-        - name: Пример кода API счетов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-        - name: Пример кода API использования ресурсов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-        - name: Пример кода API RateCard
-          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'

@@ -79,17 +79,17 @@
     - name: REST
       items:
         - name: Служба отрисовки
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps/renderservice'
+          href: 'https://docs.microsoft.com/rest/api/maps/render'
         - name: Служба построения маршрутов
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps/routeservice'
+          href: 'https://docs.microsoft.com/rest/api/maps/route'
         - name: Служба поиска
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps/searchservice'
+          href: 'https://docs.microsoft.com/rest/api/maps/search'
         - name: Служба часового пояса
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps/timezoneservice'
+          href: 'https://docs.microsoft.com/rest/api/maps/timezone'
         - name: Служба отслеживания дорожного движения
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps/trafficservice'
+          href: 'https://docs.microsoft.com/rest/api/maps/traffic'
         - name: Управление учетными записями службы Maps
-          href: 'https://docs.microsoft.com/en-us/rest/api/maps-management'
+          href: 'https://docs.microsoft.com/rest/api/maps-management'
     - name: JavaScript
       items:
         - name: Управление картами
