@@ -1,20 +1,21 @@
 ---
-title: Добавление возможности входа в веб-приложение Node.js — Azure Active Directory B2C
+title: Добавление возможности входа в веб-приложение Node.js в Azure Active Directory B2C | Документация Майкрософт
 description: Как создать веб-приложение Node.js, позволяющее пользователям входить в систему с помощью Azure Active Directory B2C
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 03/10/2017
 ms.author: davidmu
-ms.openlocfilehash: b10b2338bfbcd449075e612ae00cc23802dce3a9
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: b9c589f8bf8189961f88a6ae1d66f1fd9e17e9bc
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34711116"
 ---
 # <a name="azure-ad-b2c-add-sign-in-to-a-nodejs-web-app"></a>Azure AD B2C: добавление входа в веб-приложение Node.js
 

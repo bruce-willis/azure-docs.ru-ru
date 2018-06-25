@@ -1,20 +1,21 @@
 ---
-title: Azure Active Directory B2C. Примеры и определения для журналов аудита | Документы Майкрософт
-description: Руководство и примеры по обращению к журналам аудита Azure AD B2C
+title: Примеры и определения журналов аудита в Azure Active Directory B2C | Документация Майкрософт
+description: Руководство и примеры по обращению к журналам аудита Azure AD B2C.
 services: active-directory-b2c
-author: sromeroz
-manager: sasubram
-ms.author: sezambra
-ms.service: active-directory-b2c
+author: davidmu1
+manager: mtillman
+ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.date: 08/04/2017
-ms.openlocfilehash: 8cc48853b0677230c4e19df4f0ecd93ce88b119d
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.author: davidmu
+ms.component: B2C
+ms.openlocfilehash: 4828bf2f0faa596c8222c3a36dc3d38ec1b3bd1a
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33206451"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34709824"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 

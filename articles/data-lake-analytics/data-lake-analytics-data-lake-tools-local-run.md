@@ -1,28 +1,29 @@
 ---
-title: "Тестирование и отладка заданий U-SQL с помощью локального выполнения и пакета SDK U-SQL для Azure Data Lake | Документация Майкрософт"
-description: "Сведения о том, как с помощью средств Azure Data Lake для Visual Studio и пакета SDK U-SQL для Azure Data Lake выполнять тестирование и отладку заданий U-SQL на локальной рабочей станции."
+title: Выполнение сценариев U-SQL в локальной среде с использованием пакета SDK Azure Data Lake для U-SQL
+description: В этой статье описывается, как с помощью Средств Azure Data Lake для Visual Studio выполнять тестирование и отладку заданий U-SQL на локальной рабочей станции.
 services: data-lake-analytics
-documentationcenter: 
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 11/15/2016
+author: mumian
 ms.author: yanacai
-ms.openlocfilehash: 771a96df5cc66bac46e7144785be8cc072b57b31
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+manager: kfile
+editor: jasonwhowell
+ms.assetid: 66dd58b1-0b28-46d1-aaae-43ee2739ae0a
+ms.topic: conceptual
+ms.date: 11/15/2016
+ms.openlocfilehash: 322278f00f49f718b1ba560e9d21d0af0be49b18
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736009"
 ---
-# <a name="test-and-debug-u-sql-jobs-by-using-local-run-and-the-azure-data-lake-u-sql-sdk"></a>Тестирование и отладка заданий U-SQL с помощью локального выполнения и пакета SDK U-SQL для Azure Data Lake
+# <a name="runing-u-sql-scripts-locally"></a>Локальный запуск сценариев U-SQL
 
-Вы можете использовать средства Azure Data Lake для Visual Studio и пакет SDK U-SQL для Azure Data Lake, чтобы запускать задания U-SQL на рабочей станции так же, как в службе Azure Data Lake. Оба этих компонента для локального выполнения помогут вам быстрее выполнять тестирование и отладку заданий U-SQL.
+Вместо запуска U-SQL в Azure можно запускать U-SQL в своей собственной среде. Это называется "локальный запуск" или "локальное выполнение". 
+
+Локальный запуск U-SQL доступен в этих средствах:
+* Средства Azure Data Lake для Visual Studio;
+* пакет SDK Azure Data Lake для U-SQL.
 
 ## <a name="understand-the-data-root-folder-and-the-file-path"></a>Сведения о корневой папке данных и пути к файлу
 

@@ -1,12 +1,12 @@
 ---
-title: "Добавление аутентификации в пользовательские API в Azure Logic Apps | Документация Майкрософт"
-description: "Настройка аутентификации для вызовов к пользовательским API из приложений логики"
+title: Добавление аутентификации в пользовательские API в Azure Logic Apps | Документация Майкрософт
+description: Настройка аутентификации для вызовов к пользовательским API из приложений логики
 author: ecfan
-manager: anneta
-editor: 
+manager: jeconnoc
+editor: ''
 services: logic-apps
-documentationcenter: 
-ms.assetid: 
+documentationcenter: ''
+ms.assetid: ''
 ms.service: logic-apps
 ms.workload: logic-apps
 ms.tgt_pltfrm: na
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/22/2017
 ms.author: LADocs; estfan
-ms.openlocfilehash: 2528f4318d92bbfdc1008795876f0240a5e3e4f6
-ms.sourcegitcommit: f8437edf5de144b40aed00af5c52a20e35d10ba1
+ms.openlocfilehash: 705abb2a3cc25c965bdce364eb169b4e3a814bff
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35298555"
 ---
 # <a name="secure-calls-to-your-custom-apis-from-logic-apps"></a>Защита вызовов к пользовательским API из приложений логики
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 11/03/2017
   > [!NOTE]
   > По умолчанию проверка подлинности Azure AD, которую можно включить на портале Azure, не обеспечивает детального уровня авторизации. Например, при такой проверке подлинности API блокируется только для конкретного арендатора, а не для определенного пользователя или приложения. 
 
-* [Обновление кода API](#update-code): Защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
+* [Обновление кода API.](#update-code). Защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
 
 <a name="no-code"></a>
 
@@ -116,7 +117,7 @@ ms.lasthandoff: 11/03/2017
 
 **Создание удостоверения приложения и включение проверки подлинности для развернутых приложений на портале Azure**
 
-1. На [портале Azure](https://portal.azure.com "https://portal.azure.com") найдите и выберите свое веб-приложение или приложение API. 
+1. На [портале Azure](https://portal.azure.com "https://portal.azure.com") найдите и выберите веб-приложение или приложение API. 
 
 2. В разделе **Параметры** выберите **Аутентификация или авторизация**. В разделе **Проверка подлинности службы приложений** включите проверку подлинности, нажав кнопку **Вкл.** В разделе **Поставщики проверки подлинности** щелкните **Azure Active Directory**.
 

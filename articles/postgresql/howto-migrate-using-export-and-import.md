@@ -1,6 +1,6 @@
 ---
-title: "Перенос базы данных с помощью импорта и экспорта в службе \"База данных Azure для PostgreSQL\""
-description: "Описывается, как извлечь базу данных PostgreSQL в файл сценария и импортировать данные из этого файла в целевую базу данных."
+title: Перенос базы данных с помощью импорта и экспорта в службе "База данных Azure для PostgreSQL"
+description: Описывается, как извлечь базу данных PostgreSQL в файл сценария и импортировать данные из этого файла в целевую базу данных.
 services: postgresql
 author: rachel-msft
 ms.author: raagyema
@@ -8,12 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 02/28/2018
-ms.openlocfilehash: 8726badde2214a0904336f5bc73310114bcf9e91
-ms.sourcegitcommit: c765cbd9c379ed00f1e2394374efa8e1915321b9
+ms.date: 06/01/2018
+ms.openlocfilehash: 5250b10c2d9645e25c5b6f6f0f34daa50608e51b
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736650"
 ---
 # <a name="migrate-your-postgresql-database-using-export-and-import"></a>Перенос базы данных PostgreSQL с помощью экспорта и импорта
 Можно извлечь базу данных PostgreSQL в файл сценария с помощью [pg_dump](https://www.postgresql.org/docs/9.3/static/app-pgdump.html) и импортировать данные из этого файла в целевую базу данных с помощью [psql](https://www.postgresql.org/docs/9.6/static/app-psql.html).
@@ -47,4 +48,5 @@ psql --file=testdb.sql --host=mydemoserver.database.windows.net --port=5432 --us
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Перенос базы данных PostgreSQL с помощью дампа и ее восстановление описывается в разделе [Перенос базы данных PostgreSQL с помощью дампа и ее восстановление](howto-migrate-using-dump-and-restore.md).
+- Сведения о переносе базы данных PostgreSQL с помощью дампа и ее восстановлении см. в [этой статье](howto-migrate-using-dump-and-restore.md).
+- Дополнительные сведения о переносе баз данных в службу "База данных Azure для PostgreSQL" см. в [этой статье](http://aka.ms/datamigration). 

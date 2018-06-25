@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/29/2018
 ms.author: byvinyal
-ms.openlocfilehash: 8a8482fa93ca902746e4fc8ef6d67b274a926bdc
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 9e4ea16193824e63298b19d4401c110385fa7feb
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33939966"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34700198"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше платформ.
@@ -74,6 +74,7 @@ ms.locfileid: "33939966"
 * [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
 * [Служба Log Analytics](#log-analytics-limits)
+* [Управляемое удостоверение](#managed-identity-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Службы мобильного взаимодействия;](#mobile-engagement-limits)
 * [Мобильные службы](#mobile-services-limits)
@@ -83,6 +84,7 @@ ms.locfileid: "33939966"
 * [Наблюдатель за сетями](#network-watcher-limits)
 * [Служба концентратора уведомлений](#notification-hub-service-limits)
 * [Группа ресурсов](#resource-group-limits)
+* [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
 * [Поиск](#search-limits)
 * [Служебная шина](#service-bus-limits)
@@ -315,6 +317,12 @@ Azure Cosmos DB — это глобальная база данных, проп�
 
 ### <a name="automation-limits"></a>Ограничения автоматизации
 [!INCLUDE [automation-limits](../includes/azure-automation-service-limits.md)]
+
+### <a name="managed-identity-limits"></a>Ограничения управляемого удостоверения
+[!INCLUDE [automation-limits](~/includes/managed-identity-limits.md)]
+
+### <a name="role-based-access-control-limits"></a>Ограничения управления доступа на основе ролей
+[!INCLUDE [role-based-access-control-limits](../includes/role-based-access-control-limits.md)]
 
 ### <a name="sql-database-limits"></a>Ограничения базы данных SQL
 Ограничения базы данных SQL описаны в разделе [Ограничения ресурсов базы данных SQL](sql-database/sql-database-resource-limits.md).

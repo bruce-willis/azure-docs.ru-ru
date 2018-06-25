@@ -1,13 +1,14 @@
 ---
-title: "Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска | Документация Майкрософт"
-description: "В этом разделе объясняется, как пользователи могут настроить присоединение к Azure AD во время первого запуска устройства."
+title: Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска | Документация Майкрософт
+description: В этом разделе объясняется, как пользователи могут настроить присоединение к Azure AD во время первого запуска устройства.
 services: active-directory
-documentationcenter: 
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
-editor: 
+editor: ''
 ms.assetid: 06a149f7-4aa1-4fb9-a8ec-ac2633b031fb
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,11 +16,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 0e71df2333dee9c4eb9935d3397d343be246be65
-ms.sourcegitcommit: 384d2ec82214e8af0fc4891f9f840fb7cf89ef59
+ms.openlocfilehash: 0341c5b65816cf1c54fe3f2f7781dde46bf084ad
+ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34757398"
 ---
 # <a name="join-a-new-windows-10-device-with-azure-ad-during-a-first-run"></a>Присоединение нового устройства Windows 10 с помощью Azure AD во время первого запуска
 
@@ -37,6 +39,8 @@ ms.lasthandoff: 01/16/2018
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Чтобы присоединить устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Помимо наличия разрешения на присоединение устройств в клиенте Azure AD, необходимо, чтобы число зарегистрированных устройств не превышало установленное максимальное значение. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md#configure-device-settings).
+
+Кроме того, если клиент состоит в федерации, поставщик удостоверений должен поддерживать конечную точку имени пользователя и пароля WS-Fed и WS-Trust. Это может быть версия 1.3 или 2005. Поддержка протокола необходима и для присоединения устройства к Azure AD, и для входа на устройство с помощью пароля.
 
 ## <a name="joining-a-device"></a>Присоединение устройства
 

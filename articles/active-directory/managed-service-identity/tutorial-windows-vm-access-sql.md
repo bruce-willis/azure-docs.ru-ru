@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
-ms.author: skwan
-ms.openlocfilehash: 27c4f35cbd8cc69e689b26078d5a07c8558d8e2a
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.author: daveba
+ms.openlocfilehash: 5805dbc0a4831f14a4f9a98943a7611fa49961eb
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303207"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34594957"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-msi-to-access-azure-sql"></a>Руководство "Доступ к SQL Azure с помощью Управляемого удостоверения службы виртуальной машины Windows"
 
@@ -270,11 +270,9 @@ if (accessToken != null) {
 
 Проверьте значение `$DataSet.Tables[0]`, чтобы просмотреть результаты запроса.  Поздравляем, вы выполнили запрос базы данных с помощью MSI виртуальной машины, не предоставляя учетные данные!
 
-## <a name="related-content"></a>Связанная информация
+## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в разделе [Управляемое удостоверение службы (MSI) для Azure Active Directory](overview.md).
-- Дополнительные сведения об аутентификации Azure AD см. в статье [Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL или хранилища данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication).
-- Дополнительные сведения о настройке SQL Azure для поддержки проверки подлинности Azure AD см. в статье [Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL или хранилища данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure).
-- Дополнительные сведения о проверке подлинности и доступе к серверу SQL см. в статье [Приступая к работе с разрешениями Database Engine](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions).
+Из этого руководства вы узнали, как создать компонент "Управляемое удостоверение службы" и получить доступ к серверу Azure SQL Server.  Дополнительные сведения о сервере Azure SQL Server см. здесь:
 
-Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
+> [!div class="nextstepaction"]
+>[Функции службы базы данных SQL Azure](/azure/sql-database/sql-database-technical-overview)

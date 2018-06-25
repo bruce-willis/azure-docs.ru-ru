@@ -8,6 +8,7 @@ manager: mtillman
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +16,12 @@ ms.topic: article
 ms.date: 03/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: a74a16fa583ac3bc7ea2250f916e855a0bd9d1c1
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: fabe19a7348591b4a299868dfc3e618c049198c3
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34258318"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261191"
 ---
 # <a name="how-to-configure-hybrid-azure-active-directory-joined-devices"></a>Настройка гибридных устройств, присоединенных к Azure Active Directory
 
@@ -37,7 +38,7 @@ ms.locfileid: "34258318"
 
 Как только будут выполнены описанные выше этапы настройки, для всех присоединенных к домену устройств под управлением юбилейного обновления Windows 10 и Windows Server 2016 при перезагрузке устройства и при входе пользователя выполняется автоматическая регистрация в Azure AD. **Если автоматическая регистрация нежелательна или требуется контролировать выпуск**, сначала выполните инструкции в разделе "Шаг 4. Контроль развертывания". Это позволит выборочно включить или отключить автоматический выпуск, прежде чем выполнять другие действия по настройке.  
 
-Чтобы упростить описания, в этой статье используются следующие термины. 
+Чтобы упростить описания, в этой статье используются следующие термины: 
 
 - **Текущие устройства Windows.** Это собирательное описание всех присоединенных к домену устройств под управлением Windows 10 или Windows Server 2016.
 - **Устройства Windows нижнего уровня.** Этот термин относится ко всем **поддерживаемым** устройствам Windows, присоединенным к домену, операционная система которых отлична от Windows 10 и Windows Server 2016.  
@@ -56,7 +57,8 @@ ms.locfileid: "34258318"
     - Windows Server 2012 R2
     - Windows Server 2012
     - Windows Server 2008 R2
-- Регистрация устройств Windows нижнего уровня **поддерживается** в средах, не являющихся федеративными, с помощью простого единого входа. [Простой единый вход Azure Active Directory](https://aka.ms/hybrid/sso).
+- Регистрация устройств Windows нижнего уровня **поддерживается** в средах, не являющихся федеративными, с помощью простого единого входа. [Простой единый вход Azure Active Directory](https://aka.ms/hybrid/sso). 
+- Регистрация устройств Windows нижнего уровня **не поддерживается** при использовании сквозной аутентификации Azure AD.
 - Регистрация устройств Windows нижнего уровня **не поддерживается** на устройствах с перемещаемыми профилями. Если вам требуются перемещаемые профили или параметры, используйте только Windows 10.
 
 
@@ -80,8 +82,7 @@ Azure AD Connect выполняет следующие функции:
 
 - https://enterpriseregistration.windows.net
 
-- https://login.microsoftonline.com
-
+- разрешено https://login.microsoftonline.com;
 - https://device.login.microsoftonline.com
 
 - служба токенов безопасности вашей организации (федеративные домены).

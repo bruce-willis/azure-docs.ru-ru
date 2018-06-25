@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/20/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1f34255bdbcc8761f1c68adbb2f1828521f789e4
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 658686bec41fe1a6cfa8ca4ba6fe61d2e559297c
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34194025"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34833725"
 ---
 # <a name="manage-updates-for-multiple-machines"></a>Управление обновлениями для нескольких виртуальных машин
 
@@ -35,31 +35,16 @@ ms.locfileid: "34194025"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-Решение управления обновлениями поддерживается в следующих операционных системах.
+Решение управления обновлениями поддерживается в приведенных ниже операционных системах.
 
-### <a name="windows"></a>Windows
-
-- Windows Server 2008 и более поздние версии и развертывания обновлений в Windows Server 2008 R2 с пакетом обновления 1 (SP1) и более поздних версий. Nano Server не поддерживается.
-
-  Для поддержки развертывания обновлений в Windows Server 2008 R2 с пакетом обновления 1 (SP1) требуется .NET Framework 4.5 и Windows Management Framework 5.0 или более поздней версии.
-
-- Операционные системы клиента Windows не поддерживаются.
-
-На агентах Windows необходимо настроить связь с сервером служб Windows Server Update Services (WSUS) или доступ к Центру обновления Майкрософт.
-
-> [!NOTE]
-> Агентом Windows невозможно управлять параллельно с помощью System Center Configuration Manager.
->
-
-### <a name="linux"></a>Linux
-
-- CentOS 6 (x86 или x64) и 7 (x64).
-
-- Red Hat Enterprise 6 (x86 или x64) и 7 (x64).
-
-- SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)
-
-- Ubuntu 12.04 LTS и более поздних версий (x86 или x64).
+|Операционная система  |Заметки  |
+|---------|---------|
+|Windows Server 2008, Windows Server 2008 R2 RTM    | Поддерживает только оценки обновлений.         |
+|Windows Server 2008 R2 с пакетом обновления 1 и более поздней версии     |Требуется Windows PowerShell 4.0 или более поздней версии ([скачать WMF 4.0](https://www.microsoft.com/download/details.aspx?id=40855)).</br> Для повышения надежности рекомендуем использовать Windows PowerShell 5.1 ([скачать WMF 5.1](https://www.microsoft.com/download/details.aspx?id=54616)).         |
+|CentOS 6 (x86 или x64) и 7 (x64)      | У агентов Linux должен быть доступ к репозиторию обновлений.        |
+|Red Hat Enterprise 6 (x86 или x64) и 7 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
+|SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
+|Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)      |У агентов Linux должен быть доступ к репозиторию обновлений.         |
 
 > [!NOTE]
 > Чтобы обновления применялись только в период обслуживания в Ubuntu, повторно настройте пакет unattended-upgrades и отключите автоматическое обновление. Дополнительные сведения см. в разделе об [автоматических обновлениях руководства по Ubuntu Server](https://help.ubuntu.com/lts/serverguide/automatic-updates.html).
@@ -152,6 +137,9 @@ ms.locfileid: "34194025"
   - обновления определений;
   - Средства
   - Обновления
+
+- **Updates to exclude** (Исключаемые обновления). Если выбрать этот параметр, откроется страница **Исключение**. Введите размер в КБ или имена пакетов, которые нужно исключить.
+
 - **Параметры расписания**. Вы можете принять дату и время по умолчанию (на 30 минут позже текущего времени) либо указать другое время.
    Кроме того, можно указать, происходит ли развертывание один раз или повторяется по расписанию. Чтобы настроить регулярное расписание, щелкните параметр **Повторяющееся** в разделе **Повторение**.
 

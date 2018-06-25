@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 06/04/2018
 ms.author: anwestg
-ms.openlocfilehash: 95393df03ffc33748f0f14344d989d58ae52297c
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: ae21a7cc5c38fefd40a2676e15308b027c6f95d5
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359885"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34796739"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Подготовка к работе со службой приложений в Azure Stack
 
@@ -331,7 +331,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 | AdminArmEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
 | TenantARMEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager клиента. Пример: management.local.azurestack.external. |
 | AzureStackAdminCredential | Обязательно | Null | Учетные данные администратора службы Azure AD. |
-| CertificateFilePath | Обязательно | Null | Путь к файлу сертификата приложения идентификации, созданному ранее. |
+| CertificateFilePath | Обязательно | Null | **Полный путь** к файлу сертификата приложения идентификации, созданному ранее. |
 | CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
 
 ## <a name="create-an-active-directory-federation-services-application"></a>Создание приложения служб федерации Active Directory (AD FS)
@@ -365,7 +365,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 | AdminArmEndpoint | Обязательно | Null | Конечная точка Azure Resource Manager администратора. Пример: adminmanagement.local.azurestack.external. |
 | PrivilegedEndpoint | Обязательно | Null | Привилегированная конечная точка. Пример: AzS-ERCS01. |
 | CloudAdminCredential | Обязательно | Null | Учетные данные домена администратора облака Azure Stack. Пример: Azurestack\CloudAdmin. |
-| CertificateFilePath | Обязательно | Null | Путь к PFX-файлу сертификата приложения идентификации. |
+| CertificateFilePath | Обязательно | Null | **Полный путь** к PFX-файлу сертификата приложения идентификации. |
 | CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
 
 ## <a name="next-steps"></a>Дополнительная информация

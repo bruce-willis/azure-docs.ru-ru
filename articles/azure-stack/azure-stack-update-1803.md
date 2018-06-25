@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2018
+ms.date: 05/30/2018
 ms.author: brenduns
 ms.reviewer: justini
-ms.openlocfilehash: 2fdb77c133d5d8955ad6ae15864cbe0c78bc4e2f
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: f7f459404b5a759bef9eb8f37141bbd4c9eae3e5
+ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34258765"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34849631"
 ---
 # <a name="azure-stack-1803-update"></a>Обновление 1803 Azure Stack
 
@@ -82,7 +82,7 @@ ms.locfileid: "34258765"
 
 - <!-- 1739988 --> Internal Load Balancing (ILB) now properly handles MAC addresses for back-end VMs, which causes ILB to drop packets to the back-end network when using Linux instances on the back-end network. ILB works fine with Windows instances on the back-end network. 
 
-- <!-- 1805496 --> An issue where VPN Connections between Azure Stack would become disconnected due to Azure Stack using different settings for the IKE policy than Azure.  The values now match the values in Azure. 
+- <!-- 1805496 --> An issue where VPN Connections between Azure Stack would become disconnected due to Azure Stack using different settings for the IKE policy than Azure. The values for SALifetime (Time) and SALiftetime (Bytes) were not compatible with Azure and have changed in 1803 to match the Azure settings. The value for SALifetime (Seconds) prior to 1803 was 14,400 and now changes to 27,000 in 1803. The value for SALifetime (Bytes) prior to 1803 was 819,200 and changes to 33,553,408 in 1803.
 
 - <!-- 2209262 --> The IP issue where VPN Connections was previously visible in the portal; however enabling or toggling IP Forwarding has no effect. The feature is turned on by default and the ability to change this not yet supported.  The control has been removed from the portal. 
 
@@ -111,6 +111,9 @@ ms.locfileid: "34258765"
 Ниже перечислены известные проблемы после установки для сборки **20180323.2**.
 
 #### <a name="portal"></a>Microsoft Azure
+- <!-- 2332636 - IS -->  When you use AD FS for your Azure Stack identity system and update to this version of Azure Stack, the default owner of the default provider subscription is reset to the built-in **CloudAdmin** user.  
+  Решение. Чтобы устранить эту проблему после установки этого обновления, выполните шаг 3 из процедуры [автоматизации триггера для настройки доверия поставщика утверждений в Azure Stack](azure-stack-integrate-identity.md#trigger-automation-to-configure-claims-provider-trust-in-azure-stack-1), чтобы сбросить владельца подписки поставщика по умолчанию.   
+
 - Возможность [открыть новый запрос на поддержку из раскрывающегося списка](azure-stack-manage-portals.md#quick-access-to-help-and-support) на портале администрирования недоступна. Вместо этого перейдите по следующей ссылке:     
     - Для интегрированных систем Azure Stack используйте https://aka.ms/newsupportrequest.
 
@@ -132,7 +135,23 @@ ms.locfileid: "34258765"
   Это оповещение можно проигнорировать. 
 
 
-<!-- #### Health and monitoring --> 
+#### <a name="health-and-monitoring"></a>Работоспособность и мониторинг
+- <!-- 1264761 - IS ASDK -->  You might see alerts for the *Health controller* component that have the following details:  
+
+   Предупреждение № 1:
+   - НАЗВАНИЕ. Роль инфраструктуры неработоспособна.
+   - СЕРЬЕЗНОСТЬ. Предупреждение.
+   - КОМПОНЕНТ. Контроллер работоспособности.
+   - ОПИСАНИЕ. Контроллер работоспособности сканера пульса недоступен. Это может повлиять на отчеты о работоспособности и метрики.  
+
+  Предупреждение №2:
+   - НАЗВАНИЕ. Роль инфраструктуры неработоспособна.
+   - СЕРЬЕЗНОСТЬ. Предупреждение.
+   - КОМПОНЕНТ. Контроллер работоспособности.
+   - ОПИСАНИЕ. Контроллер работоспособности сканера ошибок недоступен. Это может повлиять на отчеты о работоспособности и метрики.
+
+  Оба эти оповещения можно проигнорировать. Они автоматически исчезнут через некоторое время.  
+
 
 #### <a name="marketplace"></a>Marketplace
 - Пользователи могут просматривать весь Marketplace без подписки и видеть некоторые административные элементы, такие как планы и предложения. Эти элементы бесполезны для пользователей.
@@ -144,7 +163,7 @@ ms.locfileid: "34258765"
 
 - При создании группы доступности на портале (**Создать** > **Вычисления** > **Группа доступности**) вы можете создать ее только с одним доменом сбоя и одним доменом обновления. В качестве обходного решения при создании виртуальной машины создайте группу доступности с помощью PowerShell, CLI или на портале.
 
-- При создании виртуальных машин на пользовательском портале Azure Stack отображается неверное число дисков данных, которые можно подключить к виртуальной машине серии DS. К виртуальным машинам серии DS можно подключить такое же количество дисков данных, которое доступно в конфигурации Azure.
+- При создании виртуальных машин на пользовательском портале Azure Stack отображается неверное число дисков данных, которые можно подключить к виртуальной машине серии D. Ко всем поддерживаемым виртуальным машинам серии D можно подключить такое же количество дисков данных, которое доступно в конфигурации Azure.
 
 - При сбое создания образа виртуальной машины неисправный элемент, который вы не смогли удалить, может быть добавлен в колонку вычислений образов виртуальной машины.
 
@@ -265,6 +284,8 @@ ms.locfileid: "34258765"
 <!--
 #### Identity
 -->
+
+
 
 #### <a name="downloading-azure-stack-tools-from-github"></a>Загрузка средств Azure Stack с сайта GitHub
 - При использовании командлета PowerShell *invoke-webrequest* для загрузки средств Azure Stack с Github вы получите следующее сообщение об ошибке:     

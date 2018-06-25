@@ -4,15 +4,15 @@ description: Сведения о модуле сборщика и его нас�
 author: ruturaj
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 05/22/2018
+ms.date: 06/19/2018
 ms.author: ruturajd
 services: azure-migrate
-ms.openlocfilehash: 32554b2f297c2079374a5edd7739af7320bc1234
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d0f36370f5093f8c1d06c83a62532b3854597fa4
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34640233"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36211675"
 ---
 # <a name="collector-appliance"></a>Модуль сборщика
 
