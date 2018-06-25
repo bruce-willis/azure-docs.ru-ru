@@ -3,15 +3,15 @@ title: Устранение неполадок в службе "Миграция
 description: Эта статья содержит обзор известных проблем в службе "Миграция Azure" и советы по устранению распространенных ошибок.
 author: rayne-wiselman
 ms.service: azure-migrate
-ms.topic: troubleshooting
-ms.date: 06/08/2018
+ms.topic: conceptual
+ms.date: 06/19/2018
 ms.author: raynew
-ms.openlocfilehash: c717cfdac83ec8d85b1fa0a874e5573a40dd4611
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 896e918f6031f3bc6b925a2ecdfa2a5c82f00e0b
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235633"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36228260"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 

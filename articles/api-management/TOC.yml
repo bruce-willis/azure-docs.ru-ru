@@ -177,6 +177,8 @@
           href: api-management-howto-deploy-multi-region.md
         - name: Регистрация событий для концентраторов событий Azure
           href: api-management-howto-log-event-hubs.md
+        - name: Ведение журнала запросов с использованием Azure Application Insights
+          href: api-management-howto-app-insights.md
         - name: Настройка аварийного восстановления с помощью резервного копирования и восстановления
           href: api-management-howto-disaster-recovery-backup-restore.md
         - name: Управление учетными записями пользователей
