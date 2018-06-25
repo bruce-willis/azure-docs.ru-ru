@@ -1,22 +1,19 @@
 ---
 title: Устранение неполадок на устройствах с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В руководстве показано, как устранить и исправить неполадки на устройстве в решении для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 05/01/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 1e6c74b5c952d5a387dbdac4d6e81d691758fb36
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: 9a620d91238393ba0bde89f521f790b58ab35baf
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34628078"
 ---
 # <a name="troubleshoot-and-remediate-device-issues"></a>Устранение неполадок на устройстве
 

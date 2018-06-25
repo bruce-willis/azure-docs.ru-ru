@@ -1,21 +1,21 @@
 ---
-title: 'Azure Active Directory B2C: вспомогательное средство для настройки пользовательского интерфейса страницы | Документация Майкрософт'
-description: Вспомогательное средство, которое используется для демонстрации настройки пользовательского интерфейса страницы в Azure Active Directory B2C.
+title: Вспомогательное средство для настройки пользовательского интерфейса страницы в Azure Active Directory B2C | Документация Майкрософт
+description: Вспомогательное средство, с помощью которого демонстрируется настройка пользовательского интерфейса страницы в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 01/07/2017
 ms.author: davidmu
-ms.openlocfilehash: de3d430ad984c9b173f77138417532badc3a7497
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: d57b8d43b2302a18b9df89eacc8ffd20d1742075
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34712000"
 ---
 # <a name="azure-active-directory-b2c-a-helper-tool-used-to-demonstrate-the-page-user-interface-ui-customization-feature"></a>Azure Active Directory B2C: вспомогательное средство, используемое для демонстрации настройки пользовательского интерфейса для страницы пользователя
 Эта статья дополняет [основную статью о настройке пользовательского интерфейса](active-directory-b2c-reference-ui-customization.md) в Azure Active Directory (Azure AD) B2C. Описанные ниже действия показывают, как работать с функцией настройки пользовательского интерфейса страницы на основе предоставленных нами примеров HTML и CSS.
@@ -52,7 +52,7 @@ ms.lasthandoff: 04/18/2018
 ## <a name="upload-the-sample-content-to-azure-blob-storage"></a>Передача образцов содержимого в хранилище больших двоичных объектов Azure
 Если вы хотите разместить содержимое страницы в хранилище больших двоичных объектов Azure, создайте собственную учетную запись хранения и загрузите файлы с помощью вспомогательного средства B2C.
 
-### <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Последовательно выберите пункты **+Создать** > **Данные+хранилище** > **Учетная запись хранения**. Для создания учетной записи хранения больших двоичных объектов Azure требуется подписка Azure. Вы можете оформить подписку на бесплатную пробную версию на [веб-сайте Azure](https://azure.microsoft.com/pricing/free-trial/).
 3. Укажите **имя** учетной записи (например, contoso) и выберите соответствующие значения для **ценовой категории**, **группы ресурсов** и **подписки**. Убедитесь, что флажок **Закрепить на начальной панели** установлен. Нажмите кнопку **Создать**.

@@ -3,22 +3,24 @@ title: Подключение к Azure Analysis Services с помощью Excel
 description: Сведения о подключении к серверу Azure Analysis Services с помощью Excel.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b3ab749b4610f57e19ad1af0fc74d41340d7555b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 6585648cbb461f52a22bc6ea239c0899caa2c2e7
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34192995"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34597269"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
-После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными.
+После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
+## <a name="before-you-begin"></a>Перед началом работы
+Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных с по крайней мере с правами на чтение. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md). 
 
 ## <a name="connect-in-excel"></a>Подключение в Excel
 
@@ -31,7 +33,7 @@ ms.locfileid: "34192995"
 2. В мастере подключения к данным введите имя сервера, включая протокол и универсальный код ресурса (URI), в поле **Имя сервера**. Например, asazure://westcentralus.asazure.windows.net/advworks. Затем для параметра **Учетные данные** выберите значение **Использовать следующие имя пользователя и пароль**, введите имя пользователя, например nancy@adventureworks.com, и пароль для него.
 
     > [!IMPORTANT]
-    > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yahoo, Gmail, и т. д., или требуется войти с помощью многофакторной проверки подлинности, оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Далее".
+    > Если вы входите в систему с учетной записью Майкрософт, Live ID, Yahoo, Gmail, и т. д., или требуется войти с помощью многофакторной проверки подлинности, оставьте поле пароля пустым. Пароль запрашивается после нажатия кнопки "Далее". 
 
     ![Подключение из Excel: вход](./media/analysis-services-connect-excel/aas-connect-excel-logon.png)
 

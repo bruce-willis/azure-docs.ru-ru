@@ -1,25 +1,20 @@
 ---
 title: Что такое Azure IoT Edge | Документация Майкрософт
 description: Общие сведения о службе Azure IoT Edge
-services: iot-Edge
-documentationcenter: ''
 author: kgremban
 manager: timlt
-editor: chipalost
-ms.assetid: ''
-ms.service: iot-hub
-ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: na
+ms.reviewer: chipalost
+ms.service: iot-edge
+services: iot-edge
+ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: kgremban
-ms.custom: ''
-ms.openlocfilehash: b14dd7ca2c35f9d660b571436f1d7f1b5185c5c1
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 52956e9888d67e0502a9ea82657acb9728216111
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34630703"
 ---
 # <a name="what-is-azure-iot-edge---preview"></a>Что такое Azure IoT Edge (предварительная версия)
 
@@ -69,7 +64,7 @@ Azure IoT Edge также поддерживает развертывание с
 
 Управлять жизненным циклом программного обеспечения для корпоративных устройств довольно сложно. А управлять жизненным циклом программного обеспечения для большого количества разнородных устройств Интернета вещей еще сложнее. Рабочие нагрузки должны создаваться и настраиваться для устройства определенного типа, масштабно развертываться для миллионов устройств в решении и отслеживаться для перехвата любых некорректно работающих устройств. Эти задачи должны выполняться в нужном масштабе для всех устройств одновременно.
 
-Служба Azure IoT Edge легко интегрируется с Azure IoT Suite, образуя одну плоскость управления для потребностей вашего решения. Облачные службы позволяют выполнять следующие задачи:
+Служба Azure IoT Edge легко интегрируется с акселераторами решений Azure IoT, образуя одну плоскость управления для потребностей вашего решения. Облачные службы позволяют выполнять следующие задачи:
 
 * создание и настройка рабочей нагрузки для выполнения на устройстве определенного типа;
 * отправка рабочей нагрузки на набор устройств;

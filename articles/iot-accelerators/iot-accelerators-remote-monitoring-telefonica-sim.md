@@ -1,23 +1,19 @@
 ---
 title: Интеграция данных SIM-карты в решении удаленного мониторинга в Azure | Документация Майкрософт
 description: В этой статье описывается, как интегрировать данные SIM-карты Telefónica в решение удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: hegate
-manager: timlt
+manager: ''
 ms.author: hegate
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 05/15/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 590a24113d66edacc6edcfe988330f643f1aa57a
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: ae8751f429cb4b11199bd8da9d8c2e08c0b98b35
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34367556"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34628289"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении удаленного мониторинга
 
@@ -27,7 +23,7 @@ ms.locfileid: "34367556"
 
 Из этого руководства вы узнаете, как выполнять такие задачи:
 
-* интеграция данных SIM-карты Интернета вещей Telefónica в решение удаленного мониторинга;
+* интегрирование данных SIM-карты Интернета вещей Telefónica в решение удаленного мониторинга;
 * просмотр телеметрии в реальном времени;
 * просмотреть данные SIM-карты.
 
@@ -39,14 +35,14 @@ ms.locfileid: "34367556"
 
 1. Заполните форму запроса [на сайте Telefónica](https://iot.Telefónica.com/contact), выберите параметр **удаленного мониторинга Azure** и укажите ваши контактные данные.
 2. Telefónica активирует вашу учетную запись.
-3. Если вы еще не являетесь клиентом Telefónica и хотите воспользоваться этой или другими услугами IoT Connectivity Cloud Ready, посетите [сайт Telefónica](https://iot.Telefónica.com/contact) и выберите параметр **Подключение**.
+3. Если вы еще не являетесь клиентом Telefónica и хотите пользоваться этим или другими готовыми облачными службами для подключения Интернета вещей, посетите [сайт Telefónica](https://iot.Telefónica.com/contact) и выберите вариант **Connectivity** (Подключение).
 
 ### <a name="telefnica-sim-setup"></a>Установка SIM-карты Telefónica
-Связь SIM-карты Telefónica и идентификатора двойника устройства Azure основана на свойстве "псевдоним" SIM-карты Интернета вещей Telefónica. 
+Связь идентификатора двойника устройства Azure и SIM-карты Telefónica устанавливается на основе свойства "псевдоним" SIM-карты Интернета вещей Telefónica. 
 
-Перейдите на [портал платформы подключения Интернета вещей Telefónica](https://m2m-movistar-es.telefonica.com/), выберите инвентаризацию SIM-карты, затем выберите SIM-карту и укажите для свойства "псевдоним" каждой SIM-карты выбранный идентификатор двойника устройства. Эту задачу также можно выполнить в режиме массового обслуживания (см. руководства пользователя по платформе подключения Интернета вещей Telefónica).
+Перейдите на [портал платформы подключения Интернета вещей Telefónica](https://m2m-movistar-es.telefonica.com/) > SIM Inventory (Учет SIM-карты) > выберите вашу SIM-карту и замените каждый псевдоним SIM-карты необходимым идентификатором двойника устройства. Эту задачу также можно выполнять в массовом режиме.
 
-Эту задачу также можно выполнить в режиме массового обслуживания (см. руководства пользователя по платформе подключения Интернета вещей Telefónica).
+См. руководства пользователя по платформе подключения Интернета вещей Telefónica.
 
 ![Обновление Telefónica](./media/iot-accelerators-remote-monitoring-telefonica-sim/telefonica_site.png)
 
@@ -54,7 +50,7 @@ ms.locfileid: "34367556"
 
 ## <a name="view-device-telemetry-and-sim-properties"></a>Просмотр данных телеметрии устройства и свойств SIM-карты
 
-После соответствующей настройки учетной записи Telefónica и подключения устройства можно просмотреть сведения об устройстве и данные SIM-карты.
+После соответствующей настройки учетной записи Telefónica и подключения устройства можно просмотреть данные устройства и SIM-карты.
 
 Опубликованы следующие параметры подключения:
 

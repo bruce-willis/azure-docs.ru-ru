@@ -10,12 +10,13 @@ ms.service: database-migration
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 01/25/2018
-ms.openlocfilehash: 85052e1363ebbfe21cd7d6d5b3720f79cec7c417
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.date: 06/08/2018
+ms.openlocfilehash: 0e10907ac3db2d792b73e0a37aa2d0f6a916d746
+ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34850078"
 ---
 # <a name="faq-about-using-the-azure-database-migration-service"></a>Часто задаваемые вопросы о службе Azure Database Migration Service
 В этой статье приведены часто задаваемые вопросы об использовании службы Azure Database Migration Service вместе с соответствующими ответами.
@@ -34,6 +35,9 @@ Azure Database Migration Service — это полностью управляе�
 
 ### <a name="q-how-does-the-azure-database-migration-service-compare-to-the-azure-migrate-offering"></a>В. Как служба Azure Database Migration Service соотносится с предложением "Миграция Azure"?
 Служба "Миграция Azure" помогает выполнять миграцию локальных виртуальных машин на виртуальные машины IaaS Azure. Оценивается пригодность для миграции, показатели производительности, на основе которых определяется требуемый размер, и расходы на работу локальных виртуальных машин в Azure. Служба "Миграция Azure" подходит для переноса рабочих нагрузок на локальных виртуальных машинах на виртуальные машины IaaS Azure методом lift-and-shift. Однако, в отличие от службы Azure Database Migration Service, служба "Миграция Azure" не является специализированным предложением службы переноса базы данных для платформ реляционных баз данных PaaS Azure, таких как база данных SQL Azure или управляемый экземпляр базы данных SQL Azure.
+
+### <a name="q-what-versions-of-sql-server-does-the-azure-database-migration-service-support-as-a-source"></a>В. Какие версии сервера SQL Server не поддерживают службу Azure Database Migration Service в качестве источника?
+При переносе из SQL Server служба Azure Database Migration Service поддерживает SQL Server версий 2005–2017.
 
 ### <a name="q-what-is-a-summary-of-the-steps-required-to-use-the-azure-database-migration-service-to-perform-a-database-migration"></a>В. Какие действия необходимо выполнить, чтобы использовать службу Azure Database Migration Service для переноса базы данных?
 Во время обычного переноса базы данных вы:

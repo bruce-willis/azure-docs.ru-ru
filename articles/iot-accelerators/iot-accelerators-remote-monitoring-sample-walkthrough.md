@@ -1,25 +1,19 @@
 ---
 title: Архитектура удаленного мониторинга в Azure | Документация Майкрософт
 description: Пошаговое руководство по архитектуре акселератора решения для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
-documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: 31fe13af-0482-47be-b4c8-e98e36625855
-ms.service: iot-suite
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+ms.service: iot-accelerators
+services: iot-accelerators
+ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: dobett
-ms.openlocfilehash: 3effde81dfa48e9544d89153d40c160ff972d047
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: af7feb6c95a7de1d2211378c5eb71f09907221ff
+ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34757439"
 ---
 # <a name="remote-monitoring-solution-accelerator-architecture"></a>Архитектура акселератора решения для удаленного мониторинга
 
@@ -97,13 +91,13 @@ ms.lasthandoff: 05/20/2018
 
 Микрослужба [telemetry-agent](https://github.com/Azure/telemetry-agent-dotnet) предназначена для выполнения следующих задач:
 
-* хранение данных телеметрии в Cosmos DB;
+* хранение данных телеметрии в Azure Cosmos DB;
 * анализ потока телеметрической информации с устройств;
 * создание предупреждений по определенным правилам.
 
-Предупреждения хранятся в Cosmos DB.
+Предупреждения хранятся в Azure Cosmos DB.
 
-Микрослужба `telemetry-agent` поддерживает портал решения для чтения данных телеметрии, отправленных с устройства. Эта служба используется на портале решения для выполнения следующих задач:
+Микрослужба [telemetry-agent](https://github.com/Azure/telemetry-agent-dotnet) поддерживает портал решения для чтения данных телеметрии, отправленных с устройства. Эта служба используется на портале решения для выполнения следующих задач:
 
 * Определение правил мониторинга, например пороговых значений, которые запускают сигналы.
 * Получение списка последних сигналов.
@@ -114,9 +108,9 @@ ms.lasthandoff: 05/20/2018
 
 Микрослужба [storage-adapter](https://github.com/Azure/pcs-storage-adapter-dotnet) — это адаптер, который находится перед основной службой хранилища, используемой для акселераторов решений. Этот адаптер обеспечивает сбор данных и хранение пар "ключ-значение".
 
-В стандартном развертывании акселератора решения Cosmos DB используется в качестве основной службы хранилища.
+В стандартном развертывании акселератора решения Azure Cosmos DB используется в качестве основной службы хранилища.
 
-Информация базы данных Cosmos DB хранится в акселераторе решения. Микрослужба **storage-adapter** выполняет роль адаптера для других микрослужб в решении, предоставляя им доступ к службам хранилища.
+Информация базы данных Azure Cosmos DB хранится в акселераторе решения. Микрослужба **storage-adapter** выполняет роль адаптера для других микрослужб в решении, предоставляя им доступ к службам хранилища.
 
 ## <a name="presentation"></a>Уровень представления
 
@@ -141,6 +135,8 @@ ms.lasthandoff: 05/20/2018
 
 * [Акселератор решения для удаленного мониторинга с помощью Azure IoT (.NET)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/).
 * [Акселератор решения для удаленного мониторинга с помощью Azure IoT (Java)](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java).
+
+Подробные схемы архитектуры решения:
 * [Архитектура акселератора решения для удаленного мониторинга](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Architecture).
 
 Дополнительные сведения см. в статье о [настройке акселератора решения для удаленного мониторинга](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md).

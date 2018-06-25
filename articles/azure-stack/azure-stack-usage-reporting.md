@@ -3,7 +3,7 @@ title: Передача в Azure данных об использовании и
 description: Сведения о настройке передачи данных об использовании в Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: brenduns
 manager: femila
 editor: ''
 ms.service: azure-stack
@@ -11,14 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2018
-ms.author: mabrigg
+ms.date: 05/30/2018
+ms.author: brenduns
 ms.reviewer: alfredop
-ms.openlocfilehash: 602cd6c3b2be8881bebbcebe30ec2520358b731f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: daaaf6c574c4b169c19ebec42ad68e2d818ca1cb
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34603708"
 ---
 # <a name="report-azure-stack-usage-data-to-azure"></a>Передача в Azure данных об использовании из Azure Stack 
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 04/28/2018
 - **Количество** — объем используемых ресурсов.
 - **Расположение** — расположение развертывания текущего ресурса Azure Stack.
 - **URI ресурса** — полный универсальный код ресурса, об использовании которого передаются данные.
-- **идентификатор подписки** — идентификатор подписки пользователя Azure Stack. Это локальная подписка (Azure Stack).
+- **Идентификатор подписки**. Это идентификатор подписки пользователя Azure Stack, которая является локальной подпиской Azure Stack.
 - **Время** — время начала и окончания передачи данных об использовании. Между потреблением ресурсов в Azure Stack и передачей данных о потреблении в коммерческую систему происходит некоторая задержка. Azure Stack вычисляет данные об использовании каждые 24 часа, а передача данных об использовании в конвейер коммерческой системы в Azure занимает еще несколько часов. Таким образом использование, происходящее около полуночи, может отобразиться в Azure на следующий день.
 
 ## <a name="generate-usage-data-reporting"></a>Формирование отчетов касательно данных о потреблении
@@ -68,7 +69,7 @@ ms.lasthandoff: 04/28/2018
 
    ![поток выставления счетов](media/azure-stack-usage-reporting/pricing-details.png)
 
-При использовании Пакета средств разработки Azure Stack плата за ресурсы не взимается, поэтому отображается цена 0,00 долл. Когда многоузловые ресурсы Azure Stack станут общедоступными, вы сможете увидеть фактическую стоимость для каждого из них.
+При использовании Пакета средств разработки Azure Stack плата за ресурсы не взимается, поэтому отображается цена 0,00 долл.
 
 ## <a name="which-azure-stack-deployments-are-charged"></a>За какие ресурсы, развернутые в Azure Stack, взимается плата?
 

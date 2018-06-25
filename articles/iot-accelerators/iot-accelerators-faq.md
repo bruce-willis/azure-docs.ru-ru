@@ -1,29 +1,23 @@
 ---
 title: Часто задаваемые вопросы об акселераторах решений для Интернета вещей Azure | Документация Майкрософт
 description: Часто задаваемые вопросы об акселераторах решений для Интернета вещей
-services: iot-suite
-suite: iot-suite
-documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: cb537749-a8a1-4e53-b3bf-f1b64a38188a
-ms.service: iot-suite
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+ms.service: iot-accelerators
+services: iot-accelerators
+ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 6c8c87dc4f7bb91ce227bbfbaf1cabf0c44d2e0b
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: decae2fee0d040d0857950bec507df173e2820b9
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627165"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
-См. также ответы на часто задаваемые вопросы по [подключенной фабрике](iot-accelerators-faq-cf.md) и [удаленному мониторингу](iot-accelerators-faq-rm-v2.md).
+Дополнительные сведения см. также в ответах на часто задаваемые вопросы по [подключенной фабрике](iot-accelerators-faq-cf.md) и [удаленному мониторингу](iot-accelerators-faq-rm-v2.md).
 
 ### <a name="where-can-i-find-the-source-code-for-the-solution-accelerators"></a>Где можно найти исходный код акселераторов решений?
 
@@ -54,7 +48,7 @@ ms.lasthandoff: 05/20/2018
 
 ### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsuitecom"></a>В чем разница между удалением группы ресурсов на портале Azure и нажатием кнопки "Удалить" в акселераторе решений на сайте azureiotsuite.com?
 
-* Если вы удаляете акселератор решений на сайте [azureiotsuite.com](https://www.azureiotsuite.com/), вместе с ним будут удалены все ресурсы, подготовленные при его создании. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
+* Если вы удаляете акселератор решений на сайте [azureiotsuite.com](https://www.azureiotsolutions.com/), вместе с ним будут удалены все ресурсы, подготовленные при его создании. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
 * Если удалить группу ресурсов на [портале Azure](https://portal.azure.com), будут удалены ресурсы в этой группе. Вам также придется удалить приложение Azure Active Directory, связанное с акселератором решений.
 
 ### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Можно ли и дальше использовать существующие системы на базе акселераторов решений для Интернета вещей Azure?
@@ -92,7 +86,7 @@ ms.lasthandoff: 05/20/2018
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Общие сведения о возможностях акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
-* [Общие сведения об акселераторе решений для диагностического обслуживания](../iot-suite/iot-suite-predictive-overview.md)
+* [Обзор возможностей акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
+* [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
 * [Общие сведения об акселераторе решений для подключенной фабрики](iot-accelerators-connected-factory-overview.md)
-* [Комплексная защита в Интернете вещей](../iot-suite/securing-iot-ground-up.md)
+* [Комплексная защита в Интернете вещей](securing-iot-ground-up.md)

@@ -1,25 +1,22 @@
 ---
-title: "Добавление соединителя DB2 в приложения логики | Документация Майкрософт"
-description: "Обзор соединителя DB2 с параметрами REST API"
-services: 
-documentationcenter: 
+title: Подключение к DB2 с помощью Azure Logic Apps | Документация Майкрософт
+description: Управляйте ресурсами с помощью интерфейсов REST API DB2 и Azure Logic Apps.
 author: gplarsen
-manager: erikre
-editor: 
-tags: connectors
-ms.assetid: 1c6b010c-beee-496d-943a-a99e168c99aa
-ms.service: logic-apps
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
+manager: jeconnoc
+ms.author: plarsen
 ms.date: 09/26/2016
-ms.author: plarsen; ladocs
-ms.openlocfilehash: 7ad246ede7e891de42235443c1bc6a90b88ad5ac
-ms.sourcegitcommit: be9a42d7b321304d9a33786ed8e2b9b972a5977e
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, estfan
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: 507bc48b6b775d6a6fb5f855210d33520e187a74
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35295097"
 ---
 # <a name="get-started-with-the-db2-connector"></a>Приступая к работе с соединителем DB2
 Соединитель DB2 (Майкрософт) подключает приложения логики к ресурсам, хранящимся в базе данных IBM DB2. Этот соединитель включает в себя клиент Майкрософт для взаимодействия с удаленными серверами DB2 по сети TCP/IP. Сюда входят облачные базы данных, например IBM Bluemix dashDB или IBM DB2 для Windows, работающие в среде виртуализации Azure, и локальные базы данных, использующие локальный шлюз данных. Ознакомьтесь со [списком поддерживаемых](connectors-create-api-db2.md#supported-db2-platforms-and-versions) платформ и версий IBM DB2 (в этой статье).

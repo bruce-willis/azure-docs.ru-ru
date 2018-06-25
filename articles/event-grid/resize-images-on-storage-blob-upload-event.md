@@ -9,20 +9,21 @@ ms.service: event-grid
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 10/20/2017
+ms.date: 06/20/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 0edf5648ddef58db74273635c84d7473e17e1b30
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: f1f10e0cb552dfa938b85280f3acb302b4591426
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36295955"
 ---
 # <a name="automate-resizing-uploaded-images-using-event-grid"></a>Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
 [Сетка событий Azure](overview.md) — это служба обработки событий для облака. Служба "Сетка событий" дает возможность создавать подписки на события, порождаемые службами Azure или сторонними ресурсами.  
 
-Это руководство — вторая часть из цикла руководств по службе хранилища. Оно дополняет [предыдущее руководство по службе хранилища][previous-tutorial] и содержит сведения о том, как добавить автоматическое бессерверное создание эскизов с помощью служб "Функции Azure" и "Сетка событий Azure". Служба "Сетка событий" позволяет службе [Функции Azure](..\azure-functions\functions-overview.md) реагировать на события [хранилища BLOB-объектов Azure](..\storage\blobs\storage-blobs-introduction.md) и создавать эскизы передаваемых изображений. Подписка на событие создается для события создания хранилища BLOB-объектов. При добавлении большого двоичного объекта в конкретный контейнер хранилища BLOB-объектов вызывается конечная точка функции. Данные, передаваемые посредством привязки функции из службы "Сетка событий", используются для доступа к большому двоичному объекту и создания эскизов. 
+Это руководство — вторая часть из цикла руководств по службе хранилища. Оно дополняет [предыдущее руководство по службе хранилища][previous-tutorial] и содержит сведения о том, как добавить автоматическое бессерверное создание эскизов с помощью служб "Функции Azure" и "Сетка событий Azure". Служба "Сетка событий" позволяет службе [Функции Azure](..\azure-functions\functions-overview.md) реагировать на события [хранилища BLOB-объектов Azure](..\storage\blobs\storage-blobs-introduction.md) и создавать эскизы передаваемых изображений. Подписка на событие создается для события создания хранилища BLOB-объектов. При добавлении большого двоичного объекта в конкретный контейнер хранилища BLOB-объектов вызывается конечная точка функции. Данные, передаваемые посредством привязки функции из службы "Сетка событий", используются для доступа к большому двоичному объекту и создания эскизов.
 
 Для добавления возможностей изменения размера в существующее приложение для передачи изображений можно использовать Azure CLI и портал Azure.
 
@@ -39,13 +40,13 @@ ms.lasthandoff: 04/06/2018
 
 Для работы с этим руководством:
 
-+ Необходимо выполнить инструкции из предыдущего руководства по хранилищу BLOB-объектов: [Upload image data in the cloud with Azure Storage][previous-tutorial] (Передача данных изображений в облако с помощью службы хранилища Azure). 
+Необходимо выполнить инструкции из предыдущего руководства по хранилищу BLOB-объектов: [Upload image data in the cloud with Azure Storage][previous-tutorial] (Передача данных изображений в облако с помощью службы хранилища Azure).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.14 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.14 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 Если вы не используете Cloud Shell, сначала выполните вход с помощью `az login`.
 
@@ -97,7 +98,9 @@ myContainerName=thumbnails
 
 ## <a name="deploy-the-function-code"></a>Развертывание кода функции 
 
-Функция C#, которая изменяет размер изображения, доступна в [этом репозитории GitHub](https://github.com/Azure-Samples/function-image-upload-resize). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source#config). 
+# <a name="nettabnet"></a>[\.NET](#tab/net)
+
+Пример скрипта C# (CSX) для изменения размера можно найти в [GitHub](https://github.com/Azure-Samples/function-image-upload-resize). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source#config). 
 
 В следующей команде `<function_app>` — это имя приложения-функции, созданной ранее.
 
@@ -106,6 +109,19 @@ az functionapp deployment source config --name <function_app> \
 --resource-group myResourceGroup --branch master --manual-integration \
 --repo-url https://github.com/Azure-Samples/function-image-upload-resize
 ```
+
+# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+Пример функции изменения размера на Node.js можно найти в [GitHub](https://github.com/Azure-Samples/storage-blob-resize-function-node). Разверните этот проект кода функции в приложение-функцию с помощью команды [az functionapp deployment source config](/cli/azure/functionapp/deployment/source#config). 
+
+
+В следующей команде `<function_app>` — это имя приложения-функции, созданной ранее.
+
+```azurecli-interactive
+az functionapp deployment source config --name <function_app> \
+--resource-group myResourceGroup --branch master --manual-integration \
+--repo-url https://github.com/Azure-Samples/storage-blob-resize-function-node
+```
+---
 
 Функция изменения размера образа активируется HTTP-запросом, отправленным из службы "Сетка событий". Вы указываете этой службе, что хотите получать эти уведомления по URL-адресу функции, создав подписку на события. В этом руководстве вы подписываетесь на события, созданные большим двоичным объектом.
 

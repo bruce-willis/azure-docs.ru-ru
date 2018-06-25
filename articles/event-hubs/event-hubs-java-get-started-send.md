@@ -2,23 +2,19 @@
 title: Отправка событий в концентраторы событий Azure с помощью Java | Документация Майкрософт
 description: Начало работы с отправкой в концентраторы событий с помощью Java.
 services: event-hubs
-documentationcenter: ''
 author: sethmanheim
 manager: timlt
-editor: ''
-ms.assetid: ''
 ms.service: event-hubs
 ms.workload: core
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 03/21/2018
+ms.date: 05/30/2018
 ms.author: sethm
-ms.openlocfilehash: 5dd0c88dab9ff4b7073a9acf6872b4c3ff085586
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 6d3bf0b8ac5c5bdc7bf3deda21e800fe3cc6be2e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34626417"
 ---
 # <a name="send-events-to-azure-event-hubs-using-java"></a>Отправка событий в концентраторы событий Azure с помощью Java
 
@@ -28,12 +24,14 @@ ms.lasthandoff: 03/23/2018
 
 В этом руководстве показано, как отправлять события в концентратор событий с помощью консольного приложения на языке Java. Дополнительные сведения о получении событий с помощью библиотеки узла обработчика событий для Java см. в [этой статье](event-hubs-java-get-started-receive-eph.md), или выберите соответствующий язык в оглавлении статьи слева.
 
-Чтобы выполнить задания из этого учебника, вам нужно следующее:
+## <a name="prerequisites"></a>предварительным требованиям
 
-* Среда разработки Java. Для этого руководства предполагается использование среды [Eclipse](https://www.eclipse.org/).
+Для работы с данным руководством вам потребуется:
+
+* Среда разработки Java. В этом руководстве используется среда [Eclipse](https://www.eclipse.org/).
 * Активная учетная запись Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure][], прежде чем начинать работу.
 
-Код в этом руководстве основан на [примере Send в GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/Send). Изучите его, чтобы получить полное представление о рабочем приложении.
+Код в этом руководстве основан на [примере SimpleSend в GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend). Изучите его, чтобы получить полное представление о рабочем приложении.
 
 ## <a name="send-events-to-event-hubs"></a>Отправка событий в службу "Концентраторы событий"
 
@@ -94,7 +92,7 @@ public class Send {
 
 ### <a name="send-events"></a>Отправка событий
 
-Затем создайте одиночное событие, преобразовав строку в байтовую кодировку UTF-8. Затем создайте новый экземпляр клиента концентраторов событий из строки подключения и отправьте сообщение.   
+Создайте одиночное событие, преобразовав строку в байтовую кодировку UTF-8. Затем создайте экземпляр клиента концентраторов событий из строки подключения и отправьте сообщение.   
 
 ```java 
 byte[] payloadBytes = "Test AMQP message from JMS".getBytes("UTF-8");

@@ -9,11 +9,12 @@ ms.topic: article
 ms.date: 02/24/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: cdb406c5a0a314562ae886c797c5ebd9dc5f8796
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 66843a5dda9f7b31b2b4c79df895eaff904513e6
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34595586"
 ---
 # <a name="kubernetes-dashboard-with-azure-kubernetes-service-aks"></a>Панель мониторинга Kubernetes со службой Azure Kubernetes
 
@@ -37,7 +38,7 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 ## <a name="run-an-application"></a>Запуск приложения
 
-В правом верхнем углу панели мониторинга Kubernetes нажмите кнопку **Создать**. Присвойте развертыванию имя `nginx` и введите `nginx:latest` в качестве имени образа. В разделе **Служба** выберите **External** (Внешний) и введите `80` для порта и целевого порта.
+В правом верхнем углу панели мониторинга Kubernetes нажмите кнопку **Создать**. Присвойте развертыванию имя `nginx` и введите `nginx:latest` в качестве имени образа контейнера. В разделе **Служба** выберите **External** (Внешний) и введите `80` для порта и целевого порта.
 
 Когда все будет готово, щелкните **Развернуть** для создания развертывания.
 

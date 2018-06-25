@@ -13,13 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/13/2017
+ms.date: 05/29/2018
 ms.author: iainfou
-ms.openlocfilehash: c463dd26c106b3178becc977a8afd742220d7973
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 39cd7fa2232329716ba16abf92ba4a5f2cc15487
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34652786"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-azure-powershell"></a>Управление масштабируемым набором виртуальных машин с помощью Azure PowerShell
 На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. В этой статье подробно рассматриваются некоторые стандартные командлеты Azure PowerShell, которые позволяют выполнять эти задачи.
@@ -36,7 +37,7 @@ Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet
 
 
 ## <a name="view-vms-in-a-scale-set"></a>Просмотр виртуальных машин в масштабируемом наборе
-Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm). Следующий пример выводит список всех экземпляров виртуальных машин в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите собственные значения для имен.
+Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, выполните командлет [Get-AzureRmVmssVM](/powershell/module/azurerm.compute/get-azurermvmssvm). Следующий пример выводит списки всех экземпляров виртуальных машин в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите собственные значения для имен.
 
 ```powershell
 Get-AzureRmVmssVM -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet"
@@ -60,7 +61,7 @@ $vmss = Get-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "my
 
 # Set and update the capacity of your scale set
 $vmss.sku.capacity = 5
-Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -VirtualMachineScaleSet $vmss 
+Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -VirtualMachineScaleSet $vmss
 ```
 
 На обновление емкости масштабируемого набора требуется несколько минут. При уменьшении емкости масштабируемого набора первыми удаляются виртуальные машины с наибольшим значением идентификатора экземпляра.
@@ -69,7 +70,7 @@ Update-AzureRmVmss -ResourceGroupName "myResourceGroup" -Name "myScaleSet" -Virt
 ## <a name="stop-and-start-vms-in-a-scale-set"></a>Остановка и запуск виртуальных машин в масштабируемом наборе
 Чтобы остановить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Stop-AzureRmVmss](/powershell/module/azurerm.compute/stop-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно остановить. Если не указать идентификатор экземпляра, останавливаются все виртуальные машины в масштабируемом наборе. Чтобы остановить несколько виртуальных машин, разделите идентификаторы экземпляров запятыми.
 
-Следующий пример останавливает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример останавливает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```powershell
 Stop-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "0"
@@ -81,7 +82,7 @@ Stop-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSe
 ### <a name="start-vms-in-a-scale-set"></a>Запуск виртуальных машин в масштабируемом наборе
 Чтобы запустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Start-AzureRmVmss](/powershell/module/azurerm.compute/start-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно запустить. Если не указать идентификатор экземпляра, запускаются все виртуальные машины в масштабируемом наборе. Чтобы запустить несколько виртуальных машин, разделите идентификаторы экземпляров запятыми.
 
-Следующий пример запускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример запускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```powershell
 Start-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "0"
@@ -91,7 +92,7 @@ Start-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleS
 ## <a name="restart-vms-in-a-scale-set"></a>Перезапуск виртуальных машин в масштабируемом наборе
 Чтобы перезапустить одну или несколько виртуальных машин в масштабируемом наборе, используйте командлет [Retart-AzureRmVmss](/powershell/module/azurerm.compute/restart-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно перезапустить. Если не указать идентификатор экземпляра, перезапускаются все виртуальные машины в масштабируемом наборе. Чтобы перезапустить несколько виртуальных машин, разделите идентификаторы экземпляров запятыми.
 
-Следующий пример перезапускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример перезапускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```powershell
 Restart-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "0"
@@ -101,7 +102,7 @@ Restart-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScal
 ## <a name="remove-vms-from-a-scale-set"></a>Удаление виртуальных машин из масштабируемого набора
 Чтобы удалить одну или несколько виртуальных машин из масштабируемого набора, используйте командлет [Remove-AzureRmVmss](/powershell/module/azurerm.compute/remove-azurermvmss). С помощью параметра `-InstanceId` можно указать одну или несколько виртуальных машин, которые нужно удалить. Если не указать идентификатор экземпляра, удаляются все виртуальные машины в масштабируемом наборе. Чтобы удалить несколько виртуальных машин, разделите идентификаторы экземпляров запятыми.
 
-Следующий пример удаляет экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример удаляет экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```powershell
 Remove-AzureRmVmss -ResourceGroupName "myResourceGroup" -VMScaleSetName "myScaleSet" -InstanceId "0"

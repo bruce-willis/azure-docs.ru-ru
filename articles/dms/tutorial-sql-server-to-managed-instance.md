@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 05/07/2018
-ms.openlocfilehash: bb7cc17c36809975e26c8da8beda004a0b0cfd9e
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 86af0101d84fe9cd44211a931567a85d7b5166e0
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32774154"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261616"
 ---
 # <a name="migrate-sql-server-to-azure-sql-database-managed-instance-using-dms"></a>Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance.md). Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
@@ -46,7 +46,7 @@ Azure Database Migration Service можно использовать для пе
 - Создайте Управляемый экземпляр Базы данных SQL Azure на портале Azure, следуя инструкциям из [этой статьи](https://aka.ms/sqldbmi).
 - Убедитесь, что для подключения к исходному серверу SQL Server и целевому управляемому экземпляру используются имена, входящие в серверную роль sysadmin.
 - Создайте общую сетевую папку, которую Azure Database Migration Service сможет использовать для резервного копирования базы данных-источника.
-- Предоставьте учетной записи службы, от имени которой выполняется исходный экземпляр SQL Server, права на запись в эту сетевую папку, а учетной записи компьютера для исходного сервера — права на чтение и запись для этой папки.
+- Предоставьте учетной записи службы, от имени которой выполняется исходный экземпляр SQL Server, права на запись в эту созданную сетевую папку, а учетной записи компьютера для исходного сервера — права на чтение и запись для этой папки.
 - Запишите имя пользователя и пароль учетной записи Windows, которой предоставлены полные права доступа к этой сетевой папке. Служба Azure Database Migration Service олицетворяет пользователя с этими учетными данными, чтобы отправить файлы резервных копий в контейнер службы хранилища Azure для операции восстановления.
 - Создайте контейнер больших двоичных объектов и получите его URI SAS, следуя инструкциям, приведенным в разделе [Получение SAS для контейнера больших двоичных объектов](https://docs.microsoft.com/azure/vs-azure-tools-storage-explorer-blobs#get-the-sas-for-a-blob-container), и не забудьте установить все разрешения (чтение, запись, удаление, перечисление) в окне политик при создании URI SAS. Это позволяет Azure Database Migration Service обращаться к контейнеру учетной записи хранения для отправки файлов резервных копий, которые используются для переноса баз данных в Управляемый экземпляр базы данных SQL Azure.
 

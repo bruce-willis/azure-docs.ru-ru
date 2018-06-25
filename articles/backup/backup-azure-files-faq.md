@@ -8,12 +8,12 @@ ms.date: 2/21/2018
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: f6dcaee1ac328a9bafce0561f421b772b7e1d119
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 7429516538c892bea04d38a98abcfb13ba960d22
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605174"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36286406"
 ---
 # <a name="questions-about-backing-up-azure-files"></a>Вопросы о резервном копировании файлов Azure
 В этой статье содержатся ответы на часто задаваемые вопросы о резервном копировании файлов Azure. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -23,7 +23,7 @@ ms.locfileid: "34605174"
 ## <a name="configuring-the-backup-job-for-azure-files"></a>Настройка задания резервного копирования файлов Azure
 
 ### <a name="why-cant-i-see-some-of-my-storage-accounts-i-want-to-protect-that-contain-valid-azure-file-shares-br"></a>Почему я не вижу некоторые учетные записи хранения, содержащие файловые ресурсы, которые требуется защитить в Azure? <br/>
-В предварительной версии службы Backup для файловых ресурсов Azure поддерживаются не все типы учетных записей хранения. Ознакомьтесь с [этим](troubleshoot-azure-files.md#preview-boundaries) списком, чтобы просмотреть поддерживаемые учетные записи хранения. Также вполне возможно, что учетная запись хранения, которую вы ищете, уже защищена или зарегистрирована в другом хранилище. [Отмените регистрацию](troubleshoot-azure-files.md#configuring-backup) в хранилище, чтобы найти учетную запись хранения, которую требуется защитить, в других хранилищах.
+В предварительной версии службы Backup для файловых ресурсов Azure поддерживаются не все типы учетных записей хранения. Ознакомьтесь с [этим](troubleshoot-azure-files.md#limitations-for-azure-file-share-backup-during-preview) списком, чтобы просмотреть поддерживаемые учетные записи хранения. Также вполне возможно, что учетная запись хранения, которую вы ищете, уже защищена или зарегистрирована в другом хранилище. [Отмените регистрацию](troubleshoot-azure-files.md#configuring-backup) в хранилище, чтобы найти учетную запись хранения, которую требуется защитить, в других хранилищах.
 
 ### <a name="why-cant-i-see-some-of-my-azure-file-shares-in-the-storage-account-when-im-trying-to-configure-backup-br"></a>Почему я не вижу некоторые файловые ресурсы Azure в учетной записи хранения при попытке настроить резервное копирование? <br/>
 Проверьте, не защищен ли файловый ресурс Azure в том же хранилище служб восстановления и не удален ли он.
@@ -39,13 +39,13 @@ ms.locfileid: "34605174"
 
 ### <a name="in-which-geos-can-i-back-up-azure-file-shares-br"></a>В каких географических областях можно выполнять резервное копирование файловых ресурсов Azure? <br/>
 Сейчас служба Backup для файловых ресурсов Azure находится в предварительной версии и доступна только в следующих географических регионах. 
--   Юго-Восточная Австралия (ASE). 
+-   Восточная Австралия (AE); 
+- Юго-Восточная Австралия (ASE). 
 - Южная Бразилия (BRS).
 - Центральная Канада (CNC).
 -   Восточная Канада (CE).
 -   Центральная часть США (CUS).
 -   Восточная Азия (EA).
--   Восточная Австралия (AE). 
 -   Восточная часть США (EUS).
 -   Восточная часть США 2 (EUS2).
 - Восточная Япония (JPE);

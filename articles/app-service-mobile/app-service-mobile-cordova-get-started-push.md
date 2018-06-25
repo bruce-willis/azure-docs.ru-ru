@@ -1,10 +1,10 @@
 ---
-title: "Добавление push-уведомлений в приложение Apache Cordova с помощью функции \"Мобильные приложения\" службы приложений Azure | Документация Майкрософт"
-description: "Использование функции \"Мобильные приложения\" для отправки push-уведомлений в приложение Apache Cordova."
+title: Добавление push-уведомлений в приложение Apache Cordova с помощью функции "Мобильные приложения" службы приложений Azure | Документация Майкрософт
+description: Использование функции "Мобильные приложения" для отправки push-уведомлений в приложение Apache Cordova.
 services: app-service\mobile
 documentationcenter: javascript
 manager: crdun
-editor: 
+editor: ''
 author: conceptdev
 ms.assetid: 92c596a9-875c-4840-b0e1-69198817576f
 ms.service: app-service-mobile
@@ -14,11 +14,12 @@ ms.devlang: javascript
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: 6af5fa51f2e6553431b9f0aa2dbb368651e7e209
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 13c1a53cfa3f998c9e3fa3ee1ee2dcec37357095
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34598000"
 ---
 # <a name="add-push-notifications-to-your-apache-cordova-app"></a>Добавление push-уведомлений в приложение Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
@@ -33,13 +34,13 @@ ms.lasthandoff: 02/21/2018
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-* Компьютер с [Visual Studio Community 2015][2] или более поздней версии. 
+* Компьютер с [Visual Studio Community 2015][2] или более поздней версии.
 * [Набор средств Visual Studio для Apache Cordova][4].
 * [Активная учетная запись Azure][3].
 * Завершенный [ознакомительный проект Apache Cordova][5].
 * Для Android — [учетная запись Google][6] с подтвержденным адресом электронной почты.
 * Для iOS — [участие в программе разработки решений для Apple][7] и устройство iOS (симулятор iOS не поддерживает push-уведомления).
-* Для Windows — [учетная запись разработчика приложений для Магазина Windows][8] и устройство с Windows 10.
+* Для Windows — [учетная запись разработчика приложений для Microsoft Store][8] и устройство с Windows 10.
 
 ## <a name="configure-hub"></a>Настройка концентратора уведомлений
 [!INCLUDE [app-service-mobile-configure-notification-hub](../../includes/app-service-mobile-configure-notification-hub.md)]

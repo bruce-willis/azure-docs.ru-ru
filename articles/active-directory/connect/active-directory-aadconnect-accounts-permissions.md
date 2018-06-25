@@ -13,14 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/27/2018
+ms.date: 06/06/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5a0574af04c118d466544d533561eb01639edfc6
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 30763f88a7d78678411abd7fe7cc6375e00cb6f6
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32159000"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34824274"
 ---
 # <a name="azure-ad-connect-accounts-and-permissions"></a>Azure AD Connect: учетные записи и разрешения
 Мастер установки Azure AD Connect предлагает два разных варианта.
@@ -186,9 +187,9 @@ ms.locfileid: "32159000"
 ### <a name="azure-ad-service-account"></a>Учетная запись службы Azure AD
 Создается учетная запись в Azure AD для использования службой синхронизации. Эту учетную запись можно определить по ее отображаемому имени.
 
-![Учетная запись AD](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccount.png)
+![Учетная запись AD](./media/active-directory-aadconnect-accounts-permissions/aadsyncserviceaccount2.png)
 
-Имя сервера, на котором используется учетная запись, можно определить по второй части имени пользователя. На этом рисунке серверу присвоено имя FABRIKAMCON. При наличии промежуточных серверов каждый из них имеет собственную учетную запись.
+Имя сервера, на котором используется учетная запись, можно определить по второй части имени пользователя. На этом рисунке серверу присвоено имя DC1. При наличии промежуточных серверов каждый из них имеет собственную учетную запись.
 
 При создании этой учетной записи службы используется длинный сложный пароль, который имеет неограниченный срок действия. Учетной записи назначается специальная роль **Учетная запись синхронизации каталогов** , которая имеет разрешения только на выполнение задач синхронизации каталогов. Эту встроенную роль можно назначить только в мастере Azure AD Connect. На портале Azure такая учетная запись отображается с ролью **Пользователь**.
 

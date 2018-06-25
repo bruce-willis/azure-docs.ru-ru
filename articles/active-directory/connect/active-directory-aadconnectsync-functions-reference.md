@@ -1,11 +1,11 @@
-﻿---
-title: "Синхронизация Azure AD Connect: справочник по функциям | Документация Майкрософт"
-description: "Общие сведения о выражениях декларативной подготовки в Azure AD Connect Sync"
+---
+title: 'Синхронизация Azure AD Connect: справочник по функциям | Документация Майкрософт'
+description: Общие сведения о выражениях декларативной подготовки в Azure AD Connect Sync
 services: active-directory
-documentationcenter: 
+documentationcenter: ''
 author: billmath
 manager: mtillman
-editor: 
+editor: ''
 ms.assetid: 4f525ca0-be0e-4a2e-8da1-09b6b567ed5f
 ms.service: active-directory
 ms.workload: identity
@@ -13,12 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9ce27ca217f99b4f12ca1af0b5a178f5d61a1c89
-ms.sourcegitcommit: f1c1789f2f2502d683afaf5a2f46cc548c0dea50
+ms.openlocfilehash: 4814d53a86b0d90cf16f76e75c7044448cf791eb
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34595161"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Синхронизация Azure AD Connect: справочник по функциям
 В службе Azure AD Connect функции используются для обработки значения атрибута во время синхронизации.  
@@ -1108,7 +1110,7 @@ Join и Split выполняют похожие функции. Функция J
 * Функция принимает каждое вхождение определенных источников и заменяет их целевыми объектами.
 * Источник должен состоять из ровно одного символа (в кодировке Юникод).
 * Источник не может быть пустым или длиннее одного символа (ошибка разбора).
-* Целевой объект может иметь несколько знаков, например ö:oe, β:ss.
+* Цель может содержать несколько знаков, например ö:oe, β:ss.
 * Целевой объект может быть пустым, это будет означать, что символ должен быть удален.
 * В источнике учитывается регистр, который должен точно совпадать.
 * Символы «,» (запятая) и «:» (двоеточие) являются зарезервированными символами и не могут быть заменены с помощью этой функции.

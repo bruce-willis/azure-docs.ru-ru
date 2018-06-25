@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: c4570e43c23ff7a23b5d6a97ebd6da0244ed6fb2
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 35391c8148246146eeb0c07bf57aea8a2a95d277
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34300732"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34594940"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-msi-to-access-azure-key-vault"></a>Руководство. Получение доступа к Azure Key Vault с помощью управляемого удостоверения службы (MSI) виртуальной машины Windows 
 
@@ -139,8 +139,9 @@ MSI на виртуальной машине позволяет получить
     
 После получения секрета из хранилища Key Vault, его можно использовать для аутентификации в службе, требующей имя пользователя и пароль. 
 
-## <a name="related-content"></a>Связанная информация
+## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в разделе [Управляемое удостоверение службы (MSI) для Azure Active Directory](overview.md).
+Из этого руководства вы узнали, как создать компонент "Управляемое удостоверение службы" и получить доступ к Azure Key Vault.  Дополнительные сведения об Azure Key Vault см. здесь:
 
-Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
+> [!div class="nextstepaction"]
+>[Хранилище ключей Azure](/azure/key-vault/key-vault-whatis)

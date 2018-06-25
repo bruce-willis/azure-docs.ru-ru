@@ -10,19 +10,19 @@ ms.topic: mirror-maker
 ms.custom: mvc
 ms.date: 05/07/2018
 ms.author: bahariri
-ms.openlocfilehash: 819071321d5609728e7c62abb5b25bf354107850
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 0693fc2fff5735fb2b3c0a9b8f1d3d256746f40d
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33941242"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35298327"
 ---
 # <a name="using-kafka-mirrormaker-with-event-hubs-for-kafka-ecosystems"></a>Использование Kafka MirrorMaker с концентраторами событий для экосистем Kafka
 
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs).
 
-Одним из важных аспектов для современных облачных приложений является возможность обновления, улучшения и изменения инфраструктуры без прерывания работы службы. В этом учебнике показано, каким образом концентратор событий с поддержкой Kafka и средство Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure путем зеркального отображения входного потока Kafka в службе концентратора событий. 
+Одним из важных аспектов для современных облачных приложений является возможность обновления, улучшения и изменения инфраструктуры без прерывания работы службы. В этом руководстве показано, каким образом концентратор событий с поддержкой Kafka и средство Kafka MirrorMaker могут интегрировать существующий конвейер Kafka в Azure путем зеркального отображения базы данных входного потока Kafka в службу концентраторов событий. 
 
 Конечная точка Kafka концентраторов событий Azure позволяет подключаться к концентраторам событий Azure с помощью протокола Kafka (т. е. клиентов Kafka). После внесения минимальных изменений в приложение Kafka вы сможете подключаться к концентраторам событий Azure и пользоваться преимуществами экосистемы Azure. Сейчас концентраторы событий на основе Kafka поддерживают Kafka 1.0 и более поздние версии.
 
@@ -40,7 +40,7 @@ ms.locfileid: "33941242"
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив Maven.
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
-* [Git.](https://www.git-scm.com/downloads)
+* [Git](https://www.git-scm.com/downloads)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
 
 ## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен концентраторов событий
@@ -68,7 +68,7 @@ cd azure-event-hubs/samples/kafka/mirror-maker
 
 ### <a name="configuration"></a>Параметр Configuration
 
-Чтобы настроить средство Kafka MirrorMaker, назначьте ему кластер Kafka в качестве потребителя или исходного кластера и концентратор событий с поддержкой Kafka в качестве производителя или конечного объекта.
+Чтобы настроить средство Kafka MirrorMaker, назначьте ему кластер Kafka в качестве потребителя или источника и концентратор событий с поддержкой Kafka в качестве производителя или конечного объекта.
 
 #### <a name="consumer-configuration"></a>Конфигурация потребителя
 
@@ -113,6 +113,7 @@ bin/kafka-mirror-maker.sh --consumer.config source-kafka.config --num.streams 1 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Сведения о концентраторах событий](event-hubs-what-is-event-hubs.md)
+* [Что такое концентраторы событий?](event-hubs-what-is-event-hubs.md)
 * [Сведения о концентраторах событий для экосистемы Kafka](event-hubs-for-kafka-ecosystem-overview.md)
 * Дополнительные сведения о [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для потоковой передачи событий из локальной системы Kafka в концентраторы событий с поддержкой Kafka в облаке.
+* Узнайте, как выполнять потоковую передачу в концентраторы событий с поддержкой Kafka с помощью [собственных приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md), [платформы Apache Flink](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).

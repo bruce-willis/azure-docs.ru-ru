@@ -1,26 +1,23 @@
 ---
-title: Использование браузера и представления заданий в Azure Data Lake Analytics | Документация Майкрософт
-description: 'Узнайте, как использовать браузер и представление для заданий Azure Data Lake Analytics. '
+title: Использование обозревателя и представления заданий Azure Data Lake Analytics
+description: В этой статье описано, как использовать обозреватель и представление заданий Azure Data Lake Analytics.
 services: data-lake-analytics
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: bdf27b4d-6f58-4093-ab83-4fa3a99b5650
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
+author: jasonwhowell
+ms.author: jasonh
+manager: kfile
+editor: jasonwhowell
+ms.assetid: bdf27b4d-6f58-4093-ab83-4fa3a99b5650
+ms.topic: conceptual
 ms.date: 08/02/2017
-ms.author: jgao
-ms.openlocfilehash: cc9048566dd58733cd86aac0f9836763fa095843
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 6d7ebc8d14e82281e074ff52abd41a16871470c0
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34623236"
 ---
-# <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics-jobs"></a>Использование браузера и представления для заданий Azure Data Lake Analytics
+# <a name="use-job-browser-and-job-view-for-azure-data-lake-analytics"></a>Использование обозревателя и представления заданий Azure Data Lake Analytics
 Служба Azure Data Lake Analytics архивирует отправленные задания в [хранилище запросов](#query-store). В этой статье вы узнаете, как использовать браузер и представление заданий в средствах Azure Data Lake для Visual Studio, чтобы находить исторические сведения о заданиях. 
 
 По умолчанию служба Data Lake Analytics архивирует задания на 30 дней. Срок хранения можно настроить на портале Azure в настраиваемой политике окончания срока действия. Доступ к данным задания по истечении этого срока невозможен. 

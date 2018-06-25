@@ -2,17 +2,17 @@
 title: Создание среды службы "Аналитика временных рядов Azure"
 description: Здесь описано, как создать среду службы "Аналитика временных рядов" и заполнить ее данными из имитированных устройств.
 services: time-series-insights
-author: BryanLa
+author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
 ms.date: 06/04/2018
 ms.author: bryanla
-ms.openlocfilehash: 434f9f7890b909746fd1a0f72a2dea5d7bb27e92
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: b57e688b5f830c8c7d34315a68be94e4e4c99466
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301360"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36295853"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство. Создание среды службы "Аналитика временных рядов Azure"
 
@@ -230,9 +230,9 @@ ms.locfileid: "35301360"
 > * запуск имитации устройств для потоковой передачи данных в среду TSI;
 > * проверка имитированных данных телеметрии.
 
-Теперь вы умеете создавать среду TSI и готовы перейти к изучению процесса планирования, описанного в следующей статье:
+Теперь, когда вы знаете, как создать среду TSI, перейдите к сведениям о создании веб-приложения, которое использует данные из среды TSI:
 
 > [!div class="nextstepaction"]
-> [Планирование среды Аналитики временных рядов Azure](time-series-insights-environment-planning.md)
+> [Создание одностраничного веб-приложения службы "Аналитика временных рядов Azure"](tutorial-create-tsi-sample-spa.md)
 
 

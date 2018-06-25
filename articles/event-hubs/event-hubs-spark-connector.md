@@ -3,7 +3,7 @@ title: Интеграция Apache Spark с концентраторами со�
 description: Интеграция с Apache Spark для обеспечения структурированной потоковой передачи с помощью концентраторов событий
 services: event-hubs
 documentationcenter: na
-author: ShubhaVijayasarathy
+author: sethmanheim
 manager: timlt
 editor: ''
 ms.service: event-hubs
@@ -11,22 +11,22 @@ ms.devlang: java
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/05/2018
-ms.author: shvija
-ms.openlocfilehash: 09790852d28f2f68e854b37256ca1c8edba992e6
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.date: 05/21/2018
+ms.author: sethm
+ms.openlocfilehash: 9f1cf75fdea1dd7f5842c2efdaeca663d611065c
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32311300"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34626927"
 ---
 # <a name="integrating-apache-spark-with-azure-event-hubs"></a>Интеграция Apache Spark с концентраторами событий Azure
 
 Концентраторы событий Azure плавно интегрируются с [Apache Spark](https://spark.apache.org/) для создания распределенных потоковых приложений. Такая интеграция поддерживается для [Spark Core](http://spark.apache.org/docs/latest/rdd-programming-guide.html), [Spark Streaming](http://spark.apache.org/docs/latest/streaming-programming-guide.html) и [Structured Streaming](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html). Соединитель службы "Концентраторы событий" для Apache Spark можно найти на [GitHub](https://github.com/Azure/azure-event-hubs-spark). Эту библиотеку также можно использовать в проектах Maven из [центрального репозитория Maven](http://search.maven.org/#artifactdetails%7Ccom.microsoft.azure%7Cazure-eventhubs-spark_2.11%7C2.1.6%7C).
 
-В этой статье показано, как создать непрерывное приложение в [Azure Databricks](https://azure.microsoft.com/services/databricks/). Хотя в этой статье используется [Azure Databricks](https://azure.microsoft.com/services/databricks/), кластеры Spark также доступны с [HDInsight](../hdinsight/spark/apache-spark-overview.md).
+В этой статье показано, как создать непрерывное приложение в [Azure Databricks](https://azure.microsoft.com/services/databricks/). Хотя в этой статье используется Azure Databricks, кластеры Spark также доступны с [HDInsight](../hdinsight/spark/apache-spark-overview.md).
 
-В примере ниже используются две записные книжки Scala: одна для потоковой передачи событий из концентратора событий, а другая для отправки событий в него.
+В примере в этой статье используются две записные книжки Scala: одна для потоковой передачи событий из концентратора событий, а другая для отправки событий в него.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -61,7 +61,7 @@ eventhubs.writeStream
   .start()
   .awaitTermination()
 ```
-В этом примере кода события отправляются в концентратор событий с использованием API пакета Spark. Кроме того, для отправки событий в концентратор событий можно написать запрос потоковой передачи.
+В этом коде события отправляются в концентратор событий с использованием API пакета Spark. Кроме того, для отправки событий в концентратор событий можно написать запрос потоковой передачи.
 
 ```scala
 import org.apache.spark.eventhubs._
@@ -81,7 +81,7 @@ val bodyColumn = concat(lit("random nunmber: "), rand()).as("body")
 val df = spark.range(200).select(bodyColumn)
 df.write
   .format("eventhubs")
-  .options(eventHubsConf.toMap)
+  .options(ehConf.toMap)
   .save() 
 ```
 

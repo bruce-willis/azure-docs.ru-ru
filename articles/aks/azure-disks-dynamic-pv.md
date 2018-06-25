@@ -8,11 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/06/2018
 ms.author: nepeters
-ms.openlocfilehash: 858961db439b28a71d3475d2608073287e02f2fd
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 3841222d08b23f43f69e77fa43c469793b70ce63
+ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34801387"
 ---
 # <a name="persistent-volumes-with-azure-disks"></a>Постоянные тома с дисками Azure
 
@@ -37,11 +38,14 @@ default (default)   kubernetes.io/azure-disk   1h
 managed-premium     kubernetes.io/azure-disk   1h
 ```
 
+> [!NOTE]
+> Утверждения постоянных томов указаны в ГиБ, но счета за использование управляемых дисков Azure выставляются по номеру SKU для определенного размера. Эти номера SKU варьируются от 32 ГиБ для дисков S4 или P4 и до 4 ТиБ для дисков S50 или P50. Кроме того, число операций ввода-вывода в секунду и пропускная способность управляемого диска уровня "Премиум" зависят как от номера SKU, так и от размера экземпляров узлов в кластере AKS. Дополнительные сведения см. на странице [Цены на управляемые диски][managed-disk-pricing-performance].
+
 ## <a name="create-persistent-volume-claim"></a>Создание утверждения постоянного тома
 
 Утверждение постоянного тома (PVC) используется для автоматической подготовки хранилища на основе класса хранения. В этом случае утверждение постоянного тома может использовать один из предварительно созданных классов хранения для создания управляемого диска Azure уровня "Стандартный" или "Премиум".
 
-Создайте файл `azure-premimum.yaml` и скопируйте в него следующий манифест.
+Создайте файл `azure-premium.yaml` и скопируйте в него следующий манифест.
 
 Обратите внимание на то, что класс хранения `managed-premium` указан в заметке и утверждение запрашивает диск емкостью `5GB` с правами доступа `ReadWriteOnce`.
 
@@ -63,7 +67,7 @@ spec:
 Создайте утверждение постоянного тома с помощью команды [kubectl apply][kubectl-apply].
 
 ```azurecli-interactive
-kubectl apply -f azure-premimum.yaml
+kubectl apply -f azure-premium.yaml
 ```
 
 ## <a name="using-the-persistent-volume"></a>Использование постоянного тома
@@ -103,16 +107,17 @@ kubectl apply -f azure-pvc-disk.yaml
 Узнайте больше о постоянных томах Kubernetes, использующих диски Azure.
 
 > [!div class="nextstepaction"]
-> [Storage Classes][kubernetes-disk] (Классы хранения)
+> [Storage Classes][azure-disk-volume] (Классы хранения)
 
 <!-- LINKS - external -->
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
-[kubernetes-disk]: https://kubernetes.io/docs/concepts/storage/storage-classes/#new-azure-disk-storage-class-starting-from-v172
 [kubernetes-storage-classes]: https://kubernetes.io/docs/concepts/storage/storage-classes/
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
+[managed-disk-pricing-performance]: https://azure.microsoft.com/pricing/details/managed-disks/
 
 <!-- LINKS - internal -->
+[azure-disk-volume]: azure-disk-volume.md 
 [azure-files-pvc]: azure-files-dynamic-pv.md
 [premium-storage]: ../virtual-machines/windows/premium-storage.md

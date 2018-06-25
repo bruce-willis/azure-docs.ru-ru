@@ -1,32 +1,28 @@
 ---
 title: Подключение к SQL Server или Базе данных SQL Azure из Azure Logic Apps | Документация Майкрософт
-description: Подключение к SQL Server на локальном компьютере и Базе данных SQL Azure в облаке из Azure Logic Apps
-services: logic-apps
-documentationcenter: ''
+description: Как получать доступ к базам данных SQL и управлять ими в локальной среде или в облаке путем автоматизации рабочих процессов с помощью Azure Logic Apps
 author: ecfan
-manager: cfowler
-editor: ''
-tags: connectors
-ms.assetid: d8a319d0-e4df-40cf-88f0-29a6158c898c
-ms.service: logic-apps
-ms.workload: logic-apps
-ms.devlang: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.date: 05/15/2018
+manager: jeconnoc
 ms.author: estfan
-ms.openlocfilehash: 4917f784c07919155e006711026899ce7712fecb
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.date: 05/15/2018
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, LADocs
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: dccb91c782408a5fed5c3ef1b68f9918823ce402
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34164804"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35296294"
 ---
 # <a name="connect-to-sql-server-or-azure-sql-database-from-azure-logic-apps"></a>Подключение к SQL Server или Базе данных SQL Azure из Azure Logic Apps
 
-В этой статье описано, как получить доступ к данным в базе данных SQL из приложения логики с помощью соединителя SQL Server. Таким образом можно создавать приложения логики, которые автоматизируют задачи и рабочие процессы для управления данными. Соединитель можно использовать как для [SQL Server на локальном компьютере](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation), так и для [Базы данных SQL Azure в облаке](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview). 
+В этой статье описано, как получить доступ к данным в базе данных SQL из приложения логики с помощью соединителя SQL Server. Так вы можете автоматизировать задачи, процессы и рабочие процессы, которые управляют данными и ресурсами SQL, путем создания приложений логики. Соединитель можно использовать как для [SQL Server на локальном компьютере](https://docs.microsoft.com/sql/sql-server/sql-server-technical-documentation), так и для [Базы данных SQL Azure в облаке](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview). 
 
-Вы можете создавать приложения логики, которые активируются событиями в Базе данных SQL или в других системах, таких как Dynamics CRM Online. Приложения логики могут получать, вставлять или удалять данные, а также выполнять хранимые процедуры и запросы SQL. Например, вы можете создать приложение логики, которое автоматически проверяет наличие новых записей в Dynamics CRM Online, добавляет элементы в Базу данных SQL для новых записей, а затем отправляет оповещения по электронной почте.
+Вы можете создавать приложения логики, которые активируются событиями в базе данных SQL или в других системах, таких как Dynamics CRM Online. Приложения логики могут получать, вставлять или удалять данные, а также выполнять хранимые процедуры и запросы SQL. Например, вы можете создать приложение логики, которое автоматически проверяет наличие новых записей в Dynamics CRM Online, добавляет элементы в Базу данных SQL для новых записей, а затем отправляет оповещения по электронной почте.
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">зарегистрируйтесь для получения бесплатной учетной записи Azure</a>. Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md). См. технические сведения о <a href="https://docs.microsoft.com/connectors/sql/" target="blank">соединителях SQL Server</a>.
 

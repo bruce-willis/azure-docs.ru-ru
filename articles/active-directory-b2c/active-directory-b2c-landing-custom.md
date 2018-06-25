@@ -1,23 +1,24 @@
 ---
-title: Azure Active Directory B2C. Целевая страница пользовательских политик | Документация Майкрософт
+title: Пользовательские политики Azure Active Directory B2C | Документация Майкрософт
 description: Разработка потребительских приложений с Azure Active Directory B2C с помощью пользовательских политик.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 5/06/2017
 ms.author: davidmu
-ms.openlocfilehash: f3db8c80d6faef3af0909efb7306dd7aa0336ab0
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: 0a22731f5e047a29e1b9287c6e89b1dc37291f3a
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34712357"
 ---
-# <a name="azure-active-directory-b2c-sign-up-and-sign-in-consumers-in-your-applications-using-custom-policies"></a>Azure Active Directory B2C. Регистрация и вход пользователей в приложения с помощью пользовательских политик
+# <a name="sign-up-and-sign-in-consumers-in-your-applications-using-custom-policies-in-azure-active-directory-b2c"></a>Регистрация и вход пользователей в приложения с помощью пользовательских политик в Azure Active Directory B2C
+
 Пользовательские политики — это файлы конфигурации, которые определяют поведение вашего клиента Azure AD B2C. Разработчик удостоверений может полностью их изменять для выполнения практически неограниченного количества задач.
 
 ## <a name="how-to-articles"></a>Статьи с инструкциями

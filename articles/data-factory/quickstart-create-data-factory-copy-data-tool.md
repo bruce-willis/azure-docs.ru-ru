@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: hero-article
-ms.date: 01/16/2018
+ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: aea76544f244adba8368a1d8fbe268746060b5a6
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 23d4afffbe108d439dd53d95ed81f7d9fc4246ef
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30169831"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36284580"
 ---
 # <a name="use-the-copy-data-tool-to-copy-data"></a>Копирование данных с помощью средства копирования данных 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
@@ -33,7 +33,7 @@ ms.locfileid: "30169831"
 
 [!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 1. В меню слева выберите **Создать**, **Данные+аналитика**, **Фабрика данных**. 
    
@@ -71,69 +71,73 @@ ms.locfileid: "30169831"
 1. Чтобы запустить средство копирования данных, на странице **Let's get started** (Начало работы) выберите элемент **Копирование данных**. 
 
    ![Элемент "Копирование данных"](./media/quickstart-create-data-factory-copy-data-tool/copy-data-tool-tile.png)
-2. На странице **Свойства** для средства копирования данных выберите **Далее**. На этой странице можно указать имя и описание конвейера. 
+
+2. На странице **Свойства** средства копирования данных можно указать имя и описание конвейера, а затем нажать кнопку **Далее**. 
 
    ![Страница "Свойства"](./media/quickstart-create-data-factory-copy-data-tool/copy-data-tool-properties-page.png)
-3. На странице **исходного хранилища данных** выберите **Хранилище BLOB-объектов Azure**, а затем выберите **Далее**.
+3. На странице **Исходное хранилище данных** сделайте следующее:
 
-   ![Страница "Исходное хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/source-data-store-page.png)
-4. На странице **Specify the Azure Blob storage account** (Указание учетной записи хранилища BLOB-объектов Azure) выберите учетную запись из списка **Имя учетной записи хранения**, а затем щелкните **Далее**. 
+    a. Нажмите кнопку **+Создать подключение**, чтобы добавить подключение.
 
-   ![Страница Specify the Azure Blob storage account (Указание учетной записи хранилища BLOB-объектов Azure)](./media/quickstart-create-data-factory-copy-data-tool/specify-blob-storage-account.png)
-5. На странице **Choose the input file or folder** (Выбор входного файла или папки) выполните следующие действия:
+    ![Страница "Исходное хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/new-source-linked-service.png)
 
-   a. Перейдите в папку **adftutorial/input**.
+    Б. В коллекции выберите **Хранилище BLOB-объектов Azure**, а затем нажмите кнопку **Далее**.
 
-   Б. Выберите файл **emp.txt**.
+    ![Выбор хранилища BLOB-объектов из коллекции](./media/quickstart-create-data-factory-copy-data-tool/select-blob-source.png)
 
-   c. Выберите пункт **Выбор**. Вместо этого можно просто дважды щелкнуть файл **emp.txt**.
+    c. На странице **Specify the Azure Blob storage account** (Указание учетной записи хранилища BLOB-объектов Azure) выберите учетную запись из списка **Имя учетной записи хранения**, а затем щелкните **Далее**. 
 
-   d. Щелкните **Далее**. 
+   ![Настройка учетной записи хранилища BLOB-объектов Azure](./media/quickstart-create-data-factory-copy-data-tool/configure-blob-storage.png)
 
-   ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/choose-input-file-folder.png)
-6. На странице **File format settings** (Параметры формата файла) убедитесь, что средство правильно автоматически определило разделители столбцов и строк, и выберите **Далее**. Кроме того, на этой странице вы можете просмотреть данные и схемы входных данных. 
+   d. Выберите созданную связанную службу в качестве источника, а затем нажмите кнопку **Далее**.
 
-   ![Страница File format settings (Параметры формата файла)](./media/quickstart-create-data-factory-copy-data-tool/file-format-settings-page.png)
-7. На странице **целевого хранилища данных** выберите **Хранилище BLOB-объектов Azure**, затем **Далее**. 
+   ![Выбор исходной связанной службы](./media/quickstart-create-data-factory-copy-data-tool/select-source-linked-service.png)
 
-   ![Страница "Целевое хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/destination-data-store-page.png)    
-8. На странице **Specify the Azure Blob storage account** (Указание учетной записи хранилища BLOB-объектов Azure) выберите имя учетной записи хранения, а затем выберите **Далее**. 
 
-   ![Страница Specify the Azure Blob storage account (Указание учетной записи хранилища BLOB-объектов Azure)](./media/quickstart-create-data-factory-copy-data-tool/specify-sink-blob-storage-account.png)
-9. На странице **Choose the output file or folder** (Выбор целевого файла или папки) выполните следующие действия: 
+4. На странице **Choose the input file or folder** (Выбор входного файла или папки) выполните следующие действия:
 
-   a. Введите **adftutorial/output** в поле пути к папке.
+   a. Нажмите кнопку **Обзор**, чтобы перейти к папке **adftutorial/input**, выделите файл **emp.txt** и щелкните **Выбрать**. 
 
-   Б. Введите **emp.txt** в поле имени файла.
+   ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/configure-source-path.png)
 
-   c. Щелкните **Далее**. 
+   d. Установите флажок **Двоичное копирование**, чтобы скопировать файл как есть, и нажмите кнопку **Далее**. 
 
-   ![Страница Choose the output file or folder (Выбор целевого файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/choose-output-file-folder.png) 
-10. На странице **File format settings** (Параметры формата файла) выберите **Далее**. 
+   ![Страница Choose the input file or folder (Выбор входного файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/select-binary-copy.png)
 
-    ![Страница File format settings (Параметры формата файла)](./media/quickstart-create-data-factory-copy-data-tool/file-format-settings-output-page.png)
-11. На странице **Параметры** выберите **Далее**. 
 
-    ![Страница "Параметры"](./media/quickstart-create-data-factory-copy-data-tool/advanced-settings-page.png)
-12. Проверьте все параметры на странице **Summary** (Сводка) и выберите **Далее**. 
+5. На странице **целевого хранилища данных** выберите созданную связанную службу **Хранилище BLOB-объектов Azure** и нажмите кнопку **Далее**. 
+
+   ![Страница "Целевое хранилище данных"](./media/quickstart-create-data-factory-copy-data-tool/select-sink-linked-service.png)
+
+6. На странице **Выбор целевого файла или папки** укажите путь к папке **adftutorial/output** и нажмите кнопку **Далее**. 
+
+   ![Страница Choose the output file or folder (Выбор целевого файла или папки)](./media/quickstart-create-data-factory-copy-data-tool/configure-sink-path.png) 
+
+7. На странице **Параметры** нажмите кнопку **Далее**, чтобы использовать настройки по умолчанию. 
+
+8. Проверьте все параметры на странице **Сводка** и нажмите кнопку **Далее**. 
 
     ![Страница Summary (Сводка)](./media/quickstart-create-data-factory-copy-data-tool/summary-page.png)
-13. На странице **Deployment complete** (Развертывание завершено) щелкните **Monitor** (Мониторинг), чтобы отслеживать созданный конвейер. 
+
+9. На странице **Deployment complete** (Развертывание завершено) щелкните **Monitor** (Мониторинг), чтобы отслеживать созданный конвейер. 
 
     ![Страница Deployment complete (Завершение развертывания)](./media/quickstart-create-data-factory-copy-data-tool/deployment-page.png)
-14. Приложение переключится на вкладку **Мониторинг**. На этой вкладке можно увидеть состояние конвейера. Щелкните **Обновить**, чтобы обновить список. 
+
+10. Приложение переключится на вкладку **Мониторинг**. На этой вкладке можно увидеть состояние конвейера. Щелкните **Обновить**, чтобы обновить список. 
     
-    ![Вкладка для наблюдения за запуском конвейера с кнопкой "Обновить"](./media/quickstart-create-data-factory-copy-data-tool/monitor-pipeline-runs-page.png)
-15. Выберите ссылку **View Activity Runs** (Просмотр запусков действий) в столбце **Действия**. Наш конвейер содержит только одно действие типа **Копирование**. 
+    ![Мониторинг выполнения конвейера](./media/quickstart-create-data-factory-copy-data-tool/pipeline-monitoring.png)
 
-    ![Список выполненных действий](./media/quickstart-create-data-factory-copy-data-tool/activity-runs.png)
-16. Чтобы просмотреть сведения об операции копирования, щелкните ссылку **Сведения** (изображение очков) в столбце **Действия**. Дополнительные сведения о свойствах см. в [обзоре действия копирования](copy-activity-overview.md). 
+11. Выберите ссылку **View Activity Runs** (Просмотр запусков действий) в столбце **Действия**. Наш конвейер содержит только одно действие типа **Копирование**. 
 
-    ![Сведения об операции копирования](./media/quickstart-create-data-factory-copy-data-tool/copy-operation-details.png)
-17. Убедитесь, что файл **emp.txt** создан в папке **output** в контейнере **adftutorial**. Если указанной папки выходных данных нет, она будет автоматически создана в службе "Фабрика данных". 
-18. Перейдите на вкладку **Изменить**, чтобы редактировать связанные службы, наборы данных и конвейеры. Дополнительные сведения об их изменении в пользовательском интерфейсе фабрики данных см. в статье [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md).
+    ![Мониторинг выполнения действий](./media/quickstart-create-data-factory-copy-data-tool/activity-monitoring.png)
+    
+12. Чтобы просмотреть сведения об операции копирования, щелкните ссылку **Сведения** (изображение очков) в столбце **Действия**. Дополнительные сведения о свойствах см. в [обзоре действия копирования](copy-activity-overview.md).
 
-    ![Вкладка редактирования](./media/quickstart-create-data-factory-copy-data-tool/edit-tab.png)
+    ![Сведения об операции копирования](./media/quickstart-create-data-factory-copy-data-tool/activity-execution-details.png)
+
+13. Убедитесь, что файл **emp.txt** создан в папке **output** в контейнере **adftutorial**. Если указанной папки выходных данных нет, она будет автоматически создана в службе "Фабрика данных". 
+
+14. Перейдите на вкладку **Автор**, расположенную над вкладкой **мониторинга** на панели слева. Там вы сможете изменять связанные службы, наборы данных и конвейеры. Дополнительные сведения об их изменении в пользовательском интерфейсе фабрики данных см. в статье [Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"](quickstart-create-data-factory-portal.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-portal.md), чтобы узнать об использовании фабрики данных в различных сценариях. 

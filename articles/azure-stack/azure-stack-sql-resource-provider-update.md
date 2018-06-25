@@ -1,6 +1,6 @@
 ---
-title: Использование баз данных SQL в Azure Stack | Документация Майкрософт
-description: Узнайте, как развернуть базы данных SQL в качестве службы для Azure Stack, и изучите простую процедуру развертывания адаптера поставщика ресурсов SQL Server.
+title: Обновление поставщика ресурсов SQL в Azure Stack | Документация Майкрософт
+description: Узнайте, как обновить поставщика ресурсов SQL в Azure Stack.
 services: azure-stack
 documentationCenter: ''
 author: jeffgilb
@@ -11,18 +11,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2018
+ms.date: 06/11/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: 9154f509f9019c28515970869678aa6633d16163
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 3a7656e54181c8e8e7b6b1bd39f80ce8ed01c807
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33206175"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294866"
 ---
-# <a name="update-the-sql-resource-provider-adapter"></a>Обновление адаптера поставщика ресурсов SQL
-При обновлении сборки Azure Stack может быть выпущен новый адаптер поставщика ресурсов SQL. Имеющийся адаптер может продолжать работу. Тем не менее мы рекомендуем как можно скорее обновить его до последней сборки. Обновления необходимо устанавливать в определенном порядке: версии пропускать нельзя (изучите список версий в разделе [Предварительные требования](.\azure-stack-sql-resource-provider-deploy.md#prerequisites)).
+# <a name="update-the-sql-resource-provider"></a>Обновление поставщика ресурсов SQL
+При обновлении сборки Azure Stack может быть выпущен новый поставщик ресурсов SQL. Имеющийся адаптер может продолжать работу. Тем не менее мы рекомендуем как можно скорее обновить его до последней сборки. Обновления необходимо устанавливать в определенном порядке: версии пропускать нельзя (изучите список версий в разделе [Предварительные требования](.\azure-stack-sql-resource-provider-deploy.md#prerequisites)).
 
 Чтобы обновить поставщик ресурсов, воспользуйтесь сценарием *UpdateSQLProvider.ps1*. Этот процесс очень похож на процесс установки поставщика ресурсов, который описан в разделе [Развертывание поставщика ресурсов SQL](.\azure-stack-sql-resource-provider-deploy.md). Сценарий входит в состав скачиваемых ресурсов поставщика ресурсов.
 
@@ -38,10 +38,9 @@ ms.locfileid: "33206175"
 > Этот процесс обновления применим только к интегрированным системам.
 
 ```powershell
-# Install the AzureRM.Bootstrapper module, set the profile, and install the AzureRM and AzureStack modules.
+# Install the AzureRM.Bootstrapper module and set the profile.
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2017-03-09-profile
-Install-Module -Name AzureStack -RequiredVersion 1.2.11 -Force
 
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time.
 $domain = "AzureStack"

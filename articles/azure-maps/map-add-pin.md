@@ -1,22 +1,20 @@
 ---
 title: Добавление маркера с помощью службы "Карты Azure" | Документация Майкрософт
 description: Как добавить маркер на карту в JavaScript
-services: azure-maps
-keywords: ''
-author: jinzh-azureiot
+author: jingjing-z
 ms.author: jinzh
 ms.date: 05/07/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: azure-maps
-documentationcenter: ''
-manager: timlt
-ms.devlang: na
+services: azure-maps
+manager: ''
 ms.custom: codepen
-ms.openlocfilehash: 189b30ff0b5c47d0a4bd3181c8eb2143213ad6cd
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 094abe08c0c88c7561185675ceb8529be2c87a0a
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294654"
 ---
 # <a name="add-pins-to-the-map"></a>Добавление маркеров на карту
 
@@ -35,4 +33,9 @@ ms.lasthandoff: 05/07/2018
 
 Дополнительные сведения о классах и методах, которые используются в этой статье: 
 * класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest);
-    * метод [addPins](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addpins).
+    * [addPins](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addpins).
+    
+Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
+* [Добавление контекстного меню](./map-add-popup.md)
+* [Добавление фигуры](./map-add-shape.md)
+

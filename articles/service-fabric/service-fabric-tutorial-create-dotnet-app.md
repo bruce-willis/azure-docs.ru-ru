@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/30/2018
+ms.date: 06/15/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: df455f46e5fbc6bc1a4a7f0c30eac1bb185dea3d
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: a1197277b97c14e95bdab67f7c3d00b75a841f22
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32312701"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36267580"
 ---
 # <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по созданию и развертыванию приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
 Это руководство представляет первую часть цикла.  Здесь описывается, как создать приложение Azure Service Fabric с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния для хранения данных. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения ASP.NET Core, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](#walkthrough_anchor).  При желании вы можете просмотреть [видео-инструкцию](https://channel9.msdn.com/Events/Connect/2017/E100) к этому руководству.
@@ -74,9 +74,21 @@ ms.locfileid: "32312701"
    ![Обозреватель решений после создания приложения и службы веб-API ASP.NET Core]( ./media/service-fabric-tutorial-create-dotnet-app/solution-explorer-aspnetcore-service.png)
 
 ### <a name="add-angularjs-to-the-votingweb-service"></a>Добавление AngularJS в службу VotingWeb
-Добавьте [AngularJS](http://angularjs.org/) в службу, использующую [поддержку Bower](/aspnet/core/client-side/bower). Сначала добавьте файл конфигурации Bower в проект.  В обозревателе решений щелкните правой кнопкой мыши **VotingWeb** и выберите **Add (Добавить) -> New Item (Новый элемент)**. Выберите **Web** (Интернет) и затем **Bower Configuration File** (Файл конфигурации Bower).  Создастся файл *bower.json*.
+Добавьте [AngularJS](http://angularjs.org/) в службу, использующую [поддержку Bower](/aspnet/core/client-side/bower). Сначала добавьте в проект файл параметров *.bowerrc*.  В обозревателе решений щелкните правой кнопкой мыши **VotingWeb** и выберите **Add (Добавить) -> New Item (Новый элемент)**. Последовательно выберите **C#** и **JSON-файл**.  Введите **.bowerrc** в поле *Имя* и щелкните **Добавить**.
 
-Откройте файл *bower.json* и добавьте записи для компонентов Angular и Angular Bootstrap, а затем сохраните изменения.
+Откройте *.bowerrc* и замените содержимое приведенным ниже кодом. В нем указано, что Bower должен установить ресурсы пакета в каталог *wwwroot/lib*.
+
+```json
+{
+ "directory": "wwwroot/lib"
+}
+```
+
+Сохраните изменения в *.bowerrc*.  После этого в вашем проекте будет создан файл *.bowerrc*.  
+
+Далее добавьте в проект файл конфигурации Bower.  В обозревателе решений щелкните правой кнопкой мыши **VotingWeb** и выберите **Add (Добавить) -> New Item (Новый элемент)**. Последовательно выберите **C#** и **JSON-файл**.  Введите **bower.json** в поле *Имя* щелкните **Добавить**.
+
+Откройте файл *bower.json* и замените содержимое приведенными ниже записями для компонентов Angular и Angular Bootstrap, а затем сохраните изменения.
 
 ```json
 {
@@ -92,7 +104,8 @@ ms.locfileid: "32312701"
   }
 }
 ```
-После сохранения файла *bower.json* компонент Angular будет установлен в папке *wwwroot/lib* проекта. Также компонент появится в папке *Dependencies/Bower*.
+
+После сохранения файла *bower.json* с помощью средств поддержки Bower в Visual Studio в папку проекта *wwwroot/lib* будет установлен компонент Angular. Также компонент появится в папке *Dependencies/Bower*.
 
 ### <a name="update-the-sitejs-file"></a>Обновление файла site.js
 Откройте файл *wwwroot/js/site.js*.  Замените его содержимое кодом JavaScript, используемым в представлениях Home:

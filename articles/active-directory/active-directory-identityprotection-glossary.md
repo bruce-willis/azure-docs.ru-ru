@@ -1,13 +1,14 @@
 ---
-title: "Глоссарий по защите идентификации Azure Active Directory | Документация Майкрософт"
-description: "Глоссарий по защите идентификации Azure Active Directory"
+title: Глоссарий по защите идентификации Azure Active Directory | Документация Майкрософт
+description: Глоссарий по защите идентификации Azure Active Directory
 services: active-directory
-keywords: "защита идентификации Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности, глоссарий"
-documentationcenter: 
+keywords: защита идентификации Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности, глоссарий
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
 ms.assetid: 833119a5-33d6-4482-adda-fa35218c72c3
 ms.service: active-directory
+ms.component: protection
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,11 +16,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 30cf3911d0f22e2d9351fc606cd6697ef437e452
-ms.sourcegitcommit: 384d2ec82214e8af0fc4891f9f840fb7cf89ef59
+ms.openlocfilehash: a9cc4a914091c91f4b2ae1c152644fe8e01747e8
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34713397"
 ---
 # <a name="azure-active-directory-identity-protection-glossary"></a>Глоссарий по защите идентификации Azure Active Directory
 ### <a name="at-risk-user"></a>Под угрозой (пользователь)
@@ -131,7 +133,7 @@ ms.lasthandoff: 01/16/2018
 Событие риска, возникающее после успешного входа в систему с IP-адреса, который был определен как IP-адрес анонимного прокси-сервера.
 
 ### <a name="sign-in-from-infected-device"></a>Вход с инфицированных устройств
-Событие риска, возникающее при выполнении входа с IP-адреса, о котором известно, что он используется одним или несколькими скомпрометированными устройствами, активно пытающимися установить связь сервером ботнета.
+Событие риска, возникающее при выполнении входа с IP-адреса, о котором известно, что он используется одним или несколькими скомпрометированными устройствами, активно пытающимися установить связь с сервером ботнета.
 
 ### <a name="sign-in-from-ip-address-with-suspicious-activity"></a>Вход с IP-адресов с подозрительными действиями
 Событие риска, возникающее после успешного входа с IP-адреса с большим количеством неудачных попыток входа с использованием нескольких учетных записей пользователей за короткий период времени.

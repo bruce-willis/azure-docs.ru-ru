@@ -1,22 +1,19 @@
 ---
 title: Развертывание решения для удаленного мониторинга Java в Azure | Документация Майкрософт
 description: В этом руководстве показано, как с помощью интерфейса командной строки подготовить акселератор решений для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 01/29/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 3178d51cd2c04f3be8d4a6284a4f1635845def8c
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.topic: conceptual
+ms.openlocfilehash: 603ce00a036822fd0c7411b47cf3fe630671cc5a
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34628129"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решений для удаленного мониторинга с помощью CLI
 
@@ -96,7 +93,7 @@ pcs login
 
 ### <a name="example-deploy-net-version"></a>Пример: развертывание версии .NET
 
-В примере ниже представлено развертывание базовой версии .NET акселератора решений для удаленного мониторинга.
+В примере ниже представлено развертывание базовой версии .NET акселератора решений для удаленного мониторинга:
 
 ```cmd/sh
 pcs -t remotemonitoring -s basic -r dotnet
@@ -104,7 +101,7 @@ pcs -t remotemonitoring -s basic -r dotnet
 
 ### <a name="example-deploy-java-version"></a>Пример: развертывание версии Java
 
-В примере ниже представлено развертывание стандартной версии Java акселератора решений для удаленного мониторинга.
+В примере ниже представлено развертывание стандартной версии Java акселератора решений для удаленного мониторинга:
 
 ```cmd/sh
 pcs -t remotemonitoring -s standard -r java

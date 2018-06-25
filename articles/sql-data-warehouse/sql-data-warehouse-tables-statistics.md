@@ -10,12 +10,12 @@ ms.component: implement
 ms.date: 05/09/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 2922a859f741c6b6420f49d34b982b7ec4968a8c
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: bbc6a5083aebba40885700cab6c67128c9d9f916
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011770"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34643436"
 ---
 # <a name="creating-updating-statistics-on-tables-in-azure-sql-data-warehouse"></a>Создание и обновление статистики таблиц в хранилище данных SQL Azure
 Рекомендации и примеры для создания и обновления статистики оптимизации запросов для таблиц в хранилище данных SQL Azure.
@@ -50,11 +50,14 @@ SET AUTO_CREATE_STATISTICS ON
 > Создание статистики также регистрируется в журнале [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?view=aps-pdw-2016) в контексте другого пользователя.
 > 
 
-При автоматическом создании статистики используется следующий формат: _WA_Sys_<8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив следующую команду.
+При автоматическом создании статистики используется следующий формат: _WA_Sys_<8-разрядный идентификатор столбца в шестнадцатеричном формате>_<8-разрядный идентификатор таблицы в шестнадцатеричном формате>. Созданную статистику можно просмотреть, выполнив команду [DBCC SHOW_STATISTICS](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=sql-server-2017):
 
 ```sql
 DBCC SHOW_STATISTICS (<tablename>, <targetname>)
 ```
+Первым аргументом является таблица, содержащая статистические данные для отображения. Это не может быть внешняя таблица. Второй аргумент — имя целевого индекса, статистики или столбца, для которого нужно отобразить статистические данные.
+
+
 
 ## <a name="updating-statistics"></a>Обновление статистики
 

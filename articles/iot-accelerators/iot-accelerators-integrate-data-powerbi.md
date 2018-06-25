@@ -1,22 +1,19 @@
 ---
 title: Визуализация данных удаленного мониторинга с помощью Power BI в Azure | Документация Майкрософт
 description: В этом руководстве используется Power BI Desktop и Cosmos DB для интеграции данных из решения для удаленного мониторинга в пользовательскую визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
-services: iot-suite
-suite: iot-suite
 author: asdonald
 manager: hegate
 ms.author: asdonald
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 05/01/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 55feb56008a54676bd0af332e251da94a9653aaf
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: e396d69a61679a85fdfbd3e8fd43216635dec51d
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627796"
 ---
 # <a name="visualize-remote-monitoring-data-using-power-bi"></a>Визуализация данных удаленного мониторинга с помощью Power BI
 
@@ -105,7 +102,7 @@ ms.lasthandoff: 05/20/2018
 
 Из этой статьи вы узнали о визуализации данных удаленного мониторинга с помощью Power BI.
 
-Дополнительные сведения о решении для удаленного мониторинга см. в следующих статьях:
+Дополнительные сведения о решении для удаленного мониторинга см. здесь:
 
 * [Настройка предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize.md)
 * [Справочник разработчика](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide)

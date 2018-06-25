@@ -10,11 +10,12 @@ ms.date: 04/06/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
 keywords: ''
-ms.openlocfilehash: 014dbf6ff6d30bfb988c404bfe35693fe68f22fd
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: d7384d8d1d8c0378e1a9dd68a4f7b71196330b8e
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736700"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 Для ролей инфраструктуры в Azure Stack настраиваются виртуальные IP-адреса (VIP). Эти виртуальные IP-адреса выделяются из пула общедоступных IP-адресов. Каждый виртуальный IP-адрес защищается списком управления доступом (ACL) на уровне программно определяемой сети. Для дополнительной защиты решения списки управления доступом применяются и на физических коммутаторах (стоечные коммутаторы и BMC). Для каждой конечной точки создается DNS-запись во внешней зоне DNS, которая указана во время развертывания.
@@ -51,7 +52,7 @@ ms.lasthandoff: 04/16/2018
 |Большой двоичный объект хранилища|&#42;.blob.*&lt;регион>.&lt;полное доменное имя>*|HTTP<br>HTTPS|80<br>443|
 |Поставщик ресурсов SQL|sqladapter.dbadapter.*&lt;region>.&lt;fqdn>*|HTTPS|44300–44304|
 |Поставщик ресурсов MySQL|mysqladapter.dbadapter.*&lt;region>.&lt;fqdn>*|HTTPS|44300–44304|
-|Служба приложений|&#42;.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|80 (HTTP)<br>443 (HTTPS)<br>8172 (MSDeploy)|
+|Служба приложений Azure|&#42;.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|80 (HTTP)<br>443 (HTTPS)<br>8172 (MSDeploy)|
 |  |&#42;.scm.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)|
 |  |api.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)<br>44300 (Azure Resource Manager)|
 |  |ftp.appservice.*&lt;регион>.&lt;полное_доменное_имя>*|TCP, UDP|21, 1021, 10001-101000 (FTP)<br>990 (FTPS)|
@@ -67,7 +68,7 @@ ms.lasthandoff: 04/16/2018
 |Синдикация Marketplace|https://management.azure.com<br>https://&#42;.blob.core.windows.net<br>https://*.azureedge.net<br>https://&#42;.microsoftazurestack.com|HTTPS|443|
 |Обновления и исправления|https://&#42;.azureedge.net|HTTPS|443|
 |Регистрация|https://management.azure.com|HTTPS|443|
-|Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.com|HTTPS|443|
+|Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net|HTTPS|443|
 |Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>http://www.microsoft.com/pkiops/crl<br>http://www.microsoft.com/pkiops/certs<br>http://crl.microsoft.com/pki/crl/products<br>http://www.microsoft.com/pki/certs<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|
 
 

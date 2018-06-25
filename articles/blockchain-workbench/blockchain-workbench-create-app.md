@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: e4e2866e18c508c0df7a9a9e85a22c98e4372661
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: a4b704f433f02afcff7b94f98c19a478caaa02b2
+ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302159"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34808066"
 ---
 # <a name="create-a-blockchain-application-in-azure-blockchain-workbench"></a>Создание блокчейн-приложения в Azure Blockchain Workbench
 
@@ -375,7 +375,7 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
 Чтобы добавить блокчейн-приложение в Blockchain Workbench, для определения приложения нужно передать файлы конфигурации и интеллектуального контракта.
 
 1. В веб-браузере перейдите по адресу Blockchain Workbench. Например, `https://{workbench URL}.azurewebsites.net/`. При развертывании Blockchain Workbench будет создано веб-приложение. Сведения о том, как найти веб-адрес Blockchain Workbench, см. в разделе об [URL-адресе Blockchain Workbench](blockchain-workbench-deploy.md#blockchain-workbench-web-url).
-2. Войдите как администратор Blockchain Workbench. Дополнительные сведения об управлении пользователями в Azure Blockchain Workbench см. в [этой](blockchain-workbench-manage-users.md) статье.
+2. Войдите как [администратор Blockchain Workbench](blockchain-workbench-manage-users.md#manage-blockchain-workbench-administrators).
 3. Выберите **Приложения** > **Создать**. Появится область **нового приложения**.
 4. Выберите **Upload the contract configuration** (Передать конфигурацию контракта)  > **Обзор**, чтобы найти созданный файл конфигурации **HelloBlockchain.json**. Файл конфигурации пройдет автоматическую проверку. Щелкните ссылку **Показать** для отображения ошибок проверки. Исправьте ошибки проверки перед развертыванием приложения.
 5. Выберите **Upload the contract code** (Передать код контракта)  > **Обзор**, чтобы найти файл кода интеллектуального контракта **HelloBlockchain.sol**. Файл кода пройдет автоматическую проверку. Щелкните ссылку **Показать** для отображения ошибок проверки. Исправьте ошибки проверки перед развертыванием приложения.

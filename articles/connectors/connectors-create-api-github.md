@@ -1,25 +1,22 @@
 ---
 title: Подключение к GitHub при помощи Azure Logic Apps | Документация Майкрософт
-description: Автоматизация рабочих процессов для GitHub при помощи Azure Logic Apps
-services: logic-apps
-documentationcenter: ''
+description: Отслеживайте события GitHub с помощью интерфейсов REST API GitHub и Azure Logic Apps.
 author: ecfan
-manager: anneta
-editor: ''
-tags: connectors
-ms.assetid: 8f873e6c-f4c0-4c2e-a5bd-2e953efe5e2b
-ms.service: logic-apps
-ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
+manager: jeconnoc
+ms.author: estfan
 ms.date: 03/02/2018
-ms.author: estfan; ladocs
-ms.openlocfilehash: 830c3e6b5462c5d2d917388c0d0924e444342f93
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, LADocs
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: ce567dc631c3a147b795eb2355a4961faa8881d6
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35295818"
 ---
 # <a name="connect-to-github"></a>Подключение к GitHub
 

@@ -1,23 +1,20 @@
 ---
-title: Просмотр журналов диагностики Azure Data Lake Analytics | Документация Майкрософт
-description: 'Из этой статьи вы узнаете, как настроить журналы диагностики для Azure Data Lake Analytics и просмотреть их. '
+title: Включение и просмотр журналов диагностики для Azure Data Lake Analytics
+description: Из этой статьи вы узнаете, как настроить журналы диагностики для Azure Data Lake Analytics и просмотреть их.
 services: data-lake-analytics
-documentationcenter: ''
+ms.service: data-lake-analytics
 author: jasonwhowell
 ms.author: jasonh
 manager: kfile
 ms.assetid: cf5633d4-bc43-444e-90fc-f90fbd0b7935
-ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
+ms.topic: conceptual
 ms.date: 02/12/2018
-ms.openlocfilehash: efec1e00e9c2da519028f7e6ff094a0f0876df79
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: e65c6396d859a128777c66cad6a44bb033b50d50
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34623491"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-analytics"></a>Доступ к журналам диагностики для Azure Data Lake Analytics
 

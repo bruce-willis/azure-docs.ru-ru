@@ -1,12 +1,12 @@
 ---
-title: "Рекомендации Azure Advisor по высокой доступности | Документация Майкрософт"
-description: "Использование Azure Advisor для повышения уровня доступности развернутых служб Azure."
+title: Рекомендации Azure Advisor по высокой доступности | Документация Майкрософт
+description: Использование Azure Advisor для повышения уровня доступности развернутых служб Azure.
 services: advisor
 documentationcenter: NA
 author: KumudD
 manager: carmonm
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: advisor
 ms.devlang: NA
 ms.topic: article
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: e1cd7948e1969cd4ddb926e428c09b559190a805
-ms.sourcegitcommit: ce934aca02072bdd2ec8d01dcbdca39134436359
+ms.openlocfilehash: 23764b476f01c30b1755c507a0cfa5ead27be91e
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2017
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34736557"
 ---
 # <a name="advisor-high-availability-recommendations"></a>Рекомендации Azure Advisor по высокой доступности
 
@@ -48,6 +49,9 @@ ms.lasthandoff: 11/08/2017
 
 ## <a name="protect-your-virtual-machine-data-from-accidental-deletion"></a>Защита данных виртуальной машины от случайного удаления
 Настройка резервного копирования виртуальной машины обеспечивает доступность критически важных бизнес-данных и защиту данных от случайного удаления или повреждения.  Помощник определяет виртуальные машины, резервное копирование на которых не включено, а затем рекомендует включить резервное копирование. 
+
+## <a name="ensure-you-have-access-to-azure-cloud-experts-when-you-need-it"></a>Обеспечение доступа к экспертам по облаку Azure, когда это необходимо
+При выполнении критически важной рабочей нагрузки важно иметь доступ к службе технической поддержки, когда он требуется. Помощник идентифицирует потенциальные критически важные для бизнеса подписки, в плане поддержки которых нет технической поддержки, и советует выполнить обновление до варианта, в котором присутствует техническая поддержка.
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 

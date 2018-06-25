@@ -11,24 +11,24 @@ ms.devlang: ''
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 05/11/2018
+ms.date: 06/06/2018
 ms.author: rolyon
-ms.reviewer: rqureshi
+ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 91f721f5508191c7530e57b6dd96cad3301542a7
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: cea928d5a4ea5cddaa9942c9535945e11f0f80ad
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34203511"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35267379"
 ---
 # <a name="built-in-roles-for-azure-role-based-access-control"></a>Встроенные роли управления доступом на основе ролей в Azure
-[Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Изменить встроенные роли не возможно, однако вы можете создать собственные [настраиваемые роли](custom-roles.md) в соответствии с потребностями вашей организации.
+[Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
 
 Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
 
 ## <a name="built-in-role-descriptions"></a>Описание встроенных ролей
-В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `actions` и `notActions` для каждой роли.
+В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `actions`, `notActions`, `dataActions` и `notDataActions` для каждой роли.
 
 
 | Встроенные роли | ОПИСАНИЕ |
@@ -84,6 +84,7 @@ ms.locfileid: "34203511"
 | [Участник учетной записи New Relic APM](#new-relic-apm-account-contributor) | Позволяет управлять учетными записями и приложениями New Relic Application Performance Management, но не доступом к ним. |
 | [Модуль чтения и доступ к данным](#reader-and-data-access) | Позволяет просматривать все данные, но не позволит удалить или создать учетную запись хранения или содержащий ресурс. Он также предоставит доступ на чтение и запись для всех данных, содержащихся в учетной записи хранения через доступ к ключам учетной записи хранения. |
 | [Участник кэша Redis](#redis-cache-contributor) | Позволяет управлять кэшем Redis, но не доступом к нему. |
+| [Участник политики ресурсов (предварительная версия)](#resource-policy-contributor-preview) | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
 | [Участник коллекции заданий планировщика](#scheduler-job-collections-contributor) | Позволяет управлять коллекциями заданий планировщика, но не доступом к ним. |
 | [Участник службы поиска](#search-service-contributor) | Позволяет управлять службами поиска, но не доступом к ним. |
 | [Администратор безопасности](#security-admin) | Только в центре безопасности: может просматривать политики безопасности и состояния безопасности, изменять политики безопасности, просматривать оповещения и рекомендации, а также закрывать предупреждения и рекомендации |
@@ -97,6 +98,10 @@ ms.locfileid: "34203511"
 | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. |
 | [Участник учетной записи хранения](#storage-account-contributor) | Позволяет управлять учетными записями хранения, но не доступом к ним. |
 | [Роль службы оператора ключей учетных записей хранения](#storage-account-key-operator-service-role) | Операторы ключей учетных записей хранения могут перечислять и повторно создавать ключи в учетных записях хранения. |
+| [Участник данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+| [Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)](#storage-blob-data-reader-preview) | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+| [Участник данных очереди хранилища (предварительная версия)](#storage-queue-data-contributor-preview) | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
+| [Модуль чтения данных очереди хранилища (предварительная версия)](#storage-queue-data-reader-preview) | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
 | [Support Request Contributor](#support-request-contributor) (Участник с правом создавать запросы на поддержку) | Позволяет создавать запросы в службу поддержки и управлять ими. |
 | [Участник диспетчера трафика](#traffic-manager-contributor) | Позволяет управлять профилями диспетчера трафика, но не доступом к ним. |
 | [Администратор доступа пользователей](#user-access-administrator) | Позволяет управлять доступом пользователей к ресурсам Azure. |
@@ -128,6 +133,8 @@ ms.locfileid: "34203511"
 > | Microsoft.Authorization/*/Delete | Не может удалять роли и назначения ролей. |
 > | Microsoft.Authorization/*/Write | Не может создавать роли и назначения ролей. |
 > | Microsoft.Authorization/elevateAccess/Action | Предоставляет вызывающему доступ с правами администратора для области действия клиента. |
+> | Microsoft.Blueprint/blueprintAssignments/write |  |
+> | Microsoft.Blueprint/blueprintAssignments/delete |  |
 
 ## <a name="reader"></a>Читатель
 > [!div class="mx-tableFixed"]
@@ -704,7 +711,7 @@ ms.locfileid: "34203511"
 > | **Id** | 150f5e0c-0603-4f03-8c7f-cf70034c4e90 |
 > | **Действия** |  |
 > | Microsoft.Insights/components/*/read |  |
-> | Microsoft.Insights/components/purge/action |  |
+> | Microsoft.Insights/components/purge/action | Очистка данных Application Insights. |
 > | Microsoft.OperationalInsights/workspaces/*/read |  |
 > | Microsoft.OperationalInsights/workspaces/purge/action | Удаление указанных данных из рабочей области. |
 
@@ -1034,6 +1041,20 @@ ms.locfileid: "34203511"
 > | Microsoft.ResourceHealth/availabilityStatuses/read | Возвращает состояния доступности для всех ресурсов в указанной области. |
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+
+## <a name="resource-policy-contributor-preview"></a>Участник политики ресурсов (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Обратное заполнение пользователей из EA с правами на создание и изменение политики ресурсов, создание запросов в службу поддержки и чтение ресурсов и иерархии (предварительная версия). |
+> | **Id** | 36243c78-bf99-498c-9df9-86d9f8d28608 |
+> | **Действия** |  |
+> | */чтение | Чтение ресурсов всех типов, кроме секретов. |
+> | Microsoft.Authorization/policyassignments/* | Создание назначений политик и управление ими |
+> | Microsoft.Authorization/policydefinitions/* | Создание определений политик и управление ими |
+> | Microsoft.Authorization/policysetdefinitions/* | Создание наборов политик и управление ими |
+> | Microsoft.PolicyInsights/* |  |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
 ## <a name="scheduler-job-collections-contributor"></a>Участник коллекции заданий планировщика
@@ -1389,6 +1410,58 @@ ms.locfileid: "34203511"
 > | Microsoft.Storage/storageAccounts/listkeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/regeneratekey/action | Повторно создает ключи доступа для указанной учетной записи хранения. |
 
+## <a name="storage-blob-data-contributor-preview"></a>Участник данных больших двоичных объектов хранилища (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение, запись и удаление к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+> | **Id** | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
+> | **Действия** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Возвращение результата удаления контейнера. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращение контейнера или списка контейнеров. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/write | Возвращение результата размещения или аренды контейнера больших двоичных объектов. |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/delete | Возвращение результата, полученного при удалении большого двоичного объекта. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращение результата, полученного при записи большого двоичного объекта. |
+
+## <a name="storage-blob-data-reader-preview"></a>Модуль чтения данных больших двоичных объектов хранилища (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение к контейнерам больших двоичных объектов и данным службы хранилища Azure |
+> | **Id** | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
+> | **Действия** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращение контейнера или списка контейнеров. |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
+
+## <a name="storage-queue-data-contributor-preview"></a>Участник данных очереди хранилища (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение, запись и удаление к очередям и сообщениям в очередях службы хранилища Azure |
+> | **Id** | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
+> | **Действия** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/delete | Возвращение результата удаления очереди. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/write | Возвращение результата записи очереди. |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete | Возвращение результата, полученного при удалении сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/write | Возвращение результата, полученного при записи сообщения. |
+
+## <a name="storage-queue-data-reader-preview"></a>Модуль чтения данных очереди хранилища (предварительная версия)
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Разрешает доступ на чтение к очередям и сообщениям в очередях службы хранилища Azure |
+> | **Id** | 19e7f393-937e-4f77-808e-94535e297925 |
+> | **Действия** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращение очереди или списка очередей. |
+> | **Действия с данными** |  |
+> | Microsoft.Storage/storageAccounts/queueServices/queues/messages/read | Возвращение сообщения. |
+
 ## <a name="support-request-contributor"></a>Support Request Contributor (Участник с правом создавать запросы на поддержку)
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1438,6 +1511,9 @@ ms.locfileid: "34203511"
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
 > | Microsoft.Compute/virtualMachines/*/read |  |
+> | **Действия с данными** |  |
+> | Microsoft.Compute/virtualMachines/login/action | Вход в систему на виртуальной машине в качестве обычного пользователя. |
+> | Microsoft.Compute/virtualMachines/loginAsAdmin/action | Вход в систему на виртуальной машине с правами администратора Windows или привилегированного пользователя Linux. |
 
 ## <a name="virtual-machine-contributor"></a>Участник виртуальной машины
 > [!div class="mx-tableFixed"]
@@ -1496,6 +1572,8 @@ ms.locfileid: "34203511"
 > | Microsoft.Network/loadBalancers/read | Возвращает определение подсистемы балансировки нагрузки. |
 > | Microsoft.Network/networkInterfaces/read | Возвращает определение сетевого интерфейса.  |
 > | Microsoft.Compute/virtualMachines/*/read |  |
+> | **Действия с данными** |  |
+> | Microsoft.Compute/virtualMachines/login/action | Вход в систему на виртуальной машине в качестве обычного пользователя. |
 
 ## <a name="web-plan-contributor"></a>Участник веб-плана
 > [!div class="mx-tableFixed"]

@@ -1,20 +1,21 @@
 ---
-title: Отслеживание поведения пользователей с помощью событий в Application Insights из Azure AD B2C | Документация Майкрософт
+title: Отслеживание поведения пользователей с помощью событий в Application Insights из Azure Active Directory B2C | Документация Майкрософт
 description: Пошаговое руководство по включению журналов событий в Application Insights из путей взаимодействия пользователей Azure AD B2C с использованием настраиваемых политик (предварительная версия)
 services: active-directory-b2c
-documentationcenter: dev-center-name
 author: davidmu1
 manager: mtillman
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: davidmu
-ms.openlocfilehash: db9ba62cb6ef0d2627dbeb07cb8165a4ac7ae490
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: 1b37e61763b34e320ffb4078600e08b1d32330a1
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34709970"
 ---
 # <a name="track-user-behavior-in-azure-ad-b2c-journeys-by-using-application-insights"></a>Отслеживание поведения пользователей в путях взаимодействия Azure AD B2C с использованием Application Insights
 
@@ -254,7 +255,7 @@ Referenced using: {Culture:One of the property names below}
 | Утверждение | Определение | Пример |
 | ----- | -----------| --------|
 | LanguageName | Двухбуквенный код ISO для языка | en |
-| RegionName | Двухбуквенный код ISO для региона | US |
+| RegionName | Двухбуквенный код ISO для региона | США |
 | RFC5646 | Код языка RFC5646 | en-US |
 | LCID   | Код языка (локаль) | 1033 |
 

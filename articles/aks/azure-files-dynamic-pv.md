@@ -6,15 +6,15 @@ author: neilpeterson
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 05/17/2018
+ms.date: 05/21/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 991db1fc32ae89ab04ca040cfb6e8d59ffe5262f
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: d3e92902e711ba2b1664c6497ecb66f035ea9308
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34356449"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34597507"
 ---
 # <a name="persistent-volumes-with-azure-files"></a>Использование постоянных томов со службой файлов Azure
 
@@ -24,29 +24,20 @@ ms.locfileid: "34356449"
 
 ## <a name="create-storage-account"></a>Создать учетную запись хранения
 
-При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов, что и кластер AKS. При необходимости создайте учетную запись хранения в той же группе ресурсов, что и кластер AKS.
-
-Чтобы идентифицировать нужную группу ресурсов, воспользуйтесь командой [az group list][az-group-list].
+При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. Получите имя группы ресурсов, выполнив команду [az resource show][az-resource-show].
 
 ```azurecli-interactive
-az group list --output table
-```
+$ az resource show --resource-group myResourceGroup --name myAKSCluster --resource-type Microsoft.ContainerService/managedClusters --query properties.nodeResourceGroup -o tsv
 
-Найдите группу ресурсов с именем `MC_clustername_clustername_locaton`.
-
-```
-Name                                 Location    Status
------------------------------------  ----------  ---------
-MC_myAKSCluster_myAKSCluster_eastus  eastus      Succeeded
-myAKSCluster                         eastus      Succeeded
+MC_myResourceGroup_myAKSCluster_eastus
 ```
 
 С помощью команды [az storage account create][az-storage-account-create] создайте учетную запись хранения.
 
-Используя этот пример, замените `--resource-group` именем группы ресурсов, а `--name` — любым именем.
+Обновите `--resource-group` именем группы ресурсов, которая была получена на предыдущем шаге, а `--name` — любым именем.
 
 ```azurecli-interactive
-az storage account create --resource-group MC_myAKSCluster_myAKSCluster_eastus --name mystorageaccount --location eastus --sku Standard_LRS
+az storage account create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name mystorageaccount --location eastus --sku Standard_LRS
 ```
 
 ## <a name="create-storage-class"></a>Создание класса хранения
@@ -77,7 +68,7 @@ kubectl apply -f azure-file-sc.yaml
 
 Утверждение постоянного тома (PVC) использует объект класса хранения для динамической подготовки файлового ресурса Azure.
 
-Приведенный ниже код YAML позволяет создать утверждение постоянного тома в размере `5GB` с доступом `ReadWriteOnce`. Дополнительные сведения о режимах доступа см. в документации [по постоянным томам Kubernetes][access-modes].
+Приведенный ниже код YAML позволяет создать утверждение постоянного тома в размере `5GB` с доступом `ReadWriteMany`. Дополнительные сведения о режимах доступа см. в документации [по постоянным томам Kubernetes][access-modes].
 
 Создайте файл `azure-file-pvc.yaml` и скопируйте в него следующий код YAML. Убедитесь, что `storageClassName` соответствует классу хранения, созданному на предыдущем шаге.
 
@@ -88,7 +79,7 @@ metadata:
   name: azurefile
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   storageClassName: azurefile
   resources:
     requests:
@@ -210,6 +201,7 @@ spec:
 <!-- LINKS - internal -->
 [az-group-create]: /cli/azure/group#az_group_create
 [az-group-list]: /cli/azure/group#az_group_list
+[az-resource-show]: /cli/azure/resource#az-resource-show
 [az-storage-account-create]: /cli/azure/storage/account#az_storage_account_create
 [az-storage-create]: /cli/azure/storage/account#az_storage_account_create
 [az-storage-key-list]: /cli/azure/storage/account/keys#az_storage_account_keys_list

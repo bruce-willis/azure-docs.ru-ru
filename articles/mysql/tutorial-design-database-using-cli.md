@@ -11,12 +11,12 @@ ms.devlang: azure-cli
 ms.topic: tutorial
 ms.date: 04/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 36875ebba606728123b64526a54628a9774f62a5
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 4ca555b53de3dd626c52a5a5d17196a82829d3e8
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266760"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293253"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по проектированию службы "База данных Azure для MySQL" с помощью Azure CLI
 
@@ -66,10 +66,10 @@ az mysql server create --resource-group myresourcegroup --name mydemoserver --lo
 ## <a name="configure-firewall-rule"></a>Настройка правила брандмауэра
 Создайте правило брандмауэра на уровне сервера базы данных Azure для MySQL, выполнив команду az mysql server firewall-rule create. Правило брандмауэра на уровне сервера позволяет внешним приложениям, таким как средство командной строки **MySQL** или MySQL Workbench, подключаться к серверу через брандмауэр службы Azure MySQL. 
 
-В примере ниже показано создание правила брандмауэра для предопределенного диапазона адресов, который в этом примере представляет наиболее полный диапазон IP-адресов.
+В приведенном ниже примере создается правило брандмауэра с именем `AllowMyIP`, которое разрешает подключения с определенного IP-адреса — 192.168.0.1. Подставьте IP-адрес или диапазон IP-адресов, которые соответствуют расположению, из которого будет устанавливаться подключение. 
 
 ```azurecli-interactive
-az mysql server firewall-rule create --resource-group myresourcegroup --server mydemoserver --name AllowAllIPs --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
+az mysql server firewall-rule create --resource-group myresourcegroup --server mydemoserver --name AllowMyIP --start-ip-address 192.168.0.1 --end-ip-address 192.168.0.1
 ```
 
 ## <a name="get-the-connection-information"></a>Получение сведений о подключении

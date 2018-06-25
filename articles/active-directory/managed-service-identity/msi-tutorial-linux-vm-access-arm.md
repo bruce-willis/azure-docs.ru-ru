@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/22/2017
 ms.author: arluca
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 6d4f7378ccd24af4281793dbc93df40830a1b31a
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 542b2e434767711a6947a87c6995343d27e6dddd
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34300807"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34699121"
 ---
 # <a name="tutorial-use-a-user-assigned-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения на виртуальной машине Linux
 
@@ -36,11 +36,11 @@ ms.locfileid: "34300807"
 > * Создание пользовательского удостоверения
 > * Назначение пользовательского удостоверения виртуальной машине Linux 
 > * Предоставление пользовательскому удостоверению доступа к группе ресурсов в Azure Resource Manager 
-> * Получение маркера доступа с помощью пользовательского удостоверения и вызов Azure Resource Manager с его помощью 
+> * Получение маркера доступа с помощью пользовательского удостоверения и вызов Azure Resource Manager с его помощью. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-- Если вы не работали с управляемым удостоверением службы, см. [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
+- Если вы не работали с управляемым удостоверением службы, изучите [общие сведения](overview.md). **Обратите внимание на [различия между системным и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Для выполнения требуемых операций по созданию ресурсов и управлению ролями учетной записи в этом руководстве нужно предоставить учетной записи разрешения "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](/azure/role-based-access-control/role-assignments-portal), если нуждаетесь в помощи с назначением ролей.
 
@@ -74,33 +74,33 @@ ms.locfileid: "34300807"
 
 2. Создайте пользовательское удостоверение с помощью команды [az identity create](/cli/azure/identity#az_identity_create). Параметр `-g` указывает группу ресурсов, в которой создается удостоверение MSI, а параметр `-n` — его имя. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<MSI NAME>` собственными:
     
-    > [!IMPORTANT]
-    > В назначенных пользователем удостоверениях можно использовать только буквы, цифры и символ дефиса (0–9, a–z, A–Z и -). Кроме того, чтобы назначение виртуальной машине или VMSS производилось правильно, длина имени не должна превышать 24 символа. Загляните сюда позже, чтобы проверить наличие новой информации. Дополнительные сведения см. в разделе [Часто задаваемые вопросы и известные проблемы](known-issues.md).
+[!INCLUDE[ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
-    ```azurecli-interactive
-    az identity create -g <RESOURCE GROUP> -n <MSI NAME>
-    ```
 
-    Ответ содержит подробные сведения о созданном пользовательском удостоверении, приведенном в следующем примере. Запишите значение `id` пользовательского удостоверения, так как оно будет использоваться на следующем шаге:
+```azurecli-interactive
+az identity create -g <RESOURCE GROUP> -n <MSI NAME>
+```
 
-    ```json
-    {
-    "clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
-    "clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>/credentials?tid=5678&oid=9012&aid=12344643-8088-4d70-9532-c3a0fdc190fz",
-    "id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>",
-    "location": "westcentralus",
-    "name": "<MSI NAME>",
-    "principalId": "9012",
-    "resourceGroup": "<RESOURCE GROUP>",
-    "tags": {},
-    "tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
-    "type": "Microsoft.ManagedIdentity/userAssignedIdentities"
-    }
-    ```
+Ответ содержит подробные сведения о созданном пользовательском удостоверении, приведенном в следующем примере. Запишите значение `id` пользовательского удостоверения, так как оно будет использоваться на следующем шаге:
+
+```json
+{
+"clientId": "73444643-8088-4d70-9532-c3a0fdc190fz",
+"clientSecretUrl": "https://control-westcentralus.identity.azure.net/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>/credentials?tid=5678&oid=9012&aid=12344643-8088-4d70-9532-c3a0fdc190fz",
+"id": "/subscriptions/<SUBSCRIPTON ID>/resourcegroups/<RESOURCE GROUP>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<MSI NAME>",
+"location": "westcentralus",
+"name": "<MSI NAME>",
+"principalId": "9012",
+"resourceGroup": "<RESOURCE GROUP>",
+"tags": {},
+"tenantId": "733a8f0e-ec41-4e69-8ad8-971fc4b533bl",
+"type": "Microsoft.ManagedIdentity/userAssignedIdentities"
+}
+```
 
 ## <a name="assign-a-user-assigned-identity-to-your-linux-vm"></a>Назначение пользовательского удостоверения виртуальной машине Linux
 
-Клиенты могут использовать пользовательское удостоверение в целом ряде ресурсов Azure. Чтобы назначить пользовательское удостоверение одной виртуальной машине, используйте следующие команды. Используйте свойство `Id`, возвращенное на предыдущем шаге, для параметра `-IdentityID`.
+Клиенты могут использовать пользовательское удостоверение в целом ряде ресурсов Azure. Чтобы назначить пользовательское удостоверение отдельной виртуальной машине, используйте следующие команды. Используйте свойство `Id`, возвращенное на предыдущем шаге, для параметра `-IdentityID`.
 
 Назначьте пользовательское удостоверение MSI виртуальной машине Linux с помощью команды [az vm assign-identity](/cli/azure/vm#az_vm_assign_identity). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VM NAME>` собственными. Используйте свойство `id`, возвращенное на предыдущем шаге, в качестве значения параметра `--identities`.
 
@@ -112,7 +112,7 @@ az vm assign-identity -g <RESOURCE GROUP> -n <VM NAME> --identities "/subscripti
 
 Управляемое удостоверение службы (MSI) предоставляет удостоверения, используемые кодом для запроса маркеров доступа в целях аутентификации API ресурсов, которые поддерживают аутентификацию Azure AD. В этом руководстве код получит доступ к API Azure Resource Manager.  
 
-Но чтобы ваш код мог получить доступ к API, необходимо предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Обновите `<SUBSCRIPTION ID>` и `<RESOURCE GROUP>` значениями, соответствующими вашей среде. Также замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az identity create` в разделе [Создание назначаемого пользователем удостоверения MSI](#create-a-user-assigned-msi):
+Чтобы ваш код мог получить доступ к API, необходимо сначала предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Обновите `<SUBSCRIPTION ID>` и `<RESOURCE GROUP>` значениями, соответствующими вашей среде. Также замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az identity create` в разделе [Создание назначаемого пользователем удостоверения MSI](#create-a-user-assigned-msi):
 
 ```azurecli-interactive
 az role assignment create --assignee <MSI PRINCIPALID> --role 'Reader' --scope "/subscriptions/<SUBSCRIPTION ID>/resourcegroups/<RESOURCE GROUP> "
@@ -193,5 +193,8 @@ az role assignment create --assignee <MSI PRINCIPALID> --role 'Reader' --scope "
     
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в статье с [обзором](overview.md).
+Из этого руководства вы узнали, как создать назначенное пользователем удостоверение и подключить его к виртуальной машине Linux, а затем получить доступ к API Azure Resource Manager.  Сведения об Azure Resource Manager см. здесь:
+
+> [!div class="nextstepaction"]
+>[Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview)
 

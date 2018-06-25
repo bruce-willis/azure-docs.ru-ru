@@ -17,12 +17,12 @@ ms.date: 07/17/2017
 ms.component: hybrid
 ms.author: anandy; billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b5ac1e4c62242c088a0ac84fffc0211baf442b53
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 34a5e223dfc8ff51ce03a973e88a962643c71202
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34595205"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36212678"
 ---
 # <a name="deploying-active-directory-federation-services-in-azure"></a>Развертывание служб федерации Active Directory в Azure
 В службах федерации Active Directory (AD FS) представлены возможности упрощенной безопасной федерации удостоверений и единого входа. Федерация с Azure AD или O365 дает пользователям возможность выполнять проверку подлинности с использованием локальных учетных данных и получать доступ ко всем ресурсам в облаке. В связи с этим требуется высокодоступная инфраструктура AD FS, обеспечивающая доступ к ресурсам как в локальной, так и в облачной средах. С помощью развертывания AD FS в Azure можно достичь необходимого уровня доступности с минимальными усилиями.
@@ -305,7 +305,7 @@ ms.locfileid: "34595205"
 
 1. Запустите указанный ниже командлет на сервере AD FS с помощью PowerShell, чтобы включить страницу входа:
    Set-AdfsProperties -EnableIdPInitiatedSignonPage $true. 
-2. С любого внешнего компьютера перейдите по адресу https://adfs.thecloudadvocate.com/adfs/ls/IdpInitiatedSignon.aspx  
+2. С любого внешнего компьютера перейдите по адресу https:\//adfs-server.contoso.com/adfs/ls/IdpInitiatedSignon.aspx.  
 3. Должна появиться страница AD FS, как показано ниже.
 
 ![Тестовая страница входа](./media/active-directory-aadconnect-azure-adfs/test1.png)

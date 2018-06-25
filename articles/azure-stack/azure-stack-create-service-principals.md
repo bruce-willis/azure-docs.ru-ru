@@ -13,11 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/15/2018
 ms.author: mabrigg
-ms.openlocfilehash: c2e18f30e55007a0625a19258ec3745f64dc25da
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: dd43d567a9839ae38c5b5eb4cdb851f8b80dcfff
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34824576"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -76,7 +77,7 @@ ms.lasthandoff: 04/28/2018
 
 
 Требования:
-- Наличие сертификата.
+- Требуется сертификат.
 
 **Параметры**
 

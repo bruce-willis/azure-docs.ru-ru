@@ -1,29 +1,25 @@
 ---
-title: Циклы. Обработка массивов или повторение действий в Azure Logic Apps | Документация Майкрософт
-description: Обработка массивов с помощью циклов for each или повторение действий до выполнения определенных условий в приложениях логики.
+title: Добавление циклов, которые повторяют действия или обрабатывают массивы в Azure Logic Apps | Документация Майкрософт
+description: Способ создания циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 services: logic-apps
-keywords: Циклы for each
-documentationcenter: ''
-author: ecfan
-manager: anneta
-editor: ''
-ms.assetid: 75b52eeb-23a7-47dd-a42f-1351c6dfebdc
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
 ms.date: 03/05/2018
-ms.author: estfan; LADocs
-ms.openlocfilehash: 4029da2c7ad59b1e61dabe0af252834746a4c5c6
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.topic: article
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: 87595eeb0330a2d8210258c097c29b205b628cf4
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35298191"
 ---
-# <a name="loops-process-arrays-or-repeat-actions-until-a-condition-is-met"></a>Циклы. Обработка массивов или повторение действий до выполнения условия
+# <a name="create-loops-that-repeat-workflow-actions-or-process-arrays-in-azure-logic-apps"></a>Создание циклов, которые повторяют действия рабочих процессов или обрабатывают массивы в Azure Logic Apps
 
-Чтобы выполнить итерацию массивов в приложении логики, используйте [цикл for each](#foreach-loop) или [последовательный цикл for each](#sequential-foreach-loop). В стандартном цикле for each повторяемые операции выполняются параллельно, а в последовательном цикле for each — по одной за раз. Максимальное число элементов массива, которое циклы for each позволяют обработать в одном приложении логики, см. в статье [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md). 
+Чтобы выполнить итерацию массивов в приложении логики, используйте [цикл for each](#foreach-loop) или [последовательный цикл for each](#sequential-foreach-loop). В стандартной итерации for each повторяемые операции выполняются параллельно, а в последовательной итерации for each — по одной за раз. Максимальное число элементов массива, которое циклы for each позволяют обработать в одном приложении логики, см. в статье [Ограничения и настройка Logic Apps](../logic-apps/logic-apps-limits-and-config.md). 
 
 > [!TIP] 
 > Если есть триггер, который получает массив, и нужно запустить рабочий процесс для каждого элемента массива, вы можете выполнить *индивидуальную обработку* этого массива с помощью [свойства **SplitOn** триггера](../logic-apps/logic-apps-workflow-actions-triggers.md#split-on-debatch). 

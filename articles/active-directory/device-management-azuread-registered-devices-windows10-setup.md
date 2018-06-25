@@ -1,13 +1,14 @@
 ---
-title: "Настройка устройств, зарегистрированных в Azure Active Directory | Документация Майкрософт"
-description: "Узнайте, как настроить устройства, зарегистрированные в Azure Active Directory."
+title: Настройка устройств, зарегистрированных в Azure Active Directory | Документация Майкрософт
+description: Узнайте, как настроить устройства, зарегистрированные в Azure Active Directory.
 services: active-directory
-documentationcenter: 
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
-editor: 
+editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,22 +16,23 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 2560e51d61506389e84288bf983b0ebcb5776ff2
-ms.sourcegitcommit: 384d2ec82214e8af0fc4891f9f840fb7cf89ef59
+ms.openlocfilehash: 541f37bb11c604567b356716db282d0e4e2f629b
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34713530"
 ---
 # <a name="set-up-azure-active-directory-registered-windows-10-devices"></a>Настройка устройств с Windows 10, зарегистрированных в Azure Active Directory
 
 Благодаря управлению устройствами в Azure Active Directory (Azure AD) ваши пользователи получают доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. Дополнительные сведения см. в статье [Общие сведения об управлении устройствами в Azure Active Directory](device-management-introduction.md).
 
-Если вы хотите реализовать сценарий **принеси свое устройство (BYOD)**, это можно сделать, настроив устройства, зарегистрированные в Azure AD. В Azure AD устройства, зарегистрированные в Azure AD, можно настроить для Windows 10, iOS, Android и macOS. В этом разделе приведены соответствующие инструкции для устройств Windows 10. 
+Если вы хотите реализовать сценарий **принеси свое устройство (BYOD)**, это можно сделать, настроив устройства, зарегистрированные в Azure AD. В Azure AD устройства, зарегистрированные в Azure AD, можно настроить для Windows 10, iOS, Android и macOS. В этой статье приведены соответствующие инструкции для устройств Windows 10. 
 
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Чтобы зарегистрировать устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Помимо наличия разрешения на регистрацию устройств в клиенте Azure AD, необходимо, чтобы число зарегистрированных устройств не превышало установленное максимальное значение. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md#configure-device-settings).
+Чтобы зарегистрировать устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Кроме того, необходимо иметь меньше максимально допустимого количества зарегистрированных устройств. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md#configure-device-settings).
 
 ## <a name="what-you-should-know"></a>Необходимая информация
 
@@ -49,7 +51,7 @@ ms.lasthandoff: 01/16/2018
 
 ## <a name="registering-a-device"></a>Регистрация устройства
 
-В этом разделе приводятся инструкции по регистрации устройства Windows 10 в Azure AD. После успешной регистрации устройства в Azure AD в диалоговом окне **Доступ к учетной записи места работы или учебного заведения** отобразится запись **Рабочая или учебная учетная запись**.
+В этом разделе приводятся инструкции по регистрации устройства Windows 10 в Azure AD. Успешно зарегистрированное устройство отображается в записи **рабочей или учебной учетной записи**.
 
 ![Зарегистрировать](./media/device-management-azuread-registered-devices-windows10-setup/08.png)
 
@@ -74,7 +76,7 @@ ms.lasthandoff: 01/16/2018
     ![Подключение](./media/device-management-azuread-registered-devices-windows10-setup/04.png)
 
 
-5. В диалоговом окне **Setup a work or school account** (Настройка рабочей или учебной учетной записи) введите имя учетной записи (например, someone@example.com), а затем нажмите кнопку **Далее**.
+5. В диалоговом окне **Set up a work or school account** (Настройка рабочей или учебной учетной записи) введите имя учетной записи (например, someone@example.com), а затем щелкните **Далее**.
 
     ![Подключение](./media/device-management-azuread-registered-devices-windows10-setup/06.png)
 
@@ -94,7 +96,7 @@ ms.lasthandoff: 01/16/2018
 
 ![Зарегистрировать](./media/device-management-azuread-registered-devices-windows10-setup/08.png)
 
-Можно также просмотреть параметры устройства на портале Azure AD.
+В качестве альтернативы можно просмотреть параметры устройства на портале Azure AD.
 
 ![Зарегистрировать](./media/device-management-azuread-registered-devices-windows10-setup/09.png)
 
@@ -106,7 +108,7 @@ ms.lasthandoff: 01/16/2018
 
 - Дополнительные сведения см. в статье [Общие сведения об управлении устройствами в Azure Active Directory](device-management-introduction.md).
 
-- Дополнительные сведения об управлении устройствами на портале Azure AD см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md).
+- Дополнительные сведения об управлении устройствами на портале Azure AD см. в статье [Управление устройствами с помощью портала Azure ](device-management-azure-portal.md).
 
 
 

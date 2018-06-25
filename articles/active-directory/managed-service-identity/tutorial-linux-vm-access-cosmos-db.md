@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: skwan
-ms.openlocfilehash: b84426ad28dbc2264bd9b28fe0697a88390bb58d
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: c395851fbcc3e46357b390d9dfa20bd9ac944716
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34304136"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34594437"
 ---
 # <a name="tutorial-use-a-linux-vm-msi-to-access-azure-cosmos-db"></a>Руководство "MSI виртуальной машины Linux для доступа к Azure Cosmos DB" 
 
@@ -255,5 +255,8 @@ az cosmosdb collection show -c <COLLECTION ID> -d <DATABASE ID> --url-connection
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в статье [Управляемое удостоверение службы (MSI) для ресурсов Azure](overview.md).
+Из этого руководства вы узнали, как получить доступ к базе данных Cosmos DB с помощью компонента "Управляемое удостоверение службы" виртуальной машины Linux.  Дополнительные сведения о Cosmos DB см. здесь:
+
+> [!div class="nextstepaction"]
+>[Добро пожаловать в базу данных Azure Cosmos DB](/azure/cosmos-db/introduction)
 

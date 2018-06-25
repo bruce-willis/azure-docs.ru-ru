@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 6f755754097336fc97678940ea1fa0aa28315fab
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 42471687e0a56ff0bacf5c9effecb0e2466b4690
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33868610"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34593597"
 ---
 # <a name="self-service-password-reset-in-azure-ad-deep-dive"></a>Руководство по самостоятельному сбросу пароля в Azure AD
 
@@ -153,6 +153,8 @@ ms.locfileid: "33868610"
 Пользовательские контрольные вопросы не переведены на другие языки. Все пользовательские вопросы отображаются на том языке, на котором вы ввели их в интерфейсе пользователя с правами администратора, даже если язык браузера отличается. Если требуются переведенные вопросы, используйте стандартные вопросы.
 
 Максимальная длина пользовательского контрольного вопроса составляет 200 символов.
+
+Чтобы просмотреть портал сброса паролей и вопросы на другом языке локализации, добавьте "?mkt =<Locale>" в конец URL-адреса сброса пароля в примере ниже, в котором используется локализация на испанский язык [https://passwordreset.microsoftonline.com/?mkt=es-us](https://passwordreset.microsoftonline.com/?mkt=es-us).
 
 ### <a name="security-question-requirements"></a>Требования к контрольному вопросу
 

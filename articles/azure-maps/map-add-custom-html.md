@@ -1,22 +1,20 @@
 ---
 title: Добавление настраиваемого элемента HTML в службе "Карты Azure" | Документация Майкрософт
 description: Как добавить настраиваемый элемент HTML на карту в JavaScript
-services: azure-maps
-keywords: ''
-author: jinzh-azureiot
+author: jingjing-z
 ms.author: jinzh
 ms.date: 05/07/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: azure-maps
-documentationcenter: ''
-manager: timlt
-ms.devlang: na
+services: azure-maps
+manager: ''
 ms.custom: codepen
-ms.openlocfilehash: df50774e1bdca53034d4856f38a6133fe8e89855
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3ee1f394536061cecaa5d775650149b30098560e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34600227"
 ---
 # <a name="add-custom-html-to-the-map"></a>Добавление настраиваемого элемента HTML на карту
 
@@ -38,3 +36,8 @@ ms.lasthandoff: 05/07/2018
 Дополнительные сведения о классах и методах, которые используются в этой статье: 
 * класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest);
     * метод [addHtml](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#addhtml).
+    
+Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
+* [Отображение результатов поиска на карте](./map-search-location.md)
+* [Получение сведений на основе координат](./map-get-information-from-coordinate.md)
+

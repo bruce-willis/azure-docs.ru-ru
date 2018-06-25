@@ -12,15 +12,16 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: powerbi
-ms.date: 01/04/2018
+ms.date: 05/31/2018
 ms.author: maghan
-ms.openlocfilehash: 1bc641e210a5bd965c5cdbf41efe853e9b297132
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8d68a950438a332cdf8ddd8d4f13a316c87aa0a5
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34715927"
 ---
-# <a name="about-power-bi-embedded"></a>О службе Power BI Embedded
+# <a name="what-is-power-bi-embedded"></a>Что такое Power BI Embedded?
 
 Назначение Power BI Embedded — упростить использование возможностей Power BI независимыми поставщиками программного обеспечения и разработчиками. Power BI Embedded упрощает возможности Power BI, позволяя быстро добавлять привлекательные визуальные элементы, отчеты и панели мониторинга в приложения. Аналогичным образом приложения на основе Microsoft Azure используют такие службы, как "Машинное обучение" и "Интернет вещей". Обеспечивая в своих приложениях анализ данных с удобной навигацией, независимые поставщики программного обеспечения позволяют своим клиентам быстро принимать обоснованные решения, исходя из контекста.
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 04/16/2018
 
 ## <a name="easy-to-use-tools"></a>Простые в использовании инструменты
 
-Power BI Embedded позволяет сосредоточиться на том, что у вас получается лучше всего, — на создании отличных приложений. Для задач разработки и управления Power BI Embedded будет достаточно инструментов и навыков, которые у вас уже есть.
+Power BI Embedded позволяет сосредоточиться на том, что у вас получается лучше всего, — на создании отличных приложений. Для выполнения задач разработки и управления с помощью Power BI Embedded будет достаточно инструментов и навыков, которые у вас уже есть.
 
 * [**Портал Azure**](https://portal.azure.com/): веб-приложение для управления всеми службами Azure.
 * [**Visual Studio Code**](https://code.visualstudio.com/docs): бесплатный скачиваемый редактор кода с открытым кодом для Windows, macOS и Linux, который поддерживает расширения.

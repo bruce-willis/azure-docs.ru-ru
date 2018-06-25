@@ -1,22 +1,20 @@
 ---
 title: Отображение сведений о координатах в службе "Карты Azure" | Документация Майкрософт
 description: Как отобразить сведения об адресе на карте, когда пользователь выбирает координаты
-services: azure-maps
-keywords: ''
 author: jinzh-azureiot
 ms.author: jinzh
 ms.date: 05/07/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: azure-maps
-documentationcenter: ''
-manager: timlt
-ms.devlang: na
+services: azure-maps
+manager: ''
 ms.custom: codepen
-ms.openlocfilehash: bb8644724cc872a0a8bc331e76251218492fd93d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3caae47f7f8f5f9c917e3a59513e6cd33cdcaeae
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34600499"
 ---
 # <a name="get-information-from-a-coordinate"></a>Получение сведений на основе координат
 
@@ -45,3 +43,7 @@ ms.lasthandoff: 05/07/2018
     * [setPopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-javascript/popup?view=azure-iot-typescript-latest#setpopupoptions)
     * [open](https://docs.microsoft.com/javascript/api/azure-maps-javascript/popup?view=azure-iot-typescript-latest#open)
     * [close](https://docs.microsoft.com/javascript/api/azure-maps-javascript/popup?view=azure-iot-typescript-latest#close)
+
+Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
+* [Отображение направлений от точки А до точки Б](./map-route.md)
+* [Отображение трафика](./map-show-traffic.md)

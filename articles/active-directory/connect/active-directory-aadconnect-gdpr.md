@@ -11,14 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/26/2018
+ms.date: 05/21/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a1fa7f58040b420bf52d89a57b1234416c2fb939
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 8e3f81a6480e9de55c8f803e2266c4ac6e33c316
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32149395"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34590544"
 ---
 # <a name="user-privacy-and-azure-ad-connect"></a>Конфиденциальность пользователей и Azure AD Connect 
 
@@ -27,7 +28,7 @@ ms.locfileid: "32149395"
 >[!NOTE] 
 >В этой статье рассматривается конфиденциальность пользователей в Azure AD Connect.  Сведения о конфиденциальности пользователей в Azure Active Directory Connect Health приведены в [этой статье](../../active-directory/connect-health/active-directory-aadconnect-health-gdpr.md).
 
-Соответствия требованиям конфиденциальности пользователей для систем Azure AD Connect можно достичь двумя способами.
+Повысить конфиденциальность пользователей для установленных служб Azure AD Connect можно двумя способами:
 
 1.  По запросу извлекать данные для пользователя и удалять эти данные из установленных решений.
 2.  Не хранить данные больше 48 часов.

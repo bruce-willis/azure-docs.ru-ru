@@ -13,12 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9d17a4038f2171b74c8ba1dbc21e8335e6893691
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: bcd9ec44eafd586648ba964c5cba248a184a8ec3
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34591567"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Подробное техническое руководство по простому единому входу Azure Active Directory
 
@@ -50,7 +52,7 @@ ms.lasthandoff: 03/08/2018
 
 Процесс входа в веб-браузере выглядит следующим образом.
 
-1. Пользователь пытается получить доступ к веб-приложению (например, Outlook Web App — https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
+1. Пользователь пытается получить доступ к веб-приложению (например, веб-приложению Outlook —https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
 2. Если пользователь еще не выполнил вход, он перенаправляется на страницу входа в Azure AD.
 3. Пользователь вводит свое имя на странице входа в Azure AD.
 

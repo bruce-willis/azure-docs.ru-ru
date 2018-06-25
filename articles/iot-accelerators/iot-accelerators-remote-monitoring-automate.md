@@ -1,22 +1,19 @@
 ---
 title: Обнаружение проблем на устройствах с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
-description: В этом руководстве показано, как использовать правила и действия для автоматического обнаружения проблем на устройстве на основе пороговых значений в решении для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
+description: В этом руководстве показано, как с помощью правил и действий автоматически обнаруживать проблемы на устройстве на основе пороговых значений в решении для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-suite
 ms.date: 05/01/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: f3583b27b2fb9959e65a9c66a75c1174ebf3e238
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: df1ba7909c64e8ccc24bcf3584bd28b2629f49ff
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627319"
 ---
 # <a name="detect-issues-using-threshold-based-rules"></a>Обнаружение проблем с помощью правил на основе пороговых значений
 

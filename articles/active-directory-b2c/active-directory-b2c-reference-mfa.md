@@ -1,21 +1,21 @@
 ---
-title: 'Azure Active Directory B2C: Многофакторная идентификация | Документация Майкрософт'
-description: Как включить многофакторную проверку подлинности в потребительских приложениях, защищенных с помощью Azure Active Directory B2C.
+title: Многофакторная идентификация в Azure Active Directory B2C | Документация Майкрософт
+description: Узнайте, как включить многофакторную идентификацию в потребительских приложениях, защищенных с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 12/06/2016
 ms.author: davidmu
-ms.openlocfilehash: f439c65d9b4fbeb78623312c426767f89dfd9fab
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.component: B2C
+ms.openlocfilehash: 85592275c13719fec0f40eb76a9bce48890a59d2
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34710198"
 ---
 # <a name="azure-active-directory-b2c-enable-multi-factor-authentication-in-your-consumer-facing-applications"></a>Azure Active Directory B2C: включение многофакторной проверки подлинности в пользовательских приложениях
 Azure Active Directory (Azure AD) B2C непосредственно интегрируется со службой [Многофакторной идентификации Azure](../active-directory/authentication/multi-factor-authentication.md) , что позволяет добавить второй уровень защиты при регистрации пользователей в ваших приложениях и входе пользователей в них. И все это можно сделать, не написав ни строки кода. Сейчас в качестве вариантов проверки мы поддерживаем телефонный звонок и текстовое сообщение. Если вы уже создали политики регистрации и входа в систему, вы все равно можете включить многофакторную проверку подлинности.

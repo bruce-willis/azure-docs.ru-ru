@@ -13,13 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 05/29/2018
 ms.author: iainfou
-ms.openlocfilehash: 1afb43b65203406a7d49b0e3f641bc22d164a4a9
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: ca447f3ca0ed6656912a0d3e5082ebd2dd308a14
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34652490"
 ---
 # <a name="manage-a-virtual-machine-scale-set-with-the-azure-cli-20"></a>Управление масштабируемым набором виртуальных машин с помощью Azure CLI 2.0
 На протяжении жизненного цикла масштабируемого набора виртуальных машин может возникнуть необходимость выполнить одну или несколько задач управления. Кроме того, можно создавать сценарии для автоматизации различных задач жизненного цикла. В этой статье подробно рассматриваются некоторые стандартные команды Azure CLI 2.0, которые позволяют выполнять эти задачи.
@@ -36,22 +37,22 @@ az vmss show --resource-group myResourceGroup --name myScaleSet
 
 
 ## <a name="view-vms-in-a-scale-set"></a>Просмотр виртуальных машин в масштабируемом наборе
-Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, введите команду [az vmss list-instances](/cli/azure/vmss#list-instances). Следующий пример выводит список всех экземпляров виртуальных машин в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите собственные значения для имен.
+Чтобы просмотреть список экземпляров виртуальных машин в масштабируемом наборе, введите команду [az vmss list-instances](/cli/azure/vmss#list-instances). Следующий пример выводит списки всех экземпляров виртуальных машин в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите собственные значения для имен.
 
 ```azurecli
 az vmss list-instances \
-  --resource-group myResourceGroup \
-  --name myScaleSet \
-  --output table
+    --resource-group myResourceGroup \
+    --name myScaleSet \
+    --output table
 ```
 
 Чтобы просмотреть дополнительные сведения о конкретном экземпляре виртуальной машины, добавьте параметр `--instance-id` в команду [az vmss get-instance-view](/cli/azure/vmss#get-instance-view) и укажите экземпляр для просмотра. Следующий пример возвращает сведения об экземпляре виртуальной машины *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Введите свои имена следующим образом.
 
 ```azurecli
 az vmss get-instance-view \
-  --resource-group myResourceGroup \
-  --name myScaleSet \
-  --instance-id 0
+    --resource-group myResourceGroup \
+    --name myScaleSet \
+    --instance-id 0
 ```
 
 
@@ -60,8 +61,8 @@ az vmss get-instance-view \
 
 ```azurecli
 az vmss list-instance-connection-info \
-  --resource-group myResourceGroup \
-  --name myScaleSet
+    --resource-group myResourceGroup \
+    --name myScaleSet
 ```
 
 
@@ -93,13 +94,13 @@ az vmss scale \
 ## <a name="stop-and-start-vms-in-a-scale-set"></a>Остановка и запуск виртуальных машин в масштабируемом наборе
 Чтобы остановить одну или несколько виртуальных машин в масштабируемом наборе, используйте команду [az vmss stop](/cli/azure/vmss/stop). С помощью параметра `--instance-ids` можно указать одну или несколько виртуальных машин, которые нужно остановить. Если не указать идентификатор экземпляра, останавливаются все виртуальные машины в масштабируемом наборе. Чтобы остановить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами.
 
-Следующий пример останавливает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример останавливает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```azurecli
 az vmss stop --resource-group myResourceGroup --name myScaleSet --instance-ids 0
 ```
 
-Остановленные виртуальные машины остаются выделенными, и за них по-прежнему взимается плата за вычислительные операции. Если вместо этого требуется освободить виртуальные машины, чтобы плата взималась только за хранение данных, используйте команду [az vmss deallocate](/cli/azure/vmss#az_vmss_deallocate). Чтобы освободить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами. Следующий пример освобождает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Остановленные виртуальные машины остаются выделенными, и за них по-прежнему взимается плата за вычислительные операции. Если вместо этого требуется освободить виртуальные машины, чтобы плата взималась только за хранение данных, используйте команду [az vmss deallocate](/cli/azure/vmss#az_vmss_deallocate). Чтобы освободить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами. Следующий пример освобождает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```azurecli
 az vmss deallocate --resource-group myResourceGroup --name myScaleSet --instance-ids 0
@@ -109,7 +110,7 @@ az vmss deallocate --resource-group myResourceGroup --name myScaleSet --instance
 ### <a name="start-vms-in-a-scale-set"></a>Запуск виртуальных машин в масштабируемом наборе
 Чтобы запустить одну или несколько виртуальных машин в масштабируемом наборе, используйте команду [az vmss start](/cli/azure/vmss#az_vmss_start). С помощью параметра `--instance-ids` можно указать одну или несколько виртуальных машин, которые нужно запустить. Если не указать идентификатор экземпляра, запускаются все виртуальные машины в масштабируемом наборе. Чтобы запустить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами.
 
-Следующий пример запускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример запускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```azurecli
 az vmss start --resource-group myResourceGroup --name myScaleSet --instance-ids 0
@@ -119,7 +120,7 @@ az vmss start --resource-group myResourceGroup --name myScaleSet --instance-ids 
 ## <a name="restart-vms-in-a-scale-set"></a>Перезапуск виртуальных машин в масштабируемом наборе
 Чтобы перезапустить одну или несколько виртуальных машин в масштабируемом наборе, используйте команду [az vmss restart](/cli/azure/vmss#az_vmss_restart). С помощью параметра `--instance-ids` можно указать одну или несколько виртуальных машин, которые нужно перезапустить. Если не указать идентификатор экземпляра, перезапускаются все виртуальные машины в масштабируемом наборе. Чтобы перезапустить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами.
 
-Следующий пример перезапускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример перезапускает экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```azurecli
 az vmss restart --resource-group myResourceGroup --name myScaleSet --instance-ids 0
@@ -129,7 +130,7 @@ az vmss restart --resource-group myResourceGroup --name myScaleSet --instance-id
 ## <a name="remove-vms-from-a-scale-set"></a>Удаление виртуальных машин из масштабируемого набора
 Чтобы удалить одну или несколько виртуальных машин из масштабируемого набора, используйте команду [az vmss delete-instances](/cli/azure/vmss#delete-instances). С помощью параметра `--instance-ids` можно указать одну или несколько виртуальных машин, которые нужно удалить. Если указать * вместо идентификатора экземпляра, удаляются все виртуальные машины в масштабируемом наборе. Чтобы удалить несколько виртуальных машин, разделите идентификаторы экземпляров пробелами.
 
-Следующий пример удаляет экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения, как показано ниже.
+Следующий пример удаляет экземпляр *0* в масштабируемом наборе *myScaleSet* в группе ресурсов *myResourceGroup*. Укажите свои значения следующим образом.
 
 ```azurecli
 az vmss delete-instances --resource-group myResourceGroup --name myScaleSet --instance-ids 0

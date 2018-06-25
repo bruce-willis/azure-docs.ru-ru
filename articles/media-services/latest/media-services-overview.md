@@ -13,14 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 03/27/2018
+ms.date: 06/14/2018
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: c5c719d484684c0efff87671ba7e012d9bd7699e
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 489801852202163ef40d57da0082e39793196d85
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36264100"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -49,7 +50,9 @@ ms.lasthandoff: 05/11/2018
 
 ## <a name="v3-capabilities"></a>Возможности версии 3
 
-Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в **Azure Resource Manager**. Эта версия предоставляет следующие возможности.  
+Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в Azure Resource Manager. 
+
+Эта версия предоставляет следующие возможности.  
 
 * **Преобразования** позволяют определить простые рабочие процессы обработки и аналитики мультимедиа. Преобразование — это способ обработки аудио- и видеофайлов. Вы можете применять эту функцию несколько раз для обработки всех файлов в библиотеке содержимого, отправляя задания на преобразование.
 * **Задания** предназначены для обработки (шифрования или анализа) видеосодержимого. Содержимое входных данных можно указывать в задании с помощью URL-адресов протоколов HTTP, URL-адресов SAS или путей к файлам, находящимся в хранилище BLOB-объектов Azure. 
@@ -58,34 +61,29 @@ ms.lasthandoff: 05/11/2018
 * **Управление доступом на основе ролей** можно задать на уровне ресурсов, что позволит заблокировать доступ к определенным ресурсам (например, к преобразователям, каналам и т. д.).
 * **Клиентские пакеты SDK** на нескольких языках: .NET, .NET Core, Python, Go, Java и Node.js.
 
+## <a name="naming-conventions"></a>Соглашения об именовании.
+
+К именам ресурсов Служб мультимедиа версии 3 (например, "Ресурсы", "Задания", "Преобразования") применяются ограничения именования Azure Resource Manager. В соответствии с Azure Resource Manager имена ресурсов всегда уникальны. Таким образом, вы можете использовать любые уникальные строки идентификаторов (например, GUID) для имен ваших ресурсов. 
+
+Имена ресурсов Служб мультимедиа не должны содержать следующие символы: "<", ">", "%", "&", ":", "&#92;", "?", "/", "*", "+", ".", символ единичной кавычки или любые управляющие символы. Все остальные символы разрешены. Максимальная длина имени ресурса составляет 260 символов. 
+
+Дополнительные сведения об именовании Azure Resource Manager см. в разделе о [требованиях к именованию](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md#arguments-for-crud-on-resource) и статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
+
 ## <a name="how-can-i-get-started-with-v3"></a>Как начать работу с версией 3?
 
-Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентских библиотек, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. Корпорация Майкрософт создает и поддерживает следующие клиентские библиотеки: 
+Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентских библиотек, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. С примером REST Postman можно ознакомиться [здесь](https://github.com/Azure-Samples/media-services-v3-rest-postman). Вы также можете использовать [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates).
 
-* [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
-* [Языки .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0).
-* [.NET Core](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0) (выберите вкладку **.NET CLI**)
-* Java
+Корпорация Майкрософт создает и поддерживает следующие клиентские библиотеки: 
 
-  Добавьте в проект следующую зависимость:
-  
-  ```
-  <dependency>
-    <groupId>com.microsoft.azure.media-2018-03-30-preview</groupId>
-    <artifactId>azure-mgmt- media</artifactId>
-    <version>0.0.1-beta</version>
-  </dependency> 
-  ```
-* Node.js 
-
-  Используйте следующую команду:
-  
-  ```
-  npm install azure-arm-mediaservices
-  ```
-  
-* [Python](https://pypi.org/project/azure-mgmt-media/1.0.0rc1/)
-* [GO](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/mediaservices/mgmt/2018-03-30-preview/media)
+|Клиентская библиотека|Примеры|
+|---|---|
+|[Пакет SDK для Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)|[Примеры Azure CLI](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)|
+|[ПАКЕТ SDK .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0)|[Примеры для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)|
+|[Пакет SDK для .NET Core](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)|
+|[Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/mediaservices)||
+|[Пакет SDK для Node.js](https://docs.microsoft.com/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)|
+|[Пакет SDK для Python](https://pypi.org/project/azure-mgmt-media/1.0.0rc1/)||
+|[Пакет SDK для GO](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/mediaservices/mgmt/2018-03-30-preview/media)||
 
 Службы мультимедиа предоставляют [файлы Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media), которые можно использовать для создания пакетов SDK с использованием предпочтительного языка или технологии.  
 

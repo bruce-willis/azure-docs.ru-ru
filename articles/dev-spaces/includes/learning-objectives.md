@@ -10,15 +10,15 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 56233a6764c50ed816a5fd10e79d3a66fff08a0a
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: ad02c7abf42d61d5e67eefdbb42fe3501e4cfba8
+ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34198615"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34823797"
 ---
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
-- создание в Azure среды на основе Kubernetes, которая оптимизирована для разработки;
+- создание в Azure оптимизированной для разработки среды на основе Kubernetes — _пространства разработки_;
 - итеративная разработка кода в контейнерах с помощью VS Code и командной строки;
 - эффективная разработка и тестирование кода в среде командной работы.

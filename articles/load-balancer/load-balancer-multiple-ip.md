@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 2fbf7bd736a59cbcd6231fa8325a084f54927467
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 3b7971fec0aa0c354476073b01699f516f9439cc
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34261461"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637384"
 ---
 # <a name="load-balancing-on-multiple-ip-configurations-by-using-the-azure-portal"></a>Балансировка нагрузки в конфигурациях с несколькими IP-адресами с помощью портала Azure
 
@@ -173,7 +173,7 @@ ms.locfileid: "34261461"
 
 Настройте правила балансировки нагрузки для каждого веб-сайта (contoso.com и fabrikam.com).
     
-1. <a name="step6-1"></a>Выберите **Правила балансировки нагрузки** в разделе **Параметры**. В верхней части следующей колонки выберите **Добавить**. 
+1. <a name="step6-1"></a>В разделе **Параметры** выберите **Правила балансировки нагрузки**. В верхней части следующей колонки выберите **Добавить**. 
 
 2. Выберите **имя** правила балансировки нагрузки (например, **HTTPc** для contoso.com или **HTTPf** для fabrikam.com).
 

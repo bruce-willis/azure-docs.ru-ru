@@ -6,13 +6,14 @@ author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 01/30/2018
+ms.date: 05/24/2018
 ms.author: tomfitz
-ms.openlocfilehash: f9719bb1f1563c55537c7ef32278411a2034bd75
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 625f3e228bb28c85e68fb592914fb2191baf3e4e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34626995"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Мониторинг доставки сообщений Сетки событий 
 
@@ -41,9 +42,15 @@ ms.lasthandoff: 05/18/2018
 
 ## <a name="event-subscription-status"></a>Состояние подписки на событие
 
-Чтобы просмотреть метрики для подписки на события, выберите в доступных службах **Подписки на Сетку событий**.
+Чтобы просмотреть метрики подписки на события, можно выполнить поиск по типу подписки или по подпискам для конкретного ресурса.
 
-![Поиск подписок на события](./media/monitor-event-delivery/select-event-subscriptions.png)
+Чтобы выполнить поиск по типу события подписки, выберите **Все службы**.
+
+![Выбор всех служб](./media/monitor-event-delivery/all-services.png)
+
+Выполните поиск по словосочетанию **сетка событий** и выберите из доступных вариантов **Подписки на сетку событий**.
+
+![Поиск подписок на события](./media/monitor-event-delivery/search-and-select.png)
 
 Отфильтруйте результаты поиска по типу события, подписке и расположению. Выберите **Метрики** для подписки для просмотра.
 
@@ -53,9 +60,15 @@ ms.lasthandoff: 05/18/2018
 
 ![Просмотр метрик событий](./media/monitor-event-delivery/subscription-metrics.png)
 
+Чтобы найти метрики для определенного ресурса, выберите необходимый ресурс. Затем щелкните **События**.
+
+![Выбор событий для ресурса](./media/monitor-event-delivery/select-events.png)
+
+Вы можете просмотреть метрики подписок для этого ресурса.
+
 ## <a name="custom-event-status"></a>Состояние настраиваемого события
 
-При публикации пользовательского раздела можно просмотреть соответствующие метрики. Выберите группу ресурсов, содержащую раздел, а затем выберите раздел.
+При публикации пользовательского раздела можно просмотреть соответствующие метрики. Выберите группу ресурсов раздела, а затем выберите раздел.
 
 ![Выбор пользовательского раздела.](./media/monitor-event-delivery/select-custom-topic.png)
 

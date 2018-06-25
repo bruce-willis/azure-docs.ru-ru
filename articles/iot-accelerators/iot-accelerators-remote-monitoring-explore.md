@@ -1,22 +1,19 @@
 ---
 title: Начало работы с решением удаленного мониторинга в Azure | Документация Майкрософт
 description: В этом руководстве используются моделируемые сценарии для представления акселератора решений удаленного мониторинга. Эти сценарии создаются при первом развертывании акселератора решений удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 05/01/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: c8a055dd0dc8e2d9a9a64b492fb134caaacda489
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: e354e110df8d168e153c50de6f7aad08dd416464
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627813"
 ---
 # <a name="explore-the-capabilities-of-the-remote-monitoring-solution-accelerator"></a>Обзор возможностей акселератора решений для удаленного мониторинга
 
@@ -50,7 +47,7 @@ ms.lasthandoff: 05/20/2018
 > [!NOTE]
 > Если для развертывания акселератора решений используется CLI, файл `deployment-{your deployment name}-output.json` содержит сведения о развертывании, такие как URL-адрес для получения доступа к развернутому примеру.
 
-Пример Contoso предоставляет набор виртуальных устройств и правил для работы с ними. Когда вы ознакомитесь с основными сценариями, сведения о других возможностях решения см. в статье [Perform advanced monitoring using the remote monitoring solution](iot-accelerators-remote-monitoring-monitor.md) (Выполнение расширенного мониторинга с помощью решения удаленного мониторинга).
+Пример Contoso предоставляет набор виртуальных устройств и правил для работы с ними. Когда вы ознакомитесь с основными сценариями, сведения о других возможностях решения см. в статье [Расширенный мониторинг с помощью решения для удаленного мониторинга](iot-accelerators-remote-monitoring-monitor.md).
 
 Contoso — это организация, которая управляет широким набором ресурсов в разных средах. Contoso планирует использовать возможности облачных приложений Интернета вещей удаленного мониторинга нескольких ресурсов и управления ими из централизованного приложения. В следующих разделах приведены краткие сведения о начальной конфигурации примера Contoso.
 

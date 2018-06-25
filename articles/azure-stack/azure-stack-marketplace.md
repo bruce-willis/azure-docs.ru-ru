@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2018
+ms.date: 05/23/2018
 ms.author: brenduns
 ms.reviewer: jeffgo
-ms.openlocfilehash: 7b1a6020fb8730aee7ed41d8c82358db0945e4ef
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 4ea23ed01e6432f24024d7e8cc07c2dfe42ac639
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257648"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34605575"
 ---
 # <a name="the-azure-stack-marketplace-overview"></a>Общие сведения об Azure Stack Marketplace
 
@@ -29,6 +29,9 @@ ms.locfileid: "34257648"
 Marketplace — это коллекция служб, приложений и ресурсов, настроенных для Azure Stack. Ресурсы включают виртуальные сети, виртуальные машины, хранилище и др. Здесь пользователи создают новые ресурсы и развертывают новые приложения. Это место можно рассматривать как каталог товаров, который пользователи просматривают, выбирая элементы для использования. Чтобы использовать элемент Marketplace, пользователям необходимо подписаться на предложение, которое предоставит им доступ к элементу.
 
 Как оператор Azure Stack вы определяете, какие элементы следует добавить (опубликовать) в Marketplace. Опубликовать можно, например, базы данных, службы приложений и т. д. Публикация сделает их видимыми для всех пользователей. Вы можете опубликовать настраиваемые элементы, которые вы создали. Также можно опубликовать элементы из постоянно растущего [списка элементов Azure Marketplace](azure-stack-marketplace-azure-items.md). После публикации элемента в Marketplace он станет видимым для пользователей в течение пяти минут.
+
+> [!Caution]  
+> Все артефакты элемента коллекции, известные как образы и JSON-файлы, доступны без аутентификации после внесения их в Azure Stack Marketplace. Дополнительные сведения о публикации пользовательских элементов Marketplace см. в статье [Создание и публикация элемента Marketplace](azure-stack-create-and-publish-marketplace-item.md).
 
 Чтобы открыть marketplace, в консоли администрирования выберите **New** (Создать).
 

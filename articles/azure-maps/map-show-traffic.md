@@ -1,22 +1,20 @@
 ---
 title: Отображение данных дорожного движения с помощью службы "Карты Azure" | Документация Майкрософт
 description: Как отобразить данные дорожного движения на карте Javascript
-services: azure-maps
-keywords: ''
-author: jinzh-azureiot
+author: jingjing-z
 ms.author: jinzh
 ms.date: 05/07/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: azure-maps
-documentationcenter: ''
-manager: timlt
-ms.devlang: na
+services: azure-maps
+manager: ''
 ms.custom: codepen
-ms.openlocfilehash: a90304de1fbdb4550d0789aa71b66eebece8a02e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 6ff7a0270509c244fc97bd04d8ba648fd262dc58
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34600125"
 ---
 # <a name="show-traffic-on-the-map"></a>Отображение данных дорожного движения на карте
 
@@ -36,3 +34,9 @@ ms.lasthandoff: 05/07/2018
 Дополнительные сведения о классах и методах, которые используются в этой статье: 
 * класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest);
     * метод [setTraffic](https://docs.microsoft.com/javascript/api/azure-maps-javascript/map?view=azure-iot-typescript-latest#settraffic).
+
+Дополнительные примеры кода для добавления в карты см. в следующих статьях: 
+* [Взаимодействие с картой — события мыши](./map-events.md)
+* [Создание карты](./map-accessibility.md)
+
+Чтобы узнать о других сценариях работы с картами, перейдите на эту [страницу с примерами кода](http://aka.ms/AzureMapsSamples).

@@ -7,6 +7,7 @@ author: MarkusVi
 manager: mtillman
 ms.assetid: cdc25576-37f2-4afb-a786-f59ba4c284c2
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -14,12 +15,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 2fd3d2cb403e3889c5faa538a49fa129496ae6e8
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: d41e83c11f33b0bcbe4ea632332f2cd8bb12313f
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32770746"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34714118"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -89,7 +90,7 @@ ms.locfileid: "32770746"
     
     - Пользователь, который выполнил вход, не является пользователем домена (например, локальный пользователь). Гибридное присоединение к Azure AD на низкоуровневых устройствах поддерживается только для пользователей домена.
     
-    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано проблемами с исходящим сетевым подключением к URL-адресам Azure AD. Кроме того, возможно, что Многофакторная идентификация (MFA) включена или настроена для пользователя, а WIAORMUTLIAUTHN — не настроен на сервере федерации (проверьте шаги конфигурации). Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое получение токена программой **Autoworkplace.exe**.
+    - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано проблемами с исходящим сетевым подключением к URL-адресам Azure AD. Кроме того, возможно, что Многофакторная идентификация (MFA) включена или настроена для пользователя, а WIAORMUTLIAUTHN — не настроен на сервере федерации. Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое получение токена программой **Autoworkplace.exe**.
     
     - Ваша организация использует прозрачный единый вход Azure AD, `https://autologon.microsoftazuread-sso.com` или `https://aadg.windows.net.nsatc.net` нет в параметрах интрасети IE устройства, а параметр **Разрешить обновление строки состояния в сценарии** не включен в зоне интранета.
 

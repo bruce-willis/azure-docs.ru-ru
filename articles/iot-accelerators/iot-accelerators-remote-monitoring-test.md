@@ -1,22 +1,19 @@
 ---
 title: Моделирование устройств с помощью решения удаленного мониторинга в Azure | Документация Майкрософт
 description: В этом руководстве показано, как использовать симулятор устройств с акселератором решения для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 01/15/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: c10d983ea6b864d21f4589a3cbfdd5def39ac753
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: d8a528265acc3e0bee24da6c1b6130082815b9fd
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34628265"
 ---
 # <a name="create-a-new-simulated-device"></a>Создание имитированного устройства
 
@@ -82,7 +79,7 @@ ms.lasthandoff: 05/20/2018
 > * добавлять новый тип устройства на панель мониторинга;
 > * отправлять пользовательские данные телеметрии из имеющегося типа устройства.
 
-В следующем видео показано пошаговое соединение имитированного и реального устройств с решением для удаленного мониторинга.
+В следующем видео показано пошаговое соединение имитированного и реального устройств с решением для удаленного мониторинга:
 
 >[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Part-38-Customizing-Azure-IoT-Suite-solution-and-connect-a-real-device/Player]
 
@@ -102,11 +99,11 @@ ms.lasthandoff: 05/20/2018
 
 ## <a name="prepare-your-development-environment"></a>Подготовка среды разработки
 
-Выполните приведенные ниже действия, чтобы подготовить среду разработки для добавления нового имитированного устройства в решение удаленного мониторинга.
+Выполните приведенные ниже действия, чтобы подготовить среду разработки для добавления нового имитированного устройства в решение удаленного мониторинга:
 
 ### <a name="configure-ssh-access-to-the-solution-virtual-machine-in-azure"></a>Настройка доступа по протоколу SSH к виртуальной машине решения в Azure
 
-При создании решения удаленного мониторинга на сайте [www.azureiotsuite.com](https://www.azureiotsuite.com) вы выбрали имя решения. Оно становится именем группы ресурсов Azure, которая содержит различные развернутые ресурсы, используемые решением. Следующие команды используют группу ресурсов с именем **Contoso-01**, **это имя** следует заменить на имя группы ресурсов.
+При создании решения удаленного мониторинга на сайте [www.azureiotsolutions.com](https://www.azureiotsolutions.com) вы выбрали имя решения. Оно становится именем группы ресурсов Azure, которая содержит различные развернутые ресурсы, используемые решением. Следующие команды используют группу ресурсов с именем **Contoso-01**, **это имя** следует заменить на имя группы ресурсов.
 
 Следующие команды используют команду `az` из [Azure CLI 2.0](https://docs.microsoft.com/cli/azure?view=azure-cli-latest). Вы можете установить Azure CLI 2.0 на своем компьютере разработки или использовать [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) на [портале Azure](http://portal.azure.com). Azure CLI 2.0 предварительно установлен в Cloud Shell.
 
@@ -494,7 +491,7 @@ ms.lasthandoff: 05/20/2018
 
 ### <a name="deploy-the-updated-simulator-to-the-cloud"></a>Развертывание обновленной службы моделирования в облако
 
-Микрослужбы в решении удаленного мониторинга выполняются в контейнерах Docker, которые размещаются в виртуальной машине решения в Azure. В этом разделе выполняются следующие действия:
+Микрослужбы в решении удаленного мониторинга выполняются в контейнерах Docker. которые размещаются в виртуальной машине решения в Azure. В этом разделе выполняются следующие действия:
 
 * создание образа Docker для моделирования устройства;
 * передача образа в репозиторий центра Docker;

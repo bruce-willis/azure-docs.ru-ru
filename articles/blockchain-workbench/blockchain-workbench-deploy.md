@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 484c7a17fec4ee94e3170e93eb1438af688d101e
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: bcd08ac8563edfaf4297e26ad42ed8bc62d86918
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303949"
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34831641"
 ---
 # <a name="deploy-azure-blockchain-workbench"></a>Развертывание Azure Blockchain Workbench
 
@@ -73,7 +73,7 @@ Blockchain Workbench позволяет развернуть реестр бло
 Затем необходимо изменить манифест приложения, чтобы использовать роли приложения вместе с Azure AD для указания администраторов Blockchain Workbench.  Дополнительные сведения о манифесте приложения см. в статье [Манифест приложения Azure Active Directory](../active-directory/develop/active-directory-application-manifest.md).
 
 1. Для зарегистрированного приложения выберите **Манифест** на панели сведений о зарегистрированных приложениях.
-2. Создайте GUID. Для создания идентификатора GUID можно использовать команду PowerShell `[guid]::NewGuid()` или онлайн-средства. 
+2. Создайте GUID. Глобальный уникальный идентификатор можно создать с помощью команды PowerShell [guid] :: NewGuid () или командлета New-GUID. Кроме того, это можно сделать на веб-сайте GUID Generator.
 3. Вы собираетесь обновить раздел манифеста **appRoles**. В области редактирования манифеста выберите **Изменить** и замените `"appRoles": []` на значение, предоставленное JSON. Обязательно замените значение поля **Идентификатор** значением, созданным GUID. 
 
     ``` json

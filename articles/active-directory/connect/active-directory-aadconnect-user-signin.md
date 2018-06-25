@@ -12,14 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/08/2018
+ms.date: 05/31/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c8b972978743fee33c7b7080cdf9d290bdbb619e
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: 968636848b9cba9c0976aa366952e56838623cc4
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34055092"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34698821"
 ---
 # <a name="azure-ad-connect-user-sign-in-options"></a>Параметры входа в Azure AD Connect
 Служба Azure Active Directory (Azure AD) Connect позволяет входить в облачные и локальные ресурсы, используя те же пароли. В этой статье рассматриваются основные сведения о каждой модели идентификации, с помощью которых вы можете выбрать удостоверение для входа в Azure AD.
@@ -48,6 +49,8 @@ ms.locfileid: "34055092"
 Использовать локальные решения для Многофакторной идентификации.|||x|
 
 *Через облегченный агент.
+
+Дополнительные сведения о выборе методе проверки подлинности см. в разделе [Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory](../../security/azure-ad-choose-authn.md).
 
 ### <a name="password-hash-synchronization"></a>Синхронизация хэша паролей
 При включении такой синхронизации выполняется синхронизация хэша паролей пользователей из локального каталога Active Directory в Azure AD. После изменения или сброса паролей на локальном компьютере новые хэши паролей сразу же синхронизируются с Azure AD. Поэтому ваши пользователи всегда могут использовать одни и те же пароли для облачных и локальных ресурсов. Пароли никогда не отправляются в Azure AD и не хранятся в Azure AD в виде открытого текста. При использовании синхронизации хэша паролей вместе с обратной записью паролей можно включить самостоятельный сброс паролей в Azure AD.

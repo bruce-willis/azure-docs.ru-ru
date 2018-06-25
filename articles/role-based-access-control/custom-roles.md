@@ -13,18 +13,20 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/12/2018
 ms.author: rolyon
-ms.reviewer: rqureshi
+ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9e2ea46ea1a6b5bd3f50d4d4c15492c16c5241c0
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 3baf616e448f1f6d5292161ae125502d72141940
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161062"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35266600"
 ---
 # <a name="create-custom-roles-in-azure"></a>Создание настраиваемых ролей в Azure
 
-Если [встроенные роли](built-in-roles.md) не соответствуют определенным требованиям к доступу, можно создать собственные настраиваемые роли. Пользовательские роли, так же как и встроенные, можно назначать пользователям, группам и субъектам-службам в рамках подписки, группы ресурсов или области ресурсов. Настраиваемые роли хранятся в клиенте Azure Active Directory (Azure AD) и могут использоваться несколькими подписками. Настраиваемые роли можно создавать с помощью Azure PowerShell, Azure CLI и интерфейса REST API. В этой статье описывается пример создания настраиваемых ролей с помощью Azure CLI и PowerShell.
+Если [встроенные роли](built-in-roles.md) не соответствуют определенным требованиям к доступу, можно создать собственные настраиваемые роли. Пользовательские роли, так же как и встроенные, можно назначать пользователям, группам и субъектам-службам в рамках подписки, группы ресурсов или области ресурсов. Настраиваемые роли хранятся в клиенте Azure Active Directory (Azure AD) и могут использоваться несколькими подписками. В каждом клиенте можно иметь до 2000 пользовательских ролей. Настраиваемые роли можно создавать с помощью Azure PowerShell, Azure CLI и интерфейса REST API.
+
+В этой статье описывается пример создания настраиваемых ролей с помощью Azure CLI и PowerShell.
 
 ## <a name="create-a-custom-role-to-open-support-requests-using-powershell"></a>Создание настраиваемой роли с разрешением на открытие запросов в службу поддержки с помощью PowerShell
 

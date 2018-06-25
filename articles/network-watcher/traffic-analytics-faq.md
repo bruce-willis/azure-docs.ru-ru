@@ -13,11 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: 3ab06b624d1e433641d190d9621592ef83df3344
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 99b1e39b764f27d4638e8bb0f0d210043fde8643
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35236405"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Вопросы и ответы об Аналитике трафика Azure
 
@@ -29,7 +30,14 @@ ms.lasthandoff: 04/18/2018
     - журналы потоков групп безопасности сети (NSG), мониторинг которых необходимо проводить;
     - учетная запись службы хранилища Azure для хранения необработанных журналов потоков;
     - рабочая область Log Analytics (OMS) с доступом для чтения и записи.
-    - Вашу учетную запись следует связать со следующими действиями в поставщике Microsoft.Network:
+    - Пользователю необходимо назначить хотя бы одну из следующих ролей на уровне подписки:
+    
+            All permissions *
+            All Read permissions */read
+            All network permissions Microsoft.Network/*
+            All network read permissions Microsoft.Network/*/read
+
+    Или назначить ему все следующие роли на уровне подписки: 
 
         - Microsoft.Network/applicationGateways/read
         - Microsoft.Network/connections/read
@@ -41,6 +49,19 @@ ms.lasthandoff: 04/18/2018
         - Microsoft.Network/routeTables/read
         - Microsoft.Network/virtualNetworkGateways/read 
         - Microsoft.Network/virtualNetworks/read
+        
+Чтобы проверить роли, назначенные пользователю для подписки, выполните шаги, описанные ниже.
+
+Войдите в Azure с помощью команды Login-AzureRmAccount. 
+
+Выберите необходимую подписку, используя команду Select-AzureRmSubscription. 
+
+Теперь, чтобы получить список всех ролей, назначенных соответствующему пользователю, используйте команду Get-AzureRmRoleAssignment -SignInName <user email> -IncludeClassicAdministrators. 
+
+Если после выполнения команд не отображаются выходные данные, свяжитесь с администратором соответствующей подписки, чтобы получить доступ к выполнению команд.  
+
+Дополнительные сведения см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-powershell).
+
 
 2.  В каких регионах Azure доступна Аналитика трафика?
 
@@ -106,11 +127,11 @@ ms.lasthandoff: 04/18/2018
 
 14. Можно ли настроить решение "Аналитика трафика" с помощью PowerShell или шаблона Azure Resource Manager?
 
-    Нет, решение "Аналитика трафика" можно настроить только с помощью портала Azure.
+Да. Конфигурация анализа трафика с помощью Windows PowerShell поддерживается, начиная с версии 6.2.1. Однако сейчас поддержка шаблона Azure Resource Manager недоступна. Дополнительные сведения о том, как использовать PowerShell для настройки анализа трафика, см. в документации [здесь](https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermnetworkwatcherconfigflowlog?view=azurermps-6.2.0). 
 
 15.  Как образуются цены на Аналитику трафика?
 
-        Аналитика трафика измеряется для расширения сокращенных журналов и их хранения в рабочей области Log Analytics. В режиме предварительной версии функция расширения ограниченных журналов в Аналитике трафика не тарифицируется, в отличие от возможности хранения данных (см. указанные цены). Этот ответ будет обновлен после добавления сведений о ценах на Аналитику трафика.
+Анализ трафика измеряется для передачи данных журнала, обработанных службой, сохранения полученных расширенных журналов в рабочей области Log Analytics. Чтобы получить дополнительные сведения о ценовом плане, щелкните [здесь](https://azure.microsoft.com/en-us/pricing/details/network-watcher/). 
 
 16.  Как перемещаться в представлении географической карты с помощью клавиатуры?
 

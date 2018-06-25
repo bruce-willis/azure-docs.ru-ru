@@ -5,7 +5,7 @@ services: active-directory
 documentationcenter: ''
 author: rolyon
 manager: mtillman
-editor: rqureshi
+editor: bagovind
 ms.assetid: b547c5a5-2da2-4372-9938-481cb962d2d6
 ms.service: role-based-access-control
 ms.devlang: na
@@ -14,12 +14,13 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/11/2018
 ms.author: rolyon
-ms.openlocfilehash: b671ff6b473093e59bce18c7bf98b32e9849bbb0
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.reviewer: bagovind
+ms.openlocfilehash: e1e46d5fb786b09a4c006b61f52b3ac99aafd555
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34077213"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35266511"
 ---
 # <a name="elevate-access-for-a-global-administrator-in-azure-active-directory"></a>Повышение прав доступа для глобального администратора в Azure Active Directory
 
@@ -33,6 +34,8 @@ ms.locfileid: "34077213"
 По умолчанию действие роли администратора Azure AD и ролей управления доступом на основе ролей (RBAC) Azure не распространяется на Azure AD и Azure. Однако глобальный администратор в Azure AD может повысить свои права доступа для управления подписками Azure и группами управления. При повышении прав доступа администратору предоставляется роль [администратора доступа пользователей](built-in-roles.md#user-access-administrator) (роль RBAC) для всех подписок для конкретного клиента. Роль администратора доступа пользователей позволяет предоставлять другим пользователям доступ к ресурсам Azure в области root (`/`).
 
 Такое повышение прав должно носить временный характер и происходить только при необходимости.
+
+[!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
 ## <a name="elevate-access-for-a-global-administrator-using-the-azure-portal"></a>Повышение прав доступа для глобального администратора с помощью портала Azure
 
@@ -76,9 +79,9 @@ ObjectId           : d65fd0e9-c185-472c-8f26-1dafa01f72cc
 ObjectType         : User
 ```
 
-## <a name="delete-a-role-assignment-at-the-root-scope--using-powershell"></a>Удаление назначений ролей в области root (/) с помощью PowerShell
+## <a name="remove-a-role-assignment-at-the-root-scope--using-powershell"></a>Удаление назначений ролей в области root (/) с помощью PowerShell
 
-Чтобы удалить назначение роли администратора доступа пользователей для пользователя в области scope (`/`), выполните команду [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment).
+Чтобы удалить назначение роли администратора доступа пользователей для пользователя в области root (`/`), выполните команду [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment).
 
 ```azurepowershell
 Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
@@ -110,12 +113,21 @@ Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
    }
    ```
 
-1. Администратор доступа пользователей может также удалять назначения ролей в области root (`/`).
+1. Администратор доступа пользователей может также удалять назначения ролей в корневой области (`/`).
 
-1. Отзовите привилегии администратора доступа пользователей, пока они не понадобятся вновь.
+1. Удалите привилегии администратора доступа пользователей, пока они не понадобятся вновь.
 
+## <a name="list-role-assignments-at-the-root-scope--using-the-rest-api"></a>Получение списка назначения ролей в корневой области (/) с помощью REST API
 
-## <a name="how-to-undo-the-elevateaccess-action-with-the-rest-api"></a>Как отменить действие elevateAccess с помощью REST API
+Вы можете перечислить все назначения ролей для пользователя в корневой области (`/`).
+
+- Вызовите [GET roleAssignments](/rest/api/authorization/roleassignments/listforscope), где `{objectIdOfUser}` — идентификатор объекта пользователя, чьи назначения роли вы хотите получить.
+
+   ```http
+   GET https://management.azure.com/providers/Microsoft.Authorization/roleAssignments?api-version=2015-07-01&$filter=principalId+eq+'{objectIdOfUser}'
+   ```
+
+## <a name="remove-elevated-access-using-the-rest-api"></a>Удаление доступа с повышенными правами с помощью REST API
 
 При вызове `elevateAccess` для вас создается назначение роли. Поэтому, чтобы отозвать эти привилегии, необходимо удалить назначение.
 
@@ -171,7 +183,7 @@ Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
     >[!NOTE] 
     >У администратора клиента не должно быть много назначений. Если предыдущий запрос возвращает слишком много назначений, можно запросить все назначения только на уровне области клиента, а затем отфильтровать результаты: `GET https://management.azure.com/providers/Microsoft.Authorization/roleAssignments?api-version=2015-07-01&$filter=atScope()`.
         
-    2. Предыдущие вызовы возвращают список назначения ролей. Найдите назначение роли, у которого задана область "/" и `roleDefinitionId` заканчивается значением ИД имени роли, найденным на шаге 1, а `principalId` совпадает со значением objectId администратора клиента. 
+    2. Предыдущие вызовы возвращают список назначения ролей. Найдите назначение роли, у которого задана область `"/"` и `roleDefinitionId` заканчивается значением ИД имени роли, найденным на шаге 1, а `principalId` совпадает со значением objectId администратора клиента. 
     
     Пример назначения ролей:
 

@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
-ms.openlocfilehash: f1cf83044eb4f001ba341cabd0771b267c3f996d
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 06fd2f3ef4a17c5626afc95ed8ae5999778ebda6
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35293166"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -222,7 +223,7 @@ ms.lasthandoff: 04/20/2018
 
 **Пример ввода и вывода:** <br>
 
-* **Входные данные** (givenName): "Zoë".
+* **ВВОД** (givenName): "Zoë"
 * **Выходные данные**: "zoe".
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Вывод даты в виде строки в определенном формате
@@ -256,7 +257,7 @@ ms.lasthandoff: 04/20/2018
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](active-directory-saas-app-provisioning.md)
 * [Настройка сопоставления атрибутов для подготовки пользователей](active-directory-saas-customizing-attribute-mappings.md)
 * [Фильтры области для подготовки пользователей](active-directory-saas-scoping-filters.md)
-* [Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](active-directory-scim-provisioning.md)
+* [Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](manage-apps/use-scim-to-provision-users-and-groups.md)
 * [Уведомления о подготовке учетных записей](active-directory-saas-account-provisioning-notifications.md)
 * [Список учебников по интеграции приложений SaaS](active-directory-saas-tutorial-list.md)
 

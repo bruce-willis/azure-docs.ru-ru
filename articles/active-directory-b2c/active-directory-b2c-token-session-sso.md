@@ -1,21 +1,21 @@
 ---
-title: Настройка маркера, сеанса и единого входа в Azure AD B2C | Документация Майкрософт
-description: Конфигурация маркера, сеанса и единого входа в Azure Active Directory B2C
+title: Настройка токена, сеанса и единого входа в Azure Active Directory B2C | Документация Майкрософт
+description: Конфигурация токена, сеанса и единого входа в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: davidmu
-ms.openlocfilehash: 925313b6f2a00826f2ec8086457315c60f70b007
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: B2C
+ms.openlocfilehash: 0ee39f4b6f80d13cc0f71c77ae87b2a4ee74e390
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34710640"
 ---
 # <a name="azure-active-directory-b2c-token-session-and-single-sign-on-configuration"></a>Azure Active Directory B2C: конфигурация маркера, сеанса и единого входа
 
@@ -68,10 +68,10 @@ Azure AD B2C поддерживает [протокол авторизации O
 
 Мы внесли изменения, касающиеся форматирования, в важные утверждения в маркерах безопасности, создаваемых Azure AD B2C. Это было сделано для того, чтобы улучшить поддержку стандартного протокола, а также расширить возможности взаимодействия со сторонними библиотеками удостоверений. Чтобы не нарушать работу существующих приложений, мы создали следующие свойства, чтобы позволить клиентам подключаться по необходимости.
 
-* **Утверждение издателя (iss)** — определяет клиент Azure AD B2C, выдавший маркер.
+* **Утверждение издателя (iss)**  — определяет клиент Azure AD B2C, выдавший маркер.
   * `https://login.microsoftonline.com/{B2C tenant GUID}/v2.0/` — это значение по умолчанию.
   * `https://login.microsoftonline.com/tfp/{B2C tenant GUID}/{Policy ID}/v2.0/` — это значение включает идентификаторы для клиента B2C и политики, используемых в запросе маркера. Если приложению или библиотеке требуется Azure AD B2C для соответствия [спецификации OpenID Connect Discovery 1.0](http://openid.net/specs/openid-connect-discovery-1_0.html), используйте это значение.
-* **Утверждение субъекта (sub)** — определяет сущность, т. е. пользователя, для которого маркер подтверждает информацию.
+* **Утверждение субъекта (sub)**  — определяет сущность, т. е. пользователя, для которого маркер подтверждает информацию.
   * **ObjectID** — это значение по умолчанию. Добавляет идентификатор объекта пользователя из каталога в утверждение `sub` в маркере.
   * **Не поддерживается** — указывается только для обратной совместимости. Мы рекомендуем переключиться на свойство **ObjectID**, как только это станет возможно.
 * **Идентификатор политики, представляющей утверждения** — определяет тип утверждения, в котором заполняется идентификатор политики, используемый в запросе маркера.

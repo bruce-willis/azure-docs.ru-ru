@@ -1,13 +1,14 @@
 ---
-title: "Настройка устройств, присоединенных к Azure Active Directory | Документация Майкрософт"
-description: "Сведения о настройке устройств, присоединенных к Azure Active Directory."
+title: Настройка устройств, присоединенных к Azure Active Directory | Документация Майкрософт
+description: Сведения о настройке устройств, присоединенных к Azure Active Directory.
 services: active-directory
-documentationcenter: 
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
-editor: 
+editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,11 +16,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: ac6c9224925e5bfd3cb056c6c8d9cf2a96b0eb2b
-ms.sourcegitcommit: 384d2ec82214e8af0fc4891f9f840fb7cf89ef59
+ms.openlocfilehash: 791181f11af38e4b78743ddb372207bd21893a6b
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35260935"
 ---
 # <a name="set-up-azure-active-directory-joined-devices"></a>Настройка устройств, присоединенных к Azure Active Directory
 
@@ -47,10 +49,14 @@ ms.lasthandoff: 01/16/2018
 
 - Если вы являетесь федеративным пользователем, необходимо выполнить вход с использованием учетных данных.
 
+- Если вы являетесь федеративным пользователем, поставщик удостоверений должен поддерживать конечную точку имени пользователя и пароля WS-Fed и WS-Trust. Это может быть версия 1.3 или 2005. Поддержка протокола необходима и для присоединения устройства к Azure AD, и для входа на устройство с помощью пароля. 
+
+
+
 
 ## <a name="joining-a-device"></a>Присоединение устройства
 
-В этом разделе приводятся инструкции по присоединению устройства Windows 10 к Azure AD. После успешного присоединения устройства к Azure AD в диалоговом окне **Доступ к учетной записи места работы или учебного заведения** отобразится запись **Подключен к \<ваш каталог Azure AD\>**.
+В этом разделе приводятся инструкции по присоединению устройства Windows 10 к Azure AD. Если этот процесс проходит успешно, **устройство подключается к \<Azure AD\>**.
 
 ![Подключено](./media/device-management-azuread-joined-devices-setup/13.png)
 

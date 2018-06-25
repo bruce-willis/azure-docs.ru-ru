@@ -12,20 +12,22 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2018
+ms.date: 06/05/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 4b58f3496b25e4fc04761b9df6e27f8313b35fe9
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: ec5947bc68ba95a7b1e1588c444f4b28a7435f1c
+ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33204638"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34801550"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Настройка, выполняемая после установки ASDK
-После [установки ASDK](asdk-install.md) мы рекомендуем внести некоторые изменения в конфигурацию. 
 
-## <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack 
+После установки [Пакета средств разработки Azure Stack (ASDK)](asdk-install.md) мы рекомендуем внести в конфигурацию несколько изменений.
+
+## <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
+
 Для работы с Azure Stack необходимы модули Azure PowerShell, совместимые с Azure Stack.
 
 Команды PowerShell для Azure Stack устанавливаются с использованием коллекции PowerShell. Чтобы зарегистрировать репозиторий PSGallery, откройте сеанс Windows PowerShell с повышенными привилегиями и выполните в нем следующие команды.
@@ -36,9 +38,9 @@ Set-PSRepository `
   -InstallationPolicy Trusted
 ```
 
- Совместимые с Azure Stack модули AzureRM устанавливаются с использованием профилей версии API. Для использования Azure Stack требуется профиль версии API 2017-03-09-profile, который можно получить при установке модуля AzureRM.Bootstrapper. 
- 
- Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него.
+Для указания совместимых с Azure Stack модулей AzureRM рекомендуем использовать профили версии API.  Профили версий API позволяют управлять различиями между версиями Azure и Azure Stack. Профиль версии API — это набор модулей AzureRM PowerShell с определенными версиями API. Модуль **AzureRM.Bootstrapper**, доступный в коллекции PowerShell, предоставляет командлеты PowerShell, необходимые для работы с профилями версий API.
+
+Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него:
 
 > [!IMPORTANT]
 > Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](.\.\azure-stack-powershell-install.md#uninstall-existing-versions-of-powershell).
@@ -46,7 +48,7 @@ Set-PSRepository `
 - **При наличии подключения к Интернету** с главного компьютера ASDK. Выполните следующий скрипт PowerShell, чтобы установить эти модули там, где установлен пакет средств разработки.
 
   ``` PowerShell
-  # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet 
+  # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet. 
   Install-Module `
     -Name AzureRm.BootStrapper
 
@@ -54,10 +56,11 @@ Set-PSRepository `
   Use-AzureRmProfile `
     -Profile 2017-03-09-profile -Force
 
-  Install-Module `
-    -Name AzureStack `
-    -RequiredVersion 1.2.11
+  # Install Azure Stack Module Version 1.3.0. If running a pre-1804 version of Azure Stack, change the -RequiredVersion value to 1.2.11.
+  Install-Module -Name AzureStack -RequiredVersion 1.3.0 
+
   ```
+
   Если установка выполнена успешно, в выходных данных указываются модули AzureRM и AzureStack.
 
 - **Без подключения к Интернету** с главного компьютера ASDK. При установке в автономном режиме следует заранее скачать модули PowerShell на компьютер, подключенный к Интернету, с помощью следующих команд PowerShell:
@@ -79,11 +82,13 @@ Set-PSRepository `
     -Name AzureStack `
     -Path $Path `
     -Force `
-    -RequiredVersion 1.2.11
+  # Install Azure Stack Module Version 1.3.0. If running a pre-1804 version of Azure Stack, change the -RequiredVersion value to 1.2.11.  
+    -RequiredVersion 1.3.0
   ```
+
   После этого перенесите скачанные пакеты на компьютер ASDK и зарегистрируйте это расположение в качестве репозитория по умолчанию, а затем установите модули AzureRM и AzureStack из этого репозитория:
 
-    ```PowerShell
+    ```PowerShell  
     $SourceLocation = "<Location on the development kit that contains the PowerShell packages>"
     $RepoName = "MyNuGetSource"
 
@@ -100,6 +105,7 @@ Set-PSRepository `
     ```
 
 ## <a name="download-the-azure-stack-tools"></a>Скачивание средств Azure Stack
+
 [AzureStack-Tools](https://github.com/Azure/AzureStack-Tools) — это репозиторий GitHub, в котором размещены модули PowerShell для администрирования и развертывания ресурсов в Azure Stack. Чтобы получить эти средства, клонируйте репозиторий GitHub или скачайте папку AzureStack-Tools, выполнив следующий скрипт:
 
   ```PowerShell
@@ -124,7 +130,7 @@ Set-PSRepository `
 ## <a name="validate-the-asdk-installation"></a>Проверка установки ASDK
 Чтобы убедиться, что развертывание ASDK прошло успешно, примените командлет Test-AzureStack следующим образом:
 
-1. Войдите на узел управления с именем AzureStack\CloudAdmin.
+1. Войдите на главный компьютер ASDK с именем AzureStack\AzureStackAdmin.
 2. Откройте PowerShell от имени администратора (не путайте с интегрированной средой сценариев Windows PowerShell).
 3. Выполните команду `Enter-PSSession -ComputerName AzS-ERCS01 -ConfigurationName PrivilegedEndpoint`
 4. Выполните команду `Test-AzureStack`

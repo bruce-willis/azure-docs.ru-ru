@@ -11,18 +11,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/01/2018
+ms.date: 06/11/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: 2808847642639069e60102b195ac97957c8593f0
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: b9f92b4d85e17bc848d82be413df1d0dad7c8548
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33203465"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294944"
 ---
 # <a name="create-sql-databases"></a>Создание баз данных SQL
-Базы данных с самообслуживанием предоставляются через пользовательский портал. Пользователю требуется подписка с предложением, в котором содержится служба базы данных.
+Базы данных с самообслуживанием предоставляются через пользовательский портал. Пользователю Azure Stack требуется подписка с предложением, в котором содержится служба "База данных SQL".
 
 1. Войдите на пользовательский портал [Azure Stack](azure-stack-poc.md) (администраторы служб могут также использовать портал администрирования).
 

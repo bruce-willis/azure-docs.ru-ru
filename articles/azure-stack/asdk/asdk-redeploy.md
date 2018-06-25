@@ -1,6 +1,6 @@
 ---
 title: Повторное развертывание Пакета средств разработки Azure Stack (ASDK) | Документация Майкрософт
-description: Из этого руководства вы узнаете, как выполнить повторную установку ASDK.
+description: Из этой статьи вы узнаете, как выполнить повторную установку ASDK.
 services: azure-stack
 documentationcenter: ''
 author: jeffgilb
@@ -11,28 +11,23 @@ ms.service: azure-stack
 ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
-ms.custom: mvc
-ms.date: 03/16/2018
+ms.topic: article
+ms.custom: ''
+ms.date: 06/07/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: fcf1abfe574dd3067f00df7c5ff2632b9cc2ec4f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 91b8a936215e906e6e5b7e6a4fcd0dc88bef6009
+ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34850326"
 ---
-# <a name="tutorial-redeploy-the-asdk"></a>Руководство: повторное развертывание ASDK
-Из этого руководства вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в нерабочей среде. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Кроме того, ASDK можно повторно развернуть в любой момент, когда понадобится начать работу с начала.
+# <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
+Из этой статьи вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в нерабочей среде. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Кроме того, ASDK можно повторно развернуть в любой момент, когда понадобится начать работу с начала.
 
 > [!IMPORTANT]
 > Обновление ASDK до новой версии не поддерживается. Каждый раз, когда необходимо обновиться до последней версии Azure Stack, нужно повторно развертывать ASDK на главном компьютере пакета средств разработки.
-
-Из этого руководства вы узнаете, как выполнять такие задачи:
-
-> [!div class="checklist"]
-> * Удаление регистрации в Azure 
-> * Повторное развертывание ASDK
 
 ## <a name="remove-azure-registration"></a>Удаление регистрации в Azure 
 Если установка ASDK уже была зарегистрирована в Azure, необходимо удалить ресурс регистрации перед повторным развертыванием ASDK. Повторно зарегистрируйте ASDK, чтобы включить синдикацию Marketplace в процессе его повторного развертывания. Если вы не регистрировали ASDK с подпиской Azure раньше, этот раздел можно пропустить.
@@ -55,7 +50,7 @@ ms.lasthandoff: 04/28/2018
 
   # Unregister Azure Stack
   Remove-AzsRegistration `
-      -CloudAdminCredential $YourCloudAdminCredential `
+      -PrivilegedEndpointCredential $CloudAdminCred `
       -PrivilegedEndpoint AzS-ERCS01
 
   # Remove the Azure Stack resource group
@@ -71,7 +66,7 @@ ms.lasthandoff: 04/28/2018
 
 Теперь регистрация Azure Stack для подписки Azure должна быть отменена. Кроме того, группа ресурсов azurestack, созданная при регистрации ASDK в Azure, также будет удалена.
 
-## <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
+## <a name="deploy-the-asdk"></a>Развертывание пакета SDK для Azure Stack
 Чтобы повторно развернуть Azure Stack, необходимо выполнить описанную ниже процедуру с самого начала. В зависимости от того, был ли использован скрипт установщика Azure Stack (asdk-installer.ps1) для установки ASDK, шаги будут отличаться.
 
 ### <a name="redeploy-the-asdk-using-the-installer-script"></a>Повторное развертывание ASDK с помощью скрипта установщика
@@ -85,7 +80,7 @@ ms.lasthandoff: 04/28/2018
 
 3. После перезагрузки узла пакета разработки в основную операционную систему войдите как локальный администратор. Найдите и удалите файл **C:\CloudBuilder.vhdx**, который использовался при предыдущем развертывании. 
 
-4. Сделайте то же, что и при первом [развертывании ASDK](asdk-deploy.md).
+4. Сделайте то же, что и при первом [развертывании ASDK](asdk-install.md).
 
 ### <a name="redeploy-the-asdk-without-using-the-installer"></a>Повторное развертывание ASDK без использования установщика
 Если для установки ASDK не использовался скрипт asdk-installer.ps1, то перед тем, как повторно развернуть ASDK, необходимо вручную перенастроить главный компьютер пакета средств разработки.
@@ -100,16 +95,7 @@ ms.lasthandoff: 04/28/2018
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Удаление регистрации в Azure 
-> * Повторное развертывание ASDK
-
-Переход к следующему руководству по добавлению элемента Azure Stack Marketplace.
-
-> [!div class="nextstepaction"]
-> [Добавление элемента Marketplace Azure Stack](asdk-marketplace-item.md)
+[Настройка, выполняемая после установки ASDK](asdk-post-deploy.md)
 
 
 

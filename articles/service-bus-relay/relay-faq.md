@@ -12,17 +12,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/27/2018
+ms.date: 05/21/2018
 ms.author: sethm
-ms.openlocfilehash: d433fb916280e98dd0f2af61728596b8566be71b
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 1795c1ec0b4129e3c99fff3fc893148e191ce83e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34641498"
 ---
 # <a name="azure-relay-faqs"></a>Часто задаваемые вопросы о ретрансляторе Azure
 
-В этой статье содержатся ответы на некоторые часто задаваемые вопросы о [ретрансляторе Azure](https://azure.microsoft.com/services/service-bus/). Общие сведения о расценках и поддержке Azure см. на странице [Часто задаваемые вопросы о поддержке Azure](https://azure.microsoft.com/en-in/support/faq/).
+В этой статье содержатся ответы на некоторые часто задаваемые вопросы о [ретрансляторе Azure](https://azure.microsoft.com/services/service-bus/). Общие сведения о расценках и поддержке Azure см. на странице [часто задаваемых вопросов о поддержке Azure](https://azure.microsoft.com/support/faq/).
 
 ## <a name="general-questions"></a>Общие вопросы
 ### <a name="what-is-azure-relay"></a>Что такое ретранслятор Azure?
@@ -35,7 +36,7 @@ ms.lasthandoff: 03/28/2018
 Служба, которая называлась службой ретранслятора служебной шины, теперь называется [ретранслятором WCF](relay-wcf-dotnet-get-started.md). Вы можете использовать эту службу как обычно. Функция гибридных подключений представляет собой обновленную версию службы, перенесенной из служб BizTalk Azure. Ретранслятор WCF и гибридные подключения будут и дальше поддерживаться.
 
 ## <a name="pricing"></a>Цены
-В этом разделе содержатся ответы на некоторые часто задаваемые вопросы о ценах на использование ретранслятора. Общие сведения о расценках Azure см. на странице [Часто задаваемые вопросы о поддержке Azure](http://go.microsoft.com/fwlink/?LinkID=185083). Дополнительные сведения о ценах на использование ретранслятора см. на странице [цен на служебную шину][Pricing overview].
+В этом разделе содержатся ответы на некоторые часто задаваемые вопросы о ценах на использование ретранслятора. Общие сведения о расценках Azure см. на странице [часто задаваемых вопросов о поддержке Azure](https://azure.microsoft.com/support/faq/). Дополнительные сведения о ценах на использование ретранслятора см. на странице [цен на служебную шину][Pricing overview].
 
 ### <a name="how-do-you-charge-for-hybrid-connections-and-wcf-relay"></a>Как выставляется цена за гибридные подключения и ретранслятор WCF?
 Подробные сведения см. в таблице [гибридных подключений и ретрансляторов WCF][Pricing overview] на странице с ценами на служебную шину. Помимо платы, указанной на этой странице, также взимается плата за связанные операции передачи данных, исходящих из центра данных, в котором подготавливается ваше приложение.
@@ -81,8 +82,8 @@ ms.lasthandoff: 03/28/2018
 | Параллельные прослушиватели ретранслятора |Сущность |Запросы на дополнительные соединения отклоняются, а вызывающий код получает исключение. |25 |
 | Параллельные подключения ретрансляции для всех конечных точек ретрансляции в пространстве имен службы |Пространство имен |- |5 000 |
 | Конечные точки ретрансляции на одно пространство имен службы |Пространство имен |- |10 000 |
-| Размер сообщения для ретрансляций [NetOnewayRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.netonewayrelaybinding.aspx) и [NetEventRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.neteventrelaybinding.aspx) |Пространство имен |Входящие сообщения, размер которых превышает эти значения, отклоняются, а в вызывающем коде возникает исключение. |64 КБ |
-| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](https://msdn.microsoft.com/library/microsoft.servicebus.httprelaytransportbindingelement.aspx) и [NetTcpRelayBinding](https://msdn.microsoft.com/library/microsoft.servicebus.nettcprelaybinding.aspx) |Пространство имен |Нет ограничений на размер сообщения. |Без ограничений |
+| Размер сообщения для ретрансляций [NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) и [NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) |Пространство имен |Входящие сообщения, размер которых превышает эти значения, отклоняются, а в вызывающем коде возникает исключение. |64 КБ |
+| Размер сообщения для ретрансляций [HttpRelayTransportBindingElement](/dotnet/api/microsoft.servicebus.httprelaytransportbindingelement) и [NetTcpRelayBinding](/dotnet/api/microsoft.servicebus.nettcprelaybinding) |Пространство имен |Нет ограничений на размер сообщения. |Без ограничений |
 
 ### <a name="does-relay-have-any-usage-quotas"></a>Есть ли у ретранслятора квоты использования?
 По умолчанию для любой облачной службы Майкрософт устанавливается квота совокупного месячного использования в рамках всех подписок клиента. Мы понимаем, что в некоторых случаях вам может потребоваться больше, чем разрешено этими ограничениями. Вы можете в любой момент обратиться в службу поддержки клиентов и договориться об изменении квот в соответствии с вашими потребностями. Для служебной шины установлены следующие квоты общего использования:
@@ -108,7 +109,7 @@ ms.lasthandoff: 03/28/2018
 
 Чтобы переместить пространство имен из одной подписки Azure в другую с помощью PowerShell, выполните указанную ниже последовательность команд. Для выполнения этой операции пространство имен уже должно быть активным, а пользователь, выполняющий команды PowerShell, должен обладать правами администратора в исходной и целевой подписках.
 
-```powershell
+```azurepowershell-interactive
 # Create a new resource group in the target subscription.
 Select-AzureRmSubscription -SubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff'
 New-AzureRmResourceGroup -Name 'targetRG' -Location 'East US'
@@ -136,4 +137,4 @@ Move-AzureRmResource -DestinationResourceGroupName 'targetRG' -DestinationSubscr
 
 [Pricing overview]: https://azure.microsoft.com/pricing/details/service-bus/
 [Relay exceptions]: relay-exceptions.md
-[Shared access signatures]: ../service-bus-messaging/service-bus-sas.md
+[Shared Access Signatures]: ../service-bus-messaging/service-bus-sas.md
