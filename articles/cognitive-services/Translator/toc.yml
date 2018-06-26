@@ -35,6 +35,62 @@
           href: quickstart-java-languages.md
         - name: Получение сведений о длине предложений в тексте
           href: quickstart-java-sentences.md
+    - name: Node.js
+      items:
+        - name: Перевод текста
+          href: quickstart-nodejs-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-nodejs-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-nodejs-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-nodejs-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-nodejs-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-nodejs-sentences.md
+    - name: PHP
+      items:
+        - name: Перевод текста
+          href: quickstart-php-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-php-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-php-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-php-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-php-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-php-sentences.md
+    - name: Python
+      items:
+        - name: Перевод текста
+          href: quickstart-python-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-python-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-python-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-python-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-python-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-python-sentences.md
+    - name: Ruby
+      items:
+        - name: Перевод текста
+          href: quickstart-ruby-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-ruby-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-ruby-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-ruby-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-ruby-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-ruby-sentences.md
 - name: Основные понятия
   items:
     - name: Поддерживаемые языки
@@ -55,18 +111,8 @@
       href: word-alignment.md
     - name: Использование функции динамического словаря
       href: dynamic-dictionary.md
-    - name: Использование API перевода текстов
-      items:
-        - name: Node.js
-          href: quickstarts/nodejs.md
-        - name: PHP
-          href: quickstarts/php.md
-        - name: Python
-          href: quickstarts/python.md
-        - name: Ruby
-          href: quickstarts/ruby.md
-        - name: Создание приложения для перевода текста с использованием WPF
-          href: tutorial-wpf-translation-csharp.md
+    - name: Создание приложения для перевода текста с использованием WPF
+      href: tutorial-wpf-translation-csharp.md
 - name: Справочные материалы
   items:
     - name: "Справочник по API перевода текстов версии\_3"
