@@ -1,0 +1,63 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Language Understanding Intelligent Service (LUIS)
+metadata:
+  document_id: 
+  title: Language Understanding (LUIS). Краткие руководства, справочники по API и другие материалы
+  description: Сведения об использовании службы Language Understanding, которая позволяет приложению распознавать желания людей на основе их собственных слов.
+  author: Kaiqb
+  manager: carolz
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/25/2018
+  ms.author: kamrani
+  ms.openlocfilehash: 7d529825733025335f27ce0fe477c117aeaf5c41
+  ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 06/08/2018
+  ms.locfileid: "35358292"
+abstract:
+  description: Служба Language Understanding (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="luis-get-started-create-app.md">Создание приложения для предварительно созданного домена</a>
+    - html: <a href="luis-quickstart-intents-only.md">Создание приложения для личного домена</a>
+- title: Пошаговые руководства
+  items:
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="luis-quickstart-primary-and-secondary-data">Извлечение данных сообщений из фраз с помощью простых сущностей</a>
+    - html: <a href="luis-quickstart-intents-regex-entity">Извлечение номеров статей базы знаний из фраз с помощью сущностей регулярных выражений</a>
+    - html: <a href="luis-quickstart-intent-and-list-entity">Извлечение сведений о порядке напитков из фраз с помощью сущностей списка</a>
+    - html: <a href="luis-tutorial-pattern">Повышение точности прогнозов намерений и сущностей с помощью шаблонов</a>
+    - html: <a href="luis-tutorial-interchangeable-phrase-list">Улучшение распознавания значимости слов с помощью списка фраз</a>
+    - html: <a href="luis-get-started-cs-get-intent">Отправка фраз в LUIS и получение ответа прогнозирования конечной точки на C#</a>
+    - html: <a href="luis-get-started-cs-add-utterance">Добавление примера фразы в намерение и обучение приложения LUIS на C#</a>
+- title: Видеоролики
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и Language Understanding (LUIS)</a>'
+    - html: '<a href="https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player" > Build 2018: канал об искусственном интеллекте. Новые возможности Language Understanding Service (LUIS)</a>'
+    - html: <a href="https://channel9.msdn.com/events/Build/2018/BRK3208" >Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API REST версии 2
+      html: <p><a href="https://aka.ms/luis-endpoint-apis"> API конечной точки</a></p><p><a href="https://aka.ms/luis-authoring-apis"> Разработка API</a></p>
+    - title: Пакеты SDK
+      html: <p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>
+    - title: Примеры кода
+      html: <p><a href="https://aka.ms/luis-code-samples"> Примеры кода</a></p>

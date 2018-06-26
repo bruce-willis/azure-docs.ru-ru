@@ -1,0 +1,35 @@
+- name: Документация по Службе поиска и распознавания данных
+- name: Обзор
+  expanded: true
+  items:
+    - name: Дополнительные сведения о Службе поиска и распознавания данных
+      href: Overview.md
+- name: Начало работы
+  items:
+    - name: Создание серверного модуля
+      href: GettingStarted.md
+    - name: Команда
+      href: CommandLine.md
+    - name: Формат схемы
+      href: SchemaFormat.md
+    - name: Формат данных
+      href: DataFormat.md
+    - name: Формат файла grammar
+      href: GrammarFormat.md
+    - name: Семантическая интерпретация
+      href: SemanticInterpretation.md
+    - name: Интерфейс веб-API
+      href: WebAPI.md
+      items:
+        - name: calchistogram
+          href: calchistogramMethod.md
+        - name: evaluate
+          href: evaluateMethod.md
+        - name: interpret
+          href: interpretMethod.md
+    - name: Выражения структурированных запросов
+      href: Expressions.md
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

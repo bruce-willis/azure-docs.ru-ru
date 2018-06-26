@@ -1,24 +1,20 @@
 ---
 title: Отправка сообщений на сервер MQTT с помощью клиентской библиотеки Azure MQTT | Документация Майкрософт
-description: Использование DevKit в качестве клиента для отправки сообщений на сервер MQTT.
-services: iot-hub
-documentationcenter: ''
+description: Использование DevKit в качестве клиента для отправки сообщений на сервер MQTT
 author: liydu
-manager: timlt
-tags: ''
-keywords: ''
+manager: jeffya
 ms.service: iot-hub
-ms.devlang: arduino
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.topic: conceptual
+ms.tgt_pltfrm: arduino
 ms.date: 04/02/2018
 ms.author: liydu
-ms.openlocfilehash: 073ac7cf2d8d8d5dac6a5a4f9b9d4e3d1af6f095
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ee8ff1acbaf5d97d62d6811e8e8abc86017b32fe
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34632617"
 ---
 # <a name="send-messages-to-an-mqtt-server"></a>Отправка сообщений на сервер MQTT
 
@@ -94,4 +90,4 @@ Serial Monitor отобразит все сообщения, отправлен�
 Теперь вы знаете, как настроить MXChip Iot DevKit в качестве клиента MQTT и применить клиентскую библиотеку MQTT для отправки сообщений на брокер MQTT. Мы предлагаем вам продолжить обучение, изучив следующие статьи.
 
 * [Общие сведения об акселераторе решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Microsoft IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Microsoft IoT Central)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

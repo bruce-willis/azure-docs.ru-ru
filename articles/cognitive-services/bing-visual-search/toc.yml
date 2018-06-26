@@ -1,0 +1,60 @@
+- name: Документация по API для визуального поиска
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое API для визуального поиска?
+      href: overview.md
+- name: Краткие руководства по REST API
+  expanded: true
+  items:
+    - name: 'Первый запрос в C#'
+      href: quickstarts/csharp.md
+    - name: Первый запрос в Java
+      href: quickstarts/java.md
+    - name: Первый запрос в Node.js
+      href: quickstarts/nodejs.md
+    - name: Первый запрос в Python
+      href: quickstarts/python.md
+- name: Учебники
+  items:
+    - name: Одностраничные веб-приложения
+      href: tutorial-bing-visual-search-single-page-app.md
+    - name: Одностраничные веб-приложения (исходный код)
+      href: tutorial-bing-visual-search-single-page-app-source.md
+- name: Примеры
+  items:
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Visual+Search'
+- name: Основные понятия
+  items:
+    - name: Сведения об изображениях по умолчанию
+      href: default-insights-tag.md
+    - name: Использование аналитики Bing
+      href: bing-insights-usage.md
+    - name: Поддерживаемые страны и рынки
+      href: supported-countries-markets.md
+    - name: Аналитика для API визуального поиска
+      href: bing-visual-search-stats.md
+- name: Практические руководства
+  items:
+    - name: Получение сведений с помощью маркеров
+      href: use-insights-token.md
+    - name: Результаты использования и отображения
+      href: use-and-display-requirements.md
+    - name: Изменение размера и обрезка эскизов
+      href: resize-and-crop-thumbnails.md
+- name: Справочные материалы
+  expanded: true
+  items:
+    - name: REST API версии 7
+      href: 'https://aka.ms/bingvisualsearchreferencedoc'
+- name: Ресурсы
+  items:
+    - name: Получение бесплатной учетной записи
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api'
+    - name: Тестирование
+      href: 'https://aka.ms/bingvisualsearchtryforfree'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/bing-search'
+    - name: Мнение пользователей
+      href: 'https://cognitive.uservoice.com/forums/555907-bing-search'

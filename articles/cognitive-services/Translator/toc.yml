@@ -1,0 +1,111 @@
+- name: Документация по API перевода текстов
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет API перевода текстов
+      href: translator-info-overview.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: 'C#'
+      items:
+        - name: Перевод текста
+          href: quickstart-csharp-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-csharp-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-csharp-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-csharp-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-csharp-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-csharp-sentences.md
+    - name: Java
+      items:
+        - name: Перевод текста
+          href: quickstart-java-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-java-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-java-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-java-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-java-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-java-sentences.md
+- name: Основные понятия
+  items:
+    - name: Поддерживаемые языки
+      href: languages.md
+    - name: Настройка и улучшение перевод текста
+      href: customization.md
+    - name: Как в API подсчитывается количество знаков
+      href: character-counts.md
+- name: Практические руководства
+  items:
+    - name: Регистрация для использования API перевода текстов
+      href: translator-text-how-to-signup.md
+    - name: "Миграция в API перевода текстов версии\_3"
+      href: migrate-to-v3.md
+    - name: Добавление фильтра ненормативной лексики
+      href: profanity-filtering.md
+    - name: Получение сведений о выравнивании слов
+      href: word-alignment.md
+    - name: Использование функции динамического словаря
+      href: dynamic-dictionary.md
+    - name: Использование API перевода текстов
+      items:
+        - name: Node.js
+          href: quickstarts/nodejs.md
+        - name: PHP
+          href: quickstarts/php.md
+        - name: Python
+          href: quickstarts/python.md
+        - name: Ruby
+          href: quickstarts/ruby.md
+        - name: Создание приложения для перевода текста с использованием WPF
+          href: tutorial-wpf-translation-csharp.md
+- name: Справочные материалы
+  items:
+    - name: "Справочник по API перевода текстов версии\_3"
+      href: reference/v3-0-reference.md
+      items:
+        - name: Языки
+          href: reference/v3-0-languages.md
+        - name: Перевод
+          href: reference/v3-0-translate.md
+        - name: Транслитерация
+          href: reference/v3-0-transliterate.md
+        - name: Обнаружение
+          href: reference/v3-0-detect.md
+        - name: Метод BreakSentence
+          href: reference/v3-0-break-sentence.md
+        - name: Поиск по словарю
+          href: reference/v3-0-dictionary-lookup.md
+        - name: Примеры словарей
+          href: reference/v3-0-dictionary-examples.md
+    - name: "Справочник по API перевода текстов версии\_2 (нерекомендуемая версия)"
+      href: reference/v2-0-reference.md
+      items:
+        - name: Преобразование текста
+          href: transform-text.md
+        - name: Как использовать отчеты на платформе для совместного перевода CTF
+          href: ctf-reporting.md
+        - name: Возврат определенного количества (N) лучших переводов
+          href: return-n-best-translations.md
+- name: Ресурсы
+  items:
+    - name: Часто задаваемые вопросы
+      href: 'https://www.microsoft.com/translator/faq.aspx'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/558796-translator'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/132647-translator'
+    - name: Примеры кода в GitHub
+      href: 'https://aka.ms/TranslatorGitHub'

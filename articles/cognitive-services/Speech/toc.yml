@@ -1,0 +1,49 @@
+- name: Обзор
+  href: Home.md
+- name: Начало работы
+  expanded: true
+  href: GetStarted/GetStarted.md
+  items:
+    - name: REST
+      href: GetStarted/GetStartedREST.md
+    - name: Клиентские библиотеки
+      href: GetStarted/GetStartedClientLibraries.md
+      items:
+        - name: 'Библиотека для классических приложений C#'
+          href: GetStarted/GetStartedCSharpDesktop.md
+        - name: 'Библиотека для служб C#'
+          href: GetStarted/GetStartedCSharpServiceLibrary.md
+        - name: Библиотека JavaScript
+          href: GetStarted/GetStartedJSWebsockets.md
+        - name: Библиотека Java для Android
+          href: GetStarted/GetStartedJavaAndroid.md
+        - name: Библиотека Objective-C для iOS
+          href: GetStarted/Get-Started-ObjectiveC-iOS.md
+- name: Примеры
+  href: samples.md
+- name: Основные понятия
+  href: concepts.md
+- name: Практические руководства
+  items:
+    - name: Аутентификация для использования службы
+      href: How-to/how-to-authentication.md
+    - name: Выбор режима распознавания
+      href: How-to/how-to-choose-recognition-mode.md
+    - name: Блочная передача аудиопотоков
+      href: How-to/how-to-chunked-transfer.md
+- name: Справочные материалы
+  items:
+    - name: Протокол WebSocket для службы распознавания речи от Майкрософт
+      href: API-Reference-REST/websocketprotocol.md
+    - name: Справочник по API преобразования текста в речь
+      href: API-Reference-REST/BingVoiceOutput.md
+    - name: Поддерживаемые языки
+      href: API-Reference-REST/supportedlanguages.md
+- name: Устранение неполадок
+  href: troubleshooting.md
+- name: Ресурсы
+  items:
+    - name: Поддержка
+      href: support.md
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127980-bing-speech'

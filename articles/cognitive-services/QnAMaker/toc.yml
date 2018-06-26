@@ -1,0 +1,118 @@
+- name: Общие сведения о QnA Maker
+  href: Overview/overview.md
+- name: Обзор
+  items:
+    - name: Поддерживаемые языки
+      href: Overview/languages-supported.md
+- name: Быстрое начало работы
+  items:
+    - name: Создание базы знаний
+      items:
+        - name: 'C#'
+          href: Quickstarts/create-new-kb-csharp.md
+        - name: Java
+          href: Quickstarts/create-new-kb-java.md
+        - name: Go
+          href: Quickstarts/create-new-kb-go.md
+        - name: Node.js
+          href: Quickstarts/create-new-kb-nodejs.md
+        - name: Python
+          href: Quickstarts/create-new-kb-python.md
+    - name: Обновление базы знаний
+      items:
+        - name: 'C#'
+          href: Quickstarts/update-kb-csharp.md
+        - name: Java
+          href: Quickstarts/update-kb-java.md
+        - name: Go
+          href: Quickstarts/update-kb-go.md
+        - name: Node.js
+          href: Quickstarts/update-kb-nodejs.md
+        - name: Python
+          href: Quickstarts/update-kb-python.md
+- name: Основные понятия
+  items:
+    - name: База знаний
+      href: Concepts/knowledge-base.md
+    - name: Жизненный цикл разработки для базы знаний
+      href: Concepts/development-lifecycle-knowledge-base.md
+    - name: Оценка надежности
+      href: Concepts/confidence-score.md
+    - name: Поддерживаемые источники данных
+      href: Concepts/data-sources-supported.md
+- name: Практические руководства
+  items:
+    - name: Настройка службы QnA Maker
+      href: How-To/set-up-qnamaker-service-azure.md
+    - name: Создание и публикация базы знаний
+      href: Quickstarts/create-publish-knowledge-base.md
+    - name: Создание базы знаний
+      href: How-To/create-knowledge-base.md
+    - name: Использование метаданных с помощью API GenerateAnswer
+      href: How-To/metadata-generateanswer-usage.md
+    - name: Перенос базы знаний с предварительной версии
+      href: Tutorials/migrate-knowledge-base.md
+    - name: Редактирование базы знаний
+      href: How-To/edit-knowledge-base.md
+    - name: Совместная работа над базой знаний
+      href: How-To/collaborate-knowledge-base.md
+    - name: Тестирование базы знаний
+      href: How-To/test-knowledge-base.md
+    - name: Публикация базы знаний
+      href: How-To/publish-knowledge-base.md
+    - name: Получение аналитических данных в базе знаний
+      href: How-To/get-analytics-knowledge-base.md
+    - name: Управление ключами
+      href: How-To/key-management.md
+    - name: Создание базы знаний на разных языках
+      href: How-To/language-knowledge-base.md
+    - name: Создание бота QnA с помощью службы Azure Bot
+      href: Tutorials/create-qna-bot.md
+    - name: Интеграция QnA Maker и LUIS
+      href: Tutorials/integrate-qnamaker-luis.md
+    - name: Создание плана по обеспечению непрерывности бизнеса для QnA Maker
+      href: How-To/business-continuity-plan.md
+    - name: Выбор ресурсов для развертывания QnA Maker
+      href: Tutorials/choosing-capacity-qnamaker-deployment.md
+    - name: Обновление службы QnA Maker
+      href: How-To/upgrade-qnamaker-service.md
+    - name: Устранение неполадок и обновление среды выполнения QnA Maker
+      href: How-To/troubleshooting-runtime.md
+    - name: Использование API службы QnA Maker
+      items:
+        - name: 'C#'
+          href: Quickstarts/csharp.md
+        - name: Java
+          href: Quickstarts/java.md
+        - name: Node.js
+          href: Quickstarts/nodejs.md
+        - name: Python
+          href: Quickstarts/python.md
+        - name: Go
+          href: Quickstarts/go.md
+- name: Справочные материалы
+  items:
+    - name: Справочник по API
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff'
+    - name: Часто задаваемые вопросы
+      href: faqs.md
+    - name: Рекомендации
+      href: Concepts/best-practices.md
+    - name: Ограничения
+      href: limits.md
+    - name: Глоссарий
+      href: glossary.md
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Цены
+      href: 'https://aka.ms/qnamaker-pricing'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/QnAMaker'
+    - name: UserVoice
+      href: 'https://aka.ms/qnamaker-uservoice'
+    - name: поиска
+      href: 'https://docs.microsoft.com/en-us/search/index?search=QnAMaker'
+    - name: Блог
+      href: 'https://blog.botframework.com/category/QnAMaker/'

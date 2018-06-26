@@ -1,0 +1,99 @@
+- name: Документация по API службы распознавания речи
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое служба распознавания речи?
+      href: overview.md
+      expanded: true
+- name: Быстрое начало работы
+  items:
+    - name: Попробуйте службу распознавания речи бесплатно
+      href: get-started.md
+    - name: 'Распознавание речи в C#'
+      href: quickstart-csharp-windows.md
+    - name: Распознавание речи в C++ для Windows
+      href: cpp-windows.md
+    - name: Распознавание речи в C++ для Linux
+      href: cpp-linux.md
+    - name: Начало работы с пакетом SDK для речевых устройств
+      href: speech-devices-sdk-qsg.md
+- name: Практические руководства
+  items:
+    - name: Распознавание речи
+      href: how-to-speech-to-text.md
+    - name: Пользовательские модели речи
+      href: how-to-customize-speech-models.md
+    - name: Синтезирование речи
+      href: how-to-text-to-speech.md
+    - name: Настройка голосов
+      href: how-to-customize-voice-font.md
+    - name: Преобразование текста
+      href: how-to-translate-speech.md
+    - name: Подготовка расшифровок
+      href: prepare-transcription.md
+    - name: Использование пользовательских аудиопотоков
+      href: how-to-use-audio-input-streams.md
+    - name: Получение пакета SDK для речевых устройств
+      href: get-speech-devices-sdk.md
+    - name: Настройка слова для активации устройства
+      href: speech-devices-sdk-create-kws.md
+    - name: Пакетное транскрибирование (центры обработки звонков)
+      href: batch-transcription.md
+- name: Примеры
+  items:
+    - name: Скачивание примеров
+      href: samples.md
+    - name: Распознавание речи
+      href: speech-to-text-sample.md
+    - name: Распознавание намерений
+      href: intent.md
+    - name: Перевод
+      href: translation.md
+- name: Основные понятия
+  items:
+    - name: Преобразование речи в текст
+      href: speech-to-text.md
+    - name: Преобразование текста в речь
+      href: text-to-speech.md
+    - name: Перевод речи
+      href: speech-translation.md
+    - name: Пакет SDK для распознавания речи
+      href: speech-sdk.md
+    - name: Пакет SDK для речевых устройств
+      href: speech-devices-sdk.md
+- name: Справочные материалы
+  items:
+    - name: Поддерживаемые языки
+      href: supported-languages.md
+    - name: Интерфейсы API REST
+      href: rest-apis.md
+    - name: API пакета SDK для распознавания речи
+      href: speech-sdk-reference.md
+    - name: Разметка синтеза речи
+      href: speech-synthesis-markup.md
+- name: Ресурсы
+  items:
+    - name: Вопросы и ответы по преобразованию речи в текст
+      href: faq-stt.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/912208-speech-service'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
+    - name: Конфиденциальность и файлы cookie
+      href: 'https://privacy.microsoft.com/privacystatement'
+    - name: Устранение неполадок
+      href: troubleshooting.md
+    - name: Доставка приложения
+      href: ship-application.md
+    - name: Заметки о выпуске
+      href: releasenotes.md
+    - name: Лицензия на пакет SDK для распознавания речи
+      href: license.md
+    - name: Лицензия на пакет SDK для речевых устройств
+      href: speech-devices-sdk-license.md
+    - name: Уведомления сторонних производителей
+      href: third-party-notices.md

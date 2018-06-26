@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2018
 ms.author: glenga
-ms.openlocfilehash: a38729c266a4dd214c3de97c6b9d92df6ed2dd96
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 93d5883071a012842106bdd946e4f09a0d7aa751
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34735125"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35260460"
 ---
 # <a name="azure-functions-tools-for-visual-studio"></a>Инструменты Функций Azure для Visual Studio  
 
@@ -89,9 +89,7 @@ ms.locfileid: "34735125"
 
 ## <a name="configure-the-project-for-local-development"></a>Настройка проекта для локальной разработки
 
-Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. 
-
-[!INCLUDE [Note on local storage](../../includes/functions-local-settings-note.md)]
+Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. Приложение-функция может также использовать [эмулятор службы хранилища Azure](../storage/common/storage-use-emulator.md) для параметра подключения **AzureWebJobsStorage**, который необходим для проекта. Чтобы использовать эмулятор, установите значение **AzureWebJobsStorage** для `UseDevelopmentStorage=true`. Перед развертыванием этот параметр необходимо изменить на параметр фактического подключения к хранилищу.
 
 Чтобы задать строку подключения к учетной записи хранения, выполните следующие действия:
 
@@ -111,7 +109,7 @@ ms.locfileid: "34735125"
 
     ![Создание функции, активируемой очередью](./media/functions-develop-vs/functions-vstools-create-queuetrigger.png)
 
-    В этом примере триггера используется строка подключения с ключом **QueueStorage**. Этот параметр строки подключения должен быть определен в файле local.settings.json.
+    В этом примере триггера используется строка подключения с ключом **QueueStorage**. Этот параметр строки подключения должен быть определен в файле [local.settings.json](functions-run-local.md#local-settings-file).
 
 3. Проверьте добавленный класс. Вы видите статический метод **Run**, который имеет атрибут **FunctionName**. Этот атрибут указывает, что метод является точкой входа для функции.
 

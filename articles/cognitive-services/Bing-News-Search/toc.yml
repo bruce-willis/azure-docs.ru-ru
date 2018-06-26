@@ -1,0 +1,91 @@
+- name: Документация по API Bing для поиска новостей
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое API Bing для поиска новостей?
+      href: search-the-web.md
+- name: Краткие руководства по REST API
+  expanded: true
+  items:
+    - name: Начало работы
+      href: quickstart.md
+    - name: 'C#'
+      href: csharp.md
+    - name: Java
+      href: java.md
+    - name: Node.js
+      href: nodejs.md
+    - name: PHP
+      href: php.md
+    - name: Python
+      href: python.md
+    - name: Ruby
+      href: ruby.md
+- name: Краткие руководства по пакетам SDK
+  items:
+    - name: Общие сведения о примерах пакетов SDK
+      href: sdk.md
+    - name: 'Краткое руководство по пакету SDK для поиска новостей для C#'
+      href: news-search-sdk-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска новостей для Node.js
+      href: news-search-sdk-node-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска новостей для Python
+      href: news-sdk-python-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска новостей для Java
+      href: news-sdk-java-quickstart.md
+- name: Учебники
+  items:
+    - name: Одностраничные веб-приложения
+      href: tutorial-bing-news-search-single-page-app.md
+    - name: Одностраничные веб-приложения (исходный код)
+      href: tutorial-bing-news-search-single-page-app-source.md
+- name: Примеры
+  items:
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+News+Search'
+- name: Практические руководства
+  items:
+    - name: Требования к использованию и отображению
+      href: UseAndDisplayRequirements.md
+    - name: Обработка выделения совпадений
+      href: hit-highlighting.md
+    - name: Отображение новостей
+      href: paging-news.md
+    - name: Изменение размера и обрезка эскизов
+      href: resize-and-crop-thumbnails.md
+    - name: Обновление с версии 5 до версии 7
+      href: bing-news-upgrade-guide-v5-to-v7.md
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы API Bing для поиска новостей
+          href: vs-bing-news-search-connected-service.md
+- name: Справочные материалы
+  items:
+    - name: API Bing для поиска новостей версии 7
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference'
+    - name: API Bing для поиска новостей версии 5
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v5-reference'
+- name: Ресурсы
+  items:
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/news/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/911449-bing-news-search-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=bing+news+search'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
+    - name: Получение ключа API
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-news-search-api'
+    - name: Тестирование
+      href: 'https://dev.cognitive.microsoft.com/docs/services/56b43f72cf5ff8098cef380a/operations/56f02400dbe2d91900c68553'
+    - name: Конечные точки API Bing для поиска новостей
+      href: endpoint-news.md
+    - name: Поддерживаемые страны и рынки
+      href: supported-countries-markets.md
+    - name: Аналитика для API Bing для поиска новостей
+      href: bing-news-stats.md

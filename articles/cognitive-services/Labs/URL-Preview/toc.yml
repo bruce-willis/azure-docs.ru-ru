@@ -1,0 +1,28 @@
+- name: Документация по службе предварительного просмотра URL-адресов в проектах
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое служба предварительного просмотра URL-адресов в проектах?
+      href: overview.md
+    - name: Конечная точка службы предварительного просмотра URL-адресов
+      href: endpoint.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: 'C#'
+      href: csharp.md
+    - name: Java
+      href: java-quickstart.md
+    - name: JavaScript
+      href: javascript.md
+    - name: Узел
+      href: node-quickstart.md
+    - name: Python
+      href: python-quickstart.md
+- name: Справочные материалы
+  expanded: true
+  items:
+    - name: Требования к использованию и отображению
+      href: use-display-requirements.md
+    - name: Справочник по службе предварительного просмотра URL-адресов
+      href: url-preview-reference.md

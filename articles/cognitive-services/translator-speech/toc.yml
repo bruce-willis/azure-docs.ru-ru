@@ -1,0 +1,45 @@
+- name: Документация по API перевода речи
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Дополнительные сведения об API перевода речи
+      href: Overview.md
+    - name: Поддерживаемые языки
+      href: languages.md
+- name: Быстрое начало работы
+  items:
+    - name: 'C#'
+      href: quickstarts/csharp.md
+    - name: Java
+      href: quickstarts/java.md
+    - name: Node.js
+      href: quickstarts/nodejs.md
+    - name: Python
+      href: quickstarts/python.md
+- name: Учебники
+  items:
+    - name: Приложение средства перевода
+      href: tutorial-translator-speech-csharp.md
+- name: Примеры
+  items:
+    - name: Примеры на GitHub
+      href: 'https://aka.ms/TranslatorGitHub'
+- name: Практические руководства
+  items:
+    - name: Регистрация для использования API перевода речи
+      href: translator-speech-how-to-signup.md
+- name: Справочные материалы
+  href: reference.md
+  items:
+    - name: Языки
+      href: languages-reference.md
+- name: Ресурсы
+  items:
+    - name: Часто задаваемые вопросы
+      href: 'https://www.microsoft.com/en-us/translator/faq.aspx'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/translator-speech-api/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/558796-translator'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-translator'
