@@ -1,7 +1,7 @@
 - name: Документация по фабрике данных версии 1
   href: null
 - name: Переход к документации по текущей версии
-  href: ../index.yml
+  href: ../introduction.md
 - name: Обзор
   items:
     - name: Введение в фабрику данных Azure

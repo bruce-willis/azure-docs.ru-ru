@@ -53,7 +53,7 @@
 ### [Azure PowerShell](powershell-samples.md)
 
 ## Учебники
-### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../virtual-machines/linux/tutorial-load-balance-nodejs.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Подключение компьютера к виртуальной сети](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 
 # Справочные материалы
