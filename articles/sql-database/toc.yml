@@ -74,9 +74,9 @@
       href: sql-database-powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Уровни службы и ресурсы
+    - name: Модели приобретения и ресурсы
       items:
-        - name: Уровни службы
+        - name: Модели приобретения
           href: sql-database-service-tiers.md
         - name: Модель приобретения на основе виртуальных ядер
           href: sql-database-service-tiers-vcore.md

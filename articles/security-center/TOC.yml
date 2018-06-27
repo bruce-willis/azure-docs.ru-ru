@@ -48,6 +48,8 @@
           href: security-center-customize-os-security-config.md
         - name: Политики безопасности на основе политики Azure
           href: security-center-azure-policy.md
+        - name: Видимость в пределах клиента
+          href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
       href: security-center-recommendations.md
     - name: Отслеживание состояния системы безопасности

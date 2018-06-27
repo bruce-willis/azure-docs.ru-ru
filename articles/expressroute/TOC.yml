@@ -89,6 +89,8 @@
       href: expressroute-howto-move-arm.md
     - name: Перенос связанных виртуальных сетей из классической модели развертывания в модель развертывания Resource Manager
       href: expressroute-migration-classic-resource-manager.md
+    - name: Создание избыточного в пределах зоны шлюза виртуальной сети в зонах доступности Azure
+      href: ../vpn-gateway/create-zone-redundant-vnet-gateway.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: Настройка маршрутизатора для ExpressRoute
       items:
         - name: Настройка маршрутизатора

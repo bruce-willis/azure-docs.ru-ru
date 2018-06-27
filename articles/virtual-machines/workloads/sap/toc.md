@@ -1,8 +1,9 @@
 # Обзор
-## [Приступите к работе](get-started.md)
+## [Начало работы](get-started.md)
 ## [Сертификаты](sap-certifications.md)
 # SAP HANA в Azure (большие экземпляры)
 ## [Обзор и архитектура](hana-overview-architecture.md)
+### [Поддерживаемые сценарии HLI](hana-supported-scenario.md)
 ## [Инфраструктура и подключение](hana-overview-infrastructure-connectivity.md)
 ## [Установка SAP HANA](hana-installation.md)
 ## [Высокий уровень доступности и аварийное восстановление](hana-overview-high-availability-disaster-recovery.md)

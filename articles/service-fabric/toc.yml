@@ -428,6 +428,8 @@
               href: service-fabric-securing-containers.md
             - name: Настройка gMSA для контейнеров Windows
               href: service-fabric-setup-gmsa-for-windows-containers.md
+            - name: Настройка сертификатов в Linux
+              href: service-fabric-configure-certificates-linux.md
         - name: Настройка периодического резервного копирования (кластеры в Azure)
           href: service-fabric-backuprestoreservice-quickstart-azurecluster.md
         - name: Настройка периодического резервного копирования (изолированные кластеры)

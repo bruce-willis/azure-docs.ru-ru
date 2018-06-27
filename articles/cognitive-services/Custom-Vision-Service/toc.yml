@@ -17,6 +17,8 @@
           href: use-prediction-api.md
         - name: Экспорт модели на мобильное устройство
           href: export-your-model.md
+        - name: Использование модели ONNX с Windows ML
+          href: custom-vision-onnx-windows-ml.md
         - name: Запуск модели TensorFlow на Python
           href: export-model-python.md
     - name: Создание приложений

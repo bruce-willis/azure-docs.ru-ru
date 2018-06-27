@@ -23,6 +23,8 @@
       href: quickstart-ruby.md
     - name: Создание приложения Docker или Go
       href: quickstart-docker-go.md
+    - name: Создание многоконтейнерного приложения
+      href: quickstart-multi-container.md
 - name: Учебники
   items:
     - name: Использование приложения с базой данных
@@ -129,6 +131,8 @@
           href: ../web-sites-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
         - name: Масштабирование на несколько экземпляров
           href: ../../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+        - name: Высокая плотность размещения
+          href: ../app-service-high-density-hosting.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Мониторинг приложения
       items:
         - name: Подключение к приложению по протоколу SSH

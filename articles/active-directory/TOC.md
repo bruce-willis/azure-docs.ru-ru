@@ -250,7 +250,7 @@
 #### [Расширенные параметры подписи сертификатов для приложений SAML](manage-apps/certificate-signing-options.md)
 #### [Скрытие приложения в интерфейсе пользователя](manage-apps/hide-application-from-user-portal.md)
 ### [Настройка автоматического ускорения входа с помощью политики обнаружения домашней области](manage-apps/configure-authentication-for-federated-users-portal.md)
-### [Перенос приложений AD FS в Azure AD](migrate-adfs-apps-to-azure.md) 
+### [Перенос приложений AD FS в Azure AD](manage-apps/migrate-adfs-apps-to-azure.md) 
 ### [Управление доступом к приложениям](manage-apps/what-is-access-management.md)
 #### [Доступ с единым входом](manage-apps/what-is-single-sign-on.md)
 #### [Сертификаты для единого входа](manage-apps/manage-certificates-for-federated-single-sign-on.md)
@@ -386,13 +386,10 @@
 
 ## Делегирование доступа к ресурсам
 ### [Роли администратора](active-directory-assign-admin-roles-azure-portal.md)
-#### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md) 
-#### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md) 
-### [Защита привилегированного доступа](admin-roles-best-practices.md)  
-### [Создание учетных записей администратора для аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md) 
-
-
-#### [Разрешения пользователя по умолчанию](fundamentals/users-default-permissions.md)
+#### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md)
+#### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md)
+### [Защита ролей администраторов](admin-roles-best-practices.md)  
+#### [Создание учетных записей администраторов для аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md)
 ### [Административные единицы](active-directory-administrative-units-management.md)
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
 ### [Защита привилегированных ролей](admin-roles-best-practices.md)

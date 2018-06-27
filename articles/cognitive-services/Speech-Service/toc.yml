@@ -2,7 +2,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое служба распознавания речи?
+    - name: Что собой представляет служба "Речь"
       href: overview.md
       expanded: true
 - name: Быстрое начало работы
@@ -12,31 +12,33 @@
     - name: 'Распознавание речи в C#'
       href: quickstart-csharp-windows.md
     - name: Распознавание речи в C++ для Windows
-      href: cpp-windows.md
+      href: quickstart-cpp-windows.md
     - name: Распознавание речи в C++ для Linux
-      href: cpp-linux.md
+      href: quickstart-cpp-linux.md
     - name: Начало работы с пакетом SDK для речевых устройств
       href: speech-devices-sdk-qsg.md
-- name: Практические руководства
+- name: Настройка
   items:
-    - name: Распознавание речи
-      href: how-to-speech-to-text.md
     - name: Пользовательские модели речи
       href: how-to-customize-speech-models.md
-    - name: Синтезирование речи
-      href: how-to-text-to-speech.md
     - name: Настройка голосов
       href: how-to-customize-voice-font.md
-    - name: Преобразование текста
-      href: how-to-translate-speech.md
     - name: Подготовка расшифровок
       href: prepare-transcription.md
     - name: Использование пользовательских аудиопотоков
       href: how-to-use-audio-input-streams.md
+    - name: Настройка слова для активации устройства (пакет SDK для устройств)
+      href: speech-devices-sdk-create-kws.md
+- name: Практические руководства
+  items:
+    - name: Распознавание речи
+      href: how-to-speech-to-text.md
+    - name: Синтезирование речи
+      href: how-to-text-to-speech.md
+    - name: Преобразование текста
+      href: how-to-translate-speech.md
     - name: Получение пакета SDK для речевых устройств
       href: get-speech-devices-sdk.md
-    - name: Настройка слова для активации устройства
-      href: speech-devices-sdk-create-kws.md
     - name: Пакетное транскрибирование (центры обработки звонков)
       href: batch-transcription.md
 - name: Примеры
@@ -73,8 +75,14 @@
       href: speech-synthesis-markup.md
 - name: Ресурсы
   items:
-    - name: Вопросы и ответы по преобразованию речи в текст
-      href: faq-stt.md
+    - name: Часто задаваемые вопросы
+      items:
+        - name: Вопросы и ответы по преобразованию речи в текст
+          href: faq-stt.md
+        - name: Часто задаваемые вопросы о преобразовании текста в речь
+          href: faq-text-to-speech.md
+        - name: Часто задаваемые вопросы о средстве перевода
+          href: 'https://www.microsoft.com/en-us/translator/faq.aspx'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: UserVoice

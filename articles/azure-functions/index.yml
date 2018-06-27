@@ -14,12 +14,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 01-23-2017
   ms.author: carolz
-  ms.openlocfilehash: dd4d795e7740cb991c37969f148df8e0a08fa96e
-  ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+  ms.openlocfilehash: 02d6d65653c7fa77c3f1cb2be0e59caf74ca79f1
+  ms.sourcegitcommit: d2bf34f0f2e603ff7491a8614f0d3da3cca64374
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/08/2018
-  ms.locfileid: "33868081"
+  ms.lasthandoff: 06/26/2018
+  ms.locfileid: "36963842"
 abstract:
   description: Функции Azure — это <a href="https://azure.microsoft.com/overview/serverless-computing/">независимая от сервера</a> служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Используйте функции Azure для выполнения скрипта или фрагмента кода в ответ на разные события. Узнайте, как использовать функции Azure, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
   aside:
@@ -83,7 +83,7 @@ sections:
     - html: <a href="/azure/azure-functions/functions-create-serverless-api">Создание бессерверного API с помощью Функций Azure</a>
     - html: <a href="/azure/azure-functions/functions-openapi-definition">Создание определения OpenAPI функции</a>
     - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event">Автоматическое изменение размера переданных изображений с помощью сетки событий</a>
-    - html: <a href="https://docs.microsoft.com/learn/build-serverless-app/index">Создание бессерверного веб-приложения для размещения изображений в Cosmos DB</a>
+    - html: <a href="https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database">Создание бессерверного веб-приложения для хранения изображений с метаданными</a>
 - title: Примеры
   items:
   - type: list

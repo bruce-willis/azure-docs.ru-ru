@@ -36,6 +36,8 @@
       href: cdn-china-delivery.md
     - name: Поддержка HTTP/2
       href: cdn-http2.md
+    - name: Получение списка точек POP для Verizon
+      href: cdn-pop-list-api.md
     - name: Перенос из Verizon уровня "Стандартный" в Verizon уровня "Премиум"
       href: cdn-migrate.md
 - name: Практические руководства

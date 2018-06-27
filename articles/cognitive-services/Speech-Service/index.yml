@@ -3,7 +3,7 @@ documentType: LandingData
 title: Документация по службе Речи (предварительная версия)
 metadata:
   title: Документация по службе Речи. Краткие руководства, справочник по API и другие материалы по Cognitive Services | Документация Майкрософт
-  meta.description: Speech SDK provides developers an easy way to create powerful speech-enabled features in their applications, such as voice command control and dialog, using natural speech conversation, speech transcription and dictation, and speech translation.
+  meta.description: The Speech Service provides developers an easy way to add powerful speech-enabled features to their applications, such as voice command control and dialog, natural speech conversation, speech transcription and dictation, and speech translation.
   services: cognitive-services
   author: noellelacharite
   manager: nolachar
@@ -15,19 +15,19 @@ metadata:
   ms.topic: landing-page
   ms.date: 05/01/2018
   ms.author: nolachar
-  ms.openlocfilehash: ae9c5a62dd4f1b83f4d1317b54e5766b80d14245
-  ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+  ms.openlocfilehash: 98e254d3a993c5d02091be9535eb685ecd987a09
+  ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/11/2018
-  ms.locfileid: "35358356"
+  ms.lasthandoff: 06/25/2018
+  ms.locfileid: "36937862"
 abstract:
-  description: Служба Речи от Майкрософт и пакеты SDK позволяют разработчикам легко создавать в приложениях мощные функции с поддержкой речи, например элементы управления голосовыми командами , транскрибирование и диктовку. Cortana, Microsoft Office и другие решения используют одну и ту же технологию. Ключевое отличие службы Речи от Майкрософт — возможность настройки акустических и языковых моделей <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/how-to-customize-speech-models">преобразования речи в текст</a> для распознавания специализированной терминологии, шумной среды и разных способов произношения. Кроме того, доступны настраиваемые функции <a href="http://aka.ms/customvoice">преобразования текста в речь</a> и <a href="http://aka.ms/customtranslator">преобразования речи</a>.<br/><br/>Наш пакет SDK для службы Речи поддерживает несколько платформ и языков программирования. Поэтому вы можете работать с функциями управления динамическим микрофоном, потоковой передачи в реальном времени или пакетного обмена файлами, в зависимости от потребностей приложения.
+  description: Служба "Речь" от Майкрософт позволяет разработчикам без труда добавлять в приложения мощные функции с поддержкой речи, в частности элементы управления голосовыми командами, транскрибирование, диктовку и перевод с помощью <a href="rest-apis">REST API</a> или <a href="speech-sdk">пакета SDK для C#, C++ либо Java</a>.<p>Служба "Речь" дает возможность настраивать модели <a href="how-to-customize-speech-models">преобразования речи в текст</a> для адаптации к специализированной терминологии, шумовому фону и разным способам произношения. Кроме того, доступны настраиваемые возможности <a href="https://cris.ai/Home/customvoice">преобразования текста в речь</a> и <a href="https://www.microsoft.com/translator/customization.aspx">перевода речи</a>.<p>Дополнительные сведения см. в <a href="overview">обзоре службы "Речь"</a>.
 sections:
-- title: 10-минутные руководства по началу работы. Новые пакеты SDK
+- title: 10-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Узнайте, как установить и использовать пакет SDK для службы Речи с помощью наших кратких руководств:'
+    text: 'Узнайте, как установить пакет SDK для службы "Речь" и приступить к работе:'
   - type: table
     style: dataMatrix
     columns:
@@ -41,12 +41,12 @@ sections:
     - title: Windows
       values:
       - href: quickstart-csharp-windows
-      - href: cpp-windows
+      - href: quickstart-cpp-windows
       - href: 
     - title: Linux
       values:
       - href: 
-      - href: cpp-linux
+      - href: quickstart-cpp-linux
       - href: 
     - title: Пакет SDK для устройств (Android)
       values:
@@ -62,128 +62,10 @@ sections:
     - title: Примеры
       html: <ul><li><a href="speech-to-text-sample.md">Распознавание речи</a></li><li><a href="intent.md">Распознавание намерений говорящего</a></li><li><a href="translation.md">Перевод</a></li></ul>
     - title: Справочник по API
-      html: <ul><li><a href="https://aka.ms/csspeech/csharpref">API C#</a></li><li><a href="https://aka.ms/csspeech/cppref">API C++</a></li><li><a href="https://aka.ms/csspeech/javaref">API Java (пакеты SDK для устройств)</a></li></ul>
-- title: Преобразование речи в текст
-  items:
-  - type: paragraph
-    text: Наш пакет SDK для службы Речи поддерживает <b>преобразование речи в текст</b> и распознавание речи.  Пакет SDK для службы Речи расшифровывает потоки аудиоданных, которые приложение может принимать в качестве входных данных. Затем приложение может вводить полученный текст в документы или использовать в качестве команды.
-  - type: paragraph
-    text: Ниже перечислены распространенные варианты использования <b>преобразования речи в текст</b> с помощью пакета SDK для службы Речи.
-  - type: list
-    style: unordered
-    items:
-    - text: Распознавание коротких фраз, например команд, без получения промежуточных результатов.
-    - text: Расшифровка длинных, ранее сохраненных фраз, например голосовых сообщений.
-    - text: Расшифровка речи в режиме потоковой передачи в реальном времени с получением частичных результатов для диктовки.
-    - text: Определение желаний пользователей на основе запросов, выполняемых на естественном языке.
-  - type: paragraph
-    text: Пакет SDK для службы Речи поддерживает интерактивное транскрибирование речи в реальном времени с непрерывным <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/how-to-customize-speech-models">преобразованием речи в текст</a> и получением промежуточных результатов. Он также поддерживает определение завершения речи, необязательное автоматическое изменение регистра букв и применение знаков препинания, маскировку нецензурной лексики и нормализацию текста.
-  - type: paragraph
-    text: Ключевое отличие службы Речи от Майкрософт — возможность настройки акустических и языковых моделей <a href="http://aka.ms/customspeech">преобразования речи в текст</a> для распознавания специализированной терминологии, шумной среды и разных способов произношения.
-- title: Преобразование речи
-  items:
-  - type: paragraph
-    text: Пакет SDK для службы Речи можно также использовать для <a href="https://azure.microsoft.com/services/cognitive-services/speech-translation">преобразования речи</a>.  При потоковой передаче <b>преобразования речи</b> с использованием пакета SDK для службы Речи, служба возвращает промежуточные результаты, которые могут отображать ход выполнения преобразования. Результаты могут быть возвращены в виде текстовых или голосовых данных.
-  - type: paragraph
-    text: 'Варианты использования <b>преобразования речи в текст</b> с помощью пакета SDK для службы Речи:'
-  - type: list
-    style: unordered
-    items:
-    - text: Реализация устройства или мобильного приложения для преобразования общения для путешественников.
-    - text: Предоставление автоматического перевода для ввода субтитров из аудио- и видеозаписей.
-  - type: paragraph
-    text: Модели <b>преобразования речи</b> также могут быть <a href="http://aka.ms/customtranslator">настраиваемыми</a>.
-- title: Преобразование текста в речь
-  items:
-  - type: paragraph
-    text: Сейчас функции <a href="https://azure.microsoft.com/services/cognitive-services/text-to-speech">преобразования текста в речь</a> или синтеза речи поддерживаются в REST API, который преобразует обычный текст в естественно звучащую речь, предоставляемую приложению в звуковом файле. Для многих языков поддерживается распознавание пола и акцента.
-  - type: paragraph
-    text: Наш пакет SDK для службы Речи предоставляет доступ к функциям преобразования речи и преобразования речи в текст. Преобразования текста в речь использует вызовы REST POST по протоколу HTTP.
-  - type: paragraph
-    text: REST API <b>преобразования текста в речь</b> поддерживает теги <b>SSML</b>, поэтому вы можете определить точное фонетическое звучание проблемных слов. SSML также может указывать характеристики речи (включая ударение, скорость, громкость, пол и тон) непосредственно в тексте.
-  - type: paragraph
-    text: Чтобы в приложении можно было работать с неподдерживаемым диалектом или уникальным голосом, вы можете создать <a href="http://aka.ms/customvoice">настраиваемые голоса</a> из собственных примеров речи.
-  - type: paragraph
-    text: 'Варианты использования REST API<b> преобразования речи в текст</b>:'
-  - type: list
-    style: unordered
-    items:
-    - text: Вывод речи в качестве альтернативы выводимых на экран выходных данных для пользователей с нарушениями зрения.
-    - text: Голосовые запросы для навигационных автомобильных программ.
-    - text: Пользовательские интерфейсы для общения на концерте с помощью API <b>преобразования речи в текст</b>.
+      html: <ul><li><a href="https://aka.ms/csspeech/csharpref">API C#</a></li><li><a href="https://aka.ms/csspeech/cppref">API C++</a></li><li><a href="https://aka.ms/csspeech/javaref">API Java (пакет SDK для речевых устройств)</a></li></ul>
 - title: Пакет SDK для речевых устройств
   items:
   - type: paragraph
     text: С появлением единой службы Речи, корпорация Майкрософт и ее партнеры сейчас предлагают платформу для интеграции оборудования и программного обеспечения, оптимизированную для разработки устройств с поддержкой речи — <b>пакет SDK для речевых устройств</b>. Этот пакет SDK подходит для разработки интеллектуальных речевых устройств для всех типов приложений.
   - type: paragraph
     text: <a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk">Пакет SDK для речевых устройств</a> позволяет создавать устройства, реагирующие на окружающую среду, и настроить уникальное для вашей торговой марки слово для активации, запускающее запись аудио. Он также предоставляет мощные функции обработки аудио из многоканальных источников для более точного распознавания речи, включая шумоподавление, удаленные голоса и формирование направленного сигнала.
-- title: Более старая версия пакетов SDK
-  items:
-  - type: table
-    style: dataMatrix
-    columns:
-    - image:
-        src: media/index/uwp.jpg
-    - image:
-        src: media/index/logo_java.jpg
-    - image:
-        src: media/index/logo_objc.jpg
-    - image:
-        src: media/index/logo_js.svg
-    - image:
-        src: media/index/logo_rest_sr.svg
-    - image:
-        src: media/index/logo_rest_tts.svg
-    rows:
-    - title: Windows
-      values:
-      - href: https://docs.microsoft.com/windows/uwp/design/input/speech-recognition
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-    - title: Android
-      values:
-      - href: 
-      - href: https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedjavaandroid
-      - href: 
-      - href: 
-      - href: 
-      - href: 
-    - title: iOS
-      values:
-      - href: 
-      - href: 
-      - href: https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/get-started-objectivec-ios
-      - href: 
-      - href: 
-      - href: 
-    - title: Web
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedjswebsockets
-      - href: https://docs.microsoft.com/azure/cognitive-services/speech/getstarted/getstartedrest?tabs=Powershell
-      - href: https://docs.microsoft.com/azure/cognitive-services/speech/api-reference-rest/bingvoiceoutput
-- title: Рекомендации по использованию пакетов SDK
-  items:
-  - type: table
-    style: dataMatrix
-    columns:
-    - image:
-        src: media/index/logo_python.svg
-    - image:
-        src: media/index/logo_swift.jpg
-    - image:
-        src: media/index/logo_gopher.svg
-    - image:
-        src: media/index/c.jpg
-    rows:
-    - title: SDK
-      values:
-      - href: 
-      - href: 
-      - href: 
-      - href: 

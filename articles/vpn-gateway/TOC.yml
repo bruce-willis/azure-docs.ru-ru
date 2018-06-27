@@ -106,6 +106,8 @@
       items:
         - name: Azure PowerShell
           href: vpn-gateway-activeactive-rm-powershell.md
+    - name: Создание избыточного в пределах зоны шлюза виртуальной сети в зонах доступности Azure
+      href: create-zone-redundant-vnet-gateway.md
     - name: 'Маршрутизация, BGP и пиринг виртуальных сетей'
       items:
         - name: Настройка BGP для VPN-шлюза

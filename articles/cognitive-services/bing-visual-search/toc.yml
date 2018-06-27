@@ -15,12 +15,23 @@
       href: quickstarts/nodejs.md
     - name: Первый запрос в Python
       href: quickstarts/python.md
+- name: SDK
+  expanded: true
+  items:
+    - name: Общие сведения о примерах пакетов SDK
+      href: sdk.md
+    - name: SDK для Python
+      href: visual-search-sdk-python.md
 - name: Учебники
   items:
     - name: Одностраничные веб-приложения
       href: tutorial-bing-visual-search-single-page-app.md
     - name: Одностраничные веб-приложения (исходный код)
       href: tutorial-bing-visual-search-single-page-app-source.md
+    - name: Выбор области обрезки для изображения в пакете SDK для службы визуального поиска Bing и результаты применения
+      href: tutorial-visual-search-crop-area-results.md
+    - name: ImageInsightsToken в пакете SDK для службы визуального поиска Bing и результаты применения
+      href: tutorial-visual-search-insights-token.md
 - name: Примеры
   items:
     - name: Примеры кода
