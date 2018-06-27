@@ -388,11 +388,10 @@
 ### [Роли администратора](active-directory-assign-admin-roles-azure-portal.md)
 #### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md)
 #### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md)
-### [Защита ролей администраторов](admin-roles-best-practices.md)  
+### [Обеспечение надежной защиты роли администратора](admin-roles-best-practices.md)  
 #### [Создание учетных записей администраторов для аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md)
 ### [Административные единицы](active-directory-administrative-units-management.md)
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
-### [Защита привилегированных ролей](admin-roles-best-practices.md)
 
 ## Проверки доступа
 ### [Обзор проверки доступа](active-directory-azure-ad-controls-access-reviews-overview.md)
