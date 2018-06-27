@@ -168,6 +168,8 @@
           href: app-service-configure-premium-tier.md
         - name: Масштабирование на несколько экземпляров
           href: ../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2ftoc.json
+        - name: Высокая плотность размещения
+          href: app-service-high-density-hosting.md
     - name: Мониторинг приложения
       items:
         - name: Квоты и оповещения
