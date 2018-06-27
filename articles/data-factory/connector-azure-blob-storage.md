@@ -7,14 +7,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 04/27/2018
+ms.date: 06/14/2018
 ms.author: jingwang
-ms.openlocfilehash: 1d5b73657a00968ce073e1cb1ea72a716e6a2703
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4749e79b79cec7172ddd764593939d6f82f5f5ab
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34615970"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36291949"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-by-using-azure-data-factory"></a>Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -83,8 +83,8 @@ ms.locfileid: "34615970"
 
 Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Вы можете использовать подписанный URL-адрес, чтобы предоставить клиенту ограниченные разрешения на работу с объектами в вашей учетной записи хранения на определенный период. Не нужно предоставлять совместный доступ к ключам доступа для учетной записи. Подписанный URL-адрес — это универсальный код ресурса (URI), который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью подписанного URL-адреса клиенту достаточно передать SAS в соответствующий конструктор или метод. Дополнительные сведения о подписанном URL-адресе см. в статье [Использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
-> [!IMPORTANT]
-> Сейчас фабрика данных поддерживает только подписанный URL-адрес уровня службы, но не уровня учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). Подписанный URL-адрес, созданный на портале Azure или в Обозревателе службы хранилища Azure, является неподдерживаемым подписанным URL-адресом уровня учетной записи.
+> [!NOTE]
+> Сейчас Фабрика данных поддерживает подписанные URL-адреса как уровня службы, так и уровня учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). 
 
 > [!TIP]
 > Чтобы создать подписанный URL-адрес уровня службы для учетной записи хранения, можно выполнить следующие команды PowerShell. Замените заполнители и предоставьте необходимое разрешение.
@@ -136,7 +136,7 @@ ms.locfileid: "34615970"
 |:--- |:--- |:--- |
 | Тип | Свойство type для набора данных должно иметь значение **AzureBlob**. |Yes |
 | folderPath | Путь контейнеру и папке в хранилище BLOB-объектов. Фильтр подстановочных знаков не поддерживается. Например, myblobcontainer/myblobfolder/. |Yes |
-| fileName | **Имя или фильтр постановочных знаков** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все большие двоичные объекты в папке. <br/><br/>Допустимые подстановочные знаки для фильтра: `*` (несколько знаков) и `?` (один знак).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования символов, если фактическое имя файла содержит подстановочный знак или этот escape-символ.<br/><br/>Если fileName не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действий, действие копирования автоматически создает имя большого двоичного объекта в следующем формате: *Data.[activity run id GUID].[GUID if FlattenHierarchy].[format if configured].[compression if configured]*. Например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.gz. |Нет  |
+| fileName | **Имя или фильтр постановочных знаков** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все большие двоичные объекты в папке. <br/><br/>Допустимые знаки подстановки для фильтра: `*` (соответствует нулю или нескольким символам) и `?` (соответствует нулю или одному символу).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования символов, если фактическое имя файла содержит подстановочный знак или этот escape-символ.<br/><br/>Если fileName не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действий, действие копирования автоматически создает имя большого двоичного объекта в следующем формате: *Data.[activity run id GUID].[GUID if FlattenHierarchy].[format if configured].[compression if configured]*. Например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.gz. |Нет  |
 | свойства | Если требуется скопировать файлы между файловыми хранилищами "как есть" (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных.<br/><br/>Если нужно проанализировать или создать файлы определенного формата, поддерживаются следующие типы форматов файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате JSON](supported-file-formats-and-compression-codecs.md#json-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет (только для сценария двоичного копирования) |
 | compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs.md#compression-support).<br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **Optimal** и **Fastest**. |Нет  |
 

@@ -3,25 +3,25 @@ title: Политики хранения отчетов Azure Active Directory |
 description: Политики хранения данных отчета в Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: priyamohanram
 manager: mtillman
 editor: ''
 ms.assetid: 183e53b0-0647-42e7-8abe-3e9ff424de12
 ms.service: active-directory
 ms.devlang: ''
-ms.topic: article
+ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.component: compliance-reports
 ms.date: 05/10/2018
-ms.author: rolyon
+ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: fac160d2d5916097afcbb9825bb82a52789e4a89
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8edce7d1a633148cf361deec0c3d09ef4c16ac9b
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34589201"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36225184"
 ---
 # <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
 
@@ -34,7 +34,7 @@ ms.locfileid: "34589201"
 
 | Выпуск Azure AD | Начало сбора |
 | :--              | :--   |
-| Azure AD Premium P1 <br /> Azure AD Premium P2 | При регистрации для подписки |
+| Azure AD Premium P1 <br /> Azure AD Premium P2 | Когда регистрироваться для оформления подписки |
 | Azure AD уровня "Бесплатный" | При первом открытии [колонки Azure Active Directory](https://ms.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) или использовании [API-интерфейсов отчетности](https://aka.ms/aadreports)  |
 
 ---
@@ -43,7 +43,7 @@ ms.locfileid: "34589201"
 **Ответ.**
 
 - **Немедленно** — если вы уже работали с отчетами на портале Azure.
-- **В течение 2 часов** — если вы не включили функцию отчетности на портале Azure.
+- **В течение 2 часов** — если вы не включили функцию создания отчетов на портале Azure.
 
 ---
 

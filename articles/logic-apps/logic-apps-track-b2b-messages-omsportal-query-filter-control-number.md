@@ -12,14 +12,14 @@ ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/21/2017
+ms.date: 06/19/2018
 ms.author: LADocs; padmavc
-ms.openlocfilehash: 520a1212eaccc48f8b8b423f7dede9c16409220b
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 48cca9919bd09906bdcc3faaaef186ec109c9169
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35300333"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294315"
 ---
 # <a name="query-for-as2-x12-and-edifact-messages-in-log-analytics"></a>Запрос сообщений AS2, X12 и EDIFACT в Log Analytics
 
@@ -53,41 +53,33 @@ ms.locfileid: "35300333"
 
    ![Выбор рабочей области Log Analytics](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/selectla.png)
 
-3. В разделе **Управление** выберите **Портал OMS**.
+3. В разделе **Управление** выберите **Поиск по журналу**.
 
-   ![Выбор портала OMS](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/omsportalpage.png)
+   ![Выбор кнопки "Поиск по журналу"](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/azure-portal-page.png)
 
-4. На домашней странице выберите **Поиск по журналам**.
-
-   ![На домашней странице выберите "Поиск по журналам".](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/logsearch.png)
-
-   -или-
-
-   ![В меню выберите "Поиск по журналам".](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/logsearch-2.png)
-
-5. В поле поиска введите поле, которое требуется найти, и нажмите клавишу **ВВОД**. При вводе Log Analytics предлагает возможные совпадения и операции, которые можно использовать. Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
+4. В поле поиска введите поле, которое требуется найти, и нажмите клавишу **ВВОД**. При вводе Log Analytics предлагает возможные совпадения и операции, которые можно использовать. Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
 
    В этом примере выполняется поиск событий с параметром **Type=AzureDiagnostics**.
 
    ![Начните вводить строку запроса](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-start-query.png)
 
-6. На панели слева выберите период времени, данные за который вы хотите просмотреть. Чтобы добавить фильтр к запросу, нажмите **+Добавить**.
+5. На панели слева выберите период времени, данные за который вы хотите просмотреть. Чтобы добавить фильтр к запросу, нажмите **+Добавить**.
 
    ![Добавление фильтра к запросу](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/query1.png)
 
-7. В разделе **Добавить фильтры** введите имя фильтра, чтобы найти нужный фильтр. Выберите фильтр и нажмите **+Добавить**.
+6. В разделе **Добавить фильтры** введите имя фильтра, чтобы найти нужный фильтр. Выберите фильтр и нажмите **+Добавить**.
 
    Чтобы найти контрольный номер обмена, в этом примере выполняется поиск по слову "interchange", а в качестве фильтра выбирается параметр **event_record_messageProperties_interchangeControlNumber_s**.
 
    ![Выбор фильтра](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-add-filter.png)
 
-9. На панели слева выберите значение фильтра, которое требуется использовать, а затем нажмите **Применить**.
+7. На панели слева выберите значение фильтра, которое требуется использовать, а затем нажмите **Применить**.
 
    В этом примере выбирается контрольный номер обмена для требуемых сообщений.
 
    ![Выбор значения фильтра](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-select-filter-value.png)
 
-10. Теперь вернитесь к запросу, который вы создаете. Запрос был обновлен с учетом выбранных фильтра событий и значения. Предыдущие результаты теперь также отфильтрованы.
+8. Теперь вернитесь к запросу, который вы создаете. Запрос был обновлен с учетом выбранных фильтра событий и значения. Предыдущие результаты теперь также отфильтрованы.
 
     ![Возврат к запросу с отфильтрованными результатами](media/logic-apps-track-b2b-messages-omsportal-query-filter-control-number/oms-query-filtered-results.png)
 

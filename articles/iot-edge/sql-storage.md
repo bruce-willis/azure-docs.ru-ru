@@ -9,12 +9,12 @@ ms.date: 02/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9c90cc28956e4dd7730cc7ba09a173f505f056fc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 30dc833edabfe3d13769bafc9fa0eb6bdd51bb23
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34632406"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36287213"
 ---
 # <a name="store-data-at-the-edge-with-sql-server-databases"></a>Хранение данных в граничной системе с помощью баз данных SQL Server
 
@@ -33,17 +33,16 @@ ms.locfileid: "34632406"
 * [Использование Visual Studio Code для разработки и развертывания решения "Функции Azure" в Azure IoT Edge](how-to-vscode-develop-azure-function.md)
 
 После завершения работы с требуемыми руководствами на компьютере должны быть установлены все необходимые компоненты. 
-* Активный Центр Интернета вещей Azure.
-* Устройство IoT Edge с минимальным объемом ОЗУ и размером диска 2 ГБ.
-* [Visual Studio Code](https://code.visualstudio.com/). 
-* [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). 
-* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp). 
-* [Docker](https://docs.docker.com/engine/installation/)
-* [Пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/core#windowscmd). 
-* [Python 2.7](https://www.python.org/downloads/).
-* [Сценарий управления IoT Edge](https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl).
-* Шаблон AzureIoTEdgeFunction (`dotnet new -i Microsoft.Azure.IoT.Edge.Function`).
-* Активный Центр Интернета вещей с устройством IoT Edge (как минимум).
+* активный Центр Интернета вещей Azure с устройством IoT Edge (как минимум);
+* устройство IoT Edge с минимальным объемом ОЗУ и размером диска 2 ГБ;
+* [Visual Studio Code](https://code.visualstudio.com/); 
+* [расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge); 
+* [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp); 
+* [Docker](https://docs.docker.com/engine/installation/);
+* [пакет SDK для .NET Core 2.0](https://www.microsoft.com/net/core#windowscmd); 
+* [Python 2.7](https://www.python.org/downloads/);
+* [сценарий управления IoT Edge](https://pypi.python.org/pypi/azure-iot-edge-runtime-ctl);
+* шаблон AzureIoTEdgeFunction (`dotnet new -i Microsoft.Azure.IoT.Edge.Function`).
 
 Для работы с этим руководством можно использовать контейнеры Windows и Linux на архитектурах процессора x64. SQL Server не поддерживает процессоры ARM.
 

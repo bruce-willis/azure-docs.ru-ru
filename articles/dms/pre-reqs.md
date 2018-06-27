@@ -10,13 +10,13 @@ ms.service: database-migration
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 04/22/2018
-ms.openlocfilehash: b3fe97343d844eb5c030cf0aaa9da2a6f54a2472
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.date: 06/19/2018
+ms.openlocfilehash: 3dc449724e405f83ce976b9f8b01a89c25d693fe
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32168213"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36221256"
 ---
 # <a name="overview-of-prerequisites-for-using-the-azure-database-migration-service"></a>Предварительные требования для использования службы Azure Database Migration Service
 Есть несколько предварительных требований, которые необходимо выполнить, чтобы служба Azure Database Migration Service работала без проблем при переносе баз данных. Одни предварительные требования применяются во всех сценариях (с парами исходного и целевого объектов), поддерживаемых службой, другие уникальны и используются в определенных сценариях.
@@ -63,4 +63,4 @@ ms.locfileid: "32168213"
    > Полный список предварительных требований, необходимых для использования службы Azure Database Migration Service для переноса данных из SQL Server в службу "Управляемый экземпляр Базы данных SQL Azure", см. в руководстве [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure](https://aka.ms/migratetomiusingdms).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Общие сведения о службе Azure Database Migration Service и доступности по регионам в период действия общедоступной предварительной версии см. в статье [Что такое предварительная версия службы Azure Database Migration Service?](dms-overview.md) 
+Общие сведения о службе Azure Database Migration Service и доступности по регионам см. в статье [Что такое Azure Database Migration Service?](dms-overview.md) 

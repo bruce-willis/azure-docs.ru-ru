@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 8511af935eb2427724ace1f39ec9948e3b0b5537
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f52861411a34d1fbff577fbbc37cf926151a97d8
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34643215"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294818"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 > [!div class="op_single_selector"]
@@ -40,17 +40,17 @@ ms.locfileid: "34643215"
   
   Чтобы определить версию Windows Server с контейнерами, необходимую для кластера, запустите команду `ver` из командной строки Windows на компьютере разработки:
 
-  * Если версия содержит *x.x.14323.x*, [создайте кластер](service-fabric-cluster-creation-via-portal.md), выбрав ОС *WindowsServer 2016-Datacenter-with-Containers*, или [бесплатно воспользуйтесь Service Fabric](https://aka.ms/tryservicefabric) со сторонним кластером.
-  * Если версия содержит *x.x.16299.x*, [создайте кластер](service-fabric-cluster-creation-via-portal.md), выбрав ОС *WindowsServerSemiAnnual Datacenter-Core-1709-with-Containers*. Вы не можете использовать сторонний кластер.
+  * Если версия содержит *x.x.14323.x*, выберите для операционной системы значение *WindowsServer 2016-Datacenter-with-Containers* при [создании кластера](service-fabric-cluster-creation-via-portal.md). Кроме того, вы можете [бесплатно поработать с Service Fabric](https://aka.ms/tryservicefabric) с использованием кластера сообщества.
+  * Если версия содержит *x.x.16299.x*, выберите для операционной системы значение *WindowsServerSemiAnnual Datacenter-Core-1709-with-Containers* при [создании кластера](service-fabric-cluster-creation-via-portal.md). Но в таком случае нельзя использовать кластер сообщества.
 
 * Реестр контейнеров Azure. [Создайте реестр контейнеров](../container-registry/container-registry-get-started-portal.md) в своей подписке Azure.
 
 > [!NOTE]
-> Развертывание контейнеров в кластере Service Fabric в Windows 10 или кластере с Docker CE не поддерживается. В этом пошаговом руководстве выполняется локальное тестирование с использованием подсистемы Docker в Windows 10 и развертывание служб контейнеров в кластере Windows Server в Azure под управлением Docker EE. 
+> Поддерживается развертывание контейнеров в кластере Service Fabric под управлением Windows 10.  Сведения о настройке Windows 10 для запуска контейнеров Windows см.в [этой статье](service-fabric-how-to-debug-windows-containers.md).
 >   
 
 > [!NOTE]
-> В Service Fabric версии 6.1 реализована поддержка предварительной версии для Windows Server 1709. Открытый сетевой режим и служба DNS Service Fabric не работают с Windows Server 1709. 
+> Service Fabric 6.2 и более поздних версий поддерживает развертывание контейнеров в кластерах под управлением Windows Server версии 1709.  
 > 
 
 ## <a name="define-the-docker-container"></a>Определение образа контейнера Docker

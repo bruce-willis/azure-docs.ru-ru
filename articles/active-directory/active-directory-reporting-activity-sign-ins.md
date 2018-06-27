@@ -3,25 +3,25 @@ title: Отчеты о действиях входа на портале Azure A
 description: Общие сведения об отчетах о действиях входа на портале Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: rolyon
+author: priyamohanram
 manager: mtillman
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
 ms.service: active-directory
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.component: compliance-reports
 ms.date: 05/17/2018
-ms.author: rolyon
+ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 6414be82e57741bf2af1de3650a3d9a28c4d6427
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d9c2f210204122947c24eb42f643450537f3b9a8
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34588613"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36232134"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -153,7 +153,7 @@ ms.locfileid: "34588613"
 
 ![Скачивание](./media/active-directory-reporting-activity-sign-ins/71.png "Download")
 
-После нажатия кнопки **Скачать** создается CSV-файл с последними 5 тыс. записей. Если вам нужны дополнительные возможности, используйте скрипт. После нажатия кнопки **Скрипт** создается скрипт, который содержит все настроенные вами фильтры. На число записей, которые можно скачать, влияют особенности технической реализации, а также [политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md).  
+После нажатия кнопки **Скачать** создается CSV-файл с последними 5 тыс. записей. Если вам нужны дополнительные возможности, используйте скрипт. После нажатия кнопки **Скрипт** создается скрипт PowerShell, который содержит все настроенные вами фильтры. Скачайте и запустите этот скрипт **с правами администратора**, чтобы создать файл CSV. На число записей, которые можно скачать, влияют особенности технической реализации, а также [политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md).  
 
 
 

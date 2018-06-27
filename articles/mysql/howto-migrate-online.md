@@ -1,6 +1,6 @@
 ---
 title: Миграция в службу "База данных Azure для MySQL" с минимальным простоем
-description: Из этой статьи вы узнаете, как перенести базу данных MySQL в службу "База данных Azure для MySQL" с минимальным простоем и настроить начальную загрузку данных из базы данных-источника в целевую базу данных, а также их непрерывную синхронизацию с помощью Attunity Replicate for Microsoft Migrations.
+description: В этой статье объясняется, как с помощью Azure Database Migration Service перенести базу данных MySQL в Базу данных Azure для MySQL с минимальным временем простоя.
 services: mysql
 author: HJToland3
 ms.author: jtoland
@@ -8,32 +8,24 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 02/28/2018
-ms.openlocfilehash: 99add55188615debdc96b6cfc8b21e34552fd9d4
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.date: 06/21/2018
+ms.openlocfilehash: ecbd35bd45bd11292bbe4a032329d704858d4c77
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267260"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293927"
 ---
 # <a name="minimal-downtime-migration-to-azure-database-for-mysql"></a>Миграция в службу "База данных Azure для MySQL" с минимальным простоем
-Вы можете перенести существующую базу данных MySQL в службу "База данных Azure для MySQL" с помощью Attunity Replicate for Microsoft Migrations. Attunity Replicate — это совместное предложение от компании Attunity и корпорации Майкрософт. Клиентам Майкрософт это предложение предоставляется вместе со службой Azure Database Migration Service без дополнительной платы. 
+Благодаря новой возможности **непрерывной синхронизации** в [Azure Database Migration Service](https://aka.ms/get-dms) (DMS) вы можете переносить базы данных MySQL в Базу данных Azure для MySQL с минимальным временем простоя. Эта функция позволяет сократить время простоя при работе приложения.
 
-Attunity Replicate позволяет сократить до минимума время простоя при переносе баз данных и поддерживает работу базы данных-источника на протяжении всего процесса.
+## <a name="overview"></a>Обзор
+DMS выполняет начальную загрузку локальных баз данных в Базу данных Azure для MySQL и непрерывно синхронизирует все новые транзакции с Azure во время работы приложения. Когда данные поступят в целевую службу Azure, остановите приложение на короткое время (минимальное время простоя), подождите, пока последний пакет данных (с момента остановки приложения до его фактической недоступности для принятия нового трафика) будет передан в целевую службу, а затем обновите строку подключения, чтобы она указывала на Azure. По завершении приложение станет доступно в Azure.
 
-Attunity Replicate — это средство репликации данных, которое позволяет синхронизировать данные между разными источниками и целевыми объектами. Оно передает скрипт создания схемы и данные, связанные с каждой таблицей базы данных. Attunity Replicate не передает другие артефакты (например, SP, триггеры, функции и т. д.) и не преобразует, например, код PL/SQL, который размещается в этих артефактах, в T-SQL.
+![Непрерывная синхронизация с Azure Database Migration Service](./media/howto-migrate-online/ContinuousSync.png)
 
-> [!NOTE]
-> Хотя средство Attunity Replicate поддерживает широкий набор сценариев миграции, оно предназначено для поддержки определенного набора пар "источник — целевой объект".
+Сейчас в DMS миграция источников MySQL находится на этапе предварительной версии. Если вы хотите попробовать перенести рабочие нагрузки MySQL с помощью службы, зарегистрируйтесь на странице [предварительной версии](https://aka.ms/dms-preview) Azure DMS, чтобы сообщить о своей заинтересованности. Ваши отзывы очень важны для нас. Они помогают нам улучшать службу.
 
-Процесс миграции с минимальным простоем включает следующие основные этапы:
-
-* **Миграция исходной схемы MySQL** в службу управляемой базы данных ("База данных Azure для MySQL") с помощью [MySQL Workbench](https://www.mysql.com/products/workbench/).
-
-* **Настройка начальной загрузки данных из базы данных-источника в целевую базу данных и их непрерывной синхронизации** с помощью Attunity Replicate for Microsoft Migrations. Такая настройка позволяет сократить время, в течение которого база данных-источник работает в режиме только для чтения, пока вы готовитесь к переносу приложений в целевую базу данных MySQL в Azure.
-
-Дополнительные сведения о предложении Attunity Replicate for Microsoft Migrations см. в следующих материалах:
- - Откройте страницу службы [Attunity Replicate for Microsoft Migrations](https://aka.ms/attunity-replicate).
- - Скачайте [Attunity Replicate for Microsoft Migrations](http://discover.attunity.com/download-replicate-microsoft-lp6657.html).
- - Чтобы получить краткие инструкции по началу работы, руководства и поддержку, посетите [сообщество Attunity Replicate](https://aka.ms/attunity-community).
- - Пошаговые инструкции по использованию Attunity Replicate для переноса существующей базы данных MySQL в службу "База данных Azure для MySQL" см. в [руководстве по переносу баз данных](https://datamigration.microsoft.com/scenario/mysql-to-azuremysql).
+## <a name="next-steps"></a>Дополнительная информация
+- Просмотрите видео [Easily migrate MySQL/PostgreSQL apps to Azure managed service](https://medius.studios.ms/Embed/Video/THR2201?sid=THR2201) (Простой перенос приложений MySQL и PostgreSQL в управляемую службу Azure), в котором демонстрируется миграция приложений MySQL в Базу данных Azure для MySQL.
+- Зарегистрируйтесь, чтобы использовать ограниченную предварительную версию для миграции приложений MySQL в Базу данных Azure для MySQL с минимальным временем простоя, на [этой странице](https://aka.ms/dms-preview) Azure DMS.

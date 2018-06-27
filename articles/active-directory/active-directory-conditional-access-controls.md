@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/01/2018
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 85c91ee7a03df221b2bf591aca6bf937c98313c7
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 924c41b060f56b4a21e4d29e059eb2968fa19330
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34723649"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36232181"
 ---
-# <a name="access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory 
+# <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory 
 
 С помощью [условного доступа Azure Active Directory (Azure AD)](active-directory-conditional-access-azure-portal.md) можно контролировать доступ авторизованных пользователей к облачным приложениям. В политике условного доступа определяется реакция ("сделать это") на конкретное условие, при котором активируется политика ("в этом случае"). 
 
@@ -173,6 +173,6 @@ ms.locfileid: "34723649"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы хотите узнать, как настроить политику условного доступа, прочитайте статью [Начало работы с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md). 

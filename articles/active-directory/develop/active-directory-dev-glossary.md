@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 11/16/2017
 ms.author: celested
 ms.custom: aaddev
-ms.openlocfilehash: 12c1a4b2b1f3e433721b9c8a335c6b55de746643
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: ab053e9b132630c19b6966286035d38c71c6b4d9
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34158155"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36267886"
 ---
 # <a name="azure-active-directory-developer-glossary"></a>Глоссарий по Azure Active Directory для разработчика
 Эта статья содержит определения некоторых основных понятий Azure Active Directory (AD), которые могут быть полезны при изучении разработки приложений, использующих Azure AD.
@@ -45,7 +45,7 @@ ms.locfileid: "34158155"
 ## <a name="application-object"></a>Объект приложения
 При регистрации или обновлении приложения на [портале Azure][AZURE-portal] создается или обновляется объект приложения и соответствующий [объект субъекта-службы](#service-principal-object) для этого клиента. Объект приложения глобально *определяет* конфигурацию удостоверения для приложения (для всех клиентов, где у него есть доступ) и предоставляет шаблон, *на основе* которого создаются соответствующие объекты субъектов-служб для локального использования во время выполнения (в конкретном клиенте).
 
-Дополнительные сведения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory][AAD-App-SP-Objects].
+Дополнительные сведения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)][AAD-App-SP-Objects].
 
 ## <a name="application-registration"></a>Регистрация приложения
 Чтобы разрешить приложению выполнять интеграцию с функциями управления удостоверениями и доступом и предоставлять права на их использование в Azure AD, необходимо зарегистрировать его в [клиенте](#tenant)Azure AD. При регистрации приложения в Azure AD вы предоставляете соответствующую конфигурацию удостоверения, что позволяет интегрировать приложение с Azure AD и использовать следующие возможности:
@@ -132,7 +132,7 @@ ms.locfileid: "34158155"
 
 Роли — это определяемые ресурсом строки (например, "Утверждающий затраты", "Только чтение" или Directory.ReadWrite.All), которыми можно управлять на [портале Azure][AZURE-portal], используя [манифест приложения](#application-manifest) ресурса. Эти строки хранятся в [свойстве appRoles][AAD-Graph-Sp-Entity] ресурса. С помощью портала Azure можно также назначать пользователям роль "пользователь" и настраивать [разрешения приложений](#permissions) клиента для доступа к роли "приложение".
 
-Подробное описание ролей приложения, предоставляемых API Graph Azure AD, см. в статье [Области разрешений | Основные понятия API Graph][AAD-Graph-Perm-Scopes]. Поэтапно разобранный пример реализации см. в записи блога [Role based access control in cloud applications using Azure AD][Duyshant-Role-Blog] (Контроль доступа на основе ролей в облачных приложениях с использованием Azure AD).
+Подробное описание ролей приложения, предоставляемых API Graph Azure AD, см. в статье [Области разрешений | Основные понятия API Graph][AAD-Graph-Perm-Scopes]. Пример пошаговой реализации см. в статье [Управление доступом с помощью RBAC и портала Azure][AAD-RBAC].
 
 ## <a name="scopes"></a>Области
 Как и [роли](#roles), области позволяют [серверу ресурсов](#resource-server) контролировать доступ к своим защищенным ресурсам. Области используются для реализацииконтроля доступа [на основе областей][OAuth2-Access-Token-Scopes] для [клиентского приложения](#client-application), которому предоставлен делегированный доступ к ресурсу его владельцем.
@@ -147,7 +147,7 @@ ms.locfileid: "34158155"
 ## <a name="service-principal-object"></a>объект субъекта-службы
 При регистрации или обновлении приложения на [портале Azure][AZURE-portal] создается или обновляется объект приложения и соответствующий [объект субъекта-службы](#application-object) для этого клиента. Объект приложения глобально *определяет* конфигурацию удостоверения для приложения (для всех клиентов, где связанному приложению предоставлен доступ) и шаблон, *на основе* которого создаются соответствующие объекты субъектов-служб для локального использования во время выполнения (в конкретном клиенте).
 
-Дополнительные сведения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory][AAD-App-SP-Objects].
+Дополнительные сведения см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory (Azure AD)][AAD-App-SP-Objects].
 
 ## <a name="sign-in"></a>Вход
 Процесс, в ходе которого [клиентское приложение](#client-application) инициирует проверку подлинности пользователя и фиксирует соответствующее состояние, чтобы получить [маркер безопасности](#security-token) и использовать это состояние для сеанса приложения. Состояние может включать в себя артефакты, такие как сведения о профиле пользователя и информация, извлеченная из утверждений маркера.
@@ -155,7 +155,7 @@ ms.locfileid: "34158155"
 Функция входа в приложение обычно используется для реализации единого входа (SSO). Ей может также предшествовать функция регистрации как точка входа для пользователя, с помощью которой предоставляется доступ к приложению (после первого входа в систему). Функция регистрации используется для сбора и сохранения дополнительного состояния конкретного пользователя и может требовать [согласия пользователя](#consent).
 
 ## <a name="sign-out"></a>Выход
-Отмена проверки подлинности пользователя, при котором отсоединяется состояние пользователя, связанное с сеансом [клиентского приложения](#client-application) при [входе](#sign-in).
+Отмена аутентификации пользователя, при которой отключается отслеживание состояния пользователя, связанное с сеансом [клиентского приложения](#client-application) при [входе](#sign-in).
 
 ## <a name="tenant"></a>tenant
 Экземпляр каталога Azure AD, который называют клиентом Azure AD. Он обеспечивает несколько функций, включая следующие:
@@ -181,7 +181,7 @@ ms.locfileid: "34158155"
 ## <a name="next-steps"></a>Дополнительная информация
 [Руководство разработчика по Azure AD][AAD-Dev-Guide] охватывает все темы, связанные с разработкой для Azure AD, включая обзор[интеграции приложений][AAD-How-To-Integrate], а также основные сведения об [аутентификации Azure AD и поддерживаемых сценариях аутентификации][AAD-Auth-Scenarios]. Руководства и примеры кода для быстрого начала работы можно найти также на сайте [Github](https://github.com/azure-samples?utf8=%E2%9C%93&q=active%20directory&type=&language=).
 
-В следующем разделе комментариев вы можете поделиться своим мнением и помочь нам улучшить и сформировать наши материалы. Вы можете также запросить создание новых определений или обновление существующих.
+В следующем разделе комментариев вы можете поделиться своим мнением и помочь улучшить и сформировать материалы. Также вы можете запросить создание новых определений или обновление существующих.
 
 <!--Image references-->
 
@@ -194,7 +194,7 @@ ms.locfileid: "34158155"
 [AAD-Graph-App-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#application-entity
 [AAD-Graph-Sp-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity
 [AAD-Graph-User-Entity]: https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#user-entity
-[AAD-How-Subscriptions-Assoc]: ../active-directory-how-subscriptions-associated-directory.md
+[AAD-How-Subscriptions-Assoc]:../fundamentals/active-directory-how-subscriptions-associated-directory.md
 [AAD-How-To-Integrate]: ./active-directory-how-to-integrate.md
 [AAD-How-To-Tenant]: active-directory-howto-tenant.md
 [AAD-Integrating-Apps]: ./active-directory-integrating-applications.md
@@ -202,7 +202,7 @@ ms.locfileid: "34158155"
 [AAD-Security-Token-Claims]: ./active-directory-authentication-scenarios/#claims-in-azure-ad-security-tokens
 [AAD-Tokens-Claims]: ./active-directory-token-and-claims.md
 [AZURE-portal]: https://portal.azure.com
-[Duyshant-Role-Blog]: http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/
+[AAD-RBAC]: ../../role-based-access-control/role-assignments-portal.md
 [JWT]: https://tools.ietf.org/html/draft-ietf-oauth-json-web-token-32
 [Microsoft-Graph]: https://graph.microsoft.io
 [O365-Perm-Ref]: https://msdn.microsoft.com/office/office365/howto/application-manifest

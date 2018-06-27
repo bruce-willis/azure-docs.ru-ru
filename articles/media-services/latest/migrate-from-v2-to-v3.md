@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 05/22/2018
+ms.date: 06/12/2018
 ms.author: juliako
-ms.openlocfilehash: 4e644db12a74d6ef132a0c8d64ef517a0c2253cc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a382af644d30f9f0ebb586273c982ef1766f50b0
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660094"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36292049"
 ---
 # <a name="migrate-from-media-services-v2-to-v3"></a>Миграция из версии 2 в версию 3 Служб мультимедиа
 
@@ -50,6 +50,10 @@ ms.locfileid: "34660094"
 
 ## <a name="changes-from-v2"></a>Отличия от версии 2
 
+* В Службах мультимедиа версии 3 для обратной совместимости поддерживается шифрование хранилища (шифрование AES-256), только если ресурсы созданы с помощью Служб мультимедиа версии 2. То есть версия 3 работает с существующими зашифрованными ресурсами хранилища, но создание новых ресурсов не поддерживается.
+
+    Если ресурсы созданы с помощью версии 3, Службы мультимедиа поддерживают шифрование хранилища на стороне сервера [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-service-encryption?toc=%2fazure%2fstorage%2fblobs%2ftoc.json).
+    
 * Пакеты SDK для Служб мультимедиа лишаются хранилища SDK, что обеспечивает больший контроль над используемым хранилищем SDK и позволяет избежать проблем с управлением версиями. 
 * В версии 3 вся скорость кодировки указана в битах за секунду. Это отличается от предустановок Media Encoder Standard REST версии 2. Например, скорость в версии 2 указывается как 128, а в версии 3 она имела бы значение 128 000. 
 * Объекты AssetFiles, AccessPolicies, IngestManifests не существуют в версии 3.
@@ -141,7 +145,7 @@ new Job {Input = jobInput, Outputs = jobOutputs});
 1. Создайте политику ключа содержимого.
 2. Создайте ресурс.
 3. Передайте содержимое или используйте ресурс как JobOutput.
-4. Создайте Locator.
+4. Создайте StreamingLocator.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,6 +1,6 @@
 ---
-title: Условия в условном доступе Azure Active Directory | Документация Майкрософт
-description: Узнайте, как используются назначения в условном доступе Azure Active Directory для активации политики.
+title: Что собой представляют условия условного доступа Azure Active Directory | Документация Майкрософт
+description: Узнайте, как активировать политику с помощью условий условного доступа Azure Active Directory.
 services: active-directory
 keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
 documentationcenter: ''
@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/01/2018
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 5f0ff092a7535448d48642e972d1d36652f1b83f
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 42792170593dbd94d0eae9b408c70f326891508a
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34735147"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36232176"
 ---
-# <a name="conditions-in-azure-active-directory-conditional-access"></a>Условия в условном доступе Azure Active Directory 
+# <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Что собой представляют условия условного доступа Azure Active Directory 
 
 С помощью [условного доступа Azure Active Directory (Azure AD)](active-directory-conditional-access-azure-portal.md) можно контролировать доступ авторизованных пользователей к облачным приложениям. В политике условного доступа определяется реакция ("сделать это") на конкретное условие, при котором активируется политика ("в этом случае"). 
 
@@ -140,7 +140,7 @@ ms.locfileid: "34735147"
 
 - Блокировка доступа для пользователей, которые пытаются получить доступ к службе из определенных стран или регионов. 
 
-Дополнительные сведения см. в разделе [Условия расположения в условном доступе Azure Active Directory](active-directory-conditional-access-locations.md).
+Дополнительные сведения см. в статье [Условия расположения в условном доступе Azure Active Directory](active-directory-conditional-access-locations.md).
 
 
 ## <a name="client-apps"></a>Клиентские приложения
@@ -241,7 +241,7 @@ ms.locfileid: "34735147"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы хотите узнать, как настроить политику условного доступа, прочитайте статью [Начало работы с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md). 
 

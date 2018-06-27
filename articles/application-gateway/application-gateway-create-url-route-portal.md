@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 3/26/2018
 ms.author: victorh
-ms.openlocfilehash: 4ffaeedf125b6f74aeb88e22248040c6c3ef001c
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 3fcbcbe5d5f8dab956f40cde112f3536e1ae668c
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34356177"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36263998"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -141,8 +141,8 @@ ms.locfileid: "34356177"
 
 1. Щелкните **Правила** и выберите **На основе пути**.
 2. Введите имя *rule2*.
-3. Введите *Images* в качестве имени первого пути. Введите для пути значение */images/**. Выберите для серверного пула значение **imagesBackendPool**.
-4. Введите *Video* в качестве имени второго пути. Введите для пути значение */video/**. Выберите для серверного пула значение **videoBackendPool**.
+3. Введите *Images* в качестве имени первого пути. Введите путь */images/*\*. Выберите для серверного пула значение **imagesBackendPool**.
+4. Введите *Video* в качестве имени второго пути. Введите путь */video/*\*. Выберите для серверного пула значение **videoBackendPool**.
 
     ![Создание правила на основе пути](./media/application-gateway-create-url-route-portal/application-gateway-route-rule.png)
 

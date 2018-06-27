@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/09/2017
 ms.author: mikeray
-ms.openlocfilehash: 8796cd3224670c6d1c8b1b3c6da8d1c096b01d03
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 40a8cd256164bb66e82c651e58d37b1afbb4a652
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34716726"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36287809"
 ---
 # <a name="configure-always-on-availability-group-in-azure-vm-manually"></a>Настройка группы доступности AlwaysOn на виртуальной машине Azure вручную
 
@@ -56,7 +56,7 @@ ms.locfileid: "34716726"
 <!--**Procedure**: *This is the first “step”. Make titles H2’s and short and clear – H2’s appear in the right pane on the web page and are important for navigation.*-->
 
 <a name="CreateCluster"></a>
-## Создание кластера
+## <a name="create-the-cluster"></a>Создание кластера
 
 Первым шагом после выполнения предварительных условий является создание отказоустойчивого кластера Windows Server, включающего в себя два сервера SQL Server и следящий сервер.
 
@@ -413,8 +413,8 @@ Repeat these steps on the second SQL Server.
    | **Имя** | текст | SQLAlwaysOnEndPointListener |
    | **Frontend IP address** (Интерфейсный IP-адрес) | Выберите адрес. |Используйте адрес, который был создан при создании подсистемы балансировки нагрузки. |
    | **Протокол** | Выберите протокол TCP. |TCP |
-   | **Порт** | Используйте порт экземпляра SQL Server. | 1433 |
-   | **Серверный порт** | Это поле не используется, если задан плавающий IP-адрес для прямого ответа от сервера. | 1433 |
+   | **Порт** | Создайте порт для прослушивателя группы доступности | 1435 |
+   | **Серверный порт** | Это поле не используется, если задан плавающий IP-адрес для прямого ответа от сервера. | 1435 |
    | **Проба** |Имя, указанное для пробы. | SQLAlwaysOnEndPointProbe |
    | **Сохранение сеанса** | Раскрывающийся список. | **None** |
    | **Время ожидания простоя** | Интервал (в минутах), в течение которого подключение TCP остается открытым. | 4. |

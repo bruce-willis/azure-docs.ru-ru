@@ -1,11 +1,11 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 8e710bebf979b60f61552593ae550e95a8340d2b
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 99eaa667e4c6a9d63b4cc43ada8c6e36f7365610
+ms.sourcegitcommit: 39f4911b5933f7062dcf5d57af94eab8a0740b2b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34307572"
+ms.lasthandoff: 06/16/2018
+ms.locfileid: "35683055"
 ---
 # <a name="prepay-for-virtual-machines-with-azure-reserved-vm-instances"></a>Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances
 
@@ -16,7 +16,14 @@ ms.locfileid: "34307572"
 -   Для подписок с соглашением Enterprise покупки зарезервированных экземпляров следует включить на [портале EA](https://ea.azure.com).
 -   В рамках программы для поставщиков облачных решений (CSP) только агенты администрирования или агенты продаж могут приобрести зарезервированные экземпляры.
 
-## <a name="buy-a-reserved-instance"></a>Приобретение зарезервированного экземпляра
+[!IMPORTANT]
+Чтобы определить правильный размер виртуальной машины для резервирования, используйте один из методов, описанных ниже.
+
+## <a name="determine-the-right-vm-size-before-purchase"></a>Определение нужного размера виртуальной машины перед приобретением
+1. Чтобы правильно определить размер виртуальной машины для резервирования, см. поле AdditionalInfo в файле использования или API использования. Не используйте значения из полей "Подкатегория измерения" или "Продукт", так как в этих полях не указывается различие между версиями S и другими версиями виртуальных машин.
+2. Точные сведения о размере виртуальной машины также можно получить с помощью PowerShell, Azure Resource Manager или портала Azure.
+
+## <a name="buy-a-reserved-virtual-machine-instance"></a>Покупка зарезервированного экземпляра виртуальной машины
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Резервирование**.
 3. Выберите **Добавить**, чтобы купить новый зарезервированный экземпляр.
@@ -53,7 +60,7 @@ ms.locfileid: "34307572"
 - [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров с Соглашением о регистрации Enterprise](../articles/billing/billing-understand-reserved-instance-usage-ea.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров](../articles/billing/billing-reserved-instance-windows-software-costs.md)
-- [Зарезервированные экземпляры в программе для поставщиков облачных решений (CSP) в Центре партнеров](https://docs.microsoft.com/partner-center/azure-reservations)
+- [Sell Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров виртуальных машин Microsoft Azure)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

@@ -1,6 +1,6 @@
 ---
-title: Управление доступом на основе ролей (RBAC) с помощью интерфейса командной строки Azure | Документация Майкрософт
-description: Узнайте, как управлять доступом на основе ролей (RBAC) с помощью интерфейса командной строки Azure, используя вывод списков ролей и действий ролей, а также назначения ролей для областей действия подписки и приложения.
+title: Управление доступом с помощью RBAC и Azure CLI | Документация Майкрософт
+description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и Azure CLI. Под управлением также подразумевается вывод списка доступа, предоставление и удаление доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,30 +14,24 @@ ms.workload: identity
 ms.date: 04/03/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8b50d04bcbd067059bf4816468585e5d56a63d41
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 15ff519f5af7471d6adaae44e2af19422ad44fea
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266743"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294410"
 ---
-# <a name="manage-role-based-access-control-with-the-azure-command-line-interface"></a>Управление доступом на основе ролей с помощью интерфейса командной строки Azure
+# <a name="manage-access-using-rbac-and-azure-cli"></a>Управление доступом с помощью RBAC и Azure CLI
 
-> [!div class="op_single_selector"]
-> * [PowerShell](role-assignments-powershell.md)
-> * [интерфейс командной строки Azure](role-assignments-cli.md)
-> * [REST API](role-assignments-rest.md)
-
-
-С помощью механизма управления доступом на основе ролей (RBAC) можно определить доступ для пользователей, групп и субъектов-служб, назначая роли для определенной области. В этой статье описано, как управлять назначением ролей с помощью интерфейса командной строки Azure (CLI).
+[Управление доступом на основе ролей (RBAC)](overview.md) — это способ управления доступом к ресурсам в Azure. Из этой статьи вы узнаете, как управлять доступом пользователей, групп и приложений, используя RBAC и Azure CLI.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы использовать Azure CLI для управления назначением ролей, вам понадобится следующее:
 
-* [Azure CLI 2.0](/cli/azure). Его можно использовать в браузере с [Azure Cloud Shell](../cloud-shell/overview.md) или [установить](/cli/azure/install-azure-cli) в macOS, Linux или Windows и запускать из командной строки.
+* [Azure CLI](/cli/azure). Его можно использовать в браузере с [Azure Cloud Shell](../cloud-shell/overview.md) или [установить](/cli/azure/install-azure-cli) в macOS, Linux или Windows и запускать из командной строки.
 
-## <a name="list-role-definitions"></a>Вывод списка определений роли
+## <a name="list-roles"></a>Вывод списка ролей
 
 Чтобы получить список всех доступных определений роли, используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list):
 
@@ -94,7 +88,7 @@ az role definition list --custom-role-only false --output json | jq '.[] | {"rol
 ...
 ```
 
-### <a name="list-actions-of-a-role-definition"></a>Вывод списка разрешенных действий, относящихся к определению роли
+### <a name="list-actions-of-a-role"></a>Вывод списка действий роли
 
 Чтобы получить список разрешенных действий определения роли (свойства actions), используйте команду [az role definition list](/cli/azure/role/definition#az-role-definition-list).
 
@@ -182,7 +176,9 @@ az role definition list --name "Virtual Machine Contributor" --output json | jq 
 ]
 ```
 
-## <a name="list-role-assignments"></a>Список назначений ролей
+## <a name="list-access"></a>Вывод списка доступа
+
+При использовании RBAC, чтобы узнать, кому предоставлен доступ, вам нужно получить список назначений ролей.
 
 ### <a name="list-role-assignments-for-a-user"></a>Список назначений ролей для пользователя
 
@@ -240,7 +236,9 @@ az role assignment list --resource-group pharma-sales-projectforecast --output j
 ...
 ```
 
-## <a name="create-role-assignments"></a>Создание назначений ролей
+## <a name="grant-access"></a>Предоставление доступа
+
+При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
 
 ### <a name="create-a-role-assignment-for-a-user"></a>Создание назначения ролей для пользователя
 
@@ -290,9 +288,9 @@ az role assignment create --role <role> --assignee-object-id <assignee_object_id
 az role assignment create --role "Virtual Machine Contributor" --assignee-object-id 44444444-4444-4444-4444-444444444444 --resource-group pharma-sales-projectforecast
 ```
 
-## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
+## <a name="remove-access"></a>Запрет доступа
 
-Чтобы удалить назначение ролей, используйте команду [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete).
+При использовании RBAC, чтобы удалить доступ, нужно удалить назначение роли с помощью команды [az role assignment delete](/cli/azure/role/assignment#az-role-assignment-delete):
 
 ```azurecli
 az role assignment delete --assignee <assignee> --role <role> --resource-group <resource_group>

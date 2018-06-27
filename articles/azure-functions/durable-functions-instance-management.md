@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/19/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 0e573b4973ea30b990043b54c5cdcf0805135a40
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3c6602bdd90c82568a50ad7354d7abb7c6a472ae
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33764661"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36287754"
 ---
 # <a name="manage-instances-in-durable-functions-azure-functions"></a>Управление экземплярами в устойчивых функциях (Функции Azure)
 
@@ -98,6 +98,24 @@ public static async Task Run(
 {
     var status = await client.GetStatusAsync(instanceId);
     // do something based on the current status.
+}
+```
+## <a name="querying-all-instances"></a>Запросы ко всем экземплярам
+
+С помощью метода `GetStatusAsync` вы можете запросить данные о состоянии всех экземпляров оркестрации. Метод не принимает параметры. Чтобы отменить метод, вы можете передать объект `CancellationToken`. Метод возвращает объекты с теми же свойствами, что и метод `GetStatusAsync` с параметрами, но не возвращает журнал. 
+
+```csharp
+[FunctionName("GetAllStatus")]
+public static async Task Run(
+    [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
+    [OrchestrationClient] DurableOrchestrationClient client,
+    TraceWriter log)
+{
+    IList<DurableOrchestrationStatus> instances = await starter.GetStatusAsync(); // You can pass CancellationToken as a parameter.
+    foreach (var instance in instances)
+    {
+        log.Info(JsonConvert.SerializeObject(instance));
+    };
 }
 ```
 
@@ -198,6 +216,41 @@ public static Task Run(
 
 > [!NOTE]
 > Формат URL-адресов веб-перехватчиков может отличаться в зависимости от того, какая версия узла Функций Azure выполняется. Описанный выше пример предназначен для узла Функций Azure 2.0.
+
+## <a name="retrieving-http-management-webhook-urls"></a>Получение URL-адресов веб-перехватчика для управления HTTP
+
+Внешние системы могут взаимодействовать с устойчивыми функциями через URL-адреса веб-перехватчиков, которые содержаться в ответе по умолчанию, описанном в разделе [Обнаружение URL-адреса API HTTP](durable-functions-http-api.md). Но доступ к URL-адресам веб-перехватчиков можно получить и программными средствами в клиенте оркестрации или функции действия с помощью метода [CreateHttpManagementPayload](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateHttpManagementPayload_) класса [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html). 
+
+[CreateHttpManagementPayload](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateHttpManagementPayload_) имеет один параметр:
+
+* **InstanceId** — уникальный идентификатор экземпляра.
+
+Метод возвращает экземпляр класса [HttpManagementPayload](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.Extensions.DurableTask.HttpManagementPayload.html#Microsoft_Azure_WebJobs_Extensions_DurableTask_HttpManagementPayload_) со следующими строковыми свойствами:
+
+* **Id** — идентификатор экземпляра оркестрации (будет совпадать с переданным значением `InstanceId`).
+* **StatusQueryGetUri** — URL-адрес состояния экземпляра оркестрации.
+* **SendEventPostUri** — URL-адрес вызова события экземпляра оркестрации.
+* **TerminatePostUri** — URL-адрес завершения работы экземпляра оркестрации.
+
+Функции действий позволяют отправлять экземпляр класса [HttpManagementPayload](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.Extensions.DurableTask.HttpManagementPayload.html#Microsoft_Azure_WebJobs_Extensions_DurableTask_HttpManagementPayload_) во внешние системы, чтобы отслеживать или вызывать события для оркестрации:
+
+```csharp
+#r "Microsoft.Azure.WebJobs.Extensions.DurableTask"
+
+public static void SendInstanceInfo(
+    [ActivityTrigger] DurableActivityContext ctx,
+    [OrchestrationClient] DurableOrchestrationClient client,
+    [DocumentDB(
+        databaseName: "MonitorDB",
+        collectionName: "HttpManagementPayloads",
+        ConnectionStringSetting = "CosmosDBConnection")]out dynamic document)
+{
+    HttpManagementPayload payload = client.CreateHttpManagementPayload(ctx.InstanceId);
+
+    // send the payload to Cosmos DB
+    document = new { Payload = payload, id = ctx.InstanceId };
+}
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

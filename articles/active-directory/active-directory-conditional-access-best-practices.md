@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/15/2018
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: c155e18ddc4f1713aa9c62a991f4e849e024c5da
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 88e6b1a64d4ceff64c1ee74a297e7af0c5a27379
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34723666"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36232236"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по работе с условным доступом в Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "34723666"
 - с важными сведениями; 
 - а также тем, чего не нужно делать при настройке политики условного доступа. 
 
-Перед прочтением этой статьи следует ознакомиться с основными понятиями и терминологией, связанной с [условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal.md).
+Перед прочтением этой статьи следует ознакомиться с основными понятиями и терминами, связанными с [условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal.md).
 
 
 
@@ -154,4 +154,4 @@ Azure Active Directory применяет обе политики, и польз
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Если вы хотите узнать, как настроить политику условного доступа, см. статью о том, как [начать работу с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).

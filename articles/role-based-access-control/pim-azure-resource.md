@@ -1,6 +1,6 @@
 ---
 title: Управление доступом к ресурсам Azure с помощью управления привилегированными пользователями (PIM)
-description: Узнайте об использовании управления доступом на основе ролей в PIM для доступа к ресурсам Azure.
+description: Дополнительные сведения об управлении доступом к ресурсам Azure с помощью управления привилегированными пользователями (PIM) и управления доступом на основе ролей (RBAC).
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 03/30/2018
 ms.author: rolyon
 ms.reviewer: skwan
-ms.openlocfilehash: fb0a1ff3821efd7114b509b72e143d5240b61b4c
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 838c889f2dc099b4a4c5d84521871c64eb989163
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204215"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293756"
 ---
 # <a name="manage-access-to-azure-resources-with-privileged-identity-management"></a>Управление доступом к ресурсам Azure с помощью управления привилегированными пользователями (PIM)
 
@@ -33,4 +33,4 @@ ms.locfileid: "34204215"
 - назначать временный доступ к ресурсам Azure для быстрых задач или дежурных расписаний;
 - получать оповещения, когда новым пользователям или группам назначается доступ к ресурсам и когда они активируют подходящие назначения.
 
-Дополнительные сведения см. в статье [PIM для ресурсов Azure (предварительная версия)](../active-directory/privileged-identity-management/azure-pim-resource-rbac.md).
+Дополнительные сведения см. в статье [PIM для ресурсов Azure](../active-directory/privileged-identity-management/azure-pim-resource-rbac.md).

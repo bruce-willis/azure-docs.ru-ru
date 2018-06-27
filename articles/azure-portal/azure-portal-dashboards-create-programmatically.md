@@ -3,7 +3,7 @@ title: Создание панелей мониторинга Azure програ
 description: В этой статье описывается создание панелей мониторинга Azure программными средствами.
 services: azure-portal
 documentationcenter: ''
-author: adamab
+author: adamabmsft
 manager: dougeby
 editor: tysonn
 ms.service: azure-portal
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: NA
 ms.workload: na
 ms.date: 09/01/2017
 ms.author: adamab
-ms.openlocfilehash: 8670d25e10b58c40b9d0807de1db88c3296b193d
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.openlocfilehash: dafada5cecbc6345da46bc3a32fc3b91eb72313a
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34164391"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36295517"
 ---
 # <a name="programmatically-create-azure-dashboards"></a>Создание панелей мониторинга Azure программными средствами
 
@@ -89,11 +89,11 @@ Azure предлагает возможность оркестрации раз�
 При выборе этого варианта параметризацию следует выполнить с помощью синтаксиса параметра шаблона.  Вы замените все экземпляры найденных идентификаторов ресурсов, как показано ниже.
 
 ### <a name="example-json-property-with-hard-coded-resource-id"></a>Пример свойства JSON с жестко заданным идентификатором ресурса
-`id: “/subscriptions/6531c8c8-df32-4254-d717-b6e983273e5d/resourceGroups/contoso/providers/Microsoft.Compute/virtualMachines/myVM1”`
+`id: "/subscriptions/6531c8c8-df32-4254-d717-b6e983273e5d/resourceGroups/contoso/providers/Microsoft.Compute/virtualMachines/myVM1"`
 
 ### <a name="example-json-property-converted-to-a-parameterized-version-based-on-template-parameters"></a>Пример свойства JSON, преобразованный в параметризованную версию на основе параметров шаблона
 
-`id: "[resourceId(parameters('virtualMachineResourceGroup'), ‘Microsoft.Compute/virtualMachines’, parameters('virtualMachineName'))]"`
+`id: "[resourceId(parameters('virtualMachineResourceGroup'), 'Microsoft.Compute/virtualMachines', parameters('virtualMachineName'))]"`
 
 Вам также нужно объявить некоторые необходимые метаданные шаблона и параметры в верхней части шаблона JSON следующим образом:
 
@@ -122,7 +122,7 @@ __В конце этой статьи вы увидите комплексный
 
 После создания шаблона вы можете его развернуть с помощью [интерфейсов API REST](https://docs.microsoft.com/rest/api/resources/deployments), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy), [Azure CLI](https://docs.microsoft.com/cli/azure/group/deployment#az_group_deployment_create) или [страницы развертывания шаблона портала](https://portal.azure.com/#create/Microsoft.Template).
 
-Мы представляем две версии примера документа JSON панели мониторинга. Первая — версия, экспортированная с портала, которая уже была привязана к ресурсу. Вторая — версия шаблона, которую можно программно привязать к любой виртуальной машине и развернуть с помощью Azure Resource Manager.
+Мы представляем две версии примера панели мониторинга в формате JSON. Первая — версия, экспортированная с портала, которая уже была привязана к ресурсу. Вторая — версия шаблона, которую можно программно привязать к любой виртуальной машине и развернуть с помощью Azure Resource Manager.
 
 ## <a name="json-representation-of-our-example-dashboard-before-templating"></a>Представление JSON примера панели мониторинга (до создания шаблона)
 

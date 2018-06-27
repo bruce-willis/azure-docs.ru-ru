@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: dsc
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/16/2018
+ms.date: 06/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d01042a02f2339f039f23d4f6e021de503dc3815
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 822d0e285e6f1cc9907625d7928dff3d9bf66921
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195970"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36218961"
 ---
 # <a name="forward-azure-automation-dsc-reporting-data-to-log-analytics"></a>Пересылка данных отчетов Azure Automation DSC в Log Analytics
 
@@ -86,14 +86,14 @@ Set-AzureRmDiagnosticSetting -ResourceId <AutomationResourceId> -WorkspaceId <Wo
 
 Наши клиенты часто интересуются возможностью отправки электронного сообщения или SMS-сообщения при возникновении ошибки в конфигурации DSC.   
 
-Чтобы создать правило генерации оповещений, начните с создания поиска по журналам для записей отчетов DSC, которые должны вызывать оповещение.  Щелкните кнопку **Оповещение**, чтобы создать и настроить правило генерации оповещений.
+Чтобы создать правило генерации оповещений, начните с создания поиска по журналам для записей отчетов DSC, которые должны вызывать оповещение.  Щелкните кнопку **+ Новое правило генерации оповещений**, чтобы создать и настроить правило генерации оповещений.
 
 1. На странице обзора Log Analytics щелкните **Поиск по журналу**.
 1. Поищите по журналам свое оповещение при помощи следующего поискового запроса: `Type=AzureDiagnostics Category=DscNodeStatus NodeName_s=DSCTEST1 OperationName=DscNodeStatusData ResultType=Failed`
 
   Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации.  
   Имя учетной записи службы автоматизации можно получить из поля "Ресурс" для поискового запроса DscNodeStatusData.  
-1. Чтобы открыть экран **Добавить правило оповещения**, щелкните **Оповещение** в верхней части страницы. Дополнительные сведения о параметрах для настройки оповещения см. в разделе [Правила оповещения](../log-analytics/log-analytics-alerts.md#alert-rules).
+1. Чтобы открыть экран **Создать правило**, щелкните **+ Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах для настройки оповещения см. в статье [Создание и просмотр оповещений, а также управление ими с помощью Azure Monitor](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md).
 
 ### <a name="find-failed-dsc-resources-across-all-nodes"></a>Поиск ресурсов DSC со сбоями по всем узлам
 

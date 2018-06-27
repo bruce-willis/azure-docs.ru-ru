@@ -12,14 +12,14 @@ ms.devlang: java
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/27/2018
+ms.date: 06/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 38412713d625fc3c44e29444138675b98129f1fc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 16c99c2c5524a321616ac9f0975f0c9b4255ca94
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34643606"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36215860"
 ---
 # <a name="create-your-first-java-service-fabric-reliable-actors-application-on-linux"></a>Создание первого приложения Java Reliable Actors для Linux в Service Fabric
 > [!div class="op_single_selector"]
@@ -221,6 +221,9 @@ public static void main(String[] args) throws Exception {
 
 ## <a name="start-the-test-client-and-perform-a-failover"></a>Запуск тестового клиента и отработка отказа
 Проекты субъекта предполагают использование дополнительных средств. Например, для отправки сообщений им требуется другая служба или клиент. Шаблон субъекта включает простой тестовый скрипт, обеспечивающий взаимодействие со службой субъекта.
+
+> [!Note]
+> В тестовом клиенте используется класс ActorProxy для обмена данными с субъектами, которые должны выполняться в том же кластере, что и служба субъектов, или совместно использовать тот же диапазон IP-адресов.  Тестовый клиент можно запустить на том же компьютере, что и локальный кластер разработки.  Но для обмена данными с субъектами в удаленном кластере нужно развернуть в кластере шлюз, который будет управлять внешним обменом данными с субъектами.
 
 1. Запустите этот скрипт с помощью служебной программы для отслеживания, чтобы просмотреть выходные данные службы субъекта.  Сценарий теста вызывает для субъекта метод `setCountAsync()`, увеличивающий значение счетчика. Затем для субъекта вызывается метод `getCountAsync()`, чтобы получить новое значение счетчика и вывести его на консоль.
 

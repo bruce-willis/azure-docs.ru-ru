@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/30/2018
+ms.date: 06/18/2018
 ms.author: douglasl
-ms.openlocfilehash: 17fb10f4b39361a99d3f51ed753d333c6ec0bf15
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: febd43586ab3006303143ca04ce8a37941a6fd60
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34618595"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36267926"
 ---
 # <a name="continuous-integration-and-deployment-in-azure-data-factory"></a>Непрерывные интеграция и развертывание в фабрике данных Azure
 
@@ -89,42 +89,9 @@ ms.locfileid: "34618595"
 
 4.  Введите имя своей среды.
 
-5.  Добавьте артефакт Git и выберите настроенный репозиторий с фабрикой данных. Выберите `adf\_publish` в качестве стандартной ветви с последней версией по умолчанию.
+5.  Добавьте артефакт Git и выберите настроенный репозиторий с фабрикой данных. Выберите `adf_publish` в качестве стандартной ветви с последней версией по умолчанию.
 
     ![](media/continuous-integration-deployment/continuous-integration-image7.png)
-
-6.  Получите секреты из Azure Key Vault. Обработать секреты можно двумя способами.
-
-    a.  Добавьте секреты в файл параметров.
-
-       -   Создайте копию файла параметров, отправленного в ветвь публикации, и задайте значения параметров, которые необходимо получить из хранилища ключей в следующем формате:
-
-        ```json
-        {
-            "parameters": {
-                "azureSqlReportingDbPassword": {
-                    "reference": {
-                        "keyVault": {
-                            "id": "/subscriptions/<subId>/resourceGroups/<resourcegroupId> /providers/Microsoft.KeyVault/vaults/<vault-name> "
-                        },
-                        "secretName": " < secret - name > "
-                    }
-                }
-            }
-        }
-        ```
-
-       -   При использовании этого метода секрет автоматически извлекается из хранилища ключей.
-
-       -   Файл параметров также должен находиться в ветви публикации.
-
-    Б.  Добавьте [задачу Azure Key Vault](https://docs.microsoft.com/vsts/build-release/tasks/deploy/azure-key-vault).
-
-       -   Выберите вкладку **Задачи**, создайте новую задачу, найдите и добавьте **Azure Key Vault**.
-
-       -   В задаче Key Vault выберите подписку, в которой было создано хранилище ключей, при необходимости введите учетные данные, а затем выберите хранилище ключей.
-
-       ![](media/continuous-integration-deployment/continuous-integration-image8.png)
 
 7.  Добавьте задачу развертывания Azure Resource Manager.
 
@@ -134,7 +101,7 @@ ms.locfileid: "34618595"
 
     c.  Выберите действие **Create or Update Resource Group** (Создание или изменение группы ресурсов).
 
-    d.  Выберите **…** в поле **Шаблон**. Найдите шаблон Resource Manager (*ARMTemplateForFactory.json*), созданный с помощью действия публикации на портале. Найдите этот файл в корневой папке в ветви `adf\_publish`.
+    d.  Выберите **…** в поле **Шаблон**. Найдите шаблон Resource Manager (*ARMTemplateForFactory.json*), созданный с помощью действия публикации на портале. Найдите этот файл в папке `<FactoryName>` в ветви `adf_publish`.
 
     д.  Выполните те же действия для файла параметров. Выберите правильный файл. Выбор зависит от того, была ли создана копия или используется файл по умолчанию *ARMTemplateParametersForFactory.json*.
 
@@ -147,6 +114,43 @@ ms.locfileid: "34618595"
 9.  Создайте выпуск из этого определения выпуска.
 
     ![](media/continuous-integration-deployment/continuous-integration-image10.png)
+
+### <a name="optional---get-the-secrets-from-azure-key-vault"></a>Получение секретов из Azure Key Vault (необязательно)
+
+Если ван нужно передать секреты в шаблоне Azure Resource Manager, рекомендуем использовать выпуск Azure Key Vault с VSTS.
+
+Обработать секреты можно двумя способами.
+
+1.  Добавьте секреты в файл параметров. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](../azure-resource-manager/resource-manager-keyvault-parameter.md).
+
+    -   Создайте копию файла параметров, отправленного в ветвь публикации, и задайте значения параметров, которые необходимо получить из хранилища ключей в следующем формате:
+
+    ```json
+    {
+        "parameters": {
+            "azureSqlReportingDbPassword": {
+                "reference": {
+                    "keyVault": {
+                        "id": "/subscriptions/<subId>/resourceGroups/<resourcegroupId> /providers/Microsoft.KeyVault/vaults/<vault-name> "
+                    },
+                    "secretName": " < secret - name > "
+                }
+            }
+        }
+    }
+    ```
+
+    -   При использовании этого метода секрет автоматически извлекается из хранилища ключей.
+
+    -   Файл параметров также должен находиться в ветви публикации.
+
+2.  Перед развертыванием Azure Resource Manager, описанным в предыдущем разделе, добавьте [задачу Azure Key Vault](https://docs.microsoft.com/vsts/build-release/tasks/deploy/azure-key-vault):
+
+    -   Выберите вкладку **Задачи**, создайте новую задачу, найдите и добавьте **Azure Key Vault**.
+
+    -   В задаче Key Vault выберите подписку, в которой было создано хранилище ключей, при необходимости введите учетные данные, а затем выберите хранилище ключей.
+
+    ![](media/continuous-integration-deployment/continuous-integration-image8.png)
 
 ### <a name="grant-permissions-to-the-vsts-agent"></a>Предоставление разрешений для агента VSTS
 Сначала задача Azure Key Vault может завершиться ошибкой "В доступе отказано". Загрузите журналы для выпуска и найдите файл `.ps1` с помощью команды для предоставления разрешений агенту VSTS. Вы можете выполнить команду напрямую или же скопировать идентификатор участника из файла и вручную добавить политику доступа на портале Azure. (*Get* и *List* — минимальные требуемые разрешения.)
@@ -161,14 +165,9 @@ ms.locfileid: "34618595"
 3.  Выберите **Встроенный скрипт** в качестве типа скрипта, а затем укажите код. Следующий пример останавливает триггеры.
 
     ```powershell
-    $armTemplate="$(env:System.DefaultWorkingDirectory)/Dev/ARMTemplateForFactory.json"
+    $triggersADF = Get-AzureRmDataFactoryV2Trigger -DataFactoryName $DataFactoryName -ResourceGroupName $ResourceGroupName
 
-    $templateJson = Get-Content "$(env:System.DefaultWorkingDirectory)/Dev/ARMTemplateForFactory.json" | ConvertFrom-Json
-
-    $triggersADF = Get-AzureRmDataFactoryV2Trigger -DataFactoryName
-    $DataFactoryName -ResourceGroupName $ResourceGroupName
-
-    $triggersADF | ForEach-Object { Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $\_.name -Force }
+    $triggersADF | ForEach-Object { Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name $_.name -Force }
     ```
 
     ![](media/continuous-integration-deployment/continuous-integration-image11.png)

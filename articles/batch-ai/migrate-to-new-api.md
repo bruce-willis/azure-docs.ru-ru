@@ -15,18 +15,18 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 06/08/2018
 ms.author: danlep
-ms.openlocfilehash: b59173259aa86a429b9f926a8e5ffbfd046451a1
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: c5e4c1569464d2e204edf13fe7534d80780524e8
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294883"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294966"
 ---
 # <a name="migrate-to-the-updated-batch-ai-api"></a>Переход на обновленный API Batch AI
 
-В будущей версии REST API службы Batch AI, 2018-05-01, соответствующих пакетах SDK и средствах Batch AI появятся существенные изменения и новые возможности.
+В REST API службы Batch AI версии 2018-05-01, соответствующих пакетах SDK и средствах Batch AI представлены существенные изменения и новые возможности.
 
-Эта статья предназначена для тех, кто пользовался предыдущей версией API Batch AI. Из статьи вы узнаете, как изменить код и скрипты для работы с новым API. Вносите эти изменения, только когда станет доступной новая версия API.
+Эта статья предназначена для тех, кто пользовался предыдущей версией API Batch AI. Из статьи вы узнаете, как изменить код и скрипты для работы с новым API. 
 
 ## <a name="whats-changing"></a>Изменения
 
@@ -43,7 +43,7 @@ ms.locfileid: "35294883"
 ## <a name="monitor-and-manage-existing-resources"></a>Мониторинг существующих ресурсов и управление ими
 В каждой группе ресурсов, в которой вы уже создали кластеры, задания или файловые серверы Batch AI, служба Batch AI создаст рабочую область с именем `migrated-<region>` (например, `migrated-eastus`) и эксперимент с именем `migrated`. Эту рабочую область и эксперимент нужно использовать для доступа к созданным ранее заданиям, кластерам и файловым серверам. 
 
-### <a name="portal"></a>Портал 
+### <a name="portal"></a>Microsoft Azure 
 Чтобы получить доступ к созданным ранее заданиям, кластерам и файловым серверам с помощью портала, сначала выберите рабочую область `migrated-<region>`. После этого вы сможете изменить размер кластера, удалить его, просмотреть состояние заданий, выходные данные и др. 
 
 ### <a name="sdks"></a>Пакеты SDK 
@@ -89,7 +89,7 @@ cluster = client.jobs.get(resource_group_name, 'migrated-<region>', 'migrated', 
 client.jobs.delete(resource_group_name, 'migrated-<region>', 'migrated', job_name)
 ```
  
-### <a name="azure-cli"></a>Azure CLI 
+### <a name="azure-cli"></a>Инфраструктура CLI Azure 
  
 При работе с созданными ранее заданиями, кластерами или файловыми серверам через командную строку Azure (Azure CLI) указывайте имена рабочей области и эксперимента в параметрах `-w` и `-e`. 
 

@@ -11,12 +11,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 03/01/2018
 ms.author: orkostak
-ms.openlocfilehash: d0c74bd2ba7a4a77a16d481ddb3b76f90a923254
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 3979c2a10707936c54c0d55ebcc85c470cabc3aa
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798293"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294536"
 ---
 # <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB: API MongoDB
 
@@ -101,3 +101,4 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 ## <a name="next-steps"></a>Дополнительная информация
 * [Как работает индексирование данных в Azure Cosmos DB?](../cosmos-db/indexing-policies.md)
 * [Автоматическое завершение срока действия данных в коллекциях Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)
+* [Прекращение хранения данных в API MongoDB Azure Cosmos DB](../cosmos-db/mongodb-ttl.md)

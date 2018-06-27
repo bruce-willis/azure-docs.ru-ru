@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 03/15/2018
+ms.topic: conceptual
+ms.date: 06/20/2018
 ms.author: raynew
-ms.openlocfilehash: 345b73db423c6e12b56bb3308f7700917a372dda
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 1764f4ed9dfe73763c288844be85d4805401887e
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30185226"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36285973"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "30185226"
 Требуется учетная запись хранения LRS или GRS. Рекомендуется использовать учетную запись хранения GRS, чтобы обеспечить устойчивость данных в случае отключения электричества в регионе или при отсутствии возможности восстановления основного региона. Поддерживается хранилище класса Premium.
 
 ### <a name="does-my-azure-account-need-permissions-to-create-vms"></a>Требуются ли учетной записи Azure разрешения на создание виртуальных машин?
-Если вы являетесь администратором подписки, у вас имеются необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
+Если вы являетесь администратором подписки, у вас есть необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
 
 
 
