@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: sample
 ms.date: 03/14/2018
 ms.author: sngun
-ms.openlocfilehash: 927a734b288f5bb0082e77be15ae540702fe4e8b
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: d0c587b3d43f7511775a4a114bead96348372bc5
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808287"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36959973"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-net"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -95,7 +95,7 @@ ms.locfileid: "34808287"
 > 
 
 > [!TIP]
-> Разработчики, знакомые с хранилищем таблиц Azure, возможно, в прошлом применяли пакет [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/). Рекомендуем использовать для всех новых приложений таблиц [общую библиотеку службы хранилища Azure](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) и [библиотеку таблиц Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Но пакет WindowsAzure.Storage по-прежнему поддерживается. Если вы используете библиотеку WindowsAzure.Storage, включите Microsoft.WindowsAzure.Storage.Table в операторы using.
+> Разработчики, знакомые с хранилищем таблиц Azure, возможно, в прошлом применяли пакет [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/). Рекомендуем использовать для всех новых приложений таблиц [общую библиотеку службы хранилища Azure](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common) и [библиотеку таблиц Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Но пакет WindowsAzure.Storage по-прежнему поддерживается. Если вы используете библиотеку WindowsAzure.Storage, включите Microsoft.WindowsAzure.Storage.Table в операторы using.
 >
 >
 

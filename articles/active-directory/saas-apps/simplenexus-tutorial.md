@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: a29ef6535d1d4e64df7b97fc7519e55f511df222
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 759052a073103304f89096a43f0cbef88e0a1624
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212178"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308264"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-simplenexus"></a>Учебник. Интеграция Azure Active Directory с SimpleNexus
 
@@ -117,7 +117,7 @@ ms.locfileid: "36212178"
     Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://simplenexus.com/<companyname>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов SimpleNexus](https://simplenexus.com/site/contact). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов SimpleNexus](https://simplenexus.com/sn/contact-us/). 
  
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -127,7 +127,7 @@ ms.locfileid: "36212178"
 
     ![Настройка единого входа](./media/simplenexus-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **SimpleNexus**, отправьте скачанный **XML-файл метаданных** [группе поддержки SimpleNexus](https://simplenexus.com/site/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+6. Чтобы настроить единый вход на стороне **SimpleNexus**, отправьте скачанный **XML-файл метаданных** [группе поддержки SimpleNexus](https://simplenexus.com/sn/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).

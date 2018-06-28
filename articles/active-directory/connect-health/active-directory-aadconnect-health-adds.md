@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: dcfb43003e81bb51574b401c21202925b16305f8
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 458d01d61872d13cee735c7098cce5dcc905c31c
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26614419"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960412"
 ---
 # <a name="using-azure-ad-connect-health-with-ad-ds"></a>Использование Azure AD Connect Health с AD DS
 Приведенная ниже документация относится к мониторингу доменных служб Active Directory с помощью Azure AD Connect Health. Поддерживаемые версии AD DS: Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
 
 Дополнительные сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health с AD FS](active-directory-aadconnect-health-adfs.md). Сведения о мониторинге синхронизации Azure AD Connect с помощью Azure AD Connect Health см. в статье [Использование Azure AD Connect Health для синхронизации](active-directory-aadconnect-health-sync.md).
 
-![Azure AD Connect Health для AD DS](./media/active-directory-aadconnect-health/aadconnect-health-adds-entry.png)
+![Azure AD Connect Health для AD DS](./media/active-directory-aadconnect-health-adds/domainservicesnapshot.PNG)
 
 ## <a name="alerts-for-azure-ad-connect-health-for-ad-ds"></a>Предупреждения Azure AD Connect Health для AD DS
 Раздел "Оповещения" в Azure AD Connect Health для AD DS содержит список активных и разрешенных оповещений, связанных с контроллерами домена. Если выбрать активное или разрешенное оповещение, откроется колонка с дополнительной информацией, описанием действий по устранению проблемы и ссылками на справочную документацию. Каждый тип предупреждения может иметь один или несколько экземпляров, которые соответствуют каждому контроллеру домена, связанного с конкретным предупреждением. В нижней части колонки оповещений можно дважды щелкнуть контроллер домена. Откроется новая колонка с дополнительными сведениями о конкретном экземпляре оповещения.

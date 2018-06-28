@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 04/09/2018
 ms.author: tdykstra
 ms.custom: mvc
-ms.openlocfilehash: 6df97a40be7bf1c437c5228006d114ace768f8ca
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 9b9ef150a86a754d4ed328184eb02c1937008b7b
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32157379"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028869"
 ---
 # <a name="compare-flow-logic-apps-functions-and-webjobs"></a>Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий
 
@@ -43,14 +43,14 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 
 Сведения в следующей таблице помогут определить, какую из этих двух служб лучше всего использовать для определенной интеграции.
 
-|  | Поток | приложения логики; |
+|  | Поток | Logic Apps |
 | --- | --- | --- |
 | Пользователи |Офисные сотрудники, бизнес-пользователи, администраторы SharePoint |Профессиональные интеграторы и разработчики, ИТ-специалисты |
 | Сценарии |Самообслуживание |Расширенные интеграции |
 | Средство разработки |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-deploy-from-vs.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
 | Управление жизненным циклом приложений (ALM) |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности. |DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-create-deploy-azure-resource-manager-templates.md) |
 | Административные функции |Управление средами Flow и политиками защиты от потери данных (DLP), отслеживание лицензирования [https://admin.flow.microsoft.com](https://admin.flow.microsoft.com) |Управление группами ресурсов, подключениями, доступом и ведение журнала [https://portal.azure.com](https://portal.azure.com) |
-| Безопасность |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных (DLP), [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных и т. д. |Обеспечение безопасности Azure: [безопасность Azure](https://www.microsoft.com/trustcenter/Security/AzureSecurity), [центр безопасности](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) и многое другое. |
+| Безопасность |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных (DLP), [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных и т. д. |Обеспечение безопасности Azure: [безопасность Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [центр безопасности](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) и многое другое. |
 
 ## <a name="compare-azure-functions-and-azure-logic-apps"></a>Сравнение служб "Функции Azure" и Azure Logic Apps
 
@@ -60,7 +60,7 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 
 Вы можете комбинировать и сопоставлять служба при создании оркестраций, вызывая функции из приложений логики и приложения логики из функций. Выберите способ создания оркестраций с учетом ваших предпочтений и возможностей, предоставляемых каждой службой. В следующей таблице представлены некоторые основные различия между этими службами:
  
-|  | Устойчивые функции | приложения логики; |
+|  | Устойчивые функции | Logic Apps |
 | --- | --- | --- |
 | Разработка | Code-first (императивный подход) | Designer-first (декларативный подход) |
 | Соединение | [Около десяти встроенных типов привязки](functions-triggers-bindings.md#supported-bindings); написание кода для пользовательских привязок | [Большая коллекция соединителей](../connectors/apis-list.md), [пакет интеграции Enterprise для сценариев B2B](../logic-apps/logic-apps-enterprise-integration-overview.md), [создание пользовательских соединителей](../logic-apps/custom-connector-overview.md) |
@@ -85,13 +85,13 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 
 Решение "Функции Azure" создано на основе пакета SDK для веб-заданий, поэтому оно использует много тех же триггеров событий и соединений, что и другие службы Azure. Ниже приведены некоторые факторы, которые следует учесть при выборе между решением "Функции Azure" и компонентом "Веб-задания" с пакетом SDK для веб-заданий.
 
-|  | Functions | Компонент "Веб-задания" с пакетом SDK для веб-заданий |
+|  | Функции Azure | Компонент "Веб-задания" с пакетом SDK для веб-заданий |
 | --- | --- | --- |
 |[Бессерверная модель приложения](https://azure.microsoft.com/overview/serverless-computing/) с [автоматическим масштабированием](functions-scale.md#how-the-consumption-plan-works)|✔||
 |[Разработка и тестирование в браузере](functions-create-first-azure-function.md) |✔||
 |[Оплата по мере пользования](functions-scale.md#consumption-plan)|✔||
 |[Интеграция с Logic Apps](functions-twitter-email.md)|✔||
-| События триггера |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[База данных Azure Cosmos](functions-bindings-cosmosdb.md)<br>[Концентраторы событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[База данных Azure Cosmos](functions-bindings-cosmosdb.md)<br>[Концентраторы событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
+| События триггера |[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Концентраторы событий Azure](functions-bindings-event-hubs.md)<br>[HTTP или веб-перехватчик (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Сетка событий Azure](functions-bindings-event-grid.md)|[Таймер](functions-bindings-timer.md)<br>[Очереди и большие двоичные объекты службы хранилища Azure](functions-bindings-storage-blob.md)<br>[Очереди и разделы служебной шины Azure](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Концентраторы событий Azure](functions-bindings-event-hubs.md)<br>[Файловая система](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
 | Поддерживаемые языки  |C#<br>F#<br>JavaScript<br>Java (предварительная версия) |C#<sup>1</sup>|
 |Диспетчеры пакетов|NPM и NuGet|NuGet<sup>2</sup>|
 

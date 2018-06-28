@@ -13,24 +13,20 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: bfbafa2edb1d9195760a99f63113d28d3a978a78
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: c29bfd42a9e664d83a867debb6b984f3e99a5b7d
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30173140"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053013"
 ---
 # <a name="copy-data-from-azure-blob-to-azure-sql-database-using-azure-data-factory"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью фабрики данных Azure
 В этом руководстве вы создадите фабрику данных с конвейером, который перемещает данные из хранилища BLOB-объектов Azure в базу данных SQL Azure. Шаблон конфигурации в этом руководстве применяется к копированию из файлового в реляционное хранилище данных. Список хранилищ данных, которые поддерживаются в качестве источников и приемников, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, ознакомьтесь с [документацией по фабрике данных версии 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
-
-
 В этом руководстве вы выполните следующие шаги:
 
 > [!div class="checklist"]
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создание связанных служб хранилища Azure и базы данных SQL Azure.
 > * Создание наборов данных большого двоичного объекта Azure и базы данных SQL Azure.
 > * Создание конвейера с действием копирования.
@@ -164,7 +160,7 @@ ms.locfileid: "30173140"
     var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
     ```
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 Добавьте следующий код, создающий **фабрику данных**, в метод **Main**.
 
@@ -509,7 +505,7 @@ Checking copy activity run details...
   "throughput": 0.01,
   "errors": [],
   "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (East US)",
-  "usedCloudDataMovementUnits": 2,
+  "usedDataIntegrationUnits": 2,
   "billedDuration": 2
 }
 
@@ -521,7 +517,7 @@ Press any key to exit...
 В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Вы научились выполнять следующие задачи: 
 
 > [!div class="checklist"]
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создание связанных служб хранилища Azure и базы данных SQL Azure.
 > * Создание наборов данных большого двоичного объекта Azure и базы данных SQL Azure.
 > * Создание конвейера с действием копирования.

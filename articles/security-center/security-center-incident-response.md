@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/03/2017
 ms.author: yurid
-ms.openlocfilehash: 2f3a9344b9bd383ea59ff3cb400faa90942c5b9f
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 8564dd8a86cab1229f31e77e072ddd4e776947e7
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33894494"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37029702"
 ---
 # <a name="using-azure-security-center-for-an-incident-response"></a>Использование центра безопасности Azure для реагирования на инциденты
 Во многих организациях учатся реагировать на угрозы безопасности только в ходе самой атаки. Чтобы минимизировать затраты и риски, важно составить план реагирования до обнаружения атаки. Центр безопасности Azure можно использовать на разных этапах реагирования на инциденты.
@@ -97,7 +97,7 @@ ms.locfileid: "33894494"
 ![Жизненный цикл реагирования на инциденты](./media/security-center-incident-response/security-center-incident-response-fig6.png)
 
 ### <a name="additional-resources"></a>Дополнительные ресурсы
-Компании, которые используют собственное решение для сбора данных безопасности и управления событиями (SIEM) на этапе расследования инцидентов, также могут [интегрировать это решение с центром безопасности](security-center-integrating-alerts-with-log-integration.md). Кроме того, с помощью [средства интеграции журналов Azure](https://blogs.msdn.microsoft.com/azuresecurity/2016/07/21/microsoft-azure-log-integration-preview/) можно интегрировать журналы аудита Azure и события безопасности виртуальных машин. Эти сведения можно использовать вместе со сведениями центра безопасности для изучения атаки. Чтобы определить причину инцидента, также можно воспользоваться функцией [исследования](https://docs.microsoft.com/azure/security-center/security-center-investigation) в центре безопасности.
+Компании, которые используют собственное решение для сбора данных безопасности и управления событиями (SIEM) на этапе расследования инцидентов, также могут [интегрировать это решение с центром безопасности](security-center-integrating-alerts-with-log-integration.md). Кроме того, с помощью [средства интеграции журналов Azure](https://azure.microsoft.com/blog/introducing-hdinsight-integration-with-azure-log-analytics/) можно интегрировать журналы аудита Azure и события безопасности виртуальных машин. Эти сведения можно использовать вместе со сведениями центра безопасности для изучения атаки. Чтобы определить причину инцидента, также можно воспользоваться функцией [исследования](https://docs.microsoft.com/azure/security-center/security-center-investigation) в центре безопасности.
 
 ## <a name="conclusion"></a>Заключение
 Для компании очень важно собрать группу специалистов до работы с инцидентами, так как это положительным образом скажется на их обработке. Наличие нужных инструментов для мониторинга ресурсов может помочь этой группе определять точные действия по устранению нарушения безопасности. Благодаря [возможностям обнаружения](security-center-detection-capabilities.md) центра безопасности ИТ-специалисты могут быстро реагировать на нарушения безопасности и устранять связанные с ними проблемы.
