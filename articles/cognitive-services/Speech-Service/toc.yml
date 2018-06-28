@@ -67,6 +67,8 @@
   items:
     - name: Поддерживаемые языки
       href: supported-languages.md
+    - name: регионы
+      href: regions.md
     - name: Интерфейсы API REST
       href: rest-apis.md
     - name: API пакета SDK для распознавания речи

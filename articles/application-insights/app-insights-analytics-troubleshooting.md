@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/11/2016
 ms.author: mbullwin
-ms.openlocfilehash: c479298187cfc4af6d9b33d9bd3839e8fa579566
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: eeda0fa6ad8faa05baf0a9344e958d298fb80d8e
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294165"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936689"
 ---
 # <a name="troubleshoot-analytics-in-application-insights"></a>Устранение неполадок аналитики в Application Insights
 Возникли проблемы с [аналитикой Application Insights](app-insights-analytics.md)? Начните отсюда. Аналитика — мощный инструмент поиска Azure Application Insights.
@@ -57,7 +57,7 @@ ms.locfileid: "35294165"
 4. Откройте другое (стандартное) окно браузера и перейдите к [Azure](https://portal.azure.com). Выполните выход. Затем откройте ссылку и выполните вход, используя правильные учетные данные.
 5. У пользователей браузеров Microsoft Edge и Internet Explorer также может возникать эта ошибка, если параметры доверенной зоны не поддерживаются.
    
-    Убедитесь, что [портал аналитики](https://analytics.applicationinsights.io) и [портал Azure Active Directory](https://portal.azure.com) находятся в одной зоне безопасности.
+    Убедитесь, что [портал аналитики](https://portal.azure.com) и [портал Azure Active Directory](https://portal.azure.com) находятся в одной зоне безопасности.
    
    * В Internet Explorer щелкните **Свойства браузера**, **Безопасность**, **Надежные сайты**, **Узлы**.
      

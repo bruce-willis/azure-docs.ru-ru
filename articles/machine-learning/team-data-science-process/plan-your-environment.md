@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: deguhath
-ms.openlocfilehash: 16cc7c5841708b8b27cff4fcc7c93cdbb2fe0fa4
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7754fccdfe8a2c4fad24f61fc22c722d2640ffa6
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838339"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37064622"
 ---
 # <a name="how-to-identify-scenarios-and-plan-for-advanced-analytics-data-processing"></a>Как определить сценарии и план для расширенной аналитической обработки данных
 Какие ресурсы следует учесть при настройке среды для проведения расширенной аналитической обработки набора данных? В этой статье приведен ряд вопросов, ответы на которые помогут определить задачи и ресурсы, соответствующие вашему сценарию. Пошаговые инструкции для проведения прогнозной аналитики описаны в статье [Что такое процесс обработки и анализа данных группы (TDSP)?](overview.md) На каждом из этих шагов требуются определенные ресурсы для выполнения задач, соответствующих конкретному сценарию. Основные вопросы, позволяющие определить сценарий, касаются логистики данных, их характеристик, качества наборов данных, а также средств и языков, используемых для проведения анализа.
@@ -97,9 +97,9 @@ ms.locfileid: "34838339"
    
    * [Microsoft Azure Powershell](/powershell/azure/overview) — язык сценариев, используемый для управления ресурсами Azure на языке сценариев.
    * [Студия машинного обучения Azure](../studio/what-is-ml-studio.md)
-   * [Revolution Analytics](http://www.revolutionanalytics.com/revolution-r-open)
+   * [Revolution Analytics](https://www.microsoft.com/sql-server/machinelearningserver)
    * [RStudio](http://www.rstudio.com)
-   * [Средства Python для Visual Studio](http://microsoft.github.io/PTVS/)
+   * [Инструменты Python для Visual Studio](http://aka.ms/ptvsdocs)
    * [Anaconda](https://www.continuum.io/why-anaconda)
    * [Записные книжки Jupyter](http://jupyter.org/)
    * [Microsoft Power BI](http://powerbi.microsoft.com)

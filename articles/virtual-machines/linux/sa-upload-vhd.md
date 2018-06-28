@@ -15,15 +15,15 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: cynthn
-ms.openlocfilehash: 5c5c9894127386a05da9825435cfe5ca07b01542
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: ccdeb2e57d8e2f8fc7ad2fa5e76726b90c0c8a50
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30911987"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936825"
 ---
 # <a name="upload-and-create-a-linux-vm-from-custom-disk-with-the-azure-cli-20"></a>Передача пользовательского диска и создание на его основе виртуальной машины Linux с помощью Azure CLI 2.0
-В этой статье показано, как передать виртуальный жесткий диск (VHD) в учетную запись хранения Azure с помощью Azure CLI 2.0 и создать на основе этого пользовательского диска виртуальные машины Linux. Эти действия можно также выполнить с помощью [Azure CLI 1.0](upload-vhd-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Эта функциональная возможность позволяет установить и настроить дистрибутив Linux в соответствии с требованиями, а затем использовать этот VHD для быстрого создания виртуальных машин Azure.
+В этой статье показано, как передать виртуальный жесткий диск (VHD) в учетную запись хранения Azure с помощью Azure CLI 2.0 и создать на основе этого пользовательского диска виртуальные машины Linux. Эта функциональная возможность позволяет установить и настроить дистрибутив Linux в соответствии с требованиями, а затем использовать этот VHD для быстрого создания виртуальных машин Azure.
 
 В этой статье используются учетные записи хранения для готовых виртуальных жестких дисков, но вы также можете выполнить эти действия с помощью [управляемых дисков](upload-vhd.md). 
 
@@ -129,7 +129,7 @@ Azure поддерживает различные дистрибутивы Linux
 az group create --name myResourceGroup --location westus
 ```
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Создайте учетную запись хранения для пользовательского диска и виртуальных машин с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create). Все виртуальные машины с неуправляемыми дисками, созданные на основе пользовательского диска, должны находиться в той же учетной записи хранения, что и этот диск. 
 

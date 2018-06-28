@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: ed64c9df6fcca8f85b200c5f738c2009ea7ae0a5
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 056821bd26e9c6c110b23a048df4aa13bc4ab8fa
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35293115"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36754418"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -100,10 +100,10 @@ ms.locfileid: "35293115"
 | Шаг | Ресурсы |
 | --- | --- |
 | Перейдите на портал управления Azure AD. | [Портал управления Azure AD — фирменная символика организации](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/LoginTenantBranding) |
-| Отправьте ресурсы для страницы входа (имиджевый логотип, небольшой логотип, метки и т. д.). Если имеется AD FS, согласуйте эти ресурсы со страницами входа ADFS (необязательно). | [Добавление фирменной символики компании на страницах входа и панели доступа: настраиваемые элементы](customize-branding.md) |
+| Отправьте ресурсы для страницы входа (имиджевый логотип, небольшой логотип, метки и т. д.). Если имеется AD FS, согласуйте эти ресурсы со страницами входа ADFS (необязательно). | [Добавление фирменной символики компании на страницах входа и панели доступа: настраиваемые элементы](fundamentals/customize-branding.md) |
 | Подождите несколько минут, чтобы изменения вступили в силу. |  |
 | Выполните вход с учетными данными пользователя для подтверждения концепции по адресу https://myapps.microsoft.com |  |
-| Оцените внешний вид и удобство использования в браузере. | [Добавление фирменной символики компании на страницах входа и панели доступа](customize-branding.md) |
+| Оцените внешний вид и удобство использования в браузере. | [Добавление фирменной символики компании на страницах входа и панели доступа](fundamentals/customize-branding.md) |
 | При необходимости проверьте внешний вид и удобство использования на других устройствах. |  |
 
 ### <a name="considerations"></a>Рекомендации
@@ -118,7 +118,7 @@ ms.locfileid: "35293115"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Все пользователи подтверждения концепции входят в состав группы безопасности (облачной или локальной) | [Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md) |
+| Все пользователи подтверждения концепции входят в состав группы безопасности (облачной или локальной) | [Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
 
 ### <a name="steps"></a>Действия
 
@@ -140,16 +140,16 @@ ms.locfileid: "35293115"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Доступна тестовая среда для приложения SaaS. В этом руководстве в качестве примера мы используем ServiceNow.<br/>Настоятельно рекомендуется использовать тестовый экземпляр, чтобы минимизировать взаимодействие с существующими данными и их сопоставлениями. | Перейдите по адресу https://developer.servicenow.com/app.do#!/home, чтобы начать процесс получения тестового экземпляра |
-| Административный доступ к консоли управления ServiceNow. | [Руководство: интеграция Azure Active Directory с ServiceNow](active-directory-saas-servicenow-tutorial.md) |
+| Административный доступ к консоли управления ServiceNow. | [Руководство: интеграция Azure Active Directory с ServiceNow](saas-apps/servicenow-tutorial.md) |
 | Целевой набор пользователей для назначения приложения. Рекомендуется использовать группу безопасности, содержащую пользователей подтверждения концепции. <br/>Если создать такую группу невозможно, назначьте пользователей непосредственно приложению для подтверждения концепции. | [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) |
 
 ### <a name="steps"></a>Действия
 
 | Шаг | Ресурсы |
 | --- | --- |
-| Предоставьте общий доступ к учебнику всем субъектам из документации Майкрософт.  | [Руководство: интеграция Azure Active Directory с ServiceNow](active-directory-saas-servicenow-tutorial.md) |
-| Проведите рабочее собрание и выполните инструкции из учебника вместе с каждым субъектом. | [Руководство: интеграция Azure Active Directory с ServiceNow](active-directory-saas-servicenow-tutorial.md) |
-| Назначьте приложение группе, указанной в предварительных требованиях. Если в область подтверждения концепции входит условный доступ, вы можете вернуться позже, чтобы добавить Многофакторную идентификацию и аналогичные компоненты. <br/>Обратите внимание, что это запустит процесс подготовки (если он настроен). |  [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md) |
+| Предоставьте общий доступ к учебнику всем субъектам из документации Майкрософт.  | [Руководство: интеграция Azure Active Directory с ServiceNow](saas-apps/servicenow-tutorial.md) |
+| Проведите рабочее собрание и выполните инструкции из учебника вместе с каждым субъектом. | [Руководство: интеграция Azure Active Directory с ServiceNow](saas-apps/servicenow-tutorial.md) |
+| Назначьте приложение группе, указанной в предварительных требованиях. Если в область подтверждения концепции входит условный доступ, вы можете вернуться позже, чтобы добавить Многофакторную идентификацию и аналогичные компоненты. <br/>Обратите внимание, что это запустит процесс подготовки (если он настроен). |  [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
 | Используйте портал управления Azure AD, чтобы добавить приложение ServiceNow из коллекции.| [Портал управления Azure AD: корпоративные приложения](https://portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/Overview) <br/>[Новые возможности управления корпоративными приложениями в Azure Active Directory](active-directory-enterprise-apps-whats-new-azure-portal.md) |
 | В колонке "Единый вход" приложения ServiceNow включите параметр "SAML-based Sign-on" (Вход на основе SAML). |  |
 | Укажите в полях "URL-адрес для входа" и "Идентификатор" URL-адрес ServiceNow.<br/>Установите флажок "Сделать сертификат активным"<br/>и сохраните параметры. |  |
@@ -163,7 +163,7 @@ ms.locfileid: "35293115"
 
 ### <a name="considerations"></a>Рекомендации
 
-1. Предыдущий [учебник](active-directory-saas-servicenow-tutorial.md) ссылается на старый интерфейс управления Azure AD. Однако подтверждение концепции основано на интерфейсе [быстрого запуска](active-directory-enterprise-apps-whats-new-azure-portal.md#quickstart-get-going-with-your-new-application-right-away).
+1. Предыдущий [учебник](saas-apps/servicenow-tutorial.md) ссылается на старый интерфейс управления Azure AD. Однако подтверждение концепции основано на интерфейсе [быстрого запуска](active-directory-enterprise-apps-whats-new-azure-portal.md#quickstart-get-going-with-your-new-application-right-away).
 2. Если целевое приложение отсутствует в коллекции, можно использовать собственное приложение. Дополнительные сведения: [Новые возможности управления корпоративными приложениями в Azure Active Directory. Добавление пользовательских приложений из одного расположения](active-directory-enterprise-apps-whats-new-azure-portal.md#add-custom-applications-from-one-place)
 
 ## <a name="saas-password-sso-configuration"></a>Настройка единого входа SaaS с помощью пароля
@@ -242,7 +242,7 @@ ms.locfileid: "35293115"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Подписка на Microsoft Azure AD Basic или Premium, а также каталог Azure AD, для которого вы являетесь глобальным администратором. | [Выпуски Azure Active Directory](active-directory-whatis.md) |
+| Подписка на Microsoft Azure AD Basic или Premium, а также каталог Azure AD, для которого вы являетесь глобальным администратором. | [Выпуски Azure Active Directory](fundamentals/active-directory-whatis.md) |
 | Размещенное локально веб-приложение, которое нужно настроить для удаленного доступа. |  |
 | Сервер под управлением Windows Server 2012 R2 или Windows 8.1 или более поздней версии, на котором можно установить соединитель прокси приложения. | [Сведения о соединителях прокси приложения Azure AD](manage-apps/application-proxy-connectors.md) |
 | Если в сетевом пути используется брандмауэр, убедитесь, что он открыт для запросов HTTPS (TCP), поступающих из соединителя в прокси приложения. | [Включение прокси приложения на портале Azure: необходимые условия для прокси приложения](manage-apps/application-proxy-enable.md#application-proxy-prerequisites) |
@@ -306,8 +306,8 @@ ms.locfileid: "35293115"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Приложение SaaS (федеративный единый вход или единый вход с паролем) уже настроено. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) |
-| Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md) |
-| Доступны учетные данные для владельца группы. | [Управление доступом к ресурсам с помощью групп Azure Active Directory](active-directory-manage-groups.md) |
+| Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
+| Доступны учетные данные для владельца группы. | [Управление доступом к ресурсам с помощью групп Azure Active Directory](fundamentals/active-directory-manage-groups.md) |
 | Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
 
 
@@ -315,8 +315,8 @@ ms.locfileid: "35293115"
 
 | Шаг | Ресурсы |
 | --- | --- |
-| Определите группу, которой был предоставлен доступ к приложению, настройте ее владельца.| [Управление параметрами группы в Azure Active Directory](active-directory-groups-settings-azure-portal.md) |
-| Войдите в качестве владельца группы и просмотрите членство в группах на вкладке групп в панели доступа. | [Страница управления группами Azure Active Directory](https://account.activedirectory.windowsazure.com/r/#/groups) |
+| Определите группу, которой был предоставлен доступ к приложению, настройте ее владельца.| [Управление параметрами группы в Azure Active Directory](fundamentals/active-directory-groups-settings-azure-portal.md) |
+| Войдите в качестве владельца группы и просмотрите членство в группах на вкладке групп в панели доступа. | [Страница управления группами Azure Active Directory](https://account.activedirectory.windowsazure.com/r#/groups) |
 | Добавьте информационного работника, которого требуется протестировать. |  |
 | Войдите в качестве информационного работника и убедитесь, что элемент доступен. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
 
@@ -331,7 +331,7 @@ ms.locfileid: "35293115"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Приложение SaaS (федеративный единый вход или единый вход с паролем) уже настроено. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) |
-| Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](active-directory-groups-create-azure-portal.md) |
+| Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
 | Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
 
 
@@ -339,7 +339,7 @@ ms.locfileid: "35293115"
 
 | Шаг | Ресурсы |
 | --- | --- |
-| Удалите пользователя из группы, которой назначено приложение. | [Управление участниками групп в клиенте Azure Active Directory](active-directory-groups-members-azure-portal.md) |
+| Удалите пользователя из группы, которой назначено приложение. | [Управление участниками групп в клиенте Azure Active Directory](fundamentals/active-directory-groups-members-azure-portal.md) |
 | Подождите несколько минут, пока отзыв закончится. | [Автоматическая подготовка пользователей для приложения SaaS в Azure AD: как работает автоматическая подготовка](active-directory-saas-app-provisioning.md#how-does-automatic-provisioning-work) |
 | В отдельном сеансе браузера войдите в качестве информационного работника на портал "Мои приложения" и убедитесь, что элемент отсутствует. | http://myapps.microsoft.com |
 

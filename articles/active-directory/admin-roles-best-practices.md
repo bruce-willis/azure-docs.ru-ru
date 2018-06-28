@@ -4,20 +4,21 @@ description: Рекомендации по защите учетных запи�
 services: active-directory
 keywords: ''
 author: curtand
+manager: mtillman
 ms.author: curtand
-ms.date: 03/09/2018
+ms.date: 06/25/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer, MarkMorow
-ms.openlocfilehash: 45a0cf104df6d29515ed1a94c78c8cc1e42a2223
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 729cb89fbe63dbecb65c6f948052b920bf6e70fe
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808324"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36937458"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 

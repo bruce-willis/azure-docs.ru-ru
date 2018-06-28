@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 45183e51e9071647e07cfd0738522f0dfa28bd7b
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: efdef681dd94cdb97d84de657668c49022b72d95
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "33869008"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751502"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -54,25 +54,6 @@ ms.locfileid: "33869008"
 6. Чтобы отфильтровать это представление по событиям, связанным со сбросом пароля, нажмите кнопку **Фильтр** в верхней части области.
 7. В меню **Фильтр** в раскрывающемся списке **Категория** измените тип категории на **Self-service Password Management** (Самостоятельное управление паролями).
 8. При необходимости этот список можно отфильтровать по определенному **действию**.
-
-## <a name="how-to-retrieve-password-management-events-from-the-azure-ad-reports-and-events-api"></a>Как получить события об управлении паролями из API отчетов и событий Azure AD
-
-API отчетов и событий Azure AD поддерживает извлечение всех сведений, включаемых в отчеты о сбросе пароля и отчеты о регистрации сброса пароля. Этот API позволяет скачивать отдельные события регистрации сброса пароля или события сброса пароля и использовать их для интеграции с выбранной технологией создания отчетов.
-
-> [!IMPORTANT]
-> Сейчас с помощью API отчетов и событий Azure AD вы можете получить до *75 000 отдельных событий* типа [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent) и [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent). Этот API позволяет охватить данные за последние 30 дней.
-> 
-> Если требуется получить или сохранить больший объем данных, мы рекомендуем поместить их во внешнюю базу данных и использовать API, чтобы запрашивать сведения о возникающих изменениях. Мы рекомендуем начать получение этих данных сразу же после внедрения SSPR в вашей организации. Сохраняйте их во внешнем хранилище и продолжайте отслеживать изменения с этого момента.
->
-
-### <a name="how-to-get-started-with-the-reporting-api"></a>Как начать работу с API отчетов
-
-Для доступа к этим данным необходимо создать небольшое приложение или сценарий получения этих данных с наших серверов. Дополнительные сведения см. в статье [Приступая к работе с API отчетов Azure Active Directory](../active-directory-reporting-api-getting-started-azure-portal.md).
-
-После создания сценария вы сможете исследовать события сброса пароля и регистрации, которые можно получить в соответствии с вашими сценариями.
-
-* [SsprActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprActivityEvent): получает список столбцов, доступных для событий сброса пароля.
-* [SsprRegistrationActivityEvent](https://msdn.microsoft.com/library/azure/mt126081.aspx#BKMK_SsprRegistrationActivityEvent): получает список столбцов, доступных для событий регистрации сброса пароля.
 
 ## <a name="description-of-the-report-columns-in-the-azure-portal"></a>Описание столбцов отчета на портале Azure
 

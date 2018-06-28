@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/20/2018
 ms.author: jdial
 ms.custom: include file
-ms.openlocfilehash: b9e06865b4a401cd925cce564b9c30594c912bae
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 326da32f91b263bbd09a4c6f521c9ec72094820c
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36297972"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37066073"
 ---
 <a name="virtual-networking-limits-classic"></a>Следующие ограничения применяются только к сетевым ресурсам, управление которыми осуществляется с помощью классической модели развертывания на подписку. Узнайте, как [просмотреть текущие данные об использовании ресурсов в соответствии с ограничениями подписки](../articles/networking/check-usage-against-limits.md).
 
@@ -44,7 +44,7 @@ ms.locfileid: "36297972"
 | Пиринговых связей между виртуальными сетями на виртуальную сеть |10 |50 |
 | DNS-серверов на виртуальную сеть |9 |25 |
 | Частные IP-адреса на виртуальную сеть |16 384** |16 384 |
-| Частные IP-адреса на сетевой интерфейс |256 |1024 |
+| Частные IP-адреса на сетевой интерфейс |256 |256 |
 | Параллельные потоки TCP или UDP для каждого сетевого адаптера виртуальной машины или экземпляра роли |500K |500K |
 | Сетевые карты (NIC) |24 000** |24 000 |
 | Группы безопасности сети |100 |5000 |

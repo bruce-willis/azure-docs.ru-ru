@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2016
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7848aa2e620218463bbe3faa325b4589ae6ac3b5
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 7f1c2b028521983081ba5f276789af9701b568b7
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34657504"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047264"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 [767598]:https://launchpad.support.sap.com/#/notes/767598
@@ -775,7 +775,7 @@ ExpressRoute позволяет подключать несколько подп
 
 ![Дерево принятия решения о возможности развертывания SAP в Azure][planning-guide-figure-700]
 
-**Шаг 1**. Наиболее важные сведения для ознакомления — это требования SAPS для конкретной системы SAP. Требования SAPS следует оценивать раздельно по уровням СУБД и приложения SAP, даже если система SAP уже развернута локально в двухуровневой конфигурации. Для существующих систем требования SAPS в отношении используемого оборудования обычно можно определить на основе измерений производительности SAP. Результаты можно найти здесь: <http://global.sap.com/campaigns/benchmark/index.epx>.
+**Шаг 1**. Наиболее важные сведения для ознакомления — это требования SAPS для конкретной системы SAP. Требования SAPS следует оценивать раздельно по уровням СУБД и приложения SAP, даже если система SAP уже развернута локально в двухуровневой конфигурации. Для существующих систем требования SAPS в отношении используемого оборудования обычно можно определить на основе измерений производительности SAP. Результаты можно найти здесь: <https://sap.com/about/benchmark.html>.
 Для вновь развертываемых систем SAP следует выполнить оценку размеров, которая позволит определить требования SAP для системы.
 Кроме того, ознакомьтесь с этим блогом и вложенным документом по размерам SAP в Azure: <http://blogs.msdn.com/b/saponsqlserver/archive/2015/12/01/new-white-paper-on-sizing-sap-solutions-on-azure-public-cloud.aspx>.
 
@@ -988,7 +988,7 @@ Microsoft Azure предусматривает несколько способо
 
 * Отправьте виртуальный жесткий диск с помощью Powershell или Azure CLI.
 * (Необязательно.) Создайте управляемый диск на основе виртуального жесткого диска с помощью PowerShell, Azure CLI или портала Azure.
-* Разверните виртуальную машину с помощью шаблона JSON, в котором указана ссылка на виртуальный жесткий диск, как показано в [примере шаблона JSON](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-specialized-vhd/azuredeploy.json), или управляемый диск, как показано в [этом примере шаблона JSON](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sap-2-tier-user-disk-md/azuredeploy.json).
+* Разверните виртуальную машину с помощью шаблона JSON, в котором указана ссылка на виртуальный жесткий диск, как показано в [примере шаблона JSON](https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-specialized-vhd-new-or-existing-vnet/azuredeploy.json), или управляемый диск, как показано в [этом примере шаблона JSON](https://github.com/Azure/azure-quickstart-templates/blob/master/sap-2-tier-user-image-md/azuredeploy.json).
 
 #### <a name="deployment-of-a-vm-image"></a>Развертывание образа виртуальной машины
 Чтобы передать существующую виртуальную машину или виртуальный жесткий диск из локальной сети и использовать в качестве образа виртуальной машины Azure, эта виртуальная машина или виртуальный жесткий диск должен отвечать требованиям, перечисленным в разделе [Подготовка виртуальной машины к развертыванию с помощью пользовательского образа для SAP][planning-guide-5.2.2] этого документа.

@@ -195,10 +195,16 @@
           href: automation-migrate-account-subscription.md
     - name: Устранение неполадок
       items:
-        - name: Устранение распространенных ошибок
-          href: automation-troubleshooting-automation-errors.md
-        - name: Устранение неполадок в гибридной рабочей роли Runbook
-          href: automation-troubleshooting-hybrid-runbook-worker.md
+        - name: Переход
+          href: troubleshoot/onboarding.md
+        - name: Модули Runbook
+          href: troubleshoot/runbooks.md
+        - name: Настройка требуемого состояния (DSC)
+          href: troubleshoot/desired-state-configuration.md
+        - name: гибридный компонент Runbook Worker
+          href: troubleshoot/hybrid-runbook-worker.md
+        - name: управление обновлениями;
+          href: troubleshoot/update-management.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

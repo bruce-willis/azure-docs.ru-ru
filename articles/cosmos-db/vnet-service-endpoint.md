@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: govindk
-ms.openlocfilehash: 0bd31270ca67dc993cc7ac72ab2bab9bf70005ca
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: de52521824c146f63fb16e2690e2a24167ae2efe
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294001"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333918"
 ---
 # <a name="secure-access-to-an-azure-cosmos-db-account-by-using-azure-virtual-network-service-endpoint"></a>Безопасный доступ к учетной записи Azure Cosmos DB с использованием конечной точки службы виртуальной сети Azure
 
@@ -80,7 +80,7 @@ Azure Cosmos DB — это многомодельная глобально ра
 
 Если ваша учетная запись Azure Cosmos DB используется другими службами Azure, такими как поиск Azure или доступная из Stream Analytics или Power BI, можно разрешить доступ, включив параметр **Разрешение доступа к службам Azure**.
 
-Чтобы иметь доступ к метрикам Azure Cosmos DB с портала, необходимо включить параметр **Разрешение доступа к порталу Azure**. Дополнительные сведения об этих параметрах см. в разделах [Подключения из портала Azure](firewall-support.md#connections-from-the-azure-portal) и [Подключения из службы PaaS Azure](firewall-support.md#connections-from-public-azure-datacenters-or-azure-paas-services). После выбора доступа выберите **Сохранить** для сохранения настроек.
+Чтобы иметь доступ к метрикам Azure Cosmos DB с портала, необходимо включить параметр **Разрешение доступа к порталу Azure**. Дополнительные сведения об этих параметрах см. в разделах [Подключения из портала Azure](firewall-support.md#connections-from-the-azure-portal) и [Подключения из службы PaaS Azure](firewall-support.md#connections-from-global-azure-datacenters-or-azure-paas-services). После выбора доступа выберите **Сохранить** для сохранения настроек.
 
 ## <a name="remove-a-virtual-network-or-subnet"></a>Удаление виртуальной сети или подсети 
 
@@ -125,15 +125,16 @@ Azure Cosmos DB — это многомодельная глобально ра
 4. Подготовьтесь к операции включения ACL в учетной записи CosmosDB, убедившись в наличии конечной точки службы виртуальной сети и подсети для Azure Cosmos DB.
 
    ```powershell
-   $subnet = Get-AzureRmVirtualNetwork `
-    -ResourceGroupName $rgname `
-    -Name $vnName  | Get-AzureRmVirtualNetworkSubnetConfig -Name $sname
-   $vnProp = Get-AzureRmVirtualNetwork `-Name $vnName  -ResourceGroupName $rgName
+   $vnProp = Get-AzureRmVirtualNetwork `
+     -Name $vnName  -ResourceGroupName $rgName
    ```
 
 5. Получите свойства учетной записи Azure Cosmos DB, выполнив следующий командлет:  
 
    ```powershell
+   $apiVersion = "2015-04-08"
+   $acctName = "<Azure Cosmos DB account name>"
+
    $cosmosDBConfiguration = Get-AzureRmResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
      -ApiVersion $apiVersion `
      -ResourceGroupName $rgName `
@@ -144,15 +145,24 @@ Azure Cosmos DB — это многомодельная глобально ра
 
    ```powershell
    $locations = @(@{})
+
+   <# If you have read regions in addition to a write region, use the following code to set the $locations variable instead.
+
+   $locations = @(@{"locationName"="<Write location>"; 
+                 "failoverPriority"=0}, 
+               @{"locationName"="<Read location>"; 
+                  "failoverPriority"=1}) #>
+
    $consistencyPolicy = @{}
    $cosmosDBProperties = @{}
 
    $locations[0]['failoverPriority'] = $cosmosDBConfiguration.Properties.failoverPolicies.failoverPriority
    $locations[0]['locationName'] = $cosmosDBConfiguration.Properties.failoverPolicies.locationName
+
    $consistencyPolicy = $cosmosDBConfiguration.Properties.consistencyPolicy
 
    $accountVNETFilterEnabled = $True
-   $subnetID = $vnProp.Id+"/subnets/" + $subnetName  
+   $subnetID = $vnProp.Id+"/subnets/" + $sname  
    $virtualNetworkRules = @(@{"id"=$subnetID})
    $databaseAccountOfferType = $cosmosDBConfiguration.Properties.databaseAccountOfferType
    ```
@@ -166,7 +176,7 @@ Azure Cosmos DB — это многомодельная глобально ра
    $cosmosDBProperties['virtualNetworkRules'] = $virtualNetworkRules
    $cosmosDBProperties['isVirtualNetworkFilterEnabled'] = $accountVNETFilterEnabled
 
-   Set-AzureRmResource ``
+   Set-AzureRmResource `
      -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
      -ApiVersion $apiVersion `
      -ResourceGroupName $rgName `

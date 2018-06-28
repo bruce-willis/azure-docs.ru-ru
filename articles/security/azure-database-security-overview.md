@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/01/2017
 ms.author: TomSh
-ms.openlocfilehash: 44abf7a4fc24893146179b34d3357f54450decab
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 27f6ccadaa89042ebced759ac3040b5b79e1f8f8
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365150"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051531"
 ---
 # <a name="azure-database-security-overview"></a>Общие сведения о защите базы данных Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "34365150"
 
 Одним из решений является шифрование конфиденциальных данных в базе данных и защита ключей, которые используются для шифрования, с помощью сертификата. Это решение не позволит никому использовать данные без ключей, но такой тип защиты следует планировать заранее.
 
-Для устранения этой проблемы SQL Server и база данных SQL поддерживают [прозрачное шифрование данных](https://docs.microsoft.com/sql/relational-databases/securityrecryption/transparent-data-encryption-tde). При прозрачном шифровании данных шифруются файлы данных SQL Server и базы данных SQL. Это так называемое шифрование неактивных данных.
+Для устранения этой проблемы SQL Server и база данных SQL поддерживают [прозрачное шифрование данных](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption-azure-sql?view=azuresqldb-current&viewFallbackFrom=sql-server-2017). При прозрачном шифровании данных шифруются файлы данных SQL Server и базы данных SQL. Это так называемое шифрование неактивных данных.
 
 Прозрачное шифрование данных обеспечивает защиту от вредоносных действий. Выполняется шифрование и расшифровка базы данных, связанных резервных копий и неактивных файлов журналов транзакций в реальном времени без необходимости изменения приложения.  
 

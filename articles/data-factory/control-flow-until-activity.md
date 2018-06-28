@@ -13,18 +13,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: 8ceecdefe644cb5dd1b6038636960cbb5dd9167e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: cd4b58dea43e497a2d7a5b977379d95f7004af45
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34618969"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37052313"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Действие Until в фабрике данных Azure
 Действие Until предоставляет те же функциональные возможности, что и циклическая структура do-until в языках программирования. Оно выполняет набор действий в цикле, пока условие, связанное с действием, не получит значение true. Можно указать значение времени ожидания для действия until в фабрике данных. 
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. статью [Introduction to Azure Data Factory](v1/data-factory-introduction.md) (Введение в фабрику данных Azure).
 
 ## <a name="syntax"></a>Синтаксис
 

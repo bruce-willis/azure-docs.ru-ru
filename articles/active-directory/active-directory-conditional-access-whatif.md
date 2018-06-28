@@ -1,5 +1,5 @@
 ---
-title: Что собой представляет инструмент What If для условного доступа Azure Active Directory (предварительная версия) | Документация Майкрософт
+title: Что собой представляет инструмент What If для условного доступа Azure Active Directory
 description: Узнайте, как оценить воздействие политик условного доступа на среду.
 services: active-directory
 keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
@@ -17,14 +17,14 @@ ms.workload: identity
 ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 661ada8de8821d489732e1f36dc2406eaa0ee4a7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 897f1b96f0861fb13ba0e6c2427b621ea6a12a06
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36232075"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36750088"
 ---
-# <a name="what-is-the-what-if-tool-in-azure-active-directory-conditional-access---preview"></a>Что собой представляет инструмент What If для условного доступа Azure Active Directory (предварительная версия)
+# <a name="what-is-the-what-if-tool-in-azure-active-directory-conditional-access"></a>Что собой представляет инструмент What If для условного доступа Azure Active Directory
 
 С помощью [условного доступа](active-directory-conditional-access-azure-portal.md) Azure Active Directory (Azure AD) можно контролировать доступ авторизованных пользователей к облачным приложениям. Как узнать, чего ожидать от политик условного доступа в своей среде? Чтобы ответить на этот вопрос, можно использовать **инструмент what if для условного доступа**.
 

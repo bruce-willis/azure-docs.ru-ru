@@ -15,23 +15,23 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
 ms.author: garye
-ms.openlocfilehash: b2b55c550a75be977b040070926953308c387639
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: c1ca9c45a7bd070ba0dbcee3b428f986ebac47d3
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834572"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062103"
 ---
 # <a name="discover-industry-specific-solutions-in-the-azure-ai-gallery"></a>Поиск решений для определенных отраслей в коллекции решений ИИ Azure
 [!INCLUDE [machine-learning-gallery-item-selector](../../../includes/machine-learning-gallery-item-selector.md)]
 
 ## <a name="industry-specific-cortana-intelligence-solutions"></a>Решения Cortana Intelligence для определенных отраслей
-Раздел коллекции **[Industries](https://gallery.cortanaintelligence.com/industries)** (Отрасли) объединяет различные ресурсы, относящиеся к следующим отраслям.
+Раздел коллекции **[Industries](https://gallery.azure.ai/industries)** (Отрасли) объединяет различные ресурсы, относящиеся к следующим отраслям.
 
-* [Розничная торговля](https://gallery.cortanaintelligence-int.com/industries/retail) — поиск решений для розничной торговли, таких как прогнозирование продаж, предсказание оттока клиентов и разработка моделей ценообразования.
-* [Производство](https://gallery.cortanaintelligence-int.com/industries/manufacturing) — поиск производственных решений, таких как планирование технического обслуживания оборудования и прогнозирование стоимости энергии.
-* [Банковские операции](https://gallery.cortanaintelligence-int.com/industries/banking) — поиск решений для банковской сферы, таких как прогнозирование кредитных рисков и мониторинг интернет-мошенничества.
-* [Здравоохранение](https://gallery.cortanaintelligence-int.com/industries/healthcare) — поиск решений для отрасли здравоохранения, таких как обнаружение болезни и прогнозирование повторной госпитализации.
+* [Розничная торговля](https://gallery.azure.ai/industries/retail) — поиск решений для розничной торговли, таких как прогнозирование продаж, предсказание оттока клиентов и разработка моделей ценообразования.
+* [Производство](https://gallery.azure.ai/industries/manufacturing) — поиск производственных решений, таких как планирование технического обслуживания оборудования и прогнозирование стоимости энергии.
+* [Банковские операции](https://gallery.azure.ai/industries/banking) — поиск решений для банковской сферы, таких как прогнозирование кредитных рисков и мониторинг интернет-мошенничества.
+* [Здравоохранение](https://gallery.azure.ai/industries/healthcare) — поиск решений для отрасли здравоохранения, таких как обнаружение болезни и прогнозирование повторной госпитализации.
 
 Эти ресурсы включают в себя эксперименты, пользовательские модули, API-интерфейсы, коллекции и другие элементы, которые помогут разрабатывать решения, относящиеся к отрасли, где вы работаете.
 

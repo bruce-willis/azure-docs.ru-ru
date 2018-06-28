@@ -294,15 +294,15 @@
             - name: Предложение кластера Kubernetes
               href: azure-stack-solution-template-kubernetes-cluster-add.md
         - name: Потребление и выставление счетов
+          href: azure-stack-billing-and-chargeback.md
           items:
-            - name: Обзор
-              href: azure-stack-billing-and-chargeback.md
             - name: Управление потреблением и выставлением счетов в качестве поставщика облачных служб
               href: azure-stack-add-manage-billing-as-a-csp.md
-            - name: Добавление клиентов для потребления и выставления счетов
-              href: azure-stack-csp-howto-register-tenants.md
-            - name: Управление регистрацией клиента
-              href: azure-stack-csp-ref-operations.md
+              items:
+                - name: Добавление клиентов для потребления и выставления счетов
+                  href: azure-stack-csp-howto-register-tenants.md
+                - name: Управление регистрацией клиента
+                  href: azure-stack-csp-ref-operations.md
             - name: Справочник по потреблению и выставлению счетов
               items:
                 - name: Отчеты по данным об использовании

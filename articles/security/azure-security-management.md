@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
-ms.openlocfilehash: f5630c8cb9c0ca13210c62652f8d7f2e98f94438
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 209fdda974dee2386328da43991cc9d453e61aa7
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34366653"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062167"
 ---
 # <a name="security-management-in-azure"></a>Управление безопасностью в Azure
 Подписчики Azure могут управлять своими облачными средами с помощью нескольких устройств, в том числе рабочих станций управления, ПК для разработки и даже устройств привилегированных пользователей, у которых есть разрешения на выполнение конкретных задач. В некоторых случаях функции администрирования можно выполнять с помощью веб-консолей, таких как [портал Azure](https://azure.microsoft.com/features/azure-portal/). Кроме того, пользователи могут устанавливать прямое подключение к Azure из локальной системы, используя виртуальные частные сети (VPN), службы терминалов, протоколы клиентских приложений или API управления службами Azure (программным путем). Они также могут использовать присоединенные к домену или изолированные и неуправляемые конечные точки клиентов, например планшеты и смартфоны.
@@ -224,8 +224,8 @@ Azure предоставляет механизмы безопасности, п
 Ниже приведены ресурсы, с помощью которых можно получить общие сведения о службах Azure и связанных службах Microsoft, а также некоторые дополнения к информации, содержащейся в этом документе.
 
 * [Securing Privileged Access](https://technet.microsoft.com/library/mt631194.aspx) (Защита привилегированного доступа). Ознакомьтесь с техническими сведениями по проектированию и созданию безопасной рабочей станции администрирования для управления Azure.
-* [Microsoft Trust Center](https://www.microsoft.com/TrustCenter/Security/AzureSecurity). Узнайте о возможностях Azure, которые позволяют защитить структуру и рабочие нагрузки Azure, используемые на соответствующей платформе.
-* [Microsoft Security Response Center](http://www.microsoft.com/security/msrc/default.aspx). Это место, куда можно сообщать об уязвимостях, в том числе о проблемах Azure. Это также можно сделать по почте, отправив сообщение по адресу [secure@microsoft.com](mailto:secure@microsoft.com).
+* [Microsoft Trust Center](https://microsoft.com/en-us/trustcenter/cloudservices/azure). Узнайте о возможностях Azure, которые позволяют защитить структуру и рабочие нагрузки Azure, используемые на соответствующей платформе.
+* [Microsoft Security Response Center](https://technet.microsoft.com/en-us/security/dn440717.aspx). Это место, куда можно сообщать об уязвимостях, в том числе о проблемах Azure. Это также можно сделать по почте, отправив сообщение по адресу [secure@microsoft.com](mailto:secure@microsoft.com).
 * [Блог по безопасности Azure](http://blogs.msdn.com/b/azuresecurity/). Благодаря этому блогу вы будете в курсе последних новостей о безопасности Azure.
 
 <!--Image references-->
