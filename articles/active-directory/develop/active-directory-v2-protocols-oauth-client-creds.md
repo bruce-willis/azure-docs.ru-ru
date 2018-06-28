@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/07/2017
 ms.author: celested
-ms.reviewer: dastrock
+ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
-ms.openlocfilehash: 892cf2cfc93c86b9196000d94f976407156ec248
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b71cac474c915d0ebcc9beed29551fbce8b515ea
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34594284"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319002"
 ---
 # <a name="azure-active-directory-v20-and-the-oauth-20-client-credentials-flow"></a>Azure Active Directory версии 2.0 и поток учетных данных клиента OAuth 2.0
 [Предоставление учетных данных клиента OAuth 2.0](http://tools.ietf.org/html/rfc6749#section-4.4), указанное в спецификации RFC 6749, которое иногда называют также *двусторонним OAuth*, можно использовать для доступа к интернет-ресурсам с помощью удостоверения приложения. Как правило, подобное предоставление используется для взаимодействия между серверами, которое должно выполняться в фоновом режиме без немедленного вмешательства пользователя. Приложения такого типа часто называют *управляющими программами* или *учетными записями служб*.

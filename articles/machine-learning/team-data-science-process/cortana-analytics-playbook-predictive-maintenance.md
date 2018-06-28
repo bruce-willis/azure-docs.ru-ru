@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: fboylu
-ms.openlocfilehash: 50338e05241be9ce573ff3dd3bb99711cbf15b28
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: ff2e1660ffcc1f397697b27084e000371c7c84f3
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248543"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36938015"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -434,7 +434,7 @@ Microsoft Azure предоставляет бесплатное содержим
 |:-------------------|--------------|
 | [Разработка искусственного интеллекта в Azure](http://azure.microsoft.com/training/learning-paths/azure-ai-developer) | Общедоступные |
 | [Курсы по изучению искусственного интеллекта Майкрософт](http://aischool.microsoft.com/learning-paths) | Общедоступные |
-| [Обучение работе с ИИ Azure на GitHub](http://azure.github.io/learnanalytics/public) | Общедоступные |
+| [Обучение работе с ИИ Azure на GitHub](https://github.com/Azure/connectthedots/blob/master/readme.md) | Общедоступные |
 | [LinkedIn Learning](http://www.linkedin.com/learning) | Общедоступные |
 | [Вебинары по ИИ Майкрософт на YouТube](https://www.youtube.com/watch?v=NvrH7_KKzoM&t=4s) | Общедоступные |
 | [Канал об искусственном интеллекте Майкрософт](http://channel9.msdn.com/Shows/AI-Show) | Общедоступные |

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: c87b90e82b1300e147533256e3286421a73f08d2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 42d1b40e01653e8fb5fa5bf118c65de758832f4d
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218900"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308614"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tangoe-command-premium-mobile"></a>Учебник. Интеграция Azure Active Directory с Tangoe Command Premium Mobile
 
@@ -114,7 +114,7 @@ ms.locfileid: "36218900"
     Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://sso.tangoe.com/sp/ACS.saml2`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-2/). 
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса ответа и URL-адреса входа. Для получения этих значений обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/). 
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -128,7 +128,7 @@ ms.locfileid: "36218900"
 
     ![Раздел настройки Tangoe Command Premium Mobile](./media/tangoe-tutorial/tutorial_tangoe_configure.png) 
 
-7. Чтобы настроить единый вход для своего приложения, обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-2/) и предоставьте следующие сведения:
+7. Чтобы настроить единый вход для своего приложения, обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/) и предоставьте следующие сведения:
 
    - скачанный файл метаданных;
    - **идентификатор сущности SAML**;
@@ -174,7 +174,7 @@ ms.locfileid: "36218900"
 
 В этом разделе мы создадим пользователя Britta Simon в приложении Tangoe Command Premium Mobile. 
 
-Перед выполнением единого входа все пользователи должны быть подготовлены в приложении Tangoe Command Premium Mobile. Для этого обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-2/). 
+Перед выполнением единого входа все пользователи должны быть подготовлены в приложении Tangoe Command Premium Mobile. Для этого обратитесь в [службу поддержки клиентов Tangoe Command Premium Mobile](https://www.tangoe.com/contact-us/). 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: adde08f7981e6e23ba5bf2601d2f019702d1d33c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d06f8e148e382c44b8858cc2f149f5851198d0d5
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231650"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308114"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bonusly"></a>Руководство. Интеграция Azure Active Directory с Bonusly
 
@@ -112,7 +112,7 @@ ms.locfileid: "36231650"
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://Bonus.ly/saml/<tenant-name>`.
 
     > [!NOTE] 
-    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки Bonusly](https://Bonusly/contact).
+    > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки Bonusly](https://bonus.ly/contact).
  
 4. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** сертификата.
 

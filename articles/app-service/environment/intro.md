@@ -14,12 +14,12 @@ ms.topic: overview
 ms.date: 04/19/2018
 ms.author: ccompy
 ms.custom: mvc
-ms.openlocfilehash: 688f8da809a40f333aeb7b4ef959deb69ff94121
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 02ce774f30cd03b7520f482196629bf4b7ec9ae5
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808385"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36318574"
 ---
 # <a name="introduction-to-the-app-service-environments"></a>Общие сведения о средах службы приложений #
  
@@ -73,7 +73,7 @@ ASE состоит из внешних интерфейсов и рабочих 
 
 [Группы безопасности сети][NSGs] ограничивают входящие сетевые подключения для подсети, где находится среда ASE. Это позволяет запускать приложения за вышестоящими устройствами и службами, например брандмауэрами веб-приложений и поставщиками SaaS сети.
 
-Приложениям также часто требуется доступ к корпоративным ресурсам, таким как внутренние базы данных и веб-службы. При развертывании ASE в виртуальной сети с VPN-подключением к локальной сети приложения в ASE смогут получить доступ к локальным ресурсам. При этом не играет роли тип VPN-подключения (["сеть — сеть"](https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/) или [Azure ExpressRoute](http://azure.microsoft.com/services/expressroute/)).
+Приложениям также часто требуется доступ к корпоративным ресурсам, таким как внутренние базы данных и веб-службы. При развертывании ASE в виртуальной сети с VPN-подключением к локальной сети приложения в ASE смогут получить доступ к локальным ресурсам. При этом не играет роли тип VPN-подключения (["сеть — сеть"](https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-multi-site) или [Azure ExpressRoute](http://azure.microsoft.com/services/expressroute/)).
 
 Дополнительные сведения о работе сред ASE с виртуальными сетями и локальными сетями см. в статье [Рекомендации по работе с сетями в среде службы приложений][ASENetwork].
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2016
 ms.author: deonhe
-ms.openlocfilehash: 0f3662ed386c3a3d2d132a483e7192bddc26de06
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 5c05c7c4c0f8f0b3619b36390c8a0224a03c900a
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
-ms.locfileid: "26737556"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37063548"
 ---
 # <a name="release-notes-for-azure-biztalk-services"></a>Заметки о выпуске служб Azure BizTalk
 
@@ -66,11 +66,11 @@ ms.locfileid: "26737556"
   "Не удается скопировать файл <Path to DLL> в bin\Debug\FileName.dll". Процесс не может получить доступ к файлу «bin\Debug\FileName.dll», так как он используется другим процессом».  
 
 #### <a name="workaround"></a>Возможное решение
-* Если у вас установлена среда [Visual Studio 2012 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=39305) , вы можете сделать следующее:
+* Если у вас установлена среда [Visual Studio 2012 с обновлением 3](https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2012-update3-vs) , вы можете сделать следующее:
   
   * перезапустить Visual Studio;
   * или перезапустить решение, а затем выполнить построение решения.  
-* Если у вас нет среды [Visual Studio 2012 с обновлением 3](https://www.microsoft.com/download/details.aspx?id=39305) , откройте диспетчер задач, перейдите на вкладку процессов, выберите процесс MSBuild.exe и нажмите кнопку «Завершить процесс».  
+* Если у вас нет среды [Visual Studio 2012 с обновлением 3](https://docs.microsoft.com/en-us/visualstudio/releasenotes/vs2012-update3-vs) , откройте диспетчер задач, перейдите на вкладку процессов, выберите процесс MSBuild.exe и нажмите кнопку «Завершить процесс».  
 
 ### <a name="routing-to-basichttprelay-endpoints-is-not-supported-from-bridges-and-biztalk-services-portal-if-non-printable-characters-are-promoted-as-http-headers"></a>Маршрутизация в конечные точки BasicHttpRelay не поддерживается с мостов и портала служб BizTalk, если в заголовках HTTP передаются непечатаемые символы
 Если в свойствах сообщений повышенного уровня вы используете непечатаемые символы, эти сообщения нельзя будет направить в назначения ретрансляции, использующие привязку BasicHttpRelay. Кроме того, отслеживаемые свойства с повышенным уровнем имеют кодировку в URL-адресе для больших двоичных объектов и не имеют кодировки для назначений.  

@@ -13,17 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: 53127cbc663141a5080426072360237935f175db
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: bb94d0c817cf1a15c90ac5e928406e5f5e59a068
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217346"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332810"
 ---
 # <a name="join-a-coreos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CoreOS Linux к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CoreOS Linux в Azure к управляемому домену доменных служб Azure AD.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:

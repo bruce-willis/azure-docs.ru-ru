@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/17/2017
 ms.author: larryfr
 ROBOTS: NOINDEX
-ms.openlocfilehash: 700569684888428032997dd81c10023c6fd5a7d8
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: f293aab67fb5e952dc32e20a6370d45cded682b5
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823311"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "35762003"
 ---
 # <a name="run-pig-jobs-from-a-remote-desktop-connection"></a>Выполнение заданий Pig через подключение к удаленному рабочему столу
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
@@ -78,7 +78,8 @@ ms.locfileid: "34823311"
     <td>RESULT = order FREQUENCIES by COUNT desc;</td><td>Упорядочивает уровни ведения журнала по количеству (по убыванию) и сохраняет данные в RESULT.</td>
     </tr>
 </table>
-6. Можно также сохранить результаты преобразования с помощью оператора `STORE`. Например, следующий оператор сохраняет `RESULT` в каталог **/example/data/pigout** в используемом по умолчанию контейнере хранилища для кластера:
+
+6. Можно также сохранить результаты преобразования с помощью оператора `STORE` . Например, следующий оператор сохраняет `RESULT` в каталог **/example/data/pigout** в используемом по умолчанию контейнере хранилища для кластера:
 
         STORE RESULT into 'wasb:///example/data/pigout'
 
@@ -86,6 +87,7 @@ ms.locfileid: "34823311"
    > Данные хранятся в указанном каталоге в файлах с именем **part-№№№№№**. Если каталог уже существует, появится сообщение об ошибке.
    >
    >
+   
 7. Чтобы выйти из командной строки grunt, введите следующий оператор.
 
         QUIT;

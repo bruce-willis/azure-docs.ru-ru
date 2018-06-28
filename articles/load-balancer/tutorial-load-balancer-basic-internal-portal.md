@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 04/30/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: a16e9ad5b72d87614f5d3630e24e6aa36def8c51
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 7902b5ad2d680a22a2d132187cdad5f96a334447
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32779583"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061851"
 ---
 # <a name="tutorial-load-balance-internal-traffic-with-basic-load-balancer-to-vms-using-the-azure-portal"></a>Руководство по балансировке нагрузки внутреннего трафика на виртуальных машинах с помощью Load Balancer уровня "Базовый" на портале Azure
 
@@ -43,6 +43,8 @@ ms.locfileid: "32779583"
     - *myBackendSubnet* — для имени подсети.
 2. Щелкните **Создать**, чтобы создать виртуальную сеть.
 
+![Создание балансировщика нагрузки](./media/tutorial-load-balancer-basic-internal-portal/1-load-balancer.png)
+
 ## <a name="create-a-basic-load-balancer"></a>Создание подсистемы балансировки нагрузки уровня "Базовый"
 Создание внутреннего экземпляра Load Balancer с помощью портала.
 
@@ -57,10 +59,7 @@ ms.locfileid: "32779583"
     - *myResourceGroupILB* — для имени создаваемой группы ресурсов.
 3. Щелкните **Создать**, чтобы создать подсистему балансировки нагрузки.
    
-    ![Создание балансировщика нагрузки](./media/tutorial-load-balancer-basic-internal-portal/1-load-balancer.png)
-
-
-## <a name="create-backend-servers"></a>Создание внутренних серверов
+    ## <a name="create-backend-servers"></a>Создание внутренних серверов
 
 В рамках этого разделе вы создадите две виртуальную машины для серверного пула в Load Balancer уровня "Базовый". Затем вы установите на этих виртуальных машинах IIS, чтобы проверить подсистему балансировки нагрузки.
 

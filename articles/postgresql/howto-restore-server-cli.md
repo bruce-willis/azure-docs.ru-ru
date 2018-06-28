@@ -10,12 +10,12 @@ ms.service: postgresql
 ms.devlang: azure-cli
 ms.topic: article
 ms.date: 04/01/2018
-ms.openlocfilehash: 5c5cc1fdbe48fb93eea204e4619038052e685f1f
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 4e745a5de8000e0f26491c9f4f236f7f8a735ae9
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31411504"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319647"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql-using-the-azure-cli"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI
 
@@ -32,32 +32,6 @@ ms.locfileid: "31411504"
 
 > [!IMPORTANT]
 > Для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы проверить версию, в командной строке Azure CLI введите `az --version`. Чтобы выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
-
-## <a name="add-the-extension"></a>Добавление расширения
-Добавьте обновленное расширение управления Базы данных Azure для PostgreSQL, используя следующую команду.
-```azurecli-interactive
-az extension add --name rdbms
-``` 
-
-Убедитесь, что установлена правильная версия расширения. 
-```azurecli-interactive
-az extension list
-```
-
-В возвращенных данных JSON должно быть следующее: 
-```json
-{
-    "extensionType": "whl",
-    "name": "rdbms",
-    "version": "0.0.5"
-}
-```
-
-Если возвращается версия, отличная от 0.0.5, выполните следующую команду, чтобы обновить расширение: 
-```azurecli-interactive
-az extension update --name rdbms
-```
-
 
 ## <a name="set-backup-configuration"></a>Настройка конфигурации резервного копирования
 
@@ -116,7 +90,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 Чтобы создать сервер с помощью геоизбыточного резервного копирования, выполните команду Azure CLI `az postgres server georestore`.
 
 > [!NOTE]
-> Сразу после создания сервер может быть недоступен для восстановления геоданных. Заполнение метаданных может занять несколько часов.
+> Сразу после создания сервер может быть еще не готов к географическому восстановлению. Заполнение метаданных может занять несколько часов.
 >
 
 Для геовосстановления сервера в командной строке Azure CLI введите следующую команду.

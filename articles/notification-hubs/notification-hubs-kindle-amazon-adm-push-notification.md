@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: af2619a403046bd4f064b958df225e4d42a205f4
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 41319ba446994da1669e58e33008a943e74ab417
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33776837"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331396"
 ---
 # <a name="get-started-with-notification-hubs-for-kindle-apps"></a>Приступая к работе с Центрами уведомлений для приложений Kindle
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "33776837"
 ## <a name="prerequisites"></a>предварительным требованиям
 
 * Скачайте пакет SDK для Android (предполагается, что вы используете Eclipse) с <a href="http://go.microsoft.com/fwlink/?LinkId=389797">сайта Android</a>.
-* Следуйте указаниям, приведенным в статье <a href="https://developer.amazon.com/appsandservices/resources/development-tools/ide-tools/tech-docs/01-setting-up-your-development-environment">Настройка среды разработки</a>, для настройки среды разработки для Kindle.
+* Следуйте указаниям, приведенным в статье <a href="https://developer.amazon.com/docs/fire-tablets/ft-set-up-your-development-environment.html">Настройка среды разработки</a>, для настройки среды разработки для Kindle.
 
 ## <a name="add-a-new-app-to-the-developer-portal"></a>Добавление нового приложения на портал разработчика
 1. Для начала создайте приложение на [портале разработчика Amazon].
@@ -290,7 +290,7 @@ static void Main(string[] args)
 В рамках этого руководства вы отправили широковещательные уведомления на все устройства Kindle, зарегистрированные в серверной части. Чтобы научиться отправлять push-уведомления на конкретные устройства Kindle, перейдите к следующему руководству (в следующем руководстве объясняется, как отправлять push-уведомления на конкретные устройства Android, но можно применить ту же логику при отправке push-уведомлений на конкретные устройства Kindle). 
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений на конкретные устройства](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
+>[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
 
 <!-- URLs. -->
 [портале разработчика Amazon]: https://developer.amazon.com/home.html

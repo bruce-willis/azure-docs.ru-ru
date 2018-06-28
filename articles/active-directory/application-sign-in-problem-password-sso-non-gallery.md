@@ -3,22 +3,24 @@ title: Проблемы с входом в приложение из колле�
 description: Описание проблемных областей и рекомендаций по устранению неполадок, связанных с входом в приложения из коллекции Azure AD, для которых настроен единый вход по паролю.
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.openlocfilehash: f13f9fa54af13dbbe435a846be35c9e06fe65455
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.author: barbkess
+ms.reviewer: asteen
+ms.openlocfilehash: 020a5ec2a6cea2854e46d9da8aa0a178695deb86
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34068764"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331911"
 ---
 # <a name="problems-signing-in-to-an-azure-ad-gallery-application-configured-for-password-single-sign-on"></a>Проблемы с входом в приложение из коллекции Azure AD, для которого настроен единый вход по паролю
 
@@ -81,7 +83,7 @@ ms.locfileid: "34068764"
 
 ## <a name="troubleshoot-the-access-panel-in-internet-explorer"></a>Устранение неполадок панели доступа в Internet Explorer
 
-Сведения о доступе к средству диагностики и пошаговые инструкции по настройке расширения для Internet Explorer см. в руководстве [Устранение неполадок расширения "Панель доступа" для Internet Explorer](https://docs.microsoft.com/azure/active-directory/active-directory-saas-ie-Troubleshoot).
+Сведения о доступе к средству диагностики и пошаговые инструкции по настройке расширения для Internet Explorer см. в руководстве [Устранение неполадок расширения "Панель доступа" для Internet Explorer](https://docs.microsoft.com/azure/active-directory/active-directory-saas-ie-troubleshooting).
 
 ## <a name="how-to-configure-password-single-sign-on-for-a-non-gallery-application"></a>Настройка единого входа по паролю для приложения не из коллекции
 

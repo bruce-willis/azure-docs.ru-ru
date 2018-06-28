@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/18/2018
 ms.author: cshoe
 ms.custom: include file
-ms.openlocfilehash: 3d85208096b1300904e1cc1f59c45dd4dd5713a3
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e6a0ded137162328fd446b65ddb4a15fa6f1db88
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34684427"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36313886"
 ---
 ## <a name="deleting-personal-information"></a>Удаление персональных данных
 
@@ -40,7 +40,7 @@ ms.locfileid: "34684427"
 - Данные, сохраненные с заданием, удаляются вместе с заданием. Пользователи могут удалять задания вручную. Завершенные задания автоматически удаляются по истечении 90 дней. Можно вручную удалять задания с помощью REST API или портала Azure. Чтобы удалить задание на портале Azure, перейдите к этому заданию импорта или экспорта и щелкните *Удалить* на панели команд. Дополнительные сведения о том, как удалить задание импорта или экспорта с помощью REST API, приведены в разделе [Отмена и удаление заданий службы импорта и экспорта Azure](../articles/storage/common/storage-import-export-cancelling-and-deleting-jobs.md).
 
 - Контактные данные, сохраненные в параметрах портала, можно удалить, удалив эти параметры портала. Чтобы удалить параметры портала, сделайте следующее.
-  - Войдите на [портал Azure](https://portal.azure.com).
+  - Войдите на [портале Azure](https://portal.azure.com).
   - Щелкните значок *Параметры*. ![Значок параметров Azure](media/storage-import-export-delete-personal-info/azure-settings-icon.png)
   - Щелкните *Экспортировать все параметры* (чтобы сохранить текущие параметры в файл с расширением `.json`).
   - Щелкните *Удалить все параметры и частные панели мониторинга*, чтобы удалить все параметры, включая сохраненные контактные данные.

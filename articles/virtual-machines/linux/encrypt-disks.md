@@ -15,15 +15,15 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/31/2018
 ms.author: iainfou
-ms.openlocfilehash: 86f5124143d0606fd3de4d9f7a49ab31a06b17ae
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 343408366c2970d10a952634ac671721caed74d4
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34839628"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936876"
 ---
 # <a name="how-to-encrypt-a-linux-virtual-machine-in-azure"></a>Как зашифровать виртуальную машину Linux в Azure
-Для повышения уровня безопасности и соответствия требованиям виртуальной машины виртуальные диски и саму машину можно зашифровать. Виртуальные машины можно зашифровать с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается шифрование дисков на виртуальной машине Linux с помощью Azure CLI 2.0. Эти действия можно также выполнить с помощью [Azure CLI 1.0](encrypt-disks-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Для повышения уровня безопасности и соответствия требованиям виртуальной машины виртуальные диски и саму машину можно зашифровать. Виртуальные машины можно зашифровать с использованием криптографических ключей, защищенных в Azure Key Vault. Вы будете управлять этими криптографическими ключами и проводить аудит их использования. В этой статье описывается шифрование дисков на виртуальной машине Linux с помощью Azure CLI 2.0. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

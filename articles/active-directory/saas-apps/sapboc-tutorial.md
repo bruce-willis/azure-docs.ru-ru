@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 4848132254736aca12be5e31325d98a936754af2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 42eb1c8332a29ff07c83b962aaa8f8e2f04fd07b
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220640"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308305"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Руководство по интеграции Azure Active Directory с SAP Business Object Cloud
 
@@ -129,7 +129,7 @@ ms.locfileid: "36220640"
     ![Домены и URL-адреса приложения SAP Business Object Cloud](./media/sapboc-tutorial/tutorial_sapboc_url.png)
  
     > [!NOTE] 
-    > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическим URL-адресом для входа и URL-адресом идентификатора. Чтобы получить URL-адрес для входа, обратитесь в [службу поддержки клиентов SAP Business Object Cloud](https://www.sap.com/product/analytics/cloud-analytics.support.html). Вы можете получить URL-адрес идентификатора при загрузке метаданных SAP Business Object Cloud из консоли администрирования. Это объясняется далее в руководстве. 
+    > Значения этих URL-адресов приведены только в качестве примера. Замените эти значения фактическим URL-адресом для входа и URL-адресом идентификатора. Чтобы получить URL-адрес для входа, обратитесь в [службу поддержки клиентов SAP Business Object Cloud](https://help.sap.com/viewer/product/SAP_BusinessObjects_Cloud/release/en-US). Вы можете получить URL-адрес идентификатора при загрузке метаданных SAP Business Object Cloud из консоли администрирования. Это объясняется далее в руководстве. 
 
 4. В разделе **Сертификат подписи SAML** выберите **XML метаданных**. Затем сохраните файл метаданных на компьютере.
 

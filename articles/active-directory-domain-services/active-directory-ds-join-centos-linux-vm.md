@@ -13,17 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: d570428f3e3ea23302e3cecc6bfa759468419986
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d76371935fddbfe94c6dc45e27971487e7fa4277
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216832"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333587"
 ---
 # <a name="join-a-centos-linux-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины CentOS к управляемому домену
 Из этой статьи вы узнаете, как присоединить виртуальную машину CentOS в Azure к управляемому домену доменных служб Azure AD.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:
@@ -87,7 +89,7 @@ sudo vi /etc/hosts
     > [!NOTE]
     > **Устранение неполадок.** Если команда *realm discover* не может найти управляемый домен, сделайте следующее:  
       * Проверьте подключение между доменом и виртуальной машиной (с помощью команды ping).  
-      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом. 
+      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом.
       * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.  
       >
 

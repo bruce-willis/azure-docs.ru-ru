@@ -13,17 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: 3f49e4ac0073c81a6e55e6653acc7c6531989379
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ea7aa6c9dbde9a161567a815870b05da06cc82c8
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212246"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331717"
 ---
 # <a name="administer-group-policy-on-an-azure-ad-domain-services-managed-domain"></a>Администрирование групповой политики в управляемом домене доменных служб Azure AD
 Доменные службы Azure Active Directory включают встроенные объекты групповой политики (GPO) для контейнеров "Пользователи AADDC" и "Компьютеры AADDC". Вы можете изменять эти встроенные объекты групповой политики, чтобы настроить групповую политику для управляемого домена. Кроме того, участники группы "Администраторы контроллера домена AAD" могут создавать собственные пользовательские подразделения в управляемом домене. Они также могут создавать пользовательские объекты групповой политики и связывать их с этими пользовательскими подразделениями. Пользователи, принадлежащие к группе "Администраторы контроллера домена AAD", получают права на администрирование групповой политики в управляемом домене.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:

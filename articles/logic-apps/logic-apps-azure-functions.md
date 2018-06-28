@@ -15,12 +15,12 @@ ms.workload: integration
 ms.custom: H1Hack27Feb2017
 ms.date: 10/18/2016
 ms.author: LADocs; jehollan
-ms.openlocfilehash: befdd7af0a91623af4c5ea0fd957141cad84eb53
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: d8d07e2ba58b7067d59baf5f0a4ea3228d6aabbc
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297875"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331178"
 ---
 # <a name="add-and-run-custom-code-for-logic-apps-through-azure-functions"></a>Добавление и выполнение пользовательского кода для приложений логики с помощью Функций Azure
 
@@ -62,7 +62,7 @@ function start(req, res){
 
 ### <a name="create-a-function-from-logic-app-designer"></a>Создание функции из конструктора приложений логики
 
-Функцию webhook node.js можно также создать из конструктора. Для начала выберите раздел **Функции Azure в моем регионе** , а затем контейнер для своей функции. Если у вас еще нет контейнера, его необходимо создать на [портале функций Azure](https://functions.azure.com/signin). Щелкните **Создать**.  
+Функцию webhook node.js можно также создать из конструктора. Для начала выберите раздел **Функции Azure в моем регионе** , а затем контейнер для своей функции. Если у вас еще нет контейнера, его необходимо создать на [портале функций Azure](https://functions.azure.com/). Щелкните **Создать**.  
 
 Чтобы создать шаблон на основе данных для вычисления, укажите объект контекста, который будет передан в функцию. Это должен быть объект JSON. Например, если передать содержимое файла из действия FTP, то полезные данные контекста будут выглядеть как в этом примере:
 

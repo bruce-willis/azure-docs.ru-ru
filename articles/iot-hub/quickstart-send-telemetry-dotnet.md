@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/20/2018
 ms.author: dobett
-ms.openlocfilehash: dbb4ce971e6504f33de82e31cf289a42a1640952
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 501a8f2dad0537f0288dfd6a6d7bedcac054ab86
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293175"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332292"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (C#)
 
@@ -88,7 +88,7 @@ dotnet --version
 
 2. Откройте файл **SimulatedDevice.cs** в любом текстовом редакторе.
 
-    Замените значение переменной `connectionString` записанной ранее строкой подключения к устройству. Сохраните изменения в файле **SimulatedDevice.cs**.
+    Замените значение переменной `s_connectionString` записанной ранее строкой подключения к устройству. Сохраните изменения в файле **SimulatedDevice.cs**.
 
 3. Установите необходимые пакеты приложения имитированного устройства, выполнив в окне терминала следующие команды:
 
@@ -116,9 +116,9 @@ dotnet --version
 
     | Переменная | Значение |
     | -------- | ----------- |
-    | `eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с центрами событий. |
-    | `eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с центрами событий. |
-    | `iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом iothubowner. |
+    | `s_eventHubsCompatibleEndpoint` | Замените значение переменной записанной ранее конечной точкой, совместимой с центрами событий. |
+    | `s_eventHubsCompatiblePath`     | Замените значение переменной записанным ранее путем, совместимым с центрами событий. |
+    | `s_iotHubSasKey`                | Замените значение переменной записанным ранее первичным ключом iothubowner. |
 
 3. Установите необходимые библиотеки внутреннего приложения, выполнив в окне терминала следующие команды:
 

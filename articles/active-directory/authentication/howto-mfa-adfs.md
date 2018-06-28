@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: 3f1d6b00652270d143f7df48b0f690c5f33433e9
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: ce70641d9ccb3c86d1360a0aaf21a4817e2b3c5d
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33866069"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317867"
 ---
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
 Если в организации настроена федерация с Azure Active Directory, используйте Многофакторную идентификацию Azure или службы федерации Active Directory (AD FS), чтобы обеспечить безопасность ресурсов, доступных для Azure AD. Чтобы защитить ресурсы Azure Active Directory с помощью Многофакторной идентификации Azure или служб федерации Active Directory, следуйте инструкциям, приведенным ниже.
@@ -80,7 +80,7 @@ ms.locfileid: "33866069"
 ### <a name="configure-azure-multi-factor-authentication-trusted-ips-with-federated-users"></a>Настройка Многофакторной идентификации с доверенными IP-адресами в Azure для федеративных пользователей
 Теперь, когда утверждения добавлены, можно настроить надежные IP-адреса.
 
-1. Войдите на [портале Azure](https://portal.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выберите **Azure Active Directory** > **Условный доступ** > **Именованные расположения**.
 3. В колонке **Условный доступ — Именованные расположения** выберите **Настроить надежные IP-адреса MFA**.
 

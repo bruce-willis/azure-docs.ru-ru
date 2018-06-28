@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 4e92d1ba948626c05e7b66d2c0d469ac6c6571a2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4813c492ba25b0d6dd524e2c0b4b5b6e8c2a2bfa
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228192"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308247"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-timeoffmanager"></a>Учебник. Интеграция Azure Active Directory с TimeOffManager
 
@@ -112,7 +112,7 @@ ms.locfileid: "36228192"
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.timeoffmanager.com/cpanel/sso/consume.aspx?company_id=<companyid>`.
 
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Получить это значение можно **на странице параметров единого входа**, как описано далее в руководстве. Кроме того, можно обратиться к [группе поддержки TimeOffManager](http://www.timeoffmanager.com/contact-us.aspx).
+    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Получить это значение можно **на странице параметров единого входа**, как описано далее в руководстве. Кроме того, можно обратиться к [группе поддержки TimeOffManager](https://www.purelyhr.com/contact-us).
  
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 

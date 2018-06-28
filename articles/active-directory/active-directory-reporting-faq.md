@@ -15,12 +15,12 @@ ms.component: compliance-reports
 ms.date: 05/10/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 2ceaf4ecf7da78377c52135b7de5191c1dc3dd28
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8d627abfe7b686eeeb5a65c4515e184f4ce62f4e
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36232142"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36335063"
 ---
 # <a name="azure-active-directory-reporting-faq"></a>Часто задаваемые вопросы об отчетах Azure Active Directory
 
@@ -72,7 +72,7 @@ ms.locfileid: "36232142"
 
 **Вопрос. Сколько записей можно скачать с портала Azure?**
 
-**Ответ.** С портала Azure можно скачать до 5000 записей. Записи отсортированы по *убыванию даты и времени* по умолчанию, и вы получите 5000 самых последних записей. Для записей, количество которых превышает 5000, выберите условия фильтрации и нажмите кнопку *Скрипт* на портале Azure. Будет скачан скрипт PowerShell, с помощью которого можно создать CSV-файл всех записей, соответствующих условиям фильтрации. Нужно выполнить скрипт PowerShell в *режиме администратора*. Дополнительные сведения см. в разделе [Скачивание данных о действиях входа](active-directory-reporting-activity-sign-ins.md#download-sign-in-activities).
+**Ответ.** С портала Azure можно скачать до 5000 записей. Записи отсортированы по *убыванию даты и времени* по умолчанию, и вы получите 5000 самых последних записей.
 
 ---
 

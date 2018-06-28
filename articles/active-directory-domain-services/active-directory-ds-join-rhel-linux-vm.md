@@ -13,17 +13,19 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/04/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: 93c96e71aea98598492ec32f13fddb0b0732196e
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: fceeb9655562d7abf6930cc484b4a9eb275ee81e
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217063"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36330807"
 ---
 # <a name="join-a-red-hat-enterprise-linux-7-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Red Hat Enterprise Linux 7 к управляемому домену
 Эта статья покажет, как присоединить виртуальную машину Red Hat Enterprise Linux (RHEL) 7 к управляемому домену доменных служб Azure AD.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:  
@@ -84,17 +86,17 @@ sudo vi /etc/hosts
     sudo realm discover CONTOSO100.COM
     ```
 
-     > [!NOTE] 
+     > [!NOTE]
      > **Устранение неполадок.** Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
      * Проверьте подключение между доменом и виртуальной машиной (с помощью команды ping).
      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом.
      * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.
      >
 
-2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду: 
+2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду:
 
-    > [!TIP] 
-    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD". 
+    > [!TIP]
+    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD".
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
     >
 
@@ -102,9 +104,9 @@ sudo vi /etc/hosts
     kinit bob@CONTOSO100.COM
     ```
 
-3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду: 
+3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
 
-    > [!TIP] 
+    > [!TIP]
     > Используйте ту же учетную запись пользователя, которую вы указали на предыдущем шаге (kinit).
     >
 

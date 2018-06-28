@@ -2,7 +2,7 @@
 
 Для развертывания шаблона можно использовать [Cloud Shell](../articles/cloud-shell/overview.md). Однако сначала необходимо загрузить шаблон для Cloud Shell в учетную запись хранения. Если вы еще не использовали Cloud Shell, ознакомьтесь со статьей [Обзор Azure Cloud Shell (предварительная версия)](../articles/cloud-shell/overview.md), чтобы узнать о настройке службы.
 
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 
 1. Выберите свою группу ресурсов Cloud Shell. Шаблон имени — `cloud-shell-storage-<region>`.
 

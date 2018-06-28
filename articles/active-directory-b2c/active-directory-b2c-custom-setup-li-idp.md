@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 10/23/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 0544daf310d40ea419cb6a46cbbf308ebc924715
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 889264dc06d1a6f10713ff5fcd7ff644c113bb45
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34709331"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36752322"
 ---
 # <a name="azure-active-directory-b2c-add-linkedin-as-an-identity-provider-by-using-custom-policies"></a>Azure Active Directory B2C. Добавление LinkedIn в качестве поставщика удостоверений с помощью пользовательских политик
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "34709331"
 Выполните шаги, описанные в статье [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="step-1-create-a-linkedin-account-application"></a>Шаг 1. Создание приложения учетной записи LinkedIn
-Чтобы использовать LinkedIn в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), следует создать приложение LinkedIn и задать в нем правильные параметры. Чтобы зарегистрировать приложение LinkedIn, перейдите на [страницу регистрации LinkedIn](https://LinkedIn.com/signup).
+Чтобы использовать LinkedIn в качестве поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C), следует создать приложение LinkedIn и задать в нем правильные параметры. Чтобы зарегистрировать приложение LinkedIn, перейдите на [страницу регистрации LinkedIn](https://www.linkedin.com/start/join).
 
 1. Откройте веб-сайт [управления приложением LinkedIn](https://www.linkedin.com/secure/developer?newapp=), войдите с учетными данными учетной записи LinkedIn и выберите **Create Application** (Создать приложение).
 

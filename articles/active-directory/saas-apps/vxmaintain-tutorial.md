@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 6d43e446d1ee1ed4dafc63481b4c874d994896d3
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: fc8918ed2901d2f443b94bac8587e24c3f04eeec
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230273"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308753"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Учебник. Интеграция Azure Active Directory с vxMaintain
 
@@ -111,7 +111,7 @@ ms.locfileid: "36230273"
     Б. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
 
     > [!NOTE] 
-    > Приведенные выше значения используются только для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки vxMaintain](http://www.verisae.com/contact-us).
+    > Приведенные выше значения используются только для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact).
  
 4. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните файл метаданных на компьютере.
 
@@ -121,7 +121,7 @@ ms.locfileid: "36230273"
 
     ![Кнопка "Сохранить"](./media/vxmaintain-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход **vxMaintain**, отправьте скачанный **XML-файл метаданных** [группе поддержки vxMaintain](http://www.verisae.com/contact-us).
+6. Чтобы настроить единый вход **vxMaintain**, отправьте скачанный **XML-файл метаданных** [группе поддержки vxMaintain](https://www.hubspot.com/company/contact).
 
 > [!TIP]
 > Настроив приложение, вы можете прочитать краткую версию предыдущих инструкций на [портале Azure](https://portal.azure.com). После добавления приложения из раздела **Active Directory** > **Корпоративные приложения** просто выберите вкладку **Единый вход** и ознакомьтесь со встроенной документацией, воспользовавшись разделом **Настройка**. 
@@ -161,7 +161,7 @@ ms.locfileid: "36230273"
  
 ### <a name="create-a-vxmaintain-test-user"></a>Создание тестового пользователя vxMaintain
 
-В этом разделе вы создадите тестового пользователя Britta Simon в vxMaintain. Обратитесь к [группе поддержки vxMaintain](http://www.verisae.com/contact-us), чтобы добавить пользователей на платформу vxMaintain. Прежде чем использовать единый вход, создайте и активируйте пользователей.
+В этом разделе вы создадите тестового пользователя Britta Simon в vxMaintain. Обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact), чтобы добавить пользователей на платформу vxMaintain. Прежде чем использовать единый вход, создайте и активируйте пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

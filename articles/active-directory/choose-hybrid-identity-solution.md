@@ -13,12 +13,12 @@ ms.service: azure
 ms.technology: ''
 ms.assetid: ''
 ms.custom: it-pro
-ms.openlocfilehash: 9f9099c0ebd65ba84e171314e6f04d858648a805
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: 905cedd6ee781ca163731a6f71b083acfc11b5eb
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "29800743"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332377"
 ---
 # <a name="microsoft-hybrid-identity-solutions"></a>Решения Майкрософт для гибридной идентификации
 Решения для гибридной идентификации [Microsoft Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) позволяют синхронизировать локальные объекты каталогов с Azure AD и дают возможность управлять пользователями в локальной среде. Если планируется синхронизировать Azure AD с Windows Server Active Directory в локальной среде, в первую очередь необходимо решить, какая идентификация будет использоваться — синхронизированная или федеративная. Синхронизированная идентификация и хэширование паролей (необязательно) позволяют использовать один пароль для доступа к локальным и облачным ресурсам организации. Для сценариев с более широкими требованиями, такими как единый вход (SSO) или локальная многофакторная идентификация (MFA), необходимо развернуть службы федерации Active Directory (AD FS), чтобы включить сущности в федерацию. 
@@ -53,7 +53,7 @@ ms.locfileid: "29800743"
 - он присоединен к домену в лесу, в котором проверяются пользователи.
 
 ## <a name="federated-identity-ad-fs"></a>Федеративная идентификация (AD FS)
-Для большего контроля над способом доступа пользователей к Office 365 и другим облачным службам можно настроить синхронизацию каталогов с единым входом (SSO) с помощью [служб федерации Active Directory (AD FS)](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server-2016). Федерация входа пользователей с AD FS делегирует проверку подлинности локальному серверу, который проверяет учетные данные пользователя. В этой модели локальные учетные данные Active Directory никогда не передаются в Azure AD.
+Для большего контроля над способом доступа пользователей к Office 365 и другим облачным службам можно настроить синхронизацию каталогов с единым входом (SSO) с помощью [служб федерации Active Directory (AD FS)](https://docs.microsoft.com/windows-server/identity/ad-fs/overview/whats-new-active-directory-federation-services-windows-server). Федерация входа пользователей с AD FS делегирует проверку подлинности локальному серверу, который проверяет учетные данные пользователя. В этой модели локальные учетные данные Active Directory никогда не передаются в Azure AD.
 
 ![Федеративная идентификация](./media/choose-hybrid-identity-solution/federated-identity.png)
 

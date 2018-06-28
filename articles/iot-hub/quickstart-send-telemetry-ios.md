@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/20/2018
 ms.author: kgremban
-ms.openlocfilehash: 7b7f8e1805850861b30eb2a54991e5ab7fa96335
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: dbc1cc4a72d0346c92d506358c39a66a4d780b32
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808185"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331563"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-ios"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей (iOS)
 
@@ -135,9 +135,7 @@ iothub-explorer monitor-events myiOSdevice --login "{your hub service connection
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы планируете продолжить тестирование Центра Интернета вещей с использованием других статей, оставьте группу ресурсов и Центр Интернета вещей, чтобы в дальнейшем повторно использовать их.
-
-Если вам больше не требуется Центр Интернета вещей, удалите его и группу ресурсов на портале. Для этого выберите группу ресурсов, содержащую Центр Интернета вещей, и щелкните **Удалить**.
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

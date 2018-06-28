@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 05/31/2018
 ms.author: renash
-ms.openlocfilehash: 9121726cc8500da87cf71cb1ca3035e6cc5a303b
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: c78138fa06da4d83774f9a2270263a48d404b17a
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294096"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751861"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью службы синхронизации файлов Azure (предварительная версия), чтобы получить быстрый доступ из расположения, где используются данные.
@@ -227,7 +227,7 @@ ms.locfileid: "36294096"
 
 * <a id="data-compliance-policies"></a>
 **Какие политики соответствия данных поддерживаются службой файлов Azure?**  
-   В основе работы службы файлов Azure лежит та же архитектура хранилища, которая используется и для других служб хранилища в службе хранилища Azure. К этой службе применяются те же политики соответствия данных. Дополнительные сведения о соответствии данных в службе хранилища Azure см. в [документе о защите данных в Microsoft Azure](http://go.microsoft.com/fwlink/?LinkID=398382&clcid=0x409) и [центре управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/default.aspx).
+   В основе работы службы файлов Azure лежит та же архитектура хранилища, которая используется и для других служб хранилища в службе хранилища Azure. К этой службе применяются те же политики соответствия данных. Дополнительные сведения о соответствии данных в службе хранилища Azure см. в [документе о защите данных в Microsoft Azure](http://go.microsoft.com/fwlink/?LinkID=398382&clcid=0x409) и [центре управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx).
 
 ## <a name="on-premises-access"></a>Локальный доступ
 * <a id="expressroute-not-required"></a>

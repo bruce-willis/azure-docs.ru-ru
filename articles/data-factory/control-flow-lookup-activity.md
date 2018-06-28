@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/22/2018
+ms.date: 06/15/2018
 ms.author: shlo
-ms.openlocfilehash: 032b14051c5c2b06fa23ee67858706fada545967
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 25ed439674fcf7136e29034eb97e0652ae9ba111
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34618663"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055652"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Действие поиска в фабрике данных Azure
 
@@ -26,9 +26,6 @@ ms.locfileid: "34618663"
 - Динамическое определение объектов (файлы, таблицы и т. д) для обработки в последующем действии вместо жесткого программирования имени объекта.
 
 Действие поиска может считывать и возвращать содержимое файла конфигурации, таблицы конфигурации или результата выполнения запроса или хранимой процедуры.  Выходные данные действия поиска можно использовать в последующем действии копирования или преобразования, если это отдельное значение, или в действии ForEach, если это массив атрибутов.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных Azure, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, используйте [документацию по версии 1 фабрики данных](v1/data-factory-introduction.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
