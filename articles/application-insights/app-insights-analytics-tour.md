@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 01a34eed3ea073deaaf449d28d7f8462f12b5a33
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 8295abfae8d82a7c7762c6b27a8bac7487f6afff
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294315"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36335287"
 ---
 # <a name="a-tour-of-analytics-in-application-insights"></a>Знакомство с аналитикой в Application Insights
 [Аналитика](app-insights-analytics.md) — это мощный инструмент поиска [Application Insights](app-insights-overview.md). На этих страницах описан язык запросов Log Analytics.
@@ -180,7 +180,7 @@ ms.locfileid: "35294315"
 
 
 ## <a name="projecthttpsdocsloganalyticsiodocslanguage-referencetabular-operatorsproject-operator-select-rename-and-compute-columns"></a>Оператор [Project](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/project-operator): выбор, переименование и вычисление столбцов
-С помощью оператора [`project`](https://docs.loganalytics.io/queryLanguage/query_language_projectoperator.html) можно выбрать только нужные столбцы.
+С помощью оператора [`project`](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/project-operator) можно выбрать только нужные столбцы.
 
 ```AIQL
 
