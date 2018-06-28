@@ -9,12 +9,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/09/2018
 ms.author: rayne
-ms.openlocfilehash: 95a33c80b1aeef7fbf8bea0ab760bbd66babdac8
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8b16f495a21ff0b3da415390877777650a9fbb82
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31426682"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048209"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -116,7 +116,7 @@ ms.locfileid: "31426682"
         - Счетчик: "Записанных байтов в секунду".</br>
         - Скорость изменения данных увеличится или останется на высоком уровне. Это зависит от текущей загруженности виртуальной машины или ее приложений.
         - Для стандартного хранилища в Site Recovery среднее значение скорости изменения данных исходного диска составляет 2 МБ в секунду. [Подробнее](hyper-v-deployment-planner-analyze-report.md#azure-site-recovery-limits)
-    - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets.md#scalability-targets-for-a-storage-account).
+    - Кроме того, можно [проверить целевые показатели масштабируемости хранилища](https://docs.microsoft.com/azure/storage/common/storage-scalability-targets#scalability-targets-for-a-storage-account).
 8. Запустите [планировщик развертывания](hyper-v-deployment-planner-run.md).
 9. Просмотрите рекомендации для настройки [сети](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input) и [хранилища](hyper-v-deployment-planner-analyze-report.md#recommendations-with-available-bandwidth-as-input).
 

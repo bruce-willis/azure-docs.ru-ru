@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 1ccd0048eb2f1ab32e9fbf403b65f68b07ada480
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4fbb0e5512511842e020e5670f1290c6b6359305
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227383"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308736"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Руководство. Интеграция Azure Active Directory с Zscaler ZSCloud
 
@@ -116,7 +116,7 @@ ms.locfileid: "36227383"
      В текстовом поле **URL-адрес входа** введите URL-адрес, используемый пользователями для входа в приложение Zscaler ZSCloud.
     
     > [!NOTE] 
-    > Вместо него нужно указать фактический URL-адрес для входа. Для получения этого значения обратитесь в [службу поддержки клиентов Zscaler ZSCloud](https://support.zscaler.com/hc/articles/210172606-Zscaler-is-Expanding-Its-Zscloud-Global-Footprint). 
+    > Вместо него нужно указать фактический URL-адрес для входа. Для получения этого значения обратитесь в [службу поддержки клиентов Zscaler ZSCloud](https://help.zscaler.com/zia). 
  
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 

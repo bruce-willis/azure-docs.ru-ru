@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/01/2017
 ms.author: celested
-ms.reviewer: dastrock
+ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
-ms.openlocfilehash: e026fd7021b39905d5392be55dbf3862cd307360
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: d7328ba8403f2415705d049d1fc7947b52aeb5c1
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34156397"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319565"
 ---
 # <a name="should-i-use-the-v20-endpoint"></a>Следует ли мне использовать конечную точку версии 2.0?
 При создании приложений, которые интегрируются с Azure Active Directory, необходимо решить, соответствуют ли требованиям конечная точка версии 2.0 и протоколы проверки подлинности. Исходная конечная точка Azure Active Directory по-прежнему полностью поддерживается и в некоторых отношениях является более функциональной, чем версия 2.0. Однако конечная точка версии 2.0 [представляет значительные преимущества](active-directory-v2-compare.md) для разработчиков.

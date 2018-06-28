@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: jroth
-ms.openlocfilehash: 7285cf47c3a5ec731cd9cfe311053e9d19886f1d
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 522ece2528e43c1037dc6bb707201ecda8074dd9
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29400245"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301392"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -139,7 +139,7 @@ Server=mysqlvm;Integrated Security=true
 | [Создайте имя входа SQL](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/create-a-login) | При использовании аутентификации SQL требуется имя входа SQL с именем пользователя и паролем, у которого также имеются разрешения для целевой базы данных. |
 | [Включите протокол TCP/IP](#manualTCP) | SQL Server должен разрешать подключения по протоколу TCP. |
 | [Включите правило брандмауэра для порта SQL Server](https://docs.microsoft.com/sql/database-engine/configure-windows/configure-a-windows-firewall-for-database-engine-access) | Брандмауэр на виртуальной машине должен разрешать входящий трафик на порту SQL Server (по умолчанию 1433). |
-| [Создайте правило группы безопасности сети для TCP 1433](../../../virtual-network/virtual-networks-create-nsg-arm-pportal.md#create-rules-in-an-existing-nsg) | Необходимо разрешить виртуальной машине получать трафик через порт SQL Server (по умолчанию 1433), если нужно выполнить подключение через Интернет. Для локальных подключений и подключений к виртуальным сетям это не требуется. Это единственный шаг, выполняемый на портале Azure. |
+| [Создайте правило группы безопасности сети для TCP 1433](../../../virtual-network/manage-network-security-group.md#create-a-security-rule) | Необходимо разрешить виртуальной машине получать трафик через порт SQL Server (по умолчанию 1433), если нужно выполнить подключение через Интернет. Для локальных подключений и подключений к виртуальным сетям это не требуется. Это единственный шаг, выполняемый на портале Azure. |
 
 > [!TIP]
 > Действия, описанные в таблице выше, уже выполнены при настройке подключения на портале. Эти действия следует использовать только для проверки конфигурации или настройки подключения к SQL Server вручную.

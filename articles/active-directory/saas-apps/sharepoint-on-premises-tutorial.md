@@ -8,19 +8,18 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 85b8d4d0-3f6a-4913-b9d3-8cc327d8280d
 ms.service: active-directory
-ms.component: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/25/2018
+ms.date: 06/14/2018
 ms.author: jeedes
-ms.openlocfilehash: 8cae1e2670ba449c0db28209c54b740e927bbb73
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 02421ace226f42da58eb9864fe0ef2e1ca550391
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36210383"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319288"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство по интеграции Azure Active Directory с локальной версией SharePoint
 
@@ -74,7 +73,7 @@ ms.locfileid: "36210383"
 
 4. В поле поиска введите **SharePoint (локальная версия)**, на панели результатов выберите **Локальная версия SharePoint** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Локальная версия SharePoint в списке результатов](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_addfromgallery.png)
+    ![Локальная версия SharePoint в списке результатов](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_addfromgallery.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -102,11 +101,11 @@ ms.locfileid: "36210383"
 
 2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
 
-    ![Диалоговое окно "Единый вход"](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_samlbase.png)
+    ![Диалоговое окно "Единый вход"](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_samlbase.png)
 
 3. В разделе **Домен и URL-адреса для локальной версии SharePoint** выполните следующие действия:
 
-    ![Сведения о домене и URL-адресах единого входа для локальной версии SharePoint](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_url1.png)
+    ![Сведения о домене и URL-адресах единого входа для локальной версии SharePoint](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_url1.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YourSharePointServerURL>/_trust/default.aspx`
 
@@ -117,15 +116,15 @@ ms.locfileid: "36210383"
 
 4. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните CER-файл метаданных на компьютере. Скопируйте и вставьте полный путь скачанного файла метаданных в Блокнот.
 
-    ![Ссылка для скачивания сертификата](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_certificate.png)
+    ![Ссылка для скачивания сертификата](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_certificate.png)
 
 5. Нажмите кнопку **Сохранить** .
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/sharepoint-on-premises-tutorial/tutorial_general_400.png)
+    ![Кнопка "Сохранить" в окне настройки единого входа](./media\sharepoint-on-premises-tutorial/tutorial_general_400.png)
 
 6. В разделе **Конфигурация локальной версии SharePoint** щелкните **Настроить локальную версию SharePoint**, чтобы открыть окно **Настройка входа**. Скопируйте **URL-адрес службы единого входа** из раздела **Краткий справочник**.
 
-    ![Конфигурация локальной версии SharePoint](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_configure.png)
+    ![Конфигурация локальной версии SharePoint](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_configure.png)
 
     > [!NOTE]
     > В локальном приложении SharePoint используется токен SAML 1.1, поэтому Azure AD ожидает запроса WS Fed от сервера SharePoint и после аутентификации создает токен SAML 1.1.
@@ -148,6 +147,7 @@ ms.locfileid: "36210383"
     $map = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name" -IncomingClaimTypeDisplayName "name" -LocalClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"
     $map2 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname" -IncomingClaimTypeDisplayName "GivenName" -SameAsIncoming
     $map3 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" -IncomingClaimTypeDisplayName "SurName" -SameAsIncoming
+    $map4 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" -IncomingClaimTypeDisplayName "Email" -SameAsIncoming
     $ap = New-SPTrustedIdentityTokenIssuer -Name "AzureAD" -Description "SharePoint secured by Azure AD" -realm $realm -ImportTrustCertificate $cert -ClaimsMappings $map,$map2,$map3 -SignInUrl $wsfedurl -IdentifierClaim "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
     ```
 
@@ -163,7 +163,7 @@ ms.locfileid: "36210383"
 
     д. Последовательно выберите **ОК**.
 
-    ![Настройка поставщика проверки подлинности](./media/sharepoint-on-premises-tutorial/fig10-configauthprovider.png)
+    ![Настройка поставщика проверки подлинности](./media\sharepoint-on-premises-tutorial/fig10-configauthprovider.png)
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -175,19 +175,19 @@ ms.locfileid: "36210383"
 
 1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"](./media/sharepoint-on-premises-tutorial/create_aaduser_01.png)
+    ![Кнопка "Azure Active Directory"](./media\sharepoint-on-premises-tutorial/create_aaduser_01.png)
 
 2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/sharepoint-on-premises-tutorial/create_aaduser_02.png)
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media\sharepoint-on-premises-tutorial/create_aaduser_02.png)
 
 3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
-    ![Кнопка "Добавить"](./media/sharepoint-on-premises-tutorial/create_aaduser_03.png)
+    ![Кнопка "Добавить"](./media\sharepoint-on-premises-tutorial/create_aaduser_03.png)
 
 4. В диалоговом окне **Пользователь** сделайте следующее.
 
-    ![Диалоговое окно "Пользователь"](./media/sharepoint-on-premises-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](./media\sharepoint-on-premises-tutorial/create_aaduser_04.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "36210383"
 
 4. В политике для веб-приложения нажмите кнопку **Добавить пользователей**.
 
-    ![Поиск пользователя по утверждению имени](./media/sharepoint-on-premises-tutorial/fig11-searchbynameclaim.png)
+    ![Поиск пользователя по утверждению имени](./media\sharepoint-on-premises-tutorial/fig11-searchbynameclaim.png)
 
 5. В диалоговом окне **Добавление пользователей** щелкните соответствующую зону в разделе **Зоны** и нажмите кнопку **Далее**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "36210383"
 
 9. В разделе "Разрешения" щелкните **Полный доступ**.
 
-    ![Предоставление полного доступа пользователю утверждений](./media/sharepoint-on-premises-tutorial/fig12-grantfullcontrol.png)
+    ![Предоставление полного доступа пользователю утверждений](./media\sharepoint-on-premises-tutorial/fig12-grantfullcontrol.png)
 
 10. Нажмите кнопку **Готово**, а затем — кнопку **ОК**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "36210383"
 
 Теперь пользователи могут входить в SharePoint 2016, используя удостоверения из Azure AD. Но пользовательский интерфейс можно сделать еще лучше. Например, при поиске пользователя в средстве выбора людей система возвращает несколько результатов поиска. Для каждого из трех типов утверждений, созданных в сопоставлении утверждений, предусмотрен отдельный результат поиска. Чтобы выбрать пользователя с помощью средства выбора, вам потребуется ввести точное имя пользователя и выбрать результат утверждения **name**.
 
-![Результаты поиска утверждений](./media/sharepoint-on-premises-tutorial/fig16-claimssearchresults.png)
+![Результаты поиска утверждений](./media\sharepoint-on-premises-tutorial/fig16-claimssearchresults.png)
 
 Система не проверяет значения, по которым вы выполняете поиск. Это может привести к опечаткам и к тому, что пользователи могут случайно выбрать неправильный тип утверждения для назначения, например утверждение **SurName**. Это может помешать пользователям получить доступ к ресурсам.
 
@@ -237,7 +237,7 @@ ms.locfileid: "36210383"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к локальной версии SharePoint.
 
-![Назначение роли пользователя][200] 
+![Назначение роли пользователя][200]
 
 **Чтобы назначить пользователя Britta Simon в локальной версии SharePoint, выполните следующие действия:**
 
@@ -247,7 +247,7 @@ ms.locfileid: "36210383"
 
 2. В списке приложений выберите **Локальная версия SharePoint**.
 
-    ![Ссылка на SharePoint в списке "Приложения"](./media/sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_app.png)
+    ![Ссылка на SharePoint в списке "Приложения"](./media\sharepoint-on-premises-tutorial/tutorial_sharepointonpremises_app.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -275,17 +275,18 @@ ms.locfileid: "36210383"
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
+
 <!--Image references-->
 
-[1]: ./media/sharepoint-on-premises-tutorial/tutorial_general_01.png
-[2]: ./media/sharepoint-on-premises-tutorial/tutorial_general_02.png
-[3]: ./media/sharepoint-on-premises-tutorial/tutorial_general_03.png
-[4]: ./media/sharepoint-on-premises-tutorial/tutorial_general_04.png
+[1]: ./media\sharepoint-on-premises-tutorial/tutorial_general_01.png
+[2]: ./media\sharepoint-on-premises-tutorial/tutorial_general_02.png
+[3]: ./media\sharepoint-on-premises-tutorial/tutorial_general_03.png
+[4]: ./media\sharepoint-on-premises-tutorial/tutorial_general_04.png
 
-[100]: ./media/sharepoint-on-premises-tutorial/tutorial_general_100.png
+[100]: ./media\sharepoint-on-premises-tutorial/tutorial_general_100.png
 
-[200]: ./media/sharepoint-on-premises-tutorial/tutorial_general_200.png
-[201]: ./media/sharepoint-on-premises-tutorial/tutorial_general_201.png
-[202]: ./media/sharepoint-on-premises-tutorial/tutorial_general_202.png
-[203]: ./media/sharepoint-on-premises-tutorial/tutorial_general_203.png
+[200]: ./media\sharepoint-on-premises-tutorial/tutorial_general_200.png
+[201]: ./media\sharepoint-on-premises-tutorial/tutorial_general_201.png
+[202]: ./media\sharepoint-on-premises-tutorial/tutorial_general_202.png
+[203]: ./media\sharepoint-on-premises-tutorial/tutorial_general_203.png
 

@@ -8,14 +8,14 @@ services: iot-hub
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 04/30/2018
+ms.date: 06/22/2018
 ms.author: dobett
-ms.openlocfilehash: 5025eeda46f36982266a0bc3357b3d1e9249884a
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 5da4248f0b0a72c3614b4c3e5ea042c4341f4e03
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808212"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36330549"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-java"></a>Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)
 
@@ -75,7 +75,7 @@ mvn --version
 
     Если вы выбрали другое имя для устройства, обновите имя устройства в примерах приложений перед их запуском.
 
-1. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
+2. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyJavaDevice --output table
@@ -99,17 +99,17 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 
 1. В окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device-2**.
 
-1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/SimulatedDevice.java** в любом текстовом редакторе.
+2. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/SimulatedDevice.java** в любом текстовом редакторе.
 
     Замените значение переменной `connString` записанной ранее строкой подключения к устройству. Сохраните изменения в файле **SimulatedDevice.java**.
 
-1. Установите необходимые библиотеки и создайте приложение имитированного устройства, выполнив в окне терминала следующие команды:
+3. Установите необходимые библиотеки и создайте приложение имитированного устройства, выполнив в окне терминала следующие команды:
 
     ```cmd/sh
     mvn clean package
     ```
 
-1. Запустите приложение имитированного устройства, выполнив в окне терминала следующие команды:
+4. Запустите приложение имитированного устройства, выполнив в окне терминала следующие команды:
 
     ```cmd/sh
     java -jar target/simulated-device-2-1.0.0-with-deps.jar
@@ -125,17 +125,17 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 
 1. В другом окне терминала перейдите в корневую папку примера проекта Java. Затем перейдите в папку **iot-hub\Quickstarts\back-end-application**.
 
-1. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/BackEndApplication.java** в любом текстовом редакторе.
+2. Откройте файл **src/main/java/com/microsoft/docs/iothub/samples/BackEndApplication.java** в любом текстовом редакторе.
 
     Замените значение переменной `iotHubConnectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **BackEndApplication.java**.
 
-1. Установите необходимые библиотеки и создайте внутреннее приложение, выполнив в окне терминала следующие команды:
+3. Установите необходимые библиотеки и создайте внутреннее приложение, выполнив в окне терминала следующие команды:
 
     ```cmd/sh
     mvn clean package
     ```
 
-1. Запустите внутреннее приложение, выполнив в окне терминала следующие команды:
+4. Запустите внутреннее приложение, выполнив в окне терминала следующие команды:
 
     ```cmd/sh
     java -jar target/back-end-application-1.0.0-with-deps.jar
@@ -151,9 +151,7 @@ az iot hub show-connection-string --hub-name {YourIoTHubName} --output table
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы планируете работать с другими руководствами, не удаляйте группу ресурсов и Центр Интернета вещей.
-
-Если вам больше не требуется Центр Интернета вещей, удалите его и группу ресурсов на портале. Для этого выберите группу ресурсов, содержащую Центр Интернета вещей, и щелкните **Удалить**.
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

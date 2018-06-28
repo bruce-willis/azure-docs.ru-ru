@@ -3,23 +3,24 @@ title: Установка расширения браузера для пане�
 description: Исправление распространенных ошибок при установке расширения браузера для панели доступа.
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 5/4/18
-ms.author: asteen
-ms.reviewer: japere
-ms.openlocfilehash: 8db0c28b0ea6b6f78ef86c773ff24f9d22fe3ecd
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.author: barbkess
+ms.reviewer: japere,asteen
+ms.openlocfilehash: 00dade0926f9f2601757ac637e21737027f24c45
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34353880"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332615"
 ---
 # <a name="install-the-access-panel-browser-extension"></a>Установка расширения браузера для панели доступа
 
