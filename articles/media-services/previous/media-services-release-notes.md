@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: juliako
-ms.openlocfilehash: 62f5ae4a9152d3f1b1641cc69136bf472527ba2a
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: e2512a2af05ee7101713886c3ae1b5c6c74dd3db
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33942417"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37018544"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -116,8 +116,8 @@ ms.locfileid: "33942417"
  С помощью служб мультимедиа теперь можно получить доступ к данным телеметрии и метрик для служб. Текущая версия служб мультимедиа позволяет собирать данные телеметрии для динамического канала, конечной точки потоковой передачи и архивированных сущностей. Дополнительные сведения см. в статье [Телеметрия служб мультимедиа Azure](media-services-telemetry-overview.md).
 
 ## <a name="a-idjulychanges16july-2016-release"></a><a id="july_changes16"/>Выпуск: июль 2016 г.
-### <a name="updates-to-the-manifest-file-ism-generated-by-encoding-tasks"></a>Обновления файла манифеста (\*.ISM), созданного задачами кодирования
-Когда вы отправляете задачу кодирования в Media Encoder Standard или в Media Encoder Premium, задача кодирования создает [файл манифеста потоковой передачи](media-services-deliver-content-overview.md) (\*.ISM) в выходном ресурсе. В последнем выпуске службы обновлен синтаксис этого файла манифеста потоковой передачи.
+### <a name="updates-to-the-manifest-file-ism-generated-by-encoding-tasks"></a>Обновления файла манифеста (ISM-файла), созданного задачами кодирования
+Когда вы отправляете задачу кодирования в Media Encoder Standard или в Media Encoder Premium, задача кодирования создает [файл манифеста потоковой передачи](media-services-deliver-content-overview.md) (ISM-файл) в выходном ресурсе. В последнем выпуске службы обновлен синтаксис этого файла манифеста потоковой передачи.
 
 > [!NOTE]
 > Синтаксис файла манифеста потоковой передачи (ISM-файл) зарезервирован для внутреннего использования. Он может измениться в будущих выпусках. Не изменяйте содержимое этого файла.
@@ -170,7 +170,6 @@ ms.locfileid: "33942417"
 
 Дополнительные сведения можно найти в разделе 
 
-* Блог по [SDK служб мультимедиа для PHP](http://southworks.com/blog/2015/12/09/new-microsoft-azure-media-services-sdk-for-php-release-available-with-new-features-and-samples/).
 * Следующие [примеры кода](http://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices) помогут вам быстро приступить к работе:
   * **vodworkflow_aes.php.** PHP-файл, показывающий, как использовать динамическое шифрование c помощью алгоритма AES-128 и службы доставки ключей. Он основан на примере кода .NET, подробно описанном в статье [Использование динамического шифрования AES-128 и службы доставки ключей](media-services-protect-with-aes128.md).
   * **vodworkflow_aes.php.** PHP-файл, показывающий, как использовать динамическое шифрование c помощью алгоритма PlayReady и службы доставки лицензий. Он основан на примере кода .NET, подробно описанном в статье [Использование общего динамического шифрования PlayReady и (или) Widevine DRM](media-services-protect-with-playready-widevine.md).
@@ -209,9 +208,7 @@ ms.locfileid: "33942417"
 
 ## <a id="august_changes_15"></a>Выпуск: август 2015 г.
 * Сейчас доступны пакет SDK служб мультимедиа для выпуска Java версии 0.8.0 и новые примеры. Дополнительные сведения можно найти в разделе 
-  
-  * [этой записи блога](http://southworks.com/blog/2015/08/25/microsoft-azure-media-services-sdk-for-java-v0-8-0-released-and-new-samples-available/);
-  * [репозитория примеров для Java](https://github.com/southworkscom/azure-sdk-for-media-services-java-samples).
+    
 * В Проигрыватель мультимедиа Azure была добавлена поддержка нескольких аудиопотоков. Дополнительные сведения см. в [этой записи блога](https://azure.microsoft.com/blog/2015/08/13/azure-media-player-update-with-multi-audio-stream-support/).
 
 ## <a id="july_changes_15"></a>Выпуск: июль 2015 г.

@@ -10,12 +10,12 @@ ms.workload: On Demand
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: genemi
-ms.openlocfilehash: 446c1f3af3f00fb70a230dfec5f5c533b45a285f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 9c0115254fc3368868584e76ead8da812656e4d1
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34650049"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028852"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -190,7 +190,7 @@ API [трассировки событий для Windows (ETW)](http://msdn.mic
 ## <a name="related-links"></a>Связанные ссылки
 
 - [Использование Azure PowerShell со службой хранилища Azure](../storage/common/storage-powershell-guide-full.md)
-- [Командлеты службы хранилища Azure](http://msdn.microsoft.com/library/dn806401.aspx)
+- [Командлеты службы хранилища Azure](https://docs.microsoft.com/powershell/module/Azure.Storage)
 - [Использование Azure PowerShell с хранилищем Azure](../storage/common/storage-powershell-guide-full.md) — статья содержит полную информацию о PowerShell и службе хранилища Azure.
 - [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
 - [CREATE CREDENTIAL (Transact-SQL)](http://msdn.microsoft.com/library/ms189522.aspx)

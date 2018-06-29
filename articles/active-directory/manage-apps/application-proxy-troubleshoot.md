@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/21/2018
+ms.date: 06/26/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: f3c767da249d10896ef1792ce4a5ed72ba3fa418
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 8740557471d1cc528e8b7440984c7a3c624ee693
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35302983"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017670"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Устранение неполадок и сообщения об ошибках прокси приложения
 Если во время доступа к опубликованному приложению или публикации приложений возникают ошибки, проверьте следующие параметры, чтобы выяснить, правильно ли работает прокси-сервер приложений Microsoft Azure AD.
@@ -40,8 +40,6 @@ ms.locfileid: "35302983"
 Если вы изменили путь, чтобы включить содержимое, на которое указывает ссылка, но при этом хотите перенаправлять пользователей по внутренней ссылке пути, см. инструкции в записи блога [Setting the right link for Application Proxy applications in the Azure AD access panel and Office 365 app launcher](https://blogs.technet.microsoft.com/applicationproxyblog/2016/04/06/setting-the-right-link-for-application-proxy-applications-in-the-azure-ad-access-panel-and-office-365-app-launcher/) (Настройка правильной ссылки на приложения прокси приложений на панели доступа Azure AD и в средстве запуска приложений Office 365).
 
 ## <a name="connector-errors"></a>Ошибки соединителя
-
-Воспользуйтесь [средством проверки портов соединителей прокси-службы приложения Azure AD](https://aadap-portcheck.connectorporttest.msappproxy.net/), чтобы проверить, сможет ли ваш соединитель подключиться к прокси-службе приложения. Как минимум следует убедиться, что для региона Central US (Центральная часть США) и ближайшего к вам региона отображаются все зеленые флажки. Учитывайте также, что большее число зеленых флажков означает большую устойчивость. 
 
 Если при установке мастера создания соединителя произойдет сбой регистрации, его причину можно проверить двумя способами. Вы можете просмотреть записи в журнале событий в разделе **Applications and Services Logs\Microsoft\AadApplicationProxy\Connector\Admin** или выполнить следующую команду Windows PowerShell:
 

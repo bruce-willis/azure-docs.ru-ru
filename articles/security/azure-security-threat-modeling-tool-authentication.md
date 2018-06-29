@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 1ac614156755b9b29db7c968c708a5cff706f7a8
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: d53ade1e5c31ca25636b95d4f8b9e0fe29f9d081
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28019676"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031113"
 ---
 # <a name="security-frame-authentication--mitigations"></a>Механизм безопасности. Проверка подлинности | Устранение рисков 
 | Продукт или служба | Статья |
@@ -306,7 +306,7 @@ ms.locfileid: "28019676"
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Тип учетных данных клиента: None |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify](https://vulncat.fortify.com/en/detail?id=desc.semantic.dotnet.wcf_misconfiguration_anonymous_message_client) |
 | **Действия** | Отсутствие проверки подлинности означает, что каждый может получить доступ к этой службе. Служба, которая не выполняет проверку подлинности своих клиентов, предоставляет доступ всем пользователям. Настройте в приложении проверку подлинности учетных данных клиента. Это можно сделать, задав для атрибута message clientCredentialType значение Windows или Certificate. |
 
 ### <a name="example"></a>Пример
@@ -322,7 +322,7 @@ ms.locfileid: "28019676"
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Тип учетных данных клиента: None |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify](https://vulncat.hpefod.com/en/detail?id=desc.semantic.dotnet.wcf_misconfiguration_anonymous_transport_client) |
 | **Действия** | Отсутствие проверки подлинности означает, что каждый может получить доступ к этой службе. Служба, которая не выполняет проверку подлинности своих клиентов, предоставляет доступ к своим функциям всем пользователям. Настройте в приложении проверку подлинности учетных данных клиента. Это можно сделать, задав для атрибута transport clientCredentialType значение Windows или Certificate. |
 
 ### <a name="example"></a>Пример

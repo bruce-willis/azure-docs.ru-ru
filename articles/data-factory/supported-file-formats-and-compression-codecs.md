@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: jingwang
-ms.openlocfilehash: c96d8b273a0e74ced5b121d19e1c3e5343a754b4
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 534df0dfef1f69297c5728ed892a5457944e4468
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621825"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37052296"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -27,9 +27,6 @@ ms.locfileid: "34621825"
 * [формат Avro](#avro-format);
 * [формат ORC](#orc-format);
 * [формат Parquet](#parquet-format).
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, ознакомьтесь с [поддерживаемыми форматами файлов и сжатия в фабрике данных версии 1](v1//data-factory-supported-file-and-compression-formats.md).
 
 > [!TIP]
 > Узнайте, как действие копирования сопоставляет данные источника с приемником, из раздела [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md), а также изучите определение метаданных по заданным параметрам формата файла и советы о том, когда следует указывать раздел [dataset`structure`](concepts-datasets-linked-services.md#dataset-structure).

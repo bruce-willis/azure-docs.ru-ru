@@ -20,6 +20,10 @@
   items:
     - name: Общие сведения о примерах пакетов SDK
       href: sdk.md
+    - name: 'Пакет SDK для C#'
+      href: visual-search-sdk-c-sharp.md
+    - name: Пакет SDK для Node
+      href: visual-search-sdk-node.md
     - name: SDK для Python
       href: visual-search-sdk-python.md
 - name: Учебники

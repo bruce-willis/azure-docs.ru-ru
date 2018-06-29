@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 7b60c086896506e5883607db48a64d2a2efbd967
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 28561f5f94044d19cfd07e99d7f7a736ec470cf1
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34659899"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960361"
 ---
 # <a name="hyperledger-fabric-single-member-network"></a>Сеть Hyperledger Fabric с одним участником
 
@@ -89,9 +89,9 @@ ms.locfileid: "34659899"
 Имя параметра| ОПИСАНИЕ| Допустимые значения|По умолчанию
 ---|---|---|---
 **Number of Membership Nodes** (Количество узлов участников)|Число узлов, на которых выполняется служба участников. Дополнительные сведения о службе участников см. в разделе о службах безопасности и участников в [документации](https://media.readthedocs.org/pdf/hyperledger-fabric/latest/hyperledger-fabric.pdf) Hyperledger.<br /><br />В настоящее время это значение ограничено 1 узлом, но мы планируем поддерживать масштабирование через кластеризацию в следующей версии.|1| 1
-**Number of Orderer Nodes** (Количество организующих узлов) |Число узлов, которые упорядочивают (организуют) транзакции в блоки.--> Это утверждение является многословным и запутанным. Дополнительные сведения о службе упорядочивания см. в [документации](http://hyperledger-fabric.readthedocs.io/en/latest/orderingservice.html) Hyperledger.<br /><br />В настоящее время это значение ограничено 1 узлом. |1 |1
+**Number of Orderer Nodes** (Количество организующих узлов) |Число узлов, которые упорядочивают (организуют) транзакции в блоки.--> Это утверждение является многословным и запутанным. Дополнительные сведения о службе упорядочивания см. в [документации](https://hyperledger-fabric.readthedocs.io/en/release-1.1/ordering-service-faq.html) Hyperledger.<br /><br />В настоящее время это значение ограничено 1 узлом. |1 |1
 **Number of Peer Nodes** (Число одноранговых узлов)| Узлы, принадлежащие участникам консорциума, которые выполняют транзакции и поддерживают состояние и копию реестра.<br /><br />Дополнительные сведения о службе упорядочивания см. в [документации](https://hyperledger-fabric.readthedocs.io/en/latest/glossary.html) Hyperledger.|3| 3–9
-**Производительность хранилища**|Тип хранилища, поддерживающий каждый из развернутых узлов. Дополнительные сведения о службе хранилища см. в статьях [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction) и [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage).|Уровень "Стандартный" или "Премиум"|Стандартная
+**Производительность хранилища**|Тип хранилища, поддерживающий каждый из развернутых узлов. Дополнительные сведения о службе хранилища см. в статьях [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction) и [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage).|Standard или Premium|Стандартная
 **Размер виртуальной машины** |Размер виртуальной машины, используемый для всех узлов сети.|"Стандартный" A,<br />"Стандартный" D,<br />"Стандартный" D-v2,<br />"Стандартный" F,<br />"Стандартный" DS,<br />"Стандартный" FS|"Стандартный" D1_v2
 
 ### <a name="fabric-specific-settings"></a>Определенные параметры Fabric

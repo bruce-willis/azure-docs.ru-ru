@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 1f3de9ba6615a9b2232cca237a822b308d89426d
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: cea96234083abd01cdf280129e6f75a1f69af9c6
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28019829"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028989"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение угроз 
 | Продукт или служба | Статья |
@@ -107,7 +107,7 @@ Example: var str="alert(1)"; eval(str);
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Памятка по защите от кликджекинга OWASP](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet), [внутренняя документация Internet Explorer по борьбе с кликджекингом при помощи заголовка ответа X-Frame-Options](https://blogs.msdn.microsoft.com/ieinternals/2010/03/30/combating-click-jacking-with-x-frame-options/) |
+| **Справочные материалы**              | [Памятка по защите от кликджекинга OWASP](https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet), [внутренняя документация Internet Explorer по борьбе с кликджекингом при помощи заголовка ответа X-Frame-Options](https://blogs.msdn.microsoft.com/ieinternals/2010/03/30/combating-clickjacking-with-x-frame-options/) |
 | **Действия** | <p>Кликджекинг — это механизм обмана, при котором злоумышленник использует прозрачные или непрозрачные уровни, чтобы обманным путем заставить пользователя нажать кнопку или щелкнуть ссылку на другую страницу, когда он намеревается щелкнуть страницу верхнего уровня.</p><p>Такая многоуровневая структура достигается за счет создания вредоносной страницы в фрейме, который загружает страницу жертвы. Таким образом, злоумышленник перехватывает щелчки мыши, сделанные на странице, и перенаправляет пользователей на другую страницу, скорее всего, принадлежащую другому приложению или домену (или и тому, и другому). Чтобы предотвратить кликджекинг, задайте соответствующие заголовки HTTP-ответа X-Frame-Options, не разрешающие использовать фреймы из других доменов в браузере.</p>|
 
 ### <a name="example"></a>Пример

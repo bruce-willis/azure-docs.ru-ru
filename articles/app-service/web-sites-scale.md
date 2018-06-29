@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2016
 ms.author: cephalin
-ms.openlocfilehash: c07105a34f6778fcd62f6f1bc1d3930f6a8bf173
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: f8478a0aef52f8e573fa300a0b1328ea9ce5129f
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34714941"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031004"
 ---
 # <a name="scale-up-an-app-in-azure"></a>Увеличение масштаба приложения в Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "34714941"
   
     [Размеры виртуальных машин и облачных служб для Microsoft Azure][vmsizes]
   
-* Рекомендации по использованию службы приложений Azure, в том числе по созданию масштабируемой и устойчивой архитектуры, см. [здесь](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
+* Рекомендации по использованию службы приложений Azure, в том числе по созданию масштабируемой и устойчивой архитектуры, см. [здесь](https://azure.microsoft.com/blog/best-practices-windows-azure-websites-waws/).
 * Видео о масштабировании приложений службы приложений см. на следующих ресурсах:
   
   * [Стефан Шаков (Stefan Schackow). Когда следует масштабировать веб-сайты Azure](https://azure.microsoft.com/resources/videos/azure-web-sites-free-vs-standard-scaling/)
