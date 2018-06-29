@@ -17,20 +17,16 @@
       href: quick-deploy-iot-central.md
 - name: Учебники
   items:
-    - name: Конструктор
-      items:
-        - name: 1. Определение нового типа устройства.
-          href: tutorial-define-device-type.md
-        - name: 2. Настройка правил.
-          href: tutorial-configure-rules.md
-        - name: 3. Настройка представления оператора.
-          href: tutorial-customize-operator.md
-    - name: Оператор
-      items:
-        - name: 4. Мониторинг устройств.
-          href: tutorial-monitor-devices.md
-        - name: 5. Добавление устройства.
-          href: tutorial-add-device.md
+    - name: 1. Определение нового типа устройства.
+      href: tutorial-define-device-type.md
+    - name: 2. Настройка правил.
+      href: tutorial-configure-rules.md
+    - name: 3. Настройка представления оператора.
+      href: tutorial-customize-operator.md
+    - name: 4. Мониторинг устройств.
+      href: tutorial-monitor-devices.md
+    - name: 5. Добавление устройства.
+      href: tutorial-add-device.md
 - name: Основные понятия
   items:
     - name: Архитектура
