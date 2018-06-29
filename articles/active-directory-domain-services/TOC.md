@@ -38,6 +38,7 @@
 #### [Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
 
 ### [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
+### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
 ### [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
 ## [Выбор виртуальной сети](active-directory-ds-networking.md)
 ## Развертывание приложений

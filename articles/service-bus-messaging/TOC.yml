@@ -126,6 +126,10 @@
               href: service-bus-amqp-request-response.md
         - name: Дополнительные функции
           items:
+            - name: Фильтрация подключений по протоколу IP
+              href: service-bus-ip-filtering.md
+            - name: Конечные точки службы виртуальной сети
+              href: service-bus-service-endpoints.md
             - name: Очереди недоставленных сообщений
               href: service-bus-dead-letter-queues.md
             - name: Предварительная выборка сообщений

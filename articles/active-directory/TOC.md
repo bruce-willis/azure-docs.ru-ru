@@ -151,6 +151,7 @@
 ### [Настройка SSPR](authentication/concept-sspr-customization.md)
 ### [Требования к данным SSPR](authentication/howto-sspr-authenticationdata.md)
 ### [Отчеты SSPR](authentication/howto-sspr-reporting.md)
+### [Смарт-блокировка](authentication/howto-password-smart-lockout.md)
 ### [Исключение простых паролей](authentication/concept-password-ban-bad.md)
 ### [Настройка списка запрещенных паролей](authentication/howto-password-ban-bad.md)
 ### [Интеграция с локальной средой](authentication/concept-password-ban-bad-on-premises.md)

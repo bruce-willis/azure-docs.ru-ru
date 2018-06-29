@@ -20,6 +20,7 @@
 <!-- These will all be replaced by the new MVC tutorials as we write them -->
 ## [Маршрутизация сообщений](tutorial-routing.md)
 ## [Настройка устройства](tutorial-device-twins.md)
+## [Управление обновлениями встроенного ПО](tutorial-firmware-update.md)
 ## [Проверка подключения устройства](tutorial-connectivity.md)
 ## Отправка сообщений из облака на устройство
 ### [.NET](iot-hub-csharp-csharp-c2d.md)
@@ -111,6 +112,8 @@
 #### [Отправка сообщений на сервер MQTT с помощью API Eclipse Paho](iot-hub-arduino-iot-devkit-az3166-mqtt-helloworld.md)
 #### [Мониторинг магнитного датчика и отправка уведомлений по электронной почте с помощью службы "Функции Azure"](iot-hub-arduino-iot-devkit-az3166-door-monitor.md)
 
+## [Рекомендации по настройке устройств](iot-hub-configuration-best-practices.md)
+
 # Практические руководства
 ## План
 ### [Сравнение Центра Интернета вещей и службы "Концентраторы событий"](iot-hub-compare-event-hubs.md)
@@ -169,6 +172,9 @@
 ### Начало работы с двойниками модулей
 #### [Портал](iot-hub-portal-csharp-module-twin-getstarted.md)
 #### [.NET](iot-hub-csharp-csharp-module-twin-getstarted.md)
+#### [Python](iot-hub-python-python-module-twin-getstarted.md)
+#### [C](iot-hub-c-c-module-twin-getstarted.md)
+#### [Node](iot-hub-node-node-module-twin-getstarted.md)
 ### Использование прямых методов
 #### [Node.js](iot-hub-node-node-direct-methods.md)
 #### [.NET](iot-hub-csharp-csharp-direct-methods.md)
@@ -221,7 +227,9 @@
 ## [Обновление Центра Интернета вещей](iot-hub-upgrade.md)
 ## [Метрики использования](iot-hub-metrics.md)
 ## [Настройка фильтрации IP](iot-hub-ip-filtering.md)
-## [Настройка устройств в масштабе](iot-hub-auto-device-config.md)
+## Настройка устройств в масштабе
+### [Использование портала Azure](iot-hub-auto-device-config.md)
+### [Использование Azure CLI](iot-hub-auto-device-config-cli.md)
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=iot-hub)

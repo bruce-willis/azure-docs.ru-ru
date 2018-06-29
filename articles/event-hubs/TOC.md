@@ -36,6 +36,8 @@
 ### [Использование Apache Flink с концентраторами событий для экосистем Kafka](event-hubs-kafka-flink-tutorial.md)
 ### [Использование Akka Streams с концентраторами событий для экосистем Kafka](event-hubs-kafka-akka-streams-tutorial.md)
 ## Разработка
+### [Фильтрация подключений по протоколу IP](event-hubs-ip-filtering.md)
+### [Конечные точки службы виртуальной сети](event-hubs-service-endpoints.md)
 ### [Отправка событий с помощью .NET Framework](event-hubs-dotnet-framework-getstarted-send.md)
 ### [Получение событий с помощью .NET Framework](event-hubs-dotnet-framework-getstarted-receive-eph.md)
 ### [Доступные интерфейсы API](event-hubs-api-overview.md)

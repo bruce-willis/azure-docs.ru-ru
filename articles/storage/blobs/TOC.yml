@@ -190,6 +190,8 @@
           href: storage-https-custom-domain-cdn.md
         - name: Возможность хранения данных в неизменяемом виде в хранилище BLOB-объектов Azure (предварительная версия)
           href: storage-blob-immutable-storage.md
+        - name: Включение безопасного TLS для клиента службы хранилища Azure
+          href: ../common/storage-security-tls.md
     - name: Мониторинг и устранение неполадок
       items:
         - name: Руководство по устранению неполадок

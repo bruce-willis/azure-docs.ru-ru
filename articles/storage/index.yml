@@ -3,24 +3,24 @@ documentType: LandingData
 title: Документация по службе хранилища Azure
 metadata:
   title: Документация по службе хранилища Azure. Руководства и справочник по API | Документация Майкрософт
-  description: Служба хранилища Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure состоит из хранилища BLOB-объектов, хранилища файлов и хранилища очередей.
+  description: Служба хранилища Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя большие двоичные объекты Azure, Azure Data Lake Storage Gen2, файлы Azure, очереди Azure и таблицы Azure.
   services: storage
   author: tamram
-  manager: jeconnoc
+  manager: twooley
   ms.service: storage
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 06/18/2018
+  ms.date: 06/27/2018
   ms.author: tamram
-  ms.openlocfilehash: 0e8c2b7048ff9e59612e13a87506bf1209036ca6
-  ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+  ms.openlocfilehash: a2254967a9f7338e29105682ea6d496271bbbe75
+  ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/19/2018
-  ms.locfileid: "36266677"
+  ms.lasthandoff: 06/27/2018
+  ms.locfileid: "37030297"
 abstract:
-  description: Служба хранилища Microsoft Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure состоит из хранилища BLOB-объектов, хранилища файлов и хранилища очередей.  Ознакомьтесь с нашими руководствами, чтобы узнать, как использовать службу хранилища Azure в приложениях.
+  description: Служба хранилища Azure является службой под управлением корпорации Майкрософт, которая предоставляет облачное хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя большие двоичные объекты Azure (объекты), Azure Data Lake Storage Gen2, файлы Azure, очереди Azure и таблицы Azure. Ознакомьтесь с нашими руководствами, чтобы узнать, как использовать службу хранилища Azure в приложениях.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
@@ -65,30 +65,25 @@ sections:
       - href: /azure/storage/blobs/storage-quickstart-blobs-java
       - href: /azure/storage/blobs/storage-quickstart-blobs-python
       - href: /azure/storage/blobs/storage-quickstart-blobs-nodejs
+    - title: Data Lake Storage Gen2
+      values:
+      - href: /azure/storage/data-lake-storage/quickstart-create-account#create-an-account-using-the-azure-portal
+      - href: /azure/storage/data-lake-storage/quickstart-create-account#create-an-account-using-powershell
+      - href: /azure/storage/data-lake-storage/quickstart-create-account#create-an-account-using-azure-cli
+      - href: 
+      - href: 
+      - href: 
+      - href: 
 - title: Пошаговые руководства
   items:
-  - type: paragraph
-    text: Узнайте, как для передавать и обрабатывать данных изображений в облаке.
   - type: list
-    style: unordered
+    style: cards
+    className: cardsD
     items:
-    - html: <a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a>
-    - html: <a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация функций Azure для обработки больших двоичных объектов</a>
-    - html: <a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a>
-    - html: <a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a>
-  - type: paragraph
-    text: Узнайте, как разработать приложение с высоким уровнем доступности в службе хранилища Azure.
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности для данных приложения</a>
-    - html: <a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение</a>
-  - type: paragraph
-    text: Узнайте, как выполнять поиск неструктурированных данных в службе хранилища Azure.
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="/azure/storage/blobs/storage-unstructured-search">Поиск неструктурированных данных в облачном хранилище</a>
+    - title: BLOB-объекты
+      html: <p>Передача и обработка данных изображений в облаке</p><ul><li><a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a></li><li><a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация функций Azure для обработки больших двоичных объектов</a></li><li><a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a></li><li><a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a></li></ul><p>Обеспечение высокого уровня доступности при проектировании приложения</p><ul><li><a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности для данных приложения</a></li><li><a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение</a></li></ul><p><a href="/azure/storage/blobs/storage-unstructured-search">Поиск неструктурированных данных в службе хранилища Azure</a></p>
+    - title: Data Lake Storage Gen2
+      html: <p><a href="/azure/storage/data-lake-storage/handle-data-using-databricks">Извлечение, преобразование и загрузка данных с помощью Azure Databricks</a></p><p><a href="/azure/storage/data-lake-storage/using-databricks-spark">Доступ к данным Azure Data Lake Storage Gen2 с помощью DataBricks и Spark</a></p><p><a href="/azure/storage/data-lake-storage/tutorial-extract-transform-load-hive">Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight</a></p>
 - title: Примеры
   items:
   - type: paragraph

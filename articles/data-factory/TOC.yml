@@ -1,4 +1,4 @@
-- name: Документация по фабрике данных V2
+- name: Документация по фабрике данных
   href: index.yml
 - name: Перейти к документации по версии 1
   href: v1/data-factory-introduction.md
@@ -6,7 +6,7 @@
   items:
     - name: Основные сведения о фабрике данных
       href: introduction.md
-    - name: Сравнение версий 1 и 2
+    - name: Сравнение текущей версии с версией 1
       href: compare-versions.md
 - name: Быстрое начало работы
   expanded: true
@@ -138,6 +138,8 @@
           href: connector-azure-blob-storage.md
         - name: Azure Cosmos DB
           href: connector-azure-cosmos-db.md
+        - name: Хранилище Azure Data Lake.
+          href: connector-azure-data-lake-storage.md
         - name: Хранилище озера данных Azure
           href: connector-azure-data-lake-store.md
         - name: База данных Azure для MySQL
@@ -275,6 +277,8 @@
         - name: Средство копирования данных
           href: copy-data-tool.md
           items: null
+        - name: Загрузка Data Lake Storage
+          href: load-azure-data-lake-storage-gen2.md
         - name: Загрузка хранилища данных SQL Azure
           href: load-azure-sql-data-warehouse.md
         - name: Загрузка Data Lake Store

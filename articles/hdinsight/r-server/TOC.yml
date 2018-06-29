@@ -1,6 +1,6 @@
 - name: Документация по Azure HDInsight
   href: /azure/hdinsight
-- name: R Server в HDInsight
+- name: Службы машинного обучения в HDInsight
   items:
     - name: Обзор
       href: r-server-overview.md
@@ -9,7 +9,7 @@
       maintainContext: true
 - name: Начало работы
   items:
-    - name: Начало работы с R Server
+    - name: Начало работы со службами машинного обучения
       href: r-server-get-started.md
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
@@ -19,11 +19,11 @@
       maintainContext: true
 - name: Практическое руководство
   items:
-    - name: Использование R Server
+    - name: Использование служб машинного обучения
       items:
-        - name: Управлять кластером R Server
+        - name: Управление кластером служб машинного обучения
           href: r-server-hdinsight-manage.md
-        - name: Операционализация кластера R Server
+        - name: Ввод кластера служб машинного обучения в эксплуатацию
           href: r-server-operationalize.md
         - name: Варианты хранилищ
           href: r-server-storage.md

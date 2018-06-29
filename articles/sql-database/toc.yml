@@ -50,7 +50,7 @@
       href: sql-database-design-first-database.md
     - name: "2.\_Проектирование базы данных с помощью .NET"
       href: sql-database-design-first-database-csharp.md
-    - name: "3.\_Перенос в базу данных SQL Server с помощью DMS"
+    - name: 3. Перенос в базу данных SQL Server с помощью DMA
       href: sql-database-migrate-your-sql-server-database.md
     - name: "4.\_Защита базы данных SQL"
       href: sql-database-security-tutorial.md

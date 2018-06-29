@@ -1,6 +1,6 @@
 ---
-title: Управление Azure — мониторинг | Документация Майкрософт
-description: В Azure доступно несколько служб и средств, которые обеспечивают полный контроль над вашими приложениями, работающими как в Azure, так и в других облаках и локальных средах.  В этой статье подробно описаны разные области управления, а также предоставлены ссылки на материалы о средствах Azure для управления облачными приложениями и ресурсами.
+title: Управление Azure и Operations Management Suite (OMS) | Документация Майкрософт
+description: Общие сведения об областях управления для приложений и ресурсов Azure со ссылками на содержимое по средствам управления Azure, которые ранее предоставлялись в составе Operations Management Suite (OMS).
 documentationcenter: ''
 author: bwren
 manager: carmonm
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2018
 ms.author: bwren
-ms.openlocfilehash: 36dd04be167d9e8e63ab38e4af80c5766ba55370
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8598e3528aa0a9fb171853e5f6554346ace937ef
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31410300"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37059956"
 ---
 # <a name="azure-management---monitoring"></a>Управление Azure — мониторинг
 
@@ -62,7 +62,7 @@ ms.locfileid: "31410300"
 
 - Служба автоматизации Azure
 - Служба архивации Azure
-- Служба Log Analytics
+- Log Analytics
 - Site Recovery
 
 Мы прекращаем описание этого набора в нашей технической документации, так как решения по полному управлению в Azure теперь включают другие службы. Службы, которые являются частью OMS, не изменены. Все они по-прежнему играют важную роль в управлении приложениями и ресурсами Azure. Мы рекомендуем вам обратить внимание на актуальные задачи управления, которые можно выполнить с использованием разных служб Azure.

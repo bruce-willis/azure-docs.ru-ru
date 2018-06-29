@@ -10,6 +10,8 @@
       href: stream-analytics-quick-create-portal.md
     - name: Создание задания с помощью PowerShell
       href: stream-analytics-quick-create-powershell.md
+    - name: Создание задания — Visual Studio
+      href: stream-analytics-quick-create-vs.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания
