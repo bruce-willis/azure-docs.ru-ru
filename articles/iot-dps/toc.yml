@@ -113,6 +113,9 @@
           href: how-to-manage-dps-with-cli.md
         - name: Управление доступом к API службы подготовки
           href: how-to-control-access.md
+    - name: Подготовка устройства IoT Edge
+      href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
+      maintainContext: true
     - name: Использование механизмов аттестации и пакетов SDK
       href: use-hsm-with-sdk.md
     - name: Использование пакетов SDK для разработки

@@ -460,6 +460,13 @@
           href: service-fabric-debugging-your-application-java.md
         - name: Локальные мониторинг и диагностика
           href: service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally-linux.md
+    - name: Работа в среде VS Code
+      href: service-fabric-get-started-vs-code.md
+      items:
+        - name: 'Разработка приложений Service Fabric на C# с помощью VS Code'
+          href: service-fabric-develop-csharp-applications-with-vs-code.md
+        - name: Разработка приложений Service Fabric на Java с помощью VS Code
+          href: service-fabric-develop-java-applications-with-vs-code.md
     - name: Миграция из облачных служб
       items:
         - name: Сравнение облачных служб и Service Fabric
@@ -534,10 +541,6 @@
                   href: service-fabric-cluster-creation-via-arm.md
                 - name: Использование кластера с общим именем сертификата
                   href: service-fabric-create-cluster-using-cert-cn.md
-                - name: Включение шифрования дисков Azure для Windows
-                  href: service-fabric-enable-azure-disk-encryption-windows.md
-                - name: Включение шифрования дисков Azure для Linux
-                  href: service-fabric-enable-azure-disk-encryption-linux.md
             - name: Масштаб
               items:
                 - name: Масштабирование вручную

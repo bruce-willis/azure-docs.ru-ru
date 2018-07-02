@@ -25,16 +25,11 @@
   items:
     - name: Определения ролей
       href: role-definitions.md
-    - name: Встроенные роли
-      href: built-in-roles.md
-    - name: Операции с поставщиками ресурсов
-      href: resource-provider-operations.md
     - name: Управление привилегированными пользователями (PIM) для RBAC
       href: pim-azure-resource.md
     - name: Условный доступ для управления Azure
       href: conditional-access-azure-management.md
 - name: Практические руководства
-  expanded: true
   items:
     - name: Управление доступом
       items:
@@ -63,3 +58,17 @@
       href: role-assignments-external-users.md
     - name: Устранение неполадок
       href: troubleshooting.md
+- name: Справочные материалы
+  items:
+    - name: Встроенные роли
+      href: built-in-roles.md
+    - name: Операции с поставщиками ресурсов
+      href: resource-provider-operations.md
+    - name: Ограничения доступа на основе ролей
+      href: '../azure-subscription-service-limits.md#role-based-access-control-limits'
+    - name: Azure PowerShell
+      href: /powershell/module/azurerm.resources
+    - name: Инфраструктура CLI Azure
+      href: /cli/azure/role?view=azure-cli-latest
+    - name: ИНТЕРФЕЙС REST API
+      href: /rest/api/authorization/

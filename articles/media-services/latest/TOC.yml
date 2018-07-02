@@ -35,6 +35,10 @@
   items:
     - name: Активы
       href: assets-concept.md
+    - name: Защита содержимого
+      items:
+        - name: Обзор
+          href: content-protection-overview.md
     - name: Кодирование
       items:
         - name: Обзор
@@ -69,6 +73,10 @@
           href: job-input-from-http-how-to.md
         - name: Локальный файл — .NET
           href: job-input-from-local-file-how-to.md
+    - name: Защита содержимого
+      items:
+        - name: Использование AES-128 — .NET
+          href: protect-with-aes128.md
 - name: Справочные материалы
   items:
     - name: Спецификация OpenAPI (Swagger)
@@ -87,6 +95,12 @@
       href: 'https://docs.microsoft.com/en-us/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest'
     - name: Схемы событий
       href: media-services-event-schemas.md
+    - name: Схемы лицензии DRM
+      items:
+        - name: Шаблон лицензии PlayReady
+          href: playready-license-template-overview.md
+        - name: Шаблон лицензии Widevine
+          href: widevine-license-template-overview.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
