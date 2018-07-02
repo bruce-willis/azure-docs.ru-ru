@@ -145,7 +145,7 @@
           href: search-faceted-navigation.md
         - name: Настройка релевантности
           href: 'https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index'
-        - name: Синонимы (предварительная версия)
+        - name: синонимы;
           href: search-synonyms.md
     - name: Индексирование данных
       items:
