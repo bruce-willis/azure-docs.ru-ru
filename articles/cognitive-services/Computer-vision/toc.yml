@@ -1,11 +1,11 @@
 - name: Документация по API компьютерного зрения
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Что собой представляет компьютерное зрение
       href: Home.md
-- name: Быстрое начало работы
-  expanded: true
+- name: Краткие руководства по API
   items:
     - name: Сводка
       href: QuickStarts/quickstart-summary.md
@@ -97,6 +97,16 @@
           href: QuickStarts/ruby-thumb.md
         - name: Извлечение печатного текста
           href: QuickStarts/ruby-print-text.md
+- name: Краткие руководства по пакетам SDK
+  items:
+    - name: 'C#'
+      items:
+        - name: Анализ изображения
+          href: quickstarts-sdk/csharp-analyze-sdk.md
+        - name: Создание эскизов
+          href: quickstarts-sdk/csharp-thumb-sdk.md
+        - name: Извлечение рукописного текста
+          href: quickstarts-sdk/csharp-hand-text-sdk.md
 - name: Практические руководства
   items:
     - name: Первые приложения компьютерного зрения

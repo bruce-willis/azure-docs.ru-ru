@@ -17,18 +17,6 @@
       href: quickstart-cpp-linux.md
     - name: Начало работы с пакетом SDK для речевых устройств
       href: speech-devices-sdk-qsg.md
-- name: Настройка
-  items:
-    - name: Пользовательские модели речи
-      href: how-to-customize-speech-models.md
-    - name: Настройка голосов
-      href: how-to-customize-voice-font.md
-    - name: Подготовка расшифровок
-      href: prepare-transcription.md
-    - name: Использование пользовательских аудиопотоков
-      href: how-to-use-audio-input-streams.md
-    - name: Настройка слова для активации устройства (пакет SDK для устройств)
-      href: speech-devices-sdk-create-kws.md
 - name: Практические руководства
   items:
     - name: Распознавание речи
@@ -39,8 +27,22 @@
       href: how-to-translate-speech.md
     - name: Получение пакета SDK для речевых устройств
       href: get-speech-devices-sdk.md
-    - name: Пакетное транскрибирование (центры обработки звонков)
+    - name: Пакетное транскрибирование
       href: batch-transcription.md
+- name: Настройка
+  items:
+    - name: Настройка акустических моделей
+      href: how-to-customize-acoustic-models.md
+    - name: Настройка языковых моделей
+      href: how-to-customize-language-model.md
+    - name: Настройка голосов (уникальный голос)
+      href: how-to-customize-voice-font.md
+    - name: Подготовка расшифровок
+      href: prepare-transcription.md
+    - name: Использование пользовательских аудиопотоков
+      href: how-to-use-audio-input-streams.md
+    - name: Настройка слова для активации устройства (пакет SDK для устройств)
+      href: speech-devices-sdk-create-kws.md
 - name: Примеры
   items:
     - name: Скачивание примеров

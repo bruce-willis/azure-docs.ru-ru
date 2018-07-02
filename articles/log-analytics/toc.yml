@@ -39,6 +39,8 @@
       href: log-analytics-data-security.md
     - name: Управление доступом
       href: log-analytics-manage-access.md
+    - name: Общие сведения об агентах
+      href: ../monitoring/monitoring-overview-azure-agents.md
     - name: Мониторинг гибридных сред
       href: log-analytics-concept-hybrid.md
     - name: Функции для поставщиков услуг

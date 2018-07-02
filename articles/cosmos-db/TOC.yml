@@ -118,8 +118,6 @@ items:
                         href: sql-api-java-get-started.md
                       - name: Node.js
                         href: sql-api-nodejs-get-started.md
-                      - name: C++
-                        href: sql-api-cpp-get-started.md
                   - name: Создание веб-приложения
                     items:
                       - name: .NET
@@ -144,10 +142,6 @@ items:
                     href: local-emulator.md
                   - name: Экспорт сертификатов
                     href: local-emulator-export-ssl-certificates.md
-              - name: 6. Интеграция с функциями
-                items:
-                  - name: Триггер HTTP
-                    href: tutorial-functions-http-trigger.md
           - name: Примеры
             items:
               - name: Инфраструктура CLI Azure
@@ -350,26 +344,14 @@ items:
                 href: gremlin-support.md
           - name: Учебники
             items:
-              - name: "1.\_Создание"
-                href: tutorial-develop-graph-dotnet.md
-              - name: "2.\_Запрос"
+              - name: "1.\_Запрос"
                 href: tutorial-query-graph.md
-              - name: "3.\_Глобальное распространение"
-                href: tutorial-global-distribution-graph.md
           - name: Практические руководства
             items:
               - name: Секционирование данных Graph
                 href: graph-partitioning.md
               - name: Управление использованием Обозревателя службы хранилища
                 href: storage-explorer.md
-              - name: Интеграция
-                items:
-                  - name: Подключение к Spark GraphX
-                    href: spark-connector-graph.md
-          - name: Справочные материалы
-            items:
-              - name: .NET
-                href: graph-sdk-dotnet.md
           - name: Ресурсы
             items:
               - name: Управление использованием Обозревателя службы хранилища

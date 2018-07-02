@@ -186,12 +186,6 @@
 ### [Приступая к работе](manage-apps/plan-an-application-integration.md)
 ### [Руководства по интеграции приложений SaaS](saas-apps/tutorial-list.md)
 
-
-### [Обнаружение облачных приложений](manage-apps/cloud-app-discovery.md)
-#### [Создание отчетов о моментальных снимках](manage-apps/cloud-app-discovery-create-snapshot-reports.md)
-#### [Настройка непрерывного создания отчетов](https://docs.microsoft.com/cloud-app-security/discovery-docker)
-#### [Использование настраиваемого средства синтаксического анализа журналов](https://docs.microsoft.com/cloud-app-security/custom-log-parser)
-
 ### [Подготовка пользователей и отзыв подготовки для приложений SaaS](active-directory-saas-app-provisioning.md) 
 #### [Руководства по интеграции приложений](saas-apps/tutorial-list.md) 
 #### [Автоматизация подготовки для приложений с поддержкой SCIM](manage-apps/use-scim-to-provision-users-and-groups.md) 

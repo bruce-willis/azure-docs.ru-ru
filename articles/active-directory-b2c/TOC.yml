@@ -157,6 +157,8 @@
           href: b2clogin.md
         - name: С помощью фильтрации по возрасту
           href: basic-age-gating.md
+        - name: Прямой вход в систему
+          href: direct-signin.md
     - name: Инфраструктура процедур идентификации
       items:
         - name: Пользовательские политики

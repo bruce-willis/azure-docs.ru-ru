@@ -51,6 +51,29 @@
       href: ../storage/common/storage-security-guide.md?toc=%2fazure%2fsecurity%2ftoc.json
 - name: Платформа и инфраструктура
   items:
+    - name: Безопасность инфраструктуры
+      href: azure-security-infrastructure.md
+      items:
+        - name: Физическая безопасность
+          href: azure-physical-security.md
+        - name: Доступность
+          href: azure-infrastructure-availability.md
+        - name: Компоненты и границы
+          href: azure-infrastructure-components.md
+        - name: Сетевая архитектура
+          href: azure-infrastructure-network.md
+        - name: Рабочая сеть
+          href: azure-production-network.md
+        - name: База данных SQL
+          href: azure-infrastructure-sql.md
+        - name: Операции
+          href: azure-infrastructure-operations.md
+        - name: Мониторинг
+          href: azure-infrastructure-monitoring.md
+        - name: Целостность
+          href: azure-infrastructure-integrity.md
+        - name: Защита данных
+          href: azure-protection-of-customer-data.md
     - name: Антивредоносное ПО Майкрософт
       href: azure-security-antimalware.md
     - name: Безопасность IaaS

@@ -61,13 +61,13 @@
           href: backup-mabs-protection-matrix.md
         - name: Установка и обновление
           items:
-            - name: Подготовка рабочих нагрузок Azure Backup Server на портале Azure
+            - name: Установка Azure Backup Server
               href: backup-azure-microsoft-azure-backup.md
-            - name: Добавление хранилища для Azure Backup Server
+            - name: Добавление хранилища.
               href: backup-mabs-add-storage.md
-            - name: "Обновление Azure Backup Server до версии\_2"
+            - name: Обновление до версии 2
               href: backup-mabs-upgrade-to-v2.md
-            - name: Автоматическая установка Azure Backup Server
+            - name: Автоматическая установка
               href: backup-mabs-unattended-install.md
         - name: Защита рабочих нагрузок
           items:
