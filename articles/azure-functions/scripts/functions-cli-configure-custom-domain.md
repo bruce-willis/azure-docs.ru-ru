@@ -13,19 +13,19 @@ ms.workload: na
 ms.devlang: azurecli
 ms.tgt_pltfrm: na
 ms.topic: sample
-ms.date: 06/01/2017
+ms.date: 06/26/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: d2efd0891cb0010aac6135ce190ad77667f78efd
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 7d3fc71bc53e85fa7555dbee5ee79b3f06f27fe8
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29843992"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960344"
 ---
 # <a name="map-a-custom-domain-to-a-function-app"></a>Сопоставление личного домена с приложением-функцией
 
-Этот пример сценария создает приложение-функцию со связанными ресурсами, а затем сопоставляет с ним `www.<yourdomain>`. Для сопоставления с личным доменом приложение-функция должно быть создано в плане службы приложений, а не в плане потребления. Функции Azure поддерживают сопоставление личного домена только с помощью записи A.
+Этот пример сценария создает приложение-функцию со связанными ресурсами, а затем сопоставляет с ним `www.<yourdomain>`. При размещении приложения-функции в [плане служб приложений](../functions-scale.md#app-service-plan) личный домен можно сопоставить с помощью CNAME или записи A. Для приложений-функций в [плане потребления](../functions-scale.md#consumption-plan) поддерживается только сопоставление с помощью CNAME.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

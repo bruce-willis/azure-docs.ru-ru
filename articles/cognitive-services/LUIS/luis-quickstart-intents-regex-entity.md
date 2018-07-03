@@ -9,12 +9,12 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: v-geberr
-ms.openlocfilehash: c31e7d130d02ab6b0fad7577026e557692c2b60e
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 317d5b37b90f6c436e3cecf0486d587f54960598
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285956"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36316548"
 ---
 # <a name="tutorial-use-regular-expression-entity"></a>Руководство по использованию сущности регулярного выражения
 В этом руководстве создается приложение, которое демонстрирует, как извлечь согласованно отформатированные данные из фразы с помощью сущности **регулярного выражения**.
@@ -28,10 +28,10 @@ ms.locfileid: "36285956"
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения Human Resources из руководства, где описывается [использование предварительно созданных намерений области](luis-tutorial-prebuilt-intents-entities.md), [импортируйте](create-new-app.md#import-new-app) JSON-файл из репозитория GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-prebuilts-HumanResources.json) в новое приложение на веб-сайте [LUIS][LUIS].
+Если у вас нет приложения Human Resources, созданного с помощью руководства по [личным доменам](luis-tutorial-prebuilt-intents-entities.md) предварительно созданных сущностей, [импортируйте](create-new-app.md#import-new-app) файл JSON из репозитория GitHub с [примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-prebuilts-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
 
 Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `regex`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
@@ -244,6 +244,3 @@ LUIS помечает фразы, добавляемые в намерение. 
 > [!div class="nextstepaction"]
 > [Руководство по возвращению данных из сущности KeyPhrase](luis-quickstart-intent-and-key-phrase.md)
 
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
-[LUIS-regions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#publishing-regions

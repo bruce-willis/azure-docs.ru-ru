@@ -1,6 +1,6 @@
 ---
 title: Управление доступом с помощью RBAC и портала Azure | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и портала Azure. Под управлением также подразумевается вывод списка доступа, предоставление и удаление доступа.
+description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и портала Azure. Здесь содержатся инструкции по выводу списка доступа, предоставлению и запрету доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/13/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 8f2c77a366c96455016894c042868d080551bc6a
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 0aec1f50225bea25d5f68289c22ccc7b69703f7a
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295870"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317952"
 ---
 # <a name="manage-access-using-rbac-and-the-azure-portal"></a>Управление доступом с помощью RBAC и портала Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "36295870"
 
 ## <a name="grant-access"></a>Предоставление доступа
 
-Чтобы в RBAC предоставить доступ, нужно создать назначение ролей.
+При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
 
 ### <a name="create-a-role-assignment-at-a-subscription-scope"></a>Создание назначения роли на в области действия подписки
 

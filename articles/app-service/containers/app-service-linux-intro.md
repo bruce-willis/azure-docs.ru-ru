@@ -16,12 +16,12 @@ ms.topic: overview
 ms.date: 02/16/2017
 ms.author: wesmc
 ms.custom: mvc
-ms.openlocfilehash: dab9e7b4ee62624ba32b7b6b41d0dee5ac01af09
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e40283abd418552f296f7539e554e0ad5232e49a
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598323"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031698"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -76,7 +76,7 @@ ms.locfileid: "34598323"
 
 Некоторые функции, такие как интеграция виртуальной сети, аутентификация Azure Active Directory, сторонняя аутентификация или расширения сайтов Kudu, в настоящее время недоступны. После того, как эти функции станут доступны, мы обновим нашу документацию и блог, добавив информацию об изменениях.
 
-Служба приложений в Linux поддерживается только в рамках планов службы приложений уровня ["Базовый" и "Стандартный"](https://azure.microsoft.com/pricing/details/app-service/plans/). Уровни ["Бесплатный" и "Общий"](https://azure.microsoft.com/pricing/details/app-service/plans/) недоступны. Нельзя создать Веб-приложение для контейнеров в плане службы приложений, где уже размещены веб-приложения не под управлением Linux. Это текущее ограничение, которое предотвращает одновременное размещение приложений Windows и Linux в одной группе ресурсов.
+Служба приложений на платформе Linux поддерживается только в рамках планов службы приложений ["Базовый", "Стандартный" и "Премиум"](https://azure.microsoft.com/pricing/details/app-service/plans/). Уровни ["Бесплатный" и "Общий"](https://azure.microsoft.com/pricing/details/app-service/plans/) недоступны. Функция [Linux в ASE (изолированный уровень)](https://blogs.msdn.microsoft.com/appserviceteam/2018/05/07/announcing-the-linux-on-app-service-environment-public-preview/) доступна в предварительной версии и не поддерживается для производственных рабочих нагрузок. Вы не можете создавать веб-приложения для контейнеров в рамках плана службы приложений, в котором уже размещены веб-приложения под управлением платформ, отличных от Linux. Кроме того, сейчас недопустимо комбинировать приложения Windows и Linux в одной и той же группе ресурсов.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

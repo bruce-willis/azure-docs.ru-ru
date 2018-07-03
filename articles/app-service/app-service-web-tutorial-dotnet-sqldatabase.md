@@ -1,10 +1,10 @@
 ---
 title: Создание приложения ASP.NET в Azure с подключением к базе данных SQL | Документация Майкрософт
-description: Узнайте, как создать в Azure приложение ASP.NET с подключением к базе данных SQL.
+description: Узнайте, как развернуть приложение C# ASP.NET с базой данных SQL Server в Azure.
 services: app-service\web
-documentationcenter: nodejs
+documentationcenter: ''
 author: cephalin
-manager: erikre
+manager: cfowler
 editor: ''
 ms.assetid: 03c584f1-a93c-4e3d-ac1b-c82b50c75d3e
 ms.service: app-service-web
@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: csharp
 ms.topic: tutorial
-ms.date: 06/09/2017
+ms.date: 06/25/2018
 ms.author: cephalin
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 4fd1381594c77d8bba92027fee06c08376ee903b
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: b08033c53185e6229e6fa368a3456749e19eb1f0
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31789254"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37021329"
 ---
 # <a name="tutorial-build-an-aspnet-app-in-azure-with-sql-database"></a>Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL
 
@@ -44,21 +44,17 @@ ms.locfileid: "31789254"
 
 Для работы с этим руководством:
 
-* Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
-  - **ASP.NET и веб-разработка;**
-  - **разработка Azure.**
-
-  ![ASP.NET и веб-разработка, разработка Azure (в разделе Web & Cloud (Сеть и облако))](media/app-service-web-tutorial-dotnet-sqldatabase/workloads.png)
+Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
 Если вы уже установили Visual Studio, добавьте в него рабочие нагрузки. Для этого последовательно выберите **Инструменты** > **Get Tools and Features (Получить инструменты и функции)**.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
-[Загрузите пример проекта](https://github.com/Azure-Samples/dotnet-sqldb-tutorial/archive/master.zip).
-
+<a name="-download-the-sample-projecthttpsgithubcomazure-samplesdotnet-sqldb-tutorialarchivemasterzip"></a>-[Скачайте пример проекта](https://github.com/Azure-Samples/dotnet-sqldb-tutorial/archive/master.zip).
+-
 Извлеките (распакуйте) файл *dotnet-sqldb-tutorial-master.zip*.
 
-Этот пример проекта содержит простое MVC-приложение CRUD [ASP.NET](https://www.asp.net/mvc), созданное на основе [Entity Framework Code First](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
+Этот пример проекта содержит простое CRUD-приложение [ASP.NET MVC](https://www.asp.net/mvc), созданное на основе [Entity Framework Code First](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
 ### <a name="run-the-app"></a>Запуск приложения
 
@@ -86,20 +82,20 @@ ms.locfileid: "31789254"
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
-В диалоговом окне **Создать службу приложений** щелкните **Добавить новую учетную запись**, а затем выполните вход в подписку Azure. Если вы уже вошли в учетную запись Майкрософт, проверьте, содержит ли она подписку Azure. Если подписки нет, щелкните ее, чтобы добавить правильную учетную запись.
+В диалоговом окне **Создать службу приложений** щелкните **Добавить новую учетную запись**, а затем выполните вход в подписку Azure. Если вы уже вошли в учетную запись Майкрософт, проверьте, содержит ли она подписку Azure. Если подписки нет, щелкните ее, чтобы добавить правильную учетную запись. 
+
+> [!NOTE]
+> Если вы уже выполнили вход, пока не нажимайте кнопку **Создать**.
+>
+>
    
 ![Вход в Azure](./media/app-service-web-tutorial-dotnet-sqldatabase/sign-in-azure.png)
-
-После того как вы войдете в систему, вы будете готовы создать все ресурсы, необходимые для веб-приложения Azure в этом диалоговом окне.
 
 ### <a name="configure-the-web-app-name"></a>Настройка имени веб-приложения
 
 Вы можете использовать созданное имя веб-приложения или присвоить ему уникальное имя (допустимые символы: `a-z`, `0-9` и `-`). Это имя используется как часть URL-адреса по умолчанию для приложения (`<app_name>.azurewebsites.net`, где `<app_name>` — имя вашего веб-приложения). Оно должно быть глобально уникальным среди всех приложений Azure. 
 
 ![Диалоговое окно "Создание службы приложений"](media/app-service-web-tutorial-dotnet-sqldatabase/wan.png)
-
-> [!NOTE]
-> Не нажимайте кнопку **Создать**. Сначала необходимо настроить базу данных SQL.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -131,13 +127,9 @@ ms.locfileid: "31789254"
 
 Перед созданием базы данных необходимо сначала создать [логический сервер базы данных SQL Azure](../sql-database/sql-database-features.md). Логический сервер содержит группу баз данных, которыми можно управлять как группой.
 
-Выберите **Обзор дополнительных служб Azure**.
+Щелкните **Создать базу данных SQL**.
 
-![Настройка имени веб-приложения](media/app-service-web-tutorial-dotnet-sqldatabase/web-app-name.png)
-
-На вкладке **Службы** щелкните значок **+** рядом с **базой данных SQL**. 
-
-![На вкладке "Службы" щелкните значок "плюс" (+) рядом с базой данных SQL.](media/app-service-web-tutorial-dotnet-sqldatabase/sql.png)
+![Создание базы данных SQL](media/app-service-web-tutorial-dotnet-sqldatabase/web-app-name.png)
 
 В окне **Настройка базы данных SQL** нажмите кнопку **Создать** рядом с **SQL Server**. 
 
@@ -164,7 +156,7 @@ ms.locfileid: "31789254"
 
 ![Настройка базы данных SQL](media/app-service-web-tutorial-dotnet-sqldatabase/configure-sql-database.png)
 
-В диалоговом окне **Создать службу приложений** отобразятся созданные ресурсы. Нажмите кнопку **Создать**. 
+В диалоговом окне **Создать службу приложений** отобразятся настроенные ресурсы. Нажмите кнопку **Создать**. 
 
 ![Созданные ресурсы](media/app-service-web-tutorial-dotnet-sqldatabase/app_svc_plan_done.png)
 
@@ -314,7 +306,7 @@ public ActionResult Create([Bind(Include = "Description,CreatedDate,Done")] Todo
 
 Как и прежде, щелкните правой кнопкой мыши свой проект и выберите **Опубликовать**.
 
-Щелкните **Параметры**, чтобы открыть мастер публикации.
+Щелкните **Настройка**, чтобы открыть параметры публикации.
 
 ![Открытие параметров публикации](./media/app-service-web-tutorial-dotnet-sqldatabase/publish-settings.png)
 

@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 0507208e58323fd31bb7c6cdb3a293ec0179cabe
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: efd19393a661a48a566e85a058dad071c3bdb63c
+ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823917"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36945995"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы в Azure Dev Spaces с Node.js
 
@@ -32,7 +32,7 @@ ms.locfileid: "34823917"
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 > [!IMPORTANT]
-> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.33 или новее.
+> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.38 или выше.
 
 [!INCLUDE[](includes/sign-into-azure.md)]
 
@@ -68,7 +68,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 Что произошло? Изменение файлов содержимого, таких как HTML и CSS, не требует перезапуска процесса Node.js, поэтому активная команда `azds up` автоматически синхронизирует любые измененные файлы содержимого непосредственно в запущенный контейнер в Azure, тем самым обеспечивая быстрый способ проверки изменений содержимого.
 
 ### <a name="test-from-a-mobile-device"></a>Тестирование с мобильного устройства
-Если вы откроете веб-приложение на мобильном устройстве, вы заметите, что пользовательский интерфейс не отображается должным образом на устройстве небольшого размера.
+Откройте веб-приложение на мобильном устройстве с помощью общедоступного URL-адреса для webfrontend. Чтобы не вводить длинный адрес, можно скопировать и отправить URL-адрес с рабочего стола на устройство. Когда веб-приложение загрузится на мобильном устройстве, вы заметите, что пользовательский интерфейс не отображается должным образом на устройстве небольшого размера.
 
 Чтобы устранить эту проблему, нужно добавить метатег `viewport`:
 1. Откройте файл `./public/index.html`.
@@ -113,7 +113,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 1. Чтобы открыть представление отладки, щелкните значок "Отладка" на **панели действия** сбоку VS Code.
 1. Выберите **Launch Program (AZDS)** (Запустить программу (AZDS)) как активную конфигурацию отладки.
 
-![](media/get-started-node/debug-configuration-nodejs.png)
+![](media/get-started-node/debug-configuration-nodejs2.png)
 
 > [!Note]
 > Если вы не видите никаких команд Azure Dev Spaces на палитре команд, убедитесь, что вы [установили расширение VS Code для Azure Dev Spaces](get-started-nodejs.md#get-kubernetes-debugging-for-vs-code).

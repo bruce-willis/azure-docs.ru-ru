@@ -7,104 +7,98 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/25/2018
 ms.author: v-geberr
-ms.openlocfilehash: d000637312619fc493e2f7bad8e8edf0d8d0d94b
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: ac959989dbe64460025bfba84df7b6f22c3c1c04
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265340"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36958435"
 ---
 # <a name="tutorial-create-app-that-returns-sentiment-along-with-intent-prediction"></a>Руководство по созданию приложения, которое возвращает тональность и прогноз намерения
 В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз.
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Основные сведения об иерархических сущностях и обученных по контексту дочерних элементах. 
-> * Создание посвященного путешествиям приложения LUIS с намерением Bookflight.
-> * Добавление намерения _None_ и примеров фраз.
-> * Добавление иерархической сущности расположения с дочерними элементами исходного и целевого расположений.
+> * Понимание анализа тональности.
+> * Использование приложения LUIS в домене управления персоналом. 
+> * Добавление анализа тональности.
 > * Тестирование и публикация приложения.
-> * Запрос конечной точки приложения, чтобы увидеть ответ JSON LUIS, в том числе иерархические дочерние элементы. 
+> * Запрос конечной точки приложения для просмотра ответа JSON LUIS. 
 
 Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+
+## <a name="before-you-begin"></a>Перед началом работы
+Если у вас нет приложения для управления персоналом, созданного с помощью руководства по [сущностям keyPhrase](luis-quickstart-intent-and-key-phrase.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-keyphrase-HumanResources.json).
+
+Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 Анализ тональности — это возможность определить, является ли фраза пользователя позитивной, негативной или нейтральной. 
 
 Ниже приведены примеры фраз, передающие тональность.
 
-|Тональность и оценка|Фраза|
-|:--|--|
-|позитивная тональность — 0,89 |Суп и салат были великолепны.|
-|негативная тональность — 0,07 |Мне не понравилась закуска во время обеда.|
+|Мнение|Оценка|Фраза|
+|:--|:--|:--|
+|Позитивная|0,91 |Тарас Хмелев проделал отличную работу на презентации в Париже.|
+|Позитивная|0,84 |Сотрудник jill-jones@mycompany.com отлично поработал над презентацией Parker.|
 
-Анализ тональности — это параметр приложения, который применяется к каждой фразе. Вам не нужно находить слова, указывающие тональность во фразе, и отмечать их. LUIS будет делать это за вас.
+Анализ тональности — это параметр приложения, который применяется к каждой фразе. Вам не нужно искать и выделять слова, указывающие на тональность в каждой фразе, так как анализ тональности применяется ко всей фразе целиком. 
 
-## <a name="create-a-new-app"></a>Создание нового приложения
-1. Выполните вход на веб-сайте [LUIS][LUIS]. Войдите в [регион][LUIS-regions], где нужно опубликовать конечные точки LUIS.
+## <a name="add-employeefeedback-intent"></a>Добавление намерения EmployeeFeedback 
+Добавьте новое намерение, чтобы получить отзывы о сотрудниках от других работников компании. 
 
-2. На веб-сайте [LUIS][LUIS] выберите **Create new app** (Создать приложение). 
+1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-    [![](media/luis-quickstart-intent-and-sentiment-analysis/app-list.png "Снимок экрана страницы со списком приложений")](media/luis-quickstart-intent-and-sentiment-analysis/app-list.png#lightbox)
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-sentiment-analysis/hr-first-image.png)](./media/luis-quickstart-intent-and-sentiment-analysis/hr-first-image.png#lightbox)
 
-3. В диалоговом окне **создания приложения** назовите приложение `Restaurant Reservations With Sentiment` и нажмите кнопку **Done** (Готово). 
+2. Выберите **Create new intent**. (Создать намерение).
 
-    ![Изображение диалогового окна создания приложения](./media/luis-quickstart-intent-and-sentiment-analysis/create-app-ddl.png)
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-sentiment-analysis/hr-create-new-intent.png)](./media/luis-quickstart-intent-and-sentiment-analysis/hr-create-new-intent.png#lightbox)
 
-    Когда приложение будет создано, в LUIS отобразится список намерений, который содержит намерение None.
+3. В качестве имени нового намерения введите `EmployeeFeedback`.
 
-    [![](media/luis-quickstart-intent-and-sentiment-analysis/intents-list.png "Снимок экрана страницы списка намерений")](media/luis-quickstart-intent-and-sentiment-analysis/intents-list.png#lightbox)
+    ![Диалоговое окно для создания намерения с именем EmployeeFeedback](./media/luis-quickstart-intent-and-sentiment-analysis/hr-create-new-intent-ddl.png)
 
-## <a name="add-a-prebuilt-domain"></a>Добавление предварительно созданной области
-Добавьте предварительно созданную область, чтобы быстро добавлять намерения, сущности и помеченные фразы.
+4. Добавьте несколько выражений, чтобы указать на хорошую работу сотрудника или область, в которой требуются улучшения:
 
-1. Выберите **Prebuilt Domains** (Предварительно созданные области) в меню слева.
+    Помните, что в этом приложении для управления персоналом сотрудники определяются в сущности списка `Employee` по имени, электронной почте, добавочному номеру телефона, номеру мобильного телефона и номеру социального страхования в США. 
 
-    [ ![Снимок экрана с кнопкой "Prebuilt Domains" (Предварительно созданные области)](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-button-inline.png)](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-button-expanded.png#lightbox)
+    |Высказывания|
+    |--|
+    |Сотрудник 425-555-1212 хорошо проявил себя при организации встречи для коллеги, вернувшейся из декретного отпуска.|
+    |Сотрудник 234-56-7891 хорошо проявил себя, оказав поддержку коллеге во время траура.|
+    |Сотрудник jill-jones@mycompany.com не располагал всеми необходимыми счетами для оформления документов.|
+    |Сотрудник john.w.smith@mycompany.com вернул необходимые бланки с опозданием на месяц и без подписей.|
+    |Сотрудник x23456 не явился на важную выездную встречу маркетологов.|
+    |Сотрудник x12345 пропустил собрание для обсуждения показателей за июнь.|
+    |Мария Шевченко подготовила прекрасное коммерческое предложение для встречи в Лондоне.|
+    |Тарас Хмелев проделал отличную работу на презентации в Мюнхене.|
 
-2. Нажмите кнопку **Add domain** (Добавить область) для предварительно созданной области **RestaurantReservation**. Подождите, пока область не будет добавлена.
-
-    [ ![Снимок экрана со списком предварительно созданных областей](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-list-inline.png)](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-list-expanded.png#lightbox)
-
-3. В левой области навигации выберите **Intents** (Намерения). Эта предварительно созданная область имеет одно намерение.
-
-    [ ![Снимок экрана списка предварительно созданных областей с выделенным пунктом "Intents" (Намерения) в области навигации слева](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-list-domain-added-expanded.png)](./media/luis-quickstart-intent-and-sentiment-analysis/prebuilt-domains-list-domain-added-expanded.png#lightbox)
-
-4.  Выберите намерение **RestaurantReservation.Reserve**. 
-
-    [ ![Снимок экрана списка намерений с выделенным намерением RestaurantReservation.Reserve](./media/luis-quickstart-intent-and-sentiment-analysis/select-intent.png)](./media/luis-quickstart-intent-and-sentiment-analysis/select-intent.png#lightbox)
-
-5. Переключитесь на **представление сущностей**, чтобы просмотреть фразы с помеченными сущностями конкретной области.
-
-    [ ![Снимок экрана с намерением RestaurantReservation.Reserve и представлением сущностей, переключенным на представление лексем](./media/luis-quickstart-intent-and-sentiment-analysis/utterance-list-inline.png)](./media/luis-quickstart-intent-and-sentiment-analysis/utterance-list-expanded.png#lightbox)
+    [ ![Снимок экрана с приложением LUIS и примерами фраз в намерении EmployeeFeedback](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png)](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png#lightbox)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
+LUIS не располагает сведениями о новом намерении и его примерных фразах, пока не будет проведено обучение. 
 
 1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
 
-    ![Снимок экрана, где выделена кнопка "Train" (Обучить)](./media/luis-quickstart-intent-and-sentiment-analysis/train-button-expanded.png)
+    ![Снимок экрана, где выделена кнопка "Train" (Обучить)](./media/luis-quickstart-intent-and-sentiment-analysis/train-button.png)
 
 2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
-    ![Снимок экрана панели уведомлений, свидетельствующей об успешном обучении ](./media/luis-quickstart-intent-and-sentiment-analysis/trained-expanded.png)
+    ![Снимок экрана панели уведомлений, свидетельствующей об успешном обучении ](./media/luis-quickstart-intent-and-sentiment-analysis/hr-trained-inline.png)
 
 ## <a name="configure-app-to-include-sentiment-analysis"></a>Настройка приложения для включения анализа тональности
-Анализ тональности можно включить на странице **публикации**. 
+Настройте анализ тональности на странице **публикации**. 
 
 1. Выберите **Publish** (Публикация) на правой верхней панели навигации.
 
-    ![Снимок экрана страницы намерений с выделенной кнопкой публикации ](./media/luis-quickstart-intent-and-sentiment-analysis/publish-expanded.png)
+    ![Снимок экрана страницы намерений с выделенной кнопкой публикации ](./media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-button-in-top-nav-highlighted.png)
 
-2. Выберите **Enable Sentiment Analysis** (Включить анализ тональности).
+2. Выберите **Enable Sentiment Analysis** (Включить анализ тональности). Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
 
-    ![Снимок экрана страницы публикации с выделенным параметром "Enable Sentiment Analysis" (Включить анализ тональности) ](./media/luis-quickstart-intent-and-sentiment-analysis/enable-sentiment-expanded.png)
-
-3. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-    [![](media/luis-quickstart-intent-and-sentiment-analysis/publish-to-production-inline.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-sentiment-analysis/publish-to-production-expanded.png#lightbox)
+    [![](media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-to-production-expanded.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-to-production-expanded.png#lightbox)
 
 4. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
@@ -112,34 +106,102 @@ ms.locfileid: "36265340"
 
 1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
 
-    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](media/luis-quickstart-intent-and-sentiment-analysis/endpoint-url-inline.png)
+    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](media/luis-quickstart-intent-and-sentiment-analysis/hr-endpoint-url-inline.png)
 
-2. Перейдите в конец URL-адреса и введите `Reserve table for  10 on upper level away from kitchen`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `RestaurantReservation.Reserve` с извлечением анализа тональности.
+2. Перейдите в конец URL-адреса и введите `Jill Jones work with the media team on the public portal was amazing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
 
 ```
 {
-  "query": "Reserve table for 10 on upper level away from kitchen",
+  "query": "Jill Jones work with the media team on the public portal was amazing",
   "topScoringIntent": {
-    "intent": "RestaurantReservation.Reserve",
-    "score": 0.9926384
+    "intent": "EmployeeFeedback",
+    "score": 0.4983256
   },
   "intents": [
     {
-      "intent": "RestaurantReservation.Reserve",
-      "score": 0.9926384
+      "intent": "EmployeeFeedback",
+      "score": 0.4983256
+    },
+    {
+      "intent": "MoveEmployee",
+      "score": 0.06617523
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.04631853
+    },
+    {
+      "intent": "ApplyForJob",
+      "score": 0.0103248553
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.007531875
+    },
+    {
+      "intent": "FindForm",
+      "score": 0.00344597152
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.00337914471
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.0026357458
     },
     {
       "intent": "None",
-      "score": 0.00961109251
+      "score": 0.00214573368
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.00157622492
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 7.379545E-05
     }
   ],
-  "entities": [],
+  "entities": [
+    {
+      "entity": "jill jones",
+      "type": "Employee",
+      "startIndex": 0,
+      "endIndex": 9,
+      "resolution": {
+        "values": [
+          "Employee-45612"
+        ]
+      }
+    },
+    {
+      "entity": "media team",
+      "type": "builtin.keyPhrase",
+      "startIndex": 25,
+      "endIndex": 34
+    },
+    {
+      "entity": "public portal",
+      "type": "builtin.keyPhrase",
+      "startIndex": 43,
+      "endIndex": 55
+    },
+    {
+      "entity": "jill jones",
+      "type": "builtin.keyPhrase",
+      "startIndex": 0,
+      "endIndex": 9
+    }
+  ],
   "sentimentAnalysis": {
-    "label": "neutral",
-    "score": 0.5
+    "label": "positive",
+    "score": 0.8694164
   }
 }
 ```
+
+Анализ тональности является положительным с оценкой 0,86. 
 
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
 Это приложение с включенным анализом тональности распознало намерение запроса на естественном языке и вернуло извлеченные данные вместе с общей тональностью в виде оценки. 

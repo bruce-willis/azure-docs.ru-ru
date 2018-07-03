@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 05/07/2018
 ms.author: jgao
-ms.openlocfilehash: 7e01915a63e0e260dc85893bdf65cf7b86000cef
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: a18777694677ab4958c88b5610844726f80868cb
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33771224"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054006"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Apache Spark в Azure HDInsight
 
@@ -43,8 +43,8 @@ Spark предоставляет примитивы для кластерных 
 | Интерфейсы API REST |Кластеры Spark в HDInsight включают [Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), сервер заданий Spark на основе API REST, который позволяет пользователям удаленно отправлять задания и отслеживать их. |
 | Поддержка хранилища озера данных Azure | Кластеры Spark в HDInsight могут использовать Azure Data Lake Store как основное и дополнительное хранилище. Дополнительные сведения о Data Lake Store см. в [обзоре Azure Data Lake Store](../../data-lake-store/data-lake-store-overview.md). |
 | Интеграция со службами Azure |Кластер Spark в HDInsight поставляется с соединителем для концентраторов событий Azure. Вы можете создавать приложения потоковой передачи с помощью концентраторов событий (в дополнение к системе [Kafka](http://kafka.apache.org/), которая уже входит в состав Spark). |
-| Поддержка R Server | В кластере HDInsight Spark можно настроить R Server для выполнения распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Начало работы с кластером R Server в Azure HDInsight](../r-server/r-server-get-started.md). |
-| Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. Дополнительные сведения см. в статьях [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md) и [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для Eclipse](apache-spark-eclipse-tool-plugin.md).|
+| Поддержка ML Server | Поддержка ML Server в HDInsight предоставляется в рамках типа кластера **Служб машинного обучения**. В кластере Служб машинного обучения можно настроить выполнение распределенных вычислений в среде R со скоростью, заявленной для кластера Spark. Дополнительные сведения см. в статье [Начало работы с кластером R Server в Azure HDInsight](../r-server/r-server-get-started.md). |
+| Интеграция со сторонними IDE | HDInsight предоставляет несколько подключаемых модулей IDE, которые можно использовать для создания приложений и их отправки в кластер HDInsight Spark. Дополнительные сведения см. в статьях [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md), [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md) и [Создание приложений Spark для кластера HDInsight с помощью набора средств Azure для Eclipse](apache-spark-eclipse-tool-plugin.md).|
 | Параллельные запросы |Кластеры Spark в HDInsight поддерживают параллельные запросы. Благодаря этому несколько запросов от одного пользователя или несколько запросов от разных пользователей и из различных приложений могут использовать одни и те же ресурсы кластера. |
 | Кэширование на накопители SSD |Можно выбрать кэширование данных в памяти или на накопители SSD, подключенные к узлам кластера. Кэширование в память обеспечивает наилучшую производительность запросов, однако может оказаться ресурсоемким. Кэширование на накопители SSD предоставляет возможность повысить производительность запросов без необходимости создания кластера такого размера, который необходим для размещения всего набора данных в памяти. |
 | Интеграция со средствами бизнес-аналитики |В состав кластеров Spark для HDInsight входят соединители для инструментов бизнес-аналитики, таких как [Power BI](http://www.powerbi.com/) для анализа данных. |
@@ -109,3 +109,4 @@ SparkContext подключается к главному узлу Spark и от
 В этой обзорной статье вы получили некоторые основные сведения об Apache Spark в Azure HDInsight. Из следующей статьи вы узнаете, как создать кластер HDInsight Spark и выполнить некоторые запросы Spark SQL.
 
 - [Создание кластера Apache Spark в Azure HDInsight](./apache-spark-jupyter-spark-sql.md)
+

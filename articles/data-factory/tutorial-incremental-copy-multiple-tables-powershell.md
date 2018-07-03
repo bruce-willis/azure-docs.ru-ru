@@ -3,7 +3,7 @@ title: Добавочное копирование нескольких табл
 description: В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure.
 services: data-factory
 documentationcenter: ''
-author: linda33wj
+author: dearandyxu
 manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/22/2018
-ms.author: jingwang
-ms.openlocfilehash: 8f59ffb2011ad43173881d4ced231e4820fcf5f8
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.author: yexu
+ms.openlocfilehash: 73d6039624a52ae06d8cf74c386bf0d12d9b65d9
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30184512"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046312"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -27,7 +27,7 @@ ms.locfileid: "30184512"
 
 > [!div class="checklist"]
 > * подготовите исходное и конечное хранилища данных;
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создайте локальную среду выполнения интеграции.
 > * Установка среды выполнения интеграции. 
 > * создадите связанные службы; 
@@ -37,9 +37,6 @@ ms.locfileid: "30184512"
 > * Добавление или обновление данных в исходных таблицах.
 > * Повторный запуск конвейера и выполнение его мониторинга.
 > * Просмотр окончательных результатов.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных Azure, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, ознакомьтесь с [документацией по фабрике данных версии 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 ## <a name="overview"></a>Обзор
 Ниже приведены важные действия для создания этого решения. 
@@ -228,7 +225,7 @@ END
 ### <a name="azure-powershell"></a>Azure PowerShell
 Чтобы установить новые модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`. 
    
      ```powershell
@@ -271,7 +268,7 @@ END
     The specified Data Factory name 'ADFIncMultiCopyTutorialFactory' is already in use. Data Factory names must be globally unique.
     ```
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль участника, владельца либо администратора подписки Azure.
-* Сейчас фабрика данных версии 2 позволяет создавать фабрики данных только в восточной части США, восточной части США 2 и Западной Европе. Хранилища данных (служба хранилища Azure, база данных SQL и т. д.) и вычисления (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Сейчас служба "Фабрика данных" позволяет создавать фабрики данных только в восточной части США, восточной части США 2 и Западной Европе. Хранилища данных (служба хранилища Azure, база данных SQL и т. д.) и вычисления (Azure HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 [!INCLUDE [data-factory-create-install-integration-runtime](../../includes/data-factory-create-install-integration-runtime.md)]
 
@@ -877,7 +874,7 @@ project_table   2017-10-01 00:00:00.000
 
 > [!div class="checklist"]
 > * подготовите исходное и конечное хранилища данных;
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создание локальной среды выполнения интеграции (IR).
 > * Установка среды выполнения интеграции.
 > * создадите связанные службы; 

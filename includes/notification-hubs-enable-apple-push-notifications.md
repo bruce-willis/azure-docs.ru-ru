@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/11/2018
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 08ff4b2190b26471d7b1ac1850ce89f889b8c256
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 10ccb80dd74606d2ad40ab5d7993aed8cd71725e
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33814736"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36329677"
 ---
 ## <a name="generate-the-certificate-signing-request-file"></a>Создание файла запроса на подпись сертификата
 Служба push-уведомлений Apple (APNS) использует сертификаты для аутентификации push-уведомлений. Следуйте приведенным указаниям, чтобы создать сертификата push-уведомлений, необходимый для отправки и получения уведомлений. Дополнительные сведения об этих понятиях см. в официальной документации по [Службе push-уведомлений Apple](http://go.microsoft.com/fwlink/p/?LinkId=272584).
@@ -38,7 +38,7 @@ ms.locfileid: "33814736"
 ## <a name="register-your-app-for-push-notifications"></a>Регистрация приложения для работы с push-уведомлениями
 Чтобы иметь возможность отправлять push-уведомления в приложение iOS, необходимо зарегистрировать ваше приложение в системе Apple, а также зарегистрировать его для получения push-уведомлений.  
 
-1. Если ваше приложение еще не зарегистрировано, перейдите на <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">портал подготовки iOS</a> в центре разработчиков Apple, выполните вход с использованием вашего идентификатора Apple, щелкните **Identifiers** (Идентификаторы), а затем — **App IDs** (Идентификаторы приложений) и, наконец, нажмите кнопку **+**, чтобы зарегистрировать новое приложение.
+1. Если ваше приложение еще не зарегистрировано, перейдите на <a href="http://go.microsoft.com/fwlink/p/?LinkId=272456" target="_blank">портал подготовки iOS</a> в центре разработчиков Apple, выполните вход с использованием вашего идентификатора Apple, щелкните **Identifiers** (Идентификаторы) и **App IDs** (Идентификаторы приложений), а затем нажмите кнопку **+**, чтобы зарегистрировать новое приложение.
    
       ![](./media/notification-hubs-enable-apple-push-notifications/notification-hubs-ios-appids.png)
       

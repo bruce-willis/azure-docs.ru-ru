@@ -15,12 +15,12 @@ ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 75139e39c3391a7662e3d02ee8d56463ac9fcc7a
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: e57a2e72479d36908ef1e9f537506bb67ae311fe
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31406564"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048413"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство. Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "31406564"
 
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью фабрики данных версии 2](../quickstart-create-data-factory-dot-net.md).
+> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", см. с [краткое руководство по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
 
 Из этой статьи вы узнаете, как создать свою первую фабрику данных с помощью [портала Azure](https://portal.azure.com/). Чтобы выполнить приведенные здесь инструкции с помощью других средств или пакетов SDK, выберите в раскрывающемся списке один из доступных вариантов. 
 

@@ -11,25 +11,22 @@ ms.workload: data-services
 ms.topic: hero-article
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 23d4afffbe108d439dd53d95ed81f7d9fc4246ef
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 4df392ec7e100ef0efcbb3876079710a6b9ca4fb
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36284580"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048032"
 ---
 # <a name="use-the-copy-data-tool-to-copy-data"></a>Копирование данных с помощью средства копирования данных 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-> * [Версия 2 — предварительная](quickstart-create-data-factory-copy-data-tool.md)
+> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [Текущая версия](quickstart-create-data-factory-copy-data-tool.md)
 
 В этом руководстве вы создадите фабрику данных с помощью портала Azure. После этого вы примените средство копирования данных, чтобы создать конвейер для копирования данных из одной папки в другую в хранилище BLOB-объектов Azure. 
 
 > [!NOTE]
 > Если вы еще не работали со службой "Фабрика данных Azure", ознакомьтесь с [общими сведениями](data-factory-introduction.md) о ней перед изучением этого руководства. 
->
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы, см. статью [Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
-
 
 [!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
 
@@ -52,7 +49,7 @@ ms.locfileid: "36284580"
    - Выберите **Создать новую**и укажите имя группы ресурсов.   
          
    Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
-4. Для **версии** выберите **V2 (предварительная версия)**.
+4. Укажите **V2** при выборе **версии**.
 5. В поле **Расположение** выберите расположение фабрики данных. 
 
    В списке отображены только поддерживаемые расположения. Хранилища данных (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других расположениях и/или регионах.
@@ -85,7 +82,7 @@ ms.locfileid: "36284580"
 
     ![Выбор хранилища BLOB-объектов из коллекции](./media/quickstart-create-data-factory-copy-data-tool/select-blob-source.png)
 
-    c. На странице **Specify the Azure Blob storage account** (Указание учетной записи хранилища BLOB-объектов Azure) выберите учетную запись из списка **Имя учетной записи хранения**, а затем щелкните **Далее**. 
+    c. На странице **Specify the Azure Blob storage account** (Указание учетной записи хранилища BLOB-объектов Azure) выберите учетную запись из списка **Имя учетной записи хранения**, а затем щелкните **Готово**. 
 
    ![Настройка учетной записи хранилища BLOB-объектов Azure](./media/quickstart-create-data-factory-copy-data-tool/configure-blob-storage.png)
 

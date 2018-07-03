@@ -17,12 +17,12 @@ ms.workload: big-data
 ms.date: 04/26/2018
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 359b458d5fa9089fd7f35f94cd3f0265dc8ea3c9
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: a76dbb9a232d99615629d1a3fec6010b37e73247
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32179067"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046784"
 ---
 # <a name="connect-to-hdinsight-hadoop-using-ssh"></a>Подключение к HDInsight (Hadoop) с помощью SSH
 
@@ -32,7 +32,7 @@ HDInsight может использовать Linux (Ubuntu) в качестве
 
 | Адрес | Порт | Подключается к... |
 | ----- | ----- | ----- |
-| `<clustername>-ed-ssh.azurehdinsight.net` | 22 | Граничный узел (R Server в HDInsight) |
+| `<clustername>-ed-ssh.azurehdinsight.net` | 22 | Граничный узел (службы машинного обучения в HDInsight) |
 | `<edgenodename>.<clustername>-ssh.azurehdinsight.net` | 22 | Граничный узел (любой другой тип кластера, если существует граничный узел) |
 | `<clustername>-ssh.azurehdinsight.net` | 22 | Основной головной узел |
 | `<clustername>-ssh.azurehdinsight.net` | 23 | Дополнительный головной узел |

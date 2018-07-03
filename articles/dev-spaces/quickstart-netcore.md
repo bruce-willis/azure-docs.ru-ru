@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 3802e67503fd546ef71b9c26daddc8ef63cf4bd2
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: 21b94544105f55cbb8cb77c28d8c546ffcf7f8c0
+ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823232"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36945862"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-vs-code"></a>Краткое руководство по созданию среды разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и VS Code)
 
@@ -40,7 +40,7 @@ ms.locfileid: "34823232"
 
 ## <a name="set-up-azure-dev-spaces"></a>Настройка Azure Dev Spaces
 
-1. Установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.0.33 или более поздней).
+1. Установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.0.38 или более поздней).
 1. Настройка Dev Spaces в кластере AKS: `az aks use-dev-spaces -g MyResourceGroup -n MyAKS`
 1. Загрузите [расширение Azure Dev Spaces](https://aka.ms/get-azds-code) для VS Code.
 1. Установите расширение: `code --install-extension path-to-downloaded-extension/azds-0.1.1.vsix`
@@ -50,12 +50,15 @@ ms.locfileid: "34823232"
 1. Загрузите пример кода из репозитория GitHub: [https://github.com/Azure/dev-spaces](https://github.com/Azure/dev-spaces) 
 1. Перейдите в папку webfrontend: `cd dev-spaces/samples/dotnetcore/getting-started/webfrontend`
 1. Создайте ресурсы диаграмм Docker и Helm: `azds prep --public`
-1. Создайте и запустите свой код в AKS. В окне консоли запустите следующую команду из **корневой папки кода**, webfrontend: `azds up`
+1. Создайте и запустите свой код в AKS. В окне терминала из **папки проекта webfrontend** выполните следующую команду: `azds up`
 1. Просмотрите выходные данные консоли, чтобы найти сведения об URL-адресе, который был создан командой `up`. Он будет выглядеть следующим образом: 
 
    `Service 'webfrontend' port 'http' is available at <url>` 
 
    При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. 
+   
+   > [!Note]
+   > При первом запуске подготовка общедоступной записи DNS может занять несколько минут. Если не удается разрешить общедоступный URL-адрес, вместо него можно использовать альтернативный URL-адрес http://localhost:<portnumber>, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но на самом деле он выполняется в AKS. Для вашего удобства и упрощения взаимодействия со службой на локальном компьютере служба Azure Dev Spaces создает временный туннель SSH для контейнера, запущенного в Azure. Вы можете опробовать общедоступный URL-адрес позже, когда запись DNS будет готова.
 
 ### <a name="update-a-content-file"></a>Обновление файла содержимого
 

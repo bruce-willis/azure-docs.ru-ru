@@ -7,14 +7,14 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 03/29/2018
+ms.date: 06/26/2018
 ms.author: v-geberr
-ms.openlocfilehash: 1e8647e34da3d34946a4f6ac298017f6d4c99de6
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: b718ed505babd2df6487aecd3a87f17590aef2b9
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265366"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061253"
 ---
 # <a name="tutorial-create-app-that-uses-simple-entity"></a>Руководство по созданию приложения, использующего простую сущность
 В этом руководстве описано создание приложения, которое показывает, как извлечь данные машинного обучения из фразы с помощью **простой** сущности.
@@ -22,125 +22,110 @@ ms.locfileid: "36265366"
 <!-- green checkmark -->
 > [!div class="checklist"]
 > * Общие сведения о простых сущностях. 
-> * Создание приложения LUIS для обмена данными с намерением SendMessage.
-> * Добавление намерения _None_ и примеров фраз.
-> * Добавление простой сущности, чтобы извлечь содержимое сообщения из фразы.
+> * Создание приложения LUIS, предназначенного для работы с доменом отдела кадров 
+> * Добавление простой сущности для извлечения заданий из приложения
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
+> * Добавление списка фраз для усиления сигналов по словам, связанным с работой
+> * Обучение, публикация приложения и повторный запрос конечной точки
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы разработаете приложение LUIS.
+
+## <a name="before-you-begin"></a>Перед началом работы
+Если у вас нет приложения управления персоналом из руководства по [иерархическим сущностям](luis-quickstart-intent-and-hier-entity.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-hier-HumanResources.json).
+
+Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `simple`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию.  
 
 ## <a name="purpose-of-the-app"></a>Назначение приложения
-Это приложение демонстрирует способы извлечения данных из фразы. Рассмотрите следующую фразу из чат-бота:
+Это приложение демонстрирует способы извлечения данных из фразы. Рассмотрите следующие фразы чат-бота:
 
-```JSON
-Send a message telling them to stop
-```
+|Фраза|Извлекаемое имя должности|
+|:--|:--|
+|Я хочу подать заявку на новую задачу учета.|учет|
+|Отправьте резюме на должность инженера.|инженеры|
+|Заполните заявку для задания 123456|123456|
 
-Предназначение намерения — отправка сообщений. Важные данные фразы — само сообщение, `telling them to stop`.  
+Это руководство добавляет новую сущность для извлечения названия должности. Возможность извлекать номер конкретной должности отображается в регулярном выражении [руководства](luis-quickstart-intents-regex-entity.md). 
 
 ## <a name="purpose-of-the-simple-entity"></a>Назначение простой сущности
-Назначение простой сущности — научить LUIS тому, что такое сообщение и где его можно найти во фразе. Часть фразы, которая является сообщением, может изменяться в разных фразах в зависимости от подобранных слов и длины фразы. LUIS требуются примеры сообщений в любой фразе по всем намерениям.  
+Назначение простой сущности в этом приложении LUIS — научить LUIS тому, что такое имя должности и где его можно найти во фразе. Часть фразы, которая является должностью, может изменяться в разных фразах в зависимости от подобранных слов и длины фразы. LUIS требуются примеры должности в любой фразе по всем намерениям.  
 
-Для этого простого приложения сообщение будет расположено в конце фразы. 
+Название должности сложно определить, так как оно может быть существительным, глаголом или фразой из нескольких слов. Например: 
 
-## <a name="create-a-new-app"></a>Создание нового приложения
-1. Выполните вход на веб-сайте [LUIS][LUIS]. Войдите в регион, где нужно опубликовать конечные точки LUIS.
+|Задания|
+|--|
+|инженер|
+|разработчик программного обеспечения|
+|старший разработчик программного обеспечения|
+|руководитель команды разработки |
+|диспетчер службы движения|
+|водитель автомобиля|
+|водитель санитарного автомобиля|
+|сиделка|
+|мастер по работе с пресс-экструдером|
+|монтажник|
 
-2. На веб-сайте [LUIS][LUIS] выберите **Create new app** (Создать приложение).  
+У этого приложения LUIS есть названия должностей в нескольких намерениях. Пометив эти слова во всех фразах с намерениями, LUIS узнает больше о том, что такое должность и где она находится во фразах.
 
-    ![Список приложений LUIS](./media/luis-quickstart-primary-and-secondary-data/app-list.png)
+## <a name="create-job-simple-entity"></a>Создание простой сущности должности
 
-3. Во всплывающем диалоговом окне введите имя `MyCommunicator`. 
+1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-    ![Список приложений LUIS](./media/luis-quickstart-primary-and-secondary-data/create-new-app-dialog.png)
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-primary-and-secondary-data/hr-first-image.png)](./media/luis-quickstart-primary-and-secondary-data/hr-first-image.png#lightbox)
 
-4. После завершения процесса появится страница **намерений** с намерением **None**. 
+2. На странице **намерений** выберите намерение **ApplyForJob**. 
 
-    [![](media/luis-quickstart-primary-and-secondary-data/intents-list.png "Снимок экрана страницы намерений LUIS с намерением None")](media/luis-quickstart-primary-and-secondary-data/intents-list.png#lightbox)
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-select-applyforjob.png "Снимок экрана LUIS с выделенным намерением ApplyForJob")](media/luis-quickstart-primary-and-secondary-data/hr-select-applyforjob.png#lightbox)
 
-## <a name="create-a-new-intent"></a>Создание намерения
+3. В выражении `I want to apply for the new accounting job` выберите `accounting`, введите `Job` в поле сверху всплывающего меню, а затем во всплывающем меню выберите **Create new entity** (Создать сущность). 
 
-1. На странице **намерений** выберите **Create new intent** (Создать намерение). 
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
 
-    [![](media/luis-quickstart-primary-and-secondary-data/create-new-intent-button.png "Снимок экрана LUIS с выделенной кнопкой \"Create new intent\" (Создать намерение)")](media/luis-quickstart-primary-and-secondary-data/create-new-intent-button.png#lightbox)
+4. Во всплывающем окне проверьте имя и тип сущности, а затем выберите **Готово**.
 
-2. Введите имя нового намерения `SendMessage`. Это намерение следует выбирать каждый раз, когда пользователь хочет отправить сообщение.
+    ![Создание модального диалога простой сущности с названием должности и простым типом](media/luis-quickstart-primary-and-secondary-data/hr-create-simple-entity-popup.png)
 
-    Создавая намерение, вы создаете основную категорию информации, которую хотите идентифицировать. Благодаря присвоению имени категории любое другое приложение, использующее результаты запроса LUIS, по этому имени может найти подходящий ответ или предпринять соответствующее действие. LUIS не ответит на эти вопросы, а только определит, какой тип информации запрашивается на естественном языке. 
+5. Во фразе `Submit resume for engineering position` обозначьте слово "инженер" как сущность должности. Выберите слово "инженер", а затем выберите должность во всплывающем меню. 
 
-    ![Ввод имени намерения SendMessage](./media/luis-quickstart-primary-and-secondary-data/create-new-intent-popup-dialog.png)
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Снимок экрана с выделенной сущностью задания маркировки LUIS")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
 
-3. Добавьте в намерение `SendMessage`несколько фраз, которые вы ожидаете от пользователя, например:
+    Все фразы помечены, но пять фраз недостаточно, чтобы обучить LUIS связанным с должностями словам и фразам. Нам не нужны дополнительные примеры должностей, использующих значение номера, так как используется сущность регулярного выражения. Нужно по крайней мере 15 дополнительных примеров должностей, являющихся словами или фразами. 
 
-    | Примеры фраз|
-    |--|
-    |Ответить: "Сообщение получено, отвечу завтра"|
-    |Отправить сообщение: "Когда ты будешь дома"?|
-    |Написать, что я занят|
-    |Сообщить, что это необходимо сделать сегодня|
-    |Отправить мгновенное сообщение, о том, что я еду на машине и отвечу позже|
-    |Составить сообщение для Никиты с вопросом о том, что это было|
-    |поприветствовать Николая|
+6. Добавьте больше фраз и отметьте слова или фразы, связанные с должностями, в качестве сущности **Должность**. Типы должностей являются общими в службе по трудоустройству. Если нужны должности, связанные с определенной отраслью, слова должности должны отражать это. 
 
-    [![](media/luis-quickstart-primary-and-secondary-data/enter-utterances-on-intent-page.png "Снимок экрана LUIS с введенными фразами")](media/luis-quickstart-primary-and-secondary-data/enter-utterances-on-intent-page.png#lightbox)
+    |Фраза|Сущность должности|
+    |:--|:--|
+    |Я подаю заявку на получение должности руководителя программ в отделе исследовательской работы|руководитель программ|
+    |Вот мое резюме на повара линии раздачи.|повар линии раздачи|
+    |Мое резюме на воспитателя детского лагеря прилагается.|воспитатель детского лагеря|
+    |Это моя краткая биография для получения должности помощника по административной работе.|помощник по административной работе|
+    |Я хочу подать заявку на получение управленческой должности в сфере продаж.|управление, продажи|
+    |Это резюме для новой должности в сфере учета.|учет|
+    |Моя заявка для помощника бармена включена.|помощник бармена|
+    |Я отправляю резюме на кровельщика и плотника.|кровельщик, плотник|
+    |Мою краткую биографию для получения должности водителя автобуса можно найти здесь.|водитель автобуса|
+    |Я дипломированная медсестра. Вот мое резюме.|дипломированная медсестра|
+    |Я хотел бы представить документы на должность учителя из газеты.|учитель|
+    |Это моя краткая биография на получение должности специалиста, обслуживающего полки с фруктами и овощами в магазине.|специалист, обслуживающий полки|
+    |Резюме для укладчика плитки.|Плитка|
+    |Вложенные резюме для ландшафтного архитектора.|ландшафтный архитектор|
+    |Моя краткая биография для получения должности профессора биологии прилагается.|профессор биологии|
+    |Я хотел бы подать заявку на должность фотографа.|фотограф|git 
 
-## <a name="add-utterances-to-none-intent"></a>Добавление фраз в намерение None
-
-В настоящее время приложение LUIS не содержит фраз для намерения **None**. Ему требуются фразы, на которые приложению не нужно отвечать. Их необходимо указать в намерении **None**. Заполните его. 
-    
-1. Выберите **намерения** на панели слева. 
-
-    [![](media/luis-quickstart-primary-and-secondary-data/select-intent-link.png "Снимок экрана LUIS с выделенной кнопкой \"Intents\" (Намерения)")](media/luis-quickstart-primary-and-secondary-data/select-intent-link.png#lightbox)
-
-2. Выберите намерение **None**. 
-
-    [![](media/luis-quickstart-primary-and-secondary-data/select-none-intent.png "Снимок экрана, где выбрано намерение None")](media/luis-quickstart-primary-and-secondary-data/select-none-intent.png#lightbox)
-
-3. Добавьте три фразы, которые может ввести пользователь, но которые не имеют отношения к приложению. Несколько подходящих фраз **None**:
-
-    | Примеры фраз|
-    |--|
-    |Отмена!|
-    |До свидания!|
-    |Что происходит?|
-    
-    В приложении, вызывающем LUIS (таком как чат-бот), если LUIS возвращает намерение **None** для фразы, бот может спросить, хочет ли пользователь завершить разговор. Бот может также дать больше указаний для продолжения разговора, если пользователь хочет продолжить. 
-
-    [![](media/luis-quickstart-primary-and-secondary-data/utterances-for-none-intent.png "Снимок экрана LUIS с фразами для намерения None")](media/luis-quickstart-primary-and-secondary-data/utterances-for-none-intent.png#lightbox)
-
-## <a name="create-a-simple-entity-to-extract-message"></a>Создание простой сущности для извлечения сообщения 
+## <a name="label-entity-in-example-utterances-for-getjobinformation-intent"></a>Метка сущности в примерах намерений для GetJobInformation
 1. Выберите **намерения** в меню слева.
 
-    ![Выбор ссылки "Intents" (Намерения)](./media/luis-quickstart-primary-and-secondary-data/select-intents-from-none-intent.png)
+2. Выберите **GetJobInformation** из списка намерений. 
 
-2. Выберите `SendMessage` из списка намерений.
+3. Обозначьте должности в примерах фраз:
 
-    ![Выбор намерения SendMessage](./media/luis-quickstart-primary-and-secondary-data/select-sendmessage-intent.png)
+    |Фраза|Сущность должности|
+    |:--|:--|
+    |Есть ли должность для работы с базами данных?|databases|
+    |Ищу новую работу с обязанностями в бухгалтерском учете|учет|
+    |Какие должности доступны для старших инженеров?|старшие инженеры|
 
-3. Во фразе `Reply with I got your message, I will have the answer tomorrow` выберите первое слово текста сообщения (`I`) и последнее (`tomorrow`). Когда слова будут выбраны для сообщения, появится раскрывающееся меню с текстовым полем сверху.
-
-    [![](media/luis-quickstart-primary-and-secondary-data/select-words-in-utterance.png "Снимок экрана выбора слов во фразе для сообщения")](media/luis-quickstart-primary-and-secondary-data/select-words-in-utterance.png#lightbox)
-
-4. Введите имя сущности `Message` в текстовом поле.
-
-    [![](media/luis-quickstart-primary-and-secondary-data/enter-entity-name-in-box.png "Снимок экрана ввода сущности в поле")](media/luis-quickstart-primary-and-secondary-data/enter-entity-name-in-box.png#lightbox)
-
-5. Выберите **Create new entity** (Создать сущность) в раскрывающемся меню. Целью сущности является извлечение текста, который является текстом сообщения. В этом приложении LUIS текстовое сообщение находится в конце фразы. Однако как фраза, так и сообщение могут быть любой длины. 
-
-    [![](media/luis-quickstart-primary-and-secondary-data/create-message-entity.png "Снимок экрана создания сущности из фразы")](media/luis-quickstart-primary-and-secondary-data/create-message-entity.png#lightbox)
-
-6. Во всплывающем окне тип сущности по умолчанию — **Простая**, а имя сущности — `Message`. Оставьте эти параметры и нажмите кнопку **Done** (Готово).
-
-    ![Проверка типа сущности](./media/luis-quickstart-primary-and-secondary-data/entity-type.png)
-
-7. Теперь, когда сущность создана, а одна фраза помечена, отметьте остальные фразы с этой сущностью. Выберите фразу, а затем — первое и последнее слово сообщения. В раскрывающемся меню выберите сущность `Message`. Теперь сообщение помечено в сущности. Пометьте все сообщения в оставшихся фразах.
-
-    [![](media/luis-quickstart-primary-and-secondary-data/all-labeled-utterances.png "Снимок экрана всех помеченных фраз с сообщениями")](media/luis-quickstart-primary-and-secondary-data/all-labeled-utterances.png#lightbox)
-
-    Стандартное представление фраз — это **представление сущностей**. Выберите элемент управления **Entities view** (Представление сущностей) над фразами. В **представлении лексем** отображается текст фразы. 
-
-    [![](media/luis-quickstart-primary-and-secondary-data/tokens-view-of-utterances.png "Снимок экрана фраз в представлении лексем")](media/luis-quickstart-primary-and-secondary-data/tokens-view-of-utterances.png#lightbox)
+    Существуют и другие примеры фраз, но в них нет слов, связанных с должностью.
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
@@ -169,48 +154,227 @@ Send a message telling them to stop
 
 [![](media/luis-quickstart-primary-and-secondary-data/publish-select-endpoint.png "Снимок экрана страницы публикации с выделенной конечной точкой")](media/luis-quickstart-primary-and-secondary-data/publish-select-endpoint.png#lightbox)
 
-В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. Перейдите в конец URL-адреса и введите `text I'm driving and will be 30 minutes late to the meeting`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `SendMessage`.
+В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. Перейдите в конец URL-адреса и введите `Here is my c.v. for the programmer job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
 
-```
+```JSON
 {
-  "query": "text I'm driving and will be 30 minutes late to the meeting",
+  "query": "Here is my c.v. for the programmer job",
   "topScoringIntent": {
-    "intent": "SendMessage",
-    "score": 0.987501
+    "intent": "ApplyForJob",
+    "score": 0.9826467
   },
   "intents": [
     {
-      "intent": "SendMessage",
-      "score": 0.987501
+      "intent": "ApplyForJob",
+      "score": 0.9826467
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.0218927357
+    },
+    {
+      "intent": "MoveEmployee",
+      "score": 0.007849265
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.00349470088
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 0.00348804821
     },
     {
       "intent": "None",
-      "score": 0.111048922
+      "score": 0.00319909188
+    },
+    {
+      "intent": "FindForm",
+      "score": 0.00222647213
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.00211193133
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.00172086991
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.00138010911
     }
   ],
   "entities": [
     {
-      "entity": "i ' m driving and will be 30 minutes late to the meeting",
-      "type": "Message",
-      "startIndex": 5,
-      "endIndex": 58,
-      "score": 0.162995353
+      "entity": "programmer",
+      "type": "Job",
+      "startIndex": 24,
+      "endIndex": 33,
+      "score": 0.5230502
     }
   ]
 }
 ```
 
+## <a name="names-are-tricky"></a>Сложности с извлечением названия
+Приложению LUIS удалось найти правильное намерение с высокой достоверностью и извлечь название должности, хоть это и непросто. Попробуйте выражение `This is the lead welder paperwork`.  
+
+В следующем коде JSON приложение LUIS отвечает правильным намерением, `ApplyForJob`, но не извлекает название должности `lead welder`. 
+
+```JSON
+{
+  "query": "This is the lead welder paperwork.",
+  "topScoringIntent": {
+    "intent": "ApplyForJob",
+    "score": 0.468558252
+  },
+  "intents": [
+    {
+      "intent": "ApplyForJob",
+      "score": 0.468558252
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.0102701457
+    },
+    {
+      "intent": "MoveEmployee",
+      "score": 0.009442534
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.00639619166
+    },
+    {
+      "intent": "None",
+      "score": 0.005859333
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.005087704
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.00315379258
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.00259344373
+    },
+    {
+      "intent": "FindForm",
+      "score": 0.00193389168
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 0.000420796918
+    }
+  ],
+  "entities": []
+}
+```
+
+Так как имя может быть любым, LUIS спрогнозирует сущности точнее, если у него есть список фраз, усиливающих сигнал.
+
+## <a name="to-boost-signal-add-jobs-phrase-list"></a>Добавление списка фраз, связанных с должностью, для усиления сигнала
+Откройте файл [jobs-phrase-list.csv](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/job-phrase-list.csv) из репозитория Github примеров LUIS. Список содержит более тысячи слов и фраз, связанных с должностями. Ознакомьтесь со списком важных слов, связанных с должностями. Если слов или фраз нет в списке, добавьте собственные.
+
+1. В разделе **Build** (Сборка) приложения LUIS и в меню **Improve app performance** (Повышение производительности приложения) выберите **Phrase lists** (Списки фраз).
+
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-select-phrase-list-left-nav.png "Снимок экрана списка фраз с выделенной левой кнопкой навигации")](media/luis-quickstart-primary-and-secondary-data/hr-select-phrase-list-left-nav.png#lightbox)
+
+2. Выберите **Create new phrase list** (Создать список фраз). 
+
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-new-phrase-list.png "Снимок экрана с выделенной кнопкой создания списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-new-phrase-list.png#lightbox)
+
+3. Присвойте списку фраз имя `Jobs` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**. Нажмите клавишу "ВВОД". 
+
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Снимок экрана со всплывающим диалоговым окном создания списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
+
+    Если вы хотите добавить больше слов в список фраз, ознакомьтесь с рекомендуемыми словами и добавьте соответствующие. 
+
+4. Выберите **Сохранить**, чтобы активировать список фраз.
+
+    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Снимок экрана всплывающего диалогового окна создания списка фраз со словами в окне значений списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
+
+5. [Обучите](#train-the-luis-app) и [опубликуйте](#publish-the-app-to-get-the-endpoint-URL) приложение еще раз, чтобы использовать список фраз.
+
+6. Сделайте повторный запрос к конечной точке с той же фразой: `This is the lead welder paperwork.`
+
+    Ответ JSON содержит извлеченные сущности:
+
+    ```JSON
+    {
+        "query": "This is the lead welder paperwork.",
+        "topScoringIntent": {
+            "intent": "ApplyForJob",
+            "score": 0.920025647
+        },
+        "intents": [
+            {
+            "intent": "ApplyForJob",
+            "score": 0.920025647
+            },
+            {
+            "intent": "GetJobInformation",
+            "score": 0.003800706
+            },
+            {
+            "intent": "Utilities.StartOver",
+            "score": 0.00299335527
+            },
+            {
+            "intent": "MoveEmployee",
+            "score": 0.0027167045
+            },
+            {
+            "intent": "None",
+            "score": 0.00259556063
+            },
+            {
+            "intent": "FindForm",
+            "score": 0.00224019377
+            },
+            {
+            "intent": "Utilities.Stop",
+            "score": 0.00200693542
+            },
+            {
+            "intent": "Utilities.Cancel",
+            "score": 0.00195913855
+            },
+            {
+            "intent": "Utilities.Help",
+            "score": 0.00162656687
+            },
+            {
+            "intent": "Utilities.Confirm",
+            "score": 0.0002851904
+            }
+        ],
+        "entities": [
+            {
+            "entity": "lead welder",
+            "type": "Job",
+            "startIndex": 12,
+            "endIndex": 22,
+            "score": 0.8295959
+            }
+        ]
+    }
+    ```
+
+## <a name="phrase-lists"></a>Списки фраз
+Добавление списка фраз усиливает сигнал слов в списке, но **не используется** в качестве точного соответствия. В списке фраз есть несколько должностей, первое слово которых — `lead`, а также должность `welder`, но нет должности `lead welder`. Этот список фраз, связанных с должностями, может быть неполным. Так как вы регулярно [проверяете фразы конечной точки](label-suggested-utterances.md) и находите другие слова, связанные с должностями, добавьте их в список фраз. Затем выполните повторное обучение и публикацию.
+
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
-Это приложение, состоящее всего из двух намерений и одной сущности, идентифицировало намерение запроса на естественном языке и вернуло данные сообщения. 
+Это приложение, состоящее из простой сущности и списка фраз, идентифицировало намерение запроса на естественном языке и вернуло данные сообщения. 
 
-Результат JSON определяет намерение `SendMessage` с высшим показателем (0,987501). Все оценки находятся в диапазоне 0–1, наилучшие оценки — те, которые ближе к 1. Оценка намерения `None` — 0,111048922, значительно ближе к нулю. 
-
-Данные сообщения имеют тип `Message`, а также значение `i ' m driving and will be 30 minutes late to the meeting`. 
-
-Ваш чат-бот теперь содержит достаточно информации для определения основного действия — `SendMessage` и параметра этого действия — текста сообщения. 
+Ваш чат-бот теперь содержит достаточно информации для определения основного действия для заявки на получение должности и параметра действия, на должность которого есть ссылка. 
 
 ## <a name="where-is-this-luis-data-used"></a>Место использования этих данных приложения LUIS 
-Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат с наивысшим показателем и данные из сущности, чтобы отправить сообщение через сторонний API. Если существуют другие программные действия для бота или вызывающего приложения, LUIS не выполняет их. LUIS только определяет намерение пользователя. 
+Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат с наивысшим показателем и данные из сущности, чтобы использовать сторонний API для отправки информации о задании представителю службы управления персоналом. Если существуют другие программные действия для бота или вызывающего приложения, LUIS не выполняет их. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Удалите приложение LUIS, если оно больше не нужно. Чтобы сделать это, щелкните меню с тремя точками (...) справа от имени приложения в списке приложений и выберите пункт **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
@@ -218,8 +382,4 @@ Send a message telling them to stop
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию приложения, использующего иерархическую сущность](luis-quickstart-intent-and-hier-entity.md)
-
-
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
+> [Руководство по созданию приложения, которое возвращает данные сущности keyPhrases, найденные во фразах](luis-quickstart-intent-and-key-phrase.md)

@@ -15,12 +15,12 @@ ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: d3297cc1dbbbfb99272a1374f060adaf59024810
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 172de59561892f0f17fc1f90016cc95495ceb2cb
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31594092"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051313"
 ---
 # <a name="tutorial-build-your-first-azure-data-factory-using-azure-resource-manager-template"></a>Руководство. Создание фабрики данных Azure с помощью шаблона диспетчера ресурсов Azure
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "31594092"
 > 
  
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью фабрики данных Azure версии 2](../quickstart-create-data-factory-dot-net.md).
+> В этой статье рассматривается версия 1 службы "Фабрика данных Azure". Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
 
 Из этой статьи вы узнаете, как создать свою первую фабрику данных с помощью шаблона Azure Resource Manager. Чтобы выполнить приведенные здесь инструкции с помощью других средств или пакетов SDK, выберите в раскрывающемся списке один из доступных вариантов.
 

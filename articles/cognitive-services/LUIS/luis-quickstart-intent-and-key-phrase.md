@@ -7,31 +7,35 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/27/2018
 ms.author: v-geberr
-ms.openlocfilehash: 12c306b5199da5862302c28d1690b81c6e1edb0e
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 9acdfdde667d37bac5b96e4497b3e86d2cdeccb8
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36264621"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37063414"
 ---
-# <a name="tutorial-create-app-that-returns-keyphrases-entity-data-found-in-utterances"></a>Руководство по созданию приложения, которое возвращает данные сущности keyPhrases, найденные в фразах
-В этом руководстве создается приложение, демонстрирующее, как извлечь запрашиваемое содержимое из фраз.
+# <a name="tutorial-learn-how-to-return-data-from-keyphrase-entity"></a>Руководство по возврату данных из сущности keyPhrase 
+В этом руководстве используется приложение, демонстрирующее, как извлечь запрашиваемое содержимое из фраз.
 
 <!-- green checkmark -->
 > [!div class="checklist"]
 > * Общие сведения о сущностях keyPhrase. 
-> * Создание приложения LUIS, предназначенного для работы с кадровыми ресурсами.
-> * Добавление намерения _None_ и примеров фраз.
+> * Использование приложения LUIS в домене управления персоналом. 
 > * Добавление сущности keyPhrase для извлечения содержимого из фразы.
 > * Тестирование и публикация приложения.
-> * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
+> * Запрос конечной точки приложения, чтобы увидеть ответ JSON LUIS, в том числе ключевые фразы.
 
-Для работы с этой статьей можно использовать бесплатную учетную запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+Для работы с этой статьей можно использовать бесплатную учетную запись [LUIS](luis-reference-regions.md#publishing-regions), в которой вы создадите приложение LUIS.
+
+## <a name="before-you-begin"></a>Перед началом работы
+Если у вас нет приложения управления персоналом из руководства по [простым сущностям](luis-quickstart-primary-and-secondary-data.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-simple-HumanResources.json).
+
+Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `keyphrase`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="keyphrase-entity-extraction"></a>Извлечение сущностей keyPhrase
-Запрашиваемое содержимое содержится в предварительно созданной сущности **keyPhrase**. Эта сущность возвращает запрашиваемое содержимое из фразы.
+Запрашиваемое содержимое находится в предварительно созданной сущности **keyPhrase**. Эта сущность возвращает запрашиваемое содержимое из фразы.
 
 В следующих фразах содержатся примеры ключевых фраз.
 
@@ -40,65 +44,54 @@ ms.locfileid: "36264621"
 |Имеется ли новый план медицинского обслуживания с меньшими отчислениями на следующий год?|"меньшие отчисления"<br>"новый план медицинского обслуживания"<br>"год"|
 |Предусматривает ли план медицинского обслуживания с высокими отчислениями терапию для улучшения зрения?|"План медицинского обслуживания с высокими отчислениями"<br>"терапия для улучшения зрения"|
 
-Ваш чат-бот может рассмотреть эти значения в дополнение ко всем другим извлеченным сущностям при принятии решения относительно следующего шага в диалоге.
-
-## <a name="download-sample-app"></a>Скачивание примера приложения
-Загрузите приложение [Human Resources](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/HumanResources.json) и сохраните его в файле с расширением *.json. Этот пример приложения распознает фразы, относящиеся к надбавкам сотрудников, структурным схемам организации и физическим ресурсам.
-
-## <a name="create-a-new-app"></a>Создание нового приложения
-1. Выполните вход на веб-сайте [LUIS][LUIS]. Войдите в [регион][LUIS-regions], где нужно опубликовать конечные точки LUIS.
-
-2. На веб-сайте [LUIS][LUIS] выберите **Import new app** (Импорт нового приложения), чтобы импортировать приложение Human Resources, загруженное в предыдущем разделе. 
-
-    [![](media/luis-quickstart-intent-and-key-phrase/app-list.png "Снимок экрана страницы со списком приложений")](media/luis-quickstart-intent-and-key-phrase/app-list.png#lightbox)
-
-3. В диалоговом окне **импорта нового приложения** укажите для приложения имя `Human Resources with Key Phrase entity`. 
-
-    ![Изображение диалогового окна создания приложения](./media/luis-quickstart-intent-and-key-phrase/import-new-app-inline.png)
-
-    Когда приложение будет создано, в LUIS отобразится список намерений.
-
-    [![](media/luis-quickstart-intent-and-key-phrase/intents-list.png "Снимок экрана страницы списка намерений")](media/luis-quickstart-intent-and-key-phrase/intents-list.png#lightbox)
+Клиентское приложение может использовать эти значения вместе с другими извлеченными сущностями, чтобы определить следующий шаг в диалоге.
 
 ## <a name="add-keyphrase-entity"></a>Добавление сущности keyPhrase 
 Добавьте предварительно созданную сущность keyPhrase для извлечения запрашиваемого содержимого из фраз.
 
-1. Выберите **Entities** (Сущности) в меню слева.
+1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-    [ ![Снимок экрана, где пункт "Entities" (Сущности) выделен в левой области раздела "Build" (Создание)](./media/luis-quickstart-intent-and-key-phrase/select-entities.png)](./media/luis-quickstart-intent-and-key-phrase/select-entities.png#lightbox)
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-key-phrase/hr-first-image.png)](./media/luis-quickstart-intent-and-key-phrase/hr-first-image.png#lightbox)
 
-2. Выберите **Manage prebuilt entities** (Управление предварительно созданными сущностями).
+2. Выберите **Entities** (Сущности) в меню слева.
 
-    [ ![Снимок экрана всплывающего диалогового окна, содержащего список сущностей](./media/luis-quickstart-intent-and-key-phrase/manage-prebuilt-entities.png)](./media/luis-quickstart-intent-and-key-phrase/manage-prebuilt-entities.png#lightbox)
+    [ ![Снимок экрана, где пункт "Entities" (Сущности) выделен в левой области раздела "Build" (Создание)](./media/luis-quickstart-intent-and-key-phrase/hr-select-entities-button.png)](./media/luis-quickstart-intent-and-key-phrase/hr-select-entities-button.png#lightbox)
 
-3. Во всплывающем диалоговом окне выберите **keyPhrase**, а затем нажмите кнопку **Done** (Готово). 
+3. Выберите **Manage prebuilt entities** (Управление предварительно созданными сущностями).
 
-    [ ![Снимок экрана всплывающего диалогового окна, содержащего список сущностей](./media/luis-quickstart-intent-and-key-phrase/add-or-remove-prebuilt-entities.png)](./media/luis-quickstart-intent-and-key-phrase/add-or-remove-prebuilt-entities.png#lightbox)
+    [ ![Снимок экрана всплывающего диалогового окна, содержащего список сущностей](./media/luis-quickstart-intent-and-key-phrase/hr-manage-prebuilt-entities.png)](./media/luis-quickstart-intent-and-key-phrase/hr-manage-prebuilt-entities.png#lightbox)
+
+4. Во всплывающем диалоговом окне выберите **keyPhrase**, а затем нажмите кнопку **Done** (Готово). 
+
+    [ ![Снимок экрана всплывающего диалогового окна, содержащего список сущностей](./media/luis-quickstart-intent-and-key-phrase/hr-add-or-remove-prebuilt-entities.png)](./media/luis-quickstart-intent-and-key-phrase/hr-add-or-remove-prebuilt-entities.png#lightbox)
 
     <!-- TBD: asking Carol
     You won't see these entities labeled in utterances on the intents pages. 
     -->
+5. В меню слева выберите **Intents** (Намерения) и щелкните **Utilities.Confirm**. Сущность keyPhrase помечена в нескольких фразах. 
+
+    [ ![Снимок экрана с намерением Utilities.Confirm и сущностями keyPhrase, помеченными в фразах](./media/luis-quickstart-intent-and-key-phrase/hr-keyphrase-labeled.png)](./media/luis-quickstart-intent-and-key-phrase/hr-keyphrase-labeled.png#lightbox)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Приложение LUIS не знает об этом изменении модели, пока не будет обучено. 
+Новую версию `keyphrase` приложения нужно обучить.  
 
 1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
 
-    ![Снимок экрана, где выделена кнопка "Train" (Обучить)](./media/luis-quickstart-intent-and-key-phrase/train-button-expanded.png)
+    ![Обучение приложения](./media/luis-quickstart-intent-and-key-phrase/train-button.png)
 
 2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
-    ![Снимок экрана панели уведомлений, свидетельствующей об успешном обучении ](./media/luis-quickstart-intent-and-key-phrase/trained-inline.png)
+    ![Обучение успешно выполнено](./media/luis-quickstart-intent-and-key-phrase/trained.png)
 
 ## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
 
 1. Выберите **Publish** (Публикация) на правой верхней панели навигации.
 
-    ![Снимок экрана страницы сущностей с выделенной кнопкой публикации ](./media/luis-quickstart-intent-and-key-phrase/publish-expanded.png)
+    [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png#lightbox)
 
 2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
 
-    [![](media/luis-quickstart-intent-and-key-phrase/publish-to-production-inline.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/publish-to-production-expanded.png#lightbox)
+    [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png#lightbox)
 
 3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
@@ -106,39 +99,98 @@ ms.locfileid: "36264621"
 
 1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
 
-    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](media/luis-quickstart-intent-and-key-phrase/endpoint-url-inline.png )
+    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](media/luis-quickstart-intent-and-key-phrase/hr-endpoint-url-inline.png )
 
-2. Перейдите в конец URL-адреса и введите `Is there a new medical plan with a lower deductible offered next year?`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
+2. Перейдите в конец URL-адреса и введите `does form hrf-123456 cover the new dental benefits and medical plan`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
 ```
 {
-  "query": "Is there a new medical plan with a lower deductible offered next year?",
+  "query": "does form hrf-123456 cover the new dental benefits and medical plan",
   "topScoringIntent": {
     "intent": "FindForm",
-    "score": 0.216838628
+    "score": 0.9300641
   },
+  "intents": [
+    {
+      "intent": "FindForm",
+      "score": 0.9300641
+    },
+    {
+      "intent": "ApplyForJob",
+      "score": 0.0359598845
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.0141798034
+    },
+    {
+      "intent": "MoveEmployee",
+      "score": 0.0112197418
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.00507669244
+    },
+    {
+      "intent": "None",
+      "score": 0.00238501839
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.00202810857
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.00102957746
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.0008688423
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 3.557994E-05
+    }
+  ],
   "entities": [
     {
-      "entity": "lower deductible",
-      "type": "builtin.keyPhrase",
-      "startIndex": 35,
-      "endIndex": 50
+      "entity": "hrf-123456",
+      "type": "HRF-number",git 
+      "startIndex": 10,
+      "endIndex": 19
     },
     {
-      "entity": "new medical plan",
+      "entity": "new dental benefits",
       "type": "builtin.keyPhrase",
-      "startIndex": 11,
-      "endIndex": 26
+      "startIndex": 31,
+      "endIndex": 49
     },
     {
-      "entity": "year",
+      "entity": "medical plan",
       "type": "builtin.keyPhrase",
-      "startIndex": 65,
-      "endIndex": 68
+      "startIndex": 55,
+      "endIndex": 66
+    },
+    {
+      "entity": "hrf",
+      "type": "builtin.keyPhrase",
+      "startIndex": 10,
+      "endIndex": 12
+    },
+    {
+      "entity": "-123456",
+      "type": "builtin.number",
+      "startIndex": 13,
+      "endIndex": 19,
+      "resolution": {
+        "value": "-123456"
+      }
     }
   ]
 }
 ```
+
+При поиске формы пользователь указал больше информации, чем требовалось. Дополнительные сведения возвращаются как **builtin.keyPhrase**. Клиентское приложение может использовать эти сведения для уточняющих вопросов, например "Вам хотелось бы обсудить новую стоматологическую страховку с сотрудником отдела кадров?" или предоставить меню с дополнительными вариантами, включая "Дополнительные сведения о новой стоматологической страховке или плане медицинского обслуживания".
 
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
 Это приложение с функцией обнаружения сущности keyPhrase распознало намерение запроса на естественном языке и вернуло извлеченные данные вместе с запрашиваемым содержимым. 
@@ -156,6 +208,3 @@ ms.locfileid: "36264621"
 > [!div class="nextstepaction"]
 > [Создание приложения, которое возвращает тональность и прогноз намерения](luis-quickstart-intent-and-sentiment-analysis.md)
 
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
-[LUIS-regions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#publishing-regions

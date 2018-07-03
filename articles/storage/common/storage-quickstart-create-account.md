@@ -9,14 +9,14 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 01/19/2018
 ms.author: tamram
-ms.openlocfilehash: 1dffceb629df5d0197bfc8ac66120df3912d70b1
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 7f6357c5b0be12c18797e82b73bd05af42888aa0
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31603782"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36752339"
 ---
-# <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+# <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Учетная запись хранения Azure предоставляет уникальное пространство имен на облаке для хранения объектов данных в службе хранилища Azure и доступа к ним. Учетная запись хранения содержит все большие двоичные объекты, файлы, очереди, таблицы и диски, созданные при работе с ней. 
 
@@ -186,7 +186,7 @@ New-AzureRmStorageAccount -ResourceGroupName $resourceGroup `
   -Kind StorageV2 
 ```
 
-Чтобы создать учетную запись общего назначения версии 2 с хранилищем, избыточным в пределах зоны (ZRS, предварительная версия), геоизбыточным хранилищем (GRS) или геоизбыточным хранилищем с доступом на чтение (RA-GRS), замените нужное значение на параметр **SkuName**, как показано ниже. 
+Чтобы создать учетную запись общего назначения версии 2 с хранилищем, избыточным в пределах зоны (ZRS, предварительная версия), геоизбыточным хранилищем (GRS) или геоизбыточным хранилищем с доступом на чтение (RA-GRS), замените нужное значение параметром **SkuName**, как показано ниже. 
 
 |Параметр репликации  |Параметр SkuName  |
 |---------|---------|
@@ -219,13 +219,7 @@ az storage account create \
 
 ---
 
-> [!NOTE]
-> Предварительная версия [хранилища, избыточного в пределах зоны](https://azure.microsoft.com/blog/announcing-public-preview-of-azure-zone-redundant-storage/preview/), доступна только в следующих расположениях:
->    - Восточная часть США 2
->    - Центральная часть США
->    - Центральная Франция (Сейчас в этом регионе доступна предварительная версия. Для запроса доступа см. [Microsoft Azure preview with Azure Availability Zones now open in France ](https://azure.microsoft.com/blog/microsoft-azure-preview-with-azure-availability-zones-now-open-in-france) (Предварительные версии Microsoft Azure и зоны доступности Azure во Франции).)
-    
-Дополнительные сведения о доступных типах репликации см. статье [Azure Storage replication](storage-redundancy.md) (Репликация службы хранилища Azure).
+Дополнительные сведения о доступных вариантах репликации см. в статье [Репликация службы хранилища Azure](storage-redundancy.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

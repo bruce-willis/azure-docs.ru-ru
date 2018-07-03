@@ -11,12 +11,12 @@ ms.devlang: azure-cli
 ms.topic: tutorial
 ms.date: 04/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 4ca555b53de3dd626c52a5a5d17196a82829d3e8
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 2b40d5fdd2b21cc9ff82b4749e1f2b4fe2c38614
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36293253"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028668"
 ---
 # <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по проектированию службы "База данных Azure для MySQL" с помощью Azure CLI
 
@@ -59,6 +59,13 @@ az group create --name myresourcegroup --location westus
 ```azurecli-interactive
 az mysql server create --resource-group myresourcegroup --name mydemoserver --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen4_2 --version 5.7
 ```
+Значение параметра sku-name соответствует соглашению {ценовая категория}\_{поколение вычислительных ресурсов}\_{количество виртуальных ядер}, как показано в примерах ниже:
++ `--sku-name B_Gen4_4` — "Базовый", поколение 4, 4 виртуальных ядра;
++ `--sku-name GP_Gen5_32` — "Общего назначения", поколение 5, 32 виртуальных ядра.
++ `--sku-name MO_Gen5_2` — "Оптимизировано для памяти", поколение 5, 2 виртуальных ядра.
+
+Допустимые значения для каждого региона и каждого уровня указаны в документации по [ценовым категориям](./concepts-pricing-tiers.md).
+
 > [!IMPORTANT]
 > Указанные здесь учетные данные и пароль администратора сервера понадобятся позже в этом руководстве, чтобы войти на сервер и в его базу данных. Запомните или запишите эту информацию для последующего использования.
 

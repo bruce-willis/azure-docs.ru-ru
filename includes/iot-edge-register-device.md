@@ -1,7 +1,24 @@
-Создайте удостоверение для имитированного устройства, чтобы оно могло обмениваться данными с Центром Интернета вещей. Так как устройства IoT Edge отличаются от стандартных устройств Интернета вещей поведением и управлением, объявите свое устройство устройством IoT Edge с самого начала. 
+---
+title: включение файла
+description: включение файла
+services: iot-edge
+author: kgremban
+ms.service: iot-edge
+ms.topic: include
+ms.date: 06/25/2018
+ms.author: kgremban
+ms.custom: include file
+ms.openlocfilehash: bacafdc8f7fd8e206335f3be0a086df1c54f1081
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37032118"
+---
+Создайте удостоверение для своего имитированного устройства, чтобы оно могло обмениваться данными с Центром Интернета вещей. Так как устройства IoT Edge отличаются от стандартных устройств Интернета вещей поведением и управлением, объявите свое устройство устройством IoT Edge с самого начала. 
 
 1. Найдите нужный Центр Интернета вещей на портале Azure.
-1. Выберите **IoT Edge (preview)** (IoT Edge (предварительная версия)), затем выберите **Add IoT Edge Device** (Добавить устройство IoT Edge).
+1. Щелкните **IoT Edge**, затем выберите **Добавить устройство IoT Edge**.
 
    ![Добавление устройства IoT Edge](./media/iot-edge-register-device/add-device.png)
 

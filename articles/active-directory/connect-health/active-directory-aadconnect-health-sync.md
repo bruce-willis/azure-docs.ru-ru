@@ -14,17 +14,17 @@ ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cff8be88e23d57545a9926df366289c6ba264886
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: a3801573f3ffe3a0941f3941cf33e516f4f1b614
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30229954"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961644"
 ---
 # <a name="monitor-azure-ad-connect-sync-with-azure-ad-connect-health"></a>Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health
 Приведенная ниже документация относится к мониторингу синхронизации Azure AD Connect с помощью Azure AD Connect Health.  Сведения о мониторинге AD FS с помощью Azure AD Connect Health см. в [этой статье](active-directory-aadconnect-health-adfs.md). Кроме того, сведения о мониторинге доменных служб Active Directory с помощью Azure AD Connect Health можно найти [здесь](active-directory-aadconnect-health-adds.md).
 
-![Azure AD Connect Health для синхронизации](./media/active-directory-aadconnect-health-sync/sync-blade.png)
+![Azure AD Connect Health для синхронизации](./media/active-directory-aadconnect-health-sync/syncsnapshot.png)
 
 ## <a name="alerts-for-azure-ad-connect-health-for-sync"></a>Оповещения Azure AD Connect Health для синхронизации
 Раздел оповещений Azure AD Connect Health для синхронизации содержит список активных оповещений. Каждое оповещение содержит соответствующую информацию, действия по устранению и ссылки на связанную документацию. Если выбрать активное или разрешенное оповещение, появится новая колонка с дополнительной информацией, действиями, которые можно предпринять для устранения причин оповещения, и ссылками на дополнительную документацию. Можно также просмотреть данные журнала об оповещениях, которые были разрешены в прошлом.
@@ -98,15 +98,18 @@ ms.locfileid: "30229954"
 ### <a name="error-details"></a>Сведения об ошибке
 В подробном представлении каждой ошибки содержатся следующие данные:
 
+* выделенный конфликтующий атрибут;
 * идентификаторы затронутого *объекта AD*;
 * идентификаторы затронутого *объекта Azure AD* (в соответствующем случае);
 * описание ошибки и способы ее устранения.
-* Связанные статьи
 
-![Сведения об ошибках в отчете об ошибках синхронизации](./media/active-directory-aadconnect-health-sync/errorreport04.png)
+![Сведения об ошибках в отчете об ошибках синхронизации](./media/active-directory-aadconnect-health-sync/duplicateAttributeSyncError.png)
 
 ### <a name="download-the-error-report-as-csv"></a>Скачивание отчета об ошибках в формате CVS
 Вы можете скачать CSV-файл со сведениями обо всех ошибках с помощью кнопки "Экспорт".
+
+### <a name="diagnose-and-remediate-sync-errors"></a>Диагностика и устранение ошибок синхронизации 
+В определенных сценариях, связанных с обновлением пользовательской привязки к источнику, ошибки синхронизации повторяющихся атрибутов можно устранить непосредственно на портале. См. дополнительные сведения в статье [Диагностика и устранение ошибок синхронизации повторяющихся атрибутов](active-directory-aadconnect-health-diagnose-sync-errors.md)
 
 ## <a name="related-links"></a>Связанные ссылки
 * [Устранение ошибок синхронизации](../connect/active-directory-aadconnect-troubleshoot-sync-errors.md)

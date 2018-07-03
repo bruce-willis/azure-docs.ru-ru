@@ -13,23 +13,21 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: douglasl
-ms.openlocfilehash: 2769be7097ebc65bc7c022ebd2e3f2de6e57e9b8
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 525a11d0cbb10d4170930fb4df362e0a9ea024e2
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30839557"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054281"
 ---
 # <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-build-your-first-pipeline-using-arm.md)
-> * [Версия 2 — предварительная](quickstart-create-data-factory-resource-manager-template.md) 
+> * [Версия 1](v1/data-factory-build-your-first-pipeline-using-arm.md)
+> * [Текущая версия](quickstart-create-data-factory-resource-manager-template.md) 
 
 В этом руководстве объясняется, как создать фабрику данных Azure с использованием шаблона Azure Resource Manager. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью фабрики данных Azure см. в [руководстве по преобразованию данных с помощью Spark](transform-data-using-spark.md). 
 
 > [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. руководство по [сборке первой фабрики данных с помощью версии 1](v1/data-factory-build-your-first-pipeline-using-arm.md).
->
 > Эта статья не содержит подробный обзор службы фабрики данных. Общие сведения о службе фабрики данных Azure см. в статье [Введение в фабрику данных Azure](introduction.md).
 
 [!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 

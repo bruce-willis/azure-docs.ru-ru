@@ -1,7 +1,7 @@
 ---
-title: Создание многоконтейнерного приложения (предварительная версия) с помощью платформы Azure "Веб-приложение для контейнеров"
+title: Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 description: Узнайте, как с помощью файлов конфигурации Docker Compose и Kubernetes использовать несколько контейнеров в Azure с приложением WordPress и MySQL.
-keywords: azure app service, web app, linux, docker, compose, multi-container, container, kubernetes
+keywords: azure app service, web app, linux, docker, compose, multicontainer, container, kubernetes
 services: app-service
 documentationcenter: ''
 author: msangapu
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 05/02/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 61158af0bc978665c3d914c8de3376b8f5d5c69f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 43a3fa271a1958c99bd3dd597c73de2d77bb1bfd
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34651515"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751920"
 ---
-# <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по созданию многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
+# <a name="tutorial-create-a-multicontainer-preview-app-in-web-app-for-containers"></a>Руководство по созданию многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
 Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом руководстве объясняется, как создать многоконтейнерное приложение с помощью WordPress и MySQL.
 
@@ -511,7 +511,7 @@ WordPress подключится к серверу Redis. **Состояние**
 
 Из этого раздела вы узнаете, как использовать конфигурацию Kubernetes для развертывания нескольких контейнеров. Выполните описанные ранее шаги по созданию [группы ресурсов](#create-a-resource-group) и [плана служб приложений](#create-an-azure-app-service-plan). Так как большинство действий аналогичны приведенным в разделе о Docker Compose, файл конфигурации уже создан.
 
-### <a name="supported-kubernetes-options-for-multi-container"></a>Поддерживаемые параметры Kubernetes для многоконтейнерного приложения
+### <a name="supported-kubernetes-options-for-multicontainer"></a>Поддерживаемые параметры Kubernetes для многоконтейнерного приложения
 
 * args
 * command
@@ -649,7 +649,7 @@ az webapp config appsettings set --resource-group myResourceGroup --name <app_na
 ]
 ```
 
-### <a name="create-a-multi-container-app-kubernetes"></a>Создание многоконтейнерного приложения (Kubernetes)
+### <a name="create-a-multicontainer-app-kubernetes"></a>Создание многоконтейнерного приложения (Kubernetes)
 
 В окне терминала командной строки на локальном компьютере создайте многоконтейнерное [веб-приложение](app-service-linux-intro.md) в группе ресурсов `myResourceGroup` в плане службы приложений `myAppServicePlan` с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create). Не забудьте указать уникальное имя приложения вместо _\<app_name>_.
 

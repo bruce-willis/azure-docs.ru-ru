@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 10/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 13d350950e91d771b7b4b2310a788537c4c36bd7
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5ae6ba28ba448591d58cc3963f5df9a563997ab0
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34642399"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36959551"
 ---
 # <a name="quickstart-deploy-a-java-service-fabric-reliable-services-application-to-azure"></a>Краткое руководство. Развертывание приложения надежных служб Java Service Fabric в Azure
 Azure Service Fabric — это платформа распределенных систем для развертывания микрослужб и контейнеров и управления ими. 
@@ -120,13 +120,13 @@ Service Fabric предоставляет ряд средств, которые 
 
 Отпечаток сертификата необходимо добавить в приложение, чтобы обеспечить использование моделей программирования Service Fabric. 
 
-1. Вам потребуется отпечаток сертификата в файле ```Voting/VotingApplication/ApplicationManiest.xml``` при работе с безопасным кластером. Выполните следующую команду, чтобы извлечь отпечаток сертификата.
+1. Вам потребуется отпечаток сертификата в файле `Voting/VotingApplication/ApplicationManifest.xml` при работе с безопасным кластером. Выполните следующую команду, чтобы извлечь отпечаток сертификата.
 
     ```bash
     openssl x509 -in [CERTIFICATE_PEM_FILE] -fingerprint -noout
     ```
 
-2. В ```Voting/VotingApplication/ApplicationManiest.xml``` добавьте следующий фрагмент кода в тег **ApplicationManifest**. Значение **X509FindValue** должно представлять отпечаток из предыдущего шага (без точки с запятой). 
+2. В файле `Voting/VotingApplication/ApplicationManifest.xml` добавьте следующий фрагмент кода в тег **ApplicationManifest**. Значение **X509FindValue** должно представлять отпечаток из предыдущего шага (без точки с запятой). 
 
     ```xml
     <Certificates>

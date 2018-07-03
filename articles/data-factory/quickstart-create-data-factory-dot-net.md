@@ -13,23 +13,21 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 03/28/2018
 ms.author: jingwang
-ms.openlocfilehash: c5b7af290a5e5c45d3f64ccb50586db0811dd592
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: b934cff674ee6967c9ae97baa5c3b93226600e87
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30265498"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046346"
 ---
 # <a name="create-a-data-factory-and-pipeline-using-net-sdk"></a>Создание фабрики данных и конвейера с помощью пакета SDK .NET
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-> * [Версия 2 — предварительная](quickstart-create-data-factory-dot-net.md)
+> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [Текущая версия](quickstart-create-data-factory-dot-net.md)
 
 В этом кратком руководстве описано создание фабрики данных Azure с помощью пакета SDK .NET. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью фабрики данных Azure см. в [руководстве по преобразованию данных с помощью Spark](transform-data-using-spark.md). 
 
 > [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. статью о [начале работы со службой фабрики данных версии 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
->
 > Эта статья не содержит подробный обзор службы фабрики данных. Общие сведения о службе фабрики данных Azure см. в статье [Введение в фабрику данных Azure](introduction.md).
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
@@ -181,7 +179,7 @@ ms.locfileid: "30265498"
     var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
     ```
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 Добавьте следующий код, создающий **фабрику данных**, в метод **Main**. 
 
@@ -461,7 +459,7 @@ Checking copy activity run details...
     "throughput": 14073.209,
     "errors": [],
     "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (West US)",
-    "usedCloudDataMovementUnits": 2,
+    "usedDataIntegrationUnits": 2,
     "billedDuration": 23
 }
 

@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
 ms.component: compliance-reports
-ms.date: 05/16/2018
+ms.date: 06/21/2018
 ms.author: rolyon
-ms.openlocfilehash: 22cb517435777074390321de64daf98c8d12d0fb
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 86ca14c8865ee82d61cb63a20f66c508f532f124
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35232971"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020008"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Управление пользовательским доступом с помощью проверок доступа Azure AD
 
@@ -43,7 +43,7 @@ ms.locfileid: "35232971"
 
 2. Выберите тип проверки: для отдельной процедуры доступа каждого пользователя или для общего доступа одного или нескольких пользователей.
 
-3. Активируйте проверку доступа на панели доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора.
+3. Активируйте проверку доступа на панели доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора или администратора учетной записи.
 
 4. Запустите проверку доступа. Дополнительные сведения см. в разделе о [создании проверки доступа](active-directory-azure-ad-controls-create-access-review.md).
 

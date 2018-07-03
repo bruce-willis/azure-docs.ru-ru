@@ -13,24 +13,21 @@ ms.devlang: python
 ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: shlo
-ms.openlocfilehash: 83367d85e70a1a83850388c4cb786e93ae194223
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 844527fcfdcc2e0db22a322cafd81d07e5bd35e7
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30173272"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048117"
 ---
 # <a name="create-a-data-factory-and-pipeline-using-python"></a>Создание фабрики данных и конвейера с помощью Python
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-> * [Версия 2 — предварительная](quickstart-create-data-factory-python.md)
+> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [Текущая версия](quickstart-create-data-factory-python.md)
 
 Фабрика данных Azure — это облачная служба интеграции данных, которая позволяет создавать управляемые данными рабочие процессы в облаке для оркестрации и автоматизации перемещения и преобразования данных. С помощью фабрики данных Azure можно создавать и включать в расписание управляемые данными рабочие процессы (конвейеры), которые могут принимать данные из разнородных хранилищ данных, обрабатывать и преобразовывать эти данные с помощью служб вычислений (например, Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics и машинного обучения Azure), а также публиковать выходные данные в хранилища данных (например, хранилище данных SQL Azure) для использования приложениями бизнес-аналитики.
 
 В этом кратком руководстве описано создание фабрики данных Azure с помощью Python. В этой фабрике данных конвейер копирует данные из одной папки в другую в хранилище BLOB-объектов Azure.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. статью о [начале работы со службой фабрики данных версии 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -132,7 +129,7 @@ ms.locfileid: "30173272"
         df_params = {'location':'eastus'}    
     ```
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 
 Добавьте следующий код, создающий **фабрику данных**, в метод **Main**. Если группа ресурсов уже существует, закомментируйте первую инструкцию `create_or_update`.
 

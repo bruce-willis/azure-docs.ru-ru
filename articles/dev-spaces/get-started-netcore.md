@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: bd42268c36f44dc20b88d27d19cbf378e848b82f
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: 8b14f06f364bde1d4c5588e60a54aefe07c821d2
+ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823152"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36945927"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
@@ -32,7 +32,7 @@ ms.locfileid: "34823152"
 Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
 > [!IMPORTANT]
-> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.33 или новее.
+> Если интерфейс Azure CLI уже установлен, убедитесь, что используется версия 2.0.38 или выше.
 
 [!INCLUDE[](includes/sign-into-azure.md)]
 
@@ -193,13 +193,14 @@ public IActionResult About()
 
 Давайте посмотрим на это в действии. Перейдите в окно VS Code для `mywebapi` и измените код в методе `string Get(int id)`, например:
 
-    ```csharp
-    [HttpGet("{id}")]
-    public string Get(int id)
-    {
-        return "mywebapi now says something new";
-    }
-    ```
+```csharp
+[HttpGet("{id}")]
+public string Get(int id)
+{
+    return "mywebapi now says something new";
+}
+```
+
 
 [!INCLUDE[](includes/team-development-2.md)]
 

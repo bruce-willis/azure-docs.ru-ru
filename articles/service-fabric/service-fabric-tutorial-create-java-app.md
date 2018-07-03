@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: dc67de00abb2eac2eeb6e2b6bf3798e3aa210152
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.openlocfilehash: b512ba91d1df7ec0432bdf9048268714e570fe6b
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
-ms.locfileid: "29949894"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36958682"
 ---
 # <a name="tutorial-create-and-deploy-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по созданию и развертыванию приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния
 Это руководство представляет первую часть цикла. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. В этой серии руководств требуется, чтобы у вас был работающий компьютер для разработчиков Mac OSX или Linux. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-java-quickstart) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](service-fabric-tutorial-create-java-app.md#walk-through-the-voting-sample-application).
@@ -596,7 +596,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
     }
     
     dependencies {
-        compile ('com.microsoft.servicefabric:sf-actors:1.0.0-preview1')
+        compile ('com.microsoft.servicefabric:sf-actors:1.0.0')
     }
     
     jar {
@@ -898,7 +898,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 
 4. В обозревателе пакетов для Eclipse щелкните правой кнопкой мыши проект **Voting** и выберите **Service Fabric -> Publish Application...** (Публикация приложения...). 
 5. В окне **публикации приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Publish** (Опубликовать).
-6. Перейдите к веб-браузеру и получите доступ к **http://localhost:8080**, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
+6. Откройте браузер и перейдите по адресу **http://localhost:8080**, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этой части руководства вы узнали, как выполнить следующие действия:

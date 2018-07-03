@@ -11,25 +11,22 @@ ms.workload: data-services
 ms.topic: hero-article
 ms.date: 06/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 69c0661f515f062a6a99b0692130d52eb23d20d6
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 454eaba26155b2bf4a0381af98047dbcbb514bb5
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285905"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046822"
 ---
 # <a name="create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-> * [Версия 2 — предварительная](quickstart-create-data-factory-portal.md)
+> * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+> * [Текущая версия](quickstart-create-data-factory-portal.md)
 
 В этом кратком руководстве описано создание и мониторинг фабрики данных Azure с помощью пользовательского интерфейса службы "Фабрика данных Azure". Конвейер, который вы создадите в этой фабрике данных, *копирует* данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по *преобразованию* данных с помощью фабрики данных Azure см. в [руководстве по преобразованию данных с помощью Spark](tutorial-transform-data-spark-portal.md). 
 
-
 > [!NOTE]
 > Если вы еще не работали со службой "Фабрика данных Azure", ознакомьтесь с [общими сведениями](data-factory-introduction.md) о ней перед изучением этого руководства. 
->
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы, см. статью [Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 [!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
 
@@ -58,7 +55,7 @@ ms.locfileid: "36285905"
    - Выберите **Создать новую**и укажите имя группы ресурсов.   
          
    Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
-4. Для **версии** выберите **V2 (предварительная версия)**.
+4. Укажите **V2** при выборе **версии**. 
 5. В поле **Расположение** выберите расположение фабрики данных.
 
    В списке отображаются только расположения, поддерживаемые фабрикой данных. Хранилища данных (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других расположениях.
@@ -160,7 +157,7 @@ ms.locfileid: "36285905"
 3. Убедитесь, что выходной файл появился в папке **output** конвейера **adftutorial**. Если указанной папки выходных данных нет, она будет автоматически создана в службе "Фабрика данных". 
 
 ## <a name="trigger-the-pipeline-manually"></a>Aктивация конвейера вручную
-На этом шаге вы развернете сущности (связанные службы, наборы данных и конвейеры) в службе "Фабрика данных Azure". После этого вы вручную запустите конвейер. Кроме того, можно опубликовать сущности в собственном репозитории Git службы Visual Studio Team Services, который рассматривается в [другом руководстве](tutorial-copy-data-portal.md?#configure-code-repository).
+На этом шаге вы развернете сущности (связанные службы, наборы данных и конвейеры) в службе "Фабрика данных Azure". После этого вы вручную запустите конвейер. 
 
 1. Перед запуском конвейера необходимо опубликовать сущности в службе "Фабрика данных Azure". Для этого щелкните **Publish All** (Опубликовать все) в верхней части окна. 
 

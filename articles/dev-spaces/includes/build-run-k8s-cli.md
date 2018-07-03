@@ -10,12 +10,12 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 484567dd9d9c3d050e7be25bd685a5b8d3de0687
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: fbbd66dea73747acaf1c267f7d3ba7b1bb17baa2
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34825555"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36939189"
 ---
 ## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
 Давайте запустим код! В окне терминала запустите следующую команду из **корневой папки кода**, webfrontend:
@@ -37,6 +37,9 @@ azds up
 ### <a name="test-the-web-app"></a>Тестирование веб-приложения
 Просмотрите выходные данные консоли, чтобы найти сведения об общедоступном URL-адресе, который был создан командой `up`. Он будет выглядеть следующим образом: 
 
-`Running at public URL: http://<servicename>-<cluster-name>.<guid>.<region>.aksapp.io` 
+`Service 'webfrontend' port 'http' is available at <url>` 
 
 При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. По мере выполнения контейнера в окно терминала передаются выходные данные `stdout` и `stderr`.
+
+> [!Note]
+> При первом запуске подготовка общедоступной записи DNS может занять несколько минут. Если не удается разрешить общедоступный URL-адрес, вместо него можно использовать альтернативный URL-адрес http://localhost:<portnumber>, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но фактически он выполняется в AKS. Для вашего удобства и упрощения взаимодействия со службой на локальном компьютере служба Azure Dev Spaces создает временный туннель SSH для контейнера, запущенного в Azure. Вы можете опробовать общедоступный URL-адрес позднее, когда запись DNS будет готова.

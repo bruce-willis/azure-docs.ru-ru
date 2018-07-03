@@ -7,14 +7,14 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/21/2018
 ms.author: v-geberr
-ms.openlocfilehash: 33394dff1091f27c79c74d8648a90724ba8d6698
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 68c241833aab756bfc5e71c03da5d4175401910d
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36264833"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36335828"
 ---
 # <a name="tutorial-create-app-using-a-list-entity"></a>Руководство по созданию приложения, использующего сущность списка
 В этом руководстве вы создадите приложение, демонстрирующее, как получить данные, соответствующие предварительно определенному списку. 
@@ -22,154 +22,126 @@ ms.locfileid: "36264833"
 <!-- green checkmark -->
 > [!div class="checklist"]
 > * Общие сведения о сущностях списка 
-> * Создание приложения LUIS, посвященного напиткам, с намерением OrderDrinks.
-> * Добавление намерения _None_ и примеров фраз.
-> * Добавление сущности списка для извлечения элементов напитков из фразы.
+> * Создание приложения LUIS для работы с доменом отдела кадров с намерением MoveEmployee
+> * Добавление сущности списка для извлечения сущности сотрудника из фразы
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website) для разработки приложения LUIS.
+
+## <a name="before-you-begin"></a>Перед началом работы
+Если у вас нет приложения по управлению персоналом из руководства по [личному домену](luis-quickstart-intents-regex-entity.md) с регулярными выражениями, [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-regex-HumanResources.json).
+
+Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `list`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="purpose-of-the-list-entity"></a>Предназначение сущности списка
-Это приложение принимает заказы на напитки, например `1 coke and 1 milk please`, и возвращает данные, такие как тип напитка. Сущность **списка** напитков ищет точные текстовые совпадения и возвращает их. 
+Это приложение формулирует предположительную фразу о перемещении сотрудника из одного здания в другое. Это приложение использует сущность списка для извлечения сущности сотрудника. Сотрудник может быть указан с использованием имени, номера телефона, электронной почты или федерального номера социального страхования (SSN) США. 
 
-Сущность списка представляет собой оптимальный выбор для данных такого типа, когда значения данных являются известным набором. Названия напитков могут варьироваться в зависимости от сленга и аббревиатур, но имена меняются нечасто. 
+Сущность списка может содержать множество элементов с синонимами для каждого элемента. Для компаний малого и среднего размера сущность списка используется для извлечения сведений о сотрудниках. 
 
-## <a name="app-intents"></a>Намерения приложения
-Намерения — это категории того, что нужно пользователю. У этого приложения два намерения: OrderDrink и None. Намерение [None](luis-concept-intent.md#none-intent-is-fallback-for-app) является целенаправленным и указывает что-либо, не отвечающее предназначению приложения.  
+Каноническое имя для каждого элемента является номером сотрудника. Далее приведены примеры синонимов для этого домена: 
 
-## <a name="list-entity-is-an-exact-text-match"></a>Сущность списка представляет собой точное текстовое совпадение.
-Целью сущности является поиск и категоризация частей текста во фразе. Сущность [списка](luis-concept-entity-types.md) допускает точное совпадение слов или фраз.  
+|Цель синонима|Значение синонима|
+|--|--|
+|ИМЯ|John W. Smith|
+|Адрес электронной почты|john.w.smith@mycompany.com|
+|Добавочный номер|x12345|
+|Персональный номер мобильного телефона|425-555-1212|
+|Номер социального страхования в США|123-45-6789|
 
-Для этого приложения напитков LUIS извлекает заказ на напиток таким образом, чтобы можно было создать и заполнить стандартный заказ. В LUIS фразы могут включать вариации, аббревиатуры и сленг. 
+Сущность списка оптимальна для данных такого типа в таких случаях:
 
-Ниже приведены примеры простых фраз пользователей.
+* Значения данных являются известным набором.
+* Набор не превышает максимальные [ограничения](luis-boundaries.md) LUIS для этого типа сущности.
+* Текст во фразе в точности совпадает с синонимом. 
+
+LUIS извлекает сведения о сотруднике таким образом, чтобы в клиентском приложении можно было создать стандартный заказ на перемещение сотрудника.
+<!--
+## Example utterances
+Simple example utterances for a `MoveEmployee` inent:
 
 ```
-2 glasses of milk
-3 bottles of water
-2 cokes
-```
-
-Ниже приведены сокращенные или сленговые версии фраз.
+move John W. Smith from B-1234 to H-4452
+mv john.w.smith@mycompany from office b-1234 to office h-4452
 
 ```
-5 milk
-3 h2o
-1 pop
-```
- 
-Сущность списка сопоставляет `h2o` с водой, а `pop` с прохладительными напитками.  
+-->
 
-## <a name="what-luis-does"></a>Действия приложения LUIS
-Когда намерение и сущности фразы будут определены, [извлечены](luis-concept-data-extraction.md#list-entity-data) и возвращены в формате JSON из [конечной точки](https://aka.ms/luis-endpoint-apis), работа LUIS будет завершена. Вызывающее приложение или чат-бот принимает этот ответ JSON и выполняет запрос любым настроенным в нем способом. 
+## <a name="add-moveemployee-intent"></a>Добавление намерения MoveEmployee
 
-## <a name="create-a-new-app"></a>Создание нового приложения
-1. Выполните вход на веб-сайте [LUIS][LUIS]. Войдите в [регион][LUIS-regions], где нужно опубликовать конечные точки LUIS.
+1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-2. На веб-сайте [LUIS][LUIS] выберите **Create new app** (Создать приложение).  
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-list-entity/hr-first-image.png)](./media/luis-quickstart-intent-and-list-entity/hr-first-image.png#lightbox)
 
-    ![Создание приложения](./media/luis-quickstart-intent-and-list-entity/app-list.png)
+2. Выберите **Create new intent**. (Создать намерение). 
 
-3. Во всплывающем диалоговом окне введите имя `MyDrinklist`. 
+    [ ![Снимок экрана страницы намерений с выделенной кнопкой создания намерения](./media/luis-quickstart-intent-and-list-entity/hr-create-new-intent-button.png) ](./media/luis-quickstart-intent-and-list-entity/hr-create-new-intent-button.png#lightbox)
 
-    ![Назовите приложение MyDrinkList.](./media/luis-quickstart-intent-and-list-entity/create-app-dialog.png)
+3. Введите `MoveEmployee` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
 
-4. После завершения процесса появится страница **намерений** с намерением **None**. 
+    ![Снимок экрана диалогового окна создания намерения с](./media/luis-quickstart-intent-and-list-entity/hr-create-new-intent-ddl.png)
 
-    [![](media/luis-quickstart-intent-and-list-entity/intents-page-none-only.png "Снимок экрана со страницей намерений")](media/luis-quickstart-intent-and-list-entity/intents-page-none-only.png#lightbox)
+4. Добавьте примеры фраз в намерение.
 
-## <a name="create-a-new-intent"></a>Создание намерения
-
-1. На странице **намерений** выберите **Create new intent** (Создать намерение). 
-
-    [![](media/luis-quickstart-intent-and-list-entity/create-new-intent.png "Снимок экрана страницы намерений с выделенной кнопкой создания намерения")](media/luis-quickstart-intent-and-list-entity/create-new-intent.png#lightbox)
-
-2. Введите имя нового намерения `OrderDrinks`. Это намерение следует выбирать каждый раз, когда пользователь хочет заказать напиток.
-
-    Создавая намерение, вы создаете основную категорию информации, которую хотите идентифицировать. Благодаря присвоению имени категории любое другое приложение, использующее результаты запроса LUIS, по этому имени может найти подходящий ответ или предпринять соответствующее действие. LUIS не ответит на эти вопросы, а только определит, какой тип информации запрашивается на естественном языке. 
-
-    [![](media/luis-quickstart-intent-and-list-entity/intent-create-dialog-order-drinks.png "Снимок экрана создания намерения OrderDrings")](media/luis-quickstart-intent-and-list-entity/intent-create-dialog-order-drinks.png#lightbox)
-
-3. Добавьте в намерение `OrderDrinks` несколько фраз, которые вы ожидаете от пользователя, например:
-
-    | Примеры фраз|
+    |Примеры фраз|
     |--|
-    |Отправьте в комнату 2 колы и бутылку воды|
-    |2 сидра с кусочком лайма|
-    |h20|
+    |переместить John W. Smith из B-1234 в H-4452|
+    |переместить john.w.smith@mycompany.com из офиса b-1234 в офис h-4452|
+    |сдвинуть x12345 к h-1234 завтра|
+    |поместить 425-555-1212 в HH-2345|
+    |переместить 123-45-6789 из A-4321 в J-23456|
+    |переместить Jill Jones из D-2345 в J-23456|
+    |сдвинуть jill-jones@mycompany.com в M-12345|
+    |x23456 в M-12345|
+    |425-555-0000 в h-4452|
+    |234-56-7891 в hh-2345|
 
-    [![](media/luis-quickstart-intent-and-list-entity/intent-order-drinks-utterance.png "Снимок экрана ввода фразы на странице намерения OrderDrinks")](media/luis-quickstart-intent-and-list-entity/intent-order-drinks-utterance.png#lightbox)
+    [ ![Снимок экрана страницы намерения с выделенными фразами](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png) ](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png#lightbox)
 
-## <a name="add-utterances-to-none-intent"></a>Добавление фраз в намерение None
+    В приложении есть предварительно созданная сущность номера, добавленная в предыдущем руководстве, поэтому каждый номер помечен. Этой информации достаточно для клиентского приложения, но номер не будет помечен типом. Благодаря созданию сущности с соответствующим именем клиентское приложение может обрабатывать возвращенную из LUIS сущность.
 
-В настоящее время приложение LUIS не содержит фраз для намерения **None**. Ему требуются фразы, на которые приложению не нужно отвечать. Их необходимо указать в намерении **None**. Заполните его. 
+## <a name="create-an-employee-list-entity"></a>Создание сущности списка сотрудников
+Теперь, когда намерение **MoveEmployee** содержит фразы, приложение LUIS должно распознавать, что являют собой сотрудники. 
 
-1. Выберите **намерения** на панели слева. 
+1. В области слева выберите **Entities** (Сущности).
 
-    [![](media/luis-quickstart-intent-and-list-entity/left-panel-intents.png "Снимок экрана выбора ссылки намерений на панели слева")](media/luis-quickstart-intent-and-list-entity/left-panel-intents.png#lightbox)
+    [ ![Снимок экрана намерений, где кнопка "Сущности" выделена в меню навигации слева](./media/luis-quickstart-intent-and-list-entity/hr-select-entity-button.png) ](./media/luis-quickstart-intent-and-list-entity/hr-select-entity-button.png#lightbox)
 
-2. Выберите намерение **None**. Добавьте три фразы, которые может ввести пользователь, но которые не имеют отношения к приложению:
+2. Выберите **Create new entity** (Создать сущность).
 
-    | Примеры фраз|
-    |--|
-    |Отмена!|
-    |До свидания!|
-    |Что происходит?|
+    [![Снимок экрана страницы сущностей с выделенным пунктом Create new entity (Создать сущность)](./media/luis-quickstart-intent-and-list-entity/hr-create-new-entity-button.png) ](./media/luis-quickstart-intent-and-list-entity/hr-create-new-entity-button.png#lightbox)
 
-## <a name="when-the-utterance-is-predicted-for-the-none-intent"></a>Фразы, которые попадут в намерение None
-В приложении, вызывающем LUIS (таком как чат-бот), когда LUIS возвращает намерение **None** для фразы, бот может спросить, хочет ли пользователь завершить разговор. Бот может также дать больше указаний для продолжения разговора, если пользователь хочет продолжить. 
+3. Во всплывающем диалоговом окне сущности введите имя сущности `Employee` и **Список** для типа сущности. Нажмите кнопку **Готово**.  
 
-Сущности выполняются в намерении **None**. Если намерение с высшим показателем — **None**, но сущность извлечена, что важно для чат-бота, он может задать уточняющий вопрос, который сосредоточен на намерении клиента. 
+    [![](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png "Снимок экрана всплывающего диалогового окна создания сущности")](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png#lightbox)
 
-## <a name="create-a-menu-entity-from-the-intent-page"></a>Создание сущности меню на странице намерения
-Теперь, когда у двух намерений есть фразы, приложению LUIS нужно понять тип напитка. Вернитесь к намерению `OrderDrinks` и отметьте напитки во фразе, выполнив следующие шаги:
+4. На странице сущности Employee введите `Employee-24612` в качестве нового значения.
 
-1. Вернитесь к намерению `OrderDrinks`, выбрав **намерения** на левой панели.
+    [![](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png "Снимок экрана ввода нового значения")](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png#lightbox)
 
-2. Выберите `OrderDrinks` из списка намерений.
+5. В синонимы добавьте следующие значения:
 
-3. Во фразе `Please send 2 cokes and a bottle of water to my room` выберите слово `water`. Появится раскрывающееся меню с текстовым полем в верхней области для создания сущности. Введите имя сущности `Drink` в текстовом поле, а затем выберите в раскрывающемся меню **Create new entity** (Создать сущность). 
+    |Цель синонима|Значение синонима|
+    |--|--|
+    |ИМЯ|John W. Smith|
+    |Адрес электронной почты|john.w.smith@mycompany.com|
+    |Добавочный номер|x12345|
+    |Персональный номер мобильного телефона|425-555-1212|
+    |Номер социального страхования в США|123-45-6789|
 
-    [![](media/luis-quickstart-intent-and-list-entity/intent-label-h2o-in-utterance.png "Снимок экрана создания сущности с помощью выбора слова во фразе")](media/luis-quickstart-intent-and-list-entity/intent-label-h2o-in-utterance.png#lightbox)
+    [![](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png "Снимок экрана ввода синонимов")](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png#lightbox)
 
-4. Во всплывающем окне выберите тип сущности **списка**. Добавьте синоним `h20`. Нажимайте клавишу ВВОД после каждого синонима. Не добавляйте `perrier` в список синонимов. Это добавление мы рассмотрим на следующем шаге. Нажмите кнопку **Готово**.
+6. Введите `Employee-45612` в качестве нового значения.
 
-    [![](media/luis-quickstart-intent-and-list-entity/create-list-ddl.png "Снимок экрана настройки новой сущности")](media/luis-quickstart-intent-and-list-entity/create-list-ddl.png#lightbox)
+7. В синонимы добавьте следующие значения:
 
-5. Теперь, когда сущность создана, отметьте другие синонимы воды, выбрав синоним для слова "вода", затем выберите `Drink` в раскрывающемся списке. Выберите меню справа, затем выберите `Set as synonym`, а затем — `water`.
-
-    [![](media/luis-quickstart-intent-and-list-entity/intent-label-perriers.png "Снимок экрана пометки фразы с имеющейся сущностью")](media/luis-quickstart-intent-and-list-entity/intent-label-perriers.png#lightbox)
-
-## <a name="modify-the-list-entity-from-the-entity-page"></a>Изменение сущности списка на странице "Сущность"
-При создании сущности списка напитков она содержит немного элементов и синонимов. Если вы знаете некоторые термины, аббревиатуры и сленг, заполните список на странице **сущности**. Так быстрее всего. 
-
-1. Выберите **Entities** (Сущности) на панели слева.
-
-    [![](media/luis-quickstart-intent-and-list-entity/intent-select-entities.png "Снимок экрана выбора параметра \"Entities\" (Сущности) на панели слева")](media/luis-quickstart-intent-and-list-entity/intent-select-entities.png#lightbox)
-
-2. Выберите `Drink` из списка сущностей.
-
-    [![](media/luis-quickstart-intent-and-list-entity/entities-select-drink-entity.png "Снимок экрана выбора сущности \"Drink\" (Напиток) из списка сущностей")](media/luis-quickstart-intent-and-list-entity/entities-select-drink-entity.png#lightbox)
-
-3. В текстовом поле введите `Soda pop`, а затем нажмите клавишу ВВОД. Это термин, который широко применяется для газированных напитков. Для обозначения этого типа напитка в каждой культуре есть сокращение или сленг.
-
-    [![](media/luis-quickstart-intent-and-list-entity/drink-entity-enter-canonical-name.png "Снимок экрана ввода канонического имени")](media/luis-quickstart-intent-and-list-entity/drink-entity-enter-canonical-name.png#lightbox)
-
-4. В той же строке, что и `Soda pop`, введите синонимы, такие как: 
-
-    ```
-    coke
-    cokes
-    coca-cola
-    coca-colas
-    ```
-
-    Синонимы могут включать в себя фразы, знаки препинания, притяжательные местоимения и множественные числа. Так как сущность списка является точным текстовым совпадением (кроме некоторых случаев), синонимы должны включать все варианты. Вы можете расширить список, когда узнаете больше вариантов из журналов запросов или просмотрите совпадения конечных точек. 
-
-    В этой статье используется несколько синонимов для сохранения краткости примера. Приложение LUIS производственного уровня будет включать много синонимов и регулярно пересматриваться и расширяться. 
-
-    [![](media/luis-quickstart-intent-and-list-entity/drink-entity-enter-synonyms.png "Снимок экрана добавления синонимов")](media/luis-quickstart-intent-and-list-entity/drink-entity-enter-synonyms.png#lightbox)
+    |Цель синонима|Значение синонима|
+    |--|--|
+    |ИМЯ|Jill Jones|
+    |Адрес электронной почты|jill-jones@mycompany.com|
+    |Добавочный номер|x23456|
+    |Персональный номер мобильного телефона|425-555-0000|
+    |Номер социального страхования в США|234-56-7891|
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
@@ -200,59 +172,127 @@ ms.locfileid: "36264833"
 
     [![](media/luis-quickstart-intent-and-list-entity/publish-select-endpoint.png "Снимок экрана URL-адреса конечной точки на странице публикации")](media/luis-quickstart-intent-and-list-entity/publish-select-endpoint.png#lightbox)
 
-2. Перейдите в конец URL-адреса и введите `2 cokes and 3 waters`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `OrderDrinks` с двумя типами напитков: `cokes` и `waters`.
+2. Перейдите в конец URL-адреса и введите `shift 123-45-6789 from Z-1242 to T-54672`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом и должна возвращать намерение `MoveEmployee` с извлеченным `Employee`.
 
-```
+```JSON
 {
-  "query": "2 cokes and 3 waters",
+  "query": "shift 123-45-6789 from Z-1242 to T-54672",
   "topScoringIntent": {
-    "intent": "OrderDrinks",
-    "score": 0.999998569
+    "intent": "MoveEmployee",
+    "score": 0.9882801
   },
   "intents": [
     {
-      "intent": "OrderDrinks",
-      "score": 0.999998569
+      "intent": "MoveEmployee",
+      "score": 0.9882801
+    },
+    {
+      "intent": "FindForm",
+      "score": 0.016044287
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.007611245
+    },
+    {
+      "intent": "ApplyForJob",
+      "score": 0.007063288
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.00684710965
     },
     {
       "intent": "None",
-      "score": 0.23884207
+      "score": 0.00304174074
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.002981
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 0.00212222221
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.00191026414
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.0007461446
     }
   ],
   "entities": [
     {
-      "entity": "cokes",
-      "type": "Drink",
-      "startIndex": 2,
-      "endIndex": 6,
+      "entity": "123 - 45 - 6789",
+      "type": "Employee",
+      "startIndex": 6,
+      "endIndex": 16,
       "resolution": {
         "values": [
-          "Soda pop"
+          "Employee-24612"
         ]
       }
     },
     {
-      "entity": "waters",
-      "type": "Drink",
-      "startIndex": 14,
-      "endIndex": 19,
+      "entity": "123",
+      "type": "builtin.number",
+      "startIndex": 6,
+      "endIndex": 8,
       "resolution": {
-        "values": [
-          "h20"
-        ]
+        "value": "123"
+      }
+    },
+    {
+      "entity": "45",
+      "type": "builtin.number",
+      "startIndex": 10,
+      "endIndex": 11,
+      "resolution": {
+        "value": "45"
+      }
+    },
+    {
+      "entity": "6789",
+      "type": "builtin.number",
+      "startIndex": 13,
+      "endIndex": 16,
+      "resolution": {
+        "value": "6789"
+      }
+    },
+    {
+      "entity": "-1242",
+      "type": "builtin.number",
+      "startIndex": 24,
+      "endIndex": 28,
+      "resolution": {
+        "value": "-1242"
+      }
+    },
+    {
+      "entity": "-54672",
+      "type": "builtin.number",
+      "startIndex": 34,
+      "endIndex": 39,
+      "resolution": {
+        "value": "-54672"
       }
     }
   ]
 }
 ```
 
+Сотрудник найден и возвращен как тип `Employee` со значением разрешения `Employee-24612`.
+
 ## <a name="where-is-the-natural-language-processing-in-the-list-entity"></a>Где происходит обработка естественного языка в сущности списка? 
-Так как сущность списка представляет собой точное текстовое совпадение, она не полагается на обработку естественного языка (или машинное обучение). Приложение LUIS использует обработку естественного языка (или машинное обучение), чтобы выбрать намерение с наивысшим показателем. Кроме того, фраза может представлять собой сочетание нескольких сущностей или даже нескольких типов сущностей. Каждая фраза обрабатывается для всех сущностей в приложении, включая сущности обработки естественного языка (или машинного обучения), например **простая** сущность.
+Так как сущность списка представляет собой точное текстовое совпадение, она не полагается на обработку естественного языка (или машинное обучение). Приложение LUIS использует обработку естественного языка (или машинное обучение), чтобы выбрать намерение с наивысшим показателем. Кроме того, фраза может представлять собой сочетание нескольких сущностей или даже нескольких типов сущностей. Каждая фраза обрабатывается для всех сущностей в приложении, включая сущности обработки естественного языка (или машинного обучения).
 
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
-Это приложение, состоящее всего из двух намерений и сущности списка, идентифицировало намерение запроса на естественном языке и вернуло извлеченные данные. 
+Это приложение с сущностью списка извлекло правильного сотрудника. 
 
-Теперь у чат-бота достаточно сведений, чтобы определить основное действие `OrderDrinks` и типы напитков, которые были заказаны в сущности списка напитков. 
+Теперь ваш чат-бот имеет достаточно информации для определения основного действия, `MoveEmployee`, и того, какого сотрудника перемещать. 
 
 ## <a name="where-is-this-luis-data-used"></a>Место использования этих данных приложения LUIS 
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
@@ -263,10 +303,5 @@ ms.locfileid: "36264833"
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Сведения о добавлении сущности регулярных выражений](luis-quickstart-intents-regex-entity.md)
+> [Руководство по созданию приложения, использующего иерархическую сущность](luis-quickstart-intent-and-hier-entity.md)
 
-Добавьте **предварительно созданную сущность** [номера](luis-how-to-add-entities.md#add-prebuilt-entity), чтобы извлечь номер. 
-
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
-[LUIS-regions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#publishing-regions

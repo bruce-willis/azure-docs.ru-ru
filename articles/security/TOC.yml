@@ -215,6 +215,16 @@
           href: ./blueprints/pci-dss-requirement-11-testing.md
         - name: "Требование\_12. Политика безопасности"
           href: ./blueprints/pci-dss-requirement-12-policy.md
+    - name: UK NHS
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/uknhs-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/uknhs-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/uknhs-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/uknhs-paaswa-overview.md
     - name: Для служебного пользования (Соединенное Королевство)
       href: ./blueprints/uk-official-three-tier-applications-overview.md
       items:

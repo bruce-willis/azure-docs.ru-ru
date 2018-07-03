@@ -14,20 +14,20 @@ ms.topic: get-started-article
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 6747dc6ef482fecba7e9fb4fae5748de377051eb
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 1b0838bb3d4fa1f47d906294ce42c318d1f4a0cd
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30179605"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37049803"
 ---
 # <a name="introduction-to-azure-data-factory"></a>Введение в фабрику данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-introduction.md)
-> * [Версия 2 — предварительная](../introduction.md)
+> * [Версия 1](data-factory-introduction.md)
+> * [Версия 2 (текущая)](../introduction.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится в предварительной версии, см. статью [Introduction to Azure Data Factory](../introduction.md) (Введение в фабрику данных Azure).
+> В статье используется служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [службе "Фабрика данных Azure" версии 2](../introduction.md).
 
 
 ## <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure?

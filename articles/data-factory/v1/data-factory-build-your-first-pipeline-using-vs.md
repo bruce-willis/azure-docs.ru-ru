@@ -14,12 +14,12 @@ ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: ca8d5a26205e65668d46be6b558d596ab066c5f8
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 02c9d3715d8c4632bf19512cd9ffee64e4a22e8a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31404877"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047026"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство: создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
@@ -32,7 +32,7 @@ ms.locfileid: "31404877"
 
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью фабрики данных Azure версии 2](../quickstart-create-data-factory-dot-net.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
 
 В этом руководстве рассматривается создание фабрики данных Azure с помощью Visual Studio. Вы сможете создать проект Visual Studio с помощью шаблона проекта фабрики данных, определить сущности фабрики данных (связанные службы, наборы данных и конвейеры) в формате JSON, а затем опубликовать или развернуть эти сущности в облаке. 
 
