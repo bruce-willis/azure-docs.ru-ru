@@ -189,7 +189,7 @@
                   href: active-directory-b2c-setup-sf-app-custom.md
             - name: Интеграции API-интерфейсов RESTful
               items:
-                - name: Проверка пользовательских входных данных
+                - name: Проверка вводимых пользователем данных
                   href: active-directory-b2c-rest-api-validation-custom.md
                 - name: Получение дополнительных утверждений
                   href: active-directory-b2c-rest-api-step-custom.md

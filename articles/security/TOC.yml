@@ -10,6 +10,8 @@
       href: azure-log-audit.md
     - name: Сетевая безопасность Azure
       href: azure-network-security.md
+    - name: Безопасность бессерверной платформы Azure
+      href: abstract-serverless-platform-security.md
     - name: Включение функций операционной безопасности
       href: azure-operational-security.md
     - name: Система управления в Azure
