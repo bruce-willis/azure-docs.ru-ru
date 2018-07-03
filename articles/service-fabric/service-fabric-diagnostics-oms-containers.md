@@ -51,7 +51,7 @@ ms.locfileid: "34210782"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* См. дополнительные сведения о ](../log-analytics/log-analytics-containers.md)решении OMS "Контейнеры"[.
+* См. дополнительные сведения о [решении OMS "Контейнеры"](../log-analytics/log-analytics-containers.md).
 * Дополнительные сведения об оркестрации контейнера в Service Fabric см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md)
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * Настройте в Log Analytics [правила автоматической генерации оповещений](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.
