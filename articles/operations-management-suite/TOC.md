@@ -1,6 +1,5 @@
 # Обзор
-## [Что такое Operations Management Suite?](operations-management-suite-overview.md)
-## [Архитектура OMS](operations-management-suite-architecture.md)
+## [Мониторинг с использованием агента](../monitoring/index.md)
 
 # Начало работы
 ## [Служба Log Analytics](../log-analytics/log-analytics-get-started.md)
@@ -13,8 +12,6 @@
 
 ## Анализ
 ### [Служба Log Analytics](../log-analytics/log-analytics-overview.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
-### [Сравнение продуктов для мониторинга](operations-management-suite-monitoring-product-comparison.md)
-### [Управление оповещениями](operations-management-suite-monitoring-alerts.md)
 ## Автоматизация
 ### [Обзор службы автоматизации Azure](../automation/automation-intro.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 
@@ -68,12 +65,7 @@
 ### [Рекомендации по использованию хранилища данных SQL Azure](../monitoring/monitoring-solutions-best-practices.md)
 
 ## Сценарии управления
-### [Сбор аналитических данных из модуля runbook](operations-management-suite-runbook-datacollect.md)
-
-## [Интеграция с OMS](operations-management-suite-integration.md)
-
-# Справочные материалы
-## [Пакет SDK](operations-management-suite-sdk.md)
+### [Сбор аналитических данных из модуля runbook](../monitoring/monitoring-runbook-datacollect.md?toc=%2fazure%2foperations-management-suite%2ftoc.json)
 
 # Ресурсы
 ## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)

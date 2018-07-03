@@ -5,6 +5,8 @@
     - name: Что собой представляет служба "Речь"
       href: overview.md
       expanded: true
+    - name: Сценарии службы "Речь"
+      href: speech-scenarios.md
 - name: Быстрое начало работы
   items:
     - name: Попробуйте службу распознавания речи бесплатно
@@ -25,16 +27,18 @@
       href: how-to-text-to-speech.md
     - name: Преобразование текста
       href: how-to-translate-speech.md
-    - name: Получение пакета SDK для речевых устройств
-      href: get-speech-devices-sdk.md
     - name: Пакетное транскрибирование
       href: batch-transcription.md
+    - name: Получение пакета SDK для речевых устройств
+      href: get-speech-devices-sdk.md
 - name: Настройка
   items:
     - name: Настройка акустических моделей
       href: how-to-customize-acoustic-models.md
     - name: Настройка языковых моделей
       href: how-to-customize-language-model.md
+    - name: Настройка произношения
+      href: how-to-customize-pronunciation.md
     - name: Настройка голосов (уникальный голос)
       href: how-to-customize-voice-font.md
     - name: Подготовка расшифровок
