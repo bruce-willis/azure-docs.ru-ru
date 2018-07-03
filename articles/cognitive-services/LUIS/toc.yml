@@ -192,11 +192,11 @@
         - name: Повышение точности с помощью пакетного тестирования
           href: luis-tutorial-batch-testing.md
     - name: Публикация приложения
-      href: PublishApp.md
+      href: luis-how-to-publish-app.md
     - name: Использование предварительно созданных моделей
       items:
         - name: Использование предварительно созданных сущностей
-          href: Pre-builtEntities.md
+          href: luis-prebuilt-entities.md
         - name: Использование предварительно созданных доменов
           href: luis-how-to-use-prebuilt-domains.md
         - name: Использование предварительно созданного приложения Cortana
@@ -208,7 +208,7 @@
         - name: Создание ключей
           href: luis-how-to-azure-subscription.md
         - name: Добавление ключей в LUIS
-          href: Manage-Keys.md
+          href: luis-how-to-manage-keys.md
         - name: Просмотр данных об использовании конечной точки с помощью PowerShell
           href: luis-how-to-manage-from-cloud-shell.md
         - name: Управление версиями
@@ -283,6 +283,10 @@
           href: 'https://github.com/Microsoft/Cognitive-LUIS-Android'
         - name: Node.js
           href: 'https://github.com/Microsoft/Cognitive-LUIS-Node.js'
+        - name: Go
+          href: 'https://aka.ms/luis-sdk-go'
+        - name: Java
+          href: 'https://aka.ms/luis-java-sdk'
         - name: Python
           href: 'https://github.com/Microsoft/Cognitive-LUIS-Python'
         - name: Конечная точка .NET

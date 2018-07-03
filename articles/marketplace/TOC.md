@@ -4,10 +4,10 @@
 ### Возможности и преимущества  
 ### Онлайн-магазины  
 #### [Сравнение Azure Marketplace и AppSource](./comparing-appsource-azure-marketplace.md)  
-#### [Расширение бизнеса с помощью AppSource](./grow-your-business-with-appsource.md)  
+#### [Расширение бизнеса с помощью AppSource](./grow-your-business-with-appsource.md) 
+#### [Предпочтительные решения](./preferred-solutions.md)
 ##### [Создание целевой страницы](./build-your-landing-page.md)  
 ##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
-##### [Предпочтительные решения](./preferred-solutions.md)
 ##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
 ##### [Развитие бизнеса с помощью решений Майкрософт](./promote-your-business-with-microsoft.md)  
 #### [Расширение бизнеса благодаря Azure Marketplace](./grow-your-business-with-azure-marketplace.md)  

@@ -21,6 +21,20 @@
           href: quickstart-csharp-languages.md
         - name: Получение сведений о длине предложений в тексте
           href: quickstart-csharp-sentences.md
+    - name: Go
+      items:
+        - name: Перевод текста
+          href: quickstart-go-translate.md
+        - name: Скрипт для преобразования текста
+          href: quickstart-go-transliterate.md
+        - name: Определение языка текста
+          href: quickstart-go-detect.md
+        - name: Получение вариантов перевода
+          href: quickstart-go-dictionary.md
+        - name: Получение сведений о поддерживаемых языках
+          href: quickstart-go-languages.md
+        - name: Получение сведений о длине предложений в тексте
+          href: quickstart-go-sentences.md
     - name: Java
       items:
         - name: Перевод текста
