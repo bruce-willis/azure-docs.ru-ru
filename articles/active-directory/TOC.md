@@ -83,8 +83,8 @@
 ## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
 ### Управление группами
 #### [портал Azure](fundamentals/active-directory-groups-create-azure-portal.md)
-#### [Azure AD PowerShell для Graph (версия 2)](active-directory-accessmanagement-groups-settings-v2-cmdlets.md)
-#### [Azure AD PowerShell MSOnline](active-directory-accessmanagement-groups-settings-cmdlets.md)
+#### [Azure AD PowerShell для Graph (версия 2)](users-groups-roles/groups-settings-v2-cmdlets.md)
+#### [Azure AD PowerShell MSOnline](users-groups-roles/groups-settings-cmdlets.md)
 ### [Управление членами группы](fundamentals/active-directory-groups-members-azure-portal.md)
 ### [Управление владельцами групп](fundamentals/active-directory-accessmanagement-managing-group-owners.md)
 ### [Управление членством в группах](fundamentals/active-directory-groups-membership-azure-portal.md)
@@ -99,13 +99,13 @@
 ### [Настройка срока действия групп Office 365](active-directory-groups-lifecycle-azure-portal.md)
 ### [Принудительное применение политики именования для групп](groups-naming-policy.md)
 ### [Просмотр всех групп](fundamentals/active-directory-groups-view-azure-portal.md)
-### [Включение доступа для групп в приложениях SaaS](active-directory-accessmanagement-group-saasapps.md)
+### [Включение доступа для групп в приложениях SaaS](users-groups-roles/groups-saasapps.md)
 ### [Восстановление удаленной группы Office 365](fundamentals/active-directory-groups-restore-azure-portal.md)
 ### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md) 
 ### Создание дополнительных правил
 #### [портал Azure](active-directory-groups-dynamic-membership-azure-portal.md)
-### [Настройка групп самообслуживания](active-directory-accessmanagement-self-service-group-management.md)
-### [Устранение неполадок](active-directory-accessmanagement-troubleshooting.md)
+### [Настройка групп самообслуживания](users-groups-roles/groups-self-service-management.md)
+### [Устранение неполадок](users-groups-roles/groups-troubleshooting.md)
 
 ## [Управление отчетами](active-directory-reporting-azure-portal.md)
 ### [Действие входа](active-directory-reporting-activity-sign-ins.md)
@@ -363,7 +363,7 @@
 ### [Azure AD Connect](./connect/active-directory-aadconnect.md)
 ### Имена пользовательских доменов
 #### [Краткое руководство](fundamentals/add-custom-domain.md)
-#### [Добавление имен личных доменов](active-directory-domains-manage-azure-portal.md)
+#### [Добавление имен личных доменов](users-groups-roles/domains-manage.md)
 ### [Администрирование каталога](fundamentals/active-directory-administer.md)
 ### [Удаление каталога](directory-delete-howto.md)
 ### [Несколько каталогов](active-directory-licensing-directory-independence.md)
@@ -381,12 +381,12 @@
 
 ## Делегирование доступа к ресурсам
 ### [Просмотр членов роли администратора](directory-manage-roles-portal.md)
-### [Роли администратора](active-directory-assign-admin-roles-azure-portal.md)
+### [Роли администратора](users-groups-roles/directory-assign-admin-roles.md)
 #### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md)
 #### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md)
 ### [Обеспечение надежной защиты роли администратора](admin-roles-best-practices.md)  
-#### [Создание учетных записей администраторов для аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md)
-### [Административные единицы](active-directory-administrative-units-management.md)
+#### [Создание учетных записей администраторов для аварийного доступа](users-groups-roles/directory-emergency-access.md)
+### [Административные единицы](users-groups-roles/directory-administrative-units.md)
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
 
 ## Проверки доступа
@@ -406,6 +406,7 @@
 #### Быстрое начало работы
 ##### [Настройка отдельных облачных приложений MFA](active-directory-conditional-access-app-based-mfa.md)
 ##### [Обеспечение принятия условий использования](active-directory-conditional-access-tou.md)
+##### [Блокировка доступа при обнаружении риска безопасности сеанса](active-directory-conditional-access-app-sign-in-risk.md)
 #### Учебники
 ##### [Перенос классической политики MFA](active-directory-conditional-access-migration-mfa.md)
 #### Основные понятия

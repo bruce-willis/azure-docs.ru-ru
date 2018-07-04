@@ -5,7 +5,6 @@
 ### Онлайн-магазины  
 #### [Сравнение Azure Marketplace и AppSource](./comparing-appsource-azure-marketplace.md)  
 #### [Расширение бизнеса с помощью AppSource](./grow-your-business-with-appsource.md) 
-#### [Предпочтительные решения](./preferred-solutions.md)
 ##### [Создание целевой страницы](./build-your-landing-page.md)  
 ##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
 ##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
@@ -19,17 +18,17 @@
 ### Публикация в онлайн-магазинах в Marketplace  
 #### [Определение типа перечисления для решения](./determine-your-listing-type.md)  
 #### [Как стать издателем в онлайн-магазинах в Marketplace](./become-publisher.md)  
-#### [Требования по типам перечислений](./listing-type-requirements.md)  
+#### [Требования по типам перечислений](./listing-type-requirements.md) 
+#### [Предпочтительные решения](./preferred-solutions.md) 
 
 ### Публикация контрольных списков  
 #### [Публикация контрольных списков для AppSource](./publishing-checklist-appsource.md)  
 #### [Публикация контрольных списков для Azure Marketplace](./publishing-checklist-azure-marketplace.md)  
 
 ### Поддержка  
-#### [Поддержка AppSource](./support-appsource.md)  
-#### [Поддержка Azure Marketplace](./support-azure-marketplace.md)  
+#### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
-### Руководства  
+### Руководства по публикации  
 #### [Консультационные услуги в Azure Marketplace](consulting-services.md)  
 #### [Техническое руководство по публикации SaaS-приложений в Microsoft Azure Marketplace](marketplace-saas-applications-technical-publishing-guide.md) 
 

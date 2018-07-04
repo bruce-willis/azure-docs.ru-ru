@@ -338,6 +338,10 @@
     - name: Заметки о выпуске
       href: ../hdinsight-release-notes.md
       maintainContext: true
+      items:
+        - name: Архивные заметки о выпуске
+          href: ../hdinsight-release-notes-archive.md
+          maintainContext: true
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
     - name: Получить помощь на форуме

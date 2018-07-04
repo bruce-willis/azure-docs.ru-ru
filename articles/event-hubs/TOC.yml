@@ -60,6 +60,20 @@
       href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Получение событий с помощью .NET Framework
       href: event-hubs-dotnet-framework-getstarted-receive-eph.md
+    - name: Концентраторы событий для Kafka
+      items:
+        - name: Общие сведения о концентраторах событий для экосистем Kafka
+          href: event-hubs-for-kafka-ecosystem-overview.md
+        - name: Создание концентраторов событий с поддержкой Kafka
+          href: event-hubs-create-kafka-enabled.md
+        - name: Потоковая передача данных в концентраторы событий для экосистемы Kafka
+          href: event-hubs-quickstart-kafka-enabled-event-hubs.md
+        - name: Руководство по использованию Kafka MirrorMaker с концентраторами событий
+          href: event-hubs-kafka-mirror-maker-tutorial.md
+        - name: Руководство по использованию Apache Flink с концентраторами событий
+          href: event-hubs-kafka-flink-tutorial.md
+        - name: Руководство по использованию Akka Streams с концентраторами событий
+          href: event-hubs-kafka-akka-streams-tutorial.md
     - name: Доступные API
       href: event-hubs-api-overview.md
       items:

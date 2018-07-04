@@ -2,15 +2,17 @@
 
 # Обзор
 ## [Что такое Resource Manager?](resource-group-overview.md)
-## [Поставщики и типы ресурсов](resource-manager-supported-services.md)
 ## [Развертывание с помощью Azure Resource Manager и классическая модель развертывания](resource-manager-deployment-model.md)
-## [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance)
-## [Упорядочение ресурсов с помощью групп управления](management-groups-overview.md)
 
 # Начало работы
 ## [Создание и развертывание шаблона](resource-manager-create-first-template.md)
 ## [Расширение VS Code для шаблонов](resource-manager-vscode-extension.md)
 ## [Использование Visual Studio с Resource Manager](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
+
+# Основные понятия
+## [Поставщики и типы ресурсов](resource-manager-supported-services.md)
+## [Группы управления](management-groups-overview.md)
+## [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
 
 # Практическое руководство
 ## Создание шаблонов

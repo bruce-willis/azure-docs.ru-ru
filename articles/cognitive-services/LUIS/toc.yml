@@ -63,7 +63,7 @@
           href: luis-quickstart-primary-and-secondary-data.md
         - name: 7. Добавление сущности keyPhrase
           href: luis-quickstart-intent-and-key-phrase.md
-        - name: 8. Добавление анализа тональности
+        - name: 8. Добавление анализа тональности.
           href: luis-quickstart-intent-and-sentiment-analysis.md
     - name: Улучшение прогнозирования
       items:
@@ -136,7 +136,7 @@
 - name: Практические руководства
   items:
     - name: Планирование приложения
-      href: Plan-your-app.md
+      href: luis-how-plan-your-app.md
     - name: Запуск нового приложения
       href: Create-new-app.md
     - name: Создание модели
@@ -200,7 +200,7 @@
         - name: Использование предварительно созданных доменов
           href: luis-how-to-use-prebuilt-domains.md
         - name: Использование предварительно созданного приложения Cortana
-          href: Cortana-Prebuilt-App.md
+          href: luis-how-to-cortana-prebuilt-app.md
     - name: Управление приложением LUIS
       items:
         - name: Использование панелей мониторинга
@@ -309,6 +309,8 @@
       href: 'https://azure.microsoft.com/services/cognitive-services/spell-check/'
     - name: Текстовая аналитика
       href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
+    - name: Распознаватели текста
+      href: 'https://github.com/Microsoft/Recognizers-Text'
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
