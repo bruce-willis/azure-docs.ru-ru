@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: afc3a6036e8d006f8c5f2a1de35037db2b38a70a
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: fdce9dc733f8c1a389a44374641eb27ba40d6b37
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37083385"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446022"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -5451,7 +5451,7 @@ Azure для разработчиков Java </h3>
                                                     <a href="/java/azure">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="/java/api/overview/azure">Справочник по API</a>
+                                                    <a href="/java/api">Справочник по API</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -5602,7 +5602,7 @@ Docker </h3>
                                                     <a href="/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker">Средства Visual Studio для Docker</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780680">Загрузка для Visual Studio</a>
+                                                    <a href="https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017">Загрузка для Visual Studio</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://go.microsoft.com/fwlink/?LinkId=780681">Загрузка для Visual Studio Code</a>

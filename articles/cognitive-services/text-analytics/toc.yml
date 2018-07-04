@@ -51,19 +51,21 @@
       href: 'https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7'
 - name: Ресурсы
   items:
+    - name: Внешние материалы и материалы сообщества
+      href: text-analytics-resource-external-community.md
     - name: Часто задаваемые вопросы
       href: text-analytics-resource-faq.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
-    - name: UserVoice
-      href: 'https://cognitive.uservoice.com/forums/555922-text-analytics'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Переполнение стека
       href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'
-    - name: Поддерживаемые языки
-      href: text-analytics-supported-languages.md
     - name: Ключ подписки
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=text-analytics'
-    - name: Внешние материалы и материалы сообщества
-      href: text-analytics-resource-external-community.md
+    - name: Поддерживаемые языки
+      href: text-analytics-supported-languages.md
     - name: Тестирование
       href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/555922-text-analytics'
