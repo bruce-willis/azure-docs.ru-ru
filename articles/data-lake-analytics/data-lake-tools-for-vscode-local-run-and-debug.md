@@ -10,21 +10,21 @@ editor: jasonwhowell
 ms.assetid: dc9b21d8-c5f4-4f77-bcbc-eff458f48de2
 ms.topic: conceptual
 ms.date: 07/14/2017
-ms.openlocfilehash: de41120a3a9d399dafecde4225d56767efcd9f38
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 850b13becb2137c9e881b2d6a657bbd06216e96e
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624835"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317152"
 ---
 # <a name="run-u-sql-and-debug-locally-in-visual-studio-code"></a>Запуск и отладка заданий U-SQL локально в Visual Studio Code
 В этой статье описывается, как выполнять задания U-SQL на локальном компьютере для разработки, чтобы ускорить программирование на ранних этапах, и отлаживать код локально в Visual Studio Code. Инструкции по использованию средств Azure Data Lake для Visual Studio Code см. в статье [Использование средств Azure Data Lake для Visual Studio Code](data-lake-analytics-data-lake-tools-for-vscode.md). 
 
 ## <a name="set-up-the-u-sql-local-run-environment"></a>Настройка среды для локального запуска U-SQL
 
-1. Откройте палитру команд, нажав клавиши CTRL+SHIFT+P, и введите **ADL: Download Local Run Dependency** (ADL: скачать зависимости для локального запуска), чтобы скачать пакеты.  
+1. Откройте палитру команд, нажав клавиши CTRL+SHIFT+P, и введите **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты.  
 
-   ![Скачивание пакетов зависимостей для локального запуска ADL](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/DownloadLocalRun.png)
+   ![Скачивание пакетов зависимостей для локального запуска ADL](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/downloadtheadllocalrunpackage.png)
 
 2. Найдите пакеты зависимостей по пути, показанному на панели **вывода**, затем установите BuildTools и Win10SDK 10240. Пример пути:  
 `C:\Users\xxx\AppData\Roaming\LocalRunDependency` 
@@ -44,7 +44,7 @@ ms.locfileid: "34624835"
 
 
 ## <a name="start-the-local-run-service-and-submit-the-u-sql-job-to-a-local-account"></a>Локальный запуск службы и отправка задания U-SQL в локальную учетную запись 
-Новые пользователи должны ввести **ADL: Download Local Run Dependency** (ADL: скачать зависимости для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
+Новые пользователи должны ввести **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
 
 1. Нажмите клавиши CTRL+SHIFT+P, чтобы открыть палитру команд, и введите **ADL: Start Local Run Service** (ADL: скачать зависимости для локального запуска).   
 2. Выберите **Принять**, чтобы принять условия лицензионного соглашения об использовании программного обеспечения Майкрософт в первый раз. 
@@ -65,7 +65,7 @@ ms.locfileid: "34624835"
 ## <a name="start-a-local-debug-for-the-u-sql-job"></a>Запуск локальной отладки для задания U-SQL  
 Для новых пользователей:
 
-1. Введите **ADL: Download Local Run Dependency** (ADL: скачать зависимости для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
+1. Введите **ADL: Download Local Run Package** (ADL: скачать пакет для локального запуска), чтобы скачать пакеты для локального запуска, если вы еще не [настроили среду для локального запуска U-SQL](#set-up-the-u-sql-local-run-environment).
 2. Установите пакет SDK для .NET Core 2.0, как предложено в окне сообщения, если пакет еще не установлен.
  
   ![Напоминание об установке Dotnet](./media/data-lake-analytics-data-lake-tools-for-vscode-local-run-and-debug/remind-install-dotnet.png)

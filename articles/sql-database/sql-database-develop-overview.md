@@ -8,14 +8,14 @@ ms.reviewer: genemi
 ms.service: sql-database
 ms.custom: develop apps
 ms.topic: conceptual
-ms.date: 04/01/2018
+ms.date: 06/20/2018
 ms.author: sstein
-ms.openlocfilehash: aee8f8c830ac504b6688c02c2b262a0d87bc5278
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 2194293d23e5db277f2ff7aa207c298533f74571
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646632"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308872"
 ---
 # <a name="sql-database-application-development-overview"></a>Обзор разработки приложений базы данных SQL
 В этой статье рассматриваются основные вопросы, которые разработчик должен учитывать при программировании подключения к базе данных SQL Azure.
@@ -33,9 +33,12 @@ ms.locfileid: "34646632"
 Вы можете использовать инструменты с открытым кодом, такие как [cheetah](https://github.com/wunderlist/cheetah), [sql-cli](https://www.npmjs.com/package/sql-cli) и [VS Code](https://code.visualstudio.com/). Кроме того, база данных SQL Azure поддерживает инструменты Майкрософт, например [Visual Studio](https://www.visualstudio.com/downloads/) и [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx).  Кроме того, портал управления Azure, PowerShell и интерфейсы REST API дополнительно упростят вам работу.
 
 ## <a name="resource-limitations"></a>Ограничения ресурсов
-База данных SQL Azure управляет ресурсами, доступными для базы данных, с использованием двух разных механизмов: управления ресурсами и принудительного применения ограничений.
+База данных SQL Azure управляет ресурсами, доступными для базы данных, с использованием двух разных механизмов: управления ресурсами и принудительного применения ограничений. Дополнительные сведения можно найти в разделе 
 
-* Дополнительные сведения: [Ограничения модели для ресурсов службы "База данных SQL Azure" на основе DTU](sql-database-dtu-resource-limits.md) и [Ограничения для службы "База данных SQL Azure" в модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits.md).
+- [Ограничения ресурсов для отдельной базы данных при использовании модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
+- [Ограничения ресурсов для эластичных пулов при использовании модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md)
+- [Ограничения ресурсов для отдельной базы данных при использовании модели на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md)
+- [Ограничения ресурсов для эластичных пулов при использовании модели на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md)
 
 ## <a name="security"></a>Безопасность
 База данных SQL Azure предоставляет ресурсы для ограничения доступа, защиты данных и мониторинга действий в базе данных SQL.

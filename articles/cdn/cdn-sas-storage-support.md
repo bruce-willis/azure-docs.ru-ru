@@ -12,14 +12,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/11/2018
+ms.date: 06/21/2018
 ms.author: v-deasim
-ms.openlocfilehash: ea779f4f809e51b57d36cd44f9c6674340d665a2
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 15a4e0a8d62b38fa7aa542d95e53d29621965666
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261174"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36316574"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
 
@@ -41,7 +41,7 @@ SAS дает возможность определить различные па
  
 Например: 
  ```
-https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-04-17&ss=b&srt=co&sp=r&se=2038-01-02T21:30:49Z&st=2018-01-02T13:30:49Z&spr=https&sig=QehoetQFWUEd1lhU5iOMGrHBmE727xYAbKJl5ohSiWI%3D
+https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&ss=b&srt=co&sp=r&se=2038-01-02T21:30:49Z&st=2018-01-02T13:30:49Z&spr=https&sig=QehoetQFWUEd1lhU5iOMGrHBmE727xYAbKJl5ohSiWI%3D
 ```
 
 Дополнительные сведения о параметрах см. в разделах [Сведения о параметрах SAS](#sas-parameter-considerations) и [Параметры подписанного URL-адреса](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1#shared-access-signature-parameters).
@@ -62,7 +62,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-04-17&
 
    Например:    
    ```
-   https://demoendpoint.azureedge.net/container1/demo.jpg/?sv=2017-04-17&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
+   https://demoendpoint.azureedge.net/container1/demo.jpg/?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
    
 3. Точная настройка длительности кэширования выполняется либо с помощью правил кеширования, либо путем добавления заголовков `Cache-Control` на сервер-источник. Так как Azure CDN рассматривает маркер SAS как обычную строку запроса, необходимо настроить длительность кэширования, которая истекает при истечении срока действия SAS или раньше. В противном случае, если файл кэшируется дольше, чем активен SAS, файл может остаться доступным с сервера-источника Azure CDN по истечении срока действия SAS. В этом случае, если вы хотите сделать кэшированный файл недоступным, выполните операцию очистки кэша в файле. Сведения о настройке длительности кэширования для Azure CDN см. в статье [Управление поведением кэширования сети доставки содержимого Azure с помощью правил кэширования](cdn-caching-rules.md).
@@ -80,14 +80,14 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-04-17&
    Ниже приведен пример правила переопределения URL-адресов, в котором используется шаблон регулярного выражения с группой записи и конечной точкой *storagedemo*.
    
    Источник:   
-   `(/test/.*)`
+   `(\/container1\/.*)`
    
    Назначение:   
    ```
-   $1?sv=2017-04-17&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
+   $1?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-
-   ![Правило переопределения URL-адресов CDN](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-2.png)
+   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-2.png)
 
 2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Используется следующий формат: `https://<endpoint hostname>.azureedge.net/<container>/<file>`.
  
@@ -118,14 +118,14 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-04-17&
    Ниже приведен пример правила переопределения URL-адресов, в котором используется шаблон регулярного выражения с группой записи и конечной точкой *storagedemo*.
    
    Источник:   
-   `(/test/.*)`
+   `(\/container1\/.*)`
    
    Назначение:   
    ```
-   $1&sv=2017-04-17&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
+   $1&sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
-
-   ![Правило переопределения URL-адресов CDN](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-3.png)
+   ![Правило переопределения URL-адресов CDN — слева](./media/cdn-sas-storage-support/cdn-url-rewrite-rule.png)
+   ![Правило переопределения URL-адресов CDN — справа](./media/cdn-sas-storage-support/cdn-url-rewrite-rule-option-3.png)
 
 3. При обновлении SAS не забудьте обновить и правило переопределения URL-адресов, указав новый маркер SAS. 
 
@@ -140,7 +140,10 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-04-17&
 | Разрешенные IP-адреса | Необязательный элемент. Если вы используете **Azure CDN от Verizon**, примените параметр диапазонов, указанных на странице [Azure CDN from Verizon Edge Server IP Ranges](https://msdn.microsoft.com/library/mt757330.aspx) (Диапазоны IP-адресов пограничного сервера Azure CDN от Verizon). Если вы используете **Azure CDN от Akamai**, нельзя задать параметр диапазонов IP-адресов, так как они не являются статичными.|
 | Разрешенные протоколы | Протоколы, разрешенные для запроса, сделанного с помощью SAS учетной записи. Рекомендуется использовать параметр HTTPS.|
 
-## <a name="see-also"></a>См. также
+## <a name="next-steps"></a>Дополнительная информация
+
+Дополнительные сведения о SAS доступны в следующих статьях:
 - [Использование подписанных URL-адресов (SAS)](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1)
 - [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2)
-- [Защита ресурсов сети доставки содержимого Azure с помощью аутентификации на основе маркеров](https://docs.microsoft.com/azure/cdn/cdn-token-auth)
+
+Дополнительные сведения о настройке аутентификации на основе маркеров см. в разделе [Защита ресурсов сети доставки содержимого Azure с помощью аутентификации на основе маркеров](https://docs.microsoft.com/azure/cdn/cdn-token-auth).

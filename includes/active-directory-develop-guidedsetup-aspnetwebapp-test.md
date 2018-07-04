@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 04/19/2018
 ms.author: andret
 ms.custom: include file
-ms.openlocfilehash: c10a6367f07bf66f7a0a8968022881b3c616fb74
-ms.sourcegitcommit: c851842d113a7078c378d78d94fea8ff5948c337
+ms.openlocfilehash: bfdc89d9bc5d5a07c04e857c1a46e4b988c125ab
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "36205609"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36943561"
 ---
 ## <a name="test-your-code"></a>Тестирование кода
 
@@ -71,7 +71,7 @@ GlobalFilters.Filters.Add(new AuthorizeAttribute());
 <!--end-collapse-->
 
 ### <a name="restrict-who-can-sign-in-to-your-application"></a>Ограничение доступа на вход в приложение
-По умолчанию при сборке приложения, созданного в рамках этого руководства, ваше приложение сможет принимать операции входа с помощью личных учетных записей (включая outlook.com, live.com и другие), а также рабочих и учебных учетных записей из любой компании или организации, которая использует Azure Active Directory. Этот вариант рекомендуется для приложений SaaS.
+По умолчанию после выполнения сборки приложение, созданное при изучении этого руководства, будет принимать запросы на вход с личными учетными записями (включая учетные записи outlook.com, live.com и пр.) и рабочими или учебными учетными записями любой компании или организации, которая использует Azure Active Directory. Этот вариант рекомендуется для приложений SaaS.
 
 Ограничить доступ для входа в систему для приложения можно несколькими способами.
 

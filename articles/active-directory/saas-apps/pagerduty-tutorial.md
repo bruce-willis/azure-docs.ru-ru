@@ -8,19 +8,18 @@ manager: mtillman
 ms.reviewer: joflore
 ms.assetid: 0410456a-76f7-42a7-9bb5-f767de75a0e0
 ms.service: active-directory
-ms.component: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2017
+ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 37409ee72591d943a834ff38f077a002a1724ab9
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 18c3dbdcf85c5b06b4f0f20c85b9fe751a3719fe
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215398"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317988"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство по интеграции Azure Active Directory с PagerDuty
 
@@ -60,14 +59,14 @@ ms.locfileid: "36215398"
 
 **Чтобы добавить PagerDuty из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
     ![Кнопка "Azure Active Directory"][1]
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
-    
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
@@ -102,8 +101,8 @@ ms.locfileid: "36215398"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+
     ![Диалоговое окно "Единый вход"](./media/pagerduty-tutorial/tutorial_pagerduty_samlbase.png)
 
 3. В разделе **Домены и URL-адреса приложения PagerDuty** выполните следующие действия.
@@ -114,12 +113,12 @@ ms.locfileid: "36215398"
 
     Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/). 
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/).
 
 4. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/pagerduty-tutorial/tutorial_pagerduty_certificate.png) 
+    ![Ссылка для скачивания сертификата](./media/pagerduty-tutorial/tutorial_pagerduty_certificate.png)
 
 5. Нажмите кнопку **Сохранить** .
 
@@ -127,34 +126,33 @@ ms.locfileid: "36215398"
 
 6. В разделе **Конфигурация PagerDuty** щелкните **Настроить PagerDuty**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
 
-    ![Конфигурация PagerDuty](./media/pagerduty-tutorial/tutorial_pagerduty_configure.png) 
+    ![Конфигурация PagerDuty](./media/pagerduty-tutorial/tutorial_pagerduty_configure.png)
 
 7. В другом окне браузера войдите на свой сайт PagerDuty компании в качестве администратора.
 
 8. В меню в верхней части страницы щелкните **Параметры учетной записи**.
-   
+
     ![Параметры учетной записи](./media/pagerduty-tutorial/ic778535.png "параметры учетной записи")
 
 9. Щелкните **Single Sign-on**(Единый вход).
-   
+
     ![Единый вход](./media/pagerduty-tutorial/ic778536.png "Единый вход")
 
 10. На странице **Включить единый вход** выполните следующие действия.
-   
+
     ![Разрешить единый вход](./media/pagerduty-tutorial/ic778537.png "Разрешить единый вход")
-   
+
     a. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
   
     Б. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
   
     c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
- 
-    d. Установите флажок **Включить единый вход**.
- 
-    д. Нажмите кнопку **Сохранить изменения**.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+    d. Установите флажок **Allow username/password login** (Разрешить вход по имени пользователя и паролю).
+
+    д. Установите флажок **Require EXACT authentication context comparison** (Требовать точное сравнение контекста аутентификации).
+
+    f. Нажмите кнопку **Сохранить изменения**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -262,8 +260,6 @@ ms.locfileid: "36215398"
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-
-
 <!--Image references-->
 
 [1]: ./media/pagerduty-tutorial/tutorial_general_01.png
@@ -277,4 +273,3 @@ ms.locfileid: "36215398"
 [201]: ./media/pagerduty-tutorial/tutorial_general_201.png
 [202]: ./media/pagerduty-tutorial/tutorial_general_202.png
 [203]: ./media/pagerduty-tutorial/tutorial_general_203.png
-

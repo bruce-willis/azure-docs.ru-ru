@@ -1,6 +1,6 @@
 ---
-title: Логические серверы и отдельные базы данных SQL Azure | Документация Майкрософт
-description: Изучите понятия логического сервера и отдельной базы данных SQL Azure, а также ознакомьтесь с их ресурсами.
+title: Создание серверов и отдельных баз данных SQL Azure и управление ими | Документация Майкрософт
+description: Узнайте, как создавать логические серверы и отдельные базы данных и управлять ими.
 services: sql-database
 author: CarlRabeler
 manager: craigg
@@ -9,65 +9,18 @@ ms.custom: DBs & servers
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: carlrab
-ms.openlocfilehash: 505fd88959feb1c84abc53c6435776a5c5b4123c
+ms.openlocfilehash: 918cfd0257c82e84451e07ef904dbda331f47b95
 ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309186"
+ms.locfileid: "36311318"
 ---
-# <a name="azure-sql-database-logical-servers-and-single-databases-and-their-resources"></a>Логический сервер и отдельная база данных SQL Azure, а также их ресурсы
+# <a name="create-and-manage-logical-servers-and-single-databases-in-azure-sql-database"></a>Создание логических серверов и отдельных баз данных в Базе данных SQL Azure и управление ими 
 
-## <a name="what-is-an-azure-sql-logical-server"></a>Что такое логический сервер SQL Azure?
+Вы можете создавать логические серверы и отдельные базы данных SQL Azure и управлять ими с помощью портала Azure, PowerShell, Azure CLI, REST API и Transact-SQL.
 
-Логический сервер выступает в качестве центра администрирования нескольких отдельных баз данных или баз данных в составе [пула](sql-database-elastic-pool.md), [имен для входа](sql-database-manage-logins.md), [правил брандмауэра](sql-database-firewall-configure.md), [правил аудита](sql-database-auditing.md), [политик обнаружения угроз](sql-database-threat-detection.md) и [групп отработки отказа](sql-database-geo-replication-overview.md). Логический сервер может находиться в регионе, отличном от региона своей группы ресурсов. Логический сервер должен существовать еще до создания базы данных SQL Azure. Все базы данных на сервере создаются в том же регионе, что логический сервер.
-
-Логический сервер — это логическая конструкция, отличная от экземпляра SQL Server, с которым вы могли работать в локальной среде. В частности, служба базы данных SQL не дает никаких гарантий, связанных с расположением баз данных относительно логических серверов, а также не предоставляет доступ или возможности на уровне экземпляра. А сервер в службе "Управляемый экземпляр Базы данных SQL" аналогичен экземпляру SQL Server, с которым вы могли работать в локальной среде.
-
-При создании логического сервера следует указать учетные данные входа на сервер, имеющие права администратора для базы данных master на этом сервере и всех баз данных, созданных на этом сервере. Эта начальная учетная запись является учетной записью входа SQL. База данных SQL Azure поддерживает аутентификацию SQL и аутентификацию Azure Active Directory. Дополнительную информацию об именах для входа и аутентификации можно найти в разделе [Предоставление доступа к базе данных и управление им](sql-database-manage-logins.md). Проверка подлинности Windows не поддерживается. 
-
-> [!TIP]
-> Допустимые имена групп и ресурсов описываются в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
->
-
-Характеристики логического сервера базы данных SQL Azure
-
-- Создается в рамках подписки Azure, но сам логический сервер и все его ресурсы можно переместить в другую подписку.
-- Выступает в качестве родительского ресурса для баз данных, эластичных пулов и хранилищ данных.
-- Предоставляет пространство имен для баз данных, эластичных пулов и хранилищ данных.
-- Представляет собой логический контейнер со строгой семантикой времени существования (при удалении сервера удаляются также все расположенные на нем базы данных, эластичные пулы и хранилища данных).
-- Участвует в [управлении доступом на основе ролей Azure](/azure/role-based-access-control/overview) (базы данных, эластичные пулы и хранилища данных, содержащиеся на сервере, наследуют его права доступа).
-- Выступает в качестве элемента высокого приоритета при идентификации баз данных, эластичных пулов и хранилищ данных для управления ресурсами Azure (см. схему URL-адресов для баз данных и пулов).
-- Выравнивает ресурсы в регионе.
-- Предоставляет конечную точку подключения к базе данных (<serverName>.database.windows.net).
-- Предоставляет доступ к метаданным ресурсов через динамические административные представления путем подключения к базе данных master. 
-- Обеспечивает область для политик управления, применяемых к базам данных: имена для входа, брандмауэр, аудит, обнаружение угроз и т. д. 
-- Ограничен квотой в рамках родительской подписки (по умолчанию шесть серверов на подписку). Ограничения подписки см. [здесь](../azure-subscription-service-limits.md).
-- Обеспечивает область для квоты базы данных и квоты DTU или виртуальных ядер для ресурсов, содержащихся на нем (например, 45 000 DTU).
-- Выступает в качестве области управления версиями для компонентов, включенных для его ресурсов. 
-- За счет возможностей входа в систему с использованием субъекта серверного уровня может управлять всеми базами данных на сервере.
-- Может содержать имена входов, подобные именам входов экземпляров SQL Server в локальной среде с доступом к одной или нескольким базам данных на сервере. Можно предоставлять ограниченные права администратора. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](sql-database-manage-logins.md).
-- Параметры сортировки по умолчанию для всех пользовательских баз данных, созданных на логическом сервере, имеют значение `SQL_LATIN1_GENERAL_CP1_CI_AS`, где `LATIN1_GENERAL` означает английский язык (США) `CP1` — кодовую страницу 1252, `CI` означает, что учитывается регистр, а `AS` — что учитываются диакритические знаки.
-
-## <a name="logical-servers-and-databases"></a>Логические серверы и базы данных
-
-На логическом сервере можно создать следующие компоненты.
-
-- Отдельная база данных, которая создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-vcore.md). База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
-- База данных, которая создается в составе [пула баз данных](sql-database-elastic-pool.md) в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища (модель на основе DTU)](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища (модель на основе виртуальных ядер)](sql-database-service-tiers-vcore.md), которые совместно используются всеми базами данных в пуле. База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
-
-> [!IMPORTANT]
-> Управляемый экземпляр Базы данных SQL (сейчас на этапе предварительной версии) — это [экземпляр SQL Server](sql-database-managed-instance.md), который создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с определенным набором вычислительных ресурсов и ресурсов хранения, предназначенных для всех баз данных в этом экземпляре сервера. Управляемый экземпляр содержит системные и пользовательские базы данных. С его помощью можно выполнять перенос базы данных методом lift-and-shift в полностью управляемое приложение PaaS, не изменяя приложение. Служба "Управляемый экземпляр Базы данных SQL" обеспечивает высокую совместимость с моделью программирования локального сервера SQL Server и поддерживает большинство возможностей, дополнительных инструментов и служб SQL Server. Дополнительные сведения см. в статье [What is a Managed Instance (preview)?](sql-database-managed-instance.md) (Сведения об Управляемом экземпляре (предварительная версия)). Оставшаяся часть этой статьи не относится управляемому экземпляру.
-
-## <a name="tds-and-tcpip-connections"></a>Подключения по протоколам TDS и TCP/IP
-
-База данных SQL Microsoft Azure поддерживает клиент протокола для потока табличных данных (TDS) версии 7.3 или более поздней версии и разрешает использовать только зашифрованные TCP/IP-подключения.
-
-## <a name="azure-sql-databases-protected-by-sql-database-firewall"></a>Базы данных SQL Azure, защищенные брандмауэром базы данных SQL
-
-Чтобы защитить данные, [брандмауэр базы данных SQL](sql-database-firewall-configure.md) предотвращает доступ к серверу базы данных и всем его базам данных, осуществляемый вне подключения к серверу, установленного непосредственно через подписку Azure. Чтобы обеспечить дополнительные возможности подключения, необходимо [создать одно или несколько правил брандмауэра](sql-database-firewall-configure.md#creating-and-managing-firewall-rules). Изучите дополнительные сведения о создании [эластичных пулов](sql-database-elastic-pool.md) и управлении ими.
-
-## <a name="manage-azure-sql-servers-databases-and-firewalls-using-the-azure-portal"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью портала Azure
+## <a name="azure-portal-manage-logical-servers-and-databases"></a>Портал Azure: управление логическими серверами и базами данных
 
 Группу ресурсов базы данных SQL Azure можно создать заблаговременно или при создании самого сервера. Существует несколько методов перехода к форме создания сервера SQL Server. Можно создать сервер SQL Server отдельно или при создании базы данных. 
 
@@ -100,11 +53,14 @@ ms.locfileid: "36309186"
 
 > [!TIP]
 > Краткое руководство по работе с порталом Azure приведено в статье о [создании базы данных SQL Azure на портале Azure](sql-database-get-started-portal.md).
+
+## <a name="powershell-manage-logical-servers-and-databases"></a>PowerShell: управление логическими серверами и базами данных
+
+Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). 
+
+> [!TIP]
+> Краткое руководство по PowerShell приведено в разделе [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-portal.md). Образцы скриптов PowerShell, см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md).
 >
-
-## <a name="manage-azure-sql-servers-databases-and-firewalls-using-powershell"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью PowerShell
-
-Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Изучите дополнительные сведения о создании [эластичных пулов](sql-database-elastic-pool.md) и управлении ими.
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
@@ -123,13 +79,13 @@ ms.locfileid: "36309186"
 |[Remove-AzureRmSqlServerFirewallRule](/powershell/module/azurerm.sql/remove-azurermsqlserverfirewallrule)|Удаляет правило брандмауэра с сервера.|
 | New-AzureRmSqlServerVirtualNetworkRule | Создает [*правило виртуальной сети*](sql-database-vnet-service-endpoint-rule-overview.md) на основе подсети, в которая является конечной точкой службы виртуальной сети. |
 
+## <a name="azure-cli-manage-logical-servers-and-databases"></a>Azure CLI: управление логическими серверами и базами данных
+
+Для создания сервера SQL Azure, баз данных SQL Azure и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure) используйте приведенные ниже команды [Azure CLI для Базы данных SQL](/cli/azure/sql/db). Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](sql-database-elastic-pool.md) и управлении ими.
+
 > [!TIP]
-> Краткое руководство по PowerShell приведено в разделе [Создание отдельной базы данных SQL Azure с помощью PowerShell](sql-database-get-started-portal.md). Образцы скриптов PowerShell, см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md).
+> Краткое руководство по Azure CLI приведено в статье [Создание отдельной базы данных SQL Azure с помощью Azure CLI](sql-database-get-started-cli.md). Образцы скриптов Azure CLI, см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью интерфейса командной строки](scripts/sql-database-create-and-configure-database-cli.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки](scripts/sql-database-monitor-and-scale-database-cli.md).
 >
-
-## <a name="manage-azure-sql-servers-databases-and-firewalls-using-the-azure-cli"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью Azure CLI
-
-Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью [Azure CLI](/cli/azure) используйте приведенные ниже команды [Azure CLI для Базы данных SQL](/cli/azure/sql/db). Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows. Изучите дополнительные сведения о создании [эластичных пулов](sql-database-elastic-pool.md) и управлении ими.
 
 | Командлет | ОПИСАНИЕ |
 | --- | --- |
@@ -153,13 +109,13 @@ ms.locfileid: "36309186"
 |[az sql server firewall-rule update](/cli/azure/sql/server/firewall-rule##az_sql_server_firewall_rule_update)|Обновляет правило брандмауэра.|
 |[az sql server firewall-rule delete](/cli/azure/sql/server/firewall-rule#az_sql_server_firewall_rule_delete)|Удаляет правило брандмауэра.|
 
-> [!TIP]
-> Краткое руководство по Azure CLI приведено в статье [Создание отдельной базы данных SQL Azure с помощью Azure CLI](sql-database-get-started-cli.md). Образцы скриптов Azure CLI, см. в статьях [Создание отдельной базы данных SQL и настройка правила брандмауэра с помощью интерфейса командной строки](scripts/sql-database-create-and-configure-database-cli.md) и [Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки](scripts/sql-database-monitor-and-scale-database-cli.md).
->
-
-## <a name="manage-azure-sql-servers-databases-and-firewalls-using-transact-sql"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью Transact-SQL
+## <a name="transact-sql-manage-logical-servers-and-databases"></a>Transact-SQL: управление логическими серверами и базами данных
 
 Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Transact-SQL используйте приведенные ниже команды T-SQL. Можно выполнить эти команды на портале Azure, в [SQL Server Management Studio](/sql/ssms/use-sql-server-management-studio), [Visual Studio Code](https://code.visualstudio.com/docs) или любой другой программе, которая может подключаться к серверу базы данных SQL Azure и передавать команды Transact-SQL. Ознакомьтесь с дополнительными сведениями об управлении [эластичными пулами](sql-database-elastic-pool.md).
+
+
+> [!TIP]
+> Краткое руководство по использованию SQL Server Management Studio в Microsoft Windows приведено в разделе [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Краткое руководство по использованию Visual Studio Code в macOS, Linux и Windows приведено в статье [База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
 
 > [!IMPORTANT]
 > С помощью Transact-SQL невозможно создать или удалить сервер.
@@ -184,10 +140,8 @@ ms.locfileid: "36309186"
 |[sp_delete_database_firewall_rule (база данных SQL Azure)](/sql/relational-databases/system-stored-procedures/sp-delete-database-firewall-rule-azure-sql-database)|Удаляет параметр брандмауэра уровня базы данных из базы данных SQL Azure или хранилища данных SQL. |
 
 
-> [!TIP]
-> Краткое руководство по использованию SQL Server Management Studio в Microsoft Windows приведено в разделе [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Краткое руководство по использованию Visual Studio Code в macOS, Linux и Windows приведено в статье [База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
 
-## <a name="manage-azure-sql-servers-databases-and-firewalls-using-the-rest-api"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью REST API
+## <a name="rest-api-manage-logical-servers-and-databases"></a>REST API: управление логическими серверами и базами данных
 
 Для создания сервера Azure SQL Server, баз данных и брандмауэров и управления используются приведенные ниже запросы REST API.
 

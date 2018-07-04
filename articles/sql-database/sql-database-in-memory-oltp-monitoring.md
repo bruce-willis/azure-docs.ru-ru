@@ -7,20 +7,22 @@ manager: craigg
 ms.service: sql-database
 ms.custom: monitor & tune
 ms.topic: conceptual
-ms.date: 04/04/2018
+ms.date: 06/20/2018
 ms.author: jodebrui
-ms.openlocfilehash: aff0f82f07e9129c8f7c131f055447ad578ad15b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f74c9bf06cad8b84d08baf7a0a0504b9cb729bf4
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647346"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308685"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
-При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. Каждому уровню служб категорий "Премиум" и "Критически важный для бизнеса" выделяется максимальный объем в хранилище выполняющейся в памяти OLTP, который определен ограничениями ресурсов на основе [DTU](sql-database-dtu-resource-limits.md) и [виртуальных ядер](sql-database-vcore-resource-limits.md). При превышении этого ограничения операции вставки и обновления могут завершаться сбоем (ошибка 41823 для отдельных баз данных и ошибка 41840 для эластичных пулов). В таком случае потребуется либо удалить данные, чтобы освободить память, либо повысить уровень производительности базы данных.
+При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. В каждом уровне обслуживания "Премиум" и "Критически важный для бизнеса" используется максимальный объем хранилища OLTP в памяти. Ознакомьтесь с разделами [Resource limits for single databases using the DTU-based purchasing model](sql-database-dtu-resource-limits-single-databases.md) (Ограничения ресурсов для отдельных баз данных, использующих модель приобретения на основе DTU), [Resources limits for elastic pools using the DTU-based purchasing model](sql-database-dtu-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов, использующих модель приобретения на основе DTU), [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md) и [Azure SQL Database vCore-based purchasing model limits for elastic pools (preview)](sql-database-vcore-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)).
+
+При превышении этого ограничения операции вставки и обновления могут завершаться сбоем (ошибка 41823 для отдельных баз данных и ошибка 41840 для эластичных пулов). В таком случае потребуется либо удалить данные, чтобы освободить память, либо повысить уровень производительности базы данных.
 
 ## <a name="determine-whether-data-fits-within-the-in-memory-oltp-storage-cap"></a>Как определить, соответствует ли объем данных ограничениям хранилища выполняющейся в памяти OLTP
-Определите возможности хранения для различных уровней служб. Просмотрите ограничения ресурсов на основе [DTU](sql-database-dtu-resource-limits.md) и [виртуальных ядер](sql-database-vcore-resource-limits.md).
+Определите возможности хранения для различных уровней служб. Ознакомьтесь с разделами [Resource limits for single databases using the DTU-based purchasing model](sql-database-dtu-resource-limits-single-databases.md) (Ограничения ресурсов для отдельных баз данных, использующих модель приобретения на основе DTU), [Resources limits for elastic pools using the DTU-based purchasing model](sql-database-dtu-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов, использующих модель приобретения на основе DTU), [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)](sql-database-vcore-resource-limits-single-databases.md) и [Azure SQL Database vCore-based purchasing model limits for elastic pools (preview)](sql-database-vcore-resource-limits-elastic-pools.md) (Ограничения ресурсов для эластичных пулов в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер (предварительная версия)).
 
 Оценка требований к памяти для таблицы, оптимизированной для памяти, выполняется одинаково как на сервере SQL Server, так и в базе данных SQL Azure. Потратьте несколько минут, чтобы прочесть эту статью в библиотеке [MSDN](https://msdn.microsoft.com/library/dn282389.aspx).
 

@@ -24,7 +24,7 @@
 ### <a name="set-your-azure-account-and-subscription"></a>Настройка учетной записи и подписки Azure
 Если у вас нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться в [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
 
-Откройте окно командной строки Azure PowerShell и войдите в систему Azure с помощью такой команды:
+Откройте окно командной строки Azure PowerShell и войдите в систему Azure с помощью приведенной ниже команды.
 
     Connect-AzureRmAccount
 

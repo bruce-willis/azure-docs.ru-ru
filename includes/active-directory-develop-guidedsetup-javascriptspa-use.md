@@ -1,4 +1,4 @@
-## <a name="use-the-microsoft-authentication-library-msal-to-sign-in-the-user"></a>Использование библиотеки проверки подлинности Майкрософт (MSAL) для входа пользователя
+## <a name="use-the-microsoft-authentication-library-msal-to-sign-in-the-user"></a>Использование библиотеки аутентификации Майкрософт (MSAL) для входа пользователя
 
 1.  Создайте файл с именем `app.js`. Если вы работаете с Visual Studio, выберите проект (корневую папку проекта), щелкните правой кнопкой мыши и выберите `Add` > `New Item` > `JavaScript File`.
 2.  Добавьте в файл `app.js` следующий код:
@@ -50,7 +50,7 @@ function callGraphApi() {
         userInfoElement.parentElement.classList.remove("hidden");
         userInfoElement.innerHTML = JSON.stringify(user, null, 4);
 
-        // Show Sign-Out button
+        // Show sign-out button
         document.getElementById("signOutButton").classList.remove("hidden");
 
         // Now Call Graph API to show the user profile information:
@@ -81,7 +81,7 @@ function callGraphApi() {
 /**
  * Callback method from sign-in: if no errors, call callGraphApi() to show results.
  * @param {string} errorDesc - If error occur, the error message
- * @param {object} token - The token received from login
+ * @param {object} token - The token received from sign-in
  * @param {object} error - The error string
  * @param {string} tokenType - The token type: For loginRedirect, tokenType = "id_token". For acquireTokenRedirect, tokenType:"access_token".
  */
@@ -119,10 +119,10 @@ function showError(endpoint, error, errorDesc) {
 
 #### <a name="getting-a-user-token-interactively"></a>Интерактивное получение маркера пользователя
 
-После первоначального входа вам не нужно требовать от пользователей повторно проходить проверку подлинности каждый раз, когда они запрашивают маркер для доступа к ресурсу, поэтому в большинстве случаев для получения маркеров следует использовать *acquireTokenSilent*. Но существуют ситуации, когда пользователи должны взаимодействовать с конечной точкой Azure Active Directory версии 2. Далее приведены некоторые примеры.
--   Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля
--   Ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие
--   Требуется двухфакторная проверка подлинности
+После первоначального входа вам не нужно требовать от пользователей повторно проходить аутентификацию каждый раз, когда они запрашивают маркер для доступа к ресурсу, поэтому в большинстве случаев для получения маркеров следует использовать *acquireTokenSilent*. Но существуют ситуации, когда пользователи должны взаимодействовать с конечной точкой Azure Active Directory версии 2. Далее приведены некоторые примеры.
+- Пользователям может потребоваться повторно ввести учетные данные, так как истек срок действия пароля
+- Ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие
+- Требуется двухфакторная проверка подлинности
 
 Вызов *acquireTokenRedirect(scope)* приводит к перенаправлению пользователей на конечную точку Azure Active Directory версии 2 (или *acquireTokenPopup(scope)* приводит к отображению всплывающего окна), с которой пользователям нужно взаимодействовать либо подтвердив свои учетные данные, дав согласие на доступ к требуемому ресурсу, либо выполнив двухфакторную проверку подлинности.
 
@@ -204,7 +204,7 @@ function callWebApiWithToken(endpoint, token, responseElement, showTokenElement)
 
 ```javascript
 /**
- * Sign-out the user
+ * Sign out the user
  */
 function signOut() {
     userAgentApplication.logout();

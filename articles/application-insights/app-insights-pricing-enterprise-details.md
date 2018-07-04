@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
-ms.date: 04/02/2018
+ms.topic: conceptual
+ms.date: 06/21/2018
 ms.author: mbullwin
-ms.openlocfilehash: 6df013506e4541fee7850850776d26e5c69a799d
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 65307eab0bf1b5f502f11c14c369826cd12e0966
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36311088"
 ---
 # <a name="enterprise-plan-details"></a>Сведения о плане "Корпоративный"
 
@@ -26,6 +27,9 @@ ms.lasthandoff: 04/16/2018
 В плане "Корпоративный" оплачивается каждый узел, и каждому узлу выделяется ежедневная квота данных. При использовании тарифного плана "Корпоративный" плата взимается за данные, полученные свыше предоставленной квоты. Если вы используете Operations Management Suite, следует выбрать план "Корпоративный". 
 
 Текущие цены в валюте вашей страны для выбранного региона вы можете узнать на [странице цен на Application Insights](http://azure.microsoft.com/pricing/details/application-insights/).
+
+> [!NOTE]
+> В апреле 2018 года была [представлена](https://azure.microsoft.com/blog/introducing-a-new-way-to-purchase-azure-monitoring-services/) новая модель ценообразования для служб мониторинга Azure. Эта модель использует простой принцип "с оплатой по мере использования" во всем портфеле служб мониторинга. Узнайте больше о [новой модели ценообразования](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs), о том, как [оценить последствия перехода на новую модель](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#assessing-the-impact-of-the-new-pricing-model), исходя из ваших шаблонов использования, и как [перейти на эту модель](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#moving-to-the-new-pricing-model).
 
 ## <a name="how-the-enterprise-plan-works"></a>Принцип работы плана "Корпоративный"
 

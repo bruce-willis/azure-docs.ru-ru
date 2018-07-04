@@ -10,12 +10,12 @@ ms.custom: migrate
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: carlrab
-ms.openlocfilehash: 73f7c9ae9a3badd9d9dc3628145132238c8670d0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a9acff6f2b3e668707a6ef4cc3c736ebd28b4d3a
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645928"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309387"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в базу данных SQL Azure
 
@@ -64,7 +64,7 @@ ms.locfileid: "34645928"
 
 ### <a name="method-2-use-transactional-replication"></a>Метод 2. Использование репликации транзакций
 
-Если вы не можете отключить базу данных SQL Server от рабочих процессов на время миграции, вы можете воспользоваться транзакционной репликацией SQL Server в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](https://msdn.microsoft.com/library/mt589530.aspx) и быть совместимой с базой данных SQL Azure. См. дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
+Если вы не можете отключить базу данных SQL Server от рабочих процессов на время миграции, вы можете воспользоваться транзакционной репликацией SQL Server в качестве решения для миграции. Чтобы использовать этот метод, база данных-источник должна соответствовать [требованиям к репликации транзакций](https://msdn.microsoft.com/library/mt589530.aspx) и быть совместимой с базой данных SQL Azure. Получите дополнительные сведения о [настройке репликации для групп доступности AlwaysOn (SQL Server)](/sql/database-engine/availability-groups/windows/configure-replication-for-always-on-availability-groups-sql-server).
 
 Чтобы использовать это решение, следует настроить базу данных SQL Azure в качестве подписчика на экземпляр SQL Server, который требуется перенести. Распространитель репликации транзакций обеспечивает синхронизацию данных из базы данных (издателя) по мере возникновения новых транзакций. 
 

@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 06/07/2018
 ms.author: ellacroi
-ms.openlocfilehash: 6ad1c226246bc1523daca84235591afc27a3b132
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: a2962f50258bb3f65f574882ce2ea46ff006aac3
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34826276"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309356"
 ---
 # <a name="support-for-azure-marketplace"></a>Поддержка Azure Marketplace  
 Варианты поддержки Azure Marketplace.  
@@ -50,7 +50,7 @@ ms.locfileid: "34826276"
 |:--- |:--- |  
 | Slack: [join.marketplace.azure.com](https://join.marketplace.azure.com) | Среда Slack для решения технических проблем партнеров. Более 350 партнеров в настоящее время работает в этой среде. |  
 | Форумы MSDN по Marketplace, расположенные по адресу [social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Форум Microsoft Developer Network. |  
-| Вопросы в Stack Overflow по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Вопросы в Stack Overflow по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Вопросы в Stack Overflow по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Вопросы в Stack Overflow по виртуальным машинам Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li><li>[Контейнеры в Azure](https://stackoverflow.com/search?q=azure+container)</li></ul> |
+| Вопросы в Stack Overflow по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Вопросы в Stack Overflow по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Вопросы в Stack Overflow по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Вопросы в Stack Overflow по виртуальным машинам Azure: [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Вопросы в Stack Overflow по контейнерам Azure: [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |
 
 ## <a name="marketing-resources"></a>Маркетинговые ресурсы  
 
