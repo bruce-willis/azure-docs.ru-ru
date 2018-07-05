@@ -3,23 +3,24 @@ title: Управление программами и их элементами 
 description: Для каждой инициативы по контролю, управлению рисками и соответствию в вашей организации можно создать дополнительные программы, позволяющие собрать и упорядочить проверки доступа Azure Active Directory в виде элементов управления.
 services: active-directory
 documentationcenter: ''
-author: markwahl-msft
+author: rolyon
 manager: mtillman
-editor: ''
+editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.component: compliance-reports
 ms.date: 06/21/2018
 ms.author: rolyon
-ms.openlocfilehash: 06e91b4d52a70ea33f4317a6434c2bd49e5c3bd3
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.reviewer: mwahl
+ms.openlocfilehash: b1c8f26934b52a423c06c15d610c28298754a8a7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37020980"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37448651"
 ---
 # <a name="manage-programs-and-their-controls"></a>Управление программами и их элементами управления 
 

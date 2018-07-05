@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: alleonar
-ms.openlocfilehash: 665365e06ef02698c10259628f6bf2442ab8d612
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f1a1a2fa083dd1bf02132e08981d736a17a2c58f
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36333519"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109490"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -121,5 +121,5 @@ ms.locfileid: "36333519"
   (5) — Приложение завершает создание сертификата путем слияния сертификата X509 из ЦС.
 
 ## <a name="see-also"></a>См. также
-- [Операции с сертификатами](/rest/api/keyvault/certificate-operations.md)
+- [Операции с сертификатами](/rest/api/keyvault/certificate-operations)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)

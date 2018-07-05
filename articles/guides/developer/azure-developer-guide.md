@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
-ms.openlocfilehash: 3d4b93a604170cb3b8396562a15483923330f467
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: f4dfc376e49ac26f0c054282994a29d9a7d2b54b
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36754426"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442177"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -265,7 +265,7 @@ Azure предоставляет широкий набор функций для
 
 Между каждой подпиской Azure и экземпляром Azure AD установлено отношение доверия. Это означает, что она доверяет каталогу проверять подлинность пользователей, служб и устройств. Несколько подписок могут доверять одному и тому же каталогу, но одна конкретная подписка доверяет только одному каталогу. Дополнительные сведения см. в разделе [Связь между подписками Azure и службой Azure Active Directory](../../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 
-Помимо определения отдельных удостоверений учетных записей Azure, также называемых *пользователями*, в Azure AD можно также определить *группы*. Создание групп пользователей — хороший способ контролировать доступ к ресурсам в подписке с помощью управления доступом на основе ролей (RBAC). Чтобы узнать, как создавать группы, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). Создавать группы и управлять ими можно также [с помощью PowerShell](../../active-directory/active-directory-accessmanagement-groups-settings-v2-cmdlets.md).
+Помимо определения отдельных удостоверений учетных записей Azure, также называемых *пользователями*, в Azure AD можно также определить *группы*. Создание групп пользователей — хороший способ контролировать доступ к ресурсам в подписке с помощью управления доступом на основе ролей (RBAC). Чтобы узнать, как создавать группы, ознакомьтесь с разделом [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md). Создавать группы и управлять ими можно также [с помощью PowerShell](../../active-directory/users-groups-roles/groups-settings-v2-cmdlets.md).
 
 ### <a name="manage-your-subscriptions"></a>Управление подписками
 

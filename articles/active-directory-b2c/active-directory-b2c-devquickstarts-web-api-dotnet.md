@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/17/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 39603cf103a8ff2656c76843aeae36b17936d13a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 0fd00672e53d0b0148b70b364df5959ced1e554a
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34712408"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442463"
 ---
 # <a name="azure-ad-b2c-call-a-net-web-api-from-a-net-web-app"></a>Azure AD B2C: вызов веб-API .NET из веб-приложения .NET
 

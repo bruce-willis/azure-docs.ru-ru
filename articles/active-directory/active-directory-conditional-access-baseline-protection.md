@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/21/2018
+ms.date: 07/02/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 86b57a82573760ac73975e851b2bb4caf769845b
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 1e7eb3a0098dc27b6f3c47d8d4848b2b9b5f7e61
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308566"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37447546"
 ---
 # <a name="what-is-baseline-protection---preview"></a>Что такое базовая защита (предварительная версия)  
 
@@ -51,7 +51,7 @@ ms.locfileid: "36308566"
 
 ![Azure Active Directory](./media/active-directory-conditional-access-baseline-protection/01.png)
 
-Базовая политика позволяет исключать пользователей и группы. Вы можете исключить одну *[административную учетную запись аварийного доступа](active-directory-admin-manage-emergency-access-accounts.md)*, чтобы не заблокировать клиент для себя.
+Базовая политика позволяет исключать пользователей и группы. Вы можете исключить одну *[административную учетную запись аварийного доступа](users-groups-roles/directory-emergency-access.md)*, чтобы не заблокировать клиент для себя.
 
 
 ## <a name="enable-a-baseline-policy"></a>Включение базовой политики 
@@ -67,9 +67,9 @@ ms.locfileid: "36308566"
 
     ![Azure Active Directory](./media/active-directory-conditional-access-baseline-protection/02.png)
 
-3. На странице **Azure Active Directory** в разделе **Управление** щелкните **Условный доступ**.
+3. На странице **Azure Active Directory** в разделе **Безопасность** щелкните **Условный доступ**.
 
-    ![Условный доступ](./media/active-directory-conditional-access-baseline-protection/03.png)
+    ![Условный доступ](./media/active-directory-conditional-access-baseline-protection/05.png)
 
 4. В списке политик щелкните политику, название которой начинается со слов **Базовая политика:**. 
 

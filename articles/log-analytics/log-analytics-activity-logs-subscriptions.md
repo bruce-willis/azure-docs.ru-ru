@@ -3,22 +3,23 @@ title: Получение журналов действий Azure в служб�
 description: Использование концентраторов событий и Logic Apps для сбора данных из журналов действий Azure и их отправка в рабочее пространство Azure Log Analytics в другом клиенте.
 services: log-analytics, logic-apps, event-hubs
 documentationcenter: ''
-author: richrundmsft
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: richrund; bwren
-ms.openlocfilehash: d72d0823d78f47aed3d8690cee81f8bb00e7921d
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: na
+ms.openlocfilehash: c2bb802213d903290a0168623d7e6a302ba0e324
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34636976"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127447"
 ---
 # <a name="collect-azure-activity-logs-into-log-analytics-across-subscriptions"></a>Получение журналов действий Azure в службе Log Analytics в разных подписках
 

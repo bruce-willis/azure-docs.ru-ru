@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: larryfr
-ms.openlocfilehash: 51307e1bdb31d902636787790d1c4f1248f3886b
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: bfb6515ba9b7f36e90783444fc474dc575b32f37
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34361926"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37113628"
 ---
-# <a name="connect-hdinsight-to-your-on-premise-network"></a>Подключение HDInsight к локальной сети
+# <a name="connect-hdinsight-to-your-on-premises-network"></a>Подключение HDInsight к локальной сети
 
 Узнайте, как подключить HDInsight к локальной сети с помощью виртуальной сети Azure и VPN-шлюза. В этом документе содержатся следующие сведения о планировании:
 

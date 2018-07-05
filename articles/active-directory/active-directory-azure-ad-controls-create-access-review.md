@@ -2,23 +2,24 @@
 title: Создание проверки доступа для участников группы или пользователей с доступом к приложению с помощью Azure AD | Документация Майкрософт
 description: Узнайте, как создать проверку доступа для участников группы или пользователей с доступом к приложению.
 services: active-directory
-author: markwahl-msft
+author: rolyon
 manager: mtillman
-editor: ''
+editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.component: compliance-reports
 ms.date: 06/21/2018
 ms.author: rolyon
-ms.openlocfilehash: 2c4e26bb6f2cd144d00d9e4ada92d756fe68418b
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.reviewer: mwahl
+ms.openlocfilehash: 853d8f09a94e46db218553500a50dc4ef1ec3d23
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37020412"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37448277"
 ---
 # <a name="create-an-access-review-of-group-members-or-application-access-with-azure-ad"></a>Создание проверки доступа для участников группы или приложения с помощью Azure AD
 

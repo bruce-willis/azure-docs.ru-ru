@@ -7,18 +7,18 @@ author: rolyon
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.topic: article
+ms.topic: conceptual
 ms.workload: identity
 ms.component: protection
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 7c536a4e7f93a2f1ef42b7600513994dd80826a0
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: f3d8cbdcef25509304785090190f172ae20913b6
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37020876"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37440814"
 ---
 # <a name="how-to-perform-an-access-review-in-azure-ad-privileged-identity-management"></a>Как выполнить проверку доступа в управлении привилегированными пользователями Azure AD
 Компонент Azure Active Directory (AD) Privileged Identity Management упрощает управление привилегированным доступом пользователей к ресурсам в Azure AD и других веб-службах Майкрософт, включая Office 365 и Microsoft Intune.  

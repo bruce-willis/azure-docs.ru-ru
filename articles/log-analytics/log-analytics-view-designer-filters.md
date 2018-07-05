@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
-ms.openlocfilehash: 21b54f60286e25c410b9d51de8be122c450080d3
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.component: na
+ms.openlocfilehash: 0ad22562bd1f36bba7c0ab99fe504e82645033d3
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36752781"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131416"
 ---
 # <a name="filters-in-log-analytics-views"></a>Фильтры в представлениях Log Analytics
 **Фильтр** в [представлении Log Analytics](log-analytics-view-designer.md) позволяет пользователям фильтровать данные по значению конкретного свойства, не изменяя само представление.  Например, можно разрешить пользователям представления фильтровать это представление, чтобы просматривать данные только с определенного компьютера или набора компьютеров.  Можно создать несколько фильтров в одном представлении, чтобы разрешить пользователям выполнять фильтрацию по нескольким свойствам.  В этой статье описывается, как использовать фильтр и добавить его в настраиваемое представление.

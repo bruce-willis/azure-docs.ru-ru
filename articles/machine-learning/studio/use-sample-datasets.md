@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/19/2018
-ms.openlocfilehash: 5e225a16baef53c12a5d0a719c36a2042d391c7f
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: acdc2ca6f0746f4495f6b3747b7fc303574f712c
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959108"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342554"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Используйте типовых наборов данных в Azure Machine Learning Studio
 [top]: #machine-learning-sample-datasets
@@ -147,7 +147,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <tr>
   <td>Общий набор данных CRM</td>
   <td>
-Эти данные взяты с KDD Cup 2009 — конкурса прогнозистов, использующих программы взаимоотношения с клиентами (<a href="http://www.sigkdd.org/kdd-cup-2009-customer-relationship-prediction - orange_small_train.data.zip">orange_small_train.data.zip</a>).
+Эти данные взяты с KDD Cup 2009 — конкурса прогнозистов, использующих программы взаимоотношения с клиентами (<a href="http://www.sigkdd.org/site/2009/files/orange_small_train.data.zip">orange_small_train.data.zip</a>).
 <p></p>
 Набор данных включает в себя сведения о 50 000 клиентов французской телекоммуникационной компании Orange. У каждого клиента есть 230 обезличенных характеристик, из которых 190 — числовые, а 40 — категорийные. Характеристики являются очень разреженными.
   </td>
@@ -403,7 +403,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <tr>
   <td><a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/student_performance.txt">student_performance.txt</a></td>
   <td>
-Эти данные взяты с конкурса KDD Cup 2010 (<a href="http://www.kdd.org/kdd-cup-2010-student-performance-evaluation">аттестация студентов</a>). Использованные данные: обучающий набор данных Algebra_2008_2009 (Stamper, J., Niculescu-Mizil, A., Ritter, S., Gordon, G.J., & Koedinger, K.R. (2010). Алгебра 2008-2009. Опробуйте набор данных из состязания KDD Cup 2010: интеллектуальный анализ образовательных данных. Он находится в файле <a href="http://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp">downloads.jsp</a>.
+Эти данные взяты с конкурса KDD Cup 2010 (<a href="http://www.kdd.org/kdd-cup/view/kdd-cup-2010-student-performance-evaluation">аттестация студентов</a>). Использованные данные: обучающий набор данных Algebra_2008_2009 (Stamper, J., Niculescu-Mizil, A., Ritter, S., Gordon, G.J., & Koedinger, K.R. (2010). Алгебра 2008-2009. Опробуйте набор данных из состязания KDD Cup 2010: интеллектуальный анализ образовательных данных. Он находится в файле <a href="http://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp">downloads.jsp</a>.
 <p></p>
 Набор данных был скачан и сохранен в хранилище BLOB-объектов Azure (<a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/student_performance.txt">student_performance.txt</a>). Он содержит файлы журналов из системы обучения студентов. Задаваемыми характеристиками являются идентификатор проблемы и ее краткое описание, идентификатор учащегося, метка времени, а также количество попыток, которые сделал учащийся перед правильным решением проблемы. Исходный набор данных содержит 8,9 млн записей. Количество строк в этом наборе данных уменьшено до первых 100 тысяч строк. Набор данных содержит 23 столбца с разделителем-табуляцией различных типов: числа, категории и метки времени.
   </td>

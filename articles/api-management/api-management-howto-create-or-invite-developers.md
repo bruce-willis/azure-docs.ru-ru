@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: apimpm
-ms.openlocfilehash: 53ed914a3890aab1dd49536856feeb8975986e00
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 3d9a4454a1b3f65b42a46a26e8d483fad83f65f6
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "33934814"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37111275"
 ---
 # <a name="how-to-manage-user-accounts-in-azure-api-management"></a>Управление учетными записями пользователей в службе управления API Azure
-В службе управления API разработчики – это пользователи интерфейсов API, которые вы предоставляете с помощью службы управления API. В этом руководстве показано, как создавать и приглашать разработчиков использовать интерфейсы API и продукты, которые вы делаете доступными для них с помощью своего экземпляра API Management. Сведения о программном управлении учетными записями пользователей см. в документации по [сущностям пользователя](https://msdn.microsoft.com/library/azure/dn776330.aspx) [в справочнике по REST управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx).
+В службе управления API разработчики – это пользователи интерфейсов API, которые вы предоставляете с помощью службы управления API. В этом руководстве показано, как создавать и приглашать разработчиков использовать интерфейсы API и продукты, которые вы делаете доступными для них с помощью своего экземпляра API Management. Сведения о программном управлении учетными записями пользователей см. в документации по [сущностям пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity) [в справочнике по REST управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx).
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -66,7 +66,7 @@ ms.locfileid: "33934814"
 
 ## <a name="reset-a-user-password"></a>Сброс пароля пользователя
 
-Сведения о программной работе с учетными записями пользователей см. в документации по [сущностям пользователя](https://msdn.microsoft.com/library/azure/dn776330.aspx) в [справочнике по REST управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx). Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://msdn.microsoft.com/library/azure/dn776330.aspx#UpdateUser) и указать нужный пароль.
+Сведения о программной работе с учетными записями пользователей см. в документации по [сущностям пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity) в [справочнике по REST управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx). Чтобы сбросить пароль учетной записи пользователя до определенного значения, можно использовать операцию [обновления пользователя](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-user-entity#UpdateUser) и указать нужный пароль.
 
 ## <a name="next-steps"> </a>Дальнейшие действия
 После создания учетной записи разработчика ее можно связать с ролями и подписать ее на продукты и интерфейсы API. Дополнительные сведения см. в статье [Как создавать и использовать группы для управления учетными записями разработчика в службе управления Azure API][How to create and use groups].

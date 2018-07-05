@@ -3,24 +3,24 @@ title: Оптимизация среды System Center Operations Manager с п�
 description: Использование проверки работоспособности System Center Operations Manager для оценки риска и состояния сред на регулярной основе.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: tysonn
 ms.assetid: 49aad8b1-3e05-4588-956c-6fdd7715cda1
 ms.service: log-analytics
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 493fb0295c1d760bb7de13ae1b703b3636750612
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.component: na
+ms.openlocfilehash: bdf56a85c43513f573c02e3b28cd93f28217814b
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018720"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128968"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 

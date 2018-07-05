@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 09b76cd2235663d76b9973ff722ec6a515c30285
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: e6f722afead39c8a0ba940d9e2cb54d1f197d143
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34709688"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442286"
 ---
 # <a name="azure-ad-b2c-authentication-protocols"></a>Azure AD B2C: протоколы проверки подлинности
 Azure Active Directory B2C (Azure AD B2C) предоставляет приложениям "идентификацию как услугу" благодаря поддержке двух стандартных отраслевых протоколов: OpenID Connect и OAuth 2.0. Хотя эта служба соответствует стандартам, любые две реализации этих протоколов могут иметь небольшие различия. 

@@ -4,22 +4,23 @@ description: С помощью конструктора представлени
 services: log-analytics
 documentationcenter: ''
 author: bwren
-manager: jwhit
+manager: carmonm
 editor: ''
 ms.assetid: ce41dc30-e568-43c1-97fa-81e5997c946a
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
-ms.openlocfilehash: 91d4efcd7fabc2f284078d752ea68778a9bd8d86
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.component: na
+ms.openlocfilehash: d900a778aa003357fb85d3e8ec8e40dee64f0f9c
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36752045"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131860"
 ---
 # <a name="create-custom-views-by-using-view-designer-in-log-analytics"></a>Создание пользовательских представлений с помощью конструктора представлений в Log Analytics
 С помощью конструктора представлений в [Azure Log Analytics](log-analytics-overview.md) на портале Azure можно создавать различные пользовательские представления, содержащие визуальные представления данных из рабочей области Log Analytics. Эта статья содержит обзор конструктора представлений и процедур по созданию и изменению пользовательских представлений.
