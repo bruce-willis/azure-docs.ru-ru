@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 05/21/2018
 ms.author: maquaran
-ms.openlocfilehash: a2770b9349dac8caa8e0611d77522ab56ca1bf07
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: f69742d111555e776a968454bdc004ba171e6336
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798871"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36937423"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -74,6 +74,17 @@ ms.locfileid: "34798871"
 * Совместимость с [пакетом SDK для .NET для SQL](sql-api-sdk-dotnet.md) версии 1.14.1 и более ранних версий.
 
 ### <a name="pre-release-builds"></a>Сборки в предварительной версии
+
+### <a name="a-name203-prerelease203-prerelease"></a><a name="2.0.3-prerelease"/>2.0.3-prerelease
+* Исправлены следующие ошибки:
+  * При разделении секции может дублироваться обработка документов, созданных до разделения.
+  * API GetEstimatedRemainingWork возвратил 0 при отсутствии аренды в коллекции.
+
+* Приведенные ниже исключения сделаны общедоступными. Расширения, реализующие IPartitionProcessor, могут выдавать эти исключения.
+  * Microsoft.Azure.Documents.ChangeFeedProcessor.Exceptions.LeaseLostException. 
+  * Microsoft.Azure.Documents.ChangeFeedProcessor.Exceptions.PartitionException. 
+  * Microsoft.Azure.Documents.ChangeFeedProcessor.Exceptions.PartitionNotFoundException.
+  * Microsoft.Azure.Documents.ChangeFeedProcessor.Exceptions.PartitionSplitException. 
 
 ### <a name="a-name202-prerelease202-prerelease"></a><a name="2.0.2-prerelease"/>Предварительный выпуск 2.0.2:
 * Незначительные изменения в API:

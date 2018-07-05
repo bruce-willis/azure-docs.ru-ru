@@ -14,16 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/29/2018
 ms.author: srrengar
-ms.openlocfilehash: 184faa0f6171ff00ab3c2398f693e9c7ad015d33
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 49d9b5306a0fcf51cc0de036c725fca8345cd0ec
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34839594"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36302188"
 ---
 # <a name="event-analysis-and-visualization-with-log-analytics"></a>Анализ и визуализация событий с помощью Log Analytics
-
-Log Analytics (также известен как Operations Management Suite (OMS)) — это набор служб управления, которые помогают в мониторинге и диагностике приложений и служб, размещенных в облаке. В этой статье описано, как выполнять запросы в Log Analytics для получения полезных сведений и устранения неполадок, которые могут произойти в кластере. Рассматриваются следующие распространенные вопросы:
+Log Analytics собирает и анализирует данные телеметрии от приложений и служб, размещенных в облаке, и предоставляет средства анализа, с помощью которых вы сможете максимально увеличить их доступность и производительность. В этой статье описано, как выполнять запросы в Log Analytics для получения полезных сведений и устранения неполадок, которые могут произойти в кластере. Рассматриваются следующие распространенные вопросы:
 
 * Как устранить неполадки событий работоспособности?
 * Как узнать, что узел вышел из строя?
@@ -43,9 +42,9 @@ Log Analytics (также известен как Operations Management Suite (O
 
 2. В сводке вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните диаграмму **Service Fabric** (первое изображение ниже), чтобы перейти к решению аналитики Service Fabric (второе изображение ниже).
 
-    ![Решение OMS Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_summary.PNG)
+    ![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_summary.PNG)
 
-    ![Решение OMS Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
+    ![Решение Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_solution.PNG)
 
 На рисунке выше показана домашняя страница решения "Аналитика Service Fabric". На этом снимке экрана представлена информация, касающаяся работы вашего кластера. Если включить диагностику во время создания кластера, можно просмотреть такие события: 
 
@@ -60,11 +59,11 @@ Log Analytics (также известен как Operations Management Suite (O
 
 1. На странице аналитики Service Fabric щелкните диаграмму для **События Service Fabric**.
 
-    ![Операционный канал решения OMS Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events_selection.png)
+    ![Операционный канал решения Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events_selection.png)
 
 2. Щелкните **Список**, чтобы просмотреть список событий. Здесь вы увидите все собранные системные события. Эти данные взяты из таблицы WADServiceFabricSystemEventsTable в учетной записи хранения Azure, а события служб Reliable Services и субъектов Reliable Actors, которые показаны далее, также взяты из этих соответствующих таблиц.
     
-    ![Запрос OMS к операционному каналу](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events.png)
+    ![Операционный канал запроса](media/service-fabric-diagnostics-event-analysis-oms/oms_service_fabric_events.png)
 
 Кроме того, чтобы найти необходимые данные, можно щелкнуть значок лупы в левой части экрана и воспользоваться языком запросов Kusto. Например, чтобы найти все действия, выполняемые в узлах кластера, можно использовать приведенный ниже запрос. Идентификаторы событий, используемые ниже, можно найти в [справочнике по событиям операционного канала](service-fabric-diagnostics-event-generation-operational.md).
 
@@ -79,11 +78,11 @@ ServiceFabricOperationalEvent
 
 1. На странице аналитики Service Fabric щелкните диаграмму для **Reliable Services**.
 
-    ![Reliable Services в решении OMS Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_services_events_selection.png)
+    ![Reliable Services в решении Service Fabric](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_services_events_selection.png)
 
 2. Щелкните **Список**, чтобы просмотреть список событий. Здесь можно просмотреть события из служб Reliable Services. Когда служба RunAsync запускается и завершается, могут отображаться различные события. Обычно это происходит при развертывании и обновлении. 
 
-    ![Запрос OMS к Reliable Services](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_service_events.png)
+    ![Запрос к Reliable Services](media/service-fabric-diagnostics-event-analysis-oms/oms_reliable_service_events.png)
 
 Аналогичным образом можно просмотреть события субъектов Reliable Actors. Чтобы настроить более подробные события для субъектов Reliable Actors, необходимо изменить `scheduledTransferKeywordFilter` в конфигурации для расширения диагностики (см. ниже). Сведения об этих значениях можно найти в [справочнике по событиям субъектов Reliable Actors](service-fabric-reliable-actors-diagnostics.md#keywords).
 
@@ -101,12 +100,12 @@ ServiceFabricOperationalEvent
 
 Язык запросов Kusto предоставляет широкие возможности. Вы можете выполнить другой полезный запрос, чтобы узнать, какие узлы создают больше событий. Запрос на снимке экрана, приведенном ниже, показывает операционное событие Service Fabric агрегированное с конкретной службой и узлом.
 
-![События запросов OMS на каждом узле](media/service-fabric-diagnostics-event-analysis-oms/oms_kusto_query.png)
+![События запросов на каждом узле](media/service-fabric-diagnostics-event-analysis-oms/oms_kusto_query.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Чтобы включить мониторинг инфраструктуры (т. е. счетчики производительности), перейдите к изучению [этой статьи о добавлении агента OMS](service-fabric-diagnostics-oms-agent.md). Агент собирает счетчики производительности и добавляет их в имеющуюся рабочую область.
-* Для локальных кластеров OMS предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в OMS. Дополнительные сведения см. в разделе [Подключения компьютеров к OMS с помощью шлюза OMS без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md).
-* Настройте OMS, чтобы установить [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.
+* Чтобы включить мониторинг инфраструктуры (т. е. счетчики производительности), перейдите к разделу о [добавлении агента Log Analytics](service-fabric-diagnostics-oms-agent.md). Агент собирает счетчики производительности и добавляет их в имеющуюся рабочую область.
+* Для локальных кластеров Log Analytics предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в Log Analytics. Дополнительные сведения см. в разделе [Подключение компьютеров к Log Analytics с помощью шлюза OMS без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md)
+* Настройте [автоматические оповещения](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * Более подробные сведения о службе Log Analytics и ее возможностях см. в статье [Что такое Operations Management Suite (OMS)?](../operations-management-suite/operations-management-suite-overview.md)

@@ -9,16 +9,16 @@ ms.topic: article
 ms.date: 3/29/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: a1a5d6d455086ee34767e92b277936840717bcd6
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 910a5c85d16cb46465598a77d5321cc0eed99744
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33933779"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319254"
 ---
 # <a name="use-an-internal-load-balancer-with-azure-kubernetes-service-aks"></a>Использование внутренней подсистемы балансировки нагрузки со Службой Azure Kubernetes (AKS)
 
-Внутренняя балансировка нагрузки позволяет сделать службу Kubernetes доступной для приложений, работающих в той же виртуальной сети, что и кластер Kubernetes. В этом документе описывается, как использовать внутреннюю подсистему балансировки нагрузки со Службой Azure Kubernetes (AKS).
+Внутренняя балансировка нагрузки позволяет сделать службу Kubernetes доступной для приложений, работающих в той же виртуальной сети, что и кластер Kubernetes. В этом документе описывается, как использовать внутреннюю подсистему балансировки нагрузки со Службой Azure Kubernetes (AKS). Доступно два типа SKU Azure Load Balancer: уровня "Базовый" и "Стандартный". AKS использует SKU уровня "Базовый".
 
 ## <a name="create-internal-load-balancer"></a>Создание внутренней подсистемы балансировки нагрузки
 

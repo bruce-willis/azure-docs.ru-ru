@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: jeffya
-ms.openlocfilehash: 331e589aadf783fc40ab6efbfb554469c27e48d8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a5030c7363d02fe9600183e058f2ff3cc23e9475
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629683"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36750372"
 ---
 # <a name="use-azure-iot-hub-device-provisioning-service-auto-provisioning-to-register-the-mxchip-iot-devkit-with-iot-hub"></a>Использование автоподготовки в службе подготовки устройств к добавлению в Центр Интернета вещей Azure для регистрации MXChip IoT DevKit в Центре Интернета вещей
 
@@ -115,6 +115,17 @@ ms.locfileid: "34629683"
    - Значения остальных параметров оставьте без изменений и нажмите кнопку **Сохранить**.
 
    ![Передача сертификата](./media/how-to-connect-mxchip-iot-devkit/upload-cert.png)
+
+  > [!NOTE]
+  > Если возникает ошибка со следующим сообщением:
+  >
+  > `{"message":"BadRequest:{\r\n \"errorCode\": 400004,\r\n \"trackingId\": \"1b82d826-ccb4-4e54-91d3-0b25daee8974\",\r\n \"message\": \"The certificate is not a valid base64 string value\",\r\n \"timestampUtc\": \"2018-05-09T13:52:42.7122256Z\"\r\n}"}`
+  >
+  > Откройте файл сертификата **PEM** в виде текста (с помощью Блокнота или другого текстового редактора) и удалите следующие строки:
+  >
+  > `"-----BEGIN CERTIFICATE-----"` и `"-----END CERTIFICATE-----"`.
+  >
+
 
 ## <a name="start-the-devkit"></a>Запуск DevKit
 

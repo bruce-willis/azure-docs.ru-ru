@@ -2,19 +2,19 @@
 title: Приступая к работе с аудитом баз данных SQL Azure | Документация Майкрософт
 description: Используйте аудит базы данных Azure SQL для отслеживания событий базы данных в журнале аудита.
 services: sql-database
-author: giladm
+author: giladmit
 manager: craigg
 ms.service: sql-database
 ms.custom: security
 ms.topic: conceptual
-ms.date: 04/01/2018
+ms.date: 06/24/2018
 ms.author: giladm
-ms.openlocfilehash: 62c6e576a5ef7fa953618dcba4ddd158df131148
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0646667caab594556cc3c2043bc36905acef6e54
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34644595"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751049"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 Аудит базы данных SQL Azure позволяет отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности:
@@ -200,12 +200,17 @@ ms.locfileid: "34644595"
 
 **REST API — аудит больших двоичных объектов**:
 
-* [Создание или обновление политики аудита BLOB-объектов базы данных](https://msdn.microsoft.com/library/azure/mt695939.aspx)
-* [Создание или обновление политики аудита BLOB-объектов сервера](https://msdn.microsoft.com/library/azure/mt771861.aspx)
-* [Получение политики аудита BLOB-объектов базы данных](https://msdn.microsoft.com/library/azure/mt695938.aspx)
-* [Получение политики аудита BLOB-объектов сервера](https://msdn.microsoft.com/library/azure/mt771860.aspx)
+* [Создание или обновление политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/en-us/rest/api/sql/database%20auditing%20settings/createorupdate)
+* [Создание или обновление политики аудита BLOB-объектов сервера](https://docs.microsoft.com/en-us/rest/api/sql/server%20auditing%20settings/createorupdate)
+* [Получение политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/en-us/rest/api/sql/database%20auditing%20settings/get)
+* [Получение политики аудита BLOB-объектов сервера](https://docs.microsoft.com/en-us/rest/api/sql/server%20auditing%20settings/get)
 * [Получение результата операции аудита для BLOB-объектов сервера](https://msdn.microsoft.com/library/azure/mt771862.aspx)
 
+Расширенная политика с поддержкой предложения WHERE для дополнительной фильтрации:
+* [Создание или обновление *расширенной* политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/en-us/rest/api/sql/database%20extended%20auditing%20settings/createorupdate)
+* [Создание или обновление *расширенной* политики аудита BLOB-объектов сервера](https://docs.microsoft.com/en-us/rest/api/sql/server%20extended%20auditing%20settings/createorupdate)
+* [Получение *расширенной* политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/en-us/rest/api/sql/database%20extended%20auditing%20settings/get)
+* [Получение *расширенной* политики аудита BLOB-объектов сервера](https://docs.microsoft.com/en-us/rest/api/sql/server%20extended%20auditing%20settings/get)
 
 <!--Anchors-->
 [Azure SQL Database Auditing overview]: #subheading-1

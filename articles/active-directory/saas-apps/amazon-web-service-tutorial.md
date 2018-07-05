@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 6dae715343a082b56e74bc2be0ee7b2353485e75
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 884e07880b76ec1ff53071d03d0ce340188586e3
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230511"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37018156"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-amazon-web-services-aws"></a>Руководство по интеграции Azure Active Directory с Amazon Web Services
 
@@ -340,6 +340,10 @@ ms.locfileid: "36230511"
 
     ![Добавление пользователя](./media/amazon-web-service-tutorial/provisioning2.png)
 
+> [!Note]
+> Если вы хотите интегрировать несколько учетных записей AWS в одну учетную запись Azure для единого входа, обратитесь к [этой](https://docs.microsoft.com/azure/active-directory/active-directory-saas-aws-multi-accounts-tutorial) статье. 
+
+
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -410,8 +414,7 @@ ms.locfileid: "36230511"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Amazon Web Services на панели доступа, вы автоматически войдете в приложение Amazon Web Services.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Amazon Web Services на панели доступа, вы автоматически войдете в приложение Amazon Web Services. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -452,4 +455,3 @@ ms.locfileid: "36230511"
 [39]: ./media/amazon-web-service-tutorial/tutorial_amazonwebservices_provisioning_automatic.png
 [40]: ./media/amazon-web-service-tutorial/tutorial_amazonwebservices_provisioning_testconnection.png
 [41]: ./media/amazon-web-service-tutorial/tutorial_amazonwebservices_provisioning_on.png
-

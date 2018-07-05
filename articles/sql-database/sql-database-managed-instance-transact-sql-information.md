@@ -6,15 +6,16 @@ author: jovanpop-msft
 ms.reviewer: carlrab, bonova
 ms.service: sql-database
 ms.custom: managed instance
-ms.topic: article
-ms.date: 04/10/2018
+ms.topic: conceptual
+ms.date: 06/22/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: b36099c6fd2deb6b627c8ccd7cc9e13c328f54e3
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 95eca05d695e039f59b71caa4d730f4e1f84fc97
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36337302"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server 
 
@@ -54,7 +55,7 @@ ms.lasthandoff: 04/18/2018
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql) 
 - [Аудит](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine)     
 
-### <a name="backup"></a>Архивация 
+### <a name="backup"></a>Azure Backup 
 
 В Управляемом экземпляре предусмотрено автоматическое резервное копирование, и пользователи могут создавать полные резервные копии `COPY_ONLY` базы данных. Резервные копирования моментальных снимков разностных данных, журналов и файлов не поддерживаются.  
 - Управляемый экземпляр может выполнять резервное копирование базы данных только в учетную запись хранилища BLOB-объектов. 
@@ -206,6 +207,10 @@ WITH PRIVATE KEY ( <private_key_options> )
 - `Trace Flags` не поддерживаются. См. статью [DBCC TRACEON - флаги трассировки (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-trace-flags-transact-sql).
 - `DBCC TRACEOFF` не поддерживается. См. статью [DBCC TRACEOFF (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceoff-transact-sql).
 - `DBCC TRACEON` не поддерживается. См. статью [DBCC TRACEON (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/database-console-commands/dbcc-traceon-transact-sql).
+
+### <a name="distributed-transactions"></a>Распределенные транзакции
+
+В Управляемом экземпляре сейчас не поддерживаются ни MSDTC, ни [эластичные транзакции](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-transactions-overview).
 
 ### <a name="extended-events"></a>Расширенные события 
 
@@ -375,12 +380,10 @@ WITH PRIVATE KEY ( <private_key_options> )
  
 Следующие переменные, функции и представления возвращают различные результаты:  
 - `SERVERPROPERTY('EngineEdition')` возвращает значение 8. Это свойство уникально идентифицирует Управляемый экземпляр. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
-- `SERVERPROPERTY('InstanceName')` возвращает короткое имя экземпляра, например "myserver". См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
+- `SERVERPROPERTY('InstanceName')` возвращает значение NULL, так как концепция экземпляра в том виде, в котором она существует в SQL Server, не применяется к Управляемому экземпляру. См. статью [SERVERPROPERTY (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/serverproperty-transact-sql).
 - `@@SERVERNAME` возвращает полное DNS-имя с возможностью подключения, например my-managed-instance.wcus17662feb9ce98.database.windows.net. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
 - `SYS.SERVERS` — возвращает полное DNS-имя с возможностью подключения, такое как `myinstance.domain.database.windows.net` для свойств name и data_source. См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql). 
-- `@@SERVERNAME` возвращает полное DNS-имя с возможностью подключения, такое как `my-managed-instance.wcus17662feb9ce98.database.windows.net`. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
-- `SYS.SERVERS` — возвращает полное DNS-имя с возможностью подключения, такое как `myinstance.domain.database.windows.net` для свойств name и data_source. См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql). 
-- `@@SERVICENAME` возвращает значение NULL, так как не нужно в среде Управляемого экземпляра. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).   
+- `@@SERVICENAME` возвращает значение NULL, так как концепция службы в том виде, в котором она существует в SQL Server, не применяется к Управляемому экземпляру. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).   
 - `SUSER_ID` поддерживается. Возвращает значение NULL, если имя входа AAD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
 - `SUSER_SID` не поддерживается. Возвращает неверные данные (временная известная проблема). См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql). 
 - `GETDATE()` и другие встроенные функции даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).

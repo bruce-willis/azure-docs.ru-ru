@@ -1,5 +1,5 @@
 ---
-title: Резервное копирование фермы SharePoint на Azure Stack в Azure
+title: Резервное копирование фермы SharePoint на Azure Stack
 description: Резервное копирование данных SharePoint с помощью Azure Backup Server на Azure Stack. Эта статья содержит информацию о настройке фермы SharePoint для сохранения нужных данных в Azure. Защищенные данные SharePoint можно восстановить с диска или из Azure.
 services: backup
 author: pvrk
@@ -8,18 +8,18 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: pullabhk
-ms.openlocfilehash: da8421441863c8d7f840630614f4f35c16f184d5
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: 309e817426fff1eb877ab02ae9aa16ddc8f5cf16
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248987"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751903"
 ---
-# <a name="back-up-a-sharepoint-farm-on-azure-stack-to-azure"></a>Резервное копирование фермы SharePoint на Azure Stack в Azure
+# <a name="back-up-a-sharepoint-farm-on-azure-stack"></a>Резервное копирование фермы SharePoint на Azure Stack
 Резервное копирование SharePoint на Azure Stack. в Microsoft Azure с помощью Microsoft Azure Backup Server (MABS) во многом напоминает резервное копирование других источников данных. Служба архивации Azure позволяет гибко планировать архивацию, задавая ежедневные, еженедельные, ежемесячные или ежегодные точки архивации, и предоставляет параметры политики хранения для любой из этих точек. Также она позволяет сохранять копии локальных дисков для краткосрочных целей времени восстановления, а также сохранять копии в Azure для экономичного и длительного хранения.
 
 ## <a name="sharepoint-supported-versions-and-related-protection-scenarios"></a>Поддерживаемые версии SharePoint и соответствующие сценарии защиты
-Служба архивации Azure для DPM поддерживает следующие сценарии:
+Служба архивации Azure для MABS поддерживает следующие сценарии:
 
 | Рабочая нагрузка | Версия | Развертывание SharePoint | Защита и восстановление |
 | --- | --- | --- | --- | --- | --- |
@@ -41,9 +41,6 @@ ms.locfileid: "35248987"
 Azure Backup Server работает под учетной записью LocalSystem. Чтобы сервер MABS мог создавать резервные копии баз данных SQL Server, эта учетная запись должна иметь права системного администратора для того сервера, на котором выполняется SQL Server. Установите для параметра NT AUTHORITY\SYSTEM значение *sysadmin* на сервере под управлением SQL Server, для которого нужно создать резервную копию.
 
 Если в ферме SharePoint есть базы данных SQL Server, настроенные с псевдонимами SQL Server, установите клиентские компоненты SQL Server на интерфейсный веб-сервер, защищаемый MABS.
-
-### <a name="sharepoint-server"></a>SharePoint Server
-Производительность системы зависит от многих факторов, включая размер фермы SharePoint. Как правило, для защиты фермы SharePoint объемом 25 ТБ используется один сервер MABS.
 
 ### <a name="whats-not-supported"></a>Что не поддерживается
 * Защита фермы SharePoint с помощью MABS не охватывает индексы поиска или базы данных службы приложений. Защиту этих баз данных необходимо настраивать отдельно.

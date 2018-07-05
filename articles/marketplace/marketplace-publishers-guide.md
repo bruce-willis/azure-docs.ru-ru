@@ -12,14 +12,14 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 06/11/2018
 ms.author: ellacroi
-ms.openlocfilehash: 4b7d861ee0207c6a16c83e23d259411f7e874354
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: e40b3a9f1454e892e07f7749ba900cd74c42c339
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823390"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309237"
 ---
 # <a name="azure-marketplace-and-appsource-publisher-guide"></a>Руководство по публикации в Azure Marketplace и AppSource  
 
@@ -112,13 +112,13 @@ ms.locfileid: "34823390"
 | Целевая аудитория | Лица, принимающие решения в сфере бизнес-приложений<table> <tr> <th>Роли специалистов </th> </tr> <tr> <td>Учет</td> </tr> <tr> <td>Закупка</td> </tr> <tr> <td>Производство</td> </tr> </table> | ИТ-специалисты и разработчики<table> <tr> <th>Роли специалистов </th> </tr> <tr> <td>DevOps</td> </tr> <tr> <td>Администраторы баз данных</td> </tr> <tr> <td>SecOps</td> </tr> </table> |  
 | Создание на основе или для расширения | Таблицы Azure<br />Dynamics 365<br />Office 365<br />Power BI<br />PowerApps. | Таблицы Azure |  
 | Типы решений и служб | Готовые облачные бизнес-приложения<br />Надстройки Office 365 | Решения для инфраструктуры<br />Профессиональные услуги |  
-| Тип предложения | Консультационные услуги<br />"Свяжитесь со мной"<br />Бесплатная пробная версия<br />"Получить сейчас"<br />Тестовый выпуск | Приложения Azure. Управляемые приложения<br />Приложения Azure. Шаблоны решений<br />Консультационные услуги<br />"Свяжитесь со мной"<br />Пробная версия<br />Виртуальная машина |  
+| Тип предложения | Консультационные услуги<br />Связь со мной<br />Бесплатная пробная версия<br />"Получить сейчас"<br />Тестовый выпуск | Приложения Azure. Управляемые приложения<br />Приложения Azure. Шаблоны решений<br />Консультационные услуги<br />Связь со мной<br />Пробная версия<br />Виртуальная машина |  
 | Взаимодействие в приложении для предоставления доступа пользователям<br />к приложениям и службам в контексте<br />приложения | Dynamics 365<br />Office 365<br />Клиентские приложения Office<br />Power BI | Портал Azure<br />Интерфейс командной строки Azure Resource Manager |  
 
 ---   
 
 ## <a name="how-to-publish-in-the-storefronts-on-the-marketplace"></a>Публикация в онлайн-магазинах в Marketplace  
-В следующих разделах можно перейти к ресурсам по вариантам публикации в AppSource и Azure Marketplace.  
+С помощью следующих страниц можно перейти к ресурсам по вариантам публикации в AppSource и Azure Marketplace.  
 
 Как стать издателем в онлайн-магазинах в Marketplace за три простых шага.  
 1.  Посетите страницу [Определение типа приложения, соответствующего предложению](./determine-your-listing-type.md).  
@@ -135,7 +135,6 @@ ms.locfileid: "34823390"
 ---  
 
 ## <a name="support"></a>Поддержка  
-
 *   Посетите страницу [поддержки AppSource](./support-appsource.md).  
 *   Посетите страницу [поддержки Azure Marketplace](./support-azure-marketplace.md).  
 
@@ -147,6 +146,7 @@ ms.locfileid: "34823390"
 
 ## <a name="guidelines"></a>Руководства  
 *   Посетите страницу [руководств](./guidelines.md).  
+    *   Посетите раздел [Рекомендации по созданию идентификатора Майкрософт для управления учетной записью Marketplace](./guidelines.md#guidelines-for-creating-a-microsoft-id-to-manage-a-marketplace-account).  
 *   Посетите страницу [Register in Dev Center](./register-dev-center.md) (Регистрация в центре разработки).  
 *   Посетите страницу [Add bank and tax information](./add-bank-tax-info.md) (Добавление налоговых и банковских сведений).  
 *   Посетите страницу [Enable Trial using Azure AD](./enable-trial-using-azure-ad.md) (Предоставление пробной версии с помощью Azure AD).  

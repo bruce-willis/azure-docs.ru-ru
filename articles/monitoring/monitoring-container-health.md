@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 06/19/2018
+ms.date: 06/22/2018
 ms.author: magoedte
-ms.openlocfilehash: 7c4294947cba72b1638e77c2dd8de1f5ee37b62a
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 23109a74fa707759cc3300896392dcc129f3e28c
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285997"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36335760"
 ---
 # <a name="monitor-azure-kubernetes-service-aks-container-health-preview"></a>Мониторинг работоспособности службы Azure Kubernetes (AKS) (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "36285997"
 ## <a name="requirements"></a>Требования 
 Прежде чем начать, просмотрите приведенные ниже сведения, чтобы изучить предварительные требования к поддерживаемым компонентам.
 
-- Поддерживаются следующие версии кластера AKS: 1.7.7–1.9.6.
+- Новый или существующий кластер AKS
 - Версия контейнерного агента OMS для Linux: microsoft/oms:ciprod04202018 и более поздняя версия. Этот агент устанавливается автоматически во время подключения службы работоспособности контейнеров.  
 - Рабочая область Log Analytics.  Ее можно создать при включении мониторинга нового кластера AKS. Ее можно также создать с помощью [Azure Resource Manager](../log-analytics/log-analytics-template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портала Azure](../log-analytics/log-analytics-quick-create-workspace.md).
 - Пользователь с ролью "Участник" Log Analytics, позволяющий включить мониторинг контейнера.  Дополнительные сведения о том, как управлять доступом к рабочей области Log Analytics, см. в [этой статье](../log-analytics/log-analytics-manage-access.md).
@@ -244,7 +244,7 @@ ms.locfileid: "36285997"
 После включения мониторинга пройдет около 15 минут, прежде чем можно будет получить операционные данные для кластера.  
 
 ## <a name="verify-agent-deployed-successfully"></a>Проверка успешного развертывания агента
-Чтобы проверить, правильно ли развернут агент OMS, выполните следующую команду: ` kubectl get ds omsagent --namespace=kube-system`.
+Чтобы проверить, правильно ли развернут агент OMS, выполните следующую команду: `kubectl get ds omsagent --namespace=kube-system`.
 
 Выходные данные должны выглядеть, как на рисунке ниже. В этом случае они означают, что развертывание выполнено правильно.
 

@@ -1,6 +1,6 @@
 ---
-title: Использование библиотеки BulkExecutor .NET для выполнения массовых операций в Azure Cosmos DB | Документация Майкрософт
-description: Использование библиотеки BulkExecutor .NET в Azure Cosmos DB для массового импорта и обновления документов в коллекциях Azure Cosmos DB.
+title: Использование библиотеки .NET массового исполнителя для выполнения массовых операций в Azure Cosmos DB | Документы Майкрософт
+description: Использование библиотеки .NET массового исполнителя в Azure Cosmos DB для массового импорта и обновления документов в коллекциях Azure Cosmos DB.
 keywords: Массовый исполнитель .NET
 services: cosmos-db
 author: tknandu
@@ -10,16 +10,16 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: ramkris
-ms.openlocfilehash: 0e8c5f9a848eaa1543ce9d58895b035e23d9f335
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b09fd415c442c1e605987a6b25fd938ce04ce5c1
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34611166"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36300777"
 ---
-# <a name="using-bulkexecutor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Использование библиотеки BulkExecutor .NET для выполнения массовых операций в Azure Cosmos DB
+# <a name="using-bulk-executor-net-library-to-perform-bulk-operations-in-azure-cosmos-db"></a>Использование библиотеки .NET массового исполнителя для выполнения массовых операций в Azure Cosmos DB
 
-В этом руководстве приведены инструкции по использованию библиотеки BulkExecutor .NET в Azure Cosmos DB для импорта и обновления документов в коллекциях Azure Cosmos DB. Подробнее о библиотеке BulkExecutor и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке BulkExecutor](bulk-executor-overview.md). В этом руководстве вы познакомитесь с примером приложения .NET, которое массово импортирует случайно созданные документы в коллекцию Azure Cosmos DB. Затем в нем показано, как можно массово обновить импортированные данные, указав исправления как операции для выполнения в определенных полях документа.
+В этом руководстве приведены инструкции по использованию библиотеки .NET массового исполнителя в Azure Cosmos DB для импорта и обновления документов в коллекциях Azure Cosmos DB. Подробнее о библиотеке массового исполнителя и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке массового исполнителя](bulk-executor-overview.md). В этом руководстве вы познакомитесь с примером приложения .NET, которое массово импортирует случайно созданные документы в коллекцию Azure Cosmos DB. Затем в нем показано, как можно массово обновить импортированные данные, указав исправления как операции для выполнения в определенных полях документа.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -166,7 +166,7 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
     
 ## <a name="performance-tips"></a>Советы по улучшению производительности 
 
-Учтите следующие моменты для повышения производительности при использовании библиотеки BulkExecutor:
+Учтите следующие моменты для повышения производительности при использовании библиотеки массового исполнителя:
 
 * Для достижения оптимальной производительности запустите приложение на виртуальной машине Azure в том же регионе, где находится регион записи вашей учетной записи Cosmos DB.  
 
@@ -196,4 +196,4 @@ git clone https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-st
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о пакете Nuget и заметки о выпуске библиотеки BulkExecutor .NET см. в статье[.NET BulkExecutor library: Download information](sql-api-sdk-bulk-executor-dot-net.md) (Сведения о скачивании библиотеки .NET BulkExecutor). 
+* Дополнительные сведения о пакете Nuget и заметки о выпуске библиотеки .NET массового исполнителя см. в статье [со сведениями о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-dot-net.md). 

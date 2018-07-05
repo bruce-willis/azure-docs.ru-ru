@@ -3,7 +3,7 @@ title: Привязка Twilio для службы "Функции Azure"
 description: Узнайте, как использовать привязки Twilio с функциями Azure.
 services: functions
 documentationcenter: na
-author: wesmc7777
+author: tdykstra
 manager: cfowler
 editor: ''
 tags: ''
@@ -14,14 +14,14 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/21/2017
-ms.author: wesmc
+ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 62df5ebc6f5928c0992bd715e208137d89789e9a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: e6c5a2e11e8b2faa62b04a792f5040ea928d94a3
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34724451"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36318713"
 ---
 # <a name="twilio-binding-for-azure-functions"></a>Привязка Twilio для службы "Функции Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "34724451"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Привязки Twilio доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.Twilio](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.Twilio), версия 1.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions.Twilio/).
 
@@ -41,7 +41,7 @@ ms.locfileid: "34724451"
 
 [!INCLUDE [functions-package-v2](../../includes/functions-package-v2.md)]
 
-## <a name="example"></a>Пример
+## <a name="example---functions-1x"></a>Пример — функции 1.x
 
 Языковой пример см. в разделах:
 
@@ -206,6 +206,173 @@ module.exports = function (context, myQueueItem) {
 };
 ```
 
+## <a name="example---functions-2x"></a>Пример — функции 2.x
+
+Языковой пример см. в разделах:
+
+* [2.x C#](#2x-c-example)
+* [Скрипт 2.x C# (CSX)](#2x-c-script-example)
+* [2.x JavaScript](#2x-javascript-example)
+
+### <a name="2x-c-example"></a>Пример 2.x C#
+
+В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая отправляет текстовое сообщение при активации сообщением из очереди.
+
+```cs
+[FunctionName("QueueTwilio")]
+[return: TwilioSms(AccountSidSetting = "TwilioAccountSid", AuthTokenSetting = "TwilioAuthToken", From = "+1425XXXXXXX" )]
+public static SMSMessage Run(
+    [QueueTrigger("myqueue-items", Connection = "AzureWebJobsStorage")] JObject order,
+    TraceWriter log)
+{
+    log.Info($"C# Queue trigger function processed: {order}");
+
+    var message = new CreateMessageOptions(new PhoneNumber("+1704XXXXXXX"))
+    {
+        Body = $"Hello {order["name"]}, thanks for your order!",
+        To = order["mobileNumber"].ToString()
+    };
+
+    return message;
+}
+```
+
+В этом примере используется `TwilioSms` атрибут с помощью возвращаемого значения метода. Альтернативой является использование атрибута с параметрами `out CreateMessageOptions`, `ICollector<CreateMessageOptions>` или `IAsyncCollector<CreateMessageOptions>`.
+
+### <a name="2x-c-script-example"></a>Пример сценария 2.x C#
+
+В следующем примере показаны выходная привязка Twilio*function.json* и [функция сценария C#](functions-reference-csharp.md), которая использует эту привязку. Эта функция использует параметр `out` для отправки текстового сообщения.
+
+Данные привязки в файле *function.json*:
+
+Пример файла function.json:
+
+```json
+{
+  "type": "twilioSms",
+  "name": "message",
+  "accountSid": "TwilioAccountSid",
+  "authToken": "TwilioAuthToken",
+  "to": "+1704XXXXXXX",
+  "from": "+1425XXXXXXX",
+  "direction": "out",
+  "body": "Azure Functions Testing"
+}
+```
+
+Ниже приведен код сценария C#:
+
+```cs
+#r "Newtonsoft.Json"
+#r "Twilio.Api"
+
+using System;
+using Newtonsoft.Json;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
+
+public static void Run(string myQueueItem, out CreateMessageOptions message,  TraceWriter log)
+{
+    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+
+    // In this example the queue item is a JSON string representing an order that contains the name of a
+    // customer and a mobile number to send text updates to.
+    dynamic order = JsonConvert.DeserializeObject(myQueueItem);
+    string msg = "Hello " + order.name + ", thank you for your order.";
+
+    // Even if you want to use a hard coded message and number in the binding, you must at least
+    // initialize the CreateMessageOptions variable.
+    message = new CreateMessageOptions(new PhoneNumber("+1704XXXXXXX"));
+
+    // A dynamic message can be set instead of the body in the output binding. In this example, we use
+    // the order information to personalize a text message to the mobile number provided for
+    // order status updates.
+    message.Body = msg;
+    message.To = order.mobileNumber;
+}
+```
+
+Вы не можете использовать параметры вывода в асинхронном коде. Ниже приведен пример асинхронного кода сценария C#:
+
+```cs
+#r "Newtonsoft.Json"
+#r "Twilio.Api"
+
+using System;
+using Newtonsoft.Json;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
+
+public static async Task Run(string myQueueItem, IAsyncCollector<CreateMessageOptions> message,  TraceWriter log)
+{
+    log.Info($"C# Queue trigger function processed: {myQueueItem}");
+
+    // In this example the queue item is a JSON string representing an order that contains the name of a
+    // customer and a mobile number to send text updates to.
+    dynamic order = JsonConvert.DeserializeObject(myQueueItem);
+    string msg = "Hello " + order.name + ", thank you for your order.";
+
+    // Even if you want to use a hard coded message and number in the binding, you must at least
+    // initialize the CreateMessageOptions variable.
+    CreateMessageOptions smsText = new CreateMessageOptions(new PhoneNumber("+1704XXXXXXX"));
+
+    // A dynamic message can be set instead of the body in the output binding. In this example, we use
+    // the order information to personalize a text message to the mobile number provided for
+    // order status updates.
+    smsText.Body = msg;
+    smsText.To = order.mobileNumber;
+
+    await message.AddAsync(smsText);
+}
+```
+
+### <a name="2x-javascript-example"></a>Пример 2.x JavaScript
+
+В следующем примере показана выходная привязка Twilio в файле *function.json* и функции [JavaScript](functions-reference-node.md), которая использует привязку.
+
+Данные привязки в файле *function.json*:
+
+Пример файла function.json:
+
+```json
+{
+  "type": "twilioSms",
+  "name": "message",
+  "accountSid": "TwilioAccountSid",
+  "authToken": "TwilioAuthToken",
+  "to": "+1704XXXXXXX",
+  "from": "+1425XXXXXXX",
+  "direction": "out",
+  "body": "Azure Functions Testing"
+}
+```
+
+Ниже показан код JavaScript.
+
+```javascript
+module.exports = function (context, myQueueItem) {
+    context.log('Node.js queue trigger function processed work item', myQueueItem);
+
+    // In this example the queue item is a JSON string representing an order that contains the name of a
+    // customer and a mobile number to send text updates to.
+    var msg = "Hello " + myQueueItem.name + ", thank you for your order.";
+
+    // Even if you want to use a hard coded message and number in the binding, you must at least
+    // initialize the message binding.
+    context.bindings.message = {};
+
+    // A dynamic message can be set instead of the body in the output binding. In this example, we use
+    // the order information to personalize a text message to the mobile number provided for
+    // order status updates.
+    context.bindings.message = {
+        body : msg,
+        to : myQueueItem.mobileNumber
+    };
+
+    context.done();
+};
+```
+
 ## <a name="attributes"></a>Атрибуты
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте атрибут [TwilioSms](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions.Twilio/TwilioSMSAttribute.cs).
@@ -249,5 +416,3 @@ public static SMSMessage Run(
 
 > [!div class="nextstepaction"]
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
-
-

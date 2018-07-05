@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/05/2018
 ms.author: anoopkv
-ms.openlocfilehash: b2c564e8d49e39d9cdc09d3fe168388d579de70e
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: 01b0717660265b28d4ea7d804a761e7e425c997c
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
-ms.locfileid: "29811091"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319606"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
@@ -39,12 +39,12 @@ ms.locfileid: "29811091"
 
 ## <a name="set-up-the-configuration-server"></a>Настройка сервера конфигурации
 
-Настройте сервер конфигурации в качестве локальной виртуальной машины VMware и используйте шаблон Open Virtualization Format (OVF). Ознакомьтесь с [дополнительными сведениями](concepts-vmware-to-azure-architecture.md) о компонентах, которые будут установлены на виртуальной машине VMware. 
+Вы можете настроить сервер конфигурации в качестве локальной виртуальной машины VMware с помощью шаблона Open Virtualization Application (OVA). Ознакомьтесь с [дополнительными сведениями](concepts-vmware-to-azure-architecture.md) о компонентах, которые будут установлены на виртуальной машине VMware.
 
 1. Изучите дополнительные сведения о [необходимых компонентах](vmware-azure-deploy-configuration-server.md#prerequisites) для развертывания сервера конфигурации.
 2. [Проверьте значения емкости](vmware-azure-deploy-configuration-server.md#capacity-planning) для развертывания.
-3. [Загрузите](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVF (how-to-deploy-configuration-server.md) для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации.
-4. Включите виртуальную машину VMware и [зарегистрируйте ее](vmware-azure-deploy-configuration-server.md#register-the-configuration-server) в хранилище служб восстановления.
+3. [Скачайте](vmware-azure-deploy-configuration-server.md#download-the-template) и [импортируйте](vmware-azure-deploy-configuration-server.md#import-the-template-in-vmware) шаблон OVA для настройки локальной виртуальной машины VMware, работающей на сервере конфигурации. Вместе с шаблоном предоставляется пробная лицензия сроком на 180 дней. По истечении этого периода клиенту нужно будет активировать Windows с помощью приобретенной лицензии.
+4. Включите виртуальную машину VMware и [зарегистрируйте ее](vmware-azure-deploy-configuration-server.md#register-the-configuration-server-with-azure-site-recovery-services) в хранилище служб восстановления.
 
 
 ## <a name="add-the-vmware-account-for-automatic-discovery"></a>Добавление учетной записи VMware, используемой для автоматического обнаружения

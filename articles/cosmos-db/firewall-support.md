@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/30/2018
 ms.author: sngun
-ms.openlocfilehash: 0407d3c58fa63a11c8391f069039f7c35a15ceb7
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: c55f90b944038a0e4ca216a357fc30f4cf6a6ddc
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294743"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317292"
 ---
 # <a name="azure-cosmos-db-firewall-support"></a>Поддержка брандмауэра для Azure Cosmos DB
 Для защиты данных, хранящихся в учетных записях базы данных Azure Cosmos DB, в Cosmos DB реализована поддержка [модели авторизации](https://msdn.microsoft.com/library/azure/dn783368.aspx) на основе секретов. Проверка целостности данных в этой модели осуществляется с помощью надежного кода проверки подлинности сообщений, использующего хэш-функции (HMAC). Теперь, помимо модели авторизации на основе секрета, для поддержки входящего трафика брандмауэра база данных Azure Cosmos DB использует политики контроля доступа на основе IP-адресов. Эта модель похожа на использование правил брандмауэра в традиционной системе базы данных. Она предоставляет дополнительный уровень защиты для учетных записей базы данных Azure Cosmos DB. Кроме того, эта модель позволяет настроить доступ к учетной записи базы данных Azure Cosmos DB только из утвержденных компьютеров и (или) облачных служб. Для доступа к ресурсам Azure Cosmos DB из этих утвержденных компьютеров и служб пользователь (вызывающая сторона) по-прежнему должен предоставить допустимый маркер проверки подлинности.
@@ -56,10 +56,10 @@ ms.locfileid: "36294743"
 
 ![Снимок экрана, показывающий, как разрешить доступ к порталу Azure](./media/firewall-support/enable-azure-portal.png)
 
-## <a name="connections-from-public-azure-datacenters-or-azure-paas-services"></a>Исходящие подключения общедоступных центров обработки данных Azure или служб Azure PaaS
+## <a name="connections-from-global-azure-datacenters-or-azure-paas-services"></a>Исходящие подключения глобальных центров обработки данных Azure или служб Azure PaaS
 В Azure такие службы PaaS, как Azure Stream Analytics, Функции Azure и Служба приложений Azure, используются в сочетании с Azure Cosmos DB. Вы можете разрешить доступ к учетной записи базы данных Azure Cosmos DB из служб, IP-адреса которых не являются общедоступными. Для этого добавьте IP-адрес 0.0.0.0 в список разрешенных IP-адресов, связанных программно с учетной записью базы данных Azure Cosmos DB. 
 
-При изменении значения брандмауэра на **Выбранные сети** на портале Azure доступ к исходящим подключениям общедоступных центров обработки данных Azure включается по умолчанию. 
+При изменении значения брандмауэра на **Выбранные сети** на портале Azure доступ к исходящим подключениям глобальных центров обработки данных Azure включается по умолчанию. 
 
 ![Снимок экрана, показывающий, как открыть страницу "Брандмауэр" на портале Azure](./media/firewall-support/enable-azure-services.png)
 
@@ -87,6 +87,25 @@ ms.locfileid: "36294743"
 
 ## <a name="connections-from-the-internet"></a>Подключения через Интернет
 При подключении к учетной записи базы данных Azure Cosmos DB с компьютера через Интернет IP-адрес или диапазон IP-адресов клиента необходимо добавить в список разрешенных IP-адресов для этой учетной записи. 
+
+## <a name="using-azure-resource-manager-template-to-set-up-the-ip-access-control"></a>Использование шаблона Azure Resource Manager для настройки управления доступом к IP-адресам
+
+Добавьте следующий JSON в шаблон, чтобы настроить управление доступом к IP-адресам. Шаблон Resource Manager для учетной записи будет иметь атрибут ipRangeFilter, представляющий собой список диапазонов IP-адресов, которые следует включить в список разрешений.
+
+```json
+   {
+     "apiVersion": "2015-04-08",
+     "type": "Microsoft.DocumentDB/databaseAccounts",
+     "kind": "GlobalDocumentDB",
+     "name": "[parameters('databaseAccountName')]",
+     "location": "[resourceGroup().location]",
+     "properties": {
+     "databaseAccountOfferType": "Standard",
+     "name": "[parameters('databaseAccountName')]",
+     "ipRangeFilter":"10.0.0.1,10.0.0.2,183.240.196.255"
+   }
+   }
+```
 
 ## <a name="troubleshooting-the-ip-access-control-policy"></a>Устранение неполадок с политикой контроля доступа на основе IP-адресов
 ### <a name="portal-operations"></a>Операции на портале

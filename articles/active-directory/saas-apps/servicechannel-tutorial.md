@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/3/2017
 ms.author: jeedes
-ms.openlocfilehash: 22de973ae00c93f82b274c0b833149b9fe494a7f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a62a6b334fd58ce360d932cdc4a8f04f36e3232d
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36209856"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36302035"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicechannel"></a>Руководство: интеграция Azure Active Directory с ServiceChannel
 
@@ -126,7 +126,7 @@ ms.locfileid: "36209856"
     ![Настройка единого входа](./media/servicechannel-tutorial/tutorial_servicechannel_attribute.png)
 
     > [!NOTE] 
-    > Перейдите по [этой ссылке](http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/), чтобы прочитать о настройке **роли** в Azure AD.
+    > Инструкции по настройке **Роли** в Azure AD см. в разделе [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
 5. В разделе **Атрибуты пользователя** установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и задайте эти атрибуты.
 

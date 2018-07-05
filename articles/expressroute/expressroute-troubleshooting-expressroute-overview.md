@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/26/2017
 ms.author: cherylmc
-ms.openlocfilehash: 5d01f2e402e4b793274761703ec3ca1ea3ff8164
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 10d4779d05d95822ffd487db1ce8992d199c495f
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30185991"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36753458"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Подключение ExpressRoute, расширяющее локальную сеть в Microsoft Cloud посредством частного подключения, которое обеспечивает поставщик услуг подключения, включает в себя следующие три различные сетевые зоны:

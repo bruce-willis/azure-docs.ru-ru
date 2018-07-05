@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/29/2018
 ms.topic: conceptual
-ms.openlocfilehash: 603ce00a036822fd0c7411b47cf3fe630671cc5a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 736d0394b61bd2830a155d6ad714a2a8d19af82b
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34628129"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017515"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решений для удаленного мониторинга с помощью CLI
 
@@ -68,7 +68,7 @@ pcs login
 | Count | Ресурс                       | type         | Область использования |
 |-------|--------------------------------|--------------|----------|
 | 1     | [Виртуальная машина Linux](https://azure.microsoft.com/services/virtual-machines/) | Standard D1 V2  | Размещение микрослужб |
-| 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Базовый" | Управление устройствами и обмен данными |
+| 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Стандартный" | Управление устройствами и обмен данными |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |  
 | 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Стандартная        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
 | 1     | [Веб-приложение](https://azure.microsoft.com/services/app-service/web/)        |                 | Размещение интерфейсных веб-приложений |
@@ -82,7 +82,7 @@ pcs login
 |-------|----------------------------------------------|-----------------|----------|
 | 4.     | [Виртуальные машины Linux](https://azure.microsoft.com/services/virtual-machines/)   | Standard D2 V2  | 1 главный узел и 3 агента для избыточного размещения микрослужб |
 | 1     | [Служба контейнеров](https://azure.microsoft.com/services/container-service/) |                 | Оркестратор [Kubernetes](https://kubernetes.io) |
-| 1     | [Центр Интернета вещей Azure][https://azure.microsoft.com/services/iot-hub/]                     | S1 — уровень "Базовый" | Команды и средства для управления устройствами |
+| 1     | [Центр Интернета вещей Azure][https://azure.microsoft.com/services/iot-hub/]                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |
 | 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартная        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
 | 1     | [Служба приложений](https://azure.microsoft.com/services/app-service/web/)             | Стандартный S1     | Шлюз приложений через SSL |

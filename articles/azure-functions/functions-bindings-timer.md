@@ -17,12 +17,12 @@ ms.workload: na
 ms.date: 02/27/2017
 ms.author: tdykstra
 ms.custom: ''
-ms.openlocfilehash: 4da1ed4e9424950c39f3eb255ead2b39094597fd
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: a4895c0c58d1cdb0430b7418ba24dd85157ecdd3
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34725451"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308165"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -30,7 +30,7 @@ ms.locfileid: "34725451"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Триггер таймера доступен в пакете NuGet [Microsoft.Azure.WebJobs.Extensions](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions) версии 2.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/v2.x/src/WebJobs.Extensions/Extensions/Timers/).
 
@@ -280,6 +280,10 @@ public static void Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer, TraceWr
 ## <a name="retry-behavior"></a>Поведение при повторе
 
 В отличие от триггера очереди триггер таймера не осуществляет повторную попытку после того, как произошла ошибка выполнения функции. Когда функция возвращает ошибку, следующий раз она будет вызвана только по расписанию.
+
+## <a name="troubleshooting"></a>Устранение неполадок
+
+Дополнительные сведения о том, что делать, когда триггер таймера неисправен, см. в разделе [Расследование проблем, когда функции, вызываемые таймером, не срабатывают](https://github.com/Azure/azure-functions-host/wiki/Investigating-and-reporting-issues-with-timer-triggered-functions-not-firing).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

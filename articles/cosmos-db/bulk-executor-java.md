@@ -1,6 +1,6 @@
 ---
-title: Выполнение массовых операций в Azure Cosmos DB с помощью библиотеки BulkExecutor Java | Документация Майкрософт
-description: Массовый импорт и обновление документов в коллекции Azure Cosmos DB с помощью библиотеки BulkExecutor Java в Azure Cosmos DB.
+title: Выполнение массовых операций в Azure Cosmos DB с помощью библиотеки Java массового исполнителя | Документы Майкрософт
+description: Массовый импорт и обновление документов в коллекции Azure Cosmos DB с помощью библиотеки Java массового исполнителя в Azure Cosmos DB.
 keywords: Массовый исполнитель Java
 services: cosmos-db
 author: tknandu
@@ -10,16 +10,16 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: ramkris
-ms.openlocfilehash: 77135ec5f62636d1dd634361da345b00d98ad918
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f241a98cdcc847ddb579b86b51034d1438ee1395
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34610248"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36300719"
 ---
-# <a name="use-bulkexecutor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки BulkExecutor Java
+# <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки Java массового исполнителя
 
-В этом руководстве приведены инструкции по использованию библиотеки BulkExecutor Java в Azure Cosmos DB для импорта и обновления документов Azure Cosmos DB. Подробнее о библиотеке BulkExecutor и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке BulkExecutor](bulk-executor-overview.md). В этом руководстве вы создадите приложение Java, которое формирует случайные документы, которые массово импортируются в коллекцию Azure Cosmos DB. После импорта вы массово обновите некоторые свойства документа. 
+В этом руководстве приведены инструкции по использованию библиотеки BulkExecutor Java в Azure Cosmos DB для импорта и обновления документов Azure Cosmos DB. Подробнее о библиотеке массового исполнителя и о том, как с ее помощью эффективно использовать пропускную способность и хранилище, можно узнать в статье с [общими сведениями о библиотеке массового исполнителя](bulk-executor-overview.md). В этом руководстве вы создадите приложение Java, которое формирует случайные документы, которые массово импортируются в коллекцию Azure Cosmos DB. После импорта вы массово обновите некоторые свойства документа. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -197,7 +197,7 @@ ms.locfileid: "34610248"
 
 ## <a name="performance-tips"></a>Советы по улучшению производительности 
 
-Учтите следующие моменты для повышения производительности при использовании библиотеки BulkExecutor:
+Учтите следующие моменты для повышения производительности при использовании библиотеки массового исполнителя:
 
 * Для достижения оптимальной производительности запустите приложение на виртуальной машине Azure в том же регионе, где находится регион записи вашей учетной записи Cosmos DB.  
 * Чтобы получить более высокую пропускную способность, сделайте следующее:  
@@ -211,6 +211,6 @@ ms.locfileid: "34610248"
 
     
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о пакете Maven и заметки о выпуске библиотеки BulkExecutor Java, см. в статье[Java BulkExecutor library: Download information](sql-api-sdk-bulk-executor-java.md) (Сведения о скачивании библиотеки Java BulkExecutor).
+* Дополнительные сведения о пакете Maven и заметки о выпуске библиотеки Java массового исполнителя см. в статье [со сведениями о пакете SDK массового исполнителя](sql-api-sdk-bulk-executor-java.md).
 
 

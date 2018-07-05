@@ -7,14 +7,14 @@ manager: cshepard
 keywords: Azure backup; VM agent; Network connectivity;
 ms.service: backup
 ms.topic: troubleshooting
-ms.date: 01/09/2018
+ms.date: 06/25/2018
 ms.author: genli
-ms.openlocfilehash: 63cded007af499455e7bb4fc23d26d56caf96678
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 09cfda3c2c790297b0961ecac92cba61c9e6de6f
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606364"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36754331"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -87,12 +87,12 @@ ms.locfileid: "34606364"
 Чтобы расширение службы Backup работало правильно, требуется подключение к общедоступным IP-адресам Azure. Для управления моментальными снимками виртуальной машины это расширение отправляет команды к конечной точке службы хранилища Azure (URL-адрес HTTP). Если расширение не имеет доступа к общедоступному Интернету, резервное копирование завершится сбоем.
 
 Чтобы маршрутизировать трафик виртуальных машин, можно развернуть прокси-сервер.
-##### <a name="create-a-path-for-http-traffic"></a>Создание пути для трафика HTTP
+##### <a name="create-a-path-for-https-traffic"></a>Создание пути для трафика HTTP
 
 1. При наличии каких-либо ограничений сети (например, группы безопасности сети) разверните прокси-сервер HTTP для маршрутизации трафика.
 2. Если вы используете группу безопасности сети, добавьте в нее правила, чтобы разрешить доступ к Интернету с прокси-сервера HTTP.
 
-Чтобы узнать, как настроить прокси-сервер HTTP для архивации виртуальных машин, ознакомьтесь с разделом [Подготовка среды для резервного копирования виртуальных машин Azure](backup-azure-arm-vms-prepare.md#establish-network-connectivity).
+Чтобы узнать, как настроить прокси-сервер HTTP для резервного копирования виртуальных машин, ознакомьтесь с разделом [Подготовка среды для резервного копирования виртуальных машин Azure](backup-azure-arm-vms-prepare.md#establish-network-connectivity).
 
 Архивной виртуальной машине или прокси-серверу, через которые маршрутизируется трафик, требуется доступ к общедоступным IP-адресам Azure.
 

@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 05/18/2018
+ms.date: 06/20/2018
 ms.author: sngun
-ms.openlocfilehash: 4b12652783c94d132a5c1f4d4aa352d4e2318edf
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: e4a3b3a482f56065c54525a4d9cd7971f50f5b2a
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34797674"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36300685"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Async Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -53,6 +53,16 @@ ms.locfileid: "34797674"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
+### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
+* Заменена зависимость org.json от jackson из соображений производительности и лицензирования ([github #29](https://github.com/Azure/azure-cosmosdb-java/issues/29)).
+* Удален нерекомендуемый класс OfferV2.
+* Добавлен метод доступа в класс Offer для материала о пропускной способности.
+* Все методы в Document/Resource, возвращающие типы org.json, изменены для возвращения типа объекта jackson.
+* Метод getObject(.) классов, расширяющих JsonSerializable, изменен для возвращения типа объекта ObjectNode jackson.
+* Метод getCollection(.) изменен для возвращения коллекции ObjectNode.
+* Удалены конструкторы подклассов JsonSerializable с аргументом org.json.JSONObject.
+* JsonSerializable.toJson (SerializationFormattingPolicy.Indented) теперь использует двойной пробел для отступа.
+  
 ### <a name="a-name102102"></a><a name="1.0.2"/>1.0.2
 * Добавлена поддержка политики уникальных индексов.
 * Добавлена поддержка ограничения размера маркера продолжения ответа в параметрах веб-канала.
@@ -89,6 +99,7 @@ ms.locfileid: "34797674"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.0.0](#2.0.0) |20 июня 2018 г.|--- |
 | [1.0.2](#1.0.2) |18 мая 2018 г.|--- |
 | [1.0.1](#1.0.1) |20 апреля 2018 г.|--- |
 | [1.0.0](#1.0.0) |27 февраля 2018 г|--- |

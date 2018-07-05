@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: c9920857f7d1910921b4bb3771e770fb4c3a42c3
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 4377e9902696a4ee3b5bbb5fcb44d972ec14f822
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31389719"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36958731"
 ---
 # <a name="azure-active-directory-connect-health-operations"></a>Операции Azure Active Directory Connect Health
 В этой статье описаны различные операции, которые можно выполнить с помощью Azure Active Directory (Azure AD) Connect Health.
@@ -122,7 +122,7 @@ Azure AD Connect Health поддерживает управление досту
 
 #### <a name="step-2-add-users-and-groups-and-assign-roles"></a>Шаг 2. Добавление пользователей и групп, а также назначение ролей
 1. В разделе **Настройка** щелкните **Пользователи**.<br>
-   ![Снимок экрана главной колонки компонента управления доступом на основе ролей в Azure AD Connect Health с выделенным элементом "Пользователи"](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
+   ![Снимок экрана боковой панели ресурсов Azure AD Connect Health](./media/active-directory-aadconnect-health/startRBAC.png)
 2. Выберите **Добавить**.
 3. В области **Выбор роли** выберите роль (например, **Владелец**).<br>
    ![Снимок экрана окна "Пользователи" компонента управления доступом на основе ролей в Azure AD Connect Health](./media/active-directory-aadconnect-health/RBAC_add.png)

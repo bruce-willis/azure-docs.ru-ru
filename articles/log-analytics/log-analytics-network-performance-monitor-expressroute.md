@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 9610a8b37ead976cfdfa2fed81d4d3932055ddcc
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: d97e380f83cc4e5e5a2d9686a7ac8426967f4b93
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30237789"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36302205"
 ---
 # <a name="expressroute-manager"></a>Диспетчер ExpressRoute
 
@@ -37,7 +37,7 @@ ms.locfileid: "30237789"
 ### <a name="configure-network-security-group-rules"></a>Настройка правил группы безопасности сети 
 Для серверов в Azure, используемых для мониторинга посредством Монитора производительности сети, необходимо настроить правила группы безопасности сети (NSG), чтобы разрешить передачу TCP-трафика через порт, используемый Монитором производительности сети для искусственных транзакций. Используемый порт по умолчанию — 8084. Эта конфигурация позволяет агенту Operations Management Suite, установленному на виртуальных машинах Azure, взаимодействовать с локальным агентом мониторинга. 
 
-Дополнительные сведения о группах безопасности сети см. в статье  [Создание групп безопасности сети с помощью портала Azure](../virtual-network/virtual-networks-create-nsg-arm-pportal.md). 
+Дополнительные сведения о группах безопасности сети см. в статье  [Группы безопасности сети](../virtual-network/manage-network-security-group.md). 
 
 >[!NOTE]
 > Прежде чем продолжить этот шаг, установите агент локального сервера и агент сервера Azure и выполните сценарий PowerShell EnableRules.ps1. 

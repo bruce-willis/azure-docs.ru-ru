@@ -7,14 +7,14 @@ manager: carmonm
 keywords: резервные копии; резервное копирование;
 ms.service: backup
 ms.topic: conceptual
-ms.date: 3/1/2018
+ms.date: 6/21/2018
 ms.author: markgal
-ms.openlocfilehash: 3727fab8f5d19e8f9178c9029177a2c1479422ae
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 06898877a4f13182230c6d5fb12544f90525d84d
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606642"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960174"
 ---
 # <a name="prepare-your-environment-to-back-up-resource-manager-deployed-virtual-machines"></a>Подготовка среды к архивации виртуальных машин, развернутых с помощью Resource Manager
 
@@ -34,11 +34,14 @@ ms.locfileid: "34606642"
 Если эти условия в вашей среде уже выполнены, переходите к статье [Архивация виртуальных машин Azure в хранилище служб восстановления](backup-azure-arm-vms.md). Если нужно выполнить любые из этих предварительных требований или проверить их соблюдение, в этой статье описаны соответствующие шаги.
 
 ## <a name="supported-operating-systems-for-backup"></a>Поддерживаемые версии операционных систем для резервного копирования
- * **Linux**: служба Azure Backup поддерживает весь [список дистрибутивов, рекомендованных для использования в Azure](../virtual-machines/linux/endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), за исключением CoreOS Linux. 
- 
+
+ * **Linux**: служба Azure Backup поддерживает весь [список дистрибутивов, рекомендованных для использования в Azure](../virtual-machines/linux/endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json), за исключением CoreOS Linux. Список операционных систем Linux, которые поддерживают восстановление файлов, см. в разделе [Восстановление файлов из резервной копии виртуальной машины](backup-azure-restore-files-from-vm.md#for-linux-os).
+
     > [!NOTE] 
     > Другие собственные дистрибутивы Linux также должны работать, если агент виртуальной машины доступен на виртуальной машине и есть поддержка Python. Но эти дистрибутивы не поддерживаются.
- * **Windows Server**: версии до Windows Server 2008 R2 не поддерживаются.
+    >
+ * **Windows Server**, **клиент Windows**: версии до Windows Server 2008 R2 или Windows 7 не поддерживаются.
+
 
 ## <a name="limitations-when-backing-up-and-restoring-a-vm"></a>Ограничения при резервном копировании и восстановлении виртуальной машины
 Перед подготовкой среды следует учитывать такие ограничения:

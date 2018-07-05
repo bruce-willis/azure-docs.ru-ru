@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/15/2018
+ms.date: 06/21/2018
 ms.author: mabrigg
-ms.openlocfilehash: dd43d567a9839ae38c5b5eb4cdb851f8b80dcfff
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: b505e0fa215b04a5b05ca1b4c3fa9548d8deb71f
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34824576"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36322647"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -45,7 +45,7 @@ ms.locfileid: "34824576"
 ### <a name="create-service-principal"></a>Создание субъекта-службы
 В этом разделе вы создадите в Azure AD приложение (субъект-службу), которое будет представлять ваше приложение.
 
-1. Войдите в учетную запись Azure на [портале Azure](https://portal.azure.com).
+1. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).
 2. Выберите **Azure Active Directory** > **Регистрация приложений** > **Добавить**.   
 3. Укажите имя и URL-адрес для приложения. Выберите тип создаваемого приложения: **веб-приложение или API** или **собственное приложение**. Выбрав нужные значения, нажмите кнопку **Создать**.
 
@@ -132,7 +132,7 @@ ms.locfileid: "34824576"
 Add-AzureRmAccount -EnvironmentName "<AzureStackEnvironmentName>" `
  -ServicePrincipal `
  -CertificateThumbprint $servicePrincipal.Thumbprint `
- -ApplicationId $servicePrincipal.ApplicationId ` 
+ -ApplicationId $servicePrincipal.ClientId ` 
  -TenantId $directoryTenantId
 ```
 

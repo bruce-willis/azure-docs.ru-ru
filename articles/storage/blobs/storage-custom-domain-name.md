@@ -1,35 +1,42 @@
 ---
-title: Настройка имени личного домена для конечной точки хранилища BLOB-объектов Azure | Документация Майкрософт
-description: С помощью портала Azure сопоставьте собственное каноническое имя (CNAME) с конечной точкой хранилища BLOB-объектов в учетной записи хранения Azure.
+title: Настройка имени личного домена для учетной записи службы хранилища Azure | Документы Майкрософт
+description: С помощью портала Azure сопоставьте собственное каноническое имя (CNAME) с конечной точкой службы BLOB-объектов или веб-службы в учетной записи службы хранилища Azure.
 services: storage
 author: tamram
 manager: jeconnoc
 ms.service: storage
 ms.topic: article
-ms.date: 05/25/2017
+ms.date: 06/26/2018
 ms.author: tamram
-ms.openlocfilehash: 2b776e8f40f6972a60f933b0104312b119439f38
-ms.sourcegitcommit: fbba5027fa76674b64294f47baef85b669de04b7
+ms.openlocfilehash: 2f4267c25dfd31e6f1d5ae3a832be06b5ef6c828
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2018
-ms.locfileid: "29559933"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017926"
 ---
-# <a name="configure-a-custom-domain-name-for-your-blob-storage-endpoint"></a>Настройка пользовательского доменного имени для конечной точки хранилища BLOB-объектов
+# <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Настройка имени личного домена для учетной записи службы хранилища Azure
 
-Можно настроить пользовательский домен для доступа к BLOB-данным в учетной записи хранения Azure. Конечной точкой по умолчанию для хранилища BLOB-объектов является `<storage-account-name>.blob.core.windows.net`. После сопоставления личного домена и поддомена, например **www.contoso.com**, с конечной точкой больших двоичных объектов для вашей учетной записи хранения пользователи также смогут, используя этот домен, получать доступ к данным больших двоичных объектов в учетной записи хранения.
+Можно настроить пользовательский домен для доступа к BLOB-данным в учетной записи хранения Azure. Конечной точкой по умолчанию для хранилища BLOB-объектов является `<storage-account-name>.blob.core.windows.net`. Можно также использовать конечную точку веб-службы, созданную в рамках [функции статических веб-сайтов (предварительная версия)](storage-blob-static-website.md). После сопоставления личного домена и поддомена, например **www.contoso.com**, с конечной точкой службы BLOB-объектов или веб-службы для вашей учетной записи хранения пользователи также смогут, используя этот домен, получать доступ к данным больших двоичных объектов в учетной записи хранения.
 
 > [!IMPORTANT]
 > Служба хранилища Azure пока не поддерживает протокол HTTPS для личных доменов. Тем временем вы можете [использовать Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS](storage-https-custom-domain-cdn.md).
 >
 
+> [!NOTE]  
+> В настоящий момент в учетной записи хранения может быть только одно имя личного домена. Это означает, что нельзя сопоставить имя личного домена одновременно с конечной точкой службы BLOB-объектов и веб-службы.
+
 В следующей таблице приведено несколько примеров URL-адресов для данных больших двоичных объектов, расположенных в учетной записи хранения с именем **mystorageaccount**. Пользовательский домен, зарегистрированный для этой учетной записи хранения: **www.contoso.com**
 
 | Тип ресурса | URL-адрес по умолчанию | URL-адрес личного домена |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | Учетная запись хранения | http://mystorageaccount.blob.core.windows.net | http://www.contoso.com |
 | BLOB-объект |http://mystorageaccount.blob.core.windows.net/mycontainer/myblob | http://www.contoso.com/mycontainer/myblob |
 | Корневой контейнер | http://mystorageaccount.blob.core.windows.net/myblob или http://mystorageaccount.blob.core.windows.net/$root/myblob| http://www.contoso.com/myblob или http://www.contoso.com/$root/myblob |
+| Web |  http://mystorageaccount.[zone].web.core.windows.net/$web/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/$web или http://mystorageaccount.[zone].web.core.windows.net/ | http://www.contoso.com/$web или http://www.contoso.com/ или http://www.contoso.com/$web/[indexdoc] или http://www.contoso.com/[indexdoc] |
+
+> [!NOTE]  
+> Все примеры для конечной точки службы BLOB-объектов распространяются и на конечную точку веб-службы.
 
 ## <a name="direct-vs-intermediary-domain-mapping"></a>Прямое и промежуточное сопоставление доменов
 
@@ -158,3 +165,4 @@ ms.locfileid: "29559933"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Сопоставление содержимого Azure CDN с пользовательским доменом](../../cdn/cdn-map-content-to-custom-domain.md)
 * [Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS](storage-https-custom-domain-cdn.md)
+* [Размещение статических веб-сайтов в хранилище BLOB-объектов Azure (предварительная версия)](storage-blob-static-website.md)

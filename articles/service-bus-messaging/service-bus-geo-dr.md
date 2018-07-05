@@ -2,23 +2,18 @@
 title: Географическое аварийное восстановление в служебной шине Azure | Документация Майкрософт
 description: Способы использования географических регионов для отработки отказа и аварийного восстановления в служебной шине Azure
 services: service-bus-messaging
-documentationcenter: ''
-author: christianwolf42
+author: sethmanheim
 manager: timlt
-editor: ''
 ms.service: service-bus-messaging
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 12/15/2017
+ms.date: 06/14/2018
 ms.author: sethm
-ms.openlocfilehash: 652adcf78add8ae699a7f827a915e90ce1694c61
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: b43c5bd6ff6b386e1a2ee0b5e3ae8ec8fa61fb4b
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30237351"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301525"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Географическое аварийное восстановление в служебной шине Azure
 
@@ -91,7 +86,7 @@ ms.locfileid: "30237351"
 
 - Пример .NET и параметры, необходимые в Azure Active Directory для настройки и включения географически избыточного восстановления с помощью Azure Resource Manager и служебной шины.
 - шаги, необходимые для выполнения примера кода;
-- использование имеющегося пространства имен в качестве псевдонима.
+- Использование имеющегося пространства имен в качестве псевдонима.
 - Инструкции по включению географически избыточного восстановления с помощью PowerShell или CLI.
 - [Отправка и получение](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/GeoDR/TestGeoDR/ConsoleApp1) из текущего основного и дополнительного пространства имен с помощью псевдонима.
 
@@ -106,6 +101,17 @@ ms.locfileid: "30237351"
 3. Отработку отказа сложной распределенной инфраструктуры необходимо [протестировать](/azure/architecture/resiliency/disaster-recovery-azure-applications#disaster-simulation) по крайней мере один раз. 
 
 4. Синхронизация сущностей может занять некоторое время (примерно 50–100 сущностей в минуту). Подписки и правила также учитываются как сущности. 
+
+## <a name="availability-zones-preview"></a>Функция "Зоны доступности" (предварительная версия)
+
+SKU уровня "Премиум" служебной шины также поддерживает [зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев места в регионе Azure. 
+
+> [!NOTE]
+> Предварительная версия функции "Зоны доступности" поддерживается только в регионах **Центральная часть США**, **Восточная часть США 2** и **Центральная Франция**.
+
+Вы можете включить эту функцию только в новых пространствах имен с помощью портала Azure. Служебная шина не поддерживает миграцию существующих пространств имен. Вы не можете отключить избыточность в пределах зоны после ее включения в пространстве имен.
+
+![3][]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -123,3 +129,4 @@ ms.locfileid: "30237351"
 
 [1]: ./media/service-bus-geo-dr/geo1.png
 [2]: ./media/service-bus-geo-dr/geo2.png
+[3]: ./media/service-bus-geo-dr/az.png

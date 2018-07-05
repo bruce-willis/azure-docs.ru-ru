@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/2/2017
 ms.author: sumukhs
-ms.openlocfilehash: f29754c73db74f02214522a4de15904e65df0e98
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c01bcfecea8d79784b764e715f077c76e7d4be45
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208266"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017653"
 ---
 # <a name="configuring-reliable-actors--kvsactorstateprovider"></a>Настройка надежных субъектов — KVSActorStateProvider
 Используемую по умолчанию конфигурацию KVSActorStateProvider можно изменить. Для этого нужно обновить файл settings.xml, созданный в папке Config заданного субъекта в корневом каталоге пакета Microsoft Visual Studio.
@@ -34,6 +34,10 @@ ms.locfileid: "34208266"
 ## <a name="replicator-security-configuration"></a>Конфигурация безопасности репликатора
 Конфигурации безопасности репликаторов используются для защиты канала связи, который используется во время репликации. Это означает, что службы не будут "видеть" реплицируемый трафик друг друга, что позволит обеспечить высокую доступность и высокий уровень защиты.
 По умолчанию пустой раздел конфигурации безопасности означает, что канал репликации не защищен.
+
+> [!IMPORTANT]
+> На узлах Linux сертификаты должны иметь формат PEM. Дополнительные сведения о поиске и настройке сертификатов для Linux см. в разделе [Настройка сертификатов на Linux](./service-fabric-configure-certificates-linux.md). 
+> 
 
 ### <a name="section-name"></a>Имя раздела
 &lt;имя_субъекта&gt;ServiceReplicatorSecurityConfig

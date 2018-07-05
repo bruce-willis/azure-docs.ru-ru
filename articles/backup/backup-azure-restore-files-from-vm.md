@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: pullabhk
-ms.openlocfilehash: e9d1c79d6485764f4b671ad529e0812b49df34b1
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 4be1ffcabed6667ab76ec790326a687d75c8b125
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34737024"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36958626"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Восстановление файлов из резервной копии виртуальной машины Azure
 
@@ -173,7 +173,7 @@ $ mount [RAID Disk Path] [/mountpath]
 | Windows Server 2012    | Windows 8  |
 | Windows Server 2008 R2 | Windows 7   |
 
-### <a name="for-linux"></a>Для Linux
+### <a name="for-linux-os"></a>Для ОС Linux
 
 В Linux операционная система компьютера, используемого для восстановления файлов, должна поддерживать файловую систему защищенной виртуальной машины. При выборе компьютера для выполнения сценария убедитесь, что он имеет совместимую ОС и использует одну из версий, приведенных в следующей таблице:
 

@@ -12,14 +12,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.component: compliance-reports
-ms.date: 05/16/2018
+ms.date: 06/21/2018
 ms.author: rolyon
-ms.openlocfilehash: dbb139081e1eb84ea64a187b7fec0d9cb159653c
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 8eb7e4bc79ee50982dae5751968eb732ef39e00d
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235011"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017786"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -42,7 +42,7 @@ ms.locfileid: "35235011"
 
 ## <a name="create-and-perform-an-access-review-for-guests"></a>Создание и выполнение проверки доступа для гостей
 
-Сначала необходимо включить передачу данных проверок доступа на панель доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора. 
+Сначала необходимо включить передачу данных проверок доступа на панель доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора или администратора учетной записи. 
 
 Azure AD обеспечивает несколько сценариев проверок гостевых пользователей.
 

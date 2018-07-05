@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/15/2017
 ms.author: fboylu
-ms.openlocfilehash: c3e9b27784a1c0671ca3c87f9a7c55a288362299
-ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
+ms.openlocfilehash: 2916252c08c599d2e528595a8cdf2abca8ea89a3
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35248390"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36939969"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace-and-other-businesses"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических и других компаниях
 
@@ -54,14 +54,14 @@ ms.locfileid: "35248390"
 ### <a name="synthetic-data-source"></a>Источник искусственных данных
 Для этого шаблона используется источник данных, созданный настольным приложением, которое вы загрузили и запустили локально после успешного развертывания.
 
-Чтобы найти инструкции по загрузке и установке этого приложения, выберите первый узел на схеме шаблонов решений, "Predictive Maintenance Data Generator" (Генератор данных прогнозного обслуживания). Инструкции приведены на панели "Свойства". Это приложение передает [концентратору событий Azure](#azure-event-hub) точки данных или события, которые используются в оставшейся части потока решения. Этот источник данных извлекается из общедоступных данных из [репозитория данных NASA](http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/) с помощью [набора данных для симуляции деградации турбореактивного двигателя](http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/#turbofan).
+Чтобы найти инструкции по загрузке и установке этого приложения, выберите первый узел на схеме шаблонов решений, "Predictive Maintenance Data Generator" (Генератор данных прогнозного обслуживания). Инструкции приведены на панели "Свойства". Это приложение передает [концентратору событий Azure](#azure-event-hub) точки данных или события, которые используются в оставшейся части потока решения. Этот источник данных извлекается из общедоступных данных из [репозитория данных NASA](https://c3.nasa.gov/dashlink/resources/139/) с помощью [набора данных для симуляции деградации турбореактивного двигателя](http://ti.arc.nasa.gov/tech/dash/pcoe/prognostic-data-repository/#turbofan).
 
-Приложение для создания событий заполняет концентратор событий Azure только при выполнении на компьютере.
+Приложение для создания событий заполняет концентратор событий Azure только при выполнении на компьютере.  
 
-### <a name="azure-event-hub"></a>концентратору событий Azure
+### <a name="azure-event-hub"></a>концентратору событий Azure  
 Служба [Концентратор событий Azure](https://azure.microsoft.com/services/event-hubs/) является получателем входных данных, предоставленных искусственным источником данных.
 
-## <a name="data-preparation-and-analysis"></a>Подготовка и анализ данных
+## <a name="data-preparation-and-analysis"></a>Подготовка и анализ данных  
 ### <a name="azure-stream-analytics"></a>Azure Stream Analytics
 Используйте [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/), чтобы обеспечить аналитику в режиме, близком к реальному времени, для входного потока из службы [концентратора событий Azure](#azure-event-hub). Затем опубликуйте результаты на панели мониторинга [Power BI](https://powerbi.microsoft.com), а также заархивируйте все необработанные входящие события и сохраните их в службе [хранилища Azure](https://azure.microsoft.com/services/storage/) для последующей обработки службой [фабрики данных Azure](https://azure.microsoft.com/documentation/services/data-factory/).
 
@@ -113,11 +113,11 @@ ms.locfileid: "35248390"
 Запрос во втором задании Stream Analytics **maintenancesa02asablob** просто выводит все события [концентратора событий](https://azure.microsoft.com/services/event-hubs/) в [службу хранилища Azure](https://azure.microsoft.com/services/storage/) и поэтому не требует изменения вне зависимости от вашего формата данных, так как все данные о событии передаются в хранилище.
 
 ### <a name="azure-data-factory"></a>Фабрика данных Azure
-Служба [Фабрика данных Azure](https://azure.microsoft.com/documentation/services/data-factory/) управляет перемещением и обработкой данных. В шаблоне решения для прогнозируемого обслуживания в аэрокосмических компаниях фабрика данных состоит из трех [конвейеров](../../data-factory/v1/data-factory-create-pipelines.md) для перемещения и обработки данных с помощью различных технологий.  Чтобы получить доступ к своей фабрике данных, откройте узел фабрики данных в нижней части на схеме шаблона решения, созданной в ходе развертывания решения. Ошибки в наборах данных возникают из-за фабрики данных, развернутой до запуска генератора данных. Их можно пропустить, так как они не мешают работе фабрики данных.
+Служба [Фабрика данных Azure](https://azure.microsoft.com/documentation/services/data-factory/) управляет перемещением и обработкой данных. В шаблоне решения для прогнозируемого обслуживания в аэрокосмических компаниях фабрика данных состоит из трех [конвейеров](../../data-factory/concepts-pipelines-activities.md) для перемещения и обработки данных с помощью различных технологий.  Чтобы получить доступ к своей фабрике данных, откройте узел фабрики данных в нижней части на схеме шаблона решения, созданной в ходе развертывания решения. Ошибки в наборах данных возникают из-за фабрики данных, развернутой до запуска генератора данных. Их можно пропустить, так как они не мешают работе фабрики данных.
 
 ![Ошибки наборов данных фабрики данных](./media/cortana-analytics-technical-guide-predictive-maintenance/data-factory-dataset-error.png)
 
-В этом разделе рассматриваются необходимые [конвейеры](../../data-factory/v1/data-factory-create-pipelines.md) и [действия](../../data-factory/v1/data-factory-create-pipelines.md) в [фабрике данных Azure](https://azure.microsoft.com/documentation/services/data-factory/). Ниже представлена схема решения.
+В этом разделе рассматриваются необходимые [конвейеры и действия](../../data-factory/concepts-pipelines-activities.md) в [фабрике данных Azure](https://azure.microsoft.com/documentation/services/data-factory/). Ниже представлена схема решения.
 
 ![Фабрика данных Azure](./media/cortana-analytics-technical-guide-predictive-maintenance/azure-data-factory.png)
 
@@ -126,22 +126,22 @@ ms.locfileid: "35248390"
 Аналогично запросам [Azure Stream Analytics](#azure-stream-analytics-1) скрипты [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) имеют неявные сведения о формате входящих данных. Эти запросы нужно изменить в зависимости от вашего формата данных.
 
 #### <a name="aggregateflightinfopipeline"></a>*AggregateFlightInfoPipeline*
-Этот [конвейер](../../data-factory/v1/data-factory-create-pipelines.md) содержит одно действие — действие [HDInsightHive](../../data-factory/v1/data-factory-hive-activity.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
+Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для секционирования данных в [службе хранилища Azure](https://azure.microsoft.com/services/storage/) во время задания [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).
 
 Сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***AggregateFlightInfo.hql***.
 
 #### <a name="mlscoringpipeline"></a>*MLScoringPipeline*
-Этот [конвейер](../../data-factory/v1/data-factory-create-pipelines.md) содержит несколько действий, и его конечным результатом является оцененный прогноз из эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/), связанного с этим шаблоном решения.
+Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит несколько действий, и его конечным результатом является оцененный прогноз из эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/), связанного с этим шаблоном решения.
 
 Эти действия включают в себя:
 
-* Действие [HDInsightHive](../../data-factory/v1/data-factory-hive-activity.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
+* Действие [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) с использованием службы [HDInsightLinkedService](https://msdn.microsoft.com/library/azure/dn893526.aspx), которая выполняет сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для агрегирования и проектирования характеристик, необходимых для эксперимента [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/).
   Сценарий [Hive](http://blogs.msdn.com/b/bigdatasupport/archive/2013/11/11/get-started-with-hive-on-hdinsight.aspx) для этой задачи секционирования — ***PrepareMLInput.hql***.
-* Действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты действия [HDInsightHive](../../data-factory/v1/data-factory-hive-activity.md) в один большой двоичный объект [службы хранилища Azure](https://azure.microsoft.com/services/storage/), к которому может получить доступ действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx).
+* Действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты действия [HDInsightHive](../../data-factory/transform-data-using-hadoop-hive.md) в один большой двоичный объект [службы хранилища Azure](https://azure.microsoft.com/services/storage/), к которому может получить доступ действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx).
 * Действие [AzureMLBatchScoring](https://msdn.microsoft.com/library/azure/dn894009.aspx) вызывает эксперимент [Машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/) с результатами, размещенными в одном большом двоичном объекте службы [хранилища Azure](https://azure.microsoft.com/services/storage/).
 
 #### <a name="copyscoredresultpipeline"></a>*CopyScoredResultPipeline*
-Этот [конвейер](../../data-factory/v1/data-factory-create-pipelines.md) содержит одно действие — действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты эксперимента [Машинного обучения Azure](#azure-machine-learning) из ***MLScoringPipeline*** в [Базу данных SQL Azure](https://azure.microsoft.com/services/sql-database/), созданную в процессе установки шаблона решений.
+Этот [конвейер](../../data-factory/concepts-pipelines-activities.md) содержит одно действие — действие [Copy](https://msdn.microsoft.com/library/azure/dn835035.aspx), которое перемещает результаты эксперимента [Машинного обучения Azure](#azure-machine-learning) из ***MLScoringPipeline*** в [Базу данных SQL Azure](https://azure.microsoft.com/services/sql-database/), созданную в процессе установки шаблона решений.
 
 ### <a name="azure-machine-learning"></a>Машинное обучение Azure
 Эксперимент [машинного обучения Azure](https://azure.microsoft.com/services/machine-learning/) , используемый для этого шаблона решения, предоставляет оставшийся период эксплуатации двигателя самолета. Эксперимент относится к потребляемому набору данных и поэтому нуждается в изменении или замене в зависимости от вводимых данных.

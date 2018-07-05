@@ -1,6 +1,6 @@
 ---
 title: Создание виртуальной машины Linux в Azure с помощью шаблона | Документация Майкрософт
-description: Как использовать Azure CLI 2.0 для создания виртуальной машины Linux с помощью шаблона Resource Manager
+description: Как использовать Azure CLI для создания виртуальной машины Linux с помощью шаблона Resource Manager
 services: virtual-machines-linux
 documentationcenter: ''
 author: iainfoulds
@@ -16,15 +16,15 @@ ms.topic: article
 ms.date: 05/30/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0e241d56eba8c8cb23b1a78227b4ca7ff725162d
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: fc2b4dde9796336112d6c8a68d16d0b3006b3fee
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34716413"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936420"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-with-azure-resource-manager-templates"></a>Как создать виртуальную машину Linux с помощью шаблонов Azure Resource Manager
-В этой статье показано, как быстро развернуть виртуальную машину Linux с помощью шаблонов Azure Resource Manager и Azure CLI 2.0. Эти действия можно также выполнить с помощью [Azure CLI 1.0](create-ssh-secured-vm-from-template-nodejs.md).
+В этой статье показано, как быстро развернуть виртуальную машину Linux с помощью шаблонов Azure Resource Manager и Azure CLI. 
 
 
 ## <a name="templates-overview"></a>Обзор шаблонов

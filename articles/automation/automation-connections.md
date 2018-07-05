@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ee866248ae7f0c1f1c49c449b777c2b68d884c5b
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 88baa1385bfd64cab08299bc31a6f003f6b87e48
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257685"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37019318"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 

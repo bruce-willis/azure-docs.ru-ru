@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 176af41197810059a17daf5ab09d29e0169e9640
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 69e9d66458409bbc744416a58ceb508349418a76
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225013"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37019559"
 ---
 # <a name="steps-to-configure-an-openidoauth-application-from-azure-ad-app-gallery"></a>Инструкции по настройке приложения OpenID или OAuth из коллекции приложений Azure AD
 
@@ -42,7 +42,7 @@ ms.locfileid: "36225013"
     ![Добавление приложения](./media/openidoauth-tutorial/addfromgallery.png)
 
     > [!NOTE]
-    > Для приложений OpenID Connect и OAuth кнопка "Добавить" отключена по умолчанию. Администратор клиента должен нажать кнопку **"Регистрация"** и дать согласие на регистрацию приложения. Таким образом приложение будет добавлено в клиент пользователя без необходимости напрямую добавлять и настраивать его.
+    > Для приложений OpenID Connect и OAuth кнопка "Добавить" отключена по умолчанию. Администратор клиента должен нажать кнопку **"Регистрация"** и дать согласие на регистрацию приложения. Таким образом, приложение будет добавлено в клиент пользователя без необходимости добавлять и настраивать его напрямую.
 
     ![Кнопка "Добавить"](./media/openidoauth-tutorial/addbutton.png)
 

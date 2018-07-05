@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: tdykstra
-ms.openlocfilehash: d0afc8b6f8e0b7ef73e5d1c3cbabf2e1542f47f4
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 5a3070582a32adeda45dff233782c3a971885c14
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35234530"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37018461"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -66,6 +66,9 @@ public static void Run(
 2. Выберите **Классический рабочий стол Windows > Консольное приложение (.NET Framework)**.
 
    Чтобы создать проект версии 3.x, выберите **.NET Core > Консольное приложение (.NET Core)**.
+   
+   > [!NOTE]
+   > 3.x все еще находится в разработке и на этапе предварительной версии. Приведенные в этой статье инструкции по 3.x неполны; актуальные сведения см. в разделе проблем GitHub в нижней части страницы.
 
 3. Назовите проект *WebJobsSDKSample*, а затем нажмите кнопку **OK**.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: 58cf30163837f6d3c327b7c0c6c2542ea294e8d6
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e9dc784d84c43600f3ba4fda92e023c01afe8995
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36229001"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301147"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство по интеграции Azure Active Directory с Shmoop For Schools
 
@@ -120,7 +120,7 @@ ms.locfileid: "36229001"
     ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_attribute.png)
 
     > [!NOTE]
-    > Shmoop For Schools поддерживает две роли для пользователей — **Учитель** и **Ученик**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Чтобы понять, как настроить роли в Azure AD, см. статью об [управления доступом на основе ролей в облачных приложениях с помощью Azure AD](http://www.dushyantgill.com/blog/2014/12/10/roles-based-access-control-in-cloud-applications-using-azure-ad/).
+    > Shmoop For Schools поддерживает две роли для пользователей — **Учитель** и **Ученик**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Инструкции по настройке ролей в Azure AD см. в разделе [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
     
 5. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на предыдущем рисунке.  Затем выполните следующие действия:
 

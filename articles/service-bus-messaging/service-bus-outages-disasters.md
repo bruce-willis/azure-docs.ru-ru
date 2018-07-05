@@ -6,14 +6,14 @@ author: sethmanheim
 manager: timlt
 ms.service: service-bus-messaging
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 06/14/2018
 ms.author: sethm
-ms.openlocfilehash: 38aaf6d7ddad1527e113efa502ae47b82165b079
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 1d960349b50e2618365fd085cba7b3e55fa53874
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34802312"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301722"
 ---
 # <a name="best-practices-for-insulating-applications-against-service-bus-outages-and-disasters"></a>Рекомендации по изолированию приложений от простоев и аварий служебной шины
 
@@ -78,6 +78,17 @@ ms.locfileid: "34802312"
 
 Служебная шина поддерживает географическое аварийное восстановление и георепликацию на уровне пространства имен. Дополнительные сведения см. в разделе [Географическое аварийное восстановление в служебной шине Azure](service-bus-geo-dr.md). Функция аварийного восстановления, доступная только для [номеров SKU уровня "Премиум"](service-bus-premium-messaging.md), реализует аварийное восстановление метаданных и основывается на первичном и вторичном пространствах имен для аварийного восстановления.
 
+## <a name="availability-zones-preview"></a>Функция "Зоны доступности" (предварительная версия)
+
+SKU уровня "Премиум" шины службы поддерживает [зоны доступности](../availability-zones/az-overview.md), предоставляя изолированные от сбоев места в регионе Azure. 
+
+> [!NOTE]
+> Предварительная версия функции "Зоны доступности" поддерживается только в регионах **Центральная часть США**, **Восточная часть США 2** и **Центральная Франция**.
+
+Вы можете включить эту функцию только в новых пространствах имен с помощью портала Azure. Служебная шина не поддерживает миграцию существующих пространств имен. Вы не можете отключить избыточность в пределах зоны после ее включения в пространстве имен.
+
+![1][]
+
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об аварийном восстановлении см. в следующих статьях:
 
@@ -93,3 +104,5 @@ ms.locfileid: "34802312"
 [Geo-replication with Service Bus Brokered Messages]: https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/GeoReplication
 [Azure SQL Database Business Continuity]: ../sql-database/sql-database-business-continuity.md
 [Azure resiliency technical guidance]: /azure/architecture/resiliency
+
+[1]: ./media/service-bus-outages-disasters/az.png

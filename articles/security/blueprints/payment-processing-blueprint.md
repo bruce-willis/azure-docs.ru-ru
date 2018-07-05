@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/09/2018
 ms.author: jomolesk
-ms.openlocfilehash: 03f13c0b1ae209cc3da211a252a9a735faad34d0
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 223829df11bb1c9add811b40b55e47ee1fbb1fe4
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301377"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751844"
 ---
 # <a name="azure-security-and-compliance-blueprint---pci-dss-compliant-payment-processing-environments"></a>Схема безопасности и соответствия требованиям Azure. Среды для обработки платежей, соответствующие стандарту PCI DSS
 
@@ -298,7 +298,7 @@ ms.locfileid: "35301377"
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
-Компоненты для развертывания этого решения доступны в [репозитории кода для схемы PCI][code-repo]. Для развертывания базовой архитектуры требуется несколько шагов, выполняемых с помощью Microsoft PowerShell версии 5. Чтобы подключиться к веб-сайту, вы должны предоставить имя личного домена (например, contoso.com). Его нужно указать с помощь параметра `-customHostName` на шаге 2. Дополнительные сведения см. в статье [Приобретение имени личного домена для веб-приложений Azure](/azure/app-service-web/custom-dns-web-site-buydomains-web-app). Имя личного домена не требуется для успешного развертывания и запуска решения, но вы не сможете подключиться к веб-сайту в демонстрационных целях.
+Компоненты для развертывания этого решения доступны в [репозитории кода для PCI Blueprint](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms). Для развертывания базовой архитектуры требуется несколько шагов, выполняемых с помощью Microsoft PowerShell версии 5. Чтобы подключиться к веб-сайту, вы должны предоставить имя личного домена (например, contoso.com). Это указывается посредством управляемого запроса пользователя в основном сценарии развертывания на шаге 2. Дополнительные сведения см. в статье [Приобретение имени личного домена для веб-приложений Azure](/azure/app-service-web/custom-dns-web-site-buydomains-web-app). Имя личного домена не требуется для успешного развертывания и запуска решения, но вы не сможете подключиться к веб-сайту в демонстрационных целях.
 
 Скрипты добавляют пользователей домена в указанный вами клиент Azure AD. Рекомендуется создать клиент Azure AD для использования в качестве тестового образца.
 
@@ -323,19 +323,17 @@ ms.locfileid: "35301377"
  
     ```powershell
     .\1-DeployAndConfigureAzureResources.ps1 
-        -resourceGroupName contosowebstore
-        -globalAdminUserName adminXX@contosowebstore.com 
-        -globalAdminPassword **************
-        -azureADDomainName contosowebstore.com 
-        -subscriptionID XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX 
-        -suffix PCIcontosowebstore
-        -customHostName contosowebstore.com
-        -sqlTDAlertEmailAddress edna@contosowebstore.com 
-        -enableSSL
-        -enableADDomainPasswordPolicy 
     ```
     
-    Инструкции по использованию см. в статье [о развертывании и настройке ресурсов Azure](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms/blob/master/1-DeployAndConfigureAzureResources.md).
+    Инструкции по использованию см. в статье [о развертывании и настройке ресурсов Azure](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms/blob/master/1-DeployAndConfigureAzureResources.md). Этот сценарий можно использовать для поддержки демонстрации Contoso Web Store или для пилотной реализации начальных шагов развертывания среды для обеспечения соответствия PCI. 
+    
+    ```PowerShell
+    .\1A-ContosoWebStoreDemoAzureResources.ps1
+    ```
+    
+    Подробные инструкции по использованию для поддержки демонстрационного развертывания Contoso Web Store см. в разделе [Инструкции к сценарию — ресурсы Azure для демонстрации Contoso Web Store](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms/blob/master/1A-ContosoWebStoreDemoAzureResources.md). Этот сценарий можно использовать для развертывания инфраструктуры демонстрационной инфраструктуры Contoso Web Store. 
+    
+    Эти сценарии предназначены для использования независимо друг от друга. Чтобы лучше разобраться в решении, рекомендуется выполнить демонстрационное развертывание для определения ресурсов Azure, необходимых для поддержки решения. 
     
 3. Ведение журналов и мониторинг. После развертывания решения можно открыть рабочее пространство Log Analytics. Шаблоны примеров, предоставленные в репозитории решений, можно использовать для иллюстрации того, как можно настроить панель мониторинга. Примеры шаблонов см. в папке [omsDashboards](https://github.com/Azure/pci-paas-webapp-ase-sqldb-appgateway-keyvault-oms/blob/master/1-DeployAndConfigureAzureResources.md). Обратите внимание: для правильного развертывания шаблонов данные должны собираться в Log Analytics. Это может занять один час или больше, в зависимости от активности сайта.
  

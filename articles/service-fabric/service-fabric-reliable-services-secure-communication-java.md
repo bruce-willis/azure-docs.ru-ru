@@ -1,6 +1,6 @@
 ---
-title: Защита взаимодействия служб в Azure Service Fabric | Документация Майкрософт
-description: Общие сведения о способах защиты взаимодействия служб Reliable Services, выполняющихся в кластере Azure Service Fabric.
+title: Безопасное удаленное взаимодействие со службой Java в Azure Service Fabric | Документы Майкрософт
+description: Узнайте, как защитить удаленное взаимодействие со службой для служб Reliable Services на Java, запущенных в кластере Azure Service Fabric.
 services: service-fabric
 documentationcenter: java
 author: PavanKunapareddyMSFT
@@ -13,22 +13,23 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 06/30/2017
 ms.author: pakunapa
-ms.openlocfilehash: 624d9d358145fb8b41013d686821cb157693d3c6
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: cbefb3ede6d0d1fe21065b49c84db9f4db5dd39c
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208001"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020819"
 ---
-# <a name="help-secure-communication-for-services-in-azure-service-fabric"></a>Защита взаимодействия служб в Azure Service Fabric
+# <a name="secure-service-remoting-communications-in-a-java-service"></a>Безопасное удаленное взаимодействие со службой для службы Java
 > [!div class="op_single_selector"]
 > * [C# в Windows](service-fabric-reliable-services-secure-communication.md)
 > * [Java в Linux](service-fabric-reliable-services-secure-communication-java.md)
 >
 >
 
-## <a name="help-secure-a-service-when-youre-using-service-remoting"></a>Защита службы при использовании удаленного взаимодействия служб
-Мы будем использовать существующий [пример](service-fabric-reliable-services-communication-remoting-java.md) , в котором описывается настройка удаленного взаимодействия для Reliable Services. Для защиты службы при использовании удаленного взаимодействия служб выполните следующие действия:
+Безопасность — один из самых важных аспектов взаимодействия. Платформа приложений Reliable Services предоставляет несколько готовых стеков взаимодействия и средств, которыми можно воспользоваться для повышения безопасности. В этой статье объясняется, как повысить безопасность при использовании удаленного взаимодействия со службой для службы Java. Мы будем использовать существующий [пример](service-fabric-reliable-services-communication-remoting-java.md), в котором описывается настройка удаленного взаимодействия для Reliable Services, написанных на Java. 
+
+Для защиты службы при использовании удаленного взаимодействия со службами Java выполните следующие действия:
 
 1. Создайте интерфейс `HelloWorldStateless`, определяющий методы, которые будут доступны для удаленного вызова процедур в службе. Служба также будет использовать прослушиватель `FabricTransportServiceRemotingListener`, который объявляется в пакете `microsoft.serviceFabric.services.remoting.fabricTransport.runtime`. Это реализация `CommunicationListener` , которая предоставляет возможности удаленного взаимодействия.
 
@@ -54,11 +55,13 @@ ms.locfileid: "34208001"
     ```
 2. Добавьте параметры прослушивателя и учетные данные безопасности.
 
-    Убедитесь, что сертификат, который вы хотите использовать для защиты взаимодействия со службой, установлен на всех узлах в кластере. Существует два способа указания параметров прослушивателя и учетных данных безопасности:
+    Убедитесь, что сертификат, который вы хотите использовать для защиты взаимодействия со службой, установлен на всех узлах в кластере. Для служб, выполняемых на Linux, сертификат должен находиться в PEM-файле. Это может быть файл `.pem` с сертификатом и закрытым ключом или файл `.crt` с сертификатом и файл `.key` с закрытым ключом. Дополнительные сведения см. в разделе [Расположение и формат сертификатов X.509 в узлах Linux](./service-fabric-configure-certificates-linux.md#location-and-format-of-x509-certificates-on-linux-nodes).
+    
+    Существует два способа указания параметров прослушивателя и учетных данных безопасности:
 
    1. Предоставьте их с помощью [пакета конфигурации](service-fabric-application-and-service-manifests.md):
 
-       Добавьте раздел `TransportSettings` в файл settings.xml.
+       Добавьте именованный раздел `TransportSettings` в файл settings.xml.
 
        ```xml
        <!--Section name should always end with "TransportSettings".-->

@@ -10,22 +10,22 @@ ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.component: protection
-ms.date: 06/06/2017
+ms.date: 06/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 885c7a144a2ac588e1f1b32fb03b7ed72d058e94
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 7c536a4e7f93a2f1ef42b7600513994dd80826a0
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233459"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020876"
 ---
 # <a name="how-to-perform-an-access-review-in-azure-ad-privileged-identity-management"></a>Как выполнить проверку доступа в управлении привилегированными пользователями Azure AD
 Компонент Azure Active Directory (AD) Privileged Identity Management упрощает управление привилегированным доступом пользователей к ресурсам в Azure AD и других веб-службах Майкрософт, включая Office 365 и Microsoft Intune.  
 
 Если вам назначена роль администратора, администратор привилегированных ролей вашей организации может попросить вас регулярно подтверждать, что эта роль по-прежнему требуется вам для работы. Вы можете получить сообщение электронной почты, содержащее ссылку для подтверждения, или перейти непосредственно на [портал Azure](https://portal.azure.com). Следуйте указаниям в этой статье, чтобы выполнить самостоятельную проверку назначенных вам ролей.
 
-Если вы администратор привилегированных ролей и вас интересуют функции проверки доступа, дополнительные сведения см. в статье [Как запустить проверку доступа в управлении привилегированными пользователями Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md).
+Если вы администратор привилегированных ролей или глобальный администратор и вас интересуют функции проверки доступа, дополнительные сведения см. в статье [Как запустить проверку доступа](active-directory-privileged-identity-management-how-to-start-security-review.md).
 
 ## <a name="add-the-privileged-identity-management-application"></a>Добавление приложения для управления привилегированными пользователями
 Для выполнения проверки можно использовать приложение "Управление привилегированными пользователями" (PIM) Azure AD на [портале Azure](https://portal.azure.com/) .  Если приложение Azure AD PIM еще не установлено на портале, выполните следующие действия, чтобы приступить к работе.

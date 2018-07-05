@@ -1,6 +1,6 @@
 ---
-title: Удаленное управление службой в Service Fabric | Документация Майкрософт
-description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между клиентами и службами с помощью удаленного вызова процедур.
+title: Удаленное взаимодействие в службе Service Fabric с помощью C# | Документы Майкрософт
+description: Удаленное взаимодействие Service Fabric позволяет осуществлять обмен данными между службами и клиентами и службами C# с помощью удаленного вызова процедур.
 services: service-fabric
 documentationcenter: .net
 author: vturecek
@@ -14,15 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 09/20/2017
 ms.author: vturecek
-ms.openlocfilehash: 672bdd3ddb5b32b82d83322eadce2a594b13ce5b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ad56580e73c06acff95b3146f6dc2d83ab2ba3ae
+ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34643538"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36945978"
 ---
-# <a name="service-remoting-with-reliable-services"></a>Удаленное взаимодействие службы с Reliable Services
-Для служб, которые не привязаны к определенному протоколу обмена данными или стеку, например веб-API, Windows Communication Foundation (WCF) или др., платформа Reliable Services предоставляет механизм удаленного взаимодействия для быстрой и простой настройки удаленного вызова процедур.
+# <a name="service-remoting-in-c-with-reliable-services"></a>Удаленное взаимодействие службы с Reliable Services в C#
+> [!div class="op_single_selector"]
+> * [C# в Windows](service-fabric-reliable-services-communication-remoting.md)
+> * [Java в Linux](service-fabric-reliable-services-communication-remoting-java.md)
+>
+>
+
+Для служб, которые не привязаны к определенному протоколу обмена данными или стеку, например веб-API, Windows Communication Foundation (WCF) и другим, платформа Reliable Services предоставляет механизм удаленного взаимодействия для быстрой и простой настройки удаленного вызова процедур. В этой статье рассматривается, как настраивать удаленные вызовы процедур для служб на C#.
 
 ## <a name="set-up-remoting-on-a-service"></a>Настройка удаленного взаимодействия в службе
 Процесс настройки удаленного доступа для службы состоит из двух простых этапов.
@@ -83,7 +89,7 @@ string message = await helloWorldClient.HelloWorldAsync();
 Платформа удаленного взаимодействия распространяет исключения, созданные службой, на клиент. Поэтому при использовании метода `ServiceProxy` клиент отвечает за обработку исключений, которые создает служба.
 
 ## <a name="service-proxy-lifetime"></a>Время существования ServiceProxy
-Создание ServiceProxy не требует больших ресурсов, поэтому такие объекты можно создавать без каких-либо ограничений. Экземпляры ServiceProxy можно использовать повторно. Если удаленный вызов процедуры создает исключение, пользователи по-прежнему могут использовать тот же экземпляр прокси-сервера. Каждый объект ServiceProxy содержит клиент обмена данными, используемый для отправки сообщений по сети. При запуске удаленных вызовов мы проверяем работоспособность этого клиента и в случае необходимости создаем его повторно. Поэтому при возникновении исключения пользователю не нужно повторно создавать `ServiceProxy`.
+Создание ServiceProxy не требует больших ресурсов, поэтому вы можете создавать такие объекты в любых количествах. Экземпляры ServiceProxy можно использовать повторно. Если удаленный вызов процедуры создает исключение, вы по-прежнему можете использовать тот же экземпляр прокси-сервера. Каждый объект ServiceProxy содержит клиент обмена данными, используемый для отправки сообщений по сети. При запуске удаленных вызовов проводятся внутренние проверки для определения работоспособности этого клиента. В зависимости от результата проверки клиент может быть создан повторно. Поэтому, если возникает исключение, вам не нужно заново создавать `ServiceProxy`.
 
 ### <a name="serviceproxyfactory-lifetime"></a>Время существования ServiceProxyFactory
 [ServiceProxyFactory](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.client.serviceproxyfactory) — это фабрика, которая создает экземпляры прокси-сервера для различных интерфейсов удаленного взаимодействия. Если для создания прокси-сервера вы используете API `ServiceProxy.Create`, платформа создает одноэлементный ServiceProxy.
@@ -98,27 +104,32 @@ string message = await helloWorldClient.HelloWorldAsync();
 Если порождаются временные исключения, прокси-сервер повторяет вызов.
 
 Параметры повтора по умолчанию определяются [OperationRetrySettings](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.communication.client.operationretrysettings).
-Пользователь может настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
-## <a name="how-to-use-remoting-v2-stack"></a>Как использовать стек удаленного взаимодействия версии 2
-Пакет NuGet для удаленного взаимодействия 2.8 дает возможность использовать стек удаленного взаимодействия версии 2. Стек удаленного взаимодействие версии 2 обеспечивает более высокую производительность, а также предоставляет такие функции, как настраиваемая сериализация и дополнительные подключаемые API.
-По умолчанию, если не внести приведенные ниже изменения, то используется стек удаленного взаимодействия версии 1.
-Стек удаленного взаимодействия версии 2 несовместим со стеком версии 1 (предыдущим стеком удаленного взаимодействия), поэтому выполните указания ниже, чтобы обновить версию 1 до версии 2, не влияя на доступность службы.
 
-### <a name="using-assembly-attribute-to-use-v2-stack"></a>Использование атрибута сборки для стека версии 2
+Вы можете настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
 
-Ниже приведены инструкции по переходу на использование стека версии 2.
+## <a name="how-to-use-the-remoting-v2-stack"></a>Как использовать стек удаленного взаимодействия версии 2
 
-1. Добавьте ресурс конечной точки, например ServiceEndpointV2, в манифест службы.
+Пакет NuGet для удаленного взаимодействия версии 2.8 позволяет использовать стек удаленного взаимодействия версии 2. Стек удаленного взаимодействие версии 2 обеспечивает более высокую производительность, а также предоставляет такие функции, как настраиваемая сериализация и дополнительные подключаемые API.
+Код шаблона продолжает использовать стек удаленного взаимодействия версии 1.
+Стек удаленного взаимодействия версии 2 несовместим со стеком версии 1 (предыдущим стеком удаленного взаимодействия), поэтому выполните инструкции, чтобы [обновить версию 1 до версии 2](#how-to-upgrade-from-remoting-v1-to-remoting-v2) без ущерба для доступности службы.
+
+Можно использовать следующий подход для включения стека версии 2.
+
+### <a name="using-an-assembly-attribute-to-use-the-v2-stack"></a>Использование атрибута сборки для стека версии 2
+
+Эти действия изменяют код шаблона, чтобы можно было использовать стек версии 2 с помощью атрибута сборки.
+
+1. Измените ресурс конечной точки с `"ServiceEndpoint"` на `"ServiceEndpointV2"` в манифесте служб.
 
   ```xml
   <Resources>
     <Endpoints>
-      <Endpoint Name="ServiceEndpointV2" />  
+      <Endpoint Name="ServiceEndpointV2" />
     </Endpoints>
   </Resources>
   ```
 
-2.  Используйте метод расширения удаленного взаимодействия для создания прослушивателя удаленного взаимодействия.
+2. Используйте метод расширения `Microsoft.ServiceFabric.Services.Remoting.Runtime.CreateServiceRemotingInstanceListeners`, чтобы создать прослушивателей удаленного взаимодействия (одинаково для версии 1 и 2).
 
   ```csharp
     protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -127,27 +138,32 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
   ```
 
-3.  Добавьте атрибут сборки в интерфейсы удаленного взаимодействия.
+3. Пометьте сборку с удаленными интерфейсами атрибутом `FabricTransportServiceRemotingProvider`.
 
   ```csharp
   [assembly: FabricTransportServiceRemotingProvider(RemotingListener = RemotingListener.V2Listener, RemotingClient = RemotingClient.V2Client)]
   ```
-Вносить изменения проект клиента не требуется.
+
+Вносить изменения в проект клиента не требуется.
 Выполните сборку клиента со сборкой интерфейса, чтобы обеспечить использование приведенного выше атрибута сборки.
 
-### <a name="using-explicit-v2-classes-to-create-listener-clientfactory"></a>Использование явных классов версии 2 для создания прослушивателя и фабрики клиента
-Ниже приведены инструкции, которые нужно выполнить.
-1.  Добавьте ресурс конечной точки, например ServiceEndpointV2, в манифест службы.
+### <a name="using-explicit-v2-classes-to-use-the-v2-stack"></a>Использования явных классов версии 2 для использования стека версии 2
+
+Вместо атрибута сборки можно использовать явные классы версии 2, чтобы включить стек версии 2.
+
+Эти действия изменяют код шаблона, чтобы можно было использовать стек версии 2 с помощью явных классов версии 2.
+
+1. Измените ресурс конечной точки с `"ServiceEndpoint"` на `"ServiceEndpointV2"` в манифесте служб.
 
   ```xml
   <Resources>
     <Endpoints>
-      <Endpoint Name="ServiceEndpointV2" />  
+      <Endpoint Name="ServiceEndpointV2" />
     </Endpoints>
   </Resources>
   ```
 
-2. Используйте [прослушиватель удаленного взаимодействия версии 2](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotingListener?view=azure-dotnet). Используемое имя ресурса конечной точки службы по умолчанию — ServiceEndpointV2. Оно должны быть определено в манифесте службы.
+2. Используйте [FabricTransportServiceRemotingListener](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.runtime.fabrictransportserviceremotingListener?view=azure-dotnet) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Runtime`.
 
   ```csharp
   protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
@@ -163,7 +179,8 @@ string message = await helloWorldClient.HelloWorldAsync();
     }
   ```
 
-3. Используйте [фабрику клиента](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory?view=azure-dotnet) версии 2.
+3. Используйте [FabricTransportServiceRemotingClientFactory ](https://docs.microsoft.com/dotnet/api/microsoft.servicefabric.services.remoting.v2.fabrictransport.client.fabrictransportserviceremotingclientfactory?view=azure-dotnet) из пространства имен `Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Client`, чтобы создать клиенты.
+
   ```csharp
   var proxyFactory = new ServiceProxyFactory((c) =>
           {

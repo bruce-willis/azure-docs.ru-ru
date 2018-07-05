@@ -10,18 +10,18 @@ ms.service: active-directory
 ms.topic: article
 ms.workload: identity
 ms.component: protection
-ms.date: 05/04/2017
+ms.date: 06/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 699076a8e651dd8dbbab08b518d7be7e60a0ac47
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: a4ef91f7055db8f202e3a4e48375427c85964781
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233678"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020953"
 ---
 # <a name="how-to-start-an-access-review-in-azure-ad-privileged-identity-management"></a>Как запустить проверку доступа в управлении привилегированными пользователями Azure AD
-Назначения ролей становятся "устаревшими", когда у пользователей имеются права привилегированного доступа, которые им больше не нужны. Чтобы снизить риск, связанный с "устаревшими" назначениями ролей, администраторы привилегированных ролей должны периодически проверять назначенные пользователям роли. В этом документе рассматривается процедура запуска проверки доступа в компоненте Azure AD Privileged Identity Management (PIM).
+Назначения ролей становятся "устаревшими", когда у пользователей имеются права привилегированного доступа, которые им больше не нужны. Чтобы снизить риск, связанный с "устаревшими" назначениями ролей, администраторы привилегированных ролей или глобальные администраторы должны регулярно создавать проверки доступа, чтобы администраторы проверяли назначенные пользователям роли. В этом документе рассматривается процедура запуска проверки доступа в компоненте Azure AD Privileged Identity Management (PIM).
 
 ## <a name="start-an-access-review"></a>Запуск проверки доступа
 > [!NOTE]

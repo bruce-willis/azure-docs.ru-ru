@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: cshoe
-ms.openlocfilehash: ac301daca769f9cec0d3395e7bde32494dd8e3d1
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: ba008a86f76a526967bb9dab6ba37043a85f5cf3
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34735333"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36304135"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
@@ -101,7 +101,7 @@ ms.locfileid: "34735333"
 * [Справочник по API REST поставщика ресурсов службы хранилища Azure](https://msdn.microsoft.com/library/azure/mt163683.aspx)
 
   В этом справочнике по интерфейсам API описаны API, с помощью которых можно управлять учетной записью хранения программными средствами.
-* [Developer's guide to auth with Azure Resource Manager API](http://www.dushyantgill.com/blog/2015/05/23/developers-guide-to-auth-with-azure-resource-manager-api/) (Руководство разработчика по аутентификации с помощью API Azure Resource Manager)
+* [Использование API проверки подлинности Resource Manager для доступа к подпискам](../../azure-resource-manager/resource-manager-api-authentication.md)
 
   В этой статье показано, как выполнять аутентификацию с помощью интерфейсов API Resource Manager.
 * [Конференция Ignite: управление доступом на основе ролей в Microsoft Azure](https://channel9.msdn.com/events/Ignite/2015/BRK2707)
@@ -209,7 +209,7 @@ http://mystorage.blob.core.windows.net/mycontainer/myblob.txt (URL to the blob)
 &sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D (signature used for the authentication of the SAS)
 ```
 
-#### <a name="how-the-shared-access-signature-is-authenticated-by-the-azure-storage-service"></a>Проверка подлинности подписанного URL-адреса службой хранилища Azure
+#### <a name="how-the-shared-access-signature-is-authorized-by-the-azure-storage-service"></a>Проверка подлинности подписанного URL-адреса службой хранилища Azure
 Когда служба хранилища получает запрос, она создает на основе входных параметров запроса подпись, используя тот же метод, что и вызывающая программа. Затем она сравнивает две подписи. Если они совпадают, служба хранилища проверяет, допустима ли версия службы, приходятся ли текущие дата и время на указанный период времени, соответствует ли запрошенный уровень доступа типу запроса и т. д.
 
 Так, если в приведенном выше примере URL-адрес указывал бы на файл, а не на BLOB-объект, запрос не был бы выполнен, так как в нем указано, что подписанный URL-адрес соответствует BLOB-объекту. Если вызывалась бы команда REST для изменения BLOB-объекта, она не была бы выполнена, так как в подписанном URL-адресе указано, что разрешен доступ только для чтения.
@@ -261,7 +261,7 @@ http://mystorage.blob.core.windows.net/mycontainer/myblob.txt (URL to the blob)
 
 ## <a name="encryption-in-transit"></a>Шифрование при передаче
 ### <a name="transport-level-encryption--using-https"></a>Шифрование на уровне транспорта с помощью протокола HTTPS
-Еще одна мера, которую необходимо принять для защиты данных в службе хранилища Azure, — это шифрование данных между клиентом и службой хранилища Azure. Во-первых, рекомендуется всегда использовать протокол [HTTPS](https://en.wikipedia.org/wiki/HTTPS), который обеспечивает безопасный обмен данными через Интернет.
+Еще одна мера, которую необходимо принять для защиты данных в службе хранилища Azure, — это шифрование данных между клиентом и службой хранилища Azure. Во-первых, рекомендуется всегда использовать протокол [HTTPS](https://en.wikipedia.org/wiki/HTTPS) , который обеспечивает безопасный обмен данными через Интернет.
 
 Чтобы обеспечить защищенный канал связи, всегда используйте протокол HTTPS при вызове интерфейсов REST API или доступе к объектам в хранилище. Кроме того, **подписанные URL-адреса**, которые можно применять для доступа к объектам в службе хранилища Azure, дают возможность указывать, что с ними может использоваться только протокол HTTPS. Это позволяет гарантировать, что все получатели ссылок с маркерами SAS будут применять надлежащий протокол.
 
@@ -404,11 +404,11 @@ SSE управляется службой хранилища Azure. Шифров
 
 ![Моментальный снимок полей в файле журнала](./media/storage-security-guide/image3.png)
 
-Нас интересуют записи для GetBlob и способ их аутентификации, поэтому нам нужно найти записи, поле operation-type которых имеет значение Get-Blob, и проверить поля request-status (четвертый</sup> столбец) и authorization-type (восьмой</sup> столбец).
+Нас интересуют записи для GetBlob и способ их авторизации, поэтому нам нужно найти записи, поле operation-type которых имеет значение Get-Blob, и проверить поля request-status (четвертый</sup> столбец) и authorization-type (восьмой</sup> столбец).
 
-Например, в первых нескольких строках в приведенном выше фрагменте поле request-status имеет значение "Success" (Успешно), а поле authorization-type — "authenticated" (проверка подлинности выполнена). Это означает, что запрос был проверен с помощью ключа учетной записи хранения.
+Например, в первых нескольких строках в приведенном выше фрагменте поле request-status имеет значение "Success" (Успешно), а поле authorization-type — "authenticated" (проверка подлинности выполнена). Это означает, что запрос был авторизован с помощью ключа учетной записи хранения.
 
-#### <a name="how-are-my-blobs-being-authenticated"></a>Как производится проверка подлинности BLOB-объектов?
+#### <a name="how-is-access-to-my-blobs-being-authorized"></a>Как выполняется авторизация доступа к моим BLOB-объектам?
 Нас интересуют три случая.
 
 1. BLOB-объект является общедоступным, и доступ к нему осуществляется по URL-адресу без подписанного URL-адреса. В этом случае поле request-status имеет значение "AnonymousSuccess" (Успешный анонимный доступ), а поле authorization-type — "anonymous" (анонимный).

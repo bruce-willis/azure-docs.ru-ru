@@ -8,12 +8,12 @@ ms.author: gwallace
 ms.date: 06/06/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 0e87243b4b6e8362cb840a6510c175d2712b8a1a
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 93972c88676cceef07b39b4a4ed34bab5b74cbd3
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285762"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36334879"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-with-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью команды запуска
 
@@ -23,7 +23,7 @@ ms.locfileid: "36285762"
 
 Существует несколько вариантов, которые можно использовать для доступа к виртуальным машинам. Команда запуска может удаленно выполнять сценарии на виртуальных машинах с помощью их агента. Команда запуска может использоваться на портале Microsoft Azure, [REST API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure CLI](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) или [PowerShell](/powershell/module/azurerm.compute/invoke-azurermvmruncommand).
 
-Эта возможность удобна во всех сценариях, где необходимо выполнить сценарии на виртуальных машинах, и является одним из способов для диагностики и устранения виртуальной машины, у которой нет RDP или открытого порта SSH из-за неправильной сети или административной конфигурации пользователя.
+Эта возможность может использоваться во всех случаях, когда необходимо запускать сценарии на виртуальных машинах. Она является одним из немногих способов диагностики и устранения неполадок виртуальных машин в тех случаях, когда к ним невозможно подключиться по RDP или у них нет открытого порта SSH из-за неправильной настройки сети или параметров администратора.
 
 ## <a name="restrictions"></a>Ограничения
 

@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 06/11/2018
+ms.date: 06/22/2018
 ms.author: raynew
-ms.openlocfilehash: d78980b69e6598dff349c75527fc27d8a04dfa18
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 16a19a862d4fc6b424e8441ec5377ea3c819fadb
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301190"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317448"
 ---
 # <a name="support-matrix-for-vmware-and-physical-server-replication-to-azure"></a>Таблица поддержки для репликации виртуальных машин VMware и физических серверов в Azure
 
@@ -76,15 +76,15 @@ Site Recovery поддерживает репликацию любой рабо�
 
 **Поддерживаемый выпуск** | **Версия службы Azure Site Recovery Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-14.04 LTS | 9.13 | С 3.13.0-24-generic по 3.13.0-137-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-104-generic. |
-14.04 LTS | 9.14 | С 3.13.0-24-generic по 3.13.0-142-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-116-generic |
-14.04 LTS | 9.15 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
+14.04 LTS | 9.17 | С 3.13.0-24-generic по 3.13.0-149-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-127-generic |
 14.04 LTS | 9.16 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
-16.04 LTS | 9.13 | С 4.4.0-21-generic по 4.4.0-104-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic. |
-16.04 LTS | 9.14 | С 4.4.0-21-generic по 4.4.0-116-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-36-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1011-azure |
-16.04 LTS | 9.15 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
-16.04 LTS | 9.16 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
-
+14.04 LTS | 9.15 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
+14.04 LTS | 9.14 | С 3.13.0-24-generic по 3.13.0-142-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-116-generic |
+|||
+16.04 LTS | 9.17 | С 4.4.0-21-generic по 4.4.0-127-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-43-generic |
+16.04 LTS | 9.16 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-38-generic |
+16.04 LTS | 9.15 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-38-generic |
+16.04 LTS | 9.14 | С 4.4.0-21-generic по 4.4.0-116-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-36-generic |
 
 
 ### <a name="debian-kernel-versions"></a>Версии ядра Debian
@@ -92,9 +92,12 @@ Site Recovery поддерживает репликацию любой рабо�
 
 **Поддерживаемый выпуск** | **Версия службы Azure Site Recovery Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+Debian 7 | 9.17 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 Debian 7 | 9.14, 9.15, 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
-Debian 8; | 9.14, 9.15 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
+|||
+Debian 8; | 9.17 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, м 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
 Debian 8; | 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
+Debian 8; | 9.14, 9.15 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
 
 
 ## <a name="linux-file-systemsguest-storage"></a>Файловые системы Linux и гостевое хранилище

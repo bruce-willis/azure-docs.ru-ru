@@ -1,6 +1,6 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Cisco Cloudlock | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Cloudlock.
+title: Руководство по интеграции Azure Active Directory с The Cloud Security Fabric | Документы Майкрософт
+description: Узнайте, как настроить единый вход Azure Active Directory в The Cloud Security Fabric.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -8,38 +8,37 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 549e8810-1b3b-4351-bf4b-f07de98980d1
 ms.service: active-directory
-ms.component: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/09/2018
+ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 2491c0887cdcb47e6ce8f686835042bc23092df8
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 5ec729c6f82cec503cae2fa057f5842849004ac7
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220470"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36318251"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cisco-cloudlock"></a>Руководство по интеграции Azure Active Directory с Cisco Cloudlock
+# <a name="tutorial-azure-active-directory-integration-with-the-cloud-security-fabric"></a>Руководство по интеграции Azure Active Directory с The Cloud Security Fabric
 
-В этом учебнике описано, как интегрировать Cisco Cloudlock с Azure Active Directory (Azure AD).
+В этом руководстве описано, как интегрировать The Cloud Security Fabric с Azure Active Directory (Azure AD).
 
-Интеграция Azure AD с Cisco Cloudlock обеспечивает следующие преимущества.
+Интеграция Azure AD с The Cloud Security Fabric обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Cisco Cloudlock.
-- Вы можете включить автоматический вход пользователей в Cisco Cloudlock (единый вход) с учетной записью Azure AD.
+- С помощью Azure AD вы можете контролировать доступ к The Cloud Security Fabric.
+- Вы можете включить автоматический вход пользователей в The Cloud Security Fabric (единый вход) с учетной записью Azure AD.
 - Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы настроить интеграцию Azure AD с Cisco Cloudlock, вам потребуется:
+Чтобы настроить интеграцию Azure AD с The Cloud Security Fabric, вам потребуется:
 
 - подписка Azure AD;
-- подписка Cisco Cloudlock с поддержкой единого входа.
+- подписка The Cloud Security Fabric с поддержкой единого входа.
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
@@ -52,13 +51,13 @@ ms.locfileid: "36220470"
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Cisco Cloudlock из коллекции
+1. Добавление The Cloud Security Fabric из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
-## <a name="adding-cisco-cloudlock-from-the-gallery"></a>Добавление Cisco Cloudlock из коллекции
-Чтобы настроить интеграцию Cisco Cloudlock с Azure AD, необходимо добавить Cisco Cloudlock из коллекции в список управляемых приложений SaaS.
+## <a name="adding-the-cloud-security-fabric-from-the-gallery"></a>Добавление The Cloud Security Fabric из коллекции
+Чтобы настроить интеграцию The Cloud Security Fabric с Azure AD, вам нужно добавить The Cloud Security Fabric из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Cisco Cloudlock из коллекции, выполните следующие действия.**
+**Чтобы добавить The Cloud Security Fabric из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
@@ -72,41 +71,41 @@ ms.locfileid: "36220470"
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Cisco Cloudlock**, выберите **Cisco Cloudlock** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **The Cloud Security Fabric**, выберите **The Cloud Security Fabric** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Cisco Cloudlock в списке результатов](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_addfromgallery.png)
+    ![The Cloud Security Fabric в списке результатов](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_addfromgallery.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Cisco Cloudlock с использованием тестового пользователя Britta Simon.
+В этом разделе описана настройка и проверка единого входа Azure AD в The Cloud Security Fabric с использованием тестового пользователя Britta Simon.
 
-Для работы единого входа Azure AD необходимо знать, какой пользователь в Cisco Cloudlock соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Cisco Cloudlock.
+Для работы единого входа в Azure AD необходимо знать, какой пользователь в The Cloud Security Fabric соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в The Cloud Security Fabric.
 
-Чтобы настроить и проверить единый вход Azure AD в Cisco Cloudlock, потребуется выполнить действия в следующих стандартных блоках.
+Чтобы настроить и проверить единый вход Azure AD в The Cloud Security Fabric, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Cisco Cloudlock](#create-a-cisco-cloudlock-test-user)** нужно для того, чтобы в Cisco Cloudlock также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+3. **[Создание тестового пользователя The Cloud Security Fabric](#create-a-the-cloud-security-fabric-test-user)** требуется для того, чтобы в The Cloud Security Fabric существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
 5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Cisco Cloudlock.
+В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении The Cloud Security Fabric.
 
-**Чтобы настроить единый вход Azure AD в Cisco Cloudlock, выполните следующие действия.**
+**Чтобы настроить единый вход Azure AD в The Cloud Security Fabric, выполните следующие действия:**
 
-1. На портале Azure на странице интеграции с приложением **Cisco Cloudlock** щелкните **Единый вход**.
+1. На портале Azure на странице интеграции с приложением **The Cloud Security Fabric** щелкните **Единый вход**.
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+
     ![Диалоговое окно "Единый вход"](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Cisco Cloudlock** выполните следующие действия.
+3. В разделе **Домены и URL-адреса приложения The Cloud Security Fabric** выполните следующие действия:
 
-    ![Сведения о домене и URL-адресах единого входа приложения Cisco Cloudlock](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_url.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения The Cloud Security Fabric](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_url.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес.
     | |
@@ -114,28 +113,24 @@ ms.locfileid: "36220470"
     | `https://platform.cloudlock.com` |
     | `https://app.cloudlock.com` |
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://platform.cloudlock.com/gate/saml/sso/<subdomain>` |
     | `https://app.cloudlock.com/gate/saml/sso/<subdomain>` |
 
-    > [!NOTE] 
-    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Cisco Cloudlock](mailto:support@cloudlock.com). 
- 
+    > [!NOTE]
+    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). 
+
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_certificate.png) 
+    ![Ссылка для скачивания сертификата](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_certificate.png)
 
 5. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/ciscocloudlock-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **Cisco Cloudlock**, отправьте скачанный **XML-файл метаданных** [группе поддержки Cisco Cloudlock](mailto:support@cloudlock.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
-
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+6. Чтобы настроить единый вход на стороне **The Cloud Security Fabric**, отправьте скачанный **XML-файл метаданных** в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,26 +163,26 @@ ms.locfileid: "36220470"
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-cisco-cloudlock-test-user"></a>Создание тестового пользователя Cisco Cloudlock
 
-В этом разделе описано, как создать пользователя Britta Simon в Cisco Cloudlock. Обратитесь к [группе поддержки Cisco Cloudlock](mailto:support@cloudlock.com) для добавления пользователей на платформу Cisco Cloudlock. Перед использованием единого входа необходимо создать и активировать пользователей. 
+### <a name="create-a-the-cloud-security-fabric-test-user"></a>Создание тестового пользователя The Cloud Security Fabric
+
+В этом разделе описано, как создать пользователя Britta Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Cisco Cloudlock.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к The Cloud Security Fabric.
 
-![Назначение роли пользователя][200] 
+![Назначение роли пользователя][200]
 
-**Чтобы назначить пользователя Britta Simon в Cisco Cloudlock, выполните следующие действия.**
+**Чтобы назначить пользователя Britta Simon в The Cloud Security Fabric, выполните указанные ниже действия:**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 
-    ![Назначение пользователя][201] 
+    ![Назначение пользователя][201]
 
-2. Из списка приложений выберите **Cisco Cloudlock**.
+2. В списке приложений выберите **The Cloud Security Fabric**.
 
-    ![Ссылка на Cisco Cloudlock в списке "Приложения"](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_app.png)  
+    ![Ссылка на The Cloud Security Fabric в списке приложений](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_app.png)  
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -202,20 +197,18 @@ ms.locfileid: "36220470"
 6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Cisco Cloudlock" на панели доступа, вы автоматически войдете в приложение Cisco Cloudlock.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент The Cloud Security Fabric на панели доступа, вы автоматически войдете в приложение The Cloud Security Fabric.
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-
-
 
 <!--Image references-->
 
@@ -230,4 +223,3 @@ ms.locfileid: "36220470"
 [201]: ./media/ciscocloudlock-tutorial/tutorial_general_201.png
 [202]: ./media/ciscocloudlock-tutorial/tutorial_general_202.png
 [203]: ./media/ciscocloudlock-tutorial/tutorial_general_203.png
-

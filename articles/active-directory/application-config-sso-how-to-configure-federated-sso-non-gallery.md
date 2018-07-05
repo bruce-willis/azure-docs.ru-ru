@@ -3,21 +3,23 @@ title: Как настроить федеративный единый вход 
 description: Как настроить федеративный единый вход для пользовательского приложения не из коллекции, которое вы хотите интегрировать с Azure AD
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.openlocfilehash: 65df07b6fca62476953ad98dc9e17d9a82c97a53
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.author: barbkess
+ms.openlocfilehash: 916261de1f53c7b859378e83e423dea44b58af9b
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331948"
 ---
 # <a name="how-to-configure-federated-single-sign-on-for-a-non-gallery-application"></a>Настройка федеративного единого входа для приложения не из коллекции
 
@@ -136,7 +138,7 @@ ms.lasthandoff: 05/11/2018
 
 8.  Перейдите в раздел **Сертификат подписи SAML** и выберите значение в столбце **Скачать**. В зависимости от того, что именно требуется для настройки единого входа, вы сможете скачать XML-файл метаданных или сертификат.
 
-Azure AD не предоставляет URL-адреса для получения метаданных. Метаданные можно скачать только в виде XML-файла.
+Azure AD также предоставляет URL-адрес для получения метаданных. Следуйте этому шаблону, чтобы получить URL-адреса метаданных для приложения: https://login.microsoftonline.com/<Directory ID>/federationmetadata/2007-06/federationmetadata.xml?appid=<Application ID>.
 
 ## <a name="assign-users-to-the-application"></a>Назначение пользователей для приложения
 

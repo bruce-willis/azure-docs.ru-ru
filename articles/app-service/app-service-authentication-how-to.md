@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: cephalin
-ms.openlocfilehash: c41cb3ef2939fe7271b1f8738fcf0cb95c4b1111
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 688ea090384755b9a6d60a4968d958678edc27ad
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33763148"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36337182"
 ---
 # <a name="customize-authentication-and-authorization-in-azure-app-service"></a>Настройка проверки подлинности и авторизации в службе приложений Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "33763148"
 
 - **Google**. Добавьте параметр строки запроса `access_type=offline` к вызову API `/.auth/login/google`. Если используется пакет SDK для мобильных служб, можно добавить параметр к одной из перегрузок `LogicAsync` (см. в разделе о [токенах обновления Google](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
 - **Facebook**. Не предоставляет токены обновления. Срок действия токенов с долгим временем существования истекает через 60 дней (см. раздел об [истечении и продлении срока действия токенов доступа Facebook](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
-- **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/docs/basics/authentication/guides/oauth-faq)).
+- **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/guides/oauth-faq)).
 - **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](app-service-mobile-how-to-configure-microsoft-authentication.md), выберите область `wl.offline_access`.
 - **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
@@ -103,7 +103,7 @@ ms.locfileid: "33763148"
 
     1. Щелкните **Put**. 
 
-После настройки поставщика можно проверить наличие токенов обновления в хранилище, вызвав `/.auth/me`. 
+После настройки поставщика можно [найти токен обновления и срок действия для токена доступа](#retrieve-tokens-in-app-code) в хранилище токенов. 
 
 Чтобы обновить токен доступа в любое время, необходимо просто вызвать `/.auth/refresh` на любом языке. В следующем фрагменте кода jQuery используется для обновления токенов доступа из клиента JavaScript.
 

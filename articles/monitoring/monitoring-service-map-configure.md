@@ -3,8 +3,8 @@ title: Настройка решения "Сопоставление служб"
 description: "\"Сопоставление служб\" — это решение Azure, которое автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. В этой статье содержатся подробные сведения о развертывании схемы услуги в вашей среде и приведены разнообразные сценарии ее использования."
 services: monitoring
 documentationcenter: ''
-author: daveirwin1
-manager: jwhit
+author: mgoedtel
+manager: carmonm
 editor: tysonn
 ms.assetid: d3d66b45-9874-4aad-9c00-124734944b2e
 ms.service: monitoring
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 11/18/2016
-ms.author: daseidma;bwren;dairwin
-ms.openlocfilehash: aa85f06355ad5afc8e67ff4bace3b0ed471dc703
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.date: 06/22/2018
+ms.author: daseidma;bwren
+ms.openlocfilehash: 872d5f05e4d607c9445d1af5cc9b9cb984c19e11
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204198"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36752580"
 ---
 # <a name="configure-service-map-in-azure"></a>Настройка решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Она позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -49,7 +49,7 @@ ms.locfileid: "34204198"
 
 В ОС Linux агент OMS для Linux собирает и отправляет данные мониторинга в Log Analytics. Решение "Сопоставление служб" можно использовать на серверах с прямыми агентами OMS или на серверах, подключенных к Log Analytics через группы управления System Center Operations Manager.  
 
-В этой статье мы будем называть все эти агенты — как в Linux, так и в Windows, подключенные к группе управления System Center Operations Manager или непосредственно к Log Analytics — агентами OMS. Имя конкретного развернутого агента будет использоваться, только если оно требуется в контексте.
+В этой статье мы будем называть все эти агенты — как в Linux, так и в Windows, подключенные к группе управления System Center Operations Manager или непосредственно к Log Analytics — *агентами OMS*. Имя конкретного развернутого агента будет использоваться, только если оно требуется в контексте.
 
 Агент схемы услуги самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные решения "Сопоставление служб" всегда передаются агентом OMS в Log Analytics напрямую или через шлюз OMS.
 
@@ -60,7 +60,7 @@ ms.locfileid: "34204198"
 - Если у ваших агентов System Center Operations Manager есть доступ к Log Analytics через Интернет, никаких дополнительных настроек не требуется.  
 - Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, необходимо настроить шлюз OMS для работы с System Center Operations Manager.
   
-При использовании прямого агента OMS необходимо настроить агент OMS для подключения к Log Analytics или шлюзу OMS. Шлюз OMS можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666).
+При использовании прямого агента OMS необходимо настроить агент OMS для подключения к Log Analytics или шлюзу OMS. Шлюз OMS можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666). Дополнительные сведения о развертывании и настройке шлюза OMS см. в разделе [Подключения компьютеров с помощью шлюза OMS без доступа к Интернету](../log-analytics/log-analytics-oms-gateway.md).  
 
 ### <a name="management-packs"></a>Пакеты управления
 Если решение "Сопоставление служб" активировано в рабочей области Log Analytics, то на все серверы в этой рабочей области отправляется пакет управления размером 300 КБ. Если агенты System Center Operations Manager используются в [подключенной группе управления](../log-analytics/log-analytics-om-agents.md), то пакет управления схемы услуги развертывается из System Center Operations Manager. Если агенты подключены напрямую, пакет управления доставляется с помощью Log Analytics.
@@ -75,7 +75,7 @@ ms.locfileid: "34204198"
 
 Выполните приведение шаги, чтобы установить агент зависимостей на каждом компьютере Windows.
 
-1.  Установите агент OMS, выполнив инструкции в разделе [Подключение компьютеров Windows к службе Log Analytics в Azure](../log-analytics/log-analytics-windows-agent.md).
+1.  Установите агент OMS одним из способов, описанных в разделе [Сбор данных с компьютеров в среде с помощью Log Analytics](../log-analytics/log-analytics-concept-hybrid.md).
 2.  Скачайте агент Windows и запустите его с помощью следующей команды. <br>`InstallDependencyAgent-Windows.exe`
 3.  Следуйте инструкциям мастера для установки агента.
 4.  Если агент зависимостей не запускается, просмотрите подробные сведения об ошибке в записях журналов. В агентах Windows каталогом журналов является %Programfiles%\Microsoft Dependency Agent\logs. 
@@ -99,7 +99,7 @@ ms.locfileid: "34204198"
  
 Выполните приведение шаги, чтобы установить агент зависимостей на каждом компьютере Linux.
 
-1.  Установите агент OMS, выполнив инструкции, приведенные в статье [Подключение компьютеров Linux к Operations Management Suite (OMS)](https://technet.microsoft.com/library/mt622052.aspx).
+1.  Установите агент OMS одним из способов, описанных в разделе [Сбор данных с компьютеров в среде с помощью Log Analytics](../log-analytics/log-analytics-concept-hybrid.md).
 2.  Установите агент зависимостей Linux с правами привилегированного пользователя, используя следующую команду:<br>`sh InstallDependencyAgent-Linux64.bin`
 3.  Если агент зависимостей не запускается, просмотрите подробные сведения об ошибке в записях журналов. В агентах Linux каталог журналов находится в расположении /var/opt/microsoft/dependency-agent/log.
 
@@ -143,6 +143,7 @@ sudo sh InstallDependencyAgent-Linux64.bin -s
 Можно легко развернуть агент зависимостей на виртуальных машинах Azure с помощью [расширений виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/extensions-features).  Расширение виртуальной машины Azure позволяет развернуть агент зависимостей на виртуальных машинах с помощью сценария PowerShell или шаблона виртуальной машины Azure Resource Manager.  Расширение доступно для Windows (DependencyAgentWindows) и Linux (DependencyAgentLinux).  При развертывании с помощью расширения виртуальных машин Azure агенты могут быть автоматически обновлены до последних версий.
 
 Чтобы развернуть расширение виртуальной машины Azure с помощью PowerShell, можно использовать приведенный ниже пример.
+
 ```PowerShell
 #
 # Deploy the Dependency Agent to every VM in a Resource Group
@@ -169,7 +170,8 @@ ForEach-Object {
 }
 ```
 
-Более простой способ обеспечить установку агента зависимостей на каждой виртуальной машине — добавить этот агент в шаблон Azure Resource Manager.  Обратите внимание на то, что агент зависимостей по-прежнему зависит от агента OMS, поэтому сначала нужно развернуть [расширение виртуальной машины для агента OMS](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-vm-extension).  Приведенный ниже фрагмент JSON можно добавить в раздел *resources* шаблона.
+Более простой способ обеспечить установку агента зависимостей на каждой виртуальной машине — добавить этот агент в шаблон Azure Resource Manager.  Обратите внимание на то, что агент зависимостей по-прежнему зависит от агента OMS, поэтому сначала нужно развернуть [расширение виртуальной машины для агента OMS](../virtual-machines/extensions/oms-linux.md).  Приведенный ниже фрагмент JSON можно добавить в раздел *resources* шаблона.
+
 ```JSON
 "type": "Microsoft.Compute/virtualMachines/extensions",
 "name": "[concat(parameters('vmName'), '/DependencyAgent')]",
@@ -190,6 +192,7 @@ ForEach-Object {
 
 ## <a name="desired-state-configuration"></a>Настройка требуемого состояния
 Чтобы развернуть агент зависимостей посредством Desired State Configuration, можно использовать модуль xPSDesiredStateConfiguration и небольшой фрагмент кода, как показано ниже.
+
 ```
 configuration ServiceMap {
 
@@ -231,10 +234,13 @@ Node localhost
 ### <a name="uninstall-the-dependency-agent-on-linux"></a>Удаление агента зависимостей в Linux
 Можно удалить агент зависимостей из среды Linux с помощью следующей команды.
 <br>RHEL, CentOS или Oracle:
+
 ```
 sudo rpm -e dependency-agent
 ```
+
 Ubuntu:
+
 ```
 sudo apt -y purge dependency-agent
 ```
@@ -242,7 +248,7 @@ sudo apt -y purge dependency-agent
 Если при установке или запуске схемы услуги возникли проблемы, в этом разделе приводятся сведения, которые могут помочь вам. Если по-прежнему не удается устранить проблему, обратитесь в службу поддержки Майкрософт.
 
 ### <a name="dependency-agent-installation-problems"></a>Проблемы при установке агента зависимостей
-#### <a name="installer-asks-for-a-reboot"></a>Установщик запрашивает перезагрузку
+#### <a name="installer-prompts-for-a-reboot"></a>Установщик запрашивает перезагрузку
 При установке или удалении агент зависимостей *обычно* не требует перезагрузки. Однако в некоторых редких случаях для продолжения установки Windows Server требуется перезагрузить. Это происходит, когда зависимость (как правило, распространяемые компоненты Microsoft VC ++) требует перезагрузки из-за заблокированного файла.
 
 #### <a name="message-unable-to-install-dependency-agent-visual-studio-runtime-libraries-failed-to-install-code--codenumber-appears"></a>Сообщение "Не удалось установить агент зависимостей: сбой установки библиотек среды выполнения Visual Studio (код = [номер_кода])"
@@ -272,7 +278,7 @@ sudo apt -y purge dependency-agent
 
         * Computer="<your computer name here>" | measure count() by Type
         
-  Вы получили множество событий в результатах? Это последние данные? В этом случае агент OMS работает правильно и обменивается данными со службой Log Analytics. В противном случае проверьте агент OMS на сервере. См. статью [Устранение неполадок агента OMS для Windows](https://support.microsoft.com/help/3126513/how-to-troubleshoot- monitoring-onboarding-issues) или [Устранение неполадок агента OMS для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Troubleshooting.md).
+  Вы получили множество событий в результатах? Это последние данные? В этом случае агент OMS работает правильно и обменивается данными со службой Log Analytics. В противном случае проверьте агент OMS на сервере. См. статью [Устранение неполадок агента OMS для Windows](https://support.microsoft.com/help/3126513/how-to-troubleshoot-monitoring-onboarding-issues) или [Устранение неполадок агента OMS для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux/blob/master/docs/Troubleshooting.md).
 
 #### <a name="server-appears-in-service-map-but-has-no-processes"></a>Сервер отображается в решении "Схема услуги", но для него нет процессов
 Если сервер отображается в решении "Схема услуги", но для него нет процессов или данных о подключении, это означает, что агент зависимостей установлен и запущен, но не удалось загрузить драйвер ядра. 

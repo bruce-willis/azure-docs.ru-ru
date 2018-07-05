@@ -1,6 +1,6 @@
 ---
-title: Копирование виртуальной машины Linux с помощью Azure CLI 2.0 | Документация Майкрософт
-description: Узнайте, как создать копию виртуальной машины Linux в Azure с помощью Azure CLI 2.0 и Управляемых дисков.
+title: Копирование виртуальной машины Linux с помощью Azure CLI | Документы Майкрософт
+description: Сведения о том, как создать копию виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков.
 services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
@@ -14,17 +14,17 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: cynthn
-ms.openlocfilehash: 66f2789d717816f5be3fd8b298819825f8cd87f7
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 8d250f1289c3757d5ea862a1c195dde6f8efb0eb
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30905016"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36938270"
 ---
-# <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-20-and-managed-disks"></a>Создание копии виртуальной машины Linux с помощью Azure CLI 2.0 и Управляемых дисков
+# <a name="create-a-copy-of-a-linux-vm-by-using-azure-cli-and-managed-disks"></a>Создание копии виртуальной машины Linux в Azure с помощью Azure CLI и Управляемых дисков
 
 
-В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux, используя Azure CLI 2.0 и модель развертывания с помощью Azure Resource Manager. Эти действия можно также выполнить с помощью [Azure CLI 1.0](copy-vm-nodejs.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+В этой статье показано, как создать копию виртуальной машины Azure под управлением Linux, используя Azure CLI 2.0 и модель развертывания с помощью Azure Resource Manager. 
 
 Кроме того, можно [передать VHD и создать виртуальную машину на его основе](upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 

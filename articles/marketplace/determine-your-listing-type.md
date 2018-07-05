@@ -12,35 +12,35 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: article
-ms.date: 06/04/2018
+ms.date: 06/13/2018
 ms.author: ellacroi
-ms.openlocfilehash: f9793156b3728f617b92624651ff89ab2665c061
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 1c7fd3ac1a4cf62dd8f909acc26615ea5f96f32c
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235813"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309104"
 ---
 # <a name="determine-the-listing-type-for-your-solution"></a>Определение типа приложения для решения  
 Онлайн-магазины поддерживают множество вариантов публикации: типы приложений и типы предложений. Выберите тип предложения, который наилучшим образом представляет ваше решение и особенности обслуживания. Все варианты публикации предоставляют доступ к потенциальным клиентам.   
 
 | Онлайн-магазин | Тип приложения | Тип решения | Техническое руководство |  
 |:--- |:--- |:--- |:--- |  
-| AppSource | [Список](#list) | [Консультационная услуга](#requirements:-appSource:-list:-consulting-service) | [smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf) |  
-| Azure Marketplace | [Список](#list) | [Консультационная услуга](#requirements:-azure-marketplace:-list:-consulting-service) | [](#) |  
-| Azure Marketplace | [Список](#list) | [Связь со мной](#requirements:-azure-marketplace:-list:-contact-me) | [](#) |  
-| Azure Marketplace | [Пробная версия](#trial) | [Бесплатная пробная версия или пробная версия SaaS](#requirements:-azure-marketplace:-trial:-free-trial-/-saas-trial) | [](#) |  
+| AppSource | [Список](#list) | [Консультационная услуга](#requirements-appSource-list-consulting-service) | [smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf) |  
+| Azure Marketplace | [Список](#list) | [Консультационная услуга](#requirements-azure-marketplace-list-consulting-service) | [](#) |  
+| Azure Marketplace | [Список](#list) | [Связь со мной](#requirements-azure-marketplace-list-contact-me) | [](#) |  
+| Azure Marketplace | [Пробная версия](#trial) | [Бесплатная пробная версия или пробная версия SaaS](#requirements-azure-marketplace-trial-free-trial-/-saas-trial) | [](#) |  
 | AppSource |  | Cortana Intelligence | [docs.microsoft.com/azure/machine-learning/team-data-science-process/cortana-intelligence-appsource-publishing-guide](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/cortana-intelligence-appsource-publishing-guide) |  
 | AppSource |  |Dynamics 365 for Customer Engagement | [docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource) |  
 | AppSource |  | Dynamics 365 for Finance and Operations. | [docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source) |  
-| Azure Marketplace | [Пробная версия](#trial) | [Интерактивная демоверсия](#requirements:-azure-marketplace:-trial:-interactive-demo) | [](#) |  
-| Azure Marketplace | [Пробная версия](#trial) | [Тестовый выпуск](#requirements:-azure-marketplace:-trial:-test-drive) | [](#) |  
+| Azure Marketplace | [Пробная версия](#trial) | [Интерактивная демоверсия](#requirements-azure-marketplace-trial-interactive-demo) | [](#) |  
+| Azure Marketplace | [Пробная версия](#trial) | [Тестовый выпуск](#requirements-azure-marketplace-trial-test-drive) | [](#) |  
 | AppSource |  | Office 365 | [docs.microsoft.com/office/dev/store/submit-to-the-office-store](https://docs.microsoft.com/office/dev/store/submit-to-the-office-store) |  
-| AppSource |  | Power BI | [docs.microsoft.com/power-bi/developer/office-store](https://docs.microsoft.com/power-bi/developer/office-store) | | Azure Marketplace | [Транзакция](#transact) | [Приложения Azure, управляемое приложение](#requirements:-azure-marketplace:-transact:-azure-apps:-managed-app) |  [docs.microsoft.com/azure/managed-applications/overview](https://docs.microsoft.com/azure/managed-applications/overview) |  
-| Azure Marketplace | [Транзакция](#transact) | [Приложения Azure, шаблон решения](#requirements:-azure-marketplace:-transact:-azure-apps:-solution-template) |  [](#) |  
-| Azure Marketplace | [Транзакция](#transact) | [Контейнер](#requirements:-azure-marketplace:-transact:-container) |  [](#) |  
-| Azure Marketplace | [Транзакция](#transact) | [Приложение SaaS](#requirements:-azure-marketplace:-transact:-saas-app) |  [](#) |  
-| Azure Marketplace | [Транзакция](#transact) | [Виртуальная машина](#requirements:-azure-marketplace:-transact:-virtual-machine) |  [](#) |   
+| AppSource |  | Power BI | [docs.microsoft.com/power-bi/developer/office-store](https://docs.microsoft.com/power-bi/developer/office-store) | | Azure Marketplace | [Транзакция](#transact) | [Приложения Azure, управляемое приложение](#requirements-azure-marketplace-transact-azure-apps-managed-app) |  [docs.microsoft.com/azure/managed-applications/overview](https://docs.microsoft.com/azure/managed-applications/overview) |  
+| Azure Marketplace | [Транзакция](#transact) | [Приложения Azure, шаблон решения](#requirements-azure-marketplace-transact-azure-apps-solution-template) |  [](#) |  
+| Azure Marketplace | [Транзакция](#transact) | [Контейнер](#requirements-azure-marketplace-transact-container) |  [](#) |  
+| Azure Marketplace | [Транзакция](#transact) | [Приложение SaaS](#requirements-azure-marketplace-transact-saas-app) |  [](#) |  
+| Azure Marketplace | [Транзакция](#transact) | [Виртуальная машина](#requirements-azure-marketplace-transact-virtual-machine) |  [](#) |   
 
 ## <a name="azure-certified-program"></a>Программа "Сертифицировано для использования в Azure"  
 Все виртуальные машины, опубликованные в Azure Marketplace, проверяются на соответствие условиям программы Azure Certified.  
@@ -58,7 +58,7 @@ ms.locfileid: "35235813"
 
 | Тип приложения | Тип решения | Техническое руководство |  
 |:--- |:--- |:--- |  
-| [Список](#list) | [Консультационная услуга](#requirements:-appSource:-list:-consulting-service) | [smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf) |  
+| [Список](#list) | [Консультационная услуга](#requirements-appSource-list-consulting-service) | [smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf](https://smp-cdn-prod.azureedge.net/documents/Microsoft%20AppSource%20Partner%20Listing%20Guidelines.pdf) |  
 |  | Cortana Intelligence | [docs.microsoft.com/azure/machine-learning/team-data-science-process/cortana-intelligence-appsource-publishing-guide](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/cortana-intelligence-appsource-publishing-guide) |  
 |  |Dynamics 365 for Customer Engagement | [docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource) |  
 |  | Dynamics 365 for Finance and Operations. | [docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source) |  
@@ -68,20 +68,23 @@ ms.locfileid: "35235813"
 ---   
 
 ## <a name="azure-marketplace-publishing-by-product"></a>Публикация в Azure Marketplace по продуктам  
+
+![](./media/marketplace-publishers-guide/workflow-azure-marketplace.png)  
+
 В приведенной ниже таблице представлены дополнительные сведения о конкретных требованиях для предложений в Azure Marketplace.  
 
 | Тип приложения | Тип предложения |  Техническое руководство |  
 |:--- |:--- |:--- |  
-| [Список](#list) | [Консультационная услуга](#requirements:-azure-marketplace:-list:-consulting-service) | [](#) |  
-| [Список](#list) | [Связь со мной](#requirements:-azure-marketplace:-list:-contact-me) | [](#) |  
-| [Пробная версия](#trial) | [Бесплатная пробная версия или пробная версия SaaS](#requirements:-azure-marketplace:-trial:-free-trial-/-saas-trial) | [](#) |  
-| [Пробная версия](#trial) | [Интерактивная демоверсия](#requirements:-azure-marketplace:-trial:-interactive-demo) | [](#) |  
-| [Пробная версия](#trial) | [Тестовый выпуск](#requirements:-azure-marketplace:-trial:-test-drive) | [](#) |  
-| [Транзакция](#transact) | [Приложения Azure, управляемое приложение](#requirements:-azure-marketplace:-transact:-azure-apps:-managed-app) |  [docs.microsoft.com/azure/managed-applications/overview](https://docs.microsoft.com/azure/managed-applications/overview) |  
-| [Транзакция](#transact) | [Приложения Azure, шаблон решения](#requirements:-azure-marketplace:-transact:-azure-apps:-solution-template) |  [](#) |  
-| [Транзакция](#transact) | [Контейнер](#requirements:-azure-marketplace:-transact:-container) |  [](#) |  
-| [Транзакция](#transact) | [Приложение SaaS](#requirements:-azure-marketplace:-transact:-saas-app) |  [](#) |  
-| [Транзакция](#transact) | [Виртуальная машина](#requirements:-azure-marketplace:-transact:-virtual-machine) |  [](#) |  
+| [Список](#list) | [Консультационная услуга](#requirements-azure-marketplace-list-consulting-service) | [](#) |  
+| [Список](#list) | [Связь со мной](#requirements-azure-marketplace-list-contact-me) | [](#) |  
+| [Пробная версия](#trial) | [Бесплатная пробная версия или пробная версия SaaS](#requirements-azure-marketplace-trial-free-trial-/-saas-trial) | [](#) |  
+| [Пробная версия](#trial) | [Интерактивная демоверсия](#requirements-azure-marketplace-trial-interactive-demo) | [](#) |  
+| [Пробная версия](#trial) | [Тестовый выпуск](#requirements-azure-marketplace-trial-test-drive) | [](#) |  
+| [Транзакция](#transact) | [Приложения Azure, управляемое приложение](#requirements-azure-marketplace-transact-azure-apps-managed-app) |  [docs.microsoft.com/azure/managed-applications/overview](https://docs.microsoft.com/azure/managed-applications/overview) |  
+| [Транзакция](#transact) | [Приложения Azure, шаблон решения](#requirements-azure-marketplace-transact-azure-apps-solution-template) |  [](#) |  
+| [Транзакция](#transact) | [Контейнер](#requirements-azure-marketplace-transact-container) |  [](#) |  
+| [Транзакция](#transact) | [Приложение SaaS](#requirements-azure-marketplace-transact-saas-app) |  [](#) |  
+| [Транзакция](#transact) | [Виртуальная машина](#requirements-azure-marketplace-transact-virtual-machine) |  [](#) |  
 
 ---   
 
@@ -93,10 +96,10 @@ ms.locfileid: "35235813"
 
 | Тип предложения | Онлайн-магазин | Сведения |  
 |:---        |:---        |:---     |  
-| Консультационные услуги | AppSource | [Требования, AppSource, список, консультационные услуги](#requirements:-appsource:-list:-consulting-service) |  
-| Консультационные услуги | Azure Marketplace | [Требования, Azure Marketplace, список, консультационные услуги](#requirements:-azure-marketplace:-list:-consulting-service) |  
+| Консультационные услуги | AppSource | [Требования, AppSource, список, консультационные услуги](#requirements-appsource-list-consulting-service) |  
+| Консультационные услуги | Azure Marketplace | [Требования, Azure Marketplace, список, консультационные услуги](#requirements-azure-marketplace-list-consulting-service) |  
 | Связь со мной | AppSource | [](#) |  
-| Связь со мной | Azure Marketplace | [Требования, AppSource, список, связь со мной](#requirements:-azure-marketplace:-list:-contact-me) |  
+| Связь со мной | Azure Marketplace | [Требования, AppSource, список, связь со мной](#requirements-azure-marketplace-list-contact-me) |  
 
 #### <a name="requirements-appsource-list-consulting-service"></a>Требования, AppSource, список, консультационная услуга  
 Если предложение состоит в основном из профессиональных услуг (например, оценок, реализаций, семинаров), используйте тип предложения "Консультационные услуги".  
@@ -104,7 +107,7 @@ ms.locfileid: "35235813"
 | Требования | Сведения |  
 |:--- |:--- |  
 | Характеристики предложения услуг | Консультационная услуга должна соответствовать приведенным ниже критериям.<ul> <li>Предоставляться в фиксированном объеме, с фиксированной длительностью, по фиксированной цене (или бесплатно).</li> <li>Ориентироваться в первую очередь на	предварительную продажу.</li> <li>Предназначаться для одного клиента.</li> <li>Предоставляться на месте.</li> </ul> |  
-| Требования к партнерам в отношении консультационных услуг | Вы соответствуете критериям в соответствующей области ваших услуг.<table><tr><th>Область решения</th><th>Критерии</th></tr><tr><td>Dynamics 365 for Customer Engagement</td><td>Наличие компетенции Cloud Customer Relationship Management уровня Silver или Gold.</td></tr><tr><td>Dynamics 365 for Finance and Operations (корпоративный выпуск)</td><td>Наличие компетенции Enterprise Resource Planning уровня Silver или Gold и дохода от облачных операций за последние 12 месяцев размером 25 000 долларов США или более.</td></tr><tr><td>Dynamics 365 for Finance and Operations (выпуск для бизнеса)</td><td>Статус поставщика облачных служб (CSP) или Digital Partner of Record (DPOR) для одного или более клиентов.</td></tr><tr><td>Power BI</td><td>Соответствие критериям партнера по решению.</td></tr><tr><td>PowerApps.</td><td>Наличие решения для презентации партнеров.</td></tr></table><ul> <li>Дополнительные сведения об управлении взаимоотношениями с клиентами см. на странице "Компетенция Cloud Customer Relationship Management" по адресу [partner.microsoft.com/membership/cloud-customer-relationship-management-competency](https://partner.microsoft.com/membership/cloud-customer-relationship-management-competency).</li> <li>Дополнительные сведения о планировании ресурсов см. на странице "Enterprise Resource Planning" по адресу [partner.microsoft.com/membership/enterprise-resource-planning-competency](https://partner.microsoft.com/membership/enterprise-resource-planning-competency).</li> <li>Дополнительные сведения о CSP см. на странице "Поставщик облачных решений" по адресу [partner.microsoft.com/cloud-solution-provider](https://partner.microsoft.com/cloud-solution-provider).</li> <li>Дополнительные сведения о DPOR см. на странице "Статус Digital Partner of Record и партнерская ассоциация" по адресу [partner.microsoft.com/membership/digital-partner-of-record](https://partner.microsoft.com/membership/digital-partner-of-record).</li> <li>Дополнительные сведения о критериях для партнеров по решениям см. в документе, включающем информацию о партнерах по решениям и вознаграждении, по адресу [www.microsoftpartnerserverandcloud.com/_layouts/download.aspx?SourceUrl=Hosted%20Documents/Power%20BI%20Program%20Overview%20%26%20Incentives.pdf](https://www.microsoftpartnerserverandcloud.com/_layouts/download.aspx?SourceUrl=Hosted%20Documents/Power%20BI%20Program%20Overview%20%26%20Incentives.pdf).</li> <li>Дополнительные сведения о партнерской презентации см. на странице презентаций от партнеров по адресу [powerapps.microsoft.com/partner-showcase](https://powerapps.microsoft.com/partner-showcase).</li> </ul> |  
+| Требования к партнерам в отношении консультационных услуг | Вы соответствуете критериям в соответствующей области ваших услуг.<table><tr><th>Область решения</th><th>Критерии</th></tr><tr><td>Dynamics 365 for Customer Engagement</td><td>Наличие компетенции Cloud Customer Relationship Management уровня Silver или Gold.</td></tr><tr><td>Dynamics 365 for Finance and Operations (корпоративный выпуск)</td><td>Наличие компетенции Enterprise Resource Planning уровня Silver или Gold и дохода от облачных операций за последние 12 месяцев размером 25 000 долларов США или более.</td></tr><tr><td>Dynamics 365 for Finance and Operations (выпуск для бизнеса)</td><td>Статус поставщика облачных служб (CSP) или Digital Partner of Record (DPOR) для одного или нескольких клиентов.</td></tr><tr><td>Power BI</td><td>Соответствие критериям партнера по решению.</td></tr><tr><td>PowerApps.</td><td>Наличие решения для презентации партнеров.</td></tr></table><ul> <li>Дополнительные сведения об управлении взаимоотношениями с клиентами см. на странице "Компетенция Cloud Customer Relationship Management" по адресу [partner.microsoft.com/membership/cloud-customer-relationship-management-competency](https://partner.microsoft.com/membership/cloud-customer-relationship-management-competency).</li> <li>Дополнительные сведения о планировании ресурсов см. на странице "Enterprise Resource Planning" по адресу [partner.microsoft.com/membership/enterprise-resource-planning-competency](https://partner.microsoft.com/membership/enterprise-resource-planning-competency).</li> <li>Дополнительные сведения о CSP см. на странице "Поставщик облачных решений" по адресу [partner.microsoft.com/cloud-solution-provider](https://partner.microsoft.com/cloud-solution-provider).</li> <li>Дополнительные сведения о DPOR см. на странице "Статус Digital Partner of Record и партнерская ассоциация" по адресу [partner.microsoft.com/membership/digital-partner-of-record](https://partner.microsoft.com/membership/digital-partner-of-record).</li> <li>Дополнительные сведения о критериях для партнеров по решениям см. в документе, включающем информацию о партнерах по решениям и вознаграждении, по адресу [www.microsoftpartnerserverandcloud.com/_layouts/download.aspx?SourceUrl=Hosted%20Documents/Power%20BI%20Program%20Overview%20%26%20Incentives.pdf](https://www.microsoftpartnerserverandcloud.com/_layouts/download.aspx?SourceUrl=Hosted%20Documents/Power%20BI%20Program%20Overview%20%26%20Incentives.pdf).</li> <li>Дополнительные сведения о партнерской презентации см. на странице презентаций от партнеров по адресу [powerapps.microsoft.com/partner-showcase](https://powerapps.microsoft.com/partner-showcase).</li> </ul> |  
 
 #### <a name="requirements-azure-marketplace-list-consulting-service"></a>Требования, Azure Marketplace, список, консультационная услуга  
 
@@ -130,12 +133,12 @@ ms.locfileid: "35235813"
 
 | Тип предложения | Онлайн-магазин | Сведения |  
 |:---        |:---        |:---     |  
-| Бесплатная пробная версия или пробная версия SaaS | AppSource | [Требования к типу приложения, пробная версия](#Listing-Type-Requirements:-trial) |  
-| Бесплатная пробная версия или пробная версия SaaS | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, бесплатная пробная версия или пробная версия SaaS](#requirements:-azure-marketplace:-trial:-free-trial-/-saas-trial) |  
-| Интерактивная демоверсия | AppSource | [Требования к типу приложения, пробная версия](#Listing-Type-Requirements:-trial) |  
-| Интерактивная демоверсия | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, интерактивная демонстрация](#requirements:-azure-marketplace:-trial:-interactive-demo) |  
-| Тестовый выпуск | AppSource | [Требования к типу приложения, пробная версия](#Listing-Type-Requirements:-trial) |  
-| Тестовый выпуск | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, тестовый выпуск](#requirements:-azure-marketplace:-trial:-test-drive) |  
+| Бесплатная пробная версия или пробная версия SaaS | AppSource | [Требования к типу приложения, пробная версия](#listing-type-requirements-trial) |  
+| Бесплатная пробная версия или пробная версия SaaS | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, бесплатная пробная версия или пробная версия SaaS](#requirements-azure-marketplace-trial-free-trial-/-saas-trial) |  
+| Интерактивная демоверсия | AppSource | [Требования к типу приложения, пробная версия](#listing-type-requirements-trial) |  
+| Интерактивная демоверсия | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, интерактивная демонстрация](#requirements-azure-marketplace-trial-interactive-demo) |  
+| Тестовый выпуск | AppSource | [Требования к типу приложения, пробная версия](#listing-type-requirements-trial) |  
+| Тестовый выпуск | Azure Marketplace | [Требования, Azure Marketplace, пробная версия, тестовый выпуск](#requirements-azure-marketplace-trial-test-drive) |  
 
 #### <a name="requirements-azure-marketplace-trial"></a>Требования, Azure Marketplace, пробная версия  
 
@@ -143,7 +146,7 @@ ms.locfileid: "35235813"
 |:--- |:--- |  
 | Бесплатный пробный период и пробная версия | Клиент может бесплатно опробовать ваше приложение в течение ограниченного времени.<br /><br />Клиент не обязан оплачивать стоимость лицензии или подписки на ваше предложение. Клиенты не обязаны оплачивать базовый продукт или службу Майкрософт. Все варианты пробных версий развертываются в подписке Azure. У вас есть единоличный контроль над оптимизацией затрат и управлением.<br /><br />Вы можете выбрать бесплатную пробную версию, интерактивную демонстрацию или тестовый выпуск. Независимо от того, что вы выберете, в рамках бесплатной пробной версии клиенту должен предоставляться заранее определенный период времени, в течение которого он может опробовать предложение без каких-либо дополнительных затрат.<ul> <li>Чтобы начать процесс создания тестового выпуска, отправьте электронное сообщение по адресу [amp-testdrive@microsoft.com](mailto:amp-testdrive@microsoft.com).</li> </ul>Примечание. Все пробные версии SaaS в Azure Marketplace должны позволять пользователю войти с применением рабочих учетных данных.<ul> <li>Дополнительные сведения см. в разделе "Пробные версии возможностей AppSource" по адресу [docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-appsource-certified#appsource-trial-experiences](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-appsource-certified#appsource-trial-experiences).</li> </ul> |  
 | Легко настраиваемое, готовое к использованию решение | Ваше приложение должно быть простым и быстрым в установке и настройке. |  
-| Доступность / время непрерывной работы | Время непрерывной работы вашего приложение или платформы SaaS должно составлять не менее 99,9 %. |  
+| Доступность и время непрерывной работы | Время непрерывной работы вашего приложение или платформы SaaS должно составлять не менее 99,9 %. |  
 | Azure Active Directory | Ваше предложение должно предусматривать выполнение федеративного единого входа (SSO) в Azure Active Directory (Azure AD) с запросами на согласие. |  
 
 #### <a name="requirements-azure-marketplace-trial-free-trial--saas-trial"></a>Требования, Azure Marketplace, пробная версия, бесплатная пробная версия или пробная версия SaaS  
@@ -158,7 +161,7 @@ ms.locfileid: "35235813"
 
 | Преимущество | Требование |  
 |:--- |:--- |  
-| Позволяет пользователям ознакомиться с решением в действии без сложной настройки. | Ваше решение требует сложной настройки, для которой пробного периода может быть недостаточно. |  
+| Позволяет клиентам просматривать ваше решение в действии без сложных настроек. | Ваше решение требует сложных настроек, которые сложно выполнить в течение пробного периода. |  
 
 #### <a name="requirements-azure-marketplace-trial-test-drive"></a>Требования, Azure Marketplace, пробная версия, тестовый выпуск  
 Вы развертываете одну или несколько виртуальных машин через приложения "инфраструктура как услуга" (IaaS) или SaaS. Преимущество типа предложения "Тестовый выпуск" заключается в автоматической подготовке виртуальной машины или всего решения под руководством партнера. Тестовый выпуск позволяет пользователю оценить решение без лишних затрат. Клиенту не обязательно уже быть пользователем Azure, чтобы помочь в привлечении потенциальных клиентов более высокого уровня.  
@@ -177,11 +180,11 @@ ms.locfileid: "35235813"
 
 | Тип предложения | Онлайн-магазин | Сведения |   
 |:---        |:---        | :--- |  
-| Приложения Azure, управляемое приложение | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложения Azure, управляемое приложение](#requirements:-azure-marketplace:-transact:-Azure-apps:-Managed-app) |  
-| Приложения Azure, шаблон решения | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложения Azure, шаблон решения](#requirements:-azure-marketplace:-transact:-Azure-apps:-Solution-template) |  
-| Контейнеры | Azure Marketplace | [Требования, Azure Marketplace, транзакция, контейнер](#requirements:-azure-marketplace:-transact:-Container) |  
-| Приложение SaaS  | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложение SaaS](#requirements:-azure-marketplace:-transact:-SaaS-app) |  
-| Виртуальная машина. | Azure Marketplace | [Требования, Azure Marketplace, транзакция, виртуальная машина](#requirements:-azure-marketplace:-transact:-Virtual-Machine) |  
+| Приложения Azure. Управляемое приложение | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложения Azure, управляемое приложение](#requirements-azure-marketplace-transact-azure-apps-managed-app) |  
+| Приложения Azure. Шаблон решения | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложения Azure, шаблон решения](#requirements-azure-marketplace-transact-azure-apps-solution-template) |  
+| Контейнеры | Azure Marketplace | [Требования, Azure Marketplace, транзакция, контейнер](#requirements-azure-marketplace-transact-container) |  
+| Приложение SaaS  | Azure Marketplace | [Требования, Azure Marketplace, транзакция, приложение SaaS](#requirements-azure-marketplace-transact-saas-app) |  
+| Виртуальная машина. | Azure Marketplace | [Требования, Azure Marketplace, транзакция, виртуальная машина](#requirements-azure-marketplace-transact-virtual-machine) |  
 
 #### <a name="requirements-azure-marketplace-transact-azure-apps-managed-app"></a>Требования, Azure Marketplace, транзакция, приложения Azure, управляемое приложение  
 Тип предложения "Приложение Azure, управляемое приложение" используется в описанных ниже условиях.  
@@ -209,11 +212,10 @@ ms.locfileid: "35235813"
 
 | Требование | Сведения |  
 |:--- |:--- |  
-|Выставление счетов и ценообразование  |  Контейнер должен поддерживать модель бесплатного использования или выставления счетов с использованием собственной лицензии.       |  
-|Образ, созданный из файла Dockerfile   |   Образы контейнеров должны соответствовать спецификации образов Docker и создаваться из файла Dockerfile. Дополнительные сведения о создании образов Docker см. [здесь].(https://docs.docker.com/engine/reference/builder/#usage)
-|Размещение в ACR   |   Образы контейнеров должны размещаться в репозитории в Реестре контейнеров Azure (ACR). Дополнительные сведения о работе с ACR см. [здесь].(https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal)     
-|Добавление тегов к образам   |   У образа контейнера должен быть хотя бы один тег (но не более 16). Дополнительные сведения о добавлении тегов к образам см. [здесь].(https://docs.docker.com/engine/reference/commandline/tag/)     | 
-
+| Выставление счетов и ценообразование | Поддерживается либо бесплатная, либо модель выставления счетов BYOL. |  
+| Образ, созданный из файла Dockerfile | Образы контейнеров должны соответствовать спецификации образов Docker и создаваться из файла Dockerfile.<ul> <li>Дополнительные сведения о создании образов Docker см. в разделе об использовании по адресу [docs.docker.com/engine/reference/builder/#usage](https://docs.docker.com/engine/reference/builder/#usage).</li> </ul> |  
+| Размещение в ACR | Образы контейнеров должны размещаться в репозитории в Реестре контейнеров Azure (ACR).<ul> <li>Дополнительные сведения о работе с ACR см. на странице "Краткое руководство. Создание реестра контейнеров на портале Azure" по адресу [docs.microsoft.com/azure/container-registry/container-registry-get-started-portal](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal).</li> </ul> |  
+| Добавление тегов к образам | У образа контейнера должен быть хотя бы один тег (но не более 16).<ul> <li>Дополнительные сведения о пометке образа тегами см. на странице тегов Docker по адресу [docs.docker.com/engine/reference/commandline/tag](https://docs.docker.com/engine/reference/commandline/tag).</li> </ul> |  
 
 
 #### <a name="requirements-azure-marketplace-transact-saas-app"></a>Требования, Azure Marketplace, транзакция, приложение SaaS  
@@ -225,12 +227,10 @@ ms.locfileid: "35235813"
 
 | Требование | Сведения |  
 |:--- |:--- |  
-|Выставление счетов и ценообразование   |   Цена вашего предложения определяется помесячной фиксированной ставкой. Оплата по мере использования и возможность повышения уровня на основе использования сейчас не поддерживаются.      |  
-|Отмена  |   Ваше предложение может быть отменено клиентом в любое время.      |  
-|Целевая страница транзакции   |   Вы размещаете целевую страницу транзакции под совместным брендом в Azure, где пользователи могут создать учетную запись службы SaaS и управлять ею.      |   
-|API подписки    |   Вы предоставляете службу, которая может взаимодействовать с подпиской SaaS для создания, обновления и удаления учетной записи пользователя и плана обслуживания. Критические изменения в API должны поддерживаться в течение 24 часов. Некритические изменения в API будут выпускаться периодически.      | 
-
-
+|Выставление счетов и ценообразование | Цена вашего предложения определяется помесячной фиксированной ставкой. Оплата по мере использования и возможность повышения уровня на основе использования сейчас не поддерживаются. |  
+|Отмена | Ваше предложение может быть отменено клиентом в любое время. |  
+|Целевая страница транзакции | Вы размещаете целевую страницу транзакции под совместным брендом в Azure, где пользователи могут создать учетную запись службы SaaS и управлять ею. |   
+| API подписки | Вы предоставляете службу, которая может взаимодействовать с подпиской SaaS для создания, обновления и удаления учетной записи пользователя и плана обслуживания. Критические изменения в API должны поддерживаться в течение 24 часов. Некритические изменения в API будут выпускаться периодически. |  
 
 #### <a name="requirements-azure-marketplace-transact-virtual-machine"></a>Требования, Azure Marketplace, транзакция, виртуальная машина  
 Тип предложения "Виртуальная машина" используется при развертывании виртуального модуля в подписке, связанной с пользователем. Виртуальные машины полностью поддерживают коммерческое применение на основе моделей с оплатой по мере использования и с использованием собственной лицензии (BYOL). Корпорация Майкрософт проводит коммерческие транзакции и выставляет счета клиенту от вашего имени. Вы получаете преимущество использования предпочтительного платежного отношения между вашим клиентом и корпорацией Майкрософт, включая все Соглашения Enterprise.  

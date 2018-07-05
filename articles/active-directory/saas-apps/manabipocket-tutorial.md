@@ -8,19 +8,18 @@ manager: femila
 ms.reviewer: joflore
 ms.assetid: 8e521099-bf7d-43ab-a0e0-86aa1c9e577e
 ms.service: active-directory
-ms.component: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/30/2018
+ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 44b34c20c8b21b58ef67beedc1074f0664048b90
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f4ef40ea5e3d68ed8c04dc2a67042abd74df42aa
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212382"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317814"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство. Интеграция Azure Active Directory с Manabi Pocket
 
@@ -101,35 +100,29 @@ ms.locfileid: "36212382"
     ![Ссылка "Настройка единого входа"][4]
 
 2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+
     ![Диалоговое окно "Единый вход"](./media/manabipocket-tutorial/tutorial_manabipocket_samlbase.png)
 
-3. Если вы хотите настроить приложение в режиме, **инициированном поставщиком удостоверений**, в разделе **Домены и URL-адреса приложения Manabi Pocket** выполните следующие действия:
+3. В разделе **Домены и URL-адреса приложения Manabi Pocket** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа для приложения Manabi Pocket](./media/manabipocket-tutorial/tutorial_manabipocket_url.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
-    
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/assertion_post`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://ed-cl.com/`
+
+    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Manabi Pocket](mailto:info-ed-cl@ntt.com).
+    > Значение идентификатора приведено для примера и не является реальным. Измените это значение на фактический идентификатор. Чтобы получить значение идентификатора, обратитесь в [службу поддержки клиентов Manabi Pocket](mailto:info-ed-cl@ntt.com).
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
-
-    ![Сведения о домене и URL-адресах единого входа для приложения Manabi Pocket](./media/manabipocket-tutorial/tutorial_manabipocket_url1.png)
-
-    В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://ed-cl.com/`
-
-5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/manabipocket-tutorial/tutorial_manabipocket_certificate.png) 
 
-6. Нажмите кнопку **Сохранить** .
+5. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/manabipocket-tutorial/tutorial_general_400.png)
 
-7. Чтобы настроить единый вход на стороне **Manabi Pocket**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Manabi Pocket](mailto:info-ed-cl@ntt.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+6. Чтобы настроить единый вход на стороне **Manabi Pocket**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Manabi Pocket](mailto:info-ed-cl@ntt.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -196,7 +189,7 @@ ms.locfileid: "36212382"
 6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
@@ -222,4 +215,3 @@ ms.locfileid: "36212382"
 [201]: ./media/manabipocket-tutorial/tutorial_general_201.png
 [202]: ./media/manabipocket-tutorial/tutorial_general_202.png
 [203]: ./media/manabipocket-tutorial/tutorial_general_203.png
-

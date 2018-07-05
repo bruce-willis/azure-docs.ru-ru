@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: c01f986bfe3e6a3162988056a268423e07f429bf
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 6484142eafa8388117c1e96ab31eefeab188e488
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301156"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36750278"
 ---
 # <a name="extend-log-analytics-alerts-to-azure-alerts"></a>Расширение оповещений Log Analytics в оповещения Azure
-До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на [портале Microsoft Operations Management Suite](../operations-management-suite/operations-management-suite-overview.md). Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 
+До недавнего времени в Azure Log Analytics были функции, которые позволяли заблаговременно уведомлять о некоторых условиях на основе данных Log Analytics. Ранее правила генерации оповещений задавались на портале Microsoft Operations Management Suite. Новые возможности оповещений теперь интегрированы в различные службы Microsoft Azure. Они доступны в разделе **Оповещения** в Azure Monitor на портале Azure и позволяют реализовать оповещения на основе журнала действий, метрик и журналов Log Analytics и Application Insights. 
 
 ## <a name="benefits-of-extending-your-alerts"></a>Преимущества расширения оповещений
 Есть несколько преимуществ создания оповещений и управления ими на портале Azure, например:

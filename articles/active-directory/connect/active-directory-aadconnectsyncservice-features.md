@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/13/2017
+ms.date: 06/25/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2dbe14f6c7f8f9f1dcfaf733dc884df5adf919aa
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f721c371687addfe48d753e7289df78c2be1f3c7
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34593177"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36958006"
 ---
 # <a name="azure-ad-connect-sync-service-features"></a>Функции службы синхронизации Azure AD Connect
 Средство синхронизации Azure AD Connect состоит из двух компонентов.
@@ -58,7 +58,8 @@ ms.locfileid: "34593177"
 | DeviceWriteback |[Azure AD Connect: включение обратной записи устройств](active-directory-aadconnect-feature-device-writeback.md) |
 | DirectoryExtensions |[Синхронизация Azure AD Connect: расширения каталогов](active-directory-aadconnectsync-feature-directory-extensions.md) |
 | [DuplicateProxyAddressResiliency<br/>DuplicateUPNResiliency](#duplicate-attribute-resiliency) |Позволяет поместить атрибут, являющийся копией другого объекта, на карантин, вместо того чтобы прерывать весь процесс экспорта для этого объекта. |
-| PasswordSync |[Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](active-directory-aadconnectsync-implement-password-hash-synchronization.md) |
+| Синхронизация хэша паролей |[Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect](active-directory-aadconnectsync-implement-password-hash-synchronization.md) |
+|Сквозная проверка подлинности|[Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory](active-directory-aadconnect-pass-through-authentication.md)|
 | UnifiedGroupWriteback |[Предварительная версия. Обратная запись групп](active-directory-aadconnect-feature-preview.md#group-writeback) |
 | UserWriteback |Сейчас не поддерживается. |
 

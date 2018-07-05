@@ -6,40 +6,30 @@ author: neilpeterson
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 04/28/2018
+ms.date: 06/25/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 8452708ef6b3d1944495c3c2c152c1e753a9cebf
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: fcf0b6f3b7f6d75006d8c10aab041c25fc0d8c39
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34599904"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751291"
 ---
 # <a name="https-ingress-on-azure-kubernetes-service-aks"></a>Входящий трафик HTTPS в Службе Azure Kubernetes (AKS)
 
 Контроллер входящего трафика является программным компонентом, предоставляющим для служб Kubernetes обратный прокси-сервер, настраиваемую маршрутизацию трафика и обработку подключений TLS для последующей передачи. Ресурсы входящего трафика Kubernetes используются при настройке правил входящего трафика и маршрутов для отдельных служб Kubernetes. Применяя контроллер и правила входящего трафика, для маршрутизации трафика в несколько служб в кластере Kubernetes можно использовать один внешний адрес.
 
-В этом документе описывается пример развертывания [контроллера входящего трафика NGINX][nginx-ingress] в кластере Службы Azure Kubernetes (AKS). Кроме того, проект [KUBE-LEGO][kube-lego] используется для автоматического создания и настройки сертификатов [Let's Encrypt][lets-encrypt]. Наконец, в кластере AKS запущено несколько приложений, каждое из которых доступно по одному адресу.
-
-## <a name="prerequisite"></a>Предварительные требования
-
-Установите интерфейс командной строки Helm. Инструкции по установке см. в [документации][helm-cli] по интерфейсу командной строки Helm.
+В этом документе описывается пример развертывания [контроллера входящего трафика NGINX][nginx-ingress] в кластере Службы Azure Kubernetes (AKS). Кроме того, проект [cert-manager][cert-manager] используется для автоматического создания и настройки сертификатов [Let's Encrypt][lets-encrypt]. Наконец, в кластере AKS запущено несколько приложений, каждое из которых доступно по одному адресу.
 
 ## <a name="install-an-ingress-controller"></a>Установка контроллера входящего трафика
 
 Используйте Helm для установки контроллера входящего трафика NGINX. Дополнительные сведения см. в [документации по контроллеру входящего трафика NGINX][nginx-ingress].
 
-Обновите репозиторий с диаграммой.
+В этом примере контроллер устанавливается в пространстве имен `kube-system`. Вы можете изменить его на свое пространство имен. Если в кластере AKS не включено RBAC, добавьте `--set rbac.create=false` в команду. Дополнительные сведения см. на [диаграмме nginx-ingress][nginx-ingress].
 
-```console
-helm repo update
-```
-
-Установите контроллер входящего трафика NGINX. В этом примере контроллер устанавливается в пространстве имен `kube-system`. Вы можете изменить его на свое пространство имен.
-
-```
-helm install stable/nginx-ingress --namespace kube-system --set rbac.create=false --set rbac.createRole=false --set rbac.createClusterRole=false
+```bash
+helm install stable/nginx-ingress --namespace kube-system
 ```
 
 Во время установки для контроллера входящего трафика создается общедоступный IP-адрес Azure. Чтобы получить общедоступный IP-адрес, используйте команду kubectl get service. Процесс назначения службе IP-адреса может занять некоторое время.
@@ -60,7 +50,7 @@ eager-crab-nginx-ingress-default-backend   ClusterIP      10.0.255.77    <none> 
 
 Так как используются сертификаты HTTPS, для IP-адреса контроллеров входящего трафика необходимо настроить полное доменное имя. В этом примере полное доменное имя в Azure создается с помощью Azure CLI. Укажите в скрипте IP-адрес контроллера входящего трафика и имя, которое вы хотите использовать в качестве полного доменного имени.
 
-```
+```bash
 #!/bin/bash
 
 # Public IP address
@@ -78,19 +68,73 @@ az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
 
 Теперь к контроллеру входящего трафика можно получить доступ по полному доменному имени.
 
-## <a name="install-kube-lego"></a>Установка KUBE-LEGO
+## <a name="install-cert-manager"></a>Установка cert-manager
 
-Контроллер входящего трафика NGINX поддерживает обработку подключений TLS для последующей передачи. Существует несколько способов получения и настройки сертификатов для использования протокола HTTPS. В этом документе демонстрируется способ с использованием [KUBE-LEGO][kube-lego], который обеспечивает автоматические возможности создания сертификата [Lets Encrypt][lets-encrypt] и управления им.
+Контроллер входящего трафика NGINX поддерживает обработку подключений TLS для последующей передачи. Существует несколько способов получения и настройки сертификатов для использования протокола HTTPS. В этом документе демонстрируется способ с использованием [cert-manager][cert-manager], который обеспечивает автоматические возможности создания сертификата [Lets Encrypt][lets-encrypt] и управления им.
 
-Чтобы установить контроллер KUBE-LEGO, используйте следующую команду установки Helm. Укажите адрес электронной почты вашей организации.
+Чтобы установить контроллер cert-manager, используйте приведенную ниже команду установки Helm.
 
-```
-helm install stable/kube-lego \
-  --set config.LEGO_EMAIL=user@contoso.com \
-  --set config.LEGO_URL=https://acme-v01.api.letsencrypt.org/directory
+```bash
+helm install stable/cert-manager --set ingressShim.defaultIssuerName=letsencrypt-prod --set ingressShim.defaultIssuerKind=ClusterIssuer
 ```
 
-Дополнительные сведения о настройке KUBE-LEGO см. в [этой документации][kube-lego].
+Если в кластере не включено RBAC, используйте эту команду.
+
+```bash
+helm install stable/cert-manager \
+  --set ingressShim.defaultIssuerName=letsencrypt-prod \
+  --set ingressShim.defaultIssuerKind=ClusterIssuer \
+  --set rbac.create=false \
+  --set serviceAccount.create=false
+```
+
+Дополнительные сведения о конфигурации cert-manager см. в описании [проекта cert-manager][cert-manager].
+
+## <a name="create-ca-cluster-issuer"></a>Создание издателя кластера ЦС
+
+Для выдачи сертификатов средству cert-manager нужен ресурс [Issuer][cert-manager-issuer] или [ClusterIssuer][cert-manager-cluster-issuer]. Эти ресурсы имеют аналогичную функциональность, однако `Issuer` работает в отдельном пространстве имен, а `ClusterIssuer` — во всех. Дополнительные сведения см. в документации по [издателю cert-manager][cert-manager-issuer].
+
+Создайте издатель кластера, используя приведенный ниже манифест. Измените адрес электронной почты на действительный адрес вашей организации.
+
+```yaml
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: user@contoso.com
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    http01: {}
+```
+
+## <a name="create-certificate-object"></a>Создание объекта сертификата
+
+Далее нужно создать ресурс сертификата. Этот ресурс сертификата определяет необходимый сертификат X.509. Дополнительные сведения см. в описании [сертификатов cert-manager][cert-manager-certificates].
+
+Создайте ресурс сертификата, используя приведенный ниже манифест.
+
+```yaml
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: tls-secret
+spec:
+  secretName: tls-secret
+  dnsNames:
+  - demo-aks-ingress.eastus.cloudapp.azure.com
+  acme:
+    config:
+    - http01:
+        ingressClass: nginx
+      domains:
+      - demo-aks-ingress.eastus.cloudapp.azure.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+```
 
 ## <a name="run-application"></a>Запуск приложения
 
@@ -100,13 +144,13 @@ helm install stable/kube-lego \
 
 Перед запуском приложения добавьте репозиторий Helm образцов Azure в систему разработки.
 
-```
+```bash
 helm repo add azure-samples https://azure-samples.github.io/helm-charts/
 ```
 
- Запустите диаграмму AKS для приложения Hello World, используя следующую команду.
+Запустите диаграмму AKS для приложения Hello World, используя следующую команду.
 
-```
+```bash
 helm install azure-samples/aks-helloworld
 ```
 
@@ -114,7 +158,7 @@ helm install azure-samples/aks-helloworld
 
 Укажите новый заголовок для второго экземпляра, чтобы оба приложения визуально отличались. Вам также необходимо задать уникальное имя службы. Эти конфигурации видны в следующей команде.
 
-```console
+```bash
 helm install azure-samples/aks-helloworld --set title="AKS Ingress Demo" --set serviceName="ingress-demo"
 ```
 
@@ -126,13 +170,14 @@ helm install azure-samples/aks-helloworld --set title="AKS Ingress Demo" --set s
 
 Обратите внимание, что трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/` направляется в службу `aks-helloworld`. Трафик по адресу `https://demo-aks-ingress.eastus.cloudapp.azure.com/hello-world-two` направляется в службу `ingress-demo`.
 
-```
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hello-world-ingress
   annotations:
-    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   tls:
@@ -179,10 +224,13 @@ kubectl apply -f hello-world-ingress.yaml
 
 - [Интерфейс командной строки Helm][helm-cli]
 - [Контроллер входящего трафика NGINX][nginx-ingress]
-- [KUBE-LEGO][kube-lego]
+- [cert-manager][cert-manager]
 
 <!-- LINKS - external -->
 [helm-cli]: https://docs.microsoft.com/azure/aks/kubernetes-helm#install-helm-cli
-[kube-lego]: https://github.com/jetstack/kube-lego
+[cert-manager]: https://github.com/jetstack/cert-manager
+[cert-manager-certificates]: https://cert-manager.readthedocs.io/en/latest/reference/certificates.html
+[cert-manager-cluster-issuer]: https://cert-manager.readthedocs.io/en/latest/reference/clusterissuers.html
+[cert-manager-issuer]: https://cert-manager.readthedocs.io/en/latest/reference/issuers.html
 [lets-encrypt]: https://letsencrypt.org/
 [nginx-ingress]: https://github.com/kubernetes/ingress-nginx

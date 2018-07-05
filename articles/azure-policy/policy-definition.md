@@ -8,12 +8,12 @@ ms.date: 05/24/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 320ca0da946a0f04517c9ed4e8a61a868d2bb27c
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 2f756d65fa167b3812772088aec7232d08b04b9f
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35260487"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36937338"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -192,7 +192,8 @@ ms.locfileid: "35260487"
 - `"notContainsKey": "keyName"`
 - `"exists": "bool"`
 
-При использовании условий **like** и **notLike** можно указать в значении подстановочный знак (*). Значение не должно содержать более 1 подстановочного знака (*).
+При использовании условий **like** и **notLike** можно указать в значении подстановочный знак `*`.
+Значение не должно содержать более 1 подстановочного знака `*`.
 
 При использовании условий **match** и **notMatch** укажите `#` для представления цифры, `?` для буквы и любой другой символ — для представления фактического символа. Примеры см. в статье [Разрешение на использование нескольких шаблонов имен](scripts/allow-multiple-name-patterns.md).
 

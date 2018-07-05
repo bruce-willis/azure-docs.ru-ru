@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: be6e5fb83ea88ce30b64f5e1eb53422f0404410f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: bbf4e2a35667484fea66a1888cdfc0184a806583
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36229659"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308322"
 ---
 # <a name="tutorial-configure-salesforce-for-automatic-user-provisioning"></a>Руководство по настройке Salesforce для автоматической подготовки пользователей
 
@@ -95,7 +95,7 @@ ms.locfileid: "36229659"
 
 10. Скопируйте маркер, перейдите к окну Azure AD и вставьте его в поле **Секретный токен**.
 
-11. **URL-адрес клиента** нужно вводить, если экземпляр Salesforce находится в облаке для государственных организаций Salesforce. В других случаях это необязательный параметр. Введите URL-адрес клиента в формате https://your-instance.my.salesforce.com, заменив your-instance именем экземпляра Salesforce.
+11. **URL-адрес клиента** нужно вводить, если экземпляр Salesforce находится в облаке для государственных организаций Salesforce. В других случаях это необязательный параметр. Введите URL-адрес клиента в формате https://\<ваш_экземпляр\>.my.salesforce.com, заменив \<ваш_экземпляр\> именем экземпляра Salesforce.
 
 12. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению Salesforce.
 
