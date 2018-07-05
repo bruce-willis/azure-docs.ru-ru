@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: a3e7390e0df707c4898ad9573baa96b567499de1
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 4eb91e37331a5af064d2af0e937eb071d805688f
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33866614"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37097885"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
@@ -49,5 +49,5 @@ ms.locfileid: "33866614"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Для пользователей](../../multi-factor-authentication/end-user/multi-factor-authentication-end-user.md)
+* [Для пользователей](end-user/current/multi-factor-authentication-end-user.md)
 * [Выберите для себя решение "Многофакторная идентификация Microsoft Azure"](concept-mfa-whichversion.md)

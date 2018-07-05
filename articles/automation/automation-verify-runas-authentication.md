@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: c1ac698a1774a7a6242506ec65193434bb81cc25
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: af1d05c171eb5544104b12aebb6c7be937061f6a
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598775"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437184"
 ---
 # <a name="test-azure-automation-run-as-account-authentication"></a>Тестирование проверки подлинности учетной записи запуска от имени службы автоматизации Azure
 После успешного создания учетной записи службы автоматизации можно выполнить простой тест, чтобы убедиться, что вы сможете успешно пройти проверку подлинности в Azure Resource Manager или в классическом развертывании Azure с помощью созданной или обновленной учетной записи запуска от имени службы автоматизации.    
@@ -63,7 +63,7 @@ ms.locfileid: "34598775"
 Обратите внимание, что командлет **Connect-AzureRmAccount**, применяемый для проверки подлинности в runbook, использует набор параметров *ServicePrincipalCertificate*.  Он выполняет проверку подлинности с помощью сертификата субъекта-службы, а не учетных данных.  
 
 > [!IMPORTANT]
-> **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если элемент **Connect-AzureRMAccount** не отображается, вы можете использовать **Add-AzureRmAccount** или обновить модули в своей учетной записи службы автоматизации.
+> **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если при поиске в библиотеке элементов вы не видите элемент **Connect-AzureRMAccount**, можно использовать **Add-AzureRmAccount** или обновить модули в своей учетной записи службы автоматизации.
 
 При [запуске модуля runbook](automation-starting-a-runbook.md#starting-a-runbook-with-the-azure-portal) для проверки подлинности учетной записи запуска от имени будет создано [задание runbook](automation-runbook-execution.md), откроется страница "Задание", а состояние задания будет отображаться на плитке **Сводка по заданию**. Сначала задание получает состояние *В очереди* , указывающее на то, что задание ожидает, пока рабочая роль Runbook в облаке станет доступной. Как только рабочая роль затребует задание, оно получит состояние *Запущено*, а с началом фактического выполнения модуля Runbook — состояние *Выполняется*.  После выполнения задания Runbook должно отобразиться состояние **Выполнено**.
 

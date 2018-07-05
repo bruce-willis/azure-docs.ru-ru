@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: ae8751f429cb4b11199bd8da9d8c2e08c0b98b35
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8ba187fd82fa6a698905313bfda2802324a9034d
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34628289"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37097086"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении удаленного мониторинга
 
@@ -33,9 +33,9 @@ ms.locfileid: "34628289"
 
 Эта дополнительная функция удаленного мониторинга в настоящее время находится в режиме предварительной версии. Чтобы синхронизировать данные о подключении в решение удаленного мониторинга Azure, выполните такие задачи:
 
-1. Заполните форму запроса [на сайте Telefónica](https://iot.Telefónica.com/contact), выберите параметр **удаленного мониторинга Azure** и укажите ваши контактные данные.
+1. Заполните форму запроса [на сайте Telefónica](https://iot.telefonica.com/contact), выберите параметр **удаленного мониторинга Azure** и укажите ваши контактные данные.
 2. Telefónica активирует вашу учетную запись.
-3. Если вы еще не являетесь клиентом Telefónica и хотите пользоваться этим или другими готовыми облачными службами для подключения Интернета вещей, посетите [сайт Telefónica](https://iot.Telefónica.com/contact) и выберите вариант **Connectivity** (Подключение).
+3. Если вы еще не являетесь клиентом Telefónica и хотите пользоваться этим или другими готовыми облачными службами для подключения Интернета вещей, посетите [сайт Telefónica](https://iot.telefonica.com/) и выберите вариант **Connectivity** (Подключение).
 
 ### <a name="telefnica-sim-setup"></a>Установка SIM-карты Telefónica
 Связь идентификатора двойника устройства Azure и SIM-карты Telefónica устанавливается на основе свойства "псевдоним" SIM-карты Интернета вещей Telefónica. 

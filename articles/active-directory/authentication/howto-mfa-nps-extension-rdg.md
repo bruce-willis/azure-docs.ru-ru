@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: fbca491e845ad96ecafc6afb5f40d46b99c047bf
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 19d602570337b101e4a5cf759fc56822313c631c
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33932104"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098011"
 ---
 # <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Интеграция инфраструктуры шлюза удаленных рабочих столов с помощью расширения сервера политики сети (NPS) и Azure AD
 
@@ -95,7 +95,7 @@ ms.locfileid: "33932104"
 ### <a name="configure-accounts-for-two-step-verification"></a>Настройка учетных записей для двухфакторной проверки подлинности
 После включения MFA для учетной записи вы не сможете выполнить вход для доступа к ресурсам, управляемым политикой MFA, пока не настроите доверенное устройство для второго фактора аутентификации и не пройдете двухфакторную проверку подлинности.
 
-Следуйте указаниям в разделе [Что для меня означает Многофакторная идентификация Azure](./../../multi-factor-authentication/end-user/multi-factor-authentication-end-user.md), чтобы понять процедуру и правильно настроить устройства для Многофакторной идентификации с помощью своей учетной записи пользователя.
+Следуйте указаниям в разделе [Что для меня означает Многофакторная идентификация Azure](end-user/current/multi-factor-authentication-end-user.md), чтобы понять процедуру и правильно настроить устройства для Многофакторной идентификации с помощью своей учетной записи пользователя.
 
 ## <a name="install-and-configure-nps-extension"></a>Установка и настройка расширения NPS
 Этот раздел содержит инструкции по настройке инфраструктуры служб удаленных рабочих столов для использования Azure MFA для аутентификации клиентов с помощью шлюза удаленных рабочих столов.

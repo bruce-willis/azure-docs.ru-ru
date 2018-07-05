@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 54913fa7940ac83f5de87ad9f35d6dcee07d29d0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 6456663a1114ec00f2a071458c54067da53b52a7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598435"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37443730"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
 Используйте следующие ресурсы с примерами для изучения и тестирования служб Analysis Services в вашей среде.
@@ -39,5 +39,5 @@ ms.locfileid: "34598435"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Руководство по Adventure Works](/tutorials/aas-adventure-works-tutorial.md)   
+[Руководство по Adventure Works](tutorials/aas-adventure-works-tutorial.md)   
 [Локальный шлюз данных Azure](analysis-services-gateway.md)  

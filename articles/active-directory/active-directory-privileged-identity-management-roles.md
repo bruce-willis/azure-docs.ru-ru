@@ -7,18 +7,18 @@ author: rolyon
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.topic: article
+ms.topic: conceptual
 ms.workload: identity
 ms.component: protection
 ms.date: 03/04/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: 3d1027a2fe53a45b089fbae29a831d9e23df059e
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: cbb0e6c4f72e53938ba8ee838a1db9cab5357fc2
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233328"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441028"
 ---
 # <a name="different-administrative-role-in-azure-active-directory-pim"></a>Различные административные роли в Azure Active Directory PIM
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
@@ -28,7 +28,7 @@ ms.locfileid: "35233328"
 > [!IMPORTANT]
 > Для управления службой Azure AD рекомендуем использовать [Центр администрирования Azure AD](https://aad.portal.azure.com) на портале Azure.
 
-Глобальный администратор может **на постоянной основе** назначить пользователям роли в Azure AD с помощью командлетов PowerShell, таких как `Add-MsolRoleMember` и `Remove-MsolRoleMember`, или с помощью портала, как описано в статье о [назначении ролей администратора в Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md).
+Глобальный администратор может **на постоянной основе** назначить пользователям роли в Azure AD с помощью командлетов PowerShell, таких как `Add-MsolRoleMember` и `Remove-MsolRoleMember`, или с помощью портала, как описано в статье о [назначении ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md).
 
 Служба управления привилегированными пользователями (PIM) Azure AD управляет политиками привилегированного доступа для пользователей в Azure AD. PIM назначает пользователям одну или несколько ролей в Azure AD, и вы можете определить, будет ли роль назначена пользователю постоянно или временно. Когда пользователю на постоянной основе назначается роль или он активирует временное назначение роли, он может управлять Azure Active Directory, Office 365 и другими приложениями согласно разрешениям, назначенным его роли.
 
@@ -52,7 +52,7 @@ ms.locfileid: "35233328"
 * **Администратор SharePoint (предварительная версия)** имеет административный доступ к SharePoint Online посредством Центра администрирования SharePoint и может выполнить практически любую задачу в SharePoint Online. Сейчас эта роль доступна в предварительной версии. Допустимые пользователей могут наблюдать задержки при использовании данной роли в SharePoint после активации в PIM.
 * **Администратор Skype для бизнеса** имеет административный доступ к Skype для бизнеса через Центр администрирования Skype для бизнеса и может выполнить практически любую задачу в Skype для бизнеса Online.
 
-Дополнительные сведения см. в статье [Назначение ролей администратора в Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md) и [Назначение ролей администратора в Office 365](https://support.office.com/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504).
+Дополнительные сведения см. в статье [Назначение ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md) и [Назначение ролей администратора в Office 365](https://support.office.com/article/Assigning-admin-roles-in-Office-365-eac4d046-1afd-4f1a-85fc-8219c79e1504).
 
 <!--**PLACEHOLDER: The above article may not be the one we want since PIM gets roles from places other that Office 365**-->
 

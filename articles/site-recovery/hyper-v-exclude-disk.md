@@ -1,19 +1,17 @@
 ---
 title: Исключение дисков из защиты с помощью Azure Site Recovery | Документация Майкрософт
 description: В статье объясняется, как и зачем исключать диски виртуальных машин из репликации Hyper-V в Azure.
-services: site-recovery
 author: nsoneji
-manager: garavd
 ms.service: site-recovery
-ms.topic: article
-ms.date: 02/14/2018
+ms.topic: conceptual
+ms.date: 07/01/2018
 ms.author: nisoneji
-ms.openlocfilehash: 131c98c6772a68c8617df3160b159ece62bd1fc9
-ms.sourcegitcommit: d1f35f71e6b1cbeee79b06bfc3a7d0914ac57275
+ms.openlocfilehash: 8803b87b21e30e3ff3770147e4d56e965dc41c22
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2018
-ms.locfileid: "29466840"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37341884"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.

@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 05/15/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a20e8460e0243e2f6f2f258e26374a2cd716206c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 883d03b9ffebf85815da7ae62546f75b3d72442f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34601621"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441460"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 

@@ -9,12 +9,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/7/2017
 ms.author: sngun
-ms.openlocfilehash: ab24dc98ef4c767f04dc083ac6208e2c9d831935
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 15a4e2fa981617c538edf3731bf9457bf172213c
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34616810"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37113125"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
 В этой статье представлен обзор нескольких распространенных примеров использования Azure Cosmos DB.  Рекомендации в данной статье служат отправной точкой для разработки приложений с использованием Cosmos DB.   
@@ -51,7 +51,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Пример решения Интернета вещей, использующего Azure Cosmos DB, концентраторы событий и Storm, см. в [репозитории hdinsight-storm-examples на портале GitHub](https://github.com/hdinsight/hdinsight-storm-examples/).
 
-Дополнительные сведения о предложениях Azure для Интернета вещей см. в видеоролике [Create the Internet of Your Things](http://www.microsoft.com/server-cloud/internet-of-things.aspx) (Создайте Интернет своих вещей). 
+Дополнительные сведения о предложениях Azure для Интернета вещей см. в видеоролике [Create the Internet of Your Things](https://www.microsoft.com/en-us/internet-of-things) (Создайте Интернет своих вещей). 
 
 ## <a name="retail-and-marketing"></a>Розничная торговля и маркетинг
 Служба Azure Cosmos DB широко используется на платформах Майкрософт для электронной коммерции, которые работают под управлением Магазина Windows и XBox Live. Она также используется в сфере торговли для хранения данных каталога и для источников событий в конвейерах обработки заказов.

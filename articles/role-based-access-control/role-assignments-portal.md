@@ -1,6 +1,6 @@
 ---
 title: Управление доступом с помощью RBAC и портала Azure | Документация Майкрософт
-description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и портала Azure. Здесь содержатся инструкции по выводу списка доступа, предоставлению и запрету доступа.
+description: Узнайте, как управлять доступом пользователей, групп и приложений с помощью управления доступом на основе ролей (RBAC) и портала Azure. Сюда также входят сведения о том, как перечислять, предоставлять и удалять права доступа.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -8,18 +8,18 @@ manager: mtillman
 ms.assetid: 8078f366-a2c4-4fbb-a44b-fc39fd89df81
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/13/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 0aec1f50225bea25d5f68289c22ccc7b69703f7a
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 6544503353f085a9dd9b0fe7207bbf8d4e0bc9d0
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317952"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37435623"
 ---
 # <a name="manage-access-using-rbac-and-the-azure-portal"></a>Управление доступом с помощью RBAC и портала Azure
 

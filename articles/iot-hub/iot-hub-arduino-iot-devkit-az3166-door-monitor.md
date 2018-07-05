@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: 80537bb817baf20831ad5020f0db775f21836f92
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 25cb3ba53c663a642f0871becbfbcab39d521c67
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34632141"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437721"
 ---
 # <a name="door-monitor"></a>Мониторинг двери          
 
@@ -33,7 +33,7 @@ ms.locfileid: "34632141"
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-Выполните указания в [руководстве по началу работы]({{"/docs/get-started/" | absolute_url }}), чтобы перейти к таким этапам:
+Выполните указания в [руководстве по началу работы](iot-hub-arduino-iot-devkit-az3166-get-started.md), чтобы перейти к таким этапам:
 
 * Подключение DevKit к сети Wi-Fi.
 * Подготовка среды разработки

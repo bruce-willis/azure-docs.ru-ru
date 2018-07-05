@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/13/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ce323972dcdbf673311b407f427bc452fbe6dc3a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 31ca79976ec2ecf2755b975749e9c9150c4a49e8
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34709732"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441079"
 ---
 # <a name="release-notes-for-azure-active-directory-b2c-custom-policy-public-preview"></a>Заметки о выпуске общедоступной предварительной версии настраиваемой политики Azure Active Directory B2C
 Набор функций настраиваемой политики теперь доступен для оценки в общедоступной предварительной версии для всех клиентов Azure Active Directory B2C (Azure AD B2C). Этот набор функций предназначен для опытных разработчиков удостоверений, создающих самые сложные решения удостоверений.  

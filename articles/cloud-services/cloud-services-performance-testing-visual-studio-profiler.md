@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/18/2016
 ms.author: mikejo
-ms.openlocfilehash: 8ff7b88a3086488ab669288687c274237ca30b47
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.openlocfilehash: ea46039583681bd89e254d153997e3a300041d4e
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30284563"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37341360"
 ---
 # <a name="testing-the-performance-of-a-cloud-service-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>Локальное тестирование производительности облачной службы в эмуляторе вычислений Azure с помощью профилировщика Visual Studio
 Для тестирования производительности облачных служб доступны разнообразные средства и методы.
@@ -167,7 +167,7 @@ public static string Concatenate(int number)
 ## <a name="next-steps"></a>Дальнейшие действия
 Инструментирование двоичных файлов Azure в эмуляторе не поддерживается в профилировщике Visual Studio, но в случае, если нужно проверить распределение памяти, этот параметр можно выбрать при профилировании. Можно также выбрать параллельное профилирование — это поможет выявить затраты времени на конкурирование потоков за блокировку, или профилирование взаимодействия слоев, что поможет отслеживать проблемы с производительностью в ходе обмена данными между слоями приложения, чаще всего между уровнем данных и ролью рабочего процесса.  Можно просмотреть запросы к базе данных, создаваемые приложением, и использовать данные профилирования для повышения эффективности работы с базой данных. Сведения о профилировании межуровневого взаимодействия см. в записи блога [Walkthrough: Using the Tier Interaction Profiler in Visual Studio Team System 2010][3] (Пошаговое руководство. Использование профилировщика межуровневого взаимодействия в Visual Studio Team System 2010).
 
-[1]: http://msdn.microsoft.com/library/azure/hh369930.aspx
+[1]: https://docs.microsoft.com/azure/application-insights/app-insights-profiler
 [2]: http://msdn.microsoft.com/library/azure/hh411542.aspx
 [3]: http://blogs.msdn.com/b/habibh/archive/2009/06/30/walkthrough-using-the-tier-interaction-profiler-in-visual-studio-team-system-2010.aspx
 [4]: ./media/cloud-services-performance-testing-visual-studio-profiler/ProfilingLocally09.png

@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ad4de055e4f951beb441af90c37ada11ad0abfb0
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 4ad7a6fb032c805072fd9608fb8058a70aa12914
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34711296"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441837"
 ---
 # <a name="azure-active-directory-b2c-web-sign-in-with-openid-connect"></a>Azure Active Directory B2C: вход в веб-приложения с помощью OpenID Connect
 OpenID Connect — это протокол проверки подлинности на основе OAuth 2.0, который может использоваться для безопасного входа пользователей в веб-приложения. Используя реализацию OpenID Connect в Azure Active Directory B2C (Azure AD B2C), можно передать Azure Active Directory (Azure AD) регистрацию, вход в систему и другие действия по управлению пользователями в веб-приложениях. В этом руководстве показано, как это сделать (независимо от языка программирования). и описывает, как отправлять и получать сообщения HTTP, не используя ни одну из наших библиотек с открытым исходным кодом.

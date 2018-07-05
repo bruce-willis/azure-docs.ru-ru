@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 05/02/2018
+ms.date: 06/28/2018
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
-ms.openlocfilehash: 3d73cae0975bea0332c2d266d2745773b373b7d8
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 4b3ff0b2481b42f516d28ac17f2616685730b7d5
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33762376"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109592"
 ---
 # <a name="linkedin-account-connections-for-microsoft-apps-and-services"></a>Подключения к учетным записям LinkedIn для приложений и служб Майкрософт
 В статье рассматриваются вопросы управления подключениями к учетным записям LinkedIn для вашего клиента в центре администрирования Azure Active Directory (Azure AD). 
@@ -53,7 +53,7 @@ ms.locfileid: "33762376"
 4. В разделе **LinkedIn account connections** (Подключения к учетной записи LinkedIn).
   * Выберите **Да**, чтобы включить подключения к учетной записи LinkedIn для всех пользователей вашего клиента.
   * Выберите **Избранные**, чтобы включить подключения к учетной записи LinkedIn лишь для ограниченной группы пользователей вашего клиента.
-  * Выберите **Нет**, чтобы отключить подключения к учетной записи LinkedIn для всех пользователей в разделе ![LinkedIn account connections](./media/linkedin-integration/LinkedIn-integration.png) (Подключения к учетной записи LinkedIn).
+  * Выберите **Нет**, чтобы отключить подключения к учетной записи LinkedIn для всех пользователей в разделе ![LinkedIn account connections](./media/linkedin-integration/linkedin-integration.png) (Подключения к учетной записи LinkedIn).
 5. По завершении сохраните параметры, нажав кнопку **Сохранить**.
 
 ### <a name="enable-or-disable-linkedin-account-connections-for-your-organizations-office-2016-apps-using-group-policy"></a>Включение и отключение подключений к учетной записи LinkedIn для приложений Office 2016 в вашей организации с помощью групповой политики
@@ -64,7 +64,7 @@ ms.locfileid: "33762376"
 4. Создайте объект групповой политики со следующими параметрами: **Конфигурация пользователя** > **Административные шаблоны** > **Microsoft Office 2016** > **Разное** > **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office).
 5. Выберите **Включено** или **Отключено**.
   * Если эта политика **включена**, параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) отображается в диалоговом окне параметров Office 2016. Это также означает, что пользователи в вашей организации могут использовать функции LinkedIn в приложениях Office.
-  * Если эта политика **отключена**, параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в диалоговом окне параметров Office 2016 отключен и конечные пользователи не могут изменить его значение. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016. 
+  * Если эта политика **отключена**, параметр **Show LinkedIn features in Office applications** (Показывать функции LinkedIn в приложениях Office) в диалоговом окне параметров Office 2016 отключен и конечные пользователи не могут изменить его значение. Пользователи в вашей организации не могут использовать функции LinkedIn в приложениях Office 2016.
 
 Эта групповая политика касается только приложений Office 2016 для локальных компьютеров. Функции LinkedIn будут отображаться в карточках профиля в Office 365, даже если пользователи отключат LinkedIn в приложениях Office 2016. 
 

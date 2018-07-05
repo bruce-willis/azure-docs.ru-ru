@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/09/2018
+ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: ab07a11883b3462c4b9d0f9adab6c55e4fe49d78
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: 887611f1293e276070df51ac06df51a994161ec1
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34010257"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37112204"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](monitoring-solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Также вы здесь найдете сведения о методах и частоте сбора данных в Log Analytics.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -65,9 +65,6 @@ ms.locfileid: "34010257"
 | [Монитор производительности сети](../log-analytics/log-analytics-network-performance-monitor.md) | Windows | &#8226; | &#8226; |  |  |  | Подтверждения TCP выполняются каждые 5 секунд, данные отправляются каждые 3 минуты |
 | [Аналитика Office 365 (предварительная версия)](../operations-management-suite/oms-solution-office-365.md) |Windows | | | | | |при уведомлении |
 | **Решение по управлению** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
-| [Безопасность и аудит](../operations-management-suite/oms-security-getting-started.md) (системный журнал) | Linux | &#8226; | | |  |  | При получении |
-| [Безопасность и аудит](../operations-management-suite/oms-security-getting-started.md) (журналы событий безопасности) |Windows |&#8226; |&#8226; |&#8226; |  |&#8226; | При получении |
-| [Безопасность и аудит](../operations-management-suite/oms-security-getting-started.md) (журналы брандмауэра) |Windows |&#8226; |&#8226; |  |  |  |При получении |
 | [Анализ Service Fabric (предварительная версия)](../log-analytics/log-analytics-service-fabric.md) |Windows | | |&#8226; | | |5 мин |
 | [Схема услуги](../operations-management-suite/operations-management-suite-service-map.md) | Windows и Linux | &#8226; | &#8226; |  |  |  | 15 секунд |
 | [Оценка SQL](../log-analytics/log-analytics-sql-assessment.md) |Windows |&#8226; |&#8226; | | |&#8226; |7 дней |

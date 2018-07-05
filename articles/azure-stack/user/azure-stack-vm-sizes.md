@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/17/2018
 ms.author: brenduns
-ms.openlocfilehash: b84744a52426123f2f3e7dd4c14419fef8b779cc
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 52ab831dfaca337cdf803f410d3824b514fd0e8a
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34258636"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437160"
 ---
 # <a name="virtual-machine-sizes-supported-in-azure-stack"></a>Поддерживаемые размеры виртуальных машин в Azure Stack
 
@@ -38,7 +38,7 @@ ms.locfileid: "34258636"
 |**A1\Basic_A1**  |1    |1,75 ГБ  | 40 ГБ   |300  | 300  |2/2 x 300  |1   |
 |**A2\Basic_A2**  |2    |3,5 ГБ   | 60 ГБ   |300  | 300  |4 / 4 x 300  |1   |
 |**A3\Basic_A3**  |4.    |7 ГБ     | 120 ГБ  |300  | 300  |8/8 x 300  |1   |
-|**A4\Basic_A4**  |8    |14 ГБ    | 240 ГБ  |300  | 300  |6/16 x 300 |1   |
+|**A4\Basic_A4**  |8    |14 ГБ    | 240 ГБ  |300  | 300  |16 / 16X300 |1   |
 
 ### <a name="standard-a"></a>Standard A 
 |Размер     |vCPU     |Память, ГиБ | Временное хранилище, Гиб  | Максимальная пропускная способность дисков ОС, операций ввода-вывода в секунду | Максимальная пропускная способность временного хранилища, операций ввода-вывода в секунду | Максимальное число дисков данных/пропускная способность: операций ввода-вывода в секунду | Максимальное количество сетевых адаптеров/ожидаемая пропускная способность сети (Мбит/с) |    

@@ -2,19 +2,19 @@
 title: Резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы Azure Backup
 description: В этой статье приведены сведения о резервном копировании и восстановлении виртуальных машин, зашифрованных с помощью шифрования дисков Azure.
 services: backup
-author: JPallavi
+author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 10/13/2017
-ms.author: pajosh
+ms.author: sogup
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 18a4b0f369ea7ed65945fd43a60cbf44589ca8f2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 49361aef774e9eb5a0995bc106e73b236a71b0bb
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34607292"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441137"
 ---
 # <a name="back-up-and-restore-encrypted-virtual-machines-with-azure-backup"></a>Резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы Azure Backup
 В этой статье рассказывается о действиях по резервному копированию и восстановлению виртуальных машин с помощью службы Azure Backup. Кроме того, здесь приведены поддерживаемые сценарии, предварительные требования и сведения об устранении неполадок при возникновении ошибок.

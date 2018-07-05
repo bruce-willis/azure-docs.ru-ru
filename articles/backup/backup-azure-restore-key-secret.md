@@ -2,19 +2,19 @@
 title: Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 description: Узнайте, как восстановить ключ и секрет хранилища ключей в службе архивации Azure с помощью PowerShell
 services: backup
-author: JPallavi
+author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
 ms.date: 08/28/2017
-ms.author: pajosh
+ms.author: sogup
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b703b4511f9fefb48546b23feaa33ca7da34da1f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 52024dc414b7f1d420b8196792eeb91bb9a4be6f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34606109"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441120"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 В этой статье рассказывается об использовании службы архивации виртуальных машин Azure для восстановления зашифрованных виртуальных машин Azure, когда ключ и секрет отсутствуют в хранилище ключей. Эта процедура будет также полезной, если нужно хранить отдельную копию ключа (ключ шифрования ключа) и секрета (ключ шифрования BitLocker) для восстанавливаемой виртуальной машины.

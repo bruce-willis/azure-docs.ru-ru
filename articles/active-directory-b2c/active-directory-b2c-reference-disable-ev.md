@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 2/06/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 24242054ea4af3797fbeca1ed48bb698e4f4296b
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: c1bebe46832226e822d9eeb002cb555b72a1d7fa
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34712017"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441613"
 ---
 # <a name="azure-active-directory-b2c-disable-email-verification-during-consumer-sign-up"></a>Azure Active Directory B2C: отключение проверки адреса электронной почты во время регистрации потребителя
 Когда этот параметр включен, служба Azure Active Directory (Azure AD) B2C предоставляет потребителю возможность зарегистрироваться для получения доступа к приложениям, предоставив адрес электронной почты и создав локальную учетную запись. Чтобы убедиться, что адреса электронной почты являются действительными, Azure AD B2C требует от потребителей выполнить их проверку в процессе регистрации. Также предотвращаются вредоносные автоматизированные процессы, создающие для приложений фальшивые учетные записи.

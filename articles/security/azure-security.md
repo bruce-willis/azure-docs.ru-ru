@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: a7b8c480291360cb50af1ce4ae36cd406f0ddc21
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: bda8f72de16d1d8d95823de98aab8ec209908e63
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895257"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437796"
 ---
 # <a name="introduction-to-azure-security"></a>Введение в систему безопасности Azure
 ## <a name="overview"></a>Обзор
@@ -113,7 +113,7 @@ Log Analytics может быть полезным инструментом дл
 Один из самых простых способов приступить к проверке [приложения службы приложений](https://docs.microsoft.com/azure/app-service/app-service-web-overview) на уязвимости — использовать [интеграцию с системой Tinfoil Security](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/), позволяющей просканировать приложение одним щелчком мыши. Вы получите удобный отчет по результатам проверки и пошаговые инструкции по устранению уязвимостей.
 
 ### <a name="penetration-testing"></a>Выполнение тестов на проникновение
-Если вы хотите провести собственные тесты на защиту от несанкционированного доступа или воспользоваться другой системой сканирования или поставщиком услуг, выполните [процедуру утверждения тестов Azure на защиту от несанкционированного доступа](https://security-forms.azure.com/penetration-testing/terms) и получите предварительное разрешение на проведение желаемых тестов.
+Если вы хотите провести собственные тесты на защиту от несанкционированного доступа или воспользоваться другой системой сканирования или поставщиком услуг, выполните [процедуру утверждения тестов Azure на защиту от несанкционированного доступа](https://docs.microsoft.com/en-us/azure/security/azure-security-pen-testing ) и получите предварительное разрешение на проведение желаемых тестов.
 
 ### <a name="web-application-firewall"></a>Брандмауэр веб-приложения
 Брандмауэр веб-приложения (WAF) в [шлюзе приложений Azure](https://azure.microsoft.com/services/application-gateway/) помогает защитить веб-приложения от таких распространенных сетевых атак, как атаки путем внедрения кода SQL, атаки с использованием межсайтовых сценариев и перехваты сеанса. Он предварительно настроен для защиты от [10 наиболее распространенных угроз, идентифицированных сообществом Open Web Application Security Project (OWASP)](https://msdn.microsoft.com/library/).

@@ -2,19 +2,19 @@
 title: Использование службы файлов Azure с AKS
 description: Использование дисков Azure с AKS.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 03/08/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: e0e62d37fbcc8f296deaee8e0f6658c0f72321ad
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 25ae0e508223b50219e40245cc9dfbc407b96bba
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33934620"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37096702"
 ---
 # <a name="volumes-with-azure-files"></a>Тома с файлами Azure
 
@@ -22,7 +22,7 @@ ms.locfileid: "33934620"
 
 Дополнительные сведения о томах Kubernetes см. в разделе [Volumes][kubernetes-volumes] (Тома).
 
-## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
 Перед использованием файлового ресурса Azure в качестве тома Kubernetes необходимо создать учетную запись хранения Azure и файловый ресурс. Для выполнения этих задач можно использовать приведенный ниже сценарий. Запишите или измените значения параметров. Некоторые из них понадобятся при создании тома Kubernetes.
 

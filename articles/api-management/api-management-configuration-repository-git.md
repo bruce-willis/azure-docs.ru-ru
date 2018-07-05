@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: apimpm
-ms.openlocfilehash: 0165de82850c0c80052564c5f31a5e5cf5effb11
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 87381a27a59d6719f4bfff9ed367598932c1985c
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938314"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37436409"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -226,7 +226,7 @@ git push
 ### <a name="groups-folder"></a>Папка groups
 Папка `groups` содержит папку для каждой группы, определенной в экземпляре службы.
 
-* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://msdn.microsoft.com/library/azure/dn776329.aspx#GetGroup) .
+* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/en-us/rest/api/apimanagement/group/get) .
 * `groups\<group name>\description.html` — это описание группы, которое соответствует свойству `description` [сущности group](https://msdn.microsoft.com/library/azure/dn776329.aspx#EntityProperties).
 
 ### <a name="policies-folder"></a>Папка policies
@@ -246,8 +246,8 @@ git push
 ### <a name="products-folder"></a>Папка products
 Папка `products` содержит папку для каждого продукта, определенного в экземпляре службы.
 
-* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://msdn.microsoft.com/library/azure/dn776336.aspx#GetProduct) .
-* `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description` [сущности product](https://msdn.microsoft.com/library/azure/dn776336.aspx#Product) в REST API.
+* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/en-us/rest/api/apimanagement/product/get) .
+* `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description` [сущности product](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-product-entity) в REST API.
 
 ### <a name="templates"></a>шаблоны
 Папка `templates` содержит конфигурацию для [шаблонов электронной почты](api-management-howto-configure-notifications.md) экземпляра службы.
