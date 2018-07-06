@@ -1,6 +1,6 @@
 ---
-title: Встроенные роли для управления доступом на основе ролей (RBAC) в Azure | Документация Майкрософт
-description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) в Azure. Список actions и notActions.
+title: Встроенные роли в Azure | Документация Майкрософт
+description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) в Azure. Actions, notActions, dataActions и notDataActions.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.date: 06/06/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: cea928d5a4ea5cddaa9942c9535945e11f0f80ad
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 861b4ca360ef3fb9bc752d79009570ee2cfc9ade
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267379"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294502"
 ---
-# <a name="built-in-roles-for-azure-role-based-access-control"></a>Встроенные роли управления доступом на основе ролей в Azure
+# <a name="built-in-roles-in-azure"></a>Встроенные роли в Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
 
 Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).

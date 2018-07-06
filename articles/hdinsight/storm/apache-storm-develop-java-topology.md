@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 5f2a6de9737569c75e0350e2aceec19b149d9549
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 105c10423a9688300ba74874769b162e29572185
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31418498"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128611"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -600,7 +600,7 @@ Flux — это новая платформа, доступная в Storm 0.10.
 Дополнительные сведения о платформе Flux см. [здесь (https://storm.apache.org/releases/0.10.0/flux.html)](https://storm.apache.org/releases/0.10.0/flux.html).
 
 > [!WARNING]
-> Из-за [ошибки (https://issues.apache.org/jira/browse/STORM-2055)](https://storm.apache.org/releases/1.0.1/Setting-up-development-environment.html) в Storm 1.0.1 может потребоваться установить ](https://issues.apache.org/jira/browse/STORM-2055)среду разработки Storm[ для локального запуска топологий Flux.
+> Из-за [ошибки (https://issues.apache.org/jira/browse/STORM-2055)](https://issues.apache.org/jira/browse/STORM-2055)в Storm 1.0.1 может потребоваться установить [среду разработки Storm ](http://storm.apache.org/releases/current/Setting-up-development-environment.html) для локального запуска топологий Flux.
 
 1. Удалите файл `WordCountTopology.java` из проекта. Ранее он определял топологию, но с платформой Flux он больше не нужен.
 
@@ -719,9 +719,9 @@ Flux — это новая платформа, доступная в Storm 0.10.
     ```
 
     > [!WARNING]
-    > Эта команда не выполняется, если топология использует ресурсы Storm 1.0.1. Причиной этого является ошибка [https://issues.apache.org/jira/browse/STORM-2055](https://issues.apache.org/jira/browse/STORM-2055). Вместо этого [установите Storm в среде разработки](http://storm.apache.org/releases/0.10.0/Setting-up-development-environment.html) и выполните следующие действия:
+    > Эта команда не выполняется, если топология использует ресурсы Storm 1.0.1. Причиной этого является ошибка [https://issues.apache.org/jira/browse/STORM-2055](https://issues.apache.org/jira/browse/STORM-2055). Вместо этого [установите Storm в среде разработки](http://storm.apache.org/releases/current/Setting-up-development-environment.html) и выполните следующие действия:
     >
-    > Если вы [установили Storm в среде разработки](http://storm.apache.org/releases/0.10.0/Setting-up-development-environment.html), вместо этого можно использовать приведенные ниже команды.
+    > Если вы [установили Storm в среде разработки](http://storm.apache.org/releases/current/Setting-up-development-environment.html), вместо этого можно использовать приведенные ниже команды.
     >
     > ```bash
     > mvn compile package

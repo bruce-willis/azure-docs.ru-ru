@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 09/28/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e27d7f75dd3d0391f45805f4424248c8eac483c7
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: df808078ffe6eedf8abaa32a94edaaf1355b7fc6
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29847623"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129910"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
@@ -175,7 +175,7 @@ az batch task list --job-id job001
 * Чтобы отобразить выходные данные команды **verbose**, используйте `-v` и `-vv`. Когда флаг `-vv` включен, Azure CLI отображает текущие REST-запросы и ответы. Эти параметры удобно использовать для просмотра полного вывода ошибок.
 * Вы можете просмотреть **выходные данные команды в виде JSON** с помощью параметра `--json`. Например, параметр `az batch pool show pool001 --json` отображает свойства элемента pool001 в формате JSON. Затем вы можете скопировать и изменить эти выходные данные для использования в параметре `--json-file` (см. выше раздел, посвященный [JSON-файлам](#json-files)).
 <!---Loc Comment: Please, check link [JSON files] since it's not redirecting to any location.--->
-* [Форум пакетной службы][batch_forum] тщательно отслеживают специалисты пакетной службы. Задавайте вопросы на форуме, если у вас возникнут проблемы или вам потребуется справочная информация по какой-либо операции.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -183,7 +183,6 @@ az batch task list --job-id job001
 * Дополнительные сведения о ресурсах пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).
 * Дополнительные сведения о создании пулов, заданий и задач без написания кода с помощью шаблонов пакетной службы см. в руководстве по [использованию шаблонов интерфейса командной строки для пакетной службы Azure и передаче файлов (предварительная версия)](batch-cli-templates.md).
 
-[batch_forum]: https://social.msdn.microsoft.com/forums/azure/home?forum=azurebatch
 [github_readme]: https://github.com/Azure/azure-xplat-cli/blob/dev/README.md
 [rest_api]: https://msdn.microsoft.com/library/azure/dn820158.aspx
 [rest_add_pool]: https://msdn.microsoft.com/library/azure/dn820174.aspx

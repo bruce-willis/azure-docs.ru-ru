@@ -1,6 +1,6 @@
 ---
 title: Просмотр журналов действий на наличие изменений в управлении доступом на основе ролей в Azure | Документы Майкрософт
-description: Вы можете просматривать журналы действий на наличие изменений в управлении доступом за последние 90 дней.
+description: Вы можете просматривать журналы действий на наличие изменений в управлении доступом на основе ролей (RBAC) за последние 90 дней.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -15,14 +15,14 @@ ms.date: 05/23/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 03961de233861baf923402cc96ab8174b3233bd0
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: c82c24c6d652a65f5ba851de66a1f2fe595a46a5
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266665"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293393"
 ---
-# <a name="view-activity-logs-for-role-based-access-control-changes"></a>Просмотр журналов действий на наличие изменений в управлении доступом
+# <a name="view-activity-logs-for-rbac-changes"></a>Просмотр журналов действий на предмет изменений в RBAC
 
 Иногда могут потребоваться сведения об изменении доступа на основе ролей (RBAC), например для аудита и устранения неполадок. Каждый раз, когда кто-либо вносит изменения в определения ролей или назначения ролей в ваших подписках, изменения регистрируются в [журнале действий Azure](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md). Вы можете просматривать журналы действий, чтобы увидеть все изменения в управлении доступом на основе ролей за последние 90 дней.
 

@@ -8,17 +8,17 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 05/18/2018
-ms.openlocfilehash: 14ed3ef57da28b6929115cf3e5746653d199b140
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.date: 06/20/2018
+ms.openlocfilehash: 72f8211ecc0534b15402911de8fc0ec3d541a835
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263754"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294910"
 ---
 # <a name="replicate-data-into-azure-database-for-mysql"></a>Репликация данных в базу данных Azure для MySQL
 
-Функция репликации входных данных позволяет синхронизировать данные работающего локально сервера MySQL в виртуальных машинах или службах баз данных, размещенных другими облачными поставщиками, в службу базы данных Azure для MySQL. Репликация входных данных основана на функции собственной репликации в MySQL на базе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog MySQL см. в [этой статье](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html). 
+Репликация входных данных позволяет синхронизировать данные работающего локально сервера MySQL в виртуальных машинах или службах баз данных, размещенных другими облачными поставщиками, в службу базы данных Azure для MySQL. Репликация входных данных основана на функции собственной репликации в MySQL на основе позиции файла двоичного журнала (binlog). Дополнительные сведения о репликации binlog MySQL см. в [этой статье](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html). 
 
 ## <a name="when-to-use-data-in-replication"></a>Когда следует использовать репликацию входных данных
 Ниже приведены основные сценарии применения репликации входных данных.

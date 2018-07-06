@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 05/15/2017
 ms.author: adegeo
-ms.openlocfilehash: 16d35a6b36f4dd85db430e05abdff898affbfd67
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 7860af5dea41ce00739b592c5409fe5a1a05383b
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32160027"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342299"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -291,7 +291,7 @@ ms.locfileid: "32160027"
 
     ![Этап настроек](./media/cloud-services-dotnet-get-started/pubsettings.png)
 
-    Заданные на вкладке **Дополнительно** значения по умолчанию подходят для работы с этим руководством. Дополнительные сведения о вкладке "Дополнительно" см. в разделе о [мастере публикации приложения Azure](http://msdn.microsoft.com/library/hh535756.aspx).
+    Заданные на вкладке **Дополнительно** значения по умолчанию подходят для работы с этим руководством. Дополнительные сведения о вкладке "Дополнительно" см. в разделе о [мастере публикации приложения Azure](https://docs.microsoft.com/azure/vs-azure-tools-publish-azure-application-wizard).
 4. На этапе **Сводка** щелкните **Опубликовать**.
 
     ![Сводка действий](./media/cloud-services-dotnet-get-started/pubsummary.png)

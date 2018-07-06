@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: bcd08ac8563edfaf4297e26ad42ed8bc62d86918
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: e226aadbe499d5905b1814bec5d042f67d898c18
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831641"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294855"
 ---
 # <a name="deploy-azure-blockchain-workbench"></a>Развертывание Azure Blockchain Workbench
 
@@ -48,7 +48,10 @@ Blockchain Workbench позволяет развернуть реестр бло
 
 ### <a name="blockchain-workbench-api-app-registration"></a>Регистрация приложения Blockchain Workbench API
 
-Для развертывания Blockchain Workbench необходима регистрация приложения в Azure AD. Чтобы зарегистрировать приложение, вам нужен клиент Azure Active Directory (Azure AD). Можно использовать существующий клиент или создать новый. Если использовать существующий клиент Azure AD, необходимо достаточно разрешений для регистрации приложения в клиенте Azure AD. Регистрация приложения должна проходить в клиенте администратора подписки, который, в свою очередь, находится в подписке, где развернут Workbench. Дополнительные сведения о клиентах Azure AD см. в статьях [Как получить клиент Azure Active Directory](../active-directory/develop/active-directory-howto-tenant.md) и [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-integrating-applications.md).
+Для развертывания Blockchain Workbench необходима регистрация приложения в Azure AD. Чтобы зарегистрировать приложение, вам нужен клиент Azure Active Directory (Azure AD). Можно использовать существующий клиент или создать новый. Если вы используете существующий клиент Azure AD, для регистрации приложений и предоставления разрешений API Graph в клиенте Azure AD требуются определенные разрешения. Если у вас нет таких разрешений в существующем клиенте Azure AD, создайте новый клиент. 
+
+> [!IMPORTANT]
+> Workbench не обязательно развертывать в клиенте, который используется для регистрации приложения Azure AD. Workbench следует развернуть в клиенте, в котором у вас есть достаточно разрешений для развертывания ресурсов. Дополнительные сведения о клиентах Azure AD см. в статьях [Как получить клиент Azure Active Directory](../active-directory/develop/active-directory-howto-tenant.md) и [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-integrating-applications.md).
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. В правом верхнем углу выберите свою учетную запись, а затем перейдите в нужный клиент Azure AD. Клиент должен находиться в клиенте администратора подписки, в которой развертывается Workbench, и иметь достаточные разрешения для регистрации приложения.

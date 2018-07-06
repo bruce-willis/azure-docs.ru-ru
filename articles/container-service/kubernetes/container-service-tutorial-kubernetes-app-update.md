@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: f54179329b521cc861e90f023ff0b010b7ce1f75
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 81f2302df5740b482f03a4a724d2899734579949
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164968"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37096865"
 ---
 # <a name="update-an-application-in-kubernetes"></a>Обновление приложения в Kubernetes
 
@@ -100,7 +100,7 @@ docker push <acrLoginServer>/azure-vote-front:redis-v2
 
 ## <a name="deploy-update-application"></a>Развертывание обновленного приложения
 
-Чтобы обеспечить максимальное время доступности, должны быть запущены несколько экземпляров группы контейнеров приложения. Проверьте эту конфигурацию с помощью команды [kubectl get pod](https://kubernetes.io/docs/user-guide/kubectl/v1.6/#get).
+Чтобы обеспечить максимальное время доступности, должны быть запущены несколько экземпляров группы контейнеров приложения. Проверьте эту конфигурацию с помощью команды [kubectl get pod](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get).
 
 ```bash
 kubectl get pod
@@ -123,13 +123,13 @@ azure-vote-front-233282510-pqbfk   1/1       Running   0          10m
 kubectl scale --replicas=3 deployment/azure-vote-front
 ```
 
-Чтобы обновить приложение, используйте команду [kubectl set](https://kubernetes.io/docs/user-guide/kubectl/v1.6/#set). Обновите `<acrLoginServer>`, используя имя сервера входа или имя узла реестра контейнеров.
+Чтобы обновить приложение, используйте команду [kubectl set](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#set). Обновите `<acrLoginServer>`, используя имя сервера входа или имя узла реестра контейнеров.
 
 ```azurecli-interactive
 kubectl set image deployment azure-vote-front azure-vote-front=<acrLoginServer>/azure-vote-front:redis-v2
 ```
 
-Для мониторинга развертывания используйте команду [kubectl get pod](https://kubernetes.io/docs/user-guide/kubectl/v1.6/#get). По мере развертывания обновленного приложения ваши группы контейнеров прекращают работу и воссоздаются с новым образом контейнера.
+Для мониторинга развертывания используйте команду [kubectl get pod](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get). По мере развертывания обновленного приложения ваши группы контейнеров прекращают работу и воссоздаются с новым образом контейнера.
 
 ```azurecli-interactive
 kubectl get pod

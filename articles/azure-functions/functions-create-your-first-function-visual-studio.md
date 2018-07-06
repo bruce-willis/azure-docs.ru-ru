@@ -17,12 +17,12 @@ ms.workload: na
 ms.date: 05/22/2018
 ms.author: glenga
 ms.custom: mvc, devcenter, 23113853-34f2-4f
-ms.openlocfilehash: d815bf3fa4b63f12ac9f0d871e353e872a5aca25
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: c5d09e03eb79d89604cba6d9533051bb9b50ce90
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34699977"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37084847"
 ---
 # <a name="create-your-first-function-using-visual-studio"></a>Создание первой функции с помощью Visual Studio
 
@@ -95,5 +95,4 @@ Visual Studio создает проект и класс в нем, содерж�
 С помощью Visual Studio вы создали и опубликовали приложение-функцию C# с простой функцией, активируемой HTTP.
 
 * [Узнайте, как добавлять входные и выходные привязки, которые интегрируются с другими службами](functions-develop-vs.md#add-bindings).
-* [Получите дополнительные сведения о локальном тестировании и отладке с помощью основных инструментов Функций Azure](functions-run-local.md#vs-debug).
 * [Получите дополнительные сведения о разработке функций в качестве библиотек классов .NET](functions-dotnet-class-library.md).

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/27/2018
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: 9c562f1ce938e5f5d9371cbccf032c0eb1d67125
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 3e7fcde204966e5a6a8154ab307807652cfa0419
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37055036"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37086217"
 ---
 Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. Модуль IoT Edge — это исполняемый пакет, который реализован как контейнер. В этом разделе вы развернете модуль, при помощи которого создаются данные телеметрии для имитированного устройства. 
 
@@ -21,7 +21,7 @@ ms.locfileid: "37055036"
 1. Щелкните **IoT Edge** и выберите устройство IoT Edge.
 1. Щелкните **Set Modules** (Настроить модули).
 1. В разделе **Deployment Modules** (Модули развертывания) на этой странице щелкните **Добавить**, а затем выберите **Модуль IoT Edge**.
-1. В поле **Имя** введите `tempsensor`. 
+1. В поле **Имя** введите `tempSensor`. 
 1. В поле **URI образа** введите `mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0`. 
 1. Оставьте без изменений другие параметры и выберите **Сохранить**.
 

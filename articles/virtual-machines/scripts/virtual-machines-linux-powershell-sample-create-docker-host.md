@@ -3,7 +3,7 @@ title: Пример сценария Azure PowerShell для Docker | Докум
 description: Пример сценария Azure PowerShell для Docker.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 editor: tysonn
 tags: azure-service-management
@@ -14,18 +14,18 @@ ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 03/02/2017
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 87b87734ebf2eaa266447cab0083c24399844f55
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: cfa42180d0cc25b3ee4da3f79b51775e8e62db81
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34653398"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37096668"
 ---
 # <a name="create-a-docker-host-with-powershell"></a>Создание узла Docker с помощью PowerShell
 
-Этот сценарий создает виртуальную машину с включенным Docker и запускает контейнер в котором будет запущен NGINX. После выполнения сценария можно получить доступ к веб-серверу NGINX, используя полное доменное имя виртуальной машины Azure. 
+Этот сценарий создает виртуальную машину с включенным Docker и запускает контейнер в котором будет запущен NGINX. После выполнения сценария можно получить доступ к веб-серверу NGINX, используя полное доменное имя виртуальной машины Azure.
 
 [!INCLUDE [sample-powershell-install](../../../includes/sample-powershell-install.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "34653398"
 
 [!code-powershell[main](../../../powershell_scripts/virtual-machine/create-docker-host/create-docker-host.ps1 "Create Docker host")]
 
-## <a name="clean-up-deployment"></a>Очистка развертывания 
+## <a name="clean-up-deployment"></a>Очистка развертывания
 
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
 
