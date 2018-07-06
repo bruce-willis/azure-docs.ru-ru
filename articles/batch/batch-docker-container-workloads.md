@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 06/04/2018
 ms.author: danlep
-ms.openlocfilehash: 4ee8425bb5c3830b029b766aad464df0ffb15f41
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 8ef9d5a8e5212f6715769eecf4fde92a6d0b9d44
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801121"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37060523"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Выполнение контейнерных приложений в пакетной службе Azure
 
@@ -229,7 +229,13 @@ CloudPool pool = batchClient.PoolOperations.CreatePool(
 
 При запуске задач на образах контейнеров для [задач облака](/dotnet/api/microsoft.azure.batch.cloudtask) и [диспетчера заданий](/dotnet/api/microsoft.azure.batch.cloudjob.jobmanagertask) требуются параметры контейнера. Тем не менее [задача запуска](/dotnet/api/microsoft.azure.batch.starttask), [задача подготовки задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobpreparationtask) и [задача снятия задания](/dotnet/api/microsoft.azure.batch.cloudjob.jobreleasetask) не требуют параметров контейнера (то есть их можно выполнить в контексте контейнера или напрямую на узле).
 
-При настройке параметров для контейнеров все каталоги рекурсивно ниже `AZ_BATCH_NODE_ROOT_DIR` (корень каталогов пакетной службы Azure на узле) сопоставляются в контейнере, все переменные среды задач сопоставляются в контейнере, а командная строка задач выполняется в контейнере.
+Командная строка для контейнерных задач в пакетной службе Azure выполняется в рабочем каталоге в контейнере, который очень похож на среду, которую пакетная служба настраивает для регулярных (не связанных с контейнерами) задач:
+
+* Все каталоги, следующие в обратном порядке после `AZ_BATCH_NODE_ROOT_DIR` (корень каталогов пакетной службы Azure на узле), сопоставляются в контейнере.
+* Все переменные среды задач сопоставляются в контейнере.
+* Рабочий каталог приложения настраивается так же, как и для обычных задач, чтобы можно было использовать такие функции, как пакеты приложений и файлы ресурсов.
+
+Так как пакетная служба изменяет используемый по умолчанию каталог в контейнере, задача выполняется в расположении, отличающемся от обычной точки входа контейнера (например, в контейнере Windows по умолчанию используется `c:\`, а в контейнере Linux — `/`). Убедитесь, что в командной строке задачи или точке входа контейнера указан абсолютный путь, если он еще не настроен.
 
 В приведенном ниже фрагменте кода Python показана обычная командная строка, которая запущена в контейнере Ubuntu, извлеченном из центра Docker. Параметры запуска контейнера представляют собой дополнительные аргументы для команды `docker create`, выполняемой в этой задаче. Здесь параметр `--rm` предназначен для удаления контейнера после выполнения задачи.
 
@@ -240,7 +246,7 @@ task_container_settings = batch.models.TaskContainerSettings(
     container_run_options='--rm')
 task = batch.models.TaskAddParameter(
     id=task_id,
-    command_line='echo hello',
+    command_line='/bin/echo hello',
     container_settings=task_container_settings
 )
 
@@ -251,7 +257,7 @@ task = batch.models.TaskAddParameter(
 ```csharp
 // Simple container task command
 
-string cmdLine = "<my-command-line>";
+string cmdLine = "c:\myApp.exe";
 
 TaskContainerSettings cmdContainerSettings = new TaskContainerSettings (
     imageName: "tensorflow/tensorflow:latest-gpu",

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2018
 ms.author: tonguyen
-ms.openlocfilehash: 797421e40a5550e1897443f35089838a349ad85a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e4db9911697a4d79032b7a6358db642112a5a54e
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34607401"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062178"
 ---
 # <a name="prevent-unexpected-charges-with-azure-billing-and-cost-management"></a>Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure
 

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 8507cf99ea22b24aa3026565cb7c4139e4c3742d
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: d37dbb85dc85ee8bae0447f18f771dc658de18e3
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36267866"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37060244"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -109,41 +109,9 @@ ms.locfileid: "36267866"
 * Графический
 * графический модуль рабочего процесса PowerShell.
 
-## <a name="troubleshooting"></a>Устранение неполадок
+## <a name="troubleshoot"></a>Устранение неполадок
 
-Гибридная рабочая роль Runbook Linux зависит от агента OMS для Linux, который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий Runbook и передачи сведений о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
-
-### <a name="the-oms-agent-for-linux-isnt-running"></a>Агент OMS для Linux не запущен.
-
-Если агент OMS для Linux не запущен, гибридная рабочая роль Runbook Linux не сможет взаимодействовать со службой автоматизации Azure. Проверьте, запущен ли агент, выполнив команду `ps -ef | grep python`. 
-
-Вы увидите выходные данные, похожие на следующие (это процессы Python, запущенные от имени учетной записи **nxautomation**). Если решения "Управление обновлениями" и служба автоматизации Azure не включены, ни один из следующих процессов не будет запущен.
-
-```bash
-nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
-nxautom+   8593      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/state/automationworker/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
-nxautom+   8595      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/<workspaceId>/state/automationworker/diy/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
-```
-
-Ниже перечислены процессы, запущенные для гибридной рабочей роли Runbook в Linux. Все они находятся в каталоге `/var/opt/microsoft/omsagent/state/automationworker/`.
-
-* **oms.conf** — это процесс диспетчера рабочих ролей. Он запускается непосредственно на платформе Desired State Configuration (DSC).
-
-* **worker.conf** — это процесс автоматически зарегистрированной рабочей роли. Он запускается диспетчером рабочих ролей. Этот процесс используется в решении "Управление обновлениями" и незаметен для пользователя. Этот процесс будет доступен, только если включить на компьютере решение "Управление обновлениями".
-
-* **diy/worker.conf** — это процесс гибридной рабочей роли DIY. Процесс гибридной рабочей роли DIY используется для выполнения модулей Runbook пользователя в гибридной рабочей роли Runbook. Он отличается от процесса автоматически зарегистрированной рабочей роли только тем, что использует другую конфигурацию. Этот процесс доступен, только если включено решение службы автоматизации Azure и зарегистрирована гибридная рабочая роль DIY.
-
-Если агент OMS для Linux не запущен, выполните следующую команду, чтобы запустить службу: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
-
-### <a name="the-specified-class-doesnt-exist"></a>Указанный класс не существует.
-
-При возникновении в `/var/opt/microsoft/omsconfig/omsconfig.log` ошибки о том, что указанный класс не существует, необходимо обновить агент OMS для Linux. Выполните следующую команду, чтобы повторно установить агент OMS:
-
-```bash
-wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w <WorkspaceID> -s <WorkspaceKey>
-```
-
-Дополнительные действия по устранению проблем с решением "Управление обновлениями" см. в разделе [Устранение неполадок](automation-update-management.md#troubleshooting) статьи "Решение для управления обновлениями в Azure".
+Инструкции см. в руководстве по [поиску и устранению неполадок с гибридными рабочими ролями Runbook](troubleshoot/hybrid-runbook-worker.md#linux) (раздел для Linux)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

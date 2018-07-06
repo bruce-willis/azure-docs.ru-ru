@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: dddb29d2a796449d6a2c9b68e01e94f32d3022e4
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 98f7494c87683eda858da5970e12073ce2204303
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621995"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048293"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-salesforce-connector.md)
-> * [Версия 2 — предварительная](../connector-salesforce.md)
+> * [Версия 1](data-factory-salesforce-connector.md)
+> * [Версия 2 (текущая)](../connector-salesforce.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from Salesforce using Azure Data Factory](../connector-salesforce.md) (Копирование данных из Salesforce с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Salesforce в службе "Фабрика данных Azure" версии 2](../connector-salesforce.md).
 
 
 В этой статье описано, как переместить данные из Salesforce в любое хранилище данных, указанное в таблице [поддерживаемых хранилищ данных](data-factory-data-movement-activities.md#supported-data-stores-and-formats) (столбец "Приемник"), с использованием действия копирования в фабрике данных Azure. Эта статья основана на статье о [действиях перемещения данных](data-factory-data-movement-activities.md) , в которой приведены общие сведения о перемещении данных с помощью действия копирования и поддерживаемых сочетаниях хранилищ данных.

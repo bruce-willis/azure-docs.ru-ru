@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 10/01/2017
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: a0f4a823d9a484dcae35a2741bf7904eb17a1502
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 534fbeaa8ba3c27c8d3f3bbcc59717d8bdb5c654
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622859"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050324"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-usql-activity.md)
-> * [Версия 2 — предварительная](../transform-data-using-data-lake-analytics.md)
+> * [Версия 1](data-factory-usql-activity.md)
+> * [Версия 2 (текущая)](../transform-data-using-data-lake-analytics.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Transform data by running U-SQL scripts on Azure Data Lake Analytics](../transform-data-using-data-lake-analytics.md) (Преобразование данных при выполнении скриптов U-SQL в Azure Data Lake Analytics).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [применению действия U-SQL в службе "Фабрика данных Azure" версии 2](../transform-data-using-data-lake-analytics.md).
 
 Конвейер в фабрике данных Azure обрабатывает данные в связанной службе хранилища с помощью связанных вычислительных служб. В нем содержится последовательность действий, каждое из которых выполняет определенную операцию обработки. В этой статье описывается **действие U-SQL в Data Lake Analytics**, которое запускает сценарий **U-SQL** в связанной службе вычислений **Azure Data Lake Analytics**. 
 

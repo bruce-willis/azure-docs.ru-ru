@@ -14,16 +14,16 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: c56501deaf4d30374690a112b1ba11eaa9344cdb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 417425a6982ca92e486ccfb578131ebc898a0466
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622369"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046094"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. [примеры PowerShell в фабрике данных версии 2](../samples-powershell.md) и [примеры кода в галерее Azure](https://azure.microsoft.com/resources/samples/?service=data-factory).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. [примеры PowerShell в службе "Фабрика данных"](../samples-powershell.md) и [примеры кода в галерее Azure](https://azure.microsoft.com/resources/samples/?service=data-factory).
 
 
 ## <a name="samples-on-github"></a>Примеры на GitHub

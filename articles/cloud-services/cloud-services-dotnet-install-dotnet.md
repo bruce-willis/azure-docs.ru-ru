@@ -12,19 +12,19 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/10/2018
+ms.date: 06/22/2018
 ms.author: adegeo
-ms.openlocfilehash: 02e778154662c28b78b284fccb3bd9b9420a8bec
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8bd146f5265e499c38b016ea8d8cb00685867cd3
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34608446"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37035275"
 ---
 # <a name="install-net-on-azure-cloud-services-roles"></a>Установка .NET для ролей облачных служб Azure
 В этой статье описывается установка версий платформы .NET Framework, которые не входят в состав гостевой ОС Azure. .NET в гостевой ОС можно использовать для настройки веб-ролей и рабочих ролей облачной службы.
 
-Например, можно установить .NET 4.6.1 в семействе версий 4 гостевых ОС, которые не входят в состав какого-либо из выпусков .NET 4.6. (Семейство версий 5 гостевых ОС поставляется с NET 4.6.) Самые актуальные сведения о выпусках гостевой ОС Azure см. в статье [Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK](cloud-services-guestos-update-matrix.md). 
+Например, можно установить .NET 4.6.2 в семействе версий 4 гостевых ОС, которые не входят в состав какого-либо из выпусков .NET 4.6. (Семейство версий 5 гостевых ОС поставляется с NET 4.6.) Самые актуальные сведения о выпусках гостевой ОС Azure см. в статье [Таблица совместимости выпусков гостевых ОС Azure и пакетов SDK](cloud-services-guestos-update-matrix.md). 
 
 >[!IMPORTANT]
 >Пакет SDK 2.9 для Azure содержит ограничение на развертывание .NET 4.6 в семействе версий 4 гостевых ОС. Исправление ограничения доступно на сайте [документации Майкрософт](https://github.com/MicrosoftDocs/azure-cloud-services-files/tree/master/Azure%20Targets%20SDK%202.9).
@@ -35,7 +35,7 @@ ms.locfileid: "34608446"
 Чтобы скачать веб-установщик для платформы .NET Framework, выберите версию, которую требуется установить:
 
 * [Веб-установщик .NET 4.7.2](http://go.microsoft.com/fwlink/?LinkId=863262).
-* [Веб-установщик .NET 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671729).
+* [Веб-установщик .NET 4.6.2](https://www.microsoft.com/download/details.aspx?id=53345).
 
 Чтобы добавить установщик для *веб*-роли:
   1. В **обозревателе решений** в разделе **Роли** проекта облачной службы щелкните правой кнопкой мыши *веб-роль* и выберите **Добавить** > **Новая папка**. Создайте папку с именем **bin**.
@@ -47,7 +47,7 @@ ms.locfileid: "34608446"
 При добавлении файлов таким образом в папку содержимого роли они автоматически добавляются в пакет облачной службы. Файлы затем развертываются в согласованное расположение на виртуальной машине. Повторите эту процедуру для каждой веб-роли и рабочей роли в облачной службе, чтобы у всех ролей была копия установщика.
 
 > [!NOTE]
-> Установите .NET 4.6.1 в роль облачной службы, даже если приложению необходим .NET 4.6. Гостевая ОС включает [обновление 3098779](https://support.microsoft.com/kb/3098779) и [обновление 3097997](https://support.microsoft.com/kb/3097997) базы знаний. Проблемы могут возникнуть при запуске приложений .NET, если .NET 4.6 установлена поверх обновлений базы знаний Майкрософт. Чтобы избежать этих проблем, установите .NET 4.6.1 вместо версии 4.6. Дополнительные сведения см. в [статье базы знаний 3118750](https://support.microsoft.com/kb/3118750).
+> Установите .NET 4.6.2 в роль облачной службы, даже если для приложения требуется .NET 4.6. Гостевая ОС включает [обновление 3098779](https://support.microsoft.com/kb/3098779) и [обновление 3097997](https://support.microsoft.com/kb/3097997) базы знаний. Проблемы могут возникнуть при запуске приложений .NET, если .NET 4.6 установлена поверх обновлений базы знаний Майкрософт. Чтобы избежать этих проблем, установите .NET 4.6.2 вместо версии 4.6. Дополнительные сведения см. в статьях базы знаний [3118750](https://support.microsoft.com/kb/3118750) и [4340191](https://support.microsoft.com/kb/4340191).
 > 
 > 
 
@@ -85,119 +85,118 @@ ms.locfileid: "34608446"
 
 2. Создайте файл с именем **install.cmd** и добавьте в него следующий скрипт установки.
 
-    Скрипт путем поиска по реестру проверяет, установлена ли на компьютере выбранная версия .NET Framework. Если требуемая версия .NET не установлена, открывается веб-установщик .NET. Для помощи в устранении возникших проблем скрипт регистрирует все действия в файл startuptasklog-(текущая дата и время).txt, который хранится в локальном хранилище **InstallLogs**.
-  
-    > [!IMPORTANT]
-    > Для создания файла install.cmd используйте простой текстовый редактор, например Блокнот. Если для создания текстового файла и изменения расширения на .cmd используется Visual Studio, файл по-прежнему может содержать метку порядка байтов UTF-8. Эта метка может вызвать ошибку при выполнении первой строки скрипта. Чтобы избежать этой ошибки, сделайте первую строку скрипта оператором REM, который может быть пропущен при обработке порядка байтов. 
-    > 
-    >
+   Скрипт путем поиска по реестру проверяет, установлена ли на компьютере выбранная версия .NET Framework. Если требуемая версия .NET не установлена, открывается веб-установщик .NET. Для помощи в устранении возникших проблем скрипт регистрирует все действия в файл startuptasklog-(текущая дата и время).txt, который хранится в локальном хранилище **InstallLogs**.
    
-    ```cmd
-    REM Set the value of netfx to install appropriate .NET Framework. 
-    REM ***** To install .NET 4.5.2 set the variable netfx to "NDP452" *****
-    REM ***** To install .NET 4.6 set the variable netfx to "NDP46" *****
-    REM ***** To install .NET 4.6.1 set the variable netfx to "NDP461" ***** http://go.microsoft.com/fwlink/?LinkId=671729
-    REM ***** To install .NET 4.6.2 set the variable netfx to "NDP462" *****
-    REM ***** To install .NET 4.7 set the variable netfx to "NDP47" ***** 
-    REM ***** To install .NET 4.7.1 set the variable netfx to "NDP471" ***** http://go.microsoft.com/fwlink/?LinkId=852095
-    REM ***** To install .NET 4.7.2 set the variable netfx to "NDP472" ***** http://go.microsoft.com/fwlink/?LinkId=863262
-    set netfx="NDP472"
-    
-    REM ***** Set script start timestamp *****
-    set timehour=%time:~0,2%
-    set timestamp=%date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2%
-    set "log=install.cmd started %timestamp%."
-    
-    REM ***** Exit script if running in Emulator *****
-    if %ComputeEmulatorRunning%=="true" goto exit
-    
-    REM ***** Needed to correctly install .NET 4.6.1, otherwise you may see an out of disk space error *****
-    set TMP=%PathToNETFXInstall%
-    set TEMP=%PathToNETFXInstall%
-    
-    REM ***** Setup .NET filenames and registry keys *****
-    if %netfx%=="NDP472" goto NDP472
-    if %netfx%=="NDP471" goto NDP471
-    if %netfx%=="NDP47" goto NDP47
-    if %netfx%=="NDP462" goto NDP462
-    if %netfx%=="NDP461" goto NDP461
-    if %netfx%=="NDP46" goto NDP46
-    
-    set "netfxinstallfile=NDP452-KB2901954-Web.exe"
-    set netfxregkey="0x5cbf5"
-    goto logtimestamp
-    
-    :NDP46
-    set "netfxinstallfile=NDP46-KB3045560-Web.exe"
-    set netfxregkey="0x6004f"
-    goto logtimestamp
-    
-    :NDP461
-    set "netfxinstallfile=NDP461-KB3102438-Web.exe"
-    set netfxregkey="0x6040e"
-    goto logtimestamp
-    
-    :NDP462
-    set "netfxinstallfile=NDP462-KB3151802-Web.exe"
-    set netfxregkey="0x60632"
-    goto logtimestamp
-    
-    :NDP47
-    set "netfxinstallfile=NDP47-KB3186500-Web.exe"
-    set netfxregkey="0x707FE"
-    goto logtimestamp
-    
-    :NDP471
-    set "netfxinstallfile=NDP471-KB4033344-Web.exe"
-    set netfxregkey="0x709fc"
-    goto logtimestamp
-    
-    :NDP472
-    set "netfxinstallfile=NDP472-KB4054531-Web.exe"
-    set netfxregkey="0x70BF6"
-    goto logtimestamp
-    
-    
-    :logtimestamp
-    REM ***** Setup LogFile with timestamp *****
-    md "%PathToNETFXInstall%\log"
-    set startuptasklog="%PathToNETFXInstall%log\startuptasklog-%timestamp%.txt"
-    set netfxinstallerlog="%PathToNETFXInstall%log\NetFXInstallerLog-%timestamp%"
-    echo %log% >> %startuptasklog%
-    echo Logfile generated at: %startuptasklog% >> %startuptasklog%
-    echo TMP set to: %TMP% >> %startuptasklog%
-    echo TEMP set to: %TEMP% >> %startuptasklog%
-    
-    REM ***** Check if .NET is installed *****
-    echo Checking if .NET (%netfx%) is installed >> %startuptasklog%
-    set /A netfxregkeydecimal=%netfxregkey%
-    set foundkey=0
-    FOR /F "usebackq skip=2 tokens=1,2*" %%A in (`reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release 2^>nul`) do @set /A foundkey=%%C
-    echo Minimum required key: %netfxregkeydecimal% -- found key: %foundkey% >> %startuptasklog%
-    if %foundkey% GEQ %netfxregkeydecimal% goto installed
-    
-    REM ***** Installing .NET *****
-    echo Installing .NET with commandline: start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog%  /chainingpackage "CloudService Startup Task" >> %startuptasklog%
-    start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog% /chainingpackage "CloudService Startup Task" >> %startuptasklog% 2>>&1
-    if %ERRORLEVEL%== 0 goto installed
-        echo .NET installer exited with code %ERRORLEVEL% >> %startuptasklog%    
-        if %ERRORLEVEL%== 3010 goto restart
-        if %ERRORLEVEL%== 1641 goto restart
-        echo .NET (%netfx%) install failed with Error Code %ERRORLEVEL%. Further logs can be found in %netfxinstallerlog% >> %startuptasklog%
-    
-    :restart
-    echo Restarting to complete .NET (%netfx%) installation >> %startuptasklog%
-    EXIT /B %ERRORLEVEL%
-    
-    :installed
-    echo .NET (%netfx%) is installed >> %startuptasklog%
-    
-    :end
-    echo install.cmd completed: %date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2% >> %startuptasklog%
-    
-    :exit
-    EXIT /B 0
-    ```
+   > [!IMPORTANT]
+   > Для создания файла install.cmd используйте простой текстовый редактор, например Блокнот. Если для создания текстового файла и изменения расширения на .cmd используется Visual Studio, файл по-прежнему может содержать метку порядка байтов UTF-8. Эта метка может вызвать ошибку при выполнении первой строки скрипта. Чтобы избежать этой ошибки, сделайте первую строку скрипта оператором REM, который может быть пропущен при обработке порядка байтов. 
+   > 
+   >
+   
+   ```cmd
+   REM Set the value of netfx to install appropriate .NET Framework. 
+   REM ***** To install .NET 4.5.2 set the variable netfx to "NDP452" *****
+   REM ***** To install .NET 4.6 set the variable netfx to "NDP46" *****
+   REM ***** To install .NET 4.6.1 set the variable netfx to "NDP461" ***** http://go.microsoft.com/fwlink/?LinkId=671729
+   REM ***** To install .NET 4.6.2 set the variable netfx to "NDP462" ***** https://www.microsoft.com/download/details.aspx?id=53345
+   REM ***** To install .NET 4.7 set the variable netfx to "NDP47" ***** 
+   REM ***** To install .NET 4.7.1 set the variable netfx to "NDP471" ***** http://go.microsoft.com/fwlink/?LinkId=852095
+   REM ***** To install .NET 4.7.2 set the variable netfx to "NDP472" ***** http://go.microsoft.com/fwlink/?LinkId=863262
+   set netfx="NDP472"
+   
+   REM ***** Set script start timestamp *****
+   set timehour=%time:~0,2%
+   set timestamp=%date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2%
+   set "log=install.cmd started %timestamp%."
+   
+   REM ***** Exit script if running in Emulator *****
+   if %ComputeEmulatorRunning%=="true" goto exit
+   
+   REM ***** Needed to correctly install .NET 4.6.1, otherwise you may see an out of disk space error *****
+   set TMP=%PathToNETFXInstall%
+   set TEMP=%PathToNETFXInstall%
+   
+   REM ***** Setup .NET filenames and registry keys *****
+   if %netfx%=="NDP472" goto NDP472
+   if %netfx%=="NDP471" goto NDP471
+   if %netfx%=="NDP47" goto NDP47
+   if %netfx%=="NDP462" goto NDP462
+   if %netfx%=="NDP461" goto NDP461
+   if %netfx%=="NDP46" goto NDP46
+   
+   set "netfxinstallfile=NDP452-KB2901954-Web.exe"
+   set netfxregkey="0x5cbf5"
+   goto logtimestamp
+   
+   :NDP46
+   set "netfxinstallfile=NDP46-KB3045560-Web.exe"
+   set netfxregkey="0x6004f"
+   goto logtimestamp
+   
+   :NDP461
+   set "netfxinstallfile=NDP461-KB3102438-Web.exe"
+   set netfxregkey="0x6040e"
+   goto logtimestamp
+   
+   :NDP462
+   set "netfxinstallfile=NDP462-KB3151802-Web.exe"
+   set netfxregkey="0x60632"
+   goto logtimestamp
+   
+   :NDP47
+   set "netfxinstallfile=NDP47-KB3186500-Web.exe"
+   set netfxregkey="0x707FE"
+   goto logtimestamp
+   
+   :NDP471
+   set "netfxinstallfile=NDP471-KB4033344-Web.exe"
+   set netfxregkey="0x709fc"
+   goto logtimestamp
+   
+   :NDP472
+   set "netfxinstallfile=NDP472-KB4054531-Web.exe"
+   set netfxregkey="0x70BF6"
+   goto logtimestamp
+   
+   :logtimestamp
+   REM ***** Setup LogFile with timestamp *****
+   md "%PathToNETFXInstall%\log"
+   set startuptasklog="%PathToNETFXInstall%log\startuptasklog-%timestamp%.txt"
+   set netfxinstallerlog="%PathToNETFXInstall%log\NetFXInstallerLog-%timestamp%"
+   echo %log% >> %startuptasklog%
+   echo Logfile generated at: %startuptasklog% >> %startuptasklog%
+   echo TMP set to: %TMP% >> %startuptasklog%
+   echo TEMP set to: %TEMP% >> %startuptasklog%
+   
+   REM ***** Check if .NET is installed *****
+   echo Checking if .NET (%netfx%) is installed >> %startuptasklog%
+   set /A netfxregkeydecimal=%netfxregkey%
+   set foundkey=0
+   FOR /F "usebackq skip=2 tokens=1,2*" %%A in (`reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release 2^>nul`) do @set /A foundkey=%%C
+   echo Minimum required key: %netfxregkeydecimal% -- found key: %foundkey% >> %startuptasklog%
+   if %foundkey% GEQ %netfxregkeydecimal% goto installed
+   
+   REM ***** Installing .NET *****
+   echo Installing .NET with commandline: start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog%  /chainingpackage "CloudService Startup Task" >> %startuptasklog%
+   start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog% /chainingpackage "CloudService Startup Task" >> %startuptasklog% 2>>&1
+   if %ERRORLEVEL%== 0 goto installed
+       echo .NET installer exited with code %ERRORLEVEL% >> %startuptasklog%    
+       if %ERRORLEVEL%== 3010 goto restart
+       if %ERRORLEVEL%== 1641 goto restart
+       echo .NET (%netfx%) install failed with Error Code %ERRORLEVEL%. Further logs can be found in %netfxinstallerlog% >> %startuptasklog%
+   
+   :restart
+   echo Restarting to complete .NET (%netfx%) installation >> %startuptasklog%
+   EXIT /B %ERRORLEVEL%
+   
+   :installed
+   echo .NET (%netfx%) is installed >> %startuptasklog%
+   
+   :end
+   echo install.cmd completed: %date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2% >> %startuptasklog%
+   
+   :exit
+   EXIT /B 0
+   ```
 
 3. Добавьте файл install.cmd для каждой роли, используя команды **Добавить** > **Существующий элемент** в **обозревателе решений**, как описано ранее в этой статье. 
 
@@ -207,6 +206,7 @@ ms.locfileid: "34608446"
 
 ## <a name="configure-diagnostics-to-transfer-startup-logs-to-blob-storage"></a>Настройка диагностики для передачи журналов задач запуска в хранилище BLOB-объектов
 Чтобы упростить устранение неполадок при установке, можно настроить в системе диагностики Microsoft Azure передачу всех файлов журналов, созданных скриптом запуска или установщиком .NET, в хранилище BLOB-объектов Azure. Это позволит просматривать журналы, скачивая их из хранилища BLOB-объектов, а не на удаленном рабочем столе, где хранится роль.
+
 
 Чтобы настроить систему диагностики, откройте файл diagnostics.wadcfgx и добавьте в узел **Directories** следующее содержимое: 
 

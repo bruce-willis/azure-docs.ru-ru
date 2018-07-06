@@ -11,12 +11,12 @@ ms.custom: managed instance
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: bonova
-ms.openlocfilehash: 8f666bc352dc1706da4812590f85adc7695e2f13
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1015600343886333655a921f2e0944ebb676f3e6
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647668"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050133"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure
 
@@ -78,11 +78,12 @@ ms.locfileid: "34647668"
 
 - Azure Database Migration Service — миграция выполняется практически без простоев.
 - Исходное восстановление из URL-адреса — используются исходные резервные копии из SQL Server. Использование этого метода сопряжено с некоторым простоем.
-- Миграция с помощью BACPAC-файла — используется BACPAC-файл из SQL Server или базы данных SQL. Использование этого метода сопряжено с некоторым простоем.
 
 ### <a name="azure-database-migration-service"></a>Azure Database Migration Service
 
 [Azure Database Migration Service (DMS)](../dms/dms-overview.md) — это полностью управляемая служба, которая выполняет непрерывную миграцию из множества источников баз данных на платформы данных Azure с минимальным временем простоя. Эта служба упрощает выполнение задач, необходимых для перемещения имеющихся сторонних баз данных и баз данных SQL Server в Azure. Варианты развертывания в общедоступной предварительной версии включают базу данных SQL Azure, управляемый экземпляр и SQL Server на виртуальной машине Azure. DMS — это рекомендуемый метод переноса для корпоративных рабочих нагрузок. 
+
+Если вы используете службы SQL Server Integration Services (SSIS) на своем локальном экземпляре SQL Server, учтите, что DMS пока не поддерживает перенос каталога SSIS (SSISDB), в котором хранятся пакеты SSIS. Но вы можете подготовить среду Azure SSIS Integration Runtime (IR) в службе "Фабрика данных Azure" (ADF), чтобы создать SSISDB в Базе данных SQL Azure или Управляемом экземпляре, а затем повторно развернуть свои пакеты там (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)).
 
 Дополнительные сведения об этом сценарии и шагах настройки для DMS см. в статье [Migrate SQL Server to Azure SQL Database Managed Instance](../dms/tutorial-sql-server-to-managed-instance.md) (Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure).  
 
@@ -107,10 +108,6 @@ ms.locfileid: "34647668"
 > Восстановление системных баз данных не поддерживается. Чтобы перенести объекты уровня экземпляра (хранящиеся в базах данных master или msdb), рекомендуем создать для них скрипт и запустить скрипты T-SQL в экземпляре среды назначения.
 
 Полное руководство со сведениями о восстановлении резервной копии базы данных в управляемый экземпляр с использованием учетных данных SAS см. в статье [Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-restore-from-backup-tutorial.md).
-
-### <a name="migrate-using-bacpac-file"></a>Перенос с помощью BACPAC-файла
-
-Вы можете создать копию исходной базы данных в BACPAC-файле и импортировать ее базу данных SQL Azure и управляемый экземпляр. См. раздел [Импорт BACPAC-файла в новую базу данных SQL Azure](sql-database-import.md).
 
 ## <a name="monitor-applications"></a>Мониторинг приложений
 

@@ -12,22 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: douglasl
-ms.openlocfilehash: ad5c2335af95f15faf8e4df20cc992186aee394e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: fc7c2c49de582a413b49d31c4b4e062d81e5e6ae
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620975"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051330"
 ---
 # <a name="transform-data-using-hadoop-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-hive-activity.md)
-> * [Версия 2 — предварительная](transform-data-using-hadoop-hive.md)
+> * [Версия 1](v1/data-factory-hive-activity.md)
+> * [Текущая версия](transform-data-using-hadoop-hive.md)
 
 Действие Hive HDInsight в [конвейере](concepts-pipelines-activities.md) фабрики данных выполняет запросы Hive к [вашему собственному](compute-linked-services.md#azure-hdinsight-linked-service) кластеру HDInsight или кластеру HDInsight [по запросу](compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, см. статью [Преобразование данных с помощью действия Hive в фабрике данных Azure](v1/data-factory-hive-activity.md).
 
 Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md). 
 

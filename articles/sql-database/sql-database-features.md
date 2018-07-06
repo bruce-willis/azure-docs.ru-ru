@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 06/08/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: d49cd0096eb173c0f483a7b7ab1f3def745f56a6
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c48a0f078da8e56038ec74ee398bd26fe1dc2718
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231616"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054761"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
@@ -32,7 +32,7 @@ ms.locfileid: "36231616"
 | **Функция SQL** | **В базе данных SQL Azure/логическом сервере поддерживается** | **В базе данных SQL Azure/управляемом экземпляре (предварительная версия) поддерживается** |
 | --- | --- | --- |
 | [Always Encrypted](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-database-engine) | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). | Да. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище сертификатов Windows](sql-database-always-encrypted.md) и [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](sql-database-always-encrypted-azure-key-vault.md). |
-| [Группы доступности AlwaysOn](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
+| [Группы доступности Always On](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [Присоединение базы данных](https://docs.microsoft.com/sql/relational-databases/databases/attach-a-database) | Нет  | Нет  |
 | [Роли приложений](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/application-roles) | Yes | Yes |
 |[Аудит](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | [Да](sql-database-auditing.md)| [Да](sql-database-managed-instance-auditing.md) |
@@ -121,7 +121,7 @@ ms.locfileid: "36231616"
 | [SQL Server Analysis Services (SSAS)](https://docs.microsoft.com/sql/analysis-services/analysis-services) | Нет. Ознакомьтесь со страницей [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). | Нет. Дополнительные сведения см. на странице [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). |
 | [Аудит SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | Нет. Дополнительные сведения см. в статье [Приступая к работе с аудитом базы данных SQL](sql-database-auditing.md). | Да. См. раздел [Auditing](sql-database-managed-instance-transact-sql-information.md#auditing) (Аудит). |
 | [SQL Server Data Tools (SSDT)] (https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes |
-| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в базе данных SQL Azure, и выполняются в [среде выполнения интеграции Azure SSIS](../data-factory/tutorial-deploy-ssis-packages-azure-powershell.md). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в управляемом экземпляре, и выполняются в [среде выполнения интеграции Azure SSIS](../data-factory/tutorial-deploy-ssis-packages-azure-powershell.md). |
+| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). |
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Yes |

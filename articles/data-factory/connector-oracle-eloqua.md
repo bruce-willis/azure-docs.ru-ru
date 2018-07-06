@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (бета-версия) | Документация Майкрософт
+title: Копирование данных из Oracle Eloqua с помощью службы "Фабрика данных Azure" | Документация Майкрософт
 description: Узнайте, как копировать данные из Oracle Eloqua в поддерживаемые хранилища данных, используемые в качестве приемников, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -11,24 +11,21 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 7fa26e71651f0b13da97653e998974c6fd39fe3f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 821e345933ba52ed2c71251bab3ba159e5412568
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34617201"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048379"
 ---
-# <a name="copy-data-from-oracle-eloqua-using-azure-data-factory-beta"></a>Копирование данных из Oracle Eloqua с помощью фабрики данных Azure (бета-версия)
+# <a name="copy-data-from-oracle-eloqua-using-azure-data-factory"></a>Копирование данных из Oracle Eloqua с помощью службы "Фабрика данных Azure"
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Oracle Eloqua. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Move data by using Copy Activity](v1/data-factory-data-movement-activities.md) (Перемещение данных с помощью действия копирования).
-
 > [!IMPORTANT]
-> Сейчас этот соединитель доступен в бета-версии. Попробуйте его и оставьте свой отзыв. Не используйте его в рабочих средах.
+> Сейчас этот соединитель доступен в режиме предварительной версии. Попробуйте его и оставьте свой отзыв. Если вы хотите использовать в своем решении зависимость от соединителей в предварительной версии, обратитесь в службу [поддержки Azure](https://azure.microsoft.com/support/).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -49,8 +46,8 @@ ms.locfileid: "34617201"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **Eloqua** | Yes |
-| endpoint | Конечная точка сервера Eloqua (eloqua.example.com).  | Yes |
-| Имя пользователя | Имя сайта и имя пользователя учетной записи Eloqua в формате "имя сайта/имя пользователя". Например, Eloqua/Alice.  | Yes |
+| endpoint | Конечная точка сервера Eloqua Eloqua поддерживает несколько центров обработки данных. Чтобы определить свою конечную точку, войдите в https://login.eloqua.com со своими учетными данными, а затем скопируйте фрагмент **базового URL-адреса** из URL-адреса перенаправления в следующем формате: `xxx.xxx.eloqua.com`. | Yes |
+| Имя пользователя | Имя сайта и имя пользователя учетной записи Eloqua в формате `SiteName\Username`, например `Eloqua\Alice`.  | Yes |
 | password | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет  |
@@ -64,8 +61,8 @@ ms.locfileid: "34617201"
     "properties": {
         "type": "Eloqua",
         "typeProperties": {
-            "endpoint" : "eloqua.example.com",
-            "username" : "Eloqua/Alice",
+            "endpoint" : "<base URL e.g. xxx.xxx.eloqua.com>",
+            "username" : "<site name>\\<user name e.g. Eloqua\\Alice>",
             "password": {
                  "type": "SecureString",
                  "value": "<password>"

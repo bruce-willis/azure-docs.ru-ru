@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 01ac558ec032d2da8026ce48923d839bd05e85c1
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: c4ed3a22d3ad4e227178e8ac265cc97050e31ee6
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235470"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054315"
 ---
 # <a name="move-data-from-an-on-premises-cassandra-database-using-azure-data-factory"></a>Перемещение данных из локальной базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-cassandra-connector.md)
-> * [Версия 2 — предварительная](../connector-cassandra.md)
+> * [Версия 1](data-factory-onprem-cassandra-connector.md)
+> * [Версия 2 (текущая)](../connector-cassandra.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from Cassandra using Azure Data Factory](../connector-cassandra.md) (Копирование данных из Cassandra с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Cassandra в службе "Фабрика данных Azure" версии 2](../connector-cassandra.md).
 
 В этой статье объясняется, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных Cassandra. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
@@ -99,7 +99,7 @@ ms.locfileid: "35235470"
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
-| consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных |ONE, TWO, THREE, QUORUM, ALL, LOCAL_QUORUM, EACH_QUORUM, LOCAL_ONE. Дополнительные сведения см. в статье [Configuring data consistency](http://docs.datastax.com/en//cassandra/2.0/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных). |Нет. Значение по умолчанию — ONE |
+| consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных |ONE, TWO, THREE, QUORUM, ALL, LOCAL_QUORUM, EACH_QUORUM, LOCAL_ONE. Дополнительные сведения см. в статье [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных). |Нет. Значение по умолчанию — ONE |
 
 ## <a name="json-example-copy-data-from-cassandra-to-azure-blob"></a>Пример JSON. Копирование данных из базы данных Cassandra в хранилище BLOB-объектов Azure
 Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В этом примере показано, как скопировать данные из локальной базы данных Cassandra в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать в любой из указанных [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемников. Это делается с помощью действия копирования в фабрике данных Azure.

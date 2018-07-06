@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 8f73643d25dbcb507e3660a726516d69b7151ecb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d895dcdf9eefac01790aab6dc3f36a3feb0a8b12
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34619904"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051156"
 ---
 # <a name="move-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Перемещение данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-amazon-simple-storage-service-connector.md)
-> * [Версия 2 — предварительная](../connector-amazon-simple-storage-service.md)
+> * [Версия 1](data-factory-amazon-simple-storage-service-connector.md)
+> * [Версия 2 (текущая)](../connector-amazon-simple-storage-service.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure](../connector-amazon-simple-storage-service.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Amazon S3 в службе "Фабрика данных Azure" версии 2](../connector-amazon-simple-storage-service.md).
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure перемещать данные из службы хранения Amazon Simple Storage Service (S3). Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 

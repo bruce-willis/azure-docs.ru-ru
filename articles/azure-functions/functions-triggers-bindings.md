@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 05/24/2018
 ms.author: tdykstra
-ms.openlocfilehash: c5211b43a85383c7c9f42a1d56271addae6d956e
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 5e7e6608003b365d5516ca2e94a51c0710ad1125
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34725349"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061359"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -46,48 +46,53 @@ ms.locfileid: "34725349"
 
 ## <a name="register-binding-extensions"></a>Регистрация расширений привязки
 
-В версии 2.х среды выполнения решения "Функции Azure" нужно явно зарегистрировать расширения привязки (типы привязки), используемые в приложении-функции. 
+В некоторых средах разработки необходимо явным образом *зарегистрировать* привязку, которую вы намерены использовать. Расширения привязки предоставляются в виде пакетов NuGet, которые устанавливаются для регистрации расширения. В следующей таблице приводится информация о том, когда и как нужно зарегистрировать расширения привязки.
 
-Версия 2.х среды выполнения решения "Функции" в настоящее время находится в предварительной версии. Сведения о настройке приложения-функции для использования среды выполнения Функций версии 2.x см. в статье [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md).
+|Среда разработки |Регистрация<br/> в службе "Функции" версии 1.x  |Регистрация<br/> в службе "Функции" версии 2.x  |
+|---------|---------|---------|
+|Портал Azure|Автоматический|[Автоматически, с соответствующим запросом](#azure-portal-development)|
+|Локальная среда с использованием основных инструментов службы "Функции Azure"|Автоматический|[С помощью команд CLI из основных инструментов](#local-development-azure-functions-core-tools)|
+|Библиотека классов C# с использованием Visual Studio 2017|[С помощью средств NuGet](#c-class-library-with-visual-studio-2017)|[С помощью средств NuGet](#c-class-library-with-visual-studio-2017)|
+|Библиотека классов C# с использованием Visual Studio Code|Недоступно|[С помощью .NET Core CLI](#c-class-library-with-visual-studio-code)|
 
-В версии 2.x есть базовый набор привязок, которые регистрируются автоматически, поэтому явно делать этого не нужно. К ним относятся HTTP, таймер и служба хранилища Azure (большие двоичные объекты, очереди и таблицы). 
+Следующие типы привязки считаются исключениями и не требуют явной регистрации, поскольку они автоматически регистрируются во всех версиях и средах: HTTP, таймер и служба хранилища Azure (BLOB-объекты, очереди и таблицы). 
 
-Расширения предоставляются как пакеты NuGet, имя которых обычно начинается с [microsoft.azure.webjobs.extensions](https://www.nuget.org/packages?q=microsoft.azure.webjobs.extensions).  Способ регистрации расширений привязки зависит от способа разработки функций: 
+### <a name="azure-portal-development"></a>Разработка на портале Azure
 
-+ [локально в C# с использованием Visual Studio или VS Code](#local-c-development-using-visual-studio-or-vs-code);
-+ [локально с использованием основных инструментов решения "Функции Azure"](#local-development-azure-functions-core-tools);
-+ [на портале Azure](#azure-portal-development). 
+При создании функции или добавлении привязки вы увидите запрос, если нужно зарегистрировать расширение для триггера или привязки. Щелкните в этом запросе действие **Установить**, чтобы зарегистрировать расширение. В рамках плана потребления установка может занять до 10 минут.
 
-Версии пакетов, упомянутые в этом разделе, приведены только в качестве примеров. Перейдите на сайт [NuGet.org](https://www.nuget.org/packages?q=microsoft.azure.webjobs.extensions), чтобы определить, какая версия данного расширения требуется для других зависимостей в приложении-функции.    
-
-### <a name="local-csharp"></a>Локальная разработка на языке C# с помощью Visual Studio или VS Code
-
-При локальной разработке функций на языке C# с помощью Visual Studio или Visual Studio Code необходимо установить пакет NuGet для расширения. 
-
-+ **Visual Studio**. Воспользуйтесь диспетчером пакетов NuGet. Следующая команда [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package) устанавливает расширение Azure Cosmos DB из консоли диспетчера пакетов:
-
-    ```powershell
-    Install-Package Microsoft.Azure.WebJobs.Extensions.CosmosDB -Version 3.0.0-beta6 
-    ```
-
-+ **Visual Studio Code**. Пакеты можно установить из командной строки, используя команду [dotnet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package) в .NET CLI, как показано ниже.
-
-    ```terminal
-    dotnet add package Microsoft.Azure.WebJobs.Extensions.CosmosDB --version 3.0.0-beta6 
-    ```
+Достаточно установить каждое расширение по одному разу для конкретного приложения-функции. 
 
 ### <a name="local-development-azure-functions-core-tools"></a>Локальная разработка основных инструментов решения "Функции Azure"
 
 [!INCLUDE [functions-core-tools-install-extension](../../includes/functions-core-tools-install-extension.md)]
 
-### <a name="azure-portal-development"></a>Разработка на портале Azure
+<a name="local-csharp"></a>
+### <a name="c-class-library-with-visual-studio-2017"></a>Библиотека классов C# с Visual Studio 2017
 
-При создании функции или добавлении привязки в имеющуюся функцию появится запрос, если для добавления триггера или привязки требуется регистрация.   
+В **Visual Studio 2017** вы можете установить пакеты, выполнив в консоли диспетчера пакетов команду [Install-Package](https://docs.microsoft.com/nuget/tools/ps-ref-install-package), как показано в следующем примере:
 
-Когда появится предупреждение о том, что конкретное расширение установлено, выберите **Установить**, чтобы зарегистрировать расширение. Достаточно установить каждое расширение по одному разу для конкретного приложения-функции. 
+```powershell
+Install-Package Microsoft.Azure.WebJobs.ServiceBus --Version <target_version>
+```
 
->[!Note] 
->В рамках плана потребления процесс установки на портале может занять до 10 минут.
+Имя пакета, которое нужно указать для конкретной привязки, предоставляется в справочной статье по этой привязке. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
+
+Замените `<target_version>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на страницах отдельных пакетов на сайте [NuGet.org](https://nuget.org). Основные версии, которые соответствуют среде выполнения службы "Функции" версии 1.х или 2.х, указаны в справочной статье по конкретной привязке.
+
+### <a name="c-class-library-with-visual-studio-code"></a>Библиотека классов C# с Visual Studio Code
+
+В **Visual Studio Code** пакеты можно установить из командной строки .NET CLI, используя команду [dotnet add package](https://docs.microsoft.com/dotnet/core/tools/dotnet-add-package), как показано в следующем примере.
+
+```terminal
+dotnet add package Microsoft.Azure.WebJobs.ServiceBus --version <target_version>
+```
+
+Интерфейс .NET Core CLI можно использовать только при разработке в среде "Функции Azure" версии 2.х.
+
+Имя пакета, которое нужно указать для конкретной привязки, предоставляется в справочной статье по этой привязке. Например, вы можете ознакомиться с [разделом о пакетах в справочной статье о привязках Служебной шины](functions-bindings-service-bus.md#packages---functions-1x).
+
+Замените `<target_version>` в этом примере определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на страницах отдельных пакетов на сайте [NuGet.org](https://nuget.org). Основные версии, которые соответствуют среде выполнения службы "Функции" версии 1.х или 2.х, указаны в справочной статье по конкретной привязке.
 
 ## <a name="example-trigger-and-binding"></a>Пример триггера и привязки
 

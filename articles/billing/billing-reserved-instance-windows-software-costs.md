@@ -1,5 +1,5 @@
 ---
-title: Затраты на программное обеспечение Windows в зарезервированных экземплярах Azure. Выставление счетов в Azure | Документация Майкрософт
+title: Затраты на программное обеспечение Windows в зарезервированных экземплярах Azure | Документация Майкрософт
 description: Узнайте, какие счетчики программного обеспечения Windows не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
 services: billing
 documentationcenter: ''
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: manshuk
-ms.openlocfilehash: b526ca578a72d7d35fb4198affeb02db4d308b20
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 6602424e2b2e4a4c2c3c51b5cb4bb1024a39d2e0
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303357"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37064467"
 ---
 # <a name="windows-software-costs-not-included-with-azure-reserved-instances"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure
 
-Если не применяется преимущество гибридного использования Azure для зарезервированного экземпляра виртуальной машины, плата будет взиматься за единицы измерения программного обеспечения Windows, приведенные в разделе ниже.
+Если не применяется преимущество гибридного использования Azure для зарезервированного экземпляра виртуальной машины, плата будет взиматься за единицы измерения программного обеспечения Windows (см. раздел ниже).
 
 ## <a name="windows-software-meters-not-included-in-reserved-instance-cost"></a>Счетчики программного обеспечения Windows, не учитываемые в затратах на зарезервированный экземпляр
 
@@ -55,9 +55,9 @@ ms.locfileid: "34303357"
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о зарезервированных экземплярах Azure см. в следующих статьях:
 
-- [Сокращение затрат с помощью зарезервированных экземпляров виртуальных машин Azure](billing-save-compute-costs-reservations.md)
-- [Предоплата за виртуальные машины с зарезервированными экземплярами](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Управление зарезервированными экземплярами виртуальных машин](billing-manage-reserved-vm-instance.md)
+- [Основные сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
+- [Предоплата за использование виртуальных машин с помощью Azure Reserved VM Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
+- [Управление службой Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
 - [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)

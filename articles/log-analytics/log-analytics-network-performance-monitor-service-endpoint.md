@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 05abd943d85fcdd709143bf7fce221dcdfb86011
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f6196c1403ded7bb8a72ee5483c2c2056b0e8020
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215105"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37030715"
 ---
-# <a name="service-endpoint-monitor"></a>Мониторинг конечных точек службы
+# <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
-С помощью монитора конечных точек службы в [Мониторе производительности сети](log-analytics-network-performance-monitor.md) можно отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом. К таким конечным точкам относятся веб-сайты, приложения SaaS, приложения PaaS и базы данных SQL. 
+С помощью монитора подключений службы в [Мониторе производительности сети](log-analytics-network-performance-monitor.md) можно отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом. К таким конечным точкам относятся веб-сайты, приложения SaaS, приложения PaaS и базы данных SQL. 
 
-С помощью монитора конечных точек службы можно выполнять следующие функции. 
+С помощью монитора подключений службы можно выполнять следующие функции. 
 
 - Мониторинг сетевых подключений к приложениям и сетевым службам из нескольких филиалов или расположений. К приложениям и сетевым службам относятся Office 365, Dynamics CRM, внутренние бизнес-приложения и базы данных SQL.
 - Встроенные тесты для отслеживания сетевых подключений к конечным точкам Office 365 и Dynamics 365. 
@@ -34,7 +34,7 @@ ms.locfileid: "36215105"
 - Определение активных точек в сети, которые могут быть причиной ухудшения производительности приложения, путем просмотра задержек, вызываемых каждым прыжком на карте топологии.
 
 
-![Мониторинг конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-intro.png)
+![Монитор подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-intro.png)
 
 
 ## <a name="configuration"></a>Параметр Configuration 
@@ -55,11 +55,11 @@ netsh advfirewall firewall add rule name="NPMDICMPV4TimeExceeded" protocol="icmp
 netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmpv6:3,any" dir=in action=allow 
 ```
 
-### <a name="create-service-endpoint-monitor-tests"></a>Создание тестов мониторинга конечной точки службы 
+### <a name="create-service-connectivity-monitor-tests"></a>Создание тестов монитора подключений службы 
 
 Начните создавать тесты для отслеживания сетевых подключений к конечным точкам службы.
 
-1. Щелкните вкладку **Монитор конечных точек службы**.
+1. Перейдите на вкладку **Монитор подключений службы**.
 2. Нажмите кнопку **Добавить тест** и введите имя и описание теста. 
 3. Выберите тип теста.<br>
 
@@ -84,7 +84,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 ## <a name="walkthrough"></a>Пошаговое руководство 
 
-Перейдите к представлению панели мониторинга Монитора производительности сети. На странице **Монитор конечных точек службы** вы найдете сводные данные работоспособности различных созданных вами тестов. 
+Перейдите к представлению панели мониторинга Монитора производительности сети. На странице **Монитор подключений службы** представлены сводные данные работоспособности разных созданных вами тестов. 
 
 ![Страница "Монитор конечных точек службы"](media/log-analytics-network-performance-monitor/service-endpoint-blade.png)
 

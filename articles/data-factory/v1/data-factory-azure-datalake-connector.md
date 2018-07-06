@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d83e71efa89746d7744893281ffe0ac1169fa08b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8f86f43b4d8c474f338285abffb3c444f5ebc2d7
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621478"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054744"
 ---
 # <a name="copy-data-to-and-from-data-lake-store-by-using-data-factory"></a>Копирование данных в Data Lake Store и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-azure-datalake-connector.md)
-> * [Версия 2 — предварительная](../connector-azure-data-lake-store.md)
+> * [Версия 1](data-factory-azure-datalake-connector.md)
+> * [Версия 2 (текущая)](../connector-azure-data-lake-store.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Копирование данных из Azure Data Lake Store с помощью фабрики данных Azure](../connector-azure-data-lake-store.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Azure Data Lake Store в службе "Фабрика данных Azure" версии 2](../connector-azure-data-lake-store.md).
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в Azure Data Lake Store и обратно. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 

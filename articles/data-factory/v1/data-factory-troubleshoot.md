@@ -10,19 +10,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: a9a4f7b19d6ef08562d17474e252ce72fd0977dc
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: cbd51c48ec5b1801062e7aaf0b77e7b347018b31
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051871"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок фабрики данных
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной версией. 
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. 
 
 В этой статье приводятся советы по устранению неполадок, возникающих при использовании фабрики данных Azure. В этой статье перечислены не все возможные проблемы использования службы, однако рассматриваются некоторые вопросы и приводятся общие рекомендации по устранению неполадок.   
 

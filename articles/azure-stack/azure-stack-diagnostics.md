@@ -7,15 +7,15 @@ manager: femila
 cloud: azure-stack
 ms.service: azure-stack
 ms.topic: article
-ms.date: 06/05/2018
+ms.date: 06/27/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: b966ed4f1a9a8e659fbce185a807573d5321b251
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 50fef25a3b7b71821e64638729eb8d93f65b9e31
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801659"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37064175"
 ---
 # <a name="azure-stack-diagnostics-tools"></a>Средства диагностики Azure Stack
 
@@ -46,9 +46,38 @@ Azure Stack — это большая коллекция компонентов
 *   **журналы трассировки событий Windows**.
 
 Эти файлы собираются и сохраняются в файловом ресурсе сборщиком трассировки. Затем при необходимости их можно будет собрать с помощью командлета PowerShell **Get-AzureStackLog**.
+
+### <a name="to-run-get-azurestacklog-on-azure-stack-integrated-systems"></a>Выполнение командлета Get-AzureStackLog в интегрированных системах Azure Stack 
+Чтобы запустить средство сбора журналов в интегрированной системе, необходимо иметь доступ к привилегированной конечной точке (PEP). Ниже приведен пример скрипта, который можно запустить с помощью PEP для сбора журналов в интегрированной системе:
+
+```powershell
+$ip = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
+ 
+$pwd= ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $pwd)
+ 
+$shareCred = Get-Credential
+ 
+$s = New-PSSession -ComputerName $ip -ConfigurationName PrivilegedEndpoint -Credential $cred
+
+$fromDate = (Get-Date).AddHours(-8)
+$toDate = (Get-Date).AddHours(-2)  #provide the time that includes the period for your issue
+ 
+Invoke-Command -Session $s {    Get-AzureStackLog -OutputSharePath "<EXTERNAL SHARE ADDRESS>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate}
+
+if($s)
+{
+    Remove-PSSession $s
+}
+```
+
+- Параметры **OutputSharePath** и **OutputShareCredential** используются при передаче журналов во внешнюю общую папку.
+- Как показано в предыдущем примере, параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Это может быть полезным для таких сценариев, как сбор журналов после применения пакета обновления в интегрированной системе.
+
+
  
 ### <a name="to-run-get-azurestacklog-on-an-azure-stack-development-kit-asdk-system"></a>Выполнение командлета Get-AzureStackLog в системе Пакета средств разработки Azure Stack (ASDK)
-1. Войдите на узел как **AzureStack\CloudAdmin**.
+1. Войдите на узел с именем пользователя **AzureStack\CloudAdmin**.
 2. Откройте окно PowerShell от имени администратора.
 3. Выполните командлет PowerShell **Get-AzureStackLog**.
 
@@ -77,65 +106,6 @@ Azure Stack — это большая коллекция компонентов
   ```powershell
   Get-AzureStackLog -OutputPath C:\AzureStackLogs -FilterByRole VirtualMachines,BareMetal -FromDate (Get-Date).AddHours(-8) -ToDate (Get-Date).AddHours(-2)
   ```
-
-### <a name="to-run-get-azurestacklog-on-azure-stack-integrated-systems-version-1804-and-later"></a>Выполнение командлета Get-AzureStackLog в интегрированных системах Azure Stack версии 1804 или более поздней версии
-
-Чтобы запустить средство сбора журналов в интегрированной системе, необходимо иметь доступ к привилегированной конечной точке (PEP). Ниже приведен пример скрипта, который можно запустить с помощью PEP для сбора журналов в интегрированной системе:
-
-```powershell
-$ip = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
- 
-$pwd= ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $pwd)
- 
-$shareCred = Get-Credential
- 
-$s = New-PSSession -ComputerName $ip -ConfigurationName PrivilegedEndpoint -Credential $cred
-
-$fromDate = (Get-Date).AddHours(-8)
-$toDate = (Get-Date).AddHours(-2)  #provide the time that includes the period for your issue
- 
-Invoke-Command -Session $s {    Get-AzureStackLog -OutputSharePath "<EXTERNAL SHARE ADDRESS>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate}
-
-if($s)
-{
-    Remove-PSSession $s
-}
-```
-
-- Параметры **OutputSharePath** и **OutputShareCredential** используются при передаче журналов во внешнюю общую папку.
-- Как показано в предыдущем примере, параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Это может быть полезным для таких сценариев, как сбор журналов после применения пакета обновления в интегрированной системе.
-
-
-### <a name="to-run-get-azurestacklog-on-azure-stack-integrated-systems-version-1803-and-earlier"></a>Выполнение командлета Get-AzureStackLog в интегрированных системах Azure Stack версии 1803 или более ранней версии
-
-Чтобы запустить средство сбора журналов в интегрированной системе, необходимо иметь доступ к привилегированной конечной точке (PEP). Ниже приведен пример скрипта, который можно запустить с помощью PEP для сбора журналов в интегрированной системе:
-
-```powershell
-$ip = "<IP ADDRESS OF THE PEP VM>" # You can also use the machine name instead of IP here.
- 
-$pwd= ConvertTo-SecureString "<CLOUD ADMIN PASSWORD>" -AsPlainText -Force
-$cred = New-Object System.Management.Automation.PSCredential ("<DOMAIN NAME>\CloudAdmin", $pwd)
- 
-$shareCred = Get-Credential
- 
-$s = New-PSSession -ComputerName $ip -ConfigurationName PrivilegedEndpoint -Credential $cred
-
-$fromDate = (Get-Date).AddHours(-8)
-$toDate = (Get-Date).AddHours(-2)  #provide the time that includes the period for your issue
- 
-Invoke-Command -Session $s {    Get-AzureStackLog -OutputPath "\\<HLH MACHINE ADDRESS>\c$\logs" -OutputSharePath "<EXTERNAL SHARE ADDRESS>" -OutputShareCredential $using:shareCred  -FilterByRole Storage -FromDate $using:fromDate -ToDate $using:toDate}
-
-if($s)
-{
-    Remove-PSSession $s
-}
-```
-
-- При сборе журналов из PEP укажите для параметра **OutputPath** расположение на компьютере узла отслеживания жизненного цикла оборудования (HLH). Кроме того, расположение должно быть зашифровано.
-- Параметры **OutputSharePath** и **OutputShareCredential** являются необязательными и используются при передаче журналов во внешнюю общую папку. Используйте эти параметры *в дополнение* к **OutputPath**. Если параметр **OutputPath** не указан, инструмент сбора журналов будет использовать для хранения системный диск виртуальной машины PEP. Это может вызвать ошибку скрипта, так как место на диске ограничено.
-- Как показано в предыдущем примере, параметры **FromDate** и **ToDate** можно использовать для сбора журналов за конкретный период времени. Это может быть полезным для таких сценариев, как сбор журналов после применения пакета обновления в интегрированной системе.
-
 
 ### <a name="parameter-considerations-for-both-asdk-and-integrated-systems"></a>Рекомендации по настройке параметров для ASDK и интегрированных систем
 

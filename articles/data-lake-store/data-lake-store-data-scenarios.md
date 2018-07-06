@@ -1,25 +1,26 @@
 ---
-title: Сценарии работы с данными с использованием Data Lake Store | Документация Майкрософт
-description: Сведения о различных сценариях и средствах для приема, обработки, загрузки и визуализации данных в хранилище озера данных
+title: Сценарии работы с данными с использованием Data Lake Storage Gen1 | Документация Майкрософт
+description: Сведения о разных сценариях и средствах для приема, обработки, скачивания и визуализации данных в Data Lake Storage Gen1 (прежнее название — Azure Data Lake Store).
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
 manager: jhubbard
-editor: cgronlun
-ms.assetid: 37409a71-a563-4bb7-bc46-2cbd426a2ece
 ms.service: data-lake-store
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/29/2018
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: 86b6d05538171fcf0e259e2761316529deb4fb37
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e0c7ed22762ef19c6e68ad69d0cabcfeb8007251
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34625327"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031045"
 ---
-# <a name="using-azure-data-lake-store-for-big-data-requirements"></a>Использование хранилища озера данных Azure для потребностей больших данных
+# <a name="using-azure-data-lake-storage-gen1-for-big-data-requirements"></a>Использование Data Lake Storage Gen1 для обеспечения соответствия требованиям больших данных
+
+[!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
+
 Процесс обработки больших данных состоит из указанных далее четырех ключевых этапов.
 
 * Прием больших объемов данных в хранилище данных в режиме реального времени или в пакетах
@@ -43,7 +44,7 @@ ms.locfileid: "34625327"
 | Большой двоичный объект хранилища Azure |<ul> <li>[Фабрика данных Azure](../data-factory/connector-azure-data-lake-store.md)</li> <li>[инструмента AdlCopy](data-lake-store-copy-data-azure-storage-blob.md)</li><li>[DistCp, запущенный на кластере HDInsight](data-lake-store-copy-data-wasb-distcp.md)</li> </ul> |
 
 ### <a name="streamed-data"></a>Потоковые данные
-Это данные, создаваемые различными источниками, такими как приложения, устройства, датчики и т. д. Для ввода этих данных в хранилище озера данных можно использовать множество средств. Как правило, эти средства собирают и обрабатывают данные на основе событий в режиме реального времени и затем записывают события в пакетном режиме в хранилище озера данных для последующей обработки.
+Это данные, создаваемые различными источниками, такими как приложения, устройства, датчики и т. д. Для ввода этих данных в Data Lake Store можно использовать разные средства. Как правило, эти средства собирают и обрабатывают данные на основе событий в режиме реального времени и затем записывают события в пакетном режиме в хранилище озера данных для последующей обработки.
 
 Ниже перечислены средства, которые можно использовать:
 

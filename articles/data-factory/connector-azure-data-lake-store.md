@@ -12,22 +12,19 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 04/27/2018
 ms.author: jingwang
-ms.openlocfilehash: 12402ea30e44534734e0429f850772cbef2f7381
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: cf1ac441f695e5427e57f1a85bafd095777eed80
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36287469"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37049304"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-store-by-using-azure-data-factory"></a>Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-azure-datalake-connector.md)
-> * [Версия 2 — предварительная](connector-azure-data-lake-store.md)
+> * [Версия 1](v1/data-factory-azure-datalake-connector.md)
+> * [Текущая версия](connector-azure-data-lake-store.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из хранилища Azure Data Lake Store и в него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Copy data to and from Data Lake Store by using Data Factory](v1/data-factory-azure-datalake-connector.md) (Копирование данных в хранилище Data Lake Store или из него с помощью фабрики данных Azure).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -42,6 +39,9 @@ ms.locfileid: "36287469"
 > Если вы копируете данные с использованием локальной среды выполнения интеграции, настройте корпоративный брандмауэр, чтобы разрешить исходящий трафик в `<ADLS account name>.azuredatalakestore.net` и `login.microsoftonline.com/<tenant>/oauth2/token` через порт 443. Последний вариант — это служба токенов безопасности Azure (STS), которая требуется среде для получения маркера доступа.
 
 ## <a name="get-started"></a>Начало работы
+
+> [!TIP]
+> Пошаговое руководство по использованию соединителя Azure Data Lake Store см. в разделе [Загрузка данных в Azure Data Lake Store](load-azure-data-lake-store.md).
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 

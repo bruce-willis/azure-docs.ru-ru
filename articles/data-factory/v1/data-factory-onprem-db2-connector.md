@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fc4ce0a2ae33e99ecede371d9f17fb9a63851f64
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 88e56f522545f9c1f38bf0d0fdbcebdc171c294b
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622029"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046536"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-db2-connector.md)
-> * [Версия 2 — предварительная](../connector-db2.md)
+> * [Версия 1](data-factory-onprem-db2-connector.md)
+> * [Версия 2 (текущая)](../connector-db2.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from DB2 by using Azure Data Factory](../connector-db2.md) (Копирование данных из DB2 с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе DB2 в службе "Фабрика данных Azure" версии 2](../connector-db2.md).
 
 
 В этой статье описано использование действия копирования в фабрике данных Azure для копирования данных из локальной базы данных DB2 в хранилище данных. Данные можно копировать в любое хранилище из списка хранилищ в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md#supported-data-stores-and-formats), если указано, что оно поддерживается в качестве приемника. Материал данного раздела основан на статье о фабрике данных, в которой приведены общие сведения о перемещении данных с помощью действия копирования и перечислены поддерживаемые сочетания хранилищ данных. 

@@ -16,12 +16,12 @@ ms.date: 06/18/2018
 ms.author: markvi
 ms.custom: it-pro
 ms.reviewer: jeedes
-ms.openlocfilehash: 9aa060c6f28adb8361fcb9267ea658fda27b442c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 63fa305a94321fef87e5c60cb4ad78e83a3ca356
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223456"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054693"
 ---
 # <a name="saas-application-integration-with-azure-active-directory"></a>Интеграция приложений SaaS с Azure Active Directory
 
@@ -136,8 +136,8 @@ ms.locfileid: "36223456"
 | ![Логотип](./media/tutorial-list/active-directory-saas-cimpl-tutorial.png)| [Cimpl](cimpl-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-ciscocloud-tutorial.png)| [Cisco Cloud](ciscocloud-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-ciscocloudlock-tutorial.png)| [Cisco Cloudlock](ciscocloudlock-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-cisco-spark-tutorial.png)| [Cisco Spark](cisco-spark-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-cisco-webex-tutorial.png)| [Cisco Webex](cisco-webex-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-cisco-spark-tutorial.png)| [Cisco Spark](cisco-spark-tutorial.md)|[Cisco Spark: подготовка пользователей](cisco-spark-provisioning-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-cisco-webex-tutorial.png)| [Cisco Webex](cisco-webex-tutorial.md)|)|[Cisco Webex: подготовка пользователей](cisco-webex-provisioning-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-sharefile-tutorial.png)| [Citrix ShareFile](sharefile-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-clarizen-tutorial.png)| [Clarizen](clarizen-tutorial.md)|[Clarizen — подготовка пользователей](clarizen-provisioning-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-clearreview-tutorial.png)| [Clear Review](clearreview-tutorial.md)|
@@ -264,7 +264,7 @@ ms.locfileid: "36223456"
 | ![Логотип](./media/tutorial-list/active-directory-saas-imageworks-tutorial.png)| [IMAGE WORKS](imageworks-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-impacriskmanager-tutorial.png)| [IMPAC Risk Manager](impacriskmanager-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-infogix-tutorial.png)| [Infogix Data3Sixty Govern](infogix-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-inforretailinformationmanagement-tutorial.png)| [Infor Retail â Information Management](inforretailinformationmanagement-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-inforretailinformationmanagement-tutorial.png)| [Infor Retail — Information Management](inforretailinformationmanagement-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-inkling-tutorial.png)| [Inkling](inkling-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-innotas-tutorial.png)| [Innotas](innotas-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-insidertrack-tutorial.png)| [Insider Track](insidertrack-tutorial.md)|

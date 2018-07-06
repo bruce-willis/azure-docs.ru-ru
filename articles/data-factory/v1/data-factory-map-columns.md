@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1c8ea748297b8fe4052b60f08b8f00b1e41275fb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f1dd8c4c5e38547492887425bb5732d87d5f8071
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620363"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37045890"
 ---
 # <a name="map-source-dataset-columns-to-destination-dataset-columns"></a>Сопоставление столбцов исходного набора данных со столбцами целевого набора данных
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. 
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. 
 
 Сопоставление столбцов можно использовать, чтобы указать, как столбцы, указанные в «structure» исходной схемы таблицы, сопоставляются со столбцами, указанными в «structure» таблицы-приемника. Свойство **ColumnMapping** доступно в разделе **typeProperties** действия копирования.
 

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 0c115cce7659fe1f10e8d3d9c988748151916ce0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 951756d57441d175ccf8bab44bf00c3cb542f1b9
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620747"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050052"
 ---
 # <a name="tutorial-build-your-first-pipeline-to-transform-data-using-hadoop-cluster"></a>Учебник. Создание первого конвейера для преобразования данных с помощью кластера Hadoop
 > [!div class="op_single_selector"]
@@ -33,7 +33,7 @@ ms.locfileid: "34620747"
 
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью фабрики данных Azure версии 2](../quickstart-create-data-factory-dot-net.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
 
 Из этого учебника вы узнаете, как создать свою первую фабрику данных Azure, используя конвейер данных. Конвейер преобразует входные данные, запуская сценарий Hive в кластере Azure HDInsight (Hadoop) для создания выходных данных.  
 

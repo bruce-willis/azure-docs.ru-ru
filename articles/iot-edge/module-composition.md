@@ -1,37 +1,37 @@
 ---
 title: Составление модулей Azure IoT Edge | Документация Майкрософт
-description: Узнайте, что входит в модули Azure IoT Edge и как они могут быть повторно использованы.
+description: Узнайте, как в манифесте развертывания объявляются развертываемые модули и способы их развертывания и как создать маршруты для передачи сообщений между этими модулями.
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 03/23/2018
+ms.date: 06/06/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: c886d1d9dea120a243693c12ae861a58126daadc
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 84a0698a61e68c141cc79dbc779f352aab528afa
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34631689"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031487"
 ---
-# <a name="understand-how-iot-edge-modules-can-be-used-configured-and-reused---preview"></a>Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)
+# <a name="learn-how-to-use-deployment-manifests-to-deploy-modules-and-establish-routes"></a>Сведения об использовании манифестов развертывания для развертывания модулей и установки маршрутов
 
 На каждом устройстве IoT Edge работает по меньшей мере два модуля – $edgeAgent и $edgeHub, составляющие среду выполнения IoT Edge. Помимо этих двух стандартных модулей на любом устройстве IoT Edge можно запустить множество других модулей для выполнения любого числа процессов. При одновременном развертывании этих модулей на устройстве необходим способ объявления о том, какие модули включены и каким образом они взаимодействуют друг с другом. 
 
 *Манифест развертывания* — это документ JSON, который описывает:
 
-* какие модули IoT Edge должны развертываться, а также параметры создания и управления ими;
+* конфигурацию агента Edge, включая образ контейнера для каждого модуля, учетные данные для доступа к частным реестрам контейнеров и инструкции по созданию и администрированию каждого модуля;
 * конфигурацию концентратора Edge, которая описывает поток сообщений между модулями и в конечном итоге к Центру Интернета вещей;
-* при необходимости значения для установки требуемых свойств двойников модулей, чтобы настроить приложения отдельного модуля.
+* (необязательно) требуемые свойства двойников модулей.
 
 Все устройства IoT Edge должны быть настроены с помощью манифеста развертывания. Недавно установленная среда выполнения IoT Edge будет сообщать код ошибки, пока не будет настроена с помощью допустимого манифеста. 
 
-В руководствах по Azure IoT Edge манифест развертывания создается с помощью мастера на портале Azure IoT Edge. Также с помощью REST или пакета SDK службы Центра Интернета вещей можно применить манифест развертывания программно. Дополнительные сведения о развертывании IoT Edge см. в статье [Understand IoT Edge deployments for single devices or at scale - preview][lnk-deploy] (Основные сведения о развертываниях IoT Edge для одного устройства или в требуемом масштабе (предварительная версия)).
+В руководствах по Azure IoT Edge манифест развертывания создается с помощью мастера на портале Azure IoT Edge. Также с помощью REST или пакета SDK службы Центра Интернета вещей можно применить манифест развертывания программно. Дополнительные сведения см. в статье [Основные сведения о развертываниях IoT Edge для отдельных устройств или в требуемом масштабе (предварительная версия)][lnk-deploy].
 
 ## <a name="create-a-deployment-manifest"></a>Создание манифеста развертывания
 
-На высоком уровне манифест развертывания настраивает требуемые свойства двойника модуля для развернутых модулей IoT Edge на устройстве IoT Edge. Два из этих модулей всегда присутствуют: агент Edge и концентратор Edge.
+На высоком уровне манифест развертывания настраивает требуемые свойства двойника модуля для развернутых модулей IoT Edge на устройстве IoT Edge. Два из этих модулей всегда присутствуют: `$edgeAgent` и `$edgeHub`.
 
 Допустимым является только тот манифест развертывания, который содержит среду выполнения IoT Edge (агент и концентратор).
 
@@ -44,6 +44,7 @@ ms.locfileid: "34631689"
             "properties.desired": {
                 // desired properties of the Edge agent
                 // includes the image URIs of all modules
+                // includes container registry credentials
             }
         },
         "$edgeHub": {
@@ -67,7 +68,7 @@ ms.locfileid: "34631689"
 
 ## <a name="configure-modules"></a>Настройка модулей
 
-Помимо установки требуемых свойств развертываемых модулей в среде выполнения IoT Edge необходимо указать способ установки этих модулей. Сведения по управлению и настройке всех модулей добавляются в требуемые свойства **$edgeAgent**. Сюда также входят параметры настройки самого агента Edge. 
+Для среды выполнения IoT Edge необходимо указать способ установки модулей в развертывании. Сведения по управлению и настройке всех модулей добавляются в требуемые свойства **$edgeAgent**. Сюда также входят параметры настройки самого агента Edge. 
 
 Полный список свойств, которые могут или должны быть включены, см. в статье [Свойства двойников модулей EdgeAgent и EdgeHub](module-edgeagent-edgehub.md).
 
@@ -78,6 +79,11 @@ ms.locfileid: "34631689"
     "properties.desired": {
         "schemaVersion": "1.0",
         "runtime": {
+            "settings":{
+                "registryCredentials":{ // give the edge agent access to container images that aren't public
+                    }
+                }
+            }
         },
         "systemModules": {
             "edgeAgent": {
@@ -88,7 +94,7 @@ ms.locfileid: "34631689"
             }
         },
         "modules": {
-            "{module1}": { //optional
+            "{module1}": { // optional
                 // configuration and management details
             },
             "{module2}": { // optional
@@ -158,7 +164,7 @@ FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO $upstream
 | `$upstream` | Отправляет сообщение в Центр Интернета вещей. |
 | `BrokeredEndpoint("/modules/{moduleId}/inputs/{input}")` | Отправляет сообщение во входные данные `{input}` модуля `{moduleId}`. |
 
-Следует отметить, что концентратор Edge предоставляет по крайней мере однократные гарантии того, что сообщения будут сохранены локально в случае невозможности доставки по указанному маршруту в пункт назначения, так, например, концентратор Edge не может подключиться к Центру Интернета вещей или требуемый модуль недоступен.
+IoT Edge предоставляет гарантии как минимум однократной доставки. Если не удается доставить сообщение в приемник по маршруту, центр IoT Edge сохраняет сообщение локально. Например, если центр IoT Edge не может подключиться к Центру Интернета вещей или не подключен целевой модуль.
 
 Концентратор Edge хранит сообщения до окончания срока хранения, указанного в свойстве `storeAndForwardConfiguration.timeToLiveSecs` [требуемых свойств концентратора Edge](module-edgeagent-edgehub.md).
 
@@ -168,7 +174,7 @@ FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO $upstream
 
 Если не указать требуемые свойства двойника модуля в манифесте развертывания, Центр Интернета вещей не будет никоим образом изменять двойник модуля. Вы сможете задать требуемые свойства программно.
 
-Для изменения двойников модуля используются те же механизмы, что и для двойников устройства. Дополнительные сведения см. в руководстве [Общие сведения о двойниках устройств и их использование в Центре Интернета вещей](../iot-hub/iot-hub-devguide-device-twins.md).   
+Для изменения двойников модуля используются те же механизмы, что и для двойников устройства. Дополнительные сведения см. в статье [Общие сведения о двойниках устройств и их использование в Центре Интернета вещей](../iot-hub/iot-hub-devguide-device-twins.md).   
 
 ## <a name="deployment-manifest-example"></a>Пример манифеста развертывания
 
@@ -176,72 +182,79 @@ FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO $upstream
 
 ```json
 {
-"moduleContent": {
+  "moduleContent": {
     "$edgeAgent": {
-        "properties.desired": {
-            "schemaVersion": "1.0",
-            "runtime": {
-                "type": "docker",
-                "settings": {
-                    "minDockerVersion": "v1.25",
-                    "loggingOptions": ""
-                }
-            },
-            "systemModules": {
-                "edgeAgent": {
-                    "type": "docker",
-                    "settings": {
-                    "image": "microsoft/azureiotedge-agent:1.0-preview",
-                    "createOptions": ""
-                    }
-                },
-                "edgeHub": {
-                    "type": "docker",
-                    "status": "running",
-                    "restartPolicy": "always",
-                    "settings": {
-                    "image": "microsoft/azureiotedge-hub:1.0-preview",
-                    "createOptions": ""
-                    }
-                }
-            },
-            "modules": {
-                "tempSensor": {
-                    "version": "1.0",
-                    "type": "docker",
-                    "status": "running",
-                    "restartPolicy": "always",
-                    "settings": {
-                    "image": "microsoft/azureiotedge-simulated-temperature-sensor:1.0-preview",
-                    "createOptions": "{}"
-                    }
-                },
-                "filtermodule": {
-                    "version": "1.0",
-                    "type": "docker",
-                    "status": "running",
-                    "restartPolicy": "always",
-                    "settings": {
-                    "image": "myacr.azurecr.io/filtermodule:latest",
-                    "createOptions": "{}"
-                    }
-                }
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "runtime": {
+          "type": "docker",
+          "settings": {
+            "minDockerVersion": "v1.25",
+            "loggingOptions": "",
+            "registryCredentials": {
+              "ContosoRegistry": {
+                "username": "myacr",
+                "password": "{password}",
+                "address": "myacr.azurecr.io"
+              }
             }
+          }
+        },
+        "systemModules": {
+          "edgeAgent": {
+            "type": "docker",
+            "settings": {
+              "image": "microsoft/azureiotedge-agent:1.0-preview",
+              "createOptions": ""
+            }
+          },
+          "edgeHub": {
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "microsoft/azureiotedge-hub:1.0-preview",
+              "createOptions": ""
+            }
+          }
+        },
+        "modules": {
+          "tempSensor": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0",
+              "createOptions": "{}"
+            }
+          },
+          "filtermodule": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "myacr.azurecr.io/filtermodule:latest",
+              "createOptions": "{}"
+            }
+          }
         }
+      }
     },
     "$edgeHub": {
-        "properties.desired": {
-            "schemaVersion": "1.0",
-            "routes": {
-                "sensorToFilter": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/filtermodule/inputs/input1\")",
-                "filterToIoTHub": "FROM /messages/modules/filtermodule/outputs/output1 INTO $upstream"
-            },
-            "storeAndForwardConfiguration": {
-                "timeToLiveSecs": 10
-            }
+      "properties.desired": {
+        "schemaVersion": "1.0",
+        "routes": {
+          "sensorToFilter": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/filtermodule/inputs/input1\")",
+          "filterToIoTHub": "FROM /messages/modules/filtermodule/outputs/output1 INTO $upstream"
+        },
+        "storeAndForwardConfiguration": {
+          "timeToLiveSecs": 10
         }
+      }
     }
-}
+  }
 }
 ```
 

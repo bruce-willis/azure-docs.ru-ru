@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: b6cfe6ba510f1e7ed1b448d99fb8a71bb94053e8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0db357194aa4bd4d01b1d445cb407d983214b32b
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620689"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054136"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "34620689"
 > * [Использование приложения для мониторинга и управления](data-factory-monitor-manage-app.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [отслеживанием конвейеров фабрики данных и управлением ими в версии 2](../monitor-visually.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [мониторинге и администрировании конвейеров в службе "Фабрика данных Azure"](../monitor-visually.md).
 
 В этой статье описываются мониторинг и отладка конвейеров, а также управление ими с помощью портала Azure и PowerShell.
 

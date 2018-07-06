@@ -11,29 +11,26 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: c5ec07603088edd3f95f08f12b6982022b396d05
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8e34b0823b7f10455ac0b66fb0614d3946f2382e
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34618493"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055653"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
 ## <a name="overview"></a>Обзор
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-data-movement-activities.md)
-> * [Версия 2 — предварительная](copy-activity-overview.md)
+> * [Версия 1](v1/data-factory-data-movement-activities.md)
+> * [Текущая версия](copy-activity-overview.md)
 
 В фабрике данных Azure с помощью действия копирования можно копировать данные между локальными и облачными хранилищами данных. После копирования данные можно подвергнуть дальнейшему преобразованию и анализу. С помощью действия копирования можно также публиковать результаты преобразования и анализа для бизнес-аналитики и использования приложения.
 
 ![Роль действия копирования](media/copy-activity-overview/copy-activity.png)
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Move data by using Copy Activity](v1/data-factory-data-movement-activities.md) (Перемещение данных с помощью действия копирования).
 
 Действие копирования выполняется в [интегрированной среде выполнения](concepts-integration-runtime.md). В различных сценариях копирования данных могут использоваться разные версии интегрированной среды выполнения:
 
@@ -114,7 +111,7 @@ ms.locfileid: "34618493"
                 "type": "TabularTranslator",
                 "columnMappings": "<column mapping>"
             },
-            "cloudDataMovementUnits": <number>,
+            "dataIntegrationUnits": <number>,
             "parallelCopies": <number>,
             "enableStaging": true/false,
             "stagingSettings": {
@@ -140,7 +137,7 @@ ms.locfileid: "34618493"
 | источник | Укажите тип источника копирования и соответствующие свойства, определяющие конкретный сценарий извлечения данных.<br/><br/>Дополнительные сведения см. в разделе "Свойства действия копирования" в статье о соединителях, приведенных в разделе [Поддерживаемые хранилища данных и форматы](#supported-data-stores-and-formats). | Yes |
 | sink | Укажите тип приемника копирования и соответствующие свойства, определяющие конкретный сценарий записи данных.<br/><br/>Дополнительные сведения см. в разделе "Свойства действия копирования" в статье о соединителях, приведенных в разделе [Поддерживаемые хранилища данных и форматы](#supported-data-stores-and-formats). | Yes |
 | translator | Укажите явные сопоставления столбцов от источника к приемнику. Применяется, когда действие копирования по умолчанию не может удовлетворить ваши потребности.<br/><br/>Дополнительные сведения см. в статье [Schema mapping in copy activity](copy-activity-schema-and-type-mapping.md) (Сопоставление диаграммы в действии копирования). | Нет  |
-| CloudDataMovementUnits | Укажите число единиц перемещения для [интегрированной среды выполнения Azure](concepts-integration-runtime.md), обеспечивающей копирование данных.<br/><br/>Дополнительные сведения см. в статье [Copy Activity performance and tuning guide](copy-activity-performance.md) (Производительность действия копирования и руководство по настройке). | Нет  |
+| dataIntegrationUnits | Укажите число единиц перемещения для [интегрированной среды выполнения Azure](concepts-integration-runtime.md), обеспечивающей копирование данных. Прежнее название — единицы перемещения облачных данных <br/><br/>См. дополнительные сведения об [единицах интеграции данных](copy-activity-performance.md#data-integration-units). | Нет  |
 | parallelCopies | Укажите показатель параллелизма, который должно использовать действие копирования при считывании данных из источника и записи данных в приемник.<br/><br/>Дополнительные сведения см. в разделе [Parallel copy](copy-activity-performance.md#parallel-copy) (Параллельное копирование). | Нет  |
 | enableStaging<br/>stagingSettings | Позволяет разместить временные данные в хранилище BLOB-объектов вместо копирования данных из источника в приемник напрямую.<br/><br/>Дополнительные сведения о полезных сценариях и конфигурации см. в разделе [Staged copy](copy-activity-performance.md#staged-copy) (Промежуточное копирование). | Нет  |
 | enableSkipIncompatibleRow<br/>redirectIncompatibleRowSettings| Позволяет выбрать способ обработки несовместимых строк при копировании данных из источника в приемник.<br/><br/>Дополнительные сведения см. в статье [Fault tolerance of copy activity in Azure Data Factory](copy-activity-fault-tolerance.md) (Отказоустойчивость действия копирования в фабрике данных Azure). | Нет  |
@@ -185,7 +182,7 @@ ms.locfileid: "34618493"
 | redshiftUnload | Если при копировании данных из Redshift используется команда UNLOAD. | Логическое |
 | hdfsDistcp | Если при копировании данных из HDFS используется DistCp. | Логическое |
 | effectiveIntegrationRuntime | Показывает, какие среды Integration Runtime используются для выполнения действия, в формате `<IR name> (<region if it's Azure IR>)`. | Текст (string) |
-| usedCloudDataMovementUnits | Эффективные единицы перемещения облачных данных во время копирования. | Значение Int32 |
+| usedDataIntegrationUnits | Единицы интеграции актуальных данных во время копирования. | Значение Int32 |
 | usedParallelCopies | Использованное количество параллельных процессов копирования. | Значение Int32|
 | redirectRowPath | Путь к журналу пропущенных несовместимых строк в хранилище BLOB-объектов, который настраивается в разделе redirectIncompatibleRowSettings. См. пример ниже. | Текст (string) |
 | executionDetails | Дополнительные сведения о стадиях, которые проходит действие копирования, с указанием всех шагов, длительности, конфигураций и т. п. Не рекомендуем применять синтаксический анализ для этого раздела, поскольку его формат может изменяться. | Массив, |
@@ -200,7 +197,7 @@ ms.locfileid: "34618493"
     "throughput": 467707.344,
     "errors": [],
     "effectiveIntegrationRuntime": "DefaultIntegrationRuntime (East US 2)",
-    "usedCloudDataMovementUnits": 32,
+    "usedDataIntegrationUnits": 32,
     "usedParallelCopies": 8,
     "executionDetails": [
         {
@@ -213,7 +210,7 @@ ms.locfileid: "34618493"
             "status": "Succeeded",
             "start": "2018-01-17T15:13:00.3515165Z",
             "duration": 221,
-            "usedCloudDataMovementUnits": 32,
+            "usedDataIntegrationUnits": 32,
             "usedParallelCopies": 8,
             "detailedDurations": {
                 "queuingDuration": 2,
@@ -237,10 +234,10 @@ ms.locfileid: "34618493"
 Сведения о ключевых факторах, влияющих на производительность перемещения данных (действие копирования) в фабрике данных Azure см. в [руководстве по настройке производительности действия копирования](copy-activity-performance.md). В ней также приведены сведения о производительности, наблюдаемой во время внутреннего тестирования, и рассматриваются различные способы оптимизировать производительность действия копирования.
 
 ## <a name="incremental-copy"></a>Добавочное копирование 
-Фабрика данных версии 2 поддерживает режимы добавочного копирования изменившихся данных из исходного хранилища данных в целевое. Дополнительные сведения см. в [руководстве по добавочному копированию данных](tutorial-incremental-copy-overview.md). 
+Службы "Фабрика данных" поддерживает режимы добавочного копирования изменившихся данных из исходного хранилища данных в целевое. Дополнительные сведения см. в [руководстве по добавочному копированию данных](tutorial-incremental-copy-overview.md). 
 
 ## <a name="read-and-write-partitioned-data"></a>Чтение и запись секционированных данных
-В версии 1 фабрика данных Azure поддерживала чтение или запись секционированных данных с использованием системных переменных SliceStart/SliceEnd/WindowStart/WindowEnd. В версии 2 это достигается с помощью параметра конвейера и времени начала или запланированного времени запуска триггера в качестве значения параметра. Дополнительные сведения см. в статье о [чтении и записи секционированных данных](how-to-read-write-partitioned-data.md).
+В версии 1 фабрика данных Azure поддерживала чтение или запись секционированных данных с использованием системных переменных SliceStart/SliceEnd/WindowStart/WindowEnd. В текущей версии это достигается с помощью параметра конвейера и времени начала или запланированного времени запуска триггера в качестве значения параметра. Дополнительные сведения см. в статье о [чтении и записи секционированных данных](how-to-read-write-partitioned-data.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь со следующими руководствами и примерами:

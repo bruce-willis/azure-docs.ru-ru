@@ -13,23 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/05/2018
 ms.author: jingwang
-ms.openlocfilehash: 24d641247ad9bb0b5e6199952cbde9cb56fcaea7
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: debb27f49c730df4a8bef42b1f1ef9ec50f1faf0
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809300"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054064"
 ---
 # <a name="copy-data-from-mongodb-using-azure-data-factory"></a>Копирование данных из MongoDB с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-on-premises-mongodb-connector.md)
-> * [Версия 2 — предварительная](connector-mongodb.md)
+> * [Версия 1](v1/data-factory-on-premises-mongodb-connector.md)
+> * [Текущая версия](connector-mongodb.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных MongoDB. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Перемещение данных из MongoDB с помощью фабрики данных Azure](v1/data-factory-on-premises-mongodb-connector.md).
-
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -168,7 +164,7 @@ ms.locfileid: "34809300"
 ```
 
 > [!TIP]
-> При указании запроса SQL обратите внимание на формат даты и времени, например `SELECT * FROM Account WHERE LastModifiedDate >= '2018-06-01' AND LastModifiedDate < '2018-06-02'`, или используйте параметр `SELECT * FROM Account WHERE LastModifiedDate >= '@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}' AND LastModifiedDate < '@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'`
+> При указании запроса SQL обратите внимание на формат даты и времени. например `SELECT * FROM Account WHERE LastModifiedDate >= '2018-06-01' AND LastModifiedDate < '2018-06-02'`, или используйте параметр `SELECT * FROM Account WHERE LastModifiedDate >= '@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}' AND LastModifiedDate < '@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'`
 
 ## <a name="schema-by-data-factory"></a>Схема фабрики данных
 

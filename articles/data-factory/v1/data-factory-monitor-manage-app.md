@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: b71ad5701cfd1f8a274318c69d3464cf4fa34708
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3f234e49f1a28fd0881e47ede13ae72483ed31f3
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621094"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053122"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-monitoring-and-management-app"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления
 > [!div class="op_single_selector"]
@@ -29,7 +29,7 @@ ms.locfileid: "34621094"
 >
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [отслеживанием конвейеров фабрики данных и управлением ими в версии 2](../monitor-visually.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [мониторинге и управлении конвейерами в службе "Фабрика данных Azure"](../monitor-visually.md).
 
 В этой статье описывается, как с помощью приложения для мониторинга и управления отслеживать конвейеры фабрики данных, управлять ими и выполнять их отладку. Вы можете начать работу с приложением, посмотрев следующее видео:
 

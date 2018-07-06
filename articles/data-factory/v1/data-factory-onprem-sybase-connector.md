@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 02/02/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1c39443a187c5ba5e92b22d48914289bc410ec79
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 75fbfe1e682f0022385bb5c406d772bb217180fd
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622352"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37045275"
 ---
 # <a name="move-data-from-sybase-using-azure-data-factory"></a>Перемещение данных из Sybase с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-sybase-connector.md)
-> * [Версия 2 — предварительная](../connector-sybase.md)
+> * [Версия 1](data-factory-onprem-sybase-connector.md)
+> * [Версия 2 (текущая)](../connector-sybase.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from Sybase using Azure Data Factory](../connector-sybase.md) (Копирование данных из Sybase с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [копированию данных из Sybase с помощью службы "Фабрика данных Azure"](../connector-sybase.md).
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных Sybase. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 

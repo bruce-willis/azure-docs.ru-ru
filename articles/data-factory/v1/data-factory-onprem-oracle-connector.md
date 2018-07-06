@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/10/2018
+ms.topic: conceptual
+ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 64e8a20f72d451908c12751c0f8062bf4ae86370
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: fe1ca45b0f79781b2fa17bfb605df03d334cc8d1
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046719"
 ---
 # <a name="copy-data-tofrom-on-premises-oracle-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-oracle-connector.md)
-> * [Версия 2 — предварительная](../connector-oracle.md)
+> * [Версия 1](data-factory-onprem-oracle-connector.md)
+> * [Версия 2 (текущая)](../connector-oracle.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from and to Oracle using Azure Data Factory](../connector-oracle.md) (Копирование данных в и из Oracle с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [использованию соединителя Oracle в службе "Фабрика данных Azure" версии 2](../connector-oracle.md).
 
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в локальную базу данных Oracle и обратно. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
@@ -57,6 +58,9 @@ ms.lasthandoff: 03/23/2018
     - Oracle 10g R1, R2 (10.1, 10.2)
     - Oracle 9i R1, R2 (9.0.1, 9.2)
     - Oracle 8i R3 (8.1.7)
+
+> [!NOTE]
+> Прокси-сервер Oracle не поддерживается.
 
 > [!IMPORTANT]
 > В настоящее время драйвер Майкрософт для Oracle поддерживает копирование данных из базы данных Oracle, но не поддерживает запись к базу данных Oracle. Обратите внимание, что этот драйвер не поддерживает возможность тестирования подключения на вкладке "Диагностика" в шлюзе управления данными. Кроме того, для проверки подключения можно воспользоваться мастером копирования.

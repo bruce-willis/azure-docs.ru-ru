@@ -12,24 +12,21 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: douglasl
-ms.openlocfilehash: 25329d65861dc31e67bba146e15a6446a6449e83
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e8e0f8352404892ea8af6a0fa176c336dd2c1659
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620594"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054030"
 ---
 # <a name="transform-data-by-using-the-sql-server-stored-procedure-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-stored-proc-activity.md)
-> * [Версия 2 — предварительная](transform-data-using-stored-procedure.md)
-
+> * [Версия 1](v1/data-factory-stored-proc-activity.md)
+> * [Текущая версия](transform-data-using-stored-procedure.md)
 
 Действия преобразования данных в [конвейере](concepts-pipelines-activities.md) фабрики данных позволяют преобразовать необработанные данные и переработать их в прогнозы и аналитику. Действие хранимой процедуры — это одно из действий преобразования данных, которые поддерживает фабрика данных. Данная статья основана на материалах статьи о [преобразовании данных](transform-data.md), в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования в фабрике данных.
 
 > [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая сейчас доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Действие "Хранимая процедура SQL Server"](v1/data-factory-stored-proc-activity.md).
-> 
 > Если вы не знакомы с фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md). 
 
 C его помощью можно вызвать хранимую процедуру в одном из следующих хранилищ данных вашего предприятия или на виртуальной машине Azure. 

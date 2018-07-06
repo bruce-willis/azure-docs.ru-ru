@@ -1,26 +1,23 @@
 ---
-title: Начало работы с Azure Data Lake Store с помощью PowerShell | Документация Майкрософт
+title: Начало работы с Azure Data Lake Storage Gen1 с помощью PowerShell | Документация Майкрософт
 description: Использование Azure PowerShell для создания учетной записи хранения озера данных и выполнения базовых операций
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
 manager: jhubbard
-editor: cgronlun
-ms.assetid: bf85f369-f9aa-4ca1-9ae7-e03a78eb7290
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 01/09/2018
+ms.topic: conceptual
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: 57b7755bda499cd7113f84d9950b1b06175e11b7
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: f208722d768e2bccf2e5b4d7b4543f8cbba4f185
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37035541"
 ---
-# <a name="get-started-with-azure-data-lake-store-using-azure-powershell"></a>Начало работы с хранилищем озера данных Azure с помощью Azure PowerShell
+# <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-powershell"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью Azure PowerShell
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
@@ -28,7 +25,9 @@ ms.lasthandoff: 04/19/2018
 >
 >
 
-Узнайте, как с помощью Azure PowerShell создать учетную запись хранения озера данных Azure и выполнять базовые операции, такие как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения о хранилище озера данных см. в [обзоре Data Lake Store](data-lake-store-overview.md).
+[!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
+
+Узнайте, как с помощью Azure PowerShell создать учетную запись хранения озера данных Azure и выполнять базовые операции, такие как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения об Azure Data Lake Store см. в руководстве по [Azure Data Lake Storage Gen1](data-lake-store-overview.md).
 
 ## <a name="prerequisites"></a>предварительным требованиям
 

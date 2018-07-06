@@ -1,26 +1,26 @@
 ---
-title: Общие сведения об обеспечении безопасности в Azure Data Lake Store | Документация Майкрософт
-description: Узнайте, что такое хранилище озера данных Azure и каковы его преимущества по сравнению с другими хранилищами данных.
+title: Общие сведения об обеспечении безопасности в Azure Data Lake Storage Gen1 | Документация Майкрософт
+description: Узнайте о том, что такое службы Azure Data Lake Storage Gen1 (прежнее название — Azure Data Lake Store) и каковы ее преимущества по сравнению с другими хранилищами данных.
 services: data-lake-store
 documentationcenter: ''
 author: nitinme
 manager: jhubbard
-editor: cgronlun
-ms.assetid: b3475057-9427-4492-a3af-25a802a23a79
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 03/26/2018
+ms.topic: conceptual
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: 111906bc9e7e85e30a879d7bacff37edb4b204ac
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 4dff8f4ff9fc324d48391c0399677b64824493c6
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37035377"
 ---
-# <a name="overview-of-azure-data-lake-store"></a>Обзор хранилища озера данных Azure
+# <a name="overview-of-azure-data-lake-storage-gen1"></a>Общие сведения об Azure Data Lake Storage Gen1
+
+[!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
+
 Хранилище озера данных Azure — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Озеро данных Azure позволяет сохранять данные с любым размером, типом и скоростью приема в одном месте для эксплуатационной и исследовательской аналитики.
 
 > [!TIP]
@@ -81,24 +81,8 @@ ms.lasthandoff: 03/28/2018
 
 Для доступа к данным в хранилище озера данных можно использовать `adl://<data_lake_store_name>.azuredatalakestore.net`. Дополнительные сведения о доступе к данным в хранилище озера данных см. в статье [Просмотр свойств хранимых данных](data-lake-store-get-started-portal.md#properties).
 
-## <a name="how-do-i-start-using-azure-data-lake-store"></a>Как начать использовать хранилище озера данных Azure
-См. статью с инструкциями по [подготовке к работе с Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md). После подготовки озера данных Azure можно научиться использовать средства работы с большими данными, такие как аналитика озера данных Azure и Azure HDInsight, вместе с хранилищем озера данных. Вы также можете создать приложение .NET для создания учетной записи хранилища озера данных Azure и выполнения таких операций, как передача данных, загрузка данных и т. д.
+## <a name="next-steps"></a>Дополнительная информация
 
-* [Начало работы с аналитикой озера данных Azure](../data-lake-analytics/data-lake-analytics-get-started-portal.md)
-* [Использование Azure HDInsight с хранилищем озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Начало работы с Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md)
 * [Начало работы с хранилищем озера данных Azure с помощью пакета SDK .NET](data-lake-store-get-started-net-sdk.md)
-
-## <a name="data-lake-store-videos"></a>Видео о хранилище озера данных
-Если вы предпочитаете обучаться по видео, вот ролики о различных возможностях хранилища озера данных.
-
-* [Create an Azure Data Lake Store Account (Создание учетной записи хранения озера данных Azure)](https://mix.office.com/watch/1k1cycy4l4gen)
-* [Use the Data Explorer to Manage Data in Azure Data Lake Store (Управление данными в хранилище озера данных Azure с помощью обозревателя данных)](https://mix.office.com/watch/icletrxrh6pc)
-* [Connect Azure Data Lake Analytics to Azure Data Lake Store (Подключение Аналитики озера данных Azure с хранилищем озера данных)](https://mix.office.com/watch/qwji0dc9rx9k)
-* [Access Azure Data Lake Store via Data Lake Analytics (Доступ к хранилищу озера данных Azure с помощью Аналитики озера данных)](https://mix.office.com/watch/1n0s45up381a8)
-* [Connect Azure HDInsight to Azure Data Lake Store (Подключение Azure HDInsight к хранилищу озера данных Azure)](https://mix.office.com/watch/l93xri2yhtp2)
-* [Access Azure Data Lake Store via Data Lake Analytics (Доступ к хранилищу озера данных Azure с помощью Hive и Pig)](https://mix.office.com/watch/1n9g5w0fiqv1q)
-* [Use DistCp (Hadoop Distributed Copy) to copy data to and from Azure Data Lake Store (Использование средства DistCp (Hadoop Distributed Copy) для копирования данных из хранилища озера данных Azure и обратно)](https://mix.office.com/watch/1liuojvdx6sie)
-* [Use Apache Sqoop to move data between relational sources and Azure Data Lake Store (Использование Apache Sqoop для перемещения данных между реляционными источниками и хранилищем озера данных Azure)](https://mix.office.com/watch/1butcdjxmu114)
-* [Data Orchestration using Azure Data Factory for Azure Data Lake Store (Оркестрация данных с помощью фабрики данных Azure для хранилища озера данных Azure)](https://mix.office.com/watch/1oa7le7t2u4ka)
-* [Securing Data in the Azure Data Lake Store (Защита данных в хранилище озера данных Azure)](https://mix.office.com/watch/1q2mgzh9nn5lx)
-
+* [Использование Azure HDInsight с хранилищем озера данных](data-lake-store-hdinsight-hadoop-use-portal.md)

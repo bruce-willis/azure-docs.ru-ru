@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 71bbe53595f2afab50d6220f335d615ada957a85
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: c361f74147862585074f3c4475209ba6eb0c1e0c
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28019489"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37029804"
 ---
 # <a name="security-frame-communication-security--mitigations"></a>Механизм безопасности. Безопасность обмена данными | Устранение угроз 
 | Продукт или служба | Статья |
@@ -135,7 +135,7 @@ ms.locfileid: "28019489"
   </system.webServer>
 </configuration>
 ```
-Это правило работает путем возврата кода состояния HTTP 301 (постоянное перенаправление), когда пользователь запрашивает страницу с помощью HTTP. Код состояния 301 перенаправляет запрос на тот же запрошенный посетителем URL-адрес, но заменяет в запросе HTTP на HTTPS. Например, запрос HTTP://contoso.com будет перенаправлен на адрес HTTPS://contoso.com. 
+Это правило работает путем возврата кода состояния HTTP 301 (постоянное перенаправление), когда пользователь запрашивает страницу с помощью HTTP. Код состояния 301 перенаправляет запрос на тот же запрошенный посетителем URL-адрес, но заменяет в запросе HTTP на HTTPS. Например, HTTP://contoso.com будет перенаправлено в HTTPS://contoso.com. 
 
 ## <a id="http-hsts"></a>Включите строгий режим безопасности транспорта HTTP (HSTS)
 
@@ -288,7 +288,7 @@ namespace CertificatePinningExample
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.semantic.dotnet.wcf_misconfiguration_transport_security_enabled) |
 | **Действия** | В конфигурации приложения должно быть задано, что для доступа к конфиденциальной информации используется протокол HTTPS.<ul><li>**Пояснение.** Если приложение обрабатывает конфиденциальную информацию и не использует шифрование на уровне сообщений, доступ к нему должен осуществляться только через зашифрованный канал транспорта.</li><li>**Рекомендации.** Отключите транспортный протокол HTTP и включите HTTPS. Например, замените тег `<httpTransport/>` на `<httpsTransport/>`. Не следует полагаться на конфигурацию сети (брандмауэра), чтобы обеспечить доступ к приложению только через защищенный канал. С философской точки зрения безопасность приложения не должна зависеть от сети.</li></ul><p>В практическом плане сотрудники, ответственные за обеспечение безопасности сети, не всегда проверяют возникающие требования к безопасности приложения.</p>|
 
 ## <a id="message-protection"></a>WCF. Настройте уровень защиты сообщений с помощью параметра EncryptAndSign

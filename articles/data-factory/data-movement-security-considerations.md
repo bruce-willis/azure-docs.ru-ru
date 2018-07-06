@@ -11,28 +11,25 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/26/2018
+ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: 80cec0bc8136142f30ea7b957de819379b1bb139
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: c0a07cb872ec87bbf39237b74990a1fc7a74e9e8
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34619139"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053261"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-data-movement-security-considerations.md)
-> * [Версия 2 — предварительная](data-movement-security-considerations.md)
+> * [Версия 1](v1/data-factory-data-movement-security-considerations.md)
+> * [Текущая версия](data-movement-security-considerations.md)
 
 В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для помощи в защите данных. Ресурсы управления фабрики данных созданы на основе инфраструктуры безопасности Azure и используют все возможные меры безопасности, предлагаемые Azure.
 
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. статью [Вопросы безопасности при перемещении данных в фабрике данных Azure](v1/data-factory-data-movement-security-considerations.md).
-
 С помощью фабрики данных можно создать один или несколько [конвейеров](concepts-pipelines-activities.md)данных. Конвейеры — это логические группы действий, которые вместе отвечают за выполнение задачи. Эти конвейеры реализуются в регионе, где была создана фабрика данных. 
 
-Хотя фабрика данных доступна только в восточной части США, восточной части США 2 и Западной Европе (предварительная версия 2), служба перемещения данных доступна [глобально в нескольких регионах](concepts-integration-runtime.md#azure-ir). Если служба перемещения данных еще не развернута в этом регионе, служба фабрики данных гарантирует, что данные не покинут географическую область или регион, пока службе не будет явно указано использовать альтернативный регион. 
+Хотя служба "Фабрика данных" доступна только в нескольких регионах, служба перемещения данных [доступна глобально](concepts-integration-runtime.md#integration-runtime-location) для обеспечения соответствия данным и эффективности, а также снижения затрат на исходящий трафик. 
 
 Фабрика данных Azure не хранит никакие данные, за исключением учетных данных связанной службы для облачных хранилищ данных, которые зашифрованы с помощью сертификатов. Используя фабрику данных, можно создать управляемые данными рабочие процессы, чтобы организовать перемещение данных между [поддерживаемыми хранилищами данных](copy-activity-overview.md#supported-data-stores-and-formats) и обработку данных с помощью [служб вычислений](compute-linked-services.md) в других регионах или локальной среде. Кроме того, можно отслеживать рабочие процессы и управлять ими с помощью пакетов SDK и Azure Monitor.
 
@@ -42,7 +39,7 @@ ms.locfileid: "34619139"
 -   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018);
 -   [CSA STAR](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification).
 
-Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://www.microsoft.com/trustcenter).
+Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx).
 
 В этой статье мы рассмотрим вопросы безопасности в следующих двух сценариях перемещения данных: 
 

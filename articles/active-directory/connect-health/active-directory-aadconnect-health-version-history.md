@@ -3,7 +3,7 @@ title: 'Azure AD Connect Health: история версий'
 description: В этом документе описываются выпуски Azure AD Connect Health и возможности, включенные в эти выпуски.
 services: active-directory
 documentationcenter: ''
-author: karavar
+author: zhiweiw
 manager: mtillman
 editor: curtand
 ms.assetid: 8dd4e998-747b-4c52-b8d3-3900fe77d88f
@@ -14,15 +14,24 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 4555bc85489f557cf6b6b744df7063fc14b0602a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3e3cebd47a259c7c297d6df0eaf76a350111f2e3
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34590384"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36319271"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.
+
+## <a name="june-2018"></a>Июнь 2018 г. 
+**Новые функции предварительной версии:** 
+* Azure AD Connect Health для синхронизации. Диагностика и устранение ошибок синхронизации повторяющихся атрибутов с помощью портала 
+
+**Обновление агента:** 
+*   Агент Azure AD Connect Health для AD FS (версия 3.1.2.0).  
+   1. Исправление для средств управления памятью агента и связанных оповещений специально для версии 3.0.244.0
+
 
 ## <a name="may-2018"></a>Май 2018 г.
 **Обновление агента:**
@@ -35,7 +44,7 @@ ms.locfileid: "34590384"
  2. Повышение конфиденциальности агентов.  
  3. Исправления ошибок и общие улучшения.
 
-* Агент Azure AD Connect Health для Sync (версия 3.0.244.0).
+* Агент Azure AD Connect Health для синхронизации (версия 3.0.164.0) выпущен вместе с Azure AD Connect версии 1.1.819.0.
  1. Повышение конфиденциальности агентов.  
  2. Исправления ошибок и общие улучшения.
 
@@ -98,7 +107,7 @@ ms.locfileid: "34590384"
 ## <a name="october-2016"></a>Октябрь 2016 г.
 **Обновление агента:**
 
-* Агент Azure AD Connect Health для AD FS \(версия 2.6.408.0\).
+* Агент Azure AD Connect Health для AD FS (версия 2.6.408.0).
 1. Усовершенствования в сеансах определения IP-адресов клиентов в запросах проверки подлинности.
 2. Исправлены ошибки, связанные с предупреждениями.
 * Агент Azure AD Connect Health для AD DS (версия 2.6.408.0).

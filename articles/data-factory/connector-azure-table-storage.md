@@ -11,24 +11,21 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 06/14/2018
 ms.author: jingwang
-ms.openlocfilehash: 3f6add6691b0e1f43d70399493fa6bf8db8f3833
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 24954cfc128834313bf13a1917e67d5c1812cf66
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34617184"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055527"
 ---
 # <a name="copy-data-to-and-from-azure-table-storage-by-using-azure-data-factory"></a>Копирование данных в службу "Хранилище таблиц Azure" и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-azure-table-connector.md)
-> * [Версия 2 — предварительная](connector-azure-table-storage.md)
+> * [Версия 1](v1/data-factory-azure-table-connector.md)
+> * [Текущая версия](connector-azure-table-storage.md)
 
 В этой статье объясняется, как с помощью действия копирования в фабрике данных Azure копировать данные из службы "Хранилище таблиц Azure" и обратно. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется версия 1 фабрики данных, которая является общедоступной, см. статью [Move data to and from Azure Table using Azure Data Factory](v1/data-factory-azure-table-connector.md) (Перемещение данных в таблицу Azure и из нее с помощью фабрики данных Azure).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -81,8 +78,8 @@ ms.locfileid: "34617184"
 
 Подпись общего доступа обеспечивает делегированный доступ к ресурсам в вашей учетной записи хранения. Вы можете использовать ее, чтобы предоставить ограниченное право на работу с объектами в вашей учетной записи хранения на определенный период и с определенным набором разрешений. Не нужно предоставлять совместный доступ к ключам доступа для учетной записи. Подписанный URL-адрес — это универсальный код ресурса (URI), который в своих параметрах запроса содержит все сведения, необходимые для доступа к ресурсу хранилища с прохождением аутентификации. Для доступа к ресурсам хранилища с помощью подписанного URL-адреса клиенту достаточно передать SAS в соответствующий конструктор или метод. Дополнительные сведения о подписанном URL-адресе см. в статье [Использование подписанных URL-адресов (SAS)](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
-> [!IMPORTANT]
-> Сейчас фабрика данных поддерживает только подписанный URL-адрес уровня службы, но не уровня учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). Подписанный URL-адрес, созданный на портале Azure или в Обозревателе службы хранилища Azure, является неподдерживаемым подписанным URL-адресом уровня учетной записи.
+> [!NOTE]
+> Сейчас Фабрика данных поддерживает подписанные URL-адреса как уровня службы, так и уровня учетной записи. Сведения об этих двух типах и способах их создания см. в разделе [Типы подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md#types-of-shared-access-signatures). 
 
 > [!TIP]
 > Чтобы создать подписанный URL-адрес уровня службы для учетной записи хранения, можно выполнить следующие команды PowerShell. Замените заполнители и предоставьте необходимое разрешение.

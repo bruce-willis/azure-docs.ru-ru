@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Netezza с помощью фабрики данных Azure (бета-версия) | Документация Майкрософт
+title: Копирование данных из Netezza с помощью Фабрики данных Azure | Документация Майкрософт
 description: Узнайте, как копировать данные из Netezza в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -11,24 +11,18 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/09/2018
+ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 85a79cbbe53393bc02178cd827453508b043692e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f8c10e2200f830ea6e568e7b3fba1f0a6085cef2
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34617898"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055660"
 ---
-# <a name="copy-data-from-netezza-using-azure-data-factory-beta"></a>Копирование данных из Netezza с помощью фабрики данных Azure (бета-версия)
+# <a name="copy-data-from-netezza-using-azure-data-factory"></a>Копирование данных из Netezza с помощью Фабрики данных Azure 
 
 Из этой статьи вы узнаете, как с помощью действия копирования в фабрике данных Azure копировать данные из Netezza. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Move data by using Copy Activity](v1/data-factory-data-movement-activities.md) (Перемещение данных с помощью действия копирования).
-
-> [!IMPORTANT]
-> Сейчас этот соединитель доступен в бета-версии. Попробуйте поработать с ним и оставьте свой отзыв. Не используйте его в рабочих средах.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

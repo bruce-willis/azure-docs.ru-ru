@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: ea612f0c58b92e37d405f9a57611610fa187f7db
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 81392cc8b6225302d6835cdb3d23e9bab7d9c930
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34619326"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055700"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Выражения и функции в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-functions-variables.md)
-> * [Версия 2 — предварительная](control-flow-expression-language-functions.md)
+> * [Версия 1](v1/data-factory-functions-variables.md)
+> * [Текущая версия](control-flow-expression-language-functions.md)
 
-В этой статье содержатся сведения о выражениях и функциях, поддерживаемых фабрикой данных Azure (версия 2). 
+В этой статье содержатся сведения о выражениях и функциях, поддерживаемых службой "Фабрика данных Azure". 
 
 ## <a name="introduction"></a>Введение
 Значения JSON в определении могут быть литералами или выражениями, которые оцениваются в среде выполнения. Например:   
@@ -40,20 +40,15 @@ ms.locfileid: "34619326"
 "name": "@pipeline().parameters.password"
 ```
 
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. статью [Фабрика данных Azure — функции и системные переменные](v1/data-factory-functions-variables.md).
-
-
 ## <a name="expressions"></a>Выражения  
-Выражения могут встречаться в любом месте строкового значения JSON и всегда возвращают другое значение JSON. Если значение JSON является выражением, текст выражения извлекается без знака \"\@\". Если требуется строковый литерал, начинающийся с \@\, его необходимо экранировать с помощью "@@". В примерах ниже показано, как вычисляются выражения.  
+Выражения могут встречаться в любом месте строкового значения JSON и всегда возвращают другое значение JSON. Если значение JSON является выражением, текст выражения извлекается без знака @ (\@). Если требуется строковый литерал, начинающийся с \@\, его необходимо экранировать с помощью "@@". В примерах ниже показано, как вычисляются выражения.  
   
 |Значение JSON|Результат|  
 |----------------|------------|  
 |"parameters"|Возвращаются символы в виде 'parameters'.|  
 |"parameters[1]"|Возвращаются символы в виде 'parameters[1]'.|  
-|"@@"|Возвращается строка из 1 символа, содержащая символ \@.|  
-|\"\@\"|Возвращается строка из 2 символов, содержащая символ \@\.|  
+|"\@@"|Возвращается строка из 1 символа, содержащая символ \@\.|  
+|" \@"|Возвращается строка из 2 символов, содержащая символ \@\.|  
   
  Выражения также могут содержаться внутри строк, где они заключаются в структуру `@{ ... }`, при использовании *интерполяции строк*. Например: `"name" : "First Name: @{pipeline().parameters.firstName} Last Name: @{pipeline().parameters.lastName}"`  
   
@@ -61,13 +56,13 @@ ms.locfileid: "34619326"
   
 |Значение JSON|Результат|  
 |----------------|------------|  
-|@pipeline().parameters.myString| Возвращает `foo` как строку.|  
-|@{pipeline().parameters.myString}| Возвращает `foo` как строку.|  
-|@pipeline().parameters.myNumber| Возвращает `42` как *номер*.|  
-|@{pipeline().parameters.myString}| Возвращает `42` как *строку*.|  
+|"\@pipeline().parameters.myString"| Возвращает `foo` как строку.|  
+|"\@{pipeline().parameters.myString}"| Возвращает `foo` как строку.|  
+|"\@pipeline().parameters.myNumber"| Возвращает `42` как *номер*.|  
+|"\@{pipeline().parameters.myNumber}"| Возвращает `42` как *строку*.|  
 |Answer is: @{pipeline().parameters.myNumber}| Возвращает строку `Answer is: 42`.|  
-|@concatAnswer is: @{pipeline().parameters.myNumber}| Возвращает строку `Answer is: 42`.|  
-|Answer is: @{pipeline().parameters.myNumber}| Возвращает строку `Answer is: @{pipeline().parameters.myNumber}`.|  
+|"\@concat('Answer is: ', string(pipeline().parameters.myNumber))"| Возвращает строку `Answer is: 42`.|  
+|"Answer is: \@@{pipeline().parameters.myNumber}"| Возвращает строку `Answer is: @{pipeline().parameters.myNumber}`.|  
   
 ### <a name="examples"></a>Примеры
 

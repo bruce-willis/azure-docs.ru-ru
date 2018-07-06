@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 50204bac60a694779eafe15df7e8733007ba92a3
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5afc89e774595952adf860fc6bcdc0e2403c617a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622267"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047100"
 ---
 # <a name="file-and-compression-formats-supported-by-azure-data-factory"></a>Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure
 *Этот раздел относится к соединителям для следующих компонентов: [Amazon S3](data-factory-amazon-simple-storage-service-connector.md), [большой двоичный объект Azure](data-factory-azure-blob-connector.md), [Azure Data Lake Store](data-factory-azure-datalake-connector.md), [файловая система](data-factory-onprem-file-system-connector.md), [FTP](data-factory-ftp-connector.md), [HDFS](data-factory-hdfs-connector.md), [HTTP](data-factory-http-connector.md) и [SFTP](data-factory-sftp-connector.md).*
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [поддерживаемыми форматами файлов и кодеками сжатия в фабрике данных версии 2](../supported-file-formats-and-compression-codecs.md).
+> В статье используется служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. описание [поддерживаемых форматов файлов и кодеков сжатия в службе "Фабрика данных"](../supported-file-formats-and-compression-codecs.md).
 
 Фабрика данных Azure поддерживает следующие форматы файлов:
 

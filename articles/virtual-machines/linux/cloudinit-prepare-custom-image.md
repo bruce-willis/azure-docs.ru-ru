@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: faa28a6b28c721e4088ccfbb00514be7f605f3e2
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: ff5c76ca0a164d09e45488cb7abf7f2c2ee50a95
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33943752"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37064614"
 ---
 # <a name="prepare-an-existing-linux-azure-vm-image-for-use-with-cloud-init"></a>Подготовка существующего образа виртуальной машины Azure Linux к использованию с cloud-init
 В этой статье показано, как выбрать и подготовить существующую виртуальную машину Azure к повторному развертыванию и применению cloud-init. Из полученного образа можно развернуть новую виртуальную машину или масштабируемый набор виртуальных машин. И то, и другое вы сможете дополнительно настроить во время развертывания с помощью cloud-init.  Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
@@ -97,7 +97,7 @@ EOF
 
 Если в существующем образе Azure настроен файл подкачки, и вы хотите с помощью cloud-init изменить настройки файла подкачки для нового образа, необходимо удалить существующий файл подкачки.
 
-Для образов на основе RedHat нужно выполнить инструкции по [удалению файла подкачки](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Deployment_Guide/s2-swap-removing-file.html), предоставленные в документации по RedHat.
+Для образов на основе Red Hat нужно выполнить инструкции по [удалению файла подкачки](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/swap-removing-file), предоставленные в документации по Red Hat.
 
 Для образов на основе CentOS, в которых настроен файл подкачки, для его отключения можно выполнить следующую команду:
 ```bash

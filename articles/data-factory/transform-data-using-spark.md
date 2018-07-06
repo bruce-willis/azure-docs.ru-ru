@@ -12,22 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/31/2018
 ms.author: douglasl
-ms.openlocfilehash: 525ad1c83a1982ae5b954b900c5a6c7086544c66
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: abe2fabc505f94f19d4b15a406fc59bf6d6e7ac1
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34700542"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050341"
 ---
 # <a name="transform-data-using-spark-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Spark в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-spark.md)
-> * [Версия 2 — предварительная](transform-data-using-spark.md)
+> * [Версия 1](v1/data-factory-spark.md)
+> * [Текущая версия](transform-data-using-spark.md)
 
 Действие Spark в [конвейере](concepts-pipelines-activities.md) фабрики данных выполняет программу Spark в [вашем](compute-linked-services.md#azure-hdinsight-linked-service) кластере или в кластере [по требованию](compute-linked-services.md#azure-hdinsight-on-demand-linked-service) HDInsight. Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования. Если вы используете связанную службу Spark по требованию, фабрика данных автоматически создает кластер Spark для обработки данных, когда это необходимо, а затем удаляет кластер после завершения обработки. 
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Вызов программ Spark из конвейеров фабрики данных Azure](v1/data-factory-spark.md).
 
 > [!IMPORTANT]
 > Действие Spark не поддерживает кластеры HDInsight Spark, использующие Azure Data Lake Store в качестве основного хранилища.

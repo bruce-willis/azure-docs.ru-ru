@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/26/2018
 ms.author: terrylan
-ms.openlocfilehash: dc362306e20b4d39aa73a552e47cbcbd3037edbd
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 434b73d4625f86fab195dbda1fed9c841791f5b6
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37063397"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37099465"
 ---
 # <a name="security-health-monitoring-in-azure-security-center"></a>Наблюдение за работоспособностью системы безопасности в Центре безопасности Azure
 В этой статье описываются возможности мониторинга, доступные в центре безопасности Azure для наблюдения за соответствием политикам.
@@ -84,7 +84,7 @@ ms.locfileid: "37063397"
 * оранжевый цвет — средний приоритет, проблему следует решить как можно скорее;
 * зеленый цвет (внизу) — работоспособное состояние.
 
-К первому уровню этого представления топологии относятся [виртуальные сети](../virtual-network/virtual-networks-overview.md), [шлюзы виртуальных сетей](/vpn-gateway/vpn-gateway-site-to-site-create.md) и [виртуальная сеть (классическая)](/virtual-network/virtual-networks-create-vnet-classic-pportal.md). На втором уровне находятся подсети, а на третьем — виртуальные машины, которые принадлежат к этим подсетям. В правом столбце отображается текущее состояние группы безопасности сети для этих ресурсов, как показано в следующем примере.
+К первому уровню этого представления топологии относятся [виртуальные сети](../virtual-network/virtual-networks-overview.md), [шлюзы виртуальных сетей](../vpn-gateway/vpn-gateway-howto-site-to-site-classic-portal.md) и [виртуальная сеть (классическая)](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). На втором уровне находятся подсети, а на третьем — виртуальные машины, которые принадлежат к этим подсетям. В правом столбце отображается текущее состояние группы безопасности сети для этих ресурсов, как показано в следующем примере.
 
 ![Состояние группы безопасности сети в разделе топологии сетей](./media/security-center-monitoring/security-center-monitoring-fig12-ga.png)
 

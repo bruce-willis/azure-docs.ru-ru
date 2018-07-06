@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/22/2018
+ms.date: 03/22/2018
 ms.author: mabrigg
 ms.reviewer: alfredop
-ms.openlocfilehash: 763b0af9c258a70392e8c7ebbb4c107e94fce5b2
-ms.sourcegitcommit: a0be2dc237d30b7f79914e8adfb85299571374ec
+ms.openlocfilehash: 46e46cfea621f99e150446fcc75b71feb468fa49
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2018
-ms.locfileid: "29877285"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37052704"
 ---
 # <a name="provider-resource-usage-api"></a>API использования ресурсов для поставщиков
 Термин *поставщик* обозначает администраторов служб и любых делегированных поставщиков. Операторы Azure Stack и делегированные поставщики с помощью API использования ресурсов для поставщиков могут просматривать данные об использовании ресурсов их непосредственными клиентами. Например, как показано на схеме, с помощью API для поставщиков P0 может получить сведения о прямом использовании ресурсов для P1 и P2, а P1 — для P3 и P4.
@@ -34,7 +34,7 @@ ms.locfileid: "29877285"
 
 | **Метод** | **URI запроса** |
 | --- | --- |
-| ПОЛУЧЕНИЕ |https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value} |
+| ПОЛУЧЕНИЕ |https://{armendpoint}/subscriptions/{subId}/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime={reportedStartTime}&reportedEndTime={reportedEndTime}&aggregationGranularity={granularity}&subscriberId={sub1.1}&api-version=2015-06-01-preview&continuationToken={token-value} |
 
 ### <a name="arguments"></a>Аргументы
 | **Аргумент** | **Описание** |
@@ -49,7 +49,7 @@ ms.locfileid: "29877285"
 | *continuationToken* |Маркер, полученный из последнего вызова к API использования для поставщиков. Этот маркер используется как закладка в процессе выполнения, если результат содержит больше 1000 строк. Если маркер отсутствует, данные извлекаются с начала суток или часа, в зависимости от указанного уровня детализации. |
 
 ### <a name="response"></a>Ответ
-GET /subscriptions/sub1/providers/Microsoft.Commerce/subscriberUsageAggregates?reportedStartTime=reportedStartTime=2014-05-01T00%3a00%3a00%2b00%3a00&reportedEndTime=2015-06-01T00%3a00%3a00%2b00%3a00&aggregationGranularity=Daily&subscriberId=sub1.1&api-version=1.0
+GET /subscriptions/sub1/providers/Microsoft.Commerce.Admin/subscriberUsageAggregates?reportedStartTime=reportedStartTime=2014-05-01T00%3a00%3a00%2b00%3a00&reportedEndTime=2015-06-01T00%3a00%3a00%2b00%3a00&aggregationGranularity=Daily&subscriberId=sub1.1&api-version=1.0
 
 ```json
 {
@@ -57,11 +57,11 @@ GET /subscriptions/sub1/providers/Microsoft.Commerce/subscriberUsageAggregates?r
 {
 
 "id":
-"/subscriptions/sub1.1/providers/Microsoft.Commerce/UsageAggregate/sub1.1-
+"/subscriptions/sub1.1/providers/Microsoft.Commerce.Admin/UsageAggregate/sub1.1-
 
 meterID1",
 "name": "sub1.1-meterID1",
-"type": "Microsoft.Commerce/UsageAggregate",
+"type": "Microsoft.Commerce.Admin/UsageAggregate",
 
 "properties": {
 "subscriptionId":"sub1.1",

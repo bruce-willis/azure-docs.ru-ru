@@ -11,14 +11,14 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/11/2018
+ms.date: 06/27/2018
 ms.author: maxluk
-ms.openlocfilehash: c6f6e691ef4b317854aef1d7397d5fb840d25ff2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: eb7b538737e54b2c3d8a32e2ba65f7e0762a302c
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31409328"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047162"
 ---
 # <a name="submit-jobs-from-r-tools-for-visual-studio"></a>Отправка заданий из расширения "Инструменты R для Visual Studio"
 
@@ -37,7 +37,7 @@ ms.locfileid: "31409328"
 3. Для проверки подлинности по SSH необходимы открытые и закрытые ключи.
 <!-- {TODO tbd, no such file yet}[use SSH with HDInsight](hdinsight-hadoop-linux-use-ssh-windows.md) -->
 
-4. Установите на компьютер [R Server](https://msdn.microsoft.com/microsoft-r/rserver-install-windows). R Server предоставляет функции [`RevoScaleR`](https://msdn.microsoft.com/microsoft-r/scaler/scaler) и `RxSpark`.
+4. Установите на компьютер [ML Server](https://msdn.microsoft.com/microsoft-r/rserver-install-windows). ML Server предоставляет функции [`RevoScaleR`](https://msdn.microsoft.com/microsoft-r/scaler/scaler) и `RxSpark`.
 
 5. Установите [PuTTY](http://www.putty.org/), чтобы предоставить контекст вычисления для выполнения функций `RevoScaleR` из локального клиента к кластеру HDInsight.
 
@@ -53,7 +53,7 @@ ms.locfileid: "31409328"
 
 ## <a name="execute-local-r-methods"></a>Выполнение локальных методов R
 
-1. Создайте собственный [кластер HDInsight R Server](r-server-get-started.md).
+1. Создайте [кластер HDInsight для Служб машинного обучения](r-server-get-started.md).
 2. Установите [расширение RTVS](https://docs.microsoft.com/visualstudio/rtvs/installation).
 3. Загрузите [ZIP-файл с примерами](https://github.com/Microsoft/RTVS-docs/archive/master.zip).
 4. Откройте `examples/Examples.sln` для запуска решения в Visual Studio.
@@ -66,13 +66,13 @@ ms.locfileid: "31409328"
 
     ![Параметры обработки и анализа данных...](./media/r-server-submit-jobs-r-tools-vs/workspace.png)
 
-## <a name="submit-jobs-to-an-hdinsight-r-cluster"></a>Отправка заданий в кластер HDInsight R
+## <a name="submit-jobs-to-an-hdinsight-ml-services-cluster"></a>Отправка заданий в кластер HDInsight R для Служб машинного обучения
 
-С помощью Microsoft R Server или Microsoft R Client с компьютера Windows, где установлена программа PuTTY, вы можете создать контекст вычисления, который будет запускать распределенные функции `RevoScaleR` из вашего локального клиента к вашему кластеру HDInsight. Используйте `RxSpark`, чтобы создать контекст вычисления, указав свое имя пользователя, граничный узел кластера Hadoop, ключи SSH и т. д.
+С помощью Microsoft ML Server или Microsoft R Client с компьютера Windows, где установлена программа PuTTY, вы можете создать контекст вычисления, который будет запускать распределенные функции `RevoScaleR` из вашего локального клиента к вашему кластеру HDInsight. Используйте `RxSpark`, чтобы создать контекст вычисления, указав свое имя пользователя, граничный узел кластера Hadoop, ключи SSH и т. д.
 
-1. Чтобы найти имя узла вашего граничного узла, откройте панель кластера HDInsight R в Azure, а затем в верхнем меню в области "Обзор" выберите **Secure Shell (SSH)**.
+1. Чтобы найти имя вашего граничного узла, откройте панель кластера HDInsight для Служб машинного обучения в Azure, а затем в верхнем меню в области "Обзор" выберите **Secure Shell (SSH)**.
 
-    ![Secure Shell (SSH)](./media/r-server-submit-jobs-r-tools-vs/ssh.png)
+    ![Безопасная оболочка (SSH)](./media/r-server-submit-jobs-r-tools-vs/ssh.png)
 
 2. Скопируйте значение **имени узла граничного узла**.
 
@@ -122,7 +122,7 @@ ms.locfileid: "31409328"
 
 5. Убедитесь, что команда `rxHadoopCopy` успешно скопировала файл `people.json` из папки данных для примера в недавно созданную папку `/user/RevoShare/newUser`:
 
-    1. На панели кластера HDInsight R в Azure в меню слева выберите **Учетные записи хранения**.
+    1. На панели кластера HDInsight для Служб машинного обучения в Azure в меню слева выберите **Учетные записи хранения**.
 
         ![учетные записи хранения;](./media/r-server-submit-jobs-r-tools-vs/storage-accounts.png)
 
@@ -144,6 +144,6 @@ ms.locfileid: "31409328"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)
+* [Варианты контекста вычислений для Служб машинного обучения в HDInsight](r-server-compute-contexts.md)
 * Пример прогнозирования задержки рейсов см. в статье [Совместное использование ScaleR и SparkR в HDInsight](../hdinsight-hadoop-r-scaler-sparkr.md).
 <!-- * You can also submit R jobs with the [R Studio Server](hdinsight-submit-jobs-from-r-studio-server.md) -->

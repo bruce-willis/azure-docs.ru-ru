@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: df8fe611c762421f3a963340b24df74a80a20160
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 678913796edafe86e19d8907e3a2e29ec15ffa90
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621740"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047083"
 ---
 # <a name="copy-data-to-and-from-azure-sql-data-warehouse-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-azure-sql-data-warehouse-connector.md)
-> * [Версия 2 — предварительная](../connector-azure-sql-data-warehouse.md)
+> * [Версия 1](data-factory-azure-sql-data-warehouse-connector.md)
+> * [Версия 2 (текущая)](../connector-azure-sql-data-warehouse.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Копирование данных из хранилища данных SQL Azure с помощью фабрики данных Azure](../connector-azure-sql-data-warehouse.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Хранилища данных SQL Azure в службе "Фабрика данных Azure" версии 2](../connector-azure-sql-data-warehouse.md).
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в хранилище данных SQL Azure и из него. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.  
 

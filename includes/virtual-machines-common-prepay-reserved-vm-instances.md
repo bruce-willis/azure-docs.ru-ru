@@ -1,15 +1,15 @@
 ---
 ms.topic: include
-ms.openlocfilehash: 99eaa667e4c6a9d63b4cc43ada8c6e36f7365610
-ms.sourcegitcommit: 39f4911b5933f7062dcf5d57af94eab8a0740b2b
+ms.openlocfilehash: 509d2bc3f58c57a3e2e15eed2ea2c70ed17856f3
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2018
-ms.locfileid: "35683055"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37063703"
 ---
 # <a name="prepay-for-virtual-machines-with-azure-reserved-vm-instances"></a>Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances
 
-Вы можете воспользоваться предоплатой виртуальных машин и сэкономить при использовании Azure Reserved Virtual Machine Instances. Дополнительные сведения см. на странице [Зарезервированные экземпляры виртуальных машин Azure](https://azure.microsoft.com/pricing/reserved-vm-instances/).
+Вы можете воспользоваться предоплатой виртуальных машин и сэкономить при использовании Azure Reserved Virtual Machine Instances. Дополнительные сведения см. на странице [Azure Reserved VM Instances](https://azure.microsoft.com/pricing/reserved-vm-instances/).
 
 Вы можете приобрести зарезервированные экземпляры Azure на [портале Azure](https://portal.azure.com). Чтобы приобрести зарезервированный экземпляр:
 -   Необходимо быть участником роли "Владелец" по крайней мере для одной подписки с соглашением Enterprise или подписки с оплатой по мере использования.
@@ -24,7 +24,7 @@ ms.locfileid: "35683055"
 2. Точные сведения о размере виртуальной машины также можно получить с помощью PowerShell, Azure Resource Manager или портала Azure.
 
 ## <a name="buy-a-reserved-virtual-machine-instance"></a>Покупка зарезервированного экземпляра виртуальной машины
-1. Войдите на [портал Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Резервирование**.
 3. Выберите **Добавить**, чтобы купить новый зарезервированный экземпляр.
 4. Заполните обязательные поля. Работающие экземпляры виртуальной машины, соответствующие выбранным атрибутам, подходят для получения скидки на зарезервированный экземпляр. Фактическое число экземпляров виртуальной машины, получающих скидку, зависит от области и выбранного количества.
@@ -50,17 +50,17 @@ ms.locfileid: "35683055"
 ## <a name="next-steps"></a>Дополнительная информация 
 Скидка на зарезервированный экземпляр автоматически применяется к количеству работающих виртуальных машин, которые соответствуют области и атрибутам зарезервированного экземпляра. Вы можете обновить область зарезервированного экземпляра с помощью [портала Azure](https://portal.azure.com), PowerShell, интерфейса командной строки или API. 
 
-Сведения об управлении зарезервированным экземпляром см. в статье [Управление зарезервированными экземплярами виртуальных машин](../articles/billing/billing-manage-reserved-vm-instance.md).
+Сведения об управлении зарезервированным экземпляром см. в статье [Управление зарезервированными экземплярами виртуальных машин в Azure](../articles/billing/billing-manage-reserved-vm-instance.md).
 
-Дополнительные сведения об зарезервированных экземплярах Azure RI см. в следующих статьях.
+Дополнительные сведения о зарезервированных экземплярах Azure см. в следующих статьях:
 
-- [Сокращение затрат с помощью зарезервированных экземпляров виртуальных машин Azure](../articles/billing/billing-save-compute-costs-reservations.md)
-- [Управление зарезервированными экземплярами виртуальных машин](../articles/billing/billing-manage-reserved-vm-instance.md)
+- [Основные сведения об Azure Reserved VM Instances](../articles/billing/billing-save-compute-costs-reservations.md)
+- [Управление службой Azure Reserved VM Instances](../articles/billing/billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](../articles/billing/billing-understand-vm-reservation-charges.md)
 - [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](../articles/billing/billing-understand-reserved-instance-usage.md)
 - [Общие сведения об использовании зарезервированных экземпляров с Соглашением о регистрации Enterprise](../articles/billing/billing-understand-reserved-instance-usage-ea.md)
 - [Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров](../articles/billing/billing-reserved-instance-windows-software-costs.md)
-- [Sell Microsoft Azure Reserved VM Instances](https://docs.microsoft.com/partner-center/azure-reservations) (Продажа зарезервированных экземпляров виртуальных машин Microsoft Azure)
+- [Зарезервированные экземпляры в программе для поставщиков облачных решений (CSP) в Центре партнеров](https://docs.microsoft.com/partner-center/azure-reservations)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

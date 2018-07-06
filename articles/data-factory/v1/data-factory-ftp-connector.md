@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 05/02/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fe8982c9c4995cd9ddd6faa9a28fae1f321a2988
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: bbbbaab6090941141abd7a2bbd2eac6dbf9fd354
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34623253"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051548"
 ---
 # <a name="move-data-from-an-ftp-server-by-using-azure-data-factory"></a>Перемещение данных с FTP-сервера с использованием фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-ftp-connector.md)
-> * [Версия 2 — предварительная](../connector-ftp.md)
+> * [Версия 1](data-factory-ftp-connector.md)
+> * [Версия 2 (текущая)](../connector-ftp.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Копирование данных с FTP-сервера с помощью фабрики данных Azure](../connector-ftp.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статье о [соединителе FTP в службе "Фабрика данных Azure" версии 2](../connector-ftp.md).
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные с FTP-сервера. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 

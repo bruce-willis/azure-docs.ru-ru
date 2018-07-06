@@ -2,23 +2,23 @@
 title: Руководство по Kubernetes в Azure. Подготовка ACR
 description: Руководство по AKS. Подготовка ACR
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/22/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 1ffa6ed801f5e261e79b0f7ca505d869fa3b2532
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: e72ec06f7c682e68ca94ba5d4044d1d9974b0b24
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33935826"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37101041"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
 
-Реестр контейнеров Azure (ACR) является частным реестром на базе Azure для образов контейнеров Docker. В этом руководстве (вторая часть из восьми) рассматриваются основные шаги для развертывания экземпляра реестра контейнеров Azure и отправки в него образов контейнеров. В частности, рассматриваются такие шаги:
+Реестр контейнеров Azure (ACR) является частным реестром на базе Azure для образов контейнеров Docker. В этом руководстве (здесь представлена вторая его часть из семи) рассматриваются основные шаги для развертывания экземпляра реестра контейнеров Azure и отправки в него образов контейнеров. В частности, рассматриваются такие шаги:
 
 > [!div class="checklist"]
 > * развертывание экземпляра реестра контейнеров Azure (ACR);

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: d22829217209b7d0b1b5690d6a864b58bf102e3c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e775798dbaaf93d5a9b497323a3b2fa365820550
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622284"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046470"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "34622284"
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью о [преобразовании данных с помощью действия Apache Spark в фабрике данных Azure версии 2](../transform-data-using-spark.md).
+> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", см. статью о [преобразовании данных с помощью действия Apache Spark в службе "Фабрика данных Azure"](../transform-data-using-spark.md).
 
 ## <a name="introduction"></a>Введение
 Действие Spark — это одно из [действий преобразования данных](data-factory-data-transformation-activities.md), которое поддерживает фабрика данных. Это действие запускает указанную программу Spark в кластере Spark в Azure HDInsight. 
@@ -268,8 +268,7 @@ ms.locfileid: "34622284"
 
     ![Результаты запроса Jupyter](media/data-factory-spark/jupyter-notebook-results.png)
 
-<!-- Removed bookmark #run-a-hive-query-using-spark-sql since it doesn't exist in the target article -->
-Подробные инструкции см. в разделе о [выполнении SQL-запроса Spark](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). 
+<!-- Removed bookmark #run-a-hive-query-using-spark-sql since it doesn't exist in the target article --> См. подробные инструкции о [выполнении SQL-запроса Spark](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). 
 
 ### <a name="troubleshooting"></a>Устранение неполадок
 Так как вы задали для getDebugInfo значение **Always**, вы увидите вложенную папку log в папке pyFiles в контейнере больших двоичных объектов. В файле журнала в папке log содержится дополнительная информация. Этот файл журнала особенно полезен в случае возникновения ошибки. В рабочей среде вы можете настроить состояние ошибки **Failure**.

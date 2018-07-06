@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/30/2018
+ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: 591fe2222c54aad50acc378be7f3399518a8087e
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: c41ff548ed4020ab85d15f610503a3b1592910a5
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34266924"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37059895"
 ---
 # <a name="microsoftcommonfileupload-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.FileUpload
 Элемент управления, который позволяет пользователю указать один или несколько файлов для отправки.
@@ -50,19 +50,19 @@ ms.locfileid: "34266924"
 ## <a name="remarks"></a>Примечания
 - `constraints.accept` — указывает типы файлов, которые отображаются в файловом диалоговом окне браузера. Сведения о допустимых значениях см. в [спецификации HTML5](http://www.w3.org/TR/html5/forms.html#attr-input-accept). Значение по умолчанию — **null**.
 - Если `options.multiple` имеет значение **true**, пользователь может выбрать несколько файлов в файловом диалоговом окне браузера. Значение по умолчанию — **false**.
-- Этот элемент поддерживает отправку файлов в двух режимах, которые задаются в параметре `options.uploadMode`. Если указан **file**, тогда выходные данные предоставляют содержимое файла в виде большого двоичного объекта. Если указан **url**, тогда файл отравляется во временное расположение и выходные данные содержат URL-адрес большого двоичного объекта. Временные большие двоичные объекты очищаются через 24 часа. Значение по умолчанию — **file**.
+- Этот элемент поддерживает отправку файлов в двух режимах, которые задаются в параметре `options.uploadMode`. Если указан **file**, выходные данные предоставляют содержимое файла в виде большого двоичного объекта. Если указан **url**, файл передается во временное расположение и выходные данные содержат URL-адрес большого двоичного объекта. Временные большие двоичные объекты очищаются через 24 часа. Значение по умолчанию — **file**.
 - Значение `options.openMode` определяет режим, в котором открывается файл. Если предполагается, что файл содержит обычный текст, укажите **text**. В противном случае укажите **binary**. Значение по умолчанию — **text**.
 - Если `options.uploadMode` имеет значение **file**, а `options.openMode` имеет значение **binary**, то выходные данные закодированы в формате Base64.
 - `options.encoding` — указывает кодирование, которое используется при чтении файла. Значение по умолчанию — **UTF-8**, которое используется только если для параметра `options.openMode` задано значение **text**.
 
 ## <a name="sample-output"></a>Пример выходных данных
-Если options.multiple имеет значение false и options.uploadMode — file, тогда выходные данные предоставляют содержимое файла в виде строки JSON:
+Если options.multiple имеет значение false и options.uploadMode — file, содержимое файла в выходных данных будет представлено в виде строки JSON:
 
 ```json
 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 ```
 
-Если options.multiple имеет значение true и options.uploadMode — file, тогда выходные данные предоставляют содержимое файла в виде массива JSON:
+Если options.multiple имеет значение true и options.uploadMode — file, содержимое файла в выходных данных будет представлено в виде массива JSON:
 
 ```json
 [
@@ -73,13 +73,13 @@ ms.locfileid: "34266924"
 ]
 ```
 
-Если options.multiple имеет значение false и uploadMode — url, тогда выходные данные содержат ULR-адрес в виде строки JSON:
+Если options.multiple имеет значение false и uploadMode — url, выходные данные будут содержать ULR-адрес в виде строки JSON:
 
 ```json
 "https://myaccount.blob.core.windows.net/pictures/profile.jpg?sv=2013-08-15&st=2013-08-16&se=2013-08-17&sr=c&sp=r&rscd=file;%20attachment&rsct=binary &sig=YWJjZGVmZw%3d%3d&sig=a39%2BYozJhGp6miujGymjRpN8tsrQfLo9Z3i8IRyIpnQ%3d"
 ```
 
-Если options.multiple имеет значение true и uploadMode — url, тогда выходные данные содержат список ULR-адресов в виде массива JSON:
+Если options.multiple имеет значение true и uploadMode — url, выходные данные будут содержать список ULR-адресов в виде массива JSON:
 ```json
 [
   "https://myaccount.blob.core.windows.net/pictures/profile1.jpg?sv=2013-08-15&st=2013-08-16&se=2013-08-17&sr=c&sp=r&rscd=file;%20attachment&rsct=binary &sig=YWJjZGVmZw%3d%3d&sig=a39%2BYozJhGp6miujGymjRpN8tsrQfLo9Z3i8IRyIpnQ%3d",

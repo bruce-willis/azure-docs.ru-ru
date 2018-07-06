@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: e405f99388f699b3f1e88b9e84f52f9a4380228c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3d5832f63a3ebe7583d18fcd863c8cc60b9b045d
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621978"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048770"
 ---
 # <a name="transform-data-using-hadoop-streaming-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия потоковой передачи Hadoop в фабрике данных Azure
 > [!div class="op_single_selector" title1="Transformation Activities"]
@@ -35,7 +35,7 @@ ms.locfileid: "34621978"
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [преобразованием данных с использованием действий потоковой передачи Hadoop в фабрике данных версии 2](../transform-data-using-hadoop-streaming.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [преобразованию данных с помощью действия потоковой передачи Hadoop в службе "Фабрика данных"](../transform-data-using-hadoop-streaming.md).
 
 
 Можно использовать действие HDInsightStreamingActivity для вызова задания потоковой передачи Hadoop из конвейера фабрики данных Azure. В следующем фрагменте JSON показан синтаксис для использования действия HDInsightStreamingActivity в JSON-файле конвейера. 

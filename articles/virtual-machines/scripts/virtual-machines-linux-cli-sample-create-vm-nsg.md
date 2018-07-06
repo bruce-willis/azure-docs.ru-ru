@@ -3,7 +3,7 @@ title: Пример скрипта Azure CLI. Создание двух вирт
 description: Пример скрипта Azure CLI. Создание двух виртуальных машин с внутренней и внешней группой безопасности сети
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 editor: tysonn
 tags: azure-service-management
@@ -14,18 +14,18 @@ ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 02/27/2017
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 4f7ac411fcde0ee83c306f8fcedb7b38d5d08aaf
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 05c1540f303bde4982039dfa7349fc4e7fc233e2
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34654503"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37099208"
 ---
 # <a name="secure-network-traffic-between-virtual-machines"></a>Защита сетевого трафика между виртуальными машинами
 
-Этот скрипт создает две виртуальные машины и защищает их входящий трафик. Одна виртуальная машина доступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик на портах 22 и 80. Вторая виртуальная машина недоступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик только из первой виртуальной машины. 
+Этот скрипт создает две виртуальные машины и защищает их входящий трафик. Одна виртуальная машина доступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик на портах 22 и 80. Вторая виртуальная машина недоступна через Интернет. Ее группа безопасности сети настроена таким образом, чтобы разрешать трафик только из первой виртуальной машины.
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
@@ -35,11 +35,11 @@ ms.locfileid: "34654503"
 
 [!code-azurecli-interactive[main](../../../cli_scripts/virtual-machine/create-vm-nsg/create-vm-nsg.sh "Create VM with NSG")]
 
-## <a name="clean-up-deployment"></a>Очистка развертывания 
+## <a name="clean-up-deployment"></a>Очистка развертывания
 
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroup
 ```
 

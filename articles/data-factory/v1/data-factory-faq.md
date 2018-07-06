@@ -14,16 +14,16 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 12422a1123673feac1977fa5f52f49b2cdfda777
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1db10a1578133021b976231a66aee6b550d71faf
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621352"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046760"
 ---
 # <a name="azure-data-factory---frequently-asked-questions"></a>Фабрика данных Azure — часто задаваемые вопросы
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. [часто задаваемые вопросы о фабрике данных версии 2](../frequently-asked-questions.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. [вопросы и ответы по службе "Фабрика данных"](../frequently-asked-questions.md).
 
 ## <a name="general-questions"></a>Общие вопросы
 ### <a name="what-is-azure-data-factory"></a>Что такое фабрика данных Azure?
@@ -41,7 +41,7 @@ ms.locfileid: "34621352"
 * Инструкции по **копированию и перемещению данных** с помощью действия копирования см. в статье [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 * Учебник по **преобразованию данных** с помощью действия HDInsight Hive доступен в разделе [Начало работы с фабрикой данных Azure](data-factory-build-your-first-pipeline.md).
 
-### <a name="what-is-the-data-factorys-region-availability"></a>Региональная доступность фабрики данных
+### <a name="what-is-the-data-factorys-region-availability"></a>Какова региональная доступность службы "Фабрика данных"?
 Фабрика данных доступна в **западной части США** и **Северной Европе**. Службы вычислений и хранения, используемые фабриками данных, могут быть и в других регионах. Ознакомьтесь с разделом [Поддерживаемые регионы](data-factory-introduction.md#supported-regions).
 
 ### <a name="what-are-the-limits-on-number-of-data-factoriespipelinesactivitiesdatasets"></a>Каковы ограничения на число фабрик данных/конвейеров/действий/наборов данных?

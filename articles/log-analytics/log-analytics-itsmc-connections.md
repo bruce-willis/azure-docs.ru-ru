@@ -11,13 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/23/2018
+ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: fdf3c7d1a6621437c414e2c1fe0628f2f585d98a
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 1c1c294a877a996dc0e6cb916b038dc0ca27ed5c
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061715"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](log-analytics-itsmc-overview.md).
@@ -85,7 +86,7 @@ ms.lasthandoff: 05/03/2018
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре Service Manager.
 
 
-Подробнее см. в статьях о [создании рабочих элементов ITSM для оповещений Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-alerts), [создании рабочих элементов ITSM из журналов Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-log-records) и [создании рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
+Дополнительные сведения: [Создание рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="create-and-deploy-service-manager-web-app-service"></a>Создание и развертывание службы веб-приложения Service Manager
 
@@ -190,7 +191,7 @@ ms.lasthandoff: 05/03/2018
 **Администраторы ServiceNow должны выполнить в экземплярах ServiceNow следующие действия:**
 - Создать идентификатор и секрет клиента для продукта ServiceNow. Дополнительные сведения о том, как создать идентификатор и секрет клиента, см. в соответствующих разделах:
 
-    - [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/concept/OAuth-setup.html)
+    - [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Jakarta](https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Istanbul](https://docs.servicenow.com/bundle/istanbul-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Helsinki](https://docs.servicenow.com/bundle/helsinki-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
@@ -238,7 +239,7 @@ ms.lasthandoff: 05/03/2018
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также из оповещений Azure в этом экземпляре ServiceNow.
 
-Подробнее см. в статьях о [создании рабочих элементов ITSM для оповещений Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-alerts), [создании рабочих элементов ITSM из журналов Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-log-records) и [создании рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
+Дополнительные сведения: [Создание рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="create-integration-user-role-in-servicenow-app"></a>Создание роли пользователя для интеграции в приложении ServiceNow
 
@@ -329,7 +330,7 @@ ms.lasthandoff: 05/03/2018
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также оповещений Azure в этом экземпляре Provance.
 
-Подробнее см. в статьях о [создании рабочих элементов ITSM для оповещений Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-alerts), [создании рабочих элементов ITSM из журналов Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-log-records) и [создании рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
+Дополнительные сведения: [Создание рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ## <a name="connect-cherwell-to-it-service-management-connector-in-azure"></a>Подключение Cherwell к соединителю управления ИТ-службами в Azure
 
@@ -381,7 +382,7 @@ ms.lasthandoff: 05/03/2018
 
 - Вы можете создавать инциденты из оповещений или записей журналов Log Analytics, а также оповещений Azure в этом экземпляре Cherwell.
 
-Подробнее см. в статьях о [создании рабочих элементов ITSM для оповещений Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-alerts), [создании рабочих элементов ITSM из журналов Log Analytics](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-log-records) и [создании рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
+Дополнительные сведения: [Создание рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts).
 
 ### <a name="generate-client-id-for-cherwell"></a>Создание идентификатора клиента для Cherwell
 
@@ -395,6 +396,4 @@ ms.lasthandoff: 05/03/2018
 
 
 ## <a name="next-steps"></a>Дополнительная информация
- - [Create ITSM work items for Log Analytics alerts](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-alerts) (Создание рабочих элементов ITSM для оповещений OMS)
- - [Create ITSM work items from Log Analytics log records logs](log-analytics-itsmc-overview.md#create-itsm-work-items-from-log-analytics-log-records) (Создание рабочих элементов ITSM для оповещений Log Analytics)
  - [Создание рабочих элементов ITSM из оповещений Azure](log-analytics-itsmc-overview.md#create-itsm-work-items-from-azure-alerts)

@@ -12,15 +12,21 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 1/09/2018
+ms.date: 06/27/2018
 ms.author: aljo
-ms.openlocfilehash: 118a6d10eeba691fd0886967f90156a0ab8d9fae
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 6783c2b3b431e99050bc6762c1855b22e0701686
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34642654"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062285"
 ---
+# <a name="description-of-the-different-upgrade-policies"></a>Описание различных политик обновления
+
+- **Dynamic**. Изменения динамической конфигурации не приводят к перезапуску процессов Service Fabric или узла службы. 
+- **Static**. Изменения статической конфигурации приводят к перезапуску узла Service Fabric, чтобы эти изменения вступили в силу. Службы на узлах будут перезапущены.
+- **NotAllowed**. Эти параметры невозможно изменить. Чтобы изменить эти параметры, нужно удалить кластер и создать новый. 
+
 # <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Настройка параметров кластера Service Fabric и политики обновления структур
 В этом документе описывается, как настроить различные параметры структуры и политику обновления структур для кластера Service Fabric. Их можно настроить на [портале Azure](https://portal.azure.com) или с помощью шаблона Azure Resource Manager.
 

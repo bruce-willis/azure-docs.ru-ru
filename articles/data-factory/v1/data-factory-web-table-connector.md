@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: eb26e7a6ae4a0756ec9d20d7a3d9f9b37e8ab779
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 05833599059c2724529f9fd23edcd86934793835
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622905"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048862"
 ---
 # <a name="move-data-from-a-web-table-source-using-azure-data-factory"></a>Перемещение данных из источника веб-таблицы с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-web-table-connector.md)
-> * [Версия 2 — предварительная](../connector-web-table.md)
+> * [Версия 1](data-factory-web-table-connector.md)
+> * [Версия 2 (текущая)](../connector-web-table.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from Web table by using Azure Data Factory](../connector-web-table.md) (Копирование данных из веб-таблицы с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе веб-таблиц в службе "Фабрика данных Azure" версии 2](../connector-web-table.md).
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure переместить данные из таблицы на веб-странице в хранилище данных, поддерживаемое в качестве приемника. В этой статье в продолжение темы о [действиях перемещения данных](data-factory-data-movement-activities.md) приведены общие сведения о перемещении данных с помощью действия копирования, а также список поддерживаемых хранилищ данных, используемых в качестве источников и приемников.
 

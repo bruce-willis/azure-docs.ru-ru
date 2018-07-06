@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 03/08/2018
 ms.author: mabrigg
 ms.reviewer: alfredo
-ms.openlocfilehash: e982fa2bec3cbc4845ecebb45db76f019e2178ff
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 27473ce4057fdb06ab9faf0f46dede62b4ee2246
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32157396"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048845"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -64,7 +64,7 @@ CSP часто предоставляют службы, развернутые �
 3. В сеансе PowerShell выполните следующую команду:
 
 ```powershell
-    New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
+    New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties <PSObject>
 ```
 ### <a name="new-azurermresource-powershell-parameters"></a>Параметры команды New-AzureRmResource в PowerShell
 | Параметр | ОПИСАНИЕ |
@@ -73,6 +73,7 @@ CSP часто предоставляют службы, развернутые �
 | customerSubscriptionID | Подписка Azure (не Azure Stack), принадлежащая клиенту, для которого выполняется регистрация. Она должна быть создана в предложении поставщика облачных служб, то есть через Центр партнеров. Если для клиента создано несколько учетных записей в Azure Active Directory, подписку нужно создать в той из них, которая будет использоваться для входа в Azure Stack.
 | resourceGroup | Группа ресурсов Azure, в которой хранятся данные об этой регистрации. 
 | registrationName | Имя регистрации Azure Stack. Это объект, который хранится в Azure. | 
+| properties | Задает свойства для ресурса. Используйте этот параметр, чтобы задать значения свойств, которые соответствуют типу ресурса.
 
 
 > [!Note]  

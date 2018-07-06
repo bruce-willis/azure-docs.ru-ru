@@ -13,17 +13,17 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: cad363309b6086197ced1a5d1c1793995db11228
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 222558a6596c676034e52812d3b2dd0c77e1466b
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621628"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046907"
 ---
 # <a name="azure-data-factory---security-considerations-for-data-movement"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. [рекомендации по безопасному перемещению данных в фабрике данных версии 2](../data-movement-security-considerations.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. [рекомендации по безопасному перемещению данных в службе "Фабрика данных"](../data-movement-security-considerations.md).
 
 ## <a name="introduction"></a>Введение
 В этой статье описывается базовая инфраструктура безопасности, используемая службами перемещения данных в фабрике данных Azure для защиты данных. Ресурсы управления фабрики данных Azure созданы на основе инфраструктуры безопасности Azure и используют все возможные меры безопасности, предлагаемые Azure.
@@ -40,7 +40,7 @@ ms.locfileid: "34621628"
 -   [ISO/IEC 27018](https://www.microsoft.com/en-us/trustcenter/Compliance/ISO-IEC-27018); 
 -   [CSA STAR](https://www.microsoft.com/en-us/trustcenter/Compliance/CSA-STAR-Certification).
      
-Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://www.microsoft.com/TrustCenter/default.aspx). 
+Если вас интересует, как Azure обеспечивает соответствие требованиям и защищает собственную инфраструктуру, посетите [центр управления безопасностью Майкрософт](https://microsoft.com/en-us/trustcenter/default.aspx). 
 
 В этой статье мы рассмотрим вопросы безопасности в следующих двух сценариях перемещения данных: 
 

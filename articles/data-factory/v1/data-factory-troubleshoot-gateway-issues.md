@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.date: 10/01/2017
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 66e6725dd4e23eeaf0c8d0dcff6e5d26e3743218
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 9453099af8d9be21a97808733ffa8f8bfe5a364a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624290"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047570"
 ---
 # <a name="troubleshoot-issues-with-using-data-management-gateway"></a>Устранение неполадок в работе шлюза управления данными
 В этой статье приводятся сведения об устранении неполадок в работе шлюза управления данными.
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [локальной средой выполнения интеграции в фабрике данных версии 2](../create-self-hosted-integration-runtime.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [локальной среде IR в службе "Фабрика данных"](../create-self-hosted-integration-runtime.md).
 
 Подробные сведения о шлюзе см. в статье [Шлюз управления данными](data-factory-data-management-gateway.md). Сведения о пошаговом перемещении данных из локальной базы данных SQL Server в хранилище BLOB-объектов Microsoft Azure с помощью шлюза см. в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 

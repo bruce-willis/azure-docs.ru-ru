@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 6bddb3d5beca57852ef62361b278ec1fa8961f45
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: edbef08eaa100248368d7f0b23171f15b52ec56a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621264"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050953"
 ---
 # <a name="invoke-mapreduce-programs-from-data-factory"></a>Вызов программы MapReduce из фабрики данных
 > [!div class="op_single_selector" title1="Transformation Activities"]
@@ -35,7 +35,7 @@ ms.locfileid: "34621264"
 > * [Настраиваемое действие .NET](data-factory-use-custom-activities.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [преобразованием данных с использованием действий MapReduce в фабрике данных версии 2](../transform-data-using-hadoop-map-reduce.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [преобразованию данных с помощью действия MapReduce в службе "Фабрика данных"](../transform-data-using-hadoop-map-reduce.md).
 
 
 Действие MapReduce HDInsight в [конвейере](data-factory-create-pipelines.md) фабрики данных выполняет программы MapReduce для [вашего собственного](data-factory-compute-linked-services.md#azure-hdinsight-linked-service) кластера HDInsight или кластера HDInsight [по запросу](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service) под управлением Windows или Linux. Данная статья основана на материалах статьи о [действиях преобразования данных](data-factory-data-transformation-activities.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.

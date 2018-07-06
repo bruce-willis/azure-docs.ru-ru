@@ -13,22 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/27/2018
 ms.author: jingwang
-ms.openlocfilehash: 92f83bb6656578792aea45efe62da75009c1391d
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 3425558ac1ffa9e8d5146a5126f01c4ac55050dc
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36284953"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37049636"
 ---
 # <a name="copy-data-from-sftp-server-using-azure-data-factory"></a>Копирование данных с SFTP-сервера с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-sftp-connector.md)
-> * [Версия 2 — предварительная](connector-sftp.md)
+> * [Версия 1](v1/data-factory-sftp-connector.md)
+> * [Текущая версия](connector-sftp.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные с SFTP-сервера. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Перемещение данных с SFTP-сервера с помощью фабрики данных Azure](v1/data-factory-sftp-connector.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

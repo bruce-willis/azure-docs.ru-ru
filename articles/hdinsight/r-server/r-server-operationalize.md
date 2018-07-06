@@ -1,6 +1,6 @@
 ---
-title: Ввод в эксплуатацию R Server в Azure HDInsight | Документация Майкрософт
-description: Описание процедуры ввода в эксплуатацию R Server в Azure HDInsight.
+title: Ввод в эксплуатацию служб машинного обучения в Azure HDInsight | Документация Майкрософт
+description: Сведения о вводе в эксплуатацию служб машинного обучения в Azure HDInsight.
 services: hdinsight
 documentationcenter: ''
 author: nitinme
@@ -10,28 +10,31 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.devlang: R
 ms.topic: conceptual
-ms.date: 03/23/2018
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: 6de6e78d9b4ad68d268b59cff18c75fbdd7be757
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: caefe30ff567a5e24e1f4c3a11309bd35e06190c
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31412847"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046145"
 ---
-# <a name="operationalize-r-server-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера R Server в Azure HDInsight
+# <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
-После того, как вы выполните моделирование данных на кластере R Server в HDInsight, полученную модель можно ввести в эксплуатацию для предоставления прогнозов. В этой статье описано выполнение этой задачи.
+После того как вы выполните моделирование данных на кластере служб машинного обучения в HDInsight, полученную модель можно ввести в эксплуатацию для предоставления прогнозов. В этой статье описано выполнение этой задачи.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-* **Кластер R Server в HDInsight**. Инструкции см. в статье [Начало работы с R Server в HDInsight](r-server-get-started.md).
+* **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье по [началу работы со службами машинного обучения в HDInsight](r-server-get-started.md).
 
 * **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-## <a name="operationalize-r-server-cluster-with-one-box-configuration"></a>Ввод в эксплуатацию кластера R Server в универсальной конфигурации
+## <a name="operationalize-ml-services-cluster-with-one-box-configuration"></a>Ввод в эксплуатацию кластера служб машинного обучения в универсальной конфигурации
 
-1. Подключитесь к граничному узлу по протоколу SSH.  
+> [!NOTE]
+> Приведенные ниже действия применимы к R Server 9.0 и Machine Learning Server (ML Server) 9.1. Действия для ML Server 9.3 см. в статье [Launch the administration tool/CLI to manage the operationalization configuration](https://docs.microsoft.com/machine-learning-server/operationalize/configure-admin-cli-launch) (Запуск средства администрирования или CLI для управления конфигурацией ввода в эксплуатацию).
+
+1. Подключитесь к граничному узлу по протоколу SSH.
 
         ssh USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.net
 
@@ -39,7 +42,7 @@ ms.locfileid: "31412847"
 
 2. Перейдите в каталог для используемой версии и запустите DLL-файл для .NET с помощью команды sudo. 
 
-    - Для Microsoft R Server 9.1:
+    - Для Microsoft ML Server 9.1:
 
             cd /usr/lib64/microsoft-r/rserver/o16n/9.1.0
             sudo dotnet Microsoft.RServer.Utils.AdminUtil/Microsoft.RServer.Utils.AdminUtil.dll
@@ -49,11 +52,11 @@ ms.locfileid: "31412847"
             cd /usr/lib64/microsoft-deployr/9.0.1
             sudo dotnet Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
 
-3. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана: **Настройка R Server для ввода в эксплуатацию**.
+3. У вас есть несколько вариантов на выбор. Выберите первый вариант, как показано на следующем снимке экрана, чтобы **настроить ML Server для ввода в эксплуатацию**.
 
     ![Универсальная конфигурация](./media/r-server-operationalize/admin-util-one-box-1.png)
 
-4. Теперь вам предлагаются доступные методы для ввода в эксплуатацию R Server. Выберите первый из представленных вариантов, введя символ **A**.
+4. Теперь вам предлагаются доступные методы для ввода в эксплуатацию ML Server. Выберите первый из представленных вариантов, введя символ **A**.
 
     ![Универсальная конфигурация](./media/r-server-operationalize/admin-util-one-box-2.png)
 
@@ -99,7 +102,7 @@ ms.locfileid: "31412847"
 
 Итак, вы завершили настройку для практического использования. Теперь с помощью пакета `mrsdeploy` на RClient вы можете подключаться к введенному в эксплуатацию решению на граничном узле и применять разные функции, например [удаленное выполнение](https://docs.microsoft.com/machine-learning-server/r/how-to-execute-code-remotely) и [веб-службы](https://docs.microsoft.com/machine-learning-server/operationalize/concept-what-are-web-services). В зависимости от того, настроен ли кластер в виртуальной сети, может потребоваться настроить туннелирование с перенаправлением портов через сеанс SSH. В следующих разделах описано, как настроить этот туннель.
 
-### <a name="r-server-cluster-on-virtual-network"></a>Кластер R Server в виртуальной сети
+### <a name="ml-services-cluster-on-virtual-network"></a>Кластер служб машинного обучения в виртуальной сети
 
 Убедитесь, что трафик через порт 12800 направляется на граничный узел. Это позволит использовать граничный узел для подключения к средству операционализации.
 
@@ -115,7 +118,7 @@ ms.locfileid: "31412847"
 
 Если `remoteLogin()` не может подключиться к граничному узлу, но вам удается подключиться к нему по протоколу SSH, проверьте наличие и правильность настройки правила, разрешающего трафик через порт 12800. Если и после этого проблема не исчезнет, в качестве решения можно настроить туннелирование с перенаправлением портов через SSH. Инструкции см. в следующем разделе.
 
-### <a name="r-server-cluster-not-set-up-on-virtual-network"></a>Кластер RServer не настроен в виртуальной сети
+### <a name="ml-services-cluster-not-set-up-on-virtual-network"></a>Кластер служб машинного обучения не настроен в виртуальной сети
 
 Если ваш кластер не настроен в виртуальной сети или с подключением через виртуальную сеть возникают проблемы, можно использовать туннелирование с перенаправлением портов через SSH:
 
@@ -139,7 +142,7 @@ ms.locfileid: "31412847"
 
 ### <a name="step-1-decommission-the-worker-nodes"></a>Шаг 1. Вывод рабочих узлов из эксплуатации
 
-Кластер R Server не управляется через YARN. Если вы не выведете из эксплуатации рабочие узлы, диспетчер ресурсов YARN будет действовать неправильно из-за отсутствия информации об использовании ресурсов сервером. Чтобы этого избежать, мы рекомендуем вывести из эксплуатации рабочие узлы, прежде чем масштабировать вычислительные узлы.
+Управление кластером служб машинного обучения не осуществляется через YARN. Если вы не выведете из эксплуатации рабочие узлы, диспетчер ресурсов YARN будет действовать неправильно из-за отсутствия информации об использовании ресурсов сервером. Чтобы этого избежать, мы рекомендуем вывести из эксплуатации рабочие узлы, прежде чем масштабировать вычислительные узлы.
 
 Выполните следующие действия, чтобы вывести рабочие узлы из эксплуатации.
 
@@ -163,11 +166,11 @@ ms.locfileid: "31412847"
 
 1. Поочередно откройте сеанс SSH для каждого рабочего узла, выведенного из эксплуатации.
 
-2. Запустите служебную программу администрирования через подходящую библиотеку DLL для используемого кластера R Server. В R Server версии 9.1 выполните следующие действия.
+2. Запустите служебную программу администрирования через подходящую библиотеку DLL для используемого кластера служб машинного обучения. В ML Server версии 9.1 выполните следующий код:
 
         dotnet /usr/lib64/microsoft-deployr/9.0.1/Microsoft.DeployR.Utils.AdminUtil/Microsoft.DeployR.Utils.AdminUtil.dll
 
-3. Введите **1**, чтобы выбрать параметр **Configure R Server for Operationalization** (Настройка R Server для ввода в эксплуатацию).
+3. Введите **1**, чтобы выбрать параметр **Configure ML Server for Operationalization** (Настройка ML Server для ввода в эксплуатацию).
 
 4. Введите **C**, чтобы выбрать пункт `C. Compute node`. Это настраивает вычислительный узел на рабочем узле.
 
@@ -175,7 +178,7 @@ ms.locfileid: "31412847"
 
 ### <a name="step-3-add-compute-nodes-details-on-web-node"></a>Шаг 3. Добавление сведений о вычислительных узлах на веб-узел
 
-Когда вы настроите функции вычислительных узлов на всех рабочих узлах, выведенных из эксплуатации, вернитесь на граничный узел и добавьте IP-адреса этих рабочих узлов в конфигурацию веб-узла Microsoft R Server.
+Когда вы настроите функции вычислительных узлов на всех рабочих узлах, выведенных из эксплуатации, вернитесь на граничный узел и добавьте IP-адреса этих рабочих узлов в конфигурацию веб-узла ML Server.
 
 1. Подключитесь к граничному узлу по протоколу SSH.
 
@@ -192,6 +195,6 @@ ms.locfileid: "31412847"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Управление кластером R Server в Azure HDInsight](r-server-hdinsight-manage.md)
-* [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)
-* [Решения службы хранилища Azure для R Server в HDInsight](r-server-storage.md)
+* [Управление кластером служб машинного обучения в HDInsight](r-server-hdinsight-manage.md)
+* [Варианты контекста вычислений для кластера служб машинного обучения в HDInsight](r-server-compute-contexts.md)
+* [Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight](r-server-storage.md)

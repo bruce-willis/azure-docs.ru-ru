@@ -14,16 +14,16 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: ad883248097fd84e2fa064515b6c7a5232aaa3d3
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f6b2be357ad53a1852973d40e221da3d41b09ffb
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621944"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050579"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью о [пользовательских действиях в фабрике данных версии 2](../transform-data-using-dotnet-custom-activity.md).
+> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию Фабрики данных, см. статью о [пользовательских действиях в службе "Фабрика данных Azure"](../transform-data-using-dotnet-custom-activity.md).
 
 В этой статье описывается архитектура простого решения, которое автоматически и по расписанию перемещает и обрабатывает большие наборы данных. Здесь также предоставлено полное пошаговое руководство по реализации решения с помощью фабрики данных и пакетной службы Azure.
 

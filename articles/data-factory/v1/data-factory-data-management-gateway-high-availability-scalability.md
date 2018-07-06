@@ -10,19 +10,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: d04500e770bf43278b88c2f980a10693590c7d16
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 2d636eb381710c5e8341e24af8cd157a627348ef
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053842"
 ---
 # <a name="data-management-gateway---high-availability-and-scalability-preview"></a>Шлюз управления данными: высокий уровень доступности и масштабируемость (предварительная версия)
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, прочитайте статью о [локальной среде выполнения интеграции в версии 2](../create-self-hosted-integration-runtime.md). 
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [локальной среде IR в службе "Фабрика данных"](../create-self-hosted-integration-runtime.md). 
 
 
 Эта статья поможет вам настроить решение по обеспечению высокого уровня доступности и масштабируемости с помощью шлюза управления данными (Integration Runtime).    

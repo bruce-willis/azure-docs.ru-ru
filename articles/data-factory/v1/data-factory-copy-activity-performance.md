@@ -14,21 +14,21 @@ ms.topic: conceptual
 ms.date: 05/25/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 27d74ce2cf8fdc4434c48c36dd0c0751dbbab232
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 505f7345af6224b767d6d3719c123d91f54e48f5
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34622318"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054298"
 ---
 # <a name="copy-activity-performance-and-tuning-guide"></a>Руководство по настройке производительности действия копирования
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-copy-activity-performance.md)
-> * [Версия 2 — предварительная](../copy-activity-performance.md)
+> * [Версия 1](data-factory-copy-activity-performance.md)
+> * [Версия 2 (текущая)](../copy-activity-performance.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [руководством по оптимизации производительности и настройке действий копирования для фабрики данных версии 2](../copy-activity-performance.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [оптимизации производительности и настройке действия копирования для службы "Фабрика данных"](../copy-activity-performance.md).
 
 Действие копирования фабрики данных Azure — первоклассное безопасное, надежное и высокопроизводительное решение для загрузки данных. Оно позволяет ежедневно копировать десятки терабайтов данных в самые разнообразные облачные и локальные хранилища данных. Именно высокоскоростная загрузка данных позволяет сосредоточиться на основных проблемах "больших данных": создании решений расширенной аналитики и получении ценной информации из данных.
 

@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/30/2018
+ms.date: 06/27/2018
 ms.author: tomfitz
-ms.openlocfilehash: f11098f4af2e85df16e00ce6dac6e7c4b5b34e2b
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: fa3e5fff8080acb9e824ffe27f6c149054804830
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34260924"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37063652"
 ---
 # <a name="microsoftcommontextbox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.TextBox
 Элемент управления, который может использоваться для редактирования неформатированного текста.
@@ -31,8 +31,8 @@ ms.locfileid: "34260924"
 {
   "name": "element1",
   "type": "Microsoft.Common.TextBox",
-  "label": "Some text box",
-  "defaultValue": "my value",
+  "label": "Example text box 1",
+  "defaultValue": "my text value",
   "toolTip": "Use only allowed characters",
   "constraints": {
     "required": true,
@@ -52,7 +52,7 @@ ms.locfileid: "34260924"
 ## <a name="sample-output"></a>Пример выходных данных
 
 ```json
-"my value"
+"my text value"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

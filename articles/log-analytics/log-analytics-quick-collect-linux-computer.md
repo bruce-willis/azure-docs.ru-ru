@@ -3,7 +3,7 @@ title: Сбор данных с локальных компьютеров Linux 
 description: Узнайте, как развернуть агент Log Analytics для Linux и включить сбор данных из этой ОС с помощью Log Analytics.
 services: log-analytics
 documentationcenter: log-analytics
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: ''
@@ -15,12 +15,13 @@ ms.topic: quickstart
 ms.date: 04/02/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: af385a7cbf97ff15156cc78c77f8b54e2f79badb
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: na
+ms.openlocfilehash: aca8ee7305f919068733dfa3cb636a0f9bad7b05
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34637639"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127175"
 ---
 # <a name="collect-data-from-linux-computer-hosted-in-your-environment"></a>Сбор данных с компьютеров Linux, размещенных в вашем окружении
 [Azure Log Analytics](log-analytics-overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Linux и других ресурсов в вашем окружении в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Linux с помощью нескольких простых действий.  Сведения о виртуальных машинах Linux в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  

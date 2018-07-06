@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: jingwang
-ms.openlocfilehash: fdfb35b0e1c52ad2aad164a38ae308f9142880a6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 25df96664f6b5fe9da26bee43bc726e05504e5b8
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34619632"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055517"
 ---
 # <a name="load-data-into-azure-data-lake-store-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Store c помощью службы "Фабрика данных Azure"
 
@@ -35,9 +35,6 @@ ms.locfileid: "34619632"
 
 > [!NOTE]
 > Дополнительные сведения см. в статье [Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md).
->
-> Эта статья относится к версии 2 фабрики данных Azure, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию службы "Фабрика данных" (версия 1), см. статью [Перемещение данных с помощью действия копирования](v1/data-factory-data-movement-activities.md).
-
 ## <a name="prerequisites"></a>предварительным требованиям
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
@@ -74,35 +71,45 @@ ms.locfileid: "34619632"
 2. На странице **Properties** (Свойства) укажите **CopyFromAmazonS3ToADLS** в поле **Task name** (Имя задачи) и нажмите кнопку **Далее**.
 
     ![Страница свойств](./media/load-data-into-azure-data-lake-store/copy-data-tool-properties-page.png)
-3. На странице **Source data store** (Исходное хранилище данных) выберите **Amazon S3** и нажмите кнопку **Далее**.
+3. На странице **Source data store** (Исходное хранилище данных) щелкните **Create new connection** (Создать подключение).
 
     ![Страница исходного хранилища данных](./media/load-data-into-azure-data-lake-store/source-data-store-page.png)
+    
+    Выберите **Amazon S3**, а затем нажмите кнопку **Continue** (Продолжить).
+    
+    ![Страница "Исходное хранилище данных s3"](./media/load-data-into-azure-data-lake-store/source-data-store-page-s3.png)
+    
 4. На странице **Specify Amazon S3 connection** (Указать подключение Amazon S3) выполните следующие действия: 
    1. Укажите **идентификатор ключа доступа**.
    2. Укажите **секретный ключ доступа**.
-   3. Щелкните **Далее**.
+   3. Выберите **Готово**.
    
    ![Указать учетную запись Amazon S3](./media/load-data-into-azure-data-lake-store/specify-amazon-s3-account.png)
+   
+   4. Вы увидите новое подключение. Щелкните **Далее**.
+   
+   ![Указать учетную запись Amazon S3](./media/load-data-into-azure-data-lake-store/specify-amazon-s3-account-created.png)
+   
 5. На странице **Choose the input file or folder** (Выбор файла или папки входных данных) перейдите в папку и файл, которые необходимо скопировать. Выберите папку или файл, щелкните **Выбрать**, а затем нажмите кнопку **Далее**:
 
     ![Выбор файла или папки входных данных](./media/load-data-into-azure-data-lake-store/choose-input-folder.png)
 
-6. На странице **Целевое хранилище данных** выберите **Azure Data Lake Store** и нажмите кнопку **Далее**:
-
-    ![Страница целевого хранилища данных](./media/load-data-into-azure-data-lake-store/destination-data-storage-page.png)
-
-7. Выберите поведение копирования, установив флажки **Copy files recursively** (Копировать файлы рекурсивно) и **Binary copy** (Двоичное копирование) (скопируйте файлы "как есть"). Нажмите кнопку **Далее**:
+6. Выберите поведение копирования, установив флажки **Copy files recursively** (Копировать файлы рекурсивно) и **Binary copy** (Двоичное копирование) (скопируйте файлы "как есть"). Нажмите кнопку **Далее**:
 
     ![Укажите выходную папку.](./media/load-data-into-azure-data-lake-store/specify-binary-copy.png)
+    
+7. На странице **Целевое хранилище данных** выберите **+Создать подключение**, укажите **Azure Data Lake Store** и щелкните **Продолжить**:
+
+    ![Страница целевого хранилища данных](./media/load-data-into-azure-data-lake-store/destination-data-storage-page.png)
 
 8. На странице **Specify Data Lake Store connection** (Указать подключение Data Lake Store) выполните следующие действия: 
 
    1. Выберите Data Lake Store для **имени учетной записи Data Lake Store**.
-   2. Укажите сведения о субъекте-службе: **клиент**, **идентификатор** и **ключ субъекта-службы**.
+   2. Укажите **клиента** и щелкните "Готово".
    3. Щелкните **Далее**.
    
    > [!IMPORTANT]
-   > В этом пошаговом руководстве проверка подлинности Data Lake Store выполняется с помощью _субъекта-службы_. Не забудьте предоставить субъекту-службе соответствующие разрешения в Azure Data Lake Store, выполнив [эти инструкции](connector-azure-data-lake-store.md#using-service-principal-authentication).
+   > В этом пошаговом руководстве проверка подлинности Data Lake Store выполняется с помощью _Управляемого удостоверения службы_. Не забудьте предоставить субъекту-службе соответствующие разрешения в Azure Data Lake Store, выполнив [эти инструкции](connector-azure-data-lake-store.md#using-managed-service-identity-authentication).
    
    ![Указание учетной записи Azure Data Lake Store](./media/load-data-into-azure-data-lake-store/specify-adls.png)
 9. На странице **Choose the output file or folder** (Выбор целевого файла или папки) введите **copyfroms3** в качестве имени папки с выходными данными, а затем нажмите кнопку **Далее** 
