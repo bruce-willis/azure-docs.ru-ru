@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/08/2018
 ms.author: ramkris
-ms.openlocfilehash: 47abd2f3534a0f3418bc09e19a61e222093e7099
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: e115c7e18b32630b7331e22a6bdc33338d753fde
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960480"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37083300"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-the-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных в реальном времени с помощью соединителя Spark для Cosmos DB
 
@@ -24,8 +24,6 @@ ms.locfileid: "36960480"
 Дополнительные сведения см. в этом видео с главным администратором проектов Azure Cosmos DB Дэнни Ли (Denny Lee) 
 
 > [!VIDEO https://channel9.msdn.com/Events/Connect/2017/T135/player] 
-
-Дополнительные сведения о работе с API Spark GraphX и графами Gremlin в Azure Cosmos DB см.в статье [Azure Cosmos DB. Аналитика графов с помощью Spark и Apache TinkerPop Gremlin](spark-connector-graph.md).
 
 ## <a name="download"></a>Загрузка
 

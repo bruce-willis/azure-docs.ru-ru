@@ -14,12 +14,12 @@ ms.date: 11/13/2017
 ms.author: curtand
 ms.reviewer: jeffsta
 ms.custom: it-pro
-ms.openlocfilehash: 7a58fca716389f35db7312948674e86b3104fe62
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: c8d7f1f5b793fcb684e9896bb93213a23d489860
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308002"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37448549"
 ---
 # <a name="sharing-accounts-with-azure-ad"></a>Совместное использование учетных записей в Azure AD
 ## <a name="overview"></a>Обзор
@@ -53,7 +53,7 @@ Azure AD поддерживает общие учетные записи для 
 
 * [Единый вход по паролю](manage-apps/what-is-single-sign-on.md#password-based-single-sign-on)
 * Агент единого входа по паролю
-* [Назначение группы](active-directory-accessmanagement-self-service-group-management.md)
+* [Назначение группы](users-groups-roles/groups-self-service-management.md)
 * Приложения с пользовательским паролем
 * [Панели мониторинга и отчеты об использовании приложения](active-directory-passwords-get-insights.md)
 * Порталы доступа для пользователей
@@ -65,13 +65,13 @@ Azure AD поддерживает общие учетные записи для 
 
 * Добавьте приложение из [коллекции приложений](https://azure.microsoft.com/marketplace/active-directory/) или [пользовательское приложение](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/).
 * настройте приложение для единого входа по паролю;
-* Выполните [назначение на основе групп](active-directory-accessmanagement-group-saasapps.md) и выберите способ ввода общих учетных данных.
+* Выполните [назначение на основе групп](users-groups-roles/groups-saasapps.md) и выберите способ ввода общих учетных данных.
 * Необязательно: в некоторых приложениях, таких как Facebook, Twitter или LinkedIn, можно включить [автоматическое изменение пароля Azure AD](https://cloudblogs.microsoft.com/enterprisemobility/2015/02/20/azure-ad-automated-password-roll-over-for-facebook-twitter-and-linkedin-now-in-preview/)
 
-Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](authentication/concept-mfa-whichversion.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](active-directory-accessmanagement-self-service-group-management.md).
+Можно также сделать свою общую учетную запись более безопасной с помощью службы Многофакторной идентификации (MFA) (ознакомьтесь с дополнительными сведениями о [защите приложений с помощью Azure AD](authentication/concept-mfa-whichversion.md)). Кроме того, можно делегировать возможность управления доступом к приложению с помощью функции управления группами в компоненте [самообслуживания Azure AD](users-groups-roles/groups-self-service-management.md).
 
 ## <a name="related-articles"></a>Связанные статьи
 * [Указатель статьей по управлению приложениями в Azure Active Directory](active-directory-apps-index.md)
 * [Защита приложений с помощью условного доступа](active-directory-conditional-access-azure-portal.md)
-* [Самостоятельное управление группами/SSAA](active-directory-accessmanagement-self-service-group-management.md)
+* [Самостоятельное управление группами/SSAA](users-groups-roles/groups-self-service-management.md)
 

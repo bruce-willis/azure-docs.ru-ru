@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: larryfr
-ms.openlocfilehash: d382293ce815f24ad635b50c920d7988b664d79c
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: d030bdaf4c68a7e2ec9d11cdd8a2f55eccfbd67d
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32169614"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37081173"
 ---
 # <a name="use-pig-with-hadoop-on-hdinsight"></a>Использование Pig с Hadoop в HDInsight
 
@@ -55,7 +55,7 @@ Pig позволяет определить обработку как ряд п�
 
 Pig Latin также поддерживает пользовательские функции, позволяющие вызывать внешние компоненты, реализующие логику, которую трудно смоделировать в Pig Latin.
 
-Дополнительные сведения о Pig Latin см. в [справочном руководстве по Pig Latin 1](http://pig.apache.org/docs/r0.7.0/piglatin_ref1.html) и [справочном руководстве по Pig Latin 2](http://pig.apache.org/docs/r0.7.0/piglatin_ref2.html).
+Дополнительные сведения о Pig Latin см. в [справочном руководстве по Pig Latin 1](http://archive.cloudera.com/cdh/3/pig/piglatin_ref1.html) и [справочном руководстве по Pig Latin 2](http://archive.cloudera.com/cdh/3/pig/piglatin_ref2.html).
 
 Примеры использования пользовательских функций в Hive см. в следующих документах:
 

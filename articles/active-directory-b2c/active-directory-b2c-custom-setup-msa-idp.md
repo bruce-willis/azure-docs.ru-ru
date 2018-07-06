@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 3426b6f3f248b670016713d2b58425ff030605af
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 7a83ace83176d75abdac03b354c4c4ac71eb4238
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34709127"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449380"
 ---
 # <a name="azure-active-directory-b2c-add-microsoft-account-msa-as-an-identity-provider-using-custom-policies"></a>Azure Active Directory B2C. Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик
 
@@ -150,7 +150,7 @@ ms.locfileid: "34709127"
 1.  Откройте базовый файл политики (например, TrustFrameworkBase.xml).
 2.  Найдите элемент `<UserJourneys>` и скопируйте все содержимое узла `<UserJourneys>`.
 3.  Откройте файл расширения (например, TrustFrameworkExtensions.xml) и найдите элемент `<UserJourneys>`. Если элемент не существует, добавьте его.
-4.  Вставьте весь скопированный узел `<UserJournesy>` как дочерний узел элемента `<UserJourneys>`.
+4.  Вставьте весь скопированный узел `<UserJourneys>` как дочерний узел элемента `<UserJourneys>`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 Элемент `<ClaimsProviderSelections>` определяет список параметров выбора поставщика утверждений и их порядок.  Элемент `<ClaimsProviderSelection>` является аналогом кнопки поставщика удостоверений на странице регистрации или входа. Если вы добавите для учетной записи Майкрософт элемент `<ClaimsProviderSelection>`, при переходе пользователя на страницу отобразится новая кнопка. Для этого:
@@ -160,7 +160,7 @@ ms.locfileid: "34709127"
 3.  Добавьте в узел `<ClaimsProviderSelections>` следующий фрагмент XML-кода:
 
 ```xml
-<ClaimsProviderSelection TargetClaimsExchangeId="MSAExchange" />
+<ClaimsProviderSelection TargetClaimsExchangeId="MicrosoftAccountExchange" />
 ```
 
 ### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
@@ -170,7 +170,7 @@ ms.locfileid: "34709127"
 2.  Добавьте в узел `<ClaimsExchanges>` следующий фрагмент XML-кода:
 
 ```xml
-<ClaimsExchange Id="MSAExchange" TechnicalProfileReferenceId="MSA-OIDC" />
+<ClaimsExchange Id="MicrosoftAccountExchange" TechnicalProfileReferenceId="MSA-OIDC" />
 ```
 
 > [!NOTE]

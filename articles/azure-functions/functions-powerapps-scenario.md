@@ -17,12 +17,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 02cd491be5336abe708cce0f6e268b38514d4e88
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 3693b167f196b82c520703fa50ffabb27b555050
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35234960"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37082671"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
 Платформа [PowerApps](https://powerapps.microsoft.com) позволяет бизнес-экспертами создавать приложения без традиционного кода. Профессиональные разработчики могут расширить возможности PowerApps с помощью функций Azure, избавляя при этом разработчиков приложений PowerApps от технических деталей.
@@ -46,7 +46,7 @@ ms.locfileid: "35234960"
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-+ Активная [учетная запись PowerApps](https://powerapps.microsoft.com/tutorials/signup-for-powerapps.md) с такими же учетными данными, что и в учетной записи Azure. 
++ Активная [учетная запись PowerApps](https://docs.microsoft.com/en-us/powerapps/maker/signup-for-powerapps) с такими же учетными данными, что и в учетной записи Azure. 
 + Excel и [пример файла Excel](https://procsi.blob.core.windows.net/docs/turbine-data.xlsx), который будет использоваться как источник данных для вашего приложения.
 + Выполните шаги, описанные в руководстве [Создание определения OpenAPI функции](functions-openapi-definition.md).
 

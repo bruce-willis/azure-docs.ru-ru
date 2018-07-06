@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 056821bd26e9c6c110b23a048df4aa13bc4ab8fa
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: c5f3904621dcc4fe992b2c2f8293ad706b01f713
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36754418"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446781"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -45,7 +45,7 @@ ms.locfileid: "36754418"
 | Домены определены и проверены | [Добавление имени личного домена в Azure Active Directory](active-directory-domains-add-azure-portal.md)<br/>**Примечание.** Некоторые рабочие нагрузки, такие как Power BI, могли уже подготовить клиент Azure AD. Чтобы проверить, связан ли заданный домен с каким-либо клиентом, перейдите по адресу https://login.microsoftonline.com/{domain}/v2.0/.well-known/openid-configuration. Если вы успешно получили ответ, значит домен уже назначен клиенту и может потребоваться перехват. В этом случае за дальнейшими указаниями обратитесь в корпорацию Майкрософт. Дополнительные сведения о вариантах перехвата см. в статье [Что такое самостоятельная регистрация для Azure?](active-directory-self-service-signup.md). |
 | Включена пробная версия EMS или Azure AD Premium | [Бесплатная пробная версия Azure Active Directory Premium на один месяц](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Вы назначили лицензии Azure AD Premium или EMS пользователям подтверждения концепции | [Самостоятельное лицензирование и лицензирование пользователей в Azure Active Directory](active-directory-licensing-get-started-azure-portal.md) |
-| Учетные данные глобального администратора Azure AD | [Назначение ролей администратора в Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md) |
+| Учетные данные глобального администратора Azure AD | [Назначение ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md) |
 | Необязательно, но настоятельно рекомендуется: параллельная лабораторная среда в качестве резерва | [Необходимые условия для Azure AD Connect](./connect/active-directory-aadconnect-prerequisites.md) |
 
 ## <a name="directory-synchronization---password-hash-sync-phs---new-installation"></a>Синхронизация каталога. Синхронизация хэша паролей (PHS): новая установка
@@ -428,7 +428,7 @@ ms.locfileid: "36754418"
 ### <a name="considerations"></a>Рекомендации
 
 1. Шаги по подтверждению концепции в этом стандартном блоке явно задают Многофакторную идентификацию для всех имен входа пользователя. Существуют и другие средства, такие как условный доступ и защита идентификации, включающие Многофакторную идентификацию в более специализированных сценариях. Это будет нужно учитывать при переходе от подтверждения концепции к рабочей среде.
-2. Шаги подтверждения концепции в этом стандартном блоке явно используют телефонные звонки как наиболее целесообразный метод Многофакторной идентификации. При переходе от подтверждения концепции к рабочей среде рекомендуется по мере возможности использовать в качестве второго фактора такие приложения, как [Microsoft Authenticator](../multi-factor-authentication/end-user/microsoft-authenticator-app-how-to.md).
+2. Шаги подтверждения концепции в этом стандартном блоке явно используют телефонные звонки как наиболее целесообразный метод Многофакторной идентификации. При переходе от подтверждения концепции к рабочей среде рекомендуется по мере возможности использовать в качестве второго фактора такие приложения, как [Microsoft Authenticator](authentication/end-user/current/microsoft-authenticator-app-how-to.md).
 Дополнительные сведения: [черновик специальной публикации NIST 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html)
 
 ## <a name="mfa-conditional-access-for-saas-applications"></a>Условный доступ MFA к приложениям SaaS
@@ -553,7 +553,7 @@ ms.locfileid: "36754418"
 | --- | --- |
 | Устройство с подготовленным сертификатом пользователя (Windows, iOS или Android) из корпоративной PKI. | [Развертывание сертификатов пользователей](https://msdn.microsoft.com/library/cc770857.aspx) |
 | Домен Azure AD в федерации с ADFS. | [Azure AD Connect и федерация](./connect/active-directory-aadconnectfed-whatis.md)<br/>[Обзор служб сертификатов Active Directory](https://technet.microsoft.com/library/hh831740.aspx)|
-| Для устройств iOS требуется установленное приложение Microsoft Authenticator. | [Начало работы с приложением Microsoft Authenticator](../multi-factor-authentication/end-user/microsoft-authenticator-app-how-to.md) |
+| Для устройств iOS требуется установленное приложение Microsoft Authenticator. | [Начало работы с приложением Microsoft Authenticator](authentication/end-user/current/microsoft-authenticator-app-how-to.md) |
 
 ### <a name="steps"></a>Действия
 

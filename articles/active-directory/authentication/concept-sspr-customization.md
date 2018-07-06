@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: ffd12d03dffb5deafc8605cc7352bd71d588d235
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: afcd39e6512ac7bcb46f56df157822efa463113e
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33866742"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449309"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -39,7 +39,7 @@ ms.locfileid: "33866742"
 
 Во всех случаях уведомление будет отправлено не более чем 100 получателям.
 
-Дополнительные сведения о различных ролях администраторов и их назначении см. в статье [Назначение ролей администратора в Azure Active Directory](../active-directory-assign-admin-roles-azure-portal.md).
+Дополнительные сведения о различных ролях администраторов и их назначении см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).
 
 ### <a name="disable-contact-your-administrator-emails"></a>Отключение отправки электронных сообщений при выборе ссылки "Обратитесь к администратору"
 
@@ -69,7 +69,7 @@ ms.locfileid: "33866742"
     * путем передачи параметра *whr* на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com;
     * путем передачи параметра *username* на страницу сброса пароля, например https://login.microsoftonline.com/?username=admin@contoso.com.
 
-Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../customize-branding.md).
+Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).
 
 ### <a name="directory-name"></a>Имя каталога
 

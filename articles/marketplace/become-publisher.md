@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: b3b9228c0733d34ea909a501e8ca6f9e11948381
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: 58e3646588e500c4dd5334966d559aaed333b689
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34826285"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37083167"
 ---
 # <a name="become-a-publisher-in-the-storefronts-on-the-marketplace"></a>Как стать издателем в онлайн-магазинах в Marketplace  
 Следующие шаги помогут вам зарегистрироваться в качестве издателя в онлайн-магазинах в Marketplace. В зависимости от вашего статуса взаимодействия с Майкрософт и выбранного типа предложения некоторые шаги выполнять не нужно.  
@@ -30,7 +30,6 @@ ms.locfileid: "34826285"
 | 2 | Создание идентификатора Майкрософт | 15 минут | [Создание идентификатора Майкрософт](#create-a-microsoft-id) |  
 | 3 | Подача формы предварительного утверждения Marketplace | От 1 до 3 дней | [Подача формы предварительного утверждения Marketplace](#submit-the-marketplace-nomination-form) |  
 | 4. | Регистрация в Центре разработчиков Майкрософт | От 5 до 10 дней | [Регистрация в центре разработчиков](#register-in-dev-center) |  
-| 5 | Вход в AppSource | 15 минут | [Вход в AppSource](#sign-into-appSource) |  
 | 5 |  Вход на Портал Cloud Partner | 15 минут | [Вход на Портал Cloud Partner](#sign-into-cloud-partner-portal) |  
 
 ## <a name="register-in-microsoft-partner-network"></a>Регистрация в партнерской сети Microsoft Partner Network  
@@ -84,18 +83,6 @@ ms.locfileid: "34826285"
 
 ---  
 
-## <a name="sign-into-appsource"></a>Вход в AppSource  
-| 15 минут |  
-После подтверждения заявки и регистрации в Центре разработки и MPN для вас создается учетная запись Marketplace с доступом к AppSource. Учетные данные для первого входа будут указаны в сообщении электронной почты с информацией об утверждении заявки. 
-*   Чтобы получить доступ к MPN, посетите страницу членства по адресу [partner.microsoft.com/membership](https://partner.microsoft.com/membership).  
-*   Чтобы получить доступ к Центру разработчиков, посетите страницу центра разработчиков, расположенную по адресу [dev.windows.com](https://dev.windows.com).  
-*   Чтобы получить доступ к AppSource, посетите страницу AppSource по адресу [appsource.microsoft.com](https://appsource.microsoft.com).  
-*   Чтобы получить доступ к Порталу Microsoft Cloud Partner, откройте страницу Портала по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).  
-*   Дополнительные сведения об использовании Портала Cloud Partner можно получить в разделе знакомства по адресу [cloudpartner.azure.com/#Learn](https://cloudpartner.azure.com/#Learn).  
-*   Документация по Порталу Cloud Partner размещена в разделе по адресу [cloudpartner.azure.com/#documentation](https://cloudpartner.azure.com/#documentation).  
-
----  
-
 ## <a name="sign-into-cloud-partner-portal"></a>Вход на Портал Cloud Partner
 | 15 минут |  
 После подтверждения заявки и регистрации в Центре разработки и MPN для вас создается учетная запись Marketplace с доступом к Порталу Cloud Partner. Учетные данные для первого входа будут указаны в сообщении электронной почты с информацией об утверждении заявки. 
@@ -106,6 +93,6 @@ ms.locfileid: "34826285"
 *   Документация по Порталу Cloud Partner размещена в разделе по адресу [cloudpartner.azure.com/#documentation](https://cloudpartner.azure.com/#documentation).  
 
 ## <a name="next-steps"></a>Дополнительная информация
-*   Посетите страницу [руководства для издателей по Azure Marketplace и AppSource](./marketplace-publishers-guide.md).  
+*   Посетите страницу [руководства по публикации в Azure Marketplace и AppSource](./marketplace-publishers-guide.md).  
  
 ---  

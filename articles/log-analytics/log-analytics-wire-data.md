@@ -3,7 +3,7 @@ title: Решение "Данные передачи" в Log Analytics | Док�
 description: Данные передачи — это объединенные сетевые данные и данные производительности, передаваемые с компьютеров с установленными агентами OMS, включая агенты Operations Manager и агенты, подключенные к Windows. Сетевые данные вместе с данными журнала помогают коррелировать данные.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: fc3d7127-0baa-4772-858a-5ba995d1519b
@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: magoedte
-ms.openlocfilehash: c86d1274ed46ff725c9db3093a8852fbae7f67ff
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.component: na
+ms.openlocfilehash: f44f47129a1d989422d25b7f0c5c55c1d229c07e
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011447"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129012"
 ---
 # <a name="wire-data-20-preview-solution-in-log-analytics"></a>Решение Wire Data 2.0 (предварительная версия) в Log Analytics
 

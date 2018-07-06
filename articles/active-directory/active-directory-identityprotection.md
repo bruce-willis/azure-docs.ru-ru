@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/08/2017
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 9658eaaf35d9b937d76926c73dba23d2a4989b3a
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: faeeebb21c6dde73be855af469e03ede4c6d0b5d
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34713190"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37444962"
 ---
 # <a name="azure-active-directory-identity-protection"></a>Защита идентификации Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "34713190"
 
 
 
-См. дополнительные сведения о [назначении ролей администратора в Azure Active Directory](active-directory-assign-admin-roles-azure-portal.md).
+См. дополнительные сведения о [назначении ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md).
 
 
 

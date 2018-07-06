@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: larryfr
-ms.openlocfilehash: 0c870b0c8de648ac65bec6857bf850c2913e7aeb
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 149f91f3091f08da2e54458d708a17da928c1972
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31412634"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131741"
 ---
 # <a name="write-to-hdfs-from-apache-storm-on-hdinsight"></a>Запись данных в HDFS из Apache Storm в HDInsight
 
-Узнайте об использовании Storm для записи данных в HDFS-совместимое хранилище, используемое Apache Storm в HDInsight. HDInsight может использовать службу хранилища Azure и Azure Data Lake Store в качестве HDFS-совместимого хранилища. Storm предоставляет компонент [HdfsBolt](http://storm.apache.org/releases/1.1.0/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html), который записывает данные в HDFS. В этой статье предоставляются сведения о записи данных в хранилища обоих типов из HdfsBolt. 
+Узнайте об использовании Storm для записи данных в HDFS-совместимое хранилище, используемое Apache Storm в HDInsight. HDInsight может использовать службу хранилища Azure и Azure Data Lake Store в качестве HDFS-совместимого хранилища. Storm предоставляет компонент [HdfsBolt](http://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html), который записывает данные в HDFS. В этой статье предоставляются сведения о записи данных в хранилища обоих типов из HdfsBolt. 
 
 > [!IMPORTANT]
 > Пример топологии, используемый в этом документе, зависит от компонентов, которые входят в состав Storm в HDInsight. Может потребоваться изменить его для работы с Azure Data Lake Store при использовании с другими кластерами Apache Storm.
@@ -65,7 +65,7 @@ HdfsBolt использует предоставленную схему файл
 | `wasb://CONTAINER@ACCOUNT.blob.core.windows.net/` | Учетная запись хранения Azure не по умолчанию (дополнительная), связанная с кластером. |
 | `adl://STORENAME/` | Корень Data Lake Store, используемый кластером. Эта схема позволяет получить доступ к данным, размещенным вне каталога, в котором содержится файловая система кластера. |
 
-Дополнительные сведения см. в [справочнике HdfsBolt](http://storm.apache.org/releases/1.1.0/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) на сайте Apache.org.
+Дополнительные сведения см. в [справочнике HdfsBolt](http://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) на сайте Apache.org.
 
 ### <a name="example-configuration"></a>Пример конфигурации
 

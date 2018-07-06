@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 11/15/2017
 ms.author: sngun
-ms.openlocfilehash: cce1cfc4cf883fcecab0e339177bc70c18e7af0b
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 9365fd70036c8b489efaea42bda9c670182c496c
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798650"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37082280"
 ---
 # <a name="perform-azure-cosmos-db-table-api-operations-with-azure-powershell"></a>Выполнение операций в API таблицы Azure Cosmos DB с помощью Azure PowerShell 
 
@@ -45,7 +45,7 @@ API таблицы Azure Cosmos DB позволяет хранить и запр
 Install-Module AzureRmStorageTable
 ```
 
-Затем установите сборки Azure Cosmos DB локально, чтобы использовать эти командлеты PowerShell. Инструкции о том, как это сделать, см. в статье [Azure RM Storage Tables PowerShell module now includes support for Cosmos DB Tables](https://blogs.technet.microsoft.com/paulomarques/2017/05/23/azure-rm-storage-tables-powershell-module-now-includes-support-for-cosmos-db-tables/) (Модуль PowerShell таблиц хранилища Azure RM теперь включает поддержку таблиц Cosmos DB).
+Затем установите сборки Azure Cosmos DB локально, чтобы использовать эти командлеты PowerShell. Инструкции о том, как это сделать, см. в статье [Azure RM Storage Tables PowerShell module now includes support for Cosmos DB Tables](https://blogs.technet.microsoft.com/paulomarques/2017/01/17/working-with-azure-storage-tables-from-powershell/) (Модуль PowerShell таблиц хранилища Azure RM теперь включает поддержку таблиц Cosmos DB).
 
 Чтобы выполнить приведенные ниже упражнения, необходима учетная запись базы данных Azure Cosmos DB. Если у вас ее нет, создайте такую учетную запись с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения о создании учетной записи базы данных см. в разделе [Создание учетной записи базы данных](create-table-dotnet.md#create-a-database-account).
 
@@ -88,7 +88,7 @@ $storageTable = Get-AzureStorageTableTable `
 
 ## <a name="delete-a-table"></a>Удаление таблицы 
 
-PowerShell не поддерживает удаление таблиц из Azure Cosmos DB. Чтобы удалить таблицу, перейдите на [портал Azure](https://azure.portal.com), найдите учетную запись Azure Cosmos DB, которая используется, а затем найдите и удалите таблицу. 
+PowerShell не поддерживает удаление таблиц из Azure Cosmos DB. Чтобы удалить таблицу, перейдите на [портал Azure](https://portal.azure.com), найдите учетную запись Azure Cosmos DB, которая используется, а затем найдите и удалите таблицу. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

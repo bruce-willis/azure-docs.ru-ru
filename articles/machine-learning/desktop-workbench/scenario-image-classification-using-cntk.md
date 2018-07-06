@@ -8,16 +8,16 @@ ms.author: pabuehle
 manager: mwinkle
 ms.reviewer: marhamil, mldocs, garyericson, jasonwhowell
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 10/17/2017
-ms.openlocfilehash: 5ff6502b0ed023f6fe8a9475a0e81991a9918cc5
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 48c21638fe5756e6527288ed0fdc73dd9e331afd
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34850177"
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "35640644"
 ---
 # <a name="image-classification-using-azure-machine-learning-workbench"></a>Классификация изображений в Azure Machine Learning Workbench
 
@@ -236,7 +236,8 @@ Azure Machine Learning Workbench хранит историю каждого за
 На первом снимке экрана уточнение DNN обеспечивает более высокую точность, чем обучение SVM для всех классов. На втором снимке экрана отображаются все метрики, которые отслеживаются, включая классификатор. Это отслеживание выполняется в скрипте `5_evaluate.py` путем вызова средства ведения журнала Azure Machine Learning Workbench. Кроме того, скрипт также сохраняет кривую ROC и матрицу неточности в папке *outputs*. Функция ведения журнала Workbench может отслеживать содержимое этой *папки*, таким образом выходные данные доступны в любое время, независимо от того, были ли перезаписаны локальные копии.
 
 <p align="center">
-<img src="media/scenario-image-classification-using-cntk/run_comparison1.jpg" alt="alt text" width="700"/> </p>
+<img src="media/scenario-image-classification-using-cntk/run_comparison1.jpg" alt="alt text" width="700"/>
+</p>
 
 <p align="center">
 <img src="media/scenario-image-classification-using-cntk/run_comparison2b.jpg" alt="alt text" width="700"/>

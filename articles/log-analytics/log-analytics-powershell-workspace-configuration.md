@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: powershell
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/21/2016
 ms.author: richrund
-ms.openlocfilehash: 6a3f91323a017533d2d012f1e81760396c17a643
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: na
+ms.openlocfilehash: 375ae9a82af4a1f8a86b529b597ed479388e66dc
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30179095"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129342"
 ---
 # <a name="manage-log-analytics-using-powershell"></a>Управление Log Analytics с помощью PowerShell
 [Командлеты PowerShell Log Analytics](https://msdn.microsoft.com/library/mt188224\(v=azure.300\).aspx) можно использовать для выполнения различных функций в Log Analytics как из командной строки, так и в составе сценария.  Примеры задач, которые можно выполнять с помощью PowerShell.
@@ -200,11 +201,11 @@ New-AzureRmOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGr
 | пул эластичных баз данных SQL;        |     | Yes |
 | пространство имен концентратора событий;     |     | Yes |
 | Центры Интернета вещей;                |     | Yes |
-| хранилище ключей;               | Yes | |
+| Key Vault               | Yes | |
 | Балансировщики нагрузки          | Yes | |
-| приложения логики;              | Yes | Yes |
+| Logic Apps              | Yes | Yes |
 | группы сетевой безопасности; | Yes | |
-| кэш Redis;             |     | Yes |
+| Кэш Redis             |     | Yes |
 | Службы поиска         | Yes | Yes |
 | Пространство имен служебной шины   |     | Yes |
 | SQL (версия 12)               |     | Yes |

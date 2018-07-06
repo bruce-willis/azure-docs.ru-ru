@@ -7,17 +7,17 @@ author: rolyon
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.topic: article
+ms.topic: conceptual
 ms.workload: identity
 ms.component: protection
 ms.date: 01/03/2018
 ms.author: rolyon
-ms.openlocfilehash: 856fdc69bd5ce582ca772c01f8af615fbc455887
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 438a2fcd511fe62fa1dc7ba603c3770d5bcb56a4
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233226"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446849"
 ---
 # <a name="azure-ad-privileged-identity-management-how-to-add-or-remove-a-user-role"></a>Управление привилегированными пользователями Azure AD: добавление и удаление роли пользователя
 С помощью Azure Active Directory (AD) глобальный администратор (или администратор организации) может изменить назначения **постоянных** ролей для пользователей в Azure AD. Это делается с помощью таких командлетов PowerShell, как `Add-MsolRoleMember` и `Remove-MsolRoleMember`. Кроме того, можно использовать портал Azure, как описано в статье [Назначение ролей администраторов в Azure Active Directory](active-directory-assign-admin-roles.md).

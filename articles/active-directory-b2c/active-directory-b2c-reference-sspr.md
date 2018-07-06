@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ea8b23618b382f557340643afd62e56932bbfb2d
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 3612e10df12e2b18f32caae55bdd83b12a4e24a6
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34712102"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449279"
 ---
 # <a name="set-up-self-service-password-reset-for-your-customers"></a>Настройка самостоятельного сброса пароля для пользователей
 С помощью функции самостоятельного сброса пароля ваши пользователи, которые зарегистрировали локальные учетные записи, могут самостоятельно сбрасывать пароли. Это значительно упрощает работу службы поддержки, особенно если вашим приложением регулярно пользуются миллионы клиентов. Сейчас поддерживается только восстановление с помощью подтвержденного адреса электронной почты.
@@ -35,7 +35,7 @@ ms.locfileid: "34712102"
 Проверьте любую политику входа (где в качестве поставщика удостоверений используются локальные учетные записи) с помощью функции "Запустить сейчас". На странице входа локальной учетной записи (где вы вводите электронный адрес и пароль или имя пользователя и пароль) щелкните **Can't access your account?** (Не удается получить доступ к своей учетной записи?), чтобы проверить взаимодействие с пользователем.
 
 > [!NOTE]
-> Страницы самостоятельного сброса пароля можно настраивать с помощью [функции фирменной символики](../active-directory/customize-branding.md).
+> Страницы самостоятельного сброса пароля можно настраивать с помощью [функции фирменной символики](../active-directory/fundamentals/customize-branding.md).
 > 
 > 
 

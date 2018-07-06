@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: efdef681dd94cdb97d84de657668c49022b72d95
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: df46a4de32482f9da46b81e6b0fbc55c2cc1af35
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751502"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37444248"
 ---
 # <a name="reporting-options-for-azure-ad-password-management"></a>Параметры отчетов для управления паролями Azure AD
 
@@ -26,7 +26,7 @@ ms.locfileid: "36751502"
 Ответы на указанные ниже вопросы можно найти в отчетах на портале Azure (https://portal.azure.com/):).
 
 > [!NOTE]
-> Вы должны иметь права [глобального администратора](../active-directory-assign-admin-roles-azure-portal.md) и указать, что эти данные необходимо собирать от имени вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку **Отчеты** или просмотреть журналы аудита. Пока это не сделано, данные для вашей организации не собираются.
+> Вы должны иметь права [глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) и указать, что эти данные необходимо собирать от имени вашей организации. Чтобы дать согласие, необходимо по крайней мере один раз посетить вкладку **Отчеты** или просмотреть журналы аудита. Пока это не сделано, данные для вашей организации не собираются.
 >
 
 * Сколько пользователей зарегистрировалось для сброса пароля?
