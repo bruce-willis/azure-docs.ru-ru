@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: b809097e50a17178da12fdb424eba08dc8e0c4cb
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 204910ff6e02eafd62eeb56bf82b77b91b3cb5ad
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33866897"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37099615"
 ---
 # <a name="how-to-require-two-step-verification-for-a-user-or-group"></a>Как настроить требование двухфакторной проверки подлинности пользователя или группы
 
@@ -71,7 +71,7 @@ ms.locfileid: "33866897"
 
 5. Подтвердите свой выбор во всплывающем окне, которое откроется. 
 
-После включения уведомите пользователей по электронной почте. Сообщите, что им будет предложено зарегистрироваться при следующем входе. Кроме того, если ваша организация использует небраузерные приложения, не поддерживающие современную аутентификацию, потребуется создать пароли приложений. Можно также добавить ссылку на [руководство для пользователей Azure MFA](./../../multi-factor-authentication/end-user/multi-factor-authentication-end-user.md), чтобы им было проще приступить к работе.
+После включения уведомите пользователей по электронной почте. Сообщите, что им будет предложено зарегистрироваться при следующем входе. Кроме того, если ваша организация использует небраузерные приложения, не поддерживающие современную аутентификацию, потребуется создать пароли приложений. Можно также добавить ссылку на [руководство для пользователей Azure MFA](end-user/current/multi-factor-authentication-end-user.md), чтобы им было проще приступить к работе.
 
 ### <a name="use-powershell"></a>Использование PowerShell
 Чтобы изменить состояние пользователя с помощью [Azure AD PowerShell](/powershell/azure/overview), измените `$st.State`. Существуют три возможных состояния:
