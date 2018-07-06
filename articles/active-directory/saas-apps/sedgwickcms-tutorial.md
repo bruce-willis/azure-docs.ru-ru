@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2017
 ms.author: jeedes
-ms.openlocfilehash: d4832807bb8ce3a854bee16eae5d0ced37fedcd8
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 547c3785fa307838e9a86d38280b90fb31b040b3
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215081"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37082627"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство по интеграции Azure Active Directory с Sedgwick CMS
 
@@ -123,7 +123,7 @@ ms.locfileid: "36215081"
     | `https://claimlookup.com/Voe/sso` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Sedgwick CMS](https://www.sedgwick.com/contact/Pages/contactform.aspx).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Sedgwick CMS](https://www.sedgwick.com/help).
  
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.

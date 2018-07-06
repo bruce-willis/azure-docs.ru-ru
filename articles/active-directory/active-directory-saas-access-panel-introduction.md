@@ -15,12 +15,12 @@ ms.date: 05/11/18
 ms.author: markvi
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 982e2cb6780e5285dc5849d655efdf830f76cf13
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: bc05ff8c6961cd9389a12ff9c082867eecb79bca
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34347505"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449297"
 ---
 # <a name="what-is-the-access-panel"></a>Что такое панель доступа?
 
@@ -40,7 +40,7 @@ ms.locfileid: "34347505"
 
 - просмотр и запуск облачных приложений, к которым администратор Azure AD предоставил вам доступ. 
 
-- Самостоятельное управление группами. Администраторы могут создавать группы безопасности и управлять ими, а также запрашивать членство в группах безопасности в Azure AD. Дополнительные сведения можно найти в разделах [Самостоятельное управление группами для пользователей в Azure AD](active-directory-accessmanagement-self-service-group-management.md) и [Управление группами](active-directory-manage-groups.md).
+- Самостоятельное управление группами. Администраторы могут создавать группы безопасности и управлять ими, а также запрашивать членство в группах безопасности в Azure AD. Дополнительные сведения можно найти в разделах [Самостоятельное управление группами для пользователей в Azure AD](users-groups-roles/groups-self-service-management.md) и [Управление группами](fundamentals/active-directory-manage-groups.md).
 
 
 
@@ -214,7 +214,7 @@ Intune Managed Browser доступен в [Apple App Store](https://itunes.appl
 
 - Список всех статей, связанных с управлением приложениями, см. в статье [Указатель статей по управлению приложениями в Azure Active Directory](active-directory-apps-index.md).
  
-- Сведения об интеграции приложения SaaS в Azure AD см. в [этой статье](active-directory-saas-tutorial-list.md).
+- Сведения об интеграции приложения SaaS в Azure AD см. в [этой статье](saas-apps/tutorial-list.md).
  
 - Дополнительные сведения об управлении приложениями с помощью Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](manage-apps/what-is-single-sign-on.md).
  

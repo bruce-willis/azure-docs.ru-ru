@@ -14,20 +14,20 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: b8a35e19628ebbe75d3f1890a6d64ab777519698
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f6577b8b2c99773887ecdac865684f6cb4c9d3b9
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34621553"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051582"
 ---
 # <a name="move-data-from-on-premises-hdfs-using-azure-data-factory"></a>Перемещение данных из локальной системы HDFS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-hdfs-connector.md)
-> * [Версия 2 — предварительная](../connector-hdfs.md)
+> * [Версия 1](data-factory-hdfs-connector.md)
+> * [Версия 2 (текущая)](../connector-hdfs.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from and to HDFS using Azure Data Factory](../connector-hdfs.md) (Копирование данных в и из HDFS с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе HDFS в службе "Фабрика данных Azure" версии 2](../connector-hdfs.md).
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной системы HDFS. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
