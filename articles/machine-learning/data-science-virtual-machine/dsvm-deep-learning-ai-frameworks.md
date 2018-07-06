@@ -227,7 +227,7 @@ _export MKL_THREADING_LAYER=GNU_
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | Torch      |
 | Запуск и использование | 
 * В окне терминала активируйте соответствующую среду и запустите Python. <br/>
- * * В Jupyter подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
+ * В Jupyter подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
 
 ## <a name="mxnet-model-server"></a>Сервер модели MXNet
 
