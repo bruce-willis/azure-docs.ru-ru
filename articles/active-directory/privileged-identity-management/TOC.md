@@ -1,6 +1,6 @@
 # Обзор
 ## [Что такое Azure AD PIM?](../active-directory-privileged-identity-management-configure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-## [Защита привилегированного доступа](../admin-roles-best-practices.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+## [Защита привилегированного доступа](../users-groups-roles/directory-admin-roles-secure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
 ## [Роли каталога в PIM](../active-directory-privileged-identity-management-roles.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
 ## [PIM для ресурсов Azure](azure-pim-resource-rbac.md)
 ## [Рабочий процесс утверждения PIM](azure-ad-pim-approval-workflow.md)
