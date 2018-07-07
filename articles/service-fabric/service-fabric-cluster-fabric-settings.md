@@ -14,25 +14,25 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/27/2018
 ms.author: aljo
-ms.openlocfilehash: 6783c2b3b431e99050bc6762c1855b22e0701686
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 84f8827a58d7f3c5dcc32943d2ba891b02c1e1ab
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062285"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37083198"
 ---
-# <a name="description-of-the-different-upgrade-policies"></a>Описание различных политик обновления
-
-- **Dynamic**. Изменения динамической конфигурации не приводят к перезапуску процессов Service Fabric или узла службы. 
-- **Static**. Изменения статической конфигурации приводят к перезапуску узла Service Fabric, чтобы эти изменения вступили в силу. Службы на узлах будут перезапущены.
-- **NotAllowed**. Эти параметры невозможно изменить. Чтобы изменить эти параметры, нужно удалить кластер и создать новый. 
-
 # <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Настройка параметров кластера Service Fabric и политики обновления структур
 В этом документе описывается, как настроить различные параметры структуры и политику обновления структур для кластера Service Fabric. Их можно настроить на [портале Azure](https://portal.azure.com) или с помощью шаблона Azure Resource Manager.
 
 > [!NOTE]
 > Не все параметры доступны на портале. Если один из параметров, перечисленных ниже, недоступен на портале, настройте его с помощью шаблона Azure Resource Manager.
 > 
+
+## <a name="description-of-the-different-upgrade-policies"></a>Описание различных политик обновления
+
+- **Dynamic**. Изменения динамической конфигурации не приводят к перезапуску процессов Service Fabric или узла службы. 
+- **Static**. Изменения статической конфигурации приводят к перезапуску узла Service Fabric, чтобы эти изменения вступили в силу. Службы на узлах будут перезапущены.
+- **NotAllowed**. Эти параметры невозможно изменить. Чтобы изменить эти параметры, нужно удалить кластер и создать новый. 
 
 ## <a name="customize-cluster-settings-using-resource-manager-templates"></a>Настройка параметров кластера с помощью шаблонов Resource Manager
 Ниже приведены шаги, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*.

@@ -10,12 +10,12 @@ ms.author: jamesbak
 ms.date: 06/27/2018
 ms.service: storage
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: a726779e731be2534e457ba595d93fe51c023601
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: e92c4efba29f1c40f6d4cb155974ca3a896796e5
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035224"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37114339"
 ---
 # <a name="the-azure-blob-filesystem-driver-abfs-a-dedicated-azure-storage-driver-for-hadoop"></a>Драйвер файловой системы больших двоичных объектов Azure (ABFS): выделенный драйвер хранилища Azure для Hadoop
 
@@ -29,7 +29,7 @@ ms.locfileid: "37035224"
 
 ## <a name="the-azure-blob-file-system-driver"></a>Драйвер файловой системы больших двоичных объектов Azure
 
-[Интерфейс REST хранилища Azure Data Lake Storage](https://docs.microsoft.com/en-us/rest/api/datalakestorage/) поддерживает семантику файловой системы с помощью хранилища BLOB-объектов Azure. Учитывая, что файловая система Hadoop предназначена для поддержки той же семантики, сложное сопоставление в драйвере не требуется. Таким образом, драйвер файловой системы больших двоичных объектов Azure (или ABFS) является простой оболочкой клиента для интерфейса REST API.
+[Интерфейс REST хранилища Azure Data Lake Storage](https://docs.microsoft.com/en-us/rest/api/storageservices/data-lake-storage-gen2) поддерживает семантику файловой системы с помощью хранилища BLOB-объектов Azure. Учитывая, что файловая система Hadoop предназначена для поддержки той же семантики, сложное сопоставление в драйвере не требуется. Таким образом, драйвер файловой системы больших двоичных объектов Azure (или ABFS) является простой оболочкой клиента для интерфейса REST API.
 
 Однако существуют некоторые функции, которые драйвер все же должен выполнять:
 

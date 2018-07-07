@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: efe3e31a1a92e21f2c3a3461deba248d2a8c97fa
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 9ec396e8a1ad36e85e1291995345ca1de24668d0
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37029447"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128066"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Распространенные проблемы и их решения для Azure IoT Edge
 
@@ -237,4 +237,4 @@ Error parsing user input data: invalid hostname. Hostname cannot be empty or gre
       ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iot-edge/issues), чтобы мы как можно скорее устранили неисправность. 
+Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iotedge/issues), чтобы мы как можно скорее устранили неисправность. 

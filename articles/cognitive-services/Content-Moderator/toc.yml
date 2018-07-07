@@ -115,6 +115,8 @@
   items:
     - name: Часто задаваемые вопросы
       href: FAQs.md
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/content-moderator'
     - name: Экспорт или удаление данных учетной записи

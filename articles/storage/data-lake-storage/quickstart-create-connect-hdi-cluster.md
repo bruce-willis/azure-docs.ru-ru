@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: 6707610fc3410eab6eb2985c7d8a0ef821354689
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 9c037b35af19b94b6655cf7d1d45ba6b6182879c
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062085"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37346592"
 ---
 # <a name="quickstart-set-up-clusters-in-hdinsight"></a>Краткое руководство по установке кластеров в HDInsight
 
@@ -55,7 +55,7 @@ ms.locfileid: "37062085"
 
 * [Имя группы ресурсов](#resource-group-name)
 * [Типы и конфигурация кластеров](#cluster-types) 
-* [Имя входа в кластер и имя пользователя SSH](#cluster-login-and-ssh-username)
+* [Имя входа в кластер и имя пользователя SSH](#cluster-login-and-ssh-user-name)
 * [Местоположение.](#location)
 
 > [!IMPORTANT]
@@ -117,7 +117,7 @@ ms.locfileid: "37062085"
 
 В процессе настройки вам следует указать Data Lake Storage в качестве конечной точки хранения, используемой по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные учетные записи Azure Data Lake Storage, к которым может обращаться кластер. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
 
-![Параметры хранилища кластера: конечные точки хранилища, совместимые с HDFS](media/quickstart-create-connect-hdi-cluster/hdinsight-cluster-creation-storage-TEMP.png)
+![Параметры хранилища кластера: конечные точки хранилища, совместимые с HDFS](media/quickstart-create-connect-hdi-cluster/hdinsight-cluster-creation-storage2.png)
 
 > [!IMPORTANT]
 > Не забудьте **отключить доступ к Data Lake Store**. Эти настройки относятся к старой функции *Data Lake Store*, и их необходимо отключить для правильной работы *Data Lake Storage*.

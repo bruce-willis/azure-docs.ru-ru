@@ -2,7 +2,7 @@
 title: Поддерживаемые подключения с использованием соединителя управления ИТ-службами в Azure Log Analytics | Документы Майкрософт
 description: В этой статье описывается, как подключить продукты и службы ITSM с помощью соединителя управления ИТ-службами (ITSM) в OMS Log Analytics, чтобы централизованно отслеживать рабочие элементы ITSM и управлять ими.
 documentationcenter: ''
-author: JYOTHIRMAISURI
+author: jyothirmaisuri
 manager: riyazp
 editor: ''
 ms.assetid: 8231b7ce-d67f-4237-afbf-465e2e397105
@@ -10,15 +10,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: 1c1c294a877a996dc0e6cb916b038dc0ca27ed5c
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.component: na
+ms.openlocfilehash: 661107779b74b6e21dec01aecf6d545ec2b7a702
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061715"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131758"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](log-analytics-itsmc-overview.md).

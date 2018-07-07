@@ -9,17 +9,18 @@ editor: tysonn
 ms.assetid: 67710115-c861-40f8-a377-57c7fa6909b4
 ms.service: log-analytics
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: e0366e6a2403f7cea83efde35c7b3b42565a1cf2
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.component: na
+ms.openlocfilehash: 9a43774a5327536ae4fa1346ae933739ea629771
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062785"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37130090"
 ---
 # <a name="data-sources-in-log-analytics"></a>Источники данных в Log Analytics
 Служба Log Analytics собирает данные из подключенных источников и сохраняет их в рабочей области Log Analytics.  Собираемые данные зависят от заданного вами источника данных.  Данные в Log Analytics хранятся как набор записей.  Каждый источник данных создает записи определенного типа, а каждый тип обладает собственным набором свойств.

@@ -8,17 +8,17 @@ ms.date: 6/21/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a6bf918428312c511505304bd23b68cd19e46471
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 05a571c4491122ec5c7c35f6bccc4b8c332a4be2
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035613"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37130715"
 ---
 # <a name="azure-iot-edge-support"></a>Поддержка Azure IoT Edge
 Есть много способов реализовать поддержку продуктов Azure IoT Edge.
 
-**Отчеты об ошибках.** Основная часть усилий по разработке продукта Azure IoT Edge, прилагается в рамках проекта IoT Edge с открытым кодом. Вы можете сообщить об ошибках на соответствующей [странице](https://github.com/azure/iot-edge/issues) для этого проекта. Внесенные исправления очень быстро попадают из проекта в обновление продукта.
+**Отчеты об ошибках.** Основная часть усилий по разработке продукта Azure IoT Edge, прилагается в рамках проекта IoT Edge с открытым кодом. Вы можете сообщить об ошибках на соответствующей [странице](https://github.com/azure/iotedge/issues) для этого проекта. Внесенные исправления очень быстро попадают из проекта в обновление продукта.
 
 **Служба поддержки пользователей корпорации Майкрософт**. Пользователи, приобретающие [план поддержки,](https://azure.microsoft.com/support/plans/) могут обращаться в службу поддержки пользователей корпорации Майкрософт, создав запрос прямо на [портале Azure]( https://ms.portal.azure.com/signin/index/?feature.settingsportalinstance=mpac).
 
@@ -33,8 +33,8 @@ Azure IoT Edge работает на большинстве операционн
 * предоставляет для них пакеты установки.
 
 Общедоступная версия
-* Ubuntu 18.04
-* Ubuntu 16.04.
+* Ubuntu Server 18.04
+* Ubuntu Server 16.04
 * Raspbian-stretch
 
 Общедоступная предварительная версия
@@ -47,9 +47,9 @@ Azure IoT Edge работает на большинстве операционн
 * корпорация Майкрософт проводила тестирование по запросу на этой платформе и (или) имеет информацию, что ее партнеры успешно запустили Azure IoT Edge на этой платформе;
 * для этих платформ могут подойти пакеты установки, предназначенные для других платформ.
 
-Ubuntu Server 18.04
+Ubuntu 18.04
 
-Ubuntu Server 16.04
+Ubuntu 16.04.
 
 Wind River 8
 
