@@ -67,12 +67,10 @@
           href: luis-quickstart-intent-and-sentiment-analysis.md
     - name: Улучшение приложения
       items:
-        - name: Просмотр фраз конечной точки
+        - name: Просмотр фрагментов речи конечной точки
           href: luis-tutorial-review-endpoint-utterances.md
         - name: Использование шаблонов
           href: luis-tutorial-pattern.md
-        - name: Использование списка фраз
-          href: luis-tutorial-interchangeable-phrase-list.md
 - name: Примеры
   items:
     - name: Примеры кода
