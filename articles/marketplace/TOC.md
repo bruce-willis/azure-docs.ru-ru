@@ -4,22 +4,11 @@
 ### Возможности и преимущества  
 ### Онлайн-магазины  
 #### [Сравнение Azure Marketplace и AppSource](./comparing-appsource-azure-marketplace.md)  
-#### [Расширение бизнеса с помощью AppSource](./grow-your-business-with-appsource.md) 
-##### [Создание целевой страницы](./build-your-landing-page.md)  
-##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
-##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
-##### [Развитие бизнеса с помощью решений Майкрософт](./promote-your-business-with-microsoft.md)  
-#### [Расширение бизнеса благодаря Azure Marketplace](./grow-your-business-with-azure-marketplace.md)  
-##### [Создание целевой страницы](./build-your-landing-page.md)  
-##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
-##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
-##### [Развитие бизнеса с помощью решений Майкрософт](./promote-your-business-with-microsoft.md)  
 
 ### Публикация в онлайн-магазинах в Marketplace  
 #### [Определение типа перечисления для решения](./determine-your-listing-type.md)  
 #### [Как стать издателем в онлайн-магазинах в Marketplace](./become-publisher.md)  
 #### [Требования по типам перечислений](./listing-type-requirements.md) 
-#### [Предпочтительные решения](./preferred-solutions.md) 
 
 ### Публикация контрольных списков  
 #### [Публикация контрольных списков для AppSource](./publishing-checklist-appsource.md)  
@@ -38,6 +27,9 @@
 #### [Добавление налоговых и банковских сведений](./add-bank-tax-info.md)  
 #### [Включение пробной версии с помощью Azure AD](./enable-trial-using-azure-ad.md)  
 #### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
+
+### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
+#### [Предпочтительные решения](./preferred-solutions.md) 
 
 ## [Облачный портал для партнеров](./cloud-partner-portal/cloud-partner-portal-what-is-the-cloud-partner-portal.md)  
 

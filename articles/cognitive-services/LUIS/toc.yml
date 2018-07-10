@@ -65,8 +65,10 @@
           href: luis-quickstart-intent-and-key-phrase.md
         - name: 8. Добавление анализа тональности.
           href: luis-quickstart-intent-and-sentiment-analysis.md
-    - name: Улучшение прогнозирования
+    - name: Улучшение приложения
       items:
+        - name: Просмотр фраз конечной точки
+          href: luis-tutorial-review-endpoint-utterances.md
         - name: Использование шаблонов
           href: luis-tutorial-pattern.md
         - name: Использование списка фраз
@@ -313,6 +315,8 @@
       href: 'https://github.com/Microsoft/Recognizers-Text'
 - name: Ресурсы
   items:
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Стратегия развития Azure
       href: 'https://aka.ms/luis-roadmap'
     - name: Глоссарий
@@ -326,7 +330,7 @@
     - name: UserVoice
       href: 'https://aka.ms/luis-uservoice-forum'
     - name: поиска
-      href: 'https://docs.microsoft.com/en-us/search/index?search=LUIS'
+      href: 'https://docs.microsoft.com/search/index?search=LUIS'
     - name: Блог
       href: 'https://blog.botframework.com/category/luis/'
     - name: База знаний

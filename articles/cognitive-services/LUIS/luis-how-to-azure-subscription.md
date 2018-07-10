@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 03/21/2018
 ms.author: v-geberr
-ms.openlocfilehash: 3526871f126ac975f323fe84b14883b361b684ae
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: dbcbdb0f806241c015e6fbc160465390bead7c37
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35382990"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37340779"
 ---
 # <a name="manage-azure-endpoint-subscription-keys"></a>Управление ключами подписки конечной точки Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "35382990"
     ![Ключи Azure](./media/luis-azure-subscription/azure-keys.png)
 
     > [!Note] 
-    > * Войдите на веб-сайт [LUIS](luis-reference-regions.md) в вашем регионе и [добавьте новый ключ конечной точки LUIS](Manage-Keys.md#assign-endpoint-key). 
+    > * Войдите на веб-сайт [LUIS](luis-reference-regions.md) в вашем регионе и [добавьте новый ключ конечной точки LUIS](luis-how-to-manage-keys.md#assign-endpoint-key). 
     > * Вам потребуется запомнить имя созданной службы Azure, чтобы выбрать его на странице публикации [LUIS](luis-reference-regions.md) в регионе.  
 
 ## <a name="change-luis-pricing-tier"></a>Изменение ценовой категории LUIS
@@ -53,7 +53,7 @@ ms.locfileid: "35382990"
     ![Измените ценовую категорию LUIS](./media/luis-usage-tiers/plans.png)
 4.  После изменения ценовой категории появится всплывающее окно с новой ценовой категорией. 
     ![Проверьте ценовую категорию LUIS](./media/luis-usage-tiers/updated.png)
-5. Не забудьте [назначить этот ключ конечной точки](manage-keys.md#assign-endpoint-key) на странице **публикации** и использовать его во всех запросах конечной точки. 
+5. Не забудьте [назначить этот ключ конечной точки](luis-how-to-manage-keys.md#assign-endpoint-key) на странице **публикации** и использовать его во всех запросах конечной точки. 
 
 ## <a name="exceed-pricing-tier-usage"></a>Превышение использования ценовой категории
 Каждая категория поддерживает определенную частоту запросов к конечной точке в учетной записи LUIS. Если частота запросов (в минуту или в месяц) превышает допустимую частоту тарифицируемой учетной записи, для запросов выводится сообщение об ошибке HTTP "429: слишком много запросов".

@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-geberr
 ms.service: cognitive-services
-ms.openlocfilehash: 6e013e994a3bcb60c3104aa10cd7bad1535706f1
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f004a0a1726ca6c513e2cb4c137f82ae40e31a01
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35382987"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344333"
 ---
 # <a name="manage-intents"></a>Управление намерениями 
 Добавьте [намерения](luis-concept-intent.md) в приложение LUIS для определения групп вопросов или команд, которые имеют одинаковые намерения. 
@@ -139,7 +139,7 @@ ms.locfileid: "35382987"
 ![Снимок экрана намерения BookFlight с выделенной кнопкой Token View (Представление маркеров)](./media/luis-how-to-add-intents/toggle-tokens-view.png)
 
 ## <a name="train-your-app-after-changing-model-with-intents"></a>Обучение приложения после изменения модели с намерениями
-После добавления, изменения и удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](PublishApp.md) приложения, чтобы применить изменения к запросам конечной точки. 
+После добавления, изменения и удаления намерений выполните [обучение](luis-how-to-train.md) и [публикацию](luis-how-to-publish-app.md) приложения, чтобы применить изменения к запросам конечной точки. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

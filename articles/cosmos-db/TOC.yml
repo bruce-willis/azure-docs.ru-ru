@@ -73,7 +73,7 @@ items:
     items:
       - name: Глобальное распределение
         href: distribute-data-globally.md
-      - name: Архитектура с несколькими источниками
+      - name: Подход с несколькими источниками
         href: multi-region-writers.md
       - name: Секционирование
         href: partition-data.md
@@ -172,8 +172,6 @@ items:
                 href: bulk-executor-dot-net.md
               - name: "BulkExecutor\_— Java"
                 href: bulk-executor-java.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Запрос
                 items:
                   - name: Выполнение запросов SQL
@@ -184,8 +182,6 @@ items:
                 href: indexing-policies.md
               - name: Секционирование данных SQL
                 href: sql-api-partition-data.md
-              - name: 'Хранимые процедуры, триггеры и определяемые пользователем функции'
-                href: programming.md
               - name: Веб-канал изменений
                 href: change-feed.md
               - name: Типы данных
@@ -262,8 +258,6 @@ items:
                 href: sql-api-sql-query-reference.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
               - name: SQL Playground
@@ -328,12 +322,8 @@ items:
                 href: mongodb-ttl.md
               - name: Визуализация данных с помощью Power BI
                 href: powerbi-visualize.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
       - name: Документация по API Graph
@@ -352,12 +342,8 @@ items:
             items:
               - name: Секционирование данных Graph
                 href: graph-partitioning.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
       - name: Документация по API таблиц
@@ -410,8 +396,6 @@ items:
                 href: table-sdk-python.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Обзор хранилища таблиц
                 href: table-storage-overview.md
               - name: Руководство по проектированию хранилищ таблиц
@@ -450,6 +434,8 @@ items:
         href: regional-failover.md
       - name: Ведения журнала диагностики
         href: logging.md
+      - name: 'Хранимые процедуры, триггеры и определяемые пользователем функции'
+        href: programming.md
       - name: Общие сведения о BulkExecutor
         href: bulk-executor-overview.md
       - name: Экономичные операции чтения и записи
@@ -460,12 +446,10 @@ items:
         href: manage-account-with-powershell.md
       - name: Управление использованием Обозревателя службы хранилища
         href: storage-explorer.md
-      - name: Модули записи с поддержкой нескольких регионов
+      - name: Архитектура с несколькими источниками
         href: multi-master-workaround.md
   - name: Ресурсы
     items:
-      - name: Управление использованием Обозревателя службы хранилища
-        href: storage-explorer.md
       - name: Краткий справочник запросов
         href: query-cheat-sheet.md
       - name: "Получение подсказок в течение 20\_дней"

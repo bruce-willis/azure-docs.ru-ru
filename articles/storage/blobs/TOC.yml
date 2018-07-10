@@ -20,7 +20,9 @@
       href: storage-quickstart-blobs-cli.md
     - name: Работа с большими двоичными объектами с помощью .NET
       href: storage-quickstart-blobs-dotnet.md
-    - name: Работа с большими двоичными объектами с использованием Java
+    - name: Работа с большими двоичными объектами с использованием Java (пакет SDK службы хранилища версии 10)
+      href: storage-quickstart-blobs-java-v10.md
+    - name: Работа с большими двоичными объектами с использованием Java (пакет SDK службы хранилища версии 7)
       href: storage-quickstart-blobs-java.md
     - name: Работа с большими двоичными объектами с помощью Python
       href: storage-quickstart-blobs-python.md
@@ -192,6 +194,8 @@
           href: storage-blob-immutable-storage.md
         - name: Включение безопасного TLS для клиента службы хранилища Azure
           href: ../common/storage-security-tls.md
+        - name: Предложения для соответствия требованиям
+          href: ../common/storage-compliance-offerings.md
     - name: Мониторинг и устранение неполадок
       items:
         - name: Руководство по устранению неполадок

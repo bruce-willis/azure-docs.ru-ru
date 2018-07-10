@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
-ms.openlocfilehash: e9d43d46f1979e985a5da96fda608eec55ad7830
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: a41dcd5f2c93e5c1279e1c7511e10e6d72574b3b
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37031062"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098752"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
 > [!IMPORTANT] 
@@ -63,7 +63,7 @@ ms.locfileid: "37031062"
 
 Дополнительные сведения о выпусках и функциях, поддерживаемых в SQL Server, см. в следующих разделах.
 
-* [Выпуски SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-editions/#fbid=Zae0-E6r5oh)
+* [Выпуски SQL Server](https://www.microsoft.com/sql-server/sql-server-2017-editions)
 * [Features Supported by the Editions of SQL Server 2016](https://msdn.microsoft.com/library/cc645993.aspx)
 
 ### <a name="bi-features-installed-on-the-sql-server-virtual-machine-gallery-images"></a>Компоненты бизнес-аналитики, установленные в образах коллекции виртуальных машин SQL Server

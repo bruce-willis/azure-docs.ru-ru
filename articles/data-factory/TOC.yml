@@ -138,10 +138,10 @@
           href: connector-azure-blob-storage.md
         - name: Azure Cosmos DB
           href: connector-azure-cosmos-db.md
-        - name: Хранилище Azure Data Lake.
-          href: connector-azure-data-lake-storage.md
-        - name: Хранилище озера данных Azure
+        - name: Хранилище Azure Data Lake Gen1
           href: connector-azure-data-lake-store.md
+        - name: Хранилище Azure Data Lake Gen2
+          href: connector-azure-data-lake-storage.md
         - name: База данных Azure для MySQL
           href: connector-azure-database-for-mysql.md
         - name: База данных Azure для PostgreSQL
@@ -277,11 +277,11 @@
         - name: Средство копирования данных
           href: copy-data-tool.md
           items: null
-        - name: Загрузка Data Lake Storage
+        - name: Загрузить хранилище Data Lake Gen2
           href: load-azure-data-lake-storage-gen2.md
         - name: Загрузка хранилища данных SQL Azure
           href: load-azure-sql-data-warehouse.md
-        - name: Загрузка Data Lake Store
+        - name: Загрузить хранилище Data Lake Gen1
           href: load-azure-data-lake-store.md
         - name: Чтение или запись секционированных данных
           href: how-to-read-write-partitioned-data.md

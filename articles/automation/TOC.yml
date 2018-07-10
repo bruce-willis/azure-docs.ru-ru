@@ -47,6 +47,8 @@
       items:
         - name: Общие сведения о службе "Отслеживание изменений"
           href: automation-change-tracking.md
+        - name: Просмотр содержимого отслеживаемых файлов
+          href: change-tracking-file-contents.md
     - name: Список
       items:
         - name: Управление виртуальной машиной с помощью сбора данных инвентаризации

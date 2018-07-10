@@ -98,7 +98,7 @@
 
 ### Расширенные сценарии IoT
 #### [Управление обменом сообщениями между устройством и облаком с помощью обозревателя Центра Интернета вещей](iot-hub-explorer-cloud-device-messaging.md)
-#### [Сохранение сообщений Центра Интернета вещей в хранилище данных Azure](iot-hub-store-data-in-azure-table-storage.md)
+#### [Сохранение сообщений Центра Интернета вещей в службе хранилища BLOB-объектов Azure](iot-hub-store-data-in-azure-table-storage.md)
 #### [Визуализация данных в Power BI](iot-hub-live-data-visualization-in-power-bi.md)
 #### [Визуализация данных в веб-приложениях](iot-hub-live-data-visualization-in-web-apps.md)
 #### [Создание прогноза погоды с помощью Машинного обучения Azure](iot-hub-weather-forecast-machine-learning.md)
