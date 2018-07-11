@@ -9,7 +9,7 @@
       href: speech-scenarios.md
 - name: Быстрое начало работы
   items:
-    - name: Попробуйте службу распознавания речи бесплатно
+    - name: Бесплатная пробная подписка на службу "Речь"
       href: get-started.md
     - name: 'Распознавание речи в C#'
       href: quickstart-csharp-windows.md
@@ -41,6 +41,8 @@
       href: how-to-customize-pronunciation.md
     - name: Настройка голосов (уникальный голос)
       href: how-to-customize-voice-font.md
+    - name: Запись образцов голосов
+      href: record-custom-voice-samples.md
     - name: Подготовка расшифровок
       href: prepare-transcription.md
     - name: Использование пользовательских аудиопотоков

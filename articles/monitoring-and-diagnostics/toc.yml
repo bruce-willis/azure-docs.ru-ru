@@ -103,6 +103,8 @@
           href: monitoring-stream-diagnostic-logs-to-event-hubs.md
         - name: Включение параметров диагностики с помощью шаблонов Resource Manager
           href: monitoring-enable-diagnostic-logs-using-template.md
+        - name: Подготовка к использованию формата журналов диагностики JSON Lines
+          href: monitor-diagnostic-logs-append-blobs.md
     - name: Использование журнала действий
       items:
         - name: Просмотр событий в журнале действий

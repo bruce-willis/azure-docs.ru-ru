@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-geberr
-ms.openlocfilehash: fb4c3bb117d1ea60c9cc28d2b193ee3c01f6c945
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f47068df9da4187ee8720cf526b2d6c3b89e68e2
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221637"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37345531"
 ---
 # <a name="test-your-luis-app"></a>Тестирование приложения LUIS
 <a name="train-your-app"></a>
@@ -65,7 +65,7 @@ ms.locfileid: "36221637"
 
 ## <a name="view-sentiment-results"></a>Просмотр результатов тональности
 
-Если на странице **[Publish](publishapp.md#enable-sentiment-analysis)** (Публикация) настроен **анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
+Если на странице **[Publish](luis-how-to-publish-app.md#enable-sentiment-analysis)** (Публикация) настроен **анализ тональности**, результаты теста содержат тональность, найденную в высказывании. 
 
 ![Изображение панели тестирования с анализом тональности](./media/luis-how-to-interactive-test/sentiment.png)
 

@@ -84,8 +84,6 @@
           href: sql-database-service-tiers-dtu.md
         - name: Ограничения ресурсов
           href: sql-database-resource-limits.md
-    - name: высокую доступность;
-      href: sql-database-high-availability.md
     - name: Логические серверы и отдельные базы данных
       items:
         - name: Логические серверы и отдельные базы данных
@@ -128,8 +126,46 @@
           href: sql-database-managed-instance-connect-app.md
         - name: Отличия T-SQL
           href: sql-database-managed-instance-transact-sql-information.md
-    - name: Общие компоненты SQL Server
-      href: sql-database-features.md
+    - name: Непрерывность бизнес-процессов
+      items:
+        - name: Непрерывность бизнес-процессов
+          href: sql-database-business-continuity.md
+        - name: высокую доступность;
+          href: sql-database-high-availability.md
+        - name: Резервные копии базы данных
+          href: sql-database-automated-backups.md
+        - name: Долгосрочное хранение резервных копий
+          itmes:
+            - name: Долгосрочное хранение резервных копий
+              href: sql-database-long-term-retention.md
+            - name: 'Настройка долгосрочного хранения резервных копий: хранилище SQL'
+              href: sql-database-long-term-backup-retention-configure.md
+            - name: 'Настройка долгосрочного хранения резервных копий: хранилище Azure (не рекомендуется)'
+              href: sql-database-long-term-backup-retention-configure-vault.md
+        - name: Группы отработки отказа и георепликация
+          items:
+            - name: Группы отработки отказа и георепликация
+              href: sql-database-geo-replication-overview.md
+            - name: Настройка георепликации с помощью портала Azure
+              href: sql-database-geo-replication-portal.md
+            - name: Настройка параметров безопасности для реплик
+              href: sql-database-geo-replication-security-config.md
+        - name: Восстановление базы данных
+          items:
+            - name: Восстановление базы данных
+              href: sql-database-recovery-using-backups.md
+            - name: Восстановление после сбоя
+              href: sql-database-disaster-recovery.md
+            - name: Выполнение детализации восстановления
+              href: sql-database-disaster-recovery-drills.md
+        - name: Проектирование приложений
+          items:
+            - name: Разработка для аварийного восстановления
+              href: sql-database-designing-cloud-solutions-for-disaster-recovery.md
+            - name: Разработка для эластичных пулов
+              href: sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md
+            - name: Разработка для обновления приложений
+              href: sql-database-manage-application-rolling-upgrade.md
     - name: Безопасность
       items:
         - name: Безопасность
@@ -192,76 +228,56 @@
               href: sql-database-always-encrypted.md
             - name: Использование Azure Key Vault
               href: sql-database-always-encrypted-azure-key-vault.md
-    - name: Непрерывность бизнес-процессов
+    - name: Эластичное масштабирование
       items:
-        - name: Непрерывность бизнес-процессов
-          href: sql-database-business-continuity.md
-        - name: Резервные копии базы данных
-          href: sql-database-automated-backups.md
-        - name: Долгосрочное хранение резервных копий
-          itmes:
-            - name: Долгосрочное хранение резервных копий
-              href: sql-database-long-term-retention.md
-            - name: 'Настройка долгосрочного хранения резервных копий: хранилище SQL'
-              href: sql-database-long-term-backup-retention-configure.md
-            - name: 'Настройка долгосрочного хранения резервных копий: хранилище Azure (не рекомендуется)'
-              href: sql-database-long-term-backup-retention-configure-vault.md
-        - name: Группы отработки отказа и георепликация
+        - name: Масштабируемость ресурсов
+          href: sql-database-scale-resources.md
+        - name: Горизонтальное масштабирование для чтения
+          href: sql-database-read-scale-out.md
+        - name: Сегментирование базы данных
           items:
-            - name: Группы отработки отказа и георепликация
-              href: sql-database-geo-replication-overview.md
-            - name: Настройка георепликации с помощью портала Azure
-              href: sql-database-geo-replication-portal.md
-            - name: Настройка параметров безопасности для реплик
-              href: sql-database-geo-replication-security-config.md
-        - name: Восстановление базы данных
-          items:
-            - name: Восстановление базы данных
-              href: sql-database-recovery-using-backups.md
-            - name: Восстановление после сбоя
-              href: sql-database-disaster-recovery.md
-            - name: Выполнение детализации восстановления
-              href: sql-database-disaster-recovery-drills.md
-        - name: Проектирование приложений
-          items:
-            - name: Разработка для аварийного восстановления
-              href: sql-database-designing-cloud-solutions-for-disaster-recovery.md
-            - name: Разработка для эластичных пулов
-              href: sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md
-            - name: Разработка для обновления приложений
-              href: sql-database-manage-application-rolling-upgrade.md
-    - name: Переход на базу данных SQL
-      items:
-        - name: Переход на базу данных SQL
-          href: sql-database-cloud-migrate.md
-        - name: Перенос в управляемый экземпляр
-          href: sql-database-managed-instance-migrate.md
-        - name: Управление Базой данных SQL после переноса
-          href: sql-database-manage-after-migration.md
-    - name: Загрузка и перемещение данных
-      items:
-        - name: Копирование базы данных в пределах Azure
-          href: sql-database-copy.md
-        - name: Импорт базы данных из BACPAC-файла
-          href: sql-database-import.md
-        - name: Экспорт базы данных в BACPAC-файл
-          href: sql-database-export.md
-        - name: Синхронизация данных
-          items:
-            - name: Синхронизация данных SQL
-              href: sql-database-sync-data.md
-            - name: Репликация изменений схемы
-              href: sql-database-update-sync-schema.md
-            - name: Мониторинг с помощью OMS
-              href: sql-database-sync-monitor-oms.md
-            - name: Рекомендации по синхронизации данных
-              href: sql-database-best-practices-data-sync.md
-            - name: Устранение ошибок синхронизации данных
-              href: sql-database-troubleshoot-data-sync.md
-        - name: Загрузка данных с помощью BCP
-          href: sql-database-load-from-csv-with-bcp.md
-        - name: Загрузка данных с помощью ADF
-          href: ../data-factory/connector-azure-sql-database.md?toc=/azure/sql-database/toc.json
+            - name: Сегментирование базы данных
+              href: sql-database-elastic-scale-introduction.md
+            - name: 'Эластичная клиентская библиотека: консолидация'
+              href: sql-database-elastic-database-client-library.md
+            - name: Обновление клиентской библиотеки эластичной базы данных
+              href: sql-database-elastic-scale-upgrade-client-library.md
+            - name: Карты сегментов
+              href: sql-database-elastic-scale-shard-map-management.md
+            - name: Маршрутизация запросов
+              href: sql-database-elastic-scale-data-dependent-routing.md
+            - name: Управление учетными данными
+              href: sql-database-elastic-scale-manage-credentials.md
+            - name: Запросы к сегментам
+              href: sql-database-elastic-scale-multishard-querying.md
+            - name: Инструменты эластичных БД
+              href: sql-database-elastic-scale-glossary.md
+            - name: Перемещение сегментированных данных
+              href: sql-database-elastic-scale-overview-split-and-merge.md
+            - name: Эластичная клиентская библиотека (Dapper)
+              href: sql-database-elastic-scale-working-with-dapper.md
+            - name: Часто задаваемые вопросы по инструментам эластичных баз данных
+              href: sql-database-elastic-scale-faq.md
+            - name: Создание сегментированного приложения
+              href: sql-database-elastic-scale-get-started.md
+            - name: Запрос горизонтально сегментированных данных
+              href: sql-database-elastic-query-getting-started.md
+            - name: Перемещение сегментированных данных
+              href: sql-database-elastic-scale-configure-deploy-split-and-merge.md
+            - name: Конфигурация системы безопасности
+              href: sql-database-elastic-scale-split-merge-security-configuration.md
+            - name: Добавление сегмента
+              href: sql-database-elastic-scale-add-a-shard.md
+            - name: Устранение проблем с картой сегментов
+              href: sql-database-elastic-database-recovery-manager.md
+            - name: Перенос сегментированной базы данных
+              href: sql-database-elastic-convert-to-use-elastic-tools.md
+            - name: Создание счетчиков
+              href: sql-database-elastic-database-perf-counters.md
+            - name: Использование Entity Framework
+              href: sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md
+    - name: Сравнение возможностей SQL
+      href: sql-database-features.md
     - name: Мониторинг и настройка
       items:
         - name: Мониторинг и настройка
@@ -318,52 +334,6 @@
           href: sql-database-troubleshoot-common-connection-issues.md
         - name: Служба автоматизации Azure
           href: sql-database-manage-automation.md
-    - name: Масштабирование
-      items:
-        - name: Горизонтальное масштабирование для чтения
-          href: sql-database-read-scale-out.md
-        - name: Сегментирование базы данных
-          items:
-            - name: Сегментирование базы данных
-              href: sql-database-elastic-scale-introduction.md
-            - name: 'Эластичная клиентская библиотека: консолидация'
-              href: sql-database-elastic-database-client-library.md
-            - name: Обновление клиентской библиотеки эластичной базы данных
-              href: sql-database-elastic-scale-upgrade-client-library.md
-            - name: Карты сегментов
-              href: sql-database-elastic-scale-shard-map-management.md
-            - name: Маршрутизация запросов
-              href: sql-database-elastic-scale-data-dependent-routing.md
-            - name: Управление учетными данными
-              href: sql-database-elastic-scale-manage-credentials.md
-            - name: Запросы к сегментам
-              href: sql-database-elastic-scale-multishard-querying.md
-            - name: Инструменты эластичных БД
-              href: sql-database-elastic-scale-glossary.md
-            - name: Перемещение сегментированных данных
-              href: sql-database-elastic-scale-overview-split-and-merge.md
-            - name: Эластичная клиентская библиотека (Dapper)
-              href: sql-database-elastic-scale-working-with-dapper.md
-            - name: Часто задаваемые вопросы по инструментам эластичных баз данных
-              href: sql-database-elastic-scale-faq.md
-            - name: Создание сегментированного приложения
-              href: sql-database-elastic-scale-get-started.md
-            - name: Запрос горизонтально сегментированных данных
-              href: sql-database-elastic-query-getting-started.md
-            - name: Перемещение сегментированных данных
-              href: sql-database-elastic-scale-configure-deploy-split-and-merge.md
-            - name: Конфигурация системы безопасности
-              href: sql-database-elastic-scale-split-merge-security-configuration.md
-            - name: Добавление сегмента
-              href: sql-database-elastic-scale-add-a-shard.md
-            - name: Устранение проблем с картой сегментов
-              href: sql-database-elastic-database-recovery-manager.md
-            - name: Перенос сегментированной базы данных
-              href: sql-database-elastic-convert-to-use-elastic-tools.md
-            - name: Создание счетчиков
-              href: sql-database-elastic-database-perf-counters.md
-            - name: Использование Entity Framework
-              href: sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md
     - name: Операции между базами данных
       items:
         - name: Задания обработки эластичных баз данных
@@ -424,6 +394,40 @@
           href: sql-database-temporal-tables-retention-policy.md
         - name: Настройка выполняющейся в памяти OLTP
           href: sql-database-in-memory-oltp-migration.md
+- name: Практические руководства
+  items:
+    - name: Переход на базу данных SQL
+      items:
+        - name: Переход на базу данных SQL
+          href: sql-database-cloud-migrate.md
+        - name: Перенос в управляемый экземпляр
+          href: sql-database-managed-instance-migrate.md
+        - name: Управление Базой данных SQL после переноса
+          href: sql-database-manage-after-migration.md
+    - name: Загрузка и перемещение данных
+      items:
+        - name: Копирование базы данных в пределах Azure
+          href: sql-database-copy.md
+        - name: Импорт базы данных из BACPAC-файла
+          href: sql-database-import.md
+        - name: Экспорт базы данных в BACPAC-файл
+          href: sql-database-export.md
+        - name: Синхронизация данных
+          items:
+            - name: Синхронизация данных SQL
+              href: sql-database-sync-data.md
+            - name: Репликация изменений схемы
+              href: sql-database-update-sync-schema.md
+            - name: Мониторинг с помощью OMS
+              href: sql-database-sync-monitor-oms.md
+            - name: Рекомендации по синхронизации данных
+              href: sql-database-best-practices-data-sync.md
+            - name: Устранение ошибок синхронизации данных
+              href: sql-database-troubleshoot-data-sync.md
+        - name: Загрузка данных с помощью BCP
+          href: sql-database-load-from-csv-with-bcp.md
+        - name: Загрузка данных с помощью ADF
+          href: ../data-factory/connector-azure-sql-database.md?toc=/azure/sql-database/toc.json
     - name: Разработка приложений
       items:
         - name: Соединение
@@ -448,8 +452,6 @@
           href: sql-database-develop-cplusplus-simple.md
         - name: Excel
           href: sql-database-connect-excel.md
-- name: Практические руководства
-  items:
     - name: Эталонная архитектура мультитенантного приложения SaaS
       items:
         - name: Пример приложения Wingtip Tickets

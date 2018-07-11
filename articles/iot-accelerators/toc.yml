@@ -10,6 +10,8 @@
   items:
     - name: Развертывание решения удаленного мониторинга
       href: quickstart-remote-monitoring-deploy.md
+    - name: Развертывание симулятора устройств
+      href: quickstart-device-simulation-deploy.md
 - name: Учебники
   items:
     - name: Мониторинг устройств Интернета вещей
@@ -149,10 +151,10 @@
           href: iot-accelerators-connected-factory-customize.md
     - name: Имитация устройства
       items:
-        - name: Развертывание акселератора решений
-          href: iot-accelerators-device-simulation-deploy.md
-        - name: Запуск моделирования
-          href: iot-accelerators-device-simulation-explore.md
+        - name: Использование существующего Центра Интернета вещей
+          href: iot-accelerators-device-simulation-choose-hub.md
+        - name: Использование пользовательской модели устройства
+          href: iot-accelerators-device-simulation-custom-model.md
 - name: Справочные материалы
   items:
     - name: Справочник разработчика

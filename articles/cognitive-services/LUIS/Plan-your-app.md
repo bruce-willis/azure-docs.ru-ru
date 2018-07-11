@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2017
 ms.author: v-geberr
-ms.openlocfilehash: 7aec5d5b90ac7145ce9f337ec74c590b4b88c6b1
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: c67a2c16077c9033b52a909360b21cb7f88a5a9d
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36266368"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344994"
 ---
 # <a name="plan-your-luis-app"></a>Планирование приложения LUIS
 
@@ -61,7 +61,7 @@ ms.locfileid: "36266368"
 Дополнительные сведения об извлечении составной сущности из ответа на запрос JSON конечной точки см. в статье [Извлечение данных](luis-concept-data-extraction.md#composite-entity-data). Дополнительные сведения об использовании составной сущности см. в соответствующем [кратком руководстве](luis-tutorial-composite-entity.md).
 
 ### <a name="prebuilt-entity"></a>Предварительно созданная сущность
-В службе LUIS доступны [предварительно созданные сущности](Pre-builtEntities.md) для общих типов, таких как `Number`, которые можно использовать в качестве количества билетов в заказе на приобретение билетов.
+В службе LUIS доступны [предварительно созданные сущности](luis-prebuilt-entities.md) для общих типов, таких как `Number`, которые можно использовать в качестве количества билетов в заказе на приобретение билетов.
 
 ![Предварительно созданная сущность Number](./media/luis-plan-your-app/number-entity.png)
 
