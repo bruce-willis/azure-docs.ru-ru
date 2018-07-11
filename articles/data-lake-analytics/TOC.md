@@ -59,10 +59,10 @@
 #### [Настраиваемый код](data-lake-analytics-u-sql-develop-with-python-r-csharp-in-vscode.md)
 #### [Локальный запуск и отладка](data-lake-tools-for-vscode-local-run-and-debug.md)
 
-### Непрерывные интеграция и развертывание
-#### [Обзор](data-lake-analytics-cicd-overview.md)
-#### [Настройка тестов](data-lake-analytics-cicd-test.md)
-#### [Пакет SDK для U-SQL](data-lake-analytics-u-sql-sdk.md)
+## Непрерывные интеграция и развертывание
+### [Обзор](data-lake-analytics-cicd-overview.md)
+### [Настройка тестов](data-lake-analytics-cicd-test.md)
+### [Пакет SDK для U-SQL](data-lake-analytics-u-sql-sdk.md)
 
 # Справочные материалы
 ## [Azure PowerShell](/powershell/module/azurerm.datalakeanalytics)

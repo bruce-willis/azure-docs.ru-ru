@@ -55,10 +55,6 @@
           href: tutorial-autoscale-powershell.md
         - name: Шаблон
           href: tutorial-autoscale-template.md
-    - name: Развертывание приложений в масштабируемом наборе виртуальных машин Azure с помощью пользовательского образа Packer
-      items:
-        - name: "Azure CLI\_2.0"
-          href: 'https://docs.microsoft.com/learn/deploy-custom-vmss-app/index'
 - name: Примеры
   items:
     - name: "Azure CLI\_2.0"
