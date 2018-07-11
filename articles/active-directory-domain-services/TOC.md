@@ -54,6 +54,7 @@
 #### [Восстановление отсутствующих субъектов-служб](active-directory-ds-troubleshoot-service-principals.md)
 #### [Ошибки защищенного протокола LDAP](active-directory-ds-troubleshoot-ldaps.md)
 ### [Устранение ошибок несоответствия клиента](active-directory-ds-mismatched-tenant-error.md)
+### [Приостановленные домены](active-directory-ds-suspension.md)
 
 
 # Справочные материалы

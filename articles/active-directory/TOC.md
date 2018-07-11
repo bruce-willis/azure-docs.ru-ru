@@ -127,11 +127,13 @@
 #### [Многофакторная проверка подлинности](active-directory-reporting-activity-sign-ins-mfa.md)
 
 
-
 ### Устранение неполадок
 #### [Отсутствующие данные аудита](active-directory-reporting-troubleshoot-missing-audit-data.md)
 #### [Отсутствующие данные в файлах для скачивания](active-directory-reporting-troubleshoot-missing-data-download.md)
 #### [Ошибки пакета содержимого журналов действий Azure Active Directory](active-directory-reporting-troubleshoot-content-pack.md)
+#### [Ошибки в API отчетов Azure Active Directory](active-directory-reporting-troubleshoot-graph-api.md)
+
+
 ### [Программный доступ](active-directory-reporting-api-getting-started-azure-portal.md)
 #### [Предварительные требования](active-directory-reporting-api-prerequisites-azure-portal.md)
 #### [Примеры аудита](active-directory-reporting-api-audit-samples.md)
