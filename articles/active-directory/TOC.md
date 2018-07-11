@@ -382,8 +382,8 @@
 ### [Интеграция локальных удостоверений с помощью Azure AD Connect](./connect/active-directory-aadconnect.md)
 
 ## Делегирование доступа к ресурсам
-### [Просмотр членов роли администратора](users-groups-roles//directory-manage-roles-portal.md)
 ### [Роли администратора](users-groups-roles/directory-assign-admin-roles.md)
+#### [Просмотр членов роли администратора](users-groups-roles//directory-manage-roles-portal.md)
 #### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md)
 #### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md)
 ### [Защита роли администратора](users-groups-roles/directory-admin-roles-secure.md)  
