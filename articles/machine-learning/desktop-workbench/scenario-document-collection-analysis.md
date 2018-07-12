@@ -7,16 +7,16 @@ ms.author: kehuan
 manager: mwinkle
 ms.reviewer: garyericson, jasonwhowell, MicrosoftDocs/mlreview, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 60d65b17d4cbe8a45ff3fb62b06852d7b945e8f1
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 29f493449d48df26919a98452fa7f832d653d45e
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832865"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37861488"
 ---
 # <a name="document-collection-analysis"></a>Анализ коллекции документов
 
@@ -75,7 +75,7 @@ ms.locfileid: "34832865"
 
 ## <a name="data-description"></a>Описание данных
 
-Набор данных, используемый в этом сценарии, содержит сводные тексты и связанные метаданные для каждого законодательного акта, принятого Конгрессом США. Данные собраны с сайта [GovTrack.us](https://www.govtrack.us/), который позволяет отслеживать деятельность Конгресса США, помогая американцам участвовать в национальном законодательном процессе. Массовые данные можно скачать по [этой ссылке](https://www.govtrack.us/data/congress/), выполнив вручную скрипт, который не входит в этот сценарий. Сведения о том, как скачать данные, можно найти в [документации по API GovTrack](https://www.govtrack.us/developers/api).
+Набор данных, используемый в этом сценарии, содержит сводные тексты и связанные метаданные для каждого законодательного акта, принятого Конгрессом США. Данные собраны с сайта [GovTrack.us](https://www.govtrack.us/), который позволяет отслеживать деятельность Конгресса США, помогая американцам участвовать в национальном законодательном процессе. Массовые данные можно скачать по [этой ссылке](https://www.govtrack.us/data/congress/), выполнив вручную скрипт, который не входит в этот сценарий. Сведения о том, как скачать данные, можно найти в [документации по API GovTrack](https://www.govtrack.us/developers).
 
 ### <a name="data-source"></a>Источник данных
 

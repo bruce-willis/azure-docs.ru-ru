@@ -13,12 +13,12 @@ ms.devlang: NA
 ms.topic: article
 ms.date: 01/18/2018
 ms.author: maroche
-ms.openlocfilehash: 780ab56df19e8d6761fcf88fa7fbed3e8002fbe8
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 18673186e80b4d1784fa5b42e622d90dd4c889d4
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025572"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37860009"
 ---
 # <a name="whats-new-in-azure-data-catalog"></a>Новые возможности каталога данных Azure
 Обновления для **каталога данных Azure** выпускаются на регулярной основе. Не все версии содержат новые компоненты, доступные пользователям. Некоторые версии ориентированы на возможности внутренней службы. На этой странице описываются новые доступные пользователям возможности, которые добавлены в службу каталога данных Azure.
@@ -93,7 +93,7 @@ ms.locfileid: "37025572"
 
 ## <a name="whats-new-for-january-2017"></a>Новые возможности выпуска в январе 2017 г. 
 По состоянию на январь 2017 г. в каталог данных Azure добавлены следующие возможности.
-*   Каталог данных Azure теперь совместим с [CSA STAR](https://www.microsoft.com/trustcenter/compliance/csa-star-certification).
+*   Каталог данных Azure теперь совместим с [CSA STAR](https://www.microsoft.com/en-us/trustcenter/compliance/csa-star-certification).
 *   Интеграция с набором функций [Скачать и преобразовать в Excel 2016 и Power Query для Excel](https://support.office.com/article/Introduction-to-Microsoft-Power-Query-for-Excel-6E92E2F4-2079-4E1F-BAD5-89F6269CD605). Пользователи Excel могут предоставлять общий доступ к запросам и обнаруживать запросы с помощью каталога данных Azure в Excel. Эта функциональность доступна пользователям с лицензиями Power BI Pro.
 
 ## <a name="whats-new-for-december-2016"></a>Новые возможности выпуска в декабре 2016 г.
@@ -105,7 +105,7 @@ ms.locfileid: "37025572"
 
 ## <a name="whats-new-for-november-2016"></a>Новые возможности выпуска в ноябре 2016 г.
 По состоянию на ноябрь 2016 г. в каталог данных Azure добавлены следующие возможности.
-*   Теперь каталог данных Azure соответствует стандартам [ISO/IEC 27001](https://www.microsoft.com/trustcenter/compliance/iso-iec-27001) и [ISO/IEC 27018](https://www.microsoft.com/TrustCenter/Compliance/iso-iec-27018).
+*   Теперь каталог данных Azure соответствует стандартам [ISO/IEC 27001](https://www.microsoft.com/en-us/trustcenter/compliance/iso-iec-27001) и [ISO/IEC 27018](https://www.microsoft.com/en-us/TrustCenter/Compliance/iso-iec-27018).
 *   Поддержка регистрации источников данных ODBC вручную с помощью портала каталога данных и REST API.
 
 ## <a name="whats-new-for-september-2016"></a>Новые возможности выпуска в сентябре 2016 г.

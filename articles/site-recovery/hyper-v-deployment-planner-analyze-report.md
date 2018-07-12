@@ -6,14 +6,14 @@ author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: article
-ms.date: 02/14/2018
+ms.date: 07/06/2018
 ms.author: nisoneji
-ms.openlocfilehash: 060d51406f67ad8a55cdf61506cd66f5390ebe4c
-ms.sourcegitcommit: d1f35f71e6b1cbeee79b06bfc3a7d0914ac57275
+ms.openlocfilehash: 78350f8e0ab86c7c87c321397bd4e4a4849368b6
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2018
-ms.locfileid: "29466880"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918855"
 ---
 # <a name="analyze-the-azure-site-recovery-deployment-planner-report"></a>Анализ отчета планировщика развертывания Azure Site Recovery
 В этой статье рассматриваются листы, которые содержатся в отчете Excel, созданном планировщиком развертывания Azure Site Recovery для сценария развертывания Hyper-V в Azure.

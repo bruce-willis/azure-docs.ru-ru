@@ -3,7 +3,7 @@ title: Примеры для Azure PowerShell. Включение автомас
 description: Примеры сценариев Azure PowerShell.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2018
-ms.author: iainfou
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: efa608cb1efa3fed48113adea45f15a2cf075439
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: ca484a6f1b2dafa3688efe0e50bb2c35f954a8b6
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30246361"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38697421"
 ---
 # <a name="automatically-scale-a-virtual-machine-scale-set-with-powershell"></a>Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью PowerShell
 С помощью этого скрипта создается масштабируемый набор виртуальных машин под управлением Windows Server 2016. При этом используются метрики на основе узла для автоматического масштабирования в соответствии с изменением нагрузки на ЦП.
@@ -34,7 +34,7 @@ ms.locfileid: "30246361"
 [!code-powershell[main](../../../powershell_scripts/virtual-machine-scale-sets/auto-scale-host-metrics/auto-scale-host-metrics.ps1 "Automatically scale a virtual machine scale set")]
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
-Выполните приведенную ниже команду, чтобы удалить группу ресурсов, масштабируемый набор и все связанные с ним ресурсы.
+Выполните следующую команду, чтобы удалить группу ресурсов, масштабируемый набор и все связанные с ними ресурсы.
 
 ```powershell
 Remove-AzureRmResourceGroup -Name myResourceGroup
@@ -49,10 +49,10 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 | [Get-AzureRmVmss](/powershell/module/azurerm.compute/get-azurermvmss) | Получение информации о масштабируемом наборе виртуальных машин. |
 | [Add-AzureRmVmssExtension](/powershell/module/azurerm.compute/add-azurermvmssextension) | Добавление расширения виртуальной машины для настраиваемого скрипта установки базового веб-приложения. |
 | [Update-AzureRmVmss](/powershell/module/azurerm.compute/update-azurermvmss) | Обновление модели масштабируемого набора виртуальных машин для применения расширения виртуальной машины. |
-| [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) | Получение сведений об общедоступном IP-адресе, который использует подсистема балансировки нагрузки. |
+| [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) | Позволяет получить сведения об общедоступном IP-адресе, который использует подсистема балансировки нагрузки. |
 | [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup) | Удаляет группу ресурсов и все ресурсы, содержащиеся в ней. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о модуле Azure PowerShell см. в [документации по Azure PowerShell](/powershell/azure/overview).
 
-Дополнительные примеры сценариев PowerShell для масштабируемого набора виртуальных машин Azure см. в [этой документации](../powershell-samples.md).
+См. дополнительные примеры сценариев PowerShell для [масштабируемого набора виртуальных машин Azure](../powershell-samples.md).

@@ -5,15 +5,15 @@ services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 05/24/2018
+ms.date: 07/05/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: aad4fa9e8a3cfeaa01abc0512830bba63f90d4be
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a1aa666fcbb91ca62a9c33f91bfd266589864af9
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626024"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37865112"
 ---
 # <a name="create-and-route-custom-events-with-azure-powershell-and-event-grid"></a>Создание и перенаправление пользовательских событий с помощью службы Azure PowerShell и "Сетка событий"
 
@@ -25,7 +25,7 @@ ms.locfileid: "34626024"
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
 
-В этой статье требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [установке и настройке Azure PowerShell](/powershell/azure/install-azurerm-ps).
+В этой статье требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -38,6 +38,8 @@ ms.locfileid: "34626024"
 ```powershell-interactive
 New-AzureRmResourceGroup -Name gridResourceGroup -Location westus2
 ```
+
+[!INCLUDE [event-grid-register-provider-powershell.md](../../includes/event-grid-register-provider-powershell.md)]
 
 ## <a name="create-a-custom-topic"></a>Создание пользовательской темы
 

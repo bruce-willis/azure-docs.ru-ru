@@ -3,7 +3,7 @@ title: Создание и использование пары ключей SSH 
 description: Сведения о создании и использовании пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure с целью повышения безопасности процесса аутентификации.
 services: virtual-machines-linux
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2018
-ms.author: iainfou
-ms.openlocfilehash: 137fb13ff286e5284b8e8910834913ec9f1d48a9
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.author: cynthn
+ms.openlocfilehash: 2e3d86d776f44c47a33bf075cf7f2140a3940e5e
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31602636"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928460"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Краткая инструкция: создание и использование пары из открытого и закрытого ключей SSH для виртуальных машин Linux в Azure
 С помощью пары ключей Secure Shell (SSH) в Azure можно создавать виртуальные машины, использующие ключи SSH для проверки подлинности, что позволяет обойтись без использования паролей для входа. В этой статье показано, как быстро создать и использовать пару файлов открытого и закрытого ключей SSH для виртуальных машин Linux. Эти шаги можно выполнить с помощью Azure Cloud Shell, узла macOS или Linux, подсистемы Windows для Linux либо других инструментов, поддерживающих OpenSSH. 

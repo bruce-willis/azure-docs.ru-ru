@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 06/22/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: 16a19a862d4fc6b424e8441ec5377ea3c819fadb
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: cb01e71ae45ae8a7e37e8ab5cdf60e3b3fcb9983
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317448"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37919766"
 ---
 # <a name="support-matrix-for-vmware-and-physical-server-replication-to-azure"></a>Таблица поддержки для репликации виртуальных машин VMware и физических серверов в Azure
 
@@ -95,7 +95,7 @@ Site Recovery поддерживает репликацию любой рабо�
 Debian 7 | 9.17 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
 Debian 7 | 9.14, 9.15, 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
-Debian 8; | 9.17 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, м 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
+Debian 8; | 9.17 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
 Debian 8; | 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
 Debian 8; | 9.14, 9.15 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
 

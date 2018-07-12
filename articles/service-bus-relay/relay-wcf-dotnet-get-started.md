@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 12/20/2017
 ms.author: sethm
 ms.openlocfilehash: face684190456fbf4b78a84ac3afe7a4ead8995a
-ms.sourcegitcommit: b5c6197f997aa6858f420302d375896360dd7ceb
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
-ms.locfileid: "26856088"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38697898"
 ---
 # <a name="how-to-use-azure-relay-wcf-relays-with-net"></a>Как использовать ретрансляторы WCF на основе ретранслятора Azure с помощью .NET
 В этой статье описываются методы использования службы ретрансляции Azure. Примеры написаны на языке C# и используют API службы Windows Communication Foundation (WCF) с расширениями, содержащимися в сборке служебной шины. Дополнительные сведения о ретрансляторе Azure см. в статье [Что такое ретранслятор Azure?](relay-what-is-it.md).

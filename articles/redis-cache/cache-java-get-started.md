@@ -16,11 +16,11 @@ ms.date: 05/23/2018
 ms.author: wesmc
 ms.custom: mvc
 ms.openlocfilehash: f76f9f6280120f5c05cb304a0b87bba9ffaee043
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34639764"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38703721"
 ---
 # <a name="quickstart-how-to-use-azure-redis-cache-with-java"></a>Краткое руководство по использованию кэша Redis для Azure в Java
 

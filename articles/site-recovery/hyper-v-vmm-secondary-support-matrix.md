@@ -6,13 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/05/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: 767b0e76b73c082ddb75374f51700b85272f713e
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 13b4dc6e49c67ae9fd880ab64880966835242dec
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37923422"
 ---
 # <a name="support-matrix-for-replication-of-hyper-v-vms-to-a-secondary-site"></a>Таблица поддержки для репликации виртуальных машин Hyper-V на дополнительный сайт
 
@@ -65,7 +66,7 @@ Windows Server 2012 R2 | Любая операционная система на
 Гостевая виртуальная машина — несколько сетевых адаптеров | Yes
 
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 
 ### <a name="host-storage"></a>Хранилище узла
 
