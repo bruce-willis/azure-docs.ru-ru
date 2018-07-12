@@ -16,11 +16,11 @@ ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
 ms.openlocfilehash: c3bb170800508d5a546573850f445b2a8991ea8c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777068"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38597750"
 ---
 # <a name="tutorial-send-notifications-to-universal-windows-platform-apps-by-using-azure-notification-hubs"></a>Руководство. Отправка уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "33777068"
 > * создание приложения в Магазине Windows;
 > * создание центра уведомлений;
 > * создание примера приложения Windows;
-> * отправка проверочных уведомлений.
+> * Отправка проверочных уведомлений
 
 
 ## <a name="prerequisites"></a>предварительным требованиям
@@ -169,7 +169,7 @@ ms.locfileid: "33777068"
 В этом руководстве настраивается рассылка уведомлений на все устройства Windows через портал или консольное приложение. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству: 
 
 > [!div class="nextstepaction"]
->[Руководство по отправке push-уведомлений на конкретные устройства Windows с запущенными приложениями универсальной платформы Windows](
+>[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](
 notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md)
 
 

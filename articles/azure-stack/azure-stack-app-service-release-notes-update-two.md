@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/18/2018
 ms.author: anwestg
 ms.reviewer: brenduns
-ms.openlocfilehash: 8e1790b7d0b3a210a9142fc8580ff8ed4d64311c
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: be09773a1ce3e80547d9e5f0e9de2a2d9e093c60
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360460"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970923"
 ---
 # <a name="app-service-on-azure-stack-update-2-release-notes"></a>Служба приложений в заметках о выпуске обновления 2 Azure Stack
 
@@ -70,7 +70,7 @@ ms.locfileid: "34360460"
 
 - Включено тестирование в рабочей среде: [Introduction to Azure Websites Testing in Production with Galin Iliev](https://azure.microsoft.com/resources/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) (Введение в тестирование веб-сайтов Azure в рабочей среде. Автор: Галин Илиев).
 
-- Включена функция "Прокси-серверы Функций Azure": [Работа с функцией "Прокси-серверы Функций Azure"](https://docs.microsoft.com/en-us/azure/azure-functions/functions-proxies).
+- Включена функция "Прокси-серверы Функций Azure": [Работа с функцией "Прокси-серверы Функций Azure"](https://docs.microsoft.com/azure/azure-functions/functions-proxies).
 
 - Добавлена поддержка пользовательского интерфейса расширения для администрирования службы приложений для:
   - смены секретов;

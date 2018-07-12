@@ -224,6 +224,8 @@
           href: virtual-machine-scale-sets-networking.md
         - name: Преобразование шаблона в управляемый диск
           href: virtual-machine-scale-sets-convert-template-to-md.md
+        - name: Плановое техническое обслуживание
+          href: virtual-machine-scale-sets-maintenance-notifications.md
     - name: Устранение неполадок
       items:
         - name: Autoscale

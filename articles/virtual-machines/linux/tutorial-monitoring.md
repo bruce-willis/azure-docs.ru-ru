@@ -3,7 +3,7 @@ title: Руководство по мониторингу и обновлени�
 description: В этом руководство описано, как выполнять мониторинг диагностических данных загрузки, метрик производительности и администрирование пакетных обновлений на виртуальных машинах Linux.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/06/2018
-ms.author: iainfou
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 4f1dedc83d0d7040a4f7b9760c567437f58dde54
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: f5773d2f6634d1de9674351ff30a15b488bdd672
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34839662"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38597469"
 ---
 # <a name="tutorial-monitor-and-update-a-linux-virtual-machine-in-azure"></a>Руководство по мониторингу и обновлению виртуальных машин Linux в Azure
 

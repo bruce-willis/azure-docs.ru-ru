@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
-ms.date: 06/21/2018
-ms.openlocfilehash: 6f078823d8b911bc5ce6a36ab27b11a9c0117b80
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.date: 07/21/2018
+ms.openlocfilehash: 3637ee63c94ea54145d99b9d5632f0a77c95d2f4
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018345"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970267"
 ---
 # <a name="azure-database-for-postgresql-pricing-tiers"></a>Ценовые категории службы "База данных Azure для PostgreSQL"
 
@@ -64,6 +64,8 @@ ms.locfileid: "37018345"
 | Восточная Азия | X | X |
 | Юго-Восточная Азия | X | X |
 | Восточная часть Австралии |  | X |
+| Центральная Австралия |  | X |
+| Центральная Австралия 2 |  | X |
 | Юго-Восточная часть Австралии |  | X |
 | Центральная Индия | X | X |
 | Западная Индия | X | X |

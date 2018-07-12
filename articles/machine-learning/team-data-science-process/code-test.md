@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/19/2018
 ms.author: weig
-ms.openlocfilehash: de1ed0b85957413a254503fc72375866dfd1bea1
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7d9d63d6c3d5c8ccf1777a46832457670d307d4a
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34837163"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970865"
 ---
 # <a name="data-science-code-testing-with-the-uci-adult-income-prediction-dataset"></a>Тестирование кода обработки и анализа данных на примере набора данных UCI для прогноза дохода совершеннолетних лиц
 В этой статье приведены предварительные рекомендации по тестированию кода в рабочем потоке обработки и анализа данных. Такое тестирование предоставляет специалистам по обработке и анализу данных системный и эффективный способ проверки качества и ожидаемого результата выполнения созданного кода. Мы продемонстрируем тестирование кода на примере [проекта для командного процесса обработки и анализа данных (TDSP), основанного на наборе данных UCI с данными о доходе совершеннолетних лиц](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome), который мы опубликовали ранее. 
@@ -128,7 +128,7 @@ ms.locfileid: "34837163"
 
        ![Список шаблонов и кнопка "Пустой процесс"](./media/code-test/start_empty_process_template.PNG)
 
-    d. Присвойте сборке имя и выберите агент. Здесь вы можете сохранить значение по умолчанию, если для завершения сборки нужно использовать DSVM. Дополнительные сведения о настройке агентов см. в статье [Build and Release Agents](https://docs.microsoft.com/en-us/vsts/build-release/concepts/agents/agents?view=vsts) (Агенты сборки и выпуска).
+    d. Присвойте сборке имя и выберите агент. Здесь вы можете сохранить значение по умолчанию, если для завершения сборки нужно использовать DSVM. Дополнительные сведения о настройке агентов см. в статье [Build and Release Agents](https://docs.microsoft.com/vsts/build-release/concepts/agents/agents?view=vsts) (Агенты сборки и выпуска).
     
        ![Настройки для сборки и агента](./media/code-test/select_agent.PNG)
 

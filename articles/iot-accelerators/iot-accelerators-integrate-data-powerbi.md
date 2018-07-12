@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 05/01/2018
 ms.topic: conceptual
-ms.openlocfilehash: e396d69a61679a85fdfbd3e8fd43216635dec51d
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ae039573cf202059114f23cca86207c117a35ead
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34627796"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970407"
 ---
 # <a name="visualize-remote-monitoring-data-using-power-bi"></a>Визуализация данных удаленного мониторинга с помощью Power BI
 
@@ -94,9 +94,9 @@ ms.locfileid: "34627796"
 
 ## <a name="publishing-the-dashboard-and-refreshing-the-data"></a>Публикация панели мониторинга и обновление данных
 
-После успешного создания панелей мониторинга Power BI мы рекомендуем вам [опубликовать их](https://docs.microsoft.com/en-us/power-bi/desktop-upload-desktop-files), чтобы поделиться ими с другими пользователями.
+После успешного создания панелей мониторинга Power BI мы рекомендуем вам [опубликовать их](https://docs.microsoft.com/power-bi/desktop-upload-desktop-files), чтобы поделиться ими с другими пользователями.
 
-Вы также можете [обновить данные](https://docs.microsoft.com/en-us/power-bi/refresh-data) на опубликованной панели мониторинга для отображения актуального набора данных.
+Вы также можете [обновить данные](https://docs.microsoft.com/power-bi/refresh-data) на опубликованной панели мониторинга для отображения актуального набора данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

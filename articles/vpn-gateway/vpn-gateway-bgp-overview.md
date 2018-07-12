@@ -16,11 +16,11 @@ ms.workload: infrastructure-services
 ms.date: 01/12/2017
 ms.author: yushwang
 ms.openlocfilehash: 13a17eb3d78e70a09864bf218f1027d6e98486a6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23123802"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38720056"
 ---
 # <a name="overview-of-bgp-with-azure-vpn-gateways"></a>Обзор использования BGP с VPN-шлюзами Azure 
 В этой статье описываются особенности использования протокола BGP для VPN-шлюзов Azure.

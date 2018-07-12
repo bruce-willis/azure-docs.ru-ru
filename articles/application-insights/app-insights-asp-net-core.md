@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: mbullwin
-ms.openlocfilehash: 261bc78bfe427173ba81eef731e33eddd2ec379b
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: f9ab9b9af81bf1827c2da646908e204bd051706b
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294281"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970940"
 ---
 # <a name="application-insights-for-aspnet-core"></a>Application Insights для ASP.NET Core
 
@@ -48,7 +48,7 @@ Azure Application Insights обеспечивает детализированн
 
 ## <a name="application-insights-search"></a>Поиск Application Insights
 
-По умолчанию в версии Visual Studio 2015 Update 2 или более поздней в проекте на основе ASP.NET Core 2 + вы сможете использовать [поиск Application Insights](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-visual-studio) еще до того, как добавите Application Insights в свой проект.
+По умолчанию в версии Visual Studio 2015 Update 2 или более поздней в проекте на основе ASP.NET Core 2 + вы сможете использовать [поиск Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-visual-studio) еще до того, как добавите Application Insights в свой проект.
 
 Проверка функции
 

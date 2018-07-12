@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: menchi
 ms.openlocfilehash: 79864b765282f2efbf7016cba7138efa4e1d3dc4
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34630805"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38597798"
 ---
 # <a name="glossary-of-iot-edge-terms"></a>Глоссарий терминов, связанных с IoT Edge
 В этой статье перечислены некоторые распространенные термины, используемые в статьях на тему IoT Edge.

@@ -10,12 +10,12 @@ ms.service: active-directory
 ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
-ms.openlocfilehash: 185f6730babe077332be9f054ba338ff48295eca
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 4f3772abc1cdbd3b35b8b1f16e7a47c0f1a17783
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449210"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38595660"
 ---
 # <a name="manage-emergency-access-administrative-accounts-in-azure-ad"></a>Управление учетными записями администратора для аварийного доступа в Azure AD 
 
@@ -82,6 +82,6 @@ ms.locfileid: "37449210"
 - [Зарегистрируйтесь для работы с Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md), если вы еще не сделали этого.
 - [Настройте требование Многофакторной идентификации Azure для отдельных пользователей, назначенных в качестве администраторов](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication-get-started-user-states).
 - Если вы используете Office 365, [настройте дополнительную защиту для глобальных администраторов в Office 365](https://support.office.com/article/Protect-your-Office-365-global-administrator-accounts-6b4ded77-ac8d-42ed-8606-c014fd947560).
-- [Проверьте доступ глобальных администраторов](../active-directory-privileged-identity-management-how-to-start-security-review.md) и [назначьте имеющимся глобальным администраторам конкретные административные роли](directory-assign-admin-roles.md).
+- [Проверьте доступ глобальных администраторов](../privileged-identity-management/pim-how-to-start-security-review.md) и [назначьте имеющимся глобальным администраторам конкретные административные роли](directory-assign-admin-roles.md).
 
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 12/12/2017
 ms.author: tdykstra
-ms.openlocfilehash: e521ef29a338d0c7d80493f92acff4758a091359
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: bde7a7788fd01bcbcc63296c0513af8eb4196021
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261293"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970185"
 ---
 # <a name="azure-functions-c-developer-reference"></a>Справочник разработчика C# по функциям Azure
 
@@ -314,7 +314,7 @@ public static class EnvironmentVariablesExample
 
 Параметры приложения могут считываться из переменных среды при разработке локально и при запуске в Azure. При локальной разработке параметры приложения поступают из коллекции `Values` файла *local.settings.json*. Значение именованного параметра приложения `GetEnvironmentVariable("<app setting name>")` извлекается в локальной среде и среде Azure. Например, при локальном запуске будет возвращено "Имя_сайта", если файл *local.settings.json* содержит `{ "Values": { "WEBSITE_SITE_NAME": "My Site Name" } }`.
 
-Свойство [System.Configuration.ConfigurationManager.AppSettings](https://docs.microsoft.com/en-us/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
+Свойство [System.Configuration.ConfigurationManager.AppSettings](https://docs.microsoft.com/dotnet/api/system.configuration.configurationmanager.appsettings) — альтернативный API-интерфейс для получения значения параметра приложения, но рекомендуется использовать `GetEnvironmentVariable`, как показано ниже.
 
 ## <a name="binding-at-runtime"></a>Привязка во время выполнения
 

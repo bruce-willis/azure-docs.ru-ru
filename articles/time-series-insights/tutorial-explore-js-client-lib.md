@@ -9,11 +9,11 @@ ms.topic: tutorial
 ms.date: 06/05/2018
 ms.author: bryanla
 ms.openlocfilehash: 70e29b1a6b8a4443ae6545ec7960f1d2370218e3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36295402"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969934"
 ---
 # <a name="tutorial-explore-the-azure-time-series-insights-javascript-client-library"></a>Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 

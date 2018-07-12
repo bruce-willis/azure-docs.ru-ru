@@ -11,14 +11,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/22/2018
+ms.date: 07/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4a639b51fd930c5c74ee78b37fbe8e97e39dbc32
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: cf7c151121ddf8b2dc57d5db66a62f4d46e463de
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36336772"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970978"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
@@ -28,7 +28,7 @@ Application Insights всегда предоставляло сводную па
 
 Новая обзорная панель мониторинга теперь запускается по умолчанию:
 
-![Область панели мониторинга общих сведений](.\media\app-insights-overview-dashboard\overview-0001.png)
+![Область панели мониторинга общих сведений](.\media\app-insights-overview-dashboard\overview.png)
 
 ## <a name="better-performance"></a>Повышенная производительность
 
@@ -60,12 +60,6 @@ Application Insights всегда предоставляло сводную па
 Чтобы вернуться к обзору возможностей просто выберите следующее:
 
 ![Кнопка "Обзор"](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-07.png)
-
-## <a name="access-the-classic-overview-dashboard"></a>Доступ к классической обзорной панели мониторинга
-
-Если вы скучаете по старому представлению, выберите **Классический обзор**.
-
-![Классический обзор](.\media\app-insights-overview-dashboard\overview-classic.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
