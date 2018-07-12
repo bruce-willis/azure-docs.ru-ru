@@ -404,7 +404,7 @@
 
 ## Защита удостоверений
 ### [Условный доступ](active-directory-conditional-access-azure-portal.md)
-#### [Начало работы](active-directory-conditional-access-azure-portal-get-started.md)
+#### [Приступая к работе с условным доступом](active-directory-conditional-access-azure-portal-get-started.md)
 #### Быстрое начало работы
 ##### [Настройка отдельных облачных приложений MFA](active-directory-conditional-access-app-based-mfa.md)
 ##### [Обеспечение принятия условий использования](active-directory-conditional-access-tou.md)
@@ -434,7 +434,7 @@
 ### Аутентификация на основе сертификата
 #### [Android](active-directory-certificate-based-authentication-android.md)
 #### [iOS](active-directory-certificate-based-authentication-ios.md)
-#### [Начало работы](active-directory-certificate-based-authentication-get-started.md)
+#### [Приступая к работе с условным доступом](active-directory-certificate-based-authentication-get-started.md)
 
 ### [Защита идентификации Azure AD](active-directory-identityprotection.md)
 #### [Включение](active-directory-identityprotection-enable.md)
@@ -447,7 +447,7 @@
 #### [Часто задаваемые вопросы](active-directory-identity-protection-faqs.md)
 #### [Глоссарий](active-directory-identityprotection-glossary.md)
 #### [Microsoft Graph](active-directory-identityprotection-graph-getting-started.md)
-### [управление привилегированными пользователями;](active-directory-privileged-identity-management-configure.md)
+### [управление привилегированными пользователями;](privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json)
 
 ## Интеграция других служб с Azure AD 
 ### [Интеграция LinkedIn с Azure AD](users-groups-roles/linkedin-integration.md)
@@ -477,7 +477,7 @@
 ## [Azure AD Connect](./connect/active-directory-aadconnect.md)
 ## [Azure AD Connect Health](./connect-health/active-directory-aadconnect-health.md)
 ## [Информация для разработчиков об Azure AD](./develop/active-directory-how-to-integrate.md)
-## [Управление привилегированными пользователями Azure AD](./privileged-identity-management/active-directory-securing-privileged-access.md)
+## [Управление привилегированными пользователями Azure AD](./privileged-identity-management/pim-configure.md)
 
 # Ресурсы
 ## [Форум отзывов и предложений по Azure](https://feedback.azure.com/forums/169401-azure-active-directory)

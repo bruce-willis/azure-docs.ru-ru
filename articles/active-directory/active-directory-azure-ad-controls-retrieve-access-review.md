@@ -15,12 +15,12 @@ ms.component: compliance-reports
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 1c1488b2744c25e9b7a191d208cb3f81d336bd3a
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 96676c3ec6d96fd6c6f78aa2dbed8cf4d0a6718d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446696"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38295306"
 ---
 # <a name="retrieve-access-review-results"></a>Получение результатов проверок доступа
 
@@ -55,6 +55,6 @@ ms.locfileid: "37446696"
 - [Управление гостевым доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
 - [Управление программами и их элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
 - [Создание проверки доступа для членства в группе или работы с приложением](active-directory-azure-ad-controls-create-access-review.md)
-- [Создание проверки доступа для пользователей в роли администратора Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md)
+- [Создание проверки доступа для пользователей в роли администратора Azure AD](privileged-identity-management/pim-how-to-start-security-review.md)
 
 

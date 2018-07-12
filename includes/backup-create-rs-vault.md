@@ -9,18 +9,18 @@ ms.date: 5/14/2018
 ms.author: markgal
 ms.custom: include file
 ms.openlocfilehash: 5590da80a1c217e7902e8e010688e40f5624898c
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34664961"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38730504"
 ---
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 Хранилище служб восстановления — это сущность, в которой хранятся созданные резервные копии и точки восстановления. В нем также содержатся политики архивации, связанные с защищенными виртуальными машинами.
 
 Чтобы создать хранилище служб восстановления, сделайте следующее:
 
-1. Войдите в свою подписку на [портале Azure](https://portal.azure.com/).
+1. Войдите в подписку на [портале Azure](https://portal.azure.com/).
 2. В меню слева выберите **Все службы**.
 
     ![Выбор параметра "Все службы" в главном меню](./media/backup-create-rs-vault/click-all-services.png) <br/>

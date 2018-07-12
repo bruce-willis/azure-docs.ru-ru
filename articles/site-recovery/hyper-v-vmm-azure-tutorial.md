@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 05/02/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: a8bbbe0a5aca20222ff7385be9d0ecf0a4224d5c
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: c759ca51fde6c3ead782d48b709c5a40b321c166
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33896152"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37916138"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-in-vmm-clouds-to-azure"></a>Настройка аварийного восстановления в Azure для локальных виртуальных машин Hyper-V в облаках VMM
 
@@ -68,7 +68,7 @@ ms.locfileid: "33896152"
 2. На странице **Установка** примите расположение установки по умолчанию для поставщика и нажмите кнопку **Установить**. 
 3. После установки в мастере регистрации Microsoft Azure Site Recovery в разделе **Параметры хранилища** щелкните **Обзор**, а в поле **Key file** выберите скачанный файл ключа хранилища.
 4. Укажите подписку Azure Site Recovery и имя хранилища (**ContosoVMVault**). Укажите понятное имя для сервера VMM, позволяющее идентифицировать его в хранилище.
-5. В разделе **Параметры прокси** выберите **Подключиться к Azure Site Recovery напрямую без прокси-сервера**.
+5. В разделе **Параметры прокси** выберите **Подключиться к Azure Site Recovery напрямую без прокси-сервера	**.
 6. Примите расположение по умолчанию для сертификата, который используется для шифрования данных. После отработки отказа зашифрованные данные будут расшифрованы.
 7. В поле **Синхронизация метаданных в облаке** выберите **Синхронизировать метаданные на портале Site Recovery**. На каждом сервере это действие требуется выполнять только один раз. Щелкните **Зарегистрировать**.
 8. После регистрации сервера в хранилище нажмите кнопку **Готово**.

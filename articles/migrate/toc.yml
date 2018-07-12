@@ -42,6 +42,10 @@
           href: contoso-migration-refactor-linux-app-service-mysql.md
         - name: '11. Contoso: перенос Team Foundation Server в Visual Studio Team Services'
           href: contoso-migration-tfs-vsts.md
+        - name: '12. Contoso: перепроектирование приложения в Azure Service Fabric и Базе данных SQL Azure'
+          href: contoso-migration-rearchitect-container-sql.md
+        - name: '13. Contoso: повторная сборка приложения в Azure'
+          href: contoso-migration-rebuild.md
     - name: Обнаружение и оценка крупной среды
       href: how-to-scale-assessment.md
     - name: Группирование компьютеров

@@ -9,11 +9,11 @@ ms.date: 06/05/2018
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 9a17f34333503436d3da340670abdde154e45ef6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36336032"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38727536"
 ---
 Начиная с 1 июля 2018 года прекращается поддержка TLS 1.0 и TLS 1.1 в VPN-шлюзе Azure. VPN-шлюз будет поддерживать только TLS 1.2. Чтобы обеспечить поддержку TLS и работу клиентов подключений "точка — сеть" Windows 7 и Windows 8, использующих TLS, рекомендуется установить следующие обновления:
 
