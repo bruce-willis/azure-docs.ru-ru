@@ -16,11 +16,11 @@ ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
 ms.openlocfilehash: c61a6efaa4a56636400acfe5a212cddad47f4f0c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777000"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38652751"
 ---
 # <a name="tutorial-push-notifications-to-specific-windows-phone-devices-by-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений на конкретные устройства Windows Phone с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "33777000"
 Из этого руководства вы узнаете, как выполнять такие задачи: 
 
 > [!div class="checklist"]
-> * добавление возможности выбора категорий в мобильное приложение;
+> * Добавление возможности выбора категорий в мобильное приложение
 > * регистрация для получения уведомлений с тегами;
 > * Отправка уведомлений с тегами
 > * Тестирование приложения
@@ -245,7 +245,7 @@ ms.locfileid: "33777000"
 > [!NOTE]
 > Поскольку URI канала, назначенный службой push-уведомлений Windows (MPNS), может измениться в любое время, следует регулярно производить регистрацию для использования уведомлений, чтобы предотвратить сбои уведомлений. В этом примере регистрация для использования уведомлений осуществляется при каждом запуске приложения. Для тех приложений, которые запускаются часто, более одного раза в день, возможно, лучше пропустить регистрацию, чтобы сэкономить трафик, если с момента прошлой регистрации прошло меньше суток.
 
-1. Откройте файл App.xaml.cs, добавьте модификатор **async** в метод **Application_Launching** и замените код регистрации центров уведомлений, добавленный в [руководстве по началу работы с Центрами уведомлений], следующей строкой кода.
+1. Откройте файл App.xaml.cs, добавьте модификатор **async** в метод **Application_Launching** и замените код регистрации центров уведомлений, добавленный в [Приступая к работе с центрами уведомлений], следующей строкой кода.
    
     ```csharp
     private async void Application_Launching(object sender, LaunchingEventArgs e)
@@ -297,13 +297,13 @@ ms.locfileid: "33777000"
     ![Сообщение об успешной подписке][2]
 3. Получив подтверждение об успешной подписки на категории, запустите консольное приложение для отправки уведомлений по каждой категории. Убедитесь, что получены только уведомления для категорий, на которые вы подписаны.
    
-    ![Сообщение уведомления][3]
+    ![Сообщение с уведомлением][3]
 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как отправлять push-уведомления на определенные устройства, при регистрации которых указаны теги. Сведения о том, как отправлять push-уведомления конкретным пользователям с несколькими устройствами, см. в следующем руководстве: 
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений конкретным адресатам](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md)
+>[Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md)
 
 
 <!-- Anchors. -->
@@ -321,7 +321,7 @@ ms.locfileid: "33777000"
 
 
 <!-- URLs.-->
-[руководстве по началу работы с Центрами уведомлений]: /manage/services/notification-hubs/get-started-notification-hubs-wp8/
+[Приступая к работе с центрами уведомлений]: /manage/services/notification-hubs/get-started-notification-hubs-wp8/
 [Use Notification Hubs to broadcast localized breaking news]: ../breakingnews-localized-wp8.md
 [Notify users with Notification Hubs]: /manage/services/notification-hubs/notify-users/
 [Mobile Service]: /develop/mobile/tutorials/get-started

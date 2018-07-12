@@ -10,11 +10,11 @@ ms.topic: quickstart
 ms.date: 05/22/2018
 ms.author: sethm
 ms.openlocfilehash: 717ac3c61ba4e362f01bad91f52ecb217cdbe1cd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660643"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38630391"
 ---
 # <a name="quickstart-send-and-receive-messages-using-azure-cli-and-java"></a>Краткое руководство по отправке и получению сообщений с помощью интерфейса командной строки Azure и Java
 
@@ -26,7 +26,7 @@ ms.locfileid: "34660643"
 
 В этом кратком руководстве объясняется, как отправлять и принимать сообщения через служебную шину с помощью интерфейса командной строки Azure и библиотеки Java для служебной шины. И наконец, если вас интересует более подробная техническая информация, изучите [это описание](#understand-the-sample-code) ключевых элементов нашего примера кода.
 
-Если у вас еще нет подписки Azure, вы можете создать [бесплатную учетную запись][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, вы можете создать [бесплатная учетная запись][], прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -268,7 +268,7 @@ void registerReceiver(QueueClient queueClient) throws Exception {
 > [!div class="nextstepaction"]
 > [Обновление данных о запасах с помощью интерфейса командной строки и Java](./service-bus-tutorial-topics-subscriptions-cli.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name
 [Install Azure CLI 2.0]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create

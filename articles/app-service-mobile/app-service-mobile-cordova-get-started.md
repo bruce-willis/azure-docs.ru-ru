@@ -17,11 +17,11 @@ ms.topic: hero-article
 ms.date: 07/07/2017
 ms.author: crdun
 ms.openlocfilehash: 223e9e35fcab347f9b5b8db01a9fd667b9f5d55d
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27595182"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38488652"
 ---
 # <a name="create-an-apache-cordova-app"></a>Создание приложения Apache Cordova
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -35,7 +35,7 @@ ms.locfileid: "27595182"
 Для работы с данным руководством вам потребуется:
 
 * компьютер с [Visual Studio Community 2017] или более поздней версии;
-* [набор средств Visual Studio для Apache Cordova];
+* [Инструменты Visual Studio для Apache Cordova];
 * [Активная учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 Можно также обойтись без Visual Studio и использовать командную строку Apache Cordova напрямую.  Эта командная строка пригодится, если вы работаете с данным руководством на компьютере Mac.  Компиляция клиентских приложений Apache Cordova с помощью командной строки в этом учебнике не рассматривается.
@@ -75,7 +75,7 @@ ms.locfileid: "27595182"
 <!-- URLs -->
 [Azure portal]: https://portal.azure.com/
 [Visual Studio Community 2017]: http://www.visualstudio.com/
-[набор средств Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
+[Инструменты Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
 [Автономные данные]: app-service-mobile-offline-data-sync.md
 [Аутентификация]: app-service-mobile-auth.md
 [Push-уведомления]: ../notification-hubs/notification-hubs-push-notification-overview.md

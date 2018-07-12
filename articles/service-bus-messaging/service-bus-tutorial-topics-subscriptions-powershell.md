@@ -10,11 +10,11 @@ ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
 ms.openlocfilehash: 824235cfdae6df9d852875281346e35a18277f74
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34651682"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38531666"
 ---
 # <a name="tutorial-update-inventory-using-powershell-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью PowerShell, разделов и подписок
 
@@ -34,7 +34,7 @@ ms.locfileid: "34651682"
 
 ![очередь](./media/service-bus-quickstart-powershell/quick-start-queue.png)
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись][], прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -43,7 +43,7 @@ ms.locfileid: "34651682"
 1. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](http://www.visualstudio.com/vs) или более новая версия.
 2. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
 
-Для работы с этим руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [Установка и настройка Azure PowerShell][].
+Для работы с этим руководством требуется последняя версия Azure PowerShell. Если вам нужно выполнить установку или обновление, см. руководство по [установке и настройке Azure PowerShell][].
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -285,5 +285,5 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 > [!div class="nextstepaction"]
 > [Обновление информации о запасах с помощью PowerShell, разделов и подписок](service-bus-tutorial-topics-subscriptions-cli.md)
 
-[бесплатную учетную запись Azure]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
-[Установка и настройка Azure PowerShell]: /powershell/azure/install-azurerm-ps
+[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[установке и настройке Azure PowerShell]: /powershell/azure/install-azurerm-ps
