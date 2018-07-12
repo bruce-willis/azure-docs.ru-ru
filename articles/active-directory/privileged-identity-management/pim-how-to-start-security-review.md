@@ -13,19 +13,19 @@ ms.component: protection
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 38386de86c83733e3539048de9e263ed6225eee5
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 3ead2fe01c932c76a83e989d8908de4c9bfa541b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952166"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38506424"
 ---
 # <a name="how-to-start-an-access-review-in-azure-ad-privileged-identity-management"></a>Как запустить проверку доступа в управлении привилегированными пользователями Azure AD
 Назначения ролей становятся "устаревшими", когда у пользователей имеются права привилегированного доступа, которые им больше не нужны. Чтобы снизить риск, связанный с "устаревшими" назначениями ролей, администраторы привилегированных ролей или глобальные администраторы должны регулярно создавать проверки доступа, чтобы администраторы проверяли назначенные пользователям роли. В этом документе рассматривается процедура запуска проверки доступа в компоненте Azure AD Privileged Identity Management (PIM).
 
 ## <a name="start-an-access-review"></a>Запуск проверки доступа
 > [!NOTE]
-> Если вы еще не добавили приложение PIM на панель мониторинга портала Azure, ознакомьтесь с инструкциями в статье [Приступая к работе с управлением привилегированными пользователями Azure AD](active-directory-privileged-identity-management-getting-started.md).
+> Если вы еще не добавили приложение PIM на панель мониторинга портала Azure, ознакомьтесь с инструкциями в статье [Приступая к работе с управлением привилегированными пользователями Azure AD](pim-getting-started.md).
 > 
 > 
 
@@ -37,12 +37,12 @@ ms.locfileid: "37952166"
 
 После нажатия кнопки **Проверить** появится колонка **Начало проверки доступа**. В этой колонке можно ввести имя проверки, настроить ее временной интервал, выбрать проверяемую роль, а также решить, кто будет выполнять проверку.
 
-![Запуск проверки доступа — снимок экрана](./media/active-directory-privileged-identity-management-how-to-start-security-review/PIM_start_review.png)
+![Запуск проверки доступа — снимок экрана](./media/pim-how-to-start-security-review/PIM_start_review.png)
 
 ### <a name="configure-the-review"></a>Настройка проверки
 Чтобы создать проверку доступа, необходимо присвоить ей имя и указать даты начала и окончания.
 
-![Настройка проверки — снимок экрана](./media/active-directory-privileged-identity-management-how-to-start-security-review/PIM_review_configure.png)
+![Настройка проверки — снимок экрана](./media/pim-how-to-start-security-review/PIM_review_configure.png)
 
 Укажите продолжительность проверки, достаточную для ее выполнения пользователями. Если проверка завершена до выбранной даты окончания, то ее всегда можно остановить досрочно.
 
@@ -51,7 +51,7 @@ ms.locfileid: "37952166"
 
 1. Перейдите к разделу **Проверка членства в роли**
    
-    ![Проверка членства в роли — снимок экрана](./media/active-directory-privileged-identity-management-how-to-start-security-review/PIM_review_role.png)
+    ![Проверка членства в роли — снимок экрана](./media/pim-how-to-start-security-review/PIM_review_role.png)
 2. Выберите роль из списка.
 
 ### <a name="decide-who-will-perform-the-review"></a>Выбор пользователя, который будет выполнять проверку
@@ -59,7 +59,7 @@ ms.locfileid: "37952166"
 
 1. Перейдите к разделу **Выбор проверяющих**
    
-    ![Выбор проверяющих — снимок экрана](./media/active-directory-privileged-identity-management-how-to-start-security-review/PIM_review_reviewers.png)
+    ![Выбор проверяющих — снимок экрана](./media/pim-how-to-start-security-review/PIM_review_reviewers.png)
 2. Выберите один из способов:
    
    * **Выбор рецензента**: используйте этот параметр, если вы не знаете, кому нужен доступ. С помощью этого параметра можно назначить выполнение проверки владельцу ресурса или руководителю группы.
@@ -69,13 +69,13 @@ ms.locfileid: "37952166"
 ### <a name="start-the-review"></a>Запуск проверки
 В завершение стоит добавить, что имеется возможность запросить у пользователей указать причину, если они подтверждают свой доступ. При необходимости добавьте описание проверки и нажмите кнопку **Запустить**.
 
-Убедитесь, что пользователи знают об ожидающей их проверке доступа, и покажите им, [как выполнить эту проверку](active-directory-privileged-identity-management-how-to-perform-security-review.md).
+Убедитесь, что пользователи знают об ожидающей их проверке доступа, и покажите им, [как выполнить эту проверку](pim-how-to-perform-security-review.md).
 
 ## <a name="manage-the-access-review"></a>Управление проверкой доступа
-Отслеживать ход выполнения проверяющими их проверок можно на панели мониторинга Azure AD PIM в разделе "Проверки доступа". Права доступа в каталоге не изменяются до [завершения проверки](active-directory-privileged-identity-management-how-to-complete-review.md).
+Отслеживать ход выполнения проверяющими их проверок можно на панели мониторинга Azure AD PIM в разделе "Проверки доступа". Права доступа в каталоге не изменяются до [завершения проверки](pim-how-to-complete-review.md).
 
 Пока не истек заданный временной интервал, можно напомнить пользователям о необходимости завершить проверку. Также в разделе "Проверки доступа" можно остановить выполнение проверки досрочно.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="pim-table-of-contents"></a>Материалы по управлению привилегированными пользователями
-[!INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
+[!INCLUDE [active-directory-privileged-identity-management-toc](../../../includes/active-directory-privileged-identity-management-toc.md)]

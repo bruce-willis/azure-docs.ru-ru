@@ -15,19 +15,19 @@ ms.component: compliance-reports
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: bf91b21f803628bbcab3d3fd50c1af4b4bd40a64
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 1f780a557c7993822de2d00963238dc865e4df36
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37445909"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38528643"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Управление пользовательским доступом с помощью проверок доступа Azure AD
 
 В Azure Active Directory можно легко предоставить пользователям соответствующие права доступа. Для этого предложите самому пользователю или руководителю пройти проверку доступа и повторно сертифицировать (или подтвердить) права доступа пользователя. Рецензенты могут предоставить пользователю входные данные для непрерывного доступа. Это зависит от предложений Azure AD. По завершении проверки доступа можно внести изменения и отозвать разрешение на доступ для пользователей, которым он больше не нужен.
 
 > [!NOTE]
-> Сведения о том, как проверить только доступ гостевых пользователей, исключив из процесса другие типы доступа, см. в статье об [управлении доступом гостевых пользователей при помощи проверки доступа](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, см. статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md). 
+> Сведения о том, как проверить только доступ гостевых пользователей, исключив из процесса другие типы доступа, см. в статье об [управлении доступом гостевых пользователей при помощи проверки доступа](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, см. статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](privileged-identity-management/pim-how-to-start-security-review.md). 
 >
 >
 

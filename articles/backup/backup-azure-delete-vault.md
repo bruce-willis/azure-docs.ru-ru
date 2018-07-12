@@ -1,19 +1,19 @@
 ---
 title: Удаление хранилища служб восстановления в Azure
 description: В этой статье описано, как удалить хранилище служб восстановления. Кроме того, здесь описаны действия по устранению проблемы с удалением.
-services: service-name
+services: backup
 author: markgalioto
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 6/21/2018
+ms.date: 7/6/2018
 ms.author: markgal
-ms.openlocfilehash: d8169eba6790e49a85d69434663faabe7430942e
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 5a3a67a41525d30b73bb203eeeacbdf49bb35193
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937606"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901856"
 ---
 # <a name="delete-a-recovery-services-vault"></a>Удаление хранилища служб восстановления
 
@@ -77,7 +77,7 @@ ms.locfileid: "36937606"
 
 4. Выполните следующую команду, чтобы загрузить пакет клиента Azure Resource Manager с сайта chocolately.org.
 
-    `iex ((New-Object System.Net.WebClient) DownloadString('https://chocolatey.org/install.ps1))`
+    `iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
 
 5. Установите клиент API Azure Resource Manager с помощью следующей команды.
 

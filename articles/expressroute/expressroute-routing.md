@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/28/2018
+ms.date: 07/09/2018
 ms.author: ganesr
-ms.openlocfilehash: 9542eedecaf8dc6d689bf6192f74eee15287ae99
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 998d4f8017af51a21e13695a8491e9b6bd62af9a
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295432"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37930534"
 ---
 # <a name="expressroute-routing-requirements"></a>Требования ExpressRoute к маршрутизации
 Для подключения к облачным службам Майкрософт с помощью ExpressRoute необходимо настроить маршрутизацию и управлять ею. Некоторые поставщики услуг подключения предлагают настройку маршрутизации как управляемой службы и управление этой службой. Узнайте у поставщика услуг подключения, предоставляет ли он такую услугу. В противном случае необходимо выполнить требования, указанные ниже:
@@ -117,7 +117,7 @@ ms.locfileid: "36295432"
 > 
 
 ## <a name="dynamic-route-exchange"></a>Динамический обмен маршрутами
-Обмен маршрутами осуществляется по протоколу eBGP. Сеансы EBGP устанавливаются между MSEEs и вашими маршрутизаторами. Проверка подлинности сеансов BGP не требуется. При необходимости можно настроить MD5-хэш. Сведения о настройке сеансов BGP приведены в статьях [Создание и изменение маршрутизации для канала ExpressRoute](expressroute-howto-routing-classic.md) и [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
+Обмен маршрутами осуществляется по протоколу eBGP. Сеансы EBGP устанавливаются между MSEEs и вашими маршрутизаторами. Проверка подлинности сеансов BGP не требуется. При необходимости можно настроить MD5-хэш. Сведения о настройке сеансов BGP приведены в статьях [Создание и изменение маршрутизации для канала ExpressRoute](how-to-routefilter-portal.md) и [Процедуры ExpressRoute для подготовки каналов и состояний каналов](expressroute-workflows.md).
 
 ## <a name="autonomous-system-numbers"></a>Номера автономных систем (AS)
 Майкрософт использует AS 12076 для общедоступного и частного пиринга Azure, а также пиринга Майкрософт. Номера AS с 65515 по 65520 зарезервированы для внутреннего использования. Поддерживаются 16- и 32-битные номера AS.
