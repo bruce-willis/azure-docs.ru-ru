@@ -2,8 +2,6 @@
 title: Обновление SSL-сертификата для фермы AD FS в Azure AD Connect | Документация Майкрософт
 description: В этом документе описаны действия по обновлению SSL-сертификата фермы AD FS с помощью Azure AD Connect.
 services: active-directory
-keywords: azure ad connect, обновление ssl adfs, обновление сертификата adfs, изменение сертификата adfs, новый сертификат adfs, сертификат adfs, обновление ssl-сертификата adfs, обновление ssl-сертификата adfs, настройка ssl-сертификата adfs, adfs, ssl, сертификат, сертификат взаимодействия со службой adfs, обновление федерации, настройка федерации, aad connect
-authors: anandyadavmsft
 manager: mtillman
 editor: billmath
 ms.assetid: 7c781f61-848a-48ad-9863-eb29da78f53c
@@ -12,16 +10,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 07/09/2018
 ms.component: hybrid
-ms.author: anandy
+author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: d657725b7bfb75a118c1d8bbbe701c1c121b1ef2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: billmath
+ms.openlocfilehash: 0eeb3f7d54617ff060481795bcdaa8b54e36dfa8
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34595008"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917658"
 ---
 # <a name="update-the-ssl-certificate-for-an-active-directory-federation-services-ad-fs-farm"></a>Обновление SSL-сертификата для фермы служб федерации Active Directory (AD FS)
 

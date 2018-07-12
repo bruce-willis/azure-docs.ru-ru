@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 10/10/2017
 ms.author: kgremban
 ms.openlocfilehash: 85bdb4b4802283c591e4d7a9e8b14ae74fa44e8d
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34633593"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38666728"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-diagnostics-settings"></a>Перенос Центра Интернета вещей для перехода с операций мониторинга к параметрам диагностики
 

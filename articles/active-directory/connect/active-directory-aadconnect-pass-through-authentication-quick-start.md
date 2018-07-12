@@ -4,7 +4,7 @@ description: В этой статье описывается, как прист�
 services: active-directory
 keywords: сквозная проверка подлинности azure ad connect, установка active directory, необходимые компоненты для azure ad, единый вход
 documentationcenter: ''
-author: swkrish
+author: billmath
 manager: mtillman
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/07/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 365d9cde29292b40847ec2a0ac6f7d4011222f2c
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: fc98f15303f23937d58131de971d5c60017c9034
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37028937"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917716"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Краткое руководство по сквозной проверке подлинности Azure Active Directory
 

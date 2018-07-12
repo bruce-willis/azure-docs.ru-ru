@@ -15,12 +15,12 @@ ms.component: compliance-reports
 ms.date: 05/02/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: e4199f9c201f80cac3df1b7e3af687e507b9fe9a
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 3b8fb474f163922844cf9b28568be58cf8cf62e1
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448583"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38307355"
 ---
 # <a name="complete-an-access-review-of-members-of-a-group-or-users-access-to-an-application-in-azure-ad"></a>Выполнение проверки доступа для участников группы или пользователей с доступом к приложению с помощью Azure AD
 
@@ -62,4 +62,4 @@ ms.locfileid: "37448583"
 - [Управление гостевым доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
 - [Управление программами и их элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
 - [Создание проверки доступа для членства в группе или работы с приложением](active-directory-azure-ad-controls-create-access-review.md)
-- [Создание проверки доступа для пользователей в роли администратора Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md)
+- [Создание проверки доступа для пользователей в роли администратора Azure AD](privileged-identity-management/pim-how-to-start-security-review.md)
