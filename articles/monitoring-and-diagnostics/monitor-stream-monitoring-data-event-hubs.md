@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 3/05/2018
+ms.date: 7/06/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 091076a86c7f1c3f83f20a47b8f351d050350c9a
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 5e8d8947643494e06faaabb5335c52df5908303e
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263469"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37902995"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -102,7 +102,7 @@ Azure Monitor предоставляет единый конвейер для п
 * **IBM QRadar**. Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](http://www.ibm.com/support). [Дополнительные сведения об интеграции с Azure.](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0)
 * **Splunk**. В зависимости от настройки Splunk имеется два подхода:
     1. [Надстройка Azure Monitor для Splunk](https://splunkbase.splunk.com/app/3534/) доступна в Splunkbase и является проектом с отрытым кодом. [Документация](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).
-    2. Если вам не удалось установить надстройку в своем экземпляре Splunk (например, при использовании прокси-сервера или запуске в Splunk Cloud), можно передать эти события в сборщик событий HTTP Splunk с помощью [этой функции, активируемой при поступлении новых сообщений в концентратор событий](https://github.com/sebastus/AzureFunctionForSplunkVS).
+    2. Если вам не удалось установить надстройку в своем экземпляре Splunk (например, при использовании прокси-сервера или запуске в Splunk Cloud), можно передать эти события в сборщик событий HTTP Splunk с помощью [этой функции, активируемой при поступлении новых сообщений в концентратор событий](https://github.com/Microsoft/AzureFunctionforSplunkVS).
 * **SumoLogic**. Инструкции по настройке SumoLogic для использования данных из концентратора событий [доступны здесь](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure-Audit/02Collect-Logs-for-Azure-Audit-from-Event-Hub).
 
 ## <a name="next-steps"></a>Дальнейшие действия

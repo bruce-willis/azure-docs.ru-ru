@@ -16,11 +16,11 @@ ms.workload: integration
 ms.date: 07/19/2016
 ms.author: estfan; ladocs
 ms.openlocfilehash: be104080e1056fa2181e54919d014154d16a60a4
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35296464"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38237242"
 ---
 # <a name="get-started-with-the-sharepoint-online-connector"></a>Приступая к работе с соединителем SharePoint Online
 Соединитель SharePoint Online можно использовать для управления списками SharePoint.  

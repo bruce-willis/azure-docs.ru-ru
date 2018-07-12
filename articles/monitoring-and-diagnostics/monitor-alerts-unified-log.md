@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: aab3c843493048291583bea111a52fe3356dc0f0
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: f36f05789424cfd3213525dd501333f852a0d9c2
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264380"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38971726"
 ---
 # <a name="log-alerts-in-azure-monitor---alerts"></a>Оповещения журнала в Azure Monitor. Интерфейс оповещений 
 В это статье рассматриваются оповещения журнала — один из типов оповещений, которые поддерживаются в новом интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений. См. дополнительные сведения об [использовании оповещений на основе метрик практически в реальном времени и журналов](monitoring-near-real-time-metric-alerts.md).
@@ -120,7 +120,7 @@ API-интерфейсы, предоставляемые для оповещен
 
 Подробные сведения и примеры использования REST API, см. в следующих документах:
 - [REST API оповещений в Log Analytics](../log-analytics/log-analytics-api-alerts.md) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Log Analytics.
-- [REST API правил запросов Azure Monitor по расписанию](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules/) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Application Insights.
+- [REST API правил запросов Azure Monitor по расписанию](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) — для создания и администрирования правил генерации оповещений для поиска по журналам в Azure Application Insights.
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
 Воспользуйтесь гибкими возможностями [Azure Resource Manager](../azure-resource-manager/resource-group-overview.md) для создания или обновления оповещений журнала.

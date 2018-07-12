@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 05/18/2018
 ms.author: alkohli
-ms.openlocfilehash: 80cdd2bdad5962a9d5f6a0e20f34ac3db1942741
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 578fb3f8bfe68ccd9bbade0ad04f3a811a249c08
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34650943"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37906390"
 ---
 # <a name="storsimple-security-and-data-protection"></a>Защита устройства StorSimple и данных
 
@@ -43,7 +43,7 @@ ms.locfileid: "34650943"
 
 Служба диспетчера устройств StorSimple — это служба управления, размещенная в Microsoft Azure и использующаяся для управления всеми устройствами StorSimple, которые закупила ваша организация. Вы можете получить доступ к службе диспетчера устройств StorSimple, используя учетные данные организации для входа на портал Azure через веб-браузер.
 
-Для доступа к службе диспетчера устройств StorSimple вашей организации необходимо иметь подписку Azure, включающую StorSimple. Подписка обеспечивает доступ к функциям, предоставляемым на портале Azure. Если у вашей организации нет подписки Azure, но вы хотите узнать об этом больше, то см. статью [Подпишитесь на Azure как организация](../active-directory/sign-up-organization.md).
+Для доступа к службе диспетчера устройств StorSimple вашей организации необходимо иметь подписку Azure, включающую StorSimple. Подписка обеспечивает доступ к функциям, предоставляемым на портале Azure. Если у вашей организации нет подписки Azure, но вы хотите узнать об этом больше, то см. статью [Подпишитесь на Azure как организация](../active-directory/fundamentals/sign-up-organization.md).
 
 Так как служба диспетчера устройств StorSimple размещается в Azure, она защищена функциями безопасности Azure. Дополнительные сведения о функциях безопасности, предоставляемых Microsoft Azure, см. в [центре управления безопасностью Microsoft Azure](https://azure.microsoft.com/support/trust-center/security/).
 
@@ -267,7 +267,7 @@ StorSimple использует следующие алгоритмы шифро
 
 **Ответ.** Можно скачать новый сертификат из службы диспетчера устройств StorSimple, а затем предоставить его для установки в хранилище сертификатов на клиентах удаленного доступа. Подробные инструкции описаны в разделе
 
-* [Командлет Import-Certificate](https://technet.microsoft.com/library/hh848630.aspx)
+* [Командлет Import-Certificate](https://docs.microsoft.com/powershell/module/pkiclient/import-certificate)
 
 **Вопрос.** Остаются ли мои данные защищенными, если служба диспетчера устройств StorSimple скомпрометирована?
 

@@ -13,11 +13,11 @@ ms.date: 02/23/2017
 ms.author: sngun
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 9a1a6ef61934c765eced259ddc535c018acf52fb
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34824223"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38629056"
 ---
 # <a name="build-a-python-flask-web-application-using-azure-cosmos-db"></a>Создание веб-приложения Python Flask с использованием Azure Cosmos DB
 > [!div class="op_single_selector"]

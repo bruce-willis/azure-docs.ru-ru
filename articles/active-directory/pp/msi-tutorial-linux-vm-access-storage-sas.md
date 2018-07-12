@@ -15,11 +15,11 @@ ms.date: 12/15/2017
 ms.author: daveba
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: fc7c5b4ab025666fc7fa1d9073198ec90d8e71c3
-ms.sourcegitcommit: eeb5daebf10564ec110a4e83874db0fb9f9f8061
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28981291"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38611033"
 ---
 # <a name="use-a-linux-vm-managed-service-identity-to-access-azure-storage-via-a-sas-credential"></a>Использование управляемого удостоверения службы виртуальной машины Linux для доступа к службе хранилища Azure с учетными данными SAS
 
@@ -74,7 +74,7 @@ MSI на виртуальной машине позволяет получить
 
     ![Замещающий текст](~/articles/active-directory/media/msi-tutorial-linux-vm-access-arm/msi-extension-value.png)
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения. 
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
 Если у вас еще нет учетной записи хранения, создайте ее.  Этот шаг можно пропустить и предоставить виртуальной машине доступ с помощью MSI к ключам имеющейся учетной записи хранения. 
 

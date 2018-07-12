@@ -12,11 +12,11 @@ ms.topic: hero-article
 ms.date: 06/20/2018
 ms.author: jingwang
 ms.openlocfilehash: 454eaba26155b2bf4a0381af98047dbcbb514bb5
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046822"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38644907"
 ---
 # <a name="create-a-data-factory-by-using-the-azure-data-factory-ui"></a>Создание фабрики данных с помощью пользовательского интерфейса службы "Фабрика данных Azure"
 > [!div class="op_single_selector" title1="Select the version of Data Factory service that you are using:"]
@@ -55,7 +55,7 @@ ms.locfileid: "37046822"
    - Выберите **Создать новую**и укажите имя группы ресурсов.   
          
    Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
-4. Укажите **V2** при выборе **версии**. 
+4. Укажите **V2** при выборе **версии**.
 5. В поле **Расположение** выберите расположение фабрики данных.
 
    В списке отображаются только расположения, поддерживаемые фабрикой данных. Хранилища данных (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, Azure HDInsight), используемые фабрикой данных, могут находиться в других расположениях.

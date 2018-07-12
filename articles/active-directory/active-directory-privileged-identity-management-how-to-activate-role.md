@@ -13,12 +13,12 @@ ms.component: protection
 ms.date: 02/14/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: e0e9e01baccd71804b26282f288d19abff8ff8fa
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: bc4280d6e0ac362712d3b406e2e32c42cf4a9be2
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444928"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952687"
 ---
 # <a name="how-to-activate-or-deactivate-roles-in-azure-ad-privileged-identity-management"></a>Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD
 Компонент Azure Active Directory (AD) Privileged Identity Management упрощает управление привилегированным доступом пользователей к ресурсам в Azure AD и других веб-службах Майкрософт, включая Office 365 и Microsoft Intune.  
@@ -44,11 +44,11 @@ ms.locfileid: "37444928"
 4. Выберите **Активировать**. Отобразится колонка **Запросить активацию ролей** .
 5. Для активации некоторых ролей требуется использование Многофакторной идентификации (MFA). Проверка подлинности выполняется один раз за сеанс.
    
-    ![Проверка с помощью функции MFA перед активацией роли — снимок экрана][2]
+    ![Проверка с помощью функции MFA перед активацией роли — снимок экрана](./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_activation_MFA.png)
 6. В текстовом поле введите основание для запроса активации.  Для некоторых ролей требуется предоставить номер запроса на устранение неисправности.
 7. Нажмите кнопку **ОК**.  Если роль не требует утверждения, она будет активирована и появится в списке активных ролей (непосредственно под списком назначенных ролей). Если [роль требует утверждения](./privileged-identity-management/azure-ad-pim-approval-workflow.md) для активации, в правом верхнем углу окна браузера ненадолго появится всплывающее уведомление о том, что запрос ожидает утверждения.
 
-    ![Снимок экрана: уведомление о запросе, ожидающем утверждения][3]
+    ![Снимок экрана: уведомление о запросе, ожидающем утверждения](./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_Request_Pending_Toast2.png)
 
 ## <a name="deactivate-a-role"></a>Деактивация роли
 Активированная роль автоматически деактивируется через определенный период времени (соответствующую длительность).
@@ -64,16 +64,9 @@ ms.locfileid: "37444928"
 4. Выберите баннер **Активация ожидает утверждения** в колонке сведений об активации роли.
 5. Выберите **Отмена** в верхней части колонки **Ожидающие утверждения**.
 
-   ![Снимок экрана: отмена ожидающего запроса][4]
+   ![Снимок экрана: отмена ожидающего запроса](./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_Request_Pending_Banner_Cancel.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ниже приведены ссылки на подробные сведения об управлении привилегированными пользователями Azure AD.
 
 [!INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
-
-<!--Image references-->
-
-[1]: ./media/active-directory-privileged-identity-management-configure/PIM_EnablePim.png
-[2]: ./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_activation_MFA.png
-[3]: ./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_Request_Pending_Toast2.png
-[4]: ./media/active-directory-privileged-identity-management-how-to-activate-role/PIM_Request_Pending_Banner_Cancel.png
