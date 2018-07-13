@@ -4,7 +4,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Использование службы "Карты Azure"
+    - name: Что такое Azure Maps?
       href: about-azure-maps.md
 - name: Быстрое начало работы
   items:
@@ -22,22 +22,10 @@
   items:
     - name: Уровни увеличения и параметры сетки
       href: zoom-levels-and-tile-grid.md
-    - name: Наличие информации о геокодировании
-      href: geocoding-coverage.md
-    - name: Наличие информации о дорожном движении
-      href: traffic-coverage.md
-    - name: Наличие информации об отображении
-      href: render-coverage.md
-    - name: Наличие информации о маршрутизации
-      href: routing-coverage.md
     - name: Поддерживаемые категории поиска
       href: supported-search-categories.md
     - name: Поддерживаемые языки
       href: supported-languages.md
-    - name: Модель потребления
-      href: consumption-model.md
-    - name: Расширение geoJSON
-      href: extend-geojson.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями службы "Карты"
@@ -76,6 +64,22 @@
           href: map-accessibility.md
 - name: Справочные материалы
   items:
+    - name: Покрытие службы
+      items:
+        - name: Геокодирование
+          href: geocoding-coverage.md
+        - name: Трафик
+          href: traffic-coverage.md
+        - name: Отображение
+          href: render-coverage.md
+        - name: Маршрутизация
+          href: routing-coverage.md
+    - name: Расширения параметров и API
+      items:
+        - name: Модель использования транспорта
+          href: consumption-model.md
+        - name: Расширение формата GeoJSON
+          href: extend-geojson.md
     - name: REST
       items:
         - name: Служба отрисовки
@@ -139,4 +143,4 @@
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
     - name: Видеоролики
-      href: 'https://azure.microsoft.com/documentation/videos'
+      href: 'https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo'

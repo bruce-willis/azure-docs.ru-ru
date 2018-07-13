@@ -7,18 +7,10 @@
 - name: Быстрое начало работы
   expanded: true
   items:
-    - name: Попробуйте выполнить поиск с помощью служб Cognitive Services
-      href: cognitive-search-quickstart-blob.md
     - name: создание службы;
       href: search-create-service-portal.md
-    - name: Microsoft Azure
-      items:
-        - name: Создание индекса
-          href: search-create-index-portal.md
-        - name: Импорт данных
-          href: search-import-data-portal.md
-        - name: Обозреватель поиска
-          href: search-explorer.md
+    - name: Попробуйте выполнить поиск с помощью служб Cognitive Services
+      href: cognitive-search-quickstart-blob.md
     - name: .NET
       items:
         - name: Создание индекса
@@ -39,18 +31,18 @@
           href: search-fiddler.md
 - name: Учебники
   items:
+    - name: Использование встроенных средств
+      href: search-get-started-portal.md
     - name: Разработка функции поиска с помощью служб Cognitive Services
       href: cognitive-search-tutorial-blob.md
-    - name: Индексирование службы "База данных SQL"
-      href: search-indexer-tutorial.md
     - name: Индексирование больших двоичных объектов Azure
       href: search-semi-structured-data.md
+    - name: Индексирование службы "База данных SQL"
+      href: search-indexer-tutorial.md
     - name: Добавление синонимов в .NET
       href: search-synonyms-tutorial-sdk.md
     - name: Добавление автозавершения в .NET
       href: search-autocomplete-tutorial.md
-    - name: Пошаговое руководство по порталу
-      href: search-get-started-portal.md
 - name: Примеры
   items:
     - name: Примеры кода Azure
@@ -129,6 +121,8 @@
       items:
         - name: Определение индексов
           href: search-what-is-an-index.md
+        - name: Создание индекса (портал)
+          href: search-create-index-portal.md
         - name: Анализаторы
           items:
             - name: Анализаторы текста
@@ -151,6 +145,8 @@
       items:
         - name: Сравнение индексирования при отправке и получении
           href: search-what-is-data-import.md
+        - name: Мастер импорта (портал)
+          href: search-import-data-portal.md
         - name: Перестроение индекса
           href: search-howto-reindex.md
         - name: Индексирование больших наборов данных
@@ -181,6 +177,8 @@
       items:
         - name: Создание простых запросов
           href: search-query-overview.md
+        - name: Обозреватель поиска (портал)
+          href: search-explorer.md
         - name: Простой синтаксис запросов
           href: 'https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search'
         - name: Синтаксис запросов Lucene

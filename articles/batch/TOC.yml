@@ -87,8 +87,6 @@
           href: batch-job-prep-release.md
         - name: Параллельные задачи узла
           href: batch-parallel-node-tasks.md
-        - name: Подсчет задач по состоянию
-          href: batch-get-task-counts.md
         - name: Зависимости задачи
           href: batch-task-dependencies.md
         - name: Учетные записи пользователей для выполнения задач
@@ -119,7 +117,9 @@
           href: batch-diagnostics.md
         - name: Мониторинг с помощью Application Insights
           href: monitor-application-insights.md
-        - name: Эффективные запросы на вывод списка
+        - name: Подсчет ресурсов по штатам
+          href: batch-get-resource-counts.md
+        - name: Выполнение эффективных запросов ресурсов
           href: batch-efficient-list-queries.md
     - name: Использование средств для разработчиков
       items:

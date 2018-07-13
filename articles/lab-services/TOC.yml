@@ -63,6 +63,8 @@
           href: devtest-lab-create-first-vm.md
         - name: Установка политик для лаборатории
           href: devtest-lab-get-started-with-lab-policies.md
+        - name: Хранение секретов в Azure Key Vault
+          href: devtest-lab-store-secrets-in-key-vault.md
         - name: Использование виртуальных машин в лаборатории
           items:
             - name: Создание виртуальных машин

@@ -19,7 +19,7 @@ ms.locfileid: "33901335"
 
 **Код ошибки**: AllocationFailed или ZonalAllocationFailed.
 
-**Сообщение об ошибке**: "Allocation failed. We do not have sufficient capacity for the requested VM size in this region. Read more about improving likelihood of allocation success at http://aka.ms/allocation-guidance" (Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Дополнительные сведения о повышении вероятности успешного выделения ресурсов: http://aka.ms/allocation-guidance).
+**Сообщение об ошибке**: "Сбой выделения. В этом регионе недостаточно емкости для запрошенного размера виртуальной машины. Дополнительные сведения о повышении вероятности успешного выделения ресурсов: http://aka.ms/allocation-guidance
 
 В этой статье объясняются причины возникновения некоторых распространенных ошибок выделения, а также представлены возможные способы их устранения.
 

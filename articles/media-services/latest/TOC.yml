@@ -28,7 +28,7 @@
 - name: Примеры
   items:
     - name: Примеры кода Azure
-      href: 'https://azure.microsoft.com/resources/samples/?service=media-services'
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=media-services&term=v3'
     - name: Инфраструктура CLI Azure
       href: cli-samples.md
 - name: Основные понятия
@@ -95,12 +95,14 @@
       href: 'https://docs.microsoft.com/en-us/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest'
     - name: Схемы событий
       href: media-services-event-schemas.md
-    - name: Схемы лицензии DRM
+    - name: Лицензии DRM
       items:
         - name: Шаблон лицензии PlayReady
           href: playready-license-template-overview.md
         - name: Шаблон лицензии Widevine
           href: widevine-license-template-overview.md
+        - name: Требования лицензий FairPlay
+          href: fairplay-license-overview.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

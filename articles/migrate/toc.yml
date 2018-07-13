@@ -22,7 +22,7 @@
       items:
         - name: '1. Миграция Contoso: обзор'
           href: contoso-migration-overview.md
-        - name: '2. Contoso: настройка инфраструктуры Azure'
+        - name: '2. Contoso: развертывание инфраструктуры Azure'
           href: contoso-migration-infrastructure.md
         - name: '3. Contoso: оценка готовности локальных компьютеров к переносу в Azure'
           href: contoso-migration-assessment.md
@@ -30,7 +30,7 @@
           href: contoso-migration-rehost-vm-sql-managed-instance.md
         - name: '5. Contoso: повторное размещение приложения на виртуальных машинах Azure'
           href: contoso-migration-rehost-vm.md
-        - name: '6. Contoso: повторное размещение приложения на виртуальных машинах Azure и в группах доступности AlwaysOn SQL Azure'
+        - name: '6. Contoso: повторное размещение приложения на виртуальных машинах Azure и в группах доступности AlwaysOn SQL Server'
           href: contoso-migration-rehost-vm-sql-ag.md
         - name: '7. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure'
           href: contoso-migration-rehost-linux-vm.md
@@ -42,7 +42,7 @@
           href: contoso-migration-refactor-linux-app-service-mysql.md
         - name: '11. Contoso: перенос Team Foundation Server в Visual Studio Team Services'
           href: contoso-migration-tfs-vsts.md
-        - name: '12. Contoso: перепроектирование приложения в Azure Service Fabric и Базе данных SQL Azure'
+        - name: '12. Contoso: повторное проектирование приложения в контейнерах Azure и Базе данных SQL Azure'
           href: contoso-migration-rearchitect-container-sql.md
         - name: '13. Contoso: повторная сборка приложения в Azure'
           href: contoso-migration-rebuild.md

@@ -30,6 +30,12 @@
           href: ../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md?toc=%2fazure%2fmonitoring%2ftoc.json
         - name: Сбор журналов в подписках Azure
           href: ../log-analytics/log-analytics-activity-logs-subscriptions.md?toc=%2fazure%2fmonitoring%2ftoc.json
+- name: Данные мониторинга
+  items:
+    - name: Типы данных и средства анализа
+      href: monitoring-data-collection.md
+    - name: Источники данных мониторинга Azure
+      href: monitoring-data-sources.md
 - name: Мониторинг ресурсов
   items:
     - name: ПРИЛОЖЕНИЯ

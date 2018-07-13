@@ -51,6 +51,8 @@
           href: tutorial-prepare-azure.md
         - name: Миграция локальных компьютеров в Azure
           href: migrate-tutorial-on-premises-azure.md
+        - name: 'Перенос серверов Windows Server 2008, 2008 R2 в Azure'
+          href: migrate-tutorial-windows-server-2008.md
         - name: Перенос экземпляров AWS в Azure
           href: migrate-tutorial-aws-azure.md
         - name: Перенос виртуальных машин Azure в другой регион
