@@ -1,5 +1,5 @@
 ---
-title: Начало работы с разделами и подписками служебной шины Azure | Документы Майкрософт
+title: Начало работы с разделами и подписками служебной шины Azure | Документация Майкрософт
 description: Написание консольного приложения C# .NET Core, которое использует обмен сообщениями служебной шины для разделов и подписок.
 services: service-bus-messaging
 documentationcenter: .net
@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/03/2018
 ms.author: sethm
 ms.openlocfilehash: 8916ccb430da6bea66de3894201a11a70bb45df9
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37447206"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38298968"
 ---
 # <a name="get-started-with-service-bus-topics"></a>Начало работы с разделами служебной шины
 
@@ -33,7 +33,7 @@ ms.locfileid: "37447206"
 4. Написание консольного приложения .NET Core для отправки набора сообщений в раздел.
 5. Написание консольного приложения .NET Core для получения этих сообщений из подписки.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 1. [Visual Studio 2017 с обновлением 3 (версия 15.3, 26730.01)](http://www.visualstudio.com/vs) или более новая версия.
 2. [Пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows) версии 2.0 или более новой.
@@ -50,7 +50,7 @@ ms.locfileid: "37447206"
 
 [!INCLUDE [service-bus-create-namespace-portal](../../includes/service-bus-create-namespace-portal.md)]
 
-## <a name="2-create-a-topic-using-the-azure-portal"></a>2) Создание раздела с помощью портала Azure
+## <a name="2-create-a-topic-using-the-azure-portal"></a>2. Создание раздела с помощью портала Azure
 
 1. Войдите на [портал Azure][azure-portal].
 2. В левой области навигации портала щелкните **Служебная шина**. Если элемент **Служебная шина** не отображается, щелкните **Все службы** или **All resources** (Все ресурсы). Щелкните пространство имен, в котором хотите создать раздел. 
@@ -427,7 +427,7 @@ ms.locfileid: "37447206"
 
 Поздравляем! С помощью библиотеки .NET Standard вы только что создали раздел и подписку, отправили 10 сообщений и получили их.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Ознакомьтесь с [примерами в репозитории GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples) для служебной шины, демонстрирующими расширенные возможности обмена сообщениями служебной шины.
 

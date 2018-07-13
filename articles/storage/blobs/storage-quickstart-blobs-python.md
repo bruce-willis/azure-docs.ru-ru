@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Python | Документы Майкрософт
+title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Python | Документация Майкрософт
 description: В рамках этого краткого руководства вы создадите учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используйте клиентскую библиотеку службы хранилища для языка Python, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
 services: storage
 author: craigshoemaker
@@ -10,17 +10,17 @@ ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: cshoe
 ms.openlocfilehash: 8b3735380105bca8421e3f1d654425eea465918e
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37767481"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38308206"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-python"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Python
 
 Из этого краткого руководства вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим кратким руководством сделайте следующее: 
 * установите [Python](https://www.python.org/downloads/);
@@ -180,7 +180,7 @@ os.remove(full_path_to_file2)
 - Подробные сведения о клиентской библиотеке Python см. в [справочнике по API-интерфейсу Python](https://docs.microsoft.com/python/api/overview/azure/storage).
 - Изучите [примеры для хранилища BLOB-объектов](https://azure.microsoft.com/resources/samples/?sort=0&service=storage&platform=python&term=blob), написанные с использованием клиентской библиотеки Python.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
  
 Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Python. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем практическом руководстве.
 
