@@ -263,6 +263,11 @@
 ### [Пакеты SDK для устройств IoT](/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks) 
 
 # Ресурсы
+## [Примеры Azure IoT для C# (.NET)](https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/)
+## [Примеры Azure IoT для Node.js](https://azure.microsoft.com/resources/samples/azure-iot-samples-node/)
+## [Примеры Azure IoT для Java](https://azure.microsoft.com/resources/samples/azure-iot-samples-java/)
+## [Примеры Azure IoT для Python](https://azure.microsoft.com/resources/samples/azure-iot-samples-python/)
+## [Примеры Azure IoT для платформы iOS](https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/)
 ## [Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsuite.com/)
 ## [Центре разработчика для Центра Интернета вещей Azure](https://azure.microsoft.com/develop/iot/)
 ## [Запросы данных клиентов](iot-hub-customer-data-requests.md)

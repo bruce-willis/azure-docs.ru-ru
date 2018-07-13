@@ -31,6 +31,8 @@
       href: update-managed-resources.md
     - name: Публикация с помощью портала
       href: publish-portal.md
+    - name: Использование секрета из Key Vault
+      href: key-vault-access.md
 - name: Справочные материалы
   items:
     - name: Инфраструктура CLI Azure

@@ -3,7 +3,7 @@ title: Мониторинг локальной инфраструктуры ид
 description: В этой статье описаны принципы работы и предназначение службы Azure AD Connect Health.
 services: active-directory
 documentationcenter: ''
-author: karavar
+author: zhiweiw
 manager: mtillman
 editor: curtand
 ms.assetid: 82798ea6-5cd3-4f30-93ae-d56536f8d8e3
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: aef9a923932b3794e32275bacd2f880d0b8b7b73
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 006914b279f2d762bf0dee6f83d6866235c062bc
+ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36939632"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37887510"
 ---
 # <a name="monitor-your-on-premises-identity-infrastructure-and-synchronization-services-in-the-cloud"></a>Мониторинг локальной инфраструктуры идентификации и служб синхронизации в облаке.
 Служба Azure Active Directory (Azure AD) Connect Health помогает отслеживать локальную инфраструктуру идентификации и службы синхронизации. Она обеспечивает надежное подключение к службам Office 365 и Microsoft Online Services и предоставляет возможности мониторинга ключевых компонентов идентификации, таких как серверы служб федерации Active Directory (AD FS), серверы Azure AD Connect (также называемые модулями синхронизации), контроллеры домена Active Directory и т. п. С помощью этой службы пользователи могут с легкостью получить доступ к общим сведениям о компонентах, в частности к информации об использовании и другим важным данным, необходимым для принятия обоснованных решений.
@@ -40,7 +40,7 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 * уведомления по электронной почте для критических оповещений;
 * анализ тенденций в данных производительности, что удобно для планирования ресурсов AD FS;
 * аналитика по входам в систему AD FS с предоставлением сводных данных (о приложениях, пользователях, сетевом расположении и т. д.), которые позволяют понять, как используется AD FS;
-* создание отчетов AD FS, например о 50 пользователях, выполнивших наибольшее количество неудачных попыток входа с последнего IP-адреса с указанием неправильного имени пользователя или пароля;
+* создание отчетов AD FS, например о 50 пользователях, выполнивших наибольшее количество неудачных попыток входа с последнего IP-адреса с указанием неправильного имени пользователя или пароля.
 * отчет о ненадежном IP-адресе при неудачных попытках входа в AD FS.
   
 Дополнительные сведения см. в статье [Мониторинг AD FS с помощью Azure AD Connect Health](active-directory-aadconnect-health-adfs.md).

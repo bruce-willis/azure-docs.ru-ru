@@ -11,12 +11,12 @@
   items:
     - name: 'Создание функции: портал'
       href: functions-create-first-azure-function.md
-    - name: 'Создание функции: Azure CLI'
-      href: functions-create-first-azure-function-azure-cli.md
     - name: Создание функций (Visual Studio)
       href: functions-create-your-first-function-visual-studio.md
     - name: 'Создание функции: Java/Maven'
       href: functions-create-first-java-maven.md
+    - name: 'Создание функции: Azure CLI'
+      href: functions-create-first-azure-function-azure-cli.md
     - name: 'Создание функции: Linux'
       href: functions-create-first-azure-function-azure-cli-linux.md
     - name: триггеры;
@@ -97,6 +97,8 @@
       items:
         - name: Обзор
           href: durable-functions-overview.md
+        - name: Типы функций и возможности
+          href: durable-functions-types-features-overview.md
         - name: Привязки
           href: durable-functions-bindings.md
         - name: Контрольные точки и воспроизведение

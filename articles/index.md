@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: 557717b6fbb93bf3e0ca007fcc8b793441a13283
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 7e177705e5d8587f89018f4febefaf34fc5f669c
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920912"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970957"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -2118,6 +2118,25 @@ s" alt="" />
                                                 <div class="cardText">
                                                     <h3>Наблюдатель за сетями</h3>
                                                     <p>Решение для диагностики и мониторинга производительности сети</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/azure/virtual-wan/">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/WAN.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Виртуальная глобальная сеть</h3>
+                                                    <p>Создание безопасного подключения между филиалами по всему миру</p>
                                                 </div>
                                             </div>
                                         </div>

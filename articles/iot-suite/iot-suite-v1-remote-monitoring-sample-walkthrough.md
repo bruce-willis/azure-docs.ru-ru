@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: dobett
-ms.openlocfilehash: 871098642f586a123d056e2da22d2fceae9bdfe5
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d35052087899925e0e8119ce104345f718cc12bd
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34638081"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858519"
 ---
 # <a name="remote-monitoring-preconfigured-solution-walkthrough"></a>Пошаговое руководство по работе с настроенным решением для удаленного мониторинга
 
@@ -275,8 +275,8 @@ GROUP BY
 
 В записях блога на сайте TechNet приведены дополнительные сведения о предварительно настроенном решении удаленного мониторинга:
 
-* [IoT Suite - Under The Hood - Remote Monitoring (IoT Suite. Как работает удаленный мониторинг).](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-v1-under-the-hood-remote-monitoring.aspx)
-* [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices (IoT Suite. Удаленный мониторинг: добавление реальных и виртуальных устройств).](http://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-v1-remote-monitoring-adding-live-and-simulated-devices.aspx)
+* [IoT Suite - Under The Hood - Remote Monitoring (IoT Suite. Как работает удаленный мониторинг).](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-under-the-hood-remote-monitoring.aspx)
+* [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices (IoT Suite. Удаленный мониторинг: добавление реальных и виртуальных устройств).](https://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-remote-monitoring-adding-live-and-simulated-devices.aspx)
 
 Дополнительные сведения об IoT Suite см. в следующих статьях.
 

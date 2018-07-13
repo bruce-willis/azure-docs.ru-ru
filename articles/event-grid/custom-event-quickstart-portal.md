@@ -5,21 +5,23 @@ services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 06/04/2018
+ms.date: 07/05/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: fa6a232c657d9d96943f241eb05221e42f0f599b
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 4fef565dbd78cf3559cd47ed6c59800c8e6f9c9d
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763346"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37869149"
 ---
 # <a name="create-and-route-custom-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"
 
 "Сетка событий Azure" — это служба обработки событий для облака. В этой статье используется портал Azure, чтобы создать пользовательскую тему, подписаться на тему и активировать событие, чтобы увидеть результат. Вы отправите событие функции Azure, которая регистрирует данные событий. По завершении можно увидеть, что данные событий были отправлены в конечную точку и зарегистрированы.
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [event-grid-register-provider-portal.md](../../includes/event-grid-register-provider-portal.md)]
 
 ## <a name="create-a-custom-topic"></a>Создание пользовательской темы
 

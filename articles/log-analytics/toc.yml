@@ -35,6 +35,8 @@
           href: log-analytics-oms-portal-faq.md
     - name: Часто задаваемые вопросы по Log Analytics
       href: log-analytics-faq.md
+    - name: Время приема данных
+      href: log-analytics-data-ingestion-time.md
     - name: Защита данных
       href: log-analytics-data-security.md
     - name: Управление доступом

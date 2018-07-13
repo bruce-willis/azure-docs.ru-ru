@@ -13,6 +13,7 @@
 ## [Поставщики и типы ресурсов](resource-manager-supported-services.md)
 ## [Группы управления](management-groups-overview.md)
 ## [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+## [Шаблоны для обеспечения согласованности данных в облаке](templates-cloud-consistency.md)
 
 # Практическое руководство
 ## Создание шаблонов

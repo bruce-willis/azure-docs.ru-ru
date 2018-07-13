@@ -10,6 +10,8 @@
   items:
     - name: Развертывание решения удаленного мониторинга
       href: quickstart-remote-monitoring-deploy.md
+    - name: Развертывание решения прогнозного обслуживания
+      href: quickstart-predictive-maintenance-deploy.md
     - name: Развертывание симулятора устройств
       href: quickstart-device-simulation-deploy.md
 - name: Учебники

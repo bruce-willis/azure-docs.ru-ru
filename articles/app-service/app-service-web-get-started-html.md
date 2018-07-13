@@ -15,16 +15,16 @@ ms.topic: quickstart
 ms.date: 06/15/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 9002d0636a5abaf24cc2bcd1e531f38ec5c8d2eb
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: e48c2aceb2a8f45d01b922a186900780c1c5ef51
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294018"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38968762"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развернуть базовый сайт HTML+CSS в веб-приложениях Azure. Действия в этом руководстве выполняются в [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli).
+[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развернуть базовый сайт HTML+CSS в веб-приложениях Azure. Действия в этом руководстве выполняются в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli).
 
 ![Домашняя страница в примере приложения](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36294018"
 
 ## <a name="install-web-app-extension-for-cloud-shell"></a>Установка расширения веб-приложения для Cloud Shell
 
-Чтобы выполнить задачи этого краткого руководства, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
+Чтобы выполнить задачи этого краткого руководства, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
 
 Чтобы установить расширение веб-приложения, выполните следующую команду:
 
@@ -84,7 +84,7 @@ az webapp up -n <app_name>
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
+- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
 
 Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
 

@@ -16,11 +16,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 09cad6b76b2fdefe1163530e5437427faf29d72f
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046873"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38299927"
 ---
 # <a name="tutorial-use-azure-portal-to-create-a-data-factory-pipeline-to-copy-data"></a>Руководство по создания конвейера фабрики данных для копирования данных с помощью портала Azure 
 > [!div class="op_single_selector"]
@@ -35,7 +35,7 @@ ms.locfileid: "37046873"
 > 
 
 > [!NOTE]
-> В этой статье рассматривается версия 1 службы "Фабрика данных Azure". Если вы используете текущую версию Фабрики данных, ознакомьтесь с руководством по [использованию действия копирования](../quickstart-create-data-factory-dot-net.md). 
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, ознакомьтесь с руководством по [применению действия копирования](../quickstart-create-data-factory-dot-net.md). 
 
 В этом руководстве показано, как создать фабрику данных c конвейером, который копирует данные из хранилища BLOB-объектов Azure в базу данных SQL Azure, с помощью [портала Azure](https://portal.azure.com). Если вы еще не работали с фабрикой данных Azure, перед выполнением действий, описанных в этом руководстве, ознакомьтесь со статьей [Введение в фабрику данных Azure](data-factory-introduction.md).   
 

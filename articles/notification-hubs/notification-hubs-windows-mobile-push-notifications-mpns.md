@@ -17,11 +17,11 @@ ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
 ms.openlocfilehash: 14b9a4ed66995a73f00234f4b25f52fccbcbe556
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777306"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38562610"
 ---
 # <a name="tutorial-push-notifications-to-windows-phone-apps-by-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -36,11 +36,11 @@ ms.locfileid: "33777306"
 Из этого руководства вы узнаете, как выполнять такие задачи: 
 
 > [!div class="checklist"]
-> * создание центра уведомлений;
+> * Создание концентратора уведомлений
 > * создание приложения для Windows Phone;
 > * тестовая отправка уведомления. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 - [Visual Studio 2015 Express с компонентами для разработки мобильных приложений](https://www.visualstudio.com/vs/older-downloads/).
@@ -63,7 +63,7 @@ ms.locfileid: "33777306"
     > [!NOTE]
     > В этом учебнике используется MPNS в режиме без проверки подлинности. Режим MPNS без проверки подлинности налагает ограничения на использование уведомлений, отправляемых для каждого канала. Центры уведомлений поддерживают [Режим работы MPNS с проверкой подлинности](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) , позволяя отправить ваш сертификат.
 
-## <a name="create-a-windows-phone-application"></a>Создание приложения для Windows Phone
+## <a name="create-a-windows-phone-application"></a>создание приложения для Windows Phone;
 В этом разделе объясняется, как создать приложение Windows Phone, которое регистрирует себя в Центре уведомлений. 
 
 1. В Visual Studio создайте новое консольное приложение Windows Phone 8. 
@@ -129,7 +129,7 @@ ms.locfileid: "33777306"
    > [!NOTE]
    > Для получения всплывающего push-уведомления приложение не должно выполняться в фоновом режиме.
 
-## <a name="test-send-a-notification"></a>Тестовая отправка уведомления 
+## <a name="test-send-a-notification"></a>тестовая отправка уведомления. 
 
 1. На портале Azure перейдите на вкладку "Обзор".
 2. Выберите **Тестовая отправка**.
@@ -151,7 +151,7 @@ ms.locfileid: "33777306"
 В этом простом примере осуществляется широковещательная рассылка push-уведомлений на все устройства Windows Phone 8. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений на конкретные устройства](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md)
+>[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md)
 
 
 <!-- Images. -->

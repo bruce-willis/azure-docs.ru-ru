@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 06/07/2017
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: eb1c769e034f37d05de63896f65290db79103637
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 44c3f8ce05854e993ad551a025eec447d882c326
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35293910"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969550"
 ---
 # <a name="create-a-nodejs-web-app-in-azure-app-service-on-linux"></a>Создание веб-приложения Node.js в службе приложений Azure в Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "35293910"
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в службе приложений на платформе _Windows_ см. в статье [Создание веб-приложений Node.js в Azure](../app-service-web-get-started-nodejs.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Node.js в службе приложений для Linux с помощью [Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Node.js в службе приложений для Linux с помощью [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 Действия в этом руководстве выполняются в Cloud Shell, но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli).
 
@@ -40,7 +40,7 @@ ms.locfileid: "35293910"
 
 ## <a name="install-web-app-extension-for-cloud-shell"></a>Установка расширения веб-приложения для Cloud Shell
 
-Чтобы выполнить это краткое руководство, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/en-us/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
+Чтобы выполнить это краткое руководство, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
 
 Чтобы установить расширение веб-приложения, выполните следующую команду:
 
@@ -136,7 +136,7 @@ All done.
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/en-us/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
+- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
