@@ -4,7 +4,7 @@ description: В этой статье описывается, как прист�
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
 documentationcenter: ''
-author: swkrish
+author: billmath
 manager: mtillman
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 02/23/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e6bb32c20ca9bb6c514cab462e94018543c3a702
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f8639cbb5c7ba86b4786f3d0b913d64bad59ad66
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34592618"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917522"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 

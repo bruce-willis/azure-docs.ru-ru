@@ -3,7 +3,7 @@ title: Azure AD Connect. Задачи постконфигурации гибр�
 description: В этом документе описываются задачи постконфигурации, необходимые для завершения гибридного присоединения устройств к Azure AD
 services: active-directory
 documentationcenter: ''
-author: anandyadavmsft
+author: billmath
 manager: samueld
 editor: billmath
 ms.assetid: ''
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2018
 ms.component: hybrid
-ms.author: anandyadavmsft
-ms.openlocfilehash: b337594f53c03ca1ddbc230473fe191bc968c92b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: billmath
+ms.openlocfilehash: 9949275b18206ca66f38bab036337a00fdde6ee5
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34593305"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37916553"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Задачи постконфигурации для гибридного присоединения устройств к Azure AD
 
