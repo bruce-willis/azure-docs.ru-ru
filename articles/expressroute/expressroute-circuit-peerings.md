@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/01/2018
 ms.author: ganesr,cherylmc
-ms.openlocfilehash: be04a1cd723cf27e764daa468607d6495baf0291
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 563ee61b56af22ada662fcfff9f47ae58f3f32ba
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34849936"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969101"
 ---
 # <a name="expressroute-circuits-and-routing-domains"></a>Каналы ExpressRoute и домены маршрутизации
  *Канал ExpressRoute* необходимо настроить на подключение локальной инфраструктуры к Майкрософт через поставщика услуг подключения. На следующем рисунке показана логическая схема подключения между вашей глобальной сетью и Майкрософт:
@@ -89,7 +89,7 @@ ms.locfileid: "34849936"
 Если планируется использование всех трех сеансов пиринга, необходимо иметь три пары сеансов BGP (по одной паре для каждого типа пиринга). Пары сеансов BGP обеспечивают высокодоступную связь. Если подключение осуществляется через поставщиков услуг подключения второго уровня, то ответственность за настройку маршрутизации и управление ею вы берете на себя. Дополнительные знания вы можете получить, изучив [рабочие процессы](expressroute-workflows.md) для настройки ExpressRoute.
 
 ## <a name="expressroute-health"></a>Работоспособность ExpressRoute
-С помощью [Монитора производительности сети](https://docs.microsoft.com/en-us/azure/networking/network-monitoring-overview) (NPM) можно отслеживать доступность каналов ExpressRoute, их подключение к виртуальным сетям и загрузку полосы пропускания.
+С помощью [Монитора производительности сети](https://docs.microsoft.com/azure/networking/network-monitoring-overview) (NPM) можно отслеживать доступность каналов ExpressRoute, их подключение к виртуальным сетям и загрузку полосы пропускания.
 
 NPM отслеживает работоспособность частного пиринга Azure и пиринга Майкрософт.  Дополнительные сведения см. [здесь](https://azure.microsoft.com/en-in/blog/monitoring-of-azure-expressroute-in-preview/).
 

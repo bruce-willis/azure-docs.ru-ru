@@ -1,5 +1,5 @@
 ---
-title: Руководство. Управление виртуальными машинами Azure с помощью Azure PowerShell | Документы Майкрософт
+title: Руководство. Управление виртуальными машинами Azure с помощью Azure PowerShell | Документация Майкрософт
 description: Из этого руководства вы узнаете, как управлять виртуальными машинами Azure с применением RBAC, политик, блокировок и тегов с помощью Azure PowerShell
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -15,11 +15,11 @@ ms.date: 05/21/2018
 ms.author: tomfitz
 ms.custom: mvc
 ms.openlocfilehash: 42f7d767162f2f403b2cf921e31a38b711a3c773
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37438240"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38477700"
 ---
 # <a name="tutorial-learn-about-windows-virtual-machine-governance-with-azure-powershell"></a>Руководство по управлению виртуальными машинами Windows с помощью Azure PowerShell
 
@@ -231,7 +231,7 @@ Remove-AzureRmResourceLock -LockName LockNSG `
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы научились выполнять следующие задачи:
 

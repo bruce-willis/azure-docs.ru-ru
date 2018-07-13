@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
-ms.openlocfilehash: 0959617185694d48c593996d5cd8c836098dd1cd
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 0aac3eab8a60dc1e1e15b4656fad9ffea062c08e
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062212"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38968625"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
 
@@ -77,7 +77,7 @@ Azure Log Analytics Nozzle — это компонент Cloud Foundry, пере
 ## <a name="7-cost-saving"></a>7. Сокращение затрат
 ### <a name="cost-saving-for-devtest-environments"></a>Сокращение затрат на среды разработки и тестирования
 #### <a name="b-series-"></a>Серия B: *
-Раньше для использования в производственной среде Pivotal Cloud Foundry часто рекомендовались виртуальные машины серии F и D. Сегодня новая [серия B](https://azure.microsoft.com/blog/introducing-b-series-our-new-burstable-vm-size/) с накапливаемыми ресурсами предоставляет новые возможности. Виртуальные машины серии B с возможностью накопления идеально подходят для рабочих нагрузок, которым не требуется постоянная полная производительность ЦП. К таким нагрузкам относятся веб-серверы, небольшие базы данных, а также среды разработки и тестовые среды. Обычно для этих рабочих нагрузок требуется накапливаемая производительность. Ее стоимость составляет 0,012 долл. США в час для B1 по сравнению с 0,05 долл. США в час для F1. См. дополнительные сведения о [размерах виртуальных машин](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general) и [ценах на них](https://azure.microsoft.com/pricing/details/virtual-machines/linux/). 
+Раньше для использования в производственной среде Pivotal Cloud Foundry часто рекомендовались виртуальные машины серии F и D. Сегодня новая [серия B](https://azure.microsoft.com/blog/introducing-b-series-our-new-burstable-vm-size/) с накапливаемыми ресурсами предоставляет новые возможности. Виртуальные машины серии B с возможностью накопления идеально подходят для рабочих нагрузок, которым не требуется постоянная полная производительность ЦП. К таким нагрузкам относятся веб-серверы, небольшие базы данных, а также среды разработки и тестовые среды. Обычно для этих рабочих нагрузок требуется накапливаемая производительность. Ее стоимость составляет 0,012 долл. США в час для B1 по сравнению с 0,05 долл. США в час для F1. См. дополнительные сведения о [размерах виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general) и [ценах на них](https://azure.microsoft.com/pricing/details/virtual-machines/linux/). 
 #### <a name="managed-standard-disk"></a>Управляемый диск уровня "Стандартный" 
 Раньше для обеспечения надежной производительности в рабочей среде рекомендовались диски класса "Премиум".  Благодаря использованию [управляемых дисков](https://azure.microsoft.com/services/managed-disks/) стандартное хранилище обеспечивает аналогичную надежность с разными уровнями производительности. Для рабочей нагрузки, не чувствительной к производительности, например среды для разработки и тестирования или некритической среды, управляемые диски стандартного уровня являются более дешевой альтернативой.  
 ### <a name="cost-saving-in-general"></a>Сокращение общих затрат 

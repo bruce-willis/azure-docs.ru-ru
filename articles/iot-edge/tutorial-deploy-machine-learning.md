@@ -1,5 +1,5 @@
 ---
-title: Развертывание службы "Машинное обучение Azure" для Azure IoT Edge | Документы Майкрософт
+title: Развертывание службы "Машинное обучение Azure" для Azure IoT Edge | Документация Майкрософт
 description: Развертывание службы "Машинное обучение Azure" в качестве модуля на пограничном устройстве
 author: kgremban
 manager: timlt
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 8e6873f45beac281adbc7a9669504f1703a9eaf5
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 47db87bf734674bd424fecd0f0f22bff9e2df5d5
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345497"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38299260"
 ---
 # <a name="deploy-azure-machine-learning-as-an-iot-edge-module---preview"></a>Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "37345497"
 >[!NOTE]
 >Модули машинного обучения Azure в Azure IoT Edge находятся в общедоступной предварительной версии. 
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Чтобы протестировать модуль машинного обучения, который создается в этом руководстве, необходимо устройство IoT Edge. Вы можете использовать устройство, настроенное с использованием краткого руководства для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md). 
 
@@ -60,18 +60,18 @@ ms.locfileid: "37345497"
 sudo nano /etc/iotedge/config.yaml
 ```
 
-Обновите раздел конфигурации **Подключение**, указав свой IP-адрес. Например:
+Обновите раздел конфигурации **Подключение**, указав свой IP-адрес. Например: 
 ```yaml
 connect:
-  management_uri: "http://172.17.0.1.1:15580"
+  management_uri: "http://172.17.0.1:15580"
   workload_uri: "http://172.17.0.1:15581"
 ```
 
-Введите те же адреса в раздел конфигурации **Ожидание передачи данных**. Например:
+Введите те же адреса в раздел конфигурации **Ожидание передачи данных**. Например: 
 
 ```yaml
 listen:
-  management_uri: "http://172.17.0.1.1:15580"
+  management_uri: "http://172.17.0.1:15580"
   workload_uri: "http://172.17.0.1:15581"
 ```
 
@@ -229,7 +229,7 @@ az iot hub delete --name MyIoTHub --resource-group TestResources
 -->
 4. Подтвердите операцию удаления группы ресурсов. Еще раз введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**. Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы развернули модуль IoT Edge на базе службы "Машинное обучение Azure". Вы можете перейти к любому из оставшихся руководств, чтобы узнать о других способах, с помощью которых Azure IoT Edge может помочь вам превратить данные в бизнес-аналитику на пограничном устройстве.
 

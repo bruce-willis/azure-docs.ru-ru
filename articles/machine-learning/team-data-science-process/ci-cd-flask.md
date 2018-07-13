@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2018
 ms.author: jainr
-ms.openlocfilehash: 233da393bb9e030d885ce588f4841dc1c707c1cb
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 4d95fc25ed6f2f2efec8313e5b208b3cccbb619f
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34836272"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38968797"
 ---
 # <a name="devops-for-artificial-intelligence-ai-applications-creating-continuous-integration-pipeline-on-azure-using-docker-and-kubernetes"></a>DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.
@@ -35,10 +35,10 @@ ms.locfileid: "34836272"
 
 ## <a name="pre-requisites"></a>Предварительные требования
 Ниже приведены условия, необходимые для выполнения описанного конвейера CI/CD:
-* [Учетная запись Visual Studio Team Services](https://docs.microsoft.com/en-us/vsts/accounts/create-account-msa-or-work-student)
-* [интерфейс командной строки Azure](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
-* [развернутый кластер Kubernetes в службе контейнеров Azure](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster);
-* [учетная запись реестра контейнеров на портале Azure](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-get-started-portal);
+* [Учетная запись Visual Studio Team Services](https://docs.microsoft.com/vsts/accounts/create-account-msa-or-work-student)
+* [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [развернутый кластер Kubernetes в службе контейнеров Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-tutorial-kubernetes-deploy-cluster);
+* [учетная запись реестра контейнеров на портале Azure](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal);
 * [установленный Kubectl для запуска команд в кластере Kubernetes](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Он понадобится, чтобы получить конфигурацию кластера ACS. 
 * Репозиторий, скопированный в учетную запись GitHub.
 
@@ -69,6 +69,6 @@ ms.locfileid: "34836272"
 
 ## <a name="references"></a>Ссылки
 * [Командный процесс обработки и анализа данных (TDSP)](https://aka.ms/tdsp).
-* [Документация по службам машинного обучения Azure (предварительная версия)](https://docs.microsoft.com/en-us/azure/machine-learning/service/)
+* [Документация по службам машинного обучения Azure (предварительная версия)](https://docs.microsoft.com/azure/machine-learning/service/)
 * [Visual Studio Team Services](https://www.visualstudio.com/vso/)
-* [Общие сведения о предварительной версии службы Azure Kubernetes (AKS)](https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes)
+* [Общие сведения о предварительной версии службы Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/intro-kubernetes)

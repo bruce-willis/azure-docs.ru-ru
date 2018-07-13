@@ -1,17 +1,18 @@
 ---
-title: "Общие сведения о миграции в Azure Site Recovery | Документация Майкрософт"
-description: "В этой статье описан процесс миграции локальных и облачных виртуальных машин Azure с помощью Azure Site Recovery."
+title: Общие сведения о миграции в Azure Site Recovery | Документация Майкрософт
+description: В этой статье описан процесс миграции локальных и облачных виртуальных машин Azure с помощью Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/05/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: edf6ffe1cd55884f1c18498213df290cb19bb246
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: efd8a8290525c27cddaa713a1b24b6afc187bb09
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37922692"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 

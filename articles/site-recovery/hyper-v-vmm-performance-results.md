@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 02/13/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: e15f435a3f32b8908b5b93bccc6c57710ab589bc
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 4e6884bdcbc0d9921186ec9ff11a701b707faeef
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29378689"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37921303"
 ---
 # <a name="test-results-for-hyper-v-replication-to-a-secondary-site"></a>Результаты теста репликации виртуальных машин Hyper-V в облаках VMM на дополнительный сайт
 
@@ -161,10 +161,10 @@ ms.locfileid: "29378689"
 
 | Основное облако VMM | Защищенные виртуальные машины | Частота репликации | Дополнительные точки восстановления |
 | --- | --- | --- | --- |
-| PrimaryCloudRpo15m |142 |15 мин |Нет |
-| PrimaryCloudRpo30s |47 |30 с |Нет |
+| PrimaryCloudRpo15m |142 |15 мин |None |
+| PrimaryCloudRpo30s |47 |30 с |None |
 | PrimaryCloudRpo30sArp1 |47 |30 с |1 |
-| PrimaryCloudRpo5m |235 |5 мин |Нет |
+| PrimaryCloudRpo5m |235 |5 мин |None |
 
 ### <a name="performance-metrics"></a>Метрики производительности
 

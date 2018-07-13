@@ -318,8 +318,6 @@ items:
                 href: mongodb-readpreference.md
               - name: Индексация
                 href: mongodb-indexing.md
-              - name: Срок жизни в MongoDB
-                href: mongodb-ttl.md
               - name: Визуализация данных с помощью Power BI
                 href: powerbi-visualize.md
           - name: Ресурсы

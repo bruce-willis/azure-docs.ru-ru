@@ -16,12 +16,12 @@ ms.component: protection
 ms.date: 06/01/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: b4322ab5c90b04cf4eb0591e97e5e026664a2769
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 681169fc3db69c2dfb8aa36d6e2896e0ddba8b56
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442378"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38548134"
 ---
 # <a name="azure-active-directory-privileged-identity-management-subscription-requirements"></a>Требования к подписке для Azure Active Directory Privileged Identity Management
 
@@ -38,7 +38,7 @@ ms.locfileid: "37442378"
 2. Введите `Connect-MsolService`, чтобы выполнить проверку подлинности в клиенте в качестве пользователя.
 3. Укажите `Get-MsolSubscription | ft SkuPartNumber,IsTrial,Status`.
 
-Эта команда извлекает список подписок в клиенте. Если результат не содержит строки, для использования Azure AD Privileged Identity Management следует получить пробную версию Azure AD Premium P2 или приобрести подписку Azure AD Premium P2 или EMS E5.  Сведения о том, как получить пробную версию и начать использовать Azure AD Privileged Identity Management, см. в статье [Приступая к работе с Azure AD Privileged Identity Management](../active-directory-privileged-identity-management-getting-started.md).
+Эта команда извлекает список подписок в клиенте. Если результат не содержит строки, для использования Azure AD Privileged Identity Management следует получить пробную версию Azure AD Premium P2 или приобрести подписку Azure AD Premium P2 или EMS E5.  Сведения о том, как получить пробную версию и начать использовать Azure AD Privileged Identity Management, см. в статье [Приступая к работе с Azure AD Privileged Identity Management](pim-getting-started.md).
 
 Если команда возвращает строку, в которой SkuPartNumber имеет значение AAD_PREMIUM_P2 или EMSPREMIUM, а IsTrial — значение True, это значит, что бесплатная пробная версия Azure AD Premium P2 уже установлена в клиенте.  Если эта подписка имеет статус неактивной, и у вас нет приобретенной подписки Azure AD Premium P2 или EMS E5, чтобы и дальше использовать Azure AD Privileged Identity Management, вам необходимо приобрести подписку Azure AD Premium P2 или EMS E5.
 
@@ -61,5 +61,5 @@ ms.locfileid: "37442378"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Приступая к работе с управлением привилегированными пользователями Azure AD](../active-directory-privileged-identity-management-getting-started.md)
-- [Роли в службе управления привилегированными пользователями Azure AD](../active-directory-privileged-identity-management-roles.md)
+- [Приступая к работе с управлением привилегированными пользователями Azure AD](pim-getting-started.md)
+- [Роли в службе управления привилегированными пользователями Azure AD](pim-roles.md)

@@ -13,12 +13,12 @@ ms.component: protection
 ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: a3de94aa11b9326a9eadfb3385db83724f427ff2
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: fc6376a7bf1abd81e7a5ff17549a7b4a193edec4
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37447240"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37950586"
 ---
 # <a name="how-to-complete-an-access-review-in-azure-ad-privileged-identity-management"></a>Как завершить выполнение проверки доступа в управлении привилегированными пользователями Azure AD
 После [запуска функции проверки безопасности](active-directory-privileged-identity-management-how-to-start-security-review.md)администраторы привилегированных ролей могут проверить привилегированный доступ. Компонент управления привилегированными пользователями (PIM) Azure AD автоматически отправит пользователям электронное письмо с предложением проверить доступ. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки безопасности](active-directory-privileged-identity-management-how-to-perform-security-review.md).
@@ -32,7 +32,7 @@ ms.locfileid: "37447240"
 
 В колонке со сведениями о проверке доступа отображается ряд вариантов действий для этой проверки.
 
-![Кнопки проверки доступа PIM — снимок экрана][1]
+![Кнопки проверки доступа PIM — снимок экрана](./media/active-directory-privileged-identity-management-how-to-complete-review/PIM_review_buttons.png)
 
 ### <a name="remind"></a>Напомнить
 Если проверка доступа настроена таким образом, что пользователи проверяют сами себя, то кнопка **Напомнить** отправляет уведомление. 
@@ -54,7 +54,3 @@ ms.locfileid: "37447240"
 
 ## <a name="next-steps"></a>Дополнительная информация
 [!INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
-
-<!--Image references-->
-
-[1]: ./media/active-directory-privileged-identity-management-how-to-complete-review/PIM_review_buttons.png

@@ -13,12 +13,12 @@ ms.component: protection
 ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 8d52469e11ac508ee8b353311f6040ac9d6f2e4e
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 85bea1b042eb9b882022118d36e5a55a802a1bdc
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37447155"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37950569"
 ---
 # <a name="giving-access-to-manage-azure-ad-privileged-identity-management"></a>Предоставление доступа к Azure AD Privileged Identity Management
 Глобальный администратор, который активирует в организации управление привилегированными пользователями (PIM) Azure AD, автоматически получает доступ к службе PIM и право назначать роли. Никто больше не получает доступ на запись по умолчанию, даже другие глобальные администраторы. Другие глобальные администраторы, администраторы безопасности и читатели безопасности имеют доступ только для чтения к PIM Azure AD. Чтобы предоставить доступ к PIM, первый пользователь может назначить другим пользователям роль **администратора привилегированных ролей** .
@@ -34,10 +34,10 @@ ms.locfileid: "37447155"
 1. Войдите на [портал Azure](https://portal.azure.com/) и на панели мониторинга выберите приложение **Управление привилегированными пользователями Azure AD** .
 2. Выберите **Управление привилегированными ролями** > **Администратор привилегированных ролей** > **Добавить**.
    
-    ![Добавление администраторов привилегированных ролей — снимок экрана][1]
+    ![Добавление администраторов привилегированных ролей — снимок экрана](./media/active-directory-privileged-identity-management-how-to-give-access-to-pim/PIM_add_PRA.png)
 3. В колонке "Добавление управляемых пользователей" шаг 1 уже выполнен. Перейдите к шагу 2, **Выбор пользователей** , и выполните поиск пользователя, которого необходимо добавить.
    
-    ![Выбор пользователей — снимок экрана][2]
+    ![Выбор пользователей — снимок экрана](./media/active-directory-privileged-identity-management-how-to-give-access-to-pim/PIM_select_users.png)
 4. Выберите пользователя из результатов поиска и нажмите кнопку **Готово**.
 5. Нажмите кнопку **ОК** , чтобы сохранить изменение. Выбранный пользователь отобразится в списке администраторов привилегированных ролей.
    
@@ -55,8 +55,3 @@ ms.locfileid: "37447155"
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## <a name="next-steps"></a>Дополнительная информация
 [!INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
-
-<!--Image references-->
-
-[1]: ./media/active-directory-privileged-identity-management-how-to-give-access-to-pim/PIM_add_PRA.png
-[2]: ./media/active-directory-privileged-identity-management-how-to-give-access-to-pim/PIM_select_users.png

@@ -10,12 +10,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: 034a864cd98bb383e97f1def8eff1c6f9842a554
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 144669e52b8883f4dcebde02a487da865e198e5b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34635752"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38452606"
 ---
 # <a name="connect-raspberry-pi-to-azure-iot-hub-nodejs"></a>Подключение Raspberry Pi к Центру Интернета вещей Azure (Node.js)
 
@@ -45,7 +45,7 @@ ms.locfileid: "34635752"
 ![Необходимые элементы](media/iot-hub-raspberry-pi-kit-node-get-started/0_starter_kit.jpg)
 
 * Плата Raspberry Pi 2 или Raspberry Pi 3.
-* Активная подписка Azure. Если ее нет, можно создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/) всего за несколько минут.
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 * Монитор, USB-клавиатура и мышь, подключенные к Pi.
 * ПК или компьютер Mac под управлением Windows или Linux.
 * Подключение к Интернету.
@@ -60,9 +60,8 @@ ms.locfileid: "34635752"
 * 6 оптоволоконных кабелей с разъемом на одном конце и гнездом на другом.
 * Светодиодный индикатор 10 мм с рассеянным освещением.
 
-
 > [!NOTE] 
-Если у вас нет дополнительных элементов, можно использовать имитацию датчиков.
+> Если у вас нет дополнительных элементов, можно использовать имитацию датчиков.
 
 [!INCLUDE [iot-hub-get-started-create-hub-and-device](../../includes/iot-hub-get-started-create-hub-and-device.md)]
 
@@ -73,34 +72,44 @@ ms.locfileid: "34635752"
 Подготовьте карту microSD для установки образа ОС Raspbian.
 
 1. Скачайте ОС Raspbian.
-   1. [Скачайте Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (ZIP-файл).
+
+   a. [Скачайте Raspbian Stretch](http://downloads.raspberrypi.org/raspbian/images/raspbian-2017-07-05/) (ZIP-файл).
 
    > [!WARNING]
    > Используйте ссылку выше, чтобы скачать ZIP-файл образа `raspbian-2017-07-5`. Последняя версия образа Raspbian имеет некоторые известные проблемы с Wiring-Pi Node, которые могут привести к сбою при выполнении дальнейших шагов.
-   1. Извлеките образ ОС Raspbian в папку на компьютере.
+ 
+   Б. Извлеките образ ОС Raspbian в папку на компьютере.
 
-1. Установите ОС Raspbian на карту microSD.
-   1. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
-   1. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
-   1. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
-   1. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
-   1. По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
-   1. Вставьте карту microSD в устройство Pi.
+2. Установите ОС Raspbian на карту microSD.
+
+   a. [Скачайте и установите служебную программу Etcher для записи данных на карты SD](https://etcher.io/).
+
+   Б. Запустите Etcher и выберите образ Raspbian, извлеченный на шаге 1.
+
+   c. Выберите устройство для чтения карт microSD. В программе Etcher уже может быть выбрано правильное устройство для чтения.
+
+   d. Щелкните Flash (Переключиться), чтобы установить ОС Raspbian на карту microSD.
+
+   д. По завершении установки удалите карту microSD из компьютера. Удалять карту microSD напрямую безопасно, так как программа Etcher автоматически извлекает или отключает карту microSD после завершения.
+
+   f. Вставьте карту microSD в устройство Pi.
 
 ### <a name="enable-ssh-and-i2c"></a>Включение SSH и I2C
 
 1. Подключите Pi к монитору, клавиатуре и мыши. 
-1. Запустите Pi, а затем войдите в Raspbian, используя `pi` в качестве имени пользователя и `raspberry` в качестве пароля.
-1. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
+
+2. Запустите Pi, а затем войдите в Raspbian, используя `pi` в качестве имени пользователя и `raspberry` в качестве пароля.
+
+3. Щелкните значок Raspberry и выберите **Preferences** (Параметры) > **Raspberry Pi Configuration** (Конфигурация Raspberry Pi).
 
    ![Меню параметров Raspbian](media/iot-hub-raspberry-pi-kit-node-get-started/1_raspbian-preferences-menu.png)
 
-1. На вкладке **Interfaces** (Интерфейсы) установите для параметров **I2C** и **SSH** значение **Enable** (Включить), а затем нажмите кнопку **ОК**. Этот шаг является необязательным, если у вас нет физических датчиков и вы будете использовать симулированные данные датчика.
+4. На вкладке **Interfaces** (Интерфейсы) установите для параметров **I2C** и **SSH** значение **Enable** (Включить), а затем нажмите кнопку **ОК**. Этот шаг является необязательным, если у вас нет физических датчиков и вы будете использовать симулированные данные датчика.
 
    ![Включение I2C и SSH на Raspberry Pi](media/iot-hub-raspberry-pi-kit-node-get-started/2_enable-i2c-ssh-on-raspberry-pi.png)
 
 > [!NOTE] 
-Сведения о том, как включить SSH и I2C, можно найти в дополнительных справочных документах на [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/) и [Adafruit.com](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c).
+> Сведения о том, как включить SSH и I2C, можно найти в дополнительных справочных документах на [raspberrypi.org](https://www.raspberrypi.org/documentation/remote-access/ssh/) и [Adafruit.com](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c).
 
 ### <a name="connect-the-sensor-to-pi"></a>Подключение датчика к Pi
 
@@ -143,18 +152,21 @@ ms.locfileid: "34635752"
 1. Используйте один из следующих SSH-клиентов для подключения к Raspberry Pi с главного компьютера:
    
    **Пользователи Windows**
-   1. Скачайте и установите [PuTTY](http://www.putty.org/) для Windows. 
-   1. Скопируйте IP-адрес устройства Pi в разделе с именем узла (или IP-адресом) и выберите SSH как тип подключения.
+  
+   a. Скачайте и установите [PuTTY](http://www.putty.org/) для Windows. 
+
+   Б. Скопируйте IP-адрес устройства Pi и вставьте его в поле для имени узла (или для IP-адреса), а затем выберите тип подключения SSH.
    
    ![PuTTy](media/iot-hub-raspberry-pi-kit-node-get-started/7_putty-windows.png)
    
    **Пользователи MAC и Ubuntu**
    
    Используйте SSH-клиент, встроенный в Ubuntu или macOS. Возможно, для подключения устройства Pi по протоколу SSH потребуется выполнить `ssh pi@<ip address of pi>`.
-   > [!NOTE] 
-   Имя пользователя по умолчанию — `pi`, а пароль — `raspberry`.
 
-1. Установите Node.js и NPM на устройстве Pi.
+   > [!NOTE] 
+   > Имя пользователя по умолчанию — `pi`, а пароль — `raspberry`.
+
+2. Установите Node.js и NPM на устройстве Pi.
    
    Сначала проверьте версии Node.js. 
    
@@ -169,20 +181,20 @@ ms.locfileid: "34635752"
    sudo apt-get -y install nodejs
    ```
 
-1. Клонируйте пример приложения.
+3. Клонируйте пример приложения.
 
    ```bash
    git clone https://github.com/Azure-Samples/iot-hub-node-raspberrypi-client-app
    ```
 
-1. Установите все пакеты для примера, в том числе пакет SDK для устройств Azure IoT, библиотеку датчика BME280 и библиотеку Wiring Pi.
+4. Установите все пакеты для примера, в том числе пакет SDK для устройств Azure IoT, библиотеку датчика BME280 и библиотеку Wiring Pi.
 
    ```bash
    cd iot-hub-node-raspberrypi-client-app
    sudo npm install
    ```
    > [!NOTE] 
-   В зависимости от сетевого подключения процесс установки может занять несколько минут.
+   >В зависимости от сетевого подключения процесс установки может занять несколько минут.
 
 ### <a name="configure-the-sample-application"></a>Настройка примера приложения
 
@@ -198,7 +210,7 @@ ms.locfileid: "34635752"
 
    Если у вас **нет датчика**, задайте для параметра `simulatedData` значение `true`, чтобы пример приложения создал и использовал смоделированные данные датчика.
 
-1. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
+2. Сохраните изменения и закройте окно, нажав клавиши CTRL+O > ВВОД > CTRL+X.
 
 ### <a name="run-the-sample-application"></a>Запуск примера приложения
 
@@ -209,7 +221,7 @@ ms.locfileid: "34635752"
    ```
 
    > [!NOTE] 
-   Обязательно скопируйте и вставьте строку подключения устройства, заключив ее в одинарные кавычки.
+   > Обязательно скопируйте и вставьте строку подключения устройства, заключив ее в одинарные кавычки.
 
 
 Должны отобразиться следующие результаты, содержащие данные датчика и сообщения, которые отправляются в Центр Интернета вещей.

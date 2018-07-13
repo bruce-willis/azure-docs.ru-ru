@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по использованию Azure IoT Edge в ОС Windows | Документы Майкрософт
+title: Краткое руководство по использованию Azure IoT Edge в ОС Windows | Документация Майкрософт
 description: Первое знакомство с Azure IoT Edge и выполнение анализа на имитированном пограничном устройстве
 author: kgremban
 manager: timlt
@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
 ms.openlocfilehash: 11b2fccf3c02555f50f48252f2cd9968c9ec90d7
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436095"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38632890"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство по развертыванию первого простого модуля IoT Edge на устройстве с Windows при помощи портала Azure (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "37436095"
 
 Если у вас еще нет подписки Azure, перед началом работы [создайте бесплатную учетную запись Azure][lnk-account].
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 В рамках этого краткого руководства компьютер или виртуальная машина Windows используются в качестве устройства IoT Edge. Если вы работаете на виртуальной машине с Windows, включите [вложенную виртуализацию][lnk-nested] и выделите не менее 2 ГБ памяти. 
 
@@ -298,7 +298,7 @@ iotedge logs tempSensor -f
    az group delete --name TestResources
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 При работе с этим кратким руководством вы создали устройство IoT Edge и с помощью облачного интерфейса Azure IoT Edge развернули код на устройстве. В итоге вы получили устройство для тестирования, генерирующее необработанные данные о своей среде. 
 

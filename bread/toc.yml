@@ -40,7 +40,7 @@
         - name: Azure PowerShell
           tocHref: /azure/api-management/scripts/
           topicHref: /azure/api-management/powershell-samples/
-    - name: Служба приложений Azure
+    - name: Служба приложений
       tocHref: /azure/app-service/
       topicHref: /azure/app-service/
       items:
@@ -289,6 +289,9 @@
     - name: ExpressRoute
       tocHref: /azure/expressroute/
       topicHref: /azure/expressroute/
+    - name: Брандмауэр
+      tocHref: /azure/firewall/
+      topicHref: /azure/firewall/
     - name: Руководство
       tocHref: /azure/guidance/
       topicHref: /azure/guidance/
@@ -460,7 +463,7 @@
     - name: Коллекции рабочих областей Power BI
       tocHref: /azure/power-bi-workspace-collections/
       topicHref: /azure/power-bi-workspace-collections/
-    - name: Кэш Redis
+    - name: кэш Redis;
       tocHref: /azure/redis-cache/
       topicHref: /azure/redis-cache/
     - name: Удаленное приложение RemoteApp

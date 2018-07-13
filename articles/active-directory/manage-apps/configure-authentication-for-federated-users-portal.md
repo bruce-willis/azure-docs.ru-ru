@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: it-pro
 ms.date: 06/08/2018
 ms.author: barbkess
-ms.openlocfilehash: f2ab0a4458c83aa9e5c9cee4875e41c24f615018
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: 24a6956d3f2289f6ac8ad85e2f48252cc1a4a633
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301205"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858761"
 ---
 # <a name="configure-azure-active-directory-sign-in-behavior-for-an-application-by-using-a-home-realm-discovery-policy"></a>Настройка поведения при входе в Azure Active Directory для приложения с помощью политики обнаружения домашней области
 
@@ -207,7 +207,7 @@ Get-AzureADPolicy
 #### <a name="step-2-locate-the-service-principal-to-which-to-assign-the-policy"></a>Шаг 2. Поиск субъекта-службы для назначения политики  
 Чтобы назначить политику субъектам-службам, необходимо знать их идентификаторы **ObjectID**. Существует несколько способов получения идентификатора **ObjectID** субъектов-служб.    
 
-Можно использовать портал или отправить запрос к [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Можно также открыть [Graph Explorer Tool](https://graphexplorer.cloudapp.net/) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. Так как вы используете PowerShell, можно использовать командлет get-AzureADServicePrincipal, чтобы вывести список субъектов-служб и их идентификаторов.
+Можно использовать портал или отправить запрос к [Microsoft Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Можно также открыть [Graph Explorer Tool](https://developer.microsoft.com/graph/graph-explorer) и войти в учетную запись Azure AD, чтобы просмотреть список всех субъектов-служб в своей организации. Так как вы используете PowerShell, можно использовать командлет get-AzureADServicePrincipal, чтобы вывести список субъектов-служб и их идентификаторов.
 
 #### <a name="step-3-assign-the-policy-to-your-service-principal"></a>Шаг 3. Назначение политики для субъекта-службы  
 Получив идентификатор **ObjectID** субъекта-службы приложения, для которого требуется настроить автоматическое ускорение, выполните следующую команду. Эта команда привязывает политику обнаружения домашней области, созданную на шаге 1, к субъекту-службе, определенному на шаге 2.

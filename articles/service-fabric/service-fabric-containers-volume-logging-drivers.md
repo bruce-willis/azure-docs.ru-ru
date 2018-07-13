@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/10/2018
 ms.author: subramar
-ms.openlocfilehash: d6195eda43dfd6ad249e82dabd0b314fc162b8c6
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: a5b75a7069375f503cbe25554eb7c04cba868413
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301088"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969611"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
 Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы файлов Azure для других контейнерных приложений Service Fabric, развернутых в кластере.
@@ -29,17 +29,17 @@ ms.locfileid: "35301088"
 >
 
 ## <a name="prerequisites"></a>предварительным требованиям
-* Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https://docs.microsoft.com/en-us/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий. Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
+* Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https://docs.microsoft.com/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий. Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
 
 * Подключаемый модуль тома службы файлов Azure работает с Service Fabric версии 6.2 и новее.
 
-* Следуйте инструкциям в [документации по службе файлов Azure](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
+* Следуйте инструкциям в [документации по службе файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
 
-* Вам потребуется установить [PowerShell с модулем Service Fabric](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cli).
+* Вам потребуется установить [PowerShell с модулем Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
 
 ## <a name="deploy-the-service-fabric-azure-files-application"></a>Развертывание приложения Service Fabric для службы файлов Azure
 
-Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с помощью этой [ссылки](https://aka.ms/sfvolume). Это приложение можно развернуть в кластере с помощью [PowerShell](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-deploy-remove-applications), [интерфейса командной строки](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-application-lifecycle-sfctl) или [интерфейсов API FabricClient](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-deploy-remove-applications-fabricclient).
+Приложение Service Fabric, которое предоставляет тома для контейнеров, можно скачать с помощью этой [ссылки](https://aka.ms/sfvolume). Это приложение можно развернуть в кластере с помощью [PowerShell](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-remove-applications), [интерфейса командной строки](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-lifecycle-sfctl) или [интерфейсов API FabricClient](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-remove-applications-fabricclient).
 
 1. С помощью командной строки перейдите в корневой каталог скачанного пакета приложения.
 
@@ -133,7 +133,7 @@ sfctl application create --app-name fabric:/AzureFilesVolumePluginApp --app-type
 
 Имя драйвера для подключаемого модуля тома службы файлов Azure — **sfazurefile**. Это значение устанавливается для атрибута **Driver** элемента **Volume** в манифесте приложения.
 
-В элементе **Volume** в приведенном выше фрагменте кода для подключаемого модуля тома службы файлов Azure требуются следующие теги:
+В элементе **Volume** в приведенном выше фрагменте кода для подключаемого модуля тома службы файлов Azure требуются следующие теги.
 - **Source**. Это имя тома. Для тома можно выбрать любое имя.
 - **Destination**. Этот тег указывает расположение, к которому подключается том в работающем контейнере. Таким образом, конечной папкой не может быть существующее в контейнере расположение.
 

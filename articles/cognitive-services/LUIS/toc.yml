@@ -201,8 +201,6 @@
           href: luis-prebuilt-entities.md
         - name: Использование доменов
           href: luis-how-to-use-prebuilt-domains.md
-        - name: Использование Cortana
-          href: luis-how-to-cortana-prebuilt-app.md
     - name: Управление приложением
       items:
         - name: Использование панелей мониторинга
@@ -271,8 +269,6 @@
           href: luis-reference-prebuilt-url.md
     - name: Справочник по предварительно созданным доменам
       href: luis-reference-prebuilt-domains.md
-    - name: Справочник по предварительно созданным приложениям Cortana
-      href: luis-reference-cortana-prebuilt.md
     - name: Создание API версии 2
       href: 'https://aka.ms/luis-authoring-apis'
     - name: API конечной точки версии 2

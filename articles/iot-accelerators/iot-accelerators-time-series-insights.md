@@ -8,12 +8,12 @@ ms.date: 04/29/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 7a0a5d4f1fbba5d7bd2813e8b9c300a37853e06c
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: f16fdfca704b8f8cb175de637ad7f3ef143d3ed7
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37111482"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38968961"
 ---
 # <a name="visualize-remote-monitoring-data-with-time-series-insights"></a>Визуализация данных удаленного мониторинга с помощью службы "Аналитика временных рядов"
 
@@ -99,7 +99,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 1. Нажмите кнопку **Создать**.
 
 > [!NOTE]
-> Если требуется предоставить доступ к службе "Аналитика временных рядов" дополнительным пользователям, можно использовать следующие шаги, чтобы [предоставить доступ к данным](https://docs.microsoft.com/en-us/azure/time-series-insights/time-series-insights-data-access#grant-data-access).
+> Если требуется предоставить доступ к службе "Аналитика временных рядов" дополнительным пользователям, можно использовать следующие шаги, чтобы [предоставить доступ к данным](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-data-access#grant-data-access).
 
 ## <a name="time-series-insights-explorer"></a>Обозреватель службы "Аналитика временных рядов"
 

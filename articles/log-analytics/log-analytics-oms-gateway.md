@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: ecbc88ebaaa93215f85b57becc8a643dc3e168a0
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: a13057769bad7fcad5f95e49102adac234ebcdb4
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129046"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37868945"
 ---
 # <a name="connect-computers-without-internet-access-using-the-oms-gateway"></a>Подключения компьютеров с помощью шлюза OMS без доступа к Интернету
 В этом документе описывается, как настроить связь между службой автоматизации Azure и Log Analytics с помощью шлюза OMS, когда компьютеры, подключенные напрямую или отслеживаемые Operations Manager, не имеют доступа к Интернету.  Шлюз OMS, являющийся прокси-сервером переадресации HTTP, в котором HTTP-туннелирование осуществляется с помощью команды HTTP CONNECT, может выполнять сбор и отправку данных в службу автоматизации Azure и Log Analytics от их имени.  

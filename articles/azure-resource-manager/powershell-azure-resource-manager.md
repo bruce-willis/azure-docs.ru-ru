@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/16/2018
 ms.author: tomfitz
-ms.openlocfilehash: 02616ef566dd576c3f406d4b9f3059dab27bf3e0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5f7c569eabcf6e4b743f1b6616161787764e8f84
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34603419"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723496"
 ---
 # <a name="manage-resources-with-azure-powershell"></a>Управление ресурсами с помощью Azure PowerShell
 
@@ -56,7 +56,7 @@ New-AzureRmResourceGroup -Name myResourceGroup -Location EastUS
 * [Участник сети](../role-based-access-control/built-in-roles.md#network-contributor)
 * [Участник учетной записи хранения](../role-based-access-control/built-in-roles.md#storage-account-contributor)
 
-Вместо назначения ролей для отдельных пользователей зачастую бывает проще [создать группу Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md) для пользователей, которым необходимо выполнять подобные действия. А затем назначить этой группе соответствующую роль. Чтобы упростить работу, создайте группу Azure Active Directory без членов. Вы по-прежнему можете назначить группе роль для области. 
+Вместо назначения ролей для отдельных пользователей зачастую бывает проще [создать группу Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) для пользователей, которым необходимо выполнять подобные действия. А затем назначить этой группе соответствующую роль. Чтобы упростить работу, создайте группу Azure Active Directory без членов. Вы по-прежнему можете назначить группе роль для области. 
 
 В следующем примере показано создание группы и назначение ей роли участника виртуальной машины для группы ресурсов. Для запуска команды `New-AzureAdGroup` необходимо использовать [Azure Cloud Shell](/azure/cloud-shell/overview) или [загрузить модуль Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
 

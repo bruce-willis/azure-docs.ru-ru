@@ -8,27 +8,27 @@ ms.service: storage
 ms.topic: article
 ms.date: 05/29/2018
 ms.author: tamram
-ms.openlocfilehash: 241808e0a7bde1d2c53cd0af1de677275c169214
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: cee319c4fb158e95b4a6d996f846038f0654dd32
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082236"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969159"
 ---
 # <a name="manage-access-rights-to-azure-storage-data-with-rbac-preview"></a>Управление правами доступа к данным службы хранилища Azure с помощью ролей RBAC (предварительная версия)
 
 Azure Active Directory (Azure AD) разрешает права доступа к защищенным ресурсам с помощью [управления доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/role-based-access-control/overview). Служба хранилища Azure определяет набор встроенных ролей RBAC, которые охватывают общие наборы разрешений, используемые для доступа к контейнерам или очередям. Когда роль RBAC назначается удостоверению Azure AD, этому удостоверению предоставляется доступ к соответствующим ресурсам в соответствии с указанной областью. Доступ может ограничиваться уровнем подписки, группой ресурсов, учетной записью хранения или отдельным контейнером или очередью. Эти права доступа можно назначать ресурсам службы хранилища Azure с помощью портала Azure, программ командной строки Azure и интерфейсов API управления Azure. 
 
-Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также *управляемое удостоверение службы*. Пользователь, группа или субъект-служба приложения могут использоваться в качестве субъекта безопасности. [Управляемое удостоверение службы](../../active-directory/managed-service-identity/overview.md) — это автоматически управляемое удостоверение, используемое для аутентификации из приложений, запущенных на виртуальных машинах Azure, функциональных приложений, масштабируемых наборов виртуальных машин и других наборов. Сведения об удостоверении в Azure AD см. в статье, посвященной [обзору решений удостоверения Azure](https://docs.microsoft.com/en-us/azure/active-directory/understand-azure-identity-solutions).
+Можно использовать удостоверение Azure AD пользователя, группы или субъекта-службы приложения, а также *управляемое удостоверение службы*. Пользователь, группа или субъект-служба приложения могут использоваться в качестве субъекта безопасности. [Управляемое удостоверение службы](../../active-directory/managed-service-identity/overview.md) — это автоматически управляемое удостоверение, используемое для аутентификации из приложений, запущенных на виртуальных машинах Azure, функциональных приложений, масштабируемых наборов виртуальных машин и других наборов. Сведения об удостоверении в Azure AD см. в статье, посвященной [обзору решений удостоверения Azure](https://docs.microsoft.com/azure/active-directory/understand-azure-identity-solutions).
 
 ## <a name="rbac-roles-for-azure-storage"></a>Роли RBAC для службы хранилища Azure
 
 Служба хранилища Azure поддерживает встроенные и пользовательские роли RBAC. Она предлагает использовать эти встроенные роли RBAC в Azure AD:
 
-- [Участник данных BLOB-объектов хранилища (предварительная версия)](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor-preview)
-- [Модуль чтения данных BLOB-объектов хранилища (предварительная версия)](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-blob-data-reader-preview)
-- [Участник данных очереди хранилища (предварительная версия)](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor-preview)
-- [Модуль чтения данных очереди хранилища (предварительная версия)](https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles#storage-queue-data-reader-preview)
+- [Участник данных BLOB-объектов хранилища (предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor-preview)
+- [Модуль чтения данных BLOB-объектов хранилища (предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-blob-data-reader-preview)
+- [Участник данных очереди хранилища (предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor-preview)
+- [Модуль чтения данных очереди хранилища (предварительная версия)](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-reader-preview)
 
 Дополнительные сведения о том, как встроенные роли определяются для службы хранилища Azure, см. в статье, посвященной [обзору определений ролей](https://docs.microsoft.com/azure/role-based-access-control/role-definitions#management-and-data-operations-preview).
 

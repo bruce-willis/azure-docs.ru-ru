@@ -16,11 +16,11 @@ ms.date: 06/22/2018
 ms.author: msangapu
 ms.custom: mvc
 ms.openlocfilehash: bf567402a66f9152c7eb9b97925fec2a159ffe56
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37127426"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38593126"
 ---
 # <a name="create-a-multi-container-preview-app-using-web-app-for-containers"></a>Создание многоконтейнерного приложения (предварительная версия) с помощью платформы "Веб-приложение для контейнеров"
 
@@ -135,7 +135,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 
 [!INCLUDE [Clean-up section](../../../includes/cli-script-clean-up.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Создание многоконтейнерного приложения WordPress на платформе Azure "Веб-приложение для контейнеров"](tutorial-multi-container-app.md)

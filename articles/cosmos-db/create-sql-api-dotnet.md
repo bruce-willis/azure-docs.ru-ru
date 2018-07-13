@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL | Документы Майкрософт
+title: Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL | Документация Майкрософт
 description: В этом кратком руководстве для создания веб-приложения .NET используются API SQL Azure Cosmos DB и портал Azure.
 services: cosmos-db
 author: SnehaGunda
@@ -13,11 +13,11 @@ ms.date: 04/10/2018
 ms.author: sngun
 clicktale: true
 ms.openlocfilehash: 19da0591d61e55cc34a7a0cc17ed13b197cdabab
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37344700"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38652062"
 ---
 # <a name="quickstart-build-a-net-web-app-with-azure-cosmos-db-using-the-sql-api-and-the-azure-portal"></a>Краткое руководство. Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL и портала Azure
 
@@ -27,7 +27,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ![Приложение со списком задач с демонстрационными данными](./media/create-sql-api-dotnet/azure-comosdb-todo-app-list.png)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
@@ -148,7 +148,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 [!INCLUDE [cosmosdb-delete-resource-group](../../includes/cosmos-db-delete-resource-group.md)]
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве вы узнали, как создать учетную запись Azure Cosmos DB, коллекцию с помощью обозревателя данных, а также как запустить веб-приложение. Теперь можно импортировать дополнительные данные в учетную запись Azure Cosmos DB. 
 

@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 06/19/2018
 ms.author: raynew
-ms.openlocfilehash: bf861dc6317a8cc3a3ed862dfd6c133a1dcbe685
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: bf1406c8e361e0a1433b0e26c477c3c34e987fcf
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36232155"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38562764"
 ---
 # <a name="contoso---deploy-a-migration-infrastructure"></a>Развертывание инфраструктуры миграции в Contoso
 
@@ -556,7 +556,7 @@ CUS | CONTOSODC6 | VNET-PROD-CUS | PROD-DC-CUS | 10.255.42.4
 1. Сотрудники компании развернут на портале Azure новую виртуальную машину с Windows Server в соответствующей виртуальной сети.
 2. Они создадут в каждом расположении группы доступности для виртуальной машины. Группы доступности используются для следующих задач:
     - разделения виртуальных машины на разные инфраструктуры в регионе Azure с помощью фабрики Azure; 
-    -  обеспечить Contoso право на Соглашение об уровне обслуживания с доступностью в течение 99,95 % времени для виртуальных машин в Azure.  [Узнайте больше](https://docs.microsoftcom/azure/virtual-machines/windows/regions-and-availability#availability-sets).
+    -  обеспечить Contoso право на Соглашение об уровне обслуживания с доступностью в течение 99,95 % времени для виртуальных машин в Azure.  [Узнайте больше](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets).
 
     ![Группа доступности](./media/contoso-migration-infrastructure/availability-group.png) 
 3. После развертывания виртуальной машины сотрудники компании настраивают для нее сетевой интерфейс. Они выбирают статический частный IP-адрес и указывают для него действительное значение.
