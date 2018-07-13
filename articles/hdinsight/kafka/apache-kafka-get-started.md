@@ -1,11 +1,10 @@
 ---
-title: Краткое руководство по началу работы с Apache Kafka в Azure HDInsight | Документация Майкрософт
+title: Краткое руководство по началу работы с Apache Kafka в Azure HDInsight | Документы Майкрософт
 description: В этом кратком руководстве вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью портала Azure. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
 services: hdinsight
 documentationcenter: ''
-author: Blackmist
+author: dhgoelmsft
 manager: jhubbard
-editor: cgronlun
 ms.assetid: 43585abf-bec1-4322-adde-6db21de98d7f
 ms.service: hdinsight
 ms.custom: mvc,hdinsightactive
@@ -15,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 05/23/2018
 ms.author: larryfr
-ms.openlocfilehash: 17f7bc4d9325dd8040036e218c43e418f3c51b68
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 776705281a1909cbeee657f7915d4c83ec8bbabe
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37021214"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342159"
 ---
 # <a name="quickstart-create-a-kafka-on-hdinsight-cluster"></a>Краткое руководство по созданию кластера Kafka в HDInsight
 
@@ -35,7 +34,7 @@ Kafka — это распределенная платформа потоков
 >
 > Дополнительные сведения см. в документе [Подключение к Kafka в HDInsight с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -101,7 +100,7 @@ Kafka — это распределенная платформа потоков
 
     Нажмите кнопку __Далее__, чтобы завершить настройку основных параметров.
 
-5. В колонке **Хранилище** выберите или создайте учетную запись хранения. Для действий, описанных в этом документе, в других полях этой колонки оставьте значения по умолчанию. Нажмите кнопку __Далее__, чтобы сохранить конфигурацию хранилища.
+5. В колонке **Хранилище** выберите или создайте учетную запись хранения. Для действий, описанных в этом документе, в других полях этой колонки оставьте значения по умолчанию. Нажмите кнопку __Далее__, чтобы сохранить конфигурацию хранилища. Дополнительные сведения об использовании Data Lake Storage Gen2 см. в статье [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
     ![Настройка параметров учетной записи хранения для HDInsight](./media/apache-kafka-get-started/storage-configuration.png)
 
@@ -329,7 +328,7 @@ Kafka хранит *записи* в разделах. Записи создаю
 > 
 > При удалении кластера Kafka в HDInsight удаляются все данные, хранящиеся в Kafka.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Совместное использование Apache Spark и Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

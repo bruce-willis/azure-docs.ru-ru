@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по созданию приложения LUIS для получения точных текстовых совпадений с данными в списке: Azure | Документация Майкрософт'
+title: 'Руководство по созданию приложения LUIS для получения точных текстовых совпадений с данными в списке: Azure | Документы Майкрософт'
 description: В рамках работы с этим кратким руководством вы узнаете, как создать простое приложение LUIS, использующее намерения и сущности списка для извлечения данных.
 services: cognitive-services
 author: v-geberr
@@ -7,16 +7,16 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 06/21/2018
+ms.date: 06/29/2018
 ms.author: v-geberr
-ms.openlocfilehash: 68c241833aab756bfc5e71c03da5d4175401910d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: c5408d20a736f262e95ce7014c385b50521967ad
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36335828"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127861"
 ---
-# <a name="tutorial-create-app-using-a-list-entity"></a>Руководство по созданию приложения, использующего сущность списка
+# <a name="tutorial-4-add-list-entity"></a>Руководство: 4. Добавление сущности списка
 В этом руководстве вы создадите приложение, демонстрирующее, как получить данные, соответствующие предварительно определенному списку. 
 
 <!-- green checkmark -->
@@ -30,7 +30,7 @@ ms.locfileid: "36335828"
 Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website) для разработки приложения LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения по управлению персоналом из руководства по [личному домену](luis-quickstart-intents-regex-entity.md) с регулярными выражениями, [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-regex-HumanResources.json).
+Если у вас нет приложения управления персоналом из руководства по [сущностям регулярных выражений](luis-quickstart-intents-regex-entity.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-regex-HumanResources.json).
 
 Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `list`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
@@ -43,7 +43,7 @@ ms.locfileid: "36335828"
 
 |Цель синонима|Значение синонима|
 |--|--|
-|ИМЯ|John W. Smith|
+|Действие|John W. Smith|
 |Адрес электронной почты|john.w.smith@mycompany.com|
 |Добавочный номер|x12345|
 |Персональный номер мобильного телефона|425-555-1212|
@@ -98,8 +98,6 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
 
     [ ![Снимок экрана страницы намерения с выделенными фразами](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png) ](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png#lightbox)
 
-    В приложении есть предварительно созданная сущность номера, добавленная в предыдущем руководстве, поэтому каждый номер помечен. Этой информации достаточно для клиентского приложения, но номер не будет помечен типом. Благодаря созданию сущности с соответствующим именем клиентское приложение может обрабатывать возвращенную из LUIS сущность.
-
 ## <a name="create-an-employee-list-entity"></a>Создание сущности списка сотрудников
 Теперь, когда намерение **MoveEmployee** содержит фразы, приложение LUIS должно распознавать, что являют собой сотрудники. 
 
@@ -123,7 +121,7 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
 
     |Цель синонима|Значение синонима|
     |--|--|
-    |ИМЯ|John W. Smith|
+    |Действие|John W. Smith|
     |Адрес электронной почты|john.w.smith@mycompany.com|
     |Добавочный номер|x12345|
     |Персональный номер мобильного телефона|425-555-1212|
@@ -137,7 +135,7 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
 
     |Цель синонима|Значение синонима|
     |--|--|
-    |ИМЯ|Jill Jones|
+    |Действие|Jill Jones|
     |Адрес электронной почты|jill-jones@mycompany.com|
     |Добавочный номер|x23456|
     |Персональный номер мобильного телефона|425-555-0000|
@@ -298,10 +296,10 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Чтобы сделать это, щелкните меню с тремя точками (...) справа от имени приложения в списке приложений и выберите пункт **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните меню с тремя точками (…) справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по созданию приложения, использующего иерархическую сущность](luis-quickstart-intent-and-hier-entity.md)
+> [Добавление иерархической сущности в приложение](luis-quickstart-intent-and-hier-entity.md)
 

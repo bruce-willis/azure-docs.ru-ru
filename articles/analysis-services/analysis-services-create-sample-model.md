@@ -1,23 +1,23 @@
 ---
-title: Руководство. Добавление базового образца модели на сервер Azure Analysis Services с помощью портала | Документация Майкрософт
+title: Руководство. Добавление базового образца модели на сервер Azure Analysis Services с помощью портала | Документы Майкрософт
 description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 05/23/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f44e33d2b735b6743b2b74760f816442c2cd17fe
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: c63995a461cee6bc39603a43604b8080942bd88b
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34596793"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442813"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
-Из этого руководства вы научитесь добавлять на свой сервер образец табличного шаблона базы данных Adventure Works. Образец модели представляет собой готовую версию образца модели данных "Интернет-продажи Adventure Works" (1200). Образец модели полезен для тестирования управления моделью, соединения со средствами и клиентскими приложениями, а также для выполнения запросов к данным модели. В рамках этого руководства используется [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms.md) (SSMS) для выполнения следующих действий. 
+Из этого руководства вы научитесь добавлять на свой сервер образец табличного шаблона базы данных Adventure Works. Образец модели представляет собой готовую версию образца модели данных "Интернет-продажи Adventure Works" (1200). Образец модели полезен для тестирования управления моделью, соединения со средствами и клиентскими приложениями, а также для выполнения запросов к данным модели. В рамках этого руководства используется [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) для выполнения следующих действий. 
 
 > [!div class="checklist"]
 > * Добавление готового образца табличной модели данных на сервер 
@@ -69,7 +69,7 @@ ms.locfileid: "34596793"
 
     ![Удаление примера базы данных](./media/analysis-services-create-sample-model/aas-create-sample-cleanup-delete.png)
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
 В этом руководстве было рассмотрено добавление базового образца модели на сервер. Когда есть шаблон базы данных, можно подключиться к нему из SQL Server Management Studio и добавить роли пользователей. Для получения дополнительных сведений перейдите к следующему руководству.
 

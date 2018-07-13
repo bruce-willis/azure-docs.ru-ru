@@ -1,5 +1,5 @@
 ---
-title: Настройка Azure AD Privileged Identity Management | Документация Майкрософт
+title: Настройка Azure AD Privileged Identity Management | Документы Майкрософт
 description: В этой статье приводятся общие сведения об управлении привилегированными пользователями Azure AD и об использовании этой функции для повышения безопасности облака.
 services: active-directory
 documentationcenter: ''
@@ -9,16 +9,16 @@ editor: ''
 ms.service: active-directory
 ms.workload: identity
 ms.component: protection
-ms.topic: article
+ms.topic: overview
 ms.date: 03/07/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: fc7f7323f0c5c5975b74d3d30194ed0711b12eb4
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 927d2ccef6a250d489273a17b070a4a0aa820bee
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233882"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37767561"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>Что такое Azure AD Privileged Identity Management?
 
@@ -33,7 +33,7 @@ ms.locfileid: "35233882"
 >- которым назначена роль ресурса Azure с использованием JIT-назначений или прямых назначений (на основе времени);  
 >- которые назначены для проверки доступа.
 >
->Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](active-directory-whatis.md).
+>Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](fundamentals/active-directory-whatis.md).
 
 Организациям необходимо свести к минимуму число пользователей, имеющих доступ к защищенным сведениям или ресурсам. Это снижает вероятность того, что такой доступ получит злоумышленник или что авторизованный пользователь непреднамеренно повлияет на критический ресурс.  Однако пользователям иногда требуется выполнять привилегированные операции в приложениях Azure AD, Azure, Office 365 или SaaS. Организации могут предоставлять пользователям привилегированный доступ к ресурсам Azure, таким как подписки и Azure AD. Необходимо наблюдать за действиями пользователей с правами доступа администратора. Azure AD Privileged Identity Management помогает снизить риск чрезмерных, ненужных или неправильно используемых прав доступа.
 
@@ -155,7 +155,7 @@ ms.locfileid: "35233882"
 Чтобы использовать Azure AD PIM, клиент должен иметь пробную версию Azure AD Premium P2 (или EMS E5) или оплаченную подписку в клиенте.  Кроме того, лицензии должны быть назначены администраторам клиента.  В частности, лицензии должны назначаться администраторам в ролях Azure AD, управляемых через Azure AD PIM, администраторам в ролях Azure RBAC, управляемых через Azure AD PIM, и любым пользователям, не являющимся администраторами, которые выполняют проверки доступа.
 Если ваша организация не продлевает подписку Azure AD Premium P2 или срок действия вашего пробного периода истекает, функции Azure AD PIM больше не будут доступны в вашем клиенте, подходящие назначения роли будут удалены и пользователи больше не смогут активировать роли. Дополнительные сведения см. на странице [требований к подписке для Azure AD PIM](./privileged-identity-management/subscription-requirements.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [!INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 

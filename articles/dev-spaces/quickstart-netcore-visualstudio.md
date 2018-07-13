@@ -1,5 +1,5 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке | Документация Майкрософт
+title: Создание пространства разработки Kubernetes в облаке | Документы Майкрософт
 titleSuffix: Azure Dev Spaces
 author: ghogen
 services: azure-dev-spaces
@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 3b0e03d47a03411e3e6dc2d073d5087bcb42e03e
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: 43b232e612f2ea4b47789e29a7f241bf4c35271d
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960429"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37100127"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-visual-studio"></a>Краткое руководство по созданию пространства разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и Visual Studio)
 
@@ -29,7 +29,7 @@ ms.locfileid: "36960429"
 > [!Note]
 > **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице. Можно также ознакомиться с более подробным [руководством](get-started-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Кластер Kubernetes, работающий с Kubernetes 1.9.6, в регионах "Восток США", "Западная Европа" или "Восточная Канада", с включенным параметром "Маршрутизация приложений HTTP".
 
@@ -39,7 +39,7 @@ ms.locfileid: "36960429"
 
 ## <a name="set-up-azure-dev-spaces"></a>Настройка Azure Dev Spaces
 
-Установите [расширение Visual Studio для Azure Dev Spaces](https://aka.ms/get-azds-visualstudio).
+Установка [Средств Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio).
 
 ## <a name="connect-to-a-cluster"></a>Подключение к кластеру
 
@@ -114,7 +114,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 В браузере обновите веб-приложение и перейдите на страницу About (Сведения). Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](get-started-netcore-visualstudio.md#call-another-container)

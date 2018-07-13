@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/06/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 182d65ea955cfa2cac611080c30e145c26284369
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 3fe0d3836046ad143e746503210099ee5c640a08
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751485"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129104"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы
 
@@ -506,8 +506,7 @@ ms.locfileid: "36751485"
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 * Ознакомьтесь с пошаговой инструкцией по созданию примера приложения пакетной службы в статье [Начало работы с библиотекой пакетной службы Azure для .NET](batch-dotnet-get-started.md). Существует также [версия Python](batch-python-tutorial.md) этого руководства. В ней рассматривается выполнение рабочих нагрузок на вычислительных узлах Linux.
 * Скачайте и установите [BatchLabs][batch_labs] для использования во время разработки решений пакетной службы. Используйте BatchLabs для создания, отладки и мониторинга приложений пакетной службы Azure. 
-* Узнайте, как [создавать пулы вычислительных узлов Linux](batch-linux-nodes.md).
-* Посетите [форум по пакетной службе Azure][batch_forum] на сайте MSDN. Здесь могут задавать вопросы как начинающие, так и опытные пользователи пакетной службы.
+* См. ресурсы сообщества, в том числе [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества по пакетной службе](https://github.com/Azure/Batch), а также [форум по пакетной службе Azure][batch_forum] на веб-сайте MSDN. 
 
 [1]: ./media/batch-api-basics/node-folder-structure.png
 

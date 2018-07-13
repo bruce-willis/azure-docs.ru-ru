@@ -2,19 +2,19 @@
 title: Краткое руководство по порталу кластера Azure Kubernetes
 description: Вы быстро научитесь создавать кластер Kubernetes для контейнеров Linux в AKS при помощи портала Azure.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: quickstart
 ms.date: 04/29/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 90d01ed7cc2483c8467d646ebf9ad056ea1a4baf
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: aa8a1cccd4eeb45e829cd8df73f128dd6cca416d
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36286602"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344480"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster"></a>Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)
 
@@ -28,11 +28,9 @@ ms.locfileid: "36286602"
 
 Войдите на портал Azure по адресу http://portal.azure.com.
 
-
-
 ## <a name="create-aks-cluster"></a>Создание кластера AKS
 
-Последовательно выберите **Создать ресурс** > **Служба Kubernetes** > **Создать**.
+Последовательно выберите **Создать ресурс** > **Служба Kubernetes**.
 
 Выполните приведенные ниже действия под каждым заголовком в форме создания кластера AKS.
 
@@ -232,7 +230,7 @@ az aks delete --resource-group myAKSCluster --name myAKSCluster --no-wait
 
 [https://github.com/Azure-Samples/azure-voting-app-redis][azure-vote-app]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение.
 

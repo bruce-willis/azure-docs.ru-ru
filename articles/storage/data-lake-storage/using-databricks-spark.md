@@ -1,5 +1,5 @@
 ---
-title: Доступ к данным предварительной версии Azure Data Lake Storage Gen2 с помощью DataBricks и Spark | Документация Майкрософт
+title: Доступ к данным предварительной версии Azure Data Lake Storage Gen2 с помощью DataBricks и Spark | Документы Майкрософт
 description: Сведения о выполнении запросов Spark на кластере DataBricks для получения доступа к данным в учетной записи хранения Azure Data Lake Gen2.
 services: hdinsight,storage
 tags: azure-portal
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: tutorial
 ms.date: 6/27/2018
 ms.author: dineshm
-ms.openlocfilehash: 013369c84ca7f2ec232f542549c22260eca46980
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 27ed860c7dd3b979a25860d453231de74d3f46be
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062540"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37096922"
 ---
 # <a name="tutorial-access-azure-data-lake-storage-gen2-preview-data-with-databricks-using-spark"></a>Руководство по получению доступа к данным предварительной версии Azure Data Lake Storage Gen2 с помощью DataBricks и Spark
 
@@ -28,7 +28,7 @@ ms.locfileid: "37062540"
 > * Активация обработки данных в службе "Функции Azure"
 > * Выполнение анализа данных в хранилище BLOB-объектов
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве демонстрируется, как использовать данные о рейсах авиакомпаний и запрашивать эти данные, доступные в [Министерстве транспорта США](https://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time). Скачайте данные авиакомпании по крайней мере за два года (выбрав все поля) и сохраните результаты на компьютере. Обязательно запишите имя файла и путь скачивания. Они понадобятся позже.
 
@@ -61,7 +61,7 @@ ms.locfileid: "37062540"
 8. Щелкните **Create Cluster** (Создать кластер) в верхней части страницы (этот процесс может занять около 5 минут).
 9. После завершения процесса выберите **Azure Databricks** в верхней левой части панели навигации.
 10. Выберите **Блокнот** в разделе **New** (Новый) в нижней части страницы.
-11. Введите любое имя в поле **Имя**.
+11. Введите имя по своему усмотрению в поле **Имя** и выберите **Python** в качестве языка.
 12. Во всех остальных полях можно оставить значения по умолчанию.
 13. Нажмите кнопку **Создать**.
 14. Вставьте следующий код в ячейку **Cmd 1**, замените имеющиеся значения на сохраненные значения учетной записи хранения.
@@ -96,7 +96,7 @@ azcopy cp "<DOWNLOAD_FILE_PATH>" https://<ACCOUNT_NAME>.dfs.core.windows.net/dbr
 5. Нажмите кнопку **Создать**.
 6. Вставьте следующий код в ячейку **Cmd 1** (этот код автоматически сохраняется в текстовом редакторе).
 
-    ```
+    ```python
     #mount Azure Blob Storage as an HDFS file system to your databricks cluster
     #you need to specify a storage account and container to connect to. 
     #use a SAS token or an account key to connect to Blob Storage.  
@@ -254,6 +254,6 @@ output.show(10, False)
 display(output)
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](tutorial-extract-transform-load-hive.md)

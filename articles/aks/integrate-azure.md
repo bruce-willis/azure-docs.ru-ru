@@ -8,20 +8,21 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 12/05/2017
 ms.author: seozerca
-ms.openlocfilehash: a881b08874a157b0d6781ec3859b05eeaeba6676
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 471b53be4200ff728214876dd187c3c4e427c947
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342886"
 ---
 # <a name="integrate-with-azure-managed-services-using-open-service-broker-for-azure-osba"></a>Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 
 Вместе с [каталогом услуг Kubernetes][kubernetes-service-catalog] открытый компонент Service Broker для Azure (OSBA) позволяет разработчикам использовать службы под управлением Azure в Kubernetes. Это руководство посвящено развертыванию каталога услуг Kubernetes, открытого компонента Service Broker для Azure (OSBA) и приложений, использующих службы под управлением Azure с помощью Kubernetes.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure
 
-* Azure CLI 2.0. [Установите его локально][azure-cli-install] или используйте в [Azure Cloud Shell][azure-cloud-shell].
+* Azure CLI. [Установите его локально][azure-cli-install] или используйте в [Azure Cloud Shell][azure-cloud-shell].
 
 * Helm CLI 2.7+. [Установите его локально][helm-cli-install] или используйте в [Azure Cloud Shell][azure-cloud-shell].
 
@@ -43,10 +44,16 @@ helm init --upgrade
 helm repo add svc-cat https://svc-catalog-charts.storage.googleapis.com
 ```
 
-Наконец, установите каталог услуг с чартом Helm.
+Наконец, установите каталог услуг с диаграммой Helm. Если в кластере включено управление доступом на основе ролей, выполните следующую команду.
 
 ```azurecli-interactive
-helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false
+helm install svc-cat/catalog --name catalog --namespace catalog --set controllerManager.healthcheck.enabled=false
+```
+
+Если в кластере не включено управление доступом на основе ролей, выполните следующую команду.
+
+```azurecli-interactive
+helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false --set apiserver.auth.enabled=false --set controllerManager.healthcheck.enabled=false
 ```
 
 После запуска чарта Helm убедитесь, что в `servicecatalog` появляются выходные данные следующей команды.
@@ -68,7 +75,7 @@ v1beta1.storage.k8s.io               10
 
 ## <a name="install-open-service-broker-for-azure"></a>Установка открытого компонента Service Broker для Azure
 
-Далее установите [открытый компонент Service Broker для Azure][open-service-broker-azure], включая каталог для служб под управлением Azure. Примеры доступных служб Azure: База данных Azure для PostgreSQL, кэш Redis для Azure, База данных Azure для MySQL, Azure Cosmos DB, База данных SQL Azure и др.
+Далее установите [открытый компонент Service Broker для Azure][open-service-broker-azure], включая каталог для служб под управлением Azure. Примеры доступных служб Azure: база данных Azure для PostgreSQL, база данных Azure для MySQL и база данных SQL Azure.
 
 Начните с добавления открытого компонента Service Broker для репозитория Azure Helm.
 
@@ -180,7 +187,7 @@ helm install azure/wordpress --name wordpress --namespace wordpress --set resour
 kubectl get secrets -n wordpress -o yaml
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Следуя указаниям в этой статье, вы развернули каталог услуг в кластере службы Azure Kubernetes (AKS). Вы использовали открытый компонент Service Broker для Azure, чтобы развернуть установку WordPress, которая использует службы под управлением Azure (в данном случае — базу данных Azure для MySQL).
 

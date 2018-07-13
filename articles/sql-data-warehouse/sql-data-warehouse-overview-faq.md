@@ -11,11 +11,11 @@ ms.date: 04/17/2018
 ms.author: acomet
 ms.reviewer: igorstan
 ms.openlocfilehash: 7a570dfa6e0a2812a8dd3a25b8903c70fe07befc
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32187078"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38971709"
 ---
 # <a name="sql-data-warehouse-frequently-asked-questions"></a>Часто задаваемые вопросы о хранилище данных SQL
 
@@ -27,7 +27,7 @@ ms.locfileid: "32187078"
 
 В. Где можно выяснить, каким правовым нормам или бизнес-стандартам соответствует хранилище данных SQL?
 
-О. На странице [соответствия требованиям корпорации Майкрософт] доступны различные сертификаты соответствия (такие как SOC и ISO), которые можно отфильтровать по продукту. Сначала выберите сертификат соответствия, а затем в правой части страницы в разделе "Microsoft in-scope cloud services" (Охваченные облачные службы корпорации Майкрософт) разверните "Azure", чтобы просмотреть службы Azure, которые соответствуют выбранным требованиям.
+О. На странице [Соответствие требованиям корпорации Майкрософт] доступны различные сертификаты соответствия (такие как SOC и ISO), которые можно отфильтровать по продукту. Сначала выберите сертификат соответствия, а затем в правой части страницы в разделе "Microsoft in-scope cloud services" (Охваченные облачные службы корпорации Майкрософт) разверните "Azure", чтобы просмотреть службы Azure, которые соответствуют выбранным требованиям.
 
 В. Можно ли подключить PowerBI?
 
@@ -35,7 +35,7 @@ ms.locfileid: "32187078"
 
 В. Какие ограничения емкости имеет хранилище данных SQL?
 
-О. Текущие ограничения см. на странице [Ограничения емкости хранилища данных SQL]. 
+О. Текущие ограничения см. на странице [Ограничения емкости]. 
 
 В. Почему операция масштабирования, приостановки или возобновления занимает так много времени?
 
@@ -69,7 +69,7 @@ ms.locfileid: "32187078"
 
 В. Поддерживается ли создание проектов Базы данных в Visual Studio?
 
-О. В настоящее время создание в Visual Studio проектов Базы данных для хранилища данных SQL не поддерживается. Если вы хотите проголосовать за то, чтобы поддержка проектов Базы данных была добавлена, то посетите нашу страницу UserVoice и [отправьте запрос на эту функцию].
+О. В настоящее время создание в Visual Studio проектов Базы данных для хранилища данных SQL не поддерживается. Если вы хотите проголосовать за то, чтобы поддержка проектов Базы данных была добавлена, то посетите нашу страницу UserVoice и [Запрос на функцию поддержки проектов Базы данных].
 
 В. Поддерживает ли хранилище данных SQL интерфейсы REST API?
 
@@ -80,7 +80,7 @@ ms.locfileid: "32187078"
 
 В. Какие драйверы клиента поддерживаются?
 
-О. Сведения о поддержке драйверов для хранилища данных можно найти в статье [Драйверы для хранилища данных SQL Azure].
+О. Сведения о поддержке драйверов для хранилища данных можно найти в статье [Строки подключения].
 
 В. Какие форматы файлов поддерживает PolyBase при работе с хранилищем данных SQL?
 
@@ -88,7 +88,7 @@ ms.locfileid: "32187078"
 
 В. К чему можно подключиться из хранилища данных SQL, используя PolyBase? 
 
-О. К [Azure Data Lake Store] и [большим двоичным объектам службы хранилища Azure].
+О. К [Хранилище озера данных Azure] и [Большие двоичные объекты службы хранилища Azure].
 
 В. Возможно ли вычисление со стековой памятью при подключении к большим двоичным объектам службы хранилища Azure или Azure Data Lake Store? 
 
@@ -99,21 +99,21 @@ ms.locfileid: "32187078"
 О. HDI может использовать Azure Data Lake Store или WASB в качестве уровня HDFS. Если одна из этих служб используется в качестве уровня HDFS, то можно загрузить данные в хранилище данных SQL. Тем не менее, создание вычислений со стековой памятью для экземпляра HDI невозможно. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о хранилище данных SQL в целом см. на [этой странице].
+Дополнительные сведения о хранилище данных SQL в целом см. на [Обзор].
 
 
 <!-- Article references -->
 [UserVoice]: https://feedback.azure.com/forums/307516-sql-data-warehouse
-[Драйверы для хранилища данных SQL Azure]: ./sql-data-warehouse-connection-strings.md
+[Строки подключения]: ./sql-data-warehouse-connection-strings.md
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
 [Запросы в службу поддержки]: ./sql-data-warehouse-get-started-create-support-ticket.md
 [Безопасность]: ./sql-data-warehouse-overview-manage-security.md
-[соответствия требованиям корпорации Майкрософт]: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings
-[Ограничения емкости хранилища данных SQL]: ./sql-data-warehouse-service-capacity-limits.md
+[Соответствие требованиям корпорации Майкрософт]: https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings
+[Ограничения емкости]: ./sql-data-warehouse-service-capacity-limits.md
 [здесь]: ./sql-data-warehouse-tables-data-types.md
 [Неподдерживаемые функции таблиц]: ./sql-data-warehouse-tables-overview.md#unsupported-table-features
-[Azure Data Lake Store]: ./sql-data-warehouse-load-from-azure-data-lake-store.md
-[большим двоичным объектам службы хранилища Azure]: ./sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
-[отправьте запрос на эту функцию]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu
+[Хранилище озера данных Azure]: ./sql-data-warehouse-load-from-azure-data-lake-store.md
+[Большие двоичные объекты службы хранилища Azure]: ./sql-data-warehouse-load-from-azure-blob-storage-with-polybase.md
+[Запрос на функцию поддержки проектов Базы данных]: https://feedback.azure.com/forums/307516-sql-data-warehouse/suggestions/13313247-database-project-from-visual-studio-to-support-azu
 [MSDN]: https://msdn.microsoft.com/library/azure/mt163685.aspx
-[этой странице]: ./sql-data-warehouse-overview-faq.md
+[Обзор]: ./sql-data-warehouse-overview-faq.md

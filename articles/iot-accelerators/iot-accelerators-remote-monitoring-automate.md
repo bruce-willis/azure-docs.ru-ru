@@ -1,73 +1,70 @@
 ---
-title: Обнаружение проблем на устройствах с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Выявление проблем с устройствами с помощью решения для удаленного мониторинга в Azure | Документы Майкрософт
 description: В этом руководстве показано, как с помощью правил и действий автоматически обнаруживать проблемы на устройстве на основе пороговых значений в решении для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.author: dobett
 ms.service: iot-accelerators
-services: iot-suite
-ms.date: 05/01/2018
-ms.topic: conceptual
-ms.openlocfilehash: df1ba7909c64e8ccc24bcf3584bd28b2629f49ff
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+services: iot-accelerators
+ms.date: 06/08/2018
+ms.topic: tutorial
+ms.custom: mvc
+ms.openlocfilehash: 1e3eaeec1d2eae3c36f285a3e4c536657504cbb8
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34627319"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098487"
 ---
-# <a name="detect-issues-using-threshold-based-rules"></a>Обнаружение проблем с помощью правил на основе пороговых значений
+# <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Учебник. Выявление проблем с устройствами, подключенными к решению для мониторинга
 
-В этом руководстве описаны возможности обработчика правил в решении для удаленного мониторинга. Для демонстрации этих возможностей в руководстве используется сценарий приложения Интернета вещей Contoso.
+В этом руководстве показано, как настроить акселератор решений для удаленного мониторинга с целью выявления проблем на подключенных устройствах Интернета вещей. Для определения проблем с устройствами необходимо добавить правила, которые создают оповещения на панели мониторинга решения.
 
-В Contoso есть правило, которое создает критическое оповещение, когда давление устройства **Chiller** превышает 250 фунтов на квадратный дюйм. Оператору необходимо просмотреть первоначальные пики давления и определить устройства **Chiller**, у которых могут быть неисправные датчики. Для этого нужно задать правило, создающее уведомление, если давление превышает 150 фунтов на квадратный дюйм.
+Для ознакомления с правилами и оповещениями в руководстве используется имитированное устройство-холодильник. Холодильник управляется организацией под названием Contoso и подключен к акселератору решений для удаленного мониторинга. В Contoso уже есть правило, которое создает критическое оповещение, когда давление в холодильнике превышает 298 фунтов на квадратный дюйм. Оператору Contoso необходимо просмотреть первоначальные пики давления и определить холодильники, у которых могут быть неисправные датчики. Для этого необходимо добавить правило, которое создает предупреждение, когда давление в холодильнике превышает 150 фунтов на квадратный дюйм.
 
-Также вам нужно, чтобы критически важное оповещение активировалось, если за последние 5 минут средний уровень влажности устройства **Chiller** превышал 80 %, а температура устройства **Chiller** — 23 градуса по Цельсию.
+Также нужно, чтобы создавалось критически важное оповещение, если за последние пять минут средний уровень влажности в устройстве превышал 80 %, а температура устройства превышала 24 градуса по Цельсию.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Изучив это руководство, вы:
 
 >[!div class="checklist"]
 > * Просмотр правил в решении
-> * Создание нового правила
+> * Создание правила
 > * Создание правила с несколькими условиями
 > * Изменение имеющегося правила
-> * Удаление правила
+> * Включение и отключение правила
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством нужен развернутый экземпляр решения для удаленного мониторинга в подписке Azure.
+Для работы с этим руководством вам понадобится развернутый экземпляр акселератора решений для удаленного мониторинга в подписке Azure.
 
-Если решение для удаленного мониторинга еще не развернуто, выполните инструкции по [развертыванию акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy.md).
+Если акселератор решений для удаленного мониторинга еще не развернут, выполните краткое руководство по [развертыванию облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).
 
-## <a name="view-the-rules-in-your-solution"></a>Просмотр правил в решении
+## <a name="view-the-existing-rules"></a>Просмотр существующих правил
 
-На странице **Правила** в решении показан список актуальных правил:
+На странице **Правила** в акселераторе решений показан список актуальных правил:
 
-![Страница Rules & Actions (Правила и действия)](./media/iot-accelerators-remote-monitoring-automate/rulesactions_v2.png)
+[![Страница "Правила"](./media/iot-accelerators-remote-monitoring-automate/rulesactions_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactions_v2-expanded.png#lightbox)
 
-Для просмотра правил, которые применяются только к устройствам **Chiller**, примените фильтр:
+Для просмотра правил, которые применяются только к холодильникам, примените фильтр:
 
-![Фильтрация списка правил](./media/iot-accelerators-remote-monitoring-automate/rulesactionsfilter_v2.png)
+[![Фильтрация списка правил](./media/iot-accelerators-remote-monitoring-automate/rulesactionsfilter_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsfilter_v2-expanded.png#lightbox)
 
 Вы можете просмотреть сведения о правиле и изменить его, выбрав его в списке:
 
-![Просмотр сведений о правиле](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdetail_v2.png)
+[![Просмотр сведений о правиле](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdetail_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdetail_v2-expanded.png#lightbox)
 
-Для включения, отключения и удаления одного или нескольких правил выберите их в списке:
+Для включения или отключения одного или нескольких правил выберите их в списке:
 
-![Выбор нескольких правил](./media/iot-accelerators-remote-monitoring-automate/rulesactionsmultiselect_v2.png)
+[![Выбор нескольких правил](./media/iot-accelerators-remote-monitoring-automate/rulesactionsmultiselect_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsmultiselect_v2-expanded.png#lightbox)
 
-## <a name="create-a-new-rule"></a>Создание нового правила
+## <a name="create-a-rule"></a>Создание правила
 
-Чтобы добавить новое правило, создающее предупреждение, когда давление в устройстве **Chiller** превышает 150 фунтов на квадратный дюйм, выберите **New rule** (Новое правило):
-
-![Создание правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_v2.png)
-
-Чтобы создать правило, используйте следующие значения:
+Чтобы создать правило, генерирующее предупреждение, когда давление в холодильнике превышает 150 фунтов на квадратный дюйм, щелкните **Новое правило**: Чтобы создать правило, используйте следующие значения:
 
 | Параметр          | Значение                                 |
 | ---------------- | ------------------------------------- |
 | Имя правила        | Предупреждение устройства Chiller                       |
-| ОПИСАНИЕ      | Давление устройства Chiller превышает 150 фунтов на квадратный дюйм |
+| Описание      | Давление устройства Chiller превышает 150 фунтов на квадратный дюйм |
 | Группа устройств     | Группа устройств **Chillers**             |
 | Вычисление      | Мгновенное                               |
 | Поле условия 1| pressure                              |
@@ -75,35 +72,33 @@ ms.locfileid: "34627319"
 | Значение условия 1    | 150                               |
 | Уровень серьезности  | Предупреждение                               |
 
+[![Создание правила предупреждения](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_v2-expanded.png#lightbox)
+
 Чтобы сохранить новое правило, нажмите кнопку **Применить**.
 
 Сведения о том, активировано ли правило, можно посмотреть на странице **Правила** или **Панель мониторинга**.
 
-## <a name="create-a-new-rule-with-multiple-conditions"></a>Создание правила с несколькими условиями
+[![Правило предупреждений активировано](./media/iot-accelerators-remote-monitoring-automate/warningruletriggered-inline.png)](./media/iot-accelerators-remote-monitoring-automate/warningruletriggered-expanded.png#lightbox)
 
-Выберите **Новое правило**, чтобы создать правило с несколькими условиями, которое активирует критически важное оповещение, если за последние 5 минут средний уровень влажности устройства **Chiller** превышал 80 %, а температура устройства **Chiller** — 23 градуса по Цельсию.
+## <a name="create-a-rule-with-multiple-conditions"></a>Создание правила с несколькими условиями
 
-![Создание правила с несколькими условиями](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_v2.png)
-
-Чтобы создать правило, используйте следующие значения:
+Чтобы создать правило с несколькими условиями, которое активирует критически важное оповещение, если за последние пять минут средний уровень влажности в холодильнике превышал 80 %, а температура превышала 24 градуса по Цельсию, щелкните **Новое правило**. Чтобы создать правило, используйте следующие значения:
 
 | Параметр          | Значение                                 |
 | ---------------- | ------------------------------------- |
 | Имя правила        | Критический уровень влажности и температуры устройства Chiller    |
-| ОПИСАНИЕ      | Критический уровень влажности и температуры |
+| Описание      | Критический уровень влажности и температуры |
 | Группа устройств     | Группа устройств **Chillers**             |
-| Вычисление      | Средняя                               |
+| Вычисление      | Среднее                               |
 | Период времени      | 5                                     |
 | Поле условия 1| Влажность                              |
 | Оператор условия 1 | Больше                      |
-| Значение условия 1    | 80                               |
-| Уровень серьезности  | критические ошибки.                              |
+| Значение условия 1    | 80                                |
+| Уровень серьезности  | Критические ошибки                              |
 
-Чтобы добавить второе условие, щелкните "+Добавить условие".
+[![Создание правила с несколькими условиями, часть 1](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_v2-expanded.png#lightbox)
 
-![Создание условия 2](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_cond2_v2.png)
-
-Используйте следующие значения для нового условия:
+Чтобы добавить второе условие, щелкните "+Добавить условие". Используйте следующие значения для нового условия:
 
 | Параметр          | Значение                                 |
 | ---------------- | ------------------------------------- |
@@ -111,45 +106,49 @@ ms.locfileid: "34627319"
 | Оператор условия 2 | Больше                      |
 | Значение условия 2    | 75                                |
 
+[![Создание правила с несколькими условиями, часть 2](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_cond2_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsnewrule_mult_cond2_v2-expanded.png#lightbox)
+
 Чтобы сохранить новое правило, нажмите кнопку **Применить**.
 
 Сведения о том, активировано ли правило, можно посмотреть на странице **Правила** или **Панель мониторинга**.
 
+[![Правило с несколькими условиями активировано](./media/iot-accelerators-remote-monitoring-automate/criticalruletriggered-inline.png)](./media/iot-accelerators-remote-monitoring-automate/criticalruletriggered-expanded.png#lightbox)
+
 ## <a name="edit-an-existing-rule"></a>Изменение имеющегося правила
 
-Чтобы внести изменения в имеющееся правило, выберите его в списке правил.
+Чтобы внести изменения в имеющееся правило, выберите его в списке правил и нажмите **Изменить**.
 
-![Изменение правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsedit_v2.png)
+[![Изменение правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsedit_v2-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsedit_v2-expanded.png#lightbox)
 
-<!--## Disable a rule
+## <a name="disable-a-rule"></a>Отключение устройства
 
-To temporarily switch off a rule, you can disable it in the list of rules. Choose the rule to disable, and then choose **Disable**. The **Status** of the rule in the list changes to indicate the rule is now disabled. You can re-enable a rule that you previously disabled using the same procedure.
+Временно отключить правило можно в списке правил. Выберите правило для отключения, а затем выберите **Отключить**. **Состояние** правила в списке изменится, указывая, что правило отключено. Вы можете снова включить правило, которое ранее было отключено, используя ту же процедуру.
 
-![Disable rule](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdisable.png)
+[![Отключение правила](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdisable-inline.png)](./media/iot-accelerators-remote-monitoring-automate/rulesactionsdisable-expanded.png#lightbox)
 
-You can enable and disable multiple rules at the same time if you select multiple rules in the list.-->
+Чтобы включить или отключить несколько правил одновременно, выберите их в списке.
 
-<!--## Delete a rule
+<!-- ## Delete a rule
 
 To permanently delete a rule, choose the rule in the list of rules and then choose **Delete**.
 
 You can delete multiple rules at the same time if you select multiple rules in the list.-->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Из этого руководства вы узнали, как выполнять следующие задачи:
+Если вы планируете перейти к следующему руководству, оставьте акселератор решений для удаленного мониторинга развернутым. Чтобы сократить расходы на выполнение акселератора решений, когда он не используется, можно остановить имитированные устройства на панели параметров:
 
-<!-- Repeat task list from intro -->
->[!div class="checklist"]
-> * Просмотр правил в решении
-> * Создание нового правила
-> * Изменение имеющегося правила
-> * Удаление правила
+[![Приостановка передачи данных телеметрии](./media/iot-accelerators-remote-monitoring-automate/togglesimulation-inline.png)](./media/iot-accelerators-remote-monitoring-automate/togglesimulation-expanded.png#lightbox)
 
-Теперь, когда вы знаете, как обнаружить проблемы с помощью правил на основе пороговых значений, предлагаем перейти к дальнейшим действиям:
+Когда вы будете готовы перейти к следующему руководству, перезапустите имитированные устройства.
 
-* [Настройка устройств и управление ими](iot-accelerators-remote-monitoring-manage.md).
-* [Устранение неполадок на устройстве](iot-accelerators-remote-monitoring-maintain.md).
-* [Тестирование решения с помощью виртуальных устройств](iot-accelerators-remote-monitoring-test.md).
+Если акселератор решений больше не требуется, удалите его со страницы [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard):
 
-<!-- Next tutorials in the sequence -->
+![Удаление решения](media/iot-accelerators-remote-monitoring-automate/deletesolution.png)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+В этом руководстве было показано, как создавать правила, активирующие оповещения в решении, и управлять ими с помощью страницы **Правила** в акселераторе решений для удаленного мониторинга. Чтобы узнать, как настраивать подключенные устройства и управлять ими с помощью акселератора решений, перейдите к следующему руководству.
+
+> [!div class="nextstepaction"]
+> [Настройки и администрирование устройств, подключенных к решению для мониторинга](iot-accelerators-remote-monitoring-manage.md)

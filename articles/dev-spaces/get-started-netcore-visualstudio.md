@@ -1,5 +1,5 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и Visual Studio | Документация Майкрософт
+title: Создание пространства разработки Kubernetes в облаке с помощью .NET Core и Visual Studio | Документы Майкрософт
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -11,12 +11,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 93c1c9cb27e5eb2d56583dccaffe92e9d50ecc2d
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: c2d92f26bec2045e7f1e8afff189d58d8c29f25a
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959280"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37099482"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core-and-visual-studio"></a>Начало работы в Azure Dev Spaces и .NET Core и Visual Studio
 
@@ -35,7 +35,7 @@ ms.locfileid: "36959280"
 1. Установите последнюю версию [Visual Studio 2017](https://www.visualstudio.com/vs/).
 1. Убедитесь, что выбрана следующая рабочая нагрузка в установщике Visual Studio:
     * ASP.NET и веб-разработка.
-1. Установите [расширение Visual Studio для Azure Dev Spaces](https://aka.ms/get-azds-visualstudio)
+1. Установка [Средств Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio)
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 
@@ -201,7 +201,7 @@ Azure Dev Spaces — это не просто среда выполнения к
     ![](media/common/microservices-challenges.png)
 
 ### <a name="work-in-a-shared-dev-space"></a>Работа в общей среде разработки
-С помощью Azure Dev Spaces можно настроить *общую среду разработки* в Azure. Каждый разработчик может сосредоточиться только на своей части приложения и может итеративно разрабатывать *код до фиксации* в среде разработки, в которой уже содержатся все другие службы и облачные ресурсы, от которых зависят сценарии. Зависимости всегда актуальны, и разработчикам следует работать также, как в рабочей среде.
+С помощью Azure Dev Spaces можно настроить *общую среду разработки* в Azure. Каждый разработчик может сосредоточиться только на своей части приложения и итеративно разрабатывать *код до фиксации* в среде разработки, в которой уже содержатся все другие службы и облачные ресурсы, от которых зависят сценарии. Зависимости всегда актуальны, и разработчикам следует работать так же, как в рабочей среде.
 
 ### <a name="work-in-your-own-space"></a>Работа в собственном пространстве
 При разработке кода для службы и перед его фиксацией он будет содержать большое количество ошибок. Вы будете итеративно корректировать, тестировать его и экспериментировать с решениями. Azure Dev Spaces предоставляет концепцию **пространства**, которое позволяет работать изолированно, не мешая работе участников вашей команды.
@@ -223,7 +223,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 1. Переключитесь в окно Visual Studio, в котором есть проект `mywebapi`.
 2. В **обозревателе решений** щелкните проект правой кнопкой мыши и выберите **Свойства**.
 3. Выберите вкладку **Отладка** слева, чтобы отобразить параметры Azure Dev Spaces.
-4. Здесь можно изменить или создать кластер и/или пространство, которое будет использоваться при нажатии клавиш CTRL+F5 или F5. *Убедитесь, что выбрано ранее созданное пространство Azure Dev Space*.
+4. Здесь можно изменить или создать кластер и (или) пространство, которое будет использоваться при нажатии клавиш CTRL+F5 или F5. *Убедитесь, что выбрано ранее созданное пространство Azure Dev Space*.
 5. В раскрывающемся списке пространства выберите **<Create New Space…>** (Создать новое пространство…).
 
     ![](media/get-started-netcore-visualstudio/Settings.png)

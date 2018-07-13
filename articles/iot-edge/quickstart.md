@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по использованию Azure IoT Edge в ОС Windows | Документация Майкрософт
+title: Краткое руководство по использованию Azure IoT Edge в ОС Windows | Документы Майкрософт
 description: Первое знакомство с Azure IoT Edge и выполнение анализа на имитированном пограничном устройстве
 author: kgremban
 manager: timlt
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: df22040de398810fd9250ef46da2f95b6915c4a9
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 11b2fccf3c02555f50f48252f2cd9968c9ec90d7
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37030664"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37436095"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство по развертыванию первого простого модуля IoT Edge на устройстве с Windows при помощи портала Azure (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "37030664"
 
 Если у вас еще нет подписки Azure, перед началом работы [создайте бесплатную учетную запись Azure][lnk-account].
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого краткого руководства компьютер или виртуальная машина Windows используются в качестве устройства IoT Edge. Если вы работаете на виртуальной машине с Windows, включите [вложенную виртуализацию][lnk-nested] и выделите не менее 2 ГБ памяти. 
 
@@ -65,7 +65,7 @@ ms.locfileid: "37030664"
 
 Для целей этого руководства можно использовать бесплатный уровень. Если вы уже использовали бесплатный Центр Интернета вещей и он у вас сохранился, можете использовать его. В подписке может быть только один бесплатный Центр Интернета вещей. 
 
-1. В Azure Cloud Shell создайте группу ресурсов. В следующем примере кода создается группа ресурсов с именем **TestResources** в регионе **Западная часть США**. Поместив все ресурсы, используемые для кратких руководств и инструкций, вы можете управлять ими совместно. 
+1. В Azure Cloud Shell создайте группу ресурсов. С помощью следующего примера кода создается группа ресурсов с именем **TestResources** в регионе **Западная часть США**. Поместив в группу все ресурсы, используемые для кратких руководств и инструкций, вы можете управлять ими совместно. 
 
    ```azurecli-interactive
    az group create --name TestResources --location westus
@@ -185,24 +185,31 @@ ms.locfileid: "37030664"
 
 5. Создайте переменную среды с именем **IOTEDGE_HOST** и замените *\<ip_address\>* IP-адресом для устройства IoT Edge. 
 
-   ```powershell
-   [Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://<ip_address>:15580")
-   ```
+  ```powershell
+  [Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://<ip_address>:15580")
+  ```
+  
+  Сохраняйте переменную среды между перезагрузками.
 
-6. В файле `config.yaml` найдите раздел с **параметрами подключения**. Для параметров **management_uri** и **workload_uri** укажите значение своего IP-адреса и порты, открытые в рамках предыдущего раздела. 
+  ```powershell
+  SETX /M IOTEDGE_HOST "http://<ip_address>:15580"
+  ```
+
+
+6. В файле `config.yaml` найдите раздел **Connect settings** (Параметры подключения). Для параметров **management_uri** и **workload_uri** укажите значение своего IP-адреса и порты, открытые в рамках предыдущего раздела. Замените **\<GATEWAY_ADDRESS\>** на свой IP-адрес. 
 
    ```yaml
    connect: 
-     management_uri: "http://<ip_address>:15580"
-     workload_uri: "http://<ip_address>:15581"
+     management_uri: "http://<GATEWAY_ADDRESS>:15580"
+     workload_uri: "http://<GATEWAY_ADDRESS>:15581"
    ```
 
-7. Найдите раздел **параметров ожидания передачи данных** и добавьте те же значения для **management_uri** и **workload_uri**. 
+7. Найдите раздел **Listen settings** (Параметры ожидания передачи данных) и добавьте те же значения для **management_uri** и **workload_uri**. 
 
    ```yaml
    listen:
-     management_uri: "http://<ip_address>:15580"
-     workload_uri: "http://<ip_address:15581"
+     management_uri: "http://<GATEWAY_ADDRESS>:15580"
+     workload_uri: "http://<GATEWAY_ADDRESS>:15581"
    ```
 
 8. Найдите раздел **параметров среды выполнения контейнера Moby** и убедитесь, что значение для **сети** равно `nat`.
@@ -239,7 +246,7 @@ ms.locfileid: "37030664"
     sort-object @{Expression="TimeCreated";Descending=$false}
    ```
 
-3. Просмотрите данные о всех модулях, запущенных на устройстве IoT Edge. Так как служба запущена первый раз, отобразится только запущенный модуль **edgeAgent**. Модуль edgeAgent запускается по умолчанию и позволяет установить и запустить любые дополнительные модули, развертываемые на устройстве. 
+3. Просмотрите данные обо всех модулях, запущенных на устройстве IoT Edge. Так как служба запущена первый раз, отобразится только запущенный модуль **edgeAgent**. Модуль edgeAgent запускается по умолчанию и позволяет установить и запустить любые дополнительные модули, развертываемые на устройстве. 
 
    ```powershell
    iotedge list
@@ -291,7 +298,7 @@ iotedge logs tempSensor -f
    az group delete --name TestResources
    ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 При работе с этим кратким руководством вы создали устройство IoT Edge и с помощью облачного интерфейса Azure IoT Edge развернули код на устройстве. В итоге вы получили устройство для тестирования, генерирующее необработанные данные о своей среде. 
 

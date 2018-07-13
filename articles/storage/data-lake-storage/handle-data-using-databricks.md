@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: d9720377beb1973b8ae4e9423fc991aa82646924
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 10aad06d4ac8d76dc023648e8d6c0366bff859e6
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061602"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344713"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -39,7 +39,7 @@ ms.locfileid: "37061602"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -49,7 +49,7 @@ ms.locfileid: "37061602"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал Azure](https://portal.azure.com/).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -117,7 +117,7 @@ ms.locfileid: "37061602"
 
 4. Введите следующий код в первую ячейку и выполните его.
 
-    ```python
+    ```scala
     spark.conf.set("fs.azure.account.key.<ACCOUNT_NAME>.dfs.core.windows.net", "<ACCOUNT_KEY>") 
     spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
     dbutils.fs.ls("abfs://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/")
@@ -132,11 +132,14 @@ ms.locfileid: "37061602"
 
 На следующем шаге образец файла данных загружается в учетную запись хранилища для последующего преобразования в Azure Databricks. 
 
-1. При отсутствии учетной записи, созданной для Data Lake Storage Gen2, следуйте краткому руководству для ее создания.
-2. Образец данных (**small_radio_json.json**) доступен в репозитории [Примеры U-SQL и отслеживания проблемы](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json). Загрузите файл JSON и запишите путь сохранения файла.
-3. Передайте данные в учетную запись хранения. Метод, который используется для отправки данных в учетную запись хранения зависит от того, включена ли служба иерархических пространств имен (HNS).
+> [!NOTE]
+> Если у вас еще нет учетной записи Azure Data Lake Storage Gen2, ознакомьтесь с [кратким руководством по ее созданию](./quickstart-create-account.md).
 
-    Если служба иерархических пространств имен включена для учетной записи ADLS Gen2, то для обработки загрузки можно использовать фабрику данных Azure, distp или AzCopy (версия 10). AzCopy версия 10 доступна для клиентов только в предварительной версии. Чтобы использовать AzCopy из Cloud Shell, выполните следующие действия.
+1. Загрузите (**small_radio_json.json**) из репозитория [Примеры U-SQL и отслеживание вопросов](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) и запишите путь, куда сохраняете файл.
+
+2. Затем передайте данные примера в учетную запись хранения. Метод, который используется для отправки данных в учетную запись хранения, зависит от того, включено ли иерархическое пространство имен.
+
+    Если иерархическое пространство имен включено для учетной записи службы хранилища Azure, созданной для учетной записи Gen2, то для обработки загрузки можно использовать фабрику данных Azure, distp или AzCopy (версия 10). AzCopy версия 10 доступна для клиентов только в предварительной версии. Чтобы использовать AzCopy, вставьте следующий код в окно командной строки:
 
     ```bash
     set ACCOUNT_NAME=<ACCOUNT_NAME>
@@ -150,7 +153,7 @@ ms.locfileid: "37061602"
 
 1. Добавьте следующий фрагмент кода в пустую ячейку кода и замените значения заполнителей значениями, сохраненными ранее из учетной записи хранения.
 
-    ```python
+    ```scala
     dbutils.widgets.text("storage_account_name", "STORAGE_ACCOUNT_NAME", "<YOUR_STORAGE_ACCOUNT_NAME>")
     dbutils.widgets.text("storage_account_access_key", "YOUR_ACCESS_KEY", "<YOUR_STORAGE_ACCOUNT_SHARED_KEY>")
     ```
@@ -159,13 +162,13 @@ ms.locfileid: "37061602"
 
 2. Теперь можно загрузить пример JSON-файла в виде кадра данных в Azure Databricks. Вставьте следующий код в новую ячейку, затем нажмите **SHIFT+ВВОД**(чтобы заменить значения заполнителя):
 
-    ```python
+    ```scala
     val df = spark.read.json("abfs://<FILE_SYSTEM_NAME>@<ACCOUNT_NAME>.dfs.core.windows.net/data/small_radio_json.json")
     ```
 
 3. Чтобы просмотреть содержимое кадра данных, запустите следующий код.
 
-    ```python
+    ```scala
     df.show()
     ```
 
@@ -190,7 +193,7 @@ ms.locfileid: "37061602"
 
 1. Сначала извлеките только столбцы *firstName*, *lastName*, *gender*, *location* и *level* из кадра данных, который был создан ранее.
 
-    ```python
+    ```scala
     val specificColumnsDf = df.select("firstname", "lastname", "gender", "location", "level")
     ```
 
@@ -225,7 +228,7 @@ ms.locfileid: "37061602"
 
 2.  Эти данные можно еще преобразовывать, переименовав столбец **level** на **subscription_type**.
 
-    ```python
+    ```scala
     val renamedColumnsDF = specificColumnsDf.withColumnRenamed("level", "subscription_type")
     renamedColumnsDF.show()
     ```
@@ -267,28 +270,28 @@ ms.locfileid: "37061602"
 
 1. Предоставьте конфигурацию для получения доступа к учетной записи хранения Azure из Azure Databricks.
 
-    ```python
+    ```scala
     val storageURI = "<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net"
-    val fileSystemName = "<FILE_SYSTEM_NJAME>"
+    val fileSystemName = "<FILE_SYSTEM_NAME>"
     val accessKey =  "<ACCESS_KEY>"
     ```
 
 2. Укажите временную папку, которая будет использоваться при перемещении данных между Azure Databricks и хранилищем данных SQL Azure.
 
-    ```python
+    ```scala
     val tempDir = "abfs://" + fileSystemName + "@" + storageURI +"/tempDirs"
     ```
 
 3. Запустите следующий фрагмент кода, чтобы сохранить ключ доступа к хранилищу BLOB-объектов Azure в конфигурации. Благодаря этому вам не придется хранить ключ доступа в записной книжке в виде обычного текста.
 
-    ```python
+    ```scala
     val acntInfo = "fs.azure.account.key."+ storageURI
     sc.hadoopConfiguration.set(acntInfo, accessKey)
     ```
 
 4. Укажите значения для подключения к экземпляру хранилища данных SQL Azure. Вы должны были создать хранилище данных SQL, выполняя предварительные требования для этой статьи.
 
-    ```python
+    ```scala
     //SQL Data Warehouse related settings
     val dwDatabase = "<DATABASE NAME>"
     val dwServer = "<DATABASE SERVER NAME>" 
@@ -302,7 +305,7 @@ ms.locfileid: "37061602"
 
 5. Выполните следующий фрагмент кода, чтобы загрузить преобразованный кадр данных **renamedColumnsDF** в качестве таблицы в хранилище данных SQL. Этот фрагмент кода создает таблицу с именем **SampleTable** в базе данных SQL.
 
-    ```python
+    ```scala
     spark.conf.set(
         "spark.sql.parquet.writeLegacyFormat",
         "true")
@@ -333,7 +336,7 @@ ms.locfileid: "37061602"
 
 Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера завершается автоматически, если кластер был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

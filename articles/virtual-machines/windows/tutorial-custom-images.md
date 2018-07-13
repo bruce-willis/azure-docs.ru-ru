@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell | Документация Майкрософт
+title: Руководство. Создание пользовательских образов виртуальных машин с помощью Azure PowerShell | Документы Майкрософт
 description: В этом руководстве описано, как с помощью Azure PowerShell создать пользовательский образ виртуальной машины Linux в Azure.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: a449c1f9781ffc86de4786eaab3cb83999b86a72
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 930f5dc0369c998039b9cc0c089f60de17993be0
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32188054"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37435168"
 ---
 # <a name="tutorial-create-a-custom-image-of-an-azure-vm-with-azure-powershell"></a>Руководство. Создание пользовательского образа виртуальной машины Azure с помощью Azure PowerShell
 
@@ -126,7 +126,7 @@ New-AzureRmVm `
 Вывод списка всех образов по имени.
 
 ```azurepowershell-interactive
-$images = Find-AzureRMResource -ResourceType Microsoft.Compute/images 
+$images = Get-AzureRMResource -ResourceType Microsoft.Compute/images 
 $images.name
 ```
 
@@ -138,7 +138,7 @@ Remove-AzureRmImage `
     -ResourceGroupName myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В рамках этого руководства вы создали пользовательский образ виртуальной машины. Вы научились выполнять следующие задачи:
 
@@ -147,7 +147,7 @@ Remove-AzureRmImage `
 > * Создание пользовательского образа
 > * Создание виртуальной машины из пользовательского образа
 > * Получение списка всех образов в подписке
-> * Удаление образа
+> * удалять образ.
 
 Перейдите к следующему руководству, чтобы узнать о высокодоступных виртуальных машинах.
 

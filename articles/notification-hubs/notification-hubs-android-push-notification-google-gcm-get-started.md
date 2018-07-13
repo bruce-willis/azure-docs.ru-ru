@@ -17,11 +17,11 @@ ms.custom: mvc
 ms.date: 04/05/2018
 ms.author: dimazaid
 ms.openlocfilehash: efad7353a477577e5b5ac862b418ce78b1c4c304
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778483"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38697258"
 ---
 # <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -148,8 +148,8 @@ ms.locfileid: "33778483"
     Обновите три заполнителя в следующем коде для класса `NotificationSettings`:
    
    * **SenderId**: укажите номер проекта, полученный ранее в [консоли Google Cloud](http://cloud.google.com/console).
-   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портале Azure].
-   * **HubName**: используйте имя центра уведомлений, которое отображается на [портале Azure] на странице центра.
+   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портал Azure].
+   * **HubName**: используйте имя центра уведомлений, которое отображается на [портал Azure] на странице центра.
      
      `NotificationSettings` :
      
@@ -447,7 +447,7 @@ ms.locfileid: "33778483"
       ![Тестирование на устройстве Android — уведомления][21]
 
 ### <a name="test-send-push-notifications-from-the-azure-portal"></a>Проверка отправки push-уведомлений с портала Azure
-Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портале Azure]. 
+Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портал Azure]. 
 
 1. В разделе **Устранение неполадок** выберите **Тестовая отправка**. 
 2. В качестве **платформы** выберите **Android**.
@@ -496,7 +496,7 @@ ms.locfileid: "33778483"
     ```
 3. В файле `NotificationSetting.java` добавьте приведенный ниже параметр в класс `NotificationSettings`.
    
-    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портале Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
+    Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портал Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
    
     ```java
     public static String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
@@ -731,4 +731,4 @@ ms.locfileid: "33778483"
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
 [Use Notification Hubs to send breaking news]: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
-[портале Azure]: https://portal.azure.com
+[портал Azure]: https://portal.azure.com

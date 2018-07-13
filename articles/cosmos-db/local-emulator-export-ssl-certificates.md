@@ -1,5 +1,5 @@
 ---
-title: Экспорт сертификатов эмулятора Azure Cosmos DB | Документация Майкрософт
+title: Экспорт сертификатов эмулятора Azure Cosmos DB | Документы Майкрософт
 description: При разработке на языках и в средах выполнения, не использующих хранилище сертификатов Windows, вам потребуется экспортировать SSL-сертификаты и управлять ими. В этой статье приведены пошаговые инструкции.
 services: cosmos-db
 keywords: Эмулятор Azure Cosmos DB
@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 06/06/2017
 ms.author: tvoellm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5fce6553ce7407f892ed1de1f71bc812798f91c0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 237ab0ed99793f54574c4b81e883acb8c2bc57a9
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34611812"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37082107"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs"></a>Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js
 
@@ -90,7 +90,7 @@ ms.locfileid: "34611812"
 
 По умолчанию при подключении к локальному эмулятору [пакет SDK Node.js (версии 1.10.1 или выше)](sql-api-sdk-node.md) для API SQL не использует SSL-сертификат. Однако если вы хотите реализовать проверку SSL, используйте примеры, приведенные в [документации по Node.js](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы выполнили следующее:
 
@@ -99,7 +99,7 @@ ms.locfileid: "34611812"
 > * экспортировали SSL-сертификаты;
 > * узнали, как использовать сертификаты на Java, Python и Node.js.
 
-Теперь можно приступать к руководству "Создание триггера HTTP в Функциях Azure с помощью входной привязки Azure Cosmos DB".
+Теперь можно перейти к разделу основных понятий, чтобы получить дополнительные сведения о службе Azure Cosmos DB. 
 
 > [!div class="nextstepaction"]
-> [Создание триггера HTTP в Функциях Azure с помощью входной привязки Azure Cosmos DB](tutorial-functions-http-trigger.md) 
+>[Настраиваемые уровни согласованности данных в Azure Cosmos DB](../cosmos-db/consistency-levels.md)

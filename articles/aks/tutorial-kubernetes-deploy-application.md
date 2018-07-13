@@ -2,30 +2,30 @@
 title: Руководство по Kubernetes в Azure. Развертывание приложения
 description: Руководство по AKS.Развертывание приложения
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/22/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: e992d7ca455ad4d95d0f10a94c6c9ce8055f8286
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: e0e349361afaac9aec816d7f5d158322d6f4e691
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067679"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37101052"
 ---
 # <a name="tutorial-run-applications-in-azure-kubernetes-service-aks"></a>Руководство. Запуск приложения в службе Azure Kubernetes
 
-В этом руководстве (часть 4 из 8) выполняется развертывание примера приложения в кластер Kubernetes. В частности, рассматриваются такие шаги:
+В этом руководстве (часть 4 из 7) выполняется развертывание примера приложения в кластер Kubernetes. В частности, рассматриваются такие шаги:
 
 > [!div class="checklist"]
 > * обновление файлов манифестов Kubernetes;
 > * выполнение приложения в Kubernetes;
 > * Тестирование приложения
 
-В последующих руководствах описывается, как развернуть и обновить приложение, а также настроить Log Analytics для мониторинга кластера Kubernetes.
+В следующих руководствах это приложение масштабируется и обновляется.
 
 Для работы с этим руководством требуется понимание основных концепций Kubernetes. Подробные сведения см. в [документации по Kubernetes][kubernetes-documentation].
 
@@ -118,7 +118,7 @@ azure-vote-front   10.0.34.242   52.179.23.131   80:30676/TCP   2m
 
 Выполните приведенные ниже инструкции по [разрешению доступа при помощи секрета Kubernetes](https://docs.microsoft.com/azure/container-registry/container-registry-auth-aks#access-with-kubernetes-secret).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве приложение Azure для голосования было развернуто в кластере Kubernetes Службы контейнеров Azure. Вам предстоят следующие задачи:
 

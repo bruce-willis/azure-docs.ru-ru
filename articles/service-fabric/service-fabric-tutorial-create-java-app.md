@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Java для Service Fabric | Документация Майкрософт
+title: Создание приложения Java в Service Fabric в Azure | Документы Майкрософт
 description: В этом руководстве вы узнаете, как создать приложение Java надежной службы с внешним интерфейсом, создать серверную часть с отслеживанием состояния надежных служб и развернуть приложение в кластер.
 services: service-fabric
 documentationcenter: java
@@ -15,14 +15,15 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: b512ba91d1df7ec0432bdf9048268714e570fe6b
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: a8522dbe20f302a1819b89eaea92562a2dcf43a5
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36958682"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37114131"
 ---
-# <a name="tutorial-create-and-deploy-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по созданию и развертыванию приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния
+# <a name="tutorial-create-an-application-with-a-java-web-api-front-end-service-and-a-stateful-back-end-service-on-service-fabric"></a>Руководство по созданию приложения с интерфейсной службой веб-API Java и серверной службой с отслеживанием состояния в Service Fabric
+
 Это руководство представляет первую часть цикла. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения Java, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. В этой серии руководств требуется, чтобы у вас был работающий компьютер для разработчиков Mac OSX или Linux. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-java-quickstart) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](service-fabric-tutorial-create-java-app.md#walk-through-the-voting-sample-application).
 
 ![Локальное приложение для голосования](./media/service-fabric-tutorial-create-java-app/votingjavalocal.png)
@@ -35,20 +36,23 @@ ms.locfileid: "36958682"
 > * Использование удаленного взаимодействия службы для связи со службой с отслеживанием состояния.
 > * Развертывание приложения в локальном кластере Service Fabric.
 
-Из этого цикла руководств вы узнаете, как выполнять такие задачи:
+Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> *  Развертывание приложения Java служб Service Fabric Reliable Services в Azure.
+> * Развертывание приложения Java служб Service Fabric Reliable Services в Azure.
 > * [Развертывание и отладка приложения в локальном кластере.](service-fabric-tutorial-debug-log-local-cluster.md)
 > * [Развертывание приложения в кластере Azure.](service-fabric-tutorial-java-deploy-azure.md)
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-java-elk.md)
 > * [Настройка процесса непрерывной интеграции и доставки](service-fabric-tutorial-java-jenkins.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Перед началом работы с этим руководством выполните следующие действия:
-- Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Настройте среду разработки для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md). Следуя инструкциям, установите подключаемый модуль Eclipse, Gradle, пакет SDK для Service Fabric и интерфейс командной строки Service Fabric (sfctl).
+
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Настройте среду разработки для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md). Следуя инструкциям, установите подключаемый модуль Eclipse, Gradle, пакет SDK для Service Fabric и интерфейс командной строки Service Fabric (sfctl).
 
 ## <a name="create-the-front-end-java-stateless-service"></a>Создание интерфейсной службы без отслеживания состояния Java
+
 Сначала создайте веб-интерфейс приложения для голосования. Служба без отслеживания состояния Java поддерживает упрощенный HTTP-сервер, где размещен веб-интерфейс на базе AngularJS. Запросы от пользователя обрабатываются с помощью этой службы без отслеживания состояния и отправляются как вызов удаленной процедуры в службу с отслеживанием состояния для хранения голоса. 
 
 1. Запуск Eclipse
@@ -62,7 +66,7 @@ ms.locfileid: "36958682"
     ![Выбор службы без отслеживания состояния Java в диалоговом окне создания службы](./media/service-fabric-tutorial-create-java-app/name-sf-proj-wizard.png) 
 
 4. На странице **Добавление службы** выберите **Служба без отслеживания состояния** и укажите имя службы **VotingWeb**. Нажмите кнопку **Готово**, чтобы создать проект.
-   
+
     ![Создание службы без отслеживания состояния]( ./media/service-fabric-tutorial-create-java-app/createvotingweb.png)
 
     Eclipse создает приложение и проект службы и отображает их в обозревателе пакетов.
@@ -80,9 +84,10 @@ ms.locfileid: "36958682"
 | settings.gradle | Содержит имена проектов Gradle в этой папке. |
 
 ### <a name="add-html-and-javascript-to-the-votingweb-service"></a>Добавление HTML и JavaScript в службу VotingWeb
-Чтобы добавить пользовательский интерфейс, который может преобразоваться для просмотра через службу без отслеживания состояния, добавьте HTML-файл в *VotingApplication/VotingWebPkg/Code*. Этот HTML-файл преобразовывается для просмотра на упрощенном HTTP-сервере, встроенном в службу Java без отслеживания состояния. 
 
-1. Разверните каталог *VotingApplication*, чтобы получить доступ к каталогу *VotingApplication/VotingWebPkg/Code*. 
+Чтобы добавить пользовательский интерфейс, который может преобразоваться для просмотра через службу без отслеживания состояния, добавьте HTML-файл в *VotingApplication/VotingWebPkg/Code*. Этот HTML-файл преобразовывается для просмотра на упрощенном HTTP-сервере, встроенном в службу Java без отслеживания состояния.
+
+1. Разверните каталог *VotingApplication*, чтобы получить доступ к каталогу *VotingApplication/VotingWebPkg/Code*.
 
 2. Щелкните правой кнопкой мыши каталог *Код*, а затем выберите **Создать**->**Другое**.
 
@@ -201,7 +206,8 @@ app.controller("VotingAppController", ['$rootScope', '$scope', '$http', '$timeou
 ```
 
 ### <a name="update-the-votingwebservicejava-file"></a>Обновление файла VotingWebService.java
-В подпроекте **VotingWeb** откройте файл *VotingWeb/src/statelessservice/VotingWebService.java*. **VotingWebService** является шлюзом службы без отслеживания состояния, отвечающим за настройку прослушивателя для обмена данными для интерфейсного API. 
+
+В подпроекте **VotingWeb** откройте файл *VotingWeb/src/statelessservice/VotingWebService.java*. **VotingWebService** является шлюзом службы без отслеживания состояния, отвечающим за настройку прослушивателя для обмена данными для интерфейсного API.
 
 Замените содержимое метода **createServiceInstanceListeners** в файле следующим и сохраните изменения.
 
@@ -219,7 +225,8 @@ protected List<ServiceInstanceListener> createServiceInstanceListeners() {
 ```
 
 ### <a name="add-the-httpcommunicationlistenerjava-file"></a>Добавление файла HTTPCommunicationListener.java
-Прослушиватель для обмена данными HTTP действует в качестве контроллера, который настраивает сервер HTTP и предоставляет API, определяющий действия голосования. Щелкните правой кнопкой мыши пакет *statelessservice* в папке *VotingWeb/src/statelessservice*, а затем выберите **Создать-> Другое...->Общее->Файл** и щелкните **Далее**.  Назовите файл *HttpCommunicationListener.java* и щелкните **Готово**.  
+
+Прослушиватель для обмена данными HTTP действует в качестве контроллера, который настраивает сервер HTTP и предоставляет API, определяющий действия голосования. Щелкните правой кнопкой мыши пакет *statelessservice* в папке *VotingWeb/src/statelessservice*, а затем выберите **Создать-> Другое...->Общее->Файл** и щелкните **Далее**.  Назовите файл *HttpCommunicationListener.java* и щелкните **Готово**.
 
 Замените содержимое файла следующим образом, а затем сохраните изменения.  Затем на этапе [Обновление файла HttpCommunicationListener.java](#updatelistener_anchor) этот файл будет изменен для преобразования для просмотра, чтения и записи данных голосования, полученных из серверной службы.  Теперь прослушиватель просто возвращает статические HTML для приложения для голосования.
 
@@ -259,7 +266,7 @@ import system.fabric.CancellationToken;
 public class HttpCommunicationListener implements CommunicationListener {
 
     private static final Logger logger = Logger.getLogger(HttpCommunicationListener.class.getName());
-    
+
     private static final String HEADER_CONTENT_TYPE = "Content-Type";
     private static final int STATUS_OK = 200;
     private static final int STATUS_NOT_FOUND = 404; 
@@ -267,7 +274,7 @@ public class HttpCommunicationListener implements CommunicationListener {
     private static final String RESPONSE_NOT_FOUND = "404 (Not Found) \n";
     private static final String MIME = "text/html";  
     private static final String ENCODING = "UTF-8";
-    
+
     private static final String ROOT = "wwwroot/";
     private static final String FILE_NAME = "index.html";
     private StatelessServiceContext context;
@@ -290,7 +297,7 @@ public class HttpCommunicationListener implements CommunicationListener {
             logger.log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex);
         }
-        
+
         // Responsible for rendering the HTML layout described in the previous step
         server.createContext("/", new HttpHandler() {
             @Override
@@ -307,7 +314,7 @@ public class HttpCommunicationListener implements CommunicationListener {
                     } else {    
                       Headers h = t.getResponseHeaders();
                       h.set(HEADER_CONTENT_TYPE, MIME);
-                      t.sendResponseHeaders(STATUS_OK, 0);              
+                      t.sendResponseHeaders(STATUS_OK, 0);
     
                       OutputStream os = t.getResponseBody();
                       FileInputStream fs = new FileInputStream(file);
@@ -316,7 +323,7 @@ public class HttpCommunicationListener implements CommunicationListener {
                       while ((count = fs.read(buffer)) >= 0) {
                         os.write(buffer,0,count);
                       }
-                      
+
                       fs.close();
                       os.close();
                     }  
@@ -329,11 +336,11 @@ public class HttpCommunicationListener implements CommunicationListener {
         /*
         [Replace this entire comment block in the 'Connect the services' section]
         */
-        
+
         server.setExecutor(null);
         server.start();
     }
-    
+
     //Helper method to parse raw HTTP requests
     private Map<String, String> queryToMap(String query){
         Map<String, String> result = new HashMap<String, String>();
@@ -379,6 +386,7 @@ public class HttpCommunicationListener implements CommunicationListener {
 ```
 
 ### <a name="configure-the-listening-port"></a>Настройка порта прослушивания
+
 Когда создается интерфейсная служба VotingWebService, Service Fabric выбирает порт для ее прослушивания.  Так как служба VotingWeb выступает в роли клиентской части этого приложения и принимает внешний трафик, мы привяжем эту службу к фиксированному и хорошо известному порту. В обозревателе пакетов откройте *VotingWebService/VotingWebServicePkg/ServiceManifest.xml*.  В разделе **Ресурсы** найдите ресурс **Конечная точка** и задайте для **порта** значение 8080 или номер другого порта. Для локального развертывания и запуска приложения порт прослушивания приложения должен быть открыт и доступен на компьютере. Вставьте следующий фрагмент кода в тег **ServiceManifest**.
 
 ```xml
@@ -390,16 +398,17 @@ public class HttpCommunicationListener implements CommunicationListener {
         <Endpoint Name="WebEndpoint" Protocol="http" Port="8080" />
     </Endpoints>
   </Resources>
-```  
+```
 
 ## <a name="add-a-stateful-back-end-service-to-your-application"></a>Добавление в приложение серверной службы с отслеживанием состояния
+
 Теперь, когда схема службы веб-API Java завершена, продолжим и завершим серверную службу с отслеживанием состояния.
 
 Service Fabric позволяет согласованно и надежно хранить данные прямо в службе с помощью надежных коллекций. Надежные коллекции представляют собой набор высокодоступных и надежных коллекций классов. Эти классы могут использовать все, кто использовал коллекции Java.
 
 1. В обозревателе пакетов в проекте приложения щелкните правой кнопкой мыши **Voting** и последовательно выберите **Service Fabric > Add Service Fabric Service** (Добавить службу Service Fabric).
-   
-2. В диалоговом окне **Добавить службу** выберите **Служба с отслеживанием состояния**, назовите службу **VotingData** и щелкните **Добавить службу**. 
+
+2. В диалоговом окне **Добавить службу** выберите **Служба с отслеживанием состояния**, назовите службу **VotingData** и щелкните **Добавить службу**.
 
     ![Добавление новой службы в существующее приложение](./media/service-fabric-tutorial-create-java-app/addstatefuljava.png)
 
@@ -540,8 +549,9 @@ class VotingDataService extends StatefulService implements VotingRPC {
 }
 ```
 
-## <a name="create-the-communication-interface-to-your-application"></a>Создание интерфейса для обмена данными с приложением 
-Теперь создается схема для интерфейсной службы без отслеживания состояния и серверной службы. Следующий шаг — подключение двух служб. И интерфейсная, и серверная служба используют интерфейс VotingRPC, который определяет операции приложения для голосования. Этот интерфейс реализуется с помощью интерфейсных и серверных служб, включая удаленные вызовы процедур между двумя службами. Так как Eclipse не поддерживает добавление подпроектов Gradle, пакет, который содержит интерфейс, нужно добавить вручную. 
+## <a name="create-the-communication-interface-to-your-application"></a>Создание интерфейса для обмена данными с приложением
+
+Теперь создается схема для интерфейсной службы без отслеживания состояния и серверной службы. Следующий шаг — подключение двух служб. И интерфейсная, и серверная служба используют интерфейс VotingRPC, который определяет операции приложения для голосования. Этот интерфейс реализуется с помощью интерфейсных и серверных служб, включая удаленные вызовы процедур между двумя службами. Так как Eclipse не поддерживает добавление подпроектов Gradle, пакет, который содержит интерфейс, нужно добавить вручную.
 
 1. Щелкните правой кнопкой мыши проект **Voting** в обозревателе пакетов и щелкните **Создать -> Другое...**
 
@@ -552,7 +562,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
 3. Создайте файл в папке *Voting/VotingRPC/src/rpcmethods*, который называется *VotingRPC.java*, и вставьте следующее в файл **VotingRPC.java**. 
 
     ```java
-    package rpcmethods; 
+    package rpcmethods;
     
     import java.util.ArrayList;
     import java.util.concurrent.CompletableFuture;
@@ -878,6 +888,7 @@ class VotingDataService extends StatefulService implements VotingRPC {
     ```
 
 ## <a name="deploy-application-to-local-cluster"></a>Развертывание приложения в локальном кластере
+
 К этому моменту приложение готово к развертыванию в локальный кластер Service Fabric.
 
 1. Щелкните правой кнопкой мыши проект **Voting** в обозревателе пакетов и выберите **Service Fabric -> Build Application** (Создать приложение), чтобы создать приложение.
@@ -897,10 +908,11 @@ class VotingDataService extends StatefulService implements VotingRPC {
     ```
 
 4. В обозревателе пакетов для Eclipse щелкните правой кнопкой мыши проект **Voting** и выберите **Service Fabric -> Publish Application...** (Публикация приложения...). 
-5. В окне **публикации приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Publish** (Опубликовать).
+5. В окне **Публикация приложения** выберите **Local.json** в раскрывающемся списке и нажмите кнопку **Опубликовать**.
 6. Откройте браузер и перейдите по адресу **http://localhost:8080**, чтобы просмотреть выполняющееся приложение в локальном кластере Service Fabric. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 В этой части руководства вы узнали, как выполнить следующие действия:
 
 > [!div class="checklist"]

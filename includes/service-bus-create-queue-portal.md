@@ -1,4 +1,21 @@
-Убедитесь, что вы уже создали пространство имен служебной шины, как показано [здесь][namespace-how-to].
+---
+title: включение файла
+description: включение файла
+services: service-bus-messaging
+author: sethmanheim
+ms.service: service-bus-messaging
+ms.topic: include
+ms.date: 06/29/2018
+ms.author: sethm
+ms.custom: include file
+ms.openlocfilehash: bad7e87cb194fb7d8846e7e675881658a1d33b1e
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37138166"
+---
+Убедитесь в том, что вы уже создали пространство имен служебной шины, как показано [здесь][namespace-how-to].
 
 1. Войдите на [портал Azure][azure-portal].
 2. В левой области навигации портала щелкните **Служебная шина**. Если элемент **Служебная шина** не отображается, щелкните **Все службы**.

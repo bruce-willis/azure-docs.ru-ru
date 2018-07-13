@@ -2,25 +2,25 @@
 title: Руководство по Kubernetes в Azure. Обновление кластера
 description: Руководство по Kubernetes в Azure. Обновление кластера
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
-ms.date: 04/05/2018
-ms.author: nepeters
+ms.date: 06/29/2018
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 0886d13b62b6b8ad1c0dcd430ce48bcc51d6d465
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: d66197b69a0804a49fabb72e9b97c77e000bdf88
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33933837"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131649"
 ---
 # <a name="tutorial-upgrade-kubernetes-in-azure-kubernetes-service-aks"></a>Руководство. Обновление Kubernetes в службе Azure Kubernetes (AKS)
 
-Кластер службы Azure Kubernetes (AKS) можно обновить с помощью Azure CLI. При обновлении узлы Kubernetes [блокируются и останавливаются][kubernetes-drain], чтобы минимизировать время простоя запущенных приложений.
+Кластер службы Azure Kubernetes (AKS) можно обновить с помощью Azure CLI. При обновлении узлы Kubernetes тщательно [блокируются и очищаются][kubernetes-drain], чтобы минимизировать влияние на работающие приложения.
 
-В этом руководстве (часть восьмая из восьми) обновляется кластер Kubernetes. Здесь будут выполнены следующие задачи:
+В этом руководстве (часть седьмая из семи) мы обновляем кластер Kubernetes. Здесь будут выполнены следующие задачи:
 
 > [!div class="checklist"]
 > * Определение текущей и доступной версии Kubernetes.
@@ -33,90 +33,58 @@ ms.locfileid: "33933837"
 
 Если вы не выполнили эти действия и хотите продолжить работу, вернитесь к руководству по [созданию образов контейнеров (часть 1)][aks-tutorial-prepare-app].
 
-
 ## <a name="get-cluster-versions"></a>Получение версий кластера
 
-Перед обновлением кластера выполните команду `az aks get-upgrades`, чтобы проверить выпуски Kubernetes, доступные для обновления.
+Перед обновлением кластера выполните команду [az aks get-upgrades][], чтобы проверить выпуски Kubernetes, доступные для обновления.
 
 ```azurecli
 az aks get-upgrades --name myAKSCluster --resource-group myResourceGroup --output table
 ```
 
-В этом примере текущая версия узла — `1.7.9`, а доступные версии обновления находятся ниже в столбце обновлений.
+В следующем примере текущая версия узла — *1.9.6*, а доступные для обновления версии показаны в столбце *Обновления*.
 
 ```
 Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
--------  ---------------  ---------------  -----------------  ----------------------------------
-default  myResourceGroup  1.7.9            1.7.9              1.7.12, 1.8.1, 1.8.2, 1.8.6, 1.8.7
+-------  ---------------  ---------------  -----------------  ----------
+default  myResourceGroup  1.9.6            1.9.6              1.10.3
 ```
 
 ## <a name="upgrade-cluster"></a>Обновление кластера
 
-Используйте команду `az aks upgrade`, чтобы обновить узлы кластера. В следующих примерах кластер обновляется до версии `1.8.2`.
+Для обновления узлов кластера используйте команду [az aks upgrade][]. В следующем примере кластер обновляется до версии *1.10.3*.
 
 ```azurecli
-az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.8.2
+az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.10.3
 ```
 
-Выходные данные:
+Ниже приведен краткий пример выходных данных, где в качестве *kubernetesVersion* показана версия *1.10.3*:
 
 ```json
 {
+  "agentPoolProfiles": [
+    {
+      "count": 3,
+      "maxPods": 110,
+      "name": "nodepool1",
+      "osType": "Linux",
+      "storageProfile": "ManagedDisks",
+      "vmSize": "Standard_DS1_v2",
+    }
+  ],
+  "dnsPrefix": "myAKSClust-myResourceGroup-19da35",
+  "enableRbac": false,
+  "fqdn": "myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io",
   "id": "/subscriptions/<Subscription ID>/resourcegroups/myResourceGroup/providers/Microsoft.ContainerService/managedClusters/myAKSCluster",
+  "kubernetesVersion": "1.10.3",
   "location": "eastus",
   "name": "myAKSCluster",
-  "properties": {
-    "accessProfiles": {
-      "clusterAdmin": {
-        "kubeConfig": "..."
-      },
-      "clusterUser": {
-        "kubeConfig": "..."
-      }
-    },
-    "agentPoolProfiles": [
-      {
-        "count": 1,
-        "dnsPrefix": null,
-        "fqdn": null,
-        "name": "myAKSCluster",
-        "osDiskSizeGb": null,
-        "osType": "Linux",
-        "ports": null,
-        "storageProfile": "ManagedDisks",
-        "vmSize": "Standard_D2_v2",
-        "vnetSubnetId": null
-      }
-    ],
-    "dnsPrefix": "myK8sClust-myResourceGroup-4f48ee",
-    "fqdn": "myk8sclust-myresourcegroup-4f48ee-406cc140.hcp.eastus.azmk8s.io",
-    "kubernetesVersion": "1.8.2",
-    "linuxProfile": {
-      "adminUsername": "azureuser",
-      "ssh": {
-        "publicKeys": [
-          {
-            "keyData": "..."
-          }
-        ]
-      }
-    },
-    "provisioningState": "Succeeded",
-    "servicePrincipalProfile": {
-      "clientId": "e70c1c1c-0ca4-4e0a-be5e-aea5225af017",
-      "keyVaultSecretRef": null,
-      "secret": null
-    }
-  },
-  "resourceGroup": "myResourceGroup",
-  "tags": null,
   "type": "Microsoft.ContainerService/ManagedClusters"
 }
 ```
 
 ## <a name="validate-upgrade"></a>Проверка обновления
 
-Проверьте, успешно ли прошло обновление, выполнив команду `az aks show`.
+Проверьте, выполнено ли обновление, введя команду [az aks show][].
 
 ```azurecli
 az aks show --name myAKSCluster --resource-group myResourceGroup --output table
@@ -127,7 +95,7 @@ az aks show --name myAKSCluster --resource-group myResourceGroup --output table
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ----------------------------------------------------------------
-myAKSCluster  eastus     myResourceGroup  1.8.2                Succeeded            myk8sclust-myresourcegroup-3762d8-2f6ca801.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.10.3               Succeeded            myaksclust-myresourcegroup-19da35-bd54a4be.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -150,3 +118,6 @@ myAKSCluster  eastus     myResourceGroup  1.8.2                Succeeded        
 <!-- LINKS - internal -->
 [aks-intro]: ./intro-kubernetes.md
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
+[az aks show]: /cli/azure/aks#az-aks-show
+[az aks get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
+[az aks upgrade]: /cli/azure/aks#az-aks-upgrade

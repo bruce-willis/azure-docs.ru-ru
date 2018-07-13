@@ -17,11 +17,11 @@ ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
 ms.openlocfilehash: 083b0c956055ab5b54a4af2eec57f096613cbe65
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778224"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38681525"
 ---
 # <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -44,7 +44,7 @@ ms.locfileid: "33778224"
 ## <a name="prerequisites"></a>предварительным требованиям
 
 - Активная учетная запись Azure. Если ее нет, можно создать [бесплатную пробную учетную запись](https://azure.microsoft.com/free) всего за несколько минут. 
-- [платформу обмена сообщениями Microsoft Azure]
+- [Платформа обмена сообщениями Microsoft Azure]
 - последняя версия [Xcode]
 - устройство с iOS 10 (или более поздней версии);
 - [программе для разработчиков на платформе Apple](https://developer.apple.com/programs/) .
@@ -93,7 +93,7 @@ ms.locfileid: "33778224"
 
     ![Xcode — возможности push-уведомлений][12]
    
-5. Загрузите [платформу обмена сообщениями Microsoft Azure] и распакуйте файлы. В XCode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект XCode. Нажмите кнопку **Options** (Параметры), установите флажок **Copy items if needed** (Копировать элементы при необходимости) и нажмите кнопку **Add** (Добавить).
+5. Загрузите [Платформа обмена сообщениями Microsoft Azure] и распакуйте файлы. В XCode щелкните проект правой кнопкой мыши и выберите параметр **Add Files to** (Добавить файлы в), чтобы добавить папку **WindowsAzureMessaging.framework** в проект XCode. Нажмите кнопку **Options** (Параметры), установите флажок **Copy items if needed** (Копировать элементы при необходимости) и нажмите кнопку **Add** (Добавить).
 
     ![Распаковка пакета SDK Azure][10]
 
@@ -165,7 +165,7 @@ ms.locfileid: "33778224"
 11. Выполните сборку приложения и запустите его на устройстве, чтобы убедиться в отсутствии сбоев.
 
 ## <a name="send-test-push-notifications"></a>Отправка тестовых push-уведомлений
-Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портале Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
 ![Портал Azure — тестовая отправка][30]
 
@@ -178,17 +178,17 @@ ms.locfileid: "33778224"
 1. Запустите приложение и убедитесь, что оно успешно зарегистрировано, а затем нажмите кнопку **ОК**.
    
     ![Проверка регистрации push-уведомления приложения iOS][33]
-2. Отправьте тестовое push-уведомление с [портале Azure], как описано в предыдущем разделе. 
+2. Отправьте тестовое push-уведомление с [портал Azure], как описано в предыдущем разделе. 
 
 3. Push-уведомление будет отправлено на все устройства, зарегистрированные для получения уведомлений от того или иного центра уведомлений.
    
     ![Проверка получения push-уведомления приложения iOS][35]
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом простом примере мы отправили push-уведомления на все зарегистрированные устройства iOS. Сведения о том, как отправлять push-уведомления на конкретные устройства iOS, см. в следующем руководстве. 
+В этом простом примере мы отправили push-уведомления на все зарегистрированные устройства iOS. Сведения о том, как отправлять push-уведомления на конкретные устройства iOS, см. в следующем руководстве: 
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений на конкретные устройства](notification-hubs-ios-xplat-segmented-apns-push-notification.md)
+>[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-ios-xplat-segmented-apns-push-notification.md)
 
 
 <!-- Images. -->
@@ -211,7 +211,7 @@ ms.locfileid: "33778224"
 
 
 <!-- URLs. -->
-[платформу обмена сообщениями Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkID=799698&clcid=0x409
+[Платформа обмена сообщениями Microsoft Azure]: http://go.microsoft.com/fwlink/?LinkID=799698&clcid=0x409
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039
@@ -227,4 +227,4 @@ ms.locfileid: "33778224"
 [Use Notification Hubs to send breaking news]: notification-hubs-ios-xplat-segmented-apns-push-notification.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
-[портале Azure]: https://portal.azure.com
+[портал Azure]: https://portal.azure.com

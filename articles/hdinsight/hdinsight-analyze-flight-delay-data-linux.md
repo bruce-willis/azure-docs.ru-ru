@@ -1,5 +1,5 @@
 ---
-title: Руководство. Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием Hive в HDInsight | Документация Майкрософт
+title: Руководство. Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием Hive в HDInsight | Документы Майкрософт
 description: Сведения об извлечении данных из необработанного набора данных в формате CSV, преобразовании их с помощью Hive в HDInsight и загрузке преобразованных данных в базу данных SQL Azure с помощью Sqoop.
 services: hdinsight
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive,mvc
-ms.openlocfilehash: 46c80f326c8210ac3282cf128058cee91ff3836c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 1abc0a8ed9aec1082a4710647f6c03c87e1fd1d2
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33770843"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098235"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-apache-hive-on-azure-hdinsight"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 
@@ -32,7 +32,7 @@ ms.locfileid: "33770843"
 
 > [!div class="checklist"]
 > * загрузка образца данных о рейсах;
-> * отправка данных в кластер HDInsight;
+> * Отправка данных в кластер HDInsight
 > * преобразование данных с помощью Hive;
 > * создание таблицы в базе данных SQL Azure;
 > * экспорт данных в базу данных SQL Azure с помощью Sqoop.
@@ -44,7 +44,7 @@ ms.locfileid: "33770843"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Кластер Hadoop в HDInsight на платформе Linux**. Пошаговые инструкции по созданию кластера HDInsight под управлением Linux см. в статье [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
@@ -60,7 +60,7 @@ ms.locfileid: "33770843"
 
 2. На странице выберите следующие значения:
 
-   | ИМЯ | Значение |
+   | Действие | Значение |
    | --- | --- |
    | Фильтр года |2013 |
    | Период фильтра |Январь |
@@ -311,7 +311,7 @@ ms.locfileid: "33770843"
 
     Введите `exit` для выхода из служебной программы tsql.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом руководстве вы узнали, как выполнить извлечение, преобразование и загрузку данных с помощью кластера Apache Hadoop в HDInsight. Ознакомьтесь со следующим руководством, чтобы научиться создавать кластеры Hadoop в HDInsight по запросу с помощью фабрики данных Azure.
 
@@ -320,6 +320,7 @@ ms.locfileid: "33770843"
 
 Чтобы узнать дополнительные возможности работы с данными в HDInsight, ознакомьтесь со следующими статьями:
 
+* [Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](../storage/data-lake-storage/tutorial-extract-transform-load-hive.md)
 * [Использование Hive с HDInsight][hdinsight-use-hive]
 * [Использование Pig с HDInsight][hdinsight-use-pig]
 * [Разработка программ MapReduce на Java для Hadoop в HDInsight][hdinsight-develop-mapreduce]
