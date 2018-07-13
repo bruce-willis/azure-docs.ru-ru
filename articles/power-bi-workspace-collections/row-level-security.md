@@ -15,12 +15,12 @@ ms.tgt_pltfrm: NA
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 7256e2f798fbc32c098f19f60b62e577300868c7
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 09a0de1efc909b72192f9d8584edd0fda5e6217d
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31414112"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37856357"
 ---
 # <a name="row-level-security-with-power-bi-workspace-collections"></a>Безопасность уровня строк в коллекциях рабочих областей Power BI
 
@@ -93,7 +93,7 @@ ms.locfileid: "31414112"
 1. **Файл** -> **Параметры и настройки** -> **Функции предварительной версии** -> **Включить кроссфильтрацию в обоих направлениях для DirectQuery**;
 2. **Файл** -> **Параметры и настройки** -> **DirectQuery** -> **Разрешить неограниченные меры в режиме DirectQuery**.
 
-Дополнительные сведения о двунаправленной перекрестной фильтрации см. в техническом документе [Bidirectional cross-filtering in SQL Server Analysis Services 2016 and Power BI Desktop](http://download.microsoft.com/download/2/7/8/2782DF95-3E0D-40CD-BFC8-749A2882E109/Bidirectional cross-filtering in Analysis Services 2016 and Power BI.docx) (Двунаправленная перекрестная фильтрация в службах SQL Server Analysis Services 2016 и Power BI Desktop).
+Дополнительные сведения о двунаправленной перекрестной фильтрации см. в техническом документе [Bidirectional cross-filtering in SQL Server Analysis Services 2016 and Power BI Desktop](http://download.microsoft.com/download/2/7/8/2782DF95-3E0D-40CD-BFC8-749A2882E109/Bidirectional%20cross-filtering%20in%20Analysis%20Services%202016%20and%20Power%20BI.docx) (Двунаправленная перекрестная фильтрация в службах SQL Server Analysis Services 2016 и Power BI Desktop).
 
 Это последнее, что нужно сделать в Power BI Desktop. Но необходимо проделать еще некоторую работу, чтобы правила безопасности на уровне строк, которые мы определили, работали в Power BI Embedded. Пользователи проходят проверку подлинности и авторизацию в приложении, а для предоставления им доступа к определенному отчету Power BI Embedded используются маркеры приложений. В Power BI Embedded нет сведений о том, кем является конкретный пользователь. Для функционирования безопасности на уровне строк потребуется передавать дополнительный контекст в маркере приложения.
 

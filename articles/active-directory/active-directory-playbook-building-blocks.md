@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: c5f3904621dcc4fe992b2c2f8293ad706b01f713
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 45dedd8c4d6ae2f9b54873d87f82c2e605a8c2aa
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446781"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38451705"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -42,7 +42,7 @@ ms.locfileid: "37446781"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Определен клиент Azure AD с действительной подпиской Azure | [Как получить клиент Azure Active Directory](active-directory-howto-tenant.md)<br/>**Примечание.** Если у вас уже есть среда с лицензиями Azure AD Premium, вы можете получить подписку нулевой емкости по адресу https://aka.ms/accessaad <br/>Дополнительные сведения см. по ссылкам https://blogs.technet.microsoft.com/enterprisemobility/2016/02/26/azure-ad-mailbag-azure-subscriptions-and-azure-ad-2/ и https://technet.microsoft.com/library/dn832618.aspx |
-| Домены определены и проверены | [Добавление имени личного домена в Azure Active Directory](active-directory-domains-add-azure-portal.md)<br/>**Примечание.** Некоторые рабочие нагрузки, такие как Power BI, могли уже подготовить клиент Azure AD. Чтобы проверить, связан ли заданный домен с каким-либо клиентом, перейдите по адресу https://login.microsoftonline.com/{domain}/v2.0/.well-known/openid-configuration. Если вы успешно получили ответ, значит домен уже назначен клиенту и может потребоваться перехват. В этом случае за дальнейшими указаниями обратитесь в корпорацию Майкрософт. Дополнительные сведения о вариантах перехвата см. в статье [Что такое самостоятельная регистрация для Azure?](active-directory-self-service-signup.md). |
+| Домены определены и проверены | [Добавление имени личного домена в Azure Active Directory](active-directory-domains-add-azure-portal.md)<br/>**Примечание.** Некоторые рабочие нагрузки, такие как Power BI, могли уже подготовить клиент Azure AD. Чтобы проверить, связан ли заданный домен с каким-либо клиентом, перейдите по адресу https://login.microsoftonline.com/{domain}/v2.0/.well-known/openid-configuration. Если вы успешно получили ответ, значит домен уже назначен клиенту и может потребоваться перехват. В этом случае за дальнейшими указаниями обратитесь в корпорацию Майкрософт. Дополнительные сведения о вариантах перехвата см. в статье [Что такое самостоятельная регистрация для Azure?](users-groups-roles/directory-self-service-signup.md). |
 | Включена пробная версия EMS или Azure AD Premium | [Бесплатная пробная версия Azure Active Directory Premium на один месяц](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Вы назначили лицензии Azure AD Premium или EMS пользователям подтверждения концепции | [Самостоятельное лицензирование и лицензирование пользователей в Azure Active Directory](active-directory-licensing-get-started-azure-portal.md) |
 | Учетные данные глобального администратора Azure AD | [Назначение ролей администратора в Azure Active Directory](users-groups-roles/directory-assign-admin-roles.md) |
@@ -125,11 +125,11 @@ ms.locfileid: "37446781"
 | Шаг | Ресурсы |
 | --- | --- |
 | Перейдите в колонку лицензий на портале управления Azure AD. | [Портал управления Azure AD: лицензирование](https://portal.azure.com/#blade/Microsoft_AAD_IAM/LicensesMenuBlade/Products) |
-| Назначьте лицензии группе безопасности с пользователями подтверждения концепции. | [Назначение лицензий группе пользователей в Azure Active Directory](active-directory-licensing-group-assignment-azure-portal.md) |
+| Назначьте лицензии группе безопасности с пользователями подтверждения концепции. | [Назначение лицензий группе пользователей в Azure Active Directory](users-groups-roles/licensing-groups-assign.md) |
 
 ### <a name="considerations"></a>Рекомендации
 
-При большом количестве проблем см. статью [Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory](active-directory-licensing-group-advanced.md).
+При большом количестве проблем см. статью [Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory](users-groups-roles/licensing-group-advanced.md).
 
 ## <a name="saas-federated-sso-configuration"></a>Настройка федеративного единого входа SaaS
 
@@ -468,24 +468,24 @@ ms.locfileid: "37446781"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Определите глобального администратора, который будет участвовать в подтверждении концепции для PIM. | [Приступая к использованию Azure AD Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md) |
-| Определите глобального администратора, который станет администратором безопасности. | [Приступая к использованию Azure AD Privileged Identity Management](active-directory-privileged-identity-management-getting-started.md)<br/> [Различные административные роли в Azure Active Directory PIM](active-directory-privileged-identity-management-roles.md) |
-| Необязательно: убедитесь, есть ли у глобальных администраторов доступ к электронной почте для использования уведомлений по электронной почте в PIM. | [Что такое Azure AD Privileged Identity Management? Настройка параметров активации ролей](active-directory-privileged-identity-management-configure.md#configure-the-role-activation-settings)
+| Определите глобального администратора, который будет участвовать в подтверждении концепции для PIM. | [Приступая к использованию Azure AD Privileged Identity Management](privileged-identity-management/pim-getting-started.md) |
+| Определите глобального администратора, который станет администратором безопасности. | [Приступая к использованию Azure AD Privileged Identity Management](privileged-identity-management/pim-getting-started.md)<br/> [Различные административные роли в Azure Active Directory PIM](privileged-identity-management/pim-roles.md) |
+| Необязательно: убедитесь, есть ли у глобальных администраторов доступ к электронной почте для использования уведомлений по электронной почте в PIM. | [Что такое Azure AD Privileged Identity Management? Настройка параметров активации ролей](privileged-identity-management/pim-configure.md#configure-the-role-activation-settings)
 
 
 ### <a name="steps"></a>Действия
 
 | Шаг | Ресурсы |
 | --- | --- |
-| Выполните вход по адресу https://portal.azure.com как глобальный администратор и запустите начальную загрузку колонки PIM. Глобальный администратор, выполнивший этот шаг, назначается администратором безопасности.  Назовем этот субъект GA1. | [Использование мастера защиты в Azure AD Privileged Identity Management](active-directory-privileged-identity-management-security-wizard.md) |
-| Определите глобального администратора и переведите его из постоянного в соответствующий. Для наглядности этот администратор должен отличаться от использованного в шаге 1. Назовем этот субъект GA2. | [Управление привилегированными пользователями Azure AD: добавление и удаление роли пользователя](active-directory-privileged-identity-management-how-to-add-role-to-user.md)<br/>[Что такое Azure AD Privileged Identity Management? Настройка параметров активации ролей](active-directory-privileged-identity-management-configure.md#configure-the-role-activation-settings)  |
+| Выполните вход по адресу https://portal.azure.com как глобальный администратор и запустите начальную загрузку колонки PIM. Глобальный администратор, выполнивший этот шаг, назначается администратором безопасности.  Назовем этот субъект GA1. | [Использование мастера защиты в Azure AD Privileged Identity Management](privileged-identity-management/pim-security-wizard.md) |
+| Определите глобального администратора и переведите его из постоянного в соответствующий. Для наглядности этот администратор должен отличаться от использованного в шаге 1. Назовем этот субъект GA2. | [Управление привилегированными пользователями Azure AD: добавление и удаление роли пользователя](privileged-identity-management/pim-how-to-add-role-to-user.md)<br/>[Что такое Azure AD Privileged Identity Management? Настройка параметров активации ролей](privileged-identity-management/pim-configure.md#configure-the-role-activation-settings)  |
 | Теперь войдите как GA2 по адресу https://portal.azure.com и попробуйте изменить "Параметры пользователя". Обратите внимание, что некоторые параметры будут недоступны. | |
-| На новой вкладке в том же сеансе, что и в шаге 3, перейдите по адресу https://portal.azure.com и добавьте колонку PIM на панель мониторинга. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: добавление приложения для управления привилегированными пользователями](active-directory-privileged-identity-management-how-to-activate-role.md#add-the-privileged-identity-management-application) |
-| Запросите активацию для роли глобального администратора. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: активация роли](active-directory-privileged-identity-management-how-to-activate-role.md#activate-a-role) |
+| На новой вкладке в том же сеансе, что и в шаге 3, перейдите по адресу https://portal.azure.com и добавьте колонку PIM на панель мониторинга. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: добавление приложения для управления привилегированными пользователями](privileged-identity-management/pim-how-to-activate-role.md#add-the-privileged-identity-management-application) |
+| Запросите активацию для роли глобального администратора. | [Как активировать и деактивировать роли в компоненте управления привилегированными пользователями Azure AD: активация роли](privileged-identity-management/pim-how-to-activate-role.md#activate-a-role) |
 | Обратите внимание, что если GA2 никогда не регистрировался для Многофакторной идентификации, потребуется выполнить такую регистрацию. |  |
 | Вернитесь на исходную вкладку в шаге 3 и нажмите кнопку обновления в браузере. Обратите внимание, что теперь вы можете изменять "Параметры пользователя". | |
 | Кроме того, если у глобальных администраторов включена электронная почта, можно проверить папку "Входящие" для GA1 и GA2 и просмотреть уведомление об активации роли. |  |
-| Проверьте журнал аудита и просмотрите отчет, чтобы убедиться, что повышение GA2 отображается. | [Что такое Azure AD Privileged Identity Management: просмотр активности роли](active-directory-privileged-identity-management-configure.md#review-role-activity) |
+| Проверьте журнал аудита и просмотрите отчет, чтобы убедиться, что повышение GA2 отображается. | [Что такое Azure AD Privileged Identity Management: просмотр активности роли](privileged-identity-management/pim-configure.md#review-role-activity) |
 
 ### <a name="considerations"></a>Рекомендации
 

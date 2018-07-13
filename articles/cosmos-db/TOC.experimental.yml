@@ -71,7 +71,7 @@ items:
     items:
       - name: Глобальное распределение
         href: distribute-data-globally.md
-      - name: Архитектура с несколькими источниками
+      - name: Подход с несколькими источниками
         href: multi-region-writers.md
       - name: Секционирование
         href: partition-data.md
@@ -168,8 +168,6 @@ items:
                 href: bulk-executor-dot-net.md
               - name: "BulkExecutor\_— Java"
                 href: bulk-executor-java.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Запрос
                 items:
                   - name: Выполнение запросов SQL
@@ -258,8 +256,6 @@ items:
                 href: sql-api-sql-query-reference.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
               - name: SQL Playground
@@ -322,12 +318,8 @@ items:
                 href: mongodb-indexing.md
               - name: Визуализация данных с помощью Power BI
                 href: powerbi-visualize.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
       - name: Документация по API Graph
@@ -346,12 +338,8 @@ items:
             items:
               - name: Секционирование данных Graph
                 href: graph-partitioning.md
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Расширение Visual Studio Code
                 href: 'https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb'
       - name: Документация по API таблиц
@@ -404,8 +392,6 @@ items:
                 href: table-sdk-python.md
           - name: Ресурсы
             items:
-              - name: Управление использованием Обозревателя службы хранилища
-                href: storage-explorer.md
               - name: Обзор хранилища таблиц
                 href: table-storage-overview.md
               - name: Руководство по проектированию хранилищ таблиц
@@ -458,8 +444,6 @@ items:
     items:
       - name: Краткий справочник запросов
         href: query-cheat-sheet.md
-      - name: Управление использованием Обозревателя службы хранилища
-        href: storage-explorer.md
       - name: "Получение подсказок в течение 20\_дней"
         href: 20-days-of-tips.md
       - name: Видеоролики
