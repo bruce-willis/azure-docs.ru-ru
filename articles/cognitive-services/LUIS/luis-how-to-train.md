@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: v-geberr
-ms.openlocfilehash: 4593954e9e0a60beaa5ee86df848f908b23c6b20
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 8ec731ee2110b21a35d76d53fae4a1a6756fb5b8
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382712"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37951820"
 ---
 # <a name="train-your-luis-app"></a>Обучение приложения LUIS
 
@@ -45,5 +45,5 @@ When you train a LUIS app by example, LUIS generalizes from the examples you hav
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Label suggested utterances with LUIS](Label-Suggested-Utterances.md) (Добавление меток к предлагаемым фразам в LUIS) 
+* [Label suggested utterances with LUIS](luis-how-to-review-endoint-utt.md) (Добавление меток к предлагаемым фразам в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 

@@ -9,17 +9,17 @@ ms.technology: luis
 ms.topic: article
 ms.date: 05/23/2018
 ms.author: v-geberr;
-ms.openlocfilehash: f684b8ab875e2fbb774dc4a29bce25be41b24e6d
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: af3a96c978a3b22fcbc6296642e4749c863dff9e
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382721"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928579"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов Интеллектуальной службы распознавания речи (LUIS) в Cognitive Services
 
 ## <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
-Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. Однако пользователь LUIS может полностью контролировать просмотр, экспорт и удаление своих данных. Это можно сделать с помощью [веб-портала](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-reference-regions) LUIS или [программных API-интерфейсов LUIS](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f).
+Интеллектуальная служба распознавания речи (LUIS) сохраняет клиентское содержимое для своей работы. Однако пользователь LUIS может полностью контролировать просмотр, экспорт и удаление своих данных. Это можно сделать с помощью [веб-портала](luis-reference-regions.md) LUIS или [программных API-интерфейсов LUIS](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f).
 
 [!INCLUDE [GDPR-related guidance](../../../includes/gdpr-intro-sentence.md)]
 
@@ -28,15 +28,15 @@ ms.locfileid: "35382721"
 - Содержимое учетных записей пользователей, собранное при регистрации.
 - Учебные данные, необходимые для построения моделей (т. е. намерения и сущности).
 - Запросы пользователей, записанные в журнал во время выполнения для помощи в улучшении пользовательских моделей.
-  - Пользователи могут отключить ведение журнала запросов, добавив `&log=false` к запросу. Дополнительные сведения см. [здесь](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-resources-faq#how-can-i-disable-the-logging-of-utterances).
+  - Пользователи могут отключить ведение журнала запросов, добавив `&log=false` к запросу. Дополнительные сведения см. [здесь](luis-resources-faq.md#how-can-i-disable-the-logging-of-utterances).
 
 ## <a name="deleting-customer-data"></a>Удаление данных клиента
 Пользователи LUIS могут полностью контролировать удаление любого пользовательского содержимого либо через веб-портал LUIS, либо с помощью программных API-интерфейсов LUIS. В следующей таблице представлены ссылки, помогающие освоить оба способа:
 
 | | **Учетная запись пользователя** | **Приложения** | **Фразы** | **Запросы конечных пользователей** |
 | --- | --- | --- | --- | --- |
-| **Портал** | [Ссылка](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-how-to-account-settings) | [Ссылка](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/create-new-app#delete-app) | [Ссылка](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/create-new-app#delete-app) | [Ссылка](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/create-new-app#delete-app) |
-| **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
+| **Портал** | [Ссылка](luis-how-to-account-settings.md) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-how-to-start-new-app.md#delete-app) | [Ссылка](luis-how-to-start-new-app.md#delete-app) |
+| **Интерфейсы API** | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c4c) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c39) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c0b) | [Ссылка](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/58b6f32139e2bb139ce823c9) |
 
 
 ## <a name="exporting-customer-data"></a>Экспорт данных клиента
