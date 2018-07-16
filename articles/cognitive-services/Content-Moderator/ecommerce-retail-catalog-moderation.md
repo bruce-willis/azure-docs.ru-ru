@@ -9,12 +9,12 @@ ms.component: content-moderator
 ms.topic: article
 ms.date: 09/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: 5cb93941751c8744a19a5473d13f1e135a589eaa
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6177758eaa3e611ad67da0778d889df48b052d90
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380261"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37095757"
 ---
 # <a name="ecommerce-catalog-moderation-with-machine-learning"></a>Модерация каталогов электронной коммерции с помощью машинного обучения
 
@@ -158,7 +158,7 @@ ms.locfileid: "35380261"
 
 ## <a name="classify-into-flags-toys-and-pens"></a>Классификация по категориям флагов, игрушек и ручек
 
-1. [Войдите](https://www.customvision.ai/account/signin) в [предварительную версию API пользовательского визуального распознавания](https://www.customvision.ai/).
+1. [Войдите](https://azure.microsoft.com/en-us/services/cognitive-services/custom-vision-service/) в [предварительную версию API пользовательского визуального распознавания](https://www.customvision.ai/).
 2. Используйте [краткое руководство](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) для создания пользовательского классификатора, позволяющего определить потенциальное наличие флагов, игрушек и ручек.
    ![Учебные изображения для службы "Пользовательское визуальное распознавание"](images/tutorial-ecommerce-custom-vision.PNG)
 3. [Получите URL-адрес конечной точки прогнозирования](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api) для своего пользовательского классификатора.

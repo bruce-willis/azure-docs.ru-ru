@@ -9,12 +9,12 @@ ms.component: knowledge-exploration
 ms.topic: article
 ms.date: 03/26/2016
 ms.author: paulhsu
-ms.openlocfilehash: 27202379b8c36696a380049336229cac040b0108
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b64025be2f5a9708162da475c1f037d7f253d2c6
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380345"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37865759"
 ---
 # <a name="grammar-format"></a>Формат грамматики
 Грамматика — это XML-файл, который задает взвешенный набор запросов на естественном языке, которые служба может интерпретировать, а также определяет, как эти запросы преобразуются в выражения семантических запросов.  Синтаксис грамматики основан на [SRGS](http://www.w3.org/TR/speech-grammar/) — стандарте консорциума W3C для грамматик распознавания речи — с расширениями для поддержки интеграции индекса данных и семантических функций.
