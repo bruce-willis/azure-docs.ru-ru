@@ -37,10 +37,12 @@
   items:
     - name: Администратор
       items:
-        - name: Создание приложения
-          href: howto-create-application.md
+        - name: Создание и администрирование приложения на правах поставщика облачных решений
+          href: howto-create-and-manage-applications-as-CSP.md
         - name: Администрирование приложения
           href: howto-administer.md
+        - name: Экспорт данных
+          href: howto-export-data.md
     - name: Конструктор
       items:
         - name: Настройка шаблона устройства
@@ -49,6 +51,10 @@
           href: howto-version-devicetemplate.md
         - name: Создание правила телеметрии
           href: howto-create-telemetry-rules.md
+        - name: Создание правила события
+          href: howto-create-event-rules.md
+        - name: Создание рабочих процессов в Microsoft Flow
+          href: howto-add-microsoft-flow.md
         - name: Настройка домашней страницы
           href: howto-configure-homepage.md
         - name: Подготовка и передача изображений
