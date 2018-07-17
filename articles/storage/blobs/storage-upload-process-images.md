@@ -12,22 +12,29 @@ ms.topic: tutorial
 ms.date: 02/20/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 29accb3394e9a2f6939a657172c1a5c2e411706a
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: 307ccc6f5fce703b786708196779f0cf3d71ae96
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38461509"
 ---
 # <a name="upload-image-data-in-the-cloud-with-azure-storage"></a>Передача данных изображений в облако с помощью службы хранилища Azure
 
 Это руководство представляет первую часть цикла. В этом руководстве показано, как развернуть веб-приложение, использующее клиентскую библиотеку службы хранилища Azure, для отправки изображений в учетную запись хранения. По окончании у вас будет веб-приложение, которое хранит и показывает изображения из службы хранилища Azure.
 
+# <a name="nettabnet"></a>[\.NET](#tab/net)
 ![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
+
+# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+
+---
 
 В первой части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Создание контейнера и настройка разрешений.
 > * Получение ключа доступа.
 > * Настройка параметров приложения
@@ -48,12 +55,12 @@ ms.lasthandoff: 05/11/2018
 az group create --name myResourceGroup --location westcentralus 
 ``` 
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
  
 В примере изображения отправляются в контейнер больших двоичных объектов в учетной записи хранения Azure. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших объектов данных в службе хранилища Azure и доступа к ним. Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create). 
 
 > [!IMPORTANT] 
-> Во второй части этого руководства используются подписки на события для хранилища BLOB-объектов. Сейчас подписки на события поддерживаются только для учетных записей хранения больших двоичных объектов в таких регионах, как "Западно-центральная часть США" и "Западная часть США 2". Из-за этого ограничения необходимо создать учетную запись хранения больших двоичных объектов, используемую в примере приложения для хранения изображений и эскизов.   
+> Во второй части этого руководства используются подписки на события для хранилища BLOB-объектов. Подписки на события в настоящий момент поддерживается только для учетных записей хранения BLOB-объектов в следующих расположениях: Юго-Восточная Азия, Восточная Азия, Восточная Австралия, Юго-Восточная Австралия, центральная часть США, восточная часть США, восточная часть США 2, Западная Европа, Северная Европа, Восточная Япония, Западная Япония, центрально-западная часть США, западная часть США и западная часть США 2. Из-за этого ограничения необходимо создать учетную запись хранения больших двоичных объектов, используемую в примере приложения для хранения изображений и эскизов.   
 
 В следующей команде замените `<blob_storage_account>` глобально уникальным именем учетной записи хранения больших двоичных объектов везде, где встречается этот заполнитель.  
 
@@ -64,7 +71,7 @@ az storage account create --name <blob_storage_account> \
 ``` 
  
 ## <a name="create-blob-storage-containers"></a>Создание контейнеров хранилища BLOB-объектов
- 
+
 Приложение использует два типа контейнеров в учетной записи хранилища больших двоичных объектов. Контейнеры похожи на папки и используются для хранения больших двоичных объектов. Контейнер _изображений_ — это контейнер, в который отправляются изображения с высоким разрешением. В одной из последующих статей этой серии приложение-функция Azure будет отправлять эскизы изображений измененного размера в контейнер _эскизов_. 
 
 Получите ключи своей учетной записи хранения с помощью команды [az storage account keys list](/cli/azure/storage/account/keys#az_storage_account_keys_list). Затем используйте этот ключ для создания двух контейнеров с помощью команды [az storage container create](/cli/azure/storage/container#az_storage_container_create).  
@@ -74,7 +81,7 @@ az storage account create --name <blob_storage_account> \
 ```azurecli-interactive 
 $blobStorageAccount="<blob_storage_account>"
 
-blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
+$blobStorageAccountKey=$(az storage account keys list -g myResourceGroup \
 -n $blobStorageAccount --query [0].value --output tsv) 
 
 az storage container create -n images --account-name $blobStorageAccount \
@@ -111,11 +118,18 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppServicePlan 
 ``` 
 
-## <a name="deploy-the-sample-app-from-the-github-repository"></a>Развертывание примера приложения из репозитория GitHub 
+## <a name="deploy-the-sample-app-from-the-github-repository"></a>Развертывание примера приложения из репозитория GitHub
+
+# <a name="nettabnet"></a>[\.NET](#tab/net)
 
 Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
 
 В примере проекта содержится приложение [ASP.NET MVC](https://www.asp.net/mvc), которое принимает изображения, сохраняет их в учетную запись хранения и показывает изображения из контейнера эскизов. Веб-приложение использует пространства имен [Microsoft.WindowsAzure.Storage](/dotnet/api/microsoft.windowsazure.storage?view=azure-dotnet), [Microsoft.WindowsAzure.Storage.Blob](/dotnet/api/microsoft.windowsazure.storage.blob?view=azure-dotnet) и [Microsoft.WindowsAzure.Storage.Auth](/dotnet/api/microsoft.windowsazure.storage.auth?view=azure-dotnet) из клиентской библиотеки службы хранилища Azure для взаимодействия со службой хранилища Azure. 
+
+# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+Служба приложений поддерживает несколько способов развертывания содержимого для веб-приложения. В этом руководстве развертывается веб-приложение из [общедоступного репозитория примеров GitHub](https://github.com/Azure-Samples/storage-blob-upload-from-webapp-node). Настройте для веб-приложения развертывание GitHub с помощью команды [az webapp deployment source config](/cli/azure/webapp/deployment/source#az_webapp_deployment_source_config). Замените `<web_app>` именем веб-приложения, созданного на предыдущем шаге.
+
+---
 
 ```azurecli-interactive 
 az webapp deployment source config --name <web_app> \
@@ -142,6 +156,8 @@ AzureStorageConfig__AccountKey=<blob_storage_key>
 ## <a name="upload-an-image"></a>Передача образа 
 
 Чтобы проверить веб-приложение, перейдите по URL-адресу опубликованного приложения. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`. Выберите область **Upload photos** (Отправка фотографии), чтобы выбрать файл для отправки, или перетащите файлы в нее. При успешной отправке изображение исчезнет.
+
+# <a name="nettabnet"></a>[\.NET](#tab/net)
 
 ![Приложение ImageResizer](media/storage-upload-process-images/figure1.png)
 
@@ -182,6 +198,69 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 |[CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer?view=azure-dotnet)    | [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudBlobContainer_GetBlockBlobReference_System_String_)        |
 |[CloudBlockBlob](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob?view=azure-dotnet)     | [UploadFromStreamAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet)        |
 
+# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+
+![Приложение для оправки изображений](media/storage-upload-process-images/upload-app-nodejs.png)
+
+В примере кода маршрут `post` отвечает за отправку изображения в контейнер BLOB-объектов. Маршрут использует модули для обработки отправки:
+
+- [multer](https://github.com/expressjs/multer) реализует стратегию отправки для обработчика маршрутов.
+- [into-stream](https://github.com/sindresorhus/into-stream) преобразует буфер в поток, как требуется для [createBlockBlobFromStream](http://azure.github.io/azure-sdk-for-node/azure-storage-legacy/latest/BlobService.html#createBlockBlobFromStream).
+
+Когда файл отправляется в маршрут, содержимое файла остается в памяти до тех пор, пока файл не будет загружен в контейнер BLOB-объектов.
+
+> [!IMPORTANT]
+> Загрузка очень больших файлов в память может негативно повлиять на производительность вашего веб-приложения. Если вы ожидаете, что пользователи опубликуют большие файлы, вы можете захотеть просмотреть промежуточные файлы в файловой системе веб-сервера, а затем планировать загрузку в хранилище BLOB-объектов. После того, как файлы попадают в хранилище BLOB-объектов, вы можете удалить их из файловой системы сервера.
+
+```javascript
+const
+      express = require('express')
+    , router = express.Router()
+
+    , multer = require('multer')
+    , inMemoryStorage = multer.memoryStorage()
+    , uploadStrategy = multer({ storage: inMemoryStorage }).single('image')
+
+    , azureStorage = require('azure-storage')
+    , blobService = azureStorage.createBlobService()
+
+    , getStream = require('into-stream')
+    , containerName = 'images'
+;
+
+const handleError = (err, res) => {
+    res.status(500);
+    res.render('error', { error: err });
+};
+
+const getBlobName = originalName => {
+    const identifier = Math.random().toString().replace(/0\./, ''); // remove "0." from start of string
+    return `${originalName}-${identifier}`;
+};
+
+router.post('/', uploadStrategy, (req, res) => {
+
+    const
+          blobName = getBlobName(req.file.originalname)
+        , stream = getStream(req.file.buffer)
+        , streamLength = req.file.buffer.length
+    ;
+
+    blobService.createBlockBlobFromStream(containerName, blobName, stream, streamLength, err => {
+
+        if(err) {
+            handleError(err);
+            return;
+        }
+
+        res.render('success', { 
+            message: 'File uploaded to Azure Blob storage.' 
+        });
+    });
+});
+```
+---
+
 ## <a name="verify-the-image-is-shown-in-the-storage-account"></a>Проверка отображения изображения в учетной записи хранения
 
 Войдите на [портале Azure](https://portal.azure.com). В меню слева выберите **Учетные записи хранения**, а затем имя своей учетной записи хранения. В разделе **Обзор** выберите контейнер с **изображениями**.
@@ -200,7 +279,13 @@ public static async Task<bool> UploadFileToStorage(Stream fileStream, string fil
 
 Вернитесь к своему приложению и убедитесь, что изображение, отправленное в контейнер **эскизов**, отображается.
 
+# <a name="nettabnet"></a>[\.NET](#tab/net)
 ![Представление контейнера изображений](media/storage-upload-process-images/figure2.png)
+
+# <a name="nodejstabnodejs"></a>[Node.js](#tab/nodejs)
+![Представление контейнера изображений](media/storage-upload-process-images/upload-app-nodejs-thumb.png)
+
+---
 
 В контейнере **эскизов** на портале Azure выберите отправленное изображение и щелкните **Удалить**, чтобы удалить его. Во второй части серии руководств будет выполняться автоматизация создания эскизов изображений, поэтому тестирование изображений не требуется.
 
@@ -211,7 +296,7 @@ CDN можно включить для кэширования содержимо
 В первой части серии руководств описана настройка взаимодействия веб-приложения с хранилищами. Вы научились выполнять такие задачи, как:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Создание контейнера и настройка разрешений.
 > * Получение ключа доступа.
 > * Настройка параметров приложения

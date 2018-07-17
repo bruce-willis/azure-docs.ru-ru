@@ -1,22 +1,22 @@
 ---
-title: Создание пространства разработки Kubernetes в облаке | Документы Майкрософт
+title: Создание пространства разработки Kubernetes в облаке | Документация Майкрософт
 titleSuffix: Azure Dev Spaces
 author: ghogen
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
 ms.author: ghogen
-ms.date: 06/06/2018
+ms.date: 07/09/2018
 ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 43b232e612f2ea4b47789e29a7f241bf4c35271d
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 91302f21f3b3f9db50dc0c930a4cdfc02749d151
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100127"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37951011"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-visual-studio"></a>Краткое руководство по созданию пространства разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и Visual Studio)
 
@@ -29,9 +29,9 @@ ms.locfileid: "37100127"
 > [!Note]
 > **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице. Можно также ознакомиться с более подробным [руководством](get-started-netcore-visualstudio.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
-- Кластер Kubernetes, работающий с Kubernetes 1.9.6, в регионах "Восток США", "Западная Европа" или "Восточная Канада", с включенным параметром "Маршрутизация приложений HTTP".
+- Кластер Kubernetes, работающий с Kubernetes 1.10.3, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром "Маршрутизация HTTP для приложений".
 
   ![Не забудьте включить параметр "Маршрутизация приложений HTTP".](media/common/Kubernetes-Create-Cluster-3.PNG)
 
@@ -114,7 +114,7 @@ Azure Dev Spaces — это не просто среда выполнения к
 В браузере обновите веб-приложение и перейдите на страницу About (Сведения). Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Работа с несколькими контейнерами и командной разработкой](get-started-netcore-visualstudio.md#call-another-container)
+> [Работа с несколькими контейнерами и командной разработкой](team-development-netcore-visualstudio.md)

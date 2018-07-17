@@ -13,15 +13,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 06/23/2017
+ms.date: 06/18/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: a9f1e66a4c55d866d9f174528eb4912c3b9391c0
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 5c0aa042f97e10f90787b1cdf8e03cd6d849441e
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34714521"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38461645"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-web-apps"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure
 
@@ -35,12 +35,8 @@ ms.locfileid: "34714521"
 > * Сопоставление поддомена (например, `www.contoso.com`) с помощью записи CNAME.
 > * Сопоставление корневого домена (например, `contoso.com`) с помощью записи A.
 > * Сопоставление домена с подстановочным знаком (например, `*.contoso.com`) с помощью записи CNAME.
+> * Перенаправление URL-адреса по умолчанию к пользовательскому каталогу.
 > * Автоматизация сопоставления доменов с помощью скриптов.
-
-Для сопоставления настраиваемого DNS-имени со службой приложений можно использовать **запись CNAME** или **запись A**. 
-
-> [!NOTE]
-> Мы рекомендуем использовать записи CNAME для всех настраиваемых DNS-имен, кроме корневого домена (например, `contoso.com`).
 
 Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений, см. в статье [Перенос активного DNS-имени в службу приложений Azure](app-service-custom-domain-name-migrate.md).
 
@@ -92,7 +88,7 @@ ms.locfileid: "34714521"
 
 ### <a name="scale-up-the-app-service-plan"></a>Изменение уровня плана службы приложений
 
-Выберите любой оплачиваемый уровень (**D1**, **B1**, **B2**, **B3** или любой уровень в категории **Рабочие**). Чтобы просмотреть дополнительные параметры, щелкните **См. дополнительные параметры**.
+Выберите любой платный уровень (**D1**, **B1**, **B2**, **B3** или любой уровень в категории **Рабочие**). Чтобы просмотреть дополнительные параметры, щелкните **См. дополнительные параметры**.
 
 Нажмите кнопку **Применить**.
 
@@ -104,13 +100,26 @@ ms.locfileid: "34714521"
 
 <a name="cname"></a>
 
-## <a name="map-a-cname-record"></a>Сопоставление записи CNAME
+## <a name="map-your-domain"></a>Сопоставление домена
+
+Для сопоставления настраиваемого DNS-имени со службой приложений можно использовать **запись CNAME** или **запись A**. Сделайте следующее:
+
+- [Сопоставьте запись CNAME](#map-a-cname-record).
+- [Сопоставьте запись A](#map-an-a-record).
+- [Сопоставьте домен с подстановочным знаком с помощью записи CNAME](#map-a-wildcard-domain).
+
+> [!NOTE]
+> Вам нужно использовать записи CNAME для всех пользовательских имен DNS, кроме корневого домена (например, `contoso.com`). Для корневых доменов используйте записи A.
+
+### <a name="map-a-cname-record"></a>Сопоставление записи CNAME
 
 В примере из руководства вы добавите запись CNAME для поддомена `www` (например, `www.contoso.com`).
 
-[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records.md)]
+#### <a name="access-dns-records-with-domain-provider"></a>Доступ к записям DNS с помощью поставщика домена
 
-### <a name="create-the-cname-record"></a>Создание записи CNAME
+[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records-no-h.md)]
+
+#### <a name="create-the-cname-record"></a>Создание записи CNAME
 
 Добавьте запись CNAME для сопоставления поддомена с именем узла по умолчанию приложения (`<app_name>.azurewebsites.net`, где `<app_name>` — это имя приложения).
 
@@ -120,7 +129,7 @@ ms.locfileid: "34714521"
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/cname-record.png)
 
-### <a name="enable-the-cname-record-mapping-in-azure"></a>Включение сопоставления записи CNAME в приложении Azure
+#### <a name="enable-the-cname-record-mapping-in-azure"></a>Включение сопоставления записи CNAME в приложении Azure
 
 В левой области навигации страницы приложения на портале Azure выберите **Личные домены**. 
 
@@ -136,7 +145,7 @@ ms.locfileid: "34714521"
 
 Выберите **Проверка**.
 
-После этого активируется кнопка **Добавить имя узла**. 
+Откроется страница **Добавление имени узла**. 
 
 Убедитесь, что в поле **Тип записи имени узла** выбрано значение **CNAME (www.example.com или любой поддомен)**.
 
@@ -148,19 +157,22 @@ ms.locfileid: "34714521"
 
 ![Запись CNAME добавлена](./media/app-service-web-tutorial-custom-domain/cname-record-added.png)
 
+> [!NOTE]
+> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+
 Если вы пропустили шаг или где-то допустили опечатку, в нижней части страницы появится сообщение об ошибке проверки.
 
 ![Ошибка проверки](./media/app-service-web-tutorial-custom-domain/verification-error-cname.png)
 
 <a name="a"></a>
 
-## <a name="map-an-a-record"></a>Сопоставление записи A
+### <a name="map-an-a-record"></a>Сопоставление записи A
 
 В примере из руководства вы добавите запись A для корневого домена (например, `contoso.com`). 
 
 <a name="info"></a>
 
-### <a name="copy-the-apps-ip-address"></a>Копирование IP-адреса приложения
+#### <a name="copy-the-apps-ip-address"></a>Копирование IP-адреса приложения
 
 Чтобы сопоставить запись A, необходим внешний IP-адрес вашего приложения. Этот IP-адрес можно найти на странице **Личные домены** приложения на портале Azure.
 
@@ -172,9 +184,11 @@ ms.locfileid: "34714521"
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/mapping-information.png)
 
-[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records.md)]
+#### <a name="access-dns-records-with-domain-provider"></a>Доступ к записям DNS с помощью поставщика домена
 
-### <a name="create-the-a-record"></a>Создание записи A
+[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records-no-h.md)]
+
+#### <a name="create-the-a-record"></a>Создание записи A
 
 Чтобы сопоставить запись А с приложением, службе приложений требуется **две** записи DNS:
 
@@ -194,7 +208,7 @@ ms.locfileid: "34714521"
 
 <a name="enable-a"></a>
 
-### <a name="enable-the-a-record-mapping-in-the-app"></a>Включение сопоставления записи A в приложении
+#### <a name="enable-the-a-record-mapping-in-the-app"></a>Включение сопоставления записи A в приложении
 
 На странице **Личные домены** приложения на портале Azure добавьте в список полное настраиваемое DNS-имя (например, `contoso.com`).
 
@@ -206,7 +220,7 @@ ms.locfileid: "34714521"
 
 Выберите **Проверка**.
 
-После этого активируется кнопка **Добавить имя узла**. 
+Откроется страница **Добавление имени узла**. 
 
 Убедитесь, что в поле **Тип записи имени узла** выбрано значение **Запись А (example.com)**.
 
@@ -218,19 +232,24 @@ ms.locfileid: "34714521"
 
 ![Запись добавлена](./media/app-service-web-tutorial-custom-domain/a-record-added.png)
 
+> [!NOTE]
+> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+
 Если вы пропустили шаг или где-то допустили опечатку, в нижней части страницы появится сообщение об ошибке проверки.
 
 ![Ошибка проверки](./media/app-service-web-tutorial-custom-domain/verification-error.png)
 
 <a name="wildcard"></a>
 
-## <a name="map-a-wildcard-domain"></a>Сопоставление домена с подстановочными знаками
+### <a name="map-a-wildcard-domain"></a>Сопоставление домена с подстановочными знаками
 
 В примере из руководства вы сопоставите [DNS-имя с подстановочными знаками](https://en.wikipedia.org/wiki/Wildcard_DNS_record) (например, `*.contoso.com`) с приложением службы приложений, добавив запись CNAME. 
 
-[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records.md)]
+#### <a name="access-dns-records-with-domain-provider"></a>Доступ к записям DNS с помощью поставщика домена
 
-### <a name="create-the-cname-record"></a>Создание записи CNAME
+[!INCLUDE [Access DNS records with domain provider](../../includes/app-service-web-access-dns-records-no-h.md)]
+
+#### <a name="create-the-cname-record"></a>Создание записи CNAME
 
 Добавьте запись CNAME для сопоставления имени с подстановочными знаками с именем узла по умолчанию приложения (`<app_name>.azurewebsites.net`).
 
@@ -240,7 +259,7 @@ ms.locfileid: "34714521"
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/cname-record-wildcard.png)
 
-### <a name="enable-the-cname-record-mapping-in-the-app"></a>Включение сопоставления записи CNAME в приложении
+#### <a name="enable-the-cname-record-mapping-in-the-app"></a>Включение сопоставления записи CNAME в приложении
 
 Теперь вы можете добавить любой дочерний домен, соответствующий имени с подстановочными знаками в приложении (например, `sub1.contoso.com` и `sub2.contoso.com` соответствует `*.contoso.com`). 
 
@@ -268,13 +287,16 @@ ms.locfileid: "34714521"
 
 ![Запись CNAME добавлена](./media/app-service-web-tutorial-custom-domain/cname-record-added-wildcard2.png)
 
+> [!NOTE]
+> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+
 ## <a name="test-in-browser"></a>Тестирование в браузере
 
 Перейдите к DNS-именам, настроенным ранее (например, `contoso.com`, `www.contoso.com`, `sub1.contoso.com` и `sub2.contoso.com`).
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/app-with-custom-dns.png)
 
-## <a name="resolve-404-error-web-site-not-found"></a>Устраните ошибки 404 "Не удалось найти веб-сайт"
+## <a name="resolve-404-not-found"></a>Решение проблемы 404 (Не найдено)
 
 Если появляется ошибка HTTP 404 (не найдено) при переходе по URL-адресу вашего личного домена, убедитесь, что этот домен обеспечивает разрешение IP-адреса приложения, с помощью <a href="https://www.whatsmydns.net/" target="_blank">WhatsmyDNS.net</a>. Если это не так, ошибка может быть вызвана одной из следующих причин.
 
@@ -283,7 +305,7 @@ ms.locfileid: "34714521"
 
 <a name="virtualdir"></a>
 
-## <a name="direct-default-url-to-a-custom-directory"></a>Прямой URL-адрес по умолчанию для пользовательского каталога
+## <a name="redirect-to-a-custom-directory"></a>Перенаправление к пользовательскому каталогу
 
 По умолчанию служба приложений направляет веб-запросы в корневой каталог кода приложения. Однако некоторые веб-платформы не запускаются в корневом каталоге. Например, [Laravel](https://laravel.com/) запускается в подкаталоге `public`. Чтобы продолжить пример DNS `contoso.com`, такое приложение будет доступно по адресу `http://contoso.com/public`, но вместо этого вам потребуется направлять `http://contoso.com` в каталог `public`. Этот шаг включает в себя не разрешение имен DNS, а настройку виртуального каталога.
 
@@ -333,6 +355,7 @@ Set-AzureRmWebApp `
 > * Сопоставление поддомена с помощью записи CNAME.
 > * Сопоставление корневого домена с помощью записи A.
 > * Сопоставление домена с подстановочным знаком с помощью записи CNAME.
+> * Перенаправление URL-адреса по умолчанию к пользовательскому каталогу.
 > * Автоматизация сопоставления доменов с помощью скриптов.
 
 Перейдите к следующему руководству, чтобы научиться привязывать пользовательский SSL-сертификат к веб-приложению.

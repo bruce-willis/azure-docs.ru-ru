@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/11/2018
 ms.author: shlo
-ms.openlocfilehash: e4e90082f483720699fb029db33bc8110173c0aa
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: bc53d245dd814b6f9bb4edab89ddcbf841f16a8f
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082960"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38579183"
 ---
 # <a name="introduction-to-azure-data-factory"></a>Введение в фабрику данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -121,10 +121,14 @@ ms.locfileid: "37082960"
 
 Предположим, ваши вычислительные среды, например кластер Azure HDInsight и служба машинного обучения Azure, расположены в Западной Европе. Вы можете создать экземпляр фабрики данных Azure в восточной части США и восточной части США 2 и с его помощью планировать задания в вычислительных средах в Западной Европе. Фабрике данных требуется лишь несколько миллисекунд, чтобы запустить задание в вычислительной среде, но время выполнения задания в вашей вычислительной среде остается неизменным.
 
+## <a name="accessibility"></a>Возможности доступа
+
+Пользовательский интерфейс фабрики данных на портале Azure остается доступным.
+
 ## <a name="compare-with-version-1"></a>Сравнение с версией 1
 См. [список различий между версией 1 и текущей версией службы "Фабрика данных"](compare-versions.md). 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Создание конвейера фабрики данных с помощью одного из следующих средств и пакетов SDK: 
 
 - [Пользовательский интерфейс фабрики данных на портале Azure](quickstart-create-data-factory-portal.md)

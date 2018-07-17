@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: c1277484d8f8b3073ac15534110b01903c265318
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: bbe60fb6a6371551f588d5472ac304148a4a1aa7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34795889"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38453422"
 ---
 # <a name="azure-cosmos-db-build-a-net-framework-or-core-application-using-the-graph-api"></a>Azure Cosmos DB. Создание приложения .NET Framework или Core с помощью API Graph
 
@@ -86,7 +86,7 @@ Azure Cosmos DB — это глобально распределенная мн
     private static int port = 443;
     private static string authKey = "your-authentication-key";
     private static string database = "your-database";
-    private static string collection = "your-collection-or-graph";
+    private static string collection = "your-graph-container";
     ```
 
 * Команды Gremlin, которые необходимо выполнить, перечислены в словаре (строка 26).
@@ -175,7 +175,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     `private static string database = "your-database";`
 
-5. Аналогичным образом вставьте имя коллекции, созданной выше, (которое также является именем графа) в переменную `collection` в строке 23. 
+5. Аналогичным образом вставьте имя контейнера, созданного выше, (которое также является именем графа) в переменную `collection` в строке 23. 
 
     `private static string collection = "your-collection-or-graph";`
 
@@ -193,7 +193,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь в обозреватель данных на портале Azure. Здесь вы можете просмотреть и запросить новые данные графа.
 
-1. В обозревателе данных новая база данных отображается в области "Графы". Разверните базу данных и узлы коллекции, а затем щелкните **Graph** (Граф).
+1. В обозревателе данных новая база данных отображается в области "Графы". Разверните базу данных и узлы контейнера, а затем щелкните **Граф**.
 
 2. Нажмите кнопку **Применить фильтр**, чтобы использовать запрос по умолчанию для просмотра всех вершин графа. Данные, созданные в примере приложения, отображаются на панели Graphs (Графы).
 

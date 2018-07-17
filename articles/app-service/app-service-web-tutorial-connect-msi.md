@@ -14,11 +14,12 @@ ms.topic: tutorial
 ms.date: 04/17/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 1b51638754287d3359eaea7bd5da3f71bf15cc89
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: f1388843f2c5d3ea607b876ece288db1370329a2
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38461543"
 ---
 # <a name="tutorial-secure-sql-database-connection-with-managed-service-identity"></a>Руководство. Безопасное подключение базы данных Azure SQL с использованием управляемого удостоверения службы
 
@@ -27,10 +28,13 @@ ms.lasthandoff: 04/23/2018
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Включение удостоверения управляемой службы.
+> * Включение удостоверения управляемой службы
 > * Предоставление доступа к базе данных SQL для удостоверения службы.
 > * Настройка кода приложения для проверки подлинности с помощью базы данных SQL с использованием проверки подлинности Azure Active Directory.
 > * Предоставление минимальных привилегий для удостоверения службы в базе данных SQL.
+
+> [!NOTE]
+> Аутентификация Azure Active Directory _отличается_ от [ интегрированной аутентификации Windows](/previous-versions/windows/it-pro/windows-server-2003/cc758557(v=ws.10)) в локальном экземпляре Active Directory (AD DS). AD DS и Azure Active Directory используют разные протоколы аутентификации. См. дополнительные сведения о [различии между Windows Server AD DS и Azure AD](../active-directory/fundamentals/understand-azure-identity-solutions.md#the-difference-between-windows-server-ad-ds-and-azure-ad).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -64,7 +68,7 @@ az webapp identity assign --resource-group myResourceGroup --name <app name>
 Значение `principalId` потребуется вам на следующем шаге. Если вы хотите увидеть подробности нового удостоверения в Azure Active Directory, запустите следующую необязательную команду со значением `principalId`:
 
 ```azurecli-interactive
-az ad sp show --id <principalid>`
+az ad sp show --id <principalid>
 ```
 
 ## <a name="grant-database-access-to-identity"></a>Предоставление доступа к базе данных
@@ -156,7 +160,7 @@ private MyDatabaseContext db = new MyDatabaseContext(new SqlConnection());
 ```azurecli-interactive
 groupid=$(az ad group create --display-name myAzureSQLDBAccessGroup --mail-nickname myAzureSQLDBAccessGroup --query objectId --output tsv)
 msiobjectid=$(az webapp identity show --resource-group <group_name> --name <app_name> --query principalId --output tsv)
-az ad group member add --group $groupid --member-id $msiid
+az ad group member add --group $groupid --member-id $msiobjectid
 az ad group member list -g $groupid
 ```
 
@@ -200,7 +204,7 @@ GO
 Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Включение удостоверения управляемой службы.
+> * Включение удостоверения управляемой службы
 > * Предоставление доступа к базе данных SQL для удостоверения службы.
 > * Настройка кода приложения для проверки подлинности с помощью базы данных SQL с использованием проверки подлинности Azure Active Directory.
 > * Предоставление минимальных привилегий для удостоверения службы в базе данных SQL.

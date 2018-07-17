@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 11/15/2017
 ms.author: alekseys
-ms.openlocfilehash: 9202e8eb328f098f7ab68a18f4629a95ecc10991
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 2c86cbe2ac9a0611873aca35480af92304abe5b5
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34796361"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928698"
 ---
 # <a name="mongodb-api-support-for-mongodb-features-and-syntax"></a>Поддержка возможностей и синтаксиса MongoDB в API-интерфейсе MongoDB
 
@@ -23,14 +23,19 @@ Azure Cosmos DB — это глобально распределенная мн
 
 С помощью API-интерфейса MongoDB для Azure Cosmos DB вы можете пользоваться всеми функциями API MongoDB, к которым вы привыкли, и возможностями Azure Cosmos DB для организаций: [глобальное распространение](distribute-data-globally.md), [автоматическое сегментирование](partition-data.md), гарантии по уровням доступности и задержкам, автоматическое индексирование каждого поля, шифрование хранимых данных, резервное копирование и многое другое.
 
+## <a name="mongodb-protocol-support"></a>Поддержка протокола MongoDB
+
+API Azure Cosmos DB MongoDB совместим с сервером MongoDB версии **3.2** по умолчанию. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Функции или операторы запросов, добавленные в MongoDB версии **3.4**, сейчас доступны в режиме предварительной версии. Любой драйвер клиента, который распознает эти протоколы должен иметь возможность подключения к Cosmos DB с помощью API MongoDB.
+
+[Конвейер агрегирования MongoDB](#aggregation-pipeline) сейчас доступен как отдельный компонент в режиме предварительной версии.
+
 ## <a name="mongodb-query-language-support"></a>Поддержка языка запросов MongoDB
 
 API-интерфейс MongoDB для Azure Cosmos DB предоставляет полную поддержку всех конструкций языка запросов MongoDB. Ниже приводится подробный список поддерживаемых операций, операторов, этапов, команд и параметров.
 
-
 ## <a name="database-commands"></a>Команды базы данных
 
-Azure Cosmos DB поддерживает следующие команды базы данных для всех учетных записей API-интерфейса MongoDB. 
+Azure Cosmos DB поддерживает следующие команды базы данных для всех учетных записей API-интерфейса MongoDB.
 
 ### <a name="query-and-write-operation-commands"></a>Команды для запросов и записи
 - удалить
@@ -287,7 +292,11 @@ $all | ```{ "Location.coordinates": { $all: [-121.758, 46.87] } }``` |
 $elemMatch | ```{ "Location.coordinates": { $elemMatch: {  $lt: 0 } } }``` |  
 $size | ```{ "Location.coordinates": { $size: 2 } }``` | 
 $comment |  ```{ "Location.coordinates": { $elemMatch: {  $lt: 0 } }, $comment: "Negative values"}``` | 
-$text |  | Не поддерживается. Вместо этого используйте $regex 
+$text |  | Не поддерживается. Вместо этого используйте $regex
+
+## <a name="unsupported-operators"></a>Неподдерживаемые операторы
+
+Операторы ```$where``` и ```$eval``` не поддерживаются в Azure Cosmos DB.
 
 ### <a name="methods"></a>Методы
 
@@ -316,6 +325,10 @@ Azure Cosmos DB пока не поддерживает концепцию пол
 ## <a name="replication"></a>Репликация
 
 Azure Cosmos DB поддерживает собственный механизм автоматической репликации на самых нижних уровнях. Этот механизм применяется и для организации глобальной репликации с низкой задержкой. Azure Cosmos DB не поддерживает запуск или настройку репликации вручную.
+
+## <a name="write-concern"></a>Проблемы с записью
+
+Некоторые API MongoDB поддерживают определение [проблем с записью](https://docs.mongodb.com/manual/reference/write-concern/), указывая на число ответов, требуемых во время выполнения операции записи. Так как Cosmos DB выполняет репликацию в фоновом режиме, все операции записи, автоматически происходят в режиме кворума по умолчанию. Любые проблемы с записью, определенные в клиентском коде, игнорируются. Дополнительные сведения см. в статье [Настраиваемые уровни согласованности данных в DocumentDB](consistency-levels.md).
 
 ## <a name="sharding"></a>Сегментирование
 

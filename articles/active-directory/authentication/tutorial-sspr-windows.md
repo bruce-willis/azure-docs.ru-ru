@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 701ab041eb603a1a06025d5bb43964880353ada9
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 3b767da394f6337a1110ad171f19ad789fa044d2
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33867499"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38972987"
 ---
 # <a name="azure-ad-password-reset-from-the-login-screen"></a>Сброс пароля Azure AD на экране входа
 
@@ -28,7 +28,7 @@ ms.locfileid: "33867499"
 * Обновление Windows 10 за апрель 2018 или более новый клиент, присоединенный к Azure AD [обычным](../device-management-azure-portal.md) или [гибридным способом](../device-management-hybrid-azuread-joined-devices-setup.md).
 * Функция самостоятельного сброса пароля Azure AD должна быть включена.
 * Настройте и разверните параметр, чтобы включить отображение ссылки сброса пароля с помощью одного из следующих способов:
-   * [профиль конфигурации устройств Intune](tutorial-sspr-windows.md#configure-reset-password-link-using-intune);
+   * [профиль конфигурации устройств Intune](tutorial-sspr-windows.md#configure-reset-password-link-using-intune); Этот метод требует регистрации устройства в Intune.
    * [раздел реестра](tutorial-sspr-windows.md#configure-reset-password-link-using-the-registry).
 
 ## <a name="configure-reset-password-link-using-intune"></a>Настройка ссылки сброса пароля с помощью Intune
@@ -66,7 +66,7 @@ ms.locfileid: "33867499"
    * Нажмите кнопку **Выбрать**.
 4. Нажмите кнопку **Создать**.
 
-Дополнительные сведения о создании групп см. в статье [Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory-manage-groups.md).
+Дополнительные сведения о создании групп см. в статье [Управление доступом к ресурсам с помощью групп Azure Active Directory](../fundamentals/active-directory-manage-groups.md).
 
 #### <a name="assign-device-configuration-policy-to-device-group"></a>Назначение политики конфигурации устройства группе устройств
 

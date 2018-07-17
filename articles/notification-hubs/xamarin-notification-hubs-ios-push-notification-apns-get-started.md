@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: babd6bff3cec38318cacc0d55394a7563f8e69a4
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: cebb73fedffe3b5f0a11c919ff39d1d2acd462d3
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33776878"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969533"
 ---
 # <a name="tutorial-push-notifications-to-xamarinios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "33776878"
 В рамках этого руководства создается или обновляется код для выполнения следующих задач: 
 
 > [!div class="checklist"]
-> * создание файла запроса на подпись сертификата;
+> * Создание файла запроса на подпись сертификата
 > * Регистрация приложения для работы с push-уведомлениями
 > * Создание профиля подготовки для приложения
 > * настройка push-уведомлений iOS в центре уведомлений;
@@ -55,7 +55,7 @@ ms.locfileid: "33776878"
 
 [!INCLUDE [Notification Hubs Enable Apple Push Notifications](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
-## <a name="configure-your-notification-hub-for-ios-push-notifications"></a>Настройка push-уведомлений iOS в центре уведомлений
+## <a name="configure-your-notification-hub-for-ios-push-notifications"></a>настройка push-уведомлений iOS в центре уведомлений;
 В этом разделе приведены пошаговые инструкции по созданию центра уведомлений и настройке аутентификации с помощью службы APNS, при которой используется раннее созданный вами сертификат push-уведомлений (файл с расширением **P12**). Если вы хотите использовать уже созданный центр уведомлений, перейдите к шагу 5.
 
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
@@ -84,34 +84,46 @@ ms.locfileid: "33776878"
 
     ![Настройка приложения iOS в Visual Studio][32]
 
-4. Добавьте пакет службы сообщений Azure. В представлении решения щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Add NuGet Packages** (Добавить пакеты NuGet). Выполните поиск пакета **Xamarin.Azure.NotificationHubs.iOS** и добавьте его в проект.
+4. В представлении "Решение" дважды щелкните файл *Entitlements.plist* и убедитесь, что установлен флажок "Включить push-уведомления".
 
-5. Добавьте новый файл в класс и присвойте ему имя **Constants.cs**. Добавьте указанные далее переменные и замените буквенные заполнители *именем центра* и значением *DefaultListenSharedAccessSignature*, записанным ранее.
+    ![Настройка прав iOS в Visual Studio][33]
+
+5. Добавьте пакет службы сообщений Azure. В представлении решения щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Add NuGet Packages** (Добавить пакеты NuGet). Выполните поиск пакета **Xamarin.Azure.NotificationHubs.iOS** и добавьте его в проект.
+
+6. Добавьте новый файл в класс и присвойте ему имя **Constants.cs**. Добавьте указанные далее переменные и замените буквенные заполнители *именем центра* и значением *DefaultListenSharedAccessSignature*, записанным ранее.
    
     ```csharp
         // Azure app-specific connection string and hub path
-        public const string ConnectionString = "<Azure connection string>";
-        public const string NotificationHubPath = "<Azure hub path>";
+        public const string ListenConnectionString = "<Azure connection string>";
+        public const string NotificationHubName = "<Azure hub path>";
     ```
 
-6. В файле **AppDelegate.cs**добавьте следующий оператор using:
+7. В файле **AppDelegate.cs**добавьте следующий оператор using:
    
     ```csharp
         using WindowsAzure.Messaging;
     ```
 
-7. Объявите экземпляр **SBNotificationHub**:
+8. Объявите экземпляр **SBNotificationHub**:
    
     ```csharp
         private SBNotificationHub Hub { get; set; }
     ```
 
-8. В файле **AppDelegate.cs** обновите метод **FinishedLaunching()**, как в приведенном ниже коде:
-   
+9.  В файле **AppDelegate.cs** обновите метод **FinishedLaunching()**, как в приведенном ниже коде:
+  
     ```csharp
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
+            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+            {
+                UNUserNotificationCenter.Current.RequestAuthorization(UNAuthorizationOptions.Alert | UNAuthorizationOptions.Sound | UNAuthorizationOptions.Sound,
+                                                                      (granted, error) =>
+                {
+                    if (granted)
+                        InvokeOnMainThread(UIApplication.SharedApplication.RegisterForRemoteNotifications);
+                });
+            } else if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
                 var pushSettings = UIUserNotificationSettings.GetSettingsForTypes (
                        UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
                        new NSSet ());
@@ -127,12 +139,12 @@ ms.locfileid: "33776878"
         }
     ```
 
-9. Переопределите метод **RegisteredForRemoteNotifications()** в файле **AppDelegate.cs**.
+10. Переопределите метод **RegisteredForRemoteNotifications()** в файле **AppDelegate.cs**.
    
     ```csharp
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
         {
-            Hub = new SBNotificationHub(Constants.ConnectionString, Constants.NotificationHubPath);
+            Hub = new SBNotificationHub(Constants.ListenConnectionString, Constants.NotificationHubName);
    
             Hub.UnregisterAllAsync (deviceToken, (error) => {
                 if (error != null)
@@ -150,7 +162,7 @@ ms.locfileid: "33776878"
         }
     ```
 
-10. Переопределите метод **ReceivedRemoteNotification()** в файле **AppDelegate.cs**.
+11. Переопределите метод **ReceivedRemoteNotification()** в файле **AppDelegate.cs**.
    
     ```csharp
         public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
@@ -159,7 +171,7 @@ ms.locfileid: "33776878"
         }
     ```
 
-11. Создайте следующий метод **ProcessNotification()** в файле **AppDelegate.cs**:
+12. Создайте следующий метод **ProcessNotification()** в файле **AppDelegate.cs**:
    
     ```csharp
         void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
@@ -200,20 +212,20 @@ ms.locfileid: "33776878"
    > Вы можете переопределить метод **FailedToRegisterForRemoteNotifications()** для обработки различных ситуаций, таких как отсутствие сетевого подключения. Это особенно важно в тех случаях, когда пользователь может запустить приложение в автономном режиме (например, при использовании режима "В самолете") и вам нужно обрабатывать отправку push-сообщений в соответствии с требованиями вашего приложения.
   
 
-12. Запустите приложение на устройстве.
+13. Запустите приложение на устройстве.
 
 ## <a name="send-test-push-notifications"></a>Отправка тестовых push-уведомлений
-Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портале Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
 ![Портал Azure — тестовая отправка][30]
 
-Push-уведомления обычно отправляются во внутренней службе, например мобильных приложениях или службе ASP.NET, с помощью совместимой библиотеки. Ели для серверной части библиотека недоступна, для отправки уведомлений также можно напрямую использовать REST API.
+Push-уведомления обычно отправляются во внутренней службе, например мобильных приложениях или службе ASP.NET, с помощью совместимой библиотеки. Если для серверной части библиотека недоступна, для отправки уведомлений также можно напрямую использовать REST API.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В рамках этого руководства вы отправили широковещательные уведомления на все устройства iOS, зарегистрированные в серверной части. Сведения о том, как отправлять push-уведомления на конкретные устройства iOS, см. в следующем руководстве: 
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений на конкретные устройства](notification-hubs-ios-xplat-segmented-apns-push-notification.md)
+>[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-ios-xplat-segmented-apns-push-notification.md)
 
 <!-- Images. -->
 [6]: ./media/notification-hubs-ios-get-started/notification-hubs-apple-config.png
@@ -226,6 +238,7 @@ Push-уведомления обычно отправляются во внут�
 [30]: ./media/notification-hubs-ios-get-started/notification-hubs-test-send.png
 [31]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-create-ios-app.png
 [32]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-app-settings.png
+[33]: ./media/partner-xamarin-notification-hubs-ios-get-started/notification-hub-entitlements-settings.png
 
 
 

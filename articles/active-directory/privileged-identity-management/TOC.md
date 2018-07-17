@@ -42,9 +42,9 @@
 ### [Запуск проверки доступа](pim-resource-roles-start-access-review.md)
 ### [Завершение проверки доступа](pim-resource-roles-complete-access-review.md)
 
-# Часто задаваемые вопросы
-## Использование PIM для ролей ресурсов
-### [Типы назначений](pim-resource-roles-eligible-visibility.md)
+# Основные понятия
+## [Типы назначений](pim-resource-roles-eligible-visibility.md)
+## [Уведомления по почте](pim-email-notifications.md)
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)

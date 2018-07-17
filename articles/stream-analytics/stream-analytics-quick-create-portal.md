@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
 manager: kfile
-ms.openlocfilehash: 1059a401382820b4e5d3fd4b010d400bb6113926
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 830b3d4226440a68c7de62170d2ffc28082315c2
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37031436"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37902910"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-portal"></a>Краткое руководство по созданию задания Stream Analytics с помощью портала Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "37031436"
 
 4. На странице **Все ресурсы** найдите учетную запись хранения, созданную на предыдущем шаге. Откройте страницу **Обзор**, а затем щелкните плитку **Большие двоичные объекты**.  
 
-5. На странице **Служба BLOB-объектов** щелкните **Контейнер**, укажите **имя** вашего контейнера, например *container1*, и укажите для параметра **Общедоступный уровень доступа** значение Blob (anonymous read access for blobs only) (Большой двоичный объект (анонимный доступ на чтение только для больших двоичных объектов)), а затем нажмите кнопку **ОК**.  
+5. На странице **Служба BLOB-объектов** щелкните **Контейнер**, укажите **имя** вашего контейнера, например *container1*, укажите для параметра **Общедоступный уровень доступа** значение "Закрытый" (запрет анонимного доступа), а затем нажмите кнопку **ОК**.  
 
    ![Создание контейнера](./media/stream-analytics-quick-create-portal/create-a-storage-container.png)
 

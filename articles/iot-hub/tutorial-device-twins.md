@@ -14,12 +14,12 @@ ms.workload: na
 ms.date: 05/14/2018
 ms.author: dobett
 ms.custom: mvc
-ms.openlocfilehash: 42be14569215af7ee98a540c2a86cef2b2a028e4
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 808cfd1f4d47f49be60c3f45278d2334ba720c49
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37034087"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37865188"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 
@@ -103,7 +103,7 @@ az iot hub device-identity show-connection-string --device-id MyTwinDevice --hub
 
 Чтобы просмотреть пример кода имитированного устройства для получения требуемых свойств, перейдите к папке **iot-hub/Tutorials/DeviceTwins** в скачанном примере проекта Node.js. Затем в текстовом редакторе откройте файл SimulatedDevice.js.
 
-В следующих разделах описан код для запуска на имитированном устройстве, предназначенный для реагирования на изменения свойств, которые отправляются из внутреннего приложения:
+В следующих разделах описан код для запуска на имитированном устройстве. Устройство реагирует на изменения свойств, которые отправляются из внутреннего приложения:
 
 ### <a name="retrieve-the-device-twin-object"></a>Получение объекта двойника устройства
 

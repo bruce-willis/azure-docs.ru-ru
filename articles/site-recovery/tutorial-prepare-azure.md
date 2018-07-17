@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 06/04/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: ffcce12800fae3a4d9e4930c918fcafb919b96ed
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 6a113169cb3f8fea1012643efcb56e5cf6c7e908
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34737210"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37915975"
 ---
 # <a name="prepare-azure-resources-for-replication-of-on-premises-machines"></a>Подготовка ресурсов Azure для репликации локальных компьютеров
 
@@ -54,11 +54,12 @@ ms.locfileid: "34737210"
 1. В меню на [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс** > **Хранилище** > **Учетная запись хранения — большие двоичные объекты, файлы, таблицы и очереди**.
 2. В окне **Создание учетной записи хранения** введите имя учетной записи. В этих руководствах используется имя **contosovmsacct1910171607**. Выбранное имя должно быть уникальным в пределах Azure и содержать от 3 до 24 символов (только цифры и строчные буквы).
 3. Выберите **Resource Manager** в разделе **Модель развертывания**.
-4. В поле **Тип учетной записи** выберите **Хранилище (версия 1, общего назначения)**. Не выбирайте хранилище BLOB-объектов. В разделе **Performance** (Производительность) выберите **Standard**. 
+4. В поле **Тип учетной записи** выберите **Хранилище (версия 1, общего назначения)**. Не выбирайте хранилище BLOB-объектов.
 5. В разделе **Replication** (Репликация) выберите значение по умолчанию **Read-access geo-redundant storage** (Геоизбыточное хранилище с доступом на чтение) для обеспечения избыточности хранилища. Для параметра **Требуется безопасное перемещение** сохраняется значение **Отключено**.
-6. В разделе **Subscription** (Подписка) выберите подписку, в которой вы создаете учетную запись хранения. 
-2. В поле **Resource group** (Группа ресурсов) введите имя новой группы ресурсов. Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. При работе с этими руководствами используется имя **ContosoRG**.
-3. В разделе **Расположение** выберите географическое расположение для учетной записи хранения. 
+6. Для параметра **Производительность** выберите значение **Стандартный**, а для параметра **Уровень доступа** — значение по умолчанию **Горячий**.
+7. В разделе **Subscription** (Подписка) выберите подписку, в которой вы создаете учетную запись хранения.
+8. В поле **Resource group** (Группа ресурсов) введите имя новой группы ресурсов. Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. При работе с этими руководствами используется имя **ContosoRG**.
+9. В разделе **Расположение** выберите географическое расположение для учетной записи хранения. 
 
    ![Создание учетной записи хранения](media/tutorial-prepare-azure/create-storageacct.png)
 
@@ -98,7 +99,7 @@ ms.locfileid: "34737210"
 
 - [Описание сетей Azure](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
 - [Описание типов хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts).
-- - Дополнительные сведения [об избыточности хранилищ](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs#read-access-geo-redundant-storage) и [о безопасной передаче данных](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) для хранилища.
+- Дополнительные сведения [об избыточности хранилищ](https://docs.microsoft.com/azure/storage/common/storage-redundancy-grs#read-access-geo-redundant-storage) и [о безопасной передаче данных](https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) для хранилища.
 
 
 

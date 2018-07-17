@@ -9,12 +9,12 @@ ms.date: 09/25/2017
 ms.author: johnkem
 ms.custom: mvc
 ms.component: metrics
-ms.openlocfilehash: 4d08c4c7a76d7ed16ec57590ee0fd4ee978e5258
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: f6b7b9fe73f5e815e08bbf4f6493ee181a0c692b
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263156"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918277"
 ---
 # <a name="archive-azure-monitoring-data"></a>Архивация данных мониторинга Azure
 
@@ -136,6 +136,11 @@ ms.locfileid: "35263156"
 Данные мониторинга из виртуальных машин теперь поступают в учетную запись хранения.
 
 ## <a name="view-the-monitoring-data-in-the-storage-account"></a>Просмотр данных мониторинга в учетной записи хранения
+
+> [!WARNING]
+> Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](./monitor-diagnostic-logs-append-blobs.md) 
+>
+> 
 
 Если выполнены предыдущие шаги, данные будут поступать в учетную запись хранения.
 

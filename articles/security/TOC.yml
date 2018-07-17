@@ -218,11 +218,10 @@
           href: ./blueprints/uknhs-iaaswa-overview.md
         - name: Веб-приложение PaaS
           href: ./blueprints/uknhs-paaswa-overview.md
-    - name: Для служебного пользования (Соединенное Королевство)
-      href: ./blueprints/uk-official-three-tier-applications-overview.md
+    - name: UK OFFICIAL
       items:
-        - name: Обзор принципов безопасности
-          href: ./blueprints/uk-official-three-tier-applications-principles-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/ukofficial-iaaswa-overview.md
     - name: ИИ и данные о работоспособности HIPAA/HITRUST
       href: ./blueprints/azure-health.md
 - name: Технические документы
