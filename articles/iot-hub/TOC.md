@@ -32,11 +32,6 @@
 ### [.NET](iot-hub-csharp-csharp-device-management-get-started.md)
 ### [Java](iot-hub-java-java-device-management-getstarted.md)
 ### [Python](iot-hub-python-python-device-management-get-started.md)
-## Использование заданий устройства для обновления встроенного ПО устройства
-### [Node.js](iot-hub-node-node-firmware-update.md)
-### [.NET](iot-hub-csharp-csharp-firmware-update.md)
-### [Java](iot-hub-java-java-firmware-update.md)
-### [Python](iot-hub-python-python-firmware-update.md)
 
 ### [Массовое управление удостоверениями устройств Центра Интернета вещей](iot-hub-bulk-identity-mgmt.md)
 
@@ -180,11 +175,6 @@
 #### [.NET](iot-hub-csharp-csharp-direct-methods.md)
 #### [Java](iot-hub-java-java-direct-methods.md)
 #### [Python](iot-hub-python-python-direct-methods.md)
-### Как использовать свойства двойников
-#### [Node.js](iot-hub-node-node-twin-how-to-configure.md)
-#### [.NET](iot-hub-csharp-csharp-twin-how-to-configure.md)
-#### [Java](iot-hub-java-java-twin-how-to-configure.md)
-#### [Python](iot-hub-python-python-twin-how-to-configure.md)
 ### Планирование и трансляция заданий
 #### [Node.js](iot-hub-node-node-schedule-jobs.md)
 #### [.NET](iot-hub-csharp-csharp-schedule-jobs.md)
@@ -212,7 +202,7 @@
 ### [Перенос в параметры диагностики](iot-hub-migrate-to-diagnostics-settings.md)
 ### [Мониторинг операций](iot-hub-operations-monitoring.md)
 ## Использование реальных устройств
-### [Начало работы](iot-hub-get-started.md)
+### [Приступая к работе с условным доступом](iot-hub-get-started.md)
 ### [Использование онлайн-симулятора](iot-hub-raspberry-pi-web-simulator-get-started.md)
 ### [Использование физического устройства](iot-hub-get-started-physical.md)
 #### [Raspberry Pi с Python](iot-hub-raspberry-pi-kit-python-get-started.md)

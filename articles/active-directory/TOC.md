@@ -143,9 +143,9 @@
 ## Управление паролями
 ### [Общие сведения о паролях](authentication/active-directory-passwords-overview.md)
 ### Документы пользователя
-#### [Сброс или изменение пароля](active-directory-passwords-update-your-own-password.md)
+#### [Сброс или изменение пароля](user-help/active-directory-passwords-update-your-own-password.md)
 #### [Рекомендации по паролям](active-directory-secure-passwords.md)
-#### [Регистрация для самостоятельного сброса пароля](active-directory-passwords-reset-register.md)
+#### [Регистрация для самостоятельного сброса пароля](user-help/active-directory-passwords-reset-register.md)
 ### [Принципы работы SSPR](authentication/concept-sspr-howitworks.md)
 ### [Руководство по развертыванию SSPR](authentication/howto-sspr-deployment.md)
 ### [SSPR и Windows 10](authentication/tutorial-sspr-windows.md)
@@ -174,8 +174,8 @@
 ### [Планирование присоединения к Azure AD](active-directory-azureadjoin-deployment-aadjoindirect.md)
 ### [Часто задаваемые вопросы](device-management-faq.md)
 ### Задачи
-#### [Настройка устройств Windows 10, зарегистрированных в Azure AD](device-management-azuread-registered-devices-windows10-setup.md)
-#### [Настройка устройств, присоединенных к Azure AD](device-management-azuread-joined-devices-setup.md)
+#### [Настройка устройств Windows 10, зарегистрированных в Azure AD](user-help/device-management-azuread-registered-devices-windows10-setup.md)
+#### [Настройка устройств, присоединенных к Azure AD](user-help/device-management-azuread-joined-devices-setup.md)
 #### [Настройка гибридных устройств, присоединенных к Azure AD](device-management-hybrid-azuread-joined-devices-setup.md)
 #### [Локальное развертывание](active-directory-device-registration-on-premises-setup.md)
 #### [Присоединение к Azure AD во время первого запуска Windows 10](device-management-azuread-joined-devices-frx.md)
