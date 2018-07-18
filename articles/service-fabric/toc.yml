@@ -551,7 +551,7 @@
                   href: service-fabric-cluster-scale-up-down.md
                 - name: Масштабирование программными средствами
                   href: service-fabric-cluster-programmatic-scaling.md
-                - name: Масштабирование виртуальных машин типа первичного узла
+                - name: Масштабирование и обновление виртуальных машин типа первичного узла
                   href: service-fabric-cluster-upgrade-primary-nodetype-vm.md
             - name: Обновление
               href: service-fabric-cluster-upgrade.md
@@ -569,8 +569,6 @@
               href: service-fabric-cluster-delete.md
             - name: Удаленное подключение к виртуальной машине узла кластера
               href: service-fabric-cluster-remote-connect-to-azure-cluster-node.md
-            - name: Обновление и перенос SKU масштабируемого набора виртуальных машин
-              href: service-fabric-update-vmss-sku.md
         - name: Изолированные кластеры
           items:
             - name: Создание

@@ -35,7 +35,7 @@
       href: policy-samples.md
 - name: Основные понятия
   items:
-    - name: Безопасность
+    - name: Группы безопасности
       href: security-overview.md
     - name: Маршрутизация
       href: virtual-networks-udr-overview.md

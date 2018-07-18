@@ -5,12 +5,13 @@
     - name: Что такое Azure DNS?
       href: dns-overview.md
 - name: Быстрое начало работы
+  expanded: true
   items:
     - name: Разрешение имен с помощью портала
       href: dns-getstarted-portal.md
-    - name: Создание частной зоны и записи DNS с помощью PowerShell
+    - name: Разрешение имен с помощью PowerShell
       href: dns-getstarted-powershell.md
-    - name: Создание частной зоны и записи DNS с помощью CLI
+    - name: Разрешение имен с помощью CLI
       href: dns-getstarted-cli.md
 - name: Учебники
   items:
