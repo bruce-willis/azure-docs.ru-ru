@@ -5,14 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.topic: article
-ms.date: 03/15/2018
+ms.date: 07/06/2018
+ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 345b73db423c6e12b56bb3308f7700917a372dda
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: dc316df754ea0b8630abe341dc5ce6b0adffa685
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37920041"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 03/23/2018
 Требуется учетная запись хранения LRS или GRS. Рекомендуется использовать учетную запись хранения GRS, чтобы обеспечить устойчивость данных в случае отключения электричества в регионе или при отсутствии возможности восстановления основного региона. Поддерживается хранилище класса Premium.
 
 ### <a name="does-my-azure-account-need-permissions-to-create-vms"></a>Требуются ли учетной записи Azure разрешения на создание виртуальных машин?
-Если вы являетесь администратором подписки, у вас имеются необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
+Если вы являетесь администратором подписки, у вас есть необходимые разрешения на репликацию. Если нет, вам нужны разрешения на создание виртуальной машины Azure в группе ресурсов и виртуальной сети, которые указываются при настройке Site Recovery, и разрешения на запись в выбранную учетную запись хранения. [Узнайте больше](site-recovery-role-based-linked-access-control.md#permissions-required-to-enable-replication-for-new-virtual-machines).
 
 
 

@@ -2,25 +2,23 @@
 title: Как выполнять запросы к данным графа в базе данных Azure Cosmos DB | Документация Майкрософт
 description: Узнайте, как выполнять запросы к данным графа в базе данных Azure Cosmos DB
 services: cosmos-db
-documentationcenter: ''
 author: luisbosquez
 manager: kfile
 editor: ''
 tags: ''
-ms.assetid: 8bde5c80-581c-4f70-acb4-9578873c92fa
 ms.service: cosmos-db
+ms.component: cosmosdb-graph
 ms.devlang: na
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: ''
 ms.date: 01/02/2018
 ms.author: lbosq
 ms.custom: mvc
-ms.openlocfilehash: 449821d6121f8fec40b151ae06f687586133c3d1
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.openlocfilehash: ad38976f439c399d839d6c5ee9dcd6ade7726c71
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37081913"
 ---
 # <a name="tutorial-query-azure-cosmos-db-graph-api-by-using-gremlin"></a>Руководство. Выполнение запросов к API Graph в Azure Cosmos DB Graph с использованием Gremlin
 
@@ -33,7 +31,7 @@ ms.lasthandoff: 05/12/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы такие запросы работали, у вас должна быть учетная запись базы данных Azure Cosmos DB и данные графа в контейнере. У вас их нет? Завершите [краткое руководство](create-graph-dotnet.md) или [руководство разработчика](tutorial-query-graph.md), чтобы создать учетную запись и заполнить базу данных. Вы можете выполнить следующие запросы с помощью [библиотеки графов .NET базы данных Azure Cosmos DB](graph-sdk-dotnet.md), [консоли Gremlin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) или предпочитаемого драйвера Gremlin.
+Чтобы такие запросы работали, у вас должна быть учетная запись базы данных Azure Cosmos DB и данные графа в контейнере. У вас их нет? Завершите [краткое руководство](create-graph-dotnet.md) или [руководство разработчика](tutorial-query-graph.md), чтобы создать учетную запись и заполнить базу данных. Вы можете выполнять следующие запросы с помощью [консоли Gremlin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) или предпочитаемого драйвера Gremlin.
 
 ## <a name="count-vertices-in-the-graph"></a>Подсчет вершин в графе
 
@@ -82,7 +80,8 @@ g.V('thomas').outE('knows').inV().hasLabel('person').outE('knows').inV().hasLabe
 > [!div class="checklist"]
 > * Вы научились выполнять запросы с помощью Graph. 
 
-Теперь вы можете приступать к следующему руководству, чтобы узнать, как глобально распределять данные.
+Теперь вы можете перейти к разделу ключевых концепций, чтобы получить дополнительные сведения о службе Cosmos DB.
 
 > [!div class="nextstepaction"]
-> [Глобальное распределение данных](tutorial-global-distribution-graph.md)
+> [Глобальное распределение](distribute-data-globally.md) 
+

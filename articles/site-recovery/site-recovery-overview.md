@@ -5,20 +5,21 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: overview
-ms.date: 05/02/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: d3cda9bdc75709d46f952309375e82098b6ae0d3
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: a3242c9402d738d580f4abf5f1a0bb64f2fa7728
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37919909"
 ---
 # <a name="about-site-recovery"></a>Сведения о службе Site Recovery
 
 Вас приветствует служба Azure Site Recovery. В этой статье содержится общий обзор службы.
 
-В качестве организации вам необходимо принять стратегию непрерывности бизнеса и аварийного восстановления (BCDR), которая поможет сохранить ваши данные, а также поддерживать работоспособность приложений и рабочих нагрузок при планируемых и незапланированных сбоях.
+Для организации необходимо принять стратегию непрерывности бизнеса и аварийного восстановления (BCDR), которая поможет сохранить ваши данные, а также поддерживать работоспособность приложений и рабочих нагрузок при планируемых и незапланированных сбоях.
 
 Службы Azure Site Recovery помогают реализовать стратегию BCDR.
 

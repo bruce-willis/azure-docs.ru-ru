@@ -3,7 +3,7 @@ title: Сбор данных с локальных компьютеров Linux 
 description: Узнайте, как развернуть агент Log Analytics для Linux и включить сбор данных из этой ОС с помощью Log Analytics.
 services: log-analytics
 documentationcenter: log-analytics
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: ''
@@ -15,16 +15,18 @@ ms.topic: quickstart
 ms.date: 04/02/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 30bb21ebd6b19f4cc52e364039b9be8a9a7695e5
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.component: na
+ms.openlocfilehash: aca8ee7305f919068733dfa3cb636a0f9bad7b05
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127175"
 ---
 # <a name="collect-data-from-linux-computer-hosted-in-your-environment"></a>Сбор данных с компьютеров Linux, размещенных в вашем окружении
 [Azure Log Analytics](log-analytics-overview.md) может собирать данные напрямую c физических компьютеров или виртуальных машин Linux и других ресурсов в вашем окружении в один репозиторий для подробного анализа и исправления.  В этом кратком руководстве показано, как настроить и собирать данные c компьютера Linux с помощью нескольких простых действий.  Сведения о виртуальных машинах Linux в Azure приведены далее в разделе [Сбор данных о виртуальных машинах Azure](log-analytics-quick-collect-azurevm.md).  
 
-Чтобы узнать сетевые и системные требования для развертывания агента Linux, см. описание [необходимых компонентов для ОС Linux](log-analytics-concept-hybrid.md#prerequisites).
+Дополнительные сведения о поддерживаемой конфигурации см. в разделах о [поддерживаемых операционных системах Linux](log-analytics-concept-hybrid.md#supported-linux-operating-systems) и [требованиях к сетевым брандмауэрам](log-analytics-concept-hybrid.md#network-firewall-requirements).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -102,7 +104,7 @@ Log Analytics может собирать события из системног
 2. Чтобы добавить журнал событий, введите его имя.  Введите **Системный журнал** и щелкните знак "плюс" **+**.  
 3. В таблице снимите флажок для степеней серьезности **Информация**, **Уведомление** и **Отладить**. 
 4. В верхней части страницы щелкните **Сохранить**, чтобы сохранить конфигурацию.
-5. Выберите **Linux Performance Data** (Данные производительности Linux), чтобы включить сбор данных счетчиков производительности на компьютере Linux. 
+5. Выберите **Linux Performance Data** (Данные производительности Linux), чтобы включить сбор данных счетчиков производительности на компьютере Windows. 
 6. При первой настройке счетчиков производительности Linux для новой рабочей области Log Analytics вы можете быстро создать несколько распространенных счетчиков. Рядом с каждым счетчиком в списке есть флажок.<br><br> ![Выбраны стандартные счетчики производительности Windows](media/log-analytics-quick-collect-azurevm/linux-perfcounters-default.png)<br> Щелкните **Add the selected performance counters** (Добавить выбранные счетчики производительности).  Они добавляются и устанавливаются с десятисекундным интервалом сбора.  
 7. В верхней части страницы щелкните **Сохранить**, чтобы сохранить конфигурацию.
 

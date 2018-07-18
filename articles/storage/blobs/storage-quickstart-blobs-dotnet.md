@@ -7,13 +7,14 @@ manager: jeconnoc
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 04/09/2018
+ms.date: 05/22/2018
 ms.author: tamram
-ms.openlocfilehash: 7607643698cddb0cf5a113191ef638d36ab176bc
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: 157fd47861857fedbe4886407ba464f886ef1be3
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38767142"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-net"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью .NET
 
@@ -62,7 +63,7 @@ git clone https://github.com/Azure-Samples/storage-blobs-dotnet-quickstart.git
 
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 
-Чтобы запустить приложение, укажите строку подключения для учетной записи хранения. Пример приложения считывает строку подключения из переменной среды и использует ее для аутентификации запросов к службе хранилища Azure.
+Чтобы запустить приложение, укажите строку подключения для учетной записи хранения. Пример приложения считывает строку подключения из переменной среды и использует ее для авторизации запросов к службе хранилища Azure.
 
 После копирования строки подключения запишите ее в переменной среды на локальном компьютере, где выполняется приложение. Чтобы задать переменную среды, откройте окно консоли и следуйте инструкциям для используемой операционной системы. Замените `<yourconnectionstring>` фактической строкой подключения:
 

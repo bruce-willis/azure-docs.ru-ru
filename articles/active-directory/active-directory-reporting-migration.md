@@ -3,34 +3,28 @@ title: Поиск отчетов о действиях пользователя 
 description: Узнайте, где искать отчеты о действиях пользователей Azure Active Directory на портале Azure.
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: priyamohanram
 manager: mtillman
 editor: ''
 ms.service: active-directory
-ms.topic: article
+ms.topic: conceptual
 ms.workload: identity
 ms.component: users-groups-roles
 ms.date: 12/06/2017
-ms.author: curtand
+ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 985bdc3c00549844958c23a83496a019d7a31944
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: f22219a0e2ff342e25a2efdeb319f389250ecfef
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36231327"
 ---
 # <a name="find-activity-reports-in-the-azure-portal"></a>Поиск отчетов о действиях на портале Azure
 
 В этой статье объясняется, как находить отчеты о действиях пользователей Azure Active Directory на портале Azure.
 
-## <a name="whats-new"></a>Новые возможности
-
-Отчеты на классическом портале Azure были разделены на категории:
-* Отчеты о безопасности
-* Отчеты об активности
-* Отчеты интегрированных приложений
-
-### <a name="activity-and-integrated-app-reports"></a>Отчеты о действиях и отчеты интегрированных приложений
+## <a name="activity-and-integrated-app-reports"></a>Отчеты о действиях и отчеты интегрированных приложений
 
 Существующие отчеты на портале Azure объединяются в единое представление, чтобы их можно было просматривать в контексте. Один базовый API предоставляет данные для представления.
 
@@ -87,7 +81,7 @@ ms.lasthandoff: 05/07/2018
 
 #### <a name="azure-ad-anomalous-activity-reports"></a>Отчеты Azure AD об аномальных действиях
 
-Отчеты системы безопасности Azure AD об аномальных действиях с классического портала Azure объединены в единое централизованное представление. В этом представлении отображаются все события, связанные с угрозами безопасности, которые Azure AD может обнаружить и о которых может сообщить.
+Отчеты системы безопасности Azure AD об аномальных действиях объединены в единое централизованное представление. В этом представлении отображаются все события, связанные с угрозами безопасности, которые Azure AD может обнаружить и о которых может сообщить.
 
 В следующей таблице перечислены отчеты системы безопасности Azure AD об аномальных действиях и соответствующие типы событий риска на портале Azure.
 
@@ -104,8 +98,6 @@ ms.lasthandoff: 05/07/2018
 
 * "Операции входа после нескольких неудачных попыток";
 * "Операции входа из нескольких географических регионов".
-
-Эти отчеты по-прежнему доступны на классическом портале Azure, но со временем они станут нерекомендуемыми.
 
 Дополнительные сведения см. в статье [События риска Azure Active Directory](active-directory-identity-protection-risk-events.md).  
 
@@ -125,29 +117,10 @@ ms.lasthandoff: 05/07/2018
 - [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](active-directory-reporting-security-risky-sign-ins.md)
 
 
-## <a name="activity-reports-in-the-azure-classic-portal-vs-the-azure-portal"></a>Сравнение отчетов о действиях на классическом портале Azure и на портале Azure
-
-В таблице в этом разделе перечислены существующие отчеты на классическом портале Azure. В ней также объясняется, как найти те же сведения на портале Azure.
-
-Чтобы просмотреть все данные аудита, в колонке **Azure Active Directory** в разделе **ДЕЙСТВИЕ** выберите **Журналы аудита**.
-
-![Журналы аудита](./media/active-directory-reporting-migration/61.png "Журналы аудита")
-
-| Классический портал Azure                 | На портале Azure                                                         |
-| ---                                  | ---                                                                        |
-| Журналы аудита                           | Для параметра **Activity Category** (Категория действий) выберите **Core Directory** (Основной каталог).                       |
-| Действие сброса пароля              | Для параметра **Activity Category** (Категория действий) выберите **Self service Password Management** (Самостоятельное управление паролями). |
-| Действия регистрации сброса пароля | Для параметра **Activity Category** (Категория действий) выберите **Self service Password Management** (Самостоятельное управление паролями).     |
-| Действия групп по самообслуживанию         | Для параметра **Activity Category** (Категория действий) выберите **Self service Group Management** (Самостоятельное управление группами).        |
-| Действия по подготовке учетных записей        | Для параметра **Activity Category** (Категория действий) выберите **Account User Provisioning** (Подготовка учетных записей пользователей).         |
-| Состояние смены пароля             | Для параметра **Activity Category** (Категория действий) выберите **Automatic App Password Rollover** (Автоматическая смена паролей приложений).      |
-| Ошибки подготовки учетной записи          | Для параметра **Activity Category** (Категория действий) выберите **Account User Provisioning** (Подготовка учетных записей пользователей).        |
-| Операции изменения имен групп Office 365         | Для параметра **Activity Category** (Категория действий) выберите **Self service Password Management** (Самостоятельное управление паролями). Для параметра **Activity Resource Type** (Тип ресурсов действия) выберите **Группа**. Для параметра **Activity Source** (Источник действия) выберите **O365 groups** (Группы Office 365).|
-
 Чтобы просмотреть отчет об **использовании приложения**, в колонке **Azure Active Directory** в разделе **УПРАВЛЕНИЕ** выберите **Корпоративные приложения**, а затем щелкните **События входа**.
 
 
-![Отчет о событиях входа в корпоративные приложения](./media/active-directory-reporting-migration/199.png "Отчет о событиях входа в корпоративные приложения")
+![Отчет о входах в корпоративные приложения](./media/active-directory-reporting-migration/199.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

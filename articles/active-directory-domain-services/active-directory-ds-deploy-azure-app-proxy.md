@@ -7,24 +7,27 @@ author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/15/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: eee20271c27f596ee6aefd0b7280c7862c53b289
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 43b43be154756838d8c130b2ec1a0dbc40405422
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332360"
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси приложения Azure AD в управляемых доменах доменных служб Azure AD
 Прокси приложения Azure Active Directory помогает организовать удаленную работу сотрудников, публикуя локальные приложения для доступа через Интернет. С помощью доменных служб Azure AD теперь можно переносить устаревшие локальные приложения в службы инфраструктуры Azure. Затем эти приложения можно опубликовать с помощью прокси приложения Azure AD, чтобы обеспечить безопасный удаленный доступ для пользователей в вашей организации.
 
 Если вы еще не знакомы с прокси приложения Azure AD, узнайте, [как обеспечить безопасный удаленный доступ к локальным приложениям](../active-directory/manage-apps/application-proxy.md).
 
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:
@@ -75,7 +78,7 @@ ms.lasthandoff: 05/11/2018
     * Укажите **учетные данные глобального администратора Azure AD**. Ваш клиент глобального администратора может отличаться от учетных данных Microsoft Azure.
     * Учетная запись администратора, используемая для регистрации соединителя, должна принадлежать тому каталогу, где включена служба прокси приложения. Например, если домен клиента contoso.com, администратором должен быть пользователь admin@contoso.com или другой действительный псевдоним в этом домене.
     * Если на сервере, на который устанавливается соединитель, включена конфигурация усиленной безопасности Internet Explorer, экран регистрации может быть заблокирован. Чтобы разрешить доступ, следуйте указаниям в сообщении об ошибке. Убедитесь, что конфигурация усиленной безопасности Internet Explorer отключена.
-    * Если не удается зарегистрировать соединитель, см. сведения в статье [Устранение неполадок прокси-сервера приложений](../active-directory/active-directory-application-proxy-troubleshoot.md).
+    * Если не удается зарегистрировать соединитель, см. сведения в статье [Устранение неполадок прокси-сервера приложений](../active-directory/manage-apps/application-proxy-troubleshoot.md).
 
     ![Соединитель установлен](./media/app-proxy/app-proxy-connector-installed.png)
 4. Чтобы убедиться, что соединитель работает должным образом, запустите средство устранения неполадок соединителя прокси приложения Azure AD. После запуска средства устранения неполадок должен отобразиться отчет об успешном завершении.

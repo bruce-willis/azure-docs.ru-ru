@@ -1,24 +1,19 @@
 ---
-title: "Рекомендации по автомасштабированию | Документы Майкрософт"
-description: "Шаблоны автоматического масштабирования в веб-приложениях службы приложений Azure, масштабируемых наборах виртуальных машин и облачных службах"
+title: Рекомендации по автомасштабированию
+description: Шаблоны автоматического масштабирования в веб-приложениях службы приложений Azure, масштабируемых наборах виртуальных машин и облачных службах
 author: anirudhcavale
-manager: orenr
-editor: 
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: 9fa2b94b-dfa5-4106-96ff-74fd1fba4657
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: ancav
-ms.openlocfilehash: d5b33b15c315c7538bba7bf9ae067946f3b6d3c4
-ms.sourcegitcommit: fa28ca091317eba4e55cef17766e72475bdd4c96
+ms.component: autoscale
+ms.openlocfilehash: e9fc5a4c5d2e23750493cc320dffa380724347fb
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262449"
 ---
 # <a name="best-practices-for-autoscale"></a>Рекомендации по автомасштабированию
 В этой статье даны рекомендации по автомасштабированию в Azure. Автомасштабирование Azure Monitor используется только с [масштабируемыми наборами виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/), [облачными службами](https://azure.microsoft.com/services/cloud-services/) и [веб-приложениями службы приложений](https://azure.microsoft.com/services/app-service/web/). Прочие службы Azure используют другие методы масштабирования.

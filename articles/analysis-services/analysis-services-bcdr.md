@@ -3,16 +3,17 @@ title: Высокая доступность служб Azure Analysis Services 
 description: Обеспечение высокой доступности служб Analysis Services Azure.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f8252e47224b96d43551ad389148a1ce4349c308
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 42e270f26a4576014d3a08a0ab3c59808c65fc56
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445472"
 ---
 # <a name="analysis-services-high-availability"></a>Высокая доступность служб Analysis Services
 Эта статья описывает обеспечение высокой доступности для серверов служб Azure Analysis Services. 

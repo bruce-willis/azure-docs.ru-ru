@@ -14,11 +14,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03-20-2018
   ms.author: juliako
-  ms.openlocfilehash: 2aa16fb222c6a58d8e98a7399d1e3fd3cd9044f6
-  ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+  ms.openlocfilehash: 4cab323284bd17de865d97a16b056dd1230010fe
+  ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/10/2018
+  ms.lasthandoff: 06/25/2018
+  ms.locfileid: "36936316"
 abstract:
   description: Узнайте, как выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей.
 sections:
@@ -30,25 +31,66 @@ sections:
     style: icon48
     items:
     - image:
-        src: media/index/media-services.svg
+        src: media/index/AMSIcons-encoding.svg
       text: Потоковая передача видеофайлов
       href: /azure/media-services/latest/stream-files-dotnet-quickstart
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как выполнять потоковую передачу файлов и анализировать видео с помощью Служб мультимедиа.
+    text: 'Узнайте, как выполнять потоковую передачу файлов по требованию, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3:'
   - type: list
-    style: ordered
+    style: icon48
     items:
-    - html: <a href="/azure/media-services/latest/stream-files-tutorial-with-api">Отправка, кодирование и потоковая передача видео</a>
-    - html: <a href="/azure/media-services/latest/analyze-videos-tutorial-with-api">Анализ видео</a>
+    - image:
+        src: media/index/AMSIcons-encoding.svg
+      text: Отправка, кодирование и потоковая передача видео
+      href: /azure/media-services/latest/stream-files-tutorial-with-api
+    - image:
+        src: media/index/AMSIcons-live.svg
+      text: Широковещательная трансляция
+      href: /azure/media-services/latest/stream-live-tutorial-with-api
+    - image:
+        src: media/index/AMSIcons-media_analytics.svg
+      text: Анализ видео
+      href: /azure/media-services/latest/analyze-videos-tutorial-with-api
+- title: Примеры
+  items:
+  - type: paragraph
+    text: 'Примеры, демонстрирующие потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью интерфейсов API и Служб мультимедиа версии 3:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/cli.svg
+      text: Инфраструктура CLI Azure
+      href: https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services
+    - image:
+        src: media/index/rest.svg
+      text: Использование REST с Postman
+      href: https://github.com/Azure-Samples/media-services-v3-rest-postman
+    - image:
+        src: media/index/logo_dotnet_core.svg
+      text: Использование .NET с Visual Studio Code
+      href: https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials
+    - image:
+        src: media/index/dotnet.svg
+      text: .NET с Visual Studio
+      href: https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials
+    - image:
+        src: media/index/logo_nodejs.svg
+      text: Node.js
+      href: https://github.com/Azure-Samples/media-services-v3-node-tutorials
 - title: Справочные материалы
   items:
+  - type: paragraph
+    text: ''
   - type: list
-    style: cards
-    className: cardsD
+    style: unordered
     items:
-    - title: Командная строка
-      html: <p><a href="https://docs.microsoft.com/cli/azure/reference-index?view=azure-cli-latest">интерфейс командной строки Azure</a></p>
-    - title: REST
-      html: <p><a href="https://go.microsoft.com/fwlink/p/?linkid=873030">REST API</a></p>
+    - html: <a href="https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/preview/2018-03-30-preview">Спецификация OpenAPI (Swagger)</a>
+    - html: <a href="https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest">интерфейс командной строки Azure</a>
+    - html: <a href="https://go.microsoft.com/fwlink/p/?linkid=873030">REST</a>
+    - html: <a href="https://docs.microsoft.com/dotnet/api/overview/azure/mediaservices/management?view=azure-dotnet">.NET</a>
+    - html: <a href="https://docs.microsoft.com/java/api/overview/azure/mediaservices">Java</a>
+    - html: <a href="https://docs.microsoft.com/python/api/overview/azure/media-services?view=azure-python">Python</a>
+    - html: <a href="https://docs.microsoft.com/en-us/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest">Node.js</a>

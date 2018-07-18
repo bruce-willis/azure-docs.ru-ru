@@ -10,6 +10,8 @@
       href: azure-log-audit.md
     - name: Сетевая безопасность Azure
       href: azure-network-security.md
+    - name: Безопасность бессерверной платформы Azure
+      href: abstract-serverless-platform-security.md
     - name: Включение функций операционной безопасности
       href: azure-operational-security.md
     - name: Система управления в Azure
@@ -51,13 +53,34 @@
       href: ../storage/common/storage-security-guide.md?toc=%2fazure%2fsecurity%2ftoc.json
 - name: Платформа и инфраструктура
   items:
+    - name: Безопасность инфраструктуры
+      href: azure-security-infrastructure.md
+      items:
+        - name: Физическая безопасность
+          href: azure-physical-security.md
+        - name: Доступность
+          href: azure-infrastructure-availability.md
+        - name: Компоненты и границы
+          href: azure-infrastructure-components.md
+        - name: Сетевая архитектура
+          href: azure-infrastructure-network.md
+        - name: Рабочая сеть
+          href: azure-production-network.md
+        - name: База данных SQL
+          href: azure-infrastructure-sql.md
+        - name: Операции
+          href: azure-infrastructure-operations.md
+        - name: Мониторинг
+          href: azure-infrastructure-monitoring.md
+        - name: Целостность
+          href: azure-infrastructure-integrity.md
+        - name: Защита данных
+          href: azure-protection-of-customer-data.md
     - name: Антивредоносное ПО Майкрософт
       href: azure-security-antimalware.md
     - name: Безопасность IaaS
       href: security-virtual-machines-overview.md
       items:
-        - name: Рекомендации по виртуальным машинам Azure
-          href: azure-security-best-practices-vms.md
         - name: Рекомендации по рабочим нагрузкам IaaS
           href: azure-security-iaas.md
         - name: Образы из Azure Marketplace
@@ -67,6 +90,8 @@
       items:
         - name: Выбор аутентификации Azure AD
           href: azure-ad-choose-authn.md
+        - name: Контрольный список безопасности
+          href: azure-ad-secure-steps.md
         - name: Рекомендации
           href: azure-security-identity-management-best-practices.md
         - name: Применение MFA для администраторов подписки
@@ -139,8 +164,16 @@
           href: azure-operational-security-checklist.md
 - name: Система управления и соответствие требованиям
   items:
-    - name: Финансовые услуги для контролируемых рабочих нагрузок
-      href: ./blueprints/financial-services-regulated-workloads.md
+    - name: FFIEC
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/ffiec-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/ffiec-dw-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/ffiec-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/ffiec-paaswa-overview.md
     - name: GDPR
       items:
         - name: Аналитика данных
@@ -161,40 +194,34 @@
           href: ./blueprints/fedramp-iaaswa-overview.md
         - name: Веб-приложение PaaS
           href: ./blueprints/fedramp-paaswa-overview.md
+    - name: Доверительное интернет-соединение
+      items:
+        - name: Доверительное интернет-соединение с Azure
+          href: ./compliance/compliance-tic.md
     - name: PCI DSS
-      href: ./blueprints/payment-processing-blueprint.md
       items:
-        - name: Обзор требований
-          href: ./blueprints/pci-dss-requirements-overview.md
-        - name: "Требование\_1. Брандмауэры"
-          href: ./blueprints/pci-dss-requirement-1-firewall.md
-        - name: "Требование\_2. Пароли"
-          href: ./blueprints/pci-dss-requirement-2-password.md
-        - name: "Требование\_3. Данные держателей карт"
-          href: ./blueprints/pci-dss-requirement-3-chd.md
-        - name: "Требование\_4. Шифрование"
-          href: ./blueprints/pci-dss-requirement-4-encryption.md
-        - name: "Требование\_5. Защита от вредоносных программ"
-          href: ./blueprints/pci-dss-requirement-5-malware.md
-        - name: "Требование\_6. Безопасность систем"
-          href: ./blueprints/pci-dss-requirement-6-secure-system.md
-        - name: "Требование\_7. Предоставление доступа"
-          href: ./blueprints/pci-dss-requirement-7-access.md
-        - name: "Требование\_8. Идентификация"
-          href: ./blueprints/pci-dss-requirement-8-identity.md
-        - name: "Требование\_9. Физический доступ"
-          href: ./blueprints/pci-dss-requirement-9-physical-access.md
-        - name: "Требование\_10. Мониторинг"
-          href: ./blueprints/pci-dss-requirement-10-monitoring.md
-        - name: "Требование\_11. Тестирование"
-          href: ./blueprints/pci-dss-requirement-11-testing.md
-        - name: "Требование\_12. Политика безопасности"
-          href: ./blueprints/pci-dss-requirement-12-policy.md
-    - name: Для служебного пользования (Соединенное Королевство)
-      href: ./blueprints/uk-official-three-tier-applications-overview.md
+        - name: Аналитика данных
+          href: ./blueprints/pcidss-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/pcidss-dw-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/pcidss-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/pcidss-paaswa-overview.md
+    - name: UK NHS
       items:
-        - name: Обзор принципов безопасности
-          href: ./blueprints/uk-official-three-tier-applications-principles-overview.md
+        - name: Аналитика данных
+          href: ./blueprints/uknhs-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/uknhs-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/uknhs-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/uknhs-paaswa-overview.md
+    - name: UK OFFICIAL
+      items:
+        - name: Веб-приложение IaaS
+          href: ./blueprints/ukofficial-iaaswa-overview.md
     - name: ИИ и данные о работоспособности HIPAA/HITRUST
       href: ./blueprints/azure-health.md
 - name: Технические документы

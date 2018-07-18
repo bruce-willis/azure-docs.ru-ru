@@ -1,27 +1,22 @@
 ---
-title: Первое знакомство. Защита виртуальных машин Azure в хранилище служб восстановления | Документация Майкрософт
+title: Первое знакомство. Защита виртуальных машин Azure в хранилище служб восстановления
 description: Защита виртуальных машин Azure в хранилище служб восстановления. Чтобы защитить данные, используйте резервные копии виртуальных машин, развернутых с помощью Resource Manager или классической модели развертывания, а также виртуальных машин хранилища класса Premium, зашифрованных виртуальных машин и виртуальных машин на управляемых дисках. Создание и регистрация хранилища служб восстановления. Регистрация виртуальных машин, создание политики и защита виртуальных машин в Azure.
 services: backup
-documentationcenter: ''
 author: markgalioto
 manager: carmonm
-editor: ''
 keyword: backups; vm backup
-ms.assetid: 45e773d6-c91f-4501-8876-ae57db517cd1
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/18/2018
-ms.author: markgal;jimpark;sogup
+ms.author: markgal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 701accb107931bd1f4472d8999102fecb4fd6373
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+keywords: backups; vm backup
+ms.openlocfilehash: feae4ac83b637588fe0979a82ce05a56c2d339ae
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32310610"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38466137"
 ---
 # <a name="back-up-azure-virtual-machines-to-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище служб восстановления
 

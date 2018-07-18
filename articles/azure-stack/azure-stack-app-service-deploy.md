@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 05/22/2018
 ms.author: anwestg
-ms.openlocfilehash: 9554309522e4a1e60fd3599b9a19bcf9cf4bbefb
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: f44e6e917058306e37b9eb99819afda76a742389
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360178"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34604273"
 ---
 # <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Добавление поставщика ресурсов службы приложений в Azure Stack
 
@@ -67,6 +67,12 @@ ms.locfileid: "34360178"
         * При использовании Azure Active Directory (Azure AD) введите учетную запись администратора Azure AD и пароль, предоставленный при развертывании Azure Stack. Щелкните **Войти**.
         * Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. Например, cloudadmin@azurestack.local. Введите пароль и нажмите кнопку **Войти**.
     2. В поле **Azure Stack Subscriptions** (Подписки Azure Stack) выберите **Default Provider Subscription** (Подписка поставщика по умолчанию).
+    
+    > [!NOTE]
+    > Сейчас Службу приложений можно развернуть только в **подписке поставщика по умолчанию**.  В будущем обновлении службу приложений можно будет развернуть в новую подписку для контроля использования (представленную в Azure Stack 1804), в которую будут перенесены все имеющиеся развертывания.
+    >
+    >
+    
     3. В поле **Azure Stack Locations** (Расположения Azure Stack) выберите расположение, соответствующее региону, в который выполняется развертывание. Например, **локальный** регион при развертывании в Пакете средств разработки Azure Stack.
 
     ![Установщик службы приложений][3]

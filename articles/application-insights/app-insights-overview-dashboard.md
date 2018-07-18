@@ -10,29 +10,25 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
-ms.date: 05/10/2018
+ms.topic: conceptual
+ms.date: 07/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: 0be54c47965c6a27c3506fd37a7bf67e4b2b7924
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: cf7c151121ddf8b2dc57d5db66a62f4d46e463de
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34356092"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970978"
 ---
-# <a name="application-insights-overview-dashboard-preview"></a>Панель мониторинга общих сведений Application Insights (предварительная версия)
+# <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
-Application Insights всегда предоставляло сводную панель обзора, чтобы быстро мгновенно оценить работоспособность и производительность приложения. Новая предварительная версия панели мониторинга общих сведений предоставляет более гибкие возможности.
+Application Insights всегда предоставляло сводную панель обзора, чтобы быстро мгновенно оценить работоспособность и производительность приложения. Новая обзорная панель мониторинга предоставляет более гибкие возможности.
 
 ## <a name="how-do-i-test-out-the-new-experience"></a>Как протестировать новую возможность?
 
- В Application Insights в разделе _Обзор_ выберите _Please try new Overview before it becomes the default experience_ (Опробуйте новые возможности обзора, прежде чем они будут использоваться по умолчанию).
+Новая обзорная панель мониторинга теперь запускается по умолчанию:
 
-![Предварительный просмотр](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-01.png)
-
-Это приведет к запуску новой панели мониторинга общих сведений по умолчанию:
-
-![Область панели мониторинга общих сведений](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-02.png)
+![Область панели мониторинга общих сведений](.\media\app-insights-overview-dashboard\overview.png)
 
 ## <a name="better-performance"></a>Повышенная производительность
 
@@ -40,7 +36,7 @@ Application Insights всегда предоставляло сводную па
 
 ![Диапазон времени](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-03.png)
 
-В целом производительность значительно увеличилась. Каждый динамически обновляемый элемент ключевого показателя эффективности по умолчанию связан с соответствующим компонентом Application Insights. Например, при выборе неудачных запросов запустится панель _Сбои_:
+В целом производительность значительно увеличилась. Вы можете одним щелчком получить доступ к популярным функциям, таким как **Поиск** и **Аналитика**. Каждый динамически обновляемый элемент ключевого показателя эффективности по умолчанию предоставляет сведения о соответствующих компонентах Application Insights. Чтобы подробнее узнать о неудачных запросах, выберите **Сбои** в заголовке **Исследовать**:
 
 ![Сбои](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-04.png)
 
@@ -56,7 +52,7 @@ Application Insights всегда предоставляло сводную па
 
 ![Представление панели мониторинга](.\media\app-insights-overview-dashboard\app-insights-overview-dashboard-06.png)
 
-При желании можно сохранить представление по умолчанию, также можно добавить и удалить элементы на панели мониторинга для оптимального соответствия потребностям вашей команды.
+Вы можете сохранить представление по умолчанию, если оно вам понравилось. Кроме того, можно добавить и удалить элементы на панели мониторинга для оптимального соответствия потребностям вашей команды.
 
 > [!NOTE]
 > Все пользователи, имеющие доступ к ресурсу Application Insights, используют одинаковые возможности панели мониторинга приложений. Изменения, внесенные одним пользователем, влияют на представление для всех пользователей.

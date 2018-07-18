@@ -3,21 +3,24 @@ title: Добавление мультитенантного приложени�
 description: В этой статье объясняется, как включить специально разработанное мультитенантное приложение в коллекцию приложений Azure Active Directory.
 services: active-directory
 documentationCenter: na
-author: jeevansd
-manager: femila
+author: barbkess
+manager: mtillman
 ms.assetid: 92c1651a-675d-42c8-b337-f78e7dbcc40d
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/16/2018
-ms.author: jeedes
-ms.openlocfilehash: 51a088ccdcc018b85a70f72a5f88fab8de3c7363
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.author: barbkess
+ms.reviewer: jeedes
+ms.openlocfilehash: 4ff64847e057a67f0ed3378baefa7762c159aba8
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333356"
 ---
 # <a name="add-a-multitenant-application-to-the-azure-ad-application-gallery"></a>Добавление мультитенантного приложения в коллекцию приложений Azure Active Directory
 

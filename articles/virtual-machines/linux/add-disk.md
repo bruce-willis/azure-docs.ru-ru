@@ -1,92 +1,57 @@
 ---
-title: Добавление диска в виртуальную машину Linux с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как добавить постоянный диск в виртуальную машину Linux с помощью Azure CLI 1.0 и Azure CLI 2.0.
-keywords: виртуальная машина Linux, добавление диска ресурсов
+title: Добавление диска с данными в виртуальную машину Linux с помощью Azure CLI | Документы Майкрософт
+description: Узнайте, как добавить постоянный диск с данными в виртуальную машину Linux с помощью Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: rickstercdn
+author: cynthn
 manager: jeconnoc
 editor: tysonn
 tags: azure-resource-manager
-ms.assetid: 3005a066-7a84-4dc5-bdaa-574c75e6e411
 ms.service: virtual-machines-linux
 ms.topic: article
 ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
-ms.date: 02/02/2017
-ms.author: rclaus
+ms.date: 06/13/2018
+ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c3d3e3468b491f366473899f5d073704ea9a95ea
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: c41090943e4053ddf0ea46e9da1b3b5c7dbbf132
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331229"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Добавление диска к виртуальной машине Linux
 Из этой статьи вы узнаете, как добавить в виртуальную машину постоянный диск, на котором можно хранить данные. Эти данные сохранятся даже после повторной подготовки виртуальной машины (например, в ходе обслуживания или изменения размера). 
 
 
-## <a name="use-managed-disks"></a>Использование управляемых дисков
-Компонент "Управляемые диски" Azure упрощает управление дисками виртуальных машин Azure. Он управляет учетными записями хранения, связанными с этими дисками. Вам нужно лишь выбрать тип ("Премиум" или "Стандартный") и размер диска, а Azure самостоятельно создаст диск и будет управлять им. Дополнительные сведения см. в разделе [Обзор управляемых дисков Azure](managed-disks-overview.md).
+## <a name="attach-a-new-disk-to-a-vm"></a>Подключение нового диска к виртуальной машине
 
-
-### <a name="attach-a-new-disk-to-a-vm"></a>Подключение нового диска к виртуальной машине
-Если вам просто нужен новый диск в виртуальной машине, то используйте команду [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest#az_vm_disk_attach) с параметром `--new`. Если виртуальная машина находится в зоне доступности, то диск автоматически создается в одной зоне с виртуальной машиной. Дополнительные сведения см. в статье [Общие сведения о зонах доступности в Azure (предварительная версия)](../../availability-zones/az-overview.md). В следующем примере создается диск с именем *myDataDisk* размером *50* ГБ:
+Если вам нужен новый пустой диск с данными в виртуальной машине, то используйте команду [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest#az_vm_disk_attach) с параметром `--new`. Если виртуальная машина находится в зоне доступности, то диск автоматически создается в одной зоне с виртуальной машиной. Дополнительные сведения см. в статье [Общие сведения о зонах доступности в Azure (предварительная версия)](../../availability-zones/az-overview.md). В следующем примере создается диск с именем *myDataDisk* размером 50 ГБ:
 
 ```azurecli
-az vm disk attach -g myResourceGroup --vm-name myVM --disk myDataDisk \
-  --new --size-gb 50
+az vm disk attach \
+   -g myResourceGroup \
+   --vm-name myVM \
+   --disk myDataDisk \
+   --new \
+   --size-gb 50
 ```
 
-### <a name="attach-an-existing-disk"></a>Подключение существующего диска 
-Во многих случаях подключаются созданные диски. Чтобы подключить существующий диск, найдите идентификатор диска и укажите его в команде [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest#az_vm_disk_attach). В следующем примере выполняется запрос диска *myDataDisk* в группе ресурсов *myResourceGroup*, а затем этот диск подключается к виртуальной машине *myVM*:
+## <a name="attach-an-existing-disk"></a>Подключение существующего диска 
+
+Чтобы подключить существующий диск, найдите идентификатор диска и укажите его в команде [az vm disk attach](/cli/azure/vm/disk?view=azure-cli-latest#az_vm_disk_attach). В следующем примере выполняется запрос диска *myDataDisk* в группе ресурсов *myResourceGroup*, а затем этот диск подключается к виртуальной машине *myVM*:
 
 ```azurecli
-# find the disk id
 diskId=$(az disk show -g myResourceGroup -n myDataDisk --query 'id' -o tsv)
+
 az vm disk attach -g myResourceGroup --vm-name myVM --disk $diskId
-```
-
-Результат выглядит примерно следующим образом (для форматирования результатов можно использовать параметр `-o table` для любой команды):
-
-```json
-{
-  "accountType": "Standard_LRS",
-  "creationData": {
-    "createOption": "Empty",
-    "imageReference": null,
-    "sourceResourceId": null,
-    "sourceUri": null,
-    "storageAccountId": null
-  },
-  "diskSizeGb": 50,
-  "encryptionSettings": null,
-  "id": "/subscriptions/<guid>/resourceGroups/rasquill-script/providers/Microsoft.Compute/disks/myDataDisk",
-  "location": "westus",
-  "name": "myDataDisk",
-  "osType": null,
-  "ownerId": null,
-  "provisioningState": "Succeeded",
-  "resourceGroup": "myResourceGroup",
-  "tags": null,
-  "timeCreated": "2017-02-02T23:35:47.708082+00:00",
-  "type": "Microsoft.Compute/disks"
-}
-```
-
-
-## <a name="use-unmanaged-disks"></a>Использование неуправляемых дисков
-Для неуправляемых дисков требуется дополнительная нагрузка, чтобы создать базовые учетные записи хранения и управлять ими. Неуправляемые диски создаются в той же учетной записи хранения, что и диск ОС. Чтобы создать и подключить неуправляемый диск, используйте команду [az vm unmanaged-disk attach](/cli/azure/vm/unmanaged-disk?view=azure-cli-latest#az_vm_unmanaged_disk_attach). В следующем примере выполняется подключение неуправляемого диска объемом *50* ГБ к виртуальной машине *myVM*, входящей в группу ресурсов *myResourceGroup*:
-
-```azurecli
-az vm unmanaged-disk attach -g myResourceGroup -n myUnmanagedDisk --vm-name myVM \
-  --new --size-gb 50
 ```
 
 
 ## <a name="connect-to-the-linux-vm-to-mount-the-new-disk"></a>Подключение к виртуальной машине Linux для подключения нового диска
-Чтобы разбить диск на разделы, отформатировать и подключить новый диск к виртуальной машине Linux, подключитесь к виртуальной машине Azure по протоколу SSH. Дополнительные сведения см. в статье [Как использовать SSH с Linux в Azure](mac-create-ssh-keys.md). В следующем примере выполняется подключение к виртуальной машине с помощью общедоступной записи DNS *mypublicdns.westus.cloudapp.azure.com* и имени пользователя *azureuser*: 
+Чтобы разбить диск на разделы, отформатировать и подключить новый диск к виртуальной машине Linux, подключитесь к своей виртуальной машине по протоколу SSH. Дополнительные сведения см. в статье [Как использовать SSH с Linux в Azure](mac-create-ssh-keys.md). В следующем примере выполняется подключение к виртуальной машине с помощью общедоступной записи DNS *mypublicdns.westus.cloudapp.azure.com* и имени пользователя *azureuser*: 
 
 ```bash
 ssh azureuser@mypublicdns.westus.cloudapp.azure.com
@@ -114,7 +79,7 @@ dmesg | grep SCSI
 sudo fdisk /dev/sdc
 ```
 
-Вы должны увидеть результат, аналогичный приведенному ниже.
+Используйте команду `n`, чтобы добавить новый раздел. В этом примере мы выбираем `p` для основного раздела и принимаем остальные значения по умолчанию. Результат будет выглядеть примерно так:
 
 ```bash
 Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
@@ -136,7 +101,7 @@ Last sector, +sectors or +size{K,M,G} (2048-10485759, default 10485759):
 Using default value 10485759
 ```
 
-Создайте раздел, введя в командной строке `p` следующий текст:
+Распечатайте таблицу разделов, введя `p`, а затем используйте `w`, чтобы записать таблицу на диск и выйти. Результат должен выглядеть примерно следующим образом:
 
 ```bash
 Command (m for help): p
@@ -224,7 +189,7 @@ sudo -i blkid
 sudo vi /etc/fstab
 ```
 
-В этом примере мы используем значение UUID для устройства */dev/sdc1*, созданного на предыдущих шагах, и точку подключения */datadrive*. Добавьте следующую строку в конец файла */etc/fstab* :
+В этом примере используйте значение UUID для устройства */dev/sdc1*, созданного на предыдущих шагах, и точку подключения */datadrive*. Добавьте следующую строку в конец файла */etc/fstab* :
 
 ```bash
 UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail   1   2
@@ -265,7 +230,6 @@ UUID=33333333-3b3b-3c3c-3d3d-3e3e3e3e3e3e   /datadrive   ext4   defaults,nofail 
 [!INCLUDE [virtual-machines-linux-lunzero](../../../includes/virtual-machines-linux-lunzero.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Помните, для того чтобы после перезапуска виртуальная машина получила доступ к новому диску, информацию о нем необходимо прописать в файле [fstab](http://en.wikipedia.org/wiki/Fstab) .
 * Ознакомьтесь с рекомендациями по [оптимизации производительности виртуальной машины Linux](optimization.md) , чтобы правильно настроить виртуальную машину Linux.
 * Увеличьте емкость хранилища, добавив дополнительные диски, и [настройте RAID](configure-raid.md) для повышения производительности.
 

@@ -1,24 +1,19 @@
 ---
-title: Действия веб-перехватчика для оповещений журнала в оповещениях Azure | Документация Майкрософт
+title: Действия веб-перехватчика для правил оповещений журнала в службе оповещений Azure
 description: В этой статье описывается, как правило генерации оповещений журнала, в котором используется Log Analytics или Application Insights, передает данные в виде веб-перехватчика HTTP, и приводятся сведения о возможных вариантах настройки.
 author: msvijayn
-manager: kmadnani1
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: monitoring
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
-ms.openlocfilehash: 28c8e6ab6a23a46bdea31c71b08b9c6a28d1be33
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.component: alerts
+ms.openlocfilehash: 304476e2d6862fbb6a859ae6fefe96d177b1111b
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264261"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](monitor-alerts-unified-usage.md) можно [настроить конфигурацию с помощью групп действий](monitoring-action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -47,11 +42,11 @@ ms.lasthandoff: 05/08/2018
 | Уровень серьезности |#severity |Уровень серьезности, установленный для срабатывающего оповещения журнала. |
 | AlertThresholdOperator |#thresholdoperator |Оператор порога для правила генерации оповещений.  *Больше* или *Меньше*. |
 | AlertThresholdValue |#thresholdvalue |Значение порога для правила генерации оповещений. |
-| LinkToSearchResults |#linktosearchresults |Ссылки на поиск журналов Log Analytics, возвращающая записи из запроса, создавшего оповещение. |
+| LinkToSearchResults |#linktosearchresults |Ссылка на портал Analytics, возвращающая записи из запроса, который создал оповещение. |
 | ResultCount |#searchresultcount |Число записей в результатах поиска. |
-| Время окончания интервала поиска |#searchintervalendtimeutc |Время окончания для запроса в формате UTC. |
-| Интервал поиска |#searchinterval |Временное окно для правила генерации оповещений. |
-| Время начала интервала поиска |#searchintervalstarttimeutc |Время начала для запроса в формате UTC. 
+| Время окончания интервала поиска |#searchintervalendtimeutc |Время завершения запроса в формате UTC (формат: мм/дд/гггг ЧЧ:мм:сс AM/PM) |
+| Интервал поиска |#searchinterval |Временное окно для правила генерации оповещений (формат: ЧЧ:мм:сс) |
+| Время начала интервала поиска |#searchintervalstarttimeutc |Время начала запроса в формате UTC (формат: мм/дд/гггг ЧЧ:мм:сс AM/PM) 
 | SearchQuery |#searchquery |Запрос поиска журналов, используемый правилом генерации оповещений. |
 | SearchResults |"IncludeSearchResults": true|Записи, возвращаемые запросом в виде JSON-таблицы, ограничены первой 1000 записей, если в определение настраиваемого веб-перехватчика JSON добавлен параметр "IncludeSearchResults":true в качестве свойства верхнего уровня. |
 | WorkspaceID |#workspaceid |Идентификатор рабочей области Log Analytics. |
@@ -74,6 +69,7 @@ ms.lasthandoff: 05/08/2018
         "text":"My Alert Rule fired with 18 records over threshold of 10 ."
     }
 ```
+Так как все переменные в настраиваемом веб-перехватчике должны быть указаны в коде JSON в кавычках (например, "#searchinterval"), итоговый веб-перехватчик также будет содержать данные переменных в кавычках (например, "00:05:00").
 
 Чтобы включить результаты поиска в пользовательские полезные данные, добавьте **IncudeSearchResults** как свойство верхнего уровня в полезные данные JSON. 
 

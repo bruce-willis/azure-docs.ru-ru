@@ -1,25 +1,22 @@
 ---
-title: Добавление соединителя Office 365 Outlook в приложения логики | Документация Майкрософт
-description: Сведения о создании приложений логики с использованием соединителя Office 365 для взаимодействия с этой службой. Например, он позволяет создавать, редактировать и обновлять контакты и элементы календаря.
-services: ''
-documentationcenter: ''
+title: Подключение к Office 365 Outlook с помощью Azure Logic Apps | Документация Майкрософт
+description: Управляйте сообщениями электронной почты, контактами и календарями с помощью интерфейсов REST API Office 365 и Azure Logic Apps.
 author: ecfan
-manager: anneta
-editor: ''
-tags: connectors
-ms.assetid: b2f6cc2c-bba2-493a-b0ba-841785462a80
-ms.service: logic-apps
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
+manager: jeconnoc
+ms.author: estfan
 ms.date: 10/18/2016
-ms.author: estfan; ladocs
-ms.openlocfilehash: ea0b2f657f808bb6ba4bf427497955b9e520c669
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, LADocs
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: aa900a486b9b0bd0f570da866f3d0ab78c31bc6e
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35296158"
 ---
 # <a name="get-started-with-the-office-365-outlook-connector"></a>Начало работы с соединителем Office 365 Outlook
 Соединитель Office 365 Outlook обеспечивает взаимодействие с Outlook в Office 365. С помощью этого соединителя можно создавать, изменять и обновлять контакты и элементы календаря, а также обмениваться сообщениями электронной почты.

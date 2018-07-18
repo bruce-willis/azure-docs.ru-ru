@@ -8,11 +8,12 @@ ms.topic: include
 ms.date: 03/11/2018
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 5940be8c13a85e256055d6bd6362c9cd93323ee4
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: dfbedd7945231f4449735cc2f909b64190dcbe05
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38746256"
 ---
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](../articles/virtual-network/virtual-networks-overview.md). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как в этой виртуальной сети будет предоставляться доступ к виртуальным машинам. Очень важно [спланировать это перед созданием ресурсов](../articles/virtual-network/virtual-network-vnet-plan-design-arm.md), а также ознакомиться с [ограничениями, применяемыми к сетевым ресурсам](../articles/azure-subscription-service-limits.md#networking-limits).
 
@@ -109,7 +110,7 @@ ms.lasthandoff: 05/20/2018
 
 | Метод | ОПИСАНИЕ |
 | ------ | ----------- |
-| [портал Azure](../articles/virtual-network/virtual-networks-create-nsg-arm-pportal.md) | При создании виртуальной машины на портале Azure группа безопасности сети создается автоматически и связывается с сетевым интерфейсом, созданным на портале. Имя группы безопасности сети состоит из имени виртуальной машины и части **-nsg**. Эта группа безопасности сети содержит одно правило для входящего подключения с приоритетом 1000, разрешением RDP, протоколом TCP, портом 3389 и действием "Разрешить". Если вы хотите разрешить любой другой входящий трафик к виртуальной машине, добавьте в эту группу безопасности сети дополнительные правила. |
+| [портал Azure](../articles/virtual-network/tutorial-filter-network-traffic.md) | При создании виртуальной машины на портале Azure группа безопасности сети создается автоматически и связывается с сетевым интерфейсом, созданным на портале. Имя группы безопасности сети состоит из имени виртуальной машины и части **-nsg**. Эта группа безопасности сети содержит одно правило для входящего подключения с приоритетом 1000, разрешением RDP, протоколом TCP, портом 3389 и действием "Разрешить". Если вы хотите разрешить любой другой входящий трафик к виртуальной машине, добавьте в эту группу безопасности сети дополнительные правила. |
 | [Azure PowerShell](../articles/virtual-network/tutorial-filter-network-traffic.md) | Используйте командлет [New AzureRmNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/resourcemanager/AzureRM.Network/v1.0.13/New-AzureRmNetworkSecurityRuleConfig) и предоставьте сведения о необходимом правиле. Командлет [New-AzureRmNetworkSecurityGroup](https://docs.microsoft.com/powershell/resourcemanager/AzureRM.Network/v1.0.13/New-AzureRmNetworkSecurityGroup) позволяет создать группу безопасности сети, командлет [Set-AzureRmVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/resourcemanager/AzureRM.Network/v1.0.13/Set-AzureRmVirtualNetworkSubnetConfig) — настроить группу безопасности сети для подсети, а командлет [Set-AzureRmVirtualNetwork](/powershell/module/azurerm.network/set-azurermvirtualnetwork) — добавить группу безопасности сети в виртуальную сеть. |
 | [интерфейс командной строки Azure](../articles/virtual-network/tutorial-filter-network-traffic-cli.md) | Используйте команду [az network nsg create](https://docs.microsoft.com/cli/azure/network/nsg#create), чтобы изначально создать группу безопасности сети. Команда [az network nsg rule create](https://docs.microsoft.com/cli/azure/network/nsg/rule#create) позволяет добавить правила в группу безопасности сети, а команда [az network vnet subnet update](https://docs.microsoft.com/cli/azure/network/vnet/subnet#update) — добавить группу безопасности сети в подсеть. |
 | [Шаблон](../articles/virtual-network/template-samples.md) | Используйте шаблон [Create a Network Security Group](https://github.com/Azure/azure-quickstart-templates/tree/master/101-security-group-create) (Создание группы безопасности сети) в качестве руководства по развертыванию группы безопасности сети с помощью шаблона. |
@@ -170,4 +171,4 @@ ms.lasthandoff: 05/20/2018
 
 - Дополнительные сведения об [определяемых пользователем маршрутах и IP-пересылке](../articles/virtual-network/virtual-networks-udr-overview.md). 
 - Дополнительные сведения о [настройке подключения между виртуальными сетями](../articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md).
-- Дополнительные сведения об [устранении проблем с маршрутами](../articles/virtual-network/virtual-network-routes-troubleshoot-portal.md).
+- Дополнительные сведения об [устранении проблем с маршрутами](../articles/virtual-network/diagnose-network-routing-problem.md).

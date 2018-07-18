@@ -1,11 +1,11 @@
 ---
-title: "Настройка высокого уровня доступности с помощью STONITH для SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт"
-description: "Установка высокого уровня доступности для SAP HANA в Azure (крупные экземпляры) в SUSE с помощью STONITH."
+title: Настройка высокого уровня доступности с помощью STONITH для SAP HANA в Azure (крупные экземпляры) | Документация Майкрософт
+description: Установка высокого уровня доступности для SAP HANA в Azure (крупные экземпляры) в SUSE с помощью STONITH.
 services: virtual-machines-linux
-documentationcenter: 
+documentationcenter: ''
 author: saghorpa
-manager: timlt
-editor: 
+manager: jeconnoc
+editor: ''
 ms.service: virtual-machines-linux
 ms.devlang: NA
 ms.topic: article
@@ -14,11 +14,12 @@ ms.workload: infrastructure
 ms.date: 11/21/2017
 ms.author: saghorpa
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d710fe24673c6ddc581d36e4f0cacdb750ff74f9
-ms.sourcegitcommit: 62eaa376437687de4ef2e325ac3d7e195d158f9f
+ms.openlocfilehash: 982c6112a19654e268c9c50fec35d65fbc1766c2
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2017
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062026"
 ---
 # <a name="high-availability-set-up-in-suse-using-the-stonith"></a>Настройка высокого уровня доступности в SUSE с помощью STONITH
 Этот документ содержит подробные пошаговые инструкции для настройки высокого уровня доступности в операционной системе SUSE с помощью устройства STONITH.
@@ -34,8 +35,8 @@ ms.lasthandoff: 11/22/2017
 - NTP (сервер времени) настроен.
 - Вы ознакомились с последней версией документации SUSE по настройке HA.
 
-### <a name="set-up-details"></a>Подробные сведения о настройке
-- В этом руководстве использованы следующие настройки:
+### <a name="setup-details"></a>Сведения о настройке
+В этом руководстве используется следующая конфигурация:
 - операционная система: SLES 12 с пакетом обновления 1 (SP1) для SAP;
 - крупные экземпляры HANA: 2xS192 (4 сокета, 2 ТБ);
 - Версия HANA: HANA 2.0 с пакетом обновления 1.
@@ -261,7 +262,7 @@ crm_mon
 
 ## <a name="7-configure-cluster-properties-and-resources"></a>7. Настройка свойств кластера и ресурсов 
 В этом разделе описаны действия по настройке кластерных ресурсов.
-В этом примере мы настроили ресурс ниже, остальные можно настроить (при необходимости) с помощью руководства SUSE HA. Эту настройку необходимо выполнить только на **одном из узлов**. Выполните ее на первичном узле.
+В этом примере мы настроим ресурс ниже, остальные можно настроить (при необходимости) с помощью руководства SUSE HA. Эту настройку необходимо выполнить только на **одном из узлов**. Выполните ее на первичном узле.
 
 - Начальная загрузка кластера
 - Устройство STONITH
@@ -537,6 +538,6 @@ cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
 Дополнительные сведения об установке SUSE HA можно найти в следующих статьях: 
 
 - [SAP HANA SR Performance Optimized Scenario](https://www.suse.com/docrep/documents/ir8w88iwu7/suse_linux_enterprise_server_for_sap_applications_12_sp1.pdf ) (Сценарий оптимизации производительности системной репликации SAP HANA)
-- [Storage based fencing](https://www.suse.com/documentation/sle-ha-2/book_sleha/data/sec_ha_storage_protect_fencing.html) (Разграничение на основе хранилища)
+- [Storage based fencing](https://www.suse.com/documentation/sle_ha/book_sleha/data/sec_ha_storage_protect_fencing.html) (Разграничение на основе хранилища)
 - [Блог. Использование кластера Pacemaker для SAP HANA. Часть 1](https://blogs.sap.com/2017/11/19/be-prepared-for-using-pacemaker-cluster-for-sap-hana-part-1-basics/)
 - [Блог. Использование кластера Pacemaker для SAP HANA. Часть 2](https://blogs.sap.com/2017/11/19/be-prepared-for-using-pacemaker-cluster-for-sap-hana-part-2-failure-of-both-nodes/)

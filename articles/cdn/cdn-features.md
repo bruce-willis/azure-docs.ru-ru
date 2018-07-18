@@ -15,16 +15,18 @@ ms.topic: overview
 ms.date: 05/09/2018
 ms.author: v-deasim
 ms.custom: mvc
-ms.openlocfilehash: 3368a8a14a3d1314e4c7ecae9256071f1fe646f9
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: dee6a77fb85b2ac882103ba58a19ac4fce59c188
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257875"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301450"
 ---
 # <a name="compare-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
 Существуют четыре продукта Azure CDN: **Azure CDN уровня "Стандартный" от корпорации Майкрософт** (предварительная версия), **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. 
+
+Дополнительные сведения о миграции профиля **Azure CDN уровня "Стандартный" от Verizon** в **Azure CDN уровня "Премиум" от Verizon** см. [здесь](cdn-migrate.md).
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 
@@ -41,7 +43,6 @@ ms.locfileid: "34257875"
 | Параметры кэша и заголовка (с использованием [правил кэширования](cdn-caching-rules.md))  |  |**&#x2713;** |**&#x2713;** | |
 | Параметры кэша и заголовка (с использованием [обработчика правил](cdn-rules-engine.md))  |  | | |**&#x2713;** |
 | [Кэширование строк запроса.](cdn-query-string.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
-| Региональное кэширование  |**&#x2713;** |  |  |  |
 | Двойной стек IPv4/IPv6 | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 | [Поддержка HTTP/2](cdn-http2.md)  | **&#x2713;** |**&#x2713;** |**&#x2713;** |**&#x2713;** |
 ||||

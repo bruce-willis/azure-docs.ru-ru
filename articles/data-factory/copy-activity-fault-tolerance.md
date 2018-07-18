@@ -10,30 +10,27 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: jingwang
-ms.openlocfilehash: 4fef9a9d30adb48f8f68d34e35a7436c04b63125
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: 6c76820b39f31d92362295d54984069393fa0dec
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055514"
 ---
 #  <a name="fault-tolerance-of-copy-activity-in-azure-data-factory"></a>Отказоустойчивость действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-copy-activity-fault-tolerance.md)
-> * [Версия 2 — предварительная](copy-activity-fault-tolerance.md)
+> * [Версия 1](v1/data-factory-copy-activity-fault-tolerance.md)
+> * [Текущая версия](copy-activity-fault-tolerance.md)
 
 Для действия копирования фабрики данных Azure предусмотрены разные способы устранения несовместимых строк при копировании данных между хранилищами данных источника и приемника.
 
 - Вы можете прервать и отменить действие копирования при обнаружении несовместимых данных (действие по умолчанию).
 - Вы можете продолжать копировать все данные, обеспечив отказоустойчивость с помощью пропуска несовместимых строк данных. Кроме того, вы можете записать несовместимые строки в журнал и сохранить его в хранилище BLOB-объектов Azure или Azure Data Lake Store. Этот журнал затем можно просмотреть, чтобы узнать причину сбоя, исправить данные в источнике данных и повторить действие копирования.
 
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Обеспечение отказоустойчивости для действия копирования с помощью пропуска несовместимых строк](v1/data-factory-copy-activity-fault-tolerance.md).
-
-
- ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
+## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 Действие копирования поддерживает три сценария для обработки несовместимых данных: обнаружение, пропуск и запись в журнал.
 
 - **Несовместимость между типом данных источника и собственным типом приемника**. 

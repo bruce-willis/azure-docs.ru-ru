@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/15/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: fb1c41e6fe254fbcbee8cb91a177777ed4e37fbb
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 789e637f3a5806aafe0ca8cad5b6408ef77b32d0
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208980"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37919620"
 ---
 # <a name="run-a-disaster-recovery-drill-for-azure-vms-to-a-secondary-azure-region"></a>Запуск отработки аварийного восстановления для виртуальных машин Azure в дополнительный регион Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "34208980"
 > * Проверка соблюдения предварительных требований
 > * Запуск тестовой отработки отказа для одной виртуальной машины
 
-Репликация из Azure в Azure сейчас доступна в режиме предварительной версии.
+
 
 ## <a name="prerequisites"></a>предварительным требованиям
 

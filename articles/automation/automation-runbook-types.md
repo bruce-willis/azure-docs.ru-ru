@@ -6,14 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/16/2018
+ms.date: 06/29/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 94fbc1cf0232eaf48bb0be3c6edc0542142e4681
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 7958042ccb2f55e9b6021f7d804a0dcd090695c5
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109323"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 Служба автоматизации Azure поддерживает несколько типов модулей Runbook, кратко описанных в приведенной ниже таблице.  Следующие разделы содержат дополнительную информацию о каждом типе, включая рекомендацию по использованию.
@@ -43,7 +44,7 @@ ms.lasthandoff: 05/16/2018
 * Вам не удастся отобразить или напрямую изменить код PowerShell, созданный графическим рабочим процессом. Обратите внимание, что вы можете просматривать код в любых действиях Code.
 
 ## <a name="powershell-runbooks"></a>Модули Runbook PowerShell
-Модули Runbook PowerShell используют Windows PowerShell.  Код модуля Runbook можно редактировать в текстовом редакторе на портале Azure.  Кроме того, можно использовать любой автономный текстовый редактор и [импортировать Runbook](http://msdn.microsoft.com/library/azure/dn643637.aspx) в службу автоматизации Azure.
+Модули Runbook PowerShell используют Windows PowerShell.  Код модуля Runbook можно редактировать в текстовом редакторе на портале Azure.  Кроме того, можно использовать любой автономный текстовый редактор и [импортировать Runbook](automation-creating-importing-runbook.md) в службу автоматизации Azure.
 
 ### <a name="advantages"></a>Преимущества
 * Реализация сложной логики с помощью кода рабочего процесса PowerShell без дополнительного усложнения рабочего процесса PowerShell. 
@@ -64,7 +65,7 @@ ms.lasthandoff: 05/16/2018
 * Модуль Runbook PowerShell может завершиться ошибкой, если попытается записать слишком большой объем данных в поток вывода за один раз.   Обычно эту проблему можно обойти, выводя при работе с большими объектами только необходимые данные.  Например, вместо использования метода *Get-Process* можно вывести только требуемые поля, указав *Get-Process | Select ProcessName, CPU*.
 
 ## <a name="powershell-workflow-runbooks"></a>Модули Runbook рабочих процессов PowerShell
-Runbook рабочих процессов PowerShell представляют собой текстовые Runbook, основанные на [рабочем процессе Windows PowerShell](automation-powershell-workflow.md).  Код модуля Runbook можно редактировать в текстовом редакторе на портале Azure.  Кроме того, можно использовать любой автономный текстовый редактор и [импортировать Runbook](http://msdn.microsoft.com/library/azure/dn643637.aspx) в службу автоматизации Azure.
+Runbook рабочих процессов PowerShell представляют собой текстовые Runbook, основанные на [рабочем процессе Windows PowerShell](automation-powershell-workflow.md).  Код модуля Runbook можно редактировать в текстовом редакторе на портале Azure.  Кроме того, можно использовать любой автономный текстовый редактор и [импортировать Runbook](automation-creating-importing-runbook.md) в службу автоматизации Azure.
 
 ### <a name="advantages"></a>Преимущества
 * Реализация сложной логики с помощью кода рабочего процесса PowerShell.
@@ -79,7 +80,7 @@ Runbook рабочих процессов PowerShell представляют с
 * Runbook PowerShell можно включать только как дочерние Runbook с помощью командлета Start-AzureAutomationRunbook, который создает задание.
 
 ## <a name="python-runbooks"></a>Модули Runbook Python
-Модули Runbook Python компилируются в среде Python 2.  Вы можете отредактировать код модуля Runbook с помощью текстового редактора на портале Azure. Также можно использовать любой текстовый редактор в автономном режиме, а затем [импортировать модуль Runbook](http://msdn.microsoft.com/library/azure/dn643637.aspx) в службу автоматизации Azure.
+Модули Runbook Python компилируются в среде Python 2.  Вы можете отредактировать код модуля Runbook с помощью текстового редактора на портале Azure. Также можно использовать любой текстовый редактор в автономном режиме, а затем [импортировать модуль Runbook](automation-creating-importing-runbook.md) в службу автоматизации Azure.
 
 ### <a name="advantages"></a>Преимущества
 * Используйте надежную стандартную библиотеку Python.

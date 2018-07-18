@@ -1,6 +1,6 @@
 ---
 title: Перенос метрик службы хранилища Azure | Документация Майкрософт
-description: Узнайте, как преобразовать метрики прежних версий в новые метрики, управляемые Azure Monitor.
+description: Узнайте, как переносить старые метрики в новые, которые управляются службой Azure Monitor.
 services: storage
 documentationcenter: na
 author: fhryo-msft
@@ -14,24 +14,24 @@ ms.tgt_pltfrm: na
 ms.workload: storage
 ms.date: 03/30/2018
 ms.author: fryu
-ms.openlocfilehash: da8eb0b9e2e5aba60b61a36d83f525c7ce4a7958
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 9586d0c2b61fe97106378ec684c28be9143b5194
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32776267"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969390"
 ---
 # <a name="azure-storage-metrics-migration"></a>Перенос метрик службы хранилища Azure
 
-В соответствии со стратегией унификации работы с Monitor в Azure служба хранилища Azure выставляет метрики на платформе Azure Monitor. В будущем предоставление службы поддержки метрик прежних версий будет завершено с предварительным извещением на основе политики Azure. Если вы используете метрики службы хранилища прежних версий, необходимо выполнить перенос до даты окончания действия службы, чтобы сохранить данные метрик.
+В соответствии со стратегией унификации мониторинга в Azure служба хранилища Azure интегрирует метрики на платформе Azure Monitor. В будущем предоставление поддержки метрик прежних версий будет завершено с предварительным уведомлением на основе политики Azure. Если вы используете метрики прежних версий, службы хранилища, необходимо выполнить перенос до даты окончания действия службы, чтобы сохранить данные метрик.
 
-В этой статье описывается переход с метрик прежних версий на новые метрики.
+В этой статье показано, как перейти от метрик прежних версий к новым.
 
-## <a name="understand-legacy-metrics-managed-by-azure-storage"></a>Основные сведения о метриках прежних версий, управляемых службой хранилища Azure
+## <a name="understand-old-metrics-that-are-managed-by-azure-storage"></a>Основные сведения о метриках прежних версий, управляемых службой хранилища Azure
 
-Служба хранилища Azure собирает метрики прежних версий, выполняет статистические вычисления и сохраняет их в таблицах $Metric в одной учетной записи хранения. С помощью портала Azure можно настроить диаграмму мониторинга. Кроме того, с помощью пакетов SDK службы хранилища Azure можно читать данные из таблиц $Metric на основе схемы. Дополнительные сведения можно найти в этом разделе об [Аналитике Службы хранилища](./storage-analytics.md).
+Служба хранилища Azure собирает метрики прежних версий, выполняет статистические вычисления и сохраняет их в таблицах $Metric в одной учетной записи хранения. Портал Azure можно использовать для настройки диаграммы мониторинга. Кроме того, можно использовать пакеты SDK службы хранилища Azure для чтения данных из таблиц $Metric, основанных на схеме. Дополнительные сведения см. в [этой статье](./storage-analytics.md).
 
-Метрики прежних версий обеспечивают только данные о емкости больших двоичных объектов и данные о транзакциях с большими двоичными объектами, таблицами, файлами и очередями.
+Метрики прежних версий предоставляют метрики производительности только для хранилища BLOB-объектов Azure. Метрики прежних версий предоставляют метрики транзакций для хранилища BLOB-объектов, хранилища таблиц, службы "Файлы Azure" и хранилища очередей. 
 
 Метрики прежних версий разработаны на основе неструктурированной схемы. Поэтому при отсутствии шаблонов трафика для активации метрики ее данные отсутствовали. Например, **ServerTimeoutError** имеет значение 0 в таблицах $Metric даже в том случае, если вы не получаете какие-либо ошибки времени ожидания сервера из реального трафика для учетной записи хранения.
 
@@ -41,84 +41,84 @@ ms.locfileid: "32776267"
 
 Новые метрики обеспечивают данные о емкости и транзакциях для больших двоичных объектов, таблиц, файлов, очередей и хранилища уровня "Премиум".
 
-Многомерность является одной из функций Azure Monitor. Служба хранилища Azure учитывает это при определении новой схемы метрики. Дополнительные сведения о поддерживаемых измерениях метрик можно найти в этой статье о [метриках службы хранилища Azure в Azure Monitor](./storage-metrics-in-azure-monitor.md). Многомерность обеспечивает экономичность в использовании пропускной способности при приеме и емкости при хранении данных метрик. Следовательно, если трафик не активировал связанные метрики, то их данные не создаются. Например, если трафик не активировал какие-либо ошибки времени ожидания сервера, то Azure Monitor не возвращает никаких данных при запросе значения **Transactions** метрики с измерением **ResponseType**, равным **ServerTimeoutError**.
+Многомерность является одной из функций, предоставляемых Azure Monitor. Служба хранилища Azure учитывает это при определении новой схемы метрики. Дополнительные сведения о поддерживаемых измерениях метрик можно найти в статье о [метриках службы хранилища Azure в Azure Monitor](./storage-metrics-in-azure-monitor.md). Многомерность обеспечивает экономичность в использовании пропускной способности при приеме и емкости при хранении данных метрик. Следовательно, если трафик не активировал связанные метрики, то их данные не создаются. Например, если трафик не активировал какие-либо ошибки времени ожидания сервера, то Azure Monitor не возвращает никаких данных при запросе значения **Transactions** метрики с измерением **ResponseType**, равным **ServerTimeoutError**.
 
-## <a name="metrics-mapping-between-legacy-metrics-and-new-metrics"></a>Сопоставление метрик прежних версий и новых метрик
+## <a name="metrics-mapping-between-old-metrics-and-new-metrics"></a>Сопоставление метрик прежних и новых версий
 
-При программном чтении данных метрик необходимо перейти на новую схему метрики в своих программах. Чтобы лучше понять изменения, можно ознакомиться с сопоставлением в следующей таблице.
+При программном чтении данных метрик необходимо перейти на новую схему метрики в своих программах. Чтобы лучше понять изменения, можно ознакомиться с сопоставлением в следующей таблице:
 
 **Метрики емкости**
 
 | Метрика прежних версий | Новая метрика |
 | ------------------- | ----------------- |
-| Capacity            | BlobCapacity с измерением BlobType, равным BlockBlob или PageBlob. |
-| ObjectCount         | BlobCount с измерением BlobType, равным BlockBlob или PageBlob. |
-| ContainerCount      | ContainerCount |
+| **Производительность**            | **BlobCapacity** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
+| **ObjectCount**        | **BlobCount** с измерением **BlobType**, равным **BlockBlob** или **PageBlob**. |
+| **ContainerCount**      | **ContainerCount** |
 
 Следующие метрики представляют собой новые предложения, не поддерживаемые метриками прежних версий.
-* TableCapacity
-* TableCount
-* TableEntityCount
-* QueueCapacity
-* QueueCount
-* QueueMessageCount
-* FileCapacity
-* FileCount
-* FileShareCount
-* UsedCapacity
+* **TableCapacity**
+* **TableCount**
+* **TableEntityCount**
+* **QueueCapacity**
+* **QueueCount**
+* **QueueMessageCount**
+* **FileCapacity**
+* **FileCount**
+* **FileShareCount**
+* **UsedCapacity**
 
 **Метрики транзакций**
 
 | Метрика прежних версий | Новая метрика |
 | ------------------- | ----------------- |
-| AnonymousAuthorizationError | Transactions с измерением ResponseType, равным AuthorizationError. |
-| AnonymousClientOtherError | Transactions с измерением ResponseType, равным ClientOtherError. |
-| AnonymousClientTimeoutError | Transactions с измерением ResponseType, равным ClientTimeoutError. |
-| AnonymousNetworkError | Transactions с измерением ResponseType, равным NetworkError. |
-| AnonymousServerOtherError | Transactions с измерением ResponseType, равным ServerOtherError. |
-| AnonymousServerTimeoutError | Transactions с измерением ResponseType, равным ServerTimeoutError. |
-| AnonymousSuccess | Transactions с измерением ResponseType, равным Success. |
-| AnonymousThrottlingError | Transactions с измерением ResponseType, равным ClientThrottlingError или ServerBusyError. |
-| AuthorizationError | Transactions с измерением ResponseType, равным AuthorizationError. |
-| Доступность | Доступность |
-| AverageE2ELatency | SuccessE2ELatency |
-| AverageServerLatency | SuccessServerLatency |
-| ClientOtherError | Transactions с измерением ResponseType, равным ClientOtherError. |
-| ClientTimeoutError | Transactions с измерением ResponseType, равным ClientTimeoutError. |
-| NetworkError | Transactions с измерением ResponseType, равным NetworkError. |
-| PercentAuthorizationError | Transactions с измерением ResponseType, равным AuthorizationError. |
-| PercentClientOtherError | Transactions с измерением ResponseType, равным ClientOtherError. |
-| PercentNetworkError | Transactions с измерением ResponseType, равным NetworkError. |
-| PercentServerOtherError | Transactions с измерением ResponseType, равным ServerOtherError. |
-| PercentSuccess | Transactions с измерением ResponseType, равным Success. |
-| PercentThrottlingError | Transactions с измерением ResponseType, равным ClientThrottlingError или ServerBusyError. |
-| PercentTimeoutError | Transactions с измерением ResponseType, равным ServerTimeoutError, или с измерением ResponseType, равным ClientTimeoutError.|
-| SASAuthorizationError | Transactions с измерением ResponseType, равным AuthorizationError. |
-| SASClientOtherError | Transactions с измерением ResponseType, равным ClientOtherError. |
-| SASClientTimeoutError | Transactions с измерением ResponseType, равным ClientTimeoutError. |
-| SASNetworkError | Transactions с измерением ResponseType, равным NetworkError. |
-| SASServerOtherError | Transactions с измерением ResponseType, равным ServerOtherError. |
-| SASServerTimeoutError | Transactions с измерением ResponseType, равным ServerTimeoutError. |
-| SASSuccess | Transactions с измерением ResponseType, равным Success. |
-| SASThrottlingError | Transactions с измерением ResponseType, равным ClientThrottlingError или ServerBusyError. |
-| ServerOtherError | Transactions с измерением ResponseType, равным ServerOtherError. |
-| ServerTimeoutError | Transactions с измерением ResponseType, равным ServerTimeoutError. |
-| Успешно | Transactions с измерением ResponseType, равным Success. |
-| ThrottlingError | Transactions с измерением ResponseType, равным ClientThrottlingError или ServerBusyError. |
-| TotalBillableRequests | Транзакции |
-| TotalEgress | Исходящие |
-| TotalIngress | Входящие |
-| TotalRequests | Транзакции |
+| **AnonymousAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
+| **AnonymousClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
+| **AnonymousClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
+| **AnonymousNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
+| **AnonymousServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
+| **AnonymousServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
+| **AnonymousSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
+| **AnonymousThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
+| **AuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
+| **Доступность** | **Доступность** |
+| **AverageE2ELatency** | **SuccessE2ELatency** |
+| **AverageServerLatency** | **SuccessServerLatency** |
+| **ClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
+| **ClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
+| **NetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
+| **PercentAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
+| **PercentClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
+| **PercentNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
+| **PercentServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
+| **PercentSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
+| **PercentThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
+| **PercentTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**, или с измерением **ResponseType**, равным **ClientTimeoutError**. |
+| **SASAuthorizationError** | Transactions с измерением **ResponseType**, равным **AuthorizationError**. |
+| **SASClientOtherError** | Transactions с измерением **ResponseType**, равным **ClientOtherError**. |
+| **SASClientTimeoutError** | Transactions с измерением **ResponseType**, равным **ClientTimeoutError**. |
+| **SASNetworkError** | Transactions с измерением **ResponseType**, равным **NetworkError**. |
+| **SASServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
+| **SASServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
+| **SASSuccess** | Transactions с измерением **ResponseType**, равным **Success**. |
+| **SASThrottlingError** | Transactions с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**. |
+| **ServerOtherError** | Transactions с измерением **ResponseType**, равным **ServerOtherError**. |
+| **ServerTimeoutError** | Transactions с измерением **ResponseType**, равным **ServerTimeoutError**. |
+| **Success** | Transactions с измерением **ResponseType**, равным **Success**. |
+| **ThrottlingError** | **Transactions** с измерением **ResponseType**, равным **ClientThrottlingError** или **ServerBusyError**.|
+| **TotalBillableRequests** | **Транзакции** |
+| **TotalEgress** | **Исходящий трафик** |
+| **TotalIngress** | **Входящий трафик** |
+| **TotalRequests** | **Транзакции** |
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 
-* Как перенести существующие правила генерации оповещений?
+### <a name="how-should-i-migrate-existing-alert-rules"></a>Как перенести существующие правила генерации оповещений?
 
-Ответ. Если вы создали классические правила генерации оповещений, основанные на метриках службы хранилища прежних версий, необходимо создать новые правила генерации оповещений, основанные на новой схеме метрики.
+Если вы создали классические правила генерации оповещений, основанные на метриках службы хранилища прежних версий, необходимо создать новые правила генерации оповещений, основанные на новой схеме метрики.
 
-* Будет ли данные новых метрик по умолчанию сохраняться в ту же учетную запись хранения?
+### <a name="is-new-metric-data-stored-in-the-same-storage-account-by-default"></a>Будет ли данные новых метрик по умолчанию сохраняться в ту же учетную запись хранения?
 
-О. Нет. Если необходимо архивировать данные метрик в учетную запись хранения, можно использовать [API настройки диагностики Azure Monitor](https://docs.microsoft.com/en-us/rest/api/monitor/diagnosticsettings/createorupdate).
+Нет. Чтобы заархивировать данные метрик в учетную запись хранения, используйте [API настройки диагностики Azure Monitor](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings/createorupdate).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

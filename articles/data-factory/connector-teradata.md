@@ -10,24 +10,22 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 287fc502a0a538660da86e028a81fba04bcac903
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: a2928b202f56674c69e6431201db6d846a9feb9a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37045761"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Копирование данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-onprem-teradata-connector.md)
-> * [Версия 2 — предварительная](connector-teradata.md)
+> * [Версия 1](v1/data-factory-onprem-teradata-connector.md)
+> * [Текущая версия](connector-teradata.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных Teradata. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете службу фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Move data from Teradata using Azure Data Factory](v1/data-factory-onprem-teradata-connector.md) (Перемещение данных из Teradata с использованием фабрики данных Azure).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

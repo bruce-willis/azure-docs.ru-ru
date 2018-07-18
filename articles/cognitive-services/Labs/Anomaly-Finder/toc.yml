@@ -1,0 +1,48 @@
+- name: Документация по средству для поиска аномалий
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое средство для поиска аномалий?
+      href: overview.md
+- name: Практические руководства
+  items:
+    - name: Использование API средства для поиска аномалий
+      items:
+        - name: cURL
+          href: quickstarts/curl.md
+        - name: 'C#'
+          href: quickstarts/csharp.md
+        - name: Java
+          href: quickstarts/java.md
+        - name: Python
+          href: quickstarts/python.md
+        - name: PHP
+          href: quickstarts/php.md
+        - name: Ruby
+          href: quickstarts/ruby.md
+        - name: JavaScript
+          href: quickstarts/javascript.md
+- name: Примеры
+  items:
+    - name: 'Приложение C#'
+      href: tutorials/csharp-tutorial.md
+    - name: Приложение Java
+      href: tutorials/java-tutorial.md
+    - name: Приложение Python
+      href: tutorials/python-tutorial.md
+    - name: Веб-приложение JavaScript
+      href: tutorials/javascript-tutorial.md
+- name: Справочные материалы
+  items:
+    - name: Справочник по API средства для поиска аномалий
+      href: apiref.md
+    - name: REST версии 1
+      href: 'https://dev.labs.cognitive.microsoft.com/docs/services/anomaly-detection/operations/post-anomalydetection'
+- name: Ресурсы
+  items:
+    - name: Ключ подписки
+      href: 'https://labs.cognitive.microsoft.com/en-us/subscriptions?productId=/products/AnomalyDetection.Preview&source=labs'
+    - name: Тестирование
+      href: 'https://labs.cognitive.microsoft.com/en-us/project-anomaly-finder'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=anomaly+finder'

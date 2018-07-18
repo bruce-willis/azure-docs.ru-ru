@@ -10,22 +10,23 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/16/2018
+ms.topic: conceptual
+ms.date: 06/12/2018
 ms.author: shlo
-ms.openlocfilehash: 798af75625e0d2fed1220932c172683fe71f9aad
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 1d1b21897975717db7b733e33b7700bc76e3e065
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046553"
 ---
-# <a name="monitor-data-factories-using-azure-monitor"></a>Мониторинг фабрик данных с помощью Azure Monitor  
+# <a name="alert-and-monitor-data-factories-using-azure-monitor"></a>Использование оповещений и мониторинг фабрик данных с помощью Azure Monitor
 Облачные приложения являются сложными и содержат множество подвижных частей. Мониторинг дает возможность отслеживать данные, чтобы обеспечить работоспособность приложения, а также позволяет предотвратить потенциальные проблемы или устранить неполадки. Кроме того, данные мониторинга можно использовать для получения подробных сведений о приложении. Эти знания могут помочь повысить его производительность и улучшить возможности обслуживания, а также автоматизировать действия, которые в противном случае выполнялись бы вручную.
 
-Azure Monitor предоставляет метрики инфраструктуры базового уровня, а также журналы для большинства служб Microsoft Azure. Дополнительные сведения см. в статье [Обзор Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor). Журналы диагностики Azure генерируются ресурсом. Они содержат подробные и своевременные данные о работе этого ресурса. Фабрика данных выводит журналы диагностики в Azure Monitor. 
+Azure Monitor предоставляет метрики инфраструктуры базового уровня, а также журналы для большинства служб Microsoft Azure. Дополнительные сведения см. в статье [Обзор Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor). Журналы диагностики Azure генерируются ресурсом. Они содержат подробные и своевременные данные о работе этого ресурса. Фабрика данных выводит журналы диагностики в Azure Monitor.
 
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, прочитайте статью [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления](v1/data-factory-monitor-manage-pipelines.md).
+## <a name="persist-data-factory-data"></a>Хранение данных службы "Фабрика данных"
+В фабрике данных данные запуска конвейеров сохраняются только в течение 45 дней. Если вы хотите хранить данные о запуске конвейера более 45 дней, используя Azure Monitor, вы можете не только перенаправлять журналы диагностики для анализа, но и хранить их в учетной записи хранения. Так у вас будут сведения о фабрике в течение требуемого периода времени.
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
 
@@ -100,7 +101,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
             ]
     },
     "location": ""
-} 
+}
 ```
 
 | Свойство | type | ОПИСАНИЕ |
@@ -108,7 +109,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | storageAccountId |Строка | Идентификатор учетной записи хранения, в которую необходимо отправить журналы диагностики. |
 | serviceBusRuleId |Строка | Идентификатор правила служебной шины для пространства имен служебной шины, в котором будут созданы концентраторы событий для потоковой передачи журналов диагностики. Идентификатор правила имеет формат: {идентификатор ресурса служебной шины}/authorizationrules/{имя ключа}.|
 | workspaceId | Сложный тип | Массив интервалов времени метрики и политики их хранения. В настоящее время это свойство пусто. |
-|Метрики| Значения параметров выполнения конвейера, которые должны быть переданы в вызываемый конвейер.| Объект JSON, сопоставляющий имена параметров со значениями аргументов. | 
+|Метрики| Значения параметров выполнения конвейера, которые должны быть переданы в вызываемый конвейер.| Объект JSON, сопоставляющий имена параметров со значениями аргументов. |
 | журналы| Сложный тип| Имя категории журнала диагностики для типа ресурса. Чтобы получить список категорий журналов диагностики ресурса, сначала выполните операцию получения параметров диагностики. |
 | category| Строка| Массив категорий журналов и политики их хранения. |
 | timeGrain | Строка | Уровень детализации метрик, сохраненных в формате длительности ISO 8601. Должно использоваться значение PT1M (одна минута).|
@@ -230,14 +231,14 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
     "identity": null
 }
 ```
-[Подробнее](https://msdn.microsoft.com/library/azure/dn931932.aspx)
+[Подробнее](https://docs.microsoft.com/en-us/rest/api/monitor/diagnosticsettings)
 
 ## <a name="schema-of-logs--events"></a>Схема журналов и событий
 
 ### <a name="activity-run-logs-attributes"></a>Атрибуты журналов выполнения действий
 
 ```json
-{  
+{
    "Level": "",
    "correlationId":"",
    "time":"",
@@ -251,7 +252,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
    "activityName":"",
    "start":"",
    "end":"",
-   "properties:" 
+   "properties:"
        {
           "Input": "{
               "source": {
@@ -293,7 +294,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 ### <a name="pipeline-run-logs-attributes"></a>Атрибуты журналов выполнения конвейеров
 
 ```json
-{  
+{
    "Level": "",
    "correlationId":"",
    "time":"",
@@ -306,7 +307,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
    "start":"",
    "end":"",
    "status":"",
-   "properties": 
+   "properties":
     {
       "Parameters": {
         "<parameter1Name>": "<parameter1Value>"
@@ -339,7 +340,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 ### <a name="trigger-run-logs-attributes"></a>Атрибуты журналов запуска триггеров.
 
 ```json
-{ 
+{
    "Level": "",
    "correlationId":"",
    "time":"",
@@ -361,7 +362,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
       },
       "SystemParameters": {}
     }
-} 
+}
 
 ```
 
@@ -396,7 +397,7 @@ ADFV2 выводит следующие метрики.
 | TriggerSucceededRuns | Метрики успешных запусков триггеров.  | Count    | Всего                | Общее количество успешных запусков триггеров в минутном окне.   |
 | TriggerFailedRuns    | Метрики неудачных запусков триггеров.     | Count    | Всего                | Общее количество успешных запусков триггеров в минутном окне.      |
 
-Следуйте инструкциям из этой статьи: https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics 
+Следуйте инструкциям из этой статьи: https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics
 
 ## <a name="alerts"></a>Оповещения
 
@@ -444,4 +445,4 @@ ADFV2 выводит следующие метрики.
     ![Группа действий, экран 4 из 4](media/monitor-using-azure-monitor/alerts_image12.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о мониторинге и управлении конвейерами см. в статье [Отслеживание фабрики данных Azure](monitor-programmatically.md). 
+Дополнительные сведения о мониторинге и управлении конвейерами см. в статье [Отслеживание фабрики данных Azure](monitor-programmatically.md).

@@ -9,17 +9,17 @@ editor: ''
 ms.service: active-directory
 ms.component: msi
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/27/2017
 ms.author: daveba
-ms.openlocfilehash: 97c5e2dde3faeaad13317597bef4f70455d22102
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 61fa6c94c0d717fe1e71bf8929f2e3b4a0982562
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33930135"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37903885"
 ---
 # <a name="configure-a-vmss-managed-service-identity-msi-using-powershell"></a>Настройка управляемого удостоверения службы (MSI) в масштабируемом наборе виртуальных машин (VMSS) с помощью PowerShell
 
@@ -27,13 +27,13 @@ ms.locfileid: "33930135"
 
 Управляемое удостоверение службы предоставляет службы Azure с автоматически управляемыми удостоверениями в Azure Active Directory. Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. 
 
-В этой статье вы узнаете, как выполнять следующие операции с управляемым удостоверением службы в масштабируемом наборе виртуальных машин Azure (VMSS) с помощью PowerShell:
+В этой статье вы узнаете, как выполнять операции с компонентом "Управляемое удостоверение службы" в масштабируемом наборе виртуальных машин Azure (VMSS) с помощью PowerShell:
 - включать и отключать назначенное системой удостоверение в масштабируемом наборе виртуальных машин Azure;
 - добавлять и удалять назначенное пользователем удостоверение в масштабируемом наборе виртуальных машин Azure.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-- Если вы не работали с управляемым удостоверением службы, см. [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
+- Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Установите [последнюю версию Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM), если это еще не сделано. 
 
@@ -122,8 +122,7 @@ ms.locfileid: "33930135"
 
 2. Сначала извлеките свойства виртуальной машины с помощью командлета `Get-AzureRmVM`. Затем, чтобы назначить пользовательское удостоверение масштабируемому набору виртуальных машин Azure, используйте параметры `-IdentityType` и `-IdentityID` с командлетом [Update-AzureRmVM](/powershell/module/azurerm.compute/update-azurermvm). Замените `<VM NAME>`, `<SUBSCRIPTION ID>`, `<RESROURCE GROUP>`, `<USER ASSIGNED ID1>`, `USER ASSIGNED ID2` собственными значениями.
 
-   > [!IMPORTANT]
-   > В назначенных пользователем удостоверениях можно использовать только буквы, цифры и символ дефиса (0–9, a–z, A–Z и -). Кроме того, чтобы назначение виртуальной машине или VMSS производилось правильно, длина имени не должна превышать 24 символа. Загляните сюда позже, чтобы проверить наличие новой информации. Дополнительные сведения см. в разделе [Часто задаваемые вопросы и известные проблемы](known-issues.md).
+   [!INCLUDE[ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
 
    ```powershell

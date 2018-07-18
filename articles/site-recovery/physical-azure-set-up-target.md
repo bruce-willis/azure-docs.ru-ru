@@ -1,18 +1,19 @@
 ---
-title: "Подготовка цели (репликация физических серверов в Azure) | Документация Майкрософт"
-description: "В этой статье описывается, как подготовить среду Azure к запуску репликации физических серверов Windows или Linux в Azure."
+title: Подготовка цели (репликация физических серверов в Azure) | Документация Майкрософт
+description: В этой статье описывается, как подготовить среду Azure к запуску репликации физических серверов Windows или Linux в Azure.
 services: site-recovery
 author: bsiva
 manager: abhemraj
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/05/2018
+ms.date: 07/06/2018
 ms.author: bsiva
-ms.openlocfilehash: a2465bb3397a175b6ad8b8be0de933dfae1dee5b
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: 370d245e39b848acade18d0e73f60a3246737629
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37915526"
 ---
 # <a name="prepare-target-vmware-to-azure"></a>Подготовка цели (репликация виртуальных машин VMware в Azure)
 
@@ -37,7 +38,7 @@ ms.lasthandoff: 03/08/2018
 
 После успешного завершения проверки нажмите кнопку "OK", чтобы перейти к следующему шагу.
 
-Если у вас нет совместимых учетных записей хранения диспетчера ресурсов или виртуальной сети, их можно создать, нажав кнопку**+ Storage Account** (+ Учетная запись хранения) или кнопку **+ Network** (+ Сеть) в верхней части страницы.
+Если у вас нет совместимых учетных записей хранения диспетчера ресурсов или виртуальной сети, их можно создать, нажав кнопку **+ Storage Account** (+ Учетная запись хранения) или кнопку **+ Network** (+ Сеть) в верхней части страницы.
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Настройка параметров репликации](vmware-azure-set-up-replication.md).

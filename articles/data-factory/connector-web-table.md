@@ -10,25 +10,22 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 2bc47c8963630351d3097938bc7f3d65116d9e4b
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 995bf4586b88671c65077d965b0588de8de74e5c
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33205420"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048940"
 ---
 # <a name="copy-data-from-web-table-by-using-azure-data-factory"></a>Копирование данных из Веб-таблицы с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-web-table-connector.md)
-> * [Версия 2 — предварительная](connector-web-table.md)
+> * [Версия 1](v1/data-factory-web-table-connector.md)
+> * [Текущая версия](connector-web-table.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных веб-таблиц. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете службу фабрики данных версии 1, которая является общедоступной, ознакомьтесь со статьей [Move data from a Web table source using Azure Data Factory](v1/data-factory-web-table-connector.md) (Перемещение данных из источника веб-таблиц с использованием фабрики данных Azure).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -42,7 +39,7 @@ ms.locfileid: "33205420"
 
 ## <a name="getting-started"></a>Приступая к работе
 
-[!INCLUDE [data-factory-v2-connector-get-started-2](../../includes/data-factory-v2-connector-get-started-2.md)]
+[!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
 Следующие разделы содержат сведения о свойствах, которые используются для определения сущностей фабрики данных, относящихся к соединителю веб-таблиц.
 

@@ -1,12 +1,12 @@
 ---
-title: "Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме пакетной службы Azure | Документация Майкрософт"
-description: "Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме пакетной службы"
+title: Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме пакетной службы Azure | Документация Майкрософт
+description: Пример скрипта Azure CLI для создания учетной записи пакетной службы в режиме пакетной службы
 services: batch
-documentationcenter: 
+documentationcenter: ''
 author: dlepow
 manager: jeconnoc
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: batch
 ms.devlang: azurecli
 ms.topic: sample
@@ -15,10 +15,11 @@ ms.workload: na
 ms.date: 01/29/2018
 ms.author: danlep
 ms.openlocfilehash: ced93032203c33dc4cda362d30192ee8eb37d944
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38455117"
 ---
 # <a name="cli-example-create-a-batch-account-in-batch-service-mode"></a>Пример скрипта CLI: создание учетной записи пакетной службы в режиме пакетной службы
 

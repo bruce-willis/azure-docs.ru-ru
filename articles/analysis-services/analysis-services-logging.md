@@ -3,16 +3,17 @@ title: Ведение журнала диагностики для Azure Analysi
 description: Узнайте том, как настроить журнал ведения диагностики для Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 396ee2fc132abb5fbfd29bf5fffe9b1388b9a964
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: d19e45710aca3e1e18be6c4529da6474a97bc59f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449335"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
@@ -56,7 +57,6 @@ ms.lasthandoff: 04/19/2018
 
 |Имя операции  |Когда выполняется  |
 |---------|---------|
-|CreateGateway     |   Пользователь настраивает шлюза на сервере.      |
 |ResumeServer     |    Возобновление работы сервера.     |
 |SuspendServer    |   Приостановка работы сервера.      |
 |DeleteServer     |    Удаление сервера     |

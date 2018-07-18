@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/07/2017
 ms.author: motanv
-ms.openlocfilehash: 087a0f12f765b55c2e2976abd93d791409ff6d44
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 27c6671c170f4c03c63270772651051830d8e4ec
+ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34757627"
 ---
 # <a name="testability-actions"></a>Действия, доступные благодаря Testability
 Для моделирования ненадежной инфраструктуры платформа Azure Service Fabric предоставляет разработчику несколько способов имитации различных реалистичных ошибок и переходов. Такие действия доступны благодаря компоненту Testability. Эти действия представляют из себя интерфейсы API низкого уровня, которые вызывают определенную ошибку, смену состояния или проверку. Сочетая эти действия, вы можете создать комплексные сценарии тестирования своих служб.
@@ -41,8 +42,8 @@ ms.lasthandoff: 05/16/2018
 | CleanTestState |Удаляет все данные о состоянии тестирования из кластера в случае неправильного завершения работы тестового драйвера. |CleanTestStateAsync |Remove-ServiceFabricTestState |Не применяется |
 | InvokeDataLoss |Приводит к потере данных в разделе службы. |InvokeDataLossAsync |Invoke-ServiceFabricPartitionDataLoss |Нормальная |
 | InvokeQuorumLoss |Приводит к потере кворума в указанном разделе службы с отслеживанием состояния. |InvokeQuorumLossAsync |Invoke-ServiceFabricQuorumLoss |Нормальная |
-| Move Primary |Перемещает заданную первичную реплику службы с отслеживанием состояния на указанный узел кластера. |MovePrimaryAsync |Move-ServiceFabricPrimaryReplica |Нормальная |
-| Move Secondary |Перемещая текущую вторичную реплику службы с отслеживанием состояния на другой узел кластера. |MoveSecondaryAsync |Move-ServiceFabricSecondaryReplica |Нормальная |
+| MovePrimary |Перемещает заданную первичную реплику службы с отслеживанием состояния на указанный узел кластера. |MovePrimaryAsync |Move-ServiceFabricPrimaryReplica |Нормальная |
+| MoveSecondary |Перемещая текущую вторичную реплику службы с отслеживанием состояния на другой узел кластера. |MoveSecondaryAsync |Move-ServiceFabricSecondaryReplica |Нормальная |
 | RemoveReplica |Имитирует ошибку реплики путем удаления реплики из кластера. Это приведет к закрытию реплики и переходу к роли "None" с удалением всех данных о состоянии из кластера. |RemoveReplicaAsync |Remove-ServiceFabricReplica |Нормальная |
 | RestartDeployedCodePackage |Имитирует ошибку процесса пакета кода путем перезапуска пакета кода, развернутого на узле в кластере. Это приводит к прерыванию процесса пакета кода, который перезапустит все реплики пользовательской службы, размещенные в этом процессе. |RestartDeployedCodePackageAsync |Restart-ServiceFabricDeployedCodePackage |Ненормальная |
 | RestartNode |Имитирует ошибку узла кластера Service Fabric путем перезапуска узла. |RestartNodeAsync |Restart-ServiceFabricNode |Ненормальная |

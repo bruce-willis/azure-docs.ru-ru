@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/26/2018
+ms.date: 06/07/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: b7141d028c496b75b061c17aa19ad6c73c0588c0
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: d4b906bd966da66659d23b935f7dbbd44b33899a
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164420"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35296447"
 ---
 # <a name="connect-a-google-cloud-platform-account"></a>Подключение учетной записи Google Cloud Platform
 
@@ -60,7 +60,7 @@ ms.locfileid: "32164420"
 
 ## <a name="add-a-google-cloud-account-to-cost-management"></a>Добавление учетной записи Google Cloud в службу "Управление затратами"
 
-1. Откройте портал Cloudyn с портала Azure или перейдите по адресу [https://azure.cloudyn.com](https://azure.cloudyn.com/) и выполните вход.
+1. Откройте портал Cloudyn с портала Azure или перейдите по адресу [https://azure.cloudyn.com](https://azure.cloudyn.com/) и войдите.
 2. Щелкните **Параметры** (значок шестеренки), а затем выберите **Cloud Accounts** (Облачные учетные записи).
 3. На странице **управления учетными записями** выберите вкладку **Google Accounts** (Учетные записи Google), а затем щелкните **Add new +** (Добавить новый элемент +).
 4. В поле **Google Account Name** (Имя учетной записи Google) введите адрес электронной почты для учетной записи выставления счетов, а затем щелкните **Далее**.

@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: cephalin
-ms.openlocfilehash: 92b6945ad13842e926d53be6dcc0d21554485ff3
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 0626b958a9b822569f4d3b6d27f3395bed853174
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37030059"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
 
@@ -73,31 +74,31 @@ az webapp config set --python-version 3.4 --resource-group <groupname> --name <a
 az webapp config set --java-version 1.8 --java-container Tomcat --java-container-version 9.0 --resource-group <groupname> --name <appname>
 ```
 
-### <a name="deprecated-versions"></a>Устаревшие версии
+### <a name="deprecated-versions"></a>Устаревшие версии  
 
 Когда версия устаревает, мы сообщаем дату ее удаления, чтобы вы могли спланировать обновление версии среды выполнения. 
 
-## <a name="how-can-i-query-os-and-runtime-update-status-on-my-instances"></a>Как запросить состояние обновления среды выполнения и ОС в моих экземплярах?
+## <a name="how-can-i-query-os-and-runtime-update-status-on-my-instances"></a>Как запросить состояние обновления среды выполнения и ОС в моих экземплярах?  
 
 Если блокируется доступ к критически важной информации ОС (см. статью [Функциональные возможности операционной системы для службы приложений Azure](web-sites-available-operating-system-functionality.md)), с помощью [консоли Kudu](https://github.com/projectkudu/kudu/wiki/Kudu-console) к экземпляру службы приложения можно отправить запрос на получение данных о версии среды выполнения и операционной системы. 
 
 В следующей таблице показано, как запросить версии Windows и языковой среды выполнения, в которых работают ваши приложения:
 
-| Информация | Где ее найти |
+| Информация | Где ее найти | 
 |-|-|
 | Версия Windows | См. `https://<appname>.scm.azurewebsites.net/Env.cshtml` (в разделе "Сведения о системе") |
 | Версия .NET | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br>`powershell -command "gci 'Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Net Framework Setup\NDP\CDF'"` |
 | Версия .NET Core | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `dotnet --version` |
 | Версия PHP | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `php --version` |
 | Версия Node.js по умолчанию | В [Cloud Shell](../cloud-shell/overview.md) введите следующую команду: <br> `az webapp config appsettings list --resource-group <groupname> --name <appname> --query "[?name=='WEBSITE_NODE_DEFAULT_VERSION']"` |
-| Версия Python | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `python --version` |
+| Версия Python | Откройте `https://<appname>.scm.azurewebsites.net/DebugConsole` и выполните следующую команду в командной строке: <br> `python --version` |  
 
-> [!NOTE]
+> [!NOTE]  
 > Доступ к расположению реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages`, где хранятся сведения об [исправлениях (номер в базе знаний)]((https://docs.microsoft.com/security-updates/SecurityBulletins/securitybulletins)), заблокирован.
 >
 >
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
-[Центр управления безопасностью: безопасность](https://www.microsoft.com/TrustCenter/Security/default.aspx)  
+[Центр управления безопасностью: безопасность](https://www.microsoft.com/en-us/trustcenter/security)  
 [64-разрядная версия ASP.NET Core в службе приложений Azure](https://gist.github.com/glennc/e705cd85c9680d6a8f1bdb62099c7ac7)

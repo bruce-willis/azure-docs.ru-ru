@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 03/06/2018
 ms.author: raynew
-ms.openlocfilehash: f8149d2af5542fb311ff83160d674e4d525289dc
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: c818ff0df5cb1f1b3d20c726b20b30c418f53061
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011379"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35266967"
 ---
 # <a name="support-matrix-for-hyper-v-replication-to-azure"></a>Матрица поддержки для репликации Hyper-V в Azure
 
@@ -45,7 +45,7 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Mac
  **Компонент** | **Дополнительные сведения**
 --- | ---
 Конфигурация виртуальной машины | Виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям Azure](#failed-over-azure-vm-requirements).
-Операционная система на виртуальной машине | Любая гостевая ОС, [поддерживаемая Azure](https://technet.microsoft.com/library/cc794868.aspx).<br/><br/> Nano Server Windows Server 2016 не поддерживается.
+Операционная система на виртуальной машине | Любая гостевая ОС, поддерживаемая в Azure.<br/><br/> Nano Server Windows Server 2016 не поддерживается.
 
 
 

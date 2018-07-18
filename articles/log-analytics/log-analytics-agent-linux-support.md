@@ -3,7 +3,7 @@ title: Устранение неполадок агента Azure Log Analytics 
 description: Описание симптомов, причин и решений для наиболее распространенных проблем с агентом Azure Log Analytics для Linux.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: ''
@@ -11,14 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/14/2018
 ms.author: magoedte
-ms.openlocfilehash: 80d7e39b284554ebfa8cac4488e1663b3e3648e8
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.component: na
+ms.openlocfilehash: 49a53b68fd394772f38b6040b80ec80c93d9c46c
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131775"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-linux-agent-for-log-analytics"></a>Устранение неполадок с агентом Azure Log Analytics для Linux
 

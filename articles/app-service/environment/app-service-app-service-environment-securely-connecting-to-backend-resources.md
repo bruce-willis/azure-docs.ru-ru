@@ -1,11 +1,11 @@
 ---
-title: "Безопасное подключение к серверным ресурсам из среды службы приложений"
-description: "Подробные сведения о безопасном подключении к серверным ресурсам из среды службы приложений."
+title: Безопасное подключение к серверным ресурсам из среды службы приложений
+description: Подробные сведения о безопасном подключении к серверным ресурсам из среды службы приложений.
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: stefsch
 manager: erikre
-editor: 
+editor: ''
 ms.assetid: f82eb283-a6e7-4923-a00b-4b4ccf7c4b5b
 ms.service: app-service
 ms.workload: na
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2016
 ms.author: stefsch
-ms.openlocfilehash: a43d88d64710b95dd753c19f02582f22accac8b6
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 2fb13a4dac923a19dc12910cb1b78e909b93abe1
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317577"
 ---
 # <a name="securely-connecting-to-backend-resources-from-an-app-service-environment"></a>Безопасное подключение к серверным ресурсам из среды службы приложений
 ## <a name="overview"></a>Обзор
@@ -52,7 +53,7 @@ ms.lasthandoff: 10/11/2017
 * [Группы безопасности сети][NetworkSecurityGroups].
 
 ## <a name="restricting-access-with-a-network-acl"></a>Ограничение доступа с помощью сетевых списков управления доступом
-Порт 1433 можно защитить с помощью сетевого списка управления доступом.  В примере ниже адреса клиентов из виртуальной сети добавляются в список разрешений, а доступ ко всем других клиентам блокируется.
+Порт 1433 можно защитить с помощью сетевого списка управления доступом.  В примере ниже адреса клиентов из виртуальной сети добавляются в белый список, а доступ ко всем других клиентам блокируется.
 
 ![Пример сетевого списка управления доступом][NetworkAccessControlListExample]
 
@@ -93,7 +94,7 @@ ms.lasthandoff: 10/11/2017
 <!-- LINKS -->
 [virtualnetwork]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
 [ControlInboundTraffic]:  app-service-app-service-environment-control-inbound-traffic.md
-[SiteToSite]: https://azure.microsoft.com/documentation/articles/vpn-gateway-site-to-site-create/
+[SiteToSite]: https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-multi-site
 [ExpressRoute]: http://azure.microsoft.com/services/expressroute/
 [NetworkAccessControlLists]: https://azure.microsoft.com/documentation/articles/virtual-networks-acl/
 [NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/

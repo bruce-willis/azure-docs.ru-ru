@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/15/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 4a27142f9110fd26daa8ea0ebd151a67769e6568
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 61b354dfd6f704eb0677991c02f28de08e49ee37
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34209279"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917505"
 ---
 # <a name="fail-over-and-fail-back-azure-vms-between-azure-regions"></a>Отработка отказа и восстановление размещения виртуальных машин Azure между регионами Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "34209279"
 > * Восстановление размещения дополнительной виртуальной машины
 > * Повторная защита основной виртуальной машины для использования дополнительного региона
 
-Репликация из Azure в Azure сейчас доступна в режиме предварительной версии.
+
 
 ## <a name="prerequisites"></a>предварительным требованиям
 

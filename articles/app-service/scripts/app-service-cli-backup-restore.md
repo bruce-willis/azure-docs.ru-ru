@@ -15,10 +15,11 @@ ms.date: 12/07/2017
 ms.author: cephalin
 ms.custom: mvc
 ms.openlocfilehash: a7f292cfcfc90d3bacb245448b8e53d80488ebad
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38306690"
 ---
 # <a name="restore-a-web-app-from-a-backup"></a>Восстановление веб-приложения из резервной копии
 

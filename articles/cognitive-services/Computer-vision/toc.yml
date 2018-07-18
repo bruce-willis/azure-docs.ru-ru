@@ -1,0 +1,169 @@
+- name: Документация по API компьютерного зрения
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что собой представляет компьютерное зрение
+      href: Home.md
+- name: Краткие руководства по API
+  items:
+    - name: Сводка
+      href: QuickStarts/quickstart-summary.md
+    - name: 'C#'
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/CSharp-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/CSharp-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/CSharp-print-text.md
+        - name: Извлечение рукописного текста
+          href: QuickStarts/CSharp-hand-text.md
+    - name: cURL
+      items:
+        - name: Анализ удаленного изображения
+          href: QuickStarts/curl-analyze.md
+        - name: Анализ локального изображения
+          href: QuickStarts/curl-disk.md
+        - name: Создание эскизов
+          href: QuickStarts/curl-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/curl-print-text.md
+    - name: Go
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/go-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/go-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/go-print-text.md
+    - name: Java
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/java-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/java-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/java-print-text.md
+        - name: Извлечение рукописного текста
+          href: QuickStarts/java-hand-text.md
+    - name: JavaScript
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/javascript-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/javascript-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/javascript-print-text.md
+        - name: Извлечение рукописного текста
+          href: QuickStarts/javascript-hand-text.md
+    - name: Node.js
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/node-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/node-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/node-print-text.md
+    - name: PHP
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/php-analyze.md
+        - name: Использование модели предметной области
+          href: QuickStarts/php-domain.md
+        - name: Создание эскизов
+          href: QuickStarts/php-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/php-print-text.md
+    - name: Python
+      items:
+        - name: Анализ удаленного изображения
+          href: QuickStarts/python-analyze.md
+        - name: Анализ локального изображения
+          href: QuickStarts/python-disk.md
+        - name: Использование модели предметной области
+          href: QuickStarts/python-domain.md
+        - name: Создание эскизов
+          href: QuickStarts/python-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/python-print-text.md
+        - name: Извлечение рукописного текста
+          href: QuickStarts/python-hand-text.md
+    - name: Ruby
+      items:
+        - name: Анализ изображения
+          href: QuickStarts/ruby-analyze.md
+        - name: Создание эскизов
+          href: QuickStarts/ruby-thumb.md
+        - name: Извлечение печатного текста
+          href: QuickStarts/ruby-print-text.md
+- name: Краткие руководства по пакетам SDK
+  items:
+    - name: 'C#'
+      items:
+        - name: Анализ изображения
+          href: quickstarts-sdk/csharp-analyze-sdk.md
+        - name: Создание эскизов
+          href: quickstarts-sdk/csharp-thumb-sdk.md
+        - name: Извлечение рукописного текста
+          href: quickstarts-sdk/csharp-hand-text-sdk.md
+- name: Практические руководства
+  items:
+    - name: Первые приложения компьютерного зрения
+      items:
+        - name: 'C#'
+          href: Tutorials/CSharpTutorial.md
+        - name: Java
+          href: Tutorials/java-tutorial.md
+        - name: JavaScript
+          href: Tutorials/javascript-tutorial.md
+        - name: Python
+          href: Tutorials/PythonTutorial.md
+    - name: Получение ключей подписки
+      href: Vision-API-How-to-Topics/HowToSubscribe.md
+    - name: Вызов API компьютерного зрения
+      href: Vision-API-How-to-Topics/HowToCallVisionAPI.md
+    - name: Анализ видео в реальном времени
+      href: Vision-API-How-to-Topics/HowtoAnalyzeVideo_Vision.md
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы компьютерного зрения
+          href: vs-computer-vision-connected-service.md
+- name: Справочные материалы
+  items:
+    - name: "API компьютерного зрения версии\_2.0"
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44'
+    - name: "API компьютерного зрения версии\_1.0"
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56f91f2d778daf23d8ec6739'
+    - name: Пакеты SDK
+      items:
+        - name: Windows
+          href: 'https://github.com/Microsoft/Cognitive-vision-windows'
+        - name: Node.js
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/cognitive-services?view=azure-node-latest#vision-modules'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitive-services?view=azure-python#vision-modules'
+        - name: Go
+          href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v1.0/computervision'
+        - name: Android
+          href: 'https://github.com/Microsoft/Cognitive-vision-android'
+        - name: Swift
+          href: 'https://github.com/DanilaVladi/Microsoft-Cognitive-Services-Swift-SDK'
+- name: Ресурсы
+  items:
+    - name: Примеры
+      href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision'
+    - name: Часто задаваемые вопросы
+      href: FAQ.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/computer-vision'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/430309-computer-vision-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Классификация категорий
+      href: Category-Taxonomy.md

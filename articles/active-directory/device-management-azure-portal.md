@@ -8,18 +8,20 @@ manager: mtillman
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
+ms.component: devices
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2017
+ms.date: 06/01/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 6947358c6c845ff2c2a35cb218c11294a2841dc8
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: ddce312d6299a7749f1a40a83f67ce3c26876591
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34714006"
 ---
 # <a name="managing-devices-using-the-azure-portal"></a>Управление устройствами с помощью портала Azure
 
@@ -185,10 +187,17 @@ ms.lasthandoff: 04/19/2018
 
 ### <a name="view-or-copy-bitlocker-keys"></a>Просмотр и копирование ключей BitLocker
 
-Если вы являетесь администратором, то можете просмотреть и скопировать ключи BitLocker, чтобы помочь пользователям восстановить свои зашифрованные диски. Эти ключи доступны только для устройств Windows, которые были зашифрованы и ключи которых были сохранены в Azure AD. Эти ключи можно скопировать, отобразив сведения об устройстве.
+Вы можете просмотреть и скопировать ключи BitLocker, чтобы помочь пользователям восстановить свои зашифрованные диски. Эти ключи доступны только для устройств Windows, которые были зашифрованы и ключи которых были сохранены в Azure AD. Эти ключи можно скопировать, отобразив сведения об устройстве.
  
 ![Просмотр ключей BitLocker](./media/device-management-azure-portal/36.png)
 
+Чтобы просмотреть или копировать ключи BitLocker, необходимо быть владельцем устройства или пользователем, которому назначена по крайней мере одна из следующих ролей:
+
+- глобальные администраторы;
+- администраторы службы технической поддержки;
+- администраторы безопасности;
+- читатели безопасности;
+- администраторы службы Intune.
 
 
 ## <a name="audit-logs"></a>Журналы аудита

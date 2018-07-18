@@ -1,5 +1,5 @@
 ---
-title: Копирование данных из Netezza с помощью фабрики данных Azure (бета-версия) | Документация Майкрософт
+title: Копирование данных из Netezza с помощью Фабрики данных Azure | Документация Майкрософт
 description: Узнайте, как копировать данные из Netezza в поддерживаемые хранилища данных-приемники с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -10,25 +10,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/09/2018
+ms.topic: conceptual
+ms.date: 06/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 469e72a70d23b3d23eeeb68b3aa2a9e3527d038e
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: f8c10e2200f830ea6e568e7b3fba1f0a6085cef2
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33940143"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055660"
 ---
-# <a name="copy-data-from-netezza-using-azure-data-factory-beta"></a>Копирование данных из Netezza с помощью фабрики данных Azure (бета-версия)
+# <a name="copy-data-from-netezza-using-azure-data-factory"></a>Копирование данных из Netezza с помощью Фабрики данных Azure 
 
 Из этой статьи вы узнаете, как с помощью действия копирования в фабрике данных Azure копировать данные из Netezza. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Move data by using Copy Activity](v1/data-factory-data-movement-activities.md) (Перемещение данных с помощью действия копирования).
-
-> [!IMPORTANT]
-> Сейчас этот соединитель доступен в бета-версии. Попробуйте поработать с ним и оставьте свой отзыв. Не используйте его в рабочих средах.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -57,7 +51,7 @@ ms.locfileid: "33940143"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |:--- |
 | SecurityLevel | Уровень безопасности (SSL/TLS), который драйвер использует для подключения к хранилищу данных. (например, `SecurityLevel=preferredSecured`. Поддерживаемые значения:<br/>— Только незащищенный (**onlyUnSecured**): драйвер не использует SSL.<br/>- **Предпочтительно незащищенный (preferredUnSecured) (по умолчанию)**: если сервер предоставляет возможность выбора, драйвер не использует SSL. <br/>- **Предпочтительно защищенный (preferredSecured)**: если сервер предоставляет возможность выбора, драйвер использует SSL. <br/>- **Только защищенный (onlySecured)**: драйвер не подключается, если SSL-подключение недоступно. | Нет  |
-| CaCertFile | Полный путь к SSL-сертификату, используемому сервером. (например, `UseSystemTrustStore=<cert path>;`| Да, если протокол SSL включен |
+| CaCertFile | Полный путь к SSL-сертификату, используемому сервером. (например, `CaCertFile=<cert path>;`| Да, если протокол SSL включен |
 
 **Пример.**
 

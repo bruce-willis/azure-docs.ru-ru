@@ -10,15 +10,15 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/10/2018
+ms.topic: conceptual
+ms.date: 06/15/2018
 ms.author: shlo
-ms.openlocfilehash: b6c2e2b685855455550612abb58ada6a694bbdff
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: 25ed439674fcf7136e29034eb97e0652ae9ba111
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011532"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38237838"
 ---
 # <a name="lookup-activity-in-azure-data-factory"></a>Действие поиска в фабрике данных Azure
 
@@ -26,9 +26,6 @@ ms.locfileid: "34011532"
 - Динамическое определение объектов (файлы, таблицы и т. д) для обработки в последующем действии вместо жесткого программирования имени объекта.
 
 Действие поиска может считывать и возвращать содержимое файла конфигурации, таблицы конфигурации или результата выполнения запроса или хранимой процедуры.  Выходные данные действия поиска можно использовать в последующем действии копирования или преобразования, если это отдельное значение, или в действии ForEach, если это массив атрибутов.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных Azure, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, используйте [документацию по версии 1 фабрики данных](v1/data-factory-introduction.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -279,11 +276,11 @@ firstRowOnly | Указывает, следует ли возвращать то
 ```json
 {
   "Id": "1",
-  "tableName": "Table1",
+  "tableName": "Table1"
 }
 {
    "Id": "2",
-  "tableName": "Table2",
+  "tableName": "Table2"
 }
 ```
 
@@ -293,11 +290,11 @@ firstRowOnly | Указывает, следует ли возвращать то
 [ 
     {
         "Id": "1",
-          "tableName": "Table1",
-    }
+        "tableName": "Table1"
+    },
     {
         "Id": "2",
-        "tableName": "Table2",
+        "tableName": "Table2"
     }
 ]
 ```

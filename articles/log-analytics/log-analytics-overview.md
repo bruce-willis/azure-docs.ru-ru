@@ -9,16 +9,18 @@ editor: tysonn
 ms.assetid: bd90b460-bacf-4345-ae31-26e155beac0e
 ms.service: log-analytics
 ms.devlang: na
-ms.topic: hero-article
+ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: bwren
-ms.openlocfilehash: b951d41dab4d349a8d648e7eaa7e23b73ced2ced
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.component: na
+ms.openlocfilehash: 463ac7ee3e640f8bc275adb9e6ac27cc3e6a037a
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127965"
 ---
 # <a name="what-is-azure-log-analytics"></a>Что такое служба Log Analytics в Azure?
 Служба Log Analytics играет ключевую роль в управлении Azure. Она собирает данные телеметрии и другие данные из разнообразных источников и предоставляет язык запросов и механизм аналитики, который позволяет анализировать работу приложений и ресурсов.  Вы можете напрямую взаимодействовать с данными Log Analytics с помощью поиска по журналам и представлений. Кроме того, вы можете воспользоваться средствами анализа в других службах Azure, которые хранят свои данные в Log Analytics, например Application Insights или центр безопасности Azure.  

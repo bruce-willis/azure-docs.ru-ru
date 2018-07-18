@@ -4,7 +4,7 @@ description: В этой статье описывается принцип ра
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
 documentationcenter: ''
-author: swkrish
+author: billmath
 manager: mtillman
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
@@ -13,12 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9d17a4038f2171b74c8ba1dbc21e8335e6893691
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: 0b1940894ffb01595d11bc49889c6ec01714816b
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918260"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Подробное техническое руководство по простому единому входу Azure Active Directory
 
@@ -50,7 +52,7 @@ ms.lasthandoff: 03/08/2018
 
 Процесс входа в веб-браузере выглядит следующим образом.
 
-1. Пользователь пытается получить доступ к веб-приложению (например, Outlook Web App — https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
+1. Пользователь пытается получить доступ к веб-приложению (например, веб-приложению Outlook —https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
 2. Если пользователь еще не выполнил вход, он перенаправляется на страницу входа в Azure AD.
 3. Пользователь вводит свое имя на странице входа в Azure AD.
 

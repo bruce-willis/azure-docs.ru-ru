@@ -8,17 +8,24 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
-ms.date: 03/20/2018
+ms.date: 06/20/2018
 ms.author: heidist
-ms.openlocfilehash: 4215795b7cd2a25427a3ce9b3cde16bfc69cb009
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 2ec720f26cfbadb9963ff3991ad1795c9b30c136
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36284987"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-search-service"></a>Создание ключей API и управление ими для службы "Поиск Azure"
 
-Для всех запросов к службе поиска требуется ключ API, который был создан специально для службы. Этот ключ API является единственным механизмом аутентификации доступа к конечной точке службы поиска. 
+Для всех запросов к службе поиска требуется ключ API, доступный только для чтения, который был создан специально для службы. Этот ключ API является единственным механизмом аутентификации доступа к конечной точке службы поиска. Ключ нужно включить в каждый запрос. В [решениях REST](search-get-started-nodejs.md#update-the-configjs-with-your-search-service-url-and-api-key) ключ API обычно указывается в заголовке запроса. В [решениях .NET](search-howto-dotnet-sdk.md#core-scenarios)ключ часто указывается как параметр конфигурации и затем передается в [SearchServiceClient](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient) в качестве [Credentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.credentials) (ключ администратора) или [SearchCredentials](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient.searchcredentials) (ключа запроса).
+
+Ключи создаются вместе со службой поиска во время подготовки службы. Просмотреть и получить значение ключа можно на [портале Azure](https://portal.azure.com).
+
+![Страница портала, раздел "Параметры", пункт "Ключи"](media/search-manage/azure-search-view-keys.png)
+
+## <a name="what-is-an-api-key"></a>Что собой представляет ключ API
 
 Ключ API является строкой, состоящей из случайно сгенерированных букв и цифр. Используя [разрешения на основе ролей](search-security-rbac.md), вы можете удалять или считывать ключи, но не можете заменить ключ пользовательским паролем или использовать Active Directory в качестве основного метода проверки подлинности для доступа к операциям поиска. 
 

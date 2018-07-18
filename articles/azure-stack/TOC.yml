@@ -128,8 +128,8 @@
           href: azure-stack-monitor-health.md
         - name: Управление сетевыми ресурсами
           href: azure-stack-viewing-public-ip-address-consumption.md
-        - name: Управление виртуальными машинами Windows Azure Pack
-          href: azure-stack-manage-windows-azure-pack.md
+        - name: Изменение владельца пользовательской подписки
+          href: azure-stack-change-subscription-owner.md
         - name: Запуск и остановка Azure Stack
           href: azure-stack-start-and-stop.md
         - name: Управление емкостями
@@ -189,6 +189,8 @@
               href: azure-stack-enable-multitenancy.md
         - name: Смена секретов
           href: azure-stack-rotate-secrets.md
+        - name: Обновление антивирусных программ
+          href: azure-stack-security-av.md
     - name: Предложение служб
       items:
         - name: Обзор предложений служб
@@ -199,6 +201,8 @@
               href: azure-stack-plan-offer-quota-overview.md
             - name: Создание плана
               href: azure-stack-create-plan.md
+            - name: Создание дополнительного плана
+              href: create-add-on-plan.md
             - name: Создание предложения
               href: azure-stack-create-offer.md
             - name: Подписка на предложение
@@ -214,7 +218,7 @@
           items:
             - name: Развертывание поставщика ресурсов SQL Server.
               href: azure-stack-sql-resource-provider-deploy.md
-            - name: Добавление серверов размещения
+            - name: Добавление серверов размещения SQL
               href: azure-stack-sql-resource-provider-hosting-servers.md
             - name: Создание баз данных SQL
               href: azure-stack-sql-resource-provider-databases.md
@@ -225,7 +229,20 @@
             - name: Удаление поставщика ресурсов SQL Server
               href: azure-stack-sql-resource-provider-remove.md
         - name: Предложение MySQL как PaaS
-          href: azure-stack-mysql-resource-provider-deploy.md
+          href: azure-stack-mysql-resource-provider.md
+          items:
+            - name: Развертывание поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-deploy.md
+            - name: Добавление серверов размещения MySQL
+              href: azure-stack-mysql-resource-provider-hosting-servers.md
+            - name: Создание базы данных MySQL
+              href: azure-stack-mysql-resource-provider-databases.md
+            - name: Обновление поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-update.md
+            - name: Обслуживание поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-maintain.md
+            - name: Удаление поставщика ресурсов MySQL Server
+              href: azure-stack-mysql-resource-provider-remove.md
         - name: Предложение службы приложений как PaaS
           items:
             - name: Обзор службы приложений в Azure Stack
@@ -252,6 +269,8 @@
               href: azure-stack-app-service-release-notes-update-one.md
             - name: "Служба приложений в заметках о выпуске обновления\_2 Azure Stack"
               href: azure-stack-app-service-release-notes-update-two.md
+        - name: Развертывание Ethereum
+          href: azure-stack-ethereum.md
         - name: Заполнение Marketplace
           items:
             - name: Обзор Marketplace
@@ -277,15 +296,15 @@
             - name: Предложение кластера Kubernetes
               href: azure-stack-solution-template-kubernetes-cluster-add.md
         - name: Потребление и выставление счетов
+          href: azure-stack-billing-and-chargeback.md
           items:
-            - name: Обзор
-              href: azure-stack-billing-and-chargeback.md
             - name: Управление потреблением и выставлением счетов в качестве поставщика облачных служб
               href: azure-stack-add-manage-billing-as-a-csp.md
-            - name: Добавление клиентов для потребления и выставления счетов
-              href: azure-stack-csp-howto-register-tenants.md
-            - name: Управление регистрацией клиента
-              href: azure-stack-csp-ref-operations.md
+              items:
+                - name: Добавление клиентов для потребления и выставления счетов
+                  href: azure-stack-csp-howto-register-tenants.md
+                - name: Управление регистрацией клиента
+                  href: azure-stack-csp-ref-operations.md
             - name: Справочник по потреблению и выставлению счетов
               items:
                 - name: Отчеты по данным об использовании

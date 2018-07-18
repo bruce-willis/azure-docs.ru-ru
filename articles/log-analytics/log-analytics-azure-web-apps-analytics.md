@@ -3,7 +3,7 @@ title: Просмотр аналитических данных веб-прил�
 description: Аналитику веб-приложений Azure можно использовать для углубленного анализа данных веб-приложений Azure при сборе разных метрик ресурсов веб-приложений Azure.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: 20ff337f-b1a3-4696-9b5a-d39727a94220
@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/18/2018
+ms.topic: conceptual
+ms.date: 06/26/2018
 ms.author: magoedte
-ms.openlocfilehash: c44546ffe65a0849b485fb0d2dd169e4216ae80a
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.component: na
+ms.openlocfilehash: 7915a255c24fc33cfa489354b49596ca0feec473
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34261374"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128951"
 ---
 # <a name="view-analytic-data-for-metrics-across-all-your-azure-web-app-resources"></a>Просмотр аналитических данных для метрик ресурсов веб-приложений Azure
 
@@ -57,8 +58,7 @@ ms.locfileid: "34261374"
 
 Выполните следующие действия, чтобы настроить решение "Аналитика веб-приложений Azure" в рабочих областях.
 
-1. Включите решение "Аналитика веб-приложений Azure" из [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.AzureWebAppsAnalyticsOMS?tab=Overview) или выполните инструкции по [добавлению решений Log Analytics из коллекции решений](log-analytics-add-solutions.md).
-2. [Включите ведение журнала метрик ресурсов Azure в Log Analytics с помощью PowerShell](https://blogs.technet.microsoft.com/msoms/2017/01/17/enable-azure-resource-metrics-logging-using-powershell).
+1. [Включите ведение журнала метрик ресурсов Azure в Log Analytics с помощью PowerShell](https://blogs.technet.microsoft.com/msoms/2017/01/17/enable-azure-resource-metrics-logging-using-powershell).
 
 Решение "Аналитика веб-приложений Azure" собирает два набора метрик из Azure:
 

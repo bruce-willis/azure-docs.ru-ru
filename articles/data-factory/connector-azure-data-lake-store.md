@@ -9,25 +9,22 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: ''
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/27/2018
 ms.author: jingwang
-ms.openlocfilehash: 522a285d16901f1237a2ed5463e64d0cbf4bb8c9
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: cf1ac441f695e5427e57f1a85bafd095777eed80
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34011583"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37049304"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-store-by-using-azure-data-factory"></a>Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-azure-datalake-connector.md)
-> * [Версия 2 — предварительная](connector-azure-data-lake-store.md)
+> * [Версия 1](v1/data-factory-azure-datalake-connector.md)
+> * [Текущая версия](connector-azure-data-lake-store.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из хранилища Azure Data Lake Store и в него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Copy data to and from Data Lake Store by using Data Factory](v1/data-factory-azure-datalake-connector.md) (Копирование данных в хранилище Data Lake Store или из него с помощью фабрики данных Azure).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -42,6 +39,9 @@ ms.locfileid: "34011583"
 > Если вы копируете данные с использованием локальной среды выполнения интеграции, настройте корпоративный брандмауэр, чтобы разрешить исходящий трафик в `<ADLS account name>.azuredatalakestore.net` и `login.microsoftonline.com/<tenant>/oauth2/token` через порт 443. Последний вариант — это служба токенов безопасности Azure (STS), которая требуется среде для получения маркера доступа.
 
 ## <a name="get-started"></a>Начало работы
+
+> [!TIP]
+> Пошаговое руководство по использованию соединителя Azure Data Lake Store см. в разделе [Загрузка данных в Azure Data Lake Store](load-azure-data-lake-store.md).
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
@@ -157,7 +157,7 @@ ms.locfileid: "34011583"
 |:--- |:--- |:--- |
 | Тип | Свойство type для набора данных должно иметь значение **AzureDataLakeStoreFile**. |Yes |
 | folderPath | Путь к папке в Data Lake Store. Фильтр подстановочных знаков не поддерживается. Пример: rootfolder/subfolder/ |Yes |
-| fileName | **Имя или фильтр шаблонов** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все файлы в папке. <br/><br/>Допустимые подстановочные знаки для фильтра: `*` (несколько знаков) и `?` (один знак).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования символов, если фактическое имя файла содержит подстановочный знак или этот escape-символ.<br/><br/>Если fileName не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действий, действие копирования автоматически создает имя файла в следующем формате: *Data.[activity run id GUID].[GUID if FlattenHierarchy].[format if configured].[compression if configured]*. Например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.gz. |Нет  |
+| fileName | **Имя или фильтр шаблонов** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все файлы в папке. <br/><br/>Допустимые знаки подстановки для фильтра: `*` (соответствует нулю или нескольким символам) и `?` (соответствует нулю или одному символу).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования символов, если фактическое имя файла содержит подстановочный знак или этот escape-символ.<br/><br/>Если fileName не указан для выходного набора данных и **preserveHierarchy** не указан в приемнике действий, действие копирования автоматически создает имя файла в следующем формате: *Data.[activity run id GUID].[GUID if FlattenHierarchy].[format if configured].[compression if configured]*. Например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.gz. |Нет  |
 | свойства | Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных.<br/><br/>Если нужно проанализировать или создать файлы определенного формата, поддерживаются следующие типы форматов файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](supported-file-formats-and-compression-codecs.md#text-format), [формате Json](supported-file-formats-and-compression-codecs.md#json-format), [формате Avro](supported-file-formats-and-compression-codecs.md#avro-format), [формате Orc](supported-file-formats-and-compression-codecs.md#orc-format) и [ формате Parquet](supported-file-formats-and-compression-codecs.md#parquet-format). |Нет (только для сценария двоичного копирования) |
 | compression | Укажите тип и уровень сжатия данных. Дополнительные сведения см. в разделе [Поддержка сжатия](supported-file-formats-and-compression-codecs.md#compression-support).<br/>Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**.<br/>Поддерживаемые уровни: **Optimal** и **Fastest**. |Нет  |
 

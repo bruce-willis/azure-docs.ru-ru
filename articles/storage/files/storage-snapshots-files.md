@@ -5,7 +5,7 @@ services: storage
 documentationcenter: .net
 author: RenaShahMSFT
 manager: aungoo
-editor: tysonn
+editor: tamram
 ms.assetid: edabe3ee-688b-41e0-b34f-613ac9c3fdfd
 ms.service: storage
 ms.workload: storage
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/17/2018
 ms.author: renash
-ms.openlocfilehash: 6499bdf1af676898f7b2911612cbd206bccfa4fa
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: af113ae76d81c82ff6c4ced1569aa16f3a9ee27c
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37064480"
 ---
 # <a name="overview-of-share-snapshots-for-azure-files"></a>Общие сведения о моментальных снимках общих ресурсов для службы файлов Azure 
 Служба "Файлы Azure" предоставляет возможность создать моментальные снимки общих ресурсов для файловых ресурсов. В моментальные снимки общих ресурсов записывается состояние общего ресурса на определенный момент времени. В этой статье описаны возможности, предоставляемые моментальными снимками общих ресурсов, а также то, как можно воспользоваться их преимуществами в своих вариантах.
@@ -45,7 +46,7 @@ ms.lasthandoff: 03/29/2018
 
 Моментальный снимок файловых ресурсов идентичен базовому файловому ресурсу. Единственным отличием является то, что к универсальному коду файлового ресурса (URI) добавляется значение **DateTime**, чтобы указывать время создания моментального снимка. Например, если URI общего ресурса — http://storagesample.core.file.windows.net/myshare, то URI моментального снимка этого ресурса будет иметь такой вид:
 ```
-http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.9360000Z
+http://storagesample.file.core.windows.net/myshare?snapshot=2011-03-09T01:42:34.9360000Z
 ```
 
 Моментальные снимки файлового ресурса хранятся до тех пор, пока не будут явно удалены. При удалении исходного файлового ресурса моментальные снимки файлового ресурса будут также удалены. Чтобы было удобнее контролировать моментальные снимки файлового ресурса, их можно пронумеровать. 
@@ -88,7 +89,7 @@ http://storagesample.core.file.windows.net/myshare?snapshot=2011-03-09T01:42:34.
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Работа с моментальными снимками общих ресурсов с помощью:
-    - [портала](storage-how-to-use-files-portal.md#create-and-modify-share-snapshots);
-    - [PowerShell](storage-how-to-use-files-powershell.md#create-and-modify-share-snapshots);
-    - [CLI](storage-how-to-use-files-cli.md#create-and-modify-share-snapshots).
+    - [Портал](storage-how-to-use-files-portal.md#create-and-modify-share-snapshots)
+    - [PowerShell](storage-how-to-use-files-powershell.md#create-and-modify-share-snapshots)
+    - [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](storage-how-to-use-files-cli.md#create-and-modify-share-snapshots)
 - [Часто задаваемые вопросы о службе "Файлы Azure"](storage-files-faq.md#share-snapshots)

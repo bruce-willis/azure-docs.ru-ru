@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 04/30/2018
 ms.author: sethm
-ms.openlocfilehash: 1b2c9b3a0b7565e7de40d4dc0e623a62313b79db
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: dde7691d2fe4503de8a671d7f29e36558d474699
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37440399"
 ---
 # <a name="service-bus-premium-and-standard-messaging-tiers"></a>Уровни обмена сообщениями через служебную шину Premium и Standard
 
@@ -56,15 +57,15 @@ ms.lasthandoff: 05/03/2018
 
 ## <a name="get-started-with-premium-messaging"></a>Приступая к работе с обменом сообщениями уровня "Премиум"
 
-Приступить к работе с обменом сообщениями уровня "Премиум" так же просто, как и с обменом сообщениями уровня "Стандартный". Начните с [создания пространства имен](service-bus-create-namespace-portal.md) на [портале Azure](https://portal.azure.com). В разделе **Ценовая категория** выберите **Премиум**.
+Приступить к работе с обменом сообщениями уровня "Премиум" так же просто, как и с обменом сообщениями уровня "Стандартный". Начните с [создания пространства имен](service-bus-create-namespace-portal.md) на [портале Azure](https://portal.azure.com). В разделе **Ценовая категория** выберите **Премиум**. Для просмотра дополнительных сведений о каждом уровне нажмите кнопку **Просмотреть подробные сведения о ценах**.
 
 ![create-premium-namespace][create-premium-namespace]
 
 Вы можете также создать [пространство имен уровня "Премиум", используя шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/101-servicebus-pn-ar/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях.
+Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 
 * [Introducing Azure Service Bus Premium Messaging (blog post)](http://azure.microsoft.com/blog/introducing-azure-service-bus-premium-messaging/) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум" (запись в блоге))
 * [Introducing Azure Service Bus Premium Messaging (Channel9)](https://channel9.msdn.com/Blogs/Subscribe/Introducing-Azure-Service-Bus-Premium-Messaging) (Общие сведения об обмене сообщениями через служебную шину Azure уровня "Премиум" (Channel9))

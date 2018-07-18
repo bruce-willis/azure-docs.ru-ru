@@ -11,11 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/24/2018
 ms.author: juliako
-ms.openlocfilehash: 804a418f6ee88974d6e74a2c18bc5d01b6adf838
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: c488060b9db0ba482d12eee2394e5149b918950e
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331526"
 ---
 # <a name="media-intelligence"></a>Мультимедиа-аналитика
 
@@ -180,7 +181,7 @@ API REST версии 3 Служб мультимедиа Azure позволяе
 |id|Идентификатор лица.|
 |name|Обозначение лица. Это может быть "Неизвестный № 0", идентифицированная знаменитость или заданный клиентом человек.|
 |confidence|Достоверности идентификации лица.|
-|description|В случае знаменитости ее описание ("Сатья Наделла (Satya Nadella) родился..."). |
+|description|В случае знаменитости ее описание. |
 |thumbnalId|Идентификатор миниатюры лица.|
 |knownPersonId|В случае известного человека его внутренний идентификатор.|
 |referenceId|В случае знаменитости, найденной в Bing, ее идентификатор Bing.|
@@ -328,33 +329,6 @@ API REST версии 3 Служб мультимедиа Azure позволяе
       ]
     }
   ]
-```
-
-### <a name="audioeffects"></a>audioEffects
-
-|ИМЯ|ОПИСАНИЕ|
-|---|---|
-|id|Идентификатор аудиоэффекта.|
-|Тип|Тип аудиоэффекта (например, овации, речь, тишина).|
-|instances|Список диапазонов времени, в которых появились эти аудиоэффекты.|
-
-```json
-"audioEffects": [
-{
-    "id": 0,
-    "type": "Clapping",
-    "instances": [
-    {
-        "start": "00:00:00",
-        "end": "00:00:03"
-    },
-    {
-        "start": "00:01:13",
-        "end": "00:01:21"
-    }
-    ]
-}
-]
 ```
 
 

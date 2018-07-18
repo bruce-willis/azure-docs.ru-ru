@@ -3,25 +3,22 @@ title: Управление Azure DB Cosmos в Обозревателе служ
 description: Сведения об управлении Azure DB Cosmos в Обозревателе службы хранилища Azure.
 Keywords: Azure Cosmos DB, Azure Storage Explorer, MongoDB
 services: cosmos-db
-documentationcenter: ''
 author: Jejiang
-manager: omafnan
+manager: kfile
 editor: ''
 tags: Azure Cosmos DB
-ms.assetid: ''
 ms.service: cosmos-db
 ms.custom: Azure Cosmos DB active
-ms.workload: big-data
-ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: jejiang
-ms.openlocfilehash: ff4ee0a47129be5df03112006dcd45a62ad410af
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: b45328425cff978377d5e05de487d42e786c063b
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37345113"
 ---
 # <a name="manage-azure-cosmos-db-in-azure-storage-explorer"></a>Управление Azure DB Cosmos в Обозревателе службы хранилища Azure
 
@@ -222,7 +219,7 @@ ms.lasthandoff: 04/28/2018
 
 Существует несколько причин, по которым вы можете видеть эту ошибку. Двумя основными являются:
 
-+ Подключение через "прозрачный прокси-сервер". Это означает, кто-то (например, ваш ИТ-отдел) перехватывает трафик HTTPS, расшифровывает его, а затем шифрует с помощью самозаверяющего сертификата.
++ Подключение через *прозрачный прокси-сервер*. Это означает, кто-то (например, ваш ИТ-отдел) перехватывает трафик HTTPS, расшифровывает его, а затем шифрует с помощью самозаверяющего сертификата.
 
 + Работает программное обеспечение, например антивирусная программа, которое вставляет самозаверяющие сертификаты SSL в получаемые сообщения HTTPS.
 

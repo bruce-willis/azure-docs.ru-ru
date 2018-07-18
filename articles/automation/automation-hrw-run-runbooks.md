@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a4cf32ea7b77db3fc78a404063b8a4d69ecebf58
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 32cc1a436521574917c8e52b2fa4e045d32a4f09
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195715"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37062580"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -157,13 +157,9 @@ Get-AzureRmAutomationAccount | Select-Object AutomationAccountName
 
 Задания обрабатываются в гибридных рабочих ролях Runbook немного иначе, чем при запуске в "песочницах" Azure. Одно из основных отличий заключается в том, что в гибридных рабочих ролях Runbook нет ограничений на продолжительность заданий. Если у вас есть runbook с длительным временем выполнения, вы наверняка захотите гарантировать его устойчивость к перезапуску, например к перезагрузке компьютера, на котором размещена гибридная рабочая роль. При перезагрузке компьютера, выполняющего гибридную рабочую роль, все выполняемые задания runbook запускаются заново, с самого начала или с последней контрольной точки, если это runbook рабочих процессов PowerShell. Если задание runbook перезапускается более 3 раз, его выполнение приостанавливается.
 
-## <a name="troubleshooting-runbooks-on-hybrid-runbook-worker"></a>Устранение неполадок с модулями Runbook в гибридном компоненте Runbook Worker
+## <a name="troubleshoot"></a>Устранение неполадок
 
-Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Гибридные рабочие роли также записывают ошибки и события в журнал событий Windows, хранящийся в папке **Application and Services Logs\Microsoft-SMA\Operational**. События, связанные с модулями runbook, выполненными в рабочей роли, записываются в журнал в папке **Application and Services Logs\Microsoft-Automation\Operational**. Журнал **Microsoft-SMA** содержит многие дополнительные события, связанные с заданием runbook, помещенным в рабочую роль, и с обработкой runbook. Хотя журнал событий **Microsoft-Automation** почти не содержит событий, сведения о которых помогут в устранении неполадок при выполнении runbook, в нем сохраняются результаты задания runbook.
-
-[Выходные данные Runbook и сообщения](automation-runbook-output-and-messages.md) отправляются в службу автоматизации Azure из гибридных рабочих ролей точно так же, как задания Runbook, которые выполняются в облаке. Потоки Verbose и Progress можно активировать точно так же, как и для других модулей Runbook.
-
-Если модули runbook выполняются с ошибками, а в сводке о задании отображается состояние **Приостановлено**, изучите инструкции по устранению неполадок в разделе [Задание Runbook завершается с состоянием "Приостановлено"](automation-troubleshooting-hybrid-runbook-worker.md#a-runbook-job-terminates-with-a-status-of-suspended).
+Если модули runbook выполняются с ошибками, а в сводке о задании отображается состояние **Приостановлено**, см. инструкции по [устранению неполадок с выполнением runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

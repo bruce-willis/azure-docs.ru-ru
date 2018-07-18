@@ -1,0 +1,337 @@
+- name: Документация по LUIS
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что собой представляет служба Language Understanding
+      href: Home.md
+    - name: Поддерживаемые языки
+      href: luis-supported-languages.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: 'Создание приложения, использующего предварительно созданный домен'
+      href: luis-get-started-create-app.md
+    - name: Использование API
+      items:
+        - name: Получение прогнозирования фраз с помощью запроса конечной точки
+          items:
+            - name: 'C#'
+              href: luis-get-started-cs-get-intent.md
+            - name: Java
+              href: luis-get-started-java-get-intent.md
+            - name: JavaScript
+              href: luis-get-started-js-get-intent.md
+            - name: Node.js
+              href: luis-get-started-node-get-intent.md
+            - name: Python
+              href: luis-get-started-python-get-intent.md
+            - name: PHP
+              href: luis-get-started-php-get-intent.md
+            - name: Ruby
+              href: luis-get-started-ruby-get-intent.md
+        - name: Добавление фраз к намерению и обучение приложения
+          items:
+            - name: 'C#'
+              href: luis-get-started-cs-add-utterance.md
+            - name: Java
+              href: luis-get-started-java-add-utterance.md
+            - name: JavaScript
+              href: luis-get-started-javascript-add-utterance.md
+            - name: Node.js
+              href: luis-get-started-node-add-utterance.md
+            - name: Python
+              href: luis-get-started-python-add-utterance.md
+            - name: PHP
+              href: luis-get-started-php-add-utterance.md
+            - name: Ruby
+              href: luis-get-started-ruby-add-utterance.md
+- name: Учебники
+  items:
+    - name: Создание приложения
+      items:
+        - name: 1. Использование личного домена
+          href: luis-quickstart-intents-only.md
+        - name: 2. Добавление предварительно созданных намерений и сущностей
+          href: luis-tutorial-prebuilt-intents-entities.md
+        - name: 3. Добавление сущности регулярного выражения
+          href: luis-quickstart-intents-regex-entity.md
+        - name: 4. Добавление сущности списка
+          href: luis-quickstart-intent-and-list-entity.md
+        - name: 5. Добавление иерархической сущности
+          href: luis-quickstart-intent-and-hier-entity.md
+        - name: 6. Добавление составной сущности
+          href: luis-tutorial-composite-entity.md
+        - name: 7. Добавление простой сущности и списка фраз
+          href: luis-quickstart-primary-and-secondary-data.md
+        - name: 8. Добавление сущности keyPhrase
+          href: luis-quickstart-intent-and-key-phrase.md
+        - name: 9. Добавление анализа тональности.
+          href: luis-quickstart-intent-and-sentiment-analysis.md
+    - name: Улучшение приложения
+      items:
+        - name: Просмотр фрагментов речи конечной точки
+          href: luis-tutorial-review-endpoint-utterances.md
+        - name: С пакетным тестом
+          href: luis-tutorial-batch-testing.md
+        - name: Использование шаблонов
+          href: luis-tutorial-pattern.md
+- name: Примеры
+  items:
+    - name: Примеры кода
+      href: 'https://github.com/Microsoft/LUIS-Samples'
+- name: Основные понятия
+  items:
+    - name: Рекомендации
+      href: luis-concept-best-practices.md
+    - name: Создание приложений
+      items:
+        - name: Цикл разработки
+          href: luis-concept-app-iteration.md
+        - name: Совместная работа
+          href: luis-concept-collaborator.md
+        - name: Управление версиями
+          href: luis-concept-version.md
+    - name: Модель разработки
+      items:
+        - name: Намерения
+          href: luis-concept-intent.md
+        - name: Сущности
+          href: luis-concept-entity-types.md
+        - name: Высказывания
+          href: luis-concept-utterance.md
+        - name: Роли
+          href: luis-concept-roles.md
+    - name: Повышение производительности приложения
+      items:
+        - name: Оценка прогнозирования
+          href: luis-concept-prediction-score.md
+        - name: Просмотр фраз конечной точки
+          href: luis-concept-review-endpoint-utterances.md
+        - name: Списки фраз
+          href: luis-concept-feature.md
+        - name: Шаблоны
+          href: luis-concept-patterns.md
+    - name: Управление данными
+      items:
+        - name: Изменение данных
+          href: luis-concept-data-alteration.md
+        - name: Преобразование данных
+          href: luis-concept-data-conversion.md
+        - name: Извлечение данных
+          href: luis-concept-data-extraction.md
+        - name: Хранилище данных
+          href: luis-concept-data-storage.md
+    - name: Тест
+      items:
+        - name: Интерактивное тестирование
+          href: luis-concept-test.md
+        - name: Пакетное тестирование
+          href: luis-concept-batch-test.md
+    - name: Enterprise
+      items:
+        - name: Стратегии разработки
+          href: luis-concept-enterprise.md
+    - name: Безопасность
+      items:
+        - name: Доступ к приложениям
+          href: luis-concept-security.md
+        - name: Ключи конечной точки и создания
+          href: luis-concept-keys.md
+- name: Практические руководства
+  items:
+    - name: Планирование приложения
+      href: luis-how-plan-your-app.md
+    - name: Запуск нового приложения
+      href: luis-how-to-start-new-app.md
+    - name: Создание модели
+      items:
+        - name: Добавление намерений
+          href: luis-how-to-add-intents.md
+        - name: Добавление высказываний
+          href: luis-how-to-add-example-utterances.md
+        - name: Добавление сущностей
+          href: luis-how-to-add-entities.md
+        - name: С API-интерфейсами
+          items:
+            - name: Создание приложения программным способом с помощью Node.js
+              href: luis-tutorial-node-import-utterances-csv.md
+            - name: Использование сущности списка для поиска точного соответствия тексту с помощью Node.js
+              href: luis-tutorial-list-entity.md
+    - name: Интеграция
+      items:
+        - name: С API проверки орфографии Bing версии 7
+          href: luis-tutorial-bing-spellcheck.md
+        - name: С помощью службы распознавания речи
+          href: luis-tutorial-speech-to-intent.md
+        - name: Использование ботов
+          items:
+            - name: Бот веб-приложения
+              items:
+                - name: Node.js
+                  href: luis-nodejs-tutorial-build-bot-framework-sample.md
+                - name: 'C#'
+                  href: luis-csharp-tutorial-build-bot-framework-sample.md
+            - name: Application Insights
+              items:
+                - name: Node.js
+                  href: luis-tutorial-function-appinsights.md
+                - name: 'C#'
+                  href: luis-tutorial-bot-csharp-appinsights.md
+    - name: Повышение точности прогнозирования
+      items:
+        - name: Просмотр фраз конечной точки
+          href: luis-how-to-review-endoint-utt.md
+        - name: Добавление списков фраз
+          href: luis-how-to-add-features.md
+        - name: Добавление шаблонов
+          href: luis-how-to-model-intent-pattern.md
+    - name: Обучение
+      href: luis-how-to-train.md
+    - name: Тест
+      items:
+        - name: Интерактивное тестирование
+          href: interactive-test.md
+        - name: Пакетное тестирование
+          href: luis-how-to-batch-test.md
+    - name: Публикация приложения
+      href: luis-how-to-publish-app.md
+    - name: Использование предварительно созданных моделей
+      items:
+        - name: Использование сущностей
+          href: luis-prebuilt-entities.md
+        - name: Использование доменов
+          href: luis-how-to-use-prebuilt-domains.md
+    - name: Управление приложением
+      items:
+        - name: Использование панелей мониторинга
+          href: luis-how-to-use-dashboard.md
+        - name: Создание ключей конечной точки
+          href: luis-how-to-azure-subscription.md
+        - name: Добавление ключей конечной точки в приложение
+          href: luis-how-to-manage-keys.md
+        - name: Управление версиями
+          href: luis-how-to-manage-versions.md
+        - name: Совместная работа с другими авторами
+          href: luis-how-to-collaborate.md
+        - name: Управление ключом разработки
+          href: luis-how-to-account-settings.md
+        - name: Управление использованием конечной точки
+          items:
+            - name: Просмотр данных об использовании конечной точки с помощью PowerShell
+              href: luis-how-to-manage-from-cloud-shell.md
+            - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
+              href: traffic-manager.md
+    - name: Миграция в API версии 2
+      href: migration-v1-to-v2.md
+    - name: Поиск регионов программным образом
+      items:
+        - name: 'Использование C#'
+          href: find-region-csharp.md
+        - name: Использование Node.js
+          href: find-region-nodejs.md
+- name: Справочные материалы
+  items:
+    - name: Конфиденциальность пользователей
+      href: luis-reference-gdpr.md
+    - name: регионы
+      href: luis-reference-regions.md
+    - name: Границы
+      href: luis-boundaries.md
+    - name: Справочник по предварительно созданным сущностям
+      items:
+        - name: Сущности для конкретных языка и региональных параметров
+          href: luis-reference-prebuilt-entities.md
+        - name: Сущность возраста
+          href: luis-reference-prebuilt-age.md
+        - name: Сущность валюты
+          href: luis-reference-prebuilt-currency.md
+        - name: Сущность DatetimeV2
+          href: luis-reference-prebuilt-datetimev2.md
+        - name: Сущность измерения
+          href: luis-reference-prebuilt-dimension.md
+        - name: Нерекомендуемые сущности
+          href: luis-reference-prebuilt-deprecated.md
+        - name: Сущность адреса электронной почты
+          href: luis-reference-prebuilt-email.md
+        - name: Сущность keyPhrase
+          href: luis-reference-prebuilt-keyphrase.md
+        - name: Сущность числа
+          href: luis-reference-prebuilt-number.md
+        - name: Сущность порядкового номера
+          href: luis-reference-prebuilt-ordinal.md
+        - name: Сущность процентного соотношения
+          href: luis-reference-prebuilt-percentage.md
+        - name: Сущность номера телефона
+          href: luis-reference-prebuilt-phonenumber.md
+        - name: Сущность температуры
+          href: luis-reference-prebuilt-temperature.md
+        - name: Сущность URL-адреса
+          href: luis-reference-prebuilt-url.md
+    - name: Справочник по предварительно созданным доменам
+      href: luis-reference-prebuilt-domains.md
+    - name: Создание API версии 2
+      href: 'https://aka.ms/luis-authoring-apis'
+    - name: API конечной точки версии 2
+      href: 'https://aka.ms/luis-endpoint-apis'
+    - name: Коды HTTP
+      href: luis-reference-response-codes.md
+    - name: "Azure CLI\_2.0"
+      href: 'https://aka.ms/az-cli-cognitiveservices'
+    - name: Azure RM PowerShell
+      href: 'https://aka.ms/azure-powershell-cognitiveservices'
+    - name: Пакеты SDK
+      items:
+        - name: Android
+          href: 'https://github.com/Microsoft/Cognitive-LUIS-Android'
+        - name: Node.js
+          href: 'https://github.com/Microsoft/Cognitive-LUIS-Node.js'
+        - name: Go
+          href: 'https://aka.ms/luis-sdk-go'
+        - name: Java
+          href: 'https://aka.ms/luis-java-sdk'
+        - name: Python
+          href: 'https://github.com/Microsoft/Cognitive-LUIS-Python'
+        - name: Конечная точка .NET
+          href: 'https://aka.ms/luis-endpoint-sdk'
+        - name: Создание .NET
+          href: 'https://aka.ms/luis-authoring-sdk'
+- name: Сопутствующие материалы
+  items:
+    - name: Bot Framework
+      href: 'https://dev.botframework.com/'
+    - name: 'Пакет SDK для построителя ботов 3.x для C#'
+      href: 'https://github.com/Microsoft/BotBuilder'
+    - name: 'Пакет SDK для построителя ботов 4.x для C#'
+      href: 'https://github.com/Microsoft/botbuilder-dotnet'
+    - name: QnA Maker
+      href: 'https://qnamaker.ai/'
+    - name: API распознавания речи Bing
+      href: 'https://azure.microsoft.com/services/cognitive-services/speech/'
+    - name: API проверки орфографии Bing
+      href: 'https://azure.microsoft.com/services/cognitive-services/spell-check/'
+    - name: Текстовая аналитика
+      href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
+    - name: Распознаватели текста
+      href: 'https://github.com/Microsoft/Recognizers-Text'
+- name: Ресурсы
+  items:
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://aka.ms/luis-roadmap'
+    - name: Глоссарий
+      href: luis-glossary.md
+    - name: Часто задаваемые вопросы
+      href: luis-resources-faq.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/LUIS'
+    - name: UserVoice
+      href: 'https://aka.ms/luis-uservoice-forum'
+    - name: поиска
+      href: 'https://docs.microsoft.com/search/index?search=LUIS'
+    - name: Блог
+      href: 'https://blog.botframework.com/category/luis/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127872-luis-language-understanding-intelligent-service'

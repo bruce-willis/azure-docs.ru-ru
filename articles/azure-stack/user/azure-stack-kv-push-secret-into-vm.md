@@ -1,5 +1,5 @@
 ---
-title: Развертывание виртуальной машины с сертификатом, безопасно хранящимся в Azure Stack | Документация Майкрософт
+title: Развертывание виртуальной машины с сертификатом, безопасно хранящимся в Azure Stack | Документы Майкрософт
 description: Узнайте, как развернуть виртуальную машину и отправить в нее сертификат с помощью хранилища ключей в Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -12,13 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/10/2018
+ms.date: 06/28/2018
 ms.author: mabrigg
-ms.openlocfilehash: 3950c9dfc5ff5f7ea1d170da086b4f97048ed81c
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 05278ee4b0dc1f2c22f40bfcff4f9d7342017c0f
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37108762"
 ---
 # <a name="create-a-virtual-machine-and-install-a-certificate-retrieved-from-an-azure-stack-key-vault"></a>Создание виртуальной машины и установка сертификатов, полученных из хранилища ключей Azure Stack
 
@@ -42,10 +43,10 @@ ms.lasthandoff: 05/11/2018
 2. Обновление файла azuredeploy.parameters.json соответствующим образом.
 3. Развертывание шаблона
 
->[!NOTE]
->Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
+> [!NOTE]
+> Эти шаги можно выполнить из Пакета средств разработки Azure Stack или из внешнего клиента при подключении через VPN.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Необходимо подписаться на предложение, включающее службу Key Vault.
 * [Установите PowerShell для Azure Stack](azure-stack-powershell-install.md).
@@ -55,8 +56,8 @@ ms.lasthandoff: 05/11/2018
 
 Следующий скрипт создает сертификат в формате PFX, создает хранилище ключей и сохраняет в нем сертификат в качестве секрета.
 
->[!IMPORTANT]
->Используйте параметр `-EnabledForDeployment` при создании хранилища ключей. Благодаря этому параметру на хранилище ключей можно ссылаться из шаблонов Azure Resource Manager.
+> [!IMPORTANT]
+> Используйте параметр `-EnabledForDeployment` при создании хранилища ключей. Благодаря этому параметру на хранилище ключей можно ссылаться из шаблонов Azure Resource Manager.
 
 ```powershell
 
@@ -192,7 +193,7 @@ New-AzureRmResourceGroupDeployment `
 Set-AzureKeyVaultSecretAttribute -VaultName contosovault -Name servicecert -Version e3391a126b65414f93f6f9806743a1f7 -Enable 0
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание виртуальной машины с помощью пароля из хранилища ключей](azure-stack-kv-deploy-vm-with-secret.md)
 * [Пример приложения, использующего ключи и секретные данные, хранящиеся в хранилище ключей](azure-stack-kv-sample-app.md)

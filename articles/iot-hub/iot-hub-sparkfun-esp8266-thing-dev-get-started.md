@@ -1,25 +1,20 @@
 ---
 title: Подключение Sparkfun ESP8266 Thing Dev к Центру Интернета вещей Azure | Документация Майкрософт
 description: Узнайте, как настроить и подключить плату Sparkfun ESP8266 Thing Dev к Центру Интернета вещей Azure и передавать с нее данные в облако Azure.
-services: iot-hub
-documentationcenter: ''
 author: rangv
-manager: timlt
-tags: ''
-keywords: ''
-ms.assetid: 587fe292-9602-45b4-95ee-f39bba10e716
+manager: ''
 ms.service: iot-hub
-ms.devlang: arduino
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 4/11/2018
+services: iot-hub
+ms.topic: conceptual
+ms.tgt_pltfrm: arduino
+ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: e6837d0312217d8e27e3639b8220f5016a2505a6
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 75ff53d5be29af08bb8e9c1b41f61040e5710cf7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38452521"
 ---
 # <a name="connect-sparkfun-esp8266-thing-dev-to-azure-iot-hub-in-the-cloud"></a>Подключение Sparkfun ESP8266 Thing Dev к Центру Интернета вещей в облаке Azure
 

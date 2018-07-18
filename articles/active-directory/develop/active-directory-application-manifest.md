@@ -16,13 +16,13 @@ ms.workload: identity
 ms.date: 07/20/2017
 ms.author: celested
 ms.custom: aaddev
-ms.reviewer: elisol
-ms.openlocfilehash: 9f73f31c7afd7ca13107653d097e1ac11ef94f0d
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.reviewer: elisol, sureshja
+ms.openlocfilehash: 7448a6c37df2c0bbffbebf23d211e3ace8d12edc
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34157081"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317401"
 ---
 # <a name="azure-active-directory-application-manifest"></a>Манифест приложения Azure Active Directory
 Приложения, которые интегрируются с Azure AD необходимо зарегистрировать в клиенте Azure AD. Это приложение можно настроить с помощью манифеста приложения (в колонке Azure AD) на [портале Azure](https://portal.azure.com).

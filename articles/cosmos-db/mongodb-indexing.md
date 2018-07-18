@@ -2,23 +2,21 @@
 title: Индексирование в API MongoDB Azure Cosmos DB | Документация Майкрософт
 description: Обзор возможностей индексирования в API MongoDB Azure Cosmos DB.
 services: cosmos-db
-documentationcenter: ''
 author: orestis-ms
 manager: kfile
 editor: ''
-ms.assetid: daacbabf-1bb5-497f-92db-079910703047
 ms.service: cosmos-db
-ms.workload: ''
-ms.tgt_pltfrm: na
-ms.devlang: javascript
-ms.topic: quickstart
+ms.component: cosmosdb-mongo
+ms.devlang: nodejs
+ms.topic: conceptual
 ms.date: 03/01/2018
 ms.author: orkostak
-ms.openlocfilehash: 6cb267096e04d4957b166e539a4fc58aa25e04cb
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 3979c2a10707936c54c0d55ebcc85c470cabc3aa
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294536"
 ---
 # <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB: API MongoDB
 
@@ -103,3 +101,4 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 ## <a name="next-steps"></a>Дополнительная информация
 * [Как работает индексирование данных в Azure Cosmos DB?](../cosmos-db/indexing-policies.md)
 * [Автоматическое завершение срока действия данных в коллекциях Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)
+* [Прекращение хранения данных в API MongoDB Azure Cosmos DB](../cosmos-db/mongodb-ttl.md)

@@ -1,24 +1,26 @@
 ---
-title: "Доменные службы Azure Active Directory для поставщиков облачных решений Azure | Документация Майкрософт"
-description: "Доменные службы Azure Active Directory для поставщиков облачных решений Azure."
+title: Доменные службы Azure Active Directory для поставщиков облачных решений Azure | Документация Майкрософт
+description: Доменные службы Azure Active Directory для поставщиков облачных решений Azure.
 services: active-directory-ds
-documentationcenter: 
+documentationcenter: ''
 author: mahesh-unnikrishnan
 manager: mahesh-unnikrishnan
 editor: curtand
 ms.assetid: 56ccb219-11b2-4e43-9f07-5a76e3cd8da8
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: maheshu
-ms.openlocfilehash: 313c4853b0f585921739779bb764c50036c9ac8a
-ms.sourcegitcommit: 094061b19b0a707eace42ae47f39d7a666364d58
+ms.openlocfilehash: 362d7226434733ffeaa5be6f988afa4016a7c827
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36213878"
 ---
 # <a name="azure-active-directory-ad-domain-services-for-azure-cloud-solution-providers-csp"></a>Доменные службы Azure Active Directory (AD) для поставщиков облачных решений Azure (Azure CSP)
 В этой статье описывается, как использовать доменные службы Azure AD в подписке Azure CSP.

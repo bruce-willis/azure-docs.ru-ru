@@ -1,20 +1,21 @@
 ---
-title: Сети Azure Stack. Различия и рекомендации
+title: Сети Azure Stack. Различия и рекомендации | Документация Майкрософт
 description: Дополнительные сведения о различиях и рекомендациях при работе с сетями в Azure Stack.
 services: azure-stack
 keywords: ''
 author: mattbriggs
 manager: femila
 ms.author: mabrigg
-ms.date: 05/14/2018
+ms.date: 05/21/2018
 ms.topic: article
 ms.service: azure-stack
-ms.openlocfilehash: 2a4c5bce072970f158a89763ebdf4132eafe9cbe
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.reviewer: scottnap
+ms.openlocfilehash: faff52ba5b5e2f0d573a67633d3a8411b2d7de74
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34196259"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34606432"
 ---
 # <a name="considerations-for-azure-stack-networking"></a>Рекомендации по работе с сетями Azure Stack
 

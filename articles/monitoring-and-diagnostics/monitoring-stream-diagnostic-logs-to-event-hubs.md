@@ -1,24 +1,19 @@
 ---
-title: Потоковая передача журналов диагностики Azure в концентратор событий | Документация Майкрософт
+title: Потоковая передача журналов диагностики Azure в концентратор событий
 description: Узнайте, как настроить потоковую передачу журналов диагностики Azure в концентратор событий.
 author: johnkemnetz
-manager: orenr
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: 42bc4845-c564-4568-b72d-0614591ebd80
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/04/2018
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
+ms.date: 06/20/2018
 ms.author: johnkem
-ms.openlocfilehash: 1f5a97f5af47a3c5731d5c5d4d5e8cf17097ae60
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.component: ''
+ms.openlocfilehash: c59b9982f5ba5a4fa52ab36df5ebb6995b2d45b0
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37085095"
 ---
 # <a name="stream-azure-diagnostic-logs-to-an-event-hub"></a>Потоковая передача журналов диагностики Azure в концентратор событий
 **[Журналы диагностики Azure](monitoring-overview-of-diagnostic-logs.md)** можно передавать в режиме, близком к реальному времени, в любое приложение. Для этого достаточно использовать стандартный параметр Export to Event Hubs (Экспорт в службу "Концентраторы событий") на портале или включить идентификатор правила авторизации концентратора событий в параметрах диагностики с помощью командлетов Azure PowerShell или Azure CLI 2.0.
@@ -46,7 +41,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="enable-streaming-of-diagnostic-logs"></a>Включение потоковой передачи журналов диагностики
 
-Потоковую передачу журналов диагностики можно включить программно, через портал или с помощью [REST API Azure Monitor](https://docs.microsoft.com/rest/api/monitor/servicediagnosticsettings). В любом случае создается параметр диагностики, в котором необходимо указать пространство имен концентраторов событий, а также категории журнала и метрики, которые требуется отправить в пространство имен. Концентратор событий создается в пространстве имен для каждой включенной категории журнала. Категория **журналов диагностики** — это тип журналов, которые может собирать ресурс.
+Потоковую передачу журналов диагностики можно включить программно, через портал или с помощью [REST API Azure Monitor](https://docs.microsoft.com/en-us/rest/api/monitor/diagnosticsettings). В любом случае создается параметр диагностики, в котором необходимо указать пространство имен концентраторов событий, а также категории журнала и метрики, которые требуется отправить в пространство имен. Концентратор событий создается в пространстве имен для каждой включенной категории журнала. Категория **журналов диагностики** — это тип журналов, которые может собирать ресурс.
 
 > [!WARNING]
 > Для включения и потоковой передачи журналов диагностики из вычислительных ресурсов (например, виртуальных машин или Service Fabric) [используется другая последовательность действий](../event-hubs/event-hubs-streaming-azure-diags-data.md).
@@ -98,7 +93,7 @@ Set-AzureRmDiagnosticSetting -ResourceId [your resource ID] -EventHubAuthorizati
 
 ### <a name="via-azure-cli-20"></a>С помощью Azure CLI 2.0
 
-Чтобы включить потоковую передачу с помощью [Azure CLI 2.0](insights-cli-samples.md), используйте команду [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create).
+Чтобы включить потоковую передачу с помощью [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/monitor?view=azure-cli-latest), используйте команду [az monitor diagnostic-settings create](https://docs.microsoft.com/en-us/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create).
 
 ```azurecli
 az monitor diagnostic-settings create --name <diagnostic name> \

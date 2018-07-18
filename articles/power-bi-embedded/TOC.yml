@@ -4,12 +4,14 @@
   items:
     - name: Что такое Power BI Embedded
       href: what-is-power-bi-embedded.md
-- name: Начало работы
+- name: Учебники
   items:
-    - name: Начало работы с Power BI Embedded
-      href: get-started.md
-    - name: Начало работы с примером
+    - name: Внедрение содержимого для клиентов (пример)
       href: 'https://powerbi.microsoft.com/documentation/powerbi-developer-embed-sample-app-owns-data/'
+- name: Основные понятия
+  items:
+    - name: "Начало работы с Power\_BI Embedded"
+      href: get-started.md
 - name: Практическое руководство
   items:
     - name: Управление емкостями

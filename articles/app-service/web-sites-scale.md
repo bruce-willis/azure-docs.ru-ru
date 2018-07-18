@@ -1,8 +1,8 @@
 ---
-title: "Увеличение масштаба приложения в Azure | Документация Майкрософт"
-description: "Узнайте, как увеличить масштаб приложения в службе приложений Azure для добавления емкости и расширения функций."
+title: Увеличение масштаба приложения в Azure | Документация Майкрософт
+description: Узнайте, как увеличить масштаб приложения в службе приложений Azure для добавления емкости и расширения функций.
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: cephalin
 manager: erikre
 editor: mollybos
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2016
 ms.author: cephalin
-ms.openlocfilehash: f6244e3f739424be169f1ea117500159bd5e4254
-ms.sourcegitcommit: 95500c068100d9c9415e8368bdffb1f1fd53714e
+ms.openlocfilehash: 01c20e7f43c11a077d3870ee32c1d8be98a95696
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38306439"
 ---
 # <a name="scale-up-an-app-in-azure"></a>Увеличение масштаба приложения в Azure
 
@@ -50,7 +51,7 @@ ms.lasthandoff: 02/14/2018
 2. На странице приложения службы приложений щелкните **Все параметры**, а затем — **Увеличить масштаб**.
    
     ![Переход для увеличения масштаба приложения Azure][ChooseWHP]
-3. Выберите нужную категорию, а затем щелкните **Выбрать**.
+3. Выберите нужную категорию, а затем щелкните **Применить**.
    
     После завершения операции на вкладке **Уведомления** появится зеленая надпись **Выполнено**.
 
@@ -97,7 +98,7 @@ ms.lasthandoff: 02/14/2018
   
     [Размеры виртуальных машин и облачных служб для Microsoft Azure][vmsizes]
   
-* Рекомендации по использованию службы приложений Azure, в том числе по созданию масштабируемой и устойчивой архитектуры, см. [здесь](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
+* Рекомендации по использованию службы приложений Azure, в том числе по созданию масштабируемой и устойчивой архитектуры, см. [здесь](https://azure.microsoft.com/blog/best-practices-windows-azure-websites-waws/).
 * Видео о масштабировании приложений службы приложений см. на следующих ресурсах:
   
   * [Стефан Шаков (Stefan Schackow). Когда следует масштабировать веб-сайты Azure](https://azure.microsoft.com/resources/videos/azure-web-sites-free-vs-standard-scaling/)
@@ -107,7 +108,7 @@ ms.lasthandoff: 02/14/2018
 <!-- LINKS -->
 [vmsizes]:/pricing/details/app-service/
 [SQLaccountsbilling]:http://go.microsoft.com/fwlink/?LinkId=234930
-[azuresubscriptions]:http://go.microsoft.com/fwlink/?LinkID=235288
+[azuresubscriptions]:https://account.windowsazure.com/subscriptions
 [portal]: https://portal.azure.com/
 
 <!-- IMAGES -->

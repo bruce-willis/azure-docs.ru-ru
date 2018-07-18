@@ -9,17 +9,17 @@ editor: ''
 ms.service: active-directory
 ms.component: msi
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
-ms.author: skwan
-ms.openlocfilehash: f2904f3d070a818985fa291fb9083b5ec57529dd
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.author: daveba
+ms.openlocfilehash: afd35c963c2c1c4badb32f7e8f7dba1dce87481c
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34301657"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37904294"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-msi-to-access-azure-data-lake-store"></a>Руководство. Получение доступа к Azure Data Lake Store с помощью управляемого удостоверения службы (MSI) виртуальной машины Windows
 
@@ -209,12 +209,9 @@ MSI на виртуальной машине позволяет получить
 
 Поздравляем!  Вы прошли аутентификацию в файловой системе Data Lake Store с помощью удостоверения MSI виртуальной машины.
 
-## <a name="related-content"></a>Связанная информация
+## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в разделе [Управляемое удостоверение службы (MSI) для Azure Active Directory](overview.md).
-- Для операций управления Data Lake Store использует Azure Resource Manager.  Дополнительные сведения об использовании удостоверения MSI виртуальной машины для аутентификации в Resource Manager см. в разделе [Получение доступа к Azure Resource Manager с помощью управляемого удостоверения службы виртуальной машины Linux](https://docs.microsoft.com/azure/active-directory/msi-tutorial-linux-vm-access-arm).
-- Узнайте больше об [аутентификации пользователей в Data Lake Store с помощью Azure Active Directory](https://docs.microsoft.com/azure/data-lake-store/data-lakes-store-authentication-using-azure-active-directory).
-- Узнайте больше об [операциях файловой системы в Azure Data Lake Store с использованием REST API](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-data-operations-rest-api) или [интерфейсах API файловой системы WebHDFS](https://docs.microsoft.com/rest/api/datalakestore/webhdfs-filesystem-apis).
-- Узнайте больше о [контроле доступа в Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-access-control).
+Из этого руководства вы узнали, как получить доступ к Azure Data Lake Store с помощью компонента "Управляемое удостоверение службы" виртуальной машины Windows. Дополнительные сведения об Azure Data Lake Store см. здесь:
 
-Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
+> [!div class="nextstepaction"]
+>[Хранилище озера данных Azure](/azure/data-lake-store/data-lake-store-overview)

@@ -1,30 +1,30 @@
 ---
-title: 'Azure AD B2C: настройка пользовательского интерфейса | Документация Майкрософт'
-description: В этом разделе описаны возможности настройки пользовательского интерфейса в Azure Active Directory B2C
+title: Настройка пользовательского интерфейса в Azure Active Directory B2C | Документация Майкрософт
+description: В этой статье описаны возможности настройки пользовательского интерфейса в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
-ms.openlocfilehash: b202f30e5fb47bcd16f25c5961f8345dd0324139
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.component: B2C
+ms.openlocfilehash: 385c13194063761d6449fafa49714d8627f6c6fc
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37447059"
 ---
 # <a name="azure-active-directory-b2c-customize-the-azure-ad-b2c-user-interface-ui"></a>Azure Active Directory B2C: настройка пользовательского интерфейса Azure AD B2C
 
 Взаимодействие с пользователем имеет первостепенную важность в клиентском приложении.  Создавайте решения с фирменной символикой и расширяйте клиентскую базу. Azure Active Directory B2C (Azure AD B2C) позволяет настраивать страницы регистрации, входа, изменения профиля и сброса пароля с идеальной точностью.
 
 > [!NOTE]
-> Возможность настройки пользовательского интерфейса страницы, описанная в этой статье, не применяется к политике только для входа, связанной странице сброса пароля и проверочным сообщениям электронной почты.  Вместо этого в ней используется [функция настройки фирменной символики компании](../active-directory/customize-branding.md).
+> Возможность настройки пользовательского интерфейса страницы, описанная в этой статье, не применяется к политике только для входа, связанной странице сброса пароля и проверочным сообщениям электронной почты.  Вместо этого в ней используется [функция настройки фирменной символики компании](../active-directory/fundamentals/customize-branding.md).
 >
-> Как и при инициировании политики изменения профиля *перед* входом, пользователь будет перенаправлен на страницу, которую можно настраивать с помощью [функции настройки фирменной символики компании](../active-directory/customize-branding.md).
+> Как и при инициировании политики изменения профиля *перед* входом, пользователь будет перенаправлен на страницу, которую можно настраивать с помощью [функции настройки фирменной символики компании](../active-directory/fundamentals/customize-branding.md).
 
 В этой статье рассматриваются следующие темы:
 

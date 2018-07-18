@@ -1,11 +1,11 @@
 ---
-title: "Применение пользовательского кода в Azure Logic Apps с помощью Функций Azure | Документация Майкрософт"
-description: "Узнайте, как создавать и выполнять пользовательский код для Azure Logic Apps с помощью Функций Azure."
+title: Применение пользовательского кода в Azure Logic Apps с помощью Функций Azure | Документация Майкрософт
+description: Узнайте, как создавать и выполнять пользовательский код для Azure Logic Apps с помощью Функций Azure.
 services: logic-apps,functions
 documentationcenter: .net,nodejs,java
 author: jeffhollan
-manager: anneta
-editor: 
+manager: jeconnoc
+editor: ''
 ms.assetid: 9fab1050-cfbc-4a8b-b1b3-5531bee92856
 ms.service: logic-apps
 ms.devlang: multiple
@@ -15,11 +15,12 @@ ms.workload: integration
 ms.custom: H1Hack27Feb2017
 ms.date: 10/18/2016
 ms.author: LADocs; jehollan
-ms.openlocfilehash: 18442c87b049200fac5ed41cc7034ba7a848b8d3
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: d8d07e2ba58b7067d59baf5f0a4ea3228d6aabbc
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331178"
 ---
 # <a name="add-and-run-custom-code-for-logic-apps-through-azure-functions"></a>Добавление и выполнение пользовательского кода для приложений логики с помощью Функций Azure
 
@@ -61,7 +62,7 @@ function start(req, res){
 
 ### <a name="create-a-function-from-logic-app-designer"></a>Создание функции из конструктора приложений логики
 
-Функцию webhook node.js можно также создать из конструктора. Для начала выберите раздел **Функции Azure в моем регионе** , а затем контейнер для своей функции. Если у вас еще нет контейнера, его необходимо создать на [портале функций Azure](https://functions.azure.com/signin). Щелкните **Создать**.  
+Функцию webhook node.js можно также создать из конструктора. Для начала выберите раздел **Функции Azure в моем регионе** , а затем контейнер для своей функции. Если у вас еще нет контейнера, его необходимо создать на [портале функций Azure](https://functions.azure.com/). Щелкните **Создать**.  
 
 Чтобы создать шаблон на основе данных для вычисления, укажите объект контекста, который будет передан в функцию. Это должен быть объект JSON. Например, если передать содержимое файла из действия FTP, то полезные данные контекста будут выглядеть как в этом примере:
 

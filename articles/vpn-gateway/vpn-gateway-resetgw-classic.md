@@ -1,11 +1,11 @@
 ---
-title: "Сброс VPN-шлюза Azure для повторного установления туннелей IPsec | Документация Майкрософт"
-description: "В этой статье описывается, как выполнить сброс настроек VPN-шлюза Azure для повторного установления туннелей IPsec. Инструкции в этой статье применимы к VPN-шлюзам, созданным как на базе классической модели развертывания, так и на базе модели развертывания с помощью Resource Manager."
+title: Сброс VPN-шлюза Azure для повторного установления туннелей IPsec | Документация Майкрософт
+description: В этой статье описывается, как выполнить сброс настроек VPN-шлюза Azure для повторного установления туннелей IPsec. Инструкции в этой статье применимы к VPN-шлюзам, созданным как на базе классической модели развертывания, так и на базе модели развертывания с помощью Resource Manager.
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
 manager: timlt
-editor: 
+editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: 79d77cb8-d175-4273-93ac-712d7d45b1fe
 ms.service: vpn-gateway
@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: cherylmc
-ms.openlocfilehash: 604af54d034b6b51a96ff098827e2352a163be18
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e61e41c41888d8d2ca65961dd5bea73fd9b6bd21
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37927695"
 ---
 # <a name="reset-a-vpn-gateway"></a>Сброс VPN-шлюза
 
@@ -64,7 +65,7 @@ VPN-шлюз состоит из двух экземпляров виртуал�
 Командлет сброса шлюза — **Reset-AzureRmVirtualNetworkGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для Azure Resource Manager](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.0.0). В следующем примере выполняется сброс шлюза виртуальной сети с именем VNet1GW в группе ресурсов TestRG1:
 
 ```powershell
-$gw = Get-AzureRmVirtualNetworkGateway -Name VNet1GW -ResourceGroup TestRG1
+$gw = Get-AzureRmVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1
 Reset-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw
 ```
 
@@ -74,7 +75,7 @@ Reset-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw
 
 ### <a name="resetclassic"></a>Классическая модель развертывания
 
-Командлет сброса шлюза — **Reset-AzureVNetGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/powershell/azure/install-azure-ps?view=azuresmps-3.7.0). В следующем примере выполняется сброс шлюза для виртуальной сети с именем ContosoVNet:
+Командлет сброса шлюза — **Reset-AzureVNetGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для управления службами](https://docs.microsoft.com/en-us/powershell/azure/servicemanagement/install-azure-ps?view=azuresmps-4.0.0#azure-service-management-cmdlets). В следующем примере выполняется сброс шлюза для виртуальной сети с именем ContosoVNet:
 
 ```powershell
 Reset-AzureVNetGateway –VnetName “ContosoVNet”

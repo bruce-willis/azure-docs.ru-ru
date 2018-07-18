@@ -29,6 +29,8 @@
   items:
     - name: Переход
       items:
+        - name: Подключение нескольких виртуальных машин на портале
+          href: automation-onboard-solutions-from-browse.md
         - name: Подключение из виртуальной машины Azure
           href: automation-onboard-solutions-from-vm.md
         - name: Подключение из учетной записи службы автоматизации
@@ -45,6 +47,8 @@
       items:
         - name: Общие сведения о службе "Отслеживание изменений"
           href: automation-change-tracking.md
+        - name: Просмотр содержимого отслеживаемых файлов
+          href: change-tracking-file-contents.md
     - name: Список
       items:
         - name: Управление виртуальной машиной с помощью сбора данных инвентаризации
@@ -159,14 +163,12 @@
       items:
         - name: Коллекция Runbook
           href: automation-runbook-gallery.md
-        - name: Мониторинг Runbook с помощью журналов действий
-          href: automation-alert-activity-log.md
+        - name: Мониторинг модулей runbook с помощью оповещений метрик
+          href: automation-alert-metric.md
         - name: Запуск модуля runbook с помощью оповещений Azure
           href: automation-create-alert-triggered-runbook.md
         - name: Создание виртуальной машины Amazon Web Service
           href: automation-scenario-aws-deployment.md
-        - name: Исправление неполадок с помощью оповещения о виртуальной машине Azure
-          href: automation-azure-vm-alert-integration.md
         - name: Запуск и остановка виртуальных машин в нерабочее время
           href: automation-solution-vm-management.md
         - name: Удаление группы ресурсов
@@ -195,10 +197,16 @@
           href: automation-migrate-account-subscription.md
     - name: Устранение неполадок
       items:
-        - name: Устранение распространенных ошибок
-          href: automation-troubleshooting-automation-errors.md
-        - name: Устранение неполадок в гибридной рабочей роли Runbook
-          href: automation-troubleshooting-hybrid-runbook-worker.md
+        - name: Переход
+          href: troubleshoot/onboarding.md
+        - name: Модули Runbook
+          href: troubleshoot/runbooks.md
+        - name: Настройка требуемого состояния (DSC)
+          href: troubleshoot/desired-state-configuration.md
+        - name: гибридный компонент Runbook Worker
+          href: troubleshoot/hybrid-runbook-worker.md
+        - name: управление обновлениями;
+          href: troubleshoot/update-management.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell
@@ -215,16 +223,12 @@
   items:
     - name: Вводный видеоролик о службе автоматизации
       href: 'https://azure.microsoft.com/documentation/videos/azure-automation-101-with-powershell-and-eamon-o-reilly/'
-    - name: Обучение по службе автоматизации Azure
-      href: 'https://mva.microsoft.com/en-US/training-courses/automating-the-cloud-with-azure-automation-8323?l=C6mIpCay_4804984382'
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
-    - name: Схема обучения
-      href: 'https://azure.microsoft.com/documentation/learning-paths/automation/'
+      href: 'https://azure.microsoft.com/roadmap/?category=management-tools&query=automation'
     - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation)'
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureautomation'
     - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/automation/)'
+      href: 'https://azure.microsoft.com/pricing/details/automation/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Заметки о выпуске

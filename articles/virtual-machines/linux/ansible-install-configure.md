@@ -3,7 +3,7 @@ title: Установка и настройка Ansible для использо�
 description: Узнайте, как установить и настроить Ansible для управления ресурсами Azure в Ubuntu, CentOS и SLES.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: na
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/04/2018
-ms.author: iainfou
-ms.openlocfilehash: e6fad548eda35d1832cb4ecc2fd9bdabf825f361
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.author: cynthn
+ms.openlocfilehash: e7d57ead2caff87db07380582b9085b831844f1e
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33896135"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37930075"
 ---
 # <a name="install-and-configure-ansible-to-manage-virtual-machines-in-azure"></a>Установка и настройка Ansible для управления виртуальными машинами в Azure
 
@@ -106,7 +106,7 @@ ssh azureuser@<publicIpAddress>
 sudo apt-get update && sudo apt-get install -y libssl-dev libffi-dev python-dev python-pip
 
 ## Install Ansible and Azure SDKs via pip
-pip install ansible[azure]
+sudo pip install ansible[azure]
 ```
 
 Теперь перейдите к разделу [Создание учетных данных Azure](#create-azure-credentials).
@@ -150,7 +150,7 @@ sudo pip uninstall -y cryptography
 
 Ansible взаимодействует с Azure, используя имя пользователя и пароль или субъект-службу. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и средствами автоматизации, такими как Ansible. Вы можете управлять разрешениями на то, какие операции может выполнять субъект-служба в Azure, и определять их. Для обеспечения более высокого уровня безопасности, чем при предоставлении имени пользователя и пароля, в этом примере создается простейший субъект-служба.
 
-Создайте на главном компьютере или в Azure Cloud Shell субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#create-for-rbac). Учетные данные, необходимые для Ansible выводятся на экран:
+Создайте на главном компьютере или в Azure Cloud Shell субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az-ad-sp-create-for-rbac). Учетные данные, необходимые для Ansible выводятся на экран:
 
 ```azurecli-interactive
 az ad sp create-for-rbac --query '{"client_id": appId, "secret": password, "tenant": tenant}'
@@ -166,7 +166,7 @@ az ad sp create-for-rbac --query '{"client_id": appId, "secret": password, "tena
 }
 ```
 
-Чтобы проверить подлинность в Azure, также необходимо получить идентификатор подписки Azure с помощью команды [az account show](/cli/azure/account#az_account_show):
+Чтобы проверить подлинность в Azure, также необходимо получить идентификатор подписки Azure с помощью команды [az account show](/cli/azure/account#az-account-show):
 
 ```azurecli-interactive
 az account show --query "{ subscription_id: id }"

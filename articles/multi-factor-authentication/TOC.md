@@ -56,7 +56,7 @@
 ## [Отчеты](../active-directory/authentication/howto-mfa-reporting.md)
 ### [Сбор данных](../active-directory/authentication/howto-mfa-reporting-datacollection.md)
 
-## [Руководство пользователя MFA](./end-user/multi-factor-authentication-end-user.md)
+## [Руководство пользователя MFA](../active-directory/user-help/multi-factor-authentication-end-user.md)
 
 ## Устранение неполадок
 ### [Часто задаваемые вопросы](../active-directory/authentication/multi-factor-authentication-faq.md)

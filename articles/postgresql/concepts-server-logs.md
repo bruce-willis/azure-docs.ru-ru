@@ -1,6 +1,6 @@
 ---
-title: "Журналы сервера в базе данных Azure для PostgreSQL"
-description: "В этой статье объясняется, как служба \"База данных Azure для PostgreSQL\" создает журналы запросов и ошибок и как настраивается срок хранения журналов."
+title: Журналы сервера в базе данных Azure для PostgreSQL
+description: В этой статье объясняется, как служба "База данных Azure для PostgreSQL" создает журналы запросов и ошибок и как настраивается срок хранения журналов.
 services: postgresql
 author: rachel-msft
 ms.author: raagyema
@@ -9,11 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
 ms.date: 02/28/2018
-ms.openlocfilehash: a8d560aa8906e3ba1f65758239b645cd1b1df032
-ms.sourcegitcommit: c765cbd9c379ed00f1e2394374efa8e1915321b9
+ms.openlocfilehash: bcca8ce8d11482dd8517992297b7e8a5b94ac8b1
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37435496"
 ---
 # <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Однако доступ к журналам транзакций не поддерживается. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. Дополнительные сведения см. на странице [Error Reporting and Logging](https://www.postgresql.org/docs/9.6/static/runtime-config-logging.html) (Отчеты об ошибках и ведение журнала).
@@ -28,7 +29,7 @@ ms.lasthandoff: 02/28/2018
 ## <a name="configure-logging-for-azure-postgresql-server"></a>Настройка ведения журнала для сервера Azure PostgreSQL
 Вы можете включить для своего сервера ведение журнала запросов и журнала ошибок. Журналы ошибок могут содержать сведения об автоматической очистке, подключениях и контрольных точках.
 
-Чтобы включить ведение журнала запросов для экземпляра базы данных PostgreSQL, необходимо настроить два параметра сервера: `log\_statement` и `log\_min\_duration\_statement`.
+Чтобы включить ведение журнала запросов для экземпляра базы данных PostgreSQL, необходимо настроить два параметра сервера: `log_statement` и `log_min_duration_statement`.
 
 Параметр **log\_statement** определяет, какие инструкции SQL регистрируются. Рекомендуется задать этому параметру значение ***all*** (Все), чтобы регистрировались все инструкции. По умолчанию задано значение "none" (Нет).
 

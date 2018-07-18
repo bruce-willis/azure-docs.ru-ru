@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/09/2018
+ms.date: 06/28/2018
 ms.author: juliako
-ms.openlocfilehash: 0fdc8c6dc9fae96a79e2ab2b05b7db3012834c1e
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 314ffce8a9f8dde62cac670099afbc2223df37e4
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34362300"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38972004"
 ---
 # <a name="tutorial-analyze-videos-with-azure-media-services"></a>Руководство. Анализ видео с помощью Служб мультимедиа Azure 
 
@@ -26,14 +26,16 @@ ms.locfileid: "34362300"
 В этом учебнике описаны следующие процедуры.    
 
 > [!div class="checklist"]
-> * Запуск Azure Cloud Shell
 > * Создание учетной записи служб мультимедиа
 > * Доступ к API Служб мультимедиа.
 > * Настройка примера приложения
-> * Тщательный анализ примера кода
+> * Проверка кода, анализирующего указанное видео
 > * Запуск приложения
 > * Изучение выходных данных
 > * Очистка ресурсов
+
+> [!Note]
+> Чтобы настроить 10 зарезервированных единиц мультимедиа S3 для учетной записи служб мультимедиа, используйте портал Azure, как описано в разделе [Масштабирование обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md).
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -49,23 +51,48 @@ ms.locfileid: "34362300"
  git clone https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials.git
  ```
 
+Этот образец находится в папке [AnalyzeVideos](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/tree/master/AMSV3Tutorials/AnalyzeVideos).
+
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 [!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
 
 [!INCLUDE [media-services-v3-cli-access-api-include](../../../includes/media-services-v3-cli-access-api-include.md)]
 
-## <a name="examine-the-sample-code-in-detail"></a>Тщательный анализ примера кода
+## <a name="examine-the-code-that-analyzes-the-specified-video"></a>Проверка кода, анализирующего указанное видео
 
 В этом разделе рассматриваются функции, определенные в файле [Program.cs](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/AnalyzeVideos/Program.cs) проекта *AnalyzeVideos*.
 
+Этот пример выполняет следующие действия:
+
+1. Создает преобразование и задание, которое анализирует видео.
+2. Создает входной ресурс и отправляет в него видео. Ресурс используется в качестве входных данных задания.
+3. Создает выходной ресурс, который сохраняет выходные данные задания. 
+4. Подтверждает задание.
+5. Проверяет состояние задания.
+6. Загружает файлы, полученные в результате выполнения задания. 
+
 ### <a name="start-using-media-services-apis-with-net-sdk"></a>Начало использования API Служб мультимедиа с пакетом SDK для .NET
 
-Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. Сначала необходимо получить маркер, а затем создать объект **ClientCredential** из возвращенного токена. В коде, который был клонирован в начале статьи, объект **ArmClientCredential** используется для получения токена.  
+Чтобы начать использование API Служб мультимедиа с .NET, создайте объект **AzureMediaServicesClient**. Чтобы создать объект, введите учетные данные, необходимые клиенту для подключения к Azure с помощью Azure AD. В коде, который вы клонировали в начале статьи, функция **GetCredentialsAsync** создает объект ServiceClientCredentials с использованием учетных данных, предоставленных в локальном файле конфигурации. 
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CreateMediaServicesClient)]
 
-### <a name="create-an-output-asset-to-store-the-result-of-a-job"></a>Создание выходного ресурса для хранения результатов задания 
+### <a name="create-an-input-asset-and-upload-a-local-file-into-it"></a>Создание входного ресурса и отправка в него локального файла 
+
+Функция **CreateInputAsset** создает входной [ресурс](https://docs.microsoft.com/rest/api/media/assets) и отправляет в него определенный локальный видеофайл. Этот ресурс используется в качестве входных данных для задания кодирования. В Службах мультимедиа версии 3 входные данные для задания могут быть либо ресурсом, либо содержимым, доступным в учетной записи Служб мультимедиа через URL-адрес HTTPS. Дополнительные сведения о кодировании из URL-адреса HTTPS см. в [этой статье](job-input-from-http-how-to.md).  
+
+В Службах мультимедиа версии 3 для отправки файлов используются API службы хранилища. В следующих фрагментах кода .NET показано, как это сделать.
+
+Следующая функция выполняет такие действия:
+
+* создает каталог ресурсов; 
+* получает доступный для записи [URL-адрес SAS](https://docs.microsoft.com/azure/storage/common/storage-dotnet-shared-access-signature-part-1) для [контейнера ресурса в хранилище](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-dotnet?tabs=windows#upload-blobs-to-the-container);
+* отправляет файл в контейнер в хранилище через URL-адрес SAS.
+
+[!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CreateInputAsset)]
+
+### <a name="create-an-output-asset-to-store-the-result-of-the-job"></a>Создание выходного ресурса для хранения результатов задания 
 
 Выходной [ресурс](https://docs.microsoft.com/rest/api/media/assets) сохраняет результаты задания. Проект определяет функцию **DownloadResults**, которая скачивает результаты из выходного ресурса в папку output, чтобы вы могли просмотреть их.
 
@@ -85,7 +112,7 @@ ms.locfileid: "34362300"
 
 #### <a name="job"></a>Задание
 
-Как было указано выше, объект [преобразования](https://docs.microsoft.com/rest/api/media/transforms) является набором инструкций, а [задание](https://docs.microsoft.com/en-us/rest/api/media/jobs) — фактическим запросом к Службам мультимедиа для применения этого **преобразования** к данному видео и аудио. **Задание** указывает такую информацию, как расположение входного и выходного видео. Вы можете указать расположение видео с помощью URL-адресов HTTP, URL-адресов SAS или ресурсов в учетной записи Службы мультимедиа. 
+Как было указано выше, объект [преобразования](https://docs.microsoft.com/rest/api/media/transforms) является набором инструкций, а [задание](https://docs.microsoft.com/rest/api/media/jobs) — фактическим запросом к Службам мультимедиа для применения этого **преобразования** к данному видео и аудио. **Задание** указывает такую информацию, как расположение входного и выходного видео. Вы можете указать расположение видео с помощью URL-адресов HTTP, URL-адресов SAS или ресурсов в учетной записи Службы мультимедиа. 
 
 В этом примере задания входными данными задания является локальный видеофайл.  
 
@@ -93,7 +120,7 @@ ms.locfileid: "34362300"
 
 ### <a name="wait-for-the-job-to-complete"></a>Ожидание завершения задания
 
-Выполнение задания занимает некоторое время. По его завершению вы будете уведомлены. Получить уведомление о завершении [задания](https://docs.microsoft.com/en-us/rest/api/media/jobs) можно несколькими способами. Самый простой (который показан тут) — использовать опрос. 
+Выполнение задания занимает некоторое время. По его завершению вы будете уведомлены. Получить уведомление о завершении [задания](https://docs.microsoft.com/rest/api/media/jobs) можно несколькими способами. Самый простой (который показан тут) — использовать опрос. 
 
 Опрос не рекомендуется для приложений рабочей среды из-за потенциальной задержки. Его можно регулировать при чрезмерном использовании в учетной записи. Вместо этого разработчики должны использовать службу "Сетка событий".
 
@@ -111,7 +138,7 @@ ms.locfileid: "34362300"
 
 ### <a name="clean-up-resource-in-your-media-services-account"></a>Очистка ресурсов в учетной записи служб мультимедиа
 
-Как правило, необходимо очистить все, кроме объектов, которые вы планируете использовать повторно. Обычно повторно используются преобразования и будут сохранены StreamingLocators и т. д. Если учетную запись требуется очистить после эксперимента, следует удалить ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задания.
+Как правило, необходимо очистить все, кроме объектов, которые планируется использовать повторно. Обычно повторно используются преобразования и сохраненные потоковые локаторы. Если учетную запись требуется очистить после эксперимента, следует удалить ресурсы, которые не планируется использовать повторно. Например, следующий код удаляет задания.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/AnalyzeVideos/Program.cs#CleanUp)]
 

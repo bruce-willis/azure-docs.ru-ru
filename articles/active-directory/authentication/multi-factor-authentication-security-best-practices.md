@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: 76e622f500ee954852d7b42268318d35bb2133a4
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 1e143c8c17d5cbc3403d90f7a354d5300265d679
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33868804"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37100391"
 ---
 # <a name="security-guidance-for-using-azure-multi-factor-authentication-with-azure-ad-accounts"></a>Руководство по безопасности для использования Многофакторной идентификации Azure с учетными записями Azure AD
 
@@ -106,5 +106,5 @@ ms.locfileid: "33868804"
 Хотя в данной статье приводятся некоторые рекомендации по работе с Azure MFA, существуют другие ресурсы, которые также можно использовать при планировании развертывания MFA. Ниже приведен список ключевых статей, которые могут помочь вам в этом процессе.
 
 * [Отчеты в службе Многофакторной идентификации Azure](howto-mfa-reporting.md)
-* [Настройка учетной записи для двухфакторной проверки подлинности](../../multi-factor-authentication/end-user/multi-factor-authentication-end-user-first-time.md)
+* [Настройка учетной записи для двухфакторной проверки подлинности](end-user/current/multi-factor-authentication-end-user-first-time.md)
 * [Часто задаваемые вопросы о службе Многофакторной идентификации Azure](multi-factor-authentication-faq.md)

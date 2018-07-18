@@ -1,6 +1,6 @@
 ---
-title: Масштабирование кластера Azure Service Fabric | Документация Майкрософт
-description: В этом руководстве вы узнаете, как быстро масштабировать кластер Service Fabric.
+title: Масштабирование кластера Service Fabric в Azure | Документы Майкрософт
+description: В этом руководстве вы узнаете, как быстро масштабировать кластер Service Fabric в Azure.
 services: service-fabric
 documentationcenter: .net
 author: Thraka
@@ -15,13 +15,14 @@ ms.workload: NA
 ms.date: 02/06/2018
 ms.author: adegeo
 ms.custom: mvc
-ms.openlocfilehash: e80fad4d0bddff89ff4dda7feed90fc622369ee9
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 83f7a03744e7e8819d71eae81ed8e497797bef62
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109415"
 ---
-# <a name="tutorial-scale-a-service-fabric-cluster"></a>Руководство. Масштабирование кластера Service Fabric
+# <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Руководство. Масштабирование кластера Service Fabric в Azure
 
 Это руководство представляет собой вторую часть серии. В нем показано, как масштабировать существующий кластер. Завершив работу с этим руководством, вы будете знать, как масштабировать кластер и очистить все остающиеся ресурсы.
 
@@ -37,17 +38,20 @@ ms.lasthandoff: 04/19/2018
 > * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
 > * увеличение или уменьшение масштаба кластера;
 > * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
-> * [развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md).
+> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Перед началом работы с этим руководством выполните следующие действия:
-- Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) либо [Azure CLI 2.0](/cli/azure/install-azure-cli).
-- Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure.
-- Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2017](http://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
-- Если вы развертываете кластер Linux, настройте среду разработки Java в [Linux](service-fabric-get-started-linux.md) или [MacOS](service-fabric-get-started-mac.md).  Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md). 
+
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Установите [модуль Azure PowerShell версии 4.1 или более поздней версии](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) либо [Azure CLI 2.0](/cli/azure/install-azure-cli).
+* Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластер Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure.
+* Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2017](http://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
+* Если вы развертываете кластер Linux, настройте среду разработки Java в [Linux](service-fabric-get-started-linux.md) или [MacOS](service-fabric-get-started-mac.md).  Установите [интерфейс командной строки Service Fabric](service-fabric-cli.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
+
 Войдите в учетную запись Azure и выберите подписку, прежде чем выполнять команды Azure.
 
 ```powershell
@@ -85,7 +89,7 @@ sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.az
 --pem ./aztestcluster201709151446.pem --no-verify
 ```
 
-Теперь, когда вы подключены, можно использовать команду для получения информации о состоянии каждого узла в кластере. Для PowerShell используйте команду `Get-ServiceFabricClusterHealth`, а для **sfctl** — `sfctl cluster select`.
+Теперь, когда вы подключены, можно использовать команду для получения информации о состоянии каждого узла в кластере. Для **PowerShell** используйте команду `Get-ServiceFabricClusterHealth`, а для **sfctl** — `sfctl cluster select`.
 
 ## <a name="scale-out"></a>Масштабирование
 
@@ -117,7 +121,7 @@ az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 6
 > [!NOTE]
 > Эта часть относится только к уровню устойчивости *Bronze*. Дополнительные сведения об устойчивости см. в разделе [Характеристики устойчивости кластера][durability].
 
-При свертывании в масштабируемом наборе виртуальных машин он (в большинстве случаев) удаляет экземпляр виртуальной машины, который был создан последним. Поэтому необходимо найти соответствующий узел Service Fabric, созданный последним. Этот узел можно найти путем проверки наибольшего значения свойства `NodeInstanceId` на узлах Service Fabric. Следующие примеры кода сортируют по экземпляру узла и возвращают сведения об экземпляре с наибольшим значением идентификатора. 
+При свертывании в масштабируемом наборе виртуальных машин он (в большинстве случаев) удаляет экземпляр виртуальной машины, который был создан последним. Поэтому необходимо найти соответствующий узел Service Fabric, созданный последним. Этот узел можно найти путем проверки наибольшего значения свойства `NodeInstanceId` на узлах Service Fabric. Следующие примеры кода сортируют по экземпляру узла и возвращают сведения об экземпляре с наибольшим значением идентификатора.
 
 ```powershell
 Get-ServiceFabricNode | Sort-Object { $_.NodeName.Substring($_.NodeName.LastIndexOf('_') + 1) } -Descending | Select-Object -First 1
@@ -131,15 +135,15 @@ sfctl node list --query "sort_by(items[*], &name)[-1]"
 
 1. Отключить узел, чтобы он больше не использовался для репликации данных.  
 PowerShell: `Disable-ServiceFabricNode`  
-sfcli: `sfctl node disable`
+sfctl: `sfctl node disable`
 
 2. Остановить узел, после чего работа среды выполнения Service Fabric будет полностью завершена и ваше приложение получит запрос на завершение.  
 PowerShell: `Start-ServiceFabricNodeTransition -Stop`  
-sfcli: `sfctl node transition --node-transition-type Stop`
+sfctl: `sfctl node transition --node-transition-type Stop`
 
 2. Удалить узел из кластера.  
 PowerShell: `Remove-ServiceFabricNodeState`  
-sfcli: `sfctl node remove-state`
+sfctl: `sfctl node remove-state`
 
 После применения этих шагов узел можно удалить из масштабируемого набора. Если вы используете любой уровень устойчивости, кроме [Bronze][durability], эти шаги будут выполнены, когда экземпляр масштабируемого набора будет удален.
 
@@ -179,7 +183,7 @@ else
     # Stop node
     $stopid = New-Guid
     Start-ServiceFabricNodeTransition -Stop -OperationId $stopid -NodeName $nodename -NodeInstanceId $nodeid -StopDurationInSeconds 300
-    
+
     $state = (Get-ServiceFabricNodeTransitionProgress -OperationId $stopid).State
     $loopTimeout = 10
 
@@ -190,7 +194,7 @@ else
         $state = (Get-ServiceFabricNodeTransitionProgress -OperationId $stopid).State
         Write-Host "Checking state... $state found"
     }
-    
+
     if ($state -ne [System.Fabric.TestCommandProgressState]::Completed)
     {
         Write-Error "Stop transaction failed with $state"
@@ -219,13 +223,12 @@ sfctl node remove-state --node-name _nt1vm_5
 > [!TIP]
 > Используйте следующие запросы **sfctl**, чтобы проверить состояние каждого шага.
 >
-> **Проверка состояния деактивации**  
+> **Проверка состояния деактивации**
 > `sfctl node list --query "sort_by(items[*], &name)[-1].nodeDeactivationInfo"`
 >
-> **Проверка состояния остановки**  
+> **Проверка состояния остановки**
 > `sfctl node list --query "sort_by(items[*], &name)[-1].isStopped"`
 >
-
 
 ### <a name="scale-in-the-scale-set"></a>Свертывание масштабируемого набора
 
@@ -248,19 +251,17 @@ az vmss list-instances -n nt1vm -g sfclustertutorialgroup --query [*].name
 az vmss scale -g sfclustertutorialgroup -n nt1vm --new-capacity 5
 ```
 
-
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * получать количество узлов кластера;
-> * добавлять узлы кластера (развертывание);
-> * удалять узлы кластера (свертывание).
-
+> * получение количества узлов кластера;
+> * добавление узлов кластера (развертывание);
+> * удаление узлов кластера (свертывание).
 
 Теперь перейдите к следующему руководству, чтобы узнать, как обновить среду выполнения кластера.
 > [!div class="nextstepaction"]
-> [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
+> [Обновление среды выполнения кластера](service-fabric-tutorial-upgrade-cluster.md)
 
 [durability]: service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster

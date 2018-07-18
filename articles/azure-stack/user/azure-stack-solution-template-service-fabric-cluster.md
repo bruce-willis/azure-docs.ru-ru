@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 05/08/2018
 ms.author: mattbriggs
 ms.reviewer: shnatara
-ms.openlocfilehash: a88d8dd2af94ac796a3b2e3c667fd40a308f02a1
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: acf850bdc56e55d13b13a40ef343f2f20c4a77ca
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33877162"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969118"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
@@ -192,7 +192,7 @@ ms.locfileid: "33877162"
 
 ## <a name="use-service-fabric-powershell"></a>Использование Service Fabric PowerShell
 
-1. Установите *пакет SDK для Microsoft Azure Service Fabric*  из раздела [Установка пакета SDK и инструментов](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started#install-the-sdk-and-tools) документации Azure Service Fabric.  
+1. Установите *пакет SDK для Microsoft Azure Service Fabric*  из раздела [Установка пакета SDK и инструментов](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started#install-the-sdk-and-tools) документации Azure Service Fabric.  
 
 2. После завершения установки настройте системные переменные среды, чтобы убедиться, что командлеты Service Fabric доступны в PowerShell.  
     

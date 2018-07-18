@@ -6,21 +6,17 @@ services: cosmos-db
 author: SnehaGunda
 manager: kfile
 tags: azure-resource-manager
-documentationcenter: ''
-ms.assetid: c1b9ede0-ed93-411a-ac9a-62c113a8e887
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/30/2018
 ms.author: sngun
-ms.openlocfilehash: 21274a71042c5acf38711d29a5062e9f68b6a6a0
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c55f90b944038a0e4ca216a357fc30f4cf6a6ddc
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34196803"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36317292"
 ---
 # <a name="azure-cosmos-db-firewall-support"></a>Поддержка брандмауэра для Azure Cosmos DB
 Для защиты данных, хранящихся в учетных записях базы данных Azure Cosmos DB, в Cosmos DB реализована поддержка [модели авторизации](https://msdn.microsoft.com/library/azure/dn783368.aspx) на основе секретов. Проверка целостности данных в этой модели осуществляется с помощью надежного кода проверки подлинности сообщений, использующего хэш-функции (HMAC). Теперь, помимо модели авторизации на основе секрета, для поддержки входящего трафика брандмауэра база данных Azure Cosmos DB использует политики контроля доступа на основе IP-адресов. Эта модель похожа на использование правил брандмауэра в традиционной системе базы данных. Она предоставляет дополнительный уровень защиты для учетных записей базы данных Azure Cosmos DB. Кроме того, эта модель позволяет настроить доступ к учетной записи базы данных Azure Cosmos DB только из утвержденных компьютеров и (или) облачных служб. Для доступа к ресурсам Azure Cosmos DB из этих утвержденных компьютеров и служб пользователь (вызывающая сторона) по-прежнему должен предоставить допустимый маркер проверки подлинности.
@@ -36,7 +32,7 @@ ms.locfileid: "34196803"
 ## <a id="configure-ip-policy"></a> Настройка политики контроля доступа на основе IP-адресов
 Политику управления доступом на основе IP-адресов можно задать на портале Azure или программно с помощью [Azure CLI](cli-samples.md), [Azure PowerShell](powershell-samples.md) или [REST API](/rest/api/cosmos-db/), обновив свойство **ipRangeFilter**. 
 
-Чтобы настроить политику управления доступом на основе IP-адресов на портале Azure, перейдите на страницу учетной записи Azure Cosmos DB, в меню навигации щелкните **Брандмауэр**, а затем измените значение параметра **Разрешить доступ из** на **Выбранные сети** и нажмите кнопку **Сохранить**. 
+Чтобы настроить политику управления доступом на основе IP-адресов на портале Azure, откройте страницу учетной записи Azure Cosmos DB, в меню навигации щелкните **Firewall and virtual networks** (Брандмауэр и виртуальные сети), а затем измените значение параметра **Allow access from** (Разрешить доступ из) на **Выбранные сети** и нажмите кнопку **Сохранить**. 
 
 ![Снимок экрана, показывающий, как открыть страницу "Брандмауэр" на портале Azure](./media/firewall-support/azure-portal-firewall.png)
 
@@ -60,10 +56,10 @@ ms.locfileid: "34196803"
 
 ![Снимок экрана, показывающий, как разрешить доступ к порталу Azure](./media/firewall-support/enable-azure-portal.png)
 
-## <a name="connections-from-other-azure-paas-services"></a>Подключения из других служб PaaS в Azure 
+## <a name="connections-from-global-azure-datacenters-or-azure-paas-services"></a>Исходящие подключения глобальных центров обработки данных Azure или служб Azure PaaS
 В Azure такие службы PaaS, как Azure Stream Analytics, Функции Azure и Служба приложений Azure, используются в сочетании с Azure Cosmos DB. Вы можете разрешить доступ к учетной записи базы данных Azure Cosmos DB из служб, IP-адреса которых не являются общедоступными. Для этого добавьте IP-адрес 0.0.0.0 в список разрешенных IP-адресов, связанных программно с учетной записью базы данных Azure Cosmos DB. 
 
-При изменении параметра "Брандмауэр" на **Выбранные сети** на портале Azure доступ к другим службам Azure включается по умолчанию. 
+При изменении значения брандмауэра на **Выбранные сети** на портале Azure доступ к исходящим подключениям глобальных центров обработки данных Azure включается по умолчанию. 
 
 ![Снимок экрана, показывающий, как открыть страницу "Брандмауэр" на портале Azure](./media/firewall-support/enable-azure-services.png)
 
@@ -92,11 +88,28 @@ ms.locfileid: "34196803"
 ## <a name="connections-from-the-internet"></a>Подключения через Интернет
 При подключении к учетной записи базы данных Azure Cosmos DB с компьютера через Интернет IP-адрес или диапазон IP-адресов клиента необходимо добавить в список разрешенных IP-адресов для этой учетной записи. 
 
+## <a name="using-azure-resource-manager-template-to-set-up-the-ip-access-control"></a>Использование шаблона Azure Resource Manager для настройки управления доступом к IP-адресам
+
+Добавьте следующий JSON в шаблон, чтобы настроить управление доступом к IP-адресам. Шаблон Resource Manager для учетной записи будет иметь атрибут ipRangeFilter, представляющий собой список диапазонов IP-адресов, которые следует включить в список разрешений.
+
+```json
+   {
+     "apiVersion": "2015-04-08",
+     "type": "Microsoft.DocumentDB/databaseAccounts",
+     "kind": "GlobalDocumentDB",
+     "name": "[parameters('databaseAccountName')]",
+     "location": "[resourceGroup().location]",
+     "properties": {
+     "databaseAccountOfferType": "Standard",
+     "name": "[parameters('databaseAccountName')]",
+     "ipRangeFilter":"10.0.0.1,10.0.0.2,183.240.196.255"
+   }
+   }
+```
+
 ## <a name="troubleshooting-the-ip-access-control-policy"></a>Устранение неполадок с политикой контроля доступа на основе IP-адресов
 ### <a name="portal-operations"></a>Операции на портале
 После включения политики контроля доступа на основе IP-адресов для учетной записи базы данных Azure Cosmos DB все подключения к этой учетной записи с компьютеров, диапазоны IP-адресов которых не входят в список разрешенных, блокируются. Поэтому, чтобы разрешить на портале выполнение операций плоскости данных, таких как просмотр коллекций и запрос документов, необходимо явным образом разрешить доступ к порталу Azure на странице **Брандмауэр**. 
-
-![Снимок экрана, показывающий, как разрешить доступ к порталу Azure](./media/firewall-support/azure-portal-firewall.png)
 
 ### <a name="sdk--rest-api"></a>Пакет SDK и REST API
 По соображениям безопасности при доступе с помощью пакета SDK и REST API с компьютеров, IP-адреса которых не входят в список разрешенных, вернется ответ с кодом 404 (объект не найден) без каких-либо дополнительных сведений. Проверьте список разрешенных IP-адресов и убедитесь, что у политики допустимая конфигурация для учетной записи базы данных Azure Cosmos DB.

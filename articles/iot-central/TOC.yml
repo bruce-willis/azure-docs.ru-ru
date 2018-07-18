@@ -17,20 +17,16 @@
       href: quick-deploy-iot-central.md
 - name: Учебники
   items:
-    - name: Конструктор
-      items:
-        - name: 1. Определение нового типа устройства.
-          href: tutorial-define-device-type.md
-        - name: 2. Настройка правил.
-          href: tutorial-configure-rules.md
-        - name: 3. Настройка представления оператора.
-          href: tutorial-customize-operator.md
-    - name: Оператор
-      items:
-        - name: 4. Мониторинг устройств.
-          href: tutorial-monitor-devices.md
-        - name: 5. Добавление устройства.
-          href: tutorial-add-device.md
+    - name: 1. Определение нового типа устройства.
+      href: tutorial-define-device-type.md
+    - name: 2. Настройка правил.
+      href: tutorial-configure-rules.md
+    - name: 3. Настройка представления оператора.
+      href: tutorial-customize-operator.md
+    - name: 4. Мониторинг устройств.
+      href: tutorial-monitor-devices.md
+    - name: 5. Добавление устройства.
+      href: tutorial-add-device.md
 - name: Основные понятия
   items:
     - name: Архитектура
@@ -41,10 +37,12 @@
   items:
     - name: Администратор
       items:
-        - name: Создание приложения
-          href: howto-create-application.md
+        - name: Создание и администрирование приложения на правах поставщика облачных решений
+          href: howto-create-and-manage-applications-as-CSP.md
         - name: Администрирование приложения
           href: howto-administer.md
+        - name: Экспорт данных
+          href: howto-export-data.md
     - name: Конструктор
       items:
         - name: Настройка шаблона устройства
@@ -55,6 +53,10 @@
           href: howto-create-telemetry-rules.md
         - name: Создание правила события
           href: howto-create-event-rules.md
+        - name: Создание рабочих процессов в Microsoft Flow
+          href: howto-add-microsoft-flow.md
+        - name: Настройка домашней страницы
+          href: howto-configure-homepage.md
         - name: Подготовка и передача изображений
           href: howto-prepare-images.md
     - name: Оператор

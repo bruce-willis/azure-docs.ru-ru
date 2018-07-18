@@ -1,24 +1,20 @@
 ---
-title: Журнал и версии схемы конфигурации расширения системы диагностики Azure | Документация Майкрософт
+title: Журнал версий схемы конфигурации расширения для Системы диагностики Azure
 description: Используется для сбора данных со счетчиков производительности в виртуальных машинах Azure, масштабируемых наборах виртуальных машин, Service Fabric и облачных службах.
-services: monitoring-and-diagnostics
-documentationcenter: .net
+services: azure-monitor
 author: rboucher
-manager: carmonm
-editor: ''
-ms.assetid: ''
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: reference
 ms.date: 05/16/2017
 ms.author: robb
-ms.openlocfilehash: 45a092452bc702a6a593cd6c21a8d2eaf4ff44bd
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.component: diagnostic-extension
+ms.openlocfilehash: 47fb598e9a0e722d51493fda1ff5180d4b022524
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35262204"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -26,7 +22,7 @@ ms.lasthandoff: 03/08/2018
 > [!NOTE]
 > Расширение системы диагностики Azure — это компонент, который используется для сбора данных счетчиков производительности и других статистических данных из:
 > - Виртуальные машины Azure 
-> - Наборы для масштабирования виртуальных машин
+> - Масштабируемые наборы виртуальных машин Microsoft Azure
 > - Service Fabric 
 > - Облачные службы 
 > - группы сетевой безопасности;

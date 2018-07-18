@@ -8,14 +8,15 @@ manager: craigg
 ms.service: sql-database
 ms.custom: scale out apps
 ms.workload: data-management
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: genemi
-ms.openlocfilehash: 4cbf758b82bccae8efe77e197d23a090d71fd7e5
-ms.sourcegitcommit: 3a4ebcb58192f5bf7969482393090cb356294399
+ms.openlocfilehash: ac53443140b792d01147cdf22b81d0e6658fa429
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34646462"
 ---
 # <a name="deploy-and-explore-a-sharded-multi-tenant-application-that-uses-azure-sql-database"></a>Развертывание и изучение сегментированного мультитенантного приложения, использующего базу данных SQL Azure
 
@@ -123,7 +124,7 @@ ms.lasthandoff: 04/06/2018
 На центральной веб-странице **концентратора событий** содержится список клиентов в определенном развертывании со ссылками. Выполните следующие действия, чтобы воспользоваться преимуществами веб-страницы **концентратора событий** и отдельного веб-приложения.
 
 1. Откройте **концентратор событий** в браузере:
-    - http://events.wingtip-mt.&lt;пользователь&gt;.trafficmanager.net &nbsp; *(Замените &lt;пользователь&gt; именем пользователя для своего развертывания.)*
+    - http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net &nbsp; *(Замените &lt;user&gt; именем пользователя для своего развертывания.)*
 
     ![Концентратор событий](media/saas-multitenantdb-get-started-deploy/events-hub.png)
 
@@ -135,7 +136,7 @@ ms.lasthandoff: 04/06/2018
 
 Чтобы управлять распределением входящих запросов, приложение Wingtip использует [диспетчер трафика Azure](../traffic-manager/traffic-manager-overview.md). В URL-адресе страницы событий для каждого клиента содержится его имя. Каждый URL-адрес также включает в себя значение конкретного пользователя. Каждый URL-адрес соответствует показанному формату, используя следующие шаги.
 
-- http://events.wingtip-mt.&lt;пользователь&gt;.trafficmanager.net/*fabrikamjazzclub*
+- http://events.wingtip-mt.&lt;user&gt;.trafficmanager.net/*fabrikamjazzclub*
 
 1. Приложения событий выполняют синтаксический анализ имени клиента в URL-адресе. В предыдущем примере URL-адреса имя клиента — *fabrikamjazzclub*.
 2. Затем приложение применяет к имени клиента алгоритм хэш, чтобы создать ключ для доступа к каталогу при помощи [управления размещением сегментов](sql-database-elastic-scale-shard-map-management.md).

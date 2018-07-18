@@ -41,11 +41,11 @@
 # Справочные материалы
 ## [Azure PowerShell](/powershell/module/azurerm.keyvault)
 ## [интерфейс командной строки Azure](/cli/azure/keyvault)
-## [.NET](/dotnet/api/microsoft.azure.keyvault)
-## [Java](/java/api/com.microsoft.azure.keyvault)
+## [.NET](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/keyvault/client?view=azure-dotnet)
+## [Java](/java/api/overview/azure/keyvault?view=azure-java-stable)
 ## Node.js
-### [Управление хранилищем](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
-### [Управление содержимым хранилища](http://azure.github.io/azure-sdk-for-node/azure-keyvault/latest)
+### [Управление хранилищем](https://docs.microsoft.com/javascript/api/azure-keyvault/index?view=azure-node-latest)
+### [Управление содержимым хранилища](https://docs.microsoft.com/javascript/api/azure-arm-keyvault/index?view=azure-node-latest)
 ## [REST](/rest/api/keyvault)
 ## Разработка
 ### [Краткое видеоруководство для разработчика](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Key-Vault-Developer-Quick-Start)

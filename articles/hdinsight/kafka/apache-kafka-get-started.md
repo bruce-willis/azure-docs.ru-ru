@@ -1,11 +1,10 @@
 ---
-title: Краткое руководство по началу работы с Apache Kafka в Azure HDInsight | Документация Майкрософт
+title: Краткое руководство по началу работы с Apache Kafka в Azure HDInsight | Документы Майкрософт
 description: В этом кратком руководстве вы узнаете, как создать кластер Apache Kafka в Azure HDInsight с помощью портала Azure. Вы также узнаете, что такое разделы, подписчики и потребители в Kafka.
 services: hdinsight
 documentationcenter: ''
-author: Blackmist
+author: dhgoelmsft
 manager: jhubbard
-editor: cgronlun
 ms.assetid: 43585abf-bec1-4322-adde-6db21de98d7f
 ms.service: hdinsight
 ms.custom: mvc,hdinsightactive
@@ -13,13 +12,14 @@ ms.devlang: ''
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: big-data
-ms.date: 04/16/2018
+ms.date: 05/23/2018
 ms.author: larryfr
-ms.openlocfilehash: c405d95c53baa07ff21a7d919177bd720202ac14
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 776705281a1909cbeee657f7915d4c83ec8bbabe
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342159"
 ---
 # <a name="quickstart-create-a-kafka-on-hdinsight-cluster"></a>Краткое руководство по созданию кластера Kafka в HDInsight
 
@@ -34,7 +34,7 @@ Kafka — это распределенная платформа потоков
 >
 > Дополнительные сведения см. в документе [Подключение к Kafka в HDInsight с помощью виртуальной сети Azure](apache-kafka-connect-vpn-gateway.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -75,7 +75,7 @@ Kafka — это распределенная платформа потоков
     | Параметр | Значение |
     | --- | --- |
     | Тип кластера | Kafka |
-    | Version (версия) | Kafka 0.10.0 (HDI 3.6) |
+    | Version (версия) | Kafka 1.0.0 (HDI 3.6) |
 
     Нажмите кнопку **Выбрать**, чтобы сохранить параметры типа кластера и вернуться в колонку __Основные сведения__.
 
@@ -100,7 +100,7 @@ Kafka — это распределенная платформа потоков
 
     Нажмите кнопку __Далее__, чтобы завершить настройку основных параметров.
 
-5. В колонке **Хранилище** выберите или создайте учетную запись хранения. Для действий, описанных в этом документе, в других полях этой колонки оставьте значения по умолчанию. Нажмите кнопку __Далее__, чтобы сохранить конфигурацию хранилища.
+5. В колонке **Хранилище** выберите или создайте учетную запись хранения. Для действий, описанных в этом документе, в других полях этой колонки оставьте значения по умолчанию. Нажмите кнопку __Далее__, чтобы сохранить конфигурацию хранилища. Дополнительные сведения об использовании Data Lake Storage Gen2 см. в статье [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
     ![Настройка параметров учетной записи хранения для HDInsight](./media/apache-kafka-get-started/storage-configuration.png)
 
@@ -182,10 +182,13 @@ ssuhuser@hn0-mykafk:~$
     При появлении запроса введите имя кластера Kafka.
 
 3. Чтобы задать переменную среды со сведениями об узле Zookeeper, выполните следующую команду.
-
+    
     ```bash
-    export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
+    export KAFKAZKHOSTS=`curl -sS -u admin -G http://headnodehost:8080/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`
     ```
+
+    > [!TIP]
+    > Эта команда предназначена для прямых запросов службы Ambari в головном узле кластера. Кроме того, доступ к Ambari можно получить с помощью общедоступного адреса `https://$CLUSTERNAME.azurehdinsight.net:80/`. Некоторые конфигурации сети могут запрещать доступ к общедоступным адресам. Например, если для ограничения доступа к HDInsight в виртуальной сети используются группы безопасности сети (NSG).
 
     При появлении запроса введите пароль учетной записи для входа в кластер (но не учетной записи SSH).
 
@@ -205,7 +208,7 @@ ssuhuser@hn0-mykafk:~$
 5. Чтобы задать переменную среды со сведениями об узле брокера Kafka, выполните следующую команду.
 
     ```bash
-    export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
+    export KAFKABROKERS=`curl -sS -u admin -G http://headnodehost:8080/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`
     ```
 
     При появлении запроса введите пароль учетной записи для входа в кластер (но не учетной записи SSH).
@@ -325,7 +328,7 @@ Kafka хранит *записи* в разделах. Записи создаю
 > 
 > При удалении кластера Kafka в HDInsight удаляются все данные, хранящиеся в Kafka.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Совместное использование Apache Spark и Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)

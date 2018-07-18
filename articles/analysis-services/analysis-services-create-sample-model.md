@@ -1,35 +1,44 @@
 ---
-title: Добавление примера табличной модели для сервера Azure Analysis Services | Документация Майкрософт
-description: Сведения о том, как добавить пример модели в службах Azure Analysis Services.
+title: Руководство. Добавление базового образца модели на сервер Azure Analysis Services с помощью портала | Документы Майкрософт
+description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
-ms.topic: conceptual
-ms.date: 04/12/2018
+ms.service: azure-analysis-services
+ms.topic: tutorial
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 27353ff8c05f44b76304279e09a8a8d817041d78
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: c63995a461cee6bc39603a43604b8080942bd88b
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442813"
 ---
-# <a name="tutorial-add-a-sample-model"></a>Руководство. Добавление примера модели
+# <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
-В этом руководстве вы добавите пример модели Adventure Works на свой сервер. Образец модели представляет собой готовую версию руководства по моделированию данных "Интернет-продажи Adventure Works" (1200). Образец модели полезен для тестирования управления моделью, соединения со средствами и клиентскими приложениями, а также для выполнения запросов к данным модели.
+Из этого руководства вы научитесь добавлять на свой сервер образец табличного шаблона базы данных Adventure Works. Образец модели представляет собой готовую версию образца модели данных "Интернет-продажи Adventure Works" (1200). Образец модели полезен для тестирования управления моделью, соединения со средствами и клиентскими приложениями, а также для выполнения запросов к данным модели. В рамках этого руководства используется [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) для выполнения следующих действий. 
+
+> [!div class="checklist"]
+> * Добавление готового образца табличной модели данных на сервер 
+> * Подключение к модели с помощью SSMS
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-- Сервер Azure Analysis Services
+- Сервер Azure Analysis Services. Для получения дополнительных сведений см. статью [Создание сервера с помощью портала](analysis-services-create-server.md).
 - Разрешения администратора сервера
+- [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)
+
 
 ## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
 
-Войдите на [портале Azure](https://portal.azure.com/).
+Войдите на [портал](https://portal.azure.com/).
 
-## <a name="create-a-sample-model"></a>Создание образца модели
+## <a name="add-a-sample-model"></a>Добавление образца модели
 
 1. В области **Обзор** сервера выберите **Новая модель**.
 
@@ -39,16 +48,16 @@ ms.lasthandoff: 04/16/2018
 
     ![Выбор примеров данных](./media/analysis-services-create-sample-model/aas-create-sample-data.png)
 
-3. Проверьте, создан ли пример `adventureworks` в области **Обзор**.
+3. В области **Обзор** проверьте, добавлен ли образец модели `adventureworks`.
 
     ![Выбор примеров данных](./media/analysis-services-create-sample-model/aas-create-sample-verify.png)
+
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Образец модели использует ресурсы кэш-памяти. Если образец модели не используется для тестирования, следует удалить его с сервера.
 
-> [!NOTE]
-> В следующих шагах описано, как удалить модель с сервера с помощью среды SSMS. Также модель можно удалить с помощью предварительной версии компонента "Конструктор веб-страниц".
+В следующих шагах описано, как удалить модель с сервера с помощью среды SSMS. Также модель можно удалить с помощью предварительной версии компонента "Конструктор веб-страниц".
 
 1. В среде SSMS выберите **Обозреватель объектов** и щелкните **Подключиться** > **Analysis Services**.
 
@@ -60,9 +69,11 @@ ms.lasthandoff: 04/16/2018
 
     ![Удаление примера базы данных](./media/analysis-services-create-sample-model/aas-create-sample-cleanup-delete.png)
 
-## <a name="next-steps"></a>Дополнительная информация 
+## <a name="next-steps"></a>Дальнейшие действия 
 
-[Подключение в Power BI Desktop](analysis-services-connect-pbi.md)   
-[Управление ролями и пользователями базы данных](analysis-services-database-users.md)
+В этом руководстве было рассмотрено добавление базового образца модели на сервер. Когда есть шаблон базы данных, можно подключиться к нему из SQL Server Management Studio и добавить роли пользователей. Для получения дополнительных сведений перейдите к следующему руководству.
+
+> [!div class="nextstepaction"]
+> [Руководство по настройке ролей администратора сервера и пользователя](analysis-services-database-users.md)
 
 

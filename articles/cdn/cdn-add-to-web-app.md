@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: v-deasim
 ms.custom: mvc
-ms.openlocfilehash: de8b354cf0199d36d5e0b1410a9f79d4a9e3e05c
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: efd8e93f32020d1ef3695e7fc6b9907374275848
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359787"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34608395"
 ---
 # <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по добавлению сети доставки содержимого Azure в веб-приложение службы приложений Azure
 
@@ -55,6 +55,9 @@ ms.locfileid: "34359787"
 
 Откройте браузер и перейдите на [портал Azure](https://portal.azure.com).
 
+### <a name="dynamic-site-acceleration-optimization"></a>Оптимизация динамического ускорения сайтов
+Если необходимо оптимизировать конечную точку CDN для динамического ускорения сайтов (DSA), для создания конечной точки и профиля используйте [портал CDN](cdn-create-new-endpoint.md). [Оптимизация DSA](cdn-dynamic-site-acceleration.md) значительно улучшает производительность веб-страниц с динамическим содержимым. Инструкции по оптимизации конечной точки CDN для DSA на портале CDN см. в разделе [Настройка конечной точки CDN для ускорения доставки динамических файлов](cdn-dynamic-site-acceleration.md#cdn-endpoint-configuration-to-accelerate-delivery-of-dynamic-files). Если же нет необходимости оптимизировать новую конечную точку, можно использовать портал веб-приложений для ее создания, выполнив шаги из следующего раздела. Обратите внимание, что для профилей **Azure CDN от Verizon** возможность изменения оптимизации конечной точки CDN после ее создания недоступна.
+
 ## <a name="create-a-cdn-profile-and-endpoint"></a>Создание профиля CDN и конечной точки
 
 В области навигации слева выберите раздел **Службы приложений**, а затем и выберите приложение, созданное в соответствии с инструкциями по [созданию статического веб-приложения HTML](../app-service/app-service-web-get-started-html.md).
@@ -64,9 +67,6 @@ ms.locfileid: "34359787"
 На странице **Служба приложений** в разделе **Параметры** выберите **Сеть > Настроить сеть доставки содержимого Azure для приложения**.
 
 ![Выбор CDN на портале](media/cdn-add-to-web-app/portal-select-cdn.png)
-
-### <a name="dynamic-site-acceleration-optimization"></a>Оптимизация динамического ускорения сайтов
-Если вы хотите оптимизировать конечную точку CDN для динамического ускорения сайтов (DSA), создайте конечную точку непосредственно на портале CDN. [Оптимизация DSA](cdn-dynamic-site-acceleration.md) значительно улучшает производительность веб-страниц с динамическим содержимым. Дополнительные сведения об оптимизации конечной точки CDN для DSA на портале CDN см. в разделе [Настройка конечной точки CDN для ускорения доставки динамических файлов](cdn-dynamic-site-acceleration.md#cdn-endpoint-configuration-to-accelerate-delivery-of-dynamic-files). Для профилей **Azure CDN от Verizon** возможность изменения оптимизации конечной точки CDN после ее создания недоступна.
 
 На странице **Сеть доставки содержимого Azure** выберите параметры **новой конечной точки** параметры, как указано в таблице.
 

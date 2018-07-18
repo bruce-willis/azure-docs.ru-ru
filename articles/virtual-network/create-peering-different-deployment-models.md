@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: f4fe93078246bc25eb41a7f8e685d75f8dcb6b7c
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: bec02b3f3bde9f9cfab615d75cc6f05976ce981a
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34012630"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34726226"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в одной подписке
 
@@ -90,7 +90,7 @@ ms.locfileid: "34012630"
     azure network vnet create --vnet myVnet2 --address-space 10.1.0.0 --cidr 16 --location "East US"
     ```
 
-5. Создайте группу ресурсов и виртуальную сеть Resource Manager. Можно использовать Azure CLI 1.0 или 2.0 ([установить](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)). В этом руководстве для создания виртуальной сети Resource Manager используется Azure CLI 2.0, так как для создания пиринга должна использоваться версия 2.0. Выполните следующий сценарий Bash для интерфейса командной строки на локальном компьютере, на котором установлен Azure CLI 2.0.4 или более поздней версии. Сведения о параметрах выполнения сценариев Bash для интерфейса командной строки в клиенте Windows см. в статье [Использование Azure CLI в Windows](../virtual-machines/windows/cli-options.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Можно также запустить сценарий с помощью Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующем сценарии, чтобы запустить службу Cloud Shell, с помощью которой можно войти в свою учетную запись Azure. Чтобы выполнить сценарий, нажмите кнопку **Скопировать** и вставьте содержимое в Cloud Shell. Нажмите клавишу `Enter`.
+5. Создайте группу ресурсов и виртуальную сеть Resource Manager. Можно использовать Azure CLI 1.0 или 2.0 ([установить](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json)). В этом руководстве для создания виртуальной сети Resource Manager используется Azure CLI 2.0, так как для создания пиринга должна использоваться версия 2.0. Выполните следующий сценарий Bash для интерфейса командной строки на локальном компьютере, на котором установлен Azure CLI 2.0.4 или более поздней версии. Сведения о вариантах выполнения скриптов Bash CLI в клиенте Windows см. в статье [Установка Azure CLI 2.0 в Windows](/cli/azure/install-azure-cli-windows). Можно также запустить сценарий с помощью Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в следующем сценарии, чтобы запустить службу Cloud Shell, с помощью которой можно войти в свою учетную запись Azure. Чтобы выполнить сценарий, нажмите кнопку **Скопировать** и вставьте содержимое в Cloud Shell. Нажмите клавишу `Enter`.
 
     ```azurecli-interactive
     #!/bin/bash

@@ -1,23 +1,21 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Python) | Документация Майкрософт
 description: В этом кратком руководстве выполняется пример приложения Python по отправке имитированной телеметрии в Центр Интернета вещей и применению служебной программы для чтения телеметрии из Центра Интернета вещей.
-services: iot-hub
 author: dominicbetts
 manager: timlt
-editor: ''
 ms.service: iot-hub
+services: iot-hub
 ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
 ms.date: 04/30/2018
 ms.author: dobett
-ms.openlocfilehash: 2abc978d6f40808a1bea46a01647444bb79b1211
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 7d4d29b7502f081de8385c7d88687ece4905b02b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38688392"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Python)
 
@@ -100,7 +98,7 @@ npm install -g iothub-explorer
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства Центра Интернета вещей и отправляет имитированную телеметрию температуры и влажности.
 
-1. В окне терминала перейдите в корневую папку примера проекта Python. Затем перейдите к папке **Quickstarts\simulated-device**.
+1. В окне терминала перейдите в корневую папку примера проекта Python. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device**.
 
 1. Откройте файл **SimulatedDevice.py** в любом текстовом редакторе.
 
@@ -138,9 +136,7 @@ iothub-explorer monitor-events MyPythonDevice --login {your hub service connecti
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Не удаляйте группу ресурсов и Центр Интернета вещей, так как они понадобятся вам при работе со следующим руководством.
-
-Если вам больше не требуется Центр Интернета вещей, удалите его и группу ресурсов на портале. Для этого выберите группу ресурсов **qs-iot-hub-rg**, содержащую Центр Интернета вещей, и щелкните **Удалить**.
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

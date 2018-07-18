@@ -1,12 +1,12 @@
 ---
-title: "Получение событий от концентраторов событий Azure с помощью библиотеки .NET Standard | Документация Майкрософт"
-description: "Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard"
+title: Получение событий от концентраторов событий Azure с помощью библиотеки .NET Standard | Документы Майкрософт
+description: Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
 services: event-hubs
 documentationcenter: na
 author: sethmanheim
 manager: timlt
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: get-started-article
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/28/2017
 ms.author: sethm
-ms.openlocfilehash: 5eb5c2d1f0b85c907f788fb6ac752488601f613a
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: fd74405c8ca95ca1a5880ab26bf87705bde217de
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127539"
 ---
 # <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-standard"></a>Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
 
@@ -27,12 +28,12 @@ ms.lasthandoff: 02/21/2018
 
 В этом руководстве показано, как создать консольное приложение .NET Core для получения сообщений из концентратора событий с помощью библиотеки **узла обработчика событий**. Вы можете запустить решение [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver) "как есть", заменив соответствующие строки своими значениями для концентратора событий и учетной записи хранения. Или следуйте инструкциям этого руководства, чтобы создать собственное решение.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio 2015 или Microsoft Visual Studio 2017](http://www.visualstudio.com). В примерах в этом руководстве используется Visual Studio 2017, но также поддерживается Visual Studio 2015.
 * [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](http://www.microsoft.com/net/core).
 * Подписка Azure.
-* Пространство имен концентраторов событий Azure.
+* Пространство имен концентраторов событий Azure и концентратор событий.
 * Учетная запись хранения Azure.
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен концентраторов событий и концентратора событий  
@@ -41,7 +42,7 @@ ms.lasthandoff: 02/21/2018
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure  
 
-1. Войдите на [портале Azure](https://portal.azure.com).  
+1. Войдите на [портал Azure](https://portal.azure.com).  
 2. В области навигации слева на странице портала последовательно выберите **Создать ресурс**, **Хранилище** и **Учетная запись хранения**.  
 3. Заполните поля в окне учетной записи хранения и нажмите кнопку **Создать**.
 
@@ -122,11 +123,11 @@ ms.lasthandoff: 02/21/2018
     using System.Threading.Tasks;
     ```
 
-2. Добавьте в класс `Program` константы для строки подключения концентраторов событий, имени концентратора событий, имени контейнера учетной записи хранения, имени учетной записи хранения и ключа учетной записи хранения. Добавьте следующий код, заменив заполнители соответствующими значениями.
+2. Добавьте в класс `Program` константы для строки подключения концентраторов событий, имени концентратора событий, имени контейнера учетной записи хранения, имени учетной записи хранения и ключа учетной записи хранения. Добавьте следующий код, заменив заполнители соответствующими значениями:
 
     ```csharp
-    private const string EhConnectionString = "{Event Hubs connection string}";
-    private const string EhEntityPath = "{Event Hub path/name}";
+    private const string EventHubConnectionString = "{Event Hubs connection string}";
+    private const string EventHubName = "{Event Hub path/name}";
     private const string StorageContainerName = "{Storage account container name}";
     private const string StorageAccountName = "{Storage account name}";
     private const string StorageAccountKey = "{Storage account key}";
@@ -142,9 +143,9 @@ ms.lasthandoff: 02/21/2018
         Console.WriteLine("Registering EventProcessor...");
 
         var eventProcessorHost = new EventProcessorHost(
-            EhEntityPath,
+            EventHubName,
             PartitionReceiver.DefaultConsumerGroupName,
-            EhConnectionString,
+            EventHubConnectionString,
             StorageConnectionString,
             StorageContainerName);
 
@@ -173,8 +174,8 @@ ms.lasthandoff: 02/21/2018
 
         public class Program
         {
-            private const string EhConnectionString = "{Event Hubs connection string}";
-            private const string EhEntityPath = "{Event Hub path/name}";
+            private const string EventHubConnectionString = "{Event Hubs connection string}";
+            private const string EventHubName = "{Event Hub path/name}";
             private const string StorageContainerName = "{Storage account container name}";
             private const string StorageAccountName = "{Storage account name}";
             private const string StorageAccountKey = "{Storage account key}";
@@ -214,7 +215,7 @@ ms.lasthandoff: 02/21/2018
 
 Поздравляем! Теперь вы можете получать сообщения из концентратора событий с помощью узла EventProcessorHost.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о концентраторах событий см. в следующих источниках:
 
 * [Event Hubs overview](event-hubs-what-is-event-hubs.md)
@@ -222,4 +223,4 @@ ms.lasthandoff: 02/21/2018
 * [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
 
 [1]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/event-hubs-python1.png
-[2]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcore.png
+[2]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png

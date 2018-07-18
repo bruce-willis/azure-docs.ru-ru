@@ -1,24 +1,20 @@
 ---
-title: "Устранение неполадок системы диагностики Azure | Документация Майкрософт"
-description: "Устранение неполадок при использовании системы диагностики Azure на виртуальных машинах, в Service Fabric или в облачных службах."
-services: monitoring-and-diagnostics
-documentationcenter: .net
+title: Устранение неполадок расширения для Системы диагностики Azure
+description: Устранение неполадок при использовании системы диагностики Azure на виртуальных машинах, в Service Fabric или в облачных службах.
+services: azure-monitor
 author: rboucher
-manager: carmonm
-editor: 
-ms.assetid: 66469bce-d457-4d1e-b550-a08d2be4d28c
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
+ms.service: azure-monitor
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/12/2017
 ms.author: robb
-ms.openlocfilehash: e194c2898616d5a19782039d38592c59f6b0c576
-ms.sourcegitcommit: 088a8788d69a63a8e1333ad272d4a299cb19316e
+ms.component: diagnostic-extension
+ms.openlocfilehash: 8f41605114de296b626418d0a868e3ed778c0640
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35263852"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](azure-diagnostics.md).
@@ -122,7 +118,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 #### <a name="is-the-host-generating-data"></a>Создает ли узел данные?
 - **Счетчики производительности.** Откройте системный монитор и проверьте значение счетчика.
 
-- **Журналы трассировки.** Удаленно подключитесь к виртуальной машине и добавьте экземпляр TextWriterTraceListener в файл конфигурации приложения.  Сведения о настройке прослушивателя трассировки см. в этой статье: http://msdn.microsoft.com/library/sk36c28t.aspx.  Проверьте, имеет ли элемент `<trace>` значение `<trace autoflush="true">`.<br />
+- **Журналы трассировки.** Удаленно подключитесь к виртуальной машине и добавьте экземпляр TextWriterTraceListener в файл конфигурации приложения.  Сведения о настройке прослушивателя см. по ссылке http://msdn.microsoft.com/library/sk36c28t.aspx.  Проверьте, имеет ли элемент `<trace>` значение `<trace autoflush="true">`.<br />
 Если журналы трассировки не создаются, см. сведения в разделе [Подробные сведения об отсутствии журналов трассировки](#more-about-trace-logs-missing).
 
 - **Трассировка событий Windows.** Удаленно подключитесь к виртуальной машине и установите PerfView.  Откройте средство PerfView и выберите **File** (Файл)  > **User Command** (Пользовательская команда)  > **Ожидать передачи данных** > **etwprovider2**, указав при этом необходимых поставщиков ETW (etwprovder1, etwprovider2 и т. д.). Команда **Ожидать передачи данных** учитывает регистр. Поставщики трассировки событий Windows следует указывать через запятые без пробелов. Если выполнение этой команды завершилось сбоем, нажмите кнопку **Журнал** в правом нижнем углу средства Perfview, чтобы просмотреть попытки и результаты запуска.  Если все входные данные верны, через несколько секунд откроется новое окно с событиями трассировки событий Windows.

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b813ba564e6451f973972f08f297399c3af1747b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: b0517af9f8066d2d5849b0ffe3d4a0d00afdad44
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195494"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437881"
 ---
 # <a name="graphical-authoring-in-azure-automation"></a>Графическая разработка в службе автоматизации Azure
 
@@ -289,6 +289,9 @@ $ActivityOutput['Activity Label'].PropertyName
 Следующее действие (Connect-AzureRmAccount) добавляет учетную запись запуска от имени с выполненной аутентификацией для использования в runbook.
 
 ![Набор параметров Connect-AzureRmAccount](media/automation-graphical-authoring-intro/authenticate-conn-to-azure-parameter-set.png)
+
+> [!IMPORTANT]
+> **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если при поиске в библиотеке элементов вы не видите элемент **Connect-AzureRMAccount**, можно использовать **Add-AzureRmAccount** или обновить модули в своей учетной записи службы автоматизации.
 
 Для параметров **APPLICATIONID**, **CERTIFICATETHUMBPRINT** и **TENANTID** необходимо указать имя свойства для пути к полю, так как действие выводит объект с несколькими свойствами. Иначе при выполнении модуля runbook попытка выполнения проверки подлинности завершится ошибкой. Это минимальные требования для проверки подлинности модуля Runbook с использованием учетной записи запуска от имени.
 

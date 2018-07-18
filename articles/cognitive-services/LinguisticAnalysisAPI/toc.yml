@@ -1,0 +1,29 @@
+- name: Документация по API лингвистического анализа
+- name: Обзор
+  items:
+    - name: Что такое API лингвистического анализа?
+      href: Home.md
+- name: Практическое руководство
+  items:
+    - name: Имена анализаторов
+      href: Analyzer-Names.md
+    - name: Анализ групп
+      href: Constituency-Parsing.md
+    - name: Добавление тегов к частям речи
+      href: POS-tagging.md
+    - name: Предложения и маркеры
+      href: Sentences-and-Tokens.md
+    - name: Метод анализа
+      href: AnalyzeMethod.md
+    - name: Метод анализаторов
+      href: AnalyzersMethod.md
+- name: Справочные материалы
+  items:
+    - name: API лингвистического анализа
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56ea598f778daf01942505ff/operations/56ea5a1cca73071fd4b102bb'
+    - name: Пакет Windows SDK
+      href: 'https://github.com/Microsoft/Cognitive-linguisticanalysis-windows'
+- name: Ресурсы
+  items:
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/555928-linguistic-analysis-api'

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/16/2018
+ms.date: 05/17/2018
 ms.author: magoedte
-ms.openlocfilehash: d2480936ed54ec58ba289eae1ba605a16e27f0b3
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 80ce7337717376b05dc9539abaf49b1a933a78f2
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34271676"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637537"
 ---
 # <a name="manage-workspaces"></a>Управление рабочими областями
 
@@ -98,7 +98,7 @@ ms.locfileid: "34271676"
 
 | Действие                                                          | Требуются разрешения Azure | Заметки |
 |-----------------------------------------------------------------|--------------------------|-------|
-| Добавление и удаление решений по управлению                        | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/*` <br> `Microsoft.OperationsManagement/*` <br> `Microsoft.Automation/*` <br> `Microsoft.Resources/deployments/*/write` | |
+| Добавление и удаление решений по управлению                        | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/*` <br> `Microsoft.OperationsManagement/*` <br> `Microsoft.Automation/*` <br> `Microsoft.Resources/deployments/*/write` | Эти разрешения нужно предоставить на уровне группы ресурсов или подписки. |
 | Изменение ценовой категории                                       | `Microsoft.OperationalInsights/workspaces/*/write` | |
 | Просмотр данных на плитках *службы архивации* и *службы Site Recovery* | Администратор или соадминистратор | Имеет доступ к ресурсам, развернутым с использованием классической модели развертывания |
 | Создание рабочей области на портале Azure                        | `Microsoft.Resources/deployments/*` <br> `Microsoft.OperationalInsights/workspaces/*` ||
@@ -125,11 +125,14 @@ ms.locfileid: "34271676"
 
 
 Членам роли *Участник Log Analytics* доступны следующие действия:
-- чтение всех данных мониторинга; 
-- создание и настройка учетных записей службы автоматизации;
-- Добавление и удаление решений по управлению
-- чтение ключей учетной записи хранения; 
-- настройка сбора журналов из службы хранилища Azure;
+- чтение всех данных мониторинга;  
+- создание и настройка учетных записей службы автоматизации;  
+- Добавление и удаление решений по управлению    
+    > [!NOTE] 
+    > Чтобы успешно выполнить эти два действия, нужно предоставить разрешение на уровне группы ресурсов или подписки.  
+
+- чтение ключей учетной записи хранения;   
+- настройка сбора журналов из службы хранилища Azure;  
 - изменение параметров мониторинга ресурсов Azure, в том числе:
   - добавление расширения виртуальных машин на виртуальные машины;
   - настройка диагностики Azure на всех ресурсах Azure.
@@ -157,7 +160,7 @@ ms.locfileid: "34271676"
 - Группа ресурсов — доступ ко всем рабочим областям в группе ресурсов.
 - Ресурс — доступ к только указанной рабочей области.
 
-Используйте [пользовательские роли](../active-directory/role-based-access-control-custom-roles.md) для создания ролей с определенными разрешениями.
+Чтобы обеспечить точное управление доступом, рекомендуем выполнять назначения на уровне ресурса (рабочей области).  Используйте [пользовательские роли](../active-directory/role-based-access-control-custom-roles.md) для создания ролей с определенными разрешениями.
 
 ### <a name="azure-user-roles-and-log-analytics-portal-user-roles"></a>Роли пользователей Azure и роли пользователей портала Log Analytics
 Если у вас есть хотя бы разрешение на чтение Azure в рабочей области Log Analytics, вы можете открыть портал Log Analytics, щелкнув задачу **Портал OMS** при просмотре рабочей области Log Analytics.

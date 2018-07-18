@@ -1,21 +1,21 @@
 ---
-title: Azure Active Directory B2C. Одностраничные приложения, использующие неявный поток | Документация Майкрософт
+title: Одностраничные приложения, использующие неявный поток, в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как с помощью Azure Active Directory B2C создавать одностраничные приложения, использующие неявный поток OAuth 2.0.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/06/2017
 ms.author: davidmu
-ms.openlocfilehash: 3347eac16e447091ffcaaf403e1291e2c7175a2d
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.component: B2C
+ms.openlocfilehash: ee341fd3b54d748849da34cd11db30e5ea758fb1
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445277"
 ---
 # <a name="azure-ad-b2c-single-page-app-sign-in-by-using-oauth-20-implicit-flow"></a>Azure AD B2C. Вход в одностраничные приложения с помощью неявного потока OAuth 2.0
 

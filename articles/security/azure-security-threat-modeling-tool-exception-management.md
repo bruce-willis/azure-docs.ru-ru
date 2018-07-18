@@ -1,6 +1,6 @@
 ---
-title: "Управление исключениями. Средство моделирования угроз Microsoft Azure | Документация Майкрософт"
-description: "Устранение угроз, обнаруженных с помощью средства моделирования угроз"
+title: Управление исключениями. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
+description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
 services: security
 documentationcenter: na
 author: RodSan
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 9a8e0154faccca356c7fb8ce93e43ce67cc0aae2
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: 3fae9390b41d12361b820e2c37601283b37bc302
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031718"
 ---
 # <a name="security-frame-exception-management--mitigations"></a>Механизм безопасности. Управление исключениями | Устранение угроз 
 | Продукт или служба | Статья |
@@ -35,7 +36,7 @@ ms.lasthandoff: 01/24/2018
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_debug_information) |
 | **Действия** | Службы Windows Communication Framework (WCF) можно настроить для предоставления отладочной информации. Отладочную информацию не следует использовать в рабочих средах. Тег `<serviceDebug>` определяет, включена ли функция отладочной информации для службы WCF. Если атрибуту includeExceptionDetailInFaults присвоено значение true, клиентам будут возвращены сведения об исключении из приложения. Злоумышленники могут использовать дополнительные сведения, полученные из результатов отладки, для совершения целенаправленных атак на платформу, базу данных или другие ресурсы, используемые приложением. |
 
 ### <a name="example"></a>Пример
@@ -59,7 +60,7 @@ ms.lasthandoff: 01/24/2018
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Универсальные, .NET Framework 3 |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_service_enumeration) |
 | **Действия** | В случае публичного раскрытия информации о службе злоумышленники могут получить ценные сведения о том, как ее можно использовать в своих целях. Тег `<serviceMetadata>` включает функцию публикации метаданных. Метаданные службы могут содержать конфиденциальные сведения, к которым нельзя предоставлять общий доступ. Как минимум доступ к метаданным следует разрешать только доверенным пользователям, а также необходимо гарантировать, что ненужная информация не предоставляется. А еще лучше полностью отключите возможность публикации метаданных. Безопасная конфигурация WCF не будет содержать тег `<serviceMetadata>`. |
 
 ## <a id="exception"></a>Обеспечьте правильную обработку исключений в веб-API ASP.NET

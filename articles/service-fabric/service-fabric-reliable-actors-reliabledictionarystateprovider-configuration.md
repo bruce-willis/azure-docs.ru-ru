@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/2/2017
 ms.author: sumukhs
-ms.openlocfilehash: 00ae5db5fc7a327ae19e64c3d8adf653afd12677
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 1c7e31f9da2b2f9fe7a3a7c64cd6927224cb9fa1
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017901"
 ---
 # <a name="configuring-reliable-actors--reliabledictionaryactorstateprovider"></a>Настройка надежных субъектов: ReliableDictionaryActorStateProvider
 Конфигурацию ReliableDictionaryActorStateProvider по умолчанию можно изменить. Для этого нужно обновить файл settings.xml, созданный в папке Config корневого каталога пакета Visual Studio для данного субъекта.
@@ -67,6 +68,10 @@ ms.lasthandoff: 05/16/2018
 ## <a name="replicator-security-configuration"></a>Конфигурация безопасности репликатора
 Конфигурации безопасности репликаторов используются для защиты канала связи, который используется во время репликации. Это означает, что службы не будут "видеть" реплицируемый трафик друг друга, что позволит обеспечить высокую доступность и высокий уровень защиты.
 По умолчанию пустой раздел конфигурации безопасности означает, что канал репликации не защищен.
+
+> [!IMPORTANT]
+> На узлах Linux сертификаты должны иметь формат PEM. Дополнительные сведения о поиске и настройке сертификатов для Linux см. в разделе [Настройка сертификатов на Linux](./service-fabric-configure-certificates-linux.md). 
+> 
 
 ### <a name="section-name"></a>Имя раздела
 &lt;имя_субъекта&gt;ServiceReplicatorSecurityConfig

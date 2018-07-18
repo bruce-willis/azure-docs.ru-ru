@@ -15,11 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
-ms.openlocfilehash: 6f1a95e52def9154253192ab9d43d1e7d621cee7
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: a41dcd5f2c93e5c1279e1c7511e10e6d72574b3b
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098752"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
 > [!IMPORTANT] 
@@ -33,7 +34,7 @@ ms.lasthandoff: 04/16/2018
 1. Преимущества перемещения лицензий, предоставляемые в рамках программы Software Assurance. Дополнительные сведения см. в статье [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/).
 2. Оплата виртуальных машин Azure с установленным SQL Server по часовой ставке. См. раздел "SQL Server" на странице [цен на виртуальные машины](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
 
-Дополнительные сведения о лицензировании и текущих тарифах см. на странице [Виртуальные машины. Вопросы и ответы по лицензированию](https://azure.microsoft.com/pricing/licensing-faq/%20/).
+Дополнительные сведения о лицензировании и текущих тарифах см. на странице [Виртуальные машины. Вопросы и ответы по лицензированию](https://azure.microsoft.com/pricing/licensing-faq/).
 
 ## <a name="sql-server-images-available-in-azure-virtual-machine-gallery"></a>Образы SQL Server, доступные в коллекции виртуальных машин Azure
 Коллекция виртуальных машин Microsoft Azure включает в себя несколько образов, содержащих Microsoft SQL Server. Программное обеспечение, установленное в образах виртуальной машины, зависит от версии операционной системы и версии SQL Server. Список образов в коллекции виртуальных машин Azure часто изменяется.
@@ -62,7 +63,7 @@ ms.lasthandoff: 04/16/2018
 
 Дополнительные сведения о выпусках и функциях, поддерживаемых в SQL Server, см. в следующих разделах.
 
-* [Выпуски SQL Server](https://www.microsoft.com/server-cloud/products/sql-server-editions/#fbid=Zae0-E6r5oh)
+* [Выпуски SQL Server](https://www.microsoft.com/sql-server/sql-server-2017-editions)
 * [Features Supported by the Editions of SQL Server 2016](https://msdn.microsoft.com/library/cc645993.aspx)
 
 ### <a name="bi-features-installed-on-the-sql-server-virtual-machine-gallery-images"></a>Компоненты бизнес-аналитики, установленные в образах коллекции виртуальных машин SQL Server
@@ -350,5 +351,5 @@ ms.lasthandoff: 04/16/2018
 > [Отправьте отзыв и контактные данные через Microsoft SQL Server Connect](https://connect.microsoft.com/SQLServer/Feedback)
 
 ### <a name="community-content"></a>Материалы сообщества
-* [Управление базой данных SQL Azure с помощью PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
+* [Управление базой данных SQL Azure с помощью PowerShell](https://azure.microsoft.com/blog/windows-azure-sql-database-management-with-powershell/)
 

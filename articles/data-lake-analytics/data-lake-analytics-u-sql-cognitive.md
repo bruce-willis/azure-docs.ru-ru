@@ -1,87 +1,36 @@
 ---
-title: Использование когнитивных возможностей U-SQL в Azure Data Lake Analytics | Документация Майкрософт
+title: Использование когнитивных возможностей U-SQL в Azure Data Lake Analytics
 description: Использование аналитики когнитивных возможностей в U-SQL
 services: data-lake-analytics
-documentationcenter: ''
 author: saveenr
-manager: jhubbard
-editor: cgronlun
+ms.author: saveenr
+manager: kfile
+editor: jasonwhowell
 ms.assetid: 019c1d53-4e61-4cad-9b2c-7a60307cbe19
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 12/05/2016
-ms.author: saveenr
-ms.openlocfilehash: cd06e1ae56efdfdcfcd4fec5b2c17ee843d9e9dd
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.topic: conceptual
+ms.date: 06/05/2018
+ms.openlocfilehash: ab40d466d7b60dd09b8953012c80d0e84f4ac471
+ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32311120"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34802074"
 ---
-# <a name="tutorial-get-started-with-the-cognitive-capabilities-of-u-sql"></a>Руководство по началу работы с когнитивными возможностями U-SQL
+# <a name="get-started-with-the-cognitive-capabilities-of-u-sql"></a>Начало работы с когнитивными возможностями U-SQL
 
 ## <a name="overview"></a>Обзор
 Когнитивные возможности U-SQL позволяют разработчикам использовать аналитику в программах, которые работают с большими данными. 
 
 Доступны следующие когнитивные возможности:
-* обработка изображений: распознавание лиц;
-* обработка изображений: распознавание эмоций;
-* обработка изображений: распознавание объектов (добавление тегов);
-* обработка изображений: распознавание текста (OCR);
-* обработка текста: извлечение ключевых фраз;
-* обработка текста: анализ тональности.
+* обработка изображений: распознавание лиц ([пример](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world));
+* обработка изображений: распознавание эмоций ([пример](https://github.com/Azure-Samples/usql-cognitive-imaging-emotion-detection-hello-world));
+* обработка изображений: распознавание объектов, т. е. добавление тегов ([пример](https://github.com/Azure-Samples/usql-cognitive-imaging-object-tagging-hello-world));
+* обработка изображений: распознавание текста ([пример](https://github.com/Azure-Samples/usql-cognitive-imaging-ocr-hello-world));
+* текст: извлечение ключевых фраз и анализ тональности ([пример](https://github.com/Azure-Samples/usql-cognitive-text-hello-world)).
 
-## <a name="how-to-use-cognitive-in-your-u-sql-script"></a>Как использовать когнитивные возможности в скрипте U-SQL
-
-В целом этот процесс прост:
-
-* Включите когнитивные функции для сценария U-SQL, вызвав инструкцию `REFERENCE ASSEMBLY`.
-* Создайте выходной набор строк, вызвав операцию `PROCESS` для входного набора строк, используя определяемый пользователем оператор для когнитивных возможностей.
-
-### <a name="detecting-objects-in-images"></a>Распознавание объектов на изображениях
-
-В следующем примере показано, как использовать когнитивные возможности для распознавания объектов на изображениях.
-
-```
-REFERENCE ASSEMBLY ImageCommon;
-REFERENCE ASSEMBLY FaceSdk;
-REFERENCE ASSEMBLY ImageEmotion;
-REFERENCE ASSEMBLY ImageTagging;
-REFERENCE ASSEMBLY ImageOcr;
-
-// Get the image data
-
-@imgs =
-    EXTRACT 
-        FileName string, 
-        ImgData byte[]
-    FROM @"/usqlext/samples/cognition/{FileName}.jpg"
-    USING new Cognition.Vision.ImageExtractor();
-
-//  Extract the number of objects on each image and tag them 
-
-@tags =
-    PROCESS @imgs 
-    PRODUCE FileName,
-            NumObjects int,
-            Tags SQL.MAP<string, float?>
-    READONLY FileName
-    USING new Cognition.Vision.ImageTagger();
-
-@tags_serialized =
-    SELECT FileName,
-           NumObjects,
-           String.Join(";", Tags.Select(x => String.Format("{0}:{1}", x.Key, x.Value))) AS TagsString
-    FROM @tags;
-
-OUTPUT @tags_serialized
-    TO "/tags.csv"
-    USING Outputters.Csv();
-```
-Дополнительные примеры см. на странице **Примеры использования когнитивных возможностей в U-SQL** в разделе **Дальнейшие действия**.
+## <a name="registering-cognitive-extensions-in-u-sql"></a>Регистрация когнитивных возможностей в U-SQL
+Прежде чем начать, следуйте шагам по регистрации когнитивных возможностей в U-SQL, описанным в этом [разделе](https://msdn.microsoft.com/azure/data-lake-analytics/u-sql/cognitive-capabilities-in-u-sql#registeringExtensions).
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Примеры использования когнитивных возможностей в U-SQL](https://github.com/Azure-Samples?utf8=✓&q=usql%20cognitive)

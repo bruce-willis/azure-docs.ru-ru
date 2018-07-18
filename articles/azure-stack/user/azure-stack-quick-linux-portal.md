@@ -11,11 +11,12 @@ ms.date: 04/24/2018
 ms.author: brenduns
 ms.reviewer: ''
 ms.custom: mvc
-ms.openlocfilehash: 2ea07f04d4c566c0add39d75cad3d3a4ed81c6c8
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: c364a9ba5a9606967fa86262417ccd1ac3aeffc3
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37866276"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-with-the-azure-stack-portal"></a>Краткое руководство. Создание виртуальной машины для сервера Linux с помощью портала Azure Stack
 
@@ -131,7 +132,7 @@ sudo apt-get -y install nginx
 
 ## <a name="view-the-nginx-welcome-page"></a>Просмотр страницы приветствия nginx
 
-Теперь на виртуальной машине установлен NGINX и открыт порт 80, и вы можете открыть веб-сервер через общедоступный IP-адрес этой виртуальной машины (общедоступный IP-адрес отображается на странице обзора виртуальной машины).
+Теперь на виртуальной машине установлен сервер NGINX и открыт порт 80, и вы можете обращаться к веб-серверу через общедоступный IP-адрес этой виртуальной машины. (общедоступный IP-адрес отображается на странице обзора виртуальной машины).
 
 Откройте окно браузера и перейдите по адресу ```http://<public IP address>```.
 

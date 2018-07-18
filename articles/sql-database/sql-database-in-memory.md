@@ -6,15 +6,15 @@ author: jodebrui
 manager: craigg
 ms.service: sql-database
 ms.custom: develop databases
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/04/2018
 ms.author: jodebrui
-ms.openlocfilehash: b4f8388fdf104253aad07de77e89c30df4e4b128
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: a21ce5c9cbf5517733a6b491124e51b163f6c2b9
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32195174"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309305"
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-sql-database"></a>Оптимизация производительности с помощью технологий обработки в оперативной памяти в базе данных SQL
 
@@ -72,7 +72,7 @@ ms.locfileid: "32195174"
 
 In-Memory OLTP включает оптимизированные для памяти таблицы, которые используются для хранения пользовательских данных. Эти таблицы должны умещаться в памяти. Так как вы управляете памятью непосредственно в службе базы данных SQL, мы применяем концепцию квоты на пользовательские данные, или *хранилище выполняющейся в памяти OLTP*.
 
-Каждая поддерживаемая ценовая категория отдельных баз данных и пулов эластичных баз данных включает некоторый объем хранилища выполняющейся в памяти OLTP. Просмотрите ограничения ресурсов на основе [DTU](sql-database-dtu-resource-limits.md) и [виртуальных ядер](sql-database-vcore-resource-limits.md).
+Каждая поддерживаемая ценовая категория отдельных баз данных и пулов эластичных баз данных включает некоторый объем хранилища выполняющейся в памяти OLTP. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
 При расчете емкости хранилища для выполняющейся в памяти OLTP используются следующие параметры.
 

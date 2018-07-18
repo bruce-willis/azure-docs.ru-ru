@@ -8,6 +8,7 @@
 ### [Рекомендации по обеспечению сетевой безопасности](../security/azure-security-network-security-best-practices.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Сетевые виртуальные модули высокой доступности](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha )
 ### [Объединение методов балансировки нагрузки](../traffic-manager/traffic-manager-load-balancing-azure.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Аварийное восстановление с помощью Azure DNS и диспетчера трафика](disaster-recovery-dns-traffic-manager.md)
 ## Планирование и проектирование
 ### [Виртуальные сети](../virtual-network/virtual-network-vnet-plan-design-arm.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Возможность распределенного подключения через VPN](../vpn-gateway/vpn-gateway-plan-design.md?toc=%2fazure%2fnetworking%2ftoc.json)
@@ -52,7 +53,7 @@
 ### [Azure PowerShell](powershell-samples.md)
 
 ## Учебники
-### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../virtual-machines/linux/tutorial-load-balance-nodejs.md?toc=%2fazure%2fnetworking%2ftoc.json)
+### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Подключение компьютера к виртуальной сети](../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json)
 
 # Справочные материалы

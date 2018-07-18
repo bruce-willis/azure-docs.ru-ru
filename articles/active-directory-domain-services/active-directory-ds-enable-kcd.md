@@ -7,23 +7,27 @@ author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2018
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: 6ed797ca25161919ccf5e69be0073a67bfcef6d6
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 4c6e25972b47edf67dac8557e1925bb44463f4d6
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36331035"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-on-a-managed-domain"></a>Настройка ограниченного делегирования Kerberos в управляемом домене
 Многим приложениям требуется доступ к ресурсам в контексте пользователя. Active Directory поддерживает делегирование Kerberos — механизм, который позволяет использовать эту возможность. Кроме того, делегирование можно ограничить, чтобы разрешить доступ в контексте пользователя только к определенным ресурсам. Управляемые домены доменных служб Azure AD отличаются от традиционных доменов Active Directory, поскольку они безопаснее заблокированы.
 
 В этой статье показано, как настроить ограниченное делегирование Kerberos в управляемом домене доменных служб Azure AD.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="kerberos-constrained-delegation-kcd"></a>Ограниченное делегирование Kerberos
 Делегирование Kerberos позволяет учетной записи олицетворять другой субъект безопасности (например, пользователя) для доступа к ресурсам. Рассмотрим веб-приложение, которое обращается к серверному API веб-приложения в контексте пользователя. В этом примере веб-приложение (запущенное в контексте учетной записи службы или учетной записи компьютера или виртуальной машины) олицетворяет пользователя при доступе к ресурсу (серверному API веб-приложения). Делегирование Kerberos не защищено, поскольку в нем не ограничивается доступ к ресурсам, к которым может получить доступ олицетворяемая учетная запись в контексте пользователя.

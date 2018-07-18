@@ -1,11 +1,11 @@
 ---
-title: "Сценарий: запуск приложений логики с помощью Функций Azure и служебной шины Azure | Документация Майкрософт"
-description: "Создайте функцию для запуска приложения логики с помощью Функций Azure и служебной шины Azure."
+title: 'Сценарий: запуск приложений логики с помощью Функций Azure и служебной шины Azure | Документация Майкрософт'
+description: Создайте функцию для запуска приложения логики с помощью Функций Azure и служебной шины Azure.
 services: logic-apps,functions
 documentationcenter: .net,nodejs,java
 author: jeffhollan
-manager: anneta
-editor: 
+manager: jeconnoc
+editor: ''
 ms.assetid: 19cbd921-7071-4221-ab86-b44d0fc0ecef
 ms.service: logic-apps
 ms.devlang: multiple
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 05/23/2016
 ms.author: LADocs; jehollan
-ms.openlocfilehash: 088f10bc32dd492f82f0a10a7e5829e76f588758
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 6bc845e4ec329d308ed87770d0dec6a7d5e447c7
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37030959"
 ---
 # <a name="scenario-trigger-a-logic-app-with-azure-functions-and-azure-service-bus"></a>Сценарий: запуск приложения логики с помощью Функций Azure и служебной шины Azure
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 10/11/2017
 ## <a name="build-the-function"></a>Создание функции
 Далее следует создать функцию, которая выступает в качестве триггера и ожидает передачи данных из очереди.
 
-1. На [портале функций Azure](https://functions.azure.com/signin) выберите команду **New Function** (Создать функцию), а затем выберите шаблон **ServiceBusQueueTrigger - C#**.
+1. На [портале функций Azure](https://functions.azure.com/) выберите команду **New Function** (Создать функцию), а затем выберите шаблон **ServiceBusQueueTrigger - C#**.
    
     ![портале функций Azure][2]
 2. Настройте подключение к очереди служебной шины, где используется прослушиватель `OnMessageReceive()` из пакета SDK для служебной шины Azure.

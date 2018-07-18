@@ -2,18 +2,19 @@
 title: Создание кластера службы Azure Kubernetes (AKS)
 description: Созадние кластера AKS с помощью интерфейса командной строки или портала Azure.
 services: container-service
-author: neilpeterson
-manager: timlt
+author: iainfoulds
+manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 02/12/2018
-ms.author: nepeters
+ms.date: 06/26/2018
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 46c2f718911f27ad8f51423589c6fdda100a68d2
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 304f3807a70179e4aab2ede80dc08a1aa85a2e51
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098912"
 ---
 # <a name="create-an-azure-kubernetes-service-aks-cluster"></a>Создание кластера службы Azure Kubernetes (AKS)
 
@@ -27,28 +28,45 @@ ms.lasthandoff: 05/07/2018
 az aks create --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Для команды `az aks create` доступны следующие параметры.
+Для команды `az aks create` доступны следующие параметры. Дополнительные сведения о каждом из этих аргументов см. в [справочнике по Azure CLI][az-aks-create] для AKS.
 
 | Аргумент | ОПИСАНИЕ | Обязательно |
 |---|---|:---:|
 | `--name` `-n` | Имя ресурса для управляемого кластера. | Да |
 | `--resource-group` `-g` | Имя группы ресурсов Службы Azure Kubernetes. | Да |
 | `--admin-username` `-u` | Имя пользователя для службы "Виртуальные машины Linux".  По умолчанию: azureuser. | Нет |
+| `--aad-client-app-id` | (Предварительная версия) Идентификатор клиентского приложения Azure Active Directory типа "Машинный код". | Нет |
+| `--aad-server-app-id` | (Предварительная версия) Идентификатор серверного приложения Azure Active Directory типа "Веб-приложение или API". | Нет |
+| `--aad-server-app-secret` | (Предварительная версия) Секрет серверного приложения Azure Active Directory. | Нет |
+| `--aad-tenant-id` | (Предварительная версия) Идентификатор клиента Azure Active Directory. | Нет |
+| `--admin-username` `-u` | Учетная запись пользователя для создания на узле виртуальных машин для доступа по протоколу SSH.  По умолчанию: azureuser. | Нет |
 | ` --client-secret` | Секрет, связанный с субъектом-службой. | Нет |
 | `--dns-name-prefix` `-p` | Префикс DNS для общедоступного IP-адреса кластера. | Нет |
+| `--dns-service-ip` | IP-адрес, назначенный службе DNS Kubernetes. | Нет |
+| `--docker-bridge-address` | IP-адрес и маска сети, назначенные мосту Docker. | Нет |
+| `--enable-addons` `-a` | Включение надстроек Kubernetes в виде списка с разделителями-запятыми. | Нет |
+| `--enable-rbac` `-r` | Включение управления доступом на основе ролей Kubernetes. | Нет |
 | `--generate-ssh-keys` | Создание файлов открытого и закрытого ключей SSH, если они отсутствуют. | Нет |
-| `--kubernetes-version` `-k` | Версия Kubernetes, используемая для создания кластера, например 1.7.9 или 1.8.2.  По умолчанию: 1.7.7. | Нет |
+| `--kubernetes-version` `-k` | Версия Kubernetes, используемая для создания кластера, например 1.7.9 или 1.9.6. | Нет |
+| `--locaton` `-l` | Расположение автоматически созданной группы ресурсов. | Нет |
+| `--max-pods` `-m` | Максимальное число контейнеров pod, развертываемых на узле. | Нет |
+| `--network-plugin` | Используемый подключаемый модуль сети Kubernetes. | Нет |
+| `--no-ssh-key` `-x` | Запрет использования или создания локального ключа SSH. | Нет |
 | `--no-wait` | Не ожидать завершения длительной операции. | Нет |
 | `--node-count` `-c` | Количество узлов по умолчанию в пулах узлов.  По умолчанию: 3. | Нет |
 | `--node-osdisk-size` | Размер диска ОС (в ГБ) виртуальной машины пула узлов. | Нет |
 | `--node-vm-size` `-s` | Размер виртуальной машины.  По умолчанию: Standard_D1_v2. | Нет |
+| `--pod-cidr` | Диапазон IP-адресов нотации CIDR, из которого назначаются IP-адреса pod при использовании kubenet. | Нет |
+| `--service-cidr` | Диапазон IP-адресов нотации CIDR, из которого назначаются IP-адреса кластера службы. | Нет |
 | `--service-principal` | Субъект-служба, используемый для аутентификации кластера. | Нет |
 | `--ssh-key-value` | Значение файла ключа SSH или путь к файлу ключа.  По умолчанию: ~ /.ssh/id_rsa.pub. | Нет |
 | `--tags` | Разделенные пробелами теги в формате "key[=value]". Используйте '' для очистки существующих тегов. | Нет |
+| `--vnet-subnet-id` | Идентификатор подсети в существующей виртуальной сети, где требуется развернуть кластер. | Нет |
+| `--workspace-resource-id` | Идентификатор ресурса существующей рабочей области Log Analytics, используемый для хранения данных мониторинга. | Нет |
 
 ## <a name="azure-portal"></a>Портал Azure
 
-См. дополнительные сведения о [развертывании кластера Службе Azure Kubernetes (AKS) с помощью портала Azure].
+См. дополнительные сведения о [развертывании кластера Службе Azure Kubernetes (AKS) с помощью портала Azure][aks-portal-quickstart].
 
 <!-- LINKS - internal -->
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az_aks_create

@@ -12,11 +12,12 @@ ms.service: microsoft-genomics
 ms.workload: genomics
 ms.topic: article
 ms.date: 04/13/2018
-ms.openlocfilehash: 18761c02cc423affe7b1050700e560b1f0b0594d
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: d3991bdbcd9c3dcd08572dc92cc75aaebb02b133
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/04/2018
+ms.locfileid: "34627370"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 В этом обзоре описываются стратегии для решения распространенных проблем при использовании службы Microsoft Genomics. Ответы на общие часто задаваемые вопросы о Microsoft Genomics см. в [этой статье](frequently-asked-questions-genomics.md). 
@@ -72,9 +73,7 @@ msgen status -u URL -k KEY -w ID [-f CONFIG]
 * `Error locating input files on worker machine`
 * `Process management failure`
 
-Попробуйте повторно отправить рабочий процесс. Если у вас по-прежнему возникают проблемы с заданием или у вас есть другие вопросы, обратитесь в службу поддержки Microsoft Genomics с портала Azure.
-
-![Обращение в службу поддержки на портале Azure](./media/troubleshooting-guide/genomics-contact-support.png "Обращение в службу поддержки на портале Azure")
+Попробуйте повторно отправить рабочий процесс. Если у вас по-прежнему возникают проблемы с заданием или у вас есть другие вопросы, обратитесь в службу поддержки Microsoft Genomics с портала Azure. Дополнительные сведения о том, как отправить запрос в службу поддержки, см. [здесь](file-support-ticket-genomics.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнали, как устранять распространенные проблемы с помощью службы Microsoft Genomics. Дополнительные сведения и ответы на общие вопросы см. в статье [Microsoft Genomics: часто задаваемые вопросы](frequently-asked-questions-genomics.md). 

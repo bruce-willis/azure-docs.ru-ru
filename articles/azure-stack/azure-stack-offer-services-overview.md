@@ -12,14 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/05/2018
+ms.date: 06/07/2018
 ms.author: brenduns
 ms.reviewer: ''
-ms.openlocfilehash: 5b117a9b174f5d2419ff596cc90436e4b9d21645
-ms.sourcegitcommit: 168426c3545eae6287febecc8804b1035171c048
+ms.openlocfilehash: 042e65cfe350cb61124ed8920ae3616502e6553d
+ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35248849"
 ---
 # <a name="overview-of-offering-services-in-azure-stack"></a>Общие сведения о предложении служб в Azure Stack
 
@@ -27,7 +28,7 @@ ms.lasthandoff: 03/08/2018
 
 [Microsoft Azure Stack](azure-stack-poc.md) ― это гибридная облачная платформа, позволяющая доставлять службы из центра обработки данных. Как поставщик услуг вы можете предлагать службы своим клиентам. В коммерческой компании или государственном учреждении можно предоставлять локальные службы сотрудникам. К службам, которые можно доставлять, помимо прочего, относятся следующие:
 
-- службы PaaS (платформа как услуга), например службы приложений, приложения API, функции API, SQL, MySQL.
+- службы PaaS (платформа как услуга), например службы приложений, приложения API, функции API, SQL и MySQL.
 
 Можно даже комбинировать службы для интеграции и создания сложных решений для различных пользователей.
 
@@ -44,5 +45,5 @@ ms.lasthandoff: 03/08/2018
 **Делегируемые поставщики.** Вы можете предоставить другим возможность создавать предложения в вашей среде. Например, если вы поставщик услуг, вы можете [делегировать](azure-stack-delegated-provider.md) эту возможность торговым посредникам. Или, если вы представляете организацию, вы можете делегировать полномочия другим подразделениям и филиалам.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Создание предложения в Azure Stack](azure-stack-create-offer.md)
 
+[Создание предложения в Azure Stack](azure-stack-create-offer.md)

@@ -14,14 +14,20 @@ ms.tgt_pltfrm: na
 ms.workload: Supportability
 ms.date: 10/09/2017
 ms.author: BernardoAMunoz
-ms.openlocfilehash: 3b4d99fe883cf52ca7f1ef98e70b7f3a1bccd5ae
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 35eedb170e1c79f4d282f71608b456a271c4d59b
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37018229"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
+
+## <a name="microsoftanalysisservicesservers"></a>Microsoft.AnalysisServices/servers
+|Выполняемые проверки|
+|---|
+|<ul><li>Сервер запущен и работает?</li><li>На сервере недостаточно памяти?</li><li>Сервер запускается?</li><li>Сервер восстанавливается?</li></ul>|
 
 ## <a name="microsoftapimanagementservice"></a>Microsoft.ApiManagement/service
 |Выполняемые проверки|
@@ -56,13 +62,13 @@ ms.lasthandoff: 04/23/2018
 ## <a name="microsoftdatalakeanalyticsaccounts"></a>Microsoft.datalakeanalytics/accounts
 |Выполняемые проверки|
 |---|
-|<ul><li>Могут ли пользователи отправлять задания в Data Lake Analytics этого региона?</li><li>Успешно ли запускаются и выполняются основные задания в этом регионе?</li><li>Могут ли пользователи перечислять элементы каталога в этом регионе?</li>|
+|<ul><li>У пользователей возникали проблемы с отправкой или размещением заданий Data Lake Analytics?</li><li>Задания Data Lake Analytics не выполняются из-за системных ошибок?</li></ul>|
 
 
 ## <a name="microsoftdatalakestoreaccounts"></a>Microsoft.datalakestore/accounts
 |Выполняемые проверки|
 |---|
-|<ul><li>Могут ли пользователи отправлять данные в Data Lake Store из этого региона?</li><li>Могут ли пользователи скачивать данные из Data Lake Store из этого региона?</li></ul>|
+|<ul><li>У пользователей возникали проблемы с отправкой данных в Data Lake Store?</li><li>У пользователей возникали проблемы с загрузкой данных из Data Lake Store?</li></ul>|
 
 ## <a name="microsoftdevicesiothubs"></a>Microsoft.devices/iothubs
 
@@ -74,6 +80,11 @@ ms.lasthandoff: 04/23/2018
 |Выполняемые проверки|
 |---|
 |<ul><li>Существуют ли запросы к базам данных или коллекциям, которые не были выполнены из-за недоступности службы Azure Cosmos DB?</li><li>Существуют ли запросы к документам, которые не были выполнены из-за недоступности службы Azure Cosmos DB?</li></ul>|
+
+## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
+|Выполняемые проверки|
+|---|
+|<ul><li>Запросы в хранилище ключей завершались сбоем из-за проблем с платформой Azure Key Vault?</li><li>Для запросов в хранилище ключей требовалось регулирование из-за слишком большого количества запросов от клиента?</li></ul>|
 
 ## <a name="microsoftnetworkconnections"></a>Microsoft.network/connections
 |Выполняемые проверки|
@@ -104,6 +115,11 @@ ms.lasthandoff: 04/23/2018
 |Выполняемые проверки|
 |---|
 |<ul><li> Выполнялись ли входы в базу данных?</li></ul>|
+
+## <a name="microsoftstoragestorageaccounts"></a>Microsoft.Storage/storageAccounts
+|Выполняемые проверки|
+|---|
+|<ul><li>Запросы на чтение данных из учетной записи хранения завершались сбоем из-за проблем с платформой Azure Storage?</li><li>Запросы на запись данных в учетную запись хранения завершались сбоем из-за проблем с платформой Azure Storage?</li><li>Кластер хранилищ, в котором размещена учетная запись хранения, недоступен?</li></ul>|
 
 ## <a name="microsoftstreamanalyticsstreamingjobs"></a>Microsoft.StreamAnalytics/streamingjobs
 |Выполняемые проверки|

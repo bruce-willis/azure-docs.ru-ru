@@ -1,11 +1,11 @@
 ---
-title: "Пошаговое руководство по примеру инфраструктуры Azure | Документация Майкрософт"
-description: "Изучите основные рекомендации по проектированию и реализации, касающиеся развертывания примера инфраструктуры в Azure."
-documentationcenter: 
+title: Пошаговое руководство по примеру инфраструктуры Azure | Документация Майкрософт
+description: Изучите основные рекомендации по проектированию и реализации, касающиеся развертывания примера инфраструктуры в Azure.
+documentationcenter: ''
 services: virtual-machines-linux
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
-editor: 
+editor: ''
 tags: azure-resource-manager
 ms.assetid: 281fc2c0-b533-45fa-81a3-728c0049c73d
 ms.service: virtual-machines-linux
@@ -14,13 +14,14 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
-ms.author: iainfou
+ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ae7df08e7502fbfd500944f89a3fa6ee4806522a
-ms.sourcegitcommit: 821b6306aab244d2feacbd722f60d99881e9d2a4
+ms.openlocfilehash: d4b8cd07e50697139f68084f47c847ef8728c429
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2017
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37932153"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-linux-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Linux
 В этой статье рассматривается создание примера инфраструктуры приложений. Мы подробно рассмотрим проектирование инфраструктуры для простого интернет-магазина, учтя все рекомендации и решения по соглашениям об именовании, группам доступности, виртуальным сетям и балансировщикам нагрузки, и фактически развернем виртуальные машины.
@@ -53,14 +54,14 @@ Adventure Works Cycles хочет создать приложение интер
 
 * В Adventure Works Cycles используется префикс **[рабочая нагрузка ИТ-среды]-[расположение]-[ресурс Azure]** .
   * Например, **azos** (интернет-магазин Azure) — это имя рабочей нагрузки ИТ-среды, а **use** (восточная часть США 2) — это расположение.
-* Для виртуальных сетей используется формат AZOS-USE-VN**[номер]**.
+* Для виртуальных сетей используется формат AZOS-USE-VN **[номер]**.
 * Для групп доступности используется формат azos-use-as-**[роль]**.
 * Для имен виртуальных машин используется формат use azos-use-vm-**[имя_виртуальной_машины]**.
 
 ## <a name="azure-subscriptions-and-accounts"></a>Подписки и учетные записи Azure
 Компания Adventure Works Cycles использует подписку Enterprise Subscription под названием "Adventure Works Enterprise Subscription" для выставления счетов за эту рабочую нагрузку ИТ-среды.
 
-## <a name="storage"></a>Хранилище
+## <a name="storage"></a>Служба хранилища
 В компании Adventure Works Cycles решили использовать Управляемые диски Azure. При создании виртуальных машин используются хранилища обоих уровней:
 
 * **хранилище уровня "Стандартный"** для веб-серверов, серверов приложений, контроллеров домена и их дисков данных;

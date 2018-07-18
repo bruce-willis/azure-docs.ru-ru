@@ -2,18 +2,19 @@
 title: Управлением кластером Azure Kubernetes с помощью пользовательского веб-интерфейса
 description: Использование панели мониторинга Kubernetes в AKS
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 02/24/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: cdb406c5a0a314562ae886c797c5ebd9dc5f8796
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: b56751750d5c0731a79b3229106a6bc2a5eccac9
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37100431"
 ---
 # <a name="kubernetes-dashboard-with-azure-kubernetes-service-aks"></a>Панель мониторинга Kubernetes со службой Azure Kubernetes
 
@@ -37,7 +38,7 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 ## <a name="run-an-application"></a>Запуск приложения
 
-В правом верхнем углу панели мониторинга Kubernetes нажмите кнопку **Создать**. Присвойте развертыванию имя `nginx` и введите `nginx:latest` в качестве имени образа. В разделе **Служба** выберите **External** (Внешний) и введите `80` для порта и целевого порта.
+В правом верхнем углу панели мониторинга Kubernetes нажмите кнопку **Создать**. Присвойте развертыванию имя `nginx` и введите `nginx:latest` в качестве имени образа контейнера. В разделе **Служба** выберите **External** (Внешний) и введите `80` для порта и целевого порта.
 
 Когда все будет готово, щелкните **Развернуть** для создания развертывания.
 

@@ -1,5 +1,5 @@
 
-## <a name="analytics"></a>Аналитика
+## <a name="analytics"></a>Analytics
 * [Обзор](../articles/application-insights/app-insights-analytics.md)
 * [Знакомство с аналитикой](../articles/application-insights/app-insights-analytics-tour.md)
   * Начните отсюда. Этот учебник охватывает основные функции.

@@ -1,13 +1,14 @@
 ---
-title: "Использование Microsoft Graph для защиты идентификации Azure Active Directory | Документация Майкрософт"
-description: "Узнайте, как выполнять запросы к Microsoft Graph для получения списка событий риска и связанных сведений из Azure Active Directory."
+title: Использование Microsoft Graph для защиты идентификации Azure Active Directory | Документация Майкрософт
+description: Узнайте, как выполнять запросы к Microsoft Graph для получения списка событий риска и связанных сведений из Azure Active Directory.
 services: active-directory
-keywords: "защита идентификации azure active directory, события риска, уязвимость, политика безопасности, Microsoft Graph"
-documentationcenter: 
+keywords: защита идентификации azure active directory, события риска, уязвимость, политика безопасности, Microsoft Graph
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
 ms.assetid: fa109ba7-a914-437b-821d-2bd98e681386
 ms.service: active-directory
+ms.component: protection
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -16,11 +17,12 @@ ms.date: 12/08/2017
 ms.author: markvi
 ms.reviewer: nigu
 ms.custom: seohack1
-ms.openlocfilehash: df0d89fc93f1b9c19d669c29306398a8b25ee425
-ms.sourcegitcommit: f1c1789f2f2502d683afaf5a2f46cc548c0dea50
+ms.openlocfilehash: c6c59285fbb2c81e5e20d28171abfe806bd51122
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34713207"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
 Microsoft Graph — это конечная точка Unified API (Майкрософт) и источник интерфейсов API [защиты идентификации Azure Active Directory](active-directory-identityprotection.md). Первый API, **identityRiskEvents**, позволяет запрашивать у Microsoft Graph список [событий риска](active-directory-identityprotection-risk-events-types.md) и связанные с ними сведения. В статье описывается, как выполнять запросы к этому API. Дополнительные сведения, полную документацию и доступ к Graph Explorer можно получить на [сайте Microsoft Graph](https://graph.microsoft.io/).
@@ -145,7 +147,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 ## <a name="authenticate-to-microsoft-graph-and-query-the-identity-risk-events-api"></a>Проверка подлинности в Microsoft Graph и выполнение запросов с помощью API рисковых событий идентификации
 На этом этапе вам понадобятся:
 
-- имя домена клиента;
+- имя домена клиента.
 
 - идентификатор клиента; 
 

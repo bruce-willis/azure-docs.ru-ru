@@ -11,14 +11,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/27/2018
+ms.date: 06/21/2018
 ms.author: mabrigg
-ms.openlocfilehash: de5712fd7b48a759b366f5b9808bbbefc6e305cd
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.reviewer: thoroet
+ms.openlocfilehash: 3c9f114c2844021d515765888aa19f18a0adc10b
+ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34010500"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36322641"
 ---
 # <a name="give-applications-access-to-azure-stack-resources-by-creating-service-principals"></a>Предоставление приложениям доступа к ресурсам Azure Stack за счет создания субъектов-служб
 
@@ -62,7 +63,7 @@ ms.locfileid: "34010500"
 
 Чтобы создать субъект-службу для приложения, выполните следующие действия:
 
-1. Войдите в учетную запись Azure на [портале Azure](https://portal.azure.com).
+1. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).
 2. Выберите **Azure Active Directory** > **Регистрация приложений** > **Добавить**.
 3. Укажите имя и URL-адрес для приложения. Выберите тип создаваемого приложения: **веб-приложение или API** или **собственное приложение**. Выбрав нужные значения, нажмите кнопку **Создать**.
 
@@ -94,54 +95,7 @@ ms.locfileid: "34010500"
 * Назначение роли для субъекта-службы.
 * Вход с помощью удостоверения субъекта-службы.
 
-### <a name="before-you-begin"></a>Перед началом работы
-
-[Скачайте на локальный компьютер необходимые инструменты Azure Stack.](azure-stack-powershell-download.md)
-
-### <a name="import-the-identity-powershell-module"></a>Импорт модуля Identity PowerShell
-
-Перейдите в папку скачивания инструментов Azure Stack и импортируйте модуль PowerShell Identity, выполнив следующую команду:
-
-```PowerShell
-Import-Module .\Identity\AzureStack.Identity.psm1
-```
-
-При импорте модуля Identity может появиться сообщение об ошибке "AzureStack.Connect.psm1 не имеет цифровой подписи. Скрипт не будет выполнен в системе".
-
-Чтобы устранить эту проблему, необходимо настроить политику выполнения, разрешив запуск сценария. Чтобы настроить политику выполнения, выполните следующую команду в сеансе PowerShell с повышенными привилегиями:
-
-```PowerShell
-Set-ExecutionPolicy Unrestricted
-```
-
-### <a name="create-the-service-principal"></a>Создание субъекта-службы
-
-Чтобы создать субъект-службу, выполните следующую команду, указав требуемое значение параметра **DisplayName**:
-
-```powershell
-$servicePrincipal = New-AzSADGraphServicePrincipal `
- -DisplayName "<YourServicePrincipalName>" `
- -AdminCredential $(Get-Credential) `
- -AdfsMachineName "AZS-ADFS01" `
- -Verbose
-
-```
-
-### <a name="assign-a-role"></a>Назначение роли
-
-Созданному субъекту-службе необходимо [назначить роль](azure-stack-create-service-principals.md#assign-role-to-service-principal).
-
-### <a name="sign-in-using-powershell"></a>Вход с помощью PowerShell
-
-Вы сможете войти в Azure Stack, выполнив следующую команду и указав имя приложения в качестве значения параметра **EnvironmentName**:
-
-```powershell
-Add-AzureRmAccount -EnvironmentName "<AzureStackEnvironmentName>" `
- -ServicePrincipal `
- -CertificateThumbprint $servicePrincipal.Thumbprint `
- -ApplicationId $servicePrincipal.ApplicationId `
- -TenantId $directoryTenantId
-```
+Дополнительные сведения о создании субъекта-службы см. в разделе [Создание субъекта-службы для AD FS](../azure-stack-create-service-principals.md#create-service-principal-for-ad-fs).
 
 ## <a name="assign-the-service-principal-to-a-role"></a>Назначение роли для субъекта-службы
 

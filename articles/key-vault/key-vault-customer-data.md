@@ -11,20 +11,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 05/15/2018
+ms.date: 05/22/2018
 ms.author: barclayn
-ms.openlocfilehash: 12a176a6eba3b6dd83ef7fb97f89ecfe99083059
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 1ddc74b1960095509a77d4b3072017847df42d90
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34213323"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38235539"
 ---
 # <a name="azure-key-vault-customer-data-features"></a>Функции данных клиентов в Azure Key Vault
 
 Azure Key Vault получает данные о клиентах во время создания или обновления хранилищ, ключей, секретов, сертификатов и управляемых учетных записей. Эти данные клиентов доступны непосредственно на портале Azure и через REST API. Данные клиентов могут быть удалены или изменены путем обновления или удаления содержащего их объекта.
 
 Журналы системного доступа генерируются, когда пользователь или приложение обращаются к Key Vault. Подробные журналы доступа доступны для клиентов в Azure Insights.
+
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="identifying-customer-data"></a>Идентификация данных клиента
 

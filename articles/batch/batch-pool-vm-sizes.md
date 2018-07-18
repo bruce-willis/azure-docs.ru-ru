@@ -1,24 +1,25 @@
 ---
-title: "Выбор размеров виртуальной машины в пулах пакетной службы Azure | Документация Майкрософт"
-description: "Выбор доступных размеров виртуальной машины для вычислительных узлов в пулах пакетной службы Azure"
+title: Выбор размеров виртуальной машины в пулах пакетной службы Azure | Документация Майкрософт
+description: Выбор доступных размеров виртуальной машины для вычислительных узлов в пулах пакетной службы Azure
 services: batch
-documentationcenter: 
+documentationcenter: ''
 author: dlepow
 manager: jeconnoc
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: batch
-ms.workload: 
+ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/01/2018
+ms.date: 06/27/2018
 ms.author: danlep
-ms.openlocfilehash: addd1e9314a754b40cc5d49c0299f007580f512f
-ms.sourcegitcommit: 0b02e180f02ca3acbfb2f91ca3e36989df0f2d9c
+ms.openlocfilehash: 8f428df07de029bc79f26d5941d22e7472addb95
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37916002"
 ---
 # <a name="choose-a-vm-size-for-compute-nodes-in-an-azure-batch-pool"></a>Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure
 
@@ -40,9 +41,8 @@ ms.lasthandoff: 03/05/2018
 | Серия Basic A | Basic_A0 (A0) |
 | Серия A | Standard_A0 |
 | Серия B | Все |
-| Серия FSv2<sup>*</sup> | Все |
 
-<sup>*</sup>В следующих выпусках планируется поддержка размеров этих серий.
+
 
 ### <a name="pools-in-cloud-service-configuration"></a>Пулы в конфигурации облачной службы
 

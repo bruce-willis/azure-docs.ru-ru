@@ -5,62 +5,38 @@
 - name: Обзор
   items:
     - name: Сведения об Azure IoT Edge
-      href: how-iot-edge-works.md
+      href: about-iot-edge.md
 - name: Быстрое начало работы
   expanded: true
   items:
-    - name: Развертывание в пограничной зоне — Linux/Mac
+    - name: Развертывание кода на устройстве с Linux
       href: quickstart-linux.md
-    - name: Развертывание в пограничной зоне — Windows
+    - name: Развертывание кода на устройстве с Windows
       href: quickstart.md
 - name: Учебники
   items:
-    - name: Имитация пограничного устройства — Linux/Mac
-      href: tutorial-simulate-device-linux.md
-    - name: Имитация пограничного устройства — Windows
-      href: tutorial-simulate-device-windows.md
-    - name: Развертывание кода в модуле
+    - name: Поиск аналитических сведений в пограничной системе
       items:
-        - name: 'C#'
-          href: tutorial-csharp-module.md
-        - name: Python
-          href: tutorial-python-module.md
-    - name: Развертывание Azure Stream Analytics
-      href: tutorial-deploy-stream-analytics.md
-    - name: Развертывание службы "Машинное обучение Azure"
-      href: tutorial-deploy-machine-learning.md
-    - name: Развертывание решения "Функции Azure"
-      href: tutorial-deploy-function.md
-- name: Практические руководства
-  items:
-    - name: Создание шлюзов
-      items:
-        - name: Создание прозрачного шлюза
-          href: how-to-create-transparent-gateway.md
-        - name: Шлюз Modbus
-          href: deploy-modbus-gateway.md
-    - name: Использование расширения Интернета вещей для Azure CLI 2.0
-      href: tutorial-create-deployment-with-cli-iot-extension.md
-    - name: Развертывание и мониторинг в нужном масштабе
-      href: how-to-deploy-monitor.md
-    - name: Подготовка устройства с ОС "Windows 10 IoT Базовая"
-      href: how-to-install-iot-core.md
-    - name: Разработка решений IoT Edge с помощью VS Code
-      items:
-        - name: Использование нескольких облаков
-          href: tutorial-multiple-modules-in-vscode.md
-        - name: 'Отладка модуля C#'
-          href: how-to-vscode-debug-csharp-module.md
-        - name: Отладка решения "Функции Azure"
-          href: how-to-vscode-debug-azure-function.md
-    - name: Непрерывная интеграция и непрерывная поставка в VSTS
-      href: how-to-ci-cd.md
-    - name: Хранение данных в граничной системе
-      href: sql-storage.md
-    - name: Устранение неполадок
-      href: troubleshoot.md
+        - name: Фильтрация данных с помощью службы "Функции Azure"
+          href: tutorial-deploy-function.md
+        - name: Определение средних значений с помощью ASA
+          href: tutorial-deploy-stream-analytics.md
+        - name: Оценка данных с помощью службы "Машинное обучение Azure"
+          href: tutorial-deploy-machine-learning.md
+        - name: Фильтрация данных с помощью пользовательского кода
+          items:
+            - name: 'C#'
+              href: tutorial-csharp-module.md
+            - name: Python
+              href: tutorial-python-module.md
+            - name: Node.js
+              href: tutorial-node-module.md
+    - name: Локальное хранение данных с помощью SQL
+      href: tutorial-store-data-sql-server.md
 - name: Основные понятия
   items:
+    - name: Среда выполнения IoT Edge
+      href: iot-edge-runtime.md
     - name: Модули Edge Интернета вещей
       href: iot-edge-modules.md
       items:
@@ -70,16 +46,82 @@
           href: module-composition.md
         - name: Свойства агента и концентратора Edge
           href: module-edgeagent-edgehub.md
-    - name: Среда выполнения IoT Edge
-      href: iot-edge-runtime.md
     - name: Развернутые приложения
       href: module-deployment-monitoring.md
     - name: Устройство IoT Edge в качестве шлюза
       href: iot-edge-as-gateway.md
     - name: Безопасность
       href: security.md
+    - name: Поддержка платформ
+      href: support.md
     - name: Глоссарий IoT Edge
       href: iot-edge-glossary.md
+- name: Практические руководства
+  items:
+    - name: Регистрация устройства Edge
+      items:
+        - name: Портал Azure
+          href: how-to-register-device-portal.md
+        - name: Инфраструктура CLI Azure
+          href: how-to-register-device-cli.md
+        - name: Visual Studio Code.
+          href: how-to-register-device-vscode.md
+    - name: Установка среды выполнения IoT Edge
+      items:
+        - name: Linux X64
+          href: how-to-install-iot-edge-linux.md
+        - name: Linux ARM32
+          href: how-to-install-iot-edge-linux-arm.md
+        - name: Использование контейнеров Windows в Windows
+          href: how-to-install-iot-edge-windows-with-windows.md
+        - name: Использование контейнеров Linux в Windows
+          href: how-to-install-iot-edge-windows-with-linux.md
+        - name: IoT Core
+          href: how-to-install-iot-core.md
+    - name: Автоматическая подготовка с помощью DPS
+      items:
+        - name: Linux
+          href: how-to-auto-provision-simulated-device-linux.md
+        - name: Windows
+          href: how-to-auto-provision-simulated-device-windows.md
+    - name: Разработка и отладка модулей
+      items:
+        - name: 'C#'
+          href: how-to-develop-csharp-module.md
+        - name: Node.js
+          href: how-to-develop-node-module.md
+        - name: Функции Azure
+          href: how-to-develop-csharp-function.md
+        - name: Разработка нескольких модулей
+          href: how-to-develop-multiple-modules-vscode.md
+        - name: Отладка нескольких модулей
+          href: how-to-debug-multiple-modules-vscode.md
+    - name: Развертывание модулей
+      items:
+        - name: Портал Azure
+          href: how-to-deploy-modules-portal.md
+        - name: Инфраструктура CLI Azure
+          href: how-to-deploy-modules-cli.md
+        - name: Visual Studio Code.
+          href: how-to-deploy-modules-vscode.md
+    - name: Развертывание и мониторинг в нужном масштабе
+      items:
+        - name: Портал Azure
+          href: how-to-deploy-monitor.md
+        - name: Инфраструктура CLI Azure
+          href: how-to-deploy-monitor-cli.md
+    - name: Использование устройств Edge в качестве шлюзов
+      items:
+        - name: Прозрачный шлюз (Linux)
+          href: how-to-create-transparent-gateway-linux.md
+        - name: Прозрачный шлюз (Windows)
+          href: how-to-create-transparent-gateway-windows.md
+        - name: Шлюз протокола Modbus
+          href: deploy-modbus-gateway.md
+    - name: Непрерывная интеграция и непрерывная поставка в VSTS
+      href: how-to-ci-cd.md
+    - name: Устранение неполадок
+      href: troubleshoot.md
 - name: Сопутствующие материалы
   items:
     - name: Решения
@@ -108,12 +150,26 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
+    - name: 'Примеры Azure IoT для C# (.NET)'
+      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/'
+    - name: Примеры Azure IoT для Node.js
+      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-node/'
+    - name: Примеры Azure IoT для Java
+      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-java/'
+    - name: Примеры Azure IoT для Python
+      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-python/'
+    - name: Примеры Azure IoT для платформы iOS
+      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
       href: 'https://catalog.azureiotsuite.com/'
     - name: Центр разработчика IoT Azure
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+    - name: Azure IoT Edge для VS Code
+      href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge'
+    - name: Набор средств Интернета вещей Azure для VS Code
+      href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit'
     - name: Средство DeviceExplorer
       href: 'https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer'
     - name: Средство iothub-diagnostics

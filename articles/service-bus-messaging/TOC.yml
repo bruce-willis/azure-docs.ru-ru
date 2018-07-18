@@ -6,6 +6,7 @@
       href: service-bus-messaging-overview.md
     - name: Сравнение служб обмена сообщениями
       href: ../event-grid/compare-messaging-services.md
+      maintainContext: true
 - name: Быстрое начало работы
   items:
     - name: Отправка сообщений с помощью PowerShell
@@ -125,6 +126,10 @@
               href: service-bus-amqp-request-response.md
         - name: Дополнительные функции
           items:
+            - name: Фильтрация подключений по протоколу IP
+              href: service-bus-ip-filtering.md
+            - name: Конечные точки службы виртуальной сети
+              href: service-bus-service-endpoints.md
             - name: Очереди недоставленных сообщений
               href: service-bus-dead-letter-queues.md
             - name: Предварительная выборка сообщений

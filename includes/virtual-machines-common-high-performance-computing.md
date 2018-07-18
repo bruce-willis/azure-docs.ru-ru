@@ -5,15 +5,15 @@ services: virtual-machines-linux, virtual-machines-windows
 author: dlepow
 ms.service: multiple
 ms.topic: include
-ms.date: 05/11/2018
+ms.date: 07/02/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 32a438d393077cfe4cb7f6ee62f3a01edfce0571
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 496c32e70ad58f64b31c1f6fcf913884fcd4abc1
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34152229"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37348241"
 ---
 Организациям требуются крупномасштабные вычисления. Рабочие нагрузки крупномасштабных вычислений включают техническое проектирование и анализ, вычисление финансовых рисков, отрисовку образов, комплексное моделирование, моделирование методом Монте-Карло и другие задачи. 
 
@@ -40,7 +40,7 @@ ms.locfileid: "34152229"
     * Запуск предоставляемых Azure решений для моделирования и проектирования от поставщиков, в том числе [Altair](http://www.altair.com/), [Rescale](https://www.rescale.com/azure/) и [Cycle Computing](https://cyclecomputing.com/) (компания уже [объединена с корпорацией Майкрософт](https://blogs.microsoft.com/blog/2017/08/15/microsoft-acquires-cycle-computing-accelerate-big-computing-cloud/)).
     * Использование [суперкомпьютера Cray](https://www.cray.com/solutions/supercomputing-as-a-service/cray-in-azure) в качестве службы, размещенной в Azure.
 * **Решения Marketplace**
-    * Использование ряда [приложений](#hpc-applications) и [решений для HPC](#marketplace-solutions), предлагаемых в [Azure Marketplace](https://azuremarketplace.microsoft.com/). 
+    * Использование ряда [приложений](#hpc-applications) и [решений для HPC](#marketplace-solutions), предлагаемых в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/). 
     
 
 
@@ -64,7 +64,7 @@ ms.locfileid: "34152229"
  
 ## <a name="hpc-applications"></a>Приложения HPC
 
-Запустите пользовательские или коммерческие приложения HPC в Azure. Некоторые приложения из этого раздела могут эффективно масштабироваться с помощью дополнительных виртуальных машин или вычислительных ядер. Чтобы получить готовые к развертыванию решения, посетите [Azure Marketplace](https://marketplace.azure.com).
+Запустите пользовательские или коммерческие приложения HPC в Azure. Некоторые приложения из этого раздела могут эффективно масштабироваться с помощью дополнительных виртуальных машин или вычислительных ядер. Чтобы получить готовые к развертыванию решения, посетите [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace).
 
 > [!NOTE]
 > Проконсультируйтесь с поставщиками всех коммерческих приложений насчет лицензирования или иных ограничений на запуск приложений в облаке. Не все поставщики предлагают лицензирование с оплатой по мере использования. Для вашего решения может потребоваться сервер лицензий в облаке или локальный сервер лицензий.
@@ -196,6 +196,7 @@ Azure предлагает различные размеры для виртуа
 * [Microsoft Research](https://customers.microsoft.com/doclink/fast-lmm-and-windows-azure-put-genetics-research-on-fa)
 * [Milliman](https://customers.microsoft.com/story/actuarial-firm-works-to-transform-insurance-industry-w)
 * [Mitsubishi UFJ Securities International](https://customers.microsoft.com/story/powering-risk-compute-grids-in-the-cloud)
+* [NeuroInitiative](https://customers.microsoft.com/en-us/story/neuroinitiative-health-provider-azure)
 * [Schlumberger](http://azure.microsoft.com/blog/big-compute-for-large-engineering-simulations)
 * [Towers Watson](https://customers.microsoft.com/story/insurance-tech-provider-delivers-disruptive-solutions)
 

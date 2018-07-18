@@ -1,10 +1,10 @@
 ---
-title: "Включение автономной синхронизации для приложения универсальной платформы Windows (UWP) с помощью мобильных приложений | Документация Майкрософт"
-description: "Узнайте, как использовать мобильное приложение Azure для кэширования и синхронизации автономных данных в приложении универсальной платформы Windows (UWP)."
+title: Включение автономной синхронизации для приложения универсальной платформы Windows (UWP) с помощью мобильных приложений | Документация Майкрософт
+description: Узнайте, как использовать мобильное приложение Azure для кэширования и синхронизации автономных данных в приложении универсальной платформы Windows (UWP).
 documentationcenter: windows
 author: conceptdev
 manager: crdun
-editor: 
+editor: ''
 services: app-service\mobile
 ms.assetid: 8fe51773-90de-4014-8a38-41544446d9b5
 ms.service: app-service-mobile
@@ -14,11 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: a16de4cef82c29f9b6becfae1901662ee1936934
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
+ms.openlocfilehash: 3df6951129f7beda7970e394ffdd32c7e02304dd
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37060313"
 ---
 # <a name="enable-offline-sync-for-your-windows-app"></a>Включение автономной синхронизации для приложения для Windows
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -30,13 +31,13 @@ ms.lasthandoff: 01/04/2018
 
 Дополнительные сведения о функции автономной синхронизации см. в статье [Автономная синхронизация данных в мобильных приложениях Azure].
 
-## <a name="requirements"></a>Требования
+## <a name="requirements"></a>Требования  
 Для работы с этим руководством требуется следующее:
 
 * Visual Studio 2013 в Windows 8.1 или более поздней версии;
 * Выполнение заданий на странице [Создание приложения Windows][Создание приложения Windows].
 * [Хранилище SQLite для мобильных служб Azure][sqlite store nuget]
-* [SQLite для разработки универсальной платформы Windows](http://www.sqlite.org/downloads)
+* [SQLite для разработки универсальной платформы Windows](https://marketplace.visualstudio.com/items?itemName=SQLiteDevelopmentTeam.SQLiteforUniversalWindowsPlatform) 
 
 ## <a name="update-the-client-app-to-support-offline-features"></a>Обновление клиентского приложения для поддержки автономных функций
 Автономные функции мобильных приложений Azure позволяют взаимодействовать с локальной базой данных в случае автономной работы. Чтобы использовать эти функции в приложении, необходимо инициализировать [SyncContext][synccontext] в локальном хранилище. Затем необходимо сослаться на таблицу с помощью интерфейса [IMobileServiceSyncTable][IMobileServiceSyncTable] . SQLite используется как локальное хранилище на устройстве.
@@ -79,9 +80,9 @@ ms.lasthandoff: 01/04/2018
 ## <a name="api-summary"></a>Сводные данные API
 Для поддержки автономных функций мобильных служб мы использовали интерфейс [IMobileServiceSyncTable] и инициализировали [MobileServiceClient.SyncContext][synccontext] с использованием локальной базы данных SQLite. В автономном режиме обычные операции CRUD для мобильных приложений работают так, как если бы приложение по-прежнему было подключено, но операции выполнялись в локальном хранилище. Для синхронизации локального хранилища с сервером используются следующие методы.
 
-* **[PushAsync.]** Так как этот метод является элементом объекта [IMobileServicesSyncContext], изменения во всех таблицах будут отправляться в серверную часть приложения. Только записи с локальными изменениями будут отправляться на сервер.
+* **[PushAsync]** Так как этот метод является элементом объекта [IMobileServicesSyncContext], изменения во всех таблицах будут отправляться в серверную часть приложения. Только записи с локальными изменениями будут отправляться на сервер.
 * **[PullAsync]**. Извлечение запускается из объекта [IMobileServiceSyncTable]. При наличии отслеживаемых изменений в таблице выполняется неявная отправка, чтобы убедиться в том, что все таблицы в локальном хранилище и их взаимосвязи остаются согласованными. Параметр *pushOtherTables* определяет, будет ли выполнена для других таблиц в контексте неявная отправка. Параметр *query* использует [IMobileServiceTableQuery<T>][IMobileServiceTableQuery] или строку запроса OData для фильтрации возвращаемых данных. Параметр *queryId* используется для определения добавочной синхронизации. Дополнительные сведения см. в разделе [Как работает автономная синхронизация](app-service-mobile-offline-data-sync.md#how-sync-works).
-* **[PurgeAsync.]** Приложение должно периодически вызывать этот метод, чтобы удалить устаревшие данные из локального хранилища. Используйте параметр *force* , чтобы удалить все изменения, которые не были синхронизированы.
+* **[PurgeAsync]** Приложение должно периодически вызывать этот метод, чтобы удалить устаревшие данные из локального хранилища. Используйте параметр *force* , чтобы удалить все изменения, которые не были синхронизированы.
 
 Дополнительные сведения об этих понятиях см. в разделе [Как работает автономная синхронизация](app-service-mobile-offline-data-sync.md#how-sync-works).
 
@@ -118,6 +119,6 @@ ms.lasthandoff: 01/04/2018
 [Status]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.sync.mobileservicepushcompletionresult.status(v=azure.10).aspx
 [CancelledByNetworkError]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.sync.mobileservicepushstatus(v=azure.10).aspx
 [PullAsync]: https://msdn.microsoft.com/library/azure/mt667558(v=azure.10).aspx
-[PushAsync.]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileservicesynccontextextensions.pushasync(v=azure.10).aspx
-[PurgeAsync.]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.sync.imobileservicesynctable.purgeasync(v=azure.10).aspx
+[PushAsync]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileservicesynccontextextensions.pushasync(v=azure.10).aspx
+[PurgeAsync]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.sync.imobileservicesynctable.purgeasync(v=azure.10).aspx
 [8]: app-service-mobile-dotnet-how-to-use-client-library.md

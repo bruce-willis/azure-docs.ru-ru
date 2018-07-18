@@ -5,7 +5,7 @@
 
 Ниже показано, как настроить проверку пароля для приложения AD с помощью PowerShell. Эти команды можно выполнять в обычном сеансе PowerShell.
 
-1. Выполните следующую команду для входа в подписку Azure:
+1. Выполните следующую команду для входа в подписку Azure.
 
     ```powershell
     Connect-AzureRmAccount
@@ -33,7 +33,8 @@
    * **{Password}:** пароль, который используется для проверки подлинности в вашем приложении.
      
      ```powershell
-     New-AzureRmADApplication -DisplayName {Display name} -HomePage {Home page URL} -IdentifierUris {Application identifier} -Password {Password}
+     $SecurePassword=ConvertTo-SecureString {password} –asplaintext –force
+     New-AzureRmADApplication -DisplayName {Display name} -HomePage {Home page URL} -IdentifierUris {Application identifier} -Password $SecurePassword
      ```
 4. Запишите значение **ApplicationId** для созданного приложения. Этот идентификатор потребуется позднее.
 5. Создайте новую субъект-службу с помощью следующей команды, заменив **{MyApplicationId}** на значением **ApplicationId** из предыдущего шага.

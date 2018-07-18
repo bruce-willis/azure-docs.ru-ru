@@ -5,21 +5,23 @@ services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 04/05/2018
+ms.date: 07/05/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: a16a9bdb866803a65bf7204628b735bd9ac60aee
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 4fef565dbd78cf3559cd47ed6c59800c8e6f9c9d
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302565"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37869149"
 ---
 # <a name="create-and-route-custom-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"
 
 "Сетка событий Azure" — это служба обработки событий для облака. В этой статье используется портал Azure, чтобы создать пользовательскую тему, подписаться на тему и активировать событие, чтобы увидеть результат. Вы отправите событие функции Azure, которая регистрирует данные событий. По завершении можно увидеть, что данные событий были отправлены в конечную точку и зарегистрированы.
 
 [!INCLUDE [quickstarts-free-trial-note.md](../../includes/quickstarts-free-trial-note.md)]
+
+[!INCLUDE [event-grid-register-provider-portal.md](../../includes/event-grid-register-provider-portal.md)]
 
 ## <a name="create-a-custom-topic"></a>Создание пользовательской темы
 
@@ -71,7 +73,7 @@ ms.locfileid: "34302565"
 
    ![Создание функции](./media/custom-event-quickstart-portal/create-function.png)
 
-1. Укажите уникальное имя функции Azure. Не используйте имя, указанное на изображении. Выберите группу ресурсов, созданную в этой статье. Для плана размещения используйте **План потребления**. Используйте предложенную новую учетную запись хранения. После предоставления значений нажмите кнопку **Создать**.
+1. Укажите уникальное имя функции Azure. Не используйте имя, указанное на изображении. Выберите группу ресурсов, созданную в этой статье. Для плана размещения используйте **План потребления**. Используйте предложенную новую учетную запись хранения. Application Insights можно отключить. После предоставления значений нажмите кнопку **Создать**.
 
    ![Указание значений функции](./media/custom-event-quickstart-portal/provide-function-values.png)
 

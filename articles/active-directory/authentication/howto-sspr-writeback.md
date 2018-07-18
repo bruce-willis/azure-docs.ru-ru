@@ -10,15 +10,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 1c44b2738fb21450c5a37f715c995a3e7aecc4a6
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 164760355077e2b905aa0e0f03e1efaf28941e55
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36296891"
 ---
 # <a name="password-writeback-overview"></a>Обзор обратной записи паролей
 
-Компонент обратной записи паролей позволяет настроить в Azure Active Directory (Azure AD) запись паролей в локальный каталог Active Directory. Это устраняет необходимость в настройке и управлении комплексным локальным решением для самостоятельного сброса пароля (SSPR), а также предоставляет пользователям удобный облачный способ сброса локальных паролей из любого расположения. Компонент обратной записи паролей  — это компонент [Azure Active Directory Connect](./../connect/active-directory-aadconnect.md), который могут включить и использовать текущие подписчики [Azure Active Directory](../active-directory-whatis.md) Premium.
+Компонент обратной записи паролей позволяет настроить в Azure Active Directory (Azure AD) запись паролей в локальный каталог Active Directory. Это устраняет необходимость в настройке и управлении комплексным локальным решением для самостоятельного сброса пароля (SSPR), а также предоставляет пользователям удобный облачный способ сброса локальных паролей из любого расположения. Компонент обратной записи паролей  — это компонент [Azure Active Directory Connect](./../connect/active-directory-aadconnect.md), который могут включить и использовать текущие подписчики [Azure Active Directory](../fundamentals/active-directory-whatis.md) Premium.
 
 Компонент обратной записи паролей предоставляет следующие возможности:
 
@@ -128,7 +129,7 @@ ms.lasthandoff: 05/08/2018
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
-Сведения о лицензировании см. в разделе [Лицензии, необходимые для компонента обратной записи паролей](concept-sspr-licensing.md#licenses-required-for-password-writeback) или на следующих сайтах:
+Сведения о лицензировании см. в разделе [Лицензии, необходимые для компонента обратной записи паролей](concept-sspr-licensing.md) или на следующих сайтах:
 
 * [Сайт с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 * [Enterprise Mobility + Security](https://www.microsoft.com/cloud-platform/enterprise-mobility-security).

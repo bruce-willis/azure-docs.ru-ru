@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 66423fecce92cd933cc8680810aa2abe5e25a90d
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: b87838a80c7c7706b9af2bd4ea274335d04a5c52
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36751519"
 ---
 # <a name="back-up-your-app-in-azure"></a>Архивация приложения в Azure
 Функция архивации и восстановления в [службе приложений Azure](app-service-web-overview.md) позволяет легко создавать резервные копии приложений вручную или по расписанию. Вы можете восстановить приложение до моментального снимка предыдущего состояния, перезаписав существующее приложение или восстановив другое. 
@@ -37,7 +38,7 @@ ms.lasthandoff: 04/28/2018
 Функция архивации поддерживается для следующих решений базы данных: 
    - [База данных SQL](https://azure.microsoft.com/services/sql-database/)
    - [база данных Azure для MySQL (предварительная версия)](https://azure.microsoft.com/services/mysql);
-   - [база данных Azure для PostgreSQL (предварительная версия)](https://azure.microsoft.com/services/postgres);
+   - [база данных Azure для PostgreSQL (предварительная версия)](https://azure.microsoft.com/services/postgresql);
    - [MySQL в приложении](https://blogs.msdn.microsoft.com/appserviceteam/2017/03/06/announcing-general-availability-for-mysql-in-app).
  
 

@@ -6,20 +6,20 @@ documentationcenter: cosmosdb
 author: SnehaGunda
 manager: kfile
 tags: azure-service-management
-ms.assetid: ''
 ms.service: cosmos-db
 ms.custom: mvc
 ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: cosmosdb
 ms.workload: database
-ms.date: 06/02/2017
+ms.date: 05/23/2018
 ms.author: sngun
-ms.openlocfilehash: e3df30250642617927cb2c98830a8420cb07bc20
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: c29428d95a825f71a494fa70746ce742248764d7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38310057"
 ---
 # <a name="scale-azure-cosmos-db-container-throughput-using-the-azure-cli"></a>Масштабирование пропускной способности контейнера базы данных Azure Cosmos DB с помощью Azure CLI
 
@@ -32,6 +32,24 @@ ms.lasthandoff: 04/06/2018
 ## <a name="sample-script"></a>Пример скрипта
 
 [!code-azurecli-interactive[main](../../../cli_scripts/cosmosdb/scale-cosmosdb-throughput/scale-cosmosdb-throughput.sh?highlight=40-46 "Scale Azure Cosmos DB throughput")]
+
+Приведенный выше скрипт позволяет создать и масштабировать коллекцию фиксированного размера. Если вы хотите создать и масштабировать коллекцию с неограниченной емкостью хранилища, сделайте следующее: 
+ 
+* создайте коллекцию, в которой используется не менее 1000 ЕЗ в секунду; 
+* при создании такой коллекции укажите ключ секции. 
+
+Следующая команда является примером создания коллекции с неограниченной емкостью хранилища:
+
+```cli
+az cosmosdb collection create \
+    --collection-name $collectionName \
+    --name $name \
+    --db-name $databaseName \
+    --resource-group $resourceGroupName \
+    --throughput 1000
+    --partition-key-path /deviceId
+
+```
 
 ## <a name="clean-up-deployment"></a>Очистка развертывания
 

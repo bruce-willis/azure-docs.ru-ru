@@ -5,53 +5,88 @@ services: azure-stack
 documentationcenter: ''
 author: mattbriggs
 manager: femila
-ms.assetid: 2022dbe5-47fd-457d-9af3-6c01688171d7
+editor: ''
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 06/08/2018
 ms.author: mabrigg
-ms.openlocfilehash: 3eaefbe011c4d98fe9a76d4f277a76a2f167b191
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.reviewer: unknown
+ms.openlocfilehash: cbd5e5dbcdd2565e8066b0721f45863569bfd90a
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34301899"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35295036"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack"></a>Установка Visual Studio и подключение к Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-С помощью Visual Studio можно создавать и развертывать [шаблоны Azure Resource Manager](azure-stack-arm-templates.md) в Azure Stack. С помощью приведенных в этой статье инструкций можно установить Visual Studio, используя [Пакет средств разработки Azure Stack](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) или внешний клиент на базе Windows (при подключении через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn)). В этой статье описывается новая установка Visual Studio 2015 Community Edition. Прочитайте больше о [сосуществовании](https://msdn.microsoft.com/library/ms246609.aspx) с другими версиями Visual Studio.
+С помощью Visual Studio можно записывать и развертывать [шаблоны](azure-stack-arm-templates.md) Azure Resource Manager в Azure Stack. В этой статье описана установка Visual Studio в [Azure Stack](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-remote-desktop) или на внешнем компьютере, если вы планируете использовать Azure Stack через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
 
 ## <a name="install-visual-studio"></a>Установка Visual Studio
 
-1. Скачайте и запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
-2. Найдите **Visual Studio Community 2015 с пакетом SDK для Microsoft Azure 2.9.6**, а затем щелкните **Добавить** и **Установить**.
+1. Скачайте и запустите [установщик веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).  
 
-    ![Снимок экрана: шаги по установке установщика веб-платформы](./media/azure-stack-install-visual-studio/image1.png)
+2. Откройте **установщик веб-платформы Майкрософт**.
 
-3. Удалите компонент **Microsoft Azure PowerShell**, который установлен как часть пакета SDK для Azure.
+3. Найдите **Visual Studio Community 2015 с пакетом Microsoft Azure SDK — 2.9.6**. Щелкните **Добавить**, а затем — **Установить**.
 
-    ![Снимок экрана: окно "Программы и компоненты" для Azure PowerShell](./media/azure-stack-install-visual-studio/image2.png)
+4. Удалите средство**Microsoft Azure PowerShell**, которое установлено как часть пакета Azure SDK.
 
-4. [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
+    ![Снимок экрана: шаги по установке установщика веб-платформы](./media/azure-stack-install-visual-studio/image1.png) 
 
-5. Перезагрузите компьютер после завершения установки.
+5. [Install PowerShell for Azure Stack](azure-stack-powershell-install.md) (Установка PowerShell для Azure Stack)
 
-## <a name="connect-to-azure-stack"></a>Подключение к Azure Stack
+6. Перезагрузите компьютер после завершения установки.
+
+## <a name="connect-to-azure-stack-with-azure-ad"></a>Подключение к Azure Stack с помощью Azure AD
 
 1. Запустите Visual Studio.
 
 2. В меню **Представление** выберите **Cloud Explorer**.
 
-3. На новой панели выберите **Добавить учетную запись** и выполните вход с помощью учетных данных Azure Active Directory.
-    ![Снимок экрана: Cloud Explorer после входа и подключения к Azure Stack](./media/azure-stack-install-visual-studio/image6.png)
+3. На новой панели выберите **Добавить учетную запись** и выполните вход с помощью учетных данных Azure Active Directory (Azure AD).  
 
-После входа вы можете [развертывать шаблоны](azure-stack-deploy-template-visual-studio.md) или просматривать доступные типы и группы ресурсов для создания собственных шаблонов.
+    ![Снимок экрана. Cloud Explorer после входа и подключения к Azure Stack](./media/azure-stack-install-visual-studio/image2.png)
+
+После входа вы можете [развертывать шаблоны](azure-stack-deploy-template-visual-studio.md) или просматривать доступные типы и группы ресурсов для создания собственных шаблонов.  
+
+## <a name="connect-to-azure-stack-with-ad-fs"></a>Подключение к Azure Stack с помощью служб федерации Active Directory (AD FS)
+
+1. Запустите Visual Studio.
+
+2. В разделе **Инструменты** выберите **Параметры**.
+
+3. Разверните раскрывающееся меню **Среда** в **области навигации** и выберите **Учетные записи**.
+
+4. Выберите **Добавить** и введите конечную точку Azure Resource Manager пользователя.  
+  Если вам нужен пакет средств разработки Azure Stack, используйте адрес `https://management.local.azurestack/external`.  
+  Если вам нужны интегрированные системы Azure Stack, используйте адрес `https://management.[Region}.[External FQDN]`.
+
+    ![X](./media/azure-stack-install-visual-studio/image5.png)
+
+5. Выберите **Добавить**.  
+
+    Visual Studio вызывает Azure Resource Manager и обнаруживает конечные точки, включая конечную точку аутентификации для служб федерации Azure Directory (AD FS).
+
+    ![Снимок экрана. Cloud Explorer после входа и подключения к Azure Stack](./media/azure-stack-install-visual-studio/image6.png)
+
+6. В меню **Представление** выберите **Cloud Explorer**.
+7. Выберите **Добавить ученую запись** и выполните вход с помощью учетных данных служб федерации Active Directory.  
+
+    ![X](./media/azure-stack-install-visual-studio/image7.png)
+
+    Cloud Explorer запрашивает доступные подписки. Вы можете выбрать одну доступную подписку для управления.
+
+    ![X](./media/azure-stack-install-visual-studio/image8.png)
+
+8. Просмотрите имеющиеся ресурсы, группы ресурсов или шаблоны развертывания.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md)
+ - Прочитайте больше о [сосуществовании](https://msdn.microsoft.com/library/ms246609.aspx) с другими версиями Visual Studio.
+ - [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md)

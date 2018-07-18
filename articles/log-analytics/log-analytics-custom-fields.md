@@ -1,24 +1,26 @@
 ---
-title: "Настраиваемые поля в службе Azure Log Analytics | Документация Майкрософт"
-description: "Функция \"Настраиваемые поля\" в службе Log Analytics позволяет создавать поля с поддержкой поиска на основе записей Log Analytics, которые добавляются к свойствам собранной записи.  В этой статье описывается процедура создания настраиваемого поля и представлено пошаговое руководство с примером события."
+title: Настраиваемые поля в службе Azure Log Analytics | Документация Майкрософт
+description: Функция "Настраиваемые поля" в службе Log Analytics позволяет создавать поля с поддержкой поиска на основе записей Log Analytics, которые добавляются к свойствам собранной записи.  В этой статье описывается процедура создания настраиваемого поля и представлено пошаговое руководство с примером события.
 services: log-analytics
-documentationcenter: 
+documentationcenter: ''
 author: bwren
 manager: jwhit
 editor: tysonn
 ms.assetid: 31572b51-6b57-4945-8208-ecfc3b5304fc
 ms.service: log-analytics
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/23/2018
 ms.author: bwren
-ms.openlocfilehash: f0f3311f35f954f81560cad21e7f0e3bc850a094
-ms.sourcegitcommit: 28178ca0364e498318e2630f51ba6158e4a09a89
+ms.component: na
+ms.openlocfilehash: 164b071a47c13f7c5586bd287adc41bea54a1198
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129623"
 ---
 # <a name="custom-fields-in-log-analytics"></a>Настраиваемые поля в службе Log Analytics
 Функция **Настраиваемые поля**, предоставляемая службой Log Analytics, позволяет расширить существующие записи в Log Analytics путем добавления собственных полей с поддержкой поиска.  Настраиваемые поля автоматически заполняются на основе данных, извлеченных из других свойств в той же записи.

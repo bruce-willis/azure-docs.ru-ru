@@ -12,11 +12,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/14/2018
   ms.author: carolz
-  ms.openlocfilehash: d26c3a94c166a91644397e4a31aeede55ec29284
-  ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+  ms.openlocfilehash: ea8437adf7224c4605f31ccdea281669b89bb7c9
+  ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/10/2018
+  ms.lasthandoff: 07/10/2018
+  ms.locfileid: "37949736"
 abstract:
   description: Масштабируемые наборы виртуальных машин Azure позволяют создавать и администрировать группы идентичных виртуальных машин с автоматическим масштабированием и балансировкой нагрузки. Узнайте, как создавать, настраивать, администрировать и автоматически масштабировать масштабируемые наборы виртуальных машин, используя наши шаблоны быстрого запуска, примеры и руководства.
 sections:
@@ -51,7 +52,6 @@ sections:
     - html: Работа с пользовательским образом виртуальной машины с помощью <a href="/azure/virtual-machine-scale-sets/tutorial-use-custom-image-cli">Azure CLI 2.0</a> или <a href="/azure/virtual-machine-scale-sets/tutorial-use-custom-image-powershell">Azure PowerShell</a>
     - html: Развертывание приложений в масштабируемый набор с помощью <a href="/azure/virtual-machine-scale-sets/tutorial-install-apps-cli">Azure CLI 2.0</a> или <a href="/azure/virtual-machine-scale-sets/tutorial-install-apps-powershell">Azure PowerShell</a>
     - html: Автоматическое масштабирование масштабируемого набора с помощью <a href="/azure/virtual-machine-scale-sets/tutorial-autoscale-cli">Azure CLI 2.0</a> или <a href="/azure/virtual-machine-scale-sets/tutorial-autoscale-powershell">Azure PowerShell</a>
-    - html: <a href="https://docs.microsoft.com/learn/deploy-custom-vmss-app/index">Развертывание приложений в масштабируемом наборе виртуальных машин Azure с помощью пользовательского образа Packer</a>
 - title: Примеры
   items:
   - type: paragraph

@@ -3,22 +3,24 @@ title: Управление гостевым доступом с помощью 
 description: Управление гостевыми пользователями как участниками группы или участниками, назначенными приложению, с помощью проверок доступа Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: markwahl-msft
+author: rolyon
 manager: mtillman
-editor: ''
+editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/16/2018
-ms.author: billmath
-ms.openlocfilehash: a96e856b55f118b74c7cb43ead925e10e4b74f1c
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.topic: conceptual
+ms.component: compliance-reports
+ms.date: 06/21/2018
+ms.author: rolyon
+ms.reviewer: mwahl
+ms.openlocfilehash: 452501d5da58d06093f22009c6ecc30e02f581a5
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34192444"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38295645"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -28,7 +30,7 @@ ms.locfileid: "34192444"
 Вы также можете быстро предоставить соответствующий доступ гостевым пользователям. Для этого предложите самими гостям или руководителю пройти проверку доступа и повторно сертифицировать (или подтвердить) права доступа гостевого пользователя. Рецензенты могут предоставить пользователю входные данные для непрерывного доступа. Это зависит от предложений Azure AD. По завершении проверки доступа можно внести изменения и отозвать разрешение на доступ для гостей, которым он больше не нужен.
 
 > [!NOTE]
-> В этой статье рассматривается проверка доступа гостевых пользователей. Если вы хотите проверять доступ всех пользователей, а не только гостей, то ознакомьтесь с разделом [Управление пользовательским доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-user-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, прочитайте статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md). 
+> В этой статье рассматривается проверка доступа гостевых пользователей. Если вы хотите проверять доступ всех пользователей, а не только гостей, то ознакомьтесь с разделом [Управление пользовательским доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-user-access-with-access-reviews.md). Если же необходимо проверить членство пользователя с административной ролью, например с ролью глобального администратора, прочитайте статью [Запуск проверки доступа в управлении привилегированными пользователями Azure AD](privileged-identity-management/pim-how-to-start-security-review.md). 
 >
 >
 
@@ -37,14 +39,11 @@ ms.locfileid: "34192444"
 
 Проверка доступа поддерживается в выпуске Azure AD Premium P2, включенном в Microsoft Enterprise Mobility + Security E5. Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](active-directory-editions.md). Для каждого пользователя, применяющего эту возможность, в том числе для создания и выполнения проверки доступа или подтверждения доступа, требуется лицензия. 
 
-Проверка доступа поддерживается в выпуске Azure AD Premium P2, включенном в Microsoft Enterprise Mobility + Security E5. Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](active-directory-whatis.md). Для каждого пользователя, применяющего эту возможность для создания и выполнения проверки доступа или запроса на проверку, требуется лицензия.
-
-
 Если вы планируете предлагать гостевым пользователям самим проверять свой доступ, прочитайте о лицензировании гостевых пользователей. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](active-directory-b2b-licensing.md).
 
 ## <a name="create-and-perform-an-access-review-for-guests"></a>Создание и выполнение проверки доступа для гостей
 
-Сначала необходимо включить передачу данных проверок доступа на панель доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора. 
+Сначала необходимо включить передачу данных проверок доступа на панель доступа рецензента. Перейдите на [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) с правами глобального администратора или администратора учетной записи. 
 
 Azure AD обеспечивает несколько сценариев проверок гостевых пользователей.
 

@@ -1,11 +1,11 @@
 ---
-title: "Подготовка веб-приложения с кэшем Redis"
-description: "Используйте шаблон диспетчера ресурсов Azure для развертывания веб-приложения с кэшем Redis."
+title: Подготовка веб-приложения с кэшем Redis
+description: Используйте шаблон диспетчера ресурсов Azure для развертывания веб-приложения с кэшем Redis.
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: wesmc7777
 manager: cfowler
-editor: 
+editor: ''
 ms.assetid: 6e99c71f-ef8e-4570-a307-e4c059e60c35
 ms.service: app-service
 ms.workload: web
@@ -15,10 +15,11 @@ ms.topic: article
 ms.date: 01/06/2017
 ms.author: wesmc
 ms.openlocfilehash: b787b3f2caaff5535557c03c45b058e1bbb0c77d
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38671407"
 ---
 # <a name="create-a-web-app-plus-redis-cache-using-a-template"></a>Создание веб-приложения и кэша Redis с помощью шаблона
 В этом разделе вы узнаете, как создать шаблон диспетчера ресурсов Azure для развертывания веб-приложения Azure с кэшем Redis. Вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.

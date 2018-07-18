@@ -1,12 +1,12 @@
 ---
-title: "Использование динамической телеметрии | Документация Майкрософт"
-description: "Ознакомьтесь с этим руководством, чтобы узнать, как использовать динамическую телеметрию с предварительно настроенным решением для удаленного мониторинга Azure IoT Suite."
-services: 
+title: Использование динамической телеметрии | Документация Майкрософт
+description: Ознакомьтесь с этим руководством, чтобы узнать, как использовать динамическую телеметрию с предварительно настроенным решением для удаленного мониторинга Azure IoT Suite.
+services: ''
 suite: iot-suite
-documentationcenter: 
+documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: 
+editor: ''
 ms.assetid: 562799dc-06ea-4cdd-b822-80d1f70d2f09
 ms.service: iot-suite
 ms.devlang: na
@@ -16,10 +16,11 @@ ms.workload: na
 ms.date: 11/02/2017
 ms.author: dobett
 ms.openlocfilehash: 60e9ee00fabf15a62e782c70bca251b1a8e617c3
-ms.sourcegitcommit: 295ec94e3332d3e0a8704c1b848913672f7467c8
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2017
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723656"
 ---
 # <a name="use-dynamic-telemetry-with-the-remote-monitoring-preconfigured-solution"></a>Использование динамической телеметрии с предварительно настроенным решением для удаленного мониторинга
 

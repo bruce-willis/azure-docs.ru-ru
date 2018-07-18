@@ -1,5 +1,5 @@
 ---
-title: Ведение журнала и аудит Azure | Документация Майкрософт
+title: Ведение журналов и аудит Azure | Документы Майкрософт
 description: Узнайте, как использовать данные журналов для получения подробных сведений о приложении.
 services: security
 documentationcenter: na
@@ -14,142 +14,112 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: 2b8b5095fceaa369ae8b7a426ca04685c2d86109
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: e4144ca0d87abda3d9f8de47e56af59d0e4af312
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34057940"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36938372"
 ---
 # <a name="azure-logging-and-auditing"></a>Ведение журналов и аудит Azure
-## <a name="introduction"></a>Введение
-### <a name="overview"></a>Обзор
-Чтобы помочь текущим и потенциальным клиентам Azure понять и правильно использовать различные функции безопасности, доступные в платформе Azure и связанных продуктах, корпорация Майкрософт разработала ряд технических документов, обзоров возможностей безопасности, рекомендаций и контрольных списков. Содержимое разделов периодически обновляется с точки зрения охвата и углубленности материала. Данный документ является частью этого цикла, как описано в приведенной ниже аннотации.
-### <a name="azure-platform"></a>Платформа Azure
-Azure — открытая, гибкая облачная платформа, которая поддерживает самый широкий выбор операционных систем, языков программирования, платформ, инструментов, баз данных и устройств.
 
-Например, вы можете просматривать:
--   запускать контейнеры Linux с интеграцией Docker;
-
--   создавать приложения с помощью JavaScript, Python, .NET, PHP, Java и Node.js;
-
--   создавать серверные части для устройств iOS, Android и Windows.
-
-Общедоступные облачные службы Azure поддерживают технологии, которым доверяют миллионы разработчиков и ИТ-специалистов.
-
-Создавая ресурсы ИТ или перенося их в поставщик облачных служб, вы полагаетесь на возможности организации по обеспечению защиты приложений и данных с помощью предоставляемых решений для управления безопасностью облачных ресурсов.
-
-Инфраструктура устройств и приложений Azure предназначена для размещения миллионов пользователей одновременно. Это надежная база, которая удовлетворяет корпоративным требованиям к обеспечению безопасности. Кроме того, Azure включает самые разные настраиваемые решения для обеспечения безопасности, а также возможность управления ими. Все это позволит настроить защиту в соответствии с особенностями развернутых решений. Данный документ поможет вам выполнить эти требования.
-
-### <a name="abstract"></a>Аннотация
-Аудит и ведение журнала событий безопасности и связанные с ними оповещения являются важной составляющей стратегии защиты данных. Отчеты и журналы безопасности обеспечивают электронную запись подозрительных действий и помогают выявлять закономерности, которые могут свидетельствовать об успешной или неудачной попытке проникнуть в сеть извне, а также о внутренних атаках. Аудит можно использовать для отслеживания действий пользователей, соблюдения требований нормативных документов, выполнения экспертизы и многого другого. Оповещения немедленно уведомляют о возникающих событиях безопасности.
-
-Продукты и услуги Microsoft Azure дают возможность настраивать параметры аудита и ведения журнала безопасности. Это поможет выявить недочеты в политиках и механизмах безопасности и устранить эти недочеты для предотвращения нарушений. Корпорация Майкрософт предлагает некоторые (а в некоторых случаях — все) из следующих возможностей: централизованный мониторинг, ведение журнала и аналитические системы для обеспечения постоянной видимости, своевременные оповещения и отчеты, которые помогают управлять большим объемом информации, создаваемой устройствами и службами.
-
-Данные журнала Microsoft Azure можно экспортировать в системы управления информацией о безопасности и событиями безопасности (SIEM) для анализа и интегрировать в сторонние решения аудита.
-
-В данном документе представлена вводная информация о создании, сборе и анализе журналов безопасности из служб, размещенных в Azure, которая поможет вам получить подробные сведения о безопасности в развернутых службах Azure. В этом техническом документе рассматриваются приложения и службы, созданные и развернутые в Azure.
+Azure предоставляет множество настраиваемых параметров ведения журналов и аудита безопасности, которые помогают выявить недочеты в политиках и механизмах безопасности. Эта статья описывает создание, сбор и анализ журналов безопасности из служб, размещенных в Azure.
 
 > [!Note]
-> Выполнение некоторых рекомендаций из этого документа может привести к более интенсивному использованию ресурсов хранилища, сетевых или вычислительных ресурсов, а следовательно, к дополнительным затратам на лицензии или подписки.
+> Выполнение некоторых рекомендаций в этой статье может привести к более интенсивному использованию данных, а также сетевых и вычислительных ресурсов, а значит, и к дополнительным затратам на лицензии или подписки.
 
 ## <a name="types-of-logs-in-azure"></a>Типы журналов в Azure
-Облачные приложения являются сложными и содержат множество подвижных частей. Журналы содержат данные, позволяющие обеспечить работоспособность приложения, а также позволяет предотвратить потенциальные проблемы или устранить неполадки. Кроме того, данные журналов можно использовать для получения подробных сведений о приложении. Эти знания могут помочь повысить его производительность и улучшить возможности обслуживания, а также автоматизировать действия, которые в противном случае выполнялись бы вручную.
+Облачные приложения являются сложными и содержат множество динамических частей. Журналы предоставляют данные для обеспечения непрерывной работы приложений. Журналы помогают устранять имеющиеся проблемы и предотвращать потенциальные. Кроме того, они могут помочь повысить производительность приложения и улучшить возможности обслуживания, а также автоматизировать действия, которые в противном случае выполнялись бы вручную.
 
-Azure создает подробные журналы для каждой службы Azure. Эти журналы подразделяются на следующие основные категории:
--   **Журналы управления и контроля** предоставляют информацию о таких операциях Azure Resource Manager, как CREATE, UPDATE и DELETE. К этому типу относятся, например, [журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs).
+Журналы Azure делятся по следующим категориям:
+* **Журналы управления и контроля** содержат информацию об операциях CREATE, UPDATE и DELETE в Azure Resource Manager. Дополнительные сведения см. в разделе [Журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs).
 
--   **Журналы плоскости данных** предоставляют информацию о событиях, возникающих при использовании ресурса Azure. К этому типу относятся, например, журналы системы событий Windows, журналы безопасности и журналы приложений на виртуальной машине, а также [журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs), настроенные с помощью Azure Monitor.
+* **Журналы плоскости данных** предоставляют информацию о событиях, возникающих при использовании ресурсов Azure. К этому типу относятся, например, журналы системы событий Windows, журналы безопасности и журналы приложений на виртуальной машине, а также [журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs), настроенные с помощью Azure Monitor.
 
+* Журналы **обработанных событий** предоставляют сведения о проанализированных событиях и оповещениях, которые были обработаны от вашего имени. К примерам таких событий относятся [оповещения центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Обработав и проанализировав вашу подписку, [центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) предоставляет лаконичные оповещения безопасности.
 
--   Журналы **обработанных событий** предоставляют сведения о проанализированных событиях и оповещениях, которые были обработаны от вашего имени. К примерам таких событий относятся [оповещения центра безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-managing-and-responding-alerts). Обработав и проанализировав вашу подписку, [центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) предоставляет лаконичные оповещения безопасности.
+В следующей таблице перечислены наиболее важные типы журналов, доступных в Azure:
 
-В следующей таблице перечислены наиболее важные типы журналов, доступных в Azure.
-
-| Категория журнала | Тип журнала | Применение | Интеграция |
+| Категория журнала | Тип журнала | Использование | Интеграция |
 | ------------ | -------- | ------ | ----------- |
-|[Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)|События уровня управления с ресурсами Azure Resource Manager.|   Содержат информацию об операциях, которые выполнялись с ресурсами в подписке.| REST API и [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs).|
-|[Журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)|Своевременные данные об операциях с ресурсами Azure Resource Manager в подписке.| Дают представление об операциях, выполняемых самим ресурсом.| Azure Monitor, [Stream](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs).|
-|[Служба отчетов AAD](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-azure-portal)|Журналы и отчеты|Сведения о действиях входа пользователей и системных действиях управления пользователями и группами.|[Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api-quickstart)|
-|[Виртуальные машины и облачные службы](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-azurevm)|Журнал событий Windows и системный журнал Linux| Собирают системные данные и данные журналов, поступающие от виртуальных машин, и передает их в указанную вами учетную запись хранения.|   Использование Windows [WAD](https://docs.microsoft.com/azure/azure-diagnostics) (хранилище системы диагностики Microsoft Azure) и Linux в Azure Monitor.|
-|[Аналитика службы хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics)|Обеспечивает ведение журнала хранилища и предоставляет данные метрик для учетной записи хранения.|Предоставляет сведения, которые можно применять для трассировки запросов, анализа тенденций использования и диагностики проблем учетной записи хранения.|    REST API или [клиентская библиотека](https://msdn.microsoft.com/library/azure/mt347887.aspx).|
-|[Журналы потоков для группы безопасности сети (NSG)](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)|Используют формат JSON и показывает входящие и исходящие потоки на основе правил.|Позволяют просмотреть сведения о входящем и исходящем IP-трафике в группе безопасности сети.|[Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview)|
-|[Application insight](https://docs.microsoft.com/azure/application-insights/app-insights-overview)|Журналы, исключения и пользовательские системы диагностики.|    Служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах.| REST API, [Power BI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/).|
-|Обработка данных и оповещения системы безопасности| Оповещения центра безопасности Azure и оповещения Log Analytics|   Сведения о безопасности и оповещения.|   Интерфейсы REST API, JSON.|
+|[Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs)|События уровня управления с ресурсами Azure Resource Manager.|   Предоставляет информацию об операциях, которые выполнялись с ресурсами в подписке.|    REST API, [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs).|
+|[Журналы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs)|Своевременные данные об операциях с ресурсами Azure Resource Manager в подписке.|    Информация об операциях, выполняемых самим ресурсом.| Azure Monitor, [Stream](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs).|
+|[Отчеты Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-azure-portal)|Журналы и отчеты. | Предоставляет сведения о действиях входа пользователей и системных действиях по управлению пользователями и группами.|[Graph API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-graph-api-quickstart)|
+|[Виртуальные машины и облачные службы](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-quick-collect-azurevm)|Служба журнала событий Windows и системный журнал Linux|    Собирают системные данные и данные журналов, поступающие от виртуальных машин, и передает их в указанную вами учетную запись хранения.|   Windows (с использованием хранилища системы диагностики Microsoft Azure [[WAD](https://docs.microsoft.com/azure/azure-diagnostics)]) и Linux в Azure Monitor|
+|[Аналитика службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics)|Обеспечивает ведение журнала хранилища, предоставляет данные метрик для учетной записи хранения.|Предоставляет сведения о трассировке запросов, анализирует тенденции использования и диагностирует проблемы учетной записи хранения.|   REST API или [клиентская библиотека](https://msdn.microsoft.com/library/azure/mt347887.aspx).|
+|[Журналы потоков для группы безопасности сети (NSG)](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview)|Использует формат JSON, показывает входящие и исходящие потоки на основе правил.|Позволяет просмотреть сведения о входящем и исходящем IP-трафике в группе безопасности сети.|[Наблюдатель за сетями Azure](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview)|
+|[Application insight](https://docs.microsoft.com/azure/application-insights/app-insights-overview)|Журналы, исключения и пользовательские системы диагностики.|   Служба наблюдения за производительностью приложений (APM) для веб-разработчиков на нескольких платформах.| REST API, [Power BI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/).|
+|Обработка данных/оповещения системы безопасности|    Оповещения центра безопасности Azure, оповещения Azure Log Analytics.|   Предоставляет сведения о безопасности и оповещения.|  Интерфейсы REST API, JSON.|
 
-### <a name="activity-log"></a>Журнал действий
-[Журнал действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) — это журнал с информацией об операциях, которые выполнялись с ресурсами в подписке. Журнал действий раньше назывался журналом аудита или операционным журналом, так как он содержит связанные с подписками [события на уровне управления](https://driftboatdave.com/2016/10/13/azure-auditing-options-for-your-custom-reporting-needs/). С помощью журнала действий можно ответить на вопросы "Что? Кто? Когда?" о любой операции записи (PUT, POST, DELETE), выполненной с ресурсами в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства. Журнал действий не включает операции чтения (GET).
+### <a name="activity-logs"></a>Журналы действий
+[Журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) содержат информацию об операциях, которые выполнялись с ресурсами в подписке. Журналы действий раньше назывались "журналами аудита" или "операционными журналами", так как содержат связанные с подписками [события уровня управления](https://driftboatdave.com/2016/10/13/azure-auditing-options-for-your-custom-reporting-needs/). 
 
-Здесь PUT, POST и DELETE означают все операции записи с ресурсами, зарегистрированные в журнале действий. Например, журналы действий можно использовать для поиска ошибки при устранении неполадок, а также для наблюдения за тем, как пользователь в вашей организации изменил ресурс.
+Журналы действий помогают определить, что нужно сделать, с чем и когда, для операций записи (то есть PUT, POST или DELETE). Журналы действий также помогают отслеживать состояние операции и другие ее свойства. Журнал действий не содержит сведений об операциях чтения (GET).
 
-![Журнал действий](./media/azure-log-audit/azure-log-audit-fig1.png)
+В этой статье PUT, POST и DELETE означают все операции записи с ресурсами, зарегистрированные в журнале действий. Например, журналы действий можно использовать для поиска ошибки при устранении неполадок, а также для наблюдения за тем, как пользователь в вашей организации изменил ресурс.
 
+![Схема журналов действий](./media/azure-log-audit/azure-log-audit-fig1.png)
 
-События из журнала действий можно получить с помощью портала Azure, [интерфейса командной строки](https://docs.microsoft.com/azure/storage/storage-azure-cli), командлетов PowerShell или [REST API Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough). Данные в журналах действий хранятся в течении 19 дней.
+События из журнала действий можно получить с помощью портала Azure, [Azure CLI](https://docs.microsoft.com/azure/storage/storage-azure-cli), командлетов PowerShell или [REST API Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough). Данные в журналах действий хранятся в течение 19 дней.
 
-Сценарии интеграции
--   [Создание оповещений электронной почты или веб-перехватчика, активируемых событием журнала действий.](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-auditlog-to-webhook-email)
+Сценарии интеграции для события журнала действий:
 
--   [Потоковая передача журнала в концентратор событий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
+* [Создание оповещений электронной почты или веб-перехватчика, активируемого событием журнала действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/insights-auditlog-to-webhook-email).
 
--   Анализ журнала в PowerBI с помощью [пакета содержимого PowerBI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
+* [Потоковая передача журнала в концентратор событий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
 
--   [Сохранение журнала в учетную запись хранения для архивации или проверки вручную](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-activity-log). В профилях журнала вы также можете задать время хранения (в днях).
+* Анализ журнала в PowerBI с помощью [пакета содержимого PowerBI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
 
--   Выполнение запросов и просмотр журнала на портале Azure.
+* [Сохранение журнала в учетную запись хранения для архивации или проверки вручную](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-activity-log). В профилях журнала можно задать время хранения (в днях).
 
--   Обращение к журналу с помощью командлетов PowerShell, интерфейса командной строки или REST API.
+* Выполнение запросов и просмотр журнала на портале Azure.
 
--   Экспорт журнала действий с профилями журнала в [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview).
+* Обращение к журналу с помощью командлетов PowerShell, Azure CLI или REST API.
 
-Вы можете использовать учетную запись хранения или [пространство имен концентратора событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-resource-manager-namespace-event-hub-enable-archive), не входящее в подписку, в которой создаются журналы. Пользователю, который настраивает этот параметр, должен быть предоставлен соответствующий уровень доступа [RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) к обеим подпискам.
-### <a name="azure-diagnostic-logs"></a>Журналы диагностики Azure
-Журналы диагностики Azure выдаются ресурсом. Они содержат подробные и своевременные данные о работе этого ресурса. Содержимое этих журналов зависит от типа ресурса (например, [журналы событий Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-windows-events) — это одна из категорий журналов диагностики для виртуальных машин, а [журналы больших двоичных объектов, таблиц и очередей](https://docs.microsoft.com/azure/storage/storage-monitor-storage-account) — это журналы диагностики для учетных записей хранения). Эти журналы отличаются от журнала действий, который содержит информацию об операциях с ресурсами в подписке.
+* Экспорт журнала действий с профилями журнала в [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview).
 
-![Журналы диагностики Azure](./media/azure-log-audit/azure-log-audit-fig2.png)
+Вы можете использовать учетную запись хранения или [пространство имен концентратора событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-resource-manager-namespace-event-hub-enable-archive), не входящее в подписку, в которой создаются журналы. Пользователю, который настраивает этот параметр, должен быть предоставлен соответствующий уровень доступа [по управлению доступом на основе ролей RBAC](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) к обеим подпискам.
 
-Журналы диагностики Azure можно настроить несколькими способами, в том числе с помощью портала Azure, PowerShell, интерфейса командной строки и REST API.
+### <a name="azure-diagnostics-logs"></a>Журналы диагностики Azure
+Журналы диагностики Azure выдаются ресурсом и содержат подробные и своевременные данные о работе этого ресурса. Содержимое этих журналов зависит от типа ресурса. Например, [системные журналы событий Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-windows-events) — это категория журналов диагностики для виртуальных машин, а [журналы больших двоичных объектов, таблиц и очередей](https://docs.microsoft.com/azure/storage/storage-monitor-storage-account) — категории журналов диагностики для учетных записей хранения. Журналы диагностики отличаются от журналов действий, которые содержат информацию об операциях, выполняемых с ресурсами в подписке.
+
+![Схемы журналов диагностики Azure](./media/azure-log-audit/azure-log-audit-fig2.png)
+
+Журналы диагностики Azure можно настроить несколькими способами, в том числе с помощью портала Azure, PowerShell, Azure CLI и REST API.
 
 **Сценарии интеграции**
--   Сохранение журналов в [учетную запись хранения](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs) для аудита или проверки вручную. В параметрах диагностики вы также можете задать время хранения (в днях).
 
--   [Потоковая передача журналов в концентраторы событий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) для приема сторонней службой или пользовательским аналитическим решением, например [PowerBI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/).
+* Сохранение журналов в [учетную запись хранения](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs) для аудита или проверки вручную. В параметрах диагностики вы также можете задать время хранения (в днях).
 
--   Анализ журналов с помощью [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview).
+* [Потоковая передача журналов в концентраторы событий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) для обработки в сторонней службе или пользовательском аналитическом решении, например в [PowerBI](https://powerbi.microsoft.com/documentation/powerbi-azure-and-power-bi/).
 
-**Поддерживаемые службы, схема для журналов диагностики и поддерживаемого категории журналов для каждого типа ресурса**
+* Анализ журналов с помощью [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview).
+
+**Поддерживаемые службы, схема для журналов диагностики и поддерживаемые категории журналов для каждого типа ресурса**
 
 
-| Service | Схемы и документы | Тип ресурса | Категория |
+| Service | Схема и документация | Тип ресурса | Категория |
 | ------- | ------------- | ------------- | -------- |
-|Load Balancer| [Служба анализа журналов для балансировщика нагрузки Azure (предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log)|Microsoft.Network/loadBalancers|    LoadBalancerAlertEvent|
-|||Microsoft.Network/loadBalancers| LoadBalancerProbeHealthStatus
-|группы сетевой безопасности;|[Аналитика журналов для групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log)|Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent|
-|||Microsoft.Network/networksecuritygroups|NetworkSecurityGroupRuleCounter|
-|Шлюзы приложений|[Ведение журнала диагностики для шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics)|Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog|
-|||Microsoft.Network/applicationGateways|ApplicationGatewayPerformanceLog|
-|||Microsoft.Network/applicationGateways|ApplicationGatewayFirewallLog|
-|Key Vault|[Ведение журнала хранилища ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-logging)|Microsoft.KeyVault/vaults|AuditEvent|
+|Azure Load Balancer| [Log Analytics для Load Balancer (предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log)|Microsoft.Network/loadBalancers<br>Microsoft.Network/loadBalancers| LoadBalancerAlertEvent<br>LoadBalancerProbeHealthStatus|
+|группы сетевой безопасности;|[Log Analytics для групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log)|Microsoft.Network/networksecuritygroups<br>Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent<br>NetworkSecurityGroupRuleCounter|
+|Шлюз приложений Azure|[Ведение журнала диагностики для шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics)|Microsoft.Network/applicationGateways<br>Microsoft.Network/applicationGateways<br>Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog<br>ApplicationGatewayPerformanceLog<br>ApplicationGatewayFirewallLog|
+|Хранилище ключей Azure|[Журналы Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-logging)|Microsoft.KeyVault/vaults|AuditEvent|
 |поиск Azure;|[Включение и использование аналитики поискового трафика](https://docs.microsoft.com/azure/search/search-traffic-analytics)|Microsoft.Search/searchServices|OperationLogs|
-|Data Lake Store|[Доступ к журналам диагностики Azure Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs)|Microsoft.DataLakeStore/accounts|Аудит|
-|Data Lake Analytics|[Доступ к журналам диагностики для Azure Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs)|Microsoft.DataLakeAnalytics/accounts|Аудит|
-|||Microsoft.DataLakeAnalytics/accounts|Requests|
-|||Microsoft.DataLakeStore/accounts|Requests|
-|Logic Apps|[Настраиваемая схема отслеживания сообщений B2B для приложений логики](https://docs.microsoft.com/azure/logic-apps/logic-apps-track-integration-account-custom-tracking-schema)|Microsoft.Logic/workflows|WorkflowRuntime|
-|||Microsoft.Logic/integrationAccounts|IntegrationAccountTrackingEvents|
-|Пакетная служба Azure|[Ведение журналов диагностики пакетной службы Azure](https://docs.microsoft.com/azure/batch/batch-diagnostics)|Microsoft.Batch/batchAccounts|ServiceLog|
-|Служба автоматизации Azure|[Log Analytics для службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|Microsoft.Automation/automationAccounts|JobLogs|
-|||Microsoft.Automation/automationAccounts|JobStreams|
-|Концентраторы событий|[Журналы диагностики концентраторов событий Azure](https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs)|Microsoft.EventHub/namespaces|ArchiveLogs|
-|||Microsoft.EventHub/namespaces|OperationalLogs|
-|Stream Analytics|[Журналы диагностики задания](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-job-diagnostic-logs)|Microsoft.StreamAnalytics/streamingjobs|Выполнение|
-|||Microsoft.StreamAnalytics/streamingjobs|Разработка|
-|Служебная шина Azure|[Журналы диагностики служебной шины Azure](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-diagnostic-logs)|Microsoft.ServiceBus/namespaces|OperationalLogs|
+|Хранилище озера данных Azure|[Доступ к журналам диагностики для Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs)|Microsoft.DataLakeStore/accounts<br>Microsoft.DataLakeStore/accounts|Аудит<br>Requests|
+|Аналитика озера данных Azure|[Доступ к журналам диагностики для Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs)|Microsoft.DataLakeAnalytics/accounts<br>Microsoft.DataLakeAnalytics/accounts|Аудит<br>Requests|
+|Azure Logic Apps|[Настраиваемая схема отслеживания сообщений B2B для приложений логики](https://docs.microsoft.com/azure/logic-apps/logic-apps-track-integration-account-custom-tracking-schema)|Microsoft.Logic/workflows<br>Microsoft.Logic/integrationAccounts|WorkflowRuntime<br>IntegrationAccountTrackingEvents|
+|Пакетная служба Azure|[Журналы диагностики пакетной службы Azure](https://docs.microsoft.com/azure/batch/batch-diagnostics)|Microsoft.Batch/batchAccounts|ServiceLog|
+|Служба автоматизации Azure|[Log Analytics для службы автоматизации Azure](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|Microsoft.Automation/automationAccounts<br>Microsoft.Automation/automationAccounts|JobLogs<br>JobStreams|
+|Концентраторы событий Azure|[Журналы диагностики концентраторов событий](https://docs.microsoft.com/azure/event-hubs/event-hubs-diagnostic-logs)|Microsoft.EventHub/namespaces<br>Microsoft.EventHub/namespaces|ArchiveLogs<br>OperationalLogs|
+|Azure Stream Analytics|[Журналы диагностики заданий](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-job-diagnostic-logs)|Microsoft.StreamAnalytics/streamingjobs<br>Microsoft.StreamAnalytics/streamingjobs|Выполнение<br>Разработка|
+|Azure Service Bus|[Журналы диагностики служебной шины](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-diagnostic-logs)|Microsoft.ServiceBus/namespaces|OperationalLogs|
 
 ### <a name="azure-active-directory-reporting"></a>Отчеты Azure Active Directory
-Azure Active Directory (Azure AD) формирует отчеты о безопасности, активности и аудите каталога. [Отчет аудита Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-guide) позволяет клиентам определить привилегированные действия, выполненные в их каталогах Azure Active Directory. К привилегированным действиям относятся изменение повышения (например, создание роли или сброс пароля), изменение конфигурации политики (например, политики паролей) или изменение конфигурации каталога (например, изменение параметров федерации домена).
+Azure Active Directory (Azure AD) формирует отчеты о безопасности, активности и аудите для пользователей каталога. [Отчет аудита Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-guide) позволяет вам определить привилегированные действия, выполняемые в пользовательском экземпляре Azure AD. К привилегированным действиям относятся изменение повышения прав (например, создание роли или сброс пароля), изменение конфигурации политики (например, политики паролей) или изменение конфигурации каталога (например, изменение параметров федерации домена).
 
-Отчеты содержат такие сведения: имя события, выполнивший действие субъект, подвергшийся изменению целевой ресурс, дата и время (в формате UTC). Список событий аудита для службы Azure Active Directory можно получить на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Отчеты в Azure Active Directory — предварительная версия](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-azure-portal). Ниже приведен список включенных отчетов.
+Отчеты содержат записи аудита для имени события, выполнившего действие субъекта, подвергшегося изменению целевого ресурса, а также даты и времени (в формате UTC). Пользователи могут получить список событий аудита для Azure AD на [портале Azure](https://portal.azure.com/), как описано в разделе [Просмотр журналов аудита](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-azure-portal). 
+
+В следующей таблице приведены включенные отчеты:
 
 | Отчеты о безопасности | Отчеты об активности | Отчеты об аудите |
 | :--------------- | :--------------- | :------------ |
@@ -163,143 +133,141 @@ Azure Active Directory (Azure AD) формирует отчеты о безоп�
 ||Отчет о событиях регистрации для сброса пароля||
 ||Действие сброса пароля|||
 
-Данные этих отчетов могут быть полезными для приложений, например систем SIEM, а также инструментов аудита и бизнес-аналитики. Интерфейсы API отчетов Azure AD предоставляют программный доступ к данным с помощью набора интерфейсов API на базе REST. Эти [интерфейсы API](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started) можно вызвать, используя различные языки программирования и инструменты.
+Данные этих отчетов могут быть полезными для приложений, например систем управления информационной безопасностью и событиями безопасности (SIEM), а также инструментов аудита и бизнес-аналитики. Интерфейсы API отчетов Azure AD предоставляют программный доступ к данным с помощью набора интерфейсов API на базе REST. Эти [интерфейсы API](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-getting-started) можно вызвать, используя различные языки программирования и инструменты.
 
-События в отчете аудита Azure AD хранятся на протяжении 180 дней.
+События в отчете аудита Azure AD хранятся в течение 180 дней.
 
 > [!Note]
-> Дополнительные сведения о хранении отчетов см. в статье [Политики хранения отчетов Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention).
+> Дополнительные сведения о хранении отчетов см. в разделе [Политики хранения отчетов Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-retention).
 
-Если [события аудита](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-audit-events) нужно хранить дольше, с помощью API отчетов нужные события можно регулярно копировать в отдельное хранилище данных.
+Если вам нужно хранить события аудита дольше, используйте API отчетов для регулярного извлечения [событий аудита](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-audit-events) в отдельное хранилище данных.
 
-### <a name="virtual-machine-logs-using-azure-diagnostics"></a>Журналы виртуальных машин, полученные с помощью системы диагностики Azure
-[Система диагностики Azure](https://docs.microsoft.com/azure/azure-diagnostics) позволяет выполнять сбор диагностических данных развернутого приложения. Можно использовать расширение диагностики из нескольких различных источников. В настоящее время поддерживаются [веб-роли и рабочие роли в облачной службе Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me),
+### <a name="virtual-machine-logs-that-use-azure-diagnostics"></a>Журналы виртуальных машин, использующие систему диагностики Azure
+[Система диагностики Azure](https://docs.microsoft.com/azure/azure-diagnostics) позволяет выполнять сбор диагностических данных развернутого приложения. Вы можете использовать расширение диагностики из любого из нескольких источников. Сейчас поддерживаются [веб-роли и рабочие роли в облачной службе Azure](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me).
 
-![Журналы виртуальных машин, полученные с помощью системы диагностики Azure](./media/azure-log-audit/azure-log-audit-fig3.png)
+![Журналы виртуальных машин, использующие систему диагностики Azure](./media/azure-log-audit/azure-log-audit-fig3.png)
 
-[виртуальные машины Azure](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/) под управлением Microsoft Windows и [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview).
+### <a name="azure-virtual-machineshttpsazuremicrosoftcomdocumentationlearning-pathsvirtual-machines-that-are-running-microsoft-windows-and-service-fabrichttpsdocsmicrosoftcomazureservice-fabricservice-fabric-overview"></a>[Виртуальные машины Azure](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/) под управлением Microsoft Windows и [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview).
 
-Включить систему диагностики Azure на виртуальной машине можно следующим образом.
+Включить систему диагностики Azure на виртуальной машине можно следующими способами:
 
--   В Visual Studio, как описывается в статье [Отладка облачной службы или виртуальной машины Azure в Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-debug-cloud-services-virtual-machines).
+* [Использование Visual Studio для трассировки виртуальных машин Azure](https://docs.microsoft.com/azure/vs-azure-tools-debug-cloud-services-virtual-machines)
 
--   [Включение диагностики на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines-dotnet-diagnostics).
+* [Удаленная настройка системы диагностики Azure на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines-dotnet-diagnostics)
 
--   [Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-extensions-diagnostics?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Использование PowerShell для настройки диагностики на виртуальных машинах Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-ps-extensions-diagnostics?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
--   [Создание виртуальной машины Windows с мониторингом и диагностикой с использованием шаблона Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Создание виртуальной машины Windows с мониторингом и диагностикой с использованием шаблона Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-diagnostics-template?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 
 ### <a name="storage-analytics"></a>аналитики хранилища
-[Azure Storage Analytics](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics) ведет журнал и предоставляет данные метрик для учетной записи хранения. Эти данные можно использовать для трассировки запросов, анализа тенденций использования и диагностики проблем учетной записи хранения. Ведение журнала Storage Analytics доступно для [служб BLOB-объектов, очередей и таблиц](https://docs.microsoft.com/azure/storage/storage-introduction). В аналитике хранилища регистрируется подробная информация об успешных и неудачных запросах к службе хранилища.
+[Аналитика службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics) ведет журналы и предоставляет данные метрик для учетной записи хранения. Эти данные можно использовать для трассировки запросов, анализа тенденций использования и диагностики проблем учетной записи хранения. Ведение журнала Аналитики службы хранилища доступно для [служб хранилищ BLOB-объектов, очередей и таблиц Azure](https://docs.microsoft.com/azure/storage/storage-introduction). В аналитике хранилища регистрируется подробная информация об успешных и неудачных запросах к службе хранилища.
 
-Эта информация может использоваться для мониторинга отдельных запросов и диагностики неполадок в службе хранилища. Запросы вносятся в журнал наилучшим возможным образом. Записи журнала создаются только при получении запроса к конечной точке службы. Например, если обнаруживается действие учетной записи хранения в конечной точке службы BLOB-объектов, но не в ее конечных точках служб таблиц или очередей, то создаются журналы, которые относятся только к службе BLOB-объектов.
+Эту информацию можно использовать для мониторинга отдельных запросов и диагностики неполадок в службе хранилища. Запросы вносятся в журнал наилучшим возможным образом. Записи журнала создаются только при получении запроса к конечной точке службы. Например, при обнаружении действия учетной записи хранения в конечной точке службы BLOB-объектов, но не в ее конечных точках служб таблиц или очередей, создаются журналы, которые относятся только к службе хранилища BLOB-объектов.
 
-Для использования аналитики хранилища ее необходимо включить отдельно для каждой из отслеживаемых служб. Это можно сделать на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Мониторинг учетной записи хранения на портале Azure](https://docs.microsoft.com/azure/storage/storage-monitor-storage-account). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Используйте операции Set Service Properties, чтобы отдельно включить Storage Analytics для каждой службы.
+Для использования Аналитики службы хранилища ее нужно включить отдельно для каждой из отслеживаемых служб. Вы можете включить эту функцию на [портале Azure](https://portal.azure.com/). Дополнительные сведения см. в статье [Мониторинг учетной записи хранения на портале Azure](https://docs.microsoft.com/azure/storage/storage-monitor-storage-account). Аналитику хранилища также можно включить программно через REST API или клиентскую библиотеку. Используйте операции Set Service Properties, чтобы отдельно включить Storage Analytics для каждой службы.
 
-Объединенные данные хранятся в известном большом двоичном объекте (для ведения журнала) и в известных таблицах (для метрик), доступ к которым можно получить с помощью API службы BLOB-объектов и службы таблиц.
+Объединенные данные хранятся в известном большом двоичном объекте (для ведения журнала) и в известных таблицах (для метрик), доступ к которым можно получить с помощью API служб хранилища BLOB-объектов и таблиц.
 
-В Storage Analytics установлено ограничение в 20 ТБ для объема хранимых данных, не зависящее от общего ограничения на вашу учетную запись хранения. Все журналы хранятся в [блочных BLOB-объектах](https://docs.microsoft.com/azure/storage/storage-analytics) в контейнере $logs, который автоматически создается при включении Storage Analytics для учетной записи хранения.
+В Аналитике службы хранилища установлено ограничение в 20 ТБ для объема хранимых данных, не зависящее от общего ограничения на вашу учетную запись хранения. Все журналы хранятся в [блочных BLOB-объектах](https://docs.microsoft.com/azure/storage/storage-analytics) в контейнере $logs, который автоматически создается при включении Аналитики службы хранилища для учетной записи хранения.
 
 > [!Note]
-> Дополнительную информацию о выставлении счетов и политиках хранения данных см. в разделе [Storage Analytics and Billing](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-and-billing) (Storage Analytics и выставление счетов).
->
-> [!Note]
-> Дополнительные сведения об ограничениях учетных записей хранения см. в разделе [Целевые показатели масштабируемости и производительности службы хранилища Azure](https://docs.microsoft.com/azure/storage/storage-scalability-targets).
+> * Дополнительные сведения о выставлении счетов и политиках хранения данных см. в разделе [Аналитика службы хранилища и выставление счетов](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-and-billing).
+> * Дополнительные сведения об ограничениях учетных записей хранения см. в разделе [Целевые показатели масштабируемости и производительности службы хранилища Azure](https://docs.microsoft.com/azure/storage/storage-scalability-targets).
 
-Регистрируются аутентифицированные и анонимные запросы следующих типов.
-
-
+Аналитика службы хранилища регистрирует прошедшие проверку подлинности и анонимные запросы следующих типов:
 
 | Аутентифицированные  | Анонимные|
 | :------------- | :-------------|
 | Успешные запросы. | Успешные запросы. |
-|Неудачные запросы, в том числе из-за ошибок, связанных с временем ожидания, регулированием, сетью, авторизацией и др. | Запросы, в которых используется подписанный URL-адрес (SAS), в том числе неудачные и успешные запросы. |
-| Запросы, в которых используется подписанный URL-адрес (SAS), в том числе неудачные и успешные запросы. |Ошибки времени ожидания для клиента и сервера. |
+|Неудачные запросы, в том числе из-за ошибок, связанных с временем ожидания, регулированием, сетью, авторизацией и др. | Запросы, в которых используется подписанный URL-адрес, в том числе неудачные и успешные запросы. |
+| Запросы, в которых используется подписанный URL-адрес, в том числе неудачные и успешные запросы. |Ошибки времени ожидания для клиента и сервера. |
 |   Запросы к данным аналитики. |    Неудачные запросы GET с кодом ошибки 304 (не изменено). |
-| Запросы, выполненные в самой аналитике хранилища, такие как запросы на создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов аналитики хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-log-format). | Остальные неудачные анонимные запросы не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии аналитики хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов аналитики хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-log-format). |
+| Запросы, выполненные в самой аналитике хранилища, такие как запросы на создание или удаление журнала, не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии Аналитики службы хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов Аналитики службы хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-log-format). | Остальные неудачные анонимные запросы не регистрируются. Полный список регистрируемых данных приведен в разделах [Операции с протоколированием и сообщения о состоянии Аналитики службы хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-logged-operations-and-status-messages) и [Формат журналов Аналитики службы хранилища](https://docs.microsoft.com/rest/api/storageservices/fileservices/storage-analytics-log-format). |
 
 ### <a name="azure-networking-logs"></a>Журналы сетей Azure
 Мониторинг и ведение журнала сетей в Azure выполняется комплексно и охватывает две обширные категории.
 
--   [Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-watcher). Мониторинг сети на основе сценариев обеспечивается с помощью функций Наблюдателя за сетями. Эта служба включает в себя запись пакетов, определение следующего прыжка, проверку IP-потока, представление групп безопасности и журналы потоков NSG. В отличие от мониторинга отдельных сетевых ресурсов, мониторинг на уровне сценария обеспечивает комплексное представление сетевых ресурсов.
+* [Наблюдатель за сетями](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-watcher). Мониторинг сети на основе сценариев обеспечивается с помощью функций Наблюдателя за сетями. Эта служба включает в себя запись пакетов, определение следующего прыжка, проверку IP-потока, представление групп безопасности и журналы потоков NSG. В отличие от мониторинга отдельных сетевых ресурсов, мониторинг на уровне сценария обеспечивает комплексное представление сетевых ресурсов.
 
--   [Мониторинг ресурсов](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-resource-level-monitoring). Мониторинг на уровне ресурса базируется на четырех компонентах. Это журналы диагностики, метрики, устранение неполадок и работоспособность ресурсов. Все эти компоненты создаются на уровне сетевого ресурса.
+* [Мониторинг ресурсов](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-resource-level-monitoring). Мониторинг на уровне ресурсов базируется на четырех компонентах. Это журналы диагностики, метрики, устранение неполадок и работоспособность ресурсов. Все эти компоненты создаются на уровне сетевого ресурса.
 
 ![Журналы сетей Azure](./media/azure-log-audit/azure-log-audit-fig4.png)
 
 Наблюдатель за сетями — это региональная служба, обеспечивающая мониторинг и диагностику условий на уровне сетевого сценария на платформе Azure. Инструменты диагностики сети и визуализации, доступные в Наблюдателе за сетями, помогают понять, как работает сеть в Azure, диагностировать ее и получить ценную информацию.
 
-**Ведение журнала потоков NSG**. Журналы потоков для групп безопасности сети позволяют записывать журналы, относящиеся к трафику, который разрешают или запрещают правила безопасности в группе. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
+### <a name="network-security-group-flow-logging"></a>Ведение журнала потоков для группы безопасности сети
 
-### <a name="network-security-group-flow-logging"></a>Ведение журнала потоков для групп безопасности сети
+[Журналы потоков для групп безопасности сети (NSG)](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) являются функцией Наблюдателя за сетями, которая позволяет просматривать сведения о входящем и исходящем IP-трафике через NSG. Эти журналы потоков сохраняются в формате JSON и содержат следующие сведения:
+* Входящие и исходящие потоки для каждого правила.
+* Сетевой адаптер, к которому относится данный поток.
+* Информация о потоке из 5 кортежей: исходный и конечный IP-адрес, исходный и конечный порт, протокол.
+* Разрешен или запрещен трафик.
 
-[Журналы потоков для групп безопасности сети](https://docs.microsoft.com/azure/network-watcher/network-watcher-nsg-flow-logging-overview) — это компонент Наблюдателя за сетями, который позволяет просматривать сведения о входящем и исходящем IP-трафике в группе безопасности сети. Эти журналы потоков записываются в формате JSON. В них отображаются входящие и исходящие потоки по каждому правилу, сетевая карта, с которой связан поток, сведения о 5 кортежах потока (IP-адрес источника и места назначения, порт источника и места назначения, протокол), а также сведения о состоянии трафика (разрешен или запрещен).
-
-Хотя журналы потоков нацелены на группы безопасности сети, они не отображаются так же, как другие журналы. Журналы потоков хранятся только в учетной записи хранения.
+Хотя журналы потоков предназначены для NSG, они отображаются не так, как другие журналы. Журналы потоков хранятся только в учетной записи хранения.
 
 К журналам потоков применяются те же политики хранения, что и к другим журналам. Для журналов действует политика хранения, в которой можно задать период от 1 до 365 дней. Если политика хранения не задана, то журналы сохраняются неограниченно долго.
 
 **Журналы диагностики**
 
-Периодические и спонтанные события, создаваемые сетевыми ресурсами, регистрируются в журналах в учетных записях хранения, отправляются в концентратор событий или в Log Analytics. Эти журналы содержат подробные сведения о работоспособности ресурса. Их можно просматривать в таких инструментах, как Power BI и Log Analytics. Чтобы узнать, как просматривать журналы диагностики, посетите страницу [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics).
+Периодические и спонтанные события, создаваемые сетевыми ресурсами, регистрируются в журналах в учетных записях хранения, а затем отправляются в концентратор событий или в Log Analytics. Эти журналы содержат подробные сведения о работоспособности ресурса. Их можно просматривать в таких инструментах, как Power BI и Log Analytics. Чтобы узнать, как просматривать журналы диагностики, см. раздел [Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics).
 
-![Журналы диагностики](./media/azure-log-audit/azure-log-audit-fig5.png)
+![Раздел "Журналы диагностики"](./media/azure-log-audit/azure-log-audit-fig5.png)
 
-Доступны журналы диагностики для [подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log), [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log), маршрутов и [шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics).
+Доступны журналы диагностики для [Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log), [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log), маршрутов и [шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics).
 
-Наблюдатель за сетями содержит представление журналов диагностики. Оно содержит все сетевые ресурсы, поддерживающие ведение журналов диагностики. В этом представлении можно удобно и быстро включать и отключать сетевые ресурсы.
+Наблюдатель за сетями имеет представление журналов диагностики. Оно содержит все сетевые ресурсы, поддерживающие ведение журналов диагностики. В этом представлении можно удобно и быстро включать и отключать сетевые ресурсы.
 
 
-Помимо представленных выше возможностей ведения журнала, в настоящее время Наблюдатель за сетями обеспечивает следующие функции.
+Кроме представленных выше возможностей ведения журнала, сейчас Наблюдатель за сетями обеспечивает следующие функции:
 - [Топология](https://docs.microsoft.com/azure/network-watcher/network-watcher-topology-overview). Обеспечивает представление уровня сети, в котором показаны различные взаимодействия и связи между сетевыми ресурсами в группе ресурсов.
 
-- [Изменяемая запись пакетов](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-overview). Позволяет записывать входящие и исходящие пакеты данных для виртуальной машины. Дополнительные параметры фильтрации и элементы управления для тонкой настройки, такие как возможность установить ограничения времени и размера, обеспечивают гибкость в работе. Данные пакетов могут храниться в хранилище BLOB-объектов или на локальном диске в виде CAP-файлов.
+- [Изменяемая запись пакетов](https://docs.microsoft.com/azure/network-watcher/network-watcher-packet-capture-overview). Позволяет записывать входящие и исходящие пакеты данных для виртуальной машины. Дополнительные параметры фильтрации и элементы управления, такие как возможность установить ограничения времени и размера, обеспечивают гибкость в работе. Данные пакетов могут храниться в хранилище BLOB-объектов или на локальном диске в виде файлов *CAP*.
 
--   [Проверка IP-потока](https://docs.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview). Позволяет проверить, разрешен или запрещен пакет, на основе информации о пакете, указанной в пяти кортежах (IP-адрес назначения, исходный IP-адрес, порт назначения, исходный порт и протокол). Если пакет отклонен группой безопасности, возвращаются правило и группа, которые запретили этот пакет.
+* [Проверка IP-потока](https://docs.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview). Позволяет узнать, разрешен или запрещен пакет, на основе информации о параметрах пакета, указанной в 5 кортежах (IP-адрес назначения, исходный IP-адрес, порт назначения, исходный порт и протокол). Если пакет отклонен группой безопасности, возвращаются правило и группа, которые запретили этот пакет.
 
--   [Определение следующего прыжка](https://docs.microsoft.com/azure/network-watcher/network-watcher-next-hop-overview). Позволяет определить следующий прыжок для пакетов, маршрутизируемых в сетевой структуре Azure, что позволяет диагностировать любые неправильные определяемые пользователем маршруты.
+* [Определение следующего прыжка](https://docs.microsoft.com/azure/network-watcher/network-watcher-next-hop-overview). Позволяет определить следующий прыжок для пакетов, маршрутизируемых в сетевой структуре Azure, что позволяет диагностировать любые неправильные определенные пользователем маршруты.
 
--   [Представление групп безопасности](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview). Возвращает действующие и примененные правила безопасности, которые применяются к виртуальной машине.
+* [Представление групп безопасности](https://docs.microsoft.com/azure/network-watcher/network-watcher-security-group-view-overview). Позволяет просмотреть действующие и примененные правила безопасности, которые применяются к виртуальной машине.
 
--   [Устранение неполадок шлюза виртуальной сети и подключений](https://docs.microsoft.com/azure/network-watcher/network-watcher-troubleshoot-manage-rest). Дает возможность устранять неполадки шлюза виртуальной сети и подключений.
+* [Устранение неполадок шлюза виртуальной сети и подключений](https://docs.microsoft.com/azure/network-watcher/network-watcher-troubleshoot-manage-rest). Помогает устранять неполадки шлюза виртуальной сети и подключений.
 
--   [Ограничения сетевых ресурсов подписки](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-subscription-limits). Возможность просмотреть данные об использовании сетевых ресурсов относительно установленных ограничений.
+* [Ограничения сетевых ресурсов подписки](https://docs.microsoft.com/azure/network-watcher/network-watcher-monitoring-overview#network-subscription-limits). Возможность просмотреть данные об использовании сетевых ресурсов относительно установленных ограничений.
 
-### <a name="application-insight"></a>Application Insights
+### <a name="application-insights"></a>Application Insights
 
-[Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга вашего работающего веб-приложения. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.
+[Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview) — это расширяемая служба APM для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга работающих веб-приложений. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.
 
- Эта служба помогает постоянно улучшать производительность и удобство использования.
+Application Insights помогает постоянно улучшать производительность и удобство использования.
 
- Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и J2EE, с локальным или облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения к различным инструментам разработки.
+Эта служба работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и J2EE, с локальным или облачным размещением. Она интегрируется с процессом DevOps и содержит точки подключения к различным средствам разработки.
 
-![Application Insights](./media/azure-log-audit/azure-log-audit-fig6.png)
+![Схема Application Insights](./media/azure-log-audit/azure-log-audit-fig6.png)
 
 Служба Application Insights предназначена для команды разработчиков. Она позволяет получить сведения о производительности и использовании приложения. Она отслеживает следующее:
 
--   **Частота запросов, время отклика и частота сбоев.** Узнайте, какие страницы наиболее популярны, в какое время дня их посещают чаще всего, а также узнайте о расположении пользователей. Узнайте, какие страницы работают лучше всего. Если при увеличении количества запросов повышается время отклика и частота сбоев, возможно, возникла проблема с ресурсами.
+* **Частота запросов, время отклика и частота сбоев**. Узнайте, какие страницы наиболее популярны, в какое время дня их посещают чаще всего, а также узнайте о расположении пользователей. Узнайте, какие страницы работают лучше всего. Если при увеличении количества запросов повышается время отклика и частота сбоев, возможно, возникла проблема с ресурсами.
 
--   **Частота зависимостей, время отклика и частота сбоев.** Узнайте, замедляют ли внешние службы вашу работу.
+* **Частота зависимостей, время отклика и частота сбоев**. Узнайте, замедляют ли внешние службы вашу работу.
 
--   **Исключения.** Проанализируйте сводные статистические данные или выберите конкретные экземпляры и выполните детализацию трассировки стека и связанных запросов. Исключения сервера и браузера регистрируются.
+* **Исключения**. Проанализируйте сводные статистические данные или выберите конкретные экземпляры и выполните детализацию трассировки стека и связанных запросов. Исключения сервера и браузера регистрируются.
 
--   **Просмотры страниц и производительность загрузки.** Эти сведения сообщаются через браузеры пользователей.
+* **Просмотры страниц и производительность загрузки**. Вы можете получать отчеты из браузеров пользователей.
 
--   **Вызовы AJAX** с веб-страницы. Скорость, время отклика и частота сбоев.
+* **Вызовы AJAX**. Получайте данные о скорости веб-страниц, времени отклика и частоте сбоев.
 
--   **Количество пользователей и сеансов.**
+* **Количество пользователей и сеансов.**
 
--   **Счетчики производительности** с компьютеров с сервером Windows или Linux, такие как ЦП, память и использование сети.
+* **Счетчики производительности**. Получайте данные с компьютеров с сервером Windows или Linux, такие как загрузка ЦП, использование памяти и сети.
 
--   **Размещение диагностики** из Docker или Azure.
+* **Размещение диагностики**. Получайте данные из Docker или Azure.
 
--   **Журналы диагностики трассировки** из вашего приложения. Предназначены для сопоставления событий трассировки с запросами.
+* **Журналы диагностики трассировки**. Получайте данные из своего приложения, позволяющие сопоставить события трассировки с запросами.
 
--   **Пользовательские события и метрики**, которые вы напишете самостоятельно в коде клиента или сервера, для отслеживания бизнес-событий, таких как количество проданных единиц или выигранных игр.
+* **Пользовательские события и метрики**. Получайте данные, которые вы самостоятельно записываете в коде клиента или сервера, для отслеживания бизнес-событий, таких как количество проданных единиц или выигранных игр.
 
-**Список сценариев интеграции и их описание**
+В следующей таблице перечислены и описаны сценарии интеграции:
 
-| Сценарии интеграции | ОПИСАНИЕ |
+| Сценарий интеграции | ОПИСАНИЕ |
 | --------------------- | :---------- |
 |[Сопоставление приложений](https://docs.microsoft.com/azure/application-insights/app-insights-app-map)|Компоненты приложения с основными метриками и оповещениями.||
 |[Поиск данных экземпляра в системе диагностики](https://docs.microsoft.com/azure/application-insights/app-insights-diagnostic-search)| Поиск и фильтрация событий, таких как запросы, исключения, вызовы зависимостей, журналы трассировки и просмотры страниц.||
@@ -313,61 +281,57 @@ Azure Active Directory (Azure AD) формирует отчеты о безоп�
 |[REST API](https://dev.applicationinsights.io/)|Напишите код для выполнения запросов с помощью метрик и необработанных данных.||
 |[непрерывный экспорт.](https://docs.microsoft.com/azure/application-insights/app-insights-export-telemetry)|Выполняйте массовый экспорт необработанных данных в хранилище по мере их поступления.||
 
-### <a name="azure-security-center-alerts"></a>Оповещения центра безопасности Azure
-[Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro) автоматически собирает, анализирует и объединяет данные журналов, поступающие от ресурсов Azure, сети и подключенных решений партнеров, таких как брандмауэры и решения для защиты конечных точек, для выявления реальных угроз и сокращения ложных срабатываний. Список приоритетных оповещений системы безопасности отображается в центре безопасности вместе с информацией, необходимой для быстрого анализа проблемы, и рекомендациями по устранению атаки.
+### <a name="azure-security-center-alerts"></a>оповещения центра безопасности Azure.
+Функция обнаружения угроз в центре безопасности Azure автоматически собирает информацию о безопасности из ваших ресурсов Azure, сети и подключенных партнерских решений. Она анализирует эту информацию, часто сравнивая сведения из разных источников и определяя угрозы. Приоритет в центре безопасности получают оповещения безопасности и рекомендации по устранению угроз. Дополнительные сведения см. в статье [Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro).
 
-Функция обнаружения угроз в центре безопасности автоматически собирает информацию о безопасности из ваших ресурсов Azure, сети и подключенных партнерских решений. Она анализирует эту информацию, часто сравнивая сведения из разных источников и определяя угрозы. Приоритет в центре безопасности получают оповещения безопасности и рекомендации по устранению угроз.
+![Схема для центра безопасности Azure](./media/azure-log-audit/azure-log-audit-fig7.png)
 
-![Центр безопасности Azure](./media/azure-log-audit/azure-log-audit-fig7.png)
+В центре безопасности используется расширенная аналитика безопасности, возможности которой значительно превышают возможности подходов, основанных на сигнатурах. В нем достижения в сфере больших данных и [машинного обучения](https://azure.microsoft.com/blog/machine-learning-in-azure-security-center/) используются для оценки событий во всей облачной структуре. Это позволяет выявлять угрозы, которые невозможно обнаружить вручную, а также прогнозировать тенденции развития атак. Вот что входит в аналитику по вопросам безопасности:
 
-В центре безопасности используется расширенная аналитика безопасности, возможности которой значительно превышают возможности подходов, основанных на сигнатурах. В нем также используются достижения в технологиях больших данных и [машинного обучения](https://azure.microsoft.com/blog/machine-learning-in-azure-security-center/). С их помощью оцениваются события во всей облачной структуре — выявляются угрозы, которые невозможно обнаружить вручную, и прогнозируются тенденции развития атак. Вот что входит в аналитику по вопросам безопасности:
+* **Интегрированная аналитика угроз** — поиск вредного кода с помощью глобальной аналитики угроз, которая поступает от продуктов и служб Майкрософт, подразделения Microsoft Digital Crimes Unit (DCU), центра Microsoft Security Response Center (MSRC) и внешних веб-каналов.
 
--   **Интегрированная аналитика угроз**— поиск вредного кода с помощью глобальной аналитики угроз, которая поступает от продуктов и служб Майкрософт, подразделения Microsoft Digital Crimes Unit (DCU), центра Microsoft Security Response Center (MSRC) и внешних веб-каналов.
+* **Поведенческая аналитика** — вредоносное поведение обнаруживается путем сравнения с известными схемами поведения.
 
--   **Поведенческая аналитика** — вредоносное поведение обнаруживается путем сравнения с известными схемами поведения.
+* **Обнаружение аномалий** — базовые показатели ретроспективно фиксируются с помощью статистического профилирования. В рамках обнаружения аномалий приходят оповещения о таких отклонениях от базовых показателей, которые свидетельствуют о потенциальных атаках.
 
--   **Обнаружение аномалий** — исторически значимые базовые показатели фиксируются с помощью статистического профилирования. В рамках обнаружения аномалий приходят оповещения о таких отклонениях от базовых показателей, которые свидетельствуют о потенциальных атаках.
+Многие операции системы безопасности и групп реагирования на инциденты полагаются на решение SIEM в качестве отправной точки для рассмотрения и исследования оповещений системы безопасности. С помощью интеграции журналов Azure можно синхронизировать оповещения центра безопасности, а также события безопасности виртуальных машин, собранные системой диагностики Azure и журналами аудита, с решением Log Analytics или SIEM в режиме, близком к реальному времени.
 
-
-Многие операции системы безопасности и групп реагирования на инциденты полагаются на решение для сбора данных безопасности и управления событиями (SIEM, Security Information and Event Management) в качестве отправной точки для рассмотрения и исследования оповещений системы безопасности. С помощью интеграции журналов Azure клиенты могут синхронизировать оповещения центра безопасности, а также события безопасности виртуальных машин, собранные системой диагностики Azure и журналами аудита Azure, с решением Log Analytics или SIEM в режиме, близком к реальному времени.
-
-
-## <a name="log-analytics"></a>Log Analytics
+## <a name="log-analytics"></a>Log Analytics 
 
 Log Analytics — это служба в Azure, которая помогает собирать и анализировать данные, формируемые ресурсами в облачных и локальных средах. Она предоставляет аналитические данные в режиме реального времени, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам независимо от их физического местонахождения.
 
-![Log Analytics](./media/azure-log-audit/azure-log-audit-fig8.png)
+![Схема Log Analytics](./media/azure-log-audit/azure-log-audit-fig8.png)
 
-Ключевым компонентом Log Analytics является рабочая область, которая размещена в облаке Azure. Данные собираются в рабочую область из подключенных источников в результате настройки источников данных и добавления решений в подписку. Источники данных и решения создают различные типы записей, которые имеют собственные наборы свойств, но в запросах к рабочей области могут анализироваться вместе. Это позволяет использовать одни и те же средства и методы для работы с разными видами данных, собранными из различных источников.
+Ключевым компонентом Log Analytics является рабочая область, которая размещена в Azure. Log Analytics собирает данные в рабочую область из подключенных источников посредством настройки источников данных и добавления решений в подписку. Отдельные источники данных и решения создают различные типы записей, которые имеют собственные наборы свойств. Но в запросах к рабочей области источники и решения могут анализироваться вместе. Это позволяет использовать одни и те же средства и методы для работы с разными видами данных, собранными из различных источников.
 
-Подключенные источники — это компьютеры и другие ресурсы, создающие данные, которые собираются службой Log Analytics. К этим источникам относятся агенты, установленные на компьютеры [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents) и [Linux](https://docs.microsoft.com/azure/log-analytics/log-analytics-linux-agents), подключенные напрямую, или агенты в [подключенной группе управления System Center Operations Manager](https://docs.microsoft.com/azure/log-analytics/log-analytics-om-agents). Log Analytics может также собирать данные из [службы хранилища Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage).
+Подключенные источники — это компьютеры и другие ресурсы, создающие данные, собираемые службой Log Analytics. К этим источникам относятся агенты, установленные на компьютеры [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-windows-agents) и [Linux](https://docs.microsoft.com/azure/log-analytics/log-analytics-linux-agents), подключенные напрямую, или агенты в [подключенной группе управления System Center Operations Manager](https://docs.microsoft.com/azure/log-analytics/log-analytics-om-agents). Log Analytics может также собирать данные из [учетной записи хранения Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage).
 
-[Источники данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources) — это различные виды данных, собираемые из каждого подключенного источника. К этим источникам относятся события и [данные о производительности](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-performance-counters) из агентов [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-windows-events) и Linux, а также такие источники, как [журналы IIS](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-iis-logs) и [настраиваемые текстовые журналы](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-custom-logs). Вы настраиваете каждый источник, с которого нужно получать данные, и конфигурация передается на каждый подключенный источник автоматически.
+[Источники данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources) — это различные виды данных, собираемые из каждого подключенного источника. К этим источникам относятся события и [данные о производительности](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-performance-counters) из агентов [Windows](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-windows-events) и Linux, а также такие источники, как [журналы IIS](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-iis-logs) и [журналы пользовательских текстов](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-sources-custom-logs). Вы настраиваете каждый источник, с которого нужно получать данные, и конфигурация передается на каждый подключенный источник автоматически.
 
 [Сбор журналов и метрик для служб Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage) можно выполнить четырьмя разными способами:
-1.  Передача данных диагностики Azure непосредственно в Log Analytics ("Диагностика" в следующей таблице).
+* Отправка диагностики Azure напрямую в Log Analytics (**диагностика** в следующей таблице).
 
-2.  Передача данных диагностики Azure в службу хранилища Azure, а затем — в Log Analytics ("Хранилище" в следующей таблице).
+* Отправка диагностики Azure в службу хранилища Azure, а затем — в Log Analytics (**хранилище** в следующей таблице).
 
-3.  Использование соединителей для служб Azure ("Соединители" в следующей таблице).
+* Использование соединителей для служб Azure (**соединители** в следующей таблице).
 
-4.  Сценарии для сбора и публикации данных в Log Analytics (не указано в следующей таблице, а также для служб, которые не указаны).
+* Сценарии для сбора и публикации данных в Log Analytics (пустые ячейки в следующей таблице, а также для служб, которые не указаны).
 
 | Service | Тип ресурса | Журналы | Метрики | Решение |
 | :------ | :------------ | :--- | :------ | :------- |
-|Шлюзы приложений|  Microsoft.Network/<br>applicationGateways|  Диагностика|Диагностика|    [Анализ шлюзов](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics) [приложений Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics)|
+|Шлюз приложений Azure| Microsoft.Network/<br>applicationGateways|  Диагностика|Диагностика|    [Анализ шлюзов](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics) [приложений Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics)|
 |Application Insights||     Соединитель|  Соединитель|  [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [(предварительная версия)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
-|Учетные записи службы автоматизации|   Microsoft.Automation/<br>AutomationAccounts|    Диагностика||       [Дополнительные сведения](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|
-|Учетные записи пакетной службы|    Microsoft.Batch/<br>batchAccounts|  Диагностика|    Диагностика||
+|Учетные записи для службы автоматизации Azure| Microsoft.Automation/<br>AutomationAccounts|    Диагностика||       [Дополнительные сведения](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|
+|Учетные записи для пакетной службы Azure|  Microsoft.Batch/<br>batchAccounts|  Диагностика|    Диагностика||
 |Классические облачные службы||       Служба хранилища||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
 |Cognitive Services|    Microsoft.CognitiveServices/<br>accounts|       Диагностика|||
-|Data Lake Analytics|   Microsoft.DataLakeAnalytics/<br>accounts|   Диагностика|||
-|Data Lake Store|   Microsoft.DataLakeStore/<br>accounts|   Диагностика|||
-|пространство имен концентратора событий;|   Microsoft.EventHub/<br>namespaces|  Диагностика|    Диагностика||
-|Центры Интернета вещей;|  Microsoft.Devices/<br>IotHubs||     Диагностика||
-|Key Vault| Microsoft.KeyVault/<br>vaults|  Диагностика  || [Анализ Key Vault](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-key-vault)|
-|Балансировщики нагрузки|    Microsoft.Network/<br>loadBalancers|    Диагностика|||
-|Logic Apps|    Microsoft.Logic/<br>workflows|  Диагностика|    Диагностика||
+|Аналитика озера данных Azure| Microsoft.DataLakeAnalytics/<br>accounts|   Диагностика|||
+|Хранилище озера данных Azure| Microsoft.DataLakeStore/<br>accounts|   Диагностика|||
+|Пространство имен для концентратора событий Azure| Microsoft.EventHub/<br>namespaces|  Диагностика|    Диагностика||
+|Центр Интернета вещей Azure| Microsoft.Devices/<br>IotHubs||     Диагностика||
+|Хранилище ключей Azure|   Microsoft.KeyVault/<br>vaults|  Диагностика  || [Анализ хранилища ключей](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-key-vault)|
+|Azure Load Balancer|   Microsoft.Network/<br>loadBalancers|    Диагностика|||
+|Azure Logic Apps|  Microsoft.Logic/<br>workflows|  Диагностика|    Диагностика||
 ||Microsoft.Logic/<br>integrationAccounts||||
 |группы сетевой безопасности;|   Microsoft.Network/<br>networksecuritygroups|Диагностика||   [Анализ групп безопасности сети Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-network-security-group-analytics-solution-in-log-analytics)|
 |Хранилища восстановления|   Microsoft.RecoveryServices/<br>vaults|||[Служба анализа служб восстановления Azure (предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
@@ -377,63 +341,50 @@ Log Analytics — это служба в Azure, которая помогает 
 |SQL (версия 12)| Microsoft.Sql/<br>servers/<br>databases||       Диагностика||
 ||Microsoft.Sql/<br>servers/<br>elasticPools||||
 |Служба хранилища|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
-|Виртуальные машины|  Microsoft.Compute/<br>virtualMachines|  Добавочный номер|  Добавочный номер||
+|Виртуальные машины Azure|    Microsoft.Compute/<br>virtualMachines|  Добавочный номер|  Добавочный номер||
 ||||Диагностика||
-|Масштабируемые наборы виртуальных машин|   Microsoft.Compute/<br>virtualMachines    ||Диагностика||
+|наборы для масштабирования виртуальных машин|    Microsoft.Compute/<br>virtualMachines    ||Диагностика||
 ||Microsoft.Compute/<br>virtualMachineScaleSets/<br>virtualMachines||||
-|Фермы веб-серверов|Microsoft.Web/<br>serverfarms||   Диагностика
-|Веб-сайты| Microsoft.Web/<br>sites ||      Диагностика|    [Дополнительные сведения](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webappazure-oms-monitoring)|
+|фермы веб-серверов;|Microsoft.Web/<br>serverfarms||   Диагностика
+|веб-сайты;|  Microsoft.Web/<br>sites ||      Диагностика|    [Дополнительные сведения](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webappazure-oms-monitoring)|
 ||Microsoft.Web/<br>sites/<br>slots|||||
 
 
 ## <a name="log-integration-with-on-premises-siem-systems"></a>Интеграция журналов с локальными системами SIEM
-[Служба интеграции журналов Azure](https://www.microsoft.com/download/details.aspx?id=53324) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными **системами управления информацией о безопасности и событиями безопасности (SIEM)**.
+Служба [Интеграция журналов данных Azure](https://www.microsoft.com/download/details.aspx?id=53324) позволяет интегрировать необработанные журналы из ресурсов Azure с использованием локальной системы SIEM.
 
-![Интеграция журналов](./media/azure-log-audit/azure-log-audit-fig9.png)
+![Схема интеграции журналов](./media/azure-log-audit/azure-log-audit-fig9.png)
 
-Она собирает данные системы диагностики Azure из виртуальных машин Windows (WAD), журналов действий Azure, оповещений центра безопасности Azure и журналов поставщика ресурсов Azure. С помощью такой интеграции вы можете получить доступ ко всем своим ресурсам, локальным или облачным, на единой панели мониторинга, что позволяет выполнять статистическую обработку, сопоставление и анализ, а также предупреждать о событиях безопасности.
+Служба интеграции журналов собирает данные диагностики Azure из виртуальных машин Windows, журналов действий Azure, оповещений центра безопасности Azure и журналов поставщика ресурсов Azure. С помощью такой интеграции вы можете получить доступ ко всем своим ресурсам, локальным или облачным, на единой панели мониторинга, что позволяет выполнять статистическую обработку, сопоставление и анализ, а также оповещать о событиях безопасности.
 
+Сейчас служба интеграции журналов поддерживает интеграцию журналов действий Azure, журналов событий Windows из виртуальных машин Windows в подписке Azure, оповещений центра безопасности Azure, журналов диагностики Azure и журналов аудита Azure AD.
 
-
-Служба интеграции журналов Azure сейчас поддерживает интеграцию журналов действий Azure, журналов событий Windows для виртуальной машины Windows в подписке Azure, оповещений центра безопасности Azure, журналов диагностики Azure и журналов аудита Azure Active Directory.
-
-| Тип журнала | Log Analytics с поддержкой JSON (Splunk, ArcSight, Qradar) |
+| Тип журнала | Log Analytics с поддержкой JSON (Splunk, ArcSight и IBM QRadar) |
 | :------- | :-------------------------------------------------------- |
-|Журналы аудита AAD|    Да|
+|Журналы аудита Azure AD|   Yes|
 |Журналы действий| Yes|
-|Оповещения ASC |Yes|
+|Оповещения центра безопасности |Yes|
 |Журналы диагностики (журналы ресурсов)|  Yes|
 |Журналы виртуальных машин|   Да, но посредством перенаправления событий, а не с помощью JSON.|
 
+[Приступая к работе с Интеграцией журналов данных Azure](https://docs.microsoft.com/azure/security/security-azure-log-integration-get-started). Это руководство описывает установку службы Интеграции журналов данных Azure и интеграцию журналов из службы хранилища Azure, журналов действий Azure, оповещений центра безопасности Azure и журналов аудита Azure AD.
 
-В следующей таблице описаны категории журналов и приведены подробные сведения об интеграции с SIEM.
+Сценарии интеграции для SIEM:
 
-[Приступая к работе со службой интеграции журналов Azure](https://docs.microsoft.com/azure/security/security-azure-log-integration-get-started) — в этом руководстве рассматривается установка службы интеграции журналов Azure и интеграция журналов из хранилища WAD в Azure, журналов действий Azure, оповещений центра безопасности Azure и журналов аудита Azure Active Directory.
+* [Azure Log Integration SIEM configuration steps](https://blogs.msdn.microsoft.com/azuresecurity/2016/08/23/azure-log-siem-configuration-steps/) (Настройка SIEM для службы интеграции журналов Azure). В этой записи блога показано, как настроить службу интеграции журналов Azure для работы с решениями таких партнеров, как Splunk, HP ArcSight и IBM QRadar.
 
-Сценарии интеграции
+* [Интеграция журналов Azure: часто задаваемые вопросы](https://docs.microsoft.com/azure/security/security-azure-log-integration-faq). В этой статье содержатся ответы на часто задаваемые вопросы об интеграции журналов Azure.
 
--   [Azure Log Integration SIEM configuration steps](https://blogs.msdn.microsoft.com/azuresecurity/2016/08/23/azure-log-siem-configuration-steps/) (Настройка SIEM для службы интеграции журналов Azure) — в этой записи блога показано, как настроить службу интеграции журналов Azure для работы с такими решениями партнеров, как Splunk, HP ArcSight и IBM QRadar.
+* [Интеграция оповещений центра безопасности Azure с помощью Интеграции журналов данных Azure](https://docs.microsoft.com/azure/security-center/security-center-integrating-alerts-with-log-integration). Эта статья показывает, как синхронизировать оповещения центра безопасности, а также события безопасности виртуальных машин, собранные журналами диагностики Azure, и журналы аудита Azure с решением Log Analytics или SIEM.
 
--   [Azure log integration frequently asked questions (FAQ)](https://docs.microsoft.com/azure/security/security-azure-log-integration-faq) (Служба интеграции журналов Azure: часто задаваемые вопросы) — эта статья содержит ответы на часто задаваемые вопросы об интеграции журналов Azure.
+## <a name="next-steps"></a>Дополнительная информация
 
--   [Интеграция оповещений центра обеспечения безопасности с помощью интеграции журналов Azure (предварительная версия)](https://docs.microsoft.com/azure/security-center/security-center-integrating-alerts-with-log-integration) — в этом документе показано, как синхронизировать оповещения центра безопасности, а также события безопасности виртуальных машин, собранные системой диагностики Azure и в журналах аудита Azure, с решением Log Analytics или SIEM.
+- [Аудит и ведение журнала](https://docs.microsoft.com/azure/security/security-management-and-monitoring-overview). Защита данных и обеспечение видимости и быстрого реагирования на своевременные оповещения системы безопасности.
 
-## <a name="next-steps"></a>Дальнейшие действия
+- [Ведение журнала безопасности и сбор журналов аудита в Azure](https://azure.microsoft.com/resources/videos/security-logging-and-audit-log-collection/). Описание параметров, которые нужно применить, чтобы экземпляры Azure собирали нужные журналы безопасности и аудита.
 
-- [Аудит и ведение журнала](https://www.microsoft.com/trustcenter/security/auditingandlogging)
+- [Настройка параметров аудита для семейства веб-сайтов](https://support.office.com/article/Configure-audit-settings-for-a-site-collection-A9920C97-38C0-44F2-8BCB-4CF1E2AE22D2?ui=&rs=&ad=US). Являясь администратором семейства веб-сайтов, вы можете получить журнал действий конкретных пользователей, а также журнал действий за определенный диапазон дат. 
 
-Защита данных и обеспечение видимости и быстрого реагирования на своевременные оповещения системы безопасности.
-
-- [Security Logging and Audit Log Collection within Azure](https://azure.microsoft.com/resources/videos/security-logging-and-audit-log-collection/) (Ведение журнала безопасности и сбор журналов аудита в Azure)
-
-Описывается, какие параметры необходимо применить, чтобы экземпляры Azure собирали нужные журналы безопасности и аудита.
-
-- [Настройка параметров аудита для семейства веб-сайтов](https://support.office.com/article/Configure-audit-settings-for-a-site-collection-A9920C97-38C0-44F2-8BCB-4CF1E2AE22D2?ui=&rs=&ad=US)
-
-Администратор коллекции сайтов может получить журнал действий конкретного пользователя, а также журнал действий за определенный диапазон дат. 
-
-- [Поиск по журналу аудита в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Search-the-audit-log-in-the-Office-365-Security-Compliance-Center-0d4d0f35-390b-4518-800e-0c7ec95e946c?ui=&rs=&ad=US)
-
-Центр безопасности и соответствия требованиям Office 365 можно использовать для поиска в объединенном журнале аудита, чтобы просмотреть действия пользователя и администратора в организации Office 365.
+- [Поиск по журналу аудита в Центре безопасности и соответствия требованиям Office 365](https://support.office.com/article/Search-the-audit-log-in-the-Office-365-Security-Compliance-Center-0d4d0f35-390b-4518-800e-0c7ec95e946c?ui=&rs=&ad=US). Центр безопасности и соответствия требованиям Office 365 можно использовать для поиска в объединенном журнале аудита, а также для просмотра действий пользователей и администраторов в организации Office 365.
 
 

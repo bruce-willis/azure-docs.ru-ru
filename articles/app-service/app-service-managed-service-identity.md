@@ -9,23 +9,22 @@ ms.service: app-service
 ms.tgt_pltfrm: na
 ms.devlang: multiple
 ms.topic: article
-ms.date: 04/12/2018
+ms.date: 06/25/2018
 ms.author: mahender
-ms.openlocfilehash: ed2db5fd48c60601b90fc7ffb1094b8d89573b1f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 8305a447ac75cf4c72a332910c9c4c90c1d8eac6
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061443"
 ---
-# <a name="how-to-use-azure-managed-service-identity-public-preview-in-app-service-and-azure-functions"></a>Как использовать управляемое удостоверение службы Azure (общедоступная предварительная версия) в службе приложений и Функциях Azure
+# <a name="how-to-use-azure-managed-service-identity-in-app-service-and-azure-functions"></a>Как использовать Управляемое удостоверение службы Azure в Службе приложений и Функциях Azure
 
 > [!NOTE] 
-> Управляемые удостоверения службы для службы приложений и Функций Azure сейчас доступны в предварительной версии. Служба приложений в Linux и функция "Веб-приложение для контейнеров" сейчас не поддерживаются.
-
+> Служба приложений в Linux и функция "Веб-приложение для контейнеров" пока не поддерживают Управляемое удостоверение службы.
 
 > [!Important] 
-> При переносе приложения между подписками или клиентами Управляемое удостоверение службы для Службы приложений Azure и решения "Функции Azure" не будет работать в надлежащем режиме. Для приложения нужно предоставить новое удостоверение. Существующее удостоверение нельзя правильно удалить без удаления самого узла. Ваше приложение потребуется повторно создать с новым удостоверением, а политики доступа подчиненных ресурсов нужно обновить для использования нового удостоверения.
-
+> При переносе приложения между подписками или клиентами Управляемое удостоверение службы для Службы приложений Azure и решения "Функции Azure" не будет работать в надлежащем режиме. Для приложения нужно получить новое удостоверение, отключив службу и включив ее снова. См. раздел [Удаление удостоверения](#remove) ниже. Также нужно обновить политики доступа во всех зависимых ресурсах, чтобы они использовали новое удостоверение.
 
 В этой статье показано, как создавать управляемые удостоверения службы для приложений службы приложений и Функций Azure, а также как их использовать для получения доступа к другим ресурсам. Управляемые удостоверения службы от Azure Active Directory позволяют приложению без проблем получить доступ к другим ресурсами, защищенным AAD, таким как Azure Key Vault. Удостоверения управляются платформой Azure, и для них не нужно подготавливать или изменять секреты. Дополнительные сведения об управляемых удостоверениях службы см. в [этой статье](../active-directory/managed-service-identity/overview.md).
 
@@ -76,6 +75,31 @@ ms.lasthandoff: 04/28/2018
     az webapp identity assign --name myApp --resource-group myResourceGroup
     ```
 
+### <a name="using-azure-powershell"></a>Использование Azure PowerShell
+
+Ниже описаны действия по созданию веб-приложения и присвоению удостоверения ему с помощью Azure PowerShell:
+
+1. При необходимости установите Azure PowerShell с помощью инструкции, приведенной в [руководстве Azure PowerShell](/powershell/azure/overview), а затем выполните команду `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+
+2. Создайте веб-приложение с помощью Azure PowerShell. Дополнительные примеры применения Azure PowerShell со службой приложений см. в статье [Примеры сценариев Azure PowerShell](../app-service/app-service-powershell-samples.md).
+
+    ```azurepowershell-interactive
+    # Create a resource group.
+    New-AzureRmResourceGroup -Name myResourceGroup -Location $location
+    
+    # Create an App Service plan in Free tier.
+    New-AzureRmAppServicePlan -Name $webappname -Location $location -ResourceGroupName myResourceGroup -Tier Free
+    
+    # Create a web app.
+    New-AzureRmWebApp -Name $webappname -Location $location -AppServicePlan $webappname -ResourceGroupName myResourceGroup
+    ```
+
+3. Выполните команду `identity assign`, чтобы создать удостоверение для этого приложения.
+
+    ```azurepowershell-interactive
+    Set-AzureRmWebApp -AssignIdentity $true -Name $webappname -ResourceGroupName myResourceGroup 
+    ```
+
 ### <a name="using-an-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 
 Шаблон Azure Resource Manager можно использовать для автоматизации развертывания ресурсов Azure. Дополнительные сведения о развертывании в службе приложений и Функциях см. в статьях [Предсказуемые подготовка и развертывание микрослужб в Azure](../app-service/app-service-deploy-complex-application-predictably.md) и [Автоматизация развертывания ресурсов приложения-функции для службы "Функции Azure"](../azure-functions/functions-infrastructure-as-code.md).
@@ -120,7 +144,7 @@ ms.lasthandoff: 04/28/2018
 }
 ```
 
-Где `<TENANTID>` и `<PRINCIPALID>` заменяются значениями GUID. Свойство tenantId определяет, к какому приложению относится клиент AAD. principalId — это уникальный идентификатор для нового удостоверения приложения. В AAD приложение имеет то же имя, которое было присвоено экземпляру службы приложений и Функций Azure.
+Где `<TENANTID>` и `<PRINCIPALID>` заменяются значениями GUID. Свойство tenantId определяет, к какому клиенту AAD относится это удостоверение. principalId — это уникальный идентификатор для нового удостоверения приложения. В AAD субъект-служба имеет то же имя, которое было присвоено экземпляру Службы приложений или Функций Azure.
 
 ## <a name="obtaining-tokens-for-azure-resources"></a>Получение маркеров для ресурсов Azure
 
@@ -133,7 +157,7 @@ ms.lasthandoff: 04/28/2018
 
 ### <a name="asal"></a>Использование библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
 
-Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями службы заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI 2.0](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [справочнике Microsoft.Azure.Services.AppAuthentication]. В этом разделе показано, как начать работу с библиотекой в коде.
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями службы заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI 2.0](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [Справочник Microsoft.Azure.Services.AppAuthentication]. В этом разделе показано, как начать работу с библиотекой в коде.
 
 1. Добавьте ссылки на пакеты NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) в приложение.
 
@@ -149,7 +173,7 @@ string accessToken = await azureServiceTokenProvider.GetAccessTokenAsync("https:
 var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
 ```
 
-Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [справочнике Microsoft.Azure.Services.AppAuthentication] и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [Справочник Microsoft.Azure.Services.AppAuthentication] и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ### <a name="using-the-rest-protocol"></a>Использование протокола REST
 
@@ -204,7 +228,7 @@ Content-Type: application/json
 ```
 
 ### <a name="code-examples"></a>Примеры кода
-Чтобы выполнить такой запрос на языке C#, используйте следующий код:
+<a name="token-csharp"></a>Чтобы выполнить такой запрос на языке C#, используйте следующий код:
 ```csharp
 public static async Task<HttpResponseMessage> GetToken(string resource, string apiversion)  {
     HttpClient client = new HttpClient();
@@ -215,7 +239,7 @@ public static async Task<HttpResponseMessage> GetToken(string resource, string a
 > [!TIP]
 > Для языков .NET можно также использовать пакет [Microsoft.Azure.Services.AppAuthentication](#asal), вместо того чтобы создавать этот запрос самостоятельно.
 
-Чтобы выполнить такой запрос на языке Node.js, используйте следующий код:
+<a name="token-js"></a>Чтобы выполнить такой запрос на языке Node.js, используйте следующий код:
 ```javascript
 const rp = require('request-promise');
 const getToken = function(resource, apiver, cb) {
@@ -230,7 +254,7 @@ const getToken = function(resource, apiver, cb) {
 }
 ```
 
-В PowerShell:
+<a name="token-powershell"></a>Чтобы выполнить такой запрос на языке PowerShell, используйте следующий код:
 ```powershell
 $apiVersion = "2017-09-01"
 $resourceURI = "https://<AAD-resource-URI-for-resource-to-obtain-token>"
@@ -239,9 +263,24 @@ $tokenResponse = Invoke-RestMethod -Method Get -Headers @{"Secret"="$env:MSI_SEC
 $accessToken = $tokenResponse.access_token
 ```
 
+## <a name="remove"></a>Удаление удостоверения
+
+Чтобы удалить удостоверение, нужно отключить соответствующую функцию с помощью портала, PowerShell или интерфейса командной строки точно так же, как и при его создании. В протоколе шаблонов REST/ARM для этого нужно выбрать тип None (Отсутствует), вот так:
+
+```json
+"identity": {
+    "type": "None"
+}    
+```
+
+Такое удаление удостоверения приводит к удалению субъекта из AAD. Присвоенные системой идентификаторы удаляются из AAD автоматически, когда удаляется ресурс приложения.
+
+> [!NOTE] 
+> Также вы можете установить параметр приложения WEBSITE_DISABLE_MSI, который отключает локальную службу маркеров. Но при этом само удостоверение сохранится, и в средствах управления MSI будет отображается как "включенное". По этой причине мы рекомендуем не использовать такой параметр.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Безопасный доступ к Базе данных SQL Azure с использованием управляемого удостоверения службы](app-service-web-tutorial-connect-msi.md)
 
-[справочнике Microsoft.Azure.Services.AppAuthentication]: https://go.microsoft.com/fwlink/p/?linkid=862452
+[Справочник Microsoft.Azure.Services.AppAuthentication]: https://go.microsoft.com/fwlink/p/?linkid=862452

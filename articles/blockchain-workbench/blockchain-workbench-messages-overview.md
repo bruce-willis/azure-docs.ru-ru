@@ -1,5 +1,5 @@
 ---
-title: Обзор сообщений Azure Blockchain Workbench
+title: Обзор сообщений об интеграции Azure Blockchain Workbench
 description: Общие сведения об использовании сообщений в Azure Blockchain Workbench.
 services: azure-blockchain
 keywords: ''
@@ -10,23 +10,22 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: 4a2e85cc619d17745be9d8f72af5f99049ce7c6b
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: f45396c3af285026e16ce641bd37bf0eadcee56d
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302098"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34607606"
 ---
-# <a name="azure-blockchain-workbench-messages-overview"></a>Обзор сообщений Azure Blockchain Workbench
+# <a name="azure-blockchain-workbench-messaging-integration"></a>Интеграция службы сообщений Azure Blockchain Workbench
 
 Помимо REST API, Azure Blockchain Workbench также предоставляет интеграции на основе обмена сообщениями. Workbench публикует связанные с реестром события через службу "Сетка событий Azure", позволяя нисходящим объектам-получателям получать данные или предпринимать действия на основе этих событий. Для клиентов, которым требуется надежный обмен сообщениями, Azure Blockchain Workbench также доставляет сообщения в конечную точку служебной шины Azure.
 
 Разработчики также заинтересованы в возможности внешних систем инициировать транзакции для создания пользователей, создания контрактов и обновления контрактов в реестре. Хотя эти функции в текущее время не предоставляются в общедоступной предварительной версии, пример, предоставляющий эти возможности, можно найти по адресу [http://aka.ms/blockchain-workbench-integration-sample](http://aka.ms/blockchain-workbench-integration-sample).
 
-
 ## <a name="event-notifications"></a>Уведомления о событиях
 
-Уведомление о событиях можно использовать для уведомления пользователей и подчиненных систем о событиях, происходящих в Workbench и сети блокчейна, к которой оно подключено. Уведомление о событии можно использовать непосредственно в коде или с такими инструментами, как Logic Apps и Flow, чтобы активировать поток данных в подчиненные системы.
+Уведомления о событиях можно использовать для уведомления пользователей и подчиненных систем о событиях, происходящих в Blockchain Workbench и сети блокчейна, к которой оно подключено. Уведомление о событии можно использовать непосредственно в коде или с такими инструментами, как Logic Apps и Flow, чтобы активировать поток данных в подчиненные системы.
 
 Дополнительные сведения о различных сообщениях, которые могут быть получены, см. в [справочниках по сообщениям об уведомлениях](#notification-message-reference).
 
@@ -61,14 +60,14 @@ ms.locfileid: "34302098"
 ### <a name="consuming-service-bus-messages-with-logic-apps"></a>Использование сообщений служебной шины с Logic Apps
 
 1. Создайте **приложение логики Azure** на портале Azure.
-2.  При открытии этого приложения на портале Azure будет предложено выбрать триггер. Введите **Служебная шина** в поле поиска и выберите соответствующий триггер для типа взаимодействия со служебной шиной. Например, **Service Bus -- When a message is received in a topic subscription (auto-complete)** (Служебная шина — при получении сообщения в подписке раздела (автозавершение)).
+2. При открытии этого приложения на портале Azure будет предложено выбрать триггер. Введите **Служебная шина** в поле поиска и выберите соответствующий триггер для типа взаимодействия со служебной шиной. Например, **Service Bus -- When a message is received in a topic subscription (auto-complete)** (Служебная шина — при получении сообщения в подписке раздела (автозавершение)).
 3. При отображении конструктора рабочих процессов укажите информацию о подключении для служебной шины.
 4. Выберите подписку и укажите раздел **workbench-external**.
 5. Разработайте логику приложения, которая использует сообщения из этого триггера.
 
 ## <a name="notification-message-reference"></a>Справочник по сообщениям об уведомлениях
 
-В зависимости от имени операции сообщения об уведомлениях будут иметь один из следующих типов сообщений.
+В зависимости от **имени операции** сообщения об уведомлениях будут иметь один из следующих типов сообщений.
 
 ### <a name="accountcreated"></a>AccountCreated
 
@@ -76,8 +75,8 @@ ms.locfileid: "34302098"
 
 | ИМЯ    | ОПИСАНИЕ  |
 |----------|--------------|
-| UserId  | Идентификатор созданного пользователя |
-| ChainIdentifier | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это будет адрес пользователя в цепочке. |
+| UserId  | Идентификатор созданного пользователя. |
+| ChainIdentifier | Адрес пользователя, который был создан в сети блокчейна. В Ethereum это будет адрес пользователя **в цепочке**. |
 
 ``` csharp
 public class NewAccountRequest : MessageModelBase
@@ -94,15 +93,15 @@ public class NewAccountRequest : MessageModelBase
 | ИМЯ | ОПИСАНИЕ |
 |-----|--------------|
 | ChainID | Уникальный идентификатор цепочки, связанной с запросом.|
-  BlockId | Уникальный идентификатор блока в реестре.|
-  ContractId | Уникальный идентификатор контракта.|
-  ContractAddress |       Адрес контракта в реестре.|
-  TransactionHash  |     Хэш транзакции в реестре.|
-  OriginatingAddress |   Адрес инициатора транзакции.|
-  ActionName       |     Имя действия.|
-  IsUpdate        |      Определяет, является ли это обновлением.|
-  Параметры       |     Список объектов, которые определяют имя, значение и тип данных параметров, отправленных действию.|
-  TopLevelInputParams |  В сценариях, где контракт подключен к одному или нескольким контрактам, это параметры из контракта верхнего уровня. |
+| BlockId | Уникальный идентификатор блока в реестре.|
+| ContractId | Уникальный идентификатор контракта.|
+| ContractAddress |       Адрес контракта в реестре.|
+| TransactionHash  |     Хэш транзакции в реестре.|
+| OriginatingAddress |   Адрес инициатора транзакции.|
+| ActionName       |     Имя действия.|
+| IsUpdate        |      Определяет, является ли это обновлением.|
+| Параметры       |     Список объектов, которые определяют имя, значение и тип данных параметров, отправленных действию.|
+| TopLevelInputParams |  В сценариях, где контракт подключен к одному или нескольким контрактам, это параметры из контракта верхнего уровня. |
 
 ``` csharp
 public class ContractInsertOrUpdateRequest : MessageModelBase
@@ -242,6 +241,65 @@ public class AssignContractChainIdentifierRequest : MessageModelBase
 {
     public int ContractId { get; set; }
     public string ChainIdentifier { get; set; }
+}
+```
+
+## <a name="classes-used-by-message-types"></a>Классы, используемые в типах сообщений
+
+### <a name="messagemodelbase"></a>MessageModelBase
+
+Базовая модель всех сообщений.
+
+| ИМЯ          | ОПИСАНИЕ                          |
+|---------------|--------------------------------------|
+| OperationName | Имя операции.           |
+| RequestId     | Уникальный идентификатор запроса. |
+
+``` csharp
+public class MessageModelBase
+{
+    public string OperationName { get; set; }
+    public string RequestId { get; set; }
+}
+```
+
+### <a name="contractinputparameter"></a>ContractInputParameter
+
+Содержит имя, значение и тип параметра.
+
+| ИМЯ  | ОПИСАНИЕ                 |
+|-------|-----------------------------|
+| ИМЯ  | Имя параметра.  |
+| Значение | Значение параметра. |
+| type  | Тип параметра.  |
+
+``` csharp
+public class ContractInputParameter
+{
+    public string Name { get; set; }
+    public string Value { get; set; }
+    public string Type { get; set; }
+}
+```
+
+#### <a name="contractproperty"></a>ContractProperty
+
+Содержит идентификатор, имя, значение и тип свойства.
+
+| ИМЯ  | ОПИСАНИЕ                |
+|-------|----------------------------|
+| Идентификатор    | Идентификатор свойства.    |
+| ИМЯ  | Имя свойства.  |
+| Значение | Значение свойства. |
+| type  | Тип свойства.  |
+
+``` csharp
+public class ContractProperty
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Value { get; set; }
+    public string DataType { get; set; }
 }
 ```
 

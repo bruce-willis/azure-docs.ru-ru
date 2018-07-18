@@ -1,12 +1,12 @@
 ---
-title: "Установка обновления 5 на устройство StorSimple серии 8000 | Документация Майкрософт"
-description: "Описание процедуры установки обновления 5 для серии StorSimple 8000 на устройство StorSimple 8000."
+title: Установка обновления 5 на устройство StorSimple серии 8000 | Документация Майкрософт
+description: Описание процедуры установки обновления 5 для серии StorSimple 8000 на устройство StorSimple 8000.
 services: storsimple
 documentationcenter: NA
 author: alkohli
 manager: jconnoc
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
 ms.topic: article
@@ -15,10 +15,11 @@ ms.workload: TBD
 ms.date: 11/13/2017
 ms.author: alkohli
 ms.openlocfilehash: d6e17c7609fd41b8f4457edda373f6882a1a9d2b
-ms.sourcegitcommit: 99d29d0aa8ec15ec96b3b057629d00c70d30cfec
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38698716"
 ---
 # <a name="install-update-5-on-your-storsimple-device"></a>Установка обновления 5 на устройство StorSimple
 

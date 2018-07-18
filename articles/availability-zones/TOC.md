@@ -22,7 +22,7 @@
 ### наборы для масштабирования виртуальных машин
 #### [Создание масштабируемого набора в зоне доступности ](../virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones.md)
 
-### Подсистема балансировки нагрузки
+### Load Balancer
 #### [Что такое подсистема балансировки нагрузки?](../load-balancer/load-balancer-standard-overview.md)
 #### [Подсистема балансировки нагрузки уровня "Стандартный" и зоны доступности](../load-balancer/load-balancer-standard-availability-zones.md)
 
@@ -40,8 +40,20 @@
 ### База данных SQL
 #### [Использование зон доступности с Базой данных SQL](../sql-database/sql-database-high-availability.md#availability-zones)
 
-### Хранилище
+### Служба хранилища
 #### [Хранилище, избыточное в пределах зоны](../storage/common/storage-redundancy-zrs.md)
+
+### Концентраторы событий
+#### [Географическое аварийное восстановление в концентраторах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones-preview)
+
+### Служебная шина Azure
+#### [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview)
+
+### VPN-шлюз
+#### [Создание шлюза виртуальной сети, избыточного в пределах зоны](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
+
+### ExpressRoute
+#### [Создание шлюза виртуальной сети, избыточного в пределах зоны](../vpn-gateway/create-zone-redundant-vnet-gateway.md)
 
 # Аварийное восстановление
 ## [Использование Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/)

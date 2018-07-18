@@ -4,7 +4,7 @@ description: В этой статье описывается сквозная п
 services: active-directory
 keywords: Что такое сквозная аутентификация Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
 documentationcenter: ''
-author: swkrish
+author: billmath
 manager: mtillman
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
@@ -13,12 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 377a8255961a4c7fa55f8bbc5cb98ae4deff3205
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 2d88bf5d20beb9de9bf4a0cdcb43548d0d582779
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917284"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -47,7 +49,7 @@ ms.lasthandoff: 04/19/2018
 - *Безопасность*
   - Локальные пароли ни в каком виде не хранятся в облаке.
   - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
-  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая Многофакторную идентификацию (MFA), и [фильтрации атак методом подбора пароля](active-directory-aadconnect-pass-through-authentication-smart-lockout.md).
+  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая Многофакторную идентификацию (MFA), и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
 - *Высокая доступность*
   - Дополнительные агенты можно установить на нескольких локальных серверах, чтобы достичь высокого уровня доступности запросов на вход.
 
@@ -62,12 +64,12 @@ ms.lasthandoff: 04/19/2018
 - Функцию можно включить с помощью [Azure AD Connect](active-directory-aadconnect.md).
 - Она использует упрощенный локальный агент, который прослушивает запросы на проверку пароля и отвечает на них.
 - Установка нескольких агентов обеспечивает высокий уровень доступности запросов на вход.
-- Она [защищает](active-directory-aadconnect-pass-through-authentication-smart-lockout.md) локальные учетные записи от атак методом подбора пароля в облаке.
+- Она [защищает](../authentication/howto-password-smart-lockout.md) локальные учетные записи от атак методом подбора пароля в облаке.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [**Краткое руководство по сквозной проверке подлинности Azure Active Directory**](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной проверки подлинности Azure Active Directory.
-- [**Интеллектуальная блокировка**](active-directory-aadconnect-pass-through-authentication-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
+- [**Интеллектуальная блокировка**](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
 - [**Текущие ограничения**](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](active-directory-aadconnect-pass-through-authentication-how-it-works.md). Сведения о том, как работает эта функция.
 - [**Часто задаваемые вопросы**](active-directory-aadconnect-pass-through-authentication-faq.md). Ответы на часто задаваемые вопросы.

@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 6b45b00de53822224afbfb3a15dbc6790deb11ce
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: feb9b0c3d90aea9d5e0351b6691e93186dbfb9f6
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34356347"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37902084"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -142,8 +142,8 @@ ms.locfileid: "34356347"
 
 1. Щелкните **Правила** и выберите **На основе пути**.
 2. Введите имя *rule2*.
-3. Введите *Images* в качестве имени первого пути. Введите для пути значение */images/**. Выберите для серверного пула значение **imagesBackendPool**.
-4. Введите *Video* в качестве имени второго пути. Введите для пути значение */video/**. Выберите для серверного пула значение **videoBackendPool**.
+3. Введите *Images* в качестве имени первого пути. Введите путь */images/*\*. Выберите для серверного пула значение **imagesBackendPool**.
+4. Введите *Video* в качестве имени второго пути. Введите путь */video/*\*. Выберите для серверного пула значение **videoBackendPool**.
 
     ![Создание правила на основе пути](./media/create-url-route-portal/application-gateway-route-rule.png)
 
@@ -155,11 +155,11 @@ ms.locfileid: "34356347"
 
     ![Запись общедоступного IP-адреса шлюза приложений](./media/create-url-route-portal/application-gateway-record-ag-address.png)
 
-2. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, http://http://40.121.222.19.
+2. Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера. Например, http://40.121.222.19.
 
     ![Тестирование базового URL-адреса в шлюзе приложений](./media/create-url-route-portal/application-gateway-iistest.png)
 
-3. Измените URL-адрес на http://&lt;ip-address&gt;:8080/video/test.htm и замените &lt;ip-address&gt; своим IP-адресом. Результат должен быть примерно таким:
+3. Измените URL-адрес на http://&lt;ip-address&gt;:8080/images/test.htm и замените &lt;ip-address&gt; своим IP-адресом. Результат должен быть примерно таким:
 
     ![Тестирование URL-адреса изображений в шлюзе приложений](./media/create-url-route-portal/application-gateway-iistest-images.png)
 

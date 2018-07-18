@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 38c1611c0404202be2e100d3059b4ba1ed1a9236
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 2104f2690e681c53649b9a37c6c764380aa94568
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051510"
 ---
 # <a name="move-data-from-sap-business-warehouse-using-azure-data-factory"></a>Перемещение данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-sap-business-warehouse-connector.md)
-> * [Версия 2 — предварительная](../connector-sap-business-warehouse.md)
+> * [Версия 1](data-factory-sap-business-warehouse-connector.md)
+> * [Версия 2 (текущая)](../connector-sap-business-warehouse.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from SAP Business Warehouse using Azure Data Factory](../connector-sap-business-warehouse.md) (Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе SAP Business Warehouse в службе "Фабрика данных Azure" версии 2](../connector-sap-business-warehouse.md).
 
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локального экземпляра SAP Business Warehouse (BW). Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.

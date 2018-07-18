@@ -146,7 +146,21 @@
     - name: Переполнение стека
       href: 'http://stackoverflow.com/questions/tagged/azure-database-postgresql'
     - name: Видеоролики
-      href: videos.md
+      items:
+        - name: Видеоролики о продукте
+          href: videos.md
+        - name: Серия видеоинструкций
+          items:
+            - name: Возможности и преимущества продукта
+              href: 'https://aka.ms/postg-intro-vid'
+            - name: Перенос приложения PostgreSQL в Azure
+              href: 'https://aka.ms/postg-migrate-vid'
+            - name: Создание интеллектуальных приложений с Cognitive Services
+              href: 'https://aka.ms/postg-cogsvs-vid'
+            - name: Подключение контейнеров с помощью OSBA
+              href: 'https://aka.ms/postg-osba-vid'
+            - name: Подключение данных приложения к Power BI
+              href: 'https://aka.ms/postg-powerbi-vid'
     - name: Форум отзывов и предложений
       href: 'https://feedback.azure.com/forums/597976-azure-database-for-postgresql'
     - name: Регионы доступности
@@ -155,5 +169,7 @@
       href: 'https://azure.microsoft.com/support/options/'
     - name: Истории клиентов
       href: 'https://customers.microsoft.com/en-us/search?sq="Azure%20Database%20for%20PostgreSQL"'
+    - name: Партнеры
+      href: partners-migration-postgresql.md
     - name: Руководство по переносу баз данных
       href: 'https://datamigration.microsoft.com/'

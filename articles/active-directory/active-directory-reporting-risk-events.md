@@ -3,23 +3,24 @@ title: События риска Azure Active Directory | Документаци
 description: В этой статье представлен подробный обзор событий риска.
 services: active-directory
 keywords: защита идентификации azure active directory, безопасность, риск, уровень риска, уязвимость, политика безопасности
-author: MarkusVi
+author: priyamohanram
 manager: mtillman
 ms.assetid: fa2c8b51-d43d-4349-8308-97e87665400b
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
+ms.component: compliance-reports
 ms.date: 05/14/2018
-ms.author: markvi
+ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: e883caa63bde26e13234dde949ce4517b328e3a5
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: cb94d84cf4e033094827f81e83d489243897671a
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195324"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36227366"
 ---
 # <a name="azure-active-directory-risk-events"></a>События риска Azure Active Directory
 

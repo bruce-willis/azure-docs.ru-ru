@@ -15,13 +15,14 @@ ms.workload: identity
 ms.date: 04/19/2018
 ms.author: andret
 ms.custom: include file
-ms.openlocfilehash: aa21168f1e19ccddc190379b30e1b612d96b56d5
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 23b7ca44b72b8840579f369954f41f554d4c8852
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36943425"
 ---
-# <a name="sign-in-users-and-all-the-microsoft-graph-api-from-an-android-app"></a>Вход пользователей и вызов всех API Microsoft Graph из приложения Android
+# <a name="sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Вход пользователей и вызов API Microsoft Graph из приложения Android
 
 В этом руководстве показано, как собственное приложение Android может получить маркер доступа и вызвать API Microsoft Graph или другие API, которым требуются маркеры доступа, из конечной точки Azure Active Directory версии 2.
 

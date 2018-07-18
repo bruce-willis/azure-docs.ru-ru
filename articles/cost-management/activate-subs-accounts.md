@@ -5,16 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/26/2018
+ms.date: 06/07/2018
 ms.topic: quickstart
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 6a42f4b5b54056424bc3e2d865408ad6711403e0
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 4a5e613169bf3173b7585b49803fc7ac7f5186ce
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35297977"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-azure-cost-management"></a>Активация подписок и учетных записей Azure с помощью службы "Управление затратами Azure"
 
@@ -59,7 +60,7 @@ ms.lasthandoff: 04/28/2018
 1. Если вы хотите обновить подписку, которая _не активирована_ и уже существует в службе "Управление затратами Azure" в разделе управления учетными записями, щелкните символ редактирования справа от родительского _GUID клиента_. Подписки группируются в родительском клиенте. Поэтому не активируйте их по отдельности.
     ![Повторное обнаружение подписок](./media/activate-subs-accounts/existing-sub.png)
 2. При необходимости введите идентификатор клиента. Если вы не знаете идентификатор клиента, выполните следующие действия, чтобы найти его.
-    1. Войдите на [портал Azure](https://portal.azure.com).
+    1. Войдите на [портале Azure](https://portal.azure.com).
     2. На портале Azure выберите **Azure Active Directory**.
     3. Чтобы получить идентификатор клиента, щелкните **Свойства** для клиента Azure AD.
     4. Скопируйте идентификатор каталога (GUID). Это и есть ваш идентификатор клиента.
@@ -95,14 +96,39 @@ ms.lasthandoff: 04/28/2018
 1. Торговый посредник должен включить _исправления_ для вашей учетной записи. Инструкции см. в [руководстве по непрямому переносу клиентов в облачную среду](https://ea.azure.com/api/v3Help/v2IndirectCustomerOnboardingGuide).
 2. Создайте ключ соглашения Azure Enterprise для использования со службой "Управление затратами Azure". Инструкции см. в статье [Регистрация соглашения Azure Enterprise и просмотр данных о затратах](https://docs.microsoft.com/azure/cost-management/quick-register-ea).
 
-Только администратор служб Azure может включить службу "Управление затратами". Разрешений соадминистратора недостаточно.
-
 Прежде чем создавать ключ API соглашения Azure Enterprise, необходимый для установки службы "Управление затратами Azure", нужно включить API выставления счетов Azure, следуя указаниям в статьях:
 
 - [Обзор API-интерфейсов отчетов для корпоративных клиентов](../billing/billing-enterprise-api.md)
 - [API отчетов Microsoft Azure Enterprise Portal](https://ea.azure.com/helpdocs/reportingAPI) в разделе **Включение доступа к данным API**.
 
 Необходимо предоставить администраторам отдела, владельцам учетных записей и администраторам предприятия разрешения на _просмотр затрат_ с помощью API выставления счетов.
+
+Только администратор служб Azure может включить службу "Управление затратами". Разрешений соадминистратора недостаточно. Но вы можете обойти требование, касающееся разрешений администратора. Можно запросить у администратора Azure Active Directory разрешение на авторизацию **CloudynAzureCollector** с помощью скрипта PowerShell. Приведенный ниже скрипт предоставляет разрешение на регистрацию субъекта-службы Azure Active Directory **CloudynAzureCollector**.
+
+```
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+#Tenant - enter your tenant ID or Name
+$tenant = "<ReplaceWithYourTenantID>"
+
+#Cloudyn Collector application ID
+$appId = "83e638ef-7885-479f-bbe8-9150acccdb3d"
+
+#URL to activate the consent screen
+$url = "https://login.windows.net/"+$tenant+"/oauth2/authorize?api-version=1&response_type=code&client_id="+$appId+"&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2FCloudynJava&prompt=consent"
+
+#Choose your browser, the default is Internet Explorer
+
+#Chrome
+#[System.Diagnostics.Process]::Start("chrome.exe", "--incognito $url")
+
+#Firefox
+#[System.Diagnostics.Process]::Start("firefox.exe","-private-window $url" )
+
+#IExplorer
+[System.Diagnostics.Process]::Start("iexplore.exe","$url -private" )
+
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

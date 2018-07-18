@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: jgao
-ms.openlocfilehash: c72f513c7134c556afa5fa5d0b94c17b1142be54
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: ed90e50167f7e86c464b1571b91dc27435437e9b
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627422"
 ---
 # <a name="tutorial-create-a-scala-maven-application-for-spark-in-hdinsight-using-intellij"></a>Руководство. Создание приложения Scala Maven для Spark в HDInsight с помощью IntelliJ
 
@@ -46,6 +47,41 @@ ms.lasthandoff: 05/07/2018
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 * Комплект разработчика Oracle Java. Его можно установить [отсюда](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 * Java IDE. В этой статье используется среда IntelliJ IDEA 18.1.1. Его можно установить [отсюда](https://www.jetbrains.com/idea/download/).
+
+## <a name="use-intellij-to-create-application"></a>Создание приложения с помощью IntelliJ
+
+1. Запустите IntelliJ IDEA и создайте проект. В диалоговом окне **Новый проект** сделайте следующее: 
+
+   a. Выберите **HDInsight** > **Spark on HDInsight (Scala)** (Spark в HDInsight (Scala)).
+
+   Б. В списке **средств сборки** выберите один из следующих вариантов:
+
+      * **Maven.** Для поддержки мастера создания проекта Scala.
+      * **SBT.** Для управления зависимостями и создания проекта Scala.
+
+   ![Диалоговое окно нового проекта](./media/apache-spark-create-standalone-application/create-hdi-scala-app.png)
+
+2. Щелкните **Далее**.
+
+3. Мастер создания проектов Scala автоматически определяет, установлен ли подключаемый модуль Scala. Щелкните **Установить**.
+
+   ![Проверка подключаемого модуля Scala](./media/apache-spark-create-standalone-application/Scala-Plugin-check-Reminder.PNG) 
+
+4. Чтобы скачать подключаемый модуль Scala, нажмите кнопку **ОК**. Следуйте инструкциям, чтобы перезапустить IntelliJ. 
+
+   ![Диалоговое окно установки подключаемого модуля Scala](./media/apache-spark-create-standalone-application/Choose-Scala-Plugin.PNG)
+
+5. В окне **нового проекта** сделайте следующее:  
+
+    ![Выбор пакета SDK для Spark](./media/apache-spark-create-standalone-application/hdi-new-project.png)
+
+   a. Введите имя и расположение проекта.
+
+   Б. В раскрывающемся списке для параметра **Project SDK** (Пакет SDK проекта) выберите **Java 1.8** для кластера Spark 2.x или **Java 1.7** для кластера Spark 1.x.
+
+   c. В раскрывающемся списке для параметра **Spark version** (Версия Spark) мастер создания проекта Scala интегрирует правильную версию пакета SDK для Spark и пакета SDK для Scala. Если версия кластера Spark ниже 2.0, выберите **Spark 1.x**. В противном случае выберите **Spark 2.x**. В этом примере используется **Spark 2.0.2 (Scala 2.11.8)**.
+
+6. Выберите **Готово**.
 
 ## <a name="install-scala-plugin-for-intellij-idea"></a>Установка подключаемого модуля Scala для IntelliJ IDEA
 Чтобы установить подключаемый модуль Scala, сделайте следующее:

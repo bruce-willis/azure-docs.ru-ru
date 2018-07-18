@@ -2,21 +2,25 @@
 
 # Обзор
 ## [Что такое Resource Manager?](resource-group-overview.md)
-## [Поставщики и типы ресурсов](resource-manager-supported-services.md)
-## [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](resource-manager-deployment-model.md)
-## [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance)
-## [Упорядочение ресурсов с помощью групп управления](management-groups-overview.md)
+## [Развертывание с помощью Azure Resource Manager и классическая модель развертывания](resource-manager-deployment-model.md)
 
 # Начало работы
 ## [Создание и развертывание шаблона](resource-manager-create-first-template.md)
 ## [Расширение VS Code для шаблонов](resource-manager-vscode-extension.md)
 ## [Использование Visual Studio с Resource Manager](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)
 
+# Основные понятия
+## [Поставщики и типы ресурсов](resource-manager-supported-services.md)
+## [Группы управления](management-groups-overview.md)
+## [Корпоративный каркас Azure: рекомендуемая система управления подписками](/azure/architecture/cloud-adoption-guide/subscription-governance?toc=%2fazure%2fazure-resource-manager%2ftoc.json)
+## [Шаблоны для обеспечения согласованности данных в облаке](templates-cloud-consistency.md)
+
 # Практическое руководство
 ## Создание шаблонов
 ### [Разделы шаблона](resource-group-authoring-templates.md)
 #### [Параметры](resource-manager-templates-parameters.md)
 #### [Переменные](resource-manager-templates-variables.md)
+#### [Функции](resource-group-authoring-templates.md#functions)
 #### [Ресурсы](resource-manager-templates-resources.md)
 #### [Outputs](resource-manager-templates-outputs.md)
 ### [Связанные и вложенные шаблоны](resource-group-linked-templates.md)
@@ -47,7 +51,8 @@
 ### [портал Azure](resource-group-portal.md)
 ### [Организация ресурсов с помощью тегов](resource-group-using-tags.md)
 ### [Перемещение ресурсов в новую группу или подписку](resource-group-move-resources.md)
-### [Создание подписок EA программными средствами](programmatically-create-subscription.md)
+### [Создание подписок EA](programmatically-create-subscription.md)
+### [Предоставление доступа для создания подписок EA](grant-access-to-create-subscription.md)
 ### [Создание групп управления](management-groups-create.md)
 ### [Администрирование групп управления](management-groups-manage.md)
 

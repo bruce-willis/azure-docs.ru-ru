@@ -1,6 +1,6 @@
 ---
 title: Чтение или запись секционированных данных в фабрике данных Azure | Документация Майкрософт
-description: Узнайте больше о том, как выполнять чтение и запись секционированных данных в фабрике данных Azure версии 2.
+description: Узнайте о том, как выполнять чтение и запись секционированных данных в службе "Фабрика данных Azure".
 services: data-factory
 documentationcenter: ''
 author: sharonlo101
@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/15/2018
+ms.topic: conceptual
+ms.date: 05/15/2018
 ms.author: shlo
-ms.openlocfilehash: e3b6ccd1e7066ed86b3d6d2d85228688b06931c4
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 59644f3318e2bf9c4f0ea6c3f5699fe1d19f2089
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053716"
 ---
-# <a name="how-to-read-or-write-partitioned-data-in-azure-data-factory-version-2"></a>Чтение или запись секционированных данных в фабрике данных Azure версии 2
-В версии 1 фабрика данных Azure поддерживала чтение или запись секционированных данных с использованием системных переменных SliceStart/SliceEnd/WindowStart/WindowEnd. В версии 2 это достигается с помощью параметра конвейера и времени начала или запланированного времени запуска триггера в качестве значения параметра. 
+# <a name="how-to-read-or-write-partitioned-data-in-azure-data-factory"></a>Как выполнять чтение и запись секционированных данных в службе "Фабрика данных Azure"
+В версии 1 фабрика данных Azure поддерживала чтение или запись секционированных данных с использованием системных переменных SliceStart/SliceEnd/WindowStart/WindowEnd. В текущей версии службы "Фабрика данных" это достигается с помощью параметра конвейера и времени начала или запланированного времени запуска триггера в качестве значения параметра. 
 
 ## <a name="use-a-pipeline-parameter"></a>Использование параметра конвейера 
 В версии 1 можно было использовать свойство partitionedBy и системную переменную SliceStart, как показано в следующем примере: 
 
 ```json
-"folderPath": "adfcustomerprofilingsample/logs/marketingcampaigneffectiveness/yearno={Year}/monthno={Month}/dayno={Day}/",
+"folderPath": "adfcustomerprofilingsample/logs/marketingcampaigneffectiveness/{Year}/{Month}/{Day}/",
 "partitionedBy": [
     { "name": "Year", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyy" } },
     { "name": "Month", "value": { "type": "DateTime", "date": "SliceStart", "format": "%M" } },
@@ -36,27 +37,33 @@ ms.lasthandoff: 03/23/2018
 
 Дополнительные сведения о свойстве partitonedBy см. в статье о [соединителе больших двоичных объектов Azure версии 1](v1/data-factory-azure-blob-connector.md#dataset-properties). 
 
-В версии 2 это можно достичь, выполнив следующие действия: 
+В текущей версии службы "Фабрика данных" это можно достичь, выполнив следующие действия: 
 
-1. Определите **параметр конвейера** строкового типа. В следующем примере именем параметра конвейера является **scheduledRunTime**. 
-2. Задайте для **folderPath** в определении набора данных значение параметра конвейера. 
-3. Передайте запрограммированное значение параметра перед запуском конвейера. Можно также передавать данные времени начала или запланированного времени запуска триггера динамически во время выполнения. 
+1. Определите **параметр конвейера** строкового типа. В следующем примере параметр конвейера имеет имя **windowStartTime**. 
+2. Задайте для параметра **folderPath** в определении набора данных значение параметра конвейера. 
+3. Передайте фактическое значение параметра при вызове конвейера по запросу. Кроме того, вы можете передавать данные времени начала или запланированного времени запуска триггера динамически во время выполнения. 
 
 ```json
 "folderPath": {
-      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%M'), '/dayno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%d'), '/')",
+      "value": "adfcustomerprofilingsample/logs/marketingcampaigneffectiveness/@{formatDateTime(pipeline().parameters.windowStartTime, 'yyyy/MM/dd')}/",
       "type": "Expression"
 },
 ```
 
 ## <a name="pass-in-value-from-a-trigger"></a>Передача значения из триггера
-В следующем определении триггера запланированное время триггера передается в виде значения параметра конвейера **scheduledRunTime**: 
+В следующем определении триггера "переворачивающегося" окна время запуска передается в виде значения параметра конвейера **windowStartTime**: 
 
 ```json
 {
     "name": "MyTrigger",
     "properties": {
-       ...
+        "type": "TumblingWindowTrigger",
+        "typeProperties": {
+            "frequency": "Hour",
+            "interval": "1",
+            "startTime": "2018-05-15T00:00:00Z",
+            "delay": "00:10:00",
+            "maxConcurrency": 10
         },
         "pipeline": {
             "pipelineReference": {
@@ -64,7 +71,7 @@ ms.lasthandoff: 03/23/2018
                 "referenceName": "MyPipeline"
             },
             "parameters": {
-                "scheduledRunTime": "@trigger().scheduledTime"
+                "windowStartTime": "@trigger().outputs.windowStartTime"
             }
         }
     }
@@ -73,14 +80,15 @@ ms.lasthandoff: 03/23/2018
 
 ## <a name="example"></a>Пример
 
-Ниже приведен пример определения набора данных (в котором используется параметр с именем `date`):
+Ниже приведен пример определения набора данных.
 
 ```json
 {
+  "name": "SampleBlobDataset",
   "type": "AzureBlob",
   "typeProperties": {
     "folderPath": {
-      "value": "@concat(pipeline().parameters.blobContainer, '/logs/marketingcampaigneffectiveness/yearno=', formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy'), '/monthno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%M'), '/dayno=', formatDateTime(pipeline().parameters.scheduledRunTime, '%d'), '/')",
+      "value": "adfcustomerprofilingsample/logs/marketingcampaigneffectiveness/@{formatDateTime(pipeline().parameters.windowStartTime, 'yyyy/MM/dd')}/",
       "type": "Expression"
     },
     "format": {
@@ -129,20 +137,16 @@ ms.lasthandoff: 03/23/2018
                         "value": "@concat('wasb://', pipeline().parameters.blobContainer, '@', pipeline().parameters.blobStorageAccount, '.blob.core.windows.net/logs/', pipeline().parameters.inputRawLogsFolder, '/')",
                         "type": "Expression"
                     },
-                    "PARTITIONEDOUTPUT": {
-                        "value": "@concat('wasb://', pipeline().parameters.blobContainer, '@', pipeline().parameters.blobStorageAccount, '.blob.core.windows.net/logs/partitionedgameevents/')",
-                        "type": "Expression"
-                    },
                     "Year": {
-                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, 'yyyy')",
+                        "value": "@formatDateTime(pipeline().parameters.windowStartTime, 'yyyy')",
                         "type": "Expression"
                     },
                     "Month": {
-                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, '%M')",
+                        "value": "@formatDateTime(pipeline().parameters.windowStartTime, 'MM')",
                         "type": "Expression"
                     },
                     "Day": {
-                        "value": "@formatDateTime(pipeline().parameters.scheduledRunTime, '%d')",
+                        "value": "@formatDateTime(pipeline().parameters.windowStartTime, 'dd')",
                         "type": "Expression"
                     }
                 }
@@ -154,7 +158,7 @@ ms.lasthandoff: 03/23/2018
             "name": "HivePartitionGameLogs"
         }],
         "parameters": {
-            "scheduledRunTime": {
+            "windowStartTime": {
                 "type": "String"
             },
             "blobStorageAccount": {
@@ -164,9 +168,6 @@ ms.lasthandoff: 03/23/2018
                 "type": "String"
             },
             "inputRawLogsFolder": {
-                "type": "String"
-            },
-            "partitionHiveScriptFile": {
                 "type": "String"
             }
         }

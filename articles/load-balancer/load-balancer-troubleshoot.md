@@ -12,13 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 07/06/2018
 ms.author: genli
-ms.openlocfilehash: 294bb6dd780d1df642d6e793b29267da1e8b8336
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 6777842f3ca336eb4ae0d134cbc7ffd062bc6f29
+ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37890896"
 ---
 # <a name="troubleshoot-azure-load-balancer"></a>Устранение неполадок Azure Load Balancer
 
@@ -126,7 +127,6 @@ ms.lasthandoff: 05/03/2018
 ## <a name="additional-network-captures"></a>Запись дополнительных сетевых данных
 Если вы решили обратиться в службу поддержки, то соберите следующие сведения, чтобы ускорить устранение проблемы. Выберите одну виртуальную машину внутреннего пула, чтобы выполнить следующие проверки:
 - Воспользуйтесь командой Psping с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты. 
-- Воспользуйтесь командой TCPing с одной из виртуальных машин внутреннего пула в виртуальной сети, чтобы проверить ответ порта пробы (пример: psping 10.0.0.4:3389), и запишите результаты.
 - Если в результате этих проверок связи ответ не получен, то одновременно с выполнением команды PsPing запустите команду netsh trace на виртуальной машине внутреннего пула и тестовой виртуальной машине в виртуальной сети, а затем остановите команду netsh trace. 
   
 ## <a name="next-steps"></a>Дополнительная информация

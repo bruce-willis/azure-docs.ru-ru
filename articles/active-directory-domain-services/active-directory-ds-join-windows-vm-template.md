@@ -1,27 +1,31 @@
 ---
-title: "Присоединение виртуальной машины Windows Server к доменным службам Azure Active Directory | Документация Майкрософт"
-description: "Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблонов Azure Resource Manager."
+title: Присоединение виртуальной машины Windows Server к доменным службам Azure Active Directory | Документация Майкрософт
+description: Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблонов Azure Resource Manager.
 services: active-directory-ds
-documentationcenter: 
+documentationcenter: ''
 author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: 4eabfd8e-5509-4acd-86b5-1318147fddb5
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/19/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: b90198696b7bdb9277fd2f2b8e8e727af42c5cfa
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 85dd7e73afe4558e58084cc133e3cfdc93e4088d
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333563"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблона Resource Manager
 В этой статье показано, как с помощью шаблонов Azure Resource Manager присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure AD.
+
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:

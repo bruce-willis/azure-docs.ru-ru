@@ -11,14 +11,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/16/2018
+ms.date: 06/18/2018
 ms.author: bwren, vinagara
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b16c88b5ec45dec7bf0fe40da24e817ae325a3e
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: c29d6cb0da2e394912a2584b0d3c3cedf13f054c
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36304075"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -43,16 +44,13 @@ ms.lasthandoff: 05/08/2018
     "name": "[concat(parameters('workspaceName'), '/', variables('SavedSearchId'))]"
 
 ## <a name="log-analytics-api-version"></a>Версия API Log Analytics
-Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.  Для ресурсов, использующих [прежний и обновленный язык запросов](../log-analytics/log-analytics-log-search-upgrade.md), версии будут разными.  
+Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.   
 
- В следующей таблице перечислены версии API Log Analytics для сохраненных поисков из устаревших и обновленных рабочих областей. 
+В следующей таблице перечислены версии API для ресурсов, используемых в этом примере.
 
-| Версия рабочей области | Версия API | Запрос |
+| Тип ресурса | Версия API | Запрос |
 |:---|:---|:---|
-| v1 (прежняя версия)   | 2015-11-01-preview | Устаревший формат.<br> Пример: Type=Event EventLevelName = Error  |
-| v2 (обновленная версия) | 2015-11-01-preview | Устаревший формат.  Преобразовывается в обновленный формат при установке.<br> Пример: Type=Event EventLevelName = Error<br>Преобразовывается в: Event &#124; where EventLevelName == "Error"  |
-| v2 (обновленная версия) | 2017-03-03-preview | Обновленный формат. <br>Пример: Event &#124; where EventLevelName == "Error"  |
-
+| savedSearches | 2017-03-15-preview | Event &#124; where EventLevelName == "Error"  |
 
 
 ## <a name="saved-searches"></a>Сохраненные поиски
@@ -89,7 +87,7 @@ ms.lasthandoff: 05/08/2018
 > В запросе необходимо использовать escape-символы, если он содержит знаки, которые можно интерпретировать как JSON.  Например, запрос **Type:AzureActivity OperationName:"Microsoft.Compute/virtualMachines/write"** в файл решения должен быть записан как **Type:AzureActivity OperationName:\"Microsoft.Compute/virtualMachines/write\"**.
 
 ## <a name="alerts"></a>Оповещения
-[Оповещения Log Analytics](../log-analytics/log-analytics-alerts.md) создаются правилами генерации оповещений, которые выполняют сохраненный через равные промежутки времени.  Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий.  
+[Оповещения журналов Azure](../monitoring-and-diagnostics/monitor-alerts-unified-log.md) создаются правилами оповещений Azure, выполняющими указанные запросы журналов с регулярными интервалами.  Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий с помощью [групп действий](../monitoring-and-diagnostics/monitoring-action-groups.md).  
 
 > [!NOTE]
 > Начиная с 14 мая 2018 года все оповещения в рабочей области будут автоматически распространяться в Azure. Пользователь может по собственному желанию инициировать отображение оповещений в Azure до 14 мая 2018 года. Дополнительные сведения см. в разделе [Extend (copy) alerts from OMS portal into Azure](../monitoring-and-diagnostics/monitoring-alerts-extend.md) (Отображение (копирование) оповещений с портала OMS в Azure). Теперь действия пользователей, которые отображают оповещения в Azure, контролируются в группах действий Azure. Если рабочая область и ее оповещения перенесены в Azure, можно извлечь или добавить действия с помощью [группы действий (шаблон Azure Resource Manager)](../monitoring-and-diagnostics/monitoring-create-action-group-with-resource-manager-template.md).
@@ -195,7 +193,7 @@ ms.lasthandoff: 05/08/2018
 | type | Yes | Тип действия.  Для действий оповещения это тип **Alert**. |
 | ИМЯ | Yes | Отображаемое имя оповещения.  Это имя, которое отображается в консоли для правила генерации оповещений. |
 | ОПИСАНИЕ | Нет  | Необязательное описание оповещения. |
-| Severity | Yes | Серьезность записи оповещения состоит из следующих значений.<br><br> **Critical**<br>**Предупреждение;**<br>**Informational**
+| Severity | Yes | Серьезность записи оповещения состоит из следующих значений.<br><br> **критический**<br>**предупреждение**<br>**информационный**
 
 
 #### <a name="threshold"></a>Threshold (Пороговое значение)
@@ -337,11 +335,12 @@ ms.lasthandoff: 05/08/2018
           "SolutionPublisher": "Contoso",
           "ProductName": "SampleSolution",
     
-          "LogAnalyticsApiVersion": "2015-03-20",
-    
+          "LogAnalyticsApiVersion-Search": "2017-03-15-preview",
+              "LogAnalyticsApiVersion-Solution": "2015-11-01-preview",
+
           "MySearch": {
             "displayName": "Error records by hour",
-            "query": "Type=MyRecord_CL | measure avg(Rating_d) by Instance_s interval 60minutes",
+            "query": "MyRecord_CL | summarize AggregatedValue = avg(Rating_d) by Instance_s, bin(TimeGenerated, 60m)",
             "category": "Samples",
             "name": "Samples-Count of data"
           },
@@ -349,7 +348,7 @@ ms.lasthandoff: 05/08/2018
             "Name": "[toLower(concat('myalert-',uniqueString(resourceGroup().id, deployment().name)))]",
             "DisplayName": "My alert rule",
             "Description": "Sample alert.  Fires when 3 error records found over hour interval.",
-            "Severity": "Critical",
+            "Severity": "critical",
             "ThresholdOperator": "gt",
             "ThresholdValue": 3,
             "Schedule": {
@@ -377,7 +376,7 @@ ms.lasthandoff: 05/08/2018
             "location": "[parameters('workspaceRegionId')]",
             "tags": { },
             "type": "Microsoft.OperationsManagement/solutions",
-            "apiVersion": "[variables('LogAnalyticsApiVersion')]",
+            "apiVersion": "[variables('LogAnalyticsApiVersion-Solution')]",
             "dependsOn": [
               "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches', parameters('workspacename'), variables('MySearch').Name)]",
               "[resourceId('Microsoft.OperationalInsights/workspaces/savedSearches/schedules', parameters('workspacename'), variables('MySearch').Name, variables('MyAlert').Schedule.Name)]",
@@ -405,7 +404,7 @@ ms.lasthandoff: 05/08/2018
           {
             "name": "[concat(parameters('workspaceName'), '/', variables('MySearch').Name)]",
             "type": "Microsoft.OperationalInsights/workspaces/savedSearches",
-            "apiVersion": "[variables('LogAnalyticsApiVersion')]",
+            "apiVersion": "[variables('LogAnalyticsApiVersion-Search')]",
             "dependsOn": [ ],
             "tags": { },
             "properties": {
@@ -418,7 +417,7 @@ ms.lasthandoff: 05/08/2018
           {
             "name": "[concat(parameters('workspaceName'), '/', variables('MySearch').Name, '/', variables('MyAlert').Schedule.Name)]",
             "type": "Microsoft.OperationalInsights/workspaces/savedSearches/schedules/",
-            "apiVersion": "[variables('LogAnalyticsApiVersion')]",
+            "apiVersion": "[variables('LogAnalyticsApiVersion-Search')]",
             "dependsOn": [
               "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'), '/savedSearches/', variables('MySearch').Name)]"
             ],
@@ -432,7 +431,7 @@ ms.lasthandoff: 05/08/2018
           {
             "name": "[concat(parameters('workspaceName'), '/', variables('MySearch').Name, '/',  variables('MyAlert').Schedule.Name, '/',  variables('MyAlert').Name)]",
             "type": "Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions",
-            "apiVersion": "[variables('LogAnalyticsApiVersion')]",
+            "apiVersion": "[variables('LogAnalyticsApiVersion-Search')]",
             "dependsOn": [
               "[concat('Microsoft.OperationalInsights/workspaces/', parameters('workspaceName'), '/savedSearches/',  variables('MySearch').Name, '/schedules/', variables('MyAlert').Schedule.Name)]"
             ],

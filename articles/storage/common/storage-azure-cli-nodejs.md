@@ -1,6 +1,6 @@
 ---
-title: "Использование Azure CLI 1.0 со службой хранилища Azure | Документация Майкрософт"
-description: "Узнайте, как использовать интерфейс командной строки Azure (Azure CLI) версии 1.0 для создания учетных записей хранения и управления ими, а также для работы с большими двоичными объектами и файлами Azure в службе хранилища Azure. Azure CLI — это кроссплатформенное средство"
+title: Использование Azure CLI 1.0 со службой хранилища Azure | Документация Майкрософт
+description: Узнайте, как использовать интерфейс командной строки Azure (Azure CLI) версии 1.0 для создания учетных записей хранения и управления ими, а также для работы с большими двоичными объектами и файлами Azure в службе хранилища Azure. Azure CLI — это кроссплатформенное средство
 services: storage
 documentationcenter: na
 author: seguler
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2017
 ms.author: seguler
-ms.openlocfilehash: 772417012e4c6aa519e83177bd8e93778f6af3b5
-ms.sourcegitcommit: 42ee5ea09d9684ed7a71e7974ceb141d525361c9
+ms.openlocfilehash: 1e2c2dc45f2cb91ca225bf183ddde5fa2d1123c4
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2017
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936995"
 ---
 # <a name="using-the-azure-cli-10-with-azure-storage"></a>Использование Azure CLI 1.0 со службой хранилища Azure
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 12/09/2017
 
 **Впервые используете Azure?** Получите подписку на Microsoft Azure и связанную с ней учетную запись Microsoft. Сведения о способах приобретения Azure см. на страницах [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/), [Как приобрести Azure](https://azure.microsoft.com/pricing/purchase-options/) и [Предложения для участников](https://azure.microsoft.com/pricing/member-offers/) (для подписчиков MSDN, участников Microsoft Partner Network, BizSpark и других наших программ).
 
-Дополнительные сведения о подписках Azure см. на странице [Назначение ролей администратора в Azure Active Directory (Azure AD)](https://msdn.microsoft.com/library/azure/hh531793.aspx).
+Дополнительные сведения о подписках Azure см. на странице [Назначение ролей администратора в Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/active-directory-assign-admin-roles-azure-portal).
 
 **После создания подписки Microsoft Azure и учетной записи:**
 
@@ -184,14 +185,14 @@ azure storage blob delete mycontainer myBlockBlob2
 ## <a name="create-and-manage-file-shares"></a>Создание общих папок и управление ими
 Служба файлов Azure предоставляет общее хранилище для приложений с помощью стандартного протокола SMB. Виртуальные машины Microsoft Azure и облачные службы, а также локальные приложения, могут совместно использовать данные через монтированные ресурсы. Вы можете управлять общими папками и файловыми данными через интерфейс командной строки Azure. Дополнительные сведения о службе файлов Azure см. в разделе [Общие сведения о службе файлов Azure](../files/storage-files-introduction.md).
 
-### <a name="create-a-file-share"></a>Создайте общую папку
-Общая папка Azure представляет собой общую папку с файлами SMB в Azure. Все каталоги и файлы должны быть созданы в общей папке. Учетная запись может содержать любое количество совместно используемых ресурсов, а ресурс может содержать любое количество файлов, насколько это позволяет емкость учетной записи хранения. В следующем примере создается общая папка с именем **myshare**.
+### <a name="create-a-file-share"></a>Создание общей папки
+Общая папка Azure представляет собой файловый ресурс SMB в Azure. Все каталоги и файлы должны быть созданы в общей папке. Учетная запись может содержать любое количество совместно используемых ресурсов, а ресурс может содержать любое количество файлов, насколько это позволяет емкость учетной записи хранения. В следующем примере создается общая папка с именем **myshare**.
 
 ```azurecli
 azure storage share create myshare
 ```
 
-### <a name="create-a-directory"></a>Создайте каталог
+### <a name="create-a-directory"></a>создать каталог;
 Каталог обеспечивает дополнительную иерархическую структуру для общей папки Azure. В следующем примере в общей папке создается каталог с именем **myDir** .
 
 ```azurecli

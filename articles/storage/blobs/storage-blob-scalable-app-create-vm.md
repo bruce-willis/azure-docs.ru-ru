@@ -13,10 +13,11 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
 ms.openlocfilehash: 7434de9fa176f608655606772e079cb7631dde93
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38698658"
 ---
 # <a name="create-a-virtual-machine-and-storage-account-for-a-scalable-application"></a>Создание виртуальной машины и учетной записи хранения для масштабируемого приложения
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 04/19/2018
 В первой части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Создание виртуальной машины
 > * Настройка расширения пользовательских скриптов
 
@@ -43,7 +44,7 @@ ms.lasthandoff: 04/19/2018
 New-AzureRmResourceGroup -Name myResourceGroup -Location EastUS
 ```
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
  
 В этом примере 50 больших файлов отправляются в контейнер больших двоичных объектов в учетной записи хранения Azure. Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших объектов данных в службе хранилища Azure и доступа к ним. Создайте учетную запись хранения в созданной вами группе ресурсов с помощью команды [New-AzureRmStorageAccount](/powershell/module/AzureRM.Storage/New-AzureRmStorageAccount).
 
@@ -129,7 +130,7 @@ Set-AzureRMVMCustomScriptExtension -ResourceGroupName myResourceGroup `
 В первой части этой серии руководств вы узнали, как создать учетную запись хранения, развернуть виртуальную машину и установить на ней необходимые компоненты, в частности как выполнять следующие действия:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Создание виртуальной машины
 > * Настройка расширения пользовательских скриптов
 

@@ -1,6 +1,6 @@
 ---
-title: "Аудит и ведение журналов. Средство моделирования угроз Microsoft Azure | Документация Майкрософт"
-description: "Устранение угроз, обнаруженных с помощью средства моделирования угроз"
+title: Аудит и ведение журналов. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
+description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
 services: security
 documentationcenter: na
 author: RodSan
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 3f1933fc59862eca7ae6ee40bbd5136e449e5cf1
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 8837dfaf156e5a4d07598f2c58694663a9ff5580
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37029987"
 ---
 # <a name="security-frame-auditing-and-logging--mitigations"></a>Механизм безопасности. Аудит и ведение журналов | Устранение проблем 
 | Продукт или служба | Статья |
@@ -161,7 +162,7 @@ ms.lasthandoff: 10/11/2017
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_insufficient_logging) |
 | **Действия** | <p>Отсутствие правильного журнала аудита после инцидента безопасности может лишить вас преимуществ в ходе судебного разбирательства. Технология Windows Communication Foundation (WCF) позволяет регистрировать успешные и неудачные попытки аутентификации.</p><p>Использование журнала неудачных попыток аутентификации поможет администраторам узнать о потенциальных атаках методом подбора. Аналогично, ведение журнала событий успешной аутентификации позволяет получить полезные данные аудита при компрометации подлинной учетной записи. Включите функцию аудита безопасности WCF. |
 
 ### <a name="example"></a>Пример
@@ -190,7 +191,7 @@ ms.lasthandoff: 10/11/2017
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_insufficient_audit_failure_handling) |
 | **Действия** | <p>Разработанное решение не настроено для выдачи исключения при возникновении ошибки записи в журнал аудита. Если служба WCF не настроена выдавать исключения при ошибке записи в журнал аудита, программа не будет уведомлена о сбое и аудит критических событий безопасности может не произойти.</p>|
 
 ### <a name="example"></a>Пример

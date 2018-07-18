@@ -9,21 +9,19 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: jingwang
-ms.openlocfilehash: 06e07d566afe64b55470f73e232cf45feccd47fb
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: ba965b0610525f66c24dd6d5bad3fd113a6b6758
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37050871"
 ---
 # <a name="azure-data-factory-service-identity"></a>Удостоверение службы фабрики данных Azure
 
 Эта статья поможет понять, что такое удостоверение службы фабрики данных и как оно работает.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, ознакомьтесь с [документацией по фабрике данных версии 1](v1/data-factory-introduction.md).
 
 ## <a name="overview"></a>Обзор
 
@@ -38,7 +36,7 @@ ms.lasthandoff: 03/23/2018
 
 Удостоверение службы фабрики данных формируется следующим образом.
 
-- При создании фабрики данных с помощью **портала Azure или PowerShell** удостоверение службы всегда будет создаваться автоматически с момента выпуска общедоступной предварительной версии ADF V2.
+- При создании фабрики данных с помощью **портала Azure или PowerShell** удостоверение службы всегда будет создаваться автоматически.
 - При создании фабрики данных с помощью пакета **SDK** удостоверение службы будет создаваться, только если в создаваемом объекте фабрики указать "Identity = new FactoryIdentity()". Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по .NET](quickstart-create-data-factory-dot-net.md#create-a-data-factory).
 - При создании фабрики данных с помощью **REST API** удостоверение службы будет создано, только если в тексте запроса указан раздел identity. Пример см. в инструкциях по [созданию фабрики данных из краткого руководства по REST](quickstart-create-data-factory-rest-api.md#create-a-data-factory).
 

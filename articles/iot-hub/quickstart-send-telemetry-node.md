@@ -1,23 +1,21 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Node.js) | Документация Майкрософт
 description: В этом кратком руководстве выполняется два примера приложений Node.js по отправке имитированной телеметрии в Центр Интернета вещей и чтению телеметрии из Центра Интернета вещей для обработки в облаке.
-services: iot-hub
 author: dominicbetts
 manager: timlt
-editor: ''
 ms.service: iot-hub
+services: iot-hub
 ms.devlang: node
 ms.topic: quickstart
 ms.custom: mvc
-ms.tgt_pltfrm: na
-ms.workload: ns
-ms.date: 04/30/2018
+ms.date: 06/19/2018
 ms.author: dobett
-ms.openlocfilehash: 01016416f1968888e8bc9ef5d1b7ccde80ba972a
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 17afdd4c57f58770ae82093c5e23e469d1109f6a
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38540048"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Node.js)
 
@@ -57,8 +55,10 @@ node --version
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
-    az iot hub device-identity create --hub-name {YourIoTHubName}--device-id MyNodeDevice
+    az iot hub device-identity create --hub-name {YourIoTHubName} --device-id MyNodeDevice
     ```
+
+    Если вы выбрали другое имя для устройства, обновите имя устройства в примерах приложений перед их запуском.
 
 1. Выполните следующую команду, чтобы получить _строку подключения устройства_ для зарегистрированного устройства:
 
@@ -80,7 +80,7 @@ node --version
 
 Приложение имитированного устройства подключается к конечной точке конкретного устройства Центра Интернета вещей и отправляет имитированную телеметрию температуры и влажности.
 
-1. В окне терминала перейдите в корневую папку примера проекта Node.js. Затем перейдите к папке **Quickstarts\simulated-device**.
+1. В окне терминала перейдите в корневую папку примера проекта Node.js. Затем перейдите в папку **iot-hub\Quickstarts\simulated-device**.
 
 1. Откройте файл **SimulatedDevice.js** в любом текстовом редакторе.
 
@@ -103,7 +103,7 @@ node --version
 
 1. В другом окне терминала перейдите в корневую папку примера проекта Node.js. Перейдите к папке **read-d2c-messages**.
 
-1. Откройте файл **Quickstarts\ReadDeviceToCloudMessages.js** в любом текстовом редакторе.
+1. Откройте файл **iot-hub\Quickstarts\ReadDeviceToCloudMessages.js** в любом текстовом редакторе.
 
     Замените значение переменной `connectionString` записанной ранее строкой подключения к службе. Сохраните изменения в файле **ReadDeviceToCloudMessages.js**.
 
@@ -120,9 +120,7 @@ node --version
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Не удаляйте группу ресурсов и Центр Интернета вещей, так как они понадобятся вам при работе со следующим руководством.
-
-Если вам больше не требуется Центр Интернета вещей, удалите его и группу ресурсов на портале. Для этого выберите группу ресурсов **qs-iot-hub-rg**, содержащую Центр Интернета вещей, и щелкните **Удалить**.
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -131,4 +129,4 @@ node --version
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Node.js)](quickstart-control-device-node.md)
+> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-node.md)

@@ -14,11 +14,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: danlep
-ms.openlocfilehash: 1b9c0514e93fa89f8776d830ef242fc4963a6f7b
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: d5ec76a62b56769ee3065cac3542f5a94df4a1c6
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37133507"
 ---
 # <a name="run-tasks-under-user-accounts-in-batch"></a>Выполнение задач с учетными записями пользователей в пакетной службе
 
@@ -172,8 +173,8 @@ Console.WriteLine("Creating pool [{0}]...", poolId);
 // Create a pool using the cloud service configuration.
 pool = batchClient.PoolOperations.CreatePool(
     poolId: poolId,
-    targetDedicatedComputeNodes: 3,                                                         
-    virtualMachineSize: "small",                                                
+    targetDedicatedComputeNodes: 3,
+    virtualMachineSize: "standard_d1_v2",
     cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "5"));   
 
 // Add named user accounts.
@@ -333,6 +334,4 @@ task.UserIdentity = new UserIdentity(AdminUserAccountName);
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-### <a name="batch-forum"></a>Форум по Пакетной службе
-
-На [форуме по пакетной службе Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=azurebatch) на сайте MSDN можно обсудить пакетную службу и задать вопросы о ней. Изучайте полезные закрепленные сообщения и задавайте вопросы, возникающие во время сборки пакетных решений.
+* Исчерпывающий обзор пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).

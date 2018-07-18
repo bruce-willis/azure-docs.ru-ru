@@ -3,21 +3,23 @@ title: Настройка назначения самостоятельного 
 description: Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2018
-ms.author: asteen
-ms.openlocfilehash: cf70da4933f5513b75f84aef01dec1ef902eab85
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.author: barbkess
+ms.openlocfilehash: 89eb80dbb749b2f50ca3f1fc097c205b62b6b4a4
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445302"
 ---
 # <a name="how-to-configure-self-service-application-assignment"></a>Настройка назначения самостоятельного доступа к приложениям
 
@@ -88,4 +90,4 @@ ms.lasthandoff: 04/05/2018
 Эти утверждения поддерживают только отдельные рабочие процессы, то есть если вы зададите несколько утверждающих лиц, отдельное утверждение может подтвердить доступ к приложению.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Настройка Azure Active Directory для самостоятельного управления группами](active-directory-accessmanagement-self-service-group-management.md)
+[Настройка Azure Active Directory для самостоятельного управления группами](users-groups-roles/groups-self-service-management.md)

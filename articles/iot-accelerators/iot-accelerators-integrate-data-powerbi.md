@@ -1,22 +1,19 @@
 ---
 title: Визуализация данных удаленного мониторинга с помощью Power BI в Azure | Документация Майкрософт
 description: В этом руководстве используется Power BI Desktop и Cosmos DB для интеграции данных из решения для удаленного мониторинга в пользовательскую визуализацию. Таким образом, пользователи могут создавать собственные настраиваемые панели мониторинга и делиться ими с другими пользователями вне решения.
-services: iot-suite
-suite: iot-suite
 author: asdonald
 manager: hegate
 ms.author: asdonald
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 05/01/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 55feb56008a54676bd0af332e251da94a9653aaf
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: ae039573cf202059114f23cca86207c117a35ead
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970407"
 ---
 # <a name="visualize-remote-monitoring-data-using-power-bi"></a>Визуализация данных удаленного мониторинга с помощью Power BI
 
@@ -97,15 +94,15 @@ ms.lasthandoff: 05/20/2018
 
 ## <a name="publishing-the-dashboard-and-refreshing-the-data"></a>Публикация панели мониторинга и обновление данных
 
-После успешного создания панелей мониторинга Power BI мы рекомендуем вам [опубликовать их](https://docs.microsoft.com/en-us/power-bi/desktop-upload-desktop-files), чтобы поделиться ими с другими пользователями.
+После успешного создания панелей мониторинга Power BI мы рекомендуем вам [опубликовать их](https://docs.microsoft.com/power-bi/desktop-upload-desktop-files), чтобы поделиться ими с другими пользователями.
 
-Вы также можете [обновить данные](https://docs.microsoft.com/en-us/power-bi/refresh-data) на опубликованной панели мониторинга для отображения актуального набора данных.
+Вы также можете [обновить данные](https://docs.microsoft.com/power-bi/refresh-data) на опубликованной панели мониторинга для отображения актуального набора данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Из этой статьи вы узнали о визуализации данных удаленного мониторинга с помощью Power BI.
 
-Дополнительные сведения о решении для удаленного мониторинга см. в следующих статьях:
+Дополнительные сведения о решении для удаленного мониторинга см. здесь:
 
 * [Настройка предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-customize.md)
 * [Справочник разработчика](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide)

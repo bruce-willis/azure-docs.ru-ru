@@ -1,26 +1,23 @@
 ---
-title: "Использование Azure Data Lake Store с помощью интерфейса командной строки Azure CLI 2.0 | Документация Майкрософт"
-description: "Использование кроссплатформенного интерфейса командной строки Azure 2.0 для создания учетной записи Data Lake Store и выполнения базовых операций"
+title: Использование Azure Data Lake Storage Gen1 с помощью Azure CLI 2.0 | Документация Майкрософт
+description: Использование кроссплатформенного интерфейса командной строки Azure 2.0 для создания учетной записи Data Lake Store и выполнения базовых операций
 services: data-lake-store
-documentationcenter: 
+documentationcenter: ''
 author: nitinme
 manager: jhubbard
-editor: cgronlun
-ms.assetid: 4ffa0f4a-1cca-46ac-803d-1fc8538c685b
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 01/09/2018
+ms.topic: conceptual
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: b93b9a801b3e5e1fd869cda7f3d67554e2d03195
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: acd1182fdc66374e9abbc4964207417a7de3aadb
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37035493"
 ---
-# <a name="get-started-with-azure-data-lake-store-using-azure-cli-20"></a>Начало работы с Azure Data Lake Store с помощью Azure CLI 2.0
+# <a name="get-started-with-azure-data-lake-storage-gen1-using-azure-cli-20"></a>Начало работы с Azure Data Lake Storage Gen1 с помощью Azure CLI 2.0
 > [!div class="op_single_selector"]
 > * [Портал](data-lake-store-get-started-portal.md)
 > * [PowerShell](data-lake-store-get-started-powershell.md)
@@ -28,7 +25,9 @@ ms.lasthandoff: 03/09/2018
 >
 > 
 
-Узнайте, как с помощью Azure CLI 2.0 создать учетную запись Azure Data Lake Store и выполнять такие базовые операции, как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения о Data Lake Store см. в [обзоре Data Lake Store](data-lake-store-overview.md).
+[!INCLUDE [data-lake-storage-gen1-rename-note.md](../../includes/data-lake-storage-gen1-rename-note.md)]
+
+Узнайте, как с помощью Azure CLI 2.0 создать учетную запись Azure Data Lake Store и выполнять такие базовые операции, как создание папок, передача и загрузка файлов данных, удаление учетной записи и т. д. Дополнительные сведения об Azure Data Lake Store см. в руководстве по [Azure Data Lake Storage Gen1](data-lake-store-overview.md).
 
 Azure CLI 2.0 — это новый интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Дополнительные сведения см. в [обзоре Azure CLI 2.0](https://docs.microsoft.com/cli/azure). Полный список команд и синтаксис см. в [справочнике интерфейса командной строки 2.0 Azure Data Lake Store](https://docs.microsoft.com/cli/azure/dls).
 
@@ -53,7 +52,7 @@ Azure CLI 2.0 — это новый интерфейс командной ст
     az login
     ```
 
-    Получите код для использования на следующем шаге. Откройте в веб-браузере страницу https://aka.ms/devicelogin и введите код для аутентификации. Вам будет предложено выполнить вход с использованием учетных данных.
+    Получите код для использования на следующем шаге. Откройте браузер и перейдите на страницу https://aka.ms/devicelogin. Введите код аутентификации. Вам будет предложено выполнить вход с использованием учетных данных.
 
 2. После входа вы увидите список всех подписок Azure, связанных с вашей учетной записи. Чтобы выбрать определенную подписку, выполните следующую команду.
    

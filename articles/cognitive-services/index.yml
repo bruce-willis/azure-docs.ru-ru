@@ -1,0 +1,118 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по службам Cognitive Services
+metadata:
+  title: Документация по Cognitive Services. Руководства и справочник по API
+  description: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить, понимать и интерпретировать потребности клиентов с помощью обычных средств связи. Руководства, краткие руководства, справочники по API и примеры использования API.
+  services: cognitive-services
+  author: cjgronlund
+  manager: cgronlun
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/29/2018
+  ms.author: cgronlun
+  ms.openlocfilehash: 5ac8d7ca6f607acd54ab40402bb83376fd8b5d63
+  ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 07/17/2018
+  ms.locfileid: "39089587"
+abstract:
+  description: Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как добавить когнитивные интеллектуальные возможности в свое первое приложение.
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: media/index/logo_Csharp.svg
+      title: C#
+    - image:
+        src: media/index/logo_java.svg
+      title: Java
+    - image:
+        src: media/index/logo_nodejs.svg
+      title: Node.js
+    - image:
+        src: media/index/logo_python.svg
+      title: Python
+    - image:
+        src: media/index/blue_globe_icon.png
+      title: Web
+    rows:
+    - title: 'Служба компьютерного зрения: анализ изображения'
+      values:
+      - href: /azure/cognitive-services/Computer-vision/quickstarts-sdk/csharp-analyze-sdk
+      - href: /azure/cognitive-services/Computer-vision/Quickstarts/java-analyze
+      - href: /azure/cognitive-services/Computer-vision/Quickstarts/node-analyze
+      - href: /azure/cognitive-services/Computer-vision/Quickstarts/python-analyze
+      - href: 
+    - title: 'Служба распознавания речи: распознавание речи'
+      values:
+      - href: /azure/cognitive-services/speech-service/quickstart-csharp-windows
+      - href: 
+      - href: 
+      - href: 
+      - href: /azure/cognitive-services/speech-service/get-started
+    - title: 'LUIS: использование предварительно созданного приложения для системы домашней автоматики'
+      values:
+      - href: 
+      - href: 
+      - href: 
+      - href: 
+      - href: /azure/cognitive-services/luis/luis-get-started-create-app
+    - title: 'Текстовая аналитика: определение языка и анализ тональности'
+      values:
+      - href: /azure/cognitive-services/Text-Analytics/quickstarts/csharp
+      - href: /azure/cognitive-services/Text-Analytics/quickstarts/java
+      - href: /azure/cognitive-services/Text-Analytics/quickstarts/nodejs
+      - href: /azure/cognitive-services/Text-Analytics/quickstarts/python
+      - href: 
+    - title: 'API Bing для поиска в Интернете: получение релевантных веб-запросов'
+      values:
+      - href: /azure/cognitive-services/bing-web-search/quickstarts/csharp
+      - href: /azure/cognitive-services/bing-web-search/quickstarts/java
+      - href: /azure/cognitive-services/bing-web-search/quickstarts/nodejs
+      - href: /azure/cognitive-services/bing-web-search/quickstarts/python
+      - href: 
+    - title: 'API Bing для поиска изображений: получение релевантных запросов изображений'
+      values:
+      - href: /azure/cognitive-services/bing-image-search/quickstarts/csharp
+      - href: /azure/cognitive-services/bing-image-search/quickstarts/java
+      - href: /azure/cognitive-services/bing-image-search/quickstarts/nodejs
+      - href: /azure/cognitive-services/bing-image-search/quickstarts/python
+      - href: 
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: 'Сведения о создании интеллектуальных приложений и ботов:'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/cognitive-services/Face/Tutorials/FaceAPIinCSharpTutorial">Обнаружение и выделение лиц на изображении</a>
+    - html: <a href="/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page">Создание веб-страницы для пользовательского поиска</a>
+    - html: <a href="/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample">Использование приложения Language Understanding (LUIS) в боте</a>
+    - html: <a href="/azure/cognitive-services/luis/luis-tutorial-batch-testing">Повышение точности намерений для команд системы домашней автоматики</a>
+- title: API-интерфейсы Cognitive Services
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Зрение
+      html: <p><a class="barLink" href="/azure/cognitive-services/computer-vision/"><img src="../media/index/API_Computer_Vision.svg" alt="" />API компьютерного зрения</a></p> <p><a class="barLink" href="/azure/cognitive-services/content-moderator/overview"><img src="../media/index/API_Content_Moderator.svg" alt="" />Content Moderator</a></p> <p><a class="barLink" href="/azure/cognitive-services/Custom-Vision-Service/home"><img src="../media/index/API_Custom_Vision.svg" alt="" /><span>Пользовательская служба визуального распознавания&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/emotion/home"><img src="../media/index/API_Emotion.svg" alt="" /><span>API распознавания эмоций&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/face/"><img src="../media/index/API_Face.svg" alt="" />API распознавания лиц</a></p> <p><a class="barLink" href="/azure/cognitive-services/video-indexer/video-indexer-overview"><img src="../media/index/API_VideoIndexer.svg" alt="" /><span>Индексатор видео&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p>
+    - title: Речь
+      html: <p><a class="barLink" href="/azure/cognitive-services/speech-service"><img src="../media/index/API_Speech_Service.svg" alt="" />Служба распознавания речи&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></a></p> <p><a class="barLink" href="/azure/cognitive-services/speech/home"><img src="../media/index/API_Bing_Speech.svg" alt="" />SAPI</a></p> <p><a class="barLink" href="/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home"><img src="../media/index/API_Custom_Speech.svg" alt="" /><span>Пользовательская служба распознавания речи&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/speaker-recognition/home"><img src="../media/index/API_Speaker_Recognition.svg" alt="" /><span>API распознавания говорящего&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/translator-speech/"><img src="../media/index/API_TranslatorSpeech.svg" alt="" />API перевода речи</a></p>
+    - title: Язык
+      html: <p><a class="barLink" href="/azure/cognitive-services/bing-spell-check/"><img src="../media/index/API_Bing_Spell_Check.svg" alt="" />Проверка орфографии Bing</a></p> <p><a class="barLink" href="/azure/cognitive-services/luis/"><img src="../media/index/API_Luis.svg" alt="" /><span>Language Understanding (LUIS)</span></a></p> <p><a class="barLink" href="/azure/cognitive-services/linguisticanalysisapi/home"><img src="../media/index/API_LinguisticAnalysis.svg" alt="" /><span>API лингвистического анализа&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/text-analytics/"><img src="../media/index/API_TextAnalytics.svg" alt="" />API анализа текста</a></p> <p><a class="barLink" href="/azure/cognitive-services/translator/"><img src="../media/index/API_TranslatorText.svg" alt="" />API перевода текста</a></p> <p><a class="barLink" href="/azure/cognitive-services/web-language-model/home"><img src="../media/index/API_WebLanguageModel.svg" alt="" /><span>Языковая модель на основе веб-содержимого&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p>
+    - title: Знания
+      html: <p><a class="barLink" href="/azure/cognitive-services/custom-decision-service/"><img src="../media/index/API_Custom_Decision_Service.svg" alt="" /><span>Пользовательская служба принятия решений&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p> <p><a class="barLink" href="/azure/cognitive-services/qnamaker/index"><img src="../media/index/API_QnAMaker.svg" alt="" /><span>QnA Maker</span></a></p> <p><a class="barLink" href="/azure/cognitive-services/recommendations/overview"><img src="../media/index/API_Recommendations.svg" alt="" /><span>API рекомендаций&nbsp;<sup style="font-size:70%">(предварительная версия)</sup></span></a></p>
+    - title: поиска
+      html: <p><a class="barLink" href="/azure/cognitive-services/bing-news-search/"><img src="../media/index/API_Bing_News_Search.svg" alt="" />API Bing для поиска новостей</a></p> <p><a class="barLink" href="/azure/cognitive-services/Bing-Video-Search/"><img src="../media/index/API_Bing_Video_Search.svg" alt="" />API Bing для поиска видео</a></p> <p><a class="barLink" href="/azure/cognitive-services/bing-web-search/"><img src="../media/index/API_Bing_Web_Search.svg" alt="" />API Bing для поиска в Интернете</a></p> <p><a class="barLink" href="/azure/cognitive-services/Bing-Autosuggest"><img src="../media/index/API_Bing_AutoSuggest.svg" alt="" />API автозаполнения Bing</a></p> <p><a class="barLink" href="/azure/cognitive-services/bing-custom-search"><img src="../media/index/API_Bing_Custom_Search.svg" alt="" />Пользовательский поиск Bing</a></p> <p><a class="barLink" href="/azure/cognitive-services/bing-entities-search/"><img src="../media/index/API_Bing_Entity_Search.svg" alt="" />API Bing для поиска сущностей</a></p> <p><a class="barLink" href="/azure/cognitive-services/bing-image-search"><img src="../media/index/API_Bing_Image_Search.svg" alt="" />API Bing для поиска изображений</a></p> <p><a class="barLink" href="/azure/cognitive-services/bing-visual-search"><img src="../media/index/API_Bing_Visual_Search.svg" alt="" />API Bing для визуального поиска</a></p>
+    - title: Лаборатории
+      html: <p><a class="barLink" href="https://docs.microsoft.com/gestures/"><img src="../media/index/labs-hand-gesture.svg" alt="" />Жесты в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/project-personality-chat/overview"><img src="media/index/project-personality-chat-icon.svg" alt="" />Индивидуальный чат в проекте</a></p> <p><a class="barLink" href="https://labs.cognitive.microsoft.com/en-us/Project-Cuzco/documentation/overview"><img src="../media/index/labs-event-tracker.svg" alt="" />Отслеживание событий в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/academic-knowledge/home"><img src="../media/index/API_Know_Academic.svg" alt="" />Academic Knowledge в проекте</a></p> <p><a class="barLink" href="https://labs.cognitive.microsoft.com/en-us/Project-Wollongong/documentation"><img src="../media/index/labs-local-insight.svg" alt="" />Локальная аналитика в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/kes/overview"><img src="../media/index/API_KnowledgeExploration.svg" alt="" /><span>Служба поиска и распознавания данных в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/entitylinking/home"><img src="../media/index/API_Entity_LinkingIntelligence.svg" alt="" /><span>Связывание сущностей в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/labs/url-preview/overview"><img src="../media/index/API_URL_Preview.svg" alt="" /><span>Служба предварительного просмотра URL-адресов в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/labs/answer-search/overview"><img src="../media/index/API_Answer_Search.svg" alt="" /><span>Служба поиска ответов в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/labs/anomaly-finder/overview"><img src="../media/index/API_Anomaly_Finder.svg" alt="" /><span>Средство для поиска аномалий в проекте</a></p> <p><a class="barLink" href="/azure/cognitive-services/labs/conversation-learner/overview"><img src="../media/index/API_Conversation_Learner.svg" alt="" /><span>Средство для обучения ведению диалога в проекте</a></p>

@@ -20,7 +20,7 @@
 
 На основе метрик производительности можно создавать [оповещения](../articles/monitoring-and-diagnostics/monitoring-overview-alerts.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/monitoring-and-diagnostics/insights-alerts-portal.md) с использованием [Azure PowerShell](../articles/monitoring-and-diagnostics/insights-alerts-powershell.md) или [Azure CLI](../articles/monitoring-and-diagnostics/insights-alerts-command-line-interface.md).
 
-## <a name="azure-service-health"></a>Служба работоспособности служб Azure
+## <a name="azure-service-health"></a>Работоспособность служб Azure
 
 [Служба работоспособности служб Azure](../articles/service-health/service-health-overview.md) предоставляет персонализированные инструкции и поддержку при возникновении проблем в работе служб Azure, а также помогает подготовиться к предстоящему плановому обслуживанию. Служба работоспособности служб Azure отправляет пользователям и рабочим группам настраиваемые целевые уведомления.
 

@@ -8,15 +8,15 @@ ms.reviewer: carlrab, srbozovi
 ms.service: sql-database
 ms.custom: managed instance
 ms.topic: tutorial
-ms.date: 04/10/2018
+ms.date: 07/06/2018
 ms.author: bonova
 manager: craigg
-ms.openlocfilehash: ff605b7512a27f81b111560f5d151010dbb62273
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 1d8db471a3f8ebf9dbcce77b101a2688f2570fd6
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "31426208"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37949890"
 ---
 # <a name="restore-a-database-backup-to-an-azure-sql-database-managed-instance"></a>Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -140,7 +140,7 @@ ms.locfileid: "31426208"
 
     ![список файлов](./media/sql-database-managed-instance-tutorial/file-list.png)
 
-4. Используйте сценарий ниже для восстановления базы данных Adventure Works 2012 из файла резервной копии. Укажите URL-адрес контейнера, в котором находится этот файл.
+4. Используйте приведенный ниже скрипт для восстановления базы данных Wide World Importers из файла резервной копии. Укажите URL-адрес контейнера, в котором находится этот файл.
 
    ```sql
    RESTORE DATABASE [Wide World Importers] FROM URL =

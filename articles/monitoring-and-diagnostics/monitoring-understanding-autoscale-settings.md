@@ -1,24 +1,19 @@
 ---
-title: "Общие сведения о параметрах автомасштабирования в Azure | Документация Майкрософт"
-description: "Подробный разбор настроек автомасштабирования и принципов их работы."
+title: Общие сведения о параметрах автомасштабирования в Azure Monitor
+description: 'Подробный разбор настроек автомасштабирования и принципов их работы. Эта статья касается таких служб: Виртуальные машины , Облачные службы и Веб-приложения.'
 author: anirudhcavale
-manager: orenr
-editor: 
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: ce2930aa-fc41-4b81-b0cb-e7ea922467e1
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 12/18/2017
 ms.author: ancav
-ms.openlocfilehash: 73c79ec4ee1beb5220e088421c78ffffd932eef1
-ms.sourcegitcommit: eeb5daebf10564ec110a4e83874db0fb9f9f8061
+ms.component: autoscale
+ms.openlocfilehash: 982bc43fd86a808da07833d77bde17e17789b2d6
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35265002"
 ---
 # <a name="understand-autoscale-settings"></a>Основные сведения о параметрах автомасштабирования
 С помощью параметров автомасштабирования можно настроить объем ресурсов, необходимый для управления колеблющейся нагрузкой приложения. Вы можете настроить активацию параметров автомасштабирования при достижении метрик нагрузки или производительности или запланировать дату и время активации. В этой статье подробно описывается настройка автомасштабирования. В начале статьи предоставлены схема и свойства параметров, а затем — различные типы профилей, которые можно настроить. В этой статье также рассматривается, как функция автоматического масштабирования в Azure вычисляет профиль, который необходимо выполнить в заданное время.

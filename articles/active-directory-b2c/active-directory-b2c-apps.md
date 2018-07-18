@@ -1,24 +1,21 @@
 ---
-title: Типы приложений — Azure AD B2C | Документация Майкрософт
+title: Типы приложений в Azure Active Directory B2C | Документация Майкрософт
 description: Типы приложений, которые можно создавать в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.assetid: bb9d4abe-0db7-4bd9-b0c4-2f43b2c9cf33
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: hero-article
 ms.date: 12/06/2016
 ms.author: davidmu1
-ms.openlocfilehash: 0329cb9e49196f77ba12940e5987487eb2b6fda9
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: 63bf3725eddd14d665e51427a65a339116ceb09b
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34710089"
 ---
 # <a name="azure-active-directory-b2c-types-of-applications"></a>Azure Active Directory B2C: типы приложений
 Служба Azure Active Directory (Azure AD) B2C поддерживает проверку подлинности для различных архитектур современных приложений. Все они основаны на стандартных отраслевых протоколах: [OAuth 2.0](active-directory-b2c-reference-protocols.md) или [OpenID Connect](active-directory-b2c-reference-protocols.md). В этом документе кратко описаны типы приложений, которые можно создавать независимо от используемого языка или платформы. Кроме того, ознакомившись с ним, вы узнаете о сценариях, необходимых для [разработки приложений](active-directory-b2c-overview.md).
@@ -26,8 +23,8 @@ ms.lasthandoff: 04/18/2018
 ## <a name="the-basics"></a>Основные сведения
 Каждое приложение, использующее Azure AD B2C, нужно зарегистрировать в [каталоге B2C](active-directory-b2c-get-started.md) на [портале Azure](https://portal.azure.com/). В процессе регистрации приложения будут установлены несколько параметров приложения:
 
-* **идентификатор приложения** , определяющий конкретное приложение;
-* **универсальный код ресурса (URI) перенаправления** , который можно использовать для направления ответов к приложению;
+* **идентификатор приложения**, определяющий конкретное приложение;
+* **универсальный код ресурса (URI) перенаправления**, который можно использовать для направления ответов к приложению;
 * несколько других зависящих от сценария значений. Дополнительные сведения см. в статье о [регистрации приложения](active-directory-b2c-app-registration.md).
 
 Каждый запрос, отправленный в Azure AD B2C, определяет какую-либо **политику**. Политика управляет поведением службы Azure AD. Кроме того, с помощью этих конечных точек вы можете создать настраиваемый набор действий пользователя. В число распространенных политик входят политики регистрации, входа и редактирования профилей. Если вы не знакомы с политиками, то, прежде чем продолжить, прочтите о [платформе расширяемых политик](active-directory-b2c-reference-policies.md) Azure AD B2C.

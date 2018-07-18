@@ -79,8 +79,6 @@
                   href: network-watcher-packet-capture-manage-powershell.md
                 - name: Инфраструктура CLI Azure
                   href: network-watcher-packet-capture-manage-cli.md
-                - name: Azure CLI 1.0
-                  href: network-watcher-packet-capture-manage-cli-nodejs.md
                 - name: REST
                   href: network-watcher-packet-capture-manage-rest.md
             - name: Анализ сбора пакетов
@@ -101,8 +99,6 @@
               href: network-watcher-nsg-flow-logging-powershell.md
             - name: Инфраструктура CLI Azure
               href: network-watcher-nsg-flow-logging-cli.md
-            - name: Azure CLI 1.0
-              href: network-watcher-nsg-flow-logging-cli-nodejs.md
             - name: REST
               href: network-watcher-nsg-flow-logging-rest.md
         - name: Анализ журналов потоков NSG
@@ -128,8 +124,6 @@
               href: network-watcher-security-group-view-powershell.md
             - name: Инфраструктура CLI Azure
               href: network-watcher-security-group-view-cli.md
-            - name: Azure CLI 1.0
-              href: network-watcher-security-group-view-cli-nodejs.md
             - name: REST
               href: network-watcher-security-group-view-rest.md
         - name: Выполнение аудита и проверки соответствия требованиям в сети
@@ -142,8 +136,6 @@
               href: network-watcher-troubleshoot-manage-powershell.md
             - name: Инфраструктура CLI Azure
               href: network-watcher-troubleshoot-manage-cli.md
-            - name: Azure CLI 1.0
-              href: network-watcher-troubleshoot-manage-cli-nodejs.md
             - name: REST
               href: network-watcher-troubleshoot-manage-rest.md
         - name: Мониторинг VPN-шлюза с помощью службы автоматизации Azure

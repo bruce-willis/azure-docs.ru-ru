@@ -7,22 +7,25 @@ author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: 804438c4-51a1-497d-8ccc-5be775980203
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/03/2017
+ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: d968548f9ac369f02f10a10d8f1ecc99c48bca60
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: d9f4dc0883ced599dd13d0c5d52ff865e03b73ed
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332917"
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Присоединение виртуальной машины Ubuntu к управляемому домену в Azure
 Из этой статьи вы узнаете, как присоединить виртуальную машину Ubuntu Linux к управляемому домену доменных служб Azure AD.
 
+[!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Чтобы выполнить задачи, описанные в этой статье, вам потребуется следующее:  
@@ -120,17 +123,17 @@ sudo systemctl start ntp
     sudo realm discover CONTOSO100.COM
     ```
 
-   > [!NOTE] 
+   > [!NOTE]
    > **Устранение неполадок.** Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
      * Проверьте подключение между доменом и виртуальной машиной (с помощью команды ping).
      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом.
      * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.
    >
 
-2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду: 
+2. Инициализируйте Kerberos. В окне терминала SSH введите следующую команду:
 
-    > [!TIP] 
-    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD". 
+    > [!TIP]
+    > * Обязательно укажите пользователя, который принадлежит к группе "Администраторы AAD AD".
     > * Введите доменное имя заглавными буквами, иначе операция с использованием kinit завершится ошибкой.
     >
 
@@ -138,9 +141,9 @@ sudo systemctl start ntp
     kinit bob@CONTOSO100.COM
     ```
 
-3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду: 
+3. Присоедините компьютер к домену. В окне терминала SSH введите следующую команду:
 
-    > [!TIP] 
+    > [!TIP]
     > Используйте ту же учетную запись пользователя, которую вы указали на предыдущем шаге (kinit).
     >
 
@@ -173,7 +176,7 @@ sudo systemctl start ntp
 ```
 sudo vi /etc/pam.d/common-session
 ```
-    
+
 В этом файле под строкой session optional pam_sss.so добавьте новую строку с указанными ниже данными и сохраните файл.
 ```
 session required pam_mkhomedir.so skel=/etc/skel/ umask=0077

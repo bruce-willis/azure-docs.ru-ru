@@ -9,17 +9,17 @@ editor: ''
 ms.assetid: b94e2d2e-435c-474a-ae34-4adecd0e6f8f
 ms.service: service-fabric
 ms.devlang: dotNet
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 05/14/2018
+ms.date: 05/24/2018
 ms.author: ryanwi
-ms.openlocfilehash: fd70636a40ac08fb4b47c6ea53ae3c702d271ea8
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f128947cf3ac0a2afab23d41f101c1b0d7624397
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204905"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34641957"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -64,8 +64,8 @@ ms.locfileid: "34204905"
 * [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* пакет SDK и инструменты для Service Fabric версии 3.1.274;
-* среда выполнения Service Fabric 6.2.274;
+* пакет SDK и инструменты для Service Fabric версии 3.1.283;
+* среда выполнения Service Fabric 6.2.283;
 * средства Service Fabric для Visual Studio 2015 2.1.20180510.2;
 * Visual Studio 2017 15.7, которая включает средства Service Fabric для Visual Studio 2.1.20180423.1. 
 

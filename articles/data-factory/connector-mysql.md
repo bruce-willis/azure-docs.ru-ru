@@ -10,24 +10,22 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 02/07/2018
+ms.topic: conceptual
+ms.date: 06/23/2018
 ms.author: jingwang
-ms.openlocfilehash: d7dea9a3d9eabdc9e4cdf21e6e584b745d22a54e
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: bb3179f1db077aacc7e36acf16486ee77a7f36e7
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051269"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-onprem-mysql-connector.md)
-> * [Версия 2 — предварительная](connector-mysql.md)
+> * [Версия 1](v1/data-factory-onprem-mysql-connector.md)
+> * [Текущая версия](connector-mysql.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных MySQL. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Перемещение данных из MySQL с помощью фабрики данных Azure](v1/data-factory-onprem-mysql-connector.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -37,13 +35,9 @@ ms.lasthandoff: 03/23/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Чтобы использовать этот соединитель MySQL, сделайте следующее:
+Если база данных MySQL не является общедоступной, необходимо настроить локальную среду выполнения интеграции. Дополнительные сведения о локальной среде IR см. в статье [How to create and configure Self-hosted Integration Runtime](create-self-hosted-integration-runtime.md) (Создание и настройка локальной среды IR). Начиная с версии 3.7 служба Integration Runtime предоставляет встроенный драйвер MySQL, поэтому вам не потребуется устанавливать его вручную.
 
-- Настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
-- Установите [соединитель MySQL Connector/Net для Microsoft Windows](https://dev.mysql.com/downloads/connector/net/) версии 6.6.5 или более поздней на компьютере среды выполнения интеграции. Это 32-разрядная версия драйвера совместима с 64-разрядной версией среды IR.
-
-> [!TIP]
-> Если произошла ошибка "Аутентификация не пройдена из-за закрытия транспортного потока удаленной стороной", то рекомендуется обновить соединитель MySQL Connector/Net до более поздней версии.
+Для Integration Runtime (Self-hosted) версии ниже, чем 3.7, установите [соединитель MySQL Connector/Net для Microsoft Windows](https://dev.mysql.com/downloads/connector/net/) версии 6.6.5–6.10.7 на компьютер со средой выполнения интеграции. Это 32-разрядная версия драйвера совместима с 64-разрядной версией среды IR.
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -58,14 +52,40 @@ ms.lasthandoff: 03/23/2018
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Для свойства type необходимо задать значение **MySql** | Yes |
-| server | Имя сервера MySQL. | Yes |
-| database | Имя базы данных MySQL. | Yes |
-| schema | Имя схемы в базе данных. | Нет  |
-| Имя пользователя | Укажите имя пользователя для подключения к базе данных MySQL. | Yes |
-| password | Введите пароль для указанной вами учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Yes |
+| connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+Типичная строка подключения — `Server=<server>;Port=<port>;Database=<database>;UID=<username>;PWD=<password>`. Дополнительные свойства, которые вы можете установить в вашем случае:
+
+| Свойство | ОПИСАНИЕ | Параметры | Обязательно |
+|:--- |:--- |:--- |:--- |:--- |
+| SSLMode | Этот параметр указывает, использует ли драйвер SSL-шифрование и проверку при подключении к MySQL. (например, `SSLMode=<0/1/2/3/4>`| DISABLED (0) / PREFERRED (1) **(по умолчанию)** / REQUIRED (2) / VERIFY_CA (3) / VERIFY_IDENTITY (4) | Нет  |
+| useSystemTrustStore | Этот параметр указывает, следует ли использовать сертификат ЦС из доверенного системного хранилища или из указанного PEM-файла. (например, `UseSystemTrustStore=<0/1>;`| Enabled (1) / Disabled (0) **(по умолчанию)** | Нет  |
 
 **Пример.**
+
+```json
+{
+    "name": "MySQLLinkedService",
+    "properties": {
+        "type": "MySql",
+        "typeProperties": {
+            "connectionString": {
+                 "type": "SecureString",
+                 "value": "Server=<server>;Port=<port>;Database=<database>;UID=<username>;PWD=<password>"
+            }
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
+Ранее используемая связанная служба MySQL со приведенными ниже полезными данными по-прежнему поддерживается. Но мы рекомендуем в дальнейшем использовать более новую версию.
+
+**Предыдущие полезные данные:**
 
 ```json
 {
@@ -170,13 +190,14 @@ ms.lasthandoff: 03/23/2018
 |:--- |:--- |
 | `bigint` |`Int64` |
 | `bigint unsigned` |`Decimal` |
-| `bit` |`Decimal` |
+| `bit(1)` |`Boolean` |
+| `bit(M), M>1`|`Byte[]`|
 | `blob` |`Byte[]` |
-| `bool` |`Boolean` |
+| `bool` |`Int16` |
 | `char` |`String` |
 | `date` |`Datetime` |
 | `datetime` |`Datetime` |
-| `decimal` |`Decimal` |
+| `decimal` |`Decimal, String` |
 | `double` |`Double` |
 | `double precision` |`Double` |
 | `enum` |`String` |

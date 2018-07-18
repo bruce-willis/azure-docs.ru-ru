@@ -1,6 +1,6 @@
 ---
-title: Примеры команд Azure CLI для управления Service Fabric
-description: Примеры команд Azure CLI для управления Service Fabric
+title: Примеры Azure CLI (az) и Azure Service Fabric CLI (sfctl)
+description: Примеры Azure CLI (az) и Azure Service Fabric CLI (sfctl)
 services: service-fabric
 documentationcenter: service-fabric
 author: Thraka
@@ -16,23 +16,24 @@ ms.workload: service-fabric
 ms.date: 04/09/2018
 ms.author: adegeo
 ms.custom: mvc
-ms.openlocfilehash: c7f6ce7cea62bd4bf9baca6119f204fc43cf4d45
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: e37bbd5e12608c5acbd19d5c57667d9e34c74b3c
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34641855"
 ---
-# <a name="azure-service-fabric-cli-samples"></a>Примеры команд Azure CLI для управления Service Fabric
+# <a name="azure-cli-az-and-azure-service-fabric-cli-sfctl-samples"></a>Примеры Azure CLI (az) и Azure Service Fabric CLI (sfctl)
 
-Ниже приведена таблица со ссылками на примеры сценариев [интерфейса командной строки Service Fabric](service-fabric-cli.md), которые дают возможность управлять кластерами, приложениями и службами Service Fabric.
+Ниже приведена таблица со ссылками на примеры управления кластерами, приложениями и службами Service Fabric.
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
 | | |
 |-|-|
-| **Создать кластер** ||
-| [Создание защищенного кластера Linux (Azure)](./scripts/cli-create-cluster.md)| Создает кластер Azure Service Fabric. |
-| **Управление приложениями** ||
+| **Создание кластера** (с помощью Azure CLI)||
+| [Создание защищенного кластера Linux](./scripts/cli-create-cluster.md)| Создает кластер Azure Service Fabric. |
+| **Управление приложениями** (с помощью Service Fabric CLI)||
 | [Список приложений](./scripts/sfctl-list-applications.md)| Список приложений, подготовленных в кластере.|
 | [Развертывание приложения](./scripts/cli-deploy-application.md)| Развертывание приложения в кластере.|
 | [Удаление приложения](./scripts/cli-remove-application.md)| Удаление приложения из кластера.|

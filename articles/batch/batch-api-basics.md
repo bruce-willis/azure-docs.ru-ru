@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/06/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: add8e184db102d48275bd8d3faa42def63918c19
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 3fe0d3836046ad143e746503210099ee5c640a08
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360495"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129104"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы
 
@@ -506,8 +506,7 @@ ms.locfileid: "34360495"
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 * Ознакомьтесь с пошаговой инструкцией по созданию примера приложения пакетной службы в статье [Начало работы с библиотекой пакетной службы Azure для .NET](batch-dotnet-get-started.md). Существует также [версия Python](batch-python-tutorial.md) этого руководства. В ней рассматривается выполнение рабочих нагрузок на вычислительных узлах Linux.
 * Скачайте и установите [BatchLabs][batch_labs] для использования во время разработки решений пакетной службы. Используйте BatchLabs для создания, отладки и мониторинга приложений пакетной службы Azure. 
-* Узнайте, как [создавать пулы вычислительных узлов Linux](batch-linux-nodes.md).
-* Посетите [форум по пакетной службе Azure][batch_forum] на сайте MSDN. Здесь могут задавать вопросы как начинающие, так и опытные пользователи пакетной службы.
+* См. ресурсы сообщества, в том числе [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества по пакетной службе](https://github.com/Azure/Batch), а также [форум по пакетной службе Azure][batch_forum] на веб-сайте MSDN. 
 
 [1]: ./media/batch-api-basics/node-folder-structure.png
 
@@ -541,7 +540,7 @@ ms.locfileid: "34360495"
 [net_rdpfile]: https://msdn.microsoft.com/library/azure/Mt272127.aspx
 [vnet]: https://msdn.microsoft.com/library/azure/dn820174.aspx#bk_netconf
 
-[py_add_user]: http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.batch.operations.html#azure.batch.operations.ComputeNodeOperations.add_user
+[py_add_user]: https://docs.microsoft.com/en-us/python/azure/?view=azure-python
 
 [batch_rest_api]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
 [rest_add_job]: https://msdn.microsoft.com/library/azure/mt282178.aspx

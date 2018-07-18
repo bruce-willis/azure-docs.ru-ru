@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/09/2018
 ms.author: jdial
-ms.openlocfilehash: 065ac8b2e9cb48408c7922a1937e541521ccd8cf
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: cd97b00a522ff41a74f46195da5d8b1a0d92d344
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33895601"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960014"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Создание, изменение и удаление таблицы маршрутов
 
@@ -94,6 +94,8 @@ Azure автоматически направляет трафик между п
 3. В разделе **параметров** выберите **Подсети**.
 4. Выберите подсеть, с которой нужно связать таблицу маршрутов.
 5. Выберите **таблицу маршрутов**, с которой нужно связать подсеть, а затем нажмите кнопку **Сохранить**.
+
+Если виртуальная сеть подключена к шлюзу Azure VPN, не связывайте таблицу маршрутов с [подсетью шлюза](../vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md?toc=%2fazure%2fvirtual-network%2ftoc.json#gwsub), включающей маршрут с назначением 0.0.0.0/0. Это может привести к неправильной работе шлюза. Дополнительные сведения об использовании префикса 0.0.0.0/0 в маршруте см. в разделе [Префикс адреса 0.0.0.0/0](virtual-networks-udr-overview.md#default-route).
 
 **Команды**
 
@@ -211,7 +213,7 @@ Azure автоматически направляет трафик между п
 **Команды**
 
 - Azure CLI: [az network nic show-effective-route-table](/cli/azure/network/nic?view=azure-cli-latest#az_network_nic_show_effective_route_table)
-- PowerShell: [Get-AzureRmEffectiveRouteTable](/powershell/module/azurerm.network/remove-azurermrouteconfig) 
+- PowerShell: [Get-AzureRmEffectiveRouteTable](/powershell/module/azurerm.network/get-azurermeffectiveroutetable) 
 
 ## <a name="validate-routing-between-two-endpoints"></a>Проверка маршрутизации между двумя конечными точками
 

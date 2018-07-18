@@ -47,6 +47,8 @@
               href: logic-apps-control-flow-loops.md
             - name: Области действия
               href: logic-apps-control-flow-run-steps-group-scopes.md
+        - name: Создание переменных для хранения значений
+          href: logic-apps-create-variables-store-values.md
         - name: Добавление пользовательского кода с помощью решения "Функции Azure"
           href: logic-apps-azure-functions.md
         - name: Вызов приложений логики с помощью решения "Функции Azure"
@@ -61,6 +63,8 @@
           href: logic-apps-content-type.md
         - name: Обработка ошибок и исключений
           href: logic-apps-exception-handling.md
+        - name: Обработка больших сообщений
+          href: logic-apps-handle-large-messages.md
         - name: Защита приложений логики
           href: logic-apps-securing-a-logic-app.md
         - name: Разработка настраиваемых соединителей
@@ -224,13 +228,15 @@
           href: ../connectors/connectors-native-recurrence.md
         - name: SendGrid
           href: ../connectors/connectors-create-api-sendgrid.md
+        - name: SFTP
+          href: ../connectors/connectors-create-api-sftp.md
         - name: SharePoint Online
           href: ../connectors/connectors-create-api-sharepointonline.md
         - name: SharePoint Server
           href: ../connectors/connectors-create-api-sharepointserver.md
         - name: Slack
           href: ../connectors/connectors-create-api-slack.md
-        - name: SQL Azure и SQL Server
+        - name: SQL Server;
           href: ../connectors/connectors-create-api-sqlazure.md
         - name: Преобразование XML
           href: logic-apps-enterprise-integration-transform.md
@@ -264,14 +270,14 @@
       items:
         - name: Мониторинг состояния приложений логики
           href: logic-apps-monitor-your-logic-apps.md
-        - name: Мониторинг состояния приложений логики в OMS с помощью Log Analytics
+        - name: Мониторинг состояния приложений логики с помощью Azure Log Analytics
           href: logic-apps-monitor-your-logic-apps-oms.md
         - name: Мониторинг сообщений B2B
           href: logic-apps-monitor-b2b-message.md
           items:
-            - name: Отслеживание сообщений B2B в OMS
+            - name: Отслеживание сообщений B2B в Azure Log Analytics
               href: logic-apps-track-b2b-messages-omsportal.md
-            - name: Запрашивание сообщений B2B в OMS
+            - name: Запрос сообщений B2B в Azure Log Analytics
               href: logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md
     - name: 'Примеры, сценарии и пошаговые руководства'
       href: logic-apps-examples-and-scenarios.md
@@ -286,6 +292,13 @@
           href: logic-apps-enterprise-integration-b2b.md
 - name: Справочные материалы
   items:
+    - name: Шаблоны архитектуры
+      href: logic-apps-architectures-simple-enterprise-integration.md
+      items:
+        - name: Простая корпоративная интеграция
+          href: logic-apps-architectures-simple-enterprise-integration.md
+        - name: Корпоративная интеграция с использованием очередей и событий
+          href: logic-apps-architectures-enterprise-integration-with-queues-events.md
     - name: 'Соединители: подробные сведения'
       href: 'https://docs.microsoft.com/connectors/'
     - name: Ограничения и конфигурация

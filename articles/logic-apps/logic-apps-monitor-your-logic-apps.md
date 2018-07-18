@@ -2,7 +2,7 @@
 title: Проверка состояния, настройка ведения журнала и получение оповещений в Azure Logic Apps | Документы Майкрософт
 description: Мониторинг состояния и производительности приложений логики, запись ведения журнала диагностики и настройка оповещений
 author: jeffhollan
-manager: anneta
+manager: jeconnoc
 editor: ''
 services: logic-apps
 documentationcenter: ''
@@ -15,11 +15,12 @@ ms.topic: article
 ms.custom: H1Hack27Feb2017
 ms.date: 07/21/2017
 ms.author: LADocs; jehollan
-ms.openlocfilehash: c1d5bc55b132b449ebc2964ef95016a6a4780c19
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: f11db2009328118dda036057918ba853f5032200
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293529"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
@@ -117,19 +118,11 @@ ms.lasthandoff: 04/16/2018
 
    ![Выбор рабочей области Log Analytics](media/logic-apps-monitor-your-logic-apps/selectla.png)
 
-3. В разделе **Управление** выберите **Портал OMS**.
+3. В разделе **Управление** выберите **Поиск по журналу**.
 
-   ![Выберите "Портал OMS"](media/logic-apps-monitor-your-logic-apps/omsportalpage.png)
+   ![Выбор кнопки "Поиск по журналу"](media/logic-apps-monitor-your-logic-apps/log-search.png)
 
-4. На домашней странице выберите **Поиск по журналам**.
-
-   ![На домашней странице выберите "Поиск по журналам".](media/logic-apps-monitor-your-logic-apps/logsearch.png)
-
-   -или-
-
-   ![В меню выберите "Поиск по журналам".](media/logic-apps-monitor-your-logic-apps/logsearch-2.png)
-
-5. В поле поиска укажите поле, которое требуется найти, и нажмите клавишу **ВВОД**. При вводе предлагаются возможные совпадения и операции, которые можно использовать. 
+4. В поле поиска укажите поле, которое требуется найти, и нажмите клавишу **ВВОД**. При вводе предлагаются возможные совпадения и операции, которые можно использовать. 
 
    Например, чтобы найти первые 10 возникших событий, введите и выберите следующий поисковый запрос: **search Category == "WorkflowRuntime" | limit 10**.
 
@@ -137,27 +130,27 @@ ms.lasthandoff: 04/16/2018
 
    Узнайте подробнее о [способах поиска данных в Log Analytics](../log-analytics/log-analytics-log-searches.md).
 
-6. На странице результатов выберите период времени, данные за который вы хотите просмотреть.
+5. На странице результатов выберите период времени, данные за который вы хотите просмотреть.
 Чтобы уточнить запрос, добавив фильтр, нажмите **+Добавить**.
 
    ![Выберите период времени для результатов запроса](media/logic-apps-monitor-your-logic-apps/query-results.png)
 
-7. В разделе **Добавить фильтры** введите имя фильтра, чтобы найти нужный фильтр. Выберите фильтр и нажмите **+Добавить**.
+6. В разделе **Добавить фильтры** введите имя фильтра, чтобы найти нужный фильтр. Выберите фильтр и нажмите **+Добавить**.
 
    В этом примере используется слово "status" для поиска событий сбоя в разделе **AzureDiagnostics**.
    Здесь уже выбран фильтр для **status_s**.
 
    ![Выбор фильтра](media/logic-apps-monitor-your-logic-apps/log-search-add-filter.png)
 
-8. На панели слева выберите значение фильтра, которое требуется использовать, а затем нажмите **Применить**.
+7. На панели слева выберите значение фильтра, которое требуется использовать, а затем нажмите **Применить**.
 
    ![Выберите значение фильтра, нажмите кнопку "Применить"](media/logic-apps-monitor-your-logic-apps/log-search-apply-filter.png)
 
-9. Теперь вернитесь к запросу, который вы создаете. Запрос был обновлен с учетом выбранных фильтра и значения. Предыдущие результаты теперь также отфильтрованы.
+8. Теперь вернитесь к запросу, который вы создаете. Запрос был обновлен с учетом выбранных фильтра и значения. Предыдущие результаты теперь также отфильтрованы.
 
    ![Возврат к запросу с отфильтрованными результатами](media/logic-apps-monitor-your-logic-apps/log-search-query-filtered-results.png)
 
-10. Чтобы сохранить запрос для использования в будущем, нажмите **Сохранить**. Узнайте о том, [как сохранять запросы](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md#save-oms-query).
+9. Чтобы сохранить запрос для использования в будущем, нажмите **Сохранить**. Узнайте о том, [как сохранять запросы](../logic-apps/logic-apps-track-b2b-messages-omsportal-query-filter-control-number.md#save-oms-query).
 
 <a name="extend-diagnostic-data"></a>
 

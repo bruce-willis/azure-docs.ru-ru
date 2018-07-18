@@ -12,22 +12,34 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/29/2018
+ms.date: 05/17/2018
 ms.author: seguler
-ms.openlocfilehash: 13e09a3081c9dfa2d88625489a82c687d6722f20
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.openlocfilehash: 430979cf197138a9e239eba74e50e9f97d96cbf6
+ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34757610"
 ---
 # <a name="transfer-data-with-the-azcopy-on-windows"></a>Перенос данных с помощью AzCopy для Windows
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов, хранилища файлов и хранилища таблиц Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  
 
-Существуют две версии AzCopy, которые можно скачать. Служебная программа AzCopy для Windows основана на платформе .NET Framework и использует параметры командной строки в формате Windows. Служебная программа [AzCopy для Linux](storage-use-azcopy-linux.md) основана на платформе .NET Core, которая нацелена на платформы Linux, использующие параметры командной строки в формате POSIX. В этой статье рассматривается AzCopy для Windows.
+Существуют две версии AzCopy, которые можно скачать. AzCopy для Windows работает с параметрами командной строки в формате Windows. Инструмент [AzCopy для Linux](storage-use-azcopy-linux.md) предназначен для платформ Linux и использует параметры командной строки в формате POSIX. В этой статье рассматривается AzCopy для Windows.
 
 ## <a name="download-and-install-azcopy-on-windows"></a>Скачивание и установка AzCopy для Windows
 
-Скачайте [последнюю версию AzCopy для Windows](http://aka.ms/downloadazcopy).
+### <a name="latest-preview-version-v800"></a>Последняя предварительная версия (8.0.0)
+Скачайте [последнюю предварительную версию AzCopy для Windows](http://aka.ms/downloadazcopypr). Эта предварительная версия обеспечивает значительное повышение производительности и установку пакетов .NET Core.
+
+#### <a name="azcopy-on-windows-80-preview-release-notes"></a>Заметки о выпуске предварительной версии AzCopy для Windows 8.0
+- В последней версии служба таблиц уже не поддерживается. Если вы используете функцию экспорта таблиц, скачайте стабильную версию.
+- Сборка основана на .NET Core 2.1, и все зависимости .NET Core собраны в установочном пакете.
+- Значительное повышение производительности операций передачи и скачивания.
+
+### <a name="latest-stable-version-v710"></a>Последняя стабильная версия (7.1.0)
+Скачайте [последнюю стабильную версию AzCopy для Windows](http://aka.ms/downloadazcopy).
+
+### <a name="post-installation-step"></a>Действия после установки
 
 После установки AzCopy для Windows с помощью установщика откройте командное окно и перейдите к каталогу установки AzCopy на компьютере, где располагается исполняемый файл `AzCopy.exe`. При необходимости можно добавить место установки AzCopy к системному пути. По умолчанию инструмент AzCopy установлен в `%ProgramFiles(x86)%\Microsoft SDKs\Azure\AzCopy` или `%ProgramFiles%\Microsoft SDKs\Azure\AzCopy`.
 
@@ -288,7 +300,7 @@ AzCopy /Source:https://myaccount1.blob.core.windows.net/myContainer/ /Dest:https
 AzCopy /Source:https://myaccount.file.core.windows.net/myfileshare/myfolder1/ /Dest:C:\myfolder /SourceKey:key /Pattern:abc.txt
 ```
 
-Если исходный файл для копирования находится в общей папке Azure, необходимо указать либо точное имя файла (*например*, `abc.txt`) для скачивания одного файла, либо параметр `/S` для рекурсивного скачивания всех файлов в общей папке. Попытка одновременно задать шаблон файла и параметр `/S` приводит к ошибке.
+Если исходный файл для копирования находится в общей папке Azure, необходимо указать либо точное имя файла (*например*, `abc.txt`) для копирования одного файла, либо параметр `/S` для рекурсивного копирования всех файлов в общей папке. Попытка одновременно задать шаблон файла и параметр `/S` приводит к ошибке.
 
 ### <a name="download-all-files-in-a-directory"></a>Скачивание всех файлов в каталоге
 
@@ -298,7 +310,7 @@ AzCopy /Source:https://myaccount.file.core.windows.net/myfileshare/ /Dest:C:\myf
 
 Обратите внимание на то, что пустые папки не скачиваются.
 
-## <a name="upload-files-to-an-azure-file-share"></a>Отправка файлов в общую папку файлов Azure
+## <a name="upload-files-to-an-azure-file-share"></a>Передача файлов в файловый ресурс Azure
 
 Рассмотрим несколько способов отправки файлов с помощью AzCopy.
 
@@ -324,7 +336,7 @@ AzCopy /Source:C:\myfolder /Dest:https://myaccount.file.core.windows.net/myfiles
 
 ## <a name="copy-files-in-file-storage"></a>Копирование файлов в хранилище файлов
 
-Рассмотрим несколько способов копирования файлов в общую папку Azure с помощью AzCopy.
+Рассмотрим несколько способов копирования файлов в файловый ресурс Azure с помощью AzCopy.
 
 ### <a name="copy-from-one-file-share-to-another"></a>Копирование из одной общей папки в другую
 
@@ -333,14 +345,14 @@ AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare1/ /Dest:http
 ```
 При копировании файла между файловыми ресурсами выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
 
-### <a name="copy-from-an-azure-file-share-to-blob-storage"></a>Копирование из общей папки Azure в хранилище BLOB-объектов
+### <a name="copy-from-an-azure-file-share-to-blob-storage"></a>Копирование из файлового ресурса Azure в хранилище BLOB-объектов
 
 ```azcopy
 AzCopy /Source:https://myaccount1.file.core.windows.net/myfileshare/ /Dest:https://myaccount2.blob.core.windows.net/mycontainer/ /SourceKey:key1 /DestKey:key2 /S
 ```
 При копировании файла из файлового ресурса в большой двоичный объект выполняется [операция копирования на стороне сервера](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-asynchronous-cross-account-copy-blob.aspx).
 
-### <a name="copy-a-blob-from-blob-storage-to-an-azure-file-share"></a>Копирование большого двоичного объекта из хранилища BLOB-объектов в общую папку Azure
+### <a name="copy-a-blob-from-blob-storage-to-an-azure-file-share"></a>Копирование большого двоичного объекта из хранилища BLOB-объектов в файловый ресурс Azure
 
 ```azcopy
 AzCopy /Source:https://myaccount1.blob.core.windows.net/mycontainer/ /Dest:https://myaccount2.file.core.windows.net/myfileshare/ /SourceKey:key1 /DestKey:key2 /S
@@ -609,6 +621,20 @@ AzCopy /Source:https://127.0.0.1:10000/myaccount/mycontainer/ /Dest:C:\myfolder 
 ```azcopy
 AzCopy /Source:https://127.0.0.1:10002/myaccount/mytable/ /Dest:C:\myfolder /SourceKey:key /SourceType:Table
 ```
+
+### <a name="automatically-determine-content-type-of-a-blob"></a>Автоматическое определение типа содержимого большого двоичного объекта
+
+AzCopy определяет тип содержимого большого двоичного объекта на основе JSON-файла, который хранит тип содержимого для сопоставления с расширением файла. Это JSON-файл AzCopyConfig.json, который расположен в каталоге AzCopy. Если используется тип файла, который не входит в список, можно добавить соответствующее сопоставление в JSON-файл.
+
+```
+{
+  "MIMETypeMapping": {
+    ".myext": "text/mycustomtype",
+    .
+    .
+  }
+}
+```     
 
 ## <a name="azcopy-parameters"></a>Параметры AzCopy
 
@@ -942,10 +968,6 @@ AzCopy по умолчанию задает тип содержимого для
 При копировании BLOB-объектов или файлов с помощью AzCopy следует иметь в виду, что другое приложение может изменять данные в то время, когда они копируются. Если это возможно, обеспечьте, чтобы во время операции копирования не происходило изменение копируемых данных. Например, при копировании VHD, связанного с виртуальной машиной Azure, убедитесь в том, что никакое другое приложение в это время не записывает данные на VHD. Для этого рекомендуется сдать ресурс, который нужно скопировать, в аренду. В качестве альтернативы можно сначала создать моментальный снимок VHD, а затем скопировать его.
 
 Если не удается предотвратить запись в BLOB-объекты или файлы во время их копирования со стороны других приложений, следует иметь в виду, что к моменту завершения задания скопированные ресурсы могут больше не иметь полного соответствия с исходными ресурсами.
-
-### <a name="run-one-azcopy-instance-on-one-machine"></a>Запускайте один экземпляр AzCopy на одном компьютере.
-
-AzCopy предназначен для максимального использования ресурсов компьютера для ускорения передачи данных. Рекомендуется запускать только один экземпляр AzCopy на одном компьютере и указать параметр `/NC`, если требуется несколько параллельных операций. Для получения более подробной информации введите в командной строке `AzCopy /?:NC` .
 
 ### <a name="enable-fips-compliant-md5-algorithms-for-azcopy-when-you-use-fips-compliant-algorithms-for-encryption-hashing-and-signing"></a>Включайте FIPS-совместимые алгоритмы MD5 для AzCopy при использовании FIPS-совместимых алгоритмов для шифрования, хэширования и подписывания.
 

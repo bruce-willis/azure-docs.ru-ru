@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: dcc733308f4c0441545dc0d03cca2ca1112812ac
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: 045b433fdea2cfb97f3002fbe692ea8e4988fbb4
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34012923"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34726420"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в разных подписках
 
@@ -107,7 +107,7 @@ ms.locfileid: "34012923"
     ```azurecli
     azure network vnet create --vnet myVnetB --address-space 10.1.0.0 --cidr 16 --location "East US"
     ```
-5. Остальные действия необходимо выполнить в оболочке Bash с помощью [установленного](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json) интерфейса командной строки Azure CLI 2.0.4 или более поздней версии или с помощью Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в приведенных ниже сценариях, чтобы запустить службу Cloud Shell, которая выполнит вход в вашу учетную запись Azure. Сведения о параметрах выполнения сценариев Bash для интерфейса командной строки в клиенте Windows см. в статье [Использование Azure CLI в Windows](../virtual-machines/windows/cli-options.md?toc=%2fazure%2fvirtual-network%2ftoc.json). 
+5. Остальные действия необходимо выполнить в оболочке Bash с помощью [установленного](/cli/azure/install-azure-cli?toc=%2fazure%2fvirtual-network%2ftoc.json) интерфейса командной строки Azure CLI 2.0.4 или более поздней версии или с помощью Azure Cloud Shell. Azure Cloud Shell — это бесплатная оболочка Bash, которую можно запускать непосредственно на портале Azure. Она включает предварительно установленный интерфейс Azure CLI и настроена для использования с вашей учетной записью. Нажмите кнопку **Попробовать** в приведенных ниже сценариях, чтобы запустить службу Cloud Shell, которая выполнит вход в вашу учетную запись Azure. Сведения о вариантах выполнения сценариев Bash CLI в клиенте Windows см. в статье [Установка Azure CLI 2.0 в Windows](/cli/azure/install-azure-cli-windows). 
 6. Скопируйте следующий сценарий в текстовый редактор на своем компьютере. Замените `<SubscriptionB-Id>` идентификатором своей подписки. Если вам неизвестен идентификатор подписки, введите команду `az account show`. Значение **id** (Идентификатор) в выходных данных является идентификатором вашей подписки. Скопируйте измененный сценарий, вставьте его в сеанс Azure CLI 2.0 и нажмите клавишу `Enter`. 
 
     ```azurecli-interactive

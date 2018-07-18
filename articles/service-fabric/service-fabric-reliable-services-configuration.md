@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 10/02/2017
 ms.author: sumukhs
-ms.openlocfilehash: c5aaf9869326f2de86d3bff33f36e8f967f3e6fa
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 3e058242840a3fa8b86c9ae9d5a0940cc02f04d2
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020395"
 ---
 # <a name="configure-stateful-reliable-services"></a>Настройка надежных служб с отслеживанием состояния
 Существует два набора параметров конфигурации для надежных служб. Один набор является глобальным для всех надежных служб в кластере, а второй относится к конкретной надежной службе.
@@ -81,6 +82,11 @@ ms.lasthandoff: 05/16/2018
 
 ### <a name="replicator-security-configuration"></a>Конфигурация безопасности репликатора
 Конфигурации безопасности репликаторов используются для защиты канала связи, который используется во время репликации. Это означает, что службы не будут "видеть" реплицируемый трафик друг друга, что позволит обеспечить высокую доступность и высокий уровень защиты. По умолчанию пустой раздел конфигурации безопасности означает, что канал репликации не защищен.
+
+> [!IMPORTANT]
+> На узлах Linux сертификаты должны иметь формат PEM. Дополнительные сведения о поиске и настройке сертификатов для Linux см. в разделе [Настройка сертификатов на Linux](./service-fabric-configure-certificates-linux.md). 
+> 
+> 
 
 ### <a name="default-section-name"></a>Имя раздела по умолчанию
 ReplicatorSecurityConfig

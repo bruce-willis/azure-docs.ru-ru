@@ -1,5 +1,5 @@
 ---
-title: Руководство по установке изолированного клиента Service Fabric в Azure Service Fabric | Документация Майкрософт
+title: Руководство по установке изолированного клиента Service Fabric в Azure Service Fabric | Документы Майкрософт
 description: В этом руководстве показано, как установить изолированный клиент Service Fabric в кластере, созданном в предыдущем руководстве.
 services: service-fabric
 documentationcenter: .net
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 05/11/2018
 ms.author: dastanfo
 ms.custom: mvc
-ms.openlocfilehash: b9b9e08676228ddbdea8be91253b41dac8ef8fb8
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 7ba5fa1d4c5b87d1c4828ee98dae36f415d37c20
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211741"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344161"
 ---
 # <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство по установке и созданию кластера Service Fabric
 
@@ -61,15 +61,9 @@ Service Fabric предоставляет установочный пакет д
         }
 ```
 
-Затем необходимо обновить несколько свойств.  В строке 34 вам необходимо изменить строку подключения к хранилищу диагностики. После изменения она должна выглядеть следующим образом: `"connectionstring": "\\\\172.31.27.1\\c$\\DiagnosticsStore"`. Укажите свой IP-адрес.
+Затем необходимо обновить несколько свойств.  В строке 34 вам необходимо изменить строку подключения к хранилищу диагностики. Она должна выглядеть следующим образом: `"connectionstring": "C:\\ProgramData\\SF\\DiagnosticsStore"`
 
-После обновления строки подключения нужно создать папку.  Следующая команда создаст ее. Не забудьте заменить IP-адрес ниже на IP-адрес, который вы вставили в строку подключения:
-
-```powershell
-mkdir \\172.31.27.1\c$\DiagnosticsStore
-```
-
-Наконец, в разделе `nodeTypes` файла конфигурации добавьте новый раздел для сопоставления временных портов, которые будут использованы Windows.  Файл конфигурации должен выглядеть примерно следующим образом:
+Наконец, в разделе `nodeTypes` файла конфигурации добавьте новый раздел для сопоставления временных портов, которые будет использовать Windows.  Файл конфигурации должен выглядеть примерно следующим образом:
 
 ```json
 "applicationPorts": {
@@ -139,9 +133,9 @@ Your cluster is successfully created! You can connect and manage your cluster us
 
 ## <a name="add-and-remove-nodes"></a>Добавление и удаление узлов
 
-Вы можете добавить узлы в изолированный кластер Service Fabric или удалить их из него в соответствии с изменениями потребностей компании. Подробные инструкции статье [Добавление узлов в автономный кластер Service Fabric или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md) .
+Вы можете добавить узлы в изолированный кластер Service Fabric или удалить их из него в соответствии с изменениями потребностей компании. Подробные инструкции см. в статье [Добавление узлов в автономный кластер Service Fabric или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Из второй части в серии вы узнали не только о передаче больших объемов случайных данных в учетную запись хранения в параллельном режиме, но и о том, как выполнять такие задачи:
 

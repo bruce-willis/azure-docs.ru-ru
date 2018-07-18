@@ -11,13 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/13/2018
+ms.date: 06/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: c7e9807e7195be47bf7874837ff9428c90abbcee
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 5e67c60828467cce7c3b40ba17f15f44ad045920
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34735676"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
@@ -128,11 +129,11 @@ ms.lasthandoff: 05/20/2018
 
 Чтобы развернуть пример шаблона, используйте Azure PowerShell 4.0.0 или более поздней версии либо Azure CLI 2.0.0 или более поздней версии.
 
-## <a name="use-the-resourcegroup-function"></a>Использование функции resourceGroup()
+## <a name="use-the-resourcegroup-and-subscription-functions"></a>Использование функций resourceGroup() и subscription()
 
-При развертывании в нескольких группах ресурсов результат выполнения [функции resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) зависит от способа, с помощью которого указан вложенный шаблон. 
+При развертывании в нескольких группах ресурсов результат выполнения функций [resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) и [subscription()](resource-group-template-functions-resource.md#subscription) зависит от способа, с помощью которого указан вложенный шаблон. 
 
-При внедрении одного шаблона в другой функция resourceGroup() во вложенном шаблоне разрешается в родительской группе ресурсов. Внедренный шаблон использует следующий формат:
+При внедрении одного шаблона в другой функции во вложенном шаблоне разрешаются в родительской группе ресурсов и подписке. Внедренный шаблон использует следующий формат:
 
 ```json
 "apiVersion": "2017-05-10",
@@ -143,12 +144,12 @@ ms.lasthandoff: 05/20/2018
     "mode": "Incremental",
     "template": {
         ...
-        resourceGroup() refers to parent resource group
+        resourceGroup() and subscription() refer to parent resource group/subscription
     }
 }
 ```
 
-При связывании с отдельным шаблоном функция resourceGroup() в связанном шаблоне разрешается во вложенной группе ресурсов. Связанный шаблон использует следующий формат:
+При связывании отдельного шаблона функции в связанном шаблоне разрешаются в родительской группе ресурсов и подписке. Связанный шаблон использует следующий формат:
 
 ```json
 "apiVersion": "2017-05-10",
@@ -159,7 +160,7 @@ ms.lasthandoff: 05/20/2018
     "mode": "Incremental",
     "templateLink": {
         ...
-        resourceGroup() in linked template refers to linked resource group
+        resourceGroup() and subscription() in linked template refer to linked resource group/subscription
     }
 }
 ```

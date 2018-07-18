@@ -1,0 +1,71 @@
+- name: Документация по Пользовательской службе визуального распознавания
+- name: Обзор
+  items:
+    - name: Что собой представляет Пользовательская служба визуального распознавания
+      href: home.md
+- name: Практические руководства
+  items:
+    - name: Начало работы с Пользовательской службой визуального распознавания
+      items:
+        - name: Построение классификатора
+          href: getting-started-build-a-classifier.md
+        - name: Тестирование модели
+          href: test-your-model.md
+        - name: Усовершенствование классификатора
+          href: getting-started-improving-your-classifier.md
+        - name: Использование API-интерфейса прогнозирования
+          href: use-prediction-api.md
+        - name: Экспорт модели на мобильное устройство
+          href: export-your-model.md
+        - name: Использование модели ONNX с Windows ML
+          href: custom-vision-onnx-windows-ml.md
+        - name: Запуск модели TensorFlow на Python
+          href: export-model-python.md
+    - name: Создание приложений
+      items:
+        - name: Классификация изображений
+          items:
+            - name: 'Руководство по C#'
+              href: csharp-tutorial.md
+            - name: Руководство по Python
+              href: python-tutorial.md
+        - name: Обнаружение объектов
+          items:
+            - name: 'Руководство по C#'
+              href: csharp-tutorial-od.md
+            - name: Руководство по Python
+              href: python-tutorial-od.md
+- name: Справочные материалы
+  items:
+    - name: Пользовательский API визуального обучения
+      href: 'https://go.microsoft.com/fwlink/?linkid=865446'
+    - name: Пользовательский API визуального прогнозирования
+      href: 'https://go.microsoft.com/fwlink/?linkid=865445'
+    - name: Глоссарий
+      href: glossary-of-terms.md
+    - name: Пакеты SDK
+      items:
+        - name: Windows
+          href: 'http://github.com/Microsoft/Cognitive-CustomVision-Windows'
+        - name: Python
+          href: 'https://docs.microsoft.com/python/api/overview/azure/cognitive-services?view=azure-python#vision-modules'
+        - name: Go
+          href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices'
+- name: Ресурсы
+  items:
+    - name: Примеры
+      href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=vision'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/custom-vision-service/'
+    - name: Экспорт или удаление данных учетной записи
+      href: ./export-delete-data.md
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598141-custom-vision-service'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Ограничения и квоты
+      href: limits-and-quotas.md

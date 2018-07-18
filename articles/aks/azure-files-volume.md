@@ -2,18 +2,19 @@
 title: Использование службы файлов Azure с AKS
 description: Использование дисков Azure с AKS.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 03/08/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: e0e62d37fbcc8f296deaee8e0f6658c0f72321ad
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 0479e4d80b7490db170255d47ef3190bb744d2d8
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901499"
 ---
 # <a name="volumes-with-azure-files"></a>Тома с файлами Azure
 
@@ -21,7 +22,7 @@ ms.lasthandoff: 05/10/2018
 
 Дополнительные сведения о томах Kubernetes см. в разделе [Volumes][kubernetes-volumes] (Тома).
 
-## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 
 Перед использованием файлового ресурса Azure в качестве тома Kubernetes необходимо создать учетную запись хранения Azure и файловый ресурс. Для выполнения этих задач можно использовать приведенный ниже сценарий. Запишите или измените значения параметров. Некоторые из них понадобятся при создании тома Kubernetes.
 
@@ -51,7 +52,7 @@ STORAGE_KEY=$(az storage account keys list --resource-group $AKS_PERS_RESOURCE_G
 
 # Echo storage account name and key
 echo Storage account name: $AKS_PERS_STORAGE_ACCOUNT_NAME
-echo Storgae account key: $STORAGE_KEY
+echo Storage account key: $STORAGE_KEY
 ```
 
 ## <a name="create-kubernetes-secret"></a>Создание секрета Kubernetes

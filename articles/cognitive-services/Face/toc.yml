@@ -1,0 +1,91 @@
+- name: Документация по API распознавания лиц
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что собой представляет API распознавания лиц
+      href: Overview.md
+- name: Быстрое начало работы
+  items:
+    - name: 'C#'
+      href: QuickStarts/CSharp.md
+    - name: cURL
+      href: QuickStarts/curl.md
+    - name: Go
+      href: QuickStarts/go.md
+    - name: Java
+      href: QuickStarts/Java.md
+    - name: JavaScript
+      href: QuickStarts/JavaScript.md
+    - name: Node.js
+      href: QuickStarts/node.md
+    - name: PHP
+      href: QuickStarts/PHP.md
+    - name: Python
+      href: QuickStarts/Python.md
+    - name: Ruby
+      href: QuickStarts/Ruby.md
+- name: Учебники
+  items:
+    - name: 'C#'
+      href: Tutorials/FaceAPIinCSharpTutorial.md
+    - name: Android
+      href: Tutorials/FaceAPIinJavaForAndroidTutorial.md
+- name: Практические руководства
+  items:
+    - name: Первые приложения API распознавания лиц
+      items:
+        - name: Python
+          href: Tutorials/FaceAPIinPythonTutorial.md
+    - name: Обнаружение лиц на изображении
+      href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
+    - name: Идентификация лиц на изображении
+      href: Face-API-How-to-Topics/HowtoIdentifyFacesinImage.md
+    - name: Добавление лиц
+      href: Face-API-How-to-Topics/how-to-add-faces.md
+    - name: Использование функции для увеличения масштаба
+      href: Face-API-How-to-Topics/how-to-use-large-scale.md
+    - name: Анализ видео в реальном времени
+      href: Face-API-How-to-Topics/HowtoAnalyzeVideo_Face.md
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы API распознавания лиц
+          href: vs-face-connected-service.md
+- name: Справочные материалы
+  items:
+    - name: API распознавания лиц
+      href: APIReference.md
+    - name: Глоссарий
+      href: Glossary.md
+    - name: Пакеты SDK
+      items:
+        - name: Windows
+          href: 'https://github.com/Microsoft/Cognitive-Face-Windows'
+        - name: Node.js
+          href: 'https://docs.microsoft.com/javascript/api/overview/azure/cognitive-services?view=azure-node-latest#vision-modules'
+        - name: Python
+          href: 'https://github.com/Microsoft/Cognitive-Face-Python'
+        - name: Go
+          href: 'https://github.com/Azure/azure-sdk-for-go/tree/master/services/cognitiveservices/v1.0/face'
+        - name: Android
+          href: 'https://github.com/Microsoft/Cognitive-Face-Android'
+        - name: iOS
+          href: 'https://github.com/Microsoft/Cognitive-Face-iOS'
+- name: Ресурсы
+  items:
+    - name: Примеры
+      href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=Face'
+    - name: Часто задаваемые вопросы
+      href: FAQ.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/430315-face-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Заметки о выпуске
+      href: ReleaseNotes.md

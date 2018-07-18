@@ -1,0 +1,95 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Language Understanding Intelligent Service (LUIS)
+metadata:
+  document_id: 
+  title: Language Understanding (LUIS). Краткие руководства, справочники по API и другие материалы
+  description: Сведения об использовании службы Language Understanding, которая позволяет приложению распознавать желания людей на основе их собственных слов.
+  author: Kaiqb
+  manager: carolz
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 06/28/2018
+  ms.author: kamrani
+  ms.openlocfilehash: f3ccbb033354afc01fa840b3129d305f04942ffd
+  ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 06/29/2018
+  ms.locfileid: "37095576"
+abstract:
+  description: Служба Language Understanding (LUIS) позволяет приложению распознавать желания людей на основе их собственных слов. LUIS использует машинное обучение, позволяя разработчикам создавать приложения, которые могут получать входные данные пользователей на естественном языке, а также распознавать их значение.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: table
+    style: dataMatrix
+    columns:
+    - image:
+        src: media/index/logo_csharp.svg
+    - image:
+        src: media/index/logo_java.svg
+    - image:
+        src: media/index/logo_js.svg
+    - image:
+        src: media/index/logo_nodejs.svg
+    - image:
+        src: media/index/logo_python.svg
+    - image:
+        src: media/index/logo_php.svg
+    - image:
+        src: media/index/logo_ruby.svg
+    rows:
+    - title: API конечной точки
+      values:
+      - href: luis-get-started-cs-get-intent
+      - href: luis-get-started-java-get-intent
+      - href: luis-get-started-js-get-intent
+      - href: luis-get-started-node-get-intent
+      - href: luis-get-started-python-get-intent
+      - href: luis-get-started-php-get-intent
+      - href: luis-get-started-ruby-get-intent
+    - title: Разработка API
+      values:
+      - href: luis-get-started-cs-add-utterance
+      - href: luis-get-started-java-add-utterance
+      - href: luis-get-started-javascript-add-utterance
+      - href: luis-get-started-node-add-utterance
+      - href: luis-get-started-python-add-utterance
+      - href: luis-get-started-php-add-utterance
+      - href: luis-get-started-ruby-add-utterance
+- title: Пошаговые руководства
+  items:
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="luis-quickstart-intents-only">Создание приложения для домена отдела кадров</a>
+    - html: <a href="luis-tutorial-prebuilt-intents-entities">Добавление предварительно созданных намерений и сущностей</a>
+    - html: <a href="luis-quickstart-intents-regex-entity">Добавление сущности регулярного выражения</a>
+    - html: <a href="luis-quickstart-intent-and-list-entity">Добавление сущности списка</a>
+    - html: <a href="luis-quickstart-intent-and-hier-entity">Добавление иерархической сущности</a>
+    - html: <a href="luis-quickstart-primary-and-secondary-data">Добавление простой сущности и списка фраз</a>
+    - html: <a href="luis-quickstart-intent-and-key-phrase">Добавление сущности keyPhrase</a>
+    - html: <a href="luis-quickstart-intent-and-sentiment-analysis">Добавление анализа тональности</a>
+- title: Видеоролики
+  items:
+  - type: list
+    style: unordered
+    items:
+    - html: '<a href="https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player" > Build 2018: серия "Пятница с Azure". Cognitive Services и Language Understanding (LUIS)</a>'
+    - html: '<a href="https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player" > Build 2018: канал об искусственном интеллекте. Новые возможности Language Understanding Service (LUIS)</a>'
+    - html: <a href="https://channel9.msdn.com/events/Build/2018/BRK3208" >Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API REST версии 2
+      html: <p><a href="https://aka.ms/luis-endpoint-apis"> API конечной точки</a></p><p><a href="https://aka.ms/luis-authoring-apis"> Разработка API</a></p>
+    - title: Пакеты SDK
+      html: <p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>
+    - title: Примеры кода
+      html: <p><a href="https://aka.ms/luis-code-samples"> Примеры кода</a></p>

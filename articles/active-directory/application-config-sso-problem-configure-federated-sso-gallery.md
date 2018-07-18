@@ -3,22 +3,23 @@ title: Проблема при настройке федеративного е�
 description: В этой статье приводятся решения распространенных проблем, которые могут возникнуть при настройке федеративного единого входа с использованием SAML для приложений, которые присутствуют в коллекции приложений Azure AD.
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.openlocfilehash: 581b3c4ff7cc7b25f238602560f30280efa34edd
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.author: barbkess
+ms.openlocfilehash: 7fcc8c24214465bc1e601ced69ee67df2c48274f
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34053315"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36334264"
 ---
 # <a name="problem-configuring-federated-single-sign-on-for-an-azure-ad-gallery-application"></a>Проблема при настройке федеративного единого входа для приложения из коллекции Azure AD
 

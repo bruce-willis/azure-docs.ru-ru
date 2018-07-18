@@ -1,21 +1,21 @@
 ---
-title: 'Azure Active Directory B2C: функция "Оставаться в системе" | Документация Майкрософт'
-description: Статья, в которой показано, как настроить функцию "Оставаться в системе".
+title: Оставаться в системе в Azure Active Directory B2C | Документация Майкрософт
+description: Статья, в которой описано, как настроить функцию "Оставаться в системе".
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/05/2016
 ms.author: davidmu
-ms.openlocfilehash: 073ba8eef7f2f42d1c308fb20d3bfdbfc8d321b7
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: 6bad6e1f2b204f76b075652a9d3f27367a8de49f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441323"
 ---
 # <a name="azure-active-directory-b2c-enable-keep-me-signed-in-kmsi"></a>Azure Active Directory B2C: включение функции "Оставаться в системе"  
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]

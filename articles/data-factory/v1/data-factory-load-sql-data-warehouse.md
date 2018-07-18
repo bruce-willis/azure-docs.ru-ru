@@ -10,19 +10,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3266e4b571878eb55c55e235ecb10995cbd58439
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 6a7f31cf541bc1cccd3a5d565a0d3a223ccd3aee
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37045173"
 ---
 # <a name="load-1-tb-into-azure-sql-data-warehouse-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, ознакомьтесь с [копированием данных в хранилище данных SQL Azure и из него с помощью фабрики данных версии 2](../connector-azure-sql-data-warehouse.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [копированию данных в Хранилище данных SQL Azure и обратно с помощью службы "Фабрика данных"](../connector-azure-sql-data-warehouse.md).
 
 
 [Хранилище данных SQL Azure](../../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) — это развернутая в облаке база данных, способная обрабатывать большие объемы реляционных и нереляционных данных.  Благодаря реализованной архитектуре вычислений с массовым параллелизмом (MPP) хранилище данных SQL оптимизировано для рабочих нагрузок хранилища корпоративных данных.  Оно предоставляет эластичность облака и гибкие возможности масштабирования хранилища и вычислительной мощности независимо друг от друга.

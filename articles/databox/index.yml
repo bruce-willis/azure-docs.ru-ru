@@ -1,0 +1,46 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Azure Data Box
+metadata:
+  title: Документация по Azure Data Box
+  description: Служба Azure Data Box позволяет передавать терабайты данных в Azure быстрым, недорогим и надежным способом. Корпорация Майкрософт ускоряет безопасную передачу данных, организовывая доставку ваших дисков и выполняя все логистические операции.
+  services: databox
+  author: alkohli
+  manager: twooley
+  ms.service: databox
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 07/10/2018
+  ms.author: alkohli
+  ms.openlocfilehash: 5077d0ba77b6bdce99f1dfdf258182980a367b6c
+  ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 07/13/2018
+  ms.locfileid: "39010146"
+abstract:
+  description: 'Служба Azure Data Box позволяет передавать терабайты данных в Azure быстрым, недорогим и надежным способом. Корпорация Майкрософт ускоряет безопасную передачу данных, организовывая доставку ваших дисков и выполняя все логистические операции.<p>Чтобы передать большие объемы данных в Azure, нужно выполнить четыре простых шага: заказать диски, получить заказ, скопировать данные на эти диски и вернуть их в Azure. После получения дисков данные импортируются в Azure, а сами диски очищаются.<p><a href="/azure/databox/data-box-disk-overview">Дополнительные сведения о Data Box Disk</a>.</p>'
+sections:
+- title: Быстрый запуск
+  items:
+  - type: paragraph
+    text: Сведения об использовании Data Box Disk для передачи данных в Azure.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: https://docs.microsoft.com/media/common/i_portal.svg
+      text: Портал Azure
+      href: /azure/databox/data-box-disk-quickstart-portal
+- title: Пошаговое руководство
+  items:
+  - type: paragraph
+    text: Сведения об использовании Data Box Disk для импорта данных в Azure.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="data-box-disk-deploy-ordered">Упорядочивание Data Box Disk</a>
+    - html: <a href="data-box-disk-deploy-set-up">Настройка Data Box Disk</a>
+    - html: <a href="data-box-disk-deploy-copy-data">Копирование данных в Data Box Disk</a>
+    - html: <a href="data-box-disk-deploy-picked-up">Возврат Data Box Disk и отправка данных в Azure</a>

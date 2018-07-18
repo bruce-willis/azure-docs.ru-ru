@@ -1,23 +1,23 @@
 ---
 title: Удаление хранилища Site Recovery
 description: Узнайте, как удалить хранилище Azure Site Recovery в зависимости от сценария Site Recovery.
-service: site-recovery
 author: rajani-janaki-ram
 manager: rochakm
 ms.service: site-recovery
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2018
+ms.date: 07/06/2018
 ms.author: rajani-janaki-ram
-ms.openlocfilehash: 1c069e8b09f71ac46017974dfd94945c404b16ba
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 9c4a88d8a3d63555a57bd5553b721cfbcd77df2c
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34209898"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38971194"
 ---
 # <a name="delete-a-site-recovery-vault"></a>Удаление хранилища Site Recovery
-Зависимости не позволяют удалить хранилище Azure Site Recovery. Действия, которые необходимо выполнить, различаются в зависимости от типа сценария Site Recovery: VMware в Azure, Hyper-V (с System Center Virtual Machine Manager и без него) в Azure и Azure Backup. Чтобы удалить хранилище, используемое в Azure Backup, см. сведения в статье [Удаление резервного хранилища в Azure](../backup/backup-azure-delete-vault.md).
+
+Зависимости не позволяют удалить хранилище Azure Site Recovery. Действия, которые вам нужно предпринять, зависят от вашего сценария использования Site Recovery. Чтобы удалить хранилище, используемое в Azure Backup, см. сведения в статье [Удаление резервного хранилища в Azure](../backup/backup-azure-delete-vault.md).
 
 
 
@@ -37,12 +37,12 @@ ms.locfileid: "34209898"
 5. Удалите хранилище.
 
 
-### <a name="hyper-v-vms-with-virtual-machine-manager-to-azure"></a>Виртуальные машины Hyper-V (с Virtual Machine Manager) в Azure
-1. Удалите все защищенные виртуальные машины, выполнив действия, описанные в разделе [Отключение защиты для репликации виртуальной машины Hyper-V в Azure с помощью System Center VMM для сценария Azure](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario).
+### <a name="hyper-v-vms-with-vmm-to-azure"></a>Виртуальные машины Hyper-V (с VMM) в Azure
+1. Удалите все защищенные виртуальные машины, выполнив действия, описанные в разделе [Отключение защиты для виртуальной машины Hyper-V, реплицируемой в Azure, при использовании сценария репликации из System Center VMM в Azure](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-hyper-v-virtual-machine-replicating-to-azure-using-the-system-center-vmm-to-azure-scenario).
 
 2. Отмените связь и удалите все политики репликации, перейдя к хранилищу и выбрав **Инфраструктура Site Recovery** -> **For System Center VMM** (Для System Center VMM)  -> **Политики репликации**.
 
-3.  Удалите ссылки на серверы Virtual Machine Manager, выполнив действия, описанные в разделе [Отмена регистрации подключенного сервера VMM](site-recovery-manage-registration-and-protection.md##unregister-a-vmm-server).
+3.  Удалите ссылки на серверы VMM, выполнив действия, описанные в разделе [Отмена регистрации сервера VMM](site-recovery-manage-registration-and-protection.md##unregister-a-vmm-server).
 
 4.  Удалите хранилище.
 
@@ -51,7 +51,7 @@ ms.locfileid: "34209898"
 
 2. Отмените связь и удалите все политики репликации, перейдя к хранилищу и выбрав **Инфраструктура Site Recovery** -> **For Hyper-V Sites** (Для сайтов Hyper-V)  -> **Политики репликации**.
 
-3. Удалите ссылки на серверы Hyper-V, выполнив действия, описанные в разделе [Отмена регистрации узла Hyper-V](/site-recovery-manage-registration-and-protection.md##unregister-a-hyper-v-host-in-a-hyper-v-site).
+3. Удалите ссылки на серверы Hyper-V, выполнив действия, описанные в разделе [Отмена регистрации узла Hyper-V](site-recovery-manage-registration-and-protection.md#unregister-a-hyper-v-host-in-a-hyper-v-site).
 
 4. Удалите сайт Hyper-V.
 
@@ -74,4 +74,4 @@ ms.locfileid: "34209898"
 
     Remove-AzureRmRecoveryServicesVault -Vault $vault
 
-Ознакомьтесь с дополнительными сведениями о [Get-AzureRMRecoveryServicesVault](https://docs.microsoft.com/en-us/powershell/module/azurerm.recoveryservices/get-azurermrecoveryservicesvault?view=azurermps-6.0.0) и [Remove-AzureRMRecoveryServicesVault](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices/remove-azurermrecoveryservicesvault?view=azurermps-6.0.0).
+Ознакомьтесь с дополнительными сведениями о [Get-AzureRMRecoveryServicesVault](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices/get-azurermrecoveryservicesvault?view=azurermps-6.0.0) и [Remove-AzureRMRecoveryServicesVault](https://docs.microsoft.com/powershell/module/azurerm.recoveryservices/remove-azurermrecoveryservicesvault?view=azurermps-6.0.0).

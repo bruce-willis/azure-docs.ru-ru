@@ -1,6 +1,7 @@
 - name: Azure Blockchain Workbench (общедоступная предварительная версия)
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Сведения об Azure Blockchain Workbench
       href: blockchain-workbench-overview.md
@@ -11,6 +12,7 @@
     - name: Шаблоны интеграции
       href: blockchain-workbench-integration-patterns.md
 - name: Практические руководства
+  expanded: true
   items:
     - name: Развертывание Workbench
       href: blockchain-workbench-deploy.md
@@ -38,8 +40,6 @@
           href: blockchain-workbench-data-sql-management-studio.md
 - name: Справочные материалы
   items:
-    - name: Примеры кода
-      href: 'https://github.com/Azure-Samples/blockchain'
     - name: Параметр Configuration
       href: blockchain-workbench-configuration-overview.md
     - name: Представления баз данных
@@ -48,3 +48,22 @@
       href: blockchain-workbench-messages-overview.md
     - name: ИНТЕРФЕЙС REST API
       href: 'https://docs.microsoft.com/rest/api/azure-blockchain-workbench'
+- name: Ресурсы
+  expanded: true
+  items:
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/blockchain/'
+    - name: Примеры кода
+      href: 'https://github.com/Azure-Samples/blockchain'
+    - name: Сообщество
+      href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
+    - name: Форум
+      href: 'https://aka.ms/workbenchforum'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/586780-blockchain'
+    - name: Шаблоны решений
+      items:
+        - name: Консорциум Ethereum Proof-of-Work
+          href: ethereum-deployment-guide.md
+        - name: Консорциум Hyperledger Fabric
+          href: hyperledger-fabric-single-member-blockchain.md

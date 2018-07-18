@@ -16,8 +16,8 @@
       href: active-directory-b2c-quickstarts-spa.md
 - name: Учебники
   items:
-    - name: 1. Регистрация приложений
-      href: tutorial-register-applications.md
+    - name: 1. Создание клиента B2C
+      href: tutorial-create-tenant.md
     - name: 2. Аутентификация учетных записей
       items:
         - name: 'ASP.NET:'
@@ -157,6 +157,8 @@
           href: b2clogin.md
         - name: С помощью фильтрации по возрасту
           href: basic-age-gating.md
+        - name: Прямой вход в систему
+          href: direct-signin.md
     - name: Инфраструктура процедур идентификации
       items:
         - name: Пользовательские политики
@@ -187,7 +189,7 @@
                   href: active-directory-b2c-setup-sf-app-custom.md
             - name: Интеграции API-интерфейсов RESTful
               items:
-                - name: Проверка пользовательских входных данных
+                - name: Проверка вводимых пользователем данных
                   href: active-directory-b2c-rest-api-validation-custom.md
                 - name: Получение дополнительных утверждений
                   href: active-directory-b2c-rest-api-step-custom.md

@@ -1,30 +1,27 @@
 # Обзор
-## [Защита привилегированного доступа](active-directory-securing-privileged-access.md)
-## [Что такое Azure AD PIM?](../active-directory-privileged-identity-management-configure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-## [Роли каталога в PIM](../active-directory-privileged-identity-management-roles.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+## [Что такое Azure AD PIM?](pim-configure.md)
+## [Защита привилегированного доступа](../users-groups-roles/directory-admin-roles-secure.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+## [Роли каталога в PIM](pim-roles.md)
 ## [PIM для ресурсов Azure](azure-pim-resource-rbac.md)
 ## [Рабочий процесс утверждения PIM](azure-ad-pim-approval-workflow.md)
-## [Роли](../active-directory-privileged-identity-management-roles.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-
-
 
 # Начало работы
 ## [Требования к подписке](subscription-requirements.md)
-## [Приступая к работе с порталом Azure](../active-directory-privileged-identity-management-getting-started.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-## [Мастер защиты](../active-directory-privileged-identity-management-security-wizard.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-## [Предоставление доступа к PIM](../active-directory-privileged-identity-management-how-to-give-access-to-pim.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+## [Приступая к работе с порталом Azure](pim-getting-started.md)
+## [Мастер защиты](pim-security-wizard.md)
+## [Предоставление доступа к PIM](pim-how-to-give-access-to-pim.md)
 ## [Включение управления подписками](pim-resource-roles-enable-subscription-management.md)
 ## [Обнаружение ресурсов](pim-resource-roles-discover-resources.md)
 ## [Общие сведения о панелях мониторинга](pim-resource-roles-overview-dashboards.md)
 
 # Практическое руководство
 ## Использование PIM для ролей каталога
-### [Активация ролей](../active-directory-privileged-identity-management-how-to-activate-role.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Назначение ролей](../active-directory-privileged-identity-management-how-to-add-role-to-user.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Изменение параметров роли](../active-directory-privileged-identity-management-how-to-change-default-settings.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Настройка оповещений](../active-directory-privileged-identity-management-how-to-configure-security-alerts.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Требование прохождения MFA](../active-directory-privileged-identity-management-how-to-require-mfa.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Использование журнала аудита](../active-directory-privileged-identity-management-how-to-use-audit-log.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+### [Активация ролей](pim-how-to-activate-role.md)
+### [Назначение ролей](pim-how-to-add-role-to-user.md)
+### [Изменение параметров роли](pim-how-to-change-default-settings.md)
+### [Настройка оповещений](pim-how-to-configure-security-alerts.md)
+### [Требование прохождения MFA](pim-how-to-require-mfa.md)
+### [Использование журнала аудита](pim-how-to-use-audit-log.md)
 ## Использование PIM для ролей ресурсов
 ### [Активация ролей](pim-resource-roles-activate-your-roles.md)
 ### [Назначение ролей](pim-resource-roles-assign-roles.md)
@@ -37,25 +34,17 @@
 
 # Проверка доступа
 ## Использование PIM для ролей каталога
-### [Выполнение проверки доступа](../active-directory-privileged-identity-management-how-to-perform-security-review.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Запуск проверки доступа](../active-directory-privileged-identity-management-how-to-start-security-review.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
-### [Завершение проверки доступа](../active-directory-privileged-identity-management-how-to-complete-review.md?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json)
+### [Выполнение проверки доступа](pim-how-to-perform-security-review.md)
+### [Запуск проверки доступа](pim-how-to-start-security-review.md)
+### [Завершение проверки доступа](pim-how-to-complete-review.md)
 ## Использование PIM для ролей ресурсов
 ### [Выполнение проверки доступа](pim-resource-roles-perform-access-review.md)
 ### [Запуск проверки доступа](pim-resource-roles-start-access-review.md)
 ### [Завершение проверки доступа](pim-resource-roles-complete-access-review.md)
 
-# Часто задаваемые вопросы
-## Использование PIM для ролей каталога
-## Использование PIM для ролей ресурсов
-### [Типы назначений](pim-resource-roles-eligible-visibility.md)
+# Основные понятия
+## [Типы назначений](pim-resource-roles-eligible-visibility.md)
+## [Уведомления по почте](pim-email-notifications.md)
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)
-
-# Сопутствующие материалы
-## [Azure Active Directory](/azure/active-directory/)
-## [Управление доступом на основе ролей](../../role-based-access-control/overview.md)
-# Ресурсы
-## [Стратегия развития Azure](https://azure.microsoft.com/roadmap/?category=security-identity)
-## [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)

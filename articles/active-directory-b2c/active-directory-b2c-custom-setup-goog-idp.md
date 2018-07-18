@@ -1,21 +1,21 @@
 ---
-title: Azure Active Directory B2C. Добавление Google+ в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик
-description: Пример использования Google+ в качестве поставщика удостоверений с помощью протокола OAuth2
+title: Добавление Google+ в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
+description: Пример использования Google+ в качестве поставщика удостоверений с помощью протокола OAuth2.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
-ms.openlocfilehash: f12bbc2472aa2d83088c7d4d7b8f173744fb36b4
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: 19b7f708d43907ac45450a64f988b2a517293511
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446713"
 ---
 # <a name="azure-active-directory-b2c-add-google-as-an-oauth2-identity-provider-using-custom-policies"></a>Azure Active Directory B2C. Добавление Google+ в качестве поставщика удостоверений OAuth2 с помощью пользовательских политик
 

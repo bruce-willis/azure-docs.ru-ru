@@ -3,21 +3,24 @@ title: Выполнение проверки доступа для участн�
 description: Узнайте, как завершить проверку доступа для участников группы или пользователей с доступом к приложению в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: markwahl-msft
+author: rolyon
 manager: mtillman
-editor: ''
+editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
+ms.component: compliance-reports
 ms.date: 05/02/2018
-ms.author: billmath
-ms.openlocfilehash: 7998d69a079c4858c54bea22dbd24e4e84c8c793
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.author: rolyon
+ms.reviewer: mwahl
+ms.openlocfilehash: 3b8fb474f163922844cf9b28568be58cf8cf62e1
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38307355"
 ---
 # <a name="complete-an-access-review-of-members-of-a-group-or-users-access-to-an-application-in-azure-ad"></a>Выполнение проверки доступа для участников группы или пользователей с доступом к приложению с помощью Azure AD
 
@@ -59,4 +62,4 @@ ms.lasthandoff: 05/16/2018
 - [Управление гостевым доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
 - [Управление программами и их элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
 - [Создание проверки доступа для членства в группе или работы с приложением](active-directory-azure-ad-controls-create-access-review.md)
-- [Создание проверки доступа для пользователей в роли администратора Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md)
+- [Создание проверки доступа для пользователей в роли администратора Azure AD](privileged-identity-management/pim-how-to-start-security-review.md)

@@ -11,15 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/31/2018
+ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017, it-pro
-ms.openlocfilehash: 506ff0bce0b68b1477f27f913bd3fe119e36cca1
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 8e3cc261576e38cc304dc740f89582f7fd857e1a
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35293040"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -84,7 +85,23 @@ Sharepointserviceaccount может содержать учетную запис
 
 
 ## <a name="sso-for-non-windows-apps"></a>Единый вход для приложений не на базе Windows
-Поток делегирования Kerberos в прокси приложения Azure AD запускается, когда Azure AD проверяет подлинность пользователя в облаке. После поступления запроса в локальную среду соединитель прокси приложения Azure AD выдает билет Kerberos от имени пользователя посредством взаимодействия с локальной службой Active Directory. Этот процесс называется ограниченным делегированием Kerberos (KCD). На следующем этапе запрос отправляется во внутреннее приложение с этим билетом Kerberos. Есть несколько протоколов, которые определяют процедуру отправки таких запросов. Большинство серверов не на базе Windows ожидают механизм Negotiate/SPNego, который теперь поддерживается в прокси приложения Azure AD.
+
+Поток делегирования Kerberos в прокси приложения Azure AD запускается, когда Azure AD проверяет подлинность пользователя в облаке. После поступления запроса в локальную среду соединитель прокси приложения Azure AD выдает билет Kerberos от имени пользователя посредством взаимодействия с локальной службой Active Directory. Этот процесс называется ограниченным делегированием Kerberos (KCD). На следующем этапе запрос отправляется во внутреннее приложение с этим билетом Kerberos. 
+
+Есть несколько протоколов, которые определяют процедуру отправки таких запросов. Ожидается, что большинство серверов с ОС, отличной от Windows, согласованы с помощью механизма SPNEGO. Этот протокол поддерживается в Azure Active Directory Application Proxy, но отключен по умолчанию. Сервер можно настроить для механизма SPNEGO или службы центра распространения ключей Kerberos (KCD), но не для обоих вариантов.
+
+При настройке компьютера соединителя для SPNEGO убедитесь, что все другие соединители в этой группе настроены с SPNEGO. Приложения, ожидающие KCD, необходимо направить через другие соединители, которые не были настроены для SPNEGO.
+ 
+
+Чтобы включить SPNEGO, сделайте следующее:
+
+1. Откройте командную строку от имени администратора.
+2. В командной строке выполните следующие команды на серверах соединителя, требующих SPNEGO.
+
+    ```
+    REG ADD "HKLM\SOFTWARE\Microsoft\Microsoft AAD App Proxy Connector" /v UseSpnegoAuthentication /t REG_DWORD /d 1
+    net stop WAPCSvc & net start WAPCSvc
+    ```
 
 Дополнительные сведения о Kerberos см. в записи блога [All you want to know about Kerberos Constrained Delegation (KCD)](https://blogs.technet.microsoft.com/applicationproxyblog/2015/09/21/all-you-want-to-know-about-kerberos-constrained-delegation-kcd) (Все, что вы хотели знать об ограниченном делегировании Kerberos (KCD)).
 
@@ -124,7 +141,7 @@ Sharepointserviceaccount может содержать учетную запис
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Настройка приложения прокси приложения для использования ограниченного делегирования Kerberos](../application-proxy-back-end-kerberos-constrained-delegation-how-to.md)
-* [Устранение неполадок с прокси приложения](../active-directory-application-proxy-troubleshoot.md)
+* [Устранение неполадок с прокси приложения](application-proxy-troubleshoot.md)
 
 
 Последние новости и обновления см. в [блоге, посвященном прокси приложения](http://blogs.technet.com/b/applicationproxyblog/).

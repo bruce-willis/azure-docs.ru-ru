@@ -11,11 +11,12 @@ ms.workload: azure
 ms.topic: conceptual
 ms.date: 8/24/2017
 ms.author: ghogen
-ms.openlocfilehash: 0beeb8fb7f7e46db97e179f3eacf3c68dd92cff3
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: c9828504ab40a1e62c107f218fda024be6330c23
+ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37061749"
 ---
 # <a name="browse-and-manage-storage-resources-by-using-server-explorer"></a>Обзор ресурсов хранилища с помощью обозревателя сервера и управление ими
 
@@ -156,7 +157,7 @@ BLOB-объект откроется в редакторе по умолчани
 
 ![Просмотр очереди](./media/vs-azure-tools-storage-resources-server-explorer-browse-manage/IC651470.png)
 
-Дополнительные сведения об очередях служб хранилища см. в статье [Приступая к работе с хранилищем очередей Azure с помощью .NET](http://go.microsoft.com/fwlink/?LinkID=264702). Сведения о веб-службе для очередей служб хранилища см. в статье [Queue Service Concepts](http://go.microsoft.com/fwlink/?LinkId=264788) (Основные понятия службы очередей). Сведения об отправке сообщения в очередь служб хранилища с помощью Visual Studio см. в статье об [отправке сообщений в очередь служб хранилища](https://msdn.microsoft.com/library/azure/jj649344.aspx).
+Дополнительные сведения об очередях служб хранилища см. в статье [Приступая к работе с хранилищем очередей Azure с помощью .NET](http://go.microsoft.com/fwlink/?LinkID=264702). Сведения о веб-службе для очередей служб хранилища см. в статье [Queue Service Concepts](http://go.microsoft.com/fwlink/?LinkId=264788) (Основные понятия службы очередей). Сведения об отправке сообщения в очередь служб хранилища с помощью Visual Studio см. в статье об [отправке сообщений в очередь служб хранилища](https://docs.microsoft.com/azure/visual-studio/vs-storage-cloud-services-getting-started-queues).
 
 > [!NOTE]
 > Очереди служб хранилища отличаются от очередей служебной шины Azure. Дополнительные сведения об очередях служебной шины см. в статье [Очереди, разделы и подписки служебной шины](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-queues-topics-subscriptions).

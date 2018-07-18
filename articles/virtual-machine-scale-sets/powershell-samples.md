@@ -3,7 +3,7 @@ title: Примеры Azure PowerShell | Документация Майкрос
 description: Примеры сценариев Azure PowerShell.
 services: virtual-machine-scale-sets
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,14 @@ ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/27/2018
-ms.author: iainfou
+ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 3508631336ac322268f12ff97e35827767ae1bb9
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: eae8ca04b5242375ad08e5a673c78f2ab7738d63
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38707477"
 ---
 # <a name="azure-powershell-samples-for-virtual-machine-scale-sets"></a>Примеры для Azure PowerShell для масштабируемых наборов виртуальных машин
 
@@ -29,7 +30,8 @@ ms.lasthandoff: 03/28/2018
 | | |
 |---|---|
 |**Создание масштабируемого набора и управление им**||
-| [Создание масштабируемого набора виртуальных машин](scripts/powershell-sample-create-simple-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин с минимальной конфигурацией. |
+| [Создание простого масштабируемого набора виртуальных машин](scripts/powershell-sample-create-simple-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин с минимальной конфигурацией. |
+| [Создание полного масштабируемого набора виртуальных машин](scripts/powershell-sample-create-complete-scale-set.md?toc=%2fpowershell%2fazure%2ftoc.json) | Создание масштабируемого набора виртуальных машин и связанных ресурсов с помощью файла конфигурации. |
 | [Создание масштабируемого набора на основе пользовательского образа виртуальной машины](scripts/powershell-sample-create-scale-set-from-custom-image.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Создание масштабируемого набора виртуальных машин, использующего пользовательский образ виртуальной машины. |
 | [Установка приложений в масштабируемом наборе](scripts/powershell-sample-install-apps.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Чтобы установить простое веб-приложение в масштабируемом наборе, используйте расширение пользовательских скриптов Azure. |
 |**Управление хранилищем**||

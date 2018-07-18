@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: ''
 ms.service: cost-management
 manager: dougeby
-ms.openlocfilehash: b9dc2064a4d90b924730e2615378892b17340baf
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: b71d737f99a82508f9769f89d8172aa02bec817b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302538"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38542038"
 ---
 # <a name="register-with-the-csp-partner-program-and-view-cost-data"></a>Регистрация в партнерской программе CSP и просмотр данных о затратах
 
@@ -31,7 +31,7 @@ ms.locfileid: "34302538"
 >
 >Доступ к Cloudyn можно предоставить торговым представителям косвенного CSP, после того как его косвенные поставщик CSP зарегистрируется в Cloudyn. Торговые представители косвенного CSP могут предоставить доступ к Cloudyn клиентам и подпискам Azure.
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 - Войдите на портал Azure по адресу http://portal.azure.com.
 

@@ -1,25 +1,26 @@
 ---
-title: Мониторинг синхронизации данных SQL Azure (предварительная версия) с помощью Log Analytics | Документация Майкрософт
-description: Узнайте, как выполнять мониторинг синхронизации данных SQL Azure (предварительная версия) с помощью Log Analytics
+title: Мониторинг синхронизации данных SQL Azure с помощью Log Analytics | Документы Майкрософт
+description: Сведения о том, как выполнять мониторинг синхронизации данных SQL Azure с помощью Log Analytics.
 services: sql-database
 ms.date: 04/01/2018
-ms.topic: article
+ms.topic: conceptual
 ms.service: sql-database
-author: douglaslMS
-ms.author: douglasl
+author: allenwux
+ms.author: xiwu
 manager: craigg
 ms.custom: data-sync
-ms.openlocfilehash: 1b22b4ddf9fa4880b814efc3f8c3f1fc6ec7d141
-ms.sourcegitcommit: 3a4ebcb58192f5bf7969482393090cb356294399
+ms.openlocfilehash: 9b64a5e913748cda7927877c50a964ede587ae30
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37025600"
 ---
-# <a name="monitor-sql-data-sync-preview-with-log-analytics"></a>Мониторинг синхронизации данных SQL (предварительная версия) с помощью Log Analytics 
+# <a name="monitor-sql-data-sync-with-log-analytics"></a>Мониторинг синхронизации данных SQL с помощью Log Analytics 
 
 Чтобы проверить журнал действий синхронизации данных SQL и обнаружить ошибки и предупреждения, необходимо сначала проверить синхронизацию данных SQL вручную на портале Azure, с помощью PowerShell или REST API. Выполните шаги в этой статье, чтобы настроить пользовательское решение, которое улучшает мониторинг синхронизации данных. Вы можете настроить это решение в соответствии со своим сценарием.
 
-Общие сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL Azure (предварительная версия)](sql-database-sync-data.md).
+Общие сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL Azure](sql-database-sync-data.md).
 
 ## <a name="monitoring-dashboard-for-all-your-sync-groups"></a>Мониторинг панели мониторинга для всех групп синхронизации 
 

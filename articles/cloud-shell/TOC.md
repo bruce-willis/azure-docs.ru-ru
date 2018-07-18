@@ -5,13 +5,12 @@
 ## [PowerShell: краткое руководство](quickstart-powershell.md)
 
 # Функции и средства
-## [Bash: функции и средства](features.md)
-## [PowerShell: функции и средства](features-powershell.md)
+## [Функции и средства](features.md)
 
 # Инструкции
-## [Bash: постоянное хранилище](persisting-shell-storage.md)
-## [PowerShell: постоянное хранилище](persisting-shell-storage-powershell.md)
+## [Сохраняемое хранилище](persisting-shell-storage.md)
 ## [Использование окна](using-the-shell-window.md)
+## [Использование Cloud Shell для пользователей Windows](cloud-shell-windows-users.md)
 
 # Примеры
 ## [Bash: создание ресурсов с помощью Terraform](example-terraform-bash.md)

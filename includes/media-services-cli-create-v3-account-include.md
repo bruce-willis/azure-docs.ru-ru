@@ -8,16 +8,16 @@ ms.topic: include
 ms.date: 04/13/2018
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 3157f5db58be5735fa7b194393b0ab6d0e143a91
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 9ecb07a2cb278f6cde4ffdc3b252cb9e816d08da
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33830474"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38733302"
 ---
 ## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
-Сначала нужно создать учетную запись Служб мультимедиа. В этом разделе показано, что необходимо сделать для создания учетной записи с помощью CLI 2.0.
+Сначала нужно создать учетную запись Служб мультимедиа. Из этой статьи вы узнаете, что необходимо для создания учетной записи с помощью Azure CLI.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -27,7 +27,7 @@ ms.locfileid: "33830474"
 az group create --name amsResourceGroup --location westus2
 ```
 
-### <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 При создании учетной записи Служб мультимедиа необходимо предоставить имя ресурса учетной записи хранения Azure. Указанная учетная запись хранения присоединена к учетной записи Служб мультимедиа. 
 

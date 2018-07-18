@@ -6,13 +6,14 @@ author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 05/09/2018
+ms.date: 05/24/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8eb6717369b48289bd31dcd1972ce275bc550c77
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 83852917909d13555e7a0a339d2ecc805eeead42
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34625803"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Доставка и повторные попытки доставки сообщений сетки событий 
 
@@ -62,7 +63,7 @@ ms.lasthandoff: 05/18/2018
 
 Сетка событий добавляет небольшой случайный выбор во все интервалы повторных попыток. Через 1 час доставка событий повторяется один раз в час.
 
-По умолчанию служба "Сетка событий" завершает срок действия всех событий, которые не были доставлены в течение 24 часов.
+Служба "Сетка событий" завершает попытки доставить все события, не доставленные в течение 24 часов.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

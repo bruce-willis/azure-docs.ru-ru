@@ -10,11 +10,12 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
 keywords: powershell, runbook, json, служба автоматизации azure
-ms.openlocfilehash: b0eaa13baa3e787db14e7a6f915018c3a4f280a1
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 9fa60a56ecbff802e69e01e038bb45c7a6639873
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37435769"
 ---
 # <a name="pass-a-json-object-to-an-azure-automation-runbook"></a>Передача объекта JSON в модуль runbook службы автоматизации Azure
 
@@ -83,6 +84,10 @@ Start-AzureRmVM -Name $json.VMName -ResourceGroupName $json.ResourceGroup
    Connect-AzureRmAccount
    ```
     Вам будет предложено ввести учетные данные Azure.
+
+   > [!IMPORTANT]
+   > **Add-AzureRmAccount** теперь является псевдонимом для **Connect-AzureRMAccount**. Если при поиске в библиотеке элементов вы не видите элемент **Connect-AzureRMAccount**, можно использовать **Add-AzureRmAccount** или обновить модули в своей учетной записи службы автоматизации.
+
 1. Получите содержимое файла JSON и преобразуйте его в строку:
     ```powershell
     $json =  (Get-content -path 'JsonPath\test.json' -Raw) | Out-string

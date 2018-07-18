@@ -4,18 +4,19 @@ description: Запуск примера классического прилож
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 2/13/2018
 ms.author: davidmu
-ms.openlocfilehash: d0e50d0a81a3230558da42ab6678c3c354ce0e01
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: B2C
+ms.openlocfilehash: af4fe8ce4d9f5584241b56762ddf9c60aa28f0ba
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36293376"
 ---
 # <a name="quickstart-set-up-sign-in-for-a-desktop-app-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в классическое приложение с помощью Azure Active Directory B2C 
 
@@ -107,4 +108,4 @@ Azure Active Directory B2C предоставляет функциональны
 Следующим шагом является создание клиента Azure AD B2C и настройка образца для запуска с помощью клиента. 
 
 > [!div class="nextstepaction"]
-> [Создание клиента Azure Active Directory B2C на портале Azure](active-directory-b2c-get-started.md)
+> [Создание клиента Azure Active Directory B2C на портале Azure](tutorial-create-tenant.md)

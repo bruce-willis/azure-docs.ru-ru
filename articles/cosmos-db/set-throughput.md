@@ -4,20 +4,17 @@ description: Узнайте, как задать подготовленную п
 services: cosmos-db
 author: SnehaGunda
 manager: kfile
-documentationcenter: ''
-ms.assetid: f98def7f-f012-4592-be03-f6fa185e1b1e
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: sngun
-ms.openlocfilehash: 925167c6b4a7f173726ec094c2847a16ca3d0ef4
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.openlocfilehash: d8b7ed593fcd307e6709c17bafbcb5a22661dc83
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36285779"
 ---
 # <a name="set-and-get-throughput-for-azure-cosmos-db-containers-and-database"></a>Настройка и получение пропускной способности контейнеров и базы данных Azure Cosmos DB
 
@@ -180,7 +177,7 @@ await client.CreateDocumentCollectionAsync(database.SelfLink, dedicatedCollectio
 
 Azure Cosmos DB использует модель резервирования пропускной способности. То есть вы получаете счет за *зарезервированную* пропускную способность независимо от фактических показателей *использования*. Так как нагрузка, данные и шаблоны использования приложения меняются, вы можете легко увеличивать или уменьшать количество зарезервированных единиц запросов с помощью пакетов SDK или [портала Azure](https://portal.azure.com).
 
-Каждый контейнер или набор контейнеров сопоставляется с ресурсом `Offer` в Azure Cosmos DB, который содержит метаданные о подготовленной пропускной способности. Вы можете изменить выделенную пропускную способность. Для этого найдите соответствующий ресурс предложения для контейнера и измените в нем значение пропускной способности. Ниже приведен фрагмент кода для изменения пропускной способности контейнера до 5000 единиц запроса в секунду с помощью пакета SDK для .NET.
+Каждый контейнер или набор контейнеров сопоставляется с ресурсом `Offer` в Azure Cosmos DB, который содержит метаданные о подготовленной пропускной способности. Вы можете изменить выделенную пропускную способность. Для этого найдите соответствующий ресурс предложения для контейнера и измените в нем значение пропускной способности. Ниже приведен фрагмент кода для изменения пропускной способности контейнера до 5000 единиц запроса в секунду с помощью пакета SDK для .NET. После изменения следует обновить все открытые окна на портале Azure, чтобы отображалось новое значение пропускной способности. 
 
 ```csharp
 // Fetch the resource to be updated

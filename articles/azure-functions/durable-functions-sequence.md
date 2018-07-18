@@ -14,11 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/19/2018
 ms.author: azfuncdf
-ms.openlocfilehash: e53b38bf336816ca670fad3ab70a43e5cc8b3437
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: a5b337e5318154e299f82b1102ca832303d752f7
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970060"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Цепочки функций в устойчивых функциях — пример последовательности Hello
 
@@ -70,7 +71,7 @@ ms.lasthandoff: 05/07/2018
 
 Все функции оркестратора на JavaScript должны включать модуль `durable-functions`. Это библиотека JavaScript, которая преобразует действия функции оркестратора в протокол выполнения устойчивых функций для языков вне процесса. Есть три существенных различия между функциями оркестратора и другими функциями JavaScript:
 
-1. Эта функция является [функцией генератора](https://docs.microsoft.com/en-us/scripting/javascript/advanced/iterators-and-generators-javascript).
+1. Эта функция является [функцией генератора](https://docs.microsoft.com/scripting/javascript/advanced/iterators-and-generators-javascript).
 2. Эта функция упаковывается в вызов к модулю `durable-functions` (в нашем примере это `df`).
 3. Эта функция завершается вызовом `return`, а не `context.done`.
 

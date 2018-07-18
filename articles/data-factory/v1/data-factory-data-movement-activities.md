@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/05/2017
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 09b35483b5ace1523c88576cfe37dfc313b93036
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 6b13c70d86af195e50190083aa562811236cdd4b
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38299866"
 ---
 # <a name="move-data-by-using-copy-activity"></a>Перемещение данных с помощью действия копирования
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-data-movement-activities.md)
-> * [Версия 2 — предварительная](../copy-activity-overview.md)
+> * [Версия 1](data-factory-data-movement-activities.md)
+> * [Версия 2 (текущая)](../copy-activity-overview.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Действие копирования в фабрике данных Azure](../copy-activity-overview.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. руководство по [применению действия копирования в службе "Фабрика данных Azure" версии 2](../copy-activity-overview.md).
 
 ## <a name="overview"></a>Обзор
 В фабрике данных Azure с помощью действия копирования можно копировать данные между локальными и облачными хранилищами данных. После копирования данные можно подвергнуть дальнейшему преобразованию и анализу. С помощью действия копирования можно также публиковать результаты преобразования и анализа для бизнес-аналитики и использования приложения.

@@ -1,21 +1,21 @@
 ---
-title: Azure Active Directory B2C. Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик
-description: Пример использования Майкрософт в качестве поставщика удостоверений с помощью протокола OpenID Connect (OIDC)
+title: Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
+description: Пример использования Майкрософт в качестве поставщика удостоверений с помощью протокола OpenID Connect (OIDC).
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
-ms.openlocfilehash: a49e9589322eeb90a713321b4fbe4c4820609f7a
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: 7a83ace83176d75abdac03b354c4c4ac71eb4238
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449380"
 ---
 # <a name="azure-active-directory-b2c-add-microsoft-account-msa-as-an-identity-provider-using-custom-policies"></a>Azure Active Directory B2C. Добавление учетной записи Майкрософт (MSA) в качестве поставщика удостоверений с помощью пользовательских политик
 
@@ -150,7 +150,7 @@ ms.lasthandoff: 03/23/2018
 1.  Откройте базовый файл политики (например, TrustFrameworkBase.xml).
 2.  Найдите элемент `<UserJourneys>` и скопируйте все содержимое узла `<UserJourneys>`.
 3.  Откройте файл расширения (например, TrustFrameworkExtensions.xml) и найдите элемент `<UserJourneys>`. Если элемент не существует, добавьте его.
-4.  Вставьте весь скопированный узел `<UserJournesy>` как дочерний узел элемента `<UserJourneys>`.
+4.  Вставьте весь скопированный узел `<UserJourneys>` как дочерний узел элемента `<UserJourneys>`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
 Элемент `<ClaimsProviderSelections>` определяет список параметров выбора поставщика утверждений и их порядок.  Элемент `<ClaimsProviderSelection>` является аналогом кнопки поставщика удостоверений на странице регистрации или входа. Если вы добавите для учетной записи Майкрософт элемент `<ClaimsProviderSelection>`, при переходе пользователя на страницу отобразится новая кнопка. Для этого:
@@ -160,7 +160,7 @@ ms.lasthandoff: 03/23/2018
 3.  Добавьте в узел `<ClaimsProviderSelections>` следующий фрагмент XML-кода:
 
 ```xml
-<ClaimsProviderSelection TargetClaimsExchangeId="MSAExchange" />
+<ClaimsProviderSelection TargetClaimsExchangeId="MicrosoftAccountExchange" />
 ```
 
 ### <a name="link-the-button-to-an-action"></a>Связывание кнопки с действием
@@ -170,7 +170,7 @@ ms.lasthandoff: 03/23/2018
 2.  Добавьте в узел `<ClaimsExchanges>` следующий фрагмент XML-кода:
 
 ```xml
-<ClaimsExchange Id="MSAExchange" TechnicalProfileReferenceId="MSA-OIDC" />
+<ClaimsExchange Id="MicrosoftAccountExchange" TechnicalProfileReferenceId="MSA-OIDC" />
 ```
 
 > [!NOTE]

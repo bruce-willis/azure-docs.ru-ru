@@ -1,42 +1,39 @@
 ---
-title: Приступая к работе с хранилищем таблиц Azure с помощью .NET | Документация Майкрософт
-description: Хранение структурированных данных в облаке в хранилище таблиц Azure (хранилище данных NoSQL).
+title: Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET | Документация Майкрософт
+description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 services: cosmos-db
-documentationcenter: .net
 author: SnehaGunda
 manager: kfile
-ms.assetid: fe46d883-7bed-49dd-980e-5c71df36adb3
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
+ms.component: cosmosdb-table
 ms.devlang: dotnet
-ms.topic: article
+ms.topic: sample
 ms.date: 03/14/2018
 ms.author: sngun
-ms.openlocfilehash: 9f8175742adc5c543b637ab69b3a9583f251da04
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: d0c587b3d43f7511775a4a114bead96348372bc5
+ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360195"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36959973"
 ---
-# <a name="get-started-with-azure-table-storage-using-net"></a>Приступая к работе с хранилищем таблиц Azure с помощью .NET
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-net"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
-[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
+[!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
-Хранилище таблиц Azure — это служба, которая хранит структурированные данные NoSQL в облаке, предоставляя хранилище ключей и атрибутов с бессхемной конструкцией. Такая конструкция хранилища таблиц позволяет легко адаптировать данные по мере расширения приложения. Разным типам приложений может быть предоставлен быстрый и экономичный доступ к хранилищу таблиц. Такое хранилище обычно дешевле, чем традиционные хранилища SQL для похожих объемов данных.
+Хранилище таблиц Azure и API таблиц Azure Cosmos DB можно использовать для хранения структурированных NoSQL-данных в облаке, предоставляя хранилище для ключей и атрибутов с бессхемной структурой. Поскольку хранилище таблиц и API таблиц Azure Cosmos DB являются бессхемными, это позволяет легко адаптировать данные по мере расширения приложения. Разным типам приложений может быть предоставлен быстрый и экономный доступ к хранилищу таблиц и API таблиц Azure Cosmos DB. Такое хранилище обычно дешевле, чем традиционные хранилища SQL для сравнимых объемов данных.
 
-Хранилище таблиц можно использовать для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройстве или метаданных любого другого типа, которые требуются вашей службе. В таблице можно хранить любое количество сущностей, а учетная запись хранения может содержать любое количество таблиц в пределах емкости учетной записи.
+Хранилище таблиц или API таблиц Azure Cosmos DB можно использовать для хранения гибких наборов данных, например пользовательских данных для веб-приложений, адресных книг, сведений об устройстве или метаданных любого другого типа, которые требуются вашей службе. В таблице можно хранить любое количество элементов, а учетная запись хранения или учетная запись API таблиц может содержать любое количество таблиц в пределах емкости учетной записи хранения или учетной записи API таблиц.
 
-### <a name="about-this-tutorial"></a>О данном учебнике
-Из этого руководства вы узнаете, как использовать [библиотеку таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) в распространенных сценариях хранилища таблиц Azure. Имя пакета указывает на то, что он предназначен для использования с Azure Cosmos DB. Но пакет можно использовать и с Azure Cosmos DB, и с хранилищем таблиц Azure, просто для каждой службы предусмотрена уникальная конечная точка. Эти сценарии рассматриваются с использованием примеров C#, которые демонстрируют выполнение следующих задач:
+### <a name="about-this-sample"></a>Об этом примере
+Из этого примера вы узнаете, как использовать [Библиотеку таблиц Microsoft Azure CosmosDB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) в распространенных сценариях для хранилища таблиц и API таблиц. Имя пакета указывает на то, что он предназначен для использования с Azure Cosmos DB. Но пакет можно использовать и с API таблиц Azure Cosmos DB, и с хранилищем таблиц Azure, просто для каждой службы предусмотрена уникальная конечная точка. Эти сценарии рассматриваются с использованием примеров C#, которые демонстрируют выполнение следующих задач:
 * создание и удаление таблиц;
 * вставка, обновление и удаление записей;
 * Запросы к таблицам
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Для работы с этим руководством требуются следующие компоненты.
+Для работы с этим примером требуются следующие компоненты:
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 * [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/). Это обязательный пакет в предварительной версии, который поддерживается в рабочих средах. 
@@ -74,12 +71,12 @@ ms.locfileid: "34360195"
 4. В поле **Имя** введите имя приложения.
 5. Нажмите кнопку **ОК**.
 
-Все примеры кода из этого руководства можно добавить в метод `Main()` в файле `Program.cs` консольного приложения.
+Все образцы кода из этого примера можно добавить в файл метода `Main()` консольного приложения `Program.cs`.
 
 Вы можете использовать библиотеку таблиц Azure Cosmos DB в любом приложении .NET, в том числе в облачной службе Azure, веб-приложении Azure, классическом или мобильном приложении. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
 ### <a name="use-nuget-to-install-the-required-packages"></a>Установка необходимых пакетов с помощью NuGet
-Для работы с этим руководством рекомендуем указать в проекте три пакета:
+Для работы с этим примером рекомендуется использовать в проекте три пакета:
 
 * [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common). 
 * [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Этот пакет предоставляет программный доступ к ресурсам данных в вашей учетной записи хранилища таблиц или API таблиц Azure Cosmos DB.
@@ -98,7 +95,7 @@ ms.locfileid: "34360195"
 > 
 
 > [!TIP]
-> Разработчики, знакомые с хранилищем таблиц Azure, возможно, в прошлом применяли пакет [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/). Рекомендуем использовать для всех новых приложений таблиц [общую библиотеку службы хранилища Azure](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) и [библиотеку таблиц Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Но пакет WindowsAzure.Storage по-прежнему поддерживается. Если вы используете библиотеку WindowsAzure.Storage, включите Microsoft.WindowsAzure.Storage.Table в операторы using.
+> Разработчики, знакомые с хранилищем таблиц Azure, возможно, в прошлом применяли пакет [WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage/). Рекомендуем использовать для всех новых приложений таблиц [общую библиотеку службы хранилища Azure](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common) и [библиотеку таблиц Azure Cosmos DB](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Но пакет WindowsAzure.Storage по-прежнему поддерживается. Если вы используете библиотеку WindowsAzure.Storage, включите Microsoft.WindowsAzure.Storage.Table в операторы using.
 >
 >
 
@@ -112,7 +109,7 @@ ms.locfileid: "34360195"
 Выбрав учетную запись хранения в облаке, скопируйте первичный ключ доступа к этой учетной записи хранения с портала Azure. Дополнительные сведения см. в разделе [Просмотр и копирование ключей доступа к хранилищу](../storage/common/storage-create-storage-account.md#view-and-copy-storage-access-keys).
 
 > [!NOTE]
-> Вы можете указать эмулятор хранения, чтобы избежать затрат, связанных с хранилищем Azure. Однако если вы выберете учетную запись хранения Azure в облаке, затраты на выполнение заданий в учебнике будут незначительны.
+> Вы можете указать эмулятор хранения, чтобы избежать затрат, связанных с хранилищем Azure. Однако если вы выберете учетную запись хранения Azure в облаке, затраты на выполнение заданий в примере будут незначительны.
 > 
 > 
 
@@ -144,13 +141,13 @@ ms.locfileid: "34360195"
 Например, если вы используете учетную запись хранения Azure, параметры конфигурации будут приблизительно следующими:
 
 ```xml
-<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=GMuzNHjlB3S9itqZJHHCnRkrokLkcSyW7yK9BRbGp0ENePunLPwBgpxV1Z/pVo9zpem/2xSHXkMqTHHLcx8XRA==" />
+<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=storagesample;AccountKey=<account-key>" />
 ```
 
 Если вы используете учетную запись Azure Cosmos DB, параметры конфигурации будут приблизительно следующими:
 
 ```xml
-<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=tableapiacct;AccountKey=GMuzNHjlB3S9itqZJHHCnRkrokLkcSyW7yK9BRbGp0ENePunLPwBgpxV1Z/pVo9zpem/2xSHXkMqTHHLcx8XRA==;TableEndpoint=https://tableapiacct.table.cosmosdb.azure.com:443/;" />
+<add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=tableapiacct;AccountKey=<account-key>;TableEndpoint=https://tableapiacct.table.cosmosdb.azure.com:443/;" />
 ```
 
 Чтобы указать эмулятор хранения, можно использовать ярлык, который сопоставляется с хорошо известным именем и ключом. В этом случае параметр строки подключения будет таким:

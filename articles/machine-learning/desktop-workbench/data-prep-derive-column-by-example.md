@@ -7,15 +7,17 @@ ms.author: ranku
 manager: mwinkle
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
+ms.component: desktop-workbench
 ms.workload: data-services
 ms.custom: mvc, reference
 ms.topic: article
 ms.date: 09/14/2017
-ms.openlocfilehash: 201492f033ad3e2508bc75c0865036e7c83a652a
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 8b85f57f79cad0a01d3c5499383108450babd507
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34833769"
 ---
 # <a name="derive-column-by-example-transformation"></a>Преобразование "Получение столбца по образцу"
 
@@ -139,7 +141,7 @@ Workbench анализирует эти данные. Затем пользов�
 Количество образцов, которые потребовались в этом примере: 1
 
 >[!NOTE] 
->В этом примере в выходном столбце пробелы представлены специальным символом "·".
+>В этом примере специальный символ представляет пробелы в выходном столбце.
 
 |Имя|Средний инициал|Фамилия|Выходные данные|
 |:-----|:-----|:-----|:-----|

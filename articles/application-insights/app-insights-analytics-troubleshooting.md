@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/11/2016
 ms.author: mbullwin
-ms.openlocfilehash: 3ef9150cad62e9f9fc43f7afcbbbc01d89884a12
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: eeda0fa6ad8faa05baf0a9344e958d298fb80d8e
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36936689"
 ---
 # <a name="troubleshoot-analytics-in-application-insights"></a>Устранение неполадок аналитики в Application Insights
 Возникли проблемы с [аналитикой Application Insights](app-insights-analytics.md)? Начните отсюда. Аналитика — мощный инструмент поиска Azure Application Insights.
@@ -56,7 +57,7 @@ ms.lasthandoff: 11/01/2017
 4. Откройте другое (стандартное) окно браузера и перейдите к [Azure](https://portal.azure.com). Выполните выход. Затем откройте ссылку и выполните вход, используя правильные учетные данные.
 5. У пользователей браузеров Microsoft Edge и Internet Explorer также может возникать эта ошибка, если параметры доверенной зоны не поддерживаются.
    
-    Убедитесь, что [портал аналитики](https://analytics.applicationinsights.io) и [портал Azure Active Directory](https://portal.azure.com) находятся в одной зоне безопасности.
+    Убедитесь, что [портал аналитики](https://portal.azure.com) и [портал Azure Active Directory](https://portal.azure.com) находятся в одной зоне безопасности.
    
    * В Internet Explorer щелкните **Свойства браузера**, **Безопасность**, **Надежные сайты**, **Узлы**.
      
@@ -68,7 +69,7 @@ ms.lasthandoff: 11/01/2017
      https://login.microsoftonline.com<br/>
      https://login.windows.net
 
-## <a name="e-d"></a>404... Ресурс не найден
+## <a name="e-d"></a>404 ... Ресурс не найден
 ![404... Ресурс не найден](./media/app-insights-analytics-troubleshooting/040.png)
 
 Ресурс приложения был удален из Application Insights и больше не доступен. Это может произойти, если сохранить URL-адрес на странице аналитики.

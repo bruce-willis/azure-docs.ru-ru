@@ -1,27 +1,41 @@
 ---
-title: "Доменные службы Azure Active Directory: начало работы | Документы Майкрософт"
-description: "Включение доменных служб Azure Active Directory с помощью портала Azure."
+title: 'Доменные службы Azure Active Directory: начало работы | Документы Майкрософт'
+description: Включение доменных служб Azure Active Directory с помощью портала Azure.
 services: active-directory-ds
-documentationcenter: 
+documentationcenter: ''
 author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: ace1ed4a-bf7f-43c1-a64a-6b51a2202473
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/26/2017
+ms.date: 05/23/2018
 ms.author: maheshu
-ms.openlocfilehash: 97803d62ee42d777336dc87c34a16eff426d24d0
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 340193f191bbdbe658769f9265f9e63844481c32
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36265275"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 В этой статье показано, как включить доменные службы Azure Active Directory (Azure AD DS) с помощью портала Azure.
+
+
+## <a name="before-you-begin"></a>Перед началом работы
+Для выполнения задач, перечисленных в этой статье, необходимо следующее:
+
+* Действующая **подписка Azure**.
+* **Каталог Azure AD** — синхронизированный с локальным каталогом или каталогом только для облака.
+* **Подписка Azure, связанная с каталогом Azure AD**.
+* Права **глобального администратора** в каталоге Azure AD, которые требуются, чтобы включить доменные службы Azure AD.
+
+
+## <a name="enable-azure-ad-domain-services"></a>Включение доменных служб Azure AD
 
 Чтобы запустить мастер **включения доменных служб Azure AD**, выполните указанные ниже действия.
 
@@ -39,7 +53,7 @@ ms.lasthandoff: 02/21/2018
 
 
 ## <a name="task-1-configure-basic-settings"></a>Задача 1. Настройка основных параметров
-На странице **Основные сведения** мастера можно указать DNS-имя управляемого домена. Вы также можете выбрать группу ресурсов и расположение Azure, в которых должен быть развернут управляемый домен.
+На странице **Основные сведения** мастера укажите DNS-имя управляемого домена. Вы также можете выбрать группу ресурсов и расположение Azure, в которых должен быть развернут управляемый домен.
 
 ![Настройка основных сведений](./media/getting-started/domain-services-blade-basics.png)
 
@@ -59,11 +73,11 @@ ms.lasthandoff: 02/21/2018
 
 2. Выберите **подписку** Azure, в которой следует создать управляемый домен.
 
-3. Выберите **группу ресурсов**, к которой должен относиться управляемый домен. При выборе группы ресурсов можно использовать команду **Создать** или **Использовать существующую**.
+3. Выберите **группу ресурсов**, к которой должен относиться управляемый домен. При выборе группы ресурсов используйте команду **Создать** или **Использовать существующую**.
 
 4. Выберите **расположение** Azure, в котором необходимо создать управляемый домен. На странице **Сеть** мастера приводятся только те виртуальные сети, которые относятся к выбранному расположению.
 
-5. Завершив настройку, нажмите кнопку **ОК** для перехода на страницу **Сеть** мастера.
+5. Нажмите кнопку **ОК** для перехода на страницу **Сеть** мастера.
 
 
 ## <a name="next-step"></a>Дальнейшие действия

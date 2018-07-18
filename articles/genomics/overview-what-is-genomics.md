@@ -1,7 +1,7 @@
 ---
-title: "Что такое Microsoft Genomics? | Документация Майкрософт"
+title: Что такое Microsoft Genomics? | Документация Майкрософт
 titleSuffix: Azure
-description: "Сведения о том, как Microsoft Genomics помогает выполнять секвенирование генома, предлагая облачную реализацию BWA и GATK для дополнительного анализа."
+description: Сведения о том, как Microsoft Genomics помогает выполнять секвенирование генома, предлагая облачную реализацию BWA и GATK для дополнительного анализа.
 services: microsoft-genomics
 author: grhuynh
 manager: jhubbard
@@ -11,11 +11,12 @@ ms.service: microsoft-genomics
 ms.workload: genomics
 ms.topic: article
 ms.date: 12/07/2017
-ms.openlocfilehash: edfe6cc608a74b61777ce54eba3aa42c239b6090
-ms.sourcegitcommit: 922687d91838b77c038c68b415ab87d94729555e
+ms.openlocfilehash: 8743905d6e415049a563bcd6b4736d6569f59b7f
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2017
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333263"
 ---
 # <a name="what-is-microsoft-genomics"></a>Что такое Microsoft Genomics?
 Microsoft Genomics предлагает облачную реализацию таких средств, как Burrows-Wheeler Aligner (BWA) и Genome Analysis Toolkit (GATK) для дополнительного анализа. Служба имеет сертификаты ISO, соответствует нормативам HIPAA и обеспечивает прогнозирование затрат в соответствии с требованиями по секвенированию генома. В кратких руководствах, справочниках и документации представлены сведения об использовании службы Microsoft Genomics и интеграции с API.
@@ -29,7 +30,7 @@ Microsoft Genomics предлагает облачную реализацию т
 
 
 ## <a name="secure-your-data"></a>Защита данных
-Служба Microsoft Genomics сертифицирована по стандартам ISO 27001, ISO 27018 и ISO 9001 и соответствует нормативам HIPAA. Посетите [центр управления безопасностью Azure](https://www.microsoft.com/TrustCenter/Security/default.aspx), чтобы посмотреть сведения о безопасности платформы Azure.
+Служба Microsoft Genomics сертифицирована по стандартам ISO 27001, ISO 27018 и ISO 9001 и соответствует нормативам HIPAA. Посетите [центр управления безопасностью Azure](https://www.microsoft.com/en-us/trustcenter/security), чтобы посмотреть сведения о безопасности платформы Azure.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

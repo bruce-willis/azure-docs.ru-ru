@@ -1,31 +1,28 @@
 ---
-title: Начало работы с Azure Data Lake Analytics с помощью Azure CLI 2.0 | Документация Майкрософт
-description: 'Узнайте, как использовать интерфейс командной строки Azure версии 2.0 для создания учетной записи Data Lake Analytics, создания задания Data Lake Analytics с помощью U-SQL и отправки этого задания. '
-services: data-lake-analytics
-documentationcenter: ''
-author: saveenr
-manager: saveenr
-editor: cgronlun
+title: Начало работы с Azure Data Lake Analytics при помощи Azure CLI 2.0
+description: Узнайте, как использовать интерфейс командной строки Azure версии 2.0 для создания учетной записи Data Lake Analytics и отправки задания U-SQL.
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: hero-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
+services: data-lake-analytics
+author: saveenr
+ms.author: saveenr
+manager: kfile
+editor: jasonwhowell
+ms.topic: get-started-article
 ms.date: 06/18/2017
-ms.author: jgao
-ms.openlocfilehash: e7ce65446a6af49f15b3ce1881757b16f8fcaa35
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 3095c3281e1797c8103e0c229c62aca1aae3444f
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34625107"
 ---
 # <a name="get-started-with-azure-data-lake-analytics-using-azure-cli-20"></a>Начало работы с Azure Data Lake Analytics при помощи Azure CLI 2.0
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-В этом руководстве вам предстоит разработать задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV). Для навигации по руководству с помощью других поддерживаемых средств используйте раскрывающийся список в верхней части этого раздела.
+В этой статье описано, как использовать Azure CLI 2.0 для создания учетной записи Data Lake Analytics, а также отправки заданий и каталогов U-SQL. Задание, которое считывает файл с разделителями-табуляциями (TSV) и преобразует его в файл с разделителями-запятыми (CSV). 
 
 ## <a name="prerequisites"></a>предварительным требованиям
-Перед началом работы с этим руководством необходимо иметь следующее:
+Для работы вам понадобится следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Azure CLI 2.0**. См. статью [Установка и настройка интерфейса командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli).

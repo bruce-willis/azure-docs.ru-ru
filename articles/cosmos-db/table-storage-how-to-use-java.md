@@ -1,27 +1,25 @@
 ---
-title: Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB | Документация Майкрософт
-description: Хранение структурированных данных в облаке в хранилище таблиц Azure (хранилище данных NoSQL).
+title: Как использовать хранилище таблиц Azure или API таблицы Azure Cosmos DB в Java | Документация Майкрософт
+description: Хранение структурированных данных в облаке с помощью хранилища таблиц Azure или API таблиц Azure Cosmos DB.
 services: cosmos-db
-documentationcenter: java
 author: SnehaGunda
 manager: kfile
-ms.assetid: 45145189-e67f-4ca6-b15d-43af7bfd3f97
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
+ms.component: cosmosdb-table
 ms.devlang: Java
-ms.topic: article
+ms.topic: sample
 ms.date: 04/05/2018
 ms.author: sngun
-ms.openlocfilehash: 4ac25fd9e1d7233546b34da89eb1bcaf37f6f38b
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: f4ebcf51ab6682009190e467ca9dbf67caf1c182
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34797902"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
-[!INCLUDE [storage-table-cosmos-db-tip-include](../../includes/storage-table-cosmos-db-tip-include.md)]
+[!INCLUDE [storage-table-applies-to-storagetable-and-cosmos](../../includes/storage-table-applies-to-storagetable-and-cosmos.md)]
 
 ## <a name="overview"></a>Обзор
 Эта статья продемонстрирует стандартные процессы для хранилища таблиц Azure и API таблиц Azure Cosmos DB. Примеры написаны на Java и используют [пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]. Рассматриваются сценарии **создания**, **перечисления** и **удаления** таблиц, а также **вставки**, **запроса**, **изменения** и **удаления** сущностей в таблице. Дополнительные сведения о таблицах см. в разделе [Дальнейшие действия](#next-steps).
@@ -36,13 +34,13 @@ ms.lasthandoff: 04/16/2018
 ### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 [!INCLUDE [cosmos-db-create-storage-account](../../includes/cosmos-db-create-storage-account.md)]
 
-### <a name="create-an-azure-cosmos-db-table-api-account"></a>Создание учетной записи API таблиц Azure Cosmos DB
+### <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
 
 ## <a name="create-a-java-application"></a>Создание приложения Java
 В этом руководстве будут использоваться компоненты хранилища, которые можно вызвать в приложении Java локально или в веб-роли или рабочей роли в Azure.
 
-Чтобы применить примеры из этой статьи, установите пакет SDK для Java (JDK) и создайте учетную запись хранения Azure в подписке Azure. После этого убедитесь, что ваша система разработки отвечает минимальным требованиям и зависимостям, указанным в репозитории [пакета SDK службы хранилища Azure для Java][Azure Storage SDK for Java] на сайте GitHub. Если ваша система отвечает всем требованиям, вы можете перейти к выполнению инструкций по скачиванию и установке библиотек хранилища Azure для Java из указанного репозитория. Завершив все предварительные задачи, приступайте к созданию приложения Java на основе примеров из этой статьи.
+Чтобы применить примеры из этой статьи, установите пакет SDK для Java (JDK) и создайте в подписке Azure учетную запись хранения Azure или учетную запись Azure Cosmos DB. После этого убедитесь, что ваша система разработки отвечает минимальным требованиям и зависимостям, указанным в репозитории [пакета SDK службы хранилища Azure для Java][Azure Storage SDK for Java] на сайте GitHub. Если ваша система отвечает всем требованиям, вы можете перейти к выполнению инструкций по скачиванию и установке библиотек хранилища Azure для Java из указанного репозитория. После завершения предварительных задач, приступайте к созданию приложения Java на основе примеров из этой статьи.
 
 ## <a name="configure-your-application-to-access-table-storage"></a>Настройка приложения для доступа к хранилищу таблиц
 Если вы намерены обращаться к таблицам через API-интерфейсы службы хранилища Azure или таблиц Azure Cosmos DB, добавьте следующие инструкции импорта в начало файла с кодом Java.
@@ -67,7 +65,7 @@ public static final String storageConnectionString =
     "AccountKey=your_storage_account_key";
 ```
 
-## <a name="add-an-azure-cosmos-db-connection-string"></a>Добавление строки подключения к Azure Cosmos DB
+## <a name="add-an-azure-cosmos-db-table-api-connection-string"></a>Добавление строки подключения к API таблиц Azure Cosmos DB
 Учетная запись Azure Cosmos DB использует строку подключения для хранения учетных данных и конечной точки таблицы. Запуская клиентское приложение, предоставьте ему строку подключения к Azure Cosmos DB в следующем формате, указав имя учетной записи Azure Cosmos DB и первичный ключ доступа для этой учетной записи. Эти значения вы можете найти на [портале Azure](https://portal.azure.com) в параметрах *AccountName* и *AccountKey*. 
 
 В этом примере показано, как объявить статическое поле для размещения строки подключения к Azure Cosmos DB:
@@ -100,7 +98,7 @@ StorageConnectionString = DefaultEndpointsProtocol=https;AccountName=your_accoun
 Объект **CloudTableClient** позволяет ссылаться на объекты таблиц и сущностей. Следующий код создает объект **CloudTableClient** и использует его для создания нового объекта **CloudTable**, который представляет таблицу people. 
 
 > [!NOTE]
-> Есть и другие способы создать объекты **CloudStorageAccount**. Дополнительные сведения см. в описании **CloudStorageAccount** в [справочнике по пакету SDK для клиента службы хранилища Azure].
+> Есть и другие способы создать объекты **CloudStorageAccount**. Дополнительные сведения см. в описании **CloudStorageAccount** в [Справочник по пакету SDK для клиента хранилища Azure].
 >
 
 ```java
@@ -153,7 +151,7 @@ catch (Exception e)
 ```
 
 ## <a name="add-an-entity-to-a-table"></a>Добавление сущности в таблицу
-Сущности сопоставляются с объектами Java с помощью настраиваемого класса, реализующего **TableEntity**. Для удобства класс **TableServiceEntity** реализует **TableEntity** и использует отражение для сопоставления свойств с указанными для свойств методами получения и задания. Чтобы добавить сущность в таблицу, сначала создайте класс, который определяет свойства сущности. Следующий код определяет класс сущностей, который использует имя клиента как ключ строки, а фамилию клиента — как ключ раздела. Вместе ключ раздела и ключ строки сущности уникальным образом идентифицируют сущность в таблице. Сущности с одним ключом раздела можно запрашивать быстрее, чем сущности с разными ключами раздела.
+Сущности сопоставляются с объектами Java с помощью настраиваемого класса, реализующего **TableEntity**. Для удобства класс **TableServiceEntity** реализует **TableEntity** и использует отражение для сопоставления свойств с указанными для свойств методами получения и задания. Чтобы добавить сущность в таблицу, сначала создайте класс, который определяет свойства сущности. Следующий код определяет класс сущностей, который использует имя клиента как ключ строки, а фамилию клиента — как ключ раздела. Вместе ключ раздела и ключ строки сущности уникальным образом идентифицируют сущность в таблице. Сущности с одним ключом раздела можно запрашивать быстрее, чем сущности с разными ключами раздела.
 
 ```java
 public class CustomerEntity extends TableServiceEntity {
@@ -534,7 +532,7 @@ catch (Exception e)
 ```
 
 ## <a name="delete-an-entity"></a>Удаление сущности
-Сущность можно легко удалить после ее получения. После получение сущности вызовите **TableOperation.delete** с удаляемой сущностью. Затем вызовите **execute** объекта **CloudTable**. Следующий код извлекает и удаляет сущность клиента.
+Сущность можно легко удалить после ее получения. После получения сущности вызовите **TableOperation.delete** с удаляемой сущностью. Затем вызовите **execute** объекта **CloudTable**. Следующий код извлекает и удаляет сущность клиента.
 
 ```java
 try
@@ -599,7 +597,7 @@ catch (Exception e)
 * [Getting Started with Azure Table Service in Java](https://github.com/Azure-Samples/storage-table-java-getting-started) (Приступая к работе со службой таблиц Azure на языке Java)
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 * [Пакет SDK службы хранилища Azure для Java][Azure Storage SDK for Java]
-* [справочнике по пакету SDK для клиента службы хранилища Azure][справочнике по пакету SDK для клиента службы хранилища Azure]
+* [Справочник по пакету SDK для клиента хранилища Azure][Справочник по пакету SDK для клиента хранилища Azure]
 * [REST API службы хранилища Azure][Azure Storage REST API]
 * [Блог рабочей группы службы хранилища Azure][Azure Storage Team Blog]
 
@@ -608,7 +606,7 @@ catch (Exception e)
 [Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[справочнике по пакету SDK для клиента службы хранилища Azure]: http://azure.github.io/azure-storage-java/
+[Справочник по пакету SDK для клиента хранилища Azure]: http://azure.github.io/azure-storage-java/
 [Azure Storage REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [Azure Tables: Introducing Upsert and Query Projection]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx

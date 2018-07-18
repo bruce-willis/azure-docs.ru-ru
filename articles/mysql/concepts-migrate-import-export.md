@@ -6,14 +6,15 @@ author: ajlam
 ms.author: andrela
 manager: kfile
 editor: jasonwhowell
-ms.service: mysql-database
+ms.service: mysql
 ms.topic: article
-ms.date: 03/20/2018
-ms.openlocfilehash: 74b8c6afc5167225414f467f76f08c0e53bbade5
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.date: 06/01/2018
+ms.openlocfilehash: 6a4d5fd2bb649b2a0b0d23f4f752442f854e5098
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35264907"
 ---
 # <a name="migrate-your-mysql-database-by-using-import-and-export"></a>Перенос базы данных MySQL с помощью импорта и экспорта
 В этой статье описываются два обычных подхода к импорту и экспорту данных в базе данных Azure для сервера MySQL с помощью MySQL Workbench. 
@@ -113,4 +114,5 @@ ms.lasthandoff: 03/23/2018
 2. Щелкните **Start Import** (Начать импорт), чтобы начать процесс импорта.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о другом способе переноса см. в статье [Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления](concepts-migrate-dump-restore.md). 
+- Дополнительные сведения о другом способе переноса см. в статье [Перенос базы данных MySQL в базу данных Azure для MySQL с помощью дампа и восстановления](concepts-migrate-dump-restore.md).
+- Дополнительные сведения о переносе баз данных в службу "База данных Azure для MySQL" см. в [этой статье](http://aka.ms/datamigration). 

@@ -1,22 +1,21 @@
 ---
-title: Использование API Graph в Azure AD B2C | Документация Майкрософт
+title: Использование API Graph в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о том, как вызвать API Graph для клиента B2C, используя удостоверение приложения для автоматизации процесса.
 services: active-directory-b2c
-documentationcenter: .net
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/07/2017
 ms.author: davidmu
-ms.openlocfilehash: 731ff24fe9cc1b5dbf0c597139a96ae80b863cc2
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: B2C
+ms.openlocfilehash: da8aac2968ba020dd2b98253b12e8c9f223966e5
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32140037"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442509"
 ---
 # <a name="azure-ad-b2c-use-the-azure-ad-graph-api"></a>Azure AD B2C. Использование API Graph Azure AD
 

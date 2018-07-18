@@ -12,15 +12,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/06/2018
+ms.date: 05/31/2018
 ms.author: jeedes
-ms.openlocfilehash: b642d6de9fd9265d7f7ee11b827a36d20e5bcce7
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: eb7576c48d3836eec8051d849cefe4c5ec6658c9
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34699212"
 ---
-# <a name="faq-for-the-azure-active-directory-sso-plug-in"></a>Вопросы и ответы по подключаемому модулю единого входа Azure Active Directory 
+# <a name="faq-for-the-azure-active-directory-sso-plug-in"></a>Вопросы и ответы по подключаемому модулю единого входа Azure Active Directory
+
+Дополнительные сведения об этом подключаемом модуле см. в разделе часто задаваемых вопросов ниже.
 
 ## <a name="what-does-the-plug-in-do"></a>Для чего нужен этот подключаемый модуль?
 
@@ -38,13 +41,13 @@ ms.lasthandoff: 04/05/2018
 
 Подключаемый модуль поддерживает следующие версии:
 
-* Jira Core и Jira Software: версии с 6.0 по 7.2.2; 
-* Jira Service Desk: версии с 3.0 по 3.2; 
+* Jira Core и Jira Software: 6.0–7.8;
+* Jira Service Desk: версии с 3.0 по 3.2;
 * Confluence: версии c 5.0 по 5.10
 
 ## <a name="is-the-plug-in-free-or-paid"></a>Этот подключаемый модуль предоставляется бесплатно или на платной основе?
 
-Это бесплатное дополнение. Его можно установить из магазина компании Atlassian.
+Это бесплатное дополнение.
 
 ## <a name="do-i-need-to-restart-jira-or-confluence-after-i-deploy-the-plug-in"></a>Нужно ли перезапускать Jira или Confluence после развертывания подключаемого модуля?
 
@@ -52,7 +55,7 @@ ms.lasthandoff: 04/05/2018
 
 ## <a name="how-do-i-get-support-for-the-plug-in"></a>Как мне получить поддержку по этому подключаемому модулю?
 
-Обратитесь к [команде интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). Вам ответят в течение 24–48 рабочих часов. 
+Чтобы получить поддержку относительно этого подключаемого модуля, обратитесь к [команде интеграции единого входа Azure AD](<mailto:SaaSApplicationIntegrations@service.microsoft.com>). Вам ответят в течение 24–48 рабочих часов.
 
 Можно также создать обращение в службу поддержки корпорации Майкрософт через портал Azure.
 

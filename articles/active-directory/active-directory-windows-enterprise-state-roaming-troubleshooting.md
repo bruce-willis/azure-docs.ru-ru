@@ -17,11 +17,12 @@ ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: tanning
 ms.custom: it-pro
-ms.openlocfilehash: d9936da3ee1b0cfb4ee6e834a838798a35140620
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: b5ade0f3a6590832b6717bbb5f91a4d62cdc9e0c
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309049"
 ---
 # <a name="troubleshooting-enterprise-state-roaming-settings-in-azure-active-directory"></a>Устранение неполадок параметров Enterprise State Roaming в Azure Active Directory
 
@@ -79,7 +80,7 @@ ms.lasthandoff: 03/23/2018
 **Потенциальная проблема.** Синхронизация может завершиться ошибкой, если администратор настраивает политику условного доступа Многофакторной идентификации в службах AD FS, а срок действия маркера доступа на устройстве истекает. Убедитесь, что для входа в систему и выхода из нее вы используете ПИН-код Microsoft Passport for Work или выполняете проверку подлинности в службе Многофакторной идентификации при получении доступа к другим службам Azure, таким как Office 365.
 
 ### <a name="event-viewer"></a>Средство просмотра событий
-Для расширенного поиска проблем можно использовать средство просмотра событий, чтобы находить конкретные ошибки. Они описаны в следующем разделе. События можно просмотреть, выбрав "Средство просмотра событий > Журналы приложений и служб > **Microsoft** > **Windows** > **SettingSync**". Для просмотра проблем синхронизации, связанных с идентификацией, выберите **Microsoft** > **Windows** > **Azure AD**.
+Для расширенного поиска проблем можно использовать средство просмотра событий, чтобы находить конкретные ошибки. Они описаны в следующем разделе. События можно просмотреть, выбрав "Средство просмотра событий > Журналы приложений и служб > **Microsoft** > **Windows** > **SettingSync**". Чтобы просмотреть проблемы синхронизации, связанные с идентификацией, выберите **Microsoft** > **Windows** > **AAD**.
 
 
 ## <a name="known-issues"></a>Известные проблемы
@@ -177,7 +178,7 @@ ms.lasthandoff: 03/23/2018
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- На форуме [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/category/158658-enterprise-state-roaming) можно оставить свои отзывы о работе службы Enterprise State Roaming или предложения по ее улучшению.
+- На форуме [User Voice](https://social.technet.microsoft.com/Forums/windows/en-US/f51c856c-db92-4cf7-a497-720da21d7d31/enterprise-state-roaming) можно оставить свои отзывы о работе службы Enterprise State Roaming или предложения по ее улучшению.
 
 - Дополнительные сведения см. в статье [Обзор службы Enterprise State Roaming](active-directory-windows-enterprise-state-roaming-overview.md). 
 

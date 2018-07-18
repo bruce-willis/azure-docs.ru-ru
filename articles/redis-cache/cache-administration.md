@@ -1,6 +1,6 @@
 ---
-title: "Администрирование кэша Redis для Azure | Документация Майкрософт"
-description: "Узнайте, как выполнять задачи администрирования, такие как перезагрузка и планирование обновлений кэша Redis для Azure."
+title: Администрирование кэша Redis для Azure | Документация Майкрософт
+description: Узнайте, как выполнять задачи администрирования, такие как перезагрузка и планирование обновлений кэша Redis для Azure.
 services: redis-cache
 documentationcenter: na
 author: wesmc7777
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: cache-redis
 ms.workload: tbd
 ms.date: 07/05/2017
 ms.author: wesmc
-ms.openlocfilehash: 37e7395a26ead737009ad9e285e9f88372b25d26
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.openlocfilehash: 3b62b41fb7b9d7ff6f40191c48d00c1f0a941e48
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34639458"
 ---
 # <a name="how-to-administer-azure-redis-cache"></a>Администрирование кэша Redis для Azure
 В этом разделе описывается выполнение задач администрирования, таких как [перезагрузка](#reboot) и [планирование обновлений](#schedule-updates) для экземпляров кэша Redis для Azure.
@@ -91,10 +92,8 @@ ms.lasthandoff: 01/19/2018
 
 Чтобы задать период обслуживания, отметьте необходимые дни и укажите, когда будет начинаться период обслуживания в каждый из дней, а затем нажмите кнопку **ОК**. Обратите внимание, что время периода обслуживания указывается в формате UTC. 
 
-> [!NOTE]
-> Период обслуживания по умолчанию для обновлений — пять часов. Это значение можно настроить на портале Azure, а также в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzureRmRedisCacheScheduleEntry](/powershell/module/azurerm.rediscache/new-azurermrediscachescheduleentry). Дополнительные сведения см. в разделе [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
-> 
-> 
+Минимальный период обслуживания по умолчанию для обновлений — пять часов. Это значение можно настроить на портале Azure, а также в PowerShell с помощью параметра `MaintenanceWindow` командлета [New-AzureRmRedisCacheScheduleEntry](/powershell/module/azurerm.rediscache/new-azurermrediscachescheduleentry). Дополнительные сведения см. в разделе [Можно ли управлять запланированными обновлениями с помощью PowerShell, интерфейса командной строки или других инструментов управления?](#can-i-manage-scheduled-updates-using-powershell-cli-or-other-management-tools)
+
 
 ## <a name="schedule-updates-faq"></a>Часто задаваемые вопросы о планировании обновлений
 * [Когда происходят обновления, если функция планирования обновлений не используется?](#when-do-updates-occur-if-i-dont-use-the-schedule-updates-feature)

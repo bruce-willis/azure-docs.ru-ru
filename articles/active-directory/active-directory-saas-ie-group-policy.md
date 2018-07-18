@@ -15,11 +15,12 @@ ms.date: 10/31/2017
 ms.author: markvi
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a39e454bd0993f07efd1168404df453f3013e0fa
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 2d719a31700e8d693dd7edb7de603682daae14ea
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36308542"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
 В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](manage-apps/what-is-single-sign-on.md#password-based-single-sign-on).
@@ -43,7 +44,7 @@ ms.lasthandoff: 05/20/2018
    
     ![Откройте «Файловые службы и службы хранилища»](./media/active-directory-saas-ie-group-policy/shares.png)
 4. Выполните все шаги **мастера создания общих ресурсов** и настройте разрешения, позволяющие использовать ресурс с компьютеров пользователей. [Дополнительные сведения об общих ресурсах.](https://technet.microsoft.com/library/cc753175.aspx)
-5. Скачайте следующий пакет установщика Microsoft Windows (MSI-файл): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access Panel Extension.msi).
+5. Скачайте следующий пакет установщика Microsoft Windows (MSI-файл): [Access Panel Extension.msi](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access%20Panel%20Extension.msi).
 6. Скопируйте пакет установщика в выбранное расположение в общем ресурсе.
    
     ![Скопируйте MSI-файл в общий ресурс.](./media/active-directory-saas-ie-group-policy/copy-package.png)

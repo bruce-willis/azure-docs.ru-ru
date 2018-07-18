@@ -7,18 +7,19 @@ ms.service: automation
 ms.component: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/16/2018
+ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f758d6aec25ce0ef6bf9a0ecab34189296c81fc0
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: fd96a6cfebe44bd02e3f44a44d91119ad1c2c5a9
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34598758"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
-Контроль доступа на основе ролей (RBAC) Azure обеспечивает управление доступом к ресурсам Azure. С помощью [RBAC](../role-based-access-control/role-assignments-portal.md) вы сможете распределить обязанности внутри своей команды и предоставить доступ пользователям, группам и приложениям на том уровне, который им необходим для выполнения поставленных задач. Для предоставления доступа на основе ролей можно использовать портал Azure, программы командной строки Azure и API управления Azure.
+Контроль доступа на основе ролей (RBAC) Azure обеспечивает управление доступом к ресурсам Azure. С помощью [RBAC](../role-based-access-control/overview.md) вы сможете распределить обязанности внутри своей команды и предоставить доступ пользователям, группам и приложениям на том уровне, который им необходим для выполнения поставленных задач. Для предоставления доступа на основе ролей можно использовать портал Azure, программы командной строки Azure и API управления Azure.
 
 ## <a name="roles-in-automation-accounts"></a>Роли в учетных записях службы автоматизации
 
@@ -70,6 +71,24 @@ ms.lasthandoff: 05/16/2018
 |---------|---------|
 |Microsoft.Automation/automationAccounts/read|Просмотр всех ресурсов в учетной записи службы автоматизации. |
 
+### <a name="automation-operator"></a>Оператор службы автоматизации
+
+Оператор службы автоматизации может создавать задания и управлять ими, а также просматривать имена и свойства всех модулей runbook в учетной записи службы автоматизации.  Примечание. Если вы хотите контролировать доступ операторов к отдельным модулям runbook, не используйте эту роль, а вместо нее назначьте роли "Оператор заданий службы автоматизации" и "Оператор runbook службы автоматизации". В следующей таблице показаны разрешения, предоставленные для этой роли.
+
+|**Действия**  |**Описание**  |
+|---------|---------|
+|Microsoft.Authorization/*/read|Авторизация на чтение.|
+|Microsoft.Automation/automationAccounts/jobs/read|Вывод списка заданий Runbook.|
+|Microsoft.Automation/automationAccounts/jobs/resume/action|Возобновление приостановленного задания.|
+|Microsoft.Automation/automationAccounts/jobs/stop/action|Отмена выполняющегося задания.|
+|Microsoft.Automation/automationAccounts/jobs/streams/read|Чтение потоков и выходных данных задания.|
+|Microsoft.Automation/automationAccounts/jobs/suspend/action|Остановка выполняющегося задания.|
+|Microsoft.Automation/automationAccounts/jobs/write|Создание заданий.|
+|Microsoft.Resources/subscriptions/resourceGroups/read      |Чтение ролей и их назначений.         |
+|Microsoft.Resources/deployments/*      |Создание развертываний группы ресурсов и управление ими.         |
+|Microsoft.Insights/alertRules/*      | Создание правил оповещения и управление ими.        |
+|Microsoft.Support/* |Создание запросов в службу поддержки и управление ими.|
+
 ### <a name="automation-job-operator"></a>Оператор заданий службы автоматизации
 
 Роль оператора заданий службы автоматизации предоставляется на уровне учетной записи службы автоматизации. Она предоставляет разрешения на создание заданий и управление ими для всех модулей runbook в учетной записи. В следующей таблице показаны разрешения, предоставленные для этой роли.
@@ -92,9 +111,6 @@ ms.lasthandoff: 05/16/2018
 
 Роль оператора Runbook службы автоматизации предоставляется в области Runbook. Оператор runbook службы автоматизации может просматривать имя и свойства модуля runbook.  Эта роль в сочетании с ролью "Оператор заданий службы автоматизации" позволяет создавать задания и управлять ими для модуля runbook. В следующей таблице показаны разрешения, предоставленные для этой роли.
 
-> [!NOTE]
-> Не назначайте роль "Оператор службы автоматизации", если этому оператору не нужна возможность управлять заданиями для всех модулей runbook в учетной записи.
-
 |**Действия**  |**Описание**  |
 |---------|---------|
 |Microsoft.Automation/automationAccounts/runbooks/read     | Вывод списка Runbook.        |
@@ -103,24 +119,6 @@ ms.lasthandoff: 05/16/2018
 |Microsoft.Resources/deployments/*      | Создание развертываний группы ресурсов и управление ими.         |
 |Microsoft.Insights/alertRules/*      | Создание правил оповещения и управление ими.        |
 |Microsoft.Support/*      | Создание запросов в службу поддержки и управление ими.        |
-
-### <a name="automation-operator"></a>Оператор службы автоматизации
-
-Оператор службы автоматизации может создавать задания и управлять ими, а также просматривать имена и свойства всех модулей runbook в учетной записи службы автоматизации.  Примечание. Если вы хотите контролировать доступ операторов к отдельным модулям runbook, не используйте эту роль, а вместо нее назначьте роли "Оператор заданий службы автоматизации" и "Оператор runbook службы автоматизации".  В следующей таблице показаны разрешения, предоставленные для этой роли.
-
-|**Действия**  |**Описание**  |
-|---------|---------|
-|Microsoft.Authorization/*/read|Авторизация на чтение.|
-|Microsoft.Automation/automationAccounts/jobs/read|Вывод списка заданий Runbook.|
-|Microsoft.Automation/automationAccounts/jobs/resume/action|Возобновление приостановленного задания.|
-|Microsoft.Automation/automationAccounts/jobs/stop/action|Отмена выполняющегося задания.|
-|Microsoft.Automation/automationAccounts/jobs/streams/read|Чтение потоков и выходных данных задания.|
-|Microsoft.Automation/automationAccounts/jobs/suspend/action|Остановка выполняющегося задания.|
-|Microsoft.Automation/automationAccounts/jobs/write|Создание заданий.|
-|Microsoft.Resources/subscriptions/resourceGroups/read      |Чтение ролей и их назначений.         |
-|Microsoft.Resources/deployments/*      |Создание развертываний группы ресурсов и управление ими.         |
-|Microsoft.Insights/alertRules/*      | Создание правил оповещения и управление ими.        |
-|Microsoft.Support/* |Создание запросов в службу поддержки и управление ими.|
 
 ### <a name="log-analytics-contributor"></a>участник Log Analytics.
 
@@ -259,14 +257,18 @@ ms.lasthandoff: 05/16/2018
 |Решение     |участник Log Analytics.         | Решение|
 |Виртуальная машина     | Участник виртуальной машины        | Виртуальная машина        |
 
-## <a name="configure-rbac-for-your-automation-account-using-azure-portal"></a>Настройки RBAC для учетной записи службы автоматизации с помощью портала Azure
+## <a name="configure-rbac-for-your-automation-account"></a>Настройки RBAC для учетной записи службы автоматизации
+
+В следующем разделе показано, как настроить RBAC в учетной записи службы автоматизации с помощью [портала](#configure-rbac-using-the-azure-portal) и [PowerShell](#configure-rbac-using-powershell).
+
+### <a name="configure-rbac-using-the-azure-portal"></a>Настройка RBAC с помощью портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com/) и откройте учетную запись службы автоматизации на странице "Учетные записи автоматизации".
 2. Щелкните элемент управления **Управление доступом (IAM)** в левом верхнем углу экрана. Откроется страница **Управление доступом (IAM)**, на которую можно добавить новых пользователей, группы и приложения, чтобы управлять учетной записью службы автоматизации и просматривать имеющиеся роли, настраиваемые для этой учетной записи.
 
    ![Кнопка доступа](media/automation-role-based-access-control/automation-01-access-button.png)
 
-### <a name="add-a-new-user-and-assign-a-role"></a>Добавление нового пользователя и назначение роли
+#### <a name="add-a-new-user-and-assign-a-role"></a>Добавление нового пользователя и назначение роли
 
 1. На странице **Управление доступом (IAM)** щелкните **+ Добавить**, чтобы открыть страницу **Добавление разрешений**, в которой можно добавить пользователя, группу или приложение, а также назначить им роль.
 
@@ -288,7 +290,7 @@ ms.lasthandoff: 05/16/2018
    > [!NOTE]
    > Управление доступом на основе ролей настраивается только в области учетной записи службы автоматизации и не может настраиваться в ресурсах более низкого уровня.
 
-### <a name="remove-a-user"></a>Удаление пользователя
+#### <a name="remove-a-user"></a>Удаление пользователя
 
 Разрешение на доступ для пользователя, который не управляет учетной записью службы автоматизации или прекращает работу в организации, можно удалить. Чтобы удалить пользователя, выполните описанные ниже действия.
 
@@ -298,23 +300,7 @@ ms.lasthandoff: 05/16/2018
 
    ![Удаление пользователей](media/automation-role-based-access-control/automation-08-remove-users.png)
 
-## <a name="role-assigned-user"></a>Пользователь с назначенной ролью
-
-Когда пользователь с назначенной ролью входит в Azure и выбирает свою учетную запись службы автоматизации, учетная запись ее владельца отображается в списке **каталогов**. Для просмотра учетной записи службы автоматизации, в которую он был добавлен, пользователь должен перейти из каталога по умолчанию в каталог владельца по умолчанию.
-
-### <a name="user-experience-for-automation-operator-role"></a>Возможности для пользователя с ролью оператора службы автоматизации
-
-Когда пользователь с ролью оператора службы автоматизации просматривает учетную запись службы автоматизации, в которой он был назначен, отображаются только список модулей Runbook, задания Runbook и расписания, созданные в учетной записи службы автоматизации, но не отображаются их определения. Такой пользователь может запускать, останавливать, приостанавливать, возобновлять и планировать задания Runbook. У него нет доступа к другим ресурсам службы автоматизации, включая конфигурации, гибридные рабочие роли и узлы DSC.
-
-![Нет доступа к ресурсам](media/automation-role-based-access-control/automation-10-no-access-to-resources.png)
-
-Пользователь может просматривать и создавать расписания, но не имеет доступа к другим типам ресурсов.
-
-Кроме того, пользователь не видит, какие объекты Webhook связаны с модулем Runbook.
-
-![Нет доступа к объектам webhook](media/automation-role-based-access-control/automation-13-no-access-to-webhooks.png)
-
-## <a name="configure-rbac-for-your-automation-account-using-azure-powershell"></a>Настройки RBAC для учетной записи службы автоматизации с помощью Azure PowerShell
+### <a name="configure-rbac-using-powershell"></a>Настройка RBAC с помощью PowerShell
 
 Доступ к учетной записи службы автоматизации на основе ролей можно также настроить с помощью указанных ниже [командлетов Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 
@@ -326,7 +312,7 @@ Get-AzureRmRoleDefinition -Name 'Automation Operator'
 
 Ниже приведен пример выходных данных.
 
-```azurepowershell-interactive
+```azurepowershell
 Name             : Automation Operator
 Id               : d3881f73-407a-4167-8283-e981cbba0404
 IsCustom         : False
@@ -387,6 +373,45 @@ Remove-AzureRmRoleAssignment -SignInName <sign-in Id of a user you wish to remov
 ```
 
 В предыдущих примерах замените **идентификатор для входа**, **идентификатор подписки**, **имя группы ресурсов** и **имя учетной записи службы автоматизации** данными своей учетной записи. Прежде чем продолжить удаление назначений ролей пользователей, выберите **Да** при появлении запроса на подтверждение.
+
+### <a name="user-experience-for-automation-operator-role---automation-account"></a>Возможности для пользователя с ролью оператора службы автоматизации. Учетная запись службы автоматизации
+
+Когда пользователь с ролью оператора службы автоматизации в учетной записи службы автоматизации просматривает учетную запись службы автоматизации, в которой он был назначен, отображаются только список модулей runbook, задания runbook и расписания, созданные в учетной записи службы автоматизации, но не отображаются их определения. Такой пользователь может запускать, останавливать, приостанавливать, возобновлять и планировать задания Runbook. У него нет доступа к другим ресурсам службы автоматизации, включая конфигурации, гибридные рабочие роли и узлы DSC.
+
+![Нет доступа к ресурсам](media/automation-role-based-access-control/automation-10-no-access-to-resources.png)
+
+## <a name="configure-rbac-for-runbooks"></a>Настройка RBAC для модулей runbook
+
+Служба автоматизации Azure позволяет назначать роли RBAC для определенных модулей runbook. Для этого выполните следующий сценарий, чтобы добавить пользователя к определенному модулю runbook. Следующий сценарий может запустить администратор учетной записи службы автоматизации или администратор клиента.
+
+```azurepowershell-interactive
+$rgName = "<Resource Group Name>" # Resource Group name for the Automation Account
+$automationAccountName ="<Automation Account Name>" # Name of the Automation Account
+$rbName = "<Name of Runbook>" # Name of the runbook
+$userId = "<User ObjectId>" # Azure Active Directory (AAD) user's ObjectId from the directory
+
+# Gets the Automation Account resource
+$aa = Get-AzureRmResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts" -ResourceName $automationAccountName
+
+# Get the Runbook resource
+$rb = Get-AzureRmResource -ResourceGroupName $rgName -ResourceType "Microsoft.Automation/automationAccounts/runbooks" -ResourceName "$automationAccountName/$rbName"
+
+# The Automation Job Operator role only needs to be ran once per user.
+New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Job Operator" -Scope $aa.ResourceId
+
+# Adds the user to the Automation Runbook Operator role to the Runbook scope
+New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runbook Operator" -Scope $rb.ResourceId
+```
+
+Когда сценарий будет выполнен, пользователь должен войти на портал Azure и просмотреть **все ресурсы**. Он увидите модули runbook, для которых он был назначен **оператором runbook службы автоматизации**.
+
+![Роли RBAC для runbook на портале](./media/automation-role-based-access-control/runbook-rbac.png)
+
+### <a name="user-experience-for-automation-operator-role---runbook"></a>Возможности для пользователя с ролью оператора службы автоматизации. Модуль runbook
+
+Когда пользователь, которому назначена роль оператора службы автоматизации модуля runbook, просматривает назначенный ему модуль, он может только запускать его и просматривать его задания.
+
+![Может только запускать](media/automation-role-based-access-control/automation-only-start.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

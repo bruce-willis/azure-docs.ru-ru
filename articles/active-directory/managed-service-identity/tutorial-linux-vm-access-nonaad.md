@@ -9,17 +9,17 @@ editor: daveba
 ms.service: active-directory
 ms.component: msi
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 74bc28619996b7cd52d2280d4d8b6288aa7c904f
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 16b715261329544687fd78ed9c022d7392cc32d9
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34304313"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901482"
 ---
 # <a name="tutorial-use-a-linux-vm-managed-service-identity-msi-to-access-azure-key-vault"></a>Руководство. Получение доступа к Azure Key Vault с помощью управляемого удостоверения службы (MSI) виртуальной машины Linux 
 
@@ -135,12 +135,12 @@ MSI на виртуальной машине позволяет получить
     
 После получения секрета из хранилища Key Vault, его можно использовать для аутентификации в службе, требующей имя пользователя и пароль.
 
+## <a name="next-steps"></a>Дополнительная информация
 
-## <a name="related-content"></a>Связанная информация
+Из этого руководства вы узнали, как получить доступ к Azure Key Vault с помощью компонента "Управляемое удостоверение службы" виртуальной машины Linux.  Дополнительные сведения об Azure Key Vault см. здесь:
 
-- Общие сведения об MSI см. в разделе [Управляемое удостоверение службы (MSI) для Azure Active Directory](overview.md).
-
-Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
+> [!div class="nextstepaction"]
+>[Хранилище ключей Azure](/azure/key-vault/key-vault-whatis)
 
 
 

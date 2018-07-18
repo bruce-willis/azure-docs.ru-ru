@@ -1,19 +1,19 @@
 ---
 title: Использование наборов устройств в приложении Azure IoT Central | Документация Майкрософт
 description: Вы узнаете, как оператор может использовать наборы устройств в приложении Azure IoT Central.
-services: iot-central
 author: ellenfosborne
 ms.author: elfarber
 ms.date: 01/21/2018
-ms.topic: article
-ms.prod: microsoft-iot-central
-manager: timlt
-ms.openlocfilehash: 932c8315b5af22c3adf18de50cf03deaf6b2a53e
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.topic: conceptual
+ms.service: iot-central
+services: iot-central
+manager: peterpfr
+ms.openlocfilehash: ef1fa64a276926a35dbf98646317bfe29200bb22
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34201155"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35261684"
 ---
 # <a name="use-device-sets-in-your-azure-iot-central-application"></a>Использование наборов устройств в приложении Azure IoT Central
 
@@ -86,10 +86,40 @@ ms.locfileid: "34201155"
 
     > [!NOTE]
     > Вы можете добавить несколько изображений, ссылок и сеток.
-
-1. Выключите **режим конструктора**.
+  
+    1. Выключите **режим конструктора**.
 
     ![Выключение режима конструктора](media/howto-use-device-sets/image10.png)
+
+
+### <a name="configuring-location-map-in-your-device-sets-dashboard"></a>Настройка карты расположения на панели мониторинга наборов устройств 
+Вы можете добавить карту расположения для отображения расположений наборов устройств на карте. 
+
+Чтобы добавить карту расположений на панель мониторинга наборов устройств, нужно задать свойство расположения в своем шаблоне устройства. Дополнительные сведения см. в статье [Настройка шаблона устройства](howto-set-up-template.md).
+
+
+1. На панели мониторинга наборов устройства выберите "Карта" из библиотеки. 
+
+    ![Карты на панели мониторинга наборов устройств](media/howto-use-device-sets/LocationMaps1.png)
+
+
+2. Придумайте заголовок и выберите свойство расположения, которое вы ранее настроили как часть свойства устройства.
+
+    ![Настройка карт панели мониторинга](media/howto-use-device-sets/LocationMaps2.png)
+
+3. Сохраните изменения, после чего отобразится фрагмент карты, где показано расположение устройств в наборе.
+
+    ![Сохранение карт панели мониторинга](media/howto-use-device-sets/LocationMaps3.png)
+
+
+5. Теперь, просматривая панели мониторинга наборов устройств, оператор видит все настроенные плитки, в том числе карту расположений. Таким образом, визуализированы сразу расположения всех устройств.
+
+    ![Представление оператора карт панели мониторинга](media/howto-use-device-sets/LocationMaps4.png)
+
+    Вы сможете изменить размер карты до нужного.
+
+
+
 
 ## <a name="configure-the-list-for-your-device-set"></a>Настройка списка для набора устройств
 

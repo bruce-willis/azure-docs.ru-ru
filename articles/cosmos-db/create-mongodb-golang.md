@@ -2,18 +2,21 @@
 title: Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Golang и портала Azure | Документация Майкрософт
 description: В этой статье представлен пример кода Golang, который можно использовать для подключения и выполнения запросов к Azure Cosmos DB
 services: cosmos-db
-author: Durgaprasad-Budhwani
+author: SnehaGunda
 manager: kfile
 ms.service: cosmos-db
+ms.component: cosmosdb-mongo
+ms.devlang: na
 ms.topic: quickstart
 ms.date: 07/21/2017
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: d5ac2f683308385b2bd4ca422cf00abaa37735fd
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: d1a45389e95dbd7f5f762b6dee0edc3897d0c3b8
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38612822"
 ---
 # <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-golang-and-the-azure-portal"></a>Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Golang и портала Azure
 
@@ -123,7 +126,7 @@ session.SetSafe(&mgo.Safe{})
 
 Метод **mgo.Dial()** используется, когда отсутствует подключение SSL. Для подключения SSL требуется метод **mgo.DialWithInfo()**.
 
-Экземпляр объекта **DialWIthInfo {}** используется для создания объекта сеанса. После установки сеанса можно получить доступ к коллекции, используя следующий фрагмент кода:
+Для создания объекта сеанса используется экземпляр объекта **DialWIthInfo{}**. После установки сеанса можно получить доступ к коллекции, используя следующий фрагмент кода:
 
 ```go
 collection := session.DB(“database”).C(“package”)
@@ -207,7 +210,7 @@ if err != nil {
 ## <a name="run-the-app"></a>Запуск приложения
 
 1. В Goglang убедитесь, что путь GOPATH (находится в меню **File** (Файл), **Settings** (Параметры), **Go**, **GOPATH**) включает расположение, в котором установлен gopkg. По умолчанию это папка ПРОФИЛЬ_ПОЛЬЗОВАТЕЛЯ\go. 
-2. Закомментируйте строки, удаляющие документ (строки 91–96), чтобы вы могли видеть документ после запуска приложения.
+2. Закомментируйте строки, удаляющие документ (строки 103–107), чтобы вы могли видеть документ после запуска приложения.
 3. В Goglang выберите команду **Run** (Выполнить), затем нажмите кнопку **Build main.go and run** (Создать main.go и выполнить).
 
     Будет создано приложение и отобразится описание документа, созданного в разделе [Создание документа](#create-document).

@@ -9,21 +9,22 @@ manager: mtillman
 editor: ''
 ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
 ms.service: active-directory
+ms.component: protection
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/01/2018
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 8271c4c88245e98fd3709c7279904d36ad009682
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: dc1e3fd3984d0ccbfb0565a3216ec907894e88ea
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32770729"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028954"
 ---
-# <a name="access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory 
+# <a name="what-are-access-controls-in-azure-active-directory-conditional-access"></a>Элементы управления условным доступом в Azure Active Directory 
 
 С помощью [условного доступа Azure Active Directory (Azure AD)](active-directory-conditional-access-azure-portal.md) можно контролировать доступ авторизованных пользователей к облачным приложениям. В политике условного доступа определяется реакция ("сделать это") на конкретное условие, при котором активируется политика ("в этом случае"). 
 
@@ -76,7 +77,7 @@ ms.locfileid: "32770729"
 
 ### <a name="compliant-device"></a>Устройства, соответствующие требованиям
 
-Политики условного доступа можно настроить на основе устройств. Цель политики условного доступа на основе устройств — предоставить доступ к настроенным ресурсам только с [управляемых устройств](active-directory-conditional-access-policy-connected-applications.md#managed-devices). Требование устройства, соответствующего требованиям, — это один из способов определения управляемого устройства. Если этот параметр выбран, то политика условного доступа разрешает попытки доступа с устройств, которые [зарегистрированы](device-management-introduction.md) в Azure Active Directory и помечены решением MDM как совместимые.
+Политики условного доступа можно настроить на основе устройств. Цель политики условного доступа на основе устройств — предоставить доступ к настроенным ресурсам только с [управляемых устройств](active-directory-conditional-access-policy-connected-applications.md#managed-devices). Требование устройства, соответствующего требованиям, — это один из способов определения управляемого устройства. Если этот параметр выбран, то политика условного доступа разрешает попытки доступа с устройств, которые [зарегистрированы](device-management-introduction.md) в Azure Active Directory и помечены Intune как соответствующие требованиям (для любой операционной системы) или сторонней системой MDM для Windows 10. Сторонние системы управления мобильными устройствами для других ОС, кроме Windows 10, не поддерживаются.
 
 Дополнительные сведения см. в статье [Настройка политик условного доступа на основе устройств для Azure Active Directory](active-directory-conditional-access-policy-connected-applications.md).
 
@@ -172,6 +173,6 @@ ms.locfileid: "32770729"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы хотите узнать, как настроить политику условного доступа, прочитайте статью [Начало работы с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md). 

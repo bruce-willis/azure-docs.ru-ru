@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 04/13/2018
 ms.author: carolz
-ms.openlocfilehash: ac13d584c3312918e06139035da1f777c0030895
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 04b2853729296d158fee77d96a807972bd4f92e5
+ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34594148"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36946046"
 ---
 # <a name="azure-active-directory-documentation"></a>Документация Azure Active Directory
 
@@ -131,7 +131,7 @@ Azure Active Directory (Azure AD) — это мультитенантный об
                         <h3>Приложения</h3>
                         <p>
                         <a href="/azure/active-directory/active-directory-enable-sso-scenario">Управление приложениями</a><br/>
-                        <a href="/azure/active-directory/cloudappdiscovery-get-started">Обнаружение приложений</a><br/>
+                        <a href="/azure/active-directory/manage-apps/migrate-adfs-apps-to-azure">Перенос приложений</a><br/>
                         <a href="/azure/active-directory/active-directory-coreapps-assign-user-azure-portal">Корпоративные приложения</a><br/>
                         <a href="/azure/active-directory/active-directory-managing-access-to-apps">Доступ к приложениям</a>
                         </p>

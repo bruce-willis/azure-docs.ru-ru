@@ -64,8 +64,6 @@
           href: app-service-app-service-environment-network-architecture-overview.md
         - name: Создание веб-приложения в ASEv1
           href: app-service-web-how-to-create-a-web-app-in-an-ase.md
-        - name: Высокая плотность размещения
-          href: app-service-high-density-hosting.md
         - name: Подключение к серверной части
           href: app-service-app-service-environment-securely-connecting-to-backend-resources.md
         - name: Настройка ExpressRoute
@@ -74,15 +72,6 @@
           href: app-service-app-service-environment-control-inbound-traffic.md
         - name: Использование многоуровневой безопасности
           href: app-service-app-service-environment-layered-security.md
-    - name: "CLI\_2.0"
-- name: Справочные материалы
-  items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/appservice
-    - name: Azure PowerShell
-      href: /powershell
-    - name: ИНТЕРФЕЙС REST API
-      href: /rest/api/appservice/
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

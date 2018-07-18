@@ -1,11 +1,11 @@
 ---
-title: "Подготовка кэша Redis с помощью Azure Resource Manager | Документация Майкрософт"
-description: "Используйте шаблон диспетчера ресурсов Azure для развертывания кэша Redis для Azure."
+title: Подготовка кэша Redis с помощью Azure Resource Manager | Документация Майкрософт
+description: Используйте шаблон диспетчера ресурсов Azure для развертывания кэша Redis для Azure.
 services: app-service
-documentationcenter: 
+documentationcenter: ''
 author: wesmc7777
 manager: cfowler
-editor: 
+editor: ''
 ms.assetid: ce6f5372-7038-4655-b1c5-108f7c148282
 ms.service: cache
 ms.workload: web
@@ -15,10 +15,11 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: wesmc
 ms.openlocfilehash: b26116b974abbfe410b0a6ebc0186d73f4eea1bf
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38452589"
 ---
 # <a name="create-a-redis-cache-using-a-template"></a>Создание кэша Redis с помощью шаблона
 В этом разделе вы узнаете, как создать шаблон Azure Resource Manager, который развертывает кэш Redis для Azure. Кэш можно использовать с существующей учетной записи хранения для размещения данных диагностики. Вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.

@@ -1,20 +1,19 @@
 ---
 title: Устранение неполадок в Azure IoT Edge | Документация Майкрософт
 description: Решения распространенных проблем и получение навыков по устранению неполадок для Azure IoT Edge
-services: iot-edge
-keywords: ''
 author: kgremban
 manager: timlt
 ms.author: kgremban
-ms.date: 03/23/2018
-ms.topic: article
+ms.date: 06/26/2018
+ms.topic: conceptual
 ms.service: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: b03ece52c4ff77c9e0abbc794325cd7e9a20c915
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+services: iot-edge
+ms.openlocfilehash: 9ec396e8a1ad36e85e1291995345ca1de24668d0
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128066"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Распространенные проблемы и их решения для Azure IoT Edge
 
@@ -24,36 +23,135 @@ ms.lasthandoff: 03/28/2018
 
 При возникновении проблемы необходимо узнать о состоянии устройства IoT Edge. Для этого можно просмотреть журналы контейнера и сообщения, переданные на устройство и из него. Для сбора сведений используйте команды и инструменты, приведенные в этом разделе. 
 
-* Просмотрите журналы контейнеров Docker, чтобы обнаружить проблемы. Начните с развернутых контейнеров, а затем просмотрите контейнеры, которые составляют среду выполнения IoT Edge: агент и центр Edge. В журналах агента Edge обычно содержатся сведения о жизненном цикле каждого контейнера, а в журналах центра Edge — об обмене сообщениями и маршрутизации. 
+### <a name="check-the-status-of-the-iot-edge-security-manager-and-its-logs"></a>Проверка состояния диспетчера безопасности IoT Edge и его журналов
 
-   ```cmd
-   docker logs <container name>
+В Linux
+- Чтобы просмотреть состояние диспетчера безопасности IoT Edge, используйте следующую команду:
+
+   ```bash
+   sudo systemctl status iotedge
    ```
 
-* Просмотрите сообщения, отправляемые через центр Edge, и соберите данные аналитики касательно обновлений свойств устройства из подробных журналов контейнеров в среде выполнения.
+- Чтобы просмотреть журналы диспетчера безопасности IoT Edge, используйте следующую команду:
 
-   ```cmd
-   iotedgectl setup --connection-string "{device connection string}" --runtime-log-level debug
-   ```
+    ```bash
+    sudo journalctl -u iotedge -f
+    ```
+
+- Чтобы просмотреть более подробные сведения журналов диспетчера безопасности IoT Edge, сделайте следующее.
+
+   - Измените параметры управляющей программы IoT Edge:
+
+      ```bash
+      sudo systemctl edit iotedge.service
+      ```
    
-* Просмотр подробных журналов для команд iotedgectl:
+   - Обновите следующие строки:
+    
+      ```
+      [Service]
+      Environment=IOTEDGE_LOG=edgelet=debug
+      ```
+    
+   - Перезапустите управляющую программу безопасности IoT Edge:
+    
+      ```bash
+      sudo systemctl cat iotedge.service
+      sudo systemctl daemon-reload
+      sudo systemctl restart iotedge
+      ```
 
-   ```cmd
-   iotedgectl --verbose DEBUG <command>
+Действия для ОС Windows.
+- Чтобы просмотреть состояние диспетчера безопасности IoT Edge, используйте следующую команду:
+
+   ```powershell
+   Get-Service iotedge
    ```
 
-* Если возникают проблемы с подключением, проверьте переменные среды устройства Edge, например строку подключения устройства:
+- Чтобы просмотреть журналы диспетчера безопасности IoT Edge, используйте следующую команду:
+
+   ```powershell
+   # Displays logs from today, newest at the bottom.
+ 
+   Get-WinEvent -ea SilentlyContinue `
+   -FilterHashtable @{ProviderName= "iotedged";
+     LogName = "application"; StartTime = [datetime]::Today} |
+   select TimeCreated, Message |
+   sort-object @{Expression="TimeCreated";Descending=$false}
+   ```
+
+### <a name="if-the-iot-edge-security-manager-is-not-running-verify-your-yaml-configuration-file"></a>Если диспетчер безопасности IoT Edge не запущен, проверьте YAML-файл конфигурации.
+
+> [!WARNING]
+> YAML-файлы не могут содержать отступы в виде табуляции. Вместо этого используйте двойные пробелы.
+
+В Linux
+
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
+   ```
+
+Действия для ОС Windows.
 
    ```cmd
-   docker exec edgeAgent printenv
+   notepad C:\ProgramData\iotedge\config.yaml
+   ```
+
+### <a name="check-container-logs-for-issues"></a>Проверка журналов контейнеров на наличие ошибок
+
+После запуска управляющей программы безопасности IoT Edge проверьте журналы контейнеров на наличие ошибок. Начните с развернутых контейнеров, а затем просмотрите контейнеры, которые составляют среду выполнения IoT Edge: агент и центр Edge. В журналах агента Edge обычно содержатся сведения о жизненном цикле каждого контейнера, а в журналах центра Edge — об обмене сообщениями и маршрутизации. 
+
+   ```cmd
+   iotedge logs <container name>
+   ```
+
+### <a name="view-the-messages-going-through-the-edge-hub"></a>Просмотр сообщений, отправляемых через концентратор Edge
+
+Просмотрите сообщения, отправляемые через концентратор Edge, и соберите сведения об обновлениях свойств устройства из подробных журналов контейнеров в средах выполнения edgeAgent и edgeHub. Чтобы включить ведение подробных журналов в этих контейнерах, задайте значение для переменной `RuntimeLogLevel` среды. 
+
+В Linux
+    
+   ```cmd
+   export RuntimeLogLevel="debug"
+   ```
+    
+Действия для ОС Windows.
+    
+   ```powershell
+   [Environment]::SetEnvironmentVariable("RuntimeLogLevel", "debug")
    ```
 
 Можно также проверить сообщения, отправленные между Центром Интернета вещей и устройствами IoT Edge. Просмотрите эти сообщения с помощью расширения [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) для Visual Studio Code. Дополнительные сведения см. в записи блога об [удобном средстве при разработке с помощью Центра Интернета вещей Azure](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/).
 
-После изучения журналов и сообщений можно попробовать перезапустить среду выполнения Azure IoT Edge:
+### <a name="restart-containers"></a>Перезапуск контейнеров
+После изучения журналов и сообщений можно попытаться перезапустить контейнеры:
+
+```
+iotedge restart <container name>
+```
+
+Перезапустите контейнеры среды выполнения IoT Edge:
+
+```
+iotedge restart edgeAgent && iotedge restart edgeHub
+```
+
+### <a name="restart-the-iot-edge-security-manager"></a>Перезапустите диспетчер безопасности IoT Edge:
+
+Если проблема не исчезла, попытайтесь перезапустить диспетчер безопасности IoT Edge.
+
+В Linux
 
    ```cmd
-   iotedgectl restart
+   sudo systemctl restart iotedge
+   ```
+
+Действия для ОС Windows.
+
+   ```powershell
+   Stop-Service iotedge -NoWait
+   sleep 5
+   Start-Service iotedge
    ```
 
 ## <a name="edge-agent-stops-after-about-a-minute"></a>Прекращение работы агента Edge в течение минуты
@@ -101,29 +199,11 @@ Error starting userland proxy: Bind for 0.0.0.0:443 failed: port is already allo
 У агента Edge нет разрешений на доступ к образу модуля. 
 
 ### <a name="resolution"></a>Способы устранения:
-Попробуйте снова выполнить команду `iotedgectl login`.
+Убедитесь, что в манифесте развертывания правильно указаны учетные данные реестра.
 
-## <a name="iotedgectl-cant-find-docker"></a>iotedgectl не удается найти Docker
+## <a name="iot-edge-security-daemon-fails-with-an-invalid-hostname"></a>Сбой управляющей программы безопасности IoT Edge с недопустимым именем узла
 
-Команды `iotedgectl setup` или `iotedgectl start` завершаются ошибкой и выводят в журналы следующее сообщение:
-```output
-File "/usr/local/lib/python2.7/dist-packages/edgectl/host/dockerclient.py", line 98, in get_os_type
-  info = self._client.info()
-File "/usr/local/lib/python2.7/dist-packages/docker/client.py", line 174, in info
-  return self.api.info(*args, **kwargs)
-File "/usr/local/lib/python2.7/dist-packages/docker/api/daemon.py", line 88, in info
-  return self._result(self._get(self._url("/info")), True)
-```
-
-### <a name="root-cause"></a>Первопричина
-iotedgectl не удается найти среду Docker, которая является необходимым компонентом.
-
-### <a name="resolution"></a>Способы устранения:
-Установите среду Docker, убедитесь, что она работает, и повторите попытку.
-
-## <a name="iotedgectl-setup-fails-with-an-invalid-hostname"></a>iotedgectl setup fails with an invalid hostname (Сбой установки iotedgectl с недопустимым именем узла).
-
-Команда `iotedgectl setup` завершается ошибкой и выводит следующее сообщение: 
+Команда `sudo journalctl -u iotedge` завершается ошибкой и выводит следующее сообщение: 
 
 ```output
 Error parsing user input data: invalid hostname. Hostname cannot be empty or greater than 64 characters
@@ -144,9 +224,17 @@ Error parsing user input data: invalid hostname. Hostname cannot be empty or gre
 4. Скопируйте новое DNS-имя, которое должно быть в формате **\<DNSnamelabel\>.\<vmlocation\>.cloudapp.azure.com**.
 5. В виртуальной машине используйте следующую команду для настройки среды выполнения IoT Edge с DNS-именем:
 
-   ```input
-   iotedgectl setup --connection-string "<connection string>" --nopass --edge-hostname "<DNS name>"
-   ```
+   - В Linux
+
+      ```bash
+      sudo nano /etc/iotedge/config.yaml
+      ```
+
+   - Действия для ОС Windows.
+
+      ```cmd
+      notepad C:\ProgramData\iotedge\config.yaml
+      ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iot-edge/issues), чтобы мы как можно скорее устранили неисправность. 
+Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iotedge/issues), чтобы мы как можно скорее устранили неисправность. 

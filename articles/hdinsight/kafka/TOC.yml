@@ -61,8 +61,6 @@
           maintainContext: true
         - name: Использование Kafka со Службой контейнеров Azure
           href: apache-kafka-azure-container-services.md
-        - name: Kafka и Функции Azure
-          href: apache-kafka-azure-functions.md
     - name: Разработка
       items:
         - name: Использование пустых граничных узлов
@@ -223,13 +221,10 @@
         - name: Подключение HDInsight к локальной сети
           href: ../connect-on-premises-network.md
           maintainContext: true
-    - name: Мониторинг с помощью OMS
+    - name: Мониторинг с помощью Log Analytics
       items:
         - name: Использование Azure Log Analytics
           href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
-          maintainContext: true
-        - name: Панели мониторинга для кластеров
-          href: ../hdinsight-hadoop-oms-log-analytics-management-solutions.md
           maintainContext: true
         - name: Использование запросов в Log Analytics
           href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md

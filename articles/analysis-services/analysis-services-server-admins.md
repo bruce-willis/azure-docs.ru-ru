@@ -3,19 +3,23 @@ title: Управление администраторами серверов в
 description: Узнайте, как управлять администраторами серверов служб Analysis Services в Azure.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 06/20/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: def09f2853f761f3fefca80f341e6cc0557bac86
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: ec1630f4de70f77c13e335c68aff16180e524c12
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36307814"
 ---
 # <a name="manage-server-administrators"></a>Управление администраторами серверов
-Администраторами сервера должны быть допустимые пользователи или группы в Azure Active Directory (Azure AD) для клиента, в котором размещен сервер. Для управления администраторами сервера можно использовать элемент **Администраторы служб Analysis Services** для сервера на портале Azure или свойств сервера в SSMS. 
+Администраторами сервера должны быть допустимые пользователи или группы безопасности в Azure Active Directory (Azure AD) для клиента, в котором размещен сервер. Для управления администраторами сервера можно использовать элемент **Администраторы служб Analysis Services** для сервера на портале Azure или свойств сервера в SSMS. 
+
+> [!NOTE]
+> У групп безопасности свойство `MailEnabled` должно иметь значение `True`.
 
 ## <a name="to-add-server-administrators-by-using-azure-portal"></a>Добавление администраторов на портале Azure
 1. На портале выберите для сервера **Администраторы служб Analysis Services**.

@@ -2,22 +2,23 @@
 title: Руководство по Kubernetes в Azure. Подготовка приложения
 description: Руководство по AKS. Подготовка приложения
 services: container-service
-author: neilpeterson
-manager: timlt
+author: iainfoulds
+manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/22/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 87f407aba40d4896ed8fb61b5528ed624afb80cb
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 3e500ec0c7acbf8d8e10756c944516cd7e589610
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37101116"
 ---
 # <a name="tutorial-prepare-application-for-azure-kubernetes-service-aks"></a>Руководство. Подготовка приложения для службы Azure Kubernetes
 
-В этом руководстве (часть один из восьми) выполняется подготовка многоконтейнерного приложения к использованию в Kubernetes. В частности, рассматриваются такие шаги:
+В этом руководстве (часть 1 из 7) выполняется подготовка многоконтейнерного приложения к использованию в Kubernetes. В частности, рассматриваются такие шаги:
 
 > [!div class="checklist"]
 > * Клонирование источника приложения из GitHub.

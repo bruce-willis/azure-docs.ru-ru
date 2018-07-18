@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: alleonar
-ms.openlocfilehash: 5f3b8a7b9c7bf582ebc2fac2be8ff55134fbc6f2
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: f1a1a2fa083dd1bf02132e08981d736a17a2c58f
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109490"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -82,8 +83,9 @@ ms.lasthandoff: 05/10/2018
       -   информация о продлении - > например, 90 дней до истечения срока действия.  
 
   - Процесс создания сертификата обычно асинхронный и включает опрос состояния операции создания сертификата в вашем хранилище ключей.  
-[Получение операции с сертификатом](https://docs.microsoft.com/en-us/rest/api/keyvault/getcertificateoperation) — Состояние: выполнено, сбой с информацией об ошибке или отменено.  
-            — Из-за задержки создания может инициироваться операция отмены. Отмена может подействовать или нет.  
+[Получение операции с сертификатом](https://docs.microsoft.com/en-us/rest/api/keyvault/getcertificateoperation)  
+      -   Состояние: выполнено, сбой с информацией об ошибке или отменено.  
+      -   Из-за задержки создания может инициироваться операция отмены. Отмена может подействовать или нет.  
 
 ## <a name="import-a-certificate"></a>Импорт сертификата  
  Альтернативный вариант: сертификат можно импортировать в Key Vault в виде файла формата PFX или PEM.  
@@ -119,5 +121,5 @@ ms.lasthandoff: 05/10/2018
   (5) — Приложение завершает создание сертификата путем слияния сертификата X509 из ЦС.
 
 ## <a name="see-also"></a>См. также
-- [Операции с сертификатами](/rest/api/keyvault/certificate-operations.md)
+- [Операции с сертификатами](/rest/api/keyvault/certificate-operations)
 - [Сведения о ключах, секретах и сертификатах](about-keys-secrets-and-certificates.md)

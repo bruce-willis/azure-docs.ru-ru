@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/05/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fe7b419a2f4bbc3ae4aa69dad1e3b3e0957cc848
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: ec3c87c39cd8b8d1dafa8ad062776171c602135b
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37047066"
 ---
 # <a name="copy-data-to-or-from-azure-blob-storage-using-azure-data-factory"></a>Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-azure-blob-connector.md)
-> * [Версия 2 — предварительная](../connector-azure-blob-storage.md)
+> * [Версия 1](data-factory-azure-blob-connector.md)
+> * [Версия 2 (текущая)](../connector-azure-blob-storage.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Копирование данных из хранилища BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../connector-azure-blob-storage.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию службы "Фабрика данных", см. руководство по [использованию соединителя хранилища BLOB-объектов Azure с помощью службы "Фабрика данных Azure" версии 2](../connector-azure-blob-storage.md).
 
 
 В этой статье объясняется, как с помощью действия копирования в фабрике данных Azure копировать данные в хранилище BLOB-объектов Azure и обратно. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
@@ -194,7 +195,7 @@ ms.lasthandoff: 03/23/2018
 3. После создания вы увидите колонку **Фабрика данных**, как показано на рисунке ниже: ![Домашняя страница фабрики данных](./media/data-factory-azure-blob-connector/data-factory-home-page.png)
 
 ### <a name="copy-wizard"></a>Мастер копирования
-1. Чтобы запустить **мастер копирования данных** в отдельной вкладке, на домашней странице фабрики данных щелкните **Copy data [preview]** (Копирование данных [предварительная версия]).    
+1. Чтобы запустить **мастер копирования данных** на отдельной вкладке, на домашней странице службы "Фабрика данных" щелкните **Копирование данных**.    
     
     > [!NOTE]
     >    Если веб-браузер завис на действии "Авторизация...", отключите параметр или снимите флажок **Block third party cookies and site data** (Блокировать сторонние файлы cookie и данные сайта). Либо оставьте флажок и создайте исключение для адреса **login.microsoftonline.com**, а затем попробуйте запустить мастер еще раз.

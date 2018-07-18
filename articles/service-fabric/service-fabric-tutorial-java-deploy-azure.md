@@ -1,5 +1,5 @@
 ---
-title: Развертывание приложения Java Service Fabric в кластере Azure | Документация Майкрософт
+title: Развертывание приложения Java в кластере Service Fabric в Azure | Документы Майкрософт
 description: В этом руководстве вы узнаете, как развертывать приложение Java Service Fabric в кластере Azure Service Fabric.
 services: service-fabric
 documentationcenter: java
@@ -15,39 +15,44 @@ ms.workload: NA
 ms.date: 02/26/2018
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: 92445ffa7954d42ec1a864264fbfc7555986ad58
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: afa9aa4ef4d3d8d8a6816d194b69271fdf0d928a
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109680"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Руководство по развертыванию приложения Java в кластере Service Fabric в Azure
+
 Это руководство является третьей частью цикла. В нем показано, как развернуть приложение Service Fabric в кластере в Azure.
 
 В третьей части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Создание защищенного кластера Linux в Azure. 
+> * Создание защищенного кластера Linux в Azure.
 > * Развертывание приложения в кластере
 
-Из этого цикла руководств вы узнаете, как выполнять такие задачи:
+Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
+
 > [!div class="checklist"]
-> *  [Развертывание приложения Java служб Service Fabric Reliable Services в Azure.](service-fabric-tutorial-create-java-app.md)
+> * [Развертывание приложения Java служб Service Fabric Reliable Services в Azure.](service-fabric-tutorial-create-java-app.md)
 > * [Развертывание и отладка приложения в локальном кластере.](service-fabric-tutorial-debug-log-local-cluster.md)
-> * Развертывание приложения в кластере Azure.
+> * Развертывание приложения в кластере Azure
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-java-elk.md)
 > * [Настройка процесса непрерывной интеграции и доставки](service-fabric-tutorial-java-jenkins.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Перед началом работы с этим руководством выполните следующие действия:
-- Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
-- Установите пакет SDK для Service Fabric для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md).
-- [Установите Python 3](https://wiki.python.org/moin/BeginnersGuide/Download).
+
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+* Установите пакет SDK для Service Fabric для [Mac](service-fabric-get-started-mac.md) или [Linux](service-fabric-get-started-linux.md).
+* [Установите Python 3](https://wiki.python.org/moin/BeginnersGuide/Download).
 
 ## <a name="create-a-service-fabric-cluster-in-azure"></a>Создание кластера Service Fabric в Azure
 
-При выполнении следующих шагов создаются ресурсы, необходимые для развертывания вашего приложения в кластере Service Fabric. Кроме того, устанавливаются ресурсы, необходимые для мониторинга работоспособности вашего решения с использованием стека ELK (Elasticsearch, Logstash, Kibana). В частности, [концентраторы событий](https://azure.microsoft.com/services/event-hubs/) используются в качестве приемника для журналов из Service Fabric. Он настраивается для отправки журналов из кластера Service Fabric в ваш экземпляр Logstash. 
+При выполнении следующих шагов создаются ресурсы, необходимые для развертывания вашего приложения в кластере Service Fabric. Кроме того, устанавливаются ресурсы, необходимые для мониторинга работоспособности вашего решения с использованием стека ELK (Elasticsearch, Logstash, Kibana). В частности, [концентраторы событий](https://azure.microsoft.com/services/event-hubs/) используются в качестве приемника для журналов из Service Fabric. Он настраивается для отправки журналов из кластера Service Fabric в ваш экземпляр Logstash.
 
 1. Откройте терминал и загрузите следующий пакет, содержащий необходимые вспомогательные скрипты и шаблоны для создания ресурсов в Azure.
 
@@ -55,23 +60,23 @@ ms.lasthandoff: 03/23/2018
     git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
     ```
 
-2. Вход в учетную запись Azure 
+2. Вход в учетную запись Azure
 
     ```bash
     az login
     ```
 
-3. Установите подписку Azure, которую вы хотите использовать для создания ресурсов. 
+3. Установите подписку Azure, которую вы хотите использовать для создания ресурсов.
 
     ```bash
     az account set --subscription [SUBSCRIPTION-ID]
-    ``` 
+    ```
 
-4. В папке *service-fabric-java-quickstart/AzureCluster* запустите следующую команду для создания сертификата кластера в хранилище ключей. Этот сертификат используется для защиты кластера Service Fabric. Укажите регион (должен быть таким же, как кластер Service Fabric), имя группы ресурсов хранилища ключей, имя хранилища ключей, пароль сертификата и DNS-имя кластера. 
+4. В папке *service-fabric-java-quickstart/AzureCluster* запустите следующую команду для создания сертификата кластера в хранилище ключей. Этот сертификат используется для защиты кластера Service Fabric. Укажите регион (должен быть таким же, как кластер Service Fabric), имя группы ресурсов хранилища ключей, имя хранилища ключей, пароль сертификата и DNS-имя кластера.
 
     ```bash
     ./new-service-fabric-cluster-certificate.sh [REGION] [KEY-VAULT-RESOURCE-GROUP] [KEY-VAULT-NAME] [CERTIFICATE-PASSWORD] [CLUSTER-DNS-NAME-FOR-CERTIFICATE]
-    
+
     Example: ./new-service-fabric-cluster-certificate.sh 'westus' 'testkeyvaultrg' 'testkeyvault' '<password>' 'testservicefabric.westus.cloudapp.azure.com'
     ```
 
@@ -83,11 +88,11 @@ ms.lasthandoff: 03/23/2018
     Certificate Thumbprint: <THUMBPRINT>
     ```
 
-5. Создайте группу ресурсов для учетной записи хранения, в которой хранятся ваши журналы. 
+5. Создайте группу ресурсов для учетной записи хранения, в которой хранятся ваши журналы.
 
     ```bash
     az group create --location [REGION] --name [RESOURCE-GROUP-NAME]
-    
+
     Example: az group create --location westus --name teststorageaccountrg
     ```
 
@@ -95,11 +100,11 @@ ms.lasthandoff: 03/23/2018
 
     ```bash
     az storage account create -g [RESOURCE-GROUP-NAME] -l [REGION] --name [STORAGE-ACCOUNT-NAME] --kind Storage
-    
+
     Example: az storage account create -g teststorageaccountrg -l westus --name teststorageaccount --kind Storage
     ```
 
-7. Войдите на портал [Azure](https://portal.azure.com) и перейдите на вкладку **Подписанный URL-адрес** своей учетной записи хранения. Создайте маркер SAS следующим образом. 
+7. Войдите на портал [Azure](https://portal.azure.com) и перейдите на вкладку **Подписанный URL-адрес** своей учетной записи хранения. Создайте маркер SAS следующим образом.
 
     ![Создайте SAS для хранилища.](./media/service-fabric-tutorial-java-deploy-azure/storagesas.png)
 
@@ -113,16 +118,16 @@ ms.lasthandoff: 03/23/2018
 
     ```bash
     az group create --location [REGION] --name [RESOURCE-GROUP-NAME]
-    
+
     Example: az group create --location westus --name testeventhubsrg
     ```
 
-10. Создайте ресурс концентраторов событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule. 
+10. Создайте ресурс концентраторов событий, используя следующую команду. Следуя инструкциям, введите данные namespaceName, eventHubName, customerGroupName, sendAuthorizationRule и receiveAuthorizationRule.
 
     ```bash
     az group deployment create -g [RESOURCE-GROUP-NAME] --template-file eventhubsdeploy.json
-    
-    Example: 
+
+    Example:
     az group deployment create -g testeventhubsrg --template-file eventhubsdeploy.json
     Please provide string value for 'namespaceName' (? for help): testeventhubnamespace
     Please provide string value for 'eventHubName' (? for help): testeventhub
@@ -131,8 +136,8 @@ ms.lasthandoff: 03/23/2018
     Please provide string value for 'receiveAuthorizationRuleName' (? for help): receiver
     ```
 
-    Скопируйте содержимое поля **выходных данных** в выходных данных JSON предыдущей команды. Сведения об отправителе используются при создании кластера Service Fabric. Имя получателя и ключ следует сохранить для использования в следующем руководстве, если служба Logstash настроена для получения сообщений от концентратора событий. Следующий большой двоичный объект является примером выходных данных JSON:     
-    
+    Скопируйте содержимое поля **выходных данных** в выходных данных JSON предыдущей команды. Сведения об отправителе используются при создании кластера Service Fabric. Имя получателя и ключ следует сохранить для использования в следующем руководстве, если служба Logstash настроена для получения сообщений от концентратора событий. Следующий большой двоичный объект является примером выходных данных JSON:
+
     ```json
     "outputs": {
         "receiver Key": {
@@ -168,9 +173,9 @@ ms.lasthandoff: 03/23/2018
 
     URL-адрес SAS концентраторов событий имеет следующую структуру: https://<namespacename>.servicebus.windows.net/<eventhubsname>?sr=<sastoken>. Например, https://testeventhubnamespace.servicebus.windows.net/testeventhub?sr=https%3A%2F%testeventhub.servicebus.windows.net%testeventhub&sig=7AlFYnbvEm%2Bat8ALi54JqHU4i6imoFxkjKHS0zI8z8I%3D&se=1517354876&skn=sender
 
-12. Откройте файл *sfdeploy.parameters.json* и замените следующее содержимое из предыдущих шагов. 
+12. Откройте файл *sfdeploy.parameters.json* и замените следующее содержимое из предыдущих шагов.
 
-    ```
+    ```json
     "applicationDiagnosticsStorageAccountName": {
         "value": "teststorageaccount"
     },
@@ -190,7 +195,7 @@ ms.lasthandoff: 03/23/2018
 
 ## <a name="deploy-your-application-to-the-cluster"></a>Развертывание приложения в кластере
 
-1. Перед развертыванием приложения необходимо добавить следующий фрагмент кода в файл *Voting/VotingApplication/ApplicationManifest.xml*. Поле **X509FindValue** — это отпечаток, полученный на шаге 4 раздела **Создание кластера Service Fabric в Azure**. Этот фрагмент кода вложен в поле **ApplicationManifest** (корневое поле). 
+1. Перед развертыванием приложения необходимо добавить следующий фрагмент кода в файл *Voting/VotingApplication/ApplicationManifest.xml*. Поле **X509FindValue** — это отпечаток, полученный на шаге 4 раздела **Создание кластера Service Fabric в Azure**. Этот фрагмент кода вложен в поле **ApplicationManifest** (корневое поле).
 
     ```xml
     <Certificates>
@@ -198,7 +203,7 @@ ms.lasthandoff: 03/23/2018
     </Certificates>
     ```
 
-2. Чтобы развернуть приложение в этом кластере, вы должны использовать SFCTL, чтобы установить соединение с кластером. Для SFCTL требуется PEM-файл с открытым и закрытым ключами для подключения к кластеру. Выполните следующую команду, чтобы создать PEM-файл с открытым и закрытым ключами. 
+2. Чтобы развернуть приложение в этом кластере, вы должны использовать SFCTL, чтобы установить соединение с кластером. SFCTL требуется PEM-файл с открытым и закрытым ключом для подключения к кластеру. Выполните приведенную ниже команду, чтобы создать PEM-файл с открытым и закрытым ключом. 
 
     ```bash
     openssl pkcs12 -in testservicefabric.westus.cloudapp.azure.com.pfx -out sfctlconnection.pem -nodes -passin pass:<password>
@@ -210,32 +215,33 @@ ms.lasthandoff: 03/23/2018
     sfctl cluster select --endpoint https://testlinuxcluster.westus.cloudapp.azure.com:19080 --pem sfctlconnection.pem --no-verify
     ```
 
-4. Чтобы развернуть приложение, перейдите в папку *Voting/Scripts* и запустите скрипт **install.sh**. 
+4. Чтобы развернуть приложение, перейдите в папку *Voting/Scripts* и запустите скрипт **install.sh**.
 
     ```bash
     ./install.sh
     ```
 
-5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите https://testlinuxcluster.westus.cloudapp.azure.com:19080. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере. 
+5. Для доступа к Service Fabric Explorer откройте любой веб-браузер и введите https://testlinuxcluster.westus.cloudapp.azure.com:19080. Выберите сертификат из хранилища сертификатов, который вы хотите использовать для подключения к этой конечной точке. Если вы используете компьютер Linux, сертификаты, созданные скриптом *new-service-fabric-cluster-certificate.sh*, нужно импортировать в Chrome для просмотра Service Fabric Explorer. Если вы используете компьютер Mac, необходимо установить PFX-файл в цепочку ключей. Обратите внимание, что приложение установлено в кластере.
 
     ![SFX Java Azure](./media/service-fabric-tutorial-java-deploy-azure/sfxjavaonazure.png)
 
-6. Чтобы получить доступ к приложению, введите https://testlinuxcluster.westus.cloudapp.azure.com:8080 
+6. Чтобы получить доступ к приложению, введите https://testlinuxcluster.westus.cloudapp.azure.com:8080
 
     ![Приложение для голосования Java Azure](./media/service-fabric-tutorial-java-deploy-azure/votingappjavaazure.png)
 
-7. Чтобы удалить приложение из кластера, запустите скрипт *uninstall.sh* в папке **Scripts**. 
+7. Чтобы удалить приложение из кластера, запустите скрипт *uninstall.sh* в папке **Scripts**.
 
     ```bash
     ./uninstall.sh
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
+
 Из этого руководства вы узнали, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * Создание защищенного кластера Linux в Azure. 
-> * Создание ресурсов, необходимых для мониторинга с помощью ELK. 
+> * Создание защищенного кластера Linux в Azure.
+> * Создание ресурсов, необходимых для мониторинга с помощью ELK.
 > * Необязательно: способ использования сторонних кластеров для тестирования Service Fabric.
 
 Перейдите к следующему руководству:

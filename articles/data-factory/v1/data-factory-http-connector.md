@@ -9,23 +9,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/10/2018
+ms.topic: conceptual
+ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 9820ed9b4c0abbb79c6f92e62f294fb7fbd4c87e
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 29281843dc1b375182eb3dafe95ad86c89217671
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37052279"
 ---
 # <a name="move-data-from-an-http-source-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-http-connector.md)
-> * [Версия 2 — предварительная](../connector-http.md)
+> * [Версия 1](data-factory-http-connector.md)
+> * [Версия 2 (текущая)](../connector-http.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from HTTP endpoint using Azure Data Factory](../connector-http.md) (Копирование данных из конечной точки HTTP с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе HTTP в службе "Фабрика данных Azure" версии 2](../connector-http.md).
 
 
 В этой статье описано, как с помощью действия копирования в фабрике данных Azure переместить данные из локальной или облачной конечной точки HTTP в поддерживаемый приемник данных. В этой статье в продолжение темы о [действиях перемещения данных](data-factory-data-movement-activities.md) приведены общие сведения о перемещении данных с помощью действия копирования, а также список поддерживаемых хранилищ данных, используемых в качестве источников и приемников.
@@ -52,7 +53,7 @@ ms.lasthandoff: 03/23/2018
 | Тип | Задайте для этого свойства значение `Http`. | Yes |
 | URL-адрес | Базовый URL-адрес веб-сервера. | Yes |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения: **Anonymous**, **Basic**, **Digest**, **Windows** и **ClientCertificate**. <br><br> В разделах ниже описываются дополнительные свойства и приведены примеры JSON для поддерживаемых типов проверки подлинности. | Yes |
-| enableServerCertificateValidation | Укажите, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. | Нет. Значение по умолчанию — true. |
+| enableServerCertificateValidation | Укажите, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверяющий сертификат, установите значение false. | Нет. Значение по умолчанию — true. |
 | gatewayName | Имя шлюза управления данными для подключения к локальному источнику HTTP. | Да, если копирование выполняется из локального источника HTTP. |
 | encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. При настройке сведений для проверки подлинности в мастере копирования или всплывающем диалоговом окне ClickOnce создаются автоматически. | Нет. Применимо, только когда копирование данных выполняется с локального HTTP-сервера. |
 
@@ -156,7 +157,7 @@ ms.lasthandoff: 03/23/2018
 | requestMethod | Метод HTTP. Допустимые значения: **GET** или **POST**. | Нет. Значение по умолчанию — `GET`. |
 | additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет  |
 | requestBody | Текст HTTP-запроса. | Нет  |
-| свойства | Если вы хотите просто **извлечь данные из конечной точки HTTP "как есть"** — без анализа, пропустите параметры форматирования. <br><br> Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
+| свойства | Если вы хотите просто **извлечь данные из конечной точки HTTP "как есть"**  — без анализа, пропустите параметры форматирования. <br><br> Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 
 ### <a name="example-using-the-get-default-method"></a>Пример: использование метода GET (по умолчанию)

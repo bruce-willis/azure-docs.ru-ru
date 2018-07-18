@@ -10,18 +10,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 5/15/2018
+ms.date: 06/22/2018
 ms.author: rithorn
-ms.openlocfilehash: 822a2df113b848f07e616f155881f345028cee1d
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0a13627232904f4b14cdb5cbf5c3ca927d9ea167
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36754410"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления 
 Группы управления — это контейнеры, которые помогают управлять доступом, политикой и соответствием требованиям в нескольких подписках. Вы можете создавать и удалять такие контейнеры и управлять ими, чтобы создать иерархии, которые можно использовать с [политикой Azure](../azure-policy/azure-policy-introduction.md) и [элементами управления доступом на основе ролей Azure](../role-based-access-control/overview.md). Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](management-groups-overview.md).
 
-Функция групп управления предоставляется в общедоступной предварительной версии. Чтобы начать использование групп управления, войдите на [портал Azure](https://portal.azure.com) или воспользуйтесь [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups/0.0.1-preview), [Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az_extension_list_available) либо [API-интерфейсом REST](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview) для управления группами управления.
+Функция групп управления предоставляется в общедоступной предварительной версии. Чтобы начать использование групп управления, войдите на [портал Azure](https://portal.azure.com) или воспользуйтесь [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups/0.0.1-preview), [Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az_extension_list_available) либо [REST API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview) для управления группами управления.
 
 Чтобы внести изменения в группу управления, необходимо иметь роль владельца или участника в этой группе. Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 
@@ -55,8 +56,8 @@ C:\> Update-AzureRmManagementGroup -GroupName ContosoIt -DisplayName "Contoso Gr
 
 Для Azure CLI используется команда обновления. 
 
-```azure-cli
-C:\> az account management-group update --group-name Contoso --display-name "Contoso Group" 
+```azurecli-interactive
+az account management-group update --name Contoso --display-name "Contoso Group" 
 ```
 
 ---
@@ -77,7 +78,7 @@ C:\> az account management-group update --group-name Contoso --display-name "Con
     ![Удаление группы](media/management-groups/delete.png)
 4. Нажмите кнопку **Удалить**. 
     - Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину. 
-5. Откроется окно, в котором необходимо подтвердить удаление группы управления. 
+5. Откроется окно, в котором нужно подтвердить удаление группы управления. 
 
     ![Удаление группы](media/management-groups/delete_confirm.png) 
 6. Выберите **Да**. 
@@ -94,8 +95,8 @@ Remove-AzureRmManagementGroup -GroupName Contoso
 ### <a name="delete-in-azure-cli"></a>Удаление в Azure CLI
 В Azure CLI используется команда az account management-group delete. 
 
-```azure-cli
-C:\> az account management-group delete --group-name Contoso
+```azurecli-interactive
+az account management-group delete --name Contoso
 ```
 ---
 
@@ -105,7 +106,7 @@ C:\> az account management-group delete --group-name Contoso
 ### <a name="view-in-the-portal"></a>Просмотр на портале
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Выберите **Все службы** > **Группы управления**. 
-3. Загрузится страница иерархии группы управления, на которой вы сможете изучить все группы управления и подписки, к которым у вас есть доступ. При выборе имени группы открывается нижний уровень в иерархии. Навигация работает так же, как и в обозревателе файлов. 
+3. Загружается страница иерархии групп управления, где можно изучить все группы управления и подписки, к которым у вас есть доступ. При выборе имени группы открывается нижний уровень в иерархии. Навигация работает так же, как и в обозревателе файлов. 
     ![Основная страница](media/management-groups/main.png)
 4. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.  
 
@@ -124,13 +125,13 @@ Get-AzureRmManagementGroup -GroupName Contoso
 ### <a name="view-in-azure-cli"></a>Просмотр в Azure CLI
 Для извлечения всех групп используется команда вывода списка.  
 
-```azure-cli
+```azurecli-interactive
 az account management-group list
 ```
 Для получения сведений об одной группе управления используется команда отображения.
 
-```azurepowershell-interactive
-az account management-group show --group-name Contoso
+```azurecli-interactive
+az account management-group show --name Contoso
 ```
 ---
 
@@ -150,7 +151,7 @@ az account management-group show --group-name Contoso
 2. Выберите **Все службы** > **Группы управления**. 
 3. Выберите группу управления, которую вы планируете сделать родительской.      
 5. В верхней части страницы выберите пункт **Добавить существующий**. 
-6. В открывшемся меню выберите **тип ресурса** элемента, который вы пытаетесь переместить. В этом примере это значение **Подписка**.
+6. В открывшемся меню выберите **Тип ресурса** для элемента, который вы пытаетесь переместить. В этом примере это значение **Подписка**.
 7. Выберите подписку в списке с правильным идентификатором. 
 
     ![Дочерние элементы](media/management-groups/add_context_2.png)
@@ -185,14 +186,14 @@ Remove-AzureRmManagementGroupSubscription -GroupName Contoso -SubscriptionId 123
 ### <a name="move-subscriptions-in-azure-cli"></a>Перемещение подписок в Azure CLI
 Чтобы переместить подписку в CLI, используйте команду добавления. 
 
-```azure-cli
-C:\> az account management-group add --group-name Contoso --subscription 12345678-1234-1234-1234-123456789012
+```azurecli-interactive
+az account management-group subscription add --name Contoso --subscription 12345678-1234-1234-1234-123456789012
 ```
 
 Чтобы удалить подписку из группы управления, используйте команду удаления.  
 
-```azure-cli
-C:\> az account management-group remove --group-name Contoso --subscription 12345678-1234-1234-1234-123456789012
+```azurecli-interactive
+az account management-group subscription remove --name Contoso --subscription 12345678-1234-1234-1234-123456789012
 ```
 
 ---
@@ -206,7 +207,7 @@ C:\> az account management-group remove --group-name Contoso --subscription 1234
 2. Выберите **Все службы** > **Группы управления**. 
 3. Выберите группу управления, которую вы планируете сделать родительской.      
 5. В верхней части страницы выберите пункт **Добавить существующий**.
-6. В открывшемся меню выберите **тип ресурса** элемента, который вы пытаетесь переместить. В этом примере это значение **Группа управления**.
+6. В открывшемся меню выберите **Тип ресурса** для элемента, который вы пытаетесь переместить. В этом примере это значение **Группа управления**.
 7. Выберите группу управления с правильным идентификатором и именем.
 
     ![Перемещение](media/management-groups/add_context.png)
@@ -216,13 +217,13 @@ C:\> az account management-group remove --group-name Contoso --subscription 1234
 Чтобы переместить группу управления в другой группе, используйте команду Update-AzureRmManagementGroup в PowerShell.  
 
 ```powershell
-C:\> Update-AzureRmManagementGroup -GroupName Contoso  -ParentName ContosoIT
+Update-AzureRmManagementGroup -GroupName Contoso  -ParentName ContosoIT
 ```  
 ### <a name="move-management-groups-in-azure-cli"></a>Перемещение групп управления в Azure CLI
 Чтобы переместить группу управления с помощью Azure CLI, используйте команду обновления. 
 
-```azure-cli
-C:/> az account management-group udpate --group-name Contoso --parent-id "Contoso Tenant" 
+```azurecli-interactive
+az account management-group update --name Contoso --parent "Contoso Tenant" 
 ``` 
 
 ---

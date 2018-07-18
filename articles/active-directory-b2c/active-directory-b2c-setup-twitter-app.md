@@ -1,21 +1,21 @@
 ---
-title: Конфигурация Twitter для Azure AD B2C | Документация Майкрософт
+title: Настройка Twitter для Azure Active Directory B2C | Документация Майкрософт
 description: Обеспечение регистрации и входа для пользователей с учетными записями Twitter в приложениях, защищенных с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 4/17/2018
 ms.author: davidmu
-ms.openlocfilehash: 40e4c5549414765dabc6f37c5ffb5aea519ae673
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: 68b9e9edbacda08bc98b6b7af5d944d3df9edca1
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34709586"
 ---
 # <a name="provide-sign-up-and-sign-in-to-consumers-with-twitter-accounts-using-azure-ad-b2c"></a>Обеспечение регистрации и входа для пользователей с учетными записями Twitter с помощью Azure AD B2C
 
@@ -27,8 +27,10 @@ ms.lasthandoff: 04/18/2018
 3. В форме укажите значения для полей **Name** (Имя), **Description** (Описание) и **Website** (Веб-сайт).
 4. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp`. Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com).
 5. Установите флажок, чтобы принять **соглашение с разработчиком** и нажмите кнопку **Create your Twitter application** (Создать приложение Twitter).
-6. После создания приложения щелкните **Keys and Access Tokens** (Ключи и маркеры доступа).
-7. Скопируйте значения **Consumer Key** (Ключ потребителя) и **Consumer Secret** (Секрет потребителя). Оба значения необходимы для настройки Twitter в качестве поставщика удостоверений в вашем клиенте.
+6. После создания приложения выберите его в списке, а затем выберите вкладку **Параметры**.
+7. Снимите флажок **Enable Callback Locking** (Включить блокировку обратного вызова), а затем нажмите **Обновить настройки**.
+8. Откройте вкладку **Ключи и токены доступа** .
+9. Скопируйте значения **Consumer Key** (Ключ потребителя) и **Consumer Secret** (Секрет потребителя). Оба значения необходимы для настройки Twitter в качестве поставщика удостоверений в вашем клиенте.
 
 ## <a name="configure-twitter-as-an-identity-provider-in-your-tenant"></a>Настройка Twitter в качестве поставщика удостоверений в клиенте
 1. Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C. 

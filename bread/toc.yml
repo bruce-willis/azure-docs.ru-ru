@@ -40,7 +40,7 @@
         - name: Azure PowerShell
           tocHref: /azure/api-management/scripts/
           topicHref: /azure/api-management/powershell-samples/
-    - name: Служба приложений Azure
+    - name: Служба приложений
       tocHref: /azure/app-service/
       topicHref: /azure/app-service/
       items:
@@ -89,6 +89,9 @@
     - name: Azure China 21Vianet
       tocHref: /azure/china/
       topicHref: /azure/china/
+    - name: Azure NetApp Files
+      tocHref: /azure/azure-netapp-files/
+      topicHref: /azure/azure-netapp-files/
     - name: Портал Azure
       tocHref: /azure/azure-portal/
       topicHref: /azure/azure-portal/
@@ -271,7 +274,7 @@
     - name: Data Lake Analytics
       tocHref: /azure/data-lake-analytics/
       topicHref: /azure/data-lake-analytics/
-    - name: Data Lake Store
+    - name: Data Lake Storage Gen1
       tocHref: /azure/data-lake-store/
       topicHref: /azure/data-lake-store/
     - name: DevTest Lab
@@ -289,6 +292,9 @@
     - name: ExpressRoute
       tocHref: /azure/expressroute/
       topicHref: /azure/expressroute/
+    - name: Брандмауэр
+      tocHref: /azure/firewall/
+      topicHref: /azure/firewall/
     - name: Руководство
       tocHref: /azure/guidance/
       topicHref: /azure/guidance/
@@ -311,7 +317,7 @@
         - name: Корпоративная безопасность
           tocHref: /azure/hdinsight/domain-joined
           topicHref: /azure/hdinsight/domain-joined/apache-domain-joined-introduction
-        - name: R Server
+        - name: Службы машинного обучения
           tocHref: /azure/hdinsight/r-server
           topicHref: /azure/hdinsight/r-server-overview
         - name: Spark
@@ -460,7 +466,7 @@
     - name: Коллекции рабочих областей Power BI
       tocHref: /azure/power-bi-workspace-collections/
       topicHref: /azure/power-bi-workspace-collections/
-    - name: Кэш Redis
+    - name: кэш Redis;
       tocHref: /azure/redis-cache/
       topicHref: /azure/redis-cache/
     - name: Удаленное приложение RemoteApp
@@ -469,6 +475,9 @@
     - name: Устойчивость
       tocHref: /azure/resiliency/
       topicHref: /azure/resiliency/
+    - name: Контроль доступа на основе ролей
+      tocHref: /azure/role-based-access-control/
+      topicHref: /azure/role-based-access-control/
     - name: Работоспособность службы
       tocHref: /azure/service-health/
       topicHref: /azure/service-health/
@@ -515,6 +524,9 @@
         - name: BLOB-объекты
           tocHref: /azure/storage/blobs/
           topicHref: /azure/storage/blobs/storage-blobs-introduction
+        - name: Data Lake Storage Gen2
+          tocHref: /azure/storage/data-lake-storage-gen2/
+          topicHref: /azure/storage/data-lake-storage/introduction
         - name: Файлы
           tocHref: /azure/storage/files/
           topicHref: /azure/storage/files/storage-files-introduction

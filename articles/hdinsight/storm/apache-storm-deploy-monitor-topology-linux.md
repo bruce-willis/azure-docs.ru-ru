@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: larryfr
-ms.openlocfilehash: 9dd63e1f3ec381dd99495ebc6193198611c76c88
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 53433e6a677a2576a11209075f397bb5f246b875
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129291"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-hdinsight"></a>Развертывание топологий Apache Storm в HDInsight и управление ими
 
@@ -39,9 +40,9 @@ ms.lasthandoff: 04/16/2018
 
     Одна из следующих версий Visual Studio:
 
-  * Visual Studio 2012 с [обновлением 4](http://www.microsoft.com/download/details.aspx?id=39305)
+  * Visual Studio 2012 с обновлением 4;
 
-  * Visual Studio 2013 с [обновлением 4](http://www.microsoft.com/download/details.aspx?id=44921) или [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284)
+  * Visual Studio 2013 с обновлением 4 или [Visual Studio 2013 Community](http://go.microsoft.com/fwlink/?LinkId=517284);
   * [Visual Studio 2015](https://www.visualstudio.com/downloads/)
 
   * Visual Studio 2015 (любой выпуск);
@@ -211,7 +212,7 @@ ms.lasthandoff: 04/16/2018
 
 Пользовательский интерфейс Storm построен на базе REST API, поэтому функциональность отслеживания и управления можно реализовать аналогичным образом с помощью API. С помощью REST API можно создать пользовательские средства для отслеживания топологий Storm и управления ими.
 
-Дополнительные сведения см. в разделе [API-интерфейс REST пользовательского интерфейса Storm](http://storm.apache.org/releases/0.9.6/STORM-UI-REST-API.html). Следующая информация касается использования REST API с Apache Storm в HDInsight.
+Дополнительные сведения см. в разделе [API-интерфейс REST пользовательского интерфейса Storm](http://storm.apache.org/releases/current/STORM-UI-REST-API.html). Следующая информация касается использования REST API с Apache Storm в HDInsight.
 
 > [!IMPORTANT]
 > API-интерфейс REST для Storm не является общедоступным через Интернет, и обращаться к нему необходимо с помощью туннеля SSH на головной узел кластера HDInsight. Дополнительные сведения о создании и использовании туннеля SSH см. в статье [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](../hdinsight-linux-ambari-ssh-tunnel.md).

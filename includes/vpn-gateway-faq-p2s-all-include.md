@@ -5,29 +5,35 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 06/04/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 072c16a0e50a4922d44dd354b632f39b33d23cdd
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 199998f193f375137d499913e9ce966f85ed863c
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38727539"
 ---
 ### <a name="supportedclientos"></a>Какие клиентские операционные системы можно использовать для подключения типа "точка — сеть"?
 
 Поддерживаются следующие клиентские операционные системы:
 
-* Windows 7 (32-разрядная и 64-разрядная версии);
-* Windows Server 2008 R2 (только 64-разрядная версия);
-* Windows 8 (32-разрядная и 64-разрядная версии);
-* Windows 8.1 (32-разрядная и 64-разрядная версии);
-* Windows Server 2012 (только 64-разрядная версия);
-* Windows Server 2012 R2 (только 64-разрядная версия);
-* Windows Server 2016 (только 64-разрядная версия);
-* Windows 10;
+* Windows 7 (32-разрядная и 64-разрядная версии)
+* Windows Server 2008 R2 (только 64-разрядная версия)
+* Windows 8.1 (32-разрядная и 64-разрядная версии)
+* Windows Server 2012 (только 64-разрядная версия)
+* Windows Server 2012 R2 (только 64-разрядная версия)
+* Windows Server 2016 (только 64-разрядная версия)
+* Windows 10
 * Mac OS X версии 10.11 (El Capitan);
 * Mac OS X версии 10.12 (Sierra).
+* Linux (StrongSwan)
+* iOS
+
+>[!NOTE]
+>[!INCLUDE [TLS](vpn-gateway-tls-updates.md)]
+>
 
 ### <a name="how-many-vpn-client-endpoints-can-i-have-in-my-point-to-site-configuration"></a>Сколько конечных точек VPN-клиента можно настроить в конфигурации "точка — сеть"?
 
@@ -87,7 +93,7 @@ IKEv2 поддерживается в Windows 10 и Server 2016. Однако д
 
 ### <a name="other-than-windows-and-mac-which-other-platforms-does-azure-support-for-p2s-vpn"></a>Какие еще платформы, кроме Windows и Mac, Azure поддерживает для VPN-подключений типа "точка — сеть"?
 
-Для VPN-подключений типа "точка — сеть" Azure поддерживает только Windows и Mac.
+Azure поддерживает VPN-подключения "точка — сеть" в Windows, Mac и Linux.
 
 ### <a name="i-already-have-an-azure-vpn-gateway-deployed-can-i-enable-radius-andor-ikev2-vpn-on-it"></a>У меня уже развернут VPN-шлюз Azure. Можно ли включить на нем RADIUS и/или IKEv2 для VPN?
 

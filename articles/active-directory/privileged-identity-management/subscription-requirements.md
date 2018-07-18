@@ -3,23 +3,25 @@ title: Подписки управления привилегированным�
 description: Требования к подписке и лицензиям для управления Azure AD Privileged Identity Management и варианты использования этой службы в вашем клиенте
 services: active-directory
 documentationcenter: ''
-author: barclayn
+author: rolyon
 manager: mtillman
-editor: mwahl
+editor: markwahl-msft
 ms.assetid: 34367721-8b42-4fab-a443-a2e55cdbf33d
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
+ms.component: protection
 ms.date: 06/01/2017
-ms.author: barclayn
+ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 9e49ddb8fca9ce193c92f27c307942d5f3d3d2fd
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 681169fc3db69c2dfb8aa36d6e2896e0ddba8b56
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38548134"
 ---
 # <a name="azure-active-directory-privileged-identity-management-subscription-requirements"></a>Требования к подписке для Azure Active Directory Privileged Identity Management
 
@@ -36,7 +38,7 @@ ms.lasthandoff: 04/28/2018
 2. Введите `Connect-MsolService`, чтобы выполнить проверку подлинности в клиенте в качестве пользователя.
 3. Укажите `Get-MsolSubscription | ft SkuPartNumber,IsTrial,Status`.
 
-Эта команда извлекает список подписок в клиенте. Если результат не содержит строки, для использования Azure AD Privileged Identity Management следует получить пробную версию Azure AD Premium P2 или приобрести подписку Azure AD Premium P2 или EMS E5.  Сведения о том, как получить пробную версию и начать использовать Azure AD Privileged Identity Management, см. в статье [Приступая к работе с Azure AD Privileged Identity Management](../active-directory-privileged-identity-management-getting-started.md).
+Эта команда извлекает список подписок в клиенте. Если результат не содержит строки, для использования Azure AD Privileged Identity Management следует получить пробную версию Azure AD Premium P2 или приобрести подписку Azure AD Premium P2 или EMS E5.  Сведения о том, как получить пробную версию и начать использовать Azure AD Privileged Identity Management, см. в статье [Приступая к работе с Azure AD Privileged Identity Management](pim-getting-started.md).
 
 Если команда возвращает строку, в которой SkuPartNumber имеет значение AAD_PREMIUM_P2 или EMSPREMIUM, а IsTrial — значение True, это значит, что бесплатная пробная версия Azure AD Premium P2 уже установлена в клиенте.  Если эта подписка имеет статус неактивной, и у вас нет приобретенной подписки Azure AD Premium P2 или EMS E5, чтобы и дальше использовать Azure AD Privileged Identity Management, вам необходимо приобрести подписку Azure AD Premium P2 или EMS E5.
 
@@ -59,5 +61,5 @@ ms.lasthandoff: 04/28/2018
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Приступая к работе с управлением привилегированными пользователями Azure AD](../active-directory-privileged-identity-management-getting-started.md)
-- [Роли в службе управления привилегированными пользователями Azure AD](../active-directory-privileged-identity-management-roles.md)
+- [Приступая к работе с управлением привилегированными пользователями Azure AD](pim-getting-started.md)
+- [Роли в службе управления привилегированными пользователями Azure AD](pim-roles.md)

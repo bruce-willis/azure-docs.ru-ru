@@ -23,6 +23,8 @@
       href: monitoring-data-sources.md
     - name: Azure Monitor
       href: monitoring-overview-azure-monitor.md
+    - name: Агенты
+      href: ../monitoring/monitoring-overview-azure-agents.md
     - name: Метрики
       href: monitoring-overview-metrics.md
     - name: Autoscale
@@ -101,6 +103,8 @@
           href: monitoring-stream-diagnostic-logs-to-event-hubs.md
         - name: Включение параметров диагностики с помощью шаблонов Resource Manager
           href: monitoring-enable-diagnostic-logs-using-template.md
+        - name: Подготовка к использованию формата журналов диагностики JSON Lines
+          href: monitor-diagnostic-logs-append-blobs.md
     - name: Использование журнала действий
       items:
         - name: Просмотр событий в журнале действий
@@ -129,6 +133,8 @@
           href: monitoring-rest-api-walkthrough.md
         - name: Примеры сценариев Azure PowerShell
           href: insights-powershell-samples.md
+        - name: "Примеры Azure\_CLI"
+          href: insights-cli-samples.md
     - name: Использование расширения системы диагностики Azure
       items:
         - name: Отправка в службу хранилища Azure

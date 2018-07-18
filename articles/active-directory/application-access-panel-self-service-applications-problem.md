@@ -1,24 +1,26 @@
 ---
-title: "Проблемы с использованием самостоятельного доступа к приложениям | Документация Майкрософт"
-description: "Проблемы с устранением неполадок, связанные с самостоятельным доступом к приложению"
+title: Проблемы с использованием самостоятельного доступа к приложениям | Документация Майкрософт
+description: Проблемы с устранением неполадок, связанные с самостоятельным доступом к приложению
 services: active-directory
-documentationcenter: 
-author: ajamess
+documentationcenter: ''
+author: barbkess
 manager: mtillman
-ms.assetid: 
+ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.reviewer: japere
-ms.openlocfilehash: 6d4044414cfae9a79487d02709aab24998fdef0b
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.author: barbkess
+ms.reviewer: japere,asteen
+ms.openlocfilehash: cdd554b71cc17019d7818e2b509433df621da84f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446832"
 ---
 # <a name="problem-using-self-service-application-access"></a>Проблемы при использовании самостоятельного доступа к приложениям
 
@@ -96,4 +98,4 @@ ms.lasthandoff: 02/21/2018
 -   трассировки Fiddler.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Настройка Azure Active Directory для самостоятельного управления группами](active-directory-accessmanagement-self-service-group-management.md)
+[Настройка Azure Active Directory для самостоятельного управления группами](users-groups-roles/groups-self-service-management.md)

@@ -6,13 +6,14 @@ author: Christina-Kang
 manager: timlt
 ms.service: service-fabric
 ms.topic: conceptual
-ms.date: 10/20/2017
+ms.date: 05/23/2018
 ms.author: bikang
-ms.openlocfilehash: 7b62631bd386a2feaa675b0ebd234768bec2f5e1
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0c5509d323f14a6bb62f465fa23584ca927e0e61
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34763363"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -24,7 +25,7 @@ ms.lasthandoff: 05/16/2018
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
-Интерфейс командной строки поддерживает Python версии 2.7, 3.5 и 3.6. Python 3.6 является рекомендуемой версией, так как поддержка Python 2.7 скоро будет прекращена.
+Интерфейс командной строки поддерживает Python версий 2.7, 3.5 и 3.6. Python 3.6 является рекомендуемой версией, так как поддержка Python 2.7 скоро будет прекращена.
 
 ### <a name="service-fabric-target-runtime"></a>Целевая среда выполнения Service Fabric
 
@@ -32,7 +33,8 @@ ms.lasthandoff: 05/16/2018
 
 | Версия интерфейса командной строки   | Поддерживаемая версия среды выполнения |
 |---------------|---------------------------|
-| последняя (~=4)  | последняя (~=6.1)            |
+| Последняя (~=5)  | Последняя (~=6.2)            |
+| 4.0.0         | 6.1                       |
 | 3.0.0         | 6,0                       |
 | 1.1.0         | 5.6, 5.7                  |
 
@@ -69,7 +71,7 @@ python --version
 pip --version
 ```
 
-Затем выполните следующую команду, чтобы установить интерфейс командной строки Service Fabric.
+Затем выполните следующую команду, чтобы установить CLI Azure Service Fabric (sfctl) и просмотреть страницу справки CLI:
 
 ```bat
 pip install sfctl
@@ -120,7 +122,7 @@ sudo easy_install-3.4 pip
 sudo pip3 install sfctl
 ```
 
-Чтобы проверить установку, см. описание **подсистемы Ubuntu и Windows для Linux**.
+Чтобы протестировать установку, выполните действия из раздела **Подсистема Ubuntu и Windows для Linux**.
 
 <a name = "cli-mac"></a>
 ### <a name="macos"></a>MacOS
@@ -231,13 +233,13 @@ openssl  pkcs12 -export -out Certificates.pfx -inkey Certificates.pem -in Certif
 
 Некоторые операции могут создавать следующее сообщение:
 
-`Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known`
+`Failed to establish a new connection`
 
 Убедитесь, что указанная конечная точка кластера доступна и ожидает передачи данных. Также проверьте, доступен ли для этого узла и порта пользовательский интерфейс Service Fabric Explorer. Обновите конечную точку с помощью `sfctl cluster select`.
 
 ### <a name="detailed-logs"></a>Подробные журналы
 
-Подробные журналы часто полезны при отладке или при сообщении о проблеме. Глобальный флаг `--debug` повышает уровень детализации файлов журналов.
+Подробные журналы часто полезны при отладке или при сообщении о проблеме. Флаг `--debug` повышает детализацию выходных данных.
 
 ### <a name="command-help-and-syntax"></a>Справка и синтаксис для команд
 

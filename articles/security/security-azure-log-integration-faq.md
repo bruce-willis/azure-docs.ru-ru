@@ -1,6 +1,6 @@
 ---
-title: "Часто задаваемые вопросы об интеграции журналов Azure | Документация Майкрософт"
-description: "Эта статья содержит ответы на часто задаваемые вопросы об интеграции журналов Azure."
+title: Часто задаваемые вопросы об интеграции журналов Azure | Документация Майкрософт
+description: Эта статья содержит ответы на часто задаваемые вопросы об интеграции журналов Azure.
 services: security
 documentationcenter: na
 author: TomShinder
@@ -12,25 +12,29 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload8: na
-ms.date: 02/16/2018
-ms.author: TomSh
+ms.date: 06/07/2018
+ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 615bfb1ea86d31733fc1db7139cd995fbbbac7aa
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: bec62b8c6b70706fa6519cbc2fd59bf69f119e9d
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35236269"
 ---
 # <a name="azure-log-integration-faq"></a>Часто задаваемые вопросы об интеграции журналов Azure
 
 В этой статье содержатся ответы на некоторые часто задаваемые вопросы о службе интеграции журналов Azure.
 
 >[!IMPORTANT]
->Предпочтительным методом интеграции журналов Azure является использование соединителя Azure Monitor от поставщика SIEM и выполнение следующих [инструкций](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md). Тем не менее, если поставщик SIEM не предоставляет соединитель для Azure Monitor, в качестве временного решения можно использовать службу "Интеграция журналов данных Azure" (если она поддерживает вашу систему SIEM).
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Скачивания AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в [этой записи блога](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/). 
 
 Служба интеграции журналов Azure (служба ОС Windows) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными системами SIEM. Такая интеграция обеспечивает единую панель мониторинга для всех локальных и облачных ресурсов. Интеграция также позволяет выполнять статистическое вычисление, сопоставление и анализ, а также предупреждать о событиях безопасности, связанных с приложениями.
 
+Предпочтительным методом интеграции журналов Azure является использование соединителя Azure Monitor от поставщика SIEM и выполнение следующих [инструкций](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md). Тем не менее, если поставщик SIEM не предоставляет соединитель для Azure Monitor, в качестве временного решения можно использовать службу "Интеграция журналов данных Azure" (если она поддерживает вашу систему SIEM).
+
 ## <a name="is-the-azure-log-integration-software-free"></a>Предоставляется ли служба интеграции журналов Azure бесплатно?
+
 Да. Плата за использование службы интеграции журналов Azure не взимается.
 
 ## <a name="where-is-azure-log-integration-available"></a>Где доступна служба интеграции журналов Azure?
@@ -38,6 +42,7 @@ ms.lasthandoff: 02/21/2018
 Сейчас служба доступна в рамках коммерческой лицензии Azure и лицензии Azure для государственных организаций и недоступна в Китае и в Германии.
 
 ## <a name="how-can-i-see-the-storage-accounts-from-which-azure-log-integration-is-pulling-azure-vm-logs"></a>Как увидеть учетные записи хранения, из которых служба интеграции журналов Azure извлекает журналы виртуальных машин Azure?
+
 Выполните команду **azlog source list**.
 
 ## <a name="how-can-i-tell-which-subscription-the-azure-log-integration-logs-are-from"></a>Как определить, из каких подписок получены журналы службы интеграции журналов Azure?
@@ -51,6 +56,7 @@ ms.lasthandoff: 02/21/2018
 Журналы диагностики, которые считываются из концентратора событий, не содержат идентификатор подписки в имени. Вместо этого они содержат понятное имя, заданное при создании источника концентратора событий. 
 
 ## <a name="how-can-i-update-the-proxy-configuration"></a>Как обновить конфигурацию прокси-сервера?
+
 Если параметры прокси-сервера не позволяют получать доступ к хранилищу Azure напрямую, то откройте файл **AZLOG.EXE.CONFIG** из расположения **c:\Program Files\Microsoft Azure Log Integration**. Обновите файл, включив в его раздел **defaultProxy** прокси-адрес вашей организации. После завершения обновления остановите и запустите службу с помощью команд **net stop azlog** и **net start azlog**.
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +67,7 @@ ms.lasthandoff: 02/21/2018
         </connectionManagement>
         <defaultProxy>
           <proxy usesystemdefault="true"
-          proxyaddress=http://127.0.0.1:8888
+          proxyaddress="http://127.0.0.1:8888"
           bypassonlocal="true" />
         </defaultProxy>
       </system.net>
@@ -70,6 +76,7 @@ ms.lasthandoff: 02/21/2018
       </system.diagnostics>   
 
 ## <a name="how-can-i-see-the-subscription-information-in-windows-events"></a>Как увидеть сведения о подписке в событиях Windows?
+
 При добавлении источника добавьте идентификатор к понятному имени:
 
     Azlog source add <sourcefriendlyname>.<subscription id> <StorageName> <StorageKey>  
@@ -79,6 +86,7 @@ XML-файл события содержит следующие метаданн
 
 ## <a name="error-messages"></a>Сообщения об ошибках
 ### <a name="when-i-run-the-command-azlog-createazureid-why-do-i-get-the-following-error"></a>Почему при выполнении команды ```AzLog createazureid``` возникает следующая ошибка?
+
 Ошибка:
 
   *Не удалось создать приложение AAD - Клиент 72f988bf-86f1-41af-91ab-2d7cd011db37 - Причина = 'Запрещено' - Сообщение = 'Недостаточно привилегий для выполнения операции.'*
@@ -86,6 +94,7 @@ XML-файл события содержит следующие метаданн
 Команда **azlog createazureid** пытается создать субъект-службу на всех клиентах Azure AD для подписок, к которым имеют доступ учетные данные Azure. Если учетные данные Azure принадлежат пользователю-гостю на этом клиенте Azure AD, то команда завершается ошибкой и отображается сообщение "Недостаточно привилегий для выполнения операции". Попросите администратора клиента добавить вашу учетную запись в качестве пользователя данного клиента.
 
 ### <a name="when-i-run-the-command-azlog-authorize-why-do-i-get-the-following-error"></a>Почему при выполнении команды **azlog authorize** возникает следующая ошибка?
+
 Ошибка:
 
   *"Warning creating Role Assignment - AuthorizationFailed" (Предупреждение при создании назначения роли — AuthorizationFailed): Клиент "janedo@microsoft.com" с идентификатором объекта "fe9e03e4-4dad-4328-910f-fd24a9660bd2" не авторизован для выполнения действия "Microsoft.Authorization/roleAssignments/write" с областью "/subscriptions/70d95299-d689-4c97-b971-0d8ff0000000".*
@@ -93,15 +102,18 @@ XML-файл события содержит следующие метаданн
 Команда **azlog authorize** назначает роль читателя субъекту-службе Azure AD (созданному с помощью команды **azlog createazureid**) для предоставленных подписок. Если учетные данные Azure не принадлежат соадминистратору или владельцу подписки, то команда завершается ошибкой и отображается сообщение "Сбой авторизации". Для выполнения этого действия используйте управление доступом на основе ролей (RBAC) в Azure, настроив роль соадминистратора или владельца.
 
 ## <a name="where-can-i-find-the-definition-of-the-properties-in-the-audit-log"></a>Где найти определения свойств в журнале аудита?
+
 См.:
 
 * [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md);
 * [Activity Logs](https://msdn.microsoft.com/library/azure/dn931934.aspx) (Журналы действий).
 
 ## <a name="where-can-i-find-details-on-azure-security-center-alerts"></a>Где найти подробные сведения об оповещениях центра безопасности Azure?
+
 См. статью [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](../security-center/security-center-managing-and-responding-alerts.md).
 
 ## <a name="how-can-i-modify-what-is-collected-with-vm-diagnostics"></a>Как изменить, что именно должна собирать система диагностики виртуальных машин?
+
 Сведения о том, как получать, изменять и настраивать конфигурацию системы диагностики Azure, см. в статье [Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell](../virtual-machines/windows/ps-extensions-diagnostics.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 
 В следующем примере показано получение конфигурации системы диагностики Azure:

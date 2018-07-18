@@ -15,11 +15,12 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: larryfr
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 5f2a6de9737569c75e0350e2aceec19b149d9549
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 02277d8398fe5e3f3cfd1244e53cc80c4b627fa3
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857428"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -596,10 +597,10 @@ Flux — это новая платформа, доступная в Storm 0.10.
 
 Файл YAML определяет компоненты для топологии и поток данных между ними. Файл YAML можно добавить как часть JAR-файла или можно использовать внешний файл YAML.
 
-Дополнительные сведения о платформе Flux см. [здесь (https://storm.apache.org/releases/0.10.0/flux.html)](https://storm.apache.org/releases/0.10.0/flux.html).
+Дополнительные сведения о платформе Flux см. [здесь (https://storm.apache.org/releases/1.0.6/flux.html)](https://storm.apache.org/releases/1.0.6/flux.html).
 
 > [!WARNING]
-> Из-за [ошибки (https://issues.apache.org/jira/browse/STORM-2055)](https://storm.apache.org/releases/1.0.1/Setting-up-development-environment.html) в Storm 1.0.1 может потребоваться установить ](https://issues.apache.org/jira/browse/STORM-2055)среду разработки Storm[ для локального запуска топологий Flux.
+> Из-за [ошибки (https://issues.apache.org/jira/browse/STORM-2055)](https://issues.apache.org/jira/browse/STORM-2055)в Storm 1.0.1 может потребоваться установить [среду разработки Storm ](http://storm.apache.org/releases/current/Setting-up-development-environment.html) для локального запуска топологий Flux.
 
 1. Удалите файл `WordCountTopology.java` из проекта. Ранее он определял топологию, но с платформой Flux он больше не нужен.
 
@@ -718,9 +719,9 @@ Flux — это новая платформа, доступная в Storm 0.10.
     ```
 
     > [!WARNING]
-    > Эта команда не выполняется, если топология использует ресурсы Storm 1.0.1. Причиной этого является ошибка [https://issues.apache.org/jira/browse/STORM-2055](https://issues.apache.org/jira/browse/STORM-2055). Вместо этого [установите Storm в среде разработки](http://storm.apache.org/releases/0.10.0/Setting-up-development-environment.html) и выполните следующие действия:
+    > Эта команда не выполняется, если топология использует ресурсы Storm 1.0.1. Причиной этого является ошибка [https://issues.apache.org/jira/browse/STORM-2055](https://issues.apache.org/jira/browse/STORM-2055). Вместо этого [установите Storm в среде разработки](http://storm.apache.org/releases/current/Setting-up-development-environment.html) и выполните следующие действия:
     >
-    > Если вы [установили Storm в среде разработки](http://storm.apache.org/releases/0.10.0/Setting-up-development-environment.html), вместо этого можно использовать приведенные ниже команды.
+    > Если вы [установили Storm в среде разработки](http://storm.apache.org/releases/current/Setting-up-development-environment.html), вместо этого можно использовать приведенные ниже команды.
     >
     > ```bash
     > mvn compile package
@@ -766,7 +767,7 @@ Flux — это новая платформа, доступная в Storm 0.10.
 
     После запуска топологии вы, возможно, заметили, что время между отправлением пакетов изменилось с учетом значений в файле newtopology.yaml. Таким образом, вы видите, что можно изменить конфигурацию в файле YAML, не выполняя повторную компиляцию топологии.
 
-Дополнительные сведения об этих и других возможностях платформы Flux см. в статье, посвященной [Flux (https://storm.apache.org/releases/0.10.0/flux.html)](https://storm.apache.org/releases/0.10.0/flux.html).
+Дополнительные сведения об этих и других возможностях платформы Flux см. в статье, посвященной [Flux (https://storm.apache.org/releases/1.0.6/flux.html)](https://storm.apache.org/releases/1.0.6/flux.html).
 
 ## <a name="trident"></a>Trident
 

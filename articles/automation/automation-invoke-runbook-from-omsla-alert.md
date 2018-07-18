@@ -6,14 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/16/2018
+ms.date: 06/12/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5a3b14bd8409226772d210f60dadd525960f7890
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0094362ee083511b05027f22b37ed62d56d68d41
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36217141"
 ---
 # <a name="call-an-azure-automation-runbook-from-a-log-analytics-alert"></a>Вызов модуля Runbook службы автоматизации Azure из оповещения Log Analytics
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 05/16/2018
 
 ## <a name="calling-a-runbook-by-using-a-webhook"></a>Вызов модуля Runbook с помощью веб-перехватчика
 
-Вы можете использовать веб-перехватчик, чтобы запустить определенный модуль Runbook в службе автоматизации Azure с помощью единого HTTP-запроса. Перед настройкой [оповещения Log Analytics](../log-analytics/log-analytics-alerts.md#alert-rules) для вызова модуля Runbook с помощью веб-перехватчика в качестве реакции на оповещение необходимо [создать веб-перехватчик](automation-webhooks.md#creating-a-webhook) для модуля Runbook, который вызывается с помощью этого метода. Запишите URL-адрес веб-перехватчика, так как он потребуется при настройке правила оповещения.   
+Вы можете использовать веб-перехватчик, чтобы запустить определенный модуль Runbook в службе автоматизации Azure с помощью единого HTTP-запроса. Прежде чем настраивать [действие веб-перехватчика для оповещений журнала](../monitoring-and-diagnostics/monitor-alerts-unified-log-webhook.md), чтобы модуль Runbook вызывался с помощью веб-перехватчика в качестве реакции на оповещение, необходимо [создать веб-перехватчик](automation-webhooks.md#creating-a-webhook) для модуля Runbook, который вызывается с помощью этого метода. Запишите URL-адрес веб-перехватчика, так как он потребуется при настройке правила оповещения.   
 
 ## <a name="calling-a-runbook-directly"></a>Непосредственный вызов модуля Runbook
 
@@ -98,6 +99,6 @@ $SearchResult.SvcDisplayName_CF
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения об оповещениях в Log Analytics и их создании см. в статье [Оповещения в Log Analytics](../log-analytics/log-analytics-alerts.md).
+* Дополнительные сведения о создании оповещения Azure с помощью поиска по журналам см. в статье об [оповещениях журнала в Azure](../monitoring-and-diagnostics/monitor-alerts-unified-log.md).
 
 * Сведения о том, как запускать модули Runbook с помощью веб-перехватчика, см. в статье [Запуск Runbook службы автоматизации Azure с помощью объекта webhook](automation-webhooks.md).

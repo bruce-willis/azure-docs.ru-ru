@@ -3,19 +3,20 @@ title: Аутентификация и разрешения пользовате
 description: Узнайте о проверке подлинности и разрешениях пользователя в службах Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ede05667d794267443babacaa8b016206d86ab2c
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 846b76bddbc771a924a1d710cd333dfa4623f5ec
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449231"
 ---
 # <a name="authentication-and-user-permissions"></a>Аутентификация и разрешения пользователей
-Azure Analysis Services использует Azure Active Directory (Azure AD) для управления удостоверениями и проверки подлинности пользователей. У любого пользователя, который создает сервер Azure Analysis Services, управляет им или подключается к нему, должно быть допустимое удостоверение пользователя в [клиенте Azure AD](../active-directory/active-directory-administer.md) в той же подписке.
+Azure Analysis Services использует Azure Active Directory (Azure AD) для управления удостоверениями и проверки подлинности пользователей. У любого пользователя, который создает сервер Azure Analysis Services, управляет им или подключается к нему, должно быть допустимое удостоверение пользователя в [клиенте Azure AD](../active-directory/fundamentals/active-directory-administer.md) в той же подписке.
 
 Azure Analysis Services поддерживает [службу совместной работы Azure AD B2B](../active-directory/active-directory-b2b-what-is-azure-ad-b2b.md). С помощью B2B можно пригласить пользователей вне организации как гостевых пользователей в каталог Azure AD. Гости могут принадлежать другому каталогу клиента Azure AD или иметь любой допустимый адрес электронной почты. Если вы пригласили пользователя и он принимает приглашение, отправленное по электронной почте от Azure, удостоверение пользователя добавляется в каталог клиента. Затем эти удостоверения можно добавить в группы безопасности либо как участников роли администратора сервера или роли базы данных.
 
@@ -75,7 +76,7 @@ Power BI Desktop подключается к Azure Analysis Services с помо
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory/active-directory-manage-groups.md)   
+[Управление доступом к ресурсам с помощью групп Azure Active Directory](../active-directory/fundamentals/active-directory-manage-groups.md)   
 [Управление ролями и пользователями базы данных](analysis-services-database-users.md)  
 [Управление администраторами сервера](analysis-services-server-admins.md)  
 [Управление доступом на основе ролей](../role-based-access-control/overview.md)  

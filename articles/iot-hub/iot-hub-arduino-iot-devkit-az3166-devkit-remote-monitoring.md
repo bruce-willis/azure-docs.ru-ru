@@ -1,24 +1,20 @@
 ---
-title: 'IoT DevKit в облаке: подключение MXChip IoT DevKit к Центру Интернета вещей Azure | Документация Майкрософт'
+title: IoT DevKit в облаке. Подключение MXChip IoT DevKit к Центру Интернета вещей Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как с помощью IoT DevKit AZ3166 отправлять данные о состоянии датчиков в акселератор решений для удаленного мониторинга Интернета вещей Azure.
-services: iot-hub
-documentationcenter: ''
 author: liydu
-manager: timlt
-tags: ''
-keywords: ''
+manager: jeffya
 ms.service: iot-hub
-ms.devlang: arduino
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.topic: conceptual
+ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: d3de8241b42aff63faaf04477a58c5564407ac8b
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 6c5c12ffeacad9a3dd56ac561d9b4fe1a6e67eea
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34631502"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>Подключение MXChip IoT DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure
 
@@ -40,7 +36,7 @@ ms.lasthandoff: 05/10/2018
 
 ## <a name="create-an-azure-iot-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга Интернета вещей Azure
 
-1. Перейдите на [сайт акселераторов решений для Интернета вещей Azure](https://www.azureiotsuite.com/) и щелкните **Создать решение**.
+1. Перейдите на [сайт ускорителей решений для Интернета вещей Azure](https://www.azureiotsolutions.com/) и щелкните **Создать решение**.
   ![Выбор типа акселератора решений для Интернета вещей Azure](media/iot-hub-arduino-iot-devkit-az3166-devkit-remote-monitoring/azure-iot-suite-solution-types.png)
   > [!WARNING]
   > По умолчанию этот пример сначала создает акселератор решений для удаленного мониторинга Интернета вещей, а затем Центр Интернета вещей S2. Если этот Центр Интернета вещей предназначен для небольшого количества устройств, мы рекомендуем перейти с уровня S2 на S1 и удалить акселератор решений для удаленного мониторинга Интернета вещей, чтобы связанный с ним Центр Интернета вещей тоже можно было удалить, когда потребность в нем отпадет. 

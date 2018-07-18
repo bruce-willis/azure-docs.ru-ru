@@ -1,0 +1,45 @@
+- name: Документация по Пользовательской службе принятия решений
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое Пользовательская служба принятия решений?
+      href: custom-decision-service-overview.md
+    - name: Рабочий процесс Пользовательской службы принятия решений
+      href: custom-decision-service-workflow.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: Регистрация приложения
+      href: custom-decision-service-get-started-register.md
+    - name: Вызов API из браузера
+      href: custom-decision-service-get-started-browser.md
+    - name: Вызов API из приложения
+      href: custom-decision-service-get-started-app.md
+- name: Учебники
+  items:
+    - name: Персонализация статей
+      href: custom-decision-service-tutorial-news.md
+    - name: Машинное обучение
+      href: custom-decision-service-tutorial-ml.md
+- name: Справочные материалы
+  items:
+    - name: API
+      href: custom-decision-service-api-reference.md
+    - name: Экспериментирование
+      href: custom-decision-service-experimentation-reference.md
+    - name: LogDownloader
+      href: custom-decision-service-log-downloader-reference.md
+- name: Ресурсы
+  items:
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/en-us/global-infrastructure/services/'
+    - name: Ценовая категория (бесплатно)
+      href: 'https://azure.microsoft.com/en-us/pricing/details/cognitive-services/custom-decision-service/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598138-custom-decision-service'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

@@ -1,0 +1,73 @@
+- name: Документация по API текстовой аналитики
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое API анализа текста?
+      href: overview.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: 'C#'
+      href: quickstarts/csharp.md
+    - name: Go
+      href: quickstarts/go.md
+    - name: Java
+      href: quickstarts/java.md
+    - name: Node.js
+      href: quickstarts/nodejs.md
+    - name: PHP
+      href: quickstarts/php.md
+    - name: Python
+      href: quickstarts/python.md
+    - name: Ruby
+      href: quickstarts/ruby.md
+- name: Учебники
+  items:
+    - name: "Текстовая аналитика с использованием Power\_BI"
+      href: Tutorials/tutorial-power-bi-key-phrases.md
+    - name: Текстовая аналитика в Power Apps
+      href: 'https://powerapps.microsoft.com/tutorials/cognitive-services-api/'
+- name: Практические руководства
+  items:
+    - name: Регистрация
+      href: How-tos/text-analytics-how-to-signup.md
+    - name: Получение ключа доступа
+      href: How-tos/text-analytics-how-to-access-key.md
+    - name: Вызов API текстовой аналитики
+      href: How-tos/text-analytics-how-to-call-api.md
+    - name: Определение языка
+      href: How-tos/text-analytics-how-to-language-detection.md
+    - name: Анализ тональности
+      href: How-tos/text-analytics-how-to-sentiment-analysis.md
+    - name: Извлечение ключевых фраз
+      href: How-tos/text-analytics-how-to-keyword-extraction.md
+    - name: Распознавание связанных сущностей
+      href: How-tos/text-analytics-how-to-entity-linking.md
+    - name: Работа с Visual Studio
+      items:
+        - name: Использование подключенной службы текстовой аналитики
+          href: vs-text-connected-service.md
+- name: Справочные материалы
+  items:
+    - name: API анализа текста
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics.V2.0/operations/56f30ceeeda5650db055a3c7'
+- name: Ресурсы
+  items:
+    - name: Внешние материалы и материалы сообщества
+      href: text-analytics-resource-external-community.md
+    - name: Часто задаваемые вопросы
+      href: text-analytics-resource-faq.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'
+    - name: Ключ подписки
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=text-analytics'
+    - name: Поддерживаемые языки
+      href: text-analytics-supported-languages.md
+    - name: Тестирование
+      href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/555922-text-analytics'

@@ -1,33 +1,22 @@
 ---
-title: Создание серверов и баз данных SQL Azure и управление ими | Документация Майкрософт
-description: Сведения о сервере базы данных SQL Azure, основные понятия о базах данных, создание серверов и баз данных и их администрирование.
+title: Логические серверы и отдельные базы данных SQL Azure | Документация Майкрософт
+description: Изучите понятия логического сервера и отдельной базы данных SQL Azure, а также ознакомьтесь с их ресурсами.
 services: sql-database
 author: CarlRabeler
 manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
-ms.topic: article
-ms.date: 04/10/2018
+ms.topic: conceptual
+ms.date: 06/20/2018
 ms.author: carlrab
-ms.openlocfilehash: 3ffae541020a2672affab774ee6da2a8c707745f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 505fd88959feb1c84abc53c6435776a5c5b4123c
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32195538"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36309186"
 ---
-# <a name="create-and-manage-azure-sql-database-servers-and-databases"></a>Создание серверов базы данных SQL Azure и баз данных SQL Azure и управление ими
-
-База данных SQL предлагает три типа баз данных:
-
-- Отдельная база данных, которая создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-vcore.md). База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
-- База данных, которая создается в составе [пула баз данных](sql-database-elastic-pool.md) в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища (модель на основе DTU)](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища (модель на основе виртуальных ядер)](sql-database-service-tiers-vcore.md), которые совместно используются всеми базами данных в пуле. База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
-- [Экземпляр SQL Server](sql-database-managed-instance.md) (Управляемый экземпляр), который создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с определенным набором вычислительных ресурсов и ресурсов хранения, предназначенных для всех баз данных в этом экземпляре сервера. Управляемый экземпляр содержит системные и пользовательские базы данных. С его помощью можно выполнять перенос базы данных методом lift-and-shift в полностью управляемое приложение PaaS, не изменяя приложение. Служба "Управляемый экземпляр Базы данных SQL" обеспечивает высокую совместимость с моделью программирования локального сервера SQL Server и поддерживает большинство возможностей, дополнительных инструментов и служб SQL Server.  
-
-База данных SQL Microsoft Azure поддерживает клиент протокола для потока табличных данных (TDS) версии 7.3 или более поздней версии и разрешает использовать только зашифрованные TCP/IP-подключения.
-
-> [!IMPORTANT]
-> Служба "Управляемый экземпляр Базы данных SQL" в настоящее время находится на этапе общедоступной предварительной версии. Она обеспечивает один уровень служб общего назначения. Дополнительные сведения см. в статье [What is a Managed Instance (preview)?](sql-database-managed-instance.md) (Сведения об Управляемом экземпляре (предварительная версия)). Оставшаяся часть этой статьи не относится управляемому экземпляру.
+# <a name="azure-sql-database-logical-servers-and-single-databases-and-their-resources"></a>Логический сервер и отдельная база данных SQL Azure, а также их ресурсы
 
 ## <a name="what-is-an-azure-sql-logical-server"></a>Что такое логический сервер SQL Azure?
 
@@ -59,6 +48,20 @@ ms.locfileid: "32195538"
 - За счет возможностей входа в систему с использованием субъекта серверного уровня может управлять всеми базами данных на сервере.
 - Может содержать имена входов, подобные именам входов экземпляров SQL Server в локальной среде с доступом к одной или нескольким базам данных на сервере. Можно предоставлять ограниченные права администратора. Дополнительные сведения см. в статье [Проверка подлинности и авторизация в базе данных SQL: предоставление доступа](sql-database-manage-logins.md).
 - Параметры сортировки по умолчанию для всех пользовательских баз данных, созданных на логическом сервере, имеют значение `SQL_LATIN1_GENERAL_CP1_CI_AS`, где `LATIN1_GENERAL` означает английский язык (США) `CP1` — кодовую страницу 1252, `CI` означает, что учитывается регистр, а `AS` — что учитываются диакритические знаки.
+
+## <a name="logical-servers-and-databases"></a>Логические серверы и базы данных
+
+На логическом сервере можно создать следующие компоненты.
+
+- Отдельная база данных, которая создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища](sql-database-service-tiers-vcore.md). База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
+- База данных, которая создается в составе [пула баз данных](sql-database-elastic-pool.md) в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с [объединенным набором вычислительных ресурсов и ресурсов хранилища (модель на основе DTU)](sql-database-service-tiers-dtu.md) или [независимым масштабом вычислительных ресурсов и ресурсов хранилища (модель на основе виртуальных ядер)](sql-database-service-tiers-vcore.md), которые совместно используются всеми базами данных в пуле. База данных SQL Azure связана с логическим сервером базы данных SQL Azure, который создан в определенном регионе Azure.
+
+> [!IMPORTANT]
+> Управляемый экземпляр Базы данных SQL (сейчас на этапе предварительной версии) — это [экземпляр SQL Server](sql-database-managed-instance.md), который создается в [группе ресурсов Azure](../azure-resource-manager/resource-group-overview.md) с определенным набором вычислительных ресурсов и ресурсов хранения, предназначенных для всех баз данных в этом экземпляре сервера. Управляемый экземпляр содержит системные и пользовательские базы данных. С его помощью можно выполнять перенос базы данных методом lift-and-shift в полностью управляемое приложение PaaS, не изменяя приложение. Служба "Управляемый экземпляр Базы данных SQL" обеспечивает высокую совместимость с моделью программирования локального сервера SQL Server и поддерживает большинство возможностей, дополнительных инструментов и служб SQL Server. Дополнительные сведения см. в статье [What is a Managed Instance (preview)?](sql-database-managed-instance.md) (Сведения об Управляемом экземпляре (предварительная версия)). Оставшаяся часть этой статьи не относится управляемому экземпляру.
+
+## <a name="tds-and-tcpip-connections"></a>Подключения по протоколам TDS и TCP/IP
+
+База данных SQL Microsoft Azure поддерживает клиент протокола для потока табличных данных (TDS) версии 7.3 или более поздней версии и разрешает использовать только зашифрованные TCP/IP-подключения.
 
 ## <a name="azure-sql-databases-protected-by-sql-database-firewall"></a>Базы данных SQL Azure, защищенные брандмауэром базы данных SQL
 
@@ -109,7 +112,7 @@ ms.locfileid: "32195538"
 |[Get-AzureRmSqlDatabase](/powershell/module/azurerm.sql/get-azurermsqldatabase)|Получает одну или несколько баз данных.|
 |[Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase)|Определяет свойства базы данных или перемещает ее в эластичный пул.|
 |[Remove-AzureRmSqlDatabase](/powershell/module/azurerm.sql/remove-azurermsqldatabase)|Удаляет базу данных.|
-|[New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)|Создает группу ресурсов.
+|[New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup)|Создает группу ресурсов.|
 |[New-AzureRmSqlServer](/powershell/module/azurerm.sql/new-azurermsqlserver)|Создает сервер.|
 |[Get-AzureRmSqlServer](/powershell/module/azurerm.sql/get-azurermsqlserver)|Возвращает сведения о серверах.|
 |[Set-AzureRmSqlServer](https://docs.microsoft.com/powershell/module/azurerm.sql/set-azurermsqlserver)|Изменяет свойства сервера.|

@@ -4,16 +4,16 @@ description: В этой статье описано программное со
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 05/07/2018
+ms.date: 05/24/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 5405566b5254c553eac584acc1653449b51ddffc
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: a83402316854b23fe85bff813dc9f5665bccd1fb
+ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195885"
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34794817"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
@@ -113,15 +113,19 @@ ms.locfileid: "34195885"
   }
   ```
 
-2. Создайте определение политики с использованием следующего вызова:
+2. Создайте определение политики с использованием одного из следующих вызовов:
 
   ```
-  armclient PUT "/subscriptions/<subscriptionId>/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2016-12-01" @<path to policy definition JSON file>
+  # For defining a policy in a subscription
+  armclient PUT "/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2016-12-01" @<path to policy definition JSON file>
+
+  # For defining a policy in a management group
+  armclient PUT "/providers/Microsoft.Management/managementgroups/{managementGroupId}/providers/Microsoft.Authorization/policyDefinitions/AuditStorageAccounts?api-version=2016-12-01" @<path to policy definition JSON file>
   ```
 
-  Замените предыдущий &lt;идентификатор подписки&gt; идентификатором требуемой подписки.
+  Замените {subscriptionId} идентификатором своей подписки или {managementGroupId} идентификатором своей [группы управления](../azure-resource-manager/management-groups-overview.md).
 
-Дополнительные сведения о структуре запроса см. в разделе [Создание и обновление определений политик](/rest/api/resources/policydefinitions/createorupdate) (Policy Definitions - Create Or Update).
+  Дополнительные сведения о структуре запроса см. в статье [Policy Definitions - Create Or Update](/rest/api/resources/policydefinitions/createorupdate) (Создание и обновление определений политик) и [Policy Set Definitions - Create Or Update At Management Group](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) (Создание и обновление определений политик в группе управления).
 
 Используйте следующую процедуру для создания назначения политики и назначьте определение политики на уровне группы ресурсов.
 
@@ -200,99 +204,6 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 
 Дополнительные сведения об управлении политиками ресурсов с помощью Azure CLI см. в [этой статье](/cli/azure/policy?view=azure-cli-latest).
 
-## <a name="identify-non-compliant-resources"></a>Выявление несоответствующих ресурсов
-
-В назначении ресурс не соответствует требованиям, если он не соответствует правилам политики или инициативы. В следующей таблице показано, как действуют разные политики в сочетании с оценкой условий для определения итогового состояния соответствия.
-
-| Состояние ресурса | Результат | Оценка политики | Состояние соответствия |
-| --- | --- | --- | --- |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Истина | Не соответствует |
-| Exists | Deny, Audit, Append\*, DeployIfNotExist\*, AuditIfNotExist\* | Ложь | Соответствует |
-| Создать | Audit, AuditIfNotExist\* | Истина | Не соответствует |
-| Создать | Audit, AuditIfNotExist\* | Ложь | Соответствует |
-
-\*Для эффектов Append, DeployIfNotExist и AuditIfNotExist требуется, чтобы оператор IF имел значение TRUE. Эффекты также требуют, чтобы условие существования FALSE было несоответствующим. Когда установлено значение TRUE, условие IF запускает оценку условия существования для связанных ресурсов.
-
-Чтобы лучше понять, как ресурсы помечаются как несоответствующие требованиям, используйте пример назначения политики, созданный выше.
-
-Например, предположим, что у вас есть группа ресурсов ContosoRG с некоторыми учетными записями хранения (выделены красным цветом), которые доступны в общедоступных сетях.
-
-![Учетные записи хранения, доступные в общедоступных сетях](media/policy-insights/resource-group01.png)
-
-В этом примере необходимо опасаться угроз безопасности. Теперь, когда вы создали назначение политики, оно оценивается для всех учетных записей хранения в группе ресурсов ContosoRG. Оно проверяет три несовместимые учетные записи хранения, соответственно меняя их состояние на**не соответствующее**.
-
-![Прошедшие аудит несоответствующие учетные записи хранения](media/policy-insights/resource-group03.png)
-
-Используйте приведенную ниже процедуру для идентификации ресурсов в группе ресурсов, которые не соответствуют назначению политики. В этом примере ресурсы — это учетные записи хранения в группе ресурсов ContosoRG.
-
-1. Получите идентификатор назначения политики, выполнив следующие команды.
-
-  ```azurepowershell-interactive
-  $policyAssignment = Get-AzureRmPolicyAssignment | Where-Object { $_.Properties.displayName -eq 'Audit Storage Accounts with Open Public Networks' }
-  $policyAssignment.PolicyAssignmentId
-  ```
-
-  Дополнительные сведения о получении идентификаторов назначения политики см. в статье о команде [Get-AzureRMPolicyAssignment](/powershell/module/azurerm.resources/Get-AzureRmPolicyAssignment).
-
-2. Выполните следующую команду, чтобы скопировать идентификаторы несовместимых ресурсов в JSON-файл:
-
-  ```
-  armclient POST "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/providers/Microsoft.PolicyInsights/policyStates/latest/queryResults?api-version=2017-12-12-preview&$filter=IsCompliant eq false and PolicyAssignmentId eq '<policyAssignmentID>'&$apply=groupby((ResourceId))" > <json file to direct the output with the resource IDs into>
-  ```
-
-3. Результат должен выглядеть следующим образом:
-
-  ```json
-  {
-      "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest",
-      "@odata.count": 3,
-      "value": [{
-              "@odata.id": null,
-              "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
-              "ResourceId": "/subscriptions/<subscriptionId>/resourcegroups/<rgname>/providers/microsoft.storage/storageaccounts/<storageaccount1Id>"
-          },
-          {
-              "@odata.id": null,
-              "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
-              "ResourceId": "/subscriptions/<subscriptionId>/resourcegroups/<rgname>/providers/microsoft.storage/storageaccounts/<storageaccount2Id>"
-          },
-          {
-              "@odata.id": null,
-              "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyStates/$metadata#latest/$entity",
-              "ResourceId": "/subscriptions/<subscriptionName>/resourcegroups/<rgname>/providers/microsoft.storage/storageaccounts/<storageaccount3ID>"
-          }
-      ]
-  }
-  ```
-
-Результаты похожи на содержимое списка **несовместимых ресурсов** в [представлении портала Azure](assign-policy-definition.md#identify-non-compliant-resources).
-
-В настоящее время несоответствующие ресурсы идентифицируются только с использованием портала Azure и HTTP-запросов. Дополнительные сведения о запросах состояний политик см. в справочной статье по API [Policy State](/rest/api/policy-insights/policystates) (Состояние политики).
-
-## <a name="view-policy-events"></a>Просмотр событий политики
-
-После создания или обновления ресурса создается результат оценки политики. Такие результаты называются _событиями политики_. Выполните следующий запрос, чтобы просмотреть все события политики, связанные с назначением политики.
-
-```
-armclient POST "/subscriptions/<subscriptionId>/providers/Microsoft.Authorization/policyDefinitions/Audit Storage Accounts Open to Public Networks/providers/Microsoft.PolicyInsights/policyEvents/default/queryResults?api-version=2017-12-12-preview"
-```
-
-Результаты должны выглядеть примерно так:
-
-```json
-{
-    "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyEvents/$metadata#default",
-    "@odata.count": 1,
-    "value": [{
-        "@odata.id": null,
-        "@odata.context": "https://management.azure.com/subscriptions/<subscriptionId>/providers/Microsoft.PolicyInsights/policyEvents/$metadata#default/$entity",
-        "NumAuditEvents": 3
-    }]
-}
-```
-
-Как и в случае с состояниями политики, с помощью HTTP-запроса вы можете только просматривать события политики. Дополнительные сведения о запросах событий политик см. в справочной статье по [Policy Events](/rest/api/policy-insights/policyevents) (События политик).
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о командах и запросах, используемых в этой статье, см. в следующих ресурсах.
@@ -301,3 +212,4 @@ armclient POST "/subscriptions/<subscriptionId>/providers/Microsoft.Authorizatio
 - [Модули Azure RM PowerShell](/powershell/module/azurerm.resources/#policies)
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
 - [Policy Insights](/rest/api/policy-insights)
+- [Упорядочение ресурсов с помощью групп управления Azure](../azure-resource-manager/management-groups-overview.md)

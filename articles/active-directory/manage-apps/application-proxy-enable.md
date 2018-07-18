@@ -11,15 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/31/2018
+ms.date: 06/26/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 58bcb3cbdf389393beb58a9f50b3e77aa2b3aae8
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 0ac14f792c63ea06a484eb5b522c4d33958538ed
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37025651"
 ---
 # <a name="get-started-with-application-proxy-and-install-the-connector"></a>Начало работы с прокси приложения и установка соединителя
 В этой статье описывается процедура включения прокси приложения Microsoft Azure AD для облачного каталога в Azure AD.
@@ -29,7 +30,7 @@ ms.lasthandoff: 05/14/2018
 ## <a name="application-proxy-prerequisites"></a>Необходимые условия для прокси приложения
 Прежде чем можно будет включить и использовать службы прокси приложения служб, потребуется:
 
-* [Подписка на Microsoft Azure AD Basic или Premium](../active-directory-whatis.md) , а также каталог Azure AD, для которого вы являетесь глобальным администратором.
+* [Подписка на Microsoft Azure AD Basic или Premium](../fundamentals/active-directory-whatis.md) , а также каталог Azure AD, для которого вы являетесь глобальным администратором.
 * Сервер под управлением Windows Server 2012 R2 или 2016, на котором можно установить соединитель прокси приложения. Серверу нужна возможность подключаться к службам прокси приложения в облаке, а также к локальным приложениям, которые вы публикуете.
   * Чтобы использовать единый вход в опубликованные приложения через ограниченное делегирование Kerberos, компьютер необходимо присоединить к тому же домену AD, который используют публикуемые приложения. Дополнительные сведения см. в статье [Реализация единого входа в приложения с помощью прокси приложения](application-proxy-configure-single-sign-on-with-kcd.md).
 
@@ -63,7 +64,6 @@ ms.lasthandoff: 05/14/2018
 
 4. Соединителю требуется доступ к адресам login.windows.net и login.microsoftonline.com для процесса регистрации.
 
-5. Воспользуйтесь [средством проверки портов соединителей прокси-службы приложения Azure AD](https://aadap-portcheck.connectorporttest.msappproxy.net/), чтобы проверить, сможет ли ваш соединитель подключиться к прокси-службе приложения. Как минимум следует убедиться, что для региона Central US (Центральная часть США) и ближайшего к вам региона отображаются все зеленые флажки. Учитывайте также, что большее число зеленых флажков означает большую устойчивость.
 
 ## <a name="install-and-register-a-connector"></a>Установка и регистрация соединителя
 1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью администратора.

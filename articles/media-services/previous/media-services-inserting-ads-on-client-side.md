@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2016
 ms.author: juliako
-ms.openlocfilehash: 57cb06fcee029f72dd1cf81ef086985fdda3f45f
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0ca9c7ff1ac4cfbb50f251679286a933429bf03f
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37903053"
 ---
 # <a name="inserting-ads-on-the-client-side"></a>Вставка рекламы на стороне клиента
 В этой статье описано, как использовать разные типы рекламы на стороне клиента.
@@ -275,7 +276,7 @@ VMAP-файл начинается с элемента <VMAP>, в котором
     </vmap:VMAP>
 ```
 
-Дополнительные сведения об элементе <**TrackingEvents**> и его дочерних элементах приведены в документе http://iab.org/VMAP.pdf.
+Дополнительные сведения об элементе <**TrackingEvents**> и его дочерних элементах приведены в документе http://iab.net/VMAP.pdf.
 
 ### <a name="using-a-media-abstract-sequencing-template-mast-file"></a>Использование файла Media Abstract Sequencing Template (MAST)
 MAST-файл позволяет указать триггеры, определяющие, когда будет отображаться реклама. Ниже приведен пример MAST-файла, содержащего триггеры для показа отдельных рекламных роликов до просмотра видео, в середине просмотра и после просмотра.

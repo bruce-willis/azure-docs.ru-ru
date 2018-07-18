@@ -7,14 +7,14 @@ manager: abhemraj
 editor: raynew
 ms.service: site-recovery
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 07/06/2018
 ms.author: bsiva
-ms.openlocfilehash: e12d19612e10885f97d4a8023967fb9ba2d1f8cb
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 62dd02d53c14635a386a8c6fa3fbfbd6f91a88f7
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34209871"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37921092"
 ---
 # <a name="set-up-disaster-recovery-for-azure-virtual-machines-using-azure-powershell"></a>Настройка аварийного восстановления для виртуальных машин Azure с помощью Azure PowerShell
 
@@ -33,7 +33,7 @@ ms.locfileid: "34209871"
 > - отработка отказа в регион восстановления.
 
 > [!NOTE]
-> В PowerShell сценарий *аварийного восстановления для виртуальных машин Azure* на основе Azure Site Recovery поддерживается в режиме предварительной версии. Azure PowerShell пока поддерживает не все возможности этого сценария, доступные через портал. Ниже перечислены некоторые возможности, которые пока недоступны через Azure PowerShell:
+> Azure PowerShell пока поддерживает не все возможности этого сценария, доступные через портал. Ниже перечислены некоторые возможности, которые пока недоступны через Azure PowerShell:
 > - возможность репликации виртуальных машин Azure, которые используют управляемые диски;
 > - возможность сразу выбрать для репликации все диски виртуальной машины, чтобы не указывать их отдельно по одному.  
 

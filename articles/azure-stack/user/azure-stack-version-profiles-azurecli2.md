@@ -10,22 +10,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/02/2018
+ms.date: 06/25/2018
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.openlocfilehash: 3c80ce6e221acb8905c00e6178dd2fec1f8816af
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: eb01d31d00177560aca3aa71750cd2d1ec096f8f
+ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36939662"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-20-in-azure-stack"></a>Использование профилей версий API и Azure CLI 2.0 в Azure Stack
 
-В этой статье мы расскажем об использовании интерфейса командной строки (CLI) Azure для управления ресурсами Пакета средств разработки Azure Stack на клиентских платформах Linux и Mac. 
+Вы можете следовать приведенным здесь инструкциям, чтобы настроить интерфейс командной строки Azure (CLI) для управления ресурсами Пакета средств разработки Azure Stack на клиентских платформах Linux, Mac и Windows.
 
 ## <a name="install-cli"></a>Установка CLI
 
-Теперь войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0. Чтобы установить средство, выполните действия, описанные в статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду:
+Войдите на рабочую станцию разработки и установите CLI. Для работы с Azure Stack требуется Azure CLI версии 2.0. Чтобы установить средство, выполните действия, описанные в статье [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). Чтобы проверить успешность установки, откройте окно терминала или командной строки и выполните следующую команду:
 
 ```azurecli
 az --version
@@ -35,27 +36,47 @@ az --version
 
 ## <a name="trust-the-azure-stack-ca-root-certificate"></a>Доверие для корневого сертификата ЦС Azure Stack
 
-Получите корневой сертификат ЦС Azure Stack от оператора Azure Stack и установите доверие к нему. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python. Если вы используете CLI на компьютере Linux, который создан в среде Azure Stack, выполните следующую команду bash:
+1. Получите корневой сертификат ЦС Azure Stack от [оператора Azure Stack](..\azure-stack-cli-admin.md#export-the-azure-stack-ca-root-certificate) и установите доверие к нему. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
+
+2. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить [pip](https://pip.pypa.io) и модуль [certifi](https://pypi.org/project/certifi/). Вы можете использовать следующие команды Python из командной строки Bash:
+
+  ```bash  
+    python -c "import certifi; print(certifi.where())"
+  ```
+
+  Запомните расположение сертификата. Например, `~/lib/python3.5/site-packages/certifi/cacert.pem`. Конкретный путь зависит от ОС и установленной версии Python.
+
+### <a name="set-the-path-for-a-development-machine-inside-the-cloud"></a>Задание пути к компьютеру разработчика внутри облака
+
+Если вы запускаете CLI на компьютере с Linux, созданного в среде Azure Stack, выполните указанную ниже команду Bash с путем к сертификату.
 
 ```bash
-sudo cat /var/lib/waagent/Certificates.pem >> ~/lib/azure-cli/lib/python2.7/site-packages/certifi/cacert.pem
+sudo cat /var/lib/waagent/Certificates.pem >> ~/<yourpath>/cacert.pem
 ```
 
-Если вы используете CLI на компьютере, расположенном за пределами среды Azure Stack, сначала нужно настроить [VPN-подключение к Azure Stack](azure-stack-connect-azure-stack.md). После этого скопируйте PEM-файл сертификата, который вы ранее экспортировали на рабочую станцию разработки, и выполните приведенные ниже команды в зависимости от ОС на рабочей станции разработки.
+### <a name="set-the-path-for-a-development-machine-outside-the-cloud"></a>Задание пути к компьютеру разработчика за пределами облака
 
-### <a name="linux"></a>Linux
+Если вы запускаете CLI на компьютере, расположенном **за пределами** среды Azure Stack:  
+
+1. Нужно настроить [подключение VPN к Azure Stack](azure-stack-connect-azure-stack.md).
+
+2. Скопируйте сертификат PEM, полученный от оператора Azure Stack, и запомните расположение этого файла (PATH_TO_PEM_FILE).
+
+3. Выполните приведенные ниже команды с учетом ОС на рабочей станции разработчика.
+
+#### <a name="linux"></a>Linux
 
 ```bash
-sudo cat PATH_TO_PEM_FILE >> ~/lib/azure-cli/lib/python2.7/site-packages/certifi/cacert.pem
+sudo cat PATH_TO_PEM_FILE >> ~/<yourpath>/cacert.pem
 ```
 
-### <a name="macos"></a>macOS
+#### <a name="macos"></a>macOS
 
 ```bash
-sudo cat PATH_TO_PEM_FILE >> ~/lib/azure-cli/lib/python2.7/site-packages/certifi/cacert.pem
+sudo cat PATH_TO_PEM_FILE >> ~/<yourpath>/cacert.pem
 ```
 
-### <a name="windows"></a>Windows
+#### <a name="windows"></a>Windows
 
 ```powershell
 $pemFile = "<Fully qualified path to the PEM certificate Ex: C:\Users\user1\Downloads\root.pem>"
@@ -181,14 +202,14 @@ az group create \
 ## <a name="known-issues"></a>Известные проблемы
 При использовании CLI в Azure Stack следует помнить о некоторых известных проблемах.
 
-* Интерактивный режим CLI, то есть команда `az interactive`, еще не поддерживается в Azure Stack.
-* Чтобы получить список образов виртуальных машин, доступных в Azure Stack, используйте команду `az vm images list --all` вместо `az vm image list`. Указание параметра `--all` гарантирует, что ответ возвращает только образы, доступные в среде Azure Stack. 
-* Псевдонимы образов виртуальных машин, доступные в Azure, могут быть неприменимыми для Azure Stack. При использовании образов виртуальных машин вместо псевдонима образа необходимо использовать параметр полного URN (Canonical: UbuntuServer:14.04.3-LTS:1.0.0). Этот URN должен соответствовать спецификации образа, полученной из команды `az vm images list`.
-* По умолчанию CLI 2.0 использует в качестве размера образа виртуальной машины по умолчанию "Standard_DS1_v2". Так как этот размер еще не доступен в Azure Stack, необходимо явным образом указать параметр `--size` при создании виртуальной машины. Список размеров виртуальных машин, доступных в Azure Stack, можно получить с помощью команды `az vm list-sizes --location <locationName>`.
-
+ - Интерактивный режим CLI, то есть команда `az interactive`, еще не поддерживается в Azure Stack.
+ - Чтобы получить список образов виртуальных машин, доступных в Azure Stack, используйте команду `az vm images list --all` вместо `az vm image list`. Указание параметра `--all` гарантирует, что ответ возвращает только образы, доступные в среде Azure Stack.
+ - Псевдонимы образов виртуальных машин, доступные в Azure, могут быть неприменимыми для Azure Stack. При использовании образов виртуальных машин вместо псевдонима образа необходимо использовать параметр полного URN (Canonical: UbuntuServer:14.04.3-LTS:1.0.0). Этот URN должен соответствовать спецификации образа, полученной из команды `az vm images list`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Развертывание шаблонов с помощью интерфейса командной строки Azure](azure-stack-deploy-template-command-line.md)
+
+[Включение Azure CLI для пользователей Azure Stack (оператор)](..\azure-stack-cli-admin.md)
 
 [Управление разрешениями пользователей](azure-stack-manage-permissions.md)

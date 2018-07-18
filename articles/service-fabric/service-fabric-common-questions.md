@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: a40432aa1d9a466706b4a3ebbcbd56cd8e5b768e
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: d864a663604794a249b08a7c7be471c3abba32af
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38971542"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -28,9 +29,9 @@ ms.lasthandoff: 05/16/2018
 
 ### <a name="how-do-i-rollback-my-service-fabric-cluster-certificate"></a>Как откатить смену сертификата кластера Service Fabric?
 
-Для отката каких-либо обновлений приложения нужно выполнить обнаружение сбоев работоспособности. После этого изменения фиксируются в кворуме кластера Service Fabric. Для зафиксированных изменений можно выполнить только накат. Чтобы восстановить кластер, возможно, инженеру потребуется повысить привилегии в службе поддержки пользователей, если введено критическое изменение сертификата, для которого не выполняется мониторинг.  При [обновлении приложения Service Fabric](https://review.docs.microsoft.com/en-us/azure/service-fabric/service-fabric-application-upgrade?branch=master) применяются [параметры обновления приложения](https://review.docs.microsoft.com/en-us/azure/service-fabric/service-fabric-application-upgrade-parameters?branch=master) и гарантируется нулевое время простоя.  В рекомендуемом режиме мониторинга приложение автоматически обновляется в доменах обновления, если пройдены проверки работоспособности. Если обновление службы по умолчанию завершается сбоем, выполняется автоматический откат.
+Для отката каких-либо обновлений приложения нужно выполнить обнаружение сбоев работоспособности. После этого изменения фиксируются в кворуме кластера Service Fabric. Для зафиксированных изменений можно выполнить только накат. Чтобы восстановить кластер, возможно, инженеру потребуется повысить привилегии в службе поддержки пользователей, если введено критическое изменение сертификата, для которого не выполняется мониторинг.  При [обновлении приложения Service Fabric](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-application-upgrade?branch=master) применяются [параметры обновления приложения](https://review.docs.microsoft.com/azure/service-fabric/service-fabric-application-upgrade-parameters?branch=master) и гарантируется нулевое время простоя.  В рекомендуемом режиме мониторинга приложение автоматически обновляется в доменах обновления, если пройдены проверки работоспособности. Если обновление службы по умолчанию завершается сбоем, выполняется автоматический откат.
  
-Если для кластера по-прежнему используется классическое свойство отпечатка сертификата в шаблоне Resource Manager, рекомендуем [присвоить кластеру общее имя вместо отпечатка сертификата](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-change-cert-thumbprint-to-cn). Это позволит использовать современные функции управления секретами.
+Если для кластера по-прежнему используется классическое свойство отпечатка сертификата в шаблоне Resource Manager, рекомендуем [присвоить кластеру общее имя вместо отпечатка сертификата](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-change-cert-thumbprint-to-cn). Это позволит использовать современные функции управления секретами.
 
 ### <a name="can-i-create-a-cluster-that-spans-multiple-azure-regions-or-my-own-datacenters"></a>Можно ли создать кластер, охватывающий несколько регионов Azure или моих центров обработки данных?
 

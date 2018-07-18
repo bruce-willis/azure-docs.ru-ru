@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 4/03/2018
 ms.author: srrengar
-ms.openlocfilehash: af94e3270493f6967c4f8c484170751c098bf181
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 90a28162fb1f455c154ad4d2da7beac6bc785bc7
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301042"
 ---
 # <a name="set-up-log-analytics-for-a-cluster"></a>Настройка Log Analytics для кластера
 
@@ -37,20 +38,20 @@ ms.lasthandoff: 05/16/2018
 
 3. Нажмите кнопку **Создать**.
 
-    ![Аналитика Service Fabric OMS в Marketplace](media/service-fabric-diagnostics-event-analysis-oms/service-fabric-analytics.png)
+    ![Аналитика Service Fabric в Marketplace](media/service-fabric-diagnostics-event-analysis-oms/service-fabric-analytics.png)
 
 4. В окне создания аналитики Service Fabric щелкните **Выберите рабочую область** для поля **Рабочая область OMS**, а затем выберите **Создание рабочей области**. Укажите необходимые записи. Единственным требованием является совпадение подписки для кластера Service Fabric и рабочей области. Когда завершится проверка записей, начнется развертывание рабочей области. Это займет всего несколько минут.
 
 5. Когда процесс завершится, снова выберите **Создать** в нижней части окна создания аналитики Service Fabric. Убедитесь, что новая рабочая область отображается в разделе **Рабочая область OMS**. В таком случае решение добавится в созданную рабочую область.
 
-При использовании Windows выполните следующие шаги, чтобы подключить OMS к учетной записи хранения, в которой хранятся события кластера. 
+При использовании Windows выполните указанные ниже шаги, чтобы подключить Log Analytics к учетной записи хранения, в которой хранятся события кластера. 
 
 >[!NOTE]
 >Для кластеров Linux эта функция подключения еще недоступна. 
 
 ### <a name="connect-the-log-analytics-workspace-to-your-cluster"></a>Подключение рабочей области Log Analytics к кластеру 
 
-1. Рабочая область должна быть подключена к данным диагностики, поступающим из кластера. Перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric\<\>** и перейдите на страницу обзора. На этой странице можно изменить параметры решения, рабочей области и получить доступ к порталу OMS.
+1. Рабочая область должна быть подключена к данным диагностики, поступающим из кластера. Перейдите в группу ресурсов, в которой вы создали решение "Аналитика Service Fabric". Выберите **ServiceFabric\<\>** и перейдите на страницу обзора. На этой странице можно изменить параметры решения, рабочей области и получить доступ к рабочей области Log Analytics.
 
 2. В меню навигации слева в разделе **Источники данных рабочей области** выберите **Журналы учетных записей хранения**.
 
@@ -64,16 +65,16 @@ ms.lasthandoff: 05/16/2018
 
 7. Нажмите кнопку **ОК**, чтобы подключить рабочую область к журналам кластера.
 
-    ![Добавление журналов учетной записи хранения к OMS](media/service-fabric-diagnostics-event-analysis-oms/add-storage-account.png)
+    ![Добавление журналов учетной записи хранения в Log Analytics](media/service-fabric-diagnostics-event-analysis-oms/add-storage-account.png)
 
 Теперь учетная запись будет отображаться в списке журналов учетной записи хранения в разделе источников данных для рабочей области.
 
-Вы успешно добавили решение "Аналитика Service Fabric" в рабочую область Log Analytics в OMS, подключенную должным образом к платформе кластера и таблице журналов приложения. Аналогичным образом вы можете добавить в рабочую область дополнительные источники.
+Вы успешно добавили решение "Аналитика Service Fabric" в рабочую область Log Analytics, подключенную должным образом к платформе кластера и таблице журналов приложения. Аналогичным образом вы можете добавить в рабочую область дополнительные источники.
 
 
-## <a name="deploy-oms-by-using-a-resource-manager-template"></a>Развертывание OMS с помощью шаблона Resource Manager
+## <a name="deploy-log-analytics-by-using-a-resource-manager-template"></a>Развертывание Log Analytics с помощью шаблона Resource Manager
 
-При развертывании кластера с помощью шаблона Resource Manager этот шаблон создает рабочую область OMS, добавляет в нее решение Service Fabric и настраивает в ней чтение данных из соответствующих таблиц службы хранилища.
+При развертывании кластера с помощью шаблона Resource Manager этот шаблон создает рабочую область Log Analytics, добавляет в нее решение Service Fabric и настраивает в ней чтение данных из соответствующих таблиц службы хранилища.
 
 Вы можете использовать [этот пример шаблона](https://github.com/krnese/azure-quickstart-templates/tree/master/service-fabric-oms), а также изменить его в соответствии со своими потребностями.
 
@@ -85,7 +86,7 @@ ms.lasthandoff: 05/16/2018
         "type": "string",
         "defaultValue": "sfomsworkspace",
         "metadata": {
-            "description": "Name of your OMS Log Analytics Workspace"
+            "description": "Name of your Log Analytics Workspace"
         }
     },
     "omsRegion": {
@@ -97,21 +98,21 @@ ms.lasthandoff: 05/16/2018
             "Southeast Asia"
         ],
         "metadata": {
-            "description": "Specify the Azure Region for your OMS workspace"
+            "description": "Specify the Azure Region for your Log Analytics workspace"
         }
     }
     ```
 
     Значения `omsRegion` должны соответствовать определенному набору значений. Выберите значение, ближайшее к развертыванию кластера.
 
-2. При отправке любых журналов приложений в OMS убедитесь, что `applicationDiagnosticsStorageAccountType` и `applicationDiagnosticsStorageAccountName` добавлены в шаблон в качестве параметров. В противном случае добавьте их в раздел переменных и при необходимости измените их значения. Их можно также включить как параметры, используя формат выше.
+2. При отправке любых журналов приложений в Log Analytics убедитесь, что `applicationDiagnosticsStorageAccountType` и `applicationDiagnosticsStorageAccountName` добавлены в шаблон в качестве параметров. В противном случае добавьте их в раздел переменных и при необходимости измените их значения. Их можно также включить как параметры, используя формат выше.
 
     ```json
     "applicationDiagnosticsStorageAccountType": "Standard_LRS",
     "applicationDiagnosticsStorageAccountName": "[toLower(concat('oms', uniqueString(resourceGroup().id), '3' ))]"
     ```
 
-3. Добавьте решение OMS Service Fabric в переменные шаблона:
+3. Добавьте решение Service Fabric в переменные шаблона:
 
     ```json
     "solution": "[Concat('ServiceFabric', '(', parameters('omsWorkspacename'), ')')]",
@@ -187,16 +188,16 @@ ms.lasthandoff: 05/16/2018
 
     Azure Resource Manager определит, что эта команда — это обновление имеющегося ресурса. Он обработает только изменения между шаблоном, управляющим имеющимся развертыванием, и новым предоставленным шаблоном.
 
-## <a name="deploy-oms-by-using-azure-powershell"></a>Развертывание OMS с помощью Azure PowerShell
+## <a name="deploy-log-analytics-by-using-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
 
-Ресурс OMS Log Analytics можно также развернуть с помощью PowerShell. Для этого выполните команду `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область OMS Log Analytics и добавить в нее решение Service Fabric, используйте следующий скрипт: 
+Ресурс Log Analytics можно также развернуть через PowerShell с помощью команды `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
 ```PowerShell
 
 $SubscriptionName = "<Name of your subscription>"
 $ResourceGroup = "<Resource group name>"
 $Location = "<Resource group location>"
-$WorkspaceName = "<OMS Log Analytics workspace name>"
+$WorkspaceName = "<Log Analytics workspace name>"
 $solution = "ServiceFabric"
 
 # Log in to Azure and access the correct subscription
@@ -215,11 +216,11 @@ Set-AzureRmOperationalInsightsIntelligencePack -ResourceGroupName $ResourceGroup
 
 ```
 
-После этого выполните шаги, описанные в разделе выше, чтобы подключить OMS Log Analytics к соответствующей учетной записи хранения.
+После этого выполните шаги, описанные в разделе выше, чтобы подключить Log Analytics к соответствующей учетной записи хранения.
 
-Вы также можете добавить другие решения или внести другие изменения в рабочую область OMS с помощью PowerShell. Дополнительные сведения см. в статье [Управление Log Analytics с помощью PowerShell](../log-analytics/log-analytics-powershell-workspace-configuration.md).
+Вы также можете добавить другие решения или внести другие изменения в рабочую область Log Analytics с помощью PowerShell. Дополнительные сведения см. в статье [Управление Log Analytics с помощью PowerShell](../log-analytics/log-analytics-powershell-workspace-configuration.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Разверните агент OMS](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнера.
+* [Разверните агент Log Analytics](service-fabric-diagnostics-oms-agent.md) на узлах для сбора данных счетчиков производительности и статистики Docker, а также журналов для контейнеров.
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * [Использование конструктора представлений для создания пользовательских представлений Log Analytics](../log-analytics/log-analytics-view-designer.md)

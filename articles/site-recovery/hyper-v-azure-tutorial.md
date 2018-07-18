@@ -1,18 +1,19 @@
 ---
-title: "Настройка аварийного восстановления для локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью Azure Site Recovery | Документация Майкрософт"
-description: "Узнайте, как настроить аварийное восстановление локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью службы Azure Site Recovery."
+title: Настройка аварийного восстановления для локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью Azure Site Recovery | Документация Майкрософт
+description: Узнайте, как настроить аварийное восстановление локальных виртуальных машин Hyper-V (без VMM) в Azure с помощью службы Azure Site Recovery.
 services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 02/14/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: e7ddb3046b0725b3afcea2ed6a533388a89cf306
-ms.sourcegitcommit: fbba5027fa76674b64294f47baef85b669de04b7
+ms.openlocfilehash: f09d66e069ac22e5b8203d9871d2e5645570086a
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917954"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -40,19 +41,31 @@ ms.lasthandoff: 02/24/2018
 2. В разделе **Приступая к работе** щелкните **Site Recovery**. Затем выберите **Подготовка инфраструктуры**.
 3. Выберите **Protection goal** (Цель защиты)  > **Where are your machines located** (Где находятся компьютеры?), а затем — **On-premises** (Локально).
 4. В разделе **Куда следует реплицировать компьютеры?** выберите **To Azure** (В Azure).
-5. В разделе **Ваши компьютеры виртуализированы?** выберите **Нет**. Нажмите кнопку **ОК**.
+5. В поле **Are you using System Center VMM to manage your Hyper-V hosts** (Используете ли вы System Center VMM для управления узлами Hyper-V?) выберите **Нет**. Нажмите кнопку **ОК**.
 
     ![Цель репликации](./media/hyper-v-azure-tutorial/replication-goal.png)
 
+## <a name="confirm-deployment-planning"></a>Подтверждение планирования развертывания
+
+При планировании крупномасштабного развертывания, необходимо убедиться в том, что было завершено [планирование развертывания для репликации Hyper-V](hyper-v-deployment-planner-overview.md). В рамках этого руководства в поле **Have you completed deployment planning?** (Вы спланировали развертывание?) из раскрывающегося списка выберите **I will do it later** (Выполню позже).
+
+![Планирование развертывания](./media/hyper-v-azure-tutorial/deployment-planning.png)
+
 ## <a name="set-up-the-source-environment"></a>Настройка исходной среды
 
-Чтобы настроить среду источника, добавьте узлы Hyper-V на сайт Hyper-V, скачайте и установите поставщик Azure Site Recovery и агент служб восстановления Azure, а затем зарегистрируйте сайт Hyper-V в хранилище. 
+Чтобы настроить исходную среду, создайте сайт Hyper-V и добавьте ему узлы Hyper-V. Затем загрузите и установите поставщика Azure Site Recovery и агента служб восстановления Azure для каждого узла, а затем в хранилище зарегистрируйте сайт Hyper-V. 
 
 1. В разделе **Подготовка инфраструктуры** щелкните **Источник**.
 2. Щелкните **+Hyper-V Site** (+ Сайт Hyper-V) и укажите имя сайта **ContosoHyperVSite**, созданного при работе с предыдущим руководством.
-3. Щелкните **+Hyper-V Server** (+ Сервер Hyper-V).
+
+    ![Узел Hyper-V](./media/hyper-v-azure-tutorial/hyperv-site.png)
+
+3. После создания сайта щелкните **Hyper-V Server**.
+
+    ![Сервер Hyper-V](./media/hyper-v-azure-tutorial/hyperv-server.png)
+
 4. Скачайте файл установки поставщика.
-5. Скачайте ключ регистрации хранилища. Этот ключ понадобится при запуске программы установки поставщика. Ключ действителен в течение пяти дней после создания.
+6. Скачайте ключ регистрации хранилища. Этот ключ понадобится при запуске программы установки поставщика. Ключ действителен в течение пяти дней после создания.
 
     ![Скачивание поставщика](./media/hyper-v-azure-tutorial/download.png)
     

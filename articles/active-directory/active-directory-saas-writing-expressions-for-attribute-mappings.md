@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
-ms.openlocfilehash: f1cf83044eb4f001ba341cabd0771b267c3f996d
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 24b20766997a9a41956f575f6cab8ee5ef0d9e25
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37035392"
 ---
 # <a name="writing-expressions-for-attribute-mappings-in-azure-active-directory"></a>Запись выражений для сопоставления атрибутов в Azure Active Directory
 При настройке подготовки для приложения SaaS одним из типов сопоставления атрибутов, которые можно указать, является сопоставление выражений. Для этого необходимо написать выражение, похожее на скрипт. Оно позволит вам преобразовать данные пользователей в форматы, более подходящие для приложений SaaS.
@@ -36,7 +37,7 @@ ms.lasthandoff: 04/20/2018
 * Если в строковых константах необходимо использовать обратную косую черту (\) или кавычки (""), такие символы следует экранировать обратной косой чертой (\). Например: "Название компании: \"Contoso\"".
 
 ## <a name="list-of-functions"></a>Список функций
-[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
+[Append](#append) &nbsp;&nbsp;&nbsp;&nbsp; [FormatDateTime](#formatdatetime) &nbsp;&nbsp;&nbsp;&nbsp; [Join](#join) &nbsp;&nbsp;&nbsp;&nbsp; [Mid](#mid) &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [NormalizeDiacritics](#normalizediacritics) [Not](#not) &nbsp;&nbsp;&nbsp;&nbsp; [Replace](#replace) &nbsp;&nbsp;&nbsp;&nbsp; [SingleAppRoleAssignment](#singleapproleassignment)&nbsp;&nbsp;&nbsp;&nbsp; [StripSpaces](#stripspaces) &nbsp;&nbsp;&nbsp;&nbsp; [Switch](#switch)
 
 - - -
 ### <a name="append"></a>Добавить
@@ -95,6 +96,18 @@ ms.lasthandoff: 04/20/2018
 | **длина** |Обязательно |целое число |Длина подстроки. Если длина превышает размер **исходной** строки, функция возвращает подстроку из **начала** индекса и до конца **исходной** строки. |
 
 - - -
+### <a name="normalizediacritics"></a>NormalizeDiacritics
+**Функция:**<br> NormalizeDiacritics(source)
+
+**Описание.**<br> Требуется один строковый аргумент. Возвращает строку, в которой все символы с диакритическими знаками заменены эквивалентами без диакритических знаков. Обычно используется для преобразования имен и фамилий с диакритическими знаками в допустимые значения, которые могут использоваться в различных идентификаторах пользователя, таких как имена участников-пользователей, имена учетных записей SAM и адреса электронной почты.
+
+**Параметры:**<br> 
+
+| ИМЯ | Обязательно/повторяется | type | Заметки |
+| --- | --- | --- | --- |
+| **источник** |Обязательно |Строка | Обычно атрибут имени или фамилии |
+
+- - -
 ### <a name="not"></a>not
 **Функция:**<br> Not(источник)
 
@@ -128,7 +141,6 @@ ms.lasthandoff: 04/20/2018
   * Если для **source** не указано значение, используется **regexPattern** и **regexGroupName** для извлечения значения замены из свойства с **replacementPropertyName**. В качестве результата возвращается значение замены.
 
 **Параметры:**<br> 
-
 | ИМЯ | Обязательно/повторяется | type | Заметки |
 | --- | --- | --- | --- |
 | **источник** |Обязательно |Строка |Как правило, имя атрибута из исходного объекта. |
@@ -143,7 +155,7 @@ ms.lasthandoff: 04/20/2018
 ### <a name="singleapproleassignment"></a>SingleAppRoleAssignment
 **Функция:**<br> SingleAppRoleAssignment([appRoleAssignments])
 
-**Описание.**<br> Возвращает один объект appRoleAssignment из списка всех объектов appRoleAssignment, назначенных пользователю для заданного приложения. Эта функция необходима для преобразования объекта appRoleAssignment в отдельную строку имени роли. Обратите внимание на то, что рекомендуется назначать только один объект appRoleAssignment одному пользователю одновременно. При назначении нескольких ролей невозможно предсказать возвращаемую строку роли.
+**Описание.**<br> Требуется один строковый аргумент. Возвращает строку, в которой все символы с диакритическими знаками заменены эквивалентами без диакритических знаков.
 
 **Параметры:**<br> 
 
@@ -214,16 +226,16 @@ ms.lasthandoff: 04/20/2018
 * **ВВОД** : (surname): "Doe"
 * **Выходные данные**: "JohDoe"
 
-### <a name="remove-diacritics-from-a-string-and-convert-to-lowercase"></a>Удаление диакритических знаков из строки и преобразование символов в нижний регистр
-Необходимо удалить специальные символы из строки и преобразовать символы верхнего регистра в нижний.
+### <a name="remove-diacritics-from-a-string"></a>Удаление диакритических знаков из строки
+Вам нужно заменить символы с диакритическими знаками эквивалентами без диакритических знаков.
 
 **Выражение:** <br>
-`Replace(Replace(Replace(Replace(Replace(Replace(Replace( Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace( Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace(Replace([givenName], , "([Øø])", , "oe", , ), , "[Ææ]", , "ae", , ), , "([äãàâãåáąÄÃÀÂÃÅÁĄA])", , "a", , ), , "([B])", , "b", , ), , "([CçčćÇČĆ])", , "c", , ), , "([ďĎD])", , "d", , ), , "([ëèéêęěËÈÉÊĘĚE])", , "e", , ), , "([F])", , "f", , ), , "([G])", , "g", , ), , "([H])", , "h", , ), , "([ïîìíÏÎÌÍI])", , "i", , ), , "([J])", , "j", , ), , "([K])", , "k", , ), , "([ľłŁĽL])", , "l", , ), , "([M])", , "m", , ), , "([ñńňÑŃŇN])", , "n", , ), , "([öòőõôóÖÒŐÕÔÓO])", , "o", , ), , "([P])", , "p", , ), , "([Q])", , "q", , ), , "([řŘR])", , "r", , ), , "([ßšśŠŚS])", , "s", , ), , "([TŤť])", , "t", , ), , "([üùûúůűÜÙÛÚŮŰU])", , "u", , ), , "([V])", , "v", , ), , "([W])", , "w", , ), , "([ýÿýŸÝY])", , "y", , ), , "([źžżŹŽŻZ])", , "z", , ), " ", , , "", , )`
+NormalizeDiacritics([givenName])
 
 **Пример ввода и вывода:** <br>
 
-* **Входные данные** (givenName): "Zoë".
-* **Выходные данные**: "zoe".
+* **ВВОД** (givenName): "Zoë"
+* **Выходные данные**: "Zoe".
 
 ### <a name="output-date-as-a-string-in-a-certain-format"></a>Вывод даты в виде строки в определенном формате
 Необходимо отправить в приложение SaaS даты в определенном формате. <br>
@@ -256,7 +268,7 @@ ms.lasthandoff: 04/20/2018
 * [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS](active-directory-saas-app-provisioning.md)
 * [Настройка сопоставления атрибутов для подготовки пользователей](active-directory-saas-customizing-attribute-mappings.md)
 * [Фильтры области для подготовки пользователей](active-directory-saas-scoping-filters.md)
-* [Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](active-directory-scim-provisioning.md)
+* [Автоматическая подготовка пользователей и групп из Azure Active Directory в приложениях с использованием SCIM](manage-apps/use-scim-to-provision-users-and-groups.md)
 * [Уведомления о подготовке учетных записей](active-directory-saas-account-provisioning-notifications.md)
-* [Список учебников по интеграции приложений SaaS](active-directory-saas-tutorial-list.md)
+* [Список учебников по интеграции приложений SaaS](saas-apps/tutorial-list.md)
 

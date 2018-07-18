@@ -7,17 +7,19 @@ manager: cgronlun
 editor: cgronlun
 ms.assetid: ''
 ms.service: machine-learning
+ms.component: team-data-science-process
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: deguhath
-ms.openlocfilehash: 5c617c60ff51d0b1e7717b28b0372efe63c1ee18
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: ed402f9730136fdb8a4d07dd291599c567637600
+ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34838387"
 ---
 # <a name="execute-data-science-tasks-exploration-modeling-and-deployment"></a>Выполнение задач обработки и анализа данных: изучение, моделирование и развертывание
 
@@ -92,22 +94,26 @@ ms.lasthandoff: 05/03/2018
 - [Развертывание модели на сервере SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-py6-operationalize-the-model)
 - [Microsoft Machine Learning Server](https://docs.microsoft.com/sql/advanced-analytics/r/r-server-standalone)
 
+> [!NOTE]
+> Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.
 >
->
->Примечание. Перед развертыванием необходимо убедиться, что показатели задержки модели достаточно малы для использования в рабочей среде.
 >
 
 В пошаговых руководствах доступны дополнительные примеры, которые демонстрируют все этапы процесса для **конкретных сценариев**. Эти этапы с иллюстрациями и краткими описаниями перечислены в статье [Пошаговые руководства по процессу обработки и анализа данных группы](walkthroughs.md). В них показано, как объединить облачные и локальные средства и службы в единый рабочий процесс или конвейер, чтобы создать интеллектуальное приложение.
 
-Примечание. Разработка с помощью Студии машинного обучения Azure описывается в разделе [Развертывание веб-службы машинного обучения Azure](../studio/publish-a-machine-learning-web-service.md).
+> [!NOTE]
+> Разработка с помощью Студии машинного обучения Azure описывается в разделе [Развертывание веб-службы машинного обучения Azure](../studio/publish-a-machine-learning-web-service.md).
+>
+>
 
-### <a name="ab-testing"></a>A/B тестирование
+### <a name="ab-testing"></a>A/B-тестирование
 Если в рабочей среде используется несколько моделей, удобно выполнять [A/B-тестирование](https://en.wikipedia.org/wiki/A/B_testing), чтобы сравнить их эффективность. 
 
  
 ## <a name="next-steps"></a>Дополнительная информация
 
 В разделе [Ход выполнения проектов обработки и анализа данных](track-progress.md) показано, как специалист по обработке и анализу данных может отслеживать ход выполнения проекта обработки и анализа данных.
- 
+
+[Модель операции и CI/CD](ci-cd-flask.md) показывает, как CI/CD могут быть выполнены при помощи разработанных моделей.
 
 

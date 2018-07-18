@@ -10,20 +10,18 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: shlo
-ms.openlocfilehash: 0d1ff97aef7be7fa9f9f07f2743e1a1a9399e48a
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: cca9befb65abed3b6d07a52aa286c43725577121
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051752"
 ---
 # <a name="azure-data-factory---naming-rules"></a>Фабрика данных Azure — правила именования
 В следующей таблице приведены правила именования для артефактов фабрики данных.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, прочитайте статью [Фабрика данных Azure — правила именования](v1/data-factory-naming-rules.md).
 
 | ИМЯ | Уникальность имени | Проверки |
 |:--- |:--- |:--- |
@@ -32,4 +30,4 @@ ms.lasthandoff: 03/23/2018
 | Группа ресурсов |Уникально в рамках Microsoft Azure. Регистр в именах не учитывается. | Дополнительные сведения см. в разделе [Правила именования и ограничения](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions#naming-rules-and-restrictions). |
 
 ## <a name="next-steps"></a>Дополнительная информация
-Узнайте, как создавать фабрики данных, выполнив пошаговые инструкции в статье [Создание фабрики данных и конвейера с помощью пакета PowerShell](quickstart-create-data-factory-powershell.md). 
+Узнайте, как создавать фабрики данных, выполнив пошаговые инструкции из [краткого руководства](quickstart-create-data-factory-powershell.md). 

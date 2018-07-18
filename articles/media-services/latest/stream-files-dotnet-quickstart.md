@@ -13,18 +13,19 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/08/2018
 ms.author: juliako
-ms.openlocfilehash: 40759fc65caa181651de68756f4374f879fd9c9c
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e17a800ff61822a5040737e479c3e1855eeb8893
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34701044"
 ---
 # <a name="quickstart-stream-video-files---net"></a>Краткое руководство по потоковой передаче видеофайлов — .NET
 
 > [!NOTE]
 > Последняя версия Служб мультимедиа Azure представлена в предварительной версии и может называться версией 3. Чтобы начать использовать API-интерфейсы 3 версии, создайте учетную запись Служб мультимедиа, как описано в этом кратком руководстве. 
 
-Это краткое руководство показывает, как можно легко начать потоковую передачу видео в разных браузерах и на разных устройствах с помощью Служб мультимедиа Azure. 
+Это краткое руководство показывает, как можно легко начать потоковую передачу видео в разных браузерах и на разных устройствах с помощью Служб мультимедиа Azure. Пример в этой статье предназначен для кодирования содержимого, которое доступно через URL-адрес HTTPS. 
 
 Изучив это краткое руководство, вы сможете выполнить потоковую передачу видео.  
 
@@ -34,7 +35,7 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Если у вас нет Visual Studio, вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15).
+Вы можете скачать [Visual Studio Community 2017](https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&rel=15) бесплатно, если у вас нет Visual Studio.
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -43,6 +44,18 @@ ms.lasthandoff: 05/07/2018
  ```bash
  git clone https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts.git
  ```
+
+Этот пример находится в папке [EncodeAndStreamFiles](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/tree/master/AMSV3Quickstarts/EncodeAndStreamFiles).
+
+Этот пример выполняет следующие действия:
+
+1. создание преобразования (сначала проверяется, существует ли указанное преобразование); 
+2. создание выходного ресурса, который используется в качестве выходных данных задания кодирования;
+3. создание входных данных для задания, основанных на URL-адресе HTTPS;
+4. отправка задания кодирования с помощью входных и выходных данных, которые были созданы ранее;
+5. проверка состояния задания;
+6. создание указателя потоковой передачи;
+7. компиляция URL-адресов потоковой передачи.
 
 Чтобы получить сведения о назначении всех функций в образце, ознакомьтесь с кодом и просмотрите комментарии в [этом исходном файле](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/Program.cs).
 

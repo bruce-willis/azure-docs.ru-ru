@@ -1,6 +1,6 @@
 ---
-title: Безопасное удаленное взаимодействие со службой в Azure Service Fabric | Документация Майкрософт
-description: Узнайте, как защитить удаленное взаимодействие со службой для служб Reliable Services, запущенных в кластере Azure Service Fabric.
+title: Безопасное удаленное взаимодействие со службой в C# в Azure Service Fabric | Документы Майкрософт
+description: Узнайте, как защитить удаленное взаимодействие со службой для служб Reliable Services на C#, запущенных в кластере Azure Service Fabric.
 services: service-fabric
 documentationcenter: .net
 author: suchiagicha
@@ -14,22 +14,23 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 04/20/2017
 ms.author: suchiagicha
-ms.openlocfilehash: cd7211ecda61ab2cca0f97e292d9ce2c47ed6933
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: be5dab7b9714f13a4bd30e6ab33a5a0e2016212d
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37020025"
 ---
-# <a name="secure-service-remoting-communications-for-a-service"></a>Безопасное удаленное взаимодействие для службы
+# <a name="secure-service-remoting-communications-in-a-c-service"></a>Безопасное удаленное взаимодействие со службой для службы C#
 > [!div class="op_single_selector"]
 > * [C# в Windows](service-fabric-reliable-services-secure-communication.md)
 > * [Java в Linux](service-fabric-reliable-services-secure-communication-java.md)
 >
 >
 
-Безопасность — один из самых важных аспектов взаимодействия. Платформа приложений Reliable Services предоставляет несколько готовых стеков взаимодействия и средств, которыми можно воспользоваться для повышения безопасности. В этой статье объясняется, как повысить безопасность при использовании удаленного взаимодействия со службой.
+Безопасность — один из самых важных аспектов взаимодействия. Платформа приложений Reliable Services предоставляет несколько готовых стеков взаимодействия и средств, которыми можно воспользоваться для повышения безопасности. В этой статье объясняется, как повысить безопасность при использовании удаленного взаимодействия со службой для службы C#. Мы будем использовать существующий [пример](service-fabric-reliable-services-communication-remoting.md), в котором описывается настройка удаленного взаимодействия для Reliable Services, написанных на C#. 
 
-Мы используем существующий [пример](service-fabric-reliable-services-communication-remoting.md), в котором описывается настройка удаленного взаимодействия для Reliable Services. Для защиты службы при использовании удаленного взаимодействия служб выполните следующие действия:
+Для защиты службы при использовании удаленного взаимодействия со службами C# выполните следующие действия:
 
 1. Создайте интерфейс `IHelloWorldStateful`, определяющий методы, которые будут доступны для удаленного вызова процедур в службе. Служба также будет использовать прослушиватель `FabricTransportServiceRemotingListener`, который объявляется в пространстве имен `Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime`. Это реализация `ICommunicationListener` , которая предоставляет возможности удаленного взаимодействия.
 
@@ -56,7 +57,12 @@ ms.lasthandoff: 05/16/2018
     ```
 2. Добавьте параметры прослушивателя и учетные данные безопасности.
 
-    Убедитесь, что сертификат, который вы хотите использовать для защиты взаимодействия со службой, установлен на всех узлах в кластере. Существует два способа указания параметров прослушивателя и учетных данных безопасности:
+    Убедитесь, что сертификат, который вы хотите использовать для защиты взаимодействия со службой, установлен на всех узлах в кластере. 
+    
+    > [!NOTE]
+    > На узлах Linux сертификат должен представлять собой PEM-файлы в каталоге */var/lib/sfcerts*. Дополнительные сведения см. в разделе [Расположение и формат сертификатов X.509 в узлах Linux](./service-fabric-configure-certificates-linux.md#location-and-format-of-x509-certificates-on-linux-nodes). 
+
+    Существует два способа указания параметров прослушивателя и учетных данных безопасности:
 
    1. Предоставьте их непосредственно в коде службы:
 
@@ -93,7 +99,7 @@ ms.lasthandoff: 05/16/2018
        ```
    2. Предоставьте их с помощью [пакета конфигурации](service-fabric-application-and-service-manifests.md):
 
-       Добавьте раздел `TransportSettings` в файл settings.xml.
+       Добавьте именованный раздел `TransportSettings` в файл settings.xml.
 
        ```xml
        <Section Name="HelloWorldStatefulTransportSettings">
@@ -201,5 +207,6 @@ ms.lasthandoff: 05/16/2018
     string message = await client.GetHelloWorld();
 
     ```
+
 
 Теперь ознакомьтесь со статьей [Веб-API с OWIN в модели Reliable Services](service-fabric-reliable-services-communication-webapi.md).

@@ -1,21 +1,21 @@
 ---
-title: 'Azure AD B2C: поток кода авторизации | Документация Майкрософт'
+title: Поток кода авторизации в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как создавать веб-приложения с использованием протокола аутентификации Azure AD B2C и OpenID Connect.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
-ms.openlocfilehash: d8ed5747f29f969535bbafc1624d9d02e54c8418
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: B2C
+ms.openlocfilehash: 6baeba9cc7e631c6dbdf2284db484dc5f95adcce
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37444207"
 ---
 # <a name="azure-active-directory-b2c-oauth-20-authorization-code-flow"></a>Azure Active Directory B2C: поток кода авторизации OAuth 2.0
 Код авторизации OAuth 2.0 может использоваться в приложениях, установленных на устройстве, для получения доступа к защищенным ресурсам, таким как веб-API. С помощью реализации OAuth 2.0 в Azure Active Directory B2C можно добавить регистрацию, вход и другие задачи по управлению пользователями в мобильные и настольные приложения. Эта статья не зависит от языка. В ней описывается, как отправлять и получать сообщения HTTP, не используя ни одну из библиотек с открытым исходным кодом.

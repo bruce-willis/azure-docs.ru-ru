@@ -27,7 +27,7 @@
 ### [Виртуальная машина Windows Server на основе шаблона](active-directory-ds-join-windows-vm-template.md)
 ### [CentOS](active-directory-ds-join-centos-linux-vm.md)
 ### [CoreOS](active-directory-ds-join-coreos-linux-vm.md)
-### [RedHat Enterprise Linux](active-directory-ds-join-rhel-linux-vm.md)
+### [Подготовка виртуальной машины на основе Red Hat для Azure](active-directory-ds-join-rhel-linux-vm.md)
 ### [Сервер Ubuntu](active-directory-ds-join-ubuntu-linux-vm.md)
 ## Администрирование управляемого домена
 ### [Администрирование управляемого домена](active-directory-ds-admin-guide-administer-domain.md)
@@ -38,6 +38,7 @@
 #### [Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
 
 ### [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
+### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)
 ### [Администрирование групповой политики в управляемом домене](active-directory-ds-admin-guide-administer-group-policy.md)
 ## [Выбор виртуальной сети](active-directory-ds-networking.md)
 ## Развертывание приложений
@@ -53,13 +54,14 @@
 #### [Восстановление отсутствующих субъектов-служб](active-directory-ds-troubleshoot-service-principals.md)
 #### [Ошибки защищенного протокола LDAP](active-directory-ds-troubleshoot-ldaps.md)
 ### [Устранение ошибок несоответствия клиента](active-directory-ds-mismatched-tenant-error.md)
+### [Приостановленные домены](active-directory-ds-suspension.md)
 
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)
 
 # Сопутствующие материалы
-## [Azure Active Directory](../active-directory/active-directory-whatis.md)
+## [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)
 ## [Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-overview.md)
 ## [Многофакторная идентификация](../active-directory/authentication/multi-factor-authentication.md)
 

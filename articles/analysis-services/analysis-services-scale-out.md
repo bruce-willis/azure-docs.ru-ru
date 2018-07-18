@@ -3,16 +3,17 @@ title: Горизонтальное масштабирование служб Az
 description: Репликация серверов Azure Analysis Services с помощью горизонтального масштабирования.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/16/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ee9210953306fbe317e9ed63c02fb90452ffbd15
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 4cb7b165311f57fadd63770646907ddfc0378844
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445026"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Горизонтальное масштабирование служб Azure Analysis Services
 
@@ -33,6 +34,22 @@ ms.lasthandoff: 04/18/2018
 
 > [!NOTE]
 > Горизонтальное масштабирование не увеличивает объем доступной памяти сервера. Чтобы увеличить объем памяти, необходимо изменить план.
+
+## <a name="region-limits"></a>Региональные пределы
+
+Число реплик запросов, которые вы можете настроить, ограничено регионом, в котором находится ваш сервер. Применяются следующие ограничения:
+
+|Регион  |Максимальное число реплик  |
+|---------|---------|
+|Восток США 2    |    7     |
+|Западно-центральная часть США     |    7     |
+|Западная Европа     |    7     |
+|Запад США     |     7    |
+|Центральный регион США     |     3    |
+|Юго-Восточная Азия    |     3    |
+|Все другие регионы  |   1    |
+
+
 
 ## <a name="monitor-qpu-usage"></a>Мониторинг использования QPU
 

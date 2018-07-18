@@ -1,24 +1,20 @@
 ---
 title: Получение сообщения электронной почты в случае открытия двери с помощью службы SendGrid и решения "Функции Azure" | Документация Майкрософт
 description: Наблюдайте за магнитным датчиком, чтобы обнаружить, когда дверь открыта, и используйте решение "Функции Azure" для отправки уведомления по электронной почте.
-services: iot-hub
-documentationcenter: ''
 author: liydu
-manager: timlt
-tags: ''
-keywords: ''
+manager: jeffya
 ms.service: iot-hub
-ms.devlang: arduino
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+services: iot-hub
+ms.topic: conceptual
+ms.tgt_pltfrm: arduino
 ms.date: 03/19/2018
 ms.author: liydu
-ms.openlocfilehash: d25948aeab4170e67133a8e7f538089fca28407d
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 25cb3ba53c663a642f0871becbfbcab39d521c67
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437721"
 ---
 # <a name="door-monitor"></a>Мониторинг двери          
 
@@ -37,7 +33,7 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
-Выполните указания в [руководстве по началу работы]({{"/docs/get-started/" | absolute_url }}), чтобы перейти к таким этапам:
+Выполните указания в [руководстве по началу работы](iot-hub-arduino-iot-devkit-az3166-get-started.md), чтобы перейти к таким этапам:
 
 * Подключение DevKit к сети Wi-Fi.
 * Подготовка среды разработки
@@ -213,4 +209,4 @@ ms.lasthandoff: 05/07/2018
 Вы узнали, как подключить устройство DevKit к акселератору решений для удаленного мониторинга Интернета вещей Azure и как использовать службу SendGrid для отправки сообщений электронной почты. Ниже приведены предлагаемые дальнейшие действия:
 
 * [Общие сведения об акселераторе решений для удаленного мониторинга Интернета вещей Azure](https://docs.microsoft.com/azure/iot-suite/)
-* [Connect an MXChip IoT DevKit device to your Microsoft IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Microsoft IoT Central)
+* [Connect an MXChip IoT DevKit device to your Azure IoT Central application](https://docs.microsoft.com/microsoft-iot-central/howto-connect-devkit) (Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central)

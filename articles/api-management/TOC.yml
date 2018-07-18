@@ -77,6 +77,8 @@
           href: edit-api.md
     - name: Подготовка и масштабирование
       items:
+        - name: Метрики емкости
+          href: api-management-capacity.md
         - name: Обновление и масштабирование
           href: upgrade-and-scale.md
         - name: Настройка личного домена
@@ -97,6 +99,8 @@
           href: api-management-howto-integrate-internal-vnet-appgateway.md
         - name: Взаимная проверка подлинности на основе сертификата
           href: api-management-howto-mutual-certificates.md
+        - name: Управление протоколами и шифрами
+          href: api-management-howto-manage-protocols-ciphers.md
     - name: Настройка процесса разработки
       items:
         - name: Изменение содержимого и макета страницы
@@ -173,6 +177,8 @@
           href: api-management-howto-deploy-multi-region.md
         - name: Регистрация событий для концентраторов событий Azure
           href: api-management-howto-log-event-hubs.md
+        - name: Ведение журнала запросов с использованием Azure Application Insights
+          href: api-management-howto-app-insights.md
         - name: Настройка аварийного восстановления с помощью резервного копирования и восстановления
           href: api-management-howto-disaster-recovery-backup-restore.md
         - name: Управление учетными записями пользователей

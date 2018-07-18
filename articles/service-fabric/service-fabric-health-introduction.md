@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: ed1a307cb2a2613fc7701392cd7b408715f10910
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: fc0bb56e85c2a9cf7a458b0f6d97887d392ee65f
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37114322"
 ---
 # <a name="introduction-to-service-fabric-health-monitoring"></a>Общие сведения о наблюдении за работоспособностью системы в Service Fabric
 В платформе Azure Service Fabric используется модель работоспособности c широкими и гибкими возможностями оценки работоспособности и создания отчетов, которая позволяет отслеживать состояние кластера и выполняющихся в нем служб практически в реальном времени. Вы можете легко получать сведения о работоспособности и устранять потенциальные проблемы, прежде чем они приведут к серьезным перебоям в работе. Службы в рамках обычной модели отправляют отчеты на локальном уровне, а затем полученная информация агрегируется на уровне кластера.
@@ -116,7 +117,7 @@ ms.lasthandoff: 05/16/2018
 [Политика работоспособности приложения](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthpolicy) описывает, как выполняется оценка и агрегирование событий, состояний приложения и его дочерних элементов. Ее можно определить в манифесте приложения (файл **ApplicationManifest.xml**в пакете приложения). Если политика не определена, платформа Service Fabric предполагает, что сущность неработоспособна, если в отчете по ней или ее дочернему элементу указано состояние Warning или Error.
 В политике можно настроить такие параметры:
 
-* [ConsiderWarningAsError](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthpolicy.considerwarningaserror.aspx). Указывает, следует ли при оценке работоспособности обрабатывать предупреждения как ошибки. По умолчанию: false.
+* [ConsiderWarningAsError](https://docs.microsoft.com/dotnet/api/system.fabric.health.clusterhealthpolicy.considerwarningaserror). Указывает, следует ли при оценке работоспособности обрабатывать предупреждения как ошибки. По умолчанию: false.
 * [MaxPercentUnhealthyDeployedApplications](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthpolicy.maxpercentunhealthydeployedapplications). Указывает максимально допустимый процент неработоспособных приложений, превышение которого вызывает состояние Error при оценке приложения. Это выраженное в процентах частное от деления количества неработоспособных развернутых приложений на количество узлов в кластере, на которых сейчас развернуты приложения. Расчет округляется: на небольшом количестве узлов допускается один сбой. Значение в процентах по умолчанию: ноль.
 * [DefaultServiceTypeHealthPolicy](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthpolicy.defaultservicetypehealthpolicy). Задает политику работоспособности для типов служб по умолчанию, которая заменяет политику работоспособности по умолчанию для всех типов служб в приложении.
 * [ServiceTypeHealthPolicyMap](https://docs.microsoft.com/dotnet/api/system.fabric.health.applicationhealthpolicy.servicetypehealthpolicymap). Обеспечивает сопоставление политики работоспособности службы для каждого типа службы. Эти политики заменяют стандартные политики работоспособности для каждого указанного типа службы. Например, если приложение использует службы с типами "шлюз без отслеживания состояния" и "механизм с отслеживанием состояния", для их оценки можно настроить разные политики работоспособности. Настройка отдельных политик для разных типов служб позволяет отслеживать работоспособность на более детализированном уровне.

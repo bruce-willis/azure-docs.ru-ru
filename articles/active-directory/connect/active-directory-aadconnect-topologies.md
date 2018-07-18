@@ -13,13 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.topic: article
 ms.date: 02/27/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2f72f2dd3dbaaf17494d09a36159afc464cc64d4
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6a0f18a47bb50144d0a4d428617e0dc5c7509196
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32154296"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442252"
 ---
 # <a name="topologies-for-azure-ad-connect"></a>Топологии Azure AD Connect.
 В этой статье описываются различные локальные топологии и топологии Active Directory Azure (Azure AD), в которых служба синхронизации Azure AD Connect используется в качестве основного решения интеграции. Здесь описываются и поддерживаемые, и неподдерживаемые конфигурации.
@@ -137,7 +138,7 @@ Azure AD Connect поддерживает установку второго се
 
 ## <a name="multiple-azure-ad-tenants"></a>Множество клиентов Azure AD
 Мы рекомендуем использовать один клиент в Azure AD для всей организации.
-Прежде чем использовать несколько клиентов Azure AD, ознакомьтесь со статьей [Управление административными единицами в Azure AD (общедоступной предварительной версии)](../active-directory-administrative-units-management.md). В ней описываются стандартные сценарии, в которых можно использовать один клиент.
+Прежде чем использовать несколько клиентов Azure AD, ознакомьтесь со статьей [Управление административными единицами в Azure AD (общедоступной предварительной версии)](../users-groups-roles/directory-administrative-units.md). В ней описываются стандартные сценарии, в которых можно использовать один клиент.
 
 ![Топология для нескольких лесов и нескольких клиентов](./media/active-directory-aadconnect-topologies/MultiForestMultiDirectory.png)
 

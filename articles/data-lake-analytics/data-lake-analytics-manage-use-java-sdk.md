@@ -1,28 +1,26 @@
 ---
-title: "Управление Azure Data Lake Analytics с помощью пакета SDK Azure для Java | Документация Майкрософт"
-description: "Разработка приложений с использованием пакета SDK для Java для аналитики озера данных Azure"
+title: Управление Azure Data Lake Analytics с помощью пакета SDK Azure для Java
+description: В этой статье описано, как с помощью пакета SDK Azure для Java создавать приложения, которые управляют источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
-documentationcenter: 
-author: matt1883
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 06/18/2017
+author: saveenr
 ms.author: saveenr
-ms.openlocfilehash: 8a0c1c7aab89f3bb62d0eb9f42e8ac65309d617e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+manager: kfile
+editor: jasonwhowell
+ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
+ms.topic: conceptual
+ms.date: 06/18/2017
+ms.openlocfilehash: 4cf8390f55beeb65c1bd99594e885ed9db551d9e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34624239"
 ---
-# <a name="manage--azure-data-lake-analytics-using-java-sdk"></a>Управление Azure Data Lake Analytics с помощью пакета SDK для Java
+# <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
+[!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
-В этом руководстве вы разработаете консольное приложение Java, которое выполняет общие действия в Azure Data Lake.
+Из этой статьи вы узнаете, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics, используя приложение, написанное с помощью пакета SDK Azure для Java. 
 
 ## <a name="prerequisites"></a>предварительным требованиям
 * **Пакет средств разработки для Java (JDK) 8** (с использованием Java версии 1.8).
@@ -304,7 +302,7 @@ public static void DeleteFile(String filePath) throws IOException, CloudExceptio
 }
 ```
 
-### <a name="download-a-file"></a>Скачивание файла
+### <a name="download-a-file"></a>скачать файл;
 
 ```
 public static void DownloadFile(String srcPath, String destPath) throws IOException, CloudException 

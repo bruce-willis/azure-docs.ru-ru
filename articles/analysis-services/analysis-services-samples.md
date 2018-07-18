@@ -3,16 +3,17 @@ title: Примеры кода, проектов и баз данных для �
 description: Примеры кода, проектов и баз данных для служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 55f350f21111e8937fa1687c890d4f7bb4ab07ed
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 6456663a1114ec00f2a071458c54067da53b52a7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37443730"
 ---
 # <a name="azure-analysis-services-samples"></a>Примеры для служб Azure Analysis Services
 Используйте следующие ресурсы с примерами для изучения и тестирования служб Analysis Services в вашей среде.
@@ -38,5 +39,5 @@ ms.lasthandoff: 04/16/2018
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Руководство по Adventure Works](/tutorials/aas-adventure-works-tutorial.md)   
+[Руководство по Adventure Works](tutorials/aas-adventure-works-tutorial.md)   
 [Локальный шлюз данных Azure](analysis-services-gateway.md)  

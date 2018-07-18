@@ -1,0 +1,15 @@
+- name: Документация по API языковой модели на основе веб-содержимого
+- name: Обзор
+  items:
+    - name: Что такое API языковой модели на основе веб-содержимого?
+      href: Home.md
+- name: Справочные материалы
+  items:
+    - name: API веб-модели языка
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/55de9ca4e597ed1fd4e2f104/operations/55de9ca4e597ed19b0de8a51'
+    - name: Пакет Windows SDK
+      href: 'https://github.com/Microsoft/Cognitive-WebLM-Windows'
+- name: Ресурсы
+  items:
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/555943-web-language-model-api'

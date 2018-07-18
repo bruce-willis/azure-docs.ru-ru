@@ -1,22 +1,19 @@
 ---
 title: Схема устройства в решении для удаленного мониторинга Azure | Документация Майкрософт
 description: Эта статья содержит сведения о схеме JSON, которая определяет имитированное устройство в решении для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 01/29/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 186eaee952435573a861d144195c3165e4940cc1
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.topic: conceptual
+ms.openlocfilehash: 1ba73d24aaa113a9124e17ea91946c205b21fba6
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627439"
 ---
 # <a name="understand-the-device-model-schema"></a>Общие сведения о схеме модели устройства
 
@@ -26,7 +23,7 @@ ms.lasthandoff: 05/20/2018
 
 В приведенных ниже статьях описаны связанные сведения.
 
-* Статья [Implement the device model behavior](../iot-suite/iot-suite-remote-monitoring-device-behavior.md) (Реакция модели устройства на событие) содержит сведения о файлах JavaScript, используемых для того, чтобы имитированное устройство реагировало на событие.
+* Статья [Implement the device model behavior](iot-accelerators-remote-monitoring-device-behavior.md) (Реакция модели устройства на событие) содержит сведения о файлах JavaScript, используемых для того, чтобы имитированное устройство реагировало на событие.
 * Статья [Create a new simulated device](iot-accelerators-remote-monitoring-test.md) (Создание имитированного устройства) объединяет все сведения, а также описывает процедуру развертывания нового типа имитированного устройства в решение.
 
 В этой статье раскрываются следующие темы:

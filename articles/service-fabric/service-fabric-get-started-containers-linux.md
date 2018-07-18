@@ -9,16 +9,17 @@ editor: ''
 ms.assetid: ''
 ms.service: service-fabric
 ms.devlang: dotNet
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/09/2018
 ms.author: ryanwi
-ms.openlocfilehash: ba4e5996a87596c88822d96faf3e80e8243ad78b
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 5f1d71db70bbaa6e569ad6f9a6f51bca4c5dc220
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36213130"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -170,26 +171,12 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 
 Укажите число экземпляров — 1.
 
+Укажите сопоставление портов в соответствующем формате. Для выполнения задач в этой статье необходимо указать ```80:4000``` для сопоставления портов. После этого все входящие запросы, поступающие в порт 4000 на хост-компьютере, будут перенаправляться в порт 80 в контейнере.
+
 ![Генератор Service Fabric Yeoman для контейнеров][sf-yeoman]
 
-## <a name="configure-port-mapping-and-container-repository-authentication"></a>Настройка сопоставления порта и проверки подлинности репозитория контейнера
-Контейнерной службе необходима конечная точка для взаимодействия. На этом этапе вы можете добавить протокол, порт и тип для `Endpoint` в файле ServiceManifest.xml под тегом Resources. В этой статье контейнерная служба ожидает передачи данных порта 4000: 
-
-```xml
-
-<Resources>
-    <Endpoints>
-      <!-- This endpoint is used by the communication listener to obtain the port on which to 
-           listen. Please note that if your service is partitioned, this port is shared with 
-           replicas of different partitions that are placed in your code. -->
-      <Endpoint Name="myServiceTypeEndpoint" UriScheme="http" Port="4000" Protocol="http"/>
-    </Endpoints>
-  </Resources>
- ```
- 
-Если указать `UriScheme`, конечная точка контейнера будет автоматически зарегистрирована в службе именования Service Fabric, что улучшит ее поиск. Полный пример файла ServiceManifest.xml приведен в конце этой статьи. 
-
-Настройте сопоставление порта контейнера с портом узла, указав политику `PortBinding` в `ContainerHostPolicies` файле ApplicationManifest.xml. В этой статье значение `ContainerPort` — это 80 (контейнер предоставляет порт 80, как указано в Dockerfile), а значение `EndpointRef` — это myServiceTypeEndpoint (конечная точка, определенная в манифесте служб). Входящие запросы к службе через порт 4000 сопоставляются с портом 80 в контейнере. Если для контейнера требуется проверка подлинности в частном репозитории, добавьте `RepositoryCredentials`. Для работы с этим руководством добавьте имя учетной записи и пароль для реестра контейнеров myregistry.azurecr.io. Убедитесь, что политика добавляется под тегом ServiceManifestImport в соответствии с нужным пакетом обновления.
+## <a name="configure-container-repository-authentication"></a>Настройка аутентификации в репозитории
+ Если для контейнера требуется проверка подлинности в частном репозитории, добавьте `RepositoryCredentials`. Для работы с этим руководством добавьте имя учетной записи и пароль для реестра контейнеров myregistry.azurecr.io. Убедитесь, что политика добавляется под тегом ServiceManifestImport в соответствии с нужным пакетом обновления.
 
 ```xml
    <ServiceManifestImport>
@@ -226,14 +213,6 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 По умолчанию для *IncludeDockerHealthStatusInSystemHealthReport* задано значение **true**, а для *RestartContainerOnUnhealthyDockerHealthStatus* — значение **false**. Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
 
 Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false**.
-
-## <a name="build-and-package-the-service-fabric-application"></a>Создание и упаковка приложений Service Fabric
-Шаблоны Service Fabric для Yeoman включают скрипт сборки для [Gradle](https://gradle.org/), который можно использовать для создания приложения из терминала. Используйте следующую команду, чтобы собрать и упаковать приложение:
-
-```bash
-cd mycontainer
-gradle
-```
 
 ## <a name="deploy-the-application"></a>Развертывание приложения
 Созданное приложение можно развернуть в локальном кластере с помощью интерфейса командной строки Service Fabric.

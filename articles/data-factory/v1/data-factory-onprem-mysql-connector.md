@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/10/2018
+ms.topic: conceptual
+ms.date: 06/06/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 685998729e9aa01f60c80735b5f2f4d278769bdb
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 34de57188dffb7375889ed9ed89a759238b035ac
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046890"
 ---
 # <a name="move-data-from-mysql-using-azure-data-factory"></a>Перемещение данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-mysql-connector.md)
-> * [Версия 2 — предварительная](../connector-mysql.md)
+> * [Версия 1](data-factory-onprem-mysql-connector.md)
+> * [Версия 2 (текущая)](../connector-mysql.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from MySQL using Azure Data Factory](../connector-mysql.md) (Копирование данных из MySQL с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе MySQL в службе "Фабрика данных Azure" версии 2](../connector-mysql.md).
 
 
 В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из локальной базы данных MySQL. Этот документ является продолжением статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
@@ -42,7 +43,7 @@ ms.lasthandoff: 03/23/2018
 > Советы по устранению неполадок, связанных со шлюзом или подключением, см. в разделе [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).
 
 ## <a name="supported-versions-and-installation"></a>Поддерживаемые версии и установка
-Чтобы подключить шлюз управления данными к базе данных MySQL, соединитель [MySQL Connector/Net для Microsoft Windows](https://dev.mysql.com/downloads/connector/net/) (версии 6.6.5 или более поздней) необходимо установить на тот же компьютер, что и шлюз управления данными. Это 32-разрядная версия драйвера совместима с 64-разрядной версией шлюза управления данными. Поддерживается MySQL версии 5.1 и более.
+Чтобы подключить шлюз управления данными к базе данных MySQL, соединитель [MySQL Connector/Net для Microsoft Windows](https://dev.mysql.com/downloads/connector/net/) (версии 6.6.5–6.10.7) необходимо установить на тот же компьютер, на котором размещен шлюз управления данными. Это 32-разрядная версия драйвера совместима с 64-разрядной версией шлюза управления данными. Поддерживается MySQL версии 5.1 и более.
 
 > [!TIP]
 > Если произошла ошибка "Аутентификация не пройдена из-за закрытия транспортного потока удаленной стороной", то рекомендуется обновить соединитель MySQL Connector/Net до более поздней версии.

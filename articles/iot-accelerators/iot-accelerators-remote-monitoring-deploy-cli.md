@@ -1,22 +1,19 @@
 ---
 title: Развертывание решения для удаленного мониторинга Java в Azure | Документация Майкрософт
 description: В этом руководстве показано, как с помощью интерфейса командной строки подготовить акселератор решений для удаленного мониторинга.
-services: iot-suite
-suite: iot-suite
 author: dominicbetts
 manager: timlt
 ms.author: dobett
-ms.service: iot-suite
+ms.service: iot-accelerators
+services: iot-accelerators
 ms.date: 01/29/2018
-ms.topic: article
-ms.devlang: NA
-ms.tgt_pltfrm: NA
-ms.workload: NA
-ms.openlocfilehash: 3178d51cd2c04f3be8d4a6284a4f1635845def8c
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.topic: conceptual
+ms.openlocfilehash: 736d0394b61bd2830a155d6ad714a2a8d19af82b
+ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37017515"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решений для удаленного мониторинга с помощью CLI
 
@@ -71,7 +68,7 @@ pcs login
 | Count | Ресурс                       | type         | Область использования |
 |-------|--------------------------------|--------------|----------|
 | 1     | [Виртуальная машина Linux](https://azure.microsoft.com/services/virtual-machines/) | Standard D1 V2  | Размещение микрослужб |
-| 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Базовый" | Управление устройствами и обмен данными |
+| 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Стандартный" | Управление устройствами и обмен данными |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |  
 | 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Стандартная        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
 | 1     | [Веб-приложение](https://azure.microsoft.com/services/app-service/web/)        |                 | Размещение интерфейсных веб-приложений |
@@ -85,7 +82,7 @@ pcs login
 |-------|----------------------------------------------|-----------------|----------|
 | 4.     | [Виртуальные машины Linux](https://azure.microsoft.com/services/virtual-machines/)   | Standard D2 V2  | 1 главный узел и 3 агента для избыточного размещения микрослужб |
 | 1     | [Служба контейнеров](https://azure.microsoft.com/services/container-service/) |                 | Оркестратор [Kubernetes](https://kubernetes.io) |
-| 1     | [Центр Интернета вещей Azure][https://azure.microsoft.com/services/iot-hub/]                     | S1 — уровень "Базовый" | Команды и средства для управления устройствами |
+| 1     | [Центр Интернета вещей Azure][https://azure.microsoft.com/services/iot-hub/]                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
 | 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |
 | 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартная        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
 | 1     | [Служба приложений](https://azure.microsoft.com/services/app-service/web/)             | Стандартный S1     | Шлюз приложений через SSL |
@@ -96,7 +93,7 @@ pcs login
 
 ### <a name="example-deploy-net-version"></a>Пример: развертывание версии .NET
 
-В примере ниже представлено развертывание базовой версии .NET акселератора решений для удаленного мониторинга.
+В примере ниже представлено развертывание базовой версии .NET акселератора решений для удаленного мониторинга:
 
 ```cmd/sh
 pcs -t remotemonitoring -s basic -r dotnet
@@ -104,7 +101,7 @@ pcs -t remotemonitoring -s basic -r dotnet
 
 ### <a name="example-deploy-java-version"></a>Пример: развертывание версии Java
 
-В примере ниже представлено развертывание стандартной версии Java акселератора решений для удаленного мониторинга.
+В примере ниже представлено развертывание стандартной версии Java акселератора решений для удаленного мониторинга:
 
 ```cmd/sh
 pcs -t remotemonitoring -s standard -r java

@@ -9,11 +9,12 @@ ms.reviewer: jmartens
 ms.author: netahw
 author: nhaiby
 ms.date: 04/23/2018
-ms.openlocfilehash: bd9f01e76c68fa41616818251b5b54553059cbcc
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 72f5215bac9254c9e3295b2cade7b6d44d516af6
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34637741"
 ---
 # <a name="build-and-deploy-image-classification-models-with-azure-machine-learning"></a>Построение и развертывание моделей классификации изображений с помощью Машинного обучения Azure
 
@@ -227,7 +228,6 @@ else:
 ## <a name="define-dnn-models"></a>Определения моделей DNN
 
 Этот пакет поддерживает следующие предварительно обученные модели глубокой нейронной сети. 
-+ AlexNet
 + Resnet-18
 + Resnet-34
 + Resnet-50
@@ -444,13 +444,9 @@ display(pr_ui.ui)
 + Для просмотра текущей учетной записи управления моделью используйте команду:
   <br>`az ml account modelmanagement show`
 
-**Создание и настройка среды развертывания**
+**Создание и настройка среды развертывания кластера**
 
 Вам нужно установить среду развертывания только один раз. Если у вас ее еще нет, настройте среду развертывания, используя [эти инструкции](https://docs.microsoft.com/azure/machine-learning/desktop-workbench/deployment-setup-configuration#environment-setup). 
-
-Правильно выполните требуемые шаги установки в локальную среду или кластер.
-+ Локальные развертывания поддерживаются для Linux и Windows 10, но не для виртуальной машины Windows для обработки и анализа данных или виртуальной машины для глубокого обучения. 
-+ Среда развертывания кластера поддерживается для Linux и Windows. 
 
 Для просмотра среды активного развертывания используйте следующую команду CLI:
 <br>`az ml env show`

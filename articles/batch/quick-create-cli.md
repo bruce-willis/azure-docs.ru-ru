@@ -7,14 +7,15 @@ manager: jeconnoc
 ms.service: batch
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 01/16/2018
+ms.date: 07/03/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: de0ff088b3a61c48ddcbdff01f105884870886e1
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: f5790f57b66f1d73ff98d5f84276ec9a44568432
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857932"
 ---
 # <a name="quickstart-run-your-first-batch-job-with-the-azure-cli"></a>Краткое руководство по выполнению первого пакетного задания с помощью Azure CLI
 
@@ -38,7 +39,7 @@ az group create \
     --location eastus2
 ```
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Учетную запись службы хранилища Azure можно связать с учетной записью пакетной службы. Хоть наличие учетной записи хранения и не является обязательным условием для работы с этим кратким руководством, она применяется при развертывании приложений и для хранения входных и выходных данных в большинстве реальных рабочих нагрузок. В группе ресурсов создайте учетную запись хранения с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create).
 
@@ -81,7 +82,7 @@ az batch account login \
 az batch pool create \
     --id mypool --vm-size Standard_A1_v2 \
     --target-dedicated-nodes 2 \
-    --image canonical:ubuntuserver:16.04.0-LTS \
+    --image canonical:ubuntuserver:16.04-LTS \
     --node-agent-sku-id "batch.node.ubuntu 16.04" 
 ```
 
@@ -169,29 +170,29 @@ az batch task file download \
     --destination ./stdout.txt
 ```
 
-Вы можете просмотреть содержимое файла `stdout.txt` в текстовом редакторе. В этом файле содержатся сведения о переменных среды пакетной службы, установленных на узле. При создании пакетных заданий вы можете ссылаться на них в командных строках задач, а также в приложениях и скриптах, запускаемых этими командными строками.
+Вы можете просмотреть содержимое файла `stdout.txt` в текстовом редакторе. В этом файле содержатся сведения о переменных среды пакетной службы, установленных на узле. При создании пакетных заданий вы можете ссылаться на них в командных строках задач, а также в приложениях и скриптах, запускаемых этими командными строками. Например: 
 
 ```
-AZ_BATCH_TASK_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask3
+AZ_BATCH_TASK_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask1
 AZ_BATCH_NODE_STARTUP_DIR=/mnt/batch/tasks/startup
-AZ_BATCH_CERTIFICATES_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask3/certs
-AZ_BATCH_ACCOUNT_URL=https://mybatchaccount.eastus2batch.azure.com/
-AZ_BATCH_TASK_WORKING_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask3/wd
+AZ_BATCH_CERTIFICATES_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask1/certs
+AZ_BATCH_ACCOUNT_URL=https://mybatchaccount.eastus2.batch.azure.com/
+AZ_BATCH_TASK_WORKING_DIR=/mnt/batch/tasks/workitems/myjob/job-1/mytask1/wd
 AZ_BATCH_NODE_SHARED_DIR=/mnt/batch/tasks/shared
 AZ_BATCH_TASK_USER=_azbatch
 AZ_BATCH_NODE_ROOT_DIR=/mnt/batch/tasks
-AZ_BATCH_JOB_ID=myjob
+AZ_BATCH_JOB_ID=myjobl
 AZ_BATCH_NODE_IS_DEDICATED=true
-AZ_BATCH_NODE_ID=tvm-1392786932_2-20171026t223740z
-AZ_BATCH_POOL_ID=mypool-linux
-AZ_BATCH_TASK_ID=mytask3
+AZ_BATCH_NODE_ID=tvm-257509324_2-20180703t215033z
+AZ_BATCH_POOL_ID=mypool
+AZ_BATCH_TASK_ID=mytask1
 AZ_BATCH_ACCOUNT_NAME=mybatchaccount
 AZ_BATCH_TASK_USER_IDENTITY=PoolNonAdmin
 ```
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Если вы хотите продолжить изучение примеров и руководств по пакетной службе, используйте учетную запись пакетной службы и связанную учетную запись хранения, созданную при выполнении инструкций в этом кратком руководстве. Плата за использование самой пакетной службы не взимается.
 
-Но если во время работы узлов используются пулы, плата взимается, даже если задания не запланированы. Если пул больше не нужен, удалите его, используя команду [az batch pool delete](/cli/azure/batch/pool#az_batch_pool_delete).
+Но если во время работы узлов используются пулы, плата взимается, даже если задания не запланированы. Если пул больше не нужен, удалите его, используя команду [az batch pool delete](/cli/azure/batch/pool#az_batch_pool_delete). При удалении пула удаляются все выходные данные задачи на узлах. 
 
 ```azurecli-interactive
 az batch pool delete --pool-id mypool

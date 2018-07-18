@@ -7,19 +7,20 @@ author: eringreenlee
 manager: ''
 editor: ''
 ms.assetid: 95f970a7-5867-4108-a87e-471fa0910b8c
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/01/2018
 ms.author: ergreenl
-ms.openlocfilehash: 2336277a960925a92af3578850453ba6ae78abda
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 807dd2bdcc1e2ad18b1a93c3337c8244e3f1366b
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33201272"
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36218985"
 ---
 # <a name="troubleshoot-invalid-networking-configuration-for-your-managed-domain"></a>Устранение неполадок недопустимой конфигурации сети для управляемого домена
 Эта статья поможет вам определить и устранить ошибки конфигурации сети, которые приводят к появлению следующего оповещения.

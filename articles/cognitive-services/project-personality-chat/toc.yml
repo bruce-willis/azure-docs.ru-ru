@@ -1,0 +1,11 @@
+- name: Документация по индивидуальным чатам в проектах
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое индивидуальные чаты в проектах?
+      href: overview.md
+- name: Ресурсы
+  expanded: true
+  items:
+    - name: Часто задаваемые вопросы
+      href: faq.md

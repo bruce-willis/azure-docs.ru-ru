@@ -1,6 +1,6 @@
 ---
-title: "Конфиденциальные данные. Средство моделирования угроз Microsoft Azure | Документация Майкрософт"
-description: "Устранение угроз, обнаруженных с помощью средства моделирования угроз"
+title: Конфиденциальные данные. Средство моделирования угроз Microsoft Azure | Документация Майкрософт
+description: Устранение угроз, обнаруженных с помощью средства моделирования угроз
 services: security
 documentationcenter: na
 author: RodSan
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 8d7189ea4b01d43cea709e3300d8ed71d266f5c9
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: bfc1e8dd6acf2cba5b4622785aa3714a7ff037c9
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37031810"
 ---
 # <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
 | Продукт или служба | Статья |
@@ -409,7 +410,7 @@ Allow screen capture
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Fortify](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [Fortify](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_token) |
 | **Действия** | Использование маркера имени пользователя с открытым паролем в незащищенном канале делает пароль уязвимым к атакам злоумышленников, которые могут получить доступ к сообщениям, передаваемым по протоколу SOAP. Поставщики служб, которые используют маркер имени пользователя, могут принять пароли, отправленные обычным текстом. В случае отправки открытых паролей через незащищенный канал учетные данные становятся уязвимыми к атакам злоумышленников, которые могут получить доступ к сообщениям, передаваемым по протоколу SOAP. | 
 
 ### <a name="example"></a>Пример
@@ -428,7 +429,7 @@ Allow screen capture
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Режим безопасности — транспорт или сообщение |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html), [основы безопасности WCF](http://www.codemag.com/article/0611051) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.hpefod.com/en/detail?id=desc.semantic.dotnet.wcf_misconfiguration_security_not_enabled), [основы безопасности WCF](http://www.codemag.com/article/0611051) |
 | **Действия** | Безопасность доставки и сообщений не определена. Приложения, передающие сообщения без защиты доставки или сообщений, не могут гарантировать их целостность и конфиденциальность. Если для привязки безопасности WCF задано значение None, безопасность доставки и сообщений отключена. |
 
 ### <a name="example"></a>Пример

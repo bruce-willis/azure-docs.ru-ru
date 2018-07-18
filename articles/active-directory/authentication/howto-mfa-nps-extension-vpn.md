@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: cfdb89ae833dc2450a4670a84af305f1caa10591
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: dfd28c5abea668e704fb5ee8b02d85d552e9ae77
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33869518"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098878"
 ---
 # <a name="integrate-your-vpn-infrastructure-with-azure-mfa-by-using-the-network-policy-server-extension-for-azure"></a>Интеграция инфраструктуры VPN с Azure MFA с помощью расширения сервера политики сети для Azure
 
@@ -305,7 +305,7 @@ ms.locfileid: "33869518"
  
 ## <a name="configure-multi-factor-authentication"></a>Настройка Многофакторной идентификации
 
-Дополнительные сведения о многофакторной проверке подлинности пользователей см. в руководствах по [настройке двухфакторной проверки подлинности для пользователей и групп](howto-mfa-userstates.md) и [настройке учетной записи для двухфакторной проверки подлинности](../../multi-factor-authentication/end-user/multi-factor-authentication-end-user-first-time.md)
+Дополнительные сведения о многофакторной проверке подлинности пользователей см. в руководствах по [настройке двухфакторной проверки подлинности для пользователей и групп](howto-mfa-userstates.md) и [настройке учетной записи для двухфакторной проверки подлинности](end-user/current/multi-factor-authentication-end-user-first-time.md)
 
 ## <a name="install-and-configure-the-nps-extension"></a>Установка и настройка расширения NPS
 

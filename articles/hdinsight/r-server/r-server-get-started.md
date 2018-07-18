@@ -1,6 +1,6 @@
 ---
-title: Приступая к работе с R Server в HDInsight в Azure | Документация Майкрософт
-description: Узнайте, как создать Apache Spark в кластере HDInsight, который содержит R Server, и отправить скрипт R в кластер.
+title: Начало работы со службами машинного обучения в Azure HDInsight | Документация Майкрософт
+description: Узнайте, как создать Apache Spark в кластере HDInsight, который содержит службы машинного обучения, и отправить скрипт R в кластер.
 services: hdinsight
 documentationcenter: ''
 author: nitinme
@@ -13,18 +13,18 @@ ms.devlang: R
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 03/23/2018
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: d6910ab257312626ca25126721410edeed6cdeae
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: efc7ada12f722b0447712594de496e933bde3d36
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37053438"
 ---
-# <a name="get-started-with-r-server-cluster-on-azure-hdinsight"></a>Начало работы с кластером R Server в Azure HDInsight
+# <a name="get-started-with-ml-services-on-azure-hdinsight"></a>Начало работы со службами машинного обучения в Azure HDInsight
 
-Azure HDInsight поддерживает интеграцию R Server в кластер HDInsight. Эта поддержка позволяет скриптам R использовать MapReduce и Spark для выполнения распределенных вычислений. Из этой статьи вы узнаете, как создать Microsoft R Server в кластере HDInsight. Также вы узнаете, как запустить скрипт R с примерами использования Spark для распределенных вычислений R.
-
+Azure HDInsight позволяет создавать кластеры служб машинного обучения. Эта поддержка позволяет скриптам R использовать MapReduce и Spark для выполнения распределенных вычислений. В этой статьи описано, как создать кластер служб машинного обучения в HDInsight и запустить скрипт R, демонстрирующий использование Spark для распределенных вычислений в среде R.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -52,13 +52,13 @@ Azure HDInsight поддерживает интеграцию R Server в кла
 
 4. Выберите **тип кластера** и в разделе **Конфигурация кластера** задайте следующие значения:
 
-    * **Тип кластера**: R Server.
+    * **Тип кластера**: службы машинного обучения
 
     * **Операционная система**: Linux.
 
-    * **Версия**: R Server 9.1 (HDI 3.6). Заметки о выпуске для доступных версий R Server см. на сайте [docs.microsoft.com](https://docs.microsoft.com/machine-learning-server/whats-new-in-r-server#r-server-91).
+    * **Версия**: ML Server 9.3 (HDI 3.6). Заметки о выпуске для версии ML Server 9.3 доступны на сайте [docs.microsoft.com](https://docs.microsoft.com/machine-learning-server/whats-new-in-machine-learning-server).
 
-    * **Выпуск R Studio Community для R Server**: эта среда IDE с браузерным интерфейсом устанавливается по умолчанию на граничном узле. Если вы не хотите ее устанавливать, снимите соответствующий флажок. Если вы решили установить среду, на портале в колонке приложения для созданного кластера вы найдете URL-адрес для входа в RStudio Server.
+    * **Выпуск R Studio Community для ML Server**: эта среда IDE на основе браузера устанавливается по умолчанию на граничном узле. Если вы не хотите ее устанавливать, снимите соответствующий флажок. Если вы решили установить среду, на портале в колонке приложения для созданного кластера вы найдете URL-адрес для входа в RStudio Server.
 
         ![Основные сведения о кластере](./media/r-server-get-started/clustertypeconfig.png)
 
@@ -80,11 +80,11 @@ Azure HDInsight поддерживает интеграцию R Server в кла
 
 Если вы решили установить HDInsight RStudio Server Community Edition как часть кластера, вы можете войти в RStudio двумя способами.
 
-* **Вариант 1.** Откройте в браузере следующий URL-адрес (где **CLUSTERNAME** — это имя созданного кластера R Server):
+* **Вариант 1.** Откройте в браузере следующий URL-адрес (где **CLUSTERNAME** — это имя созданного кластера служб машинного обучения):
 
         https://CLUSTERNAME.azurehdinsight.net/rstudio/
 
-* **Вариант 2.** Откройте кластер R Server на портале Azure. В разделе **Быстрые ссылки** щелкните **Панели мониторинга R Server**.
+* **Вариант 2.** Откройте кластер служб машинного обучения на портале Azure. В разделе **Быстрые ссылки** щелкните **Панели мониторинга служб машинного обучения**.
 
      ![Настройка параметров учетной записи хранения для HDInsight](./media/r-server-get-started/dashboard-quick-links.png)
 
@@ -174,9 +174,9 @@ Azure HDInsight поддерживает интеграцию R Server в кла
 <a name="connect-to-edge-node"></a>
 ## <a name="connect-to-the-cluster-edge-node"></a>Подключение к пограничному узлу кластера
 
-Из этого раздела вы узнаете, как подключиться к граничному узлу кластера R Server HDInsight с помощью SSH. Сведения об использовании SSH см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+В этом разделе описано, как подключиться к граничному узлу кластера служб машинного обучения в HDInsight с помощью SSH. Сведения об использовании SSH см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-Команда SSH для подключения к граничному узлу кластера R Server выглядит так:
+Команда SSH для подключения к граничному узлу кластера служб машинного обучения выглядит так:
 
    `ssh USERNAME@CLUSTERNAME-ed-ssh.azurehdinsight.net`
 
@@ -193,15 +193,15 @@ Azure HDInsight поддерживает интеграцию R Server в кла
     sshuser@ed00-myrclu:~$
 
 <a name="use-r-console"></a>
-## <a name="use-the-r-server-console"></a>Использование консоли R Server
+## <a name="use-the-r-console"></a>Использование консоли R
 
 1. В сеансе SSH используйте следующую команду, чтобы запустить консоль R:  
 
         R
 
-2. Отобразятся выходные данные с версией R Server, а также другие сведения.
+2. Должны отобразиться выходные данные и версия ML Server, а также другие сведения.
     
-3. В строке ввода `>` можно ввести код R. R Server в HDInsight содержит пакеты, которые позволяют легко взаимодействовать с Hadoop и выполнять распределенные вычисления. Например, используйте следующую команду, чтобы просмотреть корень файловой системы по умолчанию для кластера HDInsight.
+3. В строке ввода `>` можно ввести код R. Службы машинного обучения в HDInsight содержат пакеты, которые позволяют легко взаимодействовать с Hadoop и выполнять распределенные вычисления. Например, используйте следующую команду, чтобы просмотреть корень файловой системы по умолчанию для кластера HDInsight.
 
         rxHadoopListFiles("/")
 
@@ -215,11 +215,11 @@ Azure HDInsight поддерживает интеграцию R Server в кла
 
 ## <a name="automated-cluster-creation"></a>Автоматизированное создание кластера
 
-Вы можете автоматизировать создание кластера R Server в HDInsight с помощью шаблонов Azure Resource Manager, пакета SDK или PowerShell.
+Вы можете автоматизировать создание кластера служб машинного обучения в HDInsight с помощью пакета SDK или PowerShell.
 
-* Дополнительные сведения о создании кластера R Server с помощью шаблона Azure Resource Manager см. в статье о [развертывании кластера R Server HDInsight](https://azure.microsoft.com/resources/templates/101-hdinsight-rserver/).
-* Сведения о создании кластера R Server с помощью пакета SDK для .NET см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md).
-* Чтобы создать кластер R Server, с помощью PowerShell, см. статью [Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md).
+<!---* To create an ML Server cluster using an Azure Resource Management template, see [Deploy an R Server for HDInsight cluster](https://azure.microsoft.com/resources/templates/101-hdinsight-rserver/).--->
+* Сведения о создании кластера служб машинного обучения с помощью пакета SDK для .NET см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET.](../hdinsight-hadoop-create-linux-clusters-dotnet-sdk.md)
+* Чтобы создать кластер служб машинного обучения с помощью PowerShell, см. статью [Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell](../hdinsight-hadoop-create-linux-clusters-azure-powershell.md).
 
 ## <a name="delete-the-cluster"></a>Удаление кластера
 
@@ -231,10 +231,10 @@ Azure HDInsight поддерживает интеграцию R Server в кла
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этой статьи вы узнали, как создать новый кластер R Server в Azure HDInsight и как использовать консоль R в сеансе SSH. В следующих статьях описаны другие способы использования и администрирования R Server в HDInsight:
+Из этой статьи вы узнали, как создать кластер служб машинного обучения в Azure HDInsight и как использовать консоль R в сеансе SSH. В следующих статьях описаны другие способы использования и администрирования служб машинного обучения в HDInsight:
 
 * [Отправка заданий из расширения "Инструменты R для Visual Studio"](r-server-submit-jobs-r-tools-vs.md)
-* [Manage R Server cluster on HDInsight](r-server-hdinsight-manage.md) (Управление кластером R Server в HDInsight)
-* [Operationalize R Server cluster on HDInsight](r-server-operationalize.md) (Эксплуатация кластера R Server в HDInsight)
+* [Управление кластером R Server в Azure HDInsight](r-server-hdinsight-manage.md)
+* [Ввод в эксплуатацию кластера R Server в Azure HDInsight](r-server-operationalize.md)
 * [Варианты контекста вычислений для R Server в HDInsight](r-server-compute-contexts.md)
-* [Решения службы хранилища Azure для R Server в HDInsight](r-server-storage.md)
+* [Решения службы хранилища Azure для R Server в Azure HDInsight](r-server-storage.md)

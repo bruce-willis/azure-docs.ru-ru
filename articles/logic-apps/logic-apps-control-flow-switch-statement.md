@@ -1,29 +1,25 @@
 ---
-title: "Операторы switch. Выполнение различных шагов на основе определенных значений в Azure Logic Apps | Документация Майкрософт"
-description: "Выполнение различных шагов на основе значений объектов, выражений или маркеров в приложениях логики"
+title: Добавление операторов switch в рабочие процессы с помощью Azure Logic Apps | Документация Майкрософт
+description: Создание операторов switch, которые управляют действиями рабочего процесса на основе определенных значений в Azure Logic Apps
 services: logic-apps
-keywords: "оператор switch"
-author: ecfan
-manager: anneta
-editor: 
-documentationcenter: 
-ms.assetid: 
 ms.service: logic-apps
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
 ms.date: 03/05/2018
-ms.author: estfan; LADocs
-ms.openlocfilehash: e1f515189be8a5659af0f6c29b3fac0550abc9f9
-ms.sourcegitcommit: 0b02e180f02ca3acbfb2f91ca3e36989df0f2d9c
+ms.topic: article
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: e15f89d4b7e33ce7e28676c219344f7d7d9cd465
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35299622"
 ---
-# <a name="switch-statements-run-different-steps-based-on-specific-values-in-logic-apps"></a>Операторы switch. Выполнение различных шагов на основе определенных значений в приложениях логики
+# <a name="create-switch-statements-that-run-workflow-actions-based-on-specific-values-in-azure-logic-apps"></a>Создание операторов switch, которые запускают действия рабочего процесса на основе определенных значений в Azure Logic Apps
 
-Для выполнения различных шагов на основе значений объекта, выражения или маркера используйте оператор *switch*. Эта структура оценивает объект, выражение или маркер, выбирает вариант, который соответствует результату, и выполняет шаги только для этого варианта. При выполнении оператора switch результат должен совпадать только с одним вариантом.
+Оператор *switch* позволяет выполнять определенные действия на основе значений объектов, выражений или токенов. Эта структура оценивает объект, выражение или маркер, выбирает вариант, который соответствует результату, и выполняет определенные действия только для этого варианта. При выполнении оператора switch результат должен совпадать только с одним вариантом.
 
 Например, предположим, что вы хотите, чтобы приложение логики выполняло различные действия на основе параметра, выбранного в сообщении. В этом примере приложение логики проверяет RSS-канал веб-сайта для обнаружения нового содержимого. Если в RSS-канале появляется новый элемент, приложение логики отправляет сообщение утверждающему лицу. В зависимости от того, что выбрал утверждающий ("Утвердить" или "Отклонить"), приложение логики выполняет различные действия.
 

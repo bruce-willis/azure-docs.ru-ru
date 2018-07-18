@@ -1,6 +1,6 @@
 ---
-title: "Обзор виртуальных машин Windows | Документация Майкрософт"
-description: "Содержимое справки об обзоре виртуальных машин Windows на портале Azure"
+title: Обзор виртуальных машин Windows | Документация Майкрософт
+description: Содержимое справки об обзоре виртуальных машин Windows на портале Azure
 services: virtual-machines-windows
 author: sewatson
 manager: lwelicki
@@ -13,6 +13,7 @@ ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/11/2017
+ms.locfileid: "23073866"
 ---
 # <a name="windows-virtual-machines-documentation"></a>Документация по виртуальным машинам Windows
 

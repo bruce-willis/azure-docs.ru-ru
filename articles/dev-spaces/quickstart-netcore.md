@@ -1,71 +1,73 @@
 ---
-title: Создание среды разработки Kubernetes в облаке | Документация Майкрософт
+title: Создание пространства разработки Kubernetes в облаке | Документация Майкрософт
 titleSuffix: Azure Dev Spaces
 author: ghogen
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
 ms.component: azds-kubernetes
 ms.author: ghogen
-ms.date: 05/11/2018
+ms.date: 07/09/2018
 ms.topic: quickstart
-description: Быстрая разработка Kubernetes с использованием контейнеров и микрослужб в Azure
+description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 279b7a8c20717668c0ff4be541e9168e2d8706fd
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 3bb190570cbdf795668dd6e9f9d36630b6f3201b
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34361585"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37949872"
 ---
-# <a name="quickstart-create-a-kubernetes-development-environment-with-azure-dev-spaces-net-core-and-vs-code"></a>Краткое руководство по созданию среды разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и VS Code)
+# <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-vs-code"></a>Краткое руководство по созданию среды разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и VS Code)
 
+Из этого руководства вы узнаете, как выполнить следующие задачи:
 
-[!INCLUDE[](includes/learning-objectives.md)]
+- Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
+- итеративная разработка кода в контейнерах с помощью VS Code и командной строки;
+- Отладка кода в среде разработки с помощью VS Code
 
-[!INCLUDE[](includes/see-troubleshooting.md)]
+> [!Note]
+> **Если на каком-то этапе у вас возникли трудности**, см. статью [Устранение неполадок](troubleshooting.md) или оставьте комментарий на этой странице. Можно также ознакомиться с более подробным [руководством](get-started-netcore.md).
 
-Теперь вы готовы создать среду разработки на основе Kubernetes в Azure.
+## <a name="prerequisites"></a>предварительным требованиям
 
-[!INCLUDE[](includes/portal-aks-cluster.md)]
+- Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
+- [Кластер Kubernetes](https://ms.portal.azure.com/#create/microsoft.aks), работающий с Kubernetes 1.10.3, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром **Маршрутизация HTTP для приложений**.
 
-## <a name="install-the-azure-cli"></a>Установка Azure CLI
-Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
+  ![Не забудьте включить параметр "Маршрутизация приложений HTTP".](media/common/Kubernetes-Create-Cluster-3.PNG)
 
-> [!IMPORTANT]
-> Если у вас уже установлен интерфейс Azure CLI, убедитесь, что вы используете версию 2.0.32 или выше.
+- [Visual Studio Code](https://code.visualstudio.com/download).
 
-[!INCLUDE[](includes/sign-into-azure.md)]
+## <a name="set-up-azure-dev-spaces"></a>Настройка Azure Dev Spaces
 
-[!INCLUDE[](includes/use-dev-spaces.md)]
+1. Установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.0.38 или более поздней).
+1. Настройка Dev Spaces в кластере AKS: `az aks use-dev-spaces -g MyResourceGroup -n MyAKS`
+1. Загрузите [расширение Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) для VS Code. Один раз щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code.
 
-[!INCLUDE[](includes/install-vscode-extension.md)]
+## <a name="build-and-run-code-in-kubernetes"></a>Сборка и запуск кода в Kubernetes
 
-Пока вы ждете создания кластера, вы можете начать писать код.
+1. Загрузите пример кода из репозитория GitHub: [https://github.com/Azure/dev-spaces](https://github.com/Azure/dev-spaces) 
+1. Перейдите в папку webfrontend: `cd dev-spaces/samples/dotnetcore/getting-started/webfrontend`
+1. Создайте ресурсы диаграмм Docker и Helm: `azds prep --public`
+1. Создайте и запустите свой код в AKS. В окне терминала из **папки проекта webfrontend** выполните следующую команду: `azds up`
+1. Просмотрите выходные данные консоли, чтобы найти сведения об URL-адресе, который был создан командой `up`. Он будет выглядеть следующим образом: 
 
-## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
-Если у вас установлен [.NET Core](https://www.microsoft.com/net), вы можете быстро создать веб-приложение ASP.NET Core в папке с именем `webfrontend`.
+   `Service 'webfrontend' port 'http' is available at <url>` 
 
-```cmd
-   dotnet new mvc --name webfrontend
-```
+   При открытии этого URL-адреса в окне браузера должна начаться загрузка веб-приложения. 
+   
+   > [!Note]
+   > При первом запуске подготовка общедоступной записи DNS может занять несколько минут. Если не удается разрешить общедоступный URL-адрес, вместо него можно использовать альтернативный URL-адрес http://localhost:<portnumber>, который отображается в выходных данных консоли. Если вы используете URL-адрес localhost, может показаться, что контейнер выполняется локально, но на самом деле он выполняется в AKS. Для вашего удобства и упрощения взаимодействия со службой на локальном компьютере служба Azure Dev Spaces создает временный туннель SSH для контейнера, запущенного в Azure. Вы можете опробовать общедоступный URL-адрес позже, когда запись DNS будет готова.
 
-Можно также **скачать пример кода из GitHub**, перейдя по ссылке https://github.com/Azure/dev-spaces и выбрав **Clone or Download** (Клонировать или скачать), чтобы скачать репозиторий GitHub в локальную среду. Код для этого руководства находится в папке `samples/dotnetcore/getting-started/webfrontend`.
+### <a name="update-a-content-file"></a>Обновление файла содержимого
 
-[!INCLUDE[](includes/azds-prep.md)]
-
-[!INCLUDE[](includes/build-run-k8s-cli.md)]
-
-## <a name="update-a-content-file"></a>Обновление файла содержимого
-Azure Dev Spaces — это не просто среда выполнения кода в Kubernetes. Она позволяет быстро и итеративно видеть, как изменения вашего кода вступают в силу в среде Kubernetes в облаке.
-
-1. Найдите файл `./Views/Home/Index.cshtml` и внесите изменения в HTML. Например, измените строку 70 `<h2>Application uses</h2>` строкой примерно такого содержания: `<h2>Hello k8s in Azure!</h2>`
+1. Найдите файл, такой как `./Views/Home/Index.cshtml`, и внесите изменения в HTML-код. Например, измените строку 70 `<h2>Application uses</h2>` строкой примерно такого содержания: `<h2>Hello k8s in Azure!</h2>`
 1. Сохраните файл. Через несколько мгновений в окне терминала вы увидите сообщение о том, что файл в запущенном контейнере обновлен.
 1. Вернитесь в браузер и обновите страницу. Должна отобразиться веб-страница с обновленным HTML.
 
 Что произошло? Изменения файлов содержимого, таких как HTML и CSS, не требуют перекомпиляции в веб-приложении .NET Core, поэтому активная команда `azds up` автоматически синхронизирует любые измененные файлы содержимого в запущенный контейнер в Azure, чтобы можно было сразу же видеть изменения содержимого.
 
-## <a name="update-a-code-file"></a>Обновление файла кода
+### <a name="update-a-code-file"></a>Обновление файла кода
 Для обновления файлов кода требуется немного больше работы, так как приложение .NET Core должно перестроить и создать обновленные двоичные файлы приложений.
 
 1. В окне терминала нажмите клавишу `Ctrl+C` (чтобы остановить `azds up`).
@@ -73,17 +75,24 @@ Azure Dev Spaces — это не просто среда выполнения к
 1. Сохраните файл.
 1. Запустите `azds up` в окне терминала. 
 
-Эта команда перестроит образ контейнера и повторно развернет диаграмму Helm. Чтобы увидеть, как изменения вашего кода вступили в силу в работающем приложении, перейдите в меню About (Сведения) в веб-приложении.
+Эта команда перестроит образ контейнера и повторно развернет диаграмму Helm. Чтобы увидеть, как изменения вашего кода вступили в силу в работающем приложении, перейдите в меню "Сведения" в веб-приложении.
 
-
-Но есть еще один *более быстрый метод* для разработки кода, который вы рассмотрите в следующем разделе. 
+Но есть еще один *более быстрый метод* разработки кода, который вы рассмотрите в следующем разделе. 
 
 ## <a name="debug-a-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
 
-[!INCLUDE[](includes/debug-intro.md)]
+В этом разделе используйте VS Code для прямой отладки контейнера, работающего в Azure. Также вы узнаете, как быстрее вносить изменения, выполнять тестирование и запуск.
 
-[!INCLUDE[](includes/init-debug-assets-vscode.md)]
+![](./media/common/edit-refresh-see.png)
 
+### <a name="initialize-debug-assets-with-the-vs-code-extension"></a>Инициализация ресурсов отладки с помощью расширения VS Code
+Сначала необходимо настроить проект кода, чтобы редактор VS Code мог взаимодействовать с нашим пространством разработки в Azure. Расширение VS Code для Azure Dev Spaces содержит вспомогательную команду для настройки конфигурации отладки. 
+
+Откройте **палитру команд** (с помощью меню **Вид | Палитра команд**), включите автоматическое завершение ввода и выберите эту команду: `Azure Dev Spaces: Prepare configuration files for Azure Dev Spaces`. 
+
+В папку `.vscode` будет добавлена конфигурация отладки для Azure Dev Spaces.
+
+![](./media/common/command-palette.png)
 
 ### <a name="select-the-azds-debug-configuration"></a>Выбор конфигурации отладки AZDS
 1. Чтобы открыть представление отладки, щелкните значок "Отладка" на **панели действия** сбоку VS Code.
@@ -96,11 +105,12 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 
 ### <a name="debug-the-container-in-kubernetes"></a>Отладка контейнера в Kubernetes
-Нажмите клавишу **F5**, чтобы отладить ваш код в Kubernetes.
+Нажмите клавишу **F5**, чтобы отладить свой код в Kubernetes.
 
 Как и команда `up`, код синхронизируется со средой разработки, а контейнер создается и развертывается в Kubernetes. На этот раз, конечно, отладчик подключен к удаленному контейнеру.
 
-[!INCLUDE[](includes/tip-vscode-status-bar-url.md)]
+> [!Tip]
+> В строке состояния VS Code отобразится URL-адрес, щелкнув по которому, можно перейти на соответствующий ресурс.
 
 Установите точку останова в файле кода на стороне сервера, например в функции `Index()` в исходном файле `Controllers/HomeController.cs`. Обновление страницы браузера инициирует срабатывание точки останова.
 
@@ -117,11 +127,11 @@ public IActionResult About()
 }
 ```
 
-Сохраните файл и в области **отладки действий** нажмите кнопку **Обновить**. 
+Сохраните файл и в области **действий отладки** нажмите кнопку **Обновить**. 
 
 ![](media/get-started-netcore/debug-action-refresh.png)
 
-Вместо того, чтобы перестраивать и повторно развертывать новый образ контейнера каждый раз при редактировании кода, что часто занимает много времени, Azure Dev Spaces пошагово перекомпилирует код в существующем контейнере, чтобы обеспечить более быстрый цикл редактирования и отладки.
+Вместо того, чтобы перестраивать и повторно развертывать новый образ контейнера при каждой правке кода, что часто занимает много времени, Azure Dev Spaces пошагово перекомпилирует код в существующем контейнере, чтобы ускорить цикл редактирования и отладки.
 
 В браузере обновите веб-приложение и перейдите на страницу About (Сведения). Вы должны увидеть настраиваемое сообщение в пользовательском интерфейсе.
 
@@ -129,5 +139,7 @@ public IActionResult About()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
+Узнайте, каким образом в Azure Dev Spaces можно разрабатывать более сложные приложения в нескольких контейнерах и как упростить совместную разработку, работая с разными версиями или ветвями кода в разных средах. 
+
 > [!div class="nextstepaction"]
-> [Работа с несколькими контейнерами и командной разработкой](get-started-netcore.md#call-a-service-running-in-a-separate-container)
+> [Работа с несколькими контейнерами и командной разработкой](team-development-netcore.md)

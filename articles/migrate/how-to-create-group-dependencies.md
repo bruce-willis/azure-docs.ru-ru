@@ -4,13 +4,14 @@ description: В этой статье описывается, как уточн�
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 06/19/2018
 ms.author: raynew
-ms.openlocfilehash: 690231b938f60f16dcd10656b9a1f99c8c8f29cb
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: a91543dcea1fb9fb6a33b5a7bc3892a2bac7b241
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36215789"
 ---
 # <a name="refine-a-group-using-group-dependency-mapping"></a>Уточнение группы с помощью сопоставления зависимостей группы
 

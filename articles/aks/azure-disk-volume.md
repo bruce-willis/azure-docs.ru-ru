@@ -6,14 +6,15 @@ author: neilpeterson
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 03/08/2018
+ms.date: 05/21/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: b790213e19b9f2aaef74a3f670c89246f54fd6d7
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 4af4620ff7a17cae76c4d5f2cf1a30ce4a3dccd8
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "34597073"
 ---
 # <a name="volumes-with-azure-disks"></a>Тома с дисками Azure
 
@@ -23,34 +24,27 @@ ms.lasthandoff: 05/10/2018
 
 ## <a name="create-an-azure-disk"></a>Создание диска Azure
 
-Прежде чем подключить управляемый диск Azure в качестве тома Kubernetes, убедитесь, что диск будет существовать в той же группе ресурсов, что и ресурсы кластера AKS. Чтобы найти эту группу ресурсов, используйте команду [az group list][az-group-list].
+Прежде чем подключить управляемый диск Azure в качестве тома Kubernetes, убедитесь, что диск существует в группе ресурсов **узла** AKS. Получите имя группы ресурсов, выполнив команду [az resource show][az-resource-show].
 
 ```azurecli-interactive
-az group list --output table
-```
+$ az resource show --resource-group myResourceGroup --name myAKSCluster --resource-type Microsoft.ContainerService/managedClusters --query properties.nodeResourceGroup -o tsv
 
-Вы ищете группу ресурсов приблизительно с таким именем: `MC_clustername_clustername_locaton`. Здесь clustername — имя кластера AKS, а location — регион Azure, в котором развернут кластер.
-
-```console
-Name                                 Location    Status
------------------------------------  ----------  ---------
-MC_myAKSCluster_myAKSCluster_eastus  eastus      Succeeded
-myAKSCluster                         eastus      Succeeded
+MC_myResourceGroup_myAKSCluster_eastus
 ```
 
 Чтобы создать диск Azure, используйте команду [az disk create][az-disk-create].
 
-Используя этот пример, замените `--resource-group` именем группы ресурсов, а `--name` — любым именем.
+Обновите `--resource-group` именем группы ресурсов, которая была получена на предыдущем шаге, а `--name` — любым именем.
 
 ```azurecli-interactive
 az disk create \
-  --resource-group MC_myAKSCluster_myAKSCluster_eastus \
+  --resource-group MC_myResourceGroup_myAKSCluster_eastus \
   --name myAKSDisk  \
   --size-gb 20 \
   --query id --output tsv
 ```
 
-Когда диск будет создан, вы увидите результат, аналогичный приведенному ниже. Это значение является идентификатором диска, который используется при подключении диска к pod Kubernetes.
+Когда диск будет создан, вы увидите результат, аналогичный приведенному ниже. Это значение является идентификатором диска, который используется при подключении диска.
 
 ```console
 /subscriptions/<subscriptionID>/resourceGroups/MC_myAKSCluster_myAKSCluster_eastus/providers/Microsoft.Compute/disks/myAKSDisk
@@ -105,3 +99,4 @@ kubectl apply -f azure-disk-pod.yaml
 [az-disk-list]: /cli/azure/disk#az_disk_list
 [az-disk-create]: /cli/azure/disk#az_disk_create
 [az-group-list]: /cli/azure/group#az_group_list
+[az-resource-show]: /cli/azure/resource#az-resource-show

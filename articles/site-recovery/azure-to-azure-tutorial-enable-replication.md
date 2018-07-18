@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 05/16/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: d707122f79b37dd6b979be09693011dead988156
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 18b66cb9c0690df7b95cb36438ba802cb7432af6
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34211673"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918763"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-to-a-secondary-azure-region"></a>Настройка аварийного восстановления виртуальных машин Azure в дополнительный регион Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "34211673"
 > * Настройка исходящего доступа для виртуальных машин
 > * Включение репликации для виртуальных машин.
 
-Репликация из Azure в Azure сейчас доступна в режиме предварительной версии.
+
 ## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством:

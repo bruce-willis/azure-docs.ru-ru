@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: be071c8138a6782ad144a42d52d737f248ff7a7b
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 09fd2f38c3746cf92d576325058dc36221ae50cd
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38668033"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Конвейеры и действия в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-create-pipelines.md)
-> * [Версия 2 — предварительная](../concepts-pipelines-activities.md)
+> * [Версия 1](data-factory-create-pipelines.md)
+> * [Версия 2 (текущая)](../concepts-pipelines-activities.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Конвейеры и действия в фабрике данных Azure](../concepts-pipelines-activities.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [конвейерах в службе "Фабрика данных Azure" версии 2](../concepts-pipelines-activities.md).
 
 В этой статье вы ознакомитесь с принципом работы конвейеров и действий в фабрике данных Azure и узнаете, как с их помощью создавать комплексные рабочие процессы, управляемые данными, для сценариев перемещения и обработки данных.  
 

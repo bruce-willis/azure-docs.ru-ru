@@ -10,23 +10,24 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 0e597574c1993e2f2a5421d24063cf9f42a7e57b
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 88e56f522545f9c1f38bf0d0fdbcebdc171c294b
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37046536"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](data-factory-onprem-db2-connector.md)
-> * [Версия 2 — предварительная](../connector-db2.md)
+> * [Версия 1](data-factory-onprem-db2-connector.md)
+> * [Версия 2 (текущая)](../connector-db2.md)
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных, которая является общедоступной версией. Если вы используете версию 2 службы фабрики данных, которая находится на этапе предварительной версии, см. статью [Copy data from DB2 by using Azure Data Factory](../connector-db2.md) (Копирование данных из DB2 с помощью фабрики данных Azure).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе DB2 в службе "Фабрика данных Azure" версии 2](../connector-db2.md).
 
 
 В этой статье описано использование действия копирования в фабрике данных Azure для копирования данных из локальной базы данных DB2 в хранилище данных. Данные можно копировать в любое хранилище из списка хранилищ в статье [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md#supported-data-stores-and-formats), если указано, что оно поддерживается в качестве приемника. Материал данного раздела основан на статье о фабрике данных, в которой приведены общие сведения о перемещении данных с помощью действия копирования и перечислены поддерживаемые сочетания хранилищ данных. 

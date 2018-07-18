@@ -6,21 +6,16 @@ author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: ccec4262297314bad261a852bb5db25c428ce0a0
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 9759e209f15622d70aaa833a993234863ac1053c
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918872"
 ---
 # <a name="reprotect-failed-over-azure-vms-to-the-primary-region"></a>Повторное включение защиты виртуальных машин Azure в основном регионе после отработки отказа
-
-
->[!NOTE]
->
-> Репликация Site Recovery для виртуальных машин Azure сейчас доступна в режиме предварительной версии.
-
 
 
 При выполнении [отработки отказа](site-recovery-failover.md) виртуальных машин Azure из одного региона в другой с помощью [Azure Site Recovery](site-recovery-overview.md) их начальная загрузка в дополнительном регионе не защищена. Чтобы выполнить восстановление размещения виртуальных машин в основной регион, сделайте следующее.

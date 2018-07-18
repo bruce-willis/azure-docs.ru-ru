@@ -19,6 +19,7 @@ ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34210782"
 ---
 # <a name="monitor-containers-with-log-analytics"></a>Мониторинг контейнеров с помощью Log Analytics
  
@@ -50,7 +51,7 @@ ms.lasthandoff: 05/16/2018
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* См. дополнительные сведения о ](../log-analytics/log-analytics-containers.md)решении OMS "Контейнеры"[.
+* См. дополнительные сведения о [решении OMS "Контейнеры"](../log-analytics/log-analytics-containers.md).
 * Дополнительные сведения об оркестрации контейнера в Service Fabric см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md)
 * Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../log-analytics/log-analytics-log-searches.md), которые являются частью решения Log Analytics.
 * Настройте в Log Analytics [правила автоматической генерации оповещений](../log-analytics/log-analytics-alerts.md), которые помогают выполнять обнаружение и диагностику.

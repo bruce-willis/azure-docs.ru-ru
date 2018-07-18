@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: ce2bc8cc8d9b149b16aee9c5e601d9872621e277
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f486ce5c058286289873d87767f02bf92f91459e
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34701448"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -105,7 +106,10 @@ Service Fabric автоматически создает список управ
 > [!NOTE]
 > Протокол службы невозможно изменить при обновлении приложения. Если изменить его во время обновления, то это будет считаться критическим изменением.
 > 
-> 
+
+> [!WARNING] 
+> При использовании HTTPS не используйте тот же порт и сертификат для разных экземпляров службы (независимо от приложения) развернутых на одном узле. Обновление двух разных служб, использующих один порт в разных экземплярах приложения, приведет к сбою обновлений. Дополнительные сведения. см в статье [Обновление нескольких приложений с помощью конечных точек HTTPS](service-fabric-application-upgrade.md#upgrading-multiple-applications-with-https-endpoints).
+>
 
 Ниже приведен пример ApplicationManifest, который необходимо задать для HTTPS. Требуется предоставить отпечаток для сертификата. EndpointRef является ссылкой на EndpointResource в ServiceManifest, для которого задается протокол HTTPS. Можно добавить несколько элементов Endpointcertificate.  
 
@@ -188,13 +192,13 @@ Service Fabric автоматически создает список управ
   </Parameters>
 ```
 
-Теперь при развертывании приложения вы можете передать эти значения в качестве объекта ApplicationParameters, как показано ниже.
+При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Например: 
 
 ```powershell
 PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -ApplicationTypeName "AppType" -ApplicationTypeVersion "1.0.0" -ApplicationParameter @{Port='1001'; Protocol='https'; Type='Input'; Port1='2001'; Protocol='http'}
 ```
 
-Примечание. Если для ApplicationParameters значения не заданы, мы возвращаемся к значению по умолчанию, предоставленному в ServiceManifest для соответствующей конечной точки.
+Примечание. Если не заданы значения для ApplicationParameters, берется значение по умолчанию, предоставленное в ServiceManifest для соответствующего параметра EndPointName.
 
 Например: 
 

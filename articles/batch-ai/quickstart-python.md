@@ -13,13 +13,14 @@ ms.workload: ''
 ms.tgt_pltfrm: na
 ms.devlang: Python
 ms.topic: quickstart
-ms.date: 10/06/2017
-ms.author: lili
-ms.openlocfilehash: da5c1181f9c4d311bdeabe837435ae4e0eb3dc1a
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.date: 06/18/2018
+ms.author: danlep
+ms.openlocfilehash: 6e80996cb0359e88d2a6d5fae231523a5c69c8ca
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36295267"
 ---
 # <a name="run-a-cntk-training-job-using-the-azure-python-sdk"></a>Выполнение задания обучения CNTK с использованием пакета Azure SDK для Python
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 04/18/2018
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-* Пакет Azure SDK для Python. См. [инструкции по установке](/python/azure/python-sdk-azure-install).
+* Пакет Azure SDK для Python. См. [инструкции по установке](/python/azure/python-sdk-azure-install). Для работы с этой статьей требуется пакет azure-mgmt-batchai версии не ниже 2.0.0.
 
 * Учетная запись хранения Azure. См. сведения о [создании учетных записей хранения Azure](../storage/common/storage-create-storage-account.md).
 
@@ -60,6 +61,9 @@ storage_account_key = 'FILL-IN-HERE'
 # specify the credentials used to remote login your GPU node
 admin_user_name = 'FILL-IN-HERE'
 admin_user_password = 'FILL-IN-HERE'
+
+# specify the location in which to create Batch AI resources
+mylocation = 'eastus'
 ```
 
 Обратите внимание, что ввод учетных данных в исходный код не рекомендуется. Здесь это делается для упрощения.
@@ -92,14 +96,14 @@ resource_group_name = 'myresourcegroup'
 resource_management_client = ResourceManagementClient(
         credentials=creds, subscription_id=subscription_id)
 resource = resource_management_client.resource_groups.create_or_update(
-        resource_group_name, {'location': 'eastus'})
+        resource_group_name, {'location': mylocation})
 ```
 
 
 ## <a name="prepare-azure-file-share"></a>Подготовка файлового ресурса Azure
 Для демонстрации в этом кратком руководстве данные для обучения и скрипты будут размещены в файловом ресурсе Azure.
 
-1. Создайте файловый ресурс с именем `batchaiquickstart`.
+Создайте файловый ресурс с именем `batchaiquickstart`.
 
 ```Python
 from azure.storage.file import FileService
@@ -108,20 +112,28 @@ service = FileService(storage_account_name, storage_account_key)
 service.create_share(azure_file_share_name, fail_on_exist=False)
 ```
 
-2. Создайте каталог в файловом ресурсе с именем `mnistcntksample`.
+Создайте каталог в общем ресурсе с именем `mnistcntksample`.
 
 ```Python
 mnist_dataset_directory = 'mnistcntksample'
-service.create_directory(azure_file_share_name, mnist_dataset_directory,
-                         fail_on_exist=False)
+service.create_directory(azure_file_share_name, mnist_dataset_directory, fail_on_exist=False)
 ```
-3. Скачайте [пример пакета](https://batchaisamples.blob.core.windows.net/samples/BatchAIQuickStart.zip?st=2017-09-29T18%3A29%3A00Z&se=2099-12-31T08%3A00%3A00Z&sp=rl&sv=2016-05-31&sr=b&sig=hrAZfbZC%2BQ%2FKccFQZ7OC4b%2FXSzCF5Myi4Cj%2BW3sVZDo%3D) и распакуйте его в текущий каталог. Следующий код передает необходимые файлы в файловый ресурс службы "Файлы Azure":
+Скачайте [пример пакета](https://batchaisamples.blob.core.windows.net/samples/BatchAIQuickStart.zip?st=2017-09-29T18%3A29%3A00Z&se=2099-12-31T08%3A00%3A00Z&sp=rl&sv=2016-05-31&sr=b&sig=hrAZfbZC%2BQ%2FKccFQZ7OC4b%2FXSzCF5Myi4Cj%2BW3sVZDo%3D) и распакуйте его в текущий каталог. Следующий код передает необходимые файлы в файловый ресурс службы "Файлы Azure":
 
 ```Python
 for f in ['Train-28x28_cntk_text.txt', 'Test-28x28_cntk_text.txt',
           'ConvNet_MNIST.py']:
      service.create_file_from_path(
              azure_file_share_name, mnist_dataset_directory, f, f)
+```
+
+## <a name="create-batch-ai-workspace"></a>Создание рабочей области Batch AI
+
+Рабочая область — это высокоуровневая коллекция всех типов ресурсов Batch AI. В рабочей области создаются кластер и эксперименты Batch AI.
+
+```Python
+workspace_name='myworkspace'
+batchai_client.workspaces.create(resource_group_name, workspace_name, mylocation)
 ```
 
 ## <a name="create-gpu-cluster"></a>Создание кластера GPU
@@ -134,9 +146,7 @@ cluster_name = 'mycluster'
 relative_mount_point = 'azurefileshare'
 
 parameters = models.ClusterCreateParameters(
-    # Location where the cluster will physically be deployed
-    location='eastus',
-    # VM size. Use NC or NV series for GPU
+    # VM size. Use N-series for GPU
     vm_size='STANDARD_NC6',
     # Configure the ssh users
     user_account_settings=models.UserAccountSettings(
@@ -170,7 +180,7 @@ batchai_client.clusters.create(resource_group_name, cluster_name,
 Отслеживайте состояние кластера, используя следующую команду:
 
 ```Python
-cluster = batchai_client.clusters.get(resource_group_name, cluster_name)
+cluster = batchai_client.clusters.get(resource_group_name, workspace_name, cluster_name)
 print('Cluster state: {0} Target: {1}; Allocated: {2}; Idle: {3}; '
       'Unusable: {4}; Running: {5}; Preparing: {6}; Leaving: {7}'.format(
     cluster.allocation_state,
@@ -191,16 +201,18 @@ Cluster state: AllocationState.steady Target: 1; Allocated: 1; Idle: 0; Unusable
 
 Когда узлы выделены и подготовка завершена, кластер готов (см. атрибут `nodeStateCounts`). Если что-то пойдет не так, то в атрибуте `errors` будет содержаться описание ошибки.
 
-## <a name="create-training-job"></a>Создание задания обучения
+## <a name="create-experiment-and-training-job"></a>Создание эксперимента и задания обучения
 
-Когда кластер будет готов, настройте и отправьте задание обучения:
+Когда кластер будет создан, создайте эксперимент (логический контейнер для группы связанных заданий). Затем настройте задание обучения и отправьте его в эксперимент:
 
 ```Python
+experiment_name='myexperiment'
+
+batchai_client.experiments.create(resource_group_name, workspace_name, experiment_name)
+
 job_name = 'myjob'
 
-parameters = models.job_create_parameters.JobCreateParameters(
-    # The job and cluster must be created in the same location
-    location=cluster.location,
+parameters = models.JobCreateParameters(
     # The cluster this job will run on
     cluster=models.ResourceId(id=cluster.id),
     # The number of VMs in the cluster to use
@@ -229,16 +241,16 @@ parameters = models.job_create_parameters.JobCreateParameters(
 )
 
 # Create the job
-batchai_client.jobs.create(resource_group_name, job_name, parameters).result()
+batchai_client.jobs.create(resource_group_name, workspace_name, experiment_name, job_name, parameters).result()
 ```
 
 ## <a name="monitor-job"></a>Отслеживание задания
 С помощью следующего кода можно проверить состояние задания:
 
 ```Python
-job = batchai_client.jobs.get(resource_group_name, job_name)
+job = batchai_client.jobs.get(resource_group_name, workspace_name, experiment_name, job_name)
 
-print('Job state: {0} '.format(job.execution_state.name))
+print('Job state: {0} '.format(job.execution_state))
 ```
 
 Выходные данные должны быть следующего вида: `Job state: running`.
@@ -253,7 +265,7 @@ print('Job state: {0} '.format(job.execution_state.name))
 
 ```Python
 files = batchai_client.jobs.list_output_files(
-    resource_group_name, job_name,
+    resource_group_name, workspace_name, experiment_name, job_name,
     models.JobsListOutputFilesOptions(outputdirectoryid="stdouterr"))
 
 for file in (f for f in files if f.download_url):
@@ -264,7 +276,7 @@ for file in (f for f in files if f.download_url):
 Используйте следующий код, чтобы отобразить созданные файлы модели:
 ```Python
 files = batchai_client.jobs.list_output_files(
-    resource_group_name, job_name,
+    resource_group_name, workspace_name, experiment_name,job_name,
     models.JobsListOutputFilesOptions(outputdirectoryid="MODEL"))
 
 for file in (f for f in files if f.download_url):
@@ -275,12 +287,12 @@ for file in (f for f in files if f.download_url):
 
 Используйте следующий код, чтобы удалить задание:
 ```Python
-batchai_client.jobs.delete(resource_group_name, job_name)
+batchai_client.jobs.delete(resource_group_name, workspace_name, experiment_name, job_name)
 ```
 
 Используйте следующий код, чтобы удалить кластер:
 ```Python
-batchai_client.clusters.delete(resource_group_name, cluster_name)
+batchai_client.clusters.delete(resource_group_name, workspace_name, cluster_name)
 ```
 
 Используйте следующий код, чтобы удалить все выделенные ресурсы:

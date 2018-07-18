@@ -51,8 +51,6 @@
       href: tutorial-mean-stack.md
     - name: "16.\_Защита веб-сервера с помощью SSL"
       href: tutorial-secure-web-server.md
-    - name: Развертывание приложений и образов Packer в масштабируемый набор
-      href: 'https://docs.microsoft.com/learn/deploy-custom-vmss-app/index'
 - name: Примеры
   items:
     - name: Инфраструктура CLI Azure
@@ -201,7 +199,13 @@
         - name: Использование удаленного рабочего стола
           href: use-remote-desktop.md
         - name: Присоединение виртуальной машины к Azure Active Directory
-          href: join-redhat-linux-vm-to-azure-active-directory-domain-service.md
+          items:
+            - name: Red Hat Enteprise Linux
+              href: ../../active-directory-domain-services/active-directory-ds-join-rhel-linux-vm.md
+            - name: CentOS
+              href: ../../active-directory-domain-services/active-directory-ds-join-centos-linux-vm.md
+            - name: Ubuntu
+              href: ../../active-directory-domain-services/active-directory-ds-join-ubuntu-linux-vm.md
         - name: Войти с использованием учетных данных Azure Active Directory
           href: login-using-aad.md
         - name: Обновления и исправления
@@ -222,6 +226,8 @@
           href: scheduled-events.md
         - name: Монитор метаданных
           href: instance-metadata-service.md
+        - name: Получить метрики потребления с помощью REST
+          href: metrics-vm-usage-rest.md
     - name: Использование образов
       items:
         - name: Поиск и использование образов

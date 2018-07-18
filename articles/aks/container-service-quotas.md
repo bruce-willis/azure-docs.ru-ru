@@ -2,17 +2,18 @@
 title: Квоты службы Azure Kubernetes (AKS) и ее доступность в регионах
 description: Квоты по умолчанию и доступность в регионах для службы Azure Kubernetes (AKS).
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: overview
-ms.date: 04/26/2018
-ms.author: nepeters
-ms.openlocfilehash: adf2d57961df9a4e8d03f2b3fe43ca0603685eb2
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.date: 06/13/2018
+ms.author: iainfou
+ms.openlocfilehash: 6d4fa9a06f3baeb51505c3e6060e9689428f8386
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37100721"
 ---
 # <a name="quotas-and-region-availability-for-azure-kubernetes-service-aks"></a>Квоты и доступность в регионах для службы Azure Kubernetes (AKS)
 
@@ -28,14 +29,20 @@ ms.lasthandoff: 05/10/2018
 
 ## <a name="region-availability"></a>Регионы доступности
 
-Предварительная версия службы Azure Kubernetes (AKS) доступна в следующих регионах:
-- Восток США
-- Западная Европа
-- Центральный регион США
+Служба Azure Kubernetes (AKS) доступна в следующих регионах:
+
+- Восточная часть Австралии
 - Центральная Канада
 - Восточная Канада
+- Центральный регион США
+- Восточная часть США
+- Северная Европа
+- Южная часть Великобритании
+- Западная Европа
+- Западная часть США
+- Западная часть США 2
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете повысить лимит нескольких ограничений и квот. Чтобы запросить увеличение квоты одного или нескольких ресурсов, которые поддерживают такую возможность, отправьте [запрос в службу поддержки Azure][azure-support] (в качестве **типа проблемы** укажите "Квота").
 

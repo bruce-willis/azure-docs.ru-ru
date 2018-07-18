@@ -13,24 +13,22 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/22/2018
 ms.author: shlo
-ms.openlocfilehash: eec2b5f84d11c946c5cae1d7d90d0b96dacc9d8c
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: afab1b868f3fc4cdb9d88dea301df9750f55d355
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37084459"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 В этом руководстве создается конвейер фабрики данных, который демонстрирует некоторые функции потока управления. Этот конвейер просто копирует данные из контейнера в хранилище BLOB-объектов Azure в другой контейнер в той же учетной записи хранения. Если действие копирования завершается успешно, нужно отправить подробную информацию об успешной операции копирования (например, количество записанных данных) по электронной почте. Если произошел сбой действия копирования, необходимо отправить данные об ошибке копирования (например, сообщение об ошибке) по электронной почте. В этом руководстве вы научитесь передавать параметры.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, ознакомьтесь с [документацией по фабрике данных версии 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Общий обзор сценария: ![Обзор](media/tutorial-control-flow/overview.png)
 
 В этом руководстве вы выполните следующие шаги:
 
 > [!div class="checklist"]
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создание связанной службы хранилища Azure.
 > * Создание набора данных больших двоичных объектов Azure
 > * Создание конвейера, содержащего действия копирования и веб-действие.
@@ -96,7 +94,7 @@ ms.lasthandoff: 03/23/2018
     using Microsoft.Azure.Management.DataFactory.Models;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
-2. Add these static variables to the **Program class**. Replace place-holders with your own values. Currently, Data Factory V2 allows you to create data factories only in the East US, East US2, and West Europe regions. The data stores (Azure Storage, Azure SQL Database, etc.) and computes (HDInsight, etc.) used by data factory can be in other regions.
+2. Add these static variables to the **Program class**. Replace place-holders with your own values. For a list of Azure regions in which Data Factory is currently available, select the regions that interest you on the following page, and then expand **Analytics** to locate **Data Factory**: [Products available by region](https://azure.microsoft.com/global-infrastructure/services/). The data stores (Azure Storage, Azure SQL Database, etc.) and computes (HDInsight, etc.) used by data factory can be in other regions.
 
     ```csharp
         // Set variables
@@ -140,7 +138,7 @@ ms.lasthandoff: 03/23/2018
     var client = new DataFactoryManagementClient(cred) { SubscriptionId = subscriptionId };
     ```
 
-## <a name="create-a-data-factory"></a>Создать фабрику данных
+## <a name="create-a-data-factory"></a>Создание фабрики данных
 Создайте функцию CreateOrUpdateDataFactory в файле Program.cs:
 
 ```csharp
@@ -488,7 +486,7 @@ Parameters = new Dictionary<string, ParameterSpecification>
 - Сообщение — передает значение `@{activity('CopyBlobtoBlob').output.dataWritten`. Обращается к свойству предыдущего действия копирования и передает значение dataWritten. В случае сбоя передает выходные данные ошибки вместо `@{activity('CopyBlobtoBlob').error.message`.
 - Имя фабрики данных — передает значение `@{pipeline().DataFactory}`. Это системная переменная, которая позволяет получить доступ к соответствующему имени фабрики данных. Список поддерживаемых системных переменных см. в статье [Системные переменные, поддерживаемые фабрикой данных Azure](control-flow-system-variables.md).
 - Имя конвейера — передает значение `@{pipeline().Pipeline}`. Это системная переменная, которая позволяет обращаться к соответствующему имени конвейера. 
-- Получатель — передает значение "@pipeline().parameters.receiver"). Получает доступ к параметрам конвейера.
+- Получатель — передает значение "\@pipeline().parameters.receiver"). Получает доступ к параметрам конвейера.
  
 Этот код создает зависимость действия на основе предыдущей успешной операции копирования.
 
@@ -739,7 +737,7 @@ Press any key to exit...
 В этом руководстве вы выполнили следующие шаги: 
 
 > [!div class="checklist"]
-> * создадите фабрику данных;
+> * Создадите фабрику данных.
 > * Создание связанной службы хранилища Azure.
 > * Создание набора данных больших двоичных объектов Azure
 > * Создание конвейера, содержащего действия копирования и веб-действие.

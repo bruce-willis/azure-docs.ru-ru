@@ -16,6 +16,8 @@
       href: tutorial-explore-js-client-lib.md
     - name: Создание среды TSI
       href: tutorial-create-populate-tsi-environment.md
+    - name: Создание веб-приложения TSI с одной страницей
+      href: tutorial-create-tsi-sample-spa.md
 - name: Основные понятия
   items:
     - name: Планирование среды

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: jdial
-ms.openlocfilehash: c28d409bbdb7a4100f2bb9f00ff6f58a13855ea4
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 4345199ed952b6d0e044d4ac99c29c47c477780d
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34305061"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36287074"
 ---
 # <a name="create-change-or-delete-a-public-ip-address"></a>Создание, изменение и удаление общедоступного IP-адреса
 
@@ -70,7 +70,7 @@ ms.locfileid: "34305061"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip?toc=%2fazure%2fvirtual-network%2ftoc.json#az_network_public_ip_create)|
+|Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create)|
 |PowerShell|[New-AzureRmPublicIpAddress](/powershell/module/azurerm.network/new-azurermpublicipaddress)|
 
 ## <a name="view-change-settings-for-or-delete-a-public-ip-address"></a>Просмотр, изменение параметров или удаление общедоступного IP-адреса
@@ -89,8 +89,18 @@ ms.locfileid: "34305061"
 
 |Средство|Get-Help|
 |---|---|
-|Интерфейс командной строки|Команда [az network public-ip-list](/cli/azure/network/public-ip#az_network_public_ip_list) выводит список общедоступных IP-адресов, [az network public-ip-show](/cli/azure/network/public-ip#az_network_public_ip_show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az_network_public_ip_update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az_network_public_ip_delete) — удаляет IP-адрес.|
-|PowerShell|Командлет [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) позволяет извлечь объект общедоступного IP-адреса и просмотреть его параметры, [Set-AzureRmPublicIpAddress](/powershell/resourcemanager/azurerm.network/set-azurermpublicipaddress) позволяет обновить параметры IP-адреса, а [Remove-AzureRmPublicIpAddress](/powershell/module/azurerm.network/remove-azurermpublicipaddress) — удалить IP-адрес.|
+|Интерфейс командной строки|Команда [az network public-ip list](/cli/azure/network/public-ip#az-network-public-ip-list) выводит список общедоступных IP-адресов, [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show) — отображает параметры, [az network public-ip update](/cli/azure/network/public-ip#az-network-public-ip-update) — обновляет IP-адрес, а [az network public-ip delete](/cli/azure/network/public-ip#az-network-public-ip-delete) — удаляет IP-адрес.|
+|PowerShell|Командлет [Get-AzureRmPublicIpAddress](/powershell/module/azurerm.network/get-azurermpublicipaddress) позволяет извлечь объект общедоступного IP-адреса и просмотреть его параметры, [Set-AzureRmPublicIpAddress](/powershell/module/azurerm.network/set-azurermpublicipaddress) позволяет обновить параметры IP-адреса, а [Remove-AzureRmPublicIpAddress](/powershell/module/azurerm.network/remove-azurermpublicipaddress) — удалить IP-адрес.|
+
+## <a name="assign-a-public-ip-address"></a>Назначение общедоступного IP-адреса
+
+Узнайте, как назначать общедоступные IP-адреса следующим ресурсам:
+
+- виртуальной машине [Windows](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) при создании или [существующей виртуальной машине](virtual-network-network-interface-addresses.md#add-ip-addresses);
+- [службе Load Balancer, доступной в Интернете](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json);
+- [Шлюз приложений Azure](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- [подключения типа "сеть — сеть" с помощью VPN-шлюза Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json);
+- [масштабируемого набора виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="permissions"></a>Разрешения
 
@@ -107,4 +117,3 @@ ms.locfileid: "34305061"
 
 - Создайте общедоступный IP-адрес с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
 - Создайте и примените [политику Azure](policy-samples.md) для общедоступных IP-адресов.
-- Назначьте общедоступные IP-адреса при создании виртуальной машины Azure [Windows](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [Azure Load Balancer с доступом к Интернету](../load-balancer/load-balancer-get-started-internet-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [шлюза приложений Azure](../application-gateway/application-gateway-create-gateway-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [подключений типа "сеть — сеть" через VPN-шлюз Azure](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [масштабируемого набора виртуальных машин Azure](../virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

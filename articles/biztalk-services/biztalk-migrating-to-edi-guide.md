@@ -1,11 +1,11 @@
 ---
-title: "Техническое руководство по переносу решений EDI для BizTalk Server в службы BizTalk | Документация Майкрософт"
-description: "Перенос EDI в MABS; Службы BizTalk Microsoft Azure"
+title: Техническое руководство по переносу решений EDI для BizTalk Server в службы BizTalk | Документация Майкрософт
+description: Перенос EDI в MABS; Службы BizTalk Microsoft Azure
 services: biztalk-services
 documentationcenter: na
 author: MandiOhlinger
 manager: anneta
-editor: 
+editor: ''
 ms.assetid: 61c179fa-3f37-495b-8016-dee7474fd3a6
 ms.service: biztalk-services
 ms.workload: integration
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2016
 ms.author: mandia
-ms.openlocfilehash: 1b70fc3d199d7f1521acb534dafec8fb3e69500e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: aaa7028bb37ac4c2c313efce2afebc1dc5e814d2
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37860084"
 ---
 # <a name="migrating-biztalk-server-edi-solutions-to-biztalk-services-technical-guide"></a>Перенос решений EDI для BizTalk Server в службы BizTalk: техническое руководство
 
@@ -103,7 +104,7 @@ ms.lasthandoff: 10/11/2017
 ## <a name="orchestrations"></a>Взаимодействия
 Если нужно перенести обработку взаимодействий BizTalk Server в Microsoft Azure, то взаимодействия потребуется переписать, так как Microsoft Azure не поддерживает выполнение взаимодействий BizTalk Server.  Функциональность взаимодействий можно переписать в службе Windows Workflow Foundation 4.0 (WF4).  Возможно, ее придется переписать полностью, так как на данный момент не существует возможности переноса взаимодействий из BizTalk Server в WF4. Ниже приведены некоторые ресурсы для Windows Workflow.
 
-* [*Интеграция службы WCF Workflow с очередями и разделами служебной шины*](https://msdn.microsoft.com/library/azure/hh709041.aspx) Паоло Сальватори (Paolo Salvatori). 
+* [*Интеграция службы WCF Workflow с очередями и разделами служебной шины*](https://blogs.msdn.microsoft.com/paolos/2013/04/09/how-to-integrate-a-wcf-workflow-service-with-service-bus-queues-and-topics/) Паоло Сальватори (Paolo Salvatori). 
 * [*Создание приложений с Windows Workflow Foundation и Azure*](http://go.microsoft.com/fwlink/p/?LinkId=237314) (выступление на конференции Build 2011).
 * [*Центр разработчиков Windows Workflow Foundation*](http://go.microsoft.com/fwlink/p/?LinkId=237315) в MSDN.
 * [*Документация по Windows Workflow Foundation 4 (WF4)*](https://msdn.microsoft.com/library/dd489441.aspx) в MSDN.

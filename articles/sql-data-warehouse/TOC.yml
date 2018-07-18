@@ -8,6 +8,8 @@
       href: cheat-sheet.md
 - name: Заметки о выпуске
   items:
+    - name: Июнь 2018 г.
+      href: release-notes-june-2018.md
     - name: Май 2018 г.
       href: release-notes-may-2018.md
     - name: Апрель 2018 г.
@@ -49,8 +51,6 @@
           href: sql-data-warehouse-manage-compute-overview.md
         - name: Архивация и восстановление
           href: backup-and-restore.md
-        - name: Аудит
-          href: sql-data-warehouse-auditing-overview.md
         - name: Ограничения емкости
           href: sql-data-warehouse-service-capacity-limits.md
         - name: 'Обслуживание, '
@@ -61,8 +61,24 @@
       items:
         - name: Обзор
           href: sql-data-warehouse-overview-manage-security.md
+        - name: управление доступом;
+          href: ../sql-database/sql-database-control-access.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Правила файрволла
+          href: ../sql-database/sql-database-firewall-configure.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Правила брандмауэра для виртуальной сети
+          href: ../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=/azure/sql-data-warehouse/toc.json
         - name: Authentication
-          href: sql-data-warehouse-authentication.md
+          href: sql-data-warehouse-authentication.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Azure AD
+          href: ../sql-database/sql-database-aad-authentication.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Имена входа и пользователи
+          href: ../sql-database/sql-database-manage-logins.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Многофакторная идентификация
+          href: ../sql-database/sql-database-ssms-mfa-authentication.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Аудит
+          href: sql-data-warehouse-auditing-overview.md
+        - name: Защита на уровне столбцов
+          href: column-level-security.md
     - name: Миграция в хранилище данных SQL.
       items:
         - name: Обзор
@@ -179,6 +195,12 @@
           href: sql-data-warehouse-restore-database-rest-api.md
     - name: Безопасность
       items:
+        - name: "Настройка аутентификации Azure\_AD"
+          href: ../sql-database/sql-database-aad-authentication-configure.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Условный доступ
+          href: ../sql-database/sql-database-conditional-access.md?toc=/azure/sql-data-warehouse/toc.json
+        - name: Создание правил виртуальной сети с помощью PowerShell
+          href: ../sql-database/sql-database-vnet-service-endpoint-rule-powershell.md?toc=/azure/sql-data-warehouse/toc.json
         - name: Включение шифрования (портал)
           href: sql-data-warehouse-encryption-tde.md
         - name: Включение шифрования (T-SQL)

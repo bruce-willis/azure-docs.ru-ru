@@ -4,7 +4,7 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Использование службы "Карты Azure"
+    - name: Что такое Azure Maps?
       href: about-azure-maps.md
 - name: Быстрое начало работы
   items:
@@ -22,20 +22,10 @@
   items:
     - name: Уровни увеличения и параметры сетки
       href: zoom-levels-and-tile-grid.md
-    - name: Наличие информации о геокодировании
-      href: geocoding-coverage.md
-    - name: Наличие информации о дорожном движении
-      href: traffic-coverage.md
-    - name: Наличие информации об отображении
-      href: render-coverage.md
-    - name: Наличие информации о маршрутизации
-      href: routing-coverage.md
-    - name: Категории поиска
-      href: search-categories.md
+    - name: Поддерживаемые категории поиска
+      href: supported-search-categories.md
     - name: Поддерживаемые языки
       href: supported-languages.md
-    - name: Модель потребления
-      href: consumption-model.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями службы "Карты"
@@ -70,17 +60,49 @@
           href: map-show-traffic.md
         - name: Взаимодействие с событиями мыши
           href: map-events.md
+        - name: Доступные приложения карт
+          href: map-accessibility.md
 - name: Справочные материалы
   items:
-    - name: "API служб\_— REST"
-      href: 'https://docs.microsoft.com/rest/api/maps/'
-    - name: "API элементов управления картой\_— Javascript"
-      href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
+    - name: Покрытие службы
+      items:
+        - name: Геокодирование
+          href: geocoding-coverage.md
+        - name: Трафик
+          href: traffic-coverage.md
+        - name: Отображение
+          href: render-coverage.md
+        - name: Маршрутизация
+          href: routing-coverage.md
+    - name: Расширения параметров и API
+      items:
+        - name: Модель использования транспорта
+          href: consumption-model.md
+        - name: Расширение формата GeoJSON
+          href: extend-geojson.md
+    - name: REST
+      items:
+        - name: Служба отрисовки
+          href: 'https://docs.microsoft.com/rest/api/maps/render'
+        - name: Служба построения маршрутов
+          href: 'https://docs.microsoft.com/rest/api/maps/route'
+        - name: Служба поиска
+          href: 'https://docs.microsoft.com/rest/api/maps/search'
+        - name: Служба часового пояса
+          href: 'https://docs.microsoft.com/rest/api/maps/timezone'
+        - name: Служба отслеживания дорожного движения
+          href: 'https://docs.microsoft.com/rest/api/maps/traffic'
+        - name: Управление учетными записями службы Maps
+          href: 'https://docs.microsoft.com/rest/api/maps-management'
+    - name: JavaScript
+      items:
+        - name: Управление картами
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
 - name: Сопутствующие материалы
   items:
     - name: Решения
       items:
-        - name: Предварительно настроенные решения Azure IoT Suite
+        - name: Акселераторы решений для Интернета вещей
           href: /azure/iot-suite
         - name: IoT Central
           href: 'https://docs.microsoft.com/microsoft-iot-central/'
@@ -121,4 +143,4 @@
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
     - name: Видеоролики
-      href: 'https://azure.microsoft.com/documentation/videos'
+      href: 'https://iotschool.microsoft.com/learning-paths/4ZktHn3KEUIiUw64C0Aieo'

@@ -1,11 +1,11 @@
 ---
-title: "Обновление устройства StorSimple | Документация Майкрософт"
-description: "Описаны способы использования функции обновления StorSimple для установки обычных обновлений и исправлений и в режиме обслуживания."
+title: Обновление устройства StorSimple | Документация Майкрософт
+description: Описаны способы использования функции обновления StorSimple для установки обычных обновлений и исправлений и в режиме обслуживания.
 services: storsimple
 documentationcenter: NA
 author: SharS
 manager: carmonm
-editor: 
+editor: ''
 ms.assetid: 786059f5-2a38-4105-941d-0860ce4ac515
 ms.service: storsimple
 ms.devlang: NA
@@ -15,10 +15,11 @@ ms.workload: TBD
 ms.date: 01/23/2018
 ms.author: v-sharos
 ms.openlocfilehash: 412978d2c343394f295e336690ec72153dda4b79
-ms.sourcegitcommit: 79683e67911c3ab14bcae668f7551e57f3095425
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38452623"
 ---
 # <a name="update-your-storsimple-8000-series-device"></a>Обновление устройства StorSimple серии 8000
 > [!NOTE]

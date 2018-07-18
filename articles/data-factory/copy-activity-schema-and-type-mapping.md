@@ -10,21 +10,18 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/15/2018
+ms.topic: conceptual
+ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 22dbaa3d10d09456a972a7991583dc29b7941db1
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 338df0e258f66b6639e59a4fe31b6cfb6c283dd3
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37045533"
 ---
 # <a name="schema-mapping-in-copy-activity"></a>Сопоставление схем в действии копирования
 Эта статья содержит сведения о том, как действие копирования фабрики данных Azure сопоставляет схемы и типы исходных данных с данными приемника во время выполнения копирования данных.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете общедоступную версию 1 службы фабрики данных, см. [документацию по версии 1 фабрики данных](v1/data-factory-introduction.md).
-
 
 ## <a name="column-mapping"></a>Сопоставление столбцов
 
@@ -127,11 +124,18 @@ ms.lasthandoff: 03/23/2018
         "translator":
         {
             "type": "TabularTranslator",
-            "ColumnMappings": "UserId: MyUserId, Group: MyGroup, Name: MyName"
+            "columnMappings": 
+            {
+                "UserId": "MyUserId",
+                "Group": "MyGroup",
+                "Name": "MyName"
+            }
         }
     }
 }
 ```
+
+Если вы использовали синтаксис `"columnMappings": "UserId: MyUserId, Group: MyGroup, Name: MyName"`, чтобы  указать сопоставление столбцов, оно по-прежнему поддерживается без изменений.
 
 **Процесс сопоставления столбцов:**
 

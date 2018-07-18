@@ -9,19 +9,20 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: douglasl
-ms.openlocfilehash: a9e70ad5296a832e711ebac97302d56429ab5bff
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 2dab0adb0728a1fb5e8ac9bebe01f861ed8c7c3a
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055507"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-use-custom-activities.md)
-> * [Версия 2 — предварительная](transform-data-using-dotnet-custom-activity.md)
+> * [Версия 1](v1/data-factory-use-custom-activities.md)
+> * [Текущая версия](transform-data-using-dotnet-custom-activity.md)
 
 Существует два типа действий, которые можно использовать в конвейере фабрики данных Azure.
 
@@ -29,10 +30,6 @@ ms.lasthandoff: 04/28/2018
 - [Действия преобразования данных](transform-data.md) для преобразования данных с помощью служб вычислений, например: в Azure HDInsight, пакетной службе Azure и Машинном обучении Azure. 
 
 Чтобы переместить данные в хранилище данных, которое не поддерживает фабрика данных, и обратно, или чтобы преобразовать или обработать данные способом, который не поддерживается фабрикой данных Azure, создайте **пользовательское действие** с собственной логикой перемещения или преобразования данных и используйте это действие в конвейере. Настраиваемые действия запускают настраиваемую логику кода в пуле **пакетной службы Azure** виртуальных машин.
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если вы используете службу фабрики данных версии 1 (общедоступная версия), перейдите к статье [Использование настраиваемых действий в конвейере фабрики данных Azure](v1/data-factory-use-custom-activities.md).
- 
 
 Если вы еще не знакомы с пакетной службой Azure, см. следующие статьи.
 
@@ -60,10 +57,6 @@ ms.lasthandoff: 04/28/2018
                 "referenceName": "StorageLinkedService",
                 "type": "LinkedServiceReference"
             }
-        }
-        "connectVia": {
-            "referenceName": "<name of Integration Runtime>",
-            "type": "IntegrationRuntimeReference"
         }
     }
 }
@@ -218,7 +211,7 @@ namespace SampleApp
 
             // From LinkedServices
             dynamic linkedServices = JsonConvert.DeserializeObject(File.ReadAllText("linkedServices.json"));
-            Console.WriteLine(linkedServices[0].properties.typeProperties.connectionString.value);
+            Console.WriteLine(linkedServices[0].properties.typeProperties.accountName);
         }
     }
 }
@@ -291,7 +284,7 @@ namespace SampleApp
   "failureType": ""
   "target": "MyCustomActivity"
   ```
-Если вы хотите использовать содержимое stdout.txt в последующих действиях, путь к файлу stdout.txt можно получить в значении выражения "@activity('MyCustomActivity').output.outputs[0]". 
+Если вы хотите использовать содержимое stdout.txt в последующих действиях, путь к файлу stdout.txt можно получить в значении выражения "\@activity('MyCustomActivity').output.outputs[0]". 
 
   > [!IMPORTANT]
   > - Свойства activity.json, linkedServices.json и datasets.json хранятся в папке среды выполнения пакетной задачи. Для этого примера файлы activity.json, linkedServices.json и datasets.json хранятся по адресу https://adfv2storage.blob.core.windows.net/adfjobs/<GUID>/runtime/. При необходимости их следует очищать отдельно. 
@@ -310,7 +303,7 @@ namespace SampleApp
   В следующей таблице описаны различия между настраиваемым действием фабрики данных версии 2 и (настраиваемым) действием DotNet фабрики данных версии 1. 
 
 
-|Различия      |Настраиваемое действие версии 2      | (Настраиваемое) действие DotNet версии 1      |
+|Различия      | Настраиваемое действие      | (Настраиваемое) действие DotNet версии 1      |
 | ---- | ---- | ---- |
 |Способ определения настраиваемой логики      |Путем предоставления исполняемого файла.      |Путем реализации библиотеки DLL для .NET      |
 |Среда выполнения настраиваемой логики      |Windows или Linux      |Windows (.NET Framework 4.5.2)      |
@@ -321,7 +314,7 @@ namespace SampleApp
 |Ведение журналов      |Запись непосредственно в STDOUT      |Реализация средства ведения журнала в DLL для .NET      |
 
 
-  Если у вас есть код .NET, написанный для (настраиваемого) действия DotNet версии 1, вы можете изменить его, чтобы использовать в настраиваемом действии версии 2. Для этого следует изменить этот код в соответствии со следующими общими рекомендациями.  
+  Если у вас есть код .NET, написанный для (настраиваемого) действия DotNet версии 1, нужно изменить его, чтобы использовать в текущей версии настраиваемого действия. Для этого следует изменить этот код в соответствии со следующими общими рекомендациями.  
 
    - Преобразуйте проект из библиотеки классов .Net в консольное приложение. 
    - Запустите приложение с помощью метода `Main`. Метод `Execute` интерфейса `IDotNetActivity` больше не требуется. 
@@ -330,7 +323,7 @@ namespace SampleApp
    - Пакет NuGet Microsoft.Azure.Management.DataFactories больше не требуется. 
    - Скомпилируйте код, передайте исполняемый файл и зависимости в службу хранилища Azure и укажите путь к ним в свойстве `folderPath`. 
 
-Полный пример того, как повторно создать комплексную библиотеку DLL и конвейер, которые описаны в статье [Использование настраиваемых действий в конвейере фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/v1/data-factory-use-custom-activities) для фабрики данных версии 1, в формате настраиваемого действия фабрики данных версии 2: [Data Factory version 2 Custom Activity sample](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFv2CustomActivitySample) (Пример настраиваемого действия фабрики данных версии 2). 
+Полный пример того, как повторно создать комплексную библиотеку DLL и конвейер, которые описаны в статье [Использование настраиваемых действий в конвейере фабрики данных Azure](https://docs.microsoft.com/azure/data-factory/v1/data-factory-use-custom-activities) для фабрики данных версии 1, в формате настраиваемого действия фабрики данных версии 2: [пример настраиваемого действия фабрики данных](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFv2CustomActivitySample). 
 
 ## <a name="auto-scaling-of-azure-batch"></a>Автомасштабирование пакетной службы Azure
 Можно также создать пул пакетной службы Azure с использованием функции **автомасштабирования** . Например, можно создать пул пакетной службы Azure с нулем выделенных виртуальных машин и формулой автоматического масштабирования на основе числа ожидающих задач. 

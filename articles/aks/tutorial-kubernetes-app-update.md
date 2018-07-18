@@ -2,32 +2,31 @@
 title: Руководство по Kubernetes в Azure. Обновление приложения
 description: Руководство по AKS. Обновление приложения
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/24/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 622cd17a93bf1b9fa9d3c138d385ca1d29426f3b
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 97d8c4bd179edc59d97914f86e2aa139681e739a
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37101036"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
 После развертывания приложения в Kubernetes его можно обновить, указав новый образ контейнера или версию образа. При этом обновление выполняется поэтапно, поэтому одновременно обновляется только часть развертывания. Такое поэтапное обновление позволяет приложению продолжать работать во время обновления. Оно также обеспечивает механизм отката на случай, если произойдет сбой развертывания.
 
-В этом руководстве (часть шесть из восьми) обновляется пример приложения Vote Azure. Здесь будут выполнены следующие задачи:
+В этом руководстве (часть 7 из 8) обновляется пример приложения Vote Azure. Здесь будут выполнены следующие задачи:
 
 > [!div class="checklist"]
 > * Обновление кода внешнего приложения.
 > * Создание обновленного образа контейнера.
 > * Отправка образа контейнера в реестр контейнеров Azure.
 > * Развертывание обновленного образа контейнера.
-
-В последующих руководствах предполагается, что среда Log Analytics настроена для отслеживания кластера Kubernetes.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

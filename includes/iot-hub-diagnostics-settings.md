@@ -1,3 +1,20 @@
+---
+title: включение файла
+description: включение файла
+services: iot-hub
+author: dominicbetts
+ms.service: iot-hub
+ms.topic: include
+ms.date: 05/17/2018
+ms.author: dobett
+ms.custom: include file
+ms.openlocfilehash: 1c7f006c066a4f1505a642af04a1ef027fde0a44
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34666948"
+---
 ### <a name="enable-logging-with-diagnostics-settings"></a>Включение ведения журнала с параметрами диагностики
 
 1. Войдите на [портал Azure][lnk-portal] и перейдите к своему Центру Интернета вещей.

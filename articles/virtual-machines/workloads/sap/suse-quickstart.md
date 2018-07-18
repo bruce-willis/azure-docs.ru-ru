@@ -1,13 +1,13 @@
 ---
-title: "Тестирование SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure | Документация Майкрософт"
-description: "Тестирование SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure"
+title: Тестирование SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure | Документация Майкрософт
+description: Тестирование SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure
 services: virtual-machines-linux
-documentationcenter: 
+documentationcenter: ''
 author: hermanndms
-manager: timlt
-editor: 
+manager: jeconnoc
+editor: ''
 tags: azure-resource-manager
-keywords: 
+keywords: ''
 ms.assetid: 645e358b-3ca1-4d3d-bf70-b0f287498d7a
 ms.service: virtual-machines-linux
 ms.devlang: na
@@ -16,11 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/14/2017
 ms.author: hermannd
-ms.openlocfilehash: 072a70c1da74b3b50ad8c0a93ee3c079a724d81f
-ms.sourcegitcommit: a0d2423f1f277516ab2a15fe26afbc3db2f66e33
+ms.openlocfilehash: cc4438a770a8092275373ccf8da9cc9951a1f906
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858618"
 ---
 # <a name="running-sap-netweaver-on-microsoft-azure-suse-linux-vms"></a>Запуск SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure
 В этой статье описываются различные моменты, которые следует учитывать при запуске SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure. По состоянию на 19 мая 2016 года SAP NetWeaver официально поддерживается на виртуальных машинах SUSE Linux в Azure. Все сведения о версиях Linux, версиях ядра SAP и других необходимых компонентах можно найти в примечании SAP 1928533 "Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure".
@@ -128,7 +129,7 @@ ms.lasthandoff: 01/16/2018
 
 Вместо пакета sapconf также доступен новый инструмент — tuned-adm. С дополнительными сведениями можно ознакомиться по двум ссылкам, указанным ниже.
 
-- Документацию SLES по профилю sap-hana в tuned-adm см. [здесь](https://www.suse.com/documentation/sles-for-sap-12/book_s4s/data/sec_s4s_configure_sapconf.html) 
+- Документацию SLES по профилю sap-hana в tuned-adm см. [здесь](https://www.suse.com/documentation/sles-for-sap-12/book_s4s/data/sec_saptune.html) 
 
 - Сведения о настройке систем для рабочих нагрузок SAP с помощью tuned-adm см. в разделе 6.2 [этой статьи](https://www.suse.com/documentation/sles-for-sap-12/pdfdoc/book_s4s/book_s4s.pdf).
 

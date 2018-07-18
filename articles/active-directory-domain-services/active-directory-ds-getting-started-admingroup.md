@@ -1,24 +1,26 @@
 ---
-title: "Доменные службы Azure Active Directory: начало работы | Документы Майкрософт"
-description: "Включение доменных служб Azure Active Directory с помощью портала Azure."
+title: 'Доменные службы Azure Active Directory: начало работы | Документы Майкрософт'
+description: Включение доменных служб Azure Active Directory с помощью портала Azure.
 services: active-directory-ds
-documentationcenter: 
+documentationcenter: ''
 author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: ace1ed4a-bf7f-43c1-a64a-6b51a2202473
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/26/2017
+ms.date: 05/23/2018
 ms.author: maheshu
-ms.openlocfilehash: 2a171490faf9804196c93d33c5ee74d22533c044
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: d5b81a6d4bdda24208673e42757807aba60fea97
+ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36263981"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 
@@ -40,16 +42,19 @@ ms.lasthandoff: 12/11/2017
 
 3. Закончив, нажмите кнопку **ОК** для перехода на страницу **Сводка** мастера.
 
-4. На странице **Сводка** просмотрите параметры конфигурации для управляемого домена. При необходимости можно вернуться к любому шагу мастера, чтобы внести изменения. По завершении нажмите кнопку **ОК**, чтобы создать управляемый домен.
+
+## <a name="deploy-your-managed-domain"></a>Развертывание управляемого домена
+
+1. На странице **Сводка** просмотрите параметры конфигурации для управляемого домена. При необходимости можно вернуться к любому шагу мастера, чтобы внести изменения. По завершении нажмите кнопку **ОК**, чтобы создать управляемый домен.
 
     ![Сводка](./media/getting-started/domain-services-blade-summary.png)
 
-5. Вы увидите уведомление с отображением хода выполнения развертывания доменных служб Azure AD. Щелкните уведомление, чтобы просмотреть подробное описание хода развертывания.
+2. Вы увидите уведомление с отображением хода выполнения развертывания доменных служб Azure AD. Щелкните уведомление, чтобы просмотреть подробное описание хода развертывания.
 
     ![Уведомление — выполняется развертывание](./media/getting-started/domain-services-blade-deployment-in-progress.png)
 
 
-## <a name="provision-your-managed-domain"></a>Подготовка управляемого домена
+## <a name="check-the-deployment-status-of-your-managed-domain"></a>Проверка состояния развертывания управляемого домена
 Процесс подготовки управляемого домена может занять до одного часа.
 
 1. Во время развертывания можно выполнить поиск, введя "доменные службы" в поле поиска **Поиск ресурсов**. В списке результатов выберите **Доменные службы Azure AD**. В колонке **Доменные службы Azure AD** будет указан подготавливаемый управляемый домен.
@@ -67,6 +72,9 @@ ms.lasthandoff: 12/11/2017
 4. После полной подготовки управляемого домена на вкладке **Обзор** состояние домена отображается как **Выполняется**.
 
     ![Доменные службы — вкладка "Обзор" после полной подготовки](./media/getting-started/domain-services-provisioned.png)
+    >[!NOTE]
+    >При подготовке в доменных службах Azure AD в вашем каталоге создаются корпоративные приложения с именами "Domain Controller Services" и "AzureActiveDirectoryDomainControllerServices". Эти корпоративные приложения нужны для обслуживания управляемого домена. Крайне важно ни в коем случае не удалять их.
+    >
 
 5. На вкладке **Свойства** отображаются два IP-адреса, по которым контроллеры домена доступны для виртуальной сети.
 

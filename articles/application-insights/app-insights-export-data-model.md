@@ -1,8 +1,8 @@
 ---
-title: "Модель данных Azure Application Insights | Документация Майкрософт"
-description: "Описание свойств, экспортируемых с помощью непрерывного экспорта в формате JSON и используемых в качестве фильтров."
+title: Модель данных Azure Application Insights | Документация Майкрософт
+description: Описание свойств, экспортируемых с помощью непрерывного экспорта в формате JSON и используемых в качестве фильтров.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: cabad41c-0518-4669-887f-3087aef865ea
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/21/2016
 ms.author: mbullwin
-ms.openlocfilehash: 86aef6ba93224bbbb41bc7e651aaeec394fd8718
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: ee6597b78ac8de8fc3a7f3796010f22919243b23
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294900"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](app-insights-overview.md) на портал.
@@ -151,7 +152,7 @@ ms.lasthandoff: 11/01/2017
 | context.user.authAcquisitionDate |строка |[Прошедший проверку пользователь.](app-insights-api-custom-events-metrics.md#authenticated-users) |
 | context.user.isAuthenticated |Логическое | |
 | internal.data.documentVersion |строка | |
-| internal.data.id |строка | |
+| internal.data.id |строка | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
 
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](app-insights-api-custom-events-metrics.md#trackevent).

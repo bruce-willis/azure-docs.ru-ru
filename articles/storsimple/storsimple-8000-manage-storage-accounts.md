@@ -1,12 +1,12 @@
 ---
-title: "Управление учетными данными хранилища StorSimple для устройств Microsoft Azure StorSimple серии 8000 | Документация Майкрософт"
-description: "Здесь объясняется, как можно использовать страницу \"Настройка\" в диспетчере устройств StorSimple для добавления, изменения и удаления или смены ключей безопасности для учетной записи хранения."
+title: Управление учетными данными хранилища StorSimple для устройств Microsoft Azure StorSimple серии 8000 | Документация Майкрософт
+description: Здесь объясняется, как можно использовать страницу "Настройка" в диспетчере устройств StorSimple для добавления, изменения и удаления или смены ключей безопасности для учетной записи хранения.
 services: storsimple
 documentationcenter: NA
 author: alkohli
 manager: timlt
-editor: 
-ms.assetid: 
+editor: ''
+ms.assetid: ''
 ms.service: storsimple
 ms.devlang: NA
 ms.topic: article
@@ -15,10 +15,11 @@ ms.workload: TBD
 ms.date: 06/29/2017
 ms.author: alkohli
 ms.openlocfilehash: 36058ad69ea670998b50cf9038741c294a5b79ab
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38688734"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-manage-your-storage-account-credentials"></a>Использование службы диспетчера устройств StorSimple для управления учетными данными учетной записи хранения
 

@@ -1,6 +1,6 @@
 ---
 title: Использование ScaleR и SparkR с Azure HDInsight | Документация Майкрософт
-description: Использование ScaleR и SparkR с R Server и HDInsight
+description: Использование ScaleR и SparkR со Службами машинного обучения в HDInsight
 services: hdinsight
 documentationcenter: ''
 author: bradsev
@@ -14,23 +14,24 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/19/2017
 ms.author: bradsev
-ms.openlocfilehash: 4306f265bf7f52f9bc307def2256dd62e94e004f
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 2b16135e83ba52f7a2e6bd214791910db80634bc
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952847"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
 
 В этой статье описано, как спрогнозировать задержки в прибытиях авиарейсов с помощью модели логистической регрессии **ScaleR**. В примере используются данные по задержкам авиарейсов и погоде, объединенные с помощью **SparkR**.
 
-Хотя оба пакета работают поверх механизма выполнения Spark Hadoop, совместное использование данных в памяти для них заблокировано, так как для каждого из них требуются отдельные сеансы Spark. Это будет исправлено в последующих версиях R Server, а пока временным решением является поддержание не перекрывающихся сеансов Spark и обмен данными с помощью промежуточных файлов. В приведенных в этой статье инструкциях показано, что обеспечить выполнение этих требований достаточно просто.
+Хотя оба пакета работают поверх механизма выполнения Spark Hadoop, совместное использование данных в памяти для них заблокировано, так как для каждого из них требуются отдельные сеансы Spark. Это будет исправлено в последующих версиях ML Server, а пока временным решением является поддержание неперекрывающихся сеансов Spark и обмен данными с помощью промежуточных файлов. В приведенных в этой статье инструкциях показано, что обеспечить выполнение этих требований достаточно просто.
 
 Этот пример изначально озвучили в докладе Марио Инчиоза (Mario Inchiosa) и Рони Берда (Roni Burd) на конференции Strata 2016 Дополнительные сведения см. в вебинаре [Building a Scalable Data Science Platform with R](http://event.on24.com/eventRegistration/console/EventConsoleNG.jsp?uimode=nextgeneration&eventid=1160288&sessionid=1&key=8F8FB9E2EB1AEE867287CD6757D5BD40&contenttype=A&eventuserid=305999&playerwidth=1000&playerheight=650&caller=previewLobby&text_language_id=en&format=fhaudio) (Создание масштабируемой платформы анализа и обработки данных на основе R).
 
-Этот код первоначально был написан для R Server под управлением Spark в кластере HDInsight в Azure. Однако понятие совместного использования SparkR и ScaleR в одном скрипте в равной степени применимо к локальным средам. 
+Этот код изначально был написан для ML Server под управлением Spark в кластере HDInsight в Azure. Однако понятие совместного использования SparkR и ScaleR в одном скрипте в равной степени применимо к локальным средам.
 
-Здесь предполагается средний уровень знания языка R и библиотеки [ScaleR](https://msdn.microsoft.com/microsoft-r/scaler-user-guide-introduction) сервера R Server. В процессе рассмотрения сценария также приводятся общие сведения об использовании [SparkR](https://spark.apache.org/docs/2.1.0/sparkr.html).
+Здесь предполагается средний уровень знания языка R и библиотеки [ScaleR](https://msdn.microsoft.com/microsoft-r/scaler-user-guide-introduction) для ML Server. В процессе рассмотрения сценария также приводятся общие сведения об использовании [SparkR](https://spark.apache.org/docs/2.1.0/sparkr.html).
 
 ## <a name="the-airline-and-weather-datasets"></a>Наборы данных об авиакомпаниях и погоде
 
@@ -199,7 +200,7 @@ rxDataStep(weatherDF, outFile = weatherDF1, rowsPerRead = 50000, overwrite = T,
 
 ## <a name="importing-the-airline-and-weather-data-to-spark-dataframes"></a>Импорт данных авиакомпаний и погодных данных в таблицы данных Spark
 
-Теперь мы используем функцию SparkR [read.df()](https://docs.databricks.com/spark/latest/sparkr/functions/read.df.html) для импорта данных по погоде и авиакомпаниям в кадры данных Spark. Это функция отложенного выполнения, как и многие другие методы Spark. Это означает, что они находятся в очереди на выполнение, но выполняются только при необходимости.
+Теперь мы используем функцию SparkR [read.df()](https://docs.databricks.com/spark/1.6/sparkr/functions/read.df.html#read-df) для импорта данных по погоде и авиакомпаниям в кадры данных Spark. Это функция отложенного выполнения, как и многие другие методы Spark. Это означает, что они находятся в очереди на выполнение, но выполняются только при необходимости.
 
 ```
 airPath     <- file.path(inputDataDir, "AirOnTime08to12CSV")
@@ -272,7 +273,7 @@ weatherDF <- rename(weatherDF,
 
 ## <a name="joining-the-weather-and-airline-data"></a>Объединение данных о погоде с данными об авиакомпаниях
 
-Теперь воспользуемся функцией SparkR [join()](https://docs.databricks.com/spark/latest/sparkr/functions/join.html), чтобы выполнить левое внешнее соединение данных по погоде с данными по авиакомпаниям на основе идентификатора аэропорта отправления (AirportID) и значения даты и времени (datetime). Внешнее объединение позволяет сохранить все записи данных об авиакомпаниях, даже если они не коррелируют с погодными данными. После соединения удалим некоторые избыточные столбцы и переименуем оставшиеся, чтобы удалить входящий префикс кадра данных, возникший при соединении.
+Теперь воспользуемся функцией SparkR [join()](https://docs.databricks.com/spark/1.6/sparkr/functions/join.html#join), чтобы выполнить левое внешнее соединение данных по погоде с данными по авиакомпаниям на основе идентификатора аэропорта отправления (AirportID) и значения даты и времени (datetime). Внешнее объединение позволяет сохранить все записи данных об авиакомпаниях, даже если они не коррелируют с погодными данными. После соединения удалим некоторые избыточные столбцы и переименуем оставшиеся, чтобы удалить входящий префикс кадра данных, возникший при соединении.
 
 ```
 logmsg('Join airline data with weather at Origin Airport')
@@ -359,7 +360,7 @@ rxHadoopRemove(file.path(dataDir, "joined5Csv/_SUCCESS"))
 ```
 logmsg('Import the CSV to compressed, binary XDF format') 
 
-# set the Spark compute context for R Server 
+# set the Spark compute context for ML Services 
 rxSetComputeContext(sparkCC)
 rxGetComputeContext()
 
@@ -536,15 +537,15 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 ## <a name="summary"></a>Сводка
 
-В этой статье показано, как можно использовать SparkR для работы с данными в сочетании со ScaleR для разработки модели в Hadoop Spark. Этот сценарий требует создания нескольких сеансов Spark, использования одновременно только одного сеанса и обмена данными посредством CSV-файлов. При всей своей простоте этот процесс станет еще проще в предстоящем выпуске R Server, в котором SparkR и ScaleR смогут совместно использовать сеансы и кадры данных Spark.
+В этой статье показано, как можно использовать SparkR для работы с данными в сочетании со ScaleR для разработки модели в Hadoop Spark. Этот сценарий требует создания нескольких сеансов Spark, использования одновременно только одного сеанса и обмена данными посредством CSV-файлов. При всей своей простоте этот процесс станет еще проще в предстоящем выпуске Служб машинного обучения, в котором SparkR и ScaleR смогут совместно использовать сеансы и кадры данных Spark.
 
 ## <a name="next-steps-and-more-information"></a>Дальнейшие действия и дополнительные сведения
 
-- Дополнительные сведения об использовании R Server в Spark см. в [руководстве по началу работы в библиотеке MSDN](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
+- Дополнительные сведения об использовании ML Server в Spark см. в этом [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
 
-- Общие сведения об R Server см. в статье [Начало работы с Microsoft R](https://msdn.microsoft.com/microsoft-r/microsoft-r-get-started-node).
+- Общие сведения об ML Server см. в статье о [начале работы с R](https://msdn.microsoft.com/microsoft-r/microsoft-r-get-started-node).
 
-- Сведения об R Server в HDInsight см. в статьях [Основные сведения об R Server и возможностях открытого кода R в HDInsight](r-server/r-server-overview.md) и [Приступая к работе с R Server в HDInsight](r-server/r-server-get-started.md).
+- Сведения о Службах машинного обучения в HDInsight см. в статьях [Основные сведения об R Server и возможностях открытого кода R в HDInsight](r-server/r-server-overview.md) и [Начало работы со службами машинного обучения в Azure HDInsight](r-server/r-server-get-started.md).
 
 Дополнительные сведения об использовании SparkR см. в следующих статьях:
 

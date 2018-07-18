@@ -1,21 +1,21 @@
 ---
-title: 'Azure Active Directory B2C: динамическая настройка пользовательского интерфейса Azure AD B2C с помощью пользовательских политик'
+title: Динамическая настройка пользовательского интерфейса Azure AD B2C с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о том, как обеспечить поддержку нескольких фирменных символик с помощью содержимого HTML5 или каскадных таблиц стилей (CSS), которое динамически изменяется в среде выполнения.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: davidmu
-ms.openlocfilehash: 77f6ae1df8a364eecc5e7d6d6fe3a07dd215ac16
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: 4e7cc47bddf3663cbc1c8bb5c4470020a84073e4
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441657"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 

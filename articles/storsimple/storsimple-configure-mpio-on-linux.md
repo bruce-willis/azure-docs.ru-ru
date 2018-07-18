@@ -1,6 +1,6 @@
 ---
-title: "Настройка MPIO на узле Linux StorSimple | Документация Майкрософт"
-description: "Настройка MPIO на устройстве StorSimple, подключенному к узлу Linux под управлением CentOS 6.6"
+title: Настройка MPIO на узле Linux StorSimple | Документация Майкрософт
+description: Настройка MPIO на устройстве StorSimple, подключенному к узлу Linux под управлением CentOS 6.6
 services: storsimple
 documentationcenter: NA
 author: alkohli
@@ -14,11 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: 2fbae15c1c6a9ec886f57f9df903612ae10d8e12
-ms.sourcegitcommit: 562a537ed9b96c9116c504738414e5d8c0fd53b1
+ms.openlocfilehash: ccd24e1498282cd2b627226df79af22e9647b64d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38681583"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
 В этой статье описаны этапы настройки многоканального ввода-вывода (MPIO) на сервере узла под управлением CentOS 6.6. Сервер узла подключен к устройству Microsoft Azure StorSimple через инициаторы iSCSI для обеспечения высокой доступности. Здесь также подробно описано автоматическое обнаружение устройств с поддержкой нескольких каналов ввода-вывода и приведены настройки для томов StorSimple.
@@ -66,7 +67,7 @@ ms.lasthandoff: 01/12/2018
 
 Далее рассматривается настройка многоканального ввода-вывода. Предполагается, что устройство StorSimple имеет два сетевых интерфейса и подключено к узлу с двумя сетевыми интерфейсами.
 
-## <a name="prerequisites"></a>Необходимые компоненты
+## <a name="prerequisites"></a>предварительным требованиям
 В этом разделе подробно описываются предварительные требования для настройки сервера CentOS и устройства StorSimple.
 
 ### <a name="on-centos-host"></a>Узел CentOS
@@ -119,7 +120,7 @@ ms.lasthandoff: 01/12/2018
    4. Чтобы гарантировать работу инициатора iSCSI во время загрузки, включите службу с помощью команды `chkconfig` .
       
        `chkconfig iscsi on`
-   5. Чтобы убедиться в правильности установки, выполните такую команду:
+   5. Чтобы убедиться в правильности установки, выполните следующую команду:
       
        `chkconfig --list | grep iscsi`
       
@@ -444,5 +445,5 @@ ms.lasthandoff: 01/12/2018
 Во время настройки MPIO на узле Linux вам могут пригодиться следующие документы по CentOS 6.6.
 
 * [Настройка MPIO на CentOS](http://www.centos.org/docs/5/html/5.1/DM_Multipath/setup_procedure.html)
-* [Учебное руководство Linux](http://linux-training.be/files/books/LinuxAdm.pdf)
+* [Учебное руководство Linux](http://linux-training.be/linuxsys.pdf)
 

@@ -5,21 +5,22 @@
     - name: Что такое Azure DNS?
       href: dns-overview.md
 - name: Быстрое начало работы
+  expanded: true
   items:
-    - name: Создание частной зоны и записи DNS с помощью портала
+    - name: Разрешение имен с помощью портала
       href: dns-getstarted-portal.md
-    - name: Создание частной зоны и записи DNS с помощью PowerShell
+    - name: Разрешение имен с помощью PowerShell
       href: dns-getstarted-powershell.md
-    - name: Создание частной зоны и записи DNS с помощью CLI
+    - name: Разрешение имен с помощью CLI
       href: dns-getstarted-cli.md
 - name: Учебники
   items:
-    - name: Создание частной зоны и записи DNS
-      href: private-dns-getstarted-powershell.md
-    - name: Делегирование своего домена в Azure DNS
+    - name: Размещение домена в Azure DNS
       href: dns-delegate-domain-azure-dns.md
     - name: Создание пользовательских записей DNS для веб-приложения
       href: dns-web-sites-custom-domain.md
+    - name: Создание частной зоны и записи DNS
+      href: private-dns-getstarted-powershell.md
 - name: Примеры
   items:
     - name: Инфраструктура CLI Azure
@@ -40,6 +41,8 @@
       href: dns-alerts-metrics.md
     - name: Обратные зоны DNS
       href: dns-reverse-dns-overview.md
+    - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
+      href: ../networking/disaster-recovery-dns-traffic-manager.md
 - name: Практическое руководство
   items:
     - name: Создание частной настраиваемой зоны и записи DNS с помощью Azure CLI

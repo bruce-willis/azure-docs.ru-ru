@@ -3,22 +3,24 @@ title: Отображение приложений на панели досту�
 description: Устранение неполадки с отображением приложения на панели доступа
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
+ms.author: barbkess
 ms.reviewr: japere
-ms.openlocfilehash: 0d4203ea39adf027d783a482198f523e18cbc246
-ms.sourcegitcommit: d28bba5fd49049ec7492e88f2519d7f42184e3a8
+ms.openlocfilehash: a67ce71ab49d00d7d9425714ad43cd4a6ee842f3
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36333536"
 ---
 # <a name="how-applications-appear-on-the-access-panel"></a>Отображение приложений на панели доступа
 

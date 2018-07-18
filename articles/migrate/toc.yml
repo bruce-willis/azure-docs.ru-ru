@@ -14,7 +14,7 @@
       href: concepts-collector.md
     - name: Вычисление оценок
       href: concepts-assessment-calculation.md
-    - name: Визуализация зависимостей
+    - name: Сведения о визуализации зависимостей
       href: concepts-dependency-visualization.md
 - name: Практические руководства
   items:
@@ -22,12 +22,30 @@
       items:
         - name: '1. Миграция Contoso: обзор'
           href: contoso-migration-overview.md
-        - name: '2. Contoso: настройка инфраструктуры Azure'
+        - name: '2. Contoso: развертывание инфраструктуры Azure'
           href: contoso-migration-infrastructure.md
         - name: '3. Contoso: оценка готовности локальных компьютеров к переносу в Azure'
-          href: migrate-scenarios-assessment.md
-        - name: '4. Contoso: повторное размещение на виртуальных машинах Azure и в Управляемом экземпляре Azure SQL'
-          href: migrate-scenarios-lift-and-shift.md
+          href: contoso-migration-assessment.md
+        - name: '4. Contoso: повторное размещение приложения на виртуальных машинах Azure и в Управляемом экземпляре Azure SQL'
+          href: contoso-migration-rehost-vm-sql-managed-instance.md
+        - name: '5. Contoso: повторное размещение приложения на виртуальных машинах Azure'
+          href: contoso-migration-rehost-vm.md
+        - name: '6. Contoso: повторное размещение приложения на виртуальных машинах Azure и в группах доступности AlwaysOn SQL Server'
+          href: contoso-migration-rehost-vm-sql-ag.md
+        - name: '7. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure'
+          href: contoso-migration-rehost-linux-vm.md
+        - name: '8. Contoso: повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL'
+          href: contoso-migration-rehost-linux-vm-mysql.md
+        - name: '9. Contoso: рефакторинг приложения в веб-приложениях Azure и Базе данных Azure SQL'
+          href: contoso-migration-refactor-web-app-sql.md
+        - name: '10. Contoso: рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL'
+          href: contoso-migration-refactor-linux-app-service-mysql.md
+        - name: '11. Contoso: перенос Team Foundation Server в Visual Studio Team Services'
+          href: contoso-migration-tfs-vsts.md
+        - name: '12. Contoso: повторное проектирование приложения в контейнерах Azure и Базе данных SQL Azure'
+          href: contoso-migration-rearchitect-container-sql.md
+        - name: '13. Contoso: повторная сборка приложения в Azure'
+          href: contoso-migration-rebuild.md
     - name: Обнаружение и оценка крупной среды
       href: how-to-scale-assessment.md
     - name: Группирование компьютеров
@@ -48,3 +66,5 @@
       href: 'https://azure.microsoft.com/migrate'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
+    - name: Часто задаваемые вопросы
+      href: resources-faq.md

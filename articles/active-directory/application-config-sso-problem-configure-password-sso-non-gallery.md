@@ -3,22 +3,23 @@ title: Проблема при настройке единого входа по
 description: Из этой статьи вы узнаете, какие проблемы возникают при настройке единого входа по паролю для пользовательских приложений не из коллекции приложений Azure AD.
 services: active-directory
 documentationcenter: ''
-author: ajamess
+author: barbkess
 manager: mtillman
 ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.openlocfilehash: 7b671089bfac04b359717874928d6a342c44b3d4
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.author: barbkess
+ms.openlocfilehash: 69a2bf6e622cd2338d57e62ed82951cb2385edd6
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34069680"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "36334913"
 ---
 # <a name="problem-configuring-password-single-sign-on-for-a-non-gallery-application"></a>Проблема при настройке единого входа по паролю для приложения не из коллекции
 

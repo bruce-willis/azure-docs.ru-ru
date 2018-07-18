@@ -12,13 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/07/2018
+ms.date: 5/22/2018
 ms.author: nachandr
-ms.openlocfilehash: d36fcac4cbbdf8127e60e23df4ff2d52e68b6689
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: cbd5a0ea5fbeb7becbfc33bf72af73425630bff6
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970726"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -316,6 +317,10 @@ RebootRequired | true — требовалась перезагрузка<br> f
 В. **Почему некоторые обновления отображаются в результатах Центра обновления Windows, полученных через REST API, а не в журнале Центра обновлений Windows на компьютере?**
 
 О. Сведения об обновлении некоторых продуктов отображаются только в соответствующем журнале обновлений или исправлений. Например, сведения об обновлении Защитника Windows не отображаются в журнале Центра обновлений Windows в Windows Server 2016.
+
+В. **Можно ли с помощью приложения для управления исправлениями решать проблемы в кластере для разработки (кластер с одним узлом)?**
+
+О. Нет. С помощью приложения для управления исправлениями проблемы в кластере с одним узлом решить нельзя. Это ограничение сделано намеренно, так как [системные службы Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-technical-overview#system-services) или приложения клиента будут простаивать, поэтому диспетчер никогда не утвердит любое задание восстановления и последующее внесение исправлений.
 
 ## <a name="disclaimers"></a>Заявления об отказе от ответственности
 

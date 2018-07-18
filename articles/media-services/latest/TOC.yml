@@ -17,6 +17,10 @@
           href: stream-files-tutorial-with-api.md
         - name: С помощью REST
           href: stream-files-tutorial-with-rest.md
+    - name: Потоковая передача в реальном времени
+      items:
+        - name: Использование .NET Core
+          href: stream-live-tutorial-with-api.md
     - name: Анализ видео
       items:
         - name: Использование .NET
@@ -24,19 +28,25 @@
 - name: Примеры
   items:
     - name: Примеры кода Azure
-      href: 'https://azure.microsoft.com/resources/samples/?service=media-services'
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=media-services&term=v3'
     - name: Инфраструктура CLI Azure
       href: cli-samples.md
 - name: Основные понятия
   items:
     - name: Активы
       href: assets-concept.md
+    - name: Защита содержимого
+      items:
+        - name: Обзор
+          href: content-protection-overview.md
     - name: Кодирование
       items:
         - name: Обзор
           href: encoding-concept.md
         - name: Автоматическое создание схемы передачи с переменной скоростью
           href: autogen-bitrate-ladder.md
+    - name: Потоковая передача в реальном времени
+      href: live-streaming-overview.md
     - name: Мультимедиа-аналитика
       href: intelligence-concept.md
     - name: Реагирование на события
@@ -53,23 +63,25 @@
       href: create-account-cli-how-to.md
     - name: "Доступ к API\_— CLI"
       href: access-api-cli-how-to.md
-    - name: "События состояния задания\_— CLI"
+    - name: Мониторинг событий состояния задания с помощью CLI
       href: job-state-events-cli-how-to.md
-    - name: "Передача содержимого\_— .NET"
+    - name: Настройка предустановок преобразования — .NET Core
+      href: customize-encoder-presets-how-to.md
+    - name: Передача содержимого
       items:
-        - name: Из HTTP(s)
+        - name: HTTP(s) — .NET
           href: job-input-from-http-how-to.md
-        - name: Из локального файла
+        - name: Локальный файл — .NET
           href: job-input-from-local-file-how-to.md
-    - name: Настройка предустановок преобразования
+    - name: Защита содержимого
       items:
-        - name: Использование .NET Core
-          href: customize-encoder-presets-how-to.md
+        - name: Использование AES-128 — .NET
+          href: protect-with-aes128.md
 - name: Справочные материалы
   items:
     - name: Спецификация OpenAPI (Swagger)
       href: 'https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/preview/2018-03-30-preview'
-    - name: "Azure CLI\_2.0"
+    - name: Инфраструктура CLI Azure
       href: 'https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest'
     - name: REST
       href: 'https://go.microsoft.com/fwlink/p/?linkid=873030'
@@ -83,6 +95,14 @@
       href: 'https://docs.microsoft.com/en-us/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest'
     - name: Схемы событий
       href: media-services-event-schemas.md
+    - name: Лицензии DRM
+      items:
+        - name: Шаблон лицензии PlayReady
+          href: playready-license-template-overview.md
+        - name: Шаблон лицензии Widevine
+          href: widevine-license-template-overview.md
+        - name: Требования лицензий FairPlay
+          href: fairplay-license-overview.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

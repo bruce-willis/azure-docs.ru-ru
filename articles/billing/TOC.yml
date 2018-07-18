@@ -111,8 +111,26 @@
       href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
     - name: Обратитесь в службу поддержки.
       href: ../azure-supportability/how-to-create-azure-support-request.md
+- name: Примеры
+  items:
+    - name: ИНТЕРФЕЙС REST API
+      items:
+        - name: Просмотр корпоративных затрат
+          href: billing-review-enterprise-billing.md
+        - name: Просмотр данных об использовании подписки
+          href: billing-review-subscription-billing.md
+    - name: Примеры для .NET
+      items:
+        - name: Пример кода API счетов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
+        - name: Пример кода API использования ресурсов
+          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
+        - name: Пример кода API RateCard
+          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
 - name: Справочные материалы
   items:
+    - name: Сценарии автоматизации выставления счетов
+      href: billing-cost-management-automation-scenarios.md
     - name: Общие сведения об API выставления счетов Azure
       href: billing-usage-rate-card-overview.md
       items:
@@ -120,7 +138,8 @@
           href: 'https://docs.microsoft.com/rest/api/billing'
         - name: 'Партнерское решение: Cloud Cruiser'
           href: billing-usage-rate-card-partner-solution-cloudcruiser.md
-    - name: API потребления Azure
+    - name: Общие сведения об API потребления ресурсов Azure
+      href: billing-consumption-api-overview.md
       items:
         - name: REST API потребления Azure
           href: 'https://docs.microsoft.com/rest/api/consumption'
@@ -133,11 +152,3 @@
       items:
         - name: REST API для корпоративной отчетности
           href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
-    - name: Примеры кода для выставления счетов
-      items:
-        - name: Пример кода API счетов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-        - name: Пример кода API использования ресурсов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-        - name: Пример кода API RateCard
-          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'

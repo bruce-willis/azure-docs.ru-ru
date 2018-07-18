@@ -7,13 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: mvc,develop databases
 ms.topic: tutorial
-ms.date: 04/23/2018
+ms.date: 6/20/2018
 ms.author: carlrab
-ms.openlocfilehash: ba14208e971d712184052e7470757ce48ac26879
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: c89b03baccc7e20ae945da154fbd78d5d0dac376
+ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36311037"
 ---
 # <a name="tutorial-design-your-first-azure-sql-database-using-ssms"></a>Руководство. Разработка первой базы данных SQL Azure с помощью SSMS
 
@@ -85,9 +86,7 @@ ms.lasthandoff: 04/28/2018
 8. Примите условия использования предварительной версии, чтобы использовать **дополнительное хранилище**. 
 
    > [!IMPORTANT]
-   > -  Размеры хранилища, превышающие включенный объем, доступны в предварительной версии. За их использование взимается дополнительная плата. Подробнее об этом можно узнать в статье [Стоимость использования Базы данных SQL](https://azure.microsoft.com/pricing/details/sql-database/). 
-   >-  На уровне "Премиум" хранилище объемом свыше 1 ТБ сейчас доступно в следующих регионах: Восточная Австралия, Юго-Восточная Австралия, Южная Бразилия, Центральная Канада, Восточная Канада, центральная часть США, Центральная Франция, Центральная Германия, Восточная Япония, Западная Япония, Республика Корея (центральный регион), северо-центральный регион США, Северная Европа, юго-центральный регион США, Юго-Восточная Азия, южная часть Соединенного Королевства, западная часть Соединенного Королевства, восточная часть США 2, западная часть США, US Gov (Вирджиния) и Западная Европа. См. [текущие ограничения для баз данных P11–P15](sql-database-dtu-resource-limits.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
-
+   > Хранилище класса Premium объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: северная часть Соединенного Королевства, центрально-западная часть США, южная часть Соединенного Королевства 2, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион US Gov, юго-центральный регион US Gov, Северо-Восточная Германия, Северный Китай, восточный регион US Gov. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15]( sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).
 
 9. Выбрав уровень сервера, число DTU и объем хранилища, нажмите кнопку **Применить**.  
 
@@ -178,7 +177,7 @@ ms.lasthandoff: 04/28/2018
 На приведенной ниже схеме показано, как эти таблицы связаны друг с другом. Некоторые из этих таблиц ссылаются на столбцы в других таблицах. Например, таблица Student ссылается на столбец **PersonId** таблицы **Person**. Изучите схему, чтобы понять, как таблицы в этом руководстве связаны друг с другом. Подробные сведения о создании эффективных таблиц баз данных см. в [этой статье](https://msdn.microsoft.com/library/cc505842.aspx). Дополнительные сведения о выборе типов данных см. в [этой статье](https://docs.microsoft.com/sql/t-sql/data-types/data-types-transact-sql).
 
 > [!NOTE]
-> Для создания и проектирования таблиц можно также использовать [конструктор таблиц в SQL Server Management Studio](https://msdn.microsoft.com/library/hh272695.aspx). 
+> Для создания и проектирования таблиц можно также использовать [конструктор таблиц в SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/visual-db-tools/design-database-diagrams-visual-database-tools). 
 
 ![Связи между таблицами](./media/sql-database-design-first-database/tutorial-database-tables.png)
 

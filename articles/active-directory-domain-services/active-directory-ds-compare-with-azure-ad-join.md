@@ -1,24 +1,26 @@
 ---
-title: "Сравнение присоединения к Azure AD и доменных служб Azure Active Directory | Документация Майкрософт"
-description: "Выбор между присоединением к Azure AD и доменными службами Azure AD"
+title: Сравнение присоединения к Azure AD и доменных служб Azure Active Directory | Документация Майкрософт
+description: Выбор между присоединением к Azure AD и доменными службами Azure AD
 services: active-directory-ds
-documentationcenter: 
+documentationcenter: ''
 author: mahesh-unnikrishnan
 manager: mtillman
 editor: curtand
 ms.assetid: 31a71d36-58c1-4839-b958-80da0c6a77eb
-ms.service: active-directory-ds
+ms.service: active-directory
+ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 10/26/2017
 ms.author: maheshu
-ms.openlocfilehash: fb28c7a66d26119444dd720c2e134f2818d46cfc
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 8bfc62f978b85399a64da32636627efc7ae234da
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36212559"
 ---
 # <a name="choose-between-azure-active-directory-join-and-azure-active-directory-domain-services"></a>Выбор между присоединением к Azure AD и доменными службами Azure Active Directory
 В этой статье описываются различия между присоединением к Azure Active Directory (AD) и доменными службами Azure AD. Изучив ее, вы сможете выбрать нужный вам вариант.

@@ -1,0 +1,29 @@
+- name: Документация по поиску ответов в проектах
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое поиск ответов в проектах?
+      href: overview.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: 'C#'
+      href: c-sharp-quickstart.md
+    - name: Java
+      href: java-quickstart.md
+    - name: Узел
+      href: node-quickstart.md
+    - name: Python
+      href: python-quickstart.md
+- name: Основные понятия
+  items:
+    - name: Запросы фактов
+      href: fact-queries.md
+    - name: Запросы сущностей
+      href: entity-queries.md
+- name: Справочные материалы
+  items:
+    - name: Требования к использованию и отображению
+      href: use-display-requirements.md
+    - name: Справочник по поиску ответов в проектах
+      href: reference.md

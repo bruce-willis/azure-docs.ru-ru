@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: wesmc
-ms.openlocfilehash: 66340e690e5a6ac3e440b8b4d26e1a8b2abab266
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: f78dd2a28575ad8e3fa30ac9c2bbd29c7d85a78f
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34640478"
 ---
 # <a name="azure-redis-cache-faq"></a>Кэш Redis для Azure. Вопросы и ответы
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации для кэша Redis для Azure.
@@ -385,7 +386,7 @@ StackExchange.Redis имеет много параметров. В этом ра
 
 Как настроить этот параметр:
 
-* В ASP.NET используйте [параметр конфигурации minIoThreads]["minIoThreads" configuration setting] в разделе элемента конфигурации `<processModel>` в файле web.config. Внутри веб-сайтов Azure этот параметр недоступен для настройки. Тем не менее, его можно настроить программно (см. ниже) из метода Application_Start в файле global.asax.cs.
+* В ASP.NET используйте [параметр конфигурации minIoThreads или minWorkerThreads]["minIoThreads" configuration setting] в разделе элемента конфигурации `<processModel>` в файле web.config. Внутри веб-сайтов Azure этот параметр недоступен для настройки. Тем не менее, его можно настроить программно (см. ниже) из метода Application_Start в файле global.asax.cs.
 
   > [!NOTE] 
   > В этом элементе конфигурации задается параметр *per-core*. Например, если у вас 4-ядерный компьютер и вы хотите установить для параметра minIOThreads значение 200 во время выполнения, то можно использовать `<processModel minIoThreads="50"/>`.

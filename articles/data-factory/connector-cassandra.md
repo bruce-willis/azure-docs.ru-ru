@@ -10,26 +10,22 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/02/2018
+ms.topic: conceptual
+ms.date: 06/07/2018
 ms.author: jingwang
-ms.openlocfilehash: fe68797090926f2e0e0e2fbb66ba2bb7f6d940e7
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: a0095ae4aa50845a24cabb981399ac4035afdebe
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32770967"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37051456"
 ---
 # <a name="copy-data-from-cassandra-using-azure-data-factory"></a>Копирование данных из базы данных Cassandra с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
-> * [Версия 1 — общедоступная](v1/data-factory-onprem-cassandra-connector.md)
-> * [Версия 2 — предварительная](connector-cassandra.md)
+> * [Версия 1](v1/data-factory-onprem-cassandra-connector.md)
+> * [Текущая версия](connector-cassandra.md)
 
 В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из базы данных Cassandra. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
-
-
-> [!NOTE]
-> Эта статья относится к версии 2 фабрики данных, которая в настоящее время доступна в предварительной версии. Если используется служба фабрики данных версии 1, которая является общедоступной версией, ознакомьтесь со статьей [Перемещение данных из локальной базы данных Cassandra с помощью фабрики данных Azure](v1/data-factory-onprem-cassandra-connector.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
@@ -37,8 +33,11 @@ ms.locfileid: "32770967"
 
 В частности, этот соединитель Cassandra поддерживает:
 
-- Cassandra **версии 2.X**.
+- Cassandra **версий 2.x и 3.x**.
 - Копирование данных с использованием **базовой** или **анонимной** проверки подлинности.
+
+>[!NOTE]
+>Для выполнения действия в локальной среде выполнения интеграции Cassandra 3.x поддерживается в IR версии 3.7 и более поздних.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
@@ -63,6 +62,9 @@ ms.locfileid: "32770967"
 | Имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | password |Укажите пароль для учетной записи пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да (если для свойства authenticationType задано значение Basic) |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!NOTE]
+>В настоящее время подключение к Cassandra по протоколу SSL не поддерживается.
 
 **Пример.**
 
@@ -132,7 +134,7 @@ ms.locfileid: "32770967"
 |:--- |:--- |:--- |
 | Тип | Свойство type источника действия копирования должно иметь значение **CassandraSource**. | Yes |
 | query |Используйте пользовательский запрос для чтения данных. |Запрос SQL-92 или CQL. Ознакомьтесь со [справочником по CQL](https://docs.datastax.com/en/cql/3.1/cql/cql_reference/cqlReferenceTOC.html). <br/><br/>Если используется SQL-запрос, то таблицу, к которой необходимо отправить запрос, укажите в формате **имя_пространства_ключей.имя_таблицы**. |Нет (если в наборе данных определены свойства tableName и keyspace) |
-| consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных Дополнительные сведения см. в статье [Configuring data consistency](http://docs.datastax.com/en//cassandra/2.0/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных).<br/><br/>Допустимые значения: **ONE**, **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM** и **LOCAL_ONE**. |Нет (значение по умолчанию — `ONE`) |
+| consistencyLevel |Определяет количество реплик, которые должны ответить на запрос на чтение перед возвращением данных в клиентское приложение. Чтобы выполнить запрос на чтение, база данных Cassandra проверяет наличие указанного количества реплик для данных Дополнительные сведения см. в статье [Configuring data consistency](https://docs.datastax.com/en/cassandra/2.1/cassandra/dml/dml_config_consistency_c.html) (Настройка согласованности данных).<br/><br/>Допустимые значения: **ONE**, **TWO**, **THREE**, **QUORUM**, **ALL**, **LOCAL_QUORUM**, **EACH_QUORUM** и **LOCAL_ONE**. |Нет (значение по умолчанию — `ONE`) |
 
 **Пример.**
 

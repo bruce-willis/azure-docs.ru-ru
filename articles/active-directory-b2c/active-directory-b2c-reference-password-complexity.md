@@ -1,22 +1,21 @@
 ---
 title: Сложность пароля в Azure Active Directory B2C | Документация Майкрософт
-description: Как настроить требования к сложности паролей, которые клиенты указывают в Azure Active Directory B2C
+description: Узнайте, как настроить требования к сложности паролей, которые клиенты указывают в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/16/2017
 ms.author: davidmu
-ms.openlocfilehash: 78d90dce350282e4e7671104b5ee8ca9756897c6
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.component: B2C
+ms.openlocfilehash: 4b027f6cd57dfa48ba2e230371ffcad97b1f8ec4
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33200388"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445115"
 ---
 # <a name="azure-ad-b2c-configure-complexity-requirements-for-passwords"></a>Настройка требований к сложности паролей в Azure AD B2C
 

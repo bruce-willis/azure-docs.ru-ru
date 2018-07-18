@@ -1,28 +1,24 @@
 ---
-title: Создание первого автоматизированного рабочего процесса в Azure Logic Apps | Документация Майкрософт
-description: Это краткое руководство содержит сведения об автоматизации первого рабочего процесса с помощью Azure Logic Apps для сценариев интеграции системы и корпоративных приложений, которые интегрируют системы и облачные службы.
-author: ecfan
-manager: anneta
-editor: ''
+title: Создание и автоматизация первого рабочего процесса в Azure Logic Apps | Документация Майкрософт
+description: В этом руководстве показано, как создать первое приложение логики для автоматизации задач, операций и рабочих процессов с помощью Azure Logic Apps. Создавайте приложения логики для решений интеграции системы и корпоративных приложений (EAI) для своих систем и облачных служб.
 services: logic-apps
-keywords: рабочие процессы, облачные службы, системная интеграция, интеграция приложений, eai
-documentationcenter: ''
-ms.assetid: ce3582b5-9c58-4637-9379-75ff99878dcd
 ms.service: logic-apps
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
+ms.date: 1/12/2018
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 1/12/2018
-ms.author: LADocs; estfan
-ms.openlocfilehash: ccd00fbb3c5dc0f78a31adcaed31bbe6e4a6e785
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: 0a629deec0cc18f65dfe5e88a3eaea528636dd0f
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35300945"
 ---
-# <a name="quickstart-build-your-first-logic-app-workflow---azure-portal"></a>Краткое руководство. Создание первого рабочего процесса приложения логики на портале Azure
+# <a name="quickstart-create-your-first-automated-workflow-with-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure
 
 Это краткое руководство содержит данные о способах создания первого автоматизированного рабочего процесса с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md). В этой статье вы создадите приложение логики, которое регулярно проверяет RSS-канал веб-сайта на наличие новых элементов. Если они есть, приложение логики отправляет сообщение электронной почты для каждого из них. По завершении приложение логики будет выглядеть как этот высокоуровневый рабочий процесс:
 
@@ -164,7 +160,7 @@ ms.lasthandoff: 03/16/2018
 
 ![Отправленное сообщение о новом элементе веб-канала RSS](./media/quickstart-create-first-logic-app-workflow/monitor-rss-feed-email.png)
 
-Технически, когда триггер проверяет веб-канал RSS и находит новые элементы, триггер срабатывает и подсистема Logic Apps создает для приложения логики экземпляр рабочего процесса, в котором выполняются действия.
+Технически, когда триггер проверяет веб-канал RSS и находит новые элементы, он срабатывает, и подсистема Logic Apps создает для приложения логики экземпляр рабочего процесса, в котором выполняются действия.
 Если триггер не находит новые элементы, он не срабатывает и "пропускает" создание экземпляра рабочего процесса.
 
 Поздравляем, вы успешно создали и запустили свое первое приложение логики с помощью портала Azure.

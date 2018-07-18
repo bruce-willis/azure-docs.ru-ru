@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 12/15/2017
+ms.date: 05/30/2018
 ms.author: iainfou
-ms.openlocfilehash: c47822bebdc8b3cc8896fe56b8f9a4ce317495c3
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: fb3639b8ce5c50773bec0ee429e1fa2f7277671b
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34364307"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34716624"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
 Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
@@ -37,7 +37,7 @@ ms.locfileid: "34364307"
 
 С помощью приведенного ниже примера кода можно установить упрощенную среду рабочего стола [xfce4](https://www.xfce.org/) на виртуальной машине Ubuntu 16.04 LTS. Команды для других дистрибутивов незначительно отличаются. Например, для установки на виртуальной машине Red Hat Enterprise Linux используйте `yum` и настройте соответствующие правила `selinux`, а для установки на виртуальной машине SUSE используйте `zypper`.
 
-Сначала установите SSH-подключение к виртуальной машине. Следующий пример подключается к виртуальной машине *myvm.westus.cloudapp.azure.com* с помощью имени пользователи *azureuser*.
+Сначала установите SSH-подключение к виртуальной машине. Следующий пример подключается к виртуальной машине *myvm.westus.cloudapp.azure.com* с использованием имени пользователя *azureuser*. Используйте собственные значения:
 
 ```bash
 ssh azureuser@myvm.westus.cloudapp.azure.com
@@ -86,7 +86,7 @@ sudo passwd azureuser
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>Создание правила группы безопасности сети, разрешающего трафик с удаленного рабочего стола
 Чтобы трафик с удаленного рабочего стола мог поступать на виртуальную машину Linux, необходимо создать правило группы безопасности сети, разрешающее использовать протокол TCP на порту 3389 для доступа к виртуальной машине. Дополнительные сведения о правилах групп безопасности сети см. в статье [Безопасность сети](../../virtual-network/security-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Вы также можете [создать правило группы безопасности сети с помощью портала Azure](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-В следующем примере создается правило группы безопасности сети с именем [az vm open-port](/cli/azure/vm#az_vm_open_port) на порту *3389*.
+В следующем примере создается правило группы безопасности сети с именем [az vm open-port](/cli/azure/vm#az-vm-open-port) на порту *3389*. Из Azure CLI 2.0, а не сеанса SSH с виртуальной машиной, откройте следующее правило группы безопасности сети:
 
 ```azurecli
 az vm open-port --resource-group myResourceGroup --name myVM --port 3389

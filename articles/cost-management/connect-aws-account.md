@@ -5,16 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/26/2018
+ms.date: 06/07/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: ''
-ms.openlocfilehash: 0c18fc065ae4d9a9401a8d603f051e9d6236c538
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: c2c7ea043d2da41442829321ac663325f30ff066
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35297334"
 ---
 # <a name="connect-an-amazon-web-services-account"></a>Подключение учетной записи Amazon Web Services
 
@@ -33,7 +34,7 @@ ms.lasthandoff: 04/28/2018
 
 Сначала нужно получить уникальную парольную фразу для подключения с портала службы "Управление затратами Azure". В AWS эта парольная фраза используется в качестве **внешнего идентификатора**.
 
-1. Откройте портал Cloudyn с портала Azure или перейдите по адресу [https://azure.cloudyn.com](https://azure.cloudyn.com) и выполните вход.
+1. Откройте портал Cloudyn с портала Azure или перейдите по адресу [https://azure.cloudyn.com](https://azure.cloudyn.com) и войдите.
 2. Щелкните значок шестеренки, а затем выберите **Cloud Accounts** (Облачные учетные записи).
 3. На странице управления учетными записями выберите вкладку **AWS Accounts** (Учетные записи AWS), а затем щелкните **Add new +** (Добавить новый элемент +).
 4. В диалоговом окне **Add AWS Account** (Добавление учетной записи AWS) скопируйте **внешний идентификатор** и сохраните его для использования на шагах по созданию роли AWS (в следующем разделе). Внешний идентификатор уникален для вашей учетной записи. На следующем изображении примером внешнего идентификатора является _Contoso_, за которым следует номер. Ваш идентификатор отличается.  
@@ -54,7 +55,7 @@ ms.lasthandoff: 04/28/2018
 
 ### <a name="configure-aws-iam-role-access-in-cost-management"></a>Настройка доступа роли AWS IAM в службе "Управление затратами"
 
-1. Откройте портал Cloudyn с портала Azure или перейдите по адресу https://azure.cloudyn.com/ и выполните вход.
+1. Откройте портал Cloudyn с портала Azure или перейдите по адресу https://azure.cloudyn.com/ и войдите.
 2. Щелкните значок шестеренки, а затем выберите **Cloud Accounts** (Облачные учетные записи).
 3. На странице управления учетными записями выберите вкладку **AWS Accounts** (Учетные записи AWS), а затем щелкните **Add new +** (Добавить новый элемент +).
 4. В столбце **Account Name** (Имя учетной записи) отметьте имя учетной записи.
@@ -91,7 +92,7 @@ ms.lasthandoff: 04/28/2018
 
 ### <a name="configure-aws-iam-user-based-access-in-cost-management"></a>Настройка доступа на основе пользователя AWS IAM в службе "Управление затратами"
 
-1. Откройте портал Cloudyn из портала Azure или перейдите по адресу https://azure.cloudyn.com/ и выполните вход.
+1. Откройте портал Cloudyn с портала Azure или перейдите по адресу https://azure.cloudyn.com/ и войдите.
 2. Щелкните значок шестеренки, а затем выберите **Cloud Accounts** (Облачные учетные записи).
 3. На странице управления учетными записями выберите вкладку **AWS Accounts** (Учетные записи AWS), а затем щелкните **Add new +** (Добавить новый элемент +).
 4. В столбце **Account Name** (Имя учетной записи) отметьте имя учетной записи.

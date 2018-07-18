@@ -9,16 +9,18 @@ manager: hjerez
 editor: cgronlun
 ms.assetid: 03a0b844-e8a7-4896-996f-d3c7a0db7a50
 ms.service: machine-learning
+ms.component: studio
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/19/2018
-ms.openlocfilehash: 38f31220b7cf4624367d872df152ef9e1304e841
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 725b7e1e37ffca38cf439cc62b053f13dfd6397d
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37903036"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Используйте типовых наборов данных в Azure Machine Learning Studio
 [top]: #machine-learning-sample-datasets
@@ -145,7 +147,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <tr>
   <td>Общий набор данных CRM</td>
   <td>
-Эти данные взяты с KDD Cup 2009 — конкурса прогнозистов, использующих программы взаимоотношения с клиентами (<a href="http://www.sigkdd.org/kdd-cup-2009-customer-relationship-prediction - orange_small_train.data.zip">orange_small_train.data.zip</a>).
+Эти данные взяты с KDD Cup 2009 — конкурса прогнозистов, использующих программы взаимоотношения с клиентами (<a href="http://www.sigkdd.org/site/2009/files/orange_small_train.data.zip">orange_small_train.data.zip</a>).
 <p></p>
 Набор данных включает в себя сведения о 50 000 клиентов французской телекоммуникационной компании Orange. У каждого клиента есть 230 обезличенных характеристик, из которых 190 — числовые, а 40 — категорийные. Характеристики являются очень разреженными.
   </td>
@@ -306,7 +308,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <p></p>
 <b>Связанное исследование:</b> Sterling, D. и Buntine, W. (нет данных). UCI репозитория машинного обучения <a href="http://archive.ics.uci.edu/ml">http://archive.ics.uci.edu/ml</a>. Ирвин, Калифорния: Калифорнийский Университет, школа информационных и компьютерных наук 
 <p></p>
-Руководство по сортам стали см. здесь: <a href="http://www.outokumpu.com/SiteCollectionDocuments/Outokumpu-steel-grades-properties-global-standards.pdf">http://www.outokumpu.com/SiteCollectionDocuments/Outokumpu-steel-grades-properties-global-standards.pdf</a>
+Руководство по сортам стали см. здесь: <a href="https://otk-sitecore-prod-v2-cdn.azureedge.net/-/media/from-sharepoint/documents/product/outokumpu-steel-grades-properties-global-standards.pdf">https://otk-sitecore-prod-v2-cdn.azureedge.net/-/media/from-sharepoint/documents/product/outokumpu-steel-grades-properties-global-standards.pdf</a>
   </td>
 </tr>
 
@@ -401,7 +403,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <tr>
   <td><a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/student_performance.txt">student_performance.txt</a></td>
   <td>
-Эти данные взяты с конкурса KDD Cup 2010 (<a href="http://www.kdd.org/kdd-cup-2010-student-performance-evaluation">аттестация студентов</a>). Использованные данные: обучающий набор данных Algebra_2008_2009 (Stamper, J., Niculescu-Mizil, A., Ritter, S., Gordon, G.J., & Koedinger, K.R. (2010). Алгебра 2008-2009. Опробуйте набор данных из состязания KDD Cup 2010: интеллектуальный анализ образовательных данных. Он находится в файле <a href="http://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp">downloads.jsp</a> или <a href="http://www.kdd.org/sites/default/files/kddcup/site/2010/files/algebra_2008_2009.zip">algebra_2008_2009.zip</a>.
+Эти данные взяты с конкурса KDD Cup 2010 (<a href="http://www.kdd.org/kdd-cup/view/kdd-cup-2010-student-performance-evaluation">аттестация студентов</a>). Использованные данные: обучающий набор данных Algebra_2008_2009 (Stamper, J., Niculescu-Mizil, A., Ritter, S., Gordon, G.J., & Koedinger, K.R. (2010). Алгебра 2008-2009. Опробуйте набор данных из состязания KDD Cup 2010: интеллектуальный анализ образовательных данных. Он находится в файле <a href="http://pslcdatashop.web.cmu.edu/KDDCup/downloads.jsp">downloads.jsp</a>.
 <p></p>
 Набор данных был скачан и сохранен в хранилище BLOB-объектов Azure (<a href="https://azuremlsampleexperiments.blob.core.windows.net/datasets/student_performance.txt">student_performance.txt</a>). Он содержит файлы журналов из системы обучения студентов. Задаваемыми характеристиками являются идентификатор проблемы и ее краткое описание, идентификатор учащегося, метка времени, а также количество попыток, которые сделал учащийся перед правильным решением проблемы. Исходный набор данных содержит 8,9 млн записей. Количество строк в этом наборе данных уменьшено до первых 100 тысяч строк. Набор данных содержит 23 столбца с разделителем-табуляцией различных типов: числа, категории и метки времени.
   </td>

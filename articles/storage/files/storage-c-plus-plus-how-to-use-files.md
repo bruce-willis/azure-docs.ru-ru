@@ -1,11 +1,11 @@
 ---
-title: "Разработка приложений службы файлов Azure с помощью C++ | Документация Майкрософт"
-description: "Сведения о разработке приложений и служб C++, хранящих файлы данных в службе файлов Azure."
+title: Разработка приложений службы файлов Azure с помощью C++ | Документация Майкрософт
+description: Сведения о разработке приложений и служб C++, хранящих файлы данных в службе файлов Azure.
 services: storage
 documentationcenter: .net
 author: renashahmsft
 manager: aungoo
-editor: tysonn
+editor: tamram
 ms.assetid: a1e8c99e-47a6-43a9-9541-c9262eb00b38
 ms.service: storage
 ms.workload: storage
@@ -14,11 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: renashahmsft
-ms.openlocfilehash: d2f55b5ca6348ba8e190c65ec9a72c6f730d869e
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: e0b5974780813eb4f3d67c42781db4d95829814d
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34737577"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -26,15 +27,13 @@ ms.lasthandoff: 10/11/2017
 [!INCLUDE [storage-try-azure-tools-files](../../../includes/storage-try-azure-tools-files.md)]
 
 ## <a name="about-this-tutorial"></a>О данном учебнике
-
 В рамках этого руководства вы узнаете, как выполнять основные операции в службе файлов Azure. С помощью примеров на языке C++ вы узнаете, как создавать общие папки и каталоги, отправлять и удалять файлы, а также получать список файлов. Если вы не знакомы со службой файлов Azure, мы предлагаем вам изучить понятия, описанные в последующих разделах. Это будет полезно для понимания примеров.
-
 
 * Создание и удаление общих папок Azure.
 * Создание и удаление каталогов.
-* Перечисление файлов и каталогов в файловом ресурсе Azure.
+* Перечисление файлов и каталогов в общей папке Azure.
 * Передача, загрузка и удаление файлов.
-* Установка квоты (максимального размера) для файлового ресурса Azure.
+* Установка квоты (максимального размера) для общей папки Azure.
 * Создайте подпись общего доступа (ключ SAS) для файла, который использует политику общего доступа, определенную в общей папке.
 
 > [!Note]  
@@ -78,7 +77,7 @@ azure::storage::cloud_storage_account storage_account =
   azure::storage::cloud_storage_account::parse(storage_connection_string);
 ```
 
-## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 Все файлы и каталоги в службе файлов Azure находятся в контейнере, который называется **общей папкой**. Учетная запись хранения может иметь столько общих папок, насколько позволяет емкость вашей учетной записи. Чтобы получить доступ к общей папке и ее содержимому, необходимо использовать клиент службы файлов Azure.
 
 ```cpp
@@ -117,7 +116,7 @@ azure::storage::cloud_file_share share =
 share.delete_share_if_exists();
 ```
 
-## <a name="create-a-directory"></a>Создайте каталог
+## <a name="create-a-directory"></a>создать каталог;
 Вы можете упорядочить файлы в хранилище, разместив их в подкаталогах, чтобы не захламлять корневой каталог. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. В следующем примере кода создается каталог с именем **my-sample-directory** в корневом каталоге, а также подкаталог **my-sample-subdirectory**.
 
 ```cpp
@@ -155,7 +154,7 @@ sub_directory.delete_directory_if_exists();
 directory.delete_directory_if_exists();
 ```
 
-## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в файловом ресурсе Azure.
+## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure.
 Получить список файлов и каталогов в общей папке довольно просто, вызвав метод **list_files_and_directorie** по ссылке **cloud_file_directory**. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_file_and_directory_item** необходимо вызвать метод **list_file_and_directory_item.as_file**, чтобы получить объект **cloud_file**, или метод **list_file_and_directory_item.as_directory**, чтобы получить объект **cloud_file_directory**.
 
 Следующий код демонстрирует, как получить и вывести URI каждого элемента в корневом каталоге общей папки.
@@ -181,7 +180,7 @@ for (auto it = directory.list_files_and_directories(); it != end_of_results; ++i
 }
 ```
 
-## <a name="upload-a-file"></a>Отправить файл.
+## <a name="upload-a-file"></a>Отправка файла
 Общая папка Azure содержит по меньшей мере один каталог для размещения файлов (корневой каталог). В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Первым шагом при отправке файла является получение ссылки на каталог, где файл будет находиться. Для этого нужно вызвать метод **getRootDirectoryReference** объекта общей папки.
@@ -213,7 +212,7 @@ azure::storage::cloud_file file4 =
 file4.upload_from_file(_XPLATSTR("DataFile.txt"));    
 ```
 
-## <a name="download-a-file"></a>Скачивание файла
+## <a name="download-a-file"></a>скачать файл;
 Чтобы скачать файлы, сначала получите ссылку на файл, а затем вызовите метод **download_to_stream** для передачи содержимого файла в объект потока, который затем можно сохранить в локальном файле. Кроме того, можно использовать метод **download_to_file**, чтобы скачать содержимое файла в локальный файл. Вы можете также использовать метод **download_text**, чтобы скачать содержимое файла в виде текстовой строки.
 
 В следующем примере используются методы **download_to_stream** и **download_text** для демонстрации скачивания файлов, созданных в предыдущих разделах.
@@ -255,7 +254,7 @@ azure::storage::cloud_file file =
 file.delete_file_if_exists();
 ```
 
-## <a name="set-the-quota-maximum-size-for-an-azure-file-share"></a>Установка квоты (максимального размера) для файлового ресурса Azure
+## <a name="set-the-quota-maximum-size-for-an-azure-file-share"></a>Установка квоты (максимального размера) для общей папки Azure.
 Для файлового ресурса можно установить квоту (или максимальный размер) в гигабайтах. Можно также проверить, какой объем данных хранится в настоящее время в общей папке.
 
 Задав квоту для файлового ресурса, можно ограничить общий размер файлов, хранящихся в общей папке. Если общий размер файлов в файловом ресурсе превышает установленную квоту, клиенты не смогут увеличить размер существующих файлов или создать новые файлы, только если они не являются пустыми.

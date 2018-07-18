@@ -10,6 +10,8 @@
       href: stream-analytics-quick-create-portal.md
     - name: Создание задания с помощью PowerShell
       href: stream-analytics-quick-create-powershell.md
+    - name: Создание задания — Visual Studio
+      href: stream-analytics-quick-create-vs.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания
@@ -54,7 +56,7 @@
           href: stream-analytics-login-credentials-inputs-outputs.md
         - name: Настройка оповещений
           href: stream-analytics-set-up-alerts.md
-        - name: Тестирование задания
+        - name: Проверка задания
           href: stream-analytics-test-query.md
         - name: Просмотр результатов на панели мониторинга
           href: stream-analytics-power-bi-dashboard.md
@@ -125,8 +127,6 @@
           href: stream-analytics-job-diagram-with-metrics.md
         - name: Журналы диагностики
           href: stream-analytics-job-diagnostic-logs.md
-        - name: Проверка работоспособности ресурсов
-          href: stream-analytics-resource-health.md
         - name: Инструкция SELECT INTO
           href: stream-analytics-select-into.md
         - name: Приемники концентратора событий

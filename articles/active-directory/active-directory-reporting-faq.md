@@ -3,23 +3,24 @@ title: Часто задаваемые вопросы по отчетам Azure 
 description: Часто задаваемые вопросы об отчетах Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: MarkusVi
+author: priyamohanram
 manager: mtillman
 ms.assetid: 534da0b1-7858-4167-9986-7a62fbd10439
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
+ms.component: compliance-reports
 ms.date: 05/10/2018
-ms.author: markvi
+ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 5fa52099f5cf55b78fd2fea407c34f29237939d3
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 8d627abfe7b686eeeb5a65c4515e184f4ce62f4e
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067016"
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36335063"
 ---
 # <a name="azure-active-directory-reporting-faq"></a>Часто задаваемые вопросы об отчетах Azure Active Directory
 
@@ -71,7 +72,7 @@ ms.locfileid: "34067016"
 
 **Вопрос. Сколько записей можно скачать с портала Azure?**
 
-**Ответ.** С портала Azure можно скачать до 120 тыс. записей. Записи отсортированы по *убыванию даты и времени* по умолчанию, и вы получите 120 тыс. самых последних записей. 
+**Ответ.** С портала Azure можно скачать до 5000 записей. Записи отсортированы по *убыванию даты и времени* по умолчанию, и вы получите 5000 самых последних записей.
 
 ---
 
@@ -83,7 +84,7 @@ ms.locfileid: "34067016"
 
 **Вопрос. Как получить лицензию уровня Premium?**
 
-**Ответ.** Ответ на этот вопрос есть в разделе [Приступая к работе с Azure Active Directory Premium](active-directory-get-started-premium.md).
+**Ответ.** Ответ на этот вопрос есть в разделе [Приступая к работе с Azure Active Directory Premium](fundamentals/active-directory-get-started-premium.md).
 
 ---
 

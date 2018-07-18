@@ -10,15 +10,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 06/27/2018
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.openlocfilehash: ee4321b905396f78e7dad9248b9e377dad250a13
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.openlocfilehash: 1a516c890441c3b703d43f31816b7c37cac364fd
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34010981"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37054387"
 ---
 # <a name="resource-provider-api-versions-supported-by-profiles-in-azure-stack"></a>Версии API поставщика ресурсов, поддерживаемые профилями в Azure Stack
 
@@ -144,11 +144,14 @@ API-интерфейсы службы вычислений Azure обеспеч�
 
 | Типы ресурсов | Версии API |
 |--------------------|--------------------|
-| Правила генерации оповещений | 2016-03-01 |
-| Категории событий | 2017-03-01-preview |
-| Типы событий | 2017-03-01-preview |
-| Определения метрик | 2016-03-01 |
 | Операции | 2015-04-01 |
+| Типы событий | 2015-04-01 |
+| Категории событий | 2015-04-01 |
+| Определения метрик | 2018-01-01 |
+| Метрики | 2018-01-01 |
+| Параметры диагностики | 2017-05-01-preview |
+| Категории параметров диагностики | 2017-05-01-preview |
+
 
 ### <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 

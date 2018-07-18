@@ -11,11 +11,12 @@ ms.service: functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: cfowler
-ms.openlocfilehash: 758906126b42c103853e0047bb19d2e96a84fae6
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: c5de0b1384958bc8553aa3722ad6a5829b69ab12
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38488705"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image-preview"></a>Создание функции в Linux из пользовательского образа (предварительная версия)
 
@@ -41,9 +42,9 @@ ms.lasthandoff: 03/23/2018
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
-* [Git.](https://git-scm.com/downloads)
+* [Git](https://git-scm.com/downloads)
 * Активная [подписка Azure](https://azure.microsoft.com/pricing/free-trial/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-* [Docker](https://docs.docker.com/get-started/#setup)
+* [Docker](https://docs.docker.com/install/)
 * [Учетная запись Docker Hub](https://docs.docker.com/docker-id/).
 
 [!INCLUDE [Free trial note](../../includes/quickstarts-free-trial-note.md)]
@@ -226,7 +227,7 @@ AzureWebJobsStorage=$storageConnectionString
 > * Развертывание приложения-функции из концентратора Docker.
 > * Добавление параметров приложения в приложение-функцию.
 
-Дополнительные сведения о локальной разработке функций Azure с помощью основных инструментов решения "Функции Azure".
+Узнайте, как включить функцию непрерывной интеграции, встроенную в основную платформу службы приложений. Вы можете настроить приложение-функцию, чтобы контейнер повторно развертывался при обновлении образа в центре Docker.
 
 > [!div class="nextstepaction"] 
-> [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md)
+> [Непрерывное развертывание с использованием платформы Azure "Веб-приложение для контейнеров"](../app-service/containers/app-service-linux-ci-cd.md).

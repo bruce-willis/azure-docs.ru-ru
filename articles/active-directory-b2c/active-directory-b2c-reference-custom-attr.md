@@ -1,27 +1,27 @@
 ---
-title: 'Azure Active Directory B2C: настраиваемые атрибуты | Документация Майкрософт'
-description: Как использовать настраиваемые атрибуты в Azure Active Directory B2C для сбора данных о потребителях.
+title: Настраиваемые атрибуты Azure Active Directory B2C | Документация Майкрософт
+description: Узнайте, как использовать настраиваемые атрибуты в Azure Active Directory B2C для сбора данных о потребителях.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/06/2016
 ms.author: davidmu
-ms.openlocfilehash: 6f285c10b7d8ff92c8568c42b6a78dc4ea9bcc74
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: B2C
+ms.openlocfilehash: 893dfbae96d2cfea01b1f281f888e9281bf582f9
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441922"
 ---
 # <a name="azure-active-directory-b2c-use-custom-attributes-to-collect-information-about-your-consumers"></a>Azure Active Directory B2C: использование настраиваемых атрибутов для сбора данных о потребителях
 Каталог Azure Active Directory (Azure AD) B2C поставляется со встроенным набором информации (атрибутов): "Given Name", "Surname", "City", "Postal Code" и т. д. Однако у каждого потребительского приложения особые требования к атрибутам, которые им требуется собирать у потребителей. С помощью Azure AD B2C можно расширить набор атрибутов, хранящихся в каждой учетной записи потребителя. На [портале Azure](https://portal.azure.com/) можно создать настраиваемые атрибуты и использовать их в политиках регистрации, как показано ниже. Можно также читать и записывать эти атрибуты с помощью [API Graph Azure AD](active-directory-b2c-devquickstarts-graph-dotnet.md).
 
 > [!NOTE]
-> Настраиваемые атрибуты используют [расширения схемы каталога API Graph Azure AD](https://msdn.microsoft.com/library/azure/dn720459.aspx).
+> Настраиваемые атрибуты используют [расширения схемы каталога API Graph Azure AD](https://msdn.microsoft.com/library/azure/ad/graph/howto/azure-ad-graph-api-directory-schema-extensions).
 > 
 > 
 

@@ -8,17 +8,19 @@ manager: cgronlun
 editor: cgronlun
 ms.assetid: d8866fa6-aba6-40e5-b3b3-33057393c1a8
 ms.service: machine-learning
+ms.component: team-data-science-process
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: deguhath
-ms.openlocfilehash: 10fe87757a6da8a64e4fbd7fb624fef3e666714c
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 991e4b86a1d3e75c02e5ed8fe97727c625f174a4
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37055710"
 ---
 # <a name="vehicle-telemetry-analytics-solution-playbook-deep-dive-into-the-solution"></a>Сборник тренировочных заданий по решению для аналитики телеметрии автомобиля. Подробный обзор решения
 В этом меню содержатся ссылки на разделы сборника тренировочных заданий: 
@@ -33,7 +35,7 @@ ms.lasthandoff: 05/03/2018
 * имитированные сигналы автомобиля и набор диагностических данных;
 * каталог автомобилей.
 
-В это решение входит симулятор телематики автомобиля, как показано на снимке экрана ниже. Он выдает диагностическую информацию и сигналы, соответствующие состоянию автомобиля и манере вождения в определенный момент времени. Чтобы скачать решение Visual Studio симулятора телематики автомобиля для настройки в соответствии со своими требованиями, щелкните [эту ссылку](http://go.microsoft.com/fwlink/?LinkId=717075). Каталог автомобилей содержит эталонный набор данных, который сопоставляет идентификационные номера автомобилей (VIN) с их моделями.
+В это решение входит симулятор телематики автомобиля, как показано на снимке экрана ниже. Он выдает диагностическую информацию и сигналы, соответствующие состоянию автомобиля и манере вождения в определенный момент времени.  Каталог автомобилей содержит эталонный набор данных, который сопоставляет идентификационные номера автомобилей (VIN) с их моделями. Примечание. Набор данных решения Visual Studio "Симулятор телематики автомобиля" больше недоступен. 
 
 ![Симулятор телематики автомобиля](./media/cortana-analytics-playbook-vehicle-telemetry-deep-dive/fig1-vehicle-telematics-simulator.png)
 
@@ -361,7 +363,7 @@ ms.lasthandoff: 05/03/2018
 
 Этот шаблон также можно применять в сценариях, когда нужно интегрировать бизнес-приложение с потоком анализа в режиме реального времени. К этим сценариям относятся предупреждение, уведомление и сообщение.
 
-Чтобы скачать решение Visual Studio RealtimeDashboardApp для настройки, щелкните [здесь](http://go.microsoft.com/fwlink/?LinkId=717078). 
+Примечание. Данные для решения RealtimeDashboardApp Visual Studio больше недоступны.
 
 #### <a name="execute-the-real-time-dashboard-application"></a>**Выполнение приложения панели мониторинга в реальном времени**
 1. Извлеките RealtimeDashboardApp и сохраните его локально.
@@ -667,10 +669,9 @@ Power BI предоставляет для этого решения расши
 
 ### <a name="references"></a>Ссылки
 
-* [Решение Visual Studio "Симулятор телематики автомобиля"](http://go.microsoft.com/fwlink/?LinkId=717075) 
 * [Концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)
 * [Фабрика данных Azure](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
 * [Приступая к отправке событий в концентраторы событий Azure на платформе .NET Standard](../../event-hubs/event-hubs-csharp-ephcs-getstarted.md)
-* [Перемещение данных с помощью действия копирования](../../data-factory/v1/data-factory-data-movement-activities.md)
-* [Использование настраиваемых действий в конвейере фабрики данных Azure](../../data-factory/v1/data-factory-use-custom-activities.md)
+* [Перемещение данных с помощью действия копирования](../../data-factory/copy-activity-overview.md)
+* [Использование настраиваемых действий в конвейере фабрики данных Azure](../../data-factory/transform-data-using-dotnet-custom-activity.md)
 * [Документация по Машинному обучению Azure (предварительная версия)](http://go.microsoft.com/fwlink/?LinkId=717077) 

@@ -93,7 +93,7 @@
 ### [Создание виртуальных сетей с помощью Azure CLI](../../virtual-network/quick-create-cli.md#create-a-virtual-network?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### [Фильтрация сетевого трафика с помощью групп безопасности сети](../../virtual-network/security-overview.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### Руководства по работе с виртуальными сетями
-#### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../../virtual-machines/linux/tutorial-load-balance-nodejs.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+#### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 #### [Подключение компьютера к виртуальной сети](../../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 
 ## [Дальнейшие действия](azure-operations-guide.md#next-steps)

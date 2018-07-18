@@ -3,26 +3,30 @@ title: Извлечение результатов проверки доступ
 description: Сведения о том, как извлечь результаты проверки доступа Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: markwahl-msft
+author: rolyon
 manager: mtillman
-editor: ''
+editor: markwahl-msft
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: get-started-article
-ms.date: 05/16/2018
-ms.author: billmath
-ms.openlocfilehash: cdd07fd837863d9a5abced0db8cacaded6288a41
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.topic: conceptual
+ms.component: compliance-reports
+ms.date: 06/21/2018
+ms.author: rolyon
+ms.reviewer: mwahl
+ms.openlocfilehash: 96676c3ec6d96fd6c6f78aa2dbed8cf4d0a6718d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34192230"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38295306"
 ---
 # <a name="retrieve-access-review-results"></a>Получение результатов проверок доступа
 
-Администраторы могут использовать Azure Active Directory (Azure AD), чтобы [создать проверку доступа](active-directory-azure-ad-controls-create-access-review.md) для участников группы или пользователей, назначенных для приложения.  Пользователь с ролью **глобального администратора**, **администратора безопасности** или **читателя безопасности** также может читать результаты проверки доступа.  Для назначения пользователям одной из этих ролей администратор привилегированной роли может использовать управление привилегированными пользователями Azure AD, чтобы предоставить пользователю доступ для активации роли. Глобальный администратор также может навсегда [назначить пользователю роль](active-directory-users-assign-role-azure-portal.md).
+Администраторы могут использовать Azure Active Directory (Azure AD), чтобы [создать проверку доступа](active-directory-azure-ad-controls-create-access-review.md) для участников группы или пользователей, назначенных для приложения.  Пользователь с ролью **глобального администратора**, **администратора учетной записи**, **администратора безопасности** или **читателя безопасности** также может просматривать результаты проверки доступа.  Для назначения пользователям одной из этих ролей администратор привилегированной роли может использовать управление привилегированными пользователями Azure AD, чтобы предоставить пользователю доступ для активации роли. Глобальный администратор также может навсегда [назначить пользователю роль](fundamentals/active-directory-users-assign-role-azure-portal.md).
+
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="locating-an-access-review"></a>Поиск проверки доступа
 
@@ -43,9 +47,7 @@ ms.locfileid: "34192230"
 
 ## <a name="removing-users-from-an-access-review"></a>Удаление пользователей из проверки доступа
 
-[!INCLUDE [Privacy](../../includes/gdpr-intro-sentence.md)]
-
-По умолчанию удаленный пользователь будет оставаться удаленным в Azure AD в течение 30 дней, на протяжении которых его при необходимости может восстановить администратор.  По истечении 30 дней пользователь будет окончательно удален.  Кроме того, с помощью портала Azure Active Directory глобальный администратор может явно [навсегда удалить недавно удаленного пользователя](active-directory-users-restore.md) до истечения этого периода времени.  Если пользователь удален навсегда, впоследствии данные об этом пользователе будут удалены из активных проверок доступа.  Сведения аудита об удаленных пользователях остаются в журнале аудита.
+По умолчанию удаленный пользователь будет оставаться удаленным в Azure AD в течение 30 дней, на протяжении которых его при необходимости может восстановить администратор.  По истечении 30 дней пользователь будет окончательно удален.  Кроме того, с помощью портала Azure Active Directory глобальный администратор может явно [навсегда удалить недавно удаленного пользователя](fundamentals/active-directory-users-restore.md) до истечения этого периода времени.  Если пользователь удален навсегда, впоследствии данные об этом пользователе будут удалены из активных проверок доступа.  Сведения аудита об удаленных пользователях остаются в журнале аудита.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -53,6 +55,6 @@ ms.locfileid: "34192230"
 - [Управление гостевым доступом с помощью проверок доступа Azure AD](active-directory-azure-ad-controls-manage-guest-access-with-access-reviews.md)
 - [Управление программами и их элементами управления](active-directory-azure-ad-controls-manage-programs-controls.md)
 - [Создание проверки доступа для членства в группе или работы с приложением](active-directory-azure-ad-controls-create-access-review.md)
-- [Создание проверки доступа для пользователей в роли администратора Azure AD](active-directory-privileged-identity-management-how-to-start-security-review.md)
+- [Создание проверки доступа для пользователей в роли администратора Azure AD](privileged-identity-management/pim-how-to-start-security-review.md)
 
 

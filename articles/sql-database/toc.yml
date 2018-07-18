@@ -1,10 +1,10 @@
 - name: Документация по базе данных SQL
   href: index.yml
-- name: Обзор
+- name: Службы Базы данных SQL
   items:
     - name: Сведения о базах данных SQL
       href: sql-database-technical-overview.md
-    - name: PaaS или IaaS
+    - name: Выбор версии Azure SQL
       href: sql-database-paas-vs-sql-server-iaas.md
 - name: Быстрое начало работы
   expanded: true
@@ -48,20 +48,22 @@
   items:
     - name: "1.\_Проектирование базы данных с помощью SSMS"
       href: sql-database-design-first-database.md
-    - name: "1.\_Проектирование базы данных с помощью .NET"
+    - name: "2.\_Проектирование базы данных с помощью .NET"
       href: sql-database-design-first-database-csharp.md
-    - name: 2. Перенос в базу данных SQL Server с помощью DMS
+    - name: 3. Перенос в базу данных SQL Server с помощью DMA
       href: sql-database-migrate-your-sql-server-database.md
-    - name: "3.\_Защита базы данных SQL"
+    - name: "4.\_Защита базы данных SQL"
       href: sql-database-security-tutorial.md
-    - name: "4.\_Реализация географически распределенной базы данных"
+    - name: "5.\_Реализация географически распределенной базы данных"
       href: sql-database-implement-geo-distributed-database.md
-    - name: 5. Создание управляемого экземпляра
+    - name: "6.\_Создание управляемого экземпляра"
       href: sql-database-managed-instance-create-tutorial-portal.md
-    - name: 6. Восстановление резервной копии в управляемый экземпляр
+    - name: "7.\_Восстановление резервной копии в управляемый экземпляр"
       href: sql-database-managed-instance-restore-from-backup-tutorial.md
-    - name: 7. Перенос в управляемый экземпляр с помощью DMS
+    - name: "8.\_Перенос в управляемый экземпляр с помощью DMS"
       href: ../dms/tutorial-sql-server-to-managed-instance.md
+    - name: "9.\_Настройка синхронизации данных SQL Azure"
+      href: sql-database-get-started-sql-data-sync.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -72,164 +74,304 @@
       href: sql-database-powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Серверы и базы данных
-      href: sql-database-servers-databases.md
-    - name: Управляемый экземпляр
-      href: sql-database-managed-instance.md
-    - name: Уровни служб на основе числа DTU
-      href: sql-database-service-tiers-dtu.md
-    - name: Уровни служб на основе числа виртуальных ядер
-      href: sql-database-service-tiers-vcore.md
-    - name: Горизонтальное масштабирование для чтения
-      href: sql-database-read-scale-out.md
-    - name: Ограничения ресурсов на основе DTU
-      href: sql-database-dtu-resource-limits.md
-    - name: Ограничения ресурсов на основе виртуальных ядер
-      href: sql-database-vcore-resource-limits.md
-    - name: Отдельные базы данных
-      href: sql-database-single-database-resources.md
-    - name: Пулы эластичных БД
-      href: sql-database-elastic-pool.md
-    - name: Архитектура подключения
-      href: sql-database-connectivity-architecture.md
-    - name: DTU и eDTU
-      href: sql-database-what-is-a-dtu.md
-    - name: Тест производительности DTU
-      href: sql-database-benchmark-overview.md
-    - name: Общие компоненты SQL Server
-      href: sql-database-features.md
-    - name: высокую доступность;
-      href: sql-database-high-availability.md
-    - name: Безопасность
+    - name: Модели приобретения и ресурсы
       items:
-        - name: Обзор
-          href: sql-database-security-overview.md
-        - name: Advanced Threat Protection
-          href: sql-advanced-threat-protection.md
-        - name: Обнаружение и классификация данных
-          href: sql-database-data-discovery-and-classification.md
-        - name: Оценка уязвимостей
-          href: sql-vulnerability-assessment.md
-        - name: Обнаружение угроз для Базы данных SQL
-          href: sql-database-threat-detection.md
-        - name: Обнаружение угроз для управляемого экземпляра
-          href: sql-database-managed-instance-threat-detection.md
-        - name: Правила файрволла
-          href: sql-database-firewall-configure.md
-        - name: Правила брандмауэра для виртуальной сети
-          href: sql-database-vnet-service-endpoint-rule-overview.md
-        - name: управление доступом;
-          href: sql-database-control-access.md
-        - name: Azure AD
-          href: sql-database-aad-authentication.md
-        - name: Имена входа и пользователи
-          href: sql-database-manage-logins.md
-        - name: Многофакторная идентификация
-          href: sql-database-ssms-mfa-authentication.md
-        - name: Аудит базы данных SQL
-          href: sql-database-auditing.md
-        - name: Аудит управляемого экземпляра
-          href: sql-database-managed-instance-auditing.md
-        - name: Аудит таблиц и TDS
-          href: sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md
-        - name: Динамическое маскирование данных
-          href: sql-database-dynamic-data-masking-get-started.md
+        - name: Модели приобретения
+          href: sql-database-service-tiers.md
+        - name: Модель приобретения на основе виртуальных ядер
+          href: sql-database-service-tiers-vcore.md
+        - name: Модель приобретения на основе единиц DTU
+          href: sql-database-service-tiers-dtu.md
+        - name: Ограничения ресурсов
+          href: sql-database-resource-limits.md
+    - name: Логические серверы и отдельные базы данных
+      items:
+        - name: Логические серверы и отдельные базы данных
+          href: sql-database-servers-databases.md
+        - name: Управление серверами и отдельными базами данных
+          href: sql-database-servers-databases-manage.md
+        - name: Ограничения ресурсов на основе виртуальных ядер
+          href: sql-database-vcore-resource-limits-single-databases.md
+        - name: Ограничения ресурсов на основе DTU
+          href: sql-database-dtu-resource-limits-single-databases.md
+        - name: Масштабирование ресурсов отдельных баз данных
+          href: sql-database-single-database-scale.md
+        - name: Архитектура подключения
+          href: sql-database-connectivity-architecture.md
+        - name: Отличия T-SQL
+          href: sql-database-transact-sql-information.md
+    - name: Эластичные пулы и базы данных в составе пула
+      items:
+        - name: Эластичные пулы и базы данных в составе пула
+          href: sql-database-elastic-pool.md
+        - name: Управление пулами и базами данных в составе пула
+          href: sql-database-elastic-pool-manage.md
+        - name: Ограничения ресурсов на основе виртуальных ядер
+          href: sql-database-vcore-resource-limits-elastic-pools.md
+        - name: Ограничения ресурсов на основе DTU
+          href: sql-database-dtu-resource-limits-elastic-pools.md
+        - name: Масштабирование ресурсов эластичного пула
+          href: sql-database-elastic-pool-scale.md
+    - name: Управляемые экземпляры
+      items:
+        - name: Управляемые экземпляры
+          href: sql-database-managed-instance.md
+        - name: Конфигурация виртуальной сети
+          href: sql-database-managed-instance-vnet-configuration.md
+        - name: Пользовательский DNS
+          href: sql-database-managed-instance-custom-dns.md
+        - name: Синхронизация конфигурации сети
+          href: sql-database-managed-instance-sync-network-configuration.md
+        - name: Подключение приложений
+          href: sql-database-managed-instance-connect-app.md
+        - name: Отличия T-SQL
+          href: sql-database-managed-instance-transact-sql-information.md
     - name: Непрерывность бизнес-процессов
       items:
-        - name: Обзор
+        - name: Непрерывность бизнес-процессов
           href: sql-database-business-continuity.md
+        - name: высокую доступность;
+          href: sql-database-high-availability.md
         - name: Резервные копии базы данных
           href: sql-database-automated-backups.md
         - name: Долгосрочное хранение резервных копий
-          href: sql-database-long-term-retention.md
-        - name: Группы отработки отказа
-          href: sql-database-geo-replication-overview.md
+          itmes:
+            - name: Долгосрочное хранение резервных копий
+              href: sql-database-long-term-retention.md
+            - name: 'Настройка долгосрочного хранения резервных копий: хранилище SQL'
+              href: sql-database-long-term-backup-retention-configure.md
+            - name: 'Настройка долгосрочного хранения резервных копий: хранилище Azure (не рекомендуется)'
+              href: sql-database-long-term-backup-retention-configure-vault.md
+        - name: Группы отработки отказа и георепликация
+          items:
+            - name: Группы отработки отказа и георепликация
+              href: sql-database-geo-replication-overview.md
+            - name: Настройка георепликации с помощью портала Azure
+              href: sql-database-geo-replication-portal.md
+            - name: Настройка параметров безопасности для реплик
+              href: sql-database-geo-replication-security-config.md
         - name: Восстановление базы данных
-          href: sql-database-recovery-using-backups.md
-        - name: Настройка безопасности
-          href: sql-database-geo-replication-security-config.md
-        - name: Проектирование и восстановление приложений
-          href: sql-database-designing-cloud-solutions-for-disaster-recovery.md
-        - name: Проектирование приложений и пулы приложений
-          href: sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md
-        - name: Проектирование и обновление приложений
-          href: sql-database-manage-application-rolling-upgrade.md
-        - name: Восстановление после сбоя
-          href: sql-database-disaster-recovery.md
-        - name: Выполнение детализации восстановления
-          href: sql-database-disaster-recovery-drills.md
-    - name: Переход на базу данных SQL
+          items:
+            - name: Восстановление базы данных
+              href: sql-database-recovery-using-backups.md
+            - name: Восстановление после сбоя
+              href: sql-database-disaster-recovery.md
+            - name: Выполнение детализации восстановления
+              href: sql-database-disaster-recovery-drills.md
+        - name: Проектирование приложений
+          items:
+            - name: Разработка для аварийного восстановления
+              href: sql-database-designing-cloud-solutions-for-disaster-recovery.md
+            - name: Разработка для эластичных пулов
+              href: sql-database-disaster-recovery-strategies-for-applications-with-elastic-pool.md
+            - name: Разработка для обновления приложений
+              href: sql-database-manage-application-rolling-upgrade.md
+    - name: Безопасность
       items:
-        - name: Переход на базу данных SQL
-          href: sql-database-cloud-migrate.md
-        - name: Перенос в управляемый экземпляр
-          href: sql-database-managed-instance-migrate.md
-        - name: Сведения о T-SQL в Базе данных SQL
-          href: sql-database-transact-sql-information.md
-        - name: Сведения о T-SQL в управляемых экземплярах
-          href: sql-database-managed-instance-transact-sql-information.md
-        - name: Управление Базой данных SQL после переноса
-          href: sql-database-manage-after-migration.md
-    - name: Загрузка и перемещение данных
+        - name: Безопасность
+          href: sql-database-security-overview.md
+        - name: Advanced Threat Protection
+          items:
+            - name: Advanced Threat Protection
+              href: sql-advanced-threat-protection.md
+            - name: Обнаружение и классификация данных
+              href: sql-database-data-discovery-and-classification.md
+            - name: Оценка уязвимостей
+              href: sql-vulnerability-assessment.md
+            - name: Обнаружение угроз для Базы данных SQL
+              href: sql-database-threat-detection.md
+            - name: Обнаружение угроз для управляемого экземпляра
+              href: sql-database-managed-instance-threat-detection.md
+        - name: Правила файрволла
+          items:
+            - name: Общие сведения
+              href: sql-database-firewall-configure.md
+            - name: Конечные точки виртуальной сети
+              href: sql-database-vnet-service-endpoint-rule-overview.md
+            - name: Конечные точки виртуальной сети — PowerShell
+              href: sql-database-vnet-service-endpoint-rule-powershell.md
+        - name: управление доступом;
+          items:
+            - name: управление доступом;
+              href: sql-database-control-access.md
+            - name: Имена входа и пользователи
+              href: sql-database-manage-logins.md
+        - name: "Аутентификация Azure\_AD"
+          items:
+            - name: "Аутентификация Azure\_AD"
+              href: sql-database-aad-authentication.md
+            - name: "Настройка аутентификации Azure\_AD"
+              href: sql-database-aad-authentication-configure.md
+            - name: Условный доступ
+              href: sql-database-conditional-access.md
+            - name: Многофакторная идентификация
+              href: sql-database-ssms-mfa-authentication.md
+            - name: Настройка многофакторной проверки подлинности
+              href: sql-database-ssms-mfa-authentication-configure.md
+        - name: Аудит
+          items:
+            - name: 'Аудит серверов, пулов и баз данных'
+              href: sql-database-auditing.md
+            - name: Аудит управляемого экземпляра
+              href: sql-database-managed-instance-auditing.md
+            - name: Аудит таблиц (не рекомендуется)
+              href: sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md
+        - name: Динамическое маскирование данных
+          items:
+            - name: Динамическое маскирование данных
+              href: sql-database-dynamic-data-masking-get-started.md
+            - name: Настойка маскировки
+              href: sql-database-dynamic-data-masking-get-started-portal.md
+        - name: Постоянное шифрование
+          items:
+            - name: Использование хранилища сертификатов
+              href: sql-database-always-encrypted.md
+            - name: Использование Azure Key Vault
+              href: sql-database-always-encrypted-azure-key-vault.md
+    - name: Эластичное масштабирование
       items:
-        - name: Копирование базы данных
-          href: sql-database-copy.md
-        - name: Импорт базы данных
-          href: sql-database-import.md
-        - name: Экспорт базы данных
-          href: sql-database-export.md
-        - name: Синхронизация данных
-          href: sql-database-sync-data.md
+        - name: Масштабируемость ресурсов
+          href: sql-database-scale-resources.md
+        - name: Горизонтальное масштабирование для чтения
+          href: sql-database-read-scale-out.md
+        - name: Сегментирование базы данных
+          items:
+            - name: Сегментирование базы данных
+              href: sql-database-elastic-scale-introduction.md
+            - name: 'Эластичная клиентская библиотека: консолидация'
+              href: sql-database-elastic-database-client-library.md
+            - name: Обновление клиентской библиотеки эластичной базы данных
+              href: sql-database-elastic-scale-upgrade-client-library.md
+            - name: Карты сегментов
+              href: sql-database-elastic-scale-shard-map-management.md
+            - name: Маршрутизация запросов
+              href: sql-database-elastic-scale-data-dependent-routing.md
+            - name: Управление учетными данными
+              href: sql-database-elastic-scale-manage-credentials.md
+            - name: Запросы к сегментам
+              href: sql-database-elastic-scale-multishard-querying.md
+            - name: Инструменты эластичных БД
+              href: sql-database-elastic-scale-glossary.md
+            - name: Перемещение сегментированных данных
+              href: sql-database-elastic-scale-overview-split-and-merge.md
+            - name: Эластичная клиентская библиотека (Dapper)
+              href: sql-database-elastic-scale-working-with-dapper.md
+            - name: Часто задаваемые вопросы по инструментам эластичных баз данных
+              href: sql-database-elastic-scale-faq.md
+            - name: Создание сегментированного приложения
+              href: sql-database-elastic-scale-get-started.md
+            - name: Запрос горизонтально сегментированных данных
+              href: sql-database-elastic-query-getting-started.md
+            - name: Перемещение сегментированных данных
+              href: sql-database-elastic-scale-configure-deploy-split-and-merge.md
+            - name: Конфигурация системы безопасности
+              href: sql-database-elastic-scale-split-merge-security-configuration.md
+            - name: Добавление сегмента
+              href: sql-database-elastic-scale-add-a-shard.md
+            - name: Устранение проблем с картой сегментов
+              href: sql-database-elastic-database-recovery-manager.md
+            - name: Перенос сегментированной базы данных
+              href: sql-database-elastic-convert-to-use-elastic-tools.md
+            - name: Создание счетчиков
+              href: sql-database-elastic-database-perf-counters.md
+            - name: Использование Entity Framework
+              href: sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md
+    - name: Сравнение возможностей SQL
+      href: sql-database-features.md
     - name: Мониторинг и настройка
       items:
-        - name: Обзор
+        - name: Мониторинг и настройка
           href: sql-database-troubleshoot-performance.md
         - name: Мониторинг производительности
           href: sql-database-single-database-monitor.md
         - name: Рекомендации по повышению производительности
           href: sql-database-advisor.md
         - name: Автоматическая настройка
-          href: sql-database-automatic-tuning.md
+          items:
+            - name: Автоматическая настройка
+              href: sql-database-automatic-tuning.md
+            - name: Включение автоматической настройки
+              href: sql-database-automatic-tuning-enable.md
+            - name: Включение уведомлений по электронной почте
+              href: sql-database-automatic-tuning-email-notifications.md
         - name: Intelligent Insights
-          href: sql-database-intelligent-insights.md
-        - name: Журнал диагностики Intelligent Insights
-          href: sql-database-intelligent-insights-use-diagnostics-log.md
+          items:
+            - name: Intelligent Insights
+              href: sql-database-intelligent-insights.md
+            - name: Ведения журнала диагностики
+              href: sql-database-metrics-diag-logging.md
+            - name: Использование журналов диагностики
+              href: sql-database-intelligent-insights-use-diagnostics-log.md
+            - name: Устранение проблем с производительностью
+              href: sql-database-intelligent-insights-troubleshoot-performance.md
+        - name: Рекомендации по производительности
+          href: sql-database-performance.md
+        - name: Использование анализа производительности запросов
+          href: sql-database-query-performance.md
+        - name: Применение рекомендаций по повышению производительности
+          href: sql-database-advisor-portal.md
         - name: Настройка вручную
-          href: sql-database-performance-guidance.md
-        - name: Работа с хранилищем запросов
-          href: sql-database-operate-query-store.md
-        - name: Расширенные события
-          href: sql-database-xevent-db-diff-from-svr.md
+          items:
+            - name: Настройка вручную
+              href: sql-database-performance-guidance.md
+            - name: Использование динамических административных представлений для мониторинга производительности
+              href: sql-database-monitoring-with-dmvs.md
+            - name: Работа с хранилищем запросов
+              href: sql-database-operate-query-store.md
         - name: Мониторинг в памяти
           href: sql-database-in-memory-oltp-monitoring.md
-    - name: Масштабирование
+        - name: Расширенные события
+          items:
+            - name: Расширенные события
+              href: sql-database-xevent-db-diff-from-svr.md
+            - name: 'Расширенные события: файл события'
+              href: sql-database-xevent-code-event-file.md
+            - name: 'Расширенные события: кольцевой буфер'
+              href: sql-database-xevent-code-ring-buffer.md
+        - name: Создание оповещений
+          href: sql-database-insights-alerts-portal.md
+        - name: Устранение неполадок подключения
+          href: sql-database-troubleshoot-common-connection-issues.md
+        - name: Служба автоматизации Azure
+          href: sql-database-manage-automation.md
+    - name: Операции между базами данных
       items:
-        - name: Обзор
-          href: sql-database-elastic-scale-introduction.md
-        - name: Эластичная клиентская библиотека
-          href: sql-database-elastic-database-client-library.md
+        - name: Задания обработки эластичных баз данных
+          items:
+            - name: Задания обработки эластичных баз данных
+              href: elastic-jobs-overview.md
+            - name: Создание и управление (Powershell)
+              href: elastic-jobs-powershell.md
+            - name: Создание управление (T-SQL)
+              href: elastic-jobs-tsql.md
+            - name: Перенос данных (из старых заданий обработки эластичных БД)
+              href: elastic-jobs-migrate.md
+            - name: Задания обработки эластичных баз данных (устарело)
+              items:
+                - name: Задания обработки эластичных баз данных (устарело)
+                  href: sql-database-elastic-jobs-overview.md
+                - name: Установка задания обработки эластичных баз данных (устарело)
+                  href: sql-database-elastic-jobs-service-installation.md
+                - name: Создание задания с помощью портала (устарело)
+                  href: sql-database-elastic-jobs-create-and-manage.md
+                - name: Создание задания с помощью Azure PowerShell (устарело)
+                  href: sql-database-elastic-jobs-powershell.md
+                - name: 'Создание задания, пример приложения (устарело)'
+                  href: sql-database-elastic-jobs-getting-started.md
+                - name: Удаление задания обработки эластичных баз данных (устарело)
+                  href: sql-database-elastic-jobs-uninstall.md
         - name: Эластичные запросы
-          href: sql-database-elastic-query-overview.md
+          items:
+            - name: Эластичные запросы
+              href: sql-database-elastic-query-overview.md
+            - name: Запрос вертикально секционированных данных
+              href: sql-database-elastic-query-getting-started-vertical.md
+            - name: Отчеты по масштабируемым уровням данных
+              href: sql-database-elastic-query-horizontal-partitioning.md
+            - name: Запрос к таблицам с разными схемами
+              href: sql-database-elastic-query-vertical-partitioning.md
         - name: Эластичные транзакции
           href: sql-database-elastic-transactions-overview.md
-        - name: Задания обработки эластичных БД
-          href: sql-database-elastic-jobs-overview.md
-        - name: Карты сегментов
-          href: sql-database-elastic-scale-shard-map-management.md
-        - name: Маршрутизация запросов
-          href: sql-database-elastic-scale-data-dependent-routing.md
-        - name: Управление учетными данными
-          href: sql-database-elastic-scale-manage-credentials.md
-        - name: Запросы к сегментам
-          href: sql-database-elastic-scale-multishard-querying.md
-        - name: Инструменты эластичных БД
-          href: sql-database-elastic-scale-glossary.md
-        - name: Перемещение сегментированных данных
-          href: sql-database-elastic-scale-overview-split-and-merge.md
-        - name: Эластичная клиентская библиотека (Dapper)
-          href: sql-database-elastic-scale-working-with-dapper.md
-        - name: Часто задаваемые вопросы по инструментам эластичных баз данных
-          href: sql-database-elastic-scale-faq.md
     - name: Мультитенантное приложение SaaS
       items:
         - name: Шаблоны проектирования SaaS
@@ -240,7 +382,7 @@
           href: saas-tenancy-elastic-tools-multi-tenant-row-level-security.md
     - name: Разработка баз данных
       items:
-        - name: Обзор
+        - name: Разработка баз данных
           href: sql-database-develop-overview.md
         - name: Данные JSON
           href: sql-database-json-features.md
@@ -252,10 +394,46 @@
           href: sql-database-temporal-tables-retention-policy.md
         - name: Настройка выполняющейся в памяти OLTP
           href: sql-database-in-memory-oltp-migration.md
+- name: Практические руководства
+  items:
+    - name: Переход на базу данных SQL
+      items:
+        - name: Переход на базу данных SQL
+          href: sql-database-cloud-migrate.md
+        - name: Перенос в управляемый экземпляр
+          href: sql-database-managed-instance-migrate.md
+        - name: Управление Базой данных SQL после переноса
+          href: sql-database-manage-after-migration.md
+    - name: Загрузка и перемещение данных
+      items:
+        - name: Копирование базы данных в пределах Azure
+          href: sql-database-copy.md
+        - name: Импорт базы данных из BACPAC-файла
+          href: sql-database-import.md
+        - name: Экспорт базы данных в BACPAC-файл
+          href: sql-database-export.md
+        - name: Синхронизация данных
+          items:
+            - name: Синхронизация данных SQL
+              href: sql-database-sync-data.md
+            - name: Репликация изменений схемы
+              href: sql-database-update-sync-schema.md
+            - name: Мониторинг с помощью OMS
+              href: sql-database-sync-monitor-oms.md
+            - name: Рекомендации по синхронизации данных
+              href: sql-database-best-practices-data-sync.md
+            - name: Устранение ошибок синхронизации данных
+              href: sql-database-troubleshoot-data-sync.md
+        - name: Загрузка данных с помощью BCP
+          href: sql-database-load-from-csv-with-bcp.md
+        - name: Загрузка данных с помощью ADF
+          href: ../data-factory/connector-azure-sql-database.md?toc=/azure/sql-database/toc.json
     - name: Разработка приложений
       items:
         - name: Соединение
           href: sql-database-libraries.md
+        - name: Использование соединителя Spark
+          href: sql-database-spark-connector.md
         - name: Аутентификация приложения
           href: sql-database-client-id-keys.md
         - name: Сообщения об ошибках
@@ -264,131 +442,17 @@
           href: sql-database-use-batching-to-improve-performance.md
         - name: Руководство по настройке подключений
           href: sql-database-connectivity-issues.md
-        - name: Общие сведения о псевдониме DNS
+        - name: Псевдонимы DNS
           href: dns-alias-overview.md
         - name: DNS-псевдоним в PowerShell
           href: dns-alias-powershell.md
         - name: 'Порты: ADO.NET'
           href: sql-database-develop-direct-route-ports-adonet-v12.md
-- name: Практические руководства
-  items:
-    - name: Функции службы
-      items:
-        - name: Обновление клиентской библиотеки эластичной базы данных
-          href: sql-database-elastic-scale-upgrade-client-library.md
-        - name: Установка эластичных заданий
-          href: sql-database-elastic-jobs-service-installation.md
-        - name: 'Создание задания: портал'
-          href: sql-database-elastic-jobs-create-and-manage.md
-        - name: Создание задания с помощью Azure PowerShell
-          href: sql-database-elastic-jobs-powershell.md
-        - name: 'Создание задания: пример приложения'
-          href: sql-database-elastic-jobs-getting-started.md
-        - name: Удаление эластичных заданий
-          href: sql-database-elastic-jobs-uninstall.md
-        - name: Запрос вертикально секционированных данных
-          href: sql-database-elastic-query-getting-started-vertical.md
-        - name: Отчеты по масштабируемым уровням данных
-          href: sql-database-elastic-query-horizontal-partitioning.md
-        - name: Запрос к таблицам с разными схемами
-          href: sql-database-elastic-query-vertical-partitioning.md
-    - name: Управляемый экземпляр
-      items:
-        - name: Конфигурация виртуальной сети
-          href: sql-database-managed-instance-vnet-configuration.md
-        - name: Пользовательский DNS
-          href: sql-database-managed-instance-custom-dns.md
-        - name: Подключение приложений
-          href: sql-database-managed-instance-connect-app.md
-        - name: Синхронизация конфигурации сети
-          href: sql-database-managed-instance-sync-network-configuration.md
-    - name: Безопасность
-      items:
-        - name: "Настройка аутентификации Azure\_AD"
-          href: sql-database-aad-authentication-configure.md
-        - name: Условный доступ
-          href: sql-database-conditional-access.md
-        - name: Хранилище сертификатов Always Encrypted
-          href: sql-database-always-encrypted.md
-        - name: Хранилище ключей Always Encrypted
-          href: sql-database-always-encrypted-azure-key-vault.md
-        - name: Настойка маскировки
-          href: sql-database-dynamic-data-masking-get-started-portal.md
-        - name: Настройка многофакторной проверки подлинности
-          href: sql-database-ssms-mfa-authentication-configure.md
-        - name: Создание правил виртуальной сети с помощью PowerShell
-          href: sql-database-vnet-service-endpoint-rule-powershell.md
-    - name: Непрерывность бизнес-процессов
-      items:
-        - name: Георепликация (портал)
-          href: sql-database-geo-replication-portal.md
-        - name: 'Настройка долгосрочного хранения резервных копий: хранилище SQL'
-          href: sql-database-long-term-backup-retention-configure.md
-        - name: 'Настройка долгосрочного хранения резервных копий: хранилище Azure'
-          href: sql-database-long-term-backup-retention-configure-vault.md
-    - name: Загрузка и перемещение данных
-      items:
-        - name: Загрузка данных с помощью BCP
-          href: sql-database-load-from-csv-with-bcp.md
-        - name: Загрузка данных с помощью ADF
-          href: ../data-factory/connector-azure-sql-database.md
-        - name: Синхронизация данных
-          href: sql-database-get-started-sql-data-sync.md
-    - name: Мониторинг и настройка
-      items:
-        - name: Мониторинг и повышение производительности
-          href: sql-database-performance.md
-        - name: Использование анализа производительности запросов
-          href: sql-database-query-performance.md
-        - name: Применение рекомендаций по повышению производительности
-          href: sql-database-advisor-portal.md
-        - name: Включение автоматической настройки
-          href: sql-database-automatic-tuning-enable.md
-        - name: Автоматическая настройка получения уведомлений по электронной почте
-          href: sql-database-automatic-tuning-email-notifications.md
-        - name: Устранение проблем производительности Intelligent Insights
-          href: sql-database-intelligent-insights-troubleshoot-performance.md
-        - name: Использование динамических административных представлений для мониторинга производительности
-          href: sql-database-monitoring-with-dmvs.md
-        - name: Создание оповещений
-          href: sql-database-insights-alerts-portal.md
-        - name: 'Расширенные события: файл события'
-          href: sql-database-xevent-code-event-file.md
-        - name: 'Расширенные события: кольцевой буфер'
-          href: sql-database-xevent-code-ring-buffer.md
-        - name: Ведения журнала диагностики
-          href: sql-database-metrics-diag-logging.md
-        - name: Устранение неполадок подключения
-          href: sql-database-troubleshoot-common-connection-issues.md
-        - name: Служба автоматизации Azure
-          href: sql-database-manage-automation.md
-        - name: Мониторинг синхронизации данных SQL с помощью Log Analytics OMS
-          href: sql-database-sync-monitor-oms.md
-        - name: Рекомендации по синхронизации данных SQL
-          href: sql-database-best-practices-data-sync.md
-        - name: Устранение неполадок синхронизации данных SQL
-          href: sql-database-troubleshoot-data-sync.md
-    - name: Масштабирование
-      items:
-        - name: Создание сегментированного приложения
-          href: sql-database-elastic-scale-get-started.md
-        - name: Запрос горизонтально сегментированных данных
-          href: sql-database-elastic-query-getting-started.md
-        - name: Перемещение сегментированных данных
-          href: sql-database-elastic-scale-configure-deploy-split-and-merge.md
-        - name: Конфигурация системы безопасности
-          href: sql-database-elastic-scale-split-merge-security-configuration.md
-        - name: Добавление сегмента
-          href: sql-database-elastic-scale-add-a-shard.md
-        - name: Устранение проблем с картой сегментов
-          href: sql-database-elastic-database-recovery-manager.md
-        - name: Перенос сегментированной базы данных
-          href: sql-database-elastic-convert-to-use-elastic-tools.md
-        - name: Создание счетчиков
-          href: sql-database-elastic-database-perf-counters.md
-        - name: Использование Entity Framework
-          href: sql-database-elastic-scale-use-entity-framework-applications-visual-studio.md
-    - name: Мультитенантное приложение SaaS
+        - name: C и C++
+          href: sql-database-develop-cplusplus-simple.md
+        - name: Excel
+          href: sql-database-connect-excel.md
+    - name: Эталонная архитектура мультитенантного приложения SaaS
       items:
         - name: Пример приложения Wingtip Tickets
           href: saas-tenancy-welcome-wingtip-tickets-app.md
@@ -442,20 +506,10 @@
               href: saas-multitenantdb-schema-management.md
             - name: 'Извлечение, преобразование и загрузка для анализа'
               href: saas-multitenantdb-tenant-analytics.md
-    - name: Разработка приложений
-      items:
-        - name: C и C++
-          href: sql-database-develop-cplusplus-simple.md
-        - name: Excel
-          href: sql-database-connect-excel.md
-        - name: Использование соединителя Spark
-          href: sql-database-spark-connector.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell
       href: '/powershell/module/azurerm.sql/#sql'
-    - name: PowerShell (эластичная база данных)
-      href: '/powershell/module/elasticdatabasejobs/#elasticdatabasejobs'
     - name: "Azure CLI\_2.0"
       href: /cli/azure/sql
     - name: .NET

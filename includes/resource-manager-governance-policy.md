@@ -1,6 +1,6 @@
 ---
-title: "включение файла"
-description: "включение файла"
+title: включение файла
+description: включение файла
 services: azure-resource-manager
 author: tfitzmac
 ms.service: azure-resource-manager
@@ -9,10 +9,11 @@ ms.date: 02/21/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: c04514218c7ed8dfd72b94345d2deb88e663fda1
-ms.sourcegitcommit: 12fa5f8018d4f34077d5bab323ce7c919e51ce47
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38740592"
 ---
 [Политики Azure](/azure/azure-policy/) позволяют обеспечить соответствие всех ресурсов, входящих в подписку, стандартам организации. Используйте политики, чтобы снизить затраты, разрешив развертывание только для утвержденных типов ресурсов и номеров SKU. Определите правила и действия для ресурсов, и эти правила будут автоматически применяться во время развертывания. Например, можно контролировать, какие типы ресурсов развертываются. Или же можно разрешить только утвержденные расположения для ресурсов. Одни политики позволяют запретить действие, а другие — настроить аудит действий.
 

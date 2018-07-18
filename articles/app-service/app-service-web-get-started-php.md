@@ -15,11 +15,12 @@ ms.topic: quickstart
 ms.date: 12/13/2017
 ms.author: cephalin;cfowler
 ms.custom: mvc
-ms.openlocfilehash: aaac2fa4d62fb02bf17342a0db27fad79e495693
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 2d1144a94a74e56cae6ff0a4b026a64540086c11
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38968584"
 ---
 # <a name="create-a-php-web-app-in-azure"></a>Создание веб-приложения PHP в Azure
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/18/2018
 
 [Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости.  В этом кратком руководстве объясняется, как развернуть приложение PHP в веб-приложениях Azure. Создайте веб-приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в Cloud Shell и разверните пример кода PHP в веб-приложении с помощью Git.
 
-![Пример приложения, выполняющегося в Azure]](media/app-service-web-get-started-php/hello-world-in-browser.png)
+![Пример приложения, выполняющегося в Azure](media/app-service-web-get-started-php/hello-world-in-browser.png)
 
 Выполните приведенные здесь инструкции с помощью компьютера Mac, Windows или Linux. После установки необходимых компонентов для выполнения этих шагов потребуется около пяти минут.
 
@@ -91,6 +92,7 @@ az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --
 Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
 
 ```json
+Local git is configured with url of 'https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git'
 {
   "availabilityState": "Normal",
   "clientAffinityEnabled": true,
@@ -103,8 +105,13 @@ az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --
   < JSON data removed for brevity. >
 }
 ```
+Вы создали пустое веб-приложение с включенным развертыванием Git.
 
-Перейдите к только что созданному веб-приложению. Замените _&lt;app name>_ уникальным именем приложения.
+> [!NOTE]
+> URL-адрес удаленного репозитория Git отображается в свойстве `deploymentLocalGitUrl` в формате `https://<username>@<app_name>.scm.azurewebsites.net/<app_name>.git`. Сохраните этот URL-адрес для дальнейшего использования.
+>
+
+Перейдите к только что созданному веб-приложению. Замените _&lt;app name>_ уникальным именем приложения, созданным на предыдущем этапе.
 
 ```bash
 http://<app name>.azurewebsites.net
@@ -170,7 +177,7 @@ git commit -am "updated output"
 git push azure master
 ```
 
-После завершения развертывания перейдите в окно браузера, открытое на шаге **перехода в приложение**, и обновите страницу.
+После развертывания вернитесь к окну браузера, открытому на шаге **перехода в приложение**, и обновите страницу.
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/app-service-web-get-started-php/hello-azure-in-browser.png)
 
@@ -186,7 +193,7 @@ git push azure master
 
 ![Страница службы приложений на портале Azure](media/app-service-web-get-started-php/php-docs-hello-world-app-service-detail.png)
 
-В меню слева доступно несколько страниц для настройки приложения. 
+В меню слева доступно несколько возможностей настройки приложения. 
 
 [!INCLUDE [cli-samples-clean-up](../../includes/cli-samples-clean-up.md)]
 

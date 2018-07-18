@@ -3,14 +3,14 @@ title: Архитектура репликации из VMware в Azure в Azure
 description: В этой статье представлен обзор компонентов и архитектуры, используемых при репликации виртуальных машин VMware из локальной среды в Azure с помощью Azure Site Recovery.
 author: rayne-wiselman
 ms.service: site-recovery
-ms.topic: article
-ms.date: 03/19/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: c1aa89f14edab7d0e560c20d6bc48480aff1631f
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 48adf61dc0f1796b820e1e14ca509d4618c6256b
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37920573"
 ---
 # <a name="vmware-to-azure-replication-architecture"></a>Архитектура репликации из VMware в Azure
 

@@ -1,6 +1,6 @@
 ---
-title: "Обзор базы данных SQL | Документация Майкрософт"
-description: "Содержимое справки об обзоре базы данных SQL на портале Azure"
+title: Обзор базы данных SQL | Документация Майкрософт
+description: Содержимое справки об обзоре базы данных SQL на портале Azure
 services: sql-database
 author: sewatson
 manager: lwelicki
@@ -13,6 +13,7 @@ ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 10/11/2017
+ms.locfileid: "23073934"
 ---
 # <a name="sql-database-documentation"></a>Документация по базе данных SQL
 

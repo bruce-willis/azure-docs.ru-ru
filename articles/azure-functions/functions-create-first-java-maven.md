@@ -11,14 +11,15 @@ ms.devlang: java
 ms.topic: quickstart
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 04/02/2018
+ms.date: 05/15/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 9cf1d485f32c861ac5b5720cd77a988eee624f4d
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: df3c64938cfc5835fd9eb2f0bbed0135b611347f
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37341527"
 ---
 # <a name="create-your-first-function-with-java-and-maven-preview"></a>Создание первой функции с помощью Java и Maven (предварительная версия)
 
@@ -43,23 +44,9 @@ ms.lasthandoff: 04/03/2018
 
 ## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
 
-[Основные средства Функций Azure версии 2.0](https://www.npmjs.com/package/azure-functions-core-tools) предоставляют локальной среде разработки возможность записи, выполнения и отладки Функций Azure. 
+Основные средства Функций Azure предоставляют возможность записи, выполнения и отладки Функций Azure в локальной среде разработки с помощью терминала или командной строки. 
 
-Для установки посетите раздел об [установке](https://github.com/azure/azure-functions-core-tools#installing) в проекте "Основные инструменты службы «Функции Azure»", чтобы найти конкретные инструкции для вашей операционной системы.
-
-Кроме того, можно установить средства вручную с помощью [npm](https://www.npmjs.com/) в составе [Node.js](https://nodejs.org/), установив следующие требуемые компоненты:
-
--  [.NET Core](https://www.microsoft.com/net/core) последней версии.
--  [Node.js ](https://nodejs.org/download/)версии 8.6 или выше.
-
-Чтобы продолжить установку при помощи npm, выполните следующую команду:
-
-```
-npm install -g azure-functions-core-tools@core
-```
-
-> [!NOTE]
-> Если возникли проблемы при установке основных средств Функций Azure версии 2.0, см. раздел [Среда выполнения версии 2.x](/azure/azure-functions/functions-run-local#version-2x-runtime).
+Прежде чем продолжить, установите на локальном компьютере [основные инструменты версии 2](functions-run-local.md#v2).
 
 ## <a name="generate-a-new-functions-project"></a>Создание нового проекта функций
 
@@ -127,7 +114,7 @@ public class Function {
 Измените каталог на только что созданную папку проекта, создайте и запустите функцию с помощью Maven.
 
 ```
-cd fabrikam-function
+cd fabrikam-functions
 mvn clean package 
 mvn azure-functions:run
 ```
@@ -185,7 +172,7 @@ mvn azure-functions:deploy
 Проверьте приложение-функцию, работающее в Azure, используя `cURL`. Необходимо изменить URL-адрес из примера ниже, чтобы он соответствовал развернутому URL-адресу приложения-функции из предыдущего шага.
 
 ```
-curl -w '\n' https://fabrikam-function-20170920120101928.azurewebsites.net/api/hello -d AzureFunctions
+curl -w '\n' https://fabrikam-functions-20170920120101928.azurewebsites.net/api/hello -d AzureFunctions
 ```
 
 ```Output
@@ -194,7 +181,7 @@ Hello AzureFunctions!
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы создали функцию-приложение Java с помощью простого триггера HTTP и развернули его в Функциях Azure.
+Вы создали приложение-функцию Java с помощью простого триггера HTTP и развернули его в Функциях Azure.
 
 - Дополнительные сведения о разработке функции Java см. в статье [Azure Functions Java developer guide](functions-reference-java.md) (Руководство разработчика Java для Функций Azure).
 - Добавьте в проект дополнительные функции с помощью различных триггеров целевого объекта Maven`azure-functions:add`.

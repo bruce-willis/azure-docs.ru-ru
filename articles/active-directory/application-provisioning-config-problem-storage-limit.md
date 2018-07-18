@@ -1,23 +1,26 @@
 ---
-title: "Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure AD | Документация Майкрософт"
-description: "Решение распространенных проблем при настройке подготовки пользователей для приложения из коллекции приложений Azure AD"
+title: Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure AD | Документация Майкрософт
+description: Решение распространенных проблем при настройке подготовки пользователей для приложения из коллекции приложений Azure AD
 services: active-directory
-documentationcenter: 
-author: asmalser-msft
+documentationcenter: ''
+author: barbkess
 manager: mtillman
-ms.assetid: 
+ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/21/2018
-ms.author: asmalser
-ms.openlocfilehash: 6617345c8923b1fc8081b01ddfe8b4bedf10b6ea
-ms.sourcegitcommit: 088a8788d69a63a8e1333ad272d4a299cb19316e
+ms.author: barbkess
+ms.reviewer: asmalser
+ms.openlocfilehash: 1146df364a08128b5cd191ed1120198ae31b763e
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36337092"
 ---
 # <a name="problem-saving-administrator-credentials-while-configuring-user-provisioning-to-an-azure-active-directory-gallery-application"></a>Проблема сохранения учетных данных администратора при настройке подготовки пользователей для приложения из коллекции Azure Active Directory 
 
@@ -37,7 +40,7 @@ ms.lasthandoff: 02/27/2018
 
 На сегодняшний день существуют два возможных способа решения этой проблемы:
 
-1. **Использовать два экземпляра приложения из коллекции: один для единого входа и другой для подготовки пользователей**. Если взять приложение [LinkedIn Elevate](active-directory-saas-linkedinelevate-tutorial.md) из коллекции в качестве примера, можно добавить LinkedIn Elevate из коллекции и настроить это приложение для единого входа. Для подготовки следует добавить еще один экземпляр LinkedIn Elevate из коллекции приложений Azure AD и назвать его "LinkedIn Elevate (подготовка)". Для второго экземпляра настройте [подготовку](active-directory-saas-linkedinelevate-provisioning-tutorial.md), но не единый вход. При использовании этого способа в обоих приложениях нужно [назначить](active-directory-coreapps-assign-user-azure-portal.md) одних и тех же пользователей и группы. 
+1. **Использовать два экземпляра приложения из коллекции: один для единого входа и другой для подготовки пользователей**. Если взять приложение [LinkedIn Elevate](saas-apps/linkedinelevate-tutorial.md) из коллекции в качестве примера, можно добавить LinkedIn Elevate из коллекции и настроить это приложение для единого входа. Для подготовки следует добавить еще один экземпляр LinkedIn Elevate из коллекции приложений Azure AD и назвать его "LinkedIn Elevate (подготовка)". Для второго экземпляра настройте [подготовку](saas-apps/linkedinelevate-provisioning-tutorial.md), но не единый вход. При использовании этого способа в обоих приложениях нужно [назначить](manage-apps/assign-user-or-group-access-portal.md) одних и тех же пользователей и группы. 
 
 2. **Уменьшить объем хранимых данных конфигурации**. Все данные, введенные в разделе [Учетные данные администратора](active-directory-saas-app-provisioning.md#how-do-i-set-up-automatic-provisioning-to-an-application) на вкладке подготовки, хранятся в том же месте, что и сертификат SAML. Хотя уменьшить длину всех этих данных иногда невозможно, некоторые необязательные поля конфигурации, такие как **Адрес электронной почты для уведомлений**, можно удалить.
 

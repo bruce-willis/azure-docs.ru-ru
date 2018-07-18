@@ -1,13 +1,13 @@
 ---
-title: "Соединение локальной сети с виртуальною сетью Azure с помощью подключения VPN типа \"сеть — сеть\" (классического) и портала | Документация Майкрософт"
-description: "Создание подключения IPsec между локальной сетью и классической виртуальной сетью Azure при помощи общего доступа через Интернет."
+title: Соединение локальной сети с виртуальною сетью Azure с помощью подключения VPN типа "сеть — сеть" (классического) и портала | Документация Майкрософт
+description: Создание подключения IPsec между локальной сетью и классической виртуальной сетью Azure при помощи общего доступа через Интернет.
 services: vpn-gateway
 documentationcenter: na
 author: cherylmc
 manager: jpconnock
-editor: 
+editor: ''
 tags: azure-service-management
-ms.assetid: 
+ms.assetid: ''
 ms.service: vpn-gateway
 ms.devlang: na
 ms.topic: hero-article
@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: 9fa8455e3be6dced5717e2a7399d0eae0e26a09b
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 4e9736adfce83fc449b68a7448441ecee481ad2a
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38477902"
 ---
 # <a name="create-a-site-to-site-connection-using-the-azure-portal-classic"></a>Создание подключения типа "сеть — сеть" с помощью классического портала Azure
 
@@ -63,7 +64,7 @@ ms.lasthandoff: 02/21/2018
 * **Подсеть шлюза:** 10.11.255.0/27.
 * **Группа ресурсов:** TestRG1
 * **Расположение:** восточная часть США.
-* **DNS-сервер:** 10.11.0.3 (необязательно для этого упражнения).
+* **DNS-сервер:**  10.11.0.3 (необязательно для этого упражнения).
 * **Имя локального сайта:** Site2.
 * **Адресное пространство клиента:** Это адресное пространство, которое находится на локальном сайте.
 
@@ -86,7 +87,7 @@ ms.lasthandoff: 02/21/2018
   ![Выбор модели развертывания](./media/vpn-gateway-howto-site-to-site-classic-portal/selectmodel.png)
 4. В колонке **Create virtual network (classic)** (Создание виртуальной сети (классической)) настройте параметры виртуальной сети. На этой странице добавьте первое адресное пространство и единый диапазон адресов подсети. После создания виртуальной сети вернитесь назад и добавьте дополнительные подсети и адресные пространства.
 
-  ![Страница "Создать виртуальную сеть"](./media/vpn-gateway-howto-site-to-site-classic-portal/createvnet.png "Страница "Создать виртуальную сеть"")
+  ![Страница "Создать виртуальную сеть"](./media/vpn-gateway-howto-site-to-site-classic-portal/createvnet.png "Страница \"Создать виртуальную сеть\"")
 5. Убедитесь, что вы используете правильную **подписку** . Подписки можно менять с помощью раскрывающегося списка.
 6. Щелкните **Группа ресурсов** и либо выберите имеющуюся, либо создайте группу ресурсов. Чтобы создать группу, введите ее имя. Дополнительные сведения о группах ресурсов см. в разделе "Группы ресурсов" [обзора Azure Resource Manager](../azure-resource-manager/resource-group-overview.md#resource-groups).
 7. Затем выберите параметры **расположения** для виртуальной сети. Расположение определяет, где будут находиться ресурсы, развертываемые в этой виртуальной сети.

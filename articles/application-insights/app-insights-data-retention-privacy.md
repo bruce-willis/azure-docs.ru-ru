@@ -1,8 +1,8 @@
 ---
-title: "Хранилища и хранение данных в Azure Application Insights | Документация Майкрософт"
-description: "Заявление о политике хранении и конфиденциальности"
+title: Хранилища и хранение данных в Azure Application Insights | Документация Майкрософт
+description: Заявление о политике хранении и конфиденциальности
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: a6268811-c8df-42b5-8b1b-1d5a7e94cbca
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/07/2017
 ms.author: mbullwin
-ms.openlocfilehash: 1818e564acb0e9b5fa620d6f38db141811ca9777
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.openlocfilehash: 0ee712b24478b52dfc5864e59e885e3b9dd6137b
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294072"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -196,7 +197,7 @@ Application Insights не фильтрует и не удаляет данные
 Вы можете [отключить некоторые данные, изменив файл ApplicationInsights.config][config].
 
 ## <a name="credits"></a>Баллы
-Этот продукт содержит данные GeoLite2, созданные MaxMind и доступные на веб-сайте [http://www.maxmind.com](http://www.maxmind.com).
+Этот продукт содержит данные GeoLite2, созданные пользователем MaxMind и доступные на веб-сайте [http://www.maxmind.com](http://www.maxmind.com).
 
 
 

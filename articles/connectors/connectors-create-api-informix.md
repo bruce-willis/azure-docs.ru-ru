@@ -1,25 +1,22 @@
 ---
-title: "Добавление соединителя Informix в приложения логики | Документация Майкрософт"
-description: "Обзор соединителя Logic Apps с параметрами REST API"
-services: 
-documentationcenter: 
+title: Подключение к базе данных IBM Informix с помощью Azure Logic Apps | Документация Майкрософт
+description: Управляйте ресурсами с помощью интерфейсов REST API IBM Informix и Azure Logic Apps.
 author: gplarsen
-manager: anneta
-editor: 
-tags: connectors
-ms.assetid: ca2393f0-3073-4dc2-8438-747f5bc59689
-ms.service: logic-apps
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: integration
+manager: jeconnoc
+ms.author: plarsen
 ms.date: 09/26/2016
-ms.author: plarsen; ladocs
-ms.openlocfilehash: b3b352b185b7dfeee12ac9bee1b72cb740add5b8
-ms.sourcegitcommit: be9a42d7b321304d9a33786ed8e2b9b972a5977e
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, LADocs
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: d0008c19ed96f731f7b57c5d8aa41cd9f128bc20
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35296042"
 ---
 # <a name="get-started-with-the-informix-connector"></a>Приступая к работе с соединителем Informix
 Соединитель Informix (Майкрософт) подключает приложения логики к ресурсам, хранящимся в базе данных IBM Informix. Этот соединитель включает в себя клиент Майкрософт для взаимодействия с удаленными серверами Informix по сети TCP/IP. Сюда входят облачные базы данных, например IBM Informix для Windows, работающие в среде виртуализации Azure, и локальные базы данных, использующие локальный шлюз данных. Ознакомьтесь со [списком поддерживаемых](connectors-create-api-informix.md#supported-informix-platforms-and-versions) платформ и версий IBM Informix (в этой статье).

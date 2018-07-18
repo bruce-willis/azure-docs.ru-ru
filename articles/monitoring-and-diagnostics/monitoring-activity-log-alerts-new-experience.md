@@ -1,26 +1,19 @@
 ---
-title: Создание оповещений журнала действий и управление ими с помощью новой функции "Оповещения" в Azure Monitor | Документация Майкрософт
-description: Эта статья содержит сведения о создании оповещений журнала действий на вкладке "Оповещения" в Azure Monitor.
-author: JYOTHIRMAISURI
-manager: vvithal
-editor: ''
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: aabc0e57-78cd-44dd-a8d1-af5e1e567360
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+title: Работа с оповещениями журнала действий в новой версии оповещений Azure Monitor
+description: Из этой статьи вы узнаете, как создавать оповещения журнала действий на вкладке "Оповещения (предварительная версия)" в разделе Azure Monitor. В ней также подробно описан новый пользовательский интерфейс для этой функции.
+author: jyothirmaisuri
+services: azure-monitor
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 02/05/2018
 ms.author: v-jysur
-ms.custom: ''
-ms.openlocfilehash: 070acc6fb6f6f744474edeef0e914dda9d24c558
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.component: alerts
+ms.openlocfilehash: 10cd4e2ea14ab66a44ba2123e025b3d1b91f385c
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34202826"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35263570"
 ---
 # <a name="create-activity-log-alerts-using-the-new-alerts-experience"></a>Создание оповещений журнала действий с помощью новой функции "Оповещения"
 

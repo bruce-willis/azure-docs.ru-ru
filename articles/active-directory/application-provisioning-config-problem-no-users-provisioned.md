@@ -1,23 +1,26 @@
 ---
-title: "Пользователи для приложения в коллекции Azure AD не подготавливаются | Документы Майкрософт"
-description: "В этой статье описаны способы решения распространенных проблем, при которых пользователи, для которых была настроена подготовка в Azure AD, не появляются в приложении в коллекции Azure AD."
+title: Пользователи для приложения в коллекции Azure AD не подготавливаются | Документы Майкрософт
+description: В этой статье описаны способы решения распространенных проблем, при которых пользователи, для которых была настроена подготовка в Azure AD, не появляются в приложении в коллекции Azure AD.
 services: active-directory
-documentationcenter: 
-author: ajamess
+documentationcenter: ''
+author: barbkess
 manager: mtillman
-ms.assetid: 
+ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
-ms.author: asteen
-ms.openlocfilehash: a36d60b8915ae0b46226bb2127829a8f1767daba
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.author: barbkess
+ms.reviewer: asteen
+ms.openlocfilehash: 394e8642c177312c8990ea211f77fb802d4228fd
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36332415"
 ---
 # <a name="no-users-are-being-provisioned-to-an-azure-ad-gallery-application"></a>Пользователи для приложения в коллекции Azure AD не подготавливаются
 
@@ -55,9 +58,9 @@ ms.lasthandoff: 12/11/2017
 
 Если пользователь отображается в журналах аудита как "пропущенный", очень важно ознакомиться с подробными сведениями об ошибке, чтобы определить причину. Ниже приведены распространенные причины и способы устранения ошибок:
 
--   **Настроен фильтр области** **, который фильтрует пользователей на основе значения атрибута**. Дополнительные сведения о фильтрах области см. в разделе <https://docs.microsoft.com/azure/active-directory/active-directory-saas-scoping-filters>.
+-   **Настроен фильтр области** **, который фильтрует пользователей на основе значения атрибута**. Дополнительные сведения о фильтрах области см. по ссылке <https://docs.microsoft.com/azure/active-directory/active-directory-saas-scoping-filters>.
 
--   **Пользователь "не имеет фактических прав".** Если вы видите это сообщение об ошибке, это свидетельствует о наличии проблемы с записью назначения пользователя, которая хранится в Azure AD. Для устранения этой проблемы отмените назначение пользователя (или группы) для приложения и повторно назначьте пользователя (или группу). Дополнительные сведения о назначении см. в разделе <https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal>.
+-   **Пользователь "не имеет фактических прав".** Если вы видите это сообщение об ошибке, это свидетельствует о наличии проблемы с записью назначения пользователя, которая хранится в Azure AD. Для устранения этой проблемы отмените назначение пользователя (или группы) для приложения и повторно назначьте пользователя (или группу). Дополнительные сведения о назначении см. по ссылке <https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal>.
 
 -   **Обязательный атрибут для пользователя отсутствует или его значение не указано.** При настройке подготовки важно просмотреть и настроить сопоставления атрибутов и рабочие процессы, которые определяют, какие свойства пользователя (или группы) передаются из Azure AD в приложение. К ним относится "свойство сопоставления", используемое для уникальной идентификации и сопоставления пользователей или групп между двумя системами. Дополнительные сведения об этом важном процессе см. в разделе [Настройка сопоставления атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-customizing-attribute-mappings).
 

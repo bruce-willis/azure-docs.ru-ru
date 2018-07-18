@@ -3,22 +3,20 @@ title: Руководство по разработке приложений Jav
 description: В этом руководстве по разработке веб-приложения Java показано, как использовать службу Azure Cosmos DB и API SQL для хранения данных и доступа к ним из приложения Java, размещенного на веб-сайтах Azure.
 keywords: Application development, database tutorial, java application, java web application tutorial, azure, Microsoft azure
 services: cosmos-db
-documentationcenter: java
-author: dennyglee
+author: tknandu
 manager: kfile
-ms.assetid: 0867a4a2-4bf5-4898-a1f4-44e3868f8725
 ms.service: cosmos-db
+ms.component: cosmosdb-sql
 ms.devlang: java
-ms.topic: article
-ms.tgt_pltfrm: NA
-ms.workload: data-services
+ms.topic: tutorial
 ms.date: 08/22/2017
-ms.author: denlee
-ms.openlocfilehash: 2124e22ca5ab47b5e1836384132014cc0b356ff1
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.author: ramkris
+ms.openlocfilehash: 4cc29aad648f594a95f694cf0f778b55cb3145a8
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38485535"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 > [!div class="op_single_selector"]
@@ -29,7 +27,7 @@ ms.lasthandoff: 04/06/2018
 > 
 > 
 
-В этом руководстве по разработке веб-приложения Java показано, как использовать службу [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) для хранения данных и обеспечения доступа к ним из приложения Java, размещенного в Azure при помощи функции "Веб-приложения службы приложений". Из этой статьи вы узнаете:
+В этом руководстве по разработке веб-приложения Java показано, как использовать службу [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/) для хранения данных и обеспечения доступа к ним из приложения Java, размещенного в Azure при помощи функции "Веб-приложения службы приложений". В этой статье вы узнаете следующее:
 
 * Как создать основное приложение JavaServer Pages (JSP) в Eclipse.
 * Как работать со службой Azure Cosmos DB с помощью [пакета SDK для Java для Azure Cosmos DB](https://github.com/Azure/azure-documentdb-java).
@@ -120,7 +118,7 @@ ms.lasthandoff: 04/06/2018
             private String name;
         }
    
-    В этом проекте мы используем [Проект Lombok](http://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Альтернационным способом можно написать следующий код вручную, либо сгенерировать его в IDE.
+    В этом проекте вы используете [проект Lombok](http://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Альтернационным способом можно написать следующий код вручную, либо сгенерировать его в IDE.
 2. Чтобы вызвать службу Azure Cosmos DB, необходимо создать новый экземпляр **DocumentClient**. В общем, рекомендуется повторно использовать **DocumentClient** вместо создания нового клиента для каждого последующего запроса. Мы можем повторно использовать клиент, поместив его в **DocumentClientFactory**. В файле DocumentClientFactory.java необходимо вставить универсальный код ресурса (URI) и первичный ключ, сохраненные в буфер обмена на [шаге 1](#CreateDB). Замените [YOUR\_ENDPOINT\_HERE] на универсальный код ресурса, а [YOUR\_KEY\_HERE] — на первичный ключ.
    
         private static final String HOST = "[YOUR_ENDPOINT_HERE]";
@@ -726,7 +724,7 @@ ms.lasthandoff: 04/06/2018
 3. Теперь, когда вы создали WAR-файл, можно просто передать его на веб-сайт Azure в каталог **webapps**. Инструкции по передаче файла см. в статье [Добавление приложения Java в веб-приложения службы приложений Azure](../app-service/web-sites-java-add-app.md).
    
     После загрузки WAR-файла в каталог веб-приложения среда выполнения обнаруживает, что вы добавили его и автоматически загрузит ее.
-4. Чтобы просмотреть готовый проект, перейдите по адресу http://YOUR\_ИМЯ\_САЙТА.azurewebsites.net/azure-java-sample/ и начните добавлять свои задачи.
+4. Чтобы оценить готовый продукт, перейдите к http://YOUR\_SITE\_NAME.azurewebsites.net/azure-java-sample/ и приступайте к добавлению задач.
 
 ## <a id="GetProject"></a>Получение проекта из GitHub
 Все примеры в этом учебнике включены в проект [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) на портале GitHub. Чтобы импортировать проект todo в Eclipse, убедитесь, что у вас есть программное обеспечение и ресурсы, перечисленные в разделе [Необходимые условия](#Prerequisites) , а затем выполните следующие действия.
@@ -736,13 +734,13 @@ ms.lasthandoff: 04/06/2018
 3. В Eclipse откройте меню **File** (Файл) и щелкните **Import** (Импорт).
 4. В окне **Import** (Импорт) щелкните **Git**, а затем выберите **Projects from Git** (Проекты из Git) и нажмите кнопку **Next** (Далее).
 5. На экране **Select Repository Source** (Выбрать источник репозитория) щелкните **Clone URI** (Клон URI).
-6. На экране **исходного репозитория Git** в поле **URI** введите https://github.com/Azure-Samples/java-todo-app.git, а затем нажмите кнопку **Далее**.
+6. На экране **исходного репозитория Git** в поле **URI** введите https://github.com/Azure-Samples/documentdb-java-todo-app.git, а затем нажмите кнопку **Далее**.
 7. На экране **Branch Selection** (Выбор ветви) выберите значение **master** и нажмите кнопку **Next** (Далее).
 8. На экране **Local Destination** (Локальная папка назначения) нажмите кнопку **Browse** (Обзор), выберите папку, в которую можно копировать репозитории, и нажмите кнопку **Next** (Далее).
 9. Проверьте, установлен ли на экране **Select a wizard to use for importing projects** (Выбор мастера для импорта проектов) флажок **Import existing projects** (Импортировать существующие проекты), и нажмите кнопку **Next** (Далее).
 10. На экране **Import Projects** (Импорт проектов) снимите флажок возле проекта **DocumentDB** и нажмите кнопку **Finish** (Готово). В проекте DocumentDB содержится пакет Java SDK для Azure Cosmos DB, который будет добавлен в качестве зависимости.
 11. В **обозревателе проектов** перейдите в расположение azure-documentdb-java-sample\src\com.microsoft.azure.documentdb.sample.dao\DocumentClientFactory.java и замените значения в полях host и master_key значениями URI и первичного ключа своей учетной записи Azure Cosmos DB, а затем сохраните файл. Дополнительные сведения см. в инструкции [Шаг 1. Создание учетной записи базы данных Azure Cosmos DB](#CreateDB).
-12. В **обозревателе проектов** щелкните правой кнопкой правой кнопкой элемент **azure-documentdb-java-sample**, а затем выберите **Build Path** (Путь сборки) и щелкните **Configure Build Path** (Настройка пути сборки).
+12. В **обозревателе проектов** щелкните правой кнопкой элемент **azure-documentdb-java-sample**, а затем выберите **Build Path** (Путь сборки) и щелкните **Configure Build Path** (Настройка пути сборки).
 13. На экране **Java Build Path** (Путь сборки Java) в правой области откройте вкладку **Libraries** (Библиотеки) и щелкните **Add External JAR** (Добавить внешние JAR-файлы). Перейдите в расположение файла lombok.jar, щелкните **Open** (Открыть), а затем нажмите кнопку **ОК**.
 14. Используйте инструкцию из шага 12, то есть снова откройте окно **Properties** (Свойства), а затем в левой области щелкните **Targeted Runtimes** (Целевые среды выполнения).
 15. На экране **Targeted Runtimes** (Целевые среды выполнения) щелкните **New** (Создать), выберите **Apache Tomcat v7.0** и нажмите кнопку **ОК**.

@@ -1,26 +1,22 @@
 ---
-title: Добавление соединителя Google Диска в приложения логики | Документация Майкрософт
-description: Обзор соединителя Google-диска с параметрами интерфейса API REST
-services: ''
-suite: ''
-documentationcenter: ''
+title: Подключение к Google Диск с помощью Azure Logic Apps | Документация Майкрософт
+description: Создавайте файлы и управляйте ими с помощью интерфейсов REST API Google Диск и Azure Logic Apps.
 author: ecfan
-manager: anneta
-editor: ''
-tags: connectors
-ms.assetid: b2bcebc5-02d2-435b-b0da-ef53bc51c4b6
-ms.service: multiple
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+manager: jeconnoc
+ms.author: estfan
 ms.date: 11/07/2016
-ms.author: estfan; ladocs
-ms.openlocfilehash: 9cea2ea13b93e798912e4feea012f6bd64b90cac
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.topic: article
+ms.service: logic-apps
+services: logic-apps
+ms.reviewer: klam, LADocs
+ms.suite: integration
+tags: connectors
+ms.openlocfilehash: 4994687afbdd23f0265138cd1d4eff53bb47c163
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35295889"
 ---
 # <a name="get-started-with-the-google-drive-connector"></a>Начало работы с соединителем Google-диска
 Подключитесь к Google-диску, чтобы создавать файлы, получать строки и выполнять множество других действий. С помощью Google-диска вы можете: 

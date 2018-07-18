@@ -1,22 +1,21 @@
 ---
-title: Использование фильтрации по возрасту в Azure AD B2C | Документация Майкрософт
+title: Использование фильтрации по возрасту в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о том, как определять несовершеннолетних пользователей вашего приложения.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/29/2018
 ms.author: davidmu
-ms.openlocfilehash: 9186579126525cc269f7e3f9e778e06902b30eb4
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.component: B2C
+ms.openlocfilehash: 9d24e37642a41e4d60b33f42a60d7e56cb4b35b5
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34261288"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37446730"
 ---
 #<a name="using-age-gating-in-azure-ad-b2c"></a>Использование фильтрации по возрасту в Azure AD B2C
 

@@ -20,6 +20,7 @@ ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34160756"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
 [Виртуальная машина для обработки и анализа данных](http://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](http://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений искусственного интеллекта (AI) с прогнозной аналитикой и когнитивными возможностями, например понимание изображений и языка. 
@@ -226,7 +227,7 @@ _export MKL_THREADING_LAYER=GNU_
 | Дополнительные средства на виртуальной машине для обработки и анализа данных      | Torch      |
 | Запуск и использование | 
 * В окне терминала активируйте соответствующую среду и запустите Python. <br/>
- * * В Jupyter подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
+ * В Jupyter подключитесь к [JupyterHub](dsvm-ubuntu-intro.md#how-to-access-the-data-science-virtual-machine-for-linux), затем откройте каталог образцов PyTorch.  |
 
 ## <a name="mxnet-model-server"></a>Сервер модели MXNet
 

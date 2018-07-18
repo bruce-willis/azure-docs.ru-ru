@@ -1,23 +1,26 @@
 ---
-title: "Проблемы при входе в специально разработанное приложение | Документы Майкрософт"
-description: "Распространенные ошибки, из-за которых может не работать вход в приложение, разработанное вами с помощью Azure AD"
+title: Проблемы при входе в специально разработанное приложение | Документы Майкрософт
+description: Распространенные ошибки, из-за которых может не работать вход в приложение, разработанное вами с помощью Azure AD
 services: active-directory
-documentationcenter: 
-author: ajamess
+documentationcenter: ''
+author: barbkess
 manager: mtillman
-ms.assetid: 
+ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.openlocfilehash: 57b620f45d1985351064020e122c088584bcdcf5
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.author: barbkess
+ms.reviewer: asteen
+ms.openlocfilehash: 3cbc9f981ab528efe2d739022c674cef48dfeb51
+ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/23/2018
+ms.locfileid: "36330892"
 ---
 # <a name="problems-signing-in-to-an-custom-developed-application"></a>Проблемы при входе в специально разработанное приложение
 

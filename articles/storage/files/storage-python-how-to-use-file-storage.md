@@ -1,11 +1,11 @@
 ---
-title: "Разработка для файлов Azure с помощью Python | Документы Майкрософт"
-description: "Узнайте, как разрабатывать приложения и службы Python, использующие файлы Azure для хранения данных файлов."
+title: Разработка для файлов Azure с помощью Python | Документы Майкрософт
+description: Узнайте, как разрабатывать приложения и службы Python, использующие файлы Azure для хранения данных файлов.
 services: storage
 documentationcenter: python
-author: tamram
-manager: timlt
-editor: tysonn
+author: wmgries
+manager: aungoo
+editor: tamram
 ms.assetid: 297f3a14-6b3a-48b0-9da4-db5907827fb5
 ms.service: storage
 ms.workload: storage
@@ -14,11 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: tamram
-ms.openlocfilehash: cee6ece907950724f6ad4a86c489a5f07dfcaaec
-ms.sourcegitcommit: b07d06ea51a20e32fdc61980667e801cb5db7333
+ms.openlocfilehash: 1102fd516b5497b4c482986b64fa7c96e9ccc54a
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34738267"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -30,10 +31,10 @@ ms.lasthandoff: 12/08/2017
 * создание файловых ресурсов Azure;
 * создание каталогов;
 * перечисление файлов и каталогов в файловом ресурсе Azure;
-* Передача, загрузка и удаление файлов.
+* передача, загрузка и удаление файлов.
 
 > [!Note]  
-> Так как к файлам Azure можно обращаться через SMB, вы можете создавать простые приложения, которые получают доступ к общим папкам файлов Azure с использованием стандартных классов ввода-вывода и функций в Python. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Python для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/file-service-rest-api) для взаимодействия с файлами Azure.
+> Так как к файлам Azure можно обращаться по протоколу SMB, вы можете создавать простые приложения, которые получают доступ к файловым ресурсам Azure с использованием стандартных классов ввода-вывода и функций Python. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Python для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/file-service-rest-api) для взаимодействия с файлами Azure.
 
 ## <a name="download-and-install-azure-storage-sdk-for-python"></a>Скачивание и установка пакета SDK службы хранилища Azure для Python
 
@@ -69,21 +70,21 @@ from azure.storage.file import FileService
 file_service = FileService(account_name='myaccount', account_key='mykey')
 ```
 
-## <a name="create-an-azure-file-share"></a>Создание файлового ресурса Azure
+## <a name="create-an-azure-file-share"></a>создать файловый ресурс Azure;
 В следующем примере кода для создания общего ресурса (если он не существует) можно использовать объект `FileService`.
 
 ```python
 file_service.create_share('myshare')
 ```
 
-## <a name="create-a-directory"></a>Создайте каталог
+## <a name="create-a-directory"></a>создать каталог;
 Вы также можете организовать хранилище, помещая файлы в подкаталоги вместо их размещения в корневом каталоге. Служба файлов Azure позволяет создать такое количество каталогов, которое допускается в вашей учетной записи. В следующем примере кода в корневом каталоге создается вложенный каталог с именем **sampledir** .
 
 ```python
 file_service.create_directory('myshare', 'sampledir')
 ```
 
-## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в файловом ресурсе Azure
+## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>перечисление файлов и каталогов в файловом ресурсе Azure;
 Чтобы получить список файлов и каталогов в общем ресурсе, используйте метод **list\_directories\_and\_files**. Этот метод возвращает генератор. Приведенный далее код выводит в консоль **имя** каждого файла и каталога в общем ресурсе.
 
 ```python
@@ -92,8 +93,8 @@ for file_or_dir in generator:
     print(file_or_dir.name)
 ```
 
-## <a name="upload-a-file"></a>Отправить файл. 
-Файловый ресурс Azure содержит по крайней мере корневой каталог, где могут размещаться файлы. В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
+## <a name="upload-a-file"></a>Отправка файла 
+Файловый ресурс Azure содержит как минимум корневой каталог, в котором могут храниться файлы. В этом разделе вы узнаете, как отправить файл из локального хранилища в корневой каталог общего ресурса.
 
 Для создания файла и передачи данных используйте методы `create_file_from_path`, `create_file_from_stream`, `create_file_from_bytes` или `create_file_from_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
 
@@ -111,7 +112,7 @@ file_service.create_file_from_path(
     content_settings=ContentSettings(content_type='image/png'))
 ```
 
-## <a name="download-a-file"></a>Скачивание файла
+## <a name="download-a-file"></a>скачать файл;
 Чтобы загрузить данные из файла, используйте методы `get_file_to_path`, `get_file_to_stream`, `get_file_to_bytes` или `get_file_to_text`. Это высокоуровневые методы, которые выполняют необходимое фрагментирование данных, если их размер превышает 64 МБ.
 
 В следующем примере показано использование метода `get_file_to_path` для загрузки содержимого файла **myfile** и его сохранения в файл **out-sunset.png**.

@@ -8,11 +8,12 @@ ms.topic: include
 ms.date: 04/25/2018
 ms.author: genli
 ms.custom: include file
-ms.openlocfilehash: db241c1a3c8bfd15e13ae0bd9f1cdf4c92c7081d
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 00cb6cb59f8144782fdacd8c2f9763c2f7036880
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37906842"
 ---
 >[!NOTE]
 > Комментарии и отзывы можно оставить в конце этой статьи или на странице [отзывов и предложений по Azure](https://feedback.azure.com/forums/216843-virtual-machines) с тегом #azerrormessage.
@@ -163,7 +164,7 @@ ms.lasthandoff: 05/10/2018
 |  OperationNotAllowed  |  Не удалось изменить размер виртуальной машины, так как запрошенный размер {0} недоступен в кластере, в котором сейчас находится виртуальная машина. Чтобы изменить размер виртуальной машины на {1}, отмените ее распределение (операция "Остановить" на портале Azure) и повторите попытку. Ознакомьтесь с дополнительными сведениями о стратегии изменения разм5ра виртуальных машин: https://aka.ms/azure-resizevm.  |
 |  OSProvisioningClientError  |  Не удалось подготовить ОС для виртуальной машины "{0}", так как сейчас идет подготовка гостевой ОС.  |
 |  OSProvisioningClientError  |  Не удалось подготовить ОС для виртуальной машины "{0}". Сведения об ошибке: "{1}". Образ должен быть подготовлен соответствующим образом (он должен быть универсальным). <ul><li>Инструкции для Windows: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/.  </li></ul> |
-|  OSProvisioningClientError  |  При создании ключа узла SSH произошел сбой. Сведения об ошибке: {0}. Чтобы устранить эту проблему, убедитесь, что агент Linux настроен правильно. <ul><li>Инструкции приведены здесь: https://azure.microsoft.com/documentation/articles/virtual-machines-linux-agent-user-guide/ </li></ul> |
+|  OSProvisioningClientError  |  При создании ключа узла SSH произошел сбой. Сведения об ошибке: {0}. Чтобы устранить эту проблему, убедитесь, что агент Linux настроен правильно. <ul><li>Инструкции приведены здесь: https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux/ </li></ul> |
 |  OSProvisioningClientError  |  Имя пользователя, указанное для виртуальной машины, недопустимо для этого дистрибутива Linux. Сведения об ошибке: {0}.  |
 |  OSProvisioningInternalError  |  Не удалось подготовить ОС для виртуальной машины "{0}" из-за внутренней ошибки.  |
 |  OSProvisioningTimedOut  |  Подготовка ОС для виртуальной машины "{0}" не завершена за отведенное время. Виртуальная машина по-прежнему может успешно завершить подготовку. Проверьте состояние подготовки позже.  |

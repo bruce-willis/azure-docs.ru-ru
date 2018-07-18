@@ -3,7 +3,7 @@ title: Решение "Аналитика DNS" в Azure Log Analytics | Доку
 description: Узнайте, как настроить и использовать решение аналитики DNS в Log Analytics, чтобы собрать сведения об инфраструктуре DNS — безопасности, производительности и операциях.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: f44a40c4-820a-406e-8c40-70bd8dc67ae7
@@ -11,14 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 6a59cf8b9444fe7cb197501c51d10dae81acb027
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.component: na
+ms.openlocfilehash: a6f63fac85008425f473f431ae85d04f62eed667
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127597"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -116,7 +118,7 @@ ms.lasthandoff: 03/28/2018
 - IP-адреса, в которые разрешается доменное имя;
 - вредоносный IP-адрес;
 - степень серьезности проблемы;
-- причину для добавления вредоносного IP-адреса в список блокировок;
+- причину для добавления вредоносного IP-адреса в черный список;
 - время обнаружения.
 
 **Запрошенные домены**. Отображает доменные имена, которые чаще всего запрашиваются DNS-клиентами в вашей среде. Вы можете просмотреть список всех запрошенных доменных имен. Вы также можете детальнее просмотреть сведения о запросе поиска конкретного доменного имени в поиске по журналу.

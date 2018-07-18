@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/22/2018
 ms.author: wesmc
 ms.openlocfilehash: facc3e2079c8f5e19266f5379762d71754a6ed84
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32182284"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38299097"
 ---
 # <a name="how-to-use-the-redis-command-line-tool-with-azure-redis-cache"></a>Использование программы командной строки Redis с кэшем Redis для Azure
 

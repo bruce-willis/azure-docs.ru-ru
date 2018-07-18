@@ -1,26 +1,20 @@
 ---
-title: 'Устранение сбоя службы Azure Backup: состояние гостевого агента "Недоступно" | Документация Майкрософт'
+title: 'Устранение сбоя службы Azure Backup: состояние гостевого агента "Недоступно"'
 description: Симптомы, причины и способы устранения проблем в работе службы Azure Backup, связанных с агентом, расширением и дисками.
 services: backup
-documentationcenter: ''
 author: genlin
 manager: cshepard
-editor: ''
 keywords: Azure backup; VM agent; Network connectivity;
-ms.assetid: 4b02ffa4-c48e-45f6-8363-73d536be4639
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 01/09/2018
-ms.author: genli;markgal;sogup;
-ms.openlocfilehash: 17f4f832af0177ad588058833672c0986adeb3fa
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.date: 06/25/2018
+ms.author: genli
+ms.openlocfilehash: 09cfda3c2c790297b0961ecac92cba61c9e6de6f
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34196769"
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36754331"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -64,7 +58,7 @@ ms.locfileid: "34196769"
 
 ## <a name="backup-fails-because-the-vm-agent-is-unresponsive"></a>Архивация завершается ошибкой, так как агент виртуальной машины не отвечает
 
-Сообщение об ошибке: "Unable to perform the operation as the VM Agent is not responsive" (Не удалось выполнить операцию, так как агент виртуальной машины не отвечает). <br>
+Сообщение об ошибке "Не удалось запросить состояние моментального снимка в агенте виртуальной машины" <br>
 Код ошибки: GuestAgentSnapshotTaskStatusError
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
@@ -92,6 +86,16 @@ ms.locfileid: "34196769"
 
 Чтобы расширение службы Backup работало правильно, требуется подключение к общедоступным IP-адресам Azure. Для управления моментальными снимками виртуальной машины это расширение отправляет команды к конечной точке службы хранилища Azure (URL-адрес HTTP). Если расширение не имеет доступа к общедоступному Интернету, резервное копирование завершится сбоем.
 
+Чтобы маршрутизировать трафик виртуальных машин, можно развернуть прокси-сервер.
+##### <a name="create-a-path-for-https-traffic"></a>Создание пути для трафика HTTP
+
+1. При наличии каких-либо ограничений сети (например, группы безопасности сети) разверните прокси-сервер HTTP для маршрутизации трафика.
+2. Если вы используете группу безопасности сети, добавьте в нее правила, чтобы разрешить доступ к Интернету с прокси-сервера HTTP.
+
+Чтобы узнать, как настроить прокси-сервер HTTP для резервного копирования виртуальных машин, ознакомьтесь с разделом [Подготовка среды для резервного копирования виртуальных машин Azure](backup-azure-arm-vms-prepare.md#establish-network-connectivity).
+
+Архивной виртуальной машине или прокси-серверу, через которые маршрутизируется трафик, требуется доступ к общедоступным IP-адресам Azure.
+
 ####  <a name="solution"></a>Решение
 Для устранения этой проблемы воспользуйтесь одним из указанных ниже способов.
 
@@ -105,13 +109,6 @@ ms.locfileid: "34196769"
 
 > [!WARNING]
 > Теги службы хранилища находятся на этапе предварительной версии. Они доступны только в определенных регионах. Список регионов см. в разделе [Теги служб](../virtual-network/security-overview.md#service-tags).
-
-##### <a name="create-a-path-for-http-traffic"></a>Создание пути для трафика HTTP
-
-1. При наличии каких-либо ограничений сети (например, группы безопасности сети) разверните прокси-сервер HTTP для маршрутизации трафика.
-2. Если вы используете группу безопасности сети, добавьте в нее правила, чтобы разрешить доступ к Интернету с прокси-сервера HTTP.
-
-Чтобы узнать, как настроить прокси-сервер HTTP для архивации виртуальных машин, ознакомьтесь с разделом [Подготовка среды для резервного копирования виртуальных машин Azure](backup-azure-arm-vms-prepare.md#establish-network-connectivity).
 
 Если вы используете "Управляемые диски Azure", может потребоваться открыть в брандмауэрах дополнительный порт (8443).
 
@@ -195,6 +192,19 @@ ms.locfileid: "34196769"
 
 #### <a name="solution"></a>Решение
 
-Чтобы устранить проблему, отмените блокировку группы ресурсов. После этого служба Azure Backup сможет очистить коллекцию точек восстановления и базовые моментальные снимки в следующей резервной копии.
-Затем можно возобновить блокировку группы ресурсов виртуальной машины. 
+Чтобы устранить проблему, снимите блокировку группы ресурсов и удалите коллекции точек восстановления, выполнив следующие шаги: 
+ 
+1. Удалите блокировку в группе ресурсов, в которой находится виртуальная машина. 
+2. Установите ARMClient с помощью Chocolatey: <br>
+   https://github.com/projectkudu/ARMClient
+3. Войдите в ARMClient: <br>
+    `.\armclient.exe login`
+4. Получите коллекцию точек восстановления, соответствующую виртуальной машине: <br>
+    `.\armclient.exe get https://management.azure.com/subscriptions/<SubscriptionId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Compute/restorepointcollections/AzureBackup_<VM-Name>?api-version=2017-03-30`
 
+    Пример: `.\armclient.exe get https://management.azure.com/subscriptions/f2edfd5d-5496-4683-b94f-b3588c579006/resourceGroups/winvaultrg/providers/Microsoft.Compute/restorepointcollections/AzureBackup_winmanagedvm?api-version=2017-03-30`
+5. Удалите коллекцию точек восстановления: <br>
+    `.\armclient.exe delete https://management.azure.com/subscriptions/<SubscriptionId>/resourceGroups/<ResourceGroupName>/providers/Microsoft.Compute/restorepointcollections/AzureBackup_<VM-Name>?api-version=2017-03-30` 
+6. При следующем запланированном резервном копировании автоматически создается коллекция точек восстановления и новые точки восстановления.
+
+Затем можно возобновить блокировку группы ресурсов виртуальной машины. 

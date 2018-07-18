@@ -1,24 +1,19 @@
 ---
-title: Средства безопасности для защиты гибридных резервных копий, использующих службу архивации Azure | Документация Майкрософт
+title: Функции безопасности для защиты гибридных резервных копий, использующих службу архивации Azure
 description: Узнайте, как использовать инструменты безопасности в службе архивации Azure для повышения безопасности резервных копий
 services: backup
-documentationcenter: ''
-author: JPallavi
+author: trinadhk
 manager: vijayts
-editor: ''
-ms.assetid: 47bc8423-0a08-4191-826d-3f52de0b4cb8
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/08/2017
-ms.author: pajosh
-ms.openlocfilehash: 2529d19dbf0ca0fb59f5abe48be3e8b14e862e29
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.author: trinadhk
+ms.openlocfilehash: 714c8fde28be63e5173f89f92d186445f0990214
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37447386"
 ---
 # <a name="security-features-to-help-protect-hybrid-backups-that-use-azure-backup"></a>Функции безопасности для защиты гибридных резервных копий, использующих службу архивации Azure
 Среди пользователей растет обеспокоенность вопросами безопасности, связанными с вредоносными программами, программами-шантажистами и вторжениями в системы. Эти угрозы могут привести к значительным расходам и потере данных. Чтобы защитить вас от таких атак, в службе архивации Azure доступны функции безопасности для защиты гибридных резервных копий. В этой статье описывается, как включить и использовать эти функции с помощью агента служб восстановления Azure и Azure Backup Server. Эти функции включают в себя следующие:

@@ -11,13 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 06/05/2018
 ms.author: mabrigg
-ms.openlocfilehash: 202854157dee28f3ab3dc73c6f22508a8bf510b3
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.reviewer: ppacent
+ms.openlocfilehash: 3ecc8885a30a11472fe93bbda60c39131c6b3bd7
+ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/05/2018
+ms.locfileid: "34801421"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
 
@@ -41,11 +43,11 @@ ms.lasthandoff: 05/12/2018
  
 Здесь вы найдете следующую информацию:
 
-- имя региона;
+- Имя региона. Имя региона указывается атрибутом **-Location** в модуле PowerShell.
 - тип системы;
 - общее число логических ядер;
 - общий объем памяти;
-- список отдельных узлов и их состояний — "Работает" или "Остановлено".
+- список отдельных узлов и их состояний — **Работает** или **Остановлено**.
 
 ![Плитка единицы масштабирования со списком узлов и статусом "Работает" для каждого из них](media/azure-stack-node-actions/ScaleUnitStatus.PNG)
 
@@ -87,7 +89,7 @@ ms.lasthandoff: 05/12/2018
 Вызов действия выключения питания с помощью PowerShell:
 
 ````PowerShell
-  Stop-AzsScaleUnitNode -Region <RegionName> -Name <NodeName>
+  Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ```` 
 
 В редких случаях, когда не работает действие выключения питания, следует использовать веб-интерфейс контроллера BMC.
@@ -102,7 +104,7 @@ ms.lasthandoff: 05/12/2018
 Вызов действия включения питания с помощью PowerShell:
 
 ````PowerShell
-  Start-AzsScaleUnitNode -Region <RegionName> -Name <NodeName>
+  Start-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
 ````
 
 В редких случаях, когда не работает действие включения питания, следует использовать веб-интерфейс контроллера BMC.
@@ -113,13 +115,13 @@ ms.lasthandoff: 05/12/2018
 
 Обычно это действие используется во время оперативной замены компонентов, например при замене целого узла.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Останавливайте узел только в период планового технического обслуживания, предварительно уведомив пользователей. В некоторых ситуациях остановка может привести к перебоям в работе активных рабочих нагрузок.
 
 Вызов действия остановки с помощью PowerShell:
 
   ````PowerShell
-  Disable-AzsScaleUnitNode -Region <RegionName> -Name <NodeName>
+  Disable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
   ````
 
 ### <a name="resume"></a>Продолжить
@@ -129,7 +131,7 @@ ms.lasthandoff: 05/12/2018
 Вызов действия возобновления с помощью PowerShell:
 
   ````PowerShell
-  Enable-AzsScaleUnitNode -Region <RegionName> -Name <NodeName>
+  Enable-AzsScaleUnitNode -Location <RegionName> -Name <NodeName>
   ````
 
 ### <a name="repair"></a>Восстановление
@@ -139,7 +141,7 @@ ms.lasthandoff: 05/12/2018
 - При полной замене узла (с заменой дисков данных или без нее).
 - После сбоя и последующей замены компонента оборудования (если такая рекомендация есть в документации по этому оборудованию — легкозаменяемой детали).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Конкретные действия, которые нужно выполнять при замене узла или отдельных компонентов оборудования, вы найдете в соответствующей документации, предоставляемой поставщиком оборудования OEM. В этой документации указывается, нужно ли выполнять восстановление после замены аппаратных компонентов.  
 
 В ходе восстановления необходимо указать IP-адрес контроллера BMC. 
@@ -147,7 +149,9 @@ ms.lasthandoff: 05/12/2018
 Вызов действия возобновления с помощью PowerShell:
 
   ````PowerShell
-  Repair-AzsScaleUnitNode -Region <RegionName> -Name <NodeName> -BMCIPAddress <BMCIPAddress>
+  Repair-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -BMCIPAddress <BMCIPAddress>
   ````
 
+## <a name="next-steps"></a>Дополнительная информация
 
+Дополнительные сведения о модуле для администраторов Fabric в Azure Stack см. [здесь](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.3.0).

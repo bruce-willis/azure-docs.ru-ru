@@ -1,29 +1,26 @@
 ---
-title: Автоматизация задач и процессов с помощью Visual Studio and Azure Logic Apps | Документация Майкрософт
-description: В этом руководстве показано, как создать рабочие процессы, которые автоматизируют задачи и процессы с помощью Azure Logic Apps в Visual Studio.
-author: ecfan
-manager: SyntaxC4
-editor: ''
+title: Создание приложений логики и автоматизация рабочих процессов в Visual Studio с помощью Azure Logic Apps | Документация Майкрософт
+description: В этом руководстве показано, как автоматизировать задачи, операции и рабочие процессы с помощью Azure Logic Apps в Visual Studio.
 services: logic-apps
-documentationcenter: ''
-ms.assetid: ''
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
+ms.date: 03/15/2018
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 03/15/2018
-ms.author: estfan; LADocs
-ms.openlocfilehash: 02e19de97654d751dc0cd557791a61a863a9a4e0
-ms.sourcegitcommit: 8aab1aab0135fad24987a311b42a1c25a839e9f3
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: a35c46bd67a157416844c4054b75f993304298b4
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35300758"
 ---
-# <a name="quickstart-automate-tasks-and-processes-with-azure-logic-apps---visual-studio"></a>Руководство. Автоматизация задач и процессов с помощью Azure Logic Apps в Visual Studio
+# <a name="quickstart-create-and-automate-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание и автоматизация задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
-С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) можно создать рабочие процессы, которые автоматизируют задачи и процессы для интеграции приложений, данных, систем и служб по предприятиям и организациям. В кратком руководстве показано, как можно разрабатывать и создавать эти рабочие процессы путем создания приложений логики в Visual Studio и развертывания этих приложений в <a href="https://docs.microsoft.com/azure/guides/developer/azure-developer-guide" target="_blank">Azure</a> в облаке. И хотя эти задачи можно выполнять на <a href="https://portal.azure.com" target="_blank">портале Azure</a>, Visual Studio позволяет добавлять приложения логики в систему управления версиями, публиковать различные версии и создавать шаблоны Azure Resource Manager для различных сред развертывания. 
+С помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и Visual Studio можно создавать рабочие процессы, которые автоматизируют задачи и процессы для интеграции приложений, данных, систем и служб в предприятиях и организациях. В кратком руководстве показано, как можно разрабатывать и создавать эти рабочие процессы путем создания приложений логики в Visual Studio и развертывания этих приложений в <a href="https://docs.microsoft.com/azure/guides/developer/azure-developer-guide" target="_blank">Azure</a> в облаке. И хотя эти задачи можно выполнять на <a href="https://portal.azure.com" target="_blank">портале Azure</a>, Visual Studio позволяет добавлять приложения логики в систему управления версиями, публиковать различные версии и создавать шаблоны Azure Resource Manager для различных сред развертывания. 
 
 Если вы не знакомы с Azure Logic Apps и хотите ознакомиться с основными понятиями, см. [руководство по созданию приложения логики на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md). Конструктор приложений логики на портале Azure и в Visual Studio работает аналогичным образом. 
 
@@ -187,4 +184,5 @@ ms.lasthandoff: 03/16/2018
 В этой статье вы создавали, развертывали и выполняли свое приложение логики с помощью Visual Studio. Дополнительные сведения о выполнении расширенного развертывания для приложений логики и управлении им c помощью Visual Studio см. в этих статьях:
 
 > [!div class="nextstepaction"]
-> [Управление приложениями логики в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md)
+> * [Управление приложениями логики в Visual Studio](../logic-apps/manage-logic-apps-with-visual-studio.md)
+> * [Создание шаблонов развертывания приложения логики с помощью Visual Studio](../logic-apps/logic-apps-create-deploy-template.md)

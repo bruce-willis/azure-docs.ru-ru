@@ -1,27 +1,27 @@
 ---
-title: 'Azure Active Directory B2C: поддержка | Документация Майкрософт'
-description: Как регистрировать запросы на поддержку для Azure Active Directory B2C
+title: Поддержка Azure Active Directory B2C | Документация Майкрософт
+description: Узнайте, как регистрировать запросы на поддержку для Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/06/2016
 ms.author: davidmu
-ms.openlocfilehash: 4f665985cbb1bb02d5f2378d1953de76303de04d
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: B2C
+ms.openlocfilehash: 4ceef533145bea75247eb26998b998552293ef63
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449332"
 ---
 # <a name="azure-active-directory-b2c-file-support-requests"></a>Azure Active Directory B2C: регистрация запросов в службу поддержки
 Вы можете регистрировать запросы в службу поддержки для Azure Active Directory (AD) B2C на портале Azure следующим образом.
 
 1. [Выполните эти действия, чтобы перейти к колонке функций B2C на портале Azure](active-directory-b2c-app-registration.md#navigate-to-b2c-settings).
-2. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/active-directory-how-subscriptions-associated-directory.md).
+2. Переключитесь с вашего клиента B2C на клиент, с которым связана подписка Azure. Это может быть клиент вашего сотрудника или клиент по умолчанию, созданный во время регистрации для получения подписки Azure. Дополнительные сведения см. в разделе [Как подписка Azure связана с Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
    
     ![Поддержка. Переключение клиентов](./media/active-directory-b2c-support/support-switch-dir.png)
 3. После переключения клиентов щелкните **Справка и поддержка**.

@@ -4,43 +4,39 @@
 ### Возможности и преимущества  
 ### Онлайн-магазины  
 #### [Сравнение Azure Marketplace и AppSource](./comparing-appsource-azure-marketplace.md)  
-#### [Расширение бизнеса с помощью AppSource](./grow-your-business-with-appsource.md)  
-##### [Создание целевой страницы](./build-your-landing-page.md)  
-##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
-##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
-##### [Развитие бизнеса с помощью решений Майкрософт](./promote-your-business-with-microsoft.md)  
-#### [Расширение бизнеса благодаря Azure Marketplace](./grow-your-business-with-azure-marketplace.md)  
-##### [Создание целевой страницы](./build-your-landing-page.md)  
-##### [Получение сведений о потенциальных клиентах](./enable-lead-sharing.md)  
-##### [Преимущества GTM в Marketplace](./gtm-benefits.md)  
-##### [Развитие бизнеса с помощью решений Майкрософт](./promote-your-business-with-microsoft.md)  
 
-### Публикация в онлайн-магазинах в Marketplace  
+### Как разместить публикацию в Microsoft Azure Marketplace  
 #### [Определение типа перечисления для решения](./determine-your-listing-type.md)  
-#### [Как стать издателем в онлайн-магазинах в Marketplace](./become-publisher.md)  
-#### [Требования по типам перечислений](./listing-type-requirements.md)  
+#### [Как стать издателем в Microsoft Azure Marketplace](./become-publisher.md)  
+#### [Требования по типам перечислений](./listing-type-requirements.md) 
+#### Контрольный список для проверки бизнеса  
+##### [Рекомендации](./guidelines.md)  
+##### [Регистрация в центре разработчиков](./register-dev-center.md)  
+##### [Добавление налоговых и банковских сведений](./add-bank-tax-info.md)  
+##### [Включение пробной версии с помощью Azure AD](./enable-trial-using-azure-ad.md)  
+##### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
 
-### Публикация контрольных списков  
-#### [Публикация контрольных списков для AppSource](./publishing-checklist-appsource.md)  
-#### [Публикация контрольных списков для Azure Marketplace](./publishing-checklist-azure-marketplace.md)  
+### Руководство по публикации разных типов предложений 
+#### [Виртуальные машины](./marketplace-virtual-machines.md)
+#### [Приложения Azure. Шаблоны решений](./marketplace-solution-templates.md)
+#### [Приложения Azure. Управляемые приложения](./marketplace-managed-apps.md)
+#### [Руководство по публикации приложения SaaS](./marketplace-saas-applications-technical-publishing-guide.md) 
+#### [Контейнеры](./marketplace-containers.md)
+#### [Консультационная услуга](./consulting-services.md)  
+#### [Приложения AppSource](./appsource-offer-publishing-guide.md)
+
+### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
+#### [Предпочтительные решения](./preferred-solutions.md) 
 
 ### Поддержка  
-#### [Поддержка AppSource](./support-appsource.md)  
-#### [Поддержка Azure Marketplace](./support-azure-marketplace.md)  
-
-### Руководства  
-#### [Консультационные услуги в Azure Marketplace](consulting-services.md)  
-#### [Техническое руководство по публикации SaaS-приложений в Microsoft Azure Marketplace](marketplace-saas-applications-technical-publishing-guide.md) 
-
-### Руководства  
-#### [Рекомендации](./guidelines.md)  
-#### [Регистрация в центре разработчиков](./register-dev-center.md)  
-#### [Добавление налоговых и банковских сведений](./add-bank-tax-info.md)  
-#### [Включение пробной версии с помощью Azure AD](./enable-trial-using-azure-ad.md)  
-#### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
+#### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
 ## [Облачный портал для партнеров](./cloud-partner-portal/cloud-partner-portal-what-is-the-cloud-partner-portal.md)  
 
 ## Ресурсы  
 ### [Стратегия развития Azure](https://azure.microsoft.com/roadmap/)  
 ### [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/)  
+
+
+#### [Публикация контрольных списков для AppSource](./publishing-checklist-appsource.md)  
+#### [Публикация контрольных списков для Azure Marketplace](./publishing-checklist-azure-marketplace.md)  

@@ -1,24 +1,26 @@
 ---
-title: "Использование самостоятельного доступа к приложениям | Документация Майкрософт"
-description: "Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения"
+title: Использование самостоятельного доступа к приложениям | Документация Майкрософт
+description: Включите самостоятельный доступ к приложениям, позволяющий пользователям найти свои приложения
 services: active-directory
-documentationcenter: 
-author: ajamess
+documentationcenter: ''
+author: barbkess
 manager: mtillman
-ms.assetid: 
+ms.assetid: ''
 ms.service: active-directory
+ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
-ms.author: asteen
-ms.reviewer: japere
-ms.openlocfilehash: 760234d0d36bc140e3b441d7326083407de726b0
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.author: barbkess
+ms.reviewer: japere,asteen
+ms.openlocfilehash: 8eb12764cf5df539f61842ba3602c6265c1e2b86
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37441215"
 ---
 # <a name="how-to-use-self-service-application-access"></a>Использование самостоятельного доступа к приложениям
 
@@ -83,4 +85,4 @@ ms.lasthandoff: 02/21/2018
 Эти утверждения поддерживают только отдельные рабочие процессы, то есть если вы зададите несколько утверждающих лиц, отдельное утверждающее лицо может подтвердить доступ к приложению.
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Настройка Azure Active Directory для самостоятельного управления группами](active-directory-accessmanagement-self-service-group-management.md)
+[Настройка Azure Active Directory для самостоятельного управления группами](users-groups-roles/groups-self-service-management.md)

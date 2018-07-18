@@ -1,30 +1,27 @@
 ---
-title: Управление Azure Data Lake Analytics с помощью портала Azure | Документация Майкрософт
-description: Узнайте, как управлять учетными записями аналитики озера данных, источниками данных, пользователями и заданиями.
+title: Управление Azure Data Lake Analytics с помощью портала Azure
+description: В этой статье описано, как с помощью портала Azure управлять учетными записями, источниками данных, пользователями и заданиями Data Lake Analytics.
 services: data-lake-analytics
-documentationcenter: ''
-author: saveenr
-manager: kfile
-editor: cgronlun
-ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
 ms.service: data-lake-analytics
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 12/05/2016
+author: saveenr
 ms.author: saveenr
-ms.openlocfilehash: 99b638279b38ce3b583208ec0b80617f9046a6d7
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+manager: kfile
+editor: jasonwhowell
+ms.assetid: a0e045f1-73d6-427f-868d-7b55c10f811b
+ms.topic: conceptual
+ms.date: 12/05/2016
+ms.openlocfilehash: dcf1a853f00f047a6d8beb8599a5b74c7f8f084d
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32771387"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969517"
 ---
-# <a name="manage-azure-data-lake-analytics-by-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
+# <a name="manage-azure-data-lake-analytics-using-the-azure-portal"></a>Управление Azure Data Lake Analytics с помощью портала Azure
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
-Узнайте, как управлять учетными записями, источниками данных учетной записи, пользователями и заданиями Azure Data Lake Analytics с помощью портала Azure. Для просмотра разделов, посвященных управлению с помощью других инструментов, воспользуйтесь вкладкой вверху страницы.
+В этой статье описано, как управлять учетными записями, источниками данных, пользователями и заданиями Azure Data Lake Analytics с помощью портала Azure.
+
 
 <!-- ################################ -->
 <!-- ################################ -->
@@ -169,4 +166,4 @@ Data Lake Analytics позволяет дополнительно блокиро
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Управление Azure Data Lake Analytics с помощью Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
-* [Управление Azure Data Lake Analytics с использованием политик](https://docs.microsoft.com/en-us/azure/data-lake-analytics/data-lake-analytics-policies)
+* [Управление Azure Data Lake Analytics с использованием политик](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-policies)

@@ -1,25 +1,25 @@
 ---
-title: Отправка пользовательских событий для службы "Сетка событий Azure" по гибридному подключению | Документация Майкрософт
+title: Отправка пользовательских событий для службы "Сетка событий Azure" по гибридному подключению | Документы Майкрософт
 description: Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Гибридное подключение используется для конечной точки.
 services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 05/04/2018
+ms.date: 06/29/2018
 ms.topic: tutorial
 ms.service: event-grid
-ms.openlocfilehash: 31c8dd520079046808b32dad0d338415bed71c58
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: ee504f805c536ba9a6186514206546c3df1f0f1a
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302983"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127719"
 ---
 # <a name="route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
 "Сетка событий Azure" — это служба обработки событий для облака. Гибридные подключения Azure Relay — один из поддерживаемых обработчиков событий. Гибридные подключения используются как обработчик событий, когда требуется обработать события из приложения, для которого не предусмотрена общедоступная конечная точка. Эти приложения могут находиться в корпоративной сети организации. В этой статье используется интерфейс командной строки Azure, чтобы создать пользовательскую тему, подписаться на тему и активировать событие, чтобы увидеть результат. События отправляются по гибридному подключению.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже есть гибридное подключение и приложение-прослушиватель. Чтобы приступить к работе с гибридными подключениями, см. статью [Приступая к работе с гибридными подключениями к ретранслятору](../service-bus-relay/relay-hybrid-connections-dotnet-get-started.md) (.NET) или [Приступая к работе с гибридными подключениями к ретранслятору](../service-bus-relay/relay-hybrid-connections-node-get-started.md) (Node).
 
@@ -73,9 +73,25 @@ az eventgrid event-subscription create \
   --endpoint $hybridid
 ```
 
+## <a name="create-application-to-process-events"></a>Создание приложения для обработки событий
+
+Вам нужно приложение, которое может получать события из гибридного подключения. Эту операцию выполняет [пример потребителя гибридного подключения сетки событий Microsoft Azure для C#](https://github.com/Azure-Samples/event-grid-dotnet-hybridconnection-destination). Вы уже выполнили необходимые действия.
+
+1. Убедитесь в том, что установлена версия Visual Studio 2017 15.5 или более поздняя.
+
+1. Клонируйте репозиторий на локальный компьютер.
+
+1. Загрузите проект HybridConnectionConsumer в Visual Studio.
+
+1. Откройте файл Program.cs, замените `<relayConnectionString>` и `<hybridConnectionName>` на строку релейного соединения и имя созданного гибридного подключения.
+
+1. Скомпилируйте и запустите приложение в Visual Studio.
+
 ## <a name="send-an-event-to-your-topic"></a>Отправка события в тему
 
-Давайте активируем событие, чтобы увидеть, как сообщение отправляется в конечную точку при помощи службы "Сетка событий". Сначала получите URL-адрес и ключ для пользовательского раздела. Еще раз используйте имя раздела для `<topic_name>`.
+Давайте активируем событие, чтобы увидеть, как сообщение отправляется в конечную точку при помощи службы "Сетка событий". В этой статье показано, как запустить событие с помощью Azure CLI. Кроме того, можно использовать [приложение издателя "Сетка событий"](https://github.com/Azure-Samples/event-grid-dotnet-publish-consume-events/tree/master/EventGridPublisher).
+
+Сначала получите URL-адрес и ключ для пользовательского раздела. Еще раз используйте имя раздела для `<topic_name>`.
 
 ```azurecli-interactive
 endpoint=$(az eventgrid topic show --name <topic_name> -g gridResourceGroup --query "endpoint" --output tsv)
@@ -98,7 +114,7 @@ curl -X POST -H "aeg-sas-key: $key" -d "$body" $endpoint
 az group delete --name gridResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать темы и подписки на события, ознакомьтесь с дополнительными сведениями о сетке событий, которые могут помочь вам:
 

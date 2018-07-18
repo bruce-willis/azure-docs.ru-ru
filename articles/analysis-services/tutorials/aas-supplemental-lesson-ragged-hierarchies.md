@@ -3,16 +3,17 @@ title: 'Дополнительное занятие для учебника по
 description: Описывает исправление неоднородных иерархий в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 955bc57bbf5f8bc3f0d91350f885d5dc77db93a8
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 9fdf332727c4d66af2d5394fb26e84f6ea9d963f
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37440771"
 ---
 # <a name="supplemental-lesson---ragged-hierarchies"></a>Дополнительное занятие. Неоднородные иерархии
 

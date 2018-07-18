@@ -16,11 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 5754a537b8a0bf0a93d6d54ba0ba78e5957ac87f
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 7bdc692104194bff4a25e6974ba72971af543cbf
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38698166"
 ---
 # <a name="tutorial-push-notifications-to-chrome-apps-with-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в приложения Chrome с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -28,7 +29,7 @@ ms.lasthandoff: 05/07/2018
 В этом руководстве показано пошаговое создание центра уведомлений и отправка push-уведомлений в пример приложения Google Chrome путем использования [Google Cloud Messaging (GCM)](https://developers.google.com/cloud-messaging/). Приложение Chrome выполняется в контексте браузера Google Chrome и регистрируется в центре уведомлений. 
 
 > [!NOTE]
-> push-уведомления приложения Chrome не поддерживаются во всех браузерах. Они поддерживаются в браузерах с конкретной моделью расширения (дополнительные сведения см. в статье [Обзор приложений Chrome]). Помимо классического браузера, приложения Chrome также могут работать на мобильных устройствах (с ОС Android и iOS) с помощью Apache Cordova. Дополнительные сведения см. в статье [Run Chrome Apps on Mobile Using Apache Cordova] (Запуск приложений Chrome на мобильном устройстве с помощью Apache Cordova).
+> push-уведомления приложения Chrome не поддерживаются во всех браузерах. Они поддерживаются в браузерах с конкретной моделью расширения (дополнительные сведения см. в статье [Обзор приложений Chrome]). Помимо классического браузера, приложения Chrome также могут работать на мобильных устройствах (с ОС Android и iOS) с помощью Apache Cordova. Дополнительные сведения см. в статье [Приложения Chrome на мобильных устройствах] (Запуск приложений Chrome на мобильном устройстве с помощью Apache Cordova).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -85,7 +86,7 @@ ms.lasthandoff: 05/07/2018
 Теперь центр уведомлений настроен для работы с GCM, а у вас есть строки подключения, с помощью которых вы можете зарегистрировать приложение для получения и отправки push-уведомлений.
 
 ### <a name="create-a-new-chrome-app"></a>Создание нового приложения Chrome
-Следующий пример основан на [образце использования службы GCM для приложения Chrome]. В нем приведен рекомендуемый способ создания приложения Chrome. В этом разделе описаны шаги, необходимые для работы с Центрами уведомлений Azure. 
+Следующий пример основан на [Образец использования службы GCM для приложения Chrome]. В нем приведен рекомендуемый способ создания приложения Chrome. В этом разделе описаны шаги, необходимые для работы с Центрами уведомлений Azure. 
 
 > [!NOTE]
 > Мы рекомендуем скачать источник для этого приложения Chrome со страницы [Образец использования концентратора уведомлений с приложением Chrome]. 
@@ -363,7 +364,7 @@ ms.lasthandoff: 05/07/2018
    * **registerWithNH** — это обработчик нажатия второй кнопки, который выполняет регистрацию в Центрах уведомлений. Он получает значения `hubName` и `connectionString` (которые указал пользователь) и вызывает REST API для регистрации в Центре уведомлений.
    * **splitConnectionString** и **generateSaSToken** — это вспомогательные приложения для создания маркера SaS с помощью JavaScript. Этот маркер должен использоваться при каждом вызове REST API. Дополнительные сведения см. в статье [Common Concepts](http://msdn.microsoft.com/library/dn495627.aspx) (Основные понятия).
    * **sendNHRegistrationRequest** — это функция, вызывающая HTTP REST в Центрах уведомлений Azure.
-   * **registrationPayload** определяет полезные XML-данные регистрации. Дополнительные сведения см. в статье [Create Registration NH REST API]. (Создание REST API Центра уведомлений для регистрации). Обновите идентификатор регистрации, используя полученное из GCM значение.
+   * **registrationPayload** определяет полезные XML-данные регистрации. Дополнительные сведения см. в статье [Создание REST API Центра уведомлений для регистрации]. (Создание REST API Центра уведомлений для регистрации). Обновите идентификатор регистрации, используя полученное из GCM значение.
    * **client** — это экземпляр **XMLHttpRequest**, используемый приложением для выполнения запроса HTTP POST. Обновите заголовок `Authorization` с помощью `sasToken`. Если этот вызов выполнен успешно, экземпляр приложения Chrome будет зарегистрирован в центре уведомлений Azure.
 
         Общая структура папок для этого проекта должна выглядеть следующим образом: ![Приложение Google Chrome — структура папок][21]
@@ -399,7 +400,7 @@ ms.lasthandoff: 05/07/2018
    
         Install-Package Microsoft.Azure.NotificationHubs
    
-   Ссылка на пакет SDK служебной шины Azure с <a href="http://nuget.org/packages/  WindowsAzure.ServiceBus/">пакетом NuGet WindowsAzure.ServiceBus автоматически добавляется в проект</a>.
+   Ссылка на пакет SDK служебной шины Azure с <a href="http://nuget.org/packages/WindowsAzure.ServiceBus/">пакетом NuGet WindowsAzure.ServiceBus автоматически добавляется в проект</a>.
 4. Откройте файл `Program.cs` и добавьте следующую инструкцию `using`:
    
         using Microsoft.Azure.NotificationHubs;
@@ -464,10 +465,10 @@ ms.lasthandoff: 05/07/2018
 [Образец использования концентратора уведомлений с приложением Chrome]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToChromeApps
 [Notification Hubs Overview]: notification-hubs-push-notification-overview.md
 [Обзор приложений Chrome]: https://developer.chrome.com/apps/about_apps
-[образце использования службы GCM для приложения Chrome]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
+[Образец использования службы GCM для приложения Chrome]: https://github.com/GoogleChrome/chrome-app-samples/tree/master/samples/gcm-notifications
 [Installable Web Apps]: https://developers.google.com/chrome/apps/docs/
-[Run Chrome Apps on Mobile Using Apache Cordova]: https://developer.chrome.com/apps/chrome_apps_on_mobile
-[Create Registration NH REST API]: http://msdn.microsoft.com/library/azure/dn223265.aspx
+[Приложения Chrome на мобильных устройствах]: https://developer.chrome.com/apps/chrome_apps_on_mobile
+[Создание REST API Центра уведомлений для регистрации]: http://msdn.microsoft.com/library/azure/dn223265.aspx
 [библиотеку crypto-js]: http://code.google.com/p/crypto-js/
 [GCM with Chrome Apps]: https://developer.chrome.com/apps/cloudMessaging
 [Google Cloud Messaging for Chrome]: https://developer.chrome.com/apps/cloudMessagingV1

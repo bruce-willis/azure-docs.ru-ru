@@ -12,17 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 10/12/2017
+ms.date: 06/03/2018
 ms.author: glenga
-ms.openlocfilehash: 523ef25fe0d3227d526acbdee2c7cf2660fc4f25
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 5613b6b30d97b88bdfa6b00f90e334f1756ad614
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35294504"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
-Хотя на [портале Azure] имеется полный набор средств для разработки и тестирования Функций Azure, многие разработчики предпочитают локальную среду разработки. Функции Azure позволяют легко использовать любой редактор кода и локальные средства разработки для разработки и тестирования функций на локальном компьютере. Функции могут вызывать события в Azure, а вы можете отлаживать функции C# и JavaScript на локальном компьютере. 
+Хотя на [портал Azure] имеется полный набор средств для разработки и тестирования Функций Azure, многие разработчики предпочитают локальную среду разработки. Функции Azure позволяют легко использовать любой редактор кода и локальные средства разработки для разработки и тестирования функций на локальном компьютере. Функции могут вызывать события в Azure, а вы можете отлаживать функции C# и JavaScript на локальном компьютере. 
 
 Если вы используете Visual Studio C# для разработки, Функции Azure также [интегрируются с Visual Studio 2017](functions-develop-vs.md).
 
@@ -63,9 +64,9 @@ npm install -g azure-functions-core-tools
 
 3. Установите пакет основных инструментов:
 
-  ```bash
-  npm install -g azure-functions-core-tools@core
-  ```
+    ```bash
+    npm install -g azure-functions-core-tools@core
+    ```
 
 #### <a name="brew"></a>MacOS с Homebrew
 
@@ -73,9 +74,9 @@ npm install -g azure-functions-core-tools
 
 1. Установите [.NET Core 2.0 для macOS](https://www.microsoft.com/net/download/macos).
 
-1. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
+2. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
 
-2. Установите пакет основных инструментов:
+3. Установите пакет основных инструментов:
 
     ```bash
     brew tap azure/functions
@@ -88,42 +89,43 @@ npm install -g azure-functions-core-tools
 
 1. Установите [.NET Core 2.0 для Linux](https://www.microsoft.com/net/download/linux).
 
-1. Зарегистрируйте ключ продукта Майкрософт как доверенный:
+2. Зарегистрируйте ключ продукта Майкрософт как доверенный:
 
-  ```bash
-  curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-  sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-  ```
+    ```bash
+    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+    sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+    ```
 
-2.  Настройте веб-канал пакета, заменив `<version>` в команде ниже на соответствующее имя версии из таблицы:
+3. Убедитесь, что на сервере используется одна из соответствующих версий Ubuntu, указанных в таблице ниже. Чтобы добавить источник apt, выполните команду:
 
-  ```bash
-  sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-<version>-prod <version> main" > /etc/apt/sources.list.d/dotnetdev.list'
-  sudo apt-get update
-  ```
+    ```bash
+    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
+    sudo apt-get update
+    ```
 
-  | Дистрибутив Linux | `<version>` |
-  | --------------- | ----------- |
-  | Ubuntu 17.10    | `artful`    |
-  | Ubuntu 17.04    | `zesty`     |
-  | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
+    | Дистрибутив Linux | Version (версия) |
+    | --------------- | ----------- |
+    | Ubuntu 17.10    | `artful`    |
+    | Ubuntu 17.04    | `zesty`     |
+    | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
 
-3. Установите пакет основных инструментов:
+4. Установите пакет основных инструментов:
 
-  ```bash
-  sudo apt-get install azure-functions-core-tools
-  ```
+    ```bash
+    sudo apt-get install azure-functions-core-tools
+    ```
 
 ## <a name="run-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
- 
+
 Основные инструменты службы "Функции Azure" добавляют следующие псевдонимы команд:
-* **func**
-* **azfun**
-* **azurefunctions**
+
++ **func**
++ **azfun**
++ **azurefunctions**
 
 Любой из этих псевдонимов можно использовать вместо команды `func`, показанной в примерах.
 
-```
+```bash
 func init MyFunctionProj
 ```
 
@@ -133,13 +135,13 @@ func init MyFunctionProj
 
 В окне терминала или из командной строки выполните следующую команду, чтобы создать проект и локальный репозиторий Git:
 
-```
+```bash
 func init MyFunctionProj
 ```
 
 Выходные данные выглядят так:
 
-```
+```output
 Writing .gitignore
 Writing host.json
 Writing local.settings.json
@@ -151,7 +153,7 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 
 ## <a name="register-extensions"></a>Регистрация расширений
 
-В версии 2.х среды выполнения решения "Функции Azure" нужно явно зарегистрировать [расширения привязки](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/dev/README.md), используемые в приложении-функции. 
+В версии 2.х среды выполнения "Функции Azure" нужно явно зарегистрировать расширения привязки (типы привязки), используемые в приложении-функции.
 
 [!INCLUDE [Register extensions](../../includes/functions-core-tools-install-extension.md)]
 
@@ -165,8 +167,9 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 {
   "IsEncrypted": false,   
   "Values": {
-    "AzureWebJobsStorage": "<connection string>", 
-    "AzureWebJobsDashboard": "<connection string>" 
+    "AzureWebJobsStorage": "<connection-string>", 
+    "AzureWebJobsDashboard": "<connection-string>",
+    "MyBindingConnection": "<binding-connection-string>"
   },
   "Host": {
     "LocalHttpPort": 7071, 
@@ -177,16 +180,17 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
   }
 }
 ```
+
 | Параметр      | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **IsEncrypted** | Если задано значение **true**, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. Значение по умолчанию — **false**. |
-| **Значения** | Коллекция параметров приложения, используемых при локальном выполнении. **AzureWebJobsStorage** и **AzureWebJobsDashboard** являются примерами. Полный список см. в разделе [Справочник по параметрам приложения](functions-app-settings.md). Многие триггеры и привязки имеют свойство, относящееся к параметру приложения, например **Connection** для триггера хранилища BLOB-объектов. Для таких свойств требуется параметр приложения, определенный в массиве **Values**. Это также относится к любому свойству привязки, которое вы задали для имени параметра приложения, поместив значение между знаками процента, например `%AppSettingName%`. |
-| **Host** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. | 
+| **Значения** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Такие настройки, как **AzureWebJobsStorage** и **AzureWebJobsDashboard**, соответствуют параметрам приложения в вашем приложении-функции Azure. Многие триггеры и привязки имеют свойство, относящееся к строке подключения параметра приложения, например **Connection** для [триггера хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в массиве **Values**. <br/>**AzureWebJobsStorage** — это необходимый параметр приложения для триггеров, отличных от HTTP. При наличии [эмулятора хранилища Azure](../storage/common/storage-use-emulator.md), установленного локально, можно задать **AzureWebJobsStorage** для использования эмулятора `UseDevelopmentStorage=true` и Core Tools. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
+| **Host** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
 | **LocalHttpPort** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
 | **CORS** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
-| **ConnectionStrings** | Содержит строки подключения к базе данных для функций. Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика **System.Data.SqlClient**.  | 
+| **ConnectionStrings** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только с платформ, которые получают строки подключения из раздела файла конфигурации **ConnectionStrings**, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения в подраздел **Строки подключения** раздела **Параметры приложения** приложения-функции. |
 
-Эти параметры также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
+Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
 + [Предкомпилированный код C#](functions-dotnet-class-library.md#environment-variables)
 + [Скрипт C# (CSX)](functions-reference-csharp.md#environment-variables)
@@ -194,26 +198,37 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 + [Java](functions-reference-java.md#environment-variables) 
 + [JavaScript](functions-reference-node.md#environment-variables)
 
-Параметры в файле local.settings.json используются инструментами Функций только при выполнении в локальной среде. По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. [При публикации](#publish) используйте параметр `--publish-local-settings`, чтобы добавить эти параметры в приложение-функцию в Azure.
+Параметры в файле local.settings.json используются инструментами Функций только при выполнении в локальной среде. По умолчанию эти параметры не переносятся автоматически при публикации проекта в Azure. [При публикации](#publish) используйте параметр `--publish-local-settings`, чтобы добавить эти параметры в приложение-функцию в Azure. Значения **ConnectionStrings** никогда не публикуются.
 
-Если для **AzureWebJobsStorage** не задана допустимая строка подключения к хранилищу, выводится следующее сообщение об ошибке:  
+Если для **AzureWebJobsStorage** не задана допустимая строка подключения к хранилищу и не используется эмулятор, выводится следующее сообщение об ошибке:  
 
 >Отсутствует значение AzureWebJobsStorage в local.settings.json. This is required for all triggers other than HTTP. You can run 'func azure functionapp fetch-app-settings <functionAppName>' or specify a connection string in local.settings.json (Отсутствует значение AzureWebJobsStorage в local.settings.json. Оно требуется для всех триггеров, отличных от HTTP. Выполните команду func azure functionapp fetch-app-settings или укажите строку подключения в файле local.settings.json).
-  
-[!INCLUDE [Note to not use local storage](../../includes/functions-local-settings-note.md)]
 
-### <a name="configure-app-settings"></a>Настройка параметров приложения
+### <a name="get-your-storage-connection-strings"></a>Получение параметров строк подключения службы хранилища
 
-Чтобы задать значение для строки подключения, выполните одно из следующих действий:
-* Введите строку подключения из [обозревателя хранилищ Azure](http://storageexplorer.com/).
-* Используйте одну из следующих команд:
+Даже при использовании эмулятора хранилища для разработки приложений можно проверить подключение к фактическому хранилищу. При условии, что ваша [учетная запись хранения создана](../storage/common/storage-create-storage-account.md), действительную строку подключения к хранилищу можно получить одним из следующих способов:
 
-    ```
++ [портал Azure]. Перейдите к учетной записи хранения, выберите **Ключи доступа** в разделе **Параметры**, а затем скопируйте одно из значений **Строка подключения**.
+
+  ![Копирование строки подключения с портала Microsoft Azure](./media/functions-run-local/copy-storage-connection-portal.png)
+
++ Подключитесь к учетной записи Azure с помощью [Обозревателя службы хранилища Azure](http://storageexplorer.com/). В **Explorer** разверните свою подписку, выберите учетную запись хранения и скопируйте основную или вторичную строку подключения. 
+
+  ![Скопируйте строку подключения из Обозревателя службы хранилища](./media/functions-run-local/storage-explorer.png)
+
++ Используйте Core Tools для загрузки строки подключения из Azure при помощи одной из следующих команд:
+
+    + Загрузите все параметры из существующего приложения-функции:
+
+    ```bash
     func azure functionapp fetch-app-settings <FunctionAppName>
     ```
-    ```
+    + Получите строку подключения для указанной учетной записи хранения:
+
+    ```bash
     func azure storage fetch-connection-string <StorageAccountName>
     ```
+    
     Обе команды требуют сначала выполнить вход в Azure.
 
 <a name="create-func"></a>
@@ -221,7 +236,7 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 
 Чтобы создать функцию, выполните следующую команду:
 
-```
+```bash
 func new
 ``` 
 `func new` имеет указанные ниже необязательные аргументы.
@@ -234,21 +249,21 @@ func new
 
 Например, чтобы создать триггер HTTP на JavaScript, выполните следующую команду:
 
-```
+```bash
 func new --language JavaScript --template "Http Trigger" --name MyHttpTrigger
 ```
 
 Чтобы создать функцию, активируемую с помощью очереди, выполните следующую команду:
 
-```
+```bash
 func new --language JavaScript --template "Queue Trigger" --name QueueTriggerJS
-```
+```bash
 <a name="start"></a>
-## <a name="run-functions-locally"></a>Запуск функций в локальной среде
+## Run functions locally
 
-Чтобы запустить проект службы "Функции", запустите узел этой службы. Узел включает триггеры для всех функций в проекте.
+To run a Functions project, run the Functions host. The host enables triggers for all functions in the project:
 
-```
+```bash
 func host start
 ```
 
@@ -267,7 +282,7 @@ func host start
 
 При запуске узла службы "Функции" выводится URL-адрес функций, активируемых по HTTP:
 
-```
+```bash
 Found the following functions:
 Host.Functions.MyHttpTrigger
 
@@ -275,7 +290,7 @@ Job host started
 Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 ```
 
-### <a name="debug-in-vs-code-or-visual-studio"></a>Отладка в VS Code или Visual Studio
+### <a name="vs-debug"></a>Отладка в VS Code или Visual Studio
 
 Чтобы подключить отладчик, передайте аргумент `--debug`. Для отладки функций на JavaScript используйте код Visual Studio. Для функций на C# используйте Visual Studio.
 
@@ -283,7 +298,7 @@ Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 
 Для запуска узла и настройки отладки JavaScript выполните следующую команду:
 
-```
+```bash
 func host start --debug vscode
 ```
 
@@ -313,12 +328,12 @@ func host start --debug vscode
 
 Следующая команда cURL активирует функцию быстрого запуска `MyHttpTrigger` из запроса GET с параметром _name_, который передается в строке запроса. 
 
-```
+```bash
 curl --get http://localhost:7071/api/MyHttpTrigger?name=Azure%20Rocks
 ```
 В следующем примере представлена та же функция, вызываемая из запроса POST с передачей параметра _name_ в тексте запроса:
 
-```
+```bash
 curl --request POST http://localhost:7071/api/MyHttpTrigger --data '{"name":"Azure Rocks"}'
 ```
 
@@ -340,7 +355,7 @@ curl --request POST http://localhost:7071/api/MyHttpTrigger --data '{"name":"Azu
 ```` 
 Значение `<trigger_input>` содержит данные в формате, ожидаемом функцией. В следующем примере представлен запрос POST к функции `QueueTriggerJS`. В этом случае входные данные представляют собой строку, соответствующую сообщению, которое нужно найти в очереди.      
 
-```
+```bash
 curl --request POST -H "Content-Type:application/json" --data '{"input":"sample queue data"}' http://localhost:7071/admin/functions/QueueTriggerJS
 ```
 
@@ -363,7 +378,7 @@ curl --request POST -H "Content-Type:application/json" --data '{"input":"sample 
 
 Например, для вызова функции, активируемой по HTTP, и передачи основного содержимого выполните следующую команду:
 
-```
+```bash
 func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 ```
 
@@ -375,7 +390,7 @@ func run MyHttpTrigger -c '{\"name\": \"Azure\"}'
 
 Чтобы опубликовать проект функций для приложения-функции в Azure, используйте команду `publish`:
 
-```
+```bash
 func azure functionapp publish <FunctionAppName>
 ```
 
@@ -383,12 +398,12 @@ func azure functionapp publish <FunctionAppName>
 
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
-| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует.|
+| **`--publish-local-settings -i`** |  Публикация параметров из файла local.settings.json в Azure с запросом на перезапись, если параметр уже существует. Если используется эмулятор хранилища, измените параметр приложения на [подключение действующего хранилища](#get-your-storage-connection-strings). |
 | **`--overwrite-settings -y`** | Должен использоваться с `-i`. При другом значении перезаписывает локальное значение AppSettings в Azure. Значение по умолчанию — запрос.|
 
 Эта команда публикует в существующее приложение-функцию в Azure. Если в подписке не существует `<FunctionAppName>`, то возникает ошибка. Чтобы узнать, как создать приложение-функцию из командной строки или из окна терминала, используя Azure CLI, см. статью [Создание приложения-функции для выполнения без сервера](./scripts/functions-cli-create-serverless.md).
 
-Команда `publish` отправляет содержимое в каталог проекта функций. При удалении файлов в локальной среде команда `publish` не удаляет их из Azure. Удалить файлы в Azure можно с помощью [средства Kudu](functions-how-to-use-azure-function-app-settings.md#kudu) на [портале Azure].  
+Команда `publish` отправляет содержимое в каталог проекта функций. При удалении файлов в локальной среде команда `publish` не удаляет их из Azure. Удалить файлы в Azure можно с помощью [средства Kudu](functions-how-to-use-azure-function-app-settings.md#kudu) на [портал Azure].  
 
 >[!IMPORTANT]  
 > При создании приложения-функции в Azure по умолчанию используется версия 1.x среды выполнения Функций. Чтобы заставить приложение-функцию использовать версию 2.x среды выполнения, добавьте параметр приложения `FUNCTIONS_EXTENSION_VERSION=beta`.  
@@ -407,5 +422,5 @@ az functionapp config appsettings set --name <function_app> \
 <!-- LINKS -->
 
 [Основные инструменты службы "Функции Azure"]: https://www.npmjs.com/package/azure-functions-core-tools
-[портале Azure]: https://portal.azure.com 
+[портал Azure]: https://portal.azure.com 
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows

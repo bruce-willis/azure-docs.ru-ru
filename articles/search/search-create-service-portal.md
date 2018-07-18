@@ -6,13 +6,14 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 11/07/2017
+ms.date: 07/09/2018
 ms.author: heidist
-ms.openlocfilehash: 1837fc6511ac734766c55bd1c2a2a7a40219c31a
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 0c7f9807605236a8250d75623d0885730c9945a0
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37950688"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
 
@@ -28,8 +29,8 @@ ms.lasthandoff: 04/23/2018
 
 ## <a name="find-azure-search"></a>Как найти Поиск Azure
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Щелкните знак "плюс" ("+") в верхнем левом углу.
-3. Выберите **Интернет + мобильные устройства** > **Поиск Azure**.
+2. Щелкните знак плюса ("+Создать ресурс") в левом верхнем углу.
+3. Выберите **Интернет** > **Поиск Azure**.
 
 ![](./media/search-create-service-portal/find-search3.png)
 
@@ -76,12 +77,14 @@ ms.lasthandoff: 04/23/2018
 
 ***Реплики*** дают службе возможность справляться с повышенной нагрузкой запросов поиска.
 
+Добавление ресурсов увеличивает ваш ежемесячный счет. [Калькулятор цен](https://azure.microsoft.com/pricing/calculator/) поможет вам понять, как выставляются счета при добавлении ресурсов. Помните, что вы можете выбирать число ресурсов на основе нагрузки. Например, вы можете сначала увеличить число ресурсов для создания полного начального индекса, а затем уменьшить его до уровня, который больше подходит для добавочного индексирования.
+
 > [!Important]
 > У службы должно быть [2 реплики для выполнения соглашения об уровне обслуживания только для чтения и 3 реплики для выполнения соглашения об уровне обслуживания чтения и записи](https://azure.microsoft.com/support/legal/sla/search/v1_0/).
 
 1. Перейдите к странице своей службы поиска на портале Azure.
 2. В области навигации слева щелкните **Параметры** > **Масштаб**.
-3. Используйте ползунок, чтобы добавить реплики или секции.
+3. Используйте ползунок, чтобы добавить ресурсы любого типа.
 
 ![](./media/search-create-service-portal/settings-scale.png)
 

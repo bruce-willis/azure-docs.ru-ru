@@ -1,25 +1,26 @@
 ---
-title: "Оптимизация среды System Center Operations Manager с помощью Azure Log Analytics | Документация Майкрософт"
-description: "Использование проверки работоспособности System Center Operations Manager для оценки риска и состояния сред на регулярной основе."
+title: Оптимизация среды System Center Operations Manager с помощью Azure Log Analytics | Документация Майкрософт
+description: Использование проверки работоспособности System Center Operations Manager для оценки риска и состояния сред на регулярной основе.
 services: log-analytics
-documentationcenter: 
-author: MGoedtel
+documentationcenter: ''
+author: mgoedtel
 manager: carmonm
 editor: tysonn
 ms.assetid: 49aad8b1-3e05-4588-956c-6fdd7715cda1
 ms.service: log-analytics
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/27/2017
+ms.date: 06/25/2018
 ms.author: magoedte
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 86484ca2bc7dc14035f48b8f7b1514a4fc471b74
-ms.sourcegitcommit: b32d6948033e7f85e3362e13347a664c0aaa04c1
+ms.component: na
+ms.openlocfilehash: bdf56a85c43513f573c02e3b28cd93f28217814b
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37128968"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -211,14 +212,14 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 ## <a name="use-health-check-focus-area-recommendations"></a>Рекомендации по использованию приоритетной области проверки работоспособности
 
-Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Дополнительные сведения об установке решений см. в статье [Добавление решений Log Analytics из коллекции решений](log-analytics-add-solutions.md). После установки пакета аналитики можно просматривать сводку рекомендаций с помощью плитки проверки работоспособности System Center Operations Manager на странице "Обзор" портала OMS.
+Чтобы использовать решение для проверки работоспособности в Log Analytics, его необходимо установить. Дополнительные сведения об установке решений см. в разделе [Установка решения по управлению](log-analytics-add-solutions.md). После установки можно просматривать сводку рекомендаций с помощью плитки проверки работоспособности System Center Operations Manager на странице **Обзор** в рабочей области на портале Azure.
 
 Вы можете посматривать сводку оценок соответствия для инфраструктуры, а затем глубже изучить рекомендации.
 
 ### <a name="to-view-recommendations-for-a-focus-area-and-take-corrective-action"></a>Просмотр рекомендаций для приоритетной области и выполнение действий по исправлению
 1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. На портале Azure щелкните **Другие службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
-3. В области подписок Log Analytics выберите рабочую область, а затем выберите плитку **Портал OMS**.  
+3. В области подписок Log Analytics выберите рабочую область, а затем пункт меню **Обзор рабочей области**.  
 4. На странице **Обзор** щелкните плитку **Проверка работоспособности System Center Operations Manager**.
 5. На странице **Проверка работоспособности System Center Operations Manager** просмотрите сводные данные в одной из колонок приоритетной области, а затем щелкните одну из колонок, чтобы просмотреть рекомендации для соответствующей области.
 6. На всех страницах интересующей области можно просматривать приоритетные рекомендации для вашей среды. Щелкните рекомендацию в разделе **Затронутые объекты** , чтобы просмотреть сведения о причинах возникновения этой рекомендации.<br><br> ![Приоритетная область](./media/log-analytics-scom-assessment/log-analytics-scom-healthcheck-dashboard-02.png)<br>
@@ -231,7 +232,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 [!INCLUDE[log-analytics-log-search-nextgeneration](../../includes/log-analytics-log-search-nextgeneration.md)]
 
 ### <a name="to-identify-recommendations-that-you-want-to-ignore"></a>Указание рекомендаций, которые нужно игнорировать
-1. На портале Azure на странице Log Analytics для выбранной рабочей области щелкните плитку **Поиск по журналу**.
+1. На портале Azure на странице Log Analytics для выбранной рабочей области щелкните пункт меню **Поиск по журналам**.
 2. Выполните следующий запрос, чтобы получить список рекомендаций, не выполненных на компьютерах в вашей среде.
 
     ```

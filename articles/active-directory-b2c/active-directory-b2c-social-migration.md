@@ -1,21 +1,21 @@
 ---
-title: Azure Active Directory B2C. Перемещение пользователей с удостоверениями социальных сетей
+title: Перемещение пользователей с удостоверениями социальных сетей в Azure Active Directory B2C | Документация Майкрософт
 description: В этой статье рассматриваются основные понятия перемещения пользователей с удостоверениями социальных сетей в Azure Active Directory B2C с помощью API Graph.
 services: active-directory-b2c
-documentationcenter: ''
-author: davidmu
+author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/03/2018
 ms.author: davidmu
-ms.openlocfilehash: a150d8255171c83334ac4c1f81cbcee39c1df70a
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: B2C
+ms.openlocfilehash: b9378face28b4d053dcd5f01b8f87126457cf339
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445149"
 ---
 # <a name="azure-active-directory-b2c-migrate-users-with-social-identities"></a>Azure Active Directory B2C. Перемещение пользователей с удостоверениями социальных сетей
 При планировании миграции поставщика удостоверений в Azure Active Directory B2C также может потребоваться перенести пользователей с удостоверениями социальных сетей. В этой статье объясняется, как переносить в Azure AD B2C имеющиеся учетные записи с удостоверениями социальных сетей, такие как Facebook, LinkedIn, Майкрософт, и учетные записи Google. Приведенные здесь сведения также применимы к федеративным удостоверениям, однако такие миграции менее распространены.
@@ -137,7 +137,7 @@ ms.lasthandoff: 04/28/2018
 ### <a name="how-can-i-know-the-issuer-name"></a>Как узнать имя издателя?
 Имя издателя или имя поставщика удостоверений настроено в вашей политике. Если вы не знаете значение, которое нужно указать в `issuer`, выполните следующую процедуру.
 1. Войдите в одну из учетных записей социальных сетей.
-2. Из маркера JWT скопируйте значение `sub`. Оно обычно содержит идентификатор объекта пользователя в Azure AD B2C. Кроме того, можно открыть свойства пользователя на портале Azure и скопировать идентификатор объекта.
+2. Из маркера JWT скопируйте значение `sub`. Оно`sub` обычно содержит идентификатор объекта пользователя в Azure AD B2C. Кроме того, можно открыть свойства пользователя на портале Azure и скопировать идентификатор объекта.
 3. Откройте [обозреватель Azure AD Graph](https://graphexplorer.azurewebsites.net).
 4. Войдите в систему с правами администратора. Нет
 5. Выполните следующий запрос GET. Замените значение userObjectId скопированным идентификатором пользователя. **GET** https://graph.windows.net/tenant-name.onmicrosoft.com/users/userObjectId

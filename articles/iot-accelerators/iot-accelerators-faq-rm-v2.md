@@ -1,25 +1,19 @@
 ---
 title: Вопросы и ответы об акселераторе решения для удаленного мониторинга | Документация Майкрософт
 description: Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
-services: iot-suite
-suite: iot-suite
-documentationcenter: ''
 author: dominicbetts
 manager: timlt
-editor: ''
-ms.assetid: cb537749-a8a1-4e53-b3bf-f1b64a38188a
-ms.service: iot-suite
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
+ms.service: iot-accelerators
+services: iot-accelerators
+ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: a65f2a90aedf5aa50016a6c5e5019094f202bf55
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 094bb4b781bb554d340580377ec343f33579299e
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34627660"
 ---
 # <a name="frequently-asked-questions-for-remote-monitoring-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения для удаленного мониторинга
 
@@ -48,7 +42,7 @@ ms.lasthandoff: 05/20/2018
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Общие сведения о возможностях акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
-* [Общие сведения об акселераторе решений для диагностического обслуживания](../iot-suite/iot-suite-predictive-overview.md)
+* [Обзор возможностей акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
+* [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
 * [Общие сведения об акселераторе решений для подключенной фабрики](iot-accelerators-connected-factory-overview.md)
-* [Комплексная защита в Интернете вещей](../iot-suite/securing-iot-ground-up.md)
+* [Комплексная защита в Интернете вещей](securing-iot-ground-up.md)

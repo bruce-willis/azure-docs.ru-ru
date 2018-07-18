@@ -1,21 +1,21 @@
 ---
-title: "Использование устройств Azure IoT Edge в качестве шлюзов | Документация Майкрософт"
-description: "Используйте Azure IoT Edge для создания прозрачного, непрозрачного устройства шлюза или устройства шлюза прокси-сервера, который отправляет данные из нескольких подчиненных устройств в облако или обрабатывает их локально."
-services: iot-edge
-keywords: 
+title: Использование устройств Azure IoT Edge в качестве шлюзов | Документация Майкрософт
+description: Используйте Azure IoT Edge для создания прозрачного, непрозрачного устройства шлюза или устройства шлюза прокси-сервера, который отправляет данные из нескольких подчиненных устройств в облако или обрабатывает их локально.
 author: kgremban
 manager: timlt
 ms.author: kgremban
 ms.date: 11/27/2017
-ms.topic: article
+ms.topic: conceptual
 ms.service: iot-edge
-ms.openlocfilehash: fe7ad2444b9378550e9624e3d109c8be4fd29f23
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+services: iot-edge
+ms.openlocfilehash: 0e085d6c2962ec2a2324bfc134b0e201df04a336
+ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37028971"
 ---
-# <a name="how-an-iot-edge-device-can-be-used-as-a-gateway---preview"></a>Использование устройства IoT Edge в качестве шлюза (предварительная версия)
+# <a name="how-an-iot-edge-device-can-be-used-as-a-gateway"></a>Использование устройства IoT Edge в качестве шлюза
 
 Назначение шлюзов в решениях Интернета вещей зависит от решения и сочетает возможности взаимодействия устройства с пограничной аналитикой. Azure IoT Edge может использоваться для удовлетворения всех потребностей шлюза Интернета вещей независимо от того, связаны ли они с подключением, удостоверением или пограничной аналитикой. Шаблоны шлюза в этой статье относятся только к характеристикам подключения к нисходящему устройству и идентификации устройства, а не как данные устройства обрабатываются на шлюзе.
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/21/2018
 ## <a name="next-steps"></a>Дополнительная информация
 Используйте устройство IoT Edge в качестве [прозрачного шлюза][lnk-iot-edge-as-transparent-gateway]. 
 
-[lnk-iot-edge-as-transparent-gateway]: ./how-to-create-transparent-gateway.md
+[lnk-iot-edge-as-transparent-gateway]: ./how-to-create-transparent-gateway-linux.md
 [lnk-iothub-throttles-quotas]: ../iot-hub/iot-hub-devguide-quotas-throttling.md
 
 [1]: ./media/iot-edge-as-gateway/edge-as-gateway.png

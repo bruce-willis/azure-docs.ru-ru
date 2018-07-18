@@ -1,21 +1,21 @@
 ---
-title: Самостоятельный сброс пароля | Документация Майкрософт
+title: Самостоятельный сброс пароля в Azure Active Directory B2C | Документация Майкрософт
 description: В этой статье объясняется, как настроить самостоятельный сброс пароля для пользователей в Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: davidmu
-ms.openlocfilehash: 5b75455ad604b594a5f85fea8299d35a7d02c848
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: 3612e10df12e2b18f32caae55bdd83b12a4e24a6
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449279"
 ---
 # <a name="set-up-self-service-password-reset-for-your-customers"></a>Настройка самостоятельного сброса пароля для пользователей
 С помощью функции самостоятельного сброса пароля ваши пользователи, которые зарегистрировали локальные учетные записи, могут самостоятельно сбрасывать пароли. Это значительно упрощает работу службы поддержки, особенно если вашим приложением регулярно пользуются миллионы клиентов. Сейчас поддерживается только восстановление с помощью подтвержденного адреса электронной почты.
@@ -35,7 +35,7 @@ ms.lasthandoff: 04/18/2018
 Проверьте любую политику входа (где в качестве поставщика удостоверений используются локальные учетные записи) с помощью функции "Запустить сейчас". На странице входа локальной учетной записи (где вы вводите электронный адрес и пароль или имя пользователя и пароль) щелкните **Can't access your account?** (Не удается получить доступ к своей учетной записи?), чтобы проверить взаимодействие с пользователем.
 
 > [!NOTE]
-> Страницы самостоятельного сброса пароля можно настраивать с помощью [функции фирменной символики](../active-directory/customize-branding.md).
+> Страницы самостоятельного сброса пароля можно настраивать с помощью [функции фирменной символики](../active-directory/fundamentals/customize-branding.md).
 > 
 > 
 

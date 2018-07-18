@@ -64,7 +64,7 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 ### <a name="how-do-i-tell-which-orchestrator-version-is-running-in-my-cluster"></a>Как узнать, какая версия оркестратора используется в кластере?
 
-* сведения о версии, используемой в DC/OS, см. в [документации по Mesosphere](https://support.mesosphere.com/hc/en-us/articles/207719793-How-to-get-the-DCOS-version-from-the-command-line-);
+* сведения о версии, используемой в DC/OS, см. в [документации по Mesosphere](https://docs.mesosphere.com/1.7/usage/cli/command-reference/);
 * в Docker Swarm используется `docker version`;
 * в Kubernetes используется `kubectl version`.
 

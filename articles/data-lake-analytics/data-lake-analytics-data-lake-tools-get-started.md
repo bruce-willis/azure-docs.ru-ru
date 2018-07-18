@@ -1,34 +1,29 @@
 ---
-title: Начало работы с Azure Data Lake Analytics с помощью Visual Studio | Документация Майкрософт
+title: Начало работы с Azure Data Lake Analytics с использованием Visual Studio | Документация Майкрософт
 description: Сведения об установке средств Data Lake для Visual Studio, разработке и тестировании скриптов U-SQL.
 services: data-lake-analytics
-documentationcenter: ''
-author: saveenr
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.service: data-lake-analytics
-ms.devlang: na
+author: saveenr
+ms.author: saveenr
+manager: kfile
+editor: jasonwhowell
+ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
 ms.date: 05/02/2018
-ms.author: saveenr, yanacai
-ms.openlocfilehash: d0974e3258e0def09fe12d348180dcedf216401c
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 0acaace474d62f18b9b6ca4aaae324405a2f43db
+ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34735799"
 ---
 # <a name="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio"></a>Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
 
-
 Узнайте, как с помощью Visual Studio создавать учетные записи Azure Data Lake Analytics, определять задания в [U-SQL](data-lake-analytics-u-sql-get-started.md) и отправлять их в службу Data Lake Analytics. Дополнительные сведения о Data Lake Analytics см. в [обзоре Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
 >[!IMPORTANT]
->
->В рамках подготовки к вступлению в силу нового Общего регламента по защите данных (GDPR), которое состоится 25 мая 2018 года, пользователям Средств Azure Data Lake для Visual Studio рекомендуется выполнить обновление до версии 2.3.3000.4 или более поздней. Эта версия включает изменения на основе самых актуальных требований к защите данных. Обратите внимание, что предыдущие версии недоступны для загрузки и устарели. 
+> Корпорация Майкрософт рекомендует обновить Средства Azure Data Lake для Visual Studio до версии 2.3.3000.4 и выше. Предыдущие версии являются устаревшими и недоступными для скачивания. 
 >
 >**Что необходимо сделать?**
 >
@@ -52,19 +47,7 @@ ms.lasthandoff: 05/08/2018
 
 ## <a name="install-azure-data-lake-tools-for-visual-studio"></a>Установка средств Azure Data Lake для Visual Studio
 
-### <a name="install-azure-data-lake-tools-for-visual-studio-2017"></a>Установка Средств Azure Data Lake для Visual Studio 2017
-
-Средства Azure Data Lake для Visual Studio не поддерживаются в Visual Studio 2017 15.3 или более поздних версий. Средства являются частью рабочей нагрузки **хранилища и обработки данных** и **разработки Azure** в Visual Studio Installer. Включите одну из этих рабочих нагрузок как часть установки Visual Studio.  
-
-Включите рабочую нагрузку **хранилища и обработки данных**, как показано ниже: ![Включение рабочей нагрузки хранилища и обработки данных](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-tools-for-vs-2017-install-01.png)
-
-Включите рабочую нагрузку **разработки Azure**, как показано ниже: ![Включение рабочей нагрузки разработки Azure](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-tools-for-vs-2017-install-02.png)
-
-### <a name="install-azure-data-lake-tools-for-visual-studio-2013-and-2015"></a>Установка Средств Azure Data Lake для Visual Studio 2013 и 2015
-
-Загрузите и установите средства Azure Data Lake для Visual Studio [из центра загрузки](http://aka.ms/adltoolsvs). После установки обратите внимание на следующее:
-* узел **Обозреватель сервера** > **Azure** содержит узел **Data Lake Analytics**; 
-* в меню **Средства** появился пункт **Data Lake**.
+Для работы с этим руководством необходимо установить Data Lake Tools для Visual Studio. Следуйте [инструкциям по установке](data-lake-analytics-data-lake-tools-install.md).
 
 ## <a name="connect-to-an-azure-data-lake-analytics-account"></a>Подключение к учетной записи Azure Data Lake Analytics
 
@@ -128,7 +111,7 @@ OUTPUT @a
 ### <a name="to-see-the-output-of-a-job"></a>Просмотр выходных данных задания
 
 1. В обозревателе сервера перейдите к отправленному заданию.
-2. Перейдите на вкладку **Данные** .
+2. Перейдите на вкладку **Данные**.
 3. На вкладке **Job Outputs** (Выходные данные задания) выберите файл `"/data.csv"`.
 
 ## <a name="next-steps"></a>Дополнительная информация

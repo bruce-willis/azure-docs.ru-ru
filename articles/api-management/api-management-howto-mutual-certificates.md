@@ -11,125 +11,82 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2017
+ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: c3060765022cabcb877041927886b59d6725c7cf
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 844a7ea1c2dd8f7dbb4984fc148575529ac154db
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36292864"
 ---
 # <a name="how-to-secure-back-end-services-using-client-certificate-authentication-in-azure-api-management"></a>Защита фоновых служб посредством проверки подлинности с помощью сертификата клиента в службе Azure API Management
-Служба API Management дает возможность защищать доступ к фоновым службам API с помощью сертификатов клиента. В этом руководстве описывается, как управлять сертификатами на портале издателя API и как настроить использование сертификата в  API для доступа к фоновой службе.
+
+Служба управления API позволяет защитить доступ ко внутренним службам API с помощью сертификатов клиента. В этом руководстве описывается, как на портале Azure управлять сертификатами в экземпляре службы управления API Azure. Также объясняется, как настроить API для доступа к внутренней службе с помощью сертификата.
 
 Сведения об управлении сертификатами с помощью REST API службы управления API см. в статье, посвященной <a href="https://docs.microsoft.com/en-us/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-certificate-entity">сущности сертификата REST API службы управления API Azure</a>.
 
 ## <a name="prerequisites"> </a>Предварительные требования
-В этом руководстве описано, как настроить для экземпляра службы API Management проверку подлинности с помощью сертификата клиента при доступе из API к фоновой службе. Перед выполнением инструкций, приведенных в этой статье, во внутренней службе необходимо настроить аутентификацию на основе сертификата клиента. [Сведения о том, как настроить аутентификацию на основе сертификата на веб-сайтах Azure, см. в этой статье][to configure certificate authentication in Azure WebSites refer to this article]. Кроме того, нужен доступ к сертификату, который следует отправить на портал издателя управления API, и его паролю.
+
+В этом руководстве описано, как настроить для экземпляра службы API Management проверку подлинности с помощью сертификата клиента при доступе из API к фоновой службе. Прежде чем выполнить инструкции из этой статьи, нужно настроить свою внутреннюю службу для аутентификации на основе сертификата клиента. [Сведения о настройке такой аутентификации в веб-сайтах Azure см. в этой статье][to configure certificate authentication in Azure WebSites refer to this article]. Вам потребуется доступ к сертификату и паролю, чтобы передать их в службу управления API.
 
 ## <a name="step1"> </a>Отправка сертификата клиента
-Чтобы начать работу, щелкните **Publisher portal** (Портал издателя) на портале Azure для службы управления API. Будет открыт портал издателя службы управления API.
 
-![Портал издателя API][api-management-management-console]
+![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert.png)
 
-> Если экземпляр службы управления API еще не создан, выполните инструкции в статье [Создание экземпляра службы управления API Azure][Create an API Management service instance].
-> 
-> 
+Чтобы передать новый сертификат клиента, выполните действия ниже. Если экземпляр службы управления API еще не создан, выполните инструкции из руководства [Создание экземпляра службы управления API Azure][Create an API Management service instance].
 
-В левой части экрана в меню **Управление API** выберите пункт **Безопасность**, а затем перейдите на вкладку **Сертификаты клиента**.
+1. На портале Azure перейдите к экземпляру службы управления API Azure.
+2. В меню выберите **Сертификаты клиента**.
+3. Щелкните **+ Добавить**.  
+    ![Добавление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-add.png)  
+4. Выберите сертификат и укажите его идентификатор и пароль.  
+5. Нажмите кнопку **Создать**.
 
-![Client certificates][api-management-security-client-certificates]
-
-Чтобы добавить новый сертификат, щелкните ссылку **Upload certificate**(Загрузить сертификат).
-
-![Передача сертификата][api-management-upload-certificate]
-
-Выберите сертификат и введите пароль к нему.
-
+> [!NOTE]
 > Сертификат должен быть в формате **PFX** . Разрешено использовать самозаверяющие сертификаты.
-> 
-> 
 
-![Upload certificate][api-management-upload-certificate-form]
+Когда сертификат будет передан, он появится на вкладке **Сертификаты клиента**.  Если у вас несколько сертификатов, сохраните отпечаток необходимого сертификата, чтобы [настроить API для аутентификации шлюза на основе сертификата клиента][Configure an API to use a client certificate for gateway authentication].
 
-Нажмите кнопку **Upload** (Загрузить).
-
-> После этого будет проверен пароль к сертификату. Если он неправильный, появится сообщение об ошибке.
-> 
-> 
-
-![Сертификат добавлен][api-management-certificate-uploaded]
-
-После добавления сертификат появляется на вкладке **Сертификаты клиента**. Если у вас несколько сертификатов, запишите субъект или последние четыре знака отпечатка. Эти данные используются для выбора сертификата при настройке API для использования сертификатов, как описано в разделе [Настройка API для проверки подлинности шлюза с помощью сертификата клиента][Configure an API to use a client certificate for gateway authentication] ниже.
-
+> [!NOTE]
 > Чтобы отключить проверку цепочки сертификатов при использовании, например, самозаверяющего сертификата, выполните действия, описанные в [этом разделе](api-management-faq.md#can-i-use-a-self-signed-ssl-certificate-for-a-back-end) часто задаваемых вопросов.
-> 
-> 
 
 ## <a name="step1a"> </a>Удаление сертификата клиента
-Чтобы удалить сертификат, щелкните рядом с ним ссылку **Delete** (Удалить).
 
-![Удаление сертификата][api-management-certificate-delete]
+Чтобы удалить сертификат, щелкните контекстное меню **...** и выберите **Удалить** рядом с именем сертификата.
 
-Чтобы подтвердить действие, нажмите кнопку **Yes, delete it** (Да, удалить).
-
-![Подтверждение удаления][api-management-confirm-delete]
+![Удаление сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-delete.png)
 
 Если сертификат используется интерфейсом API, появляется предупреждение. Перед удалением сертификата нужно сначала удалить его из всех API, которые настроены на его использование.
 
-![Подтверждение удаления][api-management-confirm-delete-policy]
+![Ошибка при удалении сертификата клиента](media/api-management-howto-mutual-certificates/apim-client-cert-delete-failure.png)
 
 ## <a name="step2"> </a>Настройка API для проверки подлинности шлюза с помощью сертификата клиента
-В левой части экрана в меню **Управление API** выберите пункт **Интерфейсы API**, щелкните имя нужного API и перейдите на вкладку **Безопасность**.
 
-![Безопасность API][api-management-api-security]
+1. Щелкните **Интерфейсы API** в меню **Управление API** слева и перейдите к API.  
+    ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable.png)
 
-В раскрывающемся списке **С учетными данными** выберите пункт **Сертификаты клиента**.
+2. На вкладке **Конструктор** щелкните значок карандаша в разделе **Внутренняя служба**. 
+3. Измените значение параметра **Учетные данные шлюза** на **Сертификат клиента** и выберите свой сертификат в раскрывающемся списке.  
+    ![Включение сертификатов клиента](media/api-management-howto-mutual-certificates/apim-client-cert-enable-select.png)
 
-![Client certificates][api-management-mutual-certificates]
+4. Выберите команду **Сохранить**. 
 
-В раскрывающемся списке **Client certificate** (Сертификат клиента) выберите нужный сертификат. Если сертификатов несколько, то выбрать нужный можно по субъекту или последним четырем символам отпечатка, которые вы записали ранее.
-
-![Выбор сертификата][api-management-select-certificate]
-
-Чтобы сохранить изменение конфигурации в API, нажмите кнопку **Save** (Сохранить).
-
+> [!WARNING]
 > Изменение вступает в силу немедленно, и для проверки подлинности на фоновом сервере при вызове операций этого API теперь будет использоваться сертификат.
-> 
-> 
 
-![Сохранение изменений в API][api-management-save-api]
 
+> [!TIP]
 > Если сертификат настроен для проверки подлинности шлюза при доступе к серверной службе API, он становится частью политики для этого API, и его можно увидеть в редакторе политики.
-> 
-> 
-
-![Политика сертификата][api-management-certificate-policy]
 
 ## <a name="self-signed-certificates"></a>Самозаверяющие сертификаты
 
-Если вы используете самозаверяющие сертификаты, необходимо отключить проверку цепочки сертификатов для взаимодействия управления API с серверной системой, иначе вернется код ошибки 500. Для этого используйте командлеты PowerShell [`New-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/new-azurermapimanagementbackend) (для новой серверной части) или [`Set-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/set-azurermapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
+Если вы используете самозаверяющие сертификаты, вам потребуется отключить проверку цепочки сертификатов, чтобы служба управления API могла взаимодействовать с серверной системой. В противном случае будет возвращена ошибка с кодом 500. Для этого используйте командлеты PowerShell [`New-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/new-azurermapimanagementbackend) (для новой серверной части) или [`Set-AzureRmApiManagementBackend`](https://docs.microsoft.com/powershell/module/azurerm.apimanagement/set-azurermapimanagementbackend) (для существующей серверной части) и задайте для параметра `-SkipCertificateChainValidation` значение `True`.
 
 ```
 $context = New-AzureRmApiManagementContext -resourcegroup 'ContosoResourceGroup' -servicename 'ContosoAPIMService'
 New-AzureRmApiManagementBackend -Context  $context -Url 'https://contoso.com/myapi' -Protocol http -SkipCertificateChainValidation $true
 ```
-
-[api-management-management-console]: ./media/api-management-howto-mutual-certificates/api-management-management-console.png
-[api-management-security-client-certificates]: ./media/api-management-howto-mutual-certificates/api-management-security-client-certificates.png
-[api-management-upload-certificate]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate.png
-[api-management-upload-certificate-form]: ./media/api-management-howto-mutual-certificates/api-management-upload-certificate-form.png
-[api-management-certificate-uploaded]: ./media/api-management-howto-mutual-certificates/api-management-certificate-uploaded.png
-[api-management-api-security]: ./media/api-management-howto-mutual-certificates/api-management-api-security.png
-[api-management-mutual-certificates]: ./media/api-management-howto-mutual-certificates/api-management-mutual-certificates.png
-[api-management-select-certificate]: ./media/api-management-howto-mutual-certificates/api-management-select-certificate.png
-[api-management-save-api]: ./media/api-management-howto-mutual-certificates/api-management-save-api.png
-[api-management-certificate-policy]: ./media/api-management-howto-mutual-certificates/api-management-certificate-policy.png
-[api-management-certificate-delete]: ./media/api-management-howto-mutual-certificates/api-management-certificate-delete.png
-[api-management-confirm-delete]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete.png
-[api-management-confirm-delete-policy]: ./media/api-management-howto-mutual-certificates/api-management-confirm-delete-policy.png
-
-
 
 [How to add operations to an API]: api-management-howto-add-operations.md
 [How to add and publish a product]: api-management-howto-add-products.md
@@ -151,6 +108,3 @@ New-AzureRmApiManagementBackend -Context  $context -Url 'https://contoso.com/mya
 [Configure an API to use a client certificate for gateway authentication]: #step2
 [Test the configuration by calling an operation in the Developer Portal]: #step3
 [Next steps]: #next-steps
-
-
-

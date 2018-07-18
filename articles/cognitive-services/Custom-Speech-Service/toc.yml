@@ -1,0 +1,39 @@
+- name: Документация по Пользовательской службе распознавания речи
+- name: Обзор
+  items:
+    - name: Что такое Пользовательская служба распознавания речи?
+      href: cognitive-services-custom-speech-home.md
+- name: Учебники
+  items:
+    - name: Создание пользовательской акустической модели
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-create-acoustic-model.md
+    - name: Создание пользовательской языковой модели
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-create-language-model.md
+- name: Основные понятия
+  items:
+    - name: Обзор основных функций
+      href: cognitive-services-custom-speech-get-started.md
+    - name: 'Единицы измерения, квоты и масштабирование'
+      href: cognitive-services-custom-speech-meters.md
+- name: Практические руководства
+  items:
+    - name: Адаптация произношения в соответствии с потребностями
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-create-custom-pronunciation.md
+    - name: Создание пользовательской конечной точки преобразования речи в текст
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-create-endpoint.md
+    - name: Использование пользовательской конечной точки преобразования речи в текст
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-use-endpoint.md
+    - name: Получение ключей подписки
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-subscribe.md
+    - name: Миграция на новую ценовую категорию
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-migrate-tiers.md
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: Руководства по транскрибированию
+      href: CustomSpeech-How-to-Topics/cognitive-services-custom-speech-transcription-guidelines.md
+    - name: Часто задаваемые вопросы
+      href: cognitive-services-custom-speech-faq.md
+    - name: Глоссарий
+      href: cognitive-services-custom-speech-glossary.md

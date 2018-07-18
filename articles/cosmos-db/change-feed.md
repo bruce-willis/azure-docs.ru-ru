@@ -5,20 +5,17 @@ keywords: веб-канал изменений
 services: cosmos-db
 author: rafats
 manager: kfile
-documentationcenter: ''
-ms.assetid: 2d7798db-857f-431a-b10f-3ccbc7d93b50
 ms.service: cosmos-db
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: ''
-ms.topic: article
+ms.devlang: dotnet
+ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: rafats
-ms.openlocfilehash: be59f1a9dc19fffdb6a952c7db73756909036bf6
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 6b0aaa075b8b2881e269d79a67e75528d0d9a86a
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37129864"
 ---
 # <a name="working-with-the-change-feed-support-in-azure-cosmos-db"></a>Работа с поддержкой веб-канала изменений в Azure Cosmos DB
 
@@ -47,9 +44,9 @@ ms.lasthandoff: 04/16/2018
 
 Вы можете считывать канал изменений тремя разными способами, как описано далее в этой статье:
 
-1.  [используя Функции Azure](#azure-functions);
-2.  [используя пакет SDK для Azure Cosmos DB](#rest-apis);
-3.  [используя библиотеку обработчика канала изменений Azure Cosmos DB](#change-feed-processor).
+*   [используя Функции Azure](#azure-functions);
+*   [используя пакет SDK для Azure Cosmos DB](#sql-sdk);
+*   [используя библиотеку обработчика для канала изменений Azure Cosmos DB](#change-feed-processor).
 
 Канал изменений доступен для каждого диапазона ключей разделов в коллекции документов, и поэтому его можно распределить в один или несколько потребителей для параллельной обработки, как показано на следующем рисунке.
 
@@ -92,7 +89,7 @@ ms.lasthandoff: 04/16/2018
 
 Триггеры можно создать на портале Функций Azure, на портале Azure Cosmos DB или программным способом. Дополнительные сведения см. в статье [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](serverless-computing-database.md).
 
-<a id="rest-apis"></a>
+<a id="sql-sdk"></a>
 ## <a name="using-the-sdk"></a>Использование пакета SDK
 
 [Пакет SDK SQL](sql-api-sdk-dotnet.md) для Azure Cosmos DB предоставляет все возможности для считывания канала изменений и управления им. Однако чем больше возможностей, тем больше ответственности. Если вы хотите управлять контрольными точками, обрабатывать порядковые номера документа и детально управлять ключами секций, то использование пакета SDK будет верным решением.
@@ -167,20 +164,20 @@ ms.lasthandoff: 04/16/2018
 
 Если у вас несколько читателей, можно использовать **ChangeFeedOptions**, чтобы распределить нагрузку чтения среди разных потоков или разных клиентов.
 
-Вот и все. С помощью этих нескольких строк кода вы можете начать считывание канала изменений. Полный код, используемый в этой статье, можно получить из [репозитория GitHub](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeedProcessor).
+Вот и все. С помощью этих нескольких строк кода вы можете начать считывание канала изменений. Полный код, используемый в этой статье, можно получить из [репозитория GitHub](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeed).
 
 В коде на шаге 4 **ResponseContinuation** в последней строке имеет последний регистрационный номер транзакции в журнале (LSN) документа, который будет использоваться при следующем чтении новых документов после этого порядкового номера. С помощью свойства **StartTime** в разделе **ChangeFeedOption** вы можете расширить свою сеть, чтобы получить документы. Если свойство **ResponseContinuation** имеет значение NULL, а **StartTime** обращается к данным за прошедшие периоды, то вы получите все документы, которые изменены со **времени начала**. Но если свойство **ResponseContinuation** имеет значение, то система предоставит все ваши документы после номера LSN.
 
-Таким образом массив контрольной точки будет просто хранить номер LSN для каждой секции. Если вы не хотите работать с секциями, контрольными точками, номерами LSN, временем начала и т. д., проще всего будет использовать библиотеку обработчика канала изменений.
+Таким образом массив контрольной точки будет просто хранить номер LSN для каждой секции. Если вы не хотите работать с секциями, контрольными точками, номерами LSN, временем начала и т. д., проще всего использовать библиотеку обработчика для канала изменений.
 
 <a id="change-feed-processor"></a>
-## <a name="using-the-change-feed-processor-library"></a>Использование библиотеки обработчика канала изменений 
+## <a name="using-the-change-feed-processor-library"></a>Использование библиотеки обработчика для канала изменений 
 
-[Библиотека обработчика канала изменений Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-sdk-dotnet-changefeed) позволяет без проблем распределить обработку событий между несколькими объектами-получателями. Эта библиотека упрощает считывание изменений в секциях и нескольких потоках, работающих параллельно.
+[Библиотека обработчика для канала изменений Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/sql-api-sdk-dotnet-changefeed) позволяет без усилий распределить обработку событий между несколькими объектами-получателями. Эта библиотека упрощает считывание изменений в секциях и нескольких потоках, работающих параллельно.
 
-Основным преимуществом библиотеки обработчика канала изменений является то, что вам не нужно управлять каждой секцией и маркером продолжения. Вам также не нужно опрашивать каждую коллекцию вручную.
+Основным преимуществом библиотеки обработчика для канала изменений является то, что вам не нужно управлять каждой секцией и маркером продолжения. Вам также не нужно опрашивать каждую коллекцию вручную.
 
-Эта библиотека обработчика канала изменений упрощает считывание изменений в секциях и нескольких потоках, работающих параллельно.  Она автоматически управляет считыванием изменений между секциями с помощью механизма аренды. Как видно на приведенном ниже изображении, если запустить два клиента, использующие библиотеку обработчика канала изменений, они разделят работу между собой. По мере увеличения клиентов они будут точно так же разделять работу между собой.
+Эта библиотека упрощает считывание изменений в секциях и нескольких потоках в параллельном режиме.  Она автоматически управляет считыванием изменений между секциями с помощью механизма аренды. Как видно на следующей схеме, если запустить два клиента, которые используют библиотеку обработчика для канала изменений, работа будет разделена между ними. По мере увеличения клиентов они будут точно так же разделять работу между собой.
 
 ![Распределенная обработка веб-канала изменений Azure Cosmos DB](./media/change-feed/change-feed-output.png)
 
@@ -189,9 +186,9 @@ ms.lasthandoff: 04/16/2018
 Обратите внимание, что при наличии двух бессерверных функций Azure, которые отслеживают одну и ту же коллекцию и используют одинаковую аренду, эти функции могут получить разные документы в зависимости от того, как библиотека обработчика решит обработать секции.
 
 <a id="understand-cf"></a>
-### <a name="understanding-the-change-feed-processor-library"></a>Основные сведения о библиотеке обработчика канала изменений
+### <a name="understanding-the-change-feed-processor-library"></a>Основные сведения о библиотеке обработчика для канала изменений
 
-Существует четыре основных компонента реализации обработчика веб-канала изменений: отслеживаемая коллекция, коллекция аренд, узел обработчика и потребители. 
+При реализации библиотеки обработчика для канала изменений задействуется четыре основных компонента: отслеживаемая коллекция, коллекция аренд, узел обработчика и объекты-получатели. 
 
 > [!WARNING]
 > Создание коллекции связано с ценовыми требованиями, так как для взаимодействия с базой данных Azure Cosmos DB для приложения резервируется пропускная способность. Дополнительные сведения см. на [странице цен](https://azure.microsoft.com/pricing/details/cosmos-db/).
@@ -200,7 +197,7 @@ ms.lasthandoff: 04/16/2018
 
 **Отслеживаемая коллекция** — это данные, из которых формируется веб-канал изменений. Все операции вставки и изменения в отслеживаемой коллекции отражаются в веб-канале изменений коллекции. 
 
-**Коллекция аренд** — это коллекция, которая координирует обработку веб-канала изменений для нескольких рабочих ролей. Отдельная коллекция используется для хранения аренд на каждую секцию. Эту коллекцию аренд следует хранить в другой учетной записи, регион записи которой ближе к региону с обработчиком веб-канала изменений. Объект аренды содержит следующие атрибуты: 
+**Коллекция аренд** — это коллекция, которая координирует обработку веб-канала изменений для нескольких рабочих ролей. Отдельная коллекция используется для хранения аренд на каждую секцию. Эту коллекцию аренд следует хранить в другой учетной записи, чтобы связанный с ней регион записи был ближе к расположению, в котором выполняется обработчик канала изменений. Объект аренды содержит следующие атрибуты: 
 * Владелец: определяет узел, которому принадлежит аренда.
 * Продолжение: определяет положение (маркер продолжения) определенной секции в веб-канале изменений.
 * Отметка времени: время последнего обновления аренды. Отметка времени может использоваться для проверки истечения срока действия аренды. 
@@ -214,78 +211,339 @@ ms.lasthandoff: 04/16/2018
 
 **Потребители:** объекты-получатели или рабочие роли являются потоками, которые выполняют обработку веб-канала изменений, инициированную каждым узлом. Каждый узел обработчика может иметь несколько объектов-получателей. Каждый объект-получатель считывает веб-канал изменений из секции, которой он присвоен, и уведомляет узел об изменениях и окончании срока действия аренд.
 
-Чтобы лучше разобраться, как взаимодействуют эти четыре элемента обработчика веб-канала изменений, давайте рассмотрим пример на схеме ниже. Отслеживаемая коллекция хранит документы и использует city в качестве ключа секции. Мы видим, что синяя секция содержит документы с полем city от A до E и т. д. Существует два узла, каждый с двумя объектами-получателями, которые выполняют операцию чтения из четырех секций в параллельном режиме. Стрелки показывают конкретные точки в веб-канале изменений, в которых объекты-получатели выполняют операцию чтения. В первой секции синим цветом представлены непрочитанные изменения, а голубым — уже прочитанные изменения в веб-канале изменений. Узлы используют коллекцию аренд для хранения значения "продолжение", чтобы отслеживать текущую позицию чтения каждого объекта-получателя. 
+Чтобы лучше разобраться, как взаимодействуют эти четыре элемента обработчика для канала изменений, давайте рассмотрим пример, приведенный на схеме ниже. Отслеживаемая коллекция хранит документы и использует city в качестве ключа секции. Мы видим, что синяя секция содержит документы с полем city от A до E и т. д. Существует два узла, каждый с двумя объектами-получателями, которые выполняют операцию чтения из четырех секций в параллельном режиме. Стрелки показывают конкретные точки в веб-канале изменений, в которых объекты-получатели выполняют операцию чтения. В первой секции синим цветом представлены непрочитанные изменения, а голубым — уже прочитанные изменения в веб-канале изменений. Узлы используют коллекцию аренд для хранения значения "продолжение", чтобы отслеживать текущую позицию чтения каждого объекта-получателя. 
 
 ![Использование узла обработчика веб-канала изменений Azure Cosmos DB](./media/change-feed/changefeedprocessornew.png)
 
-### <a name="working-with-the-change-feed-processor-library"></a>Работа с библиотекой обработчика канала изменений
+### <a name="working-with-the-change-feed-processor-library"></a>Работа с библиотекой обработчика для канала изменений
 
-Прежде чем устанавливать пакет NuGet обработчика канала изменений, установите: 
+Прежде чем устанавливать пакет NuGet обработчика канала изменений, установите следующие компоненты: 
 
-* Библиотеку Microsoft.Azure.DocumentDB (версии 1.13.1 или выше). 
-* Newtonsoft.Json 9.0.1 или более поздней версии.
+* Microsoft.Azure.DocumentDB, последняя версия.
+* Newtonsoft.Json, последняя версия
 
 Затем установите [пакет Nuget Microsoft.Azure.DocumentDB.ChangeFeedProcessor](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/) и добавьте его в качестве ссылки.
 
-Чтобы реализовать библиотеку обработчика канала изменений, сделайте следующее:
+Чтобы реализовать библиотеку для обработчика канала изменений, сделайте следующее:
 
 1. Создайте объект **DocumentFeedObserver**, который реализует **IChangeFeedObserver**.
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Threading;
+    using System.Threading.Tasks;
+    using Microsoft.Azure.Documents;
+    using Microsoft.Azure.Documents.ChangeFeedProcessor.FeedProcessing;
+    using Microsoft.Azure.Documents.Client;
 
-2. Создайте **DocumentFeedObserverFactory**, который реализует **IChangeFeedObserverFactory**.
-
-3. В методе **CreateObserver** экземпляра **DocumentFeedObserverFacory** создайте экземпляр **ChangeFeedObserver**, созданный на шаге 1, и возвратите его.
-
-    ```
-    public IChangeFeedObserver CreateObserver()
+    /// <summary>
+    /// This class implements the IChangeFeedObserver interface and is used to observe 
+    /// changes on change feed. ChangeFeedEventHost will create as many instances of 
+    /// this class as needed. 
+    /// </summary>
+    public class DocumentFeedObserver : IChangeFeedObserver
     {
-              DocumentFeedObserver newObserver = new DocumentFeedObserver(this.client, this.collectionInfo);
-              return newObserver;
+    private static int totalDocs = 0;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentFeedObserver" /> class.
+        /// Saves input DocumentClient and DocumentCollectionInfo parameters to class fields
+        /// </summary>
+        /// <param name="client"> Client connected to destination collection </param>
+        /// <param name="destCollInfo"> Destination collection information </param>
+        public DocumentFeedObserver()
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when change feed observer is opened; 
+        /// this function prints out observer partition key id. 
+        /// </summary>
+        /// <param name="context">The context specifying partition for this observer, etc.</param>
+        /// <returns>A Task to allow asynchronous execution</returns>
+        public Task OpenAsync(IChangeFeedObserverContext context)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Observer opened for partition Key Range: {0}", context.PartitionKeyRangeId);
+            return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// Called when change feed observer is closed; 
+        /// this function prints out observer partition key id and reason for shut down. 
+        /// </summary>
+        /// <param name="context">The context specifying partition for this observer, etc.</param>
+        /// <param name="reason">Specifies the reason the observer is closed.</param>
+        /// <returns>A Task to allow asynchronous execution</returns>
+        public Task CloseAsync(IChangeFeedObserverContext context, ChangeFeedObserverCloseReason reason)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Observer closed, {0}", context.PartitionKeyRangeId);
+            Console.WriteLine("Reason for shutdown, {0}", reason);
+            return Task.CompletedTask;
+        }
+
+        public Task ProcessChangesAsync(IChangeFeedObserverContext context, IReadOnlyList<Document> docs, CancellationToken cancellationToken)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Change feed: PartitionId {0} total {1} doc(s)", context.PartitionKeyRangeId, Interlocked.Add(ref totalDocs, docs.Count));
+            foreach (Document doc in docs)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(doc.Id.ToString());
+            }
+
+            return Task.CompletedTask;
+        }
     }
     ```
 
-4. Создайте экземпляр **DocumentObserverFactory**.
-
-5. Создайте экземпляр **ChangeFeedEventHost**:
-
+2. Создайте **DocumentFeedObserverFactory**, который реализует **IChangeFeedObserverFactory**.
     ```csharp
-    ChangeFeedEventHost host = new ChangeFeedEventHost(
-                     hostName,
-                     documentCollectionLocation,
-                     leaseCollectionLocation,
-                     feedOptions,
-                     feedHostOptions);
+     using Microsoft.Azure.Documents.ChangeFeedProcessor.FeedProcessing;
+
+    /// <summary>
+    /// Factory class to create instance of document feed observer. 
+    /// </summary>
+    public class DocumentFeedObserverFactory : IChangeFeedObserverFactory
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentFeedObserverFactory" /> class.
+        /// Saves input DocumentClient and DocumentCollectionInfo parameters to class fields
+        /// </summary>
+        public DocumentFeedObserverFactory()
+        {
+        }
+
+        /// <summary>
+        /// Creates document observer instance with client and destination collection information
+        /// </summary>
+        /// <returns>DocumentFeedObserver with client and destination collection information</returns>
+        public IChangeFeedObserver CreateObserver()
+        {
+            DocumentFeedObserver newObserver = new DocumentFeedObserver();
+            return newObserver as IChangeFeedObserver;
+        }
+    }
     ```
 
-6. Зарегистрируйте **DocumentFeedObserverFactory** в узле.
+3. Определите *CancellationTokenSource* и *ChangeFeedProcessorBuilder*
 
-Для шагов с 4 по 6 используется следующий код: 
+    ```csharp
+    private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+    private readonly ChangeFeedProcessorBuilder builder = new ChangeFeedProcessorBuilder();
+    ```
+
+5. Скомпилируйте **ChangeFeedProcessorBuilder** после определения соответствующих объектов 
+
+    ```csharp
+            string hostName = Guid.NewGuid().ToString();
+      
+            // monitored collection info 
+            DocumentCollectionInfo documentCollectionInfo = new DocumentCollectionInfo
+            {
+                Uri = new Uri(this.monitoredUri),
+                MasterKey = this.monitoredSecretKey,
+                DatabaseName = this.monitoredDbName,
+                CollectionName = this.monitoredCollectionName
+            };
+            
+            DocumentCollectionInfo leaseCollectionInfo = new DocumentCollectionInfo
+                {
+                    Uri = new Uri(this.leaseUri),
+                    MasterKey = this.leaseSecretKey,
+                    DatabaseName = this.leaseDbName,
+                    CollectionName = this.leaseCollectionName
+                };
+            DocumentFeedObserverFactory docObserverFactory = new DocumentFeedObserverFactory();
+            ChangeFeedOptions feedOptions = new ChangeFeedOptions();
+
+            /* ie customize StartFromBeginning so change feed reads from beginning
+                can customize MaxItemCount, PartitonKeyRangeId, RequestContinuation, SessionToken and StartFromBeginning
+            */
+
+            feedOptions.StartFromBeginning = true;
+        
+            ChangeFeedProcessorOptions feedProcessorOptions = new ChangeFeedProcessorOptions();
+
+            // ie. customizing lease renewal interval to 15 seconds
+            // can customize LeaseRenewInterval, LeaseAcquireInterval, LeaseExpirationInterval, FeedPollDelay 
+            feedProcessorOptions.LeaseRenewInterval = TimeSpan.FromSeconds(15);
+
+            this.builder
+                .WithHostName(hostName)
+                .WithFeedCollection(documentCollectionInfo)
+                .WithLeaseCollection(leaseCollectionInfo)
+                .WithProcessorOptions (feedProcessorOptions)
+                .WithObserverFactory(new DocumentFeedObserverFactory());               
+                //.WithObserver<DocumentFeedObserver>();  If no factory then just pass an observer
+
+            var result =  await this.builder.BuildAsync();
+            await result.StartAsync();
+            Console.Read();
+            await result.StopAsync();    
+            ```
+
+That’s it. After these few steps documents will start showing up into the **DocumentFeedObserver.ProcessChangesAsync** method.
+
+Above code is for illustration purpose to show different kind of objects and their interaction. You have to define proper variables and initiate them with correct values. You can get the complete code used in this article from the [GitHub repo](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/ChangeFeedProcessorV2).
+
+> [!NOTE]
+> You should never have a master key in your code or in config file as shown in above code. Please see [how to use Key-Vault to retrive the keys](https://sarosh.wordpress.com/2017/11/23/cosmos-db-and-key-vault/).
+
+
+## FAQ
+
+### What are the different ways you can read Change Feed? and when to use each method?
+
+There are three options for you to read change feed:
+
+* **[Using Azure Cosmos DB SQL API .NET SDK](#sql-sdk)**
+   
+   By using this method, you get low level of control on change feed. You can manage the checkpoint, you can access a particular partition key etc. If you have multiple readers, you can use [ChangeFeedOptions](https://docs.microsoft.com/dotnet/api/microsoft.azure.documents.client.changefeedoptions?view=azure-dotnet) to distribute read load to different threads or different clients. .
+
+* **[Using the Azure Cosmos DB change feed processor library](#change-feed-processor)**
+
+   If you want to outsource lot of complexity of change feed then you can use change feed processor library. This library hides lot of complexity, but still gives you complete control on change feed. This library follows an [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern), your processing function is called by the SDK. 
+
+   If you have a high throughput change feed, you can instantiate multiple clients to read the change feed. Because you are using “change feed processor library”, it will automatically divide the load among different clients. You do not have to do anything. All the complexity is handled by SDK. However, if you want to have your own load balancer, then you can implement IParitionLoadBalancingStrategy for custom partition strategy. Implement IPartitionProcessor – for custom processing changes on a partition. However, with SDK, you can process a partition range but if you want to process a particular partition key then you have to use SDK for SQL API.
+
+* **[Using Azure Functions](#azure-functions)** 
+   
+   The last option Azure Function is the simplest option. We recommend using this option. When you create an Azure Cosmos DB trigger in an Azure Functions app, you select the Azure Cosmos DB collection to connect to and the function is triggered whenever a change to the collection is made. watch a [screen cast](https://www.youtube.com/watch?v=Mnq0O91i-0s&t=14s) of using Azure function and change feed
+
+   Triggers can be created in the Azure Functions portal, in the Azure Cosmos DB portal, or programmatically. Visual Studio and VS Code has great support to write Azure Function. You can write and debug the code on your desktop, and then deploy the function with one click. For more information, see [Azure Cosmos DB: Serverless database computing using Azure Functions](serverless-computing-database.md) article.
+
+### What is the sort order of documents in change feed?
+
+Change feed documents comes in order of their modification time. This sort order is guaranteed only per partition.
+
+### For a multi-region account, what happens to the change feed when the write-region fails-over? Does the change feed also failover? Would the change feed still appear contiguous or would the fail-over cause change feed to reset?
+
+Yes, change feed will work across the manual failover operation and it will be contiguous.
+
+### How long change feed persist the changed data if I set the TTL (Time to Live) property for the document to -1?
+
+Change feed will persist forever. If data is not deleted, it will remain in change feed.
+
+### How can I configure Azure functions to read from a particular region, as change feed is available in all the read regions by default?
+
+Currently it’s not possible to configure Azure Functions to read from a particular region. There is a GitHub issue in the Azure Functions repo to set the preferred regions of any Azure Cosmos DB binding and trigger.
+
+Azure Functions uses the default connection policy. You can configure connection mode in Azure Functions and by default, it reads from the write region, so it is best to co-locate Azure Functions on the same region.
+
+### What is the default size of batches in Azure Functions?
+
+100 documents at every invocation of Azure Functions. However, this number is configurable within the function.json file. Here is complete [list of configuration options](../azure-functions/functions-run-local.md). If you are developing locally, update the application settings within the [local.settings.json](../azure-functions/functions-run-local.md) file.
+
+### I am monitoring a collection and reading its change feed, however I see I am not getting all the inserted document, some documents are missing. What is going on here?
+
+Please make sure that there is no other function reading the same collection with the same lease collection. It happened to me, and later I realized the missing documents are processed by my other Azure functions, which is also using the same lease.
+
+Therefore, if you are creating multiple Azure Functions to read the same change feed then they must use different lease collection or use the “leasePrefix” configuration to share the same collection. However, when you use change feed processor library you can start multiple instances of your function and SDK will divide the documents between different instances automatically for you.
+
+### My document is updated every second, and I am not getting all the changes in Azure Functions listening to change feed.
+
+Azure Functions polls change feed for every 5 seconds, so any changes made between 5 seconds are lost. Azure Cosmos DB stores just one version for every 5 seconds so you will get the 5th change on the document. However, if you want to go below 5 second, and want to poll change Feed every second, You can configure the polling time “feedPollTime”, see [Azure Cosmos DB bindings](../azure-functions/functions-bindings-cosmosdb.md#trigger---configuration). It is defined in milliseconds with a default of 5000. Below 1 second is possible but not advisable, as you will start burning more CPU.
+
+### I inserted a document in the Mongo API collection, but when I get the document in change feed, it shows a different id value. What is wrong here?
+
+Your collection is Mongo API collection. Remember, change feed is read using the SQL client and serializes items into JSON format. Because of the JSON formatting, MongoDB clients will experience a mismatch between BSON formatted documents and the JSON formatted change feed. You are seeing is the representation of a BSON document in JSON. If you use binary attributes in a Mongo accounts, they are converted to JSON.
+
+### Is there a way to control change feed for updates only and not inserts?
+
+Not today, but this functionality is on roadmap. Today, you can add a soft marker on the document for updates.
+
+### Is there a way to get deletes in change feed?
+
+Currently change feed doesn’t log deletes. Change feed is continuously improving, and this functionality is on roadmap. Today, you can add a soft marker on the document for delete. Add an attribute on the document called “deleted” and set it to “true” and set a TTL on the document so that it can be automatically deleted.
+
+### Can I read change feed for historic documents(for example, documents that were added 5 years back) ?
+
+Yes, if the document is not deleted you can read the change feed as far as the origin of your collection.
+
+### Can I read change feed using JavaScript?
+
+Yes, Node.js SDK initial support for change feed is recently added. It can be used as shown in the following example, please update documentdb module to current version before you run the code:
+
+```js
+
+var DocumentDBClient = require('documentdb').DocumentClient;
+const host = "https://your_host:443/";
+const masterKey = "your_master_key==";
+const databaseId = "db";
+const collectionId = "c1";
+const dbLink = 'dbs/' + databaseId;
+const collLink = dbLink + '/colls/' + collectionId;
+var client = new DocumentDBClient(host, { masterKey: masterKey });
+let options = {
+    a_im: "Incremental feed",
+    accessCondition: {
+        type: "IfNoneMatch",        // Use: - empty condition (or remove accessCondition entirely) to start from beginning.
+        //      - '*' to start from current.
+        //      - specific etag value to start from specific continuation.
+        condition: ""
+    }
+};
+ 
+var query = client.readDocuments(collLink, options);
+query.executeNext((err, results, headers) =&gt; {
+    // Now we have headers.etag, which can be used in next readDocuments in accessCondition option.
+    console.log(results);
+    console.log(headers.etag);
+    console.log(results.length);
+    options.accessCondition = { type: "IfNoneMatch", condition: headers.etag };
+    var query = client.readDocuments(collLink, options);
+    query.executeNext((err, results, headers) =&gt; {
+        console.log("next one:", results[0]);
+    });
+});<span id="mce_SELREST_start" style="overflow:hidden;line-height:0;"></span>
 
 ```
-ChangeFeedOptions feedOptions = new ChangeFeedOptions();
-feedOptions.StartFromBeginning = true;
 
-ChangeFeedHostOptions feedHostOptions = new ChangeFeedHostOptions();
- 
-// Customizing lease renewal interval to 15 seconds.
-// Can customize LeaseRenewInterval, LeaseAcquireInterval, LeaseExpirationInterval, FeedPollDelay
-feedHostOptions.LeaseRenewInterval = TimeSpan.FromSeconds(15);
- 
-using (DocumentClient destClient = new DocumentClient(destCollInfo.Uri, destCollInfo.MasterKey))
-{
-        DocumentFeedObserverFactory docObserverFactory = new DocumentFeedObserverFactory(destClient, destCollInfo);
-        ChangeFeedEventHost host = new ChangeFeedEventHost(hostName, documentCollectionLocation, leaseCollectionLocation, feedOptions, feedHostOptions);
-        await host.RegisterObserverFactoryAsync(docObserverFactory);
-        await host.UnregisterObserversAsync();
-}
-```
+### <a name="can-i-read-change-feed-using-java"></a>Можно ли считывать данные канала изменений с помощью Java?
 
-Вот и все! После выполнения этих шагов документы начнут поступать в метод **DocumentFeedObserver ProcessChangesAsync**.
+Библиотека Java для считывания данных из канала изменений доступна в [репозитории Github](https://github.com/Azure/azure-documentdb-changefeedprocessor-java). Сейчас эта библиотека на несколько версий отстает от библиотеки .NET. Вскоре мы синхронизируем обе библиотеки.
+
+### <a name="can-i-use-etag-lsn-or-ts-for-internal-bookkeeping-which-i-get-in-response"></a>Можно ли использовать отображаемые в ответе идентификаторы _etag, _lsn или _ts для внутреннего бухгалтерского учета?
+
+_etag является внутренним идентификатором. Его не следует использовать или анализировать, так как он может измениться в любое время.
+_ts представляет метку времени создания или изменения. Этот идентификатор можно использовать для сравнения в хронологическом порядке.
+_lsn — это идентификатор пакета, который добавляется только для канала изменений и представляет идентификатор транзакций из хранилища. Многие документы могут иметь одинаковые идентификаторы _lsn.
+Кроме того, обратите внимание, что ETag в FeedResponse отличается от _etag, который отображается в документе. _etag — это внутренний идентификатор, который используется при параллельной обработке. Он указывает на версию документа, тогда как ETag используется для упорядочивания канала.
+
+### <a name="does-reading-change-feed-add-any-additional-cost-"></a>Взимается ли за чтение данных из канала изменений дополнительная плата?
+
+Плата взимается за использованные единицы запросов (ЕЗ), а перемещение данных из коллекции Azure Cosmos DB всегда подразумевает использование ЕЗ. С пользователей будет взиматься плата за ЕЗ, использованные при операциях с данными в коллекции аренд.
+
+### <a name="can-multiple-azure-functions-read-one-collections-change-feed"></a>Могут ли несколько функций Azure считывать данные одной коллекции канала изменений?
+
+Да. Несколько функций Azure могут считывать данные одной коллекции канала изменений. При этом для каждой функции Azure следует отдельно определить leaseCollectionPrefix.
+
+### <a name="should-the-lease-collection-be-partitioned"></a>Нужно ли секционировать коллекцию аренд?
+
+Нет, коллекцию аренд можно не секционировать. Секционированные коллекции аренд сейчас не используются и не поддерживаются.
+
+### <a name="can-i-read-change-feed-from-spark"></a>Можно ли считывать данные канала изменений с помощью Spark?
+
+Да, можно. См. руководство по использованию [соединителя Spark для Azure Cosmos DB](spark-connector.md). См. дополнительные сведения об [обработке канала изменений как структурированного потока](https://www.youtube.com/watch?v=P9Qz4pwKm_0&t=1519s).
+
+### <a name="if-i-am-processing-change-feed-by-using-azure-functions-say-a-batch-of-10-documents-and-i-get-an-error-at-7th-document-in-that-case-the-last-three-documents-are-not-processed-how-can-i-start-processing-from-the-failed-documentie-7th-document-in-my-next-feed"></a>Я обрабатываю канал изменений, который включает пакет из 10 документов, с помощью решения "Функции Azure". При обработке седьмого документа поступает сообщение об ошибке. После этого три последних документа не обрабатываются. Как запустить обработку документа с ошибкой (т. е. седьмого документа) в следующем канале?
+
+Для обработки ошибки рекомендуется включить в код блок try-catch. Перехватите ошибку и поместите документ в очередь недоставленных сообщений, а затем определите логику обработки документов с ошибками. Так, если у вас есть пакет из 200 документов и в одном документе возникает ошибка, вам не придется использовать урезанный пакет.
+
+В случае ошибки вам не нужно выполнять откат до контрольной точки, так как вы будете и дальше получать эти документы из канала изменений. Обратите внимание, что в канале изменений сохраняется последний моментальный снимок документов. Поэтому предыдущий моментальный снимок документа может не сохраниться. В канале изменений сохраняется только последняя версия документа. При этом между операциями документ может быть изменен другими процессами.
+
+По мере исправления кода документы будут удаляться из очереди недоставленных сообщений.
+Решение "Функции Azure" автоматически вызывается системой канала изменений. При этом контрольная точка внутренне поддерживается решением "Функции Azure". Чтобы выполнить контролируемый откат до контрольной точки, используйте пакет SDK обработчика канала изменений.
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения об использовании Azure Cosmos DB с Функциями Azure см. в статье [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](serverless-computing-database.md).
 
-Дополнительные сведения об использовании библиотеки обработчика канала изменений см. в следующих ресурсах:
+Дополнительные сведения об использовании библиотеки обработчика для канала изменений см. в следующих ресурсах:
 
 * [Пакет SDK для обработчика веб-канала изменений для DocumentDB .NET: скачивание и заметки о выпуске](sql-api-sdk-dotnet-changefeed.md) 
 * [Microsoft.Azure.DocumentDB.ChangeFeedProcessor](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB.ChangeFeedProcessor/)

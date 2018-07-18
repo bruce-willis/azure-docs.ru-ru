@@ -1,0 +1,34 @@
+- name: Документация по виртуальной глобальной сети (WAN)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Общие сведения о виртуальной глобальной сети (WAN)
+      href: virtual-wan-about.md
+- name: Учебники
+  items:
+    - name: Создание подключения "сеть — сеть"
+      href: virtual-wan-site-to-site-portal.md
+- name: Практические руководства
+  items:
+    - name: Настройка службы автоматизации — партнеры WAN
+      href: virtual-wan-configure-automation-providers.md
+- name: Справочные материалы
+  items:
+    - name: REST
+      href: /rest/api/azure
+- name: Ресурсы
+  items:
+    - name: Часто задаваемые вопросы
+      href: virtual-wan-faq.md
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=networking'
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/networking'
+    - name: Ограничения подписки и службы
+      href: ../azure-subscription-service-limits.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/vpn-gateway'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Соглашение об уровне обслуживания
+      href: 'https://azure.microsoft.com/support/legal/sla'

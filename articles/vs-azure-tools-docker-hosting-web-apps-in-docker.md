@@ -1,36 +1,37 @@
 ---
-title: "Развертывание контейнера Docker ASP.NET Core в Linux на удаленном узле Docker | Документация Майкрософт"
-description: "Узнайте, как использовать средства Visual Studio для Docker для развертывания веб-приложения ASP.NET Core в контейнере Docker, работающем на виртуальной машине узла Docker под управлением Linux в Azure"
+title: Развертывание контейнера ASP.NET Docker в реестре контейнеров Azure (ACR) | Документация Майкрософт
+description: Сведения об использовании средства Visual Studio для Docker для развертывания веб-приложения ASP.NET Core в реестре контейнеров
 services: azure-container-service
 documentationcenter: .net
 author: mlearned
 manager: douge
-editor: 
+editor: ''
 ms.assetid: e5e81c5e-dd18-4d5a-a24d-a932036e78b9
 ms.service: azure-container-service
 ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/08/2016
+ms.date: 05/21/2018
 ms.author: mlearned
-ms.openlocfilehash: 60efffd9313f6972ae46fd1925d999597d3c6ba2
-ms.sourcegitcommit: b07d06ea51a20e32fdc61980667e801cb5db7333
+ms.openlocfilehash: 58df17b17de1d93683875b68dd7c6c087bc6d16d
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38972314"
 ---
-# <a name="deploy-an-aspnet-container-to-a-remote-docker-host"></a>Развертывание контейнера ASP.NET на удаленном узле Docker
+# <a name="deploy-an-aspnet-container-to-a-container-registry-using-visual-studio"></a>Развертывание контейнера ASP.NET в реестре контейнеров с помощью Visual Studio
 ## <a name="overview"></a>Обзор
 Docker — это облегченная платформа контейнеров, чем-то похожая на виртуальную машину, которую можно использовать для размещения приложений и служб.
-В этом руководстве пошагово описывается использование расширения [Средства Visual Studio для Docker](https://docs.microsoft.com/dotnet/articles/core/docker/visual-studio-tools-for-docker) для развертывания приложения ASP.NET Core на узле Docker в Azure с помощью PowerShell.
+Это руководство покажет как с помощью Visual Studio публиковать контейнерные приложения в [реестре контейнеров Azure](https://azure.microsoft.com/services/container-registry).
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/dotnet/?utm_source=acr-publish-doc&utm_medium=docs&utm_campaign=docs), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>предварительным требованиям
-Для работы с этим руководством предварительно необходимо сделать следующее:
+Для работы с этим руководством:
 
-* Создать виртуальную машину для узла Docker в Azure, как описано в статье [Использование машины Docker с драйвером Azure](virtual-machines/linux/docker-machine.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
-* Установить последнюю версию [Visual Studio](https://www.visualstudio.com/downloads/).
-* Скачать [пакет SDK для Microsoft ASP.NET Core 1.0](https://go.microsoft.com/fwlink/?LinkID=809122).
+* Установите последнюю версию [Visual Studio 2017](https://azure.microsoft.com/downloads/) с рабочей нагрузкой "ASP.NET и разработка веб-приложений"
 * Установить [Docker для Windows](https://docs.docker.com/docker-for-windows/install/).
 
 ## <a name="1-create-an-aspnet-core-web-app"></a>1. Создание веб-приложения ASP.NET Core
@@ -38,51 +39,22 @@ Docker — это облегченная платформа контейнеро
 
 [!INCLUDE [create-aspnet5-app](../includes/create-aspnet5-app.md)]
 
-## <a name="2-add-docker-support"></a>2. Добавление поддержки Docker
-[!INCLUDE [create-aspnet5-app](../includes/vs-azure-tools-docker-add-docker-support.md)]
+## <a name="2-publish-your-container-to-azure-container-registry"></a>2. Опубликуйте контейнер в реестре контейнеров Azure
+1. В **обозревателе решений** щелкните правой кнопкой проект и выберите **Опубликовать**.
+2. В диалоговом окне целевой публикации выберите вкладку **Реестр контейнеров**.
+3. Выберите **Создать реестр контейнеров Azure** и щелкните **Опубликовать**.
+4. Заполните нужные значения в окне **Создать новый реестр контейнеров Azure**.
 
-## <a name="3-use-the-dockertaskps1-powershell-script"></a>3. Использование сценария PowerShell DockerTask.ps1
-1. В командной строке PowerShell перейдите в корневой каталог проекта. 
-   
-   ```
-   PS C:\Src\WebApplication1>
-   ```
-2. Убедитесь, что удаленный узел работает. Должно отображаться состояние Running. 
-   
-   ```
-   docker-machine ls
-   NAME         ACTIVE   DRIVER   STATE     URL                        SWARM   DOCKER    ERRORS
-   MyDockerHost -        azure    Running   tcp://xxx.xxx.xxx.xxx:2376         v1.10.3
-   ```
-   
-3. Создайте приложение с использованием параметра -Build.
-   
-   ```
-   PS C:\Src\WebApplication1> .\Docker\DockerTask.ps1 -Build -Environment Release -Machine mydockerhost
-   ```  
+    | Параметр      | Рекомендуемое значение  | ОПИСАНИЕ                                |
+    | ------------ |  ------- | -------------------------------------------------- |
+    | **DNS-префикс** | Глобально уникальное имя | Имя, которое однозначно идентифицирует реестр контейнеров. |
+    | **Подписка** | Выберите свою подписку | Подписка Azure, которую нужно использовать. |
+    | **[Группа ресурсов](../articles/azure-resource-manager/resource-group-overview.md)** | myResourceGroup |  Имя группы ресурсов, в которой создается реестр контейнеров. Чтобы создать группу ресурсов, выберите **Создать**.|
+    | **[SKU](https://docs.microsoft.com/azure/container-registry/container-registry-skus)** | Стандартная | Уровень обслуживания в реестре контейнеров  |
+    | **Расположение реестра** | Расположение рядом с вами | Выберите расположение в ближайшем [регионе](https://azure.microsoft.com/regions/) или в регионе, расположенном рядом с другими службами, которые будут использовать реестр контейнеров. |
+    ![Диалоговое окно "Создание реестра контейнеров Azure" Visual Studio][0]
+5. Нажмите кнопку **Создать**.
 
-   > ```
-   > PS C:\Src\WebApplication1> .\Docker\DockerTask.ps1 -Build -Environment Release 
-   > ```  
-   > 
-   > 
-4. Запустите приложение с помощью параметра -Run.
-   
-   ```
-   PS C:\Src\WebApplication1> .\Docker\DockerTask.ps1 -Run -Environment Release -Machine mydockerhost
-   ```
-   
-   > ```
-   > PS C:\Src\WebApplication1> .\Docker\DockerTask.ps1 -Run -Environment Release 
-   > ```
-   > 
-   > 
-   
-   По завершении работы Docker должны отобразиться результаты, аналогичные приведенным ниже.
-   
-   ![Просмотр приложения][3]
+Теперь можно извлечь контейнер из реестра в любой узел, поддерживающий работу образов Docker, например [Экземпляры контейнеров Azure](./container-instances/container-instances-tutorial-deploy-app.md).
 
-[0]:./media/vs-azure-tools-docker-hosting-web-apps-in-docker/docker-props-in-solution-explorer.png
-[1]:./media/vs-azure-tools-docker-hosting-web-apps-in-docker/change-docker-machine-name.png
-[2]:./media/vs-azure-tools-docker-hosting-web-apps-in-docker/launch-application.png
-[3]:./media/vs-azure-tools-docker-hosting-web-apps-in-docker/view-application.png
+[0]:./media/vs-azure-tools-docker-hosting-web-apps-in-docker/vs-acr-provisioning-dialog.png

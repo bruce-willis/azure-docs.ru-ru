@@ -14,11 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: v-sharos@microsoft.com
-ms.openlocfilehash: 10f4b6ec29c2d9539fa7fe61c96581755e630822
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: b0d6a797e4fe84ce2cb969d001ff96177f6ac641
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37097052"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>Серия StorSimple 8000: решение гибридного облачного хранилища
 ## <a name="overview"></a>Обзор
@@ -213,8 +214,8 @@ Microsoft Azure StorSimple использует дедупликацию и сж
 | Виртуализация |Виртуальные машины |Да* |Поддерживается только для локально закрепленных томов. |Обновление 2 и более поздняя версия |
 | База данных |SQL |Да* |Поддерживается только для локально закрепленных томов. |Обновление 2 и более поздняя версия |
 | Видеонаблюдение |Видеонаблюдение |Да* |Поддерживается, если устройство StorSimple выделено только для этой рабочей нагрузки. |Обновление 2 и более поздняя версия |
-| Архивация |Архивация основной цели |Да* |Поддерживается, если устройство StorSimple выделено только для этой рабочей нагрузки. |Обновление 3 и более поздние версии |
-| Архивация |Архивация дополнительной цели |Да* |Поддерживается, если устройство StorSimple выделено только для этой рабочей нагрузки. |Обновление 3 и более поздние версии |
+| Azure Backup |Архивация основной цели |Да* |Поддерживается, если устройство StorSimple выделено только для этой рабочей нагрузки. |Обновление 3 и более поздние версии |
+| Azure Backup |Архивация дополнительной цели |Да* |Поддерживается, если устройство StorSimple выделено только для этой рабочей нагрузки. |Обновление 3 и более поздние версии |
 
 *Да&#42; Следует соблюдать рекомендации и ограничения для решения.*
 
@@ -248,7 +249,7 @@ Microsoft Azure StorSimple использует дедупликацию и сж
 | Цель резервного копирования |Veeam |Veaam версии 9 и более поздней |[Использование StorSimple в качестве целевого объекта архивации с помощью Veaam](storsimple-configure-backup-target-veeam.md)|
 | Цель резервного копирования |Veritas Backup Exec |Backup Exec 16 и более поздние версии |[Использование StorSimple в качестве целевого объекта архивации с помощью Backup Exec](storsimple-configure-backup-target-using-backup-exec.md)|
 | Цель резервного копирования |Veritas NetBackup |NetBackup 7.7.x и более поздние версии  |[Использование StorSimple в качестве целевого объекта архивации с помощью NetBackup](storsimple-configure-backuptarget-netbackup.md)|
-| Общий доступ к файлам <br></br> Совместная работа |Talon  |[StorSimple с Talon](https://www.talonstorage.com/products/fast-deployment-azure-storsimple) | |
+| Общий доступ к файлам <br></br> Совместная работа |Talon  |[StorSimple с Talon](https://www.talonstorage.com/products/archive/fast-deployment-azure-storsimple) | |
 
 ## <a name="storsimple-terminology"></a>Терминология StorSimple
 Перед развертыванием решения Microsoft Azure StorSimple рекомендуется ознакомиться со следующими терминами и определениями.

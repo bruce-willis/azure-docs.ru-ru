@@ -1,20 +1,20 @@
 ---
-title: Архивация данных мониторинга Azure | Документация Майкрософт
+title: Архивация метрик и данных журналов Azure с помощью Службы хранилища Azure
 description: Архивируйте данные журнала и метрик, созданные в Azure, в учетную запись хранения.
 author: johnkemnetz
-manager: orenr
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.service: monitoring-and-diagnostics
+services: azure-monitor
+ms.service: azure-monitor
 ms.topic: tutorial
 ms.date: 09/25/2017
 ms.author: johnkem
 ms.custom: mvc
-ms.openlocfilehash: b44bbd9cb2f54107d2593b1ab7f07f07fcc41e57
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.component: metrics
+ms.openlocfilehash: f6b7b9fe73f5e815e08bbf4f6493ee181a0c692b
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918277"
 ---
 # <a name="archive-azure-monitoring-data"></a>Архивация данных мониторинга Azure
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 04/06/2018
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Сначала необходимо настроить учетную запись хранения, в которую будут архивироваться данные. Для этого [сделайте следующее](../storage/common/storage-create-storage-account.md).
 
@@ -136,6 +136,11 @@ ms.lasthandoff: 04/06/2018
 Данные мониторинга из виртуальных машин теперь поступают в учетную запись хранения.
 
 ## <a name="view-the-monitoring-data-in-the-storage-account"></a>Просмотр данных мониторинга в учетной записи хранения
+
+> [!WARNING]
+> Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](./monitor-diagnostic-logs-append-blobs.md) 
+>
+> 
 
 Если выполнены предыдущие шаги, данные будут поступать в учетную запись хранения.
 

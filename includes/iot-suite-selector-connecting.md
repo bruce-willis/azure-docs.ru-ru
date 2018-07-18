@@ -8,11 +8,12 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 500e335d0b2eddc56cdfb9828236bc4676d9b6aa
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 28290718d15a893c5d676c887b9f810449075746
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34666016"
 ---
 > [!div class="op_single_selector"]
 > * [C в Windows](../articles/iot-accelerators/iot-accelerators-connecting-devices.md)
@@ -21,7 +22,7 @@ ms.lasthandoff: 05/20/2018
 > * [Использование Node.js с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-node.md)
 > * [Использование C с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-c.md)
 
-В этом руководстве мы реализуем устройство **Chiller**, которое отправляет следующие данные телеметрии в [акселератор решений](../articles/iot-accelerators/iot-accelerators-what-are-solution-accelerators.md) для удаленного мониторинга:
+В этом руководстве вы реализуете устройство **Chiller**, которое отправляет следующие данные телеметрии в [акселератор решений](../articles/iot-accelerators/iot-accelerators-what-are-solution-accelerators.md) для удаленного мониторинга:
 
 * температура;
 * Давление
@@ -39,24 +40,24 @@ ms.lasthandoff: 05/20/2018
 
 ## <a name="before-you-start"></a>Перед началом работы
 
-Прежде чем писать код для своего устройства, разверните акселератор решений для удаленного мониторинга и добавьте новое физическое устройство в решение.
+Прежде чем писать код для устройства, разверните акселератор решений для удаленного мониторинга и добавьте в решение новое физическое устройство.
 
 ### <a name="deploy-your-remote-monitoring-solution-accelerator"></a>Развертывание акселератора решений для удаленного мониторинга
 
-Созданное в этом руководстве устройство **Chiller** отправляет данные в экземпляр акселератора решений для [удаленного мониторинга](../articles/iot-suite/iot-suite-remote-monitoring-explore.md). Если вы еще не подготовили этот акселератор решений в своей учетной записи Azure, см. статью [Deploy the remote monitoring solution accelerator](../articles/iot-accelerators/iot-accelerators-remote-monitoring-deploy.md) (Развертывание акселератора решений для удаленного мониторинга).
+Созданное в этом руководстве устройство **Chiller** отправляет данные в экземпляр акселератора решений для [удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-explore.md). Если вы еще не подготовили этот акселератор решений в своей учетной записи Azure, изучите статью [Развертывание акселератора решения для удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-deploy.md).
 
 После завершения развертывания решения для удаленного мониторинга нажмите кнопку **Запустить**, чтобы открыть панель мониторинга этого решения в браузере.
 
 ![Панель мониторинга решения](media/iot-suite-selector-connecting/dashboard.png)
 
-### <a name="add-your-device-to-the-remote-monitoring-solution"></a>Добавление устройства к решению для удаленного мониторинга
+### <a name="add-your-device-to-the-remote-monitoring-solution"></a>Добавление устройства в решение для удаленного мониторинга
 
 > [!NOTE]
 > Если вы уже добавили устройство в решение, пропустите этот шаг. Однако для следующего шага требуется строка подключения вашего устройства. Вы можете получить строку подключения устройства на [портале Azure](https://portal.azure.com) или с помощью средства CLI [az iot](https://docs.microsoft.com/cli/azure/iot?view=azure-cli-latest).
 
 Чтобы устройство смогло подключиться к акселератору решений, оно должно пройти идентификацию в Центре Интернета вещей с использованием допустимых учетных данных. При добавлении устройства в решение есть возможность сохранить строку подключения устройства, содержащую эти учетные данные. Вы добавите эту строку подключения в клиентское приложение далее в этом руководстве.
 
-Чтобы добавить устройство в решение для удаленного мониторинга, выполните следующие действия на странице решения **Устройства**:
+Чтобы добавить устройство в решение для удаленного мониторинга, выполните следующие действия на странице решения **Устройства**.
 
 1. Щелкните **+ Новое устройство**, а затем для параметра **Тип устройства** выберите значение **Физическое**:
 

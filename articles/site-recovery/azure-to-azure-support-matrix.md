@@ -7,23 +7,20 @@ manager: rochakm
 ms.service: site-recovery
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2018
+ms.date: 07/06/2018
 ms.author: sujayt
-ms.openlocfilehash: daaca3c7b389642a288f738eb0954050e168abef
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: bac4c1d02df644eedbccb38872a6b0f3e7d11c91
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34210568"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37919793"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 
 
->[!NOTE]
->
-> Репликация Azure Site Recovery для виртуальных машин Azure сейчас доступна в предварительной версии.
 
-В этой статье перечислены операционные системы и компоненты, поддерживаемые Azure Site Recovery при репликации и восстановлении виртуальных машин Azure из одного региона в другой.
+В этой статье перечислены конфигурации и компоненты, поддерживаемые при репликации и восстановлении виртуальных машин Azure из одного региона в другой с использованием службы [Azure Site Recovery](site-recovery-overview.md).
 
 ## <a name="user-interface-options"></a>Параметры пользовательского интерфейса
 
@@ -82,9 +79,10 @@ ms.locfileid: "34210568"
 - Сервер Ubuntu версии 16.04 LTS [(поддерживаемые версии ядра)](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 - Debian 7 [ (поддерживаемые версии ядра)](#supported-debian-kernel-versions-for-azure-virtual-machines)
 - Debian 8 [ (поддерживаемые версии ядра)](#supported-debian-kernel-versions-for-azure-virtual-machines)
-- Oracle Enterprise Linux 6.4, 6.5 с ядром, совместимым с Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3).
+- SUSE Linux Enterprise Server 12 SP1,SP2,SP3 [ (поддерживаемые версии ядра)](#supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines)
 - SUSE Linux Enterprise Server 11 SP3
 - SUSE Linux Enterprise Server 11 SP4
+- Oracle Enterprise Linux 6.4, 6.5 с ядром, совместимым с Red Hat, или с ядром Unbreakable Enterprise Kernel Release 3 (UEK3).
 
 (Обновление реплицируемых компьютеров с SLES 11 SP3 до SLES 11 SP4 не поддерживается. Если реплицируемый компьютер обновлен с SLES 11 SP3 до SLES 11 SP4, вам потребуется отключить репликацию и включить повторную защиту компьютера после обновления.)
 
@@ -96,22 +94,32 @@ ms.locfileid: "34210568"
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-14.04 LTS | 9.12 | с 3.13.0-24-generic по 3.13.0-132-generic<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-96-generic |
-14.04 LTS | 9.13 | С 3.13.0-24-generic по 3.13.0-137-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-104-generic. |
-14.04 LTS | 9.14 | С 3.13.0-24-generic по 3.13.0-141-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-112-generic |
+14.04 LTS | 9.17 | С 3.13.0-24-generic по 3.13.0-147-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-124-generic |
+14.04 LTS | 9.16 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
 14.04 LTS | 9.15 | С 3.13.0-24-generic по 3.13.0-143-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-116-generic |
-16.04 LTS | 9.12 | с 4.4.0-21-generic по 4.4.0-96-generic<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-35-generic |
-16.04 LTS | 9.13 | С 4.4.0-21-generic по 4.4.0-104-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic. |
-16.04 LTS | 9.14 | С 4.4.0-21-generic по 4.4.0-112-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-32-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1009-azure |
+14.04 LTS | 9.14 | С 3.13.0-24-generic по 3.13.0-141-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-112-generic |
+|||
+16.04 LTS | 9.17 | С 4.4.0-21-generic по 4.4.0-124-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-41-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>С 4.13.0-1005-azure по 4.13.0-1016-azure |
+16.04 LTS | 9.16 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
 16.04 LTS | 9.15 | С 4.4.0-21-generic по 4.4.0-116-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-37-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
+16.04 LTS | 9.14 | С 4.4.0-21-generic по 4.4.0-112-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-32-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1009-azure |
 
 
 ### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | 9.14, 9.15 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
-Debian 8; | 9.14, 9.15 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
+Debian 7 | 9.17 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.14, 9.15, 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
+|||
+Debian 8; | 9.17 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
+Debian 8; | 9.14, 9.15, 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
+
+### <a name="supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12 для виртуальных машин Azure
+
+**Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
+--- | --- | --- |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.17 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.88-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2(LTSS) 4.4.121-92.73-default</br></br>С SP3 4.4.73-5-default по 4.4.126-94.22-default |
 
 ## <a name="supported-file-systems-and-guest-storage-configurations-on-azure-virtual-machines-running-linux-os"></a>Поддерживаемые файловые системы и конфигурации гостевого хранилища на виртуальных машинах Azure под управлением ОС Linux
 
@@ -162,10 +170,10 @@ Azure Government    | Виргиния (для обслуживания госу
 Частота изменения данных на диске | До 10 Мбит/с на диск для хранилища уровня "Премиум" и до 2 Мбит/с на диск для хранилища уровня "Стандартный". | Если средняя частота изменения данных на диске постоянно превышает 10 Мбит/с (для уровня "Премиум") и 2 Мбит/с (для уровня "Стандартный"), то репликация может задерживаться. Если же это эпизодический случай, и частота изменения данных только на некоторое время превышает 10 Мбит/с (для уровня "Премиум") и 2 Мбит/с (для уровня "Стандартный"), репликация завершится вовремя. В этом случае вы можете увидеть немного отложенные точки восстановления.
 Диски для стандартных учетных записей хранения | Поддерживаются |
 Диск для учетных записей хранения уровня Premium | Поддерживаются | Если диски виртуальной машины распределены между стандартными учетными записями хранения и учетными записями хранения Premium, для каждого диска можно выбрать различные целевые учетные записи хранения, чтобы обеспечить такую же конфигурацию хранилища в целевом регионе.
-Управляемые диски уровня "Стандартный" | Поддерживается в регионах Azure, в которых поддерживается Azure Site Recovery. Облака для государственных организаций сейчас не поддерживаются.  |  
-Управляемые диски уровня "Премиум" | Поддерживается в регионах Azure, в которых поддерживается Azure Site Recovery. Облака для государственных организаций сейчас не поддерживаются. |
+Управляемые диски уровня "Стандартный" | Поддерживается в регионах Azure, в которых поддерживается Azure Site Recovery. |  
+Управляемые диски уровня "Премиум" | Поддерживается в регионах Azure, в которых поддерживается Azure Site Recovery. |
 Дисковые пространства | Поддерживаются |         
-Шифрование неактивных данных (SSE) | Поддерживаются | Для кэша и целевых учетных записей хранения можно выбрать учетную запись хранения с включенным шифрованием неактивных данных.     
+Шифрование неактивных данных (SSE) | Поддерживаются | SSE является параметром по умолчанию в учетных записях хранения.   
 Шифрование дисков Azure | Не поддерживается |
 "Горячее" добавление или удаление диска | Не поддерживается | При добавлении или удалении диска данных его с виртуальной машины, вам необходимо сначала отключить репликацию, а затем включить ее снова.
 Исключение диска | Не поддерживается|   Временный диск исключается по умолчанию.

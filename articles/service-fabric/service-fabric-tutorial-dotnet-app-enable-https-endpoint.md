@@ -1,5 +1,5 @@
 ---
-title: Добавление конечной точки HTTPS в приложение Azure Service Fabric | Документация Майкрософт
+title: Добавление конечной точки HTTPS в приложение Service Fabric в Azure | Документы Майкрософт
 description: В этом руководстве вы узнаете, как добавить конечную точку HTTPS в интерфейсную веб-службу ASP.NET Core и развернуть приложение в кластере.
 services: service-fabric
 documentationcenter: .net
@@ -15,14 +15,15 @@ ms.workload: NA
 ms.date: 04/12/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: a07e3ed3363ad968156aab2233073406d05b7dba
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 309a43d3383658029f4fe7f90f869888bac67bb1
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34364613"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37130056"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service"></a>Руководство. Добавление конечной точки HTTPS к интерфейсной службе веб-API ASP.NET Core
+
 Это руководство представляет собой первую часть цикла.  Вы узнаете, как включить HTTPS в службе ASP.NET Core, работающей в Service Fabric. Когда вы закончите, у вас будет приложение для голосования с внешним веб-интерфейсом ASP.NET Core с поддержкой HTTPS, прослушивающего порт 443. Если вы не хотите вручную создавать приложение для голосования в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
 В третьей части цикла вы узнаете, как выполнять такие задачи:
@@ -44,20 +45,25 @@ ms.locfileid: "34364613"
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
 ## <a name="prerequisites"></a>предварительным требованиям
+
 Перед началом работы с этим руководством выполните следующие действия:
-- Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-- [Установите Visual Studio 2017](https://www.visualstudio.com/) версии 15.5 или более поздней версии, а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
-- [Установка пакета SDK для Service Fabric](service-fabric-get-started.md)
+
+* Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* [Установите Visual Studio 2017](https://www.visualstudio.com/) версии 15.5 или более поздней версии, а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
+* [Установка пакета SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
+
 Для рабочих приложений в качестве сертификата нужно использовать сертификат [из центра сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority). В целях тестирования и разработки вы можете создать и использовать самозаверяющий сертификат. SDK Service Fabric предоставляет скрипт *CertSetup.ps1*, который создает самозаверяющий сертификат и импортирует его в хранилище сертификатов `Cert:\LocalMachine\My`. Откройте командную строку с правами администратора и выполните следующую команду для создания сертификата с субъектом CN=localhost:
 
 ```powershell
 PS C:\program files\microsoft sdks\service fabric\clustersetup\secure> .\CertSetup.ps1 -Install -CertSubjectName CN=localhost
 ```
 
-Если у вас уже есть файл сертификата PFX, для импорта сертификата в хранилище сертификатов `Cert:\LocalMachine\My` выполните следующие действия: 
+Если у вас уже есть файл сертификата PFX, для импорта сертификата в хранилище сертификатов `Cert:\LocalMachine\My` выполните следующие действия:
+
 ```powershell
+
 PS C:\mycertificates> Import-PfxCertificate -FilePath .\mysslcertificate.pfx -CertStoreLocation Cert:\LocalMachine\My -Password (ConvertTo-SecureString "!Passw0rd321" -AsPlainText -Force)
 
 
@@ -69,6 +75,7 @@ Thumbprint                                Subject
 ```
 
 ## <a name="define-an-https-endpoint-in-the-service-manifest"></a>Определение конечной точки HTTPS в манифесте службы
+
 Запустите Visual Studio с правами **администратора** и откройте решение для голосования. В обозревателе решений откройте файл *VotingWeb/PackageRoot/ServiceManifest.xml*. Манифест службы определяет конечные точки службы.  Найдите раздел **Endpoints** и измените имеющуюся конечную точку ServiceEndpoint.  Измените имя на EndpointHttps, установите для протокола значение *https*, тип *Input* и порт *443*.  Сохраните изменения.
 
 ```xml
@@ -101,16 +108,17 @@ Thumbprint                                Subject
 </ServiceManifest>
 ```
 
-
 ## <a name="configure-kestrel-to-use-https"></a>Настройка Kestrel для использования HTTPS
-В обозревателе решений откройте файл *VotingWeb/VotingWeb.cs*.  Настройте Kestrel для использования HTTPS и найдите сертификат в хранилище `Cert:\LocalMachine\My`. Добавьте операторы using: 
+
+В обозревателе решений откройте файл *VotingWeb/VotingWeb.cs*.  Настройте Kestrel для использования HTTPS и найдите сертификат в хранилище `Cert:\LocalMachine\My`. Добавьте операторы using:
+
 ```csharp
 using System.Net;
 using Microsoft.Extensions.Configuration;
 using System.Security.Cryptography.X509Certificates;
 ```
 
-Обновите `ServiceInstanceListener`, чтобы использовать новую конечную точку *EndpointHttps* и ожидать передачи данных на порт 443. 
+Обновите `ServiceInstanceListener`, чтобы использовать новую конечную точку *EndpointHttps* и ожидать передачи данных на порт 443.
 
 ```csharp
 new ServiceInstanceListener(
@@ -171,10 +179,13 @@ private X509Certificate2 GetCertificateFromStore()
 ```
 
 ## <a name="give-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
-На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Вы также должны явно предоставить доступ к закрытому ключу сертификата учетной записи, запускающей службу (по умолчанию NETWORK SERVICE). Вы можете сделать это вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.   
+
+На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Вы также должны явно предоставить доступ к закрытому ключу сертификата учетной записи, запускающей службу (по умолчанию NETWORK SERVICE). Вы можете сделать это вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.
 
 ### <a name="configure-the-service-setup-entry-point"></a>Настройка точки входа установки службы
+
 В обозревателе решений откройте файл *VotingWeb/PackageRoot/ServiceManifest.xml*.  В разделе **CodePackage** добавьте узел **SetupEntryPoint**, а затем узел **ExeHost**.  В **ExeHost** установите для **Program** значение Setup.bat и для **WorkingFolder** — CodePackage.  При запуске службы VotingWeb скрипт Setup.bat выполняется в папке CodePackage до запуска файла VotingWeb.exe.
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceManifest Name="VotingWebPkg"
@@ -190,7 +201,7 @@ private X509Certificate2 GetCertificateFromStore()
     <SetupEntryPoint>
       <ExeHost>
         <Program>Setup.bat</Program>
-        <WorkingFolder>CodePackage</WorkingFolder>        
+        <WorkingFolder>CodePackage</WorkingFolder>
       </ExeHost>
     </SetupEntryPoint>
 
@@ -213,6 +224,7 @@ private X509Certificate2 GetCertificateFromStore()
 ```
 
 ### <a name="add-the-batch-and-powershell-setup-scripts"></a>Добавление пакета и скриптов установки PowerShell
+
 Чтобы запустить PowerShell из точки входа **SetupEntryPoint**, запустите PowerShell.exe в пакетном файле, который указывает на файл PowerShell. Сначала добавьте пакетный файл в проект службы.  В обозревателе решений щелкните правой кнопкой мыши **VotingWeb**, выберите **Добавить**->**Новый элемент** и добавьте новый файл с именем Setup.bat.  Измените файл *Setup.bat*, добавив следующую команду:
 
 ```bat
@@ -229,7 +241,7 @@ $subject="localhost"
 $userGroup="NETWORK SERVICE"
 
 Write-Host "Checking permissions to certificate $subject.." -ForegroundColor DarkCyan
- 
+
 $cert = (gci Cert:\LocalMachine\My\ | where { $_.Subject.Contains($subject) })[-1]
 
 if ($cert -eq $null)
@@ -244,27 +256,27 @@ if ($cert -eq $null)
 }else
 {
     $keyName=$cert.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName
-    
+
     $keyPath = "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys\"
     $fullPath=$keyPath+$keyName
     $acl=(Get-Item $fullPath).GetAccessControl('Access')
 
- 
+
     $hasPermissionsAlready = ($acl.Access | where {$_.IdentityReference.Value.Contains($userGroup.ToUpperInvariant()) -and $_.FileSystemRights -eq [System.Security.AccessControl.FileSystemRights]::FullControl}).Count -eq 1
- 
+
     if ($hasPermissionsAlready){
         Write-Host "Account $userGroupCertificate already has permissions to certificate '$subject'." -ForegroundColor Green
         return $false;
     } else {
         Write-Host "Need add permissions to '$subject' certificate..." -ForegroundColor DarkYellow
-        
+
         $permission=$userGroup,"Full","Allow"
         $accessRule=new-object System.Security.AccessControl.FileSystemAccessRule $permission
         $acl.AddAccessRule($accessRule)
         Set-Acl $fullPath $acl
- 
+
         Write-Output "Permissions were added"
- 
+
         return $true;
     }
 }
@@ -273,10 +285,11 @@ Modify the *SetCertAccess.ps1* file properties to set **Copy to Output Directory
 ```
 
 ### <a name="run-the-setup-script-as-a-local-administrator"></a>Запуск скрипта установки с правами локального администратора
-По умолчанию исполняемый файл точки входа установки службы запускается с теми же учетными данными, что и Service Fabric (обычно это учетная запись NetworkService). Для выполнения *SetCertAccess.ps1* требуются права администратора. В манифесте приложения вы можете изменить разрешения безопасности для выполнения скрипта запуска от имени локальной учетной записи администратора.  
+
+По умолчанию исполняемый файл точки входа установки службы запускается с теми же учетными данными, что и Service Fabric (обычно это учетная запись NetworkService). Для выполнения *SetCertAccess.ps1* требуются права администратора. В манифесте приложения вы можете изменить разрешения безопасности для выполнения скрипта запуска от имени локальной учетной записи администратора.
 
 В обозревателе решений откройте *Voting/ApplicationPackageRoot/ApplicationManifest.xml*. Сначала создайте раздел **Участники** и добавьте нового пользователя, например SetupAdminUser. Добавьте учетную запись SetupAdminUser в системную группу "Администраторы".
-Затем в разделе VotingWebPkg **ServiceManifestImport** настройте **RunAsPolicy**, чтобы применить субъект SetupAdminUser к точке входа установки. Эта политика сообщает Service Fabric, что файл MySetup.bat должен всегда выполняться с правами администратора (от имени учетной записи SetupAdminUser). 
+Затем в разделе VotingWebPkg **ServiceManifestImport** настройте **RunAsPolicy**, чтобы применить субъект SetupAdminUser к точке входа установки. Эта политика сообщает Service Fabric, что файл MySetup.bat должен всегда выполняться с правами администратора (от имени учетной записи SetupAdminUser).
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -323,16 +336,18 @@ Modify the *SetCertAccess.ps1* file properties to set **Copy to Output Directory
 ```
 
 ## <a name="run-the-application-locally"></a>Локальный запуск приложения
+
 В обозревателе решений выберите приложение для **голосования** и установите для свойства **URL-адрес приложения** значение https://localhost:443.
 
 Сохраните все файлы и нажмите клавишу F5 для запуска приложения локально.  После развертывания приложения в веб-браузере откроется [https://localhost:443](https://localhost:443). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
 
-![Приложение для голосования][image2] 
+![Приложение для голосования][image2]
 
 ## <a name="install-certificate-on-cluster-nodes"></a>Установка сертификата на узлы кластера
+
 Перед развертыванием приложения в Azure установите сертификат в хранилище удаленных узлов кластера `Cert:\LocalMachine\My`.  Когда интерфейсная веб-служба запускается на узле кластера, скрипт запуска будет искать сертификат и настраивать разрешения доступа.
 
-Экспортируйте его в формате PFX-файла. Откройте приложение certlm.msc и щелкните **Личные**>**Сертификаты**.  В файле *localhost* щелкните сертификат правой кнопкой мыши и выберите **Все задачи**>**Экспорт**.  
+Экспортируйте его в формате PFX-файла. Откройте приложение certlm.msc и щелкните **Личные**>**Сертификаты**.  В файле *localhost* щелкните сертификат правой кнопкой мыши и выберите **Все задачи**>**Экспорт**.
 
 ![Экспорт сертификата][image4]
 
@@ -353,7 +368,7 @@ $groupname="voting_RG"
 $clustername = "votinghttps"
 $ExistingPfxFilePath="C:\Users\sfuser\votingappcert.pfx"
 
-$appcertpwd = ConvertTo-SecureString –String $certpw –AsPlainText –Force  
+$appcertpwd = ConvertTo-SecureString -String $certpw -AsPlainText -Force
 
 Write-Host "Reading pfx file from $ExistingPfxFilePath"
 $cert = new-object System.Security.Cryptography.X509Certificates.X509Certificate2 $ExistingPfxFilePath, $certpw
@@ -381,7 +396,8 @@ Add-AzureRmServiceFabricApplicationCertificate -ResourceGroupName $groupname -Na
 ```
 
 ## <a name="open-port-443-in-the-azure-load-balancer"></a>Открытие порта 443 в подсистеме балансировки нагрузки Azure
-Откройте порт 443 в подсистеме балансировки нагрузки, если это еще не сделано.  
+
+Откройте порт 443 в подсистеме балансировки нагрузки, если это еще не сделано.
 
 ```powershell
 $probename = "AppPortProbe6"
@@ -390,7 +406,7 @@ $RGname="voting_RG"
 $port=443
 
 # Get the load balancer resource
-$resource = Get-AzureRmResource | Where {$_.ResourceGroupName –eq $RGname -and $_.ResourceType -eq "Microsoft.Network/loadBalancers"} 
+$resource = Get-AzureRmResource | Where {$_.ResourceGroupName –eq $RGname -and $_.ResourceType -eq "Microsoft.Network/loadBalancers"}
 $slb = Get-AzureRmLoadBalancer -Name $resource.Name -ResourceGroupName $RGname
 
 # Add a new probe configuration to the load balancer
@@ -405,6 +421,7 @@ $slb | Set-AzureRmLoadBalancer
 ```
 
 ## <a name="deploy-the-application-to-azure"></a>Развертывание приложения в Azure
+
 Сохраните все файлы, переключитесь с версии для отладки на версию выпуска и нажмите F6 для повторного создания.  Щелкните правой кнопкой мыши проект в **приложении для голосования** и выберите пункт **Опубликовать**. Выберите конечную точку подключения кластера, созданного в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) или выберите другой кластер.  Нажмите кнопку **Опубликовать**, чтобы опубликовать приложение на удаленном кластере.
 
 При развертывании приложения откройте браузер и выберите [https://mycluster.region.cloudapp.azure.com:443](https://mycluster.region.cloudapp.azure.com:443) (обновите URL-адрес, используя конечную точку подключения кластера). Если вы используете самозаверяющий сертификат, вы увидите предупреждение о том, что ваш компьютер не доверяет безопасности этого веб-сайта.  Перейдите к веб-странице.
@@ -412,6 +429,7 @@ $slb | Set-AzureRmLoadBalancer
 ![Приложение для голосования][image3]
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этой части руководства вы узнали, как выполнить следующие действия:
 
 > [!div class="checklist"]
@@ -420,7 +438,7 @@ $slb | Set-AzureRmLoadBalancer
 > * Настройка SSL-сертификата на узлах удаленного кластера.
 > * Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата.
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
-> * Развертывание приложения в удаленном кластере. 
+> * Развертывание приложения в удаленном кластере.
 
 Перейдите к следующему руководству:
 > [!div class="nextstepaction"]

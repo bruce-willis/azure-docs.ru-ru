@@ -1,19 +1,17 @@
 ---
 title: Установка службы Mobility Service (из виртуальных машин VMware или физических серверов в Azure) | Документация Майкрософт
 description: Узнайте, как установить агент службы Mobility Service для защиты виртуальных машин VMware и физических серверов с помощью Azure Site Recovery.
-services: site-recovery
-author: AnoopVasudavan
-manager: gauravd
+author: Rajeswari-Mamilla
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/05/2018
-ms.author: anoopkv
-ms.openlocfilehash: 3279dbc2eeecd3a3f0f36a47d8dd51ef4f3f503f
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.date: 07/06/2018
+ms.author: ramamill
+ms.openlocfilehash: bc0ec09e28c5540eb919ac4e5f970f877ae27e44
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "33942141"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37919093"
 ---
 # <a name="install-the-mobility-service"></a>Установка службы Mobility 
 

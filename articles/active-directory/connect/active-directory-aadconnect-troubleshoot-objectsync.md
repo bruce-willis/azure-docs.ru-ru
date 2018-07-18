@@ -12,19 +12,20 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2018
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9945ad30cc7d8882d8b99f6b4278f2063ab4b7f7
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f65e84bff63bbdb781991ff6648b0fb98ca5208f
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34193769"
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34592319"
 ---
 # <a name="troubleshoot-object-synchronization-with-azure-ad-connect-sync"></a>Устранение неполадок синхронизации объектов с помощью службы синхронизации Azure AD Connect
-В этом документе приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок.
+В этой статье приводятся пошаговые инструкции по устранению неполадок, связанных с синхронизацией объектов, с помощью задач устранения неполадок. Ознакомиться с устранением неполадок в Azure Active Directory Connect (Azure AD) можно [в этом коротком видео](https://aka.ms/AADCTSVideo).
 
 ## <a name="troubleshooting-task"></a>Задачи по устранению неполадок
-Чтобы устранить неполадки с синхронизацией объектов в развертывании Azure Active Directory (AAD) Connect версии 1.1.749.0 и выше, используйте задачу устранения неполадок в мастере. Если вы используете более ранние версии, выполните устранение неполадок вручную, как описано [здесь](active-directory-aadconnectsync-troubleshoot-object-not-syncing.md).
+Чтобы устранить неполадки с синхронизацией объектов в развертывании Azure AD Connect версии 1.1.749.0 и выше, используйте задачу устранения неполадок в мастере. Если вы используете более ранние версии, выполните устранение неполадок вручную, как описано [здесь](active-directory-aadconnectsync-troubleshoot-object-not-syncing.md).
 
 ### <a name="run-the-troubleshooting-task-in-the-wizard"></a>Запуск задачи устранения неполадок в мастере
 Чтобы запустить задачу устранения неполадок в мастере, выполните следующие действия:

@@ -3,16 +3,17 @@ title: 'Дополнительное занятие для учебника по
 description: Описывает использование динамической безопасности с помощью фильтров строк в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
-ms.service: analysis-services
+ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 04/12/2018
+ms.date: 07/03/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5084bb0785e22a4b38f7f80f4c3b29a0ad92dadb
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: f7e5999b2d64c4a9b409fac81841d15f7c6aa5e7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37443670"
 ---
 # <a name="supplemental-lesson---dynamic-security"></a>Дополнительное занятие. Динамическая безопасность
 

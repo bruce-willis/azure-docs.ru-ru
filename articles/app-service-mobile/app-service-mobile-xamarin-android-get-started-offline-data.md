@@ -1,10 +1,10 @@
 ---
-title: "Включение автономной синхронизации для мобильного приложения Azure (Xamarin Android)"
-description: "Узнайте, как использовать мобильное приложение службы приложений для кэширования и синхронизации автономных данных в приложении Xamarin Android"
+title: Включение автономной синхронизации для мобильного приложения Azure (Xamarin Android)
+description: Узнайте, как использовать мобильное приложение службы приложений для кэширования и синхронизации автономных данных в приложении Xamarin Android
 documentationcenter: xamarin
 author: conceptdev
 manager: crdun
-editor: 
+editor: ''
 services: app-service\mobile
 ms.assetid: 91d59e4b-abaa-41f4-80cf-ee7933b32568
 ms.service: app-service-mobile
@@ -14,11 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 5c6ff5ac909e2dc6918f85d39beb781952ee6dd0
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
+ms.openlocfilehash: e0146be345215701cf1afe86345afc286933d51b
+ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36750974"
 ---
 # <a name="enable-offline-sync-for-your-xamarinandroid-mobile-app"></a>Включение автономной синхронизации для мобильного приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -32,7 +33,7 @@ ms.lasthandoff: 01/04/2018
 Дополнительные сведения о функции автономной синхронизации см. в статье [Автономная синхронизация данных в мобильных приложениях Azure].
 
 ## <a name="update-the-client-app-to-support-offline-features"></a>Обновление клиентского приложения для поддержки автономных функций
-Автономные функции мобильных приложений Azure позволяют взаимодействовать с локальной базой данных в случае автономной работы. Для использования этих функций в приложении необходимо инициализировать [SyncContext] в локальном хранилище. Затем необходимо сослаться на таблицу с помощью интерфейса [IMobileServiceSyncTable][IMobileServiceSyncTable]. SQLite используется как локальное хранилище на устройстве.
+Автономные функции мобильных приложений Azure позволяют взаимодействовать с локальной базой данных в случае автономной работы. Для использования этих функций в приложении необходимо инициализировать [SyncContext] в локальном хранилище. Затем необходимо сослаться на таблицу с помощью интерфейса [IMobileServiceSyncTable](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.mobileservices.sync.imobileservicesynctable?view=azure-dotnet). SQLite используется как локальное хранилище на устройстве.
 
 1. В Visual Studio откройте диспетчер пакетов NuGet в проекте, созданном при работе с руководством [Создание приложения Xamarin.Android].  Найдите и установите пакет NuGet **Microsoft.Azure.Mobile.Client.SQLiteStore**.
 2. Откройте файл ToDoActivity.cs и раскомментируйте определение `#define OFFLINE_SYNC_ENABLED`.

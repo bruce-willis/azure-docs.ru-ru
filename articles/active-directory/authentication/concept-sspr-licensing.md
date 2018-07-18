@@ -10,30 +10,32 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 78d4d721f2821a8365185c0bad6d795c67a75292
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 64c12177e5cf6c82018731b493c0da22e1895b7f
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33864671"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37855530"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Требования к лицензированию самостоятельного сброса пароля в Azure AD
 
-Для работы функции сброса пароля Azure Active Directory (Azure AD) *в вашей организации должна быть назначена по крайней мере одна лицензия*. Лицензирование каждого пользователя для сброса пароля необязательно. Для прямого или непрямого использования функций, входящих в ту или иную лицензию, пользователю требуется соответствующая лицензия.
+Чтобы активировать функцию сброса пароля Azure Active Directory (Azure AD), *в вашей организации нужно назначить по крайней мере одну лицензию* для этого пользователя. Для прямого или непрямого использования функций, входящих в ту или иную лицензию, пользователю требуется соответствующая лицензия.
 
 * **Полностью облачные пользователи**. Любой платный номер SKU Office 365 или Azure AD Basic.
 * **Облачные** или **локальные пользователи**. Azure AD Premium P1 или P2, Enterprise Mobility + Security (EMS) или Microsoft 365
 
-## <a name="licenses-required-for-password-writeback"></a>Лицензии, необходимые для компонента обратной записи паролей
+## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
+
+**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"**. Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 
 * Azure AD Premium P1
 * Azure AD Premium P2
-* Enterprise Mobility + Security E3
-* Enterprise Mobility + Security E5
-* Microsoft 365 E3
-* Microsoft 365 E5
+* Enterprise Mobility + Security E3 или A3;
+* Enterprise Mobility + Security E5 или A5;
+* Microsoft 365 E3 или A3;
+* Microsoft 365 E5 или A5;
 * Microsoft 365 F1
 
 > [!WARNING]
@@ -49,7 +51,7 @@ ms.locfileid: "33864671"
 
 ## <a name="enable-group-or-user-based-licensing"></a>Включение группового и пользовательского лицензирования
 
-Azure AD теперь поддерживает групповое лицензирование. Это позволяет администраторам назначать лицензии сразу группе пользователей, вместо назначения их по одной. Дополнительные сведения см. в разделе [Назначение лицензий группе пользователей в Azure Active Directory](../active-directory-licensing-group-assignment-azure-portal.md#step-1-assign-the-required-licenses).
+Azure AD теперь поддерживает групповое лицензирование. Это позволяет администраторам назначать лицензии сразу группе пользователей, вместо назначения их по одной. Дополнительные сведения см. в разделе [Назначение лицензий группе пользователей в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md#step-1-assign-the-required-licenses).
 
 Некоторые службы Майкрософт недоступны во всех расположениях. Прежде чем назначать лицензию, администратор должен указать для пользователя свойство **Место использования**. Назначить лицензию можно на портале Azure в разделе **Пользователь** > **Профиль** > **Параметры**. *Если лицензии назначаются группам, все пользователи, для которых не указано расположение, наследуют расположение каталога.*
 

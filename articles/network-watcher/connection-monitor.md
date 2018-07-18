@@ -16,11 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: bfd9552a0d7c3b1e631fcc1a25d240608754c6a3
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 9b13b8ae0b64dc84e476f5fc5da59ea30702fd8d
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34639033"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Руководство. Мониторинг сетевого взаимодействия между двумя виртуальными машинами с помощью портала Azure
 
@@ -141,7 +142,7 @@ ms.lasthandoff: 05/03/2018
 
 5. Так как монитор подключения выполняет проверку с интервалом 60 секунд, подождите несколько минут, а затем в левой части портала выберите **Наблюдатель за сетями**, затем — **Монитор подключения**  и монитор **myVm1-myVm2(22)**. Теперь результаты отличаются от показанных на следующем рисунке.
 
-    ![Сведения о сбое в мониторе](./media/connection-monitor/vm-monitor-fault .png)
+    ![Монитор сообщает об ошибке](./media/connection-monitor/vm-monitor-fault.png)
 
     В столбце состояния сетевого интерфейса **myvm2529** отображается красный восклицательный знак.
 

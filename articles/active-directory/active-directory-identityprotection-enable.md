@@ -1,13 +1,14 @@
 ---
-title: "Включение защиты идентификации Azure Active Directory | Документация Майкрософт"
-description: "Узнайте, как включить защиту идентификации Azure Active Directory."
+title: Включение защиты идентификации Azure Active Directory | Документация Майкрософт
+description: Узнайте, как включить защиту идентификации Azure Active Directory.
 services: active-directory
-keywords: "защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности"
-documentationcenter: 
+keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
+documentationcenter: ''
 author: MarkusVi
 manager: mtillman
 ms.assetid: f7a7ffaf-76bf-4cc7-96a1-86c944275c82
 ms.service: active-directory
+ms.component: protection
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,18 +16,24 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 39bdc17e63d382775db17097556c15dc00c3785b
-ms.sourcegitcommit: 384d2ec82214e8af0fc4891f9f840fb7cf89ef59
+ms.openlocfilehash: 03e0c255f235a3896c818bec07cacab87b0a2d7e
+ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34712894"
 ---
 # <a name="enabling-azure-active-directory-identity-protection"></a>Включение защиты идентификации Azure Active Directory
-Защита идентификации Azure Active Directory — это новая возможность, которая обеспечивает единое представление подозрительных операций входа в систему и потенциальных уязвимостей. В этой службе реализованы уведомления, рекомендации по исправлению и политики на основе рисков, помогающие защитить организацию. 
 
-Данная служба обнаруживает подозрительные операции входа в систему по пользовательским и привилегированным (администраторы) удостоверениям по таким признакам, как атаки методом подбора, раскрытые учетные данные, попытки входа в систему из неизвестных расположений и зараженные устройства, чтобы обеспечить защиту в реальном времени. Что более важно, на основе этих подозрительных операций вычисляется серьезность риска пользователя, и можно настроить политики на основе рисков, чтобы обеспечить автоматическую защиту удостоверений своей организации. Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](active-directory-identityprotection.md).
+Защита идентификации Azure Active Directory — это возможность службы Azure Active Directory (Azure AD). С помощью защиты идентификации Azure AD можно сделать следующее.
 
-В этом разделе показано, как включить защиту идентификации Azure Active Directory.
+- Получить консолидированное представление помеченных пользователей и событий риска, определенных с помощью алгоритмов Машинного обучения.
+- Настроить политики условного доступа на основе рисков для автоматической защиты пользователей.
+- Улучшить безопасность путем выполнения действий, связанных с уязвимостями. 
+
+Дополнительные сведения см. в статье [Защита идентификации Azure Active Directory](active-directory-identityprotection.md).
+
+В этой статье показано, как включить защиту идентификации Azure Active Directory.
 
 ## <a name="steps-to-enable-azure-active-directory-identity-protection"></a>Инструкции по включению защиты идентификации Azure Active Directory
 1. [Войдите](https://ms.portal.azure.com/) на портал Azure с правами глобального администратора. 

@@ -2,7 +2,7 @@
 title: Мониторинг и анализ запусков приложений логики с помощью Log Analytics (Azure Logic Apps) | Документация Майкрософт
 description: Отслеживайте запуски приложений логики с помощью Log Analytics, чтобы получать аналитические сведения и подробные данные отладки, которые позволят устранять неполадки и диагностировать работу.
 author: divyaswarnkar
-manager: anneta
+manager: jeconnoc
 editor: ''
 services: logic-apps
 documentationcenter: ''
@@ -12,13 +12,14 @@ ms.workload: integration
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/9/2017
+ms.date: 06/19/2018
 ms.author: LADocs; divswa
-ms.openlocfilehash: d484aaf7d7582bd474d7437a7a62f41880690dbc
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 0dc7f28ebe3816ba317eb3a4e28fc640c8a12a4e
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36294580"
 ---
 # <a name="monitor-and-get-insights-about-logic-app-runs-with-log-analytics"></a>Мониторинг и анализ запусков приложений логики с помощью Log Analytics
 
@@ -66,17 +67,17 @@ ms.lasthandoff: 04/05/2018
 
    ![Выбор рабочей области Log Analytics](media/logic-apps-monitor-your-logic-apps-oms/select-logic-app.png)
 
-3. В разделе **Управление** выберите **Портал OMS**.
+3. В разделе **Управление** выберите **Обзор**.
 
-   ![Выберите "Портал OMS"](media/logic-apps-monitor-your-logic-apps-oms/oms-portal-page.png)
+   ![Выберите "Портал OMS"](media/logic-apps-monitor-your-logic-apps-oms/ibiza-portal-page.png)
 
-4. В разделе **Все решения** найдите и выберите элемент решения **Logic Apps Management**.
+4. На странице обзора выберите **Добавить**, чтобы открыть плитку решений по управлению. 
 
-   ![Выбор Logic Apps Management](media/logic-apps-monitor-your-logic-apps-oms/logic-apps-management-tile2.png)
+   ![Выбор Logic Apps Management](media/logic-apps-monitor-your-logic-apps-oms/add-logic-apps-management-solution.png)
 
-5. Чтобы установить решение в рабочую область Log Analytics, щелкните **Добавить**.
+5. Прокрутите список **Решения по управлению**, выберите решение **управления Logic Apps**, а затем выберите **Создать**, чтобы установить его на странице обзора.
 
-   ![Кнопка "Добавить" для Logic Apps Management](media/logic-apps-monitor-your-logic-apps-oms/add-logic-apps-management-solution.png)
+   ![Кнопка "Добавить" для Logic Apps Management](media/logic-apps-monitor-your-logic-apps-oms/create-logic-apps-management-solution.png)
 
 <a name="view-logic-app-runs-oms"></a>
 

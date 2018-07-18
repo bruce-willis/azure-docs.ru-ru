@@ -15,12 +15,12 @@ ms.prod: vs-devops-alm
 ms.date: 03/02/2018
 ms.author: phillee
 keywords: visualstudio
-ms.openlocfilehash: 3e37edbf8d29441541e77ed0660dc9a71618fdee
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 7809e0b9265ec62bded67d0b0ed851ee0ba98315
+ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33894277"
+ms.lasthandoff: 06/21/2018
+ms.locfileid: "36301705"
 ---
 # <a name="visual-studio-images-on-azure"></a>Образы Visual Studio в Azure
 Запуск Visual Studio на предварительно настроенной виртуальной машине Azure — простой и быстрый способ получить "с нуля" готовую к работе среду разработки. Образы системы с различными конфигурациями Visual Studio доступны в [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?search=%22visual%20studio%202017%22&page=1).
@@ -32,8 +32,8 @@ ms.locfileid: "33894277"
 
 | Версия выпуска                                              | Выпуски                     |     Версия продукта     |
 |:------------------------------------------------------------:|:----------------------------:|:-----------------------:|
-| Visual Studio 2017: последняя версия (15.7)                    |    Enterprise, Community     |      Версия 15.7.0     |
-| Visual Studio 2017: последняя предварительная версия (версия 15.8, предварительная версия 1) |    Enterprise, Community     |      Версия 15.8.1     |
+| Visual Studio 2017: последняя версия (15.7)                    |    Enterprise, Community     |      Версия 15.7.3     |
+| Visual Studio 2017: последняя предварительная версия (версия 15.8, предварительная версия 2) |    Enterprise, Community     |      Версия 15.8.2     |
 |         Visual Studio 2017 RTW                              |    Enterprise, Community     |      Версия 15.0.13    |
 |   Последняя версия Visual Studio 2015 (обновление 3)                      |    Enterprise, Community     |  Версия 14.0.25431.01  |
 |         Visual Studio 2015 RTW                              |             None             | (Истек срок обслуживания) |

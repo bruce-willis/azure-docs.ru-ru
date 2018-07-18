@@ -11,14 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/11/2018
+ms.date: 05/24/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: cd917165804314f6ee4ee006e3f29263d8d4b4c5
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: e381d2ed3c6a972d776dd31f311fcebe2e35823a
+ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34605616"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
 
@@ -44,6 +45,8 @@ ms.lasthandoff: 04/16/2018
     Проверяет порядок других сертификатов, чтобы убедиться, что порядок правильный.
 - **Другие сертификаты**.  
     Проверяет, не были ли упакованы в PFX-файл другие сертификаты (кроме соответствующего конечного сертификата и его цепочки).
+- **Отсутствие профиля**  
+    Проверяет, может ли новый пользователь скачать PFX-файл без загрузки профиля пользователя, что аналогично поведению групповых управляемых учетных записей службы во время обслуживания сертификатов.
 
 > [!IMPORTANT]  
 > PFX-файл и пароль сертификата PKI должны быть конфиденциальными.
@@ -57,43 +60,46 @@ ms.lasthandoff: 04/16/2018
 - Файл DeploymentData.json.
 - Windows 10 или Windows Server 2016;
 
-## <a name="perform-certificate-validation"></a>Выполнение проверки сертификатов
+## <a name="perform-core-services-certificate-validation"></a>Выполнение проверки сертификата основных служб
 
-Для подготовки и проверки сертификатов PKI Azure Stack выполните следующие действия:
+Чтобы подготовить и проверить сертификаты PKI Azure Stack для развертывания и смены секретов, выполните следующие действия:
 
-1. Установите AzsReadinessChecker из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
+1. Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
 
     ````PowerShell  
-        Install-Module Microsoft.AzureStack.ReadinessChecker 
+        Install-Module Microsoft.AzureStack.ReadinessChecker -force 
     ````
 
 2. Создайте структуру каталога сертификатов. В приведенном ниже примере вы можете изменить `<c:\certificates>` на новый путь каталога по своему усмотрению.
 
     ````PowerShell  
     New-Item C:\Certificates -ItemType Directory
-
-    $directories = 'ACSBlob','ACSQueue','ACSTable','ADFS','Admin Portal','ARM Admin','ARM Public','Graph','KeyVault','KeyVaultInternal','Public Portal' 
-
-    $destination = 'c:\certificates' 
-
-    $directories | % { New-Item -Path (Join-Path $destination $PSITEM) -ItemType Directory -Force}  
+    
+    $directories = 'ACSBlob','ACSQueue','ACSTable','ADFS','Admin Portal','ARM Admin','ARM Public','Graph','KeyVault','KeyVaultInternal','Public Portal'
+    
+    $destination = 'c:\certificates'
+    
+    $directories | % { New-Item -Path (Join-Path $destination $PSITEM) -ItemType Directory -Force}
     ````
+    
+    > [!Note]  
+    > Службы федерации Active Directory (AD FS) и Graph необходимы, если вы используете AD FS как свою систему идентификации.
+    
+     - Поместите сертификаты в соответствующие каталоги, созданные на предыдущем шаге. Например:   
+        - `c:\certificates\ACSBlob\CustomerCertificate.pfx`
+        - `c:\certificates\Certs\Admin Portal\CustomerCertificate.pfx`
+        - `c:\certificates\Certs\ARM Admin\CustomerCertificate.pfx`
 
- - Поместите сертификаты в соответствующие каталоги, созданные на предыдущем шаге. Например:   
-    - c:\certificates\ACSBlob\CustomerCertificate.pfx 
-    - c:\certificates\Certs\Admin Portal\CustomerCertificate.pfx 
-    - c:\certificates\Certs\ARM Admin\CustomerCertificate.pfx 
-    - и т. д. 
-
-3. В окне PowerShell выполните команду ниже:
+3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack и выполните команду ниже:
 
     ````PowerShell  
-    $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString
+    $pfxPassword = Read-Host -Prompt "Enter PFX Password" -AsSecureString 
 
-    Start-AzsReadinessChecker -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD
+    Start-AzsReadinessChecker -CertificatePath c:\certificates -pfxPassword $pfxPassword -RegionName east -FQDN azurestack.contoso.com -IdentitySystem AAD 
+
     ````
 
-4. Просмотрите выходные данные, чтобы проверить, что все сертификаты прошли тесты. Например: 
+4. Проверьте выходные данные. Все сертификаты должны пройти все проверки. Например: 
 
     ````PowerShell
     AzsReadinessChecker v1.1803.405.3 started
@@ -125,7 +131,8 @@ ms.lasthandoff: 04/16/2018
     Finished Certificate Validation
 
     AzsReadinessChecker Log location: C:\AzsReadinessChecker\AzsReadinessChecker.log
-    AzsReadinessChecker Report location (for OEM): C:\AzsReadinessChecker\AzsReadinessReport.json
+    AzsReadinessChecker Report location: 
+    C:\AzsReadinessChecker\AzsReadinessReport.json
     AzsReadinessChecker Completed
     ````
 
@@ -162,12 +169,87 @@ ms.lasthandoff: 04/16/2018
 
 **Решение**. Следуйте указаниям в руководстве по инструментам в разделе сведений о каждом наборе проверок сертификата.
 
+## <a name="perform-platform-as-a-service-certificate-validation"></a>Выполнение проверки сертификата платформы как услуги
+
+Выполните шаги ниже, чтобы подготовить и проверить сертификаты PKI Azure Stack для сертификатов платформы как услуги (PaaS), если запланированы развертывания SQL/MySQL или службы приложений.
+
+1.  Установите **AzsReadinessChecker** из командной строки PowerShell (версии 5.1 или более поздней), выполнив следующий командлет:
+
+    ````PowerShell  
+      Install-Module Microsoft.AzureStack.ReadinessChecker -force
+    ````
+
+2.  Создайте вложенную хэш-таблицу, содержащую пути и пароль для каждого сертификата PaaS, который нужно проверить. В окне PowerShell выполните команду ниже:
+
+    ```PowerShell
+        $PaaSCertificates = @{
+        'PaaSDBCert' = @{'pfxPath' = '<Path to DBAdapter PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
+        'PaaSDefaultCert' = @{'pfxPath' = '<Path to Default PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
+        'PaaSAPICert' = @{'pfxPath' = '<Path to API PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
+        'PaaSFTPCert' = @{'pfxPath' = '<Path to FTP PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
+        'PaaSSSOCert' = @{'pfxPath' = '<Path to SSO PFX>';'pfxPassword' = (ConvertTo-SecureString -String '<Password for PFX>' -AsPlainText -Force)}
+        }
+    ```
+
+3.  Измените значения **RegionName** и **FQDN** в соответствии со своей средой Azure Stack, чтобы начать проверку. Далее выполните:
+
+    ```PowerShell
+    Start-AzsReadinessChecker -PaaSCertificates $PaaSCertificates -RegionName east -FQDN azurestack.contoso.com 
+    ```
+4.  Проверьте выходные данные. Все сертификаты должны пройти все проверки.
+
+    ```PowerShell
+    AzsReadinessChecker v1.1805.425.2 started
+    Starting PaaS Certificate Validation
+    
+    Starting Azure Stack Certificate Validation 1.0 
+    Testing: PaaSCerts\wildcard.appservice.pfx
+        Read PFX: OK
+        Signature Algorithm: OK
+        Private Key: OK
+        Cert Chain: OK
+        DNS Names: OK
+        Key Usage: OK
+        Key Size: OK
+        Chain Order: OK
+        Other Certificates: OK
+    Testing: PaaSCerts\api.appservice.pfx
+        Read PFX: OK
+        Signature Algorithm: OK
+        Private Key: OK
+        Cert Chain: OK
+        DNS Names: OK
+        Key Usage: OK
+        Key Size: OK
+        Chain Order: OK
+        Other Certificates: OK
+    Testing: PaaSCerts\wildcard.dbadapter.pfx
+        Read PFX: OK
+        Signature Algorithm: OK
+        Private Key: OK
+        Cert Chain: OK
+        DNS Names: OK
+        Key Usage: OK
+        Key Size: OK
+        Chain Order: OK
+        Other Certificates: OK
+    Testing: PaaSCerts\sso.appservice.pfx
+        Read PFX: OK
+        Signature Algorithm: OK
+        Private Key: OK
+        Cert Chain: OK
+        DNS Names: OK
+        Key Usage: OK
+        Key Size: OK
+    ```
+
 ## <a name="using-validated-certificates"></a>Использование проверенных сертификатов
 
 Как только ваши сертификаты будут проверены с помощью AzsReadinessChecker, их можно использовать в развертывании Azure Stack или для смены секретов Azure Stack. 
 
  - В целях развертывания безопасно передайте свои сертификаты специалисту по развертыванию, чтобы он смог скопировать их на узел развертывания, как указано в [документации по требованиям PKI для Azure Stack](azure-stack-pki-certs.md).
  - В целях смены секретов вы можете использовать сертификаты, чтобы обновить старые сертификаты для общедоступных конечных точек инфраструктуры среды Azure Stack, следуя инструкциям, приведенным в статье [Смена секретов в Azure Stack](azure-stack-rotate-secrets.md).
+ - Для служб PaaS можно использовать сертификаты для установки поставщиков ресурсов SQL, MySQL и служб приложений в Azure Stack, ознакомившись со статьей [Общие сведения о предложении служб в Azure Stack](azure-stack-offer-services-overview.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

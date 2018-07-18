@@ -20,9 +20,158 @@
     - name: Сведения о Политике Azure (практические занятия)
       href: 'https://www.microsoft.com/handsonlabs/SelfPacedLabs/?storyId=story://Content-Private/content/sp-azuregovernance/1-azpolicy/a-policy'
 - name: Примеры
+  href: json-samples.md
   items:
-    - name: Примеры для Политики Azure
-      href: json-samples.md
+    - name: Общие сведения
+      items:
+        - name: Именование
+          items:
+            - name: Разрешение на использование нескольких шаблонов имен
+              href: scripts/allow-multiple-name-patterns.md
+            - name: Требование шаблона схожести
+              href: scripts/enforce-like-pattern.md
+            - name: Требование шаблона соответствия
+              href: scripts/enforce-match-pattern.md
+            - name: Требование шаблона соответствия тегов
+              href: scripts/enforce-tag-match-pattern.md
+        - name: Теги
+          items:
+            - name: Применение тега и его значения по умолчанию
+              href: scripts/apply-tag-def-val.md
+            - name: Инициатива политики тегов для выставления счетов
+              href: scripts/billing-tags-policy-init.md
+            - name: принудительно применять тег и его значение;
+              href: scripts/enforce-tag-val.md
+            - name: Принудительное применение тега и его значения для группы ресурсов
+              href: scripts/enforce-tag-rg.md
+        - name: Расположения
+          items:
+            - name: Allowed locations;
+              href: scripts/allowed-locs.md
+        - name: Типы ресурсов
+          items:
+            - name: Допустимые типы ресурсов
+              href: scripts/allowed-res-types.md
+            - name: Not allowed resource types;
+              href: scripts/not-allowed-res-type.md
+    - name: Службы вычислений
+      items:
+        - name: Виртуальные машины
+          items:
+            - name: Разрешение использования пользовательского образа виртуальной машины из группы ресурсов
+              href: scripts/allow-custom-vm-image.md
+            - name: Допустимые номера SKU для учетных записей хранения и виртуальных машин
+              href: scripts/allowed-skus-storage.md
+            - name: Утвержденные образы виртуальных машин
+              href: scripts/allowed-custom-images.md
+            - name: Проверка наличия расширения
+              href: scripts/audit-ext-not-exist.md
+            - name: Запрет использования определенных расширений виртуальной машины
+              href: scripts/not-allowed-vm-ext.md
+        - name: наборы для масштабирования виртуальных машин
+          items:
+            - name: Проверка использования виртуальных дисков виртуальной машиной
+              href: scripts/create-vm-managed-disk.md
+            - name: 'Создание виртуальной машины, использующей управляемый диск'
+              href: scripts/use-managed-disk-vm.md
+            - name: Запрет на использование программы преимуществ гибридного использования
+              href: scripts/deny-hybrid-use.md
+            - name: Разрешение использования только некоторых образов платформы виртуальной машины
+              href: scripts/allow-certain-vm-image.md
+    - name: Озеро данных
+      items:
+        - name: Требование шифрования данных для Data Lake Store
+          href: scripts/enforce-datalakestore-encryption.md
+    - name: Мониторинг
+      items:
+        - name: Аудит параметров диагностики
+          href: scripts/audit-diag-setting.md
+    - name: Сеть
+      items:
+        - name: Сетевые интерфейсы
+          items:
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
+              href: scripts/nsg-on-nic.md
+            - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
+              href: scripts/use-approved-subnet-vm-nics.md
+            - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
+              href: scripts/use-approved-vnet-vm-nics.md
+        - name: виртуальные сети;
+          items:
+            - name: Разрешенные SKU для шлюзов приложений
+              href: scripts/allowed-app-gate-sku.md
+            - name: Запрет пиринга сетей для сети ExpressRoute
+              href: scripts/no-peering-er-net.md
+            - name: Запрет определяемой пользователем таблицы маршрутов
+              href: scripts/no-user-def-route-table.md
+            - name: NSG x для каждой подсети
+              href: scripts/nsg-on-subnet.md
+            - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
+              href: scripts/use-approved-subnet-vm-nics.md
+            - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
+              href: scripts/use-approved-vnet-vm-nics.md
+        - name: Группы безопасности сети
+          items:
+            - name: Конкретная группа безопасности сети на каждой сетевой карте
+              href: scripts/nsg-on-nic.md
+            - name: NSG x для каждой подсети
+              href: scripts/nsg-on-subnet.md
+        - name: Каналы ExpressRoute
+          items:
+            - name: Допустимая пропускная способность канала ExpressRoute
+              href: scripts/allowed-er-band.md
+            - name: Допустимые номера SKU для ExpressRoute
+              href: scripts/allowed-er-skus.md
+            - name: Допустимое расположение пиринга для ExpressRoute
+              href: scripts/allowed-peering-er.md
+        - name: Наблюдатели за сетями
+          items:
+            - name: Проверка отключения службы "Наблюдатель за сетями" для региона
+              href: scripts/net-watch-not-enabled.md
+        - name: Шлюзы приложений
+          items:
+            - name: Разрешенные SKU для шлюзов приложений
+              href: scripts/allowed-app-gate-sku.md
+    - name: SQL
+      items:
+        - name: Серверы SQL Server
+          items:
+            - name: Проверка назначения роли администратора Azure Active Directory
+              href: scripts/audit-no-aad-admin.md
+            - name: Аудит параметра обнаружения угроз на уровне сервера
+              href: scripts/audit-sql-ser-threat-det-setting.md
+            - name: Проверка параметров аудита SQL Server
+              href: scripts/sql-server-audit.md
+            - name: Аудит параметров аудита уровня SQL Server
+              href: scripts/audit-sql-ser-leve-audit-setting.md
+            - name: Require SQL Server version 12.0;
+              href: scripts/req-sql-12.md
+        - name: Базы данных SQL
+          items:
+            - name: Допустимые номера SKU базы данных SQL
+              href: scripts/allowed-sql-db-skus.md
+            - name: Аудит параметра обнаружения угроз на уровне базы данных SQL
+              href: scripts/audit-db-threat-det-setting.md
+            - name: Шифрование аудита баз данных SQL
+              href: scripts/sql-database-encryption-audit.md
+            - name: Аудит параметров аудита уровня базы данных SQL
+              href: scripts/audit-sql-db-audit-setting.md
+            - name: Проверка состояния прозрачного шифрования данных
+              href: scripts/audit-trans-data-enc-status.md
+    - name: Служба хранилища
+      items:
+        - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
+          href: scripts/allowed-skus-storage.md
+        - name: Allowed storage account SKUs;
+          href: scripts/allowed-stor-acct-skus.md
+        - name: Запрет на распределение по холодным уровням доступа для учетных записей хранения
+          href: scripts/deny-cool-access-tiering.md
+        - name: Использование HTTPS-трафика для учетной записи хранения
+          href: scripts/ensure-https-stor-acct.md
+        - name: Обеспечение шифрования файлов хранилища
+          href: scripts/ensure-store-file-enc.md
+        - name: Require storage account encryption.
+          href: scripts/req-store-acct-enc.md
 - name: Основные понятия
   items:
     - name: Структура определения службы "Политика Azure"

@@ -1,8 +1,8 @@
 ---
-title: "Настройка службы управления API в Azure с помощью Git | Документация Майкрософт"
-description: "Узнайте, как сохранить и настроить конфигурацию службы управления API с помощью Git."
+title: Настройка службы управления API в Azure с помощью Git | Документация Майкрософт
+description: Узнайте, как сохранить и настроить конфигурацию службы управления API с помощью Git.
 services: api-management
-documentationcenter: 
+documentationcenter: ''
 author: vladvino
 manager: erikre
 editor: mattfarm
@@ -13,11 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/02/2018
 ms.author: apimpm
-ms.openlocfilehash: 57d14b6aa6caca0cc9b075723d4c350b0a50c9f8
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.openlocfilehash: b2cdb88ba71b4a3d3005ec9d64b6e94cdb1d1c55
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857537"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -218,15 +219,15 @@ git push
 ### <a name="apis-folder"></a>Папка apis
 Папка `apis` содержит папку для каждого API в экземпляре службы, в котором находятся указанные далее элементы.
 
-* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://msdn.microsoft.com/library/azure/dn781423.aspx#GetAPI) с `export=true` в формате `application/json`.
-* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://msdn.microsoft.com/library/azure/dn781423.aspx#EntityProperties).
-* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая соответствует свойству `description`[сущности operation](https://msdn.microsoft.com/library/azure/dn781423.aspx#OperationProperties) в REST API.
+* `apis\<api name>\configuration.json` — это конфигурация для API, которая содержит сведения о серверном URL-адресе службы и операциях. Это те же сведения, которые возвращаются при вызове операции [Получить определенный API](https://docs.microsoft.com/en-us/rest/api/apimanagement/api/get) с `export=true` в формате `application/json`.
+* `apis\<api name>\api.description.html` — это описание API, которое соответствует свойству `description` [сущности API](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.table._entity_property).
+* `apis\<api name>\operations\` — эта папка содержит файлы `<operation name>.description.html`, соответствующие операциям в API. Каждый файл содержит описание одной операции в API, которая соответствует свойству `description`[сущности operation](https://docs.microsoft.com/en-us/rest/api/visualstudio/operations/list#operationproperties) в REST API.
 
 ### <a name="groups-folder"></a>Папка groups
 Папка `groups` содержит папку для каждой группы, определенной в экземпляре службы.
 
-* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://msdn.microsoft.com/library/azure/dn776329.aspx#GetGroup) .
-* `groups\<group name>\description.html` — это описание группы, которое соответствует свойству `description` [сущности group](https://msdn.microsoft.com/library/azure/dn776329.aspx#EntityProperties).
+* `groups\<group name>\configuration.json` — это конфигурация для группы. Это те же сведения, которые возвращаются при вызове операции [Получить определенную группу](https://docs.microsoft.com/en-us/rest/api/apimanagement/group/get) .
+* `groups\<group name>\description.html` — это описание группы, которое соответствует свойству `description` [сущности group](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-group-entity).
 
 ### <a name="policies-folder"></a>Папка policies
 Папка `policies` содержит правила политики для экземпляра службы.
@@ -245,8 +246,8 @@ git push
 ### <a name="products-folder"></a>Папка products
 Папка `products` содержит папку для каждого продукта, определенного в экземпляре службы.
 
-* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://msdn.microsoft.com/library/azure/dn776336.aspx#GetProduct) .
-* `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description` [сущности product](https://msdn.microsoft.com/library/azure/dn776336.aspx#Product) в REST API.
+* `products\<product name>\configuration.json` — это конфигурация для продукта. Это те же сведения, которые возвращаются при вызове операции [Получить определенный продукт](https://docs.microsoft.com/en-us/rest/api/apimanagement/product/get) .
+* `products\<product name>\product.description.html` — это описание продукта, которое соответствует свойству `description` [сущности product](https://docs.microsoft.com/rest/api/apimanagement/apimanagementrest/azure-api-management-rest-api-product-entity) в REST API.
 
 ### <a name="templates"></a>шаблоны
 Папка `templates` содержит конфигурацию для [шаблонов электронной почты](api-management-howto-configure-notifications.md) экземпляра службы.

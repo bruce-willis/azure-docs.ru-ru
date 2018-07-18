@@ -1,22 +1,20 @@
 ---
-title: "Настройка облака для службы подготовки устройств для Центра Интернета вещей Azure на портале | Документация Майкрософт"
-description: "Автоматическая подготовка устройств Центра Интернета вещей на портале Azure"
-services: iot-dps
-keywords: 
+title: Настройка облака для службы подготовки устройств для Центра Интернета вещей Azure на портале | Документация Майкрософт
+description: Автоматическая подготовка устройств Центра Интернета вещей на портале Azure
 author: sethmanheim
 ms.author: sethm
 ms.date: 09/05/2017
 ms.topic: tutorial
 ms.service: iot-dps
-documentationcenter: 
+services: iot-dps
 manager: timlt
-ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: 247c2155943d651c3be7791571522b652cf63483
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: e334ff0c8dec3a9611b60f64e565111064d10c18
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38619288"
 ---
 # <a name="configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
 

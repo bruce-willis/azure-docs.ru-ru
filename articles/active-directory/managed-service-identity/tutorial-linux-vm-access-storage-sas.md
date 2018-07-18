@@ -9,17 +9,17 @@ editor: daveba
 ms.service: active-directory
 ms.component: msi
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 57d4a3767d0ad02f136686d95703817055566c33
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: cbb56ce6befaaa6a5d38cc6afbad0ba6db259711
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303395"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901608"
 ---
 # <a name="tutorial-use-a-linux-vm-managed-service-identity-to-access-azure-storage-via-a-sas-credential"></a>Руководство по использованию управляемого удостоверения службы виртуальной машины Linux для доступа к службе хранилища Azure с учетными данными SAS
 
@@ -70,7 +70,7 @@ MSI на виртуальной машине позволяет получить
 
     ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения. 
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
 Если у вас еще нет учетной записи хранения, создайте ее.  Этот шаг можно пропустить и предоставить виртуальной машине доступ с помощью MSI к ключам имеющейся учетной записи хранения. 
 
@@ -254,10 +254,7 @@ az storage blob download --container-name
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Общие сведения об MSI см. в разделе [Управляемое удостоверение службы (MSI) для Azure Active Directory](overview.md).
-- Чтобы узнать, как выполнить шаги из этого руководства с помощью ключа учетной записи хранения, см. статью [Доступ к службе хранилища Azure с помощью управляемого удостоверения службы виртуальной машины Linux](tutorial-linux-vm-access-storage.md).
-- Дополнительные сведения о возможностях SAS для учетной записи службы хранилища Azure см. в следующих статьях:
-  - [Использование подписанных URL-адресов (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1.md)
-  - [Создание подписанного URL-адреса уровня службы](/rest/api/storageservices/Constructing-a-Service-SAS.md)
+Из этого руководства вы узнали, как получить доступ к службе хранилища Azure с учетными данными SAS с помощью компонента "Управляемое удостоверение службы" виртуальной машины Linux.  Дополнительные сведения о SAS службы хранилища Azure см. здесь:
 
-Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
+> [!div class="nextstepaction"]
+>[Использование подписанных URL-адресов (SAS)](/azure/storage/common/storage-dotnet-shared-access-signature-part-1)

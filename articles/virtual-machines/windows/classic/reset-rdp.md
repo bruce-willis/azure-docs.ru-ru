@@ -3,7 +3,7 @@ title: Сброс пароля или конфигурации удаленно�
 description: Узнайте, как с помощью портала Azure или Azure PowerShell сбросить пароль учетной записи или конфигурацию службы удаленного рабочего стола для виртуальной машины Windows, созданной с использованием классической модели развертывания.
 services: virtual-machines-windows
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-service-management
@@ -14,12 +14,13 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2017
-ms.author: iainfou
-ms.openlocfilehash: 516cb740f9acad19dac77db0239341b42a2b27fe
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.author: cynthn
+ms.openlocfilehash: bbe8059b3a239570c2c9b25586dae9adbe25312d
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37931384"
 ---
 # <a name="how-to-reset-the-remote-desktop-service-or-its-login-password-in-a-windows-vm-created-using-the-classic-deployment-model"></a>Сброс службы удаленного рабочего стола или ее пароля для входа в систему на виртуальной машине Windows, созданной с использованием классической модели развертывания
 > [!IMPORTANT]

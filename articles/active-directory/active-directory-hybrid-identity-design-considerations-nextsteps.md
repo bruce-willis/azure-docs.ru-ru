@@ -1,11 +1,11 @@
 ---
-title: "Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги | Документация Майкрософт"
-description: "Краткий обзор и дальнейшие шаги после прочтения руководства по разработке архитектуры гибридной идентификации"
-documentationcenter: 
+title: Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги | Документация Майкрософт
+description: Краткий обзор и дальнейшие шаги после прочтения руководства по разработке архитектуры гибридной идентификации
+documentationcenter: ''
 services: active-directory
 author: billmath
 manager: mtillman
-editor: 
+editor: ''
 ms.assetid: 02d48768-ea9e-4bfe-ae54-b54c4bd0a789
 ms.service: active-directory
 ms.devlang: na
@@ -13,12 +13,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/18/2017
+ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 29c045af81134847321d9ef69943f0154e9ee5a0
-ms.sourcegitcommit: e266df9f97d04acfc4a843770fadfd8edf4fa2b7
+ms.openlocfilehash: 4ac8e517e68f7cbba3019fa27065468b387c1b65
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2017
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36284676"
 ---
 # <a name="azure-active-directory-hybrid-identity-design-considerations--next-steps"></a>Рекомендации по проектированию решений для гибридной идентификации Azure Active Directory — следующие шаги
 После завершения определения требований и проверки всех вариантов решения управления мобильными устройствами вы готовы к дальнейшим действиям по развертыванию инфраструктуры поддержки, которая идеально подходит вам и вашей организации.
@@ -40,7 +42,7 @@ ms.lasthandoff: 12/11/2017
 ## <a name="hybrid-identity-resources"></a>Информационные ресурсы о гибридной идентификации
 Мониторинг следующих ресурсов часто помогает получить последние новости и обновления, связанные с решением для управления мобильными устройствами:
 
-* [Блог Microsoft Enterprise Mobility](http://blogs.technet.com/b/enterprisemobility/)
+* [Блог Microsoft Enterprise Mobility](https://cloudblogs.microsoft.com/ENTERPRISEMOBILITY/)
 * [Блог "Майкрософт в облаке"](http://blogs.technet.com/b/in_the_cloud/)
 * [Блог Microsoft Intune](http://blogs.technet.com/b/microsoftintune/)
 * [Блог Microsoft System Center Configuration Manager](http://blogs.technet.com/b/configurationmgr/)

@@ -1,0 +1,87 @@
+- name: Документация по API Bing для поиска видео
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое API Bing для поиска видео?
+      href: search-the-web.md
+- name: Краткие руководства по REST API
+  expanded: true
+  items:
+    - name: Начало работы
+      href: quick-start.md
+    - name: 'C#'
+      href: csharp.md
+    - name: Java
+      href: java.md
+    - name: Node.js
+      href: nodejs.md
+    - name: PHP
+      href: php.md
+    - name: Python
+      href: python.md
+    - name: Ruby
+      href: ruby.md
+- name: Краткие руководства по пакетам SDK
+  items:
+    - name: Общие сведения о примерах пакетов SDK
+      href: sdk.md
+    - name: 'Краткое руководство по пакету SDK для поиска видео для C#'
+      href: video-search-sdk-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска видео для Node.js
+      href: video-search-sdk-node-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска видео для Python
+      href: video-sdk-python-quickstart.md
+    - name: Краткое руководство по пакету SDK для поиска видео для Java
+      href: video-sdk-java-quickstart.md
+- name: Учебники
+  items:
+    - name: Одностраничные веб-приложения
+      href: tutorial-bing-video-search-single-page-app.md
+    - name: Одностраничные веб-приложения (исходный код)
+      href: tutorial-bing-video-search-single-page-app-source.md
+- name: Примеры
+  items:
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Video+Search'
+- name: Практические руководства
+  items:
+    - name: Требования к использованию и отображению
+      href: UseAndDisplayRequirements.md
+    - name: Получение анализа видео
+      href: video-insights.md
+    - name: 'Получение видео, набирающих популярность'
+      href: trending-videos.md
+    - name: Отображение видео на страницах
+      href: paging-videos.md
+    - name: Изменение размера и обрезка эскизов
+      href: resize-and-crop-thumbnails.md
+    - name: Обновление с версии 5 до версии 7
+      href: bing-video-upgrade-guide-v5-to-v7.md
+- name: Справочные материалы
+  items:
+    - name: API Bing для поиска видео версии 7
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference'
+    - name: API Bing для поиска видео версии 5
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v5-reference'
+- name: Ресурсы
+  items:
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/video/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/911452-bing-video-search-api'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=bing+video+search'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'
+    - name: База знаний
+      href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
+    - name: Получение ключа API
+      href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-video-search-api'
+    - name: Тестирование
+      href: 'https://dev.cognitive.microsoft.com/docs/services/56b43f3ccf5ff8098cef3809/operations/58113fe5e31dac0a1ce6b0a8'
+    - name: Конечные точки API Bing для поиска видео
+      href: video-search-endpoints.md
+    - name: Аналитика для API Bing для поиска видео
+      href: bing-video-stats.md

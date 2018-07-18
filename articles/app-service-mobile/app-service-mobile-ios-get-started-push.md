@@ -1,10 +1,10 @@
 ---
-title: "Добавление push-уведомлений в приложение iOS с помощью мобильных приложений Azure"
-description: "Узнайте, как использовать мобильные приложения Azure для отправки push-уведомлений в приложение iOS."
+title: Добавление push-уведомлений в приложение iOS с помощью мобильных приложений Azure
+description: Узнайте, как использовать мобильные приложения Azure для отправки push-уведомлений в приложение iOS.
 services: app-service\mobile
 documentationcenter: ios
 manager: crdun
-editor: 
+editor: ''
 author: conceptdev
 ms.assetid: fa503833-d23e-4925-8d93-341bb3fbab7d
 ms.service: app-service-mobile
@@ -15,16 +15,17 @@ ms.topic: article
 ms.date: 10/10/2016
 ms.author: crdun
 ms.openlocfilehash: 1fd90df3b6935d35834e1f571e80b945716b55ff
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38307261"
 ---
 # <a name="add-push-notifications-to-your-ios-app"></a>Добавление push-уведомлений в приложение iOS
 [!INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
 
 ## <a name="overview"></a>Обзор
-В этом руководстве мы добавим push-уведомления в проект по [быстрому запуску iOS], чтобы при каждом добавлении новой записи на устройство отправлялось push-уведомление.
+В этом руководстве мы добавим push-уведомления в проект по [Быстрый запуск iOS], чтобы при каждом добавлении новой записи на устройство отправлялось push-уведомление.
 
 Если вы не используете скачанный проект сервера, необходимо добавить пакет расширений для push-уведомлений. Дополнительные сведения см. в руководстве [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
 
@@ -56,4 +57,4 @@ ms.lasthandoff: 02/09/2018
 <!-- Images. -->
 
 <!-- URLs. -->
-[быстрому запуску iOS]: app-service-mobile-ios-get-started.md
+[Быстрый запуск iOS]: app-service-mobile-ios-get-started.md

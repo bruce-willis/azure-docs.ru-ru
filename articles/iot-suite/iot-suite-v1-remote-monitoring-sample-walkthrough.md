@@ -15,11 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: dobett
-ms.openlocfilehash: 3aa9bb9c785bb69c80d9bb33e595393a5a1d220a
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: d35052087899925e0e8119ce104345f718cc12bd
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858519"
 ---
 # <a name="remote-monitoring-preconfigured-solution-walkthrough"></a>Пошаговое руководство по работе с настроенным решением для удаленного мониторинга
 
@@ -35,7 +36,7 @@ ms.lasthandoff: 05/07/2018
 
 На следующей диаграмме показаны логические компоненты предварительно настроенного решения.
 
-![Логическая архитектура](media/iot-suite-remote-monitoring-sample-walkthrough/remote-monitoring-architecture-updated.png)
+![Логическая архитектура](media/iot-suite-v1-remote-monitoring-sample-walkthrough/remote-monitoring-architecture-updated.png)
 
 ## <a name="microservices--docker-containers"></a>Микрослужбы и контейнеры Docker
 Удаленный мониторинг — это первое из наших предварительно настроенных решений, в котором используется архитектура микрослужб. Решение доступно для [.NET](https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) и [Java](https://github.com/Azure/azure-iot-pcs-remote-monitoring-java).
@@ -274,8 +275,8 @@ GROUP BY
 
 В записях блога на сайте TechNet приведены дополнительные сведения о предварительно настроенном решении удаленного мониторинга:
 
-* [IoT Suite - Under The Hood - Remote Monitoring (IoT Suite. Как работает удаленный мониторинг).](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-v1-under-the-hood-remote-monitoring.aspx)
-* [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices (IoT Suite. Удаленный мониторинг: добавление реальных и виртуальных устройств).](http://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-v1-remote-monitoring-adding-live-and-simulated-devices.aspx)
+* [IoT Suite - Under The Hood - Remote Monitoring (IoT Suite. Как работает удаленный мониторинг).](http://social.technet.microsoft.com/wiki/contents/articles/32941.iot-suite-under-the-hood-remote-monitoring.aspx)
+* [IoT Suite - Remote Monitoring - Adding Live and Simulated Devices (IoT Suite. Удаленный мониторинг: добавление реальных и виртуальных устройств).](https://social.technet.microsoft.com/wiki/contents/articles/32975.iot-suite-remote-monitoring-adding-live-and-simulated-devices.aspx)
 
 Дополнительные сведения об IoT Suite см. в следующих статьях.
 

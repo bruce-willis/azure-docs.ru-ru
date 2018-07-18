@@ -8,21 +8,24 @@ editor: TomShinder
 ms.assetid: ''
 ms.service: security
 ms.topic: article
-ms.date: 02/16/2018
+ms.date: 06/07/2018
 ms.author: Barclayn
 ms.custom: AzLog
-ms.openlocfilehash: 42c30a825e44c289c42d0fb0a40a442c4ac950d7
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 3de876a8d06a52412bbbfd3ad922c2c4c6d8ec37
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35235963"
 ---
 # <a name="azure-log-integration-tutorial-process-azure-key-vault-events-by-using-event-hubs"></a>Руководство по интеграции журналов Azure. Обработка событий Azure Key Vault с помощью концентраторов событий
 
+>[!IMPORTANT]
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Скачивания AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в [этой записи блога](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/). 
+
 Службу интеграции журналов Azure можно использовать для получения зарегистрированных событий журнала и обеспечения их доступности для системы SIEM. В этом руководстве предоставляется поэтапный пример использования службы интеграции журналов Azure для обработки журналов, полученных из концентраторов событий.
 
->[!IMPORTANT]
->Предпочтительным методом интеграции журналов Azure является использование соединителя Azure Monitor от поставщика SIEM и выполнение следующих [инструкций](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md). Тем не менее, если поставщик SIEM не предоставляет соединитель для Azure Monitor, в качестве временного решения можно использовать службу "Интеграция журналов данных Azure" (если она поддерживает вашу систему SIEM).
+Предпочтительным методом интеграции журналов Azure является использование соединителя Azure Monitor от поставщика SIEM и выполнение следующих [инструкций](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md). Тем не менее, если поставщик SIEM не предоставляет соединитель для Azure Monitor, в качестве временного решения можно использовать службу "Интеграция журналов данных Azure" (если она поддерживает вашу систему SIEM).
 
  
 Это руководство поможет вам ознакомиться с данными о совместной работе службы интеграции журналов Azure и концентраторов событий, выполнить шаги для примера и понять, как каждый шаг поддерживает решение. Затем вы сможете применить полученные здесь знания для создания собственной процедуры обеспечения соответствия уникальным требованиям компании.

@@ -12,17 +12,19 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/01/2018
+ms.date: 06/05/2018
 ms.author: jeffgilb
 ms.reviewer: ''
 ms.custom: mvc
-ms.openlocfilehash: 0e1eed2601946ddff6fa15f1a1f82398706c920d
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: b9ba2bb89bb0d7e16a28a165cf14530a7a10f71b
+ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35234756"
 ---
-# <a name="make-sql-databases-available-to-your-azure-stack-users"></a>Обеспечение доступности баз данных SQL для пользователей Azure Stack
+# <a name="tutorial-make-sql-databases-available-to-your-azure-stack-users"></a>Руководство. Обеспечение доступности баз данных SQL для пользователей Azure Stack
+
 В качестве администратора облака Azure Stack вы можете создавать предложения, позволяющие пользователям (клиентам) создавать базы данных SQL, которые они смогут использовать с собственными облачными приложениями, веб-сайтами и рабочими нагрузками. Предоставляя пользователям такие настраиваемые облачные базы данных по запросу, вы помогаете им экономить время и ресурсы. Для этого вам потребуется выполнить следующие действия:
 
 > [!div class="checklist"]
@@ -36,7 +38,7 @@ ms.lasthandoff: 05/03/2018
 
 1. [Развертывание поставщика ресурсов SQL](azure-stack-sql-resource-provider-deploy.md).
 2. [Проверка развертывания](azure-stack-sql-resource-provider-deploy.md#verify-the-deployment-using-the-azure-stack-portal).
-3. Указание емкости путем подключения к серверу размещения SQL.
+3. Указание емкости путем подключения к серверу размещения SQL. Дополнительные сведения см. в статье [Добавление серверов размещения для поставщика ресурсов SQL](azure-stack-sql-resource-provider-hosting-servers.md)
 
 ## <a name="create-an-offer"></a>Создание предложения
 
@@ -44,9 +46,7 @@ ms.lasthandoff: 05/03/2018
 2.  [Создайте план](azure-stack-create-plan.md). Присвойте ему имя *TestSQLServerPlan*, выберите службу **Microsoft.SQLAdapter** и квоту **SQLServerQuota**.
 
     > [!NOTE]
-    > Чтобы позволить пользователям создавать другие приложения, в плане могут потребоваться другие службы. Например, для Функций Azure необходимо, чтобы план содержал службу **Microsoft.Storage**, а для Wordpress — **Microsoft.MySQLAdapter**.
-    > 
-    >
+    > Чтобы позволить пользователям создавать другие приложения, в плане могут потребоваться другие службы. Например, для службы "Функции Azure" необходимо, чтобы план содержал службу **Microsoft.Storage**, а для Wordpress — **Microsoft.MySQLAdapter**.
 
 3.  [Создайте предложение](azure-stack-create-offer.md), назовите его **TestSQLServerOffer** и выберите план **TestSQLServerPlan**.
 
@@ -55,22 +55,23 @@ ms.lasthandoff: 05/03/2018
 Теперь, когда поставщик ресурсов SQL Server развернут и приложение создано, можно войти как пользователь, подписаться на предложение и создать базу данных.
 
 ### <a name="subscribe-to-the-offer"></a>Оформление подписки на предложение
+
 1. Войдите на портал Azure Stack (https://portal.local.azurestack.external) как клиент.
-2. Нажмите кнопку **Получить подписку**, а затем введите **TestSQLServerSubscription** в поле **Отображаемое имя**.
-3. Нажмите **Выберите предложение** > **TestSQLServerOffer** > **Создать**.
-4. Нажмите **Больше служб** > **Подписки** > **TestSQLServerSubscription** > **Поставщики ресурсов**.
-5. Нажмите кнопку **Зарегистрировать** рядом с поставщиком **Microsoft.SQLAdapter**.
+2. Выберите **Получить подписку**, а затем введите **TestSQLServerSubscription** в поле **Отображаемое имя**.
+3. Выберите пункт **Выбрать предложение** > **TestSQLServerOffer** > **Создать**.
+4. Выберите **Больше служб** > **Подписки** > **TestSQLServerSubscription** > **Поставщики ресурсов**.
+5. Выберите **Зарегистрировать** рядом с поставщиком **Microsoft.SQLAdapter**.
 
 ### <a name="create-a-sql-database"></a>Создание базы данных SQL
 
-1. Нажмите **+** > **Данные+хранилище** > **База данных SQL**.
-2. Оставьте в полях значения по умолчанию. Можно также использовать следующие примеры:
+1. Выберите **+** > **Данные+хранилище** > **База данных SQL**.
+2. Сохраните значения по умолчанию или используйте эти примеры для следующих полей.
     - **Имя базы данных**: SQLdb.
     - **Максимальный размер (в МБ)**: 100.
     - **Подписка**: TestSQLOffer.
     - **Группа ресурсов**: SQL-RG.
-3. Нажмите кнопку **Login Settings (Параметры входа)**, введите учетные данные для базы данных и нажмите кнопку **ОК**.
-4. Щелкните **SKU**, выберите номер SKU SQL, созданный для сервера размещения SQL, и нажмите кнопку **ОК**.
+3. Выберите **Login Settings** (Параметры входа), введите учетные данные для базы данных и нажмите кнопку **ОК**.
+4. Последовательно выберите **SKU** > SQL SKU, созданный для сервера размещения SQL, > а затем нажмите кнопку **OK**.
 5. Нажмите кнопку **Создать**.
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -86,4 +87,3 @@ ms.lasthandoff: 05/03/2018
 
 > [!div class="nextstepaction"]
 > [Обеспечение доступности веб-приложений, мобильных приложений и приложений API для пользователей Azure Stack]( azure-stack-tutorial-app-service.md)
-

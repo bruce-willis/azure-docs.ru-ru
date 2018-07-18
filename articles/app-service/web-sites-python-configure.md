@@ -1,12 +1,12 @@
 ---
-title: "Настройка Python в веб-приложениях службы приложений Azure"
-description: "В этом учебнике описываются возможности создания и настройки в веб-приложениях службы приложений Azure базового приложения Python, совместимого с интерфейсом шлюза веб-сервера (WSGI)."
+title: Настройка Python в веб-приложениях службы приложений Azure
+description: В этом учебнике описываются возможности создания и настройки в веб-приложениях службы приложений Azure базового приложения Python, совместимого с интерфейсом шлюза веб-сервера (WSGI).
 services: app-service
 documentationcenter: python
 tags: python
 author: huguesv
 manager: erikre
-editor: 
+editor: ''
 ms.assetid: fd00dc91-9935-4331-b955-4bd71e66d518
 ms.service: app-service
 ms.workload: na
@@ -15,11 +15,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 02/26/2016
 ms.author: huvalo
-ms.openlocfilehash: fa5f9afbc595f06bd41e8670fab7730b610f570e
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 32d9cd6c42387b67881877a1165dfcbcaef405ba
+ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34598646"
 ---
 # <a name="configuring-python-with-azure-app-service-web-apps"></a>Настройка Python в веб-приложениях службы приложений Azure
 В этом учебнике описываются возможности создания и настройки в [веб-приложениях службы приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714)базового приложения Python, совместимого с интерфейсом шлюза веб-сервера (WSGI).
@@ -29,9 +30,9 @@ ms.lasthandoff: 02/21/2018
 ## <a name="bottle-django-or-flask"></a>Bottle, Django и Flask
 В Azure Marketplace содержатся шаблоны для платформ Bottle, Django и Flask. Если вы разрабатываете первое веб-приложение в службе приложений Azure, это можно быстро сделать на портале Azure.
 
-* [Создание веб-приложений на основе Bottle](https://portal.azure.com/#create/PTVS.Bottle)
-* [Создание веб-приложений на основе Django](https://portal.azure.com/#create/PTVS.Django)
-* [Создание веб-приложений на основе Flask](https://portal.azure.com/#create/PTVS.Flask)
+* [Создание веб-приложения с помощью Bottle](https://portal.azure.com/#create/PTVS.Bottle)
+* [Создание веб-приложения с помощью Django](https://portal.azure.com/#create/PTVS.Django)
+* [Создание веб-приложения с помощью Flask в Linux](https://portal.azure.com/#create/PTVS.FlaskLinux)
 
 ## <a name="web-app-creation-on-azure-portal"></a>Создание веб-приложения на портале Azure
 В этом руководстве предполагается, что у вас есть подписка Azure и доступ к порталу Azure.

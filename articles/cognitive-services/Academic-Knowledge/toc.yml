@@ -1,0 +1,54 @@
+- name: Документация по Academic Knowledge API
+- name: Обзор
+  items:
+    - name: Дополнительные сведения об Academic Knowledge API
+      href: Home.md
+- name: Практические руководства
+  items:
+    - name: Атрибуты сущностей
+      href: EntityAttributes.md
+      items:
+        - name: Документ
+          href: PaperEntityAttributes.md
+        - name: Автор
+          href: AuthorEntityAttributes.md
+        - name: Принадлежность
+          href: AffiliationEntityAttributes.md
+        - name: Область изучения
+          href: FieldsOfStudyEntityAttributes.md
+        - name: Серия конференций
+          href: ConferenceSeriesEntityAttributes.md
+        - name: Экземпляр конференции
+          href: ConferenceInstanceEntityAttributes.md
+        - name: Журнал
+          href: JournalEntityAttributes.md
+    - name: Методы
+      items:
+        - name: CalcHistogram
+          href: CalcHistogramMethod.md
+        - name: Evaluate
+          href: EvaluateMethod.md
+        - name: Интерпретация
+          href: InterpretMethod.md
+        - name: Сходство
+          href: SimilarityMethod.md
+    - name: Синтаксис выражений запросов
+      href: QueryExpressionSyntax.md
+    - name: Обход графа
+      items:
+        - name: Синтаксис поиска с лямбда-выражениями
+          href: LambdaSearchSyntax.md
+        - name: Метод поиска с помощью графа
+          href: GraphSearchMethod.md
+        - name: Синтаксис поиска JSON
+          href: JSONSearchSyntax.md
+- name: Справочные материалы
+  items:
+    - name: Справочник по API
+      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/56332331778daf02acc0a50b/operations/565d9001ca73072048922d97'
+    - name: Справочник по API Labs
+      href: 'https://dev.labs.cognitive.microsoft.com/docs/services/56332331778daf02acc0a50b/operations/565d9001ca73072048922d97'
+- name: Ресурсы
+  items:
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

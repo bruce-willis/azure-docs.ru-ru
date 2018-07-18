@@ -1,22 +1,21 @@
 ---
-title: 'Azure Active Directory B2C: встроенные политики | Документы Майкрософт'
-description: В разделе описывается инфраструктура расширяемых политик Azure Active Directory B2C и создание различных типов политик.
+title: Встроенные политики в Azure Active Directory B2C | Документация Майкрософт
+description: В этой статье описывается инфраструктура расширяемых политик Azure Active Directory B2C и создание различных типов политик.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/26/2017
 ms.author: davidmu
-ms.openlocfilehash: 424186a0acfe17cd7cb96f3ba7f8201e8b2b38ec
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.component: B2C
+ms.openlocfilehash: 5c89f39b2f94309ea3d99230f5265d834c7093d9
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33200354"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38477455"
 ---
 # <a name="azure-active-directory-b2c-built-in-policies"></a>Azure Active Directory B2C: встроенные политики
 

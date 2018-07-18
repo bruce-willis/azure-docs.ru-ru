@@ -11,15 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/03/2017
+ms.date: 06/11/2018
 ms.author: barbkess
 ms.custom: it-pro
 ms.reviewer: harshja
-ms.openlocfilehash: 4c3b88d9f522e28189bcb746905d35dced9d31cc
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 5c6d6b9580b123dafb03af2acc885d2416ca2a56
+ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35292547"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -49,6 +50,8 @@ ms.lasthandoff: 05/14/2018
 - Необходимо, чтобы [были развернуты службы удаленных рабочих столов (RDS)](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure) и [включен прокси приложения](application-proxy-enable.md).
 
 - В этом сценарии предполагается, что пользователи подключаются через Internet Explorer на компьютерах под управлением Windows 7 или Windows 10, которые подключаются через страницу веб-сайта удаленных рабочих столов. Если требуется поддержка других операционных систем, то см. раздел [Поддержка других конфигураций клиента](#support-for-other-client-configurations).
+
+- При публикации веб-сайта удаленных рабочих столов рекомендуется использовать одинаковые внутреннее и внешнее полные доменные имена. Если эти имена отличаются, следует отключить преобразование заголовков запросов, чтобы клиент не получал недопустимые ссылки. 
 
 - В Internet Explorer включите надстройку RDS ActiveX.
 

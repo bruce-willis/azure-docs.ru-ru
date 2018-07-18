@@ -4,17 +4,18 @@ description: Запуск примера веб-приложения ASP.NET, и
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 2/13/2018
 ms.author: davidmu
-ms.openlocfilehash: 4342e8c58c9bb20580d8428a6c9869f9a3b893cb
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.component: B2C
+ms.openlocfilehash: e52674014a888913e288f7b0749d9b2e05bedf45
+ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36292792"
 ---
 # <a name="quickstart-set-up-sign-in-for-an-aspnet-application-using-azure-active-directory-b2c"></a>Краткое руководство. Настройка входа в приложение ASP.NET с помощью Azure Active Directory B2C
 
@@ -123,4 +124,4 @@ Azure Active Directory B2C предоставляет функциональны
 Перейдите к изучению следующего руководства, чтобы узнать, как настроить пример ASP.NET для использования собственного клиента Azure AD B2C.
 
 > [!div class="nextstepaction"]
-> [Руководство по выполнению аутентификации пользователей в веб-приложении ASP.NET с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-web-app.md)
+> [Создание клиента Azure Active Directory B2C на портале Azure](tutorial-create-tenant.md)

@@ -12,11 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: nitinme
-ms.openlocfilehash: 5b83f02c55d0aa7b2e122d7fc8c9ef5734cdd924
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 0ac6b90f2efc525cfb9767843c741f1e3cfc6de7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449407"
 ---
 # <a name="securing-data-stored-in-azure-data-lake-store"></a>Защита данных, хранимых в хранилище озера данных Azure
 Для защиты данных, хранимых в хранилище озера данных Azure, необходимо выполнить три шага.  При управлении доступом на основе ролей (RBAC) и при использовании списков управления доступом (ACL) режим доступа должен обеспечивать пользователям и группам безопасности полный доступ к данным.
@@ -35,10 +36,10 @@ ms.lasthandoff: 05/16/2018
 * **Учетная запись хранения озера данных Azure**. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Store с помощью портала Azure](data-lake-store-get-started-portal.md).
 
 ## <a name="create-security-groups-in-azure-active-directory"></a>Создание групп безопасности в Azure Active Directory
-Инструкции по созданию групп безопасности AAD и добавлению пользователей в группу см. в статье [Управление группами в Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md).
+Инструкции по созданию групп безопасности AAD и добавлению пользователей в группу см. в статье [Управление группами в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 > [!NOTE] 
-> Добавить пользователей и другие группы в группу в Azure AD можно с помощью портала Azure. Тем не менее, чтобы добавить в группу субъект-службу, используйте [модуль PowerShell Azure AD](../active-directory/active-directory-accessmanagement-groups-settings-v2-cmdlets.md).
+> Добавить пользователей и другие группы в группу в Azure AD можно с помощью портала Azure. Тем не менее, чтобы добавить в группу субъект-службу, используйте [модуль PowerShell Azure AD](../active-directory/users-groups-roles/groups-settings-v2-cmdlets.md).
 > 
 > ```powershell
 > # Get the desired group and service principal and identify the correct object IDs

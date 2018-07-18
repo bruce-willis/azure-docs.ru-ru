@@ -1,26 +1,21 @@
 ---
-title: "Поведение SMS-оповещений в группе действий | Документация Майкрософт"
-description: "Описывается формат SMS-сообщений и то, как отвечать на SMS-сообщения, чтобы отменить подписку, повторно подписаться или запросить справку."
+title: Работа с SMS-оповещениями в группах действий
+description: Описывается формат SMS-сообщений и то, как отвечать на SMS-сообщения, чтобы отменить подписку, повторно подписаться или запросить справку.
 author: dkamstra
-manager: chrad
-editor: 
-services: monitoring-and-diagnostics
-documentationcenter: monitoring-and-diagnostics
-ms.assetid: 
-ms.service: monitoring-and-diagnostics
-ms.workload: na
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+services: monitoring
+ms.service: azure-monitor
+ms.topic: conceptual
 ms.date: 02/16/2018
 ms.author: dukek
-ms.openlocfilehash: ce6908de0f6bcc30d1ee846fe92171a0cb589cbb
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.component: alerts
+ms.openlocfilehash: f2f463f6c428ce6c72e2640472376fa17a2bfe5a
+ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35263013"
 ---
-# <a name="sms-alert-behavior-in-action-groups"></a>Поведение SMS-оповещений в группе действий
+# <a name="sms-alert-behavior-in-action-groups"></a>Работа с SMS-оповещениями в группах действий
 ## <a name="overview"></a>Обзор ##
 Группы действий позволяют настроить список действий. Эти группы используются при определении оповещений. Таким образом определенная группа действий будет получать уведомление при активации оповещения. Одно из действий, которые поддерживаются, — это отправка SMS-сообщения. Для SMS-уведомлений поддерживается двусторонняя связь. Пользователь может ответить на SMS, чтобы:
 

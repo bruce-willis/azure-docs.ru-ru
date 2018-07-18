@@ -9,19 +9,20 @@ manager: mtillman
 editor: ''
 ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
 ms.service: active-directory
+ms.component: protection
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 02/23/2018
+ms.date: 06/08/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 19878b7fa023ecf0d9c2a62001a5ea93ca3eb6db
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 0730fbd2df6c2a0a8b8d0930c86709c0e3012002
+ms.sourcegitcommit: 50f82f7682447245bebb229494591eb822a62038
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257739"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "35248726"
 ---
 # <a name="conditional-access-in-azure-active-directory"></a>Условный доступ в Azure Active Directory
 
@@ -31,6 +32,7 @@ ms.locfileid: "34257739"
 ![Контроль](./media/active-directory-conditional-access-azure-portal/81.png)
 
 В этой статье приведены общие сведения об условном доступе в Azure AD.
+
 
 
 ## <a name="common-scenarios"></a>Распространенные сценарии
@@ -59,7 +61,7 @@ ms.locfileid: "34257739"
 
 ## <a name="conditional-access-policies"></a>Политики условного доступа
 
-Политика условного доступа — это определение сценария доступа с использованием следующего шаблона.
+Политика условного доступа — это определение сценария доступа с использованием следующего шаблона:
 
 ![Контроль](./media/active-directory-conditional-access-azure-portal/10.png)
 
@@ -82,32 +84,8 @@ ms.locfileid: "34257739"
 
 Одно из преимуществ подхода на основе политик для защиты доступа к облачным приложениям заключается в том, что вы можете начать проектировать требования политики для своей среды, используя структуру, описанную в этой статье, и не беспокоясь о технической реализации. 
 
-## <a name="what-you-need-to-know"></a>Это важно знать
 
-### <a name="general-requirements-for-using-conditional-access"></a>Общие требования для использования условного доступа
-
-Условный доступ Azure AD можно использовать для защиты облачных приложений при поступлении запроса на аутентификацию из:
-
-- веб-браузера;
-
-- клиентского приложения, использующего современную аутентификацию;
-
-- Exchange ActiveSync
-
-Дополнительные сведения см. в разделе [Клиентские приложения](active-directory-conditional-access-conditions.md#client-apps).
-
-Некоторые [облачные приложения](active-directory-conditional-access-conditions.md#cloud-apps) также поддерживают устаревшие протоколы аутентификации. Это относится, например, к SharePoint Online и Exchange Online. Когда клиентское приложение может использовать устаревший протокол аутентификации для доступа к облачному приложению, Azure AD не может принудительно применить политику условного доступа к этой попытке получения доступа. Чтобы предотвратить обход применяемых политик клиентским приложением, следует проверить, можно ли включить для затронутых облачных приложений только современную аутентификацию.
-
-Ниже приведены примеры клиентских приложений, не подходящих для условного доступа:
-
-- Office 2010 и более ранних версий;
-
-- Office 2013, если не включена современная аутентификация.
-
-Дополнительные сведения см. в статье [Настройка SharePoint Online и Exchange Online для условного доступа Azure Active Directory](active-directory-conditional-access-no-modern-authentication.md).
-
-
-### <a name="license-requirements-for-using-conditional-access"></a>Требования лицензий для использования условного доступа
+## <a name="license-requirements-for-using-conditional-access"></a>Требования лицензий для использования условного доступа
 
 Для использования условного доступа требуется лицензия Azure AD Premium. Чтобы найти подходящую лицензию, ознакомьтесь с разделом [Сравнение общедоступных функций выпусков Free, Basic и Premium](https://azure.microsoft.com/pricing/details/active-directory/).
 

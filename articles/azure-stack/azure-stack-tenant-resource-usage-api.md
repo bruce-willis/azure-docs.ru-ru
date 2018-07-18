@@ -1,25 +1,26 @@
 ---
-title: "API использования ресурсов для клиентов | Документация Майкрософт"
-description: "Справочные сведения об API использования ресурсов, который получает сведения об использовании Azure Stack."
+title: API использования ресурсов для клиентов | Документация Майкрософт
+description: Справочные сведения об API использования ресурсов, который получает сведения об использовании Azure Stack.
 services: azure-stack
-documentationcenter: 
+documentationcenter: ''
 author: mattbriggs
 manager: femila
-editor: 
+editor: ''
 ms.assetid: b9d7c7ee-e906-4978-92a3-a2c52df16c36
 ms.service: azure-stack
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/22/2018
+ms.date: 03/26/2018
 ms.author: mabrigg
 ms.reviewer: alfredop
-ms.openlocfilehash: bc0b9993119342f07c28ed0384c11ae0f15bc439
-ms.sourcegitcommit: a0be2dc237d30b7f79914e8adfb85299571374ec
+ms.openlocfilehash: 8472d8ce733c07641a7fa6d53aeb6909cd709990
+ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37048396"
 ---
 # <a name="tenant-resource-usage-api"></a>API использования ресурсов для клиентов
 

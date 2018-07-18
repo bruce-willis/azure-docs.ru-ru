@@ -2,18 +2,19 @@
 title: Краткое руководство по порталу кластера Azure Kubernetes
 description: Вы быстро научитесь создавать кластер Kubernetes для контейнеров Linux в AKS при помощи портала Azure.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: quickstart
 ms.date: 04/29/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: cd17d2732bf44e3f4b46878d6a416579b9e2f970
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: aa8a1cccd4eeb45e829cd8df73f128dd6cca416d
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344480"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster"></a>Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)
 
@@ -27,11 +28,9 @@ ms.lasthandoff: 05/07/2018
 
 Войдите на портал Azure по адресу http://portal.azure.com.
 
-
-
 ## <a name="create-aks-cluster"></a>Создание кластера AKS
 
-Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Azure Kubernetes Service (preview)** (Служба Azure Kubernetes (предварительная версия))  >  **Создать**.
+Последовательно выберите **Создать ресурс** > **Служба Kubernetes**.
 
 Выполните приведенные ниже действия под каждым заголовком в форме создания кластера AKS.
 
@@ -61,7 +60,7 @@ ms.lasthandoff: 05/07/2018
 
 ![Создание кластера AKS, шаг первый](media/container-service-walkthrough-portal/aks-portal-3.png)
 
-После короткого ожидания кластер ASK будет развернут и готов к использованию. Перейдите в группу ресурсов кластера AKS, выберите ресурс AKS, и вы увидите панель мониторинга кластера AKS.
+После короткого ожидания кластер AKS будет развернут и готов к использованию. Перейдите в группу ресурсов кластера AKS, выберите ресурс AKS, и вы увидите панель мониторинга кластера AKS.
 
 ![Создание кластера AKS, шаг первый](media/container-service-walkthrough-portal/aks-portal-5.png)
 
@@ -163,10 +162,10 @@ spec:
     app: azure-vote-front
 ```
 
-Используйте команду [kubectl create][kubectl-create], чтобы запустить приложение.
+Запустите приложение с помощью команды [kubectl apply][kubectl-apply].
 
 ```azurecli-interactive
-kubectl create -f azure-vote.yaml
+kubectl apply -f azure-vote.yaml
 ```
 
 Выходные данные:
@@ -231,7 +230,7 @@ az aks delete --resource-group myAKSCluster --name myAKSCluster --no-wait
 
 [https://github.com/Azure-Samples/azure-voting-app-redis][azure-vote-app]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 С помощью этого краткого руководства мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение.
 
@@ -244,7 +243,7 @@ az aks delete --resource-group myAKSCluster --name myAKSCluster --no-wait
 [azure-vote-app]: https://github.com/Azure-Samples/azure-voting-app-redis.git
 [azure-cni]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
 [kubectl]: https://kubernetes.io/docs/user-guide/kubectl/
-[kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create
+[kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubenet]: https://kubernetes.io/docs/concepts/cluster-administration/network-plugins/#kubenet
 [kubernetes-deployment]: https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
@@ -254,7 +253,7 @@ az aks delete --resource-group myAKSCluster --name myAKSCluster --no-wait
 <!-- LINKS - internal -->
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az_aks_get_credentials
 [az-aks-delete]: /cli/azure/aks#az-aks-delete
-[aks-monitor]: ../log-analytics/log-analytics-containers.md
+[aks-monitor]: ../monitoring/monitoring-container-health.md
 [aks-network]: ./networking-overview.md
 [aks-tutorial]: ./tutorial-kubernetes-prepare-app.md
 [http-routing]: ./http-application-routing.md

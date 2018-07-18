@@ -48,12 +48,14 @@
           href: security-center-customize-os-security-config.md
         - name: Политики безопасности на основе политики Azure
           href: security-center-azure-policy.md
+        - name: Видимость в пределах клиента
+          href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
       href: security-center-recommendations.md
     - name: Отслеживание состояния системы безопасности
       href: security-center-monitoring.md
       items:
-        - name: Защита вычислений
+        - name: Безопасность вычислений и приложений
           href: security-center-virtual-machine-recommendations.md
           items:
             - name: Применение шифрования дисков
@@ -74,6 +76,10 @@
               href: security-center-update-os-version.md
             - name: Решение для оценки уязвимостей не установлено
               href: security-center-vulnerability-assessment-recommendations.md
+            - name: Добавление брандмауэра веб-приложения
+              href: security-center-add-web-application-firewall.md
+            - name: Завершение подготовки защиты приложений
+              href: 'security-center-add-web-application-firewall.md#finalize-application-protection'
         - name: Безопасность сети
           href: security-center-network-recommendations.md
           items:
@@ -94,13 +100,6 @@
               href: security-center-enable-auditing-on-sql-servers.md
             - name: Включение прозрачного шифрования данных
               href: security-center-enable-transparent-data-encryption.md
-        - name: Безопасность приложения
-          href: security-center-application-recommendations.md
-          items:
-            - name: Добавление брандмауэра веб-приложения
-              href: security-center-add-web-application-firewall.md
-            - name: Завершение подготовки защиты приложений
-              href: 'security-center-add-web-application-firewall.md#finalize-application-protection'
         - name: Удостоверение и доступ
           href: security-center-identity-access.md
     - name: Применение средств защиты в облаке
@@ -109,6 +108,8 @@
           href: security-center-just-in-time.md
         - name: Адаптивные элементы управления приложениями
           href: security-center-adaptive-application.md
+        - name: Мониторинг целостности файлов
+          href: security-center-file-integrity-monitoring.md
     - name: Управление решениями по обеспечению безопасности
       href: security-center-partner-integration.md
       items:
@@ -145,6 +146,8 @@
           href: security-center-threat-intel.md
         - name: Исследование
           href: security-center-investigation.md
+        - name: Управление пользовательскими данными исследования
+          href: security-center-investigation-user-data.md
     - name: Автоматизация рабочих процессов безопасности
       items:
         - name: Модули Playbook в Logic Apps
@@ -169,6 +172,8 @@
       href: 'https://msdn.microsoft.com/library/mt704034(Azure.100).aspx'
 - name: Ресурсы
   items:
+    - name: Управление данными пользователей
+      href: security-center-privacy.md
     - name: Часто задаваемые вопросы
       href: security-center-faq.md
     - name: Поддерживаемые платформы

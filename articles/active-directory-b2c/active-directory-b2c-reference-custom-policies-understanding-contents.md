@@ -1,21 +1,21 @@
 ---
-title: Azure Active Directory B2C. Общие сведения о пользовательских политиках начального пакета | Документация Майкрософт
-description: В этой статье описываются пользовательские политики Azure Active Directory B2C
+title: Общие сведения о пользовательских политиках начального пакета в Azure Active Directory B2C | Документация Майкрософт
+description: В статье описываются пользовательские политики Azure Active Directory B2C.
 services: active-directory-b2c
-documentationcenter: ''
 author: davidmu1
 manager: mtillman
-editor: ''
-ms.service: active-directory-b2c
+ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/25/2017
 ms.author: davidmu
-ms.openlocfilehash: 12f63bc42f8450f086ed9f0e8d598c9c91a0c3d4
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: B2C
+ms.openlocfilehash: ebcd7a677acde12558b0f566bce9172a0d00233b
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442480"
 ---
 # <a name="understanding-the-custom-policies-of-the-azure-ad-b2c-custom-policy-starter-pack"></a>Общие сведения о пользовательских политиках начального пакета Azure Active Directory B2C
 
@@ -88,7 +88,7 @@ ms.lasthandoff: 04/05/2018
 | *grant_type* | Специальный параметр, который передается для проверки подлинности локальной учетной записи на сайт login.microsoftonline.com |
 | *scope* | Специальный параметр, который передается для проверки подлинности локальной учетной записи на сайт login.microsoftonline.com |
 | *client_id* | Специальный параметр, который передается для проверки подлинности локальной учетной записи на сайт login.microsoftonline.com |
-| *objectIdFromSession* | Параметр, предоставленный поставщиком управления сеансами по умолчанию, чтобы указать, что идентификатор объекта был получен из сеанса единого входа |
+| *objectIdFromSession* | Параметр, предоставленный поставщиком управления сеансами по умолчанию, позволяющий указать, что идентификатор объекта был получен из сеанса единого входа |
 | *isActiveMFASession* | Параметр, предоставленный поставщиком управления сеансами MFA по умолчанию, чтобы указать, что у пользователя активен сеанс MFA |
 
 ### <a name="additional-optional-claims-that-can-be-collected"></a>Дополнительные (необязательные) утверждения для сбора
@@ -193,7 +193,7 @@ ms.lasthandoff: 04/05/2018
 | *SM-SocialLogin* | |
 | *SM-MFA* | |
 
-### <a name="technical-profiles-for-trustframework-policy-engine-technicalprofiles"></a>Технические профили для технических профилей и подсистемы политик инфраструктуры доверия
+### <a name="technical-profiles-for-the-trust-framework-policy-engine"></a>Технические профили для подсистемы политик инфраструктуры доверия
 
 Сейчас технические профили для поставщика утверждений **технические профили и подсистема политик инфраструктуры доверия** не определены.
 

@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/24/2018
 ms.author: cwatson
-ms.openlocfilehash: 313d6cfd69fbf63066add46c7a467c5090604067
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: e696f3829ce710ef38957a5f538c1a43f4ba33f5
+ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34807260"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36285854"
 ---
 # <a name="azure-billing-and-cost-management-documentation"></a>Документация по выставлению счетов и управлению затратами в Azure
 
@@ -133,7 +133,7 @@ ms.locfileid: "34807260"
                     <div class="cardText">
                         <h3>Экономия за счет использования зарезервированных экземпляров виртуальных машин</h3>
                         <p>
-                        <a href="/azure/billing/billing-save-compute-costs-reservations">Что такое зарезервированные экземпляры?</a><br/>
+                        <a href="/azure/billing/billing-save-compute-costs-reservations">Что такое зарезервированные экземпляры?</a> <br/>
                         <a href="/azure/virtual-machines/windows/prepay-reserved-vm-instances?toc=/azure/billing/TOC.json">Приобретение зарезервированного экземпляра</a><br/>
                         <a href="/azure/billing/billing-understand-vm-reservation-charges">Способ применения скидки</a><br/>
                         <a href="/azure/billing/billing-reserved-instance-windows-software-costs">Расходы на программное обеспечение не входят в стоимость</a>
@@ -165,12 +165,18 @@ ms.locfileid: "34807260"
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-                        <h3>Устранение неполадок</h3>
+                        <h3>Подписка Enterprise: требуется доступ к порталу EA</h3>
+                        <style>.p-test:after { font-family: docons; content: "\E9D0";}</style>
                         <p>
-                        <a href="/azure/billing/billing-no-subscriptions-found">Подписка не найдена</a><br/>
-                        <a href="https://support.microsoft.com/help/4042960/troubleshoot-why-your-debit-card-or-credit-card-is-declined-at-azure-s">Карта не принимается</a><br/>
-                        <a href="https://support.microsoft.com/help/4042959/troubleshoot-why-you-can-t-sign-up-for-azure">Проблемы с регистрацией</a><br/>
-                        <a href="https://support.microsoft.com/help/4042961/troubleshoot-why-you-can-t-sign-in-to-manage-your-azure-subscription">Проблемы со входом</a>
+                        <a class="p-test" href="https://ea.azure.com/helpdocs/createADepartment" data-linktype="external">Управление отделами<span class="docon docon-navigate-external"></span></a>
+                        <br>
+                        <a class="p-test" href="https://ea.azure.com/helpdocs/addNewAccount" data-linktype="external">Управление учетными записями<span class="docon docon-navigate-external"></span></a>
+                        <br>
+                        <a class="p-test" href="https://ea.azure.com/helpdocs/createANewSubscription" data-linktype="external">Создание подписок<span class="docon docon-navigate-external"></span></a>
+                        <br>
+                        <a class="p-test" href="https://ea.azure.com/helpdocs/viewPriceSheet" data-linktype="external">Просмотр прейскурантов<span class="docon docon-navigate-external"></span></a>
+                        <br>
+                        <a class="p-test" href="https://ea.azure.com/helpdocs/usageDetailReport" data-linktype="external">Просмотр сведений об использовании<span class="docon docon-navigate-external"></span></a>
                         </p>
                     </div>
                 </div>

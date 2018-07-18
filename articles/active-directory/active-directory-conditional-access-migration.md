@@ -1,28 +1,30 @@
 ---
-title: "Перенос классических политик на портале Azure | Документация Майкрософт"
-description: "Узнайте, что нужно для переноса классических политик на портал Azure."
+title: Перенос политик условного доступа в Azure Active Directory | Документация Майкрософт
+description: Узнайте, что нужно для переноса классических политик на портал Azure.
 services: active-directory
-keywords: "условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа"
-documentationcenter: 
+keywords: условный доступ к приложениям, условный доступ посредством Azure Active Directory, безопасный доступ к ресурсам организации, политики условного доступа
+documentationcenter: ''
 author: MarkusVi
 manager: femila
-editor: 
+editor: ''
 ms.assetid: 8c1d978f-e80b-420e-853a-8bbddc4bcdad
 ms.service: active-directory
+ms.component: protection
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/11/2017
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 16628bd4fa41d2e7697e1c2501f2ccd31dbd0496
-ms.sourcegitcommit: aaba209b9cea87cb983e6f498e7a820616a77471
+ms.openlocfilehash: 4a9b3df66567c4170ba861d3e597261e37271bf1
+ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 06/19/2018
+ms.locfileid: "36232102"
 ---
-# <a name="migrate-classic-policies-in-the-azure-portal"></a>Перенос классических политик на портале Azure 
+# <a name="what-is-a-policy-migration-in-azure-active-directory-conditional-access"></a>Перенос политик условного доступа в Azure Active Directory 
 
 
 С помощью [условного доступа](active-directory-conditional-access-azure-portal.md) Azure Active Directory (Azure AD) можно контролировать доступ авторизованных пользователей к облачным приложениям. Хотя назначение этой функции осталось без изменений, в новом выпуске портала Azure возможности условного доступа значительно расширены с помощью усовершенствований.
@@ -87,7 +89,7 @@ ms.lasthandoff: 12/12/2017
 
 - [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md): изучите рекомендации по развертыванию условного доступа в организации.
 
-- [Начало работы с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md): ознакомьтесь с пользовательским интерфейсом на портале Azure.
+- [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md): ознакомьтесь с пользовательским интерфейсом на портале Azure.
 
 
  
@@ -168,6 +170,6 @@ ms.lasthandoff: 12/12/2017
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Если вы хотите узнать, как настроить политику условного доступа, см. статью о том, как [начать работу с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md). 
