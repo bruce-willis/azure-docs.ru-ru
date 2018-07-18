@@ -13,12 +13,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 06/26/2018
   ms.author: ryanwi
-  ms.openlocfilehash: e5fc62d84ace2acd46816a7116ea1cf2198be63f
-  ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+  ms.openlocfilehash: fccd805f6d4abcf7005fca0cc6f4d368ac5764f1
+  ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
   ms.translationtype: HT
   ms.contentlocale: ru-RU
   ms.lasthandoff: 07/17/2018
-  ms.locfileid: "39073705"
+  ms.locfileid: "39090049"
 abstract:
   description: Сетка Azure Service Fabric — это полностью управляемая служба, с помощью которой разработчики могут создавать и развертывать критически важные приложения, не беспокоясь об управлении инфраструктурой.  Используйте Сетку Service Fabric для создания и запуска надежных распределенных приложений на базе микрослужб с возможностью масштабирования по запросу. Узнайте, как использовать Сетку Azure Service Fabric, ознакомившись с нашими краткими руководствами и инструкциями.  Дополнительные сведения см. в статье <a href="/azure/service-fabric-mesh/service-fabric-mesh-overview">What is Service Fabric Mesh?</a> (Что такое Сетка Service Fabric?).
 sections:
@@ -45,15 +45,3 @@ sections:
     style: unordered
     items:
     - html: <a href="/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore">Развертывание приложения .NET Core</a>
-- title: Примеры
-  items:
-  - type: paragraph
-    text: 'Примеры приложений .NET Core для Windows и Linux:'
-  - type: list
-    style: unordered
-    items:
-    - html: <a href="https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/helloworld">Hello World!</a>
-    - html: <a href="https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/azurefiles-volume">Том службы файлов Azure</a>
-    - html: <a href="https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/todolistapp">Список задач</a>
-    - html: <a href="https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/visualobjects">Визуальные объекты</a>
-    - html: <a href="https://github.com/Azure-Samples/service-fabric-mesh/tree/master/src/votingapp">Голосование</a>
