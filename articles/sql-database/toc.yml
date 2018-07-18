@@ -402,6 +402,8 @@
           href: sql-database-cloud-migrate.md
         - name: Перенос в управляемый экземпляр
           href: sql-database-managed-instance-migrate.md
+        - name: Перенос сертификата TDE в управляемый экземпляр
+          href: sql-database-managed-instance-migrate-tde-certificate.md
         - name: Управление Базой данных SQL после переноса
           href: sql-database-manage-after-migration.md
     - name: Загрузка и перемещение данных

@@ -8,12 +8,8 @@
 ### Как разместить публикацию в Microsoft Azure Marketplace  
 #### [Определение типа перечисления для решения](./determine-your-listing-type.md)  
 #### [Как стать издателем в Microsoft Azure Marketplace](./become-publisher.md)  
-#### [Требования по типам перечислений](./listing-type-requirements.md) 
-#### Контрольный список для проверки бизнеса  
-##### [Рекомендации](./guidelines.md)  
-##### [Регистрация в центре разработчиков](./register-dev-center.md)  
-##### [Добавление налоговых и банковских сведений](./add-bank-tax-info.md)  
-##### [Включение пробной версии с помощью Azure AD](./enable-trial-using-azure-ad.md)  
+##### [Создание учетной записи Майкрософт](./guidelines.md)
+##### [Регистрация в центре разработчиков](./register-dev-center.md) 
 ##### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
 
 ### Руководство по публикации разных типов предложений 
@@ -24,12 +20,21 @@
 #### [Контейнеры](./marketplace-containers.md)
 #### [Консультационная услуга](./consulting-services.md)  
 #### [Приложения AppSource](./appsource-offer-publishing-guide.md)
+#### [Предоставление пробной версии Microsoft Azure Marketplace с помощью Azure Active Directory](./enable-trial-using-azure-ad.md)
 
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
 
 ### Поддержка  
 #### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
+
+### Руководства по публикации  
+#### [Консультационные услуги в Azure Marketplace](consulting-services.md)  
+#### [Техническое руководство по публикации SaaS-приложений в Microsoft Azure Marketplace](marketplace-saas-applications-technical-publishing-guide.md) 
+#### [Предоставление пробной версии Microsoft Azure Marketplace с помощью Azure Active Directory](./enable-trial-using-azure-ad.md)  
+
+### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
+#### [Предпочтительные решения](./preferred-solutions.md) 
 
 ## [Облачный портал для партнеров](./cloud-partner-portal/cloud-partner-portal-what-is-the-cloud-partner-portal.md)  
 

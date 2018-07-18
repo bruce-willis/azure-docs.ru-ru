@@ -10,6 +10,8 @@
   items:
     - name: Развертывание решения удаленного мониторинга
       href: quickstart-remote-monitoring-deploy.md
+    - name: Развертывание решения подключенной фабрики
+      href: quickstart-connected-factory-deploy.md
     - name: Развертывание решения прогнозного обслуживания
       href: quickstart-predictive-maintenance-deploy.md
     - name: Развертывание симулятора устройств
@@ -141,8 +143,8 @@
           href: iot-accelerators-predictive-overview.md
     - name: Подключенная фабрика
       items:
-        - name: Развертывание акселератора решений
-          href: iot-accelerators-connected-factory-overview.md
+        - name: Использование панели мониторинга
+          href: iot-accelerators-connected-factory-dashboard.md
         - name: Развертывание шлюза
           href: iot-accelerators-connected-factory-gateway-deployment.md
         - name: Использование издателя OPC

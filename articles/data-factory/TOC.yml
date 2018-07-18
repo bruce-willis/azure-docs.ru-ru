@@ -319,6 +319,10 @@
           href: transform-data-using-data-lake-analytics.md
         - name: Действие Databricks Notebook
           href: transform-data-databricks-notebook.md
+        - name: Действие JAR в Databricks
+          href: transform-data-databricks-jar.md
+        - name: Действие Python в Databricks
+          href: transform-data-databricks-python.md
         - name: Настраиваемое действие
           href: transform-data-using-dotnet-custom-activity.md
         - name: Связанные службы вычислений

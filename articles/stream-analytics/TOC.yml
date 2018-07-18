@@ -20,6 +20,8 @@
       href: stream-analytics-with-azure-functions.md
     - name: 3. Запуск определяемой пользователем функции JavaScript
       href: stream-analytics-javascript-user-defined-functions.md
+    - name: 4. Развертывание с помощью процессов CI/CD в VSTS
+      href: stream-analytics-tools-visual-studio-cicd-vsts.md
 - name: Примеры
   items:
     - name: Примеры кода

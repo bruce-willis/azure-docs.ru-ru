@@ -48,8 +48,19 @@
 ### Использование нескольких SID в SAP
 #### [В Windows с общим диском для экземпляра (A)SCS](sap-ascs-ha-multi-sid-wsfc-shared-disk.md)
 #### [В Windows с общей папкой SOFS для экземпляра (A)SCS](sap-ascs-ha-multi-sid-wsfc-file-share.md)
-## [Руководство по развертыванию](deployment-guide.md)
-## [Руководство по развертыванию СУБД](dbms-guide.md)
+## [Руководство по развертыванию SAP NetWeaver](deployment-guide.md)
+## Руководства по развертыванию СУБД для рабочих нагрузок SAP
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Общие сведения о развертывании СУБД](dbms_guide_general.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](dbms_guide_sqlserver.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД Oracle](dbms_guide_oracle.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД IBM DB2](dbms_guide_ibm.md)
+### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](dbms_guide_sapase.md)
+### [Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure](dbms_guide_maxdb.md)
+### [Руководство по использованию SAP HANA в Azure](hana-vm-operations.md)
+#### Доступность SAP HANA в Виртуальных машинах Azure
+##### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
+##### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
+##### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
 ## [Azure Site Recovery для аварийного восстановления SAP](../../../site-recovery/site-recovery-workload.md#protect-sap)
 # Интеграция AAD с приложением для управления удостоверениями SAP и единый вход
 ## [Интеграция с облаком SAP](../../../active-directory/saas-apps/sap-customer-cloud-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json)

@@ -1,0 +1,63 @@
+- name: Документация по Сетке Service Fabric
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Сведения о Сетке Service Fabric
+      href: service-fabric-mesh-overview.md
+- name: Быстрое начало работы
+  items:
+    - name: Развертывание приложения Hello World
+      href: service-fabric-mesh-quickstart-deploy-container.md
+    - name: Создание и развертывание веб-приложения
+      href: service-fabric-mesh-quickstart-dotnet-core.md
+- name: Учебники
+  items:
+    - name: Создание и развертывание веб-приложения на базе нескольких служб
+      items:
+        - name: 1. Создание приложения ASP.NET Core
+          href: service-fabric-mesh-tutorial-create-dotnetcore.md
+        - name: 2. Отладка приложения
+          href: service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md
+        - name: 3. Развертывание приложения
+          href: service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md
+- name: Основные понятия
+  items:
+    - name: Терминология
+      href: service-fabric-mesh-terminology.md
+    - name: Ресурсы Service Fabric
+      href: service-fabric-mesh-service-fabric-resources.md
+    - name: Мониторинг и диагностика.
+      href: service-fabric-mesh-monitoring-diagnostics.md
+    - name: Хранение сведений о состояниях
+      href: service-fabric-mesh-storing-state.md
+- name: Практические руководства
+  items:
+    - name: Настройка среды разработки
+      href: service-fabric-mesh-howto-setup-developer-environment-sdk.md
+    - name: Настройка CLI для Сетки Service Fabric
+      href: service-fabric-mesh-howto-setup-cli.md
+    - name: Развертывание приложения .NET Core на базе микрослужб
+      href: service-fabric-mesh-howto-deploy-app-template.md
+    - name: Развертывание приложения из частного реестра
+      href: service-fabric-mesh-howto-deploy-app-private-registry.md
+    - name: Хранение сведений о состояниях в томе службы файлов Azure
+      href: service-fabric-mesh-howto-deploy-app-azurefiles-volume.md
+    - name: Независимое масштабирование микрослужб в приложении
+      href: service-fabric-mesh-howto-app-scale-out.md
+- name: Ресурсы
+  items:
+    - name: Часто задаваемые вопросы
+      href: service-fabric-mesh-faq.md
+    - name: Примеры приложений
+      href: 'https://github.com/Azure-Samples/service-fabric-mesh'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=service-fabric-mesh'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/search?q=service-fabric-mesh'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=service-fabric-mesh'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=service-fabric-mesh'
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'

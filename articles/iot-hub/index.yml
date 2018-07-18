@@ -11,12 +11,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 04/26/2018
   ms.author: dobett
-  ms.openlocfilehash: 35f60b4fef75c3eebb9ac203aaded26d32773c53
-  ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+  ms.openlocfilehash: 9a173ee72f909c8f516f321592efde639e3a3a08
+  ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/05/2018
-  ms.locfileid: "37858353"
+  ms.lasthandoff: 07/17/2018
+  ms.locfileid: "39068252"
 abstract:
   description: Узнайте, как с помощью Центра Интернета вещей подключать миллиарды ресурсов Интернета вещей, отслеживать их состояние и управлять ими. Руководства, справочники по API, видео и другие материалы помогут вам установить надежную двустороннюю связь между устройствами IoT и серверной частью решения.
 sections:
@@ -69,4 +69,4 @@ sections:
     - title: Языки
       html: <p><a href="/dotnet/api/microsoft.azure.devices">.NET (служба)</a></p><p><a href="/dotnet/api/microsoft.azure.devices.client">.NET (устройства)</a></p><p><a href="https://azure.github.io/azure-iot-sdk-c/index.html">C (пакет SDK для устройства)</a></p><p><a href="/java/api/com.microsoft.azure.sdk.iot.service">Java (служба)</a></p><p><a href="/java/api/com.microsoft.azure.sdk.iot.device">Java (устройства)</a></p><p><a href="/javascript/api/azure-iothub/?view=azure-iot-typescript-latest">Node.js (служба)</a></p><p><a href="/javascript/api/azure-iot-device/?view=azure-iot-typescript-latest">Node.js (устройства)</a></p>
     - title: REST
-      html: <p><a href="/rest/api/iothub/iothubresource">REST (поставщик ресурсов)</a></p><p><a href="/rest/api/iothub/deviceapi">REST (удостоверения устройств)</a></p><p><a href="/rest/api/iothub/devicetwinapi">REST (двойники устройств)</a></p><p><a href="/rest/api/iothub/httpruntime">REST (передача сообщений на устройства)</a></p><p><a href="/rest/api/iothub/jobapi">REST (задания)</a></p>
+      html: <p><a href="/rest/api/iothub/device">REST (устройство)</a></p><p><a href="/rest/api/iothub/service">REST (служба)</a></p><p><a href="/rest/api/iothub/iothubresource">REST (ресурсы Центра Интернета вещей)</a></p><p><a href="/rest/api/iothub/certificates">REST (сертификаты)</a></p>

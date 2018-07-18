@@ -28,7 +28,7 @@
       href: visual-search-sdk-python.md
 - name: Учебники
   items:
-    - name: Отправка изображений визуального поиска
+    - name: Приложение для оправки изображений
       href: tutorial-visual-search-image-upload.md
     - name: Одностраничные веб-приложения
       href: tutorial-bing-visual-search-single-page-app.md

@@ -11,12 +11,18 @@
   items:
     - name: Бесплатная пробная подписка на службу "Речь"
       href: get-started.md
-    - name: 'Распознавание речи в C#'
-      href: quickstart-csharp-windows.md
+    - name: 'Распознавание речи в C# (.NET в Windows)'
+      href: quickstart-csharp-dotnet-windows.md
+    - name: 'Распознавание речи в C# (.NET Core в Windows)'
+      href: quickstart-csharp-dotnetcore-windows.md
+    - name: Распознавание речи в приложении UWP
+      href: quickstart-csharp-uwp.md
     - name: Распознавание речи в C++ для Windows
       href: quickstart-cpp-windows.md
     - name: Распознавание речи в C++ для Linux
       href: quickstart-cpp-linux.md
+    - name: Распознавание речи в Java для Android
+      href: quickstart-java-android.md
     - name: Начало работы с пакетом SDK для речевых устройств
       href: speech-devices-sdk-qsg.md
 - name: Практические руководства
