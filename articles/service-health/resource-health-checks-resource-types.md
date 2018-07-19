@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: Supportability
 ms.date: 10/09/2017
 ms.author: BernardoAMunoz
-ms.openlocfilehash: 4e1f6cb8a383569b80386e090b15c59988510d0f
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 633501b03a362fbd07e14e308e18488f03af5af5
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112849"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069216"
 ---
 # <a name="resource-types-and-health-checks-in-azure-resource-health"></a>Типы ресурсов и проверки работоспособности в службе работоспособности ресурсов Azure
 Ниже приведен полный список проверок, выполняемых в системе работоспособности ресурсов для разных типов ресурсов.
@@ -42,7 +42,7 @@ ms.locfileid: "37112849"
 ## <a name="microsoftcdnprofile"></a>Microsoft.CDN/profile
 |Выполняемые проверки|
 |---|
-|<ul> <li>Какие-то конечные точки остановлены, удалены или неправильно сконфигурированы?</li><li>Доступен ли дополнительный портал для операций настройки CDN?</li><li>Существуют ли проблемы с доставкой между конечными точками CDN?</li><li>Могут ли пользователи изменять настройки ресурсов CDN?</li><li>Изменения конфигурации публикуются с ожидаемой скоростью?</li><li>Могут ли пользователи управлять конфигурацией CDN с помощью портала Azure, PowerShell или API?</li> </ul>|
+|<ul> <li>Доступен ли дополнительный портал для операций настройки CDN?</li><li>Существуют ли проблемы с доставкой между конечными точками CDN?</li><li>Могут ли пользователи изменять настройки ресурсов CDN?</li><li>Изменения конфигурации публикуются с ожидаемой скоростью?</li><li>Могут ли пользователи управлять конфигурацией CDN с помощью портала Azure, PowerShell или API?</li> </ul>|
 
 ## <a name="microsoftclassiccomputevirtualmachines"></a>Microsoft.classiccompute/virtualmachines
 |Выполняемые проверки|

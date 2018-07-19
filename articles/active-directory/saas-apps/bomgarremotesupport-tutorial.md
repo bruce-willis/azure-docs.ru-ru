@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2018
 ms.author: jeedes
-ms.openlocfilehash: 2d0a4df20ef513b2a6524ba92656a7f861da8458
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: c59f4291726b24b7c96bb60d0497c1578a3e4b0f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37115727"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048187"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bomgar-remote-support"></a>Руководство по интеграции Azure Active Directory с Bomgar Remote Support
 
@@ -33,7 +33,7 @@ ms.locfileid: "37115727"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Bomgar Remote Support, вам потребуется:
 
@@ -109,7 +109,7 @@ ms.locfileid: "37115727"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.trafficmanager.net/saml`
 
-    Б. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.trafficmanager.net`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.trafficmanager.net`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором (идентификатор сущности). Чтобы получить эти значения, обратитесь к [группе поддержки Bomgar Remote Support](https://www.bomgar.com/docs/index.htm#support). 
@@ -197,7 +197,7 @@ ms.locfileid: "37115727"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Bomgar Remote Support на панели доступа, вы автоматически войдете в приложение Bomgar Remote Support.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

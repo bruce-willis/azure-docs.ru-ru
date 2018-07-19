@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: d8a528265acc3e0bee24da6c1b6130082815b9fd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 33566bd31f320ccc21f32a256d96d89ee25198bb
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34628265"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37088460"
 ---
 # <a name="create-a-new-simulated-device"></a>Создание имитированного устройства
 
@@ -191,15 +191,15 @@ ms.locfileid: "34628265"
 
 При изменении службы моделирования устройств можно запустить ее локально, чтобы проверить внесенные изменения. Перед запуском службы моделирования устройств локально необходимо остановить экземпляр, работающий на виртуальной машине, следующим образом:
 
-1. Чтобы найти **идентификатор контейнера** службы **device-simulation**, выполните следующую команду в сеансе SSH, подключенном к виртуальной машине:
+1. Чтобы найти **идентификатор контейнера** службы **device-simulation-dotnet**, выполните следующую команду в сеансе SSH, подключенном к виртуальной машине:
 
     ```sh
     docker ps
     ```
 
-    Запишите идентификатор контейнера службы **device-simulation**.
+    Запишите идентификатор контейнера службы **device-simulation-dotnet**.
 
-1. Чтобы остановить контейнер **device-simulation**, выполните следующую команду:
+1. Чтобы остановить контейнер **device-simulation-dotnet**, выполните следующую команду:
 
     ```sh
     docker stop container-id-from-previous-step
@@ -248,12 +248,6 @@ ms.locfileid: "34628265"
 ## <a name="create-a-simulated-device-type"></a>Создание типа виртуального устройства
 
 Тип устройства в службе моделирования устройств проще всего создать, скопировав и изменив имеющийся тип. Ниже показано, как скопировать встроенное устройство **Chiller**, чтобы создать устройство **Lightbulb**.
-
-1. В Visual Studio откройте файл решения **device-simulation.sln** в локальной копии репозитория **device-simulation**.
-
-1. В обозревателе решений щелкните правой кнопкой мыши проект **SimulationAgent**, выберите **Свойства**, а затем — **Отладка**.
-
-1. В разделе **Переменные среды** измените значение переменной **PCS\_IOTHUB\_CONNSTRING** на строку подключения к Центру Интернета вещей, записанную ранее. Сохраните изменения.
 
 1. В обозревателе решений щелкните правой кнопкой мыши проект **WebService**, выберите **Свойства**, а затем — **Отладка**.
 
@@ -385,18 +379,21 @@ ms.locfileid: "34628265"
 1. Измените функцию **main**, чтобы реализовать реакцию на событие, как показано в следующем фрагменте:
 
     ```js
-    function main(context, previousState) {
+    function main(context, previousState, previousProperties) {
 
-      // Restore the global state before generating the new telemetry, so that
-      // the telemetry can apply changes using the previous function state.
-      restoreState(previousState);
+        // Restore the global device properties and the global state before
+        // generating the new telemetry, so that the telemetry can apply changes
+        // using the previous function state.
+        restoreSimulation(previousState, previousProperties);
 
-      state.temperature = vary(200, 5, 150, 250);
+        state.temperature = vary(200, 5, 150, 250);
 
-      // Make this flip every so often
-      state.status = flip(state.status);
+        // Make this flip every so often
+        state.status = flip(state.status);
 
-      return state;
+        updateState(state);
+
+        return state;
     }
     ```
 
@@ -545,11 +542,11 @@ ms.locfileid: "34628265"
 
     При выполнении сценариев в образ был добавлен тег **testing**.
 
-1. Подключитесь к виртуальной машине решения в Azure по протоколу SSH. Затем перейдите в папку **App** и измените файл **docker-compose.yaml**:
+1. Подключитесь к виртуальной машине решения в Azure по протоколу SSH. Затем перейдите в папку **App** и измените файл **docker-compose.yml**:
 
     ```sh
     cd /app
-    sudo nano docker-compose.yaml
+    sudo nano docker-compose.yml
     ```
 
 1. Измените запись для службы моделирования устройств, чтобы использовать образ Docker:
@@ -605,7 +602,7 @@ ms.locfileid: "34628265"
 
 Ниже показано, как найти файлы, определяющие встроенное устройство **Chiller**.
 
-1. Выполните команду ниже, чтобы клонировать репозиторий **device-simulation** GitHub на локальный компьютер (если вы еще не сделали это).
+1. Выполните команду ниже, чтобы клонировать репозиторий **device-simulation-dotnet** GitHub на локальный компьютер (если вы еще не сделали этого).
 
     ```cmd/sh
     git clone https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet.git
@@ -673,9 +670,9 @@ ms.locfileid: "34628265"
 
 ### <a name="test-the-chiller-device-type"></a>Тестирование типа устройства Chiller
 
-Чтобы протестировать измененный тип устройства **Chiller**, сначала нужно проверить реакцию на событие своего типа устройства, запустив локальную копию службы **device-simulation**. Проверив и завершив отладку измененного типа устройства в локальной среде, вы можете перестроить контейнер и повторно развернуть службу **device-simulation** в Azure.
+Чтобы протестировать измененный тип устройства **Chiller**, сначала нужно проверить реакцию на событие своего типа устройства, запустив локальную копию службы **device-simulation-dotnet**. Проверив и завершив отладку измененного типа устройства в локальной среде, вы можете перестроить контейнер и повторно развернуть службу **device-simulation-dotnet** в Azure.
 
-При запуске службы **device-simulation** в локальной среде она отправляет данные телеметрии в решение для удаленного мониторинга. Экземпляры измененного типа можно подготовить на странице **Устройства**.
+При запуске службы **device-simulation-dotnet** в локальной среде она отправляет данные телеметрии в решение для удаленного мониторинга. Экземпляры измененного типа можно подготовить на странице **Устройства**.
 
 Дополнительные сведения о тестировании и отладке изменений локально см. в разделе [Тестирование типа устройства Lightbulb локально](#test-the-lightbulb-device-type-locally).
 

@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 6b09bb295d889255dada0cebbb9ded2379d95d23
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 786f0dfd0cf3cf2e9ab0d16e26811fabd6bfc17c
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "34710242"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37440961"
 ---
 # <a name="azure-active-directory-b2c-add-twitter-as-an-oauth1-identity-provider-by-using-custom-policies"></a>Azure Active Directory B2C. Добавление Twitter в качестве поставщика удостоверений OAuth1 с помощью пользовательских политик
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "34710242"
 
     Б. В поле **Веб-сайт** вставьте **https://login.microsoftonline.com**. 
 
-    c. В поле **URL-адрес обратного вызова** вставьте **https://login.microsoftonline.com/te/{tenant}.onmicrosoft.com/oauth2/authresp**. Замените заполнитель {*клиент*} именем своего клиента (например, contosob2c.onmicrosoft.com). Убедитесь, что используете схему HTTPS. 
+    c. 4. В поле **Callback URL** (URL-адрес обратного вызова) введите значение `https://login.microsoftonline.com/te/{tenant}/{policyId}/oauth1/authresp`. Замените **{tenant}** именем своего клиента (например, contosob2c.onmicrosoft.com), а **{policyId}** — идентификатором политики (например, b2c_1_policy).  **URL-адрес обратного вызова должен содержать только строчные символы.** Добавьте URL-адрес обратного вызова для всех политик, использующих данные для входа в Twitter. Если в приложении используется адрес ` login.microsoftonline.com`, замените его на `b2clogin.com`.
 
     d. В нижней части страницы прочитайте и примите условия соглашения, а затем выберите **Create your Twitter application** (Создать приложение Twitter).
 

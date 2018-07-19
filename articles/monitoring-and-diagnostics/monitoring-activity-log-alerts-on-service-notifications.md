@@ -1,19 +1,19 @@
 ---
 title: Получение оповещений журнала действий для уведомлений службы Azure
 description: Получайте уведомления по SMS, электронной почте или от веб-перехватчика при использовании службы Azure.
-author: johnkemnetz
+author: shawntabrizi
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/09/2018
-ms.author: johnkem
+ms.author: shtabriz
 ms.component: alerts
-ms.openlocfilehash: 1e79fee75b2361dd7da8c46c175a5a6532089ad6
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 1cd82f7ffa9360dbc35f9c9d790df34355d9dd1a
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437245"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035719"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Создание оповещений журнала действий для уведомлений службы
 ## <a name="overview"></a>Обзор
@@ -72,7 +72,7 @@ ms.locfileid: "37437245"
 
     a. **Имя.** Введите имя, псевдоним или идентификатор получателя.
 
-    Б. **Тип действия.** Вы можете выбрать SMS, электронную почту, веб-перехватчик, приложение Azure и другие типы.
+    b. **Тип действия.** Вы можете выбрать SMS, электронную почту, веб-перехватчик, приложение Azure и другие типы.
 
     c. **Подробные сведения.** Сведения зависят от типа действия. Можно указать номер телефона, адрес электронной почты, универсальный код ресурса (URI) веб-перехватчика и др.
 

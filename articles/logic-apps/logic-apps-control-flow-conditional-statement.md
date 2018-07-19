@@ -10,12 +10,12 @@ ms.date: 03/05/2018
 ms.topic: article
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: e8d84944d44588602593c762c4f60c375e480343
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: d4e69d33e07f484b4ccc5343786865230368c7ca
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298174"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37096382"
 ---
 # <a name="create-conditional-statements-that-control-workflow-actions-in-azure-logic-apps"></a>Создание условных операторов, которые управляют действиями в рабочих процессах Azure Logic Apps
 
@@ -50,32 +50,27 @@ ms.locfileid: "35298174"
 
    1. В текстовом поле слева укажите данные или поле, которое вы хотите сравнить.
 
-      В списке **Добавление динамического содержимого** можно выбрать имеющиеся поля приложения логики.
+      Если щелкнуть в поле слева, отобразится список динамического содержимого, с помощью которого можно выбрать выходные данные, полученные на предыдущих шагах. 
+      В этом примере выберите пункт RSS feed summary (Сводка по RSS-каналу).
+
+      ![Создание условия](./media/logic-apps-control-flow-conditional-statement/edit-condition.png)
 
    2. В среднем списке выберите операцию для выполнения. 
-   3. В текстовом поле справа укажите в качестве критерия значение или поле.
+   В этом примере выберите **содержит**. 
 
-   Например: 
-
-   ![Изменение условий в базовом режиме](./media/logic-apps-control-flow-conditional-statement/edit-condition-basic-mode.png)
+   3. В текстовом поле справа укажите в качестве критерия значение или поле. 
+   В этом примере укажите следующую строку: **Microsoft**.
 
    Ниже приведено полное условие:
 
-   ![Полное условие](./media/logic-apps-control-flow-conditional-statement/edit-condition-basic-mode-2.png)
+   ![Полное условие](./media/logic-apps-control-flow-conditional-statement/edit-condition-2.png)
+
+5. В разделе **Если истинно** и **Если ложно** добавьте шаги, которые будут выполнены в зависимости от того, удовлетворяется ли условие. Например: 
+
+   ![Условие с путями "Если истинно" и "Если ложно"](./media/logic-apps-control-flow-conditional-statement/condition-yes-no-path.png)
 
    > [!TIP]
-   > Чтобы создать более расширенное условие или использовать выражения, выберите **Edit in advanced mode** (Изменить в расширенном режиме). Вы можете использовать выражения, определенные [языком определения рабочих процессов](../logic-apps/logic-apps-workflow-definition-language.md).
-   > 
-   > Например: 
-   >
-   > ![Изменение условия в коде](./media/logic-apps-control-flow-conditional-statement/edit-condition-advanced-mode.png)
-
-5. В разделе **IF YES** (Если да) и **IF NO** (Если нет) добавьте шаги для выполнения в зависимости от удовлетворения условия. Например: 
-
-   ![Условия с путями "Да" и "Нет"](./media/logic-apps-control-flow-conditional-statement/condition-yes-no-path.png)
-
-   > [!TIP]
-   > Имеющиеся действия можно перетаскивать в пути **IF YES** (Если да) и **IF NO** (Если нет).
+   > Существующие действия можно перетаскивать в пути **Если истинно** и **Если ложно**.
 
 6. Сохраните приложение логики.
 
@@ -87,14 +82,21 @@ ms.locfileid: "35298174"
 
 ``` json
 "actions": {
-  "myConditionName": {
+  "Condition": {
     "type": "If",
-    "expression": "@contains(triggerBody()?['summary'], 'Microsoft')",
     "actions": {
       "Send_an_email": {
-        "inputs": { },
+        "inputs": {},
         "runAfter": {}
-      }
+    },
+    "expression": {
+      "and": [ 
+        { 
+          "contains": [ 
+            "@triggerBody()?['summary']", "Microsoft"
+          ]
+        } 
+      ]
     },
     "runAfter": {}
   }

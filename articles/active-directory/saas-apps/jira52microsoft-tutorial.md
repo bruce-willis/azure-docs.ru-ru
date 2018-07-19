@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 5df8b3d91f52e4809ef43e3e376004e4274b4400
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 84afd45f6fb56222aa6d2dea063251353f406b26
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112026"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042682"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft-v52"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft (V5.2)
 
@@ -38,7 +38,7 @@ ms.locfileid: "37112026"
 
 Используйте учетную запись Microsoft Azure Active Directory с сервером Atlassian JIRA, чтобы включить единый вход. Таким образом все пользователи вашей организации смогут использовать учетные данные Azure AD для входа в приложение JIRA. Этот подключаемый модуль для федерации использует SAML 2.0.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с JIRA SAML SSO by Microsoft (V5.2), потребуется следующее:
 
@@ -126,7 +126,7 @@ ms.locfileid: "37112026"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
 
@@ -168,7 +168,7 @@ ms.locfileid: "37112026"
 
     a. В текстовое поле **URL-адрес метаданных** вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure, и нажмите кнопку **Разрешить**. Будет прочитан URL-адрес метаданных поставщика удостоверений, а также будут заполнены все поля сведений.
 
-    Б. Скопируйте значения **идентификатора, URL-адреса ответа и URL-адреса входа** и вставьте их в соответствующие поля **идентификатора, URL-адреса ответа и URL-адреса входа** в разделе **Домены и URL-адреса приложения JIRA SAML SSO by Microsoft (V5.2)** на портале Azure.
+    b. Скопируйте значения **идентификатора, URL-адреса ответа и URL-адреса входа** и вставьте их в соответствующие поля **идентификатора, URL-адреса ответа и URL-адреса входа** в разделе **Домены и URL-адреса приложения JIRA SAML SSO by Microsoft (V5.2)** на портале Azure.
 
     c. В поле **Имя кнопки входа** введите имя кнопки, которую должны видеть на экране входа пользователи вашей организации.
 
@@ -248,7 +248,7 @@ ms.locfileid: "37112026"
 
     a. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
-    Б. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
     c. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
 
@@ -291,7 +291,7 @@ ms.locfileid: "37112026"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "JIRA SAML SSO by Microsoft (V5.2)" на панели доступа, вы автоматически войдете в приложение JIRA SAML SSO by Microsoft (V5.2).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

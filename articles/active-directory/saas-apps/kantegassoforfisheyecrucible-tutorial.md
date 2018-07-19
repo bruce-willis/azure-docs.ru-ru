@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: bf262a42751e02c939696e4c8554fc19f5a4f4bd
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 200330421233ed9fb3735a9f68d856efc99c1216
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37111207"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052335"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kantega-sso-for-fisheyecrucible"></a>Руководство по интеграции Azure Active Directory с Kantega SSO for FishEye/Crucible
 
@@ -33,7 +33,7 @@ ms.locfileid: "37111207"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Kantega SSO for FishEye/Crucible, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "37111207"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/no.kantega.saml/sp/<uniqueid>/login`.
 
 4. Чтобы использовать режим, инициируемый **поставщиком услуг**, установите флажок **Показать дополнительные параметры URL-адресов**.
 
@@ -177,7 +177,7 @@ ms.locfileid: "37111207"
 
     a. Скопируйте значение **App ID URI** (URI кода приложения) и используйте его как **идентификатор, URL-адрес ответа и URL-адрес входа** в разделе **Домены и URL-адреса приложения Kantega SSO for FishEye/Crucible** на портале Azure.
 
-    Б. Нажмите кнопку **Далее**.
+    b. Щелкните **Далее**.
 
 18. В разделе **Metadata import** (Импорт метаданных) выполните следующие действия.
 
@@ -185,7 +185,7 @@ ms.locfileid: "37111207"
 
     a. Щелкните **Metadata file on my computer** (Файл метаданных на моем компьютере) и передайте файл метаданных, который вы скачали с портала Azure.
 
-    Б. Нажмите кнопку **Далее**.
+    b. Щелкните **Далее**.
 
 19. В разделе **Name and SSO location** (Имя и расположение единого входа) выполните следующее.
 
@@ -193,7 +193,7 @@ ms.locfileid: "37111207"
 
     a. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика (например, Azure AD).
 
-    Б. Нажмите кнопку **Далее**.
+    b. Щелкните **Далее**.
 
 20. Проверьте сертификат для подписи и нажмите кнопку **Next** (Далее).  
 
@@ -205,7 +205,7 @@ ms.locfileid: "37111207"
 
     a. Щелкните переключатель **Create users in FishEye's internal Directory if needed** (При необходимости создать пользователей во внутреннем каталоге FishEye) и введите соответствующее имя группы пользователей (это может быть несколько групп, разделенных запятой).
 
-    Б. Нажмите кнопку **Далее**.
+    b. Щелкните **Далее**.
 
 22. Нажмите кнопку **Готово**
 
@@ -217,7 +217,7 @@ ms.locfileid: "37111207"
 
     a. Щелкните **Known domains** (Известные домены) на левой панели страницы.
 
-    Б. Введите имя домена в текстовое поле **Known domains** (Известные домены).
+    b. Введите имя домена в текстовое поле **Known domains** (Известные домены).
 
     c. Выберите команду **Сохранить**.  
 
@@ -249,7 +249,7 @@ ms.locfileid: "37111207"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -277,7 +277,7 @@ ms.locfileid: "37111207"
 
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
     
-    Б. В текстовом поле **Display Name** (Отображаемое имя) введите отображаемое имя пользователя, например Britta Simon.
+    b. В текстовом поле **Display Name** (Отображаемое имя) введите отображаемое имя пользователя, например Britta Simon.
     
     c. В текстовом поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
@@ -322,7 +322,7 @@ ms.locfileid: "37111207"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Kantega SSO for FishEye/Crucible" на панели доступа, вы автоматически войдете в приложение Kantega SSO for FishEye/Crucible.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

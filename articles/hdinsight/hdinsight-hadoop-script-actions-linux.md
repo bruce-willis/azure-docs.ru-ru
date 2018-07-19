@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: larryfr
-ms.openlocfilehash: 9ca8be3066254ade37c858bd62f9ce6a2e2be902
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 5f6609018f2582ebfc6e2ecbe48bde6a6f2d0f5d
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018388"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098266"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -284,7 +284,7 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
 * __ресурсе с общедоступным URI__. Например, URL-адрес к данным, хранящимся в OneDrive, Dropbox или других службах размещения файлов.
 
-* __учетной записи Azure Data Lake Store__, связанной с кластером HDInsight. Дополнительные сведения об использовании Azure Data Lake Store с HDInsight см. в статье [Создание кластера HDInsight с хранилищем озера данных с помощью портала Azure](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+* __учетной записи Azure Data Lake Store__, связанной с кластером HDInsight. Дополнительные сведения об использовании Azure Data Lake Store с HDInsight см. в статье [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
     > [!NOTE]
     > Кластер HDInsight субъекта-службы с доступом к Data Lake Store должен иметь доступ к сценарию с правами на чтение.

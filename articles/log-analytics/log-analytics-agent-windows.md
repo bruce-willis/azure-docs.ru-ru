@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: df61ef74d95dd9305fa8d97758bf07bcb40d54a6
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: bdbcfca64c2e680dfdf8feefe1bafdefb84981f4
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131392"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125826"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "37131392"
 
 В следующей таблице описаны определенные параметры Log Analytics, поддерживаемые программой установки агента, а также при развертывании с помощью Automation DSC.
 
-|Параметры MMA                   |Заметки         |
+|Параметры MMA                   |Примечания         |
 |---------------------------------------|--------------|
 | NOAPM=1                               | Необязательный параметр. Установка агента без мониторинга производительности приложений .NET.|   
 |ADD_OPINSIGHTS_WORKSPACE               | 1 — настройка агента для передачи отчетов в рабочую область.                |
@@ -125,7 +125,7 @@ ms.locfileid: "37131392"
         $OPSINSIGHTS_WS_KEY = Get-AutomationVariable -Name "OPSINSIGHTS_WS_KEY"
 
         Import-DscResource -ModuleName xPSDesiredStateConfiguration
-        Import-DscResource –ModuleName PSDesiredStateConfiguration
+        Import-DscResource -ModuleName PSDesiredStateConfiguration
 
         Node OMSnode {
             Service OIService

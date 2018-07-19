@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: jeedes
-ms.openlocfilehash: d234b34f7583441f496fb96d37166c5472cadb4c
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 7705baa0ba912f24d7859110c75d36703aeb4a77
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37110833"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041965"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-riskware"></a>Руководство по интеграции Azure Active Directory с Riskware
 
@@ -34,7 +34,7 @@ ms.locfileid: "37110833"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Riskware, вам потребуется следующее:
 
@@ -116,7 +116,7 @@ ms.locfileid: "37110833"
     | DEMO| `https://riskcloud.net/demo?ccode=<COMPANYCODE>` |
     |||
 
-    Б. В текстовом поле **Идентификатор (сущности)** введите такой URL-адрес:
+    b. В текстовом поле **Идентификатор (сущности)** введите такой URL-адрес:
     | Среда| Шаблон URL-адреса|
     |--|--|
     | UAT| `https://riskcloud.net/uat` |
@@ -155,7 +155,7 @@ ms.locfileid: "37110833"
 
     a. Выберите для параметра аутентификации **Type** (Тип) значение **SAML**.
 
-    Б. В текстовом поле **Code** (Код) введите код, например AZURE_UAT.
+    b. В текстовом поле **Code** (Код) введите код, например AZURE_UAT.
 
     c. В текстовом поле **Description** (Описание) введите описание, например "Конфигурация AZURE для единого входа".
 
@@ -236,7 +236,7 @@ ms.locfileid: "37110833"
 
     a. Выберите **Person Type** (Тип роли), например Employee (Сотрудник).
 
-    Б. В текстовое поле **First Name** (Имя) введите имя, например **Britta**.
+    b. В текстовое поле **First Name** (Имя) введите имя, например **Britta**.
 
     c. В текстовое поле **Surname** (Фамилия) введите фамилию, например **Simon**.
 
@@ -246,7 +246,7 @@ ms.locfileid: "37110833"
 
     a. В разделе **Authentication** (Аутентификация) выберите настроенный ранее **режим аутентификации**, например "Конфигурация AZURE для единого входа".
 
-    Б. В разделе **Logon Details** (Данные для входа) введите в текстовое поле **User ID** (Идентификатор пользователя) адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    b. В разделе **Logon Details** (Данные для входа) введите в текстовое поле **User ID** (Идентификатор пользователя) адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
     c. В текстовом поле **Password** (Пароль) введите пароль этого пользователя.
 
@@ -256,7 +256,7 @@ ms.locfileid: "37110833"
 
     a. Выберите параметр от имени организации **Level1**.
 
-    Б. В разделе **Person's Primary Workplace** (Основное рабочее место) введите описание расположения в текстовое поле **Location** (Расположение).
+    b. В разделе **Person's Primary Workplace** (Основное рабочее место) введите описание расположения в текстовое поле **Location** (Расположение).
 
     c. В разделе **Employee** (Сотрудник) выберите в поле **Employee Status** (Статус сотрудника) значение Casual (Обычный).
 
@@ -297,7 +297,7 @@ ms.locfileid: "37110833"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Riskware на панели доступа, вы автоматически войдете в приложение Riskware.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/27/2018
+ms.date: 07/16/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: c60d736798adbbcb47b94172768dc8b8e5c366fe
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 97404421a48d15339fdecf23a951a64d975da577
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37088451"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090360"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Руководство по интеграции Azure Active Directory с приложениями
 ## <a name="overview"></a>Обзор
@@ -57,12 +57,12 @@ ms.locfileid: "37088451"
 
 Возможно, вы сразу не сможете ответить на все эти вопросы, но это нормально.  Это руководство поможет вам ответить на некоторые из этих вопросов и принять обоснованные решения.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Подписка Azure и каталог Azure Active Directory.  Если у вас еще нет подписки Azure, вы можете получить бесплатную пробную версию Azure на 30 дней. [Просто попробуйте!](https://azure.microsoft.com/trial/get-started-active-directory/)
 
 ## <a name="application-integration-with-azure-ad"></a>Интеграция приложений с Azure AD
 ### <a name="finding-unsanctioned-cloud-applications-with-cloud-discovery"></a>Поиск несанкционированных облачных приложений с помощью Cloud Discovery
-Как было сказано выше, могут обнаружиться приложения, которые до сих пор были вне поля зрения вашей организации.  В процессе инвентаризации можно найти несанкционированные облачные приложения. Сведения см. в статье [Настройка Cloud Discovery](/cloud-app-security/set-up-cloud-discovery.md).
+Как было сказано выше, могут обнаружиться приложения, которые до сих пор были вне поля зрения вашей организации.  В процессе инвентаризации можно найти несанкционированные облачные приложения. Сведения см. в статье [Настройка Cloud Discovery](/cloud-app-security/set-up-cloud-discovery).
 
 ### <a name="authentication-types"></a>Типы проверки подлинности
 Каждое приложение может иметь разные требования к проверке подлинности. С помощью Azure AD сертификаты подписи можно использовать с приложениями, использующими SAML 2.0, WS-Federation или протоколы подключения OpenID, а также единый вход с паролем. Дополнительные сведения о типах аутентификации в приложениях для использования с Azure AD см. в статье [Управление сертификатами для федеративного единого входа в Azure Active Directory](manage-certificates-for-federated-single-sign-on.md) и разделе [Единый вход на основе пароля](what-is-single-sign-on.md).

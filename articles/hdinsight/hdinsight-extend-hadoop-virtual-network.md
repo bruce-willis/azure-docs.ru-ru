@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: big-data
 ms.date: 02/21/2018
 ms.author: larryfr
-ms.openlocfilehash: 9ad7a35864f8e8a1aa95f0b54174a792f069ba18
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 842746561b74860e674fbaa298c78bb0ac58bd68
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34700712"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37112139"
 ---
 # <a name="extend-azure-hdinsight-using-an-azure-virtual-network"></a>Расширение возможностей HDInsight с помощью виртуальной сети Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "34700712"
 > Информация в этом документе требует понимания принципов работы сети TCP/IP. Если вы не знакомы с ними, перед внесением изменений в рабочие сети обратитесь к специалистам, знакомым с сетями TCP/IP.
 
 > [!IMPORTANT]
-> Если вам необходимы пошаговые инструкции по подключению HDInsight к локальной сети с помощью виртуальной сети Azure, то см. статью [Подключение HDInsight к локальной сети](connect-on-premises-network.md).
+> Пошаговые инструкции по подключению HDInsight к локальной сети с помощью виртуальной сети Azure см. в статье [Подключение HDInsight к локальной сети](connect-on-premises-network.md).
 
 ## <a name="planning"></a>Планирование
 

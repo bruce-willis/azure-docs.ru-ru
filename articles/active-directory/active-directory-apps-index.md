@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 76430fa5652e98cba86c41433f376e27dbb1639a
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 5c6a4ac68694c74f9a7ed99a2d7b4939b84dc33f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446866"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054885"
 ---
 # <a name="article-index-for-application-management-in-azure-active-directory"></a>Указатель статей по управлению приложениями в Azure Active Directory
 В этой статье представлен полный список всех статей о различных функциях приложений в Azure Active Directory (Azure AD).
@@ -112,7 +112,7 @@ Azure AD Connect доступно для [всех выпусков Azure Active
 | Включение условного доступа для определенных типов ресурсов |[Условный доступ к приложениям SaaS](active-directory-conditional-access-azure-portal-get-started.md)<br /><br />[Условный доступ к службам Office 365](active-directory-conditional-access-device-policies.md)<br /><br />[Условный доступ к локальным приложениям](active-directory-conditional-access-azure-portal.md)<br /><br />[Работа с условным доступом](manage-apps/application-proxy-integrate-with-sharepoint-server.md) |
 | Регистрация устройств в Azure Active Directory для включения политики условного доступа на основе устройств |[Общие сведения о регистрации устройств Azure Active Directory](active-directory-conditional-access-device-registration-overview.md)<br /><br />[Включение автоматической регистрации присоединенных к домену устройств Windows](active-directory-conditional-access-automatic-device-registration.md)<br />— [Действия для устройств Windows 8.1](active-directory-conditional-access-automatic-device-registration-setup.md)<br />— [Действия для устройств Windows 7](active-directory-conditional-access-automatic-device-registration-setup.md) |
 
-| Использование приложения Microsoft Authenticator для двухфакторной проверки подлинности |[Начало работы с приложением Microsoft Authenticator](authentication/end-user/current/microsoft-authenticator-app-how-to.md) |
+| Использование приложения Microsoft Authenticator для двухфакторной проверки подлинности |[Начало работы с приложением Microsoft Authenticator](user-help/microsoft-authenticator-app-how-to.md) |
 
 Условный доступ — это функция [Azure AD уровня "Премиум"](https://azure.microsoft.com/pricing/details/active-directory/) .
 
@@ -180,7 +180,7 @@ Cloud Discovery анализирует журналы трафика на осн
 | Путеводитель по статьям |  |
 |:---:| --- |
 | Сравнение различных параметров развертывания приложений с поддержкой единого входа для пользователей |[Deploying Azure AD Integrated Applications to Users (Развертывание интегрированных приложений Azure AD для пользователей)](manage-apps/what-is-single-sign-on.md#deploying-azure-ad-integrated-applications-to-users) |
-| Обзор панели доступа и эквивалентной мобильной версии MyApps |[Общие сведения о панели доступа и MyApps](active-directory-saas-access-panel-introduction.md)<br />— [iOS](https://itunes.apple.com/us/app/my-apps-azure-active-directory/id824048653?mt=8)<br />— [Android](https://play.google.com/store/apps/details?id=com.microsoft.myapps) |
+| Обзор панели доступа и эквивалентной мобильной версии MyApps |[Общие сведения о панели доступа и MyApps](user-help/active-directory-saas-access-panel-introduction.md)<br />— [iOS](https://itunes.apple.com/us/app/my-apps-azure-active-directory/id824048653?mt=8)<br />— [Android](https://play.google.com/store/apps/details?id=com.microsoft.myapps) |
 | Получение доступа к приложениям Azure AD на веб-сайте Office 365 |[Средство запуска приложений Office 365](https://support.office.com/en-us/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a) |
 | Получение доступа к приложениям Azure AD с мобильного приложения Intune Managed Browser |[Управление доступом в Интернет с помощью политик управляемого браузера в Microsoft Intune](https://technet.microsoft.com/library/dn878029.aspx)<br />— [iOS](https://itunes.apple.com/us/app/microsoft-intune-managed-browser/id943264951?mt=8)<br />— [Android](https://play.google.com/store/apps/details?id=com.microsoft.intune.mam.managedbrowser) |
 | Получение доступа к приложениям Azure AD с использованием прямых ссылок для запуска единого входа |[Ссылки для прямого входа в федеративные приложения, приложения с паролем или существующие приложения](manage-apps/what-is-single-sign-on.md#direct-sign-on-links-for-federated-password-based-or-existing-apps) |

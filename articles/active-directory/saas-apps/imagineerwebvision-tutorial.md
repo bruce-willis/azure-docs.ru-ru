@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2018
 ms.author: jeedes
-ms.openlocfilehash: 9c6d819234111c461bf4793376324dbe77e85ae2
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: d86004680bf13c9716b4ff4e7a41af73ea186f27
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38295368"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047194"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-imagineer-webvision"></a>Руководство по интеграции Azure Active Directory с Imagineer WebVision
 
@@ -33,7 +33,7 @@ ms.locfileid: "38295368"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Imagineer WebVision, вам потребуется:
 
@@ -109,7 +109,7 @@ ms.locfileid: "38295368"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOUR SERVER URL>/<yourapplicationloginpage>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<YOUR SERVER URL>/<yourapplicationloginpage>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<YOUR SERVER URL>/<yourapplicationloginpage>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Imagineer WebVision](mailto:support@itgny.com).
@@ -195,7 +195,7 @@ ms.locfileid: "38295368"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Imagineer WebVision на панели доступа, вы автоматически войдете в приложение Imagineer WebVision.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

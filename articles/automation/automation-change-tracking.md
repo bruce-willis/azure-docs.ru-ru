@@ -10,18 +10,37 @@ ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 717cf6b2abfb529313699836b790bd3f07844a67
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 891206e88173d72a0bacf6694a331c4ad8cc9acc
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37867959"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069453"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
 В этой статье приведены сведения о настройке решения "Отслеживание изменений", позволяющего легко обнаруживать изменения в среде. Это решение отслеживает изменения в программном обеспечении и файлах Windows и Linux, разделах реестра Windows, службах Windows и управляющих программах Linux. что, в свою очередь, позволяет точно определять проблемы с работоспособностью.
 
 Данные об изменениях установленного ПО, служб, файлов и реестров Windows и управляющих программ Linux на наблюдаемых серверах отправляются в службу Log Analytics в облаке для обработки. К полученным данным применяется логика и облачная служба записывает данные. С помощью сведений на панели мониторинга «Отслеживание изменений» можно без труда обнаружить изменения, внесенные в инфраструктуру серверов.
+
+## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
+
+Для агента Windows официально поддерживаются следующие версии операционной системы Windows:
+
+* Windows Server 2008 с пакетом обновления 1 (SP1) или более поздней версии;
+* Windows 7 с пакетом обновления 1 и более поздней версии.
+
+## <a name="supported-linux-operating-systems"></a>Поддерживаемые операционные системы Linux
+
+Официально поддерживаются следующие дистрибутивы Linux. Однако агент Linux может выполняться и на других дистрибутивах, помимо следующих: Если не указано иное, все вспомогательные версии поддерживаются для каждого основного номера версии в списке.  
+
+* Amazon Linux 2012.09–2015.09 (x86/x64)
+* CentOS Linux 5, 6 и 7 (x86/x64)  
+* Oracle Linux 5, 6 и 7 (x86/x64)
+* Red Hat Enterprise Linux Server 5, 6 и 7 (x86/x64)
+* Debian GNU/Linux 6, 7 и 8 (x86/x64)
+* Ubuntu 12.04 LTS, 14.04 LTS, 16.04 LTS (x86/x64)
+* SUSE Linux Enterprise Server 11 и 12 (x86/x64)
 
 ## <a name="enable-change-tracking-and-inventory"></a>Включение решения для отслеживания изменений и инвентаризации
 

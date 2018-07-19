@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 04/29/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: c41c02acaeffa170d55f3c59f34a4b1ecae1c523
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 1d42d9a97244eeff501b9d02b0f143d6ef0c91b2
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34712459"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37440636"
 ---
 # <a name="using-b2clogincom"></a>С помощью b2clogin.com
 
@@ -24,8 +24,8 @@ ms.locfileid: "34712459"
 >
 
 Теперь у вас есть возможность использовать службу Azure AD B2C `<YourTenantName>.b2clogin.com` вместо `login.microsoftonline.com`.  Вы получаете множество преимуществ:
-* Вы больше не будете разделять такое же ограничение размера заголовка файла cookie, что и у других продуктов Майкрософт.
-* Вы можете удалить все ссылки на корпорацию Майкрософт в своем URL-адресе (вы можете заменить `<YourTenantName>.onmicrosoft.com` своим идентификатором клиента).
+* Вы не будете разделять такое же ограничение размера заголовка файла cookie, что и у других продуктов Майкрософт.
+* Вы можете удалить все ссылки на сайты корпорации Майкрософт в своем URL-адресе (вы можете заменить `<YourTenantName>.onmicrosoft.com` своим идентификатором клиента). Например, `https://<tenantname>.b2clogin.com/tfp/<tenantname>/<policyname>/v2.0/.well-known/openid-configuration`.
 
  Чтобы воспользоваться преимуществами b2clogin.com, необходимо настроить следующее:
 
