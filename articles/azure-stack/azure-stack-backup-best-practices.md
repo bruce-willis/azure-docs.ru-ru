@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 4/20/2017
 ms.author: mabrigg
 ms.reviewer: hectorl
-ms.openlocfilehash: ec30832e6863ad92eff8f5c2e613adc503c73af5
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.openlocfilehash: 06a2d4ab12d2a7e03a538a98f5232a417fb39e4f
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34075754"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969475"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Рекомендации по службе резервного копирования инфраструктуры
 
@@ -42,9 +42,7 @@ ms.locfileid: "34075754"
 
 ### <a name="encryption"></a>Шифрование
 
-Ключ шифрования используется для шифрования резервных копий, которые экспортируются во внешнее хранилище. Этот ключ можно создать с помощью AzureStack-Tools. 
-
-![AzureStack-Tools](media\azure-stack-backup\azure-stack-backup-encryption1.png)
+Ключ шифрования используется для шифрования резервных копий, которые экспортируются во внешнее хранилище. Ключ создается в процессе [включения резервного копирования для Azure Stack с помощью PowerShell](azure-stack-backup-enable-backup-powershell.md).
 
 Ключ должен храниться в надежном расположении (например, как секрет в открытом хранилище Azure Key Vault). Этот ключ нужно использовать во время повторного развертывания Azure Stack. 
 

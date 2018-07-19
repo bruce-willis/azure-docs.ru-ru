@@ -4,24 +4,24 @@ description: Раздел ресурсов в шаблонах Azure Resource Ma
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
 editor: tysonn
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/13/2017
+ms.date: 07/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: 12dc5921cc1977b53f0457d89537193eadded188
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 1619f3bfdf49820ec529947ea02d1602a7b2aa8c
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723456"
 ---
 # <a name="resources-section-of-azure-resource-manager-templates"></a>Раздел Resources в шаблонах Azure Resource Manager
 
-В разделе resources определяются ресурсы, которые развертываются или обновляются. Этот раздел может еще больше усложниться, так как вы должны понимать принципы работы развертываемых типов для предоставления правильных значений.
+В разделе resources определяются ресурсы, которые развертываются или обновляются. Этот раздел может еще больше усложниться, так как вы должны понимать принципы работы развертываемых типов, чтобы предоставить правильные значения.
 
 ## <a name="available-properties"></a>Доступные свойства
 
@@ -98,11 +98,33 @@ ms.lasthandoff: 05/20/2018
 | План | Нет  | В некоторых ресурсах допускается использовать значения, определяющие номер плана для развертывания. Например, можно указать образ Marketplace для виртуальной машины. | 
 | ресурсов |Нет  |Дочерние ресурсы, которые зависят от определяемого ресурса. Следует указать только те типы ресурсов, которые разрешены в схеме родительского ресурса. Полное имя типа дочернего ресурса содержит тип родительского ресурса, например **Microsoft.Web/sites/extensions**. Зависимость от родительского ресурса не подразумевается. Ее необходимо определить явным образом. |
 
+## <a name="condition"></a>Условие
+
+Чтобы во время развертывания решить, нужно ли создавать ресурс, добавьте элемент `condition`. Этот элемент возвращает значение True или False. Если значение True, ресурс развернут. А если False — то не развернут. Например, чтобы указать, развернута ли новая учетная запись хранения или используется ли имеющаяся, сделайте следующее:
+
+```json
+{
+    "condition": "[equals(parameters('newOrExisting'),'new')]",
+    "type": "Microsoft.Storage/storageAccounts",
+    "name": "[variables('storageAccountName')]",
+    "apiVersion": "2017-06-01",
+    "location": "[resourceGroup().location]",
+    "sku": {
+        "name": "[variables('storageAccountType')]"
+    },
+    "kind": "Storage",
+    "properties": {}
+}
+```
+
+Полный пример шаблона с использованием элемента `condition` см. по адресу [VM with a new or existing Virtual Network, Storage, and Public IP](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-new-or-existing-conditions) (Виртуальная машина с новой или существующей виртуальной сетью, хранилищем и общедоступным IP-адресом).
+
 ## <a name="resource-specific-values"></a>Значения ресурсов
 
 Элементы **apiVersion**, **type** и **properties** различны для каждого типа ресурса. Элементы **sku**, **kind** и **plan** доступны только для некоторых типов ресурсов. Чтобы определить значения для этих свойств, ознакомьтесь со [справочником по шаблонам](/azure/templates/).
 
 ## <a name="resource-names"></a>Имена ресурсов
+
 Обычно в Resource Manager вы работаете с именами ресурсов трех типов:
 
 * имена ресурсов, которые должны быть уникальными;
@@ -110,7 +132,8 @@ ms.lasthandoff: 05/20/2018
 * имена ресурсов, которые могут быть универсальными.
 
 ### <a name="unique-resource-names"></a>Уникальные имена ресурсов
-Необходимо указать уникальное имя для любого типа ресурса, который имеет конечную точку доступа к данным. Ниже приведено несколько распространенных типов ресурсов, для которых требуются уникальные имена:
+
+Задает уникальное имя для любого типа ресурса, который имеет конечную точку доступа к данным. Ниже приведено несколько распространенных типов ресурсов, для которых требуются уникальные имена:
 
 * служба хранилища Azure<sup>1</sup>; 
 * веб-приложения службы приложений Azure;
@@ -167,7 +190,7 @@ ms.lasthandoff: 05/20/2018
 ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
 ```
 
-В следующем примере список расположений для типа ресурса `Microsoft.Web\sites` отображается с помощью Azure CLI 2.0.
+В следующем примере список расположений для типа ресурса `Microsoft.Web\sites` отображается с помощью Azure CLI.
 
 ```azurecli
 az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites'].locations"
@@ -283,7 +306,7 @@ az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites']
 }
 ```
 
-При создании полной ссылки на ресурс порядок объединения сегментов из типа и имени представляет собой не только использование этих двух вариантов.  Вместо этого после пространства имен используйте пары *типа и имени*, начиная от наименее подходящей к наиболее подходящей.
+При создании полной ссылки на ресурс порядок объединения сегментов из типа и имени представляет собой не только использование этих двух вариантов. Вместо этого после пространства имен используйте пары *типа и имени*, начиная от наименее подходящей к наиболее подходящей.
 
 ```json
 {resource-provider-namespace}/{parent-resource-type}/{parent-resource-name}[/{child-resource-type}/{child-resource-name}]*
@@ -409,6 +432,6 @@ az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites']
 ## <a name="next-steps"></a>Дополнительная информация
 * Полные шаблоны для различных типов решений доступны на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/).
 * Дополнительные сведения о функциях, которые можно использовать в шаблонах, см. в статье [Функции шаблонов Azure Resource Manager](resource-group-template-functions.md).
-* Инструкции по объединению нескольких шаблонов при развертывании см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
+* Сведения об использовании нескольких шаблонов при развертывании см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Может потребоваться использовать ресурсы, которые существуют в другой группе ресурсов. Это распространенная ситуация при работе с учетными записями хранения или виртуальными сетями, которые совместно используются в нескольких группах ресурсов. Дополнительные сведения см. в описании [функции resourceId](resource-group-template-functions-resource.md#resourceid).
 * Сведения об ограничениях имен ресурсов см. в статье [Рекомендуемые соглашения об именовании для ресурсов Azure](../guidance/guidance-naming-conventions.md).

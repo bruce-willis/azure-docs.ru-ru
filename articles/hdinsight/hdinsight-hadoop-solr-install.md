@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 02/05/2016
 ms.author: nitinme
 ROBOTS: NOINDEX
-ms.openlocfilehash: caabe0fea6286c9439e8929b054d771868dcb6f1
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 6445bcdc361bcda3beb6abcb6196fecc9c6c0024
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34272154"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952881"
 ---
 # <a name="install-and-use-solr-on-windows-based-hdinsight-clusters"></a>Установка и использование Solr в кластерах HDInsight под управлением Windows
 
@@ -149,21 +149,27 @@ Solr можно установить в кластере любого типа (
            http://localhost:8983/solr/replication?command=backup
 
        Вы должны получить примерно следующий ответ:
-
-           <?xml version="1.0" encoding="UTF-8"?>
-           <response>
+            
+      ```xml
+      <?xml version="1.0" encoding="UTF-8"?>
+          <response>
              <lst name="responseHeader">
                <int name="status">0</int>
                <int name="QTime">9</int>
              </lst>
-             <str name="status">OK</str>
-           </response>
-   2. В удаленном сеансе перейдите к {SOLR_HOME}\{Collection}\data. Для кластера, созданного с помощью примера скрипта, это должна быть папка **C:\apps\dist\solr-4.7.2\example\solr\collection1\data**. В этом расположении вы увидите папку моментальных снимков с именем, похожим на **snapshot.* timestamp***.
+            <str name="status">OK</str>
+          </response>
+      ```
+      
+   2. В удаленном сеансе перейдите к {SOLR_HOME}\{Collection}\data. Для кластеров, созданных с помощью примера сценария, это `C:\apps\dist\solr-4.7.2\example\solr\collection1\data`. В этом расположении вы увидите папку моментальных снимков с именем, похожим на **snapshot.* timestamp***.
+   
    3. Запакуйте эту папку моментальных снимков и отправьте ее в хранилище больших двоичных объектов Azure. В командной строке Hadoop перейдите к расположению папки моментальных снимков, используя следующую команду:
 
-             hadoop fs -CopyFromLocal snapshot._timestamp_.zip /example/data
+      ```
+      hadoop fs -CopyFromLocal snapshot._timestamp_.zip /example/data
+      ```
 
-       Эта команда копирует моментальный снимок в папку /example/data/ в контейнере учетной записи хранения по умолчанию, связанной с этим кластером.
+   Эта команда копирует моментальный снимок в папку /example/data/ в контейнере учетной записи хранения по умолчанию, связанной с этим кластером.
 
 ## <a name="install-solr-using-aure-powershell"></a>Установка Solr с помощью Azure PowerShell
 См. статью [Настройка кластеров HDInsight под управлением Windows с помощью действия сценария](hdinsight-hadoop-customize-cluster.md#call-scripts-using-azure-powershell).  В этом примере показано, как установить Spark с помощью Azure PowerShell. Нужно настроить скрипт для использования [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1).

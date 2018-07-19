@@ -3,7 +3,7 @@ title: Подключение к виртуальной машине под уп
 description: Узнайте, как установить и настроить удаленный рабочий стол (xrdp) для подключения к виртуальной машине Linux в Azure с помощью графических средств.
 services: virtual-machines-linux
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2018
-ms.author: iainfou
-ms.openlocfilehash: fb3639b8ce5c50773bec0ee429e1fa2f7277671b
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.author: cynthn
+ms.openlocfilehash: 5e79cfa2c428323d8531bec7eab875a2dace4ff2
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34716624"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37934216"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Установка и настройка удаленного рабочего стола для подключения к виртуальной машине Linux в Azure
 Управление виртуальными машинами Linux в Azure обычно осуществляется из командной строки с помощью подключения Secure Shell (SSH). Если вы только начинаете работу с Linux или хотите быстро устранить неполадки, проще всего использовать удаленный рабочий стол. В этой статье описывается установка и настройка среды рабочего стола ([xfce](https://www.xfce.org)) и удаленного рабочего стола ([xrdp](http://www.xrdp.org)) для виртуальной машины Linux с помощью модели развертывания Resource Manager.
@@ -101,6 +101,8 @@ az vm open-port --resource-group myResourceGroup --name myVM --port 3389
 После проверки подлинности загрузится среда рабочего стола xfce. Она будет выглядеть примерно так:
 
 ![Среда рабочего стола xfce при подключении через xrdp](./media/use-remote-desktop/xfce-desktop-environment.png)
+
+Если локальный RDP-клиент использует проверку подлинности на уровне сети (NLA), то может потребоваться отключить эту настройку подключения. В настоящее время XRDP не поддерживает NLA. Вы можете также воспользоваться альтернативными решениями для RDP, которые поддерживают NLA, такими как [FreeRDP](http://www.freerdp.com).
 
 
 ## <a name="troubleshoot"></a>Устранение неполадок

@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 03/19/2018
 ms.author: juliako
-ms.openlocfilehash: 6a098f43819bb6581b2c5978fbcc4a378a8514c1
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e9df0cd24ef890765b78c25a073d671889be10a7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34638506"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723746"
 ---
 # <a name="route-azure-media-services-events-to-a-custom-web-endpoint-using-cli"></a>Маршрутизация событий Служб мультимедиа Azure в пользовательскую конечную веб-точку с помощью CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "34638506"
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
+Если вы решили установить и использовать CLI локально, для работы с этим руководством вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI](/cli/azure/install-azure-cli). 
 
 [!INCLUDE [media-services-cli-create-v3-account-include](../../../includes/media-services-cli-create-v3-account-include.md)]
 
@@ -185,8 +185,8 @@ az group delete --name <resource_group_name>
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь также со статьей [Реагирование на события](reacting-to-media-services-events.md).
+[Реагирование на события Служб мультимедиа Azure](reacting-to-media-services-events.md)
 
 ## <a name="see-also"></a>См. также
 
-[CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/ams?view=azure-cli-latest)
+[интерфейс командной строки Azure](https://docs.microsoft.com/en-us/cli/azure/ams?view=azure-cli-latest)

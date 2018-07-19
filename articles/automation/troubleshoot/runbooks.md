@@ -8,12 +8,12 @@ ms.date: 06/19/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: bb340b8439927f191bc4a22f385d85d4e21b1cdb
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: b96d723f6c7ca423343c0586f59770abb55ada9f
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064530"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929355"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -204,6 +204,20 @@ The quota for the monthly total job run time has been reached for this subscript
 #### <a name="resolution"></a>Способы устранения:
 
 Задокументированный способ предотвращения этой проблемы — использовать в рабочем процессе контрольные точки. Дополнительные сведения см. в статье [Изучение рабочего процесса Windows PowerShell](../automation-powershell-workflow.md#checkpoints). Более подробно справедливое распределение процессов и контрольные точки описываются в записи блога [Azure Automation: Reliable, Fault-Tolerant Runbook Execution Using Checkpoints](https://azure.microsoft.com/blog/azure-automation-reliable-fault-tolerant-runbook-execution-using-checkpoints/) (Служба автоматизации Azure: надежное и отказоустойчивое выполнение модулей Runbook с помощью контрольных точек).
+
+### <a name="long-running-runbook"></a>Сценарий. Длительный модуль Runbook не выполняется
+
+#### <a name="issue"></a>Проблема
+
+Эта реакция на событие в песочницах Azure связана с мониторингом "справедливого распределения" процессов в службе автоматизации Azure, которая автоматически приостанавливает любой модуль Runbook, который выполняется дольше 3 часов.
+
+#### <a name="cause"></a>Причина:
+
+Модуль Runbook выполнялся дольше трехчасового ограничения, заданного справедливым распределением в песочнице Azure
+
+#### <a name="resolution"></a>Способы устранения:
+
+Рекомендуемое решение — запустить модуль Runbook в [гибридной рабочей роли Runbook](../automation-hrw-run-runbooks.md). Гибридные рабочие роли не ограничены тремя часами [справедливого распределения](../automation-runbook-execution.md#fair-share), как в песочницах Azure.
 
 ## <a name="common-errors-when-importing-modules"></a>Распространенные ошибки при импорте модулей
 

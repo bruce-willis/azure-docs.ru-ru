@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: be79f0111cb569509cb05b24c99f86d4ca9534b0
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: e834a1cfa7eba3c1ff12523982e6704c73ef8078
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064500"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38488514"
 ---
 # <a name="automate-resources-in-your-datacenter-or-cloud-by-using-hybrid-runbook-worker"></a>Автоматизация ресурсов в центре обработки данных или в облаке с помощью использования гибридной рабочей роли Runbook
 
@@ -95,9 +95,9 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 
 ### <a name="hybrid-worker-role"></a>Гибридная рабочая роль
 
-Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../log-analytics/log-analytics-agent-windows.md) к Log Analytics.
+Чтобы гибридная рабочая роль Runbook могла подключаться и регистрироваться в службе Log Analytics, ей нужен доступ к номерам портов и URL-адресам, описанным в этом разделе. Этот доступ является дополнением к [списку URL-адресов и портов, необходимых для подключения Microsoft Monitoring Agent](../log-analytics/log-analytics-agent-windows.md) к Log Analytics. 
 
-При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS.
+При использовании прокси-сервера для обмена данными между агентом и службой Log Analytics необходимо убедиться, что соответствующие ресурсы доступны. Если доступ к Интернету ограничивается брандмауэром, вам нужно изменить его настройки, чтобы разрешить доступ к OMS. Если в качестве прокси-сервера используется шлюз OMS, он должен быть настроен для гибридных рабочих ролей. Инструкции см. в статье [Настройка шлюза OMS для гибридных рабочих ролей службы автоматизации](https://docs.microsoft.com/en-us/azure/log-analytics/log-analytics-oms-gateway#configure-for-automation-hybrid-workers).
 
 Для обмена данными между гибридной рабочей ролью Runbook и службой автоматизации необходимы следующие порт и URL-адрес:
 
@@ -105,6 +105,8 @@ sudo python onboarding.py --deregister --endpoint="<URL>" --key="<PrimaryAccessK
 * Глобальный URL-адрес: *.azure-automation.net.
 * Глобальный URL-адрес US Gov (Вирджиния): *.azure automation.us
 * Служба агента: https://\<ИД рабочей области\>.agentsvc.azure-automation.net
+
+При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
 
 При наличии учетной записи службы автоматизации, определенной для конкретного региона, можно ограничить обмен данными с таким региональным центром обработки данных. В таблице ниже содержатся записи DNS для каждого региона.
 

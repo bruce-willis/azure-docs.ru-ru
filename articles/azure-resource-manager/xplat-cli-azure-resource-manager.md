@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/06/2017
 ms.author: tomfitz
-ms.openlocfilehash: 4111d1d990f3e9efb78fae0476b027d5bae013af
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: dd111c33cbd348a05ed0f0c04f7325347612e54d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34603252"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38506384"
 ---
 # <a name="use-the-azure-cli-to-manage-azure-resources-and-resource-groups"></a>Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "34603252"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Сведения об установке и локальном использовании Azure CLI см. в статье [Install Azure CLI 2.0](/cli/azure/install-azure-cli) (Установка Azure CLI 2.0).
+Сведения об установке и локальном использовании CLI см. в статье [Установка командной строки Azure](/cli/azure/install-azure-cli).
 
 ## <a name="set-subscription"></a>Выбор подписки
 

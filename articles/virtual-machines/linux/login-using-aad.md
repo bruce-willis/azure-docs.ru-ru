@@ -3,7 +3,7 @@ title: Вход на виртуальную машину Linux с учетным
 description: Из этого практического руководства вы узнаете, как создать и настроить виртуальную машину Linux для аутентификации Azure Active Directory при входе пользователей
 services: virtual-machines-linux
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/16/2018
-ms.author: iainfou
-ms.openlocfilehash: 96cc7aeb5fd1c64dc3793a801a4a5b759e7558b9
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.date: 06/17/2018
+ms.author: cynthn
+ms.openlocfilehash: 614375c95f4af3a5fbeeb4368ff8c577372e6381
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34652878"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37933956"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -46,8 +46,9 @@ ms.locfileid: "34652878"
 | Дистрибутив | Version (версия) |
 | --- | --- |
 | CentOS | CentOS 6.9 и CentOS 7.4 |
-| RedHat Enterprise Linux | RHEL 7 | 
-| Сервер Ubuntu | Ubuntu 14.04 LTS, Ubuntu Server 16.04 и Ubuntu Server 17.10 |
+| Debian | Debian 9 |
+| RedHat Enterprise Linux | RHEL 6, RHEL 7 | 
+| Сервер Ubuntu | Ubuntu 14.04 LTS, Ubuntu Server 16.04, Ubuntu Server 17.10 и Ubuntu Server 18.04 |
 
 В режиме предварительной версии этой функции сейчас поддерживаются следующие регионы Azure:
 
@@ -178,4 +179,4 @@ Access denied
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения об Azure Active Directory см. в статьях [What is Azure Active Directory?](../../active-directory/active-directory-whatis.md) (Что собой представляет Azure Active Directory) и [Get started with Azure AD](../../active-directory/get-started-azure-ad.md) (Начало работы с Azure AD).
+Дополнительные сведения об Azure Active Directory см. в статьях [What is Azure Active Directory?](../../active-directory/fundamentals/active-directory-whatis.md) (Что собой представляет Azure Active Directory) и [Get started with Azure AD](../../active-directory/fundamentals/get-started-azure-ad.md) (Начало работы с Azure AD).

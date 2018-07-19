@@ -12,26 +12,24 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/24/2018
 ms.author: glenga
-ms.openlocfilehash: 9f916aaa8032ff519709d73a1c1f51195f811686
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: 8ba12f21d76d8deded047f40489c46657c9380b8
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28919361"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38602123"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
- Есть две основные версии среды выполнения для решения "Функции Azure": 1.x и 2.x. Из этой статьи вы узнаете, как выбрать основную версию для использования.
-
-> [!IMPORTANT] 
-> Среда выполнения 1.x является единственной версией, утвержденной для использования в рабочей среде.
+ Есть две основные версии среды выполнения Функций Azure: 1.x и 2.x. Для использования в рабочей среде утверждена только версия 1.x. В этой статье описываются новые возможности в версии 2.x, которая является предварительной.
 
 | Среда выполнения | Status |
 |---------|---------|
 |1.x|Общедоступная версия (GA)|
 |2.x|Предварительный просмотр|
 
-Сведения о настройке приложения-функции или среды разработки для определенной версии см. в статье о [выборе целевых версий среды выполнения Функций Azure](set-runtime-version.md) и в статье [Как программировать и тестировать Функции Azure в локальной среде](functions-run-local.md).
+> [!NOTE] 
+> Содержимое в этой статье относится к облачной службе "Функции Azure". Сведения о выполнении Функций Azure в локальной среде см. в статье [Обзор среды выполнения Функций Azure](functions-runtime-overview.md).
 
 ## <a name="cross-platform-development"></a>Кроссплатформенная разработка
 
@@ -65,8 +63,8 @@ ms.locfileid: "28919361"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Выбор среды выполнения 2.0 в локальной среде разработки](functions-run-local.md)
+Для получения дополнительных сведений см. следующие ресурсы:
 
-> [!div class="nextstepaction"]
-> [См. заметки о выпуске для версий среды выполнения](https://github.com/Azure/azure-webjobs-sdk-script/releases)
+* [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md)
+* [Выбор целевых версий среды выполнения Функций Azure](set-runtime-version.md)
+* [Заметки о выпуске](https://github.com/Azure/azure-functions-host/releases)

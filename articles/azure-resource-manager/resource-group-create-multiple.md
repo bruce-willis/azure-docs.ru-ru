@@ -4,46 +4,27 @@ description: Использование операции копирования 
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
 editor: ''
-ms.assetid: 94d95810-a87b-460f-8e82-c69d462ac3ca
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/22/2018
+ms.date: 07/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: ee32f6459cf7673f6bb633e12776ec3c40eb13e1
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 25488295ec046eb0ca7473af76e4618eacb1155d
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36753427"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38600776"
 ---
 # <a name="deploy-multiple-instances-of-a-resource-or-property-in-azure-resource-manager-templates"></a>Развертывание нескольких экземпляров ресурса или свойства в шаблонах Azure Resource Manager
-В этой статье показано, как выполнить условное развертывание ресурса, а также как создать несколько экземпляров ресурса, используя итерацию в шаблоне Azure Resource Manager.
 
-## <a name="conditionally-deploy-resource"></a>Условное развертывание ресурса
-
-Чтобы во время развертывания решить, нужно ли создавать экземпляры ресурса, добавьте элемент `condition`. Этот элемент возвращает значение True или False. Если значение True, ресурс развернут. А если False — то не развернут. Например, чтобы указать, развернута ли новая учетная запись хранения или используется ли имеющаяся, сделайте следующее:
-
-```json
-{
-    "condition": "[equals(parameters('newOrExisting'),'new')]",
-    "type": "Microsoft.Storage/storageAccounts",
-    "name": "[variables('storageAccountName')]",
-    "apiVersion": "2017-06-01",
-    "location": "[resourceGroup().location]",
-    "sku": {
-        "name": "[variables('storageAccountType')]"
-    },
-    "kind": "Storage",
-    "properties": {}
-}
-```
+В этой статье показано, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса. Если вам нужно указать, развернут ли ресурс, см. описание [элемента condition](resource-manager-templates-resources.md#condition).
 
 ## <a name="resource-iteration"></a>Итерация ресурса
+
 Чтобы во время развертывания создать один или несколько экземпляров ресурса, добавьте к типу ресурса элемент `copy`. В элементе копирования укажите число итераций и имя для этого цикла. Значение count должно быть положительным целым числом не больше 800. 
 
 Для многократного создания ресурса используется следующий формат.
@@ -456,7 +437,6 @@ ms.locfileid: "36753427"
 |[Копирования хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystorage.json) |Развертывает несколько учетных записей хранения с номером индекса в имени. |
 |[Последовательное копирование хранилища](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/serialcopystorage.json) |Развертывает несколько учетных записей хранения по одной за раз. Имя содержит номер индекса. |
 |[Копирования хранилища с массивом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copystoragewitharray.json) |Развертывает несколько учетных записей хранения. Имя содержит значение из массива. |
-|[Виртуальная машина с новой или имеющейся виртуальной сетью, хранилищем и общедоступным IP-адресом](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-new-or-existing-conditions) |Условно развертывает новые или имеющиеся ресурсы виртуальной машины. |
 |[Развертывание виртуальной машины с переменным количеством дисков данных](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-windows-copy-datadisks) |Развертывает с виртуальной машиной несколько дисков данных. |
 |[Копирование переменных](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/copyvariables.json) |Демонстрирует разные способы итерации переменных. |
 |[Несколько правил безопасности](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) |Развертывает несколько правил безопасности в группу безопасности сети. Кроме того, этот шаблон создает правила безопасности на основе параметра. Чтобы узнать параметр, см. [файл параметров нескольких групп безопасности сети](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json). |

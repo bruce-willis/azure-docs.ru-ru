@@ -7,14 +7,14 @@ author: cherylmc
 Customer intent: As someone with a basic network background, I want to understand how to create zone-redundant gateways.
 ms.service: vpn-gateway
 ms.topic: article
-ms.date: 06/28/2018
+ms.date: 07/09/2018
 ms.author: cherylmc
-ms.openlocfilehash: c484358bf98f0121cfc3ce270b162b01c75b5b09
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: fa349555a5effd41ca519cbd5a29005203d79543
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37096239"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952561"
 ---
 # <a name="create-a-zone-redundant-virtual-network-gateway-in-azure-availability-zones---preview"></a>Создание избыточного в пределах зоны шлюза виртуальной сети в зонах доступности Azure
 
@@ -207,10 +207,6 @@ $gwipconf1 = New-AzureRmVirtualNetworkGatewayIpConfig -Name $GwIPConf1 -Subnet $
 
 Создайте шлюз виртуальной сети.
 
->[!NOTE]
->В данный момент указать номер SKU шлюза невозможно. По умолчанию будет использоваться номер SKU ErGw1AZ для шлюза ExpressRoute и VpnGw1AZ для VPN-шлюза.
->
-
 ### <a name="for-expressroute"></a>Для шлюза ExpressRoute
 
 ```azurepowershell-interactive
@@ -236,6 +232,10 @@ New-AzureRmVirtualNetworkGateway -ResourceGroup $RG1 -Location $Location1 -Name 
 ### <a name="what-will-change-when-i-enroll"></a>Что изменится после регистрации?
 
 Во время использования предварительной версии вы можете развертывать шлюзы с избыточностью в пределах зоны. Это означает, что все экземпляры шлюзов будут развернуты в зонах доступности Azure, а каждая зона доступности является сочетанием домена сбоя и домена обновления. В результате шлюзы становятся более надежными, доступными и устойчивыми к сбоям на уровне зоны.
+
+### <a name="can-i-use-the-azure-portal"></a>Я могу использовать портал Azure?
+
+Да, вы можете использовать портал Azure для предварительной версии. Но вам все равно необходимо зарегистрироваться с помощью PowerShell или вы не сможете использовать портал для предварительной версии.
 
 ### <a name="what-regions-are-available-for-the-preview"></a>В каких регионах доступна предварительная версия?
 

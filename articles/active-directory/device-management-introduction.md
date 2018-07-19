@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/21/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 8bcc89f9ec7c73fd1f690e00e831fbd5b960eef9
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 5d5ddd83a2335e7a08bac587aa627f1dcae9738c
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34850014"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38970906"
 ---
 # <a name="introduction-to-device-management-in-azure-active-directory"></a>Общие сведения об управлении устройствами в Azure Active Directory
 
@@ -75,8 +75,8 @@ ms.locfileid: "34850014"
 ![Устройства, зарегистрированные в Azure AD](./media/device-management-introduction/02.png)
 
 Присоединение к Azure AD могут развертываться с помощью любого из следующих методов: 
- - [Windows Autopilot](https://docs.microsoft.com/en-us/windows/deployment/windows-autopilot/windows-10-autopilot);
- - [массовое развертывание](https://docs.microsoft.com/en-us/intune/windows-bulk-enroll);
+ - [Windows Autopilot](https://docs.microsoft.com/windows/deployment/windows-autopilot/windows-10-autopilot);
+ - [массовое развертывание](https://docs.microsoft.com/intune/windows-bulk-enroll);
  - [самообслуживание пользователей](device-management-azuread-joined-devices-frx.md). 
 
 **Присоединение к Azure AD** предназначено для организаций, которые хотят размещать ресурсы в основном в облаке (то есть в первую очередь применять облачные службы с целью уменьшить использование локальной инфраструктуры) или только в облаке (без использования локальной инфраструктуры). Нет никаких ограничений размера и типа организаций, которые могут развернуть присоединение к Azure AD. Присоединение к Azure AD хорошо работает даже в гибридной среде, обеспечивая доступ к локальным и облачным приложениям и ресурсам.

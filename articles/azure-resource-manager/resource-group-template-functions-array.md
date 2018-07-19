@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/05/2017
 ms.author: tomfitz
-ms.openlocfilehash: eb24535956140632da73807364b6f3ff7b91a416
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: cdc8222675a9f0099edccb24310bcea03bf963f4
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360246"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929686"
 ---
 # <a name="array-and-object-functions-for-azure-resource-manager-templates"></a>Функции массивов и объектов для шаблонов Azure Resource Manager 
 
@@ -77,7 +77,7 @@ Resource Manager предоставляет ряд функций для раб�
         },
         "stringToConvert": {
             "type": "string",
-            "defaultValue": "a"
+            "defaultValue": "efgh"
         },
         "objectToConvert": {
             "type": "object",
@@ -108,7 +108,7 @@ Resource Manager предоставляет ряд функций для раб�
 | ИМЯ | type | Значение |
 | ---- | ---- | ----- |
 | intOutput | Массив, | [1] |
-| stringOutput | Массив, | ["a"] |
+| stringOutput | Массив, | ["efgh"] |
 | objectOutput | Массив, | [{"a": "b", "c": "d"}] |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:

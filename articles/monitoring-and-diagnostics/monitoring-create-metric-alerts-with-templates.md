@@ -8,15 +8,19 @@ ms.topic: conceptual
 ms.date: 4/26/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 0a4e6c2ebb57aca13a53a8ff12953f0c7a90bc61
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 4dba3d182c7c2927aa4feb88e70fe5711fcc6818
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263452"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37932217"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](monitoring-near-real-time-metric-alerts.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](monitoring-near-real-time-metric-alerts.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
+
+> [!IMPORTANT]
+> Шаблон Resource Manager, указанный для оповещения метрики, не будет работать для типа ресурсов Microsoft.OperationalInsights/workspaces, поскольку поддержка метрик в Log Analytics доступна в предварительной версии. Пользователи, заинтересованные в использовании функций предварительной версии с шаблоном ресурсов, могут связаться со [службой обратной связи по оповещениям Azure](mailto:azurealertsfeedback@microsoft.com)
+
 
 Основные этапы:
 

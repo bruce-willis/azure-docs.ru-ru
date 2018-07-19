@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: fboylu
-ms.openlocfilehash: ff2e1660ffcc1f397697b27084e000371c7c84f3
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 816ba560ccb9b06414dff8ffaea054e88d216b10
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938015"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38972389"
 ---
 # <a name="azure-ai-guide-for-predictive-maintenance-solutions"></a>Руководство по искусственному интеллекту Azure для решений прогнозного обслуживания
 
@@ -415,7 +415,7 @@ ms.locfileid: "36938015"
 | # | Название | ОПИСАНИЕ |
 |--:|:------|-------------|
 | 1 | [Пример прогнозного обслуживания Azure для машинного обучения](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance) |Пример PdM для прогнозирования сбоев в течение следующих N единиц времени. Этот пример написан как проект Azure ML Workbench и идеально подходит для начинающих в PdM. [Дополнительная документация](https://docs.microsoft.com/azure/machine-learning/desktop-workbench/scenario-predictive-maintenance), относящаяся к этому примеру.|
-| 2 | [Шаблон решения для прогнозного обслуживания Azure](https://github.com/Azure/AI-PredictiveMaintenance) | Комплексная платформа для демонстрации нескольких сценариев PdM. В этом шаблоне представлены два сценария: первый — это новый вариант использования классификации отказов в режиме реального времени. Второй сценарий является простой интеграцией решения [1] в этот шаблон. Он демонстрирует, как повторно использовать одну и ту же развернутую инфраструктуру для добавления других новых или имеющихся сценариев.|
+| 2 | [Шаблон решения для прогнозного обслуживания Azure](https://github.com/Azure/AI-PredictiveMaintenance) | Шаблон решения с открытым исходным кодом, который демонстрирует моделирование машинного обучения и полную инфраструктуру Azure, поддерживающую сценарии прогнозного обслуживания в контексте удаленного мониторинга IoT. |
 | 3 | [Глубокое обучение по прогнозному обслуживанию](https://github.com/Azure/MachineLearningSamples-DeepLearningforPredictiveMaintenance) | Azure Notebook с демонстрационным решением по использованию сетей LSTM (класс рекуррентных нейронных сетей) для прогнозного обслуживания с [записью блога об этом образце](https://azure.microsoft.com/blog/deep-learning-for-predictive-maintenance).|
 | 4. | [Руководство по моделированию прогнозного обслуживания на R](https://gallery.azure.ai/Notebook/Predictive-Maintenance-Modelling-Guide-R-Notebook-1) | Руководство по моделированию прогнозного обслуживания с помощью сценариев на R.|
 | 5 | [Прогнозное обслуживание Azure для авиакосмической отрасли](https://gallery.azure.ai/Solution/Predictive-Maintenance-for-Aerospace-1) | Один из первых шаблонов решений PdM на основе Машинного обучения Azure версии 1.0 для обслуживания воздушных судов. Это руководство было создано на основе этого проекта. |

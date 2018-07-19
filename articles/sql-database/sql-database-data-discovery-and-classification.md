@@ -2,20 +2,20 @@
 title: Обнаружение и классификация данных в службе "База данных SQL Azure" | Документация Майкрософт
 description: Обнаружение и классификация данных в службе "База данных SQL Azure".
 services: sql-database
-author: giladm
+author: giladmit
 manager: craigg
 ms.reviewer: carlrab
 ms.service: sql-database
 ms.custom: security
 ms.topic: conceptual
-ms.date: 05/18/2018
+ms.date: 07/10/2018
 ms.author: giladm
-ms.openlocfilehash: 673286c8dc9ec688199fe80cf5a763f249192de5
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: cc093bebb4b3c39140d6fa5370a78d59168990fa
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646785"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37950816"
 ---
 # <a name="azure-sql-database-data-discovery-and-classification"></a>Обнаружение и классификация данных в службе "База данных SQL Azure"
 Служба обнаружения и классификации данных (в настоящее время находится на этапе предварительной версии) предоставляет расширенные возможности, встроенные в службу "База данных SQL Azure", для **обнаружения**, **классификации**, **добавления меток**  & и **защиты** конфиденциальных данных в базах данных.
@@ -49,55 +49,66 @@ ms.locfileid: "34646785"
 
 2. Перейдите к разделу **Advanced Threat Protection** под заголовком "Безопасность" в области службы "База данных SQL Azure". Щелкните, чтобы включить службу "Расширенная защита от угроз", и выберите карту **Обнаружение и классификация данных (предварительная версия)**.
 
-   ![Проверка базы данных](./media/sql-data-discovery-and-classification/data_classification.png) 
+   ![Проверка базы данных](./media/sql-data-discovery-and-classification/data_classification.png)
 
 3. Вкладка **Обзор** содержит сводку по текущему состоянию базы данных, включая подробный список всех классифицированных столбцов, который можно отфильтровать, чтобы просмотреть определенные части схемы, типы информации и метки. Если столбцы еще не классифицированы, [перейдите к шагу 5](#step-5).
 
-   ![Сводка по текущему состоянию классификации](./media/sql-data-discovery-and-classification/2_data_classification_overview_dashboard.png) 
+   ![Сводка по текущему состоянию классификации](./media/sql-data-discovery-and-classification/2_data_classification_overview_dashboard.png)
 
 4. Чтобы скачать отчет в формате Excel, щелкните параметр **Экспорт** в верхнем меню окна.
 
-   ![Экспорт в Excel](./media/sql-data-discovery-and-classification/3_data_classification_export_report.png) 
+   ![Экспорт в Excel](./media/sql-data-discovery-and-classification/3_data_classification_export_report.png)
 
 5.  <a id="step-5"></a>Чтобы начать классификацию данных, щелкните вкладку **Классификация** в верхней части окна.
 
-    ![Классификация данных](./media/sql-data-discovery-and-classification/4_data_classification_classification_tab_click.png) 
+    ![Классификация данных](./media/sql-data-discovery-and-classification/4_data_classification_classification_tab_click.png)
 
 6. Подсистема классификации проверяет базу данных на наличие столбцов, содержащих конфиденциальные данные, и выводит список **рекомендуемых классификаций столбцов**. Вот как можно просмотреть и применить рекомендации по классификации.
 
     * Чтобы просмотреть список рекомендуемых классификаций столбцов, щелкните панель рекомендаций в нижней части окна.
-    
-      ![Классификация данных](./media/sql-data-discovery-and-classification/5_data_classification_recommendations_panel.png) 
+
+      ![Классификация данных](./media/sql-data-discovery-and-classification/5_data_classification_recommendations_panel.png)
 
     * Просмотрите список рекомендаций. Чтобы принять рекомендацию для определенного столбца, установите флажок в левом столбце соответствующей строки. Можно также пометить *все рекомендации* как принятые, установив флажок в заголовке таблицы рекомендаций.
 
-       ![Просмотр списка рекомендаций](./media/sql-data-discovery-and-classification/6_data_classification_recommendations_list.png) 
+       ![Просмотр списка рекомендаций](./media/sql-data-discovery-and-classification/6_data_classification_recommendations_list.png)
 
     * Чтобы применить выбранные рекомендации, нажмите синюю кнопку **Accept selected recommendations** (Принять выбранные рекомендации).
 
-      ![Применение рекомендаций](./media/sql-data-discovery-and-classification/7_data_classification_accept_selected_recommendations.png) 
+      ![Применение рекомендаций](./media/sql-data-discovery-and-classification/7_data_classification_accept_selected_recommendations.png)
 
 7. Вы можете также **вручную классифицировать** столбцы в качестве альтернативы или в дополнение к классификации на основе рекомендаций.
 
     * Щелкните **Добавить классификацию** в верхнем меню окна.
-  
-      ![Добавление классификации вручную](./media/sql-data-discovery-and-classification/8_data_classification_add_classification_button.png) 
+
+      ![Добавление классификации вручную](./media/sql-data-discovery-and-classification/8_data_classification_add_classification_button.png)
 
     * В открывшемся контекстном окне выберите схему, таблицу и столбец, предназначенный для классификации, а также тип информации и метку конфиденциальности. Затем нажмите синюю кнопку **Добавить классификацию**, расположенную в нижней части контекстного окна.
 
-      ![Выбор столбца для классификации](./media/sql-data-discovery-and-classification/9_data_classification_manual_classification.png) 
+      ![Выбор столбца для классификации](./media/sql-data-discovery-and-classification/9_data_classification_manual_classification.png)
 
 8. Чтобы завершить классификацию и сохранить метки столбцов базы данных с новыми метаданными классификации, щелкните **Сохранить** в верхнем меню окна.
 
-   ![Сохранить](./media/sql-data-discovery-and-classification/10_data_classification_save.png) 
+   ![Сохранить](./media/sql-data-discovery-and-classification/10_data_classification_save.png)
 
 ## <a id="subheading-3"></a>Аудит доступа к конфиденциальным данным
 
 Важным аспектом в концепции защиты информации является возможность контролировать доступ к конфиденциальным данным. [Аудит базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-auditing) был расширен — в журнал аудита добавлено новое поле *data_sensitivity_information*, в которое записываются классификации конфиденциальности (метки) фактических данных, возвращенных запросом.
 
-![Журнал аудита](./media/sql-data-discovery-and-classification/11_data_classification_audit_log.png) 
+![Журнал аудита](./media/sql-data-discovery-and-classification/11_data_classification_audit_log.png)
 
-## <a id="subheading-4"></a>Дальнейшие действия
+## <a id="subheading-4"></a>Автоматическая/программная классификация
+
+Используйте T-SQL, чтобы добавить или удалить классификацию столбца или извлечь все классификации для целой базы данных.
+
+> [!NOTE]
+> При использовании T-SQL для управления метками добавляемые в столбец метки не проверяются на предмет присутствия в политике защиты информации организации (набор меток, которые отображаются в рекомендациях портала). Эту проверку вы должны выполнить самостоятельно.
+
+* Добавление и обновление классификации одного или нескольких столбцов: [ADD SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/add-sensitivity-classification-transact-sql)
+* Удаление классификации одного или нескольких столбцов: [DROP SENSITIVITY CLASSIFICATION](https://docs.microsoft.com/en-us/sql/t-sql/statements/drop-sensitivity-classification-transact-sql)
+* Просмотр всех классификаций в базе данных: [sys.sensitivity_classifications](https://docs.microsoft.com/en-us/sql/relational-databases/system-catalog-views/sys-sensitivity-classifications-transact-sql)
+
+## <a id="subheading-5"></a>Дальнейшие действия
 
 - Дополнительные сведения о службе "Расширенная защита от угроз SQL" см. в [этой статье](sql-advanced-threat-protection.md).
 - Рекомендуется настроить [аудит базы данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-auditing) для мониторинга и аудита доступа к секретным конфиденциальным данным.
@@ -106,4 +117,5 @@ ms.locfileid: "34646785"
 [SQL Data Discovery & Classification overview]: #subheading-1
 [Discovering, classifying & labeling sensitive columns]: #subheading-2
 [Auditing access to sensitive data]: #subheading-3
-[Next Steps]: #subheading-4
+[Automated/Programmatic classification]: #subheading-4
+[Next Steps]: #subheading-5

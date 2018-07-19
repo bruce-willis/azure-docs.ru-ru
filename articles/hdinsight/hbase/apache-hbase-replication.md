@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: jgao
-ms.openlocfilehash: 56b2b5ae9d3e4a0e682ec3dd47cd5cc30ebf6d58
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.openlocfilehash: f0367b67f141ca65ce2374722016d0fbea6c97d1
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34077332"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37951128"
 ---
 # <a name="set-up-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера HBase в виртуальных сетях Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "34077332"
 
 ### <a name="set-up-two-virtual-networks-in-two-different-regions"></a>Настройка двух виртуальных сетей в двух разных регионах
 
-Чтобы создать две виртуальные сети в двух разных регионах и соединить их с помощью VPN-подключения, выберите расположенное ниже изображение. Шаблон хранится в [общедоступном хранилище BLOB-объектов] (https://hditutorialdata.blob.core.windows.net/hbaseha/azuredeploy.json).
+Для использования шаблона, который создает две виртуальные сети в двух разных регионах и соединяет их с помощью VPN-подключения, нажмите кнопку **Развернуть в Azure**. Определение шаблона хранится в [общедоступном хранилище BLOB-объектов](https://hditutorialdata.blob.core.windows.net/hbaseha/azuredeploy.json).
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fhbaseha%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-replication/deploy-to-azure.png" alt="Deploy to Azure"></a>
 

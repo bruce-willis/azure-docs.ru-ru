@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/27/2018
 ms.author: chackdan
-ms.openlocfilehash: aca03452ff5655d3a7180009f42df14c9459a9ff
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: cc6837ab14aa8fb36317da52cf011ddbd7e464be
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061564"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38972237"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Рекомендации по планированию загрузки кластера Service Fabric
 Для любой рабочей развернутой службы важным шагом является планирование загрузки. Ниже приведено несколько факторов, которые необходимо учитывать при этом.
@@ -162,6 +162,7 @@ ms.locfileid: "37061564"
 
 Для производственных рабочих нагрузок: 
 
+- Рекомендуется назначать первичные узлы кластеров системным службам и использовать ограничения расположения при развертывании приложения на вторичные узлы.
 - Рекомендуемый номер SKU виртуальной машины — Standard D3, Standard D3_V2 или их аналог, обеспечивающий не менее 14 ГБ на локальном SSD.
 - Минимальный поддерживаемый номер SKU виртуальной машины — Standard D1, Standard D1_V2 или их аналог, обеспечивающий не менее 14 ГБ на локальном SSD. 
 - Номера SKU виртуальных машин с неполным числом ядер (например, Standard A0) для производственных рабочих нагрузок не поддерживаются.

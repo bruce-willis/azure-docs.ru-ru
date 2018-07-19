@@ -1,6 +1,6 @@
 ---
 title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
-description: Функция диспетчера ExpressRoute в Мониторе производительности сети позволяет отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute.
+description: Функция монитора ExpressRoute в Мониторе производительности сети позволяет отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute.
 services: log-analytics
 documentationcenter: ''
 author: abshamsft
@@ -15,16 +15,16 @@ ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
 ms.component: na
-ms.openlocfilehash: 55308c2f144ea90636fb477f82c19fd3f8276af5
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 27169193a468d98be879164b80e63fffde419002
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131134"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38633355"
 ---
-# <a name="expressroute-manager"></a>Диспетчер ExpressRoute
+# <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
-Диспетчер ExpressRoute в [Мониторе производительности сети](log-analytics-network-performance-monitor.md) можно использовать, чтобы отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute. Ключевыми преимуществами являются: 
+Монитор ExpressRoute Azure в [Мониторе производительности сети](log-analytics-network-performance-monitor.md) можно использовать, чтобы отслеживать сквозное подключение и производительность передачи данных между вашими филиалами и Azure через Azure ExpressRoute. Ключевыми преимуществами являются: 
 
 - автоматическое обнаружение каналов ExpressRoute, связанных с подпиской;
 - отслеживание использования пропускной способности, потери и задержки в канале, пиринга и уровня виртуальной сети Azure для ExpressRoute;

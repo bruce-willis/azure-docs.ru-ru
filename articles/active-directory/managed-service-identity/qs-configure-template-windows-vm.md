@@ -9,17 +9,17 @@ editor: ''
 ms.service: active-directory
 ms.component: msi
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: daveba
-ms.openlocfilehash: 05859187a5734d982b750e287c3ecd375ed1da2f
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: d8490dcba35cfeabb3da589f3d079571d5e98d3b
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34723751"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969210"
 ---
 # <a name="configure-a-vm-managed-service-identity-by-using-a-template"></a>Настройка управляемого удостоверения службы виртуальной машины с помощью шаблона
 
@@ -101,18 +101,70 @@ ms.locfileid: "34723751"
 
    ![Снимок экрана шаблона после изменения](../media/msi-qs-configure-template-windows-vm/template-file-after.png)
 
-### <a name="disable-a-system-assigned-identity-from-an-azure-vm"></a>Отключение системного удостоверения в виртуальной машине Azure
+### <a name="assign-a-role-the-vms-system-assigned-identity"></a>Назначение роли удостоверения, назначенного системой, для виртуальной машины
 
-> [!NOTE]
-> Отключение управляемого удостоверения службы в виртуальной машине в настоящее время не поддерживается. Сейчас вы можете переключаться между системным и пользовательским удостоверениями.
+После включения удостоверения, назначенного системой, на виртуальной машине, вы можете предоставить ему роль, например **Читатель**.
+
+1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину. Кроме того, убедитесь, что ваша учетная запись принадлежит роли, которая предоставляет разрешения на запись в виртуальной машине (например, "Участник виртуальных машин").
+ 
+2. Загрузите шаблон в [редактор](#azure-resource-manager-templates) и добавьте приведенную ниже информацию, чтобы предоставить виртуальной машине доступ для **чтения** к группе ресурсов, в которой она создана.  Структура шаблона зависит от редактора и выбранной модели развертывания.
+   
+   Добавьте следующий элемент в раздел `parameters`:
+
+    ```JSON
+    "builtInRoleType": {
+          "type": "string",
+          "defaultValue": "Reader"
+        },
+        "rbacGuid": {
+          "type": "string"
+        }
+    ```
+
+    Добавьте следующий элемент в раздел `variables`:
+
+    ```JSON
+    "Reader": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'acdd72a7-3385-48ef-bd42-f606fba81ae7')]"
+    ```
+
+    Добавьте следующий элемент в раздел `resources`:
+
+    ```JSON
+    {
+        "apiVersion": "2017-09-01",
+         "type": "Microsoft.Authorization/roleAssignments",
+         "name": "[parameters('rbacGuid')]",
+         "properties": {
+                "roleDefinitionId": "[variables(parameters('builtInRoleType'))]",
+                "principalId": "[reference(variables('vmResourceId'), '2017-12-01', 'Full').identity.principalId]",
+                "scope": "[resourceGroup().id]"
+          },
+          "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+            ]
+    }
+    ```
+
+### <a name="disable-a-system-assigned-identity-from-an-azure-vm"></a>Отключение системного удостоверения в виртуальной машине Azure
 
 При наличии виртуальной машины, которой больше не требуется управляемое удостоверение службы, сделайте следующее.
 
 1. После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину. Кроме того, убедитесь, что ваша учетная запись принадлежит роли, которая предоставляет разрешения на запись в виртуальной машине (например, "Участник виртуальных машин").
 
-2. Измените тип удостоверения на `UserAssigned`.
+2. Загрузив шаблон в [редактор](#azure-resource-manager-templates), найдите нужный ресурс `Microsoft.Compute/virtualMachines` в разделе `resources`. Если у вашей виртуальной машины есть только удостоверения, назначенные системой, ее можно отключить, изменив тип удостоверения на `None`.  Если у виртуальной машины есть удостоверения, назначенные системой и пользователями, удалите `SystemAssigned` из типа удостоверения и сохраните `UserAssigned` с массивом `identityIds` пользовательских удостоверений.  В следующем примере показано, как удалить назначенное системой удостоверение с виртуальной машины без пользовательских удостоверений:
+   
+   ```JSON
+    {
+      "apiVersion": "2017-12-01",
+      "type": "Microsoft.Compute/virtualMachines",
+      "name": "[parameters('vmName')]",
+      "location": "[resourceGroup().location]",
+      "identity": { 
+          "type": "None"
+    }
+   ```
 
-## <a name="user-assigned-identity"></a>Пользовательское удостоверение
+## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
 
 В этом разделе вы присвоите пользовательское удостоверение виртуальной машине Azure с помощью шаблона Azure Resource Manager.
 

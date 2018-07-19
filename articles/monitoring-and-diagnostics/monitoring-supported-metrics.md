@@ -8,12 +8,12 @@ ms.topic: reference
 ms.date: 03/30/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: d7d51a7c037e109c730dd79005a2c75eeb0697c0
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 3219f8e61a0aa469775a972e6b240eb2069c2cd9
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266899"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929973"
 ---
 # <a name="supported-metrics-with-azure-monitor"></a>Метрики, поддерживаемые Azure Monitor
 Azure Monitor обеспечивает несколько способов взаимодействия с метриками, включая создание диаграмм метрик на портале, доступ к метрикам через REST API или запрос метрик с помощью PowerShell или интерфейса командной строки. Ниже приведен полный список метрик, доступных в настоящее время в конвейере метрик Azure Monitor. Другие метрики могут быть доступны на портале или при использовании интерфейсов API прежних версий. Этот список содержит только метрики, которые доступны при использовании объединенного конвейера метрик Azure Monitor. Чтобы запросить метрики с измерениями и получить к ним доступ, воспользуйтесь версией [2018-01-01 api-version](https://docs.microsoft.com/rest/api/monitor/metricdefinitions).
@@ -892,76 +892,69 @@ Azure Monitor обеспечивает несколько способов вз�
 
 |Метрика|Отображаемое имя метрики|Единица измерения|Тип статистической обработки|ОПИСАНИЕ|Измерения|
 |---|---|---|---|---|---|
-|Average_% Free Inodes|Average_% Free Inodes|Count|Средняя|Average_% Free Inodes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Free Space|Average_% Free Space|Count|Средняя|Average_% Free Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Used Inodes|Average_% Used Inodes|Count|Средняя|Average_% Used Inodes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Used Space|Average_% Used Space|Count|Средняя|Average_% Used Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Read Bytes/sec|Average_Disk Read Bytes/sec|Count|Средняя|Average_Disk Read Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Reads/sec|Average_Disk Reads/sec|Count|Средняя|Average_Disk Reads/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Transfers/sec|Average_Disk Transfers/sec|Count|Средняя|Average_Disk Transfers/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Write Bytes/sec|Average_Disk Write Bytes/sec|Count|Средняя|Average_Disk Write Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Writes/sec|Average_Disk Writes/sec|Count|Средняя|Average_Disk Writes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Free Megabytes|Average_Free Megabytes|Count|Средняя|Average_Free Megabytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Logical Disk Bytes/sec|Average_Logical Disk Bytes/sec|Count|Средняя|Average_Logical Disk Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Available Memory|Average_% Available Memory|Count|Средняя|Average_% Available Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Available Swap Space|Average_% Available Swap Space|Count|Средняя|Average_% Available Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Used Memory|Average_% Used Memory|Count|Средняя|Average_% Used Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Used Swap Space|Average_% Used Swap Space|Count|Средняя|Average_% Used Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Available MBytes Memory|Average_Available MBytes Memory|Count|Средняя|Average_Available MBytes Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Available MBytes Swap|Average_Available MBytes Swap|Count|Средняя|Average_Available MBytes Swap|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Page Reads/sec|Average_Page Reads/sec|Count|Средняя|Average_Page Reads/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Page Writes/sec|Average_Page Writes/sec|Count|Средняя|Average_Page Writes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Pages/sec|Average_Pages/sec|Count|Средняя|Average_Pages/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Used MBytes Swap Space|Average_Used MBytes Swap Space|Count|Средняя|Average_Used MBytes Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Used Memory MBytes|Average_Used Memory MBytes|Count|Средняя|Average_Used Memory MBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Bytes Transmitted|Average_Total Bytes Transmitted|Count|Средняя|Average_Total Bytes Transmitted|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Bytes Received|Average_Total Bytes Received|Count|Средняя|Average_Total Bytes Received|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Bytes|Average_Total Bytes|Count|Средняя|Average_Total Bytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Packets Transmitted|Average_Total Packets Transmitted|Count|Средняя|Average_Total Packets Transmitted|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Packets Received|Average_Total Packets Received|Count|Средняя|Average_Total Packets Received|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Rx Errors|Average_Total Rx Errors|Count|Средняя|Average_Total Rx Errors|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Tx Errors|Average_Total Tx Errors|Count|Средняя|Average_Total Tx Errors|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Total Collisions|Average_Total Collisions|Count|Средняя|Average_Total Collisions|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Avg. время чтения с диска (с)|Average_Avg. время чтения с диска (с)|Count|Средняя|Average_Avg. время чтения с диска (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Avg. время обращения к диску (с)|Average_Avg. время обращения к диску (с)|Count|Средняя|Average_Avg. время обращения к диску (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Avg. время записи на диск (с)|Average_Avg. время записи на диск (с)|Count|Средняя|Average_Avg. время записи на диск (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Physical Disk Bytes/sec|Average_Physical Disk Bytes/sec|Count|Средняя|Average_Physical Disk Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Pct Privileged Time|Average_Pct Privileged Time|Count|Средняя|Average_Pct Privileged Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Pct User Time|Average_Pct User Time|Count|Средняя|Average_Pct User Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Used Memory kBytes|Average_Used Memory kBytes|Count|Средняя|Average_Used Memory kBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Virtual Shared Memory|Average_Virtual Shared Memory|Count|Средняя|Average_Virtual Shared Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% DPC Time|Average_% DPC Time|Count|Средняя|Average_% DPC Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Idle Time|Average_% Idle Time|Count|Средняя|Average_% Idle Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Interrupt Time|Average_% Interrupt Time|Count|Средняя|Average_% Interrupt Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% IO Wait Time|Average_% IO Wait Time|Count|Средняя|Average_% IO Wait Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Nice Time|Average_% Nice Time|Count|Средняя|Average_% Nice Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Privileged Time|Average_% Privileged Time|Count|Средняя|Average_% Privileged Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Processor Time|Average_% Processor Time|Count|Средняя|Average_% Processor Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% User Time|Average_% User Time|Count|Средняя|Average_% User Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Free Physical Memory|Average_Free Physical Memory|Count|Средняя|Average_Free Physical Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Free Space in Paging Files|Average_Free Space in Paging Files|Count|Средняя|Average_Free Space in Paging Files|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Free Virtual Memory|Average_Free Virtual Memory|Count|Средняя|Average_Free Virtual Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Processes|Average_Processes|Count|Средняя|Average_Processes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Size Stored In Paging Files|Average_Size Stored In Paging Files|Count|Средняя|Average_Size Stored In Paging Files|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Uptime|Average_Uptime|Count|Средняя|Average_Uptime|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Users|Average_Users|Count|Средняя|Average_Users|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Avg. время чтения с диска (с)|Average_Avg. время чтения с диска (с)|Count|Средняя|Average_Avg. время чтения с диска (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Avg. время записи на диск (с)|Average_Avg. время записи на диск (с)|Count|Средняя|Average_Avg. время записи на диск (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Current Disk Queue Length|Average_Current Disk Queue Length|Count|Средняя|Average_Current Disk Queue Length|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Reads/sec|Average_Disk Reads/sec|Count|Средняя|Average_Disk Reads/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Transfers/sec|Average_Disk Transfers/sec|Count|Средняя|Average_Disk Transfers/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Disk Writes/sec|Average_Disk Writes/sec|Count|Средняя|Average_Disk Writes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Free Megabytes|Average_Free Megabytes|Count|Средняя|Average_Free Megabytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Free Space|Average_% Free Space|Count|Средняя|Average_% Free Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Available MBytes|Average_Available MBytes|Count|Средняя|Average_Available MBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Committed Bytes In Use|Average_% Committed Bytes In Use|Count|Средняя|Average_% Committed Bytes In Use|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Bytes Received/sec|Average_Bytes Received/sec|Count|Средняя|Average_Bytes Received/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Bytes Sent/sec|Average_Bytes Sent/sec|Count|Средняя|Average_Bytes Sent/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Bytes Total/sec|Average_Bytes Total/sec|Count|Средняя|Average_Bytes Total/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_% Processor Time|Average_% Processor Time|Count|Средняя|Average_% Processor Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Average_Processor Queue Length|Average_Processor Queue Length|Count|Средняя|Average_Processor Queue Length|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
-|Пульс|Пульс|Count|Средняя|Пульс|Computer, OSType, Version, SourceComputerId|
-|Блокировка изменений|Блокировка изменений|Count|Средняя|Блокировка изменений|Computer, Product, Classification, UpdateState, Optional, Approved|
+Average_% Free Inodes|Процент свободных индексных дескрипторов|Count|Средняя|Average_% Free Inodes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Free Space|Процент свободного места|Count|Средняя|Average_% Free Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Used Inodes|Процент используемых индексных дескрипторов|Count|Средняя|Average_% Used Inodes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Used Space|Процент используемого места|Count|Средняя|Average_% Used Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Disk Read Bytes/sec|Скорость чтения с диска (байт/с) |Count|Средняя|Average_Disk Read Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Disk Reads/sec|Операций чтения с диска в секунду |Count|Средняя|Average_Disk Reads/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Disk Transfers/sec|Обращений к диску в секунду|Count|Средняя|Average_Disk Transfers/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Disk Write Bytes/sec|Скорость записи на диск (байт/с)|Count|Средняя|Average_Disk Write Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Disk Writes/sec|Операций записи на диск в секунду|Count|Средняя|Average_Disk Writes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Free Megabytes|Свободно мегабайт|Count|Средняя|Average_Free Megabytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Logical Disk Bytes/sec|Скорость обмена с логическим диском (байт/с)|Count|Средняя|Average_Logical Disk Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Available Memory|Процент доступной памяти|Count|Средняя|Average_% Available Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Available Swap Space|Процент доступной области подкачки|Count|Средняя|Average_% Available Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Used Memory|Процент используемой памяти|Count|Средняя|Average_% Used Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Used Swap Space|Процент используемой области подкачки|Count|Средняя|Average_% Used Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Available MBytes Memory|Доступный объем памяти в МБ|Count|Средняя|Average_Available MBytes Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Available MBytes Swap|Доступный объем подкачки в МБ|Count|Средняя|Average_Available MBytes Swap|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Page Reads/sec|Операций чтения со страницы в секунду|Count|Средняя|Average_Page Reads/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Page Writes/sec|Операций записи на страницу в секунду|Count|Средняя|Average_Page Writes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Pages/sec|Страниц в секунду|Count|Средняя|Average_Pages/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Used MBytes Swap Space|Доступный объем памяти в МБ|Count|Средняя|Average_Used MBytes Swap Space|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Used Memory MBytes|Доступный объем подкачки в МБ|Count|Средняя|Average_Used Memory MBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Bytes Transmitted|Всего передано байт|Count|Средняя|Average_Total Bytes Transmitted|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Bytes Received|Всего получено байт|Count|Средняя|Average_Total Bytes Received|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Bytes|Всего байт|Count|Средняя|Average_Total Bytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Packets Transmitted|Всего передано пакетов|Count|Средняя|Average_Total Packets Transmitted|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Packets Received|Всего получено пакетов|Count|Средняя|Average_Total Packets Received|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Rx Errors|Всего ошибок Rx|Count|Средняя|Average_Total Rx Errors|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Tx Errors|Всего ошибок Tx|Count|Средняя|Average_Total Tx Errors|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Total Collisions|Всего конфликтов|Count|Средняя|Average_Total Collisions|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Avg. время чтения с диска (с)|Среднее время чтения с диска (с)|Count|Средняя|Average_Avg. время чтения с диска (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Avg. время обращения к диску (с)|Среднее время обращения к диску (с)|Count|Средняя|Average_Avg. время обращения к диску (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Avg. время записи на диск (с)|Среднее время записи на диск (с)|Count|Средняя|Average_Avg. время записи на диск (с)|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Physical Disk Bytes/sec|Скорость обмена с физическим диском (байт/с)|Count|Средняя|Average_Physical Disk Bytes/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Pct Privileged Time|Процент времени работы в привилегированном режиме|Count|Средняя|Average_Pct Privileged Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Pct User Time|Процент времени пользователя|Count|Средняя|Average_Pct User Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Used Memory kBytes|Используемая память в КБ|Count|Средняя|Average_Used Memory kBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Virtual Shared Memory|Виртуальная общая память|Count|Средняя|Average_Virtual Shared Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% DPC Time|Процент времени DPC|Count|Средняя|Average_% DPC Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Idle Time|Процент времени простоя|Count|Средняя|Average_% Idle Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Interrupt Time|Процент времени прерывания|Count|Средняя|Average_% Interrupt Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% IO Wait Time|Процент времени ожидания ввода-вывода|Count|Средняя|Average_% IO Wait Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Nice Time|Процент времени работы с низким приоритетом|Count|Средняя|Average_% Nice Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Privileged Time|Процент времени работы в привилегированном режиме|Count|Средняя|Average_% Privileged Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Processor Time|% загруженности процессора|Count|Средняя|Average_% Processor Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% User Time|Процент времени пользователя|Count|Средняя|Average_% User Time|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Free Physical Memory|Объем свободной физической памяти|Count|Средняя|Average_Free Physical Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Free Space in Paging Files|Объем свободного места в файлах подкачки|Count|Средняя|Average_Free Space in Paging Files|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Free Virtual Memory|Объем свободной виртуальной памяти|Count|Средняя|Average_Free Virtual Memory|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Processes|Процессы|Count|Средняя|Average_Processes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Size Stored In Paging Files|Объем, сохраненный в файлах подкачки|Count|Средняя|Average_Size Stored In Paging Files|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Uptime|Время доступности|Count|Средняя|Average_Uptime|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Users|Пользователи|Count|Средняя|Average_Users|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Current Disk Queue Length|Текущая длина очереди диска|Count|Средняя|Average_Current Disk Queue Length|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Available MBytes|Доступный объем в МБ|Count|Средняя|Average_Available MBytes|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_% Committed Bytes In Use|Использование выделенной памяти (в байтах), %|Count|Средняя|Average_% Committed Bytes In Use|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Bytes Received/sec|Полученных байтов/с|Count|Средняя|Average_Bytes Received/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Bytes Sent/sec|Отправленных байтов/с|Count|Средняя|Average_Bytes Sent/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Average_Bytes Total/sec|Всего байтов/с|Count|Средняя|Average_Bytes Total/sec|Computer, ObjectName, InstanceName, CounterPath, SourceSystem|
+Пульс|Пульс|Count|Средняя|Пульс|Computer, OSType, Version, SourceComputerId|
+Блокировка изменений|Блокировка изменений|Count|Средняя|Блокировка изменений|Computer, Product, Classification, UpdateState, Optional, Approved|
+Событие|Событие|Count|Средняя|Событие|Source, EventLog, Computer, EventCategory, EventLevel, EventLevelName, EventID|
+
 
 ## <a name="microsoftpowerbidedicatedcapacities"></a>Microsoft.PowerBIDedicated/capacities
 

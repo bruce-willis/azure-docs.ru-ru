@@ -3,7 +3,7 @@ title: Установка MongoDB на виртуальной машине Windo
 description: Узнайте, как установить MongoDB на виртуальную машину Azure под управлением Windows Server 2012 R2, созданную посредством модели развертывания с помощью Resource Manager.
 services: virtual-machines-windows
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 ms.assetid: 53faf630-8da5-4955-8d0b-6e829bf30cba
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
 ms.date: 12/15/2017
-ms.author: iainfou
-ms.openlocfilehash: f3fe9751467a1fc34f4e9d02855c4aff307424a3
-ms.sourcegitcommit: 821b6306aab244d2feacbd722f60d99881e9d2a4
+ms.author: cynthn
+ms.openlocfilehash: a45d6a6064173cea7ed15065ab3464718cc8578e
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2017
-ms.locfileid: "26745985"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37931418"
 ---
 # <a name="install-and-configure-mongodb-on-a-windows-vm-in-azure"></a>Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure
 [MongoDB](http://www.mongodb.org) — это популярная высокопроизводительная база данных NoSQL с открытым кодом. В этой статье приведены инструкции по установке и настройке MongoDB на виртуальной машине Windows Server 2016 в Azure. [MongoDB можно также установить на виртуальной машине Linux в Azure](../linux/install-mongodb.md).
@@ -46,7 +46,7 @@ ms.locfileid: "26745985"
    * Нажмите кнопку **Сайты**. Добавьте *https://\*.mongodb.com* в список надежных сайтов и закройте диалоговое окно.
      
      ![Настройка параметров безопасности Internet Explorer](./media/install-mongodb/configure-internet-explorer-security.png)
-4. Перейдите на страницу [MongoDB — Downloads](http://www.mongodb.com/downloads) (Центр загрузки MongoDB) (http://www.mongodb.com/downloads).
+4. Перейдите на страницу [MongoDB - Downloads](http://www.mongodb.com/downloads) (MongoDB. Загрузка) (http://www.mongodb.com/downloads).
 5. При необходимости выберите выпуск **Community Server** и последний стабильный выпуск *64-разрядной версии Windows Server 2008 R2 или более поздней версии*. Чтобы скачать установщик, щелкните **DOWNLOAD (msi)** (Скачать (MSI-файл)).
    
     ![Скачивание установщика MongoDB](./media/install-mongodb/download-mongodb.png)
