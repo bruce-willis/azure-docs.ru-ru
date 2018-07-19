@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: jeedes
-ms.openlocfilehash: c33b066aa1ba627166021a648a548b9b39d54630
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a4ea4272b11c167d95840b45b39634abea8c1cea
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219063"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051604"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-recognize"></a>Руководство по интеграции Azure Active Directory с Recognize
 
@@ -33,7 +33,7 @@ ms.locfileid: "36219063"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Recognize, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36219063"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://recognizeapp.com/<your-domain>/saml/sso`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://recognizeapp.com/<your-domain>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://recognizeapp.com/<your-domain>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группе поддержки клиентов Recognize](mailto:support@recognizeapp.com), чтобы получить URL-адрес входа. Чтобы получить значение идентификатора, можно открыть URL-адрес метаданных поставщика услуг из раздела параметров единого входа, как описано далее в этом руководстве. . 
@@ -147,7 +147,7 @@ ms.locfileid: "36219063"
     
     a. Для параметра **Enable SSO** (Включить единый вход) установите значение **ON** (Включено).
 
-    Б. В текстовое поле **IDP Entity ID** (Идентификатор сущности IdP) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **IDP Entity ID** (Идентификатор сущности IdP) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
     
     c. В текстовое поле **Sso target url** (Целевой URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
     
@@ -194,7 +194,7 @@ ms.locfileid: "36219063"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -220,7 +220,7 @@ ms.locfileid: "36219063"
    
    a. В поле **Sync Enabled** (Синхронизация включена) выберите **ON** (Включено).
    
-   Б. Для параметра **Choose sync provider** (Выбор поставщика синхронизации) выберите значение **Microsoft/Office 365**.
+   b. Для параметра **Choose sync provider** (Выбор поставщика синхронизации) выберите значение **Microsoft/Office 365**.
    
    c. Щелкните **Run User Sync** (Запустить синхронизацию пользователей).
 
@@ -258,7 +258,7 @@ ms.locfileid: "36219063"
 
 Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Recognize на панели доступа, вы автоматически войдете в приложение Recognize. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент Recognize на панели доступа, вы автоматически войдете в приложение Recognize. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

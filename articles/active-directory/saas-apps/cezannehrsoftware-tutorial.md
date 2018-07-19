@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: jeedes
-ms.openlocfilehash: c44d1219c9f352a868aff3305372537ecd7a45b7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 60133dd6d541500db448cf107dd3c0ab193a03f7
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225771"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048693"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство. Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225771"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cezanne HR Software, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36225771"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://w3.cezanneondemand.com/CezanneOnDemand/-/<tenantidentifier>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес `https://w3.cezanneondemand.com/CezanneOnDemand/`.
+    b. В текстовом поле **Идентификатор** введите URL-адрес `https://w3.cezanneondemand.com/CezanneOnDemand/`.
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://w3.cezanneondemand.com:443/cezanneondemand/-/<tenantidentifier>/Saml/samlp`.
     
@@ -155,7 +155,7 @@ ms.locfileid: "36225771"
     
     a. Введите имя поставщика удостоверений в поле **Отображаемое имя**.
 
-    Б. В текстовое поле **Entity Identifier** (Идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure. 
+    b. В текстовое поле **Entity Identifier** (Идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure. 
 
     c. В поле **SAML Binding** (Привязка SAML) укажите значение POST.
 
@@ -225,7 +225,7 @@ ms.locfileid: "36225771"
     
     a. Установите для параметра **Внутренний пользователь** значение "Выкл.".
     
-    Б. В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
+    b. В текстовом поле **First name** (Имя) введите имя пользователя, например **Britta**.  
  
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, например **Simon**.
     
@@ -237,7 +237,7 @@ ms.locfileid: "36225771"
     
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Brittasimon@contoso.com.
     
-    Б. В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
     
     c. В раскрывающемся списке **Роль безопасности** выберите **Специалист отдела кадров**.
     
@@ -290,7 +290,7 @@ ms.locfileid: "36225771"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Cezanne HR Software на панели доступа, вы автоматически войдете в приложение Cezanne HR Software.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

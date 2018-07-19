@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/07/2017
 ms.author: jeedes
-ms.openlocfilehash: 27c10c2e08177b7987077de747482fc5ea620d91
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4c267313e4851e621b57aa1d2bddc73118405776
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231684"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054239"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-apex-portal"></a>Руководство. Интеграция Azure Active Directory с Apex Portal
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231684"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Apex Portal, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36231684"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer name>.apexanalytix.com/saml/sso.aspx`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer name>.apexanalytix.com/saml/sso.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer name>.apexanalytix.com/saml/sso.aspx`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Apex Portal](mailto:support@apexanalytix.com).
@@ -135,7 +135,7 @@ ms.locfileid: "36231684"
 
     ![Настройка единого входа](./media/apexportal-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -228,7 +228,7 @@ ms.locfileid: "36231684"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Apex Portal на панели доступа, вы автоматически войдете в приложение Apex Portal.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

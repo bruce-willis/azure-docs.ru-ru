@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: jeedes
-ms.openlocfilehash: ef1cdb51f10e834ef9f2d3dd4623db348db9483e
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: bcbcefa9db5caa2a77aabd0e482473a01f706ad8
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215374"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053501"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-chronicx"></a>Руководство по интеграции Azure Active Directory с ChronicX®
 
@@ -34,7 +34,7 @@ ms.locfileid: "36215374"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ChronicX®, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36215374"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.chronicx.com/ups/processlogonSSO.jsp`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес: `ups.chronicx.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес: `ups.chronicx.com`
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки ChronicX®](https://www.casebank.com/contact-us/). 
@@ -199,7 +199,7 @@ ms.locfileid: "36215374"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент ChronicX® на панели доступа, вы автоматически войдете в приложение ChronicX®.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

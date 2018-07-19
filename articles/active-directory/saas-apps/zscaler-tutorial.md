@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2017
 ms.author: jeedes
-ms.openlocfilehash: dbfe3ec8ab1df90941272810be4598dc27a6e76f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: b7a011baeb9b526e8de22ecaa34672327c6aab17
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230205"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050173"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler"></a>Руководство. Интеграция Azure Active Directory с Zscaler
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230205"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler, вам потребуется:
 
@@ -146,7 +146,7 @@ ms.locfileid: "36230205"
    
     a. Выберите параметр **Проверка подлинности с помощью единого входа SAML**.
 
-    Б. Щелкните **Настроить параметры единого входа SAML**.
+    b. Щелкните **Настроить параметры единого входа SAML**.
 
 11. На странице диалогового окна **Configure SAML Single Sign-On Parameters** (Настройка параметров единого входа в SAML) выполните указанные ниже действия и нажмите кнопку **Готово**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "36230205"
     
     a. Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure, в текстовое поле **URL of the SAML Portal to which users are sent for authentication** (URL-адрес портала SAML, куда пользователи направляются для аутентификации).
     
-    Б. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
+    b. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
     
     c. Чтобы передать скачанный сертификат, щелкните **Zscaler pem**.
     
@@ -166,7 +166,7 @@ ms.locfileid: "36230205"
     
     a. Выберите команду **Сохранить**.
 
-    Б. Щелкните **Активировать сейчас**.
+    b. Щелкните **Активировать сейчас**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -189,7 +189,7 @@ ms.locfileid: "36230205"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    Б. В текстовом поле "Адрес" введите **gateway.zscaler.net**.
+    b. В текстовом поле "Адрес" введите **gateway.zscaler.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
@@ -228,7 +228,7 @@ ms.locfileid: "36230205"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -261,7 +261,7 @@ ms.locfileid: "36230205"
    
     a. Заполните текстовые поля **UserID** (Идентификатор пользователя), **User Display Name** (Отображаемое имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля) и выберите **Groups** (Группы) и **Department** (Отдел) действующей учетной записи AAD, которую необходимо подготовить.
 
-    Б. Выберите команду **Сохранить**.
+    b. Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие инструменты создания учетных записей пользователя ZScaler или API, предоставляемые ZScaler для подготовки учетных записей пользователя Azure Active Directory.
@@ -301,7 +301,7 @@ ms.locfileid: "36230205"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Zscaler" на панели доступа, вы автоматически войдете в приложение Zscaler.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

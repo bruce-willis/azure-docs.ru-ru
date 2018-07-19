@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 3d362228406b71e01bf74aa6082a268d4b603830
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1c87acb427a4d31a6eee1e215d43a601adbc17ec
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219046"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050908"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce-sandbox"></a>Учебник. Интеграция Azure Active Directory с песочницей Salesforce
 
@@ -34,7 +34,7 @@ ms.locfileid: "36219046"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Salesforce Sandbox, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36219046"
 
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://<instancename>--Sandbox.<entityid>.my.salesforce.com`.
 
-    Б. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://<instancename>--Sandbox.<entityid>.my.salesforce.com`.
+    b. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://<instancename>--Sandbox.<entityid>.my.salesforce.com`.
     
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Salesforce](https://help.salesforce.com/support).
@@ -153,7 +153,7 @@ ms.locfileid: "36219046"
 
     a. В текстовом поле **Name** (Имя) введите имя конфигурации (например, *SPSSOWAAD_Test*). 
 
-    Б. В поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    b. В поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
     c. В текстовом поле **Entity Id** (Идентификатор сущности) введите `https://<instancename>--Sandbox.<entityid>.my.salesforce.com`, если это первый экземпляр Salesforce Sandbox, добавляемый в каталог. Если вы уже добавили экземпляр Salesforce Sandbox, то для параметра **Идентификатор сущности** введите значение **URL-адрес входа** в следующем формате: `https://<instancename>--Sandbox.<entityid>.my.salesforce.com`
 
@@ -269,7 +269,7 @@ ms.locfileid: "36219046"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Salesforce Sandbox на панели доступа, вы автоматически войдете в приложение Salesforce Sandbox.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

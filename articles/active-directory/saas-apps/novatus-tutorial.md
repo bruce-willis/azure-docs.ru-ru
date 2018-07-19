@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/02/2017
 ms.author: jeedes
-ms.openlocfilehash: f1dbbc2695234e5196b76b13d2b71848eb7f00a6
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 7d26ac2d4e7ab3cdb7603a201b4238bf9068cdab
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212814"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051344"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-novatus"></a>Руководство по интеграции Azure Active Directory с Novatus
 
@@ -33,7 +33,7 @@ ms.locfileid: "36212814"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Novatus, вам потребуется:
 
@@ -162,7 +162,7 @@ ms.locfileid: "36212814"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -212,7 +212,7 @@ ms.locfileid: "36212814"
 
 Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Novatus на панели доступа, вы автоматически войдете в приложение Novatus. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку Novatus на панели доступа, вы автоматически войдете в приложение Novatus. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

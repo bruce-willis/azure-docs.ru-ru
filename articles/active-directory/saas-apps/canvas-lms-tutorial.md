@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/08/2017
 ms.author: jeedes
-ms.openlocfilehash: e0b20acb29aaf489dd3f449f883c011a26b7862a
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 9811be78bd6260b17c462c077ed299dff8309b83
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223405"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048513"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-canvas-lms"></a>Руководство по интеграции Azure Active Directory с Canvas LMS
 
@@ -33,7 +33,7 @@ ms.locfileid: "36223405"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Canvas, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36223405"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.instructure.com`
 
-    Б. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://<tenant-name>.instructure.com/saml2`.
+    b. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://<tenant-name>.instructure.com/saml2`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Canvas](https://community.canvaslms.com/community/help). 
@@ -147,7 +147,7 @@ ms.locfileid: "36223405"
 
     a. В текстовое поле **IdP Entity ID** (Идентификатор сущности IdP) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    Б. В текстовое поле **Log On URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **Log On URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. В текстовое поле **Log Out URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -189,7 +189,7 @@ ms.locfileid: "36223405"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -223,7 +223,7 @@ ms.locfileid: "36223405"
    
    a. В текстовое поле **Full Name** (Полное имя) введите имя, например **BrittaSimon**.
 
-   Б. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+   b. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
    c. В текстовом поле **Login** (Имя для входа) введите адрес электронной почты пользователя в Azure AD, например **brittasimon@contoso.com**.
 
@@ -269,7 +269,7 @@ ms.locfileid: "36223405"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Canvas" на панели доступа, вы автоматически войдете в приложение Canvas.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

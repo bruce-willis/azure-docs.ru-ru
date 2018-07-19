@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 4f49d841cc9d6d799b1cd047454acaa2c618af73
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 2c571ebc45875167373b592abc720b045d1835bd
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211321"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048761"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-central-desktop"></a>Учебник. Интеграция Azure Active Directory с Central Desktop
 
@@ -34,7 +34,7 @@ ms.locfileid: "36211321"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Central Desktop, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36211321"
 
     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.centraldesktop.com`.
 
-    Б. В поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<companyname>.centraldesktop.com/saml2-metadata.php`|
@@ -147,7 +147,7 @@ ms.locfileid: "36211321"
     
     a. Установите флажок **Разрешить единый вход SAML версии 2**.
     
-    Б. В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
+    b. В поле **SSO URL** (URL-адрес единого входа) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
     
     c. В поле **SSO Login URL** (URL-адрес единого входа) вставьте значение **URL-адреса единого входа SAML**, скопированное на портале Azure.
     
@@ -157,7 +157,7 @@ ms.locfileid: "36211321"
 
     ![Метод проверки подписей в сообщениях](./media/central-desktop-tutorial/ic769565.png "Метод проверки подписей в сообщениях"). А. Выберите **Сертификат**.
     
-    Б. В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
+    b. В списке **SSO Certificate** (Сертификат единого входа) выберите значение **RSH SHA256**.
     
     c. Откройте скачанный сертификат в Блокноте. Затем скопируйте содержимое сертификата и вставьте его в поле **SSO Certificate** (Сертификат единого входа).
         
@@ -265,7 +265,7 @@ ms.locfileid: "36211321"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Central Desktop на панели доступа, вы автоматически войдете в приложение Central Desktop.
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 3c1922892a6a72caa58241a313bd1e3890487a42
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4333f6094a0da22f73255836379e1163aac485d4
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36210247"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050523"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdpartytrust"></a>Руководство по интеграции Azure Active Directory с ThirdPartyTrust
 
@@ -34,7 +34,7 @@ ms.locfileid: "36210247"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ThirdPartyTrust, вам потребуется:
 
@@ -201,7 +201,7 @@ ms.locfileid: "36210247"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "ThirdPartyTrust" на панели доступа, вы автоматически войдете в приложение ThirdPartyTrust.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

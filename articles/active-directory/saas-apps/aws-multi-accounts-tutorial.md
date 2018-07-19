@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2018
 ms.author: jeedes
-ms.openlocfilehash: 2678cf043bb4b2569555309e873ae9ce0ab64eab
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: dfbabdc7d5a02b21103ac709b8dbc89d69cde0e0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217803"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054273"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по интеграции Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36217803"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Amazon Web Services, вам потребуется следующее:
 
@@ -131,7 +131,7 @@ ms.locfileid: "36217803"
 
     ![Настройка атрибута единого входа](./media/aws-multi-accounts-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -167,7 +167,7 @@ ms.locfileid: "36217803"
  
     a. Выберите для параметра **Provider Type** (Тип поставщика) значение **SAML**.
 
-    Б. В текстовом поле **Имя поставщика** введите имя поставщика (например, *WAAD*).
+    b. В текстовом поле **Имя поставщика** введите имя поставщика (например, *WAAD*).
 
     c. Чтобы отправить **файл метаданных**, скачанный с портала Azure, нажмите кнопку **Choose File** (Выбрать файл).
 
@@ -187,7 +187,7 @@ ms.locfileid: "36217803"
 
     a. В разделе **Select type of trusted entity** (Выберите тип доверенной сущности) выберите **SAML 2.0 federation** (Федерация SAML 2.0).
 
-    Б. В разделе **Choose a SAML 2.0 Provider** (Выберите поставщик SAML 2.0) выберите **поставщик SAML**, созданный ранее (например, *WAAD*).
+    b. В разделе **Choose a SAML 2.0 Provider** (Выберите поставщик SAML 2.0) выберите **поставщик SAML**, созданный ранее (например, *WAAD*).
 
     c. Установите флажок **Allow programmatic and AWS Management Console access** (Разрешить программный доступ и доступ через консоль управления AWS).
   
@@ -203,11 +203,11 @@ ms.locfileid: "36217803"
 
     a. В текстовом поле **Role name** (Имя роли) введите имя роли.
 
-    Б. В текстовом поле **Role description** (Описание роли) введите описание.
+    b. В текстовом поле **Role description** (Описание роли) введите описание.
 
     a. Щелкните **Создать роль**.
 
-    Б. Создайте необходимое количество ролей и сопоставьте их с поставщиком удостоверений.
+    b. Создайте необходимое количество ролей и сопоставьте их с поставщиком удостоверений.
 
 18. Выйдите из текущей учетной записи AWS и войдите в систему с другой учетной записью, в которой нужно настроить единый вход с помощью Azure AD.
 
@@ -229,7 +229,7 @@ ms.locfileid: "36217803"
 
     a. Войдите на сайт обозревателя Graph с учетными данными глобального администратора или соадминистратора вашего клиента.
 
-    Б. У вас должно быть достаточно разрешений для создания ролей. Щелкните **Изменить разрешения**, чтобы получить требуемые разрешения. 
+    b. У вас должно быть достаточно разрешений для создания ролей. Щелкните **Изменить разрешения**, чтобы получить требуемые разрешения. 
 
     ![Диалоговое окно обозревателя Graph](./media/aws-multi-accounts-tutorial/graph-explorer-new9.png)
 
@@ -334,7 +334,7 @@ ms.locfileid: "36217803"
 
 ![Добавление атрибута для настройки единого входа](./media/aws-multi-accounts-tutorial/tutorial_amazonwebservices(aws)_test_saml.png)
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: jeedes
-ms.openlocfilehash: d69a0f801f1bf3fbd44514289dff4b9a95305ba4
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c9997f27723b399344a18292905b558a9f61d6bd
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227927"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051133"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-spaceiq"></a>Руководство по интеграции Azure Active Directory со SpaceIQ
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227927"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением SpaceIQ, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36227927"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://api.spaceiq.com`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.spaceiq.com/saml/<instanceid>/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.spaceiq.com/saml/<instanceid>/callback`.
 
     > [!NOTE] 
     > Замените эти значения фактическими URL-адресом ответа и идентификатором, как описано позже в этом руководстве.
@@ -145,7 +145,7 @@ ms.locfileid: "36227927"
 
     a. В текстовом поле **SAML Issuer URL** (URL-адрес издателя SAML) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML) из окна настройки приложения Azure AD.
     
-    Б. Скопируйте значение **SAML CallBack Endpoint URL (read-only)** (URL-адрес конечной точки обратного вызова SAML (только для чтения)) и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
+    b. Скопируйте значение **SAML CallBack Endpoint URL (read-only)** (URL-адрес конечной точки обратного вызова SAML (только для чтения)) и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
     
     c. Скопируйте значение **SAML Audience URI (read-only)** (URI аудитории SAML (только для чтения)) и вставьте его в поле **Идентификатор** на портале Azure в разделе **Домены и URL-адреса приложения SpaceIQ**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "36227927"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SpaceIQ на панели доступа, вы автоматически войдете в приложение SpaceIQ.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

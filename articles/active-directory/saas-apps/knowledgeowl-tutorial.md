@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 95e8199ab57bcc5ba617403f1551da21a7625885
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e4d86fc2e29c4d93567bedd045d57cd8d4e22cf5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221416"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052440"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-knowledgeowl"></a>Руководство. Интеграция Azure Active Directory с KnowledgeOwl
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221416"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с KnowledgeOwl, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "36221416"
     | `https://app.knowledgeowl.com/sp/id/<unique ID>`|
     |||
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     |||
     |-|-|
     | `https://subdomain.knowledgeowl.com/help/saml-login`|
@@ -160,7 +160,7 @@ ms.locfileid: "36221416"
 
     ![Настройка единого входа](./media/knowledgeowl-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -192,7 +192,7 @@ ms.locfileid: "36221416"
 
     a. Выберите **Enable SAML SSO** (Включить единый вход SAML).
 
-    Б. Скопируйте значение **SP Entity ID** (Идентификатор сущности SP) и вставьте его в поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
+    b. Скопируйте значение **SP Entity ID** (Идентификатор сущности SP) и вставьте его в поле **Идентификатор (сущности)** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
 
     c. Скопируйте значение **SP Login URL** (URL-адрес входа SP) и вставьте его в текстовые поля **"URL-адрес для входа" и "URL-адрес ответа"** в разделе **Домены и URL-адреса приложения KnowledgeOwl** на портале Azure.
 
@@ -291,7 +291,7 @@ ms.locfileid: "36221416"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент KnowledgeOwl на панели доступа, вы автоматически войдете в приложение KnowledgeOwl.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

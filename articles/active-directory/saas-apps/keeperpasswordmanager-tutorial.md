@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/09/2017
 ms.author: jeedes
-ms.openlocfilehash: b61465e9f38a5a461802d4ab46a7221c557b4595
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: fb57ab0f746fcad702c18032b9da1a9ec820b809
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308148"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052423"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-keeper-password-manager--digital-vault"></a>Руководство по интеграции Azure Active Directory с Keeper Password Manager & Digital Vault
 
@@ -33,7 +33,7 @@ ms.locfileid: "36308148"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Keeper Password Manager & Digital Vault, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36308148"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect/saml/login`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect/saml/sso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect/saml/sso`.
 
     c. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://{SSO CONNECT SERVER}/sso-connect`
 
@@ -164,7 +164,7 @@ ms.locfileid: "36308148"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "36308148"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-При нажатии элемента "Keeper Password Manager & Digital Vault" на панели доступа должна появиться страница входа в приложение Keeper Password Manager & Digital Vault. После успешной проверки подлинности вы должны войти в приложение. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+При нажатии элемента "Keeper Password Manager & Digital Vault" на панели доступа должна появиться страница входа в приложение Keeper Password Manager & Digital Vault. После успешной проверки подлинности вы должны войти в приложение. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

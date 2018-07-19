@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/24/2017
 ms.author: jeedes
-ms.openlocfilehash: bf76b2d3142a28c69c71568af8426360250bd33b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c44eef96bc40e2ccfac9e5dceb106ed2e809dea2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222796"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055905"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zoho"></a>Руководство по интеграции Azure Active Directory с Zoho
 
@@ -34,7 +34,7 @@ ms.locfileid: "36222796"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zoho, вам потребуется:
 
@@ -143,7 +143,7 @@ ms.locfileid: "36222796"
    
     a. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
    
-    Б. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
+    b. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
    
     c. В текстовое поле **Change Password URL** (URL-адрес для изменения пароля) вставьте **URL-адрес изменения пароля**, скопированный на портале Azure.
        
@@ -211,7 +211,7 @@ ms.locfileid: "36222796"
    
     a. В текстовом поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    Б. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
@@ -257,7 +257,7 @@ ms.locfileid: "36222796"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Zoho на панели доступа, вы автоматически войдете в приложение Zoho.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/18/2018
 ms.author: jeedes
-ms.openlocfilehash: d31d8d92590f665b847bb92370967e88ef4590ff
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 77625296797ec8ed8364e7d8bff3e5a15b4b74b5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36210709"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048044"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bamboohr"></a>Руководство по интеграции Azure Active Directory с BambooHR
 
@@ -34,7 +34,7 @@ ms.locfileid: "36210709"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с BambooHR, вам потребуется:
 
@@ -104,7 +104,7 @@ ms.locfileid: "36210709"
 
     a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://<company>.bamboohr.com`.
 
-    Б. В поле **Идентификатор** введите следующее значение: `BambooHR-SAML`.
+    b. В поле **Идентификатор** введите следующее значение: `BambooHR-SAML`.
 
     > [!NOTE] 
     > Значение **URL-адреса входа** приведено для примера. Замените его на ваш фактический URL-адрес входа. Для получения данного значения обратитесь в [службу поддержки клиентов BambooHR](https://www.bamboohr.com/contact.php). 
@@ -129,7 +129,7 @@ ms.locfileid: "36210709"
 
     a. Выберите **Apps** (Приложения).
    
-    Б. На панели **Apps** (Приложения) выберите **Single Sign-On** (Единый вход).
+    b. На панели **Apps** (Приложения) выберите **Single Sign-On** (Единый вход).
    
     c. Выберите **SAML Single Sign-On** (Единый вход SAML).
 
@@ -139,7 +139,7 @@ ms.locfileid: "36210709"
    
     a. В поле **SSO Login URL** (URL-адрес для единого входа) вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure в 6 шаге.
       
-    Б. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
+    b. В Блокноте откройте скачанный с портала Azure сертификат в кодировке base-64, скопируйте его содержимое, а затем вставьте его в поле **X.509 Certificate** (Сертификат X.509).
    
     c. Щелкните **Сохранить**.
 
@@ -236,7 +236,7 @@ ms.locfileid: "36210709"
 
 Выбрав плитку **BambooHR** на панели доступа, вы автоматически войдете в приложение BambooHR.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

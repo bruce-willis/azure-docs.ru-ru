@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/21/2018
 ms.author: jeedes
-ms.openlocfilehash: 6e0d8c5c178afc63c9c177d31d0a14104b127941
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 71b9b54e3b8eef1be9f6da7fa812bd8f9d246f47
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213344"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051692"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-proxyclick"></a>Руководство по интеграции Azure Active Directory с Proxyclick
 
@@ -34,7 +34,7 @@ ms.locfileid: "36213344"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Proxyclick, вам потребуется следующее:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36213344"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/init/<companyId>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/consume/<companyId>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://saml.proxyclick.com/consume/<companyId>`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -149,7 +149,7 @@ ms.locfileid: "36213344"
 
     a. Скопируйте значение **SAML Consumer URL** (URL-адрес объекта-получателя SAML) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
 
-    Б. Скопируйте значение **SAML SSO Redirect URL** (URL-адрес перенаправления для единого входа SAML) и вставьте его в текстовые поля **URL-адрес для входа** и **Идентификатор** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
+    b. Скопируйте значение **SAML SSO Redirect URL** (URL-адрес перенаправления для единого входа SAML) и вставьте его в текстовые поля **URL-адрес для входа** и **Идентификатор** в разделе **Домены и URL-адреса приложения Proxyclick** на портале Azure.
 
     c. Для параметра **SAML Request Method** (Метод запроса SAML) выберите значение **HTTP Redirect** (Перенаправление HTTP).
 
@@ -215,7 +215,7 @@ ms.locfileid: "36213344"
 
     a. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
-    Б. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
@@ -256,7 +256,7 @@ ms.locfileid: "36213344"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Proxyclick" на панели доступа, вы автоматически войдете в приложение Proxyclick.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

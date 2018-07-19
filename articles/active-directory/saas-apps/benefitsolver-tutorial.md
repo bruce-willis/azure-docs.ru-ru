@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2017
 ms.author: jeedes
-ms.openlocfilehash: d0256f18e8234f464cb7f612c8ec82f98558abed
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d3099b3e770acabe4e5eb74e0931e5b527f9f0c7
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230375"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048068"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-benefitsolver"></a>Руководство. Интеграция Azure Active Directory с Benefitsolver
 
@@ -34,7 +34,7 @@ ms.locfileid: "36230375"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Benefitsolver, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36230375"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `http://<companyname>.benefitsolver.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.benefitsolver.com/saml20`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.benefitsolver.com/saml20`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://www.benefitsolver.com/benefits/BenefitSolverView?page_name=single_signon_saml`.
 
@@ -138,7 +138,7 @@ ms.locfileid: "36230375"
     
     ![Раздел атрибутов Benefitsolver](./media/benefitsolver-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -235,7 +235,7 @@ ms.locfileid: "36230375"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Benefitsolver на панели доступа, вы автоматически войдете в приложение Benefitsolver.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

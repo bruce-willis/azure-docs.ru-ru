@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: fc8918ed2901d2f443b94bac8587e24c3f04eeec
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: 6362bcb701b444c8cd71b270222ce4f87b4cc2e3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308753"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055864"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Учебник. Интеграция Azure Active Directory с vxMaintain
 
@@ -33,7 +33,7 @@ ms.locfileid: "36308753"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с vxMaintain, вам потребуется:
 
@@ -108,7 +108,7 @@ ms.locfileid: "36308753"
 
     a. В поле **Идентификатор** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com`.
 
-    Б. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
+    b. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<company name>.verisae.com/DataNett/action/ssoConsume/mobile?_log=true`.
 
     > [!NOTE] 
     > Приведенные выше значения используются только для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact).
@@ -153,7 +153,7 @@ ms.locfileid: "36308753"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
+    b. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение, созданное в поле **Пароль**.
 
@@ -195,7 +195,7 @@ ms.locfileid: "36308753"
 
 Щелкнув элемент **vxMaintain** на панели доступа, вы автоматически войдете в приложение vxMaintain.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

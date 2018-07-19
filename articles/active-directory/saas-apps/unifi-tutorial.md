@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 0aa3ec013e93ddb89cd6982c01a38411f67b34c4
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: a93e4863a8466ad6599b11e6fe6e53d8d4d971a4
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866354"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049921"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-unifi"></a>Руководство по интеграции Azure Active Directory с UNIFI
 
@@ -33,7 +33,7 @@ ms.locfileid: "37866354"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с UNIFI, вам потребуется:
 
@@ -148,7 +148,7 @@ ms.locfileid: "37866354"
 
     a. В текстовом поле **Provider Name** (Имя поставщика) введите имя поставщика.
 
-    Б. В текстовое поле **URL-адрес поставщика** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес поставщика** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
     c. Откройте сертификат, скачанный с портала Azure, в Блокноте. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**, а затем вставьте остальное содержимое в текстовое поле **Сертификат**.
 
@@ -183,7 +183,7 @@ ms.locfileid: "37866354"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -228,7 +228,7 @@ ms.locfileid: "37866354"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент UNIFI на панели доступа, вы автоматически войдете в приложение UNIFI.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 6bddeabdf608e5acb7d3bcaa390fa6289b5de3bf
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6ca6a99687079beaef25c72d4cea8de5984e6c50
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36226125"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051454"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-panopto"></a>Учебник. Интеграция Azure Active Directory с Panopto
 
@@ -33,7 +33,7 @@ ms.locfileid: "36226125"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Panopto, вам потребуется:
 
@@ -145,7 +145,7 @@ ms.locfileid: "36226125"
     
     a. В списке **Provider Type** (Тип поставщика) выберите пункт **SAML20**.    
     
-    Б. В текстовом поле **Имя экземпляра** введите имя экземпляра.
+    b. В текстовом поле **Имя экземпляра** введите имя экземпляра.
 
     c. В текстовом поле **Понятное описание** введите понятное описание.
     
@@ -187,7 +187,7 @@ ms.locfileid: "36226125"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -240,7 +240,7 @@ ms.locfileid: "36226125"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Panopto на панели доступа, вы автоматически войдете в приложение Panopto.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

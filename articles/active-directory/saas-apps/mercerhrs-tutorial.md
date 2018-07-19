@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2017
 ms.author: jeedes
-ms.openlocfilehash: 8d63bd83f35f6659ce0da6db2468e8e1676133d8
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 02e9bb3b23471bd0e2fc46dd438a407e5ba1173f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36226176"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051808"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mercer-benefitscentral-mbc"></a>Руководство по интеграции Azure Active Directory с Mercer BenefitsCentral (MBC)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36226176"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mercer BenefitsCentral (MBC), вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36226176"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `stg.mercerhrs.com/saml2.0`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://ssous-stg.mercerhrs.com/SP2/Saml2AssertionConsumer.aspx`.
 
     > [!NOTE] 
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Обратитесь к [группе поддержки Mercer BenefitsCentral (MBC)](https://www.mercer.com/contact-us.html), чтобы получить это значение.
@@ -205,7 +205,7 @@ ms.locfileid: "36226176"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Если щелкнуть элемент "Mercer BenefitsCentral (MBC)" на панели доступа, вы автоматически войдете в приложение Mercer BenefitsCentral (MBC).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 11/14/2017
 ms.author: celested
 ms.reviewer: hirsin, dastrock
-ms.openlocfilehash: 0b3e7d9b7a01767e44c7c59c7250808290a03c30
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 803dd69aed91f6e33c354d01d3f5419597d98de9
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36319230"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115890"
 ---
 # <a name="migrate-from-the-azure-access-control-service"></a>Перенос из службы контроля доступа Azure
 
@@ -57,7 +57,7 @@ ms.locfileid: "36319230"
 https://<mynamespace>.accesscontrol.windows.net
 ```
 
-По этому URL-адресу выполняется весь обмен данными с STS и операции управления. Для разных целей используются разные пути. Чтобы определить, используют ли службы или приложения службу контроля доступа, отслеживайте трафик к https://<namespace>.accesscontrol.windows.net. Любой трафик к этому URL-адресу обрабатывается с помощью службы контроля доступа, и его нужно прекратить. 
+По этому URL-адресу выполняется весь обмен данными с STS и операции управления. Для разных целей используются разные пути. Чтобы определить, используют ли службы или приложения службу контроля доступа, отслеживайте трафик к https://&lt;пространство имен&gt;.accesscontrol.windows.net. Любой трафик к этому URL-адресу обрабатывается с помощью службы контроля доступа, и его нужно прекратить. 
 
 Исключением является весь трафик к `https://accounts.accesscontrol.windows.net`. Трафик к этому URL-адресу уже обрабатывается другой службой. Прекращение поддержки службы контроля доступа **не** влияет на него. 
 

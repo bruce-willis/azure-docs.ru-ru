@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/09/2018
 ms.author: jeedes
-ms.openlocfilehash: 5a50c578bd2b8a0479365f1543b9db741080f19f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: fdde8cbec7fc249eecfcc0c1682bb5eed94c1585
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228964"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050495"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
 
@@ -34,7 +34,7 @@ ms.locfileid: "36228964"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Ziflow, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36228964"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.ziflow.io/#/login-sso/<Unique ID>`.
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<Unique ID>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<Unique ID>`
 
     > [!NOTE] 
     > Приведенные выше значения используются только для примера. Замените их на уникальные значения идентификатора и URL-адреса входа, которые описываются далее в этом руководстве. Свяжитесь с [группой поддержки Ziflow](mailto:support@ziflow.com), чтобы получить значение дочернего домена в URL-адресе для входа.
@@ -206,7 +206,7 @@ ms.locfileid: "36228964"
 
     a. В текстовое поле **E-mail** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
-    Б. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
@@ -252,7 +252,7 @@ ms.locfileid: "36228964"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Ziflow на панели доступа, вы автоматически войдете в приложение Ziflow.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
 ms.reviewer: jeedes
-ms.openlocfilehash: 4073fbb534ae712f8a5cad6c2e4aa750cec365b7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f3bbcbb70759e7a995797cf89ad75a2a39314927
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213290"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048486"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-airwatch"></a>Руководство. Интеграция Azure Active Directory с AirWatch
 
@@ -34,7 +34,7 @@ ms.locfileid: "36213290"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с AirWatch, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "36213290"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.awmdm.com/AirWatch/Login?gid=companycode`
 
-    Б. В текстовом поле **Идентификатор** введите значение `AirWatch`.
+    b. В текстовом поле **Идентификатор** введите значение `AirWatch`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес для входа. Для получения этого значения обратитесь в [службу поддержки клиентов AirWatch](http://www.air-watch.com/company/contact-us/). 
@@ -156,7 +156,7 @@ ms.locfileid: "36213290"
     
     a. Для параметра **Directory Type** (Тип каталога) выберите значение **None** (Нет).
 
-    Б. Установите флажок **Use SAML For Authentication**(Использовать SAML для проверки подлинности).
+    b. Установите флажок **Use SAML For Authentication**(Использовать SAML для проверки подлинности).
 
     c. Чтобы отправить скачанный сертификат, нажмите кнопку **Upload**(Отправить).
 
@@ -166,7 +166,7 @@ ms.locfileid: "36213290"
 
     a. Для параметра **Request Binding Type** (Тип привязки запроса) выберите значение **POST**.
 
-    Б. На портале Azure на диалоговой странице **Настройка единого входа в AirWatch** скопируйте значение в поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) и вставьте его в текстовое поле **Identity Provider Single Sign On URL** (URL-адрес единого входа для поставщика удостоверений).
+    b. На портале Azure на диалоговой странице **Настройка единого входа в AirWatch** скопируйте значение в поле **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) и вставьте его в текстовое поле **Identity Provider Single Sign On URL** (URL-адрес единого входа для поставщика удостоверений).
 
     c. Для параметра **NameID Format** (Формат идентификатора имени) выберите значение **Email Address** (Адрес электронной почты).
 
@@ -182,7 +182,7 @@ ms.locfileid: "36213290"
 
     a. В текстовом поле **Object Identifier** (Идентификатор объекта) введите **http://schemas.microsoft.com/identity/claims/objectidentifier**.
 
-    Б. В текстовом поле **Username** (Имя пользователя) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**.
+    b. В текстовом поле **Username** (Имя пользователя) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**.
 
     c. В текстовом поле **Display Name** (Отображаемое имя) введите **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname**.
 
@@ -221,7 +221,7 @@ ms.locfileid: "36213290"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -286,7 +286,7 @@ ms.locfileid: "36213290"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

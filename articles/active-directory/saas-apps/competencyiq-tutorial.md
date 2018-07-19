@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2017
 ms.author: jeedes
-ms.openlocfilehash: 2794c77ecf1fdc8b60edde81ef8e22fc0bfe0aa1
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: da78c569d8a8df576f472c8b6dfb9185f0e65e5e
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212484"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048027"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-competencyiq"></a>Руководство по интеграции Azure Active Directory с CompetencyIQ
 
@@ -33,7 +33,7 @@ ms.locfileid: "36212484"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с CompetencyIQ, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36212484"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer>.competencyiq.com/`
     
-    Б. В текстовом поле **Идентификатор** введите URL-адрес `https://www.competencyiq.com/`.
+    b. В текстовом поле **Идентификатор** введите URL-адрес `https://www.competencyiq.com/`.
 
     > [!NOTE] 
     > Значение URL-адреса входа не является реальным, поэтому введите фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов CompetencyIQ](https://www.competencyiq.com/). 
@@ -162,7 +162,7 @@ ms.locfileid: "36212484"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "36212484"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент CompetencyIQ на панели доступа, вы автоматически войдете в приложение CompetencyIQ.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

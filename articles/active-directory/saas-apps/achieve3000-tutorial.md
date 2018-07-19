@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/19/2017
 ms.author: jeedes
-ms.openlocfilehash: b943a805a025610561f0369d6ce4277600391672
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 72e327f3cfa81b1ff27fcad743f5bb9a98737ed9
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215313"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053612"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-achieve3000"></a>Руководство по интеграции Azure Active Directory с Achieve3000
 
@@ -34,7 +34,7 @@ ms.locfileid: "36215313"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Achieve3000, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36215313"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://saml.achieve3000.com/district/<District Identifier>`.
 
-    Б. В текстовом поле **Идентификатор** введите значение `achieve3000-saml`.
+    b. В текстовом поле **Идентификатор** введите значение `achieve3000-saml`.
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Achieve3000](https://www.achieve3000.com/contact-us/). 
@@ -137,7 +137,7 @@ ms.locfileid: "36215313"
 
     ![Добавление атрибута для настройки единого входа](./media/achieve3000-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -223,7 +223,7 @@ ms.locfileid: "36215313"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Achieve3000" на панели доступа, вы автоматически войдете в приложение Achieve3000.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 0a3d0fd8d6fda711608b40a975fd1f4bf1e88a7d
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d461d106e7805f12327397a2572552fdd5606569
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218070"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055713"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yodeck"></a>Учебник. Интеграция Azure Active Directory с Yodeck
 
@@ -34,7 +34,7 @@ ms.locfileid: "36218070"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Yodeck, вам потребуется:
 
@@ -136,7 +136,7 @@ ms.locfileid: "36218070"
 
     a. Выберите **Import from URL** (Импорт из URL-адреса).
 
-    Б. В текстовое поле **URL-адрес** вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure, а затем нажмите кнопку **Импорт**.
+    b. В текстовое поле **URL-адрес** вставьте значение **URL-адреса метаданных федерации приложения**, скопированное на портале Azure, а затем нажмите кнопку **Импорт**.
     
     c. После импорта **URL-адреса метаданных федерации приложения** оставшиеся поля заполнятся автоматически.
 
@@ -197,7 +197,7 @@ ms.locfileid: "36218070"
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    Б. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
 
@@ -240,7 +240,7 @@ ms.locfileid: "36218070"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Yodeck на панели доступа, вы автоматически войдете в приложение Yodeck.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

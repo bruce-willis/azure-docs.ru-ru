@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 25517f6f04b43152c72ad1f223e12456aac89a00
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 0be7f71f5995be269bb630491003678e0640699b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221399"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055174"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221399"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler Private Access Administrator, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36221399"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/metadata`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`.
 
     c. Установите флажок **Показать дополнительные параметры URL-адресов**.
 
@@ -147,7 +147,7 @@ ms.locfileid: "36221399"
 
     a. Щелкните **Select File** (Выбрать файл), чтобы передать скачанный файл метаданных из Azure AD и указать его в поле **IdP Metadata File Upload** (Передача файла метаданных IdP).
 
-    Б. Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
+    b. Будут прочитаны **метаданные IdP** из Azure AD, а также будут заполнены все поля сведений, как показано ниже.
 
     ![Конфигурация IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/idpconfig.png)
 
@@ -218,7 +218,7 @@ ms.locfileid: "36221399"
 
     a. В текстовом поле **Username** (Имя пользователя) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
-    Б. В текстовом поле **Password** (Пароль) введите пароль.
+    b. В текстовом поле **Password** (Пароль) введите пароль.
 
     c. В текстовом поле **Confirm Password** (Подтверждение пароля) повторно введите пароль.
 
@@ -267,7 +267,7 @@ ms.locfileid: "36221399"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Zscaler Private Access Administrator" на панели доступа, вы автоматически войдете в приложение Zscaler Private Access Administrator.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

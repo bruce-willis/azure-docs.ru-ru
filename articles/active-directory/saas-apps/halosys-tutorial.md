@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 4c95683efab1764e078632ffdb92943c88c6614e
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 47a2ac5db4574c09e2949118b6e5ae526fd72b8d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216914"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053185"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-halosys"></a>Руководство по интеграции Azure Active Directory с Halosys
 
@@ -34,7 +34,7 @@ ms.locfileid: "36216914"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Halosys, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36216914"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.halosys.com`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.halosys.com/<instance name>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.halosys.com/<instance name>`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Halosys](http://halosys.com/halosys#contact).
@@ -205,7 +205,7 @@ ms.locfileid: "36216914"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Halosys на панели доступа, вы автоматически войдете в приложение Halosys.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

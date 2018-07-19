@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: a2eaee7af1ae87900fb989f52573200838f6c888
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 74ab20c7ae7e70f04cce224e4fb45d7eb646c085
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222929"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050765"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-showpad"></a>Руководство. Интеграция Azure Active Directory с Showpad
 
@@ -33,7 +33,7 @@ ms.locfileid: "36222929"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Showpad, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36222929"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<comapany-name>.showpad.biz/login`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.showpad.biz`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.showpad.biz`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Showpad](https://help.showpad.com). 
@@ -147,7 +147,7 @@ ms.locfileid: "36222929"
    
     a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
    
-    Б. Для параметра **Metadata Source** (Источник метаданных) выберите значение **XML**.
+    b. Для параметра **Metadata Source** (Источник метаданных) выберите значение **XML**.
    
     c. Скопируйте содержимое XML-файла метаданных, скачанного с портала Azure, и вставьте его в текстовое поле **Metadata XML** (XML метаданных).
    
@@ -184,7 +184,7 @@ ms.locfileid: "36222929"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -233,7 +233,7 @@ ms.locfileid: "36222929"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Showpad" на панели доступа, вы автоматически войдете в приложение Showpad.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

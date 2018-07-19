@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/11/2017
 ms.author: jeedes
-ms.openlocfilehash: 515d176b15e3e2f97620e4054b761b06300f9d92
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c79e9352cbeb1cf6349460d4e0b1b61c351f0c40
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222330"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053433"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dealpath"></a>Руководство по интеграции Azure Active Directory с Dealpath
 
@@ -34,7 +34,7 @@ ms.locfileid: "36222330"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Dealpath, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36222330"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://app.dealpath.com/account/login`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.dealpath.com/saml/metadata/<ID>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.dealpath.com/saml/metadata/<ID>`
 
     > [!NOTE] 
     > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Dealpath](mailto:kenter@dealpath.com). 
@@ -141,7 +141,7 @@ ms.locfileid: "36222330"
 
     a. В текстовое поле **SAML SSO URL** (URL-адрес единого входа SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
-    Б. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Identity Provider Issuer** (Издатель поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Скопируйте в блокнот содержимое скачанного файла **сертификата в формате Base64**, а затем вставьте его в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
@@ -223,7 +223,7 @@ ms.locfileid: "36222330"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Dealpath" на панели доступа, вы автоматически войдете в приложение Dealpath.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

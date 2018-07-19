@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 1c71fa918e72ac08c653bc319e3d84e0cc4e0508
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 25847d93c9c22ee15970f164802149ad66e77203
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217594"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054096"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bpmonline"></a>Учебник. Интеграция Azure Active Directory с Bpm’online
 
@@ -34,7 +34,7 @@ ms.locfileid: "36217594"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Bpm’online, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36217594"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<client site name>.bpmonline.com/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<client site name>.bpmonline.com/ServiceModel/AuthService.svc/SsoLogin`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<client site name>.bpmonline.com/ServiceModel/AuthService.svc/SsoLogin`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -204,7 +204,7 @@ ms.locfileid: "36217594"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните плитку Bpm’online на панели доступа, чтобы автоматически войти в приложение Bpm’online.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

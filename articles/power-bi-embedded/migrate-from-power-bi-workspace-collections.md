@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: powerbi
 ms.date: 09/28/2017
 ms.author: maghan
-ms.openlocfilehash: d138b0c26ffc0a44947f79811fd586dda7df4509
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: de20d532112ca73f34f7cb603d043579c28179d6
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31419103"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39071238"
 ---
 # <a name="how-to-migrate-power-bi-workspace-collection-content-to-power-bi-embedded"></a>Перенос содержимого коллекции рабочих областей Power BI в Power BI Embedded
 
@@ -118,17 +118,17 @@ ms.locfileid: "31419103"
 
 **Поток**
 
-1. Вызовите GET https://api.powerbi.com/v1.0/collections/{collection_id}/workspaces/{wid}/datasets/{dataset_id}/Default.GetBoundGatewayDataSources и сохраните полученную строку подключения.
+1. Вызовите GET `https://api.powerbi.com/v1.0/collections/{collection_id}/workspaces/{wid}/datasets/{dataset_id}/Default.GetBoundGatewayDataSources` и сохраните полученную строку подключения.
 2. Вызовите API загрузки PBIX-файлов в рабочей области коллекции рабочих областей Power BI.
 3. Сохраните PBIX-файл.
 4. Вызовите API импорта PBIX-файлов для рабочей области Power BI Embedded.
-5. Обновите строку подключения, вызвав POST https://api.powerbi.com/v1.0/myorg/datasets/{dataset_id}/Default.SetAllConnections.
-6. Получите идентификатор шлюза и источника данных, вызвав GET https://api.powerbi.com/v1.0/myorg/datasets/{dataset_id}/Default.GetBoundGatewayDataSources.
-7. Обновите учетные данные пользователя, вызвав PATCH https://api.powerbi.com/v1.0/myorg/gateways/{gateway_id}/datasources/{datasource_id}.
+5. Обновите строку подключения, вызвав POST `https://api.powerbi.com/v1.0/myorg/datasets/{dataset_id}/Default.SetAllConnections`.
+6. Получите идентификатор шлюза и источника данных, вызвав GET `https://api.powerbi.com/v1.0/myorg/datasets/{dataset_id}/Default.GetBoundGatewayDataSources`.
+7. Обновите учетные данные пользователя, вызвав PATCH `https://api.powerbi.com/v1.0/myorg/gateways/{gateway_id}/datasources/{datasource_id}`.
 
 #### <a name="old-dataset-and-reports"></a>Старые наборы данных и отчеты
 
-Отчеты, загруженные до октября 2016 г., не поддерживают возможность загрузки PBIX-файлов.
+Отчеты, загруженные до октября 2016 г., не поддерживают возможность загрузки PBIX-файлов. 
 
 **Поток**
 

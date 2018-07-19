@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 09f2f854e3b5a70938b6c47bb7dfb5fdf6d52df3
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 047e1ea6a474d95c57ffc2bdff5ad8a5c45e0d36
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223217"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048571"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-andromeda"></a>Руководство по интеграции Azure Active Directory с Andromeda
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223217"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Andromeda, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36223217"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<tenantURL>.ngcxpress.com/SAMLConsumer.aspx`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -145,7 +145,7 @@ ms.locfileid: "36223217"
 
     ![Добавление атрибута для настройки единого входа](./media/andromedascm-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -181,7 +181,7 @@ ms.locfileid: "36223217"
 
     a. Установите флажок **Enable SSO with SAML** (Включить единый вход с помощью SAML).
 
-    Б. В разделе **Andromeda Information** (Сведения о приложении Andromeda) скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в текстовое поле **Идентификатор** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
+    b. В разделе **Andromeda Information** (Сведения о приложении Andromeda) скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в текстовое поле **Идентификатор** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
 
     c. Скопируйте **URL-адрес объекта-получателя** и вставьте его в текстовое поле **URL-адрес ответа** раздела **Andromeda Domain and URLs** (Домен и URL-адреса Andromeda).
 
@@ -276,7 +276,7 @@ ms.locfileid: "36223217"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Andromeda на панели доступа, вы автоматически войдете в приложение Andromeda.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 48c59a20a86bca5de8c3c4874f3f758fef92a124
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ae49e60188c554a2eaa0221c05b49ca67c835f0c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227587"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055942"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-targetprocess"></a>Руководство. Интеграция Azure Active Directory с TargetProcess
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227587"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением TargetProcess, вам потребуется следующее:
 
@@ -111,7 +111,7 @@ ms.locfileid: "36227587"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.tpondemand.com/`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов TargetProcess](mailto:support@targetprocess.com). 
@@ -148,7 +148,7 @@ ms.locfileid: "36227587"
     
     a. Щелкните **Enable Single Sign-on**(Включить единый вход).
     
-    Б. В текстовое поле **Sign-on URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b. В текстовое поле **Sign-on URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Откройте скачанный сертификат в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте в текстовое поле **Certificate** (Сертификат).
     
@@ -185,7 +185,7 @@ ms.locfileid: "36227587"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -233,7 +233,7 @@ ms.locfileid: "36227587"
 
 Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент TargetProcess на панели доступа, вы автоматически войдете в приложение TargetProcess. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент TargetProcess на панели доступа, вы автоматически войдете в приложение TargetProcess. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: fca447b24a299fed116356ca0f985020e079344b
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: dc07dce24152f9f58253ad96c80f6b004cd1198b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317608"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050789"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-11-token-enabled-lob-app"></a>Руководство по интеграции Azure Active Directory с бизнес-приложением с включенным токеном SAML 1.1
 
@@ -34,7 +34,7 @@ ms.locfileid: "36317608"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с бизнес-приложением с включенным токеном SAML 1.1, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36317608"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://your-app-url`.
 
-    Б. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://your-app-url`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://your-app-url`
      
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения соответствующими URL-адресами приложения.  
@@ -200,7 +200,7 @@ ms.locfileid: "36317608"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку бизнес-приложения с включенным токеном SAML 1.1 на панели доступа, вы автоматически войдете в это приложение.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

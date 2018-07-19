@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: c6853c5dd3ec320afd70e095fe1909c7942f52e0
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 36bcf5773388aa0a286b6add649907139dc4896f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36323349"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053168"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-eli-onboarding"></a>Руководство по интеграции Azure Active Directory с Eli Onboarding
 
@@ -33,7 +33,7 @@ ms.locfileid: "36323349"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Eli Onboarding, вам потребуется:
 
@@ -109,7 +109,7 @@ ms.locfileid: "36323349"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<YOUR DOMAIN URL>/sso/saml/login`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<YOUR DOMAIN URL>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<YOUR DOMAIN URL>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Eli Onboarding](mailto:support@geteli.com).
@@ -195,7 +195,7 @@ ms.locfileid: "36323349"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Eli Onboarding на панели доступа, вы автоматически войдете в приложение Eli Onboarding.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2017
 ms.author: jeedes
-ms.openlocfilehash: b7ef6d04fc775f4582d47db1d728bc1325f71184
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1769f3d0d86fca784d8d4e7a221a7cf3bde16def
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36224159"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39056102"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-textmagic"></a>Руководство по интеграции Azure Active Directory с TextMagic
 
@@ -34,7 +34,7 @@ ms.locfileid: "36224159"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TextMagic, вам потребуется следующее:
 
@@ -142,7 +142,7 @@ ms.locfileid: "36224159"
 
     a. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    Б. В текстовое поле **Identity provider SSO URL:** (URL-адрес поставщика удостоверений единого входа) вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
+    b. В текстовое поле **Identity provider SSO URL:** (URL-адрес поставщика удостоверений единого входа) вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
 
     c. В текстовое поле **Identity Provider SLO URL:** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -226,7 +226,7 @@ ms.locfileid: "36224159"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните плитку TextMagic на панели доступа, чтобы автоматически войти в приложение TextMagic.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

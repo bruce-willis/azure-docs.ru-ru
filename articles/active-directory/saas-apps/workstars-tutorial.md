@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/25/2017
 ms.author: jeedes
-ms.openlocfilehash: 89b0ace19e7faea053cff0b3be2080f58dc0563c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 36f5a5aff63bf9de57c8475733861edd5e368a9a
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211168"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055546"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workstars"></a>Учебник. Интеграция Azure Active Directory с Workstars
 
@@ -34,7 +34,7 @@ ms.locfileid: "36211168"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workstars, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36211168"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://workstars.com`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.workstars.com/saml/login_check`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.workstars.com/saml/login_check`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки Workstars](https://support.workstars.com).
@@ -147,7 +147,7 @@ ms.locfileid: "36211168"
 
     a. В текстовом поле **Identity Provider Name** (Имя поставщика удостоверений) введите **Office 365**.
 
-    Б. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Identity Provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Скопируйте в блокнот содержимое скачанного сертификата, а затем вставьте его в текстовое поле **x509 Certificate** (Сертификат X.509). 
 
@@ -233,7 +233,7 @@ ms.locfileid: "36211168"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Workstars на панели доступа, вы автоматически войдете в приложение Workstars.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

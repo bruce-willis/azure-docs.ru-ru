@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 5be27723e6dfea9ce0d720baab2b650cff9c0f64
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 33b92ebf91b07c15b25f48b54da1ed6fcc89c5ff
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866293"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052114"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jostle"></a>Руководство. Интеграция Azure Active Directory с Jostle
 
@@ -33,7 +33,7 @@ ms.locfileid: "37866293"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jostle, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "37866293"
 
     a. В текстовом поле **URL-адрес входа** введите `https://login-prod.jostle.us`
 
-    Б. В текстовом поле **Идентификатор** введите `https://jostle.us`
+    b. В текстовом поле **Идентификатор** введите `https://jostle.us`
 
     c. Поставьте флажок **Показать дополнительные параметры URL-адресов**
 
@@ -162,7 +162,7 @@ ms.locfileid: "37866293"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -210,7 +210,7 @@ ms.locfileid: "37866293"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Jostle на панели доступа, вы автоматически войдете в приложение Jostle.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

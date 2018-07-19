@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: jeedes
-ms.openlocfilehash: c9229afd7bd8ebad85ce9e329fb11f992236bce0
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 37ae91743077a9cb9ef9b8f97747563a580fada9
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220107"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051284"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-secret-server-on-premises"></a>Руководство. Интеграция Azure Active Directory с Secret Server (On-Premises)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36220107"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Secret Server (On-Premises), вам потребуется следующее:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36220107"
 
     a. В текстовом поле **Идентификатор** укажите пользовательское значение, например: `https://secretserveronpremises.azure`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx `.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<SecretServerURL>/SAML/AssertionConsumerService.aspx `.
 
     > [!NOTE]
     > Представленный выше идентификатор сущности используется только для примера. Вы можете выбрать любое уникальное значение для представления экземпляра Secret Server в AAD. Этот идентификатор сущности следует отправить в [группу поддержки приложения Secret Server (On-Premises)](https://thycotic.force.com/support/s/), чтобы они выполнили настройки со своей стороны. Дополнительные сведения см. в [этой статье](https://thycotic.force.com/support/s/article/Configuring-SAML-in-Secret-Server).
@@ -213,7 +213,7 @@ ms.locfileid: "36220107"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Secret Server (On-Premises) на панели доступа, вы автоматически войдете в приложение Secret Server (On-Premises).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

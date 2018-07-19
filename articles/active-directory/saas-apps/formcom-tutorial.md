@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2018
 ms.author: jeedes
-ms.openlocfilehash: e5c322971b182a0d837c3cf6e23df7a7df17fd35
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a1e279f9cb4eebd97b76449a7d28227c91407cb1
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222548"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053056"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-formcom"></a>Руководство по интеграции Azure Active Directory с Form.com
 
@@ -34,7 +34,7 @@ ms.locfileid: "36222548"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Form.com, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36222548"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.wa-form.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.form.com`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
@@ -129,7 +129,7 @@ ms.locfileid: "36222548"
 
     a. Нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот.
 
-    Б. Щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+    b. Щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
      
 5. Нажмите кнопку **Сохранить** .
 
@@ -212,7 +212,7 @@ ms.locfileid: "36222548"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Form.com" на панели доступа, вы автоматически войдете в приложение Form.com.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

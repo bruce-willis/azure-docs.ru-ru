@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 3285376ce0e26c7f85681fca0ec0a261267a7055
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6cc8050611f56e90482cb12560d3de0632db292b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221076"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050313"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-yardione"></a>Руководство. Интеграция Azure Active Directory с YardiOne
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221076"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с YardiOne, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36221076"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<y1-subdomain>.yardione.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://<y1-subdomain>.yardione.com/yAuth2/trust`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://<y1-subdomain>.yardione.com/yAuth2/trust`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу технической поддержки YardiOne](https://clientcentral.yardi.com).
@@ -199,7 +199,7 @@ ms.locfileid: "36221076"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент YardiOne на панели доступа, вы автоматически войдете в приложение YardiOne.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

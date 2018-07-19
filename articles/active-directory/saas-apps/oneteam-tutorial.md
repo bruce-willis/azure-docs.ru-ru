@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 173d0ba6a93e4db1c39bb777a1290dc933fa4a78
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ecc8799e9d9fa711d2e2f52427cd5314a64dfc26
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230239"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051311"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-oneteam"></a>Руководство. Интеграция Azure Active Directory с Oneteam
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230239"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Oneteam, вам потребуется следующее:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36230239"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.one-team.io/teams/<team name>/auth/saml/callback`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -166,7 +166,7 @@ ms.locfileid: "36230239"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -216,7 +216,7 @@ ms.locfileid: "36230239"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Oneteam на панели доступа, вы автоматически войдете в приложение Oneteam.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

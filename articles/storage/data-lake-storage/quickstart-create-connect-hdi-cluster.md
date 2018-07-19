@@ -2,24 +2,24 @@
 title: Установка кластера для Hadoop, Spark, Kafka, HBase или R Server — Azure HDInsight | Документация Майкрософт
 description: Сведения об установке кластеров Hadoop, Kafka, Spark, HBase, R Server или Storm для HDInsight из браузера, с помощью Azure CLI, Azure PowerShell, REST или пакета SDK.
 keywords: установка кластера hadoop, установка кластера kafka, установка кластера spark, что такое кластер hadoop
-services: hdinsight
+services: storage
 documentationcenter: ''
 author: jamesbak
 manager: jahogg
 tags: azure-portal
 ms.component: data-lake-storage-gen2
-ms.service: hdinsight
+ms.service: storage
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: 9c037b35af19b94b6655cf7d1d45ba6b6182879c
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 725e79596a919cba4214dba8b3cc86e9bb48cc79
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346592"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136644"
 ---
 # <a name="quickstart-set-up-clusters-in-hdinsight"></a>Краткое руководство по установке кластеров в HDInsight
 

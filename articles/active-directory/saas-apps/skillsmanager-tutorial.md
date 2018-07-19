@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2017
 ms.author: jeedes
-ms.openlocfilehash: 60deb440d339e5b7d1fb7fe9d9511a3a3331c17c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 06bd3670c576a0515956147996d7500c75cf8708
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230290"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050686"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-manager"></a>Руководство. Интеграция Azure Active Directory со Skills Manager
 
@@ -34,7 +34,7 @@ ms.locfileid: "36230290"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Skills Manager, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36230290"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://subdomain.skills-manager.com/kennametal`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://subdomain.skills-manager.com/public/SamlLogin2.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://subdomain.skills-manager.com/public/SamlLogin2.aspx`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Для получения этих значений обратитесь в [службу поддержки Skills Manager](https://www.ibm.com/support/uk/?lnk=msu_uk).
@@ -205,7 +205,7 @@ ms.locfileid: "36230290"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Skills Manager на панели доступа, вы автоматически войдете в приложение Skills Manager.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

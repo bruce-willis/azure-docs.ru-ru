@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 287204afa7ace9e39507c9dc006549a731b3b992
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: b699714a2ab90fd0ad1c2f290681ccdae7aeb1ba
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230392"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052199"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lifesize-cloud"></a>Учебник. Интеграция Azure Active Directory с Lifesize Cloud
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230392"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Lifesize Cloud, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36230392"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://login.lifesizecloud.com/ls/?acs`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://login.lifesizecloud.com/<companyname>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://login.lifesizecloud.com/<companyname>`
 
      
 4. Установите флажок **Показывать дополнительные параметры URL-адреса** и выполните следующие действия:    
@@ -154,7 +154,7 @@ ms.locfileid: "36230392"
     
     a. В текстовое поле **Издатель поставщика удостоверений** вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
-    Б.  В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b.  В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Откройте в блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его в буфер обмена и вставьте в текстовое поле **Сертификат X.509**.
   
@@ -203,7 +203,7 @@ ms.locfileid: "36230392"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -248,7 +248,7 @@ ms.locfileid: "36230392"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 После щелчка элемента Lifesize Cloud на панели доступа откроется страница входа в приложение Lifesize Cloud.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

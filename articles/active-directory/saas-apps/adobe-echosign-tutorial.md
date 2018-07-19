@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 9a1a1f1a1866e5221775d583a9bafe86eef17131
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d5cdc2ec0c6cfcf52f84629485d0dd879fbf6fa2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221229"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054004"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по интеграции Azure Active Directory с Adobe Sign
 
@@ -33,7 +33,7 @@ ms.locfileid: "36221229"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Adobe Sign, вам потребуется:
 
@@ -107,7 +107,7 @@ ms.locfileid: "36221229"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com/`.
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com`.
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Adobe Sign](https://helpx.adobe.com/in/contact/support.html).
@@ -128,7 +128,7 @@ ms.locfileid: "36221229"
 
     a. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
-    Б. Опубликуйте токен проверки в текстовой записи DNS и отправьте уведомление [группе поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html).
+    b. Опубликуйте токен проверки в текстовой записи DNS и отправьте уведомление [группе поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html).
     
     > [!NOTE]
     > Это может занять несколько дней или больше. Обратите внимание, что задержки распространения DNS означают, что значение, опубликованное в DNS, может не отображаться в течение часа или более. ИТ-администратор должен быть осведомлен о том, как публиковать этот токен в текстовой записи DNS.
@@ -155,7 +155,7 @@ ms.locfileid: "36221229"
    
     a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
    
-    Б. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
+    b. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
    
     c. В разделе **Создание пользователя** установите флажок **Automatically add users authenticated through SAML** (Автоматически добавлять пользователей, прошедших проверку подлинности с использованием SAML).
 
@@ -192,7 +192,7 @@ ms.locfileid: "36221229"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -217,7 +217,7 @@ ms.locfileid: "36221229"
    
     a. Введите в текстовые поля **Адрес электронной почты**, **Имя** и **Фамилия** соответствующие данные действующей учетной записи Azure AD, которую нужно подготовить.
    
-    Б. Нажмите кнопку **Создать пользователя**.
+    b. Нажмите кнопку **Создать пользователя**.
 
 >[!NOTE]
 >Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией. 
@@ -252,7 +252,7 @@ ms.locfileid: "36221229"
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
-Щелкнув элемент Adobe Sign на панели доступа, вы автоматически войдете в приложение Adobe Sign. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент Adobe Sign на панели доступа, вы автоматически войдете в приложение Adobe Sign. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

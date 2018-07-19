@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 8a244c6495098623310023e36f579a9acf1dc871
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d68db3f1b1e6993676ee342d84b7ad1f2e52fffe
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212797"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050713"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workfront"></a>Руководство. Интеграция Azure Active Directory с Workfront
 
@@ -33,7 +33,7 @@ ms.locfileid: "36212797"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Workfront, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36212797"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.attask-ondemand.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.attasksandbox.com/SAML2`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.attasksandbox.com/SAML2`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Workfront](https://www.workfront.com/contact-us/). 
@@ -141,7 +141,7 @@ ms.locfileid: "36212797"
    
     a. Для параметра **Тип** выберите значение **SAML 2.0**.
    
-    Б. Выберите **идентификатор поставщика службы**.
+    b. Выберите **идентификатор поставщика службы**.
    
     c. Вставьте **URL-адрес службы единого входа SAML** в текстовое поле **Login Portal URL** (URL-адрес портала для входа).
    
@@ -179,7 +179,7 @@ ms.locfileid: "36212797"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -200,7 +200,7 @@ ms.locfileid: "36212797"
    
     a. В текстовое поле **First Name** (Имя) введите Britta.
    
-    Б. В текстовое поле **Last Name** (Фамилия) введите Simon.
+    b. В текстовое поле **Last Name** (Фамилия) введите Simon.
    
     c. В текстовом поле **адрес электронной почты** введите адрес электронной почты пользователя Britta Simon в Azure Active Directory.
    
@@ -241,7 +241,7 @@ ms.locfileid: "36212797"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы нажмете плитку Workfront на панели доступа, должна появиться страница входа в приложение Workfront.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

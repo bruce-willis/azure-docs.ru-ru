@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/07/2018
 ms.author: jeedes
-ms.openlocfilehash: 7fb1006fc83b0fc09fd5e0f40ea925508bb2b35f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c2efad63d489bf81b6e0f7c03baecbc9d6571425
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223768"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050669"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skytap"></a>Руководство по интеграции Azure Active Directory с приложением Skytap
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223768"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD со Skytap, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36223768"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://pingone.com/<custom EntityID>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://sso.connect.pingidentity.com/sso/sp/ACS.saml2`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://sso.connect.pingidentity.com/sso/sp/ACS.saml2`
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -204,7 +204,7 @@ ms.locfileid: "36223768"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Skytap на панели доступа, вы автоматически войдете в приложение Skytap.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

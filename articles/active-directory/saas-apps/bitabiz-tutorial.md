@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: jeedes
-ms.openlocfilehash: 368625a325a1a36458491193315d67f139b53cb2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: add86c04cc43d9742576b5c733d18b7117be2c61
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223371"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053830"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bitabiz"></a>Руководство по интеграции Azure Active Directory с BitaBIZ
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223371"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с BitaBIZ, вам потребуется:
 
@@ -149,7 +149,7 @@ ms.locfileid: "36223371"
 
     a. Скопируйте значение из текстового поля **Entity ID (”Identifier” in Azure AD)** (Идентификатор сущности ("Идентификатор" в Azure AD)) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения BitaBIZ** на портале Azure. 
     
-    Б. В текстовое поле **Azure AD Single Sign-On Service URL** (URL-адрес службы единого входа в Azure AD) вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
+    b. В текстовое поле **Azure AD Single Sign-On Service URL** (URL-адрес службы единого входа в Azure AD) вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
     
     c. В текстовое поле **Azure AD SAML Entity ID** (Идентификатор сущности SAML Azure AD) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
@@ -223,7 +223,7 @@ ms.locfileid: "36223371"
 
     a. В текстовом поле **First Name** (Имя) введите имя пользователя, например Britta.
 
-    Б. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
@@ -271,7 +271,7 @@ ms.locfileid: "36223371"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент BitaBIZ на панели доступа, вы автоматически войдете в приложение BitaBIZ.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

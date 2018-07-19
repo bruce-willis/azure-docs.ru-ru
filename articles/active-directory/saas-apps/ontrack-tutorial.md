@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/24/2017
 ms.author: jeedes
-ms.openlocfilehash: aaf36af70b1d868589d52fd212beb5395202e972
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: bf0fdb75a3091380557e1fbb2d69ed59aeb130bf
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225734"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ontrack"></a>Руководство. Интеграция Azure Active Directory с OnTrack
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225734"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с OnTrack, вам потребуется следующее:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36225734"
 
     Для рабочей среды введите URL-адрес: `https://oeaccessories.com/sso`
 
-    Б. В текстовое поле **URL-адрес ответа**:
+    b. В текстовое поле **URL-адрес ответа**:
     
     Для тестовой среды введите URL-адрес: `https://indie.staging.insigniagroup.com/sso/autonation.aspx`
 
@@ -146,7 +146,7 @@ ms.locfileid: "36225734"
 
     ![Настройка единого входа](./media/ontrack-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -233,7 +233,7 @@ ms.locfileid: "36225734"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку OnTrack на панели доступа, вы автоматически войдете в приложение OnTrack.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

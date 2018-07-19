@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: e74138deda20ebb4fbb83ceaa3304dcca82767e7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ad0aed1ded41a422160679dc238ee8814cac4b71
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228855"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053331"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-direct"></a>Учебник. Интеграция Azure Active Directory с Direct
 
@@ -33,7 +33,7 @@ ms.locfileid: "36228855"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Direct, вам потребуется:
 
@@ -159,7 +159,7 @@ ms.locfileid: "36228855"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -211,9 +211,9 @@ ms.locfileid: "36228855"
     
     a. Щелкните элемент **Direct** на панели доступа, и вы будете перенаправлены на страницу входа приложения.
 
-    Б. Введите свой `subdomain` в отображаемом текстовом поле и нажмите клавишу "次へ (Далее)"; вы автоматически войдете в приложение **Direct**.
+    b. Введите свой `subdomain` в отображаемом текстовом поле и нажмите клавишу "次へ (Далее)"; вы автоматически войдете в приложение **Direct**.
     
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/13/2018
 ms.author: jeedes
-ms.openlocfilehash: a408e9da1a5a4adfc67879b3d7ba40f01ca284dd
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 3a6bc36dd508abc06371e0db0f21b96973271ad2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36214330"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052175"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-loginradius"></a>Руководство. Интеграция Azure Active Directory с LoginRadius
 
@@ -34,7 +34,7 @@ ms.locfileid: "36214330"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LoginRadius, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36214330"
 
     a.  В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://secure.loginradius.com/login`.
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес: `https://LoginRadius.hub.loginradius.com/`
      
     > [!NOTE] 
     > Откройте страницу "URL-адрес входа". Откройте вкладку **Единый вход** и введите **имя подключаемого модуля**, предоставленное [группой поддержки LoginRadius](mailto:support@loginradius.com). Затем нажмите кнопку **Войти**, чтобы перейти к странице Azure AD для входа. 
@@ -199,7 +199,7 @@ ms.locfileid: "36214330"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент LoginRadius на панели доступа, вы автоматически войдете в приложение LoginRadius.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

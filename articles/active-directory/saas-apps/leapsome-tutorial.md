@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2018
 ms.author: jeedes
-ms.openlocfilehash: b23a93db7912aa25b420157241c41533f4f48a27
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 4b2c23745a5e624bcf668dfbfe5d085392d7a583
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36939932"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052457"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Руководство по интеграции Azure Active Directory с Leapsome
 
@@ -33,7 +33,7 @@ ms.locfileid: "36939932"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Leapsome, вам потребуется:
 
@@ -109,7 +109,7 @@ ms.locfileid: "36939932"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.leapsome.com`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.leapsome.com/api/users/auth/saml/<CLIENTID>/assert`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.leapsome.com/api/users/auth/saml/<CLIENTID>/assert`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -142,7 +142,7 @@ ms.locfileid: "36939932"
 
     ![Настройка единого входа](./media/leapsome-tutorial/tutorial_attribute_05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -174,7 +174,7 @@ ms.locfileid: "36939932"
 
     a. Установите флажок **Единый вход на основе SAML**.
 
-    Б. Скопируйте значение в поле **Login URL (point your users here to start login) (URL-адрес входа, укажите его, чтобы пользователи начали вход)** и вставьте его в текстовое поле **URL-адрес входа** в разделе **домены и URL-адреса Leapsome** на портале Azure.
+    b. Скопируйте значение в поле **Login URL (point your users here to start login) (URL-адрес входа, укажите его, чтобы пользователи начали вход)** и вставьте его в текстовое поле **URL-адрес входа** в разделе **домены и URL-адреса Leapsome** на портале Azure.
 
     c. Скопируйте значение в поле **Reply URL (recieves response from your identity provider)** (URL-адрес ответа (получает ответ от поставщика удостоверений)) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Leapsome** на портале Azure.
 
@@ -255,7 +255,7 @@ ms.locfileid: "36939932"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Leapsome на панели доступа, вы автоматически войдете в приложение Leapsome.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

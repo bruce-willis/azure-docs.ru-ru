@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 9263be24f883d8a02735e757f3ac02b54960f61f
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 79a2bc9d517e3c292268a4a70f08936cb0325fbd
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227400"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053093"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-github"></a>Руководство. Интеграция Azure Active Directory с GitHub
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227400"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с GitHub, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36227400"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>/sso`.
 
-    Б. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://github.com/orgs/<entity-id>`
 
     > [!NOTE]
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Перейдите в раздел администрирования GitHub, чтобы получить эти значения.
@@ -145,7 +145,7 @@ ms.locfileid: "36227400"
 
     a. В текстовое поле **Sign on URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
-    Б. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Откройте в Блокноте сертификат, скачанный с портала Azure, и вставьте его содержимое в текстовое поле **Public Certificate** (Общедоступный сертификат).
 
@@ -211,7 +211,7 @@ ms.locfileid: "36227400"
 
     ![Приглашение участников](./media/github-tutorial/tutorial_github_config_github_10.png "приглашение участников")
 
-    Б. Щелкните **Send Invitation** (Отправить приглашение).
+    b. Щелкните **Send Invitation** (Отправить приглашение).
 
     ![Приглашение участников](./media/github-tutorial/tutorial_github_config_github_11.png "приглашение участников")
 
@@ -253,7 +253,7 @@ ms.locfileid: "36227400"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент GitHub на панели доступа, вы автоматически войдете в приложение GitHub.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2018
 ms.author: jeedes
-ms.openlocfilehash: 0934ec2443d240234b2120056894921f2e30c81c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d796ebf6e30476d766a0d9b6c78ba4b5cf577b47
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213171"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39056231"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vidyard"></a>Руководство по интеграции Azure Active Directory с Vidyard
 
@@ -34,7 +34,7 @@ ms.locfileid: "36213171"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Vidyard, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36213171"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://secure.vidyard.com/sso/saml/<unique id>/metadata`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://secure.vidyard.com/sso/saml/<unique id>/consume`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://secure.vidyard.com/sso/saml/<unique id>/consume`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -149,7 +149,7 @@ ms.locfileid: "36213171"
 
     a. Введите общее имя профиля в текстовом поле **Profile Name** (Имя профиля).
 
-    Б. Скопируйте значение в поле **SSO User Login Page** (Страница единого входа) и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Домены и URL-адреса приложения Vidyard** на портале Azure.
+    b. Скопируйте значение в поле **SSO User Login Page** (Страница единого входа) и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Домены и URL-адреса приложения Vidyard** на портале Azure.
 
     c. Скопируйте значение в поле **ACS URL** (URL-адрес ACS) и вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса приложения Vidyard** на портале Azure.
 
@@ -252,7 +252,7 @@ ms.locfileid: "36213171"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Vidyard на панели доступа, вы автоматически войдете в приложение Vidyard.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

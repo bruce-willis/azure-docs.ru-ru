@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 1fd7fc6560c3378765623b46f8af59cfc8c65286
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c84f98da4d179aaee198fc489b9fc18650220b33
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231463"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048272"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dome9-arc"></a>Руководство по интеграции Azure Active Directory с Dome9 Arc
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231463"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Dome9 Arc, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36231463"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://secure.dome9.com/`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://secure.dome9.com/sso/saml/yourcompanyname`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://secure.dome9.com/sso/saml/yourcompanyname`.
 
     > [!NOTE]
     > Вам потребуется выбрать название вашей компании на портале администрирования dome9, что описывается далее в этом руководстве.
@@ -142,7 +142,7 @@ ms.locfileid: "36231463"
 
     ![Изменение атрибута для настройки единого входа](./media/dome9arc-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -176,7 +176,7 @@ ms.locfileid: "36231463"
 
     a. Введите название компании в текстовом поле **Account ID** (Идентификатор учетной записи). Это значение будет использоваться в URL-адресе ответа, как упоминалось в разделе о URL-адресе на портале Azure.
 
-    Б. В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    b. В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
     c. В текстовое поле **IdP Endpoint URL** (URL-адрес конечной точки IdP) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
@@ -244,7 +244,7 @@ ms.locfileid: "36231463"
 
     a. В текстовое поле **Email** (Электронная почта) введите электронную почту пользователя, например Brittasimon@contoso.com.
 
-    Б. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
 
@@ -287,7 +287,7 @@ ms.locfileid: "36231463"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Dome9 Arc на панели доступа, вы автоматически войдете в приложение Dome9 Arc.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

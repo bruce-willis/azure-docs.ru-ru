@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 3c33c545e2b630ef501ebd81f4bd29b16cf77759
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c064223e06768dc40892774f00b0588b7ec32fdc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223874"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051485"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-planmyleave"></a>Руководство. Интеграция Azure Active Directory с PlanMyLeave
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223874"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с PlanMyLeave, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36223874"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company-name>.planmyleave.com/Login.aspx`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.planmyleave.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-name>.planmyleave.com`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов PlanMyLeave](mailto:support@planmyleave.com). 
@@ -144,7 +144,7 @@ ms.locfileid: "36223874"
 
     a.  В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
-    Б.  Откройте скачанные метаданные, скопируйте значение **сертификата X509** и вставьте его в текстовое поле **Сертификат**.
+    b.  Откройте скачанные метаданные, скопируйте значение **сертификата X509** и вставьте его в текстовое поле **Сертификат**.
 
     c. Для параметра "**Is Enable**" (Включено) установите значение "**Yes**" (Да).
 
@@ -229,7 +229,7 @@ ms.locfileid: "36223874"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент PlanMyLeave на панели доступа, вы автоматически войдете в приложение PlanMyLeave.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/22/2018
 ms.author: jeedes
-ms.openlocfilehash: c30da2ecebd7c46e8396351f7e7c5ee69c130e29
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d852b30568acff4f1d56a1e208528e8c90b5b1f0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217040"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051784"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redbrick-health"></a>Руководство по интеграции Azure Active Directory с RedBrick Health
 
@@ -34,7 +34,7 @@ ms.locfileid: "36217040"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с RedBrick Health, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36217040"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `http://www.redbrickhealth.com`
     
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://sso-intg.redbrickhealth.com/sp/ACS.saml2`
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://sso-intg.redbrickhealth.com/sp/ACS.saml2`
     
     Для рабочей среды: `https://sso.redbrickhealth.com/sp/ACS.saml2`
 
@@ -146,7 +146,7 @@ ms.locfileid: "36217040"
     
     ![Настройка единого входа](./media/redbrickhealth-tutorial/tutorial_attribute_05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -242,7 +242,7 @@ ms.locfileid: "36217040"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку RedBrick Health на панели доступа, вы автоматически войдете в приложение RedBrick Health.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

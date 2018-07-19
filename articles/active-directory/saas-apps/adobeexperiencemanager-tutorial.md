@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 4279211d130c8fe00a6b89c66222071de480fc52
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 56b392e57809cea0ae93800df39bb9dacd164ce2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216265"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054188"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-adobe-experience-manager"></a>Руководство. Интеграция Azure Active Directory с Adobe Experience Manager
 
@@ -34,7 +34,7 @@ ms.locfileid: "36216265"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Experience Manager, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36216265"
 
     a. В текстовом поле **Идентификатор** введите уникальное значение, которое определяется на сервере AEM. 
 
-    Б. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<AEM Server Url>/saml_login`.
+    b. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<AEM Server Url>/saml_login`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Для получения этих значений обратитесь к [группе поддержки Adobe Experience Manager](https://helpx.adobe.com/support/experience-manager.html).
@@ -183,7 +183,7 @@ ms.locfileid: "36216265"
 
     a. В текстовом поле **Path** (Путь) введите **/**.
 
-    Б. В поле **IDP URL** (URL-адрес IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b. В поле **IDP URL** (URL-адрес IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В поле **IDP Certificate Alias** (Псевдоним сертификата IdP) введите значение **Certificate Alias** (Псевдоним сертификата), которое вы добавили в TrustStore.
 
@@ -278,7 +278,7 @@ ms.locfileid: "36216265"
 
 Щелкнув элемент "Adobe Experience Manager" на панели доступа, вы автоматически войдете в приложение Adobe Experience Manager.
 
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

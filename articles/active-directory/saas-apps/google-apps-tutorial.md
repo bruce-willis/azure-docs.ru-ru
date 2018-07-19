@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/02/2018
 ms.author: jeedes
-ms.openlocfilehash: ce1549231157712ff7421b85685ae796388e77f9
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a8478436bfae20ee729ce41bcb134bd3a77fb26e
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225101"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053477"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Руководство. Интеграция Azure Active Directory с G Suite
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225101"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с G Suite, вам потребуется:
 
@@ -135,7 +135,7 @@ ms.locfileid: "36225101"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://mail.google.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     | |
     |--|
     | `google.com/a/<yourdomain.com>` |
@@ -152,7 +152,7 @@ ms.locfileid: "36225101"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://www.google.com/a/<yourdomain.com>/ServiceLogin?continue=https://console.cloud.google.com `
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     | |
     |--|
     | `google.com/a/<yourdomain.com>` |
@@ -191,7 +191,7 @@ ms.locfileid: "36225101"
    
     a. Выберите **Setup SSO with third party identity provider**(Настройка единого входа с помощью стороннего поставщика удостоверений).
 
-    Б. В поле **Sign-in page URL** (URL-адрес страницы входа) в G Suite вставьте значение поля **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В поле **Sign-in page URL** (URL-адрес страницы входа) в G Suite вставьте значение поля **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. В поле **Sign-out page URL** (URL-адрес страницы выхода) в G Suite вставьте значение поля **URL-адрес выхода**, скопированное на портале Azure. 
 
@@ -281,7 +281,7 @@ ms.locfileid: "36225101"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку G Suite на панели доступа, вы автоматически войдете в приложение G Suite.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

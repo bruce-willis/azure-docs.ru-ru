@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/9/2017
 ms.author: jeedes
-ms.openlocfilehash: 3963928614f18b25d7e8bce4a8ece3b077863898
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 25bb4ba9cfb15657cf28f7018ad622c9dfee9458
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227342"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051935"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Руководство по интеграции Azure Active Directory с MobileIron
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227342"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с MobileIron, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36227342"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.mobileiron.com/<key>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<host>.mobileiron.com/saml/SSO/alias/<key>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<host>.mobileiron.com/saml/SSO/alias/<key>`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -201,7 +201,7 @@ ms.locfileid: "36227342"
 
     a. В текстовое поле **Email address** (Адрес электронной почты) введите адрес электронной почты пользователя, например brittasimon@contoso.com.
 
-    Б. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
     
@@ -242,7 +242,7 @@ ms.locfileid: "36227342"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент MobileIron на панели доступа, вы автоматически войдете в приложение MobileIron.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2018
 ms.author: jeedes
-ms.openlocfilehash: ee97eaf4624b1a34dbc66d1d4e8febab761b7b09
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e0128d4422c462d4424583306af0b30174178bac
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221484"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049258"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boomi"></a>Руководство. Интеграция Azure Active Directory с Boomi
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221484"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Boomi, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36221484"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://platform.boomi.com/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.boomi.com/sso/<boomi-tenant>/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.boomi.com/sso/<boomi-tenant>/saml`.
 
     > [!NOTE] 
     > Значение URL-адреса ответа приведено для примера. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь в [службу поддержки Boomi](https://boomi.com/company/contact/).
@@ -133,7 +133,7 @@ ms.locfileid: "36221484"
     
     ![Настройка единого входа](./media/boomi-tutorial/tutorial_attribute_05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -161,7 +161,7 @@ ms.locfileid: "36221484"
 
     a. Установите флажок **Enable SAML Single Sign-On** (Разрешить единый вход SAML).
 
-    Б. Щелкните **Import** (Импорт), чтобы передать сертификат, загруженный из Azure AD, в качестве **сертификата поставщика удостоверений**.
+    b. Щелкните **Import** (Импорт), чтобы передать сертификат, загруженный из Azure AD, в качестве **сертификата поставщика удостоверений**.
     
     c. В текстовом поле **URL-адрес для входа поставщика удостоверений** введите значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) из окна настройки приложения Azure AD.
 
@@ -224,7 +224,7 @@ ms.locfileid: "36221484"
 
     a. В текстовом поле **User e-mail address** (Адрес электронной почты пользователя) введите электронный адрес пользователя, например BrittaSimon@contoso.com.
     
-    Б. В текстовом поле **First name** (Имя) введите имя пользователя, например Britta.
+    b. В текстовом поле **First name** (Имя) введите имя пользователя, например Britta.
 
     c. В текстовом поле **Last name** (Фамилия) введите фамилию, предположим, Simon.
     
@@ -272,7 +272,7 @@ ms.locfileid: "36221484"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Boomi на панели доступа, вы автоматически войдете в приложение Boomi.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

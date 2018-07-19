@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: jeedes
-ms.openlocfilehash: c718284ca65bc17990fb16b07a27787f28f362c2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e664d9d337b4709b320fdbe1d8e7bd71df3441f9
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227121"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048214"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство по интеграции Azure Active Directory с Attendance Management Services
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227121"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Attendance Management Services, вам потребуется следующее:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36227121"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://id.obc.jp/<tenant information >/`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группу поддержки Attendance Management Services](http://www.obcnet.jp/) для получения этих значений.
@@ -139,7 +139,7 @@ ms.locfileid: "36227121"
 
     a. Установите флажок **Use SAML authentication** (Использовать аутентификацию SAML).
 
-    Б. В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
+    b. В текстовое поле **Identifier** (Идентификатор) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
     c. В текстовое поле **Authentication endpoint URL** (URL-адрес конечной точки аутентификации) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
@@ -207,7 +207,7 @@ ms.locfileid: "36227121"
 
     a. В текстовое поле **OBCiD** введите электронную почту пользователя, например **BrittaSimon@contoso.com**.
 
-    Б. В текстовом поле **Password** (Пароль) введите пароль пользователя.
+    b. В текстовом поле **Password** (Пароль) введите пароль пользователя.
 
     c. Щелкните **Registration** (Регистрация).
 
@@ -247,7 +247,7 @@ ms.locfileid: "36227121"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Attendance Management Services" на панели доступа, вы автоматически войдете в приложение Attendance Management Services.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
