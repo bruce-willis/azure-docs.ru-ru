@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: f4ef40ea5e3d68ed8c04dc2a67042abd74df42aa
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: d1aec5ac1506d1c6151042a65dd8525f29353379
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317814"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39040428"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-manabi-pocket"></a>Руководство. Интеграция Azure Active Directory с Manabi Pocket
 
@@ -33,7 +33,7 @@ ms.locfileid: "36317814"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Manabi Pocket, вам потребуется:
 
@@ -109,7 +109,7 @@ ms.locfileid: "36317814"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://ed-cl.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<SERVER-NAME>.ed-cl.com/<TENANT-ID>/idp/provider`
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Измените это значение на фактический идентификатор. Чтобы получить значение идентификатора, обратитесь в [службу поддержки клиентов Manabi Pocket](mailto:info-ed-cl@ntt.com).
@@ -195,7 +195,7 @@ ms.locfileid: "36317814"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Manabi Pocket на панели доступа, вы автоматически войдете в приложение Manabi Pocket.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

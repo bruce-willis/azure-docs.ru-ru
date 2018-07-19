@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 14ac5aab1488c86949f44f712d80966719f60c4c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c2d8470581fb5bb25b6c1271079508b0e951694d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231448"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046878"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intime"></a>Руководство по интеграции Azure Active Directory с InTime
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231448"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с InTime, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36231448"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://intime6.intimesoft.com/mytime/login/login.xhtml`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес `https://auth.intimesoft.com/auth/realms/master`.
+    b. В текстовом поле **Идентификатор** введите URL-адрес `https://auth.intimesoft.com/auth/realms/master`.
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -206,7 +206,7 @@ ms.locfileid: "36231448"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Если щелкнуть элемент "InTime" на панели доступа, должна появиться страница входа в приложение InTime. Нажмите кнопку **Login** (Вход), после чего в списке кнопок отобразится несколько IdP. Нажмите кнопку с **именем IdP**, предоставленным [группой поддержки InTime](mailto:hdollard@intimesoft.com), чтобы войти в приложение InTime. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Если щелкнуть элемент "InTime" на панели доступа, должна появиться страница входа в приложение InTime. Нажмите кнопку **Login** (Вход), после чего в списке кнопок отобразится несколько IdP. Нажмите кнопку с **именем IdP**, предоставленным [группой поддержки InTime](mailto:hdollard@intimesoft.com), чтобы войти в приложение InTime. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

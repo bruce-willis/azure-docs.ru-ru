@@ -9,16 +9,16 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 0ab70de83c36ec3048d9bbf74e5a315026f02b85
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 3d34628a5a47788bca8cdafcb6e199a0c2cb3bcc
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035704"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437847"
 ---
 # <a name="install-azure-iot-edge-runtime-on-windows-to-use-with-windows-containers"></a>Установка среды выполнения Azure IoT Edge в Windows для использования с контейнерами Windows
 
-Среда выполнения Azure IoT Edge развертывается на всех устройствах IoT Edge. Она состоит из трех компонентов. **Управляющая программа безопасности IoT Edge** обеспечивает безопасность и соответствие стандартам безопасности на устройстве Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запустив агент IoT Edge. **Агент IoT Edge** упрощает развертывание и мониторинг модулей на устройстве IoT Edge, включая центр IoT Edge. **Центр IoT Edge** управляет взаимодействием между модулями на устройстве IoT Edge, а также между устройством и Центром Интернета вещей.
+Среда выполнения Azure IoT Edge развертывается на всех устройствах IoT Edge. Она состоит из трех компонентов. **Управляющая программа безопасности IoT Edge** обеспечивает безопасность и соответствие стандартам безопасности на устройстве Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская агент IoT Edge. **Агент IoT Edge** упрощает развертывание и мониторинг модулей на устройстве IoT Edge, в том числе центр IoT Edge. **Центр IoT Edge** управляет взаимодействием между модулями на устройстве IoT Edge, а также между устройством и Центром Интернета вещей.
 
 В этой статье описаны этапы установки среды выполнения Azure IoT Edge на компьютере под управлением 64-разрядной ОС Windows (на базе процессора AMD или Intel). 
 
@@ -70,13 +70,13 @@ New-Service -Name "iotedge" -BinaryPathName "C:\ProgramData\iotedge\iotedged.exe
 Start-Service iotedge
 ```
 
-Добавьте исключения брандмауэра для портов, используемых службой:
+Добавьте исключения брандмауэра для портов, используемых службой.
 
 ```powershell
 New-NetFirewallRule -DisplayName "iotedged allow inbound 15580,15581" -Direction Inbound -Action Allow -Protocol TCP -LocalPort 15580-15581 -Program "C:\programdata\iotedge\iotedged.exe" -InterfaceType Any
 ```
 
-Создайте файл **iotedge.reg** с указанным ниже содержимым и импортируйте его в реестр Windows. Для этого дважды щелкните этот файл или используйте команду `reg import iotedge.reg`:
+Создайте файл **iotedge.reg** с указанным ниже содержимым и импортируйте его в реестр Windows. Для этого дважды щелкните этот файл или используйте команду `reg import iotedge.reg`.
 
 ```
 Windows Registry Editor Version 5.00
@@ -89,15 +89,37 @@ Windows Registry Editor Version 5.00
 
 ## <a name="configure-the-azure-iot-edge-security-daemon"></a>Настройка управляющей программы безопасности Azure IoT Edge
 
-Управляющую программу можно настроить с помощью файла конфигурации (`C:\ProgramData\iotedge\config.yaml`). Устройство Edge можно настроить <!--[automatically via Device Provisioning Service][lnk-dps] or--> вручную, используя [строку подключения устройства][lnk-dcs].
+Управляющую программу можно настроить с помощью файла конфигурации `C:\ProgramData\iotedge\config.yaml`.
 
-Чтобы настроить устройство вручную, в файле **config.yaml** в разделе **provisioning** вставьте строку подключения устройства.
+Устройство IoT Edge можно настроить вручную, используя [строку подключения устройства][lnk-dcs], или автоматически, используя [Службы подготовки устройств к добавлению в Центр Интернета вещей][lnk-dps].
 
-```yaml
-provisioning:
-  source: "manual"
-  device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
-```
+* Для настройки вручную раскомментируйте режим подготовки **manual**. Замените значение **device_connection_string** строкой подключения для устройства IoT Edge.
+
+   ```yaml
+   provisioning:
+     source: "manual"
+     device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+  
+   # provisioning: 
+   #   source: "dps"
+   #   global_endpoint: "https://global.azure-devices-provisioning.net"
+   #   scope_id: "{scope_id}"
+   #   registration_id: "{registration_id}"
+   ```
+
+* Для автоматической настройки раскомментируйте режим подготовки **dps**. Замените значения **scope_id** и **registration_id** значениями для вашего экземпляра Службы подготовки устройств к добавлению в Центр Интернета вещей и устройства IoT Edge с доверенным платформенным модулем. 
+
+   ```yaml
+   # provisioning:
+   #   source: "manual"
+   #   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+  
+   provisioning: 
+     source: "dps"
+     global_endpoint: "https://global.azure-devices-provisioning.net"
+     scope_id: "{scope_id}"
+     registration_id: "{registration_id}"
+   ```
 
 Получите имя устройства Edge с помощью команды `hostname` в PowerShell и укажите его в качестве значения в разделе **hostname:** в YAML-файле конфигурации. Например: 
 
@@ -114,30 +136,38 @@ provisioning:
   hostname: "edgedevice-1"
 ```
 
-Далее необходимо указать IP-адрес и порт для **workload_uri** и **management_uri** в разделе **connect:** конфигурации.
+Затем укажите IP-адрес и порт для параметров **workload_uri** и **management_uri** в разделах конфигурации **connect:** и **listen:**.
 
-В качестве IP-адреса в окне PowerShell укажите `ipconfig` и выберите IP-адрес интерфейса **vEthernet (nat)**, как показано в примере ниже (IP-адрес вашего компьютера может отличаться):  
+Чтобы получить IP-адрес, в окне PowerShell укажите `ipconfig` и скопируйте IP-адрес интерфейса **vEthernet (nat)**, как показано в примере ниже (IP-адрес вашего компьютера может отличаться):  
 
 ![NAT][img-nat]
 
+Обновите параметры **workload_uri** и **management_uri** в разделе **connect:** файла конфигурации. Замените **\<GATEWAY_ADDRESS\>** своим IP-адресом. 
+
 ```yaml
 connect:
-  management_uri: "http://172.29.240.1:15580"
-  workload_uri: "http://172.29.240.1:15581"
+  management_uri: "http://<GATEWAY_ADDRESS>:15580"
+  workload_uri: "http://<GATEWAY_ADDRESS>:15581"
 ```
 
-В разделе конфигурации **listen:** введите те же адреса. Например: 
+В разделе **listen:** файла конфигурации введите те же адреса, используя свой IP-адрес в качестве адреса шлюза.
 
 ```yaml
 listen:
-  management_uri: "http://172.29.240.1:15580"
-  workload_uri: "http://172.29.240.1:15581"
+  management_uri: "http://<GATEWAY_ADDRESS>:15580"
+  workload_uri: "http://<GATEWAY_ADDRESS>:15581"
 ```
 
-В окне PowerShell создайте переменную среды **IOTEDGE_HOST** с адресом **management_uri**, например:
+В окне PowerShell создайте переменную среды **IOTEDGE_HOST** с адресом **management_uri**.
 
 ```powershell
-[Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://172.29.240.1:15580")
+[Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://<GATEWAY_ADDRESS>:15580")
+```
+
+Сохраняйте переменную среды между перезагрузками.
+
+```powershell
+SETX /M IOTEDGE_HOST "http://<GATEWAY_ADDRESS>:15580"
 ```
 
 Наконец, убедитесь, что параметр **network:** в разделе **moby_runtime:** раскомментирован и для него указано значение **nat**.
@@ -158,7 +188,9 @@ Start-Service iotedge
 
 ## <a name="verify-successful-installation"></a>Проверка успешного выполнения установки
 
-Чтобы проверить состояние службы IoT Edge, используйте следующий код: 
+Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. Дальнейшие инструкции см. в руководстве по [созданию и подготовке имитированного устройства IoT Edge TPM в Windows](how-to-auto-provision-simulated-device-windows.md#create-a-tpm-environment-variable).
+
+Чтобы проверить состояние службы IoT Edge, используйте следующий код. 
 
 ```powershell
 Get-Service iotedge
@@ -177,7 +209,7 @@ Get-WinEvent -ea SilentlyContinue `
   sort-object @{Expression="TimeCreated";Descending=$false}
 ```
 
-Чтобы получить список запущенных модулей, используйте следующий код:
+Чтобы получить список запущенных модулей, используйте следующий код.
 
 ```powershell
 iotedge list
@@ -193,8 +225,8 @@ iotedge list
 
 <!-- Links -->
 [lnk-docker-config]: https://docs.docker.com/docker-for-windows/#switch-between-windows-and-linux-containers
-[lnk-dcs]: ../iot-hub/quickstart-send-telemetry-dotnet.md#register-a-device
-[lnk-dps]: how-to-simulate-dps-tpm.md
+[lnk-dcs]: how-to-register-device-portal.md
+[lnk-dps]: how-to-auto-provision-simulated-device-windows.md
 [lnk-oci]: https://www.opencontainers.org/
 [lnk-moby]: https://mobyproject.org/
 [lnk-trouble]: troubleshoot.md

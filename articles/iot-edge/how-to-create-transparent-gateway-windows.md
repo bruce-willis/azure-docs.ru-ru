@@ -8,12 +8,12 @@ ms.date: 6/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: edc44f0ab2d2cc737807dd8ad543997cdd75bd43
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 96ca5a7ec8b0c87984ea2c76af446d7a8b5504a1
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035212"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344306"
 ---
 # <a name="create-a-windows-iot-edge-device-that-acts-as-a-transparent-gateway"></a>Создание устройства Windows IoT Edge, выступающего в роли прозрачного шлюза
 
@@ -33,107 +33,110 @@ ms.locfileid: "37035212"
 
 Шлюз предоставляет сертификат ЦС своего пограничного устройства подчиненному устройству при инициировании подключения. Подчиненное устройство выполняет проверку, чтобы получить подтверждение того, что сертификат ЦС пограничного устройства подписан сертификатом ЦС владельца. В результате этого процесса подчиненное устройство получает подтверждение о том, что шлюз предоставлен надежным источником.
 
-Ниже приведены пошаговые инструкции по созданию сертификатов и их правильной установке.
+Ниже приведены пошаговые инструкции по созданию сертификатов и их установке в нужных расположениях.
 
 ## <a name="prerequisites"></a>предварительным требованиям
 1.  [Установите среду выполнения Azure IoT Edge][lnk-install-windows-x64] на устройстве Windows, которое необходимо использовать в качестве прозрачного шлюза.
 
-1. Установите OpenSSL для Windows. Это можно сделать множеством способов. Ниже описано, как сделать это с помощью vcpkg.
-   1. Загрузите и установите vcpkg с помощью приведенных команд, которые следует выполнить от имени администратора PowerShell. Перейдите в каталог, в который нужно установить OpenSSL, например `$VCPKGDIR`.
+1. Установите OpenSSL для Windows. Установить OpenSSL можно разными способами.
 
-   ```PowerShell
-   git clone https://github.com/Microsoft/vcpkg
-   cd vcpkg
-   .\bootstrap-vcpkg.bat
-   .\vcpkg integrate install
-   .\vcpkg install openssl:x64-windows
-   ```
+   >[!NOTE]
+   >Если на вашем устройстве Windows установлен пакет OpenSSL, вы можете пропустить этот шаг, но убедитесь в доступности `openssl.exe` в переменной среды `%PATH%`.
 
-   1. Задайте переменной среды `OPENSSL_ROOT_DIR` значение `$VCPKGDIR\vcpkg\packages\openssl_x64-windows` и добавьте строку `$VCPKGDIR\vcpkg\packages\openssl_x64-windows\tools\openssl` к переменной среды `PATH`.
+   * Скачайте и установите любые [сторонние двоичные файлы OpenSS ](https://wiki.openssl.org/index.php/Binaries), например из [этого проекта на SourceForge](https://sourceforge.net/projects/openssl/).
+   
+   * Скачайте исходный код OpenSSL и создайте двоичные файлы на компьютере самостоятельно или с помощью [vcpkg](https://github.com/Microsoft/vcpkg). В следующих инструкциях используется vcpkg для скачивания исходного кода, а также компиляции и установки OpenSSL на компьютере Windows с помощью очень простых действий.
 
-1.  Получите скрипты, чтобы с использованием указанной ниже команды создать необходимые сертификаты, которые не используются в рабочих целях. Эти скрипты помогут создать необходимые сертификаты для настройки прозрачного шлюза.
+      1. Перейдите в каталог для установки vcpkg. В дальнейшем он будет называться $VCPKGDIR. Следуйте указаниям, чтобы скачать и установить [vcpkg](https://github.com/Microsoft/vcpkg).
+   
+      1. После установки vcpkg в командной строке PowerShell выполните следующую команду, чтобы установить пакет OpenSSL для Windows x64. Обычно это занимает около пяти минут.
 
-   ```PowerShell
-   git clone https://github.com/Azure/azure-iot-sdk-c.git
-   ```
+         ```PowerShell
+         .\vcpkg install openssl:x64-windows
+         ```
+      1. Добавьте `$VCPKGDIR\vcpkg\packages\openssl_x64-windows\tools\openssl` в переменную среды `PATH`, чтобы сделать файл `openssl.exe` доступным для вызова.
 
 1. Перейдите в каталог, в котором вы планируете работать. В дальнейшем он будет называться $WRKDIR.  Все файлы будут созданы в этом каталоге.
-
+   
    cd $WRKDIR
 
-1. Скопируйте файлы конфигурации и скриптов в рабочую папку.
+1.  Получите скрипты, чтобы с помощью указанной ниже команды создать необходимые сертификаты, которые не используются в рабочей среде. Эти скрипты помогут вам создать необходимые сертификаты для настройки прозрачного шлюза.
+
+      ```PowerShell
+      git clone https://github.com/Azure/azure-iot-sdk-c.git
+      ```
+
+1. Скопируйте файлы конфигурации и скриптов в рабочую папку. Кроме того, настройте переменную среды OPENSSL_CONF на использование файла конфигурации openssl_root_ca.cnf.
+
    ```PowerShell
    copy azure-iot-sdk-c\tools\CACertificates\*.cnf .
    copy azure-iot-sdk-c\tools\CACertificates\ca-certs.ps1 .
+   $env:OPENSSL_CONF = "$PWD\openssl_root_ca.cnf"
    ```
 
 1. Позвольте PowerShell выполнить эти скрипты, выполнив следующую команду:
+
    ```PowerShell
    Set-ExecutionPolicy -ExecutionPolicy Unrestricted
    ```
 
 1. Добавьте используемые скриптами функции в глобальное пространство имен PowerShell с помощью техники dot-sourcing, выполнив следующую команду:
+   
    ```PowerShell
    . .\ca-certs.ps1
    ```
 
-1. Убедитесь, что средство OpenSSL установлено правильно и не возникают ли конфликты имен с имеющимися сертификатами, выполнив следующую команду:
+1. Убедитесь, что средство OpenSSL установлено правильно и не возникают ли конфликты имен с имеющимися сертификатами, выполнив следующую команду: При возникновении проблем скрипт должен описывать способы их устранения.
+
    ```PowerShell
    Test-CACertsPrerequisites
    ```
 
 ## <a name="certificate-creation"></a>Создание сертификата
-1.  Создайте сертификат ЦС владельца и один промежуточный сертификат. Они размещаются в каталоге `$WRKDIR`.
+1.  Создайте сертификат ЦС владельца и один промежуточный сертификат. Они будут размещаться в каталоге `$WRKDIR`.
 
-   ```PowerShell
-   New-CACertsCertChain rsa
-   ```
-
-   Выходные данные выполнения скриптов представляют собой следующие сертификаты и ключи:
-   * Сертификаты
-      * `$WRKDIR\certs\azure-iot-test-only.root.ca.cert.pem`
-      * `$WRKDIR\certs\azure-iot-test-only.intermediate.cert.pem`
-   * ключей
-      * `$WRKDIR\private\azure-iot-test-only.root.ca.key.pem`
-      * `$WRKDIR\private\azure-iot-test-only.intermediate.key.pem`
+      ```PowerShell
+      New-CACertsCertChain rsa
+      ```
 
 1.  Создайте сертификат ЦС пограничного устройства и закрытый ключ с помощью указанной ниже команды.
 
    >[!NOTE]
    > **Не** используйте то же самое имя, что и для узла DNS шлюза. Это приведет к ошибке сертификации клиентов для этих сертификатов.
 
-      ```PowerShell
-      New-CACertsEdgeDevice "<gateway device name>"
-      ```
-
-   Выходные данные выполнения скрипта представляют собой следующие сертификат и ключ:
-   * `$WRKDIR\certs\new-edge-device.*`
-   * `$WRKDIR\private\new-edge-device.key.pem`
+   ```PowerShell
+   New-CACertsEdgeDevice "<gateway device name>"
+   ```
 
 ## <a name="certificate-chain-creation"></a>Создание цепочки сертификатов
-Создайте цепочку сертификатов, состоящую из сертификата ЦС владельца, промежуточного сертификата и сертификата ЦС пограничного устройства, выполнив следующую команду: Размещение в файле цепочки позволяет легко установить ее на пограничном устройстве, выступающем в роли прозрачного шлюза.
+Создайте цепочку сертификатов, состоящую из сертификата ЦС владельца, промежуточного сертификата и сертификата ЦС устройства Edge, с помощью приведенной ниже команды. Размещение в файле цепочки позволяет легко установить ее на пограничном устройстве, выступающем в роли прозрачного шлюза.
 
    ```PowerShell
    Write-CACertsCertificatesForEdgeDevice "<gateway device name>"
    ```
 
-## <a name="installation-on-the-gateway"></a>Установка на шлюзе
-1.  Скопируйте следующие файлы из каталога $WRKDIR в любое расположение на устройстве Edge, которое теперь будет называться $CERTDIR. Если вы создавали сертификаты на пограничном устройстве, пропустите этот этап.
+   Результат выполнения скриптов — это следующие сертификаты и ключ:
+   * `$WRKDIR\certs\new-edge-device.*`
+   * `$WRKDIR\private\new-edge-device.key.pem`
+   * `$WRKDIR\certs\azure-iot-test-only.root.ca.cert.pem`
 
-   * Сертификат ЦС устройства — `$WRKDIR\certs\new-edge-device-full-chain.cert.pem`
-   * Закрытый ключ ЦС устройства — `$WRKDIR\private\new-edge-device.key.pem`
-   * ЦС владельца — `$WRKDIR\certs\azure-iot-test-only.root.ca.cert.pem`
+## <a name="installation-on-the-gateway"></a>Установка в шлюзе
+1.  Скопируйте указанные ниже файлы из каталога $WRKDIR в любое расположение на устройстве Edge, которое теперь будет называться $CERTDIR. Если вы создавали сертификаты на пограничном устройстве, пропустите этот этап.
 
-2.  В файле конфигурации YAML управляющей программы безопасности для свойств `certificate` укажите путь к каталогу, в котором размещены файлы сертификатов и ключей.
+   * Сертификат ЦС устройства — `$WRKDIR\certs\new-edge-device-full-chain.cert.pem`.
+   * Закрытый ключ ЦС устройства — `$WRKDIR\private\new-edge-device.key.pem`.
+   * ЦС владельца — `$WRKDIR\certs\azure-iot-test-only.root.ca.cert.pem`.
+
+2.  В YAML-файле конфигурации управляющей программы безопасности для свойств `certificate` укажите путь к каталогу, в котором размещены файлы сертификатов и ключей.
 
 ```yaml
 certificates:
-  device_ca_cert: "$CERTDIR\certs\new-edge-device-full-chain.cert.pem"
-  device_ca_pk: "$CERTDIR\private\new-edge-device.key.pem"
-  trusted_ca_certs: "$CERTDIR\certs\azure-iot-test-only.root.ca.cert.pem"
+  device_ca_cert: "$CERTDIR\\certs\\new-edge-device-full-chain.cert.pem"
+  device_ca_pk: "$CERTDIR\\private\\new-edge-device.key.pem"
+  trusted_ca_certs: "$CERTDIR\\certs\\azure-iot-test-only.root.ca.cert.pem"
 ```
-## <a name="deploy-edgehub-to-the-gateway"></a>Развертывание модуля EdgeHub на шлюзе
-Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. В этом разделе описано, как создать пустое, на первый взгляд, развертывание; однако центр Edge автоматически добавляется во все развертывания даже при отсутствии других модулей. Центр Edge — единственный модуль, который нужен на пограничном устройстве, чтобы оно работало как прозрачный шлюз, поэтому достаточно просто создать пустое развертывание. 
+## <a name="deploy-edgehub-to-the-gateway"></a>Развертывание модуля EdgeHub в шлюзе
+Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. В этом разделе описано, как создать пустое на первый взгляд развертывание. Однако центр Edge автоматически добавляется во все развертывания даже при отсутствии других модулей. Центр Edge — единственный модуль, который должен быть установлен на устройстве Edge, чтобы оно работало как прозрачный шлюз, поэтому достаточно просто создать пустое развертывание. 
 1. Найдите нужный Центр Интернета вещей на портале Azure.
 2. Перейдите к **IoT Edge** и выберите устройство IoT Edge, которое нужно использовать в качестве шлюза.
 3. Щелкните **Set Modules** (Настроить модули).
@@ -161,12 +164,16 @@ certificates:
    sudo update-ca-certificates
    ```
  
-    Должно отобразиться следующее сообщение: Updating certificates in /etc/ssl/certs... 1 added, 0 removed; done.
+    Должно отобразиться следующее сообщение: "Updating certificates in /etc/ssl/certs... 1 added, 0 removed; done" (Обновление сертификатов в /etc/ssl/certs... Добавлено: 1, удалено: 0. Готово.).
 
-* Windows. [В этой](https://msdn.microsoft.com/en-us/library/cc750534.aspx) статье подробно описано, как сделать это на устройстве под управлением ОС Windows с помощью мастера импорта сертификатов.
+* Windows. В примере ниже показано, как установить сертификат ЦС на узле под управлением ОС Windows.
+  * В меню "Пуск" выберите "Управление сертификатами компьютера". Откроется служебная программа `certlm`.
+  * Выберите "Сертификаты — локальный компьютер" --> "Доверенные корневые сертификаты" --> "Сертификаты" --> щелкните правой кнопкой мыши --> "Все задачи" --> "Импорт". Откроется мастер импорта сертификатов.
+  * Выполните указанные действия и импортируйте файл сертификата $CERTDIR/certs/azure-iot-test-only.root.ca.cert.pem.
+  * По завершении вы увидите сообщение "Импорт выполнен".
 
 ### <a name="application-level"></a>На уровне приложения
-Для приложений .NET можно добавить следующий фрагмент кода, чтобы подтвердить сертификат в формате PEM. Инициализируйте переменную `certPath` со значением `$CERTDIR\certs\azure-iot-test-only.root.ca.cert.pem`.
+Для приложений .NET можно добавить следующий фрагмент кода, чтобы подтвердить доверие к сертификату в формате PEM. Инициализируйте переменную `certPath` со значением `$CERTDIR\certs\azure-iot-test-only.root.ca.cert.pem`.
 
    ```
    using System.Security.Cryptography.X509Certificates;
@@ -187,12 +194,12 @@ certificates:
    ```
 
    >[!NOTE]
-   >Это пример команды, с помощью которой можно проверить правильность настроек. Должно отобразиться следующее сообщение: verified OK.
+   >Это пример команды, с помощью которой можно проверить правильность настроек. Должно отобразиться следующее сообщение: "verified OK" (Проверка выполнена успешно).
    >
    >openssl s_client -connect mygateway.contoso.com:8883 -CAfile $CERTDIR/certs/azure-iot-test-only.root.ca.cert.pem -showcerts
 
 ## <a name="routing-messages-from-downstream-devices"></a>Маршрутизация сообщений с подчиненных устройств
-Среда выполнения IoT Edge может маршрутизировать сообщения, отправляемые с подчиненных устройств. Например, сообщения, отправляемые модулями. Благодаря этому можно анализировать данные на базе модулей, запущенных на шлюзе, прежде чем данные будут отправлены в облако. Ниже представлен маршрут, по которому сообщения отправляются с подчиненного устройства `sensor` на модуль `ai_insights`.
+Среда выполнения IoT Edge может маршрутизировать сообщения, отправляемые с подчиненных устройств. Например, сообщения, отправляемые модулями. Благодаря этому можно анализировать данные на базе модулей, работающих в шлюзе, прежде чем данные будут отправлены в облако. Ниже представлен маршрут, по которому сообщения отправляются с подчиненного устройства `sensor` на модуль `ai_insights`.
 
    ```json
    { "routes":{ "sensorToAIInsightsInput1":"FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO BrokeredEndpoint(\"/modules/ai_insights/inputs/input1\")", "AIInsightsToIoTHub":"FROM /messages/modules/ai_insights/outputs/output1 INTO $upstream" } }

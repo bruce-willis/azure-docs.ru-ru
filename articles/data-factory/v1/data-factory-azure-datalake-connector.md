@@ -1,5 +1,5 @@
 ---
-title: Копирование данных в Azure Data Lake Store и обратно | Документация Майкрософт
+title: Копирование данных в Azure Data Lake Storage Gen1 и обратно | Документы Майкрософт
 description: Узнайте, как с помощью фабрики данных Azure копировать данные в Data Lake Store и обратно
 services: data-factory
 documentationcenter: ''
@@ -14,22 +14,22 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 8f86f43b4d8c474f338285abffb3c444f5ebc2d7
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 97bd2081df8c90f885996629862f25cbec8fd2c2
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054744"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37860237"
 ---
-# <a name="copy-data-to-and-from-data-lake-store-by-using-data-factory"></a>Копирование данных в Data Lake Store и обратно с помощью фабрики данных Azure
+# <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и обратно с помощью фабрики данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](data-factory-azure-datalake-connector.md)
 > * [Версия 2 (текущая)](../connector-azure-data-lake-store.md)
 
 > [!NOTE]
-> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью о [соединителе Azure Data Lake Store в службе "Фабрика данных Azure" версии 2](../connector-azure-data-lake-store.md).
+> В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. раздел [Соединитель Azure Data Lake Storage Gen1 версии 2](../connector-azure-data-lake-store.md).
 
-В этой статье рассказывается, как с помощью действия копирования в фабрике данных Azure перемещать данные в Azure Data Lake Store и обратно. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
+В этой статье описывается, как с помощью действия копирования в фабрике данных Azure перемещать данные из Azure Data Lake Storage Gen1 (ранее Azure Data Lake Store) и в него. Это продолжение статьи о [действиях перемещения данных](data-factory-data-movement-activities.md), в которой приведены общие сведения о перемещении данных с помощью действия копирования.
 
 ## <a name="supported-scenarios"></a>Поддерживаемые сценарии использования.
 Данные можно скопировать **из Azure Data Lake Store** в следующие хранилища данных:

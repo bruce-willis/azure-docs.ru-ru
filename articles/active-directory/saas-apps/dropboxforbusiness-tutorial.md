@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: jeedes
-ms.openlocfilehash: a0481b2eb688b70d5e56b2b6793b026d6b4c96a2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 3423f723b3f4857db44c609cd0e2143b6b04653e
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220005"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37868635"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dropbox-for-business"></a>Руководство. Интеграция Azure Active Directory с Dropbox for Business
 
@@ -158,7 +158,7 @@ ms.locfileid: "36220005"
    
     a. Установите флажок **Обязательно**.
    
-    Б. В текстовое поле **Sign-in URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    Б. В текстовое поле **URL-адрес входа** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
 
     c. Щелкните **Choose certificate** (Выбрать сертификат), а затем выберите **файл сертификата в кодировке Base64**.
 

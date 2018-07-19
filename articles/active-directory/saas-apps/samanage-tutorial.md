@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
-ms.openlocfilehash: e338dda7ffaf25a80663c2939fd42342b4049883
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c90c0c2f831a622b54a56db5c9a3d4efb2f57eaa
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222895"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041863"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-samanage"></a>Руководство. Интеграция Azure Active Directory с Samanage
 
@@ -33,7 +33,7 @@ ms.locfileid: "36222895"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Samanage, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36222895"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com/saml_login/<Company Name>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<Company Name>.samanage.com`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическими URL-адресом для входа и идентификатором, как описано позже в данном руководстве. Для получения дополнительных сведений обратитесь к [группе поддержки клиентов Samanage](https://www.samanage.com/support).    
@@ -147,7 +147,7 @@ ms.locfileid: "36222895"
  
     a. Установите флажок **Enable Single Sign-On with SAML**(Включить единый вход с помощью SAML).  
  
-    Б. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.    
+    b. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.    
  
     c. Убедитесь, что значение **Login URL** (URL-адрес входа) соответствует значению **URL-адрес входа** из раздела **Домены и URL-адреса приложения Samanage** на портале Azure.
  
@@ -189,7 +189,7 @@ ms.locfileid: "36222895"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -258,7 +258,7 @@ ms.locfileid: "36222895"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Samanage на панели доступа, вы автоматически войдете в приложение Samanage.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

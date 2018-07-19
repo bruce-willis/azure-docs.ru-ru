@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: d5fe4b6703f9b860932e36a296f3d103a4f94807
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4f5ff9906ec5a4f57d64704a4b10cf7027878e72
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219862"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047082"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Руководство по интеграции Azure Active Directory с iWellnessNow
 
@@ -34,7 +34,7 @@ ms.locfileid: "36219862"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с iWellnessNow, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36219862"
 
     ![Передача конфигурации домена и URL-адресов для единого входа в приложение iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_uploadconfig.png)
 
-    Б. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
     
     c. После успешной передачи **файла метаданных поставщика службы** значения **идентификатора** и **URL-адреса ответа** автоматически добавятся в раздел **Домены и URL-адреса приложения iWellnessNow**, как показано ниже:
 
@@ -124,7 +124,7 @@ ms.locfileid: "36219862"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://<CustomerName>.iwellnessnow.com`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
 
 5. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -216,7 +216,7 @@ ms.locfileid: "36219862"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "iWellnessNow" на панели доступа, вы автоматически войдете в приложение iWellnessNow.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

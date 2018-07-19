@@ -8,13 +8,13 @@ manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.topic: article
-ms.date: 06/21/2018
-ms.openlocfilehash: 2fc224445f89a0b0b4afdc0ef1d0eb1b25b45f36
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.date: 06/30/2018
+ms.openlocfilehash: 1fd5905b8ea3f87fe6cfc2a830b73b8120a717dd
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36311198"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37341483"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Ограничения в службе "База данных Azure для MySQL"
 В следующих разделах приводятся ограничения, касающиеся емкости, поддерживаемых подсистем хранилища, поддерживаемых разрешений, поддерживаемых инструкций языка обработки данных и функциональных возможностей в службе базы данных. Кроме того, ознакомьтесь с [общими ограничениями](https://dev.mysql.com/doc/mysql-reslimits-excerpt/5.6/en/limits.html), применимыми к ядру СУБД базы данных MySQL.
@@ -77,6 +77,9 @@ ms.locfileid: "36311198"
 ### <a name="point-in-time-restore"></a>Восстановление до точки во времени
 - При использовании компонента PITR создается новый сервер с конфигурацией сервера, с которого он восстанавливается.
 - Восстановление удаленного сервера не поддерживается.
+
+### <a name="vnet-service-endpoints"></a>Конечные точки службы виртуальной сети
+- Поддержка конечных точек службы виртуальной сети предназначена только для серверов общего назначения и серверов, оптимизированных для операций в памяти.
 
 ### <a name="subscription-management"></a>Управление подпиской
 - В настоящее время динамическое перемещение предварительно созданных серверов между подпиской и группой ресурсов не поддерживается.

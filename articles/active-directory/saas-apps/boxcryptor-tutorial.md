@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/22/2018
 ms.author: jeedes
-ms.openlocfilehash: 8e1008636fe442d6d00a36fecd63a6e48f2cce04
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f3b6f088b044b661037c754dad3918bec879a387
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220056"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043515"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство. Интеграция Azure Active Directory с Boxcryptor
 
@@ -34,7 +34,7 @@ ms.locfileid: "36220056"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Boxcryptor, вам потребуются:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36220056"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://www.boxcryptor.com/app`.
 
-    Б. В текстовом поле **Идентификатор** введите значение: `boxcryptor`
+    b. В текстовом поле **Идентификатор** введите значение: `boxcryptor`
 
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -201,7 +201,7 @@ ms.locfileid: "36220056"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Boxcryptor на панели доступа, вы автоматически войдете в приложение Boxcryptor.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

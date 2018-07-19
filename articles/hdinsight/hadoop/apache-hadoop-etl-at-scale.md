@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 2f34233a68bec506d9f69426d779aee8e493d759
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 9314b8ae8dceb29a9aee63ba3093ab191d4fdef3
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31402069"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37115835"
 ---
 # <a name="extract-transform-and-load-etl-at-scale"></a>Извлечение, преобразование и загрузка (ETL) в масштабе
 
@@ -85,7 +85,7 @@ ADLS также оптимизирована для приема событий 
 
 * Azure ExpressRoute. Позволяет создавать частные подключения между центрами обработки данных Azure и локальной инфраструктурой. Такое подключение обеспечивает надежный вариант передачи больших объемов данных. Дополнительные сведения см. в [техническом обзоре ExpressRoute](../../expressroute/expressroute-introduction.md).
 
-* "Автономная" передача данных. Вы можете использовать [службу импорта и экспорта Azure](../../storage/common/storage-import-export-service.md) для доставки жестких дисков с данными в центр обработки данных Azure. Данные сначала будут отправлены в хранилище BLOB-объектов Azure. Затем с помощью [фабрики данных Azure](../../data-factory/v1/data-factory-azure-datalake-connector.md) или инструмента [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md) можно скопировать данные из больших двоичных объектов службы хранилища Azure в Data Lake Store.
+* "Автономная" передача данных. Вы можете использовать [службу импорта и экспорта Azure](../../storage/common/storage-import-export-service.md) для доставки жестких дисков с данными в центр обработки данных Azure. Данные сначала будут отправлены в хранилище BLOB-объектов Azure. Затем с помощью [фабрики данных Azure](../../data-factory/connector-azure-data-lake-store.md) или инструмента [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md) можно скопировать данные из больших двоичных объектов службы хранилища Azure в Data Lake Store.
 
 ### <a name="azure-sql-data-warehouse"></a>Хранилище данных SQL Azure
 

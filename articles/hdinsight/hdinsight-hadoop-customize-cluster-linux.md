@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: larryfr
-ms.openlocfilehash: 856a94b0cf64a20fbe9267b76422c47d88d21f43
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 500b6ef33bb70cd5138067d88303b7db9121e867
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32778909"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37102088"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -58,7 +58,7 @@ ms.locfileid: "32778909"
 
 * Они должны храниться в URI, доступном из кластера HDInsight. Возможные места хранения:
 
-    * **учетная запись Azure Data Lake Store**, доступная из кластера HDInsight. Дополнительные сведения об использовании Azure Data Lake Store с HDInsight см. в статье [Создание кластера HDInsight с Data Lake Store с помощью портала Azure](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+    * **учетная запись Azure Data Lake Store**, доступная из кластера HDInsight. Сведения об использовании Azure Data Lake Store с HDInsight см. в статье [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
         Если скрипт находится в Data Lake Store, универсальный код ресурса (URI) имеет следующий формат: `adl://DATALAKESTOREACCOUNTNAME.azuredatalakestore.net/path_to_file`.
 
@@ -173,9 +173,7 @@ ms.locfileid: "32778909"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-the-azure-portal"></a>Использование действия сценария при создании кластера с портала Azure
 
-1. Начните создание кластера, как описано в разделе [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md). Остановитесь, когда откроется колонка __Сводка по кластерам__.
-
-2. В колонке __Сводка по кластерам__ щелкните ссылку __Изменить__ для элемента __Дополнительные параметры__.
+1. Начните создание кластера, как описано в разделе [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md). При создании кластера отобразится страница __Сводка кластера__. На странице __Сводка кластера__ щелкните ссылку __Изменить__ для элемента __Дополнительные параметры__.
 
     ![Ссылка "Дополнительные параметры"](./media/hdinsight-hadoop-customize-cluster-linux/advanced-settings-link.png)
 

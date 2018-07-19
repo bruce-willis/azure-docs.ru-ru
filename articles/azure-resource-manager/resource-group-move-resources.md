@@ -12,14 +12,14 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/25/2018
+ms.date: 07/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 7bee84e1ce473c27730b3fe84aa0a580baeba7c2
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 4f73b6d735997b663ca6769aaceaf363b6d3eda7
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36940165"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37346490"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -119,19 +119,26 @@ ms.locfileid: "36940165"
 * Application Insights
 * Analysis Services
 * Служба автоматизации
+* Azure Active Directory B2C
 * Azure Cosmos DB
+* Карты Azure
 * Ретранслятор Azure
+* Azure Stack — регистрации
+* Служба "Миграция Azure"
 * Пакетная служба Azure
-* Карты Bing
+* Службы BizTalk
+* Служба Bot Service
 * CDN
 * Облачные службы — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Cognitive Services
+* Реестр контейнеров
 * Content Moderator
 * Каталог данных
-* Фабрику данных версии 1 можно перемещать, но перемещение версии 2 (предварительная версия) не поддерживается
+* Фабрика данных
 * Data Lake Analytics
 * Data Lake Store
 * DNS
+* Служба "Сетка событий Azure"
 * Концентраторы событий
 * Кластеры HDInsight — см. раздел [Ограничения HDInsight](#hdinsight-limitations).
 * Центры Интернета вещей;
@@ -145,14 +152,15 @@ ms.locfileid: "36940165"
 * Центры уведомлений
 * Operational Insights;
 * Пакет Operations Management
+* Панели мониторинга на портале
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — см. [ограничения общедоступного IP-адреса](#pip-limitations)
 * Кэш Redis
 * Планировщик
 * поиска
-* Управление сервером
 * Служебная шина Azure
 * Service Fabric
+* Служба SignalR
 * Служба хранилища
 * Служба хранилища (классическая) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Stream Analytics — задание Stream Analytics в состоянии выполнения нельзя переместить.
@@ -175,20 +183,24 @@ ms.locfileid: "36940165"
 * Шлюз приложений
 * База данных Azure для MySQL
 * База данных Azure для PostgreSQL
-* Служба "Миграция Azure"
-* Службы BizTalk
+* Azure Database Migration Service
+* Azure Databricks
+* Искусственный интеллект пакетной службы
 * Сертификаты. Сертификаты службы приложений можно перемещать, но для переданных сертификатов действуют [ограничения](#app-service-limitations).
 * Служба контейнеров
-* DevTest Labs — переход на новую группу ресурсов в одной подписке включен, но перемещение между подписками недоступно.
 * Dynamics LCS.
 * ExpressRoute
 * Служба Kubernetes
+* Службы лабораторий — переход на новую группу ресурсов в одной подписке включен, но перемещение между подписками не доступно.
 * Подсистемы балансировки нагрузки — см. [ограничения подсистемы балансировки нагрузки](#lb-limitations)
 * Управляемые приложения
 * Управляемые диски — см. сведения об [ограничениях для виртуальных машин](#virtual-machines-limitations).
+* Microsoft Genomics
 * Общедоступный IP-адрес — см. [ограничения общедоступного IP-адреса](#pip-limitations)
 * Хранилище служб восстановления — не перемещайте ресурсы хранилища, а также вычислительные и сетевые ресурсы, связанные с хранилищем служб восстановления. См. раздел [Ограничения служб восстановления](#recovery-services-limitations).
+* SAP HANA в Azure
 * Безопасность
+* Site Recovery
 * Диспетчер устройств StorSimple
 * Виртуальные сети (классические) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 

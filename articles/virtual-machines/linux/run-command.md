@@ -8,12 +8,12 @@ ms.author: gwallace
 ms.date: 06/06/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 93972c88676cceef07b39b4a4ed34bab5b74cbd3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 850c5ac4df8ff3bd0e35567060b3b90dad7baacc
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36334879"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342697"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-with-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью команды запуска
 
@@ -36,6 +36,7 @@ ms.locfileid: "36334879"
 * Скрипты, которые запрашивают сведения (в интерактивном режиме), не поддерживаются.
 * Вы не можете отменить выполнение сценария
 * Максимальное время выполнения сценария составляет 90 минут, после чего он выдаст ошибку времени ожидания
+* Чтобы вернуть результаты скрипта, требуется разрешить исходящие подключения из виртуальной машины.
 
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 

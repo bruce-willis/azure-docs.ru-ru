@@ -1,11 +1,11 @@
 ---
 title: Вопросы и ответы о службе приложений Azure на платформе Linux | Документация Майкрософт
 description: 'Служба приложений Azure на платформе Linux: вопросы и ответы.'
-keywords: служба приложений azure, веб-приложение, вопросы и ответы, linux, oss
+keywords: служба приложений azure, веб-приложение, вопросы и ответы, linux, oss, веб-приложение для контейнеров, мультиконтейнер, многоконтейнерный
 services: app-service
 documentationCenter: ''
-author: ahmedelnably
-manager: cfowler
+author: yili
+manager: apurvajo
 editor: ''
 ms.assetid: ''
 ms.service: app-service
@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/18/2018
-ms.author: msangapu
-ms.openlocfilehash: 5b3b3d3946b56ff53ad74c2ab93a646baa787d05
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.date: 06/26/2018
+ms.author: yili
+ms.openlocfilehash: ea2e9d9fd1d9390cdd689b4f33b72cd471feeb8c
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222983"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37916862"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -66,7 +66,7 @@ ms.locfileid: "36222983"
 
 Да.
 
-**Можно ли развернуть веб-приложение с помощью *веб-развертывания*?**
+**Можно ли развернуть веб-приложение с помощью *WebDeploy или MSDeploy*?**
 
 Да. Для параметра `WEBSITE_WEBDEPLOY_USE_SCM` приложения необходимо задать значение *false*.
 
@@ -144,6 +144,35 @@ var io = require('socket.io')(server,{
 **Нужно ли реализовать протокол HTTPS в своем настраиваемом контейнере?**
 
 Нет, платформа обрабатывает завершение протокола HTTPS на общих внешних интерфейсах.
+
+## <a name="multi-container-with-docker-compose-and-kubernetes"></a>Мультиконтейнер с Docker Compose и Kubernetes
+
+**Как настроить Реестр контейнеров Azure (ACR) для использования с мультиконтейнером?**
+
+Для использования ACR с мультиконтейнером **все образы контейнеров** должны размещаться на одном сервере реестра ACR. Если они находятся на одном сервере реестра, необходимо создать параметры приложения, а затем изменить файл конфигурации Docker Compose или Kubernetes, включив в него имя образа ACR.
+
+Создайте следующие параметры приложений:
+
+- DOCKER_REGISTRY_SERVER_USERNAME
+- DOCKER_REGISTRY_SERVER_URL (полный URL-адрес; пример: https://<имя-сервера>.azurecr.io)
+- DOCKER_REGISTRY_SERVER_PASSWORD (включить доступ с правами администратора в параметрах ACR)
+
+В файле конфигурации укажите образ ACR, как в следующем примере:
+
+```yaml
+image: <server-name>.azurecr.io/<image-name>:<tag>
+```
+
+**Как узнать, какой контейнер доступен из Интернета?**
+
+- Доступ может быть открыт только к одному контейнеру
+- Доступны только порты 80 и 8080 (предоставляемые порты)
+
+Ниже приведены правила определения доступного контейнера в порядке приоритета.
+
+- Параметру приложения `WEBSITES_WEB_CONTAINER_NAME` присвоено имя контейнера
+- Первый контейнер, который определяет порт 80 или 8080
+- Если ни одно из приведенных выше правил не выполняется, доступным (предоставляемым) будет первый контейнер, определенный в файле
 
 ## <a name="pricing-and-sla"></a>Цены и соглашение об уровне обслуживания
 

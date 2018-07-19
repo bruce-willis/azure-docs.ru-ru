@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 1cd97a9f5cf06be73c866e40744401a7bc4ce157
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4cf5bcc3fe803212b01f14c950b97b3bb16b13a5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215774"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041268"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Руководство по интеграции Azure Active Directory с TimeLive
 
@@ -34,7 +34,7 @@ ms.locfileid: "36215774"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TimeLive, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36215774"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://domainname.livetecs.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://domainname.livetecs.com/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://domainname.livetecs.com/`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса единого входа. Чтобы получить их, обратитесь к [группе поддержки клиентов TimeLive](mailto:support@livetecs.com). 
@@ -141,7 +141,7 @@ ms.locfileid: "36215774"
 
     a. Выберите вкладку **Security** (Безопасность).
 
-    Б. Установите флажок **Enable Single Sign On (SSO)** (Разрешить единый вход).
+    b. Установите флажок **Enable Single Sign On (SSO)** (Разрешить единый вход).
 
     c. Выберите **SAML** из раскрывающегося меню с заголовком **Sign in using Single Sign-On (SSO) with** (Вход с использованием единого входа на основе).
 
@@ -227,7 +227,7 @@ ms.locfileid: "36215774"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "TimeLive" на панели доступа, вы автоматически войдете в приложение TimeLive.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

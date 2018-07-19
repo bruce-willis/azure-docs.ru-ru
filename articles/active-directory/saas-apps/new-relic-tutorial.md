@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/31/2017
 ms.author: jeedes
-ms.openlocfilehash: a311a99522f5a47290cbf60993a2d1aa1997dcca
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f91c2f5a2f12e449e6f47475bd08c1613268658d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215635"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-new-relic"></a>Учебник. Интеграция Azure Active Directory с New Relic
 
@@ -34,7 +34,7 @@ ms.locfileid: "36215635"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с New Relic, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36215635"
 
     a. В поле **URL-адрес входа** введите URL-адрес, используя следующий шаблон: `https://rpm.newrelic.com/accounts/{acc_id}/sso/saml/login`. Не забудьте подставить собственный идентификатор учетной New Relic.
 
-    Б. В текстовом поле **Идентификатор** введите значение `rpm.newrelic.com`.
+    b. В текстовом поле **Идентификатор** введите значение `rpm.newrelic.com`.
 
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -142,7 +142,7 @@ ms.locfileid: "36215635"
    
    a. Щелкните **Выбор файла** , чтобы передать скачанный сертификат Azure Active Directory.
 
-   Б. В текстовое поле **URL-адрес удаленного входа** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+   b. В текстовое поле **URL-адрес удаленного входа** вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
    
    c. В текстовое поле **Logout landing URL** (URL-адрес целевой страницы выхода) вставьте значение **URL-адреса выхода**, скопированное на портале Azure.
 
@@ -206,7 +206,7 @@ ms.locfileid: "36215635"
    
     a. В текстовом поле **Электронная почта** введите электронный адрес действующего пользователя Azure Active Directory, которого вы хотите подготовить.
 
-    Б. Для параметра **Role** (Роль) выберите значение **User** (Пользователь).
+    b. Для параметра **Role** (Роль) выберите значение **User** (Пользователь).
 
     c. Щелкните **Добавить этого пользователя**.
 
@@ -249,7 +249,7 @@ ms.locfileid: "36215635"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент New Relic на панели доступа, вы автоматически войдете в приложение New Relic.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

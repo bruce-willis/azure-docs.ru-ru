@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/04/2018
 ms.author: hrushib
-ms.openlocfilehash: cfbc0e6ca255bd005bb6e4cc381a9121347fe227
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: e9bc85cec6cb1d0e35aa71f4e1934c057dbf946d
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34206051"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37114533"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric-preview"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия)
 > [!div class="op_single_selector"]
@@ -50,7 +50,7 @@ Service Fabric предоставляет набор API для использо
 
 - Планирование периодического резервного копирования надежных служб с отслеживанием состояния и Reliable Actors с поддержкой передачи резервных копий во внешние места хранения. Поддерживаемые места хранения
     - Хранилище Azure
-    - Файловый ресурс (локальный).
+    - Файловый ресурс (в локальной среде)
 - Перечисление резервных копий.
 - Запуск нерегламентированного резервного копирования секции.
 - Восстановление секции с помощью предыдущей резервной копии.

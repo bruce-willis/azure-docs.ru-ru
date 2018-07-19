@@ -1,6 +1,6 @@
 ---
-title: Повышение прав доступа для глобального администратора в Azure Active Directory | Документы Майкрософт
-description: Сведения об использовании портала Azure или REST API для повышения прав доступа для глобального администратора в Azure Active Directory.
+title: Повышение прав доступа глобального администратора в Azure Active Directory | Документация Майкрософт
+description: Сведения об использовании портала Azure или REST API для повышения прав доступа глобального администратора в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -9,22 +9,22 @@ editor: bagovind
 ms.assetid: b547c5a5-2da2-4372-9938-481cb962d2d6
 ms.service: role-based-access-control
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/11/2018
+ms.date: 06/29/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: e1e46d5fb786b09a4c006b61f52b3ac99aafd555
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 0abf0a5971435fc3842a93e79d39468cba5c74da
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266511"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445217"
 ---
-# <a name="elevate-access-for-a-global-administrator-in-azure-active-directory"></a>Повышение прав доступа для глобального администратора в Azure Active Directory
+# <a name="elevate-access-for-a-global-administrator-in-azure-active-directory"></a>Повышение прав доступа глобального администратора в Azure Active Directory
 
-Если вы являетесь [глобальным администратором](../active-directory/active-directory-assign-admin-roles-azure-portal.md#global-administrator) в Azure Active Directory (Azure AD), иногда могут возникать ситуации, требующие выполнения следующих задач:
+Если вы являетесь [глобальным администратором](../active-directory/users-groups-roles/directory-assign-admin-roles.md#company-administrator) в Azure Active Directory (Azure AD), иногда могут возникать ситуации, требующие выполнения следующих задач:
 
 - восстановление доступа к подписке Azure, если пользователь потерял доступ;
 - предоставление другому пользователю или себе доступа к подписке Azure;
@@ -37,7 +37,7 @@ ms.locfileid: "35266511"
 
 [!INCLUDE [gdpr-dsr-and-stp-note](../../includes/gdpr-dsr-and-stp-note.md)]
 
-## <a name="elevate-access-for-a-global-administrator-using-the-azure-portal"></a>Повышение прав доступа для глобального администратора с помощью портала Azure
+## <a name="elevate-access-for-a-global-administrator-using-the-azure-portal"></a>Повышение прав доступа глобального администратора с помощью портала Azure
 
 1. Войдите на [портал Azure](https://portal.azure.com) или [центр администрирования Azure Active Directory](https://aad.portal.azure.com).
 
@@ -88,9 +88,9 @@ Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
   -RoleDefinitionName "User Access Administrator" -Scope "/"
 ```
 
-## <a name="elevate-access-for-a-global-administrator-using-the-rest-api"></a>Повышение прав доступа для глобального администратора с помощью REST API
+## <a name="elevate-access-for-a-global-administrator-using-the-rest-api"></a>Повышение прав доступа глобального администратора с помощью REST API
 
-Чтобы повысить права доступа для глобального администратора с помощью REST API, выполните приведенные ниже основные действия.
+Чтобы повысить права доступа глобального администратора с помощью REST API, выполните приведенные ниже основные действия.
 
 1. С помощью REST вызовите действие `elevateAccess`, которое предоставит вам роль администратора доступа пользователей в области root (`/`).
 
@@ -220,4 +220,5 @@ Remove-AzureRmRoleAssignment -SignInName <username@example.com> `
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Управление доступом на основе ролей с помощью REST](role-assignments-rest.md)
-- [Управление назначениями доступа](role-assignments-users.md)
+- [Управление доступом к ресурсам Azure с помощью управления привилегированными пользователями (PIM)](pim-azure-resource.md)
+- [Управление доступом к функциям управления Azure с помощью условного доступа](conditional-access-azure-management.md)

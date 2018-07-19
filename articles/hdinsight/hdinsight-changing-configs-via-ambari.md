@@ -1,23 +1,20 @@
 ---
 title: Оптимизация конфигураций кластеров с помощью Ambari (Azure HDInsight) | Документация Майкрософт
 description: Настройка и оптимизация кластеров HDInsight с помощью пользовательского веб-интерфейса Ambari.
-documentationcenter: ''
 author: ashishthaps
 manager: jhubbard
 editor: cgronlun
-ms.assetid: ''
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: article
-ms.date: 01/09/2018
+ms.date: 07/09/2018
 ms.author: ashish
-ms.openlocfilehash: f3c1edc767ab07bcdd8b09a0e40e291cbd1f3d9a
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 2f0956c1cbbc6a351b2fc76a6918280dbead298f
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31406190"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37951222"
 ---
 # <a name="use-ambari-to-optimize-hdinsight-cluster-configurations"></a>Использование Ambari для оптимизации конфигураций кластеров HDInsight
 
@@ -245,7 +242,7 @@ Hive позволяет создавать динамические секции
 
 2. Измените режим динамических секций на *strict* (Строгий). В строгом режиме хотя бы одна секция должна быть статической. Это предотвращает выполнение запросов без фильтра секций в предложении WHERE, то есть *строгий* режим предотвращает выполнение запросов, которые проверяют все секции. Перейдите на вкладку **Configs** (Конфигурации) Hive, а затем задайте для параметра `hive.exec.dynamic.partition.mode` значение **strict** (Строгий). По умолчанию используется значение **nonstrict** (Нестрогий).
  
-3. Чтобы ограничить число создаваемых динамических секций, измените параметр hive.exec.max.dynamic.partitions. Его значение по умолчанию — 5000.
+3. Чтобы ограничить число создаваемых динамических секций, измените параметр `hive.exec.max.dynamic.partitions`. По умолчанию используется значение 5000.
  
 4. Чтобы ограничить общее число динамических секций на узел, измените параметр `hive.exec.max.dynamic.partitions.pernode`. По умолчанию используется значение 2000.
 

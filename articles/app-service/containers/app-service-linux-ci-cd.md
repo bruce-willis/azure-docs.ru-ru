@@ -4,8 +4,8 @@ description: Как настроить непрерывное развертыв
 keywords: azure app service, linux, docker, acr,oss
 services: app-service
 documentationcenter: ''
-author: ahmedelnably
-manager: cfowler
+author: msangapu
+manager: jeconnoc
 editor: ''
 ms.assetid: a47fb43a-bbbd-4751-bdc1-cd382eae49f8
 ms.service: app-service
@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2017
-ms.author: aelnably;msangapu
-ms.openlocfilehash: ac35dbd041de50ab8aae1a0fb4c00fe3917a7297
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.date: 06/29/2018
+ms.author: msangapu
+ms.openlocfilehash: 0f2d4626308eed376b71f1b3df2f9e43f1b2a4f7
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30168332"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37130971"
 ---
 # <a name="continuous-deployment-with-web-app-for-containers"></a>Непрерывное развертывание с использованием платформы Azure "Веб-приложения для контейнеров"
 
@@ -54,7 +54,8 @@ az webapp deployment container config --name name --resource-group myResourceGro
 az webapp deployment container show-cd-url --name sname1 --resource-group rgname
 ```
 
-Для URL-адреса веб-перехватчика необходима следующая конечная точка: `https://<publishingusername>:<publishingpwd>@<sitename>.scm.azurewebsites.net/docker/hook`.
+Запишите URL-адрес веб-перехватчика. Он понадобится в следующем разделе.
+`https://<publishingusername>:<publishingpwd>@<sitename>.scm.azurewebsites.net/docker/hook`.
 
 Вы можете получить `publishingusername` и `publishingpwd`, скачав профиль публикации веб-приложения с помощью портала Azure.
 
@@ -62,29 +63,10 @@ az webapp deployment container show-cd-url --name sname1 --resource-group rgname
 
 ## <a name="add-a-webhook"></a>Добавление веб-перехватчика
 
-### <a name="azure-container-registry"></a>реестр контейнеров Azure;
+Чтобы добавить веб-перехватчик, выполните инструкции в этих руководствах:
 
-1. На странице портала реестра выберите **Веб-перехватчики**.
-2. Чтобы создать веб-перехватчик, выберите **Добавить**. 
-3. В области **Создание веб-перехватчика** задайте имя веб-перехватчика. В качестве URI веб-перехватчика укажите URL-адрес, полученный в предыдущем разделе.
-
-Убедитесь, что вы определили область в качестве репозитория, который содержит образ контейнера.
-
-![Снимок экрана с веб-перехватчиком](./media/app-service-webapp-service-linux-ci-cd/step3ACRWebhook-1.png)
-
-При обновлении образа веб-приложение будет автоматически обновлено с использованием нового образа.
-
-### <a name="docker-hub"></a>Docker Hub
-
-На своей странице Docker Hub выберите **Webhooks** (Веб-перехватчики), а затем щелкните **CREATE A WEBHOOK** (Создать веб-перехватчик).
-
-![Снимок экрана с добавлением веб-перехватчика (1)](./media/app-service-webapp-service-linux-ci-cd/step3-1.png)
-
-В качестве URL-адреса веб-перехватчика укажите URL-адрес, полученный ранее.
-
-![Снимок экрана с добавлением веб-перехватчика (2)](./media/app-service-webapp-service-linux-ci-cd/step3-2.png)
-
-При обновлении образа веб-приложение будет автоматически обновлено с использованием нового образа.
+- [Реестр контейнеров Azure](../../container-registry/container-registry-webhook.md) (с использованием URL-адреса веб-перехватчика).
+- [Веб-перехватчики для центра Docker](https://docs.docker.com/docker-hub/webhooks/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

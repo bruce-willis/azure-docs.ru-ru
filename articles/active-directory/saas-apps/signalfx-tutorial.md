@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 69a9aa2ab6c1fd379d7f3421fc70cc8cffd1cb3a
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 24a5c1a260cf86f0860e0292c2eb9527f976a363
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36214276"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39040516"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-signalfx"></a>Руководство по интеграции Azure Active Directory с SignalFx
 
@@ -34,7 +34,7 @@ ms.locfileid: "36214276"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SignalFx, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36214276"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес: `https://api.signalfx.com/v1/saml/metadata`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.signalfx.com/v1/saml/acs/<integration ID>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://api.signalfx.com/v1/saml/acs/<integration ID>`.
 
     > [!NOTE] 
     > Приведенное выше значение используется только для примера. Это значение следует заменить фактическим URL-адресом ответа, который описывается далее в этом руководстве.
@@ -134,7 +134,7 @@ ms.locfileid: "36214276"
 
     ![Добавление атрибута для настройки единого входа](./media/signalfx-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -148,7 +148,7 @@ ms.locfileid: "36214276"
 
     a. Нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложения**, а затем вставьте его в Блокнот.
 
-    Б. Щелкните **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
+    b. Щелкните **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
 
 7. Нажмите кнопку **Сохранить** .
 
@@ -174,7 +174,7 @@ ms.locfileid: "36214276"
 
     a. В текстовом поле **Name** (Имя) введите имя новой интеграции, например **OurOrgName SAML SSO**.
 
-    Б. Скопируйте значение **Integration ID** (Идентификатор интеграции) и присоедините к нему **Reply URL** (URL-адрес ответа), например `https://api.signalfx.com/v1/saml/acs/<integration ID>`, в текстовом поле **URL-адрес ответа** раздела **Домены и URL-адреса приложения SignalFx** на портале Azure.
+    b. Скопируйте значение **Integration ID** (Идентификатор интеграции) и присоедините к нему **Reply URL** (URL-адрес ответа), например `https://api.signalfx.com/v1/saml/acs/<integration ID>`, в текстовом поле **URL-адрес ответа** раздела **Домены и URL-адреса приложения SignalFx** на портале Azure.
 
     c. Щелкните **Upload File** (Отправить файл), чтобы отправить **сертификат в кодировке Base64**, скачанный с портала Azure, в поле **Certificate** (Сертификат).
 
@@ -260,7 +260,7 @@ ms.locfileid: "36214276"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SignalFx на панели доступа, вы автоматически войдете в приложение SignalFx.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/25/2017
 ms.author: jeedes
-ms.openlocfilehash: 64f47954d3d8c393bd5bf236fbd265e49f10fe5c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4936e8d3c48486247677cf072513b7e450f1bf17
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211413"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044039"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-anaplan"></a>Руководство. Интеграция Azure Active Directory с Anaplan
 
@@ -33,7 +33,7 @@ ms.locfileid: "36211413"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Anaplan, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36211413"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://sdp.anaplan.com/frontdoor/saml/<tenant name>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.anaplan.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.anaplan.com`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Anaplan](mailto:support@anaplan.com). 
@@ -161,7 +161,7 @@ ms.locfileid: "36211413"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "36211413"
 
 Щелкнув элемент Anaplan на панели доступа, вы автоматически войдете в приложение Anaplan.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

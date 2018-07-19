@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 05/02/2018
+ms.date: 07/02/2018
 ms.author: jroth
-ms.openlocfilehash: 71c86af9d4dcdf1026b4f539574b9932ef1cfc89
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: e9033724f62b383ce70488b98a3a8919e3cb198a
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767806"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37345283"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "32767806"
 
 **Оплата за использование лицензий SQL Server** означает, что стоимость секунды выполнения виртуальной машины Azure включает в себя стоимость лицензии SQL Server. Цены на разные выпуски SQL Server (Web, Standard, Enterprise) можно узнать на странице со сведениями о ценах на виртуальные машины Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux).
 
-Стоимость одинакова для всех версий SQL Server (от версии 2012 SP3 до 2017). Стоимость секунды лицензии зависит от числа ядер виртуальной машины, как и в случае с любыми лицензиями SQL Server.
+Стоимость одинакова для всех версий SQL Server (от версии 2012 SP3 до 2017). Стоимость секунды лицензии зависит от числа виртуальных ЦП виртуальной машины.
 
 Оплата за использование лицензий SQL Server рекомендуется в следующих случаях.
 
@@ -128,7 +128,7 @@ ms.locfileid: "32767806"
 
 ### <a id="machinesize"></a>Выбор оптимального размера виртуальной машины
 
-Стоимость лицензирования SQL Server напрямую связана с количеством ядер. Выберите размер виртуальной машины, который соответствует требованиям к ожидаемому использованию ЦП, памяти, хранилища и пропускной способности ввода-вывода. Полный список размеров виртуальных машин см. в статьях [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes) и [Размеры виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Стоимость лицензирования SQL Server напрямую связана с количеством виртуальных ЦП. Выберите размер виртуальной машины, который соответствует требованиям к ожидаемому использованию ЦП, памяти, хранилища и пропускной способности ввода-вывода. Полный список размеров виртуальных машин см. в статьях [Размеры виртуальных машин Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes) и [Размеры виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/sizes?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Введены новые размеры, которые подходят для определенных типов рабочих нагрузок SQL Server. Они поддерживают высокий уровень памяти, хранилища и пропускной способности ввода-вывода, но имеют меньшее количество виртуальных ядер. Рассмотрим следующий пример.
 
@@ -140,7 +140,7 @@ ms.locfileid: "32767806"
 > [!IMPORTANT]
 > Это пример "на момент времени". Самые последние спецификации можно найти в статьях о размерах виртуальных машин и на странице цен Azure для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) и [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
 
-В предыдущем примере показано, что спецификации для **Standard_DS14v2** и **Standard_DS14 4v2** идентичны, за исключением количества виртуальных ЦП. Суффикс **-4v2** в конце размера машины **Standard_DS14 4v2** указывает количество активных виртуальных ЦП. Так как затраты на лицензирование SQL Server связаны с количеством ядер, это значительно снижает стоимость виртуальной машины в сценариях, где не требуются дополнительные виртуальные ЦП. Это всего лишь один из примеров. Есть и много других размеров виртуальных машин с ограниченным числом виртуальных ЦП, которые идентифицируются по такому суффиксу. Дополнительные сведения см. в записи блога [Announcing new Azure VM sizes for more cost-effective database workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/) (Объявление новых размеров виртуальных машин Azure для более экономичных рабочих нагрузок базы данных).
+В предыдущем примере показано, что спецификации для **Standard_DS14v2** и **Standard_DS14 4v2** идентичны, за исключением количества виртуальных ЦП. Суффикс **-4v2** в конце размера машины **Standard_DS14 4v2** указывает количество активных виртуальных ЦП. Так как затраты на лицензирование SQL Server связаны с количеством виртуальных ЦП, это значительно снижает стоимость виртуальной машины в сценариях, где не требуются дополнительные виртуальные ЦП. Это всего лишь один из примеров. Есть и много других размеров виртуальных машин с ограниченным числом виртуальных ЦП, которые идентифицируются по такому суффиксу. Дополнительные сведения см. в записи блога [Announcing new Azure VM sizes for more cost-effective database workloads](https://azure.microsoft.com/blog/announcing-new-azure-vm-sizes-for-more-cost-effective-database-workloads/) (Объявление новых размеров виртуальных машин Azure для более экономичных рабочих нагрузок базы данных).
 
 ### <a name="shut-down-your-vm-when-possible"></a>Завершение работы виртуальной машины (если возможно)
 

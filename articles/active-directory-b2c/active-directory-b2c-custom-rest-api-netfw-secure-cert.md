@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 004577ead56befce02771b82ace088706e8f0c3c
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 0832b3b8e0b2b6d7459eeddb8d8e5a93a7f17d09
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "34709212"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37448355"
 ---
 # <a name="secure-your-restful-service-by-using-client-certificates"></a>Защита служб RESTful с помощью сертификатов клиента
 
@@ -38,21 +38,13 @@ ms.locfileid: "34709212"
 * Получите действительный сертификат (PFX-файл с закрытым ключом).
 
 ## <a name="step-1-configure-a-web-app-for-client-certificate-authentication"></a>Шаг 1. Настройка веб-приложения для проверки подлинности по сертификату клиента
-Чтобы в **службе приложений Azure** подавался запрос на сертификат клиента, установите для параметра `clientCertEnabled` веб-приложения значение *True*. Чтобы внести это изменение, используйте REST API. Этот параметр доступен в интерфейсе управления на портале Azure. Чтобы найти параметр, в меню **Параметры** приложения RESTful в разделе **Средства разработки** выберите **Обозреватель ресурсов**.
+Чтобы в **службе приложений Azure** подавался запрос на сертификат клиента, установите для параметра `clientCertEnabled` веб-приложения значение *True*. Чтобы внести это изменение, откройте страницу своего веб-приложения на портале Azure. На панели навигации слева в разделе **Параметры** выберите **Параметры SSL**. В разделе **Сертификаты клиента** включите параметр **Входящий сертификат клиента**.
 
 >[!NOTE]
 >Ваш план службы приложений Azure должен иметь уровень "Стандартный" или выше. Дополнительные сведения см. в статье [Подробный обзор планов службы приложений Azure](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).
 
-
-Используйте [обозреватель ресурсов Azure (предварительная версия)](https://resources.azure.com), чтобы установить значение *True* для свойства **clientCertEnabled**, как показано на следующем рисунке.
-
-![Параметр clientCertEnabled в обозревателе ресурсов Azure](media/aadb2c-ief-rest-api-netfw-secure-cert/rest-api-netfw-secure-client-cert-resource-explorer.png)
-
 >[!NOTE]
 >Дополнительные сведения об установке свойства **clientCertEnabled** см. в статье [Настройка взаимной проверки подлинности TLS для веб-приложения](https://docs.microsoft.com/azure/app-service-web/app-service-web-configure-tls-mutual-auth).
-
->[!TIP]
->Кроме того, для быстрого создания вызова REST API можно воспользоваться средством [ARMClient](https://github.com/projectkudu/ARMClient).
 
 ## <a name="step-2-upload-your-certificate-to-azure-ad-b2c-policy-keys"></a>Шаг 2. Отправка сертификата в хранилище ключей политики Azure AD B2C
 Когда вы установите для `clientCertEnabled` значение *True*, обмен данными с RESTful API будет выполняться только при наличии сертификата клиента. Чтобы получить сертификат клиента, а также отправить его в клиент Azure AD B2C и сохранить в нем, сделайте следующее: 

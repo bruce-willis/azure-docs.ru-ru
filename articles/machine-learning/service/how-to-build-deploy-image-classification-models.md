@@ -9,12 +9,12 @@ ms.reviewer: jmartens
 ms.author: netahw
 author: nhaiby
 ms.date: 04/23/2018
-ms.openlocfilehash: 72f5215bac9254c9e3295b2cade7b6d44d516af6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 6b7f73573cb1465b89e54e30894b3549153e4acb
+ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34637741"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37888438"
 ---
 # <a name="build-and-deploy-image-classification-models-with-azure-machine-learning"></a>Построение и развертывание моделей классификации изображений с помощью Машинного обучения Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "34637741"
 7. Развертывание веб-службы.
 8. Нагрузочное тестирование веб-службы.
 
-[CNTK](https://www.microsoft.com/cognitive-toolkit/) используется как платформа глубокого обучения, которое выполняется локально на компьютере с графическим процессором, например [виртуальная машина для обработки и анализа данных для глубокого обучения](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), а в развертывании используется Operationalization CLI Машинного обучения Azure.
+[CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/) используется как платформа глубокого обучения, которое выполняется локально на компьютере с графическим процессором, например [виртуальная машина для обработки и анализа данных для глубокого обучения](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.dsvm-deep-learning?tab=Overview), а в развертывании используется Operationalization CLI Машинного обучения Azure.
 
 Ознакомьтесь со [справочной документацией](https://aka.ms/aml-packages/vision) с подробным описанием каждого модуля и класса.
 
@@ -66,12 +66,6 @@ ms.locfileid: "34637741"
 
 ![Набор данных службы "Машинное обучение Azure"](media/how-to-build-deploy-image-classification-models/recycling_examples.jpg)
 
-## <a name="storage-context"></a>Контекст хранилища
-
-Контекст хранилища используется для определения того, где будут храниться различные выходные файлы, такие как дополненные изображения или файлы модели DNN. Дополнительные сведения о контекстах хранилища см. в [документации по StorageContext](https://review.docs.microsoft.com/en-us/python/api/cvtk.core.context.storagecontext?view=azure-python&branch=smoke-test). 
-
-Как правило, содержимое хранилища необходимо задавать явно. Тем не менее, чтобы избежать ограничения по размеру проекта на уровне 25 МБ, наложенного Azure Machine Learning Workbench, установите для каталога выходных данных для пакета Машинного обучения Azure Machine для компьютерного зрения расположение за пределами проекта Машинного обучения Azure (../../../../cvtk_output). Не забудьте удалить каталог cvtk_output, когда он перестанет использоваться.
-
 
 ```python
 import warnings
@@ -84,29 +78,19 @@ from sklearn import svm
 from cvtk import ClassificationDataset, CNTKTLModel, Context, Splitter, StorageContext
 from cvtk.augmentation import augment_dataset
 from cvtk.core.classifier import ScikitClassifier
-from cvtk.evaluation import ClassificationEvaluation, graph_roc_curve, graph_pr_curve, graph_confusion_matrix, basic_plot
+from cvtk.evaluation import ClassificationEvaluation, graph_roc_curve, graph_pr_curve, graph_confusion_matrix
 import matplotlib.pyplot as plt
+
+from classification.notebook.ui_utils.ui_annotation import AnnotationUI
+from classification.notebook.ui_utils.ui_results_viewer import ResultsUI
+from classification.notebook.ui_utils.ui_precision_recall import PrecisionRecallUI
+
 %matplotlib inline
 
 # Disable printing of logging messages
 from azuremltkbase.logging import ToolkitLogger
 ToolkitLogger.getInstance().setEnabled(False)
-
-# Set storage context.
-out_root_path = "../../../cvtk_output"
-Context.create(outputs_path=out_root_path, persistent_path=out_root_path, temp_path=out_root_path)
 ```
-
-
-
-
-    {
-        "storage": {
-            "outputs_path": "../../../cvtk_output",
-            "persistent_path": "../../../cvtk_output",
-            "temp_path": "../../../cvtk_output"
-        }
-    }
 
 
 
@@ -125,8 +109,8 @@ Context.create(outputs_path=out_root_path, persistent_path=out_root_path, temp_p
 
 
 ```python
-# Root image directory 
-dataset_location = os.path.abspath(os.path.join(os.getcwd(), "../sample_data/imgs_recycling"))
+# Root image directory
+dataset_location = os.path.abspath("classification/sample_data/imgs_recycling")
 
 dataset_name = 'recycling'
 dataset = ClassificationDataset.create_from_dir(dataset_name, dataset_location)
@@ -182,7 +166,6 @@ print("Select information for image 2: name={}, label={}, unique id={}.".format(
 
 
 ```python
-from ui_utils.ui_annotation import AnnotationUI
 annotation_ui = AnnotationUI(dataset, Context.get_global_context())
 display(annotation_ui.ui)
 ```
@@ -407,7 +390,6 @@ labels = [l.name for l in dataset.labels]
 pred_scores = ce.scores #classification scores for all images and all classes
 pred_labels = [labels[i] for i in np.argmax(pred_scores, axis=1)]
 
-from ui_utils.ui_results_viewer import ResultsUI
 results_ui = ResultsUI(test_set, Context.get_global_context(), pred_scores, pred_labels)
 display(results_ui.ui)
 ```
@@ -420,7 +402,6 @@ display(results_ui.ui)
 precisions, recalls, thresholds = ce.compute_precision_recall_curve() 
 thresholds = list(thresholds)
 thresholds.append(thresholds[-1])
-from ui_utils.ui_precision_recall import PrecisionRecallUI
 pr_ui = PrecisionRecallUI(100*precisions[::-1], 100*recalls[::-1], thresholds[::-1])
 display(pr_ui.ui) 
 ```

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 000f9b113d599181fe2e0cda10b39a2c4667a2ca
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8cc37bbabd33fbf9e05132f0dfed575d03e93f4c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227893"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045212"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sumtotalcentral"></a>Руководство. Интеграция Azure Active Directory с SumTotalCentral
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227893"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SumTotalCentral, вам потребуются:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36227893"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.sumtotalsystems.com/sites/default`
 
-    Б. В текстовом поле **Идентификатор** введите значение: `SumTotalFederationGateway`
+    b. В текстовом поле **Идентификатор** введите значение: `SumTotalFederationGateway`
 
     > [!NOTE] 
     > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов SumTotalCentral](http://www.sumtotalsystems.com/support/). 
@@ -202,7 +202,7 @@ ms.locfileid: "36227893"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SumTotalCentral на панели доступа, вы автоматически войдете в приложение SumTotalCentral.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

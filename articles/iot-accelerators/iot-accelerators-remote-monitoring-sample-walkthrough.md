@@ -1,6 +1,6 @@
 ---
-title: Архитектура удаленного мониторинга в Azure | Документация Майкрософт
-description: Пошаговое руководство по архитектуре акселератора решения для удаленного мониторинга.
+title: Обзор акселератора решений Azure для удаленного мониторинга | Документация Майкрософт
+description: Общие сведения об акселераторе решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
@@ -8,14 +8,14 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: dobett
-ms.openlocfilehash: af7feb6c95a7de1d2211378c5eb71f09907221ff
-ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
+ms.openlocfilehash: a8b5d9e3917c854cb255a35d3bbc901bcce52c24
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34757439"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37084536"
 ---
-# <a name="remote-monitoring-solution-accelerator-architecture"></a>Архитектура акселератора решения для удаленного мониторинга
+# <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решений для удаленного мониторинга
 
 [Акселератор решения](../iot-accelerators/iot-accelerators-what-are-solution-accelerators.md) для удаленного мониторинга — это средство, которое позволяет полностью отслеживать несколько компьютеров в удаленных расположениях. Это решение объединяет основные службы Azure, чтобы обеспечить универсальную реализацию бизнес-сценария. Его можно использовать в качестве отправной точки для собственной реализации и [настроить](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md) в соответствии с потребностями конкретной организации.
 

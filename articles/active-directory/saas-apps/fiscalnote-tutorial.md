@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 0692c81577706b4d8cce64a912548feec4608f18
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1eb11b52a89e25603939af9ec42d922d6e7ac0df
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231497"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047415"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fiscalnote"></a>Руководство. Интеграция Azure Active Directory с FiscalNote
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231497"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с FiscalNote, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36231497"
     
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<InstanceName>.fiscalnote.com/login?client=<ClientID>&redirect_uri=https://app.fiscalnote.com/saml-login.html&audience=https://api.fiscalnote.com/&connection=<CONNECTION_NAME>&response_type=id_token%20token`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:fiscalnote:<CONNECTIONNAME>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:fiscalnote:<CONNECTIONNAME>`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки FiscalNote](mailto:support@fiscalnote.com).
@@ -138,7 +138,7 @@ ms.locfileid: "36231497"
     
     ![Настройка единого входа](./media/fiscalnote-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -229,7 +229,7 @@ ms.locfileid: "36231497"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку FiscalNote на панели доступа, вы автоматически войдете в приложение FiscalNote.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

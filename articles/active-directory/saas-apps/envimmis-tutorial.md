@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2018
 ms.author: jeedes
-ms.openlocfilehash: d115a2640da7a23cc0e7744bbe79251afb9302a1
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 70066f1c29849b77c67710eb908ef2a340cdc45f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36229242"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047666"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-envi-mmis"></a>Руководство. Интеграция Azure Active Directory с Envi MMIS
 
@@ -34,7 +34,7 @@ ms.locfileid: "36229242"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Envi MMIS, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36229242"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.<CUSTOMER DOMAIN>.com/Account`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.<CUSTOMER DOMAIN>.com/Account/Acs`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.<CUSTOMER DOMAIN>.com/Account/Acs`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -153,7 +153,7 @@ ms.locfileid: "36229242"
 
     a. Выберите вариант **File** (Файл) из раскрывающегося списка **Upload From** (Отправить из).
 
-    Б. Чтобы отправить файл метаданных, загруженный с портала Azure, выберите значок **выбора файла**.
+    b. Чтобы отправить файл метаданных, загруженный с портала Azure, выберите значок **выбора файла**.
 
     c. Нажмите кнопку **ОК**.
 
@@ -216,7 +216,7 @@ ms.locfileid: "36229242"
 
     a. В текстовое поле **User Name** (Имя пользователя) введите имя пользователя для учетной записи Britta Simon, например **brittasimon@contoso.com**.
     
-    Б. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
+    b. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
     c. В текстовое поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
 
@@ -263,7 +263,7 @@ ms.locfileid: "36229242"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Envi MMIS на панели доступа, вы автоматически войдете в приложение Envi MMIS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 4d3e6d2a884a677a3a7368fc83bb639067df5ea0
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 71f1f81ccc4885d1dc023c776497fab486e3d7e2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212780"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041064"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-springer-link"></a>Руководство: интеграция Azure Active Directory с Springer Link
 
@@ -34,7 +34,7 @@ ms.locfileid: "36212780"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Springer Link, вам потребуется следующее:
 
@@ -111,7 +111,7 @@ ms.locfileid: "36212780"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://fsso.springer.com`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://fsso-qa1.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`.    
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://fsso-qa1.springer.com/federation/Consumer/metaAlias/SpringerServiceProvider`.    
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -196,7 +196,7 @@ ms.locfileid: "36212780"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Springer Link на панели доступа, вы автоматически войдете в приложение Springer Link.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

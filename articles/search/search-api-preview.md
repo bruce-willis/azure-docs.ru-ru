@@ -9,14 +9,14 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: search
-ms.date: 05/17/2018
+ms.date: 06/28/2018
 ms.author: HeidiSteen
-ms.openlocfilehash: ce5771777762414a0229cf83425c2f3601cb979a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b5cb60bf16a4c904c9a6060113eba8b4d3a671ef
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660227"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37112608"
 ---
 # <a name="azure-search-service-rest-api-version-2017-11-11-preview"></a>REST API службы поиска Azure, версия 2017-11-11-Preview
 В этой статье описывается версия `api-version=2017-11-11-Preview` REST API службы "Поиск Azure", предлагающая экспериментальные функции, которые пока недоступны вообще.
@@ -27,11 +27,11 @@ ms.locfileid: "34660227"
 
 ## <a name="new-in-2017-11-11-preview"></a>Новые возможности в 2017-11-11-Preview
 
-[Когнитивный поиск](cognitive-search-concept-intro.md). Это новая информационная функция в службе "Поиск Azure", которая находит скрытые сведения в нетекстовых источниках и неразделенном тексте, преобразуя их в текстовое содержимое с полными возможностями поиска в службе "Поиск Azure".
+Функция [**автоматического завершения** ](search-autocomplete-tutorial.md) добавляется к существующему [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions), расширяя возможности упреждающего ввода на панели поиска. Автоматическое завершение возвращает потенциальные условия запросов, которые пользователь может выбрать в качестве строки запроса для последующего поиска. API предложений возвращает фактические документы в ответ на частичные входные данные. Результаты поиска предоставляются немедленно и динамически изменяются по мере возрастания длины и точности входных данных.
 
-Следующие ресурсы представлены или изменены в предварительной версии REST API. Все другие интерфейсы REST API одинаковы для общедоступной и предварительной версий.
+[**Когнитивный поиск**](cognitive-search-concept-intro.md). Это новая информационная функция в службе "Поиск Azure", которая находит скрытые сведения в нетекстовых источниках и недифференцированном тексте, преобразуя их в текстовое содержимое с полными возможностями поиска в службе "Поиск Azure". Указанные ниже ресурсы представлены или изменены в предварительной версии REST API. Все другие интерфейсы REST API одинаковы для общедоступной и предварительной версий.
 
-+ [Создание набора квалификационных навыков (api-version=2017-11-11-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
++ [Операции набора навыков (api-version=2017-11-11-Preview)](https://docs.microsoft.com/rest/api/searchservice/skillset-operations)
 
 + [Создание индексатора (api-version=2017-11-11-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 

@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 04/06/2018
+ms.date: 06/29/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
 keywords: ''
-ms.openlocfilehash: d7384d8d1d8c0378e1a9dd68a4f7b71196330b8e
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 0992846416ce77bccd23fda73f61568eb61c33fb
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34736700"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37127641"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 Для ролей инфраструктуры в Azure Stack настраиваются виртуальные IP-адреса (VIP). Эти виртуальные IP-адреса выделяются из пула общедоступных IP-адресов. Каждый виртуальный IP-адрес защищается списком управления доступом (ACL) на уровне программно определяемой сети. Для дополнительной защиты решения списки управления доступом применяются и на физических коммутаторах (стоечные коммутаторы и BMC). Для каждой конечной точки создается DNS-запись во внешней зоне DNS, которая указана во время развертывания.
@@ -56,6 +56,8 @@ ms.locfileid: "34736700"
 |  |&#42;.scm.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)|
 |  |api.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)<br>44300 (Azure Resource Manager)|
 |  |ftp.appservice.*&lt;регион>.&lt;полное_доменное_имя>*|TCP, UDP|21, 1021, 10001-101000 (FTP)<br>990 (FTPS)|
+|VPN-шлюзы;|     |     |Сведения см. в статье [VPN-шлюз: вопросы и ответы](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vpn-faq#can-i-traverse-proxies-and-firewalls-using-point-to-site-capability).|
+|     |     |     |     |
 
 ## <a name="ports-and-urls-outbound"></a>Порты и URL-адреса (исходящие)
 
@@ -70,6 +72,9 @@ ms.locfileid: "34736700"
 |Регистрация|https://management.azure.com|HTTPS|443|
 |Использование|https://&#42;.microsoftazurestack.com<br>https://*.trafficmanager.net|HTTPS|443|
 |Защитник Windows|.wdcp.microsoft.com<br>.wdcpalt.microsoft.com<br>*.updates.microsoft.com<br>*.download.microsoft.com<br>https://msdl.microsoft.com/download/symbols<br>http://www.microsoft.com/pkiops/crl<br>http://www.microsoft.com/pkiops/certs<br>http://crl.microsoft.com/pki/crl/products<br>http://www.microsoft.com/pki/certs<br>https://secure.aadcdn.microsoftonline-p.com<br>|HTTPS|80<br>443|
+|NTP.|     |UDP|123|
+|DNS|     |TCP<br>UDP|53|
+|     |     |     |     |
 
 
 

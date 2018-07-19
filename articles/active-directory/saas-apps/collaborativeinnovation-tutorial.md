@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 897db5a4d794c22f436fa074ec2c359edc5b590c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 0e2936d0b428249226e428ddc0912d62e29a84f3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225064"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042423"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-collaborative-innovation"></a>Руководство по интеграции Azure Active Directory с Collaborative Innovation
 
@@ -33,7 +33,7 @@ ms.locfileid: "36225064"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Collaborative Innovation, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36225064"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.foundry.<companyname>.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instancename>.foundry.<companyname>.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instancename>.foundry.<companyname>.com`
     
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Collaborative Innovation](https://www.unilever.com/contact/).  
@@ -136,7 +136,7 @@ ms.locfileid: "36225064"
 
     ![Настройка единого входа](./media/collaborativeinnovation-tutorial/url_update.png)
 
-    Б. Удалите значение URL-адреса из **пространства имен**.
+    b. Удалите значение URL-адреса из **пространства имен**.
     
     c. Нажмите кнопку **ОК**, чтобы сохранить настройки.
 
@@ -179,7 +179,7 @@ ms.locfileid: "36225064"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -226,7 +226,7 @@ ms.locfileid: "36225064"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 При нажатии элемента "Collaborative Innovation" на панели доступа, должна появиться страница приложения Collaborative Innovation.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

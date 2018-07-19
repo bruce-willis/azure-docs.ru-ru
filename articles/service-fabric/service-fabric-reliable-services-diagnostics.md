@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/15/2017
+ms.date: 6/28/2018
 ms.author: dekapur
-ms.openlocfilehash: 268ec61515f438fb7f98b6cef7a8ec60ba22e23f
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 51895731efd466a314877e963a5fd2c6d868ec02
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212642"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37110878"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Диагностические функции для надежных служб с отслеживанием состояния
 Класс StatefulServiceBase служб Reliable Services с отслеживанием состояния Azure Service Fabric генерирует события [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx), которые можно использовать для отладки. Они позволяют исследовать работу среды выполнения и помогают устранять неполадки.
@@ -53,13 +53,16 @@ ms.locfileid: "34212642"
 | Категория | ОПИСАНИЕ |
 | --- | --- |
 | Репликатор транзакций Service Fabric |Счетчики для репликатора транзакций Azure Service Fabric |
+| Service Fabric TStore |Счетчики для Azure Service Fabric TStore |
 
-Репликатор транзакций Service Fabric используется [диспетчером надежных состояний](service-fabric-reliable-services-reliable-collections-internals.md) для репликации транзакций в пределах заданного набора [реплик](service-fabric-concepts-replica-lifecycle.md). 
+Репликатор транзакций Service Fabric используется [диспетчером надежных состояний](service-fabric-reliable-services-reliable-collections-internals.md) для репликации транзакций в пределах заданного набора [реплик](service-fabric-concepts-replica-lifecycle.md).
+
+Service Fabric TStore — это компонент, который используется в [надежных коллекциях](service-fabric-reliable-services-reliable-collections-internals.md) для хранения и извлечения пар "ключ-значение".
 
 Для сбора и просмотра данных счетчиков производительности можно использовать [системный монитор Windows](https://technet.microsoft.com/library/cc749249.aspx) , доступный по умолчанию в операционной системе Windows. [Диагностика Azure](../cloud-services/cloud-services-dotnet-diagnostics.md) , в свою очередь, позволяет не только собирать данные счетчиков производительности, но и загружать их в таблицы Azure.
 
 ### <a name="performance-counter-instance-names"></a>Имена экземпляров счетчиков производительности
-В кластере, содержащем большое количество надежных служб или секций надежных служб, находится большое количество экземпляров счетчиков производительности репликатора транзакций. Имя экземпляра счетчика производительности помогает определить конкретную [секцию](service-fabric-concepts-partitioning.md) и реплику службы, с которыми связан этот экземпляр.
+В кластере, содержащем большое количество надежных служб или секций надежных служб, находится большое количество экземпляров счетчиков производительности репликатора транзакций. Это же применимо и для счетчиков производительности TStore, но с учетом числа используемых надежных словарей и очередей. Имя экземпляра счетчика производительности помогает определить конкретную [секцию](service-fabric-concepts-partitioning.md), реплику службы и поставщика состояний, с которыми связан этот экземпляр.
 
 #### <a name="service-fabric-transactional-replicator-category"></a>Категория репликатора транзакций Service Fabric
 Экземпляры счетчиков в категории `Service Fabric Transactional Replicator`имеют имена в следующем формате:
@@ -76,6 +79,25 @@ ms.locfileid: "34212642"
 
 В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, а `131652217797162571` — идентификатором реплики.
 
+#### <a name="service-fabric-tstore-category"></a>Категория Service Fabric TStore
+Экземпляры счетчиков в категории `Service Fabric TStore`имеют имена в следующем формате:
+
+`ServiceFabricPartitionId:ServiceFabricReplicaId:ServiceFabricStateProviderId_PerformanceCounterInstanceDifferentiator`
+
+*ServiceFabricPartitionID* — это строка идентификатора секции Service Fabric, c которой связан экземпляр счетчика производительности. Это идентификатор GUID, строковое представление которого создается методом [`Guid.ToString`](https://msdn.microsoft.com/library/97af8hh4.aspx) с использованием описателя формата D.
+
+*ServiceFabricReplicaId* — идентификатор, связанный с конкретной репликой надежной службы. В имя экземпляра счетчика производительности идентификатор реплики включается для того, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными той же секцией. Дополнительные сведения о репликах и их роли в надежных службах см. в [этой статье](service-fabric-concepts-replica-lifecycle.md).
+
+*ServiceFabricReplicaId* — идентификатор, связанный с поставщиком состояний в пределах надежной службы. Идентификатор поставщика состояния включен в имя экземпляра счетчика производительности, чтобы различать экземпляры TStore.
+
+*PerformanceCounterInstanceDifferentiator* — отличительный идентификатор, связанный с экземпляром счетчика производительности в пределах поставщика состояний. В имя экземпляра счетчика производительности этот идентификатор включается для того, чтобы обеспечить его уникальность и избежать конфликтов с другими экземплярами счетчиков производительности, созданными тем же поставщиком состояний.
+
+Следующее имя экземпляра счетчика является типичным для счетчиков в категории `Service Fabric TStore`.
+
+`00d0126d-3e36-4d68-98da-cc4f7195d85e:131652217797162571:142652217797162571_1337`
+
+В предыдущем примере `00d0126d-3e36-4d68-98da-cc4f7195d85e` является строковым представлением идентификатора секции Service Fabric, `131652217797162571` — идентификатором реплики, `142652217797162571` — идентификатор поставщика состояний, а `1337` — идентификатор экземпляра счетчика производительности.
+
 ### <a name="transactional-replicator-performance-counters"></a>Счетчики производительности репликатора транзакций
 
 Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric Transactional Replicator`.
@@ -88,6 +110,14 @@ ms.locfileid: "34212642"
 | Регулируемых операций/с | Число операций, отклоняемых репликатором транзакций каждую секунду из-за регулирования. |
 | Среднее Время транзакции на фиксацию (в мс) | Среднее время задержки фиксации на транзакцию (в мс). |
 | Среднее Задержка очистки (мс) | Средняя продолжительность операции окончательной записи данных на диск, инициированной репликатором транзакций (в мс). |
+
+### <a name="tstore-performance-counters"></a>Счетчики производительности TStore
+
+Среда выполнения Reliable Services выдает следующие события в категории `Service Fabric TStore`.
+
+ Имя счетчика | ОПИСАНИЕ |
+| --- | --- |
+| Число элементов | Число ключей в хранилище.|
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Поставщики EventSource в PerfView](https://blogs.msdn.microsoft.com/vancem/2012/07/09/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource/)

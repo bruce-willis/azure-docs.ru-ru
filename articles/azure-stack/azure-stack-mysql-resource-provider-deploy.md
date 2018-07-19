@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/25/2018
+ms.date: 07/02/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: e4c3eb1d7dfd4894576d5fbed52cf4de5fed9e44
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: e4af3dc8aa7a656fd0020285c3f73ce414ba039c
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938120"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38305902"
 ---
 # <a name="deploy-the-mysql-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов MySQL в Azure Stack
 
@@ -30,15 +30,16 @@ ms.locfileid: "36938120"
 Существует несколько предварительных требований, которые должны быть выполнены перед развертыванием поставщика ресурсов MySQL Azure Stack. Чтобы обеспечить соответствие этим требованиям, выполните описанные в этой статье действия на компьютере, который имеет доступ к привилегированной конечной точке виртуальной машины.
 
 * Если вы еще этого не сделали, [зарегистрируйте Azure Stack](.\azure-stack-registration.md) в Azure, чтобы можно было загружать элементы Azure Marketplace.
-* Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**. Вы можете применить сценарий, чтобы создать [образ Windows Server 2016](https://docs.microsoft.com/azure/azure-stack/azure-stack-add-default-image). Убедитесь, что выбрали параметр ядра при запуске скрипта.
+* В системе, в которой будет запускаться эта установка, необходимо установить модули PowerShell для Azure и Azure Stack. В системе должен быть развернут образ Windows 10 или Windows Server 2016 с последней версией среды выполнения .NET. См. статью [Установка PowerShell для Azure Stack](.\azure-stack-powershell-install.md).
+* Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**.
 
   >[!NOTE]
-  >Если необходимо установить обновление, один MSU-пакет можно поместить в локальный каталог, путь к которому задан в системе. Если обнаружено несколько MSU-файлов, при установке поставщика ресурсов MySQL произойдет сбой.
+  >Если необходимо установить обновление Windows, один MSU-пакет можно поместить в локальный каталог зависимостей. Если обнаружено несколько MSU-файлов, при установке поставщика ресурсов MySQL произойдет сбой.
 
 * Скачайте двоичный файл поставщика ресурсов MySQL и запустите файл для самостоятельного извлечения содержимого во временный каталог.
 
   >[!NOTE]
-  >Чтобы развернуть поставщик MySQL в системе без доступа к Интернету, скопируйте файл [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Download/sConnector-Net/mysql-connector-net-6.10.5.msi) в локальный общий ресурс. Введите имя этого общего ресурса при появлении запроса. Необходимо установить модули PowerShell для Azure и Azure Stack.
+  >Чтобы развернуть поставщик MySQL в системе без доступа к Интернету, скопируйте файл [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi) в локальный каталог. Укажите путь с помощью параметра **DependencyFilesLocalPath**.
 
 * У поставщика ресурсов есть минимальная соответствующая сборка Azure Stack. Обязательно скачайте соответствующий двоичный файл для используемой версии Azure Stack.
 
@@ -46,23 +47,14 @@ ms.locfileid: "36938120"
     | --- | --- |
     | Версия 1804 (1.0.180513.1)|[MySQL RP версии 1.1.24.0](https://aka.ms/azurestackmysqlrp1804) |
     | Версия 1802 (1.0.180302.1) | [MySQL RP версии 1.1.18.0](https://aka.ms/azurestackmysqlrp1802) |
-    | Версия 1712 (1.0.180102.3 или 1.0.180106.1 (интегрированные системы)) | [MySQL RP версии 1.1.14.0](https://aka.ms/azurestackmysqlrp1712) |
 
 ### <a name="certificates"></a>Сертификаты
 
-Для ASDK в процессе установки создается самозаверяющий сертификат. Для интегрированной системы Azure Stack вам нужно предоставить подходящий сертификат. Если нужно предоставить собственный сертификат, укажите в параметре **DependencyFilesLocalPath** PFX-файл, соответствующий следующим критериям.
-
-* Групповой сертификат для \*.dbadapter.\<регион\>.\<внешнее_полное_доменное_имя\> или сертификат для одного сайта с общим именем mysqladapter.dbadapter.\<регион\>.\<внешнее_полное_доменное_имя\>
-* Это должен быть доверенный сертификат. Должна существовать цепочка доверия без промежуточных сертификатов.
-* В DependencyFilesLocalPath имеется только один файл сертификата.
-* Имя файла не должно содержать специальные символы или пробелы.
+_Только для интегрированных систем_. Укажите сертификат SQL PaaS PKI, описанный в разделе о необязательных сертификатах PaaS в статье [Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack](.\azure-stack-pki-certs.md#optional-paas-certificates). Поместите PFX-файл в каталог, указанный параметром **DependencyFilesLocalPath**. Не предоставляйте сертификат для систем ASDK.
 
 ## <a name="deploy-the-resource-provider"></a>Развертывание поставщика ресурсов
 
 Когда вы установите все необходимые компоненты, запустите скрипт **DeployMySqlProvider.ps1**, чтобы развернуть поставщик ресурсов MYSQL. Сценарий DeployMySqlProvider.ps1 входит в состав двоичного файла поставщика ресурсов MySQL, загруженного для вашей версии Azure Stack.
-
-> [!IMPORTANT]
-> Сценарий должен выполняться в системе Windows 10 или Windows Server 2016 с установленной последней версией среды выполнения .NET.
 
 Чтобы развернуть поставщик ресурсов MySQL, откройте новую консоль PowerShell с повышенными привилегиями и перейдите в каталог, в который ранее извлекли двоичные файлы поставщика ресурсов MySQL. Рекомендуем открыть новое окно PowerShell, чтобы избежать потенциальных проблем, вызванных уже загруженными модулями PowerShell.
 
@@ -77,11 +69,11 @@ ms.locfileid: "36938120"
 * Может установить одно обновление Windows Server во время установки поставщика ресурсов.
 
 > [!NOTE]
-> Когда вы запустите развертывание поставщика ресурсов MySQL, будет создана группа ресурсов **system.local.mysqladapter**. На выполнение четырех обязательных развертываний в эту группу ресурсов может потребоваться до 75 минут.
+> Когда вы запустите развертывание поставщика ресурсов MySQL, будет создана группа ресурсов **system.local.mysqladapter**. На выполнение обязательных развертываний в эту группу ресурсов может потребоваться до 75 минут.
 
 ### <a name="deploymysqlproviderps1-parameters"></a>Параметры DeployMySqlProvider.ps1
 
-Эти параметры можно указать в командной строке. Если вы не зададите нужные параметры или их значения не пройдут проверку, вам будет предложено указать необходимые параметры.
+Эти параметры можно указать в командной строке. Если вы не зададите нужные параметры или их значения не пройдут проверку, вам будет предложено указать требуемые параметры.
 
 | Имя параметра | ОПИСАНИЕ | Комментарий или значение по умолчанию |
 | --- | --- | --- |
@@ -89,7 +81,7 @@ ms.locfileid: "36938120"
 | **AzCredential** | Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack. | _Обязательный_ |
 | **VMLocalCredential** | Учетные данные локального администратора на виртуальной машине поставщика ресурсов MySQL. | _Обязательный_ |
 | **PrivilegedEndpoint** | IP-адрес или DNS-имя привилегированной конечной точки. |  _Обязательный_ |
-| **DependencyFilesLocalPath** | Путь к локальному общему ресурсу, содержащему файл [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi). Если вы указали один из этих путей, в этот каталог нужно поместить и файл сертификата. | _Необязательно_ для одного узла, _обязательно_ для нескольких узлов. |
+| **DependencyFilesLocalPath** | В случае с интегрированными системами в этот каталог нужно поместить PFX-файл сертификата. Для отключенных сред скачайте в этот каталог файл [mysql-connector-net-6.10.5.msi](https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi). При необходимости можно скопировать сюда один пакет MSU Центра обновления Windows. | _Необязательно_ (_обязательно_ для интегрированных систем или отключенных сред) |
 | **DefaultSSLCertificatePassword** | Пароль для PFX-файла сертификата. | _Обязательный_ |
 | **MaxRetryCount** | Количество повторов каждой операции в случае сбоя.| 2 |
 | **RetryDuration** | Время ожидания между повторными попытками в секундах. | 120 |
@@ -97,17 +89,15 @@ ms.locfileid: "36938120"
 | **DebugMode** | Отключает автоматическую очистку в случае сбоя. | Нет  |
 | **AcceptLicense** | Пропускает запрос на принятие условий лицензии GPL.  <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html> | |
 
-> [!NOTE]
-> Отображение номеров SKU на портале может занять до часа. Вы не можете создать базу данных до развертывания и запуска SKU.
-
 ## <a name="deploy-the-mysql-resource-provider-using-a-custom-script"></a>Развертывание поставщика ресурсов MySQL с помощью пользовательского сценария
 
 Чтобы избежать конфигурации вручную при развертывании поставщика ресурсов, настройте следующий скрипт. Измените сведения и пароли учетной записи по умолчанию для развертывания Azure Stack.
 
 ```powershell
-# Install the AzureRM.Bootstrapper module and set the profile.
+# Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2017-03-09-profile
+Install-Module -Name AzureStack -RequiredVersion 1.3.0
 
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time.
 $domain = "AzureStack"  
@@ -134,8 +124,7 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 
-# Run the installation script from the folder where you extracted the installation files.
-# Find the ERCS01 IP address first, and make sure the certificate file is in the specified directory.
+# Change to the directory folder where you extracted the installation files. Do not provide a certificate on ASDK!
 . $tempDir\DeployMySQLProvider.ps1 `
     -AzCredential $AdminCreds `
     -VMLocalCredential $vmLocalAdminCreds `
@@ -154,8 +143,7 @@ $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 1. Войдите на портал администрирования в качестве администратора служб.
 2. Выбор **Группы ресурсов**
 3. Выберите группу ресурсов **system.\<расположение\>.mysqladapter**.
-4. На странице сводки в разделе обзора группы ресурсов под пунктом **Развертывания** должно отображаться **3 успешно**.
-5. Подробные сведения о развертывании поставщика ресурсов вы найдете в разделе **ПАРАМЕТРЫ**. Выберите **Развертывания**, чтобы узнать о состоянии, метке времени и продолжительности для каждого развертывания.
+4. На странице сводки в разделе обзора группы ресурсов не должно быть сообщений о сбоях развертывания.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

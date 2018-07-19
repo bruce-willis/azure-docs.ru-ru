@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 05/29/2018
 ms.author: juliako
-ms.openlocfilehash: 7fe59763162ca53ea0256d5902aeece90525f214
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 098a34aba8e5ce23f64d4bb07e3b9622aa2adb8e
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660155"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37110426"
 ---
 # <a name="azure-media-services-v3-preview-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3 (предварительная версия)
 
@@ -30,7 +30,7 @@ ms.locfileid: "34660155"
 
 Команда разработчиков служб мультимедиа исключает ЕЗ в версии 3. Однако необходимая работа по обслуживанию не завершена. До тех пор клиенты должны использовать портал Azure или API AMS версии 2 для настройки ЕЗ (как описано в статье [Обзор масштабирования обработки мультимедиа](../previous/media-services-scale-media-processing-overview.md). 
 
-ЕЗ S3 необходимы для предустановок **VideoAnalyzerPreset** и **AudioAnalyzerPreset** версии 3.
+Если используется **VideoAnalyzerPreset** и (или) **AudioAnalyzerPreset**, настройте 10 зарезервированных единиц мультимедиа S3 для учетной записи Служб мультимедиа.
 
 ## <a name="does-v3-asset-have-no-assetfile-concept"></a>У ресурсов версии 3 нет концепции AssetFile?
 

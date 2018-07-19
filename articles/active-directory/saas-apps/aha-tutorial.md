@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: 2a6c709944262e321997fe2d32e57726ee9f1242
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 30f0f316727cfcf20daa58c35d0ba11c25311898
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219879"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044124"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-aha"></a>Руководство. Интеграция Azure Active Directory с Aha!
 
@@ -33,7 +33,7 @@ ms.locfileid: "36219879"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Aha!, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36219879"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.aha.io/session/new`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.aha.io`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.aha.io`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группе поддержки Aha!](https://www.aha.io/company/contact), чтобы получить эти значения. 
@@ -151,7 +151,7 @@ ms.locfileid: "36219879"
     
        a. В текстовом поле **Имя** введите имя конфигурации.
 
-       Б. Для параметра **Configure using** (Использовать при настройке) выберите значение **Файл метаданных**.
+       b. Для параметра **Configure using** (Использовать при настройке) выберите значение **Файл метаданных**.
    
        c. Чтобы отправить загруженный файл метаданных, нажмите кнопку **Обзор**.
    
@@ -186,7 +186,7 @@ ms.locfileid: "36219879"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -235,7 +235,7 @@ ms.locfileid: "36219879"
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

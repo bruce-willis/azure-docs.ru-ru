@@ -1,20 +1,17 @@
 ---
 title: 'Непрерывность бизнес-процессов и аварийное восстановление: связанные регионы Azure | Документация Майкрософт'
 description: Дополнительные сведения о подключении регионов Azure для обеспечения отказоустойчивости приложений во время сбоев в центрах данных.
-services: site-recovery
-documentationcenter: ''
 author: rayne-wiselman
-manager: carmonm
 ms.service: multiple
 ms.topic: article
-ms.date: 05/09/2018
+ms.date: 07/03/2018
 ms.author: raynew
-ms.openlocfilehash: e2c288af881fa925c1680efdb0f86deec60b7510
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 13a2b78b50b1b10975a90c1da38810f1a62a6bb5
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302684"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37436915"
 ---
 # <a name="business-continuity-and-disaster-recovery-bcdr-azure-paired-regions"></a>Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure
 
@@ -33,7 +30,7 @@ Azure работает в различных странах по всему ми
 | Азия |Восточная Азия |Юго-Восточная Азия |
 | Австралия |Восточная часть Австралии |Юго-Восточная часть Австралии |
 | Австралия |Центральная Австралия |Центральная Австралия 2 |
-| Бразилия |Южная Бразилия (2) |Южно-центральный регион США |
+| Бразилия |Южная Бразилия 2 |Южно-центральный регион США |
 | Канада |Центральная Канада |Восточная Канада |
 | Китай |Север Китая |Восток Китая|
 | Европа |Северная Европа |Западная Европа |

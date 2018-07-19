@@ -1,10 +1,27 @@
+---
+title: включение файла
+description: включение файла
+services: billing
+author: rothja
+ms.service: billing
+ms.topic: include
+ms.date: 07/02/2018
+ms.author: jroth
+ms.custom: include file
+ms.openlocfilehash: f47654d056a26f5a58b1ccc2c200f774bee1f19f
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37348207"
+---
 | Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | --- | --- | --- |
 | Число ВМ на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |10 000<sup>1</sup> для каждого региона |10 000 для каждого региона |
 | Общее количество ядер виртуальных машин на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> для каждого региона | Обратитесь в службу поддержки. |
 | Виртуальных машин на ядра серий (Dv2, F и т. д) на [подписку](../articles/billing-buy-sign-up-azure-subscription.md) |20<sup>1</sup> для каждого региона | Обратитесь в службу поддержки. |
 | [Дополнительные администраторы](../articles/billing-add-change-azure-subscription-administrator.md) на подписку |Без ограничений |Без ограничений |
-| [Учетные записи хранилища](../articles/storage/common/storage-create-storage-account.md) на подписку |200 |200<sup>2</sup> |
+| [Учетные записи хранения](../articles/storage/common/storage-create-storage-account.md) на подписку в каждом регионе |200 |200<sup>2</sup> |
 | [Групп ресурсов](../articles/azure-resource-manager/resource-group-overview.md) на подписку |980 |980 |
 | [наборов доступности](../articles/virtual-machines/windows/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) на подписку |2000 для каждого региона |2000 для каждого региона |
 | Операций чтения API диспетчера ресурсов |15 000 в час |15 000 в час |

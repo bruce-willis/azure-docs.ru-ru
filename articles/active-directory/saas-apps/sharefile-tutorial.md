@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: jeedes
-ms.openlocfilehash: b29d8e9a8e8d63cdeacb8093935de5fba3b25170
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e27a1c834c48b640ab5ed7ab8d6e54f7d1784abd
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36226771"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045946"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Руководство. Интеграция Azure Active Directory с Citrix ShareFile
 
@@ -34,7 +34,7 @@ ms.locfileid: "36226771"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Citrix ShareFile, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36226771"
     
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.sharefile.com/saml/login`
 
-    Б. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате.
+    b. В текстовом поле **Identifier (Entity ID)** (Идентификатор (ИД сущности)) введите URL-адрес в следующем формате.
 
     | |
     |---|
@@ -160,7 +160,7 @@ ms.locfileid: "36226771"
    
     a. Выберите команду **Enable SAML**(Включить SAML).
     
-    Б. В текстовое поле **Your IDP Issuer/ Entity ID** (Поставщик удостоверений/идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Your IDP Issuer/ Entity ID** (Поставщик удостоверений/идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. Нажмите **Изменить** рядом с полем **X.509 Certificate** (Сертификат X.509) и передайте сертификат, скачанный с портала Azure AD.
     
@@ -220,7 +220,7 @@ ms.locfileid: "36226771"
    
    a. В текстовое поле **Email Address** (Электронная почта) введите адрес электронной почты учетной записи Britta Simon**brittasimon@contoso.com**.
    
-   Б. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
+   b. В текстовое поле **First Name** (Имя) введите **имя пользователя**, например **Britta**.
    
    c. В текстовое поле **Last Name** (Фамилия) введите **фамилию**, например **Simon**.
 
@@ -264,7 +264,7 @@ ms.locfileid: "36226771"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Citrix ShareFile на панели доступа, вы автоматически войдете в приложение Citrix ShareFile.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

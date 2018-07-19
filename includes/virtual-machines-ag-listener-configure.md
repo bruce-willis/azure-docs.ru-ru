@@ -88,5 +88,30 @@
 
     Б. Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
 
+Повторите предыдущие действия, чтобы задать параметры для IP-адреса кластера WSFC.
+
+1. Получите имя IP-адреса для кластера WSFC. В **диспетчере отказоустойчивости кластеров** в разделе **Ресурсы ядра кластера** найдите **имя сервера**.
+
+1. Щелкните правой кнопкой мыши **IP-адрес** и выберите пункт **Свойства**.
+
+1. Запишите **IP-адрес**. Он может иметь такое имя: `Cluster IP Address`. 
+
+1. <a name="setwsfcparam"></a>Настройте параметры кластера в PowerShell.
+    
+    a. Скопируйте следующий скрипт PowerShell на один из экземпляров SQL Server. Обновите переменные для среды.     
+    
+    ```PowerShell
+    $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
+    $IPResourceName = "<ClusterIPResourceName>" # the IP Address resource name
+    $ILBIP = "<n.n.n.n>" # the IP Address of the Cluster IP resource. This is the static IP address for the load balancer you configured in the Azure portal.
+    [int]$ProbePort = <nnnnn>
+    
+    Import-Module FailoverClusters
+    
+    Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ILBIP";"ProbePort"=$ProbePort;"SubnetMask"="255.255.255.255";"Network"="$ClusterNetworkName";"EnableDhcp"=0}
+    ```
+
+    Б. Задайте параметры кластера, выполнив скрипт PowerShell на одном из узлов кластера.  
+
     > [!NOTE]
     > Если экземпляры SQL Server находятся в разных регионах, необходимо дважды запустить сценарий PowerShell. При первом запуске используйте значения `$ILBIP` и `$ProbePort` из первого региона. При втором запуске используйте значения `$ILBIP` и `$ProbePort` из второго региона. Сетевое имя кластера и имя ресурса IP-адреса кластера совпадают. 

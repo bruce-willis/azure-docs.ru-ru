@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: jeedes
-ms.openlocfilehash: 7212e0b07b525286f0b194a53c6780269630ad9c
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 20c0acebde232bd50e6e5befed0facc96ee11b4d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36323599"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39040955"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-screencast-o-matic"></a>Руководство по интеграции Azure Active Directory со Screencast-O-Matic
 
@@ -33,7 +33,7 @@ ms.locfileid: "36323599"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD со Screencast-O-Matic, вам потребуется:
 
@@ -218,7 +218,7 @@ ms.locfileid: "36323599"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Screencast-O-Matic на панели доступа, вы автоматически войдете в приложение Screencast-O-Matic.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: jeedes
-ms.openlocfilehash: a95b3d1d35642043728831068f0e01cd16f7b999
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 794039ee1a5b1cf3b382e0f0769383b1e033e982
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212953"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046946"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство. Интеграция Azure Active Directory с Jamf Pro
 
@@ -34,7 +34,7 @@ ms.locfileid: "36212953"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jamf Pro, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36212953"
 
     a. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/metadata`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.jamfcloud.com/saml/SSO`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -145,7 +145,7 @@ ms.locfileid: "36212953"
 
     a. Выберите пункт **Другой** в раскрывающемся списке **IDENTITY PROVIDER** (Поставщик удостоверений).
 
-    Б. В текстовом поле **OTHER PROVIDER** (Другой поставщик) введите **Azure AD**.
+    b. В текстовом поле **OTHER PROVIDER** (Другой поставщик) введите **Azure AD**.
 
     c. Выберите элемент **URL-адрес метаданных** в раскрывающемся списке **IDENTITY PROVIDER METADATA SOURCE** (Источник метаданных поставщика удостоверений) и затем в следующем текстовом поле вставьте значение **URL-адреса метаданных федерации приложений**, скопированное на портале Azure.
 
@@ -218,7 +218,7 @@ ms.locfileid: "36212953"
 
     a. В текстовом поле **USERNAME** (Имя пользователя) введите полное имя пользователя BrittaSimon.
 
-    Б. Выберите соответствующие значения для параметров **ACCESS LEVEL** (Уровень доступа), **PRIVILEGE SET** (Набор привилегий) и **ACCESS STATUS** (Состояние доступа).
+    b. Выберите соответствующие значения для параметров **ACCESS LEVEL** (Уровень доступа), **PRIVILEGE SET** (Набор привилегий) и **ACCESS STATUS** (Состояние доступа).
     
     c. В текстовом поле **FULL NAME** (Полное имя) введите полное имя пользователя Britta Simon.
 
@@ -265,7 +265,7 @@ ms.locfileid: "36212953"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Jamf Pro на панели доступа, вы автоматически войдете в приложение Jamf Pro.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

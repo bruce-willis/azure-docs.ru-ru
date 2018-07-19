@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 5c2971a59bbaa241a2e1eb4ecca0db7e8b95a885
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 64b94baeaede9b05e953b69324648c63d97cea8e
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227138"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045444"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство по интеграции Azure Active Directory с Salesforce
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227138"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Salesforce, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36227138"
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
     
-    Б. В текстовое поле **Идентификатор** введите значение в следующем формате:
+    b. В текстовое поле **Идентификатор** введите значение в следующем формате:
     
     Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
@@ -167,7 +167,7 @@ ms.locfileid: "36227138"
 
     a. В поле **Имя** введите понятное имя конфигурации. При вводе значения в поле **Name** (Имя) текстовое поле **API Name** (Имя API) заполняется автоматически.
 
-    Б. В поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    b. В поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
     c. Введите в текстовое поле **Идентификатор сущности**имя домена Salesforce в следующем формате.
       
@@ -278,7 +278,7 @@ ms.locfileid: "36227138"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Salesforce на панели доступа, вы автоматически войдете в приложение Salesforce.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

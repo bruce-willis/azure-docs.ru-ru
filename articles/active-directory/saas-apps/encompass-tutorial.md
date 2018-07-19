@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: jeedes
-ms.openlocfilehash: 378f2b542270db351a9527e1faddc5b70952455b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: da306315c18a918ed1e49bf85e1bf9b73b5be2f3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212627"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047286"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-encompass"></a>Руководство по интеграции Azure Active Directory с Encompass
 
@@ -34,7 +34,7 @@ ms.locfileid: "36212627"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Encompass, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36212627"
 
     a. В текстовом поле **Идентификатор** укажите значение для определенного клиента.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.voxmobile.com/voxportal/ws/saml/consume`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.voxmobile.com/voxportal/ws/saml/consume`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Encompass](http://www.voxmobile.com/contact/).
@@ -205,7 +205,7 @@ ms.locfileid: "36212627"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Encompass на панели доступа, вы автоматически войдете в приложение Encompass.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

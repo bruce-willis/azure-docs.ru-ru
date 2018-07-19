@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/18/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: cfac573bc9f1bdec3fd884f8090e11514f1e93b3
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: b5adc1bb5a5aae96f37cc312588aa71e57d8342e
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34604715"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37083232"
 ---
 # <a name="azure-stack-certificates-signing-request-generation"></a>Создание запроса на подпись сертификата Azure Stack
 
@@ -30,8 +30,6 @@ ms.locfileid: "34604715"
 
  - **Стандартные запросы сертификатов**  
     В [этой статье](azure-stack-get-pki-certs.md) описано, как выполнять эти запросы.
- - **Тип запроса**  
-    Указывает, будет ли передан отдельный запрос на подпись сертификата или несколько запросов.
  - **Платформа как услуга (PaaS)**  
     При необходимости запросите сертификаты PaaS, как описано в разделе [Необязательные сертификаты PaaS](azure-stack-pki-certs.md#optional-paas-certificates).
 
@@ -98,22 +96,22 @@ ms.locfileid: "34604715"
     > [!note]  
     > На основе `<regionName>.<externalFQDN>` создаются все внешние DNS-имена в Azure Stack. В этом примере используется портал `portal.east.azurestack.contoso.com`.  
 
-6. Чтобы создать отдельный запрос на сертификат с несколькими альтернативными именами субъекта, выполните следующую команду.
+6. Чтобы создать запросы на подпись сертификатов для каждого DNS-имени, выполните следующую команду:
+
+    ```PowerShell  
+    Start-AzsReadinessChecker -RegionName $regionName -FQDN $externalFQDN -subject $subjectHash -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem
+    ````
+
+    Для включения служб PaaS укажите параметр ```-IncludePaaS```
+
+7. Альтернативный подход для сред разработки и тестирования. Чтобы создать единый запрос на сертификат с несколькими альтернативными именами субъекта, добавьте параметр **-RequestType SingleCSR** и значение (**не** рекомендуется для рабочих сред):
 
     ```PowerShell  
     Start-AzsReadinessChecker -RegionName $regionName -FQDN $externalFQDN -subject $subjectHash -RequestType SingleCSR -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem
     ````
 
     Для включения служб PaaS укажите параметр ```-IncludePaaS```
-
-7. Чтобы создать отдельные запросы на подпись сертификатов для каждого DNS-имени, выполните следующую команду.
-
-    ```PowerShell  
-    Start-AzsReadinessChecker -RegionName $regionName -FQDN $externalFQDN -subject $subjectHash -RequestType MultipleCSR -OutputRequestPath $OutputDirectory -IdentitySystem $IdentitySystem
-    ````
-
-    Для включения служб PaaS укажите параметр ```-IncludePaaS```
-
+    
 8. Просмотрите выходные данные:
 
     ````PowerShell  

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: jeedes
-ms.openlocfilehash: 293a8921e64bae03d036f847d2f9138d88ebef4a
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 3898f64ebc32db2a512b04949e9b33a36694cdb6
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36210264"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046499"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mindwireless"></a>Руководство. Интеграция Azure Active Directory с mindWireless
 
@@ -34,7 +34,7 @@ ms.locfileid: "36210264"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с mindWireless, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36210264"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.mwsmart.com/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.mwsmart.com/SAML/AssertionConsumerService.aspx`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки mindWireless](mailto:sdulloor@mindwireless.com).
@@ -133,7 +133,7 @@ ms.locfileid: "36210264"
 
     ![Настройка единого входа](./media/mindwireless-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
 
@@ -226,7 +226,7 @@ ms.locfileid: "36210264"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку mindWireless на панели доступа, вы автоматически войдете в приложение mindWireless.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

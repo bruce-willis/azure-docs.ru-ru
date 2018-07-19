@@ -13,15 +13,15 @@ ms.topic: article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/11/2018
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 1501ca1c036a8db1d53b9b27170d9ae05d41f797
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 0a2cddec1308b96b960cd0bbc5ccae9fd1a1a9a7
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34724121"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449396"
 ---
 # <a name="quickstart-require-mfa-for-specific-apps-with-azure-active-directory-conditional-access"></a>Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory 
 
@@ -42,8 +42,18 @@ ms.locfileid: "34724121"
 
 - **доступ к Azure AD Premium** — условный доступ Azure AD является возможностью Azure AD Premium; 
 
-- **тестовая учетная запись Isabella Simonsen** — сведения о создании тестовой учетной записи см. в разделе о [добавлении облачных пользователей](add-users-azure-active-directory.md#add-cloud-based-users).
+- **тестовая учетная запись Isabella Simonsen** — сведения о создании тестовой учетной записи см. в разделе о [добавлении облачных пользователей](fundamentals/add-users-azure-active-directory.md#add-cloud-based-users).
 
+
+## <a name="test-your-sign-in"></a>Проверка входа
+
+Целью этого шага является ознакомление со входом в систему без политики условного доступа.
+
+**Инициализация среды:**
+
+1. Войдите на портал Azure с учетной записью Isabella Simonsen.
+
+2. Выполните выход.
 
 
 ## <a name="create-your-conditional-access-policy"></a>Создание политики условного доступа 
@@ -69,7 +79,7 @@ ms.locfileid: "34724121"
 
 **Чтобы настроить политику условного доступа, выполните следующие действия.**
 
-1. Войдите на [портал Azure](https://portal.azure.com) с использованием прав глобального администратора.
+1. Войдите на [портал Azure](https://portal.azure.com) с правами глобального администратора, администратора безопасности или администратора условного доступа.
 
 2. На портале Azure на панели навигации слева щелкните **Azure Active Directory**. 
 
@@ -179,7 +189,7 @@ ms.locfileid: "34724121"
 
     c. Нажмите кнопку **Выбрать**.
 
-    d. На странице **Выбор** выберите "Управление Microsoft Azure", а затем нажмите кнопку **Выбрать**.
+    d. На странице **Выбор** выберите **Управление Microsoft Azure**, а затем нажмите кнопку **Выбрать**.
 
     д. На странице "Облачные приложения" нажмите кнопку **Готово**.
 
@@ -199,7 +209,7 @@ ms.locfileid: "34724121"
 
 Если тестовый пользователь и политика условного доступа больше не нужны, удалите их.
 
-- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](add-users-azure-active-directory.md#delete-users-from-azure-ad).
+- Сведения об удалении пользователя Azure AD см. в разделе об [удалении пользователей из Azure AD](fundamentals/add-users-azure-active-directory.md#delete-users-from-azure-ad).
 
 - Чтобы удалить политику, выберите ее и нажмите кнопку **Удалить** на панели инструментов быстрого доступа.
 
@@ -208,5 +218,6 @@ ms.locfileid: "34724121"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения см. в статье об [условном доступе в Azure Active Directory](active-directory-conditional-access-azure-portal.md).
-
+> [!div class="nextstepaction"]
+> [Запрос на принятие условий использования](./active-directory-conditional-access-tou.md)
+> [Блокировка доступа при обнаружении риска для сеанса](./active-directory-conditional-access-app-sign-in-risk.md)

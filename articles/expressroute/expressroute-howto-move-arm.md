@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/03/2017
+ms.date: 06/28/2018
 ms.author: ganesr;cherylmc
-ms.openlocfilehash: 20914eec070452186295f6d87a85ea0675ebaf4c
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 0c3a1a57a89d716245dc075e47b7970cb228ff50
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37060092"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37100459"
 ---
 # <a name="move-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager с помощью PowerShell
 
@@ -97,9 +97,7 @@ ms.locfileid: "37060092"
 Move-AzureRmExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "DemoRG" -Location "West US" -ServiceKey "<Service-key>"
 ```
 
-> [!NOTE]
-> В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. В Resource Manager (ARM) каждый ресурс должен быть сопоставлен с регионом Azure. Указанный в командлете Move-AzureRmExpressRouteCircuit регион технически может быть любым. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
-> 
+В классическом режиме для а ExpressRoute не предусмотрена привязка к региону. Но в Resource Manager каждый ресурс должен быть сопоставлен с регионом Azure. Указанный в командлете Move-AzureRmExpressRouteCircuit регион технически может быть любым. В соответствии с задачами организации может потребоваться выбрать регион, который точно представляет ваше расположение пиринга.
 
 > [!NOTE]
 > После завершения перемещения новое имя, указанное в предыдущем командлете, будет использоваться для адресации ресурсов. По существу канал будет переименован.

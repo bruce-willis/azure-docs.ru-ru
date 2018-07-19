@@ -1,9 +1,9 @@
 ---
 title: Решение служб анализа SQL Azure в Log Analytics | Документация Майкрософт
-description: Решение служб анализа SQL Azure поможет вам управлять базами данных SQL Azure.
+description: Как решение "Аналитика SQL Azure" поможет вам управлять базами данных SQL Azure
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: b2712749-1ded-40c4-b211-abc51cc65171
@@ -11,24 +11,26 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/03/2018
 ms.author: magoedte
-ms.openlocfilehash: 722a10e853f6d61bb5349e92754954e3bb199225
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.component: na
+ms.openlocfilehash: f57a47677f752a644975a25fa746d78bced5d766
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37133499"
 ---
-# <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview-in-log-analytics"></a>Мониторинг базы данных SQL Azure с помощью служб анализа SQL Azure (предварительная версия) в Log Analytics
+# <a name="monitor-azure-sql-databases-using-azure-sql-analytics-preview"></a>Мониторинг Баз данных SQL Azure с помощью службы "Аналитика SQL Azure" (предварительная версия)
 
 ![Символ службы "Аналитика SQL Azure"](./media/log-analytics-azure-sql/azure-sql-symbol.png)
 
-Решение "Аналитика SQL Azure" в Azure Log Analytics собирает и отображает важные метрики производительности SQL Azure. На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения. Вы можете отслеживать метрики базы данных SQL Azure и эластичных пулов в нескольких подписках Azure и эластичных пулах, а также визуализировать их. Решение также поможет вам определить проблемы на каждом уровне стека приложений.  Оно использует [метрики диагностики Azure](log-analytics-azure-storage.md) с представлениями Log Analytics, чтобы представить данные обо всех базах данных SQL Azure и эластичных пулах в единой рабочей области Log Analytics.
+Аналитика SQL Azure — это облачное решение для наблюдения за производительностью Баз данных SQL Azure в нужном масштабе в нескольких эластичных пулах и подписках. Эта служба собирает и отображает важные метрики производительности Базы данных SQL Azure благодаря встроенным средствам аналитики, которые помогают устранять соответствующие неполадки. 
+
+На основе этих метрик можно создавать пользовательские правила мониторинга и оповещения. Решение также поможет вам определить проблемы на каждом уровне стека приложений. Оно использует метрики диагностики Azure с представлениями Log Analytics, чтобы представить данные обо всех базах данных SQL Azure и эластичных пулах в единой рабочей области Log Analytics. Log Analytics помогает собирать, коррелировать и визуализировать структурированные и неструктурированные данные.
 
 Сейчас эта предварительная версия решения поддерживает 150 000 баз данных SQL Azure и 5 000 эластичных пулов SQL на каждую рабочую область.
-
-Решение "Аналитика SQL Azure", как и другие решения, доступные для Log Analytics, помогает отслеживать и получать уведомления о работоспособности ресурсов Azure — в данном случае о базах данных SQL Azure. База данных SQL Microsoft Azure представляет собой масштабируемую службу реляционных баз данных, предоставляющую возможности, аналогичные возможностям SQL Server, в приложениях, запущенных в облаке Azure. Log Analytics помогает собирать, коррелировать и визуализировать структурированные и неструктурированные данные.
 
 Практические сведения об использовании решения "Аналитика SQL Azure" и типичные сценарии его применения приведены в видео:
 
@@ -37,39 +39,34 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="connected-sources"></a>Подключенные источники
 
-Решение "Аналитика SQL Azure" не использует агенты для подключения к службе Log Analytics.
-
-В следующей таблице описаны подключенные источники, которые поддерживаются этим решением.
+Аналитика SQL Azure — это облачное решение для мониторинга с поддержкой потоковой передачи диагностических данных телеметрии для Баз данных SQL Azure и эластичных пулов. Так как эта служба не использует агенты для подключения к Log Analytics, она не поддерживает возможность подключения к ресурсам SCOM, Windows или Linux (сведения о совместимости см. в следующей таблице).
 
 | Подключенный источник | Поддержка | ОПИСАНИЕ |
 | --- | --- | --- |
+| **[Система диагностики Azure](log-analytics-azure-storage.md)** | **Да** | Данные метрик и журнала Azure отправляются в Log Analytics непосредственно из Azure. |
+| [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Log Analytics не считывает данные из учетной записи хранения. |
 | [Агенты Windows](log-analytics-windows-agent.md) | Нет  | Решение не использует прямые агенты Windows. |
 | [Агенты Linux](log-analytics-linux-agents.md) | Нет  | Решение не использует прямые агенты Linux. |
 | [Группы управления SCOM](log-analytics-om-agents.md) | Нет  | Решение не использует прямое подключение агента SCOM к Log Analytics. |
-| [Учетная запись хранения Azure](log-analytics-azure-storage.md) | Нет  | Log Analytics не считывает данные из учетной записи хранения. |
-| [Система диагностики Azure](log-analytics-azure-storage.md) | Yes | Данные метрик и журнала Azure отправляются в Log Analytics непосредственно из Azure. |
-
-## <a name="prerequisites"></a>предварительным требованиям
-
-- Подписка Azure. Если у вас ее нет, вы можете создать ее [бесплатно](https://azure.microsoft.com/free/).
-- Рабочая область Log Analytics. Вы можете использовать имеющуюся рабочую область или же [создать ее](log-analytics-quick-create-workspace.md), прежде чем начать использовать это решение.
-- Включите систему диагностики Azure для баз данных SQL Azure и эластичных пулов и [настройте для них отправку данных в Log Analytics](../sql-database/sql-database-metrics-diag-logging.md).
 
 ## <a name="configuration"></a>Параметр Configuration
 
 Чтобы добавить решение "Аналитика SQL Azure" в рабочую область, сделайте следующее.
 
-1. Решение для анализа Azure SQL необходимо добавить в рабочую область из [Azure Мarketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureSQLAnalyticsOMS?tab=Overview) или в соответствии с инструкциями по [добавлению решений Log Analytics из коллекции решений](log-analytics-add-solutions.md).
-2. На портале Azure последовательно выберите **Создать ресурс** > **Мониторинг и управление**.  
+1. Добавьте решение "Аналитика SQL Azure" в рабочую область из [Azure marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/Microsoft.AzureSQLAnalyticsOMS?tab=Overview).
+2. На портале Azure щелкните **+Создать ресурс** и выберите **Аналитика SQL Azure**.  
     ![Мониторинг и управление](./media/log-analytics-azure-sql/monitoring-management.png)
-3. В списке **Мониторинг и управление** щелкните **Показать все**.
-4. В списке **Рекомендуется** выберите **More** (Дополнительно), а затем в новом списке найдите и выберите **Службы анализа SQL Azure (предварительная версия)**.  
-    ![Решение служб анализа SQL Azure](./media/log-analytics-azure-sql/azure-sql-solution-portal.png)
-5. В области **Службы анализа SQL Azure (предварительная версия)** щелкните **Создать**.  
+3. Выберите в списке **Аналитика SQL Azure (предварительная версия)**.
+4. В области **Службы анализа SQL Azure (предварительная версия)** щелкните **Создать**.  
     ![Создание](./media/log-analytics-azure-sql/portal-create.png)
-6. В области **Создание решения** выберите рабочую область, в которую необходимо добавить решение, а затем нажмите кнопку **Создать**.  
+5. В области **Создание решения** выберите или создайте рабочую область, в которую необходимо добавить решение, а затем нажмите кнопку **Создать**.  
     ![Добавление в рабочую область](./media/log-analytics-azure-sql/add-to-workspace.png)
 
+### <a name="configure-azure-sql-databases-and-elastic-pools-to-stream-diagnostics-telemetry"></a>Настройка Баз данных SQL Azure и эластичных пулов для потоковой передачи диагностических данных телеметрии
+
+Когда вы создадите решение "Аналитика SQL Azure" в рабочей области для наблюдения за производительностью Баз данных SQL Azure и (или) эластичных пулов, **настройте** каждую соответствующую Базу данных SQL Azure и каждый соответствующий ресурс в эластичном пуле для выполнения потоковой передачи диагностических данных телеметрии в решение.
+
+- Включите систему диагностики Azure для баз данных SQL Azure и эластичных пулов и [настройте для них отправку данных в Log Analytics](../sql-database/sql-database-metrics-diag-logging.md).
 
 ### <a name="to-configure-multiple-azure-subscriptions"></a>Настройка нескольких подписок Azure
 

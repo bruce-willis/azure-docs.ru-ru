@@ -6,15 +6,15 @@ author: jovanpop-msft
 ms.reviewer: bonova, carlrab
 ms.service: sql-database
 ms.topic: conceptual
-ms.date: 06/08/2018
+ms.date: 07/02/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: c48a0f078da8e56038ec74ee398bd26fe1dc2718
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 4c7487957e6dc354c2b8aa1beb8a9ca1e9651c97
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054761"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37346126"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение функций Базы данных SQL Azure и SQL Server 
 
@@ -121,11 +121,11 @@ ms.locfileid: "37054761"
 | [SQL Server Analysis Services (SSAS)](https://docs.microsoft.com/sql/analysis-services/analysis-services) | Нет. Ознакомьтесь со страницей [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). | Нет. Дополнительные сведения см. на странице [служб Azure Analysis Services](https://azure.microsoft.com/services/analysis-services/). |
 | [Аудит SQL Server](https://docs.microsoft.com/sql/relational-databases/security/auditing/sql-server-audit-database-engine) | Нет. Дополнительные сведения см. в статье [Приступая к работе с аудитом базы данных SQL](sql-database-auditing.md). | Да. См. раздел [Auditing](sql-database-managed-instance-transact-sql-information.md#auditing) (Аудит). |
 | [SQL Server Data Tools (SSDT)] (https://docs.microsoft.com/sql/ssdt/download-sql-server-data-tools-ssdt) | Yes | Yes |
-| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). |
+| [SQL Server Integration Services (SSIS)](https://docs.microsoft.com/sql/integration-services/sql-server-integration-services) | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Базе данных SQL Azure, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. в разделе [Сравнение базы данных SQL и управляемого экземпляра (предварительная версия)](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-and-managed-instance-preview). | Да, с помощью управляемых служб SSIS в среде фабрики данных Azure (ADF), где пакеты хранятся в SSISDB, размещенной в Управляемом экземпляре, и выполняются в среде выполнения интеграции Azure SSIS (см. руководство по [созданию Azure SSIS IR в ADF](https://docs.microsoft.com/en-us/azure/data-factory/create-azure-ssis-integration-runtime)). <br/><br/>Сравнение компонентов SSIS в Базе данных SQL и Управляемом экземпляре см. в разделе [Сравнение базы данных SQL и управляемого экземпляра (предварительная версия)](../data-factory/create-azure-ssis-integration-runtime.md#compare-sql-database-and-managed-instance-preview). |
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Yes |
-| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Нет  |
+| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) |
 | [SQL Server Reporting Services (SSRS)](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). |
 | [Хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) | Yes | Yes |
 | [Системные хранимые функции](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |

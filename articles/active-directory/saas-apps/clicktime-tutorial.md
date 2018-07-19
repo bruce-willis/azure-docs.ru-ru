@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/10/2017
 ms.author: jeedes
-ms.openlocfilehash: fe8dd3f0771a2692488ddea2000b06d0ed212faf
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: adf3b1310a3e79b12be5294fe9d7a012bfc0d433
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216452"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042944"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clicktime"></a>Руководство. Интеграция Azure Active Directory с ClickTime
 
@@ -34,7 +34,7 @@ ms.locfileid: "36216452"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ClickTime, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36216452"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://app.clicktime.com/sp/`.
     
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
 
     | |
     |--|
@@ -141,7 +141,7 @@ ms.locfileid: "36216452"
    
     a.  Выберите "**Allow** sign-in using Single Sign-On (SSO) with **Azure AD**" (Разрешить единый вход (SSO) с помощью Azure AD).
    
-    Б. В текстовое поле **Identity Provider Endpoint** (Конечная точка входа поставщика удостоверений) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **Identity Provider Endpoint** (Конечная точка входа поставщика удостоверений) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
    
     c.  Откройте в **Блокноте** скачанный с портала Azure**сертификат в кодировке Base-64**, скопируйте его содержимое, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
    
@@ -175,7 +175,7 @@ ms.locfileid: "36216452"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -203,7 +203,7 @@ ms.locfileid: "36216452"
    
     a.  В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например **Britta Simon**. 
   
-    Б.  В текстовом поле **Email address** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
+    b.  В текстовом поле **Email address** (Электронная почта) введите адрес электронной почты пользователя, например **brittasimon@contoso.com**.
        
     > [!NOTE]
     > При необходимости задайте для нового пользователя дополнительные свойства.
@@ -245,7 +245,7 @@ ms.locfileid: "36216452"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку ClickTime на панели доступа, вы автоматически войдете в приложение ClickTime.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

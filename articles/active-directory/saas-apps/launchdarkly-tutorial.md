@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: jeedes
-ms.openlocfilehash: 8653fe2053b2a49967b5b0f98654c20f8999d7ff
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6d0024adfde82480d46f876021a25bb8f42ba6ff
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217502"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041302"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-launchdarkly"></a>Руководство. Интеграция Azure Active Directory с LaunchDarkly
 
@@ -34,7 +34,7 @@ ms.locfileid: "36217502"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением LaunchDarkly, вам потребуется:
 
@@ -110,7 +110,7 @@ ms.locfileid: "36217502"
 
     a. В текстовом поле **Идентификатор (идентификатор сущности)** введите URL-адрес: `app.launchdarkly.com`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://app.launchdarkly.com/trust/saml2/acs/<customers-unique-id>`.
     
     > [!NOTE]
     > Значение URL-адреса ответа приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике.
@@ -153,7 +153,7 @@ ms.locfileid: "36217502"
 
     a. Скопируйте **SAML consumer service URL** (URL-адрес службы объекта-получателя SAML) для своего экземпляра и вставьте его в текстовое поле "URL-адрес ответа" в разделе **Домен и URL-адреса приложения LaunchDarkly** на портале Azure.
 
-    Б. В текстовом поле **URL-адрес для входа** вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
+    b. В текстовом поле **URL-адрес для входа** вставьте значение **URL-адрес службы единого входа**, скопированное на портале Azure.
 
     c. Откройте в Блокноте скачанный с портала Azure сертификат, скопируйте его содержимое и вставьте его в поле **Сертификат X.509**. Кроме того, можно отправить сертификат напрямую, выбрав **upload one** (Отправить).
 
@@ -232,7 +232,7 @@ ms.locfileid: "36217502"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент LaunchDarkly на панели доступа, вы автоматически войдете в приложение LaunchDarkly.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -2,19 +2,19 @@
 title: Использование Draft с AKS и реестром контейнеров Azure
 description: Использование Draft с AKS и реестром контейнеров Azure
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 03/29/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: a5dfecefb6ce1d74e02c64371a864a6d3b07a2e1
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 8f273a5a2c47b25dc339fd63df127d141fe2f8e2
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257321"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37130249"
 ---
 # <a name="use-draft-with-azure-kubernetes-service-aks"></a>Использование Draft со службой Azure Kubernetes (AKS)
 
@@ -58,11 +58,11 @@ Draft создает образы контейнеров локально, а з
 
 ### <a name="create-trust-between-aks-cluster-and-acr"></a>Создание отношения доверия между кластером AKS и ACR
 
-Чтобы установить отношения доверия между кластером AKS и реестром ACR, следует изменить субъект-службу Azure Active Directory, используемый для AKS, добавив в кластер роль участника с областью репозитория ACR. Для этого выполните приведенные ниже команды, заменив _&lt;aks-rg-name&gt;_ и _&lt;aks-cluster-name&gt;_ именем группы ресурсов и именем кластера AKS, а _&lt;acr-rg-name&gt;_ и  _&lt;acr-repo-name&gt;_ — именем группы ресурсов и именем репозитория ACR, с которым необходимо создать отношение доверия.
+Чтобы установить отношения доверия между кластером AKS и реестром ACR, следует изменить субъект-службу Azure Active Directory, используемый для AKS, добавив в кластер роль участника с областью реестра ACR. Для этого выполните приведенные ниже команды, заменив _&lt;aks-rg-name&gt;_ и _&lt;aks-cluster-name&gt;_ именем группы ресурсов и именем кластера AKS, а _&lt;acr-rg-name&gt;_ и _&lt;acr-registry-name&gt;_ — именем группы ресурсов и именем реестра ACR, с которым необходимо создать отношение доверия.
 
 ```console
 export AKS_SP_ID=$(az aks show -g <aks-rg-name> -n <aks-cluster-name> --query "servicePrincipalProfile.clientId" -o tsv)
-export ACR_RESOURCE_ID=$(az acr show -g <acr-rg-name> -n <acr-repo-name> --query "id" -o tsv)
+export ACR_RESOURCE_ID=$(az acr show -g <acr-rg-name> -n <acr-registry-name> --query "id" -o tsv)
 az role assignment create --assignee $AKS_SP_ID --scope $ACR_RESOURCE_ID --role contributor
 ```
 

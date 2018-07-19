@@ -13,16 +13,16 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: artek
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 75fb07120c78c45d422ee5017eac0afcf0e80859
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 591d8ea7670bf9b29450695ee7cbee5fa39baaac
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37060824"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344728"
 ---
 # <a name="using-the-hdfs-cli-with-data-lake-storage-gen2"></a>Использование HDFS CLI в Data Lake Storage Gen2
 
-Предварительная версия хранилища Azure Data Lake Storage Gen2 позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в Azure Data Lake Storage Gen2, вы можете использовать интерфейс командной строки (CLI) для извлечения и обработки загруженных данных. В остальной части статьи описываются параметры, которые вы можете использовать, в то время как [ команда разработчиков службы хранилища Azure работает над добавлением поддержки в обозреватель службы хранилища Azure и портала Azure.](https://azure.microsoft.com/roadmap/) Удачи!
+Предварительная версия хранилища Azure Data Lake Storage Gen2 позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](http://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Если кластер HDInsight подключен или с помощью Azure Databricks выполняет задание Apache Spark по анализу данных, которые хранятся в Azure Data Lake Storage Gen2, вы можете использовать интерфейс командной строки (CLI) для извлечения и обработки загруженных данных. В остальной части статьи описываются параметры, которые вы можете использовать, пока [команда разработчиков службы хранилища Azure работает над добавлением поддержки Обозревателя службы хранилища Azure и портала Azure](https://azure.microsoft.com/roadmap/).
 
 ## <a name="hdfs-cli-with-hdinsight"></a>Использование HDFS CLI в HDInsight
 

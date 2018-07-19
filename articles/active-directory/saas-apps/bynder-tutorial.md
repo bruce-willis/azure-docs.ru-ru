@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 06f5d267245311ad829a82562e740db08eb97b12
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 7f30752b2963ee2e3dd837008831ba9a38e4e9e3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212358"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043454"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bynder"></a>Руководство. Интеграция Azure Active Directory с Bynder
 
@@ -34,7 +34,7 @@ ms.locfileid: "36212358"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Bynder, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36212358"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company name>.getbynder.com`
     
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.getbynder.com/sso/SAML/authenticate/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.getbynder.com/sso/SAML/authenticate/`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -211,7 +211,7 @@ ms.locfileid: "36212358"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Bynder на панели доступа, вы автоматически войдете в приложение Bynder.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

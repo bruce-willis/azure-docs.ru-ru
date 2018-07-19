@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/10/2017
 ms.author: jeedes
-ms.openlocfilehash: b0cd33370f5940e7f74fed0938320c96ae15a447
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a0f9a0a76f001d6126e5b0924d0e5a3aaefa528b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36226900"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041380"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-humanity"></a>Учебник. Интеграция Azure Active Directory с Humanity
 
@@ -33,7 +33,7 @@ ms.locfileid: "36226900"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Humanity, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36226900"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://company.humanity.com/includes/saml/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://company.humanity.com/app/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://company.humanity.com/app/`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Humanity](https://www.humanity.com/support/). 
@@ -147,7 +147,7 @@ ms.locfileid: "36226900"
    
     a. Установите флажок **SAML включен**.
 
-    Б. Установите флажок **Allow Password Login** (Разрешить вход с паролем).
+    b. Установите флажок **Allow Password Login** (Разрешить вход с паролем).
 
     c. Вставьте **URL-адрес службы единого входа SAML** в текстовое поле **URL-адрес издателя SAML**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "36226900"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -218,7 +218,7 @@ ms.locfileid: "36226900"
    
     a. Заполните текстовые поля **Имя**, **Фамилия** и **Email** (Электронная почта) данными действующей учетной записи AAD, которую необходимо подготовить.
 
-    Б. Щелкните **Сохранить сотрудников**.
+    b. Щелкните **Сохранить сотрудников**.
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетной записи пользователя Humanity или API, предоставляемые Humanity для подготовки учетных записей пользователей AAD.
@@ -258,7 +258,7 @@ ms.locfileid: "36226900"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Humanity на панели доступа, вы автоматически войдете в приложение Humanity.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

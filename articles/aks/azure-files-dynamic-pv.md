@@ -2,19 +2,19 @@
 title: Использование службы файлов Azure с AKS
 description: Использование дисков Azure с AKS.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/21/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: d3e92902e711ba2b1664c6497ecb66f035ea9308
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 84500791887194884e1ec7d15ddfbc169ba22517
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34597507"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37098351"
 ---
 # <a name="persistent-volumes-with-azure-files"></a>Использование постоянных томов со службой файлов Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "34597507"
 
 ## <a name="create-storage-account"></a>Создать учетную запись хранения
 
-При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. Получите имя группы ресурсов, выполнив команду [az resource show][az-resource-show].
+При динамическом создании файлового ресурса Azure в качестве тома Kubernetes можно использовать любую учетную запись хранения, если она содержится в той же группе ресурсов **узла** AKS. В названии этой группы должен быть префикс `MC_`, который был создан при подготовке ресурсов кластера AKS. Получите имя группы ресурсов, выполнив команду [az resource show][az-resource-show].
 
 ```azurecli-interactive
 $ az resource show --resource-group myResourceGroup --name myAKSCluster --resource-type Microsoft.ContainerService/managedClusters --query properties.nodeResourceGroup -o tsv
@@ -40,13 +40,15 @@ MC_myResourceGroup_myAKSCluster_eastus
 az storage account create --resource-group MC_myResourceGroup_myAKSCluster_eastus --name mystorageaccount --location eastus --sku Standard_LRS
 ```
 
+> Сейчас служба файлов Azure поддерживает только хранилище ценовой категории "Стандартный". Вы не сможете подготовить том, если используете хранилище ценовой категории "Премиум".
+
 ## <a name="create-storage-class"></a>Создание класса хранения
 
 Класс хранения используется для определения того, как создается файловый ресурс Azure. В этом классе можно указать определенную учетную запись хранения. Если учетная запись хранения не указана, то требуется указать `skuName` и `location`, и все учетные записи хранения в связанной группе ресурсов будут проверены на соответствие.
 
 Дополнительные сведения о классах хранения Kubernetes для файлов Azure см. в разделе [Kubernetes Storage Classes][kubernetes-storage-classes] (Классы хранения Kubernetes).
 
-Создайте файл `azure-file-sc.yaml` и скопируйте в него следующий манифест. Замените `storageAccount` именем целевой учетной записи хранения.
+Создайте файл `azure-file-sc.yaml` и скопируйте в него следующий манифест. Замените `storageAccount` именем целевой учетной записи хранения. Дополнительные сведения о `mountOptions` см. в разделе [Параметры подключения].
 
 ```yaml
 kind: StorageClass
@@ -54,8 +56,13 @@ apiVersion: storage.k8s.io/v1
 metadata:
   name: azurefile
 provisioner: kubernetes.io/azure-file
+mountOptions:
+  - dir_mode=0777
+  - file_mode=0777
+  - uid=1000
+  - gid=1000
 parameters:
-  storageAccount: mystorageaccount
+  skuName: Standard_LRS
 ```
 
 Выполните команду [kubectl apply][kubectl-apply], чтобы создать класс хранения.
@@ -206,3 +213,4 @@ spec:
 [az-storage-create]: /cli/azure/storage/account#az_storage_account_create
 [az-storage-key-list]: /cli/azure/storage/account/keys#az_storage_account_keys_list
 [az-storage-share-create]: /cli/azure/storage/share#az_storage_share_create
+[mount-options]: #mount-options

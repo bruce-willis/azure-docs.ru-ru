@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 70a67f5205ee9b1249d3db2cda3eb4af9acabe31
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 10f4749524c4d4b35b83e5637d35f4ef9a8f9ab6
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230181"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041336"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-replicon"></a>Учебник. Интеграция Azure Active Directory с Replicon
 
@@ -34,7 +34,7 @@ ms.locfileid: "36230181"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Replicon, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36230181"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://na2.replicon.com/<companyname>/saml2/sp-sso/post`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://global.replicon.com/<companyname>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://global.replicon.com/<companyname>`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://global.replicon.com/!/saml2/<companyname>/sso/post`.
 
@@ -137,7 +137,7 @@ ms.locfileid: "36230181"
 
     * Ниже показана схема полного URL-адреса: `https://na2.replicon.com/\<YourCompanyKey\>/services/SecurityService1.svc/help/test/EnableSAMLAuthentication2`
 
-   Б. Щелкните **+**, чтобы развернуть раздел **v20Configuration**.
+   b. Щелкните **+**, чтобы развернуть раздел **v20Configuration**.
 
    c. Щелкните **+**, чтобы развернуть раздел **metaDataConfiguration**.
 
@@ -197,7 +197,7 @@ ms.locfileid: "36230181"
 
     a. В текстовом поле **Имя для входа в систему** введите электронный адрес пользователя Azure AD, которого хотите подготовить, например **BrittaSimon@contoso.com**.
 
-    Б. Для параметра **Authentication Type** (Тип аутентификации) выберите значение **SSO** (Единый вход).
+    b. Для параметра **Authentication Type** (Тип аутентификации) выберите значение **SSO** (Единый вход).
 
     c. В текстовом поле **Отдел** введите отдел пользователя.
 
@@ -243,7 +243,7 @@ ms.locfileid: "36230181"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Replicon на панели доступа, вы автоматически войдете в приложение Replicon.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

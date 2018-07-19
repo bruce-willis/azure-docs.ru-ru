@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.author: dobett
-ms.openlocfilehash: 04823409b209d1f35a27452321cfd37d30097dde
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 43eb988915fb917923ab968d22b9b7f0ee36c0f5
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808780"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37444401"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -36,13 +36,16 @@ ms.locfileid: "34808780"
 Предоставить [разрешения](#iot-hub-permissions) можно следующими способами:
 
 * **Политики общего доступа на уровне Центра Интернета вещей**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#iot-hub-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программно, используя [интерфейсы REST API поставщика ресурсов Центра Интернета вещей][lnk-resource-provider-apis]. По умолчанию для только что созданного Центра Интернета вещей заданы такие политики:
+  
+  | Политика общего доступа | Разрешения |
+  | -------------------- | ----------- |
+  | iothubowner | Все разрешения |
+  | свойства | Разрешения **ServiceConnect** |
+  | device | Разрешения **DeviceConnect** |
+  | registryRead | Разрешения **RegistryRead** |
+  | registryReadWrite | Разрешения **RegistryRead** и **RegistryWrite** |
 
-  * **iothubowner**: политика со всеми разрешениями;
-  * **service**: политика с разрешением **ServiceConnect**;
-  * **device**: политика с разрешением **DeviceConnect**;
-  * **registryRead**: политика с разрешением **RegistryRead**;
-  * **registryReadWrite**: политика с разрешениями **RegistryRead** и RegistryWrite.
-  * **Учетные данные безопасности на уровне отдельного устройства**. Каждый Центр Интернета вещей содержит [реестр удостоверений][lnk-identity-registry]. Для каждого устройства в этом реестре удостоверений вы можете задать учетные данные безопасности, дающие вам разрешения **DeviceConnect**, которые соответствуют конечным точкам устройств.
+* **Учетные данные безопасности на уровне отдельного устройства**. Каждый Центр Интернета вещей содержит [реестр удостоверений][lnk-identity-registry]. Для каждого устройства в этом реестре удостоверений вы можете задать учетные данные безопасности, дающие вам разрешения **DeviceConnect**, которые соответствуют конечным точкам устройств.
 
 Например, в стандартном решении IoT:
 
@@ -462,7 +465,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 [lnk-query]: iot-hub-devguide-query-language.md
 [lnk-devguide-mqtt]: iot-hub-mqtt-support.md
 [lnk-openssl]: https://www.openssl.org/
-[lnk-selfsigned]: https://technet.microsoft.com/library/hh848633
+[lnk-selfsigned]: https://docs.microsoft.com/powershell/module/pkiclient/new-selfsignedcertificate
 
 [lnk-resource-provider-apis]: https://docs.microsoft.com/rest/api/iothub/iothubresource
 [lnk-sas-tokens]: iot-hub-devguide-security.md#security-tokens

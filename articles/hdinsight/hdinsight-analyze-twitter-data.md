@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: jgao
 ROBOTS: NOINDEX
-ms.openlocfilehash: 35f8937ddef54d407a6e3c83566225ca8ede8bd9
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: 6b47e54e56b12a2975c44ab3b87b023d20a769c3
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960133"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37436170"
 ---
 # <a name="analyze-twitter-data-using-hive-in-hdinsight"></a>Анализ данных Twitter с помощью Hive в HDInsight
 Социальные веб-сайты являются одной из основных движущих сил для внедрения данных большого размера. Общедоступные API, предоставляемые сайтами, такими как Twitter, — полезный источник данных для анализа и понимания популярных тенденций.
@@ -99,7 +99,7 @@ Twitter использует протокол OAuth для обеспечени�
 
 **Получение твитов**
 
-1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell. (На начальном экране Windows 8 введите **PowerShell_ISE**, а затем щелкните **Windows PowerShell ISE**. Ознакомьтесь с разделом [Запуск Windows PowerShell в Windows 8 и Windows][powershell-start].)
+1. Откройте интегрированную среду сценариев (ISE) Windows PowerShell. (На начальном экране Windows 8 введите **PowerShell_ISE**, а затем щелкните **Windows PowerShell ISE**. Ознакомьтесь с разделом [Запуск Windows PowerShell в Windows 8 и Windows](https://docs.microsoft.com/en-us/powershell/scripting/setup/starting-windows-powershell?view=powershell-6).)
 2. Скопируйте следующий скрипт в область скриптов:
 
     ```powershell

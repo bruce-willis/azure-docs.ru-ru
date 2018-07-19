@@ -3,7 +3,7 @@ title: Выполнение задач запуска в облачных слу
 description: Задачи запуска помогают подготовить среду облачной службы для приложения. Вы узнаете, как работают задачи запуска и как их можно создать.
 services: cloud-services
 documentationcenter: ''
-author: Thraka
+author: jpconnock
 manager: timlt
 editor: ''
 ms.assetid: 886939be-4b5b-49cc-9a6e-2172e3c133e9
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
-ms.author: adegeo
-ms.openlocfilehash: 1c1b3aa86dc8211de0c07c9fb68da5685c86f551
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: jeconnoc
+ms.openlocfilehash: 6601eba90f3c3644d418ddd0a74746e1a12bcbd3
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22999139"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39007785"
 ---
 # <a name="how-to-configure-and-run-startup-tasks-for-a-cloud-service"></a>Как настроить и выполнить задачи запуска для облачной службы
 С помощью задач запуска вы можете выполнять различные операции перед запуском роли. Это может быть установка компонента, регистрация компонентов COM, установка разделов реестра или запуск длительного процесса.
@@ -100,7 +100,7 @@ EXIT /B 0
 **executionContext** — задает уровень привилегий для задачи запуска. Уровень привилегий может быть ограничен или повышен:
 
 * **limited**  
-  Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Runtime] также имеет значение **limited**, то используются привилегии пользователя.
+  Задача запуска выполняется с теми же привилегиями, что и роль. Если атрибут **executionContext** элемента [Среда выполнения] также имеет значение **limited**, то используются привилегии пользователя.
 * **elevated**  
   Задача запуска выполняется с привилегиями администратора. Это позволяет задачам запуска устанавливать программы, вносить изменения в конфигурацию IIS, вносить изменения в реестр и выполнять другие административные задачи без увеличения уровня привилегий самой роли.  
 
@@ -128,7 +128,7 @@ EXIT /B 0
 ## <a name="environment-variables"></a>Переменные среды
 Переменные среды — это способ передачи информации в задачу запуска. Например, можно передать путь к большому двоичному объекту, содержащему программу для установки, или номера портов, которые будет использовать роль, или параметры для управления функциями задачи запуска.
 
-Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Environment] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
+Существует два типа переменных среды для задачи запуска: статические переменные среды и переменные среды на основе членов класса [RoleEnvironment] . Оба они находятся в разделе [Среда] файла [ServiceDefinition.csdef] и используют элемент [Variable] и атрибут **name**.
 
 Статические переменные среды используют атрибут **value** элемента [Variable] . В примере выше создается переменная среды **MyVersionNumber**, которая имеет статическое значение **1.0.0.0**. Другим примером может служить создание переменной среды **StagingOrProduction**, которой можно вручную присвоить значение **staging** или **production**, чтобы выполнять различные действия запуска в зависимости от значения переменной среды **StagingOrProduction**.
 
@@ -163,8 +163,8 @@ EXIT /B 0
 [ServiceDefinition.csdef]: cloud-services-model-and-package.md#csdef
 [Task]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Task
 [Startup]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Startup
-[Runtime]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
-[Environment]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
+[Среда выполнения]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Runtime
+[Среда]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Environment
 [Variable]: https://msdn.microsoft.com/library/azure/gg557552.aspx#Variable
 [RoleInstanceValue]: https://msdn.microsoft.com/library/azure/gg557552.aspx#RoleInstanceValue
 [RoleEnvironment]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.serviceruntime.roleenvironment.aspx

@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 01/30/2018
+ms.date: 07/02/2018
 ms.author: sethm
-ms.openlocfilehash: 451fc42f573db2b60985912cfa63617e04f09e6c
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: fd7b85d18aeb1674ad7a5e67dd9ac65345c56887
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28932721"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37435037"
 ---
 # <a name="event-hubs-diagnostic-logs"></a>Журналы диагностики концентраторов событий
 
@@ -31,7 +31,7 @@ ms.locfileid: "28932721"
 
 ## <a name="enable-diagnostic-logs"></a>Включение ведения журнала диагностики для веб-приложений в службе приложений Azure
 
-По умолчанию журналы диагностики отключены. Включение журналов диагностики
+По умолчанию журналы диагностики отключены. Чтобы включить журналы диагностики, сделайте следующее:
 
 1.  На [портале Azure](https://portal.azure.com) в разделе **Мониторинг и управление** щелкните **Журналы диагностики**.
 

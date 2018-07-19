@@ -2,18 +2,18 @@
 title: Рекомендации по синхронизации данных SQL Azure | Документация Майкрософт
 description: Рекомендации по настройке и выполнению синхронизации данных SQL Azure.
 services: sql-database
-ms.date: 04/01/2018
+ms.date: 07/03/2018
 ms.topic: conceptual
 ms.service: sql-database
 author: allenwux
 ms.author: xiwu
 manager: craigg
-ms.openlocfilehash: b53c72f1df4f2fc2509d91220d08aff4682b6620
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: c8b8455dac9aa1a9f7747cada4ce85644162e331
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025568"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445166"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Рекомендации по синхронизации данных SQL 
 
@@ -85,6 +85,7 @@ ms.locfileid: "37025568"
 -   Проверочные ограничения не подготавливаются.  
 -   Имеющиеся триггеры в исходных таблицах не подготавливаются.  
 -   Представления и хранимые процедуры не создаются в базе данных назначения.
+-   Действия ON UPDATE CASCADE и ON DELETE CASCADE в отношении ограничений внешнего ключа не создаются повторно в целевых таблицах.
 
 #### <a name="recommendations"></a>Рекомендации
 

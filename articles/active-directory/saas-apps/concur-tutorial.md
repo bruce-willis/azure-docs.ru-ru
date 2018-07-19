@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: b092b8fa5f3b410788ca56a0d1a43e27e3ac3e97
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 22197f3ea91a014b6afee014463b709705bf33a0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216180"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042458"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-concur"></a>Руководство. Интеграция Azure Active Directory с Concur
 
@@ -33,7 +33,7 @@ ms.locfileid: "36216180"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Concur, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "36216180"
 
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://www.concursolutions.com/UI/SSO/<OrganizationId>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer-domain>.concursolutions.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer-domain>.concursolutions.com`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Concur](https://www.concur.co.in/contact). 
@@ -166,7 +166,7 @@ ms.locfileid: "36216180"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -211,7 +211,7 @@ ms.locfileid: "36216180"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы щелкните элемент Concur на панели доступа, должна появиться страница входа в приложение Concur.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

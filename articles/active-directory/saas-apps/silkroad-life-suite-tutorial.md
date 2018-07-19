@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 0fb2bf12c239366f92e4f54d2afdd6400aa83dc6
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 962b3f0e18c2dbedf80c0cfca6bc8275b394307b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225251"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046021"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-silkroad-life-suite"></a>Руководство по интеграции Azure Active Directory с решением SilkRoad Life Suite
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225251"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SilkRoad Life Suite, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36225251"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.silkroad-eng.com/Authentication/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     | |
     |--|
     | `https://<subdomain>.silkroad-eng.com/Authentication/SP` |
@@ -166,7 +166,7 @@ ms.locfileid: "36225251"
   
     a. В разделе **Option 2 - Metadata File** (Вариант 2 — файл метаданных) нажмите кнопку **Browse** (Обзор), чтобы отправить скачанный файл метаданных с портала Azure.
   
-    Б. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
+    b. Нажмите кнопку **Создать поставщик удостоверений с помощью данных из файла**.
 
 13. В разделе **Authentication Sources** (Источники проверки подлинности) нажмите кнопку **Edit** (Изменить). 
     
@@ -178,7 +178,7 @@ ms.locfileid: "36225251"
 
     a. В поле **Enabled** (Включено) выберите **Yes** (Да).
 
-    Б. В текстовое поле **Идентификатор сущности** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Идентификатор сущности** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
    
     c. В текстовом поле **IdP Description** (Описание IdP) введите описание вашей конфигурации (например, *Azure AD SSO*).
 
@@ -270,7 +270,7 @@ ms.locfileid: "36225251"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SilkRoad Life Suite на панели доступа, вы автоматически войдете в приложение SilkRoad Life Suite.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

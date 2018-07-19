@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 8c16e5d05378df9271b108eb93d36173672fc501
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1148e6f85905888eccafde638de66215073e0eaa
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223670"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043692"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Учебник. Интеграция Azure Active Directory с Blackboard Learn
 
@@ -33,7 +33,7 @@ ms.locfileid: "36223670"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Blackboard Learn, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36223670"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`
     
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Blackboard Learn](https://www.blackboard.com/support/index.aspx). 
@@ -136,7 +136,7 @@ ms.locfileid: "36223670"
     
     ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -184,7 +184,7 @@ ms.locfileid: "36223670"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -228,7 +228,7 @@ ms.locfileid: "36223670"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Blackboard Learn — Shibboleth" на панели доступа, вы автоматически войдете в приложение Blackboard Learn — Shibboleth. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент "Blackboard Learn — Shibboleth" на панели доступа, вы автоматически войдете в приложение Blackboard Learn — Shibboleth. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

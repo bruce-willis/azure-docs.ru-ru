@@ -2,7 +2,7 @@
 title: Уязвимости, обнаруживаемые защитой идентификации Azure Active Directory | Документация Майкрософт
 description: Обзор уязвимостей, обнаруживаемых защитой идентификации Azure Active Directory.
 services: active-directory
-keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
+keywords: защита удостоверений Azure Active Directory, Cloud Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
 documentationcenter: ''
 author: MarkusVi
 manager: mtillman
@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/15/2018
+ms.date: 06/27/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 9ee926ff7cf44041c1969d541ca225395ba31a2f
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 804ee23a8e27eda89861ef820d266f93013d7ffe
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34713700"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38307336"
 ---
 # <a name="vulnerabilities-detected-by-azure-active-directory-identity-protection"></a>Уязвимости, обнаруживаемые защитой идентификации Azure Active Directory
 Уязвимости — это слабые стороны среды, которыми могут воспользоваться злоумышленники. Мы рекомендуем устранить эти уязвимости, чтобы улучшить систему безопасности своей организации и предотвратить использование уязвимостей злоумышленниками.
@@ -47,9 +47,9 @@ Azure Multi-Factor Authentication обеспечивает второй уров
 
 На современных предприятиях ИТ-специалисты часто не знают обо всех облачных приложениях, при помощи которых пользователи выполняют свои задачи. Легко понять, почему администраторов беспокоят несанкционированный доступ к корпоративным данным, возможная утечка данных и другие угрозы безопасности. 
 
-Мы рекомендуем развернуть Cloud App Discovery, чтобы можно было обнаруживать неуправляемые облачные приложения и управлять ими с помощью Azure Active Directory.
+Мы рекомендуем развернуть Cloud Discovery, чтобы можно было обнаруживать неуправляемые облачные приложения и управлять ими с помощью Azure Active Directory.
 
-Дополнительные сведения см. в статье [Поиск неуправляемых облачных приложений с помощью Cloud App Discovery](manage-apps/cloud-app-discovery.md).
+Дополнительные сведения см. в статье [Cloud Discovery](/cloud-app-security/set-up-cloud-discovery).
 
 ## <a name="security-alerts-from-privileged-identity-management"></a>Оповещения системы безопасности в рамках управления привилегированными пользователями
 Эта уязвимость способствует обнаружению и устранению оповещений о привилегированных удостоверениях в организации.  
@@ -58,7 +58,7 @@ Azure Multi-Factor Authentication обеспечивает второй уров
 
 Мы рекомендуем настроить в организации управление привилегированными пользователями Azure AD, чтобы контролировать и отслеживать пользователей с привилегированными удостоверениями и их доступ к ресурсам в Azure AD и других веб-службах Майкрософт, таких как Office 365 или Microsoft Intune, а также управлять ими.
 
-Дополнительные сведения см. в статье [об Azure Active Directory Privileged Identity Management](active-directory-privileged-identity-management-configure.md). 
+Дополнительные сведения см. в статье [об Azure Active Directory Privileged Identity Management](privileged-identity-management/pim-configure.md). 
 
 ## <a name="see-also"></a>См. также
 * [Защита идентификации Azure Active Directory.](active-directory-identityprotection.md)

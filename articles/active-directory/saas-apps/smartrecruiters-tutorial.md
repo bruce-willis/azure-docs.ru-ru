@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/29/2017
 ms.author: jeedes
-ms.openlocfilehash: 33eae0b2a7fe9e920ed1bd0e120d49ad090e2466
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e7368a54945d3107f9eb8973c6aaa261da4c2154
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223026"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045297"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smartrecruiters"></a>Руководство по интеграции Azure Active Directory с SmartRecruiters
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223026"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SmartRecruiters, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36223026"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://www.smartrecruiters.com/web-sso/saml/<companyname>/callback`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -155,7 +155,7 @@ ms.locfileid: "36223026"
 
     a. В текстовое поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
-    Б. Откройте **сертификат (Base64)**, который вы скачали с портала Azure, и вставьте его содержимое в текстовое поле **Identity Provider certificate** (Сертификат поставщика удостоверений).
+    b. Откройте **сертификат (Base64)**, который вы скачали с портала Azure, и вставьте его содержимое в текстовое поле **Identity Provider certificate** (Сертификат поставщика удостоверений).
 
 13. Щелкните **Save Web SSO configuration** (Сохранить конфигурацию единого входа через Интернет).
 
@@ -233,7 +233,7 @@ ms.locfileid: "36223026"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент SmartRecruiters на панели доступа, вы автоматически войдете в приложение SmartRecruiters.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

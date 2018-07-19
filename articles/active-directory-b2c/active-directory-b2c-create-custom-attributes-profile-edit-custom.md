@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: e4dfb92257dca4069905f17e1c3ccd43d87cd45c
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: ecde4d8cd8ee454290b16b640ba05d310cf348fe
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34710164"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37449436"
 ---
 # <a name="azure-active-directory-b2c-creating-and-using-custom-attributes-in-a-custom-profile-edit-policy"></a>Azure Active Directory B2C. Создание и использование настраиваемых атрибутов в пользовательской политике изменения профиля
 
@@ -25,7 +25,7 @@ ms.locfileid: "34710164"
 
 ## <a name="prerequisites"></a>предварительным требованиям
 
-Выполните шаги, описанные в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
+Выполните шаги, описанные в руководстве по [началу работы с пользовательскими политиками](active-directory-b2c-get-started-custom.md).
 
 ## <a name="use-custom-attributes-to-collect-information-about-your-customers-in-azure-active-directory-b2c-using-custom-policies"></a>Использование настраиваемых атрибутов для сбора данных о клиентах в Azure Active Directory B2C с помощью пользовательских политик
 Каталог Azure Active Directory (Azure AD) B2C поставляется со встроенным набором атрибутов: Given Name, Surname, City, Postal Code, userPrincipalName и т. д.  Часто требуется создавать собственные атрибуты.  Например: 
@@ -49,182 +49,192 @@ ms.locfileid: "34710164"
 ## <a name="creating-a-new-application-to-store-the-extension-properties"></a>Создание приложения для хранения свойств расширения
 
 1. Откройте сеанс браузера, перейдите на [портал Azure](https://portal.azure.com) и выполните вход с использованием учетных данных администратора каталога B2C, который требуется настроить.
-1. В области навигации слева щелкните **Active Directory**. Чтобы найти эту службу, щелкните > More Services (> Больше служб).
-1. Щелкните **Регистрация приложений** и выберите пункт **Регистрация нового приложения**.
-1. Укажите следующие рекомендуемые записи:
-  * Укажите имя для веб-приложения: **WebApp-GraphAPI-DirectoryExtensions**
-  * Тип приложения: веб-приложение или API.
-  * URL-адрес входа: https://{tenantName}.onmicrosoft.com/WebApp-GraphAPI-DirectoryExtensions.
-1. Выберите "Создать". В области **уведомлений** появится уведомление об успешном выполнении.
-1. Выберите созданное только что веб-приложение: **WebApp-GraphAPI-DirectoryExtensions**
-1. Выберите параметры: **Необходимые разрешения**
-1. Выберите API: **Microsoft Azure Active Directory**.
-1. Установите флажки в разделе "Разрешения приложения": **Чтение и запись данных каталога** и **Сохранение**
-1. Выберите команду **Предоставить разрешения** и нажмите кнопку **Да**.
-1. Скопируйте в буфер обмена и сохраните следующие идентификаторы из раздела "WebApp-GraphAPI-DirectoryExtensions > Параметры > Свойства".
-*  **Идентификатор приложения**. Пример: `103ee0e6-f92d-4183-b576-8c3739027780`
-* **Идентификатор объекта**. Пример: `80d8296a-da0a-49ee-b6ab-fd232aa45201`
+2. В области навигации слева щелкните **Active Directory**. Чтобы найти эту службу, щелкните > More Services (> Больше служб).
+3. Щелкните **Регистрация приложений** и выберите пункт **Регистрация нового приложения**.
+4. Укажите следующие рекомендуемые записи:
+    * Укажите имя для веб-приложения: **WebApp-GraphAPI-DirectoryExtensions**
+    * Тип приложения: веб-приложение или API.
+    * URL-адрес входа: https://{tenantName}.onmicrosoft.com/WebApp-GraphAPI-DirectoryExtensions.
+5. Нажмите кнопку **Создать**.
+6. Выберите созданное веб-приложение.
+7. Выберите **Параметры** > **Необходимые разрешения**.
+8. Выберите API **Microsoft Azure Active Directory**.
+9. Установите в разделе "Разрешения приложения" флажок **Чтение и запись данных каталога** и нажмите кнопку **Сохранить**.
+10. Выберите команду **Предоставить разрешения** и нажмите кнопку **Да**.
+11. Скопируйте в буфер обмена и сохраните следующие идентификаторы:
+    * **Идентификатор приложения**. Пример: `103ee0e6-f92d-4183-b576-8c3739027780`
+    * **Идентификатор объекта**. Пример: `80d8296a-da0a-49ee-b6ab-fd232aa45201`
 
 
 
 ## <a name="modifying-your-custom-policy-to-add-the-applicationobjectid"></a>Изменение пользовательской политики для добавления ApplicationObjectId
 
-```xml
+Выполнив действия, описанные в руководстве по [началу работы с пользовательскими политиками](active-directory-b2c-get-started-custom.md), вы скачаете и измените [файлы](https://github.com/Azure-Samples/active-directory-b2c-custom-policy-starterpack/archive/master.zip) с именем *TrustFrameworkBase.xml*,  *TrustFrameworkExtensions.xml*, *SignUpOrSignin.xml*, *ProfileEdit.xml* и *PasswordReset.xml*. Вы можете продолжать вносить изменения в эти файлы.
+
+1. Откройте файл *TrustFrameworkBase.xml* и добавьте раздел `Metadata`, как показано в следующем примере: Вставьте идентификатор объекта, записанный ранее для значения `ApplicationObjectId`, и идентификатор приложения, записанный для значения `ClientId`: 
+
+    ```xml
     <ClaimsProviders>
         <ClaimsProvider>
-              <DisplayName>Azure Active Directory</DisplayName>
+          <DisplayName>Azure Active Directory</DisplayName>
             <TechnicalProfile Id="AAD-Common">
-              <DisplayName>Azure Active Directory</DisplayName>
-              <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-              <!-- Provide objectId and appId before using extension properties. -->
-              <Metadata>
-                <Item Key="ApplicationObjectId">insert objectId here</Item>
-                <Item Key="ClientId">insert appId here</Item>
-              </Metadata>
-            <!-- End of changes -->
-              <CryptographicKeys>
-                <Key Id="issuer_secret" StorageReferenceId="TokenSigningKeyContainer" />
-              </CryptographicKeys>
-              <IncludeInSso>false</IncludeInSso>
-              <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
-            </TechnicalProfile>
+          <DisplayName>Azure Active Directory</DisplayName>
+          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+              
+          <!-- Provide objectId and appId before using extension properties. -->
+          <Metadata>
+            <Item Key="ApplicationObjectId">insert objectId here</Item>
+            <Item Key="ClientId">insert appId here</Item>
+          </Metadata>
+          <!-- End of changes -->
+              
+          <CryptographicKeys>
+            <Key Id="issuer_secret" StorageReferenceId="TokenSigningKeyContainer" />
+          </CryptographicKeys>
+          <IncludeInSso>false</IncludeInSso>
+          <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+        </TechnicalProfile>
         </ClaimsProvider>
     </ClaimsProviders>
-```
+    ```
 
 >[!NOTE]
-><TechnicalProfile Id="AAD-Common"> называется общим, так как его элементы содержатся и повторно используются во всех технических профилях Azure Active Directory с элементом `<IncludeTechnicalProfile ReferenceId="AAD-Common" />`.
-
->[!NOTE]
->При первой записи технического профиля в созданное свойство расширения может произойти одноразовая ошибка.  Свойство расширения создается при первом использовании.  
+>При первой записи технического профиля в созданное свойство расширения может произойти одноразовая ошибка. Свойство расширения создается при первом использовании.  
 
 ## <a name="using-the-new-extension-property--custom-attribute-in-a-user-journey"></a>Использование нового свойства расширения или настраиваемого атрибута в пути взаимодействия пользователя
 
+1. Откройте файл *ProfileEdit.xml*.
+2. Добавьте пользовательское утверждение `loyaltyId`.  Добавленное в элемент `<RelyingParty>` пользовательское утверждение будет включено в токен для приложения.
+    
+    ```xml
+    <RelyingParty>
+      <DefaultUserJourney ReferenceId="ProfileEdit" />
+      <TechnicalProfile Id="PolicyProfile">
+        <DisplayName>PolicyProfile</DisplayName>
+        <Protocol Name="OpenIdConnect" />
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+          <OutputClaim ClaimTypeReferenceId="city" />
 
-1. Откройте файл проверяющей стороны, в котором представлено описание пути взаимодействия пользователя с политикой изменения.  Сначала мы рекомендуем скачать уже настроенную версию файла RP-PolicyEdit непосредственно из раздела пользовательской политики Azure B2C на портале Azure.  Вы также можете открыть XML-файл из папки хранилища.
-2. Добавьте пользовательское утверждение `loyaltyId`.  После добавления пользовательского утверждения в элемент `<RelyingParty>` оно будет передано как параметр в UserJourney TechnicalProfiles и включено в токен для приложения.
-```xml
-<RelyingParty>
-   <DefaultUserJourney ReferenceId="ProfileEdit" />
-   <TechnicalProfile Id="PolicyProfile">
-     <DisplayName>PolicyProfile</DisplayName>
-     <Protocol Name="OpenIdConnect" />
-     <OutputClaims>
-       <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
-       <OutputClaim ClaimTypeReferenceId="city" />
+          <!-- Provide the custom claim identifier -->
+          <OutputClaim ClaimTypeReferenceId="extension_loyaltyId" />
+          <!-- End of changes -->
+        </OutputClaims>
+        <SubjectNamingInfo ClaimType="sub" />
+      </TechnicalProfile>
+    </RelyingParty>
+    ```
 
-       <OutputClaim ClaimTypeReferenceId="extension_loyaltyId" />
+3. Откройте файл *TrustFrameworkExtensions.xml* и добавьте элемент `<ClaimsSchema>` и его дочерний элемент в элемент `BuildingBlocks`:
 
-     </OutputClaims>
-     <SubjectNamingInfo ClaimType="sub" />
-   </TechnicalProfile>
- </RelyingParty>
- ```
-3. Добавьте определение утверждений в файл политики расширения `TrustFrameworkExtensions.xml` в элементе `<ClaimsSchema>`, как показано ниже.
-```xml
-<ClaimsSchema>
-        <ClaimType Id="extension_loyaltyId">
-            <DisplayName>Loyalty Identification Tag</DisplayName>
-            <DataType>string</DataType>
-            <UserHelpText>Your loyalty number from your membership card</UserHelpText>
-            <UserInputType>TextBox</UserInputType>
-        </ClaimType>
-</ClaimsSchema>
-```
-4. Добавьте это же определение утверждения в базовый файл политики `TrustFrameworkBase.xml`.  
->Обычно не нужно добавлять определение `ClaimType` в базовый файл и файл расширения. Но так как на следующих шагах параметр extension_loyaltyId будет добавлен в TechnicalProfiles в базовом файле, проверяющий политики отклонит отправку базового файла без этого определения.
->Отследите выполнение пути взаимодействия пользователя ProfileEdit в файле TrustFrameworkBase.xml.  Найдите путь взаимодействия пользователя с тем же именем в редакторе и обратите внимание, что на шаге 5 оркестрации вызывается TechnicalProfileReferenceID="SelfAsserted-ProfileUpdate".  Найдите и проверьте этот TechnicalProfile, чтобы ознакомиться с рабочим процессом.
-5. Добавьте loyaltyId в качестве входного и выходного утверждения в техническом профиле SelfAsserted-ProfileUpdate.
-```xml
-<TechnicalProfile Id="SelfAsserted-ProfileUpdate">
-          <DisplayName>User ID signup</DisplayName>
-          <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-          <Metadata>
-            <Item Key="ContentDefinitionReferenceId">api.selfasserted.profileupdate</Item>
-          </Metadata>
-          <IncludeInSso>false</IncludeInSso>
-          <InputClaims>
+    ```xml
+    <BuildingBlocks>
+      <ClaimsSchema> 
+        <ClaimType Id="extension_loyaltyId"> 
+          <DisplayName>Loyalty Identification Tag</DisplayName> 
+          <DataType>string</DataType> 
+          <UserHelpText>Your loyalty number from your membership card</UserHelpText> 
+          <UserInputType>TextBox</UserInputType> 
+        </ClaimType> 
+      </ClaimsSchema>
+    </BuildingBlocks>
+    ```
 
-            <InputClaim ClaimTypeReferenceId="alternativeSecurityId" />
-            <InputClaim ClaimTypeReferenceId="userPrincipalName" />
+4. Добавьте это же определение `ClaimType` в файл *TrustFrameworkBase.xml*. Обычно не нужно добавлять определение `ClaimType` в базовый файл и файл расширения. Но так как на следующих шагах параметр `extension_loyaltyId` будет добавлен в TechnicalProfiles в базовом файле, проверяющий политики элемент управления отклонит отправку базового файла без этого определения. Отследите выполнение пути взаимодействия пользователя ProfileEdit в файле *TrustFrameworkBase.xml*.  Найдите путь взаимодействия пользователя с тем же именем в редакторе и обратите внимание, что на шаге 5 оркестрации вызывается TechnicalProfileReferenceID="SelfAsserted-ProfileUpdate".  Найдите и проверьте этот TechnicalProfile, чтобы ознакомиться с рабочим процессом.
 
-            <!-- Optional claims. These claims are collected from the user and can be modified. Any claim added here should be updated in the
-                 ValidationTechnicalProfile referenced below so it can be written to directory after being updated by the user, i.e. AAD-UserWriteProfileUsingObjectId. -->
-            <InputClaim ClaimTypeReferenceId="givenName" />
+5. Откройте файл *TrustFrameworkBase.xml* и добавьте `loyaltyId` в качестве входного и выходного утверждения в элемент SelfAsserted-ProfileUpdate для TechnicalProfile.
+
+    ```xml
+    <TechnicalProfile Id="SelfAsserted-ProfileUpdate">
+      <DisplayName>User ID signup</DisplayName>
+      <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <Metadata>
+        <Item Key="ContentDefinitionReferenceId">api.selfasserted.profileupdate</Item>
+      </Metadata>
+      <IncludeInSso>false</IncludeInSso>
+      <InputClaims>
+        <InputClaim ClaimTypeReferenceId="alternativeSecurityId" />
+        <InputClaim ClaimTypeReferenceId="userPrincipalName" />
+        <InputClaim ClaimTypeReferenceId="givenName" />
             <InputClaim ClaimTypeReferenceId="surname" />
-            <InputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
-          </InputClaims>
-          <OutputClaims>
-            <!-- Required claims -->
-            <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
 
-            <!-- Optional claims. These claims are collected from the user and can be modified. Any claim added here should be updated in the
-                 ValidationTechnicalProfile referenced below so it can be written to directory after being updated by the user, i.e. AAD-UserWriteProfileUsingObjectId. -->
-            <OutputClaim ClaimTypeReferenceId="givenName" />
-            <OutputClaim ClaimTypeReferenceId="surname" />
-            <OutputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
-          </OutputClaims>
-          <ValidationTechnicalProfiles>
-            <ValidationTechnicalProfile ReferenceId="AAD-UserWriteProfileUsingObjectId" />
-          </ValidationTechnicalProfiles>
-        </TechnicalProfile>
-```
-6. Добавьте утверждение в техническом профиле AAD-UserWriteProfileUsingObjectId, чтобы сохранить значение утверждения в свойство расширения для текущего пользователя в каталоге.
-```xml
-<TechnicalProfile Id="AAD-UserWriteProfileUsingObjectId">
-          <Metadata>
-            <Item Key="Operation">Write</Item>
-            <Item Key="RaiseErrorIfClaimsPrincipalAlreadyExists">false</Item>
-            <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">true</Item>
-          </Metadata>
-          <IncludeInSso>false</IncludeInSso>
-          <InputClaims>
-            <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
-          </InputClaims>
-          <PersistedClaims>
-            <!-- Required claims -->
-            <PersistedClaim ClaimTypeReferenceId="objectId" />
+        <!-- Add the loyalty identifier -->
+        <InputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
+        <!-- End of changes -->
+      </InputClaims>
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="executed-SelfAsserted-Input" DefaultValue="true" />
+        <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" />
+        
+        <!-- Add the loyalty identifier -->
+        <OutputClaim ClaimTypeReferenceId="extension_loyaltyId"/>
+        <!-- End of changes -->
 
-            <!-- Optional claims -->
-            <PersistedClaim ClaimTypeReferenceId="givenName" />
-            <PersistedClaim ClaimTypeReferenceId="surname" />
-            <PersistedClaim ClaimTypeReferenceId="extension_loyaltyId" />
+      </OutputClaims>
+      <ValidationTechnicalProfiles>
+        <ValidationTechnicalProfile ReferenceId="AAD-UserWriteProfileUsingObjectId" />
+      </ValidationTechnicalProfiles>
+    </TechnicalProfile>
+    ```
 
-          </PersistedClaims>
-          <IncludeTechnicalProfile ReferenceId="AAD-Common" />
-        </TechnicalProfile>
-```
-7. Добавьте утверждение в технический профиль AAD-UserReadUsingObjectId, чтобы считывать значение атрибута расширения при каждом входе пользователя в систему. До сих пор TechnicalProfiles изменялся только при работе с локальными учетными записями.  Если новый атрибут нужно использовать для учетной записи социальной сети или федеративной учетной записи, нужно изменить другой набор технических профилей. Ознакомьтесь с разделом "Дальнейшие действия".
+6. В файле *TrustFrameworkBase.xml* добавьте утверждение `loyaltyId` в элемент AAD-UserWriteProfileUsingObjectId для TechnicalProfile чтобы сохранить значение утверждения в свойство расширения для текущего пользователя в каталоге.
 
-```xml
-<!-- The following technical profile is used to read data after user authenticates. -->
-     <TechnicalProfile Id="AAD-UserReadUsingObjectId">
-       <Metadata>
-         <Item Key="Operation">Read</Item>
-         <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">true</Item>
-       </Metadata>
-       <IncludeInSso>false</IncludeInSso>
-       <InputClaims>
-         <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
-       </InputClaims>
-       <OutputClaims>
-         <!-- Optional claims -->
-         <OutputClaim ClaimTypeReferenceId="signInNames.emailAddress" />
-         <OutputClaim ClaimTypeReferenceId="displayName" />
-         <OutputClaim ClaimTypeReferenceId="otherMails" />
-         <OutputClaim ClaimTypeReferenceId="givenName" />
-         <OutputClaim ClaimTypeReferenceId="surname" />
-         <OutputClaim ClaimTypeReferenceId="extension_loyaltyId" />
-       </OutputClaims>
-       <IncludeTechnicalProfile ReferenceId="AAD-Common" />
-     </TechnicalProfile>
-```
+    ```xml
+    <TechnicalProfile Id="AAD-UserWriteProfileUsingObjectId">
+      <Metadata>
+        <Item Key="Operation">Write</Item>
+        <Item Key="RaiseErrorIfClaimsPrincipalAlreadyExists">false</Item>
+        <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">true</Item>
+      </Metadata>
+      <IncludeInSso>false</IncludeInSso>
+      <InputClaims>
+        <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
+      </InputClaims>
+      <PersistedClaims>
+        <PersistedClaim ClaimTypeReferenceId="objectId" />
+        <PersistedClaim ClaimTypeReferenceId="givenName" />
+        <PersistedClaim ClaimTypeReferenceId="surname" />
 
+        <!-- Add the loyalty identifier -->
+        <PersistedClaim ClaimTypeReferenceId="extension_loyaltyId" />
+        <!-- End of changes -->
 
->[!IMPORTANT]
->Элемент IncludeTechnicalProfile добавляет все элементы AAD-Common в этот технический профиль.
+      </PersistedClaims>
+      <IncludeTechnicalProfile ReferenceId="AAD-Common" />
+    </TechnicalProfile>
+    ```
 
-## <a name="test-the-custom-policy-using-run-now"></a>Тестирование настраиваемой политики с помощью параметра "Запустить сейчас"
+7. В файле *TrustFrameworkBase.xml* добавьте утверждение `loyaltyId` в элемент AAD-UserReadUsingObjectId для TechnicalProfile, чтобы считывать значение атрибута расширения при каждом входе пользователя в систему. До сих пор TechnicalProfiles изменялся только при работе с локальными учетными записями.  Если новый атрибут нужно использовать для учетной записи социальной сети или федеративной учетной записи, нужно изменить другой набор технических профилей. Ознакомьтесь с разделом "Дальнейшие действия".
+
+    ```xml
+    <TechnicalProfile Id="AAD-UserReadUsingObjectId">
+      <Metadata>
+        <Item Key="Operation">Read</Item>
+        <Item Key="RaiseErrorIfClaimsPrincipalDoesNotExist">true</Item>
+      </Metadata>
+      <IncludeInSso>false</IncludeInSso>
+      <InputClaims>
+        <InputClaim ClaimTypeReferenceId="objectId" Required="true" />
+      </InputClaims>
+      <OutputClaims>
+        <OutputClaim ClaimTypeReferenceId="signInNames.emailAddress" />
+        <OutputClaim ClaimTypeReferenceId="displayName" />
+        <OutputClaim ClaimTypeReferenceId="otherMails" />
+        <OutputClaim ClaimTypeReferenceId="givenName" />
+        <OutputClaim ClaimTypeReferenceId="surname" />
+
+        <!-- Add the loyalty identifier -->
+        <OutputClaim ClaimTypeReferenceId="extension_loyaltyId" />
+        <!-- End of changes -->
+
+      </OutputClaims>
+      <IncludeTechnicalProfile ReferenceId="AAD-Common" />
+    </TechnicalProfile>
+    ```
+
+## <a name="test-the-custom-policy"></a>Проверка пользовательской политики
+
 1. Откройте колонку **Azure AD B2C** и последовательно выберите **Identity Experience Framework > Настраиваемые политики**.
 1. Выберите отправленную вами настраиваемую политику и нажмите кнопку **Запустить сейчас**.
 1. Вы сможете зарегистрироваться, используя адрес электронной почты.

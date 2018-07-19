@@ -4,27 +4,34 @@ description: Демонстрирует передачу секретного к
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
-manager: timlt
 editor: tysonn
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/11/2018
+ms.date: 07/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: 6a6c1f10b5a46633785d9c26a766df9334fe1cb0
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 3a29319a0d478537dfc4905ee77865b8fea64587
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359100"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38598413"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
-Если необходимо передать защищенное значение (например, пароль) в качестве параметра во время развертывания, можно извлечь его из [Azure Key Vault](../key-vault/key-vault-whatis.md). Для получения значения нужно указать в параметре ссылку на хранилище ключей и секрет. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Вам не нужно будет вручную вводить значение секрета при каждом развертывании ресурсов. Хранилище ключей не обязательно должно находится в той же подписке, что и группа ресурсов, развертывание в которую выполняется. При указании ссылки на хранилище ключей можно добавить идентификатор подписки.
+Если необходимо передать защищенное значение (например, пароль) в качестве параметра во время развертывания, можно извлечь его из [Azure Key Vault](../key-vault/key-vault-whatis.md). Для получения значения нужно указать в параметре ссылку на хранилище ключей и секрет. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Хранилище ключей не обязательно должно находится в той же подписке, что и группа ресурсов, развертывание в которую выполняется.
 
-При создании хранилища ключей задайте для свойства *enabledForTemplateDeployment* значение *true*. Таким образом вы разрешите доступ из шаблонов Resource Manager во время развертывания.
+## <a name="enable-access-to-the-secret"></a>Разрешение доступа к секрету
+
+Для доступа к хранилищу ключей во время развертывания шаблона должны выполняться два важных условия:
+
+1. Свойство `enabledForTemplateDeployment` хранилища ключей должно иметь значение `true`.
+2. Пользователь, развертывающий шаблон, должен иметь доступ к секрету. У пользователя должно быть разрешение `Microsoft.KeyVault/vaults/deploy/action` на доступ к хранилищу ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor).
+
+При использовании хранилища Key Vault с шаблоном для [управляемого приложения](../managed-applications/overview.md) необходимо предоставить доступ к субъекту-службе **Поставщик ресурсов устройств**. Дополнительные сведения см. в статье [Доступ к секрету Key Vault при развертывании Управляемых приложений Azure](../managed-applications/key-vault-access.md).
+
 
 ## <a name="deploy-a-key-vault-and-secret"></a>Развертывание хранилища ключей и секретного кода
 
@@ -45,7 +52,7 @@ az keyvault create \
 az keyvault secret set --vault-name $vaultname --name examplesecret --value $password
 ```
 
-Для PowerShell:
+Для PowerShell используйте команду:
 
 ```powershell
 $vaultname = "{your-unique-vault-name}"
@@ -60,10 +67,6 @@ New-AzureRmKeyVault `
 $secretvalue = ConvertTo-SecureString $password -AsPlainText -Force
 Set-AzureKeyVaultSecret -VaultName $vaultname -Name "examplesecret" -SecretValue $secretvalue
 ```
-
-## <a name="enable-access-to-the-secret"></a>Разрешение доступа к секрету
-
-При использовании как нового, так и существующего хранилища ключей убедитесь, что у пользователя, который развертывает шаблон, есть доступ к секрету. Пользователь, развертывающий шаблон, который ссылается на секрет, должен иметь разрешение `Microsoft.KeyVault/vaults/deploy/action` для хранилища ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor).
 
 ## <a name="reference-a-secret-with-static-id"></a>Ссылка на секрет со статическим идентификатором
 

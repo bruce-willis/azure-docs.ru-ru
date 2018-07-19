@@ -1,6 +1,6 @@
 ---
 title: Монитор производительности сети в Azure Log Analytics | Документация Майкрософт
-description: Возможность диспетчера конечных точек службы в Мониторе производительности сети позволяет отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом.
+description: С помощью монитора подключений службы в Мониторе производительности сети вы можете отслеживать сетевые подключения к любой конечной точке с открытым TCP-портом.
 services: log-analytics
 documentationcenter: ''
 author: abshamsft
@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: f6196c1403ded7bb8a72ee5483c2c2056b0e8020
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.component: na
+ms.openlocfilehash: 3c9352e8e4aee7817b1195c15f74503e86e597ea
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37030715"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37434925"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -76,9 +77,9 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 9. Если не нужно создавать события работоспособности для выбранных элементов, снимите флажок **Enable Health Monitoring in the targets covered by this test** (Включить мониторинг работоспособности в целевых объектах, на которые распространяется этот тест). 
 10. Выберите условия мониторинга. Вы можете задать настраиваемые пороговые значения для создания событий работоспособности. Каждый раз, когда значение условия превышает выбранное пороговое значение для выбранной пары сетей или подсетей, создается событие работоспособности. 
-11. Чтобы сохранить конфигурацию, нажмите кнопку **Сохранить**. 
+11. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию. 
 
-    ![Конфигурации тестов монитора конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-configuration.png)
+    ![Конфигурации тестов для монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-configuration.png)
 
 
 
@@ -86,11 +87,11 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 Перейдите к представлению панели мониторинга Монитора производительности сети. На странице **Монитор подключений службы** представлены сводные данные работоспособности разных созданных вами тестов. 
 
-![Страница "Монитор конечных точек службы"](media/log-analytics-network-performance-monitor/service-endpoint-blade.png)
+![Страница монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-blade.png)
 
 На странице **Тесты** щелкните элемент, чтобы просмотреть дополнительные сведения о тестах. В таблице слева можно просмотреть сведения о состоянии работоспособности на определенный момент времени и значения времени отклика службы, задержки сети и потери пакетов для всех тестов. Чтобы просмотреть моментальный снимок о состоянии сети на другой момент времени в прошлом, выберите элемент управления "Network State Recorder" (Запись состояния сети). Выберите в таблице тест, который необходимо изучить. В области справа на диаграммах можно просмотреть исторические тенденции изменения значений потери, задержки и времени отклика. Щелкните ссылку **Сведения о тесте**, чтобы просмотреть сведения о производительности на каждом узле.
 
-![Тесты монитора конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-tests.png)
+![Тесты монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-tests.png)
 
 В представлении **Тестирование узлов** можно отслеживать сетевые подключения из каждого узла. Выберите узел, работа которого замедлилась. Это узел, на котором приложение работает медленно.
 
@@ -98,15 +99,15 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 * **Проблема в приложении.** Если происходит резкое увеличение времени отклика, но задержка сети остается постоянной, то можно предположить, что сеть работает нормально и проблема возникла в конечной точке приложения. 
 
-    ![Проблема приложения, обнаруженная монитором конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-application-issue.png)
+    ![Проблема с приложением монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-application-issue.png)
 
 * **Неполадки в сети.** Если резкое увеличение времени отклика сопровождается соответствующим увеличением задержки сети, то можно предположить, что увеличение времени отклика происходит из-за увеличения задержки сети. 
 
-    ![Неполадки сети, обнаруженные монитором конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-network-issue.png)
+    ![Проблема с сетью монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-network-issue.png)
 
 Определив, что проблема кроется в сети, щелкните ссылку на представление **Топология**, чтобы определить проблемный прыжок на карте топологии. Пример показан на следующем рисунке. Общая задержка между узлом и конечной точкой приложения составляет 105 мс, а снижение на 96 мс произошло из-за прыжка, помеченного красным цветом. После определения проблемного прыжка можно выполнить корректирующее действие. 
 
-![Тесты монитора конечных точек службы](media/log-analytics-network-performance-monitor/service-endpoint-topology.png)
+![Тесты монитора подключений службы](media/log-analytics-network-performance-monitor/service-endpoint-topology.png)
 
 ## <a name="diagnostics"></a>Диагностика 
 

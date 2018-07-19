@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2018
 ms.author: jeedes
-ms.openlocfilehash: f68c5d6a022cccecde3b3eb272e51f75ae6bc50e
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 5679c815b26bf0b5e3a427e9551dde7b5dffa3d2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222067"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046548"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-orgchart-now"></a>Руководство. Интеграция Azure Active Directory с OrgChart Now
 
@@ -34,7 +34,7 @@ ms.locfileid: "36222067"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с OrgChart Now, вам потребуется:
 
@@ -175,7 +175,7 @@ ms.locfileid: "36222067"
 
     ![Группы OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_manage.png)    
 
-    Б. Щелкните значок **Add** (Добавить) и назовите группу **Общие**, а затем нажмите кнопку **ОК**. 
+    b. Щелкните значок **Add** (Добавить) и назовите группу **Общие**, а затем нажмите кнопку **ОК**. 
 
     ![Добавление OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_add.png)
 
@@ -191,7 +191,7 @@ ms.locfileid: "36222067"
 
     a. Войдите в OrgChart Now с правами администратора безопасности.
 
-    Б.  Щелкните **Settings** (Параметры) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
+    b.  Щелкните **Settings** (Параметры) в верхнем правом углу, а затем выберите **Manage Users** (Управление пользователями).
 
     ![Параметры OrgChart Now](./media/orgchartnow-tutorial/tutorial_orgchartnow_settings.png)
 
@@ -240,7 +240,7 @@ ms.locfileid: "36222067"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку OrgChart Now на панели доступа, вы автоматически войдете в приложение OrgChart Now.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/15/2018
 ms.author: jeedes
-ms.openlocfilehash: 1e6875fb3795d558afdf05b0a57c6c9d3bf9dc78
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d485c16719c07062249e8d40f0feca9685851834
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216435"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043471"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство по интеграции Azure Active Directory с BlueJeans
 
@@ -33,7 +33,7 @@ ms.locfileid: "36216435"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с BlueJeans, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36216435"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.BlueJeans.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.BlueJeans.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.BlueJeans.com`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки BlueJeans](https://support.bluejeans.com/contact).
@@ -143,7 +143,7 @@ ms.locfileid: "36216435"
 
    a. Выберите параметр **SAML Single Sign On**(Единый вход SAML).
 
-   Б. Установите флажок **Enable automatic provisioning**(Включить автоматическую подготовку).
+   b. Установите флажок **Enable automatic provisioning**(Включить автоматическую подготовку).
 
 10. После этого выполните следующие действия.
 
@@ -151,7 +151,7 @@ ms.locfileid: "36216435"
 
     a. Нажмите кнопку **Choose File**(Выбрать файл) и отправьте скачанный сертификат.
 
-    Б. Вставьте **URL-адрес службы единого входа SAML** в текстовое поле **Login URL** (URL-адрес входа).
+    b. Вставьте **URL-адрес службы единого входа SAML** в текстовое поле **Login URL** (URL-адрес входа).
 
     c. Вставьте **URL-адрес изменения пароля** в текстовое поле **Password Change URL** (URL-адрес изменения пароля).
 
@@ -163,7 +163,7 @@ ms.locfileid: "36216435"
 
     a. В текстовое поле **User id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
-    Б. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     c. Нажмите кнопку **Сохранить изменения**.
 
@@ -192,7 +192,7 @@ ms.locfileid: "36216435"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -219,7 +219,7 @@ ms.locfileid: "36216435"
 
     a. Введите в текстовых полях **BlueJeans Username** (Имя пользователя BlueJeans), **Email address** (Адрес электронной почты), **BlueJeans Meeting ID** (Идентификатор собрания BlueJeans), **Moderator Passcode** (Секретный код модератора), **Full Name** (Полное имя) и **Company** (Компания) соответствующие данные действующей учетной записи AAD, которую вы хотите подготовить.
 
-    Б. Нажмите кнопку **Add User**(Добавить пользователя).
+    b. Нажмите кнопку **Add User**(Добавить пользователя).
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетной записи пользователя BlueJeans или API, предоставляемые BlueJeans для подготовки учетных записей пользователя AAD.
@@ -259,7 +259,7 @@ ms.locfileid: "36216435"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы щелкните элемент "BlueJeans" на панели доступа, должна появиться страница входа в приложение BlueJeans.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

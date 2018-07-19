@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: be600fa6707e86e483e21f638d0d80515f9372b4
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 4c88d6a8b22e4c5c19112c30e15bc960bc8ed1b5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36294998"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045229"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Учебник. Интеграция Azure Active Directory с Tableau Server
 
@@ -33,7 +33,7 @@ ms.locfileid: "36294998"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Tableau Server, вам потребуется следующее:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36294998"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`
     
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://azure.<domain name>.link`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://azure.<domain name>.link/wg/saml/SSO/index.html`.
      
@@ -137,7 +137,7 @@ ms.locfileid: "36294998"
 
     ![Настройка единого входа](./media/tableauserver-tutorial/tutorial_officespace_05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -158,7 +158,7 @@ ms.locfileid: "36294998"
   
     ![Настройка единого входа](./media/tableauserver-tutorial/tutorial_tableauserver_001.png) 
   
-   Б. Установите флажок **Использовать SAML для единого входа**.
+   b. Установите флажок **Использовать SAML для единого входа**.
    
    c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например http://tableau_server. Не рекомендуем использовать http://localhost. URL-адреса с конечной косой чертой (например, http://tableau_server/) не поддерживаются. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
    
@@ -205,7 +205,7 @@ ms.locfileid: "36294998"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -257,7 +257,7 @@ ms.locfileid: "36294998"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Tableau Server на панели доступа, вы автоматически войдете в приложение Tableau Server.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

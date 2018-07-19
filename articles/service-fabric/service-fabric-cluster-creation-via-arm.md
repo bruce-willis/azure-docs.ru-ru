@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/07/2017
 ms.author: aljo
-ms.openlocfilehash: d9ed4134cfb8047d5d6839979cd89ba37ff0c3f8
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: e963b0f816d30411aa7d1e8c172ca0c2e5ddf0f1
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34701358"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37444367"
 ---
 # <a name="create-a-service-fabric-cluster-by-using-azure-resource-manager"></a>Создание кластера Service Fabric в Azure с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -115,6 +115,10 @@ az account set --subscription $subscriptionId
 
 Команды, указанные ниже, подходят для создания кластеров Windows и Linux, необходимо просто указать нужную операционную систему. Команды PowerShell или CLI также сохраняют сертификат в указанную папку CertificateOutputFolder, но сначала нужно убедиться, что папка для сертификатов уже создана. Команда принимает и другие параметры (например, номер SKU виртуальной машины).
 
+> [!NOTE]
+> Приведенная ниже команда работает только в более поздних версиях PowerShell для Azure Resource Manager, чем 6.1. Чтобы узнать текущую версию PowerShell для Azure Resource Manager, выполните команду PowerShell "Get-Module AzureRM". Если нужно обновить версию PowerShell для Azure Resource Manager, щелкните эту ссылку: https://docs.microsoft.com/en-us/powershell/azure/install-azurerm-ps?view=azurermps-6.3.0
+>
+>
 ```PowerShell
 $resourceGroupLocation="westus"
 $resourceGroupName="mycluster"

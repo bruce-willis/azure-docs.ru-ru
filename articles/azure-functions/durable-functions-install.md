@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/19/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 4dd4bbb9c382b772f8f60b259844e7e471ec73e3
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 6ed8265a0b1a014ad15a6bb42fabb6003fb6a775
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33762359"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37343267"
 ---
 # <a name="install-the-durable-functions-extension-and-samples-azure-functions"></a>Установка расширения устойчивых функций и примеров (Функции Azure)
 
@@ -49,7 +49,7 @@ ms.locfileid: "33762359"
 Следуйте тем же инструкциям, что и в начале работы с примерами, но вместо скачивания *ZIP*-файла выполните следующие действия.
 
 1. Создайте проект приложения-функции.
-2. Найдите ссылку на приведенный ниже пакет NuGet, щелкнув *Управление пакетами NuGet*, и добавьте его в проект: Microsoft.Azure.WebJobs.Extensions.DurableTask v1.4.0 (для поиска этого пакета установите флажок *Включить предварительные выпуски*).
+2. Найдите ссылку на приведенный ниже пакет NuGet, щелкнув *Управление пакетами NuGet*, и добавьте его в проект: Microsoft.Azure.WebJobs.Extensions.DurableTask v1.5.0.
    
 ## <a name="visual-studio-code"></a>Visual Studio Code.
 
@@ -79,7 +79,7 @@ Visual Studio Code поддерживает процесс локальной р
 3. Установите расширение устойчивых функций Azure, выполнив следующую команду в командной строке или окне терминала:
 
     ```bash
-    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.4.0
+    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.5.0
     ```
 4. Установите расширение Twilio для службы "Функции Azure", выполнив следующую команду в командной строке или окне терминала:
 
@@ -94,14 +94,14 @@ Visual Studio Code поддерживает процесс локальной р
     func host start
     ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для службы "Функции" версии 2)
+#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
 
 1. Клонируйте [репозиторий устойчивых функций](https://github.com/Azure/azure-functions-durable-extension.git).
 2. На локальном компьютере перейдите к [папке с примерами скриптов JavaScript](https://github.com/Azure/azure-functions-durable-extension/tree/master/samples/javascript). 
 3. Установите расширение устойчивых функций Azure, выполнив следующую команду в командной строке или окне терминала:
 
     ```bash
-    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.4.0
+    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.5.0
     ```
 4. Восстановите пакеты npm, выполнив следующую команду в командной строке или окне терминала:
     
@@ -122,7 +122,7 @@ Visual Studio Code поддерживает процесс локальной р
 2. Установите расширение устойчивых функций Azure, выполнив следующую команду в командной строке или окне терминала:
 
     ```bash
-    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.4.0
+    func extensions install -p Microsoft.Azure.WebJobs.Extensions.DurableTask -v 1.5.0
     ```
 3. Создайте приложение функции, выполнив команду ниже.
 

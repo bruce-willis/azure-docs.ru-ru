@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeedes
-ms.openlocfilehash: ee9c1494cb2bca4193bfe8b16b72ba5d317f9f3e
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: cbfb35df529a8caef59c459729225051a45a8ab1
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295476"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041792"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство. Интеграция Azure Active Directory с Wingspan eTMF
 
@@ -33,7 +33,7 @@ ms.locfileid: "36295476"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Wingspan eTMF, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36295476"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/saml`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://saml.<instance name>.wingspan.com/shibboleth`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://saml.<instance name>.wingspan.com/shibboleth`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer name>.<instance name>.mywingspan.com/`.
      
@@ -160,7 +160,7 @@ ms.locfileid: "36295476"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -204,7 +204,7 @@ ms.locfileid: "36295476"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа. 
 
-Щелкните плитку Wingspan eTMF на панели доступа. Вы будете перенаправлены на страницу входа организации. После успешного входа вы сможете войти в приложение Wingspan eTMF. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкните плитку Wingspan eTMF на панели доступа. Вы будете перенаправлены на страницу входа организации. После успешного входа вы сможете войти в приложение Wingspan eTMF. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

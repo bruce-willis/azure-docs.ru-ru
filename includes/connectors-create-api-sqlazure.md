@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/15/2018
 ms.author: estfan
 ms.custom: include file
-ms.openlocfilehash: 013e230aa7e096f6a90ed7cf9e93a44fbdeb3bd6
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 4ffda692da0ab7b63f7376c36dfab0bec914e334
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34678311"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37138071"
 ---
 * Если вы используете Базу данных SQL Azure, следуйте инструкциям в разделе [Подключение к базе данных](#connect-azure-sql-db). 
 
@@ -66,7 +66,7 @@ ms.locfileid: "34678311"
 
 1. Когда триггер или действие SQL запросит сведения о подключении, выполните следующие действия.
 
-   1. В триггере или действии выберите **Подключиться через локальный шлюз данных**, чтобы отобразить параметры SQL Server.
+   1. В триггере или действии выберите **Подключаться с помощью локального шлюза данных**, чтобы отобразить параметры SQL Server.
 
    2. Создайте имя подключения.
 
@@ -98,7 +98,7 @@ ms.locfileid: "34678311"
 
    | Свойство | Значение | Сведения | 
    |----------|-------|---------| 
-   | Подключиться через локальный шлюз данных | Выберите этот параметр SQL Server первым. | | 
+   | Подключаться с помощью локального шлюза данных | Выберите этот параметр SQL Server первым. | | 
    | Имя подключения | <*my-sql-connection*> | Имя подключения. | 
    | Имя SQL Server | <*my-sql-server*> | Имя вашего сервера SQL Server. |
    | Имя базы данных SQL | <*my-sql-database*>  | Имя вашей базы данных SQL. |

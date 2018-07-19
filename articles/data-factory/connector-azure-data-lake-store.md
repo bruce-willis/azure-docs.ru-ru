@@ -1,5 +1,5 @@
 ---
-title: Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных | Документация Майкрософт
+title: Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных | Документы Майкрософт
 description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в Azure Data Lake Store или из Data Lake Store в поддерживаемые приемники хранилищ с помощью фабрики данных.
 services: data-factory
 author: linda33wj
@@ -12,19 +12,19 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 04/27/2018
 ms.author: jingwang
-ms.openlocfilehash: cf1ac441f695e5427e57f1a85bafd095777eed80
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: a3df91adf7c35343dc890dc734ec052f1aa97134
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37049304"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37860254"
 ---
-# <a name="copy-data-to-or-from-azure-data-lake-store-by-using-azure-data-factory"></a>Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure
+# <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-azure-datalake-connector.md)
 > * [Текущая версия](connector-azure-data-lake-store.md)
 
-В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из хранилища Azure Data Lake Store и в него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
+В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные из Azure Data Lake Storage Gen1 (ранее Azure Data Lake Store) и в него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

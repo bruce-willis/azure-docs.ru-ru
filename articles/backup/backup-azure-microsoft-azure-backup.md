@@ -7,16 +7,16 @@ manager: shivamg
 keywords: сервер резервного копирования Azure; защита рабочих нагрузок; резервное копирование рабочих нагрузок
 ms.service: backup
 ms.topic: conceptual
-ms.date: 5/14/2018
+ms.date: 7/10/2018
 ms.author: adigan
-ms.openlocfilehash: 13b3a5f8530c9f91ca23072c320513b8107df061
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 67243aca9f5f578402ff79422783148af53798c6
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605813"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38546023"
 ---
-# <a name="preparing-to-back-up-workloads-using-azure-backup-server"></a>Подготовка к резервному копированию рабочих нагрузок с использованием Azure Backup Server
+# <a name="install-and-configure-azure-backup-server"></a>Установка и настройка Azure Backup Server
 > [!div class="op_single_selector"]
 > * [Azure Backup Server](backup-azure-microsoft-azure-backup.md)
 > * [SCDPM](backup-azure-dpm-introduction.md)
@@ -224,7 +224,7 @@ Azure Backup Server наследует большую часть функцио�
 ### <a name="recovering-from-loss-of-connectivity"></a>Восстановление после потери подключения
 При наличии брандмауэра или прокси-сервера, который препятствует доступу к Azure, необходимо добавить следующие адреса доменов в белый список в профиле брандмауэра или прокси-сервера:
 
-* www.msftncsi.com
+* `http://www.msftncsi.com/ncsi.txt`
 * \*.Microsoft.com
 * \*.WindowsAzure.com
 * \*.microsoftonline.com

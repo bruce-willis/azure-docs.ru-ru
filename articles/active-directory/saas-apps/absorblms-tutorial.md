@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/15/2017
 ms.author: jeedes
-ms.openlocfilehash: 4aa2a2f41bcdd78991184e026f22f8e04754eccb
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 066ae92056e4b80b6627b371d6ebeb3235b2781d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36286119"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043784"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-absorb-lms"></a>Руководство. Интеграция Azure Active Directory с Absorb LMS
 
@@ -34,7 +34,7 @@ ms.locfileid: "36286119"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Absorb LMS, вам потребуется:
 
@@ -106,7 +106,7 @@ ms.locfileid: "36286119"
 
     a. В поле **Идентификатор** введите URL-адрес, используя следующий синтаксис: `https://<subdomain>.myabsorb.com/Account/SAML`.
 
-    Б. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<subdomain>.myabsorb.com/Account/SAML`.
+    b. В поле **URL-адрес ответа** введите URL-адрес, используя следующий синтаксис: `https://<subdomain>.myabsorb.com/Account/SAML`.
      
     > [!NOTE] 
     > URL-адреса, указанные выше, приведены в качестве примера. Измените их фактическими значениями идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Absorb LMS](https://www.absorblms.com/support). 
@@ -143,7 +143,7 @@ ms.locfileid: "36286119"
 
     a. В поле **Mode** (Режим) выберите **Identity Provider Initiated** (Инициируемый поставщиком удостоверений).
 
-    Б. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**. Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
+    b. В Блокноте откройте сертификат, скачанный с портала Azure. Удалите теги **---BEGIN CERTIFICATE---** и **---END CERTIFICATE---**. Затем в поле **Key** (Ключ) вставьте оставшееся содержимое.
     
     c. В поле **Id Property** (Свойство идентификатора) выберите атрибут, который вы настроили в качестве идентификатора пользователя в Azure AD. Например, если вы выбрали в Azure AD *userPrincipalName*, то выберите атрибут **Username**.
 
@@ -186,7 +186,7 @@ ms.locfileid: "36286119"
 
     a. В поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите адрес электронной почты учетной записи Britta Simon.
+    b. В текстовом поле **Имя пользователя** введите адрес электронной почты учетной записи Britta Simon.
 
     c. Установите флажок **Показать пароль** и запишите значение в поле **Пароль**.
 
@@ -220,7 +220,7 @@ ms.locfileid: "36286119"
 
     a. В текстовом поле **First Name** (Имя) введите имя, например **Britta**.
 
-    Б. В текстовом поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
+    b. В текстовом поле **Last Name** (Фамилия) введите фамилию, например **Simon**.
     
     c. В текстовом поле **Username** (Имя пользователя) введите полное имя, например **Britta Simon**.
 
@@ -266,7 +266,7 @@ ms.locfileid: "36286119"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент **Absorb LMS** на панели доступа, вы автоматически войдете в приложение Absorb LMS. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент **Absorb LMS** на панели доступа, вы автоматически войдете в приложение Absorb LMS. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

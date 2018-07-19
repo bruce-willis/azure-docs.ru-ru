@@ -14,17 +14,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: nitinme
-ms.openlocfilehash: 48e5a8d270701c43276e1d248d8ea4dc748d15b2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 1d073732b5dd9b9867813d9ffcfad5caa1131d81
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31404573"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37101697"
 ---
 # <a name="use-multiple-hdinsight-clusters-with-an-azure-data-lake-store-account"></a>Использование нескольких кластеров HDInsight с учетной записью Azure Data Lake Store
 
 Начиная с версии HDInsight 3.5 можно создавать кластеры HDInsight с учетными записями Azure Data Lake Store в качестве файловой системы по умолчанию.
-Data Lake Store поддерживает неограниченное пространство для хранения данных, поэтому оно идеально подходит не только для хранения больших объемов данных, но и для размещения нескольких кластеров HDInsight, которые совместно используют одну и ту же учетную запись Data Lake Store. Инструкции по созданию кластера HDInsight с Data Lake Store в качестве хранилища см. в разделе [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+Data Lake Store поддерживает неограниченное пространство для хранения данных, поэтому оно идеально подходит не только для хранения больших объемов данных, но и для размещения нескольких кластеров HDInsight, которые совместно используют одну и ту же учетную запись Data Lake Store. Сведения о том, как создать кластер HDInsight с Data Lake Store в качестве хранилища, см. в статье [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
 Эта статья содержит рекомендации для администратора Data Lake Store по настройке единственной и общей учетной записи Data Lake Store, которая может использоваться в нескольких **активных** кластерах HDInsight. Эти рекомендации относятся к размещению нескольких защищенных и незащищенных кластеров Hadoop в общей учетной записи Data Lake Store.
 
@@ -51,7 +51,7 @@ Data Lake Store поддерживает неограниченное прост
 - **Субъект-служба** — субъект-служба Azure Active Directory (AAD), связанная с учетной записью.
 - **FINGRP** — группа пользователей, созданная в AAD и содержащая пользователей из финансовой организации.
 
-Инструкции по созданию приложения AAD (при создании которого также создается субъект-служба) см. в разделе [Создание приложения AAD](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). Инструкции по созданию группы пользователей в AAD см. в разделе [Управление группами в Azure Active Directory](../active-directory/active-directory-groups-create-azure-portal.md).
+Инструкции по созданию приложения AAD (при создании которого также создается субъект-служба) см. в разделе [Создание приложения AAD](../azure-resource-manager/resource-group-create-service-principal-portal.md#create-an-azure-active-directory-application). Инструкции по созданию группы пользователей в AAD см. в разделе [Управление группами в Azure Active Directory](../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 Необходимо учесть следующие основные моменты.
 
@@ -97,6 +97,6 @@ Data Lake Store поддерживает неограниченное прост
 
 ## <a name="see-also"></a>См. также
 
-* [Создание кластера HDInsight с хранилищем озера данных в качестве хранилища](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md)
 
 

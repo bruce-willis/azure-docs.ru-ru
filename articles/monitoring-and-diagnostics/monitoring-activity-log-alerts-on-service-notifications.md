@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/09/2018
 ms.author: johnkem
 ms.component: alerts
-ms.openlocfilehash: 01dc3a3c6489b694af26c78ae3b4756f3e8f00b7
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 1e79fee75b2361dd7da8c46c175a5a6532089ad6
+ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263122"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37437245"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Создание оповещений журнала действий для уведомлений службы
 ## <a name="overview"></a>Обзор
@@ -25,6 +25,9 @@ ms.locfileid: "35263122"
 - Затронутая подписка.
 - Затронутые службы.
 - Затронутые регионы.
+
+> [!NOTE]
+> Уведомления о работоспособности службы не содержат предупреждения о событиях работоспособности ресурсов.
 
 Кроме того, можно настроить, кому должны отправляться оповещения:
 

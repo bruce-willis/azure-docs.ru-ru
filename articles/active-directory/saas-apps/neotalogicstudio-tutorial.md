@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2017
 ms.author: jeedes
-ms.openlocfilehash: 01987f3a5f2a37d7cf2b16202310b7d442c9d7a8
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 5861d709e238e5da07cd6a44fefdcc456422ad9d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285837"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046249"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-neota-logic-studio"></a>Руководство по интеграции Azure Active Directory с Neota Logic Studio
 
@@ -33,7 +33,7 @@ ms.locfileid: "36285837"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Neota Logic Studio, вам потребуется:
 
@@ -117,7 +117,7 @@ ms.locfileid: "36285837"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/a/<sub application>`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/wb`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<sub domain>.neotalogic.com/wb`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить их, обратитесь в [службу поддержки клиентов Neota Logic Studio](https://www.neotalogic.com/contact-us/). 
@@ -160,7 +160,7 @@ ms.locfileid: "36285837"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -204,7 +204,7 @@ ms.locfileid: "36285837"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкните элемент Neota Logic Studio на панели доступа. Вы будете перенаправлены на страницу входа организации. Выполнив вход на этой странице, вы войдете в приложение Neota Logic Studio. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкните элемент Neota Logic Studio на панели доступа. Вы будете перенаправлены на страницу входа организации. Выполнив вход на этой странице, вы войдете в приложение Neota Logic Studio. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

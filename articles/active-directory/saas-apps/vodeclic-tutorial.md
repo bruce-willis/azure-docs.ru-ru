@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 5627d0fa99cee4f289787e3fccf83a4c6fa228e0
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: dad37a0d66ff1af9ad7e7f3b6a807ef1104da39f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221273"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041098"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Руководство по интеграции Azure Active Directory с Vodeclic
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221273"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Vodeclic, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36221273"
 
     a. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.lms.vodeclic.net/auth/saml`.
 
-    Б. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.lms.vodeclic.net/auth/saml/callback`
+    b. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.lms.vodeclic.net/auth/saml/callback`
 
 4. Чтобы настроить приложение в режиме, инициируемом **поставщиком услуг**, установите флажок **Показать дополнительные параметры URL-адресов** и сделайте следующее:
 
@@ -211,7 +211,7 @@ ms.locfileid: "36221273"
 
 Выбрав плитку Vodeclic на панели доступа, вы автоматически войдете в приложение Vodeclic.
 
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

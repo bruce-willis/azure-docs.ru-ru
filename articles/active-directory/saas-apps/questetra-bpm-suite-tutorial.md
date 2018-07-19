@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/29/2017
 ms.author: jeedes
-ms.openlocfilehash: e9a4ab5bb262b274f4c53741f7a9ea1ce3956848
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 57c418f686aa956294efeabd831042441c055e56
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220134"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041115"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-questetra-bpm-suite"></a>Учебник. Интеграция Azure Active Directory с Questetra BPM Suite
 
@@ -34,7 +34,7 @@ ms.locfileid: "36220134"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Questetra BPM Suite, вам потребуется следующее:
 
@@ -111,7 +111,7 @@ ms.locfileid: "36220134"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/saml/SSO/alias/bpm`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.questetra.net/`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Вы можете получить эти значения в разделе **SP Information** (Сведения о SP) на своем корпоративном сайте **Questetra BPM Suite**. Как это сделать, описывается далее в этом руководстве. Вы можете также обратиться к [группе поддержки клиентов Questetra BPM Suite](https://www.questetra.com/contact/). 
@@ -142,7 +142,7 @@ ms.locfileid: "36220134"
 
     a. Скопируйте значение **ACS URL** (URL-адрес ACS) и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Домены и URL-адреса приложения Questetra BPM Suite** на портале Azure.
     
-    Б. Скопируйте значение **Entity ID** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения Questetra BPM Suite** на портале Azure.
+    b. Скопируйте значение **Entity ID** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения Questetra BPM Suite** на портале Azure.
 
 11. На своем корпоративном сайте **Questetra BPM Suite** выполните следующие действия. 
    
@@ -150,7 +150,7 @@ ms.locfileid: "36220134"
    
     a. Выберите пункт **Включить единый вход**.
    
-    Б. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Entity ID** (Идентификатор сущности) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
     
     c. В текстовое поле **Sign-in page URL** (URL-адрес страницы входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
     
@@ -191,7 +191,7 @@ ms.locfileid: "36220134"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -211,7 +211,7 @@ ms.locfileid: "36220134"
    
     a. В текстовое поле **Name** (Имя) введите **имя** пользователя **britta.simon@contoso.com**.
    
-    Б. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты** пользователя **britta.simon@contoso.com**.
+    b. В текстовое поле **Email** (Адрес электронной почты) введите **адрес электронной почты** пользователя **britta.simon@contoso.com**.
    
     c. В текстовое поле **Password** (Пароль) введите **пароль** для пользователя.
     
@@ -252,7 +252,7 @@ ms.locfileid: "36220134"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Questetra BPM Suite на панели доступа, вы автоматически войдете в приложение Questetra BPM Suite.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

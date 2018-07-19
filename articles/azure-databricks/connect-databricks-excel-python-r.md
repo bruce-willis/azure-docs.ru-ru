@@ -11,14 +11,14 @@ ms.workload: big-data
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/29/2018
+ms.date: 06/27/2018
 ms.author: nitinme
-ms.openlocfilehash: bbf75a03fb771aa415a26e151614cecfaa14c485
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 333ff3ac3de053eae604ffeab600df7d35874f69
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598884"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37085238"
 ---
 # <a name="connect-to-azure-databricks-from-excel-python-or-r"></a>Подключение к Azure Databricks из Excel, Python или R
 
@@ -99,6 +99,9 @@ ms.locfileid: "34598884"
 После загрузки данных в книгу Excel с ними можно выполнять аналитические операции.
 
 ## <a name="connect-from-r"></a>Подключение из R
+
+> [!NOTE]
+> Сведения о том, как интегрировать клиент R Studio, который запущен на компьютере, с Azure Databricks. Инструкции по использованию R Studio на кластере Azure Databricks см. в статье [R Studio on Azure Databricks](https://docs.azuredatabricks.net/spark/latest/sparkr/rstudio.html) (R Studio в Azure Databricks).
 
 В этом разделе вы используете интегрированную среду разработки для языка R, чтобы обратиться к данным, доступным в Azure Databricks. Перед началом работы на вашем компьютере должны быть установлены следующие компоненты.
 

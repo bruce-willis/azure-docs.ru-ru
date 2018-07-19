@@ -17,12 +17,12 @@ ms.date: 04/22/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 07fbda30cdc76e5e4e82b79954d0b0a56e032b50
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 676e23f3136836975616865a9b9dc97605a97929
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34158393"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37866259"
 ---
 # <a name="v20-protocols---spas-using-the-implicit-flow"></a>Протоколы приложений версии 2.0. Одностраничные приложения с использованием неявного потока
 Благодаря конечной точке версии 2.0 пользователи могут входить в одностраничные приложения, используя личные и рабочие учетные записи Майкрософт. Во время проверки подлинности одностраничные и другие приложения JavaScript, которые запускаются в основном в браузере, сталкиваются с некоторыми проблемами.
@@ -51,7 +51,7 @@ ms.locfileid: "34158393"
 Для первого входа пользователя в приложение можно отправить запрос на авторизацию [OpenID Connect](active-directory-v2-protocols-oidc.md) и получить `id_token` из конечной точки версии 2.0.
 
 > [!IMPORTANT]
-> Чтобы успешно запросить маркер идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должно быть включено **[неявное предоставление](active-directory-v2-protocols-implicit.md)**. Если эта функция не включена, будет возвращена ошибка `unsupported_response`: "The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'" (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
+> Чтобы успешно запросить токен идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должно быть включено **[неявное предоставление](active-directory-v2-protocols-implicit.md)**. Если эта функция не включена, будет возвращена ошибка `unsupported_response`: "The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'" (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
 
 ```
 // Line breaks for legibility only

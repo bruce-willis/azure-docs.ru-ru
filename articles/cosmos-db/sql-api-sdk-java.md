@@ -9,15 +9,15 @@ ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 05/16/2018
-ms.author: khdang
+ms.date: 06/29/2018
+ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 62555d3ba3513ce7183e24506530edcf78368247
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: d7d00d6236b601d145be03e6086bec2d72faafcd
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798633"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37344943"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -52,6 +52,13 @@ ms.locfileid: "34798633"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name11621162"></a><a name="1.16.2"/>1.16.2
+* Добавлена поддержка отработки отказа потоковой передачи.
+* Добавлена поддержка для пользовательских метаданных.
+* Улучшена логика обработки сеанса.
+* Исправлена ошибка в кэше диапазона ключей секций.
+* Исправлена ошибка с NPE в режиме прямого подключения.
 
 ### <a name="a-name11611161"></a><a name="1.16.1"/>1.16.1
 * Добавлена поддержка уникальных индексов.
@@ -150,7 +157,7 @@ ms.locfileid: "34798633"
 * Не рекомендуется использовать IPartitionResolver на основе пользовательского кода секционирования. Используйте секционированные коллекции, чтобы увеличить возможности хранилища и пропускную способность.
 
 ### <a name="a-name171171"></a><a name="1.7.1"/>1.7.1
-* Добавлена поддержка политики повтора для регулирования.  
+* Добавлена поддержка политики повтора для ограничения скорости.  
 
 ### <a name="a-name170170"></a><a name="1.7.0"/>1.7.0
 * Добавлена поддержка срока жизни для документов.
@@ -198,6 +205,7 @@ ms.locfileid: "34798633"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.16.2](#1.16.2) |29 июня 2018 г. |--- |
 | [1.16.1](#1.16.1) |16 мая 2018 г. |--- |
 | [1.16.0](#1.16.0) |15 марта 2018 г. |--- |
 | [1.15.0](#1.15.0) |14 ноября 2017 г. |--- |

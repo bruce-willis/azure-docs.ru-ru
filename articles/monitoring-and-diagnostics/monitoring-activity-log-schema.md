@@ -8,15 +8,15 @@ ms.topic: reference
 ms.date: 4/12/2018
 ms.author: dukek
 ms.component: activitylog
-ms.openlocfilehash: f6f6c59195fdc79959a1964c1f2770c3b6a68b22
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 123ae27310d70812918f3c81ac3b9a71959a6c2c
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264557"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917233"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
-**Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных.
+**Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или концентраторы событий с помощью профиля журнала](./monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md) приведено в конце статьи.
 
 ## <a name="administrative"></a>Administrative
 Эта категория содержит записи всех операций создания, обновления, удаления и других действий, которые выполняются через Resource Manager. В качестве примеров типов событий, которые относятся к этой категории, можно назвать "создание виртуальной машины" или "удаление группы безопасности сети". Каждое действие, выполняемое пользователем или приложением с помощью Resource Manager, моделируется как операция с определенным типом ресурсов. Если тип операции — "запись", "удаление" или "действие", то любые сведения об этой операции (о ее запуске, успешном выполнении или сбое) записываются в категорию "Административная". Категория "Административная" также включает в себя любые изменения в управлении доступом на основе ролей, которые происходят в подписке.
@@ -560,6 +560,30 @@ ms.locfileid: "35264557"
 | properties.recommendationImpact| Влияние рекомендации Возможные значения: High, Medium или Low |
 | properties.recommendationRisk| Риск рекомендации. Возможные значения: Error, Warning, None |
 
+## <a name="mapping-to-diagnostic-logs-schema"></a>Сопоставление со схемой журналов диагностики
+
+При потоковой передаче журнала действий Azure в учетную запись хранения или пространство имен концентраторов событий данные соответствуют [схеме журналов системы диагностики Azure](./monitoring-diagnostic-logs-schema.md). Ниже приведено сопоставление свойств приведенной выше схемы и схемы журналов диагностики:
+
+| Свойство схемы журналов диагностики | Свойство схемы журнала действий REST API | Заметки |
+| --- | --- | --- |
+| Twitter в режиме реального | eventTimestamp |  |
+| ResourceId | ResourceId | Параметры subscriptionId, resourceType и resourceGroupName получаются из параметра resourceId. |
+| operationName | operationName.value |  |
+| category | Часть имени операции | Разделитель типа операции — "Запись", "Удаление" или "Действие" |
+| resultType | status.value | |
+| resultSignature | substatus.value | |
+| resultDescription | description |  |
+| durationMs | Недоступно | Всегда 0 |
+| callerIpAddress | httpRequest.clientIpAddress |  |
+| correlationId | correlationId |  |
+| identity | свойства удостоверений и авторизации |  |
+| Уровень | Уровень |  |
+| location | Недоступно | Расположение, где было обработано событие. *Это не расположение ресурса, а место, где событие было обработано. Это свойство будет удалено в будущем обновлении.* |
+| properties | properties.eventProperties |  |
+| properties.eventCategory | category | Если свойство properties.eventCategory не задано, параметр category равен "Административная" |
+| properties.eventName | eventName |  |
+| properties.operationId | operationId |  |
+| properties.eventProperties | properties |  |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

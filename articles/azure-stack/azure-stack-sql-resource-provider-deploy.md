@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/25/2018
+ms.date: 07/10/2018
 ms.author: jeffgilb
 ms.reviewer: jeffgo
-ms.openlocfilehash: e1505761a0bd1ea9dabdd0b2cbab7af902198311
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: b06f53b0169e3afd140be81d9d633844a5876c09
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938338"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38487653"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов SQL Server в Azure Stack
 
@@ -30,7 +30,8 @@ ms.locfileid: "36938338"
 Существует несколько предварительных требований, которые должны быть выполнены перед развертыванием поставщика ресурсов SQL Azure Stack. Чтобы обеспечить соответствие этим требованиям, выполните следующие действия на компьютере, который имеет доступ к привилегированной конечной точке виртуальной машины:
 
 - Если вы еще этого не сделали, [зарегистрируйте Azure Stack](.\azure-stack-registration.md) в Azure, чтобы можно было загружать элементы Azure Marketplace.
-- Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**. Вы можете применить сценарий, чтобы создать [образ Windows Server 2016](https://docs.microsoft.com/azure/azure-stack/azure-stack-add-default-image). Убедитесь, что выбрали параметр ядра при запуске скрипта.
+- В системе, в которой будет запускаться эта установка, необходимо установить модули PowerShell для Azure и Azure Stack. В системе должен быть развернут образ Windows 10 или Windows Server 2016 с последней версией среды выполнения .NET. См. статью [Установка PowerShell для Azure Stack](.\azure-stack-powershell-install.md).
+- Добавьте необходимую виртуальную машину ядра Windows Server в Azure Stack Marketplace, загрузив образ **Windows Server 2016 Datacenter — ядро сервера**. 
 
   >[!NOTE]
   >Если необходимо установить обновление, один MSU-пакет можно поместить в локальный каталог зависимого элемента. Если обнаружено несколько MSU-файлов, при установке поставщика ресурсов SQL произойдет сбой.
@@ -41,19 +42,14 @@ ms.locfileid: "36938338"
     |-----|-----|
     |Версия 1804 (1.0.180513.1)|[SQL RP версии 1.1.24.0](https://aka.ms/azurestacksqlrp1804)
     |Версия 1802 (1.0.180302.1)|[SQL RP версии 1.1.18.0](https://aka.ms/azurestacksqlrp1802)|
-    |Версия 1712 (1.0.180102.3, 1.0.180103.2 или 1.0.180106.1 (интегрированные системы))|[SQL RP версии 1.1.14.0](https://aka.ms/azurestacksqlrp1712)|
-    |     |     |
 
 ### <a name="certificates"></a>Сертификаты
 
-Только для интегрированных систем. Укажите сертификат SQL PaaS PKI, описанный в разделе о необязательных сертификатах PaaS в статье [Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack](.\azure-stack-pki-certs.md#optional-paas-certificates). Поместите PFX-файл в каталог, указанный параметром **DependencyFilesLocalPath**.
+_Только для интегрированных систем_. Укажите сертификат SQL PaaS PKI, описанный в разделе о необязательных сертификатах PaaS в статье [Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack](.\azure-stack-pki-certs.md#optional-paas-certificates). Поместите PFX-файл в каталог, указанный параметром **DependencyFilesLocalPath**. Не предоставляйте сертификат для систем ASDK.
 
 ## <a name="deploy-the-sql-resource-provider"></a>Развертывание поставщика ресурсов SQL
 
 Когда вы установите все необходимые компоненты, запустите скрипт **DeploySqlProvider.ps1**, чтобы развернуть поставщик ресурсов SQL. Сценарий DeploySqlProvider.ps1 входит в состав двоичного файла поставщика ресурсов SQL, загруженного для вашей версии Azure Stack.
-
-> [!IMPORTANT]
-> Сценарий должен выполняться в системе Windows 10 или Windows Server 2016 с установленной последней версией среды выполнения .NET.
 
 Чтобы развернуть поставщик ресурсов SQL, откройте **новую консоль** PowerShell с повышенными привилегиями и перейдите в каталог, в который ранее извлекли двоичные файлы поставщика ресурсов SQL. Рекомендуем открыть новое окно PowerShell, чтобы избежать потенциальных проблем, вызванных уже загруженными модулями PowerShell.
 
@@ -68,11 +64,11 @@ ms.locfileid: "36938338"
 - Может установить одно обновление Windows Server во время установки поставщика ресурсов.
 
 > [!NOTE]
-> Когда вы запустите развертывание поставщика ресурсов SQL, будет создана группа ресурсов **system.local.sqladapter**. На выполнение четырех обязательных развертываний в эту группу ресурсов может потребоваться до 75 минут.
+> Когда вы запустите развертывание поставщика ресурсов SQL, будет создана группа ресурсов **system.local.sqladapter**. На выполнение обязательных развертываний в эту группу ресурсов может потребоваться до 75 минут.
 
 ### <a name="deploysqlproviderps1-parameters"></a>Параметры DeploySqlProvider.ps1
 
-Следующие параметры можно указать в командной строке. Если вы не зададите нужные параметры или их значения не пройдут проверку, вам будет предложено указать необходимые параметры.
+Следующие параметры можно указать в командной строке. Если вы не зададите нужные параметры или их значения не пройдут проверку, вам будет предложено указать требуемые параметры.
 
 | Имя параметра | ОПИСАНИЕ | Комментарий или значение по умолчанию |
 | --- | --- | --- |
@@ -80,24 +76,22 @@ ms.locfileid: "36938338"
 | **AzCredential** | Учетные данные администратора службы Azure Stack. Используйте те же учетные данные, которые вы указали при развертывании Azure Stack. | _Обязательный_ |
 | **VMLocalCredential** | Учетные данные локального администратора на виртуальной машине поставщика ресурсов SQL. | _Обязательный_ |
 | **PrivilegedEndpoint** | IP-адрес или DNS-имя привилегированной конечной точки. |  _Обязательный_ |
-| **DependencyFilesLocalPath** | В этот каталог нужно поместить и PFX-файл сертификата. | _Необязательный_ (_обязательно_ для интегрированных систем) |
+| **DependencyFilesLocalPath** | В случае с интегрированными системами в этот каталог нужно поместить PFX-файл сертификата. При необходимости можно скопировать сюда один пакет MSU Центра обновления Windows. | _Необязательный_ (_обязательно_ для интегрированных систем) |
 | **DefaultSSLCertificatePassword** | Пароль для PFX-файла сертификата. | _Обязательный_ |
-| **MaxRetryCount** | Количество повторов каждой операции в случае сбоя.| 2 |
+| **MaxRetryCount** | Число повторов каждой операции в случае сбоя.| 2 |
 | **RetryDuration** | Время ожидания между повторными попытками в секундах. | 120 |
 | **Удаление** | Удаляет поставщик ресурсов и все связанные с ним ресурсы (см. примечания ниже). | Нет  |
 | **DebugMode** | Отключает автоматическую очистку в случае сбоя. | Нет  |
-
->[!NOTE]
-> Отображение номеров SKU на портале может занять до часа. Вы не можете создать базу данных до развертывания и запуска SKU.
 
 ## <a name="deploy-the-sql-resource-provider-using-a-custom-script"></a>Развертывание поставщика ресурсов SQL с помощью пользовательского сценария
 
 Чтобы избежать конфигурации вручную при развертывании поставщика ресурсов, настройте следующий скрипт. Измените сведения и пароли учетной записи по умолчанию для развертывания Azure Stack.
 
 ```powershell
-# Install the AzureRM.Bootstrapper module and set the profile.
+# Install the AzureRM.Bootstrapper module, set the profile and install the AzureStack module
 Install-Module -Name AzureRm.BootStrapper -Force
 Use-AzureRmProfile -Profile 2017-03-09-profile
+Install-Module  -Name AzureStack -RequiredVersion 1.3.0
 
 # Use the NetBIOS name for the Azure Stack domain. On the Azure Stack SDK, the default is AzureStack but could have been changed at install time.
 $domain = "AzureStack"
@@ -124,8 +118,7 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 
-# Change to the directory If folder where you extracted the installation files.
-# Then adjust the endpoints.
+# Change to the directory folder where you extracted the installation files. Do not provide a certificate on ASDK!
 . $tempDir\DeploySQLProvider.ps1 `
     -AzCredential $AdminCreds `
     -VMLocalCredential $vmLocalAdminCreds `
@@ -145,11 +138,9 @@ $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
 1. Войдите на портал администрирования в качестве администратора служб.
 2. Выберите **Группы ресурсов**.
 3. Выберите группу ресурсов **system.\<расположение\>.sqladapter**.
-4. Под пунктом **Развертывания** на следующем экране должно отображаться **4 успешно**.
+4. На странице сводки в разделе обзора группы ресурсов не должно быть сообщений о сбоях развертывания.
 
       ![Проверка развертывания поставщика ресурсов SQL](./media/azure-stack-sql-rp-deploy/sqlrp-verify.png)
-
-5. Подробные сведения о развертывании поставщика ресурсов вы найдете в разделе **ПАРАМЕТРЫ**. Выберите **Развертывания**, чтобы узнать о состоянии, метке времени и продолжительности для каждого развертывания.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -2,25 +2,22 @@
 title: 'Azure Active Directory Connect: устранение неполадок с простым единым входом | Документы Майкрософт'
 description: В этом разделе описывается устранение неполадок с простым единым входом Azure Active Directory.
 services: active-directory
-keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
-documentationcenter: ''
-author: swkrish
+author: billmath
+ms.reviewer: swkrish
 manager: mtillman
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 03/12/2018
+ms.date: 06/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 205df47c36cb1d6925e232f06c0f1355c40ae973
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4df60668f6b9aa0afb2203fa59788c47e2ffaefb
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34592234"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37110895"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -84,6 +81,7 @@ ms.locfileid: "34592234"
 - Убедитесь, что учетная запись пользователя относится к лесу Active Directory, в котором настроен простой единый вход.
 - Убедитесь, что устройство подключено к корпоративной сети.
 - Убедитесь, что время на устройстве синхронизировано с временем в Active Directory и на контроллерах доменов, и что разница между временем на контроллерах домена не превышает пяти минут.
+- Убедитесь, что учетная запись компьютера `AZUREADSSOACCT` существует и включена в каждом лесу AD, для которого нужно включить простой единый вход. 
 - Выведите список билетов Kerberos на устройстве с помощью команды `klist` из командной строки. Убедитесь в наличии билетов, выданных для учетной записи компьютера `AZUREADSSOACCT`. Билеты Kerberos пользователей обычно действительны в течение 10 часов. В Active Directory могут быть заданы другие параметры.
 - Если отключить и повторно включить эффективный единый вход для клиента, пользователи не смогут применять единый вход, пока не истечет срок действия их кэшированных билетов Kerberos.
 - Удалите имеющиеся билеты Kerberos с устройства с помощью команды `klist purge` и повторите попытку.

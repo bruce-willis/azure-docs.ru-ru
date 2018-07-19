@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: e4f0fe0399b1230a27460df1718223736176ff01
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c027aa3d980d22e60c24db68aceb49fbef59d101
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228226"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046184"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство по интеграции Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36228226"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с United States (Non-UltiPro) необходимо следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36228226"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://perception.kanjoya.com/sp`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://perception.kanjoya.com/sso?idp=<entity_id>`.
 
     > [!NOTE] 
     > Это значение приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике.
@@ -129,7 +129,7 @@ ms.locfileid: "36228226"
 
     a. Приложению **Perception United States (Non-UltiPro)** необходимо значение **идентификатора сущности SAML**, которое вы скопировали, чтобы закодировать в формате URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
 
-    Б. Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
+    b. Получив это значение, объедините его с **URL-адресом ответа**, как показано ниже:
 
     `https://perception.kanjoya.com/sso?idp=<URI encooded entity_id>`
     
@@ -149,7 +149,7 @@ ms.locfileid: "36228226"
 
     a. В текстовом поле **Company Name** (Название компании) введите название **компании**.
     
-    Б. В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
+    b. В текстовом поле **Account Name** (Имя учетной записи) введите имя **учетной записи**.
 
     c. В текстовом поле **Default Reply-To Email** (Электронная почта ответа по умолчанию) введите допустимый адрес **электронной почты**.
 
@@ -161,7 +161,7 @@ ms.locfileid: "36228226"
 
     a. Выберите для параметра **SAML NameID Type** (Тип NameID SAML) значение **EMAIL** (Электронная почта).
 
-    Б. В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
+    b. В текстовом поле **SSO Configuration Name** (Имя конфигурации единого входа) введите имя своей **конфигурации**.
     
     c. В текстовое поле **Identity Provider Name** (Имя поставщика удостоверений) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure. 
 
@@ -246,7 +246,7 @@ ms.locfileid: "36228226"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Perception United States (Non-UltiPro) на панели доступа, вы автоматически войдете в приложение Perception United States (Non-UltiPro).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

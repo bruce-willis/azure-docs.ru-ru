@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 132803377554ecb4494d8b4ca6db7aa2f5f3aff1
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 2da2a2cae3993f7c29726b842db6767d4300cacc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225234"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045263"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Учебник. Интеграция Azure Active Directory с TOPdesk — Secure
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225234"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TOPdesk - Secure, вам потребуется следующее:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36225234"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/secure/login/verify`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/secure/login/verify`
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.topdesk.net/tas/public/login/saml`.
 
@@ -151,7 +151,7 @@ ms.locfileid: "36225234"
    
     a. Нажмите кнопку **Скачать** , чтобы скачать общедоступный файл метаданных, а затем сохраните его локально на компьютере.
    
-    Б. Откройте файл метаданных и определите местоположение узла **AssertionConsumerService** .
+    b. Откройте файл метаданных и определите местоположение узла **AssertionConsumerService** .
     
     ![Служба обработчика утверждений](./media/topdesk-secure-tutorial/ic790856.png "Служба обработчика утверждений")
    
@@ -163,7 +163,7 @@ ms.locfileid: "36225234"
     
     a. Откройте скачанный файл метаданных на портале Azure.
 
-    Б. Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
+    b. Разверните узел **RoleDescriptor**, содержащий **xsi:type** со значением **fed:ApplicationServiceType**.
 
     c. Скопируйте значение узла **X509Certificate** .
 
@@ -179,7 +179,7 @@ ms.locfileid: "36225234"
     
     a. Чтобы отправить скачанный файл метаданных через портал Azure, напротив пункта **Federation Metadata** (Метаданные федерации) нажмите кнопку **Browse** (Обзор).
 
-    Б. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
+    b. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
 
     c. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
@@ -242,7 +242,7 @@ ms.locfileid: "36225234"
    
     a. Перейдите на вкладку **General** (Общие).
    
-    Б. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
    
     c. Выберите для этой учетной записи **Site** (Веб-сайт) в разделе **Location** (Расположение).
    
@@ -288,7 +288,7 @@ ms.locfileid: "36225234"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "TOPdesk - Secure" на панели доступа, вы автоматически войдете в приложение TOPdesk - Public.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/04/2018
 ms.author: sashan
 ms.reviewer: carlrab
-ms.openlocfilehash: 0ce22cae50e70ca7232e025d4009b23d62f6a198
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f7125a18aa2496ebe8367443a67502a7a7dbac02
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34649233"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38969193"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 
@@ -83,8 +83,10 @@ ms.locfileid: "34649233"
 В следующем разделе показано, как настроить долгосрочное хранение резервных копий, просматривать резервные копии в хранилище SQL Azure и выполнять восстановление из резервной копии в хранилище SQL Azure с помощью PowerShell.
 
 > [!IMPORTANT]
-> Чтобы установить политики LTR версии 2, необходимо использовать последнюю версию PowerShell для AzureRM. Текущая версия — [AzureRM 4.5.0-preview](https://www.powershellgallery.com/packages/AzureRM.Sql/4.5.0-preview). Это предварительная версия. Чтобы ее установить, выполните следующую команду: `Install-Module -Name AzureRM.Sql -AllowPrerelease -Force`.
-> Сведения об установке предварительной версии см. в статье [Установка PowerShellGet](https://docs.microsoft.com/en-us/powershell/gallery/installing-psget). Версия PowerShell для AzureRM за май 2018 г. выпущена несколько дней назад (18.05.2018). Вы можете не использовать параметр -AllowPrelease при установке доступной версии этого выпуска. Вместо этого выполните следующую команду: `Install-Module -Name AzureRM.Sql -Force`.
+> API LTR версии 2 поддерживается в следующих версиях PowerShell:
+- [AzureRM.Sql-4.5.0](https://www.powershellgallery.com/packages/AzureRM.Sql/4.5.0) или более поздней версии
+- [AzureRM-6.1.0](https://www.powershellgallery.com/packages/AzureRM/6.1.0) или более поздней версии
+> 
 
 ### <a name="create-an-ltr-policy"></a>Создание политики LTR
 

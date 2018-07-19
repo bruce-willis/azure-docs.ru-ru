@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/13/2017
 ms.author: jeedes
-ms.openlocfilehash: 2b3fe6efc96b1cd65db42bab947a7499b3c97c8e
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: de41838b95b524780ca9df56ff036a200fd5f73a
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228352"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043709"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство по интеграции Azure Active Directory с ArcGIS Online
 
@@ -34,7 +34,7 @@ ms.locfileid: "36228352"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ArcGIS Online, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36228352"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.maps.arcgis.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `<companyname>.maps.arcgis.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `<companyname>.maps.arcgis.com`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [группу поддержки ArcGIS Online](http://support.esri.com/en/). 
@@ -147,7 +147,7 @@ ms.locfileid: "36228352"
    
     a. В текстовое поле **Name** (Имя) введите название своей организации.
 
-    Б. Для параметра **Metadata for the Enterprise Identity Provider will be supplied using** (В предоставлении метаданных для корпоративного поставщика удостоверений будет использоваться) выберите значение **Файл**.
+    b. Для параметра **Metadata for the Enterprise Identity Provider will be supplied using** (В предоставлении метаданных для корпоративного поставщика удостоверений будет использоваться) выберите значение **Файл**.
 
     c. Чтобы отправить загруженный файл метаданных, нажмите кнопку **Выбрать файл**.
 
@@ -212,7 +212,7 @@ ms.locfileid: "36228352"
     
      a. Введите в поля **Email** (Адрес электронной почты), **First name** (Имя) и **Last name** (Фамилия) соответствующие данные действующей учетной записи Azure AD, которую необходимо подготовить.
   
-     Б. Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
+     b. Нажмите кнопку **ADD AND REVIEW** (Добавить и просмотреть).
 5. Просмотрите введенные данные и нажмите кнопку **ADD MEMBERS** (Добавить участников).
    
     ![Добавление участника](./media/arcgis-tutorial/ic784750.png "Добавление участника")
@@ -255,7 +255,7 @@ ms.locfileid: "36228352"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "ArcGIS Online" на панели доступа, вы автоматически войдете в приложение ArcGIS Online.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

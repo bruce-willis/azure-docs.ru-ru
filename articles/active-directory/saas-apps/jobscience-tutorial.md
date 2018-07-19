@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 12dbf4483e3f049948df6b825b0e0937a79ad826
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 0d717c9a70d078300b59a4e3fd6df08e971e8075
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211902"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042968"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jobscience"></a>Руководство. Интеграция Azure Active Directory с Jobscience
 
@@ -33,7 +33,7 @@ ms.locfileid: "36211902"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Jobscience, вам потребуется:
 
@@ -153,7 +153,7 @@ ms.locfileid: "36211902"
     
     a. Установите флажок **SAML включен**.
 
-    Б. Нажмите кнопку **Создать**.
+    b. Нажмите кнопку **Создать**.
 
 13. В диалоговом окне **Изменение параметров единого входа SAML** выполните следующие действия.
     
@@ -161,7 +161,7 @@ ms.locfileid: "36211902"
     
     a. В текстовом поле **Имя** введите имя конфигурации.
 
-    Б. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Issuer** (Издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Entity id** (Идентификатор сущности) введите `https://salesforce-jobscience.com`.
 
@@ -224,7 +224,7 @@ ms.locfileid: "36211902"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -257,7 +257,7 @@ ms.locfileid: "36211902"
    
    a. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
    
-   Б. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
+   b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
    
    c. В текстовое поле **Alias** (Псевдоним) введите имя пользователя, например brittas.
 
@@ -308,7 +308,7 @@ ms.locfileid: "36211902"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Jobscience" на панели доступа, вы автоматически войдете в приложение Jobscience.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

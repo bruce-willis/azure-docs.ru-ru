@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 18c3dbdcf85c5b06b4f0f20c85b9fe751a3719fe
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 2ac5dee8fe9a27ffeed717e010cade522b9fefc0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317988"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046507"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pagerduty"></a>Руководство по интеграции Azure Active Directory с PagerDuty
 
@@ -33,7 +33,7 @@ ms.locfileid: "36317988"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением PagerDuty, вам потребуется:
 
@@ -111,7 +111,7 @@ ms.locfileid: "36317988"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<tenant-name>.pagerduty.com`
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов PagerDuty](https://www.pagerduty.com/support/).
@@ -144,7 +144,7 @@ ms.locfileid: "36317988"
 
     a. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **X.509 Certificate** (Сертификат X.509).
   
-    Б. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **Login URL** (URL-адрес входа) вставьте значение **URL-адрес службы единого входа SAML**, скопированное на портале Azure.
   
     c. В текстовое поле **Logout URL** (URL-адрес выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -180,7 +180,7 @@ ms.locfileid: "36317988"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -210,7 +210,7 @@ ms.locfileid: "36317988"
 
     a. В текстовое поле **First and Last Name** (Имя и фамилия) введите сведения о пользователе, например **Britta Simon**. 
    
-    Б. Введите **Email** (Адрес электронной почты) для пользователя, например: **brittasimon@contoso.com**.
+    b. Введите **Email** (Адрес электронной почты) для пользователя, например: **brittasimon@contoso.com**.
    
     c. Нажмите **Add** (Добавить), затем нажмите **Send Invites** (Отправить приглашения).
    
@@ -253,7 +253,7 @@ ms.locfileid: "36317988"
 
 Щелкнув элемент PagerDuty на панели доступа, вы автоматически войдете в приложение PagerDuty.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 2ddc4b6f792aa02308a95aa5464f0506cbd5c2ec
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4ed162adf08b993b5e0b482f941b3199929ad06c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215272"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046096"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-montage-online"></a>Руководство. Интеграция Azure Active Directory с Montage Online
 
@@ -34,7 +34,7 @@ ms.locfileid: "36215272"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Montage Online, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36215272"
 
     Для тестовой среды: `https://build-<subdomain>.montageonline.co.nz/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес:
+    b. В текстовом поле **Идентификатор** введите URL-адрес:
 
     Для рабочей среды: `MOL_Azure`
 
@@ -208,7 +208,7 @@ ms.locfileid: "36215272"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните элемент Montage Online на панели доступа, чтобы автоматически войти в приложение Montage Online.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

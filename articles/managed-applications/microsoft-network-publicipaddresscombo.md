@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/30/2018
+ms.date: 06/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: bf0ef5be609fba14ab12e1e6f9f97bc63f032aae
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: d06a450595a53fdc65fba74791345abe3a1b3db4
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34260566"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37109575"
 ---
 # <a name="microsoftnetworkpublicipaddresscombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Network.PublicIpAddressCombo
 Группа элементов управления для выбора нового или имеющегося общедоступного IP-адреса.
@@ -70,14 +70,16 @@ ms.locfileid: "34260566"
 - В качестве значения параметра `zone` можно указать общедоступные IP-адреса указанной зоны или отказоустойчивые в зоне общедоступные IP-адреса.
 
 ## <a name="sample-output"></a>Пример выходных данных
-Если общедоступный IP-адрес не выбран, ожидаются следующие выходные данные:
+Если общедоступный IP-адрес не выбран, элемент управления возвращает следующие выходные данные:
+
 ```json
 {
   "newOrExistingOrNone": "none"
 }
 ```
 
-Если выбран новый или имеющийся IP-адрес, ожидаются следующие выходные данные:
+Если пользователь выбрал или создал общедоступный IP-адрес, элемент управления возвращает следующие выходные данные:
+
 ```json
 {
   "name": "ip01",
@@ -87,6 +89,7 @@ ms.locfileid: "34260566"
   "newOrExistingOrNone": "new"
 }
 ```
+
 - Если для `options.hideNone` указать значение **true**, `newOrExistingOrNone` будет иметь только значения **new** или **existing**.
 - Если для `options.hideDomainNameLabel` указать значение **true**, `domainNameLabel` не объявляется.
 

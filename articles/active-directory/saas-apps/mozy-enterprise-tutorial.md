@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 6c814de45fe91990af61bb47c10a43e81e6c4159
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a0e3d6822c3aa79018482ec601a3f821f9fda254
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36224719"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39040870"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Учебник. Интеграция Azure Active Directory с Mozy Enterprise
 
@@ -33,7 +33,7 @@ ms.locfileid: "36224719"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Mozy Enterprise, вам потребуется:
 
@@ -141,7 +141,7 @@ ms.locfileid: "36224719"
    
    a. Для параметра **Поставщик** выберите значение **Служба каталогов**.
    
-   Б. Выберите **Использовать LDAP для отправки**.
+   b. Выберите **Использовать LDAP для отправки**.
    
    c. Щелкните вкладку **Проверка подлинности SAML** .
    
@@ -184,7 +184,7 @@ ms.locfileid: "36224719"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -214,7 +214,7 @@ ms.locfileid: "36224719"
    
    a. В списке **Выберите группу** выберите группу.
    
-   Б. В списке **Тип пользователя** выберите тип.
+   b. В списке **Тип пользователя** выберите тип.
    
    c. В текстовом поле **Имя пользователя** введите имя пользователя Azure AD.
    
@@ -262,7 +262,7 @@ ms.locfileid: "36224719"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Когда вы щелкните элемент Mozy Enterprise на панели доступа, появится страница входа в приложения Mozy Enterprise.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

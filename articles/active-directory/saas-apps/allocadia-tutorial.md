@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 5aacb6a1df10b32fe5310138d19532eff249c677
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a25fbd4daaa4d1fb09d788ba7ab61392ffb100f2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222589"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043920"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-allocadia"></a>Учебник. Интеграция Azure Active Directory с Allocadia
 
@@ -33,7 +33,7 @@ ms.locfileid: "36222589"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Allocadia, вам потребуется:
 
@@ -118,7 +118,7 @@ ms.locfileid: "36222589"
     
      для рабочей среды: `https://na2.allocadia.com`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
     
      для тестовой среды: `https://na2standby.allocadia.com/allocadia/saml/SSO`;
     
@@ -143,7 +143,7 @@ ms.locfileid: "36222589"
 
     ![Настройка единого входа](./media/allocadia-tutorial/tutorial_attribute_04.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     ![Настройка единого входа](./media/allocadia-tutorial/tutorial_attribute_05.png)
 
@@ -193,7 +193,7 @@ ms.locfileid: "36222589"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -238,7 +238,7 @@ ms.locfileid: "36222589"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Allocadia на панели доступа, вы автоматически войдете в приложение Allocadia.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

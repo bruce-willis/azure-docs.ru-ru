@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/11/2018
+ms.date: 06/27/2018
 ms.author: barbkess
 ms.custom: it-pro
 ms.reviewer: harshja
-ms.openlocfilehash: 5c6d6b9580b123dafb03af2acc885d2416ca2a56
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 0a004ee6e5dbdd2ceb8546a4b7ce20b2b551fac9
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35292547"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37084071"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -44,6 +44,8 @@ ms.locfileid: "35292547"
 >Если вы еще не разворачивали RDS или хотите получить дополнительные сведения, прежде чем начать, узнайте, как [незаметно для пользователя развернуть RDS с помощью Azure Resource Manager и Azure Marketplace](https://technet.microsoft.com/windows-server-docs/compute/remote-desktop-services/rds-in-azure).
 
 ## <a name="requirements"></a>Требования
+
+- Используйте клиент, отличный от веб-клиента удаленного рабочего стола, так как он не поддерживает Application Proxy.
 
 - Конечные точки веб-сайта удаленных рабочих столов и шлюза удаленных рабочих столов должны располагаться на одном компьютере и в общем корне. Веб-сайт удаленных рабочих столов и шлюз удаленных рабочих столов публикуется как отдельные приложения с помощью прокси приложения, поэтому возможен единый вход в эти два приложения.
 

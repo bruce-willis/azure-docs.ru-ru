@@ -9,24 +9,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/17/2017
 ms.author: heidist
-ms.openlocfilehash: 8def65c15d631909c69428a1cb5f100beb1f9b08
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 2164e0b7cc973969e39f5708bb6509c1ed5f636a
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "34641141"
 ---
 # <a name="indexers-in-azure-search"></a>Индексаторы в службе поиска Azure
-> [!div class="op_single_selector"]
->
-> * [Обзор](search-indexer-overview.md)
-> * [Портал](search-import-data-portal.md)
-> * [Azure SQL;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-> * [База данных Azure Cosmos](search-howto-index-cosmosdb.md)
-> * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-> * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
->
 
-*Индексатор* в службе поиска Azure — это программа-обходчик, которая извлекает доступные для поиска данные и метаданные из внешнего источника данных, а затем заполняет индекс, сопоставляя поля в индексе и источнике данных. Этот подход иногда называют моделью извлечения, так как запрос данных службой не предполагает написание кода, который передает данные в индекс.
+*Индексатор* в службе "Поиск Azure" — это программа-обходчик, которая извлекает доступные для поиска данные и метаданные из внешнего источника данных Azure, а затем заполняет индекс, сопоставляя поля в индексе и источнике данных. Этот подход иногда называют моделью извлечения, так как запрос данных службой не предполагает написание кода, который передает данные в индекс.
 
 Индексаторы основаны на типах источников данных или платформах, при этом есть отдельные индексаторы для SQL Server в Azure, Cosmos DB, хранилище таблиц Azure и хранилище BLOB-объектов и так далее.
 
@@ -38,27 +30,35 @@ ms.lasthandoff: 04/23/2018
 
 Далее представлены способы создания индексаторов и управления ими.
 
-* [Портал > мастер импорта данных;](search-get-started-portal.md)
-* [API REST службы](https://msdn.microsoft.com/library/azure/dn946891.aspx)
-* [ПАКЕТ SDK .NET](https://msdn.microsoft.com/library/azure/microsoft.azure.search.iindexersoperations.aspx)
+* [Портал > мастер импорта данных;](search-import-data-portal.md)
+* [API REST службы](https://docs.microsoft.com/rest/api/searchservice/Indexer-operations)
+* [ПАКЕТ SDK .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.iindexersoperations)
 
 Изначально новый индексатор объявляется в качестве предварительной версии функции. Предварительные версии функций добавляют в API (REST и .NET), а затем после выхода общедоступной версии интегрируются на портале. При оценке нового индексатора следует запланировать написание кода.
+
+
+<a name="supported-data-sources"></a>
+
+## <a name="supported-data-sources"></a>Поддерживаемые источники данных
+
+Данные о сканировании, выполненном индексаторами, хранятся в Azure.
+
+* [Azure SQL;](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
+* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
+* [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
+* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+
 
 ## <a name="basic-configuration-steps"></a>Основные этапы настройки
 В индексаторах реализованы уникальные функции для работы с источниками данных. Поэтому тип индексатора будет определять особенности настройки источника данных или индексатора. Тем не менее всем индексаторам присущи сходные структура и требования. Ниже описаны действия, общие для всех индексаторов.
 
 ### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
-Индексатор извлекает данные из *источника данных*, который содержит такие сведения, как строка подключения и, возможно, учетные данные. Сейчас поддерживаются следующие источники данных:
-
-* [база данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [База данных Azure Cosmos](search-howto-index-cosmosdb.md)
-* [Хранилище больших двоичных объектов Azure](search-howto-indexing-azure-blob-storage.md) для выбранных типов содержимого
-* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
+Индексатор извлекает данные из *источника данных*, который содержит такие сведения, как строка подключения и, возможно, учетные данные. Чтобы создать ресурс, вызовите REST API для [создания источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source) или [класс DataSource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource).
 
 Источники данных настраиваются и управляются независимо от индексаторов, которые их используют. Это означает, что источник данных может использоваться несколькими индексаторами для одновременной загрузки нескольких индексов.
 
 ### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
-Хотя индексатор автоматизирует некоторые задачи, связанные с приемом данных, это обычно не распространяется на создание индекса. Перед началом работы у вас должен быть стандартный индекс с полями, которые соответствуют полям во внешнем источнике данных. Дополнительные сведения о структурировании индексатора см. в статье, посвященной [созданию индекса (с использованием REST API службы поиска Azure)](https://docs.microsoft.com/rest/api/searchservice/Create-Index). Справочные сведения по сопоставлению полей см. в статье [Сопоставление полей в индексаторах Поиска Azure](search-indexer-field-mappings.md).
+Хотя индексатор автоматизирует некоторые задачи, связанные с приемом данных, это обычно не распространяется на создание индекса. Перед началом работы у вас должен быть стандартный индекс с полями, которые соответствуют полям во внешнем источнике данных. Дополнительные сведения о структурировании индекса см. в статье, посвященной [созданию индекса (с использованием REST API службы "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/Create-Index) или [классу Index](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.index). Справочные сведения по сопоставлению полей см. в статье [Сопоставление полей в индексаторах Поиска Azure](search-indexer-field-mappings.md).
 
 > [!Tip]
 > Хотя индексаторы не могут создавать индексы, вы можете это сделать с помощью мастера **импорта данных**. В большинстве случаев мастер может определить схему индекса на основе существующих метаданных в источнике, предоставляя предварительную схему, которую можно изменить в мастере во время его работы. После создания индекса в службе последующие изменения на портале ограничиваются добавлением новых полей. Используйте мастер для создания индекса, но не для изменения. Чтобы пройти практическое обучение, перейдите к [пошаговому руководству по порталу](search-get-started-portal.md).
@@ -70,7 +70,7 @@ ms.lasthandoff: 04/23/2018
 Теперь, когда вы ознакомились с основной идеей, можно переходить к изучению требований и задач, связанных с каждым типом источника данных.
 
 * [база данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [База данных Azure Cosmos](search-howto-index-cosmosdb.md)
+* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 * [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
 * [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
 * [Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-csv-blobs.md)

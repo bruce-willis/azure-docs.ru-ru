@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
-ms.openlocfilehash: cd8579fe29282f3875ecfddf67a34444e3de9ef5
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 891059a440189112c834f3402725781a6b4a3960
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34160756"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952830"
 ---
 # <a name="deep-learning-and-ai-frameworks"></a>Платформы глубокого обучения и искусственного интеллекта
 [Виртуальная машина для обработки и анализа данных](http://aka.ms/dsvm) (DSVM) и [виртуальная машина для глубокого обучения](http://aka.ms/dsvm/deeplearning) поддерживают несколько платформ глубокого обучения для создания приложений искусственного интеллекта (AI) с прогнозной аналитикой и когнитивными возможностями, например понимание изображений и языка. 
@@ -66,7 +66,7 @@ ms.locfileid: "34160756"
 
 |    |           |
 | ------------- | ------------- |
-| Что это такое?   | Платформа глубокого обучения      |
+| Что это такое?   | API глубокого обучения высокого уровня      |
 | Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows, Linux     |
 | Настройка и установка на DSVM  | TensorFlow устанавливается с Python 3.5 на [Linux и Windows 2012](dsvm-languages.md#python-linux-and-windows-server-2012-edition), а с Python 3.6 на [Windows 2016](dsvm-languages.md#python-windows-server-2016-edition). |
 | Ссылки на примеры      | https://github.com/fchollet/keras/tree/master/examples      |
@@ -178,7 +178,7 @@ export CUDA_ROOT=/usr/local/cuda-8.0
 
 
 
-## <a name="nvdia-smi"></a>nvdia-smi
+## <a name="nvidia-smi"></a>nvidia-smi
 
 |    |           |
 | ------------- | ------------- |

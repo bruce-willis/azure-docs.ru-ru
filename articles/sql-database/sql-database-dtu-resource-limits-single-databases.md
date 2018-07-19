@@ -2,19 +2,19 @@
 title: Ограничения ресурсов базы данных SQL Azure в модели приобретения на основе DTU — одиночные базы данных | Документы Майкрософт
 description: На этой странице описаны некоторые общие ограничения ресурсов на основе единицы передачи данных для одиночных баз данных в базе данных SQL Azure.
 services: sql-database
-author: CarlRabeler
+author: sachinpMSFT
 manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/20/2018
+ms.date: 06/29/2018
 ms.author: carlrab
-ms.openlocfilehash: 5a7abb7d67de59ea326b5180cf94e3594cd06576
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 2d6660e1064959f2d04424ae1c3e9bc668231c92
+ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36753393"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37131327"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU 
 
@@ -72,7 +72,7 @@ ms.locfileid: "36753393"
 
 
 > [!IMPORTANT]
-> Хранилище класса Premium объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: северная часть Соединенного Королевства, центрально-западная часть США, южная часть Соединенного Королевства 2, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион US Gov, юго-центральный регион US Gov, Северо-Восточная Германия, Северный Китай, восточный регион US Gov. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+> Хранилище ценовой категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, Северо-Восточная Германия, USGov — Айова, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 
 ## <a name="single-database-change-storage-size"></a>Отдельная база данных: изменение размера хранилища
 

@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/25/2018
+ms.date: 07/09/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 5ff397e8b13d56b3b034854c507f8bef05008812
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: db5941528eedd10cf252607dbe2160bd498a70de
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054727"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37951973"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure
 В этой статье описывается, как запустить пакет MSSQL Integration Services в конвейере фабрики данных Azure, используя действие "Выполнить пакет SSIS". 
@@ -92,9 +92,11 @@ ms.locfileid: "37054727"
 
 ### <a name="optionally-parameterize-the-activity"></a>При необходимости параметризируйте действие
 
-При необходимости на вкладке **Дополнительно** задайте значения, выражения или функции, которые могут ссылаться на системные переменные фабрики данных Azure для вашего проекта или пакета параметров в формате JSON. Например, можно назначить конвейер фабрики данных Azure для проекта служб MSSQL Integration Services или пакета параметров, как показано на снимке экрана ниже:
+При необходимости назначьте значения, выражения или функции, которые могут ссылаться на системные переменные фабрики данных, для параметров своего проекта или пакета в формате JSON с помощью кнопки **Смотреть исходный код** в нижней части блока действия "Выполнить пакет SSI" или кнопки **Код** в правом верхнем углу области конвейера. Например, можно назначить параметры конвейера фабрики данных для проекта SSIS или параметры пакета, как показано на снимке экрана ниже:
 
-![Добавление параметров к действию "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters.png)
+![Изменение скрипта JSON для действия "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters.png)
+
+![Добавление параметров к действию "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters2.png)
 
 ### <a name="run-and-monitor-the-pipeline"></a>Запуск и мониторинг конвейера
 В этом разделе вы активируете выполнение конвейера, а затем будете отслеживать его. 
@@ -174,7 +176,7 @@ ms.locfileid: "37054727"
     The specified Data Factory name 'ADFv2QuickStartDataFactory' is already in use. Data Factory names must be globally unique.
     ```
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
-* Сейчас с помощью службы "Фабрика данных" можно создавать фабрики данных только в восточной части США, восточной части США 2, Западной Европе и Юго-Восточной Азии. Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 ### <a name="create-a-pipeline-with-an-ssis-activity"></a>Создание конвейера с помощью действия SSIS 
 На этом этапе вы создадите конвейер с действием SSIS. Это действие запускает пакет SSIS. 
@@ -286,7 +288,7 @@ $RunId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataF
                                              -PipelineName $DFPipeLine.Name
 ```
 
-### <a name="monitor-the-pipeline-run"></a>Выполнили мониторинг конвейера.
+### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 
 Запустите приведенный ниже скрипт PowerShell, чтобы проверять состояние выполнения, пока не закончится копирование данных. Скопируйте приведенный ниже скрипт в окно PowerShell и нажмите клавишу ВВОД. 
 

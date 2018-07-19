@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/05/2018
 ms.author: jeedes
-ms.openlocfilehash: b077c5529f08151359a3344ed2f983323fb7e14a
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ae91c1e07d3a41558bd15bc92d05d20ef552f6a3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218583"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041829"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-line-works"></a>Руководство по интеграции Azure Active Directory с приложением LINE WORKS
 
@@ -34,7 +34,7 @@ ms.locfileid: "36218583"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с LINE WORKS, требуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36218583"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.worksmobile.com/d/login/{domain}/?userId={ID@domain}`
 
-    Б. В текстовом поле **Идентификатор** введите значение `worksmobile.com`.
+    b. В текстовом поле **Идентификатор** введите значение `worksmobile.com`.
 
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки клиентов LINE WORKS](mailto:dl_ssoinfo@worksmobile.com).
@@ -206,7 +206,7 @@ ms.locfileid: "36218583"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку LINE WORKS на панели доступа, вы автоматически войдете в приложение LINE WORKS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

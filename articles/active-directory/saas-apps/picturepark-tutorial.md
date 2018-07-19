@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 0809d672f44be2771dcb149bfafe682a31f17139
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 274e8802d0723b4f9197210c51d41714788652a0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218740"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041880"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство по интеграции Azure Active Directory с Picturepark
 
@@ -33,7 +33,7 @@ ms.locfileid: "36218740"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Picturepark, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36218740"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     
     |  |
     |--|
@@ -154,7 +154,7 @@ ms.locfileid: "36218740"
    
     a. Щелкните **Добавить**.
   
-    Б. Введите имя конфигурации.
+    b. Введите имя конфигурации.
    
     c. Выберите **По умолчанию**.
    
@@ -197,7 +197,7 @@ ms.locfileid: "36218740"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -225,7 +225,7 @@ ms.locfileid: "36218740"
    
     a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, например **BrittaSimon@contoso.com**.  
    
-    Б. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
+    b. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
    
     c. В текстовое поле **First Name** (Имя) введите **имя пользователя**, **Britta**. 
    
@@ -281,7 +281,7 @@ ms.locfileid: "36218740"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Picturepark" на панели доступа, вы автоматически войдете в приложение Picturepark. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент "Picturepark" на панели доступа, вы автоматически войдете в приложение Picturepark. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

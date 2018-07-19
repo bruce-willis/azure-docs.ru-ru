@@ -1,5 +1,5 @@
 ---
-title: 'Виртуальный центр обработки данных Microsoft Azure: сетевая перспектива | Документация Майкрософт'
+title: Виртуальный центр обработки данных Microsoft Azure с точки зрения сети
 description: Узнайте, как создать виртуальный центр обработки данных в Azure
 services: networking
 author: tracsman
@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/3/2018
 ms.author: jonor
-ms.openlocfilehash: a62d52e30b04b525dc8ff685ed6c3033d6029542
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 2c8ca8bcce43596d521fa9c81438ac6a16f6dcdf
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33942451"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37445387"
 ---
-# <a name="microsoft-azure-virtual-datacenter-a-network-perspective"></a>Виртуальный центр обработки данных Microsoft Azure: сетевая перспектива
+# <a name="azure-virtual-datacenter-a-network-perspective"></a>Виртуальный центр обработки данных Microsoft Azure с точки зрения сети
 **Microsoft Azure**: ускоренное перемещение, оптимальные затраты, интеграция локальных приложений и данных
 
 ## <a name="overview"></a>Обзор

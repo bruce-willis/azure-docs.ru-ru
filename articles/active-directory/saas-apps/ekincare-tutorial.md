@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 413ae4197b95932321e29eb1662fe8168c77799a
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 24f49cac136335493fcc9290f29a08efcc5eb5da
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216945"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043421"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ekincare"></a>Руководство. Интеграция Azure Active Directory с eKincare
 
@@ -33,7 +33,7 @@ ms.locfileid: "36216945"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с eKincare, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36216945"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<instancename>.ekincare.com/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<instancename>.ekincare.com/hul/saml`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<instancename>.ekincare.com/hul/saml`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки eKincare](mailto:tech@ekincare.com).
@@ -139,7 +139,7 @@ ms.locfileid: "36216945"
 
     ![Настройка единого входа](./media/ekincare-tutorial/05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -184,7 +184,7 @@ ms.locfileid: "36216945"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -229,7 +229,7 @@ ms.locfileid: "36216945"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку eKincare на панели доступа, вы автоматически войдете в приложение eKincare.
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../active-directory-saas-access-panel-introduction.md)
+Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

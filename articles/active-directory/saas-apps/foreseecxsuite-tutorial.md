@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/24/2018
 ms.author: jeedes
-ms.openlocfilehash: e27bc853db6236165d77f2fb3418bab1170400b2
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4c126b3bf08174886b3668cd54c76b72d113ba76
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36227709"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047116"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство по интеграции Azure Active Directory с ForeSee CX Suite
 
@@ -34,7 +34,7 @@ ms.locfileid: "36227709"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ForeSee CX Suite, вам потребуется:
 
@@ -113,7 +113,7 @@ ms.locfileid: "36227709"
 
     ![Сведения о домене и URL-адресах единого входа приложения ForeSee CX Suite](./media/foreseecxsuite-tutorial/tutorial_foreseen_uploadconfig.png)
 
-    Б. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
     c. После успешной передачи **файла метаданных поставщика службы** значение **Идентификатор** автоматически добавляется в соответствующее текстовое поле в разделе **Домены и URL-адреса приложения ForeSee CX Suite**, как показано ниже:
 
@@ -125,7 +125,7 @@ ms.locfileid: "36227709"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://cxsuite.foresee.com/`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<UniqueID>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<UniqueID>`
 
     > [!NOTE]
     > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Для получения этого значения обратитесь в [группу поддержки клиентов ForeSee CX Suite](mailto:support@foresee.com).
@@ -211,7 +211,7 @@ ms.locfileid: "36227709"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "ForeSee CX Suite" на панели доступа, вы автоматически войдете в приложение ForeSee CX Suite.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: jeedes
-ms.openlocfilehash: 166dfa8c5b3456de59055e5f62a566064540db31
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 3ff5a833da5bbe99c5c6d1576b9775051b3ce07b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225030"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048095"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Руководство по интеграции Azure Active Directory с iQualify LMS
 
@@ -34,7 +34,7 @@ ms.locfileid: "36225030"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с iQualify LMS, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36225030"
     | Рабочая среда: `https://<yourorg>.iqualify.com/`|
     | Тестовая среда: `https://<yourorg>.iqualify.io`|
     
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: 
     | |
     |--|--|
     | Рабочая среда: `https://<yourorg>.iqualify.com/auth/saml2/callback` |
@@ -154,7 +154,7 @@ ms.locfileid: "36225030"
 
     ![Настройка единого входа](./media/iqualify-tutorial/atb3.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -196,7 +196,7 @@ ms.locfileid: "36225030"
 
     a. В текстовом поле **SAML SINGLE SIGN-ON SERVICE URL** (URL-адрес службы единого входа SAML) введите значение **URL-адреса службы единого входа SAML** из окна настройки приложения Azure AD.
     
-    Б. В текстовом поле **SAML LOGOUT URL** (URL-адрес выхода SAML) введите значение **Sign-Out URL** (URL-адрес выхода) из окна настройки приложения Azure AD.
+    b. В текстовом поле **SAML LOGOUT URL** (URL-адрес выхода SAML) введите значение **Sign-Out URL** (URL-адрес выхода) из окна настройки приложения Azure AD.
     
     c. Откройте загруженный сертификат в блокноте, скопируйте его содержимое и вставьте его в текстовое поле **PUBLIC CERTIFICATE** (Общий сертификат).
     
@@ -287,7 +287,7 @@ ms.locfileid: "36225030"
 
 Нажмите кнопку **Sign in with Azure AD** (Вход с помощью Azure AD), чтобы выполнить автоматический вход в приложение iQualify LMS.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

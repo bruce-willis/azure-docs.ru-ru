@@ -11,23 +11,26 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/30/2018
+ms.date: 06/28/2018
 ms.author: tomfitz
-ms.openlocfilehash: 5d806afbfd74d68d139f494c7a5a6e871a7dae36
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 2c2553d9ffb1dfbe032385fb77e234a8b96cb239
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34260600"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37110071"
 ---
 # <a name="microsoftnetworkvirtualnetworkcombo-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo
 Группа элементов управления для выбора новой или имеющейся виртуальной сети.
 
 ## <a name="ui-sample"></a>Пример элемента пользовательского интерфейса
-![Элемент пользовательского интерфейса Microsoft.Network.VirtualNetworkCombo](./media/managed-application-elements/microsoft.network.virtualnetworkcombo.png)
+Выбрав новую виртуальную сеть, пользователь может настроить префикс адреса и имя каждой подсети. Настройка подсетей является необязательной.
 
-- В верхней области каркаса пользователь выбрал новую виртуальную сеть. Теперь он может настроить префикс адреса и имя каждой подсети. Настройка подсетей в этом случае является необязательной.
-- В нижней области каркаса пользователь выбрал имеющуюся виртуальную сеть. Теперь он должен сопоставить каждую подсеть, необходимую шаблону развертывания, с имеющейся подсетью. Настройка подсетей в этом случае является обязательной.
+![Microsoft.Network.VirtualNetworkCombo — новая виртуальная сеть](./media/managed-application-elements/microsoft.network.virtualnetworkcombo-new.png)
+
+Выбрав существующую виртуальную сеть, пользователь должен сопоставить каждую подсеть, необходимую для шаблона развертывания, с имеющейся подсетью. Настройка подсетей в этом случае является обязательной.
+
+![Microsoft.Network.VirtualNetworkCombo — существующая виртуальная сеть](./media/managed-application-elements/microsoft.network.virtualnetworkcombo-existing.png)
 
 ## <a name="schema"></a>Схема
 ```json
@@ -88,12 +91,12 @@ ms.locfileid: "34260600"
 - Обязательно должен быть указан параметр `constraints.minAddressPrefixSize`. Любые имеющиеся виртуальные сети с адресным пространством меньше указанного значения являются недоступными.
 - Для каждой подсети должны быть определены `subnets` и `constraints.minAddressPrefixSize`.
 - При создании виртуальной сети префикс адреса каждой подсети определяется автоматически на основе префикса адреса виртуальной сети и `addressPrefixSize` соответственно.
-- При использовании имеющейся виртуальной сети любые подсети со значением меньше, чем у `constraints.minAddressPrefixSize`, — недоступны. Кроме того (если указано), подсети, которые не содержат минимальное число доступных адресов (`minAddressCount`), — недоступны.
-Значение по умолчанию — **0**. Чтобы адреса были связанными, задайте значение **true** для `requireContiguousAddresses`. Значение по умолчанию — **true**.
+- При использовании имеющейся виртуальной сети любые подсети со значением меньше, чем у `constraints.minAddressPrefixSize`, — недоступны. Кроме того (если указано), подсети, которые не содержат минимальное число доступных адресов (`minAddressCount`), недоступны для выбора. Значение по умолчанию — **0**. Чтобы адреса были связанными, задайте значение **true** для `requireContiguousAddresses`. Значение по умолчанию — **true**.
 - Создание подсетей в имеющейся виртуальной сети не поддерживается.
 - Если для параметра `options.hideExisting` задано значение **true**, пользователь не может выбрать имеющуюся виртуальную сеть. Значение по умолчанию — **false**.
 
 ## <a name="sample-output"></a>Пример выходных данных
+
 ```json
 {
   "name": "vnet01",

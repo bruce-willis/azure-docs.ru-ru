@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/20/2018
+ms.date: 07/02/2018
 ms.author: carlrab
-ms.openlocfilehash: 6806b0c5b5e5ac5e1189f628786f0c8f9b223395
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 403490f47ac171d4a302d2b68af65375bbdc26cd
+ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36750957"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37345725"
 ---
 # <a name="overview-azure-sql-database-resource-limits"></a>Обзор ограничений ресурсов базы данных SQL Azure 
 
@@ -27,10 +27,11 @@ ms.locfileid: "36750957"
 | Баз данных на сервер | 5000 |
 | Количество серверов по умолчанию на одну подписку в любом регионе | 20 |
 | Максимальное количество серверов на одну подписку в любом регионе | 200 |
+| Квота DTU или eDTU на сервер | 54 000 |
 |||
 
 > [!NOTE]
-> Чтобы увеличить квоту серверов, отправьте запрос в службу поддержки на портале Azure для подписки, выбрав тип проблемы "Квота".
+> Чтобы увеличить квоту DTU или eDTU либо число серверов по умолчанию, отправьте запрос в службу поддержки на портале Azure для подписки, выбрав тип проблемы "Квота". Квота DTU или eDTU и предельное число баз данных на сервер ограничивают количество эластичных пулов на сервер. 
 
 > [!IMPORTANT]
 > По мере приближения количества баз данных к пороговому значению для сервера может произойти следующее:

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: jgao
-ms.openlocfilehash: b672b777e9a60f2f3d978947c06290db48e6766c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: bcfa7a6b9a2ebd60ec804fe8a61c26300f003a5e
+ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34627029"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37097790"
 ---
 # <a name="manage-hadoop-clusters-in-hdinsight-by-using-the-azure-portal"></a>Управление кластерами Hadoop в HDInsight с помощью портала Azure
 
@@ -105,7 +105,7 @@ HDInsight работает со множеством компонентов Hado
     * **Мониторинг.** Мониторинг кластера в Azure Log Analytics.
     * **Свойства**: просмотр свойств кластера.
     * **Учетные записи хранения.** Просматривайте учетные записи хранения и ключи. Учетные записи хранения настраиваются во время создания кластера.
-    * **Доступ к Data Lake Store**: настройка доступа к хранилищам Data Lake Store.  Дополнительные сведения см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+    * **Доступ к Data Lake Store**: настройка доступа к хранилищам Data Lake Store.  Дополнительные сведения см. в статье [Краткое руководство по установке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
     * **Работоспособность ресурсов**: ознакомьтесь со статьей [Обзор службы работоспособности ресурсов Azure](../service-health/resource-health-overview.md).
     * **Новый запрос в службу поддержки**. Вы можете создать запрос в службу поддержки Майкрософт.
     

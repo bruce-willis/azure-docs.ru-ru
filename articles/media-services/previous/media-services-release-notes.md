@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: juliako
-ms.openlocfilehash: e2512a2af05ee7101713886c3ae1b5c6c74dd3db
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 5ef1ca201bc564949ee65f81970d0b040679d6b8
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018544"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38671431"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -366,7 +366,7 @@ REST API служб мультимедиа обновлены до версии 
 
 ## <a id="may_changes_14"></a>Выпуск: май 2014 г.
 ### <a id="may_14_changes"></a>Общие обновления служб мультимедиа
-Теперь можно использовать [Динамическая упаковка] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительную информацию см. в [этом блоге](http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/).
+Теперь можно использовать [Динамическая упаковка] для потоковой передачи HLS версии 3. Для потоковой передачи HLS версии 3 добавьте следующий формат в исходный путь указателя: *.ism/manifest(format=v3-aapl-m3u8). Дополнительные сведения см. в [этой теме форума](https://social.msdn.microsoft.com/Forums/en-US/13b8a776-9519-4145-b9ed-d2b632861fde/dynamic-packaging-to-hls-v3).
 
 Динамическая упаковка теперь также поддерживает доставку потоков HLS (версии 3 и 4), зашифрованных с помощью PlayReady на основе Smooth Streaming со статическим шифрованием с использованием PlayReady. Дополнительные сведения о шифровании Smooth Streaming с помощью PlayReady см. в статье [Динамическая упаковка](http://msdn.microsoft.com/library/azure/dn189154.aspx).
 
@@ -396,7 +396,7 @@ REST API служб мультимедиа обновлены до версии 
 * Исправлены ошибки, связанные с использованием запросов LINQ с инструкциями OrderBy.
 * Тестовые решения в [GitHub] разделены на тесты на основе единиц и тесты на основе сценариев.
 
-Дополнительные сведения об этих изменениях см. в статье о [выпусках 3.0.0.1 и 3.0.0.2 пакета SDK служб мультимедиа для .NET](http://www.gtrifonov.com/2014/02/07/windows-azure-media-services-.net-sdk-3.0.0.2-release/).
+Дополнительные сведения об этих изменениях см. в статье о [выпусках 3.0.0.1 и 3.0.0.2 пакета SDK служб мультимедиа для .NET](http://gtrifonov.com/2014/02/07/windows-azure-media-services-net-sdk-3-0-0-2-release/index.html).
 
 В версии 3.0.0.3 внесены следующие изменения.
 

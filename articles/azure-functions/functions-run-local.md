@@ -1,6 +1,6 @@
 ---
-title: Разработка и выполнение Функций Azure локально | Документация Майкрософт
-description: Узнайте, как программировать и тестировать функции Azure на локальном компьютере перед их запуском в Функциях Azure.
+title: Запуск основных инструментов службы "Функции Azure" | Документация Майкрософт
+description: Узнайте, как программировать и тестировать функции Azure из командной строки или терминала на локальном компьютере, прежде чем запускать их в службе "Функции Azure".
 services: functions
 documentationcenter: na
 author: ggailey777
@@ -12,30 +12,34 @@ ms.workload: na
 ms.tgt_pltfrm: multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 06/03/2018
+ms.date: 06/26/2018
 ms.author: glenga
-ms.openlocfilehash: 5613b6b30d97b88bdfa6b00f90e334f1756ad614
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 5c582b080ec6f2cff801758fc4bff4f7d07fd7df
+ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294504"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37083075"
 ---
-# <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
+# <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
-Хотя на [портал Azure] имеется полный набор средств для разработки и тестирования Функций Azure, многие разработчики предпочитают локальную среду разработки. Функции Azure позволяют легко использовать любой редактор кода и локальные средства разработки для разработки и тестирования функций на локальном компьютере. Функции могут вызывать события в Azure, а вы можете отлаживать функции C# и JavaScript на локальном компьютере. 
+Основные инструменты службы "Функции Azure" позволяют разрабатывать и тестировать функции на локальном компьютере из командной строки или терминала. Локальные функции можно подключать к действующим службам Azure, а отладку функций можно выполнять на локальном компьютере с помощью полной среды выполнения службы "Функции Azure". Также есть возможность развернуть приложение-функцию в подписке Azure.
 
-Если вы используете Visual Studio C# для разработки, Функции Azure также [интегрируются с Visual Studio 2017](functions-develop-vs.md).
+[!INCLUDE [Don't mix development environments](../../includes/functions-mixed-dev-environments.md)]
 
->[!IMPORTANT]  
-> Не следует смешивать локальную разработку и разработку с помощью портала разработки в одном приложении-функции. При создании и публикации функций из локального проекта не следует пытаться хранить или изменять код проекта на портале.
+## <a name="core-tools-versions"></a>Версии основных инструментов
+
+Есть две версии основных инструментов службы "Функции Azure". Версия, использование которой зависит от локальной среды разработки, выбора языка и требуемого уровня поддержки.
+
++ [Версия 1.x](#v1) поддерживает общедоступную (GA) версию 1.x среды выполнения. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm). В этой версии можно создавать функции на экспериментальных языках, которые не имеют официальной поддержки. Дополнительные сведения см. в разделе [Supported languages in Azure Functions](supported-languages.md) (Поддерживаемые языки службы "Функции Azure")
+
++ [Версия 2.x](#v2): поддерживает версию 2.x в среде выполнения. Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки. Как и среда выполнения 2.x эта версия основных инструментов на данный момент доступна для ознакомления.
+
+Если иное не указано, примеры в этой статье предназначены для версии 2.x.
 
 ## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
 
-[Основные инструменты службы "Функции Azure"] являются локальной версией среды выполнения службы "Функции Azure", которые можно запускать на локальном компьютере для разработки. Это не эмулятор или симулятор. Это та же среда выполнения, которая используется в Функциях Azure. Есть две версии основных инструментов Функций Azure:
-
-+ [Версия 1.x](#v1): поддерживает версию 1.x в среде выполнения. Эта версия поддерживается только на компьютерах с Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm).
-+ [Версия 2.x](#v2): поддерживает версию 2.x в среде выполнения. Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки. 
+[Основные инструменты службы "Функции Azure"] являются локальной версией среды выполнения "Функции Azure", которую можно запускать на локальном компьютере для разработки. Она также предоставляет команды для создания функций, подключения к Azure и развертывания проектов функций.
 
 ### <a name="v1"></a>Версия 1.x
 
@@ -115,23 +119,11 @@ npm install -g azure-functions-core-tools
     sudo apt-get install azure-functions-core-tools
     ```
 
-## <a name="run-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
-
-Основные инструменты службы "Функции Azure" добавляют следующие псевдонимы команд:
-
-+ **func**
-+ **azfun**
-+ **azurefunctions**
-
-Любой из этих псевдонимов можно использовать вместо команды `func`, показанной в примерах.
-
-```bash
-func init MyFunctionProj
-```
-
 ## <a name="create-a-local-functions-project"></a>Создание локального проекта службы "Функции"
 
-В локальном режиме работы проект службы "Функции" является каталогом, в котором находятся файлы [host.json](functions-host-json.md) и [local.settings.json](#local-settings-file). Этот каталог является эквивалентом приложения-функции в Azure. Дополнительные сведения о структуре папок службы "Функции Azure" см. в [этом разделе](functions-reference.md#folder-structure).
+Каталог проекта функций содержит файлы [host.json](functions-host-json.md) и [local.settings.json](#local-settings-file), а также вложенные папки, которые содержат код для отдельных функций. Этот каталог является эквивалентом приложения-функции в Azure. Дополнительные сведения о структуре папок службы "Функции Azure" см. в [Руководстве для разработчиков по Функциям Azure](functions-reference.md#folder-structure).
+
+Версия 2.x требует при ее создании выбрать для проекта язык по умолчанию, и все добавленные функции будут использовать шаблоны языка по умолчанию. В версии 1.x пользователю необходимо указывать язык при каждом создании функции.
 
 В окне терминала или из командной строки выполните следующую команду, чтобы создать проект и локальный репозиторий Git:
 
@@ -139,14 +131,23 @@ func init MyFunctionProj
 func init MyFunctionProj
 ```
 
-Выходные данные выглядят так:
+При запуске команды в версии 2.x необходимо выбрать среду выполнения для проекта. Для разработки функций JavaScript выберите следующий **узел**.
 
 ```output
+Select a worker runtime:
+dotnet
+node
+```
+
+Для выбора языка используйте СТРЕЛКИ ВВЕРХ и ВНИЗ и клавишу ВВОД. Результат для проекта JavaScript выглядит примерно следующим образом.
+
+```output
+Select a worker runtime: node
 Writing .gitignore
 Writing host.json
 Writing local.settings.json
-Created launch.json
-Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
+Writing C:\myfunctions\myMyFunctionProj\.vscode\extensions.json
+Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 ```
 
 Чтобы создать проект без локального репозитория Git, используйте параметр `--no-source-control [-n]`.
@@ -165,15 +166,15 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 
 ```json
 {
-  "IsEncrypted": false,   
+  "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "<connection-string>", 
+    "AzureWebJobsStorage": "<connection-string>",
     "AzureWebJobsDashboard": "<connection-string>",
     "MyBindingConnection": "<binding-connection-string>"
   },
   "Host": {
-    "LocalHttpPort": 7071, 
-    "CORS": "*" 
+    "LocalHttpPort": 7071,
+    "CORS": "*"
   },
   "ConnectionStrings": {
     "SQLConnectionString": "Value"
@@ -184,7 +185,7 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
 | Параметр      | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 | **IsEncrypted** | Если задано значение **true**, все значения шифруются с помощью ключа локального компьютера. Используется с командами `func settings`. Значение по умолчанию — **false**. |
-| **Значения** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Такие настройки, как **AzureWebJobsStorage** и **AzureWebJobsDashboard**, соответствуют параметрам приложения в вашем приложении-функции Azure. Многие триггеры и привязки имеют свойство, относящееся к строке подключения параметра приложения, например **Connection** для [триггера хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в массиве **Values**. <br/>**AzureWebJobsStorage** — это необходимый параметр приложения для триггеров, отличных от HTTP. При наличии [эмулятора хранилища Azure](../storage/common/storage-use-emulator.md), установленного локально, можно задать **AzureWebJobsStorage** для использования эмулятора `UseDevelopmentStorage=true` и Core Tools. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
+| **Значения** | Коллекция параметров приложения и строк подключения, используемых при локальном выполнении. Эти значения соответствуют параметрам приложения в приложении-функции в Azure, таким как **AzureWebJobsStorage** и **AzureWebJobsDashboard**. Многие триггеры и привязки имеют свойство, относящееся к строке подключения параметра приложения, например **Connection** для [триггера хранилища BLOB-объектов](functions-bindings-storage-blob.md#trigger---configuration). Для таких свойств требуется параметр приложения, определенный в массиве **Values**. <br/>**AzureWebJobsStorage** — это необходимый параметр приложения для триггеров, отличных от HTTP. При наличии [эмулятора хранилища Azure](../storage/common/storage-use-emulator.md), установленного локально, можно задать **AzureWebJobsStorage** для использования эмулятора `UseDevelopmentStorage=true` и Core Tools. Во время разработки это удобно, но следует проверить подключение к фактическому хранилищу перед развертыванием. |
 | **Host** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
 | **LocalHttpPort** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
 | **CORS** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
@@ -229,39 +230,65 @@ Initialized empty Git repository in D:/Code/Playground/MyFunctionProj/.git/
     func azure storage fetch-connection-string <StorageAccountName>
     ```
     
-    Обе команды требуют сначала выполнить вход в Azure.
+    Если вы еще не вошли в Azure, вам будет предложено сделать это.
 
-<a name="create-func"></a>
-## <a name="create-a-function"></a>Создание функции
+## <a name="create-func"></a>Создание функции
 
 Чтобы создать функцию, выполните следующую команду:
 
 ```bash
 func new
-``` 
-`func new` имеет указанные ниже необязательные аргументы.
-
-| Аргумент     | ОПИСАНИЕ                            |
-| ------------ | -------------------------------------- |
-| **`--language -l`** | Язык программирования шаблона, например C#, F# или JavaScript. |
-| **`--template -t`** | Имя шаблона. |
-| **`--name -n`** | Имя функции. |
-
-Например, чтобы создать триггер HTTP на JavaScript, выполните следующую команду:
-
-```bash
-func new --language JavaScript --template "Http Trigger" --name MyHttpTrigger
 ```
 
-Чтобы создать функцию, активируемую с помощью очереди, выполните следующую команду:
+В версии 2.x при запуске `func new` для приложения-функции предлагается выбрать шаблон языка по умолчанию, а затем имя для функции. В версии 1.x также предлагается выбрать язык.
+
+```output
+Select a language: Select a template:
+Blob trigger
+Cosmos DB trigger
+Event Grid trigger
+HTTP trigger
+Queue trigger
+SendGrid
+Service Bus Queue trigger
+Service Bus Topic trigger
+Timer trigger
+```
+
+Код функции создается во вложенной папке с предоставленным именем функции, как показано в следующем выходе триггера очереди.
+
+```output
+Select a language: Select a template: Queue trigger
+Function name: [QueueTriggerJS] MyQueueTrigger
+Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\index.js
+Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\readme.md
+Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\sample.dat
+Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
+```
+
+Эти параметры можно также задать в команде, указав следующие аргументы.
+
+| Аргумент     | ОПИСАНИЕ                            |
+| ------------------------------------------ | -------------------------------------- |
+| **`--language -l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. В версии 2.x этот параметр либо вообще не используется, либо для проекта выбирается язык по умолчанию. |
+| **`--template -t`** | Имя шаблона, которое может принимать одно из значений.<br/><ul><li>`Blob trigger`</li><li>`Cosmos DB trigger`</li><li>`Event Grid trigger`</li><li>`HTTP trigger`</li><li>`Queue trigger`</li><li>`SendGrid`</li><li>`Service Bus Queue trigger`</li><li>`Service Bus Topic trigger`</li><li>`Timer trigger`</li></ul> |
+| **`--name -n`** | Имя функции. |
+
+Например, чтобы создать триггер HTTP на JavaScript одной командой, выполните следующую команду.
 
 ```bash
-func new --language JavaScript --template "Queue Trigger" --name QueueTriggerJS
-```bash
-<a name="start"></a>
-## Run functions locally
+func new --template "Http Trigger" --name MyHttpTrigger
+```
 
-To run a Functions project, run the Functions host. The host enables triggers for all functions in the project:
+Чтобы создать активируемую с помощью очереди функцию одной командой, выполните следующую команду.
+
+```bash
+func new --template "Queue Trigger" --name QueueTriggerJS
+```
+
+## <a name="start"></a>Запуск функций локально
+
+Чтобы запустить проект службы "Функции", запустите узел этой службы. Узел включает триггеры для всех функций в проекте.
 
 ```bash
 func host start
@@ -272,13 +299,13 @@ func host start
 | Параметр     | ОПИСАНИЕ                            |
 | ------------ | -------------------------------------- |
 |**`--port -p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
-| **`--debug <type>`** | Возможные значения: `VSCode` и `VS`. |
+| **`--debug <type>`** | Запускается узел с открытым портом отладки, чтобы была возможность подключиться к процессу **func.exe** из [Visual Studio Code](https://code.visualstudio.com/tutorials/functions-extension/getting-started) или [Visual Studio 2017](functions-dotnet-class-library.md). Параметр *\<тип\>* имеет значения `VSCode` и `VS`.  |
 | **`--cors`** | Список разрешенных источников CORS, разделенный запятыми без пробелов. |
 | **`--nodeDebugPort -n`** | Порт отладчика узла. Значение по умолчанию — значение из launch.json или 5858. |
 | **`--debugLevel -d`** | Уровень трассировки консоли (off, verbose, info, warning или error). Значение по умолчанию — info.|
 | **`--timeout -t`** | Время ожидания для запуска узла службы "Функции" в секундах. Значение по умолчанию — 20 секунд.|
-| **`--useHttps`** | Привязка к https://localhost:{port}, а не к http://localhost:{port}. По умолчанию этот параметр создает доверенный сертификат на компьютере.|
-| **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Это удобно при запуске основных инструментов службы "Функции Azure" из интегрированной среды разработки (IDE).|
+| **`--useHttps`** | Привязка к `https://localhost:{port}`, а не к `http://localhost:{port}`. По умолчанию этот параметр создает доверенный сертификат на компьютере.|
+| **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Используется при запуске основных инструментов из Visual Studio или VS Code.|
 
 При запуске узла службы "Функции" выводится URL-адрес функций, активируемых по HTTP:
 
@@ -290,28 +317,9 @@ Job host started
 Http Function MyHttpTrigger: http://localhost:7071/api/MyHttpTrigger
 ```
 
-### <a name="vs-debug"></a>Отладка в VS Code или Visual Studio
-
-Чтобы подключить отладчик, передайте аргумент `--debug`. Для отладки функций на JavaScript используйте код Visual Studio. Для функций на C# используйте Visual Studio.
-
-Для отладки функции на C# используйте `--debug vs`. Кроме того, можно использовать [инструменты Visual Studio 2017 для Функций Azure](https://blogs.msdn.microsoft.com/webdev/2017/05/10/azure-function-tools-for-visual-studio-2017/). 
-
-Для запуска узла и настройки отладки JavaScript выполните следующую команду:
-
-```bash
-func host start --debug vscode
-```
-
-> [!IMPORTANT]
-> Для отладки поддерживается только Node.js 8.x. Node.js 9.x не поддерживается. 
-
-Затем в коде Visual Studio в представлении **Отладка** выберите **Attach to Azure Functions** (Присоединение к службе "Функции Azure"). Вы можете присоединить точки останова, просмотреть значения переменных и осуществить пошаговое выполнение кода.
-
-![Отладка с помощью Visual Studio 2015](./media/functions-run-local/vscode-javascript-debugging.png)
-
 ### <a name="passing-test-data-to-a-function"></a>Передача тестовых данных в функцию
 
-Чтобы протестировать функции в локальной среде, [запустите узел службы "Функции"](#start) и вызовите конечные точки на локальном сервере, используя HTTP-запросы. Вызываемая конечная точка зависит от типа функции. 
+Чтобы протестировать функции в локальной среде, [запустите узел службы "Функции"](#start) и вызовите конечные точки на локальном сервере, используя HTTP-запросы. Вызываемая конечная точка зависит от типа функции.
 
 >[!NOTE]  
 > В примерах в этой статье используется инструмент cURL для отправки HTTP-запросов из терминала или командной строки. Вы можете использовать любой инструмент для отправки HTTP-запросов к локальному серверу. Инструмент cURL доступен по умолчанию в системах на основе Linux. При использовании Windows [инструмент cURL](https://curl.haxx.se/) необходимо сначала скачать и установить.
@@ -340,6 +348,7 @@ curl --request POST http://localhost:7071/api/MyHttpTrigger --data '{"name":"Azu
 Запросы GET можно выполнять из браузера, передавая данные в строке запроса. Для всех остальных методов HTTP необходимо использовать cURL, Fiddler, Postman или аналогичный инструмент тестирования HTTP.  
 
 #### <a name="non-http-triggered-functions"></a>Функции, не активируемые по протоколу HTTP
+
 Все виды функций, кроме триггеров HTTP и веб-перехватчиков, можно тестировать в локальной среде путем вызова конечной точки администрирования. Вызов этой конечной точки при помощи запроса HTTP POST на локальном сервере активирует функцию. При необходимости можно передать тестовые данные в среду выполнения в тексте запроса POST. Это аналогично выполнению функции с помощью вкладки **Тест** на портале Azure.  
 
 Вызовите следующую конечную точку администрирования, чтобы активировать функции, отличные от HTTP:
@@ -352,8 +361,9 @@ curl --request POST http://localhost:7071/api/MyHttpTrigger --data '{"name":"Azu
 {
     "input": "<trigger_input>"
 }
-```` 
-Значение `<trigger_input>` содержит данные в формате, ожидаемом функцией. В следующем примере представлен запрос POST к функции `QueueTriggerJS`. В этом случае входные данные представляют собой строку, соответствующую сообщению, которое нужно найти в очереди.      
+````
+
+Значение `<trigger_input>` содержит данные в формате, ожидаемом функцией. В следующем примере представлен запрос POST к функции `QueueTriggerJS`. В этом случае входные данные представляют собой строку, соответствующую сообщению, которое нужно найти в очереди.
 
 ```bash
 curl --request POST -H "Content-Type:application/json" --data '{"input":"sample queue data"}' http://localhost:7071/admin/functions/QueueTriggerJS
@@ -407,7 +417,8 @@ func azure functionapp publish <FunctionAppName>
 
 >[!IMPORTANT]  
 > При создании приложения-функции в Azure по умолчанию используется версия 1.x среды выполнения Функций. Чтобы заставить приложение-функцию использовать версию 2.x среды выполнения, добавьте параметр приложения `FUNCTIONS_EXTENSION_VERSION=beta`.  
-Используйте следующий код Azure CLI для добавления этого параметра в приложение-функцию: 
+Используйте следующий код Azure CLI для добавления этого параметра в приложение-функцию:
+
 ```azurecli-interactive
 az functionapp config appsettings set --name <function_app> \
 --resource-group myResourceGroup \
@@ -417,7 +428,7 @@ az functionapp config appsettings set --name <function_app> \
 ## <a name="next-steps"></a>Дополнительная информация
 
 Основные инструменты службы "Функции Azure" [имеют открытый код и размещаются на GitHub](https://github.com/azure/azure-functions-cli).  
-Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues). 
+Чтобы зарегистрировать ошибку или отправить запрос на функцию, [откройте вопрос на GitHub](https://github.com/azure/azure-functions-cli/issues).
 
 <!-- LINKS -->
 

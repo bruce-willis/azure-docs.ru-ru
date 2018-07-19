@@ -11,15 +11,15 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/14/2017
+ms.date: 07/02/2018
 ms.reviewer: danha
 ms.author: mbullwin
-ms.openlocfilehash: 7f8f49cf88bda8e485d2365281c13680ef796196
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: aa86e2f3b1fb147ab167c948475a5207693143c2
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295525"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37341568"
 ---
 # <a name="using-analytics-in-application-insights"></a>Использование аналитики в Application Insights
 [Аналитика](app-insights-analytics.md) — это мощный инструмент поиска [Application Insights](app-insights-overview.md). На этих страницах описан язык запросов Log Analytics.
@@ -151,7 +151,7 @@ IntelliSense подскажет вам операторы и элементы в
 
 При закреплении на панели мониторинга к диаграмме применяются определенные упрощения.
 
-**Ограничение времени:** автоматически отображаются запросы только за последние 14 дней. Тот же эффект достигается добавлением в запрос `where timestamp > ago(14d)`.
+**Ограничение времени:** автоматически отображаются запросы только за последние 30 дней. Тот же эффект достигается добавлением в запрос `where timestamp > ago(30d)`.
 
 **Ограничение количества ячеек:** если отображается диаграмма, содержащая много отдельных ячеек (как правило, линейчатая диаграмма), менее заполненные ячейки автоматически группируются в одну ячейку под названием "Другие". Например, запрос
 

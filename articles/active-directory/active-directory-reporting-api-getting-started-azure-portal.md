@@ -16,12 +16,12 @@ ms.component: compliance-reports
 ms.date: 05/07/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 842e4d8413544a303b656a8e4a05bdf58a7c8164
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 93532f4b0b2d527a4d5c79e2ee1b2810394b2f11
+ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223847"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37442089"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -47,6 +47,13 @@ Azure Active Directory предоставляет разнообразные [о
  
 Подробные инструкции см. в [предварительных требованиях для доступа к API отчетов Azure Active Directory](active-directory-reporting-api-prerequisites-azure-portal.md).
 
+## <a name="apis-with-graph-explorer"></a>Использование API с песочницей Graph
+
+Вы можете использовать [песочницу MSGraph](https://developer.microsoft.com/en-us/graph/graph-explorer) для проверки входа и аудита данных API. Войдите в учетную запись, используя одну из кнопок входа в пользовательском интерфейсе песочницы Graph и задав клиенту разрешения **Tasks.ReadWrite** и **Directory.ReadAll**, как показано ниже.   
+
+![Песочница Graph](./media/active-directory-reporting-api-getting-started-azure-portal/graph-explorer.png)
+
+![Пользовательский интерфейс для изменения разрешений](./media/active-directory-reporting-api-getting-started-azure-portal/modify-permissions.png)
 
 ## <a name="recommendation"></a>Рекомендации 
 

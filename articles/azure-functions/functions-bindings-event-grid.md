@@ -13,14 +13,14 @@ ms.devlang: multiple
 ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 01/26/2018
+ms.date: 06/08/2018
 ms.author: tdykstra
-ms.openlocfilehash: 7e0fb3cee8d4ec72e1ec44f7444264fabb1dd202
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 6678109414eaa71ced369e87e1cd15544fee5ee5
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34724736"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723436"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -30,11 +30,11 @@ ms.locfileid: "34724736"
 
 *Обработчики* событий получают и обрабатывают события. Служба "Функции Azure" является одной из нескольких [служб Azure, в которых есть встроенная поддержка обработки событий Сетки событий](../event-grid/overview.md#event-handlers). В этой статье вы узнаете, как использовать триггер службы "Сетка событий" для вызова функции при получении события из Сетки событий.
 
-При желании можно использовать триггер HTTP для обработки событий службы "Сетка событий". Дополнительные сведения см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) этой статьи.
+При желании можно использовать триггер HTTP для обработки событий службы "Сетка событий". Дополнительные сведения см. в разделе [Использование триггера HTTP в качестве триггера службы "Сетка событий"](#use-an-http-trigger-as-an-event-grid-trigger) этой статьи. Сейчас, если событие доставляется в [схему CloudEvents](../event-grid/cloudevents-schema.md), триггер службы "Сетка событий" нельзя использовать в приложении "Функции Azure". В этом случае необходимо использовать триггер HTTP.
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Триггер службы "Сетка событий" предоставляется в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.EventGrid](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.EventGrid) версии 1.х. Исходный код для пакета находится в репозитории GitHub [azure-functions-eventgrid-extension](https://github.com/Azure/azure-functions-eventgrid-extension/tree/master).
 
@@ -331,45 +331,44 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 
 Кроме того, вы можете отправить HTTP-запрос PUT, чтобы самостоятельно указать значение ключа.
 
-## <a name="local-testing-with-requestbin"></a>Локальное тестирование с помощью RequestBin
-
-> [!NOTE]
-> Веб-сайт RequestBin сейчас недоступен, но вместо него можно воспользоваться https://hookbin.com. Если этот сайт не работает, можно использовать [ngrok](#local-testing-with-ngrok).
+## <a name="local-testing-with-viewer-web-app"></a>Локальное тестирование с помощью веб-приложения средства просмотра
 
 Чтобы протестировать триггер службы "Сетка событий" локально, необходимо отправить HTTP-запросы службы "Сетка событий", переданные из своего источника в облаке, на локальный компьютер. Для этого можно записать запросы в сети и вручную отправить их на локальный компьютер:
 
-2. [Создайте конечную точку RequestBin](#create-a-RequestBin-endpoint).
-3. [Создайте подписку службы "Сетка событий"](#create-an-event-grid-subscription), которая отправляет события в конечную точку RequestBin.
-4. [Создайте запрос](#generate-a-request) и скопируйте текст запроса с сайта RequestBin.
+2. [Создайте веб-приложение средства просмотра](#create-a-viewer-web-app), которое собирает сообщения о событиях.
+3. [Создайте подписку службы "Сетка событий"](#create-an-event-grid-subscription), которая отправляет события в приложение средства просмотра.
+4. [Создайте запрос](#generate-a-request) и скопируйте текст запроса из приложения средства просмотра.
 5. [Вручную вставьте запрос](#manually-post-the-request) в URL-адрес localhost функции триггера службы "Сетка событий".
 
 Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update).
 
-### <a name="create-a-requestbin-endpoint"></a>Создание конечной точки RequestBin
+### <a name="create-a-viewer-web-app"></a>Создание веб-приложения средства просмотра
 
-RequestBin является средством с открытым исходным кодом, которое принимает HTTP-запросы и показывает текст запроса. Служба "Сетка событий Azure" взаимодействует с URL-адресом http://requestb.in особым образом. Чтобы упростить тестирование, Сетка событий отправляет события в URL-адрес RequestBin, не требуя правильного ответа на запросы подтверждения подписки. Еще одно средство тестирования обрабатывается точно так же: http://hookbin.com.
+Чтобы упростить запись сообщений о событиях, разверните [готовое веб-приложение](https://github.com/dbarkol/azure-event-grid-viewer), которое отображает сообщения о событиях. Развернутое решение содержит план службы приложений, веб-приложение службы приложений и исходный код из GitHub.
 
-RequestBin не предназначено для использования с высокой пропускной способностью. Если вы одновременно отправляете несколько событий, в средстве могут отобразиться не все события.
+Выберите **Развернуть в Azure**, чтобы развернуть решение в своей подписке. На портале Azure укажите значения остальных параметров.
 
-Создайте конечную точку.
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdbarkol%2Fazure-event-grid-viewer%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
-![Создание конечной точки RequestBin](media/functions-bindings-event-grid/create-requestbin.png)
+Завершение развертывания может занять несколько минут. Когда развертывание успешно завершится, откройте веб-приложение и убедитесь, что оно работает. Откройте браузер и перейдите по адресу `https://<your-site-name>.azurewebsites.net`.
 
-Скопируйте URL-адрес конечной точки.
+Вы увидите сайт без опубликованных событий.
 
-![Копирование конечной точки RequestBin](media/functions-bindings-event-grid/save-requestbin-url.png)
+![Представление нового сайта](media/functions-bindings-event-grid/view-site.png)
 
 ### <a name="create-an-event-grid-subscription"></a>Создание подписки Сетки событий
 
-Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке RequestBin. Дополнительные сведения о создании подписки см. в разделе [Создание подписки](#create-a-subscription) ранее в этой статье.
+Создайте подписку "Сетка событий" того типа, который требуется протестировать, и предоставьте URL-адрес из веб-приложения как конечную точку для уведомления о событиях. Конечная точка веб-приложения должна содержать суффикс `/api/updates/`. Таким образом, полный URL-адрес будет выглядеть следующим образом: `https://<your-site-name>.azurewebsites.net/api/updates`
+
+Дополнительные сведения о создании подписок с помощью портала Azure см. в разделе [Создание пользовательского события с помощью портала Azure](../event-grid/custom-event-quickstart-portal.md) в документации по службе "Сетка событий".
 
 ### <a name="generate-a-request"></a>Создание запроса
 
-Активируйте событие, которое будет создавать HTTP-трафик в конечную точку RequestBin.  Например, если вы создали подписку хранилища BLOB-объектов, отправьте или удалите большой двоичный объект. Скопируйте текст запроса, когда запрос отобразится на странице RequestBin.
+Активируйте событие, которое будет создавать HTTP-трафик в конечную точку веб-приложения.  Например, если вы создали подписку хранилища BLOB-объектов, отправьте или удалите большой двоичный объект. Скопируйте текст запроса, когда запрос отобразится в веб-приложении.
 
 Сначала будет получен запрос на подтверждение подписки. Игнорируйте такие запросы и скопируйте запрос события.
 
-![Копирование текста запроса из RequestBin](media/functions-bindings-event-grid/copy-request-body.png)
+![Копирование текста запроса из веб-приложения](media/functions-bindings-event-grid/view-results.png)
 
 ### <a name="manually-post-the-request"></a>Публикация запроса вручную
 
@@ -467,14 +466,18 @@ az eventgrid event-subscription create --resource-id /subscriptions/aeb4b7cb-b7c
 
 ## <a name="use-an-http-trigger-as-an-event-grid-trigger"></a>Использование триггера HTTP в качестве триггера службы "Сетка событий"
 
-События службы "Сетка событий" получаются в качестве HTTP-запросов, поэтому их можно обрабатывать с использованием триггера HTTP, а не триггера службы "Сетка событий". Одна из возможных причин — получение большего контроля над URL-адресом конечной точки, вызывающим функцию. 
+События службы "Сетка событий" получаются в качестве HTTP-запросов, поэтому их можно обрабатывать с использованием триггера HTTP, а не триггера службы "Сетка событий". Одна из возможных причин — получение большего контроля над URL-адресом конечной точки, вызывающим функцию. Еще одна причина — необходимость получения событий в [схеме CloudEvents](../event-grid/cloudevents-schema.md). В настоящее время триггер службы "Сетка событий" не поддерживает схему CloudEvents. В примерах в этом разделе показаны решения для схемы "Сетка событий" и схемы CloudEvents.
 
 При использовании триггера HTTP необходимо написать код действий, которые триггер службы "Сетка событий" выполняет автоматически:
 
 * Отправляет запрос проверки в [запрос подтверждения подписки](../event-grid/security-authentication.md#webhook-event-delivery).
 * Вызывает функцию один раз для каждого элемента массива событий, содержащихся в тексте запроса.
 
-Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий":
+Дополнительные сведения об URL-адресе, используемом для вызова функции, выполняемой локально или в Azure, см. в [справочной документации по привязке триггера HTTP](functions-bindings-http-webhook.md).
+
+### <a name="event-grid-schema"></a>Схема "Сетка событий"
+
+Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме "Сетка событий".
 
 ```csharp
 [FunctionName("HttpTrigger")]
@@ -512,7 +515,7 @@ public static async Task<HttpResponseMessage> Run(
 }
 ```
 
-Следующий пример кода JavaScript для триггера HTTP имитирует поведение триггера службы "Сетка событий":
+Следующий пример кода JavaScript для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме "Сетка событий".
 
 ```javascript
 module.exports = function (context, req) {
@@ -522,10 +525,12 @@ module.exports = function (context, req) {
     // If the request is for subscription validation, send back the validation code.
     if (messages.length > 0 && messages[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent") {
         context.log('Validate request received');
-        context.res = { status: 200, body: JSON.stringify({validationResponse: messages[0].data.validationCode}) }
+        var code = messages[0].data.validationCode;
+        context.res = { status: 200, body: { "ValidationResponse": code } };
     }
     else {
         // The request is not for subscription validation, so it's for one or more events.
+        // Event Grid schema delivers events in an array.
         for (var i = 0; i < messages.length; i++) {
             // Handle one event.
             var message = messages[i];
@@ -540,7 +545,70 @@ module.exports = function (context, req) {
 
 Код обработки событий переходит в цикл через массив `messages`.
 
-Дополнительные сведения об URL-адресе, используемом для вызова функции, выполняемой локально или в Azure, см. в [справочной документации по привязке триггера HTTP](functions-bindings-http-webhook.md). 
+### <a name="cloudevents-schema"></a>Схема CloudEvents
+
+Следующий пример кода C# для триггера HTTP имитирует поведение триггера службы "Сетка событий".  Этот пример можно использовать для событий, доставленных в схеме CloudEvents.
+
+```csharp
+[FunctionName("HttpTrigger")]
+public static async Task<HttpResponseMessage> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequestMessage req, TraceWriter log)
+{
+    log.Info("C# HTTP trigger function processed a request.");
+
+    var requestmessage = await req.Content.ReadAsStringAsync();
+    var message = JToken.Parse(requestmessage);
+
+    if (message.Type == JTokenType.Array)
+    {
+        // If the request is for subscription validation, send back the validation code.
+        if (string.Equals((string)message[0]["eventType"],
+        "Microsoft.EventGrid.SubscriptionValidationEvent",
+        System.StringComparison.OrdinalIgnoreCase))
+        {
+            log.Info("Validate request received");
+            return req.CreateResponse<object>(new
+            {
+                validationResponse = message[0]["data"]["validationCode"]
+            });
+        }
+    }
+    else
+    {
+        // The request is not for subscription validation, so it's for an event.
+        // CloudEvents schema delivers one event at a time.
+        log.Info($"Source: {message["source"]}");
+        log.Info($"Time: {message["eventTime"]}");
+        log.Info($"Event data: {message["data"].ToString()}");
+    }
+
+    return req.CreateResponse(HttpStatusCode.OK);
+}
+```
+
+Следующий пример кода JavaScript для триггера HTTP имитирует поведение триггера службы "Сетка событий". Этот пример можно использовать для событий, доставленных в схеме CloudEvents.
+
+```javascript
+module.exports = function (context, req) {
+    context.log('JavaScript HTTP trigger function processed a request.');
+
+    var message = req.body;
+    // If the request is for subscription validation, send back the validation code.
+    if (message.length > 0 && message[0].eventType == "Microsoft.EventGrid.SubscriptionValidationEvent") {
+        context.log('Validate request received');
+        var code = message[0].data.validationCode;
+        context.res = { status: 200, body: { "ValidationResponse": code } };
+    }
+    else {
+        // The request is not for subscription validation, so it's for an event.
+        // CloudEvents schema delivers one event at a time.
+        var event = JSON.parse(message);
+        context.log('Source: ' + event.source);
+        context.log('Time: ' + event.eventTime);
+        context.log('Data: ' + JSON.stringify(event.data));
+    }
+    context.done();
+};
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

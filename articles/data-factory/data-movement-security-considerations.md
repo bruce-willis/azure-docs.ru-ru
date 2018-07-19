@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: c0a07cb872ec87bbf39237b74990a1fc7a74e9e8
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 70225fd59248939c9ea1d5c7c267cdf0da3303e7
+ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37053261"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37342408"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -144,8 +144,9 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 | Имена доменов                  | Исходящие порты | ОПИСАНИЕ                              |
 | ----------------------------- | -------------- | ---------------------------------------- |
 | `*.servicebus.windows.net`    | 443            | Требуется локальной среде выполнения интеграции для подключения к службам перемещения данных в фабрике данных. |
-| `*.core.windows.net`          | 443            | Используется локальной средой выполнения интеграции для подключения к учетной записи хранения Azure при помощи функции [промежуточного копирования](copy-activity-performance.md#staged-copy). |
 | `*.frontend.clouddatahub.net` | 443            | Требуется локальной среде выполнения интеграции для подключения к службе фабрики данных. |
+| `download.microsoft.com`    | 443            | Требуется локальной среде выполнения интеграции для скачивания обновлений. Если вы отключили автоматическое обновление, можете пропустить этот шаг. |
+| `*.core.windows.net`          | 443            | Используется локальной средой выполнения интеграции для подключения к учетной записи хранения Azure при помощи функции [промежуточного копирования](copy-activity-performance.md#staged-copy). |
 | `*.database.windows.net`      | 1433           | (Необязательно.) Требуется, если выполняется копирование из базы данных SQL Azure или хранилища данных SQL Azure или в них. Используйте функцию промежуточного копирования, чтобы копировать данные в базу данных SQL Azure или хранилище данных SQL Azure без необходимости открывать порт 1433. |
 | `*.azuredatalakestore.net`<br>`login.microsoftonline.com/<tenant>/oauth2/token`    | 443            | (Необязательно.) Требуется, если выполняется копирование из репозитория Azure Data Lake Store или в него. |
 

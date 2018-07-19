@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: d8f3c0e4dec05b2ed968a3493a7cc560231e7331
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: b57522933647c9d1d5518740d41b624b199a020e
+ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215697"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37110564"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по интеграции Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -222,11 +222,11 @@ ms.locfileid: "36215697"
  
 ### <a name="creating-a-confluence-saml-sso-by-microsoft-test-user"></a>Создание тестового пользователя Confluence SAML SSO by Microsoft
 
-Чтобы пользователи Azure AD могли входить на локальный сервер Confluence, их необходимо подготовить в Confluence SAML SSO by Microsoft. Для Confluence SAML SSO by Microsoft подготовка выполняется вручную.
+Чтобы пользователи Azure AD могли входить на локальный сервер Confluence, для них необходимо выполнить подготовку в Confluence SAML SSO by Microsoft. Для Confluence SAML SSO by Microsoft подготовка выполняется вручную.
 
 **Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
-1. Войдите на локальный сервер Confluence как администратор.
+1. Войдите на локальный сервер Confluence с правами администратора.
 
 2. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 

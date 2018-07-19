@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/2/2017
 ms.author: jeedes
-ms.openlocfilehash: 3b878a671a291ae44a251d3087ab4a431a7c7fed
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1ba801071ae15f586edaa8c9e367df5e96204307
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36217186"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042774"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-expensify"></a>Руководство. Интеграция Azure Active Directory с Expensify
 
@@ -34,7 +34,7 @@ ms.locfileid: "36217186"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Expensify, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36217186"
 
     a. В текстовом поле **URL-адрес для входа** введите следующий URL-адрес: `https://www.expensify.com/authentication/saml/login`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.<companyname>.expensify.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.<companyname>.expensify.com`
 
     > [!NOTE] 
     > Замените часть `<companyname>` URL-адреса идентификатора доменным именем вашей компании. Ознакомьтесь с примером `https://contoso.expensify.com` выше. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Expensify](mailto:help@expensify.com).
@@ -131,7 +131,7 @@ ms.locfileid: "36217186"
     
     a. Войдите в приложение Expensify.
     
-    Б. На панели инструментов в верхней части экрана нажмите **Администратор**.
+    b. На панели инструментов в верхней части экрана нажмите **Администратор**.
     
     c. На панели слева щелкните **Домен**.
     
@@ -216,7 +216,7 @@ ms.locfileid: "36217186"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Expensify на панели доступа, вы автоматически войдете в приложение Expensify.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

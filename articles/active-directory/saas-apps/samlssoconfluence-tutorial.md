@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 260656ed17fecb0cac30b7970e9a2b76be42d8ea
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: fe1960fb07a7cb62246f0eefe9563d6ee2b13f5c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230164"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39045902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство по интеграции Azure Active Directory с SAML SSO for Confluence by resolution GmbH
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230164"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для настройки интеграции Azure AD с SAML SSO for Confluence by resolution GmbH требуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36230164"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -181,11 +181,11 @@ ms.locfileid: "36230164"
  
     a. Для типа поставщика удостоверений выберите значение **Azure AD**.
     
-    Б. Добавьте **имя** поставщика удостоверений (например, Azure AD).
+    b. Добавьте **имя** поставщика удостоверений (например, Azure AD).
     
     c. Добавьте **описание** поставщика удостоверений (например, Azure AD).
     
-    d. Нажмите кнопку **Далее**.
+    d. Щелкните **Далее**.
     
 18. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
 
@@ -197,7 +197,7 @@ ms.locfileid: "36230164"
 
     a. Нажмите кнопку **Load File** (Загрузить файл) и выберите XML-файл метаданных, который вы скачали на шаге 5.
 
-    Б. Нажмите кнопку **Import** (Импортировать).
+    b. Нажмите кнопку **Import** (Импортировать).
     
     c. Дождитесь завершения импорта.
     
@@ -247,7 +247,7 @@ ms.locfileid: "36230164"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -272,7 +272,7 @@ ms.locfileid: "36230164"
 
     a. В текстовом поле **Username** (Имя пользователя) введите электронный адрес пользователя, например Britta Simon.
 
-    Б. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
+    b. В текстовом поле **Full Name** (Полное имя) введите полное имя пользователя, например Britta Simon.
 
     c. В текстовом поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например Brittasimon@contoso.com.
 
@@ -317,7 +317,7 @@ ms.locfileid: "36230164"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент SAML SSO for Confluence by resolution GmbH на панели доступа, вы должны автоматически войти в свое приложение SAML SSO for Confluence by resolution GmbH.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
