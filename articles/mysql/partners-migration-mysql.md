@@ -6,14 +6,14 @@ author: HJToland3
 ms.author: jtoland
 manager: craigg
 ms.service: mysql-database
-ms.topic: article
-ms.date: 07/11/2018
-ms.openlocfilehash: fd3b47d52cf785798d4063eeed20148436b72947
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.topic: conceptual
+ms.date: 07/18/2018
+ms.openlocfilehash: 4cd6b82073380cdb0258f9faedd47492fd032da9
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38531752"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39116026"
 ---
 # <a name="azure-database-for-mysql-migration-partners"></a>Партнеры по миграции для базы данных Azure для MySQL
 Чтобы существенно расширить поддержку вашего решения базы данных Azure для MySQL, выберите инструменты и партнеров из обширного списка ведущих в отрасли партнеров. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают решения миграции, поддерживающие базу данных Azure для MySQL.
@@ -42,7 +42,7 @@ ms.locfileid: "38531752"
 [dbbest_website]:https://www.dbbest.com/technologies/azure-database-service-mysql-postgresql//
 [pragmatic-works_website]:https://pragmaticworks.com//
 [infosys_website]:https://www.infosys.com/
-[credativ_website]:https://credativ.com
+[credativ_website]:https://www.credativ.com/postgresql-competence-center/microsoft-azure
 
 <!--Get Started Links-->
 <!--Datasheet Links-->
