@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 16e2e51e3ae8263773adec1151340103c720b3a5
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d52672099c309dfeac641cb3aedaf32c7230b676
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36225564"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047765"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-egnyte"></a>Руководство. Интеграция Azure Active Directory с Egnyte
 
@@ -33,7 +33,7 @@ ms.locfileid: "36225564"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Egnyte, вам потребуется:
 
@@ -149,7 +149,7 @@ ms.locfileid: "36225564"
     
     a. Выберите для параметра **Single sign-on authentication** (Аутентификация единого входа) значение **SAML 2.0**.
    
-    Б. Выберите для параметра **Identity provider** (Поставщик удостоверений) значение **AzureAD**.
+    b. Выберите для параметра **Identity provider** (Поставщик удостоверений) значение **AzureAD**.
    
     c. Вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure, в поле **URL-адрес входа поставщика удостоверений**.
    
@@ -192,7 +192,7 @@ ms.locfileid: "36225564"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -218,7 +218,7 @@ ms.locfileid: "36225564"
 
    a. Введите значения **Адрес электронной почты**, **Имя пользователя** и другие данные действительной учетной записи Azure Active Directory, которую хотите подготовить.
    
-   Б. Выберите команду **Сохранить**.
+   b. Выберите команду **Сохранить**.
     
     >[!NOTE]
     >Владелец учетной записи Azure Active Directory получит уведомление по электронной почте.
@@ -263,7 +263,7 @@ ms.locfileid: "36225564"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Egnyte на панели доступа, вы автоматически войдете в приложение Egnyte.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

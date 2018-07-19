@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2017
 ms.author: jeedes
-ms.openlocfilehash: ba24422f7ff5759153a6e067cc61251b43a7a091
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: 3e3546a5161c62c137af0a29daf5140133f91eb6
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36286938"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046113"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-purelyhr"></a>Руководство. Интеграция Azure Active Directory с PurelyHR
 
@@ -33,7 +33,7 @@ ms.locfileid: "36286938"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с PurelyHR, вам потребуется:
 
@@ -145,7 +145,7 @@ ms.locfileid: "36286938"
 
     a. Откройте **Сертификат (Base64)**, скачанный на портале Azure, в Блокноте и скопируйте значение сертификата. Вставьте это значение в поле **Сертификат X.509**.
 
-    Б. В поле **Idp Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    b. В поле **Idp Issuer URL** (URL-адрес издателя поставщика удостоверений) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
     c. В поле **Idp Endpoint URL** (URL-адрес конечной точки поставщика удостоверений) вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure. 
 
@@ -182,7 +182,7 @@ ms.locfileid: "36286938"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -228,7 +228,7 @@ ms.locfileid: "36286938"
 
 Щелкнув элемент Absorb LMS на панели доступа, вы автоматически входите в приложение Absorb LMS.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -7,16 +7,16 @@ ms.author: serinak
 manager: mwinkle
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 08/30/2017
-ms.openlocfilehash: 8a0d26a1ba1ca5fa7a3bd5cfca078ee6c94b229d
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 94a1f3bbba83e8e71cf9440b5ded0784f4616c99
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831581"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38674161"
 ---
 # <a name="azure-machine-learning-frequently-asked-questions"></a>Часто задаваемые вопросы о службе "Машинное обучение Azure"
 
@@ -30,7 +30,7 @@ ms.locfileid: "34831581"
 
 **Как служба "Машинное обучение Azure" связана со службам машинного обучения Майкрософт в SQL Server 2017?**   
 
-Службы машинного обучения Майкрософт в SQL Server 2017 — это расширяемая и масштабируемая платформа для интеграции задач машинного обучения в рабочие процессы базы данных. Эта платформа — идеальный вариант для сценариев, где требуется локальное решение, например если перемещать данные нерентабельно или нецелесообразно. Но для облачных и гибридных рабочих нагрузок отлично подходят новые службы Azure. 
+Службы машинного обучения Майкрософт в SQL Server 2017 — это расширяемая и масштабируемая платформа для интеграции задач машинного обучения в рабочие процессы базы данных. Эта платформа — идеальный вариант для сценариев, где требуется локальное решение, например, если перемещать данные нерентабельно или нецелесообразно. Но для облачных и гибридных рабочих нагрузок отлично подходят новые службы Azure. 
 
 **Поддерживаются ли Python и R? А другие языки программирования, например C++?**
 
@@ -172,4 +172,4 @@ Azure Machine Learning Workbench — это дополнительное при
 
 **Как служба "Машинное обучение Azure" связана с Microsoft Cognitive Toolkit?**
 
-[Microsoft Cognitive Toolkit](https://www.microsoft.com/cognitive-toolkit/) — одна из многих платформ, поддерживаемых новыми инструментами и службами. Cognitive Toolkit — это набор средств глубокого обучения, который позволяет использовать и объединять популярные модели машинного обучения, включая глубокие нейронные сети прямого распространения, сверточные сети, сети типа "последовательность-в-последовательность" и рекуррентные сети. Дополнительные сведения о Microsoft Cognitive Toolkit см. в [документации по продукту](https://docs.microsoft.com/cognitive-toolkit/). 
+[Microsoft Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/) — одна из многих платформ, поддерживаемых новыми инструментами и службами. Cognitive Toolkit — это набор средств глубокого обучения, который позволяет использовать и объединять популярные модели машинного обучения, включая глубокие нейронные сети прямого распространения, сверточные сети, сети типа "последовательность-в-последовательность" и рекуррентные сети. Дополнительные сведения о Microsoft Cognitive Toolkit см. в [документации по продукту](https://docs.microsoft.com/cognitive-toolkit/). 

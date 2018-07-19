@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 3ac26fbe81a89f2054b7966df9a9aea5dcd16925
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 32f59fdae3f60afdf3b6ff67ee51e1242915b84f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213232"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047966"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-databasics"></a>Руководство. Интеграция Azure Active Directory с DATABASICS
 
@@ -34,7 +34,7 @@ ms.locfileid: "36213232"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с DATABASICS, вам потребуются следующие элементы:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36213232"
 
     a. В текстовом поле **Идентификатор** введите значение `DATA-BASICS_SP`.
     
-    Б. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sitenumber>.data-basics.net/<clientname>/saml_sso.jsp`
+    b. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sitenumber>.data-basics.net/<clientname>/saml_sso.jsp`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов DATABASICS](https://www.data-basics.com/support/).
@@ -205,7 +205,7 @@ ms.locfileid: "36213232"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент DATABASICS на панели доступа, вы автоматически войдете в приложение DATABASICS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

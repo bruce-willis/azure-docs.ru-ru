@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: jeedes
-ms.openlocfilehash: aa3514d348b812a96b55c4d47950cd064d391dc1
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6ce6661bf6d3841f7ade78a74d50a1d6eeefbdaf
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231548"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048000"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clear-review"></a>Руководство по интеграции Azure Active Directory с Clear Review
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231548"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Clear Review, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36231548"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customer name>.clearreview.com/sso/metadata/`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer name>.clearreview.com/sso/acs/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<customer name>.clearreview.com/sso/acs/`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -156,7 +156,7 @@ ms.locfileid: "36231548"
 
     a. В текстовое поле **Issuer URL** (URL-адрес издателя) вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
-    Б. В текстовое поле **SAML Endpoint** (Конечная точка SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.    
+    b. В текстовое поле **SAML Endpoint** (Конечная точка SAML) вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.    
 
     c. В текстовое поле **SLO Endpoint** (Конечная точка единого выхода) вставьте значение **URL-адреса службы единого входа**, скопированное на портале Azure. 
 
@@ -238,7 +238,7 @@ ms.locfileid: "36231548"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Clear Review на панели доступа, вы автоматически войдете в приложение Clear Review.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -13,18 +13,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 05/29/2018
+ms.date: 06/19/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bc4b9cb9940f073034df01143f4d9e77a47cb19b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 50d9ea88afc0e7d96d71b2ab26c8a8489ae41fee
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34654391"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38719661"
 ---
 # <a name="set-up-gpu-drivers-for-n-series-vms-running-windows"></a>Установка драйверов GPU для виртуальных машин серии N под управлением Windows 
-Чтобы воспользоваться преимуществами GPU виртуальных машин Azure серии N под управлением поддерживаемой версии Windows Server или Windows, необходимо установить графические драйверы NVIDIA. В этой статье приводятся действия по установке драйверов после развертывания виртуальных машин серии N. Сведения об установке драйверов также доступны для [виртуальных машин Linux](../linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Чтобы воспользоваться преимуществами GPU виртуальных машин Azure серии N под управлением Windows, необходимо установить графические драйверы GPU NVIDIA. [Расширение драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md) устанавливает необходимые драйверы CUDA или GRID NVIDIA на виртуальную машину серии N. Для установки расширения и управления им можно использовать портал Azure или такие инструменты, как Azure PowerShell и шаблоны Azure Resource Manager. Сведения о поддерживаемых операционных системах и этапах развертывания см. в [документации по расширению драйвера GPU NVIDIA](../extensions/hpccompute-gpu-windows.md).
+
+Если вы решили установить драйверы GPU вручную, то в этой статье вы найдете сведения о поддерживаемых операционных системах, ссылки на драйвера и инструкции по установке и проверке. Сведения о ручной установке драйверов также доступны для [виртуальных машин Linux](../linux/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 Основные характеристики, сведения о дисках и объеме памяти см. в статье [Графический процессор](sizes-gpu.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 005f487b46ca3894ed2d94ec032bb009c3051796
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: c1b29cb7d09bcaa25457cf6f99731beae30fa7b2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223388"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046147"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-pega-systems"></a>Руководство по интеграции Azure Active Directory с Pega Systems
 
@@ -34,7 +34,7 @@ ms.locfileid: "36223388"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Pega Systems, вам потребуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36223388"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/sp/<INSTANCEID>`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CUSTOMERNAME>.pegacloud.io:443/prweb/PRRestService/WebSSO/SAML/AssertionConsumerService`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -150,7 +150,7 @@ ms.locfileid: "36223388"
 
     ![Настройка единого входа](./media/pegasystems-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -175,7 +175,7 @@ ms.locfileid: "36223388"
 
     a. В поле Type (Тип) укажите **SAML 2.0**.
 
-    Б. В текстовом поле **Name** (Имя) введите любое имя, например Azure AD SSO.
+    b. В текстовом поле **Name** (Имя) введите любое имя, например Azure AD SSO.
 
     c. В текстовом поле **Short Description** (Краткое описание) введите любое описание.  
 
@@ -195,7 +195,7 @@ ms.locfileid: "36223388"
 
     a. Скопируйте значение **Entity Identification** (Идентификатор сущности) и вставьте его в текстовое поле **Идентификатор** на портале Azure.
 
-    Б.  Скопируйте значение **Assertion Consumer Service (ACS) location** (Расположение службы обработчика утверждений (ACS)) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
+    b.  Скопируйте значение **Assertion Consumer Service (ACS) location** (Расположение службы обработчика утверждений (ACS)) и вставьте его в текстовое поле **URL-адрес ответа** на портале Azure.
 
     c. Выберите **Disable request signing** (Отключить подписывание запросов).
 
@@ -276,7 +276,7 @@ ms.locfileid: "36223388"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Pega Systems на панели доступа, вы автоматически войдете в приложение Pega Systems.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

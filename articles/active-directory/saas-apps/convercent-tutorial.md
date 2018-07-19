@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/02/2017
 ms.author: jeedes
-ms.openlocfilehash: 7f2bb181b08720d096c5abf4e73b16de8306bd58
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 17c7763c514d64cf25cfd0a3bb629f54030d4a39
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218526"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047833"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-convercent"></a>Руководство. Интеграция Azure Active Directory с Convercent
 
@@ -33,7 +33,7 @@ ms.locfileid: "36218526"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Convercent, вам потребуется следующее:
 
@@ -120,7 +120,7 @@ ms.locfileid: "36218526"
 
      a. Щелкните **Показать дополнительные параметры URL-адресов**. 
 
-     Б. В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://<instancename>.convercent.com/`.
+     b. В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://<instancename>.convercent.com/`.
 
      c. В текстовое поле **Состояние ретранслятора** введите значение в следующем формате: `https://<instancename>.convercent.com/`.
 
@@ -165,7 +165,7 @@ ms.locfileid: "36218526"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -210,7 +210,7 @@ ms.locfileid: "36218526"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Convercent на панели доступа, вы автоматически войдете в приложение Convercent.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

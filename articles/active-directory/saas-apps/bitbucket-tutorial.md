@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2017
 ms.author: jeedes
-ms.openlocfilehash: d18d41caf7a7fb3a821c388e786b3a45d30f4810
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 21b6adb98fdb973b75aa1d6db519777bab730d73
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221450"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048129"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-bitbucket-by-resolution-gmbh"></a>Руководство по интеграции Azure Active Directory с SAML SSO for Bitbucket by resolution GmbH
 
@@ -34,7 +34,7 @@ ms.locfileid: "36221450"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для настройки интеграции Azure AD с SAML SSO for Bitbucket by resolution GmbH требуется:
 
@@ -112,7 +112,7 @@ ms.locfileid: "36221450"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
@@ -149,11 +149,11 @@ ms.locfileid: "36221450"
 
     a. Выберите **Azure AD** в качестве **типа поставщика удостоверений**.
 
-    Б. В текстовом поле **Имя** введите имя.
+    b. В текстовом поле **Имя** введите имя.
 
     c. В текстовом поле **Описание** введите описание.
 
-    d. Нажмите кнопку **Далее**.
+    d. Щелкните **Далее**.
 
 12. На странице **Identity provider configuration page** (Настройка поставщика удостоверений) нажмите кнопку **Далее**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "36221450"
 
     ![idpmetadata](./media/bitbucket-tutorial/tutorial_bitbucket_idpmetadata.png)
     
-14. Нажмите кнопку **Далее**.
+14. Щелкните **Далее**.
 
 15. Нажмите кнопку **Сохранить параметры**.
 
@@ -243,7 +243,7 @@ ms.locfileid: "36221450"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент SAML SSO for Bitbucket by resolution GmbH на панели доступа, вы сможете автоматически войти в свое приложение SAML SSO for Bitbucket by resolution GmbH.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

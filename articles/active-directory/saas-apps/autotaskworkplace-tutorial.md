@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: b2503affa302d991e48aa97dbdd9f54be47a560b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8e83e6dc66ec6192db589a0964e235c395a26eba
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36224979"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048112"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-autotask-workplace"></a>Руководство по интеграции Azure Active Directory с Autotask Workplace
 
@@ -34,7 +34,7 @@ ms.locfileid: "36224979"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Autotask Workplace, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "36224979"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.awp.autotask.net/singlesignon/saml/metadata`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.awp.autotask.net/singlesignon/saml/SSO`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.awp.autotask.net/singlesignon/saml/SSO`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -146,7 +146,7 @@ ms.locfileid: "36224979"
  
     a. Выберите **XML Metadata File** (XML-файл метаданных), а затем отправьте **XML-файл метаданных**, скачанный с портала Azure.
 
-    Б. Нажмите кнопку **Enable SSO** (Включить единый вход).
+    b. Нажмите кнопку **Enable SSO** (Включить единый вход).
     
     ![Подтверждение конфигурации единого входа в Autotask](./media/autotaskworkplace-tutorial/tutorial_autotaskssoconfig2.png)
 
@@ -231,7 +231,7 @@ ms.locfileid: "36224979"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Autotask Workplace" на панели доступа, вы автоматически войдете в приложение Autotask Workplace.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -11,15 +11,16 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 03/20/2018
+ms.topic: conceptual
+ms.date: 06/21/2018
 ms.author: richrund
-ms.openlocfilehash: 12172e81ed6b4d79ee200ee1ca79803ad58d6d19
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.component: na
+ms.openlocfilehash: 8a92bf7b031899ee75fbf2bb2fdfd7dced3bc1ad
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30263536"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38481996"
 ---
 # <a name="azure-networking-monitoring-solutions-in-log-analytics"></a>Решения для мониторинга сетей Azure в Log Analytics
 
@@ -78,6 +79,7 @@ Log Analytics предлагает следующие решения для мо
 * ApplicationGatewayFirewallLog
 
 Шлюзы приложений поддерживают следующие метрики:
+
 
 * пропускная способность за 5 минут.
 
@@ -140,6 +142,12 @@ Set-AzureRmDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $work
 ## <a name="azure-network-security-group-analytics-solution-in-log-analytics"></a>Решение для анализа групп безопасности сети Azure в Log Analytics
 
 ![Символ "Аналитика групп безопасности сетей Azure"](./media/log-analytics-azure-networking/azure-analytics-symbol.png)
+
+> [!NOTE]
+> Решение для анализа групп безопасности сети переходит на поддержку сообщества, так как оно было заменено на [Аналитику трафика](../network-watcher/traffic-analytics.md).
+> - Это решение теперь доступно в [Шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/oms-azurensg-solution/) и скоро перестанет быть доступным в Azure Marketplace.
+> - Для существующих клиентов, которые уже добавили решение в свою рабочую область, решение продолжит работать без изменений.
+> - Корпорация Майкрософт продолжит поддерживать отправку журналов диагностики групп безопасности сети в вашу рабочую область с использованием параметров диагностики.
 
 Группы безопасности сети поддерживают следующие журналы:
 

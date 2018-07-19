@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: kgremban
-ms.openlocfilehash: d77953100bb7007553cf1c5ab00b9cdafea281e9
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 446fe139e3d1abe79b877d663842f7c7c6168f19
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37030443"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126700"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -31,7 +31,7 @@ ms.locfileid: "37030443"
 
 Уровень "Стандартный" Центра Интернета вещей включает все компоненты и необходим для любых решений Интернета вещей, где предполагается использование возможностей двухсторонней связи. Уровень "Базовый" включает подмножество компонентов и предназначен для решений Интернета вещей, которым требуется только однонаправленная связь с устройствами в облаке. Оба уровня предоставляют одинаковые компоненты безопасности и аутентификации.
 
-После создания Интернета вещей уровень "Базовый" можно обновить до "Стандартного", не прерывая имеющихся операций. Дополнительные сведения см. в статье [Как обновить Центр Интернета вещей](iot-hub-upgrade.md).
+После создания Интернета вещей уровень "Базовый" можно обновить до "Стандартного", не прерывая имеющихся операций. Дополнительные сведения см. в статье [Как обновить Центр Интернета вещей](iot-hub-upgrade.md). Обратите внимание, что ограничение на секционирование для Центра Интернета вещей базового уровня составляет 8. Это ограничение сохраняется при переходе с базового на стандартный уровень.
 
 | Функция | Уровень Basic | Уровень Standard |
 | ---------- | ---------- | ------------- |
@@ -43,7 +43,7 @@ ms.locfileid: "37030443"
 | [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Yes | Yes |
 | [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Yes |
 | [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Yes |
-| [Edge Интернета вещей Azure](../iot-edge/about-iot-edge.md) |   | Yes |
+| [Edge Интернета вещей Azure](../iot-edge/how-iot-edge-works.md) |   | Yes |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный". 
 
@@ -53,34 +53,34 @@ ms.locfileid: "37030443"
 
 | API | Уровень Basic | Уровень Standard |
 | --- | ---------- | ------------- |
-| [Удаление устройства](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/deletedevice) | Yes | Yes |
-| [Получение устройства](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/getdevice) | Yes | Yes |
+| [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/deletedevice) | Yes | Yes |
+| [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/getdevice) | Yes | Yes |
 | Удаление модуля | Yes | Yes |
 | Получение модуля | Yes | Yes |
-| [Получение статистики реестра](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/getdeviceregistrystatistics) | Yes | Yes |
-| [Получение статистики службы](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/getservicestatistics) | Yes | Yes |
-| [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/service/createorupdatedevice) | Yes | Yes |
+| [Получение статистики реестра](https://docs.microsoft.com/rest/api/iothub/service/getdeviceregistrystatistics) | Yes | Yes |
+| [Получение статистики службы](https://docs.microsoft.com/rest/api/iothub/service/getservicestatistics) | Yes | Yes |
+| [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/createorupdatedevice) | Yes | Yes |
 | Отправка модуля | Yes | Yes |
-| [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/service/queryiothub) | Yes | Yes |
+| [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/queryiothub) | Yes | Yes |
 | Запрос модулей | Yes | Yes |
-| [Создание URI SAS отправки файла](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/createfileuploadsasuri) | Yes | Yes |
-| [Получение связанного с устройством уведомления](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/receivedeviceboundnotification) | Yes | Yes |
-| [Отправка события устройства](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/senddeviceevent) | Yes | Yes |
+| [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Yes | Yes |
+| [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Yes | Yes |
+| [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Yes | Yes |
 | Отправка события модуля | Yes | Yes |
-| [Обновление состояния отправки устройства](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/updatefileuploadstatus) | Yes | Yes |
-| [Массовые операции устройств](https://docs.microsoft.com/en-us/rest/api/iot-dps/deviceenrollment/bulkoperation) | Да, за исключением возможностей IoT Edge | Yes | 
-| [Очистка очереди команд](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/purgecommandqueue) |   | Yes |
-| [Получение двойника устройства](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/gettwin) |   | Yes |
+| [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Yes | Yes |
+| [Массовые операции устройств](https://docs.microsoft.com/rest/api/iot-dps/deviceenrollment/bulkoperation) | Да, за исключением возможностей IoT Edge | Yes | 
+| [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Yes |
+| [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Yes |
 | Получение двойника модуля |   | Yes |
-| [Вызов метода устройства](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/invokedevicemethod) |   | Yes |
-| [Обновление двойников устройств](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/updatetwin) |   | Yes | 
+| [Вызов метода устройства](https://docs.microsoft.com/rest/api/iothub/service/invokedevicemethod) |   | Yes |
+| [Обновление двойников устройств](https://docs.microsoft.com/rest/api/iothub/service/updatetwin) |   | Yes | 
 | Обновление двойника модуля |   | Yes | 
-| [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/abandondeviceboundnotification) |   | Yes |
-| [Полное связанное с устройством уведомление](https://docs.microsoft.com/en-us/rest/api/iothub/device/device/completedeviceboundnotification) |   | Yes |
-| [Отмена задания](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/canceljob) |   | Yes |
-| [Создание задания](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/createjob) |   | Yes |
-| [Получение задания](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/getjob) |   | Yes |
-| [Запрос заданий](https://docs.microsoft.com/en-us/rest/api/iothub/service/service/queryjobs) |   | Yes |
+| [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Yes |
+| [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Yes |
+| [Отмена задания](https://docs.microsoft.com/rest/api/iothub/service/canceljob) |   | Yes |
+| [Создание задания](https://docs.microsoft.com/rest/api/iothub/service/createjob) |   | Yes |
+| [Получение задания](https://docs.microsoft.com/rest/api/iothub/service/getjob) |   | Yes |
+| [Запрос заданий](https://docs.microsoft.com/rest/api/iothub/service/queryjobs) |   | Yes |
 
 ## <a name="message-throughput"></a>Пропускная способность сообщений
 

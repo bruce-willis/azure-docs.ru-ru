@@ -2,7 +2,7 @@
 title: Тренировочное задание по защите идентификации Azure Active Directory | Документация Майкрософт
 description: Узнайте, как защита идентификации Azure AD позволяет помешать злоумышленникам воспользоваться скомпрометированными удостоверениями и устройствами, а также защитить удостоверение или устройство, которое ранее предположительно или фактически скомпрометировано.
 services: active-directory
-keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
+keywords: защита удостоверений Azure Active Directory, Cloud Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
 documentationcenter: ''
 author: MarkusVi
 manager: mtillman
@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/07/2018
+ms.date: 06/27/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: ff4a8bfb5a92f0969aef726893bebb6aacd4d942
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: c0fd22bb9abb0710b9b4601777a0f0256386af77
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34714312"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38473944"
 ---
 # <a name="azure-active-directory-identity-protection-playbook"></a>Тренировочное задание по защите идентификации Azure Active Directory
 
@@ -104,8 +104,8 @@ ms.locfileid: "34714312"
 Уязвимости — это слабые стороны среды Azure AD, которыми могут воспользоваться злоумышленники. Сейчас защита идентификации Azure AD поддерживает три типа уязвимостей, которые используют другие функции Azure AD. Эти уязвимости будут автоматически отображаться на панели мониторинга защиты идентификации после настройки данных функций:
 
 * [многофакторная проверка подлинности](authentication/multi-factor-authentication.md) Azure AD;
-* Azure AD [Cloud App Discovery](manage-apps/cloud-app-discovery.md);
-* [управление привилегированными пользователями](active-directory-privileged-identity-management-configure.md)Azure AD. 
+* Azure AD [Cloud Discovery](/cloud-app-security/set-up-cloud-discovery);
+* [управление привилегированными пользователями](privileged-identity-management/pim-configure.md)Azure AD. 
 
 
 ## <a name="testing-security-policies"></a>Проверка политик безопасности

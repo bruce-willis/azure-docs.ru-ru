@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 05/23/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: a4c83e495e269cdca35844a699d714b55cf1f500
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 173423c1a578500a990d6a7b43017d06ea96f6e7
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34643317"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38704906"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -124,19 +124,25 @@ ms.locfileid: "34643317"
 
 Прежде чем начать, обратите внимание на следующее: 
 
-- Убедитесь, что на компьютере сервера конфигурации системные часы синхронизированы с [сервером времени](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/get-started/windows-time-service/windows-time-service). Значения времени должны совпадать. Если системные часы отстают или спешат в пределах 15 минут, установка может завершиться ошибкой.
-- Убедитесь, что компьютер может получить доступ к таким URL-адресам: [!INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]
+#### <a name="verify-time-accuracy"></a>Проверка точности времени
+Убедитесь, что на компьютере сервера конфигурации системные часы синхронизированы с [сервером времени](https://technet.microsoft.com/windows-server-docs/identity/ad-ds/get-started/windows-time-service/windows-time-service). Значения времени должны совпадать. Если системные часы отстают или спешат в пределах 15 минут, установка может завершиться ошибкой.
 
-- При использовании правил брандмауэра на основе IP-адресов убедитесь, что эти правила разрешают обмен данными с Azure.
-- Разрешите доступ для [диапазонов IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) и использование порта HTTPS (443).
-- Необходимо разрешить доступ для диапазонов IP-адресов региона Azure, в котором располагается ваша подписка, и региона "Западная часть США" (используется для контроля доступа и управления удостоверениями).
+#### <a name="verify-connectivity"></a>Проверка подключения
+Убедитесь, что компьютер может получить доступ к этим URL-адресам на основе среды: 
 
+[!INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]  
+
+Правила брандмауэра на основе IP-адресов должны разрешать взаимодействие со всеми URL-адресами Azure, перечисленными выше, через порт HTTPS (443). Чтобы упростить и ограничить диапазоны IP-адресов, рекомендуется выполнить фильтрацию URL-адресов.
+
+- **Коммерческие IP-адреса**. Кроме того, необходимо разрешить [диапазоны IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) и порт HTTPS (443). Разрешите диапазоны IP-адресов для региона Azure вашей подписки для поддержки URL-адресов AAD, резервного копирования, репликации и хранения.  
+- **Правительственные IP-адреса**. Разрешите [диапазоны IP-адресов центра обработки данных Azure для государственных организаций](https://www.microsoft.com/en-us/download/details.aspx?id=57063) и порт HTTPS (443) для всех регионов USGov (Вирджиния, Техас, Аризона и Айова) для поддержки URL-адресов AAD, резервного копирования, репликации и хранения.  
+
+#### <a name="run-setup"></a>Запуск программы установки
 Запустите программу установки сервера конфигурации от имени локального администратора. Сервер обработки и главный целевой сервер также устанавливаются по умолчанию на сервер конфигурации.
 
 [!INCLUDE [site-recovery-add-configuration-server](../../includes/site-recovery-add-configuration-server.md)]
 
 После завершения регистрации сервер конфигурации появится на странице **Параметры** > **Серверы** в хранилище.
-
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
 
