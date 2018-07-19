@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/15/2018
+ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 7e0219a662483ef123bdc2889a43dd3d93d23ac2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: fb820d124fd9b5e882cad538ad436532d7865fbc
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31413234"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37923492"
 ---
 # <a name="prepare-on-premises-hyper-v-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов Hyper-V для аварийного восстановления в Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "31413234"
     
 3. Если осуществляется контроль доступом по IP-адресу, убедитесь, что:
     - Правила брандмауэра на основе IP-адресов могут подключиться к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/confirmation.aspx?id=41653) и порту HTTPS (443).
-    - Необходимо разрешить доступ для диапазонов IP-адресов региона Azure, в котором располагается ваша подписка, и региона "Западная часть США" (используется для контроля доступа и управления удостоверениями).
+    - Необходимо разрешить диапазоны IP-адресов для региона Azure в вашей подписке.
 
 
 ## <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Подготовка к подключению виртуальных машин Azure после отработки отказа

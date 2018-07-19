@@ -11,18 +11,18 @@ ms.topic: howto
 ms.service: virtual-machines-windows
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.openlocfilehash: 0648a7555cb94543dadf5d73e0187927a90f5b5a
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 3b606fc78327035e135e0f037288a817171385dd
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31526524"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857950"
 ---
 # <a name="how-to-enable-nested-virtualization-in-an-azure-vm"></a>Как включить вложенную виртуализацию в виртуальных машинах Azure
 
 Вложенная виртуализация поддерживается в виртуальных машинах Azure серии Dv3 и Ev3. Эта возможность обеспечивает большую гибкость при поддержке сценариев, например в средах разработки, тестирования, обучения и демонстрации. 
 
-В этой статье приведены шаги по включению вложенной виртуализации на виртуальной машине Azure и настройке подключения к Интернету в этой гостевой виртуальной машине.
+Все виртуальные машины серий Dv3 и Ev3 поддерживают вложенную виртуализацию без дополнительной настройки.  В этой статье приведены шаги по включению Hyper-V на виртуальной машине Azure и настройке подключения к Интернету в этой гостевой виртуальной машине.
 
 ## <a name="create-a-dv3-or-ev3-series-azure-vm"></a>Создание виртуальных машин Azure серии Dv3 или Ev3
 

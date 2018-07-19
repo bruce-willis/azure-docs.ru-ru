@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2016
 ms.author: naziml
-ms.openlocfilehash: db69852cffd1ff331ac4a640b04ea4360d00bf75
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: bdf8731b2a5028f47c2baf6f164d75123f716ebb
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22985769"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857645"
 ---
 # <a name="how-to-configure-tls-mutual-authentication-for-web-app"></a>Настройка взаимной проверки подлинности TLS для веб-приложения
 ## <a name="overview"></a>Обзор
@@ -32,13 +32,13 @@ ms.locfileid: "22985769"
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="configure-web-app-for-client-certificate-authentication"></a>Настройка веб-приложения для проверки подлинности сертификата клиента
-Чтобы веб-приложение требовало клиентские сертификаты, необходимо добавить параметр сайта clientCertEnabled для веб-приложения и присвоить ему значение true. Сейчас этот параметр недоступен через интерфейс управления на портале, и в этих целях следует использовать REST API.
+Чтобы веб-приложение требовало сертификаты клиента, необходимо добавить параметр сайта clientCertEnabled для веб-приложения и присвоить ему значение true. Этот параметр также можно настроить на портале Azure в колонке SSL-сертификатов.
 
 Для быстрого создания вызова REST API можно воспользоваться [средством ARMClient](https://github.com/projectkudu/ARMClient) . После входа с помощью средства необходимо выполнить следующую команду:
 
     ARMClient PUT subscriptions/{Subscription Id}/resourcegroups/{Resource Group Name}/providers/Microsoft.Web/sites/{Website Name}?api-version=2015-04-01 @enableclientcert.json -verbose
 
-Замените все содержимое в скобках {} сведениями для своего веб-приложения и создайте файл с именем enableclientcert.json со следующим JSON-содержимым:
+Замените все содержимое в скобках {} сведениями для своего веб-приложения и создайте файл с именем enableclientcert.json со следующим содержимым JSON:
 
     {
         "location": "My Web App Location",
@@ -49,7 +49,7 @@ ms.locfileid: "22985769"
 
 Обязательно измените значение location на расположение своего веб-приложения, например Северо-Центральный регион США или Запад США и т. п.
 
-Можно использовать https://resources.azure.com, чтобы переключить свойство `clientCertEnabled` в значение `true`.
+Можно также использовать https://resources.azure.com, чтобы переключить свойство `clientCertEnabled` в значение `true`.
 
 > **Примечание.** При запуске ARMClient из PowerShell необходимо экранировать знак @ для JSON-файла с помощью грависа (`).
 > 

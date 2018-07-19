@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/11/2017
+ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 52d4297d2e86ad67672d38f1c527041b813f8d61
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 6190a8ee90855223779751373bf16ca3db0fe761
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34723693"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37871502"
 ---
 # <a name="migrate-a-classic-policy-that-requires-multi-factor-authentication-in-the-azure-portal"></a>Перенос классической политики, которая требует применения многофакторной проверки подлинности, на портале Azure 
 
@@ -103,8 +103,6 @@ ms.locfileid: "34723693"
 
 6. На странице **Создать** в разделе **Назначения** щелкните **Облачные приложения**, чтобы открыть страницу **Облачные приложения**.
 
-    ![Условный доступ](./media/active-directory-conditional-access-azure-portal-get-started/07.png)
-
 8. На странице **Облачные приложения** выполните следующие действия.
 
     ![Условный доступ](./media/active-directory-conditional-access-migration/08.png)
@@ -151,6 +149,6 @@ ms.locfileid: "34723693"
 - Дополнительные сведения о переносе классических политик на портале Azure см. в [этой статье](active-directory-conditional-access-migration.md).
 
 
-- Если вы хотите узнать, как настроить политику условного доступа, см. статью о том, как [начать работу с условным доступом в Azure Active Directory](active-directory-conditional-access-azure-portal-get-started.md).
+- Чтобы узнать, как настроить политику условного доступа, см. статью [Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory](active-directory-conditional-access-app-based-mfa.md).
 
 - Если вы готовы к настройке политик условного доступа для своей среды, см. статью [Рекомендации по работе с условным доступом в Azure Active Directory](active-directory-conditional-access-best-practices.md). 

@@ -4,20 +4,19 @@ description: Рекомендации по созданию шаблонов Azu
 services: app-service
 documentationcenter: app-service
 author: tfitzmac
-manager: timlt
 ms.service: app-service
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/26/2018
+ms.date: 07/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8c29cf5a65e9587b281a6000b5b4eff47f11da91
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: c2f600d86965e1115d4be1370da8f7c8e1b67f05
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34807328"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37927678"
 ---
 # <a name="guidance-on-deploying-web-apps-by-using-azure-resource-manager-templates"></a>Руководство по развертыванию веб-приложений с помощью шаблонов Azure Resource Manager
 
@@ -110,6 +109,30 @@ ms.locfileid: "34807328"
   ...
 }
 ```
+
+## <a name="deploy-web-app-certificate-from-key-vault"></a>Развертывание сертификата веб-приложения из Key Vault
+
+Если шаблон содержит ресурс [Microsoft.Web/certificates](/azure/templates/microsoft.web/certificates) для SSL-привязки и сертификат хранится в Key Vault, необходимо убедиться в том, что удостоверение службы приложений имеет доступ к сертификату.
+
+В глобальной среде Azure субъект-служба службы приложений имеет идентификатор **abfa0a7c-a6b6-4736-8310-5855508787cd**. Чтобы предоставить доступ к Key Vault для субъекта-службы службы приложений, используйте:
+
+```azurepowershell-interactive
+Set-AzureRmKeyVaultAccessPolicy `
+  -VaultName KEY_VAULT_NAME `
+  -ServicePrincipalName abfa0a7c-a6b6-4736-8310-5855508787cd `
+  -PermissionsToSecrets get `
+  -PermissionsToCertificates get
+```
+
+В Azure для государственных организаций субъект-служба службы приложений имеет идентификатор **6a02c803-dafd-4136-b4c3-5a6f318b4714**. Используйте этот идентификатор в предыдущем примере.
+
+В хранилище Key Vault выберите **Сертификаты** и нажмите **Создать или импортировать**, чтобы отправить сертификат.
+
+![Импорт сертификата](media/web-sites-rm-template-guidance/import-certificate.png)
+
+В шаблоне укажите имя сертификата для `keyVaultSecretName`.
+
+Пример шаблона см. в разделе [Развертывание сертификата веб-приложения из секрета Key Vault и его использование для создания SSL-привязки](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-certificate-from-key-vault).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

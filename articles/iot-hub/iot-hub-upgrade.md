@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: kgremban
-ms.openlocfilehash: 472115f166adc5385b6f46b2f3ac5ef75a6cde92
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1f60b7d30c073c49d5e0a7d35e7263c2181ed744
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34637282"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37903070"
 ---
 # <a name="how-to-upgrade-your-iot-hub"></a>Как обновить Центр Интернета вещей
 
@@ -45,7 +45,7 @@ ms.locfileid: "34637282"
 4. Чтобы изменить количество единиц в центре, введите новое значение в поле **Единицы центра IoT Hub**. 
 5. Выберите **Сохранить**, чтобы сохранить изменения. 
 
-Теперь Центр Интернета вещей настроен, а конфигурации не изменяются. 
+Теперь Центр Интернета вещей настроен, а конфигурации не изменяются. Обратите внимание, что ограничение на секционирование для Центра Интернета вещей базового уровня составляет 8. Это ограничение сохраняется при переходе с базового на стандартный уровень.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

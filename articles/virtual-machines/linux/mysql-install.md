@@ -1,9 +1,9 @@
 ---
 title: Настройка MySQL на виртуальной машине Linux в Azure | Документация Майкрософт
-description: Узнайте, как установить стек MySQL на виртуальной машине Linux (из семейства ОС Ubuntu или RedHat) в Azure.
+description: Узнайте, как установить стек MySQL на виртуальной машине Linux (из семейства ОС Ubuntu или Red Hat) в Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: iainfoulds
+author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
 ms.date: 02/01/2016
-ms.author: iainfou
-ms.openlocfilehash: d91f8cf8455a60d3e0afb2f209ba07933bcdee1c
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.author: cynthn
+ms.openlocfilehash: c8043064ac1df40eaa31ae56e9ec31c0152e0130
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30239180"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37933536"
 ---
 # <a name="how-to-install-mysql-on-azure"></a>Как установить MySQL в Azure
 Из этой статьи вы узнаете, как установить и настроить СУБД MySQL на виртуальной машине Azure под управлением Linux.

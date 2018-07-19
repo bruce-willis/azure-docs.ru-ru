@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 6fda373f832d6e24d1252587a19c88b0f464dda6
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 5065399f161bcaee2f9518236a28f0f5faa0ea5b
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36232091"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37902033"
 ---
 # <a name="preview-deploy-azure-ad-password-protection"></a>Развертывание предварительной версии защиты паролем Azure AD
 
@@ -103,7 +103,7 @@ ms.locfileid: "36232091"
          Пример работает, только если текущий зарегистрированный пользователь также является администратором домена Active Directory для корневого домена. Кроме того, можно предоставить необходимые учетные данные домена с помощью параметра -ForestCredential.
 
          > [!NOTE]
-         > Если в вашей среде установлено несколько прокси-серверов, не важно, какой конкретный прокси-сервер выполнил вышеуказанную процедуру.
+         > Если в вашей среде установлено несколько прокси-серверов, неважно, какой конкретный прокси-сервер указан в процедуре.
 
          > [!TIP]
          > При первом запуске этого командлета для данного клиента Azure он может завершиться со значительной задержкой. Если не сообщается об ошибке, эта задержка вполне нормальна.

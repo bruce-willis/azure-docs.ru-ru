@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 65aad3244ce49e77bdd2e207bf14cf2e7ef459b9
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 32ad5ef4f297a64f0925febb247ccb117dffedf0
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195368"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928596"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
 
@@ -111,6 +111,13 @@ ms.locfileid: "34195368"
    Connect-AzureRmAccount -ServicePrincipal -Tenant $Conn.TenantID `
    -ApplicationId $Conn.ApplicationID -CertificateThumbprint $Conn.CertificateThumbprint
    ```
+
+   > [!IMPORTANT]
+   > **Add-AzureRmAccount** и **Login-AzureRmAccount** теперь являются псевдонимами для **Connect-AzureRMAccount**. Если командлет **Connect-AzureRMAccount** отсутствует, вы можете использовать командлет **Add-AzureRmAccount** или **Login-AzureRmAccount** либо [обновить модули](automation-update-azure-modules.md) в своей учетной записи службы автоматизации до последних версий. 
+
+> [!NOTE]
+> [Обновить модули](automation-update-azure-modules.md) может потребоваться несмотря на то, что учетная запись службы автоматизации только что создана.
+
 5. Щелкните **Тестовая область**, чтобы проверить модуль runbook.
 6. Щелкните **Пуск** , чтобы начать тестирование. После его завершения на экране должны отобразиться приблизительно такие основные сведения из вашей учетной записи. Это подтверждает допустимость учетных данных.<br><br> ![Проверка подлинности](media/automation-first-runbook-textual/runbook-auth-output.png)
 

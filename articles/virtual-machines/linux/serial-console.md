@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/05/2018
 ms.author: harijay
-ms.openlocfilehash: 99d09455ed73b366fb3acfb414b9bd095df6319b
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: 00a776131321500386b507f45ea84817b08147f7
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36962427"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37867867"
 ---
 # <a name="virtual-machine-serial-console-preview"></a>Последовательная консоль виртуальной машины (предварительная версия) 
 
@@ -158,5 +158,5 @@ ms.locfileid: "36962427"
 О. Эта функция предварительной версии рассматривается в условиях предварительной версии Azure. Соответствующая поддержка эффективнее всего предоставляется через вышеупомянутые каналы. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Версия последовательной консоли также доступна для [виртуальных машин Windows](../windows/serial-console.md).
+* Версия последовательной консоли также доступна для виртуальных машин [Windows](../windows/serial-console.md)
 * Узнайте больше о [диагностике загрузки](boot-diagnostics.md).

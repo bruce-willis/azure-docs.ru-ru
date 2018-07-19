@@ -15,97 +15,73 @@ ms.component: compliance-reports
 ms.date: 05/07/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: aa0891126ad6fa05a39b9245e4fe85b61218ec40
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 0da0e5d4b7dd8ff000d6c56716bea1b36935af01
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222466"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928912"
 ---
 # <a name="get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Получение данных с помощью API отчетов Azure Active Directory с сертификатами
 
-[API-интерфейсы отчетов Azure Active Directory (Azure AD)](https://msdn.microsoft.com/library/azure/ad/graph/howto/azure-ad-reports-and-events-preview) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти интерфейсы API можно вызвать, используя различные языки и инструменты программирования.
+[API-интерфейсы отчетов Azure Active Directory (Azure AD)](active-directory-reporting-api-getting-started-azure-portal.md) предоставляют программный доступ к данным с помощью набора API-интерфейсов на базе REST. Эти интерфейсы API можно вызвать, используя различные языки и инструменты программирования. Чтобы получить доступ к API отчетов Azure AD без вмешательства пользователя, можно настроить доступ с помощью сертификатов.
 
-Чтобы получить доступ к API отчетов Azure AD без вмешательства пользователя, можно настроить доступ с помощью сертификатов.
+Для этого необходимо выполнить следующие шаги.
 
-В этой статье:
+1. [Установка необходимых компонентов](#install-prerequisites)
+2. [Регистрация сертификата в приложении](#register-the-certificate-in-your-app)
+3. [Получение маркера доступа для API Microsoft Graph](#get-an-access-token-for-ms-graph-api)
+4. [Запрос конечных точек API Microsoft Graph](#query-the-ms-graph-api-endpoints)
 
-- описываются необходимые действия для доступа к API отчетов Azure AD с помощью сертификатов;
-- предполагается, что вы выполнили [предварительные требования для доступа к API отчетов Azure Active Directory](active-directory-reporting-api-prerequisites-azure-portal.md). 
-
-
-Чтобы получить доступ к API отчетов с помощью сертификатов, необходимо сделать следующее:
-
-1. Установка необходимых компонентов
-2. установить сертификат в приложении; 
-3. Предоставление разрешений
-4. Получение маркера доступа
-
-
-
-
-Сведения об исходном коде см. в [практическом руководстве по использованию модуля API отчетов](https://github.com/AzureAD/azure-activedirectory-powershell/tree/gh-pages/Modules/AzureADUtils). 
 
 ## <a name="install-prerequisites"></a>установить необходимые компоненты;
 
-Необходимо установить Azure AD PowerShell версии 2 и модуль служебных программ Azure AD.
+1. Сначала убедитесь в том, что вы выполнили [предварительные требования для доступа к API отчетов Azure Active Directory](active-directory-reporting-api-prerequisites-azure-portal.md). 
 
-1. Скачайте и установите Azure AD PowerShell V2, следуя инструкциям, описанным в статье [Azure Active Directory PowerShell версии 2](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/Azure AD Cmdlets/AzureAD/index.md).
+2. Скачайте и установите Azure AD PowerShell V2, следуя инструкциям, описанным в статье [Azure Active Directory PowerShell](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/Azure AD Cmdlets/AzureAD/index.md).
 
-2. Скачайте модуль служебных программ Azure AD на сайте [AzureAD/azure-activedirectory-powershell](https://github.com/AzureAD/azure-activedirectory-powershell/blob/gh-pages/Modules/AzureADUtils/AzureADUtils.psm1). 
-  Этот модуль предоставляет несколько служебных командлетов, позволяющих получить:
-    - последнюю версию ADAL с использованием Nuget;
+3. Установите MSCloudIDUtils со страницы [PowerShellGallery — MSCloudIdUtils](https://www.powershellgallery.com/packages/MSCloudIdUtils/). Этот модуль предоставляет несколько служебных командлетов, позволяющих получить:
+    - Библиотеки ADAL, необходимые для проверки подлинности
     - маркеры доступа пользователя, ключи приложений и сертификаты с использованием ADAL;
     - обработку результатов с разбивкой на страницы с помощью API Graph.
 
-**Чтобы установить модуль служебных программ Azure AD:**
-
-1. Создайте каталог, чтобы сохранить модуль служебных программ (например, C:\azureAD), и скачайте модуль с сайта GitHub.
-2. Откройте сеанс PowerShell и перейдите в созданный каталог. 
-3. Импортируйте модуль и установите его в путь к модулю PowerShell с помощью командлета Install-AzureADUtilsModule. 
+4. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule**, чтобы завершить установку. В противном случае его можно просто импортировать с помощью команды PowerShell **Import-Module**.
 
 Сеанс должен выглядеть так, как показано ниже.
 
-  ![Windows PowerShell](./media/active-directory-report-api-with-certificates/windows-powershell.png)
+  ![Windows PowerShell](./media/active-directory-reporting-api-with-certificates/module-install.png)
 
-## <a name="set-the-certificate-in-your-app"></a>установить сертификат в приложении;
+## <a name="register-the-certificate-in-your-app"></a>Регистрация сертификата в приложении
 
-**Чтобы установить сертификат в приложении, сделайте следующее.**
+1. Сначала перейдите на страницу регистрации приложений. Для этого можно перейти на [портал Azure](https://portal.azure.com), щелкнуть элемент **Azure Active Directory**, затем щелкнуть **Регистрация приложений** и выбрать приложение в списке. 
 
-1. [Получите идентификатор объекта](active-directory-reporting-api-prerequisites-azure-portal.md#get-your-applications-client-id) для приложения на портале Azure. 
+2. После этого выполните инструкции по [регистрации сертификата в Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-certificate-credentials#register-your-certificate-with-azure-ad) для приложения. 
 
-  ![Портал Azure](./media/active-directory-report-api-with-certificates/azure-portal.png)
+3. Запишите идентификатор приложения и отпечаток сертификата, который вы только что зарегистрировали для приложения. Чтобы найти отпечаток, на странице приложения на портале щелкните **Параметры** и выберите пункт **Ключи**. Отпечаток будет указан в списке **Открытые ключи**.
 
-2. Откройте сеанс PowerShell и подключитесь к Azure AD с помощью командлета Connect-AzureAD.
-
-  ![Портал Azure](./media/active-directory-report-api-with-certificates/connect-azuaread-cmdlet.png)
-
-3. Используйте командлет New-AzureADApplicationCertificateCredential из модуля служебных программ Azure AD, чтобы добавить учетные данные сертификата. 
-
->[!Note]
->Необходимо указать сохраненный ранее идентификатор объекта, а также объект сертификата (с использованием диска Cert:).
->
-
-
-  ![Портал Azure](./media/active-directory-report-api-with-certificates/add-certificate-credential.png)
   
-## <a name="get-an-access-token"></a>Получение маркера доступа
+## <a name="get-an-access-token-for-ms-graph-api"></a>Получение маркера доступа для API Microsoft Graph
 
-Чтобы получить маркер доступа, используйте командлет **Get-AzureADGraphAPIAccessTokenFromCert** из модуля служебных программ Azure AD. 
+Чтобы получить маркер доступа для API Microsoft Graph, используйте командлет **Get-MSCloudIdMSGraphAccessTokenFromCert** из модуля PowerShell MSCloudIdUtils. 
 
 >[!NOTE]
->Необходимо использовать идентификатор приложения вместо идентификатора объекта, который использовался в предыдущем разделе.
+>Необходимо использовать идентификатор приложения (также называемый ClientID) и отпечаток сертификата с закрытым ключом, установленного в хранилище сертификатов компьютера (хранилище CurrentUser или LocalMachine).
 >
 
- ![Портал Azure](./media/active-directory-report-api-with-certificates/application-id.png)
+ ![Портал Azure](./media/active-directory-reporting-api-with-certificates/getaccesstoken.png)
 
 ## <a name="use-the-access-token-to-call-the-graph-api"></a>использовать маркер доступа для вызова API Graph.
 
-Теперь можно создать скрипт. Ниже приведен пример использования командлета **Invoke-AzureADGraphAPIQuery** из модуля служебных программ Azure AD. Этот командлет обрабатывает результаты с разбивкой на несколько страниц, а затем отправляет их в конвейер PowerShell. 
+Теперь маркер доступа можно использовать в скрипте PowerShell для запроса API Graph. Ниже приведен пример использования командлета **Invoke-MSCloudIdMSGraphQuery** из модуля MSCloudIDUtils для перечисления операций входа или запроса конечной точки diectoryAudits. Этот командлет обрабатывает результаты с разбивкой на несколько страниц, а затем отправляет их в конвейер PowerShell.
 
- ![Портал Azure](./media/active-directory-report-api-with-certificates/script-completed.png)
+### <a name="query-the-directoryaudits-endpoint"></a>Запрос конечной точки DirectoryAudits
+ ![Портал Azure](./media/active-directory-reporting-api-with-certificates/query-directoryAudits.png)
 
-Теперь можно выполнить экспорт в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
+ ### <a name="query-the-signins-endpoint"></a>Запрос конечной точки SignIns
+ ![Портал Azure](./media/active-directory-reporting-api-with-certificates/query-signins.png)
+
+Теперь можно экспортировать эти данные в CSV-файл и сохранить его в системе SIEM. Также можно перенести скрипт в запланированную задачу, чтобы периодически получать данные Azure AD из клиента без необходимости сохранять ключи приложений в исходном коде. 
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

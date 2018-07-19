@@ -12,14 +12,14 @@ ms.workload: backup-recovery
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/04/2018
+ms.date: 07/06/2018
 ms.author: asgang
-ms.openlocfilehash: 27dfdec4e833a2f30963157ba2f4d95232e21270
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 95e5c53da2556293fc676fa5b1db9b4585038300
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267338"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37922742"
 ---
 # <a name="protect-a-multi-tier-sap-netweaver-application-deployment-by-using-site-recovery"></a>Защита многоуровневого развертывания приложения SAP NetWeaver с помощью Site Recovery
 
@@ -83,7 +83,7 @@ ms.locfileid: "35267338"
 
 Чтобы поддержать среду отказоустойчивого кластера, [SIOS DataKeeper Cluster Edition](https://azuremarketplace.microsoft.com/marketplace/apps/sios_datakeeper.sios-datakeeper-8) выполняет функции общего тома кластера, реплицируя независимые диски, принадлежащие узлам кластера. Azure изначально не поддерживает общие диски и поэтому необходимы решения, предоставленные SIOS. 
 
-Еще один способ использования кластеризации — реализовать кластер файловых ресурсов. В [SAP](https://blogs.sap.com/2018/03/19/migration-from-a-shared-disk-cluster-to-a-file-share-cluster) недавно изменили шаблон развертывания центральных служб для доступа к глобальным каталогам /sapmnt через UNC-путь. Это изменение устраняет требование для SIOS или других решений для дисковых ресурсов на виртуальных машинах центральных служб. Мы по-прежнему рекомендуем убедиться, что общий ресурс /sapmnt (UNC) высокодоступен. Это можно сделать в экземпляре центральных служб с помощью отказоустойчивого кластера Windows Server с функцией масштабируемого файлового сервера (SOFS) и локальных дисковых пространств (S2D) в Windows Server 2016. 
+Еще один способ использования кластеризации — реализовать кластер файловых ресурсов. В [SAP](https://blogs.sap.com/2018/03/19/migration-from-a-shared-disk-cluster-to-a-file-share-cluster) недавно изменили шаблон развертывания центральных служб для доступа к глобальным каталогам /sapmnt через UNC-путь. Однако мы по-прежнему рекомендуем убедиться, что общий ресурс /sapmnt (UNC) высокодоступен. Это можно сделать в экземпляре центральных служб с помощью отказоустойчивого кластера Windows Server с функцией масштабируемого файлового сервера (SOFS) и локальных дисковых пространств (S2D) в Windows Server 2016. 
  > [!NOTE]
  > В настоящее время Azure Site Recovery поддерживает только последовательную репликацию точки аварийного восстановления виртуальных машин с использованием локальных дисковых пространств 
 

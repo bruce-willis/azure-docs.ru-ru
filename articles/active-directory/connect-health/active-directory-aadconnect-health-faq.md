@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 05720e6c290b0b54e5b6d5170a6eb22306e9cb04
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.openlocfilehash: 957a68c80f9fcc07ef6f84b2b08f344745a58d95
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30282204"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37866030"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
 Эта статья содержит ответы на часто задаваемые вопросы о расширении Azure Active Directory (Azure AD) Connect Health. Здесь представлены сведения об использовании службы, в частности о модели выставления счетов, возможностях, ограничениях и поддержке.
@@ -62,8 +62,16 @@ ms.locfileid: "30282204"
 
 **Вопрос. Поддерживает ли расширение Azure AD Connect Health облако Azure Germany?**
 
-Расширение Azure AD Connect Health имеет версию [установки](active-directory-aadconnect-health-agent-install.md) для Azure Germany. Все данные клиентов немецкого облака в хранятся в облаке Azure Germany.
+Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](active-directory-aadconnect-health-sync.md#object-level-synchronization-error-report-preview). 
 
+| Роли | Функции | Поддерживается в облаке для Германии |
+| ------ | --------------- | --- |
+| Connect Health для синхронизации | Мониторинг, аналитика, оповещения, анализ | Нет  |
+|  | Отчет об ошибках синхронизации | Yes |
+| Connect Health для ADFS | Мониторинг, аналитика, оповещения, анализ | Нет  |
+| Connect Health для доменных служб Active Directory | Мониторинг, аналитика, оповещения, анализ | Нет  |
+
+Чтобы обеспечить подключение агента Connect Health для синхронизации, настройте [требование для установки](active-directory-aadconnect-health-agent-install.md#outbound-connectivity-to-the-azure-service-endpoints) соответствующим образом.   
 
 ## <a name="installation-questions"></a>Вопросы, связанные с установкой
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: e361259bc5ce2dd946d3ea8bc1e69f743a40c6df
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: a6435f74141429cbe4f9a169fd2f234161d486c4
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264407"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918746"
 ---
 # <a name="collect-and-consume-log-data-from-your-azure-resources"></a>Сбор и использование данных журнала из ресурсов Azure
 
@@ -42,6 +42,11 @@ ms.locfileid: "35264407"
 
 > [!NOTE]
 >  Сейчас невозможно архивировать данные в учетную запись хранения, которая находится в защищенной виртуальной сети.
+
+> [!WARNING]
+> Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](./monitor-diagnostic-logs-append-blobs.md) 
+>
+> 
 
 ## <a name="resource-diagnostic-settings"></a>Параметры диагностики ресурсов
 

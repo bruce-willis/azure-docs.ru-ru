@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/27/2018
 ms.author: aljo
-ms.openlocfilehash: 84f8827a58d7f3c5dcc32943d2ba891b02c1e1ab
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 499c7182fba9d8efeebfb22e22a692d431dcb7ac
+ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37083198"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37888659"
 ---
 # <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Настройка параметров кластера Service Fabric и политики обновления структур
 В этом документе описывается, как настроить различные параметры структуры и политику обновления структур для кластера Service Fabric. Их можно настроить на [портале Azure](https://portal.azure.com) или с помощью шаблона Azure Resource Manager.
@@ -752,6 +752,7 @@ ms.locfileid: "37083198"
 |FabricLogRoot |Строка | Не разрешено |Корневой каталог журналов Service Fabric. В нем хранятся журналы и трассировки Service Fabric. |
 |NodesToBeRemoved|Строка, значение по умолчанию — ""| Динамический |Узлы, которые должны быть удалены в процессе обновления конфигурации. (Только для автономных развертываний)|
 |ServiceRunAsAccountName |Строка | Не разрешено |Имя учетной записи, используемой для запуска службы узла Fabric. |
+|SkipContainerNetworkResetOnReboot|Логическое значение, по умолчанию — false|NotAllowed|Нужно ли пропустить сброс сети контейнера при перезагрузке.|
 |SkipFirewallConfiguration |Логическое значение, по умолчанию — false | Не разрешено |Указывает, должна ли система настраивать параметры брандмауэра. Применяется, только если используется брандмауэр Windows. Если вы используете брандмауэры сторонних производителей, то необходимо открыть порты для системы и приложений. |
 
 ## <a name="tokenvalidationservice"></a>TokenValidationService

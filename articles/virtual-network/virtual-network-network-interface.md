@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: jdial
-ms.openlocfilehash: a6e3bb31886f1b682ef20404b536bfc4a0c07151
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4b584dfa49c42328a44fff0645dcdec2504abaa2
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34656889"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37904226"
 ---
 # <a name="create-change-or-delete-a-network-interface"></a>Создание, изменение или удаление сетевых интерфейсов
 
@@ -62,7 +62,7 @@ ms.locfileid: "34656889"
 
 На портале невозможно назначить общедоступный IP-адрес сетевому интерфейсу при его создании, но портал создает общедоступный IP-адрес и назначает его сетевому интерфейсу при создании виртуальной машины с помощью портала. Чтобы узнать, как добавить общедоступный IP-адрес в ранее созданный сетевой интерфейс, см. статью [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md). Если вы хотите создать сетевой интерфейс с общедоступным IP-адресом, для этого необходимо использовать интерфейс командной строки или PowerShell.
 
-На портале невозможно назначить сетевой интерфейс группам безопасности приложений, однако это можно сделать с помощью Azure CLI и PowerShell. Дополнительные сведения о группах безопасности приложений см. в статье [Группы безопасности приложений](security-overview.md#application-security-groups).
+На портале невозможно назначить сетевой интерфейс группам безопасности приложений при создании сетевого интерфейса, однако это можно сделать с помощью Azure CLI и PowerShell. С помощью портала можно назначить группе безопасности приложений существующий сетевой интерфейс, но только в случае, если сетевой интерфейс подключен к виртуальной машине. Чтобы узнать больше о назначении сетевого интерфейса группе безопасности приложений, ознакомьтесь с разделом [Добавление в группы безопасности приложений или удаление из них](#add-to-or-remove-from-application-security-groups).
 
 >[!Note]
 > Azure назначает MAC-адрес сетевому интерфейсу только после его подключения к виртуальной машине и ее первого запуска. Невозможно указать MAC-адрес, который Azure назначает сетевому интерфейсу. MAC-адрес остается назначенным сетевому интерфейсу, пока сетевой интерфейс не будет удален или пока не будет изменен частный IP-адрес, назначенный основной IP-конфигурации основного сетевого интерфейса. Дополнительные сведения об IP-адресах и IP-конфигурациях см. в статье [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md).
@@ -161,7 +161,10 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 ## <a name="add-to-or-remove-from-application-security-groups"></a>Добавление в группы безопасности приложений или удаление из них
 
-На портале невозможно назначить (или отменить назначение) сетевой интерфейс группам безопасности приложений, однако это можно сделать с помощью Azure CLI и PowerShell. Дополнительные сведения о группах безопасности приложений см. в разделах [Группы безопасности приложений](security-overview.md#application-security-groups) и [Создание, изменение или удаление сетевых интерфейсов](#create-an-application-security-group).
+С помощью портала можно добавить или удалить сетевой интерфейс в группе безопасности приложений, если сетевой интерфейс подключен к виртуальной машине. С помощью PowerShell или Azure CLI можно добавить или удалить сетевой интерфейс в группе безопасности приложений, независимо от того, подключен сетевой интерфейс к виртуальной машине или нет. См. дополнительные сведения о [группах безопасности приложений](security-overview.md#application-security-groups) и о том, как [создать группу безопасности приложений](manage-network-security-group.md#create-an-application-security-group).
+
+1. В поле *Поиск ресурсов, служб и документов* в верхней части портала начните вводить имя виртуальной машины с сетевым интерфейсом, который вы хотите добавить в или удалить из группы безопасности приложений. Когда в результатах поиска появится имя искомой виртуальной машины, щелкните по нему.
+2. В разделе **Параметры** выберите **Сеть**.  Выберите **Настройка групп безопасности приложений**, выберите группы безопасности приложений, к которым вы хотите добавить сетевой интерфейс или снимите выбор с групп безопасности приложений, из которых вы хотите удалить сетевой интерфейс, а затем нажмите **Сохранить**. Только сетевые интерфейсы, находящиеся в одной виртуальной сети, можно добавить в одну группу безопасности приложений. Группа безопасности приложений должна находиться в том же расположении, что и сетевой интерфейс.
 
 **Команды**
 
@@ -264,6 +267,6 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 - Создайте виртуальную машину с несколькими сетевыми адаптерами с помощью [Azure CLI](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 - Создайте виртуальную машину с одним сетевым адаптером и несколькими IPv4-адресами с помощью [Azure CLI](virtual-network-multiple-ip-addresses-cli.md) или [PowerShell](virtual-network-multiple-ip-addresses-powershell.md).
-- Создайте виртуальную машину с одним сетевым адаптером и частным IPv6-адресом (управляемую Azure Load Balancer) с помощью [Azure CLI](../load-balancer/load-balancer-ipv6-internet-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../load-balancer/load-balancer-ipv6-internet-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [шаблона Azure Resource Manager](../load-balancer/load-balancer-ipv6-internet-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|.
-- Создайте сетевой интерфейс с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблонов Azure Resource Manager](template-samples.md).
+- Создайте виртуальную машину с одним сетевым адаптером и частным IPv6-адресом (управляемую Azure Load Balancer) с помощью [Azure CLI](../load-balancer/load-balancer-ipv6-internet-cli.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../load-balancer/load-balancer-ipv6-internet-ps.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [шаблона Azure Resource Manager](../load-balancer/load-balancer-ipv6-internet-template.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+- Создайте сетевой интерфейс с помощью примеров сценариев [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) либо на основе [шаблона Azure Resource Manager](template-samples.md)
 - Создайте и примените [политику Azure](policy-samples.md) для виртуальных сетей.

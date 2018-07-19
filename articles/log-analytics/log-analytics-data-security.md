@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/16/2018
+ms.date: 07/05/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: 7596428b4ed067bf53f3b295a1682ed372f8d472
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: df4c60be8a29ab397424e9e5f9de7050f64d87c2
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131450"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37859788"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 Данный документ предназначен для предоставления определенных сведений Azure Log Analytics для дополнения информации о [центре управления безопасностью Azure](../security/security-microsoft-trust-center.md).  
@@ -51,7 +51,6 @@ ms.locfileid: "37131450"
 | **Решение** | **Типы данных** |
 | --- | --- |
 | Capacity and Performance |Данные производительности и метаданные. |
-| Оценка вредоносных программ |Данные конфигурации и метаданные. |
 | управление обновлениями; |Метаданные и данные о состоянии. |
 | Управление журналами; |Пользовательские журналы событий, журналы событий Windows и журналы IIS. |
 | Отслеживание изменений |Инвентаризация программного обеспечения, метаданные управляющей программы Linux и службы Windows, метаданные файлов Windows и Linux |
@@ -63,16 +62,16 @@ ms.locfileid: "37131450"
 | --- | --- |
 | Предупреждение |Alert Name, Alert Description, BaseManagedEntityId, Problem ID, IsMonitorAlert, RuleId, ResolutionState, Priority, Severity, Category, Owner, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Параметр Configuration |CustomerID, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, ChangeDate |
-| Событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** OMS собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
+| Событие |EventId, EventOriginalID, BaseManagedEntityInternalId, RuleId, PublisherId, PublisherName, FullNumber, Number, Category, ChannelLevel, LoggingComputer, EventData, EventParameters, TimeGenerated, TimeAdded <br>**Примечание.** Log Analytics собирает данные событий с настраиваемыми полями при их записи в журнал событий Windows. |
 | Метаданные |BaseManagedEntityId, ObjectStatus, OrganizationalUnit, ActiveDirectoryObjectSid, PhysicalProcessors, NetworkName, IPAddress, ForestDNSName, NetbiosComputerName, VirtualMachineName, LastInventoryDate, HostServerNameIsVirtualMachine, IP Address, NetbiosDomainName, LogicalProcessors, DNSName, DisplayName, DomainDnsName, ActiveDirectorySite, PrincipalName, OffsetInMinuteFromGreenwichTime |
 | Производительность |ObjectName, CounterName, PerfmonInstanceName, PerformanceDataId, PerformanceSourceInternalID, SampleValue, TimeSampled, TimeAdded |
 | Состояние |StateChangeEventId, StateId, NewHealthState, OldHealthState, Context, TimeGenerated, TimeAdded, StateId2, BaseManagedEntityId, MonitorId, HealthState, LastModified, LastGreenAlertGenerated, DatabaseTimeModified |
 
 ## <a name="physical-security"></a>Физическая безопасность
-Персонал корпорации Майкрософт управляет службой Log Analytics, а все действия записываются в журнал и доступны для аудита. Служба Log Analytics управляется в качестве службы Azure и соответствует всем нормативным требованиям Azure и требованиям безопасности. Вы можете просмотреть сведения о физической защите активов Azure на странице 18 [обзора безопасности Microsoft Azure](http://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Права физического доступа к защищенным областям меняются в течение одного рабочего дня для каждого клиента, который перестает нести ответственность за службу OMS, в том числе за передачу данных и завершение операций. Вы также можете ознакомиться с [глобальной физической инфраструктурой, используемой в центрах обработки данных Майкрософт](https://azure.microsoft.com/en-us/global-infrastructure/).
+Персонал корпорации Майкрософт управляет службой Log Analytics, а все действия записываются в журнал и доступны для аудита. Служба Log Analytics управляется в качестве службы Azure и соответствует всем нормативным требованиям Azure и требованиям безопасности. Вы можете просмотреть сведения о физической защите активов Azure на странице 18 [обзора безопасности Microsoft Azure](http://download.microsoft.com/download/6/0/2/6028B1AE-4AEE-46CE-9187-641DA97FC1EE/Windows%20Azure%20Security%20Overview%20v1.01.pdf). Права физического доступа к защищенным областям меняются в течение одного рабочего дня для каждого клиента, который перестает нести ответственность за службу Log Analytics, в том числе за передачу данных и завершение операций. Вы также можете ознакомиться с [глобальной физической инфраструктурой, используемой в центрах обработки данных Майкрософт](https://azure.microsoft.com/en-us/global-infrastructure/).
 
 ## <a name="incident-management"></a>Управление инцидентами
-В OMS предусмотрен процесс управления инцидентами, которого придерживаются все службы Майкрософт. Он включает в себя следующие основные этапы:
+В Log Analytics предусмотрен процесс управления инцидентами, которого придерживаются все службы Майкрософт. Он включает в себя следующие основные этапы:
 
 * Использование модели разделения ответственности: частично ответственность за безопасность лежит на корпорации Майкрософт, а частично — на клиенте.
 * Управление инцидентами безопасности Azure:
@@ -125,7 +124,7 @@ Azure Log Analytics соответствует следующим требова
 >
 
 ## <a name="cloud-computing-security-data-flow"></a>Безопасность потока данных для облачных вычислений
-На следующей схеме показана архитектура защиты облачных данных в виде потока информации от вашей компании и его защиты по мере перемещения в службу Log Analytics до тех пор, пока вы, наконец, не увидите эти данные на портале Azure или классическом портале OMS. Под схемой приведена дополнительная информация о каждом шаге.
+На следующей схеме показана архитектура защиты облачных данных в виде потока информации от вашей компании и его защиты по мере перемещения в службу Log Analytics до тех пор, пока вы, наконец, не увидите эти данные на портале Azure. Под схемой приведена дополнительная информация о каждом шаге.
 
 ![Иллюстрация сбора и защиты данных в Log Analytics](./media/log-analytics-data-security/log-analytics-data-security-diagram.png)
 
@@ -139,7 +138,7 @@ Azure Log Analytics соответствует следующим требова
 
 Группа управления Operations Manager устанавливает подключение к службе Log Analytics. Затем вы настраиваете системы, управляемые агентами в группе управления, которым разрешено собирать и отправлять данные в службу. В зависимости от включенных решений данные с этих решений отправляются непосредственно из сервера управления Operations Manager в службу Log Analytics или непосредственно из агента в службу, что зависит от объема данных, собранных в управляемой агентом системе. Все системы, не отслеживаемые Operations Manager, безопасно подключаются к службе Log Analytics напрямую.
 
-Все данные, передаваемые между подключенными системами и службой Log Analytics, шифруются.  Для шифрования используется протокол TLS (HTTPS).  Благодаря соблюдению жизненного цикла разработки защищенных приложений (Майкрософт) служба Log Analytics соответствует последним усовершенствованиям протоколов шифрования.
+Все данные, передаваемые между подключенными системами и службой Log Analytics, шифруются. Для шифрования используется протокол TLS (HTTPS).  Благодаря соблюдению жизненного цикла разработки защищенных приложений (Майкрософт) служба Log Analytics соответствует последним усовершенствованиям протоколов шифрования.
 
 Каждый тип агента собирает данные для Log Analytics. Тип собираемых данных зависит от типов используемых решений. Сведения о сборе данных см. в статье [Добавление решений Log Analytics из коллекции решений](log-analytics-add-solutions.md). Кроме того, подробные сведения о сборе доступны для большинства решений. Решением является набор заранее определенных представлений, запросов поиска в журналах, правил сбора данных и логики обработки. Для импорта решения Log Analytics могут использовать только администраторы. После импорта решение перемещается на серверы управления Operations Manager (если они используются), а затем — на любые выбранные агенты. После этого агенты собирают данные.
 

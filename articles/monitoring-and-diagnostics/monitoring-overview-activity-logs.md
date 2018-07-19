@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: johnkem
 ms.component: activitylog
-ms.openlocfilehash: b6639ecc6fbd36df29458532d555b68b50b0a19c
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 51cc4c37ba661feb63880c138e98200c981f6054
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018983"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37918487"
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Мониторинг действий подписки с помощью журнала действий Azure
 
@@ -104,6 +104,11 @@ ms.locfileid: "37018983"
 
 > [!NOTE]
 >  Сейчас невозможно архивировать данные в учетную запись хранения, которая находится в защищенной виртуальной сети.
+
+> [!WARNING]
+> Формат данных журнала в учетной записи хранения будет изменен на JSON Lines с 1 ноября 2018 г. [См. дополнительные сведения, включая информацию об обновлении инструментария для включения поддержки нового формата.](./monitor-diagnostic-logs-append-blobs.md) 
+>
+> 
 
 Эти параметры можно настроить с помощью параметра "Экспорт" в колонке журнала изменений на портале. Их также можно настроить программно [с помощью REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931927.aspx), командлетов PowerShell или интерфейса командной строки. Для каждой подписки может существовать только один профиль журнала.
 

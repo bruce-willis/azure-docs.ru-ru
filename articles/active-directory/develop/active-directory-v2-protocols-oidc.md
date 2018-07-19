@@ -17,12 +17,12 @@ ms.date: 04/18/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: a0cd077b1c6530c5794c92f131dffb814f5b341d
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 747ba9c51181c62b45bb060810391ca54f4c044e
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34157723"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37869106"
 ---
 # <a name="azure-active-directory-v20-and-the-openid-connect-protocol"></a>Azure Active Directory версии 2.0 и протокол OpenID Connect
 OpenID Connect — это протокол аутентификации на основе OAuth 2.0, который можно использовать для безопасного входа пользователей в веб-приложение. С помощью реализации OpenID Connect в конечной точке версии 2.0 можно добавить в веб-приложения функции входа и доступа к API. В этой статье мы покажем, как это сделать независимо от используемого языка. Мы рассмотрим, как отправлять и получать сообщения HTTP, не используя ни одну из библиотек с открытым кодом Майкрософт.
@@ -85,7 +85,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 * Запрос должен содержать параметр `nonce` .
 
 > [!IMPORTANT]
-> Чтобы успешно запросить маркер идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должно быть включено **[неявное предоставление](active-directory-v2-protocols-implicit.md)**. Если эта функция не включена, будет возвращена ошибка `unsupported_response`: "The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'" (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
+> Чтобы успешно запросить токен идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должно быть включено **[неявное предоставление](active-directory-v2-protocols-implicit.md)**. Если эта функция не включена, будет возвращена ошибка `unsupported_response`: "The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'" (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
 
 Например: 
 

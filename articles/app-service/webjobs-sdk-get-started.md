@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: tdykstra
-ms.openlocfilehash: 5a3070582a32adeda45dff233782c3a971885c14
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 68377ffd53d5f2b99ddc08386529a40dda12e1b2
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37018461"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901557"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -46,7 +46,7 @@ public static void Run(
 
 ### <a name="versions-2x-and-3x"></a>Версии 2.x и 3.x
 
-Инструкции описывают создание проекта пакета SDK WebJobs версии 2.x с комментариями об отличиях от версии 3.x (в режиме предварительного просмотра). Основное отличие версии 3.x заключается в использовании .NET Core вместо .NET Framework.
+В инструкциях описано, как создать проект в пакете SDK WebJobs версии 2.x. Последняя версия пакета SDK WebJobs — 3.x, но она доступна только как предварительная версия, и в этой статье еще нет инструкций для этой версии. Основное отличие версии 3.x заключается в использовании .NET Core вместо .NET Framework.
 
 ### <a name="azure-functions"></a>Функции Azure
 
@@ -65,18 +65,13 @@ public static void Run(
 
 2. Выберите **Классический рабочий стол Windows > Консольное приложение (.NET Framework)**.
 
-   Чтобы создать проект версии 3.x, выберите **.NET Core > Консольное приложение (.NET Core)**.
-   
-   > [!NOTE]
-   > 3.x все еще находится в разработке и на этапе предварительной версии. Приведенные в этой статье инструкции по 3.x неполны; актуальные сведения см. в разделе проблем GitHub в нижней части страницы.
-
 3. Назовите проект *WebJobsSDKSample*, а затем нажмите кнопку **OK**.
 
    ![Диалоговое окно "Новый проект"](./media/webjobs-sdk-get-started/new-project.png)
 
 ## <a name="add-webjobs-nuget-package"></a>Добавьте пакет WebJobs NuGet
 
-1. Установите последнюю стабильную версию 2.x пакета NuGet `Microsoft.Azure.WebJobs`. (Для пакета SDK WebJobs 3.x выберите, соответственно, последнюю версию 3.x.)
+1. Установите последнюю стабильную версию 2.x пакета NuGet `Microsoft.Azure.WebJobs`.
  
    Команда **Консоли диспетчера пакетов** для версии 2.2.0:
 
@@ -353,7 +348,7 @@ public static void Run(
 
 ### <a name="add-application-insights-logging-provider"></a>Добавление поставщика журнала для Application Insights
 
-1. Установите последнюю стабильную версию 2.x пакета NuGet для поставщика журнала Application Insights: `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`. (Для пакета SDK WebJobs 3.x выберите последнюю версию 3.x.)
+1. Установите последнюю стабильную версию 2.x пакета NuGet для поставщика журнала Application Insights: `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`.
 
    Команда **Консоли диспетчера пакетов** для версии 2.2.0:
 
@@ -492,13 +487,13 @@ public static void Run(
 
    a. В **обозревателе сервера** разверните узел своей учетной записи хранения, щелкните правой кнопкой мыши кнопку **Большие двоичные объекты** и выберите команду **Создать контейнер BLOB-объектов**.
 
-   Б. В диалоговом окне **Создать контейнер BLOB-объектов** для имени контейнера введите *container*, а затем нажмите кнопку **OK**.
+   b. В диалоговом окне **Создать контейнер BLOB-объектов** для имени контейнера введите *container*, а затем нажмите кнопку **OK**.
 
 4. Отправьте файл *Program.cs* в контейнер больших двоичных объектов. (Этот файл используется здесь для примера; вы можете передать любой текстовый файл и создавать сообщение в очереди с его именем.)
 
    a. В **обозревателе сервера** дважды щелкните узел контейнера, который вы только что создали.
 
-   Б. В окне **Контейнер** нажмите кнопку **Отправить**.
+   b. В окне **Контейнер** нажмите кнопку **Отправить**.
 
    ![Кнопка отправки BLOB-объекта](./media/webjobs-sdk-get-started/blob-upload-button.png)
 

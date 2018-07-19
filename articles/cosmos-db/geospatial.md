@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/20/2017
 ms.author: sngun
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 893b985514f4c812da673a90fc40148e8ac9ce81
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 74824af6f17a6c1d2638c8604edd38ffa419d607
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34611373"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858125"
 ---
 # <a name="working-with-geospatial-and-geojson-location-data-in-azure-cosmos-db"></a>Работа с геопространственными данными и данными расположений GeoJSON в Azure Cosmos DB
 Эта статья содержит вводную информацию о геопространственной функциональности [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). После прочтения этой статьи вы сможете ответить на следующие вопросы:
@@ -100,7 +100,7 @@ Azure Cosmos DB поддерживает индексацию и запросы 
 Самой популярной системой координат на данный момент является [WGS-84](http://earth-info.nga.mil/GandG/wgs84/). WGS-84 используют устройства GPS и многие службы географических карт, в том числе Карты Google и API-интерфейсы Карт Bing. Azure Cosmos DB поддерживает индексирование и опрашивание геопространственных данных только с использованием WGS-84. 
 
 ## <a name="creating-documents-with-spatial-data"></a>Создание документов с пространственными данными
-При создании документов, содержащих значения GeoJSON, они автоматически индексируются с пространственным индексом в соответствии с политикой индексирования коллекции. При работе с пакетом SDK Azure Cosmos DB в динамически типизированных языках программирования, таких как Python или Node.js, необходимо создавать действительные объекты GeoJSON.
+При создании документов, содержащих значения GeoJSON, они автоматически индексируются с пространственным индексом в соответствии с политикой индексирования контейнера. При работе с пакетом SDK Azure Cosmos DB в динамически типизированных языках программирования, таких как Python или Node.js, необходимо создавать действительные объекты GeoJSON.
 
 **Создание документа с геопространственными данными в Node.js**
 

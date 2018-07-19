@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 03/06/2018
+ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: c818ff0df5cb1f1b3d20c726b20b30c418f53061
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 3204329dc7c9efe2b0ba0ae05d17bc93d51620b4
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35266967"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37923472"
 ---
 # <a name="support-matrix-for-hyper-v-replication-to-azure"></a>Матрица поддержки для репликации Hyper-V в Azure
 
@@ -33,7 +33,7 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 **Сервер** | **Требования** | **Дополнительные сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) | Windows Server 2016, Windows Server 2012 R2 с последними обновлениями. | При настройке сайта Hyper-V в службе Site Recovery использование разных узлов, работающих под управлением Windows Server 2016 и 2012 R2, не поддерживается.<br/><br/> Для виртуальных машин, размещенных на узле под управлением Windows Server 2016, восстановление в альтернативное расположение не поддерживается.
+Hyper-V (без Virtual Machine Manager) | Windows Server 2016 (включая установку основных серверных компонентов), Windows Server 2012 R2 с последними обновлениями | При настройке сайта Hyper-V в службе Site Recovery использование разных узлов, работающих под управлением Windows Server 2016 и 2012 R2, не поддерживается.<br/><br/> Для виртуальных машин, размещенных на узле под управлением Windows Server 2016, восстановление в альтернативное расположение не поддерживается.
 Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 | Если используется Virtual Machine Manager, все узлы Windows Server 2016 должны находиться под управлением Virtual Machine Manager 2016.<br/><br/> Сейчас не поддерживаются облака Virtual Machine Manager, в которых сочетаются узлы Hyper-V под управлением Windows Server 2016 и 2012 R2.<br/><br/> Также не поддерживаются среды, в которых существующий сервер VMM 2012 R2 обновляется до версии 2016.
 
 

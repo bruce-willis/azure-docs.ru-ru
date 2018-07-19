@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: ce20ae800887d8c9e865ecec46d0cf9a49fb7c3c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: cf9ee5339c53eb4f9c74f6b5f251a7963555d676
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34631631"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37928755"
 ---
 # <a name="connect-iot-devkit-az3166-to-azure-iot-hub-in-the-cloud"></a>Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке
 
@@ -274,7 +274,7 @@ ZIP-файл содержит приведенные ниже средства �
 
 ## <a name="test-the-project"></a>Тестирование проекта
 
-В VS Code выполните следующие действия, чтобы открыть и настроить средство Serial Monitor.
+В VS Code выполните указанные ниже действия, чтобы открыть и настроить средство Serial Monitor.
 
 1. Щелкните слово `COM[X]` в строке состояния, чтобы задать нужный COM-порт с `STMicroelectronics`: ![com-port](media/iot-hub-arduino-devkit-az3166-get-started/mini-solution/connect-iothub/com-port.png)
 
@@ -285,7 +285,7 @@ ZIP-файл содержит приведенные ниже средства �
 Пример приложения успешно выполняется, если отображаются следующие результаты.
 
 * Serial Monitor отображает те же сведения, что показаны на снимке экрана ниже.
-* Светодиодный индикатор на плате MXChip IoT DevKit мигает.
+* Светодиодный индикатор RGB на плате MXChip IoT DevKit мигает.
 
 ![Окончательный результат в VS Code](media/iot-hub-arduino-devkit-az3166-get-started/mini-solution/connect-iothub/result-serial-output.png)
 

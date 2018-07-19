@@ -1,5 +1,5 @@
 ---
-title: Копирование данных в базу данных Oracle и из нее с помощью фабрики данных | Документация Майкрософт
+title: Копирование данных в базу данных Oracle и из нее с помощью фабрики данных | Документы Майкрософт
 description: Узнайте, как копировать данные в локальную базу данных Oracle или из нее с помощью фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: fe1ca45b0f79781b2fa17bfb605df03d334cc8d1
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 10535e75a32a9f95e759340cf14d693f43639473
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046719"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37856847"
 ---
-# <a name="copy-data-tofrom-on-premises-oracle-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью фабрики данных Azure
+# <a name="copy-data-to-or-from-on-premises-oracle-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](data-factory-onprem-oracle-connector.md)
 > * [Версия 2 (текущая)](../connector-oracle.md)
@@ -100,9 +100,13 @@ ms.locfileid: "37046719"
 | Тип |Для свойства type необходимо задать значение **OnPremisesOracle** |Yes |
 | driverType | Укажите, какой драйвер следует использовать для копирования данных в базу данных Oracle и из нее. Допустимые значения: **Майкрософт** или **ODP** (по умолчанию). Дополнительные сведения о драйверах см. в разделе [Поддерживаемые версии и установка](#supported-versions-and-installation). | Нет  |
 | connectionString | В свойстве connectionString указываются сведения, необходимые для подключения к экземпляру базы данных Oracle. | Yes |
-| gatewayName | Имя шлюза, который будет использоваться для подключения к локальному серверу Oracle. |Yes |
+| gatewayName | Имя шлюза, который используется для подключения к локальному серверу Oracle |Yes |
 
 **Пример: использование драйвера Майкрософт**
+
+>[!TIP]
+>Если при использовании версии Oracle 8i возникает ошибка "ORA-01025: значение параметра UPI вне допустимого диапазона", добавьте `WireProtocolMode=1` в строку подключения и повторите попытку.
+
 ```json
 {
     "name": "OnPremisesOracleLinkedService",

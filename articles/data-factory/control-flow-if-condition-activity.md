@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: 0141694b87664a83872f7b270631d454f863d5a8
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 5077982bdef4d0e8fbf1ab485566909b4dc97a8a
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046172"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857384"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
 Действие условия If предоставляет те же функциональные возможности, что и инструкция if в языках программирования. Оно определяет набор действий, если условие принимает значение `true`, и другой набор действий, если условие принимает значение `false`. 
@@ -69,9 +69,9 @@ ms.locfileid: "37046172"
 -------- | ----------- | -------------- | --------
 name | Имя действия условия If. | Строка | Yes
 Тип | Для этого свойства необходимо задать значение **IfCondition**. | Строка | Yes
-expression | Выражение, для которого возвращается значение true или false. | Yes
-ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Yes
-ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Yes
+expression | Выражение, для которого возвращается значение true или false. | Выражение с типом результата "логический" | Yes
+ifTrueActivities | Набор действий, которые выполняются, если выражение получает значение `true`. | Массив, | Yes
+ifFalseActivities | Набор действий, которые выполняются, если выражение получает значение `false`. | Массив, | Yes
 
 ## <a name="example"></a>Пример
 В этом примере конвейер копирует данные из входной папки в выходную папку. Выходная папка определяется значением параметра конвейера routeSelection. Если значение routeSelection — true, данные копируются в outputPath1, а если значение routeSelection — false, данные копируются в outputPath2. 

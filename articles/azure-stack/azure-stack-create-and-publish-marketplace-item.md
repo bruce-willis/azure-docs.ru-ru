@@ -11,14 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
+ms.date: 06/14/2018
 ms.author: brenduns
 ms.reviewer: jeffgo
-ms.openlocfilehash: 5e0349d6bae9295e7a0ba9f366f84753ebd838c2
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.openlocfilehash: 101686149c0e3faaf442c58f4002cbbfe0e72eaa
+ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "35630026"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
 
@@ -35,6 +36,10 @@ ms.lasthandoff: 05/12/2018
        /Contoso.TodoList/Strings/
        /Contoso.TodoList/DeploymentTemplates/
 3. [Создайте шаблон Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md) или выберите шаблон на портале GitHub. Элемент Marketplace использует этот шаблон для создания ресурса.
+
+    > [!Note]  
+    > В шаблоне Azure Resource Manager нельзя жестко задавать секреты, например ключи продуктов, пароли или персональные данные клиентов. После публикации в коллекции JSON-файлы шаблонов доступны без проверки подлинности.  Храните все секреты в хранилище [Key Vault](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-keyvault-parameter) и обращайтесь к ним из шаблона.
+
 4. Проверьте, можно ли с помощью API-интерфейсов Microsoft Azure Stack развернуть ресурс из этого шаблона.
 5. Если шаблон использует образ виртуальной машины, [добавьте этот образ виртуальной машины в Azure Stack](azure-stack-add-vm-image.md).
 6. Сохраните шаблон Azure Resource Manager в папке **/Contoso.TodoList/DeploymentTemplates/**.
@@ -72,9 +77,9 @@ ms.lasthandoff: 05/12/2018
 ## <a name="publish-a-marketplace-item"></a>Публикация элемента Marketplace
 1. Передайте созданный элемент Marketplace (файл AZPKG) в хранилище больших двоичных объектов Azure с помощью PowerShell или обозревателя службы хранилища Azure. Вы можете использовать локальное хранилище Azure Stack или службу хранилища Azure. (Это временное расположение для файла пакета.) Убедитесь, что используемый большой двоичный объект является общедоступным.
 2. На клиентской виртуальной машине в среде Microsoft Azure Stack проверьте, настроены ли учетные данные администратора службы для сеанса PowerShell. Инструкции по аутентификации PowerShell в Azure Stack можно найти в статье [Deploy templates in Azure Stack using PowerShell](user/azure-stack-deploy-template-powershell.md) (Развертывание шаблонов в Azure Stack с помощью PowerShell).
-3. Используйте командлет PowerShell **Add-AzureRMGalleryItem**, чтобы опубликовать элемент Marketplace в Azure Stack. Например: 
+3. При использовании [PowerShell 1.3.0]( azure-stack-powershell-install.md) или более поздней версии вы можете опубликовать элемент Marketplace в Azure Stack с помощью командлета PowerShell **Add-AzsGalleryItem**. В версиях до PowerShell 1.3.0 вместо командлета **Add-AzsGalleryItem** следует использовать **Add-AzureRMGalleryitem**.  Например, при использовании PowerShell 1.3.0 или более поздней версии:
    
-       Add-AzureRMGalleryItem -GalleryItemUri `
+       Add-AzsGalleryItem -GalleryItemUri `
        https://sample.blob.core.windows.net/gallerypackages/Microsoft.SimpleTemplate.1.0.0.azpkg –Verbose
    
    | Параметр | ОПИСАНИЕ |
@@ -89,6 +94,12 @@ ms.lasthandoff: 05/12/2018
    > 
    > 
 5. Поздравляем, ваш элемент Marketplace успешно сохранен в Azure Stack Marketplace. Теперь его можно удалить из хранилища больших двоичных объектов.
+    > [!Caution]  
+    > Все артефакты коллекции по умолчанию и пользовательские артефакты коллекции теперь доступны без проверки подлинности по следующим URL-адресам:  
+`https://adminportal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`  
+`https://portal.[Region].[external FQDN]:30015/artifact/20161101/[Template Name]/DeploymentTemplates/Template.json`  
+`https://systemgallery.blob.[Region].[external FQDN]/dev20161101-microsoft-windowsazure-gallery/[Template Name]/UiDefinition.json`
+
 6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Пример:
    
         Remove-AzureRMGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  –Verbose

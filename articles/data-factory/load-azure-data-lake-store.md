@@ -1,6 +1,6 @@
 ---
-title: Загрузка данных в Azure Data Lake Store c помощью службы "Фабрика данных Azure" | Документация Майкрософт
-description: Копирование данных в Azure Data Lake Store с помощью фабрики данных Azure
+title: Загрузка данных в Azure Data Lake Storage 1-го поколения c помощью службы "Фабрика данных Azure" | Документы Майкрософт
+description: Копирование данных в Azure Data Lake Storage 1-го поколения с помощью службы "Фабрика данных Azure"
 services: data-factory
 documentationcenter: ''
 author: linda33wj
@@ -11,16 +11,16 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: jingwang
-ms.openlocfilehash: 25df96664f6b5fe9da26bee43bc726e05504e5b8
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 7cdc4f0ef436fbd7ea3bdf1431b08be3b840290f
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37055517"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37857207"
 ---
-# <a name="load-data-into-azure-data-lake-store-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Store c помощью службы "Фабрика данных Azure"
+# <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 1-го поколения c помощью службы "Фабрика данных Azure"
 
-[Azure Data Lake Store](../data-lake-store/data-lake-store-overview.md) — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Azure Data Lake позволяет собирать данные любого размера, типа и с любой скоростью приема. Данные эксплуатационной и исследовательской аналитики хранятся в одном месте.
+[Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-overview.md) (ранее известный как Azure Data Lake Store) — это крупномасштабный репозиторий корпоративного уровня для рабочих нагрузок анализа больших данных. Azure Data Lake позволяет собирать данные любого размера, типа и с любой скоростью приема. Данные эксплуатационной и исследовательской аналитики хранятся в одном месте.
 
 Фабрика данных Azure — это полностью управляемая облачная служба интеграции данных. С ее помощью можно заполнять озера данными из имеющейся системы и сократить время создания решений аналитики.
 
@@ -53,7 +53,7 @@ ms.locfileid: "37055517"
     * **Имя.** Введите глобальное уникальное имя фабрики данных Azure. Если отобразится сообщение об ошибке "Имя \"LoadADLSDemo\" фабрики данных недоступно", введите другое имя. Например, вы можете использовать имя _**ваше_имя**_**ADFTutorialDataFactory**. Попробуйте создать фабрику данных еще раз. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
     * **Подписка.** Выберите подписку Azure, в рамках которой нужно создать фабрику данных. 
     * **Группа ресурсов.** Выберите имеющуюся группу ресурсов из раскрывающегося списка или щелкните параметр **Create new** (Создать) и введите имя группы ресурсов. Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
-    * **Версия.** Выберите **V2 (предварительная версия)**.
+    * **Версия.** Выберите значение **V2**.
     * **Расположение.** Выберите расположение фабрики данных. В раскрывающемся списке отображаются только поддерживаемые расположения. Хранилища данных, используемые в фабрике данных, могут находиться в других расположениях и регионах. К этим хранилищам относятся Azure Data Lake Store, служба хранилища Azure, база данных SQL Azure и т. д.
 
 3. Нажмите кнопку **Создать**.
@@ -71,13 +71,13 @@ ms.locfileid: "37055517"
 2. На странице **Properties** (Свойства) укажите **CopyFromAmazonS3ToADLS** в поле **Task name** (Имя задачи) и нажмите кнопку **Далее**.
 
     ![Страница свойств](./media/load-data-into-azure-data-lake-store/copy-data-tool-properties-page.png)
-3. На странице **Source data store** (Исходное хранилище данных) щелкните **Create new connection** (Создать подключение).
+3. На странице **Исходное хранилище данных** щелкните **Создать новое подключение**.
 
     ![Страница исходного хранилища данных](./media/load-data-into-azure-data-lake-store/source-data-store-page.png)
     
     Выберите **Amazon S3**, а затем нажмите кнопку **Continue** (Продолжить).
     
-    ![Страница "Исходное хранилище данных s3"](./media/load-data-into-azure-data-lake-store/source-data-store-page-s3.png)
+    ![Страница "Исходное хранилище данных S3"](./media/load-data-into-azure-data-lake-store/source-data-store-page-s3.png)
     
 4. На странице **Specify Amazon S3 connection** (Указать подключение Amazon S3) выполните следующие действия: 
    1. Укажите **идентификатор ключа доступа**.
