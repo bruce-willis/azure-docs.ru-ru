@@ -9,18 +9,18 @@ ms.author: gwallace
 ms.date: 05/08/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 4b9bfc0df01dd8fc8a6a1b7aed5ade466164a82f
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 4c01a63867ca3df85b4e7203c93855b43e9cd04c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930058"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044855"
 ---
 # <a name="runbook-execution-in-azure-automation"></a>Выполнение модуля Runbook в службе автоматизации Azure
 
 При запуске модуля Runbook в службе автоматизации Azure создается задание. Задание — это одиночный выполняемый экземпляр модуля Runbook. Рабочий процесс службы автоматизации Azure назначается для выполнения каждого задания. Пока рабочие процессы используются несколькими учетными записями Azure, задания от различных учетных записей службы автоматизации изолируются друг от друга. Вы не контролируете, какая рабочая роль обслуживает запрос для вашего задания. В одном модуле Runbook могут иметься несколько запущенных заданий одновременно. Можно повторно использовать среду выполнения для заданий из одной учетной записи службы автоматизации. При просмотре списка модулей Runbook на портале Azure в нем отобразится список состояний всех заданий для каждого модуля Runbook. Можно просматривать список заданий для каждого модуля Runbook и отслеживать состояние каждого из них. Описание различных состояний заданий см. в разделе [Состояния заданий](#job-statuses).
 
-[!INCLUDE [gdpr-dsr-and-stp-note.md](../../includes/gdpr-dsr-and-stp-note.md)]
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 
 На следующей схеме показан жизненный цикл задания Runbook для [графических модулей Runbook](automation-runbook-types.md#graphical-runbooks) и [модулей Runbook рабочих процессов PowerShell](automation-runbook-types.md#powershell-workflow-runbooks).
 

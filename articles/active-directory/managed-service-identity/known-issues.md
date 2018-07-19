@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 12/12/2017
 ms.author: daveba
-ms.openlocfilehash: 05096050dfc29aebd2859b298eef884dcd9a1111
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: c48d03b6e8a3d850d02d2c36c35915f8214b00e8
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37906220"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035818"
 ---
 # <a name="faqs-and-known-issues-with-managed-service-identity-msi-for-azure-active-directory"></a>Вопросы и ответы, а также известные проблемы с управляемым удостоверением службы (MSI) для Azure Active Directory
 
@@ -85,7 +85,7 @@ Set-AzureRmVMExtension -Name <extension name>  -Type <extension Type>  -Location
 
 Если на виртуальной машине включено расширение "Управляемое удостоверение службы", отображается следующая ошибка при попытке использовать функцию "Скрипт автоматизации" для виртуальной машины или ее группы ресурсов:
 
-![Ошибка экспорта скрипта автоматизации MSI](../media/msi-known-issues/automation-script-export-error.png)
+![Ошибка экспорта скрипта автоматизации MSI](../managed-service-identity/media/msi-known-issues/automation-script-export-error.png)
 
 Расширение виртуальной машины "Управляемое удостоверение службы" в настоящее время не поддерживает возможность экспорта его схемы в шаблон группы ресурсов. Поэтому созданный шаблон не содержит параметры конфигурации для включения расширения "Управляемое удостоверение службы" в ресурсе. Эти разделы можно добавить вручную. Инструкции и примеры см. в статье [Настройка управляемого удостоверения службы (MSI) на виртуальной машине Azure с помощью шаблона](qs-configure-template-windows-vm.md).
 

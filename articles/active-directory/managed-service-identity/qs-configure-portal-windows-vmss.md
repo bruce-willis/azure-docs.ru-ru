@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
 ms.author: daveba
-ms.openlocfilehash: 1ba9f827abeb0c0cf6430089e1fb504288550737
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 8779600f2c85a8bb309f7b2a8874608170de8877
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37900469"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035247"
 ---
 # <a name="configure-a-virtual-machine-scale-set-managed-service-identity-msi-using-the-azure-portal"></a>Настройка управляемого удостоверения службы (MSI) в масштабируемом наборе виртуальных машин с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "37900469"
 > [!NOTE]
 > Сейчас операции с пользовательскими удостоверениями на портале Azure не поддерживаются. Загляните сюда позже, чтобы проверить наличие новой информации.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md).
@@ -56,7 +56,7 @@ ms.locfileid: "37900469"
 
 3. Включите системное удостоверение на виртуальной машине, выбрав "Да" в разделе "Управляемое удостоверение службы", а затем щелкните **Сохранить**. Эта операция может занять более 60 секунд.
 
-   [![Снимок экрана страницы "Конфигурация"](../media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png)](../media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png#lightbox)  
+   [![Снимок экрана страницы "Конфигурация"](../managed-service-identity/media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png)](../managed-service-identity/media/msi-qs-configure-portal-windows-vmss/create-windows-vmss-portal-configuration-blade.png#lightbox)  
 
 ## <a name="remove-managed-service-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление управляемого удостоверения службы из масштабируемого набора виртуальных машин Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "37900469"
 
 3. Отключите системное удостоверение на виртуальной машине, выбрав "Нет" в разделе "Управляемое удостоверение службы", а затем щелкните "Сохранить". Эта операция может занять более 60 секунд.
 
-   ![Снимок экрана страницы "Конфигурация"](../media/msi-qs-configure-portal-windows-vmss/disable-windows-vmss-portal-configuration-blade.png)  
+   ![Снимок экрана страницы "Конфигурация"](../managed-service-identity/media/msi-qs-configure-portal-windows-vmss/disable-windows-vmss-portal-configuration-blade.png)  
 
 ## <a name="related-content"></a>Похожий контент
 
