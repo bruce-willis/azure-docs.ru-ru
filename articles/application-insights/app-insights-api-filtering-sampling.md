@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
-ms.openlocfilehash: a8905f4f14b5f4f78e9f3113ec5a655b12599609
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: d46ff5563df1423e3c01ba945b328b748b5979b4
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294103"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091577"
 ---
 # <a name="filtering-and-preprocessing-telemetry-in-the-application-insights-sdk"></a>Фильтрация и предварительная обработка данных телеметрии в пакете SDK для Application Insights
 
@@ -54,7 +54,7 @@ ms.locfileid: "35294103"
 
     Обратите внимание, что обработчики данных телеметрии создают цепь обработки. При создании экземпляра обработчика данных телеметрии ссылка передается в следующий обработчик в цепочке. Когда точка данных телеметрии передается в метод Process, он выполняет свою работу и затем вызывает следующий обработчик данных телеметрии в цепочке.
 
-    ``` C#
+    ```csharp
 
     using Microsoft.ApplicationInsights.Channel;
     using Microsoft.ApplicationInsights.Extensibility;
@@ -101,7 +101,7 @@ ms.locfileid: "35294103"
     ```
 1. В файл ApplicationInsights.config вставьте следующее:
 
-```XML
+```xml
 
     <TelemetryProcessors>
       <Add Type="WebApplication9.SuccessfulDependencyFilter, WebApplication9">
@@ -141,7 +141,7 @@ ms.locfileid: "35294103"
 #### <a name="synthetic-requests"></a>Искусственные запросы
 Вы можете отфильтровывать программы-роботы и веб-тесты. Хотя обозреватель метрик позволяет отфильтровывать искусственные источники, этот вариант сокращает трафик, фильтруя источники в пакете SDK.
 
-``` C#
+```csharp
 
     public void Process(ITelemetry item)
     {
@@ -182,7 +182,7 @@ public void Process(ITelemetry item)
 >
 >
 
-``` C#
+```csharp
 
 public void Process(ITelemetry item)
 {
@@ -255,6 +255,7 @@ public void Process(ITelemetry item)
 
 В ApplicationInsights.config.:
 
+```xml
     <ApplicationInsights>
       <TelemetryInitializers>
         <!-- Fully qualified type name, assembly name: -->
@@ -262,6 +263,7 @@ public void Process(ITelemetry item)
         ...
       </TelemetryInitializers>
     </ApplicationInsights>
+```
 
 *Другой способ* — создать экземпляр инициализатора в коде, например в Global.aspx.cs.
 

@@ -165,7 +165,7 @@
     - name: Центр разработчика IoT Azure
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Azure IoT Edge для VS Code
       href: 'https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge'
     - name: Набор средств Интернета вещей Azure для VS Code

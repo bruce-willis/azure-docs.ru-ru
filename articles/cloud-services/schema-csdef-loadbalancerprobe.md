@@ -10,15 +10,15 @@ ms.tgt_pltfrm: ''
 ms.topic: reference
 ms.assetid: 113374a8-8072-4994-9d99-de391a91e6ea
 caps.latest.revision: 14
-author: thraka
-ms.author: adegeo
+author: jpconnock
+ms.author: jeconnoc
 manager: timlt
-ms.openlocfilehash: 6cd56c9b04fc4657cedf845e7f111005a8dee183
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: f7b0ba3b4797149798037dee0188850eff6baf1d
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360059"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39003294"
 ---
 # <a name="azure-cloud-services-definition-loadbalancerprobe-schema"></a>Схема LoadBalancerProbe определения облачных служб Azure
 Проверка подсистемы балансировки нагрузки — пользовательский процесс проверки работоспособности конечных точек UDP и конечных точек в экземплярах ролей. `LoadBalancerProbe` — не изолированный элемент. Он объединяется с веб- или рабочей ролью в файле определения службы. Объект `LoadBalancerProbe` могут использовать несколько ролей.

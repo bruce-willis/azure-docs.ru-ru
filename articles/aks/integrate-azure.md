@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: overview
 ms.date: 12/05/2017
 ms.author: seozerca
-ms.openlocfilehash: 471b53be4200ff728214876dd187c3c4e427c947
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: cebd98ec31ae6089c20952924c39ee240cb5d6a2
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37342886"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39002704"
 ---
 # <a name="integrate-with-azure-managed-services-using-open-service-broker-for-azure-osba"></a>Интеграция со службами под управлением Azure с помощью открытого компонента Service Broker для Azure (OSBA)
 
@@ -53,7 +53,7 @@ helm install svc-cat/catalog --name catalog --namespace catalog --set controller
 Если в кластере не включено управление доступом на основе ролей, выполните следующую команду.
 
 ```azurecli-interactive
-helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false --set apiserver.auth.enabled=false --set controllerManager.healthcheck.enabled=false
+helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false --set controllerManager.healthcheck.enabled=false
 ```
 
 После запуска чарта Helm убедитесь, что в `servicecatalog` появляются выходные данные следующей команды.
@@ -187,7 +187,7 @@ helm install azure/wordpress --name wordpress --namespace wordpress --set resour
 kubectl get secrets -n wordpress -o yaml
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Следуя указаниям в этой статье, вы развернули каталог услуг в кластере службы Azure Kubernetes (AKS). Вы использовали открытый компонент Service Broker для Azure, чтобы развернуть установку WordPress, которая использует службы под управлением Azure (в данном случае — базу данных Azure для MySQL).
 

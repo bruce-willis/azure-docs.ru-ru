@@ -1,19 +1,19 @@
 ---
 title: Покрытие для геокодирования в службе "Карты Azure" | Документация Майкрософт
 description: Сведения о покрытии для геокодирования в службе "Карты Azure"
-author: kgremban
-ms.author: kgremban
+author: dsk-2015
+ms.author: dkshir
 ms.date: 05/07/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 6602453abd02bf91b135980b4d2c7f99ba60c236
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d7c1eaa26edef830ca156eef943fcb256d737d77
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34600295"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989883"
 ---
 # <a name="azure-maps-geocoding-coverage"></a>Покрытие для геокодирования в службе "Карты Azure"
 

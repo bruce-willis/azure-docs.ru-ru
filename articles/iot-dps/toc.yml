@@ -176,7 +176,7 @@
     - name: Запросы данных клиентов
       href: iot-dps-customer-data-requests.md
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Обозреватель устройств
       href: 'https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer'
     - name: Средство iothub-diagnostics

@@ -243,8 +243,8 @@
       maintainContext: true
     - name: Партнерские решения Cortana Intelligence
       items:
-        - name: Коллекция Cortana Intelligence
-          href: 'https://gallery.cortanaintelligence.com'
+        - name: Коллекция решений ИИ Azure
+          href: 'https://gallery.azure.ai'
         - name: Руководство по публикации Cortana Intelligence
           href: cortana-intelligence-appsource-publishing-guide.md
         - name: Средство оценки решений Cortana Intelligence

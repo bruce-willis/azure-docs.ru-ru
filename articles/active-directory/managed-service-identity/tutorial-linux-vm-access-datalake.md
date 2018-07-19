@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 92bd7190832da6ee9da7d1679b9f27b66a15e3a4
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: ce38dabbe9aa69f7c54bb49888ad83e01a7c9522
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904311"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004886"
 ---
 # <a name="tutorial-use-managed-service-identity-for-a-linux-vm-to-access-azure-data-lake-store"></a>Руководство. Получение доступа к Azure Data Lake Store с помощью управляемого удостоверения службы виртуальной машины Linux
 
@@ -27,14 +27,14 @@ ms.locfileid: "37904311"
 
 В этом руководстве описывается получение доступа к Azure Data Lake Store с помощью управляемого удостоверения службы (MSI) виртуальной машины Linux. Azure автоматически управляет удостоверениями, созданными с помощью MSI. Это удостоверение можно использовать для аутентификации в службах, которые поддерживают аутентификацию Azure Active Directory (Azure AD), не вставляя учетные данные в код. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Активирование удостоверения MSI на виртуальной машине Linux. 
 > * Предоставление виртуальной машине доступа к Azure Data Lake Store.
 > * Получение маркера доступа с использованием удостоверения виртуальной машины и получение доступа к Azure Data Lake Store с его помощью.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "37904311"
 2. Выберите **Вычисления**, а затем — **Сервер Ubuntu 16.04 LTS**.
 3. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH** или **Пароль**. Созданные учетные данные позволят вам выполнить вход на виртуальную машину.
 
-   ![Область основных сведений для создания виртуальной машины](../media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
+   ![Область основных сведений для создания виртуальной машины](media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
 
 4. В списке **Подписка** выберите подписку для виртуальной машины.
 5. Чтобы выбрать новую группу ресурсов, в которой вы хотите создать виртуальную машину, щелкните **Группа ресурсов** > **Создать**. По завершении нажмите кнопку **ОК**.
@@ -65,7 +65,7 @@ MSI на виртуальной машине позволяет получить
 1. В качестве **виртуальной машины** выберите ту, на которой нужно активировать MSI.
 2. В левой области выберите раздел **Конфигурация**.
 3. Появится страница **Управляемое удостоверение службы**. Чтобы зарегистрировать и активировать удостоверение MSI, выберите **Да**. Если необходимо отключить его, выберите **Нет**.
-   ![Выбор "Зарегистрировать в Azure Active Directory"](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
+   ![Выбор "Зарегистрировать в Azure Active Directory"](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 4. Щелкните **Сохранить**.
 
 ## <a name="grant-your-vm-access-to-azure-data-lake-store"></a>Предоставление виртуальной машине доступа к Azure Data Lake Store

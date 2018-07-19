@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
-ms.date: 04/01/2018
+ms.topic: conceptual
+ms.date: 07/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: 9eb7f74a365b51431aabd78de3c6d36c3c969bb6
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 3a7d657a21b414d51375f912513ae045adec6d6e
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992382"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
@@ -33,7 +34,7 @@ Azure Application Insights позволяет отслеживать досту�
 
 ```HTML
 <!-- 
-To collect end-user usage analytics about your application, 
+To collect user behavior analytics tools about your application, 
 insert the following script into each page you want to track.
 Place this code immediately before the closing </head> tag,
 and before any other scripts. Your first data will appear 
@@ -83,18 +84,6 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 ![](./media/app-insights-sharepoint/09-search.png)
 
 Нажмите кнопку «Обновить» через несколько секунд, если ожидаете дополнительные данные.
-
-В колонке "Обзор" выберите **Аналитика использования** , чтобы просмотреть диаграммы пользователей, сеансов и просмотров страницы:
-
-![](./media/app-insights-sharepoint/06-usage.png)
-
-Щелкните любую диаграмму для просмотра дополнительных сведений, например "Просмотры страницы":
-
-![](./media/app-insights-sharepoint/07-pages.png)
-
-или "Пользователей":
-
-![](./media/app-insights-sharepoint/08-users.png)
 
 ## <a name="capturing-user-id"></a>Запись идентификатора пользователя
 Фрагмент кода стандартной веб-страницы не записывает идентификатор пользователя из SharePoint, однако эту возможность можно реализовать, внеся небольшое изменение.

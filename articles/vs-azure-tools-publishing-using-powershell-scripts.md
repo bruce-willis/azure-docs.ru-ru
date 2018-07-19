@@ -11,12 +11,12 @@ ms.workload: azure
 ms.topic: conceptual
 ms.date: 11/11/2016
 ms.author: ghogen
-ms.openlocfilehash: 866575a483e705e1c972a0b56d98f26e9cf0c631
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 872ca1dcd48c953180227580d805838c94ea232d
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31798127"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115550"
 ---
 # <a name="using-windows-powershell-scripts-to-publish-to-dev-and-test-environments"></a>Использование скриптов Windows PowerShell для публикации в средах разработки и тестирования
 
@@ -24,7 +24,7 @@ ms.locfileid: "31798127"
 
 С помощью этих сценариев вы можете подготавливать временные пользовательские версии сайта. Эти версии также называют средами разработки и тестирования. Например, на виртуальной машине Azure или в промежуточном слоте веб-сайта можно настроить определенную версию веб-сайта и использовать ее для проведения различных тестов, воспроизведения ошибки, проверки исправления ошибки или исследования предлагаемого изменения. Вы также можете создать специальную среду для демонстраций или презентаций. Создав сценарий публикации проекта, вы можете с его помощью воссоздавать идентичные среды или использовать его в своей сборке веб-приложения для создания отдельной среды тестирования.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Пакет Azure SDK, начиная с версии 2.3. Ознакомьтесь со страницей [скачиваемых компонентов Visual Studio](http://go.microsoft.com/fwlink/?LinkID=624384). (Пакет Azure SDK не нужен для создания сценариев для веб-проектов. Он предназначен для веб-проектов, а не веб-ролей облачных служб.)
 * Azure PowerShell, начиная с версии 0.7.4. Ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview).
@@ -36,7 +36,7 @@ ms.locfileid: "31798127"
 
 ## <a name="generating-the-publish-scripts"></a>Создание сценариев публикации
 
-Чтобы создать сценарии публикации для виртуальной машины, на которой будет размещен веб-сайт, при создании проекта воспользуйтесь [этими инструкциями](virtual-machines/windows/classic/web-app-visual-studio.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json). Можно также [создать сценарии публикации для веб-приложений в службе приложений Azure](app-service/app-service-web-get-started-dotnet.md).
+Чтобы создать сценарии публикации для виртуальной машины, на которой будет размещен веб-сайт, при создании проекта воспользуйтесь [этими инструкциями](virtual-machines/windows/classic/web-app-visual-studio.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json). Можно также [создать сценарии публикации для веб-приложений в службе приложений Azure](app-service/scripts/app-service-powershell-deploy-github.md).
 
 ## <a name="scripts-that-visual-studio-generates"></a>Сценарии, создаваемые в Visual Studio
 

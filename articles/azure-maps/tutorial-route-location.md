@@ -1,31 +1,31 @@
 ---
 title: Поиск маршрута с помощью службы "Карты Azure" | Документация Майкрософт
 description: Поиск маршрута к точке интереса с помощью службы "Карты Azure"
-author: kgremban
-ms.author: kgremban
+author: dsk-2015
+ms.author: dkshir
 ms.date: 05/07/2018
 ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: fc5dfafec303a439d8a1092771fd2247ab305172
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 09828fade464c3b7b5f6eedaa16513e9eab49467
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34601349"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989648"
 ---
 # <a name="route-to-a-point-of-interest-using-azure-maps"></a>Поиск маршрута к точке интереса с помощью службы "Карты Azure"
 
-В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и пакет SDK службы построения маршрутов, чтобы найти маршрут к объекту. Из этого руководства вы узнаете, как выполнять такие задачи:
+В этом руководстве показано, как использовать учетную запись службы "Карты Azure" и пакет SDK службы построения маршрутов, чтобы найти маршрут к объекту. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание веб-страницы с помощью API элементов управления картой;
 > * Настройка координат адреса.
 > * Отправка запроса к службе построения маршрутов поиска маршрута к объекту.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, выполните действия из предыдущего руководства, чтобы [создать учетную запись службы "Карты Azure"](./tutorial-search-location.md#createaccount) и [получить для нее ключ подписки](./tutorial-search-location.md#getkey). 
 

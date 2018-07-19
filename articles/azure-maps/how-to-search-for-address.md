@@ -1,25 +1,25 @@
 ---
 title: Как найти адрес с помощью службы поиска по Картам Azure | Документация Майкрософт
 description: Узнайте, как найти адрес с помощью службы поиска по Картам Azure
-author: kgremban
-ms.author: kgremban
+author: dsk-2015
+ms.author: dkshir
 ms.date: 05/07/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 1acb95af7b62641c371627d6250067f9c2eac99c
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 8b7d2119e1eef8532c30b0a45ae2684493462277
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36323639"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38990019"
 ---
 # <a name="how-to-find-an-address-using-the-azure-maps-search-service"></a>Как найти адрес с помощью службы поиска по Картам Azure
 
 Служба поиска по Картам Azure — это набор API-интерфейсов на основе REST для разработчиков. Она позволяет выполнять поиск адресов, мест, достопримечательностей, деловых справочников и других географических данных. Служба присваивает значения широты и долготы определенному адресу, пересекающей улице, географической особенности или достопримечательности. Значения широты и долготы, возвращенные службой поиска, можно использовать в качестве параметров в других службах "Карты", например службах отслеживания маршрутов и движения транспорта.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнять вызовы к API службы "Карты", вам потребуется учетная запись и ключ службы "Карты". Дополнительные сведения о создании учетной записи и получении ключа см. в статье об [управлении ключами и учетной записью службы "Карты Azure"](how-to-manage-account-keys.md).
 

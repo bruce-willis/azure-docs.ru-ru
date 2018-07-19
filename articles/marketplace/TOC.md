@@ -28,14 +28,6 @@
 ### Поддержка  
 #### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
-### Руководства по публикации  
-#### [Консультационные услуги в Azure Marketplace](consulting-services.md)  
-#### [Техническое руководство по публикации SaaS-приложений в Microsoft Azure Marketplace](marketplace-saas-applications-technical-publishing-guide.md) 
-#### [Предоставление пробной версии Microsoft Azure Marketplace с помощью Azure Active Directory](./enable-trial-using-azure-ad.md)  
-
-### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
-#### [Предпочтительные решения](./preferred-solutions.md) 
-
 ## [Облачный портал для партнеров](./cloud-partner-portal/cloud-partner-portal-what-is-the-cloud-partner-portal.md)  
 
 ## Ресурсы  

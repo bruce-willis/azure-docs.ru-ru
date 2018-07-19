@@ -8,14 +8,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: develop apps
 ms.topic: conceptual
-ms.date: 04/01/2018
-ms.author: daleche
-ms.openlocfilehash: 37cd099e6efe44ee70dc1799ef4b2b4377c571d5
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.date: 07/11/2018
+ms.author: ninarn
+ms.openlocfilehash: 62b5f7470491027dbf5a1c60ee478268e969d1a8
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34647267"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113500"
 ---
 # <a name="troubleshoot-diagnose-and-prevent-sql-connection-errors-and-transient-errors-for-sql-database"></a>Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL
 Эта статья содержит информацию о предотвращении, диагностике и устранении ошибок подключения и временных ошибок, которые происходят в клиентском приложении во время взаимодействия с базой данных SQL Azure. Узнайте, как настроить логику повторных попыток, создать строку подключения и настроить другие параметры подключения.
@@ -308,8 +308,8 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 > [!NOTE]
 > Исходный код для EntLib60 доступен для открытого скачивания в [Центре загрузки](http://go.microsoft.com/fwlink/p/?LinkID=290898). Корпорация Майкрософт не планирует обновлять функции и менять характер обслуживания библиотеки EntLib.
-> 
-> 
+>
+>
 
 <a id="entlib60-classes-for-transient-errors-and-retry" name="entlib60-classes-for-transient-errors-and-retry"></a>
 
@@ -319,12 +319,12 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 В пространстве имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling**:
 
 * **RetryPolicy** ;
-  
+
   * **ExecuteAction** ;
 * **ExponentialBackoff** ;
 * **SqlDatabaseTransientErrorDetectionStrategy** ;
 * **ReliableSqlConnection** ;
-  
+
   * **ExecuteCommand** ;
 
 В пространстве имен **Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.TestSupport**:
@@ -342,7 +342,7 @@ Enterprise Library 6 (EntLib60) — это платформа классов .NE
 
 ### <a name="entlib60-the-logging-block"></a>EntLib60: блок ведения журнала
 * Блок ведения журнала — это очень гибкое и настраиваемое решение, которое позволяет выполнять такие действия:
-  
+
   * создавать и хранить сообщения журнала в разных расположениях;
   * классифицировать и фильтровать сообщения;
   * собирать контекстную информацию, полезную для отладки, трассировки, аудита и выполнения общих требований к ведению журнала.
@@ -434,4 +434,3 @@ public bool IsTransient(Exception ex)
 [step-4-connect-resiliently-to-sql-with-ado-net-a78n]: https://docs.microsoft.com/sql/connect/ado-net/step-4-connect-resiliently-to-sql-with-ado-net
 
 [step-4-connect-resiliently-to-sql-with-php-p42h]: https://docs.microsoft.com/sql/connect/php/step-4-connect-resiliently-to-sql-with-php
-

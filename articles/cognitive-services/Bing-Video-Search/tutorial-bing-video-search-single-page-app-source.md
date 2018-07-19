@@ -9,18 +9,18 @@ ms.component: bing-video-search
 ms.topic: article
 ms.date: 11/01/2017
 ms.author: v-gedod
-ms.openlocfilehash: c0842e53cbc297c1980a9d08733d838def073835
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: bed17c1df2b7c8dff9f874e43be8d67900fd7836
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380208"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39112466"
 ---
 # <a name="tutorial-single-page-video-search-app"></a>Руководство по одностраничным приложениям для поиска видео
 
 Здесь приводится полный исходный код, описанный в [руководстве по одностраничным приложениям](tutorial-bing-video-search-single-page-app.md), для службы "Поиск видео Bing". Чтобы запустить приложение, скопируйте исходный код, вставьте его в Блокнот или другой текстовый редактор и сохраните как `bing.html`. Затем откройте сохраненный файл в Microsoft Edge или другом популярном браузере.
 
-````html
+```html
 <!DOCTYPE html>
 <!-- saved from url=(0014)about:internet -->
 <!-- the above Mark of the Web lets IE run this page in the Internet security zone,
@@ -615,3 +615,4 @@ function doPrevSearchPage() {
 
 </body>
 </html>
+```

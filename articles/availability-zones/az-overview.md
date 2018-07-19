@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 06/27/2018
 ms.author: iainfou
 ms.custom: mvc I am an ITPro and application developer, and I want to protect (use Availability Zones) my applications and data against data center failure (to build Highly Available applications).
-ms.openlocfilehash: 6a4dcc2cd3b196221b881783c79ddb0adaa6f38b
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: f2890338f69e8ad5e97077dbb227f557b34f1a4b
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37063669"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090291"
 ---
 # <a name="what-are-availability-zones-in-azure"></a>Что такое Зоны доступности в Azure?
 Зоны доступности являются предложением, обеспечивающим высокий уровень доступности и защищающим приложения и данные от сбоев центров обработки данных. Зоны доступности — уникальные физические расположения в пределах одного региона Azure. Каждая зона состоит из одного или нескольких центров обработки данных, оснащенных независимыми системами электроснабжения, охлаждения и сетевого взаимодействия. Чтобы обеспечить отказоустойчивость, во всех включенных регионах используются минимум три отдельные зоны. Физическое разделение зон доступности в пределах региона защищает приложения и данные от сбоев центров обработки данных. Избыточные в пределах зоны службы реплицируют приложения и данные в зонах доступности, чтобы обеспечить защиту от возникновения единых точек отказа. Благодаря зонам доступности Azure предлагает наилучшее в отрасли соглашение об уровне обслуживания с гарантией времени непрерывной работы 99,99 % для виртуальных машин. В полном [соглашении об уровне обслуживания Azure](https://azure.microsoft.com/support/legal/sla/virtual-machines/) поясняется гарантированная доступность Azure в целом.
@@ -74,7 +74,7 @@ ms.locfileid: "37063669"
 - [Распределение нагрузки виртуальных машин по зонам с помощью службы Load Balancer уровня "Стандартный" с избыточным в пределах зоны внешним интерфейсом](../load-balancer/load-balancer-standard-public-zone-redundant-cli.md).
 - [Распределение нагрузки виртуальных машин в пределах зоны с помощью Load Balancer уровня "Стандартный" с зональным внешним интерфейсом](../load-balancer/load-balancer-standard-public-zonal-cli.md).
 - [Хранилище, избыточное в пределах зоны](../storage/common/storage-redundancy-zrs.md)
-- [База данных SQL](../sql-database/sql-database-high-availability.md#zone-redundant-configuration-preview)
+- [База данных SQL](../sql-database/sql-database-high-availability.md#zone-redundant-configuration)
 - [Географическое аварийное восстановление в концентраторах событий](../event-hubs/event-hubs-geo-dr.md#availability-zones-preview)
 - [Географическое аварийное восстановление в служебной шине](../service-bus-messaging/service-bus-geo-dr.md#availability-zones-preview)
 - [Создание шлюза виртуальной сети, избыточного в пределах зоны](../vpn-gateway/create-zone-redundant-vnet-gateway.md)

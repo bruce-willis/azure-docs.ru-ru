@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 06/01/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f3faa9e811216cc930354b76903519a66f3d3587
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 713583a6a184a583145c610b4e014f56941efa4c
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128817"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113517"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
@@ -324,10 +324,7 @@ tvm-1219235766_4-20160414t192511z | ComputeNodeState.idle | 13.91.7.57 | 50001
 При развертывании приложений на узлах пакетной службы с помощью [пакетов приложений](batch-application-packages.md) также взимается плата за ресурсы службы хранилища Azure, используемые пакетами приложений. Как правило, эти затраты на службу хранилища Azure минимальны. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-### <a name="batch-python-tutorial"></a>Учебник по пакетной службе (Python)
-Более подробные инструкции по работе с пакетной службой с использованием Python см. в статье [Приступая к работе с клиентом Python пакетной службы Azure](batch-python-tutorial.md). Сопутствующий [пример кода][github_samples_pyclient] включает в себя вспомогательную функцию `get_vm_config_for_distro`, которая предоставляет другой метод получения конфигурации виртуальной машины.
 
-### <a name="batch-python-code-samples"></a>Примеры кода Python для пакетной службы
 [Примеры кода Python][github_samples_py] в репозитории [azure-batch-samples][github_samples] на портале GitHub содержат сценарии, в которых показано, как выполнять распространенные пакетные операции, такие как создание пула, задания и задачи. [Файл сведений][github_py_readme], прилагаемый к примерам кода Python, содержит подробные сведения об установке необходимых пакетов.
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
-ms.openlocfilehash: 690a58a939e6866bfcdf80d05e52d7bfc7fd3586
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: eebaf679ada9da554f8582ad89db4e7491dcc134
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34635609"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004359"
 ---
 # <a name="device-authentication-using-x509-ca-certificates"></a>Проверка подлинности устройства с помощью сертификатов ЦС X.509
 
@@ -42,7 +42,7 @@ ms.locfileid: "34635609"
 
 Независимо от того, как получен сертификат ЦС X.509, обязательно сохраните и защитите секретный закрытый ключ.  Это необходимо для создания отношений доверия при проверке подлинности на основе ЦС X.509. 
 
-Узнайте, как создать [самозаверяющийся сертификат ЦС](iot-hub-security-x509-create-certificates.md#createcerts), который можно использовать для экспериментов, приведенных в описании этой возможности.
+Узнайте, как создать [самозаверяющийся сертификат ЦС](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md), который можно использовать для экспериментов, приведенных в описании этой возможности.
 
 ## <a name="sign-devices-into-the-certificate-chain-of-trust"></a>Подпись устройств в цепочке доверия сертификатов
 
@@ -50,7 +50,7 @@ ms.locfileid: "34635609"
 
 ![img-generic-cert-chain-of-trust](./media/generic-cert-chain-of-trust.png)
 
-Узнайте, как [создать цепочку сертификатов](iot-hub-security-x509-create-certificates.md#createcertchain), как это было сделано при подписи устройств.
+Узнайте, как [создать цепочку сертификатов](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md), как это было сделано при подписи устройств.
 
 ## <a name="how-to-register-the-x509-ca-certificate-to-iot-hub"></a>Как зарегистрировать сертификат ЦС X.509 в Центре Интернета вещей
 

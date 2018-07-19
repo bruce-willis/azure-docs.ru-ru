@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/28/2018
 ms.author: cherylmc
-ms.openlocfilehash: 332bfba0664391b6126669c4c89e38d1af4cf4fa
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: b4358d1ccffd31d1f347f1872237620bee081251
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30265090"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989365"
 ---
 # <a name="expressroute-prerequisites--checklist"></a>Предварительные требования и контрольный список для ExpressRoute
 Чтобы подключиться к службам Microsoft Cloud через ExpressRoute, вам нужно выполнить условия в следующих разделах.
@@ -65,6 +65,6 @@ ms.locfileid: "30265090"
 * Найдите поставщика услуг подключения ExpressRoute. См. статью [Партнеры и одноранговые расположения ExpressRoute](expressroute-locations.md).
 * Ознакомьтесь с требованиями к [маршрутизации](expressroute-routing.md), [NAT](expressroute-nat.md) и [качеству обслуживания](expressroute-qos.md).
 * Настройте подключение ExpressRoute.
-  * [Создайте канал ExpressRoute.](expressroute-howto-circuit-classic.md)
-  * [Настройка маршрутизации](expressroute-howto-routing-classic.md)
-  * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-classic.md)
+  * [Создайте канал ExpressRoute.](expressroute-howto-circuit-arm.md)
+  * [Настройка маршрутизации](expressroute-howto-routing-arm.md)
+  * [Связывание виртуальной сети с каналом ExpressRoute](expressroute-howto-linkvnet-arm.md)

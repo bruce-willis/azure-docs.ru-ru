@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: dfd45a68934250978fa8ac0cc9cebabcf8bad597
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 7dd4f8cc53d86933d10294dbbf55157d2b1cf290
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629700"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39001785"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
 
@@ -55,7 +55,6 @@ ms.locfileid: "34629700"
 
 - **Пакет SDK для устройства C Azure IoT** предоставляет скрипты PowerShell (Windows) и Bash (Linux), которые помогут вам создать сертификаты ЦС и конечные сертификаты для разработки и выполнения проверки принадлежности с помощью кода проверки. Вы можете загрузить [файлы](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates), связанные с вашей системой, в рабочую папку, затем следуйте инструкциям статьи [Managing CA Certificates Sample](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Пример управления сертификатами ЦС), чтобы подтвердить владение сертификатами ЦС. 
 - **Пакет SDK для устройства C# Azure IoT** содержит [пример проверки сертификата группы](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/provisioning/service/samples/GroupCertificateVerificationSample), который можно использовать для подтверждения владения.
-- Следуйте инструкциям статьи [Использование сценариев PowerShell для управления сертификатами X.509, подписанными ЦС](https://docs.microsoft.com/azure/iot-hub/iot-hub-security-x509-create-certificates) в документации по Центру Интернета вещей. В частности, выполните скрипт, приведенный в разделе [Проверка принадлежности сертификата ЦС X.509](https://docs.microsoft.com/azure/iot-hub/iot-hub-security-x509-create-certificates#signverificationcode).
  
 > [!IMPORTANT]
 > Кроме выполнения проверки принадлежности, скрипты PowerShell и Bash, упомянутые выше, позволяют создать корневые, промежуточные и конечные сертификаты, которые можно использовать для проверки подлинности и подготовки устройств. Эти сертификаты следует использовать только для разработки. Их не следует использовать в рабочей среде. 

@@ -3,7 +3,7 @@ title: Обмен данными между ролями в облачных с�
 description: Для экземпляров ролей в облачных службах могут быть определены конечные точки (http, https, tcp, udp), взаимодействующие с внешней средой или с другими экземплярами ролей.
 services: cloud-services
 documentationcenter: ''
-author: Thraka
+author: jpconnock
 manager: timlt
 editor: ''
 ms.assetid: 7008a083-acbe-4fb8-ae60-b837ef971ca1
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/14/2016
-ms.author: adegeo
-ms.openlocfilehash: 96ca9bb2d7a9f30a7d6492be43bfb44edc02fd93
-ms.sourcegitcommit: 9a8b9a24d67ba7b779fa34e67d7f2b45c941785e
+ms.author: jeconnoc
+ms.openlocfilehash: 9d6cc542b6af0b508529c1392e16df93e1ba084d
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2018
-ms.locfileid: "27701896"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39005950"
 ---
 # <a name="enable-communication-for-role-instances-in-azure"></a>Включение обмена данными между экземплярами роли в Azure
 Ролей облачной службы взаимодействуют через внутренние и внешние подключения. Внешние подключения называются **входными конечными точками**, а внутренние подключения — **внутренними конечными точками**. В этом разделе описывается изменение [определения службы](cloud-services-model-and-package.md#csdef) для создания конечных точек.

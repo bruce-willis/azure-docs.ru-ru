@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 02cc3f861864d3bfa878be6501b8563715f88dac
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 79f1b299417acbfa2d9e565f0ec9aebede2508e1
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971325"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39002661"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-java-device-and-service-sdk-and-group-enrollments-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью Java устройства, SDK службы и групп регистрации для службы подготовки устройств Центра Интернета вещей
 
@@ -32,7 +32,7 @@ ms.locfileid: "38971325"
 
 1. Установите на компьютер систему `git` и добавьте ее в переменные среды, доступные в командном окне. Последнюю версию средств `git` для установки, которая включает **Git Bash**, приложение командной строки для взаимодействия с локальным репозиторием Git, можно найти на [этой странице](https://git-scm.com/download/). 
 
-1. Для создания тестовых сертификатов воспользуйтесь данными из [обзора сертификата](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md). Более подробно создание сертификатов рассмотрено в статье [PowerShell scripts to manage CA-signed X.509 certificates](https://docs.microsoft.com/azure/iot-hub/iot-hub-security-x509-create-certificates) (Использование сценариев PowerShell для управления сертификатами X.509, подписанными ЦС).
+1. Для создания тестовых сертификатов воспользуйтесь данными из [обзора сертификата](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md).
 
     > [!NOTE]
     > На этом шаге необходим [OpenSSL](https://www.openssl.org/), который можно либо создать и установить из источника, либо скачать и установить из [сторонних ресурсов](https://wiki.openssl.org/index.php/Binaries), например [из этого](https://sourceforge.net/projects/openssl/). Если _корневой_, _промежуточный_ сертификаты и сертификат _устройства_ уже созданы, то этот шаг можно пропустить.

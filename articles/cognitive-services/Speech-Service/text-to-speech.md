@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jerkin
-ms.openlocfilehash: d7ec8648a8428558264c9bfd4d923523b90cce07
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 227fae2f38189a5b8ed5b6eff359e09bedc8e628
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855946"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39071136"
 ---
 # <a name="about-the-text-to-speech-api"></a>API преобразования текста в речь
 
@@ -42,4 +42,4 @@ API **преобразования текста в речь** (TTS) службы
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](quickstart-csharp-windows.md)
+* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

@@ -101,7 +101,7 @@
     - name: Запросы данных клиентов
       href: time-series-insights-customer-data-requests.md
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/time-series-insights/'
     - name: Калькулятор цен
