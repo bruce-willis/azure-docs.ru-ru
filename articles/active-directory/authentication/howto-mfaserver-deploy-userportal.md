@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: 7254e8d1b5a525c3ab06230837bd368e17911dbe
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: ff5227ab61145ab372fdc6e28f1b97ec31e47023
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100285"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049149"
 ---
 # <a name="user-portal-for-the-azure-multi-factor-authentication-server"></a>Пользовательский портал для сервера Многофакторной идентификации Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "37100285"
 ![Пользовательский портал MFA](./media/howto-mfaserver-deploy-userportal/portal.png)
 
 > [!NOTE]
-> Пользовательский портал доступен только на сервере Многофакторной идентификации. При использовании службы Многофакторной идентификации в облаке предоставьте пользователям ссылку на статью [Настройка учетной записи для двухфакторной проверки подлинности](end-user/current/multi-factor-authentication-end-user-first-time.md) или [Управление параметрами двухфакторной проверки подлинности](end-user/current/multi-factor-authentication-end-user-manage-settings.md).
+> Пользовательский портал доступен только на сервере Многофакторной идентификации. При использовании службы Многофакторной идентификации в облаке предоставьте пользователям ссылку на статью [Настройка учетной записи для двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-first-time.md) или [Управление параметрами двухфакторной проверки подлинности](../user-help/multi-factor-authentication-end-user-manage-settings.md).
 
 ## <a name="install-the-web-service-sdk"></a>Установить пакет SDK веб-службы.
 

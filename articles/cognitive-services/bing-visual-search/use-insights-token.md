@@ -10,12 +10,12 @@ ms.technology: bing-visual-search
 ms.topic: article
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 6470bb5b7b5b8404683d1ae6fd4f16f0436982ef
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 569ae89a712d14fb36989e756f99725dce398c0a
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382480"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126564"
 ---
 # <a name="using-an-insights-token-to-get-insights-about-an-image"></a>Получение полезных сведений об изображении с помощью токена аналитики
 
@@ -62,10 +62,11 @@ Content-Disposition: form-data; name="knowledgeRequest"
 
 Примеры использования токена аналитики см. в статьях о [C#](#using-csharp) | [Java](#using-java) | [Node.js](#using-nodejs) | [Python](#using-python).
 
-<a name="csharp" />
+<a name="using-csharp" />
+
 ## <a name="using-c"></a>Использование C#
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
 
@@ -75,7 +76,7 @@ Content-Disposition: form-data; name="knowledgeRequest"
 
 Чтобы запустить это приложение, сделайте следующее:
 
-1. В Visual Studio создайте консольное приложение.
+1. Создайте консольное приложение в Visual Studio.
 1. Замените содержимое `Program.cs` кодом, приведенным в этом кратком руководстве.
 2. Замените значение `accessKey` своим ключом подписки.
 2. Замените значение `insightsToken` токеном аналитики из ответа /images/search.
@@ -237,12 +238,11 @@ namespace VisualSearchInsightsToken
 }
 ```
 
-
-
+<a name="using-java" />
 
 ## <a name="using-java"></a>Использование Java
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
@@ -252,7 +252,7 @@ namespace VisualSearchInsightsToken
 
 Чтобы запустить это приложение, сделайте следующее:
 
-1. Скачайте или установите [библиотеку gson](https://github.com/google/gson). Ее можно также получить с помощью Maven.
+1. Скачайте или установите [библиотеку gson](https://github.com/google/gson). Ее также можно получить с помощью Maven.
 2. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе.
 3. Добавьте указанный код в файл с именем `VisualSearch.java`.
 4. Замените значение `subscriptionKey` своим ключом подписки.
@@ -357,11 +357,12 @@ public class InsightsToken {
 
 
 <a name="using-nodejs" />
+
 ## <a name="using-nodejs"></a>Использование Node.js
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
-Для запуска этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
+Для выполнения этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
 
 В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
 
@@ -422,12 +423,12 @@ function requestCallback(err, res, body) {
 ```
 
 
-
+<a name="using-python" />
 
 ## <a name="using-python"></a>Использование Python
 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Для запуска этого кода требуется [Python 3](https://www.python.org/).
 
@@ -491,8 +492,8 @@ if __name__ == '__main__':
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Руководство по одностраничным приложениям для API визуального поиска Bing](tutorial-bing-visual-search-single-page-app.md)  
-[Обзор API визуального поиска Bing](overview.md)  
-[Пробная версия](https://aka.ms/bingvisualsearchtryforfree)  
-[Получение ключа доступа к бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
-[Справочник по API визуального поиска Bing](https://aka.ms/bingvisualsearchreferencedoc)
+[Руководство по одностраничным приложениям для наглядного поиска Bing](tutorial-bing-visual-search-single-page-app.md)  
+[Общие сведения об API Bing для наглядного поиска](overview.md)  
+[Попробовать](https://aka.ms/bingvisualsearchtryforfree)  
+[Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
+[Справочник по API Bing для наглядного поиска](https://aka.ms/bingvisualsearchreferencedoc)

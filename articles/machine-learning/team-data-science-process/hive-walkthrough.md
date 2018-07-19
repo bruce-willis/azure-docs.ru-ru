@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: deguhath
-ms.openlocfilehash: beb1c2f88eed8fc38bd32de113835122cfd4e9a4
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 556a7d9d921e0f2307445f8f6738b9b845c83112
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34837333"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006603"
 ---
 # <a name="the-team-data-science-process-in-action-use-azure-hdinsight-hadoop-clusters"></a>Процесс обработки и анализа данных группы на практике: использование кластеров Azure HDInsight Hadoop
 В этом пошаговом руководстве показано комплексное использование [процесса обработки и анализа данных группы (TDSP)](overview.md). Мы используем кластер [Azure HDInsight Hadoop](https://azure.microsoft.com/services/hdinsight/) для хранения и просмотра данных из общедоступного набора данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/), реконструирования их характеристик и сокращения их выборки. Для обработки двоичных и мультиклассовых классификационных и регрессионных прогнозных задач мы создаем модели данных с помощью Машинного обучения Azure. 
@@ -771,7 +771,7 @@ ms.locfileid: "34837333"
 
   ![Схема эксперимента](./media/hive-walkthrough/QGxRz5A.png)
 
-  Б. Для этого эксперимента распределение наших целевых меток составляло примерно 1:1.
+  b. Для этого эксперимента распределение наших целевых меток составляло примерно 1:1.
 
    На схеме ниже показано распределение меток класса чаевых для задачи двоичной классификации.
 
@@ -795,7 +795,7 @@ ms.locfileid: "34837333"
 
   ![Схема тестового классового распределения](./media/hive-walkthrough/Vy1FUKa.png)
 
-  Б. Для этого эксперимента мы используем матрицу неточностей для проверки точности прогнозов. Вот как это работает:
+  b. Для этого эксперимента мы используем матрицу неточностей для проверки точности прогнозов. Вот как это работает:
 
   ![Матрица неточностей](./media/hive-walkthrough/cxFmErM.png)
 
@@ -811,7 +811,7 @@ ms.locfileid: "34837333"
 
   ![Схема эксперимента](./media/hive-walkthrough/11TZWgV.png)
 
-  Б. Для задач регрессии мы измеряем величины точности прогноза, рассматривая квадратичную ошибку в прогнозах и коэффициент детерминации.
+  b. Для задач регрессии мы измеряем величины точности прогноза, рассматривая квадратичную ошибку в прогнозах и коэффициент детерминации.
 
   ![Снимок экрана: статистические данные прогноза](./media/hive-walkthrough/Jat9mrz.png)
 
@@ -828,7 +828,7 @@ ms.locfileid: "34837333"
 ## <a name="references"></a>Ссылки
 •    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/)  
 •    [Получение данных о поездках такси Нью-Йорка на основании FOIL (Chris Whong)](http://chriswhong.com/open-data/foil_nyc_taxi/)   
-•    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
+•    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](http://www.nyc.gov/html/tlc/html/technology/aggregated_data.shtml)
 
 [2]: ./media/hive-walkthrough/output-hive-results-3.png
 [11]: ./media/hive-walkthrough/hive-reader-properties.png

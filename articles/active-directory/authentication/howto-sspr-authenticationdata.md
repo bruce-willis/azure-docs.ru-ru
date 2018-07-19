@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 5409bf198d0e3f6537619ef4698d9f2e31bd27c5
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: ea6bf503eeba9e904c492a858139490b523a10cc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257594"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044181"
 ---
 # <a name="deploy-password-reset-without-requiring-end-user-registration"></a>Развертывание сброса пароля без регистрации пользователя
 
@@ -155,8 +155,8 @@ Get-AzureADUser | select DisplayName,UserPrincipalName,otherMails,Mobile,Telepho
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md)
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
 * [Параметры политики для SSPR](concept-sspr-policy.md)

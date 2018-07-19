@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: d05a86d98bbdedc2200020aeeb1e561c3786a150
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 1ad18bd1aea36c5f185f7a8e3062b1c2103017c5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218757"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049795"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tinfoil-security"></a>Руководство по интеграции Azure Active Directory с TINFOIL SECURITY
 
@@ -34,7 +34,7 @@ ms.locfileid: "36218757"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением TINFOIL SECURITY, вам потребуется:
 
@@ -128,7 +128,7 @@ ms.locfileid: "36218757"
     
     ![Добавление атрибута](./media/tinfoil-security-tutorial/tutorial_tinfoil-security_addatt.png "Атрибуты")
     
-    Б. В текстовом поле **Имя атрибута** введите **accountid**.
+    b. В текстовом поле **Имя атрибута** введите **accountid**.
     
     c. В текстовое поле **Значение атрибута** следует вставить идентификатор учетной записи, который вы получите позже при работе с этим руководством.
     
@@ -158,7 +158,7 @@ ms.locfileid: "36218757"
    
     a. Выберите **Включить SAML**.
    
-    Б. Щелкните **Настроить вручную**.
+    b. Щелкните **Настроить вручную**.
    
     c. В текстовое поле **SAML Post URL** (URL-адрес POST SAML) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
    
@@ -197,7 +197,7 @@ ms.locfileid: "36218757"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -252,7 +252,7 @@ ms.locfileid: "36218757"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "TINFOIL SECURITY" на панели доступа, вы автоматически войдете в приложение TINFOIL SECURITY. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент "TINFOIL SECURITY" на панели доступа, вы автоматически войдете в приложение TINFOIL SECURITY. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

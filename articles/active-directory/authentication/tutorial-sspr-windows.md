@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 3b767da394f6337a1110ad171f19ad789fa044d2
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 2a6fbd9e52e07141ae1d8c630bde6ab23801fb18
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972987"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054507"
 ---
 # <a name="azure-ad-password-reset-from-the-login-screen"></a>Сброс пароля Azure AD на экране входа
 
@@ -99,7 +99,7 @@ ms.locfileid: "38972987"
 
 Теперь, когда пользователи попробуют войти в систему, они увидят на экране входа ссылку сброса пароля, которая позволяет открыть интерфейс для самостоятельного сброса пароля. С помощью этой функции пользователи могут сбросить пароль, не используя другое устройство для получения доступа к браузеру.
 
-Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in).
+Инструкции по использованию этой функции пользователи могут найти в статье [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md#reset-password-at-sign-in).
 
 ## <a name="common-issues"></a>Распространенные проблемы
 

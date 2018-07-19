@@ -8,16 +8,15 @@ manager: jhubbard
 editor: cgronlun
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 01/09/2018
+ms.topic: conceptual
+ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 6e92eed5e4083c9b8063318b2a9139e20f53de1a
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: fa1c42a7bb9a06b2ea790e883ec7da6caa41d6b3
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39011962"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-store-using-python"></a>Операции файловой системы в Azure Data Lake Store с использованием Python
 > [!div class="op_single_selector"]
@@ -30,7 +29,7 @@ ms.lasthandoff: 05/10/2018
 
 В этой статье содержатся сведения об использовании пакета SDK для Python для выполнения операций файловой системы в Azure Data Lake Store. Дополнительные сведения о том, как выполнять операции управления учетными записями в Data Lake Store с помощью Python, см. в статье [Начало работы с Azure Data Lake Store с помощью Python](data-lake-store-get-started-python.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -105,19 +104,19 @@ pip install azure-datalake-store
     ## Create a filesystem client object
     adlsFileSystemClient = core.AzureDLFileSystem(adlCreds, store_name=adlsAccountName)
 
-## <a name="create-a-directory"></a>Создайте каталог
+## <a name="create-a-directory"></a>создать каталог;
 
     ## Create a directory
     adlsFileSystemClient.mkdir('/mysampledirectory')
 
-## <a name="upload-a-file"></a>Отправить файл.
+## <a name="upload-a-file"></a>отправить файл;
 
 
     ## Upload a file
     multithread.ADLUploader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt', rpath='/mysampledirectory/mysamplefile.txt', nthreads=64, overwrite=True, buffersize=4194304, blocksize=4194304)
 
 
-## <a name="download-a-file"></a>Скачивание файла
+## <a name="download-a-file"></a>скачать файл;
 
     ## Download a file
     multithread.ADLDownloader(adlsFileSystemClient, lpath='C:\\data\\mysamplefile.txt.out', rpath='/mysampledirectory/mysamplefile.txt', nthreads=64, overwrite=True, buffersize=4194304, blocksize=4194304)
@@ -131,6 +130,6 @@ pip install azure-datalake-store
 * [Начало работы с Azure Data Lake Store с помощью Python](data-lake-store-get-started-python.md).
 
 ## <a name="see-also"></a>См. также
-* [Справочник по Python Azure Data Lake Store. Управление учетными записями](http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-datalake-store.html)
+
 * [Справочник по Python Azure Data Lake Store. Файловая система](http://azure-datalake-store.readthedocs.io/en/latest)
 * [Приложения больших данных с открытым исходным кодом, которые работают с хранилищем озера данных Azure](data-lake-store-compatible-oss-other-applications.md)

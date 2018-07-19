@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: cephalin
-ms.openlocfilehash: cd04be2046a23901471cb7bd0da9e0ed2d514d0d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: a5d031622103183fa9aa7a3f3771a055fc16edb2
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307302"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049982"
 ---
 # <a name="migrate-an-active-dns-name-to-azure-app-service"></a>Перенос активного DNS-имени в службу приложений Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "38307302"
 
 Если вас не беспокоит простой при разрешении DNS-имен, обратитесь к разделу [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -55,7 +55,7 @@ ms.locfileid: "38307302"
 
 | Пример записи DNS | Узел, для которого задается TXT | Значение TXT |
 | - | - | - |
-| @ (корневой домен) | _awverify_ | _&lt;имя_приложения>.azurewebsites.net_ |
+| \@ (root) | _awverify_ | _&lt;имя_приложения>.azurewebsites.net_ |
 | www (поддомен) | _awverify.www_ | _&lt;имя_приложения>.azurewebsites.net_ |
 | \* (с подстановочным знаком) | _awverify.\*_ | _&lt;имя_приложения>.azurewebsites.net_ |
 

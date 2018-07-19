@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2017
 ms.author: jeedes
-ms.openlocfilehash: ef80f7fab21e2b43d9b6b8da80d10d4d47a63dd3
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 27c9606357d9599fa56e4045606f8d9046722e7f
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36214956"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041727"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mimecast-admin-console"></a>Учебник. Интеграция Azure Active Directory с консолью администрирования Mimecast
 
@@ -34,7 +34,7 @@ ms.locfileid: "36214956"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с консолью администрирования Mimecast, вам потребуется:
 
@@ -151,7 +151,7 @@ ms.locfileid: "36214956"
     
     a. В текстовом поле **Описание** введите имя конфигурации.
     
-    Б. Выберите **Обязательное использование проверки подлинности SAML для консоли администрирования Mimecast**.
+    b. Выберите **Обязательное использование проверки подлинности SAML для консоли администрирования Mimecast**.
     
     c. В поле **Provider** (Поставщик) выберите **Azure Active Directory**.
     
@@ -229,7 +229,7 @@ ms.locfileid: "36214956"
    
    a. В соответствующие текстовые поля введите атрибуты **Email Address** (Адрес электронной почты), **Global Name** (Глобальное имя), **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) действительной учетной записи Azure AD, которую вы хотите подготовить.
 
-   Б. Выберите команду **Сохранить**.
+   b. Выберите команду **Сохранить**.
 
 >[!NOTE]
 >Вы можете использовать любые другие средства создания учетных записей консоли администрирования Mimecast или API, предоставляемые консолью администрирования Mimecast для подготовки учетных записей пользователей Azure AD. 
@@ -269,7 +269,7 @@ ms.locfileid: "36214956"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Консоль администрирования Mimecast" на панели доступа, вы автоматически войдете в приложение консоли администрирования Mimecast.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

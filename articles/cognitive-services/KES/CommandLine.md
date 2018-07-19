@@ -9,12 +9,12 @@ ms.component: knowledge-exploration
 ms.topic: article
 ms.date: 03/24/2016
 ms.author: paulhsu
-ms.openlocfilehash: ffa42ac73b42a8271004d2d45d7a80f3307ef059
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 71a6f5ac93e5605182a55de1bae9a99c5c3eddf4
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380292"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136361"
 ---
 # <a name="command-line-interface"></a>Интерфейс командной строки
 Интерфейс KES командной строки предоставляет возможность создавать файлы индекса и грамматики структурированных данных и развертывать их как веб-службы.  Используется следующий общий синтаксис: `kes.exe <command> <required_args> [<optional_args>]`.  Можно выполнить `kes.exe` без аргументов, чтобы отобразить список команд, или можно выполнить `kes.exe <command>`, чтобы отобразить список аргументов для заданной команды.  Ниже приведен список доступных команд:
@@ -26,7 +26,9 @@ ms.locfileid: "35380292"
 * describe_grammar
 
 <a name="build_index-command"></a>
+
 ## <a name="buildindex-command"></a>Команда build_index
+
 Команда **build_index** выполняет сборку двоичного файла индекса на основе файла определения схемы и файла данных индексируемых объектов.  Полученный файл индекса можно использовать для вычисления структурированных выражений запросов или создания интерпретаций для запросов на естественном языке в сочетании со скомпилированным файлом грамматики.
 
 `kes.exe build_index <schemaFile> <dataFile> <indexFile> [options]`
@@ -49,7 +51,9 @@ ms.locfileid: "35380292"
 > Чтобы ускорить создание, предварительно отсортируйте объекты в файле данных в порядке убывания вероятности.
 
 <a name="build_grammar-command"></a>
+
 ## <a name="buildgrammar-command"></a>Команда build_grammar
+
 Команда **build_grammar** компилирует грамматику, указанную в XML-файле, преобразуя ее в двоичную грамматику.  Полученный файл грамматики можно использовать с файлом индекса для формирования интерпретаций запросов на естественном языке.
 
 `kes.exe build_grammar <xmlFile> <grammarFile>`
@@ -62,7 +66,9 @@ ms.locfileid: "35380292"
 Можно указать локальные пути к файлам или URL-адреса больших двоичных объектов Azure.  Спецификация грамматики описывает набор взвешенных выражений на естественном языке и их семантических интерпретаций (см. раздел [Формат грамматики](GrammarFormat.md)).  После успешного создания выходной файл грамматики будет содержать двоичное представление спецификации грамматики, что обеспечит быстрое декодирование.
 
 <a name="host_service-command"/>
+
 ## <a name="hostservice-command"></a>Команда host_service
+
 Команда **host_service** размещает экземпляр службы KES на локальном компьютере.
 
 `kes.exe host_service <grammarFile> <indexFile> [options]`
@@ -78,7 +84,9 @@ ms.locfileid: "35380292"
 За пределами среды Azure для локально размещенных служб действуют следующие ограничения при индексировании: размер файла до 1 МБ, до 10 запросов в секунду и до 1000 вызовов.  Чтобы устранить эти ограничения, выполните команду **host_service** на виртуальной машине Azure или выполните развертывание в облачной службе Azure с помощью команды **deploy_service**.
 
 <a name="deploy_service-command"/>
+
 ## <a name="deployservice-command"></a>Команда deploy_service
+
 Команда **deploy_service** выполняет развертывание экземпляра службы KES в облачной службе Azure.
 
 `kes.exe deploy_service <grammarFile> <indexFile> <serviceName> <vmSize>[options]`
@@ -96,7 +104,9 @@ ms.locfileid: "35380292"
 По умолчанию служба развертывается в промежуточной среде, при необходимости ее можно переопределить с помощью параметра --slot.  В разделе о [веб-API](WebAPI.md) представлен список поддерживаемых операций.
 
 <a name="describe_index-command"/>
+
 ## <a name="describeindex-command"></a>Команда describe_index
+
 Команда **describe_index** выводит сведения о файле индекса, включая описание и схему.
 
 `kes.exe describe_index <indexFile>`
@@ -108,7 +118,9 @@ ms.locfileid: "35380292"
 Можно указать путь к локальному файлу или URL-адрес большого двоичного объекта Azure.  Выходную строку описания можно задать с помощью параметра --description команды **build_index**.
 
 <a name="describe_grammar-command"/>
+
 ## <a name="describegrammar-command"></a>Команда describe_grammar
+
 Команда **describe_grammar** выводит исходную спецификацию грамматики, использованную для создания двоичной грамматики.
 
 `kes.exe describe_grammar <grammarFile>`

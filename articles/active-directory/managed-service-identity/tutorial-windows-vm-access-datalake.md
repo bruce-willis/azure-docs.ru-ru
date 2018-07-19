@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: afd35c963c2c1c4badb32f7e8f7dba1dce87481c
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: a7935aa245239ed32527d2c22fd41845c6da2ae1
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904294"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39007973"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-msi-to-access-azure-data-lake-store"></a>Руководство. Получение доступа к Azure Data Lake Store с помощью управляемого удостоверения службы (MSI) виртуальной машины Windows
 
@@ -32,7 +32,7 @@ ms.locfileid: "37904294"
 > * Предоставление виртуальной машине доступа к Azure Data Lake Store.
 > * Получение маркера доступа с использованием удостоверения виртуальной машины и получение доступа к Azure Data Lake Store с его помощью.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -53,7 +53,7 @@ ms.locfileid: "37904294"
 5. Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.
 6. Выберите размер виртуальной машины. Чтобы просмотреть дополнительные размеры, выберите **Просмотреть все** или измените фильтр **Supported disk type** (Поддерживаемые типы диска). На странице параметров оставьте значения по умолчанию и нажмите кнопку **OK**.
 
-   ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
+   ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
 ## <a name="enable-msi-on-your-vm"></a>Активация MSI на виртуальной машине 
 
@@ -63,11 +63,11 @@ MSI на виртуальной машине позволяет получить
 2. В левой области навигации щелкните **Конфигурация**. 
 3. Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать MSI, нажмите кнопку **Да**. Чтобы удалить удостоверение, нажмите кнопку "Нет". 
 4. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.  
-   ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
+   ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
 5. Если вы хотите проверить расширения на этой виртуальной машине, щелкните **Расширения**. Если удостоверение MSI активировано, вы увидите в списке **ManagedIdentityExtensionforWindows**.
 
-   ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-extension.png)
+   ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-extension.png)
 
 ## <a name="grant-your-vm-access-to-azure-data-lake-store"></a>Предоставление виртуальной машине доступа к Azure Data Lake Store
 

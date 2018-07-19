@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/12/2018
 ms.author: daveba
-ms.openlocfilehash: a9b0ddbd8d0a348d00e57526e6d248e59a8a1e79
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: e001907b9df77eff1455043a3fd7ce5533838fcc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903964"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39056180"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-identity-to-access-azure-storage"></a>Руководство. Доступ к службе хранилища Azure с помощью управляемого удостоверения виртуальной машины Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "37903964"
 > [!NOTE]
 > Аутентификация Azure Active Directory для службы хранилища Azure находится на этапе общедоступной предварительной версии.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -58,7 +58,7 @@ ms.locfileid: "37903964"
 5.  Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.
 6.  Выберите размер виртуальной машины. Чтобы просмотреть дополнительные размеры, выберите **Просмотреть все** или измените фильтр **Supported disk type** (Поддерживаемые типы диска). В колонке параметров оставьте значения по умолчанию и нажмите кнопку **OK**.
 
-    ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
+    ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
 ## <a name="enable-managed-identity-on-your-vm"></a>Включение управляемого удостоверения на виртуальной машине
 
@@ -80,7 +80,7 @@ ms.locfileid: "37903964"
 5. Убедитесь, что значения **подписки** и **группы ресурсов** соответствуют указанным при создании виртуальной машины на предыдущем шаге.
 6. Нажмите кнопку **Создать**.
 
-    ![Создание учетной записи хранения](../media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    ![Создание учетной записи хранения](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
 
 ## <a name="create-a-blob-container-and-upload-a-file-to-the-storage-account"></a>Создание контейнера больших двоичных объектов и передача файла в учетную запись хранения
 
@@ -91,12 +91,12 @@ ms.locfileid: "37903964"
 3. В верхней области страницы щелкните **+ Container** (+ Контейнер).
 4. В разделе **Создание контейнера** введите имя контейнера, а в разделе **Общедоступный уровень доступа** оставьте значение по умолчанию.
 
-    ![Создание контейнера хранилища](../media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    ![Создание контейнера хранилища](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
 
 5. С помощью редактора по своему усмотрению создайте на локальном компьютере файл с именем *hello world.txt*.  Откройте его и добавьте текст (без кавычек) "Hello world! :)", а затем сохраните его. 
 6. Передайте файл в только что созданный контейнер. Для этого щелкните имя контейнера, а затем нажмите кнопку **Отправить**.
 7. В области **Отправить BLOB-объект** под полем **Файлы** щелкните значок папки и перейдите к файлу **hello_world.txt** на локальном компьютере, выберите этот файл и нажмите кнопку **Отправить**.
-    ![Отправка текстового файла](~/articles/active-directory/media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
+    ![Отправка текстового файла](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
 
 ## <a name="grant-your-vm-access-to-an-azure-storage-container"></a>Предоставление виртуальной машине доступа к контейнеру службы хранилища Azure 
 

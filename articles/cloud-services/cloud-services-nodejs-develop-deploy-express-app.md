@@ -3,7 +3,7 @@ title: Создание и развертывание приложения Node.
 description: Создание и развертывание приложения Express.js в Node.js в облачных службах Azure
 services: cloud-services
 documentationcenter: nodejs
-author: thraka
+author: jpconnock
 manager: timlt
 editor: ''
 ms.assetid: 24f8e7ef-e90d-4554-9b1e-a9b31d5824e5
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
 ms.date: 08/17/2017
-ms.author: adegeo
-ms.openlocfilehash: 8bb78330591b0557b036a161eb83e47b41a8fd43
-ms.sourcegitcommit: 909469bf17211be40ea24a981c3e0331ea182996
+ms.author: jeconnoc
+ms.openlocfilehash: ac62baae2ececf257d22f8220d472c1bcb5ee082
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34010114"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39012182"
 ---
 # <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Создание и развертывание веб-приложения Node.js с использованием модуля Express в облачных службах Azure
 
@@ -119,7 +119,7 @@ Node.js включает минимальный набор функционал�
 ![В веб-браузере отображается страница Express. URL-адрес указывает, что страница теперь размещается в Azure.](./media/cloud-services-nodejs-develop-deploy-express-app/node36.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительную информацию см. в [центре разработчиков Node.js](/develop/nodejs/).
+Дополнительную информацию см. в [центре разработчиков Node.js](https://docs.microsoft.com/en-us/javascript/azure/?view=azure-node-latest).
 
 [Node.js Web Application]: http://www.windowsazure.com/develop/nodejs/tutorials/getting-started/
 [Express]: http://expressjs.com/

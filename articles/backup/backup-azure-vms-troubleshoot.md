@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/21/2018
 ms.author: trinadhk
-ms.openlocfilehash: d6e78d46f0886b06cb1cf3577c16c8bc4f842bab
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a5828b4e4f42c349246845bd003e874fb0352bae
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34607265"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008082"
 ---
 # <a name="troubleshoot-azure-virtual-machine-backup"></a>Устранение неполадок при архивации виртуальных машин Azure
 Для устранения ошибок, обнаруженных в ходе применения службы архивации Azure, можно использовать информацию из следующей таблицы.
@@ -139,7 +139,7 @@ ms.locfileid: "34607265"
 
 1. Добавьте в список разрешений диапазоны IP-адресов центра обработки данных Azure.
    * Получите список [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) для добавления в разрешенный список.
-   * Разблокируйте IP-адреса с помощью командлета [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx) . Запустите этот командлет на виртуальной машине Azure в окне PowerShell с повышенными привилегиями (запустите от имени администратора).
+   * Разблокируйте IP-адреса с помощью командлета [New-NetRoute](https://docs.microsoft.com/powershell/module/nettcpip/new-netroute) . Запустите этот командлет на виртуальной машине Azure в окне PowerShell с повышенными привилегиями (запустите от имени администратора).
    * Добавьте правила в группу безопасности сети (если она настроена) для доступа к IP-адресам.
 2. Создание пути для прохождения трафика HTTP
    * При наличии каких-либо ограничений сети (например, группы безопасности сети) разверните прокси-сервер HTTP для перенаправления трафика. Описание развертывания прокси-сервера HTTP можно найти [здесь](backup-azure-arm-vms-prepare.md#establish-network-connectivity).

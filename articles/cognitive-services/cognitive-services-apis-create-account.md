@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/01/2018
 ms.author: garye
 ms.reviewer: gibattag
-ms.openlocfilehash: 3697dd0628f0028cb486139e92c032f0d757c6ed
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: ed5f19b23375ecb83e19274c7405e9a1208a7985
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380888"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036163"
 ---
 # <a name="create-a-cognitive-services-apis-account-in-the-azure-portal"></a>Создание учетной записи API-интерфейсов Cognitive Services на портале Azure
 
@@ -73,6 +73,6 @@ ms.locfileid: "35380888"
 
 Краткие руководства с примерами использования некоторых API-интерфейсов Cognitive Services:
 
- - [Краткие руководства по компьютерному зрению для C#](/computer-vision/quickstarts/csharp.md)
- - [Использование API анализа текста с Python](/text-analytics/quickstarts/python.md)
- - [Использование API распознавания лиц с JavaScript](/face/quickstarts/javascript.md)
+ - [Краткие руководства по компьютерному зрению для C#](computer-vision/quickstarts/csharp.md)
+ - [Использование API анализа текста с Python](text-analytics/quickstarts/python.md)
+ - [Использование API распознавания лиц с JavaScript](face/quickstarts/javascript.md)

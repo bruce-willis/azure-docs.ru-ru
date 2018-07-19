@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/13/2018
 ms.author: genli
-ms.openlocfilehash: c9985f6ad8721460e973d3c43f1f035506ae697c
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 70c760cd0cb571cc95250ab793829b060341e0ed
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100080"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39056584"
 ---
 # <a name="integrate-azure-vpn-gateway-radius-authentication-with-nps-server-for-multi-factor-authentication"></a>Интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации 
 
@@ -28,7 +28,7 @@ ms.locfileid: "37100080"
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-Для использования MFA пользователи должны быть добавлены в службу Azure Active Directory (Azure AD), которая должна синхронизироваться с локальной или облачной средой. Кроме того, пользователь должен выполнить процесс автоматической регистрации для использования MFA.  Дополнительные сведения см. в разделе [Настройка учетной записи для двухфакторной проверки подлинности](../active-directory/authentication/end-user/current/multi-factor-authentication-end-user-first-time.md).
+Для использования MFA пользователи должны быть добавлены в службу Azure Active Directory (Azure AD), которая должна синхронизироваться с локальной или облачной средой. Кроме того, пользователь должен выполнить процесс автоматической регистрации для использования MFA.  Дополнительные сведения см. в разделе [Настройка учетной записи для двухфакторной проверки подлинности](../active-directory/user-help/multi-factor-authentication-end-user-first-time.md).
 
 ## <a name="detailed-steps"></a>Подробные инструкции
 

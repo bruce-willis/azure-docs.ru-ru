@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 64c12177e5cf6c82018731b493c0da22e1895b7f
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e185b67ae73b86b5f1c3b6cda884de05eb89c6fd
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855530"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049090"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Требования к лицензированию самостоятельного сброса пароля в Azure AD
 
@@ -58,8 +58,8 @@ Azure AD теперь поддерживает групповое лицензи
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md)
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)
 * [Параметры политики для SSPR](concept-sspr-policy.md)

@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 03/02/2018
 ms.author: barbkess
-ms.openlocfilehash: 71fa305c0151ba2ff319694cdd3df55bf351e0c5
-ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
+ms.openlocfilehash: d3548e7640fa8ab59f7b11c66cf1d9492f23cf99
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36946286"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044374"
 ---
 # <a name="migrate-ad-fs-on-premises-apps-to-azure"></a>Перемещение локальных приложений AD FS в Azure 
 
@@ -202,7 +202,7 @@ ms.locfileid: "36946286"
 
 ![Область "Добавление назначения"](media/migrate-adfs-apps-to-azure/migrate7.png)
 
-Для проверки доступа пользователь должен увидеть приложение SaaS на [панели доступа](../active-directory-saas-access-panel-introduction.md) при входе. Панель доступа можно найти по этому адресу http://myapps.microsoft.com. В этом примере пользователю успешно предоставлен доступ к Salesforce и ServiceNow.
+Для проверки доступа пользователь должен увидеть приложение SaaS на [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) при входе. Панель доступа можно найти по этому адресу http://myapps.microsoft.com. В этом примере пользователю успешно предоставлен доступ к Salesforce и ServiceNow.
 
 ![Пример панели доступа с приложениями Salesforce и ServiceNow](media/migrate-adfs-apps-to-azure/migrate8.png)
 

@@ -7,21 +7,21 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 5/16/2018
+ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: eb5a5090c0de56cecab47d05877cf14b56ca5e0c
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: a78c640d50a1f756daf5fd402db6f290414de918
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257394"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39068732"
 ---
 # <a name="tutorial-manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Руководство по управлению веб-трафиком с помощью шлюза приложений и Azure CLI
 
 Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure CLI вы можете создать [шлюз приложений](overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов для управления веб-трафиком. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -129,7 +129,7 @@ az vmss extension set \
   --name CustomScript \
   --resource-group myResourceGroupAG \
   --vmss-name myvmss \
-  --settings '{ "fileUris": ["https://raw.githubusercontent.com/davidmu1/samplescripts/master/install_nginx.sh"], "commandToExecute": "./install_nginx.sh" }'
+  --settings '{ "fileUris": ["https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/install_nginx.sh"], "commandToExecute": "./install_nginx.sh" }'
 ```
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений

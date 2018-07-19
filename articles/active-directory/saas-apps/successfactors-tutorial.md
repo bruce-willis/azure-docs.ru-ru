@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: jeedes
-ms.openlocfilehash: bf5fb050e81b59195d9bf9bfed9372e1fe8402ab
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8401462ed4bf5ef2ac1ff10cf3f6750cbed7b4e5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231276"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050807"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство. Интеграция Azure Active Directory с SuccessFactors
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231276"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SuccessFactors, вам потребуется:
 
@@ -118,7 +118,7 @@ ms.locfileid: "36231276"
     | `https://<companyname>.successfactors.eu/<companyname>`|
     | `https://<companyname>.sapsf.eu`|
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://www.successfactors.com/<companyname>`|
@@ -177,7 +177,7 @@ ms.locfileid: "36231276"
    
     a. Установите переключатель **SAML v2 SSO** (Единый вход SAML версии 2).
    
-    Б. Задайте **имя утверждающей стороны SAML** (например, "Издатель SAML + название компании").
+    b. Задайте **имя утверждающей стороны SAML** (например, "Издатель SAML + название компании").
    
     c. В текстовое поле **URL-адрес издателя** вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
    
@@ -202,7 +202,7 @@ ms.locfileid: "36231276"
    
     a. Выберите значение **Yes** (Да) для параметра **Support SP-initiated Global Logout** (Поддержка глобального выхода, инициированного SP).
    
-    Б. В текстовое поле **Global Logout Service URL (LogoutRequest destination)** (URL-адрес службы глобального выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
+    b. В текстовое поле **Global Logout Service URL (LogoutRequest destination)** (URL-адрес службы глобального выхода) вставьте значение **URL-адреса выхода**, скопированное с портала Azure.
    
     c. Выберите значение **No** (Нет) для параметра **Require sp must encrypt all NameID element** (Требуется шифрование всех элементов NameID на стороне SP).
    
@@ -218,7 +218,7 @@ ms.locfileid: "36231276"
     
     a. Найдите в нижней части экрана раздел **Company Settings**(Параметры компании).
    
-    Б. Установите флажок **Enable Non-Case-Sensitive Username** (Имя пользователя без учета регистра).
+    b. Установите флажок **Enable Non-Case-Sensitive Username** (Имя пользователя без учета регистра).
    
     в) Щелкните **Save**(Сохранить).
    
@@ -302,7 +302,7 @@ ms.locfileid: "36231276"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку SuccessFactors на панели доступа, вы автоматически войдете в приложение SuccessFactors.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

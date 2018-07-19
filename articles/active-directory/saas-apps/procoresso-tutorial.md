@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/07/2017
 ms.author: jeedes
-ms.openlocfilehash: 380b7e8fc48b88449cf43fda92af7f9503771777
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: bd84224f4c3a8a498a296ff50190713111895472
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36287230"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051621"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-procore-sso"></a>Руководство. Интеграция Azure Active Directory с Procore SSO
 
@@ -33,7 +33,7 @@ ms.locfileid: "36287230"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Procore SSO, вам потребуется:
 
@@ -136,7 +136,7 @@ ms.locfileid: "36287230"
 
     a. В поле **Single Sign On Issuer URL** (URL-адрес издателя единого входа), вставьте идентификатор сущности SAML, скопированный на портале Azure.
 
-    Б. В поле **Single Sign On Target URL)** (Целевой URL-адрес единого входа), вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
+    b. В поле **Single Sign On Target URL)** (Целевой URL-адрес единого входа), вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
 
     c. Теперь откройте **XML-файл метаданных**, который вы ранее скачали с портала Azure, и скопируйте из него сертификат, расположенный в теге с именем **X509Certificate**. Вставьте это значение в поле **Single Sign On x509 Certificate** (Сертификат x509 для единого входа).
 
@@ -182,7 +182,7 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -204,7 +204,7 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
     a. В текстовое поле **First Name** (Имя) введите имя пользователя, например **Britta**.
 
-    Б. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
+    b. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например **Simon**.
 
     c. В текстовое поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
@@ -254,7 +254,7 @@ To ensure users can sign-in to Procore SSO after it has been configured to use A
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа можно найти в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). Щелкнув плитку Procore SSO на панели доступа, вы автоматически войдете в приложение Procore SSO.
+Если вы хотите проверить параметры единого входа, откройте панель доступа. Дополнительные сведения о панели доступа можно найти в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). Щелкнув плитку Procore SSO на панели доступа, вы автоматически войдете в приложение Procore SSO.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

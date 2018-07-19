@@ -15,12 +15,12 @@ ms.date: 09/08/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: a1801af582e9e4bfa82dab4b5916c164fcf3bb76
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 3ea8b74eb6ef5b6bcab2935236e2ee3551117b12
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161567"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054375"
 ---
 # <a name="set-a-custom-home-page-for-published-apps-by-using-azure-ad-application-proxy"></a>Настройка пользовательской домашней страницы для опубликованных приложений с помощью прокси приложения Azure AD
 
@@ -35,7 +35,7 @@ ms.locfileid: "34161567"
 - Задайте *https://ExpenseApp-contoso.msappproxy.net/login/login.aspx* в качестве URL-адреса домашней страницы. 
 
 >[!NOTE]
->Когда вы предоставляете пользователям доступ к опубликованным приложениям, эти приложения отображаются на [панели доступа Azure AD](../active-directory-saas-access-panel-introduction.md) и в [средстве запуска приложений Office 365](https://blogs.office.com/2016/09/27/introducing-the-new-office-365-app-launcher).
+>Когда вы предоставляете пользователям доступ к опубликованным приложениям, эти приложения отображаются на [панели доступа Azure AD](../user-help/active-directory-saas-access-panel-introduction.md) и в [средстве запуска приложений Office 365](https://blogs.office.com/2016/09/27/introducing-the-new-office-365-app-launcher).
 
 ## <a name="before-you-start"></a>Перед началом работы
 

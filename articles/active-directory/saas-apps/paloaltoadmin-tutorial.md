@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 7a296c1e358bffa70ed88ba40380266e8731afd8
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: b39879cc8548139879a3039c5e0c6b924e83c107
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211593"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39046677"
 ---
 # <a name="integrate-azure-active-directory-with-palo-alto-networks---admin-ui"></a>Руководство по интеграции Azure Active Directory с Palo Alto Networks (пользовательский интерфейс администратора)
 
@@ -34,7 +34,7 @@ ms.locfileid: "36211593"
 
 Чтобы узнать об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Palo Alto Networks (пользовательский интерфейс администратора), вам потребуется:
 
@@ -104,7 +104,7 @@ ms.locfileid: "36211593"
     
     a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<FQDN брандмауэра клиента>/php/login.php*.
 
-    Б. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<FQDN брандмауэра клиента>:443/SAML20/SP*.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<FQDN брандмауэра клиента>:443/SAML20/SP*.
     
     c. В поле **URL-адрес ответа** введите URL-адрес службы обработчика утверждений (ACS) в следующем формате: *https://\<FQDN брандмауэра клиента>:443/SAML20/SP/ACS*.
     
@@ -132,7 +132,7 @@ ms.locfileid: "36211593"
 
     ![Окно "Добавление атрибута"](./media/paloaltoadmin-tutorial/tutorial_attribute_05.png)
     
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
     
     c. В поле **Значение** введите значение атрибута, отображаемое для этой строки.
     
@@ -166,7 +166,7 @@ ms.locfileid: "36211593"
 
     a. Укажите имя в текстовом поле **Profile Name** (Имя профиля), например **Azure AD Admin UI** (Пользовательский интерфейс администратора Azure AD).
     
-    Б. В разделе **New Identity Provider** (Новый поставщик удостоверений) щелкните **Обзор** и выберите XML-файл метаданных, скачанный на портале Azure.
+    b. В разделе **New Identity Provider** (Новый поставщик удостоверений) щелкните **Обзор** и выберите XML-файл метаданных, скачанный на портале Azure.
     
     c. Снимите флажок **Validate Identity Provider Certificate** (Проверить сертификат поставщика удостоверений).
     
@@ -184,7 +184,7 @@ ms.locfileid: "36211593"
   
     a. В поле **Identity Provider SLO URL** (URL-адрес выхода для поставщика удостоверений) замените экспортированный адрес следующим: **https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0**.
   
-    Б. Нажмите кнопку **ОК**.
+    b. Нажмите кнопку **ОК**.
 
 12. В интерфейсе администратора брандмауэра Palo Alto Networks щелкните **Device** (Устройство) и **Admin Roles** (Роли администратора).
 
@@ -205,7 +205,7 @@ ms.locfileid: "36211593"
 
     a. Укажите имя в текстовом поле **Name** (Имя), например **AzureSAML_Admin_AuthProfile**.
     
-    Б. В раскрывающемся списке **Type** (Тип) выберите пункт **SAML**. 
+    b. В раскрывающемся списке **Type** (Тип) выберите пункт **SAML**. 
    
     c. В раскрывающемся списке **IdP Server Profile** (Профиль сервера поставщика удостоверений) выберите соответствующий профиль сервера поставщика удостоверений SAML (к примеру, **AzureAD Admin UI** (Пользовательский интерфейс администратора Azure AD)).
    
@@ -309,7 +309,7 @@ Palo Alto Networks (пользовательский интерфейс адми
 
 Щелкнув плитку "Palo Alto Networks (пользовательский интерфейс администратора)" на панели доступа, вы автоматически войдете в приложение Palo Alto Networks (пользовательский интерфейс администратора).
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

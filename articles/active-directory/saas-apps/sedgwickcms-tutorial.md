@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 547c3785fa307838e9a86d38280b90fb31b040b3
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 5b1ea8f79865816b7f1602d497b920f90a8b211b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082627"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041710"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sedgwick-cms"></a>Руководство по интеграции Azure Active Directory с Sedgwick CMS
 
@@ -34,7 +34,7 @@ ms.locfileid: "37082627"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Sedgwick CMS, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "37082627"
     | `expresspreview.sedgwickcms.net/voe/sso` |
     | `claimlookup.com/Voe/sso` |
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<subdomain>.sedgwickcms.net/voe/sso` |
@@ -210,7 +210,7 @@ ms.locfileid: "37082627"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Sedgwick CMS" на панели доступа, вы автоматически войдете в приложение Sedgwick CMS.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 0b5fb84f8d8fbed7e1d4112e96b00af3e460661a
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 7bb15323a1f4ead02a24c4ee451de8890a635032
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36317108"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39053055"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fluxx-labs"></a>Руководство по интеграции Azure Active Directory с Fluxx Labs
 
@@ -33,7 +33,7 @@ ms.locfileid: "36317108"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Fluxx Labs, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36317108"
     | Производство | `https://<subdomain>.fluxx.io` |
     | Предварительный этап | `https://<subdomain>.preprod.fluxxlabs.com`|
         
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
 
     | Среда | Шаблон URL-адреса|
     |-------------|------------|
@@ -154,7 +154,7 @@ ms.locfileid: "36317108"
 
     a. Установите флажок **SAML SSO** (Единый вход SAML).
 
-    Б. В текстовом поле **Request Path** (Путь запроса) введите **/auth/saml**.
+    b. В текстовом поле **Request Path** (Путь запроса) введите **/auth/saml**.
 
     c. В текстовом поле **Callback Path** (Путь обратного вызова) введите **/auth/saml/callback**.
 
@@ -227,7 +227,7 @@ ms.locfileid: "36317108"
 
     a. Во Fluxx Labs в качестве уникального идентификатора для единого входа используется адрес электронной почты. Укажите в поле **SSO UID** (ИД пользователя для единого входа) адрес электронной почты пользователя, который используется в качестве имени для входа для единого входа.
 
-    Б. Выберите команду **Сохранить**.
+    b. Выберите команду **Сохранить**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -264,7 +264,7 @@ ms.locfileid: "36317108"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Fluxx Labs" на панели доступа, вы автоматически войдете в приложение Fluxx Labs.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/21/2017
 ms.author: jeedes
-ms.openlocfilehash: 1189a60b33c385377767ea44877dd5fdf853f260
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 4ae5c9834352bd2413075e87c79e27a9a3c354b9
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221541"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047649"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
 
@@ -33,7 +33,7 @@ ms.locfileid: "36221541"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Flatter Files, вам потребуется:
 
@@ -136,7 +136,7 @@ ms.locfileid: "36221541"
     
     a. Установите флажок **Use SAML 2.0 For Authentication**(Использовать SAML 2.0 для проверки подлинности).
     
-    Б. Нажмите кнопку **Configure SAML** (Настроить SAML).
+    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
 8. В диалоговом окне **SAML Configuration** (Настройка SAML) выполните следующие действия. 
    
@@ -147,7 +147,7 @@ ms.locfileid: "36221541"
     >[!NOTE]
     >Если у вас нет зарегистрированного домена, обратитесь в службу поддержки Flatter Files по адресу [support@flatterfiles.com](mailto:support@flatterfiles.com). 
     
-    Б. В текстовое поле **URL-адрес поставщика удостоверений** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
+    b. В текстовое поле **URL-адрес поставщика удостоверений** вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
    
     c.  Откройте сертификат в кодировке Base-64 в Блокноте, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **Сертификат поставщика удостоверений**.
 
@@ -182,7 +182,7 @@ ms.locfileid: "36221541"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "36221541"
 
     a. В текстовом поле **Имя** введите **Britta**.
    
-    Б. В текстовом поле **Фамилия** введите **Simon**. 
+    b. В текстовом поле **Фамилия** введите **Simon**. 
    
     c. В текстовом поле **Email Address** (Адрес электронной почты) введите адрес электронной почты пользователя Britta Simon на портале Azure.
    
@@ -250,7 +250,7 @@ ms.locfileid: "36221541"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните элемент Flatter Files на панели доступа, чтобы автоматически войти в приложение Flatter Files.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

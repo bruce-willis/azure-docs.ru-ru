@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/6/2017
 ms.author: jeedes
-ms.openlocfilehash: e39bd40a25333f6b2e323439d29e2a85e67d20d5
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: ad5c8a61a83211147f5e4929a4f4f6fab738ba32
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36284936"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043760"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-apptio"></a>Руководство по интеграции Azure Active Directory с Apptio
 
@@ -34,7 +34,7 @@ ms.locfileid: "36284936"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Apptio, вам потребуется:
 
@@ -137,7 +137,7 @@ ms.locfileid: "36284936"
 
     ![Настройка единого входа](./media/apptio-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -223,7 +223,7 @@ ms.locfileid: "36284936"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "Apptio" на панели доступа, вы автоматически войдете в приложение Apptio.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

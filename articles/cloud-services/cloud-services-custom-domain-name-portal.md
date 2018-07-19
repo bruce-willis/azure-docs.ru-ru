@@ -3,7 +3,7 @@ title: Настройка пользовательского доменного 
 description: Узнайте, как опубликовать в Интернете приложение или данные Azure на пользовательском домене, настроив параметры DNS.  В этих примерах используется портал Azure.
 services: cloud-services
 documentationcenter: .net
-author: Thraka
+author: jpconnock
 manager: timlt
 editor: ''
 ms.assetid: 5783a246-a151-4fb1-b488-441bfb29ee44
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
-ms.author: adegeo
-ms.openlocfilehash: 139ec6578dc9e76039c5fb13e7a7741aa8ba4e0d
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.author: jeconnoc
+ms.openlocfilehash: 43a3458ba0f08d73931b5ecddf6a2c7b1ae259f4
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "25946780"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044821"
 ---
 # <a name="configuring-a-custom-domain-name-for-an-azure-cloud-service"></a>Настройка пользовательского доменного имени для облачной службы Azure
 При создании облачной службы Azure ей назначается поддомен **cloudapp.net**. Например, если имя облачной службы — contoso, пользователи будут иметь доступ к приложению по такому URL-адресу: http://contoso.cloudapp.net. Azure также назначает виртуальный IP-адрес.
@@ -124,7 +124,7 @@ ms.locfileid: "25946780"
 
 | Имя узла/Поддомен | IP-адрес |
 | --- | --- |
-| @ |137.135.70.239 |
+| \@ |137.135.70.239 |
 
 В этом примере показано создание записи А для корневого домена. Если вы хотите создать запись с подстановочными знаками, чтобы охватить все поддомены, введите "*****" в качестве поддомена.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 1fd426a7d1adfa9a09a4b1f9c6580fcd35c9683c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 7c792511616502a7ce83ac1a240d449efe547df5
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36226142"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39042808"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-itslearning"></a>Учебник. Интеграция Azure Active Directory с itslearning
 
@@ -33,7 +33,7 @@ ms.locfileid: "36226142"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с itslearning, вам потребуется:
 
@@ -118,7 +118,7 @@ ms.locfileid: "36226142"
     | `https://www.itslearning.com/index.aspx`|
     | `https://us1.itslearning.com/index.aspx`|
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в формате: `urn:mace:saml2v2.no:services:com.itslearning`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в формате: `urn:mace:saml2v2.no:services:com.itslearning`
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -159,7 +159,7 @@ ms.locfileid: "36226142"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -207,7 +207,7 @@ ms.locfileid: "36226142"
 
   ![Вход](./media/itslearning-tutorial/login.png)
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

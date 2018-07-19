@@ -10,17 +10,17 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 85f8632aae8a70b1282155881dbca6b25734a6c5
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 2f2177b289ba9d13ba635bddcd61748e1e8ab0d1
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36936403"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39063048"
 ---
 ### <a name="run-the-service"></a>Запуск службы
 
 1. Чтобы запустить службу, нажмите клавишу F5 (или введите `azds up` в окне терминала). Служба автоматически запустится в выбранной среде `default/scott`. 
-1. Убедитесь, что служба запущена в своей среде, еще раз выполнив команду `azds list`. Во-первых, вы увидите, что экземпляр `mywebapi` теперь выполняется в среде `default/scott` (версия, запущенная в `default`, по-прежнему выполняется, но не отображается). Во-вторых, URL-адрес точки доступа для `webfrontend` имеет префикс с текстом "scott.s.". Этот URL-адрес является уникальным для среды `default/scott`. Он указывает на то, что запросы, отправленные на URL-адрес scott, сначала будут направляться к службам в среде `default/scott`, а при сбое возвратятся к службам в среде `default`.
+1. Убедитесь, что служба запущена в своей среде, еще раз выполнив команду `azds list-up`. Во-первых, вы увидите, что экземпляр `mywebapi` теперь выполняется в среде `default/scott` (версия, запущенная в `default`, по-прежнему выполняется, но не отображается). Во-вторых, URL-адрес точки доступа для `webfrontend` имеет префикс с текстом "scott.s.". Этот URL-адрес является уникальным для среды `default/scott`. Он указывает на то, что запросы, отправленные на URL-адрес scott, сначала будут направляться к службам в среде `default/scott`, а при сбое возвратятся к службам в среде `default`.
 
 ```
 Name         Space          Chart              Ports   Updated     Access Points

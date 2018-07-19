@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 7466c3ca87ed47b6d7dfe3d725197d3a6027fdf9
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 7e2033310a30499cf862fb4d399cb0180ac9b713
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901023"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006970"
 ---
 # <a name="use-a-windows-vm-managed-service-identity-msi-to-access-resource-manager"></a>Доступ к Resource Manager с помощью управляемого удостоверения службы (MSI) виртуальной машины Windows
 
@@ -32,7 +32,7 @@ ms.locfileid: "37901023"
 > * Предоставление виртуальной машине доступа к группе ресурсов в Azure Resource Manager. 
 > * Получение маркера доступа с помощью удостоверения виртуальной машины и вызов Azure Resource Manager с его помощью.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -52,7 +52,7 @@ ms.locfileid: "37901023"
 5.  Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.
 6.  Выберите размер виртуальной машины. Чтобы просмотреть дополнительные размеры, выберите **Просмотреть все** или измените фильтр **Supported disk type** (Поддерживаемые типы диска). На странице параметров оставьте значения по умолчанию и нажмите кнопку **OK**.
 
-    ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
+    ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
 ## <a name="enable-msi-on-your-vm"></a>Активация MSI на виртуальной машине 
 
@@ -62,7 +62,7 @@ MSI на виртуальной машине позволяет получить
 2.  В левой области навигации щелкните **Конфигурация**. 
 3.  Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать MSI, нажмите кнопку **Да**. Чтобы удалить удостоверение, нажмите кнопку "Нет". 
 4.  Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.  
-    ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
+    ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
 ## <a name="grant-your-vm-access-to-a-resource-group-in-resource-manager"></a>Предоставление виртуальной машине доступа к группе ресурсов в Resource Manager
 С помощью MSI код может получить маркеры доступа, чтобы пройти аутентификацию и получить доступ к ресурсам, поддерживающим аутентификацию Azure AD.  Azure Resource Manager поддерживает аутентификацию Azure AD.  Сначала нам необходимо предоставить этому удостоверению виртуальной машины доступ к ресурсу в Resource Manager, в этом случае — к группе ресурсов, в которой находится виртуальная машина.  
@@ -75,7 +75,7 @@ MSI на виртуальной машине позволяет получить
 6.  Проверьте, чтобы в раскрывающемся списке **Подписка** была выбрана нужная подписка. В поле **Группа ресурсов** выберите **Все группы ресурсов**. 
 7.  И наконец, в поле **Выбрать** выберите свою виртуальную машину Windows в раскрывающемся списке, а затем нажмите кнопку **Сохранить**.
 
-    ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-permissions.png)
+    ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-permissions.png)
 
 ## <a name="get-an-access-token-using-the-vm-identity-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью удостоверения виртуальной машины и вызов Azure Resource Manager с его помощью. 
 

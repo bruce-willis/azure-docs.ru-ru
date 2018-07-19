@@ -9,16 +9,15 @@ editor: cgronlun
 ms.assetid: 75f6de6f-6fd8-48f4-8707-cb27d22d27a6
 ms.service: data-lake-store
 ms.devlang: na
-ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 01/09/2018
+ms.topic: conceptual
+ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 89d4110679d7a02d1468a9dab6816fb9e6b02181
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: e5b04a4cfbf26011753715f02baea689ec3065b6
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39012052"
 ---
 # <a name="account-management-operations-on-azure-data-lake-store-using-python"></a>Операции управления учетными записями в Azure Data Lake Store с использованием Python
 > [!div class="op_single_selector"]
@@ -30,7 +29,7 @@ ms.lasthandoff: 05/10/2018
 
 Узнайте, как использовать пакет SDK для Python для Azure Data Lake Store для выполнения основных операций управления учетными записям, таких как создание учетной записи Data Lake Store, перечисление учетных записей Data Lake Store и т. д. Дополнительные сведения о том, как выполнять операции файловой системы в Data Lake Store с помощью Python, см. в [этой статье](data-lake-store-data-operations-python.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Python**. Скачать Python можно [здесь](https://www.python.org/downloads/). В этой статье используется версия Python 3.6.2.
 
@@ -135,6 +134,6 @@ pip install azure-datalake-store
 * [Операции файловой системы в Data Lake Store с помощью пакета SDK для Python](data-lake-store-data-operations-python.md).
 
 ## <a name="see-also"></a>См. также
-* [Справочник по Python Azure Data Lake Store. Управление учетными записями](http://azure-sdk-for-python.readthedocs.io/en/latest/sample_azure-mgmt-datalake-store.html)
+
 * [Справочник по Python Azure Data Lake Store. Файловая система](http://azure-datalake-store.readthedocs.io/en/latest)
 * [Приложения больших данных с открытым исходным кодом, которые работают с хранилищем озера данных Azure](data-lake-store-compatible-oss-other-applications.md)

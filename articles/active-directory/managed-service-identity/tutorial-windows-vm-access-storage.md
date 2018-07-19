@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 823b647dbc171050f7b36cfc729b0d3529e1f296
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 94e16156e8accc2460005cb1927a621ec7921c71
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901234"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39043998"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-to-access-azure-storage-via-access-key"></a>Руководство. Получение доступа к службе хранилища Azure с помощью ключа доступа и управляемого удостоверения службы виртуальной машины Windows
 
@@ -33,7 +33,7 @@ ms.locfileid: "37901234"
 > * предоставлять виртуальной машине доступ к ключам учетной записи хранения в Resource Manager; 
 > * получать маркер доступа с помощью удостоверения виртуальной машины и использовать его для извлечения ключей доступа к хранилищу из Resource Manager. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -54,7 +54,7 @@ ms.locfileid: "37901234"
 5.  Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.
 6.  Выберите размер виртуальной машины. Чтобы просмотреть дополнительные размеры, выберите **Просмотреть все** или измените фильтр **Supported disk type** (Поддерживаемые типы диска). В колонке параметров оставьте значения по умолчанию и нажмите кнопку **OK**.
 
-    ![Замещающий текст](../media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
+    ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
 ## <a name="enable-msi-on-your-vm"></a>Активация MSI на виртуальной машине
 
@@ -65,7 +65,7 @@ MSI на виртуальной машине позволяет получить
 3. Чтобы зарегистрировать и активировать MSI, нажмите кнопку **Да**. Чтобы удалить удостоверение, нажмите кнопку "Нет".
 4. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
 
-    ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
+    ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения 
 
@@ -78,7 +78,7 @@ MSI на виртуальной машине позволяет получить
 5. Убедитесь, что значения **подписки** и **группы ресурсов** соответствуют указанным при создании виртуальной машины на предыдущем шаге.
 6. Нажмите кнопку **Создать**.
 
-    ![Создание учетной записи хранения](../media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    ![Создание учетной записи хранения](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
 
 ## <a name="create-a-blob-container-in-the-storage-account"></a>Создание контейнера больших двоичных объектов в учетной записи хранения
 
@@ -89,7 +89,7 @@ MSI на виртуальной машине позволяет получить
 3. Щелкните **+ Контейнер** в верхней части страницы, после чего появится панель "Новый контейнер".
 4. Присвойте контейнеру имя, выберите уровень доступа, а затем нажмите кнопку **ОК**. Указанное имя будет использоваться далее в этом руководстве. 
 
-    ![Создание контейнера хранилища](../media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    ![Создание контейнера хранилища](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
 
 ## <a name="grant-your-vms-msi-access-to-use-storage-account-access-keys"></a>Предоставление MSI виртуальной машины прав на использование ключей доступа учетных записей хранения 
 
@@ -103,7 +103,7 @@ MSI на виртуальной машине позволяет получить
 6. Убедитесь, что нужная подписка присутствует в раскрывающемся списке **Подписки**, и установите для параметра **Группы ресурсов** значение "Все группы ресурсов".  
 7. И наконец, в разделе **Выбрать** выберите в раскрывающемся списке нужную виртуальную машину Windows и нажмите кнопку **Сохранить**. 
 
-    ![Замещающий текст](../media/msi-tutorial-linux-vm-access-storage/msi-storage-role.png)
+    ![Замещающий текст](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/msi-storage-role.png)
 
 ## <a name="get-an-access-token-using-the-vms-identity-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью удостоверения виртуальной машины и вызов Azure Resource Manager с его помощью 
 

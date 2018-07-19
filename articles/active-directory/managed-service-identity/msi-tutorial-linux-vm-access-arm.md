@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/22/2017
 ms.author: daveba
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 1195161a0c4045620447439bf9361b7c4c0189ae
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 06abd7867a99c20597ed17faf6fa61b91f70baaa
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904396"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39007712"
 ---
 # <a name="tutorial-use-a-user-assigned-identity-on-a-linux-vm-to-access-azure-resource-manager"></a>Руководство. Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения на виртуальной машине Linux
 
@@ -38,7 +38,7 @@ ms.locfileid: "37904396"
 > * Предоставление пользовательскому удостоверению доступа к группе ресурсов в Azure Resource Manager 
 > * Получение маркера доступа с помощью пользовательского удостоверения и вызов Azure Resource Manager с его помощью. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемым удостоверением службы, изучите [общие сведения](overview.md). **Обратите внимание на [различия между системным и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -58,7 +58,7 @@ ms.locfileid: "37904396"
 2. Выберите **Вычисления**, а затем — **Сервер Ubuntu 16.04 LTS**.
 3. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH** или **Пароль**. Созданные учетные данные позволят вам выполнить вход на виртуальную машину.
 
-    ![Создание виртуальной машины Linux](~/articles/active-directory/media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
+    ![Создание виртуальной машины Linux](media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
 
 4. В раскрывающемся списке выберите **подписку** для виртуальной машины.
 5. Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.

@@ -10,21 +10,21 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 856ae994e49f809ca2ef906ba6cdc7f8624dd201
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: c99ae755705dddf501609c8f199d1977d0bde415
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33870028"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39057367"
 ---
 # <a name="azure-ad-self-service-password-reset-rapid-deployment"></a>Быстрое развертывание самостоятельного сброса пароля в Azure AD
 
 > [!IMPORTANT]
-> **Вы здесь потому, что возникают проблемы при входе?** Если это так, см. статью [Я не помню свой пароль Azure AD](../active-directory-passwords-update-your-own-password.md).
+> **Вы здесь потому, что возникают проблемы при входе?** Если это так, см. статью [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md).
 
 С помощью системы самостоятельного сброса пароля (SSPR) ИТ-администраторы могут предоставить пользователям возможность самостоятельно сбрасывать или разблокировать их пароли и учетные записи. Эта система предоставляет подробные отчеты, которые позволяют отслеживать доступ к ней, а также создает уведомления в случае несанкционированного использования или применения не по назначению.
 
-В этом руководстве предполагается, что у вас уже есть рабочий пробный или лицензированный клиент Azure Active Directory (Azure AD). Сведения о настройке Azure AD см. на странице [бесплатной пробной версии Azure Active Directory](../get-started-azure-ad.md).
+В этом руководстве предполагается, что у вас уже есть рабочий пробный или лицензированный клиент Azure Active Directory (Azure AD). Сведения о настройке Azure AD см. на странице [бесплатной пробной версии Azure Active Directory](../fundamentals/get-started-azure-ad.md).
 
 ## <a name="enable-sspr-for-your-azure-ad-tenant"></a>Включение SSPR для клиента Azure AD
 
@@ -62,7 +62,7 @@ ms.locfileid: "33870028"
    * уведомлять пользователей о сбросе пароля;
    * уведомлять всех администраторов, если другие администраторы сбрасывают свои пароли.
 
-Вот вы и настроили SSPR для своего клиента Azure AD. Теперь пользователи могут использовать инструкции, приведенные в статьях [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md) и [Я не помню свой пароль Azure AD](../active-directory-passwords-update-your-own-password.md), для обновления своих паролей без вмешательства администратора. Вы можете остановиться на этом этапе, если используете только облачный клиент. Или же можете перейти к следующему разделу, чтобы настроить синхронизацию паролей с локальным доменом Active Directory.
+Вот вы и настроили SSPR для своего клиента Azure AD. Теперь пользователи могут использовать инструкции, приведенные в статьях [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md) и [Я не помню свой пароль Azure AD](../user-help/active-directory-passwords-update-your-own-password.md), для обновления своих паролей без вмешательства администратора. Вы можете остановиться на этом этапе, если используете только облачный клиент. Или же можете перейти к следующему разделу, чтобы настроить синхронизацию паролей с локальным доменом Active Directory.
 
 > [!TIP]
 > Тестируйте SSPR с использованием учетной записи пользователя, а не администратора, так как Майкрософт предъявляет строгие требования к проверке подлинности учетных записей администраторов Azure. Дополнительные сведения о политике паролей администратора см. в статье о [политике паролей](concept-sspr-policy.md#administrator-password-policy-differences).
@@ -95,8 +95,8 @@ ms.locfileid: "33870028"
 Дополнительные сведения о сбросе пароля с помощью Azure AD см. в следующих статьях:
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md)
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)

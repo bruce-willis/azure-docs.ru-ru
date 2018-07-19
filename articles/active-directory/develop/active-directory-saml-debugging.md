@@ -15,19 +15,19 @@ ms.date: 06/15/2018
 ms.author: celested
 ms.custom: aaddev
 ms.reviewer: hirsin, dastrock, smalser
-ms.openlocfilehash: 8bb0df567fbac6e8f8a2e2f64f868b4f219e05ac
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 0192b2d89b5e97c7f23b5394106853ddf83ddaf4
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751400"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044015"
 ---
 # <a name="debug-saml-based-single-sign-on-to-applications-in-azure-active-directory"></a>Отладка единого входа на основе SAML в приложениях в Azure Active Directory
 
 Узнайте, как найти и устранить проблемы с [единым входом](../manage-apps/what-is-single-sign-on.md) для приложений в Azure Active Directory (Azure AD) с поддержкой [языка разметки заявлений системы безопасности (SAML) 2.0](https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language). 
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Мы рекомендуем установить [расширение защищенного входа в мои приложения](../active-directory-saas-access-panel-user-help.md#i-am-having-trouble-installing-the-my-apps-secure-sign-in-extension). Это расширение браузера позволяет собирать сведения о запросах SAML и ответах SAML, необходимые для решения проблем с единым входом. Если вы не можете установить расширение, ознакомьтесь с этой статьей, которая описывает решение проблем при наличии или отсутствии этого расширения.
+Мы рекомендуем установить [расширение защищенного входа в мои приложения](../user-help/active-directory-saas-access-panel-user-help.md#i-am-having-trouble-installing-the-my-apps-secure-sign-in-extension). Это расширение браузера позволяет собирать сведения о запросах SAML и ответах SAML, необходимые для решения проблем с единым входом. Если вы не можете установить расширение, ознакомьтесь с этой статьей, которая описывает решение проблем при наличии или отсутствии этого расширения.
 
 Перейдите по одной из следующих ссылок, чтобы загрузить и установить расширение защищенного входа в мои приложения.
 

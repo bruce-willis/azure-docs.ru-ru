@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 7f54877f9218cbb0c2ac8cca86c580b7f1aa6c83
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: c006e448b8da1acaf51c8339cbcd0b6170f29874
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33869756"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054817"
 ---
 # <a name="password-management-frequently-asked-questions"></a>Вопросы и ответы об управлении паролями
 
@@ -281,8 +281,8 @@ ms.locfileid: "33869756"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Как развернуть самостоятельный сброс пароля?](howto-sspr-deployment.md)
-* [Сброс или изменение пароля](../active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md)
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md)
 * [Требования к лицензированию самостоятельного сброса пароля в Azure AD](concept-sspr-licensing.md)
 * [Какие данные используются для SSPR и какие сведения нужно указывать для пользователей](howto-sspr-authenticationdata.md)
 * [Доступные пользователям методы проверки подлинности](concept-sspr-howitworks.md#authentication-methods)

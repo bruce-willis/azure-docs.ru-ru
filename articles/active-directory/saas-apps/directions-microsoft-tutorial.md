@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 282869295f26f85683a2d28706280c4bf62fa54b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: b83f452300295078e4edf797ec2ef2f0c5223031
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36221382"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047479"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-directions-on-microsoft"></a>Руководство. Интеграция Azure Active Directory с Directions on Microsoft
 
@@ -33,7 +33,7 @@ ms.locfileid: "36221382"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Directions on Microsoft, вам потребуется:
 
@@ -118,7 +118,7 @@ ms.locfileid: "36221382"
     | `https://www.directionsonmicrosoft.com/user/login` |
     | `https://<subdomain>.devcloud.acquia-sites.com/<companyname>` |
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     |  |
     | --- |
     | `https://rhelmdirectionsonmicrosoftcomtest.devcloud.acquia-sites.com/simplesaml/<companyname>` |
@@ -169,7 +169,7 @@ ms.locfileid: "36221382"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -217,7 +217,7 @@ ms.locfileid: "36221382"
  
 Щелкнув элемент Directions on Microsoft на панели доступа, вы автоматически войдете в приложение Directions on Microsoft.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

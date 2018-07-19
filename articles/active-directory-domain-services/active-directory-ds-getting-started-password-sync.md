@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 04/02/2018
 ms.author: maheshu
-ms.openlocfilehash: 701fe17869d6e7744751d80330422ea47361b411
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: ff2659ed7dbdb21bccb8b5858d946b47951e40cc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36216146"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048939"
 ---
 # <a name="enable-password-hash-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации хэшей паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей паролей, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.
@@ -78,7 +78,7 @@ ms.locfileid: "36216146"
 Новый пароль вступает в силу в доменных службах Azure Active Directory через несколько минут после изменения. Входить на компьютеры, подключенные к управляемому домену, с помощью нового пароля можно примерно через 20 минут.
 
 ## <a name="related-content"></a>Похожий контент
-* [Как изменить свой пароль](../active-directory/active-directory-passwords-update-your-own-password.md)
+* [Как изменить свой пароль](../active-directory/user-help/active-directory-passwords-update-your-own-password.md)
 * [Приступая к работе с компонентами управления паролями](../active-directory/authentication/quickstart-sspr.md)
 * [Включение синхронизации хэшей паролей с доменными службами Azure AD для синхронизированного клиента Azure AD](active-directory-ds-getting-started-password-sync-synced-tenant.md)
 * [Администрирование управляемого домена доменных служб Azure Active Directory](active-directory-ds-admin-guide-administer-domain.md)

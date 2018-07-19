@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: radwiv;chadmat;genli
-ms.openlocfilehash: 38ff1ee4c525d41e2a7446d5adc792c746504491
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 7e6b3e7496c4a063156ff3b8feae1f5096efe55f
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36754310"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035624"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
 
@@ -88,7 +88,7 @@ ms.locfileid: "36754310"
     ```CMD
     netsh advfirewall firewall delete rule name="Open Port 5001" protocol=TCP localport=5001
     ```
-    </br>
+     
     **Linux в Azure.** Образы Linux в Azure имеют нестрогие брандмауэры. Когда приложение прослушивает порт, прохождение трафика разрешается. Для защищенных пользовательских образов может потребоваться явно открыть нужные порты. В число распространенных брандмауэров уровня ОС для Linux входят `iptables`, `ufw` и `firewalld`.
 
 3. На узле сервера перейдите в каталог, куда извлекается iperf3.exe. Затем запустите iPerf в режиме сервера и настройте его для прослушивания порта 5001, как показано в следующих командах:

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/14/2017
 ms.author: daveba
-ms.openlocfilehash: 06f316a7c96ff266e9f4593fa3a9ac871b2979aa
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: cf6df6dd87de56ca3c8180d5377e35d9be9bbd79
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33929778"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036451"
 ---
 # <a name="assign-a-managed-service-identity-access-to-a-resource-by-using-the-azure-portal"></a>Назначение доступа на основе управляемого удостоверения службы для ресурса с помощью портала Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "33929778"
 
 После настройки MSI для ресурса Azure можно предоставить доступ на основе удостоверения управляемой службы (MSI) другому ресурсу, как и любому субъекту безопасности. В этой статье показано, как предоставить виртуальной машине Azure или масштабируемому набору виртуальных машин доступ к учетной записи хранения Azure на основе MSI с помощью портала Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -41,20 +41,20 @@ ms.locfileid: "33929778"
 
 3. Для предоставления доступа виртуальной машине Azure перейдите на страницу **Управление доступом (IAM)** ресурса и выберите **+Добавить**. Укажите **роль**, **предоставьте доступ к виртуальной машине** и укажите соответствующие **подписку** и **группу ресурсов** для ресурса. В области критериев поиска отобразится ресурс. Выберите этот ресурс и нажмите кнопку **Сохранить**. 
 
-   ![Снимок экрана "Управление доступом (IAM)"](../media/msi-howto-assign-access-portal/assign-access-control-iam-blade-before.png)  
+   ![Снимок экрана "Управление доступом (IAM)"](../managed-service-identity/media/msi-howto-assign-access-portal/assign-access-control-iam-blade-before.png)  
    Для предоставления доступа масштабируемому набору виртуальных машин Azure перейдите на страницу **Управление доступом (IAM)** ресурса, затем нажмите кнопку **+Добавить**. Затем укажите **роли** и **назначение доступа**. В области критериев поиска выполните поиск масштабируемого набора виртуальных машин. Выберите этот ресурс и нажмите кнопку **Сохранить**.
    
-   ![Снимок экрана "Управление доступом (IAM)"](../media/msi-howto-assign-access-vmss-portal/assign-access-control-vmss-iam-blade-before.png)  
+   ![Снимок экрана "Управление доступом (IAM)"](../managed-service-identity/media/msi-howto-assign-access-vmss-portal/assign-access-control-vmss-iam-blade-before.png)  
 
 4. Вы вернетесь на главную страницу **Управление доступом (IAM)**, на которой вы увидите новую запись для MSI ресурса.
 
     Виртуальная машина Azure:
 
-   ![Снимок экрана "Управление доступом (IAM)"](../media/msi-howto-assign-access-portal/assign-access-control-iam-blade-after.png)
+   ![Снимок экрана "Управление доступом (IAM)"](../managed-service-identity/media/msi-howto-assign-access-portal/assign-access-control-iam-blade-after.png)
 
     Масштабируемый набор виртуальных машин:
 
-    ![Снимок экрана "Управление доступом (IAM)"](../media/msi-howto-assign-access-vmss-portal/assign-access-control-vmss-iam-blade-after.png)
+    ![Снимок экрана "Управление доступом (IAM)"](../managed-service-identity/media/msi-howto-assign-access-vmss-portal/assign-access-control-vmss-iam-blade-after.png)
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

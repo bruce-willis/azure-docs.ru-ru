@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: c8b5a84c853a974ede77e716b77f0a5007775ef7
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: cc070f7c4cb201e68c93b0b1337982325df74663
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231218"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051267"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sansan"></a>Руководство по интеграции Azure Active Directory с Sansan
 
@@ -33,7 +33,7 @@ ms.locfileid: "36231218"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Sansan, вам потребуется:
 
@@ -139,7 +139,7 @@ ms.locfileid: "36231218"
 
     a. Перейдите на страницу **Свойства** приложения **Sansan**, скопируйте **идентификатор объекта** с помощью кнопки **Копировать** и вставьте его в Блокнот.
 
-    Б. **Идентификатор объекта**, который вы скопировали на портале Azure, будет использоваться в качестве **ServicePrincipalObjectId** в скрипте PowerShell, используемом далее в этом руководстве. 
+    b. **Идентификатор объекта**, который вы скопировали на портале Azure, будет использоваться в качестве **ServicePrincipalObjectId** в скрипте PowerShell, используемом далее в этом руководстве. 
 
     c. Откройте окно командной строки Windows PowerShell с повышенными привилегиями.
     
@@ -226,7 +226,7 @@ ms.locfileid: "36231218"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -274,7 +274,7 @@ ms.locfileid: "36231218"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Sansan" на панели доступа, вы автоматически войдете в приложение Sansan.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

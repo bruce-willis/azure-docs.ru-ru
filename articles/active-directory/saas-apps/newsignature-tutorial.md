@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 72cfc470dde29033dfce50aa3e815507c03b3857
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8ea156f09f79d2e2718b0aeb1a6a9e870828c32d
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215942"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39051842"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Учебник. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "36215942"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с порталом управления облачными службами для Microsoft Azure, вам потребуется следующее:
 
@@ -119,7 +119,7 @@ ms.locfileid: "36215942"
     | `https://portal.newsignature.com/<instancename>` |   
     | `https://portal.igcm.com/<instancename>` |
     
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
     
     | |
     |--|
@@ -179,7 +179,7 @@ ms.locfileid: "36215942"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -225,7 +225,7 @@ ms.locfileid: "36215942"
 Цель этого раздела — проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 Щелкнув элемент портала управления облачными службами для Microsoft Azure на панели доступа, вы автоматически войдете в приложение портала управления облачными службами для Microsoft Azure.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

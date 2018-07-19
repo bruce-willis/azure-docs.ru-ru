@@ -22,8 +22,16 @@
   items:
     - name: Уровни увеличения и параметры сетки
       href: zoom-levels-and-tile-grid.md
-    - name: Поддерживаемые категории поиска
-      href: supported-search-categories.md
+    - name: Покрытие службы
+      items:
+        - name: Геокодирование
+          href: geocoding-coverage.md
+        - name: Трафик
+          href: traffic-coverage.md
+        - name: Отображение
+          href: render-coverage.md
+        - name: Маршрутизация
+          href: routing-coverage.md
     - name: Поддерживаемые языки
       href: supported-languages.md
 - name: Практические руководства
@@ -64,22 +72,14 @@
           href: map-accessibility.md
 - name: Справочные материалы
   items:
-    - name: Покрытие службы
-      items:
-        - name: Геокодирование
-          href: geocoding-coverage.md
-        - name: Трафик
-          href: traffic-coverage.md
-        - name: Отображение
-          href: render-coverage.md
-        - name: Маршрутизация
-          href: routing-coverage.md
     - name: Расширения параметров и API
       items:
         - name: Модель использования транспорта
           href: consumption-model.md
         - name: Расширение формата GeoJSON
           href: extend-geojson.md
+        - name: Поддерживаемые категории поиска
+          href: supported-search-categories.md
     - name: REST
       items:
         - name: Служба отрисовки
@@ -129,7 +129,7 @@
     - name: Центр разработчика IoT Azure
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
     - name: Цены

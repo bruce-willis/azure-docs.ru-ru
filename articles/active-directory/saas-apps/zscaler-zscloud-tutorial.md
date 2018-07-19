@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 4fbb0e5512511842e020e5670f1290c6b6359305
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: ea6008092f8fbfde8963da50d5273d36a4a30fe3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308736"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39050016"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Руководство. Интеграция Azure Active Directory с Zscaler ZSCloud
 
@@ -33,7 +33,7 @@ ms.locfileid: "36308736"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler ZSCloud, вам потребуется:
 
@@ -146,7 +146,7 @@ ms.locfileid: "36308736"
    
     a. Выберите параметр **Проверка подлинности с помощью единого входа SAML**.
 
-    Б. Щелкните **Настроить параметры единого входа SAML**.
+    b. Щелкните **Настроить параметры единого входа SAML**.
 
 11. На странице диалогового окна **Configure SAML Single Sign-On Parameters** (Настройка параметров единого входа в SAML) выполните указанные ниже действия и нажмите кнопку **Готово**.
 
@@ -154,7 +154,7 @@ ms.locfileid: "36308736"
     
     a. Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) в текстовое поле **URL of the SAML Portal to which users are sent for authentication** (URL-адрес портала SAML, куда пользователи направляются для проверки подлинности).
     
-    Б. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
+    b. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
     
     c. Чтобы передать скачанный сертификат, щелкните **Zscaler pem**.
     
@@ -166,7 +166,7 @@ ms.locfileid: "36308736"
     
     a. Выберите команду **Сохранить**.
 
-    Б. Щелкните **Активировать сейчас**.
+    b. Щелкните **Активировать сейчас**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -189,7 +189,7 @@ ms.locfileid: "36308736"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    Б. В текстовом поле "Адрес" введите **gateway.zscalerone.net**.
+    b. В текстовом поле "Адрес" введите **gateway.zscalerone.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
@@ -224,7 +224,7 @@ ms.locfileid: "36308736"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -257,7 +257,7 @@ ms.locfileid: "36308736"
    
     a. Заполните текстовые поля **UserID** (Идентификатор пользователя), **User Display Name** (Отображаемое имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля) и выберите **Groups** (Группы) и **Department** (Отдел) действующей учетной записи AAD, которую необходимо подготовить.
 
-    Б. Выберите команду **Сохранить**.
+    b. Выберите команду **Сохранить**.
 
 > [!NOTE]
 > Вы можете использовать любые другие средства создания учетной записи пользователя ZScaler ZSCloud или API, предоставляемые ZScaler ZSCloud для подготовки учетных записей пользователя AAD.
@@ -298,7 +298,7 @@ ms.locfileid: "36308736"
 
 Щелкнув плитку "Zscaler ZSCloud" на панели доступа, вы автоматически войдете в приложение Zscaler ZSCloud.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

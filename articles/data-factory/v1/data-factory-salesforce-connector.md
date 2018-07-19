@@ -11,15 +11,15 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/10/2018
+ms.date: 07/18/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 98f7494c87683eda858da5970e12073ce2204303
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: a9dba65591479033a892615ff053eebd0862851e
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048293"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125676"
 ---
 # <a name="move-data-from-salesforce-by-using-azure-data-factory"></a>Перемещение данных из Salesforce с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -37,7 +37,7 @@ ms.locfileid: "37048293"
 ## <a name="supported-versions"></a>Поддерживаемые версии
 Этот соединитель поддерживает следующие выпуски Salesforce: Developer Edition, Professional Edition, Enterprise Edition или Unlimited Edition. Он также поддерживает копирование из рабочей среды Salesforce, песочницы и пользовательского домена.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Требуется включить разрешения API. Дополнительные сведения о включении доступа к API в Salesforce с помощью набора разрешений см. [здесь](https://www.data2crm.com/migration/faqs/enable-api-access-salesforce-permission-set/).
 * Чтобы скопировать данные из Salesforce в локальное хранилище данных, в локальной среде необходимо установить шлюз управления данными версии не ниже 2.0.
 
@@ -289,15 +289,15 @@ ms.locfileid: "37048293"
 | --- | --- |
 | Автонумерация |Строка |
 | Флажок |Логическое |
-| Валюта |Double |
+| Валюта |Decimal |
 | Дата |Datetime |
 | Дата и время |Datetime |
 | Email |Строка |
 | Идентификатор |Строка |
 | Связь для подстановки |Строка |
 | Список множественного выбора |Строка |
-| Number |Double |
-| Процент |Double |
+| Number |Decimal |
+| Процент |Decimal |
 | Номер телефона |Строка |
 | Список выбора |Строка |
 | текст |Строка |

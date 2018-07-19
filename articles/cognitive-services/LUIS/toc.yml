@@ -17,6 +17,8 @@
           items:
             - name: 'C#'
               href: luis-get-started-cs-get-intent.md
+            - name: Go
+              href: luis-get-started-go-get-intent.md
             - name: Java
               href: luis-get-started-java-get-intent.md
             - name: JavaScript
@@ -33,6 +35,8 @@
           items:
             - name: 'C#'
               href: luis-get-started-cs-add-utterance.md
+            - name: Go
+              href: luis-get-started-go-add-utterance.md
             - name: Java
               href: luis-get-started-java-add-utterance.md
             - name: JavaScript
@@ -185,7 +189,7 @@
           href: luis-how-to-add-features.md
         - name: Добавление шаблонов
           href: luis-how-to-model-intent-pattern.md
-    - name: Обучение
+    - name: Train
       href: luis-how-to-train.md
     - name: Тест
       items:
@@ -220,7 +224,7 @@
             - name: Просмотр данных об использовании конечной точки с помощью PowerShell
               href: luis-how-to-manage-from-cloud-shell.md
             - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
-              href: traffic-manager.md
+              href: luis-traffic-manager.md
     - name: Миграция в API версии 2
       href: migration-v1-to-v2.md
     - name: Поиск регионов программным образом
@@ -239,7 +243,7 @@
       href: luis-boundaries.md
     - name: Справочник по предварительно созданным сущностям
       items:
-        - name: Сущности для конкретных языка и региональных параметров
+        - name: Сущности по языкам и региональным параметрам
           href: luis-reference-prebuilt-entities.md
         - name: Сущность возраста
           href: luis-reference-prebuilt-age.md
@@ -251,11 +255,11 @@
           href: luis-reference-prebuilt-dimension.md
         - name: Нерекомендуемые сущности
           href: luis-reference-prebuilt-deprecated.md
-        - name: Сущность адреса электронной почты
+        - name: Сущность email
           href: luis-reference-prebuilt-email.md
         - name: Сущность keyPhrase
           href: luis-reference-prebuilt-keyphrase.md
-        - name: Сущность числа
+        - name: Сущность number
           href: luis-reference-prebuilt-number.md
         - name: Сущность порядкового номера
           href: luis-reference-prebuilt-ordinal.md

@@ -15,12 +15,12 @@ ums.workload: na
 ms.date: 06/07/2018
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 5aab890340fcdd87e1b3788d8bcca903c43da1da
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 2f97a2e8ad38bb3c78333cc2c8eedad8f520e68a
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235752"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036808"
 ---
 # <a name="azure-log-integration-with-azure-diagnostics-logging-and-windows-event-forwarding"></a>Интеграция журналов данных Azure с ведением журнала системы диагностики Azure и пересылкой событий Windows
 
@@ -47,7 +47,7 @@ ms.locfileid: "35235752"
 
 У физического компьютера или виртуальной машины, на которой выполняется служба интеграции журналов Azure, должно быть сетевое подключение к общедоступному облаку Azure. Эта статья содержит сведения о требуемой конфигурации.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для установки службы "Интеграция журналов данных Azure" требуются как минимум следующие компоненты.
 
@@ -229,6 +229,7 @@ ms.locfileid: "35235752"
     ```Azlog.exe authorize subscriptionId``` Пример:
 
 ```AZLOG.exe authorize ba2c2367-d24b-4a32-17b5-4443234859```
+
 4.  Проверьте следующие папки, в которых должны создаваться JSON-файлы журнала аудита Azure Active Directory:
     - С:\Users\azlog\AzureResourceManagerJson
     - С:\Users\azlog\AzureResourceManagerJsonLD

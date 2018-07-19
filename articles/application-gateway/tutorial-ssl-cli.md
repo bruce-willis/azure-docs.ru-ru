@@ -7,21 +7,21 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 4/27/2018
+ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: c548bd4e9373e7871ddcd8e04c5992b303e0e6bb
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 99450f5c89cebad1aa5d19140878331866504d50
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34355939"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39068773"
 ---
 # <a name="tutorial-create-an-application-gateway-with-ssl-termination-using-the-azure-cli"></a>Руководство. Создание шлюза приложений с завершением SSL-запросов с помощью Azure CLI
 
 С помощью интерфейса командной строки Azure (Azure CLI) можно создать [шлюз приложений](overview.md) с сертификатом для [завершения SSL-запросов](ssl-overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание самозаверяющего сертификата
@@ -149,7 +149,7 @@ az vmss extension set \
   --name CustomScript \
   --resource-group myResourceGroupAG \
   --vmss-name myvmss \
-  --settings '{ "fileUris": ["https://raw.githubusercontent.com/davidmu1/samplescripts/master/install_nginx.sh"],
+  --settings '{ "fileUris": ["https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/install_nginx.sh"],
   "commandToExecute": "./install_nginx.sh" }'
 ```
 

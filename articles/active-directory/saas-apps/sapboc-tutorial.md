@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 42eb1c8332a29ff07c83b962aaa8f8e2f04fd07b
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: ffd4480a13549caba17becff27a43f51fcaa1988
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36308305"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041744"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-business-object-cloud"></a>Руководство по интеграции Azure Active Directory с SAP Business Object Cloud
 
@@ -34,7 +34,7 @@ ms.locfileid: "36308305"
 
 Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с SAP Business Object Cloud, вам потребуется:
 
@@ -278,7 +278,7 @@ ms.locfileid: "36308305"
 
 Щелкнув плитку SAP Business Object Cloud на панели доступа, вы автоматически войдете в приложение SAP Business Object Cloud.
 
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

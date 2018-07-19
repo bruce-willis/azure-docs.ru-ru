@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 07cbc047179c3de19d6f648d0342d47970c81dbc
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 235ba5fd1365ed8b400edce3db22420369540cce
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36231378"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39052675"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -34,7 +34,7 @@ ms.locfileid: "36231378"
 
 Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с E Sales Manager Remix, вам потребуется следующее.
 
@@ -102,7 +102,7 @@ ms.locfileid: "36231378"
 
     a. В поле **URL-адрес входа** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/esales-pc*.
 
-    Б. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/*.
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: *https://\<URL-адрес-сервера>/\<поддомен>/*.
 
     c. Запишите значение **идентификатора**, оно вам понадобится далее в этом руководстве.
     
@@ -155,7 +155,7 @@ ms.locfileid: "36231378"
     
     a. Установите флажок **PC version** (Версия для компьютера).
     
-    Б. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
+    b. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
 
     c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**).
 
@@ -223,7 +223,7 @@ ms.locfileid: "36231378"
 
     a. В поле **Employee Name** (Имя сотрудника) введите имя пользователя (например, **Britta**).
 
-    Б. Заполните остальные обязательные поля.
+    b. Заполните остальные обязательные поля.
     
     c. Если включен SAML, администратор не сможет войти через страницу входа. Предоставьте этому пользователю права администратора, установив флажок **Admin Login** (Вход администратора).
 
@@ -267,7 +267,7 @@ ms.locfileid: "36231378"
 
 Выбрав элемент "E Sales Manager Remix" на панели доступа, вы автоматически войдете в приложение E Sales Manager Remix.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

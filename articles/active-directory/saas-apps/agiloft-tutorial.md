@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/09/2017
 ms.author: jeedes
-ms.openlocfilehash: 2eddeae47e8279e9eb4d6bbb8386cbbe7c53a366
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: f11d705cceb05c9e9cd0b340a680684eecf4f5d9
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36214242"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054205"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-agiloft"></a>Руководство по интеграции Azure Active Directory с Agiloft
 
@@ -34,7 +34,7 @@ ms.locfileid: "36214242"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Agiloft, вам потребуется:
 
@@ -116,7 +116,7 @@ ms.locfileid: "36214242"
     | `https://<subdomain>.saas.enterprisewizard.com/project/<KB_NAME>` |
     | `https://<subdomain>.agiloft.com/project/<KB_NAME>` |
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |-|-|
     | `https://<subdomain>.saas.enterprisewizard.com:443/gui2/spsamlsso?project=<KB_NAME>` |
@@ -163,7 +163,7 @@ ms.locfileid: "36214242"
 
     a. В текстовое поле **IdP Entity Id / Issuer** (Идентификатор сущности поставщика удостоверений / издатель) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    Б. В текстовое поле **IdP Login URL** (URL-адрес входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b. В текстовое поле **IdP Login URL** (URL-адрес входа поставщика удостоверений) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **IdP Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -246,7 +246,7 @@ ms.locfileid: "36214242"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Agiloft на панели доступа, вы автоматически войдете в приложение Agiloft.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

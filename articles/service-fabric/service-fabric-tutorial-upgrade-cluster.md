@@ -3,7 +3,7 @@ title: Обновление среды выполнения Service Fabric в Az
 description: Из этого руководства вы узнаете, как обновить среду выполнения кластера Service Fabric, размещенного в Azure, с помощью PowerShell.
 services: service-fabric
 documentationcenter: .net
-author: Thraka
+author: rwike77
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/28/2017
-ms.author: adegeo
+ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 7e7304b259931c5196a4865383cf0b4ace4c4398
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 367528353d5849a64ed1924d1b1e02a9b2c38252
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109772"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39007939"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство. Обновление среды выполнения кластера Service Fabric в Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "37109772"
 > * создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) или [кластера Linux](service-fabric-tutorial-create-vnet-and-linux-cluster.md) в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * обновление среды выполнения кластера;
-> * [развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md).
+> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -195,7 +195,7 @@ sfctl cluster upgrade-status
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

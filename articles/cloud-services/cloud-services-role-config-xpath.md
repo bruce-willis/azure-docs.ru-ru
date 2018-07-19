@@ -3,7 +3,7 @@ title: Памятка по конфигурации XPath для роли обл
 description: Различные параметры XPath можно использовать в конфигурации роли облачной службы, чтобы предоставить их в качестве переменных среды.
 services: cloud-services
 documentationcenter: ''
-author: Thraka
+author: jpconnock
 manager: timlt
 editor: ''
 ms.assetid: c51e4493-0643-4d05-bc44-06c76bcbf7d1
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/19/2017
-ms.author: adegeo
-ms.openlocfilehash: e71adbca34390bda3a7d4067742ffb3a28201449
-ms.sourcegitcommit: afc78e4fdef08e4ef75e3456fdfe3709d3c3680b
+ms.author: jeconnoc
+ms.openlocfilehash: 2db63be6c6997840f7409a3ca79f1845f30e4ceb
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2017
-ms.locfileid: "24860377"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008065"
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Предоставление параметров конфигурации ролей как переменной среды с помощью XPath
 В файле определения службы рабочей роли или веб-роли облачной службы можно предоставить значения конфигурации среды выполнения как переменные среды. Поддерживаются следующие значения XPath (которые соответствуют значениям API).

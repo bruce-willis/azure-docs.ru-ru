@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 12859384ce79a34dbdb437aa402189fbf039c44c
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: eba6f2a22de42ce65996dbe0f9b75533d2a4dacc
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36285345"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39047898"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bambu-by-sprout-social"></a>Руководство по интеграции Azure Active Directory с Bambu by Sprout Social
 
@@ -33,7 +33,7 @@ ms.locfileid: "36285345"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Bambu by Sprout Social, вам потребуется:
 
@@ -168,7 +168,7 @@ To ensure users can sign-in to Bambu by Sprout Social after it has been configur
 
     a. В текстовом поле **Name** (Имя) введите **Britta Simon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -212,7 +212,7 @@ To ensure users can sign-in to Bambu by Sprout Social after it has been configur
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Bambu by Sprout Social на панели доступа, вы автоматически войдете в приложение Bambu by Sprout Social. Дополнительные сведения о панели доступа можно найти в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент Bambu by Sprout Social на панели доступа, вы автоматически войдете в приложение Bambu by Sprout Social. Дополнительные сведения о панели доступа можно найти в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

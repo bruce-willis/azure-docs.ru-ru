@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: fe96581428b8a41219a4aff46ecc0316d97884ae
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 2dd273a1a0b5a5af65c4c40337975cb6f3f858ae
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228675"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049836"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-veracode"></a>Руководство. Интеграция Azure Active Directory с Veracode
 
@@ -34,7 +34,7 @@ ms.locfileid: "36228675"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Veracode, вам потребуется:
 
@@ -134,7 +134,7 @@ ms.locfileid: "36228675"
     
     ![Атрибуты](./media/veracode-tutorial/tutorial_veracode_addattr1.png "Атрибуты")
     
-    Б. В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя атрибута** введите имя атрибута, отображаемое для этой строки.
     
     c. В текстовом поле **Значение атрибута** выберите значение атрибута, отображаемое для этой строки.
     
@@ -162,7 +162,7 @@ ms.locfileid: "36228675"
    
     a.  В текстовое поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
     
-    Б. Чтобы загрузить сертификат, скачанный на портале Azure, нажмите кнопку **Choose File** (Выбрать файл).
+    b. Чтобы загрузить сертификат, скачанный на портале Azure, нажмите кнопку **Choose File** (Выбрать файл).
    
     c. Выберите параметр **Включить саморегистрацию**.
 
@@ -172,7 +172,7 @@ ms.locfileid: "36228675"
    
     a. Для параметра **New User Activation** (Активация нового пользователя) выберите значение **No Activation Required** (Активация не требуется).
    
-    Б. Для параметра **User Data Updates** (Обновления пользовательских данных) выберите значение **Preference Veracode User Data** (Предпочтение пользовательских данных Veracode).
+    b. Для параметра **User Data Updates** (Обновления пользовательских данных) выберите значение **Preference Veracode User Data** (Предпочтение пользовательских данных Veracode).
    
     c. Для параметра **Сведения об атрибутах SAML**выберите следующие значения:
       * **роли пользователей;**
@@ -264,7 +264,7 @@ ms.locfileid: "36228675"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Veracode на панели доступа, вы автоматически войдете в приложение Veracode.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/19/2017
 ms.author: daveba
-ms.openlocfilehash: 9d9c18d576f3975d4c8272efff7161366f3f53fe
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 27ecb00bddb41ae45e790a54702c058ff3f1d24b
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901363"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035947"
 ---
 # <a name="configure-a-vm-managed-service-identity-msi-using-the-azure-portal"></a>Настройка управляемого удостоверения службы (MSI) на виртуальной машине Azure с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "37901363"
 > [!NOTE]
 > Сейчас операции с пользовательскими удостоверениями на портале Azure не поддерживаются. Загляните сюда позже, чтобы проверить наличие новой информации. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -59,7 +59,7 @@ ms.locfileid: "37901363"
     > [!NOTE]
     > Сейчас добавление пользовательского удостоверения в виртуальную машину на портале Azure не поддерживается.
 
-   ![Снимок экрана страницы "Конфигурация"](../media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
+   ![Снимок экрана страницы "Конфигурация"](../managed-service-identity/media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade.png)  
 
 ## <a name="remove-managed-service-identity-from-an-azure-vm"></a>Удаление удостоверения управляемой службы из виртуальной машины Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "37901363"
     > [!NOTE]
     > Сейчас добавление пользовательского удостоверения в виртуальную машину на портале Azure не поддерживается.
 
-   ![Снимок экрана страницы "Конфигурация"](../media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png)  
+   ![Снимок экрана страницы "Конфигурация"](../managed-service-identity/media/msi-qs-configure-portal-windows-vm/create-windows-vm-portal-configuration-blade-disable.png)  
 
 ## <a name="related-content"></a>Связанная информация
 

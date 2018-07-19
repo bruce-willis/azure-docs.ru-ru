@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: ramamill
-ms.openlocfilehash: f305f552d576f58914bc33351331f1da3c68bc23
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: c2100ee2388ae09bd309167b1be77f7bdbe32f69
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37951654"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126023"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
@@ -74,25 +74,7 @@ ms.locfileid: "37951654"
 
 * **Проверьте, блокирует ли доступ брандмауэр на основе URL-адресов на сервере обработки.** При использовании брандмауэра на основе URL-адресов на сервере убедитесь, что в конфигурацию брандмауэра добавлены следующие URL-адреса.
 
-  `*.accesscontrol.windows.net:`: используется для контроля доступа и управления удостоверениями;
-
-  `*.backup.windowsazure.com:`: используется для передачи данных репликации и оркестрации;
-
-  `*.blob.core.windows.net:`: используется для доступа к учетной записи хранения, в которой хранятся реплицируемые данные;
-
-  `*.hypervrecoverymanager.windowsazure.com:`: используется для операций управления репликацией и оркестрации;
-
-  `time.nist.gov` и `time.windows.com`: используются для проверки синхронизации времени системы с глобальным временем.
-
-URL-адреса для **облака Azure для государственных организаций**:
-
-`* .ugv.hypervrecoverymanager.windowsazure.us`
-
-`* .ugv.backup.windowsazure.us`
-
-`* .ugi.hypervrecoverymanager.windowsazure.us`
-
-`* .ugi.backup.windowsazure.us`
+[!INCLUDE [site-recovery-URLS](../../includes/site-recovery-URLS.md)]  
 
 * **Проверьте, не блокируют ли доступ параметры прокси-сервера на сервере обработки.**  При использовании прокси-сервера убедитесь, что его имя преобразуется DNS-сервером.
 Чтобы проверить параметры, указанные во время настройки сервера конфигурации, перейдите в раздел реестра

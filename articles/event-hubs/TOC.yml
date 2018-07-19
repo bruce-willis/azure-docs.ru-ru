@@ -26,6 +26,10 @@
   items:
     - name: Общие сведения об узле обработчика событий
       href: event-hubs-event-processor-host.md
+    - name: Фильтрация подключений по протоколу IP
+      href: event-hubs-ip-filtering.md
+    - name: Конечные точки службы виртуальной сети
+      href: event-hubs-service-endpoints.md
     - name: Руководство по программированию
       href: event-hubs-programming-guide.md
     - name: Интеграция со службой "Сетка событий"
@@ -150,7 +154,7 @@
     - name: Часто задаваемые вопросы
       href: event-hubs-faq.md
     - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=internet-of-things'
+      href: 'https://azure.microsoft.com/roadmap/?category=iot'
     - name: Схема обучения
       href: 'https://azure.microsoft.com/documentation/learning-paths/event-hubs/'
     - name: Цены

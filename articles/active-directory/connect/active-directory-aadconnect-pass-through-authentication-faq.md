@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/04/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e62117ee98b1d47600141249dcd3b17ec58a9654
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 6d5cd79a6336b2e5c4b3c5c6f5765d92cd602552
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37918161"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39048974"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -60,7 +60,7 @@ ms.locfileid: "37918161"
 
 ## <a name="what-happens-if-my-users-password-has-expired-and-they-try-to-sign-in-by-using-pass-through-authentication"></a>Что произойдет, если срок действия паролей истек и пользователи пытаются выполнить вход с использованием сквозной аутентификации?
 
-Если вы настроили [обратную запись паролей](../active-directory-passwords-update-your-own-password.md) для конкретного пользователя, то когда пользователь будет выполнять вход с использованием сквозной аутентификации, он сможет изменить или сбросить пароль. Пароли будут записаны обратно в локальный каталог Active Directory, как ожидается.
+Если вы настроили [обратную запись паролей](../user-help/active-directory-passwords-update-your-own-password.md) для конкретного пользователя, то когда пользователь будет выполнять вход с использованием сквозной аутентификации, он сможет изменить или сбросить пароль. Пароли будут записаны обратно в локальный каталог Active Directory, как ожидается.
 
 Если обратная запись паролей не настроена для определенного пользователя или ему не назначена действительная лицензия Azure AD, то он не сможет обновить свой пароль в облаке. Он не сможет обносить свой пароль, даже если истек срок его действия. Пользователь увидит следующее сообщение: "Ваша организация запрещает обновлять пароль на этом сайте. Обновите пароль рекомендованным организацией способом или обратитесь за помощью к администратору". Пользователь или администратор должен сбросить свой пароль в локальной службе Active Directory.
 

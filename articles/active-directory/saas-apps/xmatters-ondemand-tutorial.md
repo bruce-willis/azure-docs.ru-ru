@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 9a3555f9efa34a5da2e6fa624da0f80d52dab077
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 60991f2780de86f0b15f64def6b1776316f974d4
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211641"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055629"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство по интеграции Azure Active Directory с xMatters OnDemand
 
@@ -33,7 +33,7 @@ ms.locfileid: "36211641"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с xMatters OnDemand, вам потребуется:
 
@@ -121,7 +121,7 @@ ms.locfileid: "36211641"
     | `https://www.xmatters.com`|
     | `https://<companyname>.xmatters.com.au/`|
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
     | |
     |--|
     | `https://<companyname>.au1.xmatters.com.au`|
@@ -159,7 +159,7 @@ ms.locfileid: "36211641"
 
     a. Выберите **Включить SAML**.
 
-    Б. В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
+    b. В текстовое поле **Identity Provider ID** (Идентификатор поставщика удостоверений) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Single Sign on URL** (URL-адрес единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
@@ -194,7 +194,7 @@ ms.locfileid: "36211641"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -218,7 +218,7 @@ ms.locfileid: "36211641"
 
     a. Установите флажок **Активно**.
 
-    Б. В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
+    b. В текстовое поле **User ID** (Идентификатор пользователя) введите идентификатор пользователя, например Brittasimon@contoso.com.
 
     c. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
@@ -263,7 +263,7 @@ ms.locfileid: "36211641"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "xMatters OnDemand" на панели доступа, вы автоматически войдете в приложение xMatters OnDemand.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

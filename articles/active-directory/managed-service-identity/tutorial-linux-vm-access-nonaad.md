@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 16b715261329544687fd78ed9c022d7392cc32d9
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: e775ed9d918e53b8381a010691c679d80e7dd216
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901482"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044056"
 ---
 # <a name="tutorial-use-a-linux-vm-managed-service-identity-msi-to-access-azure-key-vault"></a>Руководство. Получение доступа к Azure Key Vault с помощью управляемого удостоверения службы (MSI) виртуальной машины Linux 
 
@@ -34,7 +34,7 @@ ms.locfileid: "37901482"
 > * предоставлять виртуальной машине доступ к секрету в Key Vault; 
 > * Получение маркера доступа с помощью удостоверения виртуальной машины и его использование для получения секрета из Key Vault. 
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -51,7 +51,7 @@ ms.locfileid: "37901482"
 2. Выберите **Вычисления**, а затем — **Сервер Ubuntu 16.04 LTS**.
 3. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH** или **Пароль**. Созданные учетные данные позволят вам выполнить вход на виртуальную машину.
 
-    ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
+    ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
 
 4. В раскрывающемся списке выберите **подписку** для виртуальной машины.
 5. Чтобы выбрать новую **группу ресурсов**, в которой вы хотите создать виртуальную машину, щелкните **Создать**. По завершении нажмите кнопку **ОК**.
@@ -66,7 +66,7 @@ MSI на виртуальной машине позволяет получить
 3. Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать MSI, нажмите кнопку **Да**. Чтобы удалить удостоверение, нажмите кнопку "Нет".
 4. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.
 
-    ![Замещающий текст](../media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
+    ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
 ## <a name="grant-your-vm-access-to-a-secret-stored-in-a-key-vault"></a>Предоставление виртуальной машине доступа к секрету в Key Vault  
 
@@ -83,7 +83,7 @@ MSI на виртуальной машине позволяет получить
 7. Чтобы завершить добавление новой политики доступа, нажмите кнопку **ОК**, а затем нажмите кнопку **ОК**, чтобы завершить выбор политики доступа. 
 8. Чтобы завершить создание хранилища ключей, нажмите кнопку **Создать**. 
 
-    ![Замещающий текст](../media/msi-tutorial-windows-vm-access-nonaad/msi-blade.png)
+    ![Замещающий текст](../managed-service-identity/media/msi-tutorial-windows-vm-access-nonaad/msi-blade.png)
 
 Затем добавьте секрет в хранилище Key Vault, чтобы позже извлечь его с помощью кода, который вы запустите на виртуальной машине: 
 

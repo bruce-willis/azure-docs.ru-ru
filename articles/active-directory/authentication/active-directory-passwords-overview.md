@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 77d26d860462b1a82315bf1385bccf62047e3da3
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: e28918fe9e26221738fe234ad41923c58a6ac260
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33866674"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049027"
 ---
 # <a name="azure-ad-self-service-password-reset-for-the-it-professional"></a>Самостоятельный сброс пароля в Azure AD для ИТ-специалистов
 
@@ -65,5 +65,5 @@ SSPR Azure AD помогает достичь следующего:
 
 * Вы готовы приступить к работе с SSPR? [Настройка самостоятельного сброса пароля Azure AD](quickstart-sspr.md).
 * Спланируйте успешное развертывание SSPR для пользователей с помощью рекомендаций из нашего [руководства по развертыванию](howto-sspr-deployment.md).
-* [Сброс или изменение пароля](../active-directory-passwords-update-your-own-password.md)
-* [Регистрация для самостоятельного сброса пароля](../active-directory-passwords-reset-register.md).
+* [Сброс или изменение пароля](../user-help/active-directory-passwords-update-your-own-password.md)
+* [Регистрация для самостоятельного сброса пароля](../user-help/active-directory-passwords-reset-register.md).

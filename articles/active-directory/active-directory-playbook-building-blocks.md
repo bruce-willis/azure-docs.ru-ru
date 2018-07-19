@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: 45dedd8c4d6ae2f9b54873d87f82c2e605a8c2aa
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fa399e3644e1050a4f264890583a388f7abd84ed
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38451705"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049475"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -157,7 +157,7 @@ ms.locfileid: "38451705"
 | Следуйте инструкциям для настройки ServiceNow. |  |
 | В колонке "Подготовка" приложения ServiceNow включите автоматическую подготовку. | [Управление подготовкой учетных записей пользователей для корпоративных приложений на новом портале Azure](manage-apps/configure-automatic-user-provisioning-portal.md) |
 | Подождите несколько минут, пока подготовка закончится.  В это время можно просмотреть отчеты о подготовке. |  |
-| Выполните вход по адресу https://myapps.microsoft.com/ как тестовый пользователь, обладающий доступом | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
+| Выполните вход по адресу https://myapps.microsoft.com/ как тестовый пользователь, обладающий доступом | [Что такое панель доступа?](user-help/active-directory-saas-access-panel-introduction.md) |
 | Щелкните элемент для только что созданного приложения. Подтвердите доступ. |  |
 | При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](active-directory-reporting-activity-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md) |
 
@@ -188,8 +188,8 @@ ms.locfileid: "38451705"
 | Настройте единый вход с паролем. | [Управление параметрами единого входа для корпоративных приложений на новом портале Azure: вход на основе пароля](manage-apps/configure-single-sign-on-portal.md#password-based-sign-on) |
 | Назначьте приложение группе, указанной в предварительных требованиях. | [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) |
 | Выполните вход по адресу https://myapps.microsoft.com/ как тестовый пользователь, обладающий доступом |  |
-| Щелкните элемент для только что созданного приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
-| Укажите учетные данные приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
+| Щелкните элемент для только что созданного приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](user-help/active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
+| Укажите учетные данные приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](user-help/active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
 | Закройте браузер и повторите вход. На этот раз пользователь должен получить возможность легкого доступа к приложению. |  |
 | При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](active-directory-reporting-activity-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md) |
 
@@ -308,7 +308,7 @@ ms.locfileid: "38451705"
 | Приложение SaaS (федеративный единый вход или единый вход с паролем) уже настроено. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) |
 | Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
 | Доступны учетные данные для владельца группы. | [Управление доступом к ресурсам с помощью групп Azure Active Directory](fundamentals/active-directory-manage-groups.md) |
-| Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
+| Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](user-help/active-directory-saas-access-panel-introduction.md) |
 
 
 ### <a name="steps"></a>Действия
@@ -318,7 +318,7 @@ ms.locfileid: "38451705"
 | Определите группу, которой был предоставлен доступ к приложению, настройте ее владельца.| [Управление параметрами группы в Azure Active Directory](fundamentals/active-directory-groups-settings-azure-portal.md) |
 | Войдите в качестве владельца группы и просмотрите членство в группах на вкладке групп в панели доступа. | [Страница управления группами Azure Active Directory](https://account.activedirectory.windowsazure.com/r#/groups) |
 | Добавьте информационного работника, которого требуется протестировать. |  |
-| Войдите в качестве информационного работника и убедитесь, что элемент доступен. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
+| Войдите в качестве информационного работника и убедитесь, что элемент доступен. | [Что такое панель доступа?](user-help/active-directory-saas-access-panel-introduction.md) |
 
 ### <a name="considerations"></a>Рекомендации
 
@@ -332,7 +332,7 @@ ms.locfileid: "38451705"
 | --- | --- |
 | Приложение SaaS (федеративный единый вход или единый вход с паролем) уже настроено. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) |
 | Определена облачная группа, которой назначен доступ к приложению в № 1. | Стандартный блок: [Настройка федеративного единого входа SaaS](#saas-federated-sso-configuration) <br/>[Создание группы и добавление в нее пользователей в Azure Active Directory](fundamentals/active-directory-groups-create-azure-portal.md) |
-| Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](active-directory-saas-access-panel-introduction.md) |
+| Определены учетные данные для информационного работника, обращающегося к приложениям. | [Что такое панель доступа?](user-help/active-directory-saas-access-panel-introduction.md) |
 
 
 ### <a name="steps"></a>Действия
@@ -380,7 +380,7 @@ ms.locfileid: "38451705"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Включите самостоятельное управление паролями в клиенте. | [Сброс паролей Azure Active Directory для ИТ-администраторов](active-directory-passwords-update-your-own-password.md) |
+| Включите самостоятельное управление паролями в клиенте. | [Сброс паролей Azure Active Directory для ИТ-администраторов](user-help/active-directory-passwords-update-your-own-password.md) |
 | Включите обратную запись паролей для управления паролями в локальной среде. Обратите внимание, что для этого требуются определенные версии Azure AD Connect. | [Необходимые условия для обратной записи паролей](authentication/howto-sspr-writeback.md) |
 | Определите пользователей подтверждения концепции, которые будут использовать эту функцию, и убедитесь, что они являются членами группы безопасности. Для полноценной демонстрации возможности пользователи не должны обладать правами администратора. | [Настройка управления паролями Azure Active Directory: ограничение доступа для сброса пароля](authentication/howto-sspr-writeback.md) |
 
@@ -395,7 +395,7 @@ ms.locfileid: "38451705"
 | Задайте данные для самостоятельного сброса паролей, как было настроено на шаге 2. | https://aka.ms/ssprsetup |
 | Закройте браузер. |  |
 | Начните с начала процесс входа в качестве информационного работника, который вы использовали на шаге 4. |  |
-| Сбросьте пароль. | [Изменение своего пароля: сброс пароля](active-directory-passwords-update-your-own-password.md) |
+| Сбросьте пароль. | [Изменение своего пароля: сброс пароля](user-help/active-directory-passwords-update-your-own-password.md) |
 | Повторите вход в Azure AD и на локальные ресурсы с новым паролем. |  |
 
 ### <a name="considerations"></a>Рекомендации
@@ -428,7 +428,7 @@ ms.locfileid: "38451705"
 ### <a name="considerations"></a>Рекомендации
 
 1. Шаги по подтверждению концепции в этом стандартном блоке явно задают Многофакторную идентификацию для всех имен входа пользователя. Существуют и другие средства, такие как условный доступ и защита идентификации, включающие Многофакторную идентификацию в более специализированных сценариях. Это будет нужно учитывать при переходе от подтверждения концепции к рабочей среде.
-2. Шаги подтверждения концепции в этом стандартном блоке явно используют телефонные звонки как наиболее целесообразный метод Многофакторной идентификации. При переходе от подтверждения концепции к рабочей среде рекомендуется по мере возможности использовать в качестве второго фактора такие приложения, как [Microsoft Authenticator](authentication/end-user/current/microsoft-authenticator-app-how-to.md).
+2. Шаги подтверждения концепции в этом стандартном блоке явно используют телефонные звонки как наиболее целесообразный метод Многофакторной идентификации. При переходе от подтверждения концепции к рабочей среде рекомендуется по мере возможности использовать в качестве второго фактора такие приложения, как [Microsoft Authenticator](user-help/microsoft-authenticator-app-how-to.md).
 Дополнительные сведения: [черновик специальной публикации NIST 800-63B](https://pages.nist.gov/800-63-3/sp800-63b.html)
 
 ## <a name="mfa-conditional-access-for-saas-applications"></a>Условный доступ MFA к приложениям SaaS
@@ -553,7 +553,7 @@ ms.locfileid: "38451705"
 | --- | --- |
 | Устройство с подготовленным сертификатом пользователя (Windows, iOS или Android) из корпоративной PKI. | [Развертывание сертификатов пользователей](https://msdn.microsoft.com/library/cc770857.aspx) |
 | Домен Azure AD в федерации с ADFS. | [Azure AD Connect и федерация](./connect/active-directory-aadconnectfed-whatis.md)<br/>[Обзор служб сертификатов Active Directory](https://technet.microsoft.com/library/hh831740.aspx)|
-| Для устройств iOS требуется установленное приложение Microsoft Authenticator. | [Начало работы с приложением Microsoft Authenticator](authentication/end-user/current/microsoft-authenticator-app-how-to.md) |
+| Для устройств iOS требуется установленное приложение Microsoft Authenticator. | [Начало работы с приложением Microsoft Authenticator](user-help/microsoft-authenticator-app-how-to.md) |
 
 ### <a name="steps"></a>Действия
 

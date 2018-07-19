@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: richagi
-ms.openlocfilehash: 363106421e75fa2e1b220d03a7d7cbed25447bcc
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 3abe858c61eb47a9b0174461275c39acdf71a273
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37098402"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39054392"
 ---
 # <a name="manage-user-settings-with-azure-multi-factor-authentication-in-the-cloud"></a>Управление параметрами пользователей с помощью Многофакторной идентификации Azure в облаке
 
@@ -75,4 +75,4 @@ ms.locfileid: "37098402"
 
 - Дополнительные сведения см. в разделе о [сохранении данных проверки подлинности для устройств, которым доверяют пользователи](howto-mfa-mfasettings.md).
 
-- Если пользователям требуется помощь, попросите их ознакомиться со статьей [Что для меня означает Azure Multi-Factor Authentication](end-user/current/multi-factor-authentication-end-user.md)
+- Если пользователям требуется помощь, попросите их ознакомиться со статьей [Что для меня означает Azure Multi-Factor Authentication](../user-help/multi-factor-authentication-end-user.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: daveba
-ms.openlocfilehash: fb67d1eea588d96129c4b58a8c1b2f569c9663bf
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: d4daccfdcb2bc11831e960aa20533e32801db946
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904413"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049343"
 ---
 # <a name="tutorial-use-a-linux-vms-managed-identity-to-access-azure-storage"></a>Руководство. Доступ к службе хранилища Azure с помощью управляемого удостоверения виртуальной машины Linux 
 
@@ -38,7 +38,7 @@ ms.locfileid: "37904413"
 > [!NOTE]
 > Аутентификация Azure Active Directory для службы хранилища Azure находится на этапе общедоступной предварительной версии.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com), прежде чем продолжать.
 
@@ -61,7 +61,7 @@ ms.locfileid: "37904413"
 2. Выберите **Вычисления**, а затем — **Сервер Ubuntu 16.04 LTS**.
 3. Введите сведения о виртуальной машине. Для параметра **Тип проверки подлинности** выберите значение **Открытый ключ SSH** или **Пароль**. Созданные учетные данные позволят вам выполнить вход на виртуальную машину.
 
-   ![Область основных сведений для создания виртуальной машины](../media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
+   ![Область основных сведений для создания виртуальной машины](media/msi-tutorial-linux-vm-access-arm/msi-linux-vm.png)
 
 4. В списке **Подписка** выберите подписку для виртуальной машины.
 5. Чтобы выбрать новую группу ресурсов, в которой вы хотите создать виртуальную машину, щелкните **Группа ресурсов** > **Создать**. По завершении нажмите кнопку **ОК**.
@@ -87,7 +87,7 @@ ms.locfileid: "37904413"
 5. Убедитесь, что значения **подписки** и **группы ресурсов** соответствуют указанным при создании виртуальной машины на предыдущем шаге.
 6. Нажмите кнопку **Создать**.
 
-    ![Создание учетной записи хранения](~/articles/active-directory/media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
+    ![Создание учетной записи хранения](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/msi-storage-create.png)
 
 ## <a name="create-a-blob-container-and-upload-a-file-to-the-storage-account"></a>Создание контейнера больших двоичных объектов и передача файла в учетную запись хранения
 
@@ -98,14 +98,14 @@ ms.locfileid: "37904413"
 3. В верхней области страницы щелкните **+ Container** (+ Контейнер).
 4. В разделе **Создание контейнера** введите имя контейнера, а в разделе **Общедоступный уровень доступа** оставьте значение по умолчанию.
 
-    ![Создание контейнера хранилища](~/articles/active-directory/media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
+    ![Создание контейнера хранилища](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/create-blob-container.png)
 
 5. С помощью редактора по своему усмотрению создайте на локальном компьютере файл с именем *hello world.txt*.  Откройте его и добавьте текст (без кавычек) "Hello world! :)", а затем сохраните его. 
 
 6. Передайте файл в только что созданный контейнер. Для этого щелкните имя контейнера, а затем нажмите кнопку **Отправить**.
 7. В области **Отправить BLOB-объект** под полем **Файлы** щелкните значок папки и перейдите к файлу **hello_world.txt** на локальном компьютере, выберите этот файл и нажмите кнопку **Отправить**.
 
-    ![Отправка текстового файла](~/articles/active-directory/media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
+    ![Отправка текстового файла](../managed-service-identity/media/msi-tutorial-linux-vm-access-storage/upload-text-file.png)
 
 ## <a name="grant-your-vm-access-to-an-azure-storage-container"></a>Предоставление виртуальной машине доступа к контейнеру службы хранилища Azure 
 

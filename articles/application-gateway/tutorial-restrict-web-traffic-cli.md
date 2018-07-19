@@ -7,21 +7,21 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
 ms.workload: infrastructure-services
-ms.date: 4/27/2018
+ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: ca00dd3b359d9aff1b987a3bef5b27732678b0a3
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 48f1a4950365c00b7bff8c804abd95fd7b7ab9b9
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34356228"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39069062"
 ---
 # <a name="tutorial-enable-web-application-firewall-using-the-azure-cli"></a>Руководство. Включение брандмауэра веб-приложения с помощью Azure CLI
 
 Вы можете ограничить трафик в [шлюзе приложений](overview.md) с помощью [брандмауэра веб-приложения](waf-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -135,14 +135,14 @@ az vmss extension set \
   --name CustomScript \
   --resource-group myResourceGroupAG \
   --vmss-name myvmss \
-  --settings '{ "fileUris": ["https://raw.githubusercontent.com/davidmu1/samplescripts/master/install_nginx.sh"],"commandToExecute": "./install_nginx.sh" }'
+  --settings '{ "fileUris": ["https://raw.githubusercontent.com/Azure/azure-docs-powershell-samples/master/application-gateway/iis/install_nginx.sh"],"commandToExecute": "./install_nginx.sh" }'
 ```
 
 ## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики.
 
 В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать Log Analytics или концентратор событий. 
 
-### <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Создайте учетную запись хранения с именем *myagstore1* с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_create).
 

@@ -11,11 +11,11 @@ ms.date: 05/11/2018
 ms.topic: include
 manager: douge
 ms.openlocfilehash: d44f33b0e9f71c1d8d6e2c9878b08f9fa0e1f8a1
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938178"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38991038"
 ---
 ## <a name="preparing-code-for-docker-and-kubernetes-development"></a>Подготовка кода для разработки Docker и Kubernetes
 На данный момент у вас есть базовое веб-приложение, которое можно запустить локально. Теперь вы упакуете его в контейнер, создав ресурсы, определяющие контейнер приложения и способ его развертывания в Kubernetes. Эту задачу легко выполнить с помощью Azure Dev Spaces: 

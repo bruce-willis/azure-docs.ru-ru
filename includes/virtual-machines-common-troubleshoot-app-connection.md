@@ -9,11 +9,11 @@ ms.date: 05/17/2018
 ms.author: cynthn
 ms.custom: include file
 ms.openlocfilehash: ab668a905b435287a4eaf96ff04b2fa5b54deb1d
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36313519"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38764728"
 ---
 Если вам не удалось запустить приложение, выполняющееся в виртуальной машине Azure, или подключиться к нему, это может быть обусловлено разными причинами. Возможно, приложение не работает или не прослушивает ожидаемые порты, прослушивающий порт заблокирован или сетевые правила неправильно передают трафик в приложение. В этой статье описываются методы поиска и устранения неисправностей.
 
