@@ -24,7 +24,8 @@
 ## [Обзор резервного копирования SAP HANA](sap-hana-backup-guide.md)
 ## [Резервное копирование SAP HANA на уровне файлов](sap-hana-backup-file-level.md)
 ## [Резервные копии моментальных снимков хранилища SAP HANA](sap-hana-backup-storage-snapshots.md)
-# SAP NetWeaver на виртуальных машинах Azure
+# Использование SAP NetWeaver и Business One на виртуальных машинах Azure
+## [Использование SAP Business One на виртуальных машинах Azure](business-one-azure.md)
 ## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
 ## [SAP NetWeaver на виртуальных машинах Azure под управлением Linux](suse-quickstart.md)
 ## [SAP NetWeaver в Azure: планирование и реализация](planning-guide.md)

@@ -121,18 +121,14 @@
           href: batch-get-resource-counts.md
         - name: Выполнение эффективных запросов ресурсов
           href: batch-efficient-list-queries.md
-    - name: Использование средств для разработчиков
+    - name: Использование инструментов для работы со скриптами
       items:
-        - name: Использование .NET для пакетной службы
-          href: batch-dotnet-get-started.md
-        - name: Использование Python для пакетной службы
-          href: batch-python-tutorial.md
-        - name: Использование Node.js для пакетной службы
-          href: batch-nodejs-get-started.md
         - name: Использование командлетов PowerShell
           href: batch-powershell-cmdlets-get-started.md
         - name: Использование интерфейса командной строки Azure
           href: batch-cli-get-started.md
+    - name: Использование пакета SDK Node.js для пакетной службы
+      href: batch-nodejs-get-started.md
 - name: Справочные материалы
   items:
     - name: Инфраструктура CLI Azure

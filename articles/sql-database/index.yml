@@ -12,14 +12,14 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: 
   ms.topic: landing-page
-  ms.date: 04/01/2018
+  ms.date: 07/07/2018
   ms.author: carlrab
-  ms.openlocfilehash: 5fcfe7b12acc943224d3c3158f2b39b4c35de1ee
-  ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+  ms.openlocfilehash: eae18cf5956582f3b66eb2ed837412815efbd4cf
+  ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
   ms.translationtype: HT
   ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/09/2018
-  ms.locfileid: "37916155"
+  ms.lasthandoff: 07/18/2018
+  ms.locfileid: "39112507"
 abstract:
   description: База данных SQL Azure — это реляционная база данных, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL — это высокопроизводительная, надежная и безопасная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств.
   aside:
@@ -39,39 +39,54 @@ sections:
     columns: 3
     items:
     - href: /azure/sql-database/sql-database-technical-overview
-      html: <p><a href="/azure/sql-database/sql-database-high-availability">Высокодоступные</a> базы данных PaaS, которые всегда выполняются на последней стабильной версии ядра СУБД Microsoft SQL Server и ОС с установленными исправлениями и поддержкой <a href="/azure/sql-database/sql-database-automated-backups">автоматического резервного копирования баз данных</a>.</p>
+      html: <p>База данных PaaS, которая всегда выполняется в последней стабильной версии ядра СУБД SQL Server и в ОС с установленными исправлениями при доступности на уровне 99,99 %.</p>
       image:
         src: media/index/i_managed.svg
       title: Полная управляемость
     - href: /azure/sql-database/sql-database-service-tiers
-      html: <p>Определите нужное соотношение цены и производительности в соответствии со своими потребностями и выберите <a href="/azure/sql-database/sql-database-service-tiers">один из уровней производительности</a> с гибкими условиями по цене от 5 долл. США в месяц с предоставлением до 80 основных баз данных.</p>
+      html: <p>Определите нужное соотношение цены и производительности в соответствии со своими потребностями и выберите один из уровней производительности с гибкими условиями — от доступного предложения по цене от 5 долл. США в месяц до мощных 80-ядерных баз данных.</p>
       image:
         src: media/index/i_perftier.svg
       title: Цены и уровни производительности
     - href: /azure/sql-database/sql-database-scale-resources
-      html: <p>Легко <a href="/azure/sql-database/sql-database-single-database-scale">увеличивайте масштаб</a> и <a href="/azure/sql-database/sql-database-read-scale-out">выполняйте развертывание</a>, а также сегментируйте базы данных с учетом своих потребностей для повышения производительности приложений.</p>
+      html: <p>Легко выполняйте вертикальное и горизонтальное масштабирование или сегментируйте базы данных с учетом своих потребностей для повышения производительности приложений.</p>
       image:
         src: media/index/i_scale.svg
-      title: Масштабируемость и эластичность
-    - href: /azure/sql-database/sql-database-technical-overview#built-in-intelligence
-      html: <p>Разрешите встроенным в службы средствам аналитики <a href="/azure/sql-database/sql-database-automatic-tuning">автоматически настраивать производительность базы данных</a>, а также определять <a href="/azure/sql-database/sql-advanced-threat-protection">угрозы</a> и <a href="/azure/sql-database/sql-vulnerability-assessment">уязвимости</a> в базах данных.</p>
-      image:
-        src: media/index/i_intelligence.svg
-      title: Встроенная система аналитики
+      title: Масштабируемость
     - href: /azure/sql-database/sql-database-servers-databases
-      html: <p>Используйте <a href="/azure/sql-database/sql-database-managed-instance">отдельные базы данных, размещенные на логических серверах</a>, для ваших <a href="/azure/sql-database/saas-tenancy-app-design-patterns">приложений SaaS</a> и микрослужб, для которых требуются отдельные базы данных с прогнозируемым характеристиками.</p>
+      html: <p>Используйте отдельные базы данных, размещенные на логических серверах, для своих приложений SaaS и микрослужб, которым требуются отдельные базы данных с прогнозируемой производительностью.</p>
       image:
         src: media/index/i_db.svg
       title: Отдельная база данных
+    - href: /azure/sql-database/sql-database-elastic-pool
+      html: <p>Эластичные пулы баз данных SQL — это простое и экономичное решение для администрирования и масштабирования нескольких баз данных с отличными и непредсказуемыми требованиями к ресурсам.</p>
+      image:
+        src: media/index/i_elasticpool.svg
+      title: Пулы эластичных БД
     - href: /azure/sql-database/sql-database-managed-instance
-      html: <p>Используйте <a href="/azure/sql-database/sql-database-managed-instance">Управляемый экземпляр</a> для быстрого <a href="azure/sql-database/sql-database-managed-instance-migrate">переноса локальных баз данных</a> в Azure PaaS с минимальными изменениями кода базы данных (или вообще без изменений).</p>
+      html: <p>Используйте управляемый экземпляр для удобного переноса локальных баз данных в полностью управляемую службу баз данных Azure PaaS с минимальными изменениями кода базы данных (или вообще без изменений).</p>
       image:
         src: media/index/i_mi.svg
       title: Управляемый экземпляр
+    - href: /azure/sql-database/sql-database-business-continuity
+      html: <p>Встроенные средства обеспечения высокой доступности, автоматическое резервное копирование и георепликация помогут вам избежать простоев во время операций обслуживания, сбоев инфраструктуры или оборудования.</p>
+      image:
+        src: media/index/gear.svg
+      title: Непрерывность бизнес-процессов
+    - href: /azure/sql-database/sql-database-security-overview
+      html: <p>Защитите свою базу данных с помощью проверки подлинности Azure AD, виртуальных сетей, брандмауэров и подключений с использованием Always Encrypted. Выявляйте угрозы и уязвимости благодаря встроенным средствам безопасности.</p>
+      image:
+        src: media/index/i_security.svg
+      title: Расширенные функции безопасности
+    - href: /azure/sql-database/sql-database-technical-overview#built-in-intelligence
+      html: <p>Встроенная система аналитики позволяет значительно сократить расходы на использование и обслуживание баз данных, а также повышает производительность и безопасность приложения.</p>
+      image:
+        src: media/index/i_intelligence.svg
+      title: Встроенная система аналитики
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием следующих примеров кратких руководств:'
+    text: 'База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:'
   - type: table
     style: dataMatrix
     columns:
@@ -174,6 +189,6 @@ sections:
     - title: REST
       html: <p><a href="/rest/api/sql/">справочник по API REST</a></p>
     - title: Инструменты SQL Server
-      html: <p><a href="https://msdn.microsoft.com/library/mt238365.aspx">Инструменты SQL Server</a></p><p><a href="https://msdn.microsoft.com/library/mt238290.aspx">SQL Server Management Studio (SSMS)</a></p><p><a href="https://msdn.microsoft.com/library/mt204009.aspx">SQL Server Data Tools (SSDT)</a></p><p><a href="https://msdn.microsoft.com/library/ms162802.aspx">BCP</a></p><p><a href="https://msdn.microsoft.com/library/ms162773.aspx">sqlcmd</a></p><p><a href="https://msdn.microsoft.com/hh550080.aspx">SqlPackage</a></p><p><a href="https://www.nuget.org/packages/Microsoft.Azure.Management.Sql">Пакет библиотеки управления базами данных SQL</a></p>
+      html: <p><a href="https://msdn.microsoft.com/library/mt238365.aspx">Инструменты SQL Server</a></p><p><a href="https://msdn.microsoft.com/library/mt238290.aspx">SQL Server Management Studio (SSMS)</a></p><p><a href="https://msdn.microsoft.com/library/mt204009.aspx">SQL Server Data Tools (SSDT)</a></p><p><a href="https://msdn.microsoft.com/library/ms162802.aspx">BCP</a></p><p><a href="https://msdn.microsoft.com/library/ms162773.aspx">sqlcmd</a></p><p><a href="https://docs.microsoft.com/sql/tools/sqlpackage">SqlPackage</a></p><p><a href="https://www.nuget.org/packages/Microsoft.Azure.Management.Sql">Пакет библиотеки управления базами данных SQL</a></p>
     - title: Драйверы SQL Server
       html: <p><a href="https://msdn.microsoft.com/library/mt654049.aspx">Драйверы SQL Server</a></p><p><a href="https://msdn.microsoft.com/library/mt657768.aspx">ADO.NET</a></p><p><a href="https://msdn.microsoft.com/library/mt484311.aspx">JDBC</a></p><p><a href="https://msdn.microsoft.com/library/mt654048.aspx">ODBC</a></p>

@@ -9,17 +9,17 @@
   items:
     - name: Развертывание приложения Hello World
       href: service-fabric-mesh-quickstart-deploy-container.md
-    - name: Создание и развертывание веб-приложения
+    - name: Создание и развертывание веб-приложения в Сетке Azure Service Fabric
       href: service-fabric-mesh-quickstart-dotnet-core.md
 - name: Учебники
   items:
-    - name: Создание и развертывание веб-приложения на базе нескольких служб
+    - name: 'Создание, отладка и развертывание веб-приложения Сетки Service Fabric на базе нескольких служб'
       items:
-        - name: 1. Создание приложения ASP.NET Core
+        - name: 1. Создание веб-приложения Сетки Service Fabric
           href: service-fabric-mesh-tutorial-create-dotnetcore.md
-        - name: 2. Отладка приложения
+        - name: 2. Отладка веб-приложения Сетки Service Fabric
           href: service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md
-        - name: 3. Развертывание приложения
+        - name: 3. Развертывание веб-приложения Сетки Service Fabric
           href: service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md
 - name: Основные понятия
   items:

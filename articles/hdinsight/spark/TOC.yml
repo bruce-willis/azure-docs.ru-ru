@@ -29,7 +29,7 @@
       href: apache-spark-eventhub-streaming.md
     - name: Создание приложения машинного обучения
       href: apache-spark-ipython-notebook-machine-learning.md
-    - name: Создание приложения Spark с использованием IntelliJ
+    - name: Создание приложения Spark в IntelliJ
       href: apache-spark-create-standalone-application.md
 - name: Практическое руководство
   items:
