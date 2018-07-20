@@ -12,18 +12,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/01/2018
+ms.date: 07/03/2018
 ms.author: sethm
-ms.openlocfilehash: feb4332f8f6b5ab26067b5c80a376cdee62c7739
-ms.sourcegitcommit: eeb5daebf10564ec110a4e83874db0fb9f9f8061
+ms.openlocfilehash: 0886c220dfe926c7dfd9fa378ebb3c13fc900cbf
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2018
-ms.locfileid: "28984992"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37860043"
 ---
 # <a name="send-events-to-azure-event-hubs-using-the-net-framework"></a>Отправка событий в концентраторы событий Azure с помощью платформы .NET Framework
-
-## <a name="introduction"></a>Введение
 
 Концентраторы событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в концентраторах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей".
 
@@ -31,7 +29,7 @@ ms.locfileid: "28984992"
 
 Для работы с данным руководством вам потребуется:
 
-* [Microsoft Visual Studio 2015 или более поздней версии](http://visualstudio.com). На приведенных в этом руководстве снимках экрана используется Visual Studio 2017.
+* [Microsoft Visual Studio 2017 или более поздней версии](http://visualstudio.com).
 * Активная учетная запись Azure. Если ее нет, можно создать бесплатную учетную запись всего за несколько минут. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/free/).
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен концентраторов событий и концентратора событий
@@ -60,8 +58,8 @@ ms.locfileid: "28984992"
 5. Добавьте в класс **Program** приведенные ниже поля и укажите в качестве значений имя концентратора событий, созданного в предыдущем разделе, и сохраненную ранее строку подключения уровня пространства имен.
    
   ```csharp
-  static string eventHubName = "{Event Hub name}";
-  static string connectionString = "{send connection string}";
+  static string eventHubName = "Your Event Hub name";
+  static string connectionString = "namespace connection string";
   ```
 6. Добавьте следующий метод в класс **Program** .
    
@@ -103,6 +101,7 @@ ms.locfileid: "28984992"
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Теперь, когда вы создали рабочее приложение, которое создает концентратор событий и отправляет данные, можно перейти к следующим сценариям:
 
 * [Создание событий с помощью узла обработчика событий](event-hubs-dotnet-framework-getstarted-receive-eph.md)
