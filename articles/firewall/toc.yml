@@ -40,6 +40,8 @@
       href: ../azure-resource-manager/resource-group-overview.md
 - name: Ресурсы
   items:
+    - name: Часто задаваемые вопросы
+      href: firewall-faq.md
     - name: Создание шаблонов
       href: ../azure-resource-manager/resource-group-authoring-templates.md
     - name: Стратегия развития Azure

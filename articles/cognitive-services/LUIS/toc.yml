@@ -230,9 +230,9 @@
     - name: Поиск регионов программным образом
       items:
         - name: 'Использование C#'
-          href: find-region-csharp.md
+          href: luis-find-region-csharp.md
         - name: Использование Node.js
-          href: find-region-nodejs.md
+          href: luis-find-region-nodejs.md
 - name: Справочные материалы
   items:
     - name: Конфиденциальность пользователей

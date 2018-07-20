@@ -6,6 +6,9 @@
       tocHref: /azure/active-directory/
       topicHref: /azure/active-directory/
       items:
+        - name: Authentication
+          tocHref: /azure/active-directory/authentication/
+          topicHref: /azure/active-directory/authentication/
         - name: Подключение
           tocHref: /azure/active-directory/connect/
           topicHref: /azure/active-directory/connect/
@@ -286,7 +289,7 @@
     - name: Служба "Сетка событий Azure"
       tocHref: /azure/event-grid/
       topicHref: /azure/event-grid
-    - name: Концентраторы событий
+    - name: концентраторы событий;
       tocHref: /azure/event-hubs/
       topicHref: /azure/event-hubs/
     - name: ExpressRoute
