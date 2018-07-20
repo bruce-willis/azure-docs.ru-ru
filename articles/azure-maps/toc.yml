@@ -82,6 +82,8 @@
           href: supported-search-categories.md
     - name: REST
       items:
+        - name: Служба геолокации
+          href: 'https://docs.microsoft.com/rest/api/maps/geolocation'
         - name: Служба отрисовки
           href: 'https://docs.microsoft.com/rest/api/maps/render'
         - name: Служба построения маршрутов

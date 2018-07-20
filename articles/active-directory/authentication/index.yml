@@ -1,0 +1,49 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по аутентификации Azure AD
+metadata:
+  document_id: 
+  title: Документация по MSI для Azure Active Directory
+  description: Сведения об администрировании и развертывании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory.
+  services: active-directory
+  ms.component: authentication
+  author: MicrosoftGuyJFlo
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 07/11/2018
+  ms.author: joflore
+  ms.openlocfilehash: 3830c63ec7121ddc3174b9867ca95964cde4154b
+  ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+  ms.translationtype: HT
+  ms.contentlocale: ru-RU
+  ms.lasthandoff: 07/19/2018
+  ms.locfileid: "39163212"
+abstract:
+  description: Сведения о развертывании и администрировании самостоятельного сброса пароля, многофакторной проверки подлинности, настраиваемого списка запрещенных паролей и смарт-блокировки в Azure Active Directory. Сочетание этих функций обеспечит для вашей организации надежную аутентификацию с использованием разных методов проверки, не усложняя процесс входа в систему.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Сведения о включении самостоятельного сброса пароля для сокращения числа обращений пользователей в службу технической поддержки.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/index/i_protect.png
+      text: Включение самостоятельного сброса пароля
+      href: https://docs.microsoft.com/azure/active-directory/authentication/quickstart-sspr
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Сведения о включении простого и безопасного входа в систему для вашей организации.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/authentication/tutorial-sspr-pilot">Пилотный проект по включению самостоятельного сброса пароля</a>
+    - html: <a href="/azure/active-directory/authentication/tutorial-mfa-applications">Обязательная многофакторная проверка подлинности на портале Azure</a>
+    - html: <a href="/azure/active-directory/authentication/tutorial-enable-writeback">Включение интеграции самостоятельного сброса пароля с локальной средой</a>
+    - html: <a href="/azure/active-directory/authentication/tutorial-sspr-windows">Включение сброса пароля в Windows 10</a>
+    - html: <a href="/azure/active-directory/authentication/tutorial-risk-based-sspr-mfa">Интеграция со службой защиты идентификации Azure AD</a>

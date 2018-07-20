@@ -1,0 +1,208 @@
+- name: Документация по проверке подлинности
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое проверка подлинности?
+      href: overview-authentication.md
+- name: Быстрый запуск
+  items:
+    - name: Настройка сброса паролей
+      href: quickstart-sspr.md
+- name: Учебники
+  items:
+    - name: 1. Включение MFA для приложений
+      href: tutorial-mfa-applications.md
+    - name: 2. Включение пилотного проекта SSPR
+      href: tutorial-sspr-pilot.md
+    - name: Интеграция SSPR с локальной средой
+      href: tutorial-enable-writeback.md
+    - name: Включение сброса пароля в Windows 10
+      href: tutorial-sspr-windows.md
+    - name: Интеграция службы защиты идентификации Azure AD
+      href: tutorial-risk-based-sspr-mfa.md
+- name: Основные понятия
+  expanded: true
+  items:
+    - name: Методы проверки подлинности
+      href: concept-authentication-methods.md
+    - name: Самостоятельный сброс пароля
+      items:
+        - name: Принцип действия сброса пароля
+          href: concept-sspr-howitworks.md
+        - name: Параметры сброса пароля
+          href: concept-sspr-customization.md
+        - name: Политики сброса пароля
+          href: concept-sspr-policy.md
+        - name: Какие лицензии нужны?
+          href: concept-sspr-licensing.md
+        - name: Интеграция с локальной средой
+          href: concept-sspr-writeback.md
+    - name: Многофакторная идентификация
+      items:
+        - name: Принципы работы MFA
+          href: concept-mfa-howitworks.md
+        - name: Какая версия подойдет?
+          href: concept-mfa-whichversion.md
+        - name: Лицензирование пользователей
+          href: concept-mfa-licensing.md
+        - name: Создание поставщика аутентификации
+          href: concept-mfa-authprovider.md
+        - name: Руководство по безопасности
+          href: multi-factor-authentication-security-best-practices.md
+        - name: MFA для Office 365
+          href: 'https://support.office.com/article/Plan-for-multi-factor-authentication-for-Office-365-Deployments-043807b2-21db-4d5c-b430-c8a6dee0e6ba'
+        - name: 'MFA: вопросы и ответы'
+          href: multi-factor-authentication-faq.md
+    - name: Защита паролей Azure AD
+      items:
+        - name: Исключение ненадежных паролей в облаке
+          href: concept-password-ban-bad.md
+        - name: Исключение ненадежных паролей в локальной среде
+          href: concept-password-ban-bad-on-premises.md
+- name: Практические руководства
+  items:
+    - name: Сброс паролей
+      items:
+        - name: Развертывание сброса пароля
+          href: howto-sspr-deployment.md
+        - name: Предварительная регистрация данных проверки подлинности
+          href: howto-sspr-authenticationdata.md
+        - name: Включений обратной записи паролей
+          href: howto-sspr-writeback.md
+    - name: MFA в облаке
+      items:
+        - name: Развертывание MFA в облаке
+          href: howto-mfa-getstarted.md
+        - name: MFA для отдельных пользователей
+          href: howto-mfa-userstates.md
+        - name: Параметры пользователя и устройства
+          href: howto-mfa-userdevicesettings.md
+        - name: Настройка параметров
+          href: howto-mfa-mfasettings.md
+        - name: Служба федерации Active Directory
+          items:
+            - name: Адаптер AD FS для Windows Server 2016
+              href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-and-azure-mfa'
+            - name: Службы федерации
+              href: multi-factor-authentication-get-started-adfs.md
+            - name: Использование AD FS
+              href: howto-mfa-adfs.md
+        - name: Интеграция RADIUS
+          items:
+            - name: Использование существующих серверов политики сети
+              href: howto-mfa-nps-extension.md
+            - name: Расширенная конфигурация для расширения NPS
+              href: howto-mfa-nps-extension-advanced.md
+            - name: Шлюз удаленных рабочих столов
+              href: howto-mfa-nps-extension-rdg.md
+            - name: Виртуальная частная сеть
+              href: howto-mfa-nps-extension-vpn.md
+    - name: Список запрещенных паролей
+      items:
+        - name: Настройка списка запрещенных паролей
+          href: howto-password-ban-bad.md
+        - name: Развертывание защиты паролем Azure AD
+          href: howto-password-ban-bad-on-premises.md
+        - name: Настройка защиты паролем Azure AD
+          href: howto-password-ban-bad-on-premises-operations.md
+        - name: Мониторинг защиты паролем Azure AD
+          href: howto-password-ban-bad-on-premises-troubleshoot.md
+    - name: Смарт-блокировка Azure AD
+      href: howto-password-smart-lockout.md
+    - name: Windows Hello для бизнеса.
+      href: 'https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/hello-identity-verification'
+    - name: Аутентификация на основе сертификата
+      items:
+        - name: Начало работы с проверкой подлинности на основе сертификатов
+          href: ../active-directory-certificate-based-authentication-get-started.md
+          items:
+            - name: CBA на устройствах Android
+              href: ../active-directory-certificate-based-authentication-android.md
+            - name: CBA на устройствах iOS
+              href: ../active-directory-certificate-based-authentication-ios.md
+    - name: Разработка
+      items:
+        - name: Встраивание MFA в пользовательские приложения
+          href: howto-mfa-sdk.md
+    - name: Отчеты
+      items:
+        - name: Отчеты SSPR
+          href: howto-sspr-reporting.md
+        - name: Отчеты службы "Многофакторная идентификация Microsoft Azure"
+          href: howto-mfa-reporting.md
+        - name: Сбор данных
+          href: howto-mfa-reporting-datacollection.md
+    - name: Сервер MFA
+      items:
+        - name: Развертывание MFA в локальной среде
+          href: howto-mfaserver-deploy.md
+        - name: Установить пользовательский портал.
+          href: howto-mfaserver-deploy-userportal.md
+        - name: Веб-служба мобильного приложения
+          href: howto-mfaserver-deploy-mobileapp.md
+        - name: Настройка высокой доступности
+          href: howto-mfaserver-deploy-ha.md
+        - name: Обновление сервера MFA
+          href: howto-mfaserver-deploy-upgrade.md
+        - name: Обновление PhoneFactor
+          href: howto-mfaserver-deploy-upgrade-pf.md
+        - name: Проверка подлинности Windows
+          href: howto-mfaserver-windows.md
+        - name: Веб-приложения IIS
+          href: howto-mfaserver-iis.md
+        - name: Интеграция каталогов
+          items:
+            - name: Проверка подлинности LDAP
+              href: howto-mfaserver-dir-ldap.md
+            - name: Проверка подлинности RADIUS
+              href: howto-mfaserver-dir-radius.md
+            - name: Active Directory
+              href: howto-mfaserver-dir-ad.md
+        - name: Служба федерации Active Directory
+          items:
+            - name: Использование AD FS 2.0
+              href: howto-mfaserver-adfs-2.md
+            - name: Использование AD FS на платформе Windows Server 2012 R2
+              href: howto-mfaserver-adfs-2012.md
+        - name: Интеграция RADIUS
+          items:
+            - name: Шлюз удаленных рабочих столов
+              href: howto-mfaserver-nps-rdg.md
+            - name: Расширенные конфигурации VPN
+              href: howto-mfaserver-nps-vpn.md
+            - name: Ошибки расширения NPS
+              href: howto-mfa-nps-extension-errors.md
+    - name: Устранение неполадок
+      items:
+        - name: Устранение неполадок с SSPR
+          href: active-directory-passwords-troubleshoot.md
+        - name: 'SSPR: часто задаваемые вопросы'
+          href: active-directory-passwords-faq.md
+        - name: 'MFA: вопросы и ответы'
+          href: multi-factor-authentication-faq.md
+        - name: Расширение NPS
+          href: howto-mfa-nps-extension-errors.md
+- name: Справочные материалы
+  items:
+    - name: Руководство пользователя MFA
+      href: ./end-user/current/multi-factor-authentication-end-user.md
+    - name: Примеры кода
+      href: 'https://azure.microsoft.com/resources/samples/?service=active-directory'
+    - name: Командлеты Azure PowerShell
+      href: /powershell/azure/overview
+    - name: Ограничения службы
+      href: ../users-groups-roles/directory-service-limits-restrictions.md
+- name: Ресурсы
+  items:
+    - name: Форум отзывов и предложений по Azure
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Форум MSDN
+      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=WindowsAzureAD'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory/'
+    - name: Обновления службы
+      href: ../fundamentals/whats-new.md
+    - name: Переполнение стека
+      href: 'http://stackoverflow.com/questions/tagged/azure-active-directory'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

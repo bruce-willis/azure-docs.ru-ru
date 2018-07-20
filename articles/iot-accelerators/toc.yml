@@ -8,13 +8,13 @@
       href: about-iot-accelerators.md
 - name: Быстрое начало работы
   items:
-    - name: Развертывание решения удаленного мониторинга
+    - name: Пробное использование решения для удаленного мониторинга
       href: quickstart-remote-monitoring-deploy.md
-    - name: Развертывание решения подключенной фабрики
+    - name: Пробное использование решения подключенной фабрики
       href: quickstart-connected-factory-deploy.md
-    - name: Развертывание решения прогнозного обслуживания
+    - name: Пробное использование решения прогнозного обслуживания
       href: quickstart-predictive-maintenance-deploy.md
-    - name: Развертывание симулятора устройств
+    - name: Пробное использование симулятора устройств
       href: quickstart-device-simulation-deploy.md
 - name: Учебники
   items:
@@ -137,10 +137,6 @@
               href: ../iot-suite/iot-suite-v1-custom-rule.md
             - name: Сведения об устройстве в решении для удаленного мониторинга
               href: ../iot-suite/iot-suite-v1-remote-monitoring-device-info.md
-    - name: Прогнозное обслуживание
-      items:
-        - name: Развертывание акселератора решений
-          href: iot-accelerators-predictive-overview.md
     - name: Подключенная фабрика
       items:
         - name: Использование панели мониторинга
@@ -201,7 +197,7 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
     - name: Stream Analytics
       href: /azure/stream-analytics/
-    - name: Концентраторы событий
+    - name: концентраторы событий;
       href: /azure/event-hubs/
     - name: Машинное обучение
       href: /azure/machine-learning/

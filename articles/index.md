@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: ea6241c98cd65af14242301be4681e613d867fbc
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 6f1378116ce41646a0d94f1b6f010e1010d9c507
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39071187"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145525"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -275,6 +275,11 @@ Visual Studio Team Services </a>
                                                         <a class="barLink" href="https://docs.microsoft.com/azure/devops">
                                                             <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt="">
 Изучение DevOps в Azure </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="barLink" href="/azure/devops-project/">
+                                                            <img src="https://docs.microsoft.com/media/logos/logo_vs-team-services.svg" alt="">
+Проект Azure DevOps </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1101,7 +1106,7 @@ Visual Studio Team Services </a>
                                         <li>
                                             <a href="/azure/event-hubs/">
                                                 <img src="media/index/eventhubs.svg" alt="" />
-                                                <p>Концентраторы событий</p>
+                                                <p>концентраторы событий;</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1189,6 +1194,12 @@ Visual Studio Team Services </a>
                                             <a href="https://support.hockeyapp.net/kb">
                                                 <img src="media/index/HockeyApp.svg" alt="" />
                                                 <p>HockeyApp</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/devops-project">
+                                                <img src="media/index/logo_vs-team-services.svg" alt="" />
+                                                <p>Проекты Azure DevOps</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -3143,7 +3154,7 @@ Visual Studio Team Services </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Концентраторы событий</h3>
+                                                    <h3>концентраторы событий;</h3>
                                                     <p>Получение телеметрии от миллионов устройств</p>
                                                 </div>
                                             </div>
@@ -4575,6 +4586,25 @@ Visual Studio Team Services </a>
                                     </div>
                                 </a>
                             </li>
+                            <li>
+                                <a href="/azure/devops-project">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/logo_vs-team-services.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Проекты Azure DevOps</h3>
+                                                    <p>Быстрое развертывание любых языков на любой платформе в Azure</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -5865,7 +5895,7 @@ Docker </h3>
                                         <div class="card">
                                             <div class="cardImageOuter">
                                                 <div class="cardImage">
-                                                    <img src="https://docs.microsoft.com/media/common/i_tools.svg" alt="" />
+                                                    <img src="media/index/database-migration.svg" alt="" />
                                                 </div>
                                             </div>
                                             <div class="cardText">

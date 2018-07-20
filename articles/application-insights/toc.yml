@@ -164,6 +164,8 @@
               href: app-insights-proactive-application-security-detection-pack.md
             - name: Облачные службы Azure
               href: app-insights-proactive-cloud-services.md
+            - name: Управление правилами интеллектуального обнаружения
+              href: app-insights-proactive-arm-config.md
         - name: Создание ресурса
           href: app-insights-create-new-resource.md
     - name: Анализ
@@ -308,7 +310,7 @@
       href: 'https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md'
     - name: API доступа к данным
       href: 'https://dev.applicationinsights.io/'
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: 'https://docs.microsoft.com/rest/api/application-insights/'
     - name: Модель данных
       href: application-insights-data-model.md

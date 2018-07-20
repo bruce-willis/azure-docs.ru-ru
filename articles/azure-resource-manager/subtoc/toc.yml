@@ -1,0 +1,1168 @@
+- name: AKS
+  items:
+    - name: Управляемые кластеры
+      href: /azure/templates/Microsoft.ContainerService/managedClusters
+      maintainContext: true
+- name: Analysis Services
+  items:
+    - name: Серверы
+      href: /azure/templates/Microsoft.AnalysisServices/servers
+      maintainContext: true
+- name: Управление API
+  items:
+    - name: Service
+      href: /azure/templates/Microsoft.ApiManagement/service
+      maintainContext: true
+      items:
+        - name: Интерфейсы API
+          href: /azure/templates/Microsoft.ApiManagement/service/apis
+          maintainContext: true
+          items:
+            - name: Диагностика
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/diagnostics
+              maintainContext: true
+              items:
+                - name: Средства ведения журнала
+                  href: /azure/templates/Microsoft.ApiManagement/service/apis/diagnostics/loggers
+                  maintainContext: true
+            - name: Проблемы
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/issues
+              maintainContext: true
+              items:
+                - name: Вложения
+                  href: /azure/templates/Microsoft.ApiManagement/service/apis/issues/attachments
+                  maintainContext: true
+                - name: Комментарии
+                  href: /azure/templates/Microsoft.ApiManagement/service/apis/issues/comments
+                  maintainContext: true
+            - name: Операции
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/operations
+              maintainContext: true
+              items:
+                - name: Политики
+                  href: /azure/templates/Microsoft.ApiManagement/service/apis/operations/policies
+                  maintainContext: true
+                - name: Теги
+                  href: /azure/templates/Microsoft.ApiManagement/service/apis/operations/tags
+                  maintainContext: true
+            - name: Политики
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/policies
+              maintainContext: true
+            - name: Выпуски
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/releases
+              maintainContext: true
+            - name: Схемы
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/schemas
+              maintainContext: true
+            - name: Описания тегов
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/tagDescriptions
+              maintainContext: true
+            - name: Теги
+              href: /azure/templates/Microsoft.ApiManagement/service/apis/tags
+              maintainContext: true
+        - name: Наборы версий API
+          href: /azure/templates/Microsoft.ApiManagement/service/api-version-sets
+          maintainContext: true
+        - name: Серверы авторизации
+          href: /azure/templates/Microsoft.ApiManagement/service/authorizationServers
+          maintainContext: true
+        - name: Серверные системы
+          href: /azure/templates/Microsoft.ApiManagement/service/backends
+          maintainContext: true
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.ApiManagement/service/certificates
+          maintainContext: true
+        - name: Диагностика
+          href: /azure/templates/Microsoft.ApiManagement/service/diagnostics
+          maintainContext: true
+          items:
+            - name: Средства ведения журнала
+              href: /azure/templates/Microsoft.ApiManagement/service/diagnostics/loggers
+              maintainContext: true
+        - name: Группы
+          href: /azure/templates/Microsoft.ApiManagement/service/groups
+          maintainContext: true
+          items:
+            - name: Пользователи
+              href: /azure/templates/Microsoft.ApiManagement/service/groups/users
+              maintainContext: true
+        - name: Поставщики удостоверений
+          href: /azure/templates/Microsoft.ApiManagement/service/identityProviders
+          maintainContext: true
+        - name: Средства ведения журнала
+          href: /azure/templates/Microsoft.ApiManagement/service/loggers
+          maintainContext: true
+        - name: Уведомления
+          href: /azure/templates/Microsoft.ApiManagement/service/notifications
+          maintainContext: true
+          items:
+            - name: Адреса электронной почты получателей
+              href: /azure/templates/Microsoft.ApiManagement/service/notifications/recipientEmails
+              maintainContext: true
+            - name: Получатели
+              href: /azure/templates/Microsoft.ApiManagement/service/notifications/recipientUsers
+              maintainContext: true
+        - name: Поставщики OpenID Connect
+          href: /azure/templates/Microsoft.ApiManagement/service/openidConnectProviders
+          maintainContext: true
+        - name: Политики
+          href: /azure/templates/Microsoft.ApiManagement/service/policies
+          maintainContext: true
+        - name: Продукты
+          href: /azure/templates/Microsoft.ApiManagement/service/products
+          maintainContext: true
+          items:
+            - name: Интерфейсы API
+              href: /azure/templates/Microsoft.ApiManagement/service/products/apis
+              maintainContext: true
+            - name: Группы
+              href: /azure/templates/Microsoft.ApiManagement/service/products/groups
+              maintainContext: true
+            - name: Политики
+              href: /azure/templates/Microsoft.ApiManagement/service/products/policies
+              maintainContext: true
+            - name: Теги
+              href: /azure/templates/Microsoft.ApiManagement/service/products/tags
+              maintainContext: true
+        - name: properties
+          href: /azure/templates/Microsoft.ApiManagement/service/properties
+          maintainContext: true
+        - name: Подписки
+          href: /azure/templates/Microsoft.ApiManagement/service/subscriptions
+          maintainContext: true
+        - name: Теги
+          href: /azure/templates/Microsoft.ApiManagement/service/tags
+          maintainContext: true
+        - name: Шаблоны
+          href: /azure/templates/Microsoft.ApiManagement/service/templates
+          maintainContext: true
+        - name: Пользователи
+          href: /azure/templates/Microsoft.ApiManagement/service/users
+          maintainContext: true
+- name: Авторизация
+  items:
+    - name: Блокировки
+      href: /azure/templates/Microsoft.Authorization/locks
+      maintainContext: true
+- name: Служба автоматизации
+  items:
+    - name: Учетные записи службы автоматизации
+      href: /azure/templates/Microsoft.Automation/automationAccounts
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.Automation/automationAccounts/certificates
+          maintainContext: true
+        - name: Задания компиляции
+          href: /azure/templates/Microsoft.Automation/automationAccounts/compilationjobs
+          maintainContext: true
+        - name: Конфигурации
+          href: /azure/templates/Microsoft.Automation/automationAccounts/configurations
+          maintainContext: true
+        - name: Подключения
+          href: /azure/templates/Microsoft.Automation/automationAccounts/connections
+          maintainContext: true
+        - name: Типы подключений
+          href: /azure/templates/Microsoft.Automation/automationAccounts/connectionTypes
+          maintainContext: true
+        - name: Учетные данные
+          href: /azure/templates/Microsoft.Automation/automationAccounts/credentials
+          maintainContext: true
+        - name: Задания
+          href: /azure/templates/Microsoft.Automation/automationAccounts/jobs
+          maintainContext: true
+        - name: Расписания заданий
+          href: /azure/templates/Microsoft.Automation/automationAccounts/jobSchedules
+          maintainContext: true
+        - name: модули
+          href: /azure/templates/Microsoft.Automation/automationAccounts/modules
+          maintainContext: true
+        - name: Конфигурации узлов
+          href: /azure/templates/Microsoft.Automation/automationAccounts/nodeConfigurations
+          maintainContext: true
+        - name: Модули Runbook
+          href: /azure/templates/Microsoft.Automation/automationAccounts/runbooks
+          maintainContext: true
+        - name: Расписания
+          href: /azure/templates/Microsoft.Automation/automationAccounts/schedules
+          maintainContext: true
+        - name: Конфигурации обновления программного обеспечения
+          href: /azure/templates/Microsoft.Automation/automationAccounts/softwareUpdateConfigurations
+          maintainContext: true
+        - name: Системы управления версиями
+          href: /azure/templates/Microsoft.Automation/automationAccounts/sourceControls
+          maintainContext: true
+          items:
+            - name: Задания синхронизации систем управления версиями
+              href: /azure/templates/Microsoft.Automation/automationAccounts/sourceControls/sourceControlSyncJobs
+              maintainContext: true
+        - name: Переменные
+          href: /azure/templates/Microsoft.Automation/automationAccounts/variables
+          maintainContext: true
+        - name: Объекты Webhook
+          href: /azure/templates/Microsoft.Automation/automationAccounts/webhooks
+          maintainContext: true
+- name: Пакетная служба Azure
+  items:
+    - name: Учетные записи пакетной службы
+      href: /azure/templates/Microsoft.Batch/batchAccounts
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.Batch/batchAccounts/certificates
+          maintainContext: true
+        - name: Пулы
+          href: /azure/templates/Microsoft.Batch/batchAccounts/pools
+          maintainContext: true
+- name: Искусственный интеллект пакетной службы
+  items:
+    - name: Кластеры
+      href: /azure/templates/Microsoft.BatchAI/clusters
+      maintainContext: true
+    - name: Файловые серверы
+      href: /azure/templates/Microsoft.BatchAI/fileServers
+      maintainContext: true
+    - name: Задания
+      href: /azure/templates/Microsoft.BatchAI/jobs
+      maintainContext: true
+- name: Кэш
+  items:
+    - name: Redis
+      href: /azure/templates/Microsoft.Cache/Redis
+      maintainContext: true
+      items:
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.Cache/redis/firewallRules
+          maintainContext: true
+        - name: Связанные серверы
+          href: /azure/templates/Microsoft.Cache/redis/linkedServers
+          maintainContext: true
+- name: CDN
+  items:
+    - name: Профили
+      href: /azure/templates/Microsoft.Cdn/profiles
+      maintainContext: true
+      items:
+        - name: Конечные точки
+          href: /azure/templates/Microsoft.Cdn/profiles/endpoints
+          maintainContext: true
+          items:
+            - name: Личные домены
+              href: /azure/templates/Microsoft.Cdn/profiles/endpoints/customDomains
+              maintainContext: true
+- name: Регистрация сертификата
+  items:
+    - name: Заказы на сертификаты
+      href: /azure/templates/Microsoft.CertificateRegistration/certificateOrders
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.CertificateRegistration/certificateOrders/certificates
+          maintainContext: true
+- name: Cognitive Services
+  items:
+    - name: учетные записи;
+      href: /azure/templates/Microsoft.CognitiveServices/accounts
+      maintainContext: true
+- name: Службы вычислений
+  items:
+    - name: Группы доступности
+      href: /azure/templates/Microsoft.Compute/availabilitySets
+      maintainContext: true
+    - name: диски;
+      href: /azure/templates/Microsoft.Compute/disks
+      maintainContext: true
+    - name: Коллекции
+      href: /azure/templates/Microsoft.Compute/galleries
+      maintainContext: true
+      items:
+        - name: Образы
+          href: /azure/templates/Microsoft.Compute/galleries/images
+          maintainContext: true
+          items:
+            - name: Версии
+              href: /azure/templates/Microsoft.Compute/galleries/images/versions
+              maintainContext: true
+    - name: Образы
+      href: /azure/templates/Microsoft.Compute/images
+      maintainContext: true
+    - name: Моментальные снимки
+      href: /azure/templates/Microsoft.Compute/snapshots
+      maintainContext: true
+    - name: Виртуальные машины
+      href: /azure/templates/Microsoft.Compute/virtualMachines
+      maintainContext: true
+      items:
+        - name: расширения.
+          href: /azure/templates/Microsoft.Compute/virtualMachines/extensions
+          maintainContext: true
+    - name: Масштабируемые наборы виртуальных машин Microsoft Azure
+      href: /azure/templates/Microsoft.Compute/virtualMachineScaleSets
+      maintainContext: true
+      items:
+        - name: расширения.
+          href: /azure/templates/Microsoft.Compute/virtualMachineScaleSets/extensions
+          maintainContext: true
+        - name: Виртуальные машины
+          href: /azure/templates/Microsoft.Compute/virtualMachineScaleSets/virtualmachines
+          maintainContext: true
+- name: Экземпляр контейнера
+  items:
+    - name: Группы контейнеров
+      href: /azure/templates/Microsoft.ContainerInstance/containerGroups
+      maintainContext: true
+- name: Реестр контейнеров
+  items:
+    - name: Реестры
+      href: /azure/templates/Microsoft.ContainerRegistry/registries
+      maintainContext: true
+      items:
+        - name: Репликации
+          href: /azure/templates/Microsoft.ContainerRegistry/registries/replications
+          maintainContext: true
+        - name: Веб-перехватчики
+          href: /azure/templates/Microsoft.ContainerRegistry/registries/webhooks
+          maintainContext: true
+- name: Служба контейнеров
+  items:
+    - name: Службы контейнеров
+      href: /azure/templates/Microsoft.ContainerService/containerServices
+      maintainContext: true
+- name: База данных Cosmos
+  items:
+    - name: Учетные записи базы данных
+      href: /azure/templates/Microsoft.DocumentDB/databaseAccounts
+      maintainContext: true
+- name: Customer Insights
+  items:
+    - name: Центры
+      href: /azure/templates/Microsoft.CustomerInsights/hubs
+      maintainContext: true
+      items:
+        - name: Политики авторизации
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/authorizationPolicies
+          maintainContext: true
+        - name: Соединители
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/connectors
+          maintainContext: true
+          items:
+            - name: Сопоставления
+              href: /azure/templates/Microsoft.CustomerInsights/hubs/connectors/mappings
+              maintainContext: true
+        - name: Взаимодействия
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/interactions
+          maintainContext: true
+        - name: Ключевой показатель эффективности
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/kpi
+          maintainContext: true
+        - name: Ссылки
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/links
+          maintainContext: true
+        - name: Прогнозирование
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/predictions
+          maintainContext: true
+        - name: Профили
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/profiles
+          maintainContext: true
+        - name: Ссылки связи
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/relationshipLinks
+          maintainContext: true
+        - name: Отношения
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/relationships
+          maintainContext: true
+        - name: Назначения ролей
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/roleAssignments
+          maintainContext: true
+        - name: Views
+          href: /azure/templates/Microsoft.CustomerInsights/hubs/views
+          maintainContext: true
+- name: Каталог данных
+  items:
+    - name: Каталоги
+      href: /azure/templates/Microsoft.DataCatalog/catalogs
+      maintainContext: true
+- name: Фабрика данных
+  items:
+    - name: Фабрики
+      href: /azure/templates/Microsoft.DataFactory/factories
+      maintainContext: true
+      items:
+        - name: Наборы данных
+          href: /azure/templates/Microsoft.DataFactory/factories/datasets
+          maintainContext: true
+        - name: Среды выполнения интеграции
+          href: /azure/templates/Microsoft.DataFactory/factories/integrationRuntimes
+          maintainContext: true
+        - name: Связанные службы
+          href: /azure/templates/Microsoft.DataFactory/factories/linkedservices
+          maintainContext: true
+        - name: Конвейеры
+          href: /azure/templates/Microsoft.DataFactory/factories/pipelines
+          maintainContext: true
+        - name: триггеры;
+          href: /azure/templates/Microsoft.DataFactory/factories/triggers
+          maintainContext: true
+- name: Data Lake Analytics
+  items:
+    - name: учетные записи;
+      href: /azure/templates/Microsoft.DataLakeAnalytics/accounts
+      maintainContext: true
+      items:
+        - name: Политики вычислений
+          href: /azure/templates/Microsoft.DataLakeAnalytics/accounts/computePolicies
+          maintainContext: true
+        - name: Учетные записи Data Lake Storage
+          href: /azure/templates/Microsoft.DataLakeAnalytics/accounts/DataLakeStoreAccounts
+          maintainContext: true
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.DataLakeAnalytics/accounts/firewallRules
+          maintainContext: true
+        - name: Учетные записи хранения
+          href: /azure/templates/Microsoft.DataLakeAnalytics/accounts/StorageAccounts
+          maintainContext: true
+- name: Data Lake Store
+  items:
+    - name: учетные записи;
+      href: /azure/templates/Microsoft.DataLakeStore/accounts
+      maintainContext: true
+      items:
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.DataLakeStore/accounts/firewallRules
+          maintainContext: true
+        - name: Поставщики TrustedID
+          href: /azure/templates/Microsoft.DataLakeStore/accounts/trustedIdProviders
+          maintainContext: true
+- name: Устройства
+  items:
+    - name: Центры Интернета вещей
+      href: /azure/templates/Microsoft.Devices/IotHubs
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.Devices/IotHubs/certificates
+          maintainContext: true
+        - name: Группы потребителей
+          href: /azure/templates/Microsoft.Devices/IotHubs/eventHubEndpoints/ConsumerGroups
+          maintainContext: true
+    - name: Службы подготовки
+      href: /azure/templates/Microsoft.Devices/provisioningServices
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.Devices/provisioningServices/certificates
+          maintainContext: true
+- name: DevTest Labs
+  items:
+    - name: Лаборатории
+      href: /azure/templates/Microsoft.DevTestLab/labs
+      maintainContext: true
+      items:
+        - name: Источники артефактов
+          href: /azure/templates/Microsoft.DevTestLab/labs/artifactsources
+          maintainContext: true
+        - name: Затраты
+          href: /azure/templates/Microsoft.DevTestLab/labs/costs
+          maintainContext: true
+        - name: Пользовательские образы
+          href: /azure/templates/Microsoft.DevTestLab/labs/customimages
+          maintainContext: true
+        - name: Формулы
+          href: /azure/templates/Microsoft.DevTestLab/labs/formulas
+          maintainContext: true
+        - name: Каналы уведомлений
+          href: /azure/templates/Microsoft.DevTestLab/labs/notificationchannels
+          maintainContext: true
+        - name: Политики
+          href: /azure/templates/Microsoft.DevTestLab/labs/policysets/policies
+          maintainContext: true
+        - name: Расписания
+          href: /azure/templates/Microsoft.DevTestLab/labs/schedules
+          maintainContext: true
+        - name: Средства запуска служб
+          href: /azure/templates/Microsoft.DevTestLab/labs/servicerunners
+          maintainContext: true
+        - name: Пользователи
+          href: /azure/templates/Microsoft.DevTestLab/labs/users
+          maintainContext: true
+          items:
+            - name: диски;
+              href: /azure/templates/Microsoft.DevTestLab/labs/users/disks
+              maintainContext: true
+            - name: средами;
+              href: /azure/templates/Microsoft.DevTestLab/labs/users/environments
+              maintainContext: true
+            - name: Секреты
+              href: /azure/templates/Microsoft.DevTestLab/labs/users/secrets
+              maintainContext: true
+        - name: Виртуальные машины
+          href: /azure/templates/Microsoft.DevTestLab/labs/virtualmachines
+          maintainContext: true
+          items:
+            - name: Расписания
+              href: /azure/templates/Microsoft.DevTestLab/labs/virtualmachines/schedules
+              maintainContext: true
+        - name: Виртуальные сети
+          href: /azure/templates/Microsoft.DevTestLab/labs/virtualnetworks
+          maintainContext: true
+    - name: Расписания
+      href: /azure/templates/Microsoft.DevTestLab/schedules
+      maintainContext: true
+- name: Регистрация домена
+  items:
+    - name: Домены
+      href: /azure/templates/Microsoft.DomainRegistration/domains
+      maintainContext: true
+      items:
+        - name: Идентификаторы владения доменом
+          href: /azure/templates/Microsoft.DomainRegistration/domains/domainOwnershipIdentifiers
+          maintainContext: true
+- name: Сетка событий Azure
+  items:
+    - name: Подписки на события
+      href: /azure/templates/Microsoft.EventGrid/eventSubscriptions
+      maintainContext: true
+    - name: Разделы
+      href: /azure/templates/Microsoft.EventGrid/topics
+      maintainContext: true
+- name: Концентратор событий
+  items:
+    - name: Пространства имен
+      href: /azure/templates/Microsoft.EventHub/namespaces
+      maintainContext: true
+      items:
+        - name: Правила авторизации
+          href: /azure/templates/Microsoft.EventHub/namespaces/AuthorizationRules
+          maintainContext: true
+        - name: Конфигурации аварийного восстановления
+          href: /azure/templates/Microsoft.EventHub/namespaces/disasterRecoveryConfigs
+          maintainContext: true
+        - name: концентраторы событий;
+          href: /azure/templates/Microsoft.EventHub/namespaces/eventhubs
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.EventHub/namespaces/eventhubs/authorizationRules
+              maintainContext: true
+            - name: Группы потребителей
+              href: /azure/templates/Microsoft.EventHub/namespaces/eventhubs/consumergroups
+              maintainContext: true
+- name: HDInsight
+  items:
+    - name: Кластеры
+      href: /azure/templates/Microsoft.HDInsight/clusters
+      maintainContext: true
+      items:
+        - name: ПРИЛОЖЕНИЯ
+          href: /azure/templates/Microsoft.HDInsight/clusters/applications
+          maintainContext: true
+        - name: расширения.
+          href: /azure/templates/Microsoft.HDInsight/clusters/extensions
+          maintainContext: true
+- name: Импорт и экспорт
+  items:
+    - name: Задания
+      href: /azure/templates/Microsoft.ImportExport/jobs
+      maintainContext: true
+- name: Аналитика
+  items:
+    - name: Группы действий
+      href: /azure/templates/Microsoft.insights/actionGroups
+      maintainContext: true
+    - name: Оповещения журнала действий
+      href: /azure/templates/Microsoft.insights/activityLogAlerts
+      maintainContext: true
+    - name: Правила генерации оповещений
+      href: /azure/templates/Microsoft.insights/alertrules
+      maintainContext: true
+    - name: Параметры автомасштабирования
+      href: /azure/templates/Microsoft.insights/autoscalesettings
+      maintainContext: true
+    - name: Компоненты
+      href: /azure/templates/Microsoft.insights/components
+      maintainContext: true
+    - name: Веб-тесты
+      href: /azure/templates/Microsoft.insights/webtests
+      maintainContext: true
+- name: Key Vault
+  items:
+    - name: Хранилища
+      href: /azure/templates/Microsoft.KeyVault/vaults
+      maintainContext: true
+- name: Location Based Services
+  items:
+    - name: учетные записи;
+      href: /azure/templates/Microsoft.LocationBasedServices/accounts
+      maintainContext: true
+- name: Логика
+  items:
+    - name: Учетные записи интеграции
+      href: /azure/templates/Microsoft.Logic/integrationAccounts
+      maintainContext: true
+      items:
+        - name: Соглашения
+          href: /azure/templates/Microsoft.Logic/integrationAccounts/agreements
+          maintainContext: true
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.Logic/integrationAccounts/certificates
+          maintainContext: true
+        - name: Карты
+          href: /azure/templates/Microsoft.Logic/integrationAccounts/maps
+          maintainContext: true
+        - name: Партнеры
+          href: /azure/templates/Microsoft.Logic/integrationAccounts/partners
+          maintainContext: true
+        - name: Схемы
+          href: /azure/templates/Microsoft.Logic/integrationAccounts/schemas
+          maintainContext: true
+    - name: Рабочие процессы
+      href: /azure/templates/Microsoft.Logic/workflows
+      maintainContext: true
+- name: Машинное обучение
+  items:
+    - name: Тарифные планы с обязательствами
+      href: /azure/templates/Microsoft.MachineLearning/commitmentPlans
+      maintainContext: true
+    - name: Веб-службы
+      href: /azure/templates/Microsoft.MachineLearning/webServices
+      maintainContext: true
+- name: Служба мультимедиа
+  items:
+    - name: Службы мультимедиа
+      href: /azure/templates/Microsoft.Media/mediaservices
+      maintainContext: true
+- name: MySQL
+  items:
+    - name: Серверы
+      href: /azure/templates/Microsoft.DBforMySQL/servers
+      maintainContext: true
+      items:
+        - name: Конфигурации
+          href: /azure/templates/Microsoft.DBforMySQL/servers/configurations
+          maintainContext: true
+        - name: Базы данных
+          href: /azure/templates/Microsoft.DBforMySQL/servers/databases
+          maintainContext: true
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.DBforMySQL/servers/firewallRules
+          maintainContext: true
+- name: Сеть
+  items:
+    - name: Шлюзы приложений
+      href: /azure/templates/Microsoft.Network/applicationGateways
+      maintainContext: true
+    - name: Группы безопасности приложений
+      href: /azure/templates/Microsoft.Network/applicationSecurityGroups
+      maintainContext: true
+    - name: Подключения
+      href: /azure/templates/Microsoft.Network/connections
+      maintainContext: true
+    - name: Зоны DNS
+      href: /azure/templates/Microsoft.Network/dnsZones
+      maintainContext: true
+      items:
+        - name: A
+          href: /azure/templates/Microsoft.Network/dnsZones/A
+          maintainContext: true
+        - name: AAAA
+          href: /azure/templates/Microsoft.Network/dnsZones/AAAA
+          maintainContext: true
+        - name: CAA
+          href: /azure/templates/Microsoft.Network/dnsZones/CAA
+          maintainContext: true
+        - name: CNAME
+          href: /azure/templates/Microsoft.Network/dnsZones/CNAME
+          maintainContext: true
+        - name: MX
+          href: /azure/templates/Microsoft.Network/dnsZones/MX
+          maintainContext: true
+        - name: NS
+          href: /azure/templates/Microsoft.Network/dnsZones/NS
+          maintainContext: true
+        - name: PTR
+          href: /azure/templates/Microsoft.Network/dnsZones/PTR
+          maintainContext: true
+        - name: SOA
+          href: /azure/templates/Microsoft.Network/dnsZones/SOA
+          maintainContext: true
+        - name: SRV
+          href: /azure/templates/Microsoft.Network/dnsZones/SRV
+          maintainContext: true
+        - name: TXT
+          href: /azure/templates/Microsoft.Network/dnsZones/TXT
+          maintainContext: true
+    - name: Каналы ExpressRoute
+      href: /azure/templates/Microsoft.Network/expressRouteCircuits
+      maintainContext: true
+      items:
+        - name: Authorizations
+          href: /azure/templates/Microsoft.Network/expressRouteCircuits/authorizations
+          maintainContext: true
+        - name: Пиринг
+          href: /azure/templates/Microsoft.Network/expressRouteCircuits/peerings
+          maintainContext: true
+    - name: Балансировщики нагрузки
+      href: /azure/templates/Microsoft.Network/loadBalancers
+      maintainContext: true
+      items:
+        - name: Правила NAT для входящих подключений
+          href: /azure/templates/Microsoft.Network/loadBalancers/inboundNatRules
+          maintainContext: true
+    - name: Локальные сетевые шлюзы
+      href: /azure/templates/Microsoft.Network/localNetworkGateways
+      maintainContext: true
+    - name: Сетевые интерфейсы
+      href: /azure/templates/Microsoft.Network/networkInterfaces
+      maintainContext: true
+    - name: группы сетевой безопасности;
+      href: /azure/templates/Microsoft.Network/networkSecurityGroups
+      maintainContext: true
+      items:
+        - name: Правила безопасности
+          href: /azure/templates/Microsoft.Network/networkSecurityGroups/securityRules
+          maintainContext: true
+    - name: Наблюдатели за сетями
+      href: /azure/templates/Microsoft.Network/networkWatchers
+      maintainContext: true
+      items:
+        - name: Записи пакетов
+          href: /azure/templates/Microsoft.Network/networkWatchers/packetCaptures
+          maintainContext: true
+    - name: Общедоступные IP-адреса
+      href: /azure/templates/Microsoft.Network/publicIPAddresses
+      maintainContext: true
+    - name: Фильтры маршрутов
+      href: /azure/templates/Microsoft.Network/routeFilters
+      maintainContext: true
+      items:
+        - name: Правила для фильтров маршрутов
+          href: /azure/templates/Microsoft.Network/routeFilters/routeFilterRules
+          maintainContext: true
+    - name: таблицы маршрутов;
+      href: /azure/templates/Microsoft.Network/routeTables
+      maintainContext: true
+      items:
+        - name: Маршруты
+          href: /azure/templates/Microsoft.Network/routeTables/routes
+          maintainContext: true
+    - name: Профили диспетчера трафика
+      href: /azure/templates/Microsoft.Network/trafficmanagerprofiles
+      maintainContext: true
+    - name: Шлюзы виртуальной сети
+      href: /azure/templates/Microsoft.Network/virtualNetworkGateways
+      maintainContext: true
+    - name: Виртуальные сети
+      href: /azure/templates/Microsoft.Network/virtualNetworks
+      maintainContext: true
+      items:
+        - name: Подсети
+          href: /azure/templates/Microsoft.Network/virtualNetworks/subnets
+          maintainContext: true
+        - name: Пиринг виртуальных сетей
+          href: /azure/templates/Microsoft.Network/virtualNetworks/virtualNetworkPeerings
+          maintainContext: true
+- name: Центры уведомлений
+  items:
+    - name: Пространства имен
+      href: /azure/templates/Microsoft.NotificationHubs/namespaces
+      maintainContext: true
+      items:
+        - name: Правила авторизации
+          href: /azure/templates/Microsoft.NotificationHubs/namespaces/AuthorizationRules
+          maintainContext: true
+        - name: Центры уведомлений
+          href: /azure/templates/Microsoft.NotificationHubs/namespaces/notificationHubs
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.NotificationHubs/namespaces/notificationHubs/AuthorizationRules
+              maintainContext: true
+- name: Operational Insights;
+  items:
+    - name: Рабочие области
+      href: /azure/templates/Microsoft.OperationalInsights/workspaces
+      maintainContext: true
+      items:
+        - name: Источники данных
+          href: /azure/templates/Microsoft.OperationalInsights/workspaces/dataSources
+          maintainContext: true
+        - name: Связанные службы
+          href: /azure/templates/Microsoft.OperationalInsights/workspaces/linkedServices
+          maintainContext: true
+        - name: Группы компьютеров
+          href: /azure/templates/Microsoft.OperationalInsights/workspaces/features/machineGroups
+          maintainContext: true
+        - name: Сохраненные поиски
+          href: /azure/templates/Microsoft.OperationalInsights/workspaces/savedSearches
+          maintainContext: true
+        - name: Аналитические сведения о хранилище
+          href: /azure/templates/Microsoft.OperationalInsights/workspaces/storageInsightConfigs
+          maintainContext: true
+- name: PostgreSQL
+  items:
+    - name: Серверы
+      href: /azure/templates/Microsoft.DBforPostgreSQL/servers
+      maintainContext: true
+      items:
+        - name: Конфигурации
+          href: /azure/templates/Microsoft.DBforPostgreSQL/servers/configurations
+          maintainContext: true
+        - name: Базы данных
+          href: /azure/templates/Microsoft.DBforPostgreSQL/servers/databases
+          maintainContext: true
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.DBforPostgreSQL/servers/firewallRules
+          maintainContext: true
+- name: Power BI
+  items:
+    - name: Коллекции рабочих областей
+      href: /azure/templates/Microsoft.PowerBI/workspaceCollections
+      maintainContext: true
+- name: Power BI Dedicated
+  items:
+    - name: Capacities
+      href: /azure/templates/Microsoft.PowerBIDedicated/capacities
+      maintainContext: true
+- name: Службы восстановления
+  items:
+    - name: Хранилища
+      href: /azure/templates/Microsoft.RecoveryServices/vaults
+      maintainContext: true
+      items:
+        - name: Сертификаты
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/certificates
+          maintainContext: true
+        - name: Цель защиты резервных копий
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/backupFabrics/backupProtectionIntent
+          maintainContext: true
+        - name: Параметры оповещений репликации
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationAlertSettings
+          maintainContext: true
+        - name: Структуры репликации
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics
+          maintainContext: true
+          items:
+            - name: Сетевые сопоставления для репликации
+              href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings
+              maintainContext: true
+            - name: Контейнеры защиты для репликации
+              href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers
+              maintainContext: true
+              items:
+                - name: 'Элементы, защищенные репликацией'
+                  href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems
+                  maintainContext: true
+                - name: Сопоставления контейнеров защиты при репликации
+                  href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings
+                  maintainContext: true
+            - name: Сопоставления классификаций хранилища при репликации
+              href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings
+              maintainContext: true
+            - name: Репликация vCenter
+              href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters
+              maintainContext: true
+        - name: Политики репликации
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationPolicies
+          maintainContext: true
+        - name: Планы восстановления при репликации
+          href: /azure/templates/Microsoft.RecoveryServices/vaults/replicationRecoveryPlans
+          maintainContext: true
+- name: Ресурсы
+  items:
+    - name: Развернутые приложения
+      href: /azure/templates/Microsoft.Resources/deployments
+      maintainContext: true
+- name: Передача
+  items:
+    - name: Пространства имен
+      href: /azure/templates/Microsoft.Relay/namespaces
+      maintainContext: true
+      items:
+        - name: Правила авторизации
+          href: /azure/templates/Microsoft.Relay/namespaces/AuthorizationRules
+          maintainContext: true
+        - name: через гибридные подключения
+          href: /azure/templates/Microsoft.Relay/namespaces/HybridConnections
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.Relay/namespaces/HybridConnections/authorizationRules
+              maintainContext: true
+        - name: Ретрансляторы WCF
+          href: /azure/templates/Microsoft.Relay/namespaces/WcfRelays
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.Relay/namespaces/WcfRelays/authorizationRules
+              maintainContext: true
+- name: Планировщик
+  items:
+    - name: Коллекции заданий
+      href: /azure/templates/Microsoft.Scheduler/jobCollections
+      maintainContext: true
+      items:
+        - name: Задания
+          href: /azure/templates/Microsoft.Scheduler/jobCollections/jobs
+          maintainContext: true
+- name: поиска
+  items:
+    - name: Службы поиска
+      href: /azure/templates/Microsoft.Search/searchServices
+      maintainContext: true
+- name: Управление сервером
+  items:
+    - name: Шлюзы
+      href: /azure/templates/Microsoft.ServerManagement/gateways
+      maintainContext: true
+    - name: Nodes
+      href: /azure/templates/Microsoft.ServerManagement/nodes
+      maintainContext: true
+      items:
+        - name: 'Сеансы:'
+          href: /azure/templates/Microsoft.ServerManagement/nodes/sessions
+          maintainContext: true
+          items:
+            - name: Сеансы PowerShell
+              href: /azure/templates/Microsoft.ServerManagement/nodes/sessions/features/pssessions
+              maintainContext: true
+- name: Служебная шина Azure
+  items:
+    - name: Пространства имен
+      href: /azure/templates/Microsoft.ServiceBus/namespaces
+      maintainContext: true
+      items:
+        - name: Правила авторизации
+          href: /azure/templates/Microsoft.ServiceBus/namespaces/AuthorizationRules
+          maintainContext: true
+        - name: Конфигурации аварийного восстановления
+          href: /azure/templates/Microsoft.ServiceBus/namespaces/disasterRecoveryConfigs
+          maintainContext: true
+        - name: Очереди
+          href: /azure/templates/Microsoft.ServiceBus/namespaces/queues
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.ServiceBus/namespaces/queues/authorizationRules
+              maintainContext: true
+        - name: Разделы
+          href: /azure/templates/Microsoft.ServiceBus/namespaces/topics
+          maintainContext: true
+          items:
+            - name: Правила авторизации
+              href: /azure/templates/Microsoft.ServiceBus/namespaces/topics/authorizationRules
+              maintainContext: true
+            - name: Подписки
+              href: /azure/templates/Microsoft.ServiceBus/namespaces/topics/subscriptions
+              maintainContext: true
+              items:
+                - name: Правила
+                  href: /azure/templates/Microsoft.ServiceBus/namespaces/topics/subscriptions/rules
+                  maintainContext: true
+- name: Service Fabric
+  items:
+    - name: Кластеры
+      href: /azure/templates/Microsoft.ServiceFabric/clusters
+      maintainContext: true
+- name: SQL
+  items:
+    - name: Управляемые экземпляры
+      href: /azure/templates/Microsoft.Sql/managedInstances
+      maintainContext: true
+      items:
+        - name: Базы данных
+          href: /azure/templates/Microsoft.Sql/managedInstances/databases
+          maintainContext: true
+    - name: Серверы
+      href: /azure/templates/Microsoft.Sql/servers
+      maintainContext: true
+      items:
+        - name: Базы данных
+          href: /azure/templates/Microsoft.Sql/servers/databases
+          maintainContext: true
+          items:
+            - name: Параметры аудита
+              href: /azure/templates/Microsoft.Sql/servers/databases/auditingSettings
+              maintainContext: true
+            - name: Политики длительного хранения при резервном копировании
+              href: /azure/templates/Microsoft.Sql/servers/databases/backupLongTermRetentionPolicies
+              maintainContext: true
+            - name: Прозрачное шифрование данных
+              href: /azure/templates/Microsoft.Sql/servers/databases/transparentDataEncryption
+              maintainContext: true
+        - name: Эластичные пулы
+          href: /azure/templates/Microsoft.Sql/servers/elasticPools
+          maintainContext: true
+        - name: Средство защиты шифрования
+          href: /azure/templates/Microsoft.Sql/servers/encryptionProtector
+          maintainContext: true
+        - name: Группы отработки отказа
+          href: /azure/templates/Microsoft.Sql/servers/failoverGroups
+          maintainContext: true
+        - name: Правила брандмауэра
+          href: /azure/templates/Microsoft.Sql/servers/firewallRules
+          maintainContext: true
+        - name: ключей
+          href: /azure/templates/Microsoft.Sql/servers/keys
+          maintainContext: true
+        - name: Правила для виртуальной сети
+          href: /azure/templates/Microsoft.Sql/servers/virtualNetworkRules
+          maintainContext: true
+- name: Служба хранилища
+  items:
+    - name: Учетные записи хранения
+      href: /azure/templates/Microsoft.Storage/storageAccounts
+      maintainContext: true
+- name: StorSimple
+  items:
+    - name: Диспетчеры
+      href: /azure/templates/Microsoft.StorSimple/managers
+      maintainContext: true
+      items:
+        - name: Записи контроля доступа
+          href: /azure/templates/Microsoft.StorSimple/managers/accessControlRecords
+          maintainContext: true
+        - name: Параметры пропускной способности
+          href: /azure/templates/Microsoft.StorSimple/managers/bandwidthSettings
+          maintainContext: true
+        - name: Учетные данные учетной записи хранения
+          href: /azure/templates/Microsoft.StorSimple/managers/storageAccountCredentials
+          maintainContext: true
+        - name: Устройства
+          items:
+            - name: Политики резервного копирования
+              href: /azure/templates/Microsoft.StorSimple/managers/devices/backupPolicies
+              maintainContext: true
+              items:
+                - name: Расписания
+                  href: /azure/templates/Microsoft.StorSimple/managers/devices/backupPolicies/schedules
+                  maintainContext: true
+            - name: Контейнеры томов
+              href: /azure/templates/Microsoft.StorSimple/managers/devices/volumeContainers
+              maintainContext: true
+              items:
+                - name: Тома
+                  href: /azure/templates/Microsoft.StorSimple/managers/devices/volumeContainers/volumes
+                  maintainContext: true
+- name: Stream Analytics
+  items:
+    - name: Задания потоковой передачи
+      href: /azure/templates/Microsoft.StreamAnalytics/streamingJobs
+      maintainContext: true
+      items:
+        - name: Функции Azure
+          href: /azure/templates/Microsoft.StreamAnalytics/streamingjobs/functions
+          maintainContext: true
+        - name: Входные данные
+          href: /azure/templates/Microsoft.StreamAnalytics/streamingjobs/inputs
+          maintainContext: true
+        - name: outputs
+          href: /azure/templates/Microsoft.StreamAnalytics/streamingjobs/outputs
+          maintainContext: true
+        - name: Преобразования
+          href: /azure/templates/Microsoft.StreamAnalytics/streamingjobs/transformations
+          maintainContext: true
+- name: Web
+  items:
+    - name: Сертификаты
+      href: /azure/templates/Microsoft.Web/certificates
+      maintainContext: true
+    - name: Шлюзы подключения
+      href: /azure/templates/Microsoft.Web/connectionGateways
+      maintainContext: true
+    - name: Подключения
+      href: /azure/templates/Microsoft.Web/connections
+      maintainContext: true
+    - name: Настраиваемые API
+      href: /azure/templates/Microsoft.Web/customApis
+      maintainContext: true
+    - name: Среды размещения
+      href: /azure/templates/Microsoft.Web/hostingEnvironments
+      maintainContext: true
+      items:
+        - name: Рабочие пулы
+          href: /azure/templates/Microsoft.Web/hostingEnvironments/workerPools
+          maintainContext: true
+    - name: Фермы серверов
+      href: /azure/templates/Microsoft.Web/serverfarms
+      maintainContext: true
+    - name: Шлюзы
+      href: /azure/templates/Microsoft.Web/serverfarms/virtualNetworkConnections/gateways
+      maintainContext: true
+    - name: Маршруты
+      href: /azure/templates/Microsoft.Web/serverfarms/virtualNetworkConnections/routes
+      maintainContext: true
+    - name: Сайты
+      href: /azure/templates/Microsoft.Web/sites
+      maintainContext: true
+      items:
+        - name: Развернутые приложения
+          href: /azure/templates/Microsoft.Web/sites/deployments
+          maintainContext: true
+        - name: Идентификаторы владения доменом
+          href: /azure/templates/Microsoft.Web/sites/domainOwnershipIdentifiers
+          maintainContext: true
+        - name: Функции Azure
+          href: /azure/templates/Microsoft.Web/sites/functions
+          maintainContext: true
+        - name: Привязки имени узла
+          href: /azure/templates/Microsoft.Web/sites/hostNameBindings
+          maintainContext: true
+        - name: Гибридное подключение
+          href: /azure/templates/Microsoft.Web/sites/hybridconnection
+          maintainContext: true
+        - name: Ретрансляторы в пространствах имен гибридных подключений
+          href: /azure/templates/Microsoft.Web/sites/hybridConnectionNamespaces/relays
+          maintainContext: true
+        - name: Надстройки Premier
+          href: /azure/templates/Microsoft.Web/sites/premieraddons
+          maintainContext: true
+        - name: Открытые сертификаты
+          href: /azure/templates/Microsoft.Web/sites/publicCertificates
+          maintainContext: true
+        - name: Расширения сайтов
+          href: /azure/templates/Microsoft.Web/sites/siteextensions
+          maintainContext: true
+        - name: Слоты
+          href: /azure/templates/Microsoft.Web/sites/slots
+          maintainContext: true
+          items:
+            - name: Развернутые приложения
+              href: /azure/templates/Microsoft.Web/sites/slots/deployments
+              maintainContext: true
+            - name: Идентификаторы владения доменом
+              href: /azure/templates/Microsoft.Web/sites/slots/domainOwnershipIdentifiers
+              maintainContext: true
+            - name: Функции Azure
+              href: /azure/templates/Microsoft.Web/sites/slots/functions
+              maintainContext: true
+            - name: Привязки имени узла
+              href: /azure/templates/Microsoft.Web/sites/slots/hostNameBindings
+              maintainContext: true
+            - name: Гибридное подключение
+              href: /azure/templates/Microsoft.Web/sites/slots/hybridconnection
+              maintainContext: true
+            - name: Ретрансляторы в пространствах имен гибридных подключений
+              href: /azure/templates/Microsoft.Web/sites/slots/hybridConnectionNamespaces/relays
+              maintainContext: true
+            - name: Надстройки Premier
+              href: /azure/templates/Microsoft.Web/sites/slots/premieraddons
+              maintainContext: true
+            - name: Открытые сертификаты
+              href: /azure/templates/Microsoft.Web/sites/slots/publicCertificates
+              maintainContext: true
+            - name: Расширения сайтов
+              href: /azure/templates/Microsoft.Web/sites/slots/siteextensions
+              maintainContext: true
+            - name: Подключения виртуальных сетей
+              href: /azure/templates/Microsoft.Web/sites/slots/virtualNetworkConnections
+              maintainContext: true
+              items:
+                - name: Шлюзы
+                  href: /azure/templates/Microsoft.Web/sites/slots/virtualNetworkConnections/gateways
+                  maintainContext: true
+        - name: Подключения виртуальных сетей
+          href: /azure/templates/Microsoft.Web/sites/virtualNetworkConnections
+          maintainContext: true
+          items:
+            - name: Шлюзы
+              href: /azure/templates/Microsoft.Web/sites/virtualNetworkConnections/gateways
+              maintainContext: true
