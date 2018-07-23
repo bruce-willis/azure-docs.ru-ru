@@ -110,7 +110,8 @@
         - name: Настройка среды разработки
           items:
             - name: Установка PowerShell для Azure Stack
-              href: 'https://docs.microsoft.com/azure/azure-stack/user/azure-stack-powershell-install'
+              href: ../azure-stack-powershell-install.md
+              maintainContext: true
             - name: Скачивание средств Azure Stack
               href: azure-stack-powershell-download.md
             - name: Настройка PowerShell для пользователя

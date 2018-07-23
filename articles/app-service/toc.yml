@@ -23,8 +23,6 @@
       href: app-service-web-get-started-php.md
     - name: Создание приложения Java
       href: app-service-web-get-started-java.md
-    - name: Создание приложения Python
-      href: app-service-web-get-started-python.md
     - name: Создание статического HTML-сайта
       href: app-service-web-get-started-html.md
 - name: Учебники
@@ -41,8 +39,6 @@
           href: app-service-web-tutorial-nodejs-mongodb-app.md
         - name: Java с MySQL
           href: app-service-web-tutorial-java-mysql.md
-        - name: Использование Python и PostgreSQL
-          href: app-service-web-tutorial-python-postgresql.md
     - name: Безопасный доступ к базе данных SQL
       href: app-service-web-tutorial-connect-msi.md
     - name: Размещение REST API
@@ -204,7 +200,7 @@
       href: /cli/azure/appservice
     - name: Azure PowerShell
       href: /powershell
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/appservice/
 - name: Ресурсы
   items:

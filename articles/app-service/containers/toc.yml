@@ -19,6 +19,8 @@
       href: quickstart-nodejs.md
     - name: Создание приложения Java
       href: quickstart-java.md
+    - name: Создание приложения Python
+      href: quickstart-python.md
     - name: Создание приложения Ruby
       href: quickstart-ruby.md
     - name: Создание приложения Docker или Go
@@ -157,7 +159,7 @@
       href: /cli/azure/appservice
     - name: Azure PowerShell
       href: /powershell
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/appservice/
 - name: Ресурсы
   items:

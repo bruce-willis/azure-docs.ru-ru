@@ -89,14 +89,6 @@
       href: /powershell/module/azurerm.eventgrid
     - name: REST
       href: /rest/api/eventgrid
-    - name: Ресурсы шаблона
-      items:
-        - name: Подписки на события
-          href: /azure/templates/microsoft.eventgrid/eventsubscriptions
-        - name: Разделы
-          href: /azure/templates/microsoft.eventgrid/topics
-    - name: Пакеты SDK
-      href: sdk-overview.md
     - name: Схема подписки
       href: subscription-creation-schema.md
     - name: Схема событий
@@ -106,7 +98,9 @@
           href: event-schema-subscriptions.md
         - name: Хранилище BLOB-объектов
           href: event-schema-blob-storage.md
-        - name: Концентраторы событий
+        - name: Реестр контейнеров
+          href: event-schema-container-registry.md
+        - name: концентраторы событий;
           href: event-schema-event-hubs.md
         - name: Центр Интернета вещей
           href: event-schema-iot-hub.md
@@ -116,6 +110,14 @@
           href: event-schema-resource-groups.md
         - name: Служебная шина Azure
           href: event-schema-service-bus.md
+    - name: Ресурсы шаблона
+      items:
+        - name: Подписки на события
+          href: /azure/templates/microsoft.eventgrid/eventsubscriptions
+        - name: Разделы
+          href: /azure/templates/microsoft.eventgrid/topics
+    - name: Пакеты SDK
+      href: sdk-overview.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
