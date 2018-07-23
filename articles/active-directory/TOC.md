@@ -140,33 +140,13 @@
 #### [Примеры входа](active-directory-reporting-api-sign-in-activity-samples.md)
 #### [Использование сертификатов](active-directory-reporting-api-with-certificates.md)
 
-## Управление паролями
-### [Общие сведения о паролях](authentication/active-directory-passwords-overview.md)
+## Управление паролями (active-directory/authentication/concept-sspr-howitworks.md)
 ### Документы пользователя
 #### [Сброс или изменение пароля](user-help/active-directory-passwords-update-your-own-password.md)
 #### [Рекомендации по паролям](active-directory-secure-passwords.md)
 #### [Регистрация для самостоятельного сброса пароля](user-help/active-directory-passwords-reset-register.md)
-### [Принципы работы SSPR](authentication/concept-sspr-howitworks.md)
-### [Руководство по развертыванию SSPR](authentication/howto-sspr-deployment.md)
-### [SSPR и Windows 10](authentication/tutorial-sspr-windows.md)
-### [Политики SSPR](authentication/concept-sspr-policy.md)
-### [Настройка SSPR](authentication/concept-sspr-customization.md)
-### [Требования к данным SSPR](authentication/howto-sspr-authenticationdata.md)
-### [Отчеты SSPR](authentication/howto-sspr-reporting.md)
-### [Смарт-блокировка](authentication/howto-password-smart-lockout.md)
-### [Исключение простых паролей](authentication/concept-password-ban-bad.md)
-### [Настройка списка запрещенных паролей](authentication/howto-password-ban-bad.md)
-### [Интеграция с локальной средой](authentication/concept-password-ban-bad-on-premises.md)
-### [Развертывание защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises.md)
-### [Настройка защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises-operations.md)
-### [Мониторинг защиты паролем Azure AD](authentication/howto-password-ban-bad-on-premises-troubleshoot.md)
 ### ИТ-администрирование. Сброс паролей
 #### [портал Azure](fundamentals/active-directory-users-reset-password-azure-portal.md)
-### [Лицензия SSPR](authentication/concept-sspr-licensing.md)
-### [Обратная запись паролей](authentication/howto-sspr-writeback.md)
-### [Устранение неполадок](authentication/active-directory-passwords-troubleshoot.md)
-### [Часто задаваемые вопросы](authentication/active-directory-passwords-faq.md)
-
 
 ## Управление устройствами
 ### [Введение](device-management-introduction.md)
@@ -404,7 +384,7 @@
 
 ## Защита удостоверений
 ### [Условный доступ](active-directory-conditional-access-azure-portal.md)
-#### [Приступая к работе с условным доступом](active-directory-conditional-access-azure-portal-get-started.md)
+#### [Начало работы](active-directory-conditional-access-azure-portal-get-started.md)
 #### Быстрое начало работы
 ##### [Настройка отдельных облачных приложений MFA](active-directory-conditional-access-app-based-mfa.md)
 ##### [Обеспечение принятия условий использования](active-directory-conditional-access-tou.md)
@@ -434,7 +414,7 @@
 ### Аутентификация на основе сертификата
 #### [Android](active-directory-certificate-based-authentication-android.md)
 #### [iOS](active-directory-certificate-based-authentication-ios.md)
-#### [Приступая к работе с условным доступом](active-directory-certificate-based-authentication-get-started.md)
+#### [Начало работы](active-directory-certificate-based-authentication-get-started.md)
 
 ### [Защита идентификации Azure AD](active-directory-identityprotection.md)
 #### [Включение](active-directory-identityprotection-enable.md)

@@ -2,7 +2,7 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое средство для обучения ведению диалога?
+    - name: Что такое Conversation Learner?
       href: overview.md
     - name: Поддерживаемые языки
       href: languages-supported.md
@@ -48,6 +48,8 @@
       href: tutorials/15-branching-and-undo.md
     - name: Управление версиями и добавление тегов
       href: tutorials/16-versioning-and-tagging.md
+    - name: Гибридные боты
+      href: tutorials/17-hybrid-bots.md
     - name: Демонстрация. Сброс пароля
       href: tutorials/demo-password-reset.md
     - name: Демонстрация. Заказ пиццы

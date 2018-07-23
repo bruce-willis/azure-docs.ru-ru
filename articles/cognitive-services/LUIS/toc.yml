@@ -79,6 +79,10 @@
           href: luis-tutorial-batch-testing.md
         - name: Использование шаблонов
           href: luis-tutorial-pattern.md
+        - name: Использование ролей
+          href: luis-tutorial-pattern-roles.md
+        - name: Использование сущности Pattern.any
+          href: luis-tutorial-pattern-any.md
 - name: Примеры
   items:
     - name: Примеры кода
@@ -194,7 +198,7 @@
     - name: Тест
       items:
         - name: Интерактивное тестирование
-          href: interactive-test.md
+          href: luis-interactive-test.md
         - name: Пакетное тестирование
           href: luis-how-to-batch-test.md
     - name: Публикация приложения
@@ -226,7 +230,7 @@
             - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
               href: luis-traffic-manager.md
     - name: Миграция в API версии 2
-      href: migration-v1-to-v2.md
+      href: luis-migration-api-v1-to-v2.md
     - name: Поиск регионов программным образом
       items:
         - name: 'Использование C#'

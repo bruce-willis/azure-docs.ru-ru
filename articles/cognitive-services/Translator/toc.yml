@@ -105,6 +105,10 @@
           href: quickstart-ruby-languages.md
         - name: Получение сведений о длине предложений в тексте
           href: quickstart-ruby-sentences.md
+- name: Учебники
+  items:
+    - name: Создание приложения WPF для API перевода текстов
+      href: tutorial-wpf-translation-csharp.md
 - name: Основные понятия
   items:
     - name: Поддерживаемые языки
@@ -125,8 +129,6 @@
       href: word-alignment.md
     - name: Использование функции динамического словаря
       href: dynamic-dictionary.md
-    - name: Создание приложения для перевода текста с использованием WPF
-      href: tutorial-wpf-translation-csharp.md
 - name: Справочные материалы
   items:
     - name: "Справочник по API перевода текстов версии\_3"
@@ -134,13 +136,13 @@
       items:
         - name: Языки
           href: reference/v3-0-languages.md
-        - name: Перевод
+        - name: Translate
           href: reference/v3-0-translate.md
-        - name: Транслитерация
+        - name: Transliterate
           href: reference/v3-0-transliterate.md
         - name: Обнаружение
           href: reference/v3-0-detect.md
-        - name: Метод BreakSentence
+        - name: BreakSentence
           href: reference/v3-0-break-sentence.md
         - name: Поиск по словарю
           href: reference/v3-0-dictionary-lookup.md

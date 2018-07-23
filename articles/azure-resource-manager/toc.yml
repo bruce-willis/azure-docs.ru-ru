@@ -15,6 +15,13 @@
       href: resource-manager-quickstart-create-templates-use-visual-studio-code.md
     - name: Создание шаблонов — Visual Studio
       href: vs-azure-tools-resource-groups-deployment-projects-create-deploy.md
+- name: Учебники
+  expanded: true
+  items:
+    - name: Создание зашифрованной учетной записи хранения
+      href: resource-manager-tutorial-create-encrypted-storage-accounts.md
+    - name: Создание нескольких ресурсов
+      href: resource-manager-tutorial-create-templates-with-dependent-resources.md
 - name: Основные понятия
   items:
     - name: Поставщики и типы ресурсов
