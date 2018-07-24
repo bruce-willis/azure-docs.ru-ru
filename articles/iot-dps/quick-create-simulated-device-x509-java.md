@@ -1,8 +1,8 @@
 ---
 title: Подготовка имитированного устройства X.509 в Центре Интернета вещей Azure с помощью Java | Документация Майкрософт
 description: Краткое руководство Azure. Создание и подготовка имитированного устройства X.509 с помощью пакета Java SDK для службы подготовки устройств Центра Интернета вещей
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 04/09/2018
 ms.topic: quickstart
 ms.service: iot-dps
@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: 1f7f044f46dded461d00d2ec78febf02271adcfa
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0c5eefbd6d7758ad2a7640a1fbff3435fcd1d315
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34631043"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091703"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-java-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета Java SDK для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
@@ -51,6 +51,14 @@ ms.locfileid: "34631043"
     ```
 
 ## <a name="create-a-self-signed-x509-device-certificate-and-individual-enrollment-entry"></a>Создание самозаверяющего сертификата устройства X.509 и запись отдельной регистрации
+
+В этом разделе описано, как использовать самозаверяющий сертификат X.509. При этом обязательно учитывайте следующее:
+
+* Самозаверяющие сертификаты предназначены только для тестирования и не должны использоваться в рабочей среде.
+* Срок действия самозаверяющего сертификата по умолчанию составляет 1 год.
+
+Вы используете пример кода из [пакета SDK для Интернета вещей Azure для Java](https://github.com/Azure/azure-iot-sdk-java.git), чтобы создать сертификат, который будет использоваться с отдельной записью регистрации для имитированного устройства.
+
 
 1. С помощью командной строки перейдите к папке `target` и выполните созданный JAR-файл.
 

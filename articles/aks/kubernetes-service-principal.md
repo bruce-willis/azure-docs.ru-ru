@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.date: 04/19/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: f933788968ffdbd4a856a84476d8d82b32637d62
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 4dbb8b7abf6da77115d0e1d12621ec20ec60d174
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100340"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035206"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -35,7 +35,7 @@ ms.locfileid: "37100340"
 
 В следующем примере создается кластер AKS и новый субъект-служба для кластера, так как существующий субъект-служба не указан. Чтобы завершить эту операцию, учетной записи требуются необходимые права для создания субъекта-службы.
 
-```azurecli
+```azurecli-interactive
 az aks create --name myAKSCluster --resource-group myResourceGroup --generate-ssh-keys
 ```
 
@@ -47,7 +47,7 @@ az aks create --name myAKSCluster --resource-group myResourceGroup --generate-ss
 
 Чтобы создать субъект-службу с помощью Azure CLI, используйте команду [az ad sp create-for-rbac][az-ad-sp-create].
 
-```azurecli
+```azurecli-interactive
 az ad sp create-for-rbac --skip-assignment
 ```
 
@@ -84,7 +84,12 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --service-pri
 * Указывая **идентификатор клиента** субъекта-службы, используйте значение `appId` (как показано в этой статье) или соответствующее имя (`name`) субъекта-службы, например `https://www.contoso.org/example`.
 * На главной виртуальной машине и виртуальной машине узла в кластере Kubernetes учетные данные субъекта-службы хранятся в файле `/etc/kubernetes/azure.json`.
 * Если вы используете команду `az aks create`, чтобы автоматически создать субъект-службу, учетные данные субъекта-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, с которого выполняется команда.
-* При удалении кластера Службы контейнеров Azure, который был создан с помощью команды `az aks create`, автоматически созданный субъект-служба не удаляется. Удалите его с помощью команды `az ad sp delete --id $clientID`.
+* При удалении кластера AKS, который был создан с помощью команды `az aks create`, созданный автоматически субъект-служба не удаляется. Чтобы удалить субъект-службу, сначала нужно получить идентификатор для службы участника с помощью команды [az ad app list][az-ad-app-list]. Следующий пример выполняет запрос к кластеру с именем *myAKSCluster*, а затем удаляет идентификатор приложения с помощью команды [az ad app delete][az-ad-app-delete]. Замените эти имена своими значениями:
+
+    ```azurecli-interactive
+    az ad app list --query "[?displayName=='myAKSCluster'].{Name:displayName,Id:appId}" --output table
+    az ad app delete --id <appId>
+    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -101,3 +106,5 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --service-pri
 [install-azure-cli]: /cli/azure/install-azure-cli
 [service-principal]: ../active-directory/develop/active-directory-application-objects.md
 [user-defined-routes]: ../load-balancer/load-balancer-overview.md
+[az-ad-app-list]: /cli/azure/ad/app#az-ad-app-list
+[az-ad-app-delete]: /cli/azure/ad/app#az-ad-app-delete

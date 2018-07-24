@@ -5,17 +5,17 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 12/12/2017
+ms.date: 07/11/2018
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: ccd55633f71be172edc330459bf8610f2146ad8d
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 008e61841611f36c440bb4896ae5a85d0bf4d874
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29386390"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38991690"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
@@ -23,7 +23,7 @@ ms.locfileid: "29386390"
 
 Это краткое руководство поможет добавить пакет SDK для Application Insights в имеющееся веб-приложение ASP.Net Core. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "29386390"
 - [Установите пакет SDK для .NET Core 2.0.](https://www.microsoft.com/net/core)
 - Потребуется подписка Azure и веб-приложение .NET Core.
 
-Если у вас еще нет веб-приложения ASP.NET, его можно создать, следуя руководству [Публикация веб-приложения ASP.NET Core в службе приложений Azure с помощью Visual Studio](https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs).
+Если у вас нет веб-приложения ASP.NET Core, [создайте его и добавьте Application Insights](app-insights-asp-net-core.md) с помощью нашего пошагового руководства.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -56,7 +56,7 @@ ms.locfileid: "29386390"
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Тип приложения** | Веб-приложение ASP.NET | Тип отслеживаемого приложения |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
-   | **Местоположение.** | Восток США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
 
@@ -77,25 +77,25 @@ ms.locfileid: "29386390"
 
 1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, выбрав **Проект** > **Application Insights** > **Open Application Insights Portal** (Открыть портал Application Insights) для просмотра сведений о выполняющемся в данный момент приложении.
 
-   ![Меню "Обзор Application Insights"](./media/app-insights-dotnetcore-quick-start/004-Black.png)
+   ![Меню "Обзор Application Insights"](./media/app-insights-dotnetcore-quick-start/overview-001.png)
 
-2. Щелкните **App map** (Карта приложений), чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
+2. Щелкните **Схема приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
-   ![Схема сопоставления приложений](./media/app-insights-dotnetcore-quick-start/0002-dc.png)
+   ![Схема сопоставления приложений](./media/app-insights-dotnetcore-quick-start/application-map.png)
 
 3. Щелкните значок **аналитики приложений** ![значок "Схема сопоставления приложений"](./media/app-insights-dotnetcore-quick-start/006.png).  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 
    ![Граф аналитики запросов пользователей за период времени](./media/app-insights-dotnetcore-quick-start/0007-dc.png)
 
-4. Вернитесь к странице **Обзор** и изучите **временную шкалу обзора работоспособности**.  Эта панель мониторинга предоставляет статистические данные о работоспособности приложения, включая число входящих запросов, продолжительности этих запросов и возникающие ошибки. 
+4. Вернитесь к странице **Обзор** и изучите панель мониторинга ключевых показателей эффективности.  Эта панель мониторинга предоставляет статистические данные о работоспособности приложения, включая число входящих запросов, продолжительности этих запросов и возникающие ошибки. 
 
-   ![Графы временной шкалы обзора работоспособности](./media/app-insights-dotnetcore-quick-start/0008-dc.png)
+   ![Графы временной шкалы обзора работоспособности](./media/app-insights-dotnetcore-quick-start/overview-graphs.png)
 
    Чтобы включить диаграмму **Время загрузки страницы** для заполнения данных **телеметрии на стороне клиента**, добавьте этот скрипт на каждую страницу, которую требуется отслеживать:
 
    ```HTML
    <!-- 
-   To collect end-user usage analytics about your application, 
+   To collect user behavior analytics about your application, 
    insert the following script into each page you want to track.
    Place this code immediately before the closing </head> tag,
    and before any other scripts. Your first data will appear 

@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: cea83fbe9c60bab687eb3d43fc269fa9f6bea325
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e9400c476179d801eb66f574373bf75cfb672d9d
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34630465"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091090"
 ---
 # <a name="enroll-x509-devices-to-iot-hub-device-provisioning-service-using-java-service-sdk"></a>Регистрация устройств X.509 в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Java
 
@@ -54,7 +54,12 @@ ms.locfileid: "34630465"
 
 ## <a name="download-and-modify-the-java-sample-code"></a>Скачивание и изменение примера кода на Java
 
-В этом разделе показано, как добавить в пример кода сведения о подготовке устройства X.509. 
+Для выполнения задач в этом разделе используется самозаверяющий сертификат X.509. При этом важно учесть следующее:
+
+* Самозаверяющие сертификаты предназначены только для тестирования и не должны использоваться в рабочей среде.
+* Срок действия самозаверяющего сертификата по умолчанию — 1 год.
+
+Ниже приведены инструкции по добавлению в пример кода сведений о подготовке устройства X.509. 
 
 1. Откройте окно командной строки. Клонируйте из репозитория GitHub пример кода для регистрации устройства, используя пакет SDK для службы Java:
     

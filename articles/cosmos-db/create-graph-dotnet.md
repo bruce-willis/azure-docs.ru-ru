@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: bbe60fb6a6371551f588d5472ac304148a4a1aa7
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 27cfb391c5c47ef44c443e2603da62fe5d6a3122
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38453422"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113051"
 ---
 # <a name="azure-cosmos-db-build-a-net-framework-or-core-application-using-the-graph-api"></a>Azure Cosmos DB. Создание приложения .NET Framework или Core с помощью API Graph
 
@@ -24,7 +24,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 В этом кратком руководстве показано, как создать учетную запись [API Graph](graph-introduction.md) для Azure Cosmos DB, базу данных и граф (контейнер) с помощью портала Azure. Затем вы можете создать и запустить консольное приложение c помощью драйвера [Gremlin.Net](http://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) с открытым кодом.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio Community 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
@@ -153,21 +153,25 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Ключи**. 
+1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи службы базы данных графа. На вкладке **Обзор** вкладку вы увидите две конечные точки: 
+ 
+   **URI пакета SDK для .NET** — это значение используется при подключении к учетной записи графа с помощью библиотеки Microsoft.Azure.Graphs. 
 
-    Скопируйте первую часть значения URI.
+   **Конечная точка Gremlin** — это значение используется при подключении к учетной записи графа с помощью библиотеки Gremlin.Net.
 
-    ![Просмотр и копирование ключа доступа на портале Azure, страница "Ключи"](./media/create-graph-dotnet/keys.png)
+    ![Копирование конечной точки](./media/create-graph-dotnet/endpoint.png)
+
+   Чтобы запустить этот пример, скопируйте значение **конечной точки Gremlin**, удалите номер порта в конце, где URI принимает значение `https://<your cosmos db account name>.gremlin.cosmosdb.azure.com`.
 
 2. В файл Program.cs вставьте это значение вместо `your-endpoint` в переменной `hostname` в строке 19. 
 
-    `"private static string hostname = "your-endpoint.gremlin.cosmosdb.azure.com";`
+    `"private static string hostname = "<your cosmos db account name>.gremlin.cosmosdb.azure.com";`
 
     Значение конечной точки должно выглядеть так:
 
     `"private static string hostname = "testgraphacct.gremlin.cosmosdb.azure.com";`
 
-3. Скопируйте значение **первичного ключа** с портала и вставьте его в переменную `authkey`, заменив заполнитель `"your-authentication-key"` в строке 21. 
+3. Затем на вкладке **Ключи** скопируйте значение **первичного ключа** с портала и вставьте его в переменную `authkey`, заменив заполнитель `"your-authentication-key"` в строке 21. 
 
     `private static string authKey = "your-authentication-key";`
 

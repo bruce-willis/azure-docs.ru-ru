@@ -8,14 +8,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: mvc,DBs & servers
 ms.topic: quickstart
-ms.date: 07/02/2018
+ms.date: 07/16/2018
 ms.author: sachinp
-ms.openlocfilehash: 264397fee8ea37321841a4130cb5977219861053
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 172ee6c2200334a57ebaa073d7ff530d19b2f07d
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345429"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090536"
 ---
 # <a name="create-an-azure-sql-database-in-the-azure-portal"></a>Создание базы данных SQL Azure на портале Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "37345429"
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
   >[!NOTE]
-  >База данных SQL предоставляет модель приобретения на основе DTU. Также доступна [модель приобретения на основе виртуальных ядер (предварительная версия)](sql-database-service-tiers-vcore.md).
+  >База данных SQL предоставляет модель приобретения на основе DTU. Также доступна [модель приобретения на основе числа виртуальных ядер](sql-database-service-tiers-vcore.md).
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -57,7 +57,7 @@ ms.locfileid: "37345429"
 
 4. В разделе **Сервер** щелкните **Настроить необходимые параметры** и заполните форму SQL Server (логический сервер), указав следующую информацию, как показано на указанном ниже изображении.   
 
-   | Параметр       | Рекомендуемое значение | Описание |
+   | Параметр       | Рекомендуемое значение | ОПИСАНИЕ |
    | ------------ | ------------------ | ------------------------------------------------- |
    | **Server name** (Имя сервера) | Любое глобально уникальное имя | Допустимые имена серверов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
    | **Имя для входа администратора сервера** | Любое допустимое имя | Допустимые имена входа см. в статье об [идентификаторах базы данных](https://docs.microsoft.com/sql/relational-databases/databases/database-identifiers). |
@@ -159,7 +159,7 @@ ms.locfileid: "37345429"
 1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **myResourceGroup**.
 2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **myResourceGroup** и щелкните **Удалить**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Теперь, когда у вас есть база данных, вы можете [подключиться и создать запрос](sql-database-connect-query.md), используя одно из привычных средств или языков. 
 - Научитесь разрабатывать базы данных, создавать таблицы и вставлять данные при помощи одного из следующих руководств:

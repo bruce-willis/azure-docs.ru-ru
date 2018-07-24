@@ -13,15 +13,15 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: ''
-ms.date: 01/22/2018
+ms.date: 07/03/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 092e0681b0491fc1c54c19e234aafdac6d428fd1
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 9154cef897d38e617c2f9dccdc8a47fe1af72104
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29843227"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989467"
 ---
 # <a name="create-an-azure-function-that-connects-to-an-azure-cosmos-db"></a>Создание функции Azure, которая подключается к Azure Cosmos DB
 
@@ -45,14 +45,12 @@ ms.locfileid: "29843227"
 
 В этом сценарии используются следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [az login](https://docs.microsoft.com/cli/azure/reference-index#az_login) | Войдите в Azure. |
-| [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создайте группу ресурсов с расположением. |
-| [az storage accounts create](https://docs.microsoft.com/cli/azure/storage/account) | Создайте учетную запись хранения. |
-| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az_functionapp_create) | Создайте приложение-функцию. |
-| [az cosmosdb create](https://docs.microsoft.com/cli/azure/cosmosdb#az_cosmosdb_create) | Создайте базу данных Cosmos DB. |
-| [az group delete](https://docs.microsoft.com/cli/azure/group#az_group_delete) | Очистка |
+| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создайте группу ресурсов с расположением. |
+| [az storage accounts create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создание учетной записи хранения |
+| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в бессерверном [плане потребления](../functions-scale.md#consumption-plan). |
+| [az cosmosdb create](https://docs.microsoft.com/cli/azure/cosmosdb#az-cosmosdb-create) | Создает базу данных Azure Cosmos DB. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

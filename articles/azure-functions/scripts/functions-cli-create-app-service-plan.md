@@ -13,15 +13,15 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: web
-ms.date: 10/22/2018
-ms.author: cfowler
+ms.date: 07/03/2018
+ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 744c5310e08066dcbbfbde55b8e6ecb6c9361855
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: c12297075e967446572898b94d3abbcaf79f9e84
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937304"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989066"
 ---
 # <a name="create-a-function-app-in-an-app-service-plan"></a>Создание приложения-функции в плане службы приложений
 
@@ -45,12 +45,12 @@ ms.locfileid: "36937304"
 
 Для каждой команды в таблице приведены ссылки на соответствующую документацию. Этот сценарий использует следующие команды:
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az_storage_account_create) | Создает учетную запись хранения Azure. |
-| [az appservice plan create](https://docs.microsoft.com/en-us/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |
-| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az_functionapp_delete) | Создает приложение-функцию Azure. |
+| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения Azure. |
+| [az appservice plan create](https://docs.microsoft.com/cli/azure/appservice/plan#az-appservice-plan-create) | Создает план службы приложений. |
+| [az functionapp create](https://docs.microsoft.com/cli/azure/functionapp#az-functionapp-create) | Создает приложение-функцию в плане службы приложений. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

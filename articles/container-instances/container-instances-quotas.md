@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: overview
 ms.date: 02/27/2018
 ms.author: marsma
-ms.openlocfilehash: 22be921c7ab437e08d8ea5032befb8671dc90ed0
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 1bc890abc8b406ae75f292f37775e4cb62cf0473
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32163373"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115281"
 ---
 # <a name="quotas-and-region-availability-for-azure-container-instances"></a>Квоты и доступность по регионам для службы "Экземпляры контейнеров Azure"
 
@@ -31,6 +31,7 @@ ms.locfileid: "32163373"
 | -------- | -- | :---: | :-----------: |
 | Западная часть США, восточная часть США, Западная Европа, Северная Европа | Linux | 4. | 14 |
 | Западная часть США 2, Юго-Восточная Азия | Linux | 2 | 7 |
+| Восточная Австралия, восточная часть США 2, центральная часть США | Linux | 1 | 1.5 |
 | Западная часть США, восточная часть США, Западная Европа, Северная Европа | Windows | 4. | 14 |
 | Западная часть США 2, Юго-Восточная Азия | Windows | 2 | 3,5 |
 

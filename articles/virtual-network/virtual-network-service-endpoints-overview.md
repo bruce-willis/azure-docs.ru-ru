@@ -1,5 +1,5 @@
 ---
-title: Конечные точки служб виртуальной сети Azure | Документы Майкрософт
+title: Конечные точки служб виртуальной сети Azure | Документация Майкрософт
 description: Узнайте, как включить прямой доступ к ресурсам Azure из виртуальной сети с помощью конечных точек служб.
 services: virtual-network
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 06/06/2018
 ms.author: anithaa
 ms.custom: ''
-ms.openlocfilehash: e7e79d51b59d82ebf91d68f0714b8eb7bcaafbe6
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: a8ff6abd392b91ba553a92ac161421ced5a045bb
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443636"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136474"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы виртуальной сети
 
@@ -29,12 +29,14 @@ ms.locfileid: "37443636"
 Эта функция доступна для следующих служб и регионов Azure:
 
 - **[служба хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)**: общедоступная версия для всех регионов Azure;
-- **[база данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия для всех регионов Azure;
+- **[База данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия для всех регионов Azure;
 - **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия для всех регионов Azure; 
-- **[хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: предварительная версия для всех регионов общедоступного облака Azure.
-- **службы баз данных Azure для PostgreSQL и MySQL**: доступны в виде предварительной версии в регионах Azure, в которых доступна служба базы данных;
+- **[хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: предварительная версия для всех регионов общедоступного облака Azure;
 - **[служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: доступна в виде предварительной версии;
-- **[концентраторы событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: доступны в виде предварительной версии.
+- **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: предварительная версия;
+- **[Azure Key Vault](https://blogs.technet.microsoft.com/kv/2018/06/25/announcing-virtual-network-service-endpoints-for-key-vault-preview/)**: предварительная версия;
+- **[Сервер Базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: предварительная версия в регионах Azure, в которых доступна служба базы данных;
+- **[Сервер Базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: предварительная версия в регионах Azure, в которых доступна служба базы данных;
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
@@ -66,7 +68,7 @@ ms.locfileid: "37443636"
 
 ![Защита служб Azure в виртуальных сетях](./media/virtual-network-service-endpoints-overview/VNet_Service_Endpoints_Overview.png)
 
-### <a name="configuration"></a>Настройка
+### <a name="configuration"></a>Параметр Configuration
 
 - Конечные точки служб настраиваются в подсети виртуальной сети. Конечные точки работают с любым типом вычислительных экземпляров, выполняющихся в этой подсети.
 - Можно настроить несколько конечных точек служб для всех поддерживаемых служб Azure (например, для службы хранилища Azure или базы данных SQL Azure) в подсети.
@@ -87,7 +89,7 @@ ms.locfileid: "37443636"
 ### <a name="scenarios"></a>Сценарии
 
 - **Пиринговые виртуальные сети, связанные виртуальные сети или несколько виртуальных сетей**. Чтобы обеспечить защиту служб Azure в нескольких подсетях в виртуальной сети или в нескольких виртуальных сетях, вы можете включить конечные точки служб для каждой из этих подсетей независимо друг от друга и защитить ресурсы служб Azure во всех этих подсетях.
-- **Фильтрация исходящего трафика, передаваемого из виртуальной сети в службы Azure**. Если требуется проверить или отфильтровать трафик, который поступает в службу Azure из виртуальной сети, можно развернуть в этой виртуальной сети виртуальное сетевое устройство. Это позволяет применять конечные точки служб к подсети, в которой развертывается виртуальное сетевое устройство, и обеспечить защиту ресурса службы Azure только в этой подсети. Это может быть полезно, если вам требуется разрешить доступ к службе Azure из виртуальной сети только для определенных ресурсов Azure с использованием фильтрации виртуального сетевого устройства. Дополнительные сведения см. в статье [Развертывание высокодоступных виртуальных сетевых модулей](/azure/architecture/reference-architectures/dmz/nva-ha#egress-with-layer-7-nvas.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- **Фильтрация исходящего трафика, передаваемого из виртуальной сети в службы Azure**. Если требуется проверить или отфильтровать трафик, который поступает в службу Azure из виртуальной сети, можно развернуть в этой виртуальной сети виртуальное сетевое устройство. Это позволяет применять конечные точки служб к подсети, в которой развертывается виртуальное сетевое устройство, и обеспечить защиту ресурса службы Azure только в этой подсети. Это может быть полезно, если вам требуется разрешить доступ к службе Azure из виртуальной сети только для определенных ресурсов Azure с использованием фильтрации виртуального сетевого устройства. Дополнительные сведения см. в разделе [Deploy highly available network virtual appliances](/azure/architecture/reference-architectures/dmz/nva-ha#egress-with-layer-7-nvas.md?toc=%2fazure%2fvirtual-network%2ftoc.json) (Развертывание высокодоступных сетевых устройств).
 - **Защита ресурсов Azure для служб, развернутых непосредственно в виртуальных сетях**. Различные службы Azure могут развертываться непосредственно в определенных подсетях виртуальной сети. Вы можете защитить ресурсы служб Azure в подсетях [управляемой службы](virtual-network-for-azure-services.md), настроив конечную точку службы в подсети управляемой службы.
 - **Трафик диска с виртуальной машины Azure.** На трафик управляемых и неуправляемых дисков виртуальной машины (включая подключение, отключение и операции ввода-вывода диска) не влияет изменение маршрутов для конечных точек служб в службе хранилища Azure. Вы можете ограничить доступ REST для выбора сетей страничными BLOB-объектами с помощью конечных точек служб и [сетевых правил службы хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json). 
 
@@ -114,13 +116,13 @@ ms.locfileid: "37443636"
 
 ## <a name="pricing-and-limits"></a>Цены и ограничения
 
-За использование конечных точек службы дополнительная плата не взимается. Текущие цены на службы Azure (служба хранилища Azure, база данных SQL Azure и т. д.) применяются без изменений.
+За использование конечных точек службы дополнительная плата не взимается. Текущие цены на службы Azure (служба хранилища Azure, База данных SQL Azure и т. д.) применяются без изменений.
 
 Общее количество конечных точек служб в виртуальной сети не ограничено.
 
 Для ресурса службы Azure (например, учетной записи хранения Azure) в службах могут применяться ограничения на количество подсетей, которые используются для защиты ресурса. Дополнительные сведения см. в документации по различным службам в разделе [Дальнейшие действия](#next-steps).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - Узнайте, как [настроить конечные точки служб виртуальной сети](tutorial-restrict-network-access-to-resources.md).
 - Узнайте, как [защитить учетную запись хранения Azure с помощью виртуальной сети](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json).

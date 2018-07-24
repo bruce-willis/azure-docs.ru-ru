@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 11b2fccf3c02555f50f48252f2cd9968c9ec90d7
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 19fd671514da0dbfb1704c37d4347e870763d41b
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38632890"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091819"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство по развертыванию первого простого модуля IoT Edge на устройстве с Windows при помощи портала Azure (предварительная версия)
 
@@ -36,7 +36,7 @@ ms.locfileid: "38632890"
 
 Если у вас еще нет подписки Azure, перед началом работы [создайте бесплатную учетную запись Azure][lnk-account].
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В рамках этого краткого руководства компьютер или виртуальная машина Windows используются в качестве устройства IoT Edge. Если вы работаете на виртуальной машине с Windows, включите [вложенную виртуализацию][lnk-nested] и выделите не менее 2 ГБ памяти. 
 
@@ -65,16 +65,16 @@ ms.locfileid: "38632890"
 
 Для целей этого руководства можно использовать бесплатный уровень. Если вы уже использовали бесплатный Центр Интернета вещей и он у вас сохранился, можете использовать его. В подписке может быть только один бесплатный Центр Интернета вещей. 
 
-1. В Azure Cloud Shell создайте группу ресурсов. С помощью следующего примера кода создается группа ресурсов с именем **TestResources** в регионе **Западная часть США**. Поместив в группу все ресурсы, используемые для кратких руководств и инструкций, вы можете управлять ими совместно. 
+1. В Azure Cloud Shell создайте группу ресурсов. Следующий пример кода создает группу ресурсов с именем **IoTEdgeResources** в регионе **Западная часть США**. Поместив в группу все ресурсы, используемые для кратких руководств и инструкций, вы можете управлять ими совместно. 
 
    ```azurecli-interactive
-   az group create --name TestResources --location westus
+   az group create --name IoTEdgeResources --location westus
    ```
 
-1. Создайте в новой группе ресурсов Центр Интернета вещей. При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **TestResources**. Замените *{hub_name}* уникальным именем для вашего Центра Интернета вещей.
+1. Создайте в новой группе ресурсов Центр Интернета вещей. При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **IoTEdgeResources**. Замените *{hub_name}* уникальным именем для вашего Центра Интернета вещей.
 
    ```azurecli-interactive
-   az iot hub create --resource-group TestResources --name {hub_name} --sku F1 
+   az iot hub create --resource-group IoTEdgeResources --name {hub_name} --sku F1 
    ```
 
 ## <a name="register-an-iot-edge-device"></a>Регистрация устройства IoT Edge
@@ -116,14 +116,15 @@ ms.locfileid: "38632890"
 
 2. Скачайте пакет обновления IoT Edge.
 
-  ```powershell
-  Invoke-WebRequest https://aka.ms/iotedged-windows-latest -o .\iotedged-windows.zip
-  Expand-Archive .\iotedged-windows.zip C:\ProgramData\iotedge -f
-  Move-Item c:\ProgramData\iotedge\iotedged-windows\* C:\ProgramData\iotedge\ -Force
-  rmdir C:\ProgramData\iotedge\iotedged-windows
-  $env:Path += ";C:\ProgramData\iotedge"
-  SETX /M PATH "$env:Path"
-  ```
+   ```powershell
+   Invoke-WebRequest https://aka.ms/iotedged-windows-latest -o .\iotedged-windows.zip
+   Expand-Archive .\iotedged-windows.zip C:\ProgramData\iotedge -f
+   Move-Item c:\ProgramData\iotedge\iotedged-windows\* C:\ProgramData\iotedge\ -Force
+   rmdir C:\ProgramData\iotedge\iotedged-windows
+   $sysenv = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
+   $path = (Get-ItemProperty -Path $sysenv -Name Path).Path + ";C:\ProgramData\iotedge"
+   Set-ItemProperty -Path $sysenv -Name Path -Value $path
+   ```
 
 3. Установите vcruntime.
 
@@ -185,18 +186,11 @@ ms.locfileid: "38632890"
 
 5. Создайте переменную среды с именем **IOTEDGE_HOST** и замените *\<ip_address\>* IP-адресом для устройства IoT Edge. 
 
-  ```powershell
-  [Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://<ip_address>:15580")
-  ```
-  
-  Сохраняйте переменную среды между перезагрузками.
+   ```powershell
+   [Environment]::SetEnvironmentVariable("IOTEDGE_HOST", "http://<ip_address>:15580")
+   ```
 
-  ```powershell
-  SETX /M IOTEDGE_HOST "http://<ip_address>:15580"
-  ```
-
-
-6. В файле `config.yaml` найдите раздел **Connect settings** (Параметры подключения). Для параметров **management_uri** и **workload_uri** укажите значение своего IP-адреса и порты, открытые в рамках предыдущего раздела. Замените **\<GATEWAY_ADDRESS\>** на свой IP-адрес. 
+6. В файле `config.yaml` найдите раздел с **параметрами подключения**. Для параметров **management_uri** и **workload_uri** укажите значение своего IP-адреса и порты, открытые в рамках предыдущего раздела. Замените **\<GATEWAY_ADDRESS\>** скопированным IP-адресом DockerNAT. 
 
    ```yaml
    connect: 
@@ -285,19 +279,55 @@ iotedge logs tempSensor -f
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Имитированное устройство, настроенное в рамках этого руководства, можно использовать для задач тестирования, приведенных в других руководствах по IoT Edge. Чтобы модуль tempSensor перестал отправлять данные в Центр Интернета вещей, остановите работу службы IoT Edge, используя приведенную ниже команду, и удалите контейнеры, созданные на устройстве. Если вам снова понадобится использовать компьютер как устройство IoT Edge, обязательно запустите службу. 
+Если вы хотите продолжить ознакомление с руководствами по IoT Edge, используйте устройство, зарегистрированное и настроенное в рамках этого краткого руководства. В противном случае можно удалить с устройства созданные ресурсы Azure и среду выполнения IoT Edge. 
+
+### <a name="delete-azure-resources"></a>Удаление ресурсов Azure
+
+Если вы создали виртуальную машину и Центр Интернета вещей в новой группе ресурсов, можно удалить эту группу и все связанные с ней ресурсы. Если в группе ресурсов, которую необходимо удалить, имеются важные данные, можно удалить только ненужные ресурсы. 
+
+Удалите группу **IoTEdgeResources**. 
+
+   ```azurecli-interactive
+   az group delete --name IoTEdgeResources 
+   ```
+
+### <a name="remove-the-iot-edge-runtime"></a>Удаление среды выполнения IoT Edge
+
+Если вы планируете использовать устройство IoT Edge для тестирования в будущем, но хотите, чтобы неиспользуемый модуль tempSensor перестал отправлять данные в Центр Интернета вещей, остановите работу службы IoT Edge, используя приведенную ниже команду. 
 
    ```powershell
    Stop-Service iotedge -NoWait
-   docker rm -f $(docker ps -aq)
    ```
 
-Если созданные ресурсы Azure вам больше не нужны, воспользуйтесь следующей командой, чтобы удалить созданную группу ресурсов и все ресурсы, связанные с ней:
+Когда вы будете готовы к тестированию, вы сможете перезапустить службы.
 
-   ```azurecli-interactive
-   az group delete --name TestResources
+   ```powershell
+   Start-Service iotedge
    ```
 
+Чтобы удалить файлы установки с устройства, используйте приведенные ниже команды.  
+
+Удалите среду выполнения IoT Edge.
+
+   ```powershell
+   cmd /c sc delete iotedge
+   rm -r c:\programdata\iotedge
+   ```
+
+При удалении среды выполнения IoT Edge созданные с ее помощью контейнеры остановятся, но будут по-прежнему храниться на устройстве. Просмотрите все контейнеры.
+
+   ```powershell
+   docker ps -a
+   ```
+
+Удалите контейнеры, созданные на устройстве средой выполнения IoT Edge. Измените имя контейнера tempSensor, если вы указали для него другое имя. 
+
+   ```powershell
+   docker rm -f tempSensor
+   docker rm -f edgeHub
+   docker rm -f edgeAgent
+   ```
+   
 ## <a name="next-steps"></a>Дополнительная информация
 
 При работе с этим кратким руководством вы создали устройство IoT Edge и с помощью облачного интерфейса Azure IoT Edge развернули код на устройстве. В итоге вы получили устройство для тестирования, генерирующее необработанные данные о своей среде. 

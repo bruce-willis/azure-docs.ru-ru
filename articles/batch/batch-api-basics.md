@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/06/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3fe0d3836046ad143e746503210099ee5c640a08
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 9de4b00b2fff1feabcaee4e30667dfbdc75d9266
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129104"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114445"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы
 
@@ -504,7 +504,7 @@ ms.locfileid: "37129104"
 
 ## <a name="next-steps"></a>Дополнительная информация
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
-* Ознакомьтесь с пошаговой инструкцией по созданию примера приложения пакетной службы в статье [Начало работы с библиотекой пакетной службы Azure для .NET](batch-dotnet-get-started.md). Существует также [версия Python](batch-python-tutorial.md) этого руководства. В ней рассматривается выполнение рабочих нагрузок на вычислительных узлах Linux.
+* Здесь приведены основные сведения о разработке приложений с поддержкой пакетной службы с помощью [клиентской библиотеки .NET для пакетной службы](quick-run-dotnet.md) или [Python](quick-run-python.md). В этом кратком руководстве рассматривается пример приложения, которое использует пакетную службу для выполнения рабочей нагрузки на нескольких вычислительных узлах и службу хранилища Azure для помещения файла рабочей нагрузки на промежуточное хранение и обработку и его извлечения.
 * Скачайте и установите [BatchLabs][batch_labs] для использования во время разработки решений пакетной службы. Используйте BatchLabs для создания, отладки и мониторинга приложений пакетной службы Azure. 
 * См. ресурсы сообщества, в том числе [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества по пакетной службе](https://github.com/Azure/Batch), а также [форум по пакетной службе Azure][batch_forum] на веб-сайте MSDN. 
 

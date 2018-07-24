@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 05/30/2018
+ms.date: 07/16/2018
 ms.author: juliako
-ms.openlocfilehash: 0faed5d72002f24d7be7602c5f16c18e66a0089e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 5cc109467f9affa9cf5f43342203e8d4298269e0
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38308619"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115212"
 ---
 # <a name="tutorial-upload-encode-and-stream-videos-with-rest"></a>Руководство. Отправка, кодирование и потоковая передача видео с помощью REST
 
@@ -40,7 +40,7 @@ ms.locfileid: "38308619"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
@@ -77,22 +77,23 @@ ms.locfileid: "38308619"
     > [!Note]
     > Задайте переменным доступа новые значения, полученные в разделе **Доступ к API Служб мультимедиа** выше.
 
-7. Закройте диалоговое окно.
-8. Выберите среду **Azure Media Service v3 Environment** в раскрывающемся списке.
+7. Дважды щелкните выбранный файл и введите значения, которые вы получили, получив [доступ к API](#access-the-media-services-api).
+8. Закройте диалоговое окно.
+9. Выберите среду **Azure Media Service v3 Environment** в раскрывающемся списке.
 
     ![Выбор среды](./media/develop-with-postman/choose-env.png)
    
 ### <a name="configure-the-collection"></a>Настройка коллекции
 
 1. Нажмите кнопку **импорта**, чтобы импортировать файл коллекции.
-1. Перейдите к файлу `Media Services v3 (2018-03-30-preview).postman_collection.json`, который вы скачали при клонировании `https://github.com/Azure-Samples/media-services-v3-rest-postman.git`.
-3. Выберите файл **Media Services v3 (2018-03-30-preview).postman_collection.json**.
+1. Перейдите к файлу `Media Services v3.postman_collection.json`, который вы скачали при клонировании `https://github.com/Azure-Samples/media-services-v3-rest-postman.git`.
+3. Выберите файл **Media Services v3.postman_collection.json**.
 
     ![Импорт файла](./media/develop-with-postman/postman-import-collection.png)
 
 ## <a name="send-requests-using-postman"></a>Отправка запросов с помощью Postman
 
-В этом разделе описано, как отправить запросы, относящиеся к кодированию и созданию URL-адресов, которые потребуются вам для потоковой передачи файла. В частности, отправляются следующие запросы:
+В этом разделе описано, как отправить запросы, относящиеся к кодированию и созданию URL-адресов, которые нужны для потоковой передачи файла. В частности, отправляются следующие запросы:
 
 1. получение маркера безопасности Azure AD для аутентификации субъекта-службы;
 2. создание выходного ресурса;
@@ -128,11 +129,21 @@ ms.locfileid: "38308619"
 2. Затем выберите действие Create or update an Asset (Создать или обновить ресурс).
 3. Нажмите кнопку **Отправить**.
 
-    Это действие отправляет следующую операцию **PUT**.
+    * Это действие отправляет следующую операцию **PUT**:
 
-    ```
-    https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/assets/:assetName?api-version={{api-version}}
-    ```
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/assets/:assetName?api-version={{api-version}}
+        ```
+    * Эта операция включает следующий текст:
+
+        ```json
+        {
+        "properties": {
+            "description": "My Asset",
+            "alternateId" : "some GUID"
+         }
+        }
+        ```
 
 ### <a name="create-a-transform"></a>Создание преобразования
 
@@ -149,11 +160,30 @@ ms.locfileid: "38308619"
 2. Затем щелкните Create Transform (Создать преобразование).
 3. Нажмите кнопку **Отправить**.
 
-    Это действие отправляет следующую операцию **PUT**.
+    * Это действие отправляет следующую операцию **PUT**.
 
-    ```
-    https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName?api-version={{api-version}}
-    ```
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName?api-version={{api-version}}
+        ```
+    * Эта операция включает следующий текст:
+
+        ```json
+        {
+            "properties": {
+                "description": "Basic Transform using an Adaptive Streaming encoding preset from the libray of built-in Standard Encoder presets",
+                "outputs": [
+                    {
+                    "onError": "StopProcessingJob",
+                "relativePriority": "Normal",
+                    "preset": {
+                        "@odata.type": "#Microsoft.Media.BuiltInStandardEncoderPreset",
+                        "presetName": "AdaptiveStreaming"
+                    }
+                    }
+                ]
+            }
+        }
+        ```
 
 ### <a name="create-a-job"></a>создать задание;
 
@@ -165,11 +195,32 @@ ms.locfileid: "38308619"
 2. Затем выберите действие Create or update an Job (Создать или обновить задание).
 3. Нажмите кнопку **Отправить**.
 
-    Это действие отправляет следующую операцию **PUT**.
+    * Это действие отправляет следующую операцию **PUT**.
 
-    ```
-    https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}
-    ```
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/transforms/:transformName/jobs/:jobName?api-version={{api-version}}
+        ```
+    * Эта операция включает следующий текст:
+
+        ```json
+        {
+        "properties": {
+            "input": {
+            "@odata.type": "#Microsoft.Media.JobInputHttp",
+            "baseUri": "https://nimbuscdn-nimbuspm.streaming.mediaservices.windows.net/2b533311-b215-4409-80af-529c3e853622/",
+            "files": [
+                    "Ignite-short.mp4"
+                ]
+            },
+            "outputs": [
+            {
+                "@odata.type": "#Microsoft.Media.JobOutputAsset",
+                "assetName": "testAsset1"
+            }
+            ]
+        }
+        }
+        ```
 
 Выполнение задания занимает некоторое время. По его завершению вы будете уведомлены. Чтобы просмотреть ход выполнения задания, мы рекомендуем использовать Сетку событий. Она обеспечивает высокий уровень доступности, стабильную производительность и динамическое масштабирование. С помощью службы "Сетка событий Azure" приложения могут ожидать передачи данных и реагировать на события, поступающие буквально из всех служб Azure и пользовательских источников. Простая реактивная обработка событий на основе HTTP позволяет создавать эффективные решения с использованием интеллектуальной фильтрации и маршрутизации событий.  Дополнительные сведения см. в статье [Route Azure Media Services events to a custom web endpoint using CLI](job-state-events-cli-how-to.md) (Маршрутизация событий Служб мультимедиа в пользовательскую конечную точку с помощью CLI).
 
@@ -189,14 +240,24 @@ ms.locfileid: "38308619"
 У вашей учетной записи Служб мультимедиа есть квота на количество записей StreamingPolicy. Вы не должны создавать новый StreamingPolicy для каждого StreamingLocator.
 
 1. В левом окне Postman выберите Streaming Policies (Политики потоковой передачи).
-2. Затем выберите Create a Streaming Policy (Создать политику потоковой передачи).
+2. Затем выберите Создать указатель потоковой передачи.
 3. Нажмите кнопку **Отправить**.
 
-    Это действие отправляет следующую операцию **PUT**.
+    * Это действие отправляет следующую операцию **PUT**.
 
-    ```
-    https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies/:streamingPolicyName?api-version={{api-version}}
-    ```
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingPolicies/:streamingPolicyName?api-version={{api-version}}
+        ```
+    * Эта операция включает следующий текст:
+
+        ```json
+        {
+            "properties":{
+            "assetName": "{{assetName}}",
+            "streamingPolicyName": "{{streamingPolicyName}}"
+            }
+        }
+        ```
 
 ### <a name="list-paths-and-build-streaming-urls"></a>Получение списка путей и создание URL-адреса потоковой передачи
 
@@ -208,40 +269,40 @@ ms.locfileid: "38308619"
 2. Затем выберите List Paths (Отобразить список путей).
 3. Нажмите кнопку **Отправить**.
 
-    Это действие отправляет следующую операцию **POST**.
+    * Это действие отправляет следующую операцию **POST**.
 
-    ```
-    https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName/listPaths?api-version={{api-version}}
-    ```
+        ```
+        https://management.azure.com/subscriptions/:subscriptionId/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaServices/:accountName/streamingLocators/:streamingLocatorName/listPaths?api-version={{api-version}}
+        ```
+        
+    * Эта операция не содержит текст:
+        
 4. Запишите один из путей, который вы хотите применить для потоковой передачи. Он потребуется вам в следующем разделе. В нашем примере возвращаются следующие пути:
     
     ```
-    {
-        "streamingPaths": [
-            {
-                "streamingProtocol": "Hls",
-                "encryptionScheme": "NoEncryption",
-                "paths": [
-                    "/fd384f76-2d23-4e50-8fad-f9b3ebcd675b/Ignite-short.ism/manifest(format=m3u8-aapl)"
-                ]
-            },
-            {
-                "streamingProtocol": "Dash",
-                "encryptionScheme": "NoEncryption",
-                "paths": [
-                    "/fd384f76-2d23-4e50-8fad-f9b3ebcd675b/Ignite-short.ism/manifest(format=mpd-time-csf)"
-                ]
-            },
-            {
-                "streamingProtocol": "SmoothStreaming",
-                "encryptionScheme": "NoEncryption",
-                "paths": [
-                    "/fd384f76-2d23-4e50-8fad-f9b3ebcd675b/Ignite-short.ism/manifest"
-                ]
-            }
-        ],
-        "downloadPaths": []
-    }
+    "streamingPaths": [
+        {
+            "streamingProtocol": "Hls",
+            "encryptionScheme": "NoEncryption",
+            "paths": [
+                "/cdb80234-1d94-42a9-b056-0eefa78e5c63/Ignite-short.ism/manifest(format=m3u8-aapl)"
+            ]
+        },
+        {
+            "streamingProtocol": "Dash",
+            "encryptionScheme": "NoEncryption",
+            "paths": [
+                "/cdb80234-1d94-42a9-b056-0eefa78e5c63/Ignite-short.ism/manifest(format=mpd-time-csf)"
+            ]
+        },
+        {
+            "streamingProtocol": "SmoothStreaming",
+            "encryptionScheme": "NoEncryption",
+            "paths": [
+                "/cdb80234-1d94-42a9-b056-0eefa78e5c63/Ignite-short.ism/manifest"
+            ]
+        }
+    ]
     ```
 
 #### <a name="build-the-streaming-urls"></a>Создание URL-адресов потоковой передачи
@@ -254,19 +315,30 @@ ms.locfileid: "38308619"
     > Если проигрыватель размещен на сайте HTTPS, обновите URL-адрес до HTTPS.
 
 2. Имя узла конечной точки потоковой передачи. В нашем случае это amsaccount-usw22.streaming.media.azure.net.
-3. Путь, который вы получили в предыдущем разделе.  
+
+    Чтобы получить имя узла, можно использовать следующую операцию GET:
+    
+    ```
+    https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000000000/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amsaccount/streamingEndpoints/default?api-version={{api-version}}
+    ```
+    
+3. Путь, который вы получили в разделе, посвященном перечислению путей.  
 
 Из этих значений собирается следующий URL-адрес HLS.
 
 ```
-https://amsaccount-usw22.streaming.media.azure.net/fd384f76-2d23-4e50-8fad-f9b3ebcd675b/Ignite-short.ism/manifest(format=m3u8-aapl)
+https://amsaccount-usw22.streaming.media.azure.net/cdb80234-1d94-42a9-b056-0eefa78e5c63/Ignite-short.ism/manifest(format=m3u8-aapl)
 ```
 
 ## <a name="test-the-streaming-url"></a>Тестирование URL-адреса потоковой передачи.
 
+
+> [!NOTE]
+> Убедитесь, что конечная точка потоковой передачи, из которой нужно передавать содержимое, запущена.
+
 Для тестирования потоковой передачи в этой статье используется Проигрыватель мультимедиа Azure. 
 
-1. Откройте браузер и перейдите по адресу [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
+1. Откройте браузер и перейдите по ссылке [https://aka.ms/azuremediaplayer/](https://aka.ms/azuremediaplayer/).
 2. В поле **URL-адрес** вставьте созданный ранее URL-адрес. 
 3. Щелкните **Update Player** (Обновить проигрыватель).
 

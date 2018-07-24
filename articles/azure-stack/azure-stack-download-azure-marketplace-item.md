@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 05/16/2018
+ms.date: 07/13/2018
 ms.author: brenduns
 ms.reviewer: jeffgo
-ms.openlocfilehash: 5d403f7c1d0fff466f6c0fb9942ec777ab820eab
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: 73f8616449141ca91f96e9fcebede74597bc4fe3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34604538"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044923"
 ---
 # <a name="download-marketplace-items-from-azure-to-azure-stack"></a>Скачивание элементов Marketplace из Azure в Azure Stack
 
@@ -39,7 +39,7 @@ ms.locfileid: "34604538"
 ## <a name="connected-scenario"></a>Сценарий с подключением
 Если у Azure Stack есть подключение к Интернету, для скачивания элементов marketplace можно использовать портал администратора.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Экземпляр развертывания Azure Stack должен быть подключен к Интернету и зарегистрирован [в Azure](azure-stack-register.md).
 
 ### <a name="use-the-portal-to-download-marketplace-items"></a>Использование портала для загрузки элементов из marketplace  
@@ -79,7 +79,7 @@ ms.locfileid: "34604538"
 - **Часть 2**. Загрузка и публикация в Azure Stack Marketplace. Переместите файлы, скачанные в среду Azure Stack, импортируйте их в Azure Stack, а затем опубликуйте их в Azure Stack Marketplace.  
 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 - Развертывание Azure Stack должно быть [зарегистрировано в Azure](azure-stack-register.md).  
 
 - На компьютере с подключением к Интернету необходимо установить модуль **PowerShell для Azure Stack версии 1.2.11** или более поздней. При необходимости см. [инструкции по установке модулей PowerShell для Azure Stack](azure-stack-powershell-install.md).  
@@ -136,7 +136,7 @@ ms.locfileid: "34604538"
 
    ![Всплывающее окно с элементами Azure Marketplace](media/azure-stack-download-azure-marketplace-item/image05.png)
 
-7. Выберите элемент, который необходимо скачать, и запишите его *версию*. Вы можете выбрать несколько образов, удерживая нажатой клавишу *CTRL*. Вы будете ссылаться на *версию* при импорте элемента в следующей процедуре. 
+7. Выберите элемент, который необходимо скачать, и запишите его *версию*. Вы можете выбрать несколько образов, удерживая нажатой клавишу *CTRL*. Вы создадите ссылку на *версию* при импорте элемента в следующей процедуре. 
    
    Кроме того, вы можете отфильтровать список образов с помощью параметра **Добавить условия**.
 
@@ -148,20 +148,10 @@ ms.locfileid: "34604538"
 ### <a name="import-the-download-and-publish-to-azure-stack-marketplace"></a>Импорт скачанного пакета и его публикация в Azure Stack Marketplace
 1. Файлы образов виртуальных машин или шаблонов решений, которые вы [скачали ранее](#use-the-marketplace-syndication-tool-to-download-marketplace-items), должны быть локально доступны для вашей среды Azure Stack.  
 
-2. Импортируйте VHD-файлы в Azure Stack. Чтобы успешно импортировать образы виртуальных машин, вы должны иметь следующие сведения о виртуальной машине:
-   - *Версия*, как указано на шаге 7 предыдущей процедуры.
-   - Значения параметров *publisher*, *offer* и *sku*. Чтобы получить эти значения, переименуйте копию файла **AZPKG**, изменив расширение файла на **.zip**. Затем вы можете использовать текстовый редактор, чтобы открыть **DeploymentTemplates\CreateUiDefinition.json**. В файле JSON найдите раздел *imageReference*, который содержит эти значения элементов marketplace. В следующем примере показано, как появляются эти сведения:
+2. Импортируйте образ VHD в Azure Stack с помощью командлета **Add-AzsPlatformimage**. При использовании этого командлета замените значения *publisher*, *offer* и других параметров значениями для импортируемого образа. 
 
-     ```json  
-     "imageReference": {  
-        "publisher": "MicrosoftWindowsServer",  
-        "offer": "WindowsServer",  
-        "sku": "2016-Datacenter-Server-Core"  
-      }
-     ```  
-
-   Импортируйте образ в Azure Stack с помощью командлета **Add-AzsPlatformimage**. При использовании этого командлета замените значения *publisher*, *offer* и других параметров значениями для импортируемого образа. Вы можете получить значения *publisher*, *offer* и *sku* образа из текстового файла, который скачивается вместе с файлом AZPKG и сохраняется в месте назначения. 
-
+   Вы можете получить значения *publisher*, *offer* и *sku* образа из текстового файла, который скачивается вместе с файлом AZPKG. Текстовый файл хранится в целевом расположении.
+ 
    В следующем примере скрипта используются значения для виртуальной машины Windows Server 2016 Datacenter Server Core. 
 
    ```PowerShell  

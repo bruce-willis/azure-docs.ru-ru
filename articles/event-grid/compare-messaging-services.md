@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: overview
 ms.date: 07/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: 69db32698951519c2630a0a8697e4ebe74f69b04
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: c54f5c5fba31933a6dd9f98d1ecfb6d03a3ad9be
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930483"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39003753"
 ---
 # <a name="choose-between-azure-services-that-deliver-messages"></a>Выбор между службами обмена сообщениями Azure
 
@@ -82,7 +82,8 @@ Azure предлагает три службы, с помощью которых
 
 * надежная асинхронная доставка сообщений (корпоративный обмен сообщениями как услуга), требующая опросов;
 * расширенные возможности обмена сообщениями, например обслуживание в порядке поступления (FIFO), пакетная обработка и сеансы, транзакции, перемещение в очередь недоставленных сообщений, временный контроль, маршрутизация и фильтрация, а также обнаружение повторяющихся сообщений.
-* выполняется однократная доставка.
+* выполняется минимум однократная доставка.
+* возможность выбора упорядоченной поставки;
 
 ## <a name="use-the-services-together"></a>Одновременное использование служб
 

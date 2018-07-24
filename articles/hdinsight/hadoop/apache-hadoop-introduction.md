@@ -1,25 +1,22 @@
 ---
-title: Что представляют собой HDInsight и стек технологий Hadoop и Spark (Azure) | Документация Майкрософт
+title: Что представляют собой HDInsight и стек технологий Hadoop и Spark — Azure
 description: Обзор HDInsight, а также стека технологий и компонентов Hadoop и Spark, включая Kafka, Hive, Storm и HBase для анализа больших данных.
 keywords: azure hadoop, hadoop azure, введение в hadoop, обзор hadoop, технологическая платформа hadoop, приступая к работе с hadoop, знакомство с hadoop, что такое кластер hadoop, кластер hadoop, для чего используется hadoop
 services: hdinsight
-documentationcenter: ''
 author: cjgronlund
+ms.author: cgronlun
 manager: jhubbard
-editor: cgronlun
 ms.assetid: e56a396a-1b39-43e0-b543-f2dee5b8dd3a
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017, mvc
-ms.devlang: na
 ms.topic: overview
 ms.date: 05/07/2018
-ms.author: cgronlun
-ms.openlocfilehash: b84389c1d52c0c43f1e71da3eed86f4057b85559
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: c7bed171a3b866f4b1f94d6a5348dd25d8820f2b
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051388"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115347"
 ---
 # <a name="what-is-azure-hdinsight-and-the-hadoop-technology-stack"></a>Что такое Azure HDInsight и стек технологий Hadoop
 
@@ -89,9 +86,9 @@ HDInsight можно использовать для обработки пото
 ## <a name="cluster-types-in-hdinsight"></a>Типы кластеров в HDInsight
 HDInsight включает определенные типы кластеров и возможности их настройки, такие как добавление компонентов, служебных программ и языков. HDInsight предлагает следующие типы кластеров.
 
-* **[Apache Hadoop](https://wiki.apache.org/hadoop)**. Платформа, в которой используется управление ресурсами [HDFS](#hdfs) и [YARN](#yarn), а также простая модель программирования [MapReduce](#mapreduce) для параллельной обработки и анализа пакетных данных.
+* **[Apache Hadoop](https://wiki.apache.org/hadoop)**. Платформа, в которой используется управление ресурсами HDFS и YARN, а также простая модель программирования MapReduce для параллельной обработки и анализа пакетных данных.
 
-* **[Apache Spark](http://spark.apache.org/)** — это платформа параллельной обработки с открытым кодом, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Дополнительные сведения см. в статье [Обзор. Apache Spark в HDInsight](../spark/apache-spark-overview.md).
+* **[Apache Spark](http://spark.apache.org/)** — это платформа параллельной обработки с открытым кодом, которая поддерживает обработку в памяти, чтобы повысить производительность приложений для анализа больших данных. Дополнительные сведения см. в обзоре по [Apache Spark в HDInsight](../spark/apache-spark-overview.md).
 
 * **[Apache HBase](http://hbase.apache.org/)**. База данных NoSQL, созданная на основе Hadoop и обеспечивающая прямой доступ и строгую согласованность для больших объемов неструктурированных и частично структурированных данных (с потенциальным размером таблиц в миллиарды строк и миллионы столбцов). Дополнительные сведения см. в статье [Что такое HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие BigTable, для Hadoop](../hbase/apache-hbase-overview.md).
 

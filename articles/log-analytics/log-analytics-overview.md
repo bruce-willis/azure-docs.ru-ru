@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/14/2018
+ms.date: 07/11/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 463ac7ee3e640f8bc275adb9e6ac27cc3e6a037a
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 8e78528783d57d31e1eb9bcda82fa9acccf69dde
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37127965"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39005255"
 ---
 # <a name="what-is-azure-log-analytics"></a>Что такое служба Log Analytics в Azure?
 Служба Log Analytics играет ключевую роль в управлении Azure. Она собирает данные телеметрии и другие данные из разнообразных источников и предоставляет язык запросов и механизм аналитики, который позволяет анализировать работу приложений и ресурсов.  Вы можете напрямую взаимодействовать с данными Log Analytics с помощью поиска по журналам и представлений. Кроме того, вы можете воспользоваться средствами анализа в других службах Azure, которые хранят свои данные в Log Analytics, например Application Insights или центр безопасности Azure.  
@@ -41,12 +41,12 @@ Log Analytics собирает данные из различных источн
 
 Методы сбора данных в Log Analytics включают следующее:
 
-- Настройка Azure Monitor для копирования метрик и журналов, собранных из ресурсов Azure.
-- Агенты на виртуальных машинах [Windows](log-analytics-windows-agent.md) и [Linux](log-analytics-linux-agents.md) отправляют телеметрию из гостевой ОС и приложений в Log Analytics в соответствии с настроенными [источниками данных](log-analytics-data-sources.md).  
-- Подключение [группы управления System Center Operations Manager](log-analytics-om-agents.md) к Log Analytics для сбора данных из ее агентов.
+- Настройка Azure Monitor для копирования [метрик и журналов](../monitoring/monitoring-data-collection.md#types-of-monitoring-data), собранных из ресурсов Azure.
+- Сбор данных телеметрии, записанных в [службу хранилища Azure](log-analytics-azure-storage-iis-table.md).
+- Агенты на виртуальных машинах [Windows](log-analytics-windows-agent.md) и [Linux](log-analytics-linux-agents.md) отправляют телеметрию из гостевой ОС и приложений в Log Analytics в соответствии с настроенными [источниками данных](log-analytics-data-sources.md). Агенты можно подключить напрямую через [шлюз OMS](log-analytics-oms-gateway.md), если доступ запрещен брандмауэром, или через [группу управления System Center Operations Manager](log-analytics-om-agents.md).
 - Службы Azure, такие как [Application Insights](https://docs.microsoft.com/azure/application-insights/) и [центр безопасности Azure](https://docs.microsoft.com/azure/security-center/), хранят свои данные непосредственно в Log Analytics без какой-либо конфигурации.
 - Запись данных из командной строки PowerShell или [Runbook службы автоматизации Azure](../automation/automation-runbook-types.md) с помощью командлетов Log Analytics.
-- При наличии особых требований вы можете использовать [API сборщика данных HTTP](log-analytics-data-collector-api.md), чтобы записывать данные в Log Analytics из любого клиента REST API.
+- При наличии особых требований вы можете использовать [API сборщика данных HTTP](log-analytics-data-collector-api.md), чтобы записывать данные в Log Analytics из любого клиента REST API, или [Azure Logic App](https://docs.microsoft.com/azure/logic-apps/), чтобы записывать данные из пользовательского рабочего процесса.
 
 
 ![Компоненты службы Log Analytics](media/log-analytics-overview/collecting-data.png)

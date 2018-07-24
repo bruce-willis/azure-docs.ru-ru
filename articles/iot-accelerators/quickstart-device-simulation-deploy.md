@@ -9,18 +9,16 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/05/2018
 ms.author: dobett
-ms.openlocfilehash: f3a252d6f7c49a65e0c548599b1958825b134ee8
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: fd4a637ebb05493bf0c0a940c3ff0cb56ad94c54
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37967021"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39005039"
 ---
 # <a name="quickstart-deploy-and-run-a-cloud-based-device-simulation-solution"></a>Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака
 
 В этом кратком руководстве показано, как развернуть акселератор решения Интернета вещей Azure "Симулятор устройств" для тестирования решения Интернета вещей. После развертывания акселератора решений создайте и выполните симулятор на странице **Simulation** (Симуляторы).
-
-## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим кратким руководством вам потребуется действующая подписка Azure.
 
@@ -88,7 +86,7 @@ ms.locfileid: "37967021"
 
 Если вы планируете продолжить изучение, не удаляйте развернутый акселератор решения "Симулятор устройств".
 
-Если акселератор решений больше не требуется, удалите его со страницы [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard):
+Если акселератор решений больше не нужен, удалите его на странице [Подготовленные решения](https://www.azureiotsolutions.com/Accelerators#dashboard). Для этого выберите его, а затем щелкните **Удалить решение**:
 
 ![Удаление решения](media/quickstart-device-simulation-deploy/deletesolution.png)
 
@@ -96,7 +94,7 @@ ms.locfileid: "37967021"
 
 В этом кратком руководстве вы развернули акселератор решения "Симулятор устройств" и запустили имитацию устройства Интернета вещей.
 
-Чтобы узнать, как использовать имеющийся Центр Интернета вещей для имитации, см. следующее руководство с практическими советами и инструкциями:
+Чтобы узнать, как использовать имеющийся Центр Интернета вещей для имитации, см. следующее практическое руководство:
 
 > [!div class="nextstepaction"]
 > [Use an existing IoT hub with the Device Simulation solution accelerator](iot-accelerators-device-simulation-choose-hub.md) (Использование имеющегося Центра Интернета вещей с акселератором решения "Симулятор устройств")

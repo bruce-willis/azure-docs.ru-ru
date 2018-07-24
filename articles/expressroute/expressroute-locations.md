@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/22/2018
 ms.author: jaredro
-ms.openlocfilehash: 8fa32350412b3a27c06d218342cdd7ad99ca5245
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 35d15811f31e64d0c27a23da802a16ce2e4570aa
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972423"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113989"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -107,7 +107,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **[Level 3 Communications](http://your.level3.com/LP=882?WT.tsrc=02192014LP882AzureVanityAzureText)** |Поддерживаются |Поддерживаются |Амстердам, Вашингтон (округ Колумбия), Даллас, Кремниевая долина, Лондон, Ньюпорт, Сан-Паулу, Сингапур, Сиэтл, Чикаго |
 | **LG CNS** |Поддерживаются |Поддерживаются |Пусан, Сеул |
 | **[Liquid Telecom](https://www.liquidtelecom.com/products-and-services/cloud.html)** |Поддерживаются |Поддерживаются |Кейптаун, Йоханнесбург |
-| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживаются |Поддерживаются |Амстердам, Чикаго, Даллас, Денвер, Дублин, Гонконг, Лас-Вегас, Лондон, Лос-Анджелес, Мельбурн, Майами, Нью-Йорк, Квебек, Сан-Антонио, Сиэтл, Кремниевая долина, Сингапур, Сингапур 2, Сидней, Торонто, Вашингтон |
+| **[Megaport](https://www.megaport.com/services/microsoft-expressroute/)** |Поддерживаются |Поддерживаются |Амстердам, Атланта, Вашингтон (округ Колумбия), Гонконг, Даллас, Денвер, Дублин, Квебек, Кремниевая долина, Лас-Вегас, Лондон, Лос-Анджелес, Майами, Мельбурн, Нью-Йорк, Сан-Антонио, Сидней, Сингапур, Сингапур 2, Сиэтл, Торонто, Чикаго |
 | **MTN** |Поддерживаются |Поддерживаются |Лондон |
 | **[Neutrona Networks](http://www.neutrona.com/index.php/azure-expressroute/)** |Поддерживаются |Поддерживаются |Даллас, Майами, Сан-Паулу |
 | **[Next Generation Data](http://www.nextgenerationdata.co.uk/ngd-cloud-gateway/)** |Поддерживаются |Поддерживаются |Ньюпорт (Уэльс) |

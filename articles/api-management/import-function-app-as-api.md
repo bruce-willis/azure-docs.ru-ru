@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/22/2017
+ms.date: 07/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 1962a4aac8e2d15caf4ec33998da1985d3b8a9af
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0ee83446bb08e66c7f325bdd5585b8cc0484a74e
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38306479"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090934"
 ---
 # <a name="import-a-function-app-as-an-api"></a>Импорт приложения-функции в качестве API
 
@@ -31,10 +31,11 @@ ms.locfileid: "38306479"
 > * проверка API на портале Azure;
 > * проверка API на портале разработчика.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните задачи из краткого руководства по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md)
-+ Убедитесь, что в вашей подписке есть приложение-функция. Дополнительные сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app).
++ Убедитесь, что в вашей подписке есть приложение-функция Azure. Дополнительные сведения см. в разделе [Создание приложения-функции](../azure-functions/functions-create-first-azure-function.md#create-a-function-app).
++ [Создание определения OpenAPI](../azure-functions/functions-openapi-definition.md) приложения-функции Azure
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -56,6 +57,24 @@ ms.locfileid: "38306479"
     * **Starter**
     * **Unlimited**   
 7. Нажмите кнопку **Создать**.
+
+## <a name="populate-azure-functions-keys-in-azure-api-management"></a>Заполнение ключей Функций Azure в службе управления API Azure
+
+Если импортируемые Функции Azure защищены с помощью ключей, служба управления API Azure автоматически создает **именованные значения** для них, но не заполняет записи секретными данными. Для каждой записи необходимо выполнить следующие действия.  
+
+1. Перейдите на вкладку **Именованные значения** в экземпляре службы управления API.
+2. Щелкните запись и нажмите кнопку **Показать значение** на боковой панели.
+
+    ![Именованные значения](./media/import-function-app-as-api/apim-named-values.png)
+
+3. Если содержимое имеет вид *код для {имя Функции Azure}*, перейдите к импортированному приложению-функции Azure и выберите свою Функцию Azure.
+4. Перейдите в раздел **Управление** для выбранной Функции Azure и скопируйте соответствующий ключ на основе метода проверки подлинности Функции Azure.
+
+    ![Приложение-функция](./media/import-function-app-as-api/azure-functions-app-keys.png)
+
+5. Вставьте в текстовое поле ключ, полученный на вкладке **Именованные значения**, и нажмите кнопку **Сохранить**.
+
+    ![Приложение-функция](./media/import-function-app-as-api/apim-named-values-2.png)
 
 ## <a name="test-the-new-apim-api-in-the-azure-portal"></a>Проверка нового API службы управления API на портале Azure
 

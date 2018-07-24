@@ -1,22 +1,22 @@
 ---
 title: Руководство по индексированию баз данных Azure SQL в службе "Поиск Azure" | Документация Майкрософт
-description: Сканирование базы данных Azure SQL для извлечения доступных для поиска данных и заполнения индекса в службе "Поиск Azure".
+description: В этом руководстве описано, как выполнить сканирование базы данных Azure SQL для извлечения доступных для поиска данных и заполнения индекса в службе "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
 services: search
 ms.service: search
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/10/2017
+ms.date: 07/10/2018
 ms.author: heidist
-ms.openlocfilehash: abf121ec369d84dd307416d2c08971d9096de4a8
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: b40d3a74904d6814eb01b5d41d10632e8c9af5be
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31799521"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38988801"
 ---
-# <a name="how-to-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Как выполнять сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
+# <a name="tutorial-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Руководство. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
 
 Из этого руководства вы узнаете, как настроить индексатор для извлечения доступных для поиска данных из примера базы данных Azure SQL. [Индексатор](search-indexer-overview.md) — это компонент службы "Поиск Azure", который сканирует внешние источники данных и заполняет [индекс поиска](search-what-is-an-index.md) содержимым. Чаще всего используется индексатор для базы данных Azure SQL. 
 
@@ -33,9 +33,9 @@ ms.locfileid: "31799521"
 > * поиск по индексу;
 > * просмотр конфигурации индексатора на портале.
 
-## <a name="prerequisites"></a>предварительным требованиям
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-* Активная учетная запись Azure. Если у вас ее нет, зарегистрируйтесь, чтобы воспользоваться [бесплатной пробной версией](https://azure.microsoft.com/free/). 
+## <a name="prerequisites"></a>Предварительные требования
 
 * Служба "Поиск Azure". Дополнительные сведения о ее настройке см. в руководстве по [созданию службы поиска](search-create-service-portal.md).
 
@@ -269,21 +269,14 @@ public string HotelName { get; set; }
 
   ![Плитки для индексаторов и источников данных](./media/search-indexer-tutorial/tiles-portal.png)
 
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы не собираетесь использовать эти службы дальше, удалите все ресурсы, которые были созданы в ходе работы с этим руководством, на портале Azure, выполнив описанные ниже действия. 
-
-1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите имя созданного ресурса. 
-2. На странице группы ресурсов щелкните **Удалить группу ресурсов**, в текстовом поле введите имя ресурса для удаления и щелкните **Удалить**.
+Самый быстрый способ очистки после завершения работы с руководством — удалить группу ресурсов, содержащую Поиск Azure. Теперь можно удалить группу ресурсов, чтобы окончательно удалить все ее содержимое. На портале имя группы ресурсов находится на странице "Обзор" службы "Поиск Azure".
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения и задачи, относящиеся к другим поддерживаемым источникам данных, см. в следующих статьях:
+Управляемые ИИ алгоритмы можно включить в конвейер индексатора. Дальнейшие действия см. в следующем руководстве.
 
-* [база данных Azure SQL (или SQL Server на виртуальных машинах Azure);](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [База данных Azure Cosmos](search-howto-index-cosmosdb.md)
-* [хранилище таблиц Azure](search-howto-indexing-azure-tables.md)
-* [Хранилище BLOB-объектов Azure](search-howto-indexing-azure-blob-storage.md)
-* [Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-csv-blobs.md)
-* [Индексирование BLOB-объектов JSON с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-json-blobs.md)
-
+> [!div class="nextstepaction"]
+> [Индексирование документов в хранилище BLOB-объектов Azure с помощью службы поиска Azure](search-howto-indexing-azure-blob-storage.md)

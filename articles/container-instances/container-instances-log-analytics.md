@@ -6,14 +6,14 @@ author: mmacy
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: overview
-ms.date: 06/06/2018
+ms.date: 07/17/2018
 ms.author: marsma
-ms.openlocfilehash: a0772d1009021ca64b448710c5353407a5492fae
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: e4c1efbf4c2c844bae971fa1136e0fe3bed18bcc
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34809875"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39112969"
 ---
 # <a name="container-instance-logging-with-azure-log-analytics"></a>Ведение журнала для экземпляров контейнеров с помощью Azure Log Analytics
 
@@ -21,7 +21,7 @@ ms.locfileid: "34809875"
 
 Чтобы отправлять данные из экземпляра контейнера в Log Analytics, вам нужно создать группу контейнеров с помощью Azure CLI (или Cloud Shell) и файла YAML. В следующих разделах описано, как создать группу контейнеров с поддержкой ведения журналов и обращения к ним.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы включить ведение журнала в экземпляре контейнера, необходимо следующее:
 
@@ -43,9 +43,26 @@ ms.locfileid: "34809875"
 
 ## <a name="create-container-group"></a>Создание группы контейнеров
 
-Теперь у вас есть идентификатор и первичный ключ рабочей области Log Analytics, а значит вы можете создать группу контейнеров с поддержкой ведения журнала. Следующий пример создает группу контейнеров с одним контейнером [Fluentd][fluentd]. Контейнер Fluentd в стандартной конфигурации создает несколько строк выходных данных. Так как эти выходные данные направляются в рабочую область Log Analytics, такой контейнер отлично подходит для демонстрации процессов просмотра журналов и обращения к ним.
+Теперь у вас есть идентификатор и первичный ключ рабочей области Log Analytics, а значит вы можете создать группу контейнеров с поддержкой ведения журнала.
 
-Во-первых, скопируйте в новый файл приведенный ниже код YAML, который определяет группу контейнеров с одним контейнером. Замените `LOG_ANALYTICS_WORKSPACE_ID` и `LOG_ANALYTICS_WORKSPACE_KEY` значениями, которые вы получили на предыдущем шаге, затем сохраните этот файл с именем **deploy-aci.yaml**.
+В следующих примерах показаны два способа создания группы контейнеров с одним контейнером [fluentd][fluentd]: с помощью Azure CLI и Azure CLI с шаблоном YAML. Контейнер Fluentd в стандартной конфигурации создает несколько строк выходных данных. Так как эти выходные данные направляются в рабочую область Log Analytics, такой контейнер отлично подходит для демонстрации процессов просмотра журналов и обращения к ним.
+
+### <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
+
+Для развертывания с помощью Azure CLI следует указать параметры `--log-analytics-workspace` и `--log-analytics-workspace-key` при вызове команды [az container create][az-container-create]. Замените два значения рабочей области значениями, полученными на предыдущем шаге (и обновите имя группы ресурсов), прежде чем выполнять следующую команду.
+
+```azurecli-interactive
+az container create \
+    --resource-group myResourceGroup \
+    --name mycontainergroup001 \
+    --image fluent/fluentd \
+    --log-analytics-workspace <WORKSPACE_ID> \
+    --log-analytics-workspace-key <WORKSPACE_KEY>
+```
+
+### <a name="deploy-with-yaml"></a>Развертывание с помощью YAML
+
+Используйте этот метод, чтобы развернуть группы контейнеров с YAML. Этот пример YAML определяет группу контейнеров с одним контейнером. Скопируйте код YAML в новый файл, а затем замените `LOG_ANALYTICS_WORKSPACE_ID` и `LOG_ANALYTICS_WORKSPACE_KEY` значениями, полученными на предыдущем шаге. Сохраните файл как **deploy-aci.yaml**.
 
 ```yaml
 apiVersion: 2018-06-01
@@ -75,7 +92,7 @@ type: Microsoft.ContainerInstance/containerGroups
 Затем выполните следующую команду, чтобы развернуть группу контейнеров. Замените в ней `myResourceGroup` именем группы ресурсов в вашей подписке (или создайте группу ресурсов с именем myResourceGroup перед выполнением команды).
 
 ```azurecli-interactive
-az container create -g myResourceGroup -n mycontainergroup001 -f deploy-aci.yaml
+az container create --resource-group myResourceGroup --name mycontainergroup001 --file deploy-aci.yaml
 ```
 
 Вскоре после выполнения команды вы получите от Azure ответ с информацией о развертывании.
@@ -135,3 +152,4 @@ ContainerInstanceLog_CL
 [query_lang]: https://docs.loganalytics.io/
 
 <!-- LINKS - Internal -->
+[az-container-create]: /cli/azure/container#az-container-create

@@ -14,12 +14,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 03/28/2018
 ms.author: daveba
-ms.openlocfilehash: 3d6df04df8ceac1f868e64f0e8fbc7eb0fa317e3
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: d25d868d8f3542d74de8edf8d7d5d26037409911
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38547979"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006936"
 ---
 #  <a name="what-is-managed-service-identity-for-azure-resources"></a>Что такое Управляемое удостоверение службы для ресурсов Azure?
 
@@ -40,7 +40,7 @@ ms.locfileid: "38547979"
 
 Ниже приведен пример работы назначаемых системой удостоверений с виртуальными машинами Azure.
 
-![Пример управляемого удостоверения виртуальной машины](overview/msi-vm-vmextension-imds-example.png)
+![Пример управляемого удостоверения виртуальной машины](media/overview/msi-vm-vmextension-imds-example.png)
 
 1. Azure Resource Manager получает запрос на включение назначенного системой удостоверения MSI в виртуальной машине.
 2. Azure Resource Manager создает субъект-службу в Azure AD, представляющий удостоверение виртуальной машины. В клиенте Azure AD, который является доверенным для этой подписки, создается субъект-служба.
@@ -101,6 +101,7 @@ ms.locfileid: "38547979"
 | Функции Azure    | [Использование управляемого удостоверения службы со службой приложений Azure или службой "Функции Azure"](/azure/app-service/app-service-managed-service-identity) |
 | Azure Service Bus  | [Использование удостоверения управляемой службы со служебной шиной Azure](../../service-bus-messaging/service-bus-managed-service-identity.md) |
 | Концентраторы событий Azure   | [Использование удостоверения управляемой службы с концентраторами событий Azure](../../event-hubs/event-hubs-managed-service-identity.md) |
+| Cлужба управления Azure API  | [Использование Управляемого удостоверения службы со службой управления API в Azure](../../api-management/api-management-howto-use-managed-service-identity.md) |
 
 ## <a name="which-azure-services-support-managed-service-identity"></a>Какие службы Azure поддерживают управляемое удостоверение службы?
 

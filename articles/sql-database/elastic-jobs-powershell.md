@@ -8,12 +8,12 @@ ms.service: sql-database
 ms.topic: tutorial
 ms.date: 06/14/2018
 ms.author: joke
-ms.openlocfilehash: dc2776e0f3b14d5fd2375f735c18345c32ca743a
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 2cc8db0ce849e0f0d376824665aac7dbc2af29db
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033982"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035223"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
 
@@ -26,7 +26,7 @@ ms.locfileid: "37033982"
 > * создание учетных данных заданий для выполнения скриптов на целевых объектах с помощью этих заданий;
 > * определение целевых объектов (серверы, эластичные пулы, базы данных, карты сегментов), для которых следует выполнить задание;
 > * создание учетных данных для базы данных в целевых базах данных для подключения агента и выполнения заданий;
-> * создание задания;
+> * создать задание;
 > * добавление шагов задания;
 > * запуск выполнения задания;
 > * мониторинг задания.
@@ -35,18 +35,25 @@ ms.locfileid: "37033982"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-Установите последнюю версию модуля **AzureRM.Sql**, чтобы получить командлеты задания обработки эластичных баз данных. Выполните следующие команды в командной строке с повышенными привилегиями (от имени администратора):
+Установите модуль **AzureRM.Sql** 4.8.1-preview, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 
 ```powershell
 # Installs the latest PackageManagement powershell package which PowershellGet v1.6.5 is dependent on
 Find-Package PackageManagement -RequiredVersion 1.1.7.2 | Install-Package -Force
 
-# You may need to restart the powershell session
 # Installs the latest PowershellGet module which adds the -AllowPrerelease flag to Install-Module
 Find-Package PowerShellGet -RequiredVersion 1.6.5 | Install-Package -Force
 
+# Restart your powershell session with administrative access
+
 # Places AzureRM.Sql preview cmdlets side by side with existing AzureRM.Sql version
-Install-Module -Name AzureRM.Sql -AllowPrerelease -Force
+Install-Module -Name AzureRM.Sql -AllowPrerelease -RequiredVersion 4.8.1-preview -Force
+
+# Import the AzureRM.Sql 4.8.1 module
+Import-Module AzureRM.Sql -RequiredVersion 4.8.1
+
+# Confirm if module successfully imported - if the imported version is 4.8.1, then continue
+Get-Module AzureRM.Sql
 ```
 
 ## <a name="create-required-resources"></a>Создание необходимых ресурсов

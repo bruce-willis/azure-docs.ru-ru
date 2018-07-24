@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/06/2017
 ms.author: eamono
-ms.openlocfilehash: 9a4d6ecf19fc96a9c7b92cf246effbf3948fb478
-ms.sourcegitcommit: cc03e42cffdec775515f489fa8e02edd35fd83dc
+ms.openlocfilehash: 6270f8bad893798f46d8db91e7b1140b6a125350
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2017
-ms.locfileid: "26349076"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049870"
 ---
 # <a name="integrate-azure-automation-with-event-grid-and-microsoft-teams"></a>Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * импорт примера runbook для Сетки событий;
@@ -34,18 +34,21 @@ ms.locfileid: "26349076"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить инструкции из этого руководства, вам понадобится [учетная запись службы автоматизации Azure](../automation/automation-offering-get-started.md), в которой будет храниться runbook для запуска из подписки служба "Сетка событий".
 
+* Модуль `AzureRM.Tags` нужно загрузить в учетной записи службы автоматизации. См. инструкции по [импорту модулей в службе автоматизации Azure](../automation/automation-update-azure-modules.md).
+
 ## <a name="import-an-event-grid-sample-runbook"></a>Импорт примера runbook для службы "Сетка событий"
+
 1. Выберите учетную запись службы автоматизации и перейдите на страницу **Runbooks**.
 
    ![Выбор модулей runbook](./media/ensure-tags-exists-on-new-virtual-machines/select-runbooks.png)
 
 2. Нажмите кнопку **Просмотреть коллекцию**.
 
-3. Выполните поиск по запросу **Сетка событий** и выберите элемент **Integrating Azure Automation with Event grid** (Интеграция службы автоматизации Azure с Сеткой событий). 
+3. Выполните поиск по запросу **Сетка событий** и выберите элемент **Integrating Azure Automation with Event grid** (Интеграция службы автоматизации Azure с Сеткой событий).
 
     ![Импорт runbook из коллекции](media/ensure-tags-exists-on-new-virtual-machines/gallery-event-grid.png)
 
@@ -53,7 +56,11 @@ ms.locfileid: "26349076"
 
 5. Когда импорт успешно завершится, выберите **Изменить**, чтобы просмотреть источник runbook. Нажмите кнопку **Опубликовать**.
 
+> [!NOTE]
+> Строку 74 в скрипте нужно заменить строкой `Update-AzureRmVM -ResourceGroupName $VMResourceGroup -VM $VM -Tag $Tag | Write-Verbose`. Параметр `-Tags` теперь имеет значение `-Tag`.
+
 ## <a name="create-an-optional-microsoft-teams-webhook"></a>Создание перехватчика для Microsoft Teams (необязательно)
+
 1. В Microsoft Teams выберите элемент **Дополнительные параметры** рядом с именем канала, а затем выберите **Соединители**.
 
     ![Подключения Microsoft Teams](media/ensure-tags-exists-on-new-virtual-machines/teams-webhook.png)
@@ -67,6 +74,7 @@ ms.locfileid: "26349076"
 5. Выберите **Готово**, чтобы сохранить веб-перехватчик.
 
 ## <a name="create-a-webhook-for-the-runbook"></a>Создание веб-перехватчика для runbook
+
 1. Откройте runbook с именем Watch-VMWrite.
 
 2. Выберите **Веб-перехватчики** и нажмите кнопку **Добавить веб-перехватчик**.

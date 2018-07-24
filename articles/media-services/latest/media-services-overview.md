@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 06/14/2018
+ms.date: 07/14/2018
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 5205a6746f6a698768a60375e2e77db9cb535a71
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: ad3b8755615332249ac00f43a2d0cc5fa13a7233
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971913"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113290"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -69,6 +69,52 @@ ms.locfileid: "38971913"
 
 Дополнительные сведения об именовании Azure Resource Manager см. в разделе о [требованиях к именованию](https://github.com/Azure/azure-resource-manager-rpc/blob/master/v1.0/resource-api-reference.md#arguments-for-crud-on-resource) и статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).
 
+## <a name="media-services-v3-api-design-principles"></a>Принципы проектирования API Служб мультимедиа версии 3
+
+Один из ключевых принципов проектирования API версии 3 — сделать API более безопасным. API версии 3 не возвращает секреты или учетные данные в **Get** или в операции **List**. Ключи всегда являются NULL, пустыми или исключенными из ответа. Необходимо вызвать отдельный метод действий для получения секретов или учетных данных. Отдельные действия позволяют устанавливать разные разрешения безопасности RBAC в случае, если некоторые API извлекают или отображают секреты, в то время как другие API этого не делают. Сведения о том, как управлять доступом с помощью RBAC, см. в разделе [Управление доступом с помощью RBAC и REST API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-rest).
+
+Примеры включений 
+
+* невыполнение возврата значений ContentKey в запросе Get StreamingLocator, 
+* невыполнение возврата ключей ограничения в запросе Get ContentKeyPolicy, 
+* невыполнение возврата части строки запроса URL-адреса (чтобы удалить подпись) URL-адресов ввода заданий HTTP.
+
+В следующем примере .NET показано, как получить ключ подписывания из существующей политики. Для получения ключа нужно использовать **GetPolicyPropertiesWithSecretsAsync**.
+
+```csharp
+private static async Task<ContentKeyPolicy> GetOrCreateContentKeyPolicyAsync(
+    IAzureMediaServicesClient client,
+    string resourceGroupName,
+    string accountName,
+    string contentKeyPolicyName)
+{
+    ContentKeyPolicy policy = await client.ContentKeyPolicies.GetAsync(resourceGroupName, accountName, contentKeyPolicyName);
+
+    if (policy == null)
+    {
+        // Configure and create a new policy.
+        
+        . . . 
+        policy = await client.ContentKeyPolicies.CreateOrUpdateAsync(resourceGroupName, accountName, contentKeyPolicyName, options);
+    }
+    else
+    {
+        var policyProperties = await client.ContentKeyPolicies.GetPolicyPropertiesWithSecretsAsync(resourceGroupName, accountName, contentKeyPolicyName);
+        var restriction = policyProperties.Options[0].Restriction as ContentKeyPolicyTokenRestriction;
+        if (restriction != null)
+        {
+            var signingKey = restriction.PrimaryVerificationKey as ContentKeyPolicySymmetricTokenKey;
+            if (signingKey != null)
+            {
+                TokenSigningKey = signingKey.KeyValue;
+            }
+        }
+    }
+
+    return policy;
+}
+```
+
 ## <a name="how-can-i-get-started-with-v3"></a>Как начать работу с версией 3?
 
 Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентских библиотек, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. С примером REST Postman можно ознакомиться [здесь](https://github.com/Azure-Samples/media-services-v3-rest-postman). Вы также можете использовать [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates).
@@ -77,10 +123,10 @@ ms.locfileid: "38971913"
 
 |Клиентская библиотека|Примеры|
 |---|---|
-|[Пакет SDK для Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)|[Примеры Azure CLI](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)|
+|[Пакет SDK для Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)|[Примеры Azure CLI](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)|
 |[ПАКЕТ SDK .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0)|[Примеры для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)|
 |[Пакет SDK для .NET Core](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)|
-|[Пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/mediaservices)||
+|[Пакет SDK для Java](https://docs.microsoft.com/java/api/mediaservices/management?view=azure-java-stable)||
 |[Пакет SDK для Node.js](https://docs.microsoft.com/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)|
 |[Пакет SDK для Python](https://pypi.org/project/azure-mgmt-media/1.0.0rc1/)||
 |[Пакет SDK для GO](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/mediaservices/mgmt/2018-03-30-preview/media)||

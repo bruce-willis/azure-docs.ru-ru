@@ -9,25 +9,25 @@ ms.topic: tutorial
 ms.date: 02/22/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 7b962ccd8349996cd33cc3960391cba8fce549ad
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: 22f7f9aee791d315300ffdc4dc9f708a80a5baf7
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33934385"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39127416"
 ---
 # <a name="tutorial-scale-application-in-azure-kubernetes-service-aks"></a>Руководство. Масштабирование приложения в службе Azure Kubernetes
 
 Если вы выполнили инструкции в руководствах, то у вас имеется работающий кластер Kubernetes в AKS и вы развернули в нем приложение Vote Azure.
 
-В этом руководстве (часть пять из восьми) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вам предстоят следующие задачи:
+В этом руководстве (часть 5 из 7) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вам предстоят следующие задачи:
 
 > [!div class="checklist"]
 > * Масштабирование узлов Kubernetes Azure
 > * масштабирование pod Kubernetes вручную;
 > * настройка автомасштабирования pod, в которых выполняется интерфейсная часть приложения;
 
-В последующих руководствах описывается, как обновить приложение Azure для голосования, а также настроить Log Analytics для мониторинга кластера Kubernetes.
+В последующих руководствах описано, как обновить приложение Azure для голосования до новой версии.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -105,7 +105,12 @@ azure-vote-front-3309479140-qphz8   1/1       Running   0          3m
 
 ## <a name="autoscale-pods"></a>Автомасштабирование pod
 
-Kubernetes поддерживает [горизонтальное автомасштабирование pod][kubernetes-hpa] для изменения числа групп pod в развертывании в зависимости от использования ЦП или других выбранных метрик.
+Kubernetes поддерживает [горизонтальное автомасштабирование pod][kubernetes-hpa] для изменения числа групп pod в развертывании в зависимости от использования ЦП или других выбранных метрик. [Сервер метрик][metrics-server] используется для предоставления сведений об использовании ресурсов в Kubernetes. Чтобы установить сервер метрик, клонируйте репозиторий GitHub `metrics-server` и установите примеры определений ресурсов. Чтобы просмотреть содержимое этих определений YAML, см. руководство по [использованию сервера метрик для Kuberenetes 1.8+][metrics-server-github].
+
+```console
+git clone https://github.com/kubernetes-incubator/metrics-server.git
+kubectl create -f metrics-server/deploy/1.8+/
+```
 
 Чтобы использовать инструмент автомасштабирования, для ваших pod необходимо определить запросы и лимиты ресурсов ЦП. В развертывании `azure-vote-front` каждый контейнер внешнего приложения запрашивает 0,25 ресурсов ЦП с лимитом в 0,5 ресурсов ЦП. Параметры имеют следующий вид.
 
@@ -118,7 +123,6 @@ resources:
 ```
 
 В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа групп pod в развертывании `azure-vote-front`. Если использование ЦП превышает 50 %, то инструмент автомасштабирования увеличивает число pod максимум до 10.
-
 
 ```azurecli
 kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=3 --max=10
@@ -158,6 +162,8 @@ azure-vote-front   Deployment/azure-vote-front   0% / 50%   3         10        
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-scale]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#scale
 [kubernetes-hpa]: https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
+[metrics-server-github]: https://github.com/kubernetes-incubator/metrics-server/tree/master/deploy/1.8%2B
+[metrics-server]: https://kubernetes.io/docs/tasks/debug-application-cluster/core-metrics-pipeline/
 
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md

@@ -1,26 +1,26 @@
 ---
-title: Доступ к данным предварительной версии Azure Data Lake Storage Gen2 с помощью DataBricks и Spark | Документы Майкрософт
-description: Сведения о выполнении запросов Spark на кластере DataBricks для получения доступа к данным в учетной записи хранения Azure Data Lake Gen2.
+title: Доступ к данным предварительной версии Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark | Документация Майкрософт
+description: Сведения о выполнении запросов Spark на кластере Azure Databricks для получения доступа к данным в учетной записи хранения Azure Data Lake Storage 2-го поколения.
 services: hdinsight,storage
 tags: azure-portal
 author: dineshm
 manager: twooley
 ms.component: data-lake-storage-gen2
-ms.service: hdinsight
+ms.service: storage
 ms.workload: big-data
 ms.topic: tutorial
 ms.date: 6/27/2018
 ms.author: dineshm
-ms.openlocfilehash: 27ed860c7dd3b979a25860d453231de74d3f46be
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 41c34b2c1459178c59af66a75e7b34e2ec158025
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37096922"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136409"
 ---
-# <a name="tutorial-access-azure-data-lake-storage-gen2-preview-data-with-databricks-using-spark"></a>Руководство по получению доступа к данным предварительной версии Azure Data Lake Storage Gen2 с помощью DataBricks и Spark
+# <a name="tutorial-access-azure-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Azure Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
-В этом руководстве вы узнаете, как выполнять запросы Spark на кластере DataBricks, чтобы запрашивать данные в учетной записи с поддержкой предварительной версии Azure Data Lake Storage Gen2.
+В этом руководстве описано, как выполнять запросы Spark на кластере Azure Databricks, чтобы запрашивать данные в учетной записи с поддержкой предварительной версии Azure Data Lake Storage 2-го поколения.
 
 > [!div class="checklist"]
 > * Создание кластера Databricks
@@ -49,9 +49,9 @@ ms.locfileid: "37096922"
 
 ## <a name="create-a-databricks-cluster"></a>Создание кластера Databricks
 
-Далее нужно создать [кластер DataBricks](https://docs.azuredatabricks.net/) для создания рабочей области данных.
+Затем нужно создать [кластер Databricks](https://docs.azuredatabricks.net/) для создания рабочей области данных.
 
-1. Создайте [службу DataBricks](https://ms.portal.azure.com/#create/Microsoft.Databricks) и назовите ее **myFlightDataService** (активируйте флажок *Pin to dashboard* (Закрепить на панели мониторинга) в ходе создания службы).
+1. Создайте [службу Databricks](https://ms.portal.azure.com/#create/Microsoft.Databricks) и назовите ее **myFlightDataService**. При этом установите флажок *Закрепить на панели мониторинга*.
 2. Щелкните **Launch Workspace** (Запустить рабочее пространство), чтобы открыть рабочее пространство в новом окне браузера.
 3. Щелкните **Кластеры** на панели навигации слева.
 4. Щелкните **Create cluster** (Создать кластер).
@@ -85,9 +85,9 @@ set ACCOUNT_KEY=<ACCOUNT_KEY>
 azcopy cp "<DOWNLOAD_FILE_PATH>" https://<ACCOUNT_NAME>.dfs.core.windows.net/dbricks/folder1/On_Time --recursive 
 ```
 
-### <a name="use-databricks-notebook-to-convert-csv-to-parquet"></a>Использование DataBricks Notebook для преобразования CSV-файла в файл Parquet
+### <a name="use-databricks-notebook-to-convert-csv-to-parquet"></a>Использование Databricks Notebook для преобразования CSV-файла в файл Parquet
 
-Повторно откройте DataBricks в браузере и сделайте следующее:
+Повторно откройте Databricks в браузере и сделайте следующее:
 
 1. Выберите **Azure Databricks** в верхней левой части панели навигации.
 2. Выберите **Блокнот** в разделе **New** (Новый) в нижней части страницы.
@@ -116,7 +116,7 @@ azcopy cp "<DOWNLOAD_FILE_PATH>" https://<ACCOUNT_NAME>.dfs.core.windows.net/dbr
 
 ## <a name="explore-data-using-hadoop-distributed-file-system"></a>Просмотр данных с использованием распределенной файловой системы Hadoop
 
-Вернитесь в рабочее пространство DataBricks и выберите значок **Recent** (Последние) на панели навигации слева.
+Вернитесь в рабочее пространство Databricks и щелкните значок **Последние** на панели навигации слева.
 
 1. Щелкните блокнот **Flight Data Analytics** (Аналитика данных рейсов).
 2. Одновременно нажмите клавиши **Ctrl + Alt + N**, чтобы создать ячейку.
@@ -254,6 +254,6 @@ output.show(10, False)
 display(output)
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](tutorial-extract-transform-load-hive.md)

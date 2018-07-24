@@ -12,27 +12,27 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 11/19/2017
+ms.date: 06/15/2018
 ms.author: apimpm
-ms.openlocfilehash: 01a9120af2fb240eed1463613f7a6f946a9c16ed
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: cf9c56fa2ba75dc5b5ad4af59d111a0124f1a9df
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33934701"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39057333"
 ---
 # <a name="debug-your-apis-using-request-tracing"></a>Отладка API-интерфейсов с помощью трассировки запросов
 
 В этом руководстве объясняется, как проверять обработку запросов, чтобы упростить отладку и устранение неполадок для вашего API. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Трассировка вызова
 
 ![Инспектор API](media/api-management-howto-api-inspector/api-inspector001.PNG)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 + Выполните задачи в кратком руководстве по [созданию экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Также выполните задачи из руководства по [импорту и публикации первого API](import-and-publish.md).
@@ -44,6 +44,12 @@ ms.locfileid: "33934701"
 3. Выберите операцию **GetSpeakers**.
 4. Перейдите на вкладку **Test**.
 5. Не забудьте включить заголовок HTTP с именем **Ocp-Apim-Trace** и значением **true**.
+
+    ![Заголовок для API трассировки](media/api-management-howto-api-inspector/api-management-tracing-header.png)
+
+    > [!NOTE]
+    > Если значение Ocp-Apim-Subscription-Key не заполняется автоматически, его можно получить, предоставив ключи на странице профиля на портале разработчиков.
+
 6. Нажмите кнопку **Отправить**, чтобы выполнить вызов API. 
 7. Дождитесь завершения вызова. 
 8. Перейдите на вкладку **Трассировка** в **консоли API**. Щелкнув любую из следующих ссылок, можно перейти к подробным сведениям о трассировке: **Входящие**, **Внутренние**, **Всходящие**.

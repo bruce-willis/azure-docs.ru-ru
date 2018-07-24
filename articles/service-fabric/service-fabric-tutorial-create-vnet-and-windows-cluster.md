@@ -1,5 +1,5 @@
 ---
-title: Создание кластера Service Fabric на платформе Windows в Azure | Документы Майкрософт
+title: Создание кластера Service Fabric на платформе Windows в Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как развернуть кластер Service Fabric на платформе Windows в виртуальной сети и группе безопасности сети Azure с помощью PowerShell.
 services: service-fabric
 documentationcenter: .net
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/22/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 91bb57f49f8c92967275d340410e22381adad19e
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: f795333e8af2f09800dedc0b65030c42165d6bbb
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114281"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39068909"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "37114281"
 
 В этом руководстве описывается рабочий сценарий.  Если вы хотите быстро создать небольшой кластер для тестирования, см. статью [Create a three-node test Service Fabric cluster](./scripts/service-fabric-powershell-create-test-cluster.md) (Создание тестового кластера Service Fabric с тремя узлами).
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание виртуальной сети в Azure с помощью PowerShell;
@@ -38,12 +38,12 @@ ms.locfileid: "37114281"
 > * Подключение к кластеру с помощью PowerShell
 > * Удаление кластера
 
-Из этого цикла руководств вы узнаете, как выполнять такие задачи:
+Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * создание защищенного кластера в Azure;
 > * [свертывание и развертывание кластера](service-fabric-tutorial-scale-cluster.md);
 > * [обновление среды выполнения кластера;](service-fabric-tutorial-upgrade-cluster.md)
-> * [развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md).
+> * [Развертывание службы управления API с помощью Service Fabric](service-fabric-tutorial-deploy-api-management.md)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -97,7 +97,7 @@ ms.locfileid: "37114281"
 * включенный [обратный прокси-сервер](service-fabric-reverseproxy.md);
 * [служба DNS](service-fabric-dnsservice.md) включена;
 * [уровень устойчивости](service-fabric-cluster-capacity.md#the-durability-characteristics-of-the-cluster) Bronze (можно настроить в параметрах шаблона);
-* [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
+ * [уровень надежности](service-fabric-cluster-capacity.md#the-reliability-characteristics-of-the-cluster) Silver (можно настроить в параметрах шаблона);
 * конечная точка подключения клиента: 19000 (можно настроить в параметрах шаблона);
 * конечная точка HTTP-шлюза: 19080 (можно настроить в параметрах шаблона).
 
@@ -137,11 +137,11 @@ ms.locfileid: "37114281"
 
 В файле параметров [vnet-cluster.parameters.json][parameters] содержатся многие значения, используемые для развертывания кластера и связанных ресурсов. Далее представлены некоторые параметры, которые может понадобиться изменить для развертывания:
 
-|Параметр|Пример значения|Заметки|
+|Параметр|Пример значения|Примечания|
 |---|---||
-|adminUserName|vmadmin| Имя администратора кластера виртуальных машин. |
-|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин.|
-|clusterName|mysfcluster123| Имя кластера. |
+|adminUserName|vmadmin| Имя пользователя для администратора виртуальных машин в кластере. [Требования к имени пользователя при создании виртуальной машины](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-username-requirements-when-creating-a-vm) |
+|adminPassword|Password#1234| Пароль администратора для кластера виртуальных машин. [Требования к паролю при создании виртуальных машин](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm)|
+|clusterName|mysfcluster123| Имя кластера. Может содержать только буквы и цифры. Длина имени должна составлять от 3 до 23 знаков.|
 |location|southcentralus| Расположение кластера. |
 |certificateThumbprint|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым.</p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, заполните значение отпечатка сертификата. Например, 6190390162C988701DB5676EB81083EA608DCCF3.</p>. |
 |certificateUrlValue|| <p>Если создается самозаверяющий сертификат или указывается файл сертификата, значение должно быть пустым. </p><p>Если необходимо использовать имеющийся сертификат, который вы ранее передали в хранилище ключей, укажите URL-адрес сертификата. Например, https://mykeyvault.vault.azure.net:443/secrets/mycertificate/02bea722c9ef4009a76c5052bcbf8346.</p>|
@@ -255,7 +255,7 @@ Remove-AzureRmResourceGroup -Name $groupname -Force
 Remove-AzureRmResourceGroup -Name $vaultgroupname -Force
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

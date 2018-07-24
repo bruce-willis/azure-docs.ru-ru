@@ -5,17 +5,17 @@ services: application-insights
 keywords: ''
 author: mrbullwinkle
 ms.author: mbullwin
-ms.date: 09/10/2017
+ms.date: 07/11/2018
 ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 30b75f577b5e68614131e6476586921a752768dc
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 8bc725a5d9e3e9cdf82a01693aed83bff1f16c04
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29386543"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38991695"
 ---
 # <a name="start-monitoring-your-nodejs-web-application"></a>Запуск мониторинга веб-приложения Node.js
 
@@ -23,14 +23,14 @@ ms.locfileid: "29386543"
 
 С помощью этого краткого руководства вы сможете добавить пакет SDK Application Insights версии 0.22 для Node.js в имеющееся веб-приложение Node.js.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
 - Подписка Azure и веб-приложение Node.js.
 
 Если у вас нет веб-приложения Node.js, его можно создать, следуя руководству [Создание веб-приложений Node.js в Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-nodejs).
- 
+
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
@@ -52,7 +52,7 @@ ms.locfileid: "29386543"
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Тип приложения** | Приложение Node.js | Тип отслеживаемого приложения |
    | **Группа ресурсов**     | myResourceGroup      | Имя новой группы ресурсов для размещения данных App Insights |
-   | **Местоположение.** | Восток США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
+   | **Местоположение.** | Восточная часть США | Выберите ближайшее расположение или расположение вблизи места размещения приложения |
 
 2. Нажмите кнопку **Создать**.
 
@@ -60,7 +60,7 @@ ms.locfileid: "29386543"
 
 1. Выберите **Обзор** > **Основные компоненты** и скопируйте **ключ инструментирования** приложения.
 
-   ![Форма создания ресурса App Insights](./media/app-insights-nodejs-quick-start/003-Black.png)
+   ![Форма создания ресурса App Insights](./media/app-insights-nodejs-quick-start/instrumentation-key-001.png)
 
 2. Добавьте в приложение пакет SDK Application Insights для Node.js. Из корневой папки приложения выполните следующий код:
 
@@ -84,25 +84,25 @@ ms.locfileid: "29386543"
 
 1. Теперь можно повторно открыть страницу **Обзор** Application Insights на портале Azure, где вы извлекли ключ иснтрументирования, для просмотра сведений о выполняющемся в данный момент приложении.
 
-   ![Меню "Обзор Application Insights"](./media/app-insights-nodejs-quick-start/004-Black.png)
+   ![Меню "Обзор Application Insights"](./media/app-insights-nodejs-quick-start/overview-001.png)
 
 2. Щелкните **App map** (Карта приложений), чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
-   ![Схема сопоставления приложений](./media/app-insights-nodejs-quick-start/005-Black.png)
+   ![Схема сопоставления приложений](./media/app-insights-nodejs-quick-start/application-map.png)
 
 3. Щелкните значок **аналитики приложений** ![значок "Схема сопоставления приложений"](./media/app-insights-nodejs-quick-start/006.png).  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 
    ![Граф аналитики запросов пользователей за период времени](./media/app-insights-nodejs-quick-start/007-Black.png)
 
-4. Вернитесь к странице **Обзор** и изучите **временную шкалу обзора работоспособности**.  Эта панель мониторинга предоставляет статистические данные о работоспособности приложения, включая число входящих запросов, продолжительности этих запросов и возникающие ошибки. 
+4. Вернитесь к странице **Обзор** и изучите графики с КПЭ.  Эта панель мониторинга предоставляет статистические данные о работоспособности приложения, включая число входящих запросов, продолжительности этих запросов и возникающие ошибки. 
 
-   ![Графы временной шкалы обзора работоспособности](./media/app-insights-nodejs-quick-start/008-Black.png)
+   ![Графы временной шкалы обзора работоспособности](./media/app-insights-nodejs-quick-start/overview-perf.png)
 
    Чтобы включить диаграмму **Время загрузки страницы** для заполнения данных **телеметрии на стороне клиента**, добавьте этот скрипт на каждую страницу, которую требуется отслеживать:
 
    ```HTML
    <!-- 
-   To collect end-user usage analytics about your application, 
+   To collect user behavior analytics tools about your application, 
    insert the following script into each page you want to track.
    Place this code immediately before the closing </head> tag,
    and before any other scripts. Your first data will appear 
