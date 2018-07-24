@@ -157,8 +157,6 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Блог
       href: 'http://blogs.msdn.com/b/streamanalytics/'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/resources/videos/index/?services=stream-analytics&sort=newest'
     - name: Форум отзывов и предложений
       href: 'http://feedback.azure.com/forums/270577-azure-stream-analytics'
     - name: Форум
@@ -172,7 +170,7 @@
     - name: Переполнение стека
       href: 'http://stackoverflow.com/questions/tagged/azure-stream-analytics'
     - name: Видеоролики
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=stream-analytics'
+      href: 'https://azure.microsoft.com/resources/videos/index/?services=stream-analytics&sort=newest'
     - name: Примеры реальных клиентов
       href: 'https://azure.microsoft.com/case-studies/?service=stream-analytics'
     - name: Технический документ. Обработка событий в режиме реального времени

@@ -39,8 +39,10 @@
           href: role-assignments-powershell.md
         - name: Инфраструктура CLI Azure
           href: role-assignments-cli.md
-        - name: ИНТЕРФЕЙС REST API
+        - name: REST API
           href: role-assignments-rest.md
+        - name: Шаблон
+          href: role-assignments-template.md
     - name: Пользовательские роли
       href: custom-roles.md
       items:
@@ -48,7 +50,7 @@
           href: custom-roles-powershell.md
         - name: Инфраструктура CLI Azure
           href: custom-roles-cli.md
-        - name: ИНТЕРФЕЙС REST API
+        - name: REST API
           href: custom-roles-rest.md
     - name: Просмотр журналов действий
       href: change-history-report.md
@@ -70,5 +72,5 @@
       href: /powershell/module/azurerm.resources
     - name: Инфраструктура CLI Azure
       href: /cli/azure/role?view=azure-cli-latest
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/authorization/
