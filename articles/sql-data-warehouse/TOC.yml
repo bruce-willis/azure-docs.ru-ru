@@ -8,6 +8,8 @@
       href: cheat-sheet.md
 - name: Заметки о выпуске
   items:
+    - name: "Июль 2018\_г."
+      href: release-notes-july-2018.md
     - name: Июнь 2018 г.
       href: release-notes-june-2018.md
     - name: Май 2018 г.
