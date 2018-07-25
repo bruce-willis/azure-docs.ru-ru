@@ -17,12 +17,12 @@ ms.date: 07/18/2017
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 5597d75da50853e85d6e94f1a5c7b5114068f671
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 4bba72e0761553c81acda7609898c1b032bdf28a
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917002"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044425"
 ---
 # <a name="manage-and-customize-active-directory-federation-services-by-using-azure-ad-connect"></a>Управление службами федерации Active Directory и их настройка с помощью Azure AD Connect
 В этой статье описывается управление службами федерации Active Directory (AD FS) и их настройка с помощью Azure Active Directory (Azure AD) Connect, а также рассматриваются другие стандартные задачи AD FS, которые может потребоваться выполнить для полной настройки фермы AD FS.
@@ -175,7 +175,7 @@ Azure AD Connect может проверить текущую работоспо
 
     Когда вы выберете домен, мастер предоставит соответствующие сведения о дальнейших действиях, которые будут выполнены мастером, а также о результатах настроек. В некоторых случаях при выборе домена, еще не проверенного в Azure AD, мастер предоставит сведения, которые помогут проверить домен. Дополнительные сведения см. в разделе [Добавление имени личного домена в Azure Active Directory](../active-directory-domains-add-azure-portal.md).
 
-5. Нажмите кнопку **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
+5. Щелкните **Далее**. На странице **Готово к настройке** отображается список действий, которые выполнит Azure AD Connect. Чтобы завершить настройку, нажмите кнопку **Установить** .
 
    ![Готово к настройке](media/active-directory-aadconnect-federation-management/AdditionalDomain5.PNG)
 
@@ -189,7 +189,7 @@ Azure AD Connect может проверить текущую работоспо
 Чтобы изменить логотип компании, который отображается на странице **входа**, используйте приведенный ниже командлет Windows PowerShell и синтаксис.
 
 > [!NOTE]
-> Рекомендуемые размеры логотипа — 260 x 35, 96 точек на дюйм. Размер файла не должен превышать 10 КБ.
+> Рекомендуемые размеры логотипа — 260 x 35 \@ 96 точек на дюйм. Размер файла не должен превышать 10 КБ.
 
     Set-AdfsWebTheme -TargetName default -Logo @{path="c:\Contoso\logo.PNG"}
 

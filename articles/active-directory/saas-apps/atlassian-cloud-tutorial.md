@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 07/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 7609cea0d16a52a927f87ee9ab6d4445bfc2eb20
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 68613b8613a2e5a9139b83eb23e66884659efc47
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36228930"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114940"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-atlassian-cloud"></a>Руководство по интеграции Azure Active Directory с Atlassian Cloud
 
@@ -34,12 +34,12 @@ ms.locfileid: "36228930"
 
 Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Atlassian Cloud, вам потребуется:
 
 - подписка Azure AD;
-- Чтобы включить единый вход SAML для продуктов компании Atlassian Cloud, потребуется настроить Identity Manager. Дополнительные сведения об Identity Manager см. [здесь]( https://www.atlassian.com/enterprise/cloud/identity-manager).
+- Чтобы включить язык разметки заявлений системы безопасности (SAML) для продуктов компании Atlassian Cloud, потребуется настроить Atlassian Access. Дополнительные сведения об [Atlassian Access]( https://www.atlassian.com/enterprise/cloud/identity-manager).
 
 > [!NOTE]
 > Мы не рекомендуем использовать рабочую среду для тестирования действий, выполняемых в этом руководстве.
@@ -99,22 +99,27 @@ ms.locfileid: "36228930"
 
     ![Окно единого входа](./media/atlassian-cloud-tutorial/tutorial_atlassiancloud_samlbase.png)
 
-3. Чтобы настроить приложение в режиме, инициированном поставщиком удостоверений, в разделе **Домены и URL-адреса приложения Atlassian Cloud** выполните следующее.
+3. Чтобы настроить приложение в режиме, **инициированном IDP**, в разделе **Домены и URL-адреса приложения Atlassian Cloud** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения Atlassian Cloud](./media/atlassian-cloud-tutorial/tutorial_atlassiancloud_url.png)
     
-    a. В поле **Идентификатор** введите **`https://auth.atlassian.com/saml/<unique ID>`**.
+    a. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://auth.atlassian.com/saml/<unique ID>`.
     
-    Б. В поле **URL-адрес ответа** введите **`https://auth.atlassian.com/login/callback?connection=saml-<unique ID>`**.
+    b. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://auth.atlassian.com/login/callback?connection=saml-<unique ID>`.
 
-    c. В поле **Состояние ретранслятора** введите URL-адрес со следующим синтаксисом: **`https://<instancename>.atlassian.net`**.
+    c. Установите флажок **Показать дополнительные параметры URL-адресов**,
 
-4. Чтобы настроить приложение в режиме, инициированном поставщиком услуг, выберите **Показать дополнительные параметры URL-адресов**, а затем в поле **URL-адрес для входа** введите URL-адрес со следующим синтаксисом: **`https://<instancename>.atlassian.net`**.
+    d. В поле **Состояние ретранслятора** введите URL-адрес в следующем формате: `https://<instancename>.atlassian.net`.
+
+    > [!NOTE]
+    > Приведенные выше значения используются только для примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Вы получите эти значения на экране настройки SAML для Atlassian Cloud, который описан далее в этом руководстве.
+
+4. Чтобы настроить приложение в режиме, инициированном поставщиком услуг, выберите **Показать дополнительные параметры URL-адресов**, а затем в поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<instancename>.atlassian.net`.
 
     ![Сведения о домене и URL-адресах единого входа приложения Atlassian Cloud](./media/atlassian-cloud-tutorial/tutorial_atlassiancloud_url1.png)
 
     > [!NOTE]
-    > Приведенные выше значения используются только для примера. Замените их на фактические значения идентификатора, URL-адреса ответа и URL-адреса входа. Реальные значения можно получить на экране настройки SAML для Atlassian Cloud. Позже в данном руководстве мы рассмотрим эти значения.
+    > Приведенное выше значение "URL-адрес для входа" используется только для примера. Для входа укажите фактический URL-адрес. Для получения этого значения обратитесь к [группе поддержки клиентов Atlassian Cloud](https://support.atlassian.com/).
 
 5. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
 
@@ -150,7 +155,7 @@ ms.locfileid: "36228930"
 
     a. В поле **Identity provider Entity ID** (Идентификатор сущности поставщика удостоверений) вставьте идентификатор сущности SAML, скопированный на портале Azure.
 
-    Б. В поле **Identity provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный с портала Azure.
+    b. В поле **Identity provider SSO URL** (URL-адрес единого входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный с портала Azure.
 
     c. Откройте сертификат, скачанный с портала Azure в TXT-файле, скопируйте значения (без строк *Begin Certificate* и *End Certificate*) и вставьте их в поле **Public X509 certificate** (Общий сертификат X509).
     
@@ -162,7 +167,7 @@ ms.locfileid: "36228930"
 
     a. В окне SAML скопируйте **идентификатор удостоверения поставщика услуг** и вставьте его в поле **Идентификатор** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**.
     
-    Б. В окне SAML скопируйте **URL-адрес поставщика службы обработчика утверждений поставщика услуг** и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**. URL-адрес для входа является URL-адресом клиента приложения Atlassian Cloud.
+    b. В окне SAML скопируйте **URL-адрес поставщика службы обработчика утверждений поставщика услуг** и вставьте его в поле **URL-адрес ответа** на портале Azure в разделе **Домены и URL-адреса приложения Atlassian Cloud**. URL-адрес для входа является URL-адресом клиента приложения Atlassian Cloud.
 
     > [!NOTE]
     > Если вы уже давно являетесь клиентом, после обновления значений **идентификатора удостоверений поставщика услуг** и **URL-адреса службы обработчика утверждений** на портале Azure выберите **Yes, update configuration** (Да, обновить конфигурацию). Если вы — новый клиент, этот шаг можно пропустить.
@@ -255,7 +260,7 @@ ms.locfileid: "36228930"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку **Atlassian Cloud** на панели доступа, вы автоматически войдете в приложение Atlassian Cloud.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
