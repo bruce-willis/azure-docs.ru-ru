@@ -1,50 +1,50 @@
 ---
-title: Настройка LinkedIn в Azure Active Directory B2C | Документация Майкрософт
-description: Регистрация и вход пользователей с помощью учетных записей LinkedIn в приложениях, защищенных с помощью Azure Active Directory B2C.
+title: Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C | Документация Майкрософт
+description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями LinkedIn, используя Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/06/2016
+ms.date: 07/06/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7588711bd1c2a02e2e9a100d2ba182f43e7df488
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 84b1ad2ecd2c027c7d8a105579059ceb957f41c6
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446103"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929004"
 ---
-# <a name="azure-active-directory-b2c-provide-sign-up-and-sign-in-to-consumers-with-linkedin-accounts"></a>Azure Active Directory B2C: регистрация и вход пользователей с помощью учетных записей LinkedIn
+# <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью LinkedIn через Azure Active Directory B2C
+
 ## <a name="create-a-linkedin-application"></a>Создание приложения LinkedIn
-Чтобы использовать LinkedIn в качестве поставщика удостоверений в Azure Active Directory (Azure AD) B2C, необходимо создать приложение LinkedIn и задать в нем правильные параметры. Для этого потребуется учетная запись LinkedIn. Если у вас нет этой учетной записи, ее можно получить на сайте [https://www.linkedin.com/](https://www.linkedin.com/).
 
-1. Посетите [сайт разработчиков LinkedIn](https://www.developer.linkedin.com/) и войдите с помощью своих учетных данных LinkedIn.
-2. Щелкните **Мои приложения** в верхней строке меню и нажмите кнопку **Создать приложение**.
-   
-    ![LinkedIn — создание приложения](./media/active-directory-b2c-setup-li-app/linkedin-new-app.png)
-3. В форме **Создание нового приложения** укажите соответствующие сведения (**Название компании**, **Имя**, **Описание**, **URL-адрес логотипа приложения**, **Применение приложения**, **URL-адрес веб-сайта**, **Адрес электронной почты компании** и **Рабочий телефон**).
+Чтобы использовать учетную запись LinkedIn в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи LinkedIn, вы можете получить ее по адресу [https://www.linkedin.com/](https://www.linkedin.com/).
+
+1. Выполните вход на [сайт разработчиков LinkedIn](https://www.developer.linkedin.com/) с учетными данными для учетной записи LinkedIn.
+2. Выберите **My Apps** (Мои приложения) и щелкните **Create Application** (Создать приложение).
+3. Заполните поля **Company Name** (Имя компании), **Application Name** (Имя приложения), **Application Description** (Описание приложения), **Application Logo** (Логотип приложения), **Application Use** (Использование приложения), **Website URL** (URL-адрес веб-сайта), **Business Email** (Рабочий адрес электронной почты) и **Business Phone** (Рабочий телефон).
 4. Примите **условия использования LinkedIn API** и нажмите кнопку **Отправить**.
-   
-    ![LinkedIn — регистрация приложения](./media/active-directory-b2c-setup-li-app/linkedin-register-app.png)
-5. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Их можно найти в разделе **Ключи аутентификации**. Оба значения необходимы для настройки LinkedIn в качестве поставщика удостоверений для вашего клиента.
-   
-   > [!NOTE]
-   > **Секрет клиента** — это важные учетные данные безопасности.
-   > 
-   > 
-6. Введите `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **Разрешённые URL-адреса перенаправления** (в разделе **OAuth 2.0**). Замените **{tenant}** именем своего клиента (например, contoso.onmicrosoft.com). Нажмите кнопку **Добавить**, затем нажмите кнопку **Обновить**. Значение **{клиент}** должно быть в нижнем регистре.
-   
-    ![LinkedIn — настройка приложения](./media/active-directory-b2c-setup-li-app/linkedin-setup.png)
+5. Скопируйте значения **Идентификатор клиента** и **Секрет клиента**. Их можно найти в разделе **Ключи аутентификации**. Оба значения необходимы для настройки LinkedIn в качестве поставщика удостоверений для вашего клиента. **Секрет клиента** — это важные учетные данные безопасности.
+6. Введите `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` в поле **Authorized Redirect URLs** (Авторизованные URL-адреса перенаправления). Замените **{tenant}** именем своего клиента (например, contoso.onmicrosoft.com). Щелкните **Добавить**, а затем выберите **Обновить**.
 
-## <a name="configure-linkedin-as-an-identity-provider-in-your-tenant"></a>Настройка LinkedIn в качестве поставщика удостоверений для клиента
-1. Выполните следующие действия, чтобы [перейти к колонке функций B2C](active-directory-b2c-app-registration.md#navigate-to-b2c-settings) на портале Azure.
-2. В колонке функций B2C щелкните **Поставщики удостоверений**.
-3. Нажмите **+Добавить** в верхней части колонки.
-4. Укажите понятное **имя** конфигурации поставщика удостоверений. Например, введите "LI".
-5. Нажмите **Тип поставщика удостоверений**, выберите **LinkedIn** и нажмите кнопку **ОК**.
-6. Нажмите **Настроить этот поставщик удостоверений** и введите идентификатор клиента и секрет клиента ранее созданного приложения LinkedIn.
-7. Нажмите кнопку **ОК**, а затем — **Создать**, чтобы сохранить конфигурацию LinkedIn.
+## <a name="configure-a-linkedin-account-as-an-identity-provider"></a>Настройка учетной записи LinkedIn в качестве поставщика удостоверений
+
+1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
+2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
+
+    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-li-app/switch-directories.png)
+
+    Выберите каталог, содержащий ваш клиент.
+
+    ![Выбор каталога](./media/active-directory-b2c-setup-li-app/select-directory.png)
+
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
+4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
+5. Укажите **имя**. Например, введите *LinkedIn*.
+6. Щелкните **Тип поставщика удостоверений**, выберите **LinkedIn** и щелкните **ОК**.
+7. Выберите действие **Настроить этот поставщик удостоверений** и введите в поле **Идентификатор клиента** сохраненный идентификатор клиента, а в поле **Секрет клиента** — сохраненный секрет клиента от учетной записи LinkedIn, которую вы ранее создали.
+8. Щелкните **ОК**, а затем — **Создать**, чтобы сохранить конфигурацию учетной записи LinkedIn.
 
