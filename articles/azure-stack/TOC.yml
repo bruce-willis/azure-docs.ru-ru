@@ -6,14 +6,14 @@
       href: azure-stack-poc.md
     - name: Заметки о выпуске
       items:
+        - name: Обновление 1807
+          href: azure-stack-update-1807.md
         - name: Обновление 1805
           href: azure-stack-update-1805.md
         - name: Обновление 1804
           href: azure-stack-update-1804.md
         - name: Обновление 1803
           href: azure-stack-update-1803.md
-        - name: Обновление 1802
-          href: azure-stack-update-1802.md
 - name: Быстрое начало работы
   expanded: true
   items:
@@ -140,6 +140,8 @@
               href: azure-stack-manage-storage-shares.md
             - name: Управление объемом физической памяти
               href: azure-stack-manage-storage-physical-memory-capacity.md
+            - name: Добавление узлов единиц масштабирования
+              href: azure-stack-add-scale-node.md
         - name: Замена оборудования
           items:
             - name: Действия с узлами
@@ -245,7 +247,7 @@
               href: azure-stack-mysql-resource-provider-remove.md
         - name: Предложение службы приложений как PaaS
           items:
-            - name: Обзор службы приложений в Azure Stack
+            - name: Обзор Службы приложений Azure в Azure Stack
               href: azure-stack-app-service-overview.md
             - name: Планирование загрузки
               href: azure-stack-app-service-capacity-planning.md

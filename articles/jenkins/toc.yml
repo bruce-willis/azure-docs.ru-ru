@@ -13,7 +13,6 @@
   items:
     - name: Непрерывная интеграция и поставка в службу приложений
       href: /azure/jenkins/java-deploy-webapp-tutorial
-      maintainContext: true
     - name: Непрерывная интеграция и поставка в Kubernetes
       href: /azure/container-service/kubernetes/container-service-kubernetes-jenkins
       maintainContext: true
@@ -22,13 +21,13 @@
       maintainContext: true
     - name: Создание ресурсов Azure в задании конвейера
       href: /azure/jenkins/execute-cli-jenkins-pipeline
-      maintainContext: true
     - name: Масштабирование с помощью агентов виртуальных машин Azure
       href: /azure/jenkins/jenkins-azure-vm-agents
-      maintainContext: true
     - name: Сборка с использованием службы "Экземпляры контейнеров Azure"
       href: /azure/container-instances/container-instances-jenkins
       maintainContext: true
+    - name: Развертывание в AKS с использованием шаблона Blue-Green
+      href: /azure/jenkins/jenkins-aks-blue-green-deployment
 - name: Инструкции
   items:
     - name: Безопасность Jenkins в Azure

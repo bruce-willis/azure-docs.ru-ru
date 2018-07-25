@@ -53,6 +53,8 @@
           href: howto-create-telemetry-rules.md
         - name: Создание правила события
           href: howto-create-event-rules.md
+        - name: Создание действий веб-перехватчика на основе правил
+          href: howto-create-webhooks.md
         - name: Создание рабочих процессов в Microsoft Flow
           href: howto-add-microsoft-flow.md
         - name: Настройка домашней страницы

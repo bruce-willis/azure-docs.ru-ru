@@ -99,6 +99,8 @@
           href: automation-runbook-output-and-messages.md
         - name: Интеграция системы управления версиями
           href: automation-source-control-integration.md
+        - name: Создание модулей runbook с помощью пакета SDK для графических модулей runbook
+          href: graphical-runbook-sdk.md
     - name: Автоматизация
       items:
         - name: Запуск runbook

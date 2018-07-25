@@ -7,7 +7,7 @@
 ## [Создание Key Vault с помощью CLI](quick-create-cli.md)
 ## [Создание Key Vault с помощью PowerShell](quick-create-powershell.md)
 ## [Создание Key Vault с помощью портала](quick-create-portal.md)
-
+## [Считывание данных из Key Vault с использованием .NET](quick-create-net.md)
 # Учебники
 ## [Чтение секрета из Key Vault](tutorial-web-application-keyvault.md)
 ## [Начало работыс хранилищем ключей](key-vault-get-started.md)
