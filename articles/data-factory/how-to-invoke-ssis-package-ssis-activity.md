@@ -8,30 +8,29 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 07/09/2018
+ms.date: 07/16/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: db5941528eedd10cf252607dbe2160bd498a70de
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 3a43c0cd13300918979ae03c7f6c703796b65dc9
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37951973"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114231"
 ---
 # <a name="run-an-ssis-package-with-the-execute-ssis-package-activity-in-azure-data-factory"></a>Запуск пакета Integration Services с помощью действия "Выполнить пакет SSIS" в фабрике данных Azure
 В этой статье описывается, как запустить пакет MSSQL Integration Services в конвейере фабрики данных Azure, используя действие "Выполнить пакет SSIS". 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-### <a name="azure-sql-database"></a>Базы данных SQL Azure 
-В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать управляемый экземпляр SQL Azure (предварительная версия).
+**База данных SQL Azure**. В этих пошаговых инструкциях используется база данных SQL Azure, в которой размещен каталог SSIS. Вы также можете использовать управляемый экземпляр SQL Azure (предварительная версия).
 
 ## <a name="create-an-azure-ssis-integration-runtime"></a>Создание среды выполнения интеграции Azure SSIS.
 Создайте среду выполнения интеграции Azure SSIS, если у вас ее нет. Для этого выполните пошаговую инструкцию в статье [Развертывание пакетов служб интеграции SQL Server (SSIS) в Azure](tutorial-create-azure-ssis-runtime-portal.md).
 
-## <a name="data-factory-ui-azure-portal"></a>Пользовательский интерфейс фабрики данных (портал Azure)
+## <a name="run-a-package-in-the-azure-portal"></a>Запуск пакета в портале Azure
 В этом разделе для создания конвейера фабрики данных Azure с действием "Выполнить пакет SSIS", которое запускает пакет SSIS, используется пользовательский интерфейс фабрики данных.
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -76,7 +75,7 @@ ms.locfileid: "37951973"
     ![Страница "Начало работы"](./media/how-to-invoke-ssis-package-stored-procedure-activity/get-started-page.png)
 2. На панели элементов **Действия** разверните элемент **Общие** и перетащите действие **Выполнить пакет SSIS** в область конструктора конвейера. 
 
-   ![Перетаскивание действия SSIS в область конструктора](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-designer.png) 
+   ![Перетаскивание действия "Выполнить пакет SSIS" в область конструктора](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-designer.png) 
 
 3. На вкладке **Общие** свойств действия "Выполнить пакет SSIS" введите имя и описание действия. Укажите необязательные значения времени ожидания и повторных попыток.
 
@@ -98,7 +97,7 @@ ms.locfileid: "37951973"
 
 ![Добавление параметров к действию "Выполнить пакет SSIS"](media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-parameters2.png)
 
-### <a name="run-and-monitor-the-pipeline"></a>Запуск и мониторинг конвейера
+### <a name="run-the-pipeline"></a>Запуск конвейера
 В этом разделе вы активируете выполнение конвейера, а затем будете отслеживать его. 
 
 1. Чтобы активировать конвейер, щелкните **Триггер** на панели инструментов, а затем **Trigger Now** (Активировать сейчас). 
@@ -107,15 +106,17 @@ ms.locfileid: "37951973"
 
 2. На странице **Запуск конвейера** нажмите кнопку **Готово**. 
 
-3. Перейдите на вкладку **Мониторинг** слева. На ней отображается выполнение конвейера и его состояние вместе с другой информацией (например, время начала выполнения). Чтобы обновить это представление, щелкните **Refresh** (Обновить).
+### <a name="monitor-the-pipeline"></a>Мониторинг конвейера
+
+1. Перейдите на вкладку **Мониторинг** слева. На ней отображается выполнение конвейера и его состояние вместе с другой информацией (например, время начала выполнения). Чтобы обновить это представление, щелкните **Refresh** (Обновить).
 
     ![Запуски конвейера](./media/how-to-invoke-ssis-package-stored-procedure-activity/pipeline-runs.png)
 
-4. Щелкните ссылку **View Activity Runs** (Просмотр выполнений действий) в столбце **Actions** (Действия). Вы видите выполнение только одного действия, так как конвейер содержит одно действие (действие "Выполнить пакет SSIS").
+2. Щелкните ссылку **View Activity Runs** (Просмотр выполнений действий) в столбце **Actions** (Действия). Вы видите выполнение только одного действия, так как конвейер содержит одно действие (действие "Выполнить пакет SSIS").
 
     ![Выполнение действия](./media/how-to-invoke-ssis-package-ssis-activity/ssis-activity-runs.png)
 
-5. Вы можете запустить следующий **запрос** к базе данных SSISDB на своем сервере SQL Server Azure, чтобы убедиться, что пакет выполнен. 
+3. Вы можете запустить следующий **запрос** к базе данных SSISDB на своем сервере SQL Server Azure, чтобы убедиться, что пакет выполнен. 
 
     ```sql
     select * from catalog.executions
@@ -123,20 +124,21 @@ ms.locfileid: "37951973"
 
     ![Проверка выполнения пакета](./media/how-to-invoke-ssis-package-stored-procedure-activity/verify-package-executions.png)
 
-6. Можно также получить идентификатор выполнения SSISDB конвейера выполнения действия выходных данных и использовать его для более комплексной проверки журналов выполнения и сообщений ошибок в SSMS.
+4. Можно также получить идентификатор выполнения SSISDB конвейера выполнения действия выходных данных и использовать его для более комплексной проверки журналов выполнения и сообщений ошибок в SSMS.
 
     ![Получите идентификатор выполнения.](media/how-to-invoke-ssis-package-ssis-activity/get-execution-id.png)
 
-> [!NOTE]
-> Вы также можете создать запланированный триггер для запуска конвейера по расписанию (ежечасно, ежедневно и т. д.). Пример см. в разделе [Запуск конвейера по расписанию](quickstart-create-data-factory-portal.md#trigger-the-pipeline-on-a-schedule).
+### <a name="schedule-the-pipeline-with-a-trigger"></a>Запуск конвейера по расписанию с помощью триггера
 
-## <a name="azure-powershell"></a>Azure PowerShell
-В этом разделе для создания конвейера фабрики данных с действием SSIS, которое запускает пакет SSIS, используется Azure PowerShell. 
+Вы также можете создать запланированный триггер для запуска конвейера по расписанию (ежечасно, ежедневно и т. д.). Пример см. в разделе [Запуск конвейера по расписанию](quickstart-create-data-factory-portal.md#trigger-the-pipeline-on-a-schedule).
+
+## <a name="run-a-package-with-powershell"></a>Выполнение пакета с помощью PowerShell
+В этом разделе для создания конвейера фабрики данных Azure с действием "Выполнить пакет SSIS", которое запускает пакет SSIS, используется Azure PowerShell. 
 
 Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps). 
 
 ### <a name="create-a-data-factory"></a>Создание фабрики данных
-Вы можете использовать ту же фабрику данных, в которой есть среда выполнения интеграции Azure SSIS, или создать отдельную. В следующей процедуре представлены шаги для создания фабрики данных. Вы создадите в этой фабрике данных конвейер с действием SSIS. Данное действие SSIS запускает пакет SSIS. 
+Вы можете использовать ту же фабрику данных, в которой есть среда выполнения интеграции Azure SSIS, или создать отдельную. В следующей процедуре представлены шаги для создания фабрики данных. В фабрике данных Azure создайте конвейер с действием "Выполнить пакет SSIS". Действие "Выполнить пакет SSIS" запускает пакет SSIS. 
 
 1. Определите переменную для имени группы ресурсов, которую в дальнейшем можно будет использовать в командах PowerShell. Скопируйте текст следующей команды в PowerShell, укажите имя [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) в двойных кавычках, а затем выполните команду. Например, `"adfrg"`. 
    
@@ -178,8 +180,8 @@ ms.locfileid: "37951973"
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
 * Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
-### <a name="create-a-pipeline-with-an-ssis-activity"></a>Создание конвейера с помощью действия SSIS 
-На этом этапе вы создадите конвейер с действием SSIS. Это действие запускает пакет SSIS. 
+### <a name="create-a-pipeline-with-an-execute-ssis-package-activity"></a>Создание конвейера с действием "Выполнить пакет SSIS" 
+На этом этапе создается конвейер с действием "Выполнить пакет SSIS". Это действие запускает пакет SSIS. 
 
 1. Создайте JSON-файл **RunSSISPackagePipeline.json** в папке **C:\ADF\RunSSISPackage** с содержимым, как в приведенном ниже примере.
 
@@ -279,7 +281,7 @@ ms.locfileid: "37951973"
     Parameters        : {[inputPath, Microsoft.Azure.Management.DataFactory.Models.ParameterSpecification], [outputPath, Microsoft.Azure.Management.DataFactory.Models.ParameterSpecification]}
     ```
 
-### <a name="create-a-pipeline-run"></a>Создание конвейера
+### <a name="run-the-pipeline"></a>Запуск конвейера
 Используйте командлет **Invoke-AzureRmDataFactoryV2Pipeline** для запуска конвейера. Командлет позволяет получить идентификатор выполнения конвейера для дальнейшего мониторинга.
 
 ```powershell
@@ -288,7 +290,7 @@ $RunId = Invoke-AzureRmDataFactoryV2Pipeline -DataFactoryName $DataFactory.DataF
                                              -PipelineName $DFPipeLine.Name
 ```
 
-### <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
+### <a name="monitor-the-pipeline"></a>Мониторинг конвейера
 
 Запустите приведенный ниже скрипт PowerShell, чтобы проверять состояние выполнения, пока не закончится копирование данных. Скопируйте приведенный ниже скрипт в окно PowerShell и нажмите клавишу ВВОД. 
 
@@ -313,7 +315,7 @@ while ($True) {
 
 Вы также можете отслеживать конвейер с помощью портала Azure. Пошаговые инструкции см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-resource-manager-template.md#monitor-the-pipeline).
 
-### <a name="create-a-trigger"></a>Создание триггера
+### <a name="schedule-the-pipeline-with-a-trigger"></a>Запуск конвейера по расписанию с помощью триггера
 На предыдущем шаге вы запустили конвейер по запросу. Вы также можете создать триггер расписания для запуска конвейера по расписанию (ежечасно, ежедневно и т. д.).
 
 1. Создайте файл JSON с именем **MyTrigger.json** в папке **C:\ADF\RunSSISPackage** со следующим содержимым: 
@@ -379,7 +381,6 @@ while ($True) {
     ```sql
     select * from catalog.executions
     ```
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 См. в следующей записи блога:

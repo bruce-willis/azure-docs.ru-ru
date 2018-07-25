@@ -6,14 +6,14 @@ manager: jeconnoc
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 05/17/2018
+ms.date: 07/17/2018
 ms.author: alkohli
-ms.openlocfilehash: 4349b471f960e7844511c473bffcd2177a34e055
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4f48097fa1ece66dd9e20a7a7939ac43cb0f48b4
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660331"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113483"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -21,7 +21,7 @@ ms.locfileid: "34660331"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо следующее:
 
@@ -30,6 +30,14 @@ ms.locfileid: "34660331"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks). 
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
 - [Скачать WAImportExport версии 2](https://www.microsoft.com/download/details.aspx?id=55280) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
+- Учетная запись FedEx или DHL. 
+    - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
+    - Создайте номер отслеживания для задания экспорта.
+    - Каждое задание должно иметь отдельный номер отслеживания. Несколько заданий с одним и тем же номером отслеживания не поддерживаются.
+    - Если у вас нет учетной записи оператора, перейдите по ссылке:
+        - [Создать учетную запись FedEX](https://www.fedex.com/en-us/create-account.html) или 
+        - [Создать учетную запись DHL](http://www.dhl-usa.com/en/express/shipping/open_account.html).
+ 
 
 
 ## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
@@ -142,6 +150,9 @@ ms.locfileid: "34660331"
     - Введите допустимый номер учетной записи, созданный в системе этого перевозчика. Корпорация Майкрософт использует эту учетную запись для отправки дисков обратно после завершения задания импорта. 
     - Укажите полное и допустимое имя контактного лица, телефон, адрес электронной почты, адрес, город, почтовый индекс, страну (провинцию) и страну (регион).
 
+        > [!TIP] 
+        > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
+
        ![Создание задание импорта – шаг 3](./media/storage-import-export-data-to-blobs/import-to-blob5.png)
 
    
@@ -159,6 +170,10 @@ ms.locfileid: "34660331"
 ## <a name="step-4-update-the-job-with-tracking-information"></a>Шаг 4. Указание данных об отслеживании для задания
 
 [!INCLUDE [storage-import-export-update-job-tracking](../../../includes/storage-import-export-update-job-tracking.md)]
+
+## <a name="step-5-verify-data-upload-to-azure"></a>Шаг 5: Проверка передачи данных в Azure
+
+Отслеживание задания до завершения. После завершения задания убедитесь, что данные переданы в Azure. Удалите локальные данные только после подтверждения, что загрузка прошла успешно.
 
 ## <a name="samples-for-journal-files"></a>Примеры файлов журнала
 

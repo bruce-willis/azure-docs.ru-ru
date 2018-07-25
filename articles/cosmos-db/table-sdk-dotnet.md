@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/26/2018
 ms.author: rnagpal
-ms.openlocfilehash: 391948af7fe00e0a5e6171d5322c09c05fcd1cc3
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 2fba67b247ad0b53e11ca012969163a68013e82f
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798480"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126717"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблицы .NET для базы данных Azure Cosmos DB. Скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -37,6 +37,10 @@ ms.locfileid: "34798480"
 >
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name113113"></a><a name="1.1.3"/>1.1.3
+* Исправлены зависимости пакетов Nuget от Microsoft.Azure.Storage.Common и Microsoft.Azure.DocumentDB.
+* Исправление ошибок в сериализации таблиц при настройке JsonConvert.DefaultSettings.
 
 ### <a name="a-name111111"></a><a name="1.1.1"/>1.1.1
 * Добавлена проверка тегов сущности неправильного формата в режиме прямого подключения.
@@ -65,6 +69,7 @@ ms.locfileid: "34798480"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [1.1.3](#1.1.3) |17 июля 2018 г.|--- |
 | [1.1.1](#1.1.1) |26 марта 2018 г.|--- |
 | [1.1.0](#1.1.0) |21 февраля 2018 г.|--- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г.|--- |

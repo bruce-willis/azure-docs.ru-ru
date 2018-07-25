@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 03/20/2018
+ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 1d84fa5ca580a1e56ba9ce17dece9ad9680c74c6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: a1296565384e60117d883a1f1407362482ba1a3e
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34633933"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125019"
 ---
 # <a name="create-and-read-iot-hub-messages"></a>Создание и чтение сообщений Центра Интернета вещей
 
@@ -65,11 +65,11 @@ ms.locfileid: "34633933"
 
 Сведения об ограничениях на размер сообщений в Центре Интернета вещей см. в справочнике [по квотам и регулированию Центра Интернета вещей][lnk-quotas].
 
-Сведения о создании и чтении сообщений Центра Интернета вещей на разных языках программирования см. в руководствах по [началу работы][lnk-get-started].
+Узнайте, как создавать и читать сообщения Центра Интернета вещей на разных языках программирования, из [этих кратких руководств][lnk-get-started].
 
 [lnk-messaging]: iot-hub-devguide-messaging.md
 [lnk-quotas]: iot-hub-devguide-quotas-throttling.md
-[lnk-get-started]: iot-hub-get-started.md
+[lnk-get-started]: quickstart-send-telemetry-node.md
 [lnk-sdks]: iot-hub-devguide-sdks.md
 [lnk-c2d]: iot-hub-devguide-messages-c2d.md
 [lnk-d2c]: iot-hub-devguide-messages-d2c.md

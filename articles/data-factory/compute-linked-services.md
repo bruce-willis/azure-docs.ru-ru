@@ -11,25 +11,26 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/06/2018
 ms.author: douglasl
-ms.openlocfilehash: ca5caa8c8d0e64fb3a63a1c49d08b949b0c9cf36
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 4a4ec63d41f013ebfef8a78eddc88a6131a960fc
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903774"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39070048"
 ---
 # <a name="compute-environments-supported-by-azure-data-factory"></a>Вычислительные среды, поддерживаемые фабрикой данных Azure
 В этой статье описываются различные среды вычислений, которые можно использовать для обработки и преобразования данных. Здесь содержатся также сведения о различных конфигурациях (конфигурациях по запросу и ваших собственных), которые поддерживаются фабрикой данных при настройке связанных служб, связывающих эти среды вычислений с фабрикой данных Azure.
 
 Следующая таблица содержит список вычислительных сред, поддерживаемых фабрикой данных, и доступных в них действий. 
 
-| Вычислительная среда                      | Действия                               |
-| ---------------------------------------- | ---------------------------------------- |
+| Вычислительная среда                                          | Действия                                                   |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Кластер HDInsight по запросу](#azure-hdinsight-on-demand-linked-service) или [собственный кластер HDInsight](#azure-hdinsight-linked-service) | [Hive](transform-data-using-hadoop-hive.md), [Pig](transform-data-using-hadoop-pig.md), [Spark](transform-data-using-spark.md), [MapReduce](transform-data-using-hadoop-map-reduce.md), [потоковая передача Hadoop](transform-data-using-hadoop-streaming.md) |
-| [Пакетная служба Azure](#azure-batch-linked-service) | [Настраиваемая](transform-data-using-dotnet-custom-activity.md) |
+| [Пакетная служба Azure](#azure-batch-linked-service)                   | [Настраиваемая](transform-data-using-dotnet-custom-activity.md)     |
 | [машинное обучение Azure](#azure-machine-learning-linked-service) | [Действия машинного обучения: выполнение пакета и обновление ресурса](transform-data-using-machine-learning.md) |
 | [Аналитика озера данных Azure](#azure-data-lake-analytics-linked-service) | [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md) |
 | [Azure SQL](#azure-sql-database-linked-service), [хранилище данных Azure SQL](#azure-sql-data-warehouse-linked-service), [SQL Server](#sql-server-linked-service) | [Хранимая процедура](transform-data-using-stored-procedure.md) |
+| [Azure Databricks](#azure-databricks-linked-service)         | [Notebook](transform-data-databricks-notebook.md), [Jar](transform-data-databricks-jar.md), [Python](transform-data-databricks-python.md) |
 
 >  
 

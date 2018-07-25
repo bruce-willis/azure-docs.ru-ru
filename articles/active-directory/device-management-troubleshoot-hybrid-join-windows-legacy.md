@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: d41e83c11f33b0bcbe4ea632332f2cd8bb12313f
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 3b99a82b59cbba22d30a4325e246c308a2042ad5
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34714118"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136313"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -56,6 +56,8 @@ ms.locfileid: "34714118"
 - Первоначальная регистрация или присоединение устройств настраиваются, чтобы выполнить попытку входа в систему, заблокировать или разблокировать устройство. Возможна 5-минутная задержка, связанная с выполнением задачи планировщика задач. 
 
 - При переустановке операционной системы или повторной регистрации вручную в Azure AD может быть создана регистрация. Из-за этого на вкладке сведений о пользователе на портале Azure появляется несколько записей. 
+
+- В случае с ОС Windows 7 с пакетом обновления 1 (SP1) или Windows Server 2008 R2 с пакетом обновления 1 (SP1) убедитесь, что обновление [KB4284842](https://support.microsoft.com/en-us/help/4284842) уже установлено. Это обновление предотвращает ошибки будущих проверок подлинности из-за потери доступа клиента к защищенными ключам после изменения пароля.
 
 ## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
 

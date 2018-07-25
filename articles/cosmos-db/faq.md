@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: sngun
-ms.openlocfilehash: 30ebe4f990dc65e53c34673f0948d3aa2240385c
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: fb8ae3b6225b2029ced3687083777ae47cb54acf
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37859706"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39002336"
 ---
 # <a name="azure-cosmos-db-faq"></a>Вопросы и ответы об Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Основные сведения об Azure Cosmos DB
@@ -120,6 +120,9 @@ Azure Cosmos DB — это хороший выбор для новых веб-�
 
 Подготовка пропускной способности на уровне контейнера и на уровне базы данных — это разные предложения, для переключения между которыми требуется выполнить перенос данных из источника в целевое расположение. Это означает, что вам нужно создать базу данных или коллекцию, а затем перенести данные с помощью [библиотеки массового исполнителя](bulk-executor-overview.md) или [Фабрики данных Azure](../data-factory/connector-azure-cosmos-db.md).
 
+### <a name="how-do-i-create-fixed-collection-with-partition-key"></a>Создание фиксированной коллекции с ключом секции
+
+Сейчас можно создать коллекцию с пропускной способностью ключа секции с помощью метода [CreatePartitionedCollection](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/CollectionManagement/Program.cs#L118) пакета SDK для .Net или [Azure CLI](https://docs.microsoft.com/cli/azure/cosmosdb/collection?view=azure-cli-latest#az-cosmosdb-collection-create). Создание фиксированной коллекции с помощью портала Azure сейчас не поддерживается.  
 
 ## <a name="develop-against-the-sql-api"></a>Разработка с использованием API SQL
 

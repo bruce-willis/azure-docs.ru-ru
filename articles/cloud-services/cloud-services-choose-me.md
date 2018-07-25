@@ -1,9 +1,9 @@
 ---
-title: 'Варианты вычислений в Azure: облачные службы Azure | Документация Майкрософт'
-description: 'Узнайте о размещении параметров вычислений Azure и их работе: службе приложений, облачных службах Azure и виртуальных машинах'
+title: Общие сведения об облачных службах Azure | Документация Майкрософт
+description: Узнайте об облачных службах Azure.
 services: cloud-services
 documentationcenter: ''
-author: Thraka
+author: jpconnock
 manager: timlt
 ms.assetid: ed7ad348-6018-41bb-a27d-523accd90305
 ms.service: multiple
@@ -12,22 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.author: adegeo
-ms.openlocfilehash: 2871a8c02db0ffc6d9033724e7c9f4a454afef8e
-ms.sourcegitcommit: 059dae3d8a0e716adc95ad2296843a45745a415d
+ms.author: jeconnoc
+ms.openlocfilehash: 6af4533a4ab374071b904cc4b03ca239a3e83364
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2018
-ms.locfileid: "29120290"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39011662"
 ---
-# <a name="should-i-choose-azure-cloud-services-or-something-else"></a>Стоит выбрать облачные службы Azure или что-то другое?
-Являются ли облачные службы Azure удачным выбором для вас? Azure предоставляет разные модели размещения для запуска приложений. Каждый из них предоставляет свой набор служб. Выбор одного из них зависит от того, что вы пытаетесь сделать.
-
-[!INCLUDE [compute-table](../../includes/compute-options-table.md)]
-
-<a name="tellmecs"></a>
-
-## <a name="tell-me-about-azure-cloud-services"></a>Информация об облачных службах Azure
+# <a name="overview-of-azure-cloud-services"></a>Общие сведения об облачных службах Azure
 Облачные службы Azure являются примером концепции [платформа как услуга](https://azure.microsoft.com/overview/what-is-paas/) (PaaS). Так же как и [служба приложений Azure](../app-service/app-service-web-overview.md), эта технология предназначена для поддержки масштабируемых, надежных и недорогих в эксплуатации приложений. Облачные службы Azure размещаются так же, как и службы приложений на виртуальных машинах (ВМ). Однако над виртуальными машинами доступен больший контроль. На виртуальных машинах, использующих облачные службы Azure, можно установить собственное программное обеспечение, а затем получить удаленный доступ к нему.
 
 ![Диаграмма облачных служб Azure](./media/cloud-services-choose-me/diagram.png)

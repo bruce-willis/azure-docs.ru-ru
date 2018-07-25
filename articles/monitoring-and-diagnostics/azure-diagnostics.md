@@ -6,15 +6,15 @@ author: rboucher
 ms.service: azure-monitor
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 07/13/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: b4ec82112ea0defcea4f687abaad7d96627cb902
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: b00d774ec59755288b8660d238c7b8dfc9a89eab
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267685"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39089899"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>Расширение системы диагностики Microsoft Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](monitoring-overview.md). 
@@ -32,10 +32,12 @@ ms.locfileid: "35267685"
 | Журналы событий Windows |Информация, отправляемая системой ведения журналов событий Windows |
 | Источник событий .NET |События записи кода с использованием класса .NET [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) |
 | Журналы IIS |Информация о веб-сайтах IIS |
-| Трассировка событий Windows на основе манифестов |События трассировки событий Windows, созданные любым процессом |
+| Трассировка событий Windows на основе манифестов |События трассировки событий Windows, созданные любым процессом. (1) |
 | Аварийные дампы |Информация о состоянии процесса в случае сбоя приложения |
 | Пользовательские журналы ошибок |Журналы, созданные вашим приложением или службой |
 | Журналы инфраструктуры системы диагностики Azure |Информация о самой системе диагностики |
+
+(1) Чтобы получить список поставщиков трассировки событий Windows, выполните `c:\Windows\System32\logman.exe query providers` в окне консоли на компьютере, с которого требуется собирать информацию. 
 
 ## <a name="data-storage"></a>Хранилище данных
 Расширение хранит свои данные в указанной [учетной записи службы хранилища Azure](azure-diagnostics-storage.md). 

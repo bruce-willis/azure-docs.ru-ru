@@ -11,20 +11,23 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/07/2018
+ms.date: 07/17/2018
 ms.author: bwren
 ms.component: na
-ms.openlocfilehash: 6479db44681071932ff92ee17ea0aec6518dc74e
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 503d5913efe67bd0de738f68921b9631c63acfa8
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128645"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39116050"
 ---
 # <a name="common-questions-for-transition-from-oms-portal-to-azure-portal-for-log-analytics-users"></a>Часто задаваемые вопросы о переходе от портала OMS к порталу Azure для пользователей Log Analytics
 В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS.  Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее.
 
 В этой статье собраны ответы на распространенные вопросы пользователей, которые столкнулись с этим переходом.  Если вы ранее работали с Log Analytics на портале OMS, здесь вы найдете сведения о том, как выполнять те же задачи на портале Azure.
+
+## <a name="do-i-need-to-migrate-anything"></a>Нужно ли что-либо переносить?
+Нет. Никаких изменений в Log Analytics не было внесено, поэтому вам не нужно ничего переносить. Единственное, что изменится, — это интерфейс, который используется для доступа к этой службе. На самом деле можно использовать портал Azure для доступа к тем же рабочим областям, решениям, представлениям и возможностям поиска по журналам, которые вы используете на портале OMS в настоящее время.
 
 ## <a name="where-do-i-find-log-analytics-in-azure"></a>Где найти Log Analytics в Azure?
 Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).  Щелкните **Все службы** и в списке ресурсов введите **Log Analytics**. Выберите **Log Analytics**, а затем нужную рабочую область. Отобразится страница сводной информации об этой рабочей области.

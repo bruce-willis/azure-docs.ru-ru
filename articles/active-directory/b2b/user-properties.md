@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.component: B2B
 ms.topic: article
 ms.date: 05/25/2017
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 65fd23ecf81aebdb1fe74f800d20df6414c18317
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 0cfd7888acf942e4af875c37c2472ff086f9119b
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34259727"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39057896"
 ---
 # <a name="properties-of-an-azure-active-directory-b2b-collaboration-user"></a>Свойства пользователя службы совместной работы Azure Active Directory B2B
 
@@ -85,6 +85,9 @@ ms.locfileid: "34259727"
 Ограничения для гостевого пользователя, заданные по умолчанию, можно отключить. При этом гостевой пользователь получит те же разрешения в каталоге компании, что и участник.
 
 ![Снятие ограничений для гостевых пользователей](media/user-properties/remove-guest-limitations.png)
+
+## <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
+Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?** статьи [Гостевой доступ в группах Office 365](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6#PickTab=FAQ). 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

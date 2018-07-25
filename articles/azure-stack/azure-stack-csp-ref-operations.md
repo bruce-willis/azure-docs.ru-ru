@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/22/2018
-ms.author: mabrigg
+ms.date: 06/08/2018
+ms.author: brenduns
 ms.reviewer: alfredo
-ms.openlocfilehash: ef7ca59647a1f8c15d85c809609060a5945bedde
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 18b34af8dc383cfa86017162ec48782f156156bc
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32159117"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39092698"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
 
@@ -48,7 +48,7 @@ ms.locfileid: "32159117"
 
 ### <a name="powershell"></a>PowerShell
 
-Обновите ресурс регистрации при помощи командлета New-AzureRmResource. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которая использовалась для первоначальной регистрации. Пример добавления клиента:
+Обновите ресурс регистрации при помощи командлета New-AzureRmResource. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которую вы использовали для первоначальной регистрации. Пример добавления клиента:
 
 ```powershell
   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
@@ -79,7 +79,7 @@ ms.locfileid: "32159117"
 
 ### <a name="powershell"></a>PowerShell
 
-Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResovurce. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которая использовалась для первоначальной регистрации. Пример добавления клиента:
+Для перечисления всех зарегистрированных клиентов воспользуйтесь командлетом Get-AzureRmResovurce. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которую вы использовали для первоначальной регистрации. Пример добавления клиента:
 
 ```powershell
   Get-AzureRmResovurce -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions" -ApiVersion 2017-06-01

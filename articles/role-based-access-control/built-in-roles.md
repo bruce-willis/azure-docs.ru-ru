@@ -1,6 +1,6 @@
 ---
 title: Встроенные роли в Azure | Документация Майкрософт
-description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) в Azure. Actions, notActions, dataActions и notDataActions.
+description: В этой статье описаны встроенные роли для управления доступом на основе ролей (RBAC) в Azure. Выводит список элементов Actions, NotActions, DataActions и NotDataActions.
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 06/28/2018
+ms.date: 07/17/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: c5624de13d5d31320beb85aff67c61addaffcbea
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 42a11607c46f77840b14973dd5b7faf4b1734fdc
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437932"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136848"
 ---
 # <a name="built-in-roles-in-azure"></a>Встроенные роли в Azure
 [Управление доступом на основе ролей (RBAC)](overview.md) имеет несколько определений встроенной роли, которую можно назначить для пользователей, групп и субъектов-служб. Назначение ролей является способом управления доступом к ресурсам в Azure. Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](custom-roles.md).
@@ -28,7 +28,7 @@ ms.locfileid: "37437932"
 Встроенные роли всегда развиваются. Чтобы получить последние определения ролей, используйте команду [Get-AzureRmRoleDefinition](/powershell/module/azurerm.resources/get-azurermroledefinition) или [az role definition list](/cli/azure/role/definition#az-role-definition-list).
 
 ## <a name="built-in-role-descriptions"></a>Описание встроенных ролей
-В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `actions`, `notActions`, `dataActions` и `notDataActions` для каждой роли.
+В таблице ниже содержатся краткие описания встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли.
 
 
 | Встроенные роли | ОПИСАНИЕ |
@@ -78,6 +78,8 @@ ms.locfileid: "37437932"
 | [Оператор приложений логики](#logic-app-operator) | Позволяет читать, включать и отключать приложения логики. |
 | [Участник управляемого удостоверения](#managed-identity-contributor) | Создание, чтение, обновление и удаление пользовательских удостоверений. |
 | [Оператор управляемого удостоверения](#managed-identity-operator) | Чтение и назначение пользовательских удостоверений. |
+| [Участник группы управления](#management-group-contributor) | Роль участника группы управления |
+| [Читатель группы управления](#management-group-reader) | Роль читателя группы управления |
 | [Monitoring Contributor](#monitoring-contributor) (Участник мониторинга) | Может читать все данные мониторинга и изменять параметры мониторинга. Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md#built-in-monitoring-roles). |
 | [Monitoring Reader](#monitoring-reader) (Читатель данных мониторинга) | Может читать все данные мониторинга (метрики, журналы и т. д.). Ознакомьтесь также со статьей [Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor](../monitoring-and-diagnostics/monitoring-roles-permissions-security.md#built-in-monitoring-roles). |
 | [Участник сети](#network-contributor) | Позволяет управлять сетями, но не доступом к ним. |
@@ -617,7 +619,7 @@ ms.locfileid: "37437932"
 > | Microsoft.ClassicNetwork/virtualNetworks/join/action | Подключает виртуальную сеть. |
 > | Microsoft.ClassicNetwork/virtualNetworks/read | Возвращает виртуальную сеть. |
 > | Microsoft.ClassicStorage/storageAccounts/disks/read | Возвращает диск в учетной записи хранения. |
-> | Microsoft.ClassicStorage/storageAccounts/images/read | Возвращает образ в учетной записи хранения. |
+> | Microsoft.ClassicStorage/storageAccounts/images/read | Возвращает образ в учетной записи хранения. (Не рекомендуется к использованию. Следует использовать Microsoft.ClassicStorage/storageAccounts/vmImages.) |
 > | Microsoft.ClassicStorage/storageAccounts/listKeys/action | Отображает ключи доступа для учетных записей хранения. |
 > | Microsoft.ClassicStorage/storageAccounts/read | Возвращает учетную запись хранения для заданной учетной записи. |
 > | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
@@ -826,6 +828,7 @@ ms.locfileid: "37437932"
 > | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
 > | Microsoft.LabServices/labAccounts/*/read |  |
 > | Microsoft.LabServices/labAccounts/createLab/action | Создание лаборатории в учетной записи лаборатории. |
+> | Microsoft.LabServices/labAccounts/sizes/getRegionalAvailability/action | Получение сведений о региональной доступности каждой категории размеров для учетной записи лаборатории. |
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Возвращает группы ресурсов или выводит их список. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
@@ -947,6 +950,28 @@ ms.locfileid: "37437932"
 > | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 
+## <a name="management-group-contributor"></a>Участник группы управления
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Роль участника группы управления |
+> | **Id** | 5d58bcaf-24a5-4b20-bdb6-eed9f69fbe4c |
+> | **Действия** |  |
+> | Microsoft.Management/managementGroups/delete | Удаление группы управления. |
+> | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
+> | Microsoft.Management/managementGroups/subscriptions/delete | Отмена связывания подписки с группой управления. |
+> | Microsoft.Management/managementGroups/subscriptions/write | Связывание существующей подписки с группой управления. |
+> | Microsoft.Management/managementGroups/write | Создание или обновление группы управления. |
+
+## <a name="management-group-reader"></a>Читатель группы управления
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Роль читателя группы управления |
+> | **Id** | ac63b705-f282-497d-ac71-919bf39d939d |
+> | **Действия** |  |
+> | Microsoft.Management/managementGroups/read | Вывод списка групп управления для пользователя, прошедшего проверку подлинности. |
+
 ## <a name="monitoring-contributor"></a>Monitoring Contributor
 > [!div class="mx-tableFixed"]
 > | | |
@@ -957,18 +982,18 @@ ms.locfileid: "37437932"
 > | */чтение | Чтение ресурсов всех типов, кроме секретов. |
 > | Microsoft.AlertsManagement/alerts/* |  |
 > | Microsoft.AlertsManagement/alertsSummary/* |  |
+> | Microsoft.Insights/actiongroups/* |  |
 > | Microsoft.Insights/AlertRules/* | Чтение, запись и удаление правила генерации оповещений. |
 > | Microsoft.Insights/components/* | Чтение, запись и удаление компонентов Application Insights. |
 > | Microsoft.Insights/DiagnosticSettings/* | Чтение, запись и удаление параметров диагностики. |
 > | Microsoft.Insights/eventtypes/* | Вывод списка событий журнала действий (событий управления) в подписке. Это разрешение применяется для доступа к журналу действий посредством кода или портала. |
 > | Microsoft.Insights/LogDefinitions/* | Это разрешение необходимо пользователям, которым требуется доступ к журналам действия на портале. Получение списка категорий журнала в журнале действий. |
+> | Microsoft.Insights/metricalerts/* |  |
 > | Microsoft.Insights/MetricDefinitions/* | Чтение определений метрик (вывод списка доступных типов метрик для ресурса). |
 > | Microsoft.Insights/Metrics/* | Чтение метрик для ресурса. |
 > | Microsoft.Insights/Register/Action | Регистрирует поставщик Microsoft Insights. |
-> | Microsoft.Insights/webtests/* | Чтение, запись и удаление веб-тестов Application Insights. |
-> | Microsoft.Insights/actiongroups/* |  |
-> | Microsoft.Insights/metricalerts/* |  |
 > | Microsoft.Insights/scheduledqueryrules/* |  |
+> | Microsoft.Insights/webtests/* | Чтение, запись и удаление веб-тестов Application Insights. |
 > | Microsoft.OperationalInsights/workspaces/intelligencepacks/* | Чтение, запись и удаление пакетов решений Log Analytics. |
 > | Microsoft.OperationalInsights/workspaces/savedSearches/* | Чтение, запись и удаление сохраненных поисков Log Analytics. |
 > | Microsoft.OperationalInsights/workspaces/search/action | Выполняет поисковый запрос. |
@@ -976,6 +1001,7 @@ ms.locfileid: "37437932"
 > | Microsoft.OperationalInsights/workspaces/storageinsightconfigs/* | Чтение, запись и удаление конфигураций подробных данных хранилища Log Analytics. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | Microsoft.WorkloadMonitor/workloads/* |  |
+> | Microsoft.WorkloadMonitor/workloadInsights/* |  |
 
 ## <a name="monitoring-reader"></a>Роль Monitoring Reader
 > [!div class="mx-tableFixed"]
@@ -1163,7 +1189,7 @@ ms.locfileid: "37437932"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/* | Создание зарегистрированных удостоверений и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationAlertSettings/* | Создание или обновление параметров оповещения репликации |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/* | Создание структур репликации и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationJobs/* | Создание заданий репликации и управление ими |
 > | Microsoft.RecoveryServices/vaults/replicationPolicies/* | Создание политик репликации и управление ими |
@@ -1197,20 +1223,20 @@ ms.locfileid: "37437932"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/operationResults/read | Операцию получения результатов операции можно использовать, чтобы получить состояние и результат асинхронно отправленной операции. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
-> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывает параметры оповещений. |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
+> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывание параметров оповещений |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/checkConsistency/action | Проверяет согласованность структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывает структуры. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывание структуры |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/reassociateGateway/action | Повторно задает связь шлюза. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/renewcertificate/action | Обновление сертификата для структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывает сети. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывает сетевые сопоставления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывает контейнеры защиты. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывание сети |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывание контейнеров защиты |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывает защищаемые элементы. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/applyRecoveryPoint/action | Применяет точку восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/failoverCommit/action | Выполняет отработку отказа с фиксацией. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/plannedFailover/action | Выполняет плановую отработку отказа. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывает защищенные элементы. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывание защищенных элементов |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/repairReplication/action | Исправляет репликацию. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/reProtect/action | Повторно защищает защищенный элемент. |
@@ -1218,17 +1244,17 @@ ms.locfileid: "37437932"
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | Тестирует очистку отработки отказа. |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Отработка отказа |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/updateMobilityService/action | Обновляет службу Mobility Service. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывает сопоставления контейнера защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывает поставщики служб восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/refreshProvider/action | Обновляет поставщик. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывает классификации хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывает сопоставления классификаций хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Считывает vCenter. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывание классификации хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Чтение vCenter |
 > | Microsoft.RecoveryServices/vaults/replicationJobs/* | Создание заданий репликации и управление ими |
-> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывает политики. |
+> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/failoverCommit/action | Выполняет отработку отказа с фиксацией для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/plannedFailover/action | Выполняет плановую отработку отказа для плана восстановления. |
-> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывает планы восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/reProtect/action | Повторно защищает план восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/testFailover/action | Тестирует отработку отказа для плана восстановления. |
 > | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/testFailoverCleanup/action | Тестирует очистку отработки отказа для плана восстановления. |
@@ -1261,23 +1287,23 @@ ms.locfileid: "37437932"
 > | Microsoft.RecoveryServices/Vaults/refreshContainers/read |  |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/operationResults/read | Операцию получения результатов операции можно использовать, чтобы получить состояние и результат асинхронно отправленной операции. |
 > | Microsoft.RecoveryServices/Vaults/registeredIdentities/read | Операцию получения контейнеров можно использовать для получения контейнеров, зарегистрированных для ресурса. |
-> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывает параметры оповещений. |
-> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывает события. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывает структуры. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывает сети. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывает сетевые сопоставления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывает контейнеры защиты. |
+> | Microsoft.RecoveryServices/vaults/replicationAlertSettings/read | Считывание параметров оповещений |
+> | Microsoft.RecoveryServices/vaults/replicationEvents/read | Считывание события |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/read | Считывание структуры |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/read | Считывание сети |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationNetworks/replicationNetworkMappings/read | Считывание сетевых сопоставлений |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/read | Считывание контейнеров защиты |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectableItems/read | Считывает защищаемые элементы. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывает защищенные элементы. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/read | Считывание защищенных элементов |
 > | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/recoveryPoints/read | Считывает точки восстановления для репликации. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывает сопоставления контейнера защиты. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывает поставщики служб восстановления. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывает классификации хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывает сопоставления классификаций хранилища. |
-> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Считывает vCenter. |
-> | Microsoft.RecoveryServices/vaults/replicationJobs/read | Считывает задания. |
-> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывает политики. |
-> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывает планы восстановления. |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectionContainerMappings/read | Считывание сопоставлений контейнера защиты |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationRecoveryServicesProviders/read | Считывание поставщиков службы восстановления |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/read | Считывание классификации хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationStorageClassifications/replicationStorageClassificationMappings/read | Считывание сопоставлений классификаций хранилища |
+> | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationvCenters/read | Чтение vCenter |
+> | Microsoft.RecoveryServices/vaults/replicationJobs/read | Считывание задания |
+> | Microsoft.RecoveryServices/vaults/replicationPolicies/read | Считывание политики |
+> | Microsoft.RecoveryServices/vaults/replicationRecoveryPlans/read | Считывание планов восстановления |
 > | Microsoft.RecoveryServices/Vaults/storageConfig/read |  |
 > | Microsoft.RecoveryServices/Vaults/tokenInfo/read | Возвращает сведения о маркере для хранилища служб восстановления. |
 > | Microsoft.RecoveryServices/Vaults/usages/read | Возвращает данные об использовании хранилища служб восстановления. |

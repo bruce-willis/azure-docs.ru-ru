@@ -9,12 +9,12 @@ ms.custom: DBs & servers
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: carlrab
-ms.openlocfilehash: 628d1bd3c38237db1d49826646bba989e158ed99
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0ae05456d957c6ebabe0faec7da4175618b191ef
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34644442"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036774"
 ---
 # <a name="azure-sql-database-connectivity-architecture"></a>Архитектура подключений к базе данных SQL Azure 
 
@@ -49,6 +49,9 @@ ms.locfileid: "34644442"
 Для подключений извне Azure по умолчанию действует политика подключения **Прокси-сервер**. Политика **Прокси-сервер** означает, что устанавливается сеанс TCP через шлюз базы данных SQL Azure и все последующие пакеты проходят через этот шлюз. Этот поток трафика представлен на схеме ниже.
 
 ![Общий вид архитектуры](./media/sql-database-connectivity-architecture/connectivity-from-outside-azure.png)
+
+> [!IMPORTANT]
+> При использовании конечных точек служб с базой данных SQL Azure политикой по умолчанию будет **перенаправление**. Поэтому, чтобы обеспечить подключение из виртуальной сети, необходимо разрешить исходящий трафик для всех IP-адресов базы данных SQL Azure, а не только IP-адресов шлюза. Это можно сделать с помощью тегов службы NSG (группы безопасности сети). Если вы хотите разрешить исходящий трафик только для IP-адресов шлюза, измените значение параметра на **Прокси-сервер**.
 
 ## <a name="azure-sql-database-gateway-ip-addresses"></a>IP-адреса шлюза базы данных SQL Azure
 

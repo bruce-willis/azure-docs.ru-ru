@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/05/2018
 ms.author: motanv
-ms.openlocfilehash: 26a954412b8755cd112bf2931ed9bdda291fd727
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 3774ae0572a87129fb089064cec9bb7957a98c22
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204844"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113245"
 ---
 # <a name="induce-controlled-chaos-in-service-fabric-clusters"></a>Вызов контролируемого хаоса в кластерах Service Fabric
 Крупномасштабные распределенные системы, такие как облачные инфраструктуры, ненадежны по своей сути. Azure Service Fabric позволяет разработчикам создавать надежные распределенные службы на основе ненадежной инфраструктуры. Чтобы писать надежные распределенные службы на основе ненадежной инфраструктуры, разработчики должны иметь возможность проверять стабильность работы своих служб, когда для базовой ненадежной инфраструктуры выполняются сложные переходы состояния из-за ошибок.

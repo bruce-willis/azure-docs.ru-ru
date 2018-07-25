@@ -6,23 +6,23 @@ ms.service: active-directory
 ms.component: B2B
 ms.topic: article
 ms.date: 05/11/2018
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: bc63e320053ec4e8dbb9f166a9a69bb24d91fa02
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 1ff2332e2867f99492d3da254282498d1627a5bf
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34259739"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39058266"
 ---
 # <a name="azure-active-directory-b2b-collaboration-faqs"></a>Часто задаваемые вопросы о службе совместной работы Azure Active Directory B2B
 
 Эти вопросы о службе совместной работы Azure Active Directory (Azure AD) B2B периодически обновляются для добавления новых разделов.
 
 ### <a name="can-we-customize-our-sign-in-page-so-it-is-more-intuitive-for-our-b2b-collaboration-guest-users"></a>Можно ли настроить более интуитивно понятную страницу входа для гостевых пользователей службы совместной работы B2B?
-Конечно. Ознакомьтесь с [записью блога об этой функции](https://blogs.technet.microsoft.com/enterprisemobility/2017/04/07/improving-the-branding-logic-of-azure-ad-login-pages/). Дополнительные сведения о настройке страницы входа вашей организации см. в статье [Добавление фирменной символики на страницу входа и панели доступа](../customize-branding.md).
+Конечно. Ознакомьтесь с [записью блога об этой функции](https://blogs.technet.microsoft.com/enterprisemobility/2017/04/07/improving-the-branding-logic-of-azure-ad-login-pages/). Дополнительные сведения о настройке страницы входа вашей организации см. в статье [Добавление фирменной символики на страницу входа и панели доступа](../fundamentals/customize-branding.md).
 
 ### <a name="can-b2b-collaboration-users-access-sharepoint-online-and-onedrive"></a>Имеют ли пользователи службы совместной работы B2B доступ к SharePoint Online и OneDrive?
 Да. Но возможность поиска имеющихся гостевых пользователей в средстве выбора людей в SharePoint Online **отключена** по умолчанию. Чтобы включить поиск имеющихся гостевых пользователей, установите для параметра **ShowPeoplePickerSuggestionsForGuestUsers** значение **Включено**. Вы можете включить этот параметр на уровне клиента или коллекции сайта. Его можно изменить с помощью командлетов Set-SPOTenant и Set-SPOSite. С помощью этих командлетов участники могут выполнить в каталоге поиск всех имеющихся гостевых пользователей. Изменения в области клиента не влияют на уже подготовленные сайты SharePoint Online.
@@ -44,6 +44,9 @@ ms.locfileid: "34259739"
 
 ### <a name="how-can-i-use-delayed-invitations"></a>Как настроить оправку приглашений с отложенной доставкой?
 Организации может потребоваться добавить пользователей службы совместной работы B2B, подготовить их для приложений (при необходимости), а затем отправить приглашения. Вы можете воспользоваться API-интерфейсом приглашения службы совместной работы B2B, чтобы настроить рабочий процесс подключения.
+
+### <a name="can-i-make-guest-users-visible-in-the-exchange-global-address-list"></a>Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов Exchange?
+Да. По умолчанию гостевые объекты не отображаются в списке глобальных адресов вашей организации, но их можно сделать видимыми с помощью Azure Active Directory PowerShell. Дополнительные сведения см. в разделе **Можно ли сделать так, чтобы гостевые пользователи отображались в глобальном списке адресов?** статьи [Гостевой доступ в группах Office 365](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6#PickTab=FAQ).
 
 ### <a name="can-i-make-a-guest-user-a-limited-administrator"></a>Можно ли назначить гостевого пользователя администратором с ограниченными правами?
 Конечно. Дополнительные сведения см. в статье [Назначение пользователю ролей администратора в предварительной версии Azure Active Directory](add-guest-to-role.md).

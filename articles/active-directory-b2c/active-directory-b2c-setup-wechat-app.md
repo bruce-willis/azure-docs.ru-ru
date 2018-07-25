@@ -1,23 +1,23 @@
 ---
-title: Настройка WeChat в Azure Active Directory B2C | Документация Майкрософт
-description: Обеспечение регистрации и входа для пользователей с учетными записями WeChat в приложениях, защищенных с помощью Azure Active Directory B2C.
+title: Настройка регистрации и входа с учетной записью WeChat в Azure Active Directory B2C | Документация Майкрософт
+description: Вы можете организовать в приложениях регистрацию и вход для клиентов с учетными записями WeChat при помощи Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 3/26/2017
+ms.date: 07/09/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: a18d41a4f45b147790a17664156659d282e710d4
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: e88187c5035abc28ca9deecaf8517e8a21e38d1d
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37445967"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952340"
 ---
-# <a name="azure-active-directory-b2c-provide-sign-up-and-sign-in-to-consumers-with-wechat-accounts"></a>Azure Active Directory B2C: организация регистрации и входа для потребителей с учетными записями WeChat
+# <a name="set-up-sign-up-and-sign-in-with-a-wechat-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью WeChat в Azure Active Directory B2C
 
 > [!NOTE]
 > Эта функция предоставляется в предварительной версии.
@@ -25,24 +25,31 @@ ms.locfileid: "37445967"
 
 ## <a name="create-a-wechat-application"></a>Создание приложения WeChat
 
-Чтобы использовать WeChat в качестве поставщика удостоверений в Azure Active Directory (Azure AD) B2C, необходимо сначала создать приложение WeChat и задать в нем правильные параметры. Для этого потребуется учетная запись WeChat. Если у вас ее нет, эту учетную запись можно получить, зарегистрировавшись с помощью одного из мобильных приложений WeChat или своего номера QQ. После этого зарегистрируйте учетную запись в программе для разработчиков WeChat. Дополнительные сведения см. [здесь](http://kf.qq.com/faq/161220Brem2Q161220uUjERB.html).
+Чтобы использовать учетную запись WeChat в качестве поставщика удостоверений для Azure Active Directory (Azure AD) B2C, необходимо создать в своем клиенте приложение, которое будет представлять этого поставщика. Если у вас нет учетной записи WeChat, см. страницу [http://kf.qq.com/faq/161220Brem2Q161220uUjERB.html](http://kf.qq.com/faq/161220Brem2Q161220uUjERB.html).
 
 ### <a name="register-a-wechat-application"></a>Регистрация приложения WeChat
 
-1. Перейдите на сайт [https://open.weixin.qq.com/](https://open.weixin.qq.com/) и войдите в систему.
-2. Щелкните **管理中心** (Центр управления).
+1. Войдите в [https://open.weixin.qq.com/](https://open.weixin.qq.com/) с учетными данными WeChat.
+2. Выберите **管理中心** (Центр управления).
 3. Выполните отображаемые инструкции, чтобы зарегистрировать новое приложение.
-4. В поле **授权回调域** (URL-адрес обратного вызова) введите `https://login.microsoftonline.com/te/{tenant_name}/oauth2/authresp`. Например если `tenant_name` — contoso.onmicrosoft.com, задайте URL-адрес `https://login.microsoftonline.com/te/contoso.onmicrosoft.com/oauth2/authresp`.
-5. Найдите и скопируйте **идентификатор приложения** и **ключ приложения**. Они вам потребуются позднее.
+4. Введите значение `https://login.microsoftonline.com/te/{tenant_name}/oauth2/authresp` в поле **授权回调域** (URL-адрес обратного вызова). Например если `tenant_name` — contoso.onmicrosoft.com, задайте URL-адрес `https://login.microsoftonline.com/te/contoso.onmicrosoft.com/oauth2/authresp`.
+5. Скопируйте **идентификатор приложения** и **ключ приложения**. Эти значения потребуются при добавлении поставщика удостоверений для вашего клиента.
 
 ## <a name="configure-wechat-as-an-identity-provider-in-your-tenant"></a>Настройка WeChat в качестве поставщика удостоверений в клиенте
-1. Выполните эти действия, чтобы [перейти к колонке функций B2C](active-directory-b2c-app-registration.md#navigate-to-b2c-settings) на портале Azure.
-2. В колонке функций B2C щелкните **Поставщики удостоверений**.
-3. Нажмите **+Добавить** в верхней части колонки.
-4. Укажите понятное **имя** конфигурации поставщика удостоверений. Например, введите "WeChat".
-5. Щелкните **Тип поставщика удостоверений**, выберите **WeChat** и нажмите кнопку **ОК**.
-6. Щелкните **Настроить этот поставщик удостоверений**.
-7. Введите **ключ приложения**, скопированный ранее, в поле **Идентификатор клиента**.
-8. Введите **секрет приложения**, скопированный ранее, в поле **Секрет клиента**.
-9. Нажмите кнопку **ОК**, а затем — **Создать**, чтобы сохранить конфигурацию WeChat.
+
+1. Войдите на [портал Azure](https://portal.azure.com/) с правами глобального администратора клиента Azure AD B2C.
+2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**. 
+
+    ![Переключение на клиент Azure AD B2C](./media/active-directory-b2c-setup-wechat-app/switch-directories.png)
+
+    Выберите каталог, содержащий ваш клиент.
+
+    ![Выбор каталога](./media/active-directory-b2c-setup-wechat-app/select-directory.png)
+
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее.
+4. Щелкните **Поставщики удостоверений** и выберите **Добавить**.
+5. Укажите **имя**. Например, введите *WeChat*.
+6. Щелкните **Тип поставщика удостоверений**, выберите **WeChat (Preview)** (WeChat (предварительная версия)) и щелкните **ОК**.
+7. Выберите **Настроить этот поставщик удостоверений** и введите в поле **Идентификатор клиента** сохраненный идентификатор приложения, а в поле **Секрет клиента** — сохраненный ключ приложения WeChat, которое вы создали ранее.
+8. Нажмите кнопку **ОК**, а затем — **Создать**, чтобы сохранить конфигурацию WeChat.
 

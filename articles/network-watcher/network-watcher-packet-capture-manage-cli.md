@@ -1,6 +1,6 @@
 ---
-title: Управление записью пакетов с помощью Наблюдателя за сетями Azure (Azure CLI 2.0) | Документация Майкрософт
-description: В этой статье объясняется, как с помощью Azure CLI 2.0 управлять функцией записи пакетов в Наблюдателе за сетями.
+title: Управление записью пакетов с помощью Наблюдателя за сетями Azure (Azure CLI) | Документация Майкрософт
+description: В этой статье объясняется, как с помощью Azure CLI управлять функцией записи пакетов в службе "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
 author: jimdial
@@ -14,20 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 4c0b65411e9846077036e16204b7a407c6c7ee9e
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 9b40a85cf3c4edd26f2fc15045f3d6862d4ac1ff
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34261775"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090492"
 ---
-# <a name="manage-packet-captures-with-azure-network-watcher-using-azure-cli-20"></a>Управление записью пакетов с помощью Наблюдателя за сетями Azure в Azure CLI 2.0
+# <a name="manage-packet-captures-with-azure-network-watcher-using-the-azure-cli"></a>Управление записью пакетов с помощью службы "Наблюдатель за сетями Azure" посредством Azure CLI
 
 > [!div class="op_single_selector"]
 > - [портал Azure](network-watcher-packet-capture-manage-portal.md)
 > - [PowerShell](network-watcher-packet-capture-manage-powershell.md)
-> - [Интерфейс командной строки 1.0](network-watcher-packet-capture-manage-cli-nodejs.md)
-> - [CLI 2.0](network-watcher-packet-capture-manage-cli.md)
+> - [интерфейс командной строки Azure](network-watcher-packet-capture-manage-cli.md)
 > - [Azure REST API](network-watcher-packet-capture-manage-rest.md)
 
 Возможность записи пакетов Наблюдателя за сетями позволяет создавать сеансы записи для отслеживания входящего и исходящего трафика виртуальной машины. Для сеанса записи предоставляются фильтры, которые позволяют убедиться, что записывается только требуемый трафик. Записи пакетов помогают выявить аномалии в работе сети по факту или заранее. Они также помогают выполнять сбор сетевой статистики, получать сведения о сетевых вторжениях, выполнять отладку передачи данных между клиентом и сервером и многое другое. Так как запись пакетов активируется удаленно, ее не нужно запускать вручную. К тому же она сразу выполняется на требуемой виртуальной машине, что также позволяет сэкономить ценное время.

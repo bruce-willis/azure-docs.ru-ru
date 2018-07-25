@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: 8cb7cd84e68420006e7c598c224580c9150ab1c7
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 6cdfb40ce02cc5f80e3347b921e2b2c75ae3d8ea
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34070504"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37437143"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -207,7 +207,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 ### <a name="how-can-i-implement-role-based-access-for-cloud-services"></a>Как реализовать доступ на основе ролей для облачных служб?
 Облачные службы не поддерживают модель управления доступом на основе ролей (RBAC), так как она не является службой на основе Azure Resource Manager.
 
-См. [Управление доступом на основе ролей в Azure и классические администраторы подписки](../role-based-access-control/overview.md#azure-rbac-vs-classic-subscription-administrators).
+См. [сведения о различных ролях в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md).
 
 ## <a name="remote-desktop"></a>Удаленный рабочий стол
 

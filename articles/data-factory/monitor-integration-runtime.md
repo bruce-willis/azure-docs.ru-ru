@@ -4,21 +4,21 @@ description: Узнайте, как отслеживать различные т
 services: data-factory
 documentationcenter: ''
 author: douglaslMS
-manager: ''
+manager: craigg
 editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/23/2017
+ms.date: 07/16/2018
 ms.author: douglasl
-ms.openlocfilehash: 523d50623257d3944342cb174174e27bd4731248
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 4da9696761747874395ec90cb3b446e3621650ba
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045251"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113263"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:
@@ -192,6 +192,24 @@ Get-AzureRmDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -
 | Started | Узлы среды выполнения интеграции SSIS Azure выделены или подготовлены и готовы к развертыванию и выполнению пакетов служб SSIS. |
 | Остановка  | Узлы среды выполнения интеграции SSIS Azure освобождаются. |
 | Остановлено | Узлы среды выполнения интеграции SSIS Azure выпущены, выставления счетов остановлено. |
+
+### <a name="monitor-the-azure-ssis-integration-runtime-in-the-azure-portal"></a>Мониторинг среды выполнения интеграции Azure SSIS в портале Azure
+
+На приведенных ниже скриншотах показано, как выбрать среду выполнения интеграции Azure-SSIS для мониторинга, и предоставлен пример отображаемых данных.
+
+![Выбор среды выполнения интеграции Azure SSIS для мониторинга](media/monitor-integration-runtime/monitor-azure-ssis-ir-image1.png)
+
+![Просмотр сведений о среде выполнения интеграции Azure SSIS](media/monitor-integration-runtime/monitor-azure-ssis-ir-image2.png)
+
+### <a name="monitor-the-azure-ssis-integration-runtime-with-powershell"></a>Мониторинг среды выполнения интеграции Azure SSIS с помощью PowerShell
+
+Для проверки состояния в среде выполнения интеграции Azure SSIS используйте сценарий, аналогичный следующему примеру.
+
+```powershell
+Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName $DataFactoryName -Name $AzureSSISName -ResourceGroupName $ResourceGroupName -Status
+```
+
+### <a name="more-info-about-the-azure-ssis-integration-runtime"></a>Дополнительная информация о среде выполнения интеграции Azure-SSIS
 
 Дополнительные сведения о среде выполнения интеграции SSIS Azure см. в следующих разделах:
 

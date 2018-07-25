@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
 ms.author: daveba
-ms.openlocfilehash: 9f550af869ccfc44ba4d840f54503ad017cdaf95
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: ab3982c85cfb008bde08495f8cb8aa86d066d8c0
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901217"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114860"
 ---
 # <a name="configure-a-vmss-managed-service-identity-by-using-a-template"></a>Настройка Управляемого удостоверения службы в масштабируемом наборе виртуальных машин с помощью шаблона
 
@@ -31,7 +31,7 @@ ms.locfileid: "37901217"
 - включать и отключать назначенное системой удостоверение в масштабируемом наборе виртуальных машин Azure;
 - добавлять и удалять назначенное пользователем удостоверение в масштабируемом наборе виртуальных машин Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -55,7 +55,7 @@ ms.locfileid: "37901217"
 
 1. Загрузив шаблон в редактор, найдите нужный ресурс `Microsoft.Compute/virtualMachineScaleSets` в разделе `resources`. Имя вашего ресурса может немного отличаться от указанного на этом снимке экрана, в зависимости от используемого редактора и от того, изменяете ли вы шаблон для нового или имеющегося развертывания.
    
-   ![Снимок экрана шаблона: поиск виртуальной машины](../media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-before-vmss.png) 
+   ![Снимок экрана шаблона: поиск виртуальной машины](../managed-service-identity/media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-before-vmss.png) 
 
 2. Чтобы включить назначенное системой удостоверение, добавьте свойство `"identity"` на том же уровне, что и свойство `"type": "Microsoft.Compute/virtualMachineScaleSets"`. Используйте следующий синтаксис:
 
@@ -91,7 +91,7 @@ ms.locfileid: "37901217"
 
 4. По завершении шаблон должен выглядеть следующим образом.
 
-   ![Снимок экрана шаблона после изменения](../media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-after-vmss.png) 
+   ![Снимок экрана шаблона после изменения](../managed-service-identity/media/msi-qs-configure-template-windows-vmss/msi-arm-template-file-after-vmss.png) 
 
 ### <a name="disable-a-system-assigned-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение назначенного системой удостоверения в масштабируемом наборе виртуальных машин Azure
 
@@ -111,7 +111,10 @@ ms.locfileid: "37901217"
 
 ### <a name="assign-a-user-assigned-identity-to-an-azure-vmss"></a>Присвоение назначенного пользователем удостоверения масштабируемому набору виртуальных машин Azure
 
-1. Чтобы присвоить назначенное пользователем удостоверение масштабируемому набору виртуальных машин, в элементе `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` на имя созданного удостоверения, назначенного пользователем.
+1. Чтобы присвоить назначенное пользователем удостоверение масштабируемому набору виртуальных машин, в элементе `resources` добавьте приведенную ниже запись.  Не забудьте заменить `<USERASSIGNEDIDENTITY>` именем созданного пользовательского удостоверения.
+
+   > [!Important]
+   > Значение `<USERASSIGNEDIDENTITYNAME>`, показанное в следующем примере, должно храниться в переменной.  Кроме того, для поддерживаемой в настоящее время реализации назначения виртуальной машине назначенных пользователем удостоверений в шаблоне Resource Manager версия api должна соответствовать версии в следующем примере. 
 
     ```json
     {
@@ -121,7 +124,7 @@ ms.locfileid: "37901217"
         "identity": {
             "type": "userAssigned",
             "identityIds": [
-                "[resourceID('Micrososft.ManagedIdentity/userAssignedIdentities/<USERASSIGNEDIDENTITY>)']"
+                "[resourceID('Micrososft.ManagedIdentity/userAssignedIdentities/',variables('<USERASSIGNEDIDENTITY>'))]"
             ]
         }
 

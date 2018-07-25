@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: d7b92359e8875c281fd460f1f5307a7941c11c1f
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 99d69c7e49179a7849e274c830d539833da33786
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261582"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049458"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central
 
@@ -82,7 +82,8 @@ ms.locfileid: "35261582"
 | type            | Отображаемое имя | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | number    |
-| текст            | Расположение     | location   | Недоступно       |
+| Свойство устройства | Расположение устройства   | location  | location    |
+| текст            | Произведено в     | manufacturedIn   | Недоступно       |
 
 
 ### <a name="add-a-real-device"></a>Добавление реального устройства
@@ -91,8 +92,8 @@ ms.locfileid: "35261582"
 
 ## <a name="prepare-the-devkit-device"></a>Подготовка устройства DevKit
 
-> [!TIP]
-> Рекомендации по устранению неполадок устройства DevKit см. [здесь](https://microsoft.github.io/azure-iot-developer-kit/docs/get-started/).
+> [!NOTE]
+> Если вы ранее использовали устройство и сохраняли учетные данные для Wi-Fi, для того чтобы перенастроить устройство для использования другой сети Wi-Fi, строки подключения или измерения телеметрии, одновременно нажмите на клавиатуре клавиши **A** и **B**. Если это не помогло, нажмите кнопку **сброса** и повторите попытку.
 
 Чтобы подготовить устройство DevKit, сделайте следующее:
 
@@ -127,7 +128,7 @@ ms.locfileid: "35261582"
     - Введите пароль сети Wi-Fi. 
     - Укажите ПИН-код, который отображается на ЖК-мониторе устройства. 
     - Введите строку подключения к устройству. 
-      Вы можете использовать строку подключения @ `https://apps.iotcentral.com` -> `Device Explorer` -> `Device` -> `Select or Create a new Real Device` -> `Connect this device` (в правом верхнем углу). 
+      Вы можете использовать строку подключения \@ `https://apps.iotcentral.com` -> `Device Explorer` -> `Device` -> `Select or Create a new Real Device` -> `Connect this device` (в правом верхнем углу). 
     - Выберите все доступные измерения телеметрии. 
 
 1. Если выбрать **Настройка устройства**, откроется следующая страница:
@@ -136,8 +137,7 @@ ms.locfileid: "35261582"
 
 1. Нажмите кнопку **Reset** (Сбросить) на устройстве.
 
-> [!NOTE]
-> Чтобы перенастроить устройство для использования другой сети Wi-Fi, строки подключения или измерения телеметрии, одновременно нажмите на клавиатуре клавиши **A** и **B**. Если это не помогло, нажмите кнопку **сброса** и повторите попытку. 
+
 
 ## <a name="view-the-telemetry"></a>Просмотр телеметрии
 
@@ -153,19 +153,24 @@ ms.locfileid: "35261582"
 
 1. Используйте **Device Explorer**, чтобы перейти на страницу **Measurements** (Измерения) реального устройства MXChip, которое вы добавили:
 
-    ![Переход к реальному устройству](media/howto-connect-devkit/realdevice.png)
+    ![Переход к реальному устройству](media/howto-connect-devkit/realdevicenew.png)
 
 1. На странице **Measurements** (Измерения) можно просмотреть данные телеметрии, поступающие из устройства MXChip.
 
-    ![Просмотр данных телеметрии из реального устройства](media/howto-connect-devkit/realtelemetry.png)
+    ![Просмотр данных телеметрии из реального устройства](media/howto-connect-devkit/devicetelemetrynew.png)
 
-1. На странице **Свойства** можно просмотреть последний серийный номер, сообщенный устройством:
+1. На странице **Свойства** можно просмотреть последний серийный номер и сведения о расположении устройства, переданные устройством:
 
-    ![Просмотр свойств устройства](media/howto-connect-devkit/deviceproperties.png)
+    ![Просмотр свойств устройства](media/howto-connect-devkit/devicepropertynew.png)
 
 1. На странице **Параметры** можно обновить параметры устройства MXChip:
 
-    ![Просмотр параметров устройства](media/howto-connect-devkit/settings.png)
+    ![Просмотр параметров устройства](media/howto-connect-devkit/devicesettingsnew.png)
+
+1. На странице **Панель мониторинга** вы увидите карту расположения.
+
+    ![Просмотр панели мониторинга устройства](media/howto-connect-devkit/devicedashboardnew.png)
+
 
 ## <a name="download-the-source-code"></a>Скачивание исходного кода
 

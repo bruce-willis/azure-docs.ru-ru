@@ -7,14 +7,14 @@ manager: rochakm
 ms.service: site-recovery
 ms.devlang: na
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 07/13/2018
 ms.author: sujayt
-ms.openlocfilehash: bac4c1d02df644eedbccb38872a6b0f3e7d11c91
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 3825183fa7e8ca15a86935b5b96ff8d25d7bef14
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37919793"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39070897"
 ---
 # <a name="support-matrix-for-replicating-from-one-azure-region-to-another"></a>Матрицы поддержки для репликации из одного региона Azure в другой
 
@@ -73,8 +73,8 @@ ms.locfileid: "37919793"
 
 #### <a name="linux"></a>Linux
 
-- Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4.
-- CentOS 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4.
+- Red Hat Enterprise Linux 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5   
+- CentOS 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3,7.4, 7.5
 - Сервер Ubuntu версии 14.04 LTS [(поддерживаемые версии ядра)](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 - Сервер Ubuntu версии 16.04 LTS [(поддерживаемые версии ядра)](#supported-ubuntu-kernel-versions-for-azure-virtual-machines)
 - Debian 7 [ (поддерживаемые версии ядра)](#supported-debian-kernel-versions-for-azure-virtual-machines)
@@ -94,31 +94,32 @@ ms.locfileid: "37919793"
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+14.04 LTS | 9.18 | С 3.13.0-24-generic по 3.13.0-151-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-128-generic. |
 14.04 LTS | 9.17 | С 3.13.0-24-generic по 3.13.0-147-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>С 4.4.0-21-generic по 4.4.0-124-generic |
 14.04 LTS | 9.16 | С 3.13.0-24-generic по 3.13.0-144-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-119-generic. |
 14.04 LTS | 9.15 | С 3.13.0-24-generic по 3.13.0-143-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-116-generic |
-14.04 LTS | 9.14 | С 3.13.0-24-generic по 3.13.0-141-generic,<br/>3.16.0-25-generic to 3.16.0-77-generic,<br/>3.19.0-18-generic to 3.19.0-80-generic,<br/>4.2.0-18-generic to 4.2.0-42-generic,<br/>с 4.4.0-21-generic по 4.4.0-112-generic |
 |||
+16.04 LTS | 9.18 | С 4.4.0-21-generic по 4.4.0-128-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-45-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1018-azure. |
 16.04 LTS | 9.17 | С 4.4.0-21-generic по 4.4.0-124-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>С 4.13.0-16-generic по 4.13.0-41-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>С 4.13.0-1005-azure по 4.13.0-1016-azure |
 16.04 LTS | 9.16 | С 4.4.0-21-generic по 4.4.0-119-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-38-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
 16.04 LTS | 9.15 | С 4.4.0-21-generic по 4.4.0-116-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-37-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1012-azure. |
-16.04 LTS | 9.14 | С 4.4.0-21-generic по 4.4.0-112-generic,<br/>с 4.8.0-34-generic по 4.8.0-58-generic<br/>с 4.10.0-14-generic по 4.10.0-42-generic,<br/>с 4.11.0-13-generic по 4.11.0-14-generic,<br/>с 4.13.0-16-generic по 4.13.0-32-generic,<br/>с 4.11.0-1009-azure по 4.11.0-1016-azure,<br/>с 4.13.0-1005-azure по 4.13.0-1009-azure |
 
 
 ### <a name="supported-debian-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра Debian для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
-Debian 7 | 9.17 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
-Debian 7 | 9.14, 9.15, 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.17, 9.18 | С 3.2.0-4-amd64 по 3.2.0-6-amd64, 3.16.0-0.bpo.4-amd64 |
+Debian 7 | 9.15, 9.16 | С 3.2.0-4-amd64 по 3.2.0-5-amd64, 3.16.0-0.bpo.4-amd64 |
 |||
-Debian 8; | 9.17 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
-Debian 8; | 9.14, 9.15, 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
+Debian 8; | 9.17, 9.18 | С 3.16.0-4-amd64 по 3.16.0-6-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.6-amd64 |
+Debian 8; | 9.15, 9.16 | С 3.16.0-4-amd64 по 3.16.0-5-amd64, с 4.9.0-0.bpo.4-amd64 по 4.9.0-0.bpo.5-amd64 |
 
 ### <a name="supported-suse-linux-enterprise-server-12-kernel-versions-for-azure-virtual-machines"></a>Поддерживаемые версии ядра SUSE Linux Enterprise Server 12 для виртуальных машин Azure
 
 **Выпуск** | **Версия службы Mobility Service** | **Версия ядра** |
 --- | --- | --- |
+SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.18 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.93-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>С SP2(LTSS) 4.4.121-92.73-default по 4.4.121-92.80-default</br></br>С SP3 4.4.73-5-default по 4.4.138-94.39-default |
 SUSE Linux Enterprise Server 12 (SP1, SP2, SP3) | 9.17 | С SP1 3.12.49-11-default по 3.12.74-60.64.40-default</br></br> С SP1(LTSS) 3.12.74-60.64.45-default по 3.12.74-60.64.88-default</br></br> С SP2 4.4.21-69-default по 4.4.120-92.70-default</br></br>SP2(LTSS) 4.4.121-92.73-default</br></br>С SP3 4.4.73-5-default по 4.4.126-94.22-default |
 
 ## <a name="supported-file-systems-and-guest-storage-configurations-on-azure-virtual-machines-running-linux-os"></a>Поддерживаемые файловые системы и конфигурации гостевого хранилища на виртуальных машинах Azure под управлением ОС Linux

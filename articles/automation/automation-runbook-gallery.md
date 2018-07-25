@@ -6,20 +6,20 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/16/2018
+ms.date: 07/13/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 61d267898bab5e5df394d4097eacb33ada809518
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 489d9c430db000710368a65f3100bb175ad00eae
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34355956"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39041189"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться разнообразными сценариями, уже созданными корпорацией Майкрософт и сообществом.  Эти готовые сценарии можно применять без изменений или использовать в качестве отправной точки, модифицируя их под свои задачи.
 
-Модули Runbook можно получить из [коллекции Runbook](#runbooks-in-runbook-gallery), а другие модули — из [коллекции PowerShell](#modules-in-powerShell-gallery).  Также вы можете поделиться с сообществом сценариями, которые вы разработали.
+Модули Runbook можно получить из [коллекции Runbook](#runbooks-in-runbook-gallery), а другие модули — из [коллекции PowerShell](#modules-in-powerShell-gallery).  Также вы можете поделиться с сообществом сценариями, которые вы разработали: см. раздел, посвященный [добавлению модуля Runbook в коллекцию](automation-runbook-gallery.md#adding-a-runbook-to-the-runbook-gallery).
 
 ## <a name="runbooks-in-runbook-gallery"></a>Модули Runbook в коллекции Runbook
 [Коллекция Runbook](http://gallery.technet.microsoft.com/scriptcenter/site/search?f\[0\].Type=RootCategory&f\[0\].Value=WindowsAzure&f\[1\].Type=SubCategory&f\[1\].Value=WindowsAzure_automation&f\[1\].Text=Automation) содержит разнообразные модули Runbook, созданные корпорацией Майкрософт и сообществом, которые вы можете импортировать в службу автоматизации Azure. Модуль runbook можно скачать из коллекции в [центре скриптов TechNet](https://gallery.technet.microsoft.com/scriptcenter/site/upload) или импортировать непосредственно из коллекции на портале Azure.

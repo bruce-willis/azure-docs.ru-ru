@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
 ms.author: danlep
-ms.openlocfilehash: 29ac86ed5c744d37150b0f1b2db17f60306fe77e
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: fd4226254e076957ac8651f9172f1f3f82427a60
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31799805"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39001836"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 
@@ -43,7 +43,7 @@ Azure и пакетная служба предоставляют широкий
 
 В приложениях пакетной службы вы можете применить API-интерфейсы пакетной службы для отслеживания и запроса состояний ресурсов, таких как задания, задачи, узлы и пулы. Например: 
 
-* [Подсчет задач по состоянию](batch-get-task-counts.md)
+* [получение количества задач и вычислительных узлов с учетом состояния](batch-get-resource-counts.md);
 * [эффективное создание запросов на вывод списка ресурсов пакетной службы](batch-efficient-list-queries.md);
 * [создание зависимостей задач](batch-task-dependencies.md);
 * использование [задач диспетчера заданий](/rest/api/batchservice/job/add#jobmanagertask);

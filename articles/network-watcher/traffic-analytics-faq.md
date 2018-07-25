@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
 ms.author: jdial
-ms.openlocfilehash: a4b87d92751c84d96bc70915d16adae7943c145e
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 9f7fb5009468dccae50190ee40a53d11040d0348
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062883"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37903753"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Вопросы и ответы об Аналитике трафика Azure
 
@@ -194,7 +194,9 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 ## <a name="how-is-traffic-analytics-priced"></a>Как образуются цены на Аналитику трафика?
 
-Использование решения "Аналитика трафика" измеряется на основе обработки данных журнала потоков службой и сохранении полученных расширенных журналов в рабочей области Log Analytics. Дополнительные сведения см. на [странице с планом ценообразования](https://azure.microsoft.com/en-us/pricing/details/network-watcher/). 
+Использование решения "Аналитика трафика" измеряется на основе обработки данных журнала потоков службой и сохранении полученных расширенных журналов в рабочей области Log Analytics. 
+
+Например, согласно [тарифному плану](https://azure.microsoft.com/en-us/pricing/details/network-watcher/) для региона "Центрально-западная часть США", если объем данных в журналах потоков, хранящихся в учетной записи хранения и обрабатываемых решением "Аналитика трафика", составляет 10 ГБ, а объем улучшенных журналов, принятых в рабочей области Log Analytics, — 1 ГБ, то применимый тариф рассчитывается так: 10 x 2,3 долл. США + 1 x 2,76 долл. США = 25,76 долл. США.
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Как перемещаться в представлении географической карты с помощью клавиатуры?
 

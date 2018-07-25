@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/08/2017
 ms.author: tdykstra
-ms.openlocfilehash: 51b9f7bfd25da7dfd4ae9038f8dab70e9232b944
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 2e6b63e3ff48d4234bceadfe0556a8af92d9f8cc
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34724587"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136593"
 ---
 # <a name="azure-table-storage-bindings-for-azure-functions"></a>Привязки хранилища таблиц Azure для службы "Функции Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "34724587"
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
-## <a name="packages---functions-1x"></a>Пакеты — Функции 1.x
+## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
 Привязки службы "Хранилище таблиц" доступны в пакете NuGet [Microsoft.Azure.WebJobs](http://www.nuget.org/packages/Microsoft.Azure.WebJobs) версии 2.х. Исходный код для пакета находится в репозитории GitHub [azure-webjobs-sdk](https://github.com/Azure/azure-webjobs-sdk/tree/v2.x/src/Microsoft.Azure.WebJobs.Storage/Table).
 
@@ -50,14 +50,16 @@ ms.locfileid: "34724587"
 
 Языковой пример см. в разделах:
 
-* [C# — чтение одной сущности](#input---c-example-1);
-* [C# — чтение нескольких сущностей](#input---c-example-2);
-* [Скрипт C# — чтение одной сущности](#input---c-script-example-1);
-* [Скрипт C# — чтение нескольких сущностей](#input---c-script-example-2);
-* [F#](#input---f-example-2)
+* [C# — чтение одной сущности](#input---c-example---one-entity);
+* [C# — привязка к IQueryable](#input---c-example---iqueryable)
+* [C# — привязка к CloudTable](#input---c-example---cloudtable)
+* [Скрипт C# — чтение одной сущности](#input---c-script-example---one-entity)
+* [Скрипт C# — привязка к IQueryable](#input---c-script-example---iqueryable)
+* [Скрипт C# — привязка к CloudTable](#input---c-script-example---cloudtable)
+* [F#](#input---f-example)
 * [JavaScript](#input---javascript-example)
 
-### <a name="input---c-example-1"></a>Пример 1 входных данных C#
+### <a name="input---c-example---one-entity"></a>Пример входных данных C# — одна сущность
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает одну строку таблицы. 
 
@@ -84,7 +86,7 @@ public class TableStorage
 }
 ```
 
-### <a name="input---c-example-2"></a>Пример 2 входных данных C#
+### <a name="input---c-example---iqueryable"></a>Пример входных данных C# — IQueryable
 
 В следующем примере показана [функция C#](functions-dotnet-class-library.md), которая считывает несколько строк таблицы. Обратите внимание, что класс `MyPoco` является производным от `TableEntity`.
 
@@ -110,10 +112,58 @@ public class TableStorage
 }
 ```
 
-  > [!NOTE]
-  > `IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является [использование параметра метода CloudTable paramName](https://stackoverflow.com/questions/48922485/binding-to-table-storage-in-v2-azure-functions-using-cloudtable) для чтения таблицы с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+### <a name="input---c-example---cloudtable"></a>Пример входных данных C# — CloudTable
 
-### <a name="input---c-script-example-1"></a>Пример 1 входных данных скрипта C#
+`IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Ниже приведен пример функции 2.x, которая запрашивает таблицу журнала функций Azure.
+
+```csharp
+using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.WindowsAzure.Storage.Table;
+using System;
+using System.Threading.Tasks;
+
+namespace FunctionAppCloudTable2
+{
+    public class LogEntity : TableEntity
+    {
+        public string OriginalName { get; set; }
+    }
+    public static class CloudTableDemo
+    {
+        [FunctionName("CloudTableDemo")]
+        public static async Task Run(
+            [TimerTrigger("0 */1 * * * *")] TimerInfo myTimer, 
+            [Table("AzureWebJobsHostLogscommon")] CloudTable cloudTable,
+            TraceWriter log)
+        {
+            log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+
+            TableQuery<LogEntity> rangeQuery = new TableQuery<LogEntity>().Where(
+                TableQuery.CombineFilters(
+                    TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, 
+                        "FD2"),
+                    TableOperators.And,
+                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.GreaterThan, 
+                        "t")));
+
+            // Execute the query and loop through the results
+            foreach (LogEntity entity in 
+                await cloudTable.ExecuteQuerySegmentedAsync(rangeQuery, null))
+            {
+                log.Info(
+                    $"{entity.PartitionKey}\t{entity.RowKey}\t{entity.Timestamp}\t{entity.OriginalName}");
+            }
+        }
+    }
+}
+```
+
+Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/table-storage-how-to-use-dotnet.md).
+
+Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+
+### <a name="input---c-script-example---one-entity"></a>Пример входных данных скрипта C# — одна сущность
 
 В следующем примере показана входная привязка таблицы в файле *function.json* и коде [скрипта C#](functions-reference-csharp.md), который использует привязку. Функция использует триггер очереди для чтения одной строки таблицы. 
 
@@ -162,7 +212,7 @@ public class Person
 }
 ```
 
-### <a name="input---c-script-example-2"></a>Пример 2 входных данных скрипта C#
+### <a name="input---c-script-example---iqueryable"></a>Пример входных данных скрипта C# — IQueryable
 
 В следующем примере показана входная привязка таблицы в файле *function.json* и коде [скрипта C#](functions-reference-csharp.md), который использует привязку. Функция считывает сущности ключа раздела, который указан в очереди сообщений.
 
@@ -212,6 +262,68 @@ public class Person : TableEntity
     public string Name { get; set; }
 }
 ```
+
+### <a name="input---c-script-example---cloudtable"></a>Пример входных данных скрипта C# — CloudTable
+
+`IQueryable` не поддерживается в [среде выполнения Функций версии 2](functions-versions.md). Альтернативой является использование параметра метода `CloudTable` для чтения таблицы с помощью пакета SDK службы хранилища Azure. Ниже приведен пример функции 2.x, которая запрашивает таблицу журнала функций Azure.
+
+```json
+{
+  "bindings": [
+    {
+      "name": "myTimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 */1 * * * *"
+    },
+    {
+      "name": "cloudTable",
+      "type": "table",
+      "connection": "AzureWebJobsStorage",
+      "tableName": "AzureWebJobsHostLogscommon",
+      "direction": "in"
+    }
+  ],
+  "disabled": false
+}
+```
+
+```csharp
+#r "Microsoft.WindowsAzure.Storage"
+using Microsoft.WindowsAzure.Storage.Table;
+using System;
+using System.Threading.Tasks;
+
+public static async Task Run(TimerInfo myTimer, CloudTable cloudTable, TraceWriter log)
+{
+    log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+
+    TableQuery<LogEntity> rangeQuery = new TableQuery<LogEntity>().Where(
+    TableQuery.CombineFilters(
+        TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, 
+            "FD2"),
+        TableOperators.And,
+        TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.GreaterThan, 
+            "a")));
+
+    // Execute the query and loop through the results
+    foreach (LogEntity entity in 
+    await cloudTable.ExecuteQuerySegmentedAsync(rangeQuery, null))
+    {
+        log.Info(
+            $"{entity.PartitionKey}\t{entity.RowKey}\t{entity.Timestamp}\t{entity.OriginalName}");
+    }
+}
+
+public class LogEntity : TableEntity
+{
+    public string OriginalName { get; set; }
+}
+```
+
+Дополнительную информацию об использовании CloudTable см. в статье [Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET](../cosmos-db/table-storage-how-to-use-dotnet.md).
+
+Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
 
 ### <a name="input---f-example"></a>Пример входных данных F#
 
@@ -372,7 +484,7 @@ module.exports = function (context, myQueueItem) {
 |**tableName** | **TableName** | Это имя таблицы.| 
 |**partitionKey** | **PartitionKey** |Необязательный элемент. Ключ раздела сущности таблицы, которую нужно считать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
 |**rowKey** |**RowKey** | Необязательный элемент. Ключ строки сущности таблицы, которую нужно считать. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
-|**take** |**take** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
+|**take** |**Take** | Необязательный элемент. Максимальное количество считываемых сущностей в JavaScript. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
 |**filter** |**Filter** | Необязательный элемент. Выражение фильтра OData для входных данных таблицы в JavaScript. Дополнительные сведения о том, как использовать это свойство, см. в этом [разделе](#input---usage).| 
 |**подключение** |**Connection** | Имя параметра приложения, содержащего строку подключения к службе хранилища, используемой для этой привязки. Если имя параметра приложения начинается с AzureWebJobs, можно указать только остальную часть имени. Например, если задать для `connection` значение MyStorage, среда выполнения службы "Функции" будет искать параметр приложения с именем AzureWebJobsMyStorage. Если оставить строку `connection` пустой, среда выполнения службы "Функции" будет использовать строку подключения к службе хранилища по умолчанию для параметра приложения с именем `AzureWebJobsStorage`.|
 
@@ -648,7 +760,7 @@ public static MyPoco TableOutput(
 
   В коде и скрипте C# получите доступ к сущности выходной таблицы с помощью параметра метода (например, `ICollector<T> paramName` или `IAsyncCollector<T> paramName`). В скрипте C# `paramName` — это значение, заданное в свойстве `name` файла *function.json*. В `T` указывается схема сущностей, которые нужно добавить. Как правило, `T` является производным от `TableEntity` или реализует `ITableEntity`, но это необязательно. Значения ключа раздела и строки в *function.json* или конструктора атрибута `Table` не используются в этом сценарии.
 
-  Альтернативой является использование параметра метода `CloudTable paramName` для записи в таблицу с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x).
+  Альтернативой является использование параметра метода `CloudTable` для записи в таблицу с помощью пакета SDK службы хранилища Azure. Если при попытке привязать к `CloudTable` вы получаете сообщение об ошибке, убедитесь, что у вас есть ссылка на [правильную версию пакета SDK для службы хранилища](#azure-storage-sdk-version-in-functions-1x). Пример кода, который привязывается к `CloudTable`, см. в примерах входной привязки для [C#](#input---c-example---cloudtable) или [скрипта C#](#input---c-script-example---cloudtable) ранее в этой статье.
 
 * **Запись одной или нескольких строк в JavaScript**
 

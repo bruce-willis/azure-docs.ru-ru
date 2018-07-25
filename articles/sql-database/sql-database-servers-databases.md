@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/20/2018
+ms.date: 07/16/2018
 ms.author: carlrab
-ms.openlocfilehash: 505fd88959feb1c84abc53c6435776a5c5b4123c
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: c96282b8163cc48001ee3c6fe89497e2793309f6
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309186"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091802"
 ---
 # <a name="azure-sql-database-logical-servers-and-single-databases-and-their-resources"></a>Логический сервер и отдельная база данных SQL Azure, а также их ресурсы
 
@@ -82,7 +82,7 @@ ms.locfileid: "36309186"
   ![Создание базы данных — 1](./media/sql-database-get-started-portal/create-database-1.png)
 
 > [!IMPORTANT]
-> Сведения о выборе ценовой категории для базы данных приведены в разделах [Модель приобретения на основе DTU для базы данных SQL Azure](sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер для базы данных SQL Azure (предварительная версия)](sql-database-service-tiers-vcore.md).
+> Сведения о выборе ценовой категории для базы данных приведены в разделах [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
 
 Сведения о создании управляемого экземпляра см. в статье [Создание управляемого экземпляра](sql-database-managed-instance-create-tutorial-portal.md).
 
@@ -95,7 +95,7 @@ ms.locfileid: "36309186"
    ![правило брандмауэра для сервера](./media/sql-database-get-started-portal/server-firewall-rule.png) 
 
 > [!IMPORTANT]
-> Сведения о настройке свойств базы данных приведены в разделах [Модель приобретения на основе DTU для базы данных SQL Azure](sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер для базы данных SQL Azure (предварительная версия)](sql-database-service-tiers-vcore.md).
+> Сведения о настройке свойств базы данных приведены в разделах [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
 >
 
 > [!TIP]

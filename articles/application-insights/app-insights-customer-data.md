@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/18/2018
 ms.reviewer: Evgeny.Ternovsky
 ms.author: mbullwin
-ms.openlocfilehash: 95e421278b46015e761764792e11dec0351b9785
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: a59b57c546f18a7d91160f2ae7282af82fc42160
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294427"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044719"
 ---
 # <a name="guidance-for-personal-data-stored-in-application-insights"></a>Руководство по хранению персональных данных в Application Insights
 
@@ -77,12 +77,13 @@ ms.locfileid: "35294427"
 При назначении роли в Azure Resource Manager становятся доступными два новых пути API, полную документацию разработчика и форматы вызова для которых вы найдете по следующим ссылкам:
 
 * [POST purge](https://docs.microsoft.com/rest/api/application-insights/components/purge) — принимает объект с параметрами удаляемых данных и возвращает идентификатор GUID.
-* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние операции очистки. Например: 
+* GET purge status — вызов POST purge возвращает заголовок x-ms-status-location со значением URL-адреса, вызов которого позволяет определить состояние API очистки. Например: 
    ```
    x-ms-status-location: https://management.azure.com/subscriptions/[SubscriptionId]/resourceGroups/[ResourceGroupName]/providers/microsoft.insights/components/[ComponentName]/operations/purge-[PurgeOperationId]?api-version=2015-05-01
    ```
 
-Хотя большинство операций очистки будут выполняться намного быстрее, чем указано в соглашениях об уровне обслуживания, из-за сильного влияния таких операций на платформу данных, используемую Application Insights, в соглашения об уровне обслуживания включается период 30 дней на завершение операций очистки.
+> [!IMPORTANT]
+>  Хотя большинство операций очистки будут выполняться намного быстрее, чем указано в соглашениях об уровне обслуживания, из-за сильного влияния таких операций на платформу данных, используемую Application Insights, в **соглашение об уровне обслуживания включается период 30 дней на завершение операций очистки**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о сборе, обработке и защите данных можно найти в статье [Сбор и хранение данных в Application Insights](app-insights-data-retention-privacy.md).

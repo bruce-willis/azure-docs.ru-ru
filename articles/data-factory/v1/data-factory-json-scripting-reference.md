@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 191f8973e85186590a2ba840e473f8fff57a9d94
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 6c96cf220e34f1509375e5314e0b54e175575834
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37053054"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114214"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Справочник по написанию скриптов JSON фабрики данных Azure
 > [!NOTE]
@@ -4821,14 +4821,14 @@ auto-
 
 | Вычислительная среда | Действия |
 | --- | --- |
-| [Кластер HDInsight по запросу](#on-demand-azure-hdinsight-cluster) или [собственный кластер HDInsight](#existing-azure-hdinsight-cluster) |[Настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig] (#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity) |
+| [Кластер HDInsight по запросу](#on-demand-azure-hdinsight-cluster) или [собственный кластер HDInsight](#existing-azure-hdinsight-cluster) |[Настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig](#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity) |
 | [Пакетная служба Azure](#azure-batch) |[Настраиваемое действие .NET](#net-custom-activity) |
 | [машинное обучение Azure](#azure-machine-learning) | [Действие выполнения пакета в службе машинного обучения](#machine-learning-batch-execution-activity), [действие обновления ресурса в службе машинного обучения](#machine-learning-update-resource-activity) |
 | [Аналитика озера данных Azure](#azure-data-lake-analytics) |[Аналитика озера данных U-SQL](#data-lake-analytics-u-sql-activity) |
 | [База данных Azure SQL](#azure-sql-database-1), [хранилище данных Azure SQL](#azure-sql-data-warehouse-1), [SQL Server](#sql-server-1) |[Хранимая процедура](#stored-procedure-activity) |
 
 ## <a name="on-demand-azure-hdinsight-cluster"></a>Кластер Azure HDInsight по требованию
-Для обработки данных служба фабрики данных Azure автоматически создает кластер HDInsight под управлением Windows/Linux по запросу. Кластер создается в том же регионе, что и учетная запись хранения (свойство linkedServiceName в JSON), связанная с кластером. В этой связанной службе можно выполнить следующие действия преобразования: [настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig] (#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity). 
+Для обработки данных служба фабрики данных Azure автоматически создает кластер HDInsight под управлением Windows/Linux по запросу. Кластер создается в том же регионе, что и учетная запись хранения (свойство linkedServiceName в JSON), связанная с кластером. В этой связанной службе можно выполнить следующие действия по преобразованию: [настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig](#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity). 
 
 ### <a name="linked-service"></a>Связанные службы 
 Следующая таблица содержит описание свойств, используемых в определении Azure JSON связанной службы HDInsight по требованию.
@@ -4866,7 +4866,7 @@ auto-
 Дополнительные сведения см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](data-factory-compute-linked-services.md). 
 
 ## <a name="existing-azure-hdinsight-cluster"></a>Имеющийся кластер Azure HDInsight
-Чтобы зарегистрировать собственный кластер HDInsight в фабрике данных, вы можете создать связанную службу Azure HDInsight. В этой связанной службе можно выполнить следующие действия преобразования: [настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig] (#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity). 
+Чтобы зарегистрировать собственный кластер HDInsight в фабрике данных, вы можете создать связанную службу Azure HDInsight. В этой связанной службе можно выполнить следующие действия по преобразованию данных: [настраиваемое действие .NET](#net-custom-activity), [действие Hive](#hdinsight-hive-activity), [действие Pig](#hdinsight-pig-activity), [действие MapReduce](#hdinsight-mapreduce-activity), [действие потоковой передачи Hadoop](#hdinsight-streaming-activityd), [действие Spark](#hdinsight-spark-activity). 
 
 ### <a name="linked-service"></a>Связанные службы
 Следующая таблица содержит описание свойств, используемых в определении Azure JSON связанной службы Azure HDInsight.

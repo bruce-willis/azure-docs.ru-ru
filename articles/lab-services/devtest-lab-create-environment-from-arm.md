@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/05/2018
 ms.author: spelluru
-ms.openlocfilehash: 397ab30b252fbfa121b763b005907764d2b15f20
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: f73b6f594403ce51fcff4d757990afb3ce4a82bc
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33781933"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004852"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
 
@@ -103,7 +103,7 @@ ms.locfileid: "33781933"
 
     ![Выбор основы](./media/devtest-lab-create-environment-from-arm/choose-a-base.png)
   
-1. В области **Добавить** введите значение параметра **Имя среды**. Имя среды будет отображаться для пользователей вашей лаборатории. Остальные поля ввода определяются в шаблоне Azure Resource Manager. Если в шаблоне определены значения по умолчанию или есть файл `azuredeploy.parameter.json`, то значения по умолчанию отобразятся в этих полях ввода. Для параметров типа *защищенной строки* можно использовать секреты, хранящиеся в [личном хранилище секретов](https://azure.microsoft.com/updates/azure-devtest-labs-keep-your-secrets-safe-and-easy-to-use-with-the-new-personal-secret-store) лаборатории.
+1. В области **Добавить** введите значение параметра **Имя среды**. Имя среды будет отображаться для пользователей вашей лаборатории. Остальные поля ввода определяются в шаблоне Azure Resource Manager. Если в шаблоне определены значения по умолчанию или есть файл `azuredeploy.parameter.json`, то значения по умолчанию отобразятся в этих полях ввода. Для параметров типа *защищенной строки* можно использовать секреты, хранящиеся в Azure Key Vault. См. дополнительные сведения о [хранении секретов в Azure Key Vault и их использовании их при создании ресурсов лаборатории](devtest-lab-store-secrets-in-key-vault.md).  
 
     ![Добавление области](./media/devtest-lab-create-environment-from-arm/add.png)
 

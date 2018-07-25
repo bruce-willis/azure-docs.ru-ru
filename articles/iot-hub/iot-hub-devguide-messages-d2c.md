@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 01/29/2018
+ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 6096d726d7a00a4ddf8047edeebb74ab3f151e51
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: be87b00f27f0d0b25cd77a0634ab1c653a85e5ac
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808263"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126448"
 ---
 # <a name="send-device-to-cloud-messages-to-iot-hub"></a>Отправка сообщений, пересылаемых с устройства в облако, в Центр Интернета вещей
 
@@ -71,13 +71,13 @@ ms.locfileid: "34808263"
 
 Дополнительные сведения о пакетах SDK, которые можно использовать для отправки сообщений с устройства в облако, см. в статье, посвященной [пакетам SDK для Azure IoT][lnk-sdks].
 
-Руководства [по началу работы][lnk-get-started] демонстрируют отправку сообщений "с устройства в облако" с моделируемых и физических устройств. Дополнительные сведения см. в руководстве [по обработке сообщений Центра Интернета вещей, отправляемых с устройства в облако, с помощью маршрутов][lnk-d2c-tutorial].
+В [кратких руководствах][lnk-get-started] рассказывается, как отправлять сообщения из устройства в облако с имитированных устройств. Дополнительные сведения см. в руководстве [по обработке сообщений Центра Интернета вещей, отправляемых с устройства в облако, с помощью маршрутов][lnk-d2c-tutorial].
 
 [lnk-devguide-builtin]: iot-hub-devguide-messages-read-builtin.md
 [lnk-devguide-custom]: iot-hub-devguide-messages-read-custom.md
 [lnk-comparison]: iot-hub-compare-event-hubs.md
 [lnk-d2c-guidance]: iot-hub-devguide-d2c-guidance.md
-[lnk-get-started]: iot-hub-get-started.md
+[lnk-get-started]: quickstart-send-telemetry-node.md
 
 [lnk-event-hubs]: http://azure.microsoft.com/documentation/services/event-hubs/
 [lnk-servicebus]: http://azure.microsoft.com/documentation/services/service-bus/

@@ -6,14 +6,14 @@ author: mmacy
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 06/08/2018
+ms.date: 07/17/2018
 ms.author: marsma
-ms.openlocfilehash: 5dfee15e978d2dba0f50d1dc4b78953698389950
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 1d1885112b8e7f7b1e187073c86d561eb57fd23f
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34851197"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114469"
 ---
 # <a name="deploy-a-multi-container-container-group-with-yaml"></a>Развертывание многоконтейнерной группы с помощью YAML-файла
 
@@ -35,7 +35,7 @@ ms.locfileid: "34851197"
 
 Сначала скопируйте следующий YAML-файл в новый файл с именем **deploy-aci.yaml**.
 
-Этот YAML-файл определяет группу контейнеров с двумя контейнерами, общедоступным IP-адресом и двумя предоставленными портами. Первый контейнер в группе запускает веб-приложение с выходом в Интернет. Второй контейнер, расширение, периодически отправляет HTTP-запросы веб-приложению, запущенному в первом контейнере через локальную сеть группы контейнеров.
+Этот YAML-файл определяет группу контейнеров с именем "myContainerGroup", имеющую два контейнера, общедоступный IP-адрес и два предоставленных порта. Первый контейнер в группе запускает веб-приложение с выходом в Интернет. Второй контейнер, расширение, периодически отправляет HTTP-запросы веб-приложению, запущенному в первом контейнере через локальную сеть группы контейнеров.
 
 ```YAML
 apiVersion: 2018-06-01
@@ -83,7 +83,7 @@ az group create --name myResourceGroup --location eastus
 Выполните развертывание группы контейнеров с помощью команды [az container create][az-container-create], передав YAML-файл как аргумент:
 
 ```azurecli-interactive
-az container create --resource-group myResourceGroup --name myContainerGroup -f deploy-aci.yaml
+az container create --resource-group myResourceGroup --file deploy-aci.yaml
 ```
 
 В течение нескольких секунд вы должны получить исходный ответ Azure.
@@ -200,14 +200,15 @@ type: Microsoft.ContainerInstance/containerGroups
 Экспортируйте конфигурацию для созданной ранее группы контейнеров, выполнив следующую команду [az container export][az-container-export]:
 
 ```azurecli-interactive
-az container export --resource-group rg604 --name myContainerGroup --file deployed-aci.yaml
+az container export --resource-group myResourceGroup --name myContainerGroup --file deployed-aci.yaml
 ```
 
 Если команда выполнена успешно, выходные данные не появятся, но вы можете просмотреть содержимое файла, чтобы увидеть результат. Например, первые несколько строк с атрибутом `head`:
 
 ```console
 $ head deployed-aci.yaml
-apiVersion: 2018-02-01-preview
+additional_properties: {}
+apiVersion: '2018-06-01'
 location: eastus
 name: myContainerGroup
 properties:
@@ -216,11 +217,7 @@ properties:
     properties:
       environmentVariables: []
       image: microsoft/aci-helloworld:latest
-      ports:
 ```
-
-> [!NOTE]
-> Начиная с версии 2.0.34 (Azure CLI), есть [известная проблема][cli-issue-6525], когда экспортированные группы контейнеров указывают более старую версию API **2018-02-01-preview** (см. предыдущий пример выходных данных JSON). Если вы хотите выполнить повторное развертывание с помощью экспортированного YAML-файла, вы можете безопасно обновить значение `apiVersion` в этом экспортированном файле до версии **2018-06-01**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

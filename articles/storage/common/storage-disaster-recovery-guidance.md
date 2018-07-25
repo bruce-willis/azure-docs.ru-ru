@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 1/19/2017
+ms.date: 07/15/2018
 ms.author: tamram
-ms.openlocfilehash: 3c313025917bba06675d3b2d844a6740fab89fbc
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 160fe756458e067125b9d696fd0cdb929774446e
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30323157"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072040"
 ---
 # <a name="what-to-do-if-an-azure-storage-outage-occurs"></a>Что делать в случае простоя службы хранилища Azure
 Корпорация Майкрософт прилагает все усилия, чтобы наши службы были всегда доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные простои служб в одном или нескольких регионах. Ниже приведено общее руководство для служб хранилища Azure, которое поможет вам справиться с такими редкими ситуациями.
@@ -65,9 +65,8 @@ ms.locfileid: "30323157"
 Существуют некоторые рекомендуемые подходы для регулярной архивации данных в хранилище.
 
 * Диски виртуальной машины — используйте [службу архивации Azure](https://azure.microsoft.com/services/backup/) для архивации дисков виртуальных машин Azure.
-* Блочные BLOB-объекты — создайте [моментальный снимок](https://msdn.microsoft.com/library/azure/hh488361.aspx) каждого блочного BLOB-объекта или скопируйте BLOB-объекты в другую учетную запись хранения, относящуюся к другому региону, с помощью [AzCopy](storage-use-azcopy.md), [Azure PowerShell](storage-powershell-guide-full.md) или [библиотеки перемещения данных Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/).
+* Блочные BLOB-объекты — включите [обратимое удаление](../blobs/storage-blob-soft-delete.md), чтобы предотвратить удаление и перезапись на уровне объектов, или скопируйте BLOB-объекты в другую учетную запись хранения, относящуюся к другому региону, с помощью [AzCopy](storage-use-azcopy.md), [Azure PowerShell](storage-powershell-guide-full.md) или [библиотеки перемещения данных Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/).
 * Таблицы — используйте [AzCopy](storage-use-azcopy.md) для экспорта данных таблиц в другую учетную запись хранения, относящуюся к другому региону.
 * Файлы — используйте [AzCopy](storage-use-azcopy.md) или [Azure PowerShell](storage-powershell-guide-full.md) для копирования файлов в другую учетную запись хранения, относящуюся к другому региону.
 
 Сведения о создании приложений, использующих все преимущества функции RA-GRS, доступны в разделе [Проектирование высокодоступных приложений с использованием хранилища RA-GRS](../storage-designing-ha-apps-with-ragrs.md).
-

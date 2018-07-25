@@ -13,11 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/16/2016
 ms.author: kumud
-ms.openlocfilehash: 00a56a2683e95e70bb13acd6b936e766f044e1cd
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 7ee3dbdcd4d8b2627273a871aec94583b6c5dd6a
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39058126"
 ---
 # <a name="create-dns-records-for-a-web-app-in-a-custom-domain"></a>Создание записей DNS для веб-приложения в пользовательском домене
 
@@ -41,7 +42,7 @@ ms.lasthandoff: 05/03/2018
 
 ## <a name="1-create-an-a-record-for-your-custom-domain"></a>1. Создание записи A для пользовательского домена
 
-Запись A используется для сопоставления имени с IP-адресом. В примере ниже мы назначим @ как запись A IPv4-адресу.
+Запись A используется для сопоставления имени с IP-адресом. В следующем примере мы назначим \@ как запись A IPv4-адресу:
 
 ### <a name="step-1"></a>Шаг 1
 
@@ -53,7 +54,7 @@ $rs= New-AzureRMDnsRecordSet -Name "@" -RecordType "A" -ZoneName "contoso.com" -
 
 ### <a name="step-2"></a>Шаг 2
 
-Добавьте значение IPv4 в ранее созданный набор записей @ с помощью назначенной переменной $rs. Присвоенное значение IPv4 будет IP-адресом вашего веб-приложения.
+Добавьте значение IPv4 в ранее созданный набор записей "\@" с помощью назначенной переменной $rs. Присвоенное значение IPv4 будет IP-адресом вашего веб-приложения.
 
 Чтобы найти IP-адрес для веб-приложения, выполните действия, описанные в статье [Настройка личного доменного имени для службы приложений Azure](../app-service/app-service-web-tutorial-custom-domain.md).
 

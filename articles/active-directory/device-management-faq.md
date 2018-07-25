@@ -15,16 +15,18 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 864f790db48d3d4542ed56a4c7272a198df5bd56
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 10d6b81915432d9f41c0d4751f98cbf380ff2d13
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901142"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136576"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
+**Вопрос. Можно ли зарегистрировать устройства Android или iOS BYOD?**
 
+**Ответ**. Да, но только с помощью службы регистрации устройств Azure и только для гибридных клиентов. Не поддерживается локальной службой регистрации устройств в службах федерации Active Directory (AD FS).
 
 **Вопрос. Как можно зарегистрировать устройство macOS?**
 
@@ -98,6 +100,11 @@ ms.locfileid: "37901142"
 **Вопрос. Пользователи не могут выполнять поиск принтеров с устройств, присоединенных к Azure AD. Как включить печать с таких устройств?**
 
 **Ответ**. Сведения о развертывании принтеров для устройств, присоединенных к Azure AD, см. в статье [Гибридная облачная печать](https://docs.microsoft.com/en-us/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy). Для развертывания гибридной облачной печати вам потребуется локальный сервер Windows Server. В настоящее время облачная служба печати недоступна. 
+
+---
+
+**Вопрос. Как подключиться к удаленному устройству Azure AD? **
+**Ответ. Подробные сведения **см. в статьеhttps://docs.microsoft.com/en-us/windows/client-management/connect-to-remote-aadj-pc.
 
 ---
 

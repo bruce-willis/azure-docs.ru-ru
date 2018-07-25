@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: bwren
-ms.openlocfilehash: 887611f1293e276070df51ac06df51a994161ec1
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 40b8f51c66ebe98cd1c312002b7bd5e96e5032bd
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112204"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39112711"
 ---
 # <a name="data-collection-details-for-management-solutions-in-azure"></a>Информация о сборе данных для решений по управлению в Azure
 Эта статья содержит список [решений по управлению](monitoring-solutions.md), предлагаемых корпорацией Майкрософт, со ссылками на подробную документацию по ним.  Также вы здесь найдете сведения о методах и частоте сбора данных в Log Analytics.  Сведения в этой статье помогут вам оценить доступные решения и изучить потоки данных и требования к подключению для разных решений по управлению. 
@@ -53,7 +53,7 @@ ms.locfileid: "37112204"
 | [Гибридная рабочая роль службы автоматизации](../automation/automation-hybrid-runbook-worker.md) | Windows | &#8226; | &#8226; |  |  |  | Недоступно |
 | [Анализ шлюзов приложений Azure](../log-analytics/log-analytics-azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | **Решение по управлению** | **Платформа** | **Microsoft Monitoring Agent** | **Агент Operations Manager** | **Служба хранилища Azure** | **Нужен ли Operations Manager?** | **Данные агента Operations Manager отправляются через группу управления** | **Частота сбора** |
-| [Анализ групп безопасности сети Azure](../log-analytics/log-analytics-azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
+| [Аналитика групп безопасности сетей Azure (не рекомендуется)](../log-analytics/log-analytics-azure-networking-analytics.md) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | [Службы анализа SQL Azure (предварительная версия)](../log-analytics/log-analytics-azure-sql.md) | Windows | | | | | | 1 минута |
 | [Архивация](https://azure.microsoft.com/resources/templates/101-backup-oms-monitoring/) | Таблицы Azure |  |  |  |  |  | при уведомлении |
 | [Емкость и производительность (предварительная версия)](../log-analytics/log-analytics-capacity.md) |Windows |&#8226; |&#8226; | | |&#8226; |При получении |
@@ -72,7 +72,7 @@ ms.locfileid: "37112204"
 | [Оценка System Center Operations Manager (предварительная версия)](../log-analytics/log-analytics-scom-assessment.md) | Windows | &#8226; | &#8226; |  |  | &#8226; | 7 дней |
 | [Управление обновлениями](../operations-management-suite/oms-solution-update-management.md) | Windows |&#8226; |&#8226; | | |&#8226; |не меньше 2 раз в день и через 15 минут после установки обновления |
 | [Готовность к обновлению](https://docs.microsoft.com/windows/deployment/upgrade/upgrade-readiness-get-started) | Windows | &#8226; |  |  |  |  | 2 дня |
-| [Мониторинг VMware (предварительная версия)](../log-analytics/log-analytics-vmware.md) | Linux | &#8226; |  |  |  |  | 3 минуты |
+| [Мониторинг VMware (не рекомендуется)](../log-analytics/log-analytics-vmware.md) | Linux | &#8226; |  |  |  |  | 3 минуты |
 | [Wire Data 2.0 (предварительная версия)](../log-analytics/log-analytics-wire-data.md) |Windows (2012 R2/8.1 или более поздней версии) |&#8226; |&#8226; | | | | 1 минута |
 
 

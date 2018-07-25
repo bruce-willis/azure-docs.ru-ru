@@ -12,20 +12,20 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 03/19/2018
+ms.date: 07/11/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 9cb7a076ea922b9868bd439d160aec96f044e3b6
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 02c068fc70748584583b2c71659b1a1abdc0a46d
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32157481"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035777"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
 Шаблон монитора представляет собой гибкий *повторяющийся* процесс в рабочем процессе. Например, повторение опроса, пока не будут выполнены определенные условия. В этой статье приведен пример использования [устойчивых функций](durable-functions-overview.md) для реализации мониторинга.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите устойчивые функции](durable-functions-install.md).
 * Ознакомьтесь с пошаговым руководством по примеру [последовательности Hello](durable-functions-sequence.md).
@@ -65,7 +65,7 @@ ms.locfileid: "32157481"
 * `E3_GetIsClear`: функция действия, которая проверяет текущие погодные условия для местоположения.
 * `E3_SendGoodWeatherAlert`: функция действия, которая отправляет SMS-сообщение через Twilio.
 
-В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языке C#. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языках C# и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
  
 ## <a name="the-weather-monitoring-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация мониторинга погоды (пример кода Visual Studio Code и портала Azure).
 
@@ -75,7 +75,13 @@ ms.locfileid: "32157481"
 
 Ниже приведен код, реализующий функцию.
 
+### <a name="c"></a>C#
+
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_Monitor/run.csx)]
+
+### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_Monitor/index.js)]
 
 Эта функция оркестратора выполняет следующие задачи:
 
@@ -88,11 +94,13 @@ ms.locfileid: "32157481"
 
 Несколько экземпляров оркестрации могут выполняться одновременно, отправляя несколько запросов **MonitorRequests**. Можно указать местоположение для мониторинга и номер телефона для отправки SMS-оповещения.
 
-## <a name="strongly-typed-data-transfer"></a>Строго типизированная передача данных
+## <a name="strongly-typed-data-transfer-net-only"></a>Строго типизированная передача данных (только .NET)
 
-Оркестратору требуется несколько частей данных, поэтому [​​общие объекты POCO](functions-reference-csharp.md#reusing-csx-code) используются для строго типизированной передачи данных: [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)].
+Оркестратору требуется несколько частей данных, поэтому [​​общие объекты POCO](functions-reference-csharp.md#reusing-csx-code) используются для строго типизированной передачи данных в C# и сценариях C#: [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)].
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/Location.csx)]
+
+В примере кода JavaScript используются регулярные объекты JSON в качестве параметров.
 
 ## <a name="helper-activity-functions"></a>Вспомогательные функции действий
 
@@ -100,9 +108,15 @@ ms.locfileid: "32157481"
 
 [!code-json[Main](~/samples-durable-functions/samples/csx/E3_GetIsClear/function.json)]
 
-Ниже приведена сама реализация. Как и объекты POCO, используемые для передачи данных, логика для обработки вызова API и анализа ответа JSON абстрагируется в общий класс. Вы можете найти его как часть кода [Visual Studio](#run-the-sample).
+Ниже приведена сама реализация. Как и объекты POCO, используемые для передачи данных, логика для обработки вызова API и анализа ответа JSON абстрагируется в общий класс в C#. Вы можете найти его как часть кода [Visual Studio](#run-the-sample).
+
+### <a name="c"></a>C#
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_GetIsClear/run.csx)]
+
+### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_GetIsClear/index.js)]
 
 Функция **E3_SendGoodWeatherAlert** использует привязку Twilio для отправки SMS-сообщения, уведомляющего пользователя, что это подходящее время для прогулки. Файл *function.json* выглядит просто:
 
@@ -110,7 +124,13 @@ ms.locfileid: "32157481"
 
 Ниже приведен код, который отправляет SMS-сообщение:
 
+### <a name="c"></a>C#
+
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E3_SendGoodWeatherAlert/run.csx)]
+
+### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/E3_SendGoodWeatherAlert/index.js)]
 
 ## <a name="run-the-sample"></a>Запуск примера
 
@@ -131,6 +151,9 @@ RetryAfter: 10
 
 {"id": "f6893f25acf64df2ab53a35c09d52635", "statusQueryGetUri": "https://{host}/admin/extensions/DurableTaskExtension/instances/f6893f25acf64df2ab53a35c09d52635?taskHub=SampleHubVS&connection=Storage&code={systemKey}", "sendEventPostUri": "https://{host}/admin/extensions/DurableTaskExtension/instances/f6893f25acf64df2ab53a35c09d52635/raiseEvent/{eventName}?taskHub=SampleHubVS&connection=Storage&code={systemKey}", "terminatePostUri": "https://{host}/admin/extensions/DurableTaskExtension/instances/f6893f25acf64df2ab53a35c09d52635/terminate?reason={text}&taskHub=SampleHubVS&connection=Storage&code={systemKey}"}
 ```
+
+   > [!NOTE]
+   > В настоящее время функции запуска оркестрации JavaScript не могут возвращать URI управления экземплярами. Эта возможность будет добавлена в дальнейших выпусках.
 
 Экземпляр **E3_Monitor** запускается и запрашивает текущие погодные условия для запрашиваемого местоположения. Если погода хорошая, он вызывает функцию действия для отправки оповещения. В противном случае он устанавливает таймер. Когда время таймера истечет, оркестровка возобновится.
 

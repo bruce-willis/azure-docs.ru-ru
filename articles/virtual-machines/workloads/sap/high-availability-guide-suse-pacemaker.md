@@ -13,14 +13,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/20/2018
+ms.date: 07/13/2018
 ms.author: sedusch
-ms.openlocfilehash: cac2f91a25907be824e3fd3517736d921c3fde64
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 9ce95bcf15d0186c1baea3df407d0fc0c4200f45
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37923432"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115482"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -38,6 +38,11 @@ ms.locfileid: "37923432"
 Если вы не хотите тратить средства на дополнительную виртуальную машину, можно также использовать агент ограждения Azure. Недостатком этого подхода является то, что отработка отказа может занять от 10 до 15 минут, если не удается выполнить остановку ресурсов или узлам кластера не удается связаться друг с другом.
 
 ![Обзор кластера Pacemaker на SLES](./media/high-availability-guide-suse-pacemaker/pacemaker.png)
+
+>[!IMPORTANT]
+> При планировании и развертывании Linux Pacemaker кластеризованных узлов и устройств SBD очень важно для общей надежности полной конфигурации кластера, чтобы маршрутизация между задействованными виртуальными машинами и виртуальными машинами, на которых размещены устройства SBD, не проходила через другие устройства, такие как [виртуальные сетевые устройства](https://azure.microsoft.com/solutions/network-appliances/). В противном случае проблемы и события обслуживания с виртуальным сетевым устройством могут иметь негативное влияние на стабильность и надежность общей конфигурации кластера. Во избежание таких препятствий при планировании и развертывании кластерных узлов Linux Pacemaker и устройств SBD не определяйте правила маршрутизации виртуальных сетевых устройств или [определяемые пользователем правила маршрутизации](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview), которые маршрутизируют трафик между кластерными узлами и устройствами SBD через виртуальные сетевые устройства и аналогичные устройства. 
+>
+
 
 ## <a name="sbd-fencing"></a>Ограждение SBD
 

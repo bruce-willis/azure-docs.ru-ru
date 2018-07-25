@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/26/2018
+ms.date: 07/13/2018
 ms.author: ryanwi
-ms.openlocfilehash: 993d5c804490540a9c71647f52692fb55b27c405
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: b5d0e923955ea5ca67941fad0dc3d1415e4a5899
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113305"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39115873"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "37113305"
 
 Чтобы создавать и запускать [приложения Service Fabric][1] на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и инструменты. Вам также нужно [включить выполнение сценариев Windows PowerShell](#enable-powershell-script-execution), включенных в пакет SDK.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 ### <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
 Для разработки поддерживаются следующие операционные системы:
 
@@ -64,10 +64,10 @@ ms.locfileid: "37113305"
 * [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* пакет SDK и инструменты для Service Fabric версии 3.1.301;
-* среда выполнения Service Fabric 6.2.301;
-* средства Service Fabric для Visual Studio 2015 2.1.20180510.2;
-* Visual Studio 2017 15.7, которая включает средства Service Fabric для Visual Studio 2.1.20180423.1. 
+* пакет SDK и инструменты для Service Fabric версии 3.2.162;
+* среда выполнения Service Fabric 6.3.162;
+* инструменты Service Fabric для Visual Studio 2015 2.3.10710.3;
+* Visual Studio 2017 15.7, которая включает в себя инструменты Service Fabric для Visual Studio 2.3.10710.1. 
 
 Список поддерживаемых версий см. в статье [Azure Service Fabric support options](service-fabric-support.md) (Варианты поддержки Azure Service Fabric).
 

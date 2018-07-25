@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/01/2018
+ms.date: 07/16/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 3758b04fc9b5ecd5dc69c82a8bd07999a9f1074a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: f83715d2a382db271686210d9df285c255c09216
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050613"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114000"
 ---
 # <a name="how-to-start-and-stop-the-azure-ssis-integration-runtime-on-a-schedule"></a>Запуск и остановка среды выполнения интеграции Azure–SSIS по расписанию
 В этой статье описан процесс планирования запуска и остановки IR Azure SSIS с помощью службы автоматизации Azure и фабрики данных Azure. Запуск среды выполнения интеграции (IR) Azure–SSIS (SQL Server Integration Services) связан с издержками. Поэтому следует запускать среду выполнения интеграции только в том случае, когда требуется выполнение пакетов SSIS в Azure, и останавливать среду выполнения интеграции при ненадобности. Вы можете [запустить или остановить IR Azure SSIS вручную](manage-azure-ssis-integration-runtime.md) с помощью пользовательского интерфейса фабрики данных или Azure PowerShell.
@@ -34,7 +34,7 @@ ms.locfileid: "37050613"
 3. **Создание двух веб-перехватчиков для runbook** — один для операции START, а другой для операции STOP. Используйте URL-адреса этих веб-перехватчиков при настройке веб-действий в конвейере фабрики данных. 
 4. **Создание конвейера фабрики данных.** Конвейер, который вы создаете, состоит из трех действий. Первое **веб-** действие заставляет первый веб-перехватчик запустить IR Azure SSIS. Действие **хранимой процедуры** выполняет скрипт SQL, который запускает пакет SSIS. Второе **веб-** действие останавливает IR Azure SSIS. Дополнительные сведения о вызове пакета SSIS из конвейера фабрики данных с помощью действия хранимой процедуры см. в [этой статье](how-to-invoke-ssis-package-stored-procedure-activity.md). Затем вы создадите триггер расписания, чтобы запланировать запуск конвейера с указанной периодичностью.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Если среда выполнения интеграции Azure SSIS еще не подготовлена, подготовьте ее, следуя указаниям из этого [руководства](tutorial-create-azure-ssis-runtime-portal.md). 
 
 ## <a name="create-and-test-an-azure-automation-runbook"></a>Создание и тестирование модуля runbook службы автоматизации Azure
@@ -373,15 +373,40 @@ ms.locfileid: "37050613"
 5. Опубликуйте решение в фабрике данных, выбрав **Опубликовать все** в области слева. 
 
     ![Опубликовать все](./media/how-to-schedule-azure-ssis-integration-runtime/publish-all.png)
-6. Отслеживайте запуски триггера и конвейера на вкладке **Мониторинг** в левой части экрана. Подробные инструкции см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-portal.md#monitor-the-pipeline).
+
+### <a name="monitor-the-pipeline-and-trigger-in-the-azure-portal"></a>Мониторинг конвейера и триггера на портале Azure
+
+1. Отслеживайте запуски триггера и конвейера на вкладке **Мониторинг** в левой части экрана. Подробные инструкции см. в разделе [Мониторинг конвейера](quickstart-create-data-factory-portal.md#monitor-the-pipeline).
 
     ![Запуски конвейера](./media/how-to-schedule-azure-ssis-integration-runtime/pipeline-runs.png)
-7. Чтобы просмотреть выполнения действий, связанные с запуском конвейера, щелкните первую ссылку (**View Activity Runs** (Просмотр запусков действий)) в столбце **Действия**. Вы увидите три выполнения действий, связанные с каждым действием в конвейере (первое веб-действие, действие хранимой процедуры и второе веб-действие). Чтобы вернуться к просмотру запусков конвейера, выберите ссылку **Конвейеры** в верхней части окна.
+2. Чтобы просмотреть выполнения действий, связанные с запуском конвейера, щелкните первую ссылку (**View Activity Runs** (Просмотр запусков действий)) в столбце **Действия**. Вы увидите три выполнения действий, связанные с каждым действием в конвейере (первое веб-действие, действие хранимой процедуры и второе веб-действие). Чтобы вернуться к просмотру запусков конвейера, выберите ссылку **Конвейеры** в верхней части окна.
 
     ![Выполнение действия](./media/how-to-schedule-azure-ssis-integration-runtime/activity-runs.png)
-8. Запуски триггера можно также просмотреть, выбрав пункт списка **Trigger runs** (Запуски триггера) из раскрывающегося списка рядом с пунктом **Pipeline Runs** (Запуски конвейера) в верхней части экрана. 
+3. Запуски триггера можно также просмотреть, выбрав пункт списка **Trigger runs** (Запуски триггера) из раскрывающегося списка рядом с пунктом **Pipeline Runs** (Запуски конвейера) в верхней части экрана. 
 
     ![Выполнения триггеров](./media/how-to-schedule-azure-ssis-integration-runtime/trigger-runs.png)
+
+### <a name="monitor-the-pipeline-and-trigger-with-powershell"></a>Мониторинг конвейера и триггера с помощью PowerShell
+
+Для мониторинга конвейера и триггера используйте сценарии, аналогичные следующему примеру.
+
+1. Получить сведения о состоянии работы конвейера.
+
+  ```powershell
+  Get-AzureRmDataFactoryV2PipelineRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -PipelineRunId $myPipelineRun
+  ```
+
+2. Получить сведения о триггере.
+
+  ```powershell
+  Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -Name  "myTrigger"
+  ```
+
+3. Получить сведения о состоянии работы триггера.
+
+  ```powershell
+  Get-AzureRmDataFactoryV2TriggerRun -ResourceGroupName $ResourceGroupName -DataFactoryName $DataFactoryName -TriggerName "myTrigger" -TriggerRunStartedAfter "2018-07-15" -TriggerRunStartedBefore "2018-07-16"
+  ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 См. в следующей записи блога:

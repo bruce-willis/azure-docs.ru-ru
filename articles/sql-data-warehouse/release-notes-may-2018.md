@@ -10,14 +10,14 @@ ms.component: manage
 ms.date: 05/28/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: 843621a8f6e08b2b51d4b7abd05d0ae6c3393fe1
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: ddcb985c370baf224d451aa6c1ec9b796e0140de
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34726039"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38561410"
 ---
-# <a name="whats-new-in-azure-sql-data-warehouse-may-2018"></a>Что нового в хранилище данных SQL Azure (май 2018 г.)?
+# <a name="whats-new-in-azure-sql-data-warehouse-may-2018"></a>Новые возможности Хранилища данных SQL Azure Май 2018 г. 
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с мая 2018 года. 
 
 ## <a name="gen-2-instances"></a>Экземпляры 2-го поколения
@@ -25,9 +25,7 @@ ms.locfileid: "34726039"
 
 Рохан Кумар (Rohan Kumar), корпоративный вице-президент службы данных Azure, посвятил этому обновлению запись [Turbocharge cloud analytics with Azure SQL Data Warehouse](https://azure.microsoft.com/blog/turbocharge-cloud-analytics-with-azure-sql-data-warehouse/) (Ускорение облачной службы аналитики благодаря Хранилищу данных SQL Microsoft Azure) в своем блоге.
 
-## <a name="features"></a>Функции
-
-### <a name="auto-statistics"></a>Автоматическая статистика
+## <a name="auto-statistics"></a>Автоматическая статистика
 Статистика критически важна для оптимизации при создании плана запроса в современных оптимизаторах на основе стоимости, таких как подсистема хранилища данных SQL. Если все запросы известны заранее, вполне возможно определить необходимые объекты статистики. Но если система постоянно сталкивается с новыми и произвольными запросами, что вполне типично для рабочих нагрузок хранилища данных, системным администраторам нелегко спрогнозировать необходимые объекты статистики. Это приводит к неоптимальным планам выполнения запросов и увеличению времени реакции на запросы. Для смягчения такой проблемы можно, среди прочего, заранее создать статистические объекты для всех столбцов в таблицах. Но этот процесс влечет за собой дополнительную нагрузку, так как поддержка объектов статистики при загрузке таблиц приводит к увеличению времени этой загрузки.
 
 Хранилище данных SQL теперь поддерживает автоматическое создание объектов статистики, что повышает гибкость, производительность и упрощает работу для системных администраторов и разработчиков, сохраняя при этом высокое качество планов выполнения и оптимальное время отклика.
@@ -45,7 +43,7 @@ ALTER DATABASE { database_name } SET { AUTO_CREATE_STATISTICS { OFF | ON } } [;]
 
 Дополнительные сведения см. в статье [с описанием параметров ALTER DATABASE SET](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options).
 
-### <a name="rejected-row-support"></a>Поддержка отклоненных строк
+## <a name="rejected-row-support"></a>Поддержка отклоненных строк
 Клиенты часто используют [PolyBase (внешние таблицы)](design-elt-data-loading.md) для загрузки данных в хранилище данных SQL Azure, так как они предоставляют высокую производительность и параллелизацию для загрузки данных. Модель PolyBase также используется по умолчанию при загрузке данных через [Фабрику данных Azure](http://azure.com/adf). 
 
 Хранилище данных SQL добавляет возможность определить расположение для отклоненных строк с использованием параметра `REJECTED_ROW_LOCATION` в инструкции [CREATE EXTERNAL TABLE](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql). После выполнения [CREATE TABLE AS SELECT (CTAS)](https://docs.microsoft.com/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) из внешней таблицы все строки, которые невозможно загрузить, будут сохраняться для дополнительного изучения в файл, расположенный рядом с источником данных. 
@@ -66,7 +64,7 @@ WITH
 )
 ```
 
-### <a name="alter-view"></a>ALTER VIEW
+## <a name="alter-view"></a>ALTER VIEW
 Инструкция [ALTER VIEW](https://docs.microsoft.com/sql/t-sql/statements/alter-view-transact-sql) позволяет изменить ранее созданное представление без необходимости удалять, создавать заново и применять разрешения. 
 
 В следующем примере изменяется ранее созданное представление.
@@ -74,7 +72,7 @@ WITH
 ALTER VIEW test_view AS SELECT 1 [data];
 ```
 
-### <a name="concatws"></a>CONCAT_WS
+## <a name="concatws"></a>CONCAT_WS
 Функция [CONCAT_WS()](https://docs.microsoft.com/sql/t-sql/functions/concat-ws-transact-sql) возвращает строку, содержащую два или несколько тесно объединенных значений. Функция разделяет объединенные значения разделителем, указанным в первом аргументе. Функция `CONCAT_WS` очень удобна для создания выходных данных в формате значений, разделенных запятыми (CSV).
 
 В следующем примере объединяется набор значений типа int, разделенных запятыми.
@@ -97,7 +95,8 @@ result
 ---------
 1,2,String,26E1F74D-5746-44DC-B47F-2FC1DA1B6E49
 ```
-### <a name="spdatatypeinfo"></a>SP_DATATYPE_INFO
+
+## <a name="spdatatypeinfo"></a>SP_DATATYPE_INFO
 Системная хранимая процедура [Sp_datatype_info](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-datatype-info-transact-sql) возвращает сведения о типах данных, поддерживаемых текущей средой. Как правило, она используется средствами, подключаемыми через ODBC, для изучения типов данных.
 
 В следующем примере извлекаются сведения о всех типах данных, поддерживаемых хранилищем данных SQL.
@@ -106,17 +105,16 @@ result
 EXEC sp_datatype_info
 ```
 
-## <a name="behavior-changes"></a>Изменения в поведении
-### <a name="select-into-with-order-by"></a>SELECT INTO с предложением ORDER BY
+## <a name="select-into-with-order-by-behavior-change"></a>Изменение в поведении запросов SELECT INTO с предложением ORDER BY
 Хранилище данных SQL теперь блокирует все запросы `SELECT INTO`, содержащие предложение `ORDER BY`. Ранее такая операция считалась допустимой. Для ее выполнения данные создавались в памяти и затем помещались в целевую таблицу с изменением порядка в соответствии с формой таблицы.
 
-#### <a name="previous-behavior"></a>Прежнее поведение
+### <a name="previous-behavior"></a>Прежнее поведение
 Следующая инструкция будет выполнена успешно, но с дополнительными затратами на обработку.
 ```sql
 SELECT * INTO table2 FROM table1 ORDER BY 1;
 ```
 
-#### <a name="current-behavior"></a>Текущее поведение
+### <a name="current-behavior"></a>Текущее поведение
 Следующая инструкция вызывает ошибку с сообщением о том, что предложение `ORDER BY` в инструкции `SELECT INTO` не поддерживается.
 ```sql
 SELECT * INTO table2 FROM table1 ORDER BY 1;
@@ -127,5 +125,5 @@ Msg 104381, Level 16, State 1, Line 1
 The ORDER BY clause is invalid in views, CREATE TABLE AS SELECT, INSERT SELECT, SELECT INTO, inline functions, derived tables, subqueries, and common table expressions, unless TOP or FOR XML is also specified.
 ```
 
-### <a name="set-parseonly-on-query-status"></a>Состояние запроса SET PARSEONLY ON
+## <a name="set-parseonly-on-query-status-behavior-change"></a>Состояние запроса SET PARSEONLY ON (изменение в поведении)
 Используя синтаксис `SET PARSEONLY ON`, пользователь может потребовать, чтобы подсистема хранилища данных SQL проверяла синтаксис каждой инструкции T-SQL и возвращало сообщения об ошибках, не компилируя и не выполняя такие инструкции. Ранее в системном представлении [sys.dm_pdw_exec_requests](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql) для таких инструкций сохранялось состояние `Running`. Теперь представление `sys.dm_pdw_exec_requests` возвращает правильное состояние `Complete`.

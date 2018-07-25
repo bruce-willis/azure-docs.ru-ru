@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: glenga
-ms.openlocfilehash: 5c582b080ec6f2cff801758fc4bff4f7d07fd7df
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: c7be9079da6be8d9d7f25b910ab07e905e8ac449
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37083075"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126220"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -62,7 +62,7 @@ npm install -g azure-functions-core-tools
 
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
-1. Установите [.NET Core 2.0 для Windows](https://www.microsoft.com/net/download/windows).
+1. Установите [.NET Core 2.1 для Windows](https://www.microsoft.com/net/download/windows).
 
 2. Установите [Node.js], который содержит пакет npm. Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
 
@@ -76,7 +76,7 @@ npm install -g azure-functions-core-tools
 
 На следующих шагах Homebrew используется для установки основных инструментов на компьютерах macOS.
 
-1. Установите [.NET Core 2.0 для macOS](https://www.microsoft.com/net/download/macos).
+1. Установите [.NET Core 2.1 для macOS](https://www.microsoft.com/net/download/macos).
 
 2. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
 
@@ -91,7 +91,7 @@ npm install -g azure-functions-core-tools
 
 На следующих шагах [APT](https://wiki.debian.org/Apt) используется для установки основных инструментов на дистрибутив Linux Ubuntu/Debian. Чтобы выполнить установку на другие дистрибутивы Linux, ознакомьтесь с [файлом сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#linux).
 
-1. Установите [.NET Core 2.0 для Linux](https://www.microsoft.com/net/download/linux).
+1. Установите [.NET Core 2.1 для Linux](https://www.microsoft.com/net/download/linux).
 
 2. Зарегистрируйте ключ продукта Майкрософт как доверенный:
 
@@ -137,6 +137,7 @@ func init MyFunctionProj
 Select a worker runtime:
 dotnet
 node
+java
 ```
 
 Для выбора языка используйте СТРЕЛКИ ВВЕРХ и ВНИЗ и клавишу ВВОД. Результат для проекта JavaScript выглядит примерно следующим образом.
@@ -151,6 +152,9 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 ```
 
 Чтобы создать проект без локального репозитория Git, используйте параметр `--no-source-control [-n]`.
+
+> [!IMPORTANT]
+> По умолчанию версия 2.x средства Core создает проекты приложений функций для среды выполнения .NET как [проектов класса C#](functions-dotnet-class-library.md) (.csproj). Это проекты C#, которые могут использоваться с Visual Studio 2017 или Visual Studio Code, собираются во время тестирования и при публикации в Azure. Если вы хотите создавать и работать с тем же файлом сценария C# (.csx), созданным в версии 1.x и на портале, необходимо указать параметр `--csx` при создании и развертывании функций.
 
 ## <a name="register-extensions"></a>Регистрация расширений
 
@@ -177,7 +181,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
     "CORS": "*"
   },
   "ConnectionStrings": {
-    "SQLConnectionString": "Value"
+    "SQLConnectionString": "<sqlclient-connection-string>"
   }
 }
 ```
@@ -189,7 +193,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 | **Host** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
 | **LocalHttpPort** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
 | **CORS** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
-| **ConnectionStrings** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только с платформ, которые получают строки подключения из раздела файла конфигурации **ConnectionStrings**, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения в подраздел **Строки подключения** раздела **Параметры приложения** приложения-функции. |
+| **ConnectionStrings** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только платформами, которые обычно получают строки подключений из раздела файла конфигурации **ConnectionStrings**, например [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения в коллекцию **Строки подключений** в настройках приложения-функции. Если вы создаете параметр [SqlConnection](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции, следует сохранить значение строки подключения в **Параметрах приложения** с другими подключениями. |
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
 
@@ -271,8 +275,9 @@ Writing C:\myfunctions\myMyFunctionProj\MyQueueTrigger\function.json
 | Аргумент     | ОПИСАНИЕ                            |
 | ------------------------------------------ | -------------------------------------- |
 | **`--language -l`**| Язык программирования шаблона, например C#, F# или JavaScript. Этот параметр необходим в версии 1.x. В версии 2.x этот параметр либо вообще не используется, либо для проекта выбирается язык по умолчанию. |
-| **`--template -t`** | Имя шаблона, которое может принимать одно из значений.<br/><ul><li>`Blob trigger`</li><li>`Cosmos DB trigger`</li><li>`Event Grid trigger`</li><li>`HTTP trigger`</li><li>`Queue trigger`</li><li>`SendGrid`</li><li>`Service Bus Queue trigger`</li><li>`Service Bus Topic trigger`</li><li>`Timer trigger`</li></ul> |
+| **`--template -t`** | Используйте команду `func templates list`, чтобы просмотреть полный список доступных шаблонов для каждого поддерживаемого языка.   |
 | **`--name -n`** | Имя функции. |
+| **`--csx`** | (Версия 2.x). Создаются те же шаблоны сценариев C# (.csx), которые используются в версии 1.x и на портале. |
 
 Например, чтобы создать триггер HTTP на JavaScript одной командой, выполните следующую команду.
 

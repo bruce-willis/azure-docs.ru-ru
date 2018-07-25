@@ -6,14 +6,14 @@ author: MichaelHauss
 manager: vamshik
 ms.service: storage
 ms.topic: article
-ms.date: 05/31/2018
+ms.date: 07/15/2018
 ms.author: mihauss
-ms.openlocfilehash: fa933000ee08f16774c821e40d9a3c6fe5dbf353
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 408e2167e60cbdfa2b4eee136bf3ac4321ae8121
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "35640138"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091737"
 ---
 # <a name="soft-delete-for-azure-storage-blobs"></a>Обратимое удаление больших двоичных объектов службы хранилища Azure
 Служба хранилища Azure теперь предоставляет возможность обратимого удаления больших двоичных объектов. Это упрощает восстановление данных, если они ошибочно изменены или удалены приложением или другим пользователем учетной записи хранения.
@@ -177,6 +177,11 @@ Set-AzureRmContext -Subscription "<subscription-name>"
 $MatchingAccounts = Get-AzureRMStorageAccount | where-object{$_.StorageAccountName -match "<matching-regex>"}
 $MatchingAccounts | Enable-AzureStorageDeleteRetentionPolicy -RetentionDays 7
 ```
+Убедиться, что обратимое удаление включено, можно с помощью следующей команды:
+
+```powershell
+$MatchingAccounts | Get-AzureStorageServiceProperty -ServiceType Blob
+```
 
 Чтобы восстановить большие двоичные объекты, которые были случайно удалены, вызовите для них отмену удаления. Помните, что при вызове операции **Undelete Blob** как в активных, так и в обратимо удаленных больших двоичных объектах все связанные обратимо удаленные моментальные снимки будут восстановлены в качестве активных. В следующем примере вызывается отмена удаления всех обратимо удаленных и активных больших двоичных объектов в контейнере:
 ```powershell
@@ -190,6 +195,13 @@ $Blobs.ICloudBlob.Properties
 # Undelete the blobs
 $Blobs.ICloudBlob.Undelete()
 ```
+Чтобы найти текущую политику хранения обратимого удаления, используйте следующую команду:
+
+```azurepowershell-interactive
+   $account = Get-AzureRmStorageAccount -ResourceGroupName myresourcegroup -Name storageaccount
+   Get-AzureStorageServiceProperty -ServiceType Blob -Context $account.Context
+```
+
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure 
 Чтобы включить обратимое удаление, обновите свойства клиентской службы BLOB-объектов:
 

@@ -16,12 +16,12 @@ ms.date: 07/09/2018
 ms.author: markvi
 ms.custom: it-pro
 ms.reviewer: jeedes
-ms.openlocfilehash: e9bd1f91f7e7fac1b882c89ffb2195491ca2c07b
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: f1d85b031abda73c6ca41d6d2551db9d9cd36f1f
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929939"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39092160"
 ---
 # <a name="saas-application-integration-with-azure-active-directory"></a>Интеграция приложений SaaS с Azure Active Directory
 
@@ -109,7 +109,7 @@ ms.locfileid: "37929939"
 | ![Логотип](./media/tutorial-list/active-directory-saas-blackboard-learn-shibboleth-tutorial.png)| [Blackboard Learn, Shibboleth](blackboard-learn-shibboleth-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-bluejeans-tutorial.png)| [BlueJeans](bluejeans-tutorial.md)|[BlueJeans — подготовка пользователей](bluejeans-provisioning-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-bomgarremotesupport-tutorial.png)| [Удаленная поддержка Bomgar](bomgarremotesupport-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-bonus-tutorial.png)| [Bonusly](bonus-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-bonus-tutorial.png)| [Bonusly](bonus-tutorial.md)|[Bonusly — Подготовка пользователей](bonusly-provisioning-tutorial.md)
 | ![Логотип](./media/tutorial-list/active-directory-saas-boomi-tutorial.png)| [Boomi](boomi-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-box-tutorial.png)| [Box](box-tutorial.md)| [Руководство по настройке Box для автоматической подготовки пользователей](box-userprovisioning-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-boxcryptor-tutorial.png)| [Boxcryptor](boxcryptor-tutorial.md)|
@@ -178,7 +178,7 @@ ms.locfileid: "37929939"
 | ![Логотип](./media/tutorial-list/active-directory-saas-dome9arc-tutorial.png)| [Dome9 Arc](dome9arc-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-domo-tutorial.png)| [Domo](domo-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-dowjones-factiva-tutorial.png)| [Dow Jones Factiva](dowjones-factiva-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-dropboxforbusiness-tutorial.png)| [Dropbox for Business](dropboxforbusiness-tutorial.md)| [Руководство по настройке автоматической подготовки пользователей в Dropbox для бизнеса](dropboxforbusiness-provisioning-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-dropboxforbusiness-tutorial.png)| [Dropbox for Business](dropboxforbusiness-tutorial.md)| [Руководство по настройке автоматической подготовки пользователей в Dropbox для бизнеса](dropboxforbusiness-provisioning-tutorial.md)| 
 | ![Логотип](./media/tutorial-list/active-directory-saas-druva-tutorial.png)| [Druva](druva-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-dynamicsignal-tutorial.png)| [Dynamic Signal](dynamicsignal-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-easyterritory-tutorial.png)| [EasyTerritory](easyterritory-tutorial.md)|
@@ -264,7 +264,7 @@ ms.locfileid: "37929939"
 | ![Логотип](./media/tutorial-list/active-directory-saas-imagineerwebVision-tutorial.png)| [Imagineer WebVision](imagineerwebVision-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-impacriskmanager-tutorial.png)| [IMPAC Risk Manager](impacriskmanager-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-infogix-tutorial.png)| [Infogix Data3Sixty Govern](infogix-tutorial.md)|
-| ![Логотип](./media/tutorial-list/active-directory-saas-inforretailinformationmanagement-tutorial.png)| [Infor Retail â Управление данными](inforretailinformationmanagement-tutorial.md)|
+| ![Логотип](./media/tutorial-list/active-directory-saas-inforretailinformationmanagement-tutorial.png)| [Infor Retail â — Управление данными](inforretailinformationmanagement-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-inkling-tutorial.png)| [Inkling](inkling-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-innotas-tutorial.png)| [Innotas](innotas-tutorial.md)|
 | ![Логотип](./media/tutorial-list/active-directory-saas-innovationhub-tutorial.png)| [Innovation Hub](innovationhub-tutorial.md)|

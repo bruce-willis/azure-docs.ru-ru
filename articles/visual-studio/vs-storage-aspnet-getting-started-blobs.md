@@ -11,12 +11,12 @@ ms.workload: azure
 ms.topic: conceptual
 ms.date: 12/07/2017
 ms.author: ghogen
-ms.openlocfilehash: 55b083ac5384e749098338d2f3b7b24bfe16fe8f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fd13dc94e0199aac04ae86aaf003ea9a70fa50d5
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38696571"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39070561"
 ---
 # <a name="get-started-with-azure-blob-storage-and-visual-studio-connected-services-aspnet"></a>Приступая к работе с хранилищем BLOB-объектов Azure и подключенными службами Visual Studio (ASP.NET)
 
@@ -30,7 +30,7 @@ ms.locfileid: "38696571"
 
 [!INCLUDE [storage-try-azure-tools-blobs](../../includes/storage-try-azure-tools-blobs.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
 
@@ -135,11 +135,11 @@ ms.locfileid: "38696571"
 
 1. В **обозревателе решений** щелкните правой кнопкой мыши папку **Представления**.
 
-2. В контекстном меню выберите **Добавить** > **Новая папка**. Назовите новую папку *Blobs*. 
+1. Если папки **Blobs** нет, создайте ее. В контекстном меню выберите **Добавить** > **Новая папка**. Назовите новую папку *Blobs*. 
  
 1. В **обозревателе решений** разверните папку **Представления** и щелкните правой кнопкой мыши папку **Blobs**.
 
-4. В контекстном меню выберите **Добавить** > **Представление**.
+1. В контекстном меню выберите **Добавить** > **Представление**.
 
 1. В диалоговом окне **Добавление представления** введите **CreateBlobContainer** в качестве имени представления и нажмите кнопку **Добавить**.
 

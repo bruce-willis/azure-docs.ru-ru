@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/03/2017
 ms.author: mbullwin
-ms.openlocfilehash: 5ffb758fe5fa42be6323de06afbfb38068ae1926
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: b1cd2e8d7649de48f34efb0c7d839e17906a29bf
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969176"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39044991"
 ---
 # <a name="explore-net-trace-logs-in-application-insights"></a>Просмотр журналов трассировки .NET в Application Insights
 Если вы используете NLog, log4Net или System.Diagnostics.Trace для диагностической трассировки в приложении ASP.NET, журналы трассировки можно передавать в [Azure Application Insights][start] для поиска и просмотра. Журналы будут объединены с другими данными телеметрии, поступающими из вашего приложения, давая возможность определять трассировки, связанные с обработкой каждого запроса пользователя, и сопоставлять их с другими событиями и отчетами об исключениях.
@@ -65,7 +65,7 @@ ms.locfileid: "38969176"
 
    * Microsoft.ApplicationInsights.TraceListener (для захвата вызовов System.Diagnostics.Trace)
    * Microsoft.ApplicationInsights.EventSourceListener (для записи событий EventSource)
-   * Microsoft.ApplicationInsights.EtwListener (для записи событий трассировки событий Windows)
+   * Microsoft.ApplicationInsights.EtwCollector (для записи событий трассировки событий Windows)
    * Microsoft.ApplicationInsights.NLogTarget
    * Microsoft.ApplicationInsights.Log4NetAppender
 

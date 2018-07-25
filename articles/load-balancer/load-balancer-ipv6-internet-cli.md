@@ -1,10 +1,10 @@
 ---
 title: Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как создать общедоступную подсистему балансировки нагрузки с поддержкой IPv6 в Azure Resource Manager с помощью Azure CLI.
+description: Узнайте, как создать общедоступную подсистему балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI.
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: timlt
+manager: jeconnoc
 tags: azure-resource-manager
 keywords: IPv6, Azure Load Balancer, двойной стек, общедоступный IP-адрес, встроенная поддержка Ipv6, мобильное устройство, Интернет вещей
 ms.assetid: a1957c9c-9c1d-423e-9d5c-d71449bc1f37
@@ -13,21 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
+ms.date: 06/25/2018
 ms.author: kumud
-ms.openlocfilehash: 62f22ccadfabd2f3d6906beb3c241703d4e6383f
-ms.sourcegitcommit: c3d53d8901622f93efcd13a31863161019325216
+ms.openlocfilehash: 3172736edf4e38f53858620ebac95b711857010b
+ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2018
-ms.locfileid: "30264036"
+ms.lasthandoff: 07/07/2018
+ms.locfileid: "37901271"
 ---
-# <a name="create-a-public-load-balancer-with-ipv6-in-azure-resource-manager-by-using-azure-cli"></a>Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 в Azure Resource Manager с помощью Azure CLI
-
-> [!div class="op_single_selector"]
-> * [PowerShell](load-balancer-ipv6-internet-ps.md)
-> * [Интерфейс командной строки Azure](load-balancer-ipv6-internet-cli.md)
-> * [Шаблон](load-balancer-ipv6-internet-template.md)
+# <a name="create-a-public-load-balancer-with-ipv6-using-azure-cli"></a>Создание общедоступной подсистемы балансировки нагрузки с поддержкой IPv6 с помощью Azure CLI
 
 
 Azure Load Balancer является балансировщиком нагрузки 4-го уровня (TCP, UDP). Подсистема балансировки нагрузки обеспечивает высокий уровень доступности, распределяя входящий трафик между работоспособными экземплярами службы в облачных службах или виртуальных машинах, определенных в наборе подсистемы балансировки нагрузки. Подсистемы балансировки нагрузки могут также представить данные службы на нескольких портах, нескольких IP-адресах или обоими этими способами.
@@ -48,7 +43,7 @@ Azure Load Balancer является балансировщиком нагруз
 
 ## <a name="deploy-the-solution-by-using-azure-cli"></a>Развертывание решения с помощью Azure CLI
 
-Ниже описано, как создать общедоступную подсистему балансировки нагрузки с помощью Azure Resource Manager и Azure CLI. Azure Resource Manager позволяет создать и настроить каждый объект по отдельности, после чего на их основе создается единый ресурс.
+Ниже описано, как создать общедоступную подсистему балансировки нагрузки с помощью Azure CLI. CLI позволяет создать и настроить каждый объект по отдельности, после чего на их основе создается единый ресурс.
 
 Чтобы развернуть подсистему балансировки нагрузки, создайте и настройте следующие объекты:
 
@@ -58,39 +53,13 @@ Azure Load Balancer является балансировщиком нагруз
 * **Правила преобразования сетевых адресов для входящего трафика**. Содержат правила преобразования сетевых адресов (NAT) в подсистеме балансировки нагрузки с портом на конкретной виртуальной машине в пуле внутренних адресов.
 * **Пробы** Содержат пробы работоспособности, которые используются для проверки доступности экземпляров виртуальной машины в пуле внутренних адресов.
 
-Дополнительные сведения см. в статье [Поддержка диспетчера ресурсов Azure для подсистемы балансировки нагрузки](load-balancer-arm.md).
-
-## <a name="set-up-your-azure-cli-environment-to-use-azure-resource-manager"></a>Настройка среды Azure CLI для использования Azure Resource Manager
+## <a name="set-up-azure-cli"></a>Настройка Azure CLI
 
 В этом примере программы Azure CLI выполняются в командном окне PowerShell. Для улучшения удобства чтения и повторного использования примените возможности сценариев PowerShell, а не командлеты Azure PowerShell.
 
-1. Если вы еще не пользовались Azure CLI, ознакомьтесь со статьей [Install the Azure CLI 1.0](../cli-install-nodejs.md) (Установка Azure CLI 1.0) и следуйте инструкциям вплоть до выбора учетной записи Azure и подписки.
+1. [Установите и настройте Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), следуя инструкциям в соответствующей статье, а затем войдите в свою учетную запись Azure.
 
-2. Чтобы переключиться в режим Resource Manager, выполните команду **azure config mode**.
-
-    ```azurecli
-    azure config mode arm
-    ```
-
-    Ожидаемые выходные данные:
-
-        info:    New mode is arm
-
-3. Войдите в Azure и получите список подписок.
-
-    ```azurecli
-    azure login
-    ```
-
-4. Когда появится окно для входа, введите учетные данные Azure.
-
-    ```azurecli
-    azure account list
-    ```
-
-5. Выберите подписку, которую нужно использовать, и запишите идентификатор подписки, который понадобится на следующем шаге.
-
-6. Настройте переменные PowerShell для использования с командами Azure CLI.
+2. Настройте переменные PowerShell для использования с командами Azure CLI.
 
     ```powershell
     $subscriptionid = "########-####-####-####-############"  # enter subscription id
@@ -111,26 +80,26 @@ Azure Load Balancer является балансировщиком нагруз
 1. Создайте группу ресурсов:
 
     ```azurecli
-    azure group create $rgName $location
+    az group create --name $rgName --location $location
     ```
 
 2. Создайте подсистему балансировки нагрузки.
 
     ```azurecli
-    $lb = azure network lb create --resource-group $rgname --location $location --name $lbName
+    $lb = az network lb create --resource-group $rgname --location $location --name $lbName
     ```
 
 3. Создайте виртуальную сеть:
 
     ```azurecli
-    $vnet = azure network vnet create  --resource-group $rgname --name $vnetName --location $location --address-prefixes $vnetPrefix
+    $vnet = az network vnet create  --resource-group $rgname --name $vnetName --location $location --address-prefixes $vnetPrefix
     ```
 
 4. Создайте две подсети в виртуальной сети.
 
     ```azurecli
-    $subnet1 = azure network vnet subnet create --resource-group $rgname --name $subnet1Name --address-prefix $subnet1Prefix --vnet-name $vnetName
-    $subnet2 = azure network vnet subnet create --resource-group $rgname --name $subnet2Name --address-prefix $subnet2Prefix --vnet-name $vnetName
+    $subnet1 = az network vnet subnet create --resource-group $rgname --name $subnet1Name --address-prefix $subnet1Prefix --vnet-name $vnetName
+    $subnet2 = az network vnet subnet create --resource-group $rgname --name $subnet2Name --address-prefix $subnet2Prefix --vnet-name $vnetName
     ```
 
 ## <a name="create-public-ip-addresses-for-the-front-end-pool"></a>Создание общедоступных IP-адресов для интерфейсного пула
@@ -145,8 +114,8 @@ Azure Load Balancer является балансировщиком нагруз
 2. Создайте общедоступный IP-адрес для интерфейсного пула IP-адресов.
 
     ```azurecli
-    $publicipV4 = azure network public-ip create --resource-group $rgname --name $publicIpv4Name --location $location --ip-version IPv4 --allocation-method Dynamic --domain-name-label $dnsLabel
-    $publicipV6 = azure network public-ip create --resource-group $rgname --name $publicIpv6Name --location $location --ip-version IPv6 --allocation-method Dynamic --domain-name-label $dnsLabel
+    $publicipV4 = az network public-ip create --resource-group $rgname --name $publicIpv4Name --location $location --version IPv4 --allocation-method Dynamic --dns-name $dnsLabel
+    $publicipV6 = az network public-ip create --resource-group $rgname --name $publicIpv6Name --location $location --version IPv6 --allocation-method Dynamic --dns-name $dnsLabel
     ```
 
     > [!IMPORTANT]
@@ -172,10 +141,10 @@ Azure Load Balancer является балансировщиком нагруз
 2. Создайте пул интерфейсных IP-адресов и связывающий с ним общедоступный IP-адрес, который был создан на предыдущем этапе, и подсистему балансировки нагрузки.
 
     ```azurecli
-    $frontendV4 = azure network lb frontend-ip create --resource-group $rgname --name $frontendV4Name --public-ip-name $publicIpv4Name --lb-name $lbName
-    $frontendV6 = azure network lb frontend-ip create --resource-group $rgname --name $frontendV6Name --public-ip-name $publicIpv6Name --lb-name $lbName
-    $backendAddressPoolV4 = azure network lb address-pool create --resource-group $rgname --name $backendAddressPoolV4Name --lb-name $lbName
-    $backendAddressPoolV6 = azure network lb address-pool create --resource-group $rgname --name $backendAddressPoolV6Name --lb-name $lbName
+    $frontendV4 = az network lb frontend-ip create --resource-group $rgname --name $frontendV4Name --public-ip-address $publicIpv4Name --lb-name $lbName
+    $frontendV6 = az network lb frontend-ip create --resource-group $rgname --name $frontendV6Name --public-ip-address $publicIpv6Name --lb-name $lbName
+    $backendAddressPoolV4 = az network lb address-pool create --resource-group $rgname --name $backendAddressPoolV4Name --lb-name $lbName
+    $backendAddressPoolV6 = az network lb address-pool create --resource-group $rgname --name $backendAddressPoolV6Name --lb-name $lbName
     ```
 
 ## <a name="create-the-probe-nat-rules-and-load-balancer-rules"></a>Создание пробы, правил преобразования сетевых адресов и правил подсистемы балансировки нагрузки
@@ -204,27 +173,27 @@ Azure Load Balancer является балансировщиком нагруз
     В следующем примере создается проба TCP, которая каждые 15 секунд проверяет подключение к внутреннему TCP-порту 80. После двух последовательных неудавшихся подключений она пометит внутренний ресурс как недоступный.
 
     ```azurecli
-    $probeV4V6 = azure network lb probe create --resource-group $rgname --name $probeV4V6Name --protocol tcp --port 80 --interval 15 --count 2 --lb-name $lbName
+    $probeV4V6 = az network lb probe create --resource-group $rgname --name $probeV4V6Name --protocol tcp --port 80 --interval 15 --threshold 2 --lb-name $lbName
     ```
 
 3. Создайте правила преобразования сетевых адресов для входящего трафика, позволяющие RDP-подключения к внутренним ресурсам.
 
     ```azurecli
-    $inboundNatRuleRdp1 = azure network lb inbound-nat-rule create --resource-group $rgname --name $natRule1V4Name --frontend-ip-name $frontendV4Name --protocol Tcp --frontend-port 3389 --backend-port 3389 --lb-name $lbName
-    $inboundNatRuleRdp2 = azure network lb inbound-nat-rule create --resource-group $rgname --name $natRule2V4Name --frontend-ip-name $frontendV4Name --protocol Tcp --frontend-port 3391 --backend-port 3389 --lb-name $lbName
+    $inboundNatRuleRdp1 = az network lb inbound-nat-rule create --resource-group $rgname --name $natRule1V4Name --frontend-ip-name $frontendV4Name --protocol Tcp --frontend-port 3389 --backend-port 3389 --lb-name $lbName
+    $inboundNatRuleRdp2 = az network lb inbound-nat-rule create --resource-group $rgname --name $natRule2V4Name --frontend-ip-name $frontendV4Name --protocol Tcp --frontend-port 3391 --backend-port 3389 --lb-name $lbName
     ```
 
 4. Создайте правила подсистемы балансировки нагрузки, которые отправляют трафик на разные внутренние порты в зависимости от полученного запроса интерфейса.
 
     ```azurecli
-    $lbruleIPv4 = azure network lb rule create --resource-group $rgname --name $lbRule1V4Name --frontend-ip-name $frontendV4Name --backend-address-pool-name $backendAddressPoolV4Name --probe-name $probeV4V6Name --protocol Tcp --frontend-port 80 --backend-port 80 --lb-name $lbName
-    $lbruleIPv6 = azure network lb rule create --resource-group $rgname --name $lbRule1V6Name --frontend-ip-name $frontendV6Name --backend-address-pool-name $backendAddressPoolV6Name --probe-name $probeV4V6Name --protocol Tcp --frontend-port 80 --backend-port 8080 --lb-name $lbName
+    $lbruleIPv4 = az network lb rule create --resource-group $rgname --name $lbRule1V4Name --frontend-ip-name $frontendV4Name --backend-pool-name $backendAddressPoolV4Name --probe-name $probeV4V6Name --protocol Tcp --frontend-port 80 --backend-port 80 --lb-name $lbName
+    $lbruleIPv6 = az network lb rule create --resource-group $rgname --name $lbRule1V6Name --frontend-ip-name $frontendV6Name --backend-pool-name $backendAddressPoolV6Name --probe-name $probeV4V6Name --protocol Tcp --frontend-port 80 --backend-port 8080 --lb-name $lbName
     ```
 
 5. Проверьте параметры.
 
     ```azurecli
-    azure network lb show --resource-group $rgName --name $lbName
+    az network lb show --resource-group $rgName --name $lbName
     ```
 
     Ожидаемые выходные данные:
@@ -287,11 +256,11 @@ Azure Load Balancer является балансировщиком нагруз
 2. Создайте сетевой адаптер для каждой серверной части и добавьте конфигурацию IPv6.
 
     ```azurecli
-    $nic1 = azure network nic create --name $nic1Name --resource-group $rgname --location $location --private-ip-version "IPv4" --subnet-id $subnet1Id --lb-address-pool-ids $backendAddressPoolV4Id --lb-inbound-nat-rule-ids $natRule1V4Id
-    $nic1IPv6 = azure network nic ip-config create --resource-group $rgname --name "IPv6IPConfig" --private-ip-version "IPv6" --lb-address-pool-ids $backendAddressPoolV6Id --nic-name $nic1Name
+    $nic1 = az network nic create --name $nic1Name --resource-group $rgname --location $location --private-ip-address-version "IPv4" --subnet $subnet1Id --lb-address-pools $backendAddressPoolV4Id --lb-inbound-nat-rules $natRule1V4Id
+    $nic1IPv6 = az network nic ip-config create --resource-group $rgname --name "IPv6IPConfig" --private-ip-address-version "IPv6" --lb-address-pools $backendAddressPoolV6Id --nic-name $nic1Name
 
-    $nic2 = azure network nic create --name $nic2Name --resource-group $rgname --location $location --subnet-id $subnet1Id --lb-address-pool-ids $backendAddressPoolV4Id --lb-inbound-nat-rule-ids $natRule2V4Id
-    $nic2IPv6 = azure network nic ip-config create --resource-group $rgname --name "IPv6IPConfig" --private-ip-version "IPv6" --lb-address-pool-ids $backendAddressPoolV6Id --nic-name $nic2Name
+    $nic2 = az network nic create --name $nic2Name --resource-group $rgname --location $location --private-ip-address-version "IPv4" --subnet $subnet1Id --lb-address-pools $backendAddressPoolV4Id --lb-inbound-nat-rules $natRule2V4Id
+    $nic2IPv6 = az network nic ip-config create --resource-group $rgname --name "IPv6IPConfig" --private-ip-address-version "IPv6" --lb-address-pools $backendAddressPoolV6Id --nic-name $nic2Name
     ```
 
 ## <a name="create-the-back-end-vm-resources-and-attach-each-nic"></a>Создание внутренних ресурсов виртуальных машин и присоединение каждого сетевого адаптера
@@ -301,17 +270,12 @@ Azure Load Balancer является балансировщиком нагруз
 1. Настройте переменные PowerShell.
 
     ```powershell
-    $storageAccountName = "ps08092016v6sa0"
     $availabilitySetName = "myIPv4IPv6AvailabilitySet"
     $vm1Name = "myIPv4IPv6VM1"
     $vm2Name = "myIPv4IPv6VM2"
     $nic1Id = "/subscriptions/$subscriptionid/resourceGroups/$rgname/providers/Microsoft.Network/networkInterfaces/$nic1Name"
     $nic2Id = "/subscriptions/$subscriptionid/resourceGroups/$rgname/providers/Microsoft.Network/networkInterfaces/$nic2Name"
-    $disk1Name = "WindowsVMosDisk1"
-    $disk2Name = "WindowsVMosDisk2"
-    $osDisk1Uri = "https://$storageAccountName.blob.core.windows.net/vhds/$disk1Name.vhd"
-    $osDisk2Uri = "https://$storageAccountName.blob.core.windows.net/vhds/$disk2Name.vhd"
-    $imageurn "MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest"
+    $imageurn = "MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest"
     $vmUserName = "vmUser"
     $mySecurePassword = "PlainTextPassword*1"
     ```
@@ -319,26 +283,18 @@ Azure Load Balancer является балансировщиком нагруз
     > [!WARNING]
     > В этом примере для виртуальных машин используются имя пользователя и пароль в виде открытого текста. Будьте предусмотрительны, используя эти учетные данные в виде открытого текста. Более безопасный способ обработки учетных данных в PowerShell приводится в описании командлета [`Get-Credential`](https://technet.microsoft.com/library/hh849815.aspx).
 
-2. Создайте учетную запись хранения и группу доступности.
-
-    При создании виртуальных машин можно использовать существующую учетную запись хранения. Создайте учетную запись хранения с помощью следующей команды:
+2. Создайте группу доступности.
 
     ```azurecli
-    $storageAcc = azure storage account create $storageAccountName --resource-group $rgName --location $location --sku-name "LRS" --kind "Storage"
+    $availabilitySet = az vm availability-set create --name $availabilitySetName --resource-group $rgName --location $location
     ```
 
-3. Создайте группу доступности.
+3. Создайте виртуальные машины со связанными сетевыми адаптерами.
 
     ```azurecli
-    $availabilitySet = azure availset create --name $availabilitySetName --resource-group $rgName --location $location
-    ```
+    az vm create --resource-group $rgname --name $vm1Name --image $imageurn --admin-username $vmUserName --admin-password $mySecurePassword --nics $nic1Id --location $location --availability-set $availabilitySetName --size "Standard_A1" 
 
-4. Создайте виртуальные машины со связанными сетевыми адаптерами.
-
-    ```azurecli
-    $vm1 = azure vm create --resource-group $rgname --location $location --availset-name $availabilitySetName --name $vm1Name --nic-id $nic1Id --os-disk-vhd $osDisk1Uri --os-type "Windows" --admin-username $vmUserName --admin-password $mySecurePassword --vm-size "Standard_A1" --image-urn $imageurn --storage-account-name $storageAccountName --disable-bginfo-extension
-
-    $vm2 = azure vm create --resource-group $rgname --location $location --availset-name $availabilitySetName --name $vm2Name --nic-id $nic2Id --os-disk-vhd $osDisk2Uri --os-type "Windows" --admin-username $vmUserName --admin-password $mySecurePassword --vm-size "Standard_A1" --image-urn $imageurn --storage-account-name $storageAccountName --disable-bginfo-extension
+    az vm create --resource-group $rgname --name $vm2Name --image $imageurn --admin-username $vmUserName --admin-password $mySecurePassword --nics $nic2Id --location $location --availability-set $availabilitySetName --size "Standard_A1" 
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация

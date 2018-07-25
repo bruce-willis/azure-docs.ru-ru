@@ -50,7 +50,7 @@ ms.locfileid: "37133510"
 |                        | Type=Event &#124; top 100 | Event &#124; take 100 |
 | Сравнение строк      | Type=Event Computer=srv01.contoso.com   | Event &#124; where Computer == "srv01.contoso.com" |
 |                        | Type=Event Computer=contains("contoso") | Event &#124; where Computer contains "contoso" (без учета регистра)<br>Event &#124; where Computer contains "Contoso" (с учетом регистра) |
-|                        | Type=Event Computer=RegEx("\@contoso@")  | Event &#124; where Computer matches regex ".*contoso*" |
+|                        | Type=Event Computer=RegEx("\@contoso \@\")  | Event &#124; where Computer matches regex ".*contoso*" |
 | Сравнение данных        | Type=Event TimeGenerated > NOW-1DAYS | Event &#124; where TimeGenerated > ago(1d) |
 |                        | Type=Event TimeGenerated>2017-05-01 TimeGenerated<2017-05-31 | Event &amp;#124; where TimeGenerated between (datetime(2017-05-01) . datetime(2017-05-31)) |
 | Сравнение логических значений     | Type=Heartbeat IsGatewayInstalled=false  | Heartbeat \| where IsGatewayInstalled == false |

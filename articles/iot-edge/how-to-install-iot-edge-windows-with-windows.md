@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 3d34628a5a47788bca8cdafcb6e199a0c2cb3bcc
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 18a1481b72904b0ac9c27e100271dc0fd0666baf
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437847"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39001768"
 ---
 # <a name="install-azure-iot-edge-runtime-on-windows-to-use-with-windows-containers"></a>Установка среды выполнения Azure IoT Edge в Windows для использования с контейнерами Windows
 
@@ -52,8 +52,9 @@ Invoke-WebRequest https://aka.ms/iotedged-windows-latest -o .\iotedged-windows.z
 Expand-Archive .\iotedged-windows.zip C:\ProgramData\iotedge -f
 Move-Item c:\ProgramData\iotedge\iotedged-windows\* C:\ProgramData\iotedge\ -Force
 rmdir C:\ProgramData\iotedge\iotedged-windows
-$env:Path += ";C:\ProgramData\iotedge"
-SETX /M PATH "$env:Path"
+$sysenv = "HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment"
+$path = (Get-ItemProperty -Path $sysenv -Name Path).Path + ";C:\ProgramData\iotedge"
+Set-ItemProperty -Path $sysenv -Name Path -Value $path
 ```
 
 Настройте использование vcruntime (для устройств Edge под управлением версии "IoT Базовая" этот этап можно пропустить):
@@ -142,7 +143,7 @@ Windows Registry Editor Version 5.00
 
 ![NAT][img-nat]
 
-Обновите параметры **workload_uri** и **management_uri** в разделе **connect:** файла конфигурации. Замените **\<GATEWAY_ADDRESS\>** своим IP-адресом. 
+Обновите параметры **workload_uri** и **management_uri** в разделе **connect:** файла конфигурации. Замените **\<GATEWAY_ADDRESS\>** скопированным IP-адресом vEthernet.
 
 ```yaml
 connect:
@@ -150,7 +151,7 @@ connect:
   workload_uri: "http://<GATEWAY_ADDRESS>:15581"
 ```
 
-В разделе **listen:** файла конфигурации введите те же адреса, используя свой IP-адрес в качестве адреса шлюза.
+В разделе **listen:** введите те же адреса.
 
 ```yaml
 listen:
@@ -186,7 +187,7 @@ sleep 5
 Start-Service iotedge
 ```
 
-## <a name="verify-successful-installation"></a>Проверка успешного выполнения установки
+## <a name="verify-successful-installation"></a>Проверка установки
 
 Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. Дальнейшие инструкции см. в руководстве по [созданию и подготовке имитированного устройства IoT Edge TPM в Windows](how-to-auto-provision-simulated-device-windows.md#create-a-tpm-environment-variable).
 

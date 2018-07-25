@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/12/2018
+ms.date: 07/17/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 446cb34f2de8d0de3ee52e23df6cd26644d31bba
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: d7554ef46289600cd15e4675a91f42a2cd735f18
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435976"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39112667"
 ---
 # <a name="custom-roles-in-azure"></a>Пользовательские роли в Azure
 
@@ -74,11 +74,11 @@ ms.locfileid: "37435976"
 1. Определение требуемых разрешений
 
     При создании пользовательской роли вам нужно знать, какие операции поставщика ресурсов доступны, чтобы определить разрешения. Чтобы просмотреть список операций, используйте команду [Get-AzureRMProviderOperation](/powershell/module/azurerm.resources/get-azurermprovideroperation) или [az provider operation list](/cli/azure/provider/operation#az-provider-operation-list).
-    Чтобы указать разрешения для пользовательской роли, можно добавить операции в свойство `actions` или `notActions` [определения роли](role-definitions.md). При наличии операций с данными их можно добавить в свойство `dataActions` или `notDataActions`.
+    Чтобы указать разрешения для пользовательской роли, можно добавить операции в свойство `Actions` или `NotActions` [определения роли](role-definitions.md). При наличии операций с данными их можно добавить в свойство `DataActions` или `NotDataActions`.
 
 2. Создание настраиваемой роли
 
-    Для создания пользовательской роли вы можете использовать Azure PowerShell или Azure CLI. В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. После этого можно воспользоваться командой [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/new-azurermroledefinition) или [az role definition create](/cli/azure/role/definition#az-role-definition-create) для создания настраиваемой роли. Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `assignableScopes`, таких как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователей](built-in-roles.md#user-access-administrator).
+    Для создания пользовательской роли вы можете использовать Azure PowerShell или Azure CLI. В общем случае вы начинаете с существующей встроенной роли и видоизменяете ее под свои потребности. После этого можно воспользоваться командой [New-AzureRmRoleDefinition](/powershell/module/azurerm.resources/new-azurermroledefinition) или [az role definition create](/cli/azure/role/definition#az-role-definition-create) для создания настраиваемой роли. Чтобы создать пользовательскую роль, нужно иметь разрешение `Microsoft.Authorization/roleDefinitions/write` для всех объектов `AssignableScopes`, таких как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователей](built-in-roles.md#user-access-administrator).
 
 3. Проверка пользовательской роли
 
@@ -94,20 +94,20 @@ ms.locfileid: "37435976"
 | `Id` | Yes | Строка | Уникальный идентификатор настраиваемой роли. Для Azure PowerShell и Azure CLI этот идентификатор формируется автоматически при создании роли. |
 | `IsCustom` | Yes | Строка | Указывает, является ли эта роль настраиваемой. Для настраиваемых пролей задайте значение `true`. |
 | `Description` | Yes | Строка | Описание пользовательской роли. Может содержать буквы, цифры, пробелы и специальные знаки. Максимальное количество знаков — 1024. |
-| `Actions` | Yes | String[] | Массив строк, описывающий операции управления, которые роль разрешает выполнять. Дополнительные сведения см. в разделе [actions](role-definitions.md#actions). |
-| `NotActions` | Нет  | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `actions`. Дополнительные сведения см. в разделе [notActions](role-definitions.md#notactions). |
-| `DataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Дополнительные сведения см. в разделе [dataActions (предварительная версия)](role-definitions.md#dataactions-preview). |
-| `NotDataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `dataActions`. Дополнительные сведения см. в разделе [notDataActions (предварительная версия)](role-definitions.md#notdataactions-preview). |
-| `AssignableScopes` | Yes | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Использовать корневую область (`"/"`) запрещено. Дополнительную информацию см. в разделе [assignableScopes](role-definitions.md#assignablescopes). |
+| `Actions` | Yes | String[] | Массив строк, описывающий операции управления, которые роль разрешает выполнять. Дополнительные сведения см. в разделе [Actions](role-definitions.md#actions). |
+| `NotActions` | Нет  | String[] | Массив строк, указывающий операции управления, которые исключаются из разрешенных `Actions`. Дополнительные сведения см. в разделе [NotActions](role-definitions.md#notactions). |
+| `DataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые роль разрешает выполнять с вашими данными внутри этого объекта. Дополнительные сведения см. в разделе [DataActions (предварительная версия)](role-definitions.md#dataactions-preview). |
+| `NotDataActions` | Нет  | String[] | Массив строк, указывающий операции с данными, которые исключаются из разрешенных `DataActions`. Дополнительные сведения см. в разделе [NotDataActions (предварительная версия)](role-definitions.md#notdataactions-preview). |
+| `AssignableScopes` | Yes | String[] | Массив строк, который указывает области, в которых пользовательская роль может быть назначена. Использовать корневую область (`"/"`) запрещено. Дополнительные сведения см. в разделе [AssignableScopes](role-definitions.md#assignablescopes). |
 
-## <a name="assignablescopes-for-custom-roles"></a>assignableScopes для пользовательских ролей
+## <a name="assignablescopes-for-custom-roles"></a>AssignableScopes для пользовательских ролей
 
-Как и в случае со встроенными ролями, свойство `assignableScopes` указывает области, в которых роль может быть назначена. Однако в собственных пользовательских ролях корневую область (`"/"`) использовать запрещено. При попытке это сделать происходит ошибка авторизации. Свойство `assignableScopes` для пользовательской роли также определяет, кто может создавать, удалять, изменять или просматривать настраиваемую роль.
+Как и в случае со встроенными ролями, свойство `AssignableScopes` указывает области, в которых роль может быть назначена. Однако в собственных пользовательских ролях корневую область (`"/"`) использовать запрещено. При попытке это сделать происходит ошибка авторизации. Свойство `AssignableScopes` для пользовательской роли также определяет, кто может создавать, удалять, изменять или просматривать настраиваемую роль.
 
 | Задача | Операция | ОПИСАНИЕ |
 | --- | --- | --- |
-| Создание или удаление пользовательской роли | `Microsoft.Authorization/ roleDefinition/write` | Пользователи с разрешением на эту операцию для всех `assignableScopes` пользовательской роли могут создавать (или удалять) пользовательские роли для использования в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
-| Изменение настраиваемой роли | `Microsoft.Authorization/ roleDefinition/write` | Пользователи с разрешением на эту операцию для всех `assignableScopes` пользовательской роли могут изменять пользовательские роли в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
+| Создание или удаление пользовательской роли | `Microsoft.Authorization/ roleDefinition/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут создавать (или удалять) пользовательские роли для использования в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
+| Изменение настраиваемой роли | `Microsoft.Authorization/ roleDefinition/write` | Пользователи с разрешением на эту операцию для всех `AssignableScopes` пользовательской роли могут изменять пользовательские роли в этих областях. Например, [владельцы](built-in-roles.md#owner) или [администраторы доступа пользователей](built-in-roles.md#user-access-administrator) подписок, групп ресурсов и ресурсов. |
 | Просмотр пользовательской роли | `Microsoft.Authorization/ roleDefinition/read` | Пользователи с разрешением на эту операцию в определенной области могут просматривать пользовательские роли, которые доступны для назначения в этой области. Все встроенные роли обеспечивают доступность пользовательских ролей для назначения. |
 
 ## <a name="next-steps"></a>Дополнительная информация

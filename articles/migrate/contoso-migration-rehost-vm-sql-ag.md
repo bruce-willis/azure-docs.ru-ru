@@ -6,18 +6,18 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 06/11/2018
+ms.date: 07/11/2018
 ms.author: raynew
-ms.openlocfilehash: 33ab56003f2d9428816ea0f32cfd6381ea857df3
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 2415812a62fc000ddb18318ac52b764c1b5de51b
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38611294"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008439"
 ---
-# <a name="contoso-migration-rehost-an-on-premises-app-to-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso — размещение локального приложения в ВМ Azure и в группе доступности SQL Server AlwaysOn
+# <a name="contoso-migration-rehost-an-on-premises-app-on-azure-vms-and-sql-server-alwayson-availability-group"></a>Миграция Contoso — повторное размещение локального приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn
 
-В этой статье показано, как компания Contoso изменяет размещение своего приложения SmartHotel в Azure. Специалисты компании осуществляют миграцию виртуальной машины интерфейса приложения в ВМ Azure и базы данных приложения в виртуальную машину Azure SQL Server, запущенную в отказоустойчивом кластере Windows Server с группами доступности SQL Server AlwaysOn.
+В этой статье показано, как компания Contoso повторно размещает приложение SmartHotel в Azure. Специалисты компании переносят виртуальную машину для интерфейса приложений на виртуальную машину Azure. База данных приложений переносится на виртуальную машину Azure SQL Server, запущенную в отказоустойчивом кластере Windows Server с группами доступности SQL Server AlwaysOn.
 
 Это документ из цикла статей о том, как вымышленная компания Contoso переносит локальные ресурсы в облако Microsoft Azure. В статьях этого цикла содержатся общие сведения и сценарии развертывания, в которых проиллюстрирована настройка инфраструктуры миграции, оценка пригодности локальных ресурсов для миграции и выполнение различных типов миграции. Сценарии описаны в порядке возрастания сложности. Со временем мы добавим в этот цикл и другие статьи.
 
@@ -26,11 +26,16 @@ ms.locfileid: "38611294"
 [Статья 1. Общие сведения](contoso-migration-overview.md) | Предоставляет общие сведения о стратегии миграции Contoso, цикле статей и примерах приложений, которые мы используем. | Доступна
 [Статья 2. Развертывания инфраструктуры Azure](contoso-migration-infrastructure.md) | Здесь рассказывается о том, как Contoso готовит свою локальную инфраструктуру Azure для миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
 [Статья 3. Доступ к локальным ресурсам](contoso-migration-assessment.md)  | В этой статье рассказывается, как компания Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel в VMware. Для оценки виртуальных машин приложения компания Contoso использует службу [Миграция Azure](migrate-overview.md). Для оценки базы данных SQL Server приложения используется [помощник по миграции баз данных](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Доступна
-[Статья 4. Повторное размещение приложения на виртуальных машинах Azure и в управляемом экземпляре SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется, как Contoso выполняет процесс миграции приложения SmartHotel в Azure по методу lift-and-shift. Contoso переносит интерфейсную ВМ приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Базу данных приложения она переносит в управляемый экземпляр SQL с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
-[Статья 5. Перемещение приложения в виртуальные машины Azure](contoso-migration-rehost-vm.md) | В этой статье рассказывается, как компания Contoso переносит виртуальные машины приложения SmartHotel, используя только Site Recovery.
-Статья 6: Повторное размещение приложения на виртуальных машинах Azure и в группах доступности SQL Server AlwaysOn (эта статья) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel. Contoso использует Site Recovery для переноса ВМ приложений и службы миграции баз данных для миграции базы данных приложения в кластер SQL Server, защищенный группой доступности AlwaysOn. | Доступна
-[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь показано, как компания Contoso осуществляет миграцию приложения Linux osTicket по методу lift-and-shift на виртуальные машины Azure с помощью Site Recovery | Запланировано
-[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и сервере MySQL в Azure](contoso-migration-rehost-linux-vm-mysql.md) | В этой статье рассказывается, как компания Contoso выполняет миграцию приложения Linux osTicket на виртуальные машины Azure с помощью Site Recovery и миграцию базы данных приложения в экземпляр Azure MySQL Server с помощью MySQL Workbench. | Доступна
+[Статья 4. Повторное размещение приложения на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется, как Contoso выполняет процесс миграции приложения SmartHotel в Azure по методу lift-and-shift. Contoso переносит интерфейсную ВМ приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Базу данных приложения она переносит в управляемый экземпляр SQL с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
+[Статья 5. Повторное размещение приложения на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | В этой статье рассказывается, как компания Contoso переносит виртуальные машины приложения SmartHotel, используя только Site Recovery. | Доступна
+Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группе доступности SQL Server Always On | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel. Contoso использует Site Recovery для переноса ВМ приложений и службы миграции баз данных для миграции базы данных приложения в кластер SQL Server, защищенный группой доступности AlwaysOn. | Эта статья
+[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь показано, как компания Contoso осуществляет миграцию приложения Linux osTicket по методу lift-and-shift на виртуальные машины Azure с помощью Site Recovery | Доступна
+[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и MySQL Server в Azure](contoso-migration-rehost-linux-vm-mysql.md) | В этой статье рассказывается, как компания Contoso выполняет миграцию приложения Linux osTicket на виртуальные машины Azure с помощью Site Recovery и миграцию базы данных приложения в экземпляр Azure MySQL Server с помощью MySQL Workbench. | Доступна
+[Статья 9. Рефакторинг приложения в веб-приложениях Azure и базе данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | В статье демонстрируется, как Contoso переносит приложение SmartHotel в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure. | Доступна
+[Статья 10. Рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL](contoso-migration-refactor-linux-app-service-mysql.md) | В статье демонстрируется, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Azure MySQL. | Доступна
+[Статья 11. Рефакторинг TFS в VSTS](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso переносит локальное развертывание Team Foundation Server (TFS) в Visual Studio Team Services (VSTS) в Azure. | Доступна
+[Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | В статье демонстрируется, как Contoso переносит и перепроектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | В статье демонстрируется, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Доступна
 
 
 
@@ -90,7 +95,7 @@ ms.locfileid: "38611294"
 
 ![Процесс миграции](media/contoso-migration-rehost-vm-sql-ag/migration-process.png) 
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже показано, что вам (и компании Contoso) необходимо сделать, чтобы выполнить этот сценарий:
 

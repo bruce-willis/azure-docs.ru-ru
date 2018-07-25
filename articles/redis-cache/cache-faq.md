@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: wesmc
-ms.openlocfilehash: f78dd2a28575ad8e3fa30ac9c2bbd29c7d85a78f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 6c308205c5adb05f4c7e1668c67adea414020ea2
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34640478"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38232967"
 ---
 # <a name="azure-redis-cache-faq"></a>Кэш Redis для Azure. Вопросы и ответы
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации для кэша Redis для Azure.
@@ -392,7 +392,10 @@ StackExchange.Redis имеет много параметров. В этом ра
   > В этом элементе конфигурации задается параметр *per-core*. Например, если у вас 4-ядерный компьютер и вы хотите установить для параметра minIOThreads значение 200 во время выполнения, то можно использовать `<processModel minIoThreads="50"/>`.
   >
 
-* За пределами ASP.NET используйте API [ThreadPool.SetMinThreads(…)](https://msdn.microsoft.com/library/system.threading.threadpool.setminthreads.aspx) .
+* За пределами ASP.NET и веб-сайтов Azure global.asax используйте API [ThreadPool.SetMinThreads (...)] (https://msdn.microsoft.com/library/system.threading.threadpool.setminthreads.aspx).
+
+  > [!NOTE]
+  > Значение, указанное в этом API, — это глобальный параметр, который влияет на весь домен приложения. Если у вас 4-ядерный компьютер и вам нужно установить для параметров minWorkerThreads и minIOThreads значение 50 на ЦП во время выполнения, используется ThreadPool.SetMinThreads (200, 200).
 
 <a name="server-gc"></a>
 

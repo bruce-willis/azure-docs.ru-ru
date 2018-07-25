@@ -7,22 +7,19 @@ manager: craigg
 ms.service: sql-database
 ms.custom: business continuity
 ms.topic: conceptual
-ms.date: 04/04/2018
+ms.date: 07/17/2018
 ms.author: sashan
 ms.reviewer: carlrab
-ms.openlocfilehash: f7125a18aa2496ebe8367443a67502a7a7dbac02
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 24d453dc705eb2d0ee7cb77f2ec247845247d0a8
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969193"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113637"
 ---
 # <a name="manage-azure-sql-database-long-term-backup-retention"></a>Управление долгосрочным хранением резервных копий базы данных SQL Azure
 
 Вы можете настроить базу данных SQL Azure с политикой [долгосрочного хранения резервных копий](sql-database-long-term-retention.md) (LTR) таким образом, чтобы обеспечивалось автоматическое хранение больших двоичных объектов в Azure на протяжении 10 лет. После этого появляется возможность восстановления базы данных с помощью резервных копий на портале Azure или через PowerShell.
-
-> [!NOTE]
-> Как составная часть начальной версии пробного выпуска этой функции, вышедшей в октябре 2016 г., резервные копии хранились в хранилище службы восстановления служб Azure. Данное обновление устраняет такую зависимость, но для обеспечения обратной совместимости поддержка исходного API сохраняется до 31 мая 2018 г. Сведения о взаимодействии с резервными копиями в хранилище службы восстановления служб Azure см. в статье [Configure and restore from Azure SQL Database long-term backup retention using Azure Recovery Services Vault](sql-database-long-term-backup-retention-configure-vault.md) (Настройка и восстановление с использованием долгосрочного хранения резервных копий базы данных SQL Azure с помощью хранилища служб восстановления Azure). 
 
 ## <a name="use-the-azure-portal-to-configure-long-term-retention-policies-and-restore-backups"></a>Настройка политик долгосрочного хранения и восстановление резервных копий с помощью портала Azure
 
@@ -32,29 +29,21 @@ ms.locfileid: "38969193"
 
 Вы можете настроить базу данных SQL для [сохранения автоматически создаваемых резервных копий](sql-database-long-term-retention.md) на срок больший, чем срок хранения для вашего уровня службы. 
 
-1. На портале Azure выберите свой сервер SQL и нажмите кнопку **Долгосрочное хранение архивных копий**.
+1. На портале Azure выберите свой сервер SQL и щелкните **Управления резервными копиями**. На вкладке **Configure policies** (Настройка политик) выберите базу данных, для которой требуется задать или изменить политики долгосрочного хранения резервных копий.
 
-   ![Ссылка Long-term backup retention (Долгосрочное хранение резервных копий)](./media/sql-database-long-term-retention/ltr-configure-ltr.png)
+   ![управление ссылкой резервных копий](./media/sql-database-long-term-retention/ltr-configure-ltr.png)
 
-2. На вкладке **Configure policies** (Настройка политик) выберите базу данных, для которой требуется задать или изменить политики долгосрочного хранения резервных копий.
-
-   ![Выбор базы данных](./media/sql-database-long-term-retention/ltr-configure-select-database.png)
-
-3. На панели **Configure policies** (Настройка политик) выберите сохранение еженедельных, ежемесячных или ежегодных резервных копий и укажите срок хранения для каждого из вариантов. 
+2. На панели **Configure policies** (Настройка политик) выберите сохранение еженедельных, ежемесячных или ежегодных резервных копий и укажите срок хранения для каждого из вариантов. 
 
    ![Настройка политик](./media/sql-database-long-term-retention/ltr-configure-policies.png)
 
-4. По завершении операций нажмите кнопку **Применить**.
+3. По завершении операций нажмите кнопку **Применить**.
 
 ### <a name="view-backups-and-restore-from-a-backup-using-azure-portal"></a>Просмотр резервных копий и восстановление из резервной копии с помощью портала Azure
 
 Просмотрите резервные копии, которые сохраняются в указанной базе данных под управлением политики долгосрочного хранения (LTR), и выполните восстановление из этих резервных копий. 
 
-1. На портале Azure выберите свой сервер SQL и нажмите кнопку **Долгосрочное хранение архивных копий**.
-
-   ![Ссылка Long-term backup retention (Долгосрочное хранение резервных копий)](./media/sql-database-long-term-retention/ltr-configure-ltr.png)
-
-2. На вкладке **Доступные архивы** выберите базу данных, для которой нужно просмотреть доступные резервные копии.
+1. На портале Azure выберите свой сервер SQL и щелкните **Управления резервными копиями**. На вкладке **Доступные архивы** выберите базу данных, для которой нужно просмотреть доступные резервные копии.
 
    ![Выбор базы данных](./media/sql-database-long-term-retention/ltr-available-backups-select-database.png)
 

@@ -15,14 +15,14 @@ ms.workload: big-compute
 ms.date: 06/16/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: bbfb40b3740f9ea43df327a01ba6f4cf52d80457
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 4d86a8fcd1dc85ccacea91afe36cb39dabe10464
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "30314152"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39117164"
 ---
-# <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net-to-persist"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET 
+# <a name="persist-job-and-task-data-to-azure-storage-with-the-batch-file-conventions-library-for-net"></a>Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET 
 
 [!INCLUDE [batch-task-output-include](../../includes/batch-task-output-include.md)]
 
@@ -216,7 +216,7 @@ foreach (CloudTask task in myJob.ListTasks())
 
 Пример проекта [PersistOutputs][github_persistoutputs] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует использование библиотеки Azure Batch File Conventions для сохранения выходных данных задачи в долговременном хранилище. Чтобы запустить пример приложения, выполните следующее.
 
-1. Откройте проект в **Visual Studio 2015 или более поздней версии**.
+1. Откройте проект в **Visual Studio 2017**.
 2. Добавьте свои **данные** учетной записи пакетной службы и учетной записи хранения в **AccountSettings.settings** в проекте Microsoft.Azure.Batch.Samples.Common.
 3. **сборку** решения (но не запускайте его). Восстановите необходимые пакеты NuGet в случае появления соответствующего запроса.
 4. С помощью портала Azure передайте [пакет приложения](batch-application-packages.md) для **PersistOutputsTask**. Добавьте в ZIP-файл пакета `PersistOutputsTask.exe` и его зависимые сборки , задайте для приложения идентификатор PersistOutputsTask, а для версии пакета приложения — значение "1.0".

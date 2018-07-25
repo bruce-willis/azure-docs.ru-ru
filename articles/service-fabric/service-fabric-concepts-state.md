@@ -1,5 +1,5 @@
 ---
-title: Определение состояния и управление им в микрослужбах Azure | Документация Майкрософт
+title: Управление состоянием в микрослужбах Azure Service Fabric | Документы Майкрософт
 description: Определение состояния службы и управление им в инфраструктуре службы
 services: service-fabric
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 46d2e27b9cdcb03213648982c7e9a0576838bc92
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: eaa38e864da2525b640fa101ecc807f89de8eeaf
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34213101"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072203"
 ---
 # <a name="service-state"></a>Состояние службы
 **Состояние службы** — это данные в памяти или на диске, необходимые службе для функционирования. Например, к ним относятся структуры данных и переменные-члены, которые считываются и записываются работающей службой. В зависимости от архитектуры службы она может также включать в себя файлы и другие ресурсы, которые хранятся на диске. Например, это могут быть файлы, которые база данных будет использовать для хранения данных и журналов транзакций.

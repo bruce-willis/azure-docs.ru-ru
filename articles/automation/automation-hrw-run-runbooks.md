@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/25/2018
+ms.date: 07/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 899e5dc13dfaf7d7545955e7b4b73939c3275d3f
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: cd2578f2fd8217d513a693ef348a5c26a4b18623
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930313"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126513"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -160,9 +160,69 @@ Get-AzureRmAutomationAccount | Select-Object AutomationAccountName
 
 Задания обрабатываются в гибридных рабочих ролях Runbook немного иначе, чем при запуске в "песочницах" Azure. Одно из основных отличий заключается в том, что в гибридных рабочих ролях Runbook нет ограничений на продолжительность заданий. Модули runbook, выполняющиеся в песочницах Azure, ограничены тремя часами по причине [справедливого распределения](automation-runbook-execution.md#fair-share). Если у вас есть runbook с длительным временем выполнения, вы наверняка захотите гарантировать его устойчивость к перезапуску, например к перезагрузке компьютера, на котором размещена гибридная рабочая роль. При перезагрузке компьютера, выполняющего гибридную рабочую роль, все выполняемые задания runbook запускаются заново, с самого начала или с последней контрольной точки, если это runbook рабочих процессов PowerShell. Если задание runbook перезапускается более 3 раз, его выполнение приостанавливается.
 
+## <a name="run-only-signed-runbooks"></a>Запуск только подписанных модулей Runbook
+
+Гибридные рабочие роли Runbook можно настроить для запуска только подписанных модулей Runbook с определенной конфигурацией. В следующем разделе описывается, как настроить гибридные рабочие роли Runbook для запуска подписанных заданий Runbook и как подписать модули Runbook.
+
+> [!NOTE]
+> Настроенные гибридные рабочие роли Runbook запускаются, только когда модули Runbook подписаны, а модули Runbook, которые **не** были подписаны, не будут выполнены в рабочей роли.
+
+### <a name="create-signing-certificate"></a>Создание сертификата для подписи
+
+В следующем примере создается самозаверяющийся сертификат, который можно использовать для подписи модулей Runbook. Образец создает сертификат и экспортирует его. Позже сертификат импортируется в гибридную рабочую роль Runbook. Отпечаток также возвращается, он будет использоваться позже для указания сертификата.
+
+```powershell
+# Create a self signed runbook that can be used for code signing
+$SigningCert = New-SelfSignedCertificate -CertStoreLocation cert:\LocalMachine\my `
+                                        -Subject "CN=contoso.com" `
+                                        -KeyAlgorithm RSA `
+                                        -KeyLength 2048 `
+                                        -Provider "Microsoft Enhanced RSA and AES Cryptographic Provider" `
+                                        -KeyExportPolicy Exportable `
+                                        -KeyUsage DigitalSignature `
+                                        -Type CodeSigningCert
+
+
+# Export the certificate so that it can be imported to the hybrid workers
+Export-Certificate -Cert $SigningCert -FilePath .\hybridworkersigningcertificate.cer
+
+# Import the certificate into the trusted root store so the certificate chain can be validated
+Import-Certificate -FilePath .\hybridworkersigningcertificate.cer -CertStoreLocation Cert:\LocalMachine\Root
+
+# Retrieve the thumbprint for later use
+$SigningCert.Thumbprint
+```
+
+### <a name="configure-the-hybrid-runbook-workers"></a>Настройка гибридной рабочей роли Runbook
+
+Скопируйте сертификат, созданный для гибридной рабочей роли Runbook, в группу. Выполните следующий сценарий, чтобы импортировать сертификат и настроить гибридную рабочую роль, для использования проверки подписи в модулях Runbook.
+
+```powershell
+# Install the certificate into a location that will be used for validation.
+New-Item -Path Cert:\LocalMachine\AutomationHybridStore
+Import-Certificate -FilePath .\hybridworkersigningcertificate.cer -CertStoreLocation Cert:\LocalMachine\AutomationHybridStore
+
+# Import the certificate into the trusted root store so the certificate chain can be validated
+Import-Certificate -FilePath .\hybridworkersigningcertificate.cer -CertStoreLocation Cert:\LocalMachine\Root
+
+# Configure the hybrid worker to use signature validation on runbooks.
+Set-HybridRunbookWorkerSignatureValidation -Enable $true -TrustedCertStoreLocation "Cert:\LocalMachine\AutomationHybridStore"
+```
+
+### <a name="sign-your-runbooks-using-the-certificate"></a>Вход в модули Runbook с помощью сертификата
+
+Гибридные рабочие роли Runbook настроены на использование только подписанных модулей Runbook. Необходимо подписать модули Runbook, которые будут использоваться в гибридной рабочей роли Runbook. Используйте следующий образец PowerShell для подписи модулей Runbook.
+
+```powershell
+$SigningCert = ( Get-ChildItem -Path cert:\LocalMachine\My\<CertificateThumbprint>)
+Set-AuthenticodeSignature .\TestRunbook.ps1 -Certificate $SigningCert
+```
+
+После подписи модуля Runbook его нужно импортировать в учетную запись службы автоматизации Azure и опубликовать с блоком подписей. Чтобы узнать, как импортировать модули Runbook, см. [Creating or importing a runbook in Azure Automation](automation-creating-importing-runbook.md#importing-a-runbook-from-a-file-into-azure-automation) (Создание или импорт модуля Runbook в службу автоматизации Azure).
+
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-Если модули runbook выполняются с ошибками, а в сводке о задании отображается состояние **Приостановлено**, см. инструкции по [устранению неполадок с выполнением runbook](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails).
+Если модули Runbook выполняются с ошибками, см. раздел [Troubleshoot Hybrid Runbook Workers](troubleshoot/hybrid-runbook-worker.md#runbook-execution-fails) (Устранение неполадок с гибридными рабочими ролями Runbook).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

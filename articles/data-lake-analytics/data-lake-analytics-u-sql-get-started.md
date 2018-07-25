@@ -10,12 +10,12 @@ ms.assetid: 57143396-ab86-47dd-b6f8-613ba28c28d2
 ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 06/23/2017
-ms.openlocfilehash: 2903046154808da5113f7b32a04bbfba254a07ae
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 2d6688524e396a6e36f6d7f293f2930598afaad1
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34623457"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37867289"
 ---
 # <a name="get-started-with-u-sql-in-azure-data-lake-analytics"></a>Начало работы с языком U-SQL в Azure Data Lake Analytics
 U-SQL — это язык, который объединяет декларативный SQL и императивный C#, позволяя обрабатывать данные любого масштаба. Масштабируемые распределенные запросы U-SQL позволяют эффективно анализировать данные в таких реляционных хранилищах, как база данных SQL Azure. С помощью U-SQL вы можете обрабатывать неструктурированные данные, применяя схему к пользовательской логике чтения и вставки, а также определяемым пользователем функциям. Кроме того, U-SQL содержит расширения, которые помогают разработчику точно управлять способом выполнения в нужном масштабе. 
@@ -223,7 +223,7 @@ U-SQL поддерживает знакомые предложения ORDER BY,
         ORDER BY TotalDuration DESC
         USING Outputters.Csv();
 
-Сведения о расширенных сценариях агрегирования см. в справочной документации U-SQL по [статистическим, аналитическим и ссылочным функциям](https://msdn.microsoft.com/library/azure/mt621335.aspx).
+Сведения о расширенных сценариях агрегирования см. в справочной документации по [статистическим, аналитическим и ссылочным функциям](https://msdn.microsoft.com/library/azure/mt621335.aspx) в U-SQL
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)

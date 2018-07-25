@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: 11e90a79f45e54f3842d103d290c17254d0e75fc
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 3dc6466083a3dd6882933b8acdd7d64e4a8acd04
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34071499"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006994"
 ---
 # <a name="troubleshoot-azure-windows-virtual-machine-activation-problems"></a>Устранение неполадок при активации виртуальных машин Windows в Azure
 
@@ -49,7 +49,7 @@ Azure использует различные конечные точки для
 >[!NOTE]
 >Если вы используете VPN типа "сайт — сайт" и принудительное туннелирование, то см. запись блога [Use Azure custom routes to enable KMS activation with forced tunneling](http://blogs.msdn.com/b/mast/archive/2015/05/20/use-azure-custom-routes-to-enable-kms-activation-with-forced-tunneling.aspx) (Использование настраиваемых маршрутов Azure для активации KMS с помощью принудительного туннелирования). 
 >
->Если вы используете ExpressRoute и опубликованный маршрут по умолчанию, то см. запись блога [Azure VM may fail to activate over ExpressRoute](https://blogs.technet.microsoft.com/jpaztech/2016/05/16/azure-vm-may-fail-to-activate-over-expressroute/) (Возможен сбой при активации виртуальной машины Azure с помощью ExpressRoute).
+>Если вы используете ExpressRoute и опубликованный маршрут по умолчанию, то см. запись блога [Azure VM may fail to activate over ExpressRoute](http://blogs.msdn.com/b/mast/archive/2015/12/01/azure-vm-may-fail-to-activate-over-expressroute.aspx) (Возможен сбой при активации виртуальной машины Azure с помощью ExpressRoute).
 
 ### <a name="step-1-configure-the-appropriate-kms-client-setup-key-for-windows-server-2016-and-windows-server-2012-r2"></a>Шаг 1. Настройка подходящего ключа установки клиента KMS (для Windows Server 2016 и Windows Server 2012 R2)
 
@@ -79,7 +79,7 @@ Azure использует различные конечные точки для
 
 ### <a name="step-2-verify-the-connectivity-between-the-vm-and-azure-kms-service"></a>Шаг 2. Проверка сетевого подключения между виртуальной машиной и службой Azure KMS
 
-1. Скачайте инструмент [Psping](http:/technet.microsoft.com/sysinternals/jj729731.aspx) и извлеките его в локальную папку на виртуальной машине, которую не удается активировать. 
+1. Скачайте инструмент [PSping](http:/technet.microsoft.com/sysinternals/jj729731.aspx) и извлеките его в локальную папку на виртуальной машине, которую не удается активировать. 
 
 2. Перейдите в меню "Пуск", найдите и щелкните правой кнопкой мыши Windows PowerShell, а затем выберите "Запуск от имени администратора".
 

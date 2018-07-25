@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 7740da505f7635944536252d60ec2c2039295975
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 8546b1228c8d8f213cb87692144e8d1d31a949d8
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36323389"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39001809"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
 Управление API Azure может быть легко интегрировано в Azure Application Insights. Azure Application Insights — это расширяемая служба управления производительностью приложений (APM), предназначенная для веб-разработчиков, создающих приложения и управляющих ими на нескольких платформах. В этом руководстве описываются все этапы этой интеграции и стратегии для снижения влияния интеграции на производительность вашего экземпляра службы управления API.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения действий, описанных в этом руководстве, вам потребуется экземпляр службы управления API. Если у вас его нет, выполните действия, указанные в [этом руководстве](get-started-create-service-instance.md).
 
@@ -50,6 +50,9 @@ ms.locfileid: "36323389"
 6. Только что вы создали средство ведения журнала Azure Application Insights с ключом инструментирования. Оно должно появиться в списке.  
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
+> [!NOTE]
+> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/en-us/rest/api/apimanagement/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
+
 ## <a name="enable-application-insights-logging-for-your-api"></a>Включение ведения Application Insights для вашего API
 
 1. На **портале Azure** перейдите к экземпляру **службы управления API Azure**.
@@ -63,6 +66,9 @@ ms.locfileid: "36323389"
 8. Укажите значение **100** в поле **Выборка (%)** и установите флажок **Всегда записывать ошибки в журнал**.
 9. Укажите **1024** в поле **Первые байты текста**.
 10. Выберите команду **Сохранить**.
+
+> [!NOTE]
+> Фактически сущность [Диагностика](https://docs.microsoft.com/en-us/rest/api/apimanagement/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
 
 | Имя параметра                        | Тип значения                        | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -2,19 +2,19 @@
 title: Использование дисков Azure с AKS.
 description: Использование дисков Azure с AKS.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/21/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 4af4620ff7a17cae76c4d5f2cf1a30ce4a3dccd8
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: f807264dc2c2e07ccd175fb1b0427b7ce9e9f524
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "34597073"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37868251"
 ---
 # <a name="volumes-with-azure-disks"></a>Тома с дисками Azure
 
@@ -49,6 +49,12 @@ az disk create \
 ```console
 /subscriptions/<subscriptionID>/resourceGroups/MC_myAKSCluster_myAKSCluster_eastus/providers/Microsoft.Compute/disks/myAKSDisk
 ```
+> [!NOTE]
+> Счета для управляемых дисков Azure выставляются в зависимости от SKU для определенного размера. Эти номера SKU варьируются от 32 ГиБ для дисков S4 или P4 и до 4 ТиБ для дисков S50 или P50. Кроме того, число операций ввода-вывода в секунду и пропускная способность управляемого диска ценовой категории "Премиум" зависят как от номера SKU, так и от размера экземпляров узлов в кластере AKS. Дополнительные сведения см. на странице [Цены на управляемые диски][managed-disk-pricing-performance].
+
+> [!NOTE]
+> Если вам нужно создать диск в отдельной группе ресурсов, также добавьте субъект-службу Azure Kubernetes Service (AKS) для кластера в группу ресурсов, содержащую диск с ролью `Contributor`. 
+>
 
 ## <a name="mount-disk-as-volume"></a>Подключите диска в качестве тома
 
@@ -94,6 +100,7 @@ kubectl apply -f azure-disk-pod.yaml
 <!-- LINKS - external -->
 [kubernetes-disks]: https://github.com/kubernetes/examples/blob/master/staging/volumes/azure_disk/README.md
 [kubernetes-volumes]: https://kubernetes.io/docs/concepts/storage/volumes/
+[managed-disk-pricing-performance]: https://azure.microsoft.com/pricing/details/managed-disks/
 
 <!-- LINKS - internal -->
 [az-disk-list]: /cli/azure/disk#az_disk_list

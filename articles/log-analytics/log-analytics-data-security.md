@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/05/2018
+ms.date: 07/11/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: df4c60be8a29ab397424e9e5f9de7050f64d87c2
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: b7fd880683eed9e742007d6e595e1f275467b664
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37859788"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38990121"
 ---
 # <a name="log-analytics-data-security"></a>Защита данных Log Analytics
 Данный документ предназначен для предоставления определенных сведений Azure Log Analytics для дополнения информации о [центре управления безопасностью Azure](../security/security-microsoft-trust-center.md).  
@@ -37,6 +37,24 @@ ms.locfileid: "37859788"
 * Соответствие сертификатам и стандартам безопасности
 
 Отправляйте свои вопросы, предложения и сообщения о неполадках, связанные с представленными ниже сведениями, включая наши политики защиты, в [службу поддержки Azure](http://azure.microsoft.com/support/options/).
+
+## <a name="sending-data-securely-using-tls-12"></a>Безопасная отправка данных с помощью TLS 1.2 
+
+Чтобы обеспечить безопасность данных, передаваемых в Log Analytics, настоятельно рекомендуем настроить для агента использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**, так как представители отрасли стремятся как можно скорее отказаться от их поддержки. 
+
+[Совет по стандартам безопасности PCI](https://www.pcisecuritystandards.org/) установил [крайний срок (30 июня 2018 года)](https://www.pcisecuritystandards.org/pdfs/PCI_SSC_Migrating_from_SSL_and_Early_TLS_Resource_Guide.pdf) для отказа от старых версий протоколов TLS и SSL и перехода на более безопасные протоколы. Как только Azure прекратит поддержку предыдущих версий, агенты, не поддерживающие протокол TLS версии минимум 1.2, не смогут отправлять данные в Log Analytics. 
+
+Рекомендуем по возможности не настраивать в агенте работу только с протоколом TLS 1.2, так как это может нарушить работу функций безопасности на уровне платформы, которые позволяют автоматически обнаруживать и использовать новые, более безопасные протоколы по мере их появления, например TLS 1.3. 
+
+### <a name="platform-specific-guidance"></a>Рекомендации с учетом платформы
+
+|Платформа или язык | Поддержка | Дополнительные сведения |
+| --- | --- | --- |
+|Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org).  | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
+| Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/en-us/windows-server/security/tls/tls-registry-settings).  |
+| Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/en-us/windows-server/security/tls/tls-registry-settings). |
+| Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/en-us/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
+| Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
 
 ## <a name="data-segregation"></a>Разделение данных
 После того, как ваши данные будут приняты службой Log Analytics, они будут логическим образом отделены для каждого компонента службы. Все данные отмечаются тегами по рабочим областям. Эти теги существуют в течение всего жизненного цикла данных и используются на каждом уровне службы. Данные хранятся в выделенной базе данных в кластере хранения в выбранном регионе.

@@ -8,17 +8,17 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: dobett
-ms.openlocfilehash: 9521bd47db9676c70993c535f1207b3519123353
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e9d1e348ccdccfc72a8e60d70dda1c939c2393af
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34633321"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004777"
 ---
 # <a name="reference---iot-hub-quotas-and-throttling"></a>Руководство. Квоты и регулирование в Центре Интернета вещей
 
 ## <a name="quotas-and-throttling"></a>Квоты и регулирование
-Каждая подписка Azure может использовать не более 10 Центров Интернета вещей и не более 1 центра уровня "Бесплатный".
+Каждая подписка Azure может использовать не более 50 Центров Интернета вещей и не более 1 центра уровня "Бесплатный".
 
 Каждый центр Интернета вещей подготавливается с определенным количеством единиц для каждого конкретного уровня. Дополнительные сведения см. на странице с [ценами на Центр Интернета вещей Azure][lnk-pricing]. Уровень и число единиц определяют максимальную дневную квоту сообщений, которые вы можете отправить.
 

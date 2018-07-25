@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: rafats
-ms.openlocfilehash: d867079b9a5546dc9555697a9066472e4e470977
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 240c0e1f39833e4dc4c4ad410f50ff03df0b5734
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35298303"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072169"
 ---
 # <a name="how-does-azure-cosmos-db-index-data"></a>Как работает индексирование данных в Azure Cosmos DB?
 
@@ -144,6 +144,7 @@ Azure Cosmos DB представляет документы JSON и индекс
 
 В следующем примере показана настройка конкретного пути с диапазонной индексацией и пользовательским значением точности в 20 байт:
 
+```
     var collection = new DocumentCollection { Id = "rangeSinglePathCollection" };    
 
     collection.IndexingPolicy.IncludedPaths.Add(
@@ -164,7 +165,74 @@ Azure Cosmos DB представляет документы JSON и индекс
         });
 
     collection = await client.CreateDocumentCollectionAsync(UriFactory.CreateDatabaseUri("db"), pathRange);
+```
 
+Если путь добавляется для индексирования, числа и строки в этих путях индексируются. Поэтому, несмотря на то, что вы определяете индексирование только для строк, Azure Cosmos DB добавляет определение по умолчанию также и для чисел. Другими словами, Azure Cosmos DB поддерживает исключение путей из политики индексирования, но не исключение типов из конкретного пути. В приведенном ниже примере обратите внимание, что только один индекс указывается для обоих путей (Path = "/*" и Path = "/\"attr1\"/?"), однако тип данных Number также добавляется в результат.
+
+```
+var indices = new[]{
+                new IncludedPath  {
+                    Indexes = new Collection<Index>
+                    {
+                        new RangeIndex(DataType.String) { Precision = 3 }// <- note: only 1 index specified
+                    },
+                    Path =  "/*"
+                },
+                new IncludedPath  {
+                    Indexes = new Collection<Index>
+                    {
+                        new RangeIndex(DataType.String) { Precision = 3 } // <- note: only 1 index specified
+                    },
+                    Path =  "/\"attr1\"/?"
+                }
+            };...
+
+            foreach (var index in indices)
+            {
+                documentCollection.IndexingPolicy.IncludedPaths.Add(index);
+            }
+```
+
+Результат создания индекса:
+
+```json
+{
+    "indexingMode": "consistent",
+    "automatic": true,
+    "includedPaths": [
+        {
+            "path": "/*",
+            "indexes": [
+                {
+                    "kind": "Range",
+                    "dataType": "String",
+                    "precision": 3
+                },
+                {
+                    "kind": "Range",
+                    "dataType": "Number",
+                    "precision": -1
+                }
+            ]
+        },
+        {
+            "path": "/\"attr\"/?",
+            "indexes": [
+                {
+                    "kind": "Range",
+                    "dataType": "String",
+                    "precision": 3
+                },
+                {
+                    "kind": "Range",
+                    "dataType": "Number",
+                    "precision": -1
+                }
+            ]
+        }
+    ],
+}
+```
 
 ### <a name="index-data-types-kinds-and-precisions"></a>Типы данных, виды и степени точности индекса
 Есть несколько способов настройки политики индексирования для пути. Можно указать одно или несколько определений индексирования для каждого пути.

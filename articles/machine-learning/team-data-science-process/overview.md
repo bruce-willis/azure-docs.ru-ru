@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: deguhath
-ms.openlocfilehash: 474efbf3a9255e4699c27c6b0bfcc30ff54c4b45
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: e44b21530cb3db8a2ba354ef19ebb3d2c557ecae
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971457"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125765"
 ---
 # <a name="what-is-the-team-data-science-process"></a>Что такое процесс обработки и анализа данных группы?
 
@@ -67,7 +67,7 @@ TDSP состоит из следующих ключевых компонент�
 
 На следующей схеме показано представление сетки заданий (синие) и артефактов (зеленые), связанных с каждым уровнем жизненного цикла (на горизонтальной оси) для ролей (на вертикальной оси). 
 
-![Роли и задачи TDSP](./media/overview/tdsp-tasks-by-roles.png)
+[ ![Роли и задачи TDSP](./media/overview/tdsp-tasks-by-roles.png) ](./media/overview/tdsp-tasks-by-roles.png#lightbox)
 
 ## <a name="standardized-project-structure"></a>Стандартная структура проекта
 
@@ -81,7 +81,7 @@ TDSP состоит из следующих ключевых компонент�
 - метрики эффективности модели, таких как кривые ROC или MSE.
 
 
-![Каталоги TDSP](./media/overview/tdsp-dir-structure.png)
+[ ![Каталоги TDSP](./media/overview/tdsp-dir-structure.png) ](./media/overview/tdsp-dir-structure.png#lightbox)
 
 Структуру каталогов можно клонировать из [GitHub](https://github.com/Azure/Azure-TDSP-ProjectTemplate).
 
@@ -98,7 +98,7 @@ TDSP предоставляет рекомендации по управлени
 
 Вот пример команды, работающей над несколькими проектами и совместно использующей различные компоненты инфраструктуры облачной аналитики.
 
-![Инфраструктура TDSP](./media/overview/tdsp-analytics-infra.png)
+[ ![Инфраструктура TDSP](./media/overview/tdsp-analytics-infra.png) ](./media/overview/tdsp-analytics-infra.png#lightbox) 
 
 
 ## <a name="tools-and-utilities-for-project-execution"></a>Средства и служебные программы для выполнения проекта

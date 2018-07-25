@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/10/2017
 ms.author: harijayms
-ms.openlocfilehash: a40971e373a6e2fe6324e06816112e2025506ba8
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: de597424c1be01e651068b7900acbece822610b1
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "34057984"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008381"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -299,7 +299,7 @@ subscriptionId | Подписка Azure для виртуальной машин
 tags | [Теги](../../azure-resource-manager/resource-group-using-tags.md) для виртуальной машины  | 2017-08-01
 имя_группы_ресурсов | [Группа ресурсов](../../azure-resource-manager/resource-group-overview.md) для виртуальной машины | 2017-08-01
 placementGroupId | [Группа размещения](../../virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md) масштабируемого набора виртуальных машин | 2017-08-01
-vmScaleSetName | [Имя масштабируемого набора виртуальных машин] (../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
+vmScaleSetName | [Имя масштабируемого набора виртуальной машины](../../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) | 2017-12-01
 зона | [Зона доступности](../../availability-zones/az-overview.md) виртуальной машины | 2017-12-01 
 ipv4/privateIpAddress | Локальный IPv4-адрес виртуальной машины | 2017-04-02
 ipv4/publicIpAddress | Общедоступный IPv4-адрес виртуальной машины | 2017-04-02

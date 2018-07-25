@@ -8,12 +8,12 @@ ms.date: 6/20/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 45179f8f1f46be764144bdc22d5bab3548e9401d
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 2b4e2a19b5d5f6491ff3db24489b361040a52280
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346065"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39035580"
 ---
 # <a name="create-a-linux-iot-edge-device-that-acts-as-a-transparent-gateway"></a>Создание устройства Linux IoT Edge, выступающего в роли прозрачного шлюза
 
@@ -22,8 +22,8 @@ ms.locfileid: "37346065"
 >[!NOTE]
 >В данный момент:
 > * если шлюз не подключен к Центру Интернета вещей, подчиненные устройства не смогут выполнить аутентификацию с помощью шлюза;
-> * устройства IoT Edge не могут подключиться к шлюзам IoT Edge.
-> * подчиненные устройства не поддерживают передачу файлов.
+> * устройства с поддержкой Edge не могут подключиться к шлюзам IoT Edge; 
+> * подчиненные устройства не поддерживают отправку файлов.
 
 При создании прозрачного шлюза основные трудности связаны с безопасным подключением шлюза к подчиненным устройствам. Решение Azure IoT Edge позволяет настраивать безопасные TLS-подключения между этими устройствами с использованием инфраструктуры открытых ключей. В этом случае мы разрешаем подчиненному устройству подключаться к устройству IoT Edge, выполняющему роль прозрачного шлюза.  Чтобы обеспечить приемлемый уровень безопасности, подчиненное устройство должно подтвердить удостоверение пограничного устройства, так как нужно разрешить подключение только между устройствами и шлюзами определенного пользователя и предотвратить подключение к потенциально вредоносным шлюзам.
 
@@ -35,7 +35,7 @@ ms.locfileid: "37346065"
 
 Ниже приведены пошаговые инструкции по созданию сертификатов и их установке в нужных расположениях.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 1.  Установите среду выполнения Azure IoT Edge на устройстве Linux, которое необходимо использовать в качестве прозрачного шлюза.
    * [Linux x64][lnk-install-linux-x64]
    * [Linux ARM32][lnk-install-linux-arm]
@@ -181,7 +181,7 @@ certificates:
    { "routes":{ "sensorToAIInsightsInput1":"FROM /messages/* WHERE NOT IS_DEFINED($connectionModuleId) INTO BrokeredEndpoint(\"/modules/ai_insights/inputs/input1\")", "AIInsightsToIoTHub":"FROM /messages/modules/ai_insights/outputs/output1 INTO $upstream" } }
    ```
 
-Подробные сведения о маршрутизации сообщений см. в статье [module composition article][lnk-module-composition].
+Подробные сведения о маршрутизации сообщений см. в [статье о составлении модулей][lnk-module-composition].
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Understand the requirements and tools for developing IoT Edge modules - preview][lnk-module-dev] (Сведения о требованиях и средствах разработки модулей IoT Edge (предварительная версия)).
@@ -192,6 +192,7 @@ certificates:
 <!-- Links -->
 [lnk-install-linux-x64]: ./how-to-install-iot-edge-linux.md
 [lnk-install-linux-arm]: ./how-to-install-iot-edge-linux-arm.md
+[lnk-module-composition]: ./module-composition.md
 [lnk-devicesdk]: ../iot-hub/iot-hub-devguide-sdks.md
 [lnk-tutorial1-win]: tutorial-simulate-device-windows.md
 [lnk-tutorial1-lin]: tutorial-simulate-device-linux.md

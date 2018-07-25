@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ba85e075c39251b0b3d7c4b8bc3f8d53a1afadf7
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 6a9b44ed56774466bae2f0f5d48b5e012382721b
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30316823"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37865239"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
 
@@ -68,7 +68,7 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 Этот фрагмент кода создает зависимую задачу с идентификатором задачи Flowers. Задача Flowers зависит от задач Rain и Sun. Выполнение задачи Flowers будет запланировано на вычислительном узле только после успешного завершения задач Rain и Sun.
 
 > [!NOTE]
-> Задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate] — `Completed`, а значение свойства [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] класса CloudTask — `0`.
+> По умолчанию задача считается успешно выполненной, когда она находится в состоянии **Выполнено** и ее **код выхода** равен `0`. В .NET пакетной службы это означает, что значение свойства [CloudTask][net_cloudtask].[State][net_taskstate] — `Completed`, а значение свойства [TaskExecutionInformation][net_taskexecutioninformation].[ExitCode][net_exitcode] класса CloudTask — `0`. Чтобы изменить эти значения, см. раздел [Действия зависимостей](#dependency-actions).
 > 
 > 
 
@@ -121,7 +121,9 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 Чтобы создать зависимость, укажите первый и последний идентификаторы задач в статическом методе [TaskDependencies][net_taskdependencies].[OnIdRange][net_onidrange] при заполнении свойства [DependsOn][net_dependson] элемента [CloudTask][net_cloudtask].
 
 > [!IMPORTANT]
-> Если вы используете диапазоны идентификаторов задач для зависимостей, то идентификаторы задач в диапазоне *должны* быть строковыми представлениями целых чисел.
+> Если для зависимостей используются диапазоны идентификаторов задач, для диапазона будут выбираться только задачи с идентификаторами, представляющими целые числа. То есть для диапазона `1..10` будут выбраны задачи `3` и `7`, а не `5flamingoes`. 
+> 
+> При оценке зависимостей диапазона нули в начале идентификаторов не учитываются. Поэтому задачи с идентификаторами строк `4`, `04` и `004` попадут *в пределы* диапазона, и все они будут рассматриваться как задача `4`. Любая из этих задач, которая завершится первой, выполнит условие зависимости.
 > 
 > Каждая задача в диапазоне должна выполнить условие зависимости, завершившись успешно или сбоем, который сопоставлен с действием зависимости со значением **Satisfy**. Дополнительные сведения см. в разделе [Действия зависимостей](#dependency-actions).
 >

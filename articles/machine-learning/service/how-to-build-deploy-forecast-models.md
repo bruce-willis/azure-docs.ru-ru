@@ -8,13 +8,13 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: mattcon
 author: matthewconners
-ms.date: 05/07/2018
-ms.openlocfilehash: 44093dfde926b92d1617b85d27e362a8e40e5c56
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.date: 07/13/2018
+ms.openlocfilehash: 60eecf134f067d68326fc23ade8ed2a5a7ae7ac4
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37888676"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39070350"
 ---
 # <a name="build-and-deploy-forecasting-models-with-azure-machine-learning"></a>Создание и развертывание моделей прогнозирования с помощью Машинного обучения Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "37888676"
 
 Ознакомьтесь со [справочной документацией](https://aka.ms/aml-packages/forecasting) для получения полного списка преобразователей и моделей, а также подробного описания каждого модуля и класса.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -36,7 +36,7 @@ ms.locfileid: "37888676"
    - Учетная запись Управления моделями Машинного обучения Azure.
    - Установленное приложение Azure Machine Learning Workbench. 
 
-    Если они еще не созданы или не установлены, следуйте инструкциям в статье [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../service/quickstart-installation.md).
+ Если они еще не созданы или не установлены, следуйте инструкциям в статье [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../service/quickstart-installation.md).
 
 1. Необходимо установить пакет Машинного обучения Azure для прогнозирования. Узнайте, как [установить этот пакет здесь](https://aka.ms/aml-packages/forecasting).
 
@@ -77,6 +77,7 @@ import pkg_resources
 from datetime import timedelta
 import matplotlib
 matplotlib.use('agg')
+%matplotlib inline
 from matplotlib import pyplot as plt
 
 from sklearn.linear_model import Lasso, ElasticNet
@@ -84,12 +85,12 @@ from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.neighbors import KNeighborsRegressor
 
 from ftk import TimeSeriesDataFrame, ForecastDataFrame, AzureMLForecastPipeline
-from ftk.tsutils import last_n_periods_split
+from ftk.ts_utils import last_n_periods_split
 
 from ftk.transforms import TimeSeriesImputer, TimeIndexFeaturizer, DropColumns
 from ftk.transforms.grain_index_featurizer import GrainIndexFeaturizer
-from ftk.models import Arima, SeasonalNaive, Naive, RegressionForecaster, ETS
-from ftk.models.forecasterunion import ForecasterUnion
+from ftk.models import Arima, SeasonalNaive, Naive, RegressionForecaster, ETS, BestOfForecaster
+from ftk.models.forecaster_union import ForecasterUnion
 from ftk.model_selection import TSGridSearchCV, RollingOriginValidator
 
 from azuremltkbase.deployment import AMLSettings
@@ -502,12 +503,11 @@ whole_tsdf.loc[pd.IndexSlice['1990-06':'1990-09', 2, 'dominicks'], ['Quantity']]
 
 
 ```python
-%matplotlib inline
 whole_tsdf.ts_report()
 ```
 
     --------------------------------  Data Overview  ---------------------------------
-    <class 'ftk.dataframets.TimeSeriesDataFrame'>
+    <class 'ftk.time_series_data_frame.TimeSeriesDataFrame'>
     MultiIndex: 28947 entries, (1990-06-20 23:59:59, 2, dominicks) to (1992-10-07 23:59:59, 137, tropicana)
     Data columns (total 17 columns):
     week            28947 non-null int64
@@ -662,12 +662,6 @@ whole_tsdf.ts_report()
 
 
 ![png](./media/how-to-build-deploy-forecast-models/output_15_6.png)
-
-![png](./media/how-to-build-deploy-forecast-models/output_59_0.png)
-![png](./media/how-to-build-deploy-forecast-models/output_61_0.png)
-![png](./media/how-to-build-deploy-forecast-models/output_63_0.png)
-![png](./media/how-to-build-deploy-forecast-models/output_63_1.png)
- 
 
 
 ## <a name="integrate-with-external-data"></a>Интеграция с внешними данными
@@ -892,7 +886,7 @@ whole_tsdf.head()
 
 ## <a name="preprocess-data-and-impute-missing-values"></a>Предварительная обработка данных и передача отсутствующих значений
 
-Начните с разделения данных на обучающий набор и тестирующий набор с помощью функции служебной программы [ftk.tsutils.last_n_periods_split](https://docs.microsoft.com/en-us/python/api/ftk.ts_utils?view=azure-ml-py-latest). Полученный тестирующий набор содержит последние 40 наблюдений за каждым временным рядом. 
+Начните с разделения данных на обучающий набор и тестирующий набор с помощью служебной функции [last_n_periods_split](https://docs.microsoft.com/en-us/python/api/ftk.ts_utils?view=azure-ml-py-latest). Полученный тестирующий набор содержит последние 40 наблюдений за каждым временным рядом. 
 
 
 ```python
@@ -974,7 +968,7 @@ print(ts_regularity[ts_regularity['regular'] == False])
     [213 rows x 2 columns]
     
 
-Вы можете видеть, что большая часть рядов (213 из 249) нерегулярна. Требуется [преобразование подстановки](https://docs.microsoft.com/en-us/python/api/ftk.transforms.ts_imputer?view=azure-ml-py-latest) для заполнения отсутствующих значений количества продаж. Хотя существует множество вариантов подстановки, следующий пример кода использует линейную интерполяцию.
+Вы можете видеть, что большая часть рядов (213 из 249) нерегулярна. Требуется [преобразование подстановки](https://docs.microsoft.com/en-us/python/api/ftk.transforms.ts_imputer.timeseriesimputer?view=azure-ml-py-latest) для заполнения отсутствующих значений количества продаж. Хотя существует множество вариантов подстановки, следующий пример кода использует линейную интерполяцию.
 
 
 ```python
@@ -1040,7 +1034,7 @@ arima_model = Arima(oj_series_freq, arima_order)
 
 ### <a name="combine-multiple-models"></a>Объединение нескольких моделей
 
-Инструмент оценки [ForecasterUnion](https://docs.microsoft.com/en-us/python/api/ftk.models.forecaster_union.forecasterunion?view=azure-ml-py-latest) позволяет комбинировать несколько оценок и подбирать или прогнозировать их с помощью одной строки кода.
+Инструмент оценки [ForecasterUnion](https://docs.microsoft.com/en-us/python/api/ftk.models.forecaster_union?view=azure-ml-py-latest) позволяет комбинировать несколько оценок и подбирать или прогнозировать их с помощью одной строки кода.
 
 
 ```python
@@ -1205,10 +1199,10 @@ test_feature_tsdf = pipeline_ml.transform(test_tsdf)
 print(train_feature_tsdf.head())
 ```
 
-    F1 2018-05-04 11:00:54,308 INFO azureml.timeseries - pipeline fit_transform started. 
-    F1 2018-05-04 11:01:02,545 INFO azureml.timeseries - pipeline fit_transform finished. Time elapsed 0:00:08.237301
-    F1 2018-05-04 11:01:02,576 INFO azureml.timeseries - pipeline transforms started. 
-    F1 2018-05-04 11:01:19,048 INFO azureml.timeseries - pipeline transforms finished. Time elapsed 0:00:16.471961
+    F1 2018-06-14 23:10:03,472 INFO azureml.timeseries - pipeline fit_transform started. 
+    F1 2018-06-14 23:10:07,317 INFO azureml.timeseries - pipeline fit_transform finished. Time elapsed 0:00:03.845078
+    F1 2018-06-14 23:10:07,317 INFO azureml.timeseries - pipeline transforms started. 
+    F1 2018-06-14 23:10:16,499 INFO azureml.timeseries - pipeline transforms finished. Time elapsed 0:00:09.182314
                                            feat  price  AGE60  EDUC  ETHNIC  \
     WeekLastDay         store brand                                           
     1990-06-20 23:59:59 2     dominicks    1.00   1.59   0.23  0.25    0.11   
@@ -1370,13 +1364,16 @@ all_errors.sort_values('MedianAPE')
 
 Некоторые модели машинного обучения могли использовать дополнительные признаки и сходство между рядами, чтобы повысить точность прогноза.
 
-**Перекрестная проверка и перебор параметров**    
+### <a name="cross-validation-parameter-and-model-sweeping"></a>Перекрестная проверка, перебор параметров и моделей    
 
-Пакет адаптирует некоторые традиционные функции машинного обучения для приложения прогнозирования.  [RollingOriginValidator](https://docs.microsoft.com/python/api/ftk.model_selection.cross_validation.rollingoriginvalidator) временно выполняет перекрестную проверку, с учетом того, что будет и не будет известно в рамках прогнозирования. 
+Пакет адаптирует некоторые традиционные функции машинного обучения для приложения прогнозирования.  [RollingOriginValidator](https://docs.microsoft.com/python/api/ftk.model_selection.cross_validation.rollingoriginvalidator?view=azure-ml-py-latest) временно выполняет перекрестную проверку, с учетом того, что будет и не будет известно в рамках прогнозирования. 
 
 На изображении ниже каждый квадрат представляет данные из одной точки времени. Синие квадраты представляют собой обучение, а оранжевые квадраты — тестирование в каждой свертке. Данные тестирования должны поступать из точек времени после наибольшего времени обучения. В противном случае будущие данные просачиваются в данные обучения, в результате чего оценка модели станет неверной. 
-
 ![png](./media/how-to-build-deploy-forecast-models/cv_figure.PNG)
+
+**Перебор параметров**  
+Класс [TSGridSearchCV](https://docs.microsoft.com/en-us/python/api/ftk.model_selection.search.tsgridsearchcv?view=azure-ml-py-latest) выполняет поиск по указанным значениям параметров и использует `RollingOriginValidator` для оценки производительности параметров для выбора оптимальных параметров.
+
 
 ```python
 # Set up the `RollingOriginValidator` to do 2 folds of rolling origin cross-validation
@@ -1395,6 +1392,102 @@ print('Best paramter: {}'.format(randomforest_cv_fitted.best_params_))
 
     Best paramter: {'estimator__n_estimators': 100}
     
+
+**Перебор моделей**  
+Класс `BestOfForecaster` выбирает модель с наилучшей производительностью из списка заданных моделей. Аналогично `TSGridSearchCV`, он также использует RollingOriginValidator для перекрестной проверки и оценки производительности.  
+Здесь приведены две модели для демонстрации использования `BestOfForecaster`:
+
+
+```python
+best_of_forecaster = BestOfForecaster(forecaster_list=[('naive', naive_model), 
+                                                       ('random_forest', random_forest_model)])
+best_of_forecaster_fitted = best_of_forecaster.fit(train_feature_tsdf,
+                                                   validator=RollingOriginValidator(n_step=20, max_horizon=40))
+best_of_forecaster_prediction = best_of_forecaster_fitted.predict(test_feature_tsdf)
+best_of_forecaster_prediction.head()
+```
+
+
+
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>PointForecast</th>
+      <th>DistributionForecast</th>
+      <th>Количество</th>
+    </tr>
+    <tr>
+      <th>WeekLastDay</th>
+      <th>store</th>
+      <th>brand</th>
+      <th>ForecastOriginTime</th>
+      <th>ModelName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1992-01-08 23:59:59</th>
+      <th>2</th>
+      <th>dominicks</th>
+      <th>1992-01-01 23:59:59</th>
+      <th>random_forest</th>
+      <td>9299.20</td>
+      <td>&lt;scipy.stats._distn_infrastructure.rv_frozen o...</td>
+      <td>11712.00</td>
+    </tr>
+    <tr>
+      <th>1992-01-15 23:59:59</th>
+      <th>2</th>
+      <th>dominicks</th>
+      <th>1992-01-01 23:59:59</th>
+      <th>random_forest</th>
+      <td>10259.20</td>
+      <td>&lt;scipy.stats._distn_infrastructure.rv_frozen o...</td>
+      <td>4032.00</td>
+    </tr>
+    <tr>
+      <th>1992-01-22 23:59:59</th>
+      <th>2</th>
+      <th>dominicks</th>
+      <th>1992-01-01 23:59:59</th>
+      <th>random_forest</th>
+      <td>6828.80</td>
+      <td>&lt;scipy.stats._distn_infrastructure.rv_frozen o...</td>
+      <td>6336.00</td>
+    </tr>
+    <tr>
+      <th>1992-01-29 23:59:59</th>
+      <th>2</th>
+      <th>dominicks</th>
+      <th>1992-01-01 23:59:59</th>
+      <th>random_forest</th>
+      <td>16633.60</td>
+      <td>&lt;scipy.stats._distn_infrastructure.rv_frozen o...</td>
+      <td>13632.00</td>
+    </tr>
+    <tr>
+      <th>1992-02-05 23:59:59</th>
+      <th>2</th>
+      <th>dominicks</th>
+      <th>1992-01-01 23:59:59</th>
+      <th>random_forest</th>
+      <td>12774.40</td>
+      <td>&lt;scipy.stats._distn_infrastructure.rv_frozen o...</td>
+      <td>45120.00</td>
+    </tr>
+  </tbody>
+</table>
+
+
 
 **Создание окончательного конвейера**   
 Теперь, когда вы определили лучшую модель, вы можете создать и поместить свой окончательный конвейер со всеми преобразователями и лучшей моделью. 
@@ -1416,9 +1509,62 @@ print('Median of APE of final pipeline: {0}'.format(final_median_ape))
     Median of APE of final pipeline: 42.54336821266968
     
 
-## <a name="operationalization-deploy-and-consume"></a>Ввод в эксплуатацию: развертывание и использование
+## <a name="visualization"></a>Визуализация:
+Класс `ForecastDataFrame` предоставляет функции построения диаграмм для визуализации и анализа результатов прогнозирования. Используйте часто используемые диаграммы с вашими данными. Пример функций построения диаграмм для всех доступных функций см. ниже. 
 
-В этом разделе вы развертываете конвейер в качестве веб-службы машинного обучения и используете его для обучения и оценки. При оценке развернутой веб-службы модель обучается повторно и создаются прогнозы по новым данным.
+Функция `show_error` строит график метрик производительности, агрегированных по произвольному столбцу. По умолчанию функция `show_error` выполняет агрегирование по `grain_colnames` из `ForecastDataFrame`. Удобной возможностью можно назвать определение интервалов и групп с худшей и лучшей производительностью, особенно если используется большое количество временных рядов. Аргумент `performance_percent` функции `show_error` позволяет указать интервал производительности и отображать погрешность набора интервалов и групп.
+
+Отображаются интервалы с нижними 5 % по производительности, т. е. первые 5 % по погрешности MedianAPE
+
+
+```python
+fig, ax = best_of_forecaster_prediction.show_error(err_name='MedianAPE', err_fun=calc_median_ape, performance_percent=(0.95, 1))
+```
+
+![png](./media/how-to-build-deploy-forecast-models/output_59_0.png)
+
+
+Отображаются интервалы с верхними 5 % по производительности, т. е. последние 5 % по погрешности MedianAPE
+
+
+```python
+fig, ax = best_of_forecaster_prediction.show_error(err_name='MedianAPE', err_fun=calc_median_ape, performance_percent=(0, 0.05))
+```
+
+
+![png](./media/how-to-build-deploy-forecast-models/output_61_0.png)
+
+
+Когда вы получите представление об общей производительности, вам, скорее всего, потребуется исследовать отдельные интервалы, особенно с низкой производительностью. Метод `plot_forecast_by_grain` отображает ожидаемый и реальный результаты по указанным интервалам. Интервалы с наилучшей и наихудшей производительностью приведены в графике `show_error`.
+
+
+```python
+fig_ax = best_of_forecaster_prediction.plot_forecast_by_grain(grains=[(33, 'tropicana'), (128, 'minute.maid')])
+```
+
+
+![png](./media/how-to-build-deploy-forecast-models/output_63_0.png)
+
+
+
+![png](./media/how-to-build-deploy-forecast-models/output_63_1.png)
+
+
+
+## <a name="additional-notebooks"></a>Дополнительные файлы Notebook
+Для более подробного изучения основных особенностей AMLPF см. следующие файлы Notebook с дополнительными сведениями и примерами использования каждой функции:  
+[Notebook по TimeSeriesDataFrame](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Introduction_to_TimeSeriesDataFrames.ipynb)  
+[Notebook по структурированию данных](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Data_Wrangling_Sample.ipynb)  
+[Notebook по преобразователям](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Forecast_Package_Transforms.ipynb)  
+[Notebook по моделям](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/AMLPF_models_sample_notebook.ipynb)  
+[Notebook по перекрестной проверке](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Time_Series_Cross_Validation.ipynb)  
+[Notebook по преобразователю задержки и OriginTime](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Constructing_Lags_and_Explaining_Origin_Times.ipynb)  
+[Notebook по функциям построения диаграмм](https://azuremlftkrelease.blob.core.windows.net/samples/feature_notebooks/Plotting_Functions_in_AMLPF.ipynb)
+
+## <a name="operationalization"></a>Ввод в эксплуатацию
+
+В этом разделе вы развертываете конвейер в качестве веб-службы машинного обучения и используете его для обучения и оценки.
+На данный момент поддерживается развертывание только конвейеров без применения метода fit. При оценке развернутой веб-службы модель обучается повторно и создаются прогнозы по новым данным.
 
 ### <a name="set-model-deployment-parameters"></a>Настройка параметров развертывания модели
 
@@ -1485,7 +1631,7 @@ aml_deployment = ForecastWebserviceFactory(deployment_name=deployment_name,
                                            aml_settings=aml_settings, 
                                            pipeline=pipeline_deploy,
                                            deployment_working_directory=deployment_working_directory,
-                                           ftk_wheel_loc='https://azuremlpackages.blob.core.windows.net/forecasting/azuremlftk-0.1.18055.3a1-py3-none-any.whl')
+                                           ftk_wheel_loc='https://azuremlftkrelease.blob.core.windows.net/dailyrelease/azuremlftk-0.1.18165.29a1-py3-none-any.whl')
 ```
 
 ### <a name="create-the-web-service"></a>Создание веб-службы

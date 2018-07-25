@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 02/09/2018
 ms.author: aljo
-ms.openlocfilehash: fbe3dde48fa1be79356ff1cb9e47c46832d8cdaa
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 5d8f1d2634fd2efd624d1000f2fbc0400af4af11
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212761"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136814"
 ---
 # <a name="create-a-service-fabric-cluster-in-azure-using-the-azure-portal"></a>Создание кластера Service Fabric в Azure с помощью портала Azure
 > [!div class="op_single_selector"]
@@ -71,9 +71,7 @@ ms.locfileid: "34212761"
 * шифрование и расшифровка значений конфигурации приложений;
 * шифрование данных между узлами во время репликации. 
 
-При создании кластера с помощью портала Azure настройка сертификатов приложения недоступна. Чтобы настроить сертификаты приложения в процессе настройки кластера, необходимо [создать кластер с помощью Azure Resource Manager][create-cluster-arm]. Также можно добавить сертификаты приложения в кластер после его создания.
-
-</a "create-cluster-portal" ></a>
+При [создании кластера с помощью портала Azure](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/service-fabric/service-fabric-cluster-creation-via-portal.md) настройка сертификатов приложения недоступна. Чтобы настроить сертификаты приложения в процессе настройки кластера, необходимо [создать кластер с помощью Azure Resource Manager][create-cluster-arm]. Также можно добавить сертификаты приложения в кластер после его создания.
 
 ## <a name="create-cluster-in-the-azure-portal"></a>Создание кластера на портале Azure
 
@@ -121,7 +119,7 @@ ms.locfileid: "34212761"
 5. **Кластеры с одним узлом и тремя узлами.** Предназначены для использования только в целях тестирования. Эти кластеры не поддерживаются для выполнения производственных задач.
 6. Настройте пользовательские конечные точки. Это поле позволяет ввести список портов с разделителями-запятыми. С помощью Azure Load Balancer для приложений будет открыт общий доступ через Интернет к указанным здесь портам. Например, если вы планируете развернуть в своем кластере веб-приложение, то введите здесь "80", чтобы разрешить в этом кластере трафик через порт 80. Дополнительные сведения о конечных точках см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними][service-fabric-connect-and-communicate-with-services].
 7. Настройте **систему диагностики** кластера. Диагностика в кластере включена по умолчанию. Это упрощает устранение неполадок. Если вы хотите отключить систему диагностики, установите переключатель **Состояние** в положение **Выкл**. Отключать систему диагностики **не** рекомендуется. Если проект Application Insights уже создан, тогда предоставьте его ключ, чтобы направить трассировку приложения к нему.
-8. Выберите режим обновления Service Fabric, который необходимо задать для кластера. Если требуется, чтобы система автоматически получала последнюю версию и выполняла попытку обновить до нее кластер, выберите пункт **Автоматически**. Если вы хотите выбирать поддерживаемую версию, задайте режим **Вручную**. Дополнительные сведения о режиме обновления Service Fabric см. в статье [Обновление кластера Service Fabric][service-fabric-cluster-upgrade].
+8. Выберите режим обновления Service Fabric, который необходимо задать для кластера. Если требуется, чтобы система автоматически получала последнюю версию и выполняла попытку обновить до нее кластер, выберите пункт **Автоматически**. Если вы хотите выбирать поддерживаемую версию, задайте режим **Вручную**. Дополнительные сведения о режиме обновления Service Fabric см. в статье [Обновление кластера Service Fabric.][service-fabric-cluster-upgrade]
 
 > [!NOTE]
 > Корпорация Майкрософт поддерживает только кластеры под управлением поддерживаемых версий Service Fabric. Выбрав режим **Вручную**, вы принимаете на себя ответственность за обновление кластера до поддерживаемой версии. > 
@@ -227,9 +225,7 @@ ms.locfileid: "34212761"
 [service-fabric-connect-and-communicate-with-services]: service-fabric-connect-and-communicate-with-services.md
 [service-fabric-health-introduction]: service-fabric-health-introduction.md
 [service-fabric-reliable-services-backup-restore]: service-fabric-reliable-services-backup-restore.md
-<!--[remote-connect-to-a-vm-scale-set]: service-fabric-cluster-nodetypes.md#remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node -->
-[remote-connect-to-a-vm-scale-set]: service-fabric-cluster-nodetypes.md
-[service-fabric-cluster-upgrade]: service-fabric-cluster-upgrade.md
+<!--[remote-connect-to-a-vm-scale-set]: service-fabric-cluster-nodetypes.md#remote-connect-to-a-virtual-machine-scale-set-instance-or-a-cluster-node --> [remote-connect-to-a-vm-scale-set]: service-fabric-cluster-nodetypes.md [service-fabric-cluster-upgrade]: service-fabric-cluster-upgrade.mdd
 
 <!--Image references-->
 [SearchforServiceFabricClusterTemplate]: ./media/service-fabric-cluster-creation-via-portal/SearchforServiceFabricClusterTemplate.png

@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/17/2018
+ms.date: 07/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 268b9af7835c51d78812b35aff5aaac585961b01
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0414fa16f277c7495cc7fe4bdd7a51fc3a23ad93
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38619194"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38988628"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
 
@@ -113,7 +113,7 @@ ms.locfileid: "38619194"
 1. Установите редактор JSON — он требуется для работы с файлами определения артефактов. Мы советуем использовать [Visual Studio Code](https://code.visualstudio.com/), доступный для Windows, Linux и OS X.
 2. Получите пример файла определения artifactfile.json. Изучите артефакты, созданные командой DevTest Labs, в [репозитории GitHub](https://github.com/Azure/azure-devtestlab). Он содержит богатую библиотеку артефактов, которая поможет вам создавать собственные артефакты. Загрузите файл определения артефакта и внесите в него изменения, чтобы создать свои собственные артефакты.
 3. Используйте IntelliSense — он позволяет просматривать элементы, которые можно использовать для создания файла определения артефакта. Здесь же можно увидеть различные варианты значений каждого элемента. Например, при редактировании элемента **targetOsType** IntelliSense предлагает два варианта — для Windows и для Linux.
-4. Сохраните артефакт в [репозитории Git](devtest-lab-add-artifact-repo.md).
+4. Сохраните артефакт в [общедоступном репозитории Git для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или [своем репозитория Git](devtest-lab-add-artifact-repo.md).
    
    1. Создайте для каждого артефакта отдельный каталог. Имя каталога должно совпадать с именем артефакта.
    2. Сохраните файл определения артефакта (artifactfile.json) в созданный каталог.
@@ -122,9 +122,8 @@ ms.locfileid: "38619194"
       Вот как может выглядеть папка артефакта:
       
       ![Пример папки артефакта](./media/devtest-lab-artifact-author/git-repo.png)
-5. Добавьте репозиторий артефактов в лабораторию. Дополнительные сведения см. в статье [Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Azure Resource Manager](devtest-lab-add-artifact-repo.md).
+5. Если вы используете свой репозиторий для хранения артефактов, добавьте репозиторий артефактов в лабораторию, как описано в руководстве по [добавлению репозитория Git для хранения артефактов и шаблонов](devtest-lab-add-artifact-repo.md).
 
-[!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
 ## <a name="related-articles"></a>Связанные статьи
 * [Диагностика сбоев артефактов на виртуальной машине Azure DevTest Labs](devtest-lab-troubleshoot-artifact-failure.md)

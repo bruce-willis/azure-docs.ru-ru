@@ -2,7 +2,7 @@
 title: Участие пользователя и время ожидания в устойчивых функциях — Azure
 description: Сведения о том, как обрабатывать участие пользователей и время ожидания в расширении устойчивых функций для Функций Azure.
 services: functions
-author: cgillum
+author: kashimiz
 manager: cfowler
 editor: ''
 tags: ''
@@ -12,14 +12,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 03/19/2018
+ms.date: 07/11/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 071a9ffb8305a30b0fedeaa49c4a95d91fbce6c1
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: a62baf64e35dfad55f76138e2f1aaef65dd434be
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30168407"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036311"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
@@ -27,7 +27,7 @@ ms.locfileid: "30168407"
 
 В этом примере реализуется система проверки номера телефона на основе SMS. Эти типы потоков часто используются при проверке номера телефона клиента или для многофакторной проверки подлинности. Это очень эффективный пример, так как полная реализация выполняется с помощью нескольких небольших функций. Внешнее хранилище данных, например база данных, не требуется.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Установите устойчивые функции](durable-functions-install.md).
 * Ознакомьтесь с пошаговым руководством по примеру [последовательности Hello](durable-functions-sequence.md).
@@ -51,7 +51,7 @@ ms.locfileid: "30168407"
 * **E4_SmsPhoneVerification**
 * **E4_SendSmsChallenge**
 
-В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языке C#. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
+В следующих разделах рассматривается конфигурация и код, которые используются для написания скриптов на языках C# и JavaScript. Код для разработки с помощью Visual Studio представлен в конце этой статьи.
  
 ## <a name="the-sms-verification-orchestration-visual-studio-code-and-azure-portal-sample-code"></a>Оркестрация проверки с помощью SMS (пример кода Visual Studio Code и портала Azure) 
 
@@ -61,7 +61,13 @@ ms.locfileid: "30168407"
 
 Ниже приведен код, реализующий функцию.
 
+### <a name="c"></a>C#
+
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SmsPhoneVerification/run.csx)]
+
+### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SmsPhoneVerification/index.js)]
 
 После запуска функция оркестратора выполняет следующие задачи:
 
@@ -76,7 +82,7 @@ ms.locfileid: "30168407"
 > Сперва это может показаться неочевидным, но эта функция оркестратора полностью детерминированная. Это связано с тем, что свойство `CurrentUtcDateTime` используется для подсчета времени истечения срока, настроенного для таймера. Это свойство возвращает то же значение при каждом воспроизведении в коде оркестратора. Важно, чтобы в результате каждого повторяющегося вызова `Task.WhenAny` был получен один и тот же `winner`.
 
 > [!WARNING]
-> Если таймеры вам больше не нужны, как показано в примере выше, когда принимается ответ на запрос, [отключите их с помощью CancellationTokenSource](durable-functions-timers.md).
+> Если таймеры вам больше не нужны, как показано в примере выше, когда принимается ответ на запрос, [отключите их](durable-functions-timers.md).
 
 ## <a name="send-the-sms-message"></a>Отправка SMS-сообщения
 
@@ -86,7 +92,13 @@ ms.locfileid: "30168407"
 
 Ниже приведен код, который создает 4-значный код запроса и отправляет SMS-сообщение:
 
+### <a name="c"></a>C#
+
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E4_SendSmsChallenge/run.csx)]
+
+### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SendSmsChallenge/index.js)]
 
 Функция **E4_SendSmsChallenge** вызывается только один раз, даже когда процесс завершается сбоем или воспроизводится повторно. Это удобно, так как пользователь не должен получать несколько SMS-сообщений. Возвращаемое значение `challengeCode` автоматически сохраняется, поэтому функция оркестратора всегда знает правильный код.
 
@@ -109,6 +121,9 @@ Location: http://{host}/admin/extensions/DurableTaskExtension/instances/741c6565
 
 {"id":"741c65651d4c40cea29acdd5bb47baf1","statusQueryGetUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","sendEventPostUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/raiseEvent/{eventName}?taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}","terminatePostUri":"http://{host}/admin/extensions/DurableTaskExtension/instances/741c65651d4c40cea29acdd5bb47baf1/terminate?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code={systemKey}"}
 ```
+
+   > [!NOTE]
+   > В настоящее время функции запуска оркестрации JavaScript не могут возвращать URI управления экземплярами. Эта возможность будет добавлена в дальнейших выпусках.
 
 Функция оркестратора получает указанный номер телефона и немедленно отправляет на него SMS-сообщение со случайно сгенерированным 4-значным кодом проверки, например *2168*. Функция ожидает ответ в течение 90 секунд.
 

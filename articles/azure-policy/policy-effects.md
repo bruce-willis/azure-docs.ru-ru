@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 1566cf2b61749121c4eaff5a32b0a940f3341f7e
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: a3267d8f2f088c93a8f69f949dc928437a80f455
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751784"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37856952"
 ---
 # <a name="understanding-policy-effects"></a>Действия политик
 
@@ -125,7 +125,7 @@ ms.locfileid: "36751784"
 
 ## <a name="audit"></a>Аудит
 
-Действие аудита используется для создания предупреждения в журнале аудита при оценке несоответствующего ресурса, но оно не останавливает запрос.
+Действие аудита используется, чтобы создать предупреждение в журнале действий при оценке несоответствующего ресурса, но такое действие не останавливает запрос.
 
 ### <a name="audit-evaluation"></a>Оценка аудита
 

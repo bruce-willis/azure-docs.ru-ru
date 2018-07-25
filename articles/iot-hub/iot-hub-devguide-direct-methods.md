@@ -6,14 +6,14 @@ manager: briz
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 06/01/2018
+ms.date: 07/17/2018
 ms.author: nberdy
-ms.openlocfilehash: da9672c7a924411136928d8d04e54c2c62a014b9
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 881262816fc8bd634b7f577fd05aa0c8c062e4ca
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34736683"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126530"
 ---
 # <a name="understand-and-invoke-direct-methods-from-iot-hub"></a>Общие сведения о прямых методах и информация о вызове этих методов из Центра Интернета вещей
 Центр Интернета вещей дает возможность вызова прямых методов на устройствах из облака. Прямые методы представляют собой взаимодействие типа "запрос — ответ" с устройством, подобное вызову HTTP тем, что об успешном завершении или сбое становится известно немедленно (после указанного пользователем времени ожидания). Этот подход полезен для сценариев, в которых предпринимаемые немедленно действия различаются в зависимости от того, удалось ли устройству ответить.
@@ -46,7 +46,12 @@ ms.locfileid: "34736683"
 ### <a name="method-invocation"></a>Вызов метода
 Вызов прямого метода на устройстве является вызовом HTTPS, включающим следующие элементы:
 
-* *URI* конкретного устройства (`{iot hub}/twins/{device id}/methods/`);
+* *URI перенаправления* конкретного устройства вместе с [версией API](/rest/api/iothub/service/invokedevicemethod):
+
+    ```http
+    https://fully-qualified-iothubname.azure-devices.net/twins/{deviceId}/methods?api-version=2018-06-30
+    ```
+
 * *метод* POST;
 * *Заголовки*, содержащие сведения об авторизации, идентификатор запроса, тип и кодировку содержимого;
 * прозрачный *текст* JSON в следующем формате:
@@ -63,6 +68,25 @@ ms.locfileid: "34736683"
     ```
 
 Время ожидания измеряется в секундах. Если время ожидания не указано, то используется значение по умолчанию (30 секунд).
+
+#### <a name="example"></a>Пример
+
+Ниже приведен базовый пример использования `curl`. 
+
+```bash
+curl -X POST \
+  https://iothubname.azure-devices.net/twins/myfirstdevice/methods?api-version=2018-06-30 \
+  -H 'Authorization: SharedAccessSignature sr=iothubname.azure-devices.net&sig=x&se=x&skn=iothubowner' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "methodName": "reboot",
+    "responseTimeoutInSeconds": 200,
+    "payload": {
+        "input1": "someInput",
+        "input2": "anotherInput"
+    }
+}'
+```
 
 ### <a name="response"></a>Ответ
 Внутреннее приложение получает ответ, включающий в себя следующие элементы:

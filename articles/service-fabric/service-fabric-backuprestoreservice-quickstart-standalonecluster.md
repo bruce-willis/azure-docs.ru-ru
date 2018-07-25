@@ -1,6 +1,6 @@
 ---
-title: Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия) | Документация Майкрософт
-description: Используйте функцию периодического резервного копирования и восстановления Service Fabric для защиты приложений от потери данных.
+title: Краткое руководство. Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия) | Документация Майкрософт
+description: Использование функции периодического резервного копирования и восстановления Service Fabric для включения периодического резервного копирования данных приложения.
 services: service-fabric
 documentationcenter: .net
 author: hrushib
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/04/2018
 ms.author: hrushib
-ms.openlocfilehash: e9bc85cec6cb1d0e35aa71f4e1934c057dbf946d
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 5666ed4226104104b91b6f964abeb0490ef80866
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114533"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38990750"
 ---
-# <a name="periodic-backup-and-restore-in-azure-service-fabric-preview"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия)
+# <a name="quickstart-periodic-backup-and-restore-in-azure-service-fabric-preview"></a>Краткое руководство. Периодическое резервное копирование и восстановление в Azure Service Fabric (предварительная версия)
 > [!div class="op_single_selector"]
 > * [Кластеры в Azure](service-fabric-backuprestoreservice-quickstart-azurecluster.md) 
 > * [Изолированные кластеры](service-fabric-backuprestoreservice-quickstart-standalonecluster.md)
@@ -57,7 +57,7 @@ Service Fabric предоставляет набор API для использо
 - Временная остановка резервного копирования.
 - Управление хранением резервных копий (предстоящих).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Кластер Service Fabric с платформой Fabric версии 6.2 и выше. Кластер должен быть установлен на Windows Server. Ознакомьтесь со [статьей](service-fabric-cluster-creation-for-windows-server.md) о процедуре загрузки требуемого пакета.
 * Сертификат X.509 для шифрования секретов, необходимых для подключения к хранилищу резервных копий. Ознакомьтесь со [статьей](service-fabric-windows-cluster-x509-security.md) о том, как получить или создать самозаверяющий сертификат X.509.
 * Надежное приложения Service Fabric с отслеживанием состояния, созданное с помощью пакета SDK Service Fabric версии 3.0 или выше. Приложение, ориентированное на .Net Core 2.0, нужно создавать с помощью пакета SDK Service Fabric версии 3.1 или выше.
@@ -220,13 +220,14 @@ CreationTimeUtc         : 2018-04-01T20:09:44Z
 FailureError            : 
 ```
 
-## <a name="preview-limitation-caveats"></a>Ограничения и предостережения предварительной версии
+## <a name="preview-limitation-caveats"></a>Ограничения и предупреждения, связанные с предварительной версией
 - Отсутствие встроенных командлетов PowerShell для платформы Service Fabric.
 - Отсутствие поддержки интерфейса командной строки Service Fabric.
-- Отсутствие поддержки автоматического удаления ранее созданных резервных копий. Необходимо удаление резервных копий вручную.
+-  Отсутствие поддержки автоматического удаления ранее созданных резервных копий. [Скрипт хранения резервной копии](https://github.com/Microsoft/service-fabric-scripts-and-templates/tree/master/scripts/BackupRetentionScript) можно использовать как внешнее средство автоматизации для настройки очистки резервных копий.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
+- [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)
 - [Backup restore REST API reference](https://docs.microsoft.com/rest/api/servicefabric/sfclient-index-backuprestore) (Справочник по REST API службы резервного копирования и восстановления)
 
 [0]: ./media/service-fabric-backuprestoreservice/PartitionBackedUpHealthEvent.png

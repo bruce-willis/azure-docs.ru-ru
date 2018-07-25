@@ -6,14 +6,14 @@ manager: timlt
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 02/12/2018
+ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 43eb988915fb917923ab968d22b9b7f0ee36c0f5
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 754449dcf759820c8bb99d082c3a5ba2792f02c8
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444401"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126329"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -35,7 +35,7 @@ ms.locfileid: "37444401"
 
 Предоставить [разрешения](#iot-hub-permissions) можно следующими способами:
 
-* **Политики общего доступа на уровне Центра Интернета вещей**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#iot-hub-permissions). Политики можно задавать на [портале Azure][lnk-management-portal] или программно, используя [интерфейсы REST API поставщика ресурсов Центра Интернета вещей][lnk-resource-provider-apis]. По умолчанию для только что созданного Центра Интернета вещей заданы такие политики:
+* **Политики общего доступа на уровне Центра Интернета вещей**. Политики общего доступа могут предоставлять любое сочетание [разрешений](#iot-hub-permissions). Политики можно определить на [портале Azure][lnk-management-portal], программно, используя [интерфейсы REST API поставщика ресурсов Центра Интернета вещей][lnk-resource-provider-apis], или с помощью команды интерфейса командной строки [az iot hub policy](https://docs.microsoft.com/cli/azure/iot/hub/policy?view=azure-cli-latest). По умолчанию для только что созданного Центра Интернета вещей заданы такие политики:
   
   | Политика общего доступа | Разрешения |
   | -------------------- | ----------- |
@@ -91,7 +91,9 @@ ms.locfileid: "37444401"
 
 Имя пользователя (значение DeviceId следует вводить с учетом регистра): `iothubname.azure-devices.net/DeviceId`
 
-Пароль (создайте маркер SAS с помощью [обозревателя устройств][lnk-device-explorer]): `SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
+Пароль (можно создать маркер SAS с помощью инструмента [Обозреватель устройств][lnk-device-explorer] или команды интерфейса командной строки расширения [az iot hub generate-sas-token](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token)).
+
+`SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
 > [!NOTE]
 > [Пакеты SDK для Azure IoT][lnk-sdks] автоматически создают маркеры при подключении к службе. В некоторых случаях пакеты SDK для Azure IoT поддерживают не все протоколы или не все методы проверки подлинности.
@@ -268,7 +270,7 @@ var token = generateSasToken(endpoint, deviceKey, null, 60);
 `SharedAccessSignature sr=myhub.azure-devices.net%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697`
 
 > [!NOTE]
-> Маркер SAS можно создать с помощью инструмента [Обозреватель устройств][lnk-device-explorer] на основе .NET или с помощью кроссплатформенной служебной программы командной строки [Расширение Интернета вещей для Azure CLI 2.0][lnk-IoT-extension-CLI-2.0] на основе Python.
+> Маркер SAS можно создать с помощью инструмента [Обозреватель устройств][lnk-device-explorer] на основе .NET, кроссплатформенной служебной программы командной строки [Расширение Интернета вещей для Azure CLI 2.0][lnk-IoT-extension-CLI-2.0] на основе Python или [расширения набора средств Интернета вещей Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
 
 ### <a name="use-a-shared-access-policy"></a>Использование политики общего доступа
 
@@ -348,11 +350,13 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 Для аутентификации устройство может использовать только один из вариантов: либо сертификат X.509, либо маркер безопасности.
 
-Дополнительные сведения об аутентификации с помощью центра сертификации см. в статье [Концептуальное представление о сертификатах ЦС X.509 в отрасли Интернета вещей](iot-hub-x509ca-concept.md).
+Дополнительные сведения об аутентификации с помощью центра сертификации см. в статье [Проверка подлинности устройства с помощью сертификатов ЦС X.509](iot-hub-x509ca-overview.md).
 
 ### <a name="register-an-x509-certificate-for-a-device"></a>Регистрация сертификата X.509 для устройства
 
 [Пакет SDK службы Интенета вещей Azure для C#][lnk-service-sdk] (версия 1.0.8+) поддерживает регистрацию устройства, которое использует сертификат X.509 для аутентификации. Другие интерфейсы API (например, импорт и экспорт устройств) также поддерживают сертификаты X.509.
+
+Для настройки сертификатов X.509 для устройств можно также использовать команду интерфейса командной строки расширения [az iot hub device-identity](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub/device-identity?view=azure-cli-latest).
 
 ### <a name="c-support"></a>Поддержка C\#
 
@@ -425,7 +429,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 В следующей таблице указаны разрешения, с помощью которых можно управлять доступом к Центру Интернета вещей.
 
-| Разрешение | Заметки |
+| Разрешение | Примечания |
 | --- | --- |
 | **RegistryRead** |Предоставляет доступ на чтение к реестру удостоверений. Дополнительные сведения см. в разделе о [реестре удостоверений][lnk-identity-registry]. <br/>Это разрешение используется серверными облачными службами. |
 | **RegistryReadWrite** |Предоставляет доступ на чтение и запись к реестру удостоверений. Дополнительные сведения см. в разделе о [реестре удостоверений][lnk-identity-registry]. <br/>Это разрешение используется серверными облачными службами. |

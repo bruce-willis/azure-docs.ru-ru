@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 06/29/2018
+ms.date: 07/16/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
 keywords: ''
-ms.openlocfilehash: 0992846416ce77bccd23fda73f61568eb61c33fb
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: bfb50a3e1b2276a63d79f5a6b8b1ab721f039d9d
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37127641"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090563"
 ---
 # <a name="azure-stack-datacenter-integration---publish-endpoints"></a>Интеграция центра обработки данных Azure Stack. Публикация конечных точек
 Для ролей инфраструктуры в Azure Stack настраиваются виртуальные IP-адреса (VIP). Эти виртуальные IP-адреса выделяются из пула общедоступных IP-адресов. Каждый виртуальный IP-адрес защищается списком управления доступом (ACL) на уровне программно определяемой сети. Для дополнительной защиты решения списки управления доступом применяются и на физических коммутаторах (стоечные коммутаторы и BMC). Для каждой конечной точки создается DNS-запись во внешней зоне DNS, которая указана во время развертывания.
@@ -52,10 +52,10 @@ ms.locfileid: "37127641"
 |Большой двоичный объект хранилища|&#42;.blob.*&lt;регион>.&lt;полное доменное имя>*|HTTP<br>HTTPS|80<br>443|
 |Поставщик ресурсов SQL|sqladapter.dbadapter.*&lt;region>.&lt;fqdn>*|HTTPS|44300–44304|
 |Поставщик ресурсов MySQL|mysqladapter.dbadapter.*&lt;region>.&lt;fqdn>*|HTTPS|44300–44304|
-|Служба приложений Azure|&#42;.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|80 (HTTP)<br>443 (HTTPS)<br>8172 (MSDeploy)|
+|Служба приложений|&#42;.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|80 (HTTP)<br>443 (HTTPS)<br>8172 (MSDeploy)|
 |  |&#42;.scm.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)|
 |  |api.appservice.*&lt;регион>.&lt;полное доменное имя>*|TCP|443 (HTTPS)<br>44300 (Azure Resource Manager)|
-|  |ftp.appservice.*&lt;регион>.&lt;полное_доменное_имя>*|TCP, UDP|21, 1021, 10001-101000 (FTP)<br>990 (FTPS)|
+|  |ftp.appservice.*&lt;регион>.&lt;полное_доменное_имя>*|TCP, UDP|21, 1021, 10001-10100 (FTP)<br>990 (FTPS)|
 |VPN-шлюзы;|     |     |Сведения см. в статье [VPN-шлюз: вопросы и ответы](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-vpn-faq#can-i-traverse-proxies-and-firewalls-using-point-to-site-capability).|
 |     |     |     |     |
 

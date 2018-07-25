@@ -9,16 +9,16 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: kgremban
-ms.openlocfilehash: ad70fcc6b9779cb33772a3fce2fb11b4cec804ee
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 5b5212d5e1663fee01ff87642432818071d4f4dd
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062604"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38988540"
 ---
 # <a name="install-azure-iot-edge-runtime-on-linux-arm32v7armhf"></a>Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)
 
-Среда выполнения Azure IoT Edge развертывается на всех устройствах IoT Edge. Она состоит из трех компонентов. **Управляющая программа безопасности IoT Edge** обеспечивает безопасность и соответствие стандартам безопасности на устройстве IoT Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запустив агент IoT Edge. **Агент IoT Edge** упрощает развертывание и мониторинг модулей на устройстве IoT Edge, включая центр IoT Edge. **Центр IoT Edge** управляет взаимодействием между модулями на устройстве IoT Edge, а также между устройством и Центром Интернета вещей.
+Среда выполнения Azure IoT Edge развертывается на всех устройствах IoT Edge. Она состоит из трех компонентов. **Управляющая программа безопасности IoT Edge** обеспечивает безопасность и соответствие стандартам безопасности на устройстве Edge. Управляющая программа запускается при каждой загрузке устройства и перезагружает устройство, запуская агент IoT Edge. **Агент IoT Edge** упрощает развертывание и мониторинг модулей на устройстве IoT Edge, в том числе центр IoT Edge. **Центр IoT Edge** управляет взаимодействием между модулями на устройстве IoT Edge, а также между устройством и Центром Интернета вещей.
 
 В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на устройстве IoT Edge с Linux ARM32v7/armhf (например, Raspberry Pi).
 
@@ -27,11 +27,9 @@ ms.locfileid: "37062604"
 
 ## <a name="install-the-container-runtime"></a>Установка среды выполнения контейнера
 
-Служба Azure IoT Edge основана на среде выполнения контейнера [совместимого с OCI][lnk-oci] (например, Docker). Если вы установили Docker (Community Edition или Enterprise Edition) на устройстве IoT Edge, можете использовать Docker с Azure IoT Edge для разработки и тестирования. 
+Служба Azure IoT Edge использует среду выполнения контейнера, [совместимую с OCI][lnk-oci]. Для разработки в рабочей среде мы настоятельно рекомендуем использовать платформу [на основе Moby][lnk-moby], описанную ниже. Это единственная платформа контейнеров, которая официально поддерживается с Azure IoT Edge. Образы контейнеров Docker (Community Edition или Enterprise Edition) совместимы со средой выполнения на основе Moby.
 
-Для разработки в рабочей среде мы настоятельно рекомендуем использовать платформу [на основе Moby][lnk-moby], описанную ниже. Это единственная платформа контейнеров, которая официально поддерживается с Azure IoT Edge. Образы контейнеров Docker (Community Edition или Enterprise Edition) полностью совместимы со средой выполнения Moby.
-
-Приведенные ниже команды позволяют установить платформу Moby и интерфейс командной строки (CLI). CLI применяется на стадии разработки, но при развертывании в рабочей среде он может не понадобится.
+Приведенные ниже команды позволяют установить платформу на основе Moby и интерфейс командной строки (CLI). CLI применяется на стадии разработки, но при развертывании в рабочей среде он может не понадобится.
 
 ```cmd/sh
 
@@ -67,17 +65,42 @@ sudo apt-get install -f
 
 ## <a name="configure-the-azure-iot-edge-security-daemon"></a>Настройка управляющей программы безопасности Azure IoT Edge
 
-Управляющую программу можно настроить с помощью файла конфигурации (`/etc/iotedge/config.yaml`). Устройство IoT Edge можно настроить вручную <!--[automatically via Device Provisioning Service][lnk-dps] or-->, используя [строку подключения устройства][lnk-dcs].
 
-Чтобы настроить устройство вручную, в раздел **provisioning** в файле **config.yaml** вставьте строку подключения для устройства.
+Управляющую программу можно настроить с помощью файла конфигурации `/etc/iotedge/config.yaml`. По умолчанию этот файл защищен от записи, и вам потребуется использовать повышенные разрешения для его изменения.
 
-```yaml
-provisioning:
-  source: "manual"
-  device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+```bash
+sudo nano /etc/iotedge/config.yaml
 ```
 
-*По умолчанию этот файл защищен от записи, и вам не требуется использовать `sudo` для его изменения. Пример: `sudo nano /etc/iotedge/config.yaml`*
+Устройство IoT Edge можно настроить вручную, используя [строку подключения устройства][lnk-dcs], или автоматически, используя [Службы подготовки устройств к добавлению в Центр Интернета вещей][lnk-dps].
+
+* Для настройки вручную раскомментируйте режим подготовки **manual**. Замените значение **device_connection_string** строкой подключения для устройства IoT Edge.
+
+   ```yaml
+   provisioning:
+     source: "manual"
+     device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+  
+   # provisioning: 
+   #   source: "dps"
+   #   global_endpoint: "https://global.azure-devices-provisioning.net"
+   #   scope_id: "{scope_id}"
+   #   registration_id: "{registration_id}"
+   ```
+
+* Для автоматической настройки раскомментируйте режим подготовки **dps**. Замените значения **scope_id** и **registration_id** значениями для вашего экземпляра Службы подготовки устройств к добавлению в Центр Интернета вещей и устройства IoT Edge с доверенным платформенным модулем. 
+
+   ```yaml
+   # provisioning:
+   #   source: "manual"
+   #   device_connection_string: "<ADD DEVICE CONNECTION STRING HERE>"
+  
+   provisioning: 
+     source: "dps"
+     global_endpoint: "https://global.azure-devices-provisioning.net"
+     scope_id: "{scope_id}"
+     registration_id: "{registration_id}"
+   ```
 
 Когда введете сведения о подготовке в файл конфигурации, перезапустите управляющую программу:
 
@@ -85,7 +108,9 @@ provisioning:
 sudo systemctl restart iotedge
 ```
 
-## <a name="verify-successful-installation"></a>Проверка успешной установки
+## <a name="verify-successful-installation"></a>Проверка установки
+
+Если вы выполняли **настройку вручную**, как описано в предыдущем разделе, подготовленная среда выполнения IoT Edge должна работать на вашем устройстве. Если вы выполняли **автоматическую настройку**, вам нужно сделать еще кое-что, чтобы среда выполнения могла зарегистрировать ваше устройство в центре Интернета вещей от вашего имени. Инструкции см. в руководстве по [созданию и подготовке имитированного устройства IoT Edge TPM в Linux](how-to-auto-provision-simulated-device-linux.md#give-iot-edge-access-to-the-tpm).
 
 Вы можете проверить состояние управляющей программы IoT Edge, используя следующий код:
 
@@ -99,19 +124,22 @@ systemctl status iotedge
 journalctl -u iotedge --no-pager --no-full
 ```
 
-Чтобы получить список запущенных модулей, используйте следующий код:
+Чтобы получить список запущенных модулей, используйте следующий код.
 
 ```cmd/sh
-iotedge list
+sudo iotedge list
 ```
+>[!NOTE]
+>В устройствах с ограниченными ресурсами, например RaspberryPi, настоятельно рекомендуется присвоить переменной среды *OptimizeForPerformance* значение *false* согласно инструкциям, приведенным в [руководстве по устранению неполадок.][lnk-trouble]
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Если вам не удается установить среду выполнения IoT Edge надлежащим образом, см. страницу со сведениями об [устранении неполадок][lnk-trouble].
 
 <!-- Links -->
-[lnk-dcs]: ../iot-hub/quickstart-send-telemetry-dotnet.md#register-a-device
-[lnk-dps]: how-to-simulate-dps-tpm.md
+[lnk-dcs]: how-to-register-device-portal.md
+[lnk-dps]: how-to-auto-provision-simulated-device-linux.md
+[lnk-trouble]: https://docs.microsoft.com/azure/iot-edge/troubleshoot#stability-issues-on-resource-constrained-devices
 [lnk-oci]: https://www.opencontainers.org/
 [lnk-moby]: https://mobyproject.org/
-[lnk-trouble]: troubleshoot.md

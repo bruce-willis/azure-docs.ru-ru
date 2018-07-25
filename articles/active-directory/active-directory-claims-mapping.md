@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: billmath
-ms.openlocfilehash: 04fa23e059ee676ba0e7c48eeea3361b85af5415
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: e6d2d8dfd6f7a40158b098983bd34bbd5d8271f0
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261211"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049319"
 ---
 # <a name="claims-mapping-in-azure-active-directory-public-preview"></a>Сопоставление утверждений в Azure Active Directory (общедоступная предварительная версия)
 
@@ -357,7 +357,7 @@ ms.locfileid: "35261211"
 |TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|ОПИСАНИЕ|
 |-----|-----|-----|-----|
 |Объединение|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ "@" отсутствует, то возвращается исходная входная строка в состоянии "как есть".|
+|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ "\@" отсутствует, то возвращается исходная входная строка в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -420,7 +420,7 @@ ms.locfileid: "35261211"
 
 В Azure AD существует множество сценариев, когда можно настроить утверждения, добавляемые в токены для определенных субъектов-служб. В этом разделе рассматриваются наиболее распространенные сценарии, которые помогут вам понять, как использовать политики сопоставления утверждений.
 
-#### <a name="prerequisites"></a>предварительным требованиям
+#### <a name="prerequisites"></a>Предварительные требования
 В следующих примерах мы будем создавать, обновлять, связывать и удалять политики для субъектов-служб. Если вы еще не работали с Azure AD, прежде чем продолжить работу с этими примерами, советуем ознакомиться со статьей, посвященной тому, как получить клиент Azure Active Directory. 
 
 Чтобы начать работу, сделайте следующее:

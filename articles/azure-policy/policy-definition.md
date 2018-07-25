@@ -8,12 +8,12 @@ ms.date: 05/24/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 2f756d65fa167b3812772088aec7232d08b04b9f
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 7f01464c4b9063f20a83c3626d7f92a5e0524f7a
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937338"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989131"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -210,9 +210,13 @@ ms.locfileid: "36937338"
 - `type`
 - `location`
 - `tags`
-- `tags.tagName`
-- `tags[tagName]`
-  - Этот синтаксис в скобках поддерживает имена тегов, содержащие точки.
+- `tags.<tagName>`
+  - **\<tagName\>** — это имя тега для проверки условия.
+  - Пример: `tags.CostCenter`. **CostCenter** — это имя тега.
+- `tags[<tagName>]`
+  - Этот синтаксис в скобках поддерживает имена тегов, которые содержат точки.
+  - **\<tagName\>** — это имя тега для проверки условия.
+  - Пример: `tags.[Acct.CostCenter]`. **Acct.CostCenter** — это имя тега.
 - Список псевдонимов свойств указан в разделе [Псевдонимы](#aliases).
 
 ### <a name="alternative-accessors"></a>Альтернативные методы доступа

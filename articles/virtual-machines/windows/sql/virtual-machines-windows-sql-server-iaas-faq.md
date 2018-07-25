@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 03/20/2018
+ms.date: 07/12/2018
 ms.author: v-shysun
-ms.openlocfilehash: e0254cd16c27597c3d52aed19b4c4ece49bac765
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 48df858095cb867954460ec858567e41ed330063
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34366398"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39012072"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-azure-virtual-machines"></a>Часто задаваемые вопросы по SQL Server на виртуальных машинах Azure (Windows)
 
@@ -71,7 +71,7 @@ ms.locfileid: "34366398"
 
 1. **Как установить лицензированную копию SQL Server в виртуальной машине Azure?**
 
-   Это можно сделать двумя способами. Можно подготовить один из [образов виртуальных машин, которые поддерживают лицензии](virtual-machines-windows-sql-server-iaas-overview.md#BYOL). Кроме того, можно скопировать установочный носитель SQL Server на виртуальную машину Windows Server, а затем установить SQL Server на виртуальную машину. В соответствии с требованиями лицензирования у вас должно быть преимущество [Перемещение лицензий в рамках программы Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/). Дополнительные сведения см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
+   Это можно сделать двумя способами. Можно подготовить один из [образов виртуальных машин, которые поддерживают лицензии](virtual-machines-windows-sql-server-iaas-overview.md#BYOL). Такая модель также называется "с использованием собственной лицензии" (BYOL). Кроме того, можно скопировать установочный носитель SQL Server на виртуальную машину Windows Server, а затем установить SQL Server на виртуальную машину. Тем не менее при установке SQL Server вручную отсутствует интеграция с порталом и расширение агента IaaS для SQL Server не поддерживается, поэтому такие компоненты, как автоматическое резервное копирование и автоматическая установка исправлений, не будут работать в этом сценарии. Исходя из этого, мы рекомендуем использовать один из образов коллекции BYOL. Чтобы использовать образ BYOL или собственный носитель SQL Server для виртуальной машины Azure, необходимо преимущество [Перемещение лицензий в рамках Software Assurance в Azure](https://azure.microsoft.com/pricing/license-mobility/). Дополнительные сведения см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md).
 
 1. **Можно ли настроить виртуальную машину для использования собственной лицензии SQL Server, если она была создана из одного из образов коллекции с оплатой по мере использования?**
 
@@ -115,6 +115,9 @@ ms.locfileid: "34366398"
 1. **Поддерживаются ли экземпляры отказоустойчивого кластера SQL Server на виртуальных машинах Azure?**
 
    Да. Вы можете [создать отказоустойчивый кластер Windows на платформе Windows Server 2016](virtual-machines-windows-portal-sql-create-failover-cluster.md) и использовать локальные дисковые пространства (S2D) для хранилища кластера. Кроме того, можно использовать сторонние решения кластеризации или хранения, как описано в статье [Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-high-availability-dr.md#azure-only-high-availability-solutions).
+
+   > [!IMPORTANT]
+   > В настоящее время [расширение агента IaaS SQL Server](virtual-machines-windows-sql-server-agent-extension.md) не поддерживается для экземпляра отказоустойчивого кластера SQL Server в Azure. Мы рекомендуем удалить расширение с виртуальных машин, которые участвуют в экземпляре отказоустойчивого кластера. Это расширение поддерживает такие компоненты, как автоматическое резервное копирование и установка исправлений, а также некоторые возможности портала для SQL. Эти компоненты не будут работать для виртуальных машин SQL после удаления агента.
 
 1. **В чем разница между виртуальными машинами SQL и службой "База данных SQL"?**
 

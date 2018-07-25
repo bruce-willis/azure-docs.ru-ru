@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 06/16/2017
 ms.author: danlep
-ms.openlocfilehash: ee8622525adcc698bf920b0c3379cc3065798a19
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 69990ab7852999dca2b586fd28ef74c44cc283fd
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "30315598"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39116984"
 ---
 # <a name="persist-task-data-to-azure-storage-with-the-batch-service-api"></a>Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы
 
@@ -180,7 +180,7 @@ string containerName = job.OutputStorageContainerName();
 
 Пример проекта [PersistOutputs][github_persistoutputs] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует использование клиентской библиотеки пакетной службы для сохранения выходных данных задачи в долговременном хранилище. Чтобы запустить пример приложения, выполните следующее.
 
-1. Откройте проект в **Visual Studio 2015 или более поздней версии**.
+1. Откройте проект в **Visual Studio 2017**.
 2. Добавьте свои **данные** учетной записи пакетной службы и учетной записи хранения в **AccountSettings.settings** в проекте Microsoft.Azure.Batch.Samples.Common.
 3. **сборку** решения (но не запускайте его). Восстановите необходимые пакеты NuGet в случае появления соответствующего запроса.
 4. С помощью портала Azure передайте [пакет приложения](batch-application-packages.md) для **PersistOutputsTask**. Добавьте в ZIP-файл пакета `PersistOutputsTask.exe` и его зависимые сборки , задайте для приложения идентификатор PersistOutputsTask, а для версии пакета приложения — значение "1.0".
@@ -190,7 +190,7 @@ string containerName = job.OutputStorageContainerName();
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Дополнительные сведения о сохранении выходных данных задачи с помощью библиотеки соглашений по файлам для .NET см. в разделе [Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET](batch-task-output-file-conventions.md).
+- Дополнительные сведения о сохранении выходных данных задачи с помощью библиотеки соглашений о файлах для .NET см. в разделе [Сохранение данных заданий и задач в службе хранилища Azure с помощью библиотеки соглашений о пакетных файлах для .NET](batch-task-output-file-conventions.md).
 - Дополнительные сведения о других способах сохранения выходных данных задачи в пакетной службе Azure см. в разделе [Сохранение выходных данных заданий и задач в службе хранилища Azure](batch-task-output.md).
 
 [github_persistoutputs]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/PersistOutputs

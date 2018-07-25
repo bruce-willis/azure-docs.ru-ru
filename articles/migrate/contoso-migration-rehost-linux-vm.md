@@ -5,20 +5,20 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 06/19/2018
+ms.date: 07/12/2018
 ms.author: raynew
-ms.openlocfilehash: 8f039884ca0ea46c128078984d6cab6fd29ac9af
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6c96beee347a7a36a3dc04ecf8cd994484fd6bb7
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36220556"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39007257"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-linux-app-to-azure-vms"></a>Перенос приложения компании Contoso: повторное размещение локального приложения Linux на виртуальных машинах Azure
 
 В этой статье показано, каким образом Contoso повторно размещает локальное приложение службы поддержки на основе Linux (**osTicket**) на виртуальных машинах IaaS Azure.
 
-Это седьмой документ в цикле статей о том, как вымышленная компания Contoso переносит локальные ресурсы в облако Microsoft Azure. Этот цикл содержит общие сведения и ряд сценариев, которые иллюстрируют настройку инфраструктуры миграции и выполнение миграций различных типов. Сценарии излагаются в порядке роста сложности. Со временем мы добавим в этот цикл и другие статьи.
+Это один из документов в цикле статей о том, как вымышленная компания Contoso переносит локальные ресурсы в облако Microsoft Azure. Этот цикл содержит общие сведения и ряд сценариев, которые иллюстрируют настройку инфраструктуры миграции и выполнение миграций различных типов. Сценарии излагаются в порядке роста сложности. Со временем мы добавим в этот цикл и другие статьи.
 
 **Статья** | **Дополнительные сведения** | **Состояние**
 --- | --- | ---
@@ -26,10 +26,15 @@ ms.locfileid: "36220556"
 [Статья 2. Развертывания инфраструктуры Azure](contoso-migration-infrastructure.md) | Здесь демонстрируется, как компания Contoso подготавливает свою локальную инфраструктуру и инфраструктуру Azure к миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
 [Статья 3. Доступ к локальным ресурсам](contoso-migration-assessment.md)  | Здесь показано, как Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel в VMware. Для оценки виртуальных машин приложения в компании Contoso используют службу [Миграция Azure](migrate-overview.md), а базу данных SQL Server приложения оценивают с помощью [Помощника по миграции баз данных Azure](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Доступна
 [Статья 4. Повторное размещение на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется выполняемый в Contoso процесс миграции приложения SmartHotel в Azure. При переносе данных в Управляемый экземпляр Базы данных SQL миграция внешней виртуальной машины приложения выполняется с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview), а базы данных приложения — с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
-[Статья 5. Повторное размещение на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | Здесь показано, как Contoso переносит свои виртуальные машины приложения SmartHotel, используя только Site Recovery.
+[Статья 5. Повторное размещение на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | Здесь показано, как Contoso переносит свои виртуальные машины приложения SmartHotel в виртуальные машины Azure. | Доступна
 [Статья 6. Повторное размещение на виртуальных машинах Azure и в группах доступности SQL Server](contoso-migration-rehost-vm-sql-ag.md) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel. Миграция виртуальных машин приложения выполняется с помощью Site Recovery, а миграция базы данных приложения в группу доступности SQL Server — с помощью Database Migration Service. | Доступна
-Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure (эта статья) | Здесь демонстрируется, как Contoso переносит свое приложение osService для Linux, используя Azure Site Recovery.
+Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure | Здесь демонстрируется, как Contoso переносит свое приложение osService для Linux, используя Azure Site Recovery. | Эта статья.
 [Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и сервере MySQL в Azure](contoso-migration-rehost-linux-vm-mysql.md) | Здесь демонстрируется, как Contoso переносит приложение osService для Linux, используя Site Recovery для миграции на виртуальные машины и MySQL Workbench для миграции в экземпляр Azure MySQL Server. | Доступна
+[Статья 9. Рефакторинг приложения в веб-приложениях Azure и Базе данных Azure SQL](contoso-migration-refactor-web-app-sql.md) | В статье описывается, как Contoso переносит приложение SmartHotel в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure. | Доступна
+[Статья 10. Рефакторинг приложения Linux для веб-приложений Azure и Azure MySQL](contoso-migration-refactor-linux-app-service-mysql.md) | В статье описывается, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. Специалисты компании переносят базу данных приложения в экземпляр MySQL в Azure. | Доступна
+[Статья 11. Рефакторинг TFS на VSTS](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso выполняет миграцию локального развертывания Team Foundation Server (TFS) путем переноса в Visual Studio Team Services (VSTS) в Azure. | Доступна
+[Статья 12. Повторное проектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | В статье описывается, как Contoso переносит и повторно проектирует приложение SmartHotel в Azure. Специалисты компании повторно проектируют веб-приложение как контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | В статье описывается, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Доступна
 
 Из этой статьи вы узнаете, как Contoso переносит двухуровневое приложение **osTicket**, работающее на платформе Linux Apache MySQL PHP (LAMP), в Azure. Виртуальные машины приложения будут перенесены с помощью службы Azure Site Recovery. Если вы хотите использовать это приложение с открытым кодом, вы можете загрузить его с [GitHub](https://github.com/osTicket/osTicket).
 
@@ -85,7 +90,7 @@ Contoso будет осуществлять миграцию следующим 
 [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/) | Служба организует и контролирует миграцию и аварийное восстановление виртуальных машин Azure, а также локальных виртуальных машин и физических серверов.  | Во время репликации в Azure взимается плата за службу хранилища Azure.  При отработке отказа создаются виртуальные машины Azure, за которые взимается плата. Дополнительные сведения о ценах см. на [этой странице](https://azure.microsoft.com/pricing/details/site-recovery/).
 
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже показано, что вам (и компании Contoso) необходимо для выполнения этого сценария.
 

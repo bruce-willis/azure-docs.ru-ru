@@ -1,6 +1,6 @@
 ---
 title: Запуск Virtual Kubelet в кластере службы Azure Kubernetes
-description: Использование Virtual Kubelet для запуска контейнеров Kubernetes в экземплярах контейнеров Azure.
+description: Узнайте, как использовать Virtual Kubelet со службой Azure Kubernetes (AKS) для запуска контейнеров Linux и Windows в службе "Экземпляры контейнеров Azure".
 services: container-service
 author: iainfoulds
 manager: jeconnoc
@@ -8,14 +8,14 @@ ms.service: container-service
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: iainfou
-ms.openlocfilehash: 04fdb1620dc6e7147ed10ae6eeeaeb3eeae14b62
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 0466f416568b2a1a82e264a8508697fc9de87287
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37097365"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952484"
 ---
-# <a name="virtual-kubelet-with-aks"></a>Использование Virtual Kubelet в службе контейнеров Azure
+# <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
 Экземпляры контейнеров Azure предоставляют размещенную среду для запуска контейнеров в Azure. При использовании экземпляров контейнеров Azure вам не требуется управлять базовой вычислительной инфраструктурой, это делает Azure. При запуске контейнеров в Экземплярах контейнеров Azure взимается плата за каждый второй запущенный контейнер.
 
@@ -32,7 +32,38 @@ ms.locfileid: "37097365"
 
 Вам также потребуется Azure CLI **2.0.33** или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Для установки Virtual Kubelet также необходим [Helm](https://docs.helm.sh/using_helm/#installing-helm).
+Для установки Virtual Kubelet также необходим набор инструментов [Helm](https://docs.helm.sh/using_helm/#installing-helm).
+
+### <a name="for-rbac-enabled-clusters"></a>Для кластеров с поддержкой RBAC
+
+Если используется кластер AKS с поддержкой RBAC, необходимо создать учетную запись службы и привязку роли для использования с Tiller. Дополнительные сведения см. в статье об [управлении доступом на основе ролей в Helm][helm-rbac].
+
+Для Virtual Kubelet также необходимо создать привязку *ClusterRoleBinding*. Чтобы создать привязку, создайте файл с именем *rbac-virtualkubelet.yaml* и вставьте следующее определение:
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: virtual-kubelet
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: default
+```
+
+Примените привязку с помощью команды [kubectl apply][kubectl-apply] и укажите файл *rbac-virtualkubelet.yaml*, как показано в следующем примере:
+
+```
+$ kubectl apply -f rbac-virtual-kubelet.yaml
+
+clusterrolebinding.rbac.authorization.k8s.io/virtual-kubelet created
+```
+
+Теперь можно продолжить установку Virtual Kubelet в кластере AKS.
 
 ## <a name="installation"></a>Установка
 
@@ -61,7 +92,7 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 
 Чтобы проверить установку Virtual Kubelet, получите список узлов Kubernetes, выполнив команду [kubectl get nodes][kubectl-get].
 
-```console
+```
 $ kubectl get nodes
 
 NAME                                    STATUS    ROLES     AGE       VERSION
@@ -102,13 +133,13 @@ spec:
 
 Запустите приложение, выполнив команду [kubectl create][kubectl-create].
 
-```azurecli-interactive
+```console
 kubectl create -f virtual-kubelet-linux.yaml
 ```
 
 Чтобы вывести список pod для назначенного узла, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-kubelet-virtual-kubelet-linux`.
 
-```console
+```
 $ kubectl get pods -o wide
 
 NAME                                READY     STATUS    RESTARTS   AGE       IP             NODE
@@ -145,13 +176,13 @@ spec:
 
 Запустите приложение, выполнив команду [kubectl create][kubectl-create].
 
-```azurecli-interactive
+```console
 kubectl create -f virtual-kubelet-windows.yaml
 ```
 
 Чтобы вывести список pod для назначенного узла, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `nanoserver-iis` был назначен на узел `virtual-kubelet-virtual-kubelet-win`.
 
-```console
+```
 $ kubectl get pods -o wide
 
 NAME                                READY     STATUS    RESTARTS   AGE       IP             NODE
@@ -182,3 +213,5 @@ az aks remove-connector --resource-group myAKSCluster --name myAKSCluster --conn
 [node-selector]:https://kubernetes.io/docs/concepts/configuration/assign-pod-node/
 [toleration]: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
 [vk-github]: https://github.com/virtual-kubelet/virtual-kubelet
+[helm-rbac]: https://docs.helm.sh/using_helm/#role-based-access-control
+[kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply

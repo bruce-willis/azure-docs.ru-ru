@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/17/2018
 ms.author: jingwang
-ms.openlocfilehash: 7cdc4f0ef436fbd7ea3bdf1431b08be3b840290f
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e401508fc5ffc1de666f727ffbb7790005384fc1
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857207"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39003803"
 ---
 # <a name="load-data-into-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Загрузка данных в Azure Data Lake Storage 1-го поколения c помощью службы "Фабрика данных Azure"
 
@@ -35,7 +35,8 @@ ms.locfileid: "37857207"
 
 > [!NOTE]
 > Дополнительные сведения см. в статье [Копирование данных в хранилище Azure Data Lake Store и из него с помощью фабрики данных Azure](connector-azure-data-lake-store.md).
-## <a name="prerequisites"></a>предварительным требованиям
+
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Azure Data Lake Store: если у вас нет учетной записи Data Lake Store, см. раздел о [создании учетных записей Data Lake Store](../data-lake-store/data-lake-store-get-started-portal.md#create-an-azure-data-lake-store-account), чтобы узнать, как создать ее.
@@ -109,7 +110,7 @@ ms.locfileid: "37857207"
    3. Щелкните **Далее**.
    
    > [!IMPORTANT]
-   > В этом пошаговом руководстве проверка подлинности Data Lake Store выполняется с помощью _Управляемого удостоверения службы_. Не забудьте предоставить субъекту-службе соответствующие разрешения в Azure Data Lake Store, выполнив [эти инструкции](connector-azure-data-lake-store.md#using-managed-service-identity-authentication).
+   > В этом пошаговом руководстве проверка подлинности Data Lake Store выполняется с помощью _Управляемого удостоверения службы_. Не забудьте предоставить Управляемому удостоверению службы соответствующие разрешения в Azure Data Lake Storage, выполнив [эти инструкции](connector-azure-data-lake-store.md#using-managed-service-identity-authentication).
    
    ![Указание учетной записи Azure Data Lake Store](./media/load-data-into-azure-data-lake-store/specify-adls.png)
 9. На странице **Choose the output file or folder** (Выбор целевого файла или папки) введите **copyfroms3** в качестве имени папки с выходными данными, а затем нажмите кнопку **Далее** 

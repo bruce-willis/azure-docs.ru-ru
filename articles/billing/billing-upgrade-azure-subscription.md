@@ -17,12 +17,12 @@ ms.workload: na
 ms.date: 08/30/2017
 ms.author: jlian
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 86c733f138e9926fb13c2c1cb404cc9b61f4780e
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 089bb6f3fd187a56495dfd353ee89086e6bea120
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32769177"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39124989"
 ---
 # <a name="upgrade-your-free-trial-or-microsoft-imagine-azure-subscription-to-pay-as-you-go"></a>Обновление с бесплатной пробной версии или подписки Azure Microsoft Imagine до подписки с оплатой по мере использования
 
@@ -37,3 +37,8 @@ ms.locfileid: "32769177"
     ![Снимок экрана, на котором показано, что нужно выбрать для подтверждения обновления подписки](./media/billing-upgrade-azure-subscription/Upgrade.png)
 
  Когда вы перейдете от использования бесплатной пробной версии и создадите подписку, оставшийся кредит будет доступным в течение полных 30 дней. Кроме того, вам предоставляется доступ к бесплатным службам в течение 12 месяцев.
+ 
+ Если после обновления нужно [перенести подписку](billing-subscription-transfer.md), необходимо подождать, пока идентификатор предложения подписки изменится на **MS-AZR-003P**. Идентификатор предложения изменяется, в случае
+
+* Исчерпания кредита или
+* Истечения 30 дней с момента запуска бесплатной пробной версии

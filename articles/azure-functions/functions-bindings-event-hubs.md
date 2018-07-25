@@ -16,12 +16,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 11/08/2017
 ms.author: tdykstra
-ms.openlocfilehash: 7ea233f3d5b0e0b6ad1470af146f963fce6c4e94
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 51f64f6f74875c6afac350dc9cc235573b89c524
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970678"
+ms.locfileid: "38989594"
 ---
 # <a name="azure-event-hubs-bindings-for-azure-functions"></a>Привязки концентраторов событий Azure для службы "Функции Azure"
 
@@ -367,6 +367,8 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 ## <a name="output"></a>Выходные данные
 
 Используйте выходную привязку концентраторов событий для записи событий в поток событий. Чтобы записывать события в концентратор событий, необходимо иметь разрешение на оправку в него событий.
+
+Убедитесь в наличии ссылок на требуемые пакеты: [Функции 1.x](#packages---functions-1.x) или [Функции 2.x](#packages---functions-2.x) 
 
 ## <a name="output---example"></a>Пример выходных данных
 

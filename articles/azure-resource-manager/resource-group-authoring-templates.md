@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/30/2018
 ms.author: tomfitz
-ms.openlocfilehash: f1ce47874b759748f4a2e2ce1fb438b394443058
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: e1964b7f46259e54c65aeb46aa795713922c3504
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36334804"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39114618"
 ---
 # <a name="understand-the-structure-and-syntax-of-azure-resource-manager-templates"></a>Описание структуры и синтаксиса шаблонов Azure Resource Manager
 В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания. Пошаговое руководство по созданию шаблона приведено в разделе [Создание первого шаблона Azure Resource Manager](resource-manager-create-first-template.md).
@@ -214,6 +214,7 @@ ms.locfileid: "36334804"
 При определении пользовательской функции есть несколько ограничений:
 
 * Функция не может обращаться к переменным.
+* Функция не может обращаться к параметрам шаблона. То есть [функция parameters](resource-group-template-functions-deployment.md#parameters) ограничена параметрами функции.
 * Функция не может вызывать другие функции, определяемые пользователем.
 * Для функции нельзя использовать [ссылочную функцию](resource-group-template-functions-resource.md#reference).
 * Для параметров этой функции нельзя задавать значения по умолчанию.
@@ -312,4 +313,4 @@ ms.locfileid: "36334804"
 * Полные шаблоны для различных типов решений доступны на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/).
 * Дополнительные сведения о функциях, которые можно использовать в шаблонах, см. в статье [Функции шаблонов Azure Resource Manager](resource-group-template-functions.md).
 * Инструкции по объединению нескольких шаблонов при развертывании см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
-* Может потребоваться использовать ресурсы, которые существуют в другой группе ресурсов. Это распространенная ситуация при работе с учетными записями хранения или виртуальными сетями, которые совместно используются в нескольких группах ресурсов. Дополнительные сведения см. в описании [функции resourceId](resource-group-template-functions-resource.md#resourceid).
+* Рекомендации по созданию шаблонов Resource Manager, которые можно использовать для глобальной платформы Azure, национальных облаков Azure и Azure Stack, см. в разделе [Разработка шаблонов Azure Resource Manager для согласованности облаков](templates-cloud-consistency.md).

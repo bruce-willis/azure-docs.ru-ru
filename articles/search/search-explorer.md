@@ -1,30 +1,23 @@
 ---
-title: Отправка запросов в индекс службы поиска Azure с помощью портала | Документация Майкрософт
-description: Создайте поисковый запрос в проводнике поиска на портале Azure.
+title: Обозреватель поиска для обращения к индексам в службе "Поиск Azure" | Документация Майкрософт
+description: Узнайте, как использовать обозреватель поиска для обращения к индексам в службе "Поиск Azure".
 manager: cgronlun
 author: HeidiSteen
 services: search
 ms.service: search
-ms.topic: quickstart
-ms.date: 07/10/2017
+ms.topic: conceptual
+ms.date: 07/10/2018
 ms.author: heidist
-ms.openlocfilehash: a3592bd0c304dfb78374eeba432c0d28203980c9
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 520d9e7b1899c54d922ff6fb77e0901f9609b029
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31790514"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004139"
 ---
-# <a name="query-an-azure-search-index-using-search-explorer-in-the-azure-portal"></a>Отправка запросов в индекс службы поиска Azure с использованием обозревателя поиска на портале Azure
-> [!div class="op_single_selector"]
-> * [Обзор](search-query-overview.md)
-> * [Портал](search-explorer.md)
-> * [.NET](search-query-dotnet.md)
-> * [REST](search-query-rest-api.md)
-> 
-> 
+# <a name="how-to-use-search-explorer-to-query-indexes-in-azure-search"></a>Как использовать обозреватель поиска для обращения к индексам в службе "Поиск Azure" 
 
-В этой статье показано, как отправлять запросы в индекс службы поиска Azure с помощью **обозревателя поиска** на портале Azure. Используйте обозреватель поиска, чтобы отправить простые строки запросов или расширенные строки запросов Lucene в любой имеющийся индекс в службе.
+В этой статье показано, как отправлять запросы в существующий индекс службы "Поиск Azure" с помощью **обозревателя поиска** на портале Azure. Используйте обозреватель поиска, чтобы отправить простые строки запросов или расширенные строки запросов Lucene в любой имеющийся индекс в службе.
 
 ## <a name="open-the-service-dashboard"></a>Открытие панели мониторинга службы
 1. Щелкните **Все ресурсы** на панели переходов слева на [портале Azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices).

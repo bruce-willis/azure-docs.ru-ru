@@ -2,28 +2,30 @@
 title: Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure | Документация Майкрософт
 description: Ответы на распространенные вопросы об использовании баз данных ClearDB MySQL со службой приложений Azure.
 documentationcenter: php
-services: ''
+services: mysql
 author: sunbuild
 manager: yochayk
-editor: ''
 tags: mysql
-ms.assetid: c2ed5e78-6d7d-4d0c-b7ee-a52ae41ceab8
 ms.service: multiple
 ms.workload: data-management
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/27/2016
 ms.author: sumuth
-ms.openlocfilehash: 8186e86bd7a441fcefb0759d75ded6f063a4722f
-ms.sourcegitcommit: e19742f674fcce0fd1b732e70679e444c7dfa729
+ms.openlocfilehash: ff36a67cd09dd1e5cb5635be17d1dd76fc824d1a
+ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28948042"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37917080"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
+
+> [!IMPORTANT]
+> По состоянию на 13 июня 2018 г. клиенты ClearDB на базе Azure, для которых сейчас выставляются счета корпорацией Майкрософт, переведены на модель прямого выставления счетов организацией ClearDB. Информация в этой статье теперь является устаревшей. Вы больше не сможете создавать базы данных ClearDB в Azure или обновлять базы данных ClearDB, созданные в Azure.
+>
+> Дополнительные сведения и описание дальнейших действий см. в статье об [изменениях в планах служб ClearDB](http://w2.cleardb.net/important-change-of-billing-notice-for-all-azure-cleardb-service-plans/).
+
 
 ## <a name="what-options-do-i-have-for-mysql-on-azure"></a>Какие параметры баз данных MySQL доступны в Azure?
 Доступно несколько параметров.
@@ -42,7 +44,6 @@ ClearDB является службой размещения MySQL и управ
 * [Бесплатная пробная версия:](https://azure.microsoft.com/pricing/free-trial/) включает кредиты на использование со службами Microsoft Azure, но не позволяет приобретение ресурсов сторонних производителей. Для покупки служб сторонних производителей или платных баз данных MySQL требуется подписка с активной кредитной картой. Для веб-приложений можно создать БЕСПЛАТНУЮ базу данных MySQL ClearDB.
 * [Подписка MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) и **MSDN для разработки и тестирования с оплатой по мере использования**: как и в случае с бесплатной пробной версией, для покупки платного решения MySQL у ClearDB требуется кредитная карта.
 * [Соглашение Enterprise (EA):](https://azure.microsoft.com/pricing/enterprise-agreement/) клиенты с Соглашением EA ежеквартально получают отдельный консолидированный счет на все совершенные ими покупки решений сторонних разработчиков в Azure Marketplace. Покупки в Azure Marketplace оплачиваются в дополнение к абонентской плате. Обратите внимание на то, что в настоящее время хранилище Azure недоступно для клиентов из Азербайджана, Хорватии, Норвегии и Пуэрто-Рико. 
-* [DreamSpark](https://www.dreamspark.com/Product/Product.aspx?productid=99): позволяет создавать только БЕСПЛАТНЫЕ базы данных ClearDB для веб-приложений. Количество бесплатных баз данных ClearDB при этом не ограничивается. Обратите внимание на то, что бесплатные базы данных не предназначены для использования в рабочих веб-приложениях и предоставляются лишь для ознакомления.
 
 ## <a name="why-was-i-charged-350-for-a-web-app--mysql-from-the-azure-marketplace"></a>Почему с меня списали 3,50 доллара за веб-приложение + MySQL в Azure Marketplace?
 По умолчанию используется база данных Titan, которая стоит 3,50 доллара. Эта сумма не отображается при создании базы данных, поэтому вы могли приобрести ее по ошибке. Мы пытаемся найти способ решения этой проблемы, а до тех пор рекомендуем проверять выбранные ценовые категории веб-приложения и базы данных, прежде чем щелкнуть **Готово** и развернуть ресурсы.

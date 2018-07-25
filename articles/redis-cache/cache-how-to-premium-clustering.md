@@ -12,13 +12,14 @@ ms.workload: tbd
 ms.tgt_pltfrm: cache-redis
 ms.devlang: na
 ms.topic: article
-ms.date: 03/26/2018
+ms.date: 06/13/2018
 ms.author: wesmc
-ms.openlocfilehash: 4af6545058ab0031d7cd1b38618b6d80204f83b9
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: b61c5860cb18f5a5b4ffa96212d66b7becad9928
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38723276"
 ---
 # <a name="how-to-configure-redis-clustering-for-a-premium-azure-redis-cache"></a>Настройка кластеризации для кэша Redis для Azure уровня Премиум
 Кэш Redis для Azure предлагает разные варианты кэша, которые обеспечивают гибкость в выборе размера и функций кэша, включая функции уровня "Премиум", такие как кластеризация, постоянное хранение данных и поддержка виртуальной сети. В этой статье описывается настройка кластеризации в экземпляре кэша Redis для Azure уровня Премиум.
@@ -123,7 +124,9 @@ ms.lasthandoff: 03/28/2018
 Максимальный размер кэша для уровня Премиум — 53 ГБ. Можно создать до 10 сегментов, таким образом общий максимальный размер составит 530 ГБ. Если требуется больший размер, вы можете [отправить запрос на получение дополнительного места](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase). Подробные сведения см. на странице [Цены на кэш Redis для Azure](https://azure.microsoft.com/pricing/details/cache/).
 
 ### <a name="do-all-redis-clients-support-clustering"></a>Все ли клиенты Redis поддерживают кластеризацию?
-В настоящее время не все клиенты Redis поддерживают кластеризацию. Например, ее не поддерживает StackExchange.Redis. Дополнительные сведения о других клиентах см. в разделе [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis](http://redis.io/topics/cluster-tutorial).
+В настоящее время не все клиенты Redis поддерживают кластеризацию. Например, ее не поддерживает StackExchange.Redis. Дополнительные сведения о других клиентах см. в разделе [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis](http://redis.io/topics/cluster-tutorial). 
+
+В соответствии с требованиями протокола кластеризации Redis, каждый клиент должен подключаться к каждому сегменту непосредственно в режиме кластеризации. Если вы попытаетесь использовать клиент, который не поддерживает кластеризацию, скорее всего, возникнет много [исключений перенаправления MOVED](https://redis.io/topics/cluster-spec#moved-redirection).
 
 > [!NOTE]
 > Если вы используете клиент [StackExchange.Redis](https://www.nuget.org/packages/StackExchange.Redis/), убедитесь, что у вас установлена версия 1.0.481 или более поздняя. Это необходимо для правильного выполнения кластеризации. При возникновении проблем с исключениями MOVE ознакомьтесь с дополнительными сведениями [здесь](#move-exceptions).
@@ -134,7 +137,7 @@ ms.lasthandoff: 03/28/2018
 Вы можете подключаться к кэшу с помощью тех же [конечных точек](cache-configure.md#properties), [портов](cache-configure.md#properties) и [ключей](cache-configure.md#access-keys), которые используются для подключения к кэшу с отключенной кластеризацией. Redis управляет кластеризацией на сервере, поэтому управлять ей из клиента не нужно.
 
 ### <a name="can-i-directly-connect-to-the-individual-shards-of-my-cache"></a>Можно ли напрямую подключаться к отдельным сегментам кэша?
-Официально это не поддерживается. Тем не менее каждый сегмент включает пару, которая включает основной кэш и его реплику и называется экземпляром кэша. Вы можете подключиться к этим экземплярам кэша с помощью служебной программы redis-cli из ветви [нестабильных версий](http://redis.io/download) репозитория Redis на портале GitHub. Эта версия реализует базовую поддержку при запуске с параметром `-c`. Дополнительные сведения см. в разделе [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis](http://redis.io/topics/cluster-tutorial) на сайте [http://redis.io](http://redis.io).
+В соответствии с требованиями протокола кластеризации, клиент должен подключаться к надлежащему сегменту. Поэтому нужно обеспечить правильное подключение клиента. Тем не менее каждый сегмент включает пару, которая включает основной кэш и его реплику и называется экземпляром кэша. Вы можете подключиться к этим экземплярам кэша с помощью служебной программы redis-cli из ветви [нестабильных версий](http://redis.io/download) репозитория Redis на портале GitHub. Эта версия реализует базовую поддержку при запуске с параметром `-c`. Дополнительные сведения см. в разделе [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) (Эксперименты с кластером) [руководства по кластерам Redis](http://redis.io/topics/cluster-tutorial) на сайте [http://redis.io](http://redis.io).
 
 Для non-ssl используйте следующие команды.
 

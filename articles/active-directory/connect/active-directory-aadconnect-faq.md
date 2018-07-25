@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 7edabc99da5e1466e848336c647a33213c9edd8b
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 545766aa6c39fe678113297e584422872a6ded87
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37133451"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008150"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
 
@@ -65,7 +65,7 @@ ms.locfileid: "37133451"
 Всему сетевому программному обеспечению, физическим устройствам или прочим средствам, ограничивающим максимальное время, в течение которого подключение может оставаться открытым, следует использовать пороговое значение в 5 минут (300 секунд) для подключений между сервером, на который установлен клиент Azure AD Connect и Azure Active Directory. Это также относится ко всем ранее выпущенным инструментам синхронизации Microsoft Identity.
 
 **Вопрос. Поддерживаются ли одноуровневые домены (SLD)?**  
-Нет. Azure AD Connect не поддерживает локальные леса и домены, использующие SLD.
+Хотя настоятельно не рекомендуется использовать такую сетевую конфигурацию ([см. здесь](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)), использование службы синхронизации Azure AD Connect с одноуровневым доменом поддерживается при правильной работе конфигурации сети для такого домена.
 
 **Вопрос. Поддерживаются ли леса с несвязанными доменами AD?**  
 Нет. Azure AD Connect не поддерживает локальные леса, содержащие несвязанные пространства имен.

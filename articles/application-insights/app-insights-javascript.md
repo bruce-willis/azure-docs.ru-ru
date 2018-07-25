@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: c3c5a3029916b91b65a5bd0f6efa5c83f5dfcb66
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 70269fc71fcb2ef9158b50d3bb281097abee0740
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992557"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 Узнайте о производительности и использовании своей веб-страницы или приложения. Если добавить [Application Insights](app-insights-overview.md) в скрипт страницы, вы узнаете время загрузки страницы и вызовов AJAX, сведения об исключениях браузера, ошибках AJAX и их количестве, а также количество пользователей и сеансов. Все эти данные можно разбить по страницам, версии клиентской ОС и браузера, географическому расположению и другим показателям. Можно также настроить оповещения для определенного количества сбоев или медленной загрузки страниц. Кроме того, вставив вызовы трассировки в код JavaScript, вы можете отслеживать использование различных функций приложения веб-страницы.
@@ -56,7 +57,7 @@ Application Insights можно использовать с любыми веб-
 
 ```HTML
 <!-- 
-To collect end-user usage analytics about your application, 
+To collect user behavior analytics about your application, 
 insert the following script into each page you want to track.
 Place this code immediately before the closing </head> tag,
 and before any other scripts. Your first data will appear 
@@ -126,7 +127,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 
 ![На сайте portal.azure.com откройте ресурс приложения и щелкните "Параметры", а затем "Браузер".](./media/app-insights-javascript/03.png)
 
-*Еще нет данных? Щелкните **Обновить** в верхней части страницы. По-прежнему нет данных? См. раздел [Устранение неполадок](app-insights-troubleshoot-faq.md).*
+Данные отсутствуют? Щелкните **Обновить** в верхней части страницы. По-прежнему нет данных? См. раздел [Устранение неполадок](app-insights-troubleshoot-faq.md).
 
 Колонка "Браузер" — это [колонка обозревателя метрик](app-insights-metrics-explorer.md) с предустановленными фильтрами и предварительно выбранными параметрами диаграмм. При необходимости можно изменить диапазон времени, фильтры и конфигурацию диаграмм и сохранить результат в избранном. Щелкните **Восстановить значения по умолчанию**, чтобы вернуться к исходной конфигурации колонки.
 
@@ -235,7 +236,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 ## <a name="usage-tracking"></a>Отслеживание использования
 Хотите узнать, что пользователи делают в вашем приложении?
 
-* [Дополнительные сведения об отслеживании использования](app-insights-web-track-usage.md)
+* [Сведения о средствах для анализа поведения пользователей](app-insights-web-track-usage.md)
 * [Дополнительные сведения об API пользовательских событий и метрик](app-insights-api-custom-events-metrics.md).
 
 ## <a name="video"></a> Видео

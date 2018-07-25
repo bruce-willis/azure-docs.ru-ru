@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 01/22/2018
+ms.date: 07/11/2018
 ms.author: cynthn
-ms.openlocfilehash: 88bd895cb3a384f1ada0394fe2da206aca86b981
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: a5a6a43c41760e22a7aeb0e97aacc145c69957ff
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38670936"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006402"
 ---
 # <a name="install-mysql-on-a-virtual-machine-running-opensuse-linux-in-azure"></a>Установка MySQL на виртуальной машине под управлением OpenSUSE Linux в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "38670936"
 az group create --name mySQLSUSEResourceGroup --location eastus
 ```
 
-Создайте виртуальную машину. В этом примере мы присвоим виртуальной машине имя *myVM*. Мы также будем использовать размер виртуальной машины *Standard_D2s_v3*. Но вам следует выбрать тот [размер виртуальной машины](sizes.md), который вы считаете наиболее подходящим для своей рабочей нагрузки.
+Создайте виртуальную машину. В этом примере имя виртуальной машины — *myVM*, а размер — *Standard_D2s_v3*. Но вам следует выбрать тот [размер виртуальной машины](sizes.md), который вы считаете наиболее подходящим для своей рабочей нагрузки.
 
 ```azurecli-interactive
 az vm create --resource-group mySQLSUSEResourceGroup \
@@ -96,19 +96,32 @@ systemctl is-enabled mysql
 
 Эта команда должна вернуть значение enabled.
 
+Перезапустите сервер.
+
+```bash
+sudo reboot
+```
+
 
 ## <a name="mysql-password"></a>Пароль MySQL
 
-После установки MySQL корневой пароль пустой по умолчанию. Запустите скрипт **mysql\_secure\_installation** для защиты MySQL. При этом вы получите запросы на изменение корневого пароля MySQL, удаление анонимных учетных записей, отключение удаленного входа с учетными данными привилегированного пользователя, удаление тестовых баз данных и перезагрузку таблицы привилегий. 
+После установки MySQL корневой пароль пустой по умолчанию. Запустите скрипт **mysql\_secure\_installation** для защиты MySQL. При его выполнении появятся запросы на изменение пароля привилегированного пользователя для MySQL, удаление анонимных учетных записей, отключение удаленного входа с учетными данными привилегированного пользователя, удаление тестовых баз данных и перезагрузку таблицы привилегий. 
+
+После перезагрузки сервера повторно подключитесь к виртуальной машине по протоколу SSH.
+
+```azurecli-interactive  
+ssh 10.111.112.113
+```
+
 
 
 ```bash
 mysql_secure_installation
 ```
 
-## <a name="log-in-to-mysql"></a>Вход в MySQL
+## <a name="sign-in-to-mysql"></a>Вход в MySQL
 
-Теперь можно войти в систему и в командную строку MySQL.
+Теперь можно войти в систему и ввести запрос для перехода в командную строку MySQL.
 
 ```bash  
 mysql -u root -p
@@ -136,7 +149,7 @@ GRANT ALL ON testdatabase.* TO 'mysqluser'@'localhost' IDENTIFIED BY 'password';
    
 Имена пользователей и пароли для базы данных используются только в скриптах, подключающихся к базе данных.  Имена учетных записей базы данных могут не совпадать с учетными записями системы.
 
-Разрешите вход с другого компьютера. В этом примере IP-адрес компьютера, с которого требуется войти в систему, — *10.112.113.114*.
+Разрешите вход с другого компьютера. В этом примере IP-адрес компьютера, с которого нужно разрешить вход в систему, — *10.112.113.114*.
 
 ```   
 GRANT ALL ON testdatabase.* TO 'mysqluser'@'10.112.113.114' IDENTIFIED BY 'password';

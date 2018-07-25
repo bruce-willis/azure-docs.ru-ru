@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/22/2018
+ms.date: 07/11/2018
 ms.author: brenduns
 ms.reviewer: justini
-ms.openlocfilehash: a74e77f84aa70519015a589cbc6e7478c0c41592
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 11430a0d194a722c0c0520c936db3c08b1a6b863
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36318815"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38989577"
 ---
 # <a name="azure-stack-1803-update"></a>Обновление 1803 Azure Stack
 
@@ -40,7 +40,7 @@ ms.locfileid: "36318815"
 > Не пытайтесь создавать виртуальные машины во время установки этого обновления. Дополнительные сведения об управлении обновлениями в Azure Stack см. в [этой статье](azure-stack-updates.md#plan-for-updates).
 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 - Прежде чем применить обновление 1803 Azure Stack, установите [обновление 1802](azure-stack-update-1802.md) Azure Stack.   
 
 - Прежде чем применить обновление 1803 для Azure Stack, установите **исправление AzS — 1.0.180312.1, сборка 20180222.2**. Это исправление обновляет Защитник Windows. Оно доступно при загрузке обновлений для Azure Stack.
@@ -106,7 +106,7 @@ ms.locfileid: "36318815"
 ### <a name="post-update-steps"></a>Действия после обновления
 - Когда обновление 1803 установится, установите все применимые исправления. Дополнительные сведения см. в статьях базы знаний по ссылке ниже, а также в статье о нашей [политике обслуживания](azure-stack-servicing-policy.md).
 
-  - [KB 4341390 — исправление Azure Stack 1.0.180424.12](https://support.microsoft.com/en-us/help/4341390).
+  - [KB 4344115 — исправление Azure Stack 1.0.180427.15](https://support.microsoft.com/help/4344115).
 
 - После установки этого обновления проверьте конфигурацию брандмауэра, чтобы убедиться, что [необходимые порты](azure-stack-integrate-endpoints.md) открыты. Например, это обновление содержит *Azure Monitor*, что обуславливает замену журналов аудита журналами действий. Ввиду этого изменения теперь порт 13012 используется и также должен быть открыт.  
 
@@ -276,7 +276,7 @@ ms.locfileid: "36318815"
 
 
 
-#### <a name="app-service"></a>Служба приложений Azure
+#### <a name="app-service"></a>Служба приложений
 - Прежде чем создавать первую функцию Azure в подписке, пользователь должен зарегистрировать поставщик ресурсов хранилища.
 
 - Чтобы масштабировать инфраструктуру (рабочие роли, роли управления, внешние роли), используйте PowerShell, как описано в заметках о выпуске служб вычислений.

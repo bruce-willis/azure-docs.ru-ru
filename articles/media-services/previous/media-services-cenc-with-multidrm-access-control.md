@@ -1,28 +1,29 @@
 ---
-title: 'CENC с несколькими DRM и контролем доступа: справочная структура и реализация в Azure и службах мультимедиа Azure | Документация Майкрософт'
+title: Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure | Документы Майкрософт
 description: Сведения о лицензировании пакета для портирования клиента бесперебойной потоковой передачи Microsoft Smooth Streaming.
 services: media-services
 documentationcenter: ''
 author: willzhan
 manager: cfowler
 editor: ''
-ms.assetid: 7814739b-cea9-4b9b-8370-538702e5c615
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2017
+ms.date: 07/15/2018
 ms.author: willzhan;kilroyh;yanmf;juliako
-ms.openlocfilehash: 8f072f13909190eee194565673ccfa1f381f7503
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e606ff09c3b3a867170b783e69879d609b69c11d
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39075589"
 ---
-# <a name="cenc-with-multi-drm-and-access-control-a-reference-design-and-implementation-on-azure-and-azure-media-services"></a>CENC с несколькими DRM и управлением доступом: справочная структура и реализация в Azure и Azure Media Services
- 
-## <a name="introduction"></a>Введение
+# <a name="design-of-a-content-protection-system-with-access-control-using-azure-media-services"></a>Проектирование системы защиты содержимого с управлением доступом с помощью служб мультимедиа Azure
+
+## <a name="overview"></a>Обзор
+
 Проектирование и построение подсистемы управления цифровыми правами (DRM) для OTT или веб-решений для потоковой передачи — непростая задача. Общепринятой практикой операторов и поставщиков веб-видео является передача этой задачи на реализацию специализированным поставщикам служб DRM. Цель данного документа — предоставить справочную структуру и реализацию готовой подсистемы DRM в OTT или веб-решении для потоковой передачи.
 
 Этот документ предназначен для инженеров, работающих в подсистеме DRM OTT или с веб-решениями для потоковой передачи или с несколькими экранами, а также для всех читателей, заинтересованных в подсистеме DRM. Предполагается, что читатели знакомы по крайней мере с одной из технологий DRM на рынке, например PlayReady, Widevine, FairPlay или Adobe Access.
@@ -40,7 +41,8 @@ ms.lasthandoff: 05/07/2018
 *  [Анонс служб доставки лицензий Google Widevine в службах мультимедиа Azure](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)
 * [Azure Media Services adds Google Widevine packaging for delivering multi-DRM stream](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/) (Добавление пакета Google Widevine в Службах мультимедиа Azure для предоставления потоковой передачи с несколькими DRM)  
 
-### <a name="overview-of-this-article"></a>Описание раздела
+### <a name="goals-of-the-article"></a>Цели статьи
+
 Цели этой статьи:
 
 * Предоставить справочную структуру подсистемы DRM с помощью CENC с несколькими DRM.
@@ -61,7 +63,6 @@ ms.lasthandoff: 05/07/2018
 | **Устройства Windows 10 (компьютер с Windows, планшеты с Windows, Windows Phone, Xbox)** |PlayReady |MS Edge/IE11/EME<br/><br/><br/>Универсальные приложения Windows |DASH (PlayReady не поддерживается для HLS)<br/><br/>DASH, Smooth Streaming (PlayReady не поддерживается для HLS) |
 | **Устройства Android (телефоны, планшеты, телевизоры)** |Widevine |Chrome или EME |DASH, HLS |
 | **iOS (iPhone, iPad), клиенты OS X и Apple TV** |FairPlay |Safari 8+ или EME |HLS |
-
 
 С учетом текущего состояния развертывания для каждого DRM службе обычно требуется реализовать 2 или 3 DRM, чтобы вы могли максимально эффективно использовать все типы конечных точек.
 
@@ -214,8 +215,9 @@ ms.lasthandoff: 05/07/2018
     | **DRM** | **"Обзор"** | **Результат для соответствующего пользователя** | **Результат для не соответствующего пользователя** |
     | --- | --- | --- | --- |
     | **PlayReady** |Microsoft Edge или Internet Explorer 11 в Windows 10 |Успешно |Fail; |
-    | **Widevine** |Chrome на Windows 10 |Успешно |Fail; |
-    | **FairPlay** |ПОДЛЕЖИТ УТОЧНЕНИЮ | | |
+    | **Widevine** |Chrome, Firefox, Opera |Успешно |Fail; |
+    | **FairPlay** |Safari в macOS      |Успешно |Fail; |
+    | **AES-128** |Большинство современных браузеров  |Успешно |Fail; |
 
 Дополнительные сведения о настройке Azure AD для приложения проигрывателя ASP.NET MVC см. в статье [Integrate Azure Media Services OWIN MVC based app with Azure Active Directory and restrict content key delivery based on JWT claims](http://gtrifonov.com/2015/01/24/mvc-owin-azure-media-services-ad-integration/) (Интеграция приложения на основе OWIN MVC Служб мультимедиа Azure с Azure Active Directory и ограничение доставки ключей содержимого на основе утверждений JWT).
 
@@ -224,7 +226,7 @@ ms.lasthandoff: 05/07/2018
 Сведения об Azure AD:
 
 * Сведения для разработчиков см. в [руководстве разработчика по Azure Active Directory](../../active-directory/active-directory-developers-guide.md).
-* Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/active-directory-administer.md).
+* Сведения для администраторов см. в статье [Управление каталогом Azure AD](../../active-directory/fundamentals/active-directory-administer.md).
 
 ### <a name="some-issues-in-implementation"></a>Некоторые проблемы в реализации
 Используйте следующие сведения по устранению неполадок при реализации.

@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/22/2018
+ms.date: 07/11/2018
 ms.author: brenduns
 ms.reviewer: justini
-ms.openlocfilehash: 9fc58d971db18db63e4dc76123ff1311b77e0191
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 496aea1195885c582d3529d7ddb43210aad5fea1
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36316439"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38990138"
 ---
 # <a name="azure-stack-1804-update"></a>Обновление 1804 для Azure Stack
 
@@ -79,7 +79,7 @@ ms.locfileid: "36316439"
 
 ## <a name="before-you-begin"></a>Перед началом работы    
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 - Прежде чем применить обновление 1804 для Azure Stack, установите [обновление 1803](azure-stack-update-1803.md) для Azure Stack.    
 
 ### <a name="known-issues-with-the-update-process"></a>Известные проблемы с процессом обновления   
@@ -90,7 +90,7 @@ ms.locfileid: "36316439"
 
 ### <a name="post-update-steps"></a>Действия после обновления
 После установки обновления 1804 установите все применимые исправления. Дополнительные сведения см. в статьях базы знаний по ссылке ниже, а также в статье о нашей [политике обслуживания](azure-stack-servicing-policy.md).  
- - [KB 4341392 — исправление Azure Stack 1.0.180523.11](https://support.microsoft.com/en-us/help/4341392).
+ - [KB 4344114 — исправление Azure Stack 1.0.180527.15](https://support.microsoft.com/help/4344114).
 
 
 
@@ -280,7 +280,7 @@ ms.locfileid: "36316439"
 
 
 
-#### <a name="app-service"></a>Служба приложений Azure
+#### <a name="app-service"></a>Служба приложений
 - <!-- 2352906 - IS ASDK --> Прежде чем создавать первую функцию Azure в подписке, пользователь должен зарегистрировать поставщик ресурсов хранилища.
 
 - <!-- TBD - IS ASDK -->Чтобы масштабировать инфраструктуру (рабочие роли, роли управления, внешние роли), используйте PowerShell, как описано в заметках о выпуске служб вычислений.

@@ -5,14 +5,14 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 06/19/2018
+ms.date: 07/12/2018
 ms.author: raynew
-ms.openlocfilehash: fb987c95afc0f77386f4f78c44f3c6825f86ee43
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: fa6fb4ffe1eea98392b2199f379431b0dffc6774
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36232221"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39006572"
 ---
 # <a name="contoso-migration-assess-on-premises-workloads-for-migration-to-azure"></a>Миграция компании Contoso. Оценка локальных рабочих нагрузок для миграции в Azure
 
@@ -23,13 +23,18 @@ ms.locfileid: "36232221"
 **Статья** | **Дополнительные сведения** | **Состояние**
 --- | --- | ---
 [Статья 1. Общие сведения](contoso-migration-overview.md) | Предоставляет общие сведения о стратегии миграции Contoso, цикле статей и примерах приложений, которые мы используем. | Доступна
-[Статья 2. Развертывания инфраструктуры Azure](contoso-migration-infrastructure.md) | Здесь демонстрируется, как компания Contoso подготавливает свою локальную инфраструктуру и инфраструктуру Azure к миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
-Статья 3. Оценка локальных ресурсов (из этой статьи)  | Здесь показано, как Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel в VMware. Для оценки виртуальных машин приложения в компании Contoso используют службу [Миграция Azure](migrate-overview.md), а базу данных SQL Server приложения оценивают с помощью [Помощника по миграции баз данных Azure](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Доступна
-[Статья 4. Повторное размещение на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Здесь демонстрируется выполняемый в Contoso процесс миграции приложения SmartHotel в Azure. При переносе данных в Управляемый экземпляр Базы данных SQL миграция внешней виртуальной машины приложения выполняется с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview), а базы данных приложения — с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
-[Статья 5. Повторное размещение на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | Здесь показано, как Contoso переносит свои виртуальные машины приложения SmartHotel, используя только Site Recovery.
-[Статья 6. Повторное размещение на виртуальных машинах Azure и в группах доступности SQL Server](contoso-migration-rehost-vm-sql-ag.md) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel. Миграция виртуальных машин приложения выполняется с помощью Site Recovery, а миграция базы данных приложения в группу доступности SQL Server — с помощью Database Migration Service. | Доступна
-[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь демонстрируется, как Contoso переносит свое приложение osService для Linux, используя Azure Site Recovery.
-[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и сервере MySQL в Azure](contoso-migration-rehost-linux-vm-mysql.md) | Здесь демонстрируется, как Contoso переносит приложение osService для Linux, используя Site Recovery для миграции на виртуальные машины и MySQL Workbench для миграции в экземпляр Azure MySQL Server. | Доступна
+[Статья 2. Развертывания инфраструктуры Azure](contoso-migration-infrastructure.md) | Здесь рассказывается о том, как Contoso готовит свою локальную инфраструктуру Azure для миграции. Для всех сценариев миграции Contoso используется одна и та же инфраструктура. | Доступна
+Статья 3. Оценка готовности локальных ресурсов к переносу в Azure  | В этой статье рассказывается, как компания Contoso выполняет оценку своего локального двухуровневого приложения SmartHotel в VMware. Для оценки виртуальных машин приложения компания Contoso использует службу [Миграция Azure](migrate-overview.md). Для оценки базы данных SQL Server приложения используется [помощник по миграции баз данных](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017). | Эта статья
+[Статья 4. Повторное размещение приложения на виртуальных машинах Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | В этой статье демонстрируется, как Contoso переносит локальное приложение SmartHotel в Azure по методу lift-and-shift. Contoso переносит интерфейсную ВМ приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Базу данных приложения она переносит в управляемый экземпляр SQL с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна
+[Статья 5. Повторное размещение приложения на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | В статье демонстрируется, как компания Contoso переносит виртуальные машины приложения SmartHotel на виртуальные машины Azure с помощью службы Site Recovery. | Доступна
+[Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группе доступности SQL Server Always On](contoso-migration-rehost-vm-sql-ag.md) | Здесь показан выполняемый в Contoso процесс миграции приложения SmartHotel. Contoso использует Site Recovery для переноса ВМ приложений и службы миграции баз данных для миграции базы данных приложения в кластер SQL Server, защищенный группой доступности AlwaysOn. | Доступна
+[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Здесь показано, как компания Contoso осуществляет миграцию приложения Linux osTicket по методу lift-and-shift на виртуальные машины Azure с помощью Site Recovery | Доступна
+[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL](contoso-migration-rehost-linux-vm-mysql.md) | В этой статье рассказывается, как компания Contoso выполняет миграцию приложения Linux osTicket на виртуальные машины Azure с помощью Site Recovery и миграцию базы данных приложения в экземпляр Azure MySQL Server с помощью MySQL Workbench. | Доступна
+[Статья 9. Рефакторинг приложения в веб-приложениях Azure и базе данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | В статье демонстрируется, как Contoso переносит приложение SmartHotel в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure. | Доступна
+[Статья 10. Рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL](contoso-migration-refactor-linux-app-service-mysql.md) | В статье демонстрируется, как Contoso переносит приложение osTicket для Linux в веб-приложения Azure на нескольких сайтах, интегрированных с GitHub для непрерывной поставки. База данных приложения переносится в экземпляр Azure MySQL. | Доступна
+[Статья 11. Рефакторинг TFS в VSTS](contoso-migration-tfs-vsts.md) | В этой статье показано, как Contoso переносит локальное развертывание Team Foundation Server (TFS) в Visual Studio Team Services (VSTS) в Azure. | Доступна
+[Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | В статье демонстрируется, как Contoso переносит и перепроектирует приложение SmartHotel в Azure. Специалисты компании перепроектируют веб-уровень приложения в контейнер Windows и переносят базу данных приложения в Базу данных SQL Azure. | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | В статье демонстрируется, как Contoso повторно создает свое приложение SmartHotel, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Azure Kubernetes, Функции Azure, Cognitive Services и Cosmos DB. | Доступна
 
 
 ## <a name="overview"></a>Обзор
@@ -98,7 +103,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 
 ![Архитектура оценки миграции](./media/contoso-migration-assessment/migration-assessment-architecture.png)
 
-- Contoso — это вымышленное имя, представляющее типичную крупную компанию. 
+- Contoso — это вымышленное имя, представляющее типичную крупную компанию.
 - Contoso использует локальный центр обработки данных (**contoso-datacenter**) с локальными контроллерами домена (CONTOSODC1, CONTOSODC2).
 - Виртуальные машины VMware находятся на узле VMware ESXI 6.5. Узлы: **contosohost1**, **contosohost2**.
 - Среда VMware находится под управлением сервера vCenter Server 6.5 (**venter**), запущенного на виртуальной машине.
@@ -116,7 +121,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 ![Архитектура](./media/contoso-migration-assessment/architecture.png)
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже приведены требования Contoso, необходимые для оценки.
 
@@ -136,7 +141,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 
 ## <a name="assessment-overview"></a>Общие сведения об оценке
 
-Процедура выполнения оценки компанией Contoso.
+Процедура оценки в Contoso:
 
 
 > [!div class="checklist"]
@@ -161,7 +166,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 Теперь в компании Contoso можно запускать оценку анализа локального сервера SQL Server для приложения SmartHotel.
 
 1. В Помощнике по миграции баз данных щелкните **Создать**, выберите **Оценка**, а затем назовите оценку именем проекта **SmartHotel**.
-2. Выберите **Source server type** (Тип исходного сервера) в качестве параметра **SQL Server на виртуальных машинах Azure**. 
+2. Выберите **Source server type** (Тип исходного сервера) в качестве параметра **SQL Server на виртуальных машинах Azure**.
 
     ![Выбор источника](./media/contoso-migration-assessment/dma-assessment-1.png)
 
@@ -181,7 +186,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 
 3. Чтобы начать оценку, в поле **Добавить источник** необходимо добавить базу данных, к который требуется получить доступ, и щелкнуть **Далее**.
 4. Оценка создана.
-    
+
     ![Создание оценки](./media/contoso-migration-assessment/dma-assessment-4.png)
 
 5. Результаты оценки можно увидеть в поле **Просмотр результатов**.
@@ -223,7 +228,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 
 ### <a name="set-up-a-vmware-account"></a>Настройка учетной записи VMware
 
- Обнаружению виртуальных машин требуется учетная запись только для чтения в vCenter, которая бы обладала следующими свойствами: 
+ Обнаружению виртуальных машин требуется учетная запись только для чтения в vCenter, которая бы обладала следующими свойствами:
 
 - Потребуется по крайней мере пользователь только для чтения.
 - Разрешения: объект центра обработки данных –> распространение на дочерний объект, роль только для чтения.
@@ -294,14 +299,13 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 2. Чтобы создать хэш OVA-файла, необходимо выполнить следующую команду.
     - ```C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]```
     - Пример использования: ```C:\>CertUtil -HashFile C:\AzureMigrate\AzureMigrate.ova SHA256```
-3. Созданный хэш должен соответствовать этим параметрам (версия 1.0.9.7).
+3. Созданный хэш должен соответствовать этим параметрам (версия 1.0.9.12):
 
-    **Алгоритм** | **Значение хэша**
-    --- | ---
-    MD5 | d5b6a03701203ff556fa78694d6d7c35
-    SHA1 | f039feaa10dccd811c3d22d9a59fb83d0b01151e
-    SHA256 | e5e997c003e29036f62bf3fdce96acd4a271799211a84b34b35dfd290e9bea9c
-
+**Алгоритм** | **Значение хэша**
+--- | ---
+MD5 | d0363e5d1b377a8eb08843cf034ac28a
+SHA1 | df4a0ada64bfa59c37acf521d15dcabe7f3f716b
+SHA256 | f677b6c255e3d4d529315a31b5947edfe46f45e4eb4dbc8019d68d1d1b337c2e
 
 ### <a name="create-the-collector-appliance"></a>Создание модуля сборщика
 
@@ -346,7 +350,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 
 7. В окне **Просмотр хода выполнения сбора** компания Contoso может проводить наблюдения за обнаружением и убедиться, что в области обнаружения собираются метаданные с виртуальных машин. Сборщик предоставляет приблизительное время завершения обнаружения.
 
-    ![Выполняется сборка](./media/contoso-migration-assessment/collector-collection-process.png) 
+    ![Выполняется сборка](./media/contoso-migration-assessment/collector-collection-process.png)
 
 
 
@@ -396,8 +400,8 @@ OSTicket<br/><br/> Приложение службы поддержки комп
 2. В окне **Параметры установки агента** необходимо установить флажок **Connect the agent to Azure Log Analytics** (Подключить агент к Azure Log Analytics) и нажать кнопку  > **Далее**.
 
     ![Установка MMA](./media/contoso-migration-assessment/mma-install.png)
-    
-5. В окне **Azure Log Analytics** необходимо вставить идентификатор и ключ рабочей области, скопированные на портале. 
+
+5. В окне **Azure Log Analytics** необходимо вставить идентификатор и ключ рабочей области, скопированные на портале.
 
     ![Установка MMA](./media/contoso-migration-assessment/mma-install2.png)
 
@@ -428,7 +432,7 @@ OSTicket<br/><br/> Приложение службы поддержки комп
     ```
     wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/onboard_agent.sh && sh onboard_agent.sh -w 6b7fcaff-7efb-4356-ae06-516cacf5e25d -s k7gAMAw5Bk8pFVUTZKmk2lG4eUciswzWfYLDTxGcD8pcyc4oT8c6ZRgsMy3MmsQSHuSOcmBUsCjoRiG2x9A8Mg==
     ```
- 
+
 
 
 #### <a name="install-the-dependency-agent-on-linux-vms"></a>Установка агента зависимостей на виртуальные машины Linux

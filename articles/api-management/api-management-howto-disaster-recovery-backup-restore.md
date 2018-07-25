@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/17/2018
 ms.author: apimpm
-ms.openlocfilehash: 3fcd2fc4162cfbf549be979e15745934c2e4c6ff
-ms.sourcegitcommit: 9890483687a2b28860ec179f5fd0a292cdf11d22
+ms.openlocfilehash: b06a179459a449762555879669d177f811cb9560
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28019285"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090883"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -51,7 +51,7 @@ ms.locfileid: "28019285"
 ### <a name="create-an-azure-active-directory-application"></a>Создание приложения Azure Active Directory
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
-2. Войдите в подписку, которая содержит ваш экземпляр службы управления API, и перейдите на вкладку **Регистрация приложений**.
+2. Используя подписку, включающую экземпляр службы управления API, перейдите на вкладку **Регистрация приложений** в **Azure Active Directory** (Azure Active Directory > Управление/Регистрация приложений).
 
     > [!NOTE]
     > Если этот каталог не отображается в вашей учетной записи, обратитесь к администратору подписки Azure, чтобы получить необходимые разрешения для учетной записи.
@@ -112,11 +112,14 @@ namespace GetTokenResourceManagerRequests
 
     ![Конечные точки][api-management-endpoint]
 2. Замените `{application id}` значением, которое представлено на странице **Параметры**.
-3. Замените URL-адрес на вкладке **URI перенаправления** URL-адресом вашего приложения Azure Active Directory.
+3. Замените значение `{redirect uri}` на значение с вкладки **URI перенаправления** приложения Azure Active Directory.
 
     Когда все значения будут указаны, этот пример кода должен вернуть примерно такой маркер:
 
     ![по маркеру][api-management-arm-token]
+
+    > [!NOTE]
+    > Срок действия маркера может истечь после определенного периода. Выполнить образец кода снова, чтобы создать новый маркер.
 
 ## <a name="calling-the-backup-and-restore-operations"></a>Вызов операций резервного копирования и восстановления
 
@@ -134,7 +137,7 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 где:
 
 * `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы собираетесь выполнить резервное копирование;
-* `resourceGroupName` — строка в формате "Api-Default-{service-region}", где `service-region` обозначает регион Azure, в котором размещена копируемая служба управления API (например, `North-Central-US`);
+* `resourceGroupName` — имя группы ресурсов службы управления API Azure
 * `serviceName` — имя службы управления API, резервное копирование которой вы выполняете, на момент ее создания;
 * `api-version` замените `2014-02-14`.
 
@@ -193,8 +196,9 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 > **Номер SKU** восстанавливаемой службы **должен совпадать** с номером SKU, сохраненным в резервной копии.
 >
 > **Изменения**, внесенные в конфигурацию службы (например, интерфейсы API, политики, внешний вид портала разработчика) во время восстановления, **могут быть перезаписаны**.
->
->
+
+> [!NOTE]
+> Операции резервного копирования и восстановления можно также выполнить с помощью команд Powershell *Backup-AzureRmApiManagement* и *Restore-AzureRmApiManagement* соответственно.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Чтобы ознакомиться с двумя другими способами резервного копирования и восстановления, прочитайте следующие записи в блогах по решениям Майкрософт.

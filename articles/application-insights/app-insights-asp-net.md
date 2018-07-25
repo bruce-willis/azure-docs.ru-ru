@@ -1,6 +1,6 @@
 ---
-title: "Настройка аналитики веб-приложения для ASP.NET с помощью Azure Application Insights | Документация Майкрософт"
-description: "Настройка средств аналитики производительности, доступности и использования для веб-сайта ASP.NET, размещенного локально или в Azure."
+title: Настройка аналитики веб-приложения для ASP.NET с помощью Azure Application Insights | Документация Майкрософт
+description: Настройка средств аналитики производительности, доступности и поведения пользователей для веб-сайта ASP.NET, размещенного локально или в Azure.
 services: application-insights
 documentationcenter: .net
 author: mrbullwinkle
@@ -10,14 +10,15 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4fea71509b2dec897a3dafef627e243ae25447ad
-ms.sourcegitcommit: 088a8788d69a63a8e1333ad272d4a299cb19316e
+ms.openlocfilehash: 73bb1e3d06066c422614bc9d6d3431b49be9c6de
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2018
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992372"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -25,7 +26,7 @@ ms.lasthandoff: 02/27/2018
 
 Настройка выполняется несколькими щелчками в Visual Studio. Вы можете избежать расходов, ограничив объем телеметрии. Это позволяет экспериментировать и выполнять отладку или наблюдать за сайтом с небольшим числом пользователей. Если вы хотите отслеживать рабочий сайт, вы можете легко увеличить лимит позже.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
 - Установите [Visual Studio 2017 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
@@ -140,16 +141,16 @@ ms.lasthandoff: 02/27/2018
 
 ### <a name="more-telemetry"></a>Дополнительные данные телеметрии
 
-* **[Данные загрузки браузера и страниц](app-insights-javascript.md)** — вставьте фрагмент кода в веб-страницы.
-* **[Более подробные зависимости и данные отслеживание исключений](app-insights-monitor-performance-live-website-now.md)** — установите монитор состояния на сервере.
+* **[Данные загрузки браузера и страниц](app-insights-javascript.md)**  — вставьте фрагмент кода в веб-страницы.
+* **[Более подробные зависимости и данные отслеживание исключений](app-insights-monitor-performance-live-website-now.md)**  — установите монитор состояния на сервере.
 * **[Добавьте в приложение код для пользовательских событий](app-insights-api-custom-events-metrics.md)**, чтобы считать, фиксировать время и измерять действия пользователя.
-* **[Получение данных журнала](app-insights-asp-net-trace-logs.md)** — согласовывайте данные журналов с данными телеметрии.
+* **[Получение данных журнала](app-insights-asp-net-trace-logs.md)**  — согласовывайте данные журналов с данными телеметрии.
 
 ### <a name="analysis"></a>Анализ
 
 * **[Работа с Application Insights в Visual Studio](app-insights-visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
 * **[Работа с порталом Application Insights](app-insights-dashboards.md)**<br/> Содержит сведения о панелях мониторинга, эффективных средствах диагностики и анализа, оповещениях, картах динамических зависимостей приложения, а также сведения об экспорте данных телеметрии.
-* **[Аналитика](app-insights-analytics-tour.md)** — эффективный язык запросов.
+* **[Аналитика](app-insights-analytics-tour.md)**  — эффективный язык запросов.
 
 ### <a name="alerts"></a>Оповещения
 

@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: liamca
-ms.openlocfilehash: a3baa17906e3bfede8a7fc5f8a0bfbde9d2a57ce
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 24fa427ad67a953020370a16b4d156c82a0a1cf6
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37951028"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036672"
 ---
 # <a name="lucene-query-syntax-examples-for-building-queries-in-azure-search"></a>Примеры синтаксиса запросов Lucene для создания запросов в службе поиска Azure
 При создании запросов для поиска Azure можно использовать [простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) по умолчанию или альтернативное [средство синтаксического анализа запросов Lucene в службе поиска Azure](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search). Средство синтаксического анализа запросов Lucene поддерживает более сложные конструкции запросов, а именно: запросы, относящиеся к полям, поиск нечетких соответствий, поиск с учетом расположения, повышение приоритета слов и поиск по регулярным выражениям.
@@ -69,7 +69,7 @@ ms.locfileid: "37951028"
 ## <a name="fuzzy-search-example"></a>Пример поиска нечетких соответствий
 Операция поиска нечетких соответствий позволяет найти совпадения в словах с аналогичной конструкцией. В [документации Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html) поиск нечетких соответствий основан на [расстоянии Дамерау — Левенштейна](https://en.wikipedia.org/wiki/Damerau%e2%80%93Levenshtein_distance).
 
-Чтобы выполнить поиск нечетких соответствий, необходимо добавить символ тильды "~" в конце слова. Дополнительно можно поставить цифру от 0 до 2, указывающую расстояние редактирования. Например, "blue~" или "blue~1" вернет результаты с "blue", "blues" и "glue".
+Чтобы выполнить поиск нечетких соответствий, необходимо добавить символ тильды `~` в конце слова. Дополнительно можно поставить цифру от 0 до 2, указывающую расстояние редактирования. Например, `blue~` или `blue~1` вернет результаты с blue, blues и glue.
 
 **Пример 3.** Щелкните правой кнопкой мыши приведенный ниже фрагмент запроса. Этот запрос осуществляет поиск должностей со словом "associate" (написанного с ошибкой):
 

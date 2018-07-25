@@ -12,39 +12,41 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 01/30/2018
+ms.date: 06/06/2018
 ms.author: juluk
-ms.openlocfilehash: d8188634846a7ce75b5294cb3012069d9eafafc1
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: 9a22b14df18e10342bb2a872b82b94ab4ea62d0a
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28919548"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37859873"
 ---
-[!INCLUDE [features-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
+[!INCLUDE [PersistingStorage-introblock](../../includes/cloud-shell-persisting-shell-storage-introblock.md)]
 
-## <a name="how-bash-in-cloud-shell-storage-works"></a>Как работает Bash в хранилище Cloud Shell 
-Bash в Cloud Shell позволяет сохранять файлы с помощью обоих приведенных ниже методов. 
+## <a name="how-cloud-shell-storage-works"></a>Как работает хранилище Cloud Shell 
+Cloud Shell сохраняет файлы с помощью обоих приведенных ниже методов. 
 * Создание образа диска для каталога `$Home` для хранения всего содержимого этого каталога. Этот образ диска сохраняется как `acc_<User>.img` в `fileshare.storage.windows.net/fileshare/.cloudconsole/acc_<User>.img`, и для него выполняется автоматическая синхронизация изменений. 
 * Подключение выбранного файлового ресурса как `clouddrive` в каталоге `$Home`, чтобы взаимодействовать с ним напрямую. `/Home/<User>/clouddrive` сопоставляется с `fileshare.storage.windows.net/fileshare`.
  
 > [!NOTE]
 > Все файлы в каталоге `$Home`, такие как ключи SSH, сохраняются в образе диска пользователя, который хранится в подключенном файловом ресурсе. Соблюдайте рекомендации при сохранении информации в каталоге `$Home` и подключенном файловом ресурсе.
 
-## <a name="use-the-clouddrive-command"></a>Использование команды `clouddrive`
+## <a name="bash-specific-commands"></a>Команды для Bash
+
+### <a name="use-the-clouddrive-command"></a>Использование команды `clouddrive`
 С помощью Bash в Cloud Shell можно выполнить команду `clouddrive`, что позволит вручную обновить файловый ресурс, подключенный к Cloud Shell.
 ![Выполнение команды clouddrive](media/persisting-shell-storage/clouddrive-h.png)
 
-## <a name="mount-a-new-clouddrive"></a>Подключение нового облачного диска
+### <a name="mount-a-new-clouddrive"></a>Подключение нового облачного диска
 
-### <a name="prerequisites-for-manual-mounting"></a>Предварительные требования для подключения вручную
+#### <a name="prerequisites-for-manual-mounting"></a>Предварительные требования для подключения вручную
 Можно обновить файловый ресурс, который связан с Cloud Shell, с помощью команды `clouddrive mount`.
 
 При подключении имеющегося файлового ресурса учетные записи хранения должны:
 * относиться к локально избыточному или геоизбыточному хранилищу, чтобы обеспечить поддержку файловых ресурсов;
 * Находиться в назначенном вам регионе. При подключении назначенный вам регион указывается в имени группы ресурсов `cloud-shell-storage-<region>`.
 
-### <a name="the-clouddrive-mount-command"></a>Команда clouddrive mount
+#### <a name="the-clouddrive-mount-command"></a>Команда `clouddrive mount`
 
 > [!NOTE]
 > При подключении нового файлового ресурса создается пользовательский образ вашего каталога `$Home`. Предыдущий образ `$Home` сохраняется в предыдущем файловом ресурсе.
@@ -59,7 +61,7 @@ clouddrive mount -s mySubscription -g myRG -n storageAccountName -f fileShareNam
 
 ![Выполнение команды clouddrive mount](media/persisting-shell-storage/mount-h.png)
 
-## <a name="unmount-clouddrive"></a>Отключение облачного диска
+### <a name="unmount-clouddrive"></a>Отключение облачного диска
 Файловый ресурс, подключенный к Cloud Shell, можно отключить в любое время. Так как для Cloud Shell требуется подключенный файловый ресурс, вам будет предложено создать и подключить другой файловый ресурс в следующем сеансе.
 
 1. Запустите `clouddrive unmount`.
@@ -72,7 +74,7 @@ clouddrive mount -s mySubscription -g myRG -n storageAccountName -f fileShareNam
 > [!WARNING]
 > Хотя при выполнении этой команды ресурсы не удаляются, ручное удаление группы ресурсов, учетной записи хранения или файлового ресурса, сопоставленного с Cloud Shell, приведет к удалению образа диска каталога `$Home` и всех файлов в файловом ресурсе. Это действие невозможно отменить.
 
-## <a name="list-clouddrive"></a>Вывод объектов `clouddrive`
+### <a name="list-clouddrive"></a>Вывод объектов `clouddrive`
 Чтобы узнать, какой файловый ресурс подключен как `clouddrive`, выполните команду `df`. 
 
 В пути к каталогу clouddrive указано имя учетной записи хранения и файловый ресурс в URL-адресе. Например, `//storageaccountname.file.core.windows.net/filesharename`
@@ -88,10 +90,22 @@ shm                                                    65536       0      65536 
 //mystoragename.file.core.windows.net/fileshareName 5368709120    64 5368709056   1% /home/justin/clouddrive
 justin@Azure:~$
 ```
+## <a name="powershell-specific-commands"></a>Команды для PowerShell
 
-[!INCLUDE [features-introblock](../../includes/cloud-shell-persisting-shell-storage-endblock.md)]
+### <a name="list-clouddrive-azure-file-shares"></a>Выведение списка общих файловых ресурсов Azure `clouddrive`
+Командлет `Get-CloudDrive` позволяет извлечь сведения о файловых ресурсах Azure, которые сейчас подключены к `clouddrive` в Cloud Shell. <br>
+![Выполнение Get-CloudDrive](media/persisting-shell-storage-powershell/Get-Clouddrive.png)
+
+### <a name="unmount-clouddrive"></a>Отключение `clouddrive`
+Файловый ресурс Azure, подключенный к Cloud Shell, можно отключить в любое время. В случае удаления файлового ресурса Azure вам будет предложено создать и подключить файловый ресурс Azure в следующем сеансе.
+
+Командлет `Dismount-CloudDrive` позволяет отключить файловый ресурс Azure в текущей учетной записи хранения. Отключение `clouddrive` приводит к завершению текущего сеанса. Пользователю будет предложено создать и подключить файловый ресурс Azure во время следующего сеанса.
+![Выполнение Dismount-CloudDrive](media/persisting-shell-storage-powershell/Dismount-Clouddrive.png)
+
+[!INCLUDE [PersistingStorage-endblock](../../includes/cloud-shell-persisting-shell-storage-endblock.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Краткое руководство по Bash в Cloud Shell](quickstart.md) <br>
+[Краткое руководство по использованию PowerShell в Azure Cloud Shell (предварительная версия)](quickstart-powershell.md) <br>
 [Сведения о хранилище файлов Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-introduction#file-storage) <br>
 [Использование тегов для организации ресурсов в Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags) <br>

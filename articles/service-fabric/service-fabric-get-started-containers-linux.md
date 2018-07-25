@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/09/2018
 ms.author: ryanwi
-ms.openlocfilehash: 5f1d71db70bbaa6e569ad6f9a6f51bca4c5dc220
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 657e4b212b79fec40299e639c3818fd97a339579
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36213130"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39126734"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ ms.locfileid: "36213130"
 
 Чтобы запустить существующее приложение в контейнере Linux кластера Service Fabric не требуется вносить изменения в приложение. В этой статье описано создание образа Docker, содержащего веб-приложение [Flask](http://flask.pocoo.org/) Python, и его развертывание в кластер Service Fabric. Кроме того, вы предоставите общий доступ к контейнерному приложению через [реестр контейнеров Azure](/azure/container-registry/). Для работы с этой статьей необходимо знание основных понятий Docker. Чтобы ознакомиться с Docker, см. этот [обзор Docker](https://docs.docker.com/engine/understanding-docker/).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started-linux.md).
   * [Предварительные выпуски](https://docs.docker.com/engine/installation/#prior-releases). 
@@ -189,6 +189,39 @@ docker push myregistry.azurecr.io/samples/helloworldapp
     </Policies>
    </ServiceManifestImport>
 ``` 
+
+
+## <a name="configure-isolation-mode"></a>Настройка режима изоляции
+Выпуск среды выполнения 6.3 обеспечивает поддержку изоляции виртуальных машин для контейнеров Linux, поэтому поддерживаются два режима изоляции для контейнеров: изоляция процессов и изоляция Hyper-V. В режиме изоляции Hyper-V все контейнеры и узлы контейнера используют отдельные ядра. Режим изоляции Hyper-V реализуется с помощью [Clear Containers](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker). Режим изоляции кластеров Linux указывается в элементе `ServicePackageContainerPolicy` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию используется режим изоляции процессов. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
+
+```xml
+<ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="MyServicePkg" ServiceManifestVersion="1.0.0"/>
+      <Policies>
+        <ServicePackageContainerPolicy Hostname="votefront" Isolation="hyperv">
+          <PortBinding ContainerPort="80" EndpointRef="myServiceTypeEndpoint"/>
+        </ServicePackageContainerPolicy>
+    </Policies>
+  </ServiceManifestImport>
+```
+
+
+## <a name="configure-resource-governance"></a>Настройка управления ресурсами
+[Управление ресурсами](service-fabric-resource-governance.md) позволяет ограничить ресурсы, которые контейнер может использовать на узле. Элемент `ResourceGovernancePolicy`, определяемый в манифесте приложения, позволяет объявить ограничения для ресурсов, доступных из пакета кода службы. Ограничения можно задать для следующих ресурсов: Memory, MemorySwap, CpuShares (относительный вес ЦП), MemoryReservationInMB, BlkioWeight (относительный вес BlockIO). В этом примере пакет службы Guest1Pkg получает одно ядро на узлах кластера, где он размещается. Ограничения по памяти абсолютны, так что пакет кода получает только 1024 МБ (и имеет соответствующие мягкие гарантии резервирования). Пакеты кода (контейнеры или процессы) не могут выделить больше памяти, чем задано ограничением, а при попытке сделать это возникнет проблема нехватки памяти. Чтобы принудительное ограничение ресурсов работало, для всех пакетов кода в пакете службы должны быть указаны ограничения по памяти.
+
+```xml
+<ServiceManifestImport>
+  <ServiceManifestRef ServiceManifestName="MyServicePKg" ServiceManifestVersion="1.0.0" />
+  <Policies>
+    <ServicePackageResourceGovernancePolicy CpuCores="1"/>
+    <ResourceGovernancePolicy CodePackageRef="Code" MemoryInMB="1024"  />
+  </Policies>
+</ServiceManifestImport>
+```
+
+
+
+
 ## <a name="configure-docker-healthcheck"></a>Настройка инструкции HEALTHCHECK в Docker 
 Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера. 
 

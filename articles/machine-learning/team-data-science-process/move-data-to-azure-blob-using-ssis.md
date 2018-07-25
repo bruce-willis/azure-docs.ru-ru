@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: deguhath
-ms.openlocfilehash: 5db1e7b9c97a0c19ef5ec0a41ea675c33c4d46fc
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 2f73a08d14d02b4e4b441b6ac85c6ceb97b9f173
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37950922"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39004988"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
 [Пакет дополнительных компонентов SQL Server Integration Services для Azure](https://msdn.microsoft.com/library/mt146770.aspx) содержит компоненты для подключения к Azure, передачи данных между Azure и локальными источниками данных, а также для обработки данных, хранящихся в Azure.
@@ -38,7 +38,7 @@ ms.locfileid: "37950922"
 > 
 > 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения описанных в этой статье задач необходимо иметь подписку Azure и учетную запись хранения Azure. Чтобы отправлять и скачивать данные, необходимо знать имя учетной записи хранения Azure и ее ключ.
 
 * Сведения о настройке **подписки Azure** см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
@@ -83,7 +83,7 @@ ms.locfileid: "37950922"
 > 
 
 ## <a name="download-data-from-azure-blob-storage"></a>Загрузка данных из хранилища BLOB-объектов Azure
-Чтобы скачать данные из хранилища BLOB-объектов Azure в локальное хранилище с помощью служб SSIS, используйте экземпляр [задачи отправки BLOB-объектов Azure](https://msdn.microsoft.com/library/mt146779.aspx).
+Чтобы скачать данные из хранилища BLOB-объектов Azure в локальное хранилище с помощью служб Integration Services, используйте экземпляр [задачи скачивания BLOB-объектов Azure](https://msdn.microsoft.com/library/mt146779.aspx).
 
 ## <a name="more-advanced-ssis-azure-scenarios"></a>Более сложные сценарии SSIS-Azure
 С помощью пакета дополнительных компонентов SSIS можно обрабатывать более сложные потоки, используя упаковку задач. Например, данные BLOB-объекта можно передать непосредственно в кластер HDInsight. После этого полученный результат можно скачать обратно в BLOB-объект, а затем — в локальное хранилище. Службы SSIS могут запускать задания Hive и Pig в кластере HDInsight с помощью дополнительных соединительных служб SSIS.

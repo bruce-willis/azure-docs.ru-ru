@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: business continuity
 ms.topic: conceptual
-ms.date: 04/01/2018
+ms.date: 07/16/2018
 ms.author: carlrab
-ms.openlocfilehash: e6c699fdd57eecc31c51b26ccb7c06c6edbcfd03
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 27fb8f369ad23592902c05fe5275fc54bc6cf148
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646904"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39090475"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
@@ -34,7 +34,7 @@ ms.locfileid: "34646904"
 
 Добавить базу данных-получатель может только владелец или совладелец подписки.
 
-Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень обслуживания. База данных-получатель может быть отдельной базой данных или базой данных в эластичном пуле. Дополнительные сведения см. в разделах [Модель приобретения на основе DTU для базы данных SQL Azure](sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер для базы данных SQL Azure (предварительная версия)](sql-database-service-tiers-vcore.md).
+Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень обслуживания. База данных-получатель может быть отдельной базой данных или базой данных в эластичном пуле. Чтобы узнать больше, ознакомьтесь разделами [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
 После создания и заполнения базы данных-получателя начинается репликация данных из базы данных-источника в новую базу данных-получателя.
 
 > [!NOTE]

@@ -2,25 +2,25 @@
 title: Настройка параметров службы "База данных Azure для MySQL"
 description: В этой статье описывается настройка параметров службы в базе данных Azure для MySQL с помощью служебной программы командной строки CLI Azure.
 services: mysql
-author: rachel-msft
-ms.author: raagyema
+author: ajlam
+ms.author: andrela
 manager: kfile
 editor: jasonwhowell
 ms.service: mysql
 ms.devlang: azure-cli
 ms.topic: article
-ms.date: 02/28/2018
-ms.openlocfilehash: 4c04cb77513ec070edce739aa0a49447dc915a1b
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.date: 07/18/2018
+ms.openlocfilehash: 637e2d27e92c1a2618fcf8b524e475a4d2f88f12
+ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35265220"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39136378"
 ---
 # <a name="customize-server-configuration-parameters-by-using-azure-cli"></a>Настройка параметров конфигурации сервера с помощью Azure CLI
 С помощью служебной программы командной строки (Azure CLI) можно вывести список параметров конфигурации для сервера базы данных Azure для MySQL, а также отобразить и обновить их. Только подмножество конфигураций ядра предоставляется на уровне сервера и может быть изменено. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [Сервер базы данных Azure для MySQL.](quickstart-create-mysql-server-database-using-azure-cli.md)
 - Служебная программа командной строки [Azure CLI 2.0](/cli/azure/install-azure-cli) (или используйте Azure Cloud Shell в браузере).
@@ -54,5 +54,46 @@ az mysql server configuration set --name slow_query_log --resource-group myresou
 ```
 Этот код выполняет сброс конфигурации **slow\_query\_log** к значению по умолчанию **OFF**. 
 
+## <a name="working-with-the-time-zone-parameter"></a>Работа с параметром часового пояса
+
+### <a name="populating-the-time-zone-tables"></a>Заполнение таблиц часовых поясов
+
+Таблицы часовых поясов на сервере можно заполнить, вызвав хранимую процедуру `az_load_timezone` с помощью такого инструмента, как командная строка MySQL или MySQL Workbench.
+
+> [!NOTE]
+> Если вы используете команду `az_load_timezone` в MySQL Workbench, может потребоваться предварительно отключить режим безопасного обновления с помощью `SET SQL_SAFE_UPDATES=0;`.
+
+```sql
+CALL mysql.az_load_timezone();
+```
+
+Чтобы просмотреть доступные значения часового пояса, выполните следующую команду.
+
+```sql
+SELECT name FROM mysql.time_zone_name;
+```
+
+### <a name="setting-the-global-level-time-zone"></a>Установка часового пояса глобального уровня
+
+Часовой пояс глобального уровня можно задать с помощью команды [az mysql server configuration set](/cli/azure/mysql/server/configuration#az_mysql_server_configuration_set).
+
+Чтобы обновить параметр конфигурации **time\_zone** для сервера **mydemoserver.mysql.database.azure.com** в группе ресурсов **myresourcegroup** и задать для него значение **US/Pacific**, используйте следующую команду.
+
+```azurecli-interactive
+az mysql server configuration set --name time_zone --resource-group myresourcegroup --server mydemoserver --value "US/Pacific"
+```
+
+### <a name="setting-the-session-level-time-zone"></a>Настройка часового пояса уровня сеанса
+
+Часовой пояс уровня сеанса можно задать, выполнив команду `SET time_zone` в командной строке MySQL или MySQL Workbench. В приведенном ниже примере задается часовой пояс **US/Pacific** (США, Тихоокеанский регион).  
+
+```sql
+SET time_zone = 'US/Pacific';
+```
+
+Описание [функций даты и времени](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_convert-tz) можно прочитать в документации по MySQL.
+
+
 ## <a name="next-steps"></a>Дополнительная информация
+
 - Настройка [параметров сервера на портале Azure](howto-server-parameters.md)

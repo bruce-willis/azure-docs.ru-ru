@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/15/2016
 ms.author: heidist
-ms.openlocfilehash: 8f83f2652f7bd34f53dde1674c022f8792ae7658
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 1d0024af3bbf9edfe8c43032878a8b61e35cea9c
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32181993"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39000996"
 ---
 # <a name="manage-your-azure-search-service-with-powershell"></a>Управление службой поиска Azure с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -27,7 +27,7 @@ ms.locfileid: "32181993"
 В этом разделе описаны команды PowerShell, предназначенные для выполнения многих задач управления служб Поиска Azure. Мы рассмотрим создание службы поиска, ее масштабирование и управления ее ключами API.
 Эти команды дублируют возможности управления, доступные в [API REST управления Поиском Azure](https://docs.microsoft.com/rest/api/searchmanagement).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Необходимо установить Azure PowerShell 1.0 или более поздней версии. Инструкции см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 * Вы должны войти в свою подписку Azure в PowerShell, как описано ниже.
 
@@ -129,7 +129,7 @@ ms.locfileid: "32181993"
 После создания службы можно перейти к следующим шагам: создать [индекс](search-what-is-an-index.md), [отправить запросы в индекс](search-query-overview.md) и, наконец, создать приложение поиска, использующее службу поиска Azure, и управлять им.
 
 * [Создание индекса службы "Поиск Azure" на портале Azure](search-create-index-portal.md)
-* [Отправка запросов в индекс службы поиска Azure с помощью портала Azure](search-explorer.md)
+* [Отправка запросов в индекс службы "Поиск Azure" с использованием обозревателя поиска на портале Azure](search-explorer.md)
 * [Настройка индексатора для загрузки данных из других служб](search-indexer-overview.md)
 * [Как использовать Поиск Azure в приложении .NET](search-howto-dotnet-sdk.md)
 * [Анализ трафика Поиска Azure](search-traffic-analytics.md)

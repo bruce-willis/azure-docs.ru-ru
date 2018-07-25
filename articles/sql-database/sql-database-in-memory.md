@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: develop databases
 ms.topic: conceptual
-ms.date: 04/04/2018
+ms.date: 07/16/2018
 ms.author: jodebrui
-ms.openlocfilehash: a21ce5c9cbf5517733a6b491124e51b163f6c2b9
-ms.sourcegitcommit: 638599eb548e41f341c54e14b29480ab02655db1
+ms.openlocfilehash: f4e056e9f8461085df6ae447672e2c9ec91aa3ca
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36309305"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39092409"
 ---
 # <a name="optimize-performance-by-using-in-memory-technologies-in-sql-database"></a>Оптимизация производительности с помощью технологий обработки в оперативной памяти в базе данных SQL
 
@@ -93,7 +93,7 @@ In-Memory OLTP включает оптимизированные для памя
 
 ### <a name="data-size-and-storage-for-columnstore-indexes"></a>Размер данных и хранилище для индексов сolumnstore
 
-Индексы сolumnstore не обязательно должны помещаться в памяти. Поэтому для размера индексов применяется только одно ограничение — на максимальный общий размер базы данных, который описан в статьях [Модель приобретения на основе DTU для базы данных SQL Azure](sql-database-service-tiers-dtu.md) и [Модель приобретения на основе виртуальных ядер для базы данных SQL Azure (предварительная версия)](sql-database-service-tiers-vcore.md).
+Индексы сolumnstore не обязательно должны помещаться в памяти. Поэтому для размера индексов применяется только одно ограничение — на максимальный общий размер базы данных, который описан в статьях [Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища](sql-database-service-tiers-dtu.md) и [Выбор уровня служб для виртуальных ядер, ресурсов вычислений, памяти, хранилища и операций ввода-вывода](sql-database-service-tiers-vcore.md).
 
 При использовании кластеризованных индексов сolumnstore для хранения базовых таблиц применяется сжатие по столбцам. Сжатие может значительно снизить объем хранимых пользовательских данных, позволяя разместить в базе данных больше информации. Этот эффект можно усилить, используя [архивное сжатие по столбцам](https://msdn.microsoft.com/library/cc280449.aspx#Using Columnstore and Columnstore Archive Compression). Степень сжатия, которой можно добиться, зависит от характера данных. Вполне можно достигнуть 10-кратного сжатия.
 
@@ -153,7 +153,7 @@ SELECT * FROM sys.sql_modules WHERE uses_native_compilation=1
 
 #### <a name="installation-steps"></a>Шаги установки
 
-1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса" (предварительная версия). Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-get-started-portal.md).
+1. На [портале Azure](https://portal.azure.com/) создайте на сервере базу данных уровня "Премиум" или "Критически важный для бизнеса". Укажите **источник** для примера базы данных AdventureWorksLT. Подробные инструкции см. в статье [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-get-started-portal.md).
 
 2. Подключитесь к базе данных с помощью SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx).
 

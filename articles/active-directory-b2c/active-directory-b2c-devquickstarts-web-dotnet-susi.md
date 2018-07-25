@@ -6,16 +6,16 @@ author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/17/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: ec106b46097f9a35b9e41e08de4c18339f1b28f0
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 66cd3644611c1d837de717661a3515a0c0d3956f
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34710412"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38308037"
 ---
 # <a name="create-an-aspnet-web-app-with-azure-active-directory-b2c-sign-up-sign-in-profile-edit-and-password-reset"></a>Создание веб-приложения ASP.NET с возможностями регистрации, входа, редактирования профиля и сброса пароля Azure Active Directory B2C
 
@@ -31,19 +31,21 @@ ms.locfileid: "34710412"
 - Подключите клиент B2C к учетной записи Azure. Вы можете создать бесплатную учетную запись Azure [здесь](https://azure.microsoft.com/).
 - Вам требуется [Microsoft Visual Studio](https://www.visualstudio.com/) или аналогичная программа для просмотра и изменения примера кода.
 
-## <a name="create-an-azure-ad-b2c-directory"></a>Создание каталога Azure AD B2C
+## <a name="create-an-azure-ad-b2c-tenant"></a>Создание клиента Azure AD B2C
 
-Перед использованием Azure AD B2C необходимо создать каталог или клиент. Каталог — это контейнер для всех пользователей, приложений, групп и т. д. Прежде чем продолжать работу с руководством, создайте каталог B2C, если вы его еще не создали.
+Перед использованием Azure AD B2C необходимо создать клиент. Клиент — это контейнер для всех пользователей, приложений, групп и т. д. Прежде чем продолжать работу с руководством, создайте клиент B2C, если вы его еще не создали.
 
 [!INCLUDE [active-directory-b2c-create-tenant](../../includes/active-directory-b2c-create-tenant.md)]
 
 > [!NOTE]
 > 
-> Необходимо подключить клиент B2C к подписке Azure. Выбрав **Создать**, выберите параметр **Связывание существующего B2C-клиента Azure AD с вашей подпиской Azure**, а затем в раскрывающемся списке **Клиент B2C Azure AD** выберите клиент, которого требуется связать.
+> Требуется подключить клиент Azure AD B2C к подписке Azure. Выбрав **Создать**, выберите параметр **Связывание существующего B2C-клиента Azure AD с вашей подпиской Azure**, а затем в раскрывающемся списке **Клиент B2C Azure AD** выберите клиент, которого требуется связать.
 
 ## <a name="create-and-register-an-application"></a>Создание и регистрация приложения
 
-Затем необходимо создать и зарегистрировать приложение в каталоге B2C. Так вы получаете информацию, необходимую Azure AD B2C для безопасного взаимодействия с вашим приложением. 
+Затем нужно создать и зарегистрировать приложение в клиенте Azure AD B2C. Так вы получаете информацию, необходимую Azure AD B2C для безопасного взаимодействия с вашим приложением. 
+
+Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Необходимо использовать созданный ранее клиент.
 
 [!INCLUDE [active-directory-b2c-register-web-api](../../includes/active-directory-b2c-register-web-api.md)]
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: mbullwin
-ms.openlocfilehash: f9ab9b9af81bf1827c2da646908e204bd051706b
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 6635906b6aae418fa3754f1152fae3e0d8903ffc
+ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970940"
+ms.locfileid: "38989773"
 ---
 # <a name="application-insights-for-aspnet-core"></a>Application Insights для ASP.NET Core
 
@@ -26,7 +26,7 @@ Azure Application Insights обеспечивает детализированн
 
 Эта статья содержит сведения о создании примера приложения ASP.NET Core [Razor Pages](https://docs.microsoft.com/aspnet/core/mvc/razor-pages/?tabs=visual-studio) в Visual Studio и о том, как начать выполнять мониторинг с помощью Azure Application Insights.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Пакет SDK для NET Core 2.0.0 или более поздней версии.
 - [Visual Studio 2017](https://www.visualstudio.com/downloads/) версии 15.7.3 или выше с ASP.NET и рабочей нагрузкой веб-разработки. 
@@ -188,7 +188,7 @@ namespace DotNetCore
 
 1. Запустите приложение, щелкнув IIS Express. ![Снимок экрана: значок IIS Express в Visual Studio](./media/app-insights-asp-net-core/004-iis-express.png)
 
-2. Скопируйте URL-адрес из адресной строки браузера. Он имеет формат http://localhost:{random номер порта}.
+2. Скопируйте URL-адрес из адресной строки браузера. Он указан в следующем формате: `http://localhost:{random port number}`
 
    ![Снимок экрана: URL-адрес в адресной строке браузера](./media/app-insights-asp-net-core/0013-copy-url.png)
 

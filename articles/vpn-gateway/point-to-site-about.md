@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/06/2018
 ms.author: cherylmc
-ms.openlocfilehash: 2668d92b5b933f7ccf8ebcccbe7ea77ea6ea1e86
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 8cdc80e8e4f8d3feb36ca82740d5610e60716ec6
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38721434"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39003365"
 ---
 # <a name="about-point-to-site-vpn"></a>Сведения о VPN-подключениях типа "точка — сеть"
 
@@ -58,7 +58,7 @@ ms.locfileid: "38721434"
 
 Сервер RADIUS также можно интегрировать с другими системами внешних идентификаторов. Благодаря этой возможности для VPN-подключений "точка — сеть" доступно множество вариантов аутентификации, в том числе и варианты многофакторной аутентификации.
 
-![point-to-site]](./media/point-to-site-about/p2s.png "Подключение «точка — сеть»")
+![Подключение "точка — сеть"](./media/point-to-site-about/p2s.png "Point-to-Site")
 
 ## <a name="what-are-the-client-configuration-requirements"></a>Требования к конфигурации клиента
 

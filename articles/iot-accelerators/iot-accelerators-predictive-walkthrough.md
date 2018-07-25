@@ -1,21 +1,21 @@
 ---
-title: Пошаговое руководство по акселератору решений для прогнозного обслуживания Azure | Документация Майкрософт
-description: Пошаговое руководство по акселератору решений для прогнозного обслуживания Azure IoT.
+title: Обзор акселератора решений Azure для прогнозного обслуживания | Документация Майкрософт
+description: Обзор акселератора решений для прогнозного обслуживания Azure IoT.
 author: dominicbetts
 manager: timlt
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 11/14/2017
+ms.date: 07/12/2018
 ms.author: dobett
-ms.openlocfilehash: e29975558801b4ffccd38d4485306d25ecaec0aa
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e7c6c8d017e4371919088ec414d3108939ca4a19
+ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34659958"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39036260"
 ---
-# <a name="predictive-maintenance-solution-accelerator-walkthrough"></a>Пошаговое руководство по акселератору решений для прогнозного обслуживания
+# <a name="predictive-maintenance-solution-accelerator-overview"></a>Обзор акселератора решений для прогнозного обслуживания
 
 Акселератор решений для прогнозного обслуживания — это комплексное решение для бизнес-сценария с прогнозированием вероятной точки сбоя. Этот акселератор решений можно с упреждением использовать в таких задачах, как оптимизация обслуживания. Решение объединяет ключевые службы акселераторов решений Azure IoT, такие как Центр Интернета вещей и Stream Analytics, и рабочую область [машинного обучения Azure][lnk-machine-learning], в которой содержится модель для прогнозирования оставшегося срока полезного использования двигателей самолетов на основании общедоступного набора демонстрационных данных. Это решение полностью реализовывает бизнес-сценарий IoT и может служить основой для планирования и реализации подобного решения в соответствии с конкретными потребностями.
 
@@ -30,6 +30,16 @@ ms.locfileid: "34659958"
 Зеленый блок — это виртуальное устройство, представляющее двигатель самолета. См. дополнительные сведения о [виртуальных устройствах](#simulated-devices).
 
 Серые блоки представляют компоненты, реализующие возможности *управления устройствами*. В текущем выпуске акселератора решений для прогнозного обслуживания эти ресурсы не подготавливаются. Дополнительные сведения об управлении устройствами см. в статье [Обзор возможностей акселератора решений для удаленного мониторинга][lnk-remote-monitoring].
+
+## <a name="azure-resources"></a>Ресурсы Azure
+
+Чтобы просмотреть подготовленные ресурсы, на портале Azure перейдите к группе ресурсов с выбранным вами именем решения.
+
+![Ресурсы акселератора][img-resource-group]
+
+При подготовке акселератора решений вы получите электронное сообщение со ссылкой на рабочую область машинного обучения. Кроме того, вы можете перейти в рабочую область машинного обучения со страницы [акселераторов решений Microsoft Azure IoT][lnk-azureiotsuite] подготовленного решения. На этой странице отображается плитка для перехода, когда решение находится в состоянии **Готово**.
+
+![Модель машинного обучения][img-machine-learning]
 
 ## <a name="simulated-devices"></a>Виртуальные устройства
 
@@ -61,6 +71,11 @@ ms.locfileid: "34659958"
 ## <a name="machine-learning"></a>Машинное обучение
 Компонент машинного обучения использует модель на основе данных, собранных с настоящих двигателей самолета. Вы можете перейти к рабочей области машинного обучения с помощью плитки решения на странице [azureiotsuite.com][lnk-azureiotsuite]. Плитка доступна, когда решение находится в состоянии **Готово**.
 
+Чтобы продемонстрировать эти возможности на основе данных телеметрии устройства, собранных с помощью служб акселератора решений для Интернета вещей, предусмотрена модель машинного обучения Azure, доступная в виде шаблона. Корпорация Майкрософт разработала [модель регрессии][lnk_regression_model] двигателя самолета на основе общедоступных данных<sup>\[1\]</sup> и пошаговое руководство по использованию модели.
+
+Акселератор решений для прогнозного обслуживания для Интернета вещей Azure использует модель регрессии, созданную на основе этого шаблона. Это решение развертывается в подписке Azure и предоставляется с помощью автоматически созданного интерфейса API. Решение включает набор проверочных данных, представляющий 4 (из 100) двигателя и 4 (из 21) потока данных датчиков. Эти данные обеспечивают точный результат из обученной модели.
+
+*\[1\] А. Саксена (A. Saxena) и К. Гебель (K. Goebel) (2008 г.). Turbofan Engine Degradation Simulation Data Set (Набор данных для симуляции деградации турбореактивного двигателя), Хранилище данных Центра прогнозирования Эймса (https://c3.nasa.gov/dashlink/resources/139/), Исследовательский центр Эймса, Моффетт-филд, Калифорния*
 
 ## <a name="next-steps"></a>Дополнительная информация
 Вы ознакомились с основными компонентами акселератора решений для прогнозного обслуживания. Вы можете попробовать настроить его.
@@ -71,10 +86,13 @@ ms.locfileid: "34659958"
 * [Все аспекты безопасности Интернета вещей][lnk-security-groundup]
 
 [img-architecture]: media/iot-accelerators-predictive-walkthrough/architecture.png
+[img-resource-group]: media/iot-accelerators-predictive-walkthrough/resource-group.png
+[img-machine-learning]: media/iot-accelerators-predictive-walkthrough/machine-learning.png
 
-[lnk-remote-monitoring]: iot-accelerators-remote-monitoring-explore.md
+[lnk-remote-monitoring]: quickstart-predictive-maintenance-deploy.md
 [lnk-cortana-analytics]: http://gallery.cortanaintelligence.com/Collection/Predictive-Maintenance-Template-3
 [lnk-azureiotsuite]: https://www.azureiotsolutions.com/
 [lnk-faq]: iot-accelerators-faq.md
-[lnk-security-groundup]:securing-iot-ground-up.md
+[lnk-security-groundup]:/azure/iot-fundamentals/iot-security-ground-up
 [lnk-machine-learning]: https://azure.microsoft.com/services/machine-learning/
+[lnk_regression_model]: http://gallery.cortanaanalytics.com/Collection/Predictive-Maintenance-Template-3

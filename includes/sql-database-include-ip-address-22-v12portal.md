@@ -1,43 +1,44 @@
-
-<!--
-includes/sql-database-include-ip-address-22-v12portal.md
-
-Latest Freshness check:  2016-03-21 , daleche.
-
-As of circa 2015-09-04, the following topics might include this include:
-articles/sql-database/sql-database-configure-firewall-settings.md
-articles/sql-database/sql-database-connect-query.md
-
-
-## Server-level firewall rules
-
-### Add a server-level firewall rule through the new Azure portal
--->
-
-
+---
+title: Правила брандмауэра на уровне сервера
+description: Правила брандмауэра на уровне сервера
+keywords: Подключения SQL, строка подключения
+services: sql-database
+author: dalechen
+manager: craigg
+ms.service: sql-database
+ms.custom: develop apps
+ms.topic: include
+ms.date: 07/13/2018
+ms.author: ninarn
+ms.openlocfilehash: 07bbba28b7e1b048ef3a4e1afa4db255967dc093
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39117279"
+---
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-2. В меню слева выберите пункт **Все службы**. 
+2. В меню слева выберите пункт **Все службы**.
 
-3. Найдите и выберите **Серверы SQL Server**. 
-   
+3. Найдите и выберите **Серверы SQL Server**.
+
     ![Поиск своего сервера Базы данных SQL Azure на портале][b21-FindServerInPortal]
 5. В текстовом поле фильтра начните вводить имя своего сервера. Отобразится строка.
 
 6. Выберите строку со своим сервером. Отобразится колонка для вашего сервера.
 
-7. В колонке вашего сервера выберите **Параметры**. 
+7. В колонке вашего сервера выберите **Параметры**.
 
-8. Выберите **Брандмауэр**. 
-   
+8. Выберите **Брандмауэр**.
+
     ![Пункты "Параметры" > "Брандмауэр"][b31-SettingsFirewallNavig]
 9. Выберите **Добавить IP-адрес клиента**. В первое текстовое поле введите имя нового правила.
 
 10. Введите нижнее и верхнее значения IP-адресов для требуемого диапазона.
-    
+
     * Удобными могут оказаться нижнее значение, оканчивающееся на **.0**, и верхнее, оканчивающееся на **.255**.
-    
-    ![Добавьте допустимый диапазон IP-адресов][b41-AddRange]
+
 11. Щелкните **Сохранить**.
 
 <!-- Image references. -->

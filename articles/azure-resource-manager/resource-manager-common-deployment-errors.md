@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/08/2018
+ms.date: 07/16/2018
 ms.author: tomfitz
-ms.openlocfilehash: 3ecc1a9557c7854a0771decb3cc7f7597bcd87dd
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 562e8e49d769f15ba0b965bfb03c0d56076c78f1
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34360025"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39091328"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -104,7 +104,21 @@ ms.locfileid: "34360025"
 
 ### <a name="deployment-errors"></a>Ошибки развертывания
 
-Если операция прошла проверку, но завершилась ошибкой во время развертывания, вы увидите ошибку в уведомлениях. Выберите уведомление.
+Если операция прошла проверку, но завершилась сбоем во время развертывания, вы увидите ошибку развертывания.
+
+Чтобы просмотреть коды и сообщения ошибок развертывания с помощью PowerShell, используйте следующую команду:
+
+```azurepowershell-interactive
+(Get-AzureRmResourceGroupDeploymentOperation -DeploymentName exampledeployment -ResourceGroupName examplegroup).Properties.statusMessage
+```
+
+Чтобы просмотреть коды и сообщения ошибок развертывания с помощью Azure CLI, используйте следующую команду:
+
+```azurecli-interactive
+az group deployment operation list --name exampledeployment -g examplegroup --query "[*].properties.statusMessage"
+```
+
+Выберите уведомление в портале.
 
 ![уведомление об ошибке](./media/resource-manager-common-deployment-errors/notification.png)
 
@@ -118,59 +132,91 @@ ms.locfileid: "34360025"
 
 ## <a name="enable-debug-logging"></a>Включение ведения журнала отладки
 
-Иногда требуются дополнительные сведения о запросе и ответе, чтобы узнать, что пошло не так. С помощью PowerShell или Azure CLI вы можете запросить, чтобы во время развертывания в журнал записывались дополнительные сведения.
+Иногда требуются дополнительные сведения о запросе и ответе, чтобы узнать, что пошло не так. Вы можете запросить, чтобы во время развертывания дополнительные сведения записывались в журнал. 
 
-- PowerShell
+### <a name="powershell"></a>PowerShell
 
-   В PowerShell для параметра **DeploymentDebugLogLevel** задайте значение All, ResponseContent или RequestContent.
+В PowerShell для параметра **DeploymentDebugLogLevel** задайте значение All, ResponseContent или RequestContent.
 
-  ```powershell
-  New-AzureRmResourceGroupDeployment -ResourceGroupName examplegroup -TemplateFile c:\Azure\Templates\storage.json -DeploymentDebugLogLevel All
-  ```
+```powershell
+New-AzureRmResourceGroupDeployment `
+  -Name exampledeployment `
+  -ResourceGroupName examplegroup `
+  -TemplateFile c:\Azure\Templates\storage.json `
+  -DeploymentDebugLogLevel All
+```
 
-   Проверьте содержимое запроса с помощью следующего командлета.
+Проверьте содержимое запроса с помощью следующего командлета.
 
-  ```powershell
-  (Get-AzureRmResourceGroupDeploymentOperation -DeploymentName storageonly -ResourceGroupName startgroup).Properties.request | ConvertTo-Json
-  ```
+```powershell
+(Get-AzureRmResourceGroupDeploymentOperation `
+-DeploymentName exampledeployment `
+-ResourceGroupName examplegroup).Properties.request `
+| ConvertTo-Json
+```
 
-   Или проверьте содержимое ответа, выполнив команду, указанную ниже.
+Или проверьте содержимое ответа, выполнив команду, указанную ниже.
 
-  ```powershell
-  (Get-AzureRmResourceGroupDeploymentOperation -DeploymentName storageonly -ResourceGroupName startgroup).Properties.response | ConvertTo-Json
-  ```
+```powershell
+(Get-AzureRmResourceGroupDeploymentOperation `
+-DeploymentName exampledeployment `
+-ResourceGroupName examplegroup).Properties.response `
+| ConvertTo-Json
+```
 
-   Эти сведения помогут определить, правильно ли задано то или иное значение в шаблоне.
+Эти сведения помогут определить, правильно ли задано то или иное значение в шаблоне.
 
-- Инфраструктура CLI Azure
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-   Для просмотра операций развертывания выполните следующую команду.
+В настоящее время Azure CLI не поддерживает ведение журнала отладки, но вы можете его получить.
 
-  ```azurecli
-  az group deployment operation list --resource-group ExampleGroup --name vmlinux
-  ```
+Для просмотра операций развертывания выполните следующую команду.
 
-- Вложенный шаблон
+```azurecli
+az group deployment operation list \
+  --resource-group examplegroup \
+  --name exampledeployment
+```
 
-   Чтобы вести журнал отладочной информации для вложенного шаблона, используйте элемент **debugSetting**.
+Проверьте содержимое запроса с помощью следующей команды:
 
-  ```json
-  {
-      "apiVersion": "2016-09-01",
-      "name": "nestedTemplate",
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-          "mode": "Incremental",
-          "templateLink": {
-              "uri": "{template-uri}",
-              "contentVersion": "1.0.0.0"
-          },
-          "debugSetting": {
-             "detailLevel": "requestContent, responseContent"
-          }
-      }
-  }
-  ```
+```azurecli
+az group deployment operation list \
+  --name exampledeployment \
+  -g examplegroup \
+  --query [].properties.request
+```
+
+Проверьте содержимое ответа с помощью следующей команды:
+
+```azurecli
+az group deployment operation list \
+  --name exampledeployment \
+  -g examplegroup \
+  --query [].properties.response
+```
+
+### <a name="nested-template"></a>Вложенный шаблон
+
+Чтобы вести журнал отладочной информации для вложенного шаблона, используйте элемент **debugSetting**.
+
+```json
+{
+    "apiVersion": "2016-09-01",
+    "name": "nestedTemplate",
+    "type": "Microsoft.Resources/deployments",
+    "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+            "uri": "{template-uri}",
+            "contentVersion": "1.0.0.0"
+        },
+        "debugSetting": {
+           "detailLevel": "requestContent, responseContent"
+        }
+    }
+}
+```
 
 ## <a name="create-a-troubleshooting-template"></a>Создание шаблона для устранения неполадок
 

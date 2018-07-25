@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: d862cd0223609d80c511362edbcc0ed6dd512b1f
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 5cdaba2a280221fa5fa9274ebfa6cafa18e7690c
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37859153"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39055021"
 ---
 # <a name="expressions-and-functions-in-azure-data-factory"></a>Выражения и функции в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -41,14 +41,14 @@ ms.locfileid: "37859153"
 ```
 
 ## <a name="expressions"></a>Выражения  
-Выражения могут встречаться в любом месте строкового значения JSON и всегда возвращают другое значение JSON. Если значение JSON является выражением, текст выражения извлекается без знака @ (\@). Если требуется строковый литерал, начинающийся с \@\, его необходимо экранировать с помощью "@@". В примерах ниже показано, как вычисляются выражения.  
+Выражения могут встречаться в любом месте строкового значения JSON и всегда возвращают другое значение JSON. Если значение JSON является выражением, текст выражения извлекается без знака @ (\@). Если требуется строковый литерал, начинающийся с \@, его необходимо экранировать с помощью \@\@. В примерах ниже показано, как вычисляются выражения.  
   
 |Значение JSON|Результат|  
 |----------------|------------|  
 |"parameters"|Возвращаются символы в виде 'parameters'.|  
 |"parameters[1]"|Возвращаются символы в виде 'parameters[1]'.|  
-|"\@@"|Возвращается строка из 1 символа, содержащая символ \@\.|  
-|" \@"|Возвращается строка из 2 символов, содержащая символ \@\.|  
+|"\@\@"|Возвращается строка из 1 символа, содержащая символ "\@".|  
+|" \@"|Возвращается строка из 2 символов, содержащая символ "\@".|  
   
  Выражения также могут содержаться внутри строк, где они заключаются в структуру `@{ ... }`, при использовании *интерполяции строк*. Например: `"name" : "First Name: @{pipeline().parameters.firstName} Last Name: @{pipeline().parameters.lastName}"`  
   
@@ -62,7 +62,7 @@ ms.locfileid: "37859153"
 |"\@{pipeline().parameters.myNumber}"| Возвращает `42` как *строку*.|  
 |Answer is: @{pipeline().parameters.myNumber}| Возвращает строку `Answer is: 42`.|  
 |"\@concat('Answer is: ', string(pipeline().parameters.myNumber))"| Возвращает строку `Answer is: 42`.|  
-|"Answer is: \@@{pipeline().parameters.myNumber}"| Возвращает строку `Answer is: @{pipeline().parameters.myNumber}`.|  
+|"Answer is: \@\@{pipeline().parameters.myNumber}"| Возвращает строку `Answer is: @{pipeline().parameters.myNumber}`.|  
   
 ### <a name="examples"></a>Примеры
 

@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9ec396e8a1ad36e85e1291995345ca1de24668d0
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: ecd19acdeba57a29a28187d42783bbf146095190
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128066"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39001911"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Распространенные проблемы и их решения для Azure IoT Edge
 
@@ -107,19 +107,43 @@ ms.locfileid: "37128066"
 
 ### <a name="view-the-messages-going-through-the-edge-hub"></a>Просмотр сообщений, отправляемых через концентратор Edge
 
-Просмотрите сообщения, отправляемые через концентратор Edge, и соберите сведения об обновлениях свойств устройства из подробных журналов контейнеров в средах выполнения edgeAgent и edgeHub. Чтобы включить ведение подробных журналов в этих контейнерах, задайте значение для переменной `RuntimeLogLevel` среды. 
+Просмотрите сообщения, отправляемые через концентратор Edge, и соберите сведения об обновлениях свойств устройства из подробных журналов контейнеров в средах выполнения edgeAgent и edgeHub. Чтобы включить ведение подробных журналов в этих контейнерах, задайте значение `RuntimeLogLevel` в файле конфигурации YAML. Чтобы открыть этот файл, выполните следующее.
 
 В Linux
-    
-   ```cmd
-   export RuntimeLogLevel="debug"
+
+   ```bash
+   sudo nano /etc/iotedge/config.yaml
    ```
-    
+
 Действия для ОС Windows.
-    
-   ```powershell
-   [Environment]::SetEnvironmentVariable("RuntimeLogLevel", "debug")
+
+   ```cmd
+   notepad C:\ProgramData\iotedge\config.yaml
    ```
+
+По умолчанию элемент `agent` выглядит следующим образом:
+
+   ```yaml
+   agent:
+     name: edgeAgent
+     type: docker
+     env: {}
+     config:
+       image: mcr.microsoft.com/azureiotedge-agent:1.0
+       auth: {}
+   ```
+
+Вместо `env: {}` вставьте следующий фрагмент:
+
+> [!WARNING]
+> YAML-файлы не могут содержать отступы в виде табуляции. Вместо этого используйте двойные пробелы.
+
+   ```yaml
+   env:
+     RuntimeLogLevel: debug
+   ```
+
+Сохраните файл и перезапустите диспетчер безопасности IoT Edge.
 
 Можно также проверить сообщения, отправленные между Центром Интернета вещей и устройствами IoT Edge. Просмотрите эти сообщения с помощью расширения [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) для Visual Studio Code. Дополнительные сведения см. в записи блога об [удобном средстве при разработке с помощью Центра Интернета вещей Azure](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/).
 
@@ -236,5 +260,41 @@ Error parsing user input data: invalid hostname. Hostname cannot be empty or gre
       notepad C:\ProgramData\iotedge\config.yaml
       ```
 
+## <a name="stability-issues-on-resource-constrained-devices"></a>Проблемы с надежностью на устройствах с ограниченными ресурсами 
+Вы можете столкнуться с нестабильной работой некоторых устройств с ограниченными ресурсами, таких как Raspberry Pi, особенно если они используются в качестве шлюза. Для такой ситуации характерны исключения с сообщением о нехватке памяти на модуле центра IoT Edge, проблемы с подключением подчиненных устройств и (или) прекращение потока телеметрии после нескольких часов работы устройства.
+
+### <a name="root-cause"></a>Первопричина
+Центр IoT Edge, входящий в состав среды выполнения IoT Edge, по умолчанию оптимизирован для высокой производительности и всегда пытается выделить большие блоки памяти. Это не идеальный вариант для устройств IoT Edge с ограниченными ресурсами, где он может привести к нестабильной работе.
+
+### <a name="resolution"></a>Способы устранения:
+Для центра IoT Edge для переменной среды **OptimizeForPerformance** задайте значение **false**. Это можно осуществить двумя путями:
+
+Через пользовательский интерфейс: 
+
+На портале последовательно выберите *Сведения об устройстве*->*Настроить модули*->*Настройка дополнительных параметров среды выполнения IoT Edge*, а затем создайте переменную среды с именем *OptimizeForPerformance* и значением *false* для нужного *центра IoT Edge*.
+
+![optimizeforperformance][img-optimize-for-perf]
+
+**OR**
+
+Через манифест развертывания.
+
+```json
+  "edgeHub": {
+    "type": "docker",
+    "settings": {
+      "image": "mcr.microsoft.com/azureiotedge-hub:1.0",
+      "createOptions": <snipped>
+    },
+    "env": {
+      "OptimizeForPerformance": {
+          "value": "false"
+      }
+    },
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 Считаете, что обнаружили ошибку в платформе IoT Edge? [Отправьте запрос](https://github.com/Azure/iotedge/issues), чтобы мы как можно скорее устранили неисправность. 
+
+<!-- Images -->
+[img-optimize-for-perf]: ./media/troubleshoot/OptimizeForPerformanceFalse.png

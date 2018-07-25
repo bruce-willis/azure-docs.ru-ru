@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 983e8f84e6e44bc9e5de5f4e7fff361b92b316c9
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 4355a767d2ecd500662cdf4522e8a7e12de86b80
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35295699"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37866157"
 ---
 # <a name="get-started-with-the-ftp-connector"></a>Начало работы с соединителем FTP
 Соединитель FTP можно использовать для создания и мониторинга файлов на FTP-сервере, а также для управления ими. 
@@ -62,7 +62,7 @@ ms.locfileid: "35295699"
 
 Добавив триггер, выполните следующие шаги, чтобы добавить действие для получения содержимого нового или измененного файла, найденного с помощью триггера.    
 
-1. Щелкните **+ Новый шаг**, чтобы добавить действие для получения содержимого файла на FTP-сервере.  
+1. Щелкните **+ Новый шаг**, чтобы добавить действие для получения содержимого файла на FTP-сервере  
 2. Щелкните ссылку **Добавить действие**.  
    ![Изображение 1. Действие FTP](./media/connectors-create-api-ftp/ftp-action-1.png)  
 3. Введите *FTP* в поле поиска, чтобы найти все действия, связанные с FTP.

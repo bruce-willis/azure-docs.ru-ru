@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jovanpop
 manager: craigg
-ms.openlocfilehash: 80d06a6c40fa804c543a1cee9dc75b57b293beaf
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 89544ea72a4356fb8d4f3a192e6fc546eb6b3cff
+ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37446883"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39092016"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server 
 
@@ -267,7 +267,7 @@ WITH PRIVATE KEY ( <private_key_options> )
 
 ### <a name="replication"></a>Репликация 
  
-Репликация пока не поддерживается. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication).
+Репликация поддерживается в Управляемом экземпляре. Дополнительные сведения о репликации см. в статье [Репликация SQL Server](http://review.docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance).
  
 ### <a name="restore-statement"></a>Инструкция RESTORE 
  
@@ -371,11 +371,11 @@ WITH PRIVATE KEY ( <private_key_options> )
 Следующее не поддерживается: 
 - `FILESTREAM` 
 - `FILETABLE` 
-- `EXTERNAL TABLE` 
+- `EXTERNAL TABLE`
 - `MEMORY_OPTIMIZED`  
 
 Сведения о создании и изменении таблиц см. в статьях [Инструкция CREATE TABLE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-table-transact-sql) и [ALTER TABLE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql).
- 
+
 ## <a name="Changes"></a> Изменения в поведении 
  
 Следующие переменные, функции и представления возвращают различные результаты:  

@@ -3,26 +3,29 @@ title: Конечные точки службы и правила виртуал
 description: Пометьте подсеть как конечную точку службы виртуальной сети. Затем внесите конечную точку в виде правила виртуальной сети в список управления доступом к базе данных SQL Azure. После этого база данных SQL будет принимать подключения от всех виртуальных машин и других узлов в этой подсети.
 services: sql-database
 ms.service: sql-database
+ms.prod_service: sql-database, sql-data-warehouse
 author: DhruvMsft
 manager: craigg
 ms.custom: VNet Service endpoints
 ms.topic: conceptual
-ms.date: 06/05/2018
-ms.reviewer: genemi
+ms.date: 07/18/2018
+ms.reviewer: carlrab
 ms.author: dmalik
-ms.openlocfilehash: d708d55c64306636910a85b5b490e25ecc794bd6
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: cdf067839c73f9da40d03628ff1c9920764e2219
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34802601"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39127501"
 ---
-# <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database"></a>Использование конечных точек службы и правил виртуальной сети для базы данных SQL Azure
+# <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql-database-and-sql-data-warehouse"></a>Использование конечных точек службы и правил виртуальной сети для Базы данных SQL Azure и Хранилища данных SQL
 
-*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, обеспечивающая управление приемом сервером базы данных SQL Azure подключений из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к базе данных SQL Azure.
+*Правила виртуальной сети* — это одна из функций безопасности брандмауэра, которая контролирует прием сервером Azure [Базы данных SQL](sql-database-technical-overview.md) или [Хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) сообщений, ранее отправленных из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к базе данных SQL Azure.
+
+> [!NOTE]
+> Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
 
 Чтобы создать правило виртуальной сети, требуется [конечная точка службы виртуальной сети][vm-virtual-network-service-endpoints-overview-649d], используемая для ссылки.
-
 
 #### <a name="how-to-create-a-virtual-network-rule"></a>Как создать правило виртуальной сети
 
@@ -141,7 +144,6 @@ ms.locfileid: "34802601"
 При использовании конечных точек служб базы данных SQL Azure обратите внимание на следующие моменты:
 
 - **Требуется исходящее подключение к общедоступным IP-адресам базы данных SQL Azure.** Чтобы предоставить возможность подключения, группы безопасности сети (NSG) необходимо открыть для IP-адресов базы данных SQL Azure. Это можно сделать с помощью [тегов службы](../virtual-network/security-overview.md#service-tags) NSG для базы данных SQL Azure.
-- **База данных Azure для PostgreSQL и MySQL не поддерживаются.** База данных Azure для PostgreSQL или MySQL не поддерживает конечные точки служб. Если включить конечные точки служб в базе данных SQL, это приведет к разрыву подключения к этим службам. У нас есть решение этой проблемы. Чтобы получить дополнительные сведения, свяжитесь с нами по адресу *dmalik@microsoft.com*.
 
 #### <a name="expressroute"></a>ExpressRoute
 
@@ -242,7 +244,7 @@ PolyBase часто используют для загрузки данных в
 
 - [Virtual Network Rules][rest-api-virtual-network-rules-operations-862r] (Правила виртуальной сети)
 
-#### <a name="prerequisites"></a>предварительным требованиям
+#### <a name="prerequisites"></a>Предварительные требования
 
 Необходима подсеть, помеченная определенным *именем типа* конечной точки службы виртуальной сети, относящимся к базе данных SQL Azure.
 
