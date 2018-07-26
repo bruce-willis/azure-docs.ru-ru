@@ -9,12 +9,12 @@ ms.devlang: csharp
 ms.topic: conceptual
 ms.date: 08/24/2017
 ms.author: elioda
-ms.openlocfilehash: e4bec631550d6ca3dc2c702b3b3f56bd29c59f03
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: e2090977813f5335f2170ff543bde19cd8bf123b
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34631893"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185800"
 ---
 # <a name="send-messages-from-the-cloud-to-your-device-with-iot-hub-net"></a>Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (.NET)
 [!INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
@@ -189,7 +189,7 @@ ms.locfileid: "34631893"
 [IoT Hub developer guide - C2D]: iot-hub-devguide-messaging.md
 
 [Руководство разработчика для Центра Интернета вещей]: iot-hub-devguide.md
-[Начало работы с Центром Интернета вещей]: iot-hub-csharp-csharp-getstarted.md
+[Начало работы с Центром Интернета вещей]: quickstart-send-telemetry-dotnet.md
 [lnk-free-trial]: http://azure.microsoft.com/pricing/free-trial/
 [Акселераторы решений для удаленного мониторинга Интернета вещей Azure]: https://docs.microsoft.com/azure/iot-suite/
 [Пакеты SDK для устройств Azure IoT]: iot-hub-devguide-sdks.md

@@ -9,12 +9,12 @@ ms.devlang: javascript
 ms.topic: conceptual
 ms.date: 06/16/2017
 ms.author: dobett
-ms.openlocfilehash: 640a7740e3451a8bd07fdea6a82af2f5cae4c25f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 61b1dd31039df0db777e7e35d849889047a6588d
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34637469"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186688"
 ---
 # <a name="send-cloud-to-device-messages-with-iot-hub-node"></a>Отправка сообщений из облака на устройства с помощью Центра Интернета вещей (Node)
 [!INCLUDE [iot-hub-selector-c2d](../../includes/iot-hub-selector-c2d.md)]
@@ -187,7 +187,7 @@ ms.locfileid: "34637469"
 
 <!-- Links -->
 
-[Начало работы с Центром Интернета вещей]: iot-hub-node-node-getstarted.md
+[Начало работы с Центром Интернета вещей]: quickstart-send-telemetry-node.md
 [IoT Hub developer guide - C2D]: iot-hub-devguide-messaging.md
 [Руководство разработчика для Центра Интернета вещей]: iot-hub-devguide.md
 [Центре разработчика для Центра Интернета вещей Azure]: http://azure.microsoft.com/develop/iot

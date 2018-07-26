@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: 33566bd31f320ccc21f32a256d96d89ee25198bb
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 8d8835bd97b489a730a040e86748c668963c7196
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37088460"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39187729"
 ---
 # <a name="create-a-new-simulated-device"></a>Создание имитированного устройства
 
@@ -71,7 +71,7 @@ ms.locfileid: "37088460"
 
 В этом руководстве показано, как использовать симулятор устройств с акселератором решения для удаленного мониторинга:
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 >[!div class="checklist"]
 > * создавать тип устройства;
@@ -83,11 +83,11 @@ ms.locfileid: "37088460"
 
 >[!VIDEO https://channel9.msdn.com/Shows/Internet-of-Things-Show/Part-38-Customizing-Azure-IoT-Suite-solution-and-connect-a-real-device/Player]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить это руководство, требуется:
 
-* Развернутый экземпляр решения для удаленного мониторинга в подписке Azure. Если решение для удаленного мониторинга еще не развернуто, выполните инструкции по [развертыванию акселератора решений для удаленного мониторинга](../iot-accelerators/iot-accelerators-remote-monitoring-deploy.md).
+* Развернутый экземпляр решения для удаленного мониторинга в подписке Azure. Если решение для удаленного мониторинга еще не развернуто, выполните инструкции по [развертыванию акселератора решений для удаленного мониторинга](../iot-accelerators/quickstart-remote-monitoring-deploy.md).
 
 * Visual Studio 2017. Если вы не установили Visual Studio 2017, вы можете скачать бесплатный выпуск [Visual Studio Community Edition](https://www.visualstudio.com/free-developer-offers/).
 

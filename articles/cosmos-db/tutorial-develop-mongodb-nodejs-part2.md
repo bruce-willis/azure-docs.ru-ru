@@ -2,7 +2,7 @@
 title: Руководство по MongoDB, Angular и Node — часть 2 | Документация Майкрософт
 description: Часть 2 серии руководств по созданию приложения MongoDB в Azure Cosmos DB с помощью Angular и Node и тех же API, которые используются для MongoDB.
 services: cosmos-db
-author: SnehaGunda
+author: johnpapa
 manager: kfile
 editor: ''
 ms.service: cosmos-db
@@ -10,14 +10,14 @@ ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 09/05/2017
-ms.author: sngun
+ms.author: john.papa
 ms.custom: mvc
-ms.openlocfilehash: b35f003c18e19eafd3dfa9988409ceacb44e3bc4
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: e70c00bcfed3785a06c4b2cd5b7e5944bd01b9cc
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798072"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247550"
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-2-create-a-nodejs-express-app-with-the-angular-cli"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB. Часть 2. Создание приложения Node.js Express с помощью Angular CLI 
 
@@ -35,7 +35,7 @@ ms.locfileid: "34798072"
 
 > [!VIDEO https://www.youtube.com/embed/lIwJIYcGSUg]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начинать работу с этой частью руководства, обязательно просмотрите [вводный видеоролик](tutorial-develop-mongodb-nodejs.md).
 
@@ -118,10 +118,10 @@ ms.locfileid: "34798072"
 
    app.use(bodyParser.json());
    app.use(bodyParser.urlencoded({ extended: false }));
-   app.use(express.static(path.join(root, 'dist')));
+   app.use(express.static(path.join(root, 'dist/angular-cosmosdb')));
    app.use('/api', routes);
    app.get('*', (req, res) => {
-     res.sendFile('dist/index.html', {root});
+     res.sendFile('dist/angular-cosmosdb/index.html', {root});
    });
 
    app.listen(port, () => console.log(`API running on localhost:${port}`));
