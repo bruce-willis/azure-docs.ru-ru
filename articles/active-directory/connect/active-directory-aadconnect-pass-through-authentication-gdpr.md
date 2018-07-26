@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/21/2018
+ms.date: 07/23/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: f53f8ffcf8354d35fa552f099302456fa5226ca8
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: b785b23b41981efeb7fe160a18dc0c3c38f3772f
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37915883"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215396"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
 
@@ -75,7 +75,7 @@ Foreach ($file in $Files) {
 Следует регулярно проверять содержимое каталога **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\** и очищать его каждые 48 часов. 
 
 >[!IMPORTANT]
->Если запущена служба агента аутентификации, вы не сможете удалить текущий файл журнала в этой папке. Остановите службу и повторите попытку. Чтобы избежать ошибок со входом пользователей, следует заранее настроить [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability) для сквозной аутентификации.
+>Если запущена служба агента аутентификации, вы не сможете удалить текущий файл журнала в этой папке. Остановите службу и повторите попытку. Чтобы избежать ошибок со входом пользователей, следует заранее настроить [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability) для сквозной аутентификации.
 
 Вы можете просмотреть и удалить эти файлы с помощью проводника Windows или использовать приведенный ниже сценарий.
 
