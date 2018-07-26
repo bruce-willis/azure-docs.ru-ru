@@ -79,7 +79,7 @@ Service Fabric позволяет создавать кластеры Service Fa
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Create an Azure Service Fabric cluster on-premises or in the cloud](service-fabric-cluster-creation-for-windows-server.md)
+* Создание кластера на основе виртуальных машин или компьютеров под управлением Windows Server: [Создание кластера Azure Service Fabric в локальной или облачной средах](service-fabric-cluster-creation-for-windows-server.md)
 * Создание кластера на основе виртуальных машин или компьютеров под управлением Linux: [Создание кластера Linux](service-fabric-cluster-creation-via-portal.md).
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)
 
