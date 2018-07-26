@@ -9,11 +9,11 @@ ms.date: 02/20/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: b9484336add0719749e9f0af56bdd70fa3906ef5
-ms.sourcegitcommit: 12fa5f8018d4f34077d5bab323ce7c919e51ce47
+ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2018
-ms.locfileid: "29956217"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38752665"
 ---
 Чтобы добавить два тега в группу ресурсов, используйте команду [az group create](/cli/azure/group#az_group_update):
 

@@ -47,7 +47,7 @@ ms.locfileid: "34195902"
 2. В разделе **Управление процессами** выберите **Модули Runbook**, чтобы открыть список модулей.
 3. Создайте модуль runbook. Для этого нажмите кнопку **Добавить Runbook** и выберите **Создать новый Runbook**.
 4. Присвойте модулю Runbook имя *MyFirstRunbook-Graphical*.
-5. В этом примере создается [графический модуль runbook](automation-graphical-authoring-intro.md), поэтому в поле **	Тип Runbook** выберите значение **Графический**.<br> ![Новый Runbook](media/automation-first-runbook-graphical/create-new-runbook.png)<br>
+5. В этом примере создается [графический модуль runbook](automation-graphical-authoring-intro.md), поэтому в поле **Тип Runbook** выберите значение **Графический**.<br> ![Новый Runbook](media/automation-first-runbook-graphical/create-new-runbook.png)<br>
 6. Щелкните **Создать** , чтобы создать модуль Runbook и открыть графический редактор.
 
 ## <a name="add-activities"></a>Добавление действий

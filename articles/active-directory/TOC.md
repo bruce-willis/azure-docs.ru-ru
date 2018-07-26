@@ -46,6 +46,7 @@
 ## Управление пользователями
 ### [Добавление новых пользователей в Azure AD](fundamentals/add-users-azure-active-directory.md)
 ### [Управление профилями пользователей](fundamentals/active-directory-users-profile-azure-portal.md)
+### [Сброс паролей пользователей](fundamentals/active-directory-users-reset-password-azure-portal.md)
 ### [Совместное использование учетных записей](active-directory-sharing-accounts.md)
 ### [Назначение пользователям ролей администратора](fundamentals/active-directory-users-assign-role-azure-portal.md)
 ### [Восстановление удаленного пользователя](fundamentals/active-directory-users-restore.md)
@@ -113,26 +114,32 @@
 ### [Пользователи под угрозой](active-directory-reporting-security-user-at-risk.md)
 ### [Вход, представляющий риск](active-directory-reporting-security-risky-sign-ins.md)
 ### [События риска](active-directory-reporting-risk-events.md)
+### [Мониторинг журналов с помощью Azure Monitor](reporting-azure-monitor-diagnostics-overview.md)
 ### [Часто задаваемые вопросы](active-directory-reporting-faq.md)
+
 ### Задачи
 #### [Настройка именованных расположений](active-directory-named-locations.md)
 #### [Поиск отчетов об активности](active-directory-reporting-migration.md)
-#### [Использование пакета содержимого Azure Active Directory Power BI](active-directory-reporting-power-bi-content-pack-how-to.md)
+#### [Использование пакета содержимого Power BI для Azure AD](active-directory-reporting-power-bi-content-pack-how-to.md)
 #### [Применение защитных мер к пользователям, находящимся в группе риска](active-directory-report-security-user-at-risk-remediation.md)
+#### [Перенаправление журналов действий в концентратор событий Azure](reporting-azure-monitor-diagnostics-azure-event-hub.md)
+#### [Архивация журналов действий в учетной записи хранения Azure](reporting-azure-monitor-diagnostics-azure-storage-account.md)
+#### [Интеграция журналов действий со Splunk с помощью Azure Monitor](reporting-azure-monitor-diagnostics-splunk-integration.md)
+
 ### Справочные материалы
 #### [Сохранение](active-directory-reporting-retention.md)
 #### [Задержки](active-directory-reporting-latencies-azure-portal.md)
 #### [Справочные материалы по действиям аудита](active-directory-reporting-activity-audit-reference.md)
 #### [Коды ошибок входа в систему](active-directory-reporting-activity-sign-ins-errors.md)
 #### [Многофакторная проверка подлинности](active-directory-reporting-activity-sign-ins-mfa.md)
-
+#### [Интерпретация схемы журнала аудита в Azure Monitor](reporting-azure-monitor-diagnostics-audit-log-schema.md)
+#### [Интерпретация схемы журнала аудита событий входа в систему в Azure Monitor](reporting-azure-monitor-diagnostics-sign-in-log-schema.md)
 
 ### Устранение неполадок
 #### [Отсутствующие данные аудита](active-directory-reporting-troubleshoot-missing-audit-data.md)
 #### [Отсутствующие данные в файлах для скачивания](active-directory-reporting-troubleshoot-missing-data-download.md)
-#### [Ошибки пакета содержимого журналов действий Azure Active Directory](active-directory-reporting-troubleshoot-content-pack.md)
-#### [Ошибки в API отчетов Azure Active Directory](active-directory-reporting-troubleshoot-graph-api.md)
-
+#### [Ошибки пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory](active-directory-reporting-troubleshoot-
+#### [Ошибки в API отчетов Azure AD](active-directory-reporting-troubleshoot-graph-api.md)
 
 ### [Программный доступ](active-directory-reporting-api-getting-started-azure-portal.md)
 #### [Предварительные требования](active-directory-reporting-api-prerequisites-azure-portal.md)
@@ -140,13 +147,11 @@
 #### [Примеры входа](active-directory-reporting-api-sign-in-activity-samples.md)
 #### [Использование сертификатов](active-directory-reporting-api-with-certificates.md)
 
-## Управление паролями (active-directory/authentication/concept-sspr-howitworks.md)
+## [Управление паролями](authentication/concept-sspr-howitworks.md)
 ### Документы пользователя
 #### [Сброс или изменение пароля](user-help/active-directory-passwords-update-your-own-password.md)
-#### [Рекомендации по паролям](active-directory-secure-passwords.md)
 #### [Регистрация для самостоятельного сброса пароля](user-help/active-directory-passwords-reset-register.md)
-### ИТ-администрирование. Сброс паролей
-#### [портал Azure](fundamentals/active-directory-users-reset-password-azure-portal.md)
+
 
 ## Управление устройствами
 ### [Введение](device-management-introduction.md)
