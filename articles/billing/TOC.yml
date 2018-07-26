@@ -113,7 +113,7 @@
       href: ../azure-supportability/how-to-create-azure-support-request.md
 - name: Примеры
   items:
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       items:
         - name: Просмотр корпоративных затрат
           href: billing-review-enterprise-billing.md
@@ -131,6 +131,9 @@
   items:
     - name: Сценарии автоматизации выставления счетов
       href: billing-cost-management-automation-scenarios.md
+      items:
+        - name: Управление затратами с помощью API управления бюждетом Azure
+          href: billing-cost-management-budget-scenario.md
     - name: Общие сведения об API выставления счетов Azure
       href: billing-usage-rate-card-overview.md
       items:

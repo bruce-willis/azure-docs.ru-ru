@@ -30,6 +30,8 @@
   items:
     - name: Маршрутизация сообщений
       href: tutorial-routing.md
+    - name: Выполнение перехода на другой ресурс вручную
+      href: tutorial-manual-failover.md
     - name: Настройка устройств
       href: tutorial-device-twins.md
     - name: Управление обновлениями встроенного ПО
@@ -124,19 +126,22 @@
   items:
     - name: Разработка
       items:
-        - name: Использование пакета SDK для устройств Центра Интернета вещей для C
-          href: iot-hub-device-sdk-c-intro.md
+        - name: Использование пакетов SDK для устройств и служб
+          href: iot-hub-devguide-sdks.md
           items:
-            - name: Использование IoTHubClient
-              href: iot-hub-device-sdk-c-iothubclient.md
-            - name: Использование сериализатора
-              href: iot-hub-device-sdk-c-serializer.md
-        - name: Разработка приложений для устройств с ограниченным ресурсами
-          href: iot-hub-devguide-develop-for-constrained-devices.md
-        - name: Разработка приложений для мобильных устройств
-          href: iot-hub-how-to-develop-for-mobile-devices.md
-        - name: Управление подключениями и надежный обмен сообщениями
-          href: iot-hub-reliability-features-in-sdks.md
+            - name: Использование пакета SDK для устройств Центра Интернета вещей для C
+              href: iot-hub-device-sdk-c-intro.md
+              items:
+                - name: Использование IoTHubClient
+                  href: iot-hub-device-sdk-c-iothubclient.md
+                - name: Использование сериализатора
+                  href: iot-hub-device-sdk-c-serializer.md
+            - name: Разработка приложений для устройств с ограниченным ресурсами
+              href: iot-hub-devguide-develop-for-constrained-devices.md
+            - name: Разработка приложений для мобильных устройств
+              href: iot-hub-how-to-develop-for-mobile-devices.md
+            - name: Управление подключениями и надежный обмен сообщениями
+              href: iot-hub-reliability-features-in-sdks.md
         - name: Запрос данных Avro из маршрута концентратора
           href: iot-hub-query-avro-data.md
         - name: Отправка сообщений из облака на устройство

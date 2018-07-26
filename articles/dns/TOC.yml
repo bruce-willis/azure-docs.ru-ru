@@ -45,7 +45,7 @@
       href: ../networking/disaster-recovery-dns-traffic-manager.md
 - name: Практическое руководство
   items:
-    - name: Создание частной настраиваемой зоны и записи DNS с помощью Azure CLI
+    - name: Создание частной зоны и записи DNS с помощью Azure CLI
       href: private-dns-getstarted-cli.md
     - name: Управление зонами DNS
       items:
