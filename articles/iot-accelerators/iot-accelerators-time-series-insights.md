@@ -8,22 +8,22 @@ ms.date: 04/29/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: f16fdfca704b8f8cb175de637ad7f3ef143d3ed7
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 10617c129212d8196897af750c02647f0086c8e5
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38968961"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185896"
 ---
 # <a name="visualize-remote-monitoring-data-with-time-series-insights"></a>Визуализация данных удаленного мониторинга с помощью службы "Аналитика временных рядов"
 
 Оператору может потребоваться расширить готовую визуализацию данных, предоставляемую предварительно настроенным решением для удаленного мониторинга. Наш акселератор решений обеспечивает готовую интеграцию с TSI. В этом практическом руководстве показано, как настроить службу "Аналитика временных рядов" для анализа телеметрии устройства и обнаружения аномалий.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим практическим руководством необходимо следующее:
 
-* [Развертывание предварительно настроенного решения для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy.md)
+* [Развертывание предварительно настроенного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 
 ## <a name="create-a-consumer-group"></a>Создание группы потребителей
 

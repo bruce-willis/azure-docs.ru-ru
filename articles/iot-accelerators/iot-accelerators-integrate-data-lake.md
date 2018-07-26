@@ -8,12 +8,12 @@ ms.date: 04/29/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 5ba9b5534e986be1cbe55043a9acdd981d2ed7fd
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: a918866ff5e206ea4d2dedde2711424924a478fe
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971743"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39188078"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения удаленного мониторинга с Azure Data Lake Store
 
@@ -21,11 +21,11 @@ ms.locfileid: "38971743"
 
 В этом практическом руководстве используется задание Azure Stream Analytics для потоковой передачи данных из Центра Интернета вещей в вашем решении удаленного мониторинга в Azure Data Lake Store.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим практическим руководством необходимо следующее:
 
-* [Развертывание акселератора решения для удаленного мониторинга](iot-accelerators-remote-monitoring-deploy.md)
+* [Развертывание акселератора решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
   * Решение удаленного мониторинга развернет Центр Интернета вещей и задание Azure Stream Analytics, используемые в этой статье, в вашей подписке Azure.
 * [Развернуть Azure Data Lake Store](../data-lake-store/data-lake-store-get-started-portal.md).
   * Data Lake Store следует развернуть в том же регионе, что и решение удаленного мониторинга.

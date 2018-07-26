@@ -8,16 +8,16 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: dobett
-ms.openlocfilehash: a8b5d9e3917c854cb255a35d3bbc901bcce52c24
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: dfe584532efeab1dbc0d2928b7afb0a6695a21ee
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37084536"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39184951"
 ---
 # <a name="remote-monitoring-solution-accelerator-overview"></a>Обзор акселератора решений для удаленного мониторинга
 
-[Акселератор решения](../iot-accelerators/iot-accelerators-what-are-solution-accelerators.md) для удаленного мониторинга — это средство, которое позволяет полностью отслеживать несколько компьютеров в удаленных расположениях. Это решение объединяет основные службы Azure, чтобы обеспечить универсальную реализацию бизнес-сценария. Его можно использовать в качестве отправной точки для собственной реализации и [настроить](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md) в соответствии с потребностями конкретной организации.
+[Акселератор решения](../iot-accelerators/about-iot-accelerators.md) для удаленного мониторинга — это средство, которое позволяет полностью отслеживать несколько компьютеров в удаленных расположениях. Это решение объединяет основные службы Azure, чтобы обеспечить универсальную реализацию бизнес-сценария. Его можно использовать в качестве отправной точки для собственной реализации и [настроить](../iot-accelerators/iot-accelerators-remote-monitoring-customize.md) в соответствии с потребностями конкретной организации.
 
 В этой статье рассматриваются некоторые основные компоненты решения для удаленного мониторинга, чтобы вы смогли представить, как оно работает. Эти знания помогут вам:
 
@@ -27,7 +27,7 @@ ms.locfileid: "37084536"
 
 ## <a name="logical-architecture"></a>Логическая архитектура
 
-На приведенной ниже схеме показаны логические компоненты акселератора решения для удаленного мониторинга, наложенные на [архитектуру Интернета вещей](../iot-accelerators/iot-accelerators-what-is-azure-iot.md):
+На приведенной ниже схеме показаны логические компоненты акселератора решения для удаленного мониторинга, наложенные на [архитектуру Интернета вещей](../iot-fundamentals/iot-introduction.md):
 
 ![Логическая архитектура](./media/iot-accelerators-remote-monitoring-sample-walkthrough/remote-monitoring-architecture.png)
 
@@ -104,7 +104,7 @@ ms.locfileid: "37084536"
 
 Для управления данными телеметрии, правилами и предупреждениями используйте конечную точку RESTful, предоставленную этой микрослужбой.
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранилище
 
 Микрослужба [storage-adapter](https://github.com/Azure/pcs-storage-adapter-dotnet) — это адаптер, который находится перед основной службой хранилища, используемой для акселераторов решений. Этот адаптер обеспечивает сбор данных и хранение пар "ключ-значение".
 

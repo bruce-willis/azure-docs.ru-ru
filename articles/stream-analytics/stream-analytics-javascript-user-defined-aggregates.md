@@ -2,22 +2,22 @@
 title: Определяемые пользователем вычисления JavaScript в Azure Stream Analytics
 description: В этой статье описывается, как выполнять расширенные запросы с помощью определяемых пользователем вычислений JavaScript в Azure Stream Analytics.
 services: stream-analytics
-author: minhe-msft
-ms.author: minhe
-manager: santoshb
-ms.reviewer: jasonh
+author: rodrigoamicrosoft
+ms.author: rodrigoa
+manager: kfile
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
-ms.openlocfilehash: 718109d17309747a3c19f22921e4a316b0b88dc6
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: eb433a322f8077c947fd6db1aaa0e2266a109938
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30907329"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39187060"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates-preview"></a>Пользовательские статистические выражения JavaScript в Azure Stream Analytics (предварительная версия)
-
+ 
 Azure Stream Analytics поддерживает пользовательские статистические выражения (UDA) на языке JavaScript, что позволяет реализовывать сложную бизнес-логику с отслеживанием состояния. Внутри пользовательского статистического выражения предоставляется полный контроль над структурой данных состояния, накоплением состояния, сокращением состояния и вычислением статистических результатов. В этой статье представлены два разных интерфейса пользовательских статистических выражений (UDA) JavaScript, а также инструкции по созданию пользовательского статистического выражения и способы его использования в операциях на основе окна в запросе Stream Analytics.
 
 ## <a name="javascript-user-defined-aggregates"></a>Пользовательские статистические выражения JavaScript

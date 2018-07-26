@@ -9,18 +9,18 @@ ms.component: custom-vision
 ms.topic: article
 ms.date: 05/03/2018
 ms.author: areddish
-ms.openlocfilehash: b946265b431a7dcb16bf99e3bf78e09f2d0a7de3
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: 37bdb9ebf7c74586c728e171a9897903b8ad2ee8
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301018"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213587"
 ---
 # <a name="use-custom-vision-api-to-build-an-object-detection-project-with-python"></a>Применение API пользовательского визуального распознавания для создания на Python проекта обнаружения объектов
 
 Изучите простой скрипт Python, который использует API компьютерного зрения для создания проекта обнаружения объектов. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример с открытым кодом можно применить как шаблон для создания собственного приложения с помощью API Пользовательской службы визуального распознавания.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходимо сделать следующее:
 
@@ -194,7 +194,7 @@ from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint 
 predictor = prediction_endpoint.PredictionEndpoint(prediction_key)
 
 # Open the sample image and get back the prediction results.
-with open("images/test/test_image.jpg", mode="rb") as test_data:
+with open("images/Test/test_od_image.jpg", mode="rb") as test_data:
     results = predictor.predict_image(project.id, test_data, iteration.id)
 
 # Display the results.
@@ -204,7 +204,7 @@ for prediction in results.predictions:
 
 ## <a name="step-7-run-the-example"></a>Шаг 7. Запуск примера
 
-Запустите решение. В консоли будут отображены результаты прогнозирования.
+Запустите решение. В консоли отобразятся результаты прогнозирования.
 
 ```
 python sample.py

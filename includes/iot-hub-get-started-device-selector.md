@@ -1,8 +1,8 @@
 > [!div class="op_single_selector"]
 > * [Веб-симулятор Raspberry Pi](../articles/iot-hub/iot-hub-raspberry-pi-web-simulator-get-started.md)   
-> * [Подключение виртуального устройства к Центру Интернета вещей с помощью .NET](../articles/iot-hub/iot-hub-csharp-csharp-getstarted.md)
-> * [Подключение виртуального устройства к Центру Интернета вещей с помощью Java](../articles/iot-hub/iot-hub-java-java-getstarted.md)
-> * [Подключение виртуального устройства к Центру Интернета вещей с помощью Node](../articles/iot-hub/iot-hub-node-node-getstarted.md)
+> * [Подключение виртуального устройства к Центру Интернета вещей с помощью .NET](../articles/iot-hub/quickstart-send-telemetry-dotnet.md)
+> * [Подключение виртуального устройства к Центру Интернета вещей с помощью Java](../articles/iot-hub/quickstart-send-telemetry-java.md)
+> * [Подключение виртуального устройства к Центру Интернета вещей с помощью Node](../articles/iot-hub/quickstart-send-telemetry-node.md)
 > * [Connect IoT DevKit AZ3166 to Azure IoT Hub in the cloud](../articles/iot-hub/iot-hub-arduino-iot-devkit-az3166-get-started.md) (Подключение набора для разработки решений Интернета вещей AZ3166 к Центру Интернета вещей Azure в облаке)
 > * [Приступая к работе с Raspberry Pi 3 (Node.JS)](../articles/iot-hub/iot-hub-raspberry-pi-kit-node-get-started.md)
 > * [Raspberry Pi с Python](../articles/iot-hub/iot-hub-raspberry-pi-kit-python-get-started.md)

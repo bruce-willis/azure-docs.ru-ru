@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 3ac5c00aa0c617659f7ac5d386003b8bc34aac81
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: c5621d5e16e31104ee28cc521386a5c0ca290a8b
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075565"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39187705"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -86,7 +86,7 @@ ms.locfileid: "39075565"
 
 Вы также можете ознакомиться с другими функциями и возможностями акселераторов решений для Интернета вещей:
 
-* [Обзор возможностей акселератора решений для удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
+* [Обзор возможностей акселератора решений для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Общие сведения об акселераторе решений для диагностического обслуживания](iot-accelerators-predictive-overview.md)
 * [Развертывание акселератора решения "Подключенная фабрика"](quickstart-connected-factory-deploy.md)
 * [Комплексная защита в Интернете вещей](/azure/iot-fundamentals/iot-security-ground-up)

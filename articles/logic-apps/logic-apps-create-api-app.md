@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 5/26/2017
 ms.author: LADocs; jehollan
-ms.openlocfilehash: 3ca55bb0a9f4719bd2229aca626d20c53af9fd1e
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 748070d43c34b501af3455d03429be1f44178b7f
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35299534"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39172023"
 ---
 # <a name="create-custom-apis-that-you-can-call-from-logic-app-workflows"></a>Создание пользовательских API, которые можно вызывать из рабочих процессов приложения логики
 
@@ -43,7 +43,8 @@ API-интерфейсы можно разместить в [службе при
 > * [Java](../app-service/app-service-web-get-started-java.md)
 > * [Node.js](../app-service/app-service-web-get-started-nodejs.md)
 > * [PHP](../app-service/app-service-web-get-started-php.md)
-> * [Python](../app-service/app-service-web-get-started-python.md)
+> * [Python](../app-service/containers/quickstart-python.md)
+> * [Ruby](../app-service/containers/quickstart-ruby.md)
 >
 > Примеры приложений API для приложений логики см. в [репозитории GitHub для Azure Logic Apps](http://github.com/logicappsio) или [блоге](http://aka.ms/logicappsblog).
 

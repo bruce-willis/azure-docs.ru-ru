@@ -4,18 +4,18 @@ description: Развертывание предварительной верс�
 services: active-directory
 ms.service: active-directory
 ms.component: authentication
-ms.topic: article
-ms.date: 06/11/2018
+ms.topic: conceptual
+ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 5065399f161bcaee2f9518236a28f0f5faa0ea5b
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 9c0519181ec03394e7d732a8eb608501d6dd6657
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902033"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39161836"
 ---
 # <a name="preview-deploy-azure-ad-password-protection"></a>Развертывание предварительной версии защиты паролем Azure AD
 

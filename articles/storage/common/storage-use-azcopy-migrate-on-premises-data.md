@@ -10,12 +10,12 @@ ms.devlang: azcopy
 ms.topic: tutorial
 ms.date: 12/14/2017
 ms.author: rogarana
-ms.openlocfilehash: 3f9735a1e5a6973ab1c1c3f575cf3aa345a3a5a4
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 4e2d891705cbe4d51ddc6af6fe178257424220ab
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267449"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205329"
 ---
 #  <a name="migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Миграция локальных данных в службу хранилища Azure с помощью AzCopy
 
@@ -26,7 +26,7 @@ ms.locfileid: "35267449"
 * [AzCopy для Linux](storage-use-azcopy-linux.md) создана на основе платформы .NET Core Framework. Она предназначена для платформы Linux и поддерживает параметры командной строки в стиле POSIX. 
 * [AzCopy для Windows](storage-use-azcopy.md) создана на основе платформы .NET Framework. Она предлагает параметры командной строки в стиле Windows. 
  
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создайте учетную запись хранения. 
@@ -34,7 +34,7 @@ ms.locfileid: "35267449"
 > * изменение данных для целей тестирования;
 > * создание запланированных заданий или задач cron для поиска новых файлов для отправки.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить инструкции из этого руководства, скачайте последнюю версию AzCopy для [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux#download-and-install-azcopy) или [Windows](http://aka.ms/downloadazcopy). 
 
@@ -70,7 +70,7 @@ ms.locfileid: "35267449"
         --recursive
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
-    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey: key /S
+    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S
 ---
 
 Вместо `<key>` и `key` укажите ключ учетной записи. Ключ учетной записи вы можете узнать на портале Azure, выбрав пункт **Ключи доступа** в разделе **Параметры** для учетной записи хранения. Выберите ключ и вставьте его в команду AzCopy. Если указанный контейнер назначения не существует, AzCopy создаст его и передаст в него файл. В качестве исходного пути укажите путь к нужному каталогу данных, а в URL-адресе назначения замените **myaccount** именем учетной записи хранилища.
@@ -91,7 +91,7 @@ ms.locfileid: "35267449"
     --exclude-older
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
-    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey: key /S /XO
+    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S /XO
 ---
 
 ## <a name="create-a-scheduled-task-or-cron-job"></a>Создание запланированной задачи или задания cron 
@@ -104,7 +104,7 @@ ms.locfileid: "35267449"
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
     cd C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
-    AzCopy /Source: C:\myfolder  /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey: key /V /XO /XN >C:\Path\to\logfolder\azcopy%date:~-4,4%%date:~-7,2%%date:~-10,2%%time:~-11,2%%time:~-8,2%%time:~-5,2%.log
+    AzCopy /Source: C:\myfolder  /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /V /XO /XN >C:\Path\to\logfolder\azcopy%date:~-4,4%%date:~-7,2%%date:~-10,2%%time:~-11,2%%time:~-8,2%%time:~-5,2%.log
 ---
 
 AzCopy может выполняться в режиме подробных сведений, если указан параметр `--verbose` (для Linux) или `/V` (для Windows). Вывод перенаправляется в файл журнала. 

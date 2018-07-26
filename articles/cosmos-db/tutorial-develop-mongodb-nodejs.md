@@ -2,7 +2,7 @@
 title: Руководство по MongoDB, Angular и Node для Azure | Документация Майкрософт
 description: Узнайте, как создать в Azure Cosmos DB приложение MongoDB с помощью Angular и Node и тех же API-интерфейсов, которые используются для MongoDB в этой серии руководств с видео.
 services: cosmos-db
-author: SnehaGunda
+author: johnpapa
 manager: kfile
 editor: ''
 ms.service: cosmos-db
@@ -10,14 +10,14 @@ ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 09/05/2017
-ms.author: sngun
+ms.author: john.papa
 ms.custom: mvc
-ms.openlocfilehash: 24470534d9e7c626c99a4992c558efb95552fada
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: bc90b956a3cf27b393d14f3e48efbd00027e5c73
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763227"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247104"
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB 
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/27/2017
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 82ec2b71ee83d2ec697fa44521c103b11976f1ed
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: a30c6a8d02b46656a0d76cf8438bdf0b3361ae91
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264608"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248467"
 ---
 # <a name="get-started-with-roles-permissions-and-security-with-azure-monitor"></a>Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor
 Многим командам необходимо строго регулировать доступ к данным и параметрам мониторинга. Например, если какие-либо участники команды работают исключительно с мониторингом (инженеры службы поддержки, инженеры по разработке и операциям) или вы пользуетесь услугами поставщика управляемых служб, то может потребоваться предоставить им доступ только к данным мониторинга, ограничив возможности для создания, изменения или удаления ресурсов. В этой статье показано, как быстро применить к пользователю в Azure встроенные роли RBAC для мониторинга или создать собственную настраиваемую роль для пользователя, которому нужен ограниченный набор разрешений для мониторинга. Далее в статье рассматриваются вопросы безопасности ресурсов, связанных с Azure Monitor, и способы ограничения доступа к данным, которые они содержат.
@@ -28,7 +28,7 @@ ms.locfileid: "35264608"
 * Просмотр правил генерации оповещений, определенных в интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md).
 * Запрос метрик с помощью [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931930.aspx), [командлетов PowerShell](insights-powershell-samples.md) или [кроссплатформенного интерфейса командной строки](insights-cli-samples.md).
 * Запрос журнала действий с помощью портала, REST API Azure Monitor, командлетов PowerShell или кроссплатформенного интерфейса командной строки.
-* Просмотр [параметров диагностики](monitoring-overview-of-diagnostic-logs.md#resource-diagnostic-settings) для ресурса.
+* Просмотр [параметров диагностики](monitoring-overview-of-diagnostic-logs.md#diagnostic-settings) для ресурса.
 * Просмотр [профиля журнала](monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile) для подписки.
 * Просмотр параметров автомасштабирования.
 * Просмотр действий и параметров оповещений.
@@ -49,7 +49,7 @@ ms.locfileid: "35264608"
 Пользователи, которым назначена роль Monitoring Contributor, могут просматривать все данные мониторинга в подписке и создавать или изменять параметры мониторинга, но не могут изменять какие-либо другие ресурсы. Эта роль включает в себя все разрешения роли Monitoring Reader и подходит для участников команды мониторинга в организации или поставщиков управляемых служб, которым, помимо приведенных выше разрешений, также необходимо иметь следующие возможности.
 
 * Публикация панелей мониторинга для совместного использования.
-* Настройка [параметров диагностики](monitoring-overview-of-diagnostic-logs.md#resource-diagnostic-settings) для ресурса.*
+* Настройка [параметров диагностики](monitoring-overview-of-diagnostic-logs.md#diagnostic-settings) для ресурса.*
 * Настройка [профиля журнала](monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile) для подписки.*
 * Настройка действий и параметров для правил генерации оповещений при помощи интерфейса [оповещений Azure](monitoring-overview-unified-alerts.md).
 * Создание веб-тестов и компонентов Application Insights.

@@ -2,32 +2,32 @@
 title: Автоматическое присваивание меток сущностям с помощью сущности списка, используя Node.js | Документация Майкрософт
 description: Узнайте, как добавить сущность списка, чтобы помочь LUIS присвоить метки вариантам слов или фраз.
 services: cognitive-services
-author: v-geberr
+author: diberry
 titleSuffix: Azure
-manager: kamran.iqbal
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 02/21/2018
-ms.author: v-geberr
-ms.openlocfilehash: e8558ecf4a64dbccef6e6367c1447bdcdb005126
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: diberry
+ms.openlocfilehash: 12a6cfbe7267d3575fbb33978d7ea6e743802d12
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "35380276"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237168"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Использование сущности списка, чтобы увеличить обнаружение сущностей 
 В этом руководстве показано, как использовать [сущность списка](luis-concept-entity-types.md), чтобы увеличить обнаружение сущностей. Сущности списков не обязательно должны быть помечены как они точно соответствуют терминам.  
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 * Создавать сущности списка 
 * Добавлять нормализованные значения и синонимы
 * Проверять идентификацию улучшенной сущности
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 > [!div class="checklist"]
 > * [Node.js](https://nodejs.org) последней версии

@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 227fae2f38189a5b8ed5b6eff359e09bedc8e628
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: e3543c2056934372a2795bd50f340432ceec3b6d
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39071136"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39257952"
 ---
 # <a name="about-the-text-to-speech-api"></a>API преобразования текста в речь
 
@@ -35,7 +35,7 @@ API **преобразования текста в речь** (TTS) службы
 
 ## <a name="voice-support"></a>Поддержка речи
 
-Служба **преобразования текста в речь** Майкрософт предлагает свыше 75 голосов для более чем 45 языков и языковых стандартов. Чтобы использовать эти стандартные голоса, достаточно указать название голоса и еще несколько параметров при вызове REST API службы. Подробные сведения о поддерживаемых голосах см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/supported-languages#text-to-speech). 
+Служба **преобразования текста в речь** Майкрософт предлагает свыше 75 голосов для более чем 45 языков и языковых стандартов. Чтобы использовать эти стандартные голоса, достаточно указать название голоса и еще несколько параметров при вызове REST API службы. Подробные сведения о поддерживаемых голосах см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/speech-service/supported-languages#text-to-speech). 
 
 Если для приложения требуется уникальный голос, можно создать [настраиваемые голоса](how-to-customize-voice-font.md) из собственных образцов речи.
 

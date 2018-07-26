@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: nberdy
-ms.openlocfilehash: 754901bb9c851f66708771346cbb7fe2e42688cd
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b41458f0201c46b99c09d0bfffd219743a36ad50
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34634069"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186761"
 ---
 # <a name="understand-iot-hub-metrics"></a>Общие сведения о метриках Центра Интернета вещей
 Метрики Центра Интернета вещей предоставляют более качественные данные о состоянии ресурсов Интернета вещей Azure в вашей подписке Azure. Метрики Центра Интернета вещей позволяют оценивать общую работоспособность службы Центра Интернета вещей и подключенных к ней устройств. Доступные пользователям статистические данные имеют важное значение, поскольку благодаря им вы знаете, что происходит с центром IoT, и можете устранять основные проблемы без обращения в службу поддержки Azure.
@@ -100,7 +100,7 @@ ms.locfileid: "34634069"
 [1]: media/iot-hub-metrics/enable-metrics-1.png
 [2]: media/iot-hub-metrics/enable-metrics-2.png
 
-[lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
+[lnk-get-started]: quickstart-send-telemetry-dotnet.md
 [lnk-operations-monitoring]: iot-hub-operations-monitoring.md
 [lnk-scaling]: iot-hub-scaling.md
 [lnk-dr]: iot-hub-ha-dr.md

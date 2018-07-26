@@ -6,8 +6,6 @@
       href: azure-stack-poc.md
     - name: Заметки о выпуске
       items:
-        - name: Обновление 1807
-          href: azure-stack-update-1807.md
         - name: Обновление 1805
           href: azure-stack-update-1805.md
         - name: Обновление 1804
@@ -140,8 +138,6 @@
               href: azure-stack-manage-storage-shares.md
             - name: Управление объемом физической памяти
               href: azure-stack-manage-storage-physical-memory-capacity.md
-            - name: Добавление узлов единиц масштабирования
-              href: azure-stack-add-scale-node.md
         - name: Замена оборудования
           items:
             - name: Действия с узлами

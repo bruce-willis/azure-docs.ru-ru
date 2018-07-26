@@ -2,19 +2,19 @@
 title: Создание меток для предлагаемых фрагментов речи в LUIS | Документы Майкрософт
 description: Службу Language Understanding (LUIS) можно использовать для создания меток для предлагаемых фрагментов речи и повышения эффективности активного машинного обучения.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/08/2017
-ms.author: v-geberr
-ms.openlocfilehash: c695aed4bc6d2553c719f8dfe664634e2f3b2613
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.author: diberry
+ms.openlocfilehash: 5e195b8ef5aeb35b73c22438980fe2b2e3856977
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37966839"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224557"
 ---
 # <a name="review-endpoint-utterances"></a>Просмотр фрагментов речи конечной точки
 
@@ -79,4 +79,4 @@ ms.locfileid: "37966839"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы убедиться в повышении производительности после установки меток для предлагаемых фрагментов речи, можно перейти к консоли тестирования, выбрав **Тестирование** на верхней панели. Инструкции по тестированию приложения с помощью консоли тестирования см. в разделе [Обучение и тестирование приложения](interactive-test.md).
+Чтобы убедиться в повышении производительности после установки меток для предлагаемых фрагментов речи, можно перейти к консоли тестирования, выбрав **Тестирование** на верхней панели. Инструкции по тестированию приложения с помощью консоли тестирования см. в разделе [Обучение и тестирование приложения](luis-interactive-test.md).

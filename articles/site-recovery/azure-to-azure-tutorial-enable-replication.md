@@ -9,18 +9,18 @@ ms.topic: tutorial
 ms.date: 07/06/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 18b66cb9c0690df7b95cb36438ba802cb7432af6
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: aaed3dd5a2a7b32d24aa8b19dab870c28e6f58ec
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37918763"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216188"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms-to-a-secondary-azure-region"></a>Настройка аварийного восстановления виртуальных машин Azure в дополнительный регион Azure
 
 Служба [Azure Site Recovery](site-recovery-overview.md) помогает реализовать стратегию аварийного восстановления за счет управления процессами репликации, отработки отказа и восстановления локальных компьютеров и виртуальных машин Azure.
 
-В этом учебнике содержатся сведения о настройке аварийного восстановления виртуальных машин Azure в дополнительном регионе Azure. Из этого руководства вы узнаете, как выполнять такие задачи:
+В этом учебнике содержатся сведения о настройке аварийного восстановления виртуальных машин Azure в дополнительном регионе Azure. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание хранилища служб восстановления
@@ -29,7 +29,7 @@ ms.locfileid: "37918763"
 > * Включение репликации для виртуальных машин.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 

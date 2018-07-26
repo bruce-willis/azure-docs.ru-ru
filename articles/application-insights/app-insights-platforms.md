@@ -10,14 +10,16 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 09/01/2016
-ms.author: mbullwin; olegan
-ms.openlocfilehash: 8aec8567fd15865887a5fe5ded8b45cad0290bf9
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.reviewer: olegan
+ms.author: mbullwin
+ms.openlocfilehash: 4f474ad234c80a0dcb5a9f704a263a97e7df0cc1
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39174235"
 ---
 # <a name="developer-analytics-languages-platforms-and-integrations"></a>Аналитические средства для разработчиков: языки программирования, платформы, интеграция
 Ниже перечислены известные нам реализации [Application Insights](app-insights-overview.md) , в том числе реализации от сторонних производителей.
@@ -62,7 +64,7 @@ ms.lasthandoff: 05/10/2018
 * [Другие варианты](#projects)
 
 ## <a name="logging-frameworks"></a>Платформы ведения журналов
-* [Log4Net, NLog или System.Diagnostics.Trace](app-insights-diagnostic-search.md)
+* [Log4Net, NLog или System.Diagnostics.Trace](app-insights-asp-net-trace-logs.md)
 * [Java, Log4J или Logback](app-insights-java-trace-logs.md)
 * [Semantic Logging (SLAB)](https://github.com/fidmor89/SLAB_AppInsights) — интеграция с [Semantic Logging Application Block](https://msdn.microsoft.com/library/dn440729.aspx)
 * [Облачное нагрузочное тестирование](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/30/getting-application-insights-counters-with-cloud-based-load-testing.aspx)

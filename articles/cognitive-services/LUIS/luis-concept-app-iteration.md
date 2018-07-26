@@ -2,19 +2,19 @@
 title: Общие сведения об итеративной разработке приложений LUIS в Azure | Документы Майкрософт
 description: Для приложений LUIS требуется режим итеративной разработки, что позволит обучить LUIS эффективно извлекать подходящие данные.
 services: cognitive-services
-author: v-geberr
-manager: kamran.iqbal
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 02/12/2018
-ms.author: v-geberr
-ms.openlocfilehash: e0467e4c41209c937f548edc0c40c05cae588f4c
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.author: diberry
+ms.openlocfilehash: 947350a1d0dcfb0caaca654768c3660fc1b146e1
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37888254"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225447"
 ---
 # <a name="authoring-cycle"></a>Цикл разработки
 LUIS лучше всего обучается на итеративных циклах изменения моделей, примерах высказываний, публикации содержимого и сборе данных из запросов к конечным точкам. 

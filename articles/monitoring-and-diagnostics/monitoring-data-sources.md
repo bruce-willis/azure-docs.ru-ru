@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 78b3288cf4973efa2684252581000d0e4fc56cae
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 3820a42e44896f75a2191b0426f2afa5a40461d7
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37083004"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248039"
 ---
 # <a name="consume-monitoring-data-from-azure"></a>Использование данных мониторинга из Azure
 
@@ -23,13 +23,13 @@ ms.locfileid: "37083004"
 
 | Тип данных | Категория | Поддерживаемые службы | Варианты доступа |
 | --- | --- | --- | --- |
-| Метрики Azure Monitor уровня платформы | Метрики | [Список доступен здесь](monitoring-supported-metrics.md). | <ul><li>**REST API:** [API метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metrics).</li><li>**Большой двоичный объект службы хранилища или концентратор событий:** [параметры диагностики](monitoring-overview-of-diagnostic-logs.md#resource-diagnostic-settings).</li></ul> |
+| Метрики Azure Monitor уровня платформы | Метрики | [Список доступен здесь](monitoring-supported-metrics.md). | <ul><li>**REST API:** [API метрик Azure Monitor](https://docs.microsoft.com/rest/api/monitor/metrics).</li><li>**Большой двоичный объект службы хранилища или концентратор событий:** [параметры диагностики](monitoring-overview-of-diagnostic-logs.md#diagnostic-settings).</li></ul> |
 | Метрики гостевой ОС (например, счетчики производительности) | Метрики | Виртуальные машины [Windows](../virtual-machines-dotnet-diagnostics.md) и Linux (версии 2), [облачные службы](../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md), [Service Fabric](../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). | <ul><li>**Таблица или большой двоичный объект службы хранилища:** [система диагностики Azure для Windows или Linux](../cloud-services/cloud-services-dotnet-diagnostics-storage.md).</li><li>**Концентратор событий:** [система диагностики Microsoft Azure](../event-hubs/event-hubs-streaming-azure-diags-data.md).</li></ul> |
 | Пользовательские метрики или метрики приложения | Метрики | Любое приложение, инструментированное с помощью Application Insights. | <ul><li>**REST API:** [REST API Application Insights](https://dev.applicationinsights.io/reference).</li></ul> |
 | Метрики хранения | Метрики | Хранилище Azure | <ul><li>**Таблица службы хранилища:** [аналитика службы хранилища](https://docs.microsoft.com/rest/api/storageservices/storage-analytics).</li></ul> |
 | Данные об оплате | Метрики | Все службы Azure. | <ul><li>**REST API:** [использование ресурсов Azure и интерфейсы API RateCard](../billing/billing-usage-rate-card-overview.md)</li></ul> |
 | Журнал действий | События | Все службы Azure. | <ul><li>**REST API:** [API событий Azure Monitor](https://docs.microsoft.com/en-us/rest/api/monitor/eventcategories).</li><li>**Большой двоичный объект службы хранилища или концентратор событий:** [профиль журнала](monitoring-overview-activity-logs.md#export-the-activity-log-with-a-log-profile).</li></ul> |
-| Журналы диагностики Azure Monitor | События | [Список доступен здесь](monitoring-diagnostic-logs-schema.md). | <ul><li>**Большой двоичный объект службы хранилища или концентратор событий:** [параметры диагностики](monitoring-overview-of-diagnostic-logs.md#resource-diagnostic-settings).</li></ul> |
+| Журналы диагностики Azure Monitor | События | [Список доступен здесь](monitoring-diagnostic-logs-schema.md). | <ul><li>**Большой двоичный объект службы хранилища или концентратор событий:** [параметры диагностики](monitoring-overview-of-diagnostic-logs.md#diagnostic-settings).</li></ul> |
 | Журналы гостевой ОС (например, IIS, трассировка событий Windows, системные журналы) | События | Виртуальные машины [Windows](../virtual-machines-dotnet-diagnostics.md) и Linux (версии 2), [облачные службы](../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md), [Service Fabric](../service-fabric/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md). | <ul><li>**Таблица или большой двоичный объект службы хранилища:** [система диагностики Azure для Windows или Linux](../cloud-services/cloud-services-dotnet-diagnostics-storage.md).</li><li>**Концентратор событий:** [система диагностики Microsoft Azure](../event-hubs/event-hubs-streaming-azure-diags-data.md).</li></ul> |
 | Журналы службы приложений | События | Службы приложений | <ul><li>**Хранилище файлов, таблиц или BLOB-объектов:** [диагностика веб-приложений](../app-service/web-sites-enable-diagnostic-log.md).</li></ul> |
 | Журналы хранилища | События | Хранилище Azure | <ul><li>**Таблица службы хранилища:** [аналитика службы хранилища](https://docs.microsoft.com/rest/api/storageservices/storage-analytics).</li></ul> |

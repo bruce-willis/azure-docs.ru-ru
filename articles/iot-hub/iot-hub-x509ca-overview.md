@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 09/18/2017
 ms.author: eustacea
-ms.openlocfilehash: eebaf679ada9da554f8582ad89db4e7491dcc134
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: b5028010953b9dbe2386c30e6fa05cc4a94cb971
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39004359"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185498"
 ---
 # <a name="device-authentication-using-x509-ca-certificates"></a>Проверка подлинности устройства с помощью сертификатов ЦС X.509
 
@@ -30,7 +30,7 @@ ms.locfileid: "39004359"
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-Чтобы использовать возможность ЦС X.509, требуется учетная запись Центра Интернета вещей.  [Узнайте, как создать экземпляр Центра Интернета вещей](iot-hub-csharp-csharp-getstarted.md), если он еще не создан.
+Чтобы использовать возможность ЦС X.509, требуется учетная запись Центра Интернета вещей.  [Узнайте, как создать экземпляр Центра Интернета вещей](quickstart-send-telemetry-dotnet.md), если он еще не создан.
 
 ## <a name="how-to-get-an-x509-ca-certificate"></a>Как получить сертификат ЦС X.509
 

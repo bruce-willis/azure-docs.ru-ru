@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/05/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: e64d272695c4e47c972df040d1c1c2a63bf3dddd
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 54034b9a851fc6f06f97be9cfd5f261465bad455
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31788200"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248268"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
@@ -101,7 +101,7 @@ ms.locfileid: "31788200"
 
     ![Диагностика пакетной службы](media/batch-diagnostics/diagnostics-portal.png)
 
-Вот еще несколько методов, которые позволяют включить сбор данных журналов: настройка параметров диагностики для Azure Monitor на портале, использование [шаблона Resource Manager](../monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template.md), а также использование Azure PowerShell или Azure CLI. См. дополнительные сведения о [сборе и использовании данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#how-to-enable-collection-of-resource-diagnostic-logs).
+Вот еще несколько методов, которые позволяют включить сбор данных журналов: настройка параметров диагностики для Azure Monitor на портале, использование [шаблона Resource Manager](../monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template.md), а также использование Azure PowerShell или Azure CLI. См. дополнительные сведения о [сборе и использовании данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#how-to-enable-collection-of-diagnostic-logs).
 
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Доступ к журналам диагностики в хранилище

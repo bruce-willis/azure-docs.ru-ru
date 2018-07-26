@@ -98,7 +98,7 @@
         - name: Часто задаваемые вопросы о преобразовании текста в речь
           href: faq-text-to-speech.md
         - name: Часто задаваемые вопросы о средстве перевода
-          href: 'https://www.microsoft.com/en-us/translator/faq.aspx'
+          href: 'https://www.microsoft.com/translator/faq.aspx'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
     - name: UserVoice

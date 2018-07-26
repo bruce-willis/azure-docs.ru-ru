@@ -16,11 +16,11 @@ ms.date: 4/20/2017
 ms.author: mabrigg
 ms.reviewer: hectorl
 ms.openlocfilehash: 608f3043e0e4b851820274ca743cbc44d1c8c0f1
-ms.sourcegitcommit: fc64acba9d9b9784e3662327414e5fe7bd3e972e
+ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34075848"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242909"
 ---
 # <a name="infrastructure-backup-service-reference"></a>Справочник по службе резервного копирования инфраструктуры
 

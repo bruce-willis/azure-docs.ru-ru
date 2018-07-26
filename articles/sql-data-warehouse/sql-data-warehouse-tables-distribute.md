@@ -10,12 +10,12 @@ ms.component: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: d65ca91fc4cffa53adf3a7c56c7919e46c5037d9
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 99a063abb3edea75b14fbcf67a889c5ba435daf3
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31526259"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39258054"
 ---
 # <a name="guidance-for-designing-distributed-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure
 Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
@@ -174,7 +174,7 @@ order by two_part_name, row_count
 Так как невозможно изменить столбец распределения для существующей таблицы, общепринятым способом устранения неравномерного распределения данных является повторное создание таблицы с другим столбцом распределения.  
 
 ### <a name="re-create-the-table-with-a-new-distribution-column"></a>Повторное создание таблицы с новым столбцом распределения
-В примере ниже для повторного создания таблицы с другим столбцом хэш-распределения используется инструкция [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md).
+В примере ниже для повторного создания таблицы с другим столбцом хэш-распределения используется инструкция [CREATE TABLE AS SELECT](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=aps-pdw-2016-au7).
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales_CustomerKey]

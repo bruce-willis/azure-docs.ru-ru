@@ -3,7 +3,7 @@ title: Основные сведения об обратной зоне DNS в A
 description: Узнайте, как работает обратная зона DNS и как ее можно использовать в Azure.
 services: dns
 documentationcenter: na
-author: KumudD
+author: vhorne
 manager: jeconnoc
 ms.service: dns
 ms.devlang: na
@@ -11,13 +11,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
-ms.author: kumud
-ms.openlocfilehash: 1ce14360d0f62a01172a8003e1d78a45885166f6
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.author: victorh
+ms.openlocfilehash: fa3798a35804998936e0ac166fceff02b01231a0
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32772404"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171516"
 ---
 # <a name="overview-of-reverse-dns-and-support-in-azure"></a>Основные сведения об обратной зоне DNS и ее поддержке в Azure
 

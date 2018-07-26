@@ -4,18 +4,18 @@ description: Это страница Многофакторной идентиф
 services: multi-factor-authentication
 ms.service: active-directory
 ms.component: authentication
-ms.topic: get-started-article
-ms.date: 06/27/2017
+ms.topic: conceptual
+ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
-ms.reviewer: richagi
-ms.openlocfilehash: ef090b51141e8d77f23472058f9c3a8d096ca171
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.reviewer: michmcla
+ms.openlocfilehash: f5511486650d538bc136449c32babfd88efab86a
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33867465"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39159640"
 ---
 # <a name="remote-desktop-gateway-and-azure-multi-factor-authentication-server-using-radius"></a>Шлюз удаленных рабочих столов и сервер Многофакторной идентификации, использующие проверку подлинности RADIUS
 
@@ -25,7 +25,7 @@ ms.locfileid: "33867465"
 
 Установите сервер Многофакторной идентификации на отдельном сервере, который будет передавать RADIUS-запрос обратно в службу NPS на сервере шлюза удаленных рабочих столов. Когда NPS проверит имя пользователя и пароль, он вернет ответ на сервер Многофакторной идентификации. Затем сервер MFA выполнит второй этап аутентификации и вернет результат в шлюз.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Присоединенный к домену сервер Azure MFA. Если у вас еще не установлен этот сервер, выполните действия, описанные в статье [Приступая к работе с сервером Многофакторной идентификации Azure](howto-mfaserver-deploy.md).
 - Шлюз удаленных рабочих столов, который выполняет проверку подлинности с помощью служб политик сети.

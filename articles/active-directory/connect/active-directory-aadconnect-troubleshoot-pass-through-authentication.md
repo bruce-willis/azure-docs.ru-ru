@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/05/2018
+ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2e7f3b0f01dbd6656413c233fcf64c46963d00ef
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 6cd6b139699b38a06a8e3f9fce5eb6e24fe24654
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917376"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214181"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -97,7 +97,7 @@ ms.locfileid: "37917376"
 
 Если вы включили сквозную аутентификацию на клиенте и пытаетесь удалить Azure AD Connect, то появится следующее предупреждение: "Пользователи не смогут войти в Azure AD, если на других серверах не установлены другие агенты сквозной аутентификации".
 
-Убедитесь, что у вас [высокодоступная](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability) конфигурация, прежде чем удалять Azure AD Connect, чтобы избежать нарушения входа пользователей.
+Убедитесь, что у вас [высокодоступная](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability) конфигурация, прежде чем удалять Azure AD Connect, чтобы избежать нарушения входа пользователей.
 
 ## <a name="issues-with-enabling-the-feature"></a>Проблемы с включением функции
 
@@ -112,18 +112,6 @@ ms.locfileid: "37917376"
 ### <a name="enabling-the-feature-failed-due-to-token-or-account-authorization-errors"></a>Не удалось включить функцию из-за ошибок проверки подлинности учетной записи или токена
 
 При включении функции вы должны использовать только облачную учетную запись глобального администратора. Существует известная проблема с учетными записями глобального администратора с поддержкой MFA. В качестве обходного решения временно отключите Многофакторную идентификацию (только чтобы завершить операции).
-
-## <a name="exchange-activesync-configuration-issues"></a>Проблемы с конфигурацией Exchange ActiveSync
-
-Ниже приведены распространенные проблемы, возникающие при настройке поддержки Exchange ActiveSync для сквозной аутентификации.
-
-### <a name="exchange-powershell-issue"></a>Проблема Exchange PowerShell
-
-Если вы видите сообщение об ошибке "**Не удается найти параметр, соответствующий имени параметра "PerTenantSwitchToESTSEnabled"\.**" при выполнении команды `Set-OrganizationConfig` Exchange PowerShell, обратитесь в службу поддержки Майкрософт.
-
-### <a name="exchange-activesync-not-working"></a>Exchange ActiveSync не работает
-
-Для вступления конфигурации в силу требуется некоторое время, которое зависит от вашей среды. Если такая ситуация повторяется в течение продолжительного времени, обратитесь в службу поддержки Майкрософт.
 
 ## <a name="collecting-pass-through-authentication-agent-logs"></a>Сбор журналов агента сквозной аутентификации
 

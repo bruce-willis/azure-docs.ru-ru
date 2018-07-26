@@ -3,19 +3,19 @@ title: Добавление примеров высказываний в при�
 titleSuffix: Azure
 description: Дополнительные сведения о добавлении высказываний в приложения Интеллектуальной службы распознавания речи (LUIS).
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
-ms.author: v-geberr
-ms.openlocfilehash: 80ccedc7299836cae689edd8a277a7c6d23befa7
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.author: diberry
+ms.openlocfilehash: cf6fc131a1ae2ba0a77bdbeda942c9f85aadd189
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345062"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39226293"
 ---
 # <a name="add-example-utterances-and-label-with-entities"></a>Добавление примеров высказываний и меток с сущностями
 

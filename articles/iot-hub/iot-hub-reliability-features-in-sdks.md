@@ -12,12 +12,12 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: a318a1ef8b13b8fcb4f4401ac4d0e45037958d63
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 7717c026b4c09f47159fe62640f9a2eedf409d30
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39127494"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247687"
 ---
 # <a name="how-to-manage-connectivity-and-reliable-messaging-using-azure-iot-hub-device-sdks"></a>Как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK для устройств центра Интернета вещей Azure
 
@@ -111,3 +111,8 @@ ms.locfileid: "39127494"
 - [Пакет SDK для Java](https://github.com/Azure/azure-iot-sdk-java/blob/master/device/iot-device-client/devdoc/requirement_docs/com/microsoft/azure/iothub/retryPolicy.md)
 - [Пакет SDK для Node](https://github.com/Azure/azure-iot-sdk-node/wiki/Connectivity-and-Retries#types-of-errors-and-how-to-detect-them)
 
+## <a name="next-steps"></a>Дополнительная информация
+- [Использование пакетов SDK для устройств и служб](.\iot-hub-devguide-sdks.md)
+- [Использование пакета SDK для устройств Azure IoT для C](.\iot-hub-device-sdk-c-intro.md)
+- [Разработка приложений для устройств с ограниченным ресурсами](.\iot-hub-devguide-develop-for-constrained-devices.md)
+- [Разработка приложений для мобильных устройств](.\iot-hub-how-to-develop-for-mobile-devices.md)

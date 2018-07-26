@@ -3,7 +3,7 @@ title: Примеры Azure CLI. Диспетчер трафика | Докум�
 description: Примеры Azure CLI для диспетчера трафика
 services: traffic-manager
 documentationcenter: traffic-manager
-author: KumudD
+author: vhorne
 manager: jeconnoc
 editor: tysonn
 tags: ''
@@ -14,13 +14,13 @@ ms.topic: sample
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/30/2018
-ms.author: kumud
-ms.openlocfilehash: fabffad1babcc23335b7abdc66ba83d45a4c7ee8
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.author: victorh
+ms.openlocfilehash: c55db29f551999859bb15aa5b4a765e65ceedafd
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32773154"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171047"
 ---
 # <a name="azure-cli-samples-for-traffic-manager"></a>Примеры Azure CLI для диспетчера трафика
 

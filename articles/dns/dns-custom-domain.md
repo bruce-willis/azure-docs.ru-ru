@@ -3,7 +3,7 @@ title: Интеграция Azure DNS с ресурсами Azure | Докуме
 description: Сведения об использовании Azure DNS, а также указание DNS для ресурсов Azure.
 services: dns
 documentationcenter: na
-author: KumudD
+author: vhorne
 manager: jeconnoc
 ms.service: dns
 ms.devlang: na
@@ -11,19 +11,19 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/19/2018
-ms.author: kumud
-ms.openlocfilehash: cbc769cd7356b3057fd2aae295071b04d2e40d91
-ms.sourcegitcommit: 1fbaa2ccda2fb826c74755d42a31835d9d30e05f
+ms.author: victorh
+ms.openlocfilehash: 9c0ccb7c5ccb3eced32ea5bcd9f1961c5ccd2110
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2018
-ms.locfileid: "27994388"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39173849"
 ---
 # <a name="use-azure-dns-to-provide-custom-domain-settings-for-an-azure-service"></a>Использование Azure DNS для указания параметров личного домена для службы Azure
 
 Azure DNS предоставляет DNS для личного домена любому из ресурсов Azure, который поддерживает личные домены или имеет полное доменное имя (FQDN). Например, у вас есть веб-приложение Azure и вы хотите, чтобы пользователи получали к нему доступ, вводя полное доменное имя contoso.com или www.contoso.com. В этой статье описывается настройка службы Azure с Azure DNS для использования личных доменов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать Azure DNS для личного домена, сначала нужно делегировать домен в Azure DNS. Дополнительные сведения о настройке делегирования в серверах имен см. в статье [Делегирование домена в Azure DNS](./dns-delegate-domain-azure-dns.md). После делегирования домена в зону Azure DNS можно настроить необходимые записи DNS.
 

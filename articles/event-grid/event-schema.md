@@ -6,14 +6,14 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 07/06/2018
+ms.date: 07/20/2018
 ms.author: babanisa
-ms.openlocfilehash: 266ddced5f1949fa72508d914f76953101a7aac6
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: f7be7e5f5e51a47b95d39047af9bcf08e463ca34
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902237"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186117"
 ---
 # <a name="azure-event-grid-event-schema"></a>Схема событий службы "Сетка событий Azure"
 
@@ -94,6 +94,7 @@ ms.locfileid: "37902237"
 Дополнительные сведения о свойствах в объекте данных см. в источнике события:
 
 * [Подписки Azure (операции управления)](event-schema-subscriptions.md)
+* [Реестр контейнеров](event-schema-container-registry.md)
 * [Хранилище BLOB-объектов](event-schema-blob-storage.md)
 * [Концентраторы событий](event-schema-event-hubs.md)
 * [Центр Интернета вещей](event-schema-iot-hub.md)

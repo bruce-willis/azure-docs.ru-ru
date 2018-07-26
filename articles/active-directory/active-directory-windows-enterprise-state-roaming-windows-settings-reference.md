@@ -4,23 +4,24 @@ description: Полный список всех параметров, для к�
 services: active-directory
 keywords: enterprise state roaming, облако windows
 documentationcenter: ''
-author: tanning
+author: MarkusVi
 manager: mtillman
 editor: curtand
+ms.component: devices
 ms.assetid: 17cffc3e-2928-4235-91f7-a685bd6bdcbf
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/08/2017
+ms.date: 07/23/2018
 ms.author: markvi
-ms.openlocfilehash: 741b76935b5a6d9b2a6869ef57caa0ac0dc6351a
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 9a06ff345d1bf91efd1abff9960a1a6f9a681dce
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32159083"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39223673"
 ---
 # <a name="windows-10-roaming-settings-reference"></a>Справочник по перемещаемым параметрам в Windows 10
 Ниже приведен полный список всех параметров, для которых в Windows 10 будет выполнено перемещение или резервное копирование. 

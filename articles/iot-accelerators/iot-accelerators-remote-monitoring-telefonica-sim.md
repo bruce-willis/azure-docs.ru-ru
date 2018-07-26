@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 05/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: 8ba187fd82fa6a698905313bfda2802324a9034d
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: c453998eea2a747b2cb608482f0ef9c1ee197ee0
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37097086"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185437"
 ---
 # <a name="integrate-sim-data-in-the-remote-monitoring-solution"></a>Интеграция данных SIM-карты в решении удаленного мониторинга
 
@@ -21,7 +21,7 @@ ms.locfileid: "37097086"
 
 Решение удаленного мониторинга обеспечивает готовую интеграцию с подключением Интернета вещей Telefónica, позволяя клиентам, использующим платформу подключения Интернета вещей, синхронизировать данные о подключении SIM-карт устройств с решениями. Это решение можно расширить для поддержки других поставщиков подключения Интернета вещей через [репозиторий](http://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet) GitHub.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 * интегрирование данных SIM-карты Интернета вещей Telefónica в решение удаленного мониторинга;
 * просмотр телеметрии в реальном времени;
@@ -29,7 +29,7 @@ ms.locfileid: "37097086"
 
 ## <a name="telefnica-iot-integration-setup"></a>Настройка интеграции Интернета вещей Telefónica
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Эта дополнительная функция удаленного мониторинга в настоящее время находится в режиме предварительной версии. Чтобы синхронизировать данные о подключении в решение удаленного мониторинга Azure, выполните такие задачи:
 
@@ -67,7 +67,7 @@ ms.locfileid: "37097086"
 
 Теперь, когда у вас есть представление об интеграции данных SIM-карты в решение удаленного мониторинга Интернета вещей Azure, для ускорителей решений можно выполнить следующие шаги, описанные в руководствах ниже:
 
-* [Обзор возможностей предварительно настроенного решения удаленного мониторинга](iot-accelerators-remote-monitoring-explore.md)
+* [Обзор возможностей предварительно настроенного решения удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
 * [Выполнение расширенного мониторинга](iot-accelerators-remote-monitoring-monitor.md)
 * [Управление устройствами](iot-accelerators-remote-monitoring-manage.md)
 * [Устранение неполадок с устройствами](iot-accelerators-remote-monitoring-maintain.md)

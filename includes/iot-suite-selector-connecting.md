@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 28290718d15a893c5d676c887b9f810449075746
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 780a215b66fec845bc1df639fedda870881b4027
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34666016"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39189439"
 ---
 > [!div class="op_single_selector"]
 > * [C в Windows](../articles/iot-accelerators/iot-accelerators-connecting-devices.md)
@@ -22,7 +22,7 @@ ms.locfileid: "34666016"
 > * [Использование Node.js с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-node.md)
 > * [Использование C с Raspberry Pi](../articles/iot-accelerators/iot-accelerators-connecting-pi-c.md)
 
-В этом руководстве вы реализуете устройство **Chiller**, которое отправляет следующие данные телеметрии в [акселератор решений](../articles/iot-accelerators/iot-accelerators-what-are-solution-accelerators.md) для удаленного мониторинга:
+В этом руководстве вы реализуете устройство **Chiller**, которое отправляет следующие данные телеметрии в [акселератор решений](../articles/iot-accelerators/about-iot-accelerators.md) для удаленного мониторинга:
 
 * температура;
 * Давление
@@ -44,7 +44,7 @@ ms.locfileid: "34666016"
 
 ### <a name="deploy-your-remote-monitoring-solution-accelerator"></a>Развертывание акселератора решений для удаленного мониторинга
 
-Созданное в этом руководстве устройство **Chiller** отправляет данные в экземпляр акселератора решений для [удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-explore.md). Если вы еще не подготовили этот акселератор решений в своей учетной записи Azure, изучите статью [Развертывание акселератора решения для удаленного мониторинга](../articles/iot-accelerators/iot-accelerators-remote-monitoring-deploy.md).
+Созданное в этом руководстве устройство **Chiller** отправляет данные в экземпляр акселератора решений для [удаленного мониторинга](../articles/iot-accelerators/quickstart-remote-monitoring-deploy.md). Если вы еще не подготовили этот акселератор решений в своей учетной записи Azure, изучите статью [Развертывание акселератора решения для удаленного мониторинга](../articles/iot-accelerators/quickstart-remote-monitoring-deploy.md).
 
 После завершения развертывания решения для удаленного мониторинга нажмите кнопку **Запустить**, чтобы открыть панель мониторинга этого решения в браузере.
 

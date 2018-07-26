@@ -61,7 +61,7 @@
     - name: Использование средств HDInsight
       items:
         - name: Инструменты для Visual Studio
-          href: ../hdinsight-hadoop-visual-studio-tools-get-started.md
+          href: ../hadoop/apache-hadoop-visual-studio-tools-get-started.md
           maintainContext: true
         - name: Инструменты для VSCode
           href: ../hdinsight-for-vscode.md
@@ -414,7 +414,7 @@
       href: 'https://www.nuget.org/packages/Microsoft.HBase.Client/'
     - name: .NET (Avro)
       href: 'https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library'
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/hdinsight/
     - name: REST API (Spark)
       href: /rest/api/hdinsightspark/

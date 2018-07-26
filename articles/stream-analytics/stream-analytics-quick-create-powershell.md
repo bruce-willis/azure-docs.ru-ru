@@ -2,24 +2,24 @@
 title: Создание задания Stream Analytics с помощью Azure PowerShell
 description: В этом кратком руководстве описывается, как с помощью модуля Azure PowerShell развернуть и запустить задание Azure Stream Analytics.
 services: stream-analytics
-author: SnehaGunda
-ms.author: sngun
+author: sidramadoss
+ms.author: sidram
 ms.date: 05/14/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
 manager: kfile
-ms.openlocfilehash: 2b5d8bfd6dbe36637a0c6873e941118e7ee71b80
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 18903dfbe187de73a6edb14196fa29e02d35dbca
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34212438"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185386"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-by-using-azure-powershell"></a>Краткое руководство по созданию задания Stream Analytics с помощью Azure PowerShell
 
 Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командлетов или скриптов PowerShell. В этом кратком руководстве описывается, как с помощью модуля Azure PowerShell развернуть и запустить задание Azure Stream Analytics. 
-
+ 
 Пример задания считывает данные потоковой передачи из большого двоичного объекта в хранилище BLOB-объектов Azure. Файл входных данных, используемый в этом кратком руководстве, содержит статические данные только для демонстрации. В реальной ситуации используйте потоковые входные данные для задания Stream Analytics. Затем задание преобразует данные с помощью языка запросов Stream Analytics, чтобы рассчитать среднюю температуру при превышении 100°. Наконец, оно записывает результирующие выходные события в другой файл. 
 
 ## <a name="before-you-begin"></a>Перед началом работы
