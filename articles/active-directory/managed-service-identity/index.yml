@@ -1,10 +1,16 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 7649d78e764c547f2211d8993514a1b793d76609
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39264054"
 documentType: LandingData
 title: Документация по MSI для Azure Active Directory
 metadata:
   document_id: 
   title: Документация по MSI для Azure Active Directory
-  description: Узнайте, как с помощью функции "Управляемое удостоверение службы" (MSI) выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.
+  description: Узнайте, как с помощью функции "Управляемое удостоверение службы" выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.
   services: active-directory
   ms.component: msi
   author: daveba
@@ -15,19 +21,13 @@ metadata:
   ms.topic: landing-page
   ms.date: 03/16/2018
   ms.author: daveba
-  ms.openlocfilehash: ca90d9d2bb3fffb65d2cefe156d0425de9634bdd
-  ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 05/20/2018
-  ms.locfileid: "34354288"
 abstract:
-  description: Служба управляемых удостоверений службы предоставляет службам Azure автоматически управляемые удостоверения в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.  Узнайте, как создавать и администрировать управляемые удостоверения служб, из наших кратких руководств и других материалов.
+  description: Управляемое удостоверение службы предоставляет службы Azure с автоматически управляемыми удостоверениями в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации в любой службе, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде.  Узнайте, как создавать и администрировать управляемые удостоверения служб, из наших кратких руководств и других материалов.
 sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Узнайте, как получить доступ к API Azure Resource Manager с помощью функции "Управляемое удостоверение службы" (MSI)
+    text: Узнайте, как получить доступ к API Azure Resource Manager с помощью функции "Управляемое удостоверение службы"
   - type: list
     style: unordered
     items:
@@ -36,7 +36,7 @@ sections:
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как обеспечить безопасный доступ к ресурсам Azure с помощью функции "Управляемое удостоверение службы" (MSI)
+    text: Узнайте, как обеспечить безопасный доступ к ресурсам Azure с помощью функции "Управляемое удостоверение службы"
   - type: paragraph
     text: Виртуальные машины и масштабируемые наборы виртуальных машин Windows
   - type: list

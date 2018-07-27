@@ -145,6 +145,8 @@
           href: backup-azure-reports-data-model.md
         - name: Модель данных Log Analytics для Azure Backup
           href: backup-azure-log-analytics-data-model.md
+        - name: Обновление пакета содержимого централизованных отчетов службы Azure Backup
+          href: backup-azure-central-reporting-updates.md
     - name: Data Protection Manager
       items:
         - name: Подготовка рабочих нагрузок DPM на портале Azure

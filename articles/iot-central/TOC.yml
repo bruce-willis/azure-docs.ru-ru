@@ -43,6 +43,8 @@
           href: howto-administer.md
         - name: Экспорт данных
           href: howto-export-data.md
+        - name: Визуализация данных в Power BI
+          href: howto-connect-powerbi.md
     - name: Конструктор
       items:
         - name: Настройка шаблона устройства

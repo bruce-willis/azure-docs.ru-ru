@@ -138,9 +138,9 @@
           items:
             - name: Долгосрочное хранение резервных копий
               href: sql-database-long-term-retention.md
-            - name: 'Настройка долгосрочного хранения резервных копий: хранилище SQL'
+            - name: Настройка использования хранилища BLOB-объектов Azure
               href: sql-database-long-term-backup-retention-configure.md
-            - name: 'Настройка долгосрочного хранения резервных копий: хранилище Azure (не рекомендуется)'
+            - name: Настройка использования хранилища Azure (не рекомендуется)
               href: sql-database-long-term-backup-retention-configure-vault.md
         - name: Группы отработки отказа и георепликация
           items:

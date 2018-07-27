@@ -6,7 +6,7 @@
       href: overview.md
 - name: Быстрое начало работы
   items:
-    - name: Использование виртуальной машины MSI для доступа к Azure Resource Manager
+    - name: Использование управляемого удостоверения виртуальной машины для доступа к Azure Resource Manager
       items:
         - name: Виртуальная машина Windows
           href: tutorial-windows-vm-access-arm.md
@@ -49,11 +49,11 @@
         - name: Получение доступа к Azure Resource Manager с помощью пользовательского удостоверения
           href: msi-tutorial-linux-vm-access-arm.md
     - name: Azure Service Bus
-      href: /azure/service-bus-messaging/service-bus-managed-service-identity?context=azure/active-directory/context/msi-context
+      href: /azure/service-bus-messaging/service-bus-managed-service-identity?context=azure/active-directory/managed-service-identity/context/msi-context
     - name: Служба приложений Azure и решение "Функции Azure"
-      href: /azure/app-service/app-service-managed-service-identity?context=azure/active-directory/context/msi-context
+      href: /azure/app-service/app-service-managed-service-identity?context=azure/active-directory/managed-service-identity/context/msi-context
     - name: Концентраторы событий Azure
-      href: /azure/event-hubs/event-hubs-managed-service-identity?context=azure/active-directory/context/msi-context
+      href: /azure/event-hubs/event-hubs-managed-service-identity?context=azure/active-directory/managed-service-identity/context/msi-context
 - name: Практические руководства
   items:
     - name: Настройка идентификатора для виртуальной машины Azure
@@ -82,7 +82,7 @@
           href: qs-configure-template-windows-vmss.md
         - name: REST
           href: qs-configure-rest-vmss.md
-    - name: Использование компонента "Управляемое удостоверение службы" виртуальной машины
+    - name: Использование управляемого удостоверения виртуальной машины
       items:
         - name: Получение маркера доступа
           href: how-to-use-vm-token.md

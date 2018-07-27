@@ -307,14 +307,14 @@
       href: logic-apps-pricing.md
     - name: Azure PowerShell
       href: /powershell/module/azurerm.logicapp
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/logic/
     - name: Схема языка для определения рабочего процесса
       href: logic-apps-workflow-definition-language.md
       items:
-        - name: Действия и триггеры рабочего процесса
+        - name: Справочник по триггерам и типам действий
           href: logic-apps-workflow-actions-triggers.md
-        - name: Функции языка для определения рабочего процесса
+        - name: Справочник по функциям
           href: workflow-definition-language-functions-reference.md
         - name: Общедоступная версия журнала схем
           href: logic-apps-schema-2016-04-01.md

@@ -133,6 +133,8 @@
               href: devtest-lab-manage-formulas.md
         - name: Управление артефактами
           items:
+            - name: Указание обязательных артефактов
+              href: devtest-lab-mandatory-artifacts.md
             - name: Создание настраиваемых артефактов
               href: devtest-lab-artifact-author.md
             - name: Диагностика сбоев артефактов
@@ -161,7 +163,7 @@
       href: /cli/azure/lab
     - name: PowerShell
       href: '/powershell/module/azurerm.devtestlabs/#devtest_labs'
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: 'https://docs.microsoft.com/rest/api/dtl/'
 - name: Ресурсы
   items:

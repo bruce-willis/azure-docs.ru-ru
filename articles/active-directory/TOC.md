@@ -138,7 +138,7 @@
 ### Устранение неполадок
 #### [Отсутствующие данные аудита](active-directory-reporting-troubleshoot-missing-audit-data.md)
 #### [Отсутствующие данные в файлах для скачивания](active-directory-reporting-troubleshoot-missing-data-download.md)
-#### [Ошибки пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory](active-directory-reporting-troubleshoot-
+#### [Ошибки пакетов содержимого журналов действий Azure AD](active-directory-reporting-troubleshoot-content-pack.md)
 #### [Ошибки в API отчетов Azure AD](active-directory-reporting-troubleshoot-graph-api.md)
 
 ### [Программный доступ](active-directory-reporting-api-getting-started-azure-portal.md)
@@ -222,11 +222,13 @@
 #### [Устранение неполадок](manage-apps/application-proxy-troubleshoot.md)
 
 ### Управление корпоративными приложениями
+#### [Добавление приложения](manage-apps/add-application-portal.md)
+#### [Просмотр приложений клиента](manage-apps/view-applications-portal.md)
 #### [Назначение пользователей](manage-apps/assign-user-or-group-access-portal.md)
 #### [Настройка фирменной символики](manage-apps/change-name-or-logo-portal.md)
 #### [Отключение входа пользователей](manage-apps/disable-user-sign-in-portal.md)
 #### [Удаление пользователей](manage-apps/remove-user-or-group-access-portal.md)
-#### [Просмотр всех приложений](manage-apps/view-applications-portal.md)
+
 #### [Управление подготовкой учетной записи пользователя](manage-apps/configure-automatic-user-provisioning-portal.md)
 #### [Управление параметрами единого входа для корпоративных приложений](manage-apps/configure-single-sign-on-portal.md)
 #### [Расширенные параметры подписи сертификатов для приложений SAML](manage-apps/certificate-signing-options.md)

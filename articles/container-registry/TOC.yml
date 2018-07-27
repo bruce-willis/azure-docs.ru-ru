@@ -55,6 +55,8 @@
       href: container-registry-get-started-docker-cli.md
     - name: Просмотр списка репозиториев
       href: container-registry-repositories.md
+    - name: Удаление образов контейнеров
+      href: container-registry-delete.md
     - name: Обновление классического реестра
       href: container-registry-upgrade.md
     - name: Использование веб-перехватчиков ACR

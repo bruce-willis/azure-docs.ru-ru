@@ -59,7 +59,7 @@
           href: container-instances-log-analytics.md
     - name: Выполнение рабочих нагрузок
       items:
-        - name: Выполнение контейнерных задач
+        - name: Выполнение задач с помощью политики перезапуска
           href: container-instances-restart-policy.md
         - name: Агенты сборки Jenkins в ACI
           href: container-instances-jenkins.md

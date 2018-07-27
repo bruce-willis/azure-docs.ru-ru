@@ -387,24 +387,26 @@
           href: create-azure-ssis-integration-runtime.md
     - name: Запуск пакетов служб SSIS в Azure
       items:
-        - name: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
-          href: join-azure-ssis-integration-runtime-virtual-network.md
-        - name: Включение аутентификации Azure AD для среды выполнения интеграции Azure Integration Services
-          href: enable-aad-authentication-azure-ssis-ir.md
-        - name: Настройка высокой производительности среды выполнения интеграции Azure Integration Services
-          href: configure-azure-ssis-integration-runtime-performance.md
-        - name: Настройка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
-          href: how-to-configure-azure-ssis-ir-enterprise-edition.md
-        - name: Настройка среды выполнения интеграции Azure Integration Services
-          href: how-to-configure-azure-ssis-ir-custom-setup.md
-        - name: Установка лицензированных компонентов для среды выполнения интеграции Azure Integration Services
-          href: how-to-develop-azure-ssis-ir-licensed-components.md
         - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
           href: how-to-invoke-ssis-package-ssis-activity.md
         - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры
           href: how-to-invoke-ssis-package-stored-procedure-activity.md
         - name: Планирование среды выполнения интеграции Azure-SSIS
           href: how-to-schedule-azure-ssis-integration-runtime.md
+        - name: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
+          href: join-azure-ssis-integration-runtime-virtual-network.md
+        - name: Включение аутентификации Azure AD для среды выполнения интеграции Azure Integration Services
+          href: enable-aad-authentication-azure-ssis-ir.md
+        - name: Настройка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
+          href: how-to-configure-azure-ssis-ir-enterprise-edition.md
+        - name: Настройка среды выполнения интеграции Azure Integration Services
+          href: how-to-configure-azure-ssis-ir-custom-setup.md
+        - name: Установка лицензированных компонентов для среды выполнения интеграции Azure Integration Services
+          href: how-to-develop-azure-ssis-ir-licensed-components.md
+        - name: Настройка высокой производительности среды выполнения интеграции Azure Integration Services
+          href: configure-azure-ssis-integration-runtime-performance.md
+        - name: Настройка аварийного восстановления для среды выполнения интеграции Azure Integration Services
+          href: configure-bcdr-azure-ssis-integration-runtime.md
     - name: Создание триггеров
       items:
         - name: Создание триггера расписания
@@ -419,7 +421,7 @@
       href: /dotnet/api/microsoft.azure.management.datafactory
     - name: PowerShell
       href: /powershell/module/azurerm.datafactoryv2/
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: /rest/api/datafactory
     - name: Python
       href: /python/api/overview/azure/datafactory?view=azure-python

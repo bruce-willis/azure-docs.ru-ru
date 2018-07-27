@@ -16,7 +16,7 @@
 #### [Виртуальные машины](./marketplace-virtual-machines.md)
 #### [Приложения Azure. Шаблоны решений](./marketplace-solution-templates.md)
 #### [Приложения Azure. Управляемые приложения](./marketplace-managed-apps.md)
-#### [Руководство по публикации приложения SaaS](./marketplace-saas-applications-technical-publishing-guide.md) 
+#### [Приложение SaaS](./marketplace-saas-applications-technical-publishing-guide.md) 
 #### [Контейнеры](./marketplace-containers.md)
 #### [Консультационная услуга](./consulting-services.md)  
 #### [Приложения AppSource](./appsource-offer-publishing-guide.md)
