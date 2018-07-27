@@ -169,7 +169,9 @@
 - name: Справочные материалы
   items:
     - name: Интерфейсы API REST
-      href: 'https://msdn.microsoft.com/library/mt704034(Azure.100).aspx'
+      href: 'https://docs.microsoft.com/rest/api/securitycenter/'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=security-center'
 - name: Ресурсы
   items:
     - name: Управление данными пользователей

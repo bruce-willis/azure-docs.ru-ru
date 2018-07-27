@@ -235,7 +235,7 @@
               href: ../common/storage-import-export-tool-repairing-an-export-job-v1.md
         - name: Часто задаваемые вопросы
           href: ../common/storage-import-export-service-faq.md
-        - name: ИНТЕРФЕЙС REST API
+        - name: REST API
           href: 'https://docs.microsoft.com/rest/api/storageimportexport/jobs'
         - name: Обратиться в службу поддержки
           href: ../common/storage-import-export-contact-microsoft-support.md
@@ -368,9 +368,9 @@
     - name: Java
       items:
         - name: 'BLOB-объекты, очереди, таблицы и файлы (версия 7)'
-          href: 'https://docs.microsoft.com/java/api/storage/client?view=azure-java-stable'
+          href: 'https://docs.microsoft.com/java/api/overview/azure/storage/client?view=azure-java-stable'
         - name: Пакет SDK для хранилища BLOB-объектов (версия 10)
-          href: 'https://docs.microsoft.com/java/api/storage/client?view=azure-java-preview'
+          href: 'https://docs.microsoft.com/en-us/java/api/overview/azure/storage/client?view=azure-java-preview'
     - name: Node.js
       href: 'https://docs.microsoft.com/javascript/api/overview/azure/storage'
     - name: Ruby
