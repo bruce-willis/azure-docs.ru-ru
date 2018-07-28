@@ -26,8 +26,6 @@
       href: project-lead-tasks.md
     - name: Отдельный участник
       href: project-ic-tasks.md
-- name: Структура проекта
-  href: 'https://github.com/Azure/Azure-TDSP-ProjectTemplate'
 - name: Планирование проекта
   href: team-data-science-process-project-templates.md
 - name: Разработка
@@ -94,9 +92,6 @@
       href: team-data-science-process-for-devops.md
 - name: Практическое руководство
   items:
-    - name: Использование TDSP в службе "Машинное обучение Azure"
-      href: ../desktop-workbench/how-to-use-tdsp-in-azure-ml.md
-      maintainContext: true
     - name: Настройка сред для обработки и анализа данных
       href: environment-setup.md
       items:
@@ -218,6 +213,9 @@
               maintainContext: true
     - name: Развертывание моделей в рабочей среде
       href: deploy-models-in-production.md
+    - name: Использование TDSP в службе "Машинное обучение Azure"
+      href: ../desktop-workbench/how-to-use-tdsp-in-azure-ml.md
+      maintainContext: true
 - name: Сопутствующие материалы
   items:
     - name: "Машинное обучение Azure\_— AML"
@@ -235,28 +233,26 @@
           href: cortana-intelligence-appsource-evaluation-tool.md
     - name: Cortana Analytics
       items:
-        - name: Интерфейсы API
+        - name: Обнаружение аномалий
+          href: apps-anomaly-detection-api.md
+        - name: Cognitive Services
+          href: 'https://docs.microsoft.com/azure/cognitive-services/'
+        - name: диагностическое обслуживание;
           items:
-            - name: Обнаружение аномалий
-              href: apps-anomaly-detection-api.md
-            - name: Cognitive Services
-              href: 'https://docs.microsoft.com/azure/cognitive-services/'
-            - name: диагностическое обслуживание;
-              items:
-                - name: Обзор
-                  href: cortana-analytics-playbook-predictive-maintenance.md
-                - name: Архитектура
-                  href: cortana-analytics-architecture-predictive-maintenance.md
-                - name: Техническое руководство
-                  href: cortana-analytics-technical-guide-predictive-maintenance.md
-            - name: Телеметрические данные автомобиля
-              items:
-                - name: Обзор
-                  href: cortana-analytics-playbook-vehicle-telemetry.md
-                - name: Подробный обзор типов
-                  href: cortana-analytics-playbook-vehicle-telemetry-deep-dive.md
-                - name: Настройка
-                  href: cortana-analytics-playbook-vehicle-telemetry-powerbi.md
+            - name: Обзор
+              href: cortana-analytics-playbook-predictive-maintenance.md
+            - name: Архитектура
+              href: cortana-analytics-architecture-predictive-maintenance.md
+            - name: Техническое руководство
+              href: cortana-analytics-technical-guide-predictive-maintenance.md
+        - name: Телеметрические данные автомобиля
+          items:
+            - name: Обзор
+              href: cortana-analytics-playbook-vehicle-telemetry.md
+            - name: Подробный обзор типов
+              href: cortana-analytics-playbook-vehicle-telemetry-deep-dive.md
+            - name: Настройка
+              href: cortana-analytics-playbook-vehicle-telemetry-powerbi.md
 - name: Ресурсы
   items:
     - name: Блоги
@@ -279,8 +275,6 @@
           href: 'https://newsignature.com/services/professional-services/advanced-analytics/'
         - name: Blue Granite
           href: 'https://www.blue-granite.com/blog/getting-more-from-your-data-science-teams-organization-and-process-considerations'
-        - name: Службы консультации Майкрософт
-          href: 'https://www.microsoft.com/en-us/microsoftservices/business-analytics.aspx'
     - name: Связанные ресурсы корпорации Майкрософт
       items:
         - name: Форум MSDN
