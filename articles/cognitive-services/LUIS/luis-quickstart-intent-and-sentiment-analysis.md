@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по созданию приложения LUIS, которое возвращает анализ тональности: Azure | Документы Майкрософт'
+title: 'Руководство по созданию приложения LUIS, которое возвращает анализ тональности: Azure | Документация Майкрософт'
 description: В этом руководстве показано, как добавить анализ тональности в приложение LUIS, чтобы проанализировать фразы на наличие позитивных, негативных и нейтральных эмоций.
 services: cognitive-services
 author: v-geberr
@@ -9,14 +9,14 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: v-geberr
-ms.openlocfilehash: 1a48810287c1639910db8e39af2da61d836b2988
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 8dc6b8d4dd4cbe64841c4b36c498cf9021b4196f
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37340939"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37930612"
 ---
-# <a name="tutorial-8--add-sentiment-analysis"></a>Руководство: 8.  Добавление анализа тональности.
+# <a name="tutorial-9--add-sentiment-analysis"></a>Руководство: 9.  Добавление анализа тональности.
 В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз.
 
 <!-- green checkmark -->
@@ -30,9 +30,9 @@ ms.locfileid: "37340939"
 Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения для управления персоналом, созданного с помощью руководства по [предварительно созданной сущности keyPhrase](luis-quickstart-intent-and-key-phrase.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-keyphrase-HumanResources.json).
+Если у вас нет приложения для управления персоналом, созданного с помощью руководства по [предварительно созданной сущности keyPhrase](luis-quickstart-intent-and-key-phrase.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-keyphrase-HumanResources.json).
 
-Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="sentiment-analysis"></a>Анализ мнений
 Анализ тональности — это возможность определить, является ли фраза пользователя позитивной, негативной или нейтральной. 
@@ -212,10 +212,10 @@ LUIS не располагает сведениями о новом намере
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат с наивысшим показателем и данные тональности из фразы, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните меню с тремя точками (…) справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"] 
-> [Руководство по вызову конечной точки LUIS с помощью C#](luis-get-started-cs-get-intent.md) 
+> [Проверка фрагментов речи конечной точки в приложении для управления персоналом](luis-tutorial-review-endpoint-utterances.md) 
 

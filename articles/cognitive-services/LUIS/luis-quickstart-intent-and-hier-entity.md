@@ -7,14 +7,14 @@ manager: kaiqb
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 06/22/2018
+ms.date: 07/04/2018
 ms.author: v-geberr
-ms.openlocfilehash: 6ba45de8ef41c8a57ca9c042a304e323a4fac263
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: babfc2f82e17f3745af1d940df89763170a002bd
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081699"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929592"
 ---
 # <a name="tutorial-5-add-hierarchical-entity"></a>Учебник. 5. Добавление иерархической сущности
 В этом руководстве создается приложение, которое показывает, как найти взаимосвязанные элементы данных с учетом контекста. 
@@ -27,12 +27,12 @@ ms.locfileid: "37081699"
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения, чтобы увидеть ответ JSON LUIS, в том числе иерархические дочерние элементы. 
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], в которой вы разработаете приложение LUIS.
+Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения управления персоналом из руководства по [сущностям списка](luis-quickstart-intent-and-list-entity.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-list-HumanResources.json).
+Если у вас нет приложения управления персоналом из руководства по [сущностям списка](luis-quickstart-intent-and-list-entity.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-list-HumanResources.json).
 
-Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `hier`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `hier`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="purpose-of-the-app-with-this-entity"></a>Назначение приложения с этой сущностью
 Это приложение определяет, в каких случаях сотрудник должен перемещаться из исходного (здание и офис) в целевое расположение (здание и офис). Для определения расположения в пределах фразы в этом приложении используется иерархическая сущность. 
@@ -64,12 +64,12 @@ mv Jill Jones from a-2349 to b-1298
     [ ![Снимок экрана приложения LUIS с кнопкой "Сущности", выделенной в меню слева](./media/luis-quickstart-intent-and-hier-entity/hr-select-entities-button.png)](./media/luis-quickstart-intent-and-hier-entity/hr-select-entities-button.png#lightbox)
 
 
-3. Выберите многоточие (...) справа от сущности номера в списке. Нажмите кнопку **Удалить**. 
+3. Нажмите кнопку с многоточием (***...***) справа от сущности номера в списке. Нажмите кнопку **Удалить**. 
 
     [ ![Снимок экрана приложения LUIS на странице списка сущностей с кнопкой удаления, выделенной для предварительно созданной сущности номера](./media/luis-quickstart-intent-and-hier-entity/hr-delete-number-prebuilt.png)](./media/luis-quickstart-intent-and-hier-entity/hr-delete-number-prebuilt.png#lightbox)
 
 
-## <a name="add-utterances-to-findform-intent"></a>Добавление фраз в намерение FindForm
+## <a name="add-utterances-to-moveemployee-intent"></a>Добавление фрагментов речи в намерение MoveEmployee
 
 1. Выберите **намерения** в меню слева.
 
@@ -81,7 +81,7 @@ mv Jill Jones from a-2349 to b-1298
 
 3. Добавьте следующие примеры фраз:
 
-    |Примеры фраз|
+    |Примеры высказываний|
     |--|
     |Переместить Джона В. Смита **в** a-2345|
     |Направить Джил Джонс **в** b-3499|
@@ -126,7 +126,7 @@ mv Jill Jones from a-2349 to b-1298
 
 3. Выберите **номер** из списка предварительно созданных сущностей, а затем щелкните **Done** (Готово).
 
-    ![Снимок экрана выбора номера в диалоговом окне предварительно созданных сущностей](./media/luis-quickstart-intent-and-hier-entity/hr-add-number-back-ddl.png)
+    ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-quickstart-intent-and-hier-entity/hr-add-number-back-ddl.png)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
@@ -268,12 +268,8 @@ mv Jill Jones from a-2349 to b-1298
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Чтобы сделать это, щелкните меню с тремя точками (...) справа от имени приложения в списке приложений и выберите пункт **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Для этого нажмите кнопку с многоточием (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
-> Узнайте, как [добавить список сущностей](luis-quickstart-intent-and-list-entity.md). 
-
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
-[LUIS-regions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#publishing-regions
+> [Сведения о добавлении составной сущности](luis-tutorial-composite-entity.md) 

@@ -9,17 +9,17 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/29/2018
 ms.author: v-geberr
-ms.openlocfilehash: 075cb270641ca995eec95aa6aa8986c90077148a
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 387f20d2080a67041c90ec1af93e791716839dd9
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37112203"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929055"
 ---
 # <a name="tutorial-2-add-prebuilt-intents-and-entities"></a>Учебник: 2. Добавление предварительно созданных намерений и сущностей
 Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 * Добавление предварительно созданных намерений 
@@ -28,7 +28,7 @@ ms.locfileid: "37112203"
 * Запрос LUIS и получение ответа прогнозирования
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения [Human Resources](luis-quickstart-intents-only.md), созданного в предыдущем руководстве, [импортируйте](create-new-app.md#import-new-app) файл JSON из [репозитория GitHub с примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-intent-only-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
+Если у вас нет приложения [Human Resources](luis-quickstart-intents-only.md), созданного в предыдущем руководстве, [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON из [репозитория GitHub с примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-intent-only-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
 
 Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `prebuilts`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
@@ -171,7 +171,7 @@ LUIS предоставляет несколько предварительно 
 Легко и быстро добавляя предварительно созданные намерения и сущности, клиентское приложение может добавлять управление беседами и извлекать общие типы данных. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Для этого выберите **Мои приложения** в меню слева вверху. Щелкните меню с тремя точками (…) справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Для этого выберите **Мои приложения** в меню слева вверху. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

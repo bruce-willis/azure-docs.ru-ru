@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по созданию приложения LUIS для получения данных, соответствующих регулярному выражению: Azure | Документы Майкрософт'
+title: 'Руководство по созданию приложения LUIS для получения данных, соответствующих регулярному выражению: Azure | Документация Майкрософт'
 description: В этом руководстве вы узнаете, как создать простое приложение LUIS, использующее намерения и сущность регулярного выражения для извлечения данных.
 services: cognitive-services
 author: v-geberr
@@ -9,12 +9,12 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/29/2018
 ms.author: v-geberr
-ms.openlocfilehash: 522d24c1c03a338633c340502087300c890d1771
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: f51c296b39fda08d0bcc704fb974e71465385d67
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128451"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929377"
 ---
 # <a name="tutorial-3-add-regular-expression-entity"></a>Руководство: 3 Добавление сущности регулярного выражения
 В этом руководстве создается приложение, которое демонстрирует, как извлечь согласованно отформатированные данные из фразы с помощью сущности **регулярного выражения**.
@@ -31,9 +31,9 @@ ms.locfileid: "37128451"
 Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения Human Resources, созданного с помощью руководства по [предварительно созданным сущностям](luis-tutorial-prebuilt-intents-entities.md), [импортируйте](create-new-app.md#import-new-app) файл JSON из репозитория GitHub с [примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-prebuilts-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
+Если у вас нет приложения Human Resources, созданного с помощью руководства по [предварительно созданным сущностям](luis-tutorial-prebuilt-intents-entities.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON из репозитория GitHub с [примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-prebuilts-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
 
-Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `regex`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `regex`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 
 ## <a name="purpose-of-the-regular-expression-entity"></a>Назначение сущности регулярного выражения
@@ -253,7 +253,7 @@ LUIS помечает фразы, добавляемые в намерение. 
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, такое как чат-бот, может принимать результат с наивысшим показателем и номера форм, а также искать по стороннему API. LUIS не выполняет эту работу. LUIS только определяет намерение пользователя и извлекает данные о нем. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните меню с тремя точками (…) справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

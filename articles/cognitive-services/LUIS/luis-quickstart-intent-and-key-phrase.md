@@ -1,5 +1,5 @@
 ---
-title: 'Руководство по созданию приложения LUIS, которое возвращает ключевые фразы: Azure | Документы Майкрософт'
+title: 'Руководство по созданию приложения LUIS, которое возвращает ключевые фразы: Azure | Документация Майкрософт'
 description: В этом руководстве вы узнаете, как добавить и вернуть сущность keyPhrase в приложение LUIS для анализа фраз на наличие запрашиваемого содержимого.
 services: cognitive-services
 author: v-geberr
@@ -9,14 +9,14 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/27/2018
 ms.author: v-geberr
-ms.openlocfilehash: f3808620c4527f2971d8eb6d53a09c893b162b59
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: ccefb4c2890d74978f340778cfab7cad979c9802
+ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37340956"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37929560"
 ---
-# <a name="tutorial-7-add-keyphrase-entity"></a>Руководство: 7. Добавление сущности keyPhrase 
+# <a name="tutorial-8-add-keyphrase-entity"></a>Руководство: 8. Добавление сущности keyPhrase 
 В этом руководстве используется приложение, демонстрирующее, как извлечь запрашиваемое содержимое из фраз.
 
 <!-- green checkmark -->
@@ -30,9 +30,9 @@ ms.locfileid: "37340956"
 Для работы с этой статьей можно использовать бесплатную учетную запись [LUIS](luis-reference-regions.md#publishing-regions), в которой вы создадите приложение LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Если у вас нет приложения управления персоналом из руководства по [простым сущностям](luis-quickstart-primary-and-secondary-data.md), [импортируйте](create-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-simple-HumanResources.json).
+Если у вас нет приложения управления персоналом из руководства по [простым сущностям](luis-quickstart-primary-and-secondary-data.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-simple-HumanResources.json).
 
-Если вы хотите сохранить исходное приложение Human Resources, клонируйте версию на странице [Settings](luis-how-to-manage-versions.md#clone-a-version) (Параметры) и назовите его `keyphrase`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `keyphrase`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
 ## <a name="keyphrase-entity-extraction"></a>Извлечение сущностей keyPhrase
 Запрашиваемое содержимое находится в предварительно созданной сущности **keyPhrase**. Эта сущность возвращает запрашиваемое содержимое из фразы.
@@ -201,10 +201,9 @@ ms.locfileid: "37340956"
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат с наивысшим показателем и данные keyPhrase из фразы, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните меню с тремя точками (…) справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Нажмите кнопку с многоточием (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
 > [Добавление анализа тональности в приложение](luis-quickstart-intent-and-sentiment-analysis.md)
-
