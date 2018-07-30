@@ -209,6 +209,8 @@
       items:
         - name: Управление кластерными ресурсами
           href: apache-spark-resource-manager.md
+        - name: Управление приложениями Spark с помощью расширенного сервера журнала
+          href: apache-azure-spark-history-server.md
         - name: Настройка параметров Spark
           href: apache-spark-settings.md
         - name: Оптимизация заданий Spark

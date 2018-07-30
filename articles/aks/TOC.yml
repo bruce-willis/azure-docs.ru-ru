@@ -89,6 +89,10 @@
         - name: Решение для проверки работоспособности контейнеров Azure
           href: ../monitoring/monitoring-container-health.md
           maintainContext: true
+        - name: Просмотр журналов ведущего компонента
+          href: view-master-logs.md
+        - name: Просмотр журналов kubelet
+          href: kubelet-logs.md
     - name: Разработка и запуск приложений
       items:
         - name: Запуск приложений с помощью Helm
@@ -121,8 +125,6 @@
       items:
         - name: Доступ к узлам SSH
           href: aks-ssh.md
-        - name: Получение журналов kubelet
-          href: kubelet-logs.md
 - name: Справочные материалы
   items:
     - name: Инфраструктура CLI Azure
