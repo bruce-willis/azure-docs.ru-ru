@@ -1,242 +1,247 @@
 ---
 title: Руководство по API распознавания лиц в Java для Android | Документация Майкрософт
 titleSuffix: Microsoft Cognitive Services
-description: Создание простого приложения Android, которое использует API распознавания лиц Microsoft Cognitive Services для обнаружения и выделения человеческих лиц на изображении.
+description: С помощью этого руководства вы создадите простое приложение Android, которое использует службу распознавания лиц Cognitive Services для обнаружения и выделения лиц на изображении.
 services: cognitive-services
-author: SteveMSFT
-manager: corncar
+author: noellelacharite
+manager: nolachar
 ms.service: cognitive-services
 ms.component: face-api
-ms.topic: article
-ms.date: 03/01/2018
-ms.author: sbowles
-ms.openlocfilehash: 5164a261d482d0cca3842a973d2109b17999bd25
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.topic: tutorial
+ms.date: 07/12/2018
+ms.author: nolachar
+ms.openlocfilehash: ad7b85b378db9e9687b5f8081bc9832e91e9ee5e
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382549"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125642"
 ---
-# <a name="getting-started-with-face-api-in-java-for-android-tutorial"></a>Руководство по началу работы с API распознавания лиц в Java для Android
+# <a name="tutorial-create-an-android-app-to-detect-and-frame-faces-in-an-image"></a>Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении
 
-С помощью этого руководства вы научитесь создавать и разрабатывать простое приложение Android, которое вызывает API распознавания лиц для обнаружения человеческих лиц на изображении. После обработки изображения приложением все обнаруженные лица заключаются в рамки.
+С помощью этого руководства вы создадите простое приложение Android, которое использует библиотеку классов Java службы распознавания лиц для обнаружения лиц людей на изображении. Приложение отображает выбранное изображение, на котором каждое обнаруженное лицо выделено прямоугольником. Полный образец кода можно найти в GitHub на странице [Detect and frame faces in an image on Android](https://github.com/Azure-Samples/cognitive-services-face-android-sample) (Обнаружение и выделение лиц на изображении в Android).
 
-![GettingStartedAndroid](../Images/android_getstarted2.1.PNG)
+![Снимок экрана устройства Android с фотографией, на которой лица выделены красными прямоугольниками](../Images/android_getstarted2.1.PNG)
 
-## <a name="preparation"></a> Подготовка
+В этом учебнике описаны следующие процедуры:
 
-Для работы с руководством вам потребуется следующее:
+> [!div class="checklist"]
+> - создание приложения Android;
+> - установка клиентской библиотеки службы распознавания лиц;
+> - использование клиентской библиотеки для обнаружения лиц на изображении;
+> - выделение рамкой каждого обнаруженного лица.
 
-- Android Studio и пакет SDK;
-- устройство Android для тестирования (необязательно).
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="step1"></a>Шаг 1. Подписка на API распознавания лиц и получение ключа подписки
+- Чтобы выполнить пример, нужен ключ подписки. Вы можете получить ключи бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api).
+- Интерфейс [Android Studio](https://developer.android.com/studio/) с пакетом SDK версии не ниже 22 (требуется для клиентской библиотеки службы распознавания лиц).
+- Клиентская библиотека службы распознавания лиц [com.microsoft.projectoxford:face:1.4.3](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.microsoft.projectoxford%22) из Maven. Скачивать пакет не нужно. Инструкции по установке приведены ниже.
 
-Прежде чем использовать API распознавания лиц, необходимо зарегистрироваться для получения подписки на этот API на портале Microsoft Cognitive Services. Ознакомьтесь со страницей [подписок](https://azure.microsoft.com/try/cognitive-services/). В этом руководстве можно использовать как первичный, так и вторичный ключ.
+## <a name="create-the-project"></a>Создание проекта
 
-## <a name="step2"></a>Шаг 2. Создание платформы для приложения
+Создайте проект приложения Android, выполнив следующие действия:
 
-На этом этапе вы создадите проект приложения Android для реализации простого интерфейса, в котором можно выбрать и отобразить изображение. Выполните приведенные далее инструкции. 
+1. Откройте Android Studio. В этом руководстве используется Android Studio 3.1.
+1. Выберите **Start a new Android Studio project** (Создать проект Android Studio).
+1. На экране **Create Android Project** (Создание проекта Android) при необходимости измените значения в полях по умолчанию, а затем нажмите кнопку **Next** (Далее).
+1. На экране **Target Android Devices** (Целевые устройства Android) используйте селектор раскрывающегося списка, чтобы выбрать **API 22** или более поздней версии, а затем нажмите кнопку **Next** (Далее).
+1. Выберите значение **Empty Activity** (Пустое действие), затем нажмите кнопку **Next** (Далее).
+1. Снимите флажок **Backwards Compatibility** (Обратная совместимость), затем нажмите кнопку **Finish** (Готово).
 
-1. Откройте Android Studio.
-2. В меню "Файл" выберите **Новый проект...**.
-3. Присвойте приложению имя **MyFirstApp** и щелкните "Далее". 
+## <a name="create-the-ui-for-selecting-and-displaying-the-image"></a>Создание пользовательского интерфейса для выбора и отображения изображения
 
-    ![GettingStartAndroidNewProject](../Images/AndroidNewProject.png)
+Откройте файл *activity_main.xml*. Отобразится редактор макета. Выберите вкладку **Text** (Текст) и замените ее содержимое следующим кодом.
 
-4. Выберите нужную целевую платформу и щелкните "Далее". 
+```xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    ![GettingStartAndroidNewProject2](../Images/AndroidNewProject2.png)
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView1"
+        android:layout_above="@+id/button1"
+        android:contentDescription="Image with faces to analyze"/>
 
-5. Выберите **Basic Activity** (Базовое действие) и щелкните "Далее".
-6. Присвойте этому действию указанное ниже имя и щелкните "Готово". 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Browse for face image"
+        android:id="@+id/button1"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
+```
 
-    ![GettingStartAndroidNewProject4](../Images/AndroidNewProject4.png)
+Откройте файл *MainActivity.java*, затем замените все, кроме первой инструкции `package`, кодом, приведенным ниже.
 
-7. Щелкните файл **activity_main.xml**, чтобы открыть это действие в редакторе макета.
-8. Просмотрите исходный текстовый файл и измените макет действия следующим образом:
+Код устанавливает обработчик событий на элемент `Button`, который запускает новое действие, позволяя пользователю выбрать изображение. Выбранное изображение отображается в `ImageView`.
 
-    ```xml
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-        android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
-     
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/imageView1"
-            android:layout_above="@+id/button1" />
-    
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Browse"
-            android:id="@+id/button1"
-            android:layout_alignParentBottom="true" />
-    </RelativeLayout>
-    ```  
+```java
+import java.io.*;
+import android.app.*;
+import android.content.*;
+import android.net.*;
+import android.os.*;
+import android.view.*;
+import android.graphics.*;
+import android.widget.*;
+import android.provider.*;
 
-9. Откройте **MainActivity.java** и вставьте в начало файла следующие директивы импорта:
-
-    ```java
-    import java.io.*; 
-    import android.app.*; 
-    import android.content.*; 
-    import android.net.*; 
-    import android.os.*; 
-    import android.view.*; 
-    import android.graphics.*; 
-    import android.widget.*; 
-    import android.provider.*;
-    ```
-      
-    Затем измените этот класс следующим образом:  
-    
-    ```java
+public class MainActivity extends Activity {
     private final int PICK_IMAGE = 1;
     private ProgressDialog detectionProgressDialog;
-         
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-           super.onCreate(savedInstanceState);
-           setContentView(R.layout.activity_main);
-           Button button1 = (Button)findViewById(R.id.button1);
-           button1.setOnClickListener(new View.OnClickListener() {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+            Button button1 = (Button)findViewById(R.id.button1);
+            button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                Intent gallIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                gallIntent.setType("image/*");
-                startActivityForResult(Intent.createChooser(gallIntent, "Select Picture"), PICK_IMAGE);
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(Intent.createChooser(
+                        intent, "Select Picture"), PICK_IMAGE);
             }
         });
-         
+
         detectionProgressDialog = new ProgressDialog(this);
     }
-    
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK &&
+                data != null && data.getData() != null) {
             Uri uri = data.getData();
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                        getContentResolver(), uri);
                 ImageView imageView = (ImageView) findViewById(R.id.imageView1);
                 imageView.setImageBitmap(bitmap);
+
+                // Uncomment
+                //detectAndFrame(bitmap);
                 } catch (IOException e) {
-                e.printStackTrace();
+                    e.printStackTrace();
                 }
         }
     }
-    ```
-
-Теперь приложение сможет выбирать фотографию из коллекции и отображать ее в окне, как показано на рисунке ниже:
-
-![GettingStartAndroidUI](../Images/android_getstarted1.1.PNG)
-
-## <a name="step3"></a>Шаг 3. Настройка клиентской библиотеки API распознавания лиц
-
-API распознавания лиц представляет собой облачный API-интерфейс, к которому вы можете обращаться с помощью HTTPS-запросов. Кроме того, для удобства использования API распознавания лиц в приложениях платформы .NET предоставляется клиентская библиотека, позволяющая инкапсулировать веб-запросы. В этом примере для упрощения работы мы используем клиентскую библиотеку. 
-
-Выполните следующие действия, чтобы настроить клиентскую библиотеку: 
-
-1. Найдите в своем проекте файл **build.gradle** верхнего уровня, используя панель Project (Проект), как показано в нашем примере. Обратите внимание, что в дереве проекта есть еще несколько файлов **build.gradle**, но сейчас вам нужен только файл **build.gradle** верхнего уровня.
-2. Добавьте **mavenCentral()** в список репозиториев проекта. Также можно использовать jcenter(), являющийся репозиторием по умолчанию для Android Studio, так как jcenter() является супермножеством mavenCentral().  
-
-```
-    allprojects {
-        repositories {
-            ...
-            mavenCentral()
-        }
-    }
+}
 ```
 
-3. Откройте файл **build.gradle** в проекте приложения.
-4. Добавьте зависимость для нужной клиентской библиотеки, которая хранится в репозитории Maven Central:
+Теперь в приложении можно будет выбрать фотографию, и она отобразится в окне, как показано на иллюстрации ниже.
 
-```
-    dependencies {  
-        ...  
-        implementation 'com.microsoft.projectoxford:face:1.4.3'  
-    }
-```
+![Снимок экрана устройства Android с фотографией лиц](../Images/android_getstarted1.1.PNG)
 
-5. Откройте **MainActivity.java** в проекте приложения и вставьте в него следующие директивы импорта: 
-    
-    ```java
-    import com.microsoft.projectoxford.face.*;  
-    import com.microsoft.projectoxford.face.contract.*;  
-    ```
-    
-   Теперь вставьте в класс следующий код:
+## <a name="configure-the-face-client-library"></a>Настройка клиентской библиотеки службы распознавания лиц
 
-    ```java
-    private FaceServiceClient faceServiceClient = new FaceServiceRestClient("your API endpoint", "<Subscription Key>");
-    ```
+API распознавания лиц представляет собой облачный API-интерфейс, который можно вызывать с помощью HTTPS-запросов. В этом руководстве используется клиентская библиотека службы распознавания лиц, которая содержит эти веб-запросы для упрощения работы.
 
-   В приведенном выше фрагменте кода замените первый параметр адресом конечной точки API, который назначен для вашего ключа на шаге 1. Например: 
-   
-        https://eastus2.api.cognitive.microsoft.com/face/v1.0
-   
-   Замените второй параметр ключом подписки, который вы получили на шаге 1.
-   
-6. Откройте файл **AndroidManifest.xml** в проекте приложения. Добавьте следующий элемент в качестве дочернего элемента в элемент **manifest**:  
+В области **Project** (Проект) с помощью селектора раскрывающегося списка выберите **Android**. Разверните раздел **Gradle Scripts** (Скрипты Gradle), а затем откройте *build.gradle (Module: app)*.
 
-    ```xml
-    <uses-permission android:name="android.permission.INTERNET" />  
-    ```
+Добавьте зависимость `com.microsoft.projectoxford:face:1.4.3` для клиентской библиотеки службы распознавания лиц, как показано на следующем снимке экрана, а затем щелкните **Sync Now** (Синхронизировать).
 
-7. Теперь все готово для вызова API распознавания лиц из приложения. 
+![Снимок экрана Android Studio с изображением файла приложения build.gradle](../Images/face-tut-java-gradle.png)
 
-## <a name="step4"></a>Шаг 4. Отправка изображений для обнаружения лиц
-
-Самый простой способ обнаружения лиц — вызвать функцию [обнаружения API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236), отправив файл изображения напрямую. При использовании клиентской библиотеки это можно сделать с помощью асинхронного метода **DetectAsync** из класса **FaceServiceClient**. Каждое возвращенное лицо выделяется прямоугольником, указывающим его расположение, и дополняется рядом необязательных атрибутов лица. В этом примере нам достаточно узнать расположение лица. Для этого мы добавим новый метод в класс **MainActivity** для обнаружения лиц: 
+Откройте файл **MainActivity.java** и добавьте следующие директивы импорта:
 
 ```java
+import com.microsoft.projectoxford.face.*;
+import com.microsoft.projectoxford.face.contract.*;
+```
 
-    // Detect faces by uploading face images
-    // Frame faces after detection
-    
-    private void detectAndFrame(final Bitmap imageBitmap)
-    {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
-        ByteArrayInputStream inputStream = 
+## <a name="add-the-face-client-library-code"></a>Добавление кода клиентской библиотеки службы распознавания лиц
+
+Вставьте следующий код в класс `MainActivity` над методом `onCreate`:
+
+```java
+private final String apiEndpoint = "<API endpoint>";
+private final String subscriptionKey = "<Subscription Key>";
+
+private final FaceServiceClient faceServiceClient =
+        new FaceServiceRestClient(apiEndpoint, subscriptionKey);
+```
+
+Замените `<API endpoint>` конечной точкой API, которая была назначена вашему ключу. Ключи бесплатной пробной подписки создаются в регионе **westcentralus**. Поэтому, если вы используете ключ бесплатной пробной подписки, инструкция будет выглядеть так:
+
+```java
+apiEndpoint = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0";
+```
+
+Замените `<Subscription Key>` ключом своей подписки. Например: 
+
+```java
+subscriptionKey = "0123456789abcdef0123456789ABCDEF"
+```
+
+В области **Project** (Проект) разверните раздел **app** (приложение), затем **manifests** (манифесты) и откройте файл *AndroidManifest.xml*.
+
+Добавьте следующий элемент в качестве непосредственного дочернего элемента для элемента `manifest`:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+Выполните сборку проекта, чтобы проверить его на наличие ошибок. Теперь все готово для вызова службы распознавания лиц.
+
+## <a name="upload-an-image-to-detect-faces"></a>Отправка изображения для обнаружения лиц
+
+Самый простой способ обнаружения лиц — вызов метода `FaceServiceClient.detect`. Этот метод создает оболочку для метода API [Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) (Обнаружение) и возвращает массив элементов `Face` (Лицо).
+
+Каждый возвращенный элемент `Face` выделяется прямоугольником, указывающим его расположение, и дополняется рядом необязательных атрибутов лица. В этом примере обязательным является только расположение лиц.
+
+Если возникает ошибка, в окне `AlertDialog` отображается основная причина.
+
+Добавьте следующие методы в класс `MainActivity`.
+
+```java
+// Detect faces by uploading a face image.
+// Frame faces after detection.
+private void detectAndFrame(final Bitmap imageBitmap) {
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
+    ByteArrayInputStream inputStream =
             new ByteArrayInputStream(outputStream.toByteArray());
-        AsyncTask<InputStream, String, Face[]> detectTask =
+
+    AsyncTask<InputStream, String, Face[]> detectTask =
             new AsyncTask<InputStream, String, Face[]>() {
+                String exceptionMessage = "";
+
                 @Override
                 protected Face[] doInBackground(InputStream... params) {
                     try {
                         publishProgress("Detecting...");
                         Face[] result = faceServiceClient.detect(
-                                params[0], 
+                                params[0],
                                 true,         // returnFaceId
                                 false,        // returnFaceLandmarks
-                                null           // returnFaceAttributes: a string like "age, gender"
-                /* If you want value of FaceAttributes, try adding 4th argument like below.
-                            new FaceServiceClient.FaceAttributeType[] {
-                    FaceServiceClient.FaceAttributeType.Age,
-                    FaceServiceClient.FaceAttributeType.Gender }
-                */              
+                                null          // returnFaceAttributes:
+                                /* new FaceServiceClient.FaceAttributeType[] {
+                                    FaceServiceClient.FaceAttributeType.Age,
+                                    FaceServiceClient.FaceAttributeType.Gender }
+                                */
                         );
-                        if (result == null)
-                        {
-                            publishProgress("Detection Finished. Nothing detected");
+                        if (result == null){
+                            publishProgress(
+                                    "Detection Finished. Nothing detected");
                             return null;
                         }
-                        publishProgress(
-                                String.format("Detection Finished. %d face(s) detected",
-                                        result.length));
+                        publishProgress(String.format(
+                                "Detection Finished. %d face(s) detected",
+                                result.length));
                         return result;
                     } catch (Exception e) {
-                        publishProgress("Detection failed");
+                        exceptionMessage = String.format(
+                                "Detection failed: %s", e.getMessage());
                         return null;
                     }
                 }
+
                 @Override
                 protected void onPreExecute() {
                     //TODO: show progress dialog
@@ -250,92 +255,118 @@ API распознавания лиц представляет собой обл
                     //TODO: update face frames
                 }
             };
-        detectTask.execute(inputStream);
-    }
+
+    detectTask.execute(inputStream);
+}
+
+private void showError(String message) {
+    new AlertDialog.Builder(this)
+    .setTitle("Error")
+    .setMessage(message)
+    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+        }})
+    .create().show();
+}
 ```
 
-## <a name="step5"></a>Шаг 5. Выделение лиц на изображении
+## <a name="frame-faces-in-the-image"></a>Выделение лиц на изображении
 
-На последнем этапе мы объединим все перечисленные выше шаги и отметим обнаруженные лица рамками на изображении. Сначала откройте **MainActivity.java** и вставьте в него вспомогательный метод для рисования прямоугольников: 
-
-```java
-    private static Bitmap drawFaceRectanglesOnBitmap(Bitmap originalBitmap, Face[] faces) {
-        Bitmap bitmap = originalBitmap.copy(Bitmap.Config.ARGB_8888, true);
-        Canvas canvas = new Canvas(bitmap);
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.RED);
-        int stokeWidth = 2;
-        paint.setStrokeWidth(stokeWidth);
-        if (faces != null) {
-            for (Face face : faces) {
-                FaceRectangle faceRectangle = face.faceRectangle;
-                canvas.drawRect(
-                        faceRectangle.left,
-                        faceRectangle.top,
-                        faceRectangle.left + faceRectangle.width,
-                        faceRectangle.top + faceRectangle.height,
-                        paint);
-            }
-        }
-        return bitmap;
-    }
-```
-
-Теперь завершите элементы TODO в методе **detectAndFrame**, чтобы выделять лица и получать информацию о состоянии.
+Вставьте следующий вспомогательный метод в класс `MainActivity`. Этот метод создает прямоугольник вокруг каждого обнаруженного лица.
 
 ```java
-    @Override
-    protected void onPreExecute() {
-        detectionProgressDialog.show();
-    }
-    @Override
-    protected void onProgressUpdate(String... progress) {
-        detectionProgressDialog.setMessage(progress[0]);
-    }
-    @Override
-    protected void onPostExecute(Face[] result) {
-        detectionProgressDialog.dismiss();
-        if (result == null) return;
-        ImageView imageView = (ImageView)findViewById(R.id.imageView1);
-        imageView.setImageBitmap(drawFaceRectanglesOnBitmap(imageBitmap, result));
-        imageBitmap.recycle();
-    }
-```
- 
-И наконец, добавьте вызов метода **detectAndFrame** из метода **onActivityResult**, как показано ниже. 
-
-```java
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            Uri uri = data.getData();
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                ImageView imageView = (ImageView) findViewById(R.id.imageView1);
-                imageView.setImageBitmap(bitmap);
-     
-                // This is the new addition.
-                // detectAndFrame(bitmap);
-     
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+private static Bitmap drawFaceRectanglesOnBitmap(
+        Bitmap originalBitmap, Face[] faces) {
+    Bitmap bitmap = originalBitmap.copy(Bitmap.Config.ARGB_8888, true);
+    Canvas canvas = new Canvas(bitmap);
+    Paint paint = new Paint();
+    paint.setAntiAlias(true);
+    paint.setStyle(Paint.Style.STROKE);
+    paint.setColor(Color.RED);
+    paint.setStrokeWidth(10);
+    if (faces != null) {
+        for (Face face : faces) {
+            FaceRectangle faceRectangle = face.faceRectangle;
+            canvas.drawRect(
+                    faceRectangle.left,
+                    faceRectangle.top,
+                    faceRectangle.left + faceRectangle.width,
+                    faceRectangle.top + faceRectangle.height,
+                    paint);
         }
     }
+    return bitmap;
+}
 ```
 
-Запустите приложение и найдите изображение, содержащее лицо. На получение ответа от облачного API потребуется несколько секунд. После этого вы получите примерно такой результат: 
+Завершите методы `AsyncTask`, обозначенные в комментариях `TODO`, в методе `detectAndFrame`. В случае успешного выполнения на выбранном изображении в `ImageView` лица выделяются рамкой.
+
+```java
+@Override
+protected void onPreExecute() {
+    detectionProgressDialog.show();
+}
+@Override
+protected void onProgressUpdate(String... progress) {
+    detectionProgressDialog.setMessage(progress[0]);
+}
+@Override
+protected void onPostExecute(Face[] result) {
+    detectionProgressDialog.dismiss();
+    if(!exceptionMessage.equals("")){
+        showError(exceptionMessage);
+    }
+    if (result == null) return;
+    ImageView imageView = findViewById(R.id.imageView1);
+    imageView.setImageBitmap(
+            drawFaceRectanglesOnBitmap(imageBitmap, result));
+    imageBitmap.recycle();
+}
+```
+
+Наконец, в методе `onActivityResult` раскомментируйте вызов метода `detectAndFrame`, как показано ниже.
+
+```java
+@Override
+protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+
+    if (requestCode == PICK_IMAGE && resultCode == RESULT_OK &&
+                data != null && data.getData() != null) {
+        Uri uri = data.getData();
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                    getContentResolver(), uri);
+            ImageView imageView = findViewById(R.id.imageView1);
+            imageView.setImageBitmap(bitmap);
+
+            // Uncomment
+            detectAndFrame(bitmap);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+## <a name="run-the-app"></a>Запуск приложения
+
+Запустите приложение и с помощью обзора выберите изображение, на котором присутствует лицо. Подождите несколько секунд, чтобы служба распознавания лиц смогла ответить. После этого вы получите примерно такой результат:
 
 ![GettingStartAndroid](../Images/android_getstarted2.1.PNG)
 
-## <a name="summary"></a> Сводка
+## <a name="summary"></a>Сводка
 
-С помощью этого руководства вы изучили базовый процесс использования API распознавания лиц и создали приложение для отображения меток лиц на изображениях. Дополнительные сведения об API распознавания лиц вы можете найти в практическом руководстве и в [разделе справки по API](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236). 
+С помощью этого руководства вы изучили базовый процесс использования службы распознавания лиц и создали приложение, в котором лица на изображениях выделяются рамкой.
 
-## <a name="related"></a> Связанные руководства
+## <a name="next-steps"></a>Дополнительная информация
 
-- [Руководство по началу работы с API распознавания лиц в CSharp](FaceAPIinCSharpTutorial.md)
-- [Руководство по началу работы с API распознавания лиц в Python](FaceAPIinPythonTutorial.md)
+Дополнительные сведения об обнаружении лиц и использовании ориентиров для их обнаружения.
+
+> [!div class="nextstepaction"]
+> [Как обнаруживать лица на изображении](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)
+
+Ознакомьтесь с API-интерфейсами распознавания лиц, которые используются для обнаружения лиц и их атрибутов, таких как поза, пол, возраст, положение головы, наличие усов, бороды и очков.
+
+> [!div class="nextstepaction"]
+> [Справочник по API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)
