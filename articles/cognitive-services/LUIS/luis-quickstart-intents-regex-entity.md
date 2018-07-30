@@ -2,19 +2,19 @@
 title: 'Руководство по созданию приложения LUIS для получения данных, соответствующих регулярному выражению: Azure | Документация Майкрософт'
 description: В этом руководстве вы узнаете, как создать простое приложение LUIS, использующее намерения и сущность регулярного выражения для извлечения данных.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
 ms.date: 06/29/2018
-ms.author: v-geberr
-ms.openlocfilehash: f51c296b39fda08d0bcc704fb974e71465385d67
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.author: diberry
+ms.openlocfilehash: 99f796bf26df755ca938c3023057e2e9de1706a1
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929377"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238341"
 ---
 # <a name="tutorial-3-add-regular-expression-entity"></a>Руководство: 3 Добавление сущности регулярного выражения
 В этом руководстве создается приложение, которое демонстрирует, как извлечь согласованно отформатированные данные из фразы с помощью сущности **регулярного выражения**.

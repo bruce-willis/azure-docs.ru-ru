@@ -2,19 +2,19 @@
 title: 'Руководство по созданию приложения LUIS, которое возвращает анализ тональности: Azure | Документация Майкрософт'
 description: В этом руководстве показано, как добавить анализ тональности в приложение LUIS, чтобы проанализировать фразы на наличие позитивных, негативных и нейтральных эмоций.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
 ms.date: 06/25/2018
-ms.author: v-geberr
-ms.openlocfilehash: 8dc6b8d4dd4cbe64841c4b36c498cf9021b4196f
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.author: diberry
+ms.openlocfilehash: 1fa27cf04e136033c51b951271a3d329a910a720
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37930612"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39223625"
 ---
 # <a name="tutorial-9--add-sentiment-analysis"></a>Руководство: 9.  Добавление анализа тональности.
 В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз.
@@ -96,7 +96,7 @@ LUIS не располагает сведениями о новом намере
 
     ![Снимок экрана страницы намерений с выделенной кнопкой публикации ](./media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-button-in-top-nav-highlighted.png)
 
-2. Выберите **Enable Sentiment Analysis** (Включить анализ тональности). Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
+2. Выберите **Enable Sentiment Analysis** (Включить анализ тональности). Выберите слот Production (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
 
     [![](media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-to-production-expanded.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-sentiment-analysis/hr-publish-to-production-expanded.png#lightbox)
 

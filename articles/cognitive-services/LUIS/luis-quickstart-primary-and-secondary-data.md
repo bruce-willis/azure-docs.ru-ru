@@ -2,19 +2,19 @@
 title: 'Руководство по созданию приложения LUIS для извлечения данных: Azure | Документация Майкрософт'
 description: В этом руководстве вы узнаете, как создать простое приложение LUIS, использующее намерения и простую сущность для извлечения данных машинного обучения.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
 ms.date: 06/29/2018
-ms.author: v-geberr
-ms.openlocfilehash: a4bf63b7a2fbbb26b8c121f5360aea0a5ca8a687
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.author: diberry
+ms.openlocfilehash: aafbf7d1b4a624d42e2caa96f9d3ebdfaee4efe6
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952391"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238011"
 ---
 # <a name="tutorial-7-add-simple-entity-and-phrase-list"></a>Руководство: 7. Добавление простой сущности и списка фраз
 В этом руководстве описано создание приложения, которое показывает, как извлечь данные машинного обучения из фразы с помощью **простой** сущности.

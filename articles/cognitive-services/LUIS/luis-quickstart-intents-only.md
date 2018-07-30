@@ -2,19 +2,19 @@
 title: Создание простого приложения с двумя намерения — Azure | Документы Майкрософт
 description: В этом кратком руководстве вы узнаете, как создать простое приложение LUIS, использующее два намерения и не имеющее сущностей, для определения фраз пользователя.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 06/27/2018
-ms.author: v-geberr
-ms.openlocfilehash: 0668ba050a6918995deb42d8feea5afbbab3b010
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.author: diberry
+ms.openlocfilehash: 4be36e9d5b34c46138a657429680689014d0fd3d
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37865817"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237780"
 ---
 # <a name="tutorial-1-build-app-with-custom-domain"></a>Руководство: 1. Создание приложения с личным доменом
 В этом руководстве мы создаем приложение, которое демонстрирует, как использовать **намерения** для определения _намерений_ пользователей на основе фраз (текста), которые они отправляют в приложение. В итоге вы получите конечную точку LUIS, работающую в облаке.

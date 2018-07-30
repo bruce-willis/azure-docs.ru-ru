@@ -2,19 +2,19 @@
 title: 'Руководство по созданию приложения LUIS, которое возвращает ключевые фразы: Azure | Документация Майкрософт'
 description: В этом руководстве вы узнаете, как добавить и вернуть сущность keyPhrase в приложение LUIS для анализа фраз на наличие запрашиваемого содержимого.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
 ms.date: 06/27/2018
-ms.author: v-geberr
-ms.openlocfilehash: ccefb4c2890d74978f340778cfab7cad979c9802
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.author: diberry
+ms.openlocfilehash: 1cafca2433cd96c0595a6124df82856d0c491a49
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929560"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224268"
 ---
 # <a name="tutorial-8-add-keyphrase-entity"></a>Руководство: 8. Добавление сущности keyPhrase 
 В этом руководстве используется приложение, демонстрирующее, как извлечь запрашиваемое содержимое из фраз.
@@ -89,7 +89,7 @@ ms.locfileid: "37929560"
 
     [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png#lightbox)
 
-2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
+2. Выберите слот Production (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
 
     [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png#lightbox)
 

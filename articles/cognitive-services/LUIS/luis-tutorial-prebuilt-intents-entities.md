@@ -2,19 +2,19 @@
 title: Добавление предварительно созданных намерений и сущностей для извлечения общих данных в службе Language Understanding в Azure | Документы Майкрософт
 description: Узнайте, как использовать предварительно созданные намерения и сущности для извлечения различных типов данных сущностей.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
 ms.date: 06/29/2018
-ms.author: v-geberr
-ms.openlocfilehash: 387f20d2080a67041c90ec1af93e791716839dd9
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.author: diberry
+ms.openlocfilehash: 3fc2040e66f6fc649448d3241b01678b7bb7f214
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929055"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39239041"
 ---
 # <a name="tutorial-2-add-prebuilt-intents-and-entities"></a>Учебник: 2. Добавление предварительно созданных намерений и сущностей
 Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. 
