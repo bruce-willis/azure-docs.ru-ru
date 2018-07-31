@@ -10,12 +10,12 @@ ms.service: storage
 ms.author: cshoe
 ms.date: 04/06/2018
 ms.topic: quickstart
-ms.openlocfilehash: 3d01788050779ea5d6e67b345f048775f8e98e9e
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8bde281eab22fc720e2e2420f22ff4eb0a610b93
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31419111"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216595"
 ---
 <!-- Customer intent: As a web application developer I want to interface with Azure Blob storage entirely on the client so that I can build a SPA application that is able to upload and delete files on blob storage. -->
 
@@ -49,7 +49,7 @@ ms.locfileid: "31419111"
 [!INCLUDE [Open the Azure cloud shell](../../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-a-shared-access-signature"></a>Создание подписанного URL-адреса
-Подписанный URL-адрес (SAS) используется кодом, запущенным в браузере, для проверки подлинности запросов в хранилище BLOB-объектов. Используя SAS, клиент может выполнять проверку подлинности без ключа доступа к учетной записи или строки подключения. Дополнительные сведения см. в статье [Использование подписанных URL-адресов (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md).
+Подписанный URL-адрес (SAS) используется кодом, запущенным в браузере, для авторизации запросов к хранилищу BLOB-объектов. Используя SAS, клиент может авторизовать доступ к ресурсам хранилища без ключа доступа к учетной записи или строки подключения. Дополнительные сведения см. в статье [Использование подписанных URL-адресов (SAS)](../common/storage-dotnet-shared-access-signature-part-1.md).
 
 Можно создать подписанный URL-адрес с помощью Azure CLI с использованием Azure Cloud Shell или с помощью Обозревателя службы хранилища Azure Ниже перечислены параметры, для которых необходимо указать значения, чтобы создать SAS с помощью CLI.
 
@@ -62,7 +62,7 @@ ms.locfileid: "31419111"
 Следующий скрипт используется в Azure CLI для создания SAS, который можно передать в JavaScript службы BLOB-объектов.
 
 > [!NOTE]
-> Для достижения наилучших результатов удалите лишние пробелы между параметрами, прежде чем вставлять команду в оболочку облака Azure.
+> Для достижения наилучших результатов удалите лишние пробелы между параметрами, прежде чем вставлять команду в Azure Cloud Shell.
 
 ```bash
 az storage account generate-sas
@@ -84,7 +84,7 @@ az storage account generate-sas
 Теперь, когда создан SAS, скопируйте в текстовый редактор значение, возвращаемое в консоли. Это значение используется на следующем шаге.
 
 > [!IMPORTANT]
-> В рабочей среде всегда передавайте маркеры SAS с помощью SSL. Кроме того, маркеры SAS должны создаваться на сервере и отправляться на страницу HTML, чтобы вернуться обратно в хранилище BLOB-объектов Azure. Как вариант, для создания маркеров SAS можно использовать бессерверные функции. Портал Azure содержит шаблоны функций, которые имеют возможность создавать SAS с помощью функции JavaScript.
+> В рабочей среде всегда передавайте маркеры SAS с помощью SSL. Кроме того, маркеры SAS должны создаваться на сервере и отправляться на страницу HTML, чтобы вернуться обратно в хранилище BLOB-объектов Azure. Как вариант, для создания маркеров SAS можно использовать бессерверные функции. Портал Azure содержит шаблоны функций, которые могут создавать SAS с помощью функции JavaScript.
 
 ## <a name="implement-the-html-page"></a>Реализация страницы HTML
 
@@ -254,4 +254,4 @@ document.getElementById('delete-button').addEventListener('click', () => {
 Изучите примеры, чтобы узнать, как отправлять большие двоичные объекты и отслеживать процесс выполнения во время отправки файлов.
 
 > [!div class="nextstepaction"]
-> [Azure Storage JavaScript Client Library for Browsers](https://github.com/Azure/azure-storage-node/tree/master/browser) (Клиентская библиотека JavaScript службы хранилища Azure для браузеров)
+> [Клиентские библиотеки хранилища BLOB-объектов](https://github.com/Azure/azure-storage-node/tree/master/browser)

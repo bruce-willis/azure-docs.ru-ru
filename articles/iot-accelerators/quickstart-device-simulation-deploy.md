@@ -1,5 +1,5 @@
 ---
-title: Развертывание и запуск решения симулятора устройств в Azure | Документация Майкрософт
+title: Испытание решения для имитации устройства в Azure | Документация Майкрософт
 description: В этом кратком руководстве развертывается акселератор решения Интернета вещей Azure "Симулятор устройств". Использование панели мониторинга решений для создания симулятора.
 author: dominicbetts
 manager: timlt
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/05/2018
 ms.author: dobett
-ms.openlocfilehash: fd4a637ebb05493bf0c0a940c3ff0cb56ad94c54
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 549a1b867ad35c6de42969722ba5a2bd28c8f99a
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005039"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213162"
 ---
 # <a name="quickstart-deploy-and-run-a-cloud-based-device-simulation-solution"></a>Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака
 
@@ -34,7 +34,7 @@ ms.locfileid: "39005039"
 
 ![Выбор симулятора устройств](./media/quickstart-device-simulation-deploy/devicesimulation.png)
 
-На странице **Create Device Simulation solution** (Создание решения симулятора устройств) введите уникальное **имя решения**. Запишите имя решения, так как оно будет именем группы ресурсов Azure, содержащей различные развернутые ресурсы.
+На странице **Create Device Simulation solution** (Создание решения симулятора устройств) введите уникальное **имя решения**. Запишите имя решения, так как оно будет именем группы ресурсов Azure, которая содержит все ресурсы решения.
 
 Выберите **подписку** и **регион**, которые необходимо использовать для развертывания акселератора решений. Вы можете выбрать ближайший к вам регион. Вы должны быть [глобальным администратором или пользователем](iot-accelerators-permissions.md) в подписке.
 

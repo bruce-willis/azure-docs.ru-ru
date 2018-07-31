@@ -9,12 +9,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: rogarana
-ms.openlocfilehash: f028d37a98cecf14706773a2eb7cb601481435d1
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 2ae0fee410c93911546e5cbeef1378e6f7ebbc39
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307921"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205203"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-azure-powershell"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure PowerShell
 
@@ -113,13 +113,15 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure. Дополнительные сведения о работе с хранилищем BLOB-объектов см. в соответствующем практическом руководстве.
+Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure. Дополнительные сведения о работе с хранилищем BLOB-объектов с помощью PowerShell см. в статье "Использование Azure PowerShell со Службой хранилища Azure".
 
 > [!div class="nextstepaction"]
-> [Практическое руководство по операциям в хранилище BLOB-объектов](storage-how-to-use-blobs-powershell.md)
+> [Использование Azure PowerShell со Службой хранилища Azure](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 ### <a name="microsoft-azure-powershell-storage-cmdlets-reference"></a>Справочник по командлетам PowerShell для службы хранилища Microsoft Azure
+
 * [Командлеты PowerShell для службы хранилища](/powershell/module/azurerm.storage#storage)
 
 ### <a name="microsoft-azure-storage-explorer"></a>Обозреватель службы хранилища Microsoft Azure
+
 * [Обозреватель хранилищ Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.

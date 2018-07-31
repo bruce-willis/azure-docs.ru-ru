@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 04/06/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9de4b00b2fff1feabcaee4e30667dfbdc75d9266
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: d404e3a300a953ccc1cfb691cbde6f6d7ee54b26
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39114445"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216314"
 ---
 # <a name="develop-large-scale-parallel-compute-solutions-with-batch"></a>Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы
 
@@ -174,7 +174,7 @@ ms.locfileid: "39114445"
 
 ### <a name="size-of-the-compute-nodes"></a>Размер вычислительных узлов
 
-При создании пула пакетной службы Azure вы можете использовать любые семейства и размеры виртуальной машины, доступные в Azure. Azure предлагает диапазон размеров виртуальных машин для разных рабочих нагрузок, включая специализированные размеры [HPC](../virtual-machines/linux/sizes-hpc.md) или [с поддержкой GPU](../virtual-machines/linux/sizes-gpu.md). 
+При создании пула пакетной службы Azure вы можете использовать любые семейства и размеры виртуальной машины, доступные в Azure. Azure предлагает ряд размеров виртуальных машин для разных рабочих нагрузок, включая специализированные размеры [HPC](../virtual-machines/linux/sizes-hpc.md) или размеры с поддержкой [GPU](../virtual-machines/linux/sizes-gpu.md). 
 
 Дополнительные сведения см. в статье [Выбор размера виртуальной машины для вычислительных узлов в пуле пакетной службы Azure](batch-pool-vm-sizes.md).
 
@@ -505,7 +505,7 @@ ms.locfileid: "39114445"
 ## <a name="next-steps"></a>Дополнительная информация
 * См. дополнительные сведения об [API-интерфейсах и средствах пакетной службы](batch-apis-tools.md) для сборки решений пакетной службы.
 * Здесь приведены основные сведения о разработке приложений с поддержкой пакетной службы с помощью [клиентской библиотеки .NET для пакетной службы](quick-run-dotnet.md) или [Python](quick-run-python.md). В этом кратком руководстве рассматривается пример приложения, которое использует пакетную службу для выполнения рабочей нагрузки на нескольких вычислительных узлах и службу хранилища Azure для помещения файла рабочей нагрузки на промежуточное хранение и обработку и его извлечения.
-* Скачайте и установите [BatchLabs][batch_labs] для использования во время разработки решений пакетной службы. Используйте BatchLabs для создания, отладки и мониторинга приложений пакетной службы Azure. 
+* Скачайте и установите [Batch Explorer][batch_labs] для использования во время разработки решений пакетной службы. Используйте Batch Explorer для создания, отладки и мониторинга приложений пакетной службы Azure. 
 * См. ресурсы сообщества, в том числе [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-batch), [репозиторий сообщества по пакетной службе](https://github.com/Azure/Batch), а также [форум по пакетной службе Azure][batch_forum] на веб-сайте MSDN. 
 
 [1]: ./media/batch-api-basics/node-folder-structure.png
@@ -516,7 +516,7 @@ ms.locfileid: "39114445"
 [msmpi]: https://msdn.microsoft.com/library/bb524831.aspx
 [github_samples]: https://github.com/Azure/azure-batch-samples
 [github_sample_taskdeps]:  https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/TaskDependencies
-[batch_labs]: https://azure.github.io/BatchLabs/
+[batch_labs]: https://azure.github.io/BatchExplorer/
 [batch_net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [msdn_env_vars]: https://msdn.microsoft.com/library/azure/mt743623.aspx
 [net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx

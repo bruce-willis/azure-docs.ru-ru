@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью пакета SDK службы хранилища для Java версии 10 | Документация Майкрософт
-description: В этом кратком руководстве вы создаете контейнер в хранилище объектов (большой двоичный объект), отправляете файл, список объектов и скачиваете с помощью пакета SDK службы хранилища для Java.
+description: В этом кратком руководстве описано создание контейнера в хранилище объектов (большой двоичный объект Azure), отправку файла, объекты списка и скачивание с помощью пакета SDK службы хранилища для Java.
 services: storage
 author: roygara
 manager: jeconnoc
@@ -9,23 +9,23 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 07/02/2018
 ms.author: rogarana
-ms.openlocfilehash: a789269e73e1817f6a45e1e5948dbfaa21efd283
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 749badbc0bf5286c06da02f092933abbefda7ceb
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38704476"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185420"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-using-the-java-sdk-v10-preview"></a>Краткое руководство. Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK для Java версии 10 (предварительная версия)
+# <a name="quickstart-upload-download-and-list-blobs-by-using-the-java-storage-sdk-v10-preview"></a>Краткое руководство. Отправка, скачивание и отображение больших двоичных объектов с помощью пакета SDK службы хранилища для Java версии 10 (предварительная версия)
 
-Из этого краткого руководства вы узнаете, как передать, скачать и создать список блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure с помощью нового пакета SDK службы хранилища для Java. Новый пакет SDK службы хранилища для Java использует модель реактивного программирования RxJava путем обеспечения асинхронных операций. Дополнительные сведения о RxJava см. [здесь](https://github.com/ReactiveX/RxJava). 
+Из этого краткого руководства вы узнаете, как передать, скачать и создать список блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure с помощью нового пакета SDK службы хранилища для Java. Новый пакет SDK службы хранилища для Java использует модель реактивного программирования RxJava, которое обеспечивает асинхронные операции. Дополнительные сведения о RxJava см. в разделе [RxJava: Reactive Extensions for the JVM](https://github.com/ReactiveX/RxJava) (RxJava. Реактивные расширения для виртуальной машины Java). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством сделайте следующее:
+Установите и настройте следующие приложения.
 
-* Установите и настройте [Maven](http://maven.apache.org/download.cgi) для работы из командной строки или любую интегрированную среду разработки Java (на свой выбор).
-* Установите и настройте [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
+* [Maven](http://maven.apache.org/download.cgi) для работы с командной строкой или любой выбранной интегрированной средой разработки Java;
+* [JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -43,21 +43,21 @@ git clone https://github.com/Azure-Samples/storage-blobs-java-v10-quickstart.git
 
 Эта команда клонирует репозиторий в локальную папку git.
 
-После завершения импорта проекта откройте **Quickstart.java** (в **src/main/java/quickstart**).
+После завершения импорта проекта откройте **Quickstart.java** в **src/main/java/quickstart**.
 
 [!INCLUDE [storage-copy-account-key-portal](../../../includes/storage-copy-account-key-portal.md)]
 
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
-Этому решению требуется, чтобы имя и ключ учетной записи хранения безопасно хранились в переменных среды локального компьютера, на котором выполняется пример. Чтобы создать переменную среды, выполните один из приведенных ниже примеров в зависимости от операционной системы.
+Это решение требует безопасного хранения имени и ключа учетной записи хранения. Храните их в переменных среды локального компьютера, на котором выполняется пример. Чтобы создать переменные среды, в зависимости от операционной системы выполните либо пример для Linux, либо для Windows.
 
-### <a name="for-linux"></a>Для Linux
+### <a name="linux-example"></a>Пример Linux
 
 ```
 export AZURE_STORAGE_ACCOUNT="<youraccountname>"
 export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
 ```
 
-### <a name="for-windows"></a>Для Windows
+### <a name="windows-example"></a>Пример Windows
 
 ```
 setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
@@ -66,11 +66,15 @@ setx AZURE_STORAGE_ACCESS_KEY "<youraccountkey>"
 
 ## <a name="run-the-sample"></a>Запуск примера
 
-В этом примере создается тестовый файл в каталоге по умолчанию (AppData\Local\Temp, для пользователей Windows), затем предлагается ввести команды для передачи тестового файла в хранилище BLOB-объектов, после чего выводится список больших двоичных объектов в контейнере, а затем файл скачивается с новым именем, чтобы можно было сравнить старый и новый файлы. 
+В каталоге по умолчанию этот пример создает тестовый файл **AppData\Local\Temp** для пользователей Windows. Затем вам будет предложено выполнить следующие действия.
 
-Если вы хотите запустить пример, используя Maven в командной строке, откройте оболочку и перейдите в папку **storage-blobs-java-v10-quickstart** в клонированном каталоге. Затем введите `mvn compile exec:java`.
+1. Введите команды для отправки тестового файла в хранилище BLOB-объектов Azure.
+2. Создайте список BLOB-объектов в контейнере.
+3. Загрузите отправленный файл с новым именем для сравнения старого и нового файлов. 
 
-Ниже приведен пример выходных данных для запуска приложения в Windows.
+Если необходимо запустить пример, используя Maven в командной строке, откройте оболочку и просмотрите папку **storage-blobs-java-v10-quickstart** в клонированном каталоге. Затем введите `mvn compile exec:java`.
+
+В этом примере показаны выходные данные при запуске приложения на системе Windows.
 
 ```
 Created quickstart container
@@ -97,38 +101,44 @@ E
 Cleaning up the sample and exiting!
 ```
 
-У вас есть контроль над образцом, поэтому введите команды для выполнения кода. Имейте в виду, что входные данные учитывают регистр.
+Вы управляете образцом, поэтому введите команды для выполнения кода. Входные данные с учетом регистра.
 
-Для просмотра файлов в хранилище BLOB-объектов можно также воспользоваться таким средством, как [обозреватель службы хранилища Azure](http://storageexplorer.com/?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). Обозреватель службы хранилища Azure — это бесплатное кроссплатформенное средство для доступа к данным учетной записи хранения. 
+Для просмотра файлов в хранилище BLOB-объектов можно также воспользоваться таким средством, как [Обозреватель службы хранилища Azure](http://storageexplorer.com/?toc=%2fazure%2fstorage%2fblobs%2ftoc.json). Обозреватель службы хранилища Azure — это бесплатное кроссплатформенное средство для доступа к данным учетной записи хранения. 
 
-После проверки файлов нажмите клавишу **ВВОД**, чтобы завершить работу демонстрационной версии и удалить тестовые файлы. Теперь вы знаете, что делает этот пример. Давайте откроем файл **Quickstart.java** и изучим его код. 
+Проверьте файлы. Затем выберите **E** и нажмите **Enter** для завершения демонстрации и удаления тестовых файлов. Теперь вы знаете, что делает этот пример. Давайте откроем файл **Quickstart.java** и изучим его код. 
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода
 
-Разберем пример кода, чтобы понять, как он работает.
+Следующие разделы содержат пример кода с описанием его работы.
 
 ### <a name="get-references-to-the-storage-objects"></a>Получение ссылок на объекты хранилища
 
-Сначала необходимо создать ссылки на объекты, используемые для доступа к хранилищу BLOB-объектов и управлению им. Эти объекты зависят друг от друга — каждый объект используется следующим в списке объектом.
+Сначала создайте ссылки на объекты, используемые для доступа к хранилищу BLOB-объектов и управления им. Эти объекты компилируются друг с другом. Каждый используется следующим в списке.
 
-* Создайте экземпляр объекта StorageURL, указывающий на учетную запись хранения.
+1. Создайте экземпляр объекта **StorageURL**, который указывает на учетную запись хранения.
 
-    Объект [**StorageURL**](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._storage_u_r_l?view=azure-java-preview) является представлением вашей учетной записи хранения и позволяет создать конвейер. Конвейер ([конвейер HTTP](https://github.com/Azure/azure-storage-java/wiki/Azure-Storage-Java-V10-Overview#url-types--http-pipeline)) — это набор политик, которые используются для манипулирования запросами и ответами с помощью механизмов авторизации, ведения журналов и повторов. С конвейером вы можете создать экземпляр объекта [**ServiceURL**](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._service_u_r_l?view=azure-java-preview), который позволяет создать экземпляр [**ContainerURL**](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l?view=azure-java-preview), необходимый для запуска операций в контейнерах больших двоичных объектов.
+    * Объект [StorageURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._storage_u_r_l?view=azure-java-preview) является представлением учетной записи хранения. Он используется для создания конвейера. 
+    * Конвейер — это набор политик, который используется для манипулирования запросами и ответами с помощью механизмов авторизации, ведения журналов и повторов. Дополнительные сведения см. в разделе [URL Types & Http Pipeline](https://github.com/Azure/azure-storage-java/wiki/Azure-Storage-Java-V10-Overview#url-types--http-pipeline) (Типы URL и конвейер HTTP).  
+    * С помощью конвейера создайте экземпляр объекта [ServiceURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._service_u_r_l?view=azure-java-preview).
+    * С помощью объекта **ServiceURL** создайте экземпляр [ContainerURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l?view=azure-java-preview).
+    * **ContainerURL** требуется для выполнения операций в контейнерах больших двоичных объектов.
 
-* Создайте экземпляр объекта ContainerURL, представляющий контейнер, к которому осуществляется доступ. Контейнеры используются для организации BLOB-объектов аналогично папкам для упорядочения файлов на компьютере.
+2. Создайте экземпляр объекта **ContainerURL**, представляющий контейнер, к которому осуществляется доступ. Контейнеры организуют BLOB-объекты аналогично папкам для упорядочивания файлов на компьютере.
 
-    **ContainerURL** предоставляет точку доступа к службе контейнеров. С помощью **ContainerURL** можно создать экземпляр объекта [**BlobURL**](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l?view=azure-java-preview), который необходим для создания большого двоичного объекта.
+    * **ContainerURL** предоставляет точку доступа к службе контейнеров. 
+    * Можно создать экземпляр объекта [BlobURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._blob_u_r_l?view=azure-java-preview) с помощью [ContainerURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l?view=azure-java-preview).
+    * **BlobURL** необходим для создания больших двоичных объектов.
 
-* Создайте экземпляр объекта [BlobURL](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._blob_u_r_l?view=azure-java-preview), который указывает на конкретный интересующий вас большой двоичный объект.
+3. Создайте экземпляр объекта **BlobURL**, который указывает на конкретный интересующий большой двоичный объект. 
 
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
 ### <a name="create-a-container"></a>Создание контейнера 
 
-В этом разделе вы создадите экземпляр объекта ContainerURL и контейнер с ним. В примере контейнер называется **quickstartblobs**. 
+В этом разделе создается экземпляр объекта **ContainerURL**. Вместе с ним можно создать контейнер. В примере контейнер называется **quickstartblobs**. 
 
-В этом примере используется [CreateIfNotExists](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.create?view=azure-java-preview), так как при каждом запуске примера требуется создавать новый контейнер. Вы можете также создать контейнер заранее, чтобы не создавать его в коде.
+В этом примере используется [ContainerURL.create](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.create?view=azure-java-preview), поэтому при каждом запуске примера требуется создавать новый контейнер. Или вы можете создать контейнер заранее, чтобы не создавать его в коде.
 
 ```java
 // Create a ServiceURL to call the Blob service. We will also use this to construct the ContainerURL
@@ -154,11 +164,18 @@ try {
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
-Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Именно этот тип представлен в этом кратком руководстве. 
+Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Они используются также и в этом кратком руководстве. 
 
-Чтобы отправить файл в BLOB-объект, получите ссылку на BLOB-объект в целевом контейнере. Получив ссылку на двоичный объект, вы можете передать файл с помощью либо низкоуровневых API, например [Отправка](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._block_blob_u_r_l.upload?view=azure-java-preview) — PutBlob, [StageBlock](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._block_blob_u_r_l.stageblock?view=azure-java-preview#com_microsoft_azure_storage_blob__block_blob_u_r_l_stageBlock_String_Flowable_ByteBuffer__long_LeaseAccessConditions_) — называемые также PutBLock, в экземпляре BlockBlobURL или высокоуровневых API, предоставляемых в классе [TransferManager](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._transfer_manager?view=azure-java-preview), например, в методе [TransferManager.uploadFileToBlockBlob](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._transfer_manager.uploadfiletoblockblob?view=azure-java-preview). Эта операция создает BLOB-объект, если он еще не существует, или заменяет его, если он существует.
+1. Чтобы отправить файл в BLOB-объект, получите ссылку на BLOB-объект в целевом контейнере. 
+2. Получив ссылку на большой двоичный объект, можно отправить ему файл с помощью любого из следующих API.
 
-Пример кода создает локальный файл для отправки и скачивания. Файл для отправки хранится как **sourceFile**, а URL-адрес большого двоичного объекта — как **blob**. В приведенном ниже примере файл отправляется в контейнер с именем **quickstart**.
+    * Низкоуровневые интерфейсы API. Примерами являются [BlockBlobURL.upload](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._block_blob_u_r_l.upload?view=azure-java-preview), также называемый PutBlob, и [BlockBlobURL.stageBlock](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._block_blob_u_r_l.stageblock?view=azure-java-preview#com_microsoft_azure_storage_blob__block_blob_u_r_l_stageBlock_String_Flowable_ByteBuffer__long_LeaseAccessConditions_), также называемый PutBLock, в экземпляре **BlockBlobURL**. 
+
+    * Высокоуровневые интерфейсы API предоставлены в [классе TransferManager](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._transfer_manager?view=azure-java-preview). Например, метод [TransferManager.uploadFileToBlockBlob](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._transfer_manager.uploadfiletoblockblob?view=azure-java-preview). 
+
+    С помощью этой операции создается большой двоичный объект, если он не был создан ранее. Если большой двоичный объект уже существует, то он будет перезаписан.
+
+Пример кода создает локальный файл для отправки и скачивания. Он сохраняет файл для отправки как **sourceFile**, а URL-адрес большого двоичного объекта в **blob**. В приведенном ниже примере файл отправляется в контейнер с именем **quickstart**.
 
 ```java
 static void uploadFile(BlockBlobURL blob, File sourceFile) throws IOException {
@@ -175,11 +192,11 @@ static void uploadFile(BlockBlobURL blob, File sourceFile) throws IOException {
 }
 ```
 
-Блочный BLOB-объект может представлять собой текстовый или двоичный файл любого типа. Страничные BLOB-объекты в основном используются для файлов виртуального жесткого диска, применяемых для поддержки виртуальных машин IaaS. Большие двоичные объекты добавления предназначены для добавления данных в конец. Оно часто используется для ведения журнала. Большинство объектов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты.
+Блочный BLOB-объект может представлять собой текстовый или двоичный файл любого типа. Страничные BLOB-объекты в основном используются для файлов виртуального жесткого диска, применяемых для поддержки виртуальных машин IaaS. Большие двоичные объекты добавления используются для добавления данных в конец. Они часто используются для ведения журнала. Большинство объектов, находящихся в хранилище BLOB-объектов, представляют собой блочные BLOB-объекты.
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Вы можете получить список объектов в контейнере с помощью [containerURL.listBlobsFlatSegment](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.listblobsflatsegment?view=azure-java-preview). Этот метод возвращает до 5000 объектов одновременно с маркером продолжения (следующий маркер), если в контейнере есть дополнительные объекты. Для этого мы создаем вспомогательную функцию, которая вызывает себя саму несколько раз, пока в предыдущем ответе listBlobsFlatSegment не появляется следующий маркер.
+С помощью [ContainerURL.listBlobsFlatSegment](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.listblobsflatsegment?view=azure-java-preview) можно получить список объектов в контейнере. Этот метод возвращает до 5 000 объектов одновременно с маркером продолжения или далее, если в контейнере есть дополнительные объекты. Создайте вспомогательную функцию, которая вызывает себя саму несколько раз, когда в предыдущем ответе **listBlobsFlatSegment** не появляется следующий маркер.
 
 ```java
 static void listBlobs(ContainerURL containerURL) {
@@ -237,9 +254,9 @@ private static Single <ContainersListBlobFlatSegmentResponse> listAllBlobs(Conta
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Чтобы скачать большие двоичные объекты на локальный диск, воспользуйтесь методом [blobURL.download](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._blob_u_r_l.download?view=azure-java-preview).
+Чтобы скачать большие двоичные объекты на локальный диск, воспользуйтесь методом [BlobURL.download](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._blob_u_r_l.download?view=azure-java-preview).
 
-Следующий код скачивает BLOB-объект, отправленный в предыдущем разделе, добавляя к имени BLOB-объекта суффикс "_DOWNLOADED", чтобы вы увидели оба файла на локальном диске. 
+Следующий код скачивает BLOB-объект, который мы передали в предыдущем разделе. К имени BLOB-объекта добавляется суффикс **_DOWNLOADED**, поэтому можно видеть оба файла на локальном диске. 
 
 ```java
 static void getBlob(BlockBlobURL blobURL, File sourceFile) {
@@ -262,7 +279,7 @@ static void getBlob(BlockBlobURL blobURL, File sourceFile) {
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны большие двоичные объекты, отправленные при работе с этим руководством, удалите весь контейнер с помощью метода [containerURL.delete](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.delete?view=azure-java-preview). Он также удаляет файлы в контейнере.
+Если больше нет необходимости в больших двоичных объектах, отправленных при работе с этим руководством, удалите весь контейнер с помощью метода [ContainerURL.delete](https://docs.microsoft.com/en-us/java/api/com.microsoft.azure.storage.blob._container_u_r_l.delete?view=azure-java-preview). Он также удаляет файлы в контейнере.
 
 ```java
 containerURL.delete(null).blockingGet();
@@ -270,7 +287,7 @@ containerURL.delete(null).blockingGet();
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. 
+В этом кратком руководстве было описано, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure с помощью Java. 
 
 > [!div class="nextstepaction"]
 > [Хранилища пакета SDK, версия 10 для исходного кода Java ](https://github.com/Azure/azure-storage-java/tree/New-Storage-SDK-V10-Preview)

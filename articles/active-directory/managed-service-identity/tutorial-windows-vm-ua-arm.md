@@ -1,6 +1,6 @@
 ---
-title: Доступ к Azure Resource Manager с помощью пользовательского удостоверения MSI виртуальной машины Windows
-description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью пользовательского управляемого удостоверения службы (MSI) на виртуальной машине Windows.
+title: Получение доступа к Azure Resource Manager с помощью назначаемого пользователем Управляемого удостоверения службы на виртуальной машине Windows
+description: Из этого руководства вы узнаете, как получить доступ к Azure Resource Manager с помощью назначаемого пользователем Управляемого удостоверения службы на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
 author: daveba
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2018
 ms.author: daveba
-ms.openlocfilehash: 67bb45f7bd27a142b978bedb48925cc41e8d1287
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 9cc7683b260a9afbe4aee006a22af9c4834c4eb1
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904379"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248393"
 ---
-# <a name="tutorial-use-a-user-assigned-managed-service-identity-msi-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство по получению доступа к Azure Resource Manager с помощью пользовательского управляемого удостоверения службы (MSI) на виртуальной машине Windows
+# <a name="tutorial-use-a-user-assigned-managed-service-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство по получению доступа к Azure Resource Manager с помощью назначаемого пользователем Управляемого удостоверения службы на виртуальной машине Windows
 
 [!INCLUDE[preview-notice](~/includes/active-directory-msi-preview-notice-ua.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "37904379"
 > * Получение маркера доступа с помощью пользовательского удостоверения и вызов Azure Resource Manager с его помощью. 
 > * Чтение свойств группы ресурсов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с управляемым удостоверением службы, изучите [общие сведения](overview.md). **Обратите внимание на [различия между системным и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
@@ -111,9 +111,9 @@ $vm = Get-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM
 Update-AzureRmVM -ResourceGroupName TestRG -VM $vm -IdentityType "UserAssigned" -IdentityID "/subscriptions/<SUBSCRIPTIONID>/resourcegroups/myResourceGroupVM/providers/Microsoft.ManagedIdentity/userAssignedIdentities/ID1"
 ```
 
-## <a name="grant-your-user-assigned-msi-access-to-a-resource-group-in-azure-resource-manager"></a>Предоставление пользовательскому удостоверению MSI доступа к группе ресурсов в Azure Resource Manager 
+## <a name="grant-your-user-assigned-managed-service-identity-access-to-a-resource-group-in-azure-resource-manager"></a>Предоставление назначаемому пользователем Управляемому удостоверению службы доступа к группе ресурсов в Azure Resource Manager 
 
-Компонент "Управляемое удостоверение службы" (MSI) предоставляет удостоверения, используемые кодом для запроса маркеров доступа в целях аутентификации в интерфейсах API ресурсов, которые поддерживают аутентификацию Azure AD. В этом руководстве код получит доступ к API Azure Resource Manager. 
+Компонент "Управляемое удостоверение службы" предоставляет удостоверения, используемые в коде для запроса маркеров доступа в целях аутентификации в API-интерфейсах ресурсов, которые поддерживают аутентификацию Azure AD. В этом руководстве код получит доступ к API Azure Resource Manager. 
 
 Чтобы ваш код мог получить доступ к API, необходимо сначала предоставить удостоверению доступ к ресурсу в Azure Resource Manager. В этом случае — к группе ресурсов, в которой содержится виртуальная машина. Измените значение `<SUBSCRIPTION ID>` в соответствии с вашей средой.
 
@@ -148,7 +148,7 @@ CanDelegate: False
 
 4. Теперь, когда создано **подключение к удаленному рабочему столу** с виртуальной машиной, откройте **PowerShell** в удаленном сеансе.
 
-5. С помощью команды PowerShell `Invoke-WebRequest` выполните запрос к локальной конечной точке MSI, чтобы получить маркер доступа к Azure Resource Manager.
+5. С помощью команды PowerShell `Invoke-WebRequest` выполните запрос к локальной конечной точке Управляемого удостоверения службы, чтобы получить маркер доступа к Azure Resource Manager.
 
     ```azurepowershell
     $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=73444643-8088-4d70-9532-c3a0fdc190fz&resource=https://management.azure.com' -Method GET -Headers @{Metadata="true"}

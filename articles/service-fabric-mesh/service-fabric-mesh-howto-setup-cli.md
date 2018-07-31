@@ -9,12 +9,12 @@ ms.date: 07/11/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: f56bcf0c844545e8883175da2bd3f22afdcd19ea
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: cf899e236b7fa21a90a0784e1e2b4fce0feae055
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39089533"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213441"
 ---
 # <a name="set-up-the-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric
 CLI для Сетки Service Fabric требуется для развертывания и управления ресурсами в Сетке Service Fabric. 
@@ -23,7 +23,7 @@ CLI для Сетки Service Fabric требуется для разверты�
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 
-Если вы решили установить и использовать CLI локально, используйте Azure CLI версии 2.0.35 и выше. Чтобы узнать версию, выполните команду `az --version`. Чтобы установить или обновить CLI, см. руководство по [установке Azure CLI 2.0][azure-cli-install].
+Если вы решили установить и использовать CLI локально, используйте Azure CLI версии 2.0.35 и выше. Чтобы узнать версию, выполните команду `az --version`. Если необходимо установить или обновить CLI, ознакомьтесь с разделом [Установка Azure CLI 2.0][azure-cli-install].
 
 Удалите предыдущие установки модуля CLI для Сетки Azure Service Fabric.
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 07/17/2018
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: a66d845fcf7507613cda475bbc96225f8a7cc7eb
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: bb0e3ee685d5a52a9f372e99d97f3608f67c17c0
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126873"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185403"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
@@ -144,7 +144,7 @@ ms.locfileid: "39126873"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве описано как создавать шаблоны с помощью Visual Studio Code и как их развертывать в оболочке Cloud портала Azure. Шаблоны, используемые в этом кратком руководстве, содержат только один ресурс Azure.  Сведения о том, как разработать шаблон с несколькими ресурсами, можно узнать из следующего руководства.  Некоторые ресурсы обладают зависимыми ресурсами.
+В этом руководстве описано как создавать шаблоны с помощью Visual Studio Code и как их развертывать в оболочке Cloud портала Azure. В следующем руководстве описано, как разрабатывать шаблоны и использовать ссылки на шаблоны.
 
 > [!div class="nextstepaction"]
-> [Tutorial: create an Azure Resource Manager template for deploying an encrypted storage account](./vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) (Руководство по созданию шаблона Azure Resource Manager для развертывания в зашифрованной учетной записи хранения)
+> [Создание зашифрованной учетной записи хранения](./resource-manager-tutorial-create-encrypted-storage-accounts.md)

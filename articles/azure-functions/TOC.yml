@@ -35,7 +35,7 @@
           href: functions-create-storage-queue-triggered-function.md
     - name: Интеграция
       items:
-        - name: Служба хранилища
+        - name: Хранилище
           href: functions-integrate-storage-queue-output-binding.md
         - name: Azure Cosmos DB
           href: functions-integrate-store-unstructured-data-cosmosdb.md
@@ -91,6 +91,8 @@
       href: functions-best-practices.md
     - name: Прокси функций
       href: functions-proxies.md
+    - name: IP-адреса;
+      href: ip-addresses.md
     - name: Функции в локальной среде
       href: functions-runtime-overview.md
     - name: Устойчивые функции
@@ -215,7 +217,7 @@
               href: functions-bindings-cosmosdb-v2.md
         - name: Сетка событий Azure
           href: functions-bindings-event-grid.md
-        - name: Концентраторы событий
+        - name: концентраторы событий;
           href: functions-bindings-event-hubs.md
         - name: Внешний файл
           href: functions-bindings-external-file.md

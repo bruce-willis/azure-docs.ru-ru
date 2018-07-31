@@ -17,12 +17,12 @@ ms.date: 07/09/2018
 author: mlearned
 ms.custom: mvc
 monikerRange: vsts
-ms.openlocfilehash: 8c92b45cd3949e56515286c963b035e3c449835b
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 192992917432a64c2f9f81761e22bf7d9205703a
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37967451"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205567"
 ---
 # <a name="create-a-cicd-pipeline-for-your-existing-code-with-the-azure-devops-project"></a>Создание конвейера CI/CD для имеющегося кода с помощью проекта Azure DevOps
 
@@ -36,14 +36,14 @@ ms.locfileid: "37967451"
 > * Настройка VSTS и подписки Azure. 
 > * Фиксация изменений в GitHub и автоматическое развертывание в Azure.
 > * Анализ конвейера VSTS CI/CD.
-> * Настройка мониторинга Azure Application Insights.
+> * Настройка мониторинга Azure Application Insights
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Вы можете получить бесплатную подписку с помощью [Visual Studio Dev Essentials](https://visualstudio.microsoft.com/dev-essentials/).
 * Доступ к GitHub или внешнему репозиторию Git, содержащему .NET, Java, PHP, Node, Python или статический веб-код.
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Проект Azure DevOps создает конвейер CI/CD в VSTS.  Вы можете создать учетную запись **VSTS** или использовать **имеющуюся**.  Проект Azure DevOps также создает **ресурсы Azure** в необходимой **подписке Azure**.
 
@@ -141,8 +141,8 @@ ms.locfileid: "37967451"
 
 1. Введите **имя** оповещения.
 
-1. Выберите раскрывающийся список для **Source Alter on** (Изменить источник).  Выберите необходимый **ресурс службы приложений.**
-
+1. Выберите раскрывающийся список для **Source Alter on** (Изменить источник).  Выберите необходимый **ресурс Службы приложений.**
+<!-- Could you please confirm if this should be "Source Alter on" instead of "Source Alert on"? -->
 1. По умолчанию оповещение отображается, если **время отклика сервера превышает 1 секунду**.  Выберите раскрывающийся список **Метрика**, чтобы просмотреть различные оповещения метрики.  Различные оповещения можно легко настроить, чтобы улучшить возможности мониторинга приложения.
 
 1. Установите флажок **Notify via Email owners, contributors, and readers** (Уведомлять по электронной почте владельцев, участников и читателей).  При желании вы можете выполнять дополнительные действия, когда срабатывает оповещение во время выполнения приложения логики Azure.

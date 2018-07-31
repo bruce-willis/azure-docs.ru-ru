@@ -10,12 +10,12 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 05736495d0d4a0c3a5072d29ad27801b6d4a7241
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 2f894549951a0ef23a95acaab48ab20ce6646443
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37967917"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39189336"
 ---
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
@@ -32,7 +32,11 @@ ms.locfileid: "37967917"
 
    ![Параметры конфигурации Kubernetes](../media/common/Kubernetes-Create-Cluster-2.PNG)
 
-   По завершении выберите **Next: Networking** (Далее: сети).
+   По завершении выберите **Далее: проверка подлинности**.
+
+1. Выберите нужный параметр для управления доступом на основе ролей (RBAC). Служба Azure Dev Spaces поддерживает кластеры как с включенным, так и с отключенным механизмом RBAC.
+
+    ![Параметр RBAC](../media/common/k8s-RBAC.PNG)
 
 1. Убедитесь, что маршрутизация приложений HTTP включена.
 
@@ -40,9 +44,5 @@ ms.locfileid: "37967917"
 
     > [!IMPORTANT]
     > Обязательно включите параметр "Маршрутизация приложений HTTP" при создании кластера AKS. Вы не сможете изменить значение этого параметра позже.
-
-1. Выберите нужный параметр для управления доступом на основе ролей (RBAC). Служба Azure Dev Spaces поддерживает кластеры как с включенным, так и с отключенным механизмом RBAC.
-
-    ![Параметр RBAC](../media/common/k8s-RBAC.PNG)
 
 1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).

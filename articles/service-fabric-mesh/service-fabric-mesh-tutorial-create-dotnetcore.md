@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/17/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 692a384c3695001677b7a3d6161b77f3f015ad7c
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: d48d7625221dfb96e0119ef0d42b3b0a8d04baba
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125875"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185675"
 ---
 # <a name="tutorial-create-debug-and-deploy-a-multi-service-web-application-to-service-fabric-mesh"></a>Руководство. Создание, отладка и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric
 
@@ -42,7 +42,7 @@ ms.locfileid: "39125875"
 > [!div class="checklist"]
 > * Создание приложения Сетки Service Fabric.
 > * [Отладка приложения локально](service-fabric-mesh-tutorial-debug-service-fabric-mesh-app.md).
-> * [Публикация приложения в Azure](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md).
+> * [Публиковать приложение в Azure](service-fabric-mesh-tutorial-deploy-service-fabric-mesh-app.md)
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
@@ -50,15 +50,17 @@ ms.locfileid: "39125875"
 
 Перед началом работы с этим руководством выполните следующие действия:
 
-* Если у вас еще нет подписки Azure, вы можете [создать бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Если у вас еще нет Azure подписки до начала работы, можно [создать бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* [Настройте среду разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md), установив среду выполнения Service Fabric, пакет SDK, Docker и Visual Studio 2017.
+* Убедитесь, что имеется [настроенная среда разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md), которая включает установку среды выполнения Service Fabric, пакет SDK, Docker и Visual Studio 2017.
 
-## <a name="create-a-service-fabric-mesh-project"></a>Создание проекта Сетки Service Fabric
+* Приложение для этого руководства необходимо создавать на английском языке.
+
+## <a name="create-a-service-fabric-mesh-project"></a>Создание проекта службы "Сетка Service Fabric"
 
 Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект...**.
 
-В диалоговом окне **Новый проект** вверху в поле **Поиск** введите `mesh`. Выберите шаблон **Service Fabric Mesh Application** (Приложение Сетки Service Fabric). Если шаблон не отображается, убедитесь, что вы установили пакет SDK для Сетки Service Fabric и предварительную версию средств VS, как описано в статье о [настройке среды разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md).  
+В диалоговом окне **Новый проект** вверху в поле **Поиск** введите `mesh`. Выберите шаблон **Service Fabric Mesh Application** (Приложение службы "Сетка Service Fabric"). Если шаблон не отображается, убедитесь, что вы установили пакет SDK для Сетки Service Fabric и предварительную версию средств VS, как описано в статье о [настройке среды разработки](service-fabric-mesh-howto-setup-developer-environment-sdk.md).  
 
 В поле **Имя** введите `todolistapp`, а в поле **Расположение** укажите путь к папке, где вы хотите хранить файлы для проекта.
 

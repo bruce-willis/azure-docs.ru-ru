@@ -1,25 +1,22 @@
 ---
-title: Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure | Документация Майкрософт
+title: Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 description: Это краткое руководство содержит сведения об использовании портала Azure для создания рабочей области Azure Databricks и кластера Apache Spark и запуска задания Spark.
 services: azure-databricks
-documentationcenter: ''
-author: nitinme
+ms.service: azure-databricks
+author: jasonwhowell
+ms.author: jasonh
 manager: cgronlun
 editor: cgronlun
-ms.service: azure-databricks
 ms.workload: big-data
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/23/2018
-ms.author: nitinme
+ms.date: 07/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 19dcdeefe4a65f5c0fab06766a0fa40838df8b08
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: a302c0c6c4ecbaff2d11d852caf9e1e1500931b8
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30232438"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225352"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -41,7 +38,7 @@ ms.locfileid: "30232438"
 
     ![Databricks на портале Azure](./media/quickstart-create-databricks-workspace-portal/azure-databricks-on-portal.png "Databricks on Azure portal")
 
-3. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
+2. В разделе **службы Azure Databricks** укажите значения для создания рабочей области Databricks.
 
     ![Создание рабочей области Azure Databricks](./media/quickstart-create-databricks-workspace-portal/create-databricks-workspace.png "Create an Azure Databricks workspace")
 
@@ -57,11 +54,14 @@ ms.locfileid: "30232438"
 
     Выберите **Закрепить на панели мониторинга** и щелкните **Создать**.
 
-4. Создание рабочей области займет несколько минут. Во время создания рабочей области на портале с правой стороны отображается плитка **Submitting deployment for Azure Databricks** (Идет отправка развертывания для Databricks). Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
+4. Создание рабочей области займет несколько минут. Во время создания рабочей области на портале с правой стороны отображается плитка **Идет отправка развертывания для Azure Databricks**. Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
 
     ![Плитка развертывания Databricks](./media/quickstart-create-databricks-workspace-portal/databricks-deployment-tile.png "Databricks deployment tile")
 
 ## <a name="create-a-spark-cluster-in-databricks"></a>Создание кластера Spark в Databricks
+
+> [!NOTE] 
+> Чтобы использовать бесплатную учетную запись для создания кластера Azure Databricks, перед созданием кластера перейдите в свой профиль и измените свою подписку на **оплату по мере использования**. Дополнительные сведения см. на странице [создания бесплатной учетной записи Azure](https://azure.microsoft.com/en-us/free/).  
 
 1. На портале Azure перейдите к созданной рабочей области Databricks, а затем выберите **Launch Workspace** (Запуск рабочей области).
 
@@ -83,14 +83,34 @@ ms.locfileid: "30232438"
 
 Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
 
+
+## <a name="download-a-sample-data-file"></a>Загрузка примера файла данных
+Загрузите пример файла данных JSON и сохраните его в хранилище больших двоичных объектов.
+
+1. Загрузите этот пример файла данных JSON [из Github](https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) на локальный компьютер. Щелкните правой кнопкой мыши кнопку "Сохранить", чтобы сохранить необработанный файл на локальном компьютере. 
+
+2. Если у вас еще нет учетной записи хранения, создайте ее. 
+   - На портале Azure выберите **Создать ресурс**.  Выберите категорию **Хранилище**, затем выберите **Учетные записи хранения**  
+   - Предоставьте уникальное имя учетной записи хранения.
+   - Выберите **Тип учетной записи**: **Хранилище BLOB-объектов**
+   - Выберите имя **группы ресурсов**. Используйте группу ресурсов, в которой создана рабочая область Databricks.
+   
+   Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account). 
+
+3. Создайте контейнер хранилища в учетной записи хранилища BLOB-объектов и отправьте туда пример файла JSON. Для передачи файла также можно использовать портал Azure или [Обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
+
+   - Откройте учетную запись хранилища на портале Azure.
+   - Выберите **Большие двоичные объекты**.
+   - Выберите **+ Контейнер** для создания нового пустого контейнера.
+   - Укажите **имя** для контейнера, например `databricks`. 
+   - Выберите уровень доступа **Частный (без анонимного доступа)**.
+   - После создания контейнера выберите имя контейнера.
+   - Нажмите кнопку **Отправить**.
+   - На странице **Файлы** выберите для просмотра **значок папки**, а затем выберите пример файла `small_radio_json.json` для передачи. 
+   - Чтобы отправить файл, выберите **Отправить**.
+   
+   
 ## <a name="run-a-spark-sql-job"></a>Выполнение задания Spark SQL
-
-Прежде чем приступить к работе с этим разделом, выполните следующие предварительные требования.
-
-* [Создайте учетную запись хранения BLOB-объектов Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account). 
-* Скачайте образец файла JSON с [сайта GitHub](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json). 
-* Загрузите пример файла JSON в созданную учетную запись хранения BLOB-объектов Azure. Для передачи файлов можно использовать [обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
-
 Выполните указанные ниже задачи, чтобы создать записную книжку в Databricks, настроить ее для считывания данных из учетной записи хранения больших двоичных объектов Azure, а затем запустить задание Spark SQL в данных.
 
 1. В левой области щелкните **рабочую область**. В раскрывающемся списке **рабочей области** выберите **Создать**, а затем выберите **записную книжку**.

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство по отправке телеметрии в Центр Интернета вещей (Node.js) | Документация Майкрософт
-description: В этом кратком руководстве выполняется два примера приложений Node.js по отправке имитированной телеметрии в Центр Интернета вещей и чтению телеметрии из Центра Интернета вещей для обработки в облаке.
+description: 'В этом кратком руководстве мы будем использовать два примера приложений Node.js: для отправки имитированных данных телеметрии в Центр Интернета вещей и для чтения данных телеметрии из Центра Интернета вещей для последующей обработки в облаке.'
 author: dominicbetts
 manager: timlt
 ms.service: iot-hub
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/19/2018
 ms.author: dobett
-ms.openlocfilehash: 17afdd4c57f58770ae82093c5e23e469d1109f6a
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 23ea129f4f755f312789f481a05eab9c1a6fd085
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38540048"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215960"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Node.js)
 
@@ -29,7 +29,7 @@ ms.locfileid: "38540048"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 4.x.x или более позднюю версию на компьютере для разработки.
 

@@ -1,22 +1,22 @@
 ---
-title: Использование оповещений и устранение проблем на устройствах с помощью решения для удаленного мониторинга в Azure | Документы Майкрософт
+title: Руководство. Использование оповещений и устранение проблем на устройствах с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этом руководстве объясняется, как использовать оповещения для выявления и устранения проблем на устройствах, подключенных к акселератору решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
 ms.author: dobett
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.date: 06/18/2018
+ms.date: 07/19/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9607705220450b30d2ffaf0f2be9fa2a5664b879
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: acff6586f35f1c86cba8d519586d72247255ccd7
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081794"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39159389"
 ---
-# <a name="troubleshoot-and-remediate-device-issues"></a>Устранение неполадок на устройстве
+# <a name="troubleshoot-and-fix-device-issues"></a>Устранение неполадок и проблем с устройствами
 
 В этом руководстве показано, как выявлять и устранять проблемы на подключенных устройствах Интернета вещей с помощью акселератора решений для удаленного мониторинга. С помощью оповещений в панели мониторинга акселератора решений вы можете выявлять проблемы, а затем устранять их с помощью удаленных заданий.
 
@@ -28,11 +28,9 @@ Contoso тестирует новый **прототип** устройства 
 > * Анализ оповещения от устройства
 > * Устранение проблем на устройстве
 
-## <a name="prerequisites"></a>предварительным требованиям
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-Для работы с этим руководством вам понадобится развернутый экземпляр акселератора решений для удаленного мониторинга в подписке Azure.
-
-Если акселератор решений для удаленного мониторинга еще не развернут, выполните краткое руководство по [развертыванию облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md).
+[!INCLUDE [iot-iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
 ## <a name="investigate-an-alert"></a>Изучение оповещения
 
@@ -58,7 +56,7 @@ Contoso тестирует новый **прототип** устройства 
 
 Когда вы подтвердите оповещение, состояние экземпляра изменится на **Acknowledged** (Подтверждено).
 
-В списке вы увидите **прототип** устройства, отвечающий за оповещение о температуре:
+В списке устройств с отображаемыми оповещениями вы увидите **прототип** устройства, отвечающий за оповещение о температуре:
 
 [![Список устройств, вызвавших оповещение](./media/iot-accelerators-remote-monitoring-maintain/maintenanceresponsibledevice-inline.png)](./media/iot-accelerators-remote-monitoring-maintain/maintenanceresponsibledevice-expanded.png#lightbox)
 
@@ -66,7 +64,7 @@ Contoso тестирует новый **прототип** устройства 
 
 Для устранения проблемы с **прототипом** устройства необходимо вызвать метод **DecreaseTemperature** на устройстве.
 
-Для работы с устройством выберите его в списке устройств и нажмите **Задания**. Для модели устройства **Прототип** указано шесть методов, которые должно поддерживать устройство:
+Для работы с устройством выберите его в соответствующем списке и щелкните **Задания**. Для модели устройства **Прототип** поддерживается шесть методов
 
 [![Методы, которые поддерживает устройство](./media/iot-accelerators-remote-monitoring-maintain/maintenancemethods-inline.png)](./media/iot-accelerators-remote-monitoring-maintain/maintenancemethods-expanded.png#lightbox)
 
@@ -81,6 +79,8 @@ Contoso тестирует новый **прототип** устройства 
 Чтобы убедиться, что температура устройства снизилась, просмотрите данные телеметрии на странице **Панель мониторинга**:
 
 [![Просмотр данных о снижении температуры](./media/iot-accelerators-remote-monitoring-maintain/jobresult-inline.png)](./media/iot-accelerators-remote-monitoring-maintain/jobresult-expanded.png#lightbox)
+
+[!INCLUDE [iot-iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

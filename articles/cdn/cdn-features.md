@@ -15,18 +15,18 @@ ms.topic: overview
 ms.date: 05/09/2018
 ms.author: v-deasim
 ms.custom: mvc
-ms.openlocfilehash: dee6a77fb85b2ac882103ba58a19ac4fce59c188
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: 7ec4961a78b2207c9990b787c4a0f9cc9c2e7931
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301450"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237120"
 ---
 # <a name="compare-azure-cdn-product-features"></a>Сравнение функций продуктов Azure CDN
 
 Существуют четыре продукта Azure CDN: **Azure CDN уровня "Стандартный" от корпорации Майкрософт** (предварительная версия), **Azure CDN уровня "Стандартный" от Akamai**, **Azure CDN уровня "Стандартный" от Verizon** и **Azure CDN уровня "Премиум" от Verizon**. 
 
-Дополнительные сведения о миграции профиля **Azure CDN уровня "Стандартный" от Verizon** в **Azure CDN уровня "Премиум" от Verizon** см. [здесь](cdn-migrate.md).
+Дополнительные сведения о переходе с профиля **Azure CDN ценовой категории "Стандартный" от Verizon** на профиль **Azure CDN ценовой категории "Премиум" от Verizon** см. [здесь](cdn-migrate.md).
 
 В следующей таблице перечислены функции, доступные в каждом из продуктов.
 

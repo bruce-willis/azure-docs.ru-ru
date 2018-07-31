@@ -1,5 +1,5 @@
 ---
-title: Развертывание облачного решения для прогнозного обслуживания Интернета вещей в Azure | Документация Майкрософт
+title: Испытание облачного решения Интернета вещей в Azure для прогнозного обслуживания | Документация Майкрософт
 description: В этом кратком руководстве мы будем развертывать акселератор решения для прогнозного обслуживания Интернета вещей в Azure, войдем в систему и используем панель мониторинга решения.
 author: dominicbetts
 manager: timlt
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 07/12/2018
 ms.author: dobett
-ms.openlocfilehash: 65c10f393efbeaa111e2b413a0568da053c04567
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 10ff6565ed8997a5cb87394aa0d743a0d94b67e0
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001133"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39144318"
 ---
 # <a name="quickstart-try-a-cloud-based-solution-to-run-a-predictive-maintenance-analysis-on-my-connected-devices"></a>Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах
 

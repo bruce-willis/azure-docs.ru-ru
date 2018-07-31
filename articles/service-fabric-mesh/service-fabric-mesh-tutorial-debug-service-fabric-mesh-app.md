@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/17/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: e39e5861c0606c43a869fe02a7de2dc9b6f489ea
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: ad6812f25ee33bf723ed86d4ec32ca6898d01774
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125659"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186744"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-web-application"></a>Руководство. Отладка веб-приложения Сетки Azure Service Fabric
 
@@ -75,8 +75,8 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 **Советы по отладке**
 
 * Если обнаружилось, что  **локальный кластер Service Fabric не работает**, убедитесь, что служба Service Local Custer Manager (SLCM) запущена. Для этого на панели задач щелкните правой кнопкой мыши значок SLCM, затем нажмите **Start Local Cluster** (Запустить Локальный кластер). После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
-* Если при запуске приложения появится ошибка **404**, это скорее всего означает, что переменные среды в **service.yaml** неверны. Убедитесь, что `AppName`, `ApiHostPort` и `ServiceName` установлены соответственно инструкциям из раздела [Установка переменных среды](#set-environment-variables).
-* Если возникают ошибки сборки в **service.yaml**, убедитесь, что для задания отступов строки используются пробелы, а не символы табуляции.
+* Если при запуске приложения появится ошибка **404**, это скорее всего означает, что переменные среды в **service.yaml** неверны. Убедитесь, что `ApiHostPort`и `ServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore#create-environment-variables).
+* Если возникают ошибки сборки в **service.yaml**, убедитесь, что для задания отступов строки используются пробелы, а не символы табуляции. Кроме того, теперь необходимо создать приложение, используя английский языковой стандарт.
 
 ### <a name="debug-in-visual-studio"></a>Отладка в Visual Studio
 

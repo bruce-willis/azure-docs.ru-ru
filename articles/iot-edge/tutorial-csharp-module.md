@@ -9,12 +9,12 @@ ms.date: 06/27/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 12a17edc74ef0fbc573be0fc167aa7921e599341
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 2293390684a8dcdf5f32bbae8f04fe7317d389e2
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005872"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39258971"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge с кодом C# и его развертывание на имитированном устройстве
 
@@ -57,15 +57,15 @@ ms.locfileid: "39005872"
 
 ## <a name="create-an-iot-edge-module-project"></a>Создание проекта модуля IoT Edge
 На следующих этапах показано, как создать проект модуля IoT Edge на основе .NET Сore 2.0 с использованием Visual Studio Code и расширения Azure IoT Edge.
-1. В Visual Studio Code выберите **Вид** > **Интегрированный терминал**, чтобы открыть интегрированный терминал VS Code.
-2. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code. 
-3. В палитре команд введите и выполните команду **Azure: Sign in** и следуйте инструкциям, чтобы войти в учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
-4. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge solution**. В палитре команд укажите следующие сведения для создания решения: 
+
+1. В Visual Studio Code выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code. 
+2. В палитре команд введите и выполните команду **Azure: Sign in** (Azure: Вход) и следуйте инструкциям, чтобы войти в свою учетную запись Azure. Если вход был выполнен, то этот шаг можно пропустить.
+3. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge solution**. В палитре команд укажите следующие сведения для создания решения: 
 
    1. Выберите папку, где требуется создать решение. 
    2. Введите имя своего решения или примите имя по умолчанию **EdgeSolution**.
    3. Выберите **C# Module** (Модуль C#) в качестве шаблона модуля. 
-   4. Присвойте модулю имя **CSharpModule**. 
+   4. Замените имя модуля по умолчанию модуль на **CSharpModule**. 
    5. В качестве репозитория образов первого модуля необходимо указать реестр контейнеров Azure, который был создан в предыдущем разделе. Замените **localhost:5000** скопированным значением имени входа на сервер. Окончательная строка выглядит так: \<registry name\>.azurecr.io/csharpmodule.
 
 4.  Окно VS Code загружает рабочую область решения IoT Edge: папка для модулей,\.файл шаблона манифеста развертывания и \.env-файл. В обозревателе VS Code выберите **modules** > **NodeModule** > **app.js**.
@@ -105,6 +105,16 @@ ms.locfileid: "39005872"
     }
     ```
 
+8. Метод **Init** объявляет для модуля протокол связи. Замените параметры MQTT параметрами AMPQ. 
+
+   ```csharp
+   // MqttTransportSettings mqttSetting = new MqttTransportSettings(TransportType.Mqtt_Tcp_Only);
+   // ITransportSettings[] settings = { mqttSetting };
+
+   AmqpTransportSettings amqpSetting = new AmqpTransportSettings(TransportType.Amqp_Tcp_Only);
+   ITransportSettings[] settings = {amqpSetting};
+   ```
+
 8. В методе **Init** код создает и настраивает объект **ModuleClient**. Этот объект позволяет модулю подключаться к локальной среде выполнения Azure IoT Edge для отправки и получения сообщений. Строка подключения, используемая в методе **Init**, предоставляется модулю средой выполнения IoT Edge. После создания **ModuleClient** код считывает значение **temperatureThreshold** из требуемых свойств двойника модуля. Этот код регистрирует обратный вызов для получения сообщений из концентратора IoT Edge через **input1** конечной точки. Замените метод  **SetInputMessageHandlerAsync** новым и добавьте метод **SetDesiredPropertyUpdateCallbackAsync** для обновления нужного свойства. Чтобы внести это изменение, замените последнюю строку метода **Init** следующим кодом:
 
     ```csharp
@@ -121,7 +131,7 @@ ms.locfileid: "39005872"
     }
 
     // Attach a callback for updates to the module twin's desired properties.
-    await ioTHubModuleClient.SetDesiredPropertyUpdateCallbackAsync(onDesiredPropertiesUpdate, null);
+    await ioTHubModuleClient.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertiesUpdate, null);
 
     // Register a callback for messages that are received by the module.
     await ioTHubModuleClient.SetInputMessageHandlerAsync("input1", FilterMessages, ioTHubModuleClient);
@@ -224,13 +234,17 @@ ms.locfileid: "39005872"
    ```csh/sh
    docker login -u <ACR username> -p <ACR password> <ACR login server>
    ```
-   Укажите имя пользователя, пароль и сервер входа, скопированные из Реестра контейнеров Azure при его создании. Эти значения можно получить из раздела **Ключи доступа** в реестре на портале Azure.
+   Укажите имя пользователя, пароль и сервер входа, скопированные из Реестра контейнеров Azure при его создании. Вы также можете получить эти значения из раздела **Ключи доступа** в разделе реестра на портале Azure.
 
-2. В обозревателе VS Code откройте файл deployment.template.json в рабочей области IoT Edge. Этот файл указывает **$edgeAgent** развернуть два модуля: **tempSensor** и **CSharpModule**. Значение **CSharpModule.image** установлено на версию образа amd64 для Linux. Общие сведения о манифестах развертывания см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).
+2. В обозревателе VS Code откройте файл deployment.template.json в рабочей области IoT Edge. Этот файл указывает **$edgeAgent** развернуть два модуля: **tempSensor** и **CSharpModule**. Значение **CSharpModule.image** установлено на версию образа amd64 для Linux. 
+
+   Убедитесь, что шаблон содержит правильное имя модуля, а не имя **SampleModule** по умолчанию, которое можно изменить при создании решения IoT Edge.
+
+   Общие сведения о манифестах развертывания см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).
 
 3. В файле deployment.template.json есть раздел **registryCredentials**, который хранит учетные данные реестра Docker. Фактическое имя пользователя хранится в файле ENV, который Git игнорирует.  
 
-4. Добавьте двойник модуля **CSharpModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **moduleContent** после двойника модуля **$edgeHub**. 
+4. Добавьте двойник модуля **CSharpModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **moduleContent** после двойника модуля **$edgeHub**: 
     ```json
         "CSharpModule": {
             "properties.desired":{
@@ -266,7 +280,7 @@ ms.locfileid: "39005872"
 
 1. Для отслеживания данных, поступающих в Центр Интернета вещей, нажмите кнопку с многоточием (**...**), а затем выберите **Start Monitoring D2C Messages** (Начать мониторинг сообщений D2C).
 2. Для отслеживания сообщений D2C для конкретного устройства щелкните его правой кнопкой мыши в списке и выберите **Start Monitoring D2C Messages** (Начать мониторинг сообщений D2C).
-3. Чтобы перестать отслеживать данные, выполните команду **Azure IoT Hub: Stop monitoring D2C message** (Остановить мониторинг сообщений D2C) в палитре команд. 
+3. Чтобы перестать отслеживать данные, выполните команду **Azure IoT Hub: Stop monitoring D2C message** (Центр Интернета вещей Azure: остановить мониторинг сообщений D2C) в палитре команд. 
 4. Для просмотра или обновления двойника модуля щелкните модуль правой кнопкой мыши в списке и выберите **Edit module twin** (Редактирование двойника модуля). Чтобы обновить двойник модуля, сохраните двойник файла JSON, затем щелкните правой кнопкой мыши область редактора и выберите **Update Module Twin** (Обновить двойник модуля).
 5. Чтобы просмотреть журналы Docker, установите [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) для VS Code. Локально запущенные модули можно найти в обозревателе Docker. В контекстном меню выберите пункт **Показать журналы** для просмотра в интегрированном терминале.
  

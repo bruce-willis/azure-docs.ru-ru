@@ -1,6 +1,6 @@
 ---
-title: Использование MSI виртуальной машины Linux для доступа к Azure Cosmos DB
-description: В рамках этого руководства вы узнаете, как получить доступ к службе Azure Cosmos DB с помощью присвоенного системой управляемого удостоверения службы (MSI) на виртуальной машине Linux.
+title: Доступ к службе Azure Cosmos DB с помощью Управляемого удостоверения службы виртуальной машины Linux
+description: В этом руководстве описано, как получить доступ к службе Azure Cosmos DB с помощью присвоенного системой Управляемого удостоверения службы на виртуальной машине Linux.
 services: active-directory
 documentationcenter: ''
 author: daveba
@@ -14,30 +14,30 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/09/2018
 ms.author: daveba
-ms.openlocfilehash: 30962827d0a7fbc70c2ed4c642d9bb8a586124da
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: af148cd8b3eececb258057a8bf6a78216ec0e50a
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904430"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39258336"
 ---
-# <a name="tutorial-use-a-linux-vm-msi-to-access-azure-cosmos-db"></a>Руководство "MSI виртуальной машины Linux для доступа к Azure Cosmos DB" 
+# <a name="tutorial-use-a-linux-vm-managed-service-identity-to-access-azure-cosmos-db"></a>Руководство. Доступ к службе Azure Cosmos DB с помощью Управляемого удостоверения службы виртуальной машины Linux 
 
 [!INCLUDE[preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
 
-В этом руководстве описывается, как создать и использовать MSI для виртуальной машины Linux. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве описывается, как создать и использовать Управляемое удостоверение службы для виртуальной машины Linux. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание виртуальной машины Linux с поддержкой MSI.
+> * Создание виртуальной машины Linux с ее включением
 > * Создание учетной записи Cosmos DB
 > * Создание коллекции в учетной записи Cosmos DB
-> * Предоставление доступа к экземпляру Azure Cosmos DB для MSI.
-> * Извлечение `principalID` MSI виртуальной машины Linux.
+> * Предоставление доступа Управляемому удостоверению службы к экземпляру Azure Cosmos DB
+> * Извлечение `principalID` Управляемого удостоверения службы виртуальной машины Linux
 > * Получение маркера доступа и вызов Azure Resource Manager с его помощью.
 > * Получение ключей доступа из Azure Resource Manager для создания вызовов Cosmos DB
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com), прежде чем продолжать.
 
@@ -54,9 +54,9 @@ ms.locfileid: "37904430"
 
 ## <a name="create-a-linux-virtual-machine-in-a-new-resource-group"></a>Создание виртуальной машины Linux в новой группе ресурсов
 
-В рамках этого руководства мы создадим виртуальную машину Linux с включенным MSI.
+В рамках этого руководства будет создана виртуальная машина Linux с включенным Управляемым удостоверением службы.
 
-Чтобы создать виртуальную машину с поддержкой MSI:
+Чтобы создать виртуальную машину с включенным Управляемым удостоверением службы, необходимо выполнить следующие действия.
 
 1. Если вы используете Azure CLI в локальной консоли, сначала выполните вход в Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Используйте учетную запись, которая связана с подпиской Azure, с помощью которой нужно развернуть виртуальную машину.
 
@@ -70,7 +70,7 @@ ms.locfileid: "37904430"
    az group create --name myResourceGroup --location westus
    ```
 
-3. Создайте виртуальную машину, выполнив команду [az vm create](/cli/azure/vm/#az_vm_create). В следующем примере создается виртуальная машина с именем *myVM* с MSI, как запрошено параметром `--assign-identity`. В параметрах `--admin-username` и `--admin-password` определяются имя и пароль учетной записи администратора для входа в виртуальную машину. Подставьте соответствующие значения для своей среды: 
+3. Создайте виртуальную машину, выполнив команду [az vm create](/cli/azure/vm/#az_vm_create). В приведенном ниже примере создается виртуальная машина *myVM* с Управляемым удостоверением службы в соответствии с запросом параметра `--assign-identity`. В параметрах `--admin-username` и `--admin-password` определяются имя и пароль учетной записи администратора для входа в виртуальную машину. Подставьте соответствующие значения для своей среды: 
 
    ```azurecli-interactive 
    az vm create --resource-group myResourceGroup --name myVM --image win2016datacenter --generate-ssh-keys --assign-identity --admin-username azureuser --admin-password myPassword12
@@ -95,14 +95,14 @@ ms.locfileid: "37904430"
 2. На вкладке **Обзор** нажмите кнопку **Добавить коллекцию**. Откроется панель "Добавить коллекцию".
 3. Присвойте коллекции идентификатор базы данных, идентификатор коллекции, выберите емкость хранилища, введите ключ секции и значение пропускной способности, а затем нажмите кнопку **ОК**.  Для этого руководства в качестве идентификатора базы данных и коллекции достаточно будет использовать значение Test. Выберите фиксированное значение емкости хранилища и самую низкую пропускную способность (400 ЕЗ/с).  
 
-## <a name="retrieve-the-principalid-of-the-linux-vms-msi"></a>Извлечение `principalID` MSI виртуальной машины Linux
+## <a name="retrieve-the-principalid-of-the-linux-vms-managed-service-identity"></a>Получение `principalID` Управляемого удостоверения службы виртуальной машины Linux
 
-Чтобы получить доступ к ключам доступа учетной записи Cosmos DB из диспетчера ресурсов в следующем разделе, необходимо получить `principalID` MSI виртуальной машины Linux.  Обязательно замените значения параметров `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` (группа ресурсов виртуальной машины) и `<VM NAME>` собственными значениями.
+Чтобы получить доступ к ключам доступа учетной записи Cosmos DB из диспетчера ресурсов в следующем разделе, необходимо получить `principalID` Управляемого удостоверения службы виртуальной машины Linux.  Обязательно замените значения параметров `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` (группа ресурсов виртуальной машины) и `<VM NAME>` собственными значениями.
 
 ```azurecli-interactive
 az resource show --id /subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.Compute/virtualMachines/<VM NAMe> --api-version 2017-12-01
 ```
-Ответ будет содержать сведения о присвоенном системой MSI (обратите внимание на principalID, так как он используется в следующем разделе).
+Ответ будет содержать сведения о присвоенном системой Управляемом удостоверении службы (обратите внимание на principalID, так как он используется в следующем разделе).
 
 ```bash  
 {
@@ -114,11 +114,11 @@ az resource show --id /subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE 
  }
 
 ```
-## <a name="grant-your-linux-vm-msi-access-to-the-cosmos-db-account-access-keys"></a>Предоставление MSI виртуальной машины Linux доступа к ключам доступа к учетной записи Cosmos DB
+## <a name="grant-your-linux-vm-managed-service-identity-access-to-the-cosmos-db-account-access-keys"></a>Предоставление доступа Управляемому удостоверению службы виртуальной машины Linux к ключам доступа учетной записи Cosmos DB
 
-В Cosmos DB не встроена поддержка аутентификации Azure AD. Но вы можете использовать MSI для извлечения ключей доступа к Cosmos DB из Resource Manager, а затем применить эти ключи для получения доступа к Cosmos DB. На этом шаге вы предоставите MSI доступ к ключам учетной записи Cosmos DB.
+В Cosmos DB не встроена поддержка аутентификации Azure AD. Но Управляемое удостоверение службы можно использовать для извлечения ключей доступа к Cosmos DB из диспетчера ресурсов, а затем применить эти ключи для получения доступа к Cosmos DB. На этом шаге Управляемому удостоверению службы предоставляется доступ к ключам учетной записи Cosmos DB.
 
-Чтобы предоставить MSI доступ к учетной записи Cosmos DB в Azure Resource Manager с помощью Azure CLI, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при [получении principalID MSI виртуальной машины Linux](#retrieve-the-principalID-of-the-linux-VM's-MSI).  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
+Чтобы предоставить доступ Управляемому удостоверению службы к учетной записи Cosmos DB в Azure Resource Manager с помощью Azure CLI, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при [получении principalID MSI виртуальной машины Linux](#retrieve-the-principalID-of-the-linux-VM's-MSI).  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
 
 ```azurecli-interactive
 az role assignment create --assignee <MSI PRINCIPALID> --role '<ROLE NAME>' --scope "/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>/providers/Microsoft.DocumentDB/databaseAccounts/<COSMODS DB ACCOUNT NAME>"
@@ -140,7 +140,7 @@ az role assignment create --assignee <MSI PRINCIPALID> --role '<ROLE NAME>' --sc
 }
 ```
 
-## <a name="get-an-access-token-using-the-linux-vms-msi-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью MSI виртуальной машины Linux и вызов Azure Resource Manager с его помощью
+## <a name="get-an-access-token-using-the-linux-vms-managed-service-identity-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью Управляемого удостоверения службы виртуальной машины Linux и вызов Azure Resource Manager с его помощью
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, созданной ранее.
 

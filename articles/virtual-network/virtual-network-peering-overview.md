@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
 ms.author: jdial
-ms.openlocfilehash: 27eaa6582a355198b61e996cce0a4acce48061cb
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 63ea834401e5c6798b6f84b6f09a964005d14306
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35267134"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39257877"
 ---
 # <a name="virtual-network-peering"></a>Пиринг между виртуальными сетями
 
@@ -85,7 +85,9 @@ ms.locfileid: "35267134"
 
 ## <a name="pricing"></a>Цены
 
-За входящий и исходящий трафик по пиринговой связи между виртуальными сетями взимается номинальная плата. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/virtual-network).
+За входящий и исходящий трафик по пиринговой связи между виртуальными сетями взимается номинальная плата. Дополнительные сведения о пиринговой связи виртуальных сетей и ценах на глобальную пиринговую связь между ними см. на [странице цен](https://azure.microsoft.com/pricing/details/virtual-network).
+
+Транзит шлюзов — это свойство пиринга, которое позволяет виртуальной сети использовать VPN-шлюз в одноранговой виртуальной сети для распределенных подключений или подключений типа "виртуальная сеть — виртуальная сеть". За трафик, проходящий через удаленный шлюз в этом сценарии, начисляется [плата (за шлюз VPN)](https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/). [Плата за пиринг между виртуальными сетями](https://azure.microsoft.com/pricing/details/virtual-network) не начисляется. Например, если в сети VNetA установлен VPN-шлюз для локальных подключений, а сеть VNetB подключена к VNetA по пиринговой связи с соответствующими настроенными свойствами, то за трафик из VNetB в локальную сеть начисляется плата только за объем исходящих данных, исходя из цен на VPN-шлюз. Плата за пиринговую связь между виртуальными сетями не начисляется. Узнайте, как [настроить транзит VPN-шлюзов для пиринговой связи между виртуальными сетями](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

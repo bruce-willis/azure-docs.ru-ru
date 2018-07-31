@@ -1,6 +1,6 @@
 ---
-title: Доступ к Azure Cosmos DB с помощью управляемого удостоверения службы виртуальной машины Windows
-description: В рамках этого руководства вы узнаете, как получить доступ к Azure Cosmos DB с помощью назначаемого системой управляемого удостоверения службы (MSI) на виртуальной машине Windows.
+title: Доступ к службе Azure Cosmos DB с помощью Управляемого удостоверения службы виртуальной машины Windows
+description: В этом руководстве описано, как получить доступ к Azure Cosmos DB с помощью назначаемого системой Управляемого удостоверения службы на виртуальной машине Windows.
 services: active-directory
 documentationcenter: ''
 author: daveba
@@ -14,24 +14,24 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2018
 ms.author: daveba
-ms.openlocfilehash: cee3a1425d7c3ad8f680394831175165203b4839
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 05b31dffbe51dcbcd76c13a17f6ecc640b63569b
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005651"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248974"
 ---
-# <a name="tutorial-use-a-windows-vm-msi-to-access-azure-cosmos-db"></a>Руководство "Доступ к Azure Cosmos DB с помощью управляемого удостоверения службы виртуальной машины Windows"
+# <a name="tutorial-use-a-windows-vm-managed-service-identity-to-access-azure-cosmos-db"></a>Руководство. Доступ к службе Azure Cosmos DB с помощью Управляемого удостоверения службы виртуальной машины Windows
 
 [!INCLUDE[preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
-В этом руководстве показано, как создавать и использовать управляемое удостоверение службы (MSI) виртуальной машины Windows для доступа к Cosmos DB. Вы узнаете, как выполнять следующие задачи:
+В этом руководстве показано, как создавать и использовать Управляемое удостоверение службы виртуальной машины Windows для доступа к Cosmos DB. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание виртуальной машины Windows с включенным MSI. 
+> * Создание виртуальной машины Windows с включенным Управляемым удостоверением службы 
 > * Создание учетной записи Cosmos DB
-> * Предоставление MSI виртуальной машины Windows доступа к ключам доступа учетной записи Cosmos DB.
-> * Получение маркера доступа с помощью MSI виртуальной машины Windows для вызова Azure Resource Manager
+> * Предоставление Управляемым удостоверением службы виртуальной машины Windows доступа к ключам доступа к учетной записи Cosmos DB
+> * Получение маркера доступа с помощью Управляемого удостоверения службы виртуальной машины Windows и вызов Azure Resource Manager
 > * Получение ключей доступа из Azure Resource Manager для создания вызовов Cosmos DB
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -47,7 +47,7 @@ ms.locfileid: "39005651"
 
 ## <a name="create-a-windows-virtual-machine-in-a-new-resource-group"></a>Создание виртуальной машины Windows в новой группе ресурсов
 
-В рамках этого руководства мы создадим виртуальную машину Windows.  Вы также можете активировать MSI на имеющейся виртуальной машине.
+В рамках этого руководства мы создадим виртуальную машину Windows.  Управляемое удостоверение службы можно также включить на имеющейся виртуальной машине.
 
 1. Нажмите кнопку **Создать ресурс** в верхнем левом углу окна портала Azure.
 2. Выберите **Вычисления**, а затем — **Windows Server 2016 Datacenter**. 
@@ -58,13 +58,13 @@ ms.locfileid: "39005651"
 
    ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
-## <a name="enable-msi-on-your-vm"></a>Активация MSI на виртуальной машине 
+## <a name="enable-managed-service-identity-on-your-vm"></a>Активация Управляемого удостоверения службы на виртуальной машине 
 
-MSI на виртуальной машине позволяет получить маркер доступа из Azure AD без необходимости указывать в коде учетные данные. На самом деле при включении MSI на виртуальной машине с помощью портала Azure выполняются две задачи: регистрация виртуальной машины в Azure AD для создания управляемого удостоверения и его настройка на этой виртуальной машине.
+Управляемое удостоверение службы для виртуальной машины позволяет получить маркеры доступа из Azure AD без необходимости указывать в коде учетные данные. На самом деле при включении Управляемого удостоверения службы на виртуальной машине с помощью портала Azure выполняются две задачи: регистрация виртуальной машины в Azure AD для создания управляемого удостоверения и его настройка на этой виртуальной машине.
 
-1. Выберите **виртуальную машину**, на которой нужно активировать MSI.  
+1. Выберите **виртуальную машину**, на которой необходимо активировать Управляемое удостоверение службы.  
 2. В левой области навигации щелкните **Конфигурация**. 
-3. Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать MSI, нажмите кнопку **Да**. Чтобы удалить удостоверение, нажмите кнопку "Нет". 
+3. Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать Управляемое удостоверение службы, нажмите кнопку **Да**. Чтобы отключить, нажмите кнопку "Нет". 
 4. Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.  
    ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
@@ -87,18 +87,18 @@ MSI на виртуальной машине позволяет получить
 2. На вкладке **Обзор** нажмите кнопку **Добавить коллекцию**. Откроется панель "Добавить коллекцию".
 3. Присвойте коллекции идентификатор базы данных, идентификатор коллекции, выберите емкость хранилища, введите ключ секции и значение пропускной способности, а затем нажмите кнопку **ОК**.  Для этого руководства в качестве идентификатора базы данных и коллекции достаточно будет использовать значение Test. Выберите фиксированное значение емкости хранилища и самую низкую пропускную способность (400 ЕЗ/с).  
 
-## <a name="grant-windows-vm-msi-access-to-the-cosmos-db-account-access-keys"></a>Предоставление MSI виртуальной машины Windows доступа к ключам доступа учетной записи Cosmos DB.
+## <a name="grant-windows-vm-managed-service-identity-access-to-the-cosmos-db-account-access-keys"></a>Предоставление Управляемым удостоверением службы виртуальной машины Windows доступа к ключам доступа к учетной записи Cosmos DB
 
-В Cosmos DB не встроена поддержка аутентификации Azure AD. Но вы можете использовать MSI для извлечения ключей доступа к Cosmos DB из Resource Manager и применить эти ключи для получения доступа к Cosmos DB. На этом шаге вы предоставите MSI доступ к ключам учетной записи Cosmos DB.
+В Cosmos DB не встроена поддержка аутентификации Azure AD. Но Управляемое удостоверение службы можно использовать для извлечения ключей доступа к Cosmos DB из диспетчера ресурсов и применить эти ключи для получения доступа к Cosmos DB. На этом шаге Управляемому удостоверению службы предоставляется доступ к ключам учетной записи Cosmos DB.
 
-Чтобы предоставить MSI доступ к учетной записи Cosmos DB в Azure Resource Manager с помощью PowerShell, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при [получении principalID MSI виртуальной машины Linux](#retrieve-the-principalID-of-the-linux-VM's-MSI).  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
+Чтобы предоставить доступ Управляемому удостоверению службы к учетной записи Cosmos DB в Azure Resource Manager с помощью PowerShell, укажите значения `<SUBSCRIPTION ID>`, `<RESOURCE GROUP>` и `<COSMOS DB ACCOUNT NAME>` для своей среды. Замените `<MSI PRINCIPALID>` свойством `principalId`, возвращенным командой `az resource show` при [получении principalID MSI виртуальной машины Linux](#retrieve-the-principalID-of-the-linux-VM's-MSI).  Cosmos DB поддерживает два уровня детализации при использовании ключей доступа: доступ на чтение и запись для учетной записи и доступ только для чтения для учетной записи.  Назначьте роль `DocumentDB Account Contributor`, если вы хотите получить ключи для записи и чтения для учетной записи, или назначьте роль `Cosmos DB Account Reader Role`, чтобы получить ключи только для чтения для учетной записи.
 
 ```azurepowershell
 $spID = (Get-AzureRMVM -ResourceGroupName myRG -Name myVM).identity.principalid
 New-AzureRmRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.Storage/storageAccounts/<myStorageAcct>"
 ```
 
-## <a name="get-an-access-token-using-the-windows-vms-msi-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью MSI виртуальной машины Windows для вызова Azure Resource Manager
+## <a name="get-an-access-token-using-the-windows-vms-managed-service-identity-to-call-azure-resource-manager"></a>Получение маркера доступа с помощью Управляемого удостоверения службы виртуальной машины Windows и вызов Azure Resource Manager
 
 Далее в этом руководстве мы будем работать с виртуальной машиной, которую только что создали. 
 
@@ -109,7 +109,7 @@ New-AzureRmRoleAssignment -ObjectId $spID -RoleDefinitionName "Reader" -Scope "/
 1. На портале Azure перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Windows и вверху в разделе **Обзор** щелкните **Подключить**. 
 2. Введите **имя пользователя** и **пароль**, добавленные при создании виртуальной машины Windows. 
 3. Теперь, когда создано **подключение к удаленному рабочему столу** с виртуальной машиной, откройте PowerShell в удаленном сеансе.
-4. С помощью команды Invoke-WebRequest PowerShell сделайте запрос к локальной конечной точке MSI, чтобы получить маркер доступа к Azure Resource Manager.
+4. С помощью командлета PowerShell Invoke-WebRequest выполните запрос к локальной конечной точке Управляемого удостоверения службы, чтобы получить маркер доступа к Azure Resource Manager.
 
     ```powershell
         $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Method GET -Headers @{Metadata="true"}

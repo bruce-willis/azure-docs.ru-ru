@@ -13,12 +13,12 @@ ms.topic: overview
 ms.date: 03/07/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: a69321aad2fd149461699344062179eff221d26e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 2c03b1b4dcdcd224494efca1fd17c04d1d7b8cff
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38674824"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213288"
 ---
 # <a name="what-is-azure-ad-privileged-identity-management"></a>Что такое Azure AD Privileged Identity Management?
 
@@ -144,7 +144,7 @@ ms.locfileid: "38674824"
 
 ## <a name="review-role-activity"></a>Действие проверки роли
 
-Отследить, как сотрудники и администраторы используют привилегированные роли, можно двумя способами. Первый способ — с помощью [журнала аудита ролей каталога](pim-how-to-use-audit-log.md). В журналах истории аудита отслеживаются изменения в назначениях привилегированных ролей и журнале активации ролей, а также изменения настроек ролей ресурсов Azure (предварительная версия). 
+Отследить, как сотрудники и администраторы используют привилегированные роли, можно двумя способами. Первый способ — с помощью [журнала аудита ролей каталога](pim-how-to-use-audit-log.md). В журналах истории аудита отслеживаются изменения в назначениях привилегированных ролей, изменения в журнале активации ролей, а также изменения настроек ролей ресурсов Azure (предварительная версия). 
 
 ![Снимок экрана: журнал активации PIM](./media/pim-configure/PIM_ActivationHistory.png)
 
