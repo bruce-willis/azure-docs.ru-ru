@@ -98,7 +98,7 @@ ms.locfileid: "34606483"
 ### <a name="prepare-sata-drives-and-ship-to-azure"></a>Подготовка дисков SATA и их отправка в Azure
 Служебная программа *AzureOfflineBackupDiskPrep* используется для подготовки дисков SATA, которые отправляются в ближайший центр обработки данных Azure. Эта служебная программа находится в каталоге установки агента служб восстановления по следующему пути:
 
-   *\Microsoft* *Azure* *Recovery* *Services* *Agent\Utils\*
+   *\Microsoft* *Azure* *Recovery* *Services* \*Agent\Utils\*
 
 1. Перейдите по этому пути и скопируйте каталог **AzureOfflineBackupDiskPrep** на компьютер копирования, к которому присоединены подготавливаемые диски SATA. Убедитесь, что компьютер копирования соответствует следующим требованиям.
 
