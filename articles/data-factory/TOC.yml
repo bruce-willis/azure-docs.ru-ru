@@ -116,6 +116,8 @@
       href: concepts-pipeline-execution-triggers.md
     - name: Среда выполнения интеграции
       href: concepts-integration-runtime.md
+    - name: Правила именования
+      href: naming-rules.md
 - name: Практические руководства
   items:
     - name: Автор
