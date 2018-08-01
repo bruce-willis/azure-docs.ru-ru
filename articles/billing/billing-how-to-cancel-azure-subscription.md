@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/11/2018
+ms.date: 07/18/2018
 ms.author: genli
-ms.openlocfilehash: 604e2ee6d2ac7e30813f8b4cd02253407c2b1e3f
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 0bd0fca54ae5bf4292564a15adf38b7586768450
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067441"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145457"
 ---
 # <a name="cancel-your-subscription-for-azure"></a>Отмена подписки в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "34067441"
 * Завершите работу служб. Перейдите на [страницу ресурсов на портале управления](https://ms.portal.azure.com/?flight=1#blade/HubsExtension/Resources/resourceType/Microsoft.Resources%2Fresources) и выберите команду **Остановить**, чтобы остановить работу всех запущенных виртуальных машин, приложений или других служб.
 * Перенесите данные. Ознакомьтесь со статьей [Move resources to new resource group or subscription](../azure-resource-manager/resource-group-move-resources.md) (Перемещение ресурсов в новую группу ресурсов или подписку).
 
-Если вы отмените подписку на платный [план поддержки Azure](https://azure.microsoft.com/support/plans/), вам по-прежнему ежемесячно будет выставляться счет за оставшуюся часть 6-месячного срока действия.
+Если вы отмените подписку на платный план поддержки Azure, вам по-прежнему будут выставляться счета за оставшуюся часть срока действия подписки. Дополнительные сведения см. на странице [Планы поддержки Azure](https://azure.microsoft.com/support/plans/).
 
 ## <a name="cancel-subscription-using-the-azure-portal"></a>Отмена подписки с помощью портала Azure
 

@@ -11,6 +11,7 @@
 ##### [Создание учетной записи Майкрософт](./guidelines.md)
 ##### [Регистрация в центре разработчиков](./register-dev-center.md) 
 ##### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
+##### [Определение потребления услуг Azure клиентами партнеров](./azure-partner-customer-usage-attribution.md)
 
 ### Руководство по публикации разных типов предложений 
 #### [Виртуальные машины](./marketplace-virtual-machines.md)

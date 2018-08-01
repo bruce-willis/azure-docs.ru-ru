@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 754449dcf759820c8bb99d082c3a5ba2792f02c8
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 227723ecea1401247f0df87bccfe058fb2273647
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126329"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145355"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -91,7 +91,7 @@ ms.locfileid: "39126329"
 
 Имя пользователя (значение DeviceId следует вводить с учетом регистра): `iothubname.azure-devices.net/DeviceId`
 
-Пароль (можно создать маркер SAS с помощью инструмента [Обозреватель устройств][lnk-device-explorer] или команды интерфейса командной строки расширения [az iot hub generate-sas-token](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token)).
+Пароль (можно создать маркер SAS с помощью инструмента [Обозреватель устройств][lnk-device-explorer], команды расширения интерфейса командной строки [az iot hub generate-sas-token](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token) или [расширения "Набор средств Интернета вещей Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)):
 
 `SharedAccessSignature sr=iothubname.azure-devices.net%2fdevices%2fDeviceId&sig=kPszxZZZZZZZZZZZZZZZZZAhLT%2bV7o%3d&se=1487709501`
 
@@ -270,7 +270,7 @@ var token = generateSasToken(endpoint, deviceKey, null, 60);
 `SharedAccessSignature sr=myhub.azure-devices.net%2fdevices%2fdevice1&sig=13y8ejUk2z7PLmvtwR5RqlGBOVwiq7rQR3WZ5xZX3N4%3D&se=1456971697`
 
 > [!NOTE]
-> Маркер SAS можно создать с помощью инструмента [Обозреватель устройств][lnk-device-explorer] на основе .NET, кроссплатформенной служебной программы командной строки [Расширение Интернета вещей для Azure CLI 2.0][lnk-IoT-extension-CLI-2.0] на основе Python или [расширения набора средств Интернета вещей Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
+> Можно создать маркер SAS с помощью инструмента [Обозреватель устройств][lnk-device-explorer], команды расширения интерфейса командной строки [az iot hub generate-sas-token](https://docs.microsoft.com/cli/azure/ext/azure-cli-iot-ext/iot/hub?view=azure-cli-latest#ext-azure-cli-iot-ext-az-iot-hub-generate-sas-token) или [расширения "Набор средств Интернета вещей Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
 
 ### <a name="use-a-shared-access-policy"></a>Использование политики общего доступа
 
@@ -415,7 +415,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 
 При необходимости служба маркеров может задать срок действия маркера. По истечении срока действия маркера Центр Интернета вещей разрывает подключение к устройству или модулю. После этого устройство или модуль должны запросить новый маркер у службы маркеров. Короткий срок действия увеличит нагрузку как на устройства и модули, так и на службу маркеров.
 
-Чтобы устройство или модуль могли подключаться к Центру Интернета вещей, его необходимо добавить в реестр удостоверений этого Центра Интернета вещей, даже если для подключения используется маркер, а не ключ. Это означает, что вы можете управлять доступом на уровне отдельных устройств или модулей обычным образом, то есть включая или отключая их удостоверения в [реестре удостоверений][lnk-identity-registry]. Это уменьшает риск существования маркеров с длительным сроком действия.
+Чтобы подключить устройство или модуль к Центру Интернета вещей, такое устройство или модуль нужно добавить в реестр удостоверений этого Центра Интернета вещей, даже если для подключения используется маркер, а не ключ. Это означает, что вы можете управлять доступом на уровне отдельных устройств или модулей обычным образом, то есть включая или отключая их удостоверения в [реестре удостоверений][lnk-identity-registry]. Это уменьшает риск существования маркеров с длительным сроком действия.
 
 ### <a name="comparison-with-a-custom-gateway"></a>Сравнение с настраиваемым шлюзом
 
@@ -492,8 +492,6 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 [lnk-service-sdk]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/service
 [lnk-client-sdk]: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/device
 [lnk-device-explorer]: https://github.com/Azure/azure-iot-sdk-csharp/blob/master/tools/DeviceExplorer
-[lnk-IoT-extension-CLI-2.0]: https://github.com/Azure/azure-iot-cli-extension
-
-[lnk-getstarted-tutorial]: iot-hub-csharp-csharp-getstarted.md
+[lnk-getstarted-tutorial]: quickstart-send-telemetry-node.md
 [lnk-c2d-tutorial]: iot-hub-csharp-csharp-c2d.md
 [lnk-d2c-tutorial]: tutorial-routing.md

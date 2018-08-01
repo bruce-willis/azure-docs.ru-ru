@@ -51,6 +51,8 @@
           href: container-instances-liveness-probe.md
     - name: управление
       items:
+        - name: Обновление работающих контейнеров
+          href: container-instances-update.md
         - name: Выполнение команды (exec)
           href: container-instances-exec.md
         - name: Мониторинг использования ЦП и памяти
@@ -59,7 +61,7 @@
           href: container-instances-log-analytics.md
     - name: Выполнение рабочих нагрузок
       items:
-        - name: Выполнение задач с помощью политики перезапуска
+        - name: Выполнение задач с помощью политик перезапуска
           href: container-instances-restart-policy.md
         - name: Агенты сборки Jenkins в ACI
           href: container-instances-jenkins.md

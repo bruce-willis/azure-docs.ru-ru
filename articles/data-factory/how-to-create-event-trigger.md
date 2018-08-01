@@ -10,20 +10,25 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 07/23/2018
 ms.author: douglasl
-ms.openlocfilehash: ecd5f242d2dcb5662376541ac0a9e75ce533b59f
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 53ea7425f0497eca7c95ddefeaa09aa40259672b
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005838"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216279"
 ---
 # <a name="create-a-trigger-that-runs-a-pipeline-in-response-to-an-event"></a>Создание триггера, запускающего конвейер в ответ на событие
 
 В этой статье описаны триггеры на основе событий, создаваемые в конвейерах Фабрики данных.
 
 Управляемая событиями архитектура (EDA) — это общий шаблон интеграции данных, включающий в себя производство, обнаружение, потребление и реагирование на события. При выполнении сценариев интеграции данных клиентам Фабрики данных часто требуется запускать конвейеры на основе событий. Фабрика данных теперь интегрируется с [Сеткой событий Azure](https://azure.microsoft.com/services/event-grid/), что позволяет активировать конвейеры на основе событий.
+
+Уделите 10 минут своего времени, чтобы просмотреть следующее видео с кратким обзором и демонстрацией этой функции:
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Event-based-data-integration-with-Azure-Data-Factory/player]
+
 
 > [!NOTE]
 > Интеграция, описанная в этой статье, зависит от службы [Сетка событий Azure](https://azure.microsoft.com/services/event-grid/). Убедитесь, что ваша подписка зарегистрирована у поставщика ресурсов "Сетка событий". См. дополнительные сведения о [поставщиках и типах ресурсов](../azure-resource-manager/resource-manager-supported-services.md#portal).

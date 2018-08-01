@@ -1,30 +1,28 @@
 ---
-title: Чтение и запись данных в HBase с помощью Spark в Azure HDInsight | Документация Майкрософт
+title: Чтение и запись данных HBase с помощью Spark в Azure HDInsight
 description: Чтение и запись данных из кластера Spark в кластер HBase с помощью соединителя Spark HBase.
 services: hdinsight
-documentationcenter: ''
 author: maxluk
+ms.author: maxluk
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
-ms.date: 01/11/2018
-ms.author: maxluk
-ms.openlocfilehash: 7cfc7f586e8a92c29736a7c4cff0b12796be430a
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.topic: conceptual
+ms.date: 07/18/2018
+ms.openlocfilehash: 5123a95852fae58adf0b4a4684b012d3b9c71e3b
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161181"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39144777"
 ---
 # <a name="use-spark-to-read-and-write-hbase-data"></a>Чтение и запись данных в HBase с помощью Spark
 
 Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Phoenix. Apache также предоставляет соединитель Spark HBase, который является удобной и эффективной альтернативой запросу и изменению данных, хранящихся в HBase.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установлены отдельные кластеры HDInsight: HBase и Spark (Spark 2.1 (HDInsight 3.6)).
 * Кластер Spark должен напрямую связываться с кластером HBase с минимальной задержкой, поэтому рекомендуем развертывать оба кластера в одной и той же виртуальной сети. Дополнительные сведения см. в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md).
@@ -130,7 +128,7 @@ ms.locfileid: "34161181"
 1. Подключитесь к головному узлу кластера Spark с помощью SSH.
 2. Запустите оболочку Spark, указав пакет соединителя Spark HBase:
 
-        spark-shell --packages com.hortonworks:shc-core:1.1.0-2.1-s_2.11 --repositories http://repo.hortonworks.com/coroups/public/
+        spark-shell --packages com.hortonworks:shc-core:1.1.0-2.1-s_2.11 --repositories http://repo.hortonworks.com/content/groups/public/
 
 3. Оставьте открытым экземпляр оболочки Spark и перейдите к следующему шагу.
 

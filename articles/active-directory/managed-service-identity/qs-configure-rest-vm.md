@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/25/2018
 ms.author: daveba
-ms.openlocfilehash: 9cc645d91bebf07ed7e657ed39c2454254958959
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 825f34d174c37c2ee5d4187048f7a31fbaeef226
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902893"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215935"
 ---
 # <a name="configure-managed-identity-on-an-azure-vm-using-rest-api-calls"></a>Настройка управляемого удостоверения в виртуальной машине Azure с помощью вызовов REST API
 
@@ -32,10 +32,14 @@ ms.locfileid: "37902893"
 - включать и отключать назначенное системой удостоверение в виртуальной машине Azure;
 - добавлять и удалять назначенное пользователем удостоверение в виртуальной машине Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
+- Для выполнения операций управления, описанных в этой статье, учетной записи нужно назначить следующие роли:
+    - [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) для создания виртуальной машины, а также включения и удаления назначаемого системой и (или) пользователем управляемого удостоверения для виртуальной машины Azure.
+    - [Участник управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor): для создания назначаемого пользователем удостоверения.
+    - [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator) для назначения и удаления назначаемого пользователем удостоверения для виртуальной машины и из нее.
 - Если вы используете Windows, установите [подсистему Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about) или используйте [Azure Cloud Shell](../../cloud-shell/overview.md) на портале Azure.
 - Если вы используете [подсистему Windows для Linux](https://msdn.microsoft.com/commandline/wsl/about) или [ОС на базе дистрибутива Linux](/cli/azure/install-azure-cli-apt?view=azure-cli-latest), [установите локальную консоль Azure CLI](/azure/install-azure-cli).
 - Если вы используете локальную консоль Azure CLI, войдите в Azure с помощью `az login` с учетной записью, привязанной к подписке Azure, где вы хотите управлять удостоверениями, назначаемые пользователями или системой.

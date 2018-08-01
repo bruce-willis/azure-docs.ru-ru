@@ -14,12 +14,12 @@ ms.date: 06/13/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 658ec5bb2aa7c15fb1d38da5249ff9b13973cf41
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 9e065b04083cce958bc42f2efade0038bf137f8a
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37868003"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145117"
 ---
 # <a name="azure-active-directory-cmdlets-for-configuring-group-settings"></a>Настройка параметров групп с помощью командлетов Azure Active Directory
 Эта статья содержит инструкции по использованию командлетов PowerShell в Azure Active Directory (Azure AD) для создания и изменения групп. Это содержимое относится только к группам Office 365, также известным как единые группы. 
@@ -96,7 +96,8 @@ ms.locfileid: "37868003"
 |  <ul><li>EnableGroupCreation<li>Тип: логический<li>значение по умолчанию: True |Флаг, указывающий, разрешено ли пользователям без прав администратора создание группы Office 365 в каталоге. Для этого параметра не требуется лицензия Azure Active Directory Premium P1.|
 |  <ul><li>GroupCreationAllowedGroupId<li>Тип: строка<li>Default: “” |Идентификатор GUID группы безопасности, участникам которой разрешено создавать группы Office 365, даже когда EnableGroupCreation == false. |
 |  <ul><li>UsageGuidelinesUrl<li>Тип: строка<li>Default: “” |Ссылка на правила использования группы. |
-|  <ul><li>ClassificationDescriptions<li>Тип: строка<li>Default: “” | Разделенный запятыми список описаний классификаций. |
+|  <ul><li>ClassificationDescriptions<li>Тип: строка<li>Default: “” | Разделенный запятыми список описаний классификаций. Значение ClassificationDescriptions допустимо только в следующем формате:
+  $setting[“ClassificationDescriptions”] ="Classification:Description,Classification:Description", где Classification соответствует строкам в ClassificationList.|
 |  <ul><li>DefaultClassification<li>Тип: строка<li>Default: “” | Классификация, которая должна использоваться по умолчанию для группы, если не была указана иная классификация.|
 |  <ul><li>PrefixSuffixNamingRequirement<li>Тип: строка<li>Default: “” | Строка с максимальной длиной 64 символа, которая определяет соглашение об именовании, настроенное для групп Office 365. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |
 | <ul><li>CustomBlockedWordsList<li>Тип: строка<li>Default: “” | Строка фраз с разделителями-запятыми, которые не разрешено использовать в именах или псевдонимах групп. Дополнительные сведения см. в статье [Принудительное применение политики именования для групп Office 365](groups-naming-policy.md). |

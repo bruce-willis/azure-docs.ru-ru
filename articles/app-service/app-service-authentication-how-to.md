@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/14/2018
 ms.author: cephalin
-ms.openlocfilehash: 688ea090384755b9a6d60a4968d958678edc27ad
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 191d42f43e500c7f8041a02aeba2fbcb7dfd5379
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36337182"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39226532"
 ---
 # <a name="customize-authentication-and-authorization-in-azure-app-service"></a>Настройка проверки подлинности и авторизации в службе приложений Azure
 
@@ -53,6 +53,12 @@ ms.locfileid: "36337182"
 ```
 
 Когда пользователь щелкнет одну из этих ссылок, откроется соответствующая страница для входа.
+
+Чтобы перенаправить пользователя после входа по пользовательскому URL-адресу, используйте параметр строки запроса `post_login_redirect_url` (не следует путать с URI перенаправления в конфигурации поставщика удостоверений). Например, чтобы перенаправить пользователя к `/Home/Index` после входа в систему, используйте следующий код HTML:
+
+```HTML
+<a href="/.auth/login/<provider>?post_login_redirect_url=/Home/Index">Log in</a>
+```
 
 ## <a name="access-user-claims"></a>Доступ к утверждениям пользователей
 

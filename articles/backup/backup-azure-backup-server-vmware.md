@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 07/24/2017
 ms.author: adigan
-ms.openlocfilehash: 9cf3c9d5df11e19045cd47a41d7ab9ac93bdf700
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: ce7b255359c076ddae642ed44f056e444b655e25
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34605429"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216416"
 ---
 # <a name="back-up-a-vmware-server-to-azure"></a>Резервное копирование сервера VMware в Azure
 
@@ -88,7 +88,7 @@ Azure Backup Server обеспечивает резервное копирова
 
     ![Папка назначения для сертификата](./media/backup-azure-backup-server-vmware/certificate-store-selected.png)
 
-    Папка **Доверенные корневые центры сертификации** утверждается как хранилище сертификатов. Нажмите кнопку **Далее**.
+    Папка **Доверенные корневые центры сертификации** утверждается как хранилище сертификатов. Щелкните **Далее**.
 
     ![Папка хранилища сертификатов](./media/backup-azure-backup-server-vmware/certificate-import-wizard2.png)
 
@@ -151,8 +151,8 @@ Azure Backup Server обеспечивает резервное копирова
 
   После нажатия кнопки **OК** новая роль появится в списке в области ролей.
 
-|Привилегии для vCenter 6.0| Привилегии для vCenter 5.5|
-|--------------------------|---------------------------|
+|Привилегии для vCenter 6.0 и 6.5| Привилегии для vCenter 5.5|
+|----------------------------------|---------------------------|
 |Datastore.AllocateSpace   | Datastore.AllocateSpace|
 |Global.ManageCustomFields | Global.ManageCustomerFields|
 |Global.SetCustomFields    |   |

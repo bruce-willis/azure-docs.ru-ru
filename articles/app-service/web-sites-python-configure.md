@@ -4,7 +4,7 @@ description: В этом учебнике описываются возможн�
 services: app-service
 documentationcenter: python
 tags: python
-author: huguesv
+author: cephalin
 manager: erikre
 editor: ''
 ms.assetid: fd00dc91-9935-4331-b955-4bd71e66d518
@@ -15,12 +15,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 02/26/2016
 ms.author: huvalo
-ms.openlocfilehash: 32d9cd6c42387b67881877a1165dfcbcaef405ba
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: f1859660d2370093ab582c417233b25d363ce952
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598646"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39227914"
 ---
 # <a name="configuring-python-with-azure-app-service-web-apps"></a>Настройка Python в веб-приложениях службы приложений Azure
 В этом учебнике описываются возможности создания и настройки в [веб-приложениях службы приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714)базового приложения Python, совместимого с интерфейсом шлюза веб-сервера (WSGI).
@@ -30,9 +30,11 @@ ms.locfileid: "34598646"
 ## <a name="bottle-django-or-flask"></a>Bottle, Django и Flask
 В Azure Marketplace содержатся шаблоны для платформ Bottle, Django и Flask. Если вы разрабатываете первое веб-приложение в службе приложений Azure, это можно быстро сделать на портале Azure.
 
-* [Создание веб-приложения с помощью Bottle](https://portal.azure.com/#create/PTVS.Bottle)
-* [Создание веб-приложения с помощью Django](https://portal.azure.com/#create/PTVS.Django)
+* [Создание веб-приложений с помощью Bottle в Linux](https://portal.azure.com/#create/PTVS.BottleLinux)
+* [Создание веб-приложений с помощью Django в Linux](https://portal.azure.com/#create/PTVS.DjangoLinux)
 * [Создание веб-приложения с помощью Flask в Linux](https://portal.azure.com/#create/PTVS.FlaskLinux)
+
+Или вы можете [самостоятельно ознакомиться с Azure Marketplace](https://portal.azure.com/#create/hub).
 
 ## <a name="web-app-creation-on-azure-portal"></a>Создание веб-приложения на портале Azure
 В этом руководстве предполагается, что у вас есть подписка Azure и доступ к порталу Azure.
@@ -350,8 +352,11 @@ WSGI — это стандарт Python, описываемый в [PEP 3333](ht
 ## <a name="troubleshooting---virtual-environment"></a>Устранение неполадок — виртуальная среда
 [!INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
+## <a name="troubleshooting---startup-errors"></a>Устранение ошибок при запуске
+[!INCLUDE [web-sites-python-troubleshooting-wsgi-error-log](../../includes/web-sites-python-troubleshooting-wsgi-error-log.md)]
+
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительную информацию можно найти в [Центре разработчика Python](/develop/python/).
+Дополнительную информацию можно найти в [Центре разработчика Python](/python/azure/).
 
 > [!NOTE]
 > Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://azure.microsoft.com/try/app-service/), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.

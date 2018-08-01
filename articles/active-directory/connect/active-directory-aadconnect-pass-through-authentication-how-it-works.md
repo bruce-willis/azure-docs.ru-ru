@@ -12,20 +12,23 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2018
+ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4a98b971367c9f83826e85bdc24bbcfe48483f57
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 674952982ac4342caaf31c05f3d644c1e74b649d
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37916271"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215902"
 ---
 # <a name="azure-active-directory-pass-through-authentication-technical-deep-dive"></a>Сквозная аутентификация Azure Active Directory — подробное техническое руководство
 Эта статья содержит обзор принципов работы сквозной аутентификации Azure Active Directory (Azure AD). Подробные технические сведения и информацию о безопасности см. в [руководстве по безопасности](active-directory-aadconnect-pass-through-authentication-security-deep-dive.md).
 
 ## <a name="how-does-azure-active-directory-pass-through-authentication-work"></a>Как работает сквозная аутентификация Azure Active Directory?
+
+>[!NOTE]
+>В качестве предварительного требования для сквозной проверки подлинности пользователей необходимо подготовить для Azure AD в локальной службе Active Directory с помощью Azure AD Connect. Сквозная проверка подлинности не применяется к исключительно облачным пользователям.
 
 Когда пользователь пытается войти в приложение, защищенное с помощью Azure AD, и на клиенте включена сквозная аутентификация, выполняются следующие действия.
 
@@ -49,6 +52,7 @@ ms.locfileid: "37916271"
 ## <a name="next-steps"></a>Дополнительная информация
 - [Текущие ограничения](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
+- [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
 - [Часто задаваемые вопросы](active-directory-aadconnect-pass-through-authentication-faq.md). Найдите ответы на часто задаваемые вопросы.
 - [Устранение неполадок](active-directory-aadconnect-troubleshoot-pass-through-authentication.md). Узнайте, как устранять распространенные проблемы со сквозной аутентификации.

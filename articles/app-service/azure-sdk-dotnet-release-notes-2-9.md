@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: integration
 ms.date: 02/24/2017
 ms.author: juliako
-ms.openlocfilehash: 30013c0bd8ded31ccaf3cdc142bbf8dc6b375031
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 01b8ccc9fe6b5469408131bce68a903f15382998
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32150963"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39222534"
 ---
 # <a name="azure-sdk-for-net-29-release-notes"></a>Заметки о выпуске пакета Azure SDK для .NET 2.9
 
@@ -32,7 +32,7 @@ ms.locfileid: "32150963"
 
 ### <a name="visual-studio-2017-release-candidate"></a>релиз-кандидат Visual Studio 2017
 
-- В версии-кандидате Visual Studio 2017 этот выпуск пакета Azure SDK для .NET встроен в рабочую нагрузку Azure. Все средства, необходимые для разработки Azure, будут входить в эту версию. Для Visual Studio 2015 и Visual Studio 2013 пакет SDK по-прежнему будет доступен через WebPI. Когда Visual Studio 2017 будет выпущен в качестве конечного продукта, версии пакета Azure SDK для .NET больше не будут доступны для Visual Studio 2013. Чтобы скачать версию-кандидат Visual Studio 2017, перейдите по этой ссылке: https://www.visualstudio.com/vs/visual-studio-2017-rc/.
+- В версии-кандидате Visual Studio 2017 этот выпуск пакета Azure SDK для .NET включен в рабочую нагрузку Azure. Все средства, необходимые для разработки Azure, будут входить в эту версию. Для Visual Studio 2015 и Visual Studio 2013 пакет SDK по-прежнему будет доступен через WebPI. Когда Visual Studio 2017 будет выпущен в качестве конечного продукта, версии пакета Azure SDK для .NET больше не будут доступны для Visual Studio 2013. Чтобы скачать версию-кандидат Visual Studio 2017, перейдите по этой ссылке: https://www.visualstudio.com/vs/visual-studio-2017-rc/.
 
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "32150963"
 ## <a name="azure-sdk-29-for-visual-studio-2015-update-2-and-visual-studio-15-preview"></a>Azure SDK 2.9 для Visual Studio 2015 с обновлением 2 и Visual Studio "15" (предварительная версия)
 Это обновление содержит следующие исправления ошибок:
 
-* Проблема, связанная с созданием клиента REST API, в котором строка "Unknown Type" (Неизвестный тип) будет использоваться в качестве имени папки, созданной кодом, и/или имени пространства имен в созданном коде.
+* Проблема, связанная с созданием клиента REST API, в котором строка Unknown Type (Неизвестный тип) будет использоваться в качестве имени папки, созданной кодом, и (или) имени пространства имен в созданном коде.
 * Проблема, связанная с запланированными веб-заданиями, в которых сведения проверки подлинности не удалось передать в процесс подготовки планировщика.
 
 Это обновление содержит следующий новый компонент:
@@ -86,7 +86,7 @@ ms.locfileid: "32150963"
 ## <a name="hdinsight-tools"></a>Средства HDInsight
 **Средства HDInsight** для Visual Studio теперь поддерживают HDInsight версии 3.3, включая показ графики Tez и другие языковые исправления.
 
-## <a name="azure-resource-manager"></a>Диспетчер ресурсов Azure
+## <a name="azure-resource-manager"></a>Azure Resource Manager
 В этом выпуске добавлена поддержка [KeyVault](../azure-resource-manager/resource-manager-keyvault-parameter.md) для шаблонов Resource Manager.
 
 ## <a name="see-also"></a>См. также

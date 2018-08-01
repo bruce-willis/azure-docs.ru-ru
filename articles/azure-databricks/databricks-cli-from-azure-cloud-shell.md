@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: c20ad02f962fbee22bb16653c5eab351d9f3de17
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3ea4ebbd95237b50054fb0e344f260120d597ab5
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34598731"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225240"
 ---
 # <a name="use-databricks-cli-from-azure-cloud-shell"></a>Использование интерфейса командной строки Databricks через Azure Cloud Shell
 
 Сведения об использовании интерфейса командной строки Databricks через Azure Cloud Shell при работе в Databricks.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочее пространство и кластер в Azure Databricks. Инструкции см. в статье [Начало работы с Azure Databricks](quickstart-create-databricks-workspace-portal.md). 
 
@@ -36,13 +36,13 @@ ms.locfileid: "34598731"
  
 2. В правом верхнем углу выберите значок **Cloud Shell**.
 
-   ![Запустить Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/launch-azure-cloud-shell.png "Запустить ODBC из Excel")
+   ![Запуск Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/launch-azure-cloud-shell.png "Launch Azure Cloud Shell")
 
-3. Убедитесь, что для среды Cloud Shell была выбрана **Bash**. Как показано на следующем снимке экрана, эту среду можно выбрать в раскрывающемся списке.
+3. Убедитесь, что для среды Cloud Shell выбран вариант **Bash**. Как показано на следующем снимке экрана, эту среду можно выбрать в раскрывающемся списке.
 
-   ![Запустить Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/select-bash-for-shell.png "Запустить ODBC из Excel") 
+   ![Выбор Bash для следы Cloud Shell](./media/databricks-cli-from-azure-cloud-shell/select-bash-for-shell.png "Select Bash") 
 
-4. Создайте виртуальную среду, в которую можно будет установить интерфейс командной строки Databtricks. Используя фрагмент кода ниже, создайте виртуальную среду, которая называется `databrickscli`.
+4. Создайте виртуальную среду, в которой можно будет установить интерфейс командной строки Databtricks. Используя фрагмент кода ниже, создайте виртуальную среду, которая называется `databrickscli`.
 
        virtualenv -p /usr/bin/python2.7 databrickscli
 
@@ -58,13 +58,11 @@ ms.locfileid: "34598731"
 
        databricks configure --token
 
-    Перед вами отобразятся следующие запросы.
+    Отобразятся следующие запросы.
 
-    * Появится запрос на указание узла Databricks. Укажите значение в формате `https://eastus2.azuredatabricks.net`. Здесь **East US 2** — это регион в Azure, в котором была создана рабочая область Azure Databricks.
+    * Сначала появится запрос на указание узла Databricks. Введите значение в формате `https://eastus2.azuredatabricks.net`. Здесь **East US 2** — это регион в Azure, в котором была создана рабочая область Azure Databricks.
 
-    * Появится запрос на ввод имени пользователя. Введите **маркер**.
-
-    * Наконец, появится запрос на ввод пароля. Введите маркер, который был создан ранее.
+    * Далее появится запрос на ввод маркера. Введите маркер, который был создан ранее.
 
 После выполнения этих действий можно начинать использовать интерфейс командной строки Databricks в Azure Cloud Shell.
 

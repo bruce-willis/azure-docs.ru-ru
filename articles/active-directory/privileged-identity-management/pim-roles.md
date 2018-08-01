@@ -10,25 +10,22 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.component: protection
-ms.date: 03/04/2018
+ms.date: 07/23/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: bbc87f529cb70b6f4b21984199ed87427b4e3108
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 6553fdba463144c6eda1e35c0967e92a3c44aff6
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38506414"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225582"
 ---
-# <a name="different-administrative-role-in-azure-active-directory-pim"></a>Различные административные роли в Azure Active Directory PIM
+# <a name="directory-roles-you-can-manage-using-azure-ad-pim"></a>Роли каталога, которыми можно управлять с помощью Azure AD Privileged Identity Management
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
 
 В Azure AD пользователям организации можно назначать различные административные роли. Назначения ролей регулируют, какие задачи (например, добавление или удаление пользователей или изменение параметров службы) смогут выполнять пользователи в Azure AD, Office 365 и других службах Microsoft Online Services и подключенных приложениях.  
 
-> [!IMPORTANT]
-> Для управления службой Azure AD рекомендуем использовать [Центр администрирования Azure AD](https://aad.portal.azure.com) на портале Azure.
-
-Глобальный администратор может **на постоянной основе** назначить пользователям роли в Azure AD с помощью командлетов PowerShell, таких как `Add-MsolRoleMember` и `Remove-MsolRoleMember`, или с помощью портала, как описано в статье о [назначении ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).
+Глобальный администратор может **на постоянной основе** назначить пользователям роли в Azure AD с помощью портала, как описано в статье о [назначении ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md), или с помощью команд [PowerShell](/powershell/module/azuread#directory_roles).
 
 Служба управления привилегированными пользователями (PIM) Azure AD управляет политиками привилегированного доступа для пользователей в Azure AD. PIM назначает пользователям одну или несколько ролей в Azure AD, и вы можете определить, будет ли роль назначена пользователю постоянно или временно. Когда пользователю на постоянной основе назначается роль или он активирует временное назначение роли, он может управлять Azure Active Directory, Office 365 и другими приложениями согласно разрешениям, назначенным его роли.
 
@@ -66,7 +63,7 @@ ms.locfileid: "38506414"
 ## <a name="roles-not-managed-in-pim"></a>Роли, которыми нельзя управлять в PIM
 Роли в Exchange Online или SharePoint Online, за исключением упомянутых выше, не представлены в Azure AD и поэтому не отображаются в PIM. Дополнительные сведения об изменении детализированных назначений ролей в этих службах Office 365 см. в статье [Роли администраторов в Office 365](https://support.office.com/article/Permissions-in-Office-365-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
-Подписки Azure и группы ресурсов также не представлены в Azure AD. Дополнительные сведения об управлении подписками Azure см. в статье [Добавление или изменение ролей администратора Azure](../../billing/billing-add-change-azure-subscription-administrator.md), а сведения об управлении доступом на основе ролей Azure — в статье [Использование назначений ролей для управления доступом к ресурсам в подписке Azure](../../role-based-access-control/role-assignments-portal.md).
+Подписки Azure и группы ресурсов также не представлены в Azure AD. Дополнительные сведения об управлении подписками Azure см. в статье [Добавление или изменение администраторов подписки Azure](../../billing/billing-add-change-azure-subscription-administrator.md), а сведения об управлении доступом на основе ролей в Azure — в статье [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
 
 <!--**The above links might be replaced by ones that are from within this documentation repository **-->
 
@@ -82,7 +79,7 @@ ms.locfileid: "38506414"
 1. Войдите на [портал Azure](http://portal.azure.com) с учетной записью глобального администратора или соадминистратора.
 3. Выберите Azure AD и каталог, с которым необходимо работать и с которым сопоставлены соответствующие лицензии.
 4. В левой части экрана выберите **Лицензии**. Отобразится список доступных лицензий.
-5. Выберите план лицензирования, содержащий лицензии, которые необходимо распространить.
+5. Выберите план лицензирования, содержащий лицензии, которые необходимо распределить.
 6. Выберите **Назначить пользователей**.
 7. Выберите пользователя, которому необходимо назначить лицензию.
 8. Нажмите кнопку **Назначить** .  Теперь этот пользователь может войти в Azure.

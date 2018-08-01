@@ -6,15 +6,15 @@ author: rboucher
 ms.service: azure-monitor
 ms.devlang: dotnet
 ms.topic: reference
-ms.date: 05/15/2017
+ms.date: 06/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 501e28cf3d01385d65a2308db06702d2db0d91ee
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: d9d61762a2e7956c95356cb4e884675e38deeb1b
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937919"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145389"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
 > [!NOTE]
@@ -408,7 +408,9 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Атрибуты|ОПИСАНИЕ|  
 |----------------|-----------------|  
 | **overallQuotaInMB** | Максимальный объем пространства на локальном жестком диске, доступный для диагностических данных различного типа, собранных системой диагностики Azure. Значение по умолчанию составляет 4096 МБ.<br />
-|**useProxyServer** | Позволяет настроить систему диагностики Azure для использования параметров прокси-сервера, указанных в настройках IE.|  
+|**useProxyServer** | Позволяет настроить систему диагностики Azure для использования параметров прокси-сервера, указанных в настройках IE.|
+|**Приемники** | Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных для всех дочерних элементов с соответствующей поддержкой. Пример приемника — Application Insights или Центры событий Azure.|  
+
 
 <br /> <br />
 
@@ -570,7 +572,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию — 0.|  
 |**scheduledTransferLogLevelFilterr**|**string**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
 |**scheduledTransferPeriod**|**duration**|Необязательный элемент. Указывает интервал между запланированными передачами данных, округленный с точностью до ближайшей минуты.<br /><br /> По умолчанию используется значение PT0S.|  
-|**sinks** (добавлен в версии 1.5)|**string**|Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights.|  
+|**Приемники** |**string**| Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights или Центры событий Azure.|  
 
 ## <a name="dockersources"></a>DockerSources
  *Дерево: корневой элемент — DiagnosticsConfiguration — PublicConfig — WadCFG — DiagnosticMonitorConfiguration — DockerSources*

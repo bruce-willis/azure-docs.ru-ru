@@ -11,13 +11,13 @@ ms.author: grhuynh
 ms.service: microsoft-genomics
 ms.workload: genomics
 ms.topic: article
-ms.date: 04/13/2018
-ms.openlocfilehash: d3991bdbcd9c3dcd08572dc92cc75aaebb02b133
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.date: 07/18/2018
+ms.openlocfilehash: 9bd1690003fd37b6c2edd0f0421cf8d0e74f8cb5
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "34627370"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39144182"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 В этом обзоре описываются стратегии для решения распространенных проблем при использовании службы Microsoft Genomics. Ответы на общие часто задаваемые вопросы о Microsoft Genomics см. в [этой статье](frequently-asked-questions-genomics.md). 
@@ -65,7 +65,7 @@ msgen status -u URL -k KEY -w ID [-f CONFIG]
 
 
 ### <a name="error-uploading-bam-file-output-blob-already-exists-and-the-overwrite-option-was-set-to-false"></a>Ошибка при отправке файла BAM. Выходной большой двоичный объект уже существует, а для параметра перезаписи установлено значение False
-Если вы видите сообщение об ошибке `Error uploading .bam file. Output blob already exists and the overwrite option was set to False`, папка выходных данных уже содержит выходной файл с тем же именем.  Удалите имеющийся выходной файл или включите в файле конфигурации параметр перезаписи. Затем повторно отправьте рабочий процесс.
+Если отображается сообщение об ошибке `Error uploading .bam file. Output blob already exists and the overwrite option was set to False`, папка выходных данных уже содержит выходной файл с таким же именем.  Удалите имеющийся выходной файл или включите в файле конфигурации параметр перезаписи. Затем повторно отправьте рабочий процесс.
 
 ### <a name="when-to-contact-microsoft-genomics-support"></a>Когда следует обращаться в службу поддержки Microsoft Genomics
 Если отображаются следующие сообщения, произошла внутренняя ошибка. 

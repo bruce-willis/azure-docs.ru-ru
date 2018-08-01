@@ -6,14 +6,14 @@ author: mmacy
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/16/2018
+ms.date: 07/23/2018
 ms.author: marsma
-ms.openlocfilehash: cb7b27b178197cde040e1d106ed5a5ee20905823
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: cfe034d6dcac48d7c9e4b2ce17e4926a81a27886
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39115801"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216110"
 ---
 # <a name="network-configuration-in-azure-kubernetes-service-aks"></a>Конфигурация сети в службе Azure Kubernetes (AKS)
 
@@ -49,9 +49,10 @@ ms.locfileid: "39115801"
 
 * Виртуальная сеть для кластера AKS должна разрешать исходящее подключение к Интернету.
 * Не создавайте больше одного кластера AKS в одной подсети.
-* Расширенное взаимодействие для AKS не поддерживает виртуальные сети, использующие частные зоны DNS.
 * Кластер AKS не может использовать `169.254.0.0/16`, `172.30.0.0/16` или `172.31.0.0/16` для диапазона адресов службы Kubernetes.
-* Субъект-служба, используемая для кластера AKS, должна иметь разрешения `Contributor` для группы ресурсов, содержащей имеющуюся виртуальную сеть.
+* Субъект-служба, используемый кластером AKS, должен иметь по крайней мере разрешения [Участник сетей](../role-based-access-control/built-in-roles.md#network-contributor) в подсети в виртуальной сети. Если вы хотите определить [пользовательскую роль](../role-based-access-control/custom-roles.md) вместо того, чтобы использовать встроенную роль участника сети, требуются следующие разрешения:
+  * `Microsoft.Network/virtualNetworks/subnets/join/action`
+  * `Microsoft.Network/virtualNetworks/subnets/read`
 
 ## <a name="plan-ip-addressing-for-your-cluster"></a>Планирование назначения IP-адресов для кластера
 

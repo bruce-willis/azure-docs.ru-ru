@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0511c2bf7eed15f997f8444c945afb18179bbc63
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 582513e7e556859e70c1af9c4f6179e1d60e0139
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34194008"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39216747"
 ---
 # <a name="child-runbooks-in-azure-automation"></a>Дочерние модули Runbook в службе автоматизации Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "34194008"
 
 ### <a name="example"></a>Пример
 
-В следующем примере вызывается тестовый дочерний Runbook, который принимает три параметра: сложный объект, целое число и логическое значение. Выходные данные дочернего Runbook присваиваются переменной.  В этом случае дочерний Runbook представляет собой Runbook рабочего процесса PowerShell.
+В следующем примере вызывается тестовый дочерний Runbook, который принимает три параметра: сложный объект, целое число и логическое значение. Выходные данные дочернего Runbook присваиваются переменной.  В этом случае дочерний модуль runbook является модулем runbook рабочего процесса PowerShell.
 
 ```azurepowershell-interactive
 $vm = Get-AzureRmVM –ResourceGroupName "LabRG" –Name "MyVM"
@@ -62,7 +62,7 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 
 ## <a name="starting-a-child-runbook-using-cmdlet"></a>Запуск дочернего Runbook с помощью командлета
 
-Чтобы запустить модуль Runbook, можно воспользоваться командлетом [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx), как описано в разделе [Запуск модуля Runbook с помощью Windows PowerShell](automation-starting-a-runbook.md#starting-a-runbook-with-windows-powershell). Этот командлет можно использовать в двух режимах.  В одном режиме командлет возвращает идентификатор задания при создании дочернего задания для дочернего модуля Runbook.  В другом режиме, который можно включить, указав параметр **-wait** , командлет ожидает завершения дочернего задания и возвращает выходные данные из дочернего модуля Runbook.
+Чтобы запустить модуль Runbook, можно воспользоваться командлетом [Start-AzureRmAutomationRunbook](/powershell/module/AzureRM.Automation/Start-AzureRmAutomationRunbook), как описано в разделе [Запуск модуля Runbook с помощью Windows PowerShell](automation-starting-a-runbook.md#starting-a-runbook-with-windows-powershell). Этот командлет можно использовать в двух режимах.  В одном режиме командлет возвращает идентификатор задания при создании дочернего задания для дочернего модуля Runbook.  В другом режиме, который можно включить, указав параметр **-wait** , командлет ожидает завершения дочернего задания и возвращает выходные данные из дочернего модуля Runbook.
 
 Задание дочернего Runbook, запущенного с помощью командлета, будет выполняться отдельно от задания родительского Runbook. Это порождает больше заданий, чем при встроенном вызове компонента runbook, и усложняет их отслеживание. Родительский модуль Runbook может запустить несколько дочерних модулей Runbook асинхронно, не ожидая завершения каждого из них. Для такого параллельного выполнения дочерних Runbook с помощью встроенного вызова в родительском Runbook потребуется использовать [ключевое слово parallel](automation-powershell-workflow.md#parallel-processing).
 
@@ -74,9 +74,18 @@ $output = .\PS-ChildRunbook.ps1 –VM $vm –RepeatCount 2 –Restart $true
 
 ### <a name="example"></a>Пример
 
-В следующем примере с помощью командлета Start-AzureRmAutomationRunbook с параметром -wait запускается дочерний модуль Runbook с параметрами и ожидается его завершение. После завершения его выходные данные собираются из дочернего модуля Runbook.
+В следующем примере с помощью командлета Start-AzureRmAutomationRunbook с параметром -wait запускается дочерний модуль Runbook с параметрами и ожидается его завершение. После завершения его выходные данные собираются из дочернего модуля Runbook. Для использования `Start-AzureRmAutomationRunbook` необходимо пройти проверку подлинности в подписке Azure.
 
 ```azurepowershell-interactive
+# Connect to Azure with RunAs account
+$conn = Get-AutomationConnection -Name "AzureRunAsConnection"
+
+$null = Add-AzureRmAccount `
+  -ServicePrincipal `
+  -TenantId $conn.TenantId `
+  -ApplicationId $conn.ApplicationId `
+  -CertificateThumbprint $conn.CertificateThumbprint
+
 $params = @{"VMName"="MyVM";"RepeatCount"=2;"Restart"=$true}
 $joboutput = Start-AzureRmAutomationRunbook –AutomationAccountName "MyAutomationAccount" –Name "Test-ChildRunbook" -ResourceGroupName "LabRG" –Parameters $params –wait
 ```

@@ -24,6 +24,9 @@
         - name: Удостоверение управляемой службы
           tocHref: /azure/active-directory/managed-service-identity/
           topicHref: /azure/active-directory/managed-service-identity/
+        - name: Справка для пользователей
+          tocHref: /azure/active-directory/user-help/
+          topicHref: /azure/active-directory/user-help/
         - name: B2C
           tocHref: /azure/active-directory-b2c/
           topicHref: /azure/active-directory-b2c/
@@ -520,7 +523,7 @@
     - name: SQL Server Stretch Database
       tocHref: /azure/sql-server-stretch-database/
       topicHref: /azure/sql-server-stretch-database/
-    - name: Служба хранилища
+    - name: Хранилище
       tocHref: /azure/storage/
       topicHref: /azure/storage/
       items:

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 6/10/2018
 ms.author: subramar
-ms.openlocfilehash: a5b75a7069375f503cbe25554eb7c04cba868413
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 9bd370e8070816d62b22c1e3d5ad4b6cdd2da30a
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969611"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39144957"
 ---
 # <a name="service-fabric-azure-files-volume-driver-preview"></a>Драйвер тома службы файлов Azure для Service Fabric (предварительная версия)
 Подключаемый модуль тома службы файлов Azure — это [подключаемый модуль тома Docker](https://docs.docker.com/engine/extend/plugins_volume/), предоставляющий тома [службы файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) для контейнеров Docker. Этот подключаемый модуль тома Docker упакован в виде приложения Service Fabric, которое можно развернуть в кластерах Service Fabric. Он позволяет предоставить тома службы файлов Azure для других контейнерных приложений Service Fabric, развернутых в кластере.
@@ -28,7 +28,7 @@ ms.locfileid: "38969611"
 > Версия 6.255.389.9494 подключаемого модуля тома службы файлов Azure является предварительным выпуском, который доступен в этом документе. Как и любой предварительный выпуск, эта версия **не** предназначена для рабочих сред.
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Версия подключаемого модуля тома службы файлов Azure для Windows работает только в операционных системах [Windows Server версии 1709](https://docs.microsoft.com/windows-server/get-started/whats-new-in-windows-server-1709), [Windows 10 версии 1709](https://docs.microsoft.com/windows/whats-new/whats-new-windows-10-version-1709) или более поздних версий. Версия подключаемого модуля тома службы файлов Azure для Linux работает во всех версиях операционной системы, поддерживаемых Service Fabric.
 
 * Подключаемый модуль тома службы файлов Azure работает с Service Fabric версии 6.2 и новее.
@@ -36,6 +36,33 @@ ms.locfileid: "38969611"
 * Следуйте инструкциям в [документации по службе файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share), чтобы создать файловый ресурс для контейнерного приложения Service Fabric, который будет использован в качестве тома.
 
 * Вам потребуется установить [PowerShell с модулем Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started) или [SFCTL](https://docs.microsoft.com/azure/service-fabric/service-fabric-cli).
+
+* Если используются контейнеры Hyper-V, необходимо добавить приведенные ниже фрагменты кода в файл ClusterManifest (локальный кластер) или в раздел fabricSettings шаблона ARM (кластер Azure) либо в ClusterConfig.json (автономный кластер). Вам потребуется имя тома и данные порта, через который должны передаваться данные, ожидаемые томом в кластере. 
+
+В файле ClusterManifest в раздел Hosting нужно добавить приведенный ниже код. В этом примере имя тома — **sfazurefile**, а порт, через который должны передаваться ожидаемые в кластере данные, — **19300**.  
+
+``` xml 
+<Section Name="Hosting">
+  <Parameter Name="VolumePluginPorts" Value="sfazurefile:19300" />
+</Section>
+```
+
+В разделе fabricSettings шаблона ARM (для развертываний Azure) или ClusterConfig.json (для автономных развертываний) необходимо добавить следующий фрагмент кода: 
+
+```json
+"fabricSettings": [
+  {
+    "name": "Hosting",
+    "parameters": [
+      {
+          "name": "VolumePluginPorts",
+          "value": "sfazurefile:19300"
+      }
+    ]
+  }
+]
+```
+
 
 ## <a name="deploy-the-service-fabric-azure-files-application"></a>Развертывание приложения Service Fabric для службы файлов Azure
 

@@ -111,8 +111,12 @@
           href: memory-and-concurrency-limits.md
         - name: Сжатие ColumnStore
           href: sql-data-warehouse-memory-optimizations-for-columnstore-compression.md
-    - name: Мониторинг
-      href: sql-data-warehouse-manage-monitor.md
+    - name: Управляемость и мониторинг
+      items:
+        - name: Мониторинг
+          href: sql-data-warehouse-manage-monitor.md
+        - name: Рекомендации
+          href: sql-data-warehouse-concept-recommendations.md
     - name: Разработка хранилищ данных
       items:
         - name: Обзор

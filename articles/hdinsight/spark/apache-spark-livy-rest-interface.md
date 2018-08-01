@@ -1,26 +1,23 @@
 ---
-title: Отправка заданий в кластер Spark в Azure HDInsight с помощью Livy Spark | Документация Майкрософт
+title: Отправка заданий в кластер Spark в Azure HDInsight с помощью Livy Spark
 description: Узнайте, как выполнить удаленную отправку заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API.
-keywords: apache spark rest api,livy spark
 services: hdinsight
-documentationcenter: ''
 author: nitinme
+ms.author: nitinme
 manager: jhubbard
 editor: cgronlun
 tags: azure-portal
 ms.assetid: 2817b779-1594-486b-8759-489379ca907d
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/11/2017
-ms.author: nitinme
-ms.openlocfilehash: 29cf245a03b38be4f5396a3c83c966a27cf038f3
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.date: 07/18/2018
+ms.openlocfilehash: f2befaea436c29b43eead63a560836446075c89f
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31517783"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39144831"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
 
@@ -37,16 +34,16 @@ ms.locfileid: "31517783"
 ## <a name="submit-a-livy-spark-batch-job"></a>Отправка пакетного задания Livy Spark
 Перед отправкой пакетного задания необходимо загрузить JAR-файл приложения в хранилище кластеров, связанное с соответствующим кластером. Вы можете использовать для этого служебную программу командной строки [**AzCopy**](../../storage/common/storage-use-azcopy.md). Кроме того, для отправки данных вы можете использовать множество других клиентов. Дополнительные сведения о них см. в статье [Отправка данных для заданий Hadoop в HDInsight](../hdinsight-upload-data.md).
 
-    curl -k --user "<hdinsight user>:<user password>" -v -H <content-type> -X POST -d '{ "file":"<path to application jar>", "className":"<classname in jar>" }' 'https://<spark_cluster_name>.azurehdinsight.net/livy/batches'
+    curl -k --user "<hdinsight user>:<user password>" -v -H <content-type> -X POST -d '{ "file":"<path to application jar>", "className":"<classname in jar>" }' 'https://<spark_cluster_name>.azurehdinsight.net/livy/batches' -H "X-Requested-By: admin"
 
 **Примеры**:
 
 * Если JAR-файл находится в хранилище кластеров (WASB)
   
-        curl -k --user "admin:mypassword1!" -v -H 'Content-Type: application/json' -X POST -d '{ "file":"wasb://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://mysparkcluster.azurehdinsight.net/livy/batches"
+        curl -k --user "admin:mypassword1!" -v -H 'Content-Type: application/json' -X POST -d '{ "file":"wasb://mycontainer@mystorageaccount.blob.core.windows.net/data/SparkSimpleTest.jar", "className":"com.microsoft.spark.test.SimpleFile" }' "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
 * Если имя JAR-файла и имя класса необходимо передать в составе входного файла (в данном примере input.txt).
   
-        curl -k  --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches"
+        curl -k  --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
 
 ## <a name="get-information-on-livy-spark-batches-running-on-the-cluster"></a>Получение сведений о пакетах Livy Spark, выполняемых в кластере
     curl -k --user "<hdinsight user>:<user password>" -v -X GET "https://<spark_cluster_name>.azurehdinsight.net/livy/batches"
@@ -55,7 +52,7 @@ ms.locfileid: "31517783"
 
 * Если вы хотите получить все пакеты Livy Spark, выполняемые в кластере:
   
-        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches"
+        curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches" 
 * Если вы хотите получить пакет с определенным идентификатором
   
         curl -k --user "admin:mypassword1!" -v -X GET "https://mysparkcluster.azurehdinsight.net/livy/batches/{batchId}"
@@ -101,7 +98,7 @@ Livy обеспечивает высокую доступность задани
 
 2. Теперь отправим пакетное задание. В приведенном ниже фрагменте кода для передачи имени JAR-файла и имени класса в качестве параметров используется входной файл (input.txt). Если данные действия выполняются на компьютере Windows, то рекомендуется использовать входной файл.
    
-        curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches"
+        curl -k --user "admin:mypassword1!" -v -H "Content-Type: application/json" -X POST --data @C:\Temp\input.txt "https://mysparkcluster.azurehdinsight.net/livy/batches" -H "X-Requested-By: admin"
    
     Параметры в файле **input.txt** определяются следующим образом:
    

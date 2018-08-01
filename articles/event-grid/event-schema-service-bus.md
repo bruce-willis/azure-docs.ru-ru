@@ -6,14 +6,14 @@ author: banisadr
 manager: darosa
 ms.service: event-grid
 ms.topic: reference
-ms.date: 02/21/2018
+ms.date: 07/23/2018
 ms.author: babanisa
-ms.openlocfilehash: 991679eeb0f7c98606133750b193a5895f39178f
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 39bf8df69f491aace546386b1b3aabce9ea6c696
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303323"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39226549"
 ---
 # <a name="azure-event-grid-event-schema-for-service-bus"></a>Схема событий службы "Сетка событий Azure" для служебной шины
 
@@ -93,7 +93,7 @@ ms.locfileid: "34303323"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| nameSpaceName | строка | Пространство имен служебной шины, в котором существует ресурс. |
+| namespaceName | строка | Пространство имен служебной шины, в котором существует ресурс. |
 | requestUri | строка | URI определенной очереди или подписки, создающей события. |
 | entityType | строка | Тип сущности служебной шины, создающей события (очередь или подписка). |
 | queueName | строка | Очередь с активными сообщениями при подписке на очередь. Значение null, если используются разделы и подписки. |

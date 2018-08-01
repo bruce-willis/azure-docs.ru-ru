@@ -8,12 +8,12 @@ ms.date: 04/16/2018
 ms.topic: article
 ms.prod: microsoft-iot-central
 manager: timlt
-ms.openlocfilehash: 083410c6407ce7aa83c3829f884890561b0b44b8
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 42516e4dd6a85e0d07d4a8e70e958b2ec6e84aad
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39008218"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225206"
 ---
 # <a name="create-a-telemetry-rule-and-set-up-an-action-in-your-azure-iot-central-application"></a>Создание правила телеметрии и настройка действия в приложении Azure IoT Central
 
@@ -60,7 +60,9 @@ ms.locfileid: "39008218"
 
 ### <a name="add-an-action"></a>Добавление действия
 
-В этом разделе показано, как добавить в правило действие. Здесь рассматривается добавление действия электронной почты, но вы также можете [добавить в правило действие Microsoft Flow](howto-add-microsoft-flow.md), чтобы при активации правила запускался рабочий процесс в Microsoft Flow.
+В этом примере показано, как добавить действие в правило. Здесь показано, как добавить действие с электронной почтой, но можно также добавить другие действия:
+-  [действие Microsoft Flow](howto-add-microsoft-flow.md) для запуска рабочего процесса в Microsoft Flow при срабатывании правила;
+- [действие веб-перехватчика](howto-create-webhooks.md) для уведомления других служб при срабатывании правила.
 
 > [!NOTE]
 > Сейчас с одним правилом можно связать только одно действие.

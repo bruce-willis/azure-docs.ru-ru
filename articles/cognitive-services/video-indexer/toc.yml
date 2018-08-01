@@ -1,0 +1,46 @@
+- name: Документация по Индексатору видео
+- name: Обзор
+  items:
+    - name: Что такое Индексатор видео?
+      href: video-indexer-overview.md
+    - name: Основные понятия
+      href: video-indexer-concepts.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: Начало работы
+      href: video-indexer-get-started.md
+- name: Практические руководства
+  items:
+    - name: Миграция из версии 1 в версию 2
+      href: migrate-from-v1-to-v2.md
+    - name: Подключение к Azure
+      href: connect-to-azure.md
+    - name: Использование API Индексатора видео
+      href: video-indexer-use-apis.md
+    - name: Отправка и индексация видео с помощью API
+      href: upload-index-videos.md
+    - name: Анализ выходных данных Индексатора видео
+      href: video-indexer-output-json-v2.md
+    - name: Поиск конкретных кадров в видео
+      href: video-indexer-search.md
+    - name: Просмотр и редактирование аналитических сведений Индексатора видео
+      href: video-indexer-view-edit.md
+    - name: Создание аналитических сведений из существующих видео
+      href: video-indexer-create-new.md
+    - name: Внедрение мини-приложений в приложение
+      href: video-indexer-embed-widgets.md
+- name: Справочные материалы
+  items:
+    - name: API индексатора видео
+      href: 'https://api-portal.videoindexer.ai/'
+- name: Ресурсы
+  items:
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/video-indexer/'
+    - name: UserVoice
+      href: 'https://cognitive.uservoice.com/forums/598144-video-indexer'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'

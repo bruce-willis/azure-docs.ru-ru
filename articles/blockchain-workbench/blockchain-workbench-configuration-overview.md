@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 5/16/2018
+ms.date: 7/12/2018
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 178c2c1d4f727241338d6d933cd5eecbbffe65bb
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 60a84609c6ec8c1733f0938c69ab683f01ecb975
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34303820"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224540"
 ---
 # <a name="azure-blockchain-workbench-configuration-reference"></a>Справочник по конфигурации Azure Blockchain Workbench
 
@@ -76,6 +76,7 @@ ms.locfileid: "34303820"
 | address  | Тип адреса блокчейна, такой как *контракты* или *пользователи* |
 | bool     | Логический тип данных |
 | contract | Адрес типа контракта |
+| enum     | Перечисляемый набор именованных значений. При использовании типа enum следует также указать список значений EnumValues. Каждое значение ограничено 255 символами. Допустимые символы в значениях — прописные и строчные буквы латинского алфавита (A–Z, a–z) и цифры (0–9). |
 | int      | Целочисленный тип данных |
 | money;    | Денежный тип данных |
 | state    | Состояние рабочего процесса |
@@ -83,6 +84,64 @@ ms.locfileid: "34303820"
 | user     | Адрес типа пользователя |
 | Twitter в режиме реального     | Временной тип данных |
 |`[ Application Role Name ]`| Любое имя, указанное в роли приложения. Ограничивает пользователей этим типом роли. |
+
+### <a name="example-configuration-of-type-string"></a>Пример конфигурации типа string
+
+``` json
+{
+  "Name": "description",
+  "Description": "Descriptive text",
+  "DisplayName": "Description",
+  "Type": {
+    "Name": "string"
+  }
+}
+```
+
+### <a name="example-configuration-of-type-enum"></a>Пример конфигурации типа enum
+
+``` json
+{
+  "Name": "PropertyType",
+  "DisplayName": "Property Type",
+  "Description": "The type of the property",
+  "Type": {
+    "Name": "enum",
+    "EnumValues": ["House", "Townhouse", "Condo", "Land"]
+  }
+}
+```
+
+#### <a name="using-enumeration-type-in-solidity"></a>Использование типа перечисления на Solidity
+
+После определения enum в конфигурации можно использовать типы перечисления на Solidity. Например, можно определить перечисление с именем PropertyTypeEnum.
+
+```
+enum PropertyTypeEnum {House, Townhouse, Condo, Land} PropertyTypeEnum public PropertyType; 
+```
+
+Списки строк в конфигурации и смарт-контракте должны совпадать, чтобы в Blockchain Workbench формировались допустимые и согласованные объявления.
+
+Пример назначения:
+
+```
+PropertyType = PropertyTypeEnum.Townhouse;
+```
+
+Пример параметра функции: 
+
+``` 
+function AssetTransfer(string description, uint256 price, PropertyTypeEnum propertyType) public
+{
+    InstanceOwner = msg.sender;
+    AskingPrice = price;
+    Description = description;
+    PropertyType = propertyType;
+    State = StateType.Active;
+    ContractCreated();
+}
+
+```
 
 ## <a name="constructor"></a>Конструктор
 

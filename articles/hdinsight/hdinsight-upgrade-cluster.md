@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2017
 ms.author: bhanupr
-ms.openlocfilehash: d6cd0dd8b326f5340e5014bba4babc6dd945744d
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8845a049ebcda59bc0e6fd26618c33f51565e0ca
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31406836"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225495"
 ---
 # <a name="upgrade-hdinsight-cluster-to-a-newer-version"></a>Обновление кластера HDInsight до более новой версии
 Чтобы воспользоваться преимуществами новых возможностей HDInsight, мы рекомендуем обновить кластеры HDInsight до последней версии. Выполните следующие инструкции, чтобы обновить версию кластера HDInsight.
 
 > [!NOTE]
-> Поддержка кластеров HDInsight версий 3.2 и 3.3 скоро завершится. См. дополнительные сведения о [версиях компонентов HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
+> См. дополнительные сведения о [поддерживаемых версиях компонентов HDInsight](hdinsight-component-versioning.md#supported-hdinsight-versions).
 >
 >
 
