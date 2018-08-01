@@ -175,16 +175,20 @@
               href: search-indexer-field-mappings.md
     - name: Поиск данных
       items:
-        - name: Создание простых запросов
+        - name: Принципы работы с запросами
           href: search-query-overview.md
         - name: Обозреватель поиска (портал)
           href: search-explorer.md
-        - name: Простой синтаксис запросов
-          href: 'https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search'
-        - name: Синтаксис запросов Lucene
-          href: 'https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search'
-        - name: Примеры запросов Lucene
+        - name: Примеры простого синтаксиса
+          href: search-query-simple-examples.md
+        - name: Примеры полного синтаксиса
           href: search-query-lucene-examples.md
+        - name: Справочник по запросам
+          items:
+            - name: Простой синтаксис запросов
+              href: 'https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search'
+            - name: Синтаксис запросов Lucene
+              href: 'https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search'
         - name: Разбиение результатов по страницам
           href: search-pagination-page-layout.md
         - name: Настройка релевантности

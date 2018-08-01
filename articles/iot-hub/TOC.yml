@@ -214,6 +214,8 @@
           items:
             - name: Использование портала Azure
               href: iot-hub-create-through-portal.md
+            - name: Использование набора средств Интернета вещей Azure для VS Code
+              href: iot-hub-create-use-iot-toolkit.md
             - name: Использование Azure PowerShell
               href: iot-hub-create-using-powershell.md
             - name: Использование интерфейса командной строки Azure

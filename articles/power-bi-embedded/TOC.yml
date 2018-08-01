@@ -3,45 +3,45 @@
 - name: Обзор
   items:
     - name: Что такое Power BI Embedded
-      href: what-is-power-bi-embedded.md
+      href: 'https://docs.microsoft.com/power-bi/developer/azure-pbie-what-is-power-bi-embedded'
 - name: Учебники
   items:
     - name: Внедрение содержимого для клиентов (пример)
-      href: 'https://powerbi.microsoft.com/documentation/powerbi-developer-embed-sample-app-owns-data/'
+      href: 'https://docs.microsoft.com/power-bi/developer/embed-sample-for-customers'
 - name: Основные понятия
   items:
-    - name: "Начало работы с Power\_BI Embedded"
-      href: get-started.md
+    - name: Безопасность на уровне строк (RLS)
+      href: 'https://docs.microsoft.com/power-bi/developer/embedded-row-level-security'
+    - name: Часто задаваемые вопросы
+      href: 'https://docs.microsoft.com/power-bi/developer/embedded-faq'
+    - name: "Разрешения в Power\_BI"
+      href: 'https://docs.microsoft.com/power-bi/developer/power-bi-permissions'
 - name: Практическое руководство
   items:
-    - name: Управление емкостями
+    - name: Регистрация приложения
+      href: 'https://docs.microsoft.com/power-bi/developer/register-app'
+    - name: "Аутентификация в службе Power\_BI"
+      href: 'https://docs.microsoft.com/power-bi/developer/get-azuread-access-token'
+    - name: Внедрение вопросов и ответов
+      href: 'https://docs.microsoft.com/power-bi/developer/qanda'
+    - name: Устранение неполадок с внедренным приложением
+      href: 'https://docs.microsoft.com/power-bi/developer/embedded-troubleshoot'
+    - name: Управление емкостью в Azure
       items:
-        - name: Создание емкости
-          href: create-capacity.md
-        - name: Изменение масштаба емкости
-          href: scale-capacity.md
-        - name: Приостановка и запуск емкости
-          href: pause-start.md
-    - name: "Регистрация приложения Azure\_AD"
-      href: 'https://powerbi.microsoft.com/documentation/powerbi-developer-register-app/'
-    - name: "Внедрение содержимого Power\_BI"
-      href: 'https://powerbi.microsoft.com/documentation/powerbi-developer-embedding-content/'
-    - name: Миграция
+        - name: Создание емкости в Azure
+          href: 'https://docs.microsoft.com/power-bi/developer/azure-pbie-create-capacity'
+        - name: Масштабирование емкости в Azure
+          href: 'https://docs.microsoft.com/power-bi/developer/azure-pbie-scale-capacity'
+        - name: Приостановка и запуск емкости в Azure
+          href: 'https://docs.microsoft.com/power-bi/developer/azure-pbie-pause-start'
+    - name: Переход с коллекций рабочих областей
       items:
         - name: "Как перенести содержимое из коллекций рабочих областей Power\_BI"
-          href: migrate-from-power-bi-workspace-collections.md
+          href: 'https://docs.microsoft.com/power-bi/developer/migrate-from-powerbi-embedded'
         - name: Средство миграции
-          href: migrate-tool.md
+          href: 'https://docs.microsoft.com/power-bi/developer/migrate-tool'
         - name: Фрагменты кода миграции
-          href: migrate-code-snippets.md
-- name: Примеры
-  items:
-    - name: Примеры кода
-      href: 'https://github.com/Microsoft/PowerBI-Developer-Samples'
-    - name: Пример пошагового руководства
-      href: 'https://powerbi.microsoft.com/documentation/powerbi-developer-embed-sample-app-owns-data/'
-    - name: Пример внедрения JavaScript
-      href: 'https://microsoft.github.io/PowerBI-JavaScript/demo/'
+          href: 'https://docs.microsoft.com/power-bi/developer/migrate-code-snippetsd'
 - name: Справочные материалы
   items:
     - name: Интерфейсы API
@@ -52,17 +52,31 @@
           href: 'https://msdn.microsoft.com/library/mt147898.aspx'
 - name: Ресурсы
   items:
-    - name: Сообщество Power BI
-      href: 'http://community.powerbi.com/t5/Developer/bd-p/Developer'
+    - name: Центр разработчиков
+      href: 'https://powerbi.microsoft.com/developers/'
+    - name: Подключение средства пользователя для внедрения
+      href: 'https://aka.ms/embedsetup'
+    - name: Примеры кода
+      href: 'https://github.com/Microsoft/PowerBI-Developer-Samples'
     - name: Скачивание пакета SDK для .NET
       href: 'https://www.nuget.org/packages/Microsoft.PowerBI.Api/'
     - name: Скачивание пакета SDK для JavaScript
       href: 'https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/'
+    - name: ".NET для Power\_BI"
+      href: 'https://github.com/Microsoft/PowerBI-CSharp'
+    - name: "JavaScript для Power\_BI"
+      href: 'https://github.com/Microsoft/PowerBI-JavaScript'
+    - name: Пример площадки для JavaScript
+      href: 'https://go.microsoft.com/fwlink/?linkid=848279'
+    - name: "Вики-сайт о JavaScript для Power\_BI"
+      href: 'https://github.com/Microsoft/powerbi-javascript/wiki'
+    - name: Репозиторий Git для JavaScript
+      href: 'https://go.microsoft.com/fwlink/?linkid=848276'
+    - name: "Репозиторий Git для C# и Power\_BI"
+      href: 'https://go.microsoft.com/fwlink/?linkid=848273'
     - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Репозитории GitHub
-      items:
-        - name: ".NET для Power\_BI"
-          href: 'https://github.com/Microsoft/PowerBI-CSharp'
-        - name: "JavaScript для Power\_BI"
-          href: 'https://github.com/Microsoft/PowerBI-JavaScript'
+      href: 'https://azure.microsoft.com/pricing/calculator/#power-bi-embedded88e5eed8-6a98-4891-a739-15b602b4fb34'
+    - name: Сообщество Power BI
+      href: 'http://community.powerbi.com/t5/Developer/bd-p/Developer'
+    - name: Переполнение стека
+      href: 'https://go.microsoft.com/fwlink/?linkid=848281'

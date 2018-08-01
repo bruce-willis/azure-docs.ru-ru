@@ -14,12 +14,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 03/28/2018
 ms.author: daveba
-ms.openlocfilehash: d25d868d8f3542d74de8edf8d7d5d26037409911
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: e58ba598df06feddc7b48072dfefd409f31e2445
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39006936"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237875"
 ---
 #  <a name="what-is-managed-service-identity-for-azure-resources"></a>Что такое Управляемое удостоверение службы для ресурсов Azure?
 
@@ -59,7 +59,7 @@ ms.locfileid: "39006936"
 6. В Azure AD выполняется вызов для запроса маркера доступа (как показано в шаге 5) с использованием идентификатора клиента и сертификата, настроенных на шаге 3. Azure AD возвращает маркер доступа JSON Web Token (JWT).
 7. Код отправляет этот маркер доступа при вызове службы, которая поддерживает аутентификацию Azure AD.
 
-В этой же схеме ниже показано, как назначаемое пользователем удостоверение работает с виртуальными машинами Azure.
+В этой же схеме ниже показано, как назначаемое пользователем управляемое удостоверение работает со службой "Виртуальные машины Azure".
 
 1. Azure Resource Manager получает запрос на создание назначаемого пользователем удостоверения.
 2. Azure Resource Manager создает субъект-службу в Azure AD, представляющий назначаемое пользователем удостоверение. В клиенте Azure AD, который является доверенным для этой подписки, создается субъект-служба.

@@ -131,7 +131,6 @@
 #### [Задержки](active-directory-reporting-latencies-azure-portal.md)
 #### [Справочные материалы по действиям аудита](active-directory-reporting-activity-audit-reference.md)
 #### [Коды ошибок входа в систему](active-directory-reporting-activity-sign-ins-errors.md)
-#### [Многофакторная проверка подлинности](active-directory-reporting-activity-sign-ins-mfa.md)
 #### [Интерпретация схемы журнала аудита в Azure Monitor](reporting-azure-monitor-diagnostics-audit-log-schema.md)
 #### [Интерпретация схемы журнала аудита событий входа в систему в Azure Monitor](reporting-azure-monitor-diagnostics-sign-in-log-schema.md)
 
@@ -159,9 +158,16 @@
 ### [Планирование присоединения к Azure AD](active-directory-azureadjoin-deployment-aadjoindirect.md)
 ### [Часто задаваемые вопросы](device-management-faq.md)
 ### Задачи
+#### [Как планировать гибридную реализацию присоединения к Azure Active Directory](devices/hybrid-azuread-join-plan.md)
+#### [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](devices/hybrid-azuread-join-managed-domains.md)
+#### [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](devices/hybrid-azuread-join-federated-domains.md)
+#### [Как управлять гибридным присоединением устройства к Azure AD](devices/hybrid-azuread-join-control.md)
+
+
+
 #### [Настройка устройств Windows 10, зарегистрированных в Azure AD](user-help/device-management-azuread-registered-devices-windows10-setup.md)
 #### [Настройка устройств, присоединенных к Azure AD](user-help/device-management-azuread-joined-devices-setup.md)
-#### [Настройка гибридных устройств, присоединенных к Azure AD](device-management-hybrid-azuread-joined-devices-setup.md)
+#### [Настройка гибридных устройств, присоединенных к Azure AD](devices/hybrid-azuread-join-manual-steps.md)
 #### [Локальное развертывание](active-directory-device-registration-on-premises-setup.md)
 #### [Присоединение к Azure AD во время первого запуска Windows 10](device-management-azuread-joined-devices-frx.md)
 ### Устранение неполадок

@@ -49,6 +49,8 @@
               href: logic-apps-control-flow-run-steps-group-scopes.md
         - name: Создание переменных для хранения значений
           href: logic-apps-create-variables-store-values.md
+        - name: Выполнение операций с данными
+          href: logic-apps-perform-data-operations.md
         - name: Добавление пользовательского кода с помощью решения "Функции Azure"
           href: logic-apps-azure-functions.md
         - name: Вызов приложений логики с помощью решения "Функции Azure"
@@ -282,6 +284,8 @@
     - name: 'Примеры, сценарии и пошаговые руководства'
       href: logic-apps-examples-and-scenarios.md
       items:
+        - name: Примеры кода для операций с данными
+          href: logic-apps-data-operations-code-samples.md
         - name: Мониторинг социальных сетей
           href: logic-apps-scenario-social-serverless.md
         - name: Создание бессерверного приложения — Visual Studio

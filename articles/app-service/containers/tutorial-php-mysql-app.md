@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 11/28/2017
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 593f89071f03cb2e2b8ed9d7eda2cc7cb3971128
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: dd9c6f2969bfbcd1b2170c0685ab69b8b2ce70da
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38317996"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224319"
 ---
 # <a name="build-a-php-and-mysql-web-app-in-azure-app-service-on-linux"></a>Разработка веб-приложения на основе PHP и MySQL в службе приложений Azure на платформе Linux
 
@@ -29,7 +29,7 @@ ms.locfileid: "38317996"
 
 ![Приложение PHP, работающее в службе приложений Azure](./media/tutorial-php-mysql-app/complete-checkbox-published.png)
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных MySQL в Azure.
@@ -41,7 +41,7 @@ ms.locfileid: "38317996"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -152,7 +152,7 @@ php artisan serve
 
 ## <a name="create-mysql-in-azure"></a>Создание базы данных MySQL в Azure
 
-На этом шаге вы создадите базу данных MySQL в [базе данных Azure для MySQL (предварительная версия)](/azure/mysql). Позже вы настроите приложение PHP для подключения к этой базе данных.
+На этом шаге вы создадите базу данных MySQL в [Базе данных Azure для MySQL](/azure/mysql). Позже вы настроите приложение PHP для подключения к этой базе данных.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -160,7 +160,7 @@ php artisan serve
 
 ### <a name="create-a-mysql-server"></a>Создание сервера MySQL
 
-Создайте сервер в службе "База данных Azure для MySQL" (предварительная версия), выполнив команду [`az mysql server create`](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create).
+Создайте сервер в службе "База данных Azure для MySQL", выполнив команду [`az mysql server create`](/cli/azure/mysql/server?view=azure-cli-latest#az_mysql_server_create).
 
 В следующей команде замените _&lt;mysql_server_name>_ именем своего сервера MySQL везде, где встречается этот заполнитель. Допустимые символы: `a-z`, `0-9` и `-`. Это имя является частью имени узла сервера MySQL (`<mysql_server_name>.database.windows.net`). Оно должно быть глобально уникальным.
 
@@ -230,7 +230,7 @@ quit
 
 ## <a name="connect-app-to-azure-mysql"></a>Подключение приложения к базе данных Azure MySQL
 
-На этом шаге вы подключите приложение PHP к базе данных MySQL, созданной в базе данных Azure для MySQL (предварительная версия).
+На этом шаге вы подключите приложение PHP к базе данных MySQL, созданной в Базе данных Azure для MySQL.
 
 <a name="devconfig"></a>
 
@@ -254,7 +254,7 @@ MYSQL_SSL=true
 Сохраните изменения.
 
 > [!TIP]
-> Чтобы защитить сведения о подключении к MySQL, этот файл извлекается из репозитория Git (см. файл _.gitignore_ в корне репозитория). Позже вы узнаете, как настроить переменные среды в службе приложений для подключения к базе данных в базе данных Azure для MySQL (предварительная версия). Благодаря этим переменным вам не нужен файл *.env* в службе приложений.
+> Чтобы защитить сведения о подключении к MySQL, этот файл извлекается из репозитория Git (см. файл _.gitignore_ в корне репозитория). Позже вы узнаете, как настроить переменные среды в службе приложений для подключения к базе данных в Базе данных Azure для MySQL. Благодаря этим переменным вам не нужен файл *.env* в службе приложений.
 >
 
 ### <a name="configure-ssl-certificate"></a>Настройка SSL-сертификата
@@ -277,7 +277,7 @@ MYSQL_SSL=true
 
 ### <a name="test-the-application-locally"></a>Локальное тестирование приложения
 
-Выполните перенос базы данных Laravel с помощью файла _.env.production_, указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в базе данных Azure для MySQL (предварительная версия). Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
+Выполните перенос базы данных Laravel с помощью файла _.env.production_, указав его как файл среды, чтобы создать таблицы в базе данных MySQL, размещенной в Базе данных Azure для MySQL. Помните, что файл _.env.production_ содержит сведения о подключении к базе данных MySQL в Azure.
 
 ```bash
 php artisan migrate --env=production --force
@@ -299,7 +299,7 @@ php artisan serve --env=production
 
 Добавьте несколько задач на странице.
 
-![Приложение PHP успешно подключается к базе данных Azure для MySQL (предварительная версия)](./media/tutorial-php-mysql-app/mysql-connect-success.png)
+![Подключение приложения PHP к Базе данных Azure для MySQL](./media/tutorial-php-mysql-app/mysql-connect-success.png)
 
 Чтобы остановить приложение PHP, введите `Ctrl + C` в окне терминала.
 

@@ -9,12 +9,12 @@ ms.topic: get-started-article
 ms.date: 04/19/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 4dbb8b7abf6da77115d0e1d12621ec20ec60d174
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: dcb142b8b648f3f02855cb211789a4dee62183c0
+ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39035206"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39145586"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -81,7 +81,7 @@ az aks create --resource-group myResourceGroup --name myAKSCluster --service-pri
 
 * Субъект-служба для Kubernetes входит в конфигурацию кластера. Тем не менее не используйте идентификатор для развертывания кластера.
 * Все субъекты-службы связаны с определенными приложениями Azure AD. Субъект-служба для кластера Kubernetes может быть связан с любым допустимым именем приложения Azure AD, например `https://www.contoso.org/example`. URL-адрес приложения не обязательно должен быть реальной конечной точкой.
-* Указывая **идентификатор клиента** субъекта-службы, используйте значение `appId` (как показано в этой статье) или соответствующее имя (`name`) субъекта-службы, например `https://www.contoso.org/example`.
+* При указании **идентификатора клиента** субъекта-службы используйте значение `appId`.
 * На главной виртуальной машине и виртуальной машине узла в кластере Kubernetes учетные данные субъекта-службы хранятся в файле `/etc/kubernetes/azure.json`.
 * Если вы используете команду `az aks create`, чтобы автоматически создать субъект-службу, учетные данные субъекта-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, с которого выполняется команда.
 * При удалении кластера AKS, который был создан с помощью команды `az aks create`, созданный автоматически субъект-служба не удаляется. Чтобы удалить субъект-службу, сначала нужно получить идентификатор для службы участника с помощью команды [az ad app list][az-ad-app-list]. Следующий пример выполняет запрос к кластеру с именем *myAKSCluster*, а затем удаляет идентификатор приложения с помощью команды [az ad app delete][az-ad-app-delete]. Замените эти имена своими значениями:

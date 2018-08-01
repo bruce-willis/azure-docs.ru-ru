@@ -46,10 +46,14 @@
       href: stream-analytics-compatibility-level.md
     - name: Стандартные шаблоны запросов
       href: stream-analytics-stream-analytics-query-patterns.md
+    - name: Работа со сложными типами данных в JSON и AVRO
+      href: 'https://msdn.microsoft.com/azure/stream-analytics/reference/complex-data-types-stream-analytics'
     - name: Рекомендации по упорядочиванию событий
       href: stream-analytics-out-of-order-and-late-events.md
     - name: Контрольные точки и воспроизведение
       href: stream-analytics-concepts-checkpoint-replay.md
+    - name: Политика обработки ошибок
+      href: output-error-policy.md
 - name: Инструкции
   items:
     - name: управление

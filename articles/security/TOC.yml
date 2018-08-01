@@ -39,8 +39,16 @@
         - name: Шифрование неактивных данных
           href: azure-security-encryption-atrest.md
         - name: Шифрование дисков для виртуальных машин IaaS
-          href: azure-security-disk-encryption.md
+          href: azure-security-disk-encryption-overview.md
           items:
+            - name: Предварительные требования для шифрования дисков
+              href: azure-security-disk-encryption-prerequisites.md
+            - name: Шифрование дисков для виртуальных машин Windows
+              href: azure-security-disk-encryption-windows.md
+            - name: Шифрование дисков для виртуальных машин Linux
+              href: azure-security-disk-encryption-linux.md
+            - name: Приложение для шифрования дисков
+              href: azure-security-disk-encryption-appendix.md
             - name: Часто задаваемые вопросы о шифровании дисков
               href: azure-security-disk-encryption-faq.md
             - name: Устранение неполадок
@@ -198,6 +206,16 @@
       items:
         - name: Искусственный интеллект и данные о работоспособности
           href: ./blueprints/azure-health.md
+    - name: NIST SP 800-171
+      items:
+        - name: Аналитика данных
+          href: ./blueprints/nist171-analytics-overview.md
+        - name: Хранилище данных
+          href: ./blueprints/nist171-datawarehouse-overview.md
+        - name: Веб-приложение IaaS
+          href: ./blueprints/nist171-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/nist171-paaswa-overview.md
     - name: PCI DSS
       items:
         - name: Аналитика данных
