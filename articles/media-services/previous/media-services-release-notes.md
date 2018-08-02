@@ -12,14 +12,14 @@ ms.workload: media
 ms.tgt_pltfrm: media
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 10/18/2017
+ms.date: 07/24/2018
 ms.author: juliako
-ms.openlocfilehash: 5ef1ca201bc564949ee65f81970d0b040679d6b8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 220ff194ab5f8fa49ba7603ecd91122459d4dc1e
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38671431"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39249229"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -45,6 +45,10 @@ ms.locfileid: "38671431"
 
 ## <a name="a-idrestversionhistoryrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
+
+## <a name="july-2018"></a>Июль 2018 г.
+
+В последнем выпуске службы добавлены незначительные изменения форматирования в сообщениях об ошибках, возвращаемых службой при неудачном выполнении задания, которые связаны с разбиением на две или более строк.
 
 ## <a name="may-2018"></a>Май 2018 г. 
 

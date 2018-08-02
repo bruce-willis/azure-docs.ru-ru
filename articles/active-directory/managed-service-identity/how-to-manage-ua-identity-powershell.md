@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: daveba
-ms.openlocfilehash: ca0493d43abb5d1e79ffb28e45b427eef0432b9e
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: def5788b83116ce0843f1fdd86933830cabc9ee2
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904111"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39188006"
 ---
 # <a name="create-list-or-delete-a-user-assigned-identity-using-azure-powershell"></a>Создание, получение списка и удаление пользовательских удостоверений с помощью Azure PowerShell
 
@@ -29,12 +29,15 @@ ms.locfileid: "37904111"
 
 В этой статье вы узнаете, как создавать и удалять пользовательские удостоверения, а также получить их список с помощью Azure PowerShell.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Установите [последнюю версию Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM), если это еще не сделано.
 - Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+- Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие роли.
+    - [Участник управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) для создания, чтения (вывода списка) и удаления назначаемого пользователем удостоверения.
+    - [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator) для чтения (вывода списка) свойств назначаемого пользователем удостоверения.
 
 ## <a name="create-a-user-assigned-identity"></a>Создание пользовательского удостоверения
 
@@ -47,7 +50,7 @@ New-AzureRmUserAssignedIdentity -ResourceGroupName <RESOURCEGROUP> -Name <USER A
 ```
 ## <a name="list-user-assigned-identities"></a>Получение списка пользовательских удостоверений
 
-Чтобы получить список пользовательских удостоверений, выполните команду [Get-AzureRmUserAssigned](/powershell/module/azurerm.managedserviceidentity/get-azurermuserassignedidentity).  Параметр `-ResourceGroupName` указывает группу ресурсов, в которой было создано пользовательское удостоверение.  Замените `<RESOURCE GROUP>` собственным значением.
+Чтобы получить список пользовательских удостоверений, выполните команду [Get-AzureRmUserAssigned](/powershell/module/azurerm.managedserviceidentity/get-azurermuserassignedidentity).  Параметр `-ResourceGroupName` указывает группу ресурсов, в которой было создано пользовательское удостоверение. Замените `<RESOURCE GROUP>` собственным значением.
 
 ```azurepowershell-interactive
 Get-AzureRmUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP>
@@ -58,7 +61,7 @@ Get-AzureRmUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP>
 
 ## <a name="delete-a-user-assigned-identity"></a>Удаление пользовательского удостоверения
 
-Чтобы удалить пользовательское удостоверение, выполните команду [Remove-AzureRmUserAssignedIdentity](/powershell/module/azurerm.managedserviceidentity/remove-azurermuserassignedidentity).  Параметр `-ResourceGroupName` указывает группу ресурсов, в которой было создано пользовательское удостоверение, а параметр `-Name` — его имя.  Замените значения параметров `<RESOURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными значениями.
+Чтобы удалить пользовательское удостоверение, выполните команду [Remove-AzureRmUserAssignedIdentity](/powershell/module/azurerm.managedserviceidentity/remove-azurermuserassignedidentity).  Параметр `-ResourceGroupName` указывает группу ресурсов, в которой было создано пользовательское удостоверение, а параметр `-Name` — его имя. Замените значения параметров `<RESOURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными значениями.
 
  ```azurecli-interactive
 Remove-AzurRmUserAssignedIdentity -ResourceGroupName <RESOURCE GROUP> -Name <USER ASSIGNED IDENTITY NAME>

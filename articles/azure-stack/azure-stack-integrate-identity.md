@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 07/16/2018
+ms.date: 08/01/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: 706afa7cb79b7b5c2afcd729f36ff150b87dd6df
-ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
+ms.openlocfilehash: c22831ae781239f2474720ee9cd1b58f6e14fe41
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242943"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412871"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -26,7 +26,7 @@ Azure Stack можно развернуть с помощью Azure Active Direc
 |---------|---------|---------|
 |Выставление счетов|Должна быть оплата на основе емкости.<br> Только при наличии соглашения Enterprise (EA).|Оплата на основе емкости или оплата по мере использования.<br>EA или поставщик облачных решений (CSP).|
 |Удостоверение|Должны быть службы AD FS.|Azure AD или AD FS.|
-|Синдикация Marketplace|Поддерживаются<br>Лицензирование BYOL.|Поддерживаются<br>Лицензирование BYOL.|
+|Marketplace |Поддерживаются<br>Лицензирование BYOL.|Поддерживаются<br>Лицензирование BYOL.|
 |Регистрация|Рекомендуется, требуется съемный носитель<br> и отдельное подключенное устройство.|Автоматическая регистрация.|
 |Исправления и обновления|Установка обязательна, требуется съемный носитель<br> и отдельное подключенное устройство.|Пакет обновления можно скачать напрямую<br> из Интернета в Azure Stack.|
 

@@ -17,12 +17,12 @@ ms.workload: identity
 ms.date: 06/13/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: 59ae7e83bc2b76cb679b0baf1f5739f28ec7046c
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: d868a59dd5d00dea410cbe8c373263e13903d3ba
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39248286"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413150"
 ---
 # <a name="what-are-conditions-in-azure-active-directory-conditional-access"></a>Что собой представляют условия условного доступа Azure Active Directory 
 
@@ -152,7 +152,7 @@ ms.locfileid: "39248286"
 
 - Блокирование доступа из веб-приложений, но разрешение доступа из мобильных и классических приложений.
 
-Это условие можно применить для единого входа через Интернет и современных протоколов аутентификации. Его можно также применить к почтовым приложениям, использующим Microsoft Exchange ActiveSync. Примерами могут служить собственные почтовые приложения на большинстве смартфонов. В настоящее время клиентские приложения, использующие устаревшие протоколы, нужно защищать с помощью служб федерации Azure AD.
+Это условие можно применить для единого входа через Интернет и современных протоколов аутентификации. Его можно также применить к почтовым приложениям, использующим Microsoft Exchange ActiveSync. Примерами могут служить собственные почтовые приложения на большинстве смартфонов. 
 
 Условие клиентских приложений можно выбрать, если в качестве облачного приложения указано только Microsoft Office 365 Exchange Online.
 

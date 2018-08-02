@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/15/2018
+ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 0b1940894ffb01595d11bc49889c6ec01714816b
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 6507158a63de508164fc74bcafe39785046a2c79
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37918260"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213356"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Подробное техническое руководство по простому единому входу Azure Active Directory
 
@@ -36,8 +36,8 @@ ms.locfileid: "37918260"
 ### <a name="how-does-set-up-work"></a>Как выполняется настройка?
 
 Простой единый вход включается с помощью Azure AD Connect, как показано [здесь](active-directory-aadconnect-sso-quick-start.md). При включении функции выполняются следующие действия:
-- В локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD).
-- С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера.
+- В каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD).
+- С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера. При наличии нескольких лесов AD каждый из них будет иметь свой собственный ключ расшифровки Kerberos.
 - Кроме того, создаются два имени субъектов-служб (SPN) Kerberos, представляющие URL-адреса, используемые при входе в Azure AD.
 
 >[!NOTE]
@@ -52,7 +52,7 @@ ms.locfileid: "37918260"
 
 Процесс входа в веб-браузере выглядит следующим образом.
 
-1. Пользователь пытается получить доступ к веб-приложению (например, веб-приложению Outlook —https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
+1. Пользователь пытается получить доступ к веб-приложению (например, веб-приложению Outlook — https://outlook.office365.com/owa/) с корпоративного устройства, присоединенного к домену, в корпоративной сети.
 2. Если пользователь еще не выполнил вход, он перенаправляется на страницу входа в Azure AD.
 3. Пользователь вводит свое имя на странице входа в Azure AD.
 
