@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/02/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 496c32e70ad58f64b31c1f6fcf913884fcd4abc1
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 5a6c5498b4607719199363b5f6d93d3b42ccec0d
+ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37348241"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37967770"
 ---
 Организациям требуются крупномасштабные вычисления. Рабочие нагрузки крупномасштабных вычислений включают техническое проектирование и анализ, вычисление финансовых рисков, отрисовку образов, комплексное моделирование, моделирование методом Монте-Карло и другие задачи. 
 
@@ -58,7 +58,7 @@ ms.locfileid: "37348241"
 * [Виртуальные машины для анализа и обработки данных для Windows и Linux](../articles/machine-learning/machine-learning-data-science-virtual-machine-overview.md)
 * [d3View](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/xfinityinc.d3view-v5?tab=Overview);
 * [UberCloud](https://azure.microsoft.com/search/marketplace/?q=ubercloud)
-* [Intel Cloud Edition for Lustre](https://azuremarketplace.microsoft.com/marketplace/apps/intel.lustre-cloud-edition-eval?tab=Overview).
+* [Intel Cloud Edition for Lustre](https://azuremarketplace.microsoft.com/marketplace/apps/intel.intel-cloud-edition-gs).
 
 
  
@@ -101,7 +101,7 @@ Azure предлагает различные размеры для виртуа
 
 Виртуальные машины серии N оснащены графическими процессорами NVIDIA и предназначены для приложений с ресурсоемкими вычислениями или графикой, в том числе для обучения искусственного интеллекта (AI) и визуализации. 
 
-Подробнее.
+Дополнительные сведения
 
 * Размеры виртуальных машин [Linux](../articles/virtual-machines/linux/sizes-hpc.md) и [Windows](../articles/virtual-machines/windows/sizes-hpc.md) для высокопроизводительных вычислений 
 * Размеры виртуальных машин [Linux](../articles/virtual-machines/linux/sizes-gpu.md) и [Windows](../articles/virtual-machines/windows/sizes-gpu.md) с графическими процессорами. 
@@ -144,7 +144,7 @@ Azure предлагает различные размеры для виртуа
 
 Масштабные рабочие нагрузки пакетной службы и HPC требуют ресурсов для хранения данных и доступа, которые превышают возможности традиционных файловых систем в облаке. Используйте параллельные решения файловых систем в Azure, например [Lustre](http://lustre.org/) и [BeeGFS](http://www.beegfs.com/content/).
 
-Подробнее.
+Дополнительные сведения
 
 * [Параллельные виртуальные файловые системы в Azure](https://azure.microsoft.com/resources/parallel-virtual-file-systems-on-microsoft-azure/)
 * Высокопроизводительные облачные решения для хранения данных от [Avere](http://www.averesystems.com/about-us/about-avere) (компания уже [объединена с корпорацией Майкрософт](https://blogs.microsoft.com/blog/2018/01/03/microsoft-to-acquire-avere-systems-accelerating-high-performance-computing-innovation-for-media-and-entertainment-industry-and-beyond/))
@@ -154,7 +154,7 @@ Azure предлагает различные размеры для виртуа
 
 Виртуальные машины Azure, масштабируемые наборы виртуальных машин и связанные вычислительные службы являются основой для большинства решений Azure HPC. Но вы можете использовать для своего решения другие связанные службы Azure. Ниже приведен неполный список этих служб.
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Хранилище
 
 * [Хранилище BLOB-объектов, таблиц и очередей](../articles/storage/storage-introduction.md)
 * [Хранилище файлов](../articles/storage/storage-files-introduction.md)
