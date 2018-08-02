@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 02/15/2018
+ms.date: 07/24/2018
 ms.author: juluk
-ms.openlocfilehash: 4ee02bc2a1956994da0ba49a24eefabf9608565c
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 9588bebdc827760f0e0d3e2aadccbff5f24723f1
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37856466"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39258931"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 Azure Cloud Shell — это интерактивная доступная браузеру оболочка для управления ресурсами Azure.
@@ -49,7 +49,12 @@ Cloud Shell предоставляет доступ к браузерному и
 ### <a name="authenticated-and-configured-azure-workstation"></a>Настроенная и аутентифицированная рабочая станция Azure
 Службой Cloud Shell управляет Майкрософт, поэтому в ней присутствуют популярные программы командной строки и реализована поддержка различных языков. Кроме того, Cloud Shell автоматически и безопасно проходит аутентификацию, тем самым обеспечивая мгновенный доступ к ресурсам с помощью Azure CLI 2.0 или командлетов Azure PowerShell.
 
-Просмотрите полный [список инструментов](features.md#tools).
+Просмотрите полный список [средств, установленных в Cloud Shell.](features.md#tools)
+
+### <a name="integrated-cloud-shell-editor"></a>Интегрированный редактор Cloud Shell
+Cloud Shell предоставляет интегрированный графический текстовый редактор на основе редактора Monaco с открытым кодом. Просто создайте и измените файлы конфигурации, выполнив `code .` для простого развертывания с помощью Azure CLI 2.0 или Azure PowerShell.
+
+[Подробнее о редакторе Cloud Shell.](using-cloud-shell-editor.md)
 
 ### <a name="multiple-access-points"></a>Доступность в нескольких расположениях
 Cloud Shell представляет собой гибкий инструмент, который можно использовать с помощью таких элементов:

@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/11/2018
+ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: 6cdfb40ce02cc5f80e3347b921e2b2c75ae3d8ea
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 5b8c7e8880f7e467b1b5a305cc7381e6499571f5
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37437143"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238627"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Вопросы и ответы (FAQ)
 
@@ -41,6 +41,7 @@ ms.locfileid: "37437143"
 
 - [Какие будущие возможности облачной службы на портале Azure помогут наблюдать за приложениями и управлять ими?](#what-are-the-upcoming-cloud-service-capabilities-in-the-azure-portal-which-can-help-manage-and-monitor-applications)
 - [Почему IIS останавливает запись в каталог журналов?](#why-does-iis-stop-writing-to-the-log-directory)
+- [Как включить ведение журнала WAD для облачных служб?](#how-do-i-enable-wad-logging-for-cloud-services)
 
 **Конфигурация сети**
 
@@ -138,6 +139,15 @@ Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $pass
 Дополнительные сведения см. в следующих документах:
 * [Хранение и просмотр диагностических данных в службе хранилища Azure](cloud-services-dotnet-diagnostics-storage.md)
 * [IIS Logs stop writing in Cloud Service](https://blogs.msdn.microsoft.com/cie/2013/12/21/iis-logs-stops-writing-in-cloud-service/) (Журналы IIS прекращают запись в облачной службе)
+
+### <a name="how-do-i-enable-wad-logging-for-cloud-services"></a>Как включить ведение журнала WAD для облачных служб?
+Вы можете включить ведение журнала Windows Azure Diagnostics (WAD) такими способами:
+1. [С помощью Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#turn-on-diagnostics-in-cloud-service-projects-before-you-deploy-them).
+2. [С помощью кода .NET](https://docs.microsoft.com/azure/cloud-services/cloud-services-dotnet-diagnostics).
+3. [С помощью PowerShell](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell).
+
+Чтобы получить текущие параметры WAD облачной службы, можно использовать команду PS [Get-AzureServiceDiagnosticsExtensions](https://docs.microsoft.com/azure/cloud-services/cloud-services-diagnostics-powershell#get-current-diagnostics-extension-configuration) или просмотреть их на портале в колонке "Облачные службы --> Расширения".
+
 
 ## <a name="network-configuration"></a>Конфигурация сети
 

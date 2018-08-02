@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 05/15/2018
+ms.date: 07/16/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: ee1c48c4a33d699dcb3da24b2e9a3d6e001b16c5
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 706afa7cb79b7b5c2afcd729f36ff150b87dd6df
+ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801479"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242943"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -162,7 +162,7 @@ Graph поддерживает только интеграцию с отдель
 |Параметр|ОПИСАНИЕ|Пример|
 |---------|---------|---------|
 |CustomAdfsName|Имя поставщика утверждений. Так оно отображается на целевой странице AD FS.|Contoso|
-|CustomADFSFederationMetadataFile|Файл метаданных федерации:|https://ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml|
+|CustomADFSFederationMetadataFileContent|Содержимое метаданных|$using:federationMetadataFileContent|
 
 ### <a name="create-federation-metadata-file"></a>Создание файла метаданных федерации
 
@@ -176,27 +176,22 @@ Graph поддерживает только интеграцию с отдель
    $Metadata.outerxml|out-file c:\metadata.xml
    ```
 
-2. Скопируйте файл метаданных в файловый ресурс, доступный из привилегированной конечной точки.
-
+2. Копируйте файл метаданных на компьютер, который может взаимодействовать с привилегированной конечной точкой.
 
 ### <a name="trigger-automation-to-configure-claims-provider-trust-in-azure-stack"></a>Активация службы автоматизации для настройки отношений доверия с поставщиком утверждений в Azure Stack
 
-Для выполнения этой процедуры используйте компьютер, который может взаимодействовать с привилегированной конечной точкой в Azure Stack.
+Чтобы выполнить эту процедуру, используйте компьютер, который может взаимодействовать с привилегированной конечной точкой в Azure Stack и имеет доступ к файлу метаданных, созданному на предыдущем шаге.
 
-1. Откройте сеанс Windows PowerShell с повышенными правами и подключитесь к привилегированной конечной точке.
+1. Откройте сеанс Windows PowerShell с повышенными привилегиями.
 
    ```PowerShell  
+   $federationMetadataFileContent = get-content c:\metadata.cml
    $creds=Get-Credential
    Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
+   Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataFileContent $using:federationMetadataFileContent
    ```
 
-2. Подключившись к привилегированной конечной точке, выполните следующую команду, указав параметры, подходящие для используемой среды.
-
-   ```PowerShell  
-   Register-CustomAdfs -CustomAdfsName Contoso – CustomADFSFederationMetadataFile \\share\metadataexample.xml
-   ```
-
-3. Выполните следующую команду, чтобы обновить владельца подписки поставщика по умолчанию, указав параметры, подходящие для используемой среды.
+2. Выполните следующую команду, чтобы обновить владельца подписки поставщика по умолчанию, указав параметры, подходящие для используемой среды.
 
    ```PowerShell  
    Set-ServiceAdminOwner -ServiceAdminOwnerUpn "administrator@contoso.com"

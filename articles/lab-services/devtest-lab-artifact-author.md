@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2018
 ms.author: spelluru
-ms.openlocfilehash: 0414fa16f277c7495cc7fe4bdd7a51fc3a23ad93
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: ad9e9e893dc831530b69a30cc3dd930e879e9d7b
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38988628"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185124"
 ---
 # <a name="create-custom-artifacts-for-your-devtest-labs-virtual-machine"></a>Создание пользовательских артефактов для виртуальной машины DevTest Labs
 
@@ -113,7 +113,7 @@ ms.locfileid: "38988628"
 1. Установите редактор JSON — он требуется для работы с файлами определения артефактов. Мы советуем использовать [Visual Studio Code](https://code.visualstudio.com/), доступный для Windows, Linux и OS X.
 2. Получите пример файла определения artifactfile.json. Изучите артефакты, созданные командой DevTest Labs, в [репозитории GitHub](https://github.com/Azure/azure-devtestlab). Он содержит богатую библиотеку артефактов, которая поможет вам создавать собственные артефакты. Загрузите файл определения артефакта и внесите в него изменения, чтобы создать свои собственные артефакты.
 3. Используйте IntelliSense — он позволяет просматривать элементы, которые можно использовать для создания файла определения артефакта. Здесь же можно увидеть различные варианты значений каждого элемента. Например, при редактировании элемента **targetOsType** IntelliSense предлагает два варианта — для Windows и для Linux.
-4. Сохраните артефакт в [общедоступном репозитории Git для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или [своем репозитория Git](devtest-lab-add-artifact-repo.md).
+4. Сохраните артефакт в [общедоступном репозитории Git для DevTest Labs](https://github.com/Azure/azure-devtestlab/tree/master/Artifacts) или [своем репозитория Git](devtest-lab-add-artifact-repo.md). В общедоступном репозитории вы можете просматривать артефакты, к которым пользователи предоставили общий доступ и которые можно использовать напрямую или настроить в соответствии со своими потребностями. 
    
    1. Создайте для каждого артефакта отдельный каталог. Имя каталога должно совпадать с именем артефакта.
    2. Сохраните файл определения артефакта (artifactfile.json) в созданный каталог.

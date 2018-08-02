@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/14/2017
+ms.date: 07/23/2018
 ms.author: mbullwin
-ms.openlocfilehash: ddc9941792b0c5d8fbf29bfdc698b16a999a3858
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 1a46564c324edb1999a2e1b1d482817685df2893
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971046"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205992"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -175,8 +175,11 @@ ms.locfileid: "38971046"
 
 Ее можно отключить, но это не рекомендуется. Выборка разработана таким образом, чтобы связанные данные телеметрии правильно передавались для диагностических целей. 
 
+## <a name="client-ip-address-is-0000"></a>IP-адрес клиента — 0.0.0.0 
+В феврале 2018 года мы [объявили](https://blogs.msdn.microsoft.com/applicationinsights-status/2018/02/01/all-octets-of-ip-address-will-be-set-to-zero/) об удалении протоколирования IP-адреса клиента. Это не влияет на географическое расположение.
+
 ## <a name="wrong-geographical-data-in-user-telemetry"></a>Неправильные географические данные в телеметрии пользователя
-Город, область и страна определяются по IP-адресу и не всегда являются точными.
+Город, область и страна определяются по IP-адресу и не всегда являются точными. Эти IP-адреса сначала обрабатываются для расположения, а затем изменяются на IP-адрес 0.0.0.0 для хранения.
 
 ## <a name="exception-method-not-found-on-running-in-azure-cloud-services"></a>Исключение "метод не найден" при выполнении в облачных службах Azure
 Выполняется сборка для .NET 4.6? Версия 4.6 не поддерживается автоматически в ролях облачных служб Azure. [установите версию 4.6 в каждой роли](../cloud-services/cloud-services-dotnet-install-dotnet.md) .

@@ -11,24 +11,47 @@ ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 4dee39b56cf0f6494f6e79c70b85bbf711d33d65
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: b2ef450a429b26843cf770a6243c6f4de932de43
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39044600"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247334"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
 Это руководство содержит сведения о распространенных проблемах, которые могут возникнуть при использовании Azure Dev Spaces.
 
+## <a name="error-failed-to-create-azure-dev-spaces-controller"></a>Ошибка создания контроллера Azure Dev Spaces
+
+Вы можете увидеть эту ошибку, если что-то пойдет не так с созданием контроллера. Если это временная ошибка, ее можно устранить, удалив контроллер, а затем повторно создав его.
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+
+Чтобы удалить контроллер, используйте интерфейс командной строки Azure Dev Spaces. Это невозможно сделать в Visual Studio или Cloud Shell. Чтобы установить CLI AZDS, сначала установите Azure CLI, а затем выполните эту команду:
+
+```cmd
+az aks use-dev-spaces -g <resource group name> -n <cluster name>
+```
+
+Чтобы удалить контроллер, выполните эту команду:
+
+```cmd
+azds remove -g <resource group name> -n <cluster name>
+```
+
+Чтобы повторно создать контроллер, можно использовать CLI или Visual Studio. Следуйте инструкциям в руководствах, если вы ранее не выполняли эти задачи.
+
+
 ## <a name="error-service-cannot-be-started"></a>Ошибка Service cannot be started (Запуск службы невозможен).
 
 Эта ошибка может возникать, когда не удается запустить код службы. Чаще всего причина в пользовательском коде. Чтобы получить дополнительные диагностические сведения, внесите следующие изменения в команды и параметры:
 
+### <a name="try"></a>Попробуйте выполнить следующее.
+
 В командной строке:
 
-1. При использовании _azds.exe_ используйте параметр командной строки --verbose и параметр командной строки --output, чтобы указать формат выходных данных.
+При использовании _azds.exe_ используйте параметр командной строки --verbose и параметр командной строки --output, чтобы указать формат выходных данных.
  
     ```cmd
     azds up --verbose --output json

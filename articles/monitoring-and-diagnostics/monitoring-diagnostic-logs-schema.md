@@ -5,19 +5,19 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: reference
-ms.date: 7/06/2018
+ms.date: 7/18/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: f4bf77f07bd8f6b8172798ec3faf8c0bdaf3d3f5
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: c1189e1b120f0bd1b3169618bebdb929d1cee18e
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37921235"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248797"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
-[Журналы диагностики ресурсов Azure](monitoring-overview-of-diagnostic-logs.md) — это журналы, созданные ресурсом Azure, описывающие работу данного ресурса. Все журналы диагностики, доступные в Azure Monitor, предоставляют гибкую общую схему верхнего уровня, позволяющую каждой службе задавать уникальные свойства для своих событий.
+[Журналы диагностики Azure Monitor](monitoring-overview-of-diagnostic-logs.md) — это созданные службами Azure журналы, описывающие работу этих ресурсов и служб. Все журналы диагностики, доступные в Azure Monitor, предоставляют гибкую общую схему верхнего уровня, позволяющую каждой службе задавать уникальные свойства для своих событий.
 
 Сочетание типа ресурса (доступного в свойстве `resourceId`) и свойства `category` является уникальным идентификатором схемы. В этой статье описывается схема верхнего уровня для журналов диагностики и приводятся ссылки на схемы для каждой службы.
 
@@ -26,7 +26,8 @@ ms.locfileid: "37921235"
 | ИМЯ | Обязательный/необязательный | ОПИСАНИЕ |
 |---|---|---|
 | Twitter в режиме реального | Обязательно | Метка времени события (UTC). |
-| ResourceId | Обязательно | Идентификатор ресурса, создавшего событие. |
+| ResourceId | Обязательно | Идентификатор ресурса, создавшего событие. Для служб клиента он имеет формат "/tenants/ИД_клиента/providers/имя_поставщика". |
+| tenantId | Требуется для журналов клиента | Идентификатор клиента Active Directory клиента, к которому привязано это событие. Это свойство используется только для журналов уровня клиентов и не отображается в журналах уровня ресурсов. |
 | operationName | Обязательно | Имя операции, которую представляет это событие. Если событие представляет операцию RBAC, то это имя операции RBAC (например, Microsoft.Storage/storageAccounts/blobServices/blobs/Read). Обычно моделируются в виде операции Resource Manager, даже если они фактически не являются задокументированными операциями Resource Manager (`Microsoft.<providerName>/<resourceType>/<subtype>/<Write/Read/Delete/Action>`) |
 | operationVersion | Необязательно | Версия API, связанного с операцией, если операция operationName выполнялась с помощью API (например, http://myservice.windowsazure.net/object?api-version=2016-06-01). Если для этой операции не существует соответствующего API, то версия представляет версию этой операции, чтобы в дальнейшем изменить свойства, связанные с операцией. |
 | category | Обязательно | Категория журнала для события. Категория — степень детализации, при которой можно включать или отключать журналирование для определенного ресурса. Свойства, которые отображаются в свойствах BLOB-объекта события, одинаковы в пределах определенной категории журнала и типа ресурса. Типичными категориями журнала являются "Аудит", "Операционный", "Выполнение" и "Запрос". |
@@ -46,6 +47,7 @@ ms.locfileid: "37921235"
 
 | Service | Схемы и документы |
 | --- | --- |
+| Azure Active Directory | [Общие сведения](../active-directory/reporting-azure-monitor-diagnostics-overview.md), [схема журнала аудита](../active-directory/reporting-azure-monitor-diagnostics-audit-log-schema.md) и [схема входов](../active-directory/reporting-azure-monitor-diagnostics-sign-in-log-schema.md) |
 | Analysis Services | https://azure.microsoft.com/blog/azure-analysis-services-integration-with-azure-diagnostic-logs/ |
 | Управление API | [Журналы диагностики управления API](../api-management/api-management-howto-use-azure-monitor.md#diagnostic-logs) |
 | Шлюзы приложений |[Ведение журнала диагностики для шлюза приложений](../application-gateway/application-gateway-diagnostics.md) |
@@ -57,7 +59,7 @@ ms.locfileid: "37921235"
 | Data Lake Analytics |[Доступ к журналам диагностики для Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-diagnostic-logs.md) |
 | Data Lake Store |[Доступ к журналам диагностики Azure Data Lake Store](../data-lake-store/data-lake-store-diagnostic-logs.md) |
 | База данных для PostgreSQL |  Схема недоступна. |
-| Концентраторы событий |[Журналы диагностики концентраторов событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
+| концентраторы событий; |[Журналы диагностики концентраторов событий Azure](../event-hubs/event-hubs-diagnostic-logs.md) |
 | ExpressRoute | Схема недоступна. |
 | Центр Интернета вещей | [Использование Azure Monitor](../iot-hub/iot-hub-monitor-resource-health.md#use-azure-monitor) |
 | Key Vault |[Ведение журнала хранилища ключей Azure](../key-vault/key-vault-logging.md) |

@@ -2,29 +2,28 @@
 title: Настройка исходной среды (репликация физических серверов в Azure) | Документация Майкрософт
 description: В этой статье приведены сведения о настройке локальной среды для запуска репликации физических серверов под управлением Windows или Linux в Azure.
 services: site-recovery
-documentationcenter: ''
-author: AnoopVasudavan
-manager: gauravd
+author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
-ms.author: anoopkv
-ms.openlocfilehash: 00b09db97e597521de5c73eeefab77b0dfa1304d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.date: 07/21/2018
+ms.author: raynew
+ms.openlocfilehash: 0cbba45ce49667293d8f16bf370424acd70ff78b
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38671028"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213492"
 ---
 # <a name="set-up-the-source-environment-physical-server-to-azure"></a>Настройка исходной среды (репликация физических серверов в Azure)
 
 В этой статье приведены сведения о настройке локальной среды для запуска репликации физических серверов под управлением Windows или Linux в Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что у вас уже имеется:
-1. Хранилище служб восстановления на [портале Azure](http://portal.azure.com "портал Azure").
-3. Физический компьютер для установки сервера конфигурации.
+- Хранилище служб восстановления на [портале Azure](http://portal.azure.com "портал Azure").
+- Физический компьютер для установки сервера конфигурации.
+- Если вы отключили TLS 1.0 на компьютере, на котором вы устанавливаете сервер конфигурации, включите TLS 1.2 и установите .NET Framework версии 4.6 или более поздней (надежное шифрование должно быть отключено). [Узнайте больше](https://support.microsoft.com/help/4033999/how-to-resolve-azure-site-recovery-agent-issues-after-disabling-tls-1).
 
 ### <a name="configuration-server-minimum-requirements"></a>Минимальные требования к серверу конфигурации
 В следующей таблице перечислены минимальные требования к оборудованию, программному обеспечению и сети сервера конфигурации.
@@ -63,7 +62,7 @@ ms.locfileid: "38671028"
 [!INCLUDE [site-recovery-add-configuration-server](../../includes/site-recovery-add-configuration-server.md)]
 
 > [!NOTE]
-> Сервер конфигурации можно установить с помощью командной строки. Изучите дополнительные сведения об [установке сервера конфигурации с помощью программ командной строки](http://aka.ms/installconfigsrv).
+> Сервер конфигурации можно установить с помощью командной строки. [Узнайте больше](physical-manage-configuration-server.md#install-from-the-command-line).
 
 
 ## <a name="common-issues"></a>Распространенные проблемы

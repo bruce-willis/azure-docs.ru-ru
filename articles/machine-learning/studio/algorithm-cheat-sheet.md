@@ -1,5 +1,5 @@
 ---
-title: Памятка по алгоритмам Машинного обучения Microsoft Azure | Документация Майкрософт
+title: Памятка по алгоритмам машинного обучения в Azure | Документация Майкрософт
 description: Памятка по алгоритмам Машинного обучения Microsoft Azure для печати поможет выбрать в Студии машинного обучения Azure правильный алгоритм для модели прогнозирования.
 keywords: памятка по алгоритмам, памятка, алгоритм машинного обучения
 services: machine-learning
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: a448d6931330f7b2f0730add65473097bb2b5a57
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: b080a739aa73e3c8ef95c7db9a6358d942e94bba
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34833569"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238392"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-microsoft-azure-machine-learning-studio"></a>Памятка по алгоритмам машинного обучения для Студии машинного обучения Microsoft Azure
 **Памятка по алгоритмам Машинного обучения Microsoft Azure** поможет выбрать правильный алгоритм для модели прогнозной аналитики.

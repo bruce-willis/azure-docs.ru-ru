@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2016
 ms.author: sngun
-ms.openlocfilehash: ef40bcb473e4d7dbe51f9d8d9ca20265c04d0df6
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: acd3fa3367f68d5cc98a4ace82508f028d5fdbf8
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34612689"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214751"
 ---
 # <a name="modeling-document-data-for-nosql-databases"></a>Моделирование данных документов для базы данных NoSQL
 Хотя базы данных без схем, такие как Azure Cosmos DB, существенно упрощают внесение изменений в модель данных, вам все равно следует уделить время анализу ситуации с данными. 

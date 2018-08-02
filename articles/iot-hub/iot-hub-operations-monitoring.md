@@ -8,19 +8,19 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
 ms.author: nberdy
-ms.openlocfilehash: 0a1da3812d6f11aa6525857596b394fbfa3dc88a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 0f4d5105b7266ba24fc5efa9af887b4458c05d5e
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34634810"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186202"
 ---
 # <a name="iot-hub-operations-monitoring"></a>Мониторинг операций Центра Интернета вещей
 
 Мониторинг операций Центра Интернета вещей позволяет отслеживать состояние операций в Центре Интернета вещей в режиме реального времени. Центр Интернета вещей отслеживает события по нескольким категориям операций. Вы можете выбрать отправку событий из одной или нескольких категорий в конечную точку Центра Интернета вещей для обработки. Вы можете отслеживать данные на наличие ошибок или настроить более сложную обработку на основе закономерностей в данных.
 
 >[!NOTE]
->Функцию мониторинга операций Центра Интернета вещей не рекомендуется использовать. Она будет удалена из Центра Интернета вещей 10 октября 2018 года. Сведения о мониторинге операций и работоспособности Центра Интернета вещей см. в статье [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок][lnk-monitor]. Дополнительные сведения о временной шкале удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health][lnk-blog-announcement] (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
+>Функцию мониторинга операций Центра Интернета вещей не рекомендуется использовать. Она будет удалена из Центра Интернета вещей 10 марта 2019 года. Сведения о мониторинге операций и работоспособности Центра Интернета вещей см. в статье [Мониторинг работоспособности Центра Интернета вещей Azure и быстрая диагностика неполадок][lnk-monitor]. Дополнительные сведения о временной шкале удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health][lnk-blog-announcement] (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
 
 Центр Интернета вещей отслеживает шесть категорий событий:
 
@@ -296,7 +296,7 @@ class Program
 
 [lnk-blog-announcement]: https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health
 [lnk-monitor]: iot-hub-monitor-resource-health.md
-[lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
+[lnk-get-started]: quickstart-send-telemetry-dotnet.md
 [lnk-diagnostic-metrics]: iot-hub-metrics.md
 [lnk-scaling]: iot-hub-scaling.md
 [lnk-dr]: iot-hub-ha-dr.md

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 8aebe6bef536840722d9b07c846687eaf6d195db
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 1963c2f45bc37741a6d00c8dae985bfa5237ce7f
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39051075"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39259234"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство: интеграция Azure Active Directory с ServiceNow
 
@@ -231,7 +231,7 @@ ms.locfileid: "39051075"
 
     д. Откройте в Блокноте сертификат в кодировке Base-64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **PEM Certificate** (Сертификат PEM).
 
-     f. Нажмите кнопку **Submit**(Отправить).
+     Е. Нажмите кнопку **Submit**(Отправить).
 
 17. На панели навигации слева щелкните **Identity Providers**(Поставщики удостоверений).
 
@@ -392,7 +392,7 @@ ms.locfileid: "39051075"
 
     д. Откройте в Блокноте сертификат в кодировке Base64, скачанный с портала Azure, скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **PEM Certificate** (Сертификат PEM).
 
-    f. Нажмите кнопку **Update** (Обновить).
+    Е. Нажмите кнопку **Update** (Обновить).
 
 13. В диалоговом окне **Единый вход** щелкните **Add New IdP** (Добавить нового поставщика удостоверений).
 
@@ -444,7 +444,7 @@ ms.locfileid: "39051075"
     > [!NOTE]
     > Azure AD можно настроить таким образом, чтобы в качестве уникального идентификатора в токене SAML выдавался идентификатор пользователя Azure AD (имя участника-пользователя) или его электронный адрес. Для этого перейдите в раздел **ServiceNow > Атрибуты > Единый вход** на портале Azure и сопоставьте нужное поле с атрибутом **nameidentifier**. Значение, хранящееся для выбранного атрибута в Azure AD (например, имя участника-пользователя), должно соответствовать значению, хранящемуся в ServiceNow для заполненного поля (например, user_name).
 
-    f. Выберите команду **Сохранить**.
+    Е. Выберите команду **Сохранить**.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

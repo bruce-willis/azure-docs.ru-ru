@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: d36ecb18811901fb781e151c06badc0697c2d769
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 390935d80e903631287b1a4b9f1075e547298d99
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34659859"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39250381"
 ---
 # <a name="getting-compliance-data"></a>Получение данных о соответствии
 
@@ -224,14 +224,13 @@ https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.
 
 Дополнительные сведения о запросах событий политик см. в справочной статье по [Policy Events](/rest/api/policy-insights/policyevents) (События политик).
 
-### <a name="azure-powershell-preview"></a>Azure PowerShell (предварительная версия)
+### <a name="azure-powershell"></a>Azure PowerShell
 
-Модуль Azure PowerShell для политики еще не готов полностью, но уже доступен в коллекции PowerShell в качестве [предварительной версии](https://www.powershellgallery.com/packages/AzureRM.PolicyInsights).
-Если вы используете версию PowerShellGet не ниже 1.6.0 (требуется для поддержки элементов предварительного выпуска), вы можете скачать предварительную версию с помощью `Install-Module` (требуется последняя установленная версия [Azure PowerShell](/powershell/azure/install-azurerm-ps)):
+Модуль Azure PowerShell для политики доступен в коллекции PowerShell как [AzureRM.PolicyInsights](https://www.powershellgallery.com/packages/AzureRM.PolicyInsights). Используя PowerShellGet, вы можете установить модуль с помощью `Install-Module -Name AzureRM.PolicyInsights` (установите последнюю версию [Azure PowerShell](/powershell/azure/install-azurerm-ps)):
 
 ```powershell
-# Download preview from PowerShell Gallery via PowerShellGet
-Install-Module -Name AzureRM.PolicyInsights -AllowPrerelease
+# Install from PowerShell Gallery via PowerShellGet
+Install-Module -Name AzureRM.PolicyInsights
 
 # Import the downloaded module
 Import-Module AzureRM.PolicyInsights
@@ -240,7 +239,7 @@ Import-Module AzureRM.PolicyInsights
 Connect-AzureRmAccount
 ```
 
-Предварительная версия модуля содержит три командлета:
+Модуль содержит три командлета:
 
 - `Get-AzureRmPolicyStateSummary`
 - `Get-AzureRmPolicyState`
@@ -354,4 +353,4 @@ Trent Baker
 
 - См. дополнительные сведения о [структуре определения Политики Azure](policy-definition.md).
 - См. дополнительные сведения о [действиях политик](policy-effects.md).
-- См. дополнительные сведения об [упорядочивании ресурсов с помощью групп управления Azure](../azure-resource-manager/management-groups-overview.md).
+- См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](../azure-resource-manager/management-groups-overview.md)

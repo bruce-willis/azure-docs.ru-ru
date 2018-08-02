@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: ff1f6fcae1d21d47b5ee0263b4e038287a588991
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: a6db6b7f1a0e81867a1db75ed3b31a38a8dbdeb0
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39008235"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213543"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Подробный обзор расширенной аналитики
 
@@ -97,7 +97,7 @@ HDInsight имеет несколько вариантов машинного о
 
 1. Создание кластера Azure HDInsight Hadoop с дистрибутивом Apache Spark 2.1.0. 
 2. Запуск пользовательского сценария для установки Microsoft Cognitive Toolkit на всех узлах в кластере Azure HDInsight Spark. 
-3. Передача готовой записной книжки Jupyter в кластер HDInsight Spark для применения обученной модели глубокого обучения Microsoft Cognitive Toolkit к файлам в учетной записи хранилища BLOB-объектов Azure с помощью API Python для Spark (PySpark). 
+3. Передача предварительно созданной записной книжки Jupyter в кластер HDInsight Spark для применения обученной модели углубленного обучения Microsoft Cognitive Toolkit к файлам в учетной записи хранилища BLOB-объектов Azure с помощью API Python для Spark (PySpark). 
 
 В этом примере используется набор изображений CIFAR-10, скомпилированный и распространенный Алексом Крижевским (Alex Krizhevsky), Винодом Наиром (Vinod Nair) и Джеффри Хинтоном (Geoffrey Hinton). Набор данных CIFAR-10 содержит 60 000 цветных изображений размером 32 × 32, принадлежащих к 10 взаимоисключающим классам:
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 42ede975f2cfde2d9c0a61d15ba1af412a88c556
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 55ce85702804d99d806220d7f0a4ea0820975f4f
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34628544"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39206043"
 ---
 # <a name="connect-a-generic-client-application-to-your-azure-iot-central-application-nodejs"></a>Подключение универсального клиентского приложения к приложению Azure IoT Central (Node.js)
 
@@ -25,6 +25,8 @@ ms.locfileid: "34628544"
 
 1. Приложение Azure IoT Central. Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](howto-create-application.md).
 1. Компьютер для разработки с установленным [Node.js](https://nodejs.org/) 4.0.0 или более поздней версии. Вы можете запустить `node --version` в командной строке, чтобы проверить версию. Node.js доступен для разных операционных систем.
+
+## <a name="create-a-device-template"></a>Создание шаблона устройства
 
 В приложении Azure IoT Central требуется шаблон устройства со следующими определенными измерениями и свойствами устройства.
 
@@ -89,11 +91,11 @@ ms.locfileid: "34628544"
 
 Введите имена полей из таблицы в шаблон устройства. Если имена полей не совпадают, устройство не получает значение параметра.
 
-### <a name="add-a-real-device"></a>Добавление реального устройства
+## <a name="add-a-real-device"></a>Добавление реального устройства
 
 В приложении Azure IoT Central добавьте реальное устройство из созданного шаблона приложения и запишите строку подключения к устройству. Дополнительные сведения см. в статье [Добавление реального устройства в приложение Azure IoT Central](tutorial-add-device.md).
 
-## <a name="create-a-nodejs-application"></a>Создание приложения Node.js
+### <a name="create-a-nodejs-application"></a>Создание приложения Node.js
 
 Ниже показано, как создать клиентское приложение, реализующее реальное устройство, добавленное в приложение.
 

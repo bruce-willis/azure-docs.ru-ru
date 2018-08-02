@@ -10,12 +10,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 83d5b89422a0181c06dbfe3b2bd8975ef7214b9d
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: f6d49ffa59ed53c0a1966a4132fd5fe1689a13ce
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34193263"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247355"
 ---
 # <a name="azure-automation-dsc-overview"></a>Обзор DSC службы автоматизации Azure
 
@@ -27,7 +27,7 @@ Azure Automation DSC обеспечивает ряд преимуществ по
 
 ### <a name="built-in-pull-server"></a>Встроенный опрашивающий сервер
 
-Служба автоматизации Azure предоставляет [опрашивающий сервер DSC](https://msdn.microsoft.com/powershell/dsc/pullserver), чтобы целевые узлы могли автоматически получать конфигурации, переходить в требуемое состояние и сообщать о готовности.
+Служба автоматизации Azure предоставляет опрашивающий сервер DSC, подобный [службе DSC компонента Windows](/powershell/dsc/pullserver), чтобы целевые узлы могли автоматически получать конфигурации, соответствовать требуемому состоянию и сообщать о соответствии.
 Встроенный опрашивающий сервер в службе автоматизации Azure избавляет от необходимости устанавливать и обслуживать собственный опрашивающий сервер.
 Служба автоматизации Azure может работать с виртуальными и физическими машинами под управлением Windows или Linux, размещенными в облаке или локально.
 

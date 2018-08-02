@@ -9,14 +9,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: managed instance
 ms.topic: conceptual
-ms.date: 07/16/2018
+ms.date: 07/24/2018
 ms.author: bonova
-ms.openlocfilehash: e0de9a1494641fef87d11545b99e5e7275f6b614
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: a9a02f9007c174024028305746682f9ac07dab22
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069269"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247216"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "39069269"
 
 Управляемый экземпляр Базы данных SQL — это расширение имеющейся службы "База данных SQL", которое кроме отдельных баз данных и эластичных пулов предлагает и третий вариант развертывания.  С его помощью можно выполнять перенос базы данных методом lift-and-shift в полностью управляемое приложение PaaS, не изменяя его. Управляемый экземпляр Базы данных SQL Azure обеспечивает высокую совместимость с моделью программирования локального SQL Server и реализацию поддержки большинства возможностей, дополнительных инструментов и служб SQL Server.
 
-Общий процесс переноса приложения выглядит, как показано на следующей схеме.
+На высоком уровне процесс переноса приложения выглядит примерно так:
 
 ![процесс переноса](./media/sql-database-managed-instance-migration/migration-process.png)
 
@@ -105,7 +105,7 @@ ms.locfileid: "39069269"
 |Восстановление из службы хранилища Azure в управляемый экземпляр|[Восстановление на основе URL-адреса с помощью учетных данных SAS](sql-database-managed-instance-restore-from-backup-tutorial.md)|
 
 > [!IMPORTANT]
-> - При переносе базы данных, защищаемой с помощью [прозрачного шифрования данных](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption), в управляемый экземпляр SQL Azure с помощью параметра "Собственное восстановление" перед восстановлением базы данных соответствующий сертификат необходимо перенести из локального или IaaS-экземпляра SQL Server. Пошаговая процедура приведена в разделе [Перенос сертификата TDE в управляемый экземпляр](sql-database-managed-instance-migrate-tde-certificate.md).
+> - При миграции базы данных, защищенной с помощью [прозрачного шифрования данных (TDE)](https://docs.microsoft.com/sql/relational-databases/security/encryption/transparent-data-encryption), в Управляемый экземпляр базы данных SQL Azure с использованием параметра "Собственное восстановление" необходимо перед восстановлением базы данных перенести соответствующий сертификат из локального или IaaS SQL Server. Пошаговая процедура приведена в разделе [Перенос сертификата TDE в управляемый экземпляр](sql-database-managed-instance-migrate-tde-certificate.md).
 > - Восстановление системных баз данных не поддерживается. Чтобы перенести объекты уровня экземпляра (хранящиеся в базах данных master или msdb), рекомендуем создать для них скрипт и запустить скрипты T-SQL в экземпляре среды назначения.
 
 Полное руководство со сведениями о восстановлении резервной копии базы данных в управляемый экземпляр с использованием учетных данных SAS см. в статье [Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-restore-from-backup-tutorial.md).

@@ -6,14 +6,14 @@ author: mmacy
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 07/19/2018
 ms.author: marsma
-ms.openlocfilehash: bc30352f50344031f8356d2be1b800dd035f12ad
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7a3d521d4382e3d9b5b1b1cf4eb3e43fa02c9a40
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830468"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39159555"
 ---
 # <a name="set-environment-variables"></a>Настройка переменных среды
 
@@ -156,9 +156,10 @@ Azure:\
 ![Выходные данные журналов контейнера на портале][portal-env-vars-02]
 
 ## <a name="secure-values"></a>Безопасные значения
+
 Объекты с безопасными значениями предназначены для хранения конфиденциальных данных, например паролей или ключей приложения. Использовать безопасные значения для переменных среды — более безопасный и гибкий способ по сравнению с добавлением значений в образ контейнера. Другой вариант — использовать тома secret, описанные в статье [Подключение тома secret в службе "Экземпляры контейнеров Azure"](container-instances-volume-secret.md).
 
-Безопасные переменные среды с безопасными значениями не раскрывают безопасное значение в свойствах контейнера, из-за чего доступ к значению можно получить только в пределах контейнера. Например, свойства контейнера, показанные на портале Azure или в Azure CLI, не будут отображать переменную среды с безопасным значением.
+Переменные среды с безопасными значениями не видны в свойствах контейнера — доступ к их значениям можно получить только из контейнера. Например, свойства контейнера, просматриваемые на портале Azure или с помощью Azure CLI, отображают только имя безопасной переменной, а не ее значение.
 
 Установите безопасную переменную среды, указав для типа переменной свойство `secureValue` вместо обычного `value`. В следующем файле YAML представлены две переменные двух разных типов.
 
@@ -168,17 +169,17 @@ Azure:\
 
 ```yaml
 apiVersion: 2018-06-01
-location: westus
+location: eastus
 name: securetest
 properties:
   containers:
   - name: mycontainer
     properties:
       environmentVariables:
-        - "name": "SECRET"
-          "secureValue": "my-secret-value"
         - "name": "NOTSECRET"
           "value": "my-exposed-value"
+        - "name": "SECRET"
+          "secureValue": "my-secret-value"
       image: nginx
       ports: []
       resources:
@@ -191,43 +192,50 @@ tags: null
 type: Microsoft.ContainerInstance/containerGroups
 ```
 
-Выполните следующую команду, чтобы развернуть группу контейнеров с использованием файла YAML.
+Выполните следующую команду, чтобы развернуть группу контейнеров с помощью YAML (при необходимости измените имя группы ресурсов):
 
 ```azurecli-interactive
-az container create --resource-group myRG --name securetest -f secure-env.yaml
+az container create --resource-group myResourceGroup --file secure-env.yaml
 ```
 
 ### <a name="verify-environment-variables"></a>Проверка переменных среды
 
-Запустите следующую команду, чтобы запросить переменные среды контейнера.
+Запустите команду [az container show][az-container-show], чтобы запросить переменные среды контейнера.
 
 ```azurecli-interactive
-az container show --resource-group myRG --name securetest --query 'containers[].environmentVariables`
+az container show --resource-group myResourceGroup --name securetest --query 'containers[].environmentVariables'
 ```
 
-В ответе JSON с подробными сведениями для этого контейнера будет содержаться только небезопасная переменная среды и безопасный ключ переменной среды.
+Ответ JSON отображает ключ и значение небезопасной переменной среды и только имя безопасной переменной среды:
 
 ```json
-  "environmentVariables": [
+[
+  [
     {
       "name": "NOTSECRET",
+      "secureValue": null,
       "value": "my-exposed-value"
     },
     {
-      "name": "SECRET"
+      "name": "SECRET",
+      "secureValue": null,
+      "value": null
     }
+  ]
+]
 ```
 
-Вы можете проверить, установлена ли безопасная переменная среды, с помощью команды `exec`, которая позволяет выполнять команду в запущенном контейнере. 
+С помощью команды [az container exec][az-container-exec], которая позволяет выполнить команду в запущенном контейнере, вы можете проверить, была ли установлена безопасная переменная среды. Выполните следующую команду, чтобы запустить интерактивный сеанс Bash в контейнере:
 
-Выполните следующую команду, чтобы запустить интерактивный сеанс Bash с контейнером.
 ```azurecli-interactive
-az container exec --resource-group myRG --name securetest --exec-command "/bin/bash"
+az container exec --resource-group myResourceGroup --name securetest --exec-command "/bin/bash"
 ```
 
-В контейнере выведите переменную среды с помощью следующей команды Bash.
-```bash
-echo $SECRET
+После открытия интерактивной оболочки в контейнере вы можете получить доступ к значению переменной `SECRET`:
+
+```console
+root@caas-ef3ee231482549629ac8a40c0d3807fd-3881559887-5374l:/# echo $SECRET
+my-secret-value
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -243,6 +251,7 @@ echo $SECRET
 
 <!-- LINKS Internal -->
 [az-container-create]: /cli/azure/container#az-container-create
+[az-container-exec]: /cli/azure/container#az-container-exec
 [az-container-logs]: /cli/azure/container#az-container-logs
 [az-container-show]: /cli/azure/container#az-container-show
 [azure-cli-install]: /cli/azure/

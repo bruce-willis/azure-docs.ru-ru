@@ -16,12 +16,12 @@ ms.component: compliance-reports
 ms.date: 05/07/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 93532f4b0b2d527a4d5c79e2ee1b2810394b2f11
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: ce8630f5718a849f460b372d9e15b03902ac2117
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442089"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39159685"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -34,7 +34,7 @@ Azure Active Directory предоставляет разнообразные [о
 При возникновении проблем ознакомьтесь со статьей [Как получить поддержку для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-troubleshooting-support-howto).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы получить доступ к API отчетов, даже если вы планируете получить доступ к API, используя сценарий, необходимо следующее:
 
@@ -49,7 +49,7 @@ Azure Active Directory предоставляет разнообразные [о
 
 ## <a name="apis-with-graph-explorer"></a>Использование API с песочницей Graph
 
-Вы можете использовать [песочницу MSGraph](https://developer.microsoft.com/en-us/graph/graph-explorer) для проверки входа и аудита данных API. Войдите в учетную запись, используя одну из кнопок входа в пользовательском интерфейсе песочницы Graph и задав клиенту разрешения **Tasks.ReadWrite** и **Directory.ReadAll**, как показано ниже.   
+Вы можете использовать [песочницу MSGraph](https://developer.microsoft.com/en-us/graph/graph-explorer) для проверки входа и аудита данных API. Войдите в учетную запись, используя одну из кнопок входа в пользовательском интерфейсе песочницы Graph и задав для клиента разрешения **AuditLog.Read.All** и **Directory.ReadAll**, как показано ниже.   
 
 ![Песочница Graph](./media/active-directory-reporting-api-getting-started-azure-portal/graph-explorer.png)
 

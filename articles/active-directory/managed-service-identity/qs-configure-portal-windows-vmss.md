@@ -1,6 +1,6 @@
 ---
-title: Настройка MSI в масштабируемом наборе виртуальных машин Azure с помощью портала Azure
-description: Пошаговые инструкции по настройке управляемого удостоверения службы (MSI) в масштабируемом наборе виртуальных машин Azure с помощью портала Azure.
+title: Настройка управляемого удостоверения службы в масштабируемом наборе виртуальных машин Azure с помощью портала Azure
+description: Пошаговые инструкции по настройке управляемого удостоверения службы в масштабируемом наборе виртуальных машин Azure с помощью портала Azure.
 services: active-directory
 documentationcenter: ''
 author: daveba
@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/20/2018
 ms.author: daveba
-ms.openlocfilehash: 8779600f2c85a8bb309f7b2a8874608170de8877
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 93c532cf2864db28b580303ecefec8b6dbed65f6
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39035247"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39257765"
 ---
-# <a name="configure-a-virtual-machine-scale-set-managed-service-identity-msi-using-the-azure-portal"></a>Настройка управляемого удостоверения службы (MSI) в масштабируемом наборе виртуальных машин с помощью портала Azure
+# <a name="configure-a-virtual-machine-scale-set-managed-service-identity-using-the-azure-portal"></a>Настройка управляемого удостоверения службы в масштабируемом наборе виртуальных машин с помощью портала Azure
 
 [!INCLUDE[preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -34,9 +34,10 @@ ms.locfileid: "39035247"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md).
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
+- Для выполнения операций управления, описанных в этой статье, учетной записи требуется следующая роль.
+    - [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) для включения и удаления назначаемого системой удостоверения в масштабируемом наборе виртуальных машин.
 
 ## <a name="managed-service-identity-during-creation-of-an-azure-virtual-machine-scale-set"></a>Включение управляемого удостоверения службы во время создания масштабируемого набора виртуальных машин Azure
 
@@ -44,7 +45,7 @@ ms.locfileid: "39035247"
 
 - [Создание масштабируемого набора виртуальных машин на портале Azure](../../virtual-machine-scale-sets/quick-create-portal.md)  
 
-Затем перейдите к инструкциям по включению MSI в масштабируемом наборе виртуальных машин в следующем разделе.
+Затем перейдите к следующему разделу, чтобы ознакомиться с дополнительными сведениями о включении управляемого удостоверения службы в масштабируемом наборе виртуальных машин.
 
 ## <a name="enable-managed-service-identity-on-an-existing-azure-vmms"></a>Включение управляемого удостоверения службы в имеющемся масштабируемом наборе виртуальных машин Azure
 
@@ -60,7 +61,7 @@ ms.locfileid: "39035247"
 
 ## <a name="remove-managed-service-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление управляемого удостоверения службы из масштабируемого набора виртуальных машин Azure
 
-Если для масштабируемого набора виртуальных машин MSI больше не требуется, сделайте следующее:
+Если для масштабируемого набора виртуальных машин управляемое удостоверение службы больше не требуется, сделайте следующее.
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи, связанной с подпиской Azure, которая содержит масштабируемый набор виртуальных машин. Учетная запись должна принадлежать роли, которая предоставляет разрешения на запись в масштабируемом наборе виртуальных машин.
 

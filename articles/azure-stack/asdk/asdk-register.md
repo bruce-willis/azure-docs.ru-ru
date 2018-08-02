@@ -11,27 +11,27 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/26/2018
+ms.date: 07/25/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 08a300d0e2d1565428f282a2073d91b5dd08c060
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 19fb5d3cb793b6e1e8e715c41edf8cde5746278b
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37017005"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39257928"
 ---
 # <a name="azure-stack-registration"></a>Регистрация Azure Stack
 Вы можете зарегистрировать устанавливаемый Пакет средств разработки Azure Stack (ASDK) в Azure, чтобы скачивать элементы Marketplace из Azure и настраивать передачу коммерческих данных в корпорацию Майкрософт. Регистрация требуется для поддержки полной функциональности Azure Stack, включая синдикацию marketplace. Рекомендуем использовать регистрацию, так как она позволяет протестировать важные функции Azure Stack, например синдикацию Marketplace и отчеты о потреблении. После регистрации Azure Stack данные о потреблении передаются в коммерческий отдел Azure. Вы сможете увидеть их в той подписке, которую использовали для регистрации. Но с пользователей ASDK не взимается плата на основе отчетов о потреблении.
 
 Если не зарегистрировать пакет ASDK, отобразится предупреждение **Требуется активация**. Это значит, что вам необходимо зарегистрировать Пакет средств разработки Azure Stack. Это ожидаемое поведение.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед выполнением инструкций по регистрации ASDK в Azure установите PowerShell для Azure Stack и скачайте средства Azure Stack, как описано в статье о [настройке, выполняемой после установки ASDK](asdk-post-deploy.md).
 
 Кроме того, на компьютере, используемом для регистрации ASDK в Azure, необходимо установить параметр языкового режима PowerShell **FullLanguageMode**. Чтобы проверить, что текущий языковой режим имеет значение full, откройте окно PowerShell с повышенным уровнем разрешений и выполните следующие команды PowerShell:
 
-```powershell
+```PowerShell  
 $ExecutionContext.SessionState.LanguageMode
 ```
 
@@ -47,7 +47,9 @@ $ExecutionContext.SessionState.LanguageMode
 
 2. Выполните следующие команды PowerShell, чтобы зарегистрировать установку ASDK в Azure. Вам понадобится войти в подписку Azure и локальную установку ASDK. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись здесь](https://azure.microsoft.com/free/?b=17.06). За регистрацию Azure Stack в подписке Azure дополнительная плата не взимается.
 
-  ```powershell
+    Если сценарий регистрации выполняется на нескольких экземплярах Azure Stack с использованием одного идентификатора подписки Azure, задайте уникальное имя регистрации, выполняя командлет **Set-AzsRegistration**. Параметр **RegistrationName** имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой.
+
+  ```PowerShell  
   # Add the Azure cloud subscription environment name. Supported environment names are AzureCloud or, if using a China Azure Subscription, AzureChinaCloud.
   Add-AzureRmAccount -EnvironmentName "AzureCloud"
 
@@ -60,14 +62,16 @@ $ExecutionContext.SessionState.LanguageMode
   #Register Azure Stack
   $AzureContext = Get-AzureRmContext
   $CloudAdminCred = Get-Credential -UserName AZURESTACK\CloudAdmin -Message "Enter the credentials to access the privileged endpoint."
+  $RegistrationName = "<unique-registration-name>"
   Set-AzsRegistration `
       -PrivilegedEndpointCredential $CloudAdminCred `
       -PrivilegedEndpoint AzS-ERCS01 `
       -BillingModel Development
+      -RegistrationName $RegistrationName
   ```
 3. После выполнения сценария должно отобразиться сообщение **Your environment is now registered and activated using the provided parameters** (Ваша среда зарегистрирована и активирована с помощью предоставленных параметров).
 
-    ![](media/asdk-register/1.PNG)
+    ![Среда зарегистрирована](media/asdk-register/1.PNG)
 
 ## <a name="verify-the-registration-was-successful"></a>Подтверждение успешного выполнения регистрации
 Выполните следующие действия, чтобы проверить успешность регистрации ASDK в Azure.

@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/16/2018
+ms.date: 07/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 64b94baeaede9b05e953b69324648c63d97cea8e
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: a453e2d16edecda9753c2940a745b260a3a2b893
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39045444"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39160269"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство по интеграции Azure Active Directory с Salesforce
 
@@ -60,14 +60,14 @@ ms.locfileid: "39045444"
 
 **Чтобы добавить Salesforce из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
     ![Кнопка "Azure Active Directory"][1]
 
 2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
-    
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
@@ -103,26 +103,26 @@ ms.locfileid: "39045444"
     ![Ссылка "Настройка единого входа"][4]
 
 2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+
     ![Диалоговое окно "Единый вход"](./media/salesforce-tutorial/tutorial_salesforce_samlbase.png)
 
 3. В разделе **Домен и URL-адреса Salesforce** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения Salesforce](./media/salesforce-tutorial/tutorial_salesforce_url.png)
-    
+
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате:
-    
+
     Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
-    
+
     b. В текстовое поле **Идентификатор** введите значение в следующем формате:
-    
+
     Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
-    
-    > [!NOTE] 
+
+    > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Salesforce](https://help.salesforce.com/support).
 
 4. В разделе **Сертификат подписи SAML** щелкните **Сертификат**, а затем сохраните файл сертификата на компьютере.
@@ -170,26 +170,26 @@ ms.locfileid: "39045444"
     b. В поле **Issuer** (Издатель) вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
     c. Введите в текстовое поле **Идентификатор сущности**имя домена Salesforce в следующем формате.
-      
+
       * Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
       * Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
-      
+
     d. Для отправки **сертификата поставщика удостоверений** нажмите кнопку **Choose File** (Выбрать файл), чтобы найти и выбрать файл сертификата, скачанный с портала Azure.
 
     д. Для **типа удостоверения SAML** выберите один из следующих вариантов:
-    
+
       * Выберите **Assertion contains the User's Salesforce username** (Утверждение содержит имя пользователя Salesforce), если имя пользователя Salesforce передается в утверждении SAML.
 
       * Выберите **Assertion contains the Federation ID from the User object** (Утверждение содержит идентификатор федерации из объекта-пользователя), если идентификатор федерации из объекта-пользователя передается в утверждении SAML.
 
       * Выберите **Assertion contains the User ID from the User object** (Утверждение содержит идентификатор пользователя из объекта-пользователя), если идентификатор пользователя из объекта-пользователя передается в утверждении SAML.
 
-    f. В поле **SAML Identity Location** (Расположение удостоверения SAML) выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
+    Е. В поле **SAML Identity Location** (Расположение удостоверения SAML) выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
 
     ж. В поле **Service Provider Initiated Request Binding** (Связывание запросов, инициируемых поставщиком услуг) выберите значение **HTTP Redirect** (Перенаправление HTTP).
 
     h. В текстовое поле **Identity Provider Login URL** (URL-адрес входа IdP) вставьте значение **URL-адреса службы единого входа**, скопированное на портале Azure.
-    
+
     i. Наконец, нажмите кнопку **Сохранить** , чтобы применить параметры единого входа SAML.
 
 14. В области навигации слева в Salesforce щелкните **Company Settings** (Параметры компании), чтобы развернуть соответствующий раздел, и выберите пункт **My Domain** (Мой домен).
@@ -200,7 +200,7 @@ ms.locfileid: "39045444"
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-edit-auth-config.png)
 
-16. В разделе **Authentication Configuration** (Конфигурация аутентификации), установите флажок **Login Page** (Страница входа) для параметра **Authentication Service** (Служба аутентификации) конфигурации единого входа SAML и нажмите кнопку **Save** (Сохранить).
+16. В разделе **Authentication Configuration** (Конфигурация аутентификации), установите флажок **AzureSSO** (Единый вход Azure) для параметра **Authentication Service** (Служба аутентификации) конфигурации единого входа SAML и нажмите кнопку **Save** (Сохранить).
 
     ![Настройка единого входа](./media/salesforce-tutorial/sf-auth-config.png)
 

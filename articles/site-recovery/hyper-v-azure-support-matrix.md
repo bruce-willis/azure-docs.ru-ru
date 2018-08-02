@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: 3204329dc7c9efe2b0ba0ae05d17bc93d51620b4
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 709afe03570ca4cf81718fb071778439444d6bf6
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37923472"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171989"
 ---
 # <a name="support-matrix-for-hyper-v-replication-to-azure"></a>Матрица поддержки для репликации Hyper-V в Azure
 
@@ -48,7 +48,12 @@ Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Mac
 Операционная система на виртуальной машине | Любая гостевая ОС, поддерживаемая в Azure.<br/><br/> Nano Server Windows Server 2016 не поддерживается.
 
 
+## <a name="vmdisk-management"></a>Управление виртуальной машиной и диском
 
+**Действие** | **Дополнительные сведения**
+--- | ---
+Изменение размера диска на реплицируемой виртуальной машине Hyper-V | Не поддерживается. Отключите репликацию, внесите необходимые изменения, а затем снова включите репликацию для виртуальной машины.
+Добавление диска к реплицируемой виртуальной машине Hyper-V | Не поддерживается. Отключите репликацию, внесите необходимые изменения, а затем снова включите репликацию для виртуальной машины.
 
 ## <a name="hyper-v-network-configuration"></a>Конфигурация сети Hyper-V
 

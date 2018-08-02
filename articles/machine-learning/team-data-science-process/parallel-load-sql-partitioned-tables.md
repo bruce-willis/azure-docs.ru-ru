@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: deguhath
-ms.openlocfilehash: 2de926746a5e6b94a458dbc1a126ab5bc86b12fe
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: f87bc1d8140bea9ebb09e45d42b27e201b474026
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838540"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214348"
 ---
 # <a name="parallel-bulk-data-import-using-sql-partition-tables"></a>Параллельный массовый импорт данных с использованием таблиц секционирования SQL
 В этом документе описывается создание секционированных таблиц для быстрого параллельного массового импорта данных в Базу данных SQL Server. При загрузке и передаче больших данных в базу данных SQL с помощью *секционированных таблиц и представлений* можно оптимизировать импорт информации в эту базу, а также выполнение последующих запросов. 

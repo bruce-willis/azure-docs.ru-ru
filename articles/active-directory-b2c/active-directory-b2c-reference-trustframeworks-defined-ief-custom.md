@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 4eee1f2c9ca37227ca2cea0ef5e2ff25f6fad828
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 00d2f37068c5bedb17ba9a4064d1f5058f5ab72c
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37443415"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39185786"
 ---
 # <a name="define-trust-frameworks-with-azure-ad-b2c-identity-experience-framework"></a>Определение инфраструктур доверия с помощью инфраструктуры процедур идентификации Azure AD B2C
 
@@ -89,7 +89,7 @@ ms.locfileid: "37443415"
 
 - Метаданные для сетевого подключения между участниками. Эти метаданные вместе с техническими профилями используются во время транзакции для настройки сетевого взаимодействия между проверяющей стороной и другими участниками сообщества.
 
-- Преобразование протокола (если оно есть) (например SAML, OAuth2, WS-Federation и OpenID Connect).
+- Преобразование протокола (если оно есть) (например, SAML 2.0, OAuth2, WS-Federation и OpenID Connect).
 
 - Требования к проверке подлинности.
 

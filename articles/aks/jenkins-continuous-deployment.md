@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 84baf01ce6eeed8dc569d7a856189aefba788126
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 246943b7e3df955394a6a79f9b3130633fe4ec50
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37096481"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39186619"
 ---
 # <a name="continuous-deployment-with-jenkins-and-azure-kubernetes-service"></a>Непрерывное развертывание Jenkins c помощью Kubernetes в Службе Azure Kubernetes
 
@@ -29,7 +29,7 @@ ms.locfileid: "37096481"
 > * Этот образ отправляется в реестр контейнеров Azure (ACR).
 > * Приложение, выполняющееся в кластере AKS, обновляется с помощью нового образа контейнера.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
@@ -149,6 +149,9 @@ azure-vote-front   10.0.34.242   13.90.150.118   80:30676/TCP   2m
 
 Выполните следующие команды, чтобы скачать и запустить этот сценарий. Ниже приведен URL-адрес, который можно использовать для просмотра содержимого сценария.
 
+> [!WARNING]
+> Этот сценарий используется в качестве примера для быстрой подготовки среды Jenkins, работающей на виртуальной машине Azure. В нем применяется расширение пользовательских сценариев Azure для настройки виртуальной машины и отображения необходимых учетных данных. Каталог *~/.kube/config* скопирован на виртуальную машину Jenkins.
+
 ```console
 curl https://raw.githubusercontent.com/Azure-Samples/azure-voting-app-redis/master/jenkins-tutorial/deploy-jenkins-vm.sh > azure-jenkins.sh
 sh azure-jenkins.sh
@@ -263,12 +266,11 @@ kubectl set image deployment/azure-vote-front azure-vote-front=$WEB_IMAGE_NAME -
 Далее подключите обработчик репозитория приложений к серверу сборки Jenkins, чтобы при любой фиксации инициировалась новая сборка.
 
 1. Перейдите к репозиторию GitHub, для которого вы создали вилку.
-2. Щелкните **Settings** (Параметры), а затем выберите **Integrations & services** (Интеграция и службы) слева.
-3. Выберите **Add Service** (Добавить службу), введите `Jenkins (GitHub plugin)` в поле фильтра и выберите подключаемый модуль.
-4. В качестве URL-адреса обработчика Jenkins введите `http://<publicIp:8080>/github-webhook/`, где `publicIp` — IP-адрес сервера Jenkins. Убедитесь, что адрес содержит завершающую косую черту (/).
-5. Выберите "Add service" (Добавить службу).
+2. Щелкните **Settings** (Параметры), а затем выберите **Webhooks** (Веб-перехватчики).
+3. Выберите **Add webhook** (Добавить веб-перехватчик). В качестве *URL-адреса полезных данных* введите `http://<publicIp:8080>/github-webhook/`, где `publicIp` — IP-адрес сервера Jenkins. Убедитесь, что адрес содержит завершающую косую черту (/). Оставьте другие значения по умолчанию для типа содержимого и триггера событий *принудительной отправки*.
+4. Выберите **Add webhook** (Добавить веб-перехватчик).
 
-![Объект webhook GitHub](media/aks-jenkins/webhook.png)
+    ![Объект webhook GitHub](media/aks-jenkins/webhook.png)
 
 ## <a name="test-cicd-process-end-to-end"></a>Тестирование полного цикла процесса непрерывной интеграции и непрерывного развертывания
 

@@ -11,21 +11,21 @@ ms.service: site-recovery
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
-ms.date: 07/11/2018
+ms.date: 07/23/2018
 ms.author: bsiva
-ms.openlocfilehash: 0d3f28f0a9f1e9862fabb6ce5e96597f1534abd8
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 552a0d131f630db7b3a73293d330377ee350d2a9
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39011402"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214624"
 ---
 # <a name="migrate-servers-running-windows-server-2008-2008-r2-to-azure"></a>Перенос серверов под управлением Windows Server 2008 и 2008 R2 в Azure
 
 В этом руководстве показано, как перенести локальные серверы под управлением Windows Server 2008 или 2008 R2 в портал Azure с использованием Azure Site Recovery. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * подготовка локальной среды к миграции;
+> * Подготовка локальной среды к миграции
 > * Настройка целевой среды
 > * Настройка политики репликации
 > * Включение репликации
@@ -110,15 +110,47 @@ ms.locfileid: "39011402"
 ## <a name="prepare-your-on-premises-environment-for-migration"></a>Подготовка локальной среды к миграции
 
 - Скачайте установщик сервера конфигурации (единая установка) на странице [https://aka.ms/asr-w2k8-migration-setup](https://aka.ms/asr-w2k8-migration-setup).
-- [Настройте](physical-azure-disaster-recovery.md#set-up-the-source-environment) исходную среду с помощью файла установщика, скачанного на предыдущем шаге.
+- Следуйте инструкциям ниже, чтобы настроить исходную среду с помощью файла установщика, скачанного на предыдущем шаге.
 
 > [!IMPORTANT]
-> Убедитесь, что вы используете установочный файл, загруженный на первом шаге, для установки и регистрации сервера конфигурации. Не скачивайте файл установки с портала Azure. Файл установки доступен по адресу [https://aka.ms/asr-w2k8-migration-setup](https://aka.ms/asr-w2k8-migration-setup). Это единственная версия, которая поддерживает миграцию с Windows Server 2008.
+> - Убедитесь, что вы используете установочный файл, загруженный на первом шаге, для установки и регистрации сервера конфигурации. Не скачивайте файл установки с портала Azure. Файл установки доступен по адресу [https://aka.ms/asr-w2k8-migration-setup](https://aka.ms/asr-w2k8-migration-setup). Это единственная версия, которая поддерживает миграцию с Windows Server 2008.
 >
-> Нельзя использовать существующий сервер конфигурации для переноса компьютеров под управлением Windows Server 2008. Необходимо настроить новый сервер конфигурации, перейдя по ссылке, указанной ранее.
+> - Нельзя использовать существующий сервер конфигурации для переноса компьютеров под управлением Windows Server 2008. Необходимо настроить новый сервер конфигурации, перейдя по ссылке, указанной ранее.
+>
+> - Выполните инструкции ниже, чтобы установить сервер конфигурации. Не пытайтесь использовать процедуру установки на основе графического пользовательского интерфейса, запустив непосредственно программу единой установки. Это приведет к сбою установки. Отобразится сообщение об ошибке из-за отсутствия подключения к Интернету.
+
+ 
+1) Скачайте файл учетных данных хранилища с портала. На портале Azure выберите хранилище служб восстановления, созданное на предыдущем шаге. В меню на странице хранилища выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Серверы конфигурации**. Затем щелкните **+Сервер**. Из раскрывающегося списка формы на открывшейся странице выберите *Configuration Server for Physical* (Сервер конфигурации для физического компьютера). Нажмите кнопку "Скачать" на шаге 4, чтобы скачать файл учетных данных хранилища.
 
  ![Скачивание ключа регистрации хранилища](media/migrate-tutorial-windows-server-2008/download-vault-credentials.png) 
- 
+
+2) Скопируйте скачанные на предыдущем шаге файл учетных данных хранилища и файл программы единой установки на компьютер сервера конфигурации (компьютер Windows Server 2012 R2 или Windows Server 2016, на котором вы собираетесь установить программное обеспечение сервера конфигурации).
+
+3) Убедитесь, что у компьютера сервера конфигурации есть подключение к Интернету и на нем правильно настроены системные часы и параметры часового пояса. Скачайте установщик [MySQL 5.7](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-5.7.20.0.msi) и поместите его в папку *C:\Temp\ASRSetup* (создайте ее, если она не существует.) 
+
+4) Создайте файл учетных данных MySQL со следующими строками и поместите его на компьютер в папку **C:\Users\Administrator\MySQLCreds.txt**. Замените Password~1 ниже подходящим надежным паролем.
+
+```
+[MySQLCredentials]
+MySQLRootPassword = "Password~1"
+MySQLUserPassword = "Password~1"
+```
+
+5) Извлеките содержимое скачанного файла программы единой установки на компьютер, выполнив следующую команду.
+
+```
+cd C:\Users\Administrator\Desktop
+
+MicrosoftAzureSiteRecoveryUnifiedSetup.exe /q /x:C:\Users\Administrator\Desktop\9.18
+```
+  
+6) Установите программное обеспечение сервера конфигурации с помощью извлеченного содержимого, выполнив следующие команды.
+
+```
+cd C:\Users\Administrator\Desktop\9.18.1
+
+UnifiedSetup.exe /AcceptThirdpartyEULA /ServerMode CS /InstallLocation "C:\Program Files (x86)\Microsoft Azure Site Recovery" /MySQLCredsFilePath "C:\Users\Administrator\Desktop\MySQLCreds.txt" /VaultCredsFilePath <vault credentials file path> /EnvType VMWare /SkipSpaceCheck
+```
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
 

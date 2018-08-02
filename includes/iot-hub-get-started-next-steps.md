@@ -1,6 +1,7 @@
 Чтобы продолжить знакомство с Центром Интернета вещей Azure и изучить другие сценарии Центра Интернета вещей, см. следующие ресурсы:
 
 - [Управление обменом сообщениями между устройством и облаком с помощью обозревателя Центра Интернета вещей](../articles/iot-hub/iot-hub-explorer-cloud-device-messaging.md)
+- [Управление обменом сообщениями между устройством и облаком с помощью расширения Azure IoT Toolkit для Visual Studio Code](../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md)
 - [Сохранение сообщений Центра Интернета вещей, содержащих такие сведения, как данные датчиков, в хранилище таблиц Azure](../articles/iot-hub/iot-hub-store-data-in-azure-table-storage.md)
 - [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI](../articles/iot-hub/iot-hub-live-data-visualization-in-power-bi.md)
 - [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений Azure](../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md)

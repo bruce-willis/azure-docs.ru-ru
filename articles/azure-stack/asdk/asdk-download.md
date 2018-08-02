@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/16/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 0cf389c9443a9cff477b884c277d72de27769afc
-ms.sourcegitcommit: a36a1ae91968de3fd68ff2f0c1697effbb210ba8
+ms.openlocfilehash: b55bc7f6aab522a6313498b6fdccc88870796224
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/17/2018
-ms.locfileid: "29974152"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213033"
 ---
 # <a name="download-and-extract-the-azure-stack-development-kit-asdk"></a>Как скачать Пакет средств разработки Azure Stack (ASDK)
 Удостоверившись, что компьютер, на котором размещен пакет средств разработки, соответствует минимальным требованиям для установки ASDK, скачайте установочный пакет ASDK, чтобы получить Cloudbuilder.vhdx.
@@ -47,7 +47,7 @@ ms.locfileid: "29974152"
 6. Скопируйте или переместите файл CloudBuilder.vhdx в корень диска C:\ (C:\CloudBuilder.vhdx) на главном компьютере ASDK.
 
 > [!NOTE]
-> После извлечения файлов вы можете удалить EXE- и BIN-файлы, чтобы освободить пространство на диске. Эти файлы также можно переместить в другое расположение, чтобы не скачивать их снова, если потребуется выполнить повторное развертывание ASDK.
+> После извлечения файлов вы можете удалить EXE- и BIN-файлы, чтобы освободить пространство на диске. Также можно создать резервную копию этих файлов, чтобы не скачивать их снова, если потребуется выполнить повторное развертывание ASDK.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

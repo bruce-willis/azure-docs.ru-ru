@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: daveba
-ms.openlocfilehash: a7ddcb834b135d2177355a0523c7e99bcc599e99
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 42d5b55e0bddf2d027810bfdf146de9bfee8a0fb
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37931520"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39188137"
 ---
 # <a name="create-list-and-delete-a-user-assigned-identity-using-azure-resource-manager"></a>Создание, получение списка и удаление пользовательских удостоверений с помощью Azure Resource Manager
 
@@ -33,12 +33,12 @@ ms.locfileid: "37931520"
 
 - [Получение списка пользовательских удостоверений](how-to-manage-ua-identity-cli.md#list-user-assigned-identities)
 - [Удаление пользовательского удостоверения](how-to-manage-ua-identity-cli.md#delete-a-user-assigned-identity)
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-
-После входа в Azure локально или через портал Azure используйте учетную запись, связанную с подпиской Azure, содержащей виртуальную машину. Кроме того, убедитесь, что ваша учетная запись принадлежит роли, которая предоставляет разрешения на запись в виртуальной машине (например, "Участник виртуальных машин").
+- Для выполнения операций, описанных в этой статье, учетной записи требуются следующие роли.
+    - [Участник управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) для создания, чтения (вывода списка) и удаления назначаемого пользователем удостоверения.
 
 ## <a name="template-creation-and-editing"></a>Создание и редактирование шаблона
 

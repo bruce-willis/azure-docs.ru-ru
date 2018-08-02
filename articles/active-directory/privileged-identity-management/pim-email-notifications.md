@@ -11,16 +11,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.component: protection
-ms.date: 07/14/2018
+ms.date: 07/24/2018
 ms.author: rolyon
 ms.reviewer: hanki
 ms.custom: pim
-ms.openlocfilehash: 6c329554b5854f113fb216f874fa5a918110f9c5
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: ffac7768fefece24cb69789558ce500e1ff64d98
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058096"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39257908"
 ---
 # <a name="email-notifications-in-azure-ad-pim"></a>Уведомления по электронной почте в Azure AD PIM
 
@@ -32,7 +32,7 @@ ms.locfileid: "39058096"
 - если привилегированная роль назначена;
 - если служба AD PIM включена.
 
-Начиная с конца июля 2018 г. обновится адрес отправителя и внешний вид уведомлений по электронной почте, отправляемых через PIM. Это обновление повлияет на ресурсы PIM для Azure AD и PIM для Azure. Все события, которые ранее вызвали отправку уведомления по электронной почте, будут продолжать отправлять сообщение. Это обновление является исключительно визуальным изменением с сохранением функциональных возможностей.
+Начиная с конца июля 2018 г. обновится адрес отправителя и внешний вид уведомлений по электронной почте, отправляемых через PIM. Это обновление повлияет на ресурсы PIM для Azure AD и PIM для Azure. Все события, которые ранее вызвали отправку уведомления по электронной почте, будут продолжать отправлять сообщение. Некоторые электронные сообщения будут содержать обновленные, уточняющие сведения.
 
 ## <a name="sender-email-address"></a>Адрес электронной почты отправителя
 
@@ -45,6 +45,12 @@ ms.locfileid: "39058096"
 
 - Адрес электронной почты:  **azureadnotifications@microsoft.com**
 - Отображаемое имя: Служба уведомлений Microsoft Azure AD
+
+## <a name="email-subject-line"></a>Строка темы электронного сообщения
+
+С конца июля 2018 года уведомления по электронной почте для ролей ресурсов Azure AD и Azure будут содержать префикс **PIM** в строке темы. Ниже приведен пример:
+
+- "PIM: Alain Charon was permanently assigned the Backup Reader role" (PIM: Алану Шарону была назначена постоянная роль читателя для службы резервного копирования).
 
 ## <a name="pim-emails-for-azure-ad-roles"></a>Сообщения электронной почты PIM для ролей Azure AD
 

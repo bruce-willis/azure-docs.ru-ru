@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/11/2018
+ms.date: 07/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 84aac0017496c50f0006fd6e184537e4c14f10c7
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e11ba8ca9c4ad17b2ade909bb474ad2d1fcf4410
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39057616"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205380"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skills-base"></a>Руководство. Интеграция Azure Active Directory со Skills Base
 
@@ -110,7 +110,7 @@ ms.locfileid: "39057616"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://app.skills-base.com/o/<customer-unique-key>`
 
     > [!NOTE] 
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Skills Base](mailto:support@skills-base.com).
+    > URL-адрес входа можно получить из приложения Skills Base. Войдите в систему с правами администратора и выберите "Admin" (Администрирование) > "Settings"(Параметры) > "Instance details" (Сведения об экземпляре) > "Shortcut link" (Краткая ссылка). Скопируйте URL-адрес входа и вставьте его в текстовое поле, указанное выше.
 
 4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -141,7 +141,6 @@ ms.locfileid: "39057616"
 
     b. Выберите команду **Сохранить**.
     
-
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -179,7 +178,7 @@ ms.locfileid: "39057616"
 Цель этого раздела — создать пользователя с именем Britta Simon в Skills Base. Приложение Skills Base поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Skills Base (если он еще не создан).
 
 >[!Note]
->Чтобы создать учетную запись пользователя вручную, обратитесь в [службу поддержки клиентов Skills Base](mailto:support@skills-base.com).
+>Если вам нужно создать пользователя вручную, следуйте [этим инструкциям](http://wiki.skills-base.net/index.php?title=Adding_people_and_enabling_them_to_log_in).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

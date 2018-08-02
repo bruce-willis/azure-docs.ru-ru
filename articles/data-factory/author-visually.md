@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/01/2018
 ms.author: shlo
-ms.openlocfilehash: a7efe75507fad8e0391f9ad433ba416ed771063b
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 655a6ab2960047cde50bec2953015283ca8577f0
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265294"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214866"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 С пользовательским интерфейсом фабрики данных Azure пользователи могут визуально разрабатывать и развертывать ресурсы в своей фабрике, не написав не единой строки кода. Вы можете перетаскивать действия на панель холста конвейера, выполнять тестовые запуски, выполнять последовательную отладку, а также развертывать и выполнять мониторинг запуска конвейера. Пользовательский интерфейс можно использовать для визуальной разработки двумя способами:

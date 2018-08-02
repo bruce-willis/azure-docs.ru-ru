@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: a3267d8f2f088c93a8f69f949dc928437a80f455
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 17ad631e2441e4b8d6314557c17be143fd2f3de0
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37856952"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248732"
 ---
 # <a name="understanding-policy-effects"></a>Действия политик
 
@@ -26,7 +26,7 @@ ms.locfileid: "37856952"
 - Аудит
 - AuditIfNotExists
 - Запрет
-- DeployIfNotExists
+- DeployIfNotExists (доступно только для **встроенных** политик).
 
 ## <a name="order-of-evaluation"></a>Порядок оценки
 
@@ -213,6 +213,9 @@ ms.locfileid: "37856952"
 ## <a name="deployifnotexists"></a>DeployIfNotExists
 
 Как и AuditIfNotExists, действие DeployIfNotExists выполняет шаблон развертывания при соблюдении условия.
+
+> [!WARNING]
+> Действие DeployIfNotExists доступно только для **встроенных** политик.
 
 ### <a name="deployifnotexists-evaluation"></a>Оценка DeployIfNotExists
 

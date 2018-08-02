@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/15/2018
 ms.author: daveba
-ms.openlocfilehash: 8851d2cad5958b01df1d21ea44e5c03bb788c83b
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 36df9d00d41f3c092320fa88772b41c9a41c6d8e
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904048"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237287"
 ---
 # <a name="configure-a-virtual-machine-scale-set-managed-service-identity-msi-using-azure-cli"></a>Настройка управляемого удостоверения службы (MSI) в масштабируемом наборе виртуальных машин Azure с помощью Azure CLI
 
@@ -32,16 +32,18 @@ ms.locfileid: "37904048"
 - добавлять и удалять назначенное пользователем удостоверение в масштабируемом наборе виртуальных машин Azure.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-
-Выполнить примеры сценариев для интерфейса командной строки можно тремя способами:
-
-- использовать [Azure Cloud Shell](../../cloud-shell/overview.md) с портала Azure (см. следующий раздел).
-- использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробуйте!", расположенной в правом верхнем углу каждого блока кода.
-- [установить последнюю версию интерфейса командной строки 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.13 или более позднюю версию), если вы предпочитаете использовать локальную консоль интерфейса командной строки. 
+- Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие роли.
+    - [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) для создания масштабируемого набора виртуальных машин, а также для включения и удаления назначаемого системой и (или) пользователем управляемого удостоверения из масштабируемого набора виртуальных машин.
+    - [Участник управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) для создания назначаемого пользователем удостоверения.
+    - [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator) для назначения и удаления назначаемого пользователем удостоверения в масштабируемый набор виртуальных машин и из него.
+- Выполнить примеры сценариев для интерфейса командной строки можно тремя способами:
+    - использовать [Azure Cloud Shell](../../cloud-shell/overview.md) с портала Azure (см. следующий раздел).
+    - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробуйте!", расположенной в правом верхнем углу каждого блока кода.
+    - [установить последнюю версию интерфейса командной строки 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.13 или более позднюю версию), если вы предпочитаете использовать локальную консоль интерфейса командной строки. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -89,20 +91,26 @@ ms.locfileid: "37904048"
 
 ### <a name="disable-system-assigned-identity-from-an-azure-virtual-machine-scale-set"></a>Отключение назначенного системой удостоверения в масштабируемом наборе виртуальных машин Azure
 
-> [!NOTE]
-> Отключение управляемого удостоверения службы в масштабируемом наборе виртуальных машин сейчас не поддерживается. А пока вы можете переключаться между назначенным системой и пользовательским удостоверениями. Загляните сюда позже, чтобы проверить наличие новой информации.
-
-Если в масштабируемом наборе виртуальных машин больше не требуется назначенное системой удостоверение, но по-прежнему требуется удостоверение, назначенное пользователем, используйте следующую команду:
+Если в масштабируемом наборе виртуальных машин не требуется назначаемое системой удостоверение, но по-прежнему требуются назначаемые пользователем удостоверения, используйте следующую команду.
 
 ```azurecli-interactive
-az vmss update -n myVMSS -g myResourceGroup --set identity.type='UserAssigned' 
+az vmss update -n myVM -g myResourceGroup --set identity.type='UserAssigned' 
+```
+
+Если имеется виртуальная машина, для которой не требуется назначаемое системой удостоверение и на которой нет назначаемых пользователем удостоверений, используйте следующую команду.
+
+> [!NOTE]
+> В значении `none` учитывается регистр. Оно должно содержать строчные буквы. 
+
+```azurecli-interactive
+az vmss update -n myVM -g myResourceGroup --set identity.type="none"
 ```
 
 Чтобы удалить расширение MSI для виртуальной машины, используйте команду [az vmss identity remove](/cli/azure/vmss/identity/#az_vmss_remove_identity) для удаления назначенного системой удостоверения из масштабируемого набора виртуальных машин:
 
-   ```azurecli-interactive
-   az vmss extension delete -n ManagedIdentityExtensionForWindows -g myResourceGroup -vmss-name myVMSS
-   ```
+```azurecli-interactive
+az vmss extension delete -n ManagedIdentityExtensionForWindows -g myResourceGroup -vmss-name myVMSS
+```
 
 ## <a name="user-assigned-identity"></a>Удостоверение, назначенное пользователем
 
@@ -120,13 +128,12 @@ az vmss update -n myVMSS -g myResourceGroup --set identity.type='UserAssigned'
 
 2. Создайте назначенное пользователем удостоверение с помощью команды [az identity create](/cli/azure/identity#az-identity-create).  Параметр `-g` указывает группу ресурсов, в которой создается назначенное пользователем удостоверение, а параметр `-n` — его имя. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<USER ASSIGNED IDENTITY NAME>` собственными:
 
-[!INCLUDE[ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
+   [!INCLUDE[ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
-
-    ```azurecli-interactive
-    az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
-    ```
-Ответ содержит подробные сведения о созданном назначенном пользователем удостоверении, подобные приведенным ниже. Значение `id` ресурса, присвоенное назначенному пользователем удостоверению, используется в следующем шаге.
+   ```azurecli-interactive
+   az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
+   ```
+   Ответ содержит подробные сведения о созданном назначенном пользователем удостоверении, подобные приведенным ниже. Значение `id` ресурса, присвоенное назначенному пользователем удостоверению, используется в следующем шаге.
 
    ```json
    {
@@ -182,20 +189,27 @@ az vmss update -n myVMSS -g myResourceGroup --set identity.type='UserAssigned'
     az vmss identity assign -g <RESOURCE GROUP> -n <VMSS NAME> --identities <USER ASSIGNED IDENTITY ID>
     ```
 
-### <a name="remove-a-user-assigned-identity-from-an-azure-vmss"></a>Удаление назначенного пользователем удостоверения из масштабируемого набора виртуальных машин Azure
+### <a name="remove-a-user-assigned-identity-from-an-azure-virtual-machine-scale-set"></a>Удаление назначаемого пользователем удостоверения из масштабируемого набора виртуальных машин Azure
 
-> [!NOTE]
->  В настоящее время удалить все назначенные пользователем удостоверения из масштабируемого набора виртуальных машин можно только при наличии назначенного системой удостоверения. 
-
-Если у масштабируемого набора виртуальных машин несколько назначенных пользователем удостоверений, с помощью команды [az vmss identity remove](/cli/azure/vmss/identity#az-vmss-identity-remove) можно удалить все удостоверения, кроме последнего. Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VMSS NAME>` собственными. `<MSI NAME>` — это имя назначенного пользователем удостоверения, которое можно найти в разделе удостоверений виртуальной машины с помощью команды `az vm show`:
+Чтобы удалить назначаемое пользователем удостоверение из масштабируемого набора виртуальных машин, используйте команду [az vmss identity remove](/cli/azure/vmss/identity#az-vmss-identity-remove). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<VMSS NAME>` собственными. `<MSI NAME>` будет свойством `name` назначенного пользователем удостоверения, которое можно найти в разделе удостоверений виртуальной машины с помощью команды `az vmss identity show`:
 
 ```azurecli-interactive
 az vmss identity remove -g <RESOURCE GROUP> -n <VMSS NAME> --identities <MSI NAME>
 ```
-Если у масштабируемого набора виртуальных машин есть как назначенное системой, так и пользовательское удостоверения, вы можете удалить все пользовательские удостоверения, переключившись на использование только назначенного системой. Используйте следующую команду: 
+
+Если в масштабируемом наборе виртуальных машин нет назначаемого системой удостоверения и вы хотите удалить из него все назначаемые пользователем удостоверения, используйте следующую команду.
+
+> [!NOTE]
+> В значении `none` учитывается регистр. Оно должно содержать строчные буквы.
 
 ```azurecli-interactive
-az vmss update -n <VMSS NAME> -g <RESOURCE GROUP> --set identity.type='SystemAssigned' identity.identityIds=null
+az vmss update -n myVMSS -g myResourceGroup --set identity.type="none" identity.identityIds=null
+```
+
+Если в масштабируемом наборе виртуальных машин есть как назначаемое системой, так и назначаемые пользователем удостоверения, вы можете удалить все назначаемые пользователем удостоверения, переключившись на использование только назначаемого системой удостоверения. Используйте следующую команду:
+
+```azurecli-interactive
+az vmss update -n myVMSS -g myResourceGroup --set identity.type='SystemAssigned' identity.identityIds=null 
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 06/14/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 066d25e8953a2be4bd64cdd1af79b7f2a25dd5f9
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: f215136c5d07eca098d68d882d22f6c9dd14b0b9
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035302"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214682"
 ---
 # <a name="how-to-require-managed-devices-for-cloud-app-access-with-conditional-access"></a>Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа
 
@@ -30,7 +30,7 @@ Azure Active Directory (AAD) поддерживает единый вход дл
 В этой статье описано, как настроить политики условного доступа, которые позволяют разрешить доступ к определенным приложениям в своей среде только для управляемых устройств. 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ограничение доступа к облачному приложению с управляемых устройств объединяет возможности **условного доступа Azure AD** и **управления устройствами Azure AD**. Если вы не знакомы с одной из этих областей, ознакомьтесь со следующими статьями:
 

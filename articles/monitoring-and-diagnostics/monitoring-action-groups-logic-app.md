@@ -1,21 +1,21 @@
 ---
-title: Как активировать сложные действия с помощью оповещений и групп действий Azure Monitor
+title: Как активировать сложные действия с помощью оповещений Azure Monitor
 description: Сведения о том, как создать действие приложения логики для обработки оповещений Azure Monitor.
 author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 04/30/2018
+ms.date: 07/18/2018
 ms.author: dukek
 ms.component: alerts
-ms.openlocfilehash: 51d47b87f898aa65fe4ee76c312240a50d45231d
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 034e708b79bbdf15d7fa628f388402998f49c0d9
+ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39049193"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39161512"
 ---
-# <a name="create-a-logic-app-action"></a>Создание действия приложения логики
+# <a name="how-to-trigger-complex-actions-with-azure-monitor-alerts"></a>Как активировать сложные действия с помощью оповещений Azure Monitor
 
 Эта статья описывает, как настроить и активировать приложение логики, чтобы создать беседу в Microsoft Teams при срабатывании оповещения.
 
@@ -290,6 +290,9 @@ ms.locfileid: "39049193"
        !["Действие публикации для условия false оповещения метрики"](media/monitoring-action-groups/metric-alert-false-condition-post-action.png "Metric alert false condition post action")
 
 - Шаг 15 остается без изменений. Следуйте инструкциям, чтобы сохранить приложение логики и обновить группу действий.
+
+## <a name="calling-other-applications-besides-microsoft-teams"></a>Вызов других приложений помимо Microsoft Teams
+Служба Logic Apps имеет ряд различных соединителей, которые позволяют активировать действия в самых разных приложениях и базах данных. К таким приложениям, например, относятся Slack, SQL Server, Oracle, Salesforce. Дополнительные сведения о соединителях Azure Logic Apps см. в [этой статье](../connectors/apis-list.md).  
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Изучите [обзор оповещений журнала действий Azure](monitoring-overview-alerts.md) и узнайте, как получать оповещения.  

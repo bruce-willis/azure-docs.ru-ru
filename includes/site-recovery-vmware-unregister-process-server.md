@@ -19,4 +19,4 @@
     ```
     perl Unregister-ASRComponent.pl -IPAddress <IP_of_Process_Server> -Component PS
     ```
-4. Она очистит сведения о сервере обработки из системы.
+4. При успешном удалении сервера обработки выводится такое сообщение: **Successfully unregistered <server-name> (server-IP-address)** (<имя_сервера> (IP-адрес сервера) успешно удален).

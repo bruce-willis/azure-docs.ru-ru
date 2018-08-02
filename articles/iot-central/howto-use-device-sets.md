@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpfr
-ms.openlocfilehash: ef1fa64a276926a35dbf98646317bfe29200bb22
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: d0b802842d60d68bab36e87913a84c5e40b8e431
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261684"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39206077"
 ---
 # <a name="use-device-sets-in-your-azure-iot-central-application"></a>Использование наборов устройств в приложении Azure IoT Central
 
@@ -112,13 +112,13 @@ ms.locfileid: "35261684"
     ![Сохранение карт панели мониторинга](media/howto-use-device-sets/LocationMaps3.png)
 
 
-5. Теперь, просматривая панели мониторинга наборов устройств, оператор видит все настроенные плитки, в том числе карту расположений. Таким образом, визуализированы сразу расположения всех устройств.
+5. Теперь, просматривая панели мониторинга наборов устройств, оператор видит все настроенные плитки, в том числе карту расположений. Таким образом, визуализированы сразу расположения всех устройств. 
 
     ![Представление оператора карт панели мониторинга](media/howto-use-device-sets/LocationMaps4.png)
 
     Вы сможете изменить размер карты до нужного.
 
-
+    Если щелкнуть маркер на карте, появятся сведения об устройстве, его имя и расположение. Чтобы перейти на страницу свойств устройства, щелкните всплывающий элемент.  
 
 
 ## <a name="configure-the-list-for-your-device-set"></a>Настройка списка для набора устройств

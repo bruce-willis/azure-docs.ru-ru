@@ -14,16 +14,22 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: 00abb5aafc6f3aec2e2dd7326a307bee74d97cc1
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 3331c795cbb1c45820d4c86d287ef57b54f0ae6b
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32149361"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247649"
 ---
 # <a name="advisor-performance-recommendations"></a>Рекомендации Azure Advisor по производительности
 
 Рекомендации по производительности, предложенные Помощником по Azure, помогают улучшить работу, повысить производительность и увеличить скорость реагирования критически важных бизнес-приложений. Получить рекомендации Помощника по производительности можно на вкладке **Производительность** панели мониторинга Помощника.
+
+## <a name="reduce-dns-time-to-live-on-your-traffic-manager-profile-to-fail-over-to-healthy-endpoints-faster"></a>Сокращение срока жизни DNS в профиле диспетчера трафика Microsoft Azure, чтобы ускорить отработку отказа на работоспособные конечные точки
+
+[Параметры срока жизни (TTL)](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-performance-considerations) в профиле диспетчера трафика позволяют указать, как быстро выполнить переключение на конечные точки, если нужные конечные точки прекращают отвечать на запросы. Сокращение срока жизни означает, что клиенты быстрее будут перенаправлены на работоспособные конечные точки.
+
+Помощник по Azure определяет профили диспетчера трафика с параметрами большего срока жизни и рекомендует настроить срок жизни на уровне 20 секунд или 60 секунд — в зависимости от того, настроена ли в профиле [Быстрая отработка отказа](https://azure.microsoft.com/roadmap/fast-failover-and-tcp-probing-in-azure-traffic-manager/).
 
 ## <a name="improve-database-performance-with-sql-db-advisor"></a>Повышение производительности базы данных с помощью Помощника по базам данных SQL
 

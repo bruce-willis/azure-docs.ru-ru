@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/14/2018
+ms.date: 07/23/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: e955973008f1ba3900deb691426d0409440ad08a
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: be76965e99a20c1f7164187255e26f6463926c2f
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917733"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214733"
 ---
 # <a name="azure-active-directory-pass-through-authentication-upgrade-preview-authentication-agents"></a>Сквозная проверка подлинности в Azure Active Directory. Обновление предварительной версии агентов проверки подлинности
 
@@ -51,7 +51,7 @@ ms.locfileid: "37917733"
 
 1. Выберите на локальном сервере пункты **Панель управления -> Программы -> Программы и компоненты**.
 2. Если здесь вы найдете запись **Microsoft Azure AD Connect Authentication Agent** (Агент проверки подлинности Microsoft Azure AD Connect), никаких дополнительных действий на этом сервере выполнять не требуется.
-3. Если здесь есть запись **Microsoft Azure AD Application Proxy Connector** (Соединитель прокси приложения Microsoft Azure AD) с номером версии 1.5.132.0 или еще меньшим, на этом сервере следует выполнить обновление вручную.
+3. Если имеется запись **Microsoft Azure AD Application Proxy Connector** (Соединитель прокси приложения Microsoft Azure AD), на этом сервере следует выполнить обновление вручную.
 
 ![Предварительная версия агента проверки подлинности](./media/active-directory-aadconnect-pass-through-authentication/pta6.png)
 
@@ -60,7 +60,7 @@ ms.locfileid: "37917733"
 Перед обновлением подготовьте следующие важные ресурсы.
 
 1. **Создайте учетную запись глобального администратора только для облака.** Не следует выполнять обновление без учетной запись глобального администратора только для облака. Она пригодится вам в экстренной ситуации, если агенты сквозной проверки подлинности будут работать неправильно. См. дополнительные сведения о [добавлении облачной учетной записи глобального администратора](../active-directory-users-create-azure-portal.md). Этот шаг очень важен для того, чтобы не потерять доступ к клиенту.
-2.  **Обеспечьте высокий уровень доступности.** Если вы не делали этого раньше, [установите второй изолированный агент проверки подлинности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability), чтобы обеспечить высокий уровень доступности для запросов на вход.
+2.  **Обеспечьте высокий уровень доступности.** Если вы не делали этого раньше, [установите второй изолированный агент проверки подлинности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability), чтобы обеспечить высокий уровень доступности для запросов на вход.
 
 ## <a name="upgrading-the-authentication-agent-on-your-azure-ad-connect-server"></a>Обновление агента проверки подлинности на сервере Azure AD Connect
 

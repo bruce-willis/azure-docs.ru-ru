@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 07/06/2018
+ms.date: 07/19/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: dc316df754ea0b8630abe341dc5ce6b0adffa685
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: e8d30ae6cde7c787f1aa950506e0eb74bac0c12d
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920041"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238814"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -72,7 +72,7 @@ Site Recovery реплицирует данные из локальной сре
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>Почему я не могу выполнить репликацию через VPN?
 
-При репликации в Azure трафик репликации достигает общедоступных конечных точек учетной записи хранения Azure. Таким образом репликацию можно выполнять только через общедоступный Интернет с помощью ExpressRoute (общедоступный пиринг), а VPN не будет работать. 
+При репликации в Azure трафик репликации достигает общедоступных конечных точек учетной записи хранения Azure. Таким образом, репликацию можно выполнять только через общедоступный Интернет с помощью ExpressRoute (общедоступный пиринг), а VPN не будет работать. 
 
 
 
@@ -95,8 +95,12 @@ Site Recovery реплицирует данные из локальной сре
 ### <a name="can-i-replicate-vms-with-dynamic-disks"></a>Можно ли реплицировать виртуальные машины с динамическими дисками?
 Динамические диски могут быть реплицированы. Диск операционной системы должен представлять собой базовый диск.
 
-### <a name="can-i-add-a-new-vm-to-an-existing-replication-group"></a>Можно ли добавить новую виртуальную машину в имеющуюся группу репликации?
-Да.
+### <a name="if-i-use-replication-groups-for-multi-vm-consistency-can-i-add-a-new-vm-to-an-existing-replication-group"></a>Если я использую группы репликации для согласованности нескольких виртуальных машин, могу ли я добавить новую виртуальную машину в имеющуюся группу репликации?
+Да, вы можете добавить новые виртуальные машины в имеющуюся группу репликации при включении для них репликации. Вы не можете добавить виртуальную машину в имеющуюся группу репликации после запуска репликации, и вы не можете создать группу репликации для имеющихся виртуальных машин.
+
+### <a name="can-i-modify-vms-that-are-replicating-by-adding-or-resizing-disks"></a>Можно ли изменить виртуальные машины, которые реплицируются, путем добавления дисков или изменения их размера?
+
+Для репликации VMware в Azure можно изменить размер диска. Если вы хотите добавить новые диски, вам необходимо добавить диск и повторно включить защиту для виртуальной машины.
 
 ## <a name="configuration-server"></a>Сервер конфигурации
 

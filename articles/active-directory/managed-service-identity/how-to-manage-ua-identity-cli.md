@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: daveba
-ms.openlocfilehash: 23567c985f4f9df46ee7d80051c15dc5910a1ea8
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 5deaace49bfff994defc06a5f60597add6affc0b
+ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37904068"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39188154"
 ---
 # <a name="create-list-or-delete-a-user-assigned-identity-using-the-azure-cli"></a>Создание, получение списка и удаление пользовательских удостоверений с помощью Azure CLI.
 
@@ -29,13 +29,14 @@ ms.locfileid: "37904068"
 
 В этой статье вы узнаете, как создавать, получать список и удалять пользовательские удостоверения с помощью Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если вы не работали с компонентом "Управляемое удостоверение службы", изучите [общие сведения](overview.md). **Обратите внимание на [различие между назначенным системой и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
-
+- Для выполнения операций управления, описанных в этой статье, учетной записи требуются следующие роли.
+    - [Участник управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor) для создания, чтения (вывода списка) и удаления назначаемого пользователем удостоверения.
+    - [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator) для чтения (вывода списка) свойств назначаемого пользователем удостоверения.
 - Выполнить примеры сценариев для интерфейса командной строки можно тремя способами:
-
     - использовать [Azure Cloud Shell](../../cloud-shell/overview.md) с портала Azure (см. следующий раздел).
     - использовать внедренный компонент Azure Cloud Shell с помощью кнопки "Попробуйте!", расположенной в правом верхнем углу каждого блока кода.
     - [установить последнюю версию интерфейса командной строки 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) (2.0.13 или более позднюю версию), если вы предпочитаете использовать локальную консоль интерфейса командной строки. Войдите в Azure с помощью `az login`, используйте учетную запись, которая связана с подпиской Azure, с помощью которой нужно развернуть пользовательское удостоверение.
@@ -53,7 +54,7 @@ az identity create -g <RESOURCE GROUP> -n <USER ASSIGNED IDENTITY NAME>
 ```
 ## <a name="list-user-assigned-identities"></a>Получение списка пользовательских удостоверений
 
-Для получения списка пользовательских удостоверений используйте команду [az identity list](/cli/azure/identity#az-identity-list).  Параметр `-g` указывает группу ресурсов, в которой было создано пользовательское удостоверение.  Замените `<RESOURCE GROUP>` собственным значением:
+Для получения списка пользовательских удостоверений используйте команду [az identity list](/cli/azure/identity#az-identity-list). Замените `<RESOURCE GROUP>` собственным значением.
 
 ```azurecli-interactive
 az identity list -g <RESOURCE GROUP>
@@ -64,7 +65,7 @@ az identity list -g <RESOURCE GROUP>
 
 ## <a name="delete-a-user-assigned-identity"></a>Удаление пользовательского удостоверения
 
-Для удаления пользовательского удостоверения используйте команду [az identity delete](/cli/azure/identity#az-identity-delete).  Параметр -n указывает имя, а параметр -g — группу ресурсов, в которой было создано пользовательское удостоверение.  Замените значения параметров `<USER ASSIGNED IDENTITY NAME>` и `<RESOURCE GROUP>` собственными:
+Для удаления пользовательского удостоверения используйте команду [az identity delete](/cli/azure/identity#az-identity-delete).  Параметр -n указывает имя, а параметр -g — группу ресурсов, в которой было создано пользовательское удостоверение. Замените значения параметров `<USER ASSIGNED IDENTITY NAME>` и `<RESOURCE GROUP>` собственными:
 
  ```azurecli-interactive
 az identity delete -n <USER ASSIGNED IDENTITY NAME> -g <RESOURCE GROUP>

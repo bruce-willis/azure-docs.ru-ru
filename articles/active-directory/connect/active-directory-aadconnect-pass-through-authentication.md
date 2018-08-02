@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/29/2017
+ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 2d88bf5d20beb9de9bf4a0cdcb43548d0d582779
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: dfee42f813989da2333720ac92313344343d57a7
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917284"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214035"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -30,7 +30,7 @@ ms.locfileid: "37917284"
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Сквозная проверка подлинности является альтернативой [синхронизации хэшей паролей Azure AD](active-directory-aadconnectsync-implement-password-hash-synchronization.md), которая также обеспечивает преимущество облачной проверки подлинности в организации. Однако политики безопасности и соответствия требованиям в некоторых организациях не позволяют отправлять пароли пользователей за пределы внутренней сети даже в хэшированной форме. Сквозная проверка подлинности является подходящим решением для таких организаций.
+Сквозная аутентификация является альтернативой [синхронизации хэшей паролей Azure AD](active-directory-aadconnectsync-implement-password-hash-synchronization.md), которая также обеспечивает преимущество облачной аутентификации в организации. Тем не менее некоторые организации, желающие применить локальные политики безопасности и политики паролей Active Directory, могут вместо этого использовать сквозную аутентификацию. [В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ![Сквозная аутентификация Azure AD](./media/active-directory-aadconnect-pass-through-authentication/pta1.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "37917284"
 - *Безопасность*
   - Локальные пароли ни в каком виде не хранятся в облаке.
   - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
-  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая Многофакторную идентификацию (MFA), и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
+  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../active-directory-conditional-access-conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
 - *Высокая доступность*
   - Дополнительные агенты можно установить на нескольких локальных серверах, чтобы достичь высокого уровня доступности запросов на вход.
 
@@ -68,12 +68,13 @@ ms.locfileid: "37917284"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [**Краткое руководство по сквозной проверке подлинности Azure Active Directory**](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной проверки подлинности Azure Active Directory.
-- [**Интеллектуальная блокировка**](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
-- [**Текущие ограничения**](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
-- [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](active-directory-aadconnect-pass-through-authentication-how-it-works.md). Сведения о том, как работает эта функция.
-- [**Часто задаваемые вопросы**](active-directory-aadconnect-pass-through-authentication-faq.md). Ответы на часто задаваемые вопросы.
-- [**Устранение неполадок**](active-directory-aadconnect-troubleshoot-pass-through-authentication.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
-- [**Руководство по безопасности**](active-directory-aadconnect-pass-through-authentication-security-deep-dive.md). Дополнительные технические сведения об этом компоненте.
-- [**Простой единый вход Azure Active Directory**](active-directory-aadconnect-sso.md). Дополнительные сведения об этой дополнительной функции.
-- [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.
+- [Краткое руководство](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure AD.
+- [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
+- [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройка возможности интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
+- [Текущие ограничения](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
+- [Подробное техническое руководство.](active-directory-aadconnect-pass-through-authentication-how-it-works.md) Сведения о том, как работает эта функция.
+- [Часто задаваемые вопросы.](active-directory-aadconnect-pass-through-authentication-faq.md) Ответы на часто задаваемые вопросы.
+- [Устранение неполадок.](active-directory-aadconnect-troubleshoot-pass-through-authentication.md) Узнайте, как устранить самые распространенные проблемы с этой функцией.
+- [Подробный обзор безопасности](active-directory-aadconnect-pass-through-authentication-security-deep-dive.md). Дополнительные технические сведения об этом компоненте.
+- [Простой единый вход Azure AD](active-directory-aadconnect-sso.md). Сведения об этой дополнительной функции.
+- [UserVoice.](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect) Отправка запросов на новые функции.

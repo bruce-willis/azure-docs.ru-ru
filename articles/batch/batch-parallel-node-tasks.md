@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 05/22/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5106bbbb073908af7e7e8f045fa6fb60e8a306f4
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: c52c9fc6b47b03b3ca6db96decb8b4777577d00e
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30316918"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39174245"
 ---
 # <a name="run-tasks-concurrently-to-maximize-usage-of-batch-compute-nodes"></a>Параллельное выполнение задач для эффективного использования вычислительных узлов пакетной службы 
 
@@ -56,15 +56,15 @@ ms.locfileid: "30316918"
 Чтобы понять важность этой функции, давайте рассмотрим пул из предыдущего примера. Он состоит из узлов размера [Standard_Standard\_D14](../cloud-services/cloud-services-sizes-specs.md), для которых параметр [CloudPool.MaxTasksPerComputeNode][maxtasks_net] имеет значение 16. Если в свойстве [CloudPool.TaskSchedulingPolicy][task_schedule] для параметра [ComputeNodeFillType][fill_type] будет указано значение *Pack*, то на каждом узле все 16 ядер будут задействованы по максимуму. При этом [автомасштабируемый пул](batch-automatic-scaling.md) будет исключать неиспользуемые узлы (для которых не назначены задачи). Это снизит использование ресурсов и расходы на них.
 
 ## <a name="batch-net-example"></a>Пример использования компонента .NET пакетной службы
-Этот фрагмент кода API [.NET пакетной службы][api_net] содержит запрос на создание пула с четырьмя большими узлами и максимальным количеством задач на каждый узел, равным четырем. Он задает политику планирования задач, при которой каждому узлу назначается максимальное количество задач перед переходом к следующему узлу пула. Дополнительные сведения о добавлении пулов с использованием API .NET пакетной службы см. в описании метода [BatchClient.PoolOperations.CreatePool][poolcreate_net].
+Этот фрагмент кода API [.NET пакетной службы][api_net] отображает запрос на создание пула с четырьмя узлами и максимальным количеством задач на каждый узел, равным четырем. Он задает политику планирования задач, при которой каждому узлу назначается максимальное количество задач перед переходом к следующему узлу пула. Дополнительные сведения о добавлении пулов с использованием API .NET пакетной службы см. в описании метода [BatchClient.PoolOperations.CreatePool][poolcreate_net].
 
 ```csharp
 CloudPool pool =
     batchClient.PoolOperations.CreatePool(
         poolId: "mypool",
         targetDedicatedComputeNodes: 4
-        virtualMachineSize: "large",
-        cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "4"));
+        virtualMachineSize: "standard_d1_v2",
+        cloudServiceConfiguration: new CloudServiceConfiguration(osFamily: "5"));
 
 pool.MaxTasksPerComputeNode = 4;
 pool.TaskSchedulingPolicy = new TaskSchedulingPolicy(ComputeNodeFillType.Pack);
@@ -125,13 +125,13 @@ Duration: 00:08:48.2423500
 >
 
 ## <a name="next-steps"></a>Дополнительная информация
-### <a name="batchlabs-heat-map"></a>Тепловая карта BatchLabs
-[BatchLabs][batch_labs] — это бесплатное автономное клиентское средство с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Средство BatchLabs содержит компонент *Тепловая карта*, который предоставляет визуализацию выполнения задач. Используйте этот компонент при выполнении примера приложения [ParallelTasks][parallel_tasks_sample], чтобы наглядно представить параллельное выполнение задач на каждом узле.
+### <a name="batch-explorer-heat-map"></a>Тепловая карта обозревателя пакетной службы
+[Batch Explorer][batch_labs] — это бесплатный автономный клиентский инструмент с множеством функций для создания, отладки и мониторинга приложений пакетной службы Azure. Batch Explorer содержит компонент *тепловой карты*, который предоставляет визуализацию выполнения задач. Используйте этот компонент при выполнении примера приложения [ParallelTasks][parallel_tasks_sample], чтобы наглядно представить параллельное выполнение задач на каждом узле.
 
 
 [api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
-[batch_labs]: https://azure.github.io/BatchLabs/
+[batch_labs]: https://azure.github.io/BatchExplorer/
 [cloudpool]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.aspx
 [enable_autoscaling]: https://msdn.microsoft.com/library/azure/dn820173.aspx
 [fill_type]: https://msdn.microsoft.com/library/microsoft.azure.batch.common.computenodefilltype.aspx

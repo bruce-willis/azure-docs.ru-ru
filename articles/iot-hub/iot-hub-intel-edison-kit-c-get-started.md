@@ -10,18 +10,18 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 4/11/2018
 ms.author: rangv
-ms.openlocfilehash: 2efea8054320323df0e0eb603a20a5773d03cad8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 0138b44141bb64671ed2feb522c4b7fa14cab696
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38676628"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213322"
 ---
 # <a name="connect-intel-edison-to-azure-iot-hub-c"></a>Подключение Intel Edison к Центру Интернета вещей Azure (C)
 
 [!INCLUDE [iot-hub-get-started-device-selector](../../includes/iot-hub-get-started-device-selector.md)]
 
-В этом руководстве вы начнете с того, что узнаете основы работы с Intel Edison. Также вы узнаете, как можно легко подключать устройства к облаку с помощью [Центра Интернета вещей Azure](iot-hub-what-is-iot-hub.md).
+В этом руководстве вы начнете с того, что узнаете основы работы с Intel Edison. Также вы узнаете, как можно легко подключать устройства к облаку с помощью [Центра Интернета вещей Azure](about-iot-hub.md).
 
 Нет начального набора? Начните [здесь](https://azure.microsoft.com/develop/iot/starter-kits)
 

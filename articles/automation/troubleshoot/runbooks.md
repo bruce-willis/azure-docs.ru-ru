@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 286a777e16dea72e38b316e86ba57e1811888eec
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: ea134cde8b174d020a0adf73256aec3a6c406eaa
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39044872"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237603"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -79,7 +79,7 @@ The subscription named <subscription name> cannot be found.
 
 #### <a name="issue"></a>Проблема
 
-Проверка подлинности Azure с использованием своего имени и пароля завершается ошибкой.
+При аутентификации в Azure с помощью своего имени и пароля вы получаете следующую ошибку:
 
 ```
 Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is required

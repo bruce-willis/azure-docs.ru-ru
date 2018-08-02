@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: raynew
-ms.openlocfilehash: efd8a8290525c27cddaa713a1b24b6afc187bb09
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 2cc030bf9724e98c1ef0a43134c5066c81b38b6b
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37922692"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213094"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
@@ -39,7 +39,7 @@ Azure Site Recovery можно использовать не только для
 --- | ---
 **Миграция из локальной среды в Azure** | Вы можете переносить в Azure локальные виртуальные машины VMware и Hyper-V, а также физические серверы. Для этого вам нужно выполнить практически те же действия, что и при полном аварийном восстановлении. Вы просто не выполняете отработку отказа для виртуальных машин из Azure на локальный сайт.
 **Миграция между регионами Azure** | Вы можете перенести виртуальные машины Azure из одного региона Azure в другой. После завершения миграции можно настроить аварийное восстановление для виртуальных машин Azure в дополнительном регионе, в который был выполнен перенос.
-**Перенос виртуальных машин Amazon Web Services (AWS) в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Служба Site Recovery обрабатывает экземпляры AWS так же, как и физические серверы для переноса. 
+**Перенос виртуальных машин Amazon Web Services (AWS) в Azure** | Экземпляры AWS можно перенести на виртуальные машины Azure. Для переноса служба Site Recovery обрабатывает экземпляры AWS как физические серверы. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

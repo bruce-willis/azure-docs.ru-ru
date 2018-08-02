@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/23/2017
+ms.date: 07/23/2018
 ms.author: alkohli
-ms.openlocfilehash: 3c00867a29cf8343a57e74e2aabe3971ae6837af
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: a2b764e76cd1987c83e7be38d365c1dfa8513db9
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23108462"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39214794"
 ---
 # <a name="deactivate-and-delete-a-storsimple-device"></a>Отключение и удаление устройства StorSimple
 
@@ -110,7 +110,7 @@ ms.locfileid: "23108462"
 
 * Облачное устройство StorSimple удаляется из службы.
 * Виртуальная машина для облачного устройства StorSimple удаляется.
-* Диск ОС и диски данных, созданные для облачного устройства StorSimple, будут удалены.
+* Диск ОС и диски данных, созданные для облачного устройства StorSimple, будут сохранены. Если вы их не используете их, удалите их вручную.
 * Размещенная служба и виртуальная сеть, созданные во время подготовки к работе, будут сохранены. Если вы их не используете их, удалите их вручную.
 * Облачные моментальные снимки, созданные облачным устройством StorSimple, будут сохранены.
 

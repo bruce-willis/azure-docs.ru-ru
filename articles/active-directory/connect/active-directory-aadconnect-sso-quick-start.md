@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/23/2017
+ms.date: 07/25/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f8639cbb5c7ba86b4786f3d0b913d64bad59ad66
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: df936c697f500f5ab98becd1529cd321f9f3f5c4
+ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37917522"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39259125"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 
@@ -41,9 +41,15 @@ ms.locfileid: "37917522"
     >[!NOTE]
     >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ собираетесь использовать синхронизацию хэшей паролей в сочетании со сквозной аутентификацией, прочитайте [заметки о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history#116470).
 
+* **Использование поддерживаемой топологии Azure AD Connect**. Убедитесь, что вы используете одну из поддерживаемых топологий Azure AD Connect, описанных [здесь](active-directory-aadconnect-topologies.md).
+
 * **Настройка учетных данных администратора домена**. Необходимы учетные данные администратора домена для каждого леса Active Directory, который:
     * синхронизируется с Azure AD через Azure AD Connect;
     * содержит пользователей, для которых нужно включить простой единый вход.
+    
+* **Включение современной аутентификации**. Для работы этой функции необходимо включить [современную аутентификацию](https://aka.ms/modernauthga) на клиенте.
+
+* **Использование последних версий клиентов Office 365**. Чтобы использовать автоматический вход для клиентов Office 365 (Outlook, Word, Excel и пр.), требуется версии 16.0.8730.xxxx или выше.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -77,21 +83,27 @@ ms.locfileid: "37917522"
 
 ## <a name="step-3-roll-out-the-feature"></a>Шаг 3. Развертывание компонента
 
-Чтобы развернуть компонент для пользователей, необходимо добавить приведенный ниже URL-адрес Azure AD в параметры зоны интрасети с помощью групповой политики Active Directory.
+Вы можете постепенно развертывать простой единый вход для пользователей с помощью инструкций, приведенных ниже. Сначала нужно добавить приведенный ниже URL-адрес Azure AD в параметры зоны интрасети всех или выбранных пользователей с помощью групповой политики Active Directory.
 
 - https://autologon.microsoftazuread-sso.com
-
 
 Кроме того, необходимо включить параметр политики зоны интрасети (с помощью групповой политики), который называется **Разрешить обновление строки состояния в сценарии**. 
 
 >[!NOTE]
-> Следующие инструкции подходят только для Internet Explorer и Google Chrome для Windows (при условии, что этот браузер использует тот же набор URL-адресов доверенных сайтов, что и Internet Explorer). В следующем разделе приведены инструкции по настройке Mozilla Firefox и Google Chrome для Mac.
+> Следующие инструкции подходят только для Internet Explorer и Google Chrome для Windows (при условии, что этот браузер использует тот же набор URL-адресов доверенных сайтов, что и Internet Explorer). В следующем разделе приведены инструкции по настройке Mozilla Firefox и Google Chrome для macOS.
 
 ### <a name="why-do-you-need-to-modify-users-intranet-zone-settings"></a>Зачем нужно изменять параметры зоны интрасети пользователей?
 
 По умолчанию браузер автоматически вычисляет соответствующую зону (Интернета или интрасети) по конкретному URL-адресу. Например, http://contoso/ сопоставляется с зоной интрасети, а http://intranet.contoso.com/ — с зоной Интернета (так как этот URL-адрес содержит точку). Браузеры не будут отправлять билеты Kerberos в облачную конечную точку (как URL-адрес Azure AD), если только ее URL-адрес не добавлен явным образом в зону интрасети в браузере.
 
-### <a name="detailed-steps"></a>Подробные инструкции
+Существуют два способа изменения параметров зоны интрасети пользователей.
+
+| Параметр | Решение администратора | Возможности для пользователя |
+| --- | --- | --- |
+| Групповая политика | Администратор блокирует изменение параметров зоны интрасети. | Пользователи не могут изменить свои параметры. |
+| Предпочтение групповой политики |  Администратор разрешает изменение параметров зоны интрасети. | Пользователи могут изменить свои параметры. |
+
+### <a name="group-policy-option---detailed-steps"></a>Параметр "Групповая политика:" подробные инструкции
 
 1. Откройте редактор "Управление групповыми политиками".
 2. Измените групповую политику, которая применяется к некоторым или всем пользователям. В этом примере используется **политика домена по умолчанию**.
@@ -123,6 +135,32 @@ ms.locfileid: "37917522"
 
     ![Единый вход](./media/active-directory-aadconnect-sso/sso12.png)
 
+### <a name="group-policy-preference-option---detailed-steps"></a>Параметр "Предпочтение групповой политики:" подробные инструкции
+
+1. Откройте редактор "Управление групповыми политиками".
+2. Измените групповую политику, которая применяется к некоторым или всем пользователям. В этом примере используется **политика домена по умолчанию**.
+3. Выберите **Конфигурация пользователя** > **Параметры** > **Параметры Windows** > **Реестр** > **Создать** > **Элемент реестра**.
+
+    ![Единый вход](./media/active-directory-aadconnect-sso/sso15.png)
+
+4. Введите в соответствующие поля приведенные ниже значения и нажмите кнопку **ОК**.
+   - **Путь раздела**: ***Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\microsoftazuread-sso.com\autologon***.
+   - **Имя значения**: ***https***.
+   - **Тип значения**: ***REG_DWORD***.
+   - **Данные значения**: ***00000001***.
+ 
+    ![Единый вход](./media/active-directory-aadconnect-sso/sso16.png)
+ 
+    ![Единый вход](./media/active-directory-aadconnect-sso/sso17.png)
+
+6. Выберите **Конфигурация пользователя** > **Административные шаблоны** > **Компоненты Windows** > **Internet Explorer** > **Панель управления браузером** > **Вкладка "Безопасность"** > **Зона интрасети**. Выберите **Разрешить обновление строки состояния в сценарии**.
+
+    ![Единый вход](./media/active-directory-aadconnect-sso/sso11.png)
+
+7. Включите параметр политики и нажмите кнопку **ОК**.
+
+    ![Единый вход](./media/active-directory-aadconnect-sso/sso12.png)
+
 ### <a name="browser-considerations"></a>Рекомендации для браузера
 
 #### <a name="mozilla-firefox-all-platforms"></a>Mozilla Firefox (все платформы)
@@ -134,15 +172,15 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 4. Введите https://autologon.microsoftazuread-sso.com в поле.
 5. Нажмите кнопку **ОК** и вновь откройте браузер.
 
-#### <a name="safari-mac-os"></a>Safari (Mac OS)
+#### <a name="safari-macos"></a>Safari (macOS)
 
-Убедитесь, что компьютер под управлением Mac OS присоединен к Active Directory. Инструкции по присоединению к Active Directory см. в документе [Best Practices for Integrating OS X with Active Directory](http://www.isaca.org/Groups/Professional-English/identity-management/GroupDocuments/Integrating-OS-X-with-Active-Directory.pdf) (Рекомендации по интеграции OS X с Active Directory).
+Убедитесь, что компьютер под управлением macOS присоединен к Active Directory. Инструкции по присоединению к Active Directory см. в документе [Best Practices for Integrating OS X with Active Directory](http://www.isaca.org/Groups/Professional-English/identity-management/GroupDocuments/Integrating-OS-X-with-Active-Directory.pdf) (Рекомендации по интеграции OS X с Active Directory).
 
 #### <a name="google-chrome-all-platforms"></a>Google Chrome (все платформы)
 
 Если вы переопределили параметры политики [AuthNegotiateDelegateWhitelist](https://www.chromium.org/administrators/policy-list-3#AuthNegotiateDelegateWhitelist) или [AuthServerWhitelist](https://www.chromium.org/administrators/policy-list-3#AuthServerWhitelist) в своей среде, обязательно добавьте к ним URL-адрес Azure AD (https://autologon.microsoftazuread-sso.com).
 
-#### <a name="google-chrome-mac-os-only"></a>Google Chrome (только Mac OS)
+#### <a name="google-chrome-macos-only"></a>Google Chrome (только macOS)
 
 Процедура добавления в список разрешений URL-адреса Azure AD для интегрированной аутентификации для Google Chrome на Mac OS и платформах, отличных от Windows, приведена в [этом списке политик проекта Chromium Project](https://dev.chromium.org/administrators/policy-list-3#AuthServerWhitelist).
 
@@ -169,7 +207,12 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 
 ## <a name="step-5-roll-over-keys"></a>Шаг 5. Смена ключей
 
-На шаге 2 Azure AD Connect создает учетные записи компьютеров (представляющие Azure AD) во всех лесах Active Directory, для которых включен простой единый вход. Чтобы узнать больше, изучите [Подробное техническое руководство по простому единому входу Azure Active Directory](active-directory-aadconnect-sso-how-it-works.md). Для повышения безопасности рекомендуется периодически менять ключи расшифровки Kerberos для этих учетных записей компьютеров. Инструкции по смене ключей приведены в разделе [Часто задаваемые вопросы о простом едином входе Azure Active Directory](active-directory-aadconnect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account).
+На шаге 2 Azure AD Connect создает учетные записи компьютеров (представляющие Azure AD) во всех лесах Active Directory, для которых включен простой единый вход. Чтобы узнать больше, изучите [Подробное техническое руководство по простому единому входу Azure Active Directory](active-directory-aadconnect-sso-how-it-works.md).
+
+>[!IMPORTANT]
+>В случае утечки ключ расшифровки Kerberos в учетной записи компьютера можно использовать для создания билетов Kerberos для любого пользователя в его лесу AD. Злоумышленники могут олицетворять операции входа Azure AD для скомпрометированных пользователей. Мы настоятельно рекомендуем, чтобы вы периодически меняли ключ расшифровки Kerberos (хотя бы раз в 30 дней).
+
+Инструкции по смене ключей приведены в разделе [Часто задаваемые вопросы о простом едином входе Azure Active Directory](active-directory-aadconnect-sso-faq.md#how-can-i-roll-over-the-kerberos-decryption-key-of-the-azureadssoacc-computer-account). Мы работаем над возможностью автоматического развертывания ключей.
 
 >[!IMPORTANT]
 >Этот шаг не требуется выполнять _немедленно_ после включения функции. Меняйте ключи расшифровки Kerberos по крайней мере каждые 30 дней.

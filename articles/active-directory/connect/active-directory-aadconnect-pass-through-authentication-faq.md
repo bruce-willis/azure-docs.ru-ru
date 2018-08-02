@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/04/2018
+ms.date: 07/23/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6d5cd79a6336b2e5c4b3c5c6f5765d92cd602552
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 8b5f62daf2b43453aadb0373171bc98f96494688
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39048974"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215073"
 ---
 # <a name="azure-active-directory-pass-through-authentication-frequently-asked-questions"></a>Сквозная проверка подлинности Azure Active: ответы на часто задаваемые вопросы
 
@@ -28,7 +28,7 @@ ms.locfileid: "39048974"
 
 ## <a name="which-of-the-methods-to-sign-in-to-azure-ad-pass-through-authentication-password-hash-synchronization-and-active-directory-federation-services-ad-fs-should-i-choose"></a>Какой из методов входа в Azure AD следует выбрать: сквозную аутентификацию, синхронизацию хэша паролей или службы федерации Active Directory (AD FS)?
 
-Это зависит от вашей локальной среды и требований организации. Ознакомьтесь со статьей [Параметры входа в Azure AD Connect](active-directory-aadconnect-user-signin.md), в которой проводится сравнение различных методов входа Azure AD.
+[В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ## <a name="is-pass-through-authentication-a-free-feature"></a>Функция сквозной проверки подлинности является бесплатной?
 
@@ -48,7 +48,7 @@ ms.locfileid: "39048974"
 
 ## <a name="does-password-hash-synchronization-act-as-a-fallback-to-pass-through-authentication"></a>Действует ли синхронизация хэша паролей как переход на резервный ресурс при сквозной аутентификации?
 
-Нет. Нет, сквозная аутентификация _не_ выполняет автоматический переход на синхронизацию хэшей паролей. Она является резервным действием для [сценариев, не поддерживаемых сквозной проверкой подлинности](active-directory-aadconnect-pass-through-authentication-current-limitations.md#unsupported-scenarios). Чтобы избежать ошибок входа пользователей, следует настроить [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability) сквозной проверки подлинности.
+Нет. Нет, сквозная аутентификация _не_ выполняет автоматический переход на синхронизацию хэшей паролей. Она является резервным действием для [сценариев, не поддерживаемых сквозной проверкой подлинности](active-directory-aadconnect-pass-through-authentication-current-limitations.md#unsupported-scenarios). Чтобы избежать ошибок входа пользователей, следует настроить [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability) сквозной проверки подлинности.
 
 ## <a name="can-i-install-an-azure-ad-application-proxymanage-appsapplication-proxymd-connector-on-the-same-server-as-a-pass-through-authentication-agent"></a>Можно ли установить соединитель [прокси приложения Azure AD](../manage-apps/application-proxy.md) на одном сервере с агентом сквозной проверки подлинности?
 
@@ -82,7 +82,7 @@ ms.locfileid: "39048974"
 
 ## <a name="can-i-install-two-or-more-pass-through-authentication-agents-on-the-same-server"></a>Можно ли установить два или более агентов сквозной проверки подлинности на одном сервере?
 
-Нет, на одном сервере можно установить только один агент сквозной проверки подлинности. Если вы хотите настроить сквозную аутентификацию для обеспечения высокой доступности, следуйте инструкциям в разделе [Краткое руководство по сквозной проверке подлинности Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability).
+Нет, на одном сервере можно установить только один агент сквозной проверки подлинности. Если вы хотите настроить сквозную аутентификацию для обеспечения высокой доступности, следуйте инструкциям в разделе [Краткое руководство по сквозной проверке подлинности Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability).
 
 ## <a name="how-do-i-remove-a-pass-through-authentication-agent"></a>Ка удалить агент сквозной аутентификации?
 
@@ -92,12 +92,7 @@ ms.locfileid: "39048974"
 
 ## <a name="i-already-use-ad-fs-to-sign-in-to-azure-ad-how-do-i-switch-it-to-pass-through-authentication"></a>Я уже использую AD FS для входа в Azure AD. Как изменить этот метод на сквозную проверку подлинности?
 
-Если вы настроили AD FS в качестве метода входа с помощью мастера Azure AD Connect, измените метод входа этого пользователя на сквозную аутентификацию. В этом случае в клиенте будет включена сквозная аутентификация, а _все_ федеративные домены будет преобразованы в управляемые домены. Все последующие запросы на вход в клиенте будут обрабатываться службой сквозной аутентификации. Сейчас в Azure AD Connect отсутствует поддержка использования сочетания AD FS и сквозной проверки подлинности в разных доменах.
-
-Если вы настроили AD FS в качестве метода входа _без_ помощи мастера Azure AD Connect, измените метод входа пользователя на сквозную аутентификацию. Это можно сделать с помощью параметра **Не настраивать**. В этом случае в клиенте будет включена сквозная аутентификация, но все федеративные домены продолжат использовать AD FS для входа. С помощью PowerShell вручную преобразуйте часть (или все) этих федеративных доменов в управляемые домены. После внесения этого изменения *только* служба сквозной аутентификации будет обрабатывать все запросы на вход, поступающие на управляемые домены.
-
->[!IMPORTANT]
->Сквозная аутентификация не обрабатывает вход облачных пользователей Azure AD.
+Если выполняется переход с AD FS (или других технологий федерации) на сквозную аутентификацию, мы настоятельно рекомендуем следовать нашему подробному руководству по развертыванию, опубликованному [здесь](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx).
 
 ## <a name="can-i-use-pass-through-authentication-in-a-multi-forest-active-directory-environment"></a>Можно ли использовать сквозную аутентификацию в среде с несколькими лесами Active Directory?
 
@@ -105,7 +100,7 @@ ms.locfileid: "39048974"
 
 ## <a name="how-many-pass-through-authentication-agents-do-i-need-to-install"></a>Сколько агентов сквозной аутентификации следует установить?
 
-Установка нескольких агентов сквозной аутентификации обеспечивает [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-5-ensure-high-availability). Но эта установка не поддерживает детерминированную балансировку нагрузки между агентами аутентификации.
+Установка нескольких агентов сквозной аутентификации обеспечивает [высокий уровень доступности](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-4-ensure-high-availability). Но эта установка не поддерживает детерминированную балансировку нагрузки между агентами аутентификации.
 
 Рассмотрим ожидаемую пиковую и среднюю нагрузку запросов на вход для клиента. В качестве измерения производительности один агент аутентификации может обрабатывать от 300 до 400 операций аутентификации в секунду на стандартном сервере с четырехъядерным ЦП и 16 ГБ ОЗУ.
 
@@ -133,6 +128,7 @@ ms.locfileid: "39048974"
 ## <a name="next-steps"></a>Дополнительная информация
 - [Текущие ограничения](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
 - [Краткое руководство по сквозной аутентификации Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
+- [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Подробное техническое руководство](active-directory-aadconnect-pass-through-authentication-how-it-works.md). Поймите, как работает функция сквозной аутентификации.
 - [Устранение неполадок](active-directory-aadconnect-troubleshoot-pass-through-authentication.md). Узнайте, как устранять распространенные проблемы со сквозной аутентификации.

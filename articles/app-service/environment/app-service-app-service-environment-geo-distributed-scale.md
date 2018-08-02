@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/07/2016
 ms.author: stefsch
-ms.openlocfilehash: 21f747239e565aba79a84c8e946a71e306b64968
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: bc85139dfa3589baf6505fac2269f8755dcaddc8
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "22986789"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213254"
 ---
 # <a name="geo-distributed-scale-with-app-service-environments"></a>Географически распределенное масштабирование с использованием сред службы приложений
 ## <a name="overview"></a>Обзор
@@ -95,7 +95,7 @@ ms.locfileid: "22986789"
 
 ![Личный домен][CustomDomain] 
 
-Краткую информацию о регистрации личного домена в приложениях службы приложений Azure см. в [этой статье о регистрации личных доменов][RegisterCustomDomain].
+Краткую информацию о регистрации личного домена в приложениях Службы приложений Azure см. в [этой статье о регистрации личных доменов][RegisterCustomDomain].
 
 ## <a name="trying-out-the-distributed-topology"></a>Тестирование распределенной топологии
 Целью настройки диспетчера трафика и DNS является перенаправление запросов, отправленных на *www.scalableasedemo.com* , по следующему маршруту:

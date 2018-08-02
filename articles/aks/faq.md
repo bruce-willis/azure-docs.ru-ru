@@ -6,14 +6,14 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 07/11/2018
+ms.date: 07/20/2018
 ms.author: iainfou
-ms.openlocfilehash: 915f74df69596b1677a0e03770e076ae50efc609
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: ea22b33233f85da117de54829e5a16bd7dcab36a
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001251"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205254"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -37,7 +37,7 @@ Azure автоматически применяет исправления си�
 
 ## <a name="does-aks-support-kubernetes-role-based-access-control-rbac"></a>Поддерживает ли AKS для Kubernetes управление доступом на основе ролей (RBAC)?
 
-Да, RBAC можно включить при развертывании кластера AKS из Azure CLI или шаблона Azure Resource Manager. Скоро аналогичная функция появится и на портале Azure.
+Да, RBAC можно включить при [развертывании кластера AKS из Azure CLI или шаблона Azure Resource Manager](https://docs.microsoft.com/en-us/azure/aks/aad-integration). Скоро аналогичная функция появится и на портале Azure.
 
 ## <a name="what-kubernetes-admission-controllers-does-aks-support-can-this-be-configured"></a>Какие контроллеры допуска Kubernetes поддерживает AKS? Можно ли это настроить?
 
@@ -59,6 +59,10 @@ AKS поддерживает следующие [контроллеры допу
 ## <a name="can-i-deploy-aks-into-my-existing-virtual-network"></a>Можно ли развернуть AKS в имеющейся виртуальной сети?
 
 Да, вы можете развернуть кластер AKS в существующей виртуальной сети с помощью [расширенного сетевого компонента](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/aks/networking-overview.md).
+
+## <a name="can-i-restrict-the-kubernetes-api-server-to-only-be-accessible-within-my-virtual-network"></a>Можно ли ограничить доступ к серверу API Kubernetes только моей виртуальной сетью?
+
+На данный момент нет. Сервер API Kubernetes представлен в виде общедоступного полного доменного имени (FQDN). Вы должны управлять доступом к своему кластеру с помощью [управления доступом на основе ролей Kubernetes (RBAC) и Azure Active Directory (AAD)](https://docs.microsoft.com/en-us/azure/aks/aad-integration).
 
 ## <a name="is-azure-key-vault-integrated-with-aks"></a>Интегрируется ли Azure Key Vault с AKS?
 

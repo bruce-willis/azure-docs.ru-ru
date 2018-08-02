@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2018
 ms.author: sngun
-ms.openlocfilehash: 67ea7a9ea1a1be4fd0780f8b8ce22f1a133615e0
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 3734c30dad0735164d4501d1d63d8ffe301396a3
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34615875"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39249120"
 ---
 # <a name="power-bi-tutorial-for-azure-cosmos-db-visualize-data-using-the-power-bi-connector"></a>Руководство по Power BI для Azure Cosmos DB: визуализация данных с помощью соединителя Power BI
 [PowerBI.com](https://powerbi.microsoft.com/) — это веб-служба, с помощью которой можно создавать и совместно использовать панели мониторинга и отчеты с важными данными.  Power BI Desktop — это специальное средство создания отчетов, позволяющее получать данные из различных источников, объединять и преобразовывать их, создавая подробные отчеты и визуализации, и публиковать их в Power BI.  Последняя версия Power BI Desktop теперь позволяет подключаться к вашей учетной записи Azure Cosmos DB через соединитель Azure Cosmos DB для Power BI.   
@@ -34,9 +34,9 @@ ms.locfileid: "34615875"
 > Соединитель Power BI для Azure Cosmos DB подключается к Power BI Desktop для извлечения и преобразования данных. Затем отчеты, созданные в Power BI Desktop, можно опубликовать на сайте PowerBI.com. Невозможно напрямую извлекать и преобразовывать данные Azure Cosmos DB на сайте PowerBI.com. 
 
 > [!NOTE]
-> Чтобы подключить Azure Cosmos DB к Power BI с помощью API MongoDB, используйте [драйвер ODBC MongoDB Simba](http://www.simba.com/drivers/mongodb-odbc-jdbc/).
+> Подключение к Azure Cosmos DB с помощью соединителя Power BI в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и MongoDB. Чтобы подключить Azure Cosmos DB к Power BI с помощью API MongoDB, используйте [драйвер ODBC MongoDB Simba](http://www.simba.com/drivers/mongodb-odbc-jdbc/).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед выполнением инструкций в этом руководстве по Power BI убедитесь в наличии доступа к следующим ресурсам:
 
 * [Последняя версия Power BI Desktop](https://powerbi.microsoft.com/desktop).

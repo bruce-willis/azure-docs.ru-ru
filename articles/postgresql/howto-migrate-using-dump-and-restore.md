@@ -7,19 +7,19 @@ ms.author: raagyema
 manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
-ms.topic: article
-ms.date: 06/01/2018
-ms.openlocfilehash: 586df8d72dc05104bbf589eabcf3bd2245c268c8
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.topic: conceptual
+ms.date: 07/19/2018
+ms.openlocfilehash: 94d196ceecc0b63b9f0b0fe94f71363dc2086c30
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34737254"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213656"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Перенос базы данных PostgreSQL с помощью дампа и ее восстановление
 Можно извлечь базу данных PostgreSQL в файл дампа с помощью [pg_dump](https://www.postgresql.org/docs/9.3/static/app-pgdump.html) и с помощью [pg_restore](https://www.postgresql.org/docs/9.3/static/app-pgrestore.html) восстановить базу данных PostgreSQL из файла архива, созданного pg_dump.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступить к выполнению этого руководства, необходимы следующие компоненты:
 - [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-portal.md) с правилами брандмауэра, разрешающими доступ к этом серверу и его базам данных;
 - установленные программы командной строки [pg_dump](https://www.postgresql.org/docs/9.6/static/app-pgdump.html) и [pg_restore](https://www.postgresql.org/docs/9.6/static/app-pgrestore.html).
@@ -46,6 +46,12 @@ pg_dump -Fc -v --host=localhost --username=masterlogin --dbname=testdb > testdb.
 pg_restore -v --no-owner –-host=<server name> --port=<port> --username=<user@servername> --dbname=<target database name> <database>.dump
 ```
 Если включить параметр --no-owner, все объекты, созданные во время восстановления, будут присвоены пользователю --username. Дополнительные сведения см. в официальной документации PostgreSQL по [pg_restore](https://www.postgresql.org/docs/9.6/static/app-pgrestore.html).
+
+> [!NOTE]
+> Если серверу PostgreSQL требуются SSL-подключения (используется по умолчанию на серверах службы "База данных Azure для PostgreSQL"), задайте переменную среды `PGSSLMODE=require`, чтобы средство pg_restore подключалось через протокол SSL. Без протокола SSL может отобразиться такая ошибка: `FATAL:  SSL connection is required. Please specify SSL options and retry.`
+>
+> В командной строке Windows выполните команду `SET PGSSLMODE=require` перед выполнением команды pg_restore. В Linux или Bash выполните команду `export PGSSLMODE=require` перед выполнением команды pg_restore.
+>
 
 В этом примере восстановите данные из файла дампа **testdb.dump** в базу данных **mypgsqldb** на целевом сервере **mydemoserver.postgres.database.azure.com**. 
 ```bash
