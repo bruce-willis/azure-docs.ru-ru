@@ -74,43 +74,45 @@
       href: sql-database-powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Модели приобретения и ресурсы
+    - name: Модели приобретения
       items:
-        - name: Модели приобретения
+        - name: Виртуальное ядро и DTU
           href: sql-database-service-tiers.md
-        - name: Модель приобретения на основе виртуальных ядер
+        - name: Модель с виртуальными ядрами
           href: sql-database-service-tiers-vcore.md
-        - name: Модель приобретения на основе единиц DTU
+        - name: Модель с DTU
           href: sql-database-service-tiers-dtu.md
         - name: Ограничения ресурсов
           href: sql-database-resource-limits.md
-    - name: Логические серверы и отдельные базы данных
+    - name: Логические серверы
       items:
-        - name: Логические серверы и отдельные базы данных
-          href: sql-database-servers-databases.md
-        - name: Управление серверами и отдельными базами данных
-          href: sql-database-servers-databases-manage.md
-        - name: Ограничения ресурсов на основе виртуальных ядер
-          href: sql-database-vcore-resource-limits-single-databases.md
-        - name: Ограничения ресурсов на основе DTU
-          href: sql-database-dtu-resource-limits-single-databases.md
-        - name: Масштабирование ресурсов отдельных баз данных
-          href: sql-database-single-database-scale.md
+        - name: Создание и управление
+          href: sql-database-logical-servers.md
         - name: Архитектура подключения
           href: sql-database-connectivity-architecture.md
         - name: Отличия T-SQL
           href: sql-database-transact-sql-information.md
-    - name: Эластичные пулы и базы данных в составе пула
+    - name: Отдельные базы данных
       items:
-        - name: Эластичные пулы и базы данных в составе пула
+        - name: Создание и управление
+          href: sql-database-single-databases-manage.md
+        - name: Ограничения ресурсов на основе виртуальных ядер
+          href: sql-database-vcore-resource-limits-single-databases.md
+        - name: Ограничения ресурсов на основе DTU
+          href: sql-database-dtu-resource-limits-single-databases.md
+        - name: Масштабирование ресурсов
+          href: sql-database-single-database-scale.md
+    - name: Пулы эластичных БД
+      items:
+        - name: Пулы эластичных БД
           href: sql-database-elastic-pool.md
-        - name: Управление пулами и базами данных в составе пула
+        - name: Создание и управление
           href: sql-database-elastic-pool-manage.md
         - name: Ограничения ресурсов на основе виртуальных ядер
           href: sql-database-vcore-resource-limits-elastic-pools.md
         - name: Ограничения ресурсов на основе DTU
           href: sql-database-dtu-resource-limits-elastic-pools.md
-        - name: Масштабирование ресурсов эластичного пула
+        - name: Масштабирование ресурсов
           href: sql-database-elastic-pool-scale.md
     - name: Управляемые экземпляры
       items:
@@ -184,7 +186,7 @@
               href: sql-database-managed-instance-threat-detection.md
         - name: Правила файрволла
           items:
-            - name: Общие сведения
+            - name: Создание и управление
               href: sql-database-firewall-configure.md
             - name: Конечные точки виртуальной сети
               href: sql-database-vnet-service-endpoint-rule-overview.md
@@ -430,6 +432,8 @@
           href: sql-database-load-from-csv-with-bcp.md
         - name: Загрузка данных с помощью ADF
           href: ../data-factory/connector-azure-sql-database.md?toc=/azure/sql-database/toc.json
+    - name: Управление файловым пространством
+      href: sql-database-file-space-management.md
     - name: Разработка приложений
       items:
         - name: Соединение

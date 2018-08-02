@@ -71,6 +71,8 @@
           href: create-ssl-portal.md
         - name: Завершение SSL-запросов с помощью Azure PowerShell
           href: tutorial-ssl-powershell.md
+        - name: Сквозное завершение SSL-запросов с помощью Azure PowerShell
+          href: application-gateway-end-to-end-ssl-powershell.md
         - name: Обновление сертификатов
           href: renew-certificates.md
         - name: Настройка политики SSL

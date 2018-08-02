@@ -25,6 +25,8 @@
   items:
     - name: Методы проверки подлинности
       href: concept-authentication-methods.md
+    - name: Конвергентная регистрация
+      href: concept-registration-mfa-sspr-converged.md
     - name: Самостоятельный сброс пароля
       items:
         - name: Принцип действия сброса пароля
