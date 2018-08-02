@@ -2,18 +2,18 @@
 title: Реагирование на события хранилища BLOB-объектов Azure | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
 services: storage,event-grid
-keywords: ''
 author: cbrooksmsft
 ms.author: cbrooks
 ms.date: 01/30/2018
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 68d722338562d21d59dd720250a62b8603c8af43
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.component: blobs
+ms.openlocfilehash: 6f3afa22a50728070c42cd6e2eff0cc148815fbc
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075691"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39262690"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Реагирование на события хранилища BLOB-объектов
 
