@@ -10,21 +10,21 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/04/2017
 ms.author: barbkess
 ms.reviewer: harshja
-ms.openlocfilehash: 1618200ce3d96013f3d7b05db53163c993efc69a
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: cf92b5b6ee3c6a529a43e7fa4cfeeb09954ad9ea
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161577"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39365397"
 ---
 # <a name="working-with-claims-aware-apps-in-application-proxy"></a>Работа с приложениями, поддерживающими утверждения, в прокси приложения
 [Приложения, поддерживающие утверждения](https://msdn.microsoft.com/library/windows/desktop/bb736227.aspx), выполняют перенаправление к службе токенов безопасности (STS). Служба токенов безопасности запрашивает учетные данные у пользователя в обмен на токен, после чего перенаправляет пользователя в приложение. Существует несколько способов настроить прокси приложения для работы с таким перенаправлением. В этой статье описывается настройка развертывания для приложений, поддерживающих утверждения. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Убедитесь, что служба токенов безопасности, в которую перенаправляет пользователя приложение, поддерживающее утверждения, доступна за пределами вашей локальной сети. Можно предоставить службу токенов безопасности через прокси-сервер или разрешить внешние подключения. 
 
 ## <a name="publish-your-application"></a>Публикация приложения

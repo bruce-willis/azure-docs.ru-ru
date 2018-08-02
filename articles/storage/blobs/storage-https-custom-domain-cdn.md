@@ -2,24 +2,18 @@
 title: Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS
 description: Сведения об интеграции Azure CDN с хранилищем BLOB-объектов для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS
 services: storage
-documentationcenter: ''
 author: michaelhauss
-manager: vamshik
-editor: tysonn
-ms.assetid: ''
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: mihauss
-ms.openlocfilehash: b3b1b5064e51b68bb64cb8c4dbec6075705795d6
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.component: blobs
+ms.openlocfilehash: 7c4acc7d0832442b94735619ea3a01cb319da993
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025599"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398261"
 ---
 # <a name="using-the-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS
 Сеть доставки содержимого (CDN) Azure теперь поддерживает HTTPS для имен личных доменов. Вы можете использовать эту функцию, чтобы получить доступ к BLOB-объектам в хранилище с помощью личного домена по протоколу HTTPS. Для этого сначала необходимо включить Azure CDN для конечной точки BLOB-объектов или веб-службы и сопоставить сеть доставки содержимого с именем личного домена. После выполнения этих действий включение поддержки протокола HTTPS для личного домена значительно упрощается благодаря включению одним щелчком, комплексному управлению сертификатами в рамках обычных расценок Azure CDN без дополнительных затрат.

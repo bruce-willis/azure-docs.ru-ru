@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2018
 ms.author: jdial
-ms.openlocfilehash: 82a7449bf75cd31f8da5bb93618c4e6977ed312b
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 67b2babcd19268a61794d123f5aa9780af16976b
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39144940"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39364018"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -152,7 +152,7 @@ az vm show \
 
 ## <a name="interpret-command-output"></a>Интерпретация выходных данных команды
 
-Если для диагностики проблемы используется [PowerShell](#diangose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli), результат выполнения команды содержит следующие сведения:
+Если для диагностики проблемы используется [PowerShell](#diagnose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli), результат выполнения команды содержит следующие сведения:
 
 - **NetworkSecurityGroup** — идентификатор группы безопасности сети.
 - **Association** — указывает, с чем связана группа безопасности сети: с *NetworkInterface* или *Subnet*. Если NSG связана и с тем, и с другим, в результатах возвращаются значения **NetworkSecurityGroup**, **Association** и **EffectiveSecurityRules** для каждой группы NSG. Если NSG подключается или отключается непосредственно перед выполнением команды для просмотра действующих правил безопасности, такие изменения могут отобразиться в выходных данных команды с задержкой в несколько секунд.

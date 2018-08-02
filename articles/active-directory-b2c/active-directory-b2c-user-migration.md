@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: f1bb4fed22fd62c4934f841cabf3dbbe1df253de
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 3416802aea12e84cf827070ff3a50d73725d5ee3
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37441368"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390492"
 ---
 # <a name="azure-active-directory-b2c-user-migration"></a>Azure Active Directory B2C. Миграция пользователей
 При миграции поставщика удостоверений в Azure Active Directory B2C (Azure AD B2C) также может потребоваться перенести учетную запись пользователя. В этой статье описывается процедура переноса имеющихся учетных записей пользователей из любого поставщика удостоверений в Azure AD B2C. Эта статья не является предписанием, а скорее описывает два из нескольких сценариев. За пригодность каждого подхода отвечает разработчик.
@@ -188,7 +188,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 
     a. Откройте **Azure AD B2C** и выберите **Пользователи и группы**.
 
-    Б. В поле поиска введите отображаемое имя пользователя и просмотрите профиль пользователя.
+    b. В поле поиска введите отображаемое имя пользователя и просмотрите профиль пользователя.
 
 * Для получения данных о пользователе по адресу электронной почты для входа используйте этот пример приложения:
 
@@ -201,7 +201,7 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
     > [!TIP]
     > Кроме того, вы можете получить данные пользователя по отображаемому имени, выполнив следующую команду: `UserMigration.exe 4 "<Display name>"`.
 
-    Б. Откройте файл UserProfile.json в редакторе JSON, чтобы просмотреть сведения о пользователе.
+    b. Откройте файл UserProfile.json в редакторе JSON, чтобы просмотреть сведения о пользователе.
 
     ![Файл UserProfile.json](media/active-directory-b2c-user-migration/pre-migration-get-by-email2.png)
 
@@ -355,8 +355,6 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 
 6. Проверьте выходные данные RESTful API.
 
-Дополнительные сведения см. в статье [Включение ведения журнала диагностики для веб-приложений в службе приложений Azure][AppService-Log].
-
 > [!IMPORTANT]
 > Журналы диагностики следует использовать только во время разработки и тестирования. Выходные данные RESTful API могут содержать конфиденциальные сведения, которые не должны быть раскрыты в рабочей среде.
 >
@@ -367,7 +365,6 @@ Get-AzureADDirectoryRoleMember -ObjectId $role.ObjectId
 [AD-PasswordPolicies]: https://docs.microsoft.com/azure/active-directory/active-directory-passwords-policy
 [AD-Powershell]: https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2
 [AppService-Deploy]: https://docs.microsoft.com/aspnet/core/tutorials/publish-to-azure-webapp-using-vs
-[AppService-Log]: https://docs.microsoft.com/azure/active-directory-b2c/app-service-web/web-sites-streaming-logs-and-console
 [B2C-AppRegister]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-app-registration
 [B2C-GetStarted]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started
 [B2C-GetStartedCustom]: https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-get-started-custom

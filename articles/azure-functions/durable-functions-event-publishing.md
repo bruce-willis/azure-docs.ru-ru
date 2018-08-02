@@ -2,7 +2,7 @@
 title: Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 description: Узнайте, как настроить автоматическую публикацию в службе "Сетка событий Azure" для устойчивых функций.
 services: functions
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 tags: ''
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/20/2018
-ms.author: tdykstra
-ms.openlocfilehash: 020a775c45ef3c46f9dfc5da7d4a7e470def4705
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.author: glenga
+ms.openlocfilehash: 691f00b0f05d8c91ae6f4409ba9eeeb50b0cd53b
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969917"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39343701"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "38969917"
 
 * **Продолжительное фоновое действие**. При использовании устойчивых функций для продолжительного фонового действия эта функция позволяет вам узнать текущее состояние.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установите [Microsoft.Azure.WebJobs.Extensions.DurableTask](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DurableTask) 1.3.0-rc или более поздней версии в проекте устойчивых функций.
 * Установите [эмулятор хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-use-emulator).

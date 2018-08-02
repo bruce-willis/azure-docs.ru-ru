@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 2863d4592c2d889ebab3788c7be874114dc5c35c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5d4fa878197732daf188fcc318569b178e608684
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34642977"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345966"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "34642977"
 Установка среды выполнения Service Fabric и пакета SDK в подсистеме Windows для Linux не поддерживается. Вы можете управлять сущностями Service Fabric, размещенными в другой сети в облачной или локальной среде, с помощью интерфейса командной строки Azure Service Fabric. Дополнительные сведения об установке интерфейса командной строки см. в [этой статье](./service-fabric-cli.md).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для разработки поддерживаются следующие операционные системы.
 
@@ -80,7 +80,8 @@ sudo curl -s https://raw.githubusercontent.com/Azure/service-fabric-scripts-and-
 3. Добавьте репозиторий `dotnet` в список источников.
 
     ```bash
-    sudo sh -c 'echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet-release/ xenial main" > /etc/apt/sources.list.d/dotnetdev.list'
+    wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
+    sudo dpkg -i packages-microsoft-prod.deb
     ```
 
 4. Добавьте новый ключ Gnu Privacy Guard (GnuPG или GPG) в набор ключей APT.

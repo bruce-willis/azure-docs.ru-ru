@@ -3,19 +3,18 @@ title: Обеспечение высокой доступности данных
 description: Использование геоизбыточного хранилища с доступом на чтение для обеспечения высокой доступности данных приложений
 services: storage
 author: tamram
-manager: jeconnoc
 ms.service: storage
-ms.workload: web
 ms.topic: tutorial
 ms.date: 03/26/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 8cf96059b1bbfbad24bf28fec9ddb0aa930adbad
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.component: blobs
+ms.openlocfilehash: 7abd251751613224d062da5578e9c91a525599c9
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32193780"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399038"
 ---
 # <a name="make-your-application-data-highly-available-with-azure-storage"></a>Обеспечение высокой доступности данных приложений в хранилище Azure
 
@@ -24,12 +23,12 @@ ms.locfileid: "32193780"
 В первой части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Скачивание примера приложения
 > * Задание строки подключения
 > * Запуск консольного приложения
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
  
@@ -60,7 +59,7 @@ ms.locfileid: "32193780"
 
 Войдите на [портал Azure](https://portal.azure.com/).
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Учетная запись хранения предоставляет уникальное пространство имен для хранения ваших объектов данных в службе хранилища Azure и доступа к ним.
 
@@ -81,7 +80,7 @@ ms.locfileid: "32193780"
    |**Secure transfer required** (Требуется безопасное перемещение) | Отключено| Безопасное перемещение не является обязательным для этого сценария. |
    |**Подписка** | Ваша подписка |Дополнительные сведения о подписках см. [здесь](https://account.windowsazure.com/Subscriptions). |
    |**ResourceGroup** | myResourceGroup |Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
-   |**Местоположение.** | Восток США | Выберите расположение. |
+   |**Местоположение.** | Восточная часть США | Выберите расположение. |
 
 ![создание учетной записи хранения](media/storage-create-geo-redundant-storage/createragrsstracct.png)
 
@@ -270,7 +269,7 @@ def response_callback(response):
 В первой части этой серии вы узнали о том, как сделать приложение доступным с помощью учетных записей хранения RA-GRS, в частности как выполнять такие действия:
 
 > [!div class="checklist"]
-> * Создайте учетную запись хранения.
+> * Создание учетной записи хранения
 > * Скачивание примера приложения
 > * Задание строки подключения
 > * Запуск консольного приложения

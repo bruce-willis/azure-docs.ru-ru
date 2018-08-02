@@ -3,18 +3,17 @@ title: Краткое руководство Azure. Создание больш�
 description: В рамках этого краткого руководства вы используете Azure PowerShell в хранилище объектов (больших двоичных объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью Azure PowerShell.
 services: storage
 author: roygara
-manager: jeconnoc
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: rogarana
-ms.openlocfilehash: 2ae0fee410c93911546e5cbeef1378e6f7ebbc39
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: b482379c05133dcf58e54bd01f38f0c3cee95e8d
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205203"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398599"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-azure-powershell"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure PowerShell
 
@@ -116,7 +115,7 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 Из этого краткого руководства вы узнали, как передавать файлы между локальным диском и хранилищем BLOB-объектов Azure. Дополнительные сведения о работе с хранилищем BLOB-объектов с помощью PowerShell см. в статье "Использование Azure PowerShell со Службой хранилища Azure".
 
 > [!div class="nextstepaction"]
-> [Использование Azure PowerShell со Службой хранилища Azure](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
+> [Использование Azure PowerShell со службой хранилища Azure](../common/storage-powershell-guide-full.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 
 ### <a name="microsoft-azure-powershell-storage-cmdlets-reference"></a>Справочник по командлетам PowerShell для службы хранилища Microsoft Azure
 

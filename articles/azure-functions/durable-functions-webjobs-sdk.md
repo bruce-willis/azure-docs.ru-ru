@@ -2,7 +2,7 @@
 title: Запуск устойчивых функций в качестве веб-заданий в Azure
 description: Узнайте, как программировать и настраивать запуск устойчивых функций в веб-заданиях с помощью пакета SDK для веб-заданий.
 services: functions
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 tags: ''
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3fc84d1492d2855ffa3bb5538226da049a928339
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 90100461d7db93ece23bf2420a1b7e8c43da915b
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33766696"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39343055"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск устойчивых функций в качестве веб-заданий
 
@@ -27,7 +27,7 @@ ms.locfileid: "33766696"
 
 Пример цепочки устойчивых функций доступен в версии пакета SDK для веб-заданий. Загрузите или клонируйте [репозиторий устойчивых функций](https://github.com/azure/azure-functions-durable-extension/) и перейдите к папке *samples\\webjobssdk\\chaining*.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы знакомы с основами пакета SDK для веб-заданий, разработки библиотеки классов C# для Функций Azure и устойчивых функций. Ознакомиться с этими темами вам помогут следующие ресурсы:
 
@@ -196,7 +196,7 @@ while (true)
 
   a. Создайте ресурс Application Insights с типом приложения **Общее**.
 
-  Б. Сохраните ключ инструментирования в файл *App.config*.
+  b. Сохраните ключ инструментирования в файл *App.config*.
 
 1. Запустите проект.
 

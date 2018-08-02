@@ -8,16 +8,16 @@ ms.service: storage
 ms.topic: article
 ms.date: 03/20/2018
 ms.author: jeking
-ms.openlocfilehash: 8c20178e539aeccd9a1d9c41206fc4823fe6f128
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: f75ed9eba989a47856460b5926cfcff9ab100a1c
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2018
-ms.locfileid: "30323627"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396943"
 ---
 # <a name="zone-redundant-storage-zrs-highly-available-azure-storage-applications"></a>Хранилище, избыточное в пределах зоны (ZRS). Высокодоступные приложения для службы хранилища Azure
 
-[!INCLUDE [storage-common-redundancy-ZRS](../../../includes/storage-common-redundancy-ZRS.md)]
+[!INCLUDE [storage-common-redundancy-ZRS](../../../includes/storage-common-redundancy-zrs.md)]
 
 
 ## <a name="see-also"></a>См. также

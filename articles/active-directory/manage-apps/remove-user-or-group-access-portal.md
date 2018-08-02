@@ -11,17 +11,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/14/2018
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: it-pro
-ms.openlocfilehash: b6da8eed16b67db098ceb90079b7da7dfadcd5e3
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: fde6d5fa2488d86af542f409df7c5b76d2510f08
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35303013"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368652"
 ---
 # <a name="remove-a-user-or-group-assignment-from-an-enterprise-app-in-azure-active-directory"></a>Удаление назначения доступа к корпоративному приложению для пользователя или группы в Azure Active Directory
 Вы можете легко удалить назначение доступа к корпоративному приложению для пользователя или группы в Azure Active Directory (Azure AD). Необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
@@ -69,7 +69,7 @@ ms.locfileid: "35303013"
     ``` 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Просмотр всех моих групп](../active-directory-groups-view-azure-portal.md)
+- [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 - [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 - [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)
 - [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)

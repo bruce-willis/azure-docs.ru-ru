@@ -14,17 +14,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/19/2016
 ms.author: rclaus
-ms.openlocfilehash: d899e037a144892d6d2c843fec08d63a9e3e514a
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 93614d4889c9c884f25c5e05cd620e8303226323
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "30836101"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39357772"
 ---
 # <a name="dns-name-resolution-options-for-linux-virtual-machines-in-azure"></a>Параметры разрешения DNS-имен для виртуальных машин Linux в Azure
 Azure по умолчанию предоставляет разрешение DNS-имен для всех виртуальных машин, находящихся в одной виртуальной сети. Вы можете реализовать собственный механизм разрешения DNS-имен, настроив собственные службы DNS в виртуальных машинах, размещенных в Azure. Ниже приведены сценарии, которые помогут вам выбрать наиболее подходящий вариант для конкретной ситуации.
 
-* [Разрешение имен, предоставляемое Azure](#azure-provided-name-resolution)
+* [Разрешение имен, предоставляемое Azure](#name-resolution-that-azure-provides)
 * [разрешение имен с помощью собственного DNS-сервера.](#name-resolution-using-your-own-dns-server)
 
 Тип разрешения имен зависит от способа взаимодействия виртуальных машин и экземпляров ролей друг с другом.

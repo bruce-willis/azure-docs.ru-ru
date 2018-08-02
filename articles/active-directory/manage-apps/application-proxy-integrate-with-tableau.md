@@ -10,23 +10,23 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 832d37e6c168a7b25adecee967b6523f6cea5554
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 7cace1af527c1c7c80bf0e23f7a88aa9ac9f9d03
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35302992"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39365028"
 ---
 # <a name="azure-active-directory-application-proxy-and-tableau"></a>Azure Active Directory Application Proxy и Tableau 
 
 Использование Azure Active Directory Application Proxy и Tableau упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Tableau. В этой статье описывается настройка сценария.  
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 
 Сценарий в этой статье предполагает, что:
 

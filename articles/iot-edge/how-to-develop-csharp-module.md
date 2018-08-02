@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 06/27/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 92e476d38e6e56edca19afe78bed2705feadd0bb
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: a895f21bc061763b1d5d45b2bedb44fc932190dc
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39040914"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345229"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-c-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей C# для Azure IoT Edge
 
@@ -24,7 +24,7 @@ ms.locfileid: "39040914"
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows или Linux. Устройство IoT Edge может быть другим физическим устройством. Или вы можете имитировать устройство IoT Edge на компьютере разработки.
 
 > [!NOTE]
-> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Функции C# можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging). 
+> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Модули C# можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging). 
 
 Так как в этой статье в качестве основного средства разработки используется Visual Studio Code, установите VS Code. Затем добавьте все необходимые расширения:
 * [Visual Studio Code](https://code.visualstudio.com/) 

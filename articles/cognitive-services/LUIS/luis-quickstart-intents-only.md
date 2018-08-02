@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 06/27/2018
+ms.date: 07/26/2018
 ms.author: diberry
-ms.openlocfilehash: 4be36e9d5b34c46138a657429680689014d0fd3d
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 578fdb5593e75e3584e81d73d7643162f7af5cbc
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237780"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358144"
 ---
 # <a name="tutorial-1-build-app-with-custom-domain"></a>Руководство: 1. Создание приложения с личным доменом
 В этом руководстве мы создаем приложение, которое демонстрирует, как использовать **намерения** для определения _намерений_ пользователей на основе фраз (текста), которые они отправляют в приложение. В итоге вы получите конечную точку LUIS, работающую в облаке.
@@ -32,7 +32,7 @@ ms.locfileid: "39237780"
 > * Добавление примера фраз в намерение ApplyForJob 
 > * Обучение, публикация и повторный запрос конечной точки 
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="purpose-of-the-app"></a>Назначение приложения
 Это приложение имеет несколько намерений. Первое намерение, **`GetJobInformation`**, определяет, когда пользователь хочет получить сведения о вакансиях в компании. Второе намерение, **`None`**, определяет все остальные типы фраз. Далее в кратком руководстве будет добавлено третье намерение — `ApplyForJob`. 
@@ -49,8 +49,6 @@ ms.locfileid: "39237780"
     ![Новое приложение LUIS](./media/luis-quickstart-intents-only/create-app.png)
 
 4. После завершения процесса появится страница **намерений** с намерением **None**. 
-
-    [![](media/luis-quickstart-intents-only/intents-list.png "Снимок экрана страницы списка намерений")](media/luis-quickstart-intents-only/intents-list.png#lightbox)
 
 ## <a name="create-getjobinformation-intention"></a>Создание намерения GetJobInformation
 1. Выберите **Create new intent**. (Создать намерение). Введите имя нового намерения `GetJobInformation`. Это намерение предсказывается каждый раз, когда пользователь хочет получить сведения об открытых вакансиях в вашей компании.
@@ -90,16 +88,16 @@ ms.locfileid: "39237780"
 
     ![Кнопка обучения](./media/luis-quickstart-intents-only/train-button.png)
 
-    Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
     ![Строка состояния "Обучение пройдено"](./media/luis-quickstart-intents-only/trained.png)
 
-2. В верхней правой части веб-сайта LUIS нажмите кнопку **Publish** (Опубликовать), чтобы открыть страницу публикации. По умолчанию выбран рабочий слот. Если вам нужен этот слот, нажмите кнопку **Publish** (Опубликовать). Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
 
-    Перед публикацией или перед тестированием URL-адреса конечной точки не требуется создавать ключ конечной точки LUIS на портале Azure. Каждое приложение LUIS имеет бесплатный начальный ключ для разработки. Он предоставляет неограниченное число обращений для разработки и [несколько для конечных точек](luis-boundaries.md#key-limits). 
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)] 
 
 ## <a name="query-endpoint-for-getjobinformation-intent"></a>Запрос к конечной точке для намерения GetJobInformation
-1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. Перейдите в конец URL-адреса и введите `I'm looking for a job with Natual Language Processing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает с фразами из примера в шаге 4, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `GetJobInformation` как самое подходящее. 
 
@@ -152,7 +150,10 @@ ms.locfileid: "39237780"
     Повторное [обучение и публикация](#train-and-publish-the-app). 
 
 ## <a name="query-endpoint-for-applyforjob-intent"></a>Запрос к конечной точке для намерения ApplyForJob
-В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В новом окне браузера введите `Can I submit my resume for job 235986` в конце URL-адреса. 
+
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+
+2. В новом окне браузера введите `Can I submit my resume for job 235986` в конце URL-адреса. 
 
     ```
     {

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/29/2018
+ms.date: 08/01/2018
 ms.author: abnarain
-ms.openlocfilehash: b82353418931c872f8ec90f381b27bbb5d5781e9
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: d406c7f7714e011126be67ad3f65938db62e7bbe
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046961"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412854"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -40,8 +40,8 @@ ms.locfileid: "37046961"
 | **type**                 | Свойству type необходимо присвоить значение **AzureDataLakeAnalytics**. | Yes                                      |
 | **accountName**          | Имя учетной записи аналитики озера данных Azure.  | Yes                                      |
 | **dataLakeAnalyticsUri** | Универсальный код ресурса (URI) аналитики озера данных Azure.           | Нет                                        |
-| **subscriptionId**       | Идентификатор подписки Azure.                    | Нет (если не указан, используется подписка фабрики данных). |
-| **resourceGroupName**    | Имя группы ресурсов Azure                | Нет (если не указано, используется группа ресурсов фабрики данных). |
+| **subscriptionId**       | Идентификатор подписки Azure.                    | Нет                                        |
+| **resourceGroupName**    | Имя группы ресурсов Azure                | Нет                                        |
 
 ### <a name="service-principal-authentication"></a>Проверка подлинности субъекта-службы
 Для связанной службы Azure Data Lake Analytics необходимо выполнить проверку подлинности субъекта-службы, чтобы подключиться к службе Azure Data Lake Analytics. При использовании проверки подлинности на основе субъекта-службы необходимо зарегистрировать сущность приложения в Azure Active Directory (Azure AD) и предоставить ей доступ к Data Lake Analytics и Data Lake Store, которые она использует. Подробные инструкции см. в статье [Аутентификация между службами в Data Lake Store с помощью Azure Active Directory](../data-lake-store/data-lake-store-authenticate-using-active-directory.md). Запишите следующие значения, которые используются для определения связанной службы:

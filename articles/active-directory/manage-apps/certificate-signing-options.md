@@ -12,17 +12,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/07/2017
 ms.author: barbkess
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 77cf2b1fb6eb4f67c0d6595e244bb317b5e68462
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: d5921b9b74bfa7e32cc8dc2f9fdc5f93d4027abb
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36332939"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39366507"
 ---
 # <a name="advanced-certificate-signing-options-in-the-saml-token-for-gallery-apps-in-azure-active-directory"></a>Расширенные параметры подписи сертификата в маркере SAML для приложений коллекции в Azure Active Directory
 На сегодняшний день Azure Active Directory (Azure AD) поддерживает тысячи предварительно интегрированных приложений, доступных в коллекции приложений Azure Active Directory. В это число входят более 500 приложений, которые поддерживают единый вход с использованием протокола SAML 2.0. Когда пользователь проходит аутентификацию для приложения в Azure AD с помощью SAML, Azure AD отправляет токен в приложение (через HTTP-запрос POST). Затем приложение проверяет и использует этот токен для входа пользователя вместо запроса имени пользователя и пароля. Данные токены SAML подписываются с помощью уникального сертификата, который создается в Azure AD, а также определенных стандартных алгоритмов.

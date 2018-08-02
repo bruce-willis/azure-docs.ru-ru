@@ -10,17 +10,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 10/11/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 37b5e5d05559088d7f5aac796f452f2ed83447fc
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: e7976cf0574952fdafbdc8b40db47af3a5420fd5
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294637"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368822"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -38,7 +38,7 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 
 Так как этот сценарий предоставляется при совместном использовании Azure Active Directory и PingAccess, вам понадобятся лицензии для двух этих служб. Тем не менее подписки Azure Active Directory Premium включает в себя базовую лицензию PingAccess, которая поддерживает до 20 приложений. Если необходимо опубликовать более 20 приложений, использующих заголовки, вы можете приобрести дополнительную лицензию PingAccess. 
 
-Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](../active-directory-whatis.md).
+Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](../fundamentals/active-directory-whatis.md).
 
 ## <a name="publish-your-application-in-azure"></a>Публикация приложения в Azure
 

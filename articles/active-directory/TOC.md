@@ -153,26 +153,23 @@
 
 
 ## Управление устройствами
-### [Введение](device-management-introduction.md)
-### [Использование портала Azure](device-management-azure-portal.md)
-### [Планирование присоединения к Azure AD](active-directory-azureadjoin-deployment-aadjoindirect.md)
-### [Часто задаваемые вопросы](device-management-faq.md)
+### [Обзор](devices/overview.md)
+### [Использование портала Azure](devices/device-management-azure-portal.md)
+### [Планирование присоединения к Azure AD](devices/azureadjoin-plan.md)
+### [Часто задаваемые вопросы](devices/faq.md)
 ### Задачи
 #### [Как планировать гибридную реализацию присоединения к Azure Active Directory](devices/hybrid-azuread-join-plan.md)
 #### [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](devices/hybrid-azuread-join-managed-domains.md)
 #### [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](devices/hybrid-azuread-join-federated-domains.md)
 #### [Как управлять гибридным присоединением устройства к Azure AD](devices/hybrid-azuread-join-control.md)
-
-
-
 #### [Настройка устройств Windows 10, зарегистрированных в Azure AD](user-help/device-management-azuread-registered-devices-windows10-setup.md)
 #### [Настройка устройств, присоединенных к Azure AD](user-help/device-management-azuread-joined-devices-setup.md)
 #### [Настройка гибридных устройств, присоединенных к Azure AD](devices/hybrid-azuread-join-manual-steps.md)
 #### [Локальное развертывание](active-directory-device-registration-on-premises-setup.md)
-#### [Присоединение к Azure AD во время первого запуска Windows 10](device-management-azuread-joined-devices-frx.md)
+#### [Присоединение к Azure AD во время первого запуска Windows 10](devices/azuread-joined-devices-frx.md)
 ### Устранение неполадок
-#### [Устройства под управлением Windows 10 и Windows Server 2016, присоединенные к гибридному облаку Azure AD](device-management-troubleshoot-hybrid-join-windows-current.md)
-#### [Устройства под управлением прежних версий Windows, присоединенные к гибридному облаку Azure AD](device-management-troubleshoot-hybrid-join-windows-legacy.md)
+#### [Устройства под управлением Windows 10 и Windows Server 2016, присоединенные к гибридному облаку Azure AD](devices/troubleshoot-hybrid-join-windows-current.md)
+#### [Устройства под управлением прежних версий Windows, присоединенные к гибридному облаку Azure AD](devices/troubleshoot-hybrid-join-windows-legacy.md)
 
 ## Управление приложениями
 ### [Обзор](manage-apps/what-is-application-management.md)

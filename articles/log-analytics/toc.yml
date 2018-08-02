@@ -55,8 +55,10 @@
           href: log-analytics-log-search-portals.md
 - name: Практические руководства
   items:
-    - name: Создание рабочей области Log Analytics
-      href: log-analytics-quick-create-workspace.md
+    - name: Создание рабочей области
+      items:
+        - name: Использование портала Azure
+          href: log-analytics-quick-create-workspace.md
     - name: Сбор данных
       items:
         - name: Подключенные источники

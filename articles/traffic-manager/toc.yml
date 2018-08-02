@@ -45,6 +45,8 @@
       href: traffic-manager-metrics-alerts.md
     - name: Аварийное восстановление с помощью Azure DNS и диспетчера трафика
       href: ../networking/disaster-recovery-dns-traffic-manager.md
+    - name: Как работает диспетчер трафика
+      href: traffic-manager-how-it-works.md
     - name: Часто задаваемые вопросы
       href: traffic-manager-FAQs.md
 - name: Практическое руководство

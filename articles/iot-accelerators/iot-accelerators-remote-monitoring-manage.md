@@ -9,18 +9,18 @@ services: iot-accelerators
 ms.date: 07/19/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: cd8e8c1fe1b77113968b7af635f45f9e0e077b7c
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: b1e12ad837def690e55fc501c67d8b2ed5e3cd4d
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159203"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284617"
 ---
 # <a name="tutorial-configure-and-manage-devices-connected-to-your-monitoring-solution"></a>Учебник. Настройка и администрирование устройств, подключенных к решению для мониторинга
 
 В этом руководстве показано, как настраивать подключенные устройства Интернета вещей и управлять ими с помощью акселератора решений для удаленного мониторинга. Вы добавите новое устройство в акселератор решения, настроите это устройство и обновите его встроенное ПО.
 
-Компания Contoso заказала новые машины для расширения производства. Пока компания ждет доставки машин, нужно выполнить моделирование, чтобы проверить поведение решения. Для проведения моделирования необходимо добавить новое имитированное устройство "Двигатель" в акселератор решений для удаленного мониторинга и проверить правильность его реагирования на действия и обновления конфигурации.
+Компания Contoso заказала новые машины для расширения производства. Пока компания ждет доставки машин, нужно выполнить моделирование, чтобы проверить поведение решения. Для проведения моделирования необходимо добавить новое имитированное устройство в акселератор решений для удаленного мониторинга и проверить правильность его реагирования на действия и обновления конфигурации.
 
 Для расширенной настройки устройств и управления ими в акселераторе решений для удаленного мониторинга используются компоненты Центра Интернета вещей, такие как [задания](../iot-hub/iot-hub-devguide-jobs.md) и [прямые методы](../iot-hub/iot-hub-devguide-direct-methods.md). Хотя в этом руководстве применяются имитированные устройства, разработчик устройств может реализовать прямые методы на [физическом устройстве, подключенном к акселератору решений для удаленного мониторинга](iot-accelerators-connecting-devices.md).
 
@@ -35,7 +35,7 @@ ms.locfileid: "39159203"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [iot-iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
+[!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
 ## <a name="add-a-simulated-device"></a>Добавление имитированного устройства
 
@@ -45,13 +45,13 @@ ms.locfileid: "39159203"
 
 На панели **Новое устройство** выберите вариант **Имитированное**, оставьте число подготавливаемых устройств равным **1**, выберите модель устройства **Неисправный модуль** и нажмите кнопку **Применить**, чтобы создать имитированное устройство:
 
-[![Подготовка имитированного устройства "Двигатель"](./media/iot-accelerators-remote-monitoring-manage/devicesprovisionengine-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesprovisionengine-expanded.png#lightbox)
+[![Подготовка имитированного устройства "Модуль"](./media/iot-accelerators-remote-monitoring-manage/devicesprovisionengine-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesprovisionengine-expanded.png#lightbox)
 
 ## <a name="test-the-simulated-device"></a>Тестирование имитированного устройства
 
 Чтобы проверить, отправляет ли имитированное устройство "Двигатель"данные телеметрии и сообщает ли оно значения свойств, выберите его в списке устройств на странице **Устройства**. Актуальные сведения о двигателе отображаются на панели **Сведения об устройстве**.
 
-[![Просмотр сведений об имитированном устройстве "Двигатель"](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-expanded.png#lightbox)
+[![Просмотр сведений об имитированном устройстве "Модуль"](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesviewnew-expanded.png#lightbox)
 
 На панели **Сведения об устройстве** проверьте, отправляет ли новое устройство данные телеметрии. Для просмотра поступаемого с устройства потока телеметрических данных о вибрации выберите пункт **Вибрация**.
 
@@ -63,9 +63,9 @@ ms.locfileid: "39159203"
 
 ## <a name="act-on-a-device"></a>Работа с устройством
 
-Чтобы проверить, правильно ли имитированное устройство "Двигатель" реагирует на действия, инициируемые с панели мониторинга, выполните метод **FirmwareUpdate**. Для работы с устройством с помощью метода выберите его в списке устройств и щелкните **Задания**. Вы можете выбрать несколько устройств для одновременной работы с ними. На панели **Задания** выберите **Выполнить метод**. Для модели устройства **Двигатель** определено три метода: **FirmwareUpdate**, **FillTank** и **EmptyTank**.
+Чтобы проверить, правильно ли имитированное устройство "Двигатель" реагирует на действия, инициируемые с панели мониторинга, выполните метод **FirmwareUpdate**. Для работы с устройством с помощью метода выберите его в списке устройств и щелкните **Задания**. Вы можете выбрать несколько устройств для одновременной работы с ними. На панели **Задания** выберите **Выполнить метод**. Для модели устройства **Модуль** определено три метода: **FirmwareUpdate**, **FillTank** и **EmptyTank**.
 
-[![Методы устройства "Двигатель"](./media/iot-accelerators-remote-monitoring-manage/devicesmethods-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesmethods-expanded.png#lightbox)
+[![Методы устройства "Модуль"](./media/iot-accelerators-remote-monitoring-manage/devicesmethods-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesmethods-expanded.png#lightbox)
 
 Выберите метод **FirmwareUpdate**, задайте имя задания **UpdateEngineFirmware**, укажите версию встроенного ПО **2.0.0**, задайте код URI встроенного ПО **http://contoso.com/engine.bin**, а затем нажмите кнопку **Применить**:
 
@@ -75,17 +75,17 @@ ms.locfileid: "39159203"
 
 [![Отслеживание задания обновления встроенного ПО по расписанию](./media/iot-accelerators-remote-monitoring-manage/firmwareupdatestatus-inline.png)](./media/iot-accelerators-remote-monitoring-manage/firmwareupdatestatus-expanded.png#lightbox)
 
-Когда выполнение задания завершится, вернитесь на страницу **Устройства**. Для устройства "Двигатель" будет указана новая версия встроенного ПО.
+Когда выполнение задания завершится, вернитесь на страницу **Устройства**. Для устройства "Модуль" будет указана новая версия встроенного ПО.
 
 Если на странице **Устройства** выбрано несколько устройств разных типов, вы все же можете создать задание для выполнения метода на этих устройствах. На панели **Задания** отображаются только те методы, которые являются общими для всех выбранных устройств.
 
 ## <a name="reconfigure-a-device"></a>Перенастройка устройства
 
-Чтобы проверить, можно ли изменить свойства конфигурации двигателя, выберите его в списке устройств на странице **Устройства**. Затем щелкните **Задания** и выберите пункт **Перенастроить**. На панели заданий отображаются значения свойств выбранного устройства, которые можно изменить:
+Чтобы проверить, можно ли изменить свойства конфигурации модуля, выберите его в списке устройств на странице **Устройства**. Затем щелкните **Задания** и выберите пункт **Перенастроить**. На панели заданий отображаются значения свойств выбранного устройства, которые можно изменить:
 
 [![Перенастройка устройства](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigure-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigure-expanded.png#lightbox)
 
-Чтобы изменить расположение двигателя, задайте имя задания **UpdateEngineLocation**, укажите долготу **-122,15**, расположение **Фабрика 2**, широту **47,62**, а затем нажмите кнопку **Применить**:
+Чтобы изменить расположение модуля, задайте имя задания **UpdateEngineLocation**, укажите долготу **-122,15**, расположение **Фабрика 2**, широту **47,62**, а затем нажмите кнопку **Применить**:
 
 [![Обновление значения для свойства устройства](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-inline.png)](./media/iot-accelerators-remote-monitoring-manage/devicesreconfigurephysical-expanded.png#lightbox)
 
@@ -93,9 +93,9 @@ ms.locfileid: "39159203"
 
 [![Обновление значения для свойства устройства](./media/iot-accelerators-remote-monitoring-manage/locationjobstatus-inline.png)](./media/iot-accelerators-remote-monitoring-manage/locationjobstatus-expanded.png#lightbox)
 
-Когда выполнение задания завершится, перейдите на страницу **Панель мониторинга**. Устройство "Двигатель" отображается в новом месте:
+Когда выполнение задания завершится, перейдите на страницу **Панель мониторинга**. Устройство "Модуль" отображается в новом месте:
 
-[![Просмотр расположения двигателя](./media/iot-accelerators-remote-monitoring-manage/enginelocation-inline.png)](./media/iot-accelerators-remote-monitoring-manage/enginelocation-expanded.png#lightbox)
+[![Просмотр расположения модуля](./media/iot-accelerators-remote-monitoring-manage/enginelocation-inline.png)](./media/iot-accelerators-remote-monitoring-manage/enginelocation-expanded.png#lightbox)
 
 ## <a name="organize-your-devices"></a>Упорядочение устройств
 
@@ -140,7 +140,7 @@ ms.locfileid: "39159203"
 
 [![Создание фильтра Connected Vehicle](./media/iot-accelerators-remote-monitoring-manage/filterinaction-inline.png)](./media/iot-accelerators-remote-monitoring-manage/filterinaction-expanded.png#lightbox)
 
-[!INCLUDE [iot-iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
+[!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

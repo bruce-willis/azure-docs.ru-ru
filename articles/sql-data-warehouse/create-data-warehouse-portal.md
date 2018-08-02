@@ -7,15 +7,15 @@ manager: craigg-msft
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 04/17/2018
+ms.date: 08/01/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: e9501d023ad1e0bfdf692f31ec61ae59959c0f23
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6602dc52675344b2e68fefd9eb97d3edcbd1745b
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32191525"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413261"
 ---
 # <a name="quickstart-create-and-query-an-azure-sql-data-warehouse-in-the-azure-portal"></a>Краткое руководство. Создание хранилища данных SQL Azure на портале Azure и отправка запросов к этому хранилищу данных
 
@@ -32,13 +32,13 @@ ms.locfileid: "32191525"
 
 Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-a-data-warehouse"></a>Создание хранилища данных
 
-Хранилище данных SQL Azure создается с определенным набором [вычислительных ресурсов](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-servers-databases.md#what-is-an-azure-sql-logical-server). 
+Хранилище данных SQL Azure создается с определенным набором [вычислительных ресурсов](memory-and-concurrency-limits.md). База данных создается в пределах [группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md) и [логического сервера SQL Azure](../sql-database/sql-database-logical-servers.md). 
 
 Следуйте приведенным инструкциям по созданию хранилища данных SQL, содержащего пример данных AdventureWorksDW. 
 
@@ -144,8 +144,8 @@ ms.locfileid: "32191525"
    | Параметр       | Рекомендуемое значение | ОПИСАНИЕ | 
    | ------------ | ------------------ | ------------------------------------------------- | 
    | Тип сервера | Ядро СУБД | Это обязательное значение |
-   | имя сервера; | Полное имя сервера | Пример: **mynewserver-20180430.database.windows.net**. |
-   | Authentication | проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
+   | Имя сервера | Полное имя сервера | Пример: **mynewserver-20180430.database.windows.net**. |
+   | Authentication | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
    | Вход | Учетная запись администратора сервера | Это учетная запись, указанная при создании сервера. |
    | Пароль | Пароль учетной записи администратора сервера | Это пароль, указанный при создании сервера. |
 

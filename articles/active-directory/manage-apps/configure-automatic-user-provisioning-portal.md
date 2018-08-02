@@ -9,18 +9,18 @@ editor: ''
 ms.service: active-directory
 ms.component: app-mgmt
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/26/2017
 ms.author: barbkess
 ms.reviewer: asmalser
-ms.openlocfilehash: 926db432e413c3fc1360f68598e952830d212cb9
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 2b2b44deacf8278b8e8c2554cc873c5d0b75f6f9
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36331471"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39366194"
 ---
 # <a name="managing-user-account-provisioning-for-enterprise-apps-in-the-azure-portal"></a>Управление подготовкой учетных записей пользователей для корпоративных приложений на портале Azure
 В этой статье описывается управление автоматической подготовкой и отзывом учетных записей пользователей для приложений, поддерживающих эту возможность, особенно добавленных в категории "Избранные" [коллекции приложений Azure Active Directory](what-is-single-sign-on.md#get-started-with-the-azure-ad-application-gallery), с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения об автоматической подготовке учетных записей пользователей см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../active-directory-saas-app-provisioning.md).

@@ -11,17 +11,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: it-pro
-ms.openlocfilehash: 86ff34bb0780811663d437a9183d0b688b69073d
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 39e926a392cbd87eff23e25d9708792ec7c40a2c
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35302995"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368712"
 ---
 # <a name="disable-user-sign-ins-for-an-enterprise-app-in-azure-active-directory"></a>Отключение входа пользователя в корпоративное приложение в Azure Active Directory
 В Azure Active Directory (Azure AD) вы можете легко отключить корпоративное приложение, чтобы пользователи не могли войти в него. Необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
@@ -41,7 +41,7 @@ ms.locfileid: "35302995"
 8. Щелкните **Сохранить** .
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Просмотр всех моих групп](../active-directory-groups-view-azure-portal.md)
+* [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
 * [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)

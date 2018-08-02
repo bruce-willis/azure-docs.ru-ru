@@ -10,17 +10,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/31/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: cb4620babd3a1ba5087ae9ebd2870c1ef404bb58
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 090df19861e00a99f0bb63bf20eb2f26dc6761fd
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34156489"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368482"
 ---
 # <a name="working-with-custom-domains-in-azure-ad-application-proxy"></a>Работа с пользовательскими доменами в прокси приложения Azure AD
 
@@ -35,10 +35,10 @@ ms.locfileid: "34156489"
 
 ## <a name="configure-a-custom-domain"></a>Настройка личного домена
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем настроить личный домен, убедитесь, что у вас есть следующие необходимые компоненты: 
-- [Проверенный домен, добавленный в Azure Active Directory](../add-custom-domain.md).
+- [Проверенный домен, добавленный в Azure Active Directory](../fundamentals/add-custom-domain.md).
 - Пользовательский сертификат для домена в формате PFX-файла. 
 - Локальное приложение, [опубликованное через прокси приложение](application-proxy-publish-azure-portal.md).
 
@@ -72,7 +72,7 @@ ms.locfileid: "34156489"
 Можно использовать групповой сертификат, если он соответствует требуемому внешнему URL-адресу. 
 
 ### <a name="changing-the-domain"></a>Изменение домена
-Все проверенные домены отображаются в раскрывающемся списке внешних URL-адресов для вашего приложения. Чтобы изменить домен, просто обновите поле приложения. Если в списке нет нужного домена, [добавьте его в качестве проверенного домена](../add-custom-domain.md). Если вы выбрали домен без связанного сертификата, выполните шаги 5–7, чтобы добавить сертификат. Затем убедитесь, что обновили запись DNS для перенаправления из нового внешнего URL-адреса. 
+Все проверенные домены отображаются в раскрывающемся списке внешних URL-адресов для вашего приложения. Чтобы изменить домен, просто обновите поле приложения. Если в списке нет нужного домена, [добавьте его в качестве проверенного домена](../fundamentals/add-custom-domain.md). Если вы выбрали домен без связанного сертификата, выполните шаги 5–7, чтобы добавить сертификат. Затем убедитесь, что обновили запись DNS для перенаправления из нового внешнего URL-адреса. 
 
 ### <a name="certificate-management"></a>Управление сертификатами
 Вы можете использовать тот же сертификат для нескольких приложений, если они не находятся на одном и том же внешнем узле. 
@@ -84,6 +84,6 @@ ms.locfileid: "34156489"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Включите единый вход](application-proxy-configure-single-sign-on-with-kcd.md) в опубликованные приложения с помощью аутентификации Azure AD.
 * [Включите условный доступ](application-proxy-integrate-with-sharepoint-server.md) к опубликованным приложениям.
-* [Добавление имени личного домена в Azure Active Directory](../add-custom-domain.md)
+* [Добавление имени личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md)
 
 

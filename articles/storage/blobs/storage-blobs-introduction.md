@@ -3,17 +3,17 @@ title: Общие сведения о хранилище BLOB-объектов. 
 description: Хранилище BLOB-объектов предназначено для хранения больших объемов неструктурированных данных объектов, например текстовых или двоичных данных. Ваши приложения могут обращаться к объектам в хранилище BLOB-объектов из PowerShell или Azure CLI, а также из кода с помощью клиентских библиотек хранилища Azure или через REST.
 services: storage
 author: tamram
-manager: jeconnoc
 ms.service: storage
 ms.topic: overview
 ms.date: 03/27/2018
 ms.author: tamram
-ms.openlocfilehash: f67ee855456b40b553f09d6cf32d00e99c5530b2
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.component: blobs
+ms.openlocfilehash: b445da54808249f85b22563b5d1ba74f5347740c
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38479219"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396902"
 ---
 # <a name="introduction-to-object-storage-in-azure"></a>Общие сведения о хранилище объектов в Azure
 

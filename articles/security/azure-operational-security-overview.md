@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: tomsh
-ms.openlocfilehash: c0413678aad16105f732ef23fb60c61fddcdad45
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 361905b4c1e0c9e596cb7cf1cd5a730268d81bd0
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34365718"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413415"
 ---
 # <a name="azure-operational-security-overview"></a>Обзор операционной безопасности Azure
 Под [операционной безопасностью Azure](https://docs.microsoft.com/azure/security/azure-operational-security) понимаются службы, элементы управления и функции, которые пользователи могут использовать для защиты своих данных, приложений и других ресурсов в Microsoft Azure. Это платформа, которая базируется на знаниях, полученных с помощью широкого набора уникальных возможностей корпорации Майкрософт. Сюда входят жизненный цикл разработки защищенных приложений (Майкрософт) (SDL), программа Microsoft Security Response Center и глубокая осведомленность о характере угроз кибербезопасности.
@@ -57,7 +57,6 @@ Azure Backup включает в себя несколько компонент�
 Кроме того, Azure AD также содержит полный набор [возможностей управления удостоверениями](https://docs.microsoft.com/azure/security/security-identity-management-overview#security-monitoring-alerts-and-machine-learning-based-reports):
 
 - [Многофакторная проверка подлинности](https://docs.microsoft.com/azure/multi-factor-authentication/multi-factor-authentication)
-- [Регистрация устройств]( https://docs.microsoft.com/azure/active-directory/active-directory-device-registration-overview)
 - [Самостоятельное управление паролями](https://azure.microsoft.com/resources/videos/self-service-password-reset-azure-ad/)
 - [Самостоятельное управление группами](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-update-your-own-password)
 - [Управление привилегированными учетными записями](https://docs.microsoft.com/azure/active-directory/active-directory-privileged-identity-management-configure)

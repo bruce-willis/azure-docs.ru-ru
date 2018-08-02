@@ -3,18 +3,17 @@ title: Краткое руководство Azure. Создание больш�
 description: В рамках этого краткого руководства вы используете Azure CLI в хранилище объектов (больших двоичных объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью Azure CLI.
 services: storage
 author: roygara
-manager: jeconnoc
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 04/09/2018
 ms.author: rogarana
-ms.openlocfilehash: b55fe97adc56f4b8f1baeb2d8bb5f905fcd424bd
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 106c84a6eaff3766c5308ccb130dc7c21e7ec4d8
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38232726"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39397018"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-the-azure-cli"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью Azure CLI
 

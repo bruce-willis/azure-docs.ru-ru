@@ -14,12 +14,12 @@ ms.component: fundamentals
 ms.technology: ''
 ms.assetid: ''
 ms.custom: it-pro
-ms.openlocfilehash: b052613161b4fee9a01def966fb02cbf8a7a483c
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 118f8258673c8a19d5f06e5fc62ff56d0fb44ea1
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056942"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398370"
 ---
 # <a name="understand-azure-identity-solutions"></a>Общие сведения о решениях идентификации Azure
 Microsoft Azure Active Directory (Azure AD) — это облачное решение по управлению идентификацией и доступом, предоставляющее службы каталогов, функции контроля удостоверений и управления доступом к приложениям. Azure AD позволяет быстро [выполнять единый вход](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-apps-manage-sso) в 1000 предварительно интегрированных пользовательских и коммерческих приложений в [коллекции приложений Azure AD](https://azure.microsoft.com/marketplace/active-directory/all/). Вы наверняка уже используете многие из этих приложений, например Office 365, Salesforce.com, Box, ServiceNow и Workday.
@@ -103,7 +103,7 @@ Microsoft Azure предоставляет несколько вариантов
 |Организация вложила значительные средства в локальную службу Windows Server Active Directory, но мы хотим расширить действие локальных удостоверений в облако.| Среди решений по управлению удостоверениями Azure наиболее широко используется [решение гибридной идентификации](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-overview). Вложив средства в локальную службу AD DS, вы можете легко расширить действие удостоверений в облако с помощью Azure AD Connect.|
 |Организация использует облако и не выделяет средства на локальные решения идентификации.| [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) — это оптимальный вариант для организаций, использующих только облако, без инвестиций в локальные решения.|
 |Требуются упрощенная конфигурация виртуальной машины Azure и элементы управления, обеспечивающие соответствие требованиям к локальным удостоверениям, необходимым при разработке и тестировании.|[Доменные службы Azure AD](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-overview) отлично подходят для управления упрощенной конфигурацией виртуальных машин Azure с помощью AD DS, а также для разработки или переноса устаревших локальных приложений для работы с каталогами в облако.|  
-|В среде Azure необходимо разместить несколько виртуальных машин, но компания по-прежнему выделяет значительные средства на локальную службу AD DS.|[Самостоятельно разверните инфраструктуру AD DS](https://msdn.microsoft.com/library/azure/jj156090.aspx) и используйте виртуальные машины Azure, только если нужна поддержка нескольких виртуальных машин и при наличии значительных инвестиций в локальную службу AD DS. |
+|В среде Azure необходимо разместить несколько виртуальных машин, но компания по-прежнему выделяет значительные средства на локальную службу AD DS.|[Самостоятельно разверните инфраструктуру AD DS](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-comparison#do-it-yourself-diy-ad-deployment-options) и используйте виртуальные машины Azure, только если нужна поддержка нескольких виртуальных машин и при наличии значительных инвестиций в локальную службу AD DS. |
 
 ## <a name="where-can-i-learn-more"></a>Где можно получить дополнительную информацию?
 В сети есть множество полезных ресурсов, которые помогут вам больше узнать об Azure AD. Ниже приведен список отличных статей для начала работы.
@@ -126,5 +126,3 @@ Microsoft Azure предоставляет несколько вариантов
 [Подробнее о решениях гибридной идентификации Azure](https://docs.microsoft.com/azure/active-directory/choose-hybrid-identity-solution)
 
 [Дополнительные сведения о среде подтверждения концепции Azure](https://aka.ms/aad-poc)
-
-[Deploy Azure AD in production](https://aka.ms/aad-onboard) (Развертывание Azure AD в рабочей среде)

@@ -40,7 +40,7 @@
   items:
     - name: Что такое Load Balancer уровня "Стандартный"?
       href: load-balancer-standard-overview.md
-    - name: Проверки балансировщика нагрузки
+    - name: Пробы работоспособности.
       href: load-balancer-custom-probe-overview.md
     - name: Порты с высоким уровнем доступности
       href: load-balancer-ha-ports-overview.md

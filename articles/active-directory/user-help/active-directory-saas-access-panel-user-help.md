@@ -1,26 +1,23 @@
 ---
-title: Устранение неполадок, возникающих при использовании портала "Мои приложения" и получении доступа к нему в Azure AD | Документы Майкрософт
+title: Устранение неполадок с получением доступа к порталу "Мои приложения" в Azure Active Directory и его использование | Документация Майкрософт
 description: Сведения по устранению неполадок с входом на панель доступа и выполнения общих задач на ней.
 services: active-directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
-editor: ''
 ms.assetid: c67cd675-b567-41e1-8bc2-e06fe0b38d3b
 ms.service: active-directory
+ms.component: user-help
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: lizross
 ms.reviewer: japere
-ms.openlocfilehash: e4e0dd91110eb56623bdb73b99eed4a35ccb751c
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: a6ac780625f6a109797cbdab78dc555e21e18bee
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058176"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39343616"
 ---
 # <a name="troubleshoot-issues-with-accessing-and-using-the-my-apps-portal"></a>Устранение неполадок, возникающих при использовании портала "Мои приложения" и получении доступа к нему
 

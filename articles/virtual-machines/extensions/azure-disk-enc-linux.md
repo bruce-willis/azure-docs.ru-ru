@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 06/12/2018
-ms.author: danis
-ms.openlocfilehash: e7926fa488ad38784a3db96035055a80f841aed8
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.author: ejarvi
+ms.openlocfilehash: 36e8875e91e2f04dbb60bab3211f07b2053e78f5
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449270"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39414778"
 ---
 # <a name="azure-disk-encryption-for-linux-microsoftazuresecurityazurediskencryptionforlinux"></a>Шифрование дисков Azure для Linux (Microsoft.Azure.Security.AzureDiskEncryptionForLinux)
 
@@ -27,19 +27,18 @@ ms.locfileid: "37449270"
 
 Шифрование дисков Azure использует подсистему dm-crypt в Linux для шифрования всего диска в [выбранных дистрибутивах Azure Linux](https://aka.ms/adelinux).  Решение интегрируется с Azure Key Vault, обеспечивая управление секретами и ключами шифрования диска.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 См. полный список [необходимых компонентов для шифрования дисков Azure](
-../../security/azure-security-disk-encryption.md#prerequisites).
+../../security/azure-security-disk-encryption-prerequisites.md).
 
 ### <a name="operating-system"></a>Операционная система
 
-Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  Список поддерживаемых дистрибутивов Linux см. в разделе с [вопросами и ответами о шифровании дисков Azure](../../security/azure-security-disk-encryption-faq.md#what-linux-distributions-does-azure-disk-encryption-support).
+Шифрование дисков Azure сейчас поддерживается для некоторых дистрибутивов и версий.  Список поддерживаемых дистрибутивов Linux см. в разделе с [вопросами и ответами о шифровании дисков Azure](../../security/azure-security-disk-encryption-faq.md#bkmk_LinuxOSSupport).
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
 
-При шифровании дисков Azure для Linux требуется подключение к Интернету для доступа к Active Directory, хранилищу Key Vault, хранения и конечным точкам управления пакетами.  См. список [необходимых компонентов для шифрования дисков Azure](
-../../security/azure-security-disk-encryption.md#prerequisites).
+При шифровании дисков Azure для Linux требуется подключение к Интернету для доступа к Active Directory, хранилищу Key Vault, хранения и конечным точкам управления пакетами.  См. список [необходимых компонентов для шифрования дисков Azure](../../security/azure-security-disk-encryption-prerequisites.md).
 
 ## <a name="extension-schema"></a>Схема расширения
 

@@ -10,14 +10,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/18/2018
+ms.date: 07/30/2018
 ms.author: douglasl
-ms.openlocfilehash: ee01980229495d9b3f372ec85ee874955c291e5c
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 26ab8c0547bb533a032dec59183f8152be9180cf
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37868326"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39364551"
 ---
 # <a name="continuous-integration-and-deployment-in-azure-data-factory"></a>Непрерывные интеграция и развертывание в фабрике данных Azure
 
@@ -97,7 +97,7 @@ ms.locfileid: "37868326"
 
     a.  Создайте новую задачу, найдите и добавьте **Развертывание группы ресурсов Azure**.
 
-    Б.  В задаче "Развертывание" выберите подписку, группу ресурсов и расположение для целевой фабрики данных и при необходимости предоставьте учетные данные.
+    b.  В задаче "Развертывание" выберите подписку, группу ресурсов и расположение для целевой фабрики данных и при необходимости предоставьте учетные данные.
 
     c.  Выберите действие **Create or Update Resource Group** (Создание или изменение группы ресурсов).
 
@@ -105,7 +105,7 @@ ms.locfileid: "37868326"
 
     д.  Выполните те же действия для файла параметров. Выберите правильный файл. Выбор зависит от того, была ли создана копия или используется файл по умолчанию *ARMTemplateParametersForFactory.json*.
 
-    f.  Выберите **…** рядом с полем **Переопределить параметры шаблона** и заполните сведения для целевой фабрики данных. Для учетных данных, полученных из хранилища ключей, используйте одно и то же имя секрета в следующем формате: если имя секрета — `cred1`, введите `"$(cred1)"` (между кавычками).
+    Е.  Выберите **…** рядом с полем **Переопределить параметры шаблона** и заполните сведения для целевой фабрики данных. Для учетных данных, полученных из хранилища ключей, используйте одно и то же имя секрета в следующем формате: если имя секрета — `cred1`, введите `"$(cred1)"` (между кавычками).
 
     ![](media/continuous-integration-deployment/continuous-integration-image9.png)
 
@@ -865,9 +865,7 @@ else {
                     "tenant": "=",
                     "dataLakeStoreUri": "=",
                     "baseUrl": "=",
-                    "connectionString": {
-                        "secretName": "="
-                    }
+                    "connectionString": "|:-connectionString:secureString"
                 }
             }
         }
@@ -884,4 +882,3 @@ else {
     }
 }
 ```
-

@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: rajanaki
-ms.openlocfilehash: 04cb658da6a22643e21104f5673a3f211f48b7fc
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 1b410b2832d856f80d640aab2096fef270156c81
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37916485"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39346685"
 ---
 # <a name="reprotect-machines-from-azure-to-an-on-premises-site"></a>Повторная защита виртуальных машин, восстанавливаемых из Azure на локальный сайт
 
@@ -63,7 +63,7 @@ ms.locfileid: "37916485"
 Главный целевой сервер принимает данные восстановления размещения. По умолчанию главный целевой сервер работает на локальном сервере конфигурации. Но в зависимости от объема трафика восстановления размещения для него может потребоваться создать отдельный главный целевой сервер. Вот как это сделать:
 
 * [Создайте главный целевой сервер Linux](vmware-azure-install-linux-master-target.md) для восстановления размещения виртуальных машин Linux. Это обязательный шаг.
-* При необходимости создайте отдельный главный целевой сервер для восстановления размещения виртуальных машин Windows. Для этого снова запустите унифицированную установку и выберите создание главного целевого сервера. [Узнайте больше](physical-azure-set-up-source.md#run-azure-site-recovery-unified-setup).
+* При необходимости создайте отдельный главный целевой сервер для восстановления размещения виртуальных машин Windows. Для этого снова запустите унифицированную установку и выберите создание главного целевого сервера. [Узнайте больше](site-recovery-plan-capacity-vmware.md#deploy-additional-master-target-servers).
 
 После создания главного целевого сервера выполните следующие задачи:
 

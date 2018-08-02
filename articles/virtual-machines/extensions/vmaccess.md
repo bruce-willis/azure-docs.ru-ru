@@ -3,7 +3,7 @@ title: Сброс параметров доступа к виртуальным 
 description: В этой статье показано, как управлять пользователями с правами администратора и сбрасывать параметры доступа на виртуальных машинах Linux, используя расширение VMAccess и Azure CLI 2.0.
 services: virtual-machines-linux
 documentationcenter: ''
-author: danielsollondon
+author: zroiy
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
-ms.author: danis
-ms.openlocfilehash: c023f226894d2fabb90736513e49a1ecca179d4f
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.author: roiyz
+ms.openlocfilehash: 51c203c746a5256924033ebe48d9ddfdc3823b16
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34165797"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39415897"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli-20"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI 2.0
 ## <a name="overview"></a>Обзор
@@ -28,7 +28,7 @@ ms.locfileid: "34165797"
 
 В этой статье показано, как использовать расширение Azure VMAccess для проверки или восстановления диска, сброса прав доступа пользователей, управления учетными записями пользователей с правами администратора или обновления конфигурации SSH в Linux при использовании виртуальных машин Azure Resource Manager. Если необходимо управлять классическими виртуальными машинами, следуйте инструкциям, приведенным в [документации по классическим виртуальным машинам](../linux/classic/reset-access-classic.md). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 ### <a name="operating-system"></a>Операционная система
 
 Расширение VMAccess можно выполнять с использованием следующих дистрибутивов Linux.
@@ -37,7 +37,7 @@ ms.locfileid: "34165797"
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS и 12.04 LTS |
 | Debian | Debian 7.9+, 8.2+ |
-| RedHat | RHEL 6.7 или более поздней версии, 7.1 или более поздней версии |
+| Red Hat | RHEL 6.7 или более поздней версии, 7.1 или более поздней версии |
 | Oracle Linux | 6.4+, 7.0+ |
 | SUSE | 11 и 12 |
 | openSUSE | openSUSE LEAP 42.2+ |

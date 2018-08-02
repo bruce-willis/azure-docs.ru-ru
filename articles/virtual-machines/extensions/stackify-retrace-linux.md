@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/12/2018
-ms.author: danis
-ms.openlocfilehash: 376c5a087f74fbe087db9fa2df38b2ba4e6cf1ff
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.author: roiyz
+ms.openlocfilehash: b286ebc2e50166e8491b45346a81b161227f8d21
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33944846"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39415967"
 ---
 # <a name="stackify-retrace-linux-agent-extension"></a>Расширение агента Stackify Retrace для Linux
 
@@ -37,7 +37,7 @@ Retrace — это единственный инструмент, который
 
 Это расширение предоставляет путь установки агента Retrace для Linux. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 ### <a name="operating-system"></a>Операционная система 
 Агент Retrace можно выполнять с использованием следующих дистрибутивов Linux.
@@ -46,7 +46,7 @@ Retrace — это единственный инструмент, который
 |---|---|
 | Ubuntu | 16.04 LTS, 14.04 LTS, 16.10 и 17.04 |
 | Debian | 7.9 и выше, 8.2 и выше, 9 |
-| RedHat | 6.7 и выше, 7.1 и выше |
+| Red Hat | 6.7 и выше, 7.1 и выше |
 | CentOS | 6.3 и выше, 7.0 и выше |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету

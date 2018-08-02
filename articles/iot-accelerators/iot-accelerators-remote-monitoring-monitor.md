@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 07/19/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: d31ea1fe579e5ac7a846c1c0d03012d70be9884d
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 1f9e5885e79e184b621ba2be7e2a8f329e31a6b1
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159354"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284495"
 ---
 # <a name="tutorial-monitor-your-iot-devices"></a>Руководство. Мониторинг устройств Интернета вещей
 
@@ -33,7 +33,7 @@ ms.locfileid: "39159354"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [iot-iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
+[!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
 ## <a name="choose-the-devices-to-display"></a>Выбор устройств для отображения
 
@@ -93,7 +93,7 @@ ms.locfileid: "39159354"
 
 На агрегирование ключевых показателей эффективности влияют те же фильтры, которые устанавливают временной интервал для оповещений и определяют отображаемые устройства. По умолчанию на панели отображаются КПЭ, собранные за последний час.
 
-[!INCLUDE [iot-iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
+[!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

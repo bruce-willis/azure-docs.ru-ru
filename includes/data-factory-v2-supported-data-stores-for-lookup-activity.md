@@ -5,27 +5,27 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 05/05/2018
+ms.date: 06/28/2018
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: df4765fc92e78dbb5ee43be3cc09c2b96d834080
-ms.sourcegitcommit: 39f4911b5933f7062dcf5d57af94eab8a0740b2b
+ms.openlocfilehash: 359f0ef4cd402b587f1ed2db9fa41141ab8dff1d
+ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/16/2018
-ms.locfileid: "35683157"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39008541"
 ---
 | Категория | Хранилище данных |
 |:--- |:--- |
-| **Таблицы Azure** |[Хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |
-| &nbsp; |[База данных Azure Cosmos](../articles/data-factory/connector-azure-cosmos-db.md) |
-| &nbsp; |[Хранилище озера данных Azure](../articles/data-factory/connector-azure-data-lake-store.md) |
+| **Таблицы Azure** |[хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |
+| &nbsp; |[Azure Cosmos DB](../articles/data-factory/connector-azure-cosmos-db.md) |
+| &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |
-| &nbsp; |[Хранилище файлов Azure](../articles/data-factory/connector-azure-file-storage.md) |
+| &nbsp; |[Файлы Azure](../articles/data-factory/connector-azure-file-storage.md) |
 | &nbsp; |[база данных SQL Azure;](../articles/data-factory/connector-azure-sql-database.md) |
 | &nbsp; |[Хранилище данных Azure SQL](../articles/data-factory/connector-azure-sql-data-warehouse.md) |
-| &nbsp; |[хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |
+| &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/connector-azure-table-storage.md) |
 | **База данных** |[Amazon Redshift](../articles/data-factory/connector-amazon-redshift.md) |
 | &nbsp; |[DB2](../articles/data-factory/connector-db2.md) |
 | &nbsp; |[Детализация (предварительная версия)](../articles/data-factory/connector-drill.md) |

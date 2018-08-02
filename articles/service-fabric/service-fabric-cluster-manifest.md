@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/06/2017
 ms.author: dekapur
-ms.openlocfilehash: e0fed608ac9dd02a6fe5563eefc30edb63d224b1
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 37859a117c88238089a681e3814c2a52f62bfce4
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34205371"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412589"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
 В этой статье описана настройка изолированного кластера Azure Service Fabric с помощью файла ClusterConfig.json. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.
@@ -47,9 +47,6 @@ ms.locfileid: "34205371"
 Для кластера Service Fabric можно задать любое понятное имя, присвоив его переменной name. clusterConfigurationVersion — это номер версии кластера. Его следует увеличивать при каждом обновлении кластера Service Fabric. Оставьте для apiVersion значение по умолчанию.
 
 ## <a name="nodes-on-the-cluster"></a>Узлы в кластере
-
-    <a id="clusternodes"></a>
-
 Можно настроить узлы в кластере Service Fabric с помощью раздела nodes, как показано в следующем фрагменте кода:
 
     "nodes": [{
@@ -88,8 +85,6 @@ ms.locfileid: "34205371"
 ### <a name="reliability"></a>Надежность
 Термин reliabilityLevel определяет количество реплик или экземпляров системных служб Service Fabric, которые могут выполняться на первичных узлах кластера. От этого зависит надежность этих служб и, следовательно, кластера. Значение вычисляется системой во время создания и обновления кластера.
 
-    <a id="reliability"></a>
-
 ### <a name="diagnostics"></a>Диагностика
 В разделе diagnosticsStore вы можете настроить параметры, чтобы включить диагностику и устранение неполадок узлов и кластера, как показано в следующем фрагменте кода: 
 
@@ -124,9 +119,6 @@ ms.locfileid: "34205371"
 Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Можно задать значение *X509* для защиты на основе сертификатов или *Windows* для защиты на основе Azure Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
 ### <a name="node-types"></a>Типы узлов
-
-    <a id="nodetypes"></a>
-
 В разделе nodeTypes описывается тип узлов в кластере. Для кластера нужно указать по крайней мере один тип узла, как показано в следующем фрагменте кода: 
 
     "nodeTypes": [{

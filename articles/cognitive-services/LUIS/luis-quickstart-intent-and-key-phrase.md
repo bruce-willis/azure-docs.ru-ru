@@ -9,12 +9,12 @@ ms.component: luis
 ms.topic: tutorial
 ms.date: 06/27/2018
 ms.author: diberry
-ms.openlocfilehash: 1cafca2433cd96c0595a6124df82856d0c491a49
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 53f8f9ea5b3fea20202dd5aaa001a789d66f5a11
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224268"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39282744"
 ---
 # <a name="tutorial-8-add-keyphrase-entity"></a>Руководство: 8. Добавление сущности keyPhrase 
 В этом руководстве используется приложение, демонстрирующее, как извлечь запрашиваемое содержимое из фраз.
@@ -27,7 +27,7 @@ ms.locfileid: "39224268"
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения, чтобы увидеть ответ JSON LUIS, в том числе ключевые фразы.
 
-Для работы с этой статьей можно использовать бесплатную учетную запись [LUIS](luis-reference-regions.md#publishing-regions), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения управления персоналом из руководства по [простым сущностям](luis-quickstart-primary-and-secondary-data.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-simple-HumanResources.json).
@@ -50,8 +50,6 @@ ms.locfileid: "39224268"
 Добавьте предварительно созданную сущность keyPhrase для извлечения запрашиваемого содержимого из фраз.
 
 1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
-
-    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-key-phrase/hr-first-image.png)](./media/luis-quickstart-intent-and-key-phrase/hr-first-image.png#lightbox)
 
 2. Выберите **Entities** (Сущности) в меню слева.
 
@@ -85,21 +83,12 @@ ms.locfileid: "39224268"
 
 ## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
 
-1. Выберите **Publish** (Публикация) на правой верхней панели навигации.
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-    [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-button-top-nav.png#lightbox)
-
-2. Выберите слот Production (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-    [![](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-key-phrase/hr-publish-to-production-expanded.png#lightbox)
-
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
 ## <a name="query-the-endpoint-with-an-utterance"></a>Запрос конечной точки с фразой
 
-1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
-
-    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](media/luis-quickstart-intent-and-key-phrase/hr-endpoint-url-inline.png )
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. Перейдите в конец URL-адреса и введите `does form hrf-123456 cover the new dental benefits and medical plan`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 

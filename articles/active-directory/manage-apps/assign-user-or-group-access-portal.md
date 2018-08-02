@@ -11,16 +11,16 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/06/2018
 ms.author: barbkess
 ms.reviewer: luleon
-ms.openlocfilehash: 487312cb79c5c278849668a472acfda7823e4bc1
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: f23c9976dacc1ca696772d6bf02b5d59e3e0b4d5
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35302951"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368692"
 ---
 # <a name="assign-a-user-or-group-to-an-enterprise-app-in-azure-active-directory"></a>Назначение пользователя или группы корпоративному приложению в Azure Active Directory
 Чтобы назначить пользователя или группу в корпоративном приложении, необходимо иметь соответствующие разрешения для управления корпоративным приложением, а также права глобального администратора для доступа к каталогу.
@@ -120,7 +120,7 @@ ms.locfileid: "35302951"
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Просмотр всех моих групп](../active-directory-groups-view-azure-portal.md)
+* [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
 * [Отключение входа пользователя в корпоративное приложение](disable-user-sign-in-portal.md)
 * [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)

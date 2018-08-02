@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 07/04/2018
+ms.date: 07/26/2018
 ms.author: diberry
-ms.openlocfilehash: fb29e0a22331ce279d3dc8fc5a0044ae794d260b
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: f4e03271f45c29ed2556256346e29c297be563cc
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226090"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345364"
 ---
 # <a name="tutorial-5-add-hierarchical-entity"></a>Учебник. 5. Добавление иерархической сущности
 В этом руководстве создается приложение, которое показывает, как найти взаимосвязанные элементы данных с учетом контекста. 
@@ -27,7 +27,7 @@ ms.locfileid: "39226090"
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения, чтобы увидеть ответ JSON LUIS, в том числе иерархические дочерние элементы. 
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения управления персоналом из руководства по [сущностям списка](luis-quickstart-intent-and-list-entity.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-list-HumanResources.json).
@@ -57,12 +57,7 @@ mv Jill Jones from a-2349 to b-1298
 
 1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intent-and-hier-entity/hr-first-image.png)](./media/luis-quickstart-intent-and-hier-entity/hr-first-image.png#lightbox)
-
 2. Выберите **Entities** (Сущности) в меню слева.
-
-    [ ![Снимок экрана приложения LUIS с кнопкой "Сущности", выделенной в меню слева](./media/luis-quickstart-intent-and-hier-entity/hr-select-entities-button.png)](./media/luis-quickstart-intent-and-hier-entity/hr-select-entities-button.png#lightbox)
-
 
 3. Нажмите кнопку с многоточием (***...***) справа от сущности номера в списке. Нажмите кнопку **Удалить**. 
 
@@ -72,8 +67,6 @@ mv Jill Jones from a-2349 to b-1298
 ## <a name="add-utterances-to-moveemployee-intent"></a>Добавление фрагментов речи в намерение MoveEmployee
 
 1. Выберите **намерения** в меню слева.
-
-    [ ![Снимок экрана приложения LUIS с выделенным разделом Intents (Намерения) в меню слева](./media/luis-quickstart-intent-and-hier-entity/hr-select-intents-button.png)](./media/luis-quickstart-intent-and-hier-entity/hr-select-intents-button.png#lightbox)
 
 2. Выберите **MoveEmployee** из списка намерений.
 
@@ -89,10 +82,9 @@ mv Jill Jones from a-2349 to b-1298
     |Начать работу с документами, чтобы задать для x12345 **выход** из a-3459 и **переход** в f-34567|
     |Заменить 425-555-0000 **от** g-2323 **к** hh-2345|
 
-    В соответствии с руководством по [списку сущностей](luis-quickstart-intent-and-list-entity.md) сотрудник может назначаться по имени, адресу электронной почты, дополнительному номеру телефона, номеру мобильного телефона или по федеральному номеру социальной страховки США. Эти номера сотрудников используются во фразе. Предыдущий пример фразы содержит различные способы, позволяющие записать исходное и целевое расположения и пометить их жирным шрифтом. В некоторых фразах используются только целевые расположения. Это позволяет приложению LUIS определить размещение этих расположений во фразе, если исходное расположение не указано.
-
     [ ![Снимок экрана приложения LUIS с новыми фразами в намерении MoveEmployee](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png)](./media/luis-quickstart-intent-and-hier-entity/hr-enter-utterances.png#lightbox)
-     
+
+    В соответствии с руководством по [списку сущностей](luis-quickstart-intent-and-list-entity.md) сотрудник может назначаться по имени, адресу электронной почты, дополнительному номеру телефона, номеру мобильного телефона или по федеральному номеру социальной страховки США. Эти номера сотрудников используются во фразе. Предыдущий пример фразы содержит различные способы, позволяющие записать исходное и целевое расположения и пометить их жирным шрифтом. В некоторых фразах используются только целевые расположения. Это позволяет приложению LUIS определить размещение этих расположений во фразе, если исходное расположение не указано.     
 
 ## <a name="create-a-location-entity"></a>Создание сущности расположения
 Приложению LUIS необходимо определить расположение, отмечая исходное и целевое расположения во фразах. Если необходимо просмотреть фразу в представлении токенов (необработанном представлении), выберите переключатель в строке над фразой с меткой **Entities View** (Представление сущностей). Выбрав переключатель, вы увидите, что этот элемент управления обозначен **Tokens View** (Представление токенов).
@@ -118,8 +110,6 @@ mv Jill Jones from a-2349 to b-1298
 
 1. Выберите **Сущности** в меню навигации слева.
 
-    [ ![Снимок экрана, где кнопка "Сущности" выделена в меню навигации слева](./media/luis-quickstart-intent-and-hier-entity/hr-select-entity-button-from-intent-page.png)](./media/luis-quickstart-intent-and-hier-entity/hr-select-entity-button-from-intent-page.png#lightbox)
-
 2. Нажмите кнопку **Manage prebuilt entities** (Управление предварительно созданными сущностями).
 
     [ ![Снимок экрана списка "Сущности" с выделенной кнопкой Manage prebuilt entities (Управление предварительно созданными сущностями)](./media/luis-quickstart-intent-and-hier-entity/hr-manage-prebuilt-button.png)](./media/luis-quickstart-intent-and-hier-entity/hr-manage-prebuilt-button.png#lightbox)
@@ -140,119 +130,112 @@ mv Jill Jones from a-2349 to b-1298
     ![Обучение успешно выполнено](./media/luis-quickstart-intent-and-hier-entity/trained.png)
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
-Чтобы получить прогноз LUIS в чат-боте или другом приложении, необходимо опубликовать приложение. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Publish** (Опубликовать). 
-
-2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-    [![](media/luis-quickstart-intent-and-hier-entity/publish-to-production.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-intent-and-hier-entity/publish-to-production.png#lightbox)
-
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
 ## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
-1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
 
-    [![](media/luis-quickstart-intent-and-hier-entity/publish-select-endpoint.png "Снимок экрана страницы публикации с выделенным URL-адресом конечной точки")](media/luis-quickstart-intent-and-hier-entity/publish-select-endpoint.png#lightbox)
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
+
 
 2. Перейдите в конец URL-адреса в адресной строке и введите `Please relocation jill-jones@mycompany.com from x-2345 to g-23456`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `MoveEmployee` с извлечением иерархической сущности.
 
-```JSON
-{
-  "query": "Please relocation jill-jones@mycompany.com from x-2345 to g-23456",
-  "topScoringIntent": {
-    "intent": "MoveEmployee",
-    "score": 0.9966052
-  },
-  "intents": [
-    {
+  ```JSON
+  {
+    "query": "Please relocation jill-jones@mycompany.com from x-2345 to g-23456",
+    "topScoringIntent": {
       "intent": "MoveEmployee",
       "score": 0.9966052
     },
-    {
-      "intent": "Utilities.Stop",
-      "score": 0.0325253047
-    },
-    {
-      "intent": "FindForm",
-      "score": 0.006137873
-    },
-    {
-      "intent": "GetJobInformation",
-      "score": 0.00462633232
-    },
-    {
-      "intent": "Utilities.StartOver",
-      "score": 0.00415637763
-    },
-    {
-      "intent": "ApplyForJob",
-      "score": 0.00382325822
-    },
-    {
-      "intent": "Utilities.Help",
-      "score": 0.00249120337
-    },
-    {
-      "intent": "None",
-      "score": 0.00130756292
-    },
-    {
-      "intent": "Utilities.Cancel",
-      "score": 0.00119622645
-    },
-    {
-      "intent": "Utilities.Confirm",
-      "score": 1.26910036E-05
-    }
-  ],
-  "entities": [
-    {
-      "entity": "jill - jones @ mycompany . com",
-      "type": "Employee",
-      "startIndex": 18,
-      "endIndex": 41,
-      "resolution": {
-        "values": [
-          "Employee-45612"
-        ]
+    "intents": [
+      {
+        "intent": "MoveEmployee",
+        "score": 0.9966052
+      },
+      {
+        "intent": "Utilities.Stop",
+        "score": 0.0325253047
+      },
+      {
+        "intent": "FindForm",
+        "score": 0.006137873
+      },
+      {
+        "intent": "GetJobInformation",
+        "score": 0.00462633232
+      },
+      {
+        "intent": "Utilities.StartOver",
+        "score": 0.00415637763
+      },
+      {
+        "intent": "ApplyForJob",
+        "score": 0.00382325822
+      },
+      {
+        "intent": "Utilities.Help",
+        "score": 0.00249120337
+      },
+      {
+        "intent": "None",
+        "score": 0.00130756292
+      },
+      {
+        "intent": "Utilities.Cancel",
+        "score": 0.00119622645
+      },
+      {
+        "intent": "Utilities.Confirm",
+        "score": 1.26910036E-05
       }
-    },
-    {
-      "entity": "x - 2345",
-      "type": "Locations::Origin",
-      "startIndex": 48,
-      "endIndex": 53,
-      "score": 0.8520272
-    },
-    {
-      "entity": "g - 23456",
-      "type": "Locations::Destination",
-      "startIndex": 58,
-      "endIndex": 64,
-      "score": 0.974032
-    },
-    {
-      "entity": "-2345",
-      "type": "builtin.number",
-      "startIndex": 49,
-      "endIndex": 53,
-      "resolution": {
-        "value": "-2345"
+    ],
+    "entities": [
+      {
+        "entity": "jill - jones @ mycompany . com",
+        "type": "Employee",
+        "startIndex": 18,
+        "endIndex": 41,
+        "resolution": {
+          "values": [
+            "Employee-45612"
+          ]
+        }
+      },
+      {
+        "entity": "x - 2345",
+        "type": "Locations::Origin",
+        "startIndex": 48,
+        "endIndex": 53,
+        "score": 0.8520272
+      },
+      {
+        "entity": "g - 23456",
+        "type": "Locations::Destination",
+        "startIndex": 58,
+        "endIndex": 64,
+        "score": 0.974032
+      },
+      {
+        "entity": "-2345",
+        "type": "builtin.number",
+        "startIndex": 49,
+        "endIndex": 53,
+        "resolution": {
+          "value": "-2345"
+        }
+      },
+      {
+        "entity": "-23456",
+        "type": "builtin.number",
+        "startIndex": 59,
+        "endIndex": 64,
+        "resolution": {
+          "value": "-23456"
+        }
       }
-    },
-    {
-      "entity": "-23456",
-      "type": "builtin.number",
-      "startIndex": 59,
-      "endIndex": 64,
-      "resolution": {
-        "value": "-23456"
-      }
-    }
-  ]
-}
-```
+    ]
+  }
+  ```
 
 ## <a name="could-you-have-used-a-regular-expression-for-each-location"></a>Можно ли использовать регулярное выражение для каждого расположения?
 Да, создайте регулярное выражение с исходной и целевой ролями и используйте его в шаблоне.

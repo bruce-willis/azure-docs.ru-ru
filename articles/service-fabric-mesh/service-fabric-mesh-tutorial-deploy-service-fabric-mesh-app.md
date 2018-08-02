@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 07/12/2018
+ms.date: 07/26/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f9dea759f6556bc521dda4efbd27176f1e06452b
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 350749161260768071afbb47b854cb2e9184bd9d
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126581"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284733"
 ---
 # <a name="tutorial-deploy-a-service-fabric-mesh-web-application"></a>Руководство. Развертывание приложения Сетки Service Fabric
 
@@ -78,7 +78,7 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 ![Диалоговое окно новой группы ресурсов Сетки Service Fabric в Visual Studio](./media/service-fabric-mesh-tutorial-deploy-dotnetcore/visual-studio-publish-new-container-registry-dialog.png)
 
-Если возникает ошибка, что поставщик ресурсов не зарегистрирован для вашей подписки, можно его зарегистрировать. Сначала посмотрите доступен ли поставщик ресурсов для вашей подписки.
+Если возникает ошибка, что поставщик ресурсов не зарегистрирован для вашей подписки, можно его зарегистрировать. Сначала определите, доступен ли поставщик ресурсов для вашей подписки.
 
 ```Powershell
 Get-AzureRmResourceProvider -ListAvailable
@@ -106,26 +106,9 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 Откройте веб-браузер и перейдите к URL-адресу, чтобы увидеть работу сайта в Azure.
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
+## <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric 
+Чтобы выполнить остальные шаги, можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Установите модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив следующие [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
-Чтобы выполнить остальные шаги, можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI.
-
-Если решено установить и использовать CLI локально, то для работы с этим руководством понадобится Azure CLI 2.0.35 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если необходимо установить или обновить CLI, ознакомьтесь с разделом [Установка Azure CLI 2.0][azure-cli-install].
-
-## <a name="install-the-az-mesh-cli"></a>Установка az mesh cli
-Действия в командной строке CLI
-
-1) Удалите любые предыдущие установки модуля CLI Сетки Azure Service Fabric.
-
-```cli
-az extension remove --name mesh
-```
-
-2)  Установите модуль расширения интерфейса командной строки Сетки Azure Service Fabric. В режиме предварительной версии CLI для Сетки Azure Service Fabric записывается как расширение Azure CLI, однако в общедоступной предварительной версии служба будет поставляться в составе Azure CLI.
-
-```cli
-az extension add --source https://sfmeshcli.blob.core.windows.net/cli/mesh-0.8.1-py2.py3-none-any.whl
-```
 
 ## <a name="check-application-deployment-status"></a>Проверка состояния развертывания приложения
 

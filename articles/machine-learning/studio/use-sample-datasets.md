@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/19/2018
-ms.openlocfilehash: 725b7e1e37ffca38cf439cc62b053f13dfd6397d
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 7a90a8f05082e2c0731f9f112d3e56ecaf4ea55b
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903036"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398807"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Используйте типовых наборов данных в Azure Machine Learning Studio
 [top]: #machine-learning-sample-datasets
@@ -333,7 +333,7 @@ Yeh, I-Cheng, Yang, King-Jang и Ting, Tao-Ming, Knowledge discovery on RFM mode
 <tr>
   <td>Набор погодных данных</td>
   <td>
-Результаты ежечасных наземных наблюдений за погодой от NOAA (<a href="http://cdo.ncdc.noaa.gov/qclcd_ascii/, merged data from 201304 to 201310">объединенные данные от 04.2013 г. до 10.2013 г.</a>).
+Результаты ежечасных наземных наблюдений за погодой от NOAA (<a href="http://az754797.vo.msecnd.net/data/WeatherDataset.csv">объединенные данные от 04.2013 г. до 10.2013 г.</a>).
 <p></p>
 Данные представляют собой наблюдения за погодой, осуществленные с метеорологических станций аэропортов, которые охватывают период времени с апреля по октябрь 2013 г. Перед отправкой в Студию машинного обучения Azure набор данных был обработан следующим образом:
 <ul>

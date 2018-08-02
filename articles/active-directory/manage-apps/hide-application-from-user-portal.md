@@ -11,17 +11,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/04/2018
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: it-pro
-ms.openlocfilehash: b60384663d79294531225612a767663e0d71723f
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 55f80396df4cbfe7d0a16a6a5066b68aadc0bdd3
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35302964"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368922"
 ---
 # <a name="hide-an-application-from-users-experience-in-azure-active-directory"></a>Скрытие приложения в пользовательском интерфейсе Azure Active Directory
 
@@ -63,7 +63,7 @@ ms.locfileid: "35302964"
 ![Приложения Enterprise](./media/hide-application-from-user-portal/apps4.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Просмотр всех моих групп](../active-directory-groups-view-azure-portal.md)
+* [Просмотр всех моих групп](../fundamentals/active-directory-groups-view-azure-portal.md)
 * [Назначение корпоративному приложению пользователя или группы](assign-user-or-group-access-portal.md)
 * [Удаление назначения пользователя или группы из корпоративного приложения](remove-user-or-group-access-portal.md)
 * [Изменение имени или логотипа корпоративного приложения](change-name-or-logo-portal.md)

@@ -28,6 +28,7 @@
       maintainContext: true
     - name: Потоковая передача данных в Azure Databricks при помощи концентраторов событий
       href: ../azure-databricks/databricks-stream-from-eventhubs.md
+      maintainContext: true
     - name: Концентраторы событий для Apache Kafka
       items:
         - name: Использование Apache Kafka MirrorMaker с концентраторами событий

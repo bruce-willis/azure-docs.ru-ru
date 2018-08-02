@@ -17,12 +17,12 @@ ms.date: 04/17/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: a5383776aa787a087fffe1ab06bb62c2b1df073d
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: f304a57360f5c847d2a65eb9bd651496c86b1b4d
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34157345"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39357724"
 ---
 # <a name="authorize-access-to-web-applications-using-openid-connect-and-azure-active-directory"></a>Предоставление доступа к веб-приложениям с помощью OpenID Connect и Azure Active Directory
 [OpenID Connect](http://openid.net/specs/openid-connect-core-1_0.html) представляет простой уровень идентификации на основе протокола OAuth 2.0. OAuth 2.0 определяет механизмы получения и использования **маркеров доступа** для доступа к защищенным ресурсам, но не содержит стандартных методов для предоставления информации об идентификации. OpenID Connect реализует функции аутентификации как расширение процесса авторизации OAuth 2.0. Эта служба предоставляет сведения о конечном пользователе в форме маркера `id_token`, который идентифицирует пользователя и предоставляет базовые данные профиля пользователя.
@@ -194,7 +194,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e        // Your registered Applica
 &redirect_uri=http%3A%2F%2Flocalhost%3a12345          // Your registered Redirect Uri, url encoded
 &response_mode=form_post                              // `form_post' or 'fragment'
 &scope=openid
-&resource=https%3A%2F%2Fservice.contoso.com%2F                                     
+&resource=https%3A%2F%2Fservice.contoso.com%2F        // The identifier of the protected resource (web API) that your application needs access to
 &state=12345                                          // Any value, provided by your app
 &nonce=678910                                         // Any value, provided by your app
 ```

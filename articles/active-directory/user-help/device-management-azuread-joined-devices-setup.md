@@ -2,26 +2,22 @@
 title: Настройка устройств, присоединенных к Azure Active Directory | Документация Майкрософт
 description: Сведения о настройке устройств, присоединенных к Azure Active Directory.
 services: active-directory
-documentationcenter: ''
-author: MarkusVi
+author: eross-msft
 manager: mtillman
-editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
-ms.component: devices
+ms.component: user-help
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/15/2018
-ms.author: markvi
+ms.author: lizross
 ms.reviewer: jairoc
-ms.openlocfilehash: f2d285735b92c3acd67dc741f344b836e791be04
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 83eea565cc775a0569015c04d79d627d6ba120e6
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058466"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39411715"
 ---
 # <a name="set-up-azure-active-directory-joined-devices"></a>Настройка устройств, присоединенных к Azure Active Directory
 
@@ -32,7 +28,7 @@ ms.locfileid: "39058466"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы присоединить устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Помимо наличия разрешения на присоединение устройств в клиенте Azure AD, необходимо, чтобы число зарегистрированных устройств не превышало установленное максимальное значение. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](../device-management-azure-portal.md#configure-device-settings).
+Чтобы присоединить устройство Windows 10, необходимо настроить службу регистрации устройств для регистрации устройств. Помимо наличия разрешения на присоединение устройств в клиенте Azure AD, необходимо, чтобы число зарегистрированных устройств не превышало установленное максимальное значение. Дополнительные сведения см. в разделе [Управление устройствами с помощью портала Azure (предварительная версия)](../devices/device-management-azure-portal.md#configure-device-settings).
 
 
 
@@ -120,16 +116,14 @@ ms.locfileid: "39058466"
 
 ![Подключено](./media/device-management-azuread-joined-devices-setup/15.png)
 
-Дополнительные сведения см. в разделе [Поиск устройств](../device-management-azure-portal.md#locate-devices).
+Дополнительные сведения см. в разделе [Поиск устройств](../devices/device-management-azure-portal.md#locate-devices).
 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения можно найти в разделе  
 
-- [Общие сведения об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
-- [Управление устройствами с помощью портала Azure](../device-management-azure-portal.md)
-- 
-
+- [Общие сведения об управлении устройствами в Azure Active Directory](../devices/overview.md).
+- [Управление устройствами с помощью портала Azure](../devices/device-management-azure-portal.md)
 
 

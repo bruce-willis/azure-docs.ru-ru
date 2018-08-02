@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 06/29/2018
+ms.date: 07/26/2018
 ms.author: diberry
-ms.openlocfilehash: aafbf7d1b4a624d42e2caa96f9d3ebdfaee4efe6
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 2e100f2019c3bb99e3909e64305ebe641e2a637e
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238011"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39308975"
 ---
 # <a name="tutorial-7-add-simple-entity-and-phrase-list"></a>Руководство: 7. Добавление простой сущности и списка фраз
 В этом руководстве описано создание приложения, которое показывает, как извлечь данные машинного обучения из фразы с помощью **простой** сущности.
@@ -29,7 +29,7 @@ ms.locfileid: "39238011"
 > * Добавление списка фраз для усиления сигналов по словам, связанным с работой
 > * Обучение, публикация приложения и повторный запрос конечной точки
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения для управления персоналом, созданного с помощью руководства по [составным сущностям](luis-tutorial-composite-entity.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-composite-HumanResources.json).
@@ -70,8 +70,6 @@ ms.locfileid: "39238011"
 ## <a name="create-job-simple-entity"></a>Создание простой сущности должности
 
 1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
-
-    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-primary-and-secondary-data/hr-first-image.png)](./media/luis-quickstart-primary-and-secondary-data/hr-first-image.png#lightbox)
 
 2. На странице **намерений** выберите намерение **ApplyForJob**. 
 
@@ -139,22 +137,14 @@ ms.locfileid: "39238011"
     ![Уведомление о выполнении обучения](./media/luis-quickstart-primary-and-secondary-data/trained.png)
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
-Чтобы получить прогноз LUIS в чат-боте или другом приложении, необходимо опубликовать приложение. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Publish** (Опубликовать). 
-
-2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-    [![](media/luis-quickstart-primary-and-secondary-data/publish-to-production.png "Снимок экрана страницы публикации с выделенной кнопкой \"Publish\" (Опубликовать) и выбранным слотом \"Production\" (Рабочий)")](media/luis-quickstart-primary-and-secondary-data/publish-to-production.png#lightbox)
-
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
 ## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
-В нижней части страницы **публикации** выберите ссылку на **конечную точку**. 
 
-[![](media/luis-quickstart-primary-and-secondary-data/publish-select-endpoint.png "Снимок экрана страницы публикации с выделенной конечной точкой")](media/luis-quickstart-primary-and-secondary-data/publish-select-endpoint.png#lightbox)
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. Перейдите в конец URL-адреса и введите `Here is my c.v. for the programmer job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
+2. Перейдите в конец URL-адреса и введите `Here is my c.v. for the programmer job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
 
 ```JSON
 {

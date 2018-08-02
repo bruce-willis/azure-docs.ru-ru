@@ -3,18 +3,17 @@ title: Безопасный доступ к данным приложения в
 description: Защита данных приложения в облаке с помощью маркеров SAS, шифрования и протокола HTTPS.
 services: storage
 author: tamram
-manager: jeconnoc
 ms.service: storage
 ms.topic: tutorial
 ms.date: 05/30/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: bfc5085374759290701f49cdf25698827c0779e7
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 71eec62f4468b6b74a15a30be3e472b41c4d45b0
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34650100"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39397781"
 ---
 # <a name="secure-access-to-an-applications-data-in-the-cloud"></a>Безопасный доступ к данным приложения в облаке
 
@@ -29,7 +28,7 @@ ms.locfileid: "34650100"
 
 [Хранилище BLOB-объектов](../common/storage-introduction.md#blob-storage) представляет собой надежную службу для хранения файлов для приложений. Этот учебник дополняет сведения в [предыдущем разделе][previous-tutorial] и описывает процедуру защиты доступа к учетной записи хранения из веб-приложения. По окончании работы изображения шифруются, и для доступа к эскизам веб-приложение использует маркеры безопасности SAS.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы пройти действия в этом учебнике, необходимо выполнить задачи в предыдущим учебнике по хранилищу: [Автоматическое изменение размера переданных изображений с помощью сетки событий][previous-tutorial]. 
 

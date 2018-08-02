@@ -3,7 +3,7 @@ title: Триггер службы "Сетка событий" для служб
 description: Узнайте, как обрабатывать события службы "Сетка событий" в службе "Функции Azure".
 services: functions
 documentationcenter: na
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 tags: ''
@@ -14,13 +14,13 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 06/08/2018
-ms.author: tdykstra
-ms.openlocfilehash: 6678109414eaa71ced369e87e1cd15544fee5ee5
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: glenga
+ms.openlocfilehash: 5f629ea791a839e1eca25e7487ea395638d136ab
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723436"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39344636"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 

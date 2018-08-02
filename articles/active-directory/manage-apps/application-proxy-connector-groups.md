@@ -10,17 +10,17 @@ ms.component: app-mgmt
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/31/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 50f17d7b833874cd15ddc9f2e4f93fa7af1700a2
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: e149df09bf424d33fa9abdf8108b3b79534a8599
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34161597"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39364979"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 
@@ -33,7 +33,7 @@ ms.locfileid: "34161597"
 >[!TIP] 
 >При наличии большого развертывания прокси приложения не назначайте какие-либо приложения в группу соединителей по умолчанию. Таким образом новые соединители не будут принимать текущий трафик, пока вы не добавите их в активную группу соединителей. Такая конфигурация позволяет переводить соединители в режим простоя, перемещая их в группу по умолчанию, чтобы можно было выполнить обслуживание без ущерба для работы пользователей.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы сгруппировать соединители, необходимо убедиться, что вы [установили несколько соединителей](application-proxy-enable.md). При установке нового соединителя он автоматически присоединяется к группе соединителей **по умолчанию** .
 
 ## <a name="create-connector-groups"></a>Создание групп соединителей
