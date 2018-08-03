@@ -1,21 +1,20 @@
 ---
-title: Основные сведения о службе "Речь" (предварительная версия) | Документация Майкрософт
+title: Основные сведения о службе "Речь" (предварительная версия)
 description: 'Служба "Речь", входящая в набор служб Microsoft Cognitive Services, объединяет несколько служб речи Azure, которые ранее были доступны по отдельности: службу распознавания речи Bing (состоящую из распознавания речи и преобразования текста в речь), службу пользовательского распознавания речи и службу перевода речи.'
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jerkin
-ms.openlocfilehash: adfc854fc24b9e285c405f3038a21ec84cd2f4c2
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: fc6ef4ccbe6e392b991bd375afcc63a54f58db02
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989341"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39285465"
 ---
 # <a name="what-is-the-speech-service-preview"></a>Основные сведения о службе "Речь" (предварительная версия)
 
@@ -28,7 +27,7 @@ ms.locfileid: "38989341"
 
 |Функция|ОПИСАНИЕ|
 |-|-|
-|Преобразование речи в текст|Преобразует непрерывную человеческую речь в текст, который можно использовать в качестве входных данных для приложения. Может интегрироваться со [службой Language Understanding](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS) для получения намерений пользователя из фрагментов речи.|
+|Преобразование речи в текст|Преобразует непрерывную человеческую речь в текст, который можно использовать в качестве входных данных для приложения. Может интегрироваться со [службой "Распознавание речи"](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS) для получения намерений пользователя из фрагментов речи.|
 |Преобразование текста в речь|Преобразует текст в аудиофайлы естественно звучащей синтезированной речи.|
 |Перевод&nbsp;речи|Обеспечивает перевод речи на другие языки с выводом в виде текста или речи.|
 

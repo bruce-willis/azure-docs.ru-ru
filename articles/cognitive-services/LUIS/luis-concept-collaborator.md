@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: diberry
-ms.openlocfilehash: 684507b58e5ac766e9b42d3aa53cb0867a131a93
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: fe5e35c2dcb08cdff9d92142558cf8d7ec81c36c
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39222678"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399577"
 ---
 # <a name="collaborating"></a>Совместная работа
 
@@ -25,7 +25,7 @@ LUIS предоставляет возможности совместной ра
 
 У учетной записи LUIS может быть много приложений LUIS.
 
-Дополнительные сведения см. в разделе [Совместная работа с другими пользователями над приложениями Интеллектуальной службы распознавания речи (LUIS)](luis-how-to-account-settings.md#azure-active-directory-tenant-user). 
+Дополнительные сведения см. в разделе [Совместная работа с другими пользователями над приложениями Интеллектуальной службы распознавания речи (LUIS)](luis-how-to-collaborate.md#azure-active-directory-tenant-user). 
 
 ## <a name="luis-app-owner"></a>Владелец приложения LUIS
 Владельцем является учетная запись, которая создает приложение. У каждого приложения есть один владелец. Владелец указан в разделе **[Параметры](luis-how-to-collaborate.md)** приложения. Это учетная запись, которая может удалить приложение. Она также получает сообщение электронной почты, когда квота конечной точки достигает 75-процентного ежемесячного лимита. 

@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 07/08/2018
 ms.author: diberry
-ms.openlocfilehash: 963a7f8c196702ea899ddfe31e6187a15eb5f683
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 73e90e5ae86db2c2c4625762b285f8c86f0e241b
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39223214"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398051"
 ---
 # <a name="manage-account-and-authoring-key"></a>Управление учетной записью и ключом разработки
 Чтобы использовать учетную запись LUIS необходимо иметь в наличии два таких ключевых элемента, как учетная запись пользователя и ключ разработки. Сведения для входа управляются с сайта [account.microsoft.com](https://account.microsoft.com). Ключ разработки управляется из веб-сайта [LUIS](luis-reference-regions.md) со страницы **Параметры**. 
@@ -36,25 +36,6 @@ ms.locfileid: "39223214"
 
 ## <a name="delete-account"></a>Удаление учетной записи
 Дополнительные сведения о том, какие данные удаляются при удалении учетной записи см. статью [Data storage and removal](luis-concept-data-storage.md#accounts) (Хранение и удаление данных). 
-
-## <a name="azure-active-directory-tenant-user"></a>Пользователь клиента Azure Active Directory
-Служба LUIS использует стандартный поток согласия Azure Active Directory (Azure AD). 
-
-Администратор клиента должен работать непосредственно с пользователем, которому нужно предоставить доступ на использование службы LUIS в Azure AD. 
-
-Сначала пользователю необходимо зарегистрироваться в службе LUIS. При этом он увидит всплывающее диалоговое окно, требующее подтверждения администратора. Перед тем как продолжить, пользователю необходимо обратится к администратору клиента. 
-
-Затем администратор клиента войдет в службу LUIS и увидит всплывающее окно. Чтобы предоставить разрешение пользователю, во всплывающем окне администратор должен дать разрешение. Пользователь сможет продолжить работу со службой LUIS после подтверждения администратора.
-
-Если администратор клиента не войдет в службу LUIS, пользователь может получить согласие к LUIS на [веб-сайте доступа](https://account.activedirectory.windowsazure.com/r#/applications). 
-
-![Разрешение Azure Active Directory на веб-сайте приложения](./media/luis-how-to-account-settings/tenant-permissions.png)
-
-Если администратор клиента хочет, чтобы определенные пользователи использовали службу LUIS, обратитесь к этому [идентификатору блога](https://blogs.technet.microsoft.com/tfg/2017/10/15/english-tips-to-manage-azure-ad-users-consent-to-applications-using-azure-ad-graph-api/).
-
-### <a name="user-accounts-with-multiple-emails-for-collaborators"></a>Учетные записи пользователей с несколькими адресами электронной почты для сотрудников
-Если в приложение LUIS будут добавлены участники для совместной работы, необходимо указать их точные адреса электронной почты, используемые в LUIS. В то время как Azure Active Directory (Azure AD) позволяет одному пользователю иметь несколько учетных записей электронной почты, которые являются взаимозаменяемыми, служба LUIS требует, чтобы пользователь для входа в систему использовал адрес электронной почты, указанный в списке участников для совместной работы. 
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 

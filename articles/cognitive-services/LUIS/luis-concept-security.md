@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: diberry
-ms.openlocfilehash: 13b769a0b5a940e0f3dd5f2e0cc3567d9879ee0d
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: fe0ee7d575e69c883ad7f980477e86fbd004778e
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39223785"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39397249"
 ---
 # <a name="authoring-and-endpoint-user-access"></a>Доступ пользователей к возможностям разработки и конечным точкам
 Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. В общедоступных приложениях доступ к конечным точкам имеют все пользователи с учетной записью LUIS и идентификаторами общедоступных приложений. 
@@ -62,7 +62,7 @@ ms.locfileid: "39223785"
 ## <a name="microsoft-user-accounts"></a>Учетные записи пользователей Майкрософт
 Авторы и участники совместной работы могут добавлять ключи в LUIS на странице публикации. Учетная запись Майкрософт, которая создает ключ LUIS на портале Azure, должна быть владельцем приложения или участника совместной работы над приложением. 
 
-Дополнительные сведения см. в разделе [Совместная работа с другими пользователями над приложениями Интеллектуальной службы распознавания речи (LUIS)](luis-how-to-account-settings.md#azure-active-directory-tenant-user). 
+Дополнительные сведения см. в разделе [Совместная работа с другими пользователями над приложениями Интеллектуальной службы распознавания речи (LUIS)](luis-how-to-collaborate.md#azure-active-directory-tenant-user). 
 
 <!--
 ### Individual consent

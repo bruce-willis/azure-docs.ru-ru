@@ -1,21 +1,20 @@
 ---
-title: Справочник по пакету SDK для службы "Речь" | Документация Майкрософт
+title: Справочник по пакету SDK для службы "Речь"
 description: Справочные материалы по пакету SDK для службы "Речь".
 services: cognitive-services
 titleSuffix: Microsoft Cognitive Services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 04/28/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 9ee7cc2db7ad6e2914d3916ad1aa578a9746e287
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 8b66156f147e9806ad648c95d65aee6912f29494
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072237"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39282798"
 ---
 # <a name="speech-sdk-reference"></a>Справочник по пакету SDK для службы "Речь"
 

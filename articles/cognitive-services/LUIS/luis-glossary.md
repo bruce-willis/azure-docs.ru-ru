@@ -1,5 +1,5 @@
 ---
-title: Глоссарий для службы API LUIS | Документы Майкрософт
+title: Глоссарий для службы API распознавания речи (LUIS) | Документация Майкрософт
 description: В глоссарии объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
 services: cognitive-services
 author: diberry
@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: diberry
-ms.openlocfilehash: f6606a3a09698f236f9ebe2c21ec784ca84bb149
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 3f99e58a38bbe9ecc87165b5e6fa24a5a49e5e4a
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225512"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390064"
 ---
 # <a name="glossary"></a>Глоссарий
 
@@ -163,7 +163,7 @@ ms.locfileid: "39225512"
 
 ## <a name="speech-priming"></a>Подготовка речи
 
-Функция подготовки речи позволяет подготовить службу распознавания речи в модели LUIS. См. раздел о [включении подготовки речи](luis-how-to-publish-app.md#enable-speech-priming).
+Функция подготовки речи позволяет подготовить службу распознавания речи в модели LUIS. 
 
 ## <a name="spelling-correction"></a>Исправление орфографических ошибок
 

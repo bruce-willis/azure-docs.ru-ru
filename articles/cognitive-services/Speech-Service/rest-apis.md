@@ -1,20 +1,19 @@
 ---
-title: REST API службы распознавания речи | Документация Майкрософт
+title: REST API службы распознавания речи
 description: Справочник по REST API службы распознавания речи.
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.technology: speech
 ms.topic: article
 ms.date: 05/09/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 311d0cb7f208c0f720b8611510fb65efc65c12bc
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 9991e0a1fc54e6aa4a99b8bfbd93abdfe974b01b
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39112879"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283075"
 ---
 # <a name="speech-service-rest-apis"></a>REST API службы распознавания речи
 
