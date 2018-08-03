@@ -6,9 +6,9 @@
       tocHref: /azure/
       topicHref: /azure/security/index
 - name: Таблицы Azure
-  tocHref: /architecture/
+  tocHref: /azure/
   topicHref: /azure/index
   items:
     - name: Безопасность
-      tocHref: /architecture/reference-architecture/
+      tocHref: /azure/architecture/
       topicHref: /azure/security/index

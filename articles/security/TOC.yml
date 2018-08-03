@@ -244,6 +244,8 @@
       items:
         - name: Веб-приложение IaaS
           href: ./blueprints/ukofficial-iaaswa-overview.md
+        - name: Веб-приложение PaaS
+          href: ./blueprints/ukofficial-paaswa-overview.md
 - name: Технические документы
   href: security-white-papers.md
 - name: Службы безопасности Azure
