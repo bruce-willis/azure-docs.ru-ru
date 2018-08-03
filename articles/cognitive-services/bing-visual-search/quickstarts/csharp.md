@@ -10,12 +10,12 @@ ms.technology: bing-visual-search
 ms.topic: article
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: dd7531004759cdaeb59f4706dc2650d0db3c0cdb
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 930a89e3b1996c44f12bd3773565eda40e93ca9c
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382509"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39070932"
 ---
 # <a name="your-first-bing-visual-search-query-in-c"></a>Ваш первый запрос к Bing для наглядного поиска на C#
 
@@ -41,7 +41,7 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
 
-В рамках этого краткого руководства можно использовать ключ подписки [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) или платный ключ подписки.
+В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
 
 ## <a name="running-the-application"></a>Запуск приложения
 
@@ -386,9 +386,10 @@ namespace VisualSearchUpload
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Получение аналитических сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
-[Bing Visual Search single-page app tutorial](../tutorial-bing-visual-search-single-page-app.md) (Руководство по одностраничным приложениям для наглядного поиска Bing)
-[Bing Visual Search overview](../overview.md) (Общие сведения об API Bing для наглядного поиска)  
+[Получение полезных сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
+[Руководство по передаче изображения в Bing Visual Search](../tutorial-visual-search-image-upload.md)
+[Руководство по одностраничным веб-приложениям для Bing Visual Search](../tutorial-bing-visual-search-single-page-app.md)
+[Обзор Bing Visual Search](../overview.md)  
 [Попробовать](https://aka.ms/bingvisualsearchtryforfree)  
 [Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
-[Bing Visual Search API reference](https://aka.ms/bingvisualsearchreferencedoc) (Справочник по API Bing для наглядного поиска)
+[Справочник по API Bing для наглядного поиска](https://aka.ms/bingvisualsearchreferencedoc)

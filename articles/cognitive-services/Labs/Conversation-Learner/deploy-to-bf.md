@@ -10,22 +10,22 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 77cc998227d996a6e52b1b5629204da5dc735ede
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: bb977df92cf0ada1e50a929a9ea714313a70165a
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381732"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171482"
 ---
 # <a name="how-to-deploy-a-conversation-learner-bot"></a>Развертывание бота Conversation Learner
 
 В этом документе описывается развертывание бота Conversation Learner, которое вы можете выполнить локально или в Azure.
 
-## <a name="prerequisite-determine-the-application-id"></a>Необходимое условие: определите идентификатор приложения 
+## <a name="prerequisite-determine-the-model-id"></a>Предварительное требование: определите идентификатор модели 
 
-Чтобы запустить бот вне пользовательского интерфейса Conversation Learner, вам нужно настроить идентификатор для приложения Conversation Learner, то есть идентификатор модели машинного обучения в облаке Conversation Learner.  (В тех случаях, когда бот работает в пользовательском интерфейсе Conversation Learner, идентификатор ему назначается автоматически.)  
+Чтобы запустить бот вне пользовательского интерфейса Conversation Learner, необходимо настроить идентификатор для модели Conversation Learner, то есть идентификатор модели машинного обучения в облаке Conversation Learner.  (В тех случаях, когда бот работает в пользовательском интерфейсе Conversation Learner, идентификатор модели ему назначается автоматически).  
 
-Чтобы получить идентификатор приложения, сделайте следующее:
+Чтобы получить идентификатор модели, выполните следующие действия.
 
 1. Запустите бот и пользовательский интерфейс Conversation Learner.  Ниже кратко описана процедура, полную версию которой вы найдете в кратком руководстве по началу работы.
 
@@ -47,11 +47,11 @@ ms.locfileid: "35381732"
 
 2. Откройте в браузере страницу http://localhost:5050. 
 
-3. Щелкните приложение Conversation Learner, для которого вам нужен идентификатор.
+3. Щелкните модель Conversation Learner, для которой требуется идентификатор.
 
 4. В панели навигации слева щелкните "Параметры".
 
-5. Откроется страница, в верхней части которой указан GUID "Идентификатор приложения".
+5. Откроется страница, в верхней части которой указан GUID "Идентификатор модели".
 
 ## <a name="option-1-deploying-a-conversation-learner-bot-to-run-locally"></a>Вариант 1. Локальное развертывание бота Conversation Learner
 
@@ -62,7 +62,7 @@ ms.locfileid: "35381732"
 Чтобы запустить бот локально, добавьте в файл `.env` для этого бота идентификатор приложения:
 
     ```
-    CONVERSATION_LEARNER_APP_ID=<YOUR_APP_ID>
+    CONVERSATION_LEARNER_MODEL_ID=<YOUR_MODEL_ID>
     ```
 
 После этого запустите бот:
@@ -116,8 +116,8 @@ ms.locfileid: "35381732"
         Переменная среды | value
         --- | --- 
         CONVERSATION_LEARNER_SERVICE_URI | "https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/"
-        CONVERSATION_LEARNER_APP_ID      | Идентификатор приложения (GUID), полученный из пользовательского интерфейса Conversation Learner в разделе параметров приложения.
-        LUIS_AUTHORING_KEY               | Ключ разработки LUIS для этого приложения.
+        CONVERSATION_LEARNER_MODEL_ID      | Идентификатор приложения (GUID), полученный из пользовательского интерфейса Conversation Learner в разделе параметров модели.
+        LUIS_AUTHORING_KEY               | Ключ разработки LUIS для этой модели
     
     4. Щелкните "Сохранить" в верхней части страницы.
     5. Выберите элемент навигации "Сборка" слева.

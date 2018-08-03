@@ -1,7 +1,7 @@
 ---
-title: Использование вызовов API в приложении Conversation Learner — Microsoft Cognitive Services | Документация Майкрософт
+title: Использование вызовов API в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как использовать вызовы API в приложении Conversation Learner.
+description: Сведения об использовании вызовов API в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,16 +10,20 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: ec752cbadfac7a47e08ed7b0ffe8bb475969fac5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 1d4013d736d8cfcb75874bc0c86d20b86ab4dd62
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381781"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39215845"
 ---
-# <a name="how-to-add-api-calls-to-a-conversation-learner-application"></a>Добавление вызовов API в приложение Conversation Learner
+# <a name="how-to-add-api-calls-to-a-conversation-learner-model"></a>Добавление вызовов API в модель Conversation Learner
 
-В этом руководстве, показано как добавлять вызовы API в приложение. Вызовы API — это функции, которые вы можете определить и сохранить в боте, чтобы приложение Conversation Learner смогло их вызывать.
+В этом руководстве показано, как добавлять вызовы API в модель. Вызовы API — это функции, которые вы можете определить и сохранить в боте, чтобы приложение Conversation Learner смогло их вызывать.
+
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 12](http://aka.ms/cl-tutorial-12-preview)](http://aka.ms/blis-tutorial-12)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения tutorialAPICalls.ts.
@@ -32,13 +36,13 @@ ms.locfileid: "35381781"
 - Вызовы API имеют доступ к объекту диспетчера памяти.
 - Вызовы API могут принимать аргументы, что позволяет применять один и тот же вызов API для разных целей.
 
-### <a name="open-the-demo"></a>Открытие демонстрационного примера
+### <a name="open-the-demo"></a>Запуск демонстрационного примера
 
-В веб-интерфейсе в списке приложений щелкните Tutorial-12-APICalls. 
+В веб-интерфейсе в списке моделей щелкните Tutorial-12-APICalls. 
 
 ### <a name="entities"></a>Сущности
 
-В этом приложении мы определили одну сущность с именем number.
+Для этой модели определена одна сущность с именем number.
 
 ![](../media/tutorial12_entities.PNG)
 
@@ -71,17 +75,17 @@ ms.locfileid: "35381781"
 
 ### <a name="train-dialog"></a>Обучение диалогу
 
-Теперь мы подробно рассмотрим диалог обучения.
+Давайте подробнее рассмотрим процесс обучения диалогу.
 
-1. Щелкните "Train Dialogs" (Обучение диалогам), а затем — "New Train Dialog" (Обучение новому диалогу).
-1. Введите строку "hi" (Привет).
+1. Щелкните Train Dialogs (Обучение диалогам), а затем New Train Dialog (Обучение новому диалогу).
+1. Введите строку hi (Привет).
 2. Щелкните "Score Action" (Оценить действие).
 3. Щелкните, чтобы выбрать RandomGreeting. Выполнится вызов API, возвращающий произвольное приветствие.
 3. Щелкните действие "What number do you want to multiply by 12?" (Какое число вы хотите умножить на 12?).
 4. Введите число 8. Щелкните "Score Actions" (Оценка действий).
 4. Выберите "Multiply $number 12" (Умножить на число 12). Запомните результат умножения.
 5. Выберите "Clear Entities" (Очистить сущности).
-    - Обратите внимание, что сущность number теперь не имеет значения.
+    - Значение `number` сущности теперь не имеет значения.
 3. Щелкните действие "What number do you want to multiply by 12?" (Какое число вы хотите умножить на 12?).
 4. Щелкните "Done Testing" (Завершить тестирование).
 

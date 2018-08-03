@@ -8,16 +8,56 @@ manager: onano
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 07/17/2018
 ms.author: wolfma
-ms.openlocfilehash: 0b1559d288380cf3d0c180a225278cc13d22a5d0
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: 50a8c183bd7f2711847ce6d0acade4cb498ef2fc
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "35383431"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39116101"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+## <a name="cognitive-services-speech-sdk-050-2018-july-release"></a>Пакет SDK для службы "Речь" в Cognitive Services 0.5.0: выпуск за июль 2018 г.
+
+**Новые функции**
+
+* Поддержка платформы Android (API 23: Android 6.0 Marshmallow или более поздней версии).
+  Ознакомьтесь с [кратким руководством для Android](quickstart-java-android.md).
+* Поддержка платформы .NET Standard 2.0 в Windows.
+  Ознакомьтесь с [кратким руководством для .NET Core](quickstart-csharp-dotnetcore-windows.md).
+* Экспериментальная функция: поддержка UWP в Windows (версия 1709 или более поздняя версия).
+  * Ознакомьтесь с [кратким руководством по UWP](quickstart-csharp-uwp.md).
+  * Примечание. Приложения UWP, созданные с использованием пакета SDK для службы "Речь", еще не прошли сертификацию WACK (комплект сертификации приложений для Windows).
+* Поддержка длительного распознавания с автоматическим переподключением.
+
+**Функциональные изменения**
+
+* `StartContinuousRecognitionAsync()` поддерживает длительное распознавание.
+* Результат распознавания содержит дополнительные поля: смещение от начала звука и длительность (в тактах) распознанного текста, дополнительные значения, представляющие состояние распознавания, например `InitialSilenceTimeout`, `InitialBabbleTimeout`.
+* Поддержка AuthorizationToken для создания экземпляров фабрики.
+
+**Критические изменения**
+
+* События распознавания: тип события NoMatch объединен с событием Error.
+* SpeechOutputFormat в C# переименован в OutputFormat, чтобы сохранить согласованность с C++.
+* Тип возвращаемого значения некоторых методов интерфейса `AudioInputStream` немного изменен.
+   * В Java метод `read` теперь возвращает `long` вместо `int`.
+   * В C# метод `Read` теперь возвращает `uint` вместо `int`.
+   * В C++ методы `Read` и `GetFormat` теперь возвращают `size_t` вместо `int`.
+* C++: экземпляры входных потоков звука теперь могут передаваться только как `shared_ptr`.
+
+**Исправления ошибок**
+
+* Исправлены неправильные возвращаемые значения в результате после истечения времени ожидания `RecognizeAsync()`.
+* Удалена зависимость от библиотек Media Foundation в Windows. Пакет SDK теперь использует интерфейсы API Core Audio.
+* Исправление документации: добавлена страница с описанием поддерживаемых регионов.
+
+**Известные проблемы**
+
+* Пакет SDK для службы "Речь" не передает результаты синтеза речи для перевода.
+  Эта проблема будет устранена в следующем выпуске.
 
 ## <a name="cognitive-services-speech-sdk-040-2018-june-release"></a>Пакет SDK для службы речи в Cognitive Services 0.4.0: выпуск за июнь 2018 г.
 

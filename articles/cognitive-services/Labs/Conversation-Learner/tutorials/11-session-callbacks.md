@@ -1,7 +1,7 @@
 ---
-title: Использование обратных вызовов сеанса в приложении Conversation Learner — Microsoft Cognitive Services | Документация Майкрософт
+title: Использование обратных вызовов сеансов в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как использовать обратные вызовы сеанса в приложении Conversation Learner.
+description: Сведения об использовании обратных вызовов сеансов в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,19 +10,23 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: f8970620c1f0f87ccae13d031092a048144ffb19
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 0f51b232470e4e4da3f25d40d025dd3b09dd1204
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381769"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171921"
 ---
-# <a name="how-to-use-session-callbacks-with-a-conversation-learner-application"></a>Использование обратных вызовов сеанса в приложении Conversation Learner.
+# <a name="how-to-use-session-callbacks-with-a-conversation-learner-model"></a>Использование обратных вызовов сеансов в приложении Conversation Learner
 
 В этом руководстве показано использование обратных вызовов onSessionStart и onSessionEnd.
 
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 11](http://aka.ms/cl-tutorial-11-preview)](http://aka.ms/blis-tutorial-11)
+
 ## <a name="requirements"></a>Требования
-Для работы с этим руководством требуется запущенный бот обучения tutorialSessionCallbacks.ts.
+Для работы с этим руководством требуется запущенный бот `tutorialSessionCallbacks`.
 
     npm run tutorial-session-callbacks
 
@@ -35,19 +39,19 @@ ms.locfileid: "35381769"
 
 ### <a name="open-the-demo"></a>Запуск демонстрационного примера
 
-В списке приложений щелкните Tutorial-11-SessionCallbacks. 
+В списке моделей щелкните Tutorial-11-SessionCallbacks. 
 
 ### <a name="entities"></a>Сущности
 
-Мы определили в этом приложении четыре сущности.
+В модели определены четыре сущности.
 
 ![](../media/tutorial11_entities.PNG)
 
-Здесь важно заметить, что BotName — это программная сущность.  Ее значения устанавливаются ботом при начале нового сеанса.
+Здесь важно заметить, что BotName — это программная сущность.  Эта сущность устанавливается ботом в начале нового сеанса.
 
 ### <a name="actions"></a>Действия
 
-Мы создали здесь четыре действия. 
+В модели определены четыре действия.
 
 ![](../media/tutorial11_actions.PNG)
 
@@ -70,7 +74,7 @@ ms.locfileid: "35381769"
 Оба метода являются необязательными.
 
 - Метод OnSessionStartCallback задает сущность BotName.
-- Метод OnSessionEndCallback позволяет указать, какие данные нужно очищать. Такой вариант очистит все данные сущностей, за исключением имени и телефона пользователя.
+- Метод OnSessionEndCallback позволяет указать, какие данные нужно сохранять. Такой вариант очистит все данные сущностей, за исключением имени и телефона пользователя.
 
 ### <a name="try-the-bot"></a>Проверка работы бота
 

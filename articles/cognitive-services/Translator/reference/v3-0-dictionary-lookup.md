@@ -9,12 +9,12 @@ ms.technology: microsoft translator
 ms.topic: article
 ms.date: 03/29/2018
 ms.author: v-jansko
-ms.openlocfilehash: 31435fcfca61517bfc72d534e911a1dcadbee52b
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 5a186f60dc099b095c00056d965aa92618c2c708
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382408"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37868091"
 ---
 # <a name="text-api-30-dictionary-lookup"></a>API перевода текстов 3.0. Поиск по словарю
 
@@ -22,7 +22,7 @@ ms.locfileid: "35382408"
 
 ## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
-Отправьте запрос `POST` на адрес:
+Отправьте запрос `POST` по адресу:
 
 ```HTTP
 https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
@@ -30,14 +30,14 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-В этой строке запроса передаются следующие параметры запроса.
+В этой строке запроса передаются следующие параметры запроса:
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
   <th>ОПИСАНИЕ</th>
   <tr>
     <td>api-version</td>
-    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Значение должно быть `3.0`.</td>
+    <td>*Обязательный параметр*.<br/>Версия API, запрошенная клиентом. Этот параметр должен содержать значение `3.0`.</td>
   </tr>
   <tr>
     <td>from</td>
@@ -89,7 +89,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 ## <a name="response-body"></a>Тело ответа
 
-Успешный ответ возвращается в формате массива JSON с одним результатом для каждой строки входного массива. Объект результатов содержит следующие свойства:
+Успешный ответ возвращается в формате массива JSON с одним результатом для каждого элемента входного массива. Объект результатов содержит следующие свойства.
 
   * `normalizedSource`. Строка, задающая нормализованную форму исходного термина. Например если запросом является "JOHN", нормализованной формой будет "john". Содержимое этого поля становится входными данными для [примеров поиска](.\v3-0-dictionary-examples.md).
     

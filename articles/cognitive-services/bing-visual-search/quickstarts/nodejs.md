@@ -10,18 +10,18 @@ ms.technology: bing-visual-search
 ms.topic: article
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: dd28c829d8d24980a746244dc6aca880d2d69224
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 60b1dc9b8ea9eda258e9776b8967df38c97d964e
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382485"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39071709"
 ---
 # <a name="your-first-bing-visual-search-query-in-javascript"></a>Ваш первый запрос в службу визуального поиска Bing на JavaScript
 
-API Bing для визуального поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или с помощью отправки. Сведения об этих параметрах см. в статье [What is Bing Visual Search API?](../overview.md) (Что такое API Bing для визуального поиска?). В этой статье показана отправка изображения. Отправка изображения может быть полезна в сценариях с использованием мобильных устройств, когда вы фотографируете какую-то достопримечательность и получаете сведения о ней. Например, аналитические сведения могут содержать любопытные факты об этой достопримечательности. 
+API Bing для визуального поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в статье [What is Bing Visual Search API?](../overview.md) (Что такое API Bing для наглядного поиска?) В этой статье показано, как отправлять изображения. Отправка изображения может быть полезна в сценариях с использованием мобильных устройств, когда вы фотографируете какую-то достопримечательность и получаете сведения о ней. Например, аналитические сведения могут содержать любопытные факты об этой достопримечательности. 
 
-При отправке локального изображения отображаются данные формы, которые необходимо включить в текст запроса POST. Эти данные формы должны содержать заголовок Content-Disposition. Его параметру `name` нужно присвоить значение image, а параметром `filename` может быть любая строка. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ. 
+При отправке локального изображения отображаются данные формы, которые необходимо включить в текст запроса POST. Эти данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ. 
 
 ```
 --boundary_1234-abcd
@@ -34,11 +34,11 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 
 В этой статье описано простое консольное приложение, которое отправляет запрос к API Bing для визуального поиска и отображает результаты поиска в формате JSON. Хотя это приложение написано на JavaScript, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Для запуска этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
+Для выполнения этого кода требуется [Node.js 6](https://nodejs.org/en/download/).
 
-В рамках этого краткого руководства можно использовать ключ [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
+В рамках этого краткого руководства можно использовать ключ [бесплатной пробной](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключ платной подписки.
 
 ## <a name="running-the-application"></a>Запуск приложения
 
@@ -94,9 +94,10 @@ function requestCallback(err, res, body) {
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Получение аналитических сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
-[Руководство по одностраничным приложениям для визуального поиска Bing](../tutorial-bing-visual-search-single-page-app.md)  
-[Bing Visual Search overview](../overview.md) (Общие сведения об API для визуального поиска Bing)  
-[Тестирование](https://aka.ms/bingvisualsearchtryforfree)  
-[Получение ключа доступа к бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
-[Bing Visual Search API reference](https://aka.ms/bingvisualsearchreferencedoc) (Справочник по API Bing для визуального поиска)
+[Получение полезных сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
+[Руководство по передаче изображения в Bing Visual Search](../tutorial-visual-search-image-upload.md)
+[Руководство по одностраничным веб-приложениям для Bing Visual Search](../tutorial-bing-visual-search-single-page-app.md)  
+[Общие сведения об API Bing для наглядного поиска](../overview.md)  
+[Попробовать](https://aka.ms/bingvisualsearchtryforfree)  
+[Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
+[Справочник по API Bing для наглядного поиска](https://aka.ms/bingvisualsearchreferencedoc)

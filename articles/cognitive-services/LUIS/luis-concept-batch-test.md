@@ -2,19 +2,19 @@
 title: Пакетное тестирование приложения LUIS в Azure | Документация Майкрософт
 description: Используйте пакетное тестирование для постоянной работы над приложением, чтобы усовершенствовать его и улучшить его функции распознавания речи.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/14/2018
-ms.author: v-geberr
-ms.openlocfilehash: 3803df32d6431b8413e8df0837ed62b2e4344cdc
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.date: 07/06/2018
+ms.author: diberry
+ms.openlocfilehash: bba3f2ff942fbe5dffc9b694990964e4e3078dbe
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381324"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39222659"
 ---
 # <a name="batch-testing-in-luis"></a>Пакетное тестирование в LUIS
 
@@ -34,14 +34,99 @@ ms.locfileid: "35381324"
 
 *Дубликатами считаются только точные совпадения, а не совпадения после назначения маркеров. 
 
+## <a name="entities-allowed-in-batch-tests"></a>Сущности, разрешенные в пакетных тестированиях
+Сюда можно отнести такие типы сущностей, как простые, иерархически родительские и составные. Все типы этих сущностей отображаются в фильтре сущностей пакетного тестирования, даже если в пакетном файле нет соответствующих сущностей.
+
+
 <a name="json-file-with-no-duplicates"></a>
 <a name="example-batch-file"></a>
 ## <a name="batch-file-format"></a>Формат пакетного файла
 Пакетный файл содержит высказывания. Каждое высказывание должно сопровождаться ожидаемым прогнозом намерения, а также всеми [сущностями машинного обучения](luis-concept-entity-types.md#types-of-entities), которые должны быть в нем обнаружены. 
 
-Ниже приведен пример пакетного файла:
+Пример пакетного файла с правильным синтаксисом приведен далее.
 
-   [!code-json[Valid batch test](~/samples-luis/documentation-samples/batch-testing/travel-agent-1.json)]
+```JSON
+[
+  {
+    "text": "Are there any janitorial jobs currently open?",
+    "intent": "GetJobInformation",
+    "entities": 
+    [
+        {
+            "entity": "Job",
+            "startPos": 14,
+            "endPos": 23
+        }
+    ]
+  },
+  {
+    "text": "I would like a fullstack typescript programming with azure job",
+    "intent": "GetJobInformation",
+    "entities": 
+    [
+        {
+            "entity": "Job",
+            "startPos": 15,
+            "endPos": 46
+        }
+    ]
+  },
+  {
+    "text": "Is there a database position open in Los Colinas?",
+    "intent": "GetJobInformation",
+    "entities": 
+    [
+        {
+            "entity": "Job",
+            "startPos": 11,
+            "endPos": 18
+        }
+    ]
+  },
+  {
+    "text": "Please find database jobs open today in Seattle",
+    "intent": "GetJobInformation",
+    "entities": 
+    [
+        {
+            "entity": "Job",
+            "startPos": 12,
+            "endPos": 19
+        }
+    ]
+  }
+]
+```
+
+## <a name="batch-syntax-template"></a>Шаблон синтаксиса пакета
+
+Чтобы запустить файл пакета, используйте следующий шаблон.
+
+```JSON
+[
+  {
+    "text": "example utterance goes here",
+    "intent": "intent name goes here",
+    "entities": 
+    [
+        {
+            "entity": "entity name 1 goes here",
+            "startPos": 14,
+            "endPos": 23
+        },
+        {
+            "entity": "entity name 2 goes here",
+            "startPos": 14,
+            "endPos": 23
+        }
+    ]
+  }
+]
+```
+
+Чтобы уведомить о начале и конце сущности, в файле пакета используются свойства **startPos** и **endPos**. Их значения отсчитываются, начиная с нуля, и не должны начинаться или заканчиваться пробелом. 
+
+В этом и состоит основное отличие от журналов запросов, для которых используются свойства startIndex и endIndex. 
 
 
 ## <a name="common-errors-importing-a-batch"></a>Распространенные ошибки при импорте пакета
@@ -49,6 +134,7 @@ ms.locfileid: "35381324"
 
 > * Превышение ограничения в 1000 высказываний.
 > * Объект JSON, содержащий высказывание, не имеет свойства entities.
+> * Слова, которые были помечены в нескольких сущностях.
 
 ## <a name="batch-test-state"></a>Состояние пакетного тестирования
 LUIS отслеживает данные о состоянии последнего тестирования для каждого набора данных. К этим данным относится размер набора данных (количество высказываний в пакете), дата последнего запуска и последний полученный результат (количество успешно спрогнозированных высказываний).

@@ -1,6 +1,6 @@
 ---
 title: Использование функции "Преобразование текста в речь" в голосовых службах | Документация Майкрософт
-description: Ознакомьтесь с тем, как в голосовых службах преобразовывать текст в речь.
+description: Ознакомьтесь с тем, как использовать преобразование текста в речь службе "Речь".
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
@@ -10,22 +10,22 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 6c358b5a40b1d8e91c2e1af5eb493b13604cf82e
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 84b577cd00d333717a7a5ad1f66182605429f9f1
+ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045064"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39213339"
 ---
 # <a name="use-text-to-speech-in-speech-service"></a>Использование функции преобразования текста в речь в голосовых службах
 
 Голосовая служба предоставляет функцию "Преобразование текста в речь" с помощью простого HTTP-запроса. Текст POST запроса будет передан в соответствующую конечную точку, откуда будет возвращен службой в виде звукового файла (`.wav`), в котором будет содержаться синтезированная речь. Затем ваше приложение может использовать этот звук как угодно.
 
-Тело запроса POST для преобразовывания текста в речь может быть обычным текстом (в формате ASCII или UTF8) или документом [SSML](speech-synthesis-markup.md). Для преобразования простых текстовых запросов будет использоваться голос по умолчанию. В большинстве случаев используется текст в формате SSML. HTTP-запрос должен включать маркер проверки подлинности. 
+Тело запроса POST для преобразовывания текста в речь может быть обычным текстом (в формате ASCII или UTF8) или документом [SSML](speech-synthesis-markup.md). Для преобразования простых текстовых запросов будет использоваться голос по умолчанию. В большинстве случаев используется текст в формате SSML. HTTP-запрос должен содержать маркер [авторизации](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-apis#authentication). 
 
 Ниже приведены региональные конечные точки преобразования текста в речь. Используйте ту из них, которая соответствует вашей подписке.
 
-[!include[](includes/endpoints-text-to-speech.md)]
+[!include[](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]
 
 ## <a name="specify-a-voice"></a>Указание голоса
 
@@ -95,5 +95,7 @@ Response audio payload
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
-- [Quickstart: Recognize speech using the Cognitive Services Speech C# SDK](quickstart-csharp-windows.md) (Быстрое начало. Распознавание речи с помощью Cognitive Services Speech в пакетах SDK в C#)
+- [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+- [Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь"](quickstart-cpp-windows.md)
+- [Краткое руководство. Распознавание речи с помощью пакета SDK службы распознавания речи Cognitive Services C#](quickstart-csharp-dotnet-windows.md)
+- [Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"](quickstart-java-android.md)

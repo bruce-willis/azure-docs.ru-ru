@@ -2,19 +2,19 @@
 title: Общие принципы изменения данных в LUIS в Azure | Документы Майкрософт
 description: Узнайте, как изменить данные перед прогнозированием в Language Understanding (LUIS).
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/26/2018
-ms.author: v-geberr
-ms.openlocfilehash: 4fb1a5542bb56bd853984e66198ebfbd189451f8
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: d8421114bb5a7416ad2523fe9b0353f03f672619
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36266871"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39223989"
 ---
 # <a name="data-alterations"></a>Изменения данных
 LUIS предоставляет способы управления высказыванием до или во время прогнозирования. 
@@ -22,7 +22,7 @@ LUIS предоставляет способы управления высказ
 ## <a name="correct-spelling-errors-in-utterance"></a>Исправление орфографических ошибок в высказывании
 Для исправления орфографических ошибок в высказывании LUIS использует [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/). LUIS требуется ключ, связанный с этой службой. Создайте ключ, а затем добавьте его в качестве параметра QueryString в [конечную точку](https://aka.ms/luis-endpoint-apis). 
 
-Орфографические ошибки можно также исправить на панели **Test** (Тестирование) путем [ввода ключа](interactive-test.md#view-bing-spell-check-corrections-in-test-panel). Ключ хранится в виде переменной сеанса в браузере для панели тестирования. Добавляйте ключ на панель тестирования в каждом сеансе браузера, где необходимо исправить орфографические ошибки. 
+Орфографические ошибки можно также исправить на панели **Test** (Тестирование) путем [ввода ключа](luis-interactive-test.md#view-bing-spell-check-corrections-in-test-panel). Ключ хранится в виде переменной сеанса в браузере для панели тестирования. Добавляйте ключ на панель тестирования в каждом сеансе браузера, где необходимо исправить орфографические ошибки. 
 
 При применении ключа на панели тестирования и в конечной точке учитывается квота на [использование ключа](https://azure.microsoft.com/pricing/details/cognitive-services/spellcheck-api/). LUIS реализует ограничения проверки орфографии Bing на длину текста. 
 
@@ -31,7 +31,7 @@ LUIS предоставляет способы управления высказ
 |Параметр|Значение|
 |--|--|
 |`spellCheck`|Логическое|
-|`bing-spell-check-subscription-key`|Ключ подписки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
+|`bing-spell-check-subscription-key`|Ключ конечной точки [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/)|
 
 Когда [API проверки орфографии Bing версии 7](https://azure.microsoft.com/services/cognitive-services/spell-check/) обнаруживает ошибку, из конечной точки возвращаются исходное выражение, исправленное выражение и прогнозирование.
 
@@ -89,5 +89,3 @@ int timezoneOffset = (int)((cstDatetime - utcDatetime).TotalMinutes);
 
 > [!div class="nextstepaction"]
 > [Исправление орфографических ошибок с помощью этого руководства](luis-tutorial-bing-spellcheck.md)
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions

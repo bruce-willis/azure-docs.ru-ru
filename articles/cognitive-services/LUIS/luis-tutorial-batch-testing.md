@@ -3,386 +3,233 @@ title: Улучшение прогнозирований LUIS с помощью 
 titleSuffix: Azure
 description: Выполняйте пакетное тестирование, просматривайте результаты и улучшайте прогнозирования LUIS с помощью изменений.
 services: cognitive-services
-author: v-geberr
-manager: kamran.iqbal
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 03/19/2018
-ms.author: v-geberr
-ms.openlocfilehash: 5788f17f2724a0354a1db506971c2343c1800f01
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.date: 07/16/2018
+ms.author: diberry
+ms.openlocfilehash: 0e1f5d29917ba381d4767faffb65847cd2ff210f
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36266402"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39237814"
 ---
-# <a name="use-batch-testing-to-find-prediction-accuracy-issues"></a>Использование пакетного тестирования для поиска ошибок точности прогнозирования
+# <a name="improve-app-with-batch-test"></a>Улучшение приложения с помощью пакетного тестирования
 
 В этом руководстве содержатся сведения по использованию пакетного тестирования для поиска проблем прогнозирования.  
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
+<!-- green checkmark -->
 > [!div class="checklist"]
 * Создание файла пакетного теста 
 * Выполнение пакетного теста
 * Просмотр результатов теста
-* Исправление ошибок для намерений
+* Исправление ошибок 
 * Повторное тестирование пакета
 
-## <a name="prerequisites"></a>предварительным требованиям
+Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
 
-> [!div class="checklist"]
-> * Для работы с этой статьей требуется бесплатная учетная запись [LUIS][LUIS], чтобы создать приложение LUIS.
+## <a name="before-you-begin"></a>Перед началом работы
+Если у вас нет приложения по управлению персоналом из раздела [Руководство. Проверка фрагментов речи конечной точки](luis-tutorial-review-endpoint-utterances.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл в формате JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-review-HumanResources.json).
 
-> [!Tip]
-> Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
 
-## <a name="create-new-app"></a>Создание приложения
-В этой статье используется готовая предметная область HomeAutomation. В ней есть намерения, сущности и высказывания для управления устройствами HomeAutomation, такими как осветительные приборы. Создайте приложение, добавьте предметную область, обучите и опубликуйте приложение.
+Обучите приложение.
 
-1. На веб-сайте [LUIS] создайте приложение, выбрав **Создать приложение** на странице **MyApps**. 
+## <a name="purpose-of-batch-testing"></a>Цель пакетного тестирования
+Пакетное тестирование позволяет проверить состояние активной, обученной модели с известным набором помеченных высказываний и сущностей. В пакетном файле в формате JSON добавьте высказывания и установите метки сущностей, которые нужно спрогнозировать внутри высказывания. 
 
-    ![Создание приложения](./media/luis-tutorial-batch-testing/create-app-1.png)
+<!--The recommended test strategy for LUIS uses three separate sets of data: example utterances provided to the model, batch test utterances, and endpoint utterances. --> При использовании приложения, которое отличается от этого руководства, убедитесь, что вы *не* используете примеры высказываний, уже добавленных в намерение. Чтобы проверить высказывания пакетного тестирования по сравнению с примерами высказываний, [экспортируйте](luis-how-to-start-new-app.md#export-app) приложение. Сравните пример высказывания приложения с высказываниями пакетного тестирования. 
 
-2. В диалоговом окне введите имя `Batchtest-HomeAutomation`.
+Требования к пакетному тестированию.
 
-    ![Ввод имени приложения](./media/luis-tutorial-batch-testing/create-app-2.png)
+* Не более 1000 высказываний за тест. 
+* Без дубликатов. 
+* Разрешенные типы сущностей: только машинно-обученные сущности простых, иерархических (только родительских) и составных сущностей. Пакетное тестирование полезно только для машинно-обученных намерений и сущностей.
 
-3. В левом нижнем углу щелкните **Prebuilt Domains** (Готовые предметные области). 
+## <a name="create-a-batch-file-with-utterances"></a>Создание пакетного файла с высказываниями
+1. Создайте `HumanResources-jobs-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). 
 
-    ![Выбор готовой предметной области](./media/luis-tutorial-batch-testing/prebuilt-domain-1.png)
+2. В пакетный файл в формате JSON добавьте высказывания с **намерением**, которое должно быть спрогнозировано в тесте. 
 
-4. Нажмите кнопку **Add Domain** (Добавить предметную область) для HomeAutomation.
-
-    ![Добавление предметной области HomeAutomation](./media/luis-tutorial-batch-testing/prebuilt-domain-2.png)
-
-5. Выберите **Train** (Обучить) на правой верхней панели навигации.
-
-    ![Выбор кнопки обучения](./media/luis-tutorial-batch-testing/train-button.png)
-
-## <a name="batch-test-criteria"></a>Условия пакетного теста
-При пакетном тестировании можно проверять до 1000 высказываний одновременно. Пакет не должен иметь дубликатов. [Экспортируйте](create-new-app.md#export-app) приложение, чтобы просмотреть список текущих высказываний.  
-
-В стратегии тестирования LUIS используется три отдельных набора данных: высказывания модели, высказывания пакетного теста и высказывания конечной точки. При работе с этим руководством убедитесь, что вы не используете высказывания из высказываний модели (добавленные в намерение) или высказываний конечной точки. 
-
-Не используйте высказывания, которые уже имеются в приложении для пакетного тестирования:
-
-```
-'breezeway on please',
-'change temperature to seventy two degrees',
-'coffee bar on please',
-'decrease temperature for me please',
-'dim kitchen lights to 25 .',
-'fish pond off please',
-'fish pond on please',
-'illuminate please',
-'living room lamp on please',
-'living room lamps off please',
-'lock the doors for me please',
-'lower your volume',
-'make camera 1 off please',
-'make some coffee',
-'play dvd',
-'set lights bright',
-'set lights concentrate',
-'set lights out bedroom',
-'shut down my work computer',
-'silence the phone',
-'snap switch fan fifty percent',
-'start master bedroom light .',
-'theater on please',
-'turn dimmer off',
-'turn off ac please',
-'turn off foyer lights',
-'turn off living room light',
-'turn off staircase',
-'turn off venice lamp',
-'turn on bathroom heater',
-'turn on external speaker',
-'turn on my bedroom lights .',
-'turn on the furnace room lights',
-'turn on the internet in my bedroom please',
-'turn on thermostat please',
-'turn the fan to high',
-'turn thermostat on 70 .' 
-```
-
-## <a name="create-a-batch-to-test-intent-prediction-accuracy"></a>Создание пакета для тестирования точности прогнозирования намерения
-1. Создайте `homeauto-batch-1.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). 
-
-2. Добавьте высказывания с **намерением**, которое должно быть спрогнозировано в тесте. Чтобы упростить выполнение действий в этом руководстве, возьмите высказывания в `HomeAutomation.TurnOn` и `HomeAutomation.TurnOff` и установите переключатели `on` и `off` для текста в высказываниях. Для намерения `None` добавьте несколько высказываний, которые не входят в [предметную](luis-glossary.md#domain) область (тему). 
-
-    Чтобы понять, как результаты пакетного тестирования коррелируются с JSON-файлом пакета, добавьте только шесть намерений.
-
-    ```JSON
-    [
-        {
-          "text": "lobby on please",
-          "intent": "HomeAutomation.TurnOn",
-          "entities": []
-        },
-        {
-          "text": "change temperature to seventy one degrees",
-          "intent": "HomeAutomation.TurnOn",
-          "entities": []
-        },
-        {
-          "text": "where is my pizza",
-          "intent": "None",
-          "entities": []
-        },
-        {
-          "text": "help",
-          "intent": "None",
-          "entities": []
-        },
-        {
-          "text": "breezeway off please",
-          "intent": "HomeAutomation.TurnOff",
-          "entities": []
-        },
-        {
-          "text": "coffee bar off please",
-          "intent": "HomeAutomation.TurnOff",
-          "entities": []
-        }
-    ]
-    ```
+   [!code-json[Add the intents to the batch test file](~/samples-luis/documentation-samples/tutorial-batch-testing/HumanResources-jobs-batch.json "Add the intents to the batch test file")]
 
 ## <a name="run-the-batch"></a>Запуск пакетного теста
+
 1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. 
 
-    ![Кнопка "Test" (Тестировать) на панели навигации](./media/luis-tutorial-batch-testing/test-1.png)
+    [ ![Снимок экрана приложения LUIS с вкладкой "Test" (Тестировать), выделенной в верхней правой строке навигации](./media/luis-tutorial-batch-testing/hr-first-image.png)](./media/luis-tutorial-batch-testing/hr-first-image.png#lightbox)
 
 2. На правой панели щелкните ссылку **Batch testing panel** (Панель пакетного тестирования). 
 
-    ![Выбор панели пакетного тестирования](./media/luis-tutorial-batch-testing/test-2.png)
+    [ ![Снимок экрана приложения LUIS с выделенной ссылкой "Batch test panel"](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png)](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png#lightbox) (Панель пакетного тестирования)
 
 3. Нажмите кнопку **Import dataset** (Импортировать набор данных).
 
-    ![Кнопка "Import dataset" (Импортировать набор данных)](./media/luis-tutorial-batch-testing/test-3.png)
+    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Import dataset"](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png#lightbox) (Импортировать набор данных)
 
-4. Выберите расположение файловой системы для файла `homeauto-batch-1.json`.
+4. Выберите расположение файловой системы для файла `HumanResources-jobs-batch.json`.
 
-5. Задайте набору данных имя `set 1`.
+5. Назовите набор данных `intents only` и выберите **Готово**.
 
-    ![Выбор файла](./media/luis-tutorial-batch-testing/test-4.png)
+    ![Выбор файла](./media/luis-tutorial-batch-testing/hr-import-new-dataset-ddl.png)
 
 6. Нажмите кнопку **Запустить**. Дождитесь завершения теста.
 
-    ![Кнопка запуска](./media/luis-tutorial-batch-testing/test-5.png)
+    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Run"](./media/luis-tutorial-batch-testing/hr-run-button.png)](./media/luis-tutorial-batch-testing/hr-run-button.png#lightbox) (Запустить)
 
 7. Щелкните **See results** (Просмотреть результаты).
 
-    ![Просмотр результатов](./media/luis-tutorial-batch-testing/test-6.png)
-
 8. Просмотрите результаты на диаграмме и в условных обозначениях.
 
-    ![Результаты пакетного тестирования](./media/luis-tutorial-batch-testing/batch-result-1.png)
+    [ ![Снимок экрана приложения LUIS с результатами пакетного тестирования](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png)](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png#lightbox)
 
 ## <a name="review-batch-results"></a>Просмотр результатов пакетного тестирования
-Результаты приведены в двух разделах. В верхнем разделе находятся диаграмма и условные обозначения. В нижнем разделе находятся высказывания, отображаемые при выборе имени области на диаграмме.
+Пакетная диаграмма отображает четыре квадранта результатов. В правой части диаграммы находится фильтр. По умолчанию фильтр устанавливается в первом намерении в списке. Фильтр содержит все намерения и только простые, иерархические (только родительские) и составные сущности. При выборе [раздела диаграммы](luis-concept-batch-test.md#batch-test-results) или точки внутри диаграммы соответствующие высказывания отображаются под диаграммой. 
 
-Все ошибки обозначаются красным цветом. Диаграмма состоит из четырех частей, две из которых выделены красным цветом. **Это разделы, требующие внимания**. 
+При наведении курсора на диаграмму с помощью колеса мыши можно увеличить или уменьшить отображение. Это полезно в тех случаях, когда на диаграмме собрано много плотно сгруппированных точек. 
 
-Верхний правый раздел указывает, что тест неправильно спрогнозировал существование намерения или сущности. Нижний левый раздел указывает, что тест неправильно спрогнозировал отсутствие намерения или сущности.
+Диаграмма состоит из четырех квадрантов, два из которых выделены красным цветом. **Это разделы, требующие внимания**. 
 
-### <a name="homeautomationturnoff-test-results"></a>Результаты теста HomeAutomation.TurnOff
-В условных обозначениях выберите намерение `HomeAutomation.TurnOff`. В условных обозначениях его можно найти по зеленому значку успешного выполнения слева от имени. Для этого намерения ошибок не обнаружено. 
+### <a name="getjobinformation-test-results"></a>Результаты теста GetJobInformation
+Результаты теста **GetJobInformation**, отображаемые в фильтре, показывают, что 2 из четырех прогнозов были успешными. Выберите имя **False positive** (Ложное срабатывание) над верхним правым квадрантом, чтобы увидеть высказывания под диаграммой. 
 
-![Результаты пакетного тестирования](./media/luis-tutorial-batch-testing/batch-result-1.png)
+![Высказывания пакетного тестирования службы LUIS](./media/luis-tutorial-batch-testing/hr-applyforjobs-false-positive-results.png)
 
-### <a name="homeautomationturnon-and-none-intents-have-errors"></a>Ошибки в намерениях HomeAutomation.TurnOn и None
-У двух других намерений есть ошибки, что означает, что тестовые прогнозирования не соответствуют ожиданиям пакетного файла. В условных обозначениях выберите намерение `None`, чтобы просмотреть первую ошибку. 
+Почему два высказывания спрогнозированы как **ApplyForJob** вместо правильного намерения **GetJobInformation**? Эти два намерения очень тесно связаны с выбором и расположением слов. Кроме того, существует почти в три раза больше примеров для **ApplyForJob**, чем для **GetJobInformation**. Эта неравномерность примеров высказываний взвешивается в намерении **ApplyForJob**. 
 
-![Намерение None](./media/luis-tutorial-batch-testing/none-intent-failures.png)
+Обратите внимание, что оба намерения имеют одинаковое количество ошибок. Неправильное прогнозирование в одном намерении также влияет на другое намерение. Они оба имеют ошибки, потому что высказывания были неправильно спрогнозированы для обоих намерений. 
 
-Ошибки отображаются на диаграмме в красных разделах: **False Positive** (Ложный положительный результат) и **False Negative** (Ложный отрицательный результат). Выберите имя раздела **False Negative** (Ложный отрицательный результат), чтобы увидеть высказывания с ошибками под диаграммой. 
+![Ошибки фильтра пакетного тестирования службы LUIS](./media/luis-tutorial-batch-testing/hr-intent-error-count.png)
 
-![Ложные отрицательные ошибки](./media/luis-tutorial-batch-testing/none-intent-false-negative.png)
-
-Высказывание с ошибкой `help` ожидалось в качестве намерения `None`, но тест спрогнозировал намерение `HomeAutomation.TurnOn`.  
-
-Существует две ошибки — одна в HomeAutomation.TurnOn и одна в None. Их причиной является высказывание `help`, так как не удалось удовлетворить условиям ожидания в None и возникло неожиданное совпадение для намерения HomeAutomation.TurnOn. 
-
-Чтобы определить причину возникновения ошибок в высказываниях `None`, просмотрите высказывания, находящиеся в текущий момент в намерении `None`. 
-
-## <a name="review-none-intents-utterances"></a>Просмотр высказываний в намерении None
-
-1. Закройте панель **Test** (Тестирование), нажав кнопку **Test** (Тестировать) на верхней панели навигации. 
-
-2. Нажмите кнопку **Build** (Создать) на верхней панели навигации. 
-
-3. В списке намерения выберите намерение **None**.
-
-4. Нажмите сочетание клавиш CRTL+E, чтобы открыть представление токенов для высказываний. 
-    
-    |Высказывания намерения None|Оценка прогнозирования|
-    |--|--|
-    |"decrease temperature for me please"|0,44|
-    |"dim kitchen lights to 25."|0,43|
-    |"lower your volume"|0,46|
-    |"turn on the internet in my bedroom please"|0,28|
-
-## <a name="fix-none-intents-utterances"></a>Исправление высказываний намерения None
-    
-Все высказывания в `None` не должны входить в предметную область приложения. Эти высказывания относятся к HomeAutomation, поэтому они находятся в неправильном намерении. 
-
-LUIS также дает высказываниям оценку прогнозирования меньше 50 % (< 0,50). Если взглянуть на высказывания в двух других намерениях, можно увидеть гораздо более высокие оценки прогнозирования. LUIS дает низкие оценки примерам высказываний, это свидетельствует о том, что высказывания ставят LUIS в затруднительное положение относительно текущего намерения и других намерений. 
-
-Чтобы исправить приложение, необходимо переместить выражения, находящиеся в настоящее время в намерении `None`, в правильное намерение и назначить намерению `None` новые соответствующие намерения. 
-
-Три высказывания в намерении `None` предназначены для снижения настроек устройств автоматизации. В них используются такие слова, как `dim`, `lower` или `decrease`. В четвертом высказывании содержится просьба на включение Интернета. Поскольку все четыре высказывания касаются включения или изменения уровня мощности устройства, их следует переместить в намерение `HomeAutomation.TurnOn`. 
-
-Это лишь одно из решений. Можно также создать намерение `ChangeSetting` и переместить в него выражения со словами dim, lower и decrease. 
+Высказывания, соответствующие верхней точке в разделе **Ложное срабатывание**, являются `Can I apply for any database jobs with this resume?` и `Can I apply for any database jobs with this resume?`. Для первого высказывания слово `resume` использовалось только в **ApplyForJob**. Для второго высказывания слово `apply` использовалось только в намерении **ApplyForJob**.
 
 ## <a name="fix-the-app-based-on-batch-results"></a>Исправление приложения на основе результатов пакетного тестирования
-Переместите четыре высказывания в намерение `HomeAutomation.TurnOn`. 
+Цель этого раздела — правильно спрогнозировать все высказывания для **GetJobInformation**, исправляя приложение. 
 
-1. Установите флажок над списком высказываний, чтобы выбрать все высказывания. 
+По-видимому, быстрое исправление заключается в том, чтобы добавить эти высказывания пакетного файла к правильному намерению. Это не то, что нужно сделать. Нужно, чтобы служба LUIS правильно спрогнозировала эти высказывания, не добавляя их в качестве примеров. 
 
-2. В раскрывающемся списке **Reassign intent** (Переназначить намерение) выберите `HomeAutomation.TurnOn`. 
+Могут также возникнуть вопросы об удалении высказываний из **ApplyForJob**, пока количество высказываний не будет таким же, как у **GetJobInformation**. Это может исправить результаты тестирования, но препятствует службе LUIS точно спрогнозировать это намерение в следующий раз. 
 
-    ![Перемещение высказываний](./media/luis-tutorial-batch-testing/move-utterances.png)
+Первый способ исправления заключается в добавлении дополнительных высказываний в **GetJobInformation**. Второй способ заключается в уменьшении веса слов типа `resume` и `apply` по отношению к намерению **ApplyForJob**. 
 
-    После переназначения четырех высказываний список для намерения `None` будет пуст.
+### <a name="add-more-utterances-to-getjobinformation"></a>Добавление дополнительных высказываний в **GetJobInformation**
+1. Закройте панель пакетного тестирования, нажав кнопку **Test** (Тестирование) на верхней панели навигации. 
 
-3. Добавьте четыре новых намерения для намерения None.
+    [ ![Снимок экрана службы LUIS с выделенной кнопкой "Test" (Тестирование)](./media/luis-tutorial-batch-testing/hr-close-test-panel.png)](./media/luis-tutorial-batch-testing/hr-close-test-panel.png#lightbox)
 
-    ```
-    "fish"
-    "dogs"
-    "beer"
-    "pizza"
-    ```
+2. Выберите **GetJobInformation** из списка намерений. 
 
-    Эти высказывания точно не входят в предметную область HomeAutomation. По мере ввода каждого высказывания отслеживайте его оценку. Оценка может быть низкой или даже очень низкой (с красным прямоугольником вокруг значения). После обучения приложения на шаге 8 оценка будет гораздо выше. 
+    [ ![Снимок экрана службы LUIS с выделенной кнопкой "Test" (Тестирование)](./media/luis-tutorial-batch-testing/hr-select-intent-to-fix-1.png)](./media/luis-tutorial-batch-testing/hr-select-intent-to-fix-1.png#lightbox)
 
-7. Удалите все пометки, щелкнув синюю метку в высказывании и выбрав **Remove label** (Удалить метку).
+3. Добавьте дополнительные высказывания, которые различаются по длине, подбору и расположению слов, поэтому обязательно включайте термины `resume`, `c.v.` и `apply`.
 
-8. Выберите **Train** (Обучить) на правой верхней панели навигации. Теперь оценка каждого высказывания гораздо выше. Сейчас все оценки для намерения `None` должны быть выше 0,80. 
+    |Примеры высказываний для намерения **GetJobInformation**|
+    |--|
+    |Does the new job in the warehouse for a stocker require that I apply with a resume?|
+    |Where are the roofing jobs today?|
+    |I heard there was a medical coding job that requires a resume.|
+    |I would like a job helping college kids write their c.v.s. |
+    |Here is my resume, looking for a new post at the community college using computers.|
+    |What positions are available in child and home care?|
+    |Is there an intern desk at the newspaper?|
+    |My C.v. shows I'm good at analyzing procurement, budgets, and lost money. Is there anything for this type of work?|
+    |Where are the earth drilling jobs right now?|
+    |I've worked 8 years as an EMS driver. Any new jobs?|
+    |New food handling jobs require application?|
+    |How many new yard work jobs are available?|
+    |Is there a new HR post for labor relations and negotiations?|
+    |I have a masters in library and archive management. Any new positions?|
+    |Are there any babysitting jobs for 13 year olds in the city today?|
+
+    Не отмечайте сущность **Job** в высказываниях. Этот раздел руководства ориентирован только на прогнозирование намерения.
+
+4. Обучите приложение, выбрав **Train** (Обучать) в правом верхнем углу.
 
 ## <a name="verify-the-fix-worked"></a>Проверка применения исправления
-Чтобы проверить правильность прогнозирования высказываний для намерения **None**, запустите пакетный тест еще раз.
+Чтобы проверить правильность прогнозирования высказываний пакетного тестирования, запустите пакетный тест еще раз.
+
+1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. Если результаты пакетного тестирования по-прежнему открыты, выберите **Назад к списку**.  
+
+2. Нажмите кнопку многоточия (***...***) справа от имени пакета и выберите пункт **Run Dataset** (Запустить набор данных). Дождитесь завершения пакетного теста. Обратите внимание, что кнопка **See results** (Просмотреть результаты) теперь зеленого цвета. Это означает, что весь пакет успешно выполнен.
+
+3. Щелкните **See results** (Просмотреть результаты). У всех намерений должны быть зеленые значки слева от имен. 
+
+    ![Снимок экрана службы LUIS с выделенной кнопкой результатов пакетного тестирования](./media/luis-tutorial-batch-testing/hr-batch-test-intents-no-errors.png)
+
+## <a name="create-batch-file-with-entities"></a>Создание пакетного файла с сущностями 
+Чтобы проверить сущности в пакетном тесте, они должны быть помечены в пакетном файле в формате JSON. Используются только машинно-обученные сущности: простые, иерархические (только родительские) и составные. Не добавляйте машинно-необученные сущности, потому что они всегда встречаются либо с помощью регулярных выражений, либо с явным текстовым совпадением.
+
+Изменение сущности для общего количества слов ([токенов](luis-glossary.md#token)) может повлиять на качество прогнозирования. Удостоверьтесь, что данные обучения, предоставленные намерению с помеченными высказываниями, включают в себя множество длин сущности. 
+
+При первом написании и тестировании пакетных файлов лучше всего начать с нескольких высказываний и сущностей, которые, как вы знаете, работают, а также нескольких, которые, по вашему мнению, могут быть неправильно спрогнозированы. Это поможет быстро сосредоточиться на проблемных областях. После тестирования намерений **GetJobInformation** и **ApplyForJob** с использованием нескольких разных имен сущности Job, которые не были спрогнозированы, этот файл пакетного тестирования был разработан для того, чтобы увидеть, есть ли проблема с прогнозированием определенных значений для сущности **Job**. 
+
+Значение сущности **задания**, представленное в тестовых высказываниях, обычно является одним или двумя словами, в нескольких примерах больше слов. Если _ваше собственное_ приложение по управлению персоналом обычно имеет имена заданий, составленные с нескольких слов, примеры высказываний с меткой **Job**  в этом приложении не будут работать хорошо.
+
+1. Создайте `HumanResources-entities-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). Или загрузите [файл](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorial-batch-testing/HumanResources-entities-batch.json) из репозитория LUIS-Samples Github.
+
+
+2. В пакетном файле в формате JSON добавьте массив объектов, которые включают высказывания с **намерением**, которое необходимо спрогнозировать во время тестирования, а также местоположения любых сущностей в высказывании. Поскольку сущность основана на токенах, обязательно запускайте и останавливайте каждую сущность на символе. Не начинайте или заканчивайте высказывание пробелом. Это приводит к ошибке во время импорта пакетного файла.  
+
+   [!code-json[Add the intents and entities to the batch test file](~/samples-luis/documentation-samples/tutorial-batch-testing/HumanResources-entities-batch.json "Add the intents and entities to the batch test file")]
+
+<!--TBD: when will the patterns fix be in for batch testing? -->
+## <a name="run-the-batch-with-entities"></a>Запустите пакетный тест с сущностями
 
 1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. 
 
 2. На правой панели щелкните ссылку **Batch testing panel** (Панель пакетного тестирования). 
 
-3. Нажмите кнопку с многоточием (...) справа от имени пакета и выберите пункт **Run Dataset** (Запустить набор данных). Дождитесь завершения пакетного теста.
+3. Нажмите кнопку **Import dataset** (Импортировать набор данных).
 
-    ![Запуск набора данных](./media/luis-tutorial-batch-testing/run-dataset.png)
+4. Выберите расположение файловой системы для файла `HumanResources-entities-batch.json`.
 
-4. Щелкните **See results** (Просмотреть результаты). У всех намерений должны быть зеленые значки слева от имен. Задав для фильтра в качестве условия намерение `HomeAutomation.Turnoff`, на верхней правой панели выберите зеленую точку, ближайшую к середине диаграммы. Имя высказывания появится в таблице под диаграммой. `breezeway off please` имеет очень низкую оценку. Необязательное действие: чтобы повысить эту оценку, добавьте дополнительные высказывания в намерение. 
+5. Назовите набор данных `entities` и выберите **Готово**.
 
-    ![Запуск набора данных](./media/luis-tutorial-batch-testing/turnoff-low-score.png)
+6. Нажмите кнопку **Запустить**. Дождитесь завершения теста.
 
-<!--
-    The Entities section of the legend may have errors. That is the next thing to fix.
+    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Run"](./media/luis-tutorial-batch-testing/hr-run-button.png)](./media/luis-tutorial-batch-testing/hr-run-button.png#lightbox) (Запустить)
 
-## Create a batch to test entity detection
-1. Create `homeauto-batch-2.json` in a text editor such as [VSCode](https://code.visualstudio.com/). 
+7. Щелкните **See results** (Просмотреть результаты).
 
-2. Utterances have entities identified with `startPos` and `endPost`. These two elements identify the entity before [tokenization](luis-glossary.md#token), which happens in some [cultures](luis-supported-languages.md#tokenization) in LUIS. If you plan to batch test in a tokenized culture, learn how to [extract](luis-concept-data-extraction.md#tokenized-entity-returned) the non-tokenized entities.
+## <a name="review-entity-batch-results"></a>Просмотр результатов пакетного тестирования сущностей
+Диаграмма открывается со всеми намерениями, которые были правильно спрогнозированы. Прокрутите вниз фильтр справа, чтобы найти прогнозирования ошибочных сущностей. 
 
-    Copy the following JSON into the file:
+1. Выберите сущность **Job** в фильтре.
 
-    ```JSON
-    [
-        {
-          "text": "lobby on please",
-          "intent": "HomeAutomation.TurnOn",
-          "entities": [
-            {
-              "entity": "HomeAutomation.Room",
-              "startPos": 0,
-              "endPos": 4
-            }
-          ]
-        },
-        {
-          "text": "change temperature to seventy one degrees",
-          "intent": "HomeAutomation.TurnOn",
-          "entities": [
-            {
-              "entity": "HomeAutomation.Operation",
-              "startPos": 7,
-              "endPos": 17
-            }
-          ]
-        },
-        {
-          "text": "where is my pizza",
-          "intent": "None",
-          "entities": []
-        },
-        {
-          "text": "help",
-          "intent": "None",
-          "entities": []
-        },
-        {
-          "text": "breezeway off please",
-          "intent": "HomeAutomation.TurnOff",
-          "entities": [
-            {
-              "entity": "HomeAutomation.Room",
-              "startPos": 0,
-              "endPos": 9
-            }
-          ]
-        },
-        {
-          "text": "coffee bar off please",
-          "intent": "HomeAutomation.TurnOff",
-          "entities": [
-            {
-              "entity": "HomeAutomation.Device",
-              "startPos": 0,
-              "endPos": 10
-            }
-          ]
-        }
-      ]
-    ```
+    ![Ошибочные прогнозирования сущностей в фильтре](./media/luis-tutorial-batch-testing/hr-entities-filter-errors.png)
 
-3. Import the batch file, following the [same instructions](#run-the-batch) as the first import, and name the dataset `set 2`. Run the test.
+    Диаграмма изменяется, чтобы отобразить прогнозирование сущностей. 
 
-## Possible entity errors
-Since the intents in the right-side filter of the test panel still pass the test, this section focuses on correct entity identification. 
+2. Выберите **False Negative** (Ложный отрицательный результат) в левом нижнем квадранте диаграммы. Затем нажмите клавиши CTRL + Е для переключения в представление токена. 
 
-Entity testing is diferrent than intents. An utterance will have only one top scoring intent, but it may have several entities. An utterance's entity may be correctly identified, may be incorrectly identified as an entity other than the one in the batch test, may overlap with other entities, or not identified at all. 
+    [ ![Представления токенов прогнозов сущности](./media/luis-tutorial-batch-testing/token-view-entities.png)](./media/luis-tutorial-batch-testing/token-view-entities.png#lightbox)
+    
+    При просмотре высказываний под диаграммой появляется непротиворечивая ошибка, когда имя задания включает `SQL`. Рассматривая примеры высказываний и список фраз Job, SQL используется только один раз и только как часть более крупного имени задания `sql/oracle database administrator`.
 
-## Review entity errors
-1. Select `HomeAutomation.Device` in the filter panel. The chart changes to show a single false positive and several true negatives. 
+## <a name="fix-the-app-based-on-entity-batch-results"></a>Исправление приложения на основе результатов пакетного тестирования сущностей
+Исправление приложения требует, чтобы служба LUIS правильно определяла варианты задания SQL. Существует несколько вариантов исправления. 
 
-2. Select the False positive section name. The utterance for this chart point is displayed below the chart. The labeled intent and the predicted intent are the same, which is consistent with the test -- the intent prediction is correct. 
+* Явным образом добавьте несколько примеров высказываний, которые используют SQL и помечают эти слова в качестве сущности Job. 
+* Явным образом добавьте дополнительные задания SQL в список фраз
 
-    The issue is that the HomeAutomation.Device was detected but the batch expected HomeAutomation.Room for the utterance "coffee bar off please". `Coffee bar` could be a room or a device, depending on the environment and context. As the model designer, you can either enforce the selection as `HomeAutomation.Room` or change the batch file to use `HomeAutomation.Device`. 
+Эти задачи оставлены для вас.
 
-    If you want to reinforce that coffee bar is a room, you nee to add an utterances to LUIS that help LUIS decide a coffee bar is a room. 
+Добавление [шаблона](luis-concept-patterns.md) до того, как сущность будет правильно спрогнозирована, не решит проблему. Это связано с тем, что шаблон не будет соответствовать, пока не будут обнаружены все сущности в шаблоне. 
 
-    The most direct route is to add the utterance to the intent but that to add the utterance for every entity detection error is not the machine-learned solution. Another fix would be to add an utterance with `coffee bar`.
+## <a name="what-has-this-tutorial-accomplished"></a>Какие результаты работы с этим руководством?
+Точность прогнозирования приложения увеличилась путем поиска ошибок в пакете и исправления модели. 
 
-## Add utterance to help extract entity
-1. Select the **Test** button on the top navigation to close the batch test panel.
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие **...** справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-2. On the `HomeAutomation.TurnOn` intent, add the utterance, `turn coffee bar on please`. The uttterance should have all three entities detected after you select enter. 
 
-3. Select **Train** on the top navigation panel. Wait until training completes successfully.
-
-3. Select **Test** on the top navigation panel to open the Batch testing pane again. 
-
-4. If the list of datasets is not visible, select **Back to list**. Select the three dots (...) at the end of `Set 2` and select `Run Dataset`. Wait for the test to complete.
-
-5. Select **See results** to review the test results.
-
-6. 
--->
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Узнайте больше о примерах высказываний](luis-how-to-add-example-utterances.md)
+> [Tutorial: Improve app with pattern roles](luis-tutorial-pattern.md) (Руководство. Улучшение приложения с ролями шаблонов)
 
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions

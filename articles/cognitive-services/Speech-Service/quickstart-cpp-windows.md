@@ -1,106 +1,96 @@
 ---
-title: Краткое руководство по пакету SDK для распознавания речи в C++ для Windows | Документация Майкрософт
+title: Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь" в Cognitive Services | Документация Майкрософт
 titleSuffix: Microsoft Cognitive Services
-description: Сведения и примеры кода для быстрого начала использования пакета SDK для распознавания речи в Windows и C++ в Cognitive Services.
+description: Узнайте, как распознавать речь в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: wolfma61
 manager: onano
 ms.service: cognitive-services
 ms.technology: Speech
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 0bcdc3c4357cb8985fad16c607957bffad4a2b8c
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 4a8c5f7053c1976233bf9de6a0c142885b73c8aa
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37049236"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39071204"
 ---
-# <a name="quickstart-for-c-and-windows"></a>Краткое руководство для C++ и Windows
-
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.4.0`.
+# <a name="quickstart-recognize-speech-in-c-on-windows-desktop-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь"
 
 Здесь описано, как создать консольное приложение на C ++ для Windows Desktop, которое использует пакет SDK для распознавания речи.
-Приложение основано на [пакете NuGet Microsoft Cognitive Services](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech) и Microsoft Visual Studio 2017.
+Приложение основано на [пакете SDK (NuGet) для службы "Речь" в Microsoft Cognitive Services](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
 
-> [!NOTE]
-> Если вам необходимо краткое руководство для C++ и Windows, см. [эту статью](quickstart-cpp-linux.md).<br>
-> Если вам необходимо краткое руководство для C# и Windows, см. [эту статью](quickstart-csharp-windows.md).
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!NOTE]
-> Для этого краткого руководства необходим ПК с рабочим микрофоном.<br>
-> См. [пример](speech-to-text-sample.md#speech-recognition-from-a-file), который распознает речь из заданного входного аудио файла.
+* Ключ подписки для службы распознавания речи. См. статью [Try the Speech service for free](get-started.md) (Пробное использование службы распознавания речи бесплатно).
+* Компьютер Windows с рабочим микрофоном.
+* [Microsoft Visual Studio 2017](https://www.visualstudio.com/), выпуск Community Edition или более поздняя версия.
+* Рабочая нагрузка **Разработка классических приложений C++** и компонент **Диспетчер пакетов NuGet** в Visual Studio.
+  Вы можете включить их, выбрав **Средства** \> **Get Tools and Features** (Получить инструменты и компоненты) и перейдя на вкладки **Рабочие нагрузки** и **Отдельные компоненты** соответственно.
 
-> [!NOTE]
-> Убедитесь, что установка Visual Studio включает рабочую нагрузку **Разработка классических приложений на C++**.
-> Если вы не уверены, что это так, выполните следующие действия для проверки и исправления. В Visual Studio 2017 выберите **Инструменты** \> **Get Tools and Features** (Получить инструменты и функции) и подтвердите запрос контроля учетных записей, выбрав **Да**.
-> Если на вкладке **Рабочие нагрузки** нет установленного флажка **Разработка классических приложений на C++**, установите его и щелкните **Изменить**, чтобы сохранить изменения.
+  ![Включение рабочей нагрузки "Разработка классических приложений на C++"](media/sdk/vs-enable-cpp-workload.png)
 
-[!include[Get a Subscription Key](includes/get-subscription-key.md)]
+  ![Включение диспетчера пакетов NuGet в Visual Studio ](media/sdk/vs-enable-nuget-package-manager.png)
 
-## <a name="creating-an-empty-console-application-project"></a>Создание пустого проекта консольного приложения
+## <a name="create-a-visual-studio-project"></a>Создание проекта Visual Studio
 
-В Visual Studio 2017 создайте новое консольное приложение Desktop Visual C++ Windows с названием "CppHelloSpeech".
+В Visual Studio 2017 создайте консольное классическое приложение Visual C++ для Windows. В диалоговом окне **Создать проект** в левой области разверните элементы **Установлено** \> **Visual C++** \> **Классическое приложение Windows** и выберите **Консольное приложение Windows**. В качестве имени проекта введите *helloworld*.
 
-![Создание консольного приложения Desktop Visual C++ Windows](media/sdk/speechsdk-05-vs-cpp-new-console-app.png)
+![Создание консольного приложения Desktop Visual C++ Windows](media/sdk/qs-cpp-windows-01-new-console-app.png)
 
 Если вы работаете с 64-разрядной версией установки Windows, необязательно переключать платформу сборки на `x64`.
 
-![Переключение платформы сборки на 64-разрядную версию](media/sdk/speechsdk-07-vs-cpp-switch-to-x64.png)
+![Переключение платформы сборки на 64-разрядную версию](media/sdk/qs-cpp-windows-02-switch-to-x64.png)
 
 ## <a name="install-and-reference-the-speech-sdk-nuget-package"></a>Установите и создайте ссылку на пакет SDK для распознавания речи для NuGet
 
-> [!NOTE]
-> Убедитесь, что менеджер пакетов NuGet включен для установки Visual Studio 2017.
-> В Visual Studio 2017 выберите **Инструменты** \> **Get Tools and Features** (Получить инструменты и функции) и подтвердите запрос управления учетной записью пользователя, выбрав **Да**. Затем выберите вкладку **​​Индивидуальные компоненты** и найдите **менеджер пакетов NuGet** в **Инструменты кода**.
-> Если флажок слева от него не установлен, обязательно установите его и щелкните **Изменить**, чтобы сохранить изменения.
->
-> ![Включение диспетчера пакетов NuGet в Visual Studio ](media/sdk/speechsdk-05-vs-enable-nuget-package-manager.png)
-
 В обозревателе решений щелкните решение правой кнопкой мыши и выберите пункт **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения).
 
-![Нажатие правой кнопкой мыши пункт Manage NuGet Packages for Solution (Управление пакетами NuGet для решения)](media/sdk/speechsdk-09-vs-cpp-manage-nuget-packages.png)
+![Нажатие правой кнопкой мыши пункт Manage NuGet Packages for Solution (Управление пакетами NuGet для решения)](media/sdk/qs-cpp-windows-03-manage-nuget-packages.png)
 
 В верхнем правом углу в поле **Источник пакета** выберите "Nuget.org".
-На вкладке **Обзор** найдите пакет "Microsoft.CognitiveServices.Speech", выберите его и установите флажки **Проект** и **CppHelloSpeech** справа и выберите **Установить**, чтобы установить его в проект CppHelloSpeech.
+На вкладке **Обзор** найдите пакет "Microsoft.CognitiveServices.Speech", выберите его и установите флажки **Проект** и **helloworld** справа и выберите **Установить**, чтобы установить его в проект helloworld.
 
-![Установка пакета Microsoft.CognitiveServices.Speech NuGet](media/sdk/speechsdk-11-vs-cpp-manage-nuget-install.png)
+> [!NOTE]
+> Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.5.0`.
+
+![Установка пакета Microsoft.CognitiveServices.Speech NuGet](media/sdk/qs-cpp-windows-04-nuget-install-0.5.0.png)
 
 Примите лицензию во всплывающем окне.
 
-![Принятие лицензии](media/sdk/speechsdk-12-vs-cpp-manage-nuget-license.png)
+![Принятие лицензии](media/sdk/qs-cpp-windows-05-nuget-license.png)
 
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
-Замените свой по умолчанию начальный код следующим.
+1. Замените свой по умолчанию начальный код следующим.
 
-[!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/Windows/quickstart-cpp/CppHelloSpeech.cpp#code)]
+   [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/cpp-windows/helloworld/helloworld.cpp#code)]
 
-> [!IMPORTANT]
-> Замените ключ подписки на тот, который вы получили. <br>
-> Замените регион своим регионом из [Speech Service REST API](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-apis) (REST API службы распознавания речи), например, замените на "westus".
+1. Замените строку `YourSubscriptionKey` своим ключом подписки.
 
-![Добавление ключа подписки](media/sdk/sub-key-recognize-speech-cpp.png)
+1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
+
+1. Сохраните внесенные в проект изменения.
 
 ## <a name="build-and-run-the-sample"></a>Сборка и запуск примера
 
-Теперь код должен компилироваться без ошибок:
+1. Создайте приложение. В строке меню последовательно выберите **Сборка** > **Собрать решение**. Теперь код должен компилироваться без ошибок:
 
-![Удачная сборка](media/sdk/speechsdk-16-vs-cpp-build.png)
+   ![Удачная сборка](media/sdk/qs-cpp-windows-06-build.png)
 
-Запустите программу в отладчике с помощью кнопки запуска или клавишей F5.
+1. Запустите приложение. В строке меню последовательно выберите **Отладка** > **Начать отладку** или нажмите клавишу **F5**.
 
-![Запуск приложения для отладки](media/sdk/speechsdk-17-vs-cpp-f5.png)
+   ![Запуск приложения для отладки](media/sdk/qs-cpp-windows-07-start-debugging.png)
 
-Появится всплывающее окно консоли, предлагающее вам что-то сказать (на английском языке).
-Результат распознавания будет отображаться на экране.
+1. Появится всплывающее окно консоли для речи (на английском языке).
+   Результат распознавания будет отображаться на экране.
 
-![Вывод на консоль после успешного распознавания](media/sdk/speechsdk-18-vs-cpp-console-output-release.png)
+   ![Вывод на консоль после успешного распознавания](media/sdk/qs-cpp-windows-08-console-output-release.png)
 
-## <a name="downloading-the-sample"></a>Скачивание примера
-
-Актуальный набор примеров доступен в [репозитории GitHub с примерами для пакета SDK для распознавания текста в Cognitive Services](https://aka.ms/csspeech/samples).
+[!include[Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+Этот пример можно найти в папке `quickstart/cpp-windows`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

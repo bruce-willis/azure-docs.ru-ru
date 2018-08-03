@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 8d42f903559a1e07b42ded33972be4b552f21b5e
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f9de4377857188a8cf483321654fb857e428c7f5
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381741"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171645"
 ---
 # <a name="managing-user-data"></a>Управление данными пользователей
 
@@ -27,7 +27,7 @@ ms.locfileid: "35381741"
 
 ## <a name="how-to-disable-logging"></a>Отключение ведения журнала
 
-Вы можете выбрать, будут ли доступны диалоги с пользователями на странице "Параметры" для приложения средства для обучения ведению диалога.  Здесь есть флажок Log Conversations (Сохранять диалоги).  Если вы снимете этот флажок, диалоги с пользователями сохраняться не будут.
+Вы можете выбрать, будут ли доступны для модели Conversation Learner диалоги с пользователями на странице "Параметры".  Здесь есть флажок Log Conversations (Сохранять диалоги).  Если вы снимете этот флажок, диалоги с пользователями сохраняться не будут.
 
 ## <a name="what-is-logged"></a>Какие данные регистрируются в журнале 
 
@@ -81,9 +81,10 @@ Ocp-Apim-Subscription-Key=<LUIS_AUTHORING_KEY>
 GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<appId>/logdialog/<logDialogId>
 ```
 
-Здесь `<appId>` содержит идентификатор GUID приложения средства для обучения ведению диалога, а `<logDialgoId>` содержит идентификатор журнала для извлекаемого диалога.  
+Здесь `<appId>` — это идентификатор GUID модели Conversation Learner, а `<logDialgoId>` — это идентификатор журнала для извлекаемого диалога.  
 
-Обратите внимание, что разработчик может редактировать журналы диалогов и сохранять их в качестве диалогов для обучения.  В таких случаях средство для обучения ведению диалога сохраняет идентификатор "исходного" диалога вместе с созданным диалогом для обучения.  Позднее вы можете отделить диалог для обучения, используя пользовательский интерфейс. Если диалог для обучения сопоставлен с идентификатором исходного журнала диалога, все отделенные копии этого диалога для обучения отмечаются тем же идентификатором журнала диалога.
+> [!NOTE]
+> Разработчик может редактировать журналы диалогов и сохранять их в качестве диалогов для обучения.  В таких случаях средство для обучения ведению диалога сохраняет идентификатор "исходного" диалога вместе с созданным диалогом для обучения.  Позднее вы можете отделить диалог для обучения, используя пользовательский интерфейс. Если диалог для обучения сопоставлен с идентификатором исходного журнала диалога, все отделенные копии этого диалога для обучения отмечаются тем же идентификатором журнала диалога.
 
 Чтобы получить все диалоги для обучения, производные от конкретного диалога в журнале, выполните указанные ниже действия.
 
@@ -93,7 +94,7 @@ GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<app
 GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<appId>/traindialogs
 ```
 
-Здесь `<appId>` содержит идентификатор GUID нужного приложения средства для обучения ведению диалога.  
+Здесь `<appId>` — это идентификатор GUID модели Conversation Learner.  
 
 Этот запрос возвращает все диалоги для обучения.  Найдите в этом списке связанное значение `sourceLogDialogId` и зафиксируйте значение `trainDialogId`. 
 
@@ -103,7 +104,7 @@ GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<app
 GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<appId>/traindialog/<trainDialogId>
 ```
 
-Здесь `<appId>` содержит идентификатор GUID приложения средства для обучения ведению диалога, а `<trainDialogId>` содержит идентификатор извлекаемого диалога для обучения.  
+Здесь `<appId>` — это идентификатор GUID модели Conversation Learner, а `<trainDialogId>` — это идентификатор извлекаемого диалога для обучения.  
 
 ## <a name="how-to-delete-a-logged-dialog"></a>Удаление сохраненного диалога из журнала
 
@@ -113,7 +114,7 @@ GET https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<app
 DELETE https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<appId>/logdialog/<logDialogId>
 ```
 
-Здесь `<appId>` содержит идентификатор GUID приложения средства для обучения ведению диалога, а `<logDialogId>` содержит идентификатор журнала для удаляемого диалога. 
+Здесь `<appId>` — это идентификатор GUID модели Conversation Learner, а `<logDialogId>` — это идентификатор журнала для удаляемого диалога. 
 
 Если вы хотите удалить диалог для обучения по известному идентификатору, используйте такой вызов HTTP:
 
@@ -121,4 +122,4 @@ DELETE https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<
 DELETE https://westus.api.cognitive.microsoft.com/conversationlearner/v1.0/app/<appId>/traindialog/<trainDialogId>
 ```
 
-Здесь `<appId>` содержит идентификатор GUID приложения средства для обучения ведению диалога, а `<trainDialogId>` содержит идентификатор удаляемого диалога для обучения. 
+Здесь `<appId>` — это идентификатор GUID модели Conversation Learner, а `<trainDialogId>` — это идентификатор удаляемого диалога для обучения. 

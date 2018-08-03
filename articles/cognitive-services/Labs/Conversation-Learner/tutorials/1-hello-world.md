@@ -1,7 +1,7 @@
 ---
-title: Создание приложения Hello World в Conversation Learner — Microsoft Cognitive Services | Документация Майкрософт
+title: Создание модели Hello World в Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Узнайте, как создать приложение Hello World в Conversation Learner.
+description: Сведения о создании модели Hello World в Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,16 +10,21 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 30026285ac6dda45d2f5e3718aae741b928cf242
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 70b8f25bd699cbdb069892d65bf766ef3953f59d
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381824"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39170877"
 ---
-# <a name="how-to-create-a-hello-world-application-with-conversation-learner"></a>Создание приложения Hello World с помощью Conversation Learner
+# <a name="how-to-create-a-hello-world-model-with-conversation-learner"></a>Создание модели Hello World с помощью Conversation Learner
 
 В этом руководстве показано, как начать работу с приложением Conversation Learner, в том числе описаны процессы создания действий, интерактивного обучения и внесения исправлений в сохраненные диалоги пользователей.
+
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 1](http://aka.ms/cl-tutorial-01-preview)](http://aka.ms/blis-tutorial-01)
+
 
 ## <a name="requirements"></a>Требования
 Прежде всего нужно убедиться, что все шаги установки завершены успешно, включая создание файла `.env` с ключом разработки LUIS.  Подробные сведения вы найдете в [этом кратком руководстве](https://github.com/Microsoft/ConversationLearner-Samples).
@@ -32,15 +37,15 @@ ms.locfileid: "35381824"
 
 Процедура начинается на домашней странице веб-интерфейса.
 
-### <a name="create-the-app"></a>Создание приложения
-1. Щелкните "New App" (Новое приложение).
+### <a name="create-the-model"></a>Создание модели
+1. Щелкните "Новая модель"
 2. В поле имени введите Hello World.
 3. Нажмите кнопку "Создать"
 
 ### <a name="create-an-action"></a>Создание действия
 
-1. Щелкните приложение Hello World, чтобы запустить его.
-2. Щелкните "Actions" (Действия), а затем "New Action" (Новое действие).
+1. Щелкните модель Hello World, чтобы ее запустить
+2. Щелкните "Actions" (Действия) и "New Action" (Создать действие).
     - Действиями могут быть текстовые сообщения, которые Conversation Learner возвращает пользователю, вызовы API и карты.
 3. В поле "Response" (Ответ) введите "Hello World".
     - Именно эту строку будет возвращать бот.

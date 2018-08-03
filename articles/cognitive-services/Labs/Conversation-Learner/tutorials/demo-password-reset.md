@@ -1,7 +1,7 @@
 ---
-title: Демонстрационное приложение для обучения ведению диалога и сброса пароля в Microsoft Cognitive Services | Документация Майкрософт
+title: Демонстрационная модель приложения Conversation Learner (Обучение диалогам) и сброс пароля в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Узнайте, как создать демонстрационное приложение для обучения ведению диалога.
+description: Узнайте, как создать демонстрационную модель Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,26 +10,30 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 24d61787a79ee1a1a9737c417aa966cc8fd75930
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f633dd375d690a1c3e66a2a6e02ae69665dbe960
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381753"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39170639"
 ---
 # <a name="demo-password-reset"></a>Демонстрация: сброс пароля
 В этой демонстрации показано, как создать простой бот технической поддержки, который поможет сбросить пароль. 
 
 Вы узнаете, как средство для обучения ведению диалога может изучать нестандартные диалоговые потоки информации, сложными последовательности, включая классы за пределами домена. В демонстрации код или сущности не используются.
 
+## <a name="video"></a>Видео
+
+[![Предварительная версия демонстрации сброса пароля](http://aka.ms/cl-demo-password-preview)](http://aka.ms/blis-demo-password)
+
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот сброса пароля.
 
     npm run demo-password
 
-### <a name="open-the-demo"></a>Открытие демонстрационного примера
+### <a name="open-the-demo"></a>Запуск демонстрационного примера
 
-В веб-интерфейсе в списке приложений выберите "Tutorial Demo Password Reset" (Демонстрация сброса пароля для работы с руководством). 
+В списке моделей пользовательского веб-интерфейса выберите "Tutorial Demo Password Reset" (Демонстрация сброса пароля для работы с руководством). 
 
 ### <a name="actions"></a>Действия
 

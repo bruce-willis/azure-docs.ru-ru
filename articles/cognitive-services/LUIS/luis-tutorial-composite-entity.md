@@ -1,124 +1,115 @@
 ---
-title: Создание составной сущности для извлечения сложных данных в Azure | Документы Майкрософт
+title: Руководство по созданию составной сущности для извлечения сложных данных в Azure | Документация Майкрософт
 description: Узнайте, как создать составную сущность в приложении LUIS для извлечения различных типов данных сущности.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: article
-ms.date: 03/28/2018
-ms.author: v-geberr
-ms.openlocfilehash: cb581ee60dea2b0810332933455a03a8b68e16ea
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.date: 07/09/2018
+ms.author: diberry
+ms.openlocfilehash: d14041e895bdf70544f7e956c76f91992a2df991
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36264391"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39238103"
 ---
-# <a name="use-composite-entity-to-extract-complex-data"></a>Использование составной сущности для извлечения сложных данных
-В этом простом приложении имеется два [намерения](luis-concept-intent.md) и несколько сущностей. Оно предназначено для бронирования авиабилетов, например "1 ticket from Seattle to Cairo on Friday" (1 билет из Сиэтла в Каир в пятницу), и возвращения всех особенностей резервирования в виде одного набора данных. 
+# <a name="tutorial-6-add-composite-entity"></a>Руководство: 6. Добавление составной сущности 
+В этом руководстве описывается процедура добавления составной сущности для объединения извлеченных данных в содержащую сущность.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
+<!-- green checkmark -->
 > [!div class="checklist"]
-* Добавление предварительно созданных сущностей datetimeV2 и number
-* Создание составной сущности
-* Выполнение запроса к LUIS и получение данных составной сущности
+> * Общие сведения о составных сущностях 
+> * Добавление составной сущности для извлечения данных
+> * Тестирование и публикация приложения.
+> * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-* Приложение LUIS из **[краткого руководства](luis-tutorial-composite-entity.md)**. 
+Если у вас нет приложения управления персоналом из руководства по [иерархическим сущностям](luis-quickstart-intent-and-hier-entity.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-hier-HumanResources.json).
 
-> [!Tip]
-> Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
+Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `composite`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию.  
 
 ## <a name="composite-entity-is-a-logical-grouping"></a>Составная сущность представляет собой логическую группировку 
-Целью сущности является поиск и категоризация частей текста во фразе. [Составная](luis-concept-entity-types.md) сущность образована из других типов сущностей, обученных в контексте. Для этого приложения для путешествий с функциями бронирования авиабилетов существует несколько фрагментов информации, такие как даты, расположения и количество мест. 
+Целью сущности является группировка связанных сущностей в сущность родительской категории. До создания составной сущности информация существует в виде отдельных сущностей. Она похожа на иерархическую сущность, но может содержать больше типов сущностей. 
 
-До создания составной сущности информация существует в виде отдельных сущностей. Составную сущность следует создавать при наличии возможности логической группировки отдельных сущностей. Эта логическая группировка будет полезна для чат-бота или другого приложения, использующего LUIS. 
+ Составную сущность следует создавать, когда возможна логическая группировка отдельных сущностей. Эта логическая группировка полезна в клиентском приложении. 
 
-Ниже приведены примеры простых фраз пользователей.
+В этом приложении имя сотрудника определяется в сущности списка **Employee** и включает синонимы имени, адрес электронной почты, добавочный номер телефона компании, номер мобильного телефона и Федеральный налоговый номер США. 
 
-```
-Book a flight to London for next Monday
-2 tickets from Dallas to Dublin this weekend
-Reserve a seat from New York to Paris on the first of April
-```
+В намерении **MoveEmployee** есть примеры высказываний для запроса перемещения сотрудника из одного здания или офиса в другой. Именами зданий являются буквы: "A", "B" и т. д., именами офисов — числа: "1234", "13245". 
+
+Примеры высказываний в намерении **MoveEmployee**.
+
+|Примеры высказываний|
+|--|
+|Переместить Джона В. Смита в a-2345|
+|сдвинуть x12345 к h-1234 завтра|
  
-Составная сущность соответствует количеству мест, месту отправления, месту назначения и дате. 
+Запрос на перемещение должен включать, по крайней мере, сотрудника (с использованием любого синонима) и конечное расположение здания или офиса. Запрос также может включать расположение исходного офиса и дату перемещения. 
 
-## <a name="what-luis-does"></a>Действия приложения LUIS
-Когда намерение и сущности выражения будут определены, [извлечены](luis-concept-data-extraction.md#list-entity-data) и возвращены в формате JSON из [конечной точки](https://aka.ms/luis-endpoint-apis), работа LUIS будет завершена. Вызывающее приложение или чат-бот принимает этот ответ JSON и выполняет запрос любым настроенным в нем способом. 
+Извлеченные из конечной точки данные должны содержать эту информацию и возвращать ее в составную сущность `RequestEmployeeMove`. 
 
-## <a name="add-prebuilt-entities-number-and-datetimev2"></a>Добавление предварительно созданных сущностей datetimeV2 и number
-1. Выберите приложение `MyTravelApp` в списке приложений на веб-сайте [LUIS][LUIS].
+## <a name="create-composite-entity"></a>Создание составной сущности
+1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-2. В открытом приложении щелкните ссылку **Entities** (Сущности) в левой области навигации.
+    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-tutorial-composite-entity/hr-first-image.png)](./media/luis-tutorial-composite-entity/hr-first-image.png#lightbox)
 
-    ![Нажатие кнопки сущностей](./media/luis-tutorial-composite-entity/intents-page-select-entities.png)    
+2. На странице **Намерения** выберите намерение **MoveEmployee**. 
 
-3. Выберите **Manage prebuilt entities** (Управление предварительно созданными сущностями).
+    [![](media/luis-tutorial-composite-entity/hr-intents-moveemployee.png "Снимок экрана LUIS с выделенным намерением MoveEmployee")](media/luis-tutorial-composite-entity/hr-intents-moveemployee.png#lightbox)
 
-    ![Нажатие кнопки сущностей](./media/luis-tutorial-composite-entity/manage-prebuilt-entities-button.png)
+3. Выберите значок лупы на панели инструментов, чтобы отфильтровать список высказываний. 
 
-4. Во всплывающем окне выберите **number** и **datetimeV2**.
+    [![](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png "Снимок экрана LUIS для намерения MoveEmployee с выделенной кнопкой лупы")](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png#lightbox)
 
-    ![Нажатие кнопки сущностей](./media/luis-tutorial-composite-entity/prebuilt-entity-ddl.png)
+4. Введите `tomorrow` в текстовое поле фильтра, чтобы найти высказывание `shift x12345 to h-1234 tomorrow`.
 
-5. Для извлечения новых сущностей нажмите кнопку **Train** (Обучить) в верхней строке навигации.
+    [![](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png "Снимок экрана LUIS для намерения MoveEmployee с выделенным фильтром \"завтра\"")](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png#lightbox)
 
-    ![Выбор кнопки обучения](./media/luis-tutorial-composite-entity/train.png)
+    Другим методом является фильтрация сущности по datetimeV2. Для этого щелкните **Entity filters** (Фильтры сущности), затем в выпадающем списке выберите **datetimeV2**. 
 
-## <a name="use-existing-intent-to-create-composite-entity"></a>Использование существующего намерения для создания составной сущности
-1. В левой области навигации выберите **Intents** (Намерения). 
+5. Выберите первую сущность `Employee`, а затем в списке всплывающего меню выберите **Wrap in composite entity** (Заключить в составную сущность). 
 
-    ![Выбор ссылки "Intents" (Намерения)](./media/luis-tutorial-composite-entity/intents-from-entities-page.png)
+    [![](media/luis-tutorial-composite-entity/hr-create-entity-1.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор первой сущности в составной")](media/luis-tutorial-composite-entity/hr-create-entity-1.png#lightbox)
 
-2. Выберите `BookFlight` в списке **Intents** (Намерения).  
 
-    ![Выбор намерения Select BookFlight в списке](./media/luis-tutorial-composite-entity/intent-page-with-prebuilt-entities-labeled.png)
+6. Затем немедленно выберите последнюю сущность `datetimeV2` в высказывании. Зеленая линия под выбранными словами указывает на составную сущность. Во всплывающем меню введите составное имя `RequestEmployeeMove`, затем во втором всплывающем меню выберите **Create new composite** (Создать составную сущность). 
 
-    Предварительно созданные сущности number и datetimeV2 помечены в выражениях.
+    [![](media/luis-tutorial-composite-entity/hr-create-entity-2.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор последней предварительно созданной сущности и создание новой")](media/luis-tutorial-composite-entity/hr-create-entity-2.png#lightbox)
 
-3. Для выражения `book 2 flights from seattle to cairo next monday` выберите сущность `number` синего цвета, затем в списке выберите **Wrap in composite entity** (Заключить в составную сущность). Зеленая линия под словами следует за курсором при его перемещении вправо и указывает на составную сущность. Затем перейдите вправо, чтобы выбрать последнюю предварительно созданную сущность `datetimeV2`, введите `FlightReservation` в текстовом поле выплывающего окна, после этого выберите **Create new composite** (Создать составную сущность). 
+7. В диалоговом окне**What type of entity do you want to create?** (Какой тип сущности необходимо создать?) в списке содержатся почти все необходимые поля. Отсутствует только исходное расположение. В списке существующих сущностей выберите **Add a child entity** (Добавьте дочернюю сущность), затем — **Locations::Origin** и нажмите кнопку **Готово**. 
 
-    ![Создание составной сущности на странице намерений](./media/luis-tutorial-composite-entity/create-new-composite.png)
+  ![Снимок экрана LUIS для намерения MoveEmployee, где изображено добавление другой сущности во всплывающем окне](media/luis-tutorial-composite-entity/hr-create-entity-ddl.png)
 
-4. Появится всплывающее диалоговое окно для проверки дочерних элементов составной сущности. Нажмите кнопку **Готово**.
+8. На панели инструментов выберите лупу, чтобы удалить фильтр. 
 
-    ![Создание составной сущности на странице намерений](./media/luis-tutorial-composite-entity/validate-composite-entity.png)
+## <a name="label-example-utterances-with-composite-entity"></a>Помеченный пример высказываний с составной сущностью
+1. В каждом примере высказывания выберите самую левую сущность, которая должна быть в составной сущности. Затем выберите **Wrap in composite entity** (Заключить в составную сущность).
 
-## <a name="wrap-the-entities-in-the-composite-entity"></a>Заключение сущностей в составную сущность
-После создания составной сущности пометьте остальные фразы в составной сущности. Чтобы упаковать фразу как составную сущность, выберите самое левое слово, затем в появившемся списке выберите **Wrap in composite entity** (Заключить в составную сущность), выберите самое правое слово, а затем именованную составную сущность `FlightReservation`. Это быстрое и состоящее из операций выбора действие разбивается следующие шаги.
+    [![](media/luis-tutorial-composite-entity/hr-label-entity-1.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор первой сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-1.png#lightbox)
 
-1. Во фразе `schedule 4 seats from paris to london for april 1` выберите 4 в качестве предварительно созданной сущности number.
+2. Выберите последнее слово в составной сущности, а затем во всплывающем меню выберите **RequestEmployeeMove**. 
 
-    ![Выбор самого левого слова](./media/luis-tutorial-composite-entity/wrap-composite-step-1.png)
+    [![](media/luis-tutorial-composite-entity/hr-label-entity-2.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор последний сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-2.png#lightbox)
 
-2. В появившемся списке выберите **Wrap in composite entity** (Заключить в составную сущность).
+3. Убедитесь, что все высказывания в намерении помечены составной сущностью. 
 
-    ![Выбор параметра заключения](./media/luis-tutorial-composite-entity/wrap-composite-step-2.png)
-
-3. Выберите самое правое слово. Под фразой появится зеленая линия, означающая составную сущность.
-
-    ![Выбор самого правого слова](./media/luis-tutorial-composite-entity/wrap-composite-step-3.png)
-
-4. В появившемся списке выберите составную сущность с именем `FlightReservation`.
-
-    ![Выбор именованной составной сущности](./media/luis-tutorial-composite-entity/wrap-composite-step-4.png)
-
-    Для последней фразы воспользуйтесь теми же инструкциями и заключите `London` и `tomorrow` в составную сущность. 
+    [![](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png "Снимок экрана LUIS для намерения MoveEmployee с меткой всех высказываний")](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png#lightbox)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
+Приложение LUIS не знает о новой составной сущности, пока приложение не будет обучено. 
 
 1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
 
-    ![Обучение приложения](./media/luis-tutorial-composite-entity/train-button.png)
+    ![Обучение приложения](./media/luis-tutorial-composite-entity/hr-train-button.png)
 
 2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
-    ![Обучение успешно выполнено](./media/luis-tutorial-composite-entity/trained.png)
+    ![Обучение успешно выполнено](./media/luis-tutorial-composite-entity/hr-trained.png)
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 Чтобы получить прогноз LUIS в чат-боте или другом приложении, необходимо опубликовать приложение. 
@@ -127,127 +118,202 @@ Reserve a seat from New York to Paris on the first of April
 
 2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
 
-    ![публикация приложения](./media/luis-tutorial-composite-entity/publish-to-production.png)
+    ![публикация приложения](./media/luis-tutorial-composite-entity/hr-publish-to-production.png)
 
 3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
 
-## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
+## <a name="query-the-endpoint"></a>Запрос конечной точки 
 1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
 
-    ![Выбор URL-адреса конечной точки](./media/luis-tutorial-composite-entity/publish-select-endpoint.png)
+    ![Выбор URL-адреса конечной точки](./media/luis-tutorial-composite-entity/hr-publish-select-endpoint.png)
 
-2. Перейдите в конец URL-адреса и введите `reserve 3 seats from London to Cairo on Sunday`. Последний параметр строки запроса — `q`. Это запрос фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `BookFlight` с извлечением иерархической сущности.
+2. Перейдите в конец URL-адреса и введите `Move Jill Jones from a-1234 to z-2345 on March 3 2 p.m.`. Последний параметр строки запроса — `q`. Это запрос фразы. 
 
-```
+    Поскольку этот тест был создан для проверки правильности извлечения составной сущности, то он может включать либо существующие образцы высказываний, либо новое высказывание. Хорошей проверкой является включение всех дочерних сущностей в составную сущность.
+
+```JSON
 {
-  "query": "reserve 3 seats from London to Cairo on Sunday",
+  "query": "Move Jill Jones from a-1234 to z-2345 on March 3  2 p.m",
   "topScoringIntent": {
-    "intent": "BookFlight",
-    "score": 0.999999046
+    "intent": "MoveEmployee",
+    "score": 0.9959525
   },
   "intents": [
     {
-      "intent": "BookFlight",
-      "score": 0.999999046
+      "intent": "MoveEmployee",
+      "score": 0.9959525
+    },
+    {
+      "intent": "GetJobInformation",
+      "score": 0.009858314
+    },
+    {
+      "intent": "ApplyForJob",
+      "score": 0.00728598563
+    },
+    {
+      "intent": "FindForm",
+      "score": 0.0058053555
+    },
+    {
+      "intent": "Utilities.StartOver",
+      "score": 0.005371796
+    },
+    {
+      "intent": "Utilities.Help",
+      "score": 0.00266987388
     },
     {
       "intent": "None",
-      "score": 0.227036044
+      "score": 0.00123299169
+    },
+    {
+      "intent": "Utilities.Cancel",
+      "score": 0.00116407464
+    },
+    {
+      "intent": "Utilities.Confirm",
+      "score": 0.00102653319
+    },
+    {
+      "intent": "Utilities.Stop",
+      "score": 0.0006628214
     }
   ],
   "entities": [
     {
-      "entity": "sunday",
-      "type": "builtin.datetimeV2.date",
-      "startIndex": 40,
-      "endIndex": 45,
+      "entity": "march 3 2 p.m",
+      "type": "builtin.datetimeV2.datetime",
+      "startIndex": 41,
+      "endIndex": 54,
       "resolution": {
         "values": [
           {
-            "timex": "XXXX-WXX-7",
-            "type": "date",
-            "value": "2018-03-25"
+            "timex": "XXXX-03-03T14",
+            "type": "datetime",
+            "value": "2018-03-03 14:00:00"
           },
           {
-            "timex": "XXXX-WXX-7",
-            "type": "date",
-            "value": "2018-04-01"
+            "timex": "XXXX-03-03T14",
+            "type": "datetime",
+            "value": "2019-03-03 14:00:00"
           }
         ]
       }
     },
     {
-      "entity": "3 seats from london to cairo on sunday",
-      "type": "flightreservation",
-      "startIndex": 8,
-      "endIndex": 45,
-      "score": 0.6892485
+      "entity": "jill jones",
+      "type": "Employee",
+      "startIndex": 5,
+      "endIndex": 14,
+      "resolution": {
+        "values": [
+          "Employee-45612"
+        ]
+      }
     },
     {
-      "entity": "cairo",
-      "type": "Location::Destination",
+      "entity": "z - 2345",
+      "type": "Locations::Destination",
       "startIndex": 31,
-      "endIndex": 35,
-      "score": 0.557570755
+      "endIndex": 36,
+      "score": 0.9690751
     },
     {
-      "entity": "london",
-      "type": "Location::Origin",
+      "entity": "a - 1234",
+      "type": "Locations::Origin",
       "startIndex": 21,
       "endIndex": 26,
-      "score": 0.8933808
+      "score": 0.9713137
+    },
+    {
+      "entity": "-1234",
+      "type": "builtin.number",
+      "startIndex": 22,
+      "endIndex": 26,
+      "resolution": {
+        "value": "-1234"
+      }
+    },
+    {
+      "entity": "-2345",
+      "type": "builtin.number",
+      "startIndex": 32,
+      "endIndex": 36,
+      "resolution": {
+        "value": "-2345"
+      }
     },
     {
       "entity": "3",
       "type": "builtin.number",
-      "startIndex": 8,
-      "endIndex": 8,
+      "startIndex": 47,
+      "endIndex": 47,
       "resolution": {
         "value": "3"
       }
+    },
+    {
+      "entity": "2",
+      "type": "builtin.number",
+      "startIndex": 50,
+      "endIndex": 50,
+      "resolution": {
+        "value": "2"
+      }
+    },
+    {
+      "entity": "jill jones from a - 1234 to z - 2345 on march 3 2 p . m",
+      "type": "requestemployeemove",
+      "startIndex": 5,
+      "endIndex": 54,
+      "score": 0.4027723
     }
   ],
   "compositeEntities": [
     {
-      "parentType": "flightreservation",
-      "value": "3 seats from london to cairo on sunday",
+      "parentType": "requestemployeemove",
+      "value": "jill jones from a - 1234 to z - 2345 on march 3 2 p . m",
       "children": [
         {
-          "type": "builtin.datetimeV2.date",
-          "value": "sunday"
+          "type": "builtin.datetimeV2.datetime",
+          "value": "march 3 2 p.m"
         },
         {
-          "type": "Location::Destination",
-          "value": "cairo"
+          "type": "Locations::Destination",
+          "value": "z - 2345"
         },
         {
-          "type": "builtin.number",
-          "value": "3"
+          "type": "Employee",
+          "value": "jill jones"
         },
         {
-          "type": "Location::Origin",
-          "value": "london"
+          "type": "Locations::Origin",
+          "value": "a - 1234"
         }
       ]
     }
-  ]
+  ],
+  "sentimentAnalysis": {
+    "label": "neutral",
+    "score": 0.5
+  }
 }
 ```
 
-Эта фраза возвращает массив составных сущностей, включая объект **flightreservation** с извлеченными данными.  
+Это высказывание возвращает массив составных сущностей. Каждой сущности присваивается тип и значение. Чтобы достичь большей точности для каждой дочерней сущности, используйте комбинацию типа и значения из элемента составного массива, это позволит найти соответствующий элемент в массиве сущностей.  
 
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
-Это приложение, состоящее всего из двух намерений и составной сущности, идентифицировало намерение запроса на естественном языке и вернуло извлеченные данные. 
+Это приложение идентифицировало намерение естественного языка запросов и вернуло извлеченные данные как именованную группу. 
 
-Ваш чат-бот теперь имеет достаточно информации для определения основного действия, `BookFlight`, а информацию о бронировании можно найти во фразе. 
+Чат-бот теперь имеет достаточно информации для определения основного действия и связанных деталей в высказывании. 
 
 ## <a name="where-is-this-luis-data-used"></a>Место использования этих данных приложения LUIS 
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. В списке справа от имени приложения нажмите кнопку с многоточием (***...***) и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
 ## <a name="next-steps"></a>Дополнительная информация
-
-[Узнайте больше о сущностях](luis-concept-entity-types.md). 
-
-<!--References-->
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
-[LUIS-regions]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#publishing-regions
+> [!div class="nextstepaction"] 
+> [Руководство: 7. Добавление простой сущности и списка фраз](luis-quickstart-primary-and-secondary-data.md)  

@@ -3,19 +3,19 @@ title: Использование пакета SDK распознавания р
 titleSuffix: Azure
 description: Использование примера пакета SDK распознавания речи для C# для проговаривания фраз в микрофон и получения намерения и предсказания сущностей LUIS.
 services: cognitive-services
-author: v-geberr
-manager: kamran.iqbal
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.technology: luis
 ms.topic: article
 ms.date: 06/26/2018
-ms.author: v-geberr;
-ms.openlocfilehash: b681598f953d217ca636fb5c0adc3de4ddbebd60
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.author: diberry;
+ms.openlocfilehash: 286efcd97c0c9ab95a8241215bc36799c486a8b6
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37031793"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39247721"
 ---
 # <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS.
@@ -28,7 +28,7 @@ ms.locfileid: "37031793"
 На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **Language Understanding** (LUIS). 
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
-Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Загрузите файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/HumanResources.json), сохраните его с расширением JSON и [импортируйте](create-new-app.md#import-new-app) в LUIS. 
+Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Загрузите файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/HumanResources.json), сохраните его с расширением JSON и [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
 
 Это приложение имеет намерения, сущности и фразы, относящиеся к кадровым ресурсам. Ниже приведены примеры фраз.
 
@@ -120,7 +120,7 @@ Recognition done. Your Choice:
 Пакет SDK для распознавания речи возвращает полный ответ LUIS. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS HumanResources, если оно больше не нужно. Чтобы сделать это, щелкните меню с тремя точками (...) справа от имени приложения в списке приложений и выберите пункт **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+Удалите приложение LUIS HumanResources, если оно больше не нужно. Для этого нажмите кнопку многоточия (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 Не забудьте удалить каталог LUIS-Samples, когда вы закончите использовать пример кода.
 

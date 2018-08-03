@@ -9,12 +9,12 @@ ms.technology: qna-maker
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 36d8e5a1d9f86da94fbdbe4ff01e93ba32ce6af6
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: d8df77d43441331bdda38814e4bddfb29d1576c1
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301467"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37868404"
 ---
 # <a name="quickstart-for-microsoft-qna-maker-api-with-java"></a>Краткое руководство по Java для API службы QnA Maker от Майкрософт 
 <a name="HOLTop"></a>
@@ -1055,7 +1055,7 @@ public class GetQnA {
 1. Добавьте указанный ниже код.
 1. Замените значение `host` именем веб-сайта для вашей подписки QnA Maker. Дополнительные сведения см. в разделе о [создании службы QnA Maker](../How-To/set-up-qnamaker-service-azure.md).
 1. Замените значение `endpoint_key` действующим ключом конечной точки для вашей подписки. Обратите внимание, что он не совпадает с ключом подписки. Вы можете получить ключи конечной точки с помощью метода [Get endpoint keys](#GetKeys) (Получение ключей конечной точки).
-1. Замените значение `kb` идентификатором базы знаний, из которой нужно получить ответы. Обратите внимание, что это должна быть база знаний, уже опубликованная с помощью метода [Publish](#Publish) (Публикация).
+1. Замените значение `kb` идентификатором базы знаний, у которой необходимо запрашивать ответы. Обратите внимание, что это должна быть база знаний, уже опубликованная с помощью метода [Publish](#Publish) (Публикация).
 1. Запустите программу.
 
 ```java

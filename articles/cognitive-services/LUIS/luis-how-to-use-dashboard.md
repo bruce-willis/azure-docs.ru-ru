@@ -2,19 +2,19 @@
 title: Панель мониторинга приложений для приложений LUIS | Документы Майкрософт
 description: Сведения о панели мониторинга приложений, визуализированном средстве создания отчетов, которое обеспечивает удобную среду отслеживания приложений.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/01/2018
-ms.author: v-geberr
-ms.openlocfilehash: 4e117aa734c551f76c3602f81e3e2ebc6aa9f337
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: diberry
+ms.openlocfilehash: 518227d9f4165a08fafefa357de255d97c710f61
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35383002"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224506"
 ---
 # <a name="application-dashboard"></a>Панель мониторинга приложений
 Панель мониторинга приложений позволяет отслеживать приложения в одном расположении. **Панель мониторинга** отображается при открытии приложения: щелкните имя приложения на странице **Мои приложения** и выберите **Панель мониторинга** на верхней панели. 
@@ -69,7 +69,7 @@ At the top of the **Dashboard** page, a contextual notification bar constantly d
 2. Выберите в списке период и нажмите кнопку со стрелкой "назад", ![Стрелка "назад"](./media/luis-how-to-use-dashboard/Dashboard-backArrow.png) чтобы отобразить диаграмму.
 
 ### <a name="key-usage"></a>Использование ключа
-Число совпадений, полученных из ключа подписки приложения. Дополнительные сведения о ключах подписки см. в разделе [Ключи в LUIS](luis-concept-keys.md). 
+Число совпадений, полученных из ключа конечной точки приложения. Дополнительные сведения о ключах конечной точки см. в разделе [Ключи в LUIS](luis-concept-keys.md). 
   
 ## <a name="intent-breakdown"></a>Анализ намерений
 В разделе **Intent Breakdown** (Анализ намерений) отображаются сведения о распределении намерений на основе помеченных фрагментов речи или совпадений конечной точки. В этом сводном графе представлена относительная важность каждого намерения в приложении. При наведении указателя мыши на фрагмент отобразится имя намерения и доля, которую он представляет от общего числа совпадений конечной точки или помеченных фрагментов речи. 

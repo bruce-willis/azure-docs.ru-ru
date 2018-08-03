@@ -9,23 +9,23 @@ ms.component: translator-speech
 ms.topic: article
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 6489a0be72cedffdfa4f7021f889b2d39c1c358f
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 4f12d74aedbcadc311cd9c5ccd12dc1ad3501dbf
+ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380556"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39205108"
 ---
 # <a name="quickstart-for-microsoft-translator-speech-api-with-c"></a>Краткое руководство по API перевода речи Microsoft с использованием C# 
 <a name="HOLTop"></a>
 
 В этой статье показано использование API перевода речи Microsoft для перевода слов, произнесенных в файле WAV.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)
 
-Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно. Такой файл WAV можно получить из [API перевода текстов в речь](http://docs.microsofttranslator.com/text-translate.html#!/default/get_Speak).
+Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно. Такой WAV-файл можно получить из [API преобразования текста в речь](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-apis#text-to-speech).
 
 Необходимо иметь [учетную запись Cognitive Services API](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **Microsoft Translator Speech API**. Вам понадобится платный ключ подписки, доступный из [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
 

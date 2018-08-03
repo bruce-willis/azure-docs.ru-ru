@@ -2,19 +2,19 @@
 title: Общие сведения об управлении версиями в службе LUIS в Azure | Документы Майкрософт
 description: Узнайте, как использовать версии для управления изменениями в службе Language Understanding (LUIS).
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/13/2018
-ms.author: v-geberr
-ms.openlocfilehash: 694b195440936a6eb42520c3343b6ff13194cc79
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.author: diberry
+ms.openlocfilehash: 17abe383d3074d636605c3b1b91927f89f7dd896
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346337"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225733"
 ---
 # <a name="versions"></a>Версии
 Создавайте разные модели одного приложения с помощью [версий](luis-how-to-manage-versions.md). 
@@ -26,7 +26,7 @@ ms.locfileid: "37346337"
 Исходная версия (0.1) является заданной по умолчанию активной версией. 
 
 ## <a name="active-version"></a>Активная версия
-[Установка версии](luis-how-to-manage-versions.md#set-active-version) в качестве активной означает, что в настоящее время она редактируется и тестируется на веб-сайте [LUIS][LUIS]. Задайте версию в качестве активной, чтобы получать доступ к ее данным, вносить изменения, а также тестировать и публиковать ее.
+[Установка версии](luis-how-to-manage-versions.md#set-active-version) в качестве активной означает, что в настоящее время она редактируется и тестируется на веб-сайте [LUIS](luis-reference-regions.md). Задайте версию в качестве активной, чтобы получать доступ к ее данным, вносить изменения, а также тестировать и публиковать ее.
 
 Имя текущей активной версии отображается на верхней левой панели после имени приложения. 
 
@@ -62,5 +62,3 @@ ms.locfileid: "37346337"
 Узнайте, как добавить [управление версиями](luis-how-to-manage-versions.md) на странице параметров приложения. 
 
 Узнайте, как добавить [намерения](luis-concept-intent.md) в модель.
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions

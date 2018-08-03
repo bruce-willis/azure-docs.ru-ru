@@ -9,17 +9,17 @@ ms.component: emotion-api
 ms.topic: article
 ms.date: 05/23/2017
 ms.author: anroth
-ms.openlocfilehash: 2578b0212f9b4a6483402074d7c9eff73e51ca6b
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: fb9cc2335582c4ec75ec45635e519346d65d7e08
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380692"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39072098"
 ---
 # <a name="emotion-api-javascript-quick-start"></a>Начало работы с API распознавания эмоций для JavaScript
 
 > [!IMPORTANT]
-> Срок действия предварительной версии API для поиска видео истекает 30 октября 2017 г. Оцените новую [предварительную версию API Индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результаты поиска), определяя произнесенные слова, лица, символы и эмоции. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
+> Срок действия предварительной версии API для поиска видео истекает 30 октября 2017 г. Оцените новую [предварительную версию API индексатора видео](https://azure.microsoft.com/services/cognitive-services/video-indexer/), которая позволяет легко извлекать аналитические сведения из видео и оптимизировать возможности обнаружения содержимого (например, результатов поиска) путем определения произнесенных слов, лиц, символов и эмоций. [Узнайте больше](https://docs.microsoft.com/azure/cognitive-services/video-indexer/video-indexer-overview).
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к распознаванию эмоций одного человека или нескольких людей на изображении с помощью JavaScript и [метода API распознавания эмоций](https://westus.dev.cognitive.microsoft.com/docs/services/5639d931ca73072154c1ce89/operations/563b31ea778daf121cc3a5fa).
 
@@ -36,7 +36,7 @@ ms.locfileid: "35380692"
 
 ![Ключ подписки на API](../Images/keys.png)
 
-и измените текст запроса на расположение изображения, которое следует использовать. Чтобы запустить пример, перетащите файл в браузер.
+Измените текст запроса на расположение изображения, которое следует использовать. Чтобы запустить пример, перетащите файл в браузер.
 
 ```html
 <!DOCTYPE html>

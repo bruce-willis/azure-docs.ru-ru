@@ -8,28 +8,22 @@ manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
-ms.date: 05/07/2018
+ms.date: 07/17/2018
 ms.author: v-jerkin
-ms.openlocfilehash: b9b7b8af5ce3d75788fd2c4f5e0309b5ca561a8f
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: ed523493f456e65f7aa5d3ad33914e3e52cd7044
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382870"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113398"
 ---
 # <a name="about-the-cognitive-services-speech-sdk"></a>Пакет SDK службы "Речь" в Cognitive Services
 
 Пакет средств разработки программного обеспечения (SDK) для службы "Речь" в Cognitive Services предоставляет приложениям прямой доступ к функциям службы "Речь", что облегчает разработку программного обеспечения. Сейчас пакет SDK предоставляет доступ к **преобразованию речи в текст**, **переводу речи** и **распознаванию намерений**.
 
-В таблице перечислены поддерживаемые сейчас языки программирования и операционные системы.
+[!include[Speech SDK Platforms](../../../includes/cognitive-services-speech-service-speech-sdk-platforms.md)]
 
-|Поддерживаемая операционная система|Язык программирования|
-|-|-|
-|Windows|C/C++, C#|
-|Linux|C/C++|
-|Устройства|Java\*|
-
-\* *Пакет SDK для Java входит в [пакет SDK для речевых устройств](speech-devices-sdk.md).*
+[!include[License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
 ## <a name="get-the-windows-sdk"></a>Получение пакета SDK для Windows
 
@@ -61,9 +55,25 @@ sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2
 
 ## <a name="get-the-java-sdk"></a>Получение пакета SDK для Java
 
-Пакет SDK для Java входит в [пакет SDK для речевых устройств](speech-devices-sdk.md).
+Пакет SDK Java для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования.
+Она размещена в репозитории Maven в `https://csspeechstorage.blob.core.windows.net/maven/` в виде пакета `com.microsoft.cognitiveservices.speech:client-sdk:0.5.0`.
+Чтобы использовать этот пакет в проекте Android Studio, внесите следующие изменения.
+
+* В файл `build.gradle` уровня проекта добавьте следующий текст в раздел `repository`:
+
+  ```text
+  maven { url 'https://csspeechstorage.blob.core.windows.net/maven/' }
+  ```
+
+* В файл `build.gradle` уровня модуля добавьте следующий текст в раздел `dependencies`:
+
+  ```text
+  implementation 'com.microsoft.cognitiveservices.speech:client-sdk:0.5.0'
+  ```
+
+Пакет SDK для Java также входит в [пакет SDK для устройств распознавания речи](speech-devices-sdk.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Получение пробной подписки на службу "Речь"](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](quickstart-csharp-windows.md)
+* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
+* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)

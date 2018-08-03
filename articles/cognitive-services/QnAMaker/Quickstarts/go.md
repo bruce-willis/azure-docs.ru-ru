@@ -9,12 +9,12 @@ ms.technology: qna-maker
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jaswel
-ms.openlocfilehash: fcb44a4c737f85941b33c278cfbae3f128df8207
-ms.sourcegitcommit: ea5193f0729e85e2ddb11bb6d4516958510fd14c
+ms.openlocfilehash: d68ff91d74a6c43c6d492aa07e916a842b50e96f
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/21/2018
-ms.locfileid: "36301297"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37867595"
 ---
 # <a name="quickstart-for-microsoft-qna-maker-api-with-go"></a>Краткое руководство для API службы QnA Maker Microsoft с помощью Go 
 <a name="HOLTop"></a>

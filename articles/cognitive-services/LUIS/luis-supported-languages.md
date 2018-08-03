@@ -2,19 +2,19 @@
 title: Поддержка локализации с помощью приложений LUIS в Azure | Документы Майкрософт
 description: Дополнительные сведения о языках, поддерживаемых службой LUIS.
 services: cognitive-services
-author: cahann
-manager: hsalama
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/04/2017
-ms.author: cahann
-ms.openlocfilehash: 1eabc01ee07f8791680738a156471e3efe2c44ff
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.author: diberry
+ms.openlocfilehash: d2c479445aabe05013470724c623978402abeb9d
+ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "35383290"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39248423"
 ---
 # <a name="culture-specific-understanding-in-luis-apps"></a>Распознавание с учетом языка и региональных параметров в приложениях LUIS
 
@@ -33,13 +33,13 @@ ms.locfileid: "35383290"
 | Французский (Канада) |`fr-CA` |-|   -   |-|✔|
 | *[Китайский](#chinese-support-notes) |`zh-CN` | ✔ | ✔ |✔|-|
 | Нидерландский |`nl-NL` |-|  -   |-|✔|
-| Французский (Франция) |`fr-FR` |-| ✔ |✔ |✔|
+| французский (Франция) |`fr-FR` |-| ✔ |✔ |✔|
 | Немецкий |`de-DE` |-| ✔ |✔ |✔|
 | Итальянский |`it-IT` |-| ✔ |✔|✔|
 | *[Японский](#japanese-support-notes) |`ja-JP` |-| ✔ |✔|Только ключевая фраза|
 | Корейский |`ko-KR` |-|   -   |-|Только ключевая фраза|
 | Португальский (Бразилия) |`pt-BR` |-| ✔ |✔ |не все вложенные языки и региональные параметры|
-| Испанский (Испания) |`es-ES` |-| ✔ |✔|✔|
+| испанский (Испания) |`es-ES` |-| ✔ |✔|✔|
 | Испанский (Мексика)|`es-MX` |-|  -   |✔|✔|
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "35383290"
      - です не равно だ. 
 
 ### <a name="text-analytics-support-notes"></a>** Примечания о поддержке анализа текста
-Вложенные языки и региональные параметры поддерживаются только для португальского языка: `pt-PT` и `pt-BR`. Все другие языки и региональные параметры поддерживаются на уровне основного языка. Дополнительные сведения о [поддерживаемых языках](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) анализа текста. 
+Текстовая аналитика включает в себя предварительно созданную сущность keyPhrase и анализ тональности. Вложенные языки и региональные параметры поддерживаются только для португальского языка: `pt-PT` и `pt-BR`. Все другие языки и региональные параметры поддерживаются на уровне основного языка. Дополнительные сведения о [поддерживаемых языках](https://docs.microsoft.com/azure/cognitive-services/text-analytics/text-analytics-supported-languages) анализа текста. 
 
 ### <a name="speech-api-supported-languages"></a>Поддерживаемые языки API речи
 Сведения о языках режима диктовки службы речи см. в разделе [Поддерживаемые языки](https://docs.microsoft.com/azure/cognitive-services/Speech/api-reference-rest/supportedlanguages##interactive-and-dictation-mode) для службы "Речь".

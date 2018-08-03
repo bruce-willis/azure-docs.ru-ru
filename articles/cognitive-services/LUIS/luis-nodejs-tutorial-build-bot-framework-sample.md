@@ -2,19 +2,19 @@
 title: Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для Node.js в Azure | Документы Майкрософт
 description: Создайте бот, интегрированный с приложением LUIS, на основе платформы Bot Framework.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/06/2018
-ms.author: v-geberr
-ms.openlocfilehash: 5d9b78977457f818b964adb16ebb5e9e5872aa2c
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: 6d6937105b11d94138b51660dc9f3c5e682e19bc
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36264979"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224081"
 ---
 # <a name="integrate-luis-with-a-bot-using-the-bot-builder-sdk-for-nodejs"></a>Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для Node.js
 
@@ -235,7 +235,7 @@ bot.dialog('TurnOff',
    ![Тестирование бота HomeAutomation веб-чате](./media/luis-tutorial-node-bot/bot-service-chat-results.png)
 
 > [!TIP]
-> Если ваш бот не всегда распознает правильное намерение или сущности, необходимо улучшить производительность приложения LUIS, предоставив ему больше примеров высказываний для обучения. Вы можете повторно обучить приложение LUIS, не изменяя код бота. См. разделы [Добавление примеров высказываний](https://docs.microsoft.com/azure/cognitive-services/LUIS/add-example-utterances) и [Обучение и тестирование приложений LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/interactive-test).
+> Если ваш бот не всегда распознает правильное намерение или сущности, необходимо улучшить производительность приложения LUIS, предоставив ему больше примеров высказываний для обучения. Вы можете повторно обучить приложение LUIS, не изменяя код бота. См. разделы [Добавление примеров высказываний](https://docs.microsoft.com/azure/cognitive-services/LUIS/add-example-utterances) и [Обучение и тестирование приложений LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-interactive-test).
 
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 Ознакомьтесь с дополнительными сведениями о платформе [Bot Framework](https://dev.botframework.com/) и пакетах SDK версии [3.x](https://github.com/Microsoft/BotBuilder) и [4.x](https://github.com/Microsoft/botbuilder-js).

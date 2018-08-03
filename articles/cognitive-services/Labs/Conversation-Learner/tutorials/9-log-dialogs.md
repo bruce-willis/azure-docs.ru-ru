@@ -1,7 +1,7 @@
 ---
-title: Запись диалогов в приложении Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
+title: Запись диалогов в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как записывать диалоги в приложении Conversation Learner.
+description: Сведения о том, как записывать диалоги в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,16 +10,20 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 477545c48aeca05d56fdae28ac65a8f381a482fe
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6ceeb9683a979256a8a52347fc74ab758fd1d348
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381833"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171441"
 ---
-# <a name="how-to-log-dialogs-in-a-conversation-learner-application"></a>Запись диалогов в приложении Conversation Learner.
+# <a name="how-to-log-dialogs-in-a-conversation-learner-model"></a>Запись диалогов в модели Conversation Learner
 
 В этом руководстве показано, как выполнять тестирование от лица пользователя в интерфейсе Conversation Learner, сохранять диалоги и вносить исправления в сохраненные диалоги для улучшения модели.
+
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 9](http://aka.ms/cl-tutorial-09-preview)](http://aka.ms/blis-tutorial-09)
 
 ## <a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.
@@ -31,22 +35,22 @@ ms.locfileid: "35381833"
 
 ## <a name="steps"></a>Действия
 
-### <a name="create-the-application"></a>Создание приложения
+### <a name="create-the-model"></a>Создание модели
 
-1. В пользовательском веб-интерфейсе щелкните New App (Новое приложение).
+1. В пользовательском веб-интерфейсе щелкните "Новая модель".
 2. В поле Name (Имя) введите LogDialogs. Затем щелкните Create (Создать).
 
 ### <a name="create-an-entity"></a>Создание сущности
 
 1. Щелкните Entities (Сущности), затем New Entity (Новая сущность).
-2. В поле Entity Name (Имя сущности) введите city.
+2. В поле "Entity Name" (Имя сущности) введите city.
 3. Щелкните Создать.
 
 ### <a name="create-two-actions"></a>Создание двух действий
 
 1. Щелкните Actions (Действия), а затем New Action (Новое действие).
 2. В поле Response (Ответ) введите Which city? (Какой город?).
-3. В поле Disqualifying Entities (Блокирующие сущности) введите $city.
+3. В поле "Disqualifying Entities" (Блокирующие сущности) введите $city.
 3. Нажмите кнопку "Создать"
 
 Теперь создайте второе действие.
@@ -117,7 +121,7 @@ ms.locfileid: "35381833"
 
 1. Щелкните hello (Привет) в разделе Log Dialogs (Запись диалогов).
     - Откроется окно с текстом диалога.
-3. Обратите внимание, что для hello (Привет) выбирается ответ "which city" (Какой город). Нам нужно это изменить, чтобы ответ выглядел более логичным. Лучше всего отвечать что-то в духе hello, I'm the weather bot (Привет, я бот, который сообщает прогноз погоды). Но у нас пока нет подходящего действия, поэтому мы создадим его.
+3. Для "hello" (Привет) выбирается ответ "which city" (Какой город). Нам нужно это изменить, чтобы ответ выглядел более логичным. Лучше всего отвечать что-то в духе hello, I'm the weather bot (Привет, я бот, который сообщает прогноз погоды). Но у нас пока нет подходящего действия, поэтому мы создадим его.
 4. Щелкните Action (Действие).
     - В поле Respose (Ответ), введите I'm the weather bot. I can help with forecasts (Я бот, который сообщает прогноз погоды).
 6. Снимите флажок Wait for Response (Ожидать ответ), чтобы наше действие применялось без ожидания.

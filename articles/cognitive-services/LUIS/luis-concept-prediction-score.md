@@ -2,19 +2,19 @@
 title: Сведения об оценке прогнозирования, возвращаемой LUIS — Azure | Документы Майкрософт
 description: Сведения о значении оценки прогнозирования в LUIS
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
-ms.author: v-geberr
-ms.openlocfilehash: 31c101a23892df8599b8cdc0f67647fefb969490
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: cee7243531857f07dec2e968352ffb54aef16bf1
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265994"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224592"
 ---
 # <a name="prediction-score"></a>Оценка прогнозирования
 Оценка прогнозирования означает степень достоверности результатов прогнозирования LUIS. 
@@ -28,7 +28,7 @@ ms.locfileid: "36265994"
 |0,01|Низкая степень достоверности|
 |0|Точное несоответствие|
 
-Если высказывание обладает низкой степенью достоверности, **соответствующее намерение** помечается красной рамкой на странице **Намерение** веб-сайта [LUIS][LUIS]. 
+Если высказывание обладает низкой степенью достоверности, LUIS подчеркивает, что на странице **Intent** веб-сайта [LUIS](luis-reference-regions.md) идентифицировано **помеченное намерение**, выделенное красным. 
 
 ![Расхождение оценки](./media/luis-concept-score/score-discrepancy.png)
 
@@ -58,8 +58,9 @@ ms.locfileid: "36265994"
 
 Если для обозначения достоверности для вашего чат-бота требуется конкретная оценка LUIS, следует использовать разницу оценок между двумя намерениями с максимальной оценкой. Это обеспечивает гибкость для различных вариантов обучения. 
 
+## <a name="punctuation"></a>Пунктуация
+В LUIS пунктуация является отдельным маркером. Для высказывания, которое заканчивается точкой, по сравнению с высказыванием, которое не является двумя отдельными фразами, можно получить два разных прогнозирования. Убедитесь, что модель обрабатывает пунктуацию либо согласно [примерам высказываний](luis-concept-utterance.md) (имеющих и не имеющих пунктуации), либо как [pattern} (luis-concept-patterns.md), где пунктуацию легче игнорировать с помощью специального синтаксиса: `I am applying for the {Job} position[.]`
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о добавлении сущностей в приложение LUIS см. в статье [Добавление сущностей](luis-how-to-add-entities.md).
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions

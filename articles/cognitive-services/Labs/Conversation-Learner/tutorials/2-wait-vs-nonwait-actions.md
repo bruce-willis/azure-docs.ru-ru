@@ -1,7 +1,7 @@
 ---
-title: Использование действий с ожиданием и без ожидания в приложении Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
+title: Использование действий с ожиданием и без ожидания в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Узнайте, как использовать действия с ожиданием и без ожидания в приложении Conversation Learner.
+description: Сведения об использовании действий с ожиданием и без ожидания в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,19 +10,23 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: bb2cbd55b6c8be51213095926bb592169613d1fc
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: a8f7ccf79e750c9f3c21c25c50c3e275db7e4195
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381721"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39173090"
 ---
 # <a name="wait-and-non-wait-actions"></a>Действия с ожиданием и без ожидания
 
 В этом руководстве показано различие между действиями с ожиданием и действиями без ожидания в приложении Conversation Learner.
 
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 2](http://aka.ms/cl-tutorial-02-preview)](http://aka.ms/blis-tutorial-02)
+
 ## <a name="requirements"></a>Требования
-Для работы с этим руководством необходим запущенный бот обучения общего назначения
+Для работы с этим руководством требуется запущенный бот обучения общего назначения.
 
     npm run tutorial-general
 
@@ -33,9 +37,9 @@ ms.locfileid: "35381721"
 
 ## <a name="steps"></a>Действия
 
-### <a name="create-a-new-app"></a>Создание нового приложения
+### <a name="create-a-new-model"></a>Создание модели
 
-1. В пользовательском веб-интерфейсе щелкните New App (Новое приложение).
+1. В пользовательском веб-интерфейсе щелкните "Новая модель".
 2. В поле Name (Имя) введите WaitNonWait. Затем нажмите Create (Создать).
 
 ### <a name="create-the-first-wait-action"></a>Создание первого действия с ожиданием
@@ -43,7 +47,7 @@ ms.locfileid: "35381721"
 1. Щелкните Actions (Действия), а затем New Action (Новое действие).
 2. В поле ответа введите Which animal do you want? (Какое животное выбрать?).
     - Это действие с ожиданием, поэтому не снимайте флажок Wait for Response (Ожидать ответа).
-3. Нажмите кнопку Done (Готово).
+3. Щелкните Создать.
 
 ### <a name="create-a-non-wait-action"></a>Создание действия без ожидания
 
@@ -68,14 +72,15 @@ ms.locfileid: "35381721"
 3. Щелкните Score Actions (Оценить действия) и выберите Which animal do you want? (Какое животное выбрать?).
 4. Введите cow (Корова).
 5. Щелкните Score Actions (Оценить действия) и выберите Cows say moo (Коровы мычат).
-    - Обратите внимание, что бот не ожидает ввода, а сразу выполняет следующее действие.
+    - Бот не ожидает ввода, а сразу выполняет следующее действие.
 2. Щелкните Which animal do you want? (Какое животное выбрать?).
 3. Введите duck (Утка).
 5. Щелкните Score Actions (Оценить действия) и выберите Ducks say quack (Утки крякают).
 
 ![](../media/tutorial2_dialogs.PNG)
 
-Обратите внимание на последовательность ответов бота при выполнении действий с ожиданием и без ожидания.
+> [!NOTE]
+> Последовательность ответов бота при выполнении действий с ожиданием и без ожидания.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

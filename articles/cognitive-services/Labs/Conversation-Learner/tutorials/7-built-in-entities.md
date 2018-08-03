@@ -1,7 +1,7 @@
 ---
-title: Добавление предварительно созданных сущностей в приложение для обучения ведению диалога. Microsoft Cognitive Services | Документация Майкрософт
+title: Добавление предварительно созданных сущностей в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Сведения о том, как добавить предварительно созданные сущности в приложение для обучения ведению диалога.
+description: Сведения о добавлении предварительно созданных сущностей в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,18 +10,22 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: f014464419bfac39a9e57e679fcd28a737e9ebdb
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 84d73add5586aaaf130253a8122a4152e39bcbe9
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382484"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39171373"
 ---
 # <a name="how-to-add-pre-built-entities"></a>Добавление предварительно созданных сущностей
-В этом руководстве показано, как добавить предварительно созданные сущности в приложение для обучения ведению диалога.
+В этом руководстве описано, как добавить предварительно созданные сущности в модель Conversation Learner.
+
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 7](http://aka.ms/cl-tutorial-07-preview)](http://aka.ms/blis-tutorial-07)
 
 ## <a name="requirements"></a>Требования
-Для работы с этим руководством необходим запущенный бот обучения общего назначения
+Для работы с этим руководством требуется запущенный бот обучения общего назначения.
 
     npm run tutorial-general
 
@@ -31,9 +35,9 @@ ms.locfileid: "35382484"
 
 ## <a name="steps"></a>Действия
 
-### <a name="create-the-application"></a>Создание приложения
+### <a name="create-the-model"></a>Создание модели
 
-1. В пользовательском веб-интерфейсе щелкните "Новое приложение".
+1. В пользовательском веб-интерфейсе щелкните "Новая модель".
 2. В поле "Имя" введите BuiltInEntities. Затем нажмите кнопку "Создать".
 
 ### <a name="create-an-entity"></a>Создание сущности
@@ -53,7 +57,7 @@ ms.locfileid: "35382484"
 
 ![](../media/tutorial7_actions.PNG)
 
-Теперь создайте второе действие:
+Теперь создайте второе действие.
 
 1. Выберите "Действия", затем "Создать действие", чтобы создать второе действие.
 3. В поле "Ответ" введите "What's the date?" (Какая дата?).
@@ -66,7 +70,7 @@ ms.locfileid: "35382484"
 
 ### <a name="train-the-bot"></a>Обучение бота
 
-1. Щелкните Train Dialogs (Обучение диалогам), затем New Train Dialog (Обучение новому диалогу).
+1. Щелкните "Train Dialogs" (Обучение диалогам), а затем — "New Train Dialog" (Обучение новому диалогу).
 2. Введите "hello" (привет).
 3. Щелкните Score Actions (Оценка действий) и выберите "What's the date?" (Какая дата?).
 2. Введите "today" (сегодня). 
@@ -75,7 +79,7 @@ ms.locfileid: "35382484"
     - Обратите внимание, что дата теперь отображается в разделе Entity Memory (Память сущности). 
     - Если навести указатель мыши на дату, отобразятся дополнительные данные, предоставленные службой LUIS, которые могут быть полезны и в дальнейшем обработаны в коде. 
 6. Выберите "The date is $luis-datetimev2" (Дата $luis-datetimev2).
-7. Щелкните Done Teaching (Завершить обучение).
+7. Щелкните "Done Teaching" (Завершить обучение).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

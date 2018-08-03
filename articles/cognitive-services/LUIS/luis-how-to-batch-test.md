@@ -2,19 +2,19 @@
 title: Пакетное тестирование приложения LUIS в Azure | Документы Майкрософт
 description: Используйте пакетное тестирование LUIS для поиска высказываний с неправильными намерениями и сущностями.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/14/2018
-ms.author: v-geberr
-ms.openlocfilehash: 822fb1e2d5b13941527d242e8501b423bd6b81cb
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: 2c648cdd82f89a9646fa0b311a7f1f68dd4bc4a9
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265519"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39223587"
 ---
 # <a name="batch-testing"></a>Пакетное тестирование
  Пакетное тестирование представляет собой комплексный тест текущей обученной модели для оценки ее производительности в LUIS. 
@@ -26,7 +26,7 @@ ms.locfileid: "36265519"
 
     ![Ссылка на пакетное тестирование](./media/luis-how-to-batch-test/batch-testing-link.png)
 
-2. Нажмите кнопку **Import dataset** (Импортировать набор данных). Откроется диалоговое окно **Import new dataset** (Импорт нового набора данных). Нажмите кнопку **Choose File** (Выбрать файл) и найдите [JSON](luis-concept-batch-test.md#batch-file-format)-файл, содержащий *не более 1000* высказываний для тестирования.
+2. Нажмите кнопку **Import dataset** (Импортировать набор данных). Откроется диалоговое окно **Import new dataset** (Импорт нового набора данных). Нажмите кнопку **Выбрать файл** и расположите JSON-файл с правильным [форматом JSON](luis-concept-batch-test.md#batch-file-format) содержащий *не более 1000* высказываний для тестирования.
 
     ![Импорт файла набора данных](./media/luis-how-to-batch-test/batchtest-importset.png)
 
@@ -37,7 +37,7 @@ ms.locfileid: "36265519"
 4. Нажмите кнопку **Готово**. Будет добавлен файл набора данных.
 
 ## <a name="run-rename-export-or-delete-dataset"></a>Запуск, переименование, экспорт и удаление набора данных
-Чтобы запустить, переименовать, экспортировать или удалить набор данных, используйте кнопку с многоточием (**...** ) в конце строки набора данных.
+Чтобы запустить, переименовать, экспортировать или удалить набор данных, используйте кнопку с многоточием (***...*** ) в конце строки набора данных.
 
 ![Действия с набором данных](./media/luis-how-to-batch-test/batch-testing-options.png)
 
@@ -77,13 +77,6 @@ The filtering panel on the right side of the screen displays a list of all inten
  
 ![Визуализированный результат пакетного тестирования](./media/luis-how-to-batch-test/filter-by-entity.png) 
 
-<!--
-## Investigate false sections
-Data points on the **[False Positive][false-positive]** and **[False Negative][false-negative]** sections indicate errors, which should be investigated. If all data points are on the **[True Positive][true-positive]** and **[True Negative][true-negative]** sections, then your application's performance is perfect on this dataset.
-
-
-The graph indicates [F-measure][f-measure], [recall][recall], and [precision][precision].  
--->
 ## <a name="view-single-point-utterance-data"></a>Просмотр данных высказывания для одной точки
 На диаграмме наведите указатель мыши на точку данных, чтобы увидеть оценку достоверности ее прогнозирования. Выберите точку данных для извлечения ее соответствующего высказывания из списка высказываний в нижней части страницы. 
 
@@ -107,16 +100,7 @@ The graph indicates [F-measure][f-measure], [recall][recall], and [precision][pr
 
 Если тестирование показывает, что приложение LUIS не распознает правильные намерения и сущности, вы можете повысить производительность приложения LUIS, пометив дополнительные высказывания или добавив компоненты. 
 
-* я[Label suggested utterances with LUIS](Label-Suggested-Utterances.md) (Пометка предлагаемых высказываний в LUIS) 
+* я[Label suggested utterances with LUIS](luis-how-to-review-endoint-utt.md) (Пометка предлагаемых высказываний в LUIS) 
 * [Use features to improve your LUIS app's performance](luis-how-to-add-features.md) (Использование функций для повышения производительности приложения LUIS) 
 * [Understand batch testing with this tutorial](luis-tutorial-batch-testing.md) (Общие сведения о пакетном тестировании в этом руководстве)
 * [Learn batch testing concepts](luis-concept-batch-test.md) (Общие сведения о принципах пакетного тестирования)
-
-[true-positive]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#true-positive
-[true-negative]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#true-negative
-[false-positive]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#false-positive
-[false-negative]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#false-negative
-[f-measure]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#f-measure
-[recall]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#recall
-[precision]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-glossary#precision
-

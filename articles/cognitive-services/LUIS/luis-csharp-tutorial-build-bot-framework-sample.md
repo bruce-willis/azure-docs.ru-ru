@@ -2,19 +2,19 @@
 title: Интеграция LUIS с ботом с помощью пакета SDK для построителя ботов для C# в Azure | Документы Майкрософт
 description: Создайте бот, интегрированный с приложением LUIS, на основе платформы Bot Framework.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/06/2018
-ms.author: v-geberr
-ms.openlocfilehash: 273fca51d83f25e2657b51b68179e46f4295f92b
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: ca893dadfed04c90a4d89087299bf1cc2bf55eb9
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36263886"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39225964"
 ---
 # <a name="web-app-bot-using-the-luis-template-for-c"></a>Создание бота веб-приложения с помощью шаблона LUIS для C#
 
@@ -47,7 +47,7 @@ ms.locfileid: "36263886"
     * В поле **Имя приложения** укажите имя бота. При развертывании бота в облаке имя используется в качестве поддомена (например, mynotesbot.azurewebsites.net). <!-- This name is also used as the name of the LUIS app associated with your bot. Copy it to use later, to find the LUIS app associated with the bot. -->
     * Заполните поля "Подписка", [Группа ресурсов](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), "План службы приложений" и [Расположение](https://azure.microsoft.com/regions/).
     * В поле **Bot template** (Шаблон бота) выберите шаблон **Language understanding (C#)** (Распознавание речи (C#)).
-    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион][LUIS] разработки, в котором создано приложение.
+    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
     * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
     ![Служба Bot Service](./media/luis-tutorial-cscharp-web-bot/bot-service-setting-callout-template.png)
@@ -72,7 +72,7 @@ ms.locfileid: "36263886"
 
 ## <a name="connect-your-luis-app-to-the-bot"></a>Подключение приложения LUIS к боту
 
-Откройте окно **Параметры приложения** и измените значение в поле **LuisAppId** на идентификатор приложения LUIS. Если приложение LUIS HomeAutomation создано в регионе, отличном от западной части США, необходимо также изменить значение в поле **LuisAPIHostName**. В качестве значения **LuisAPIKey** сейчас задан ключ разработки. Когда трафик превысит квоту уровня "Бесплатный", это значение следует изменить на ключ подписки. 
+Откройте окно **Параметры приложения** и измените значение в поле **LuisAppId** на идентификатор приложения LUIS. Если приложение LUIS HomeAutomation создано в регионе, отличном от западной части США, необходимо также изменить значение в поле **LuisAPIHostName**. В качестве значения **LuisAPIKey** сейчас задан ключ разработки. Когда трафик превысит квоту уровня "Бесплатный", это значение следует изменить на ключ конечной точки. 
 
   ![Обновление идентификатора приложения LUIS в Azure](./media/luis-tutorial-cscharp-web-bot/bot-service-app-settings.png)
 
@@ -80,7 +80,7 @@ ms.locfileid: "36263886"
 > Если у вас нет идентификатора приложения LUIS для [приложения Home Automation](luis-get-started-create-app.md), войдите на веб-сайт [LUIS](luis-reference-regions.md) с помощью учетной записи, используемой для входа в Azure. 
 > 1. Щелкните **Мои приложения**. 
 > 2. Найдите ранее созданное приложение LUIS, которое содержит намерения и сущности из предметной области HomeAutomation.
-> 3. На странице **Параметры** приложения LUIS найдите и скопируйте идентификатор приложения. Приложение должно быть [обучено](interactive-test.md) и [опубликовано](PublishApp.md). 
+> 3. На странице **Параметры** приложения LUIS найдите и скопируйте идентификатор приложения. Приложение должно быть [обучено](luis-interactive-test.md) и [опубликовано](luis-how-to-publish-app.md). 
 
     > [!WARNING]
     > If you delete your app ID or LUIS key, the bot will stop working.
@@ -145,7 +145,7 @@ ms.locfileid: "36263886"
    ![Тестирование бота HomeAutomation веб-чате](./media/luis-tutorial-cscharp-web-bot/bot-service-chat-results.png)
 
 > [!TIP]
-> Вы можете повторно обучить приложение LUIS, не изменяя код бота. См. разделы [Добавление примеров высказываний](https://docs.microsoft.com/azure/cognitive-services/LUIS/add-example-utterances) и [Обучение и тестирование приложений LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/interactive-test). 
+> Вы можете повторно обучить приложение LUIS, не изменяя код бота. См. разделы [Добавление примеров высказываний](https://docs.microsoft.com/azure/cognitive-services/LUIS/add-example-utterances) и [Обучение и тестирование приложений LUIS](https://docs.microsoft.com/azure/cognitive-services/LUIS/luis-interactive-test). 
 
 ## <a name="download-the-bot-to-debug"></a>Скачивание бота для отладки
 Если бот не работает, скачайте проект на локальный компьютер и продолжите [отладку](https://docs.microsoft.com/bot-framework/bot-service-debug-bot#debug-an-azure-app-service-web-app-c-bot). 
@@ -170,7 +170,6 @@ ms.locfileid: "36263886"
 [BFPortal]: https://dev.botframework.com/
 [RegisterInstructions]: https://docs.microsoft.com/bot-framework/portal-register-bot
 [BotFramework]: https://docs.microsoft.com/bot-framework/
-[AssignedEndpointDoc]: https://docs.microsoft.com/azure/cognitive-services/LUIS/manage-keys
 [VisualStudio]: https://www.visualstudio.com/
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions
+
 <!-- tested on Win10 -->

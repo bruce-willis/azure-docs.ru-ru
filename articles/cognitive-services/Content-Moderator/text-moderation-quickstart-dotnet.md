@@ -9,12 +9,12 @@ ms.component: content-moderator
 ms.topic: article
 ms.date: 01/04/2018
 ms.author: sajagtap
-ms.openlocfilehash: 238d086e87b0e52f0887af5c4db58e8f72796b49
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 7320286e186d7e6ba4041d3ed52f19e573b4d7e3
+ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380885"
+ms.lasthandoff: 07/14/2018
+ms.locfileid: "39049887"
 ---
 # <a name="moderate-text-using-net"></a>Модерация текста с использованием .NET
 
@@ -29,7 +29,7 @@ ms.locfileid: "35380885"
 ## <a name="sign-up-for-content-moderator-services"></a>Регистрация в службах Content Moderator
 
 Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
-См. [краткое руководство](quick-start.md) со сведениями о том, как можно получить ключ.
+Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 
@@ -46,12 +46,12 @@ ms.locfileid: "35380885"
 Установите следующие пакеты NuGet:
 
 - Microsoft.Azure.CognitiveServices.ContentModerator;
-- Microsoft.Rest.ClientRuntime;
+- Microsoft.Rest.ClientRuntime
 - Newtonsoft.Json.
 
 ### <a name="update-the-programs-using-statements"></a>Обновление инструкций using программы
 
-Измените инструкции using программы.
+Измените инструкции using в вашей программе.
 
     using Microsoft.CognitiveServices.ContentModerator;
     using Microsoft.CognitiveServices.ContentModerator.Models;
@@ -63,7 +63,7 @@ ms.locfileid: "35380885"
     using System.Threading;
 
 
-### <a name="initialize-application-specific-settings"></a>Инициализация параметров конкретного приложения
+### <a name="initialize-application-specific-settings"></a>Инициализация параметров приложения
 
 Добавьте следующие статические поля в класс **Program** в файле Program.cs.
 
@@ -119,7 +119,7 @@ ms.locfileid: "35380885"
 > [!NOTE]
 > Для ключа службы Content Moderator установлен лимит количества запросов в секунду. При его превышении пакет SDK создаст исключение с кодом ошибки 429.
 >
-> Для ключа бесплатного уровня предусмотрен лимит в один запрос в секунду.
+> При использовании ключа уровня "Бесплатный" частота запросов ограничена одним запросом в секунду.
 
 ## <a name="run-the-program-and-review-the-output"></a>Запуск программы и просмотр выходных данных
 

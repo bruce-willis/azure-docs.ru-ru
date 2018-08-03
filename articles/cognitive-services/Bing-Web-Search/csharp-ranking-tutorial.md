@@ -10,12 +10,12 @@ ms.component: bing-web-search
 ms.topic: article
 ms.date: 05/08/2017
 ms.author: brumbaug
-ms.openlocfilehash: ec47b8448c0c39cc54e4c79434ce7a2d926df341
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 7d371a5a44f44ca743294f3f73f84e81d390cdea
+ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380717"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37867782"
 ---
 # <a name="build-a-console-app-search-client-in-c"></a>Создание клиента поиска в виде консольного приложения на C#
 
@@ -26,11 +26,11 @@ ms.locfileid: "35380717"
 - выполнение простого запроса к API Bing для поиска в Интернете;
 - отображение результатов запроса в порядке приоритета.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>предварительным требованиям
 
 Для работы с этим руководством вам потребуется следующее:
 
-- Visual Studio. [Скачайте и установите бесплатную среду Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/), если у вас ее еще нет.
+- приведенному. [Скачайте и установите бесплатную среду Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/), если у вас ее еще нет.
 - Ключ подписки для API Bing для поиска в Интернете. Если у вас его нет, зарегистрируйтесь, чтобы [воспользоваться бесплатной пробной версией](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api).
 
 ## <a name="create-a-new-console-app-project"></a>Создание проекта консольного приложения

@@ -7,36 +7,39 @@ manager: wolmfa61
 ms.service: cognitive-services
 ms.technology: speech
 ms.topic: article
-ms.date: 06/27/2018
+ms.date: 06/28/2018
 ms.author: mahilleb
-ms.openlocfilehash: a201cc043f673e2285ea48950804d97b96f881ed
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 11360d163fdba057d373d091d46903cde7789a8b
+ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054942"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39071425"
 ---
-# <a name="regions-and-endpoints-of-the-speech-service"></a>Регионы и конечные точки службы "Речь"
+# <a name="regions-of-the-speech-service"></a>Регионы и конечные точки службы "Речь"
 
-> [!NOTE]
-> Имена регионов в [пакете SDK для распознавания речи](speech-sdk.md) совпадают с первой частью доменных имен конечных точек, как показано ниже.
-> Например, используйте `westus`, чтобы указать регион "Западная часть США" в пакете SDK для распознавания речи.
+Служба "Речь" доступна в нескольких регионах.
+При создании подписки можно выбрать доступный регион в соответствии с требованиями.
 
-## <a name="speech-to-text"></a>Преобразование речи в текст
+При использовании подписки необходима учетная запись для выбранного региона.
 
-[!include[](includes/endpoints-speech-to-text.md)]
+## <a name="rest-api"></a>ИНТЕРФЕЙС REST API
 
-## <a name="text-to-speech"></a>Преобразование текста в речь
+С помощью REST API выберите конечные точки в соответствующем регионе.
+Дополнительные сведения приведены описании [интерфейсов REST API](rest-apis.md).
 
-[!include[](includes/endpoints-text-to-speech.md)]
+## <a name="speech-sdk"></a>Пакет SDK для распознавания речи
 
-## <a name="authentication"></a>Authentication
+В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанное в виде строки (например, в качестве параметра [SpeechFactory.FromSubscription](https://docs.microsoft.com/dotnet/api/microsoft.cognitiveservices.speech.speechfactory.fromsubscription) в пакете SDK службы "Речь" для C#).
 
-[!include[](includes/endpoints-token-service.md)]
+В следующей таблице перечислены доступные регионы для служб **распознавания речи** и **перевода**.
 
-Сведения о том, как получить и обновить маркеры авторизации см. [здесь](rest-apis.md#authentication).
+Регион| Значение параметра региона в пакете SDK для службы "Речь"
+-|-
+Запад США| `westus`
+Восточная Азия| `eastasia`
+Северная Европа| `northeurope`
 
-## <a name="language-understanding-speech-sdk-only"></a>Language Understanding (только пакет SDK для распознавания речи)
-
-Список регионов, в которых поддерживается служба Language Understanding, приведен [здесь](/azure/cognitive-services/luis/luis-reference-regions).
-В пакете SDK для распознавания речи укажите эти регионы в соответствии с первой частью доменного имени конечной точки (например, `westus`).
+Доступные регионы для **распознавания намерений** с помощью пакета SDK для службы "Речь" перечислены на [странице регионов службы "Распознавание речи"](/azure/cognitive-services/luis/luis-reference-regions).
+Для каждого указанного региона публикации в пакете SDK для службы "Речь" определен соответствующий параметр, представляющий собой первую часть доменного имени конечной точки.
+Например, используйте `westus`, чтобы указать регион публикации "Западная часть США".

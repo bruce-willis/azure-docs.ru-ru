@@ -1,7 +1,7 @@
 ---
-title: Использование многозначных сущностей в приложении для обучения ведению диалога — Microsoft Cognitive Services | Документация Майкрософт
+title: Использование многозначных сущностей в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Узнайте, как использовать многозначные сущности в приложении для обучения ведению диалога.
+description: Сведения об использовании многозначных сущностей в модели Conversation Learner.
 services: cognitive-services
 author: v-jaswel
 manager: nolachar
@@ -10,15 +10,19 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 865b50747b2c9574b5f88d4902bea9e4c8e0e032
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 6193a515f0d8136e0d420b7554cf26fee8f50953
+ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35381764"
+ms.lasthandoff: 07/20/2018
+ms.locfileid: "39173107"
 ---
-# <a name="how-to-use-multi-value-entities-with-a-conversation-learner-application"></a>Сведения об использовании многозначных сущностей в приложении для обучения ведению диалога.
+# <a name="how-to-use-multi-value-entities-with-a-conversation-learner-model"></a>Использование многозначных сущностей в модели Conversation Learner
 В этом руководстве показано, как использовать многозначные свойства для сущностей.
+
+## <a name="video"></a>Видео
+
+[![Предварительная версия руководства 6](http://aka.ms/cl-tutorial-06-preview)](http://aka.ms/blis-tutorial-06)
 
 ##<a name="requirements"></a>Требования
 Для работы с этим руководством требуется запущенный бот обучения общего назначения.
@@ -32,9 +36,9 @@ ms.locfileid: "35381764"
 
 ## <a name="steps"></a>Действия
 
-### <a name="create-the-application"></a>Создание приложения
+### <a name="create-the-model"></a>Создание модели
 
-1. В пользовательском веб-интерфейсе щелкните "New App" (Новое приложение).
+1. В пользовательском веб-интерфейсе щелкните "Новая модель".
 2. В поле имени введите MultiValueEntities. Затем щелкните "Create" (Создать).
 
 ### <a name="create-an-entity"></a>Создание сущности
@@ -75,16 +79,16 @@ ms.locfileid: "35381764"
     - Вы можете пометить несколько, одну или ни одной сущности.
 3. Щелкните "mushrooms" (грибы) и выберите Toppings (Начинки).
 4. Щелкните "cheese" (сыр) и выберите Toppings (Начинки).
-5. Щелкните Score Actions (Оценка действий).
-    - Здесь вы увидите, что два выбранных значения теперь присутствуют в сущности Toppings (Начинки). 
+5. Щелкните "Score Actions" (Оценить действия).
+    - Два значения теперь присутствуют в сущности Toppings (Начинки). 
 6. Щелкните "Here are your toppings: $Toppings" (Вы выбрали такие начинки: $Toppings).
 
 Мы можем добавить еще немного:
 
 7. Введите "добавить перцы".
     - Щелкните "перцы" в области обнаружения сущностей и выберите Toppings (Начинки).
-3. Щелкните "Score Actions" (Оценить действия).
-    - Вы увидите, что в Toppings (Начинки) теперь появилось дополнительное значение "перцы".
+3. Щелкните Score Actions (Оценить действия).
+    - В Toppings (Начинки) теперь появилось дополнительное значение "peppers" (перцы).
 6. Щелкните "Here are your toppings: $Toppings" (Вы выбрали такие начинки: $Toppings).
 
 Давайте удалим одну из начинок и добавим новую:
@@ -92,18 +96,18 @@ ms.locfileid: "35381764"
 2. Введите "remove peppers and add sausage" (удалить перцы и добавить колбасу).
 1. Выберите "peppers" (перцы) и щелкните красный крестик (X), чтобы удалить эту начинку.
 2. Выберите "peppers" (перцы) и щелкните –Toppings (–Начинки).
-3. Щелкните "Score Actions" (Оценить действия).
-    - Обратите внимание, что элемент "peppers" (перцы) исчез из списка, но добавился элемент "sausage" (колбаса).
+3. Щелкните Score Actions (Оценить действия).
+    - Элемент "peppers" (перцы) исчез из списка, но добавился элемент "sausage" (колбаса).
 6. Щелкните "Here are your toppings: $Toppings" (Вы выбрали такие начинки: $Toppings).
 
 Теперь давайте попробуйте удалить все значения:
 
 6. Введите "remove mushrooms, remove cheese, and remove sausage" (удалить грибы, удалить сыр и удалить колбасу).
 7. Щелкните каждый из трех элементов и выберите пункт –Toppings (–Начинки).
-7. Щелкните "Score Actions" (Оценить действия).
-    - Вы увидите, что список начинок очищен.
+7. Щелкните Score Actions (Оценить действия).
+    - Список начинок очищен.
 2. Выберите "What toppings do you want?" (Какие начинки вы хотите добавить?).
-3. Щелкните Done Teaching (Завершить обучение).
+3. Щелкните "Done Teaching" (Завершить обучение).
 
 ![](../media/tutorial6_dialogs.PNG)
 

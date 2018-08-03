@@ -9,12 +9,12 @@ ms.component: QnAMaker
 ms.topic: article
 ms.date: 05/18/2018
 ms.author: pchoudh
-ms.openlocfilehash: 94e3632884d7033971ff1c45b455afb9a09ee798
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 82e3ee460309f293c9bd7eadebe139f85e241f71
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35383236"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39113357"
 ---
 # <a name="using-metadata-and-the-generateanswer-api"></a>Использование метаданных и API GenerateAnswer.
 
@@ -57,7 +57,7 @@ API GenerateAnswer можно использовать в боте или при
     - **конечная точка QnA Maker** (строка): имя узла конечной точки, развернутой в вашей подписке Azure;
 - **Заголовки запроса**
     - **Content-Type** (строка): тип мультимедиа текста, отправляемого в API;
-    - **Authorization** (строка): ключ конечной точки;
+    - **Authorization** (строка): ключ конечной точки (EndpointKey xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
 - **Текст запроса**
     - **question** (строка): вопрос пользователя, ответ на который запрашивается в базе знаний;
     - **top** (необязательный параметр, целое число): количество ранжированных результатов в выходных данных; Значение по умолчанию — 1.
@@ -82,6 +82,7 @@ API GenerateAnswer можно использовать в боте или при
     - **answers** (Ответы): список ответов на запрос пользователя, отсортированных по убыванию оценки;
         - **score** (Оценка): оценка от 0 до 100;
         - **questions** (Вопросы): вопросы пользователя;
+        - **answer** (Ответ): ответ на вопрос.
         - **source** (Источник): имя источника ответа, который был извлечен или сохранен в базе знаний;
         - **metadata** (Метаданные): метаданные, связанные с ответом:
             - "name" (Имя): имя метаданных (строка, максимальная длина: 100, обязательный параметр);

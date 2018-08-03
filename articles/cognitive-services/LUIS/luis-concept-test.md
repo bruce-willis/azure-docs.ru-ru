@@ -2,25 +2,25 @@
 title: Тестирование приложения LUIS в Azure | Документы Майкрософт
 description: Используйте службу Language Understanding (LUIS) для постоянной работы над приложением, чтобы усовершенствовать его и улучшить его функции распознавания речи.
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 03/14/2018
-ms.author: v-geberr
-ms.openlocfilehash: 8c702d2adbadd2736eed05c7580e8aabf69affbf
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.author: diberry
+ms.openlocfilehash: d231eaf98358e3f8237a820e59433558d293872f
+ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36266334"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39224353"
 ---
 # <a name="testing-in-luis"></a>Тестирование в LUIS
 
 Тестирование — это процесс предоставления примеров высказываний в LUIS и получение ответа с распознанными службой LUIS намерениями и сущностями. 
 
-Приложение LUIS можно [тестировать](interactive-test.md) в интерактивном режиме, проверяя по одному высказыванию или указав [пакет](luis-concept-batch-test.md) высказываний. При тестировании текущая [активная](luis-concept-version.md#active-version) модель сравнивается с опубликованной моделью. 
+Приложение LUIS можно [тестировать](luis-interactive-test.md) в интерактивном режиме, проверяя по одному высказыванию или указав [пакет](luis-concept-batch-test.md) высказываний. При тестировании текущая [активная](luis-concept-version.md#active-version) модель сравнивается с опубликованной моделью. 
 
 <a name="A-test-score"></a>
 <a name="Score-all-intents"></a>
@@ -35,7 +35,7 @@ ms.locfileid: "36266334"
 При тестировании нескольких высказываний одновременно см. сведения в статье [Пакетное тестирование](luis-concept-batch-test.md).
 
 ## <a name="endpoint-testing"></a>Тестирование конечной точки
-Можно выполнить тестирование с помощью [конечной точки](luis-glossary.md#endpoint) и максимум двумя версиями приложения. Используя основную или динамическую версию приложения, заданную в качестве **рабочей** конечной точки, добавьте вторую версию в **промежуточную** конечную точку. В этом случае у вас будет три версии высказывания: текущая модель на панели тестирования на веб-сайте [LUIS][LUIS] и две версии в двух разных конечных точках. 
+Можно выполнить тестирование с помощью [конечной точки](luis-glossary.md#endpoint) и максимум двумя версиями приложения. Используя основную или динамическую версию приложения, заданную в качестве **рабочей** конечной точки, добавьте вторую версию в **промежуточную** конечную точку. В этом случае у вас будет три версии высказывания: текущая модель на панели тестирования на веб-сайте [LUIS](luis-reference-regions.md) и две версии в двух разных конечных точках. 
 
 При тестировании всех конечных точек учитывается квота на использование. 
 
@@ -43,11 +43,11 @@ ms.locfileid: "36266334"
 Если вы тестируете конечную точку и не хотите вести журнал для высказывания, следует использовать конфигурацию строки запроса `logging=false`.
 
 ## <a name="where-to-find-utterances"></a>Где найти высказывания
-LUIS хранит все зарегистрированные высказывания в журнале запросов, который доступен для скачивания на странице списка **Приложения** веб-сайта [LUIS][LUIS], а также [API-интерфейсы разработки](https://aka.ms/luis-authoring-apis) LUIS. 
+LUIS хранит все зарегистрированные высказывания в журнале запросов, который доступен для скачивания на странице списка **Приложения** веб-сайта [LUIS](luis-reference-regions.md), а также [API-интерфейсы разработки](https://aka.ms/luis-authoring-apis) LUIS. 
 
-Высказывания, неизвестные для LUIS, приведены на странице **[Просмотр высказываний конечной точки](label-suggested-utterances.md)** на веб-сайте [LUIS][LUIS]. 
+Высказывания, неизвестные для LUIS, приведены на странице **[Просмотр фрагментов речи конечной точки](luis-how-to-review-endoint-utt.md)** на веб-сайте [LUIS](luis-reference-regions.md). 
 
-![Просмотр высказываний конечной точки](./media/luis-concept-test/review-endpoint-utterances.png)
+![Просмотр фрагментов речи конечной точки](./media/luis-concept-test/review-endpoint-utterances.png)
  
 ## <a name="remember-to-train"></a>Обязательное обучение
 После внесения изменений в модель не забудьте [обучить](luis-how-to-train.md) LUIS. Изменения в приложении LUIS не отображаются при тестировании, пока приложение не будет обучено. 
@@ -57,6 +57,4 @@ LUIS хранит все зарегистрированные высказыва
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Узнайте больше о [тестировании](interactive-test.md) высказываний.
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions
+* Узнайте больше о [тестировании](luis-interactive-test.md) высказываний.

@@ -9,23 +9,23 @@ ms.component: text-analytics
 ms.topic: article
 ms.date: 09/20/2017
 ms.author: ashmaka
-ms.openlocfilehash: d9c61a83450844461f621ff16354881a029f7ad6
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: 94847adf761652a25fd3e2d594c7169776fefc89
+ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36266300"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39125131"
 ---
 # <a name="quickstart-for-text-analytics-api-with-c"></a>Краткое руководство по работе с API анализа текста для C# 
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения об обнаружении языка, анализе тональности и извлечении ключевых фраз с использованием [API анализа текста ](//go.microsoft.com/fwlink/?LinkID=759711) для C#. Код был написан для работы в приложении .NET Core с минимальными ссылками на внешние библиотеки, поэтому его также можно выполнять в Linux или MacOS.
 
-Техническую документацию по API-интерфейсам см. в разделе [Определения API](//go.microsoft.com/fwlink/?LinkID=759346).
+Техническую документацию по API-интерфейсам см. в разделе [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) (Определения API).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API анализа текста**. Для выполнения действий в этом кратком руководстве можно использовать **уровень "Бесплатный" на 5000 транзакций в месяц**.
+Необходимо иметь [учетную запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **API анализа текста**. Для выполнения действий, указанных в этом кратком руководстве, можно использовать подписку **уровня "Бесплатный" на 5000 транзакций в месяц**.
 
 Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
 
@@ -48,7 +48,7 @@ ms.locfileid: "36266300"
 ## <a name="call-the-text-analytics-api-using-the-sdk"></a>Вызов API анализа текста с помощью пакета SDK
 1. Замените файл Program.cs на код, указанный ниже. Эта программа показывает возможности API анализа текста в трех разделах (извлечение языка, извлечение ключевой фразы и анализ тональности).
 1. Замените значение заголовка `Ocp-Apim-Subscription-Key` с ключом доступа, допустимым для вашей подписки.
-1. Замените расположение в `client.AzureRegion` (в настоящее время `AzureRegions.Westus`) на регион вашей регистрации.
+1. Замените расположение в `client.BaseUri` конечной точкой, на которой в зарегистрированы. Эту конечную точку можно найти в ресурсе на портале Azure. Конечная точка обычно выглядит так: https://[регион].api.cognitive.microsoft.com/text/analytics/v2.0.
 1. Запустите программу.
 
 ```csharp
@@ -81,8 +81,8 @@ namespace ConsoleApp1
         {
 
             // Create a client.
-            ITextAnalyticsAPI client = new TextAnalyticsAPI(new ApiKeyServiceClientCredentials());
-            client.AzureRegion = AzureRegions.Westus;
+            ITextAnalyticsClient client = new TextAnalyticsClient(new ApiKeyServiceClientCredentials());
+            client.BaseUri = new Uri("https://westus.api.cognitive.microsoft.com/text/analytics/v2.0");
 
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -155,7 +155,7 @@ namespace ConsoleApp1
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
+> [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
 ## <a name="see-also"></a>См. также 
 

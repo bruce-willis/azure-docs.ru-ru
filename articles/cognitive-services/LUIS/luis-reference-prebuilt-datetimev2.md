@@ -3,19 +3,19 @@ title: Справочные материалы по предварительно
 titleSuffix: Azure
 description: В этой статье содержатся сведения о предварительно созданной сущности datetimeV2 в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 06/20/2018
-ms.author: v-geberr
-ms.openlocfilehash: 261f6f27c39c280efdcd070888d735374a473c85
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.author: diberry
+ms.openlocfilehash: 13f62e98a33aac51eae86d5ce1b802d4701ef3f6
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36321576"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39236777"
 ---
 # <a name="datetimev2-entity"></a>Сущность datetimeV2
 
@@ -219,7 +219,7 @@ ms.locfileid: "36321576"
 
 ## <a name="deprecated-prebuilt-datetime"></a>Устаревшая предварительно созданная сущность datetime
 
-Устаревшая предварительно созданная сущность `datetime` заменяется сущностью [`datetimeV2`](#builtindatetimev2). 
+Устаревшая предварительно созданная сущность `datetime` заменяется сущностью **datetimeV2**. 
 
 Чтобы заменить сущность `datetime` на `datetimeV2` в приложении LUIS, сделайте следующее:
 
@@ -230,5 +230,5 @@ ms.locfileid: "36321576"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте больше о сущностях [измерения](luis-reference-prebuilt-dimension.md), [адреса электронной почты](luis-reference-prebuilt-email.md) и [числа](luis-reference-prebuilt-number.md). 
+Узнайте больше о сущностях [dimension](luis-reference-prebuilt-dimension.md), [email](luis-reference-prebuilt-email.md) и [number](luis-reference-prebuilt-number.md). 
 

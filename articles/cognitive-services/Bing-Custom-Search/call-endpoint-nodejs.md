@@ -9,12 +9,12 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 48fc234e15ce3b9172d766f6fae11b51a017ce70
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 5d9391cc486dc868a1a291ccc7095291cddd3e4c
+ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "35382954"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37858465"
 ---
 # <a name="call-bing-custom-search-endpoint-nodejs"></a>Конечная точка службы пользовательского поиска Bing (Node.js)
 
@@ -34,12 +34,16 @@ ms.locfileid: "35382954"
 Чтобы вызвать конечную точку службы пользовательского поиска Bing, выполните следующие действия.
 
 1. Создайте каталог для своего кода.
+
 2. Из командной строки или терминала перейдите в эту папку.
+
 3. Установите модуль Node **request**.
     <pre>
     npm install request
     </pre>
+    
 4. Создайте файл BingCustomSearch.js и скопируйте в него приведенный ниже код.
+
 5. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом и идентификатором конфигурации (см. шаг 1).
 
     ``` javascript

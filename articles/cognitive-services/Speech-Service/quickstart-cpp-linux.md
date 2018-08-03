@@ -1,45 +1,46 @@
 ---
-title: Краткое руководство про пакету SDK для распознавания речи в C++ для Linux | Документы Майкрософт
+title: Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services | Документация Майкрософт
 titleSuffix: Microsoft Cognitive Services
-description: Сведения и примеры кода для быстрого начала использования пакета SDK для распознавания речи в Linux и C++ в Cognitive Services.
+description: Узнайте, как распознавать речь в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: wolfma61
 manager: onano
 ms.service: cognitive-services
 ms.technology: Speech
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: cee70ba585f93dda3249fc5b39f25fb613b57a45
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: b5f5cdbe202b406c724a9f4f5787e566b432a66c
+ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36753632"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39116152"
 ---
-# <a name="quickstart-for-c-and-linux"></a>Краткое руководство для C++ и Linux
+# <a name="quickstart-recognize-speech-in-c-on-linux-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.4.0`.
+Из этой статьи вы узнаете, как в Linux (Ubuntu 16.04) с помощью пакета SDK службы "Речь" в Cognitive Services создать консольное приложение C++, которое будет преобразовывать речь в текст.
 
-Пакет SDK для распознавания речи в Cognitive Services для Linux доступен для создания 64- и 32-разрядных приложений. Необходимые файлы можно скачать в виде TAR-файла здесь: https://aka.ms/csspeech/linuxbinary.
+## <a name="prerequisites"></a>Предварительные требования
 
-> [!NOTE]
-> Если вам необходимо краткое руководство для C++ и Windows, см. [эту статью](quickstart-cpp-windows.md).
-> Если вам необходимо краткое руководство для C# и Windows, см. [эту статью](quickstart-csharp-windows.md).
+* Ключ подписки для службы распознавания речи. См. статью [Try the Speech service for free](get-started.md) (Пробное использование службы распознавания речи бесплатно).
+* Компьютер Ubuntu 16.04 с рабочим микрофоном.
+* Чтобы установить пакеты, необходимые для сборки и запуска этого примера, выполните следующую команду.
 
-[!include[Get a Subscription Key](includes/get-subscription-key.md)]
+  ```sh
+  sudo apt-get update
+  sudo apt-get install build-essential libssl1.0.0 libcurl3 libasound2 wget
+  ```
 
-> [!NOTE]
-> Эти инструкции предполагают, что на вашем ПК (x86 или x64) установлена ОС Ubuntu 16.04.
-> В другой версии Ubuntu или другом дистрибутиве Linux вам потребуется адаптировать необходимые действия.
+## <a name="get-the-speech-sdk"></a>Получение пакета SDK для службы "Речь"
 
-## <a name="prerequisites"></a>предварительным требованиям
+[!include[License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-[!include[Ubuntu Prerequisites](includes/ubuntu1604-prerequisites.md)]
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `0.5.0`.
 
-## <a name="getting-the-binary-package"></a>Получение пакета двоичных файлов
-
-[!include[License Notice](includes/license-notice.md)]
+Пакет SDK для распознавания речи в Cognitive Services для Linux доступен для создания 64- и 32-разрядных приложений.
+Необходимые файлы можно скачать в виде TAR-файла здесь: https://aka.ms/csspeech/linuxbinary.
+Скачайте и установите пакет SDK, как описано ниже.
 
 1. Выберите каталог (абсолютный путь) для размещения двоичных файлов и заголовков пакета SDK для распознавания речи.
    Например, выберите путь `speechsdk` в домашнем каталоге.
@@ -69,66 +70,66 @@ ms.locfileid: "36753632"
 
    В нем должно находиться уведомление сторонних разработчиков и файлы лицензий, а также каталог `include` для заголовков и каталог `lib` для библиотек.
 
-   [!include[Linux Binary Archive Content](includes/linuxbinary-content.md)]
+   [!include[Linux Binary Archive Content](../../../includes/cognitive-services-speech-service-linuxbinary-content.md)]
 
-## <a name="sample-code"></a>Пример кода
+## <a name="add-the-sample-code"></a>Добавление примеров кода
 
-Приведенный далее код распознает английскую речь, произнесенную в микрофон.
-Поместите его в файл `quickstart-linux.cpp`.
+1. Добавьте приведенный ниже код в файл `helloworld.cpp`.
 
-[!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/Linux/quickstart-linux/quickstart-linux.cpp#code)]
+  [!code-cpp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/cpp-linux/helloworld.cpp#code)]
 
-Замените ключ подписки в коде на полученный вами ключ.
+1. Замените строку `YourSubscriptionKey` своим ключом подписки.
+
+1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 
 ## <a name="building"></a>Сборка
 
 > [!NOTE]
 > Скопируйте и вставьте приведенные ниже команды сборки в виде _одной строки_.
 
-* Запустите сборку приложения на компьютере x64 с помощью следующей команды:
+* На компьютере **x64** выполните сборку приложения с помощью следующей команды.
 
   ```sh
-  g++ quickstart-linux.cpp -o quickstart-linux -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x64" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
+  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x64" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
   ```
 
-* Запустите сборку приложения на компьютере x86 с помощью следующей команды:
+* На компьютере **x86** выполните сборку приложения с помощью следующей команды.
 
   ```sh
-  g++ quickstart-linux.cpp -o quickstart-linux -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x86" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
+  g++ helloworld.cpp -o helloworld -I "$SPEECHSDK_ROOT/include/cxx_api" -I "$SPEECHSDK_ROOT/include/c_api" --std=c++14 -lpthread -lMicrosoft.CognitiveServices.Speech.core -L "$SPEECHSDK_ROOT/lib/x86" -l:libssl.so.1.0.0 -l:libcurl.so.4 -l:libasound.so.2
   ```
 
-## <a name="running"></a>Выполнение
+## <a name="run-the-sample"></a>Запуск примера
 
-Для запуска приложения потребуется настроить путь к библиотеке загрузчика так, чтобы он указывал на библиотеку пакета SDK для распознавания речи.
+1. Настройте путь к библиотеке загрузчика так, чтобы он указывал на библиотеку пакета SDK для службы "Речь".
 
-* На компьютере x64 выполните следующую команду:
+   * На компьютере **x64** выполните следующую команду.
 
-  ```sh
-  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SPEECHSDK_ROOT/lib/x64"
-  ```
+     ```sh
+     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SPEECHSDK_ROOT/lib/x64"
+     ```
 
-* На компьютере x86 выполните следующую команду:
+   * На компьютере **x86** выполните следующую команду.
 
-  ```sh
-  export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SPEECHSDK_ROOT/lib/x86"
-  ```
+     ```sh
+     export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$SPEECHSDK_ROOT/lib/x86"
+     ```
 
-Запустите приложение следующим образом:
+1. Запустите приложение следующим образом:
 
-```sh
-./quickstart-linux
-```
+   ```sh
+   ./helloworld
+   ```
 
-Если все работает правильно, вы должны увидеть результат, аналогичный приведенному ниже.
+1. Должен отобразиться примерной такой результат:
 
-```text
-Say something...
-We recognized: What's the weather
-```
+   ```text
+   Say something...
+   We recognized: What's the weather
+   ```
 
-## <a name="downloading-the-sample"></a>Скачивание примера
-
-Актуальный набор примеров доступен в [репозитории GitHub с примерами для пакета SDK для распознавания текста в Cognitive Services](https://aka.ms/csspeech/samples).
+[!include[Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
+Этот пример можно найти в папке `quickstart/cpp-linux`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

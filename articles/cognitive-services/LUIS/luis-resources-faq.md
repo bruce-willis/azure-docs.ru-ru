@@ -1,20 +1,20 @@
 ---
 title: Часто задаваемые вопросы об Интеллектуальной службе распознавания речи (LUIS) в Azure | Документация Майкрософт
 description: Ответы на часто задаваемые вопросы об Интеллектуальной службе распознавания речи (LUIS)
-author: v-geberr
-manager: kaiqb
+author: diberry
+manager: cjgronlund
 services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2018
-ms.author: v-geberr
-ms.openlocfilehash: fd63ffd312e3ac17a6376eb3c9bef8f1978e3935
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.author: diberry
+ms.openlocfilehash: 8e0d834b94ff902eb0c1e0ada2fb32d374cee12b
+ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36333621"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39239123"
 ---
 # <a name="language-understanding-faq"></a>Часто задаваемые вопросы об Интеллектуальной службе распознавания речи
 
@@ -53,21 +53,25 @@ ms.locfileid: "36333621"
 ### <a name="should-variations-of-an-example-utterance-include-punctuation"></a>Должны ли вариации примерного высказывания включать пунктуацию? 
 Добавьте в намерение либо различные варианты в качестве примерных высказываний, либо образец примерного высказывания с [синтаксисом для игнорирования](luis-concept-patterns.md#pattern-syntax) пунктуации. 
 
+### <a name="does-luis-currently-support-cortana"></a>Осуществляется ли поддержка Cortana в LUIS в данный момент?
+
+Предварительно созданное приложение Cortana было внесено в список нерекомендуемых в 2017 г. Оно больше не поддерживается. 
+
 ## <a name="luis-endpoint"></a>Конечная точка LUIS
 
 ### <a name="why-does-luis-add-spaces-to-the-query-around-or-in-the-middle-of-words"></a>Почему LUIS добавляет пробелы вокруг или между словами запроса?
 LUIS [помечает](luis-glossary.md#token) высказывание на основе [языка и региональных параметров](luis-supported-languages.md#tokenization). Исходное и помеченное значения можно использовать для [извлечения данных](luis-concept-data-extraction.md#tokenized-entity-returned).
 
 ### <a name="how-do-i-create-and-assign-a-luis-endpoint-key"></a>Как создать и назначить ключ конечной точки LUIS?
-[Создайте ключ конечной точки](luis-how-to-azure-subscription.md#create-luis-endpoint-key) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](Manage-keys.md#assign-endpoint-key) на странице **[Publish](publishapp.md)** (Публикация). Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
+[Создайте ключ конечной точки](luis-how-to-azure-subscription.md#create-luis-endpoint-key) в Azure для уровня вашей [службы](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/). [Назначьте ключ](luis-how-to-manage-keys.md#assign-endpoint-key) на странице **[Publish](luis-how-to-publish-app.md)** (Публикация). Это действие можно выполнить с помощью любого API. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
 
 ### <a name="how-do-i-interpret-luis-scores"></a>Как интерпретировать оценки LUIS? 
 В системе должно использоваться намерение с самой высокой оценкой, независимо от его значения. Например, оценка ниже 0,5 (меньше 50%) не означает, что данные LUIS имеют низкую степень достоверности. Предоставляя дополнительные обучающие данные, можно повысить показатель наиболее вероятного намерения.
 
 ### <a name="why-dont-i-see-my-endpoint-hits-in-my-apps-dashboard"></a>Почему для меня недоступны обращения конечной точки на панели мониторинга приложения?
-Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляются, но более часто обновляются показатели, связанные с ключом подписки LUIS на портале Azure. 
+Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляется, но более часто обновляются показатели, связанные с ключом конечной точки LUIS на портале Azure. 
 
-Если вам недоступны обновленные данные обращения конечной точки на панели мониторинга, войдите на портал Azure, найдите ресурс, связанный с ключом подписки LUIS, и выберите **Метрики**, чтобы установить метрику **Всего вызовов**. При использовании ключа подписки для более чем одного приложения LUIS метрики на портале Azure отображают совокупное количество вызовов от всех приложений LUIS, использующих этот ключ.
+Если вам недоступны обновленные данные обращения конечной точки на панели мониторинга, войдите на портал Azure, найдите ресурс, связанный с ключом конечной точки LUIS, и выберите **Метрики**, чтобы установить метрику **Всего вызовов**. При использовании ключа конечной точки для более чем одного приложения LUIS метрики на портале Azure отображается совокупное количество вызовов от всех приложений LUIS, использующих этот ключ.
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить? 
 Выполните [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) в следующем разделе часто задаваемых вопросов, чтобы создать ключ конечной точки LUIS и назначить его приложению. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
@@ -115,8 +119,9 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ![Идентификатор клиента на портале Azure](./media/luis-manage-keys/luis-assign-key-tenant-id.png)
 
-### <a name="why-are-there-more-subscription-keys-on-my-apps-publish-page-than-i-assigned-to-the-app"></a>Почему на странице публикации приложения отображается больше ключей подписки, чем назначено приложению? 
-У каждого приложения LUIS имеется ключ разработки или начальный ключ. Ключи подписки LUIS, созданные на протяжении интервала времени GA, видимы на странице публикации, независимо от того, добавлены ли они в приложение. Это упрощает процесс миграции GA. Новые ключи подписки LUIS не отображаются на странице публикации. 
+<a name="why-are-there-more-subscription-keys-on-my-apps-publish-page-than-i-assigned-to-the-app"></a>
+### <a name="why-are-there-more-endpoint-keys-on-my-apps-publish-page-than-i-assigned-to-the-app"></a>Почему на странице публикации приложения отображается больше ключей конечной точки, чем назначено приложению? 
+У каждого приложения LUIS имеется ключ разработки или начальный ключ. Ключи конечной точки LUIS, созданные на протяжении интервала времени GA, видимы на странице публикации, независимо от того, добавлены ли они в приложение. Это упрощает процесс миграции GA. Новые ключи конечной точки LUIS не отображаются на странице публикации. 
 
 ## <a name="app-management"></a>Управление приложениями
 
@@ -153,7 +158,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 ## <a name="app-notification"></a>Уведомление приложения
 
 ### <a name="why-did-i-get-an-email-saying-im-almost-out-of-quota"></a>Почему пришло сообщение электронной почты о том, что я почти превысил квоту?
-Ваш ключ разработки или начальный ключ может запрашивать только 1000 конечных точек в месяц. Создайте ключ подписки LUIS (бесплатной или платной) и используйте его при создании запросов конечных точек. При создании запроса конечной точки из бота или другого клиентского приложения необходимо изменить ключ конечной точки LUIS. 
+Ваш ключ разработки или начальный ключ может запрашивать только 1000 конечных точек в месяц. Создайте ключ конечной точки LUIS (бесплатный или платный) и используйте его при создании запросов конечных точек. При создании запроса конечной точки из бота или другого клиентского приложения необходимо изменить ключ конечной точки LUIS. 
 
 ## <a name="integrating-luis"></a>Интеграция LUIS
 
@@ -167,7 +172,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ## <a name="luis-service"></a>Служба LUIS 
 
-### <a name="is-luis-available-on-premise-or-in-private-cloud"></a>Доступна ли служба LUIS локально или в частном облаке?
+### <a name="is-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба LUIS в локальной среде или в частном облаке?
 Нет. 
 
 ## <a name="changes-to-the-docs"></a>Изменения в документации
@@ -182,7 +187,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 |Создание приложения LUIS программным способом с помощью [Node.js](luis-tutorial-node-import-utterances-csv.md)|
 |Использование [составной сущности](luis-tutorial-composite-entity.md) для извлечения сгруппированных данных|
 |Добавление [списка сущностей](luis-tutorial-list-entity.md) для повышения уровня обнаружения сущностей с помощью Node.js|
-|Повышение точности прогноза с помощью [списка фраз](luis-tutorial-interchangeable-phrase-list.md), [шаблонов](luis-tutorial-pattern.md) и [пакетного тестирования](luis-tutorial-batch-testing.md)|
+|Повышение точности прогноза с помощью [списка фраз](luis-quickstart-primary-and-secondary-data.md), [шаблонов](luis-tutorial-pattern.md) и [пакетного тестирования](luis-tutorial-batch-testing.md)|
 |[Проверка орфографии](luis-tutorial-batch-testing.md) с помощью API Bing для проверки орфографии версии 7
 
 ### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции сборки 2018 г. я слышал о возможности или демоверсии Интеллектуальной службы распознавания речи, но не помню его названия. 
@@ -193,7 +198,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 |--|--|
 |Улучшения|Сущности [регулярного выражения](luis-concept-data-extraction.md##regular-expression-entity-data) и [ключевой фразы](luis-concept-data-extraction.md#key-phrase-extraction-entity-data)
 |Шаблоны|Шаблоны [понятие](luis-concept-patterns.md), [руководство](luis-tutorial-pattern.md), [инструкции](luis-how-to-model-intent-pattern.md)<br>Концепция сущности [Patterns.Any](luis-concept-entity-types.md), включающая понятие [явного списка](luis-concept-patterns.md#explicit-lists) для исключений<br>Концепция [ролей](luis-concept-roles.md)|
-|Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](publishapp.md#enable-sentiment-analysis)<br>Интеграция [речи](https://docs.microsoft.com/azure/cognitive-services/speech) [подготовки речи](publishapp.md#enable-speech-priming) в сочетании со [Speech SDK](https://aka.ms/SpeechSDK)|
+|Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)<br>Интеграция [речи](https://docs.microsoft.com/azure/cognitive-services/speech) [подготовки речи](luis-how-to-publish-app.md#enable-speech-priming) в сочетании со [Speech SDK](https://aka.ms/SpeechSDK)|
 |Средство подготовки к отправке|Часть [BotBuilder-tools](https://github.com/Microsoft/botbuilder-tools), [инструмент](luis-concept-enterprise.md#when-you-need-to-combine-several-luis-and-qna-maker-apps) командной строки подготовки к отправке для объединения нескольких приложений LUIS и QnA Maker в одно приложение LUIS и улучшения распознавания намерений в ботах
 
 Включено создание дополнительных [API маршрутов](https://github.com/Microsoft/LUIS-Samples/blob/master/authoring-routes.md). 
@@ -212,5 +217,3 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
 * [Форум MSDN Интеллектуальной службы распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
-
-[LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-website
