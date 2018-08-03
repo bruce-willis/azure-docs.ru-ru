@@ -8,7 +8,7 @@
 #### [Варианты выставления счетов за использование Azure Marketplace](./billing-options-azure-marketplace.md)  
 #### [Определение потребления услуг Azure клиентами партнеров](./azure-partner-customer-usage-attribution.md)
 
-### [Сравнение онлайн-магазинов AppSource и Azure Marketplace](./comparing-appsource-azure-marketplace.md)  
+### [Онлайн-магазины](./comparing-appsource-azure-marketplace.md)  
 
 ### [Выбор варианта публикации решения](./determine-your-listing-type.md)  
 
@@ -25,6 +25,6 @@
 ### [Развитие бизнеса с помощью marketplace](./grow-your-business-with-azure-marketplace.md)  
 #### [Предпочтительные решения](./preferred-solutions.md) 
 
-### [Поддержка для Azure Marketplace и AppSource](./support-azure-marketplace.md)  
+### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
 
 ## [Облачный портал для партнеров](./cloud-partner-portal/cloud-partner-portal-what-is-the-cloud-partner-portal.md)  

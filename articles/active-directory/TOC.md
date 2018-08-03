@@ -102,11 +102,13 @@
 ### [Просмотр всех групп](fundamentals/active-directory-groups-view-azure-portal.md)
 ### [Включение доступа для групп в приложениях SaaS](users-groups-roles/groups-saasapps.md)
 ### [Восстановление удаленной группы Office 365](fundamentals/active-directory-groups-restore-azure-portal.md)
-### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md) 
-### Создание дополнительных правил
-#### [портал Azure](users-groups-roles/groups-dynamic-membership.md)
+### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md)
 ### [Настройка групп самообслуживания](users-groups-roles/groups-self-service-management.md)
-### [Устранение неполадок](users-groups-roles/groups-troubleshooting.md)
+### Динамические группы
+#### [Создание динамической группы](users-groups-roles/groups-create-rule.md)
+#### [Синтаксис и свойства правил](users-groups-roles/groups-dynamic-membership.md)
+#### [Изменение типа членства в группе](users-groups-roles/groups-change-type.md)
+#### [Устранение неполадок](users-groups-roles/groups-troubleshooting.md)
 
 ## [Управление отчетами](active-directory-reporting-azure-portal.md)
 ### [Действие входа](active-directory-reporting-activity-sign-ins.md)

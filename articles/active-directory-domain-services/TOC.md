@@ -36,6 +36,9 @@
 #### [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md)
 #### [Задача 2. Экспорт сертификата защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md)
 #### [Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)
+#### [Задача 4. Настройка DNS для доступа к управляемому домену через Интернет](active-directory-ds-ldaps-configure-dns.md)
+#### [Задача 5. Привязка к управляемому домену и блокировка доступа по защищенному протоколу LDAP](active-directory-ds-ldaps-bind-lockdown.md)
+#### [Устранение неполадок с защищенным протоколом LDAP](active-directory-ds-ldaps-troubleshoot.md)
 
 ### [Создание подразделения на управляемом домене](active-directory-ds-admin-guide-create-ou.md)
 ### [Создание групповой управляемой учетной записи службы на управляемом домене](active-directory-ds-create-gmsa.md)

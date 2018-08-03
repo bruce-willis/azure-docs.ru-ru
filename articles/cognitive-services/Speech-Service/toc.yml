@@ -1,13 +1,13 @@
 # displayName: additional text for filtering down the ToC in meaningful way.
-- name: Документация по API службы распознавания речи
+- name: Документация по службе распознавания речи и пакету SDK
   href: index.yml
 - name: Обзор
   items:
     - name: Сценарии службы "Речь"
       href: speech-scenarios.md
-    - name: Что собой представляет служба "Речь"
-      href: overview.md
       expanded: true
+    - name: Служба распознавания речи
+      href: overview.md
     - name: Пакет SDK для распознавания речи
       href: speech-sdk.md
       displayName: 'C#, C++, Java, .NET, .NET Core, UWP, Android, Linux, Windows, NuGet, Maven, download, install, sample'

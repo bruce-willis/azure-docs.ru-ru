@@ -211,6 +211,8 @@
           href: virtual-network-troubleshoot-connectivity-problem-between-vms.md
         - name: Настройка записи типа PTR для проверки заголовка SMTP
           href: create-ptr-for-smtp-service.md
+        - name: Контрольный список по устранению неполадок с виртуальными модулями
+          href: virtual-network-troubleshoot-nva.md
     - name: Классический
       items:
         - name: Создание виртуальной сети и управление ею

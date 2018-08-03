@@ -6,15 +6,15 @@
       href: key-vault-overview.md
 - name: Быстрое начало работы
   items:
-    - name: Создание Key Vault с помощью CLI
+    - name: Настройка и получение секрета — CLI
       href: quick-create-cli.md
-    - name: Создание Key Vault с помощью PowerShell
+    - name: Настройка и получение секрета — PowerShell
       href: quick-create-powershell.md
-    - name: Создание Key Vault с помощью портала
+    - name: Настройка и получение секрета — портал
       href: quick-create-portal.md
-    - name: Считывание данных из Key Vault с использованием .NET
+    - name: Настройка и получение секрета — .NET
       href: quick-create-net.md
-    - name: Считывание данных из Key Vault с использованием Node.js
+    - name: Настройка и получение секрета — Node.js
       href: quick-create-node.md
 - name: Учебники
   items:
@@ -82,6 +82,8 @@
       href: /javascript/api/overview/azure/key-vault?view=azure-node-latest
     - name: Python
       href: /python/api/overview/azure/key-vault?view=azure-python
+    - name: REST
+      href: /rest/api/keyvault
     - name: Разработка
       items:
         - name: Видео по быстрому запуску для разработчика
@@ -143,3 +145,5 @@
       href: 'https://azure.microsoft.com/pricing/details/key-vault/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/906355-azure-key-vault'

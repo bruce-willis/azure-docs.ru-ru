@@ -47,8 +47,34 @@
   items:
     - name: Инфраструктура CLI Azure
       href: cli-samples.md
+      items:
+        - name: Создание пользовательского раздела
+          href: scripts/event-grid-cli-create-custom-topic.md
+        - name: Подписка на события подписки Azure
+          href: scripts/event-grid-cli-azure-subscription.md
+        - name: Подписка на события хранилища BLOB-объектов
+          href: scripts/event-grid-cli-blob.md
+        - name: Подписка на события пользовательского раздела
+          href: scripts/event-grid-cli-subscribe-custom-topic.md
+        - name: Подписка на события группы ресурсов
+          href: scripts/event-grid-cli-resource-group.md
+        - name: Подписка и фильтрация событий для группы ресурсов
+          href: scripts/event-grid-cli-resource-group-filter.md
     - name: Azure PowerShell
       href: powershell-samples.md
+      items:
+        - name: Создание пользовательского раздела
+          href: scripts/event-grid-powershell-create-custom-topic.md
+        - name: Подписка на события подписки Azure
+          href: scripts/event-grid-powershell-azure-subscription.md
+        - name: Подписка на события хранилища BLOB-объектов
+          href: scripts/event-grid-powershell-blob.md
+        - name: Подписка на события пользовательского раздела
+          href: scripts/event-grid-powershell-subscribe-custom-topic.md
+        - name: Подписка на события группы ресурсов
+          href: scripts/event-grid-powershell-resource-group.md
+        - name: Подписка и фильтрация событий для группы ресурсов
+          href: scripts/event-grid-powershell-resource-group-filter.md
     - name: Шаблоны диспетчера ресурсов
       href: template-samples.md
     - name: Примеры кода
@@ -71,7 +97,7 @@
       href: post-to-custom-topic.md
     - name: Получение событий в конечной точке HTTP
       href: receive-events.md
-    - name: Управление доставкой событий
+    - name: Обработка недоставленных сообщений и повторные попытки
       href: manage-event-delivery.md
     - name: Мониторинг доставки событий
       href: monitor-event-delivery.md
