@@ -2,8 +2,8 @@
 title: Документация по системе безопасности Azure | Документация Майкрософт
 description: Средства безопасности интегрированы в каждое решение Azure. Azure предлагает уникальную систему защиты на основе глобальной службы безопасности, сложных элементов управления для клиентов и безопасной защищенной инфраструктуры. Это мощное сочетание помогает защитить приложения и данные, а также обеспечивает соответствие требованиям и экономичную защиту для организаций любых размеров.
 services: security
-author: czeumault
-manager: carolz
+author: arob98
+manager: angrobe
 layout: LandingPage
 ms.assetid: ''
 ms.service: security
@@ -11,13 +11,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
 ms.date: 03/30/2018
-ms.author: carolz
-ms.openlocfilehash: ceabc623963acd469a2e4694cb412828dc511100
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.author: angrobe
+ms.openlocfilehash: 9f190ab5b17fbead9a9d88bc37fc8b35d8c9f45c
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113798"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505466"
 ---
 # <a name="azure-security-documentation"></a>Документация по системе безопасности Azure
 
