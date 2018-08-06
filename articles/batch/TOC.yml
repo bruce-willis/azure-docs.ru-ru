@@ -91,8 +91,6 @@
           href: batch-task-dependencies.md
         - name: Учетные записи пользователей для выполнения задач
           href: batch-user-accounts.md
-        - name: Выполнение пакетных заданий без кода
-          href: batch-cli-templates.md
     - name: Сохранение пакетных заданий и выходных данных задач
       href: batch-task-output.md
       items:
@@ -123,10 +121,13 @@
           href: batch-efficient-list-queries.md
     - name: Использование инструментов для работы со скриптами
       items:
-        - name: Использование командлетов PowerShell
+        - name: Использование Azure PowerShell
           href: batch-powershell-cmdlets-get-started.md
         - name: Использование интерфейса командной строки Azure
           href: batch-cli-get-started.md
+          items:
+            - name: Использование шаблонов интерфейса командной строки пакетной службы
+              href: batch-cli-templates.md
     - name: Использование пакета SDK Node.js для пакетной службы
       href: batch-nodejs-get-started.md
 - name: Справочные материалы

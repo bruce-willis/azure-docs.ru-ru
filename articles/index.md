@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: 7db35731a7a95a1ba327445a2044050c28fafb4c
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 323b0118d4635b141b2a0f3fb2692d082929c201
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224210"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495481"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -823,7 +823,7 @@ Visual Studio Team Services </a>
                                         <li>
                                             <a href="/azure/cognitive-services/luis/">
                                                 <img src="media/index/API_Luis.svg" alt="" />
-                                                <p>Language Understanding Intelligent Service (LUIS)</p>
+                                                <p>Распознавание речи (LUIS)</p>
                                             </a>
                                         </li>
                                         <li>
@@ -990,12 +990,12 @@ Visual Studio Team Services </a>
                             </li>
                             <li>
                                 <div class="group">
-                                    <h3>Служба хранилища</h3>
+                                    <h3>Хранилище</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>Служба хранилища</p>
+                                                <p>Хранилище</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1044,6 +1044,12 @@ Visual Studio Team Services </a>
                                             <a href="/azure/storage/files/storage-files-introduction/">
                                                 <img src="media/index/logo_azure-storage-file.svg" alt="" />
                                                 <p>Хранилище файлов</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/azure/databox/">
+                                                <img src="media/index/Service-icon.png" alt="" />
+                                                <p>Data Box</p>
                                             </a>
                                         </li>
                                         <li>
@@ -2237,7 +2243,7 @@ Visual Studio Team Services </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Data Lake Storage Gen2</h3>
-                                                    <p>Хранилище Data Lake с высокой степенью масштабируемости и безопасности</p>
+                                                    <p>Надежное хранилище Data Lake с высокой степенью масштабируемости и интегрированным хранилищем BLOB-объектов</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -9,9 +9,9 @@
   items:
     - name: Сбор данных виртуальных машин Azure
       href: log-analytics-quick-collect-azurevm.md
-    - name: Сбор. Компьютер Linux
+    - name: Сбор данных с гибридных компьютеров Linux
       href: log-analytics-quick-collect-linux-computer.md
-    - name: Сбор данных на компьютере Windows
+    - name: Сбор данных с гибридных компьютеров Windows
       href: log-analytics-quick-collect-windows-computer.md
 - name: Учебники
   items:

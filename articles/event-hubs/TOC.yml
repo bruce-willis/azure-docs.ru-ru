@@ -4,7 +4,7 @@
   items:
     - name: Что такое концентраторы событий?
       href: event-hubs-about.md
-    - name: Концентраторы событий для Apache Kafka
+    - name: Центры событий для Apache Kafka (предварительная версия)
       href: event-hubs-for-kafka-ecosystem-overview.md
     - name: Сбор концентраторов событий
       href: event-hubs-capture-overview.md

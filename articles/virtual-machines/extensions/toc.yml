@@ -38,7 +38,9 @@
           href: custom-script-windows.md
         - name: Управление службами Azure (классическое развертывание)
           href: custom-script-classic.md
-    - name: Диагностика
+    - name: Антивредоносное ПО IaaS для Windows
+      href: iaas-antimalware-windows.md
+    - name: Моментальный снимок виртуальной машины
       items:
         - name: Linux
           href: vmsnapshot-linux.md
