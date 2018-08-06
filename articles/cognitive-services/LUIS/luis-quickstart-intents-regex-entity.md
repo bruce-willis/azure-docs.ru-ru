@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 06/29/2018
+ms.date: 07/30/2018
 ms.author: diberry
-ms.openlocfilehash: 99f796bf26df755ca938c3023057e2e9de1706a1
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 9da2454afa130c4c2ccab458099a90d78354b3e2
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238341"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358300"
 ---
 # <a name="tutorial-3-add-regular-expression-entity"></a>Руководство: 3 Добавление сущности регулярного выражения
 В этом руководстве создается приложение, которое демонстрирует, как извлечь согласованно отформатированные данные из фразы с помощью сущности **регулярного выражения**.
@@ -28,7 +28,7 @@ ms.locfileid: "39238341"
 > * Тестирование и публикация приложения.
 > * Запрос конечной точки приложения для просмотра ответа JSON LUIS.
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения Human Resources, созданного с помощью руководства по [предварительно созданным сущностям](luis-tutorial-prebuilt-intents-entities.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON из репозитория GitHub с [примерами LUIS](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-prebuilts-HumanResources.json) в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website).
@@ -67,11 +67,7 @@ LUIS помечает фразы, добавляемые в намерение. 
 
 1. Убедитесь, что приложение Human Resources находится в разделе **Build** (Создание) на веб-сайте LUIS. Вы можете перейти к этому разделу, выбрав **Build** (Создание) в верхней правой строке меню. 
 
-    [ ![Снимок экрана приложения LUIS со вкладкой "Build" (Создание), выделенной в верхней правой строке навигации](./media/luis-quickstart-intents-regex-entity/first-image.png)](./media/luis-quickstart-intents-regex-entity/first-image.png#lightbox)
-
 2. Выберите **Create new intent**. (Создать намерение). 
-
-    [ ![Снимок экрана страницы намерений с выделенной кнопкой создания намерения](./media/luis-quickstart-intents-regex-entity/create-new-intent-button.png) ](./media/luis-quickstart-intents-regex-entity/create-new-intent-button.png#lightbox)
 
 3. Введите `FindForm` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
 
@@ -96,14 +92,12 @@ LUIS помечает фразы, добавляемые в намерение. 
 
     В приложении есть предварительно созданная сущность номера, добавленная в предыдущем руководстве, поэтому каждый номер формы помечен. Этого может быть достаточно для клиентского приложения, но номер не будет помечен типом. Благодаря созданию сущности с соответствующим именем клиентское приложение может обрабатывать возвращенную из LUIS сущность соответствующим образом.
 
-## <a name="create-a-hrf-number-regular-expression-entity"></a>Создание сущности регулярного выражения для номера HRF 
+## <a name="create-an-hrf-number-regular-expression-entity"></a>Создание сущности регулярного выражения для номера HRF 
 Создайте сущность регулярного выражения, чтобы сообщить LUIS формат номера HRF, выполнив следующие шаги:
 
 1. В области слева выберите **Entities** (Сущности).
 
 2. Нажмите кнопку **Create new entity** (Создать сущность) на странице "Сущности". 
-
-    [![Снимок экрана страницы сущностей с выделенной кнопкой "Create new entity" (Создать сущность)](./media/luis-quickstart-intents-regex-entity/create-new-entity-1.png)](./media/luis-quickstart-intents-regex-entity/create-new-entity-1.png#lightbox)
 
 3. Во всплывающем диалоговом окне введите имя новой сущности `HRF-number` и выберите **RegEx** как тип сущности, а затем введите `hrf-[0-9]{6}` в качестве регулярного выражения и нажмите кнопку **Done** (Готово).
 
@@ -127,22 +121,12 @@ LUIS помечает фразы, добавляемые в намерение. 
     ![Изображение панели уведомления, свидетельствующей об успешном обучении](./media/luis-quickstart-intents-regex-entity/trained.png)
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
-Чтобы получить прогноз LUIS в чат-боте или другом приложении, необходимо опубликовать приложение. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Publish** (Опубликовать). 
-
-    ![Снимок экрана FindKnowledgeBase с выделенной кнопкой "Publish" (Опубликовать) в верхней панели навигации](./media/luis-quickstart-intents-regex-entity/publish-button.png)
-
-2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-    ![Снимок экрана страницы публикации с выделенной кнопкой "Publish" (Опубликовать) и выбранным слотом "Production" (Рабочий)](./media/luis-quickstart-intents-regex-entity/publish-to-production.png)
-
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
 ## <a name="query-the-endpoint-with-a-different-utterance"></a>Запрос конечной точки с другой фразой
-1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
 
-    ![Снимок экрана страницы публикации с выделенным URL-адресом конечной точки](./media/luis-quickstart-intents-regex-entity/publish-select-endpoint.png)
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. Перейдите в конец URL-адреса и введите `When were HRF-123456 and hrf-234567 published in the last year?`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `FindForm` с двумя номерами форм: `HRF-123456` и `hrf-234567`.
 

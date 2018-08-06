@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 54a8b5f14cc2f9fb0ac887da8995623353e73ac9
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 28d50ac3a4c080062c12c11977eebb61b0e52eed
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39115591"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412541"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство по развертыванию первого простого модуля IoT Edge на устройстве с Windows при помощи портала Azure (предварительная версия)
 
@@ -179,8 +179,14 @@ Azure IoT Edge позволяет выполнять анализ и обраб�
      workload_uri: "http://<GATEWAY_ADDRESS>:15581"
    ```
 
-8. Найдите раздел **параметров среды выполнения контейнера Moby** и убедитесь, что значение для **сети** равно `nat`.
+8. Найдите раздел **параметров среды выполнения контейнера Moby** и убедитесь, что значение для **сети** раскомментировано и равно **azure-iot-edge**.
 
+   ```yaml
+   moby_runtime:
+     docker_uri: "npipe://./pipe/docker_engine"
+     network: "azure-iot-edge"
+   ```
+   
 9. Сохраните файл конфигурации. 
 
 10. Перезапустите службу IoT Edge в PowerShell.
@@ -210,7 +216,8 @@ Azure IoT Edge позволяет выполнять анализ и обраб�
     -FilterHashtable @{ProviderName= "iotedged";
       LogName = "application"; StartTime = [datetime]::Today} |
     select TimeCreated, Message |
-    sort-object @{Expression="TimeCreated";Descending=$false}
+    sort-object @{Expression="TimeCreated";Descending=$false} |
+    format-table -autosize -wrap
    ```
 
 3. Просмотрите данные обо всех модулях, запущенных на устройстве IoT Edge. Так как служба запущена первый раз, отобразится только запущенный модуль **edgeAgent**. Модуль edgeAgent запускается по умолчанию и позволяет установить и запустить любые дополнительные модули, развертываемые на устройстве. 

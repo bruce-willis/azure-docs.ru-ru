@@ -1,22 +1,19 @@
 ---
-title: Развертывание веб-приложений в Azure с помощью Jenkins | Документация Майкрософт
+title: Развертывание веб-приложений в Azure с помощью Jenkins
 description: Сведения о настройке непрерывной интеграции из GitHub в службу приложений Azure для веб-приложений Java с помощью Jenkins и Docker.
-author: rloutlaw
-manager: douge
-ms.service: jenkins
-ms.search.scope: ''
-ms.devlang: java
-ms.topic: article
-ms.workload: web
-ms.date: 08/02/2017
-ms.author: routlaw
-ms.custom: Jenkins, devcenter
-ms.openlocfilehash: b2606acba341d4cfbc16314048e134fa30ff8606
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.topic: tutorial
+ms.author: tarcher
+author: tomarcher
+manager: jpconnock
+ms.service: devops
+ms.custom: jenkins
+ms.date: 07/31/2018
+ms.openlocfilehash: e880d84c3ae0fd23c11bb9b30733544bd5f28872
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29853005"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39389948"
 ---
 # <a name="set-up-continuous-integration-and-deployment-to-azure-app-service-with-jenkins"></a>Настройка непрерывной интеграции и развертывания в службе приложений Azure с помощью Jenkins и GitHub
 
@@ -74,8 +71,8 @@ ms.locfileid: "29853005"
     ![Копирование из GitHub](media/jenkins-java-quickstart/fork_github_repo.png)
 1. В веб-консоли Jenkins выберите **New Item** (Создать элемент), присвойте ему имя **MyJavaApp**, выберите **Freestyle project** (Универсальный проект) и нажмите кнопку **ОК**.   
     ![Новый универсальный проект Jenkins](media/jenkins-java-quickstart/jenkins_freestyle.png)
-2. В разделе **General** (Общие) выберите проект **GitHub** и введите URL-адрес разветвления репозитория, например https://github.com/raisa/gs-spring-boot-docker.
-3. В разделе **Source code management** (Управление исходным кодом) выберите **Git** и введите URL-адрес `.git` разветвления репозитория, например https://github.com/raisa/gs-spring-boot-docker.git.
+2. В разделе **Общие** выберите проект **GitHub** и введите URL-адрес разветвления репозитория, например https://github.com/raisa/gs-spring-boot-docker.
+3. В разделе **Управление исходным кодом** выберите **Git** и введите URL-адрес `.git` разветвления репозитория, например https://github.com/raisa/gs-spring-boot-docker.git.
 4. В разделе **Build Triggers** (Создание триггеров) выберите **GitHub hook trigger for GITScm polling** (Обработчик триггера Github для опроса GITScm).
 5. В разделе **Build** (Сборка) выберите **Add build step** (Добавить шаг сборки) и щелкните **Invoke top-level Maven targets** (Вызов целевых объектов Maven верхнего уровня). В поле **Goals** (Цели) введите `package`.
 6. Щелкните **Сохранить**. Чтобы проверить задание, выберите **Build Now** (Собрать сейчас) на странице проекта.
@@ -180,9 +177,12 @@ ms.locfileid: "29853005"
     ```
 3. В Jenkins запустится новая сборка, активированная новой фиксацией ветви `master` репозитория. После завершения перезагрузите приложение в Azure.     
       ![Просмотр развернутого приложения в Azure](media/jenkins-java-quickstart/hello_docker_world.png)
-  
+
+## <a name="troubleshooting-the-jenkins-plugin"></a>Устранение неполадок подключаемого модуля Jenkins
+
+Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Использование агентов виртуальных машин для непрерывной интеграции с Jenkins](/azure/jenkins/jenkins-azure-vm-agents)
-- [Развертывание в службу приложений Azure с помощью Jenkins и Azure CLI](/azure/jenkins/execute-cli-jenkins-pipeline)
- 
+> [!div class="nextstepaction"]
+> [Использование агентов виртуальных машин для непрерывной интеграции с Jenkins](/azure/jenkins/jenkins-azure-vm-agents)

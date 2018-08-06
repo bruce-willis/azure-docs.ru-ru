@@ -1,6 +1,6 @@
 ---
 title: Развертывание службы "Машинное обучение Azure" для Azure IoT Edge | Документация Майкрософт
-description: Развертывание службы "Машинное обучение Azure" в качестве модуля на пограничном устройстве
+description: В этом руководстве вы развернете службу "Машинное обучение Azure" в качестве модуля на пограничном устройстве.
 author: kgremban
 manager: timlt
 ms.author: kgremban
@@ -9,14 +9,14 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 62ca816f7bdc183727eb22806ba9e733c8b97c44
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: a1b34fe75f76d5f615ab33069f3012f22dc7ef2e
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173511"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413079"
 ---
-# <a name="deploy-azure-machine-learning-as-an-iot-edge-module---preview"></a>Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
+# <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
 Вы можете использовать модули IoT Edge для развертывания кода, который реализует вашу бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматривается развертывание модуля машинного обучения Azure, который прогнозирует, когда устройство выходит из строя на основе данных моделируемой машинной температуры. Дополнительные сведения о Машинном обучении Azure в IoT Edge см. в [документации по Машинному обучению Azure](../machine-learning/desktop-workbench/use-azure-iot-edge-ai-toolkit.md).
 
@@ -33,15 +33,23 @@ ms.locfileid: "39173511"
 >[!NOTE]
 >Модули машинного обучения Azure в Azure IoT Edge находятся в общедоступной предварительной версии. 
 
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы протестировать модуль машинного обучения, который создается в этом руководстве, необходимо устройство IoT Edge. Вы можете использовать устройство, настроенное с использованием краткого руководства для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md). 
+Устройство Azure IoT Edge:
 
-Модуль машинного обучения Azure не поддерживает процессоры ARM.
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+* Модуль машинного обучения Azure не поддерживает процессоры ARM.
 
-На компьютере разработки необходимо подготовить следующее: 
-* Учетную запись Студии машинного обучения Azure. Выполните инструкции из статьи [Create Azure Machine Learning accounts and install Azure Machine Learning Workbench](../machine-learning/service/quickstart-installation.md#create-azure-machine-learning-services-accounts) (Создание учетной записи для службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench). Для этого руководства не нужно устанавливать приложение рабочего места (Workbench). 
-* Службу "Управление моделями Машинного обучения Azure". Чтобы настроить среду и создать учетную запись, выполните инструкции из раздела о [настройке управления моделью](../machine-learning/desktop-workbench/deployment-setup-configuration.md). Во время установки развертывания рекомендуется выбирать локальную настройку вместо кластера, когда это возможно.
+Облачные ресурсы:
+
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
+
+Ресурсы разработки:
+* Учетная запись Студии машинного обучения Azure. Выполните инструкции из статьи [Create Azure Machine Learning accounts and install Azure Machine Learning Workbench](../machine-learning/service/quickstart-installation.md#create-azure-machine-learning-services-accounts) (Создание учетной записи для службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench). Для этого руководства не нужно устанавливать приложение рабочего места (Workbench). 
+* Служба "Управление моделями" для службы "Машинное обучение Azure". Чтобы настроить среду и создать учетную запись, выполните инструкции из раздела о [настройке управления моделью](../machine-learning/desktop-workbench/deployment-setup-configuration.md). Во время установки развертывания рекомендуется выбирать локальную настройку вместо кластера, когда это возможно.
 
 ### <a name="disable-process-identification"></a>Отключение процесса идентификации
 
@@ -108,7 +116,7 @@ az ml service create realtime --model-file model.pkl -f iot_score.py -n machinel
 4. Скопируйте значения **Сервер входа**, **Имя пользователя** и **Пароль**.  Они потребуются для доступа к реестру с устройств Edge.
 5. Выберите **Репозитории**
 6. Выберите **machinelearningmodule**
-7. Теперь у вас есть полный путь к образу контейнера. Запишите этот путь для использования в следующем разделе. Он должен выглядеть следующим образом: **<имя_реестра>.azureacr.io/machinelearningmodule:1**
+7. Теперь у вас есть полный путь к образу контейнера. Запишите этот путь для использования в следующем разделе. Он должен выглядеть следующим образом: **<имя_реестра>.azurecr.io/machinelearningmodule:1**.
 
 ## <a name="deploy-to-your-device"></a>Развертывание на устройстве
 

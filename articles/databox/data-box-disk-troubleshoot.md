@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок диска Azure Data Box | Документация Майкрософт
-description: Описание неполадок диска Azure Data Box.
+description: В этой статье описывается, как устранить проблемы, обнаруженные на диске Azure Data Box.
 services: databox
 documentationcenter: NA
 author: alkohli
@@ -13,20 +13,20 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: NA
 ms.workload: TBD
-ms.date: 07/12/2018
+ms.date: 07/30/2018
 ms.author: alkohli
-ms.openlocfilehash: f63eadc9a6ab834e02d62be9a209b504d76d3c8e
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 1ae6d3dbd01d2623fef511ed0663270ac605f257
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090781"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39362666"
 ---
 # <a name="troubleshoot-issues-in-azure-data-box-disk-preview"></a>Устранение неполадок в диске Azure Data Box (предварительная версия)
 
 Данная статья относится к выпуску предварительной версии Microsoft Azure Data Box. В этой статье описываются некоторые сложные рабочие процессы и задачи управления, которые могут выполняться в Data Box и диске Data Box. 
 
-Для управления Data Box можно использовать пользовательский интерфейс службы Data Box (это пользовательский интерфейс портала) и локальный пользовательский веб-интерфейс устройства. Управлять диском Data Box можно только через портал Azure. В этой статье речь идет о задачах, выполняемых с использованием портала Azure. Используйте портал Azure для управления заказами, управления устройствами и отслеживания состояния заказа, когда он переходит на этап терминала.
+Вы можете управлять диском Data Box на портале Azure. В этой статье речь идет о задачах, выполняемых с использованием портала Azure. Используйте портал Azure для управления заказами и устройствами и отслеживания состояния заказа, когда он переходит на последний этап.
 
 В этой статье содержатся руководства, позволяющие выполнить следующие задачи:
 

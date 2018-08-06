@@ -1,22 +1,19 @@
 ---
 title: Масштабирование развертываний Jenkins с помощью агентов виртуальных машин Azure
 description: Увеличьте емкость конвейеров Jenkins с помощью виртуальных машин Azure с подключаемым модулем агентов виртуальных машин Azure для Jenkins.
-services: multiple
-documentationcenter: ''
-author: rloutlaw
-manager: justhe
-ms.service: multiple
-ms.workload: multiple
-ms.topic: article
-ms.date: 8/25/2017
-ms.author: mlearned
-ms.custom: Jenkins
-ms.openlocfilehash: 4d45ed14be499ed927f1433e134a029066146eea
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.topic: tutorial
+ms.author: tarcher
+author: tomarcher
+manager: jpconnock
+ms.service: devops
+ms.custom: jenkins
+ms.date: 07/31/2018
+ms.openlocfilehash: 7f3facbc1bca51061d49ca99778c60d58c525144
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29392646"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39391280"
 ---
 # <a name="scale-your-jenkins-deployments-to-meet-demand-with-azure-vm-agents"></a>Масштабирование развертываний Jenkins в соответствии с требованиями агентов виртуальных машин Azure
 
@@ -34,7 +31,7 @@ ms.locfileid: "29392646"
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Continuous-Integration-with-Jenkins-Using-Azure-VM-Agents/player]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure
 * Главный сервер Jenkins. Если у вас его нет, просмотрите [краткое руководство](install-jenkins-solution-template.md) по его настройке в Azure.
@@ -56,7 +53,7 @@ ms.locfileid: "29392646"
 3. Выберите имеющийся субъект-службу в раскрывающемся списке **Add** (Добавить) в разделе **Azure Credentials** (Учетные данные Azure). Если его в списке нет, выполните действия ниже, чтобы [создать субъект-службу](/cli/azure/create-an-azure-service-principal-azure-cli?toc=%2fazure%2fazure-resource-manager) для учетной записи Azure и добавить его в конфигурацию Jenkins.   
 
     a. Щелкните **Add** (Добавить) рядом с разделом **Azure Credentials** (Учетные данные Azure) и выберите **Jenkins**.   
-    Б. В диалоговом окне **добавления учетных данных** выберите **субъект-службу Microsoft Azure** в раскрывающемся списке **Kind** (Вид).   
+    b. В диалоговом окне **добавления учетных данных** выберите **субъект-службу Microsoft Azure** в раскрывающемся списке **Kind** (Вид).   
     c. Создайте субъект-службу Active Directory с помощью Azure CLI или [Cloud Shell](/azure/cloud-shell/overview).
     
     ```azurecli-interactive
@@ -142,6 +139,10 @@ ms.locfileid: "29392646"
 3. По завершении сборки перейдите к окну **Console output** (Вывод на консоль). Вы увидите, что сборка выполнена в агенте Azure удаленно.
 
 ![Вывод на консоль](./media/jenkins-azure-vm-agents/console-output.png)
+
+## <a name="troubleshooting-the-jenkins-plugin"></a>Устранение неполадок подключаемого модуля Jenkins
+
+Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

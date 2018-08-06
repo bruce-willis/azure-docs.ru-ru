@@ -6,17 +6,17 @@ ms.service: logic-apps
 author: ecfan
 ms.author: estfan
 manager: jeconnoc
-ms.date: 03/15/2018
+ms.date: 07/31/2018
 ms.topic: quickstart
 ms.custom: mvc
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: a35c46bd67a157416844c4054b75f993304298b4
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 92f4fb57e3bd1f3ee61625256d661980d6a11275
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35300758"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39367136"
 ---
 # <a name="quickstart-create-and-automate-tasks-processes-and-workflows-with-azure-logic-apps---visual-studio"></a>Краткое руководство. Создание и автоматизация задач, операций и рабочих процессов с помощью Azure Logic Apps в Visual Studio
 
@@ -39,7 +39,8 @@ ms.locfileid: "35300758"
   * <a href="https://www.visualstudio.com/downloads" target="_blank">Visual Studio 2017 или Visual Studio 2015 — выпуски Community или выше</a>. 
   В этом кратком руководстве используется бесплатная версия Visual Studio Community 2017.
 
-  * <a href="https://azure.microsoft.com/downloads/" target="_blank">Пакет SDK Azure (2.9.1 или более поздней версии)</a> и <a href="https://github.com/Azure/azure-powershell#installation" target="_blank">Azure PowerShell</a>.
+  * <a href="https://azure.microsoft.com/downloads/" target="_blank">Пакет Microsoft Azure SDK для .NET (версии 2.9.1 или более поздней)</a> и <a href="https://github.com/Azure/azure-powershell#installation" target="_blank">Azure PowerShell</a>. 
+  Дополнительные сведения о <a href="https://docs.microsoft.com/dotnet/azure/dotnet-tools?view=azure-dotnet">пакете Azure SDK для .NET</a>.
 
   * <a href="https://marketplace.visualstudio.com/items?itemName=VinaySinghMSFT.AzureLogicAppsToolsforVisualStudio-18551" target="_blank">Средства Azure Logic Apps для Visual Studio 2017</a> или <a href="https://marketplace.visualstudio.com/items?itemName=VinaySinghMSFT.AzureLogicAppsToolsforVisualStudio" target="_blank">Visual Studio 2015</a>.
   
@@ -107,7 +108,7 @@ ms.locfileid: "35300758"
 
 Затем добавьте [триггер](../logic-apps/logic-apps-overview.md#logic-app-concepts), который срабатывает при появлении нового элемента RSS-канала. Каждое приложение логики должно начинаться с триггера, который срабатывает при удовлетворении определенных критериев. При каждой активации триггера обработчик Logic Apps создает экземпляр приложения логики для выполнения рабочего процесса.
 
-1. В конструкторе приложений логики введите "rss" в поле поиска. Выберите этот триггер: **RSS - When a feed item is published** (RSS — при публикации элемента веб-канала).
+1. В конструкторе приложений логики введите "rss" в поле поиска. Выберите этот триггер: **When a feed item is published** (При публикации элемента веб-канала).
 
    ![Создание приложений логики путем добавления триггера и действий](./media/quickstart-create-logic-apps-with-visual-studio/add-trigger-logic-app.png)
 
@@ -129,7 +130,7 @@ ms.locfileid: "35300758"
 
 Перед запуском приложения логики разверните приложение из Visual Studio в Azure за несколько шагов.
 
-1. В обозревателе решений в контекстном меню проекта выберите **Развернуть** > **Создать...**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
+1. В обозревателе решений в контекстном меню проекта выберите **Развернуть** > **Создать**. Если отобразится запрос на вход в учетную запись Azure, выполните его.
 
    ![Создайте развертывание приложения логики](./media/quickstart-create-logic-apps-with-visual-studio/create-logic-app-deployment.png)
 
@@ -166,9 +167,10 @@ ms.locfileid: "35300758"
 
 1. Войдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> с учетной записью, использованной для создания приложения логики. 
 
-2. В главном меню Azure выберите **Группы ресурсов**. Выберите группы ресурсов для своего приложения логики.
+2. В главном меню Azure выберите **Группы ресурсов**.
+Выберите группу ресурсов для своего приложения логики, а затем — **Обзор**.
 
-3. Выберите **Удалить группу ресурсов**. Введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**.
+3. На вкладке **Обзор** выберите поле **Удалить группу ресурсов**. Введите имя группы ресурсов для подтверждения и нажмите кнопку **Удалить**.
 
    !["Группы ресурсов > Обзор > Удалить группу ресурсов"](./media/quickstart-create-logic-apps-with-visual-studio/delete-resource-group.png)
 

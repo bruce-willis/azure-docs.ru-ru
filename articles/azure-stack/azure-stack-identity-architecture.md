@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 2/28/2018
+ms.date: 08/01/2018
 ms.author: brenduns
 ms.reviewer: ''
-ms.openlocfilehash: a6da27740efd613b8a81ffa85092d6b00b3e47d8
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: bf69c71a8b361e4a147263bc60324573c710818f
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34257494"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412702"
 ---
 # <a name="identity-architecture-for-azure-stack"></a>Архитектура удостоверений Azure Stack
 Прежде чем выбрать поставщик удостоверений для использования с Azure Stack, ознакомьтесь с существенными различиями между вариантами Azure Active Directory (Azure AD) и службы федерации Active Directory (AD FS). 
@@ -34,7 +34,7 @@ ms.locfileid: "34257494"
 |------------------------------|----------|-------|
 |С подключением к Интернету     |Yes       |Необязательно|
 |Поддержка мультитенантности     |Yes       |Нет       |
-|Синдикация Marketplace       |Yes       |Да. Требуется использовать инструмент [автономной синдикации Marketplace](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).|
+|Элементы предложения в Marketplace |Yes       |Да. Требуется использовать инструмент [автономной синдикации Marketplace](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario).|
 |Поддержка библиотеки проверки подлинности Active Directory (ADAL) |Yes |Yes|
 |Поддержка таких средств, как Azure CLI, Visual Studio и PowerShell  |Yes |Yes|
 |Создание субъектов-служб с помощью портала Azure     |Yes |Нет |

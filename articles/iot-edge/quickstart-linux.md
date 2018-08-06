@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 5e0da540b2784ef13986c6089d31f22df992ee59
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: dfcb764d75b7328d1234d47d82afdae8d6a0deef
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005821"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413020"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-linux-x64-device"></a>Краткое руководство. Развертывание первого модуля IoT Edge на устройстве под управлением 64-разрядной ОС Linux
 
@@ -43,18 +43,18 @@ Azure IoT Edge переносит мощь облака на ваши устро
    ```azurecli-interactive
    az extension add --name azure-cli-iot-ext
    ```
-
+   
 ## <a name="prerequisites"></a>Предварительные требования
 
-В этом кратком руководстве в качестве устройства IoT Edge используется компьютер Linux. Если у вас нет доступного устройства для тестирования, его можно создать с помощью Azure CLI. 
+Облачные ресурсы: 
 
-Создайте новую группу ресурсов. Эту группа ресурсов можно использовать для других ресурсов Azure, созданных в рамках этого краткого руководства, для упрощения управления.  
+* Группа ресурсов для управления всеми ресурсами, которые вы используете в этом кратком руководстве. 
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus
    ```
 
-Создайте виртуальную машину. Для тестирования IoT Edge не требуется очень большая виртуальная машина. Достаточно виртуальной машины размера **B1ms**.
+* Виртуальная машина Linux для работы в качестве устройства IoT Edge. 
 
    ```azurecli-interactive
    az vm create --resource-group IoTEdgeResources --name EdgeVM --image Canonical:UbuntuServer:16.04-LTS:latest --admin-username azureuser --generate-ssh-keys --size Standard_B1ms
@@ -62,18 +62,13 @@ Azure IoT Edge переносит мощь облака на ваши устро
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Начните с создания Центра Интернета вещей на портале Azure.
+Начните с создания Центра Интернета вещей с помощью Azure CLI. 
+
 ![Создание Центра Интернета вещей][3]
 
 Для целей этого руководства можно использовать бесплатный уровень. Если вы уже использовали бесплатный Центр Интернета вещей и он у вас сохранился, можете использовать его. В подписке может быть только один бесплатный Центр Интернета вещей. 
 
-1. В Azure Cloud Shell создайте группу ресурсов (если вы не сделали этого, выполняя предварительные требования). Поместив в группу все ресурсы, используемые для кратких руководств и инструкций, вы можете управлять ими совместно. 
-
-   ```azurecli-interactive
-   az group create --name IoTEdgeResources --location westus
-   ```
-
-1. Создайте в новой группе ресурсов Центр Интернета вещей. При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **IoTEdgeResources**. Замените *{hub_name}* уникальным именем для вашего Центра Интернета вещей.
+При помощи следующего кода создается бесплатный центр **F1** в группе ресурсов **IoTEdgeResources**. Замените *{hub_name}* уникальным именем для вашего Центра Интернета вещей.
 
    ```azurecli-interactive
    az iot hub create --resource-group IoTEdgeResources --name {hub_name} --sku F1 

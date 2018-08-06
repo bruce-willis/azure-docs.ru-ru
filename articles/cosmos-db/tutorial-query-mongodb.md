@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 03/29/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: 539e41dbd4d9e115c2d8daf90405d7683bcaa462
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: e941eb27e9c55f9a4b0e7af8d4cd8efa0220616b
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763193"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39264466"
 ---
 # <a name="tutorial-query-azure-cosmos-db-by-using-the-mongodb-api"></a>Руководство. Выполнение запросов в Azure Cosmos DB с использованием API MongoDB
 
@@ -27,9 +27,7 @@ ms.locfileid: "34763193"
 > [!div class="checklist"]
 > * Запрос данных с помощью MongoDB.
 
-Чтобы начать работу, просмотрите это видео, в котором руководитель программы Azure Cosmos DB Энди Хоу (Andy Hoh) рассказывает о запросах к MongoDB:
-
->[!VIDEO https://www.youtube.com/tVk8S7lFWMA]
+Начать работу можно с использования примеров в этом документе и просмотра видео [о запросе Azure Cosmos DB с помощью оболочки MongoDB](https://azure.microsoft.com/resources/videos/query-azure-cosmos-db-data-by-using-the-mongodb-shell/).
 
 ## <a name="sample-document"></a>Пример документа
 

@@ -16,12 +16,12 @@ ms.workload: media
 ms.date: 07/14/2018
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: ad3b8755615332249ac00f43a2d0cc5fa13a7233
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 6c3fb7391c25628ba12526a04c022215bdbd9d40
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39113290"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325937"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -117,21 +117,22 @@ private static async Task<ContentKeyPolicy> GetOrCreateContentKeyPolicyAsync(
 
 ## <a name="how-can-i-get-started-with-v3"></a>Как начать работу с версией 3?
 
-Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентских библиотек, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов. С примером REST Postman можно ознакомиться [здесь](https://github.com/Azure-Samples/media-services-v3-rest-postman). Вы также можете использовать [REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates).
+Как разработчик вы можете использовать [REST API](https://go.microsoft.com/fwlink/p/?linkid=873030) Служб мультимедиа или клиентских библиотек, которые позволяют взаимодействовать с REST API для простого создания, контроля и обслуживания настраиваемых рабочих процессов.  
+
+Службы мультимедиа предоставляют [файлы Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media), которые можно использовать для создания пакетов SDK с использованием предпочтительного языка или технологии.  
 
 Корпорация Майкрософт создает и поддерживает следующие клиентские библиотеки: 
 
-|Клиентская библиотека|Примеры|
-|---|---|
-|[Пакет SDK для Azure CLI](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)|[Примеры Azure CLI](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)|
-|[ПАКЕТ SDK .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0)|[Примеры для .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)|
-|[Пакет SDK для .NET Core](https://www.nuget.org/packages/Microsoft.Azure.Management.Media/1.0.0) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)|
-|[Пакет SDK для Java](https://docs.microsoft.com/java/api/mediaservices/management?view=azure-java-stable)||
-|[Пакет SDK для Node.js](https://docs.microsoft.com/javascript/api/azure-arm-mediaservices/index?view=azure-node-latest)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)|
-|[Пакет SDK для Python](https://pypi.org/project/azure-mgmt-media/1.0.0rc1/)||
-|[Пакет SDK для GO](https://github.com/Azure/azure-sdk-for-go/tree/master/services/preview/mediaservices/mgmt/2018-03-30-preview/media)||
-
-Службы мультимедиа предоставляют [файлы Swagger](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media), которые можно использовать для создания пакетов SDK с использованием предпочтительного языка или технологии.  
+|Справочники по API|Пакеты SDK и инструменты|Примеры|
+|---|---|---|---|
+|[Справочник по REST](https://aka.ms/ams-v3-rest-ref)|[Пакет SDK для REST](https://aka.ms/ams-v3-rest-sdk)|[Примеры REST Postman](https://github.com/Azure-Samples/media-services-v3-rest-postman)<br/>[REST API на основе Azure Resource Manager](https://github.com/Azure-Samples/media-services-v3-arm-templates)|
+|[Справочник по Azure CLI](https://aka.ms/ams-v3-cli-ref)|[интерфейс командной строки Azure](https://aka.ms/ams-v3-cli)|[Примеры использования интерфейса командной строки Azure](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/media-services)||
+|[Справочник по .NET](https://aka.ms/ams-v3-dotnet-ref)|[ПАКЕТ SDK .NET](https://aka.ms/ams-v3-dotnet-sdk)|[Примеры .NET](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials)||
+||[Пакет SDK для .NET Core](https://aka.ms/ams-v3-dotnet-sdk) (выберите вкладку **.NET CLI**)|[Примеры .NET Core](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials)||
+|[Справочник по Java](https://aka.ms/ams-v3-java-ref)|[Пакет SDK для Java](https://aka.ms/ams-v3-java-sdk)||
+|[Справочник по Node.js](https://aka.ms/ams-v3-nodejs-ref)|[Пакет SDK для Node.js](https://aka.ms/ams-v3-nodejs-sdk)|[Примеры для Node.js](https://github.com/Azure-Samples/media-services-v3-node-tutorials)||
+|[Справочник по Python](https://aka.ms/ams-v3-python-ref)|[Пакет SDK для Python](https://aka.ms/ams-v3-python-sdk)||
+|[Справочник по Go](https://aka.ms/ams-v3-go-ref)|[Пакет SDK для GO](https://aka.ms/ams-v3-go-sdk)||
 
 ## <a name="next-steps"></a>Дополнительная информация
 

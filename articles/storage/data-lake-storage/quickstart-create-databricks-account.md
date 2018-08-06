@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 06/27/2018
 ms.custom: mvc
-ms.openlocfilehash: 6e3515cba449826389fbff35765de9631728de5d
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: d341b0590dce65228958572365bb2773f8f13129
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37063431"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39324312"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -29,15 +29,16 @@ ms.locfileid: "37063431"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - [Создайте учетную запись Data Lake Storage Gen2 Azure](quickstart-create-account.md)
 
 ## <a name="set-aside-storage-account-configuration"></a>Отдельная настройка учетной записи хранения
 
-Для этого руководства необходимо иметь доступ к имени учетной записи хранилища и к ключу доступа. На портале Azure выберите **Все службы** и фильтр *Хранилище*. Выберите **Учетные записи хранения** и найдите учетную запись, созданную для этого руководства.
-
-Скопируйте имя учетной записи хранилища из окна **Обзор** в текстовый редактор. Затем выберите **Ключи доступа** и скопируйте значение для **ключ1** в текстовый редактор, так как оба значения будут необходимы для команд позднее.
+> [!IMPORTANT]
+> Для этого руководства необходимо иметь доступ к имени учетной записи хранилища и к ключу доступа. На портале Azure выберите **Все службы** и фильтр *Хранилище*. Выберите **Учетные записи хранения** и найдите учетную запись, созданную для этого руководства.
+>
+> Скопируйте **имя учетной записи хранения** из окна **Обзор** в текстовый редактор. Затем выберите **Ключи доступа** и скопируйте значение для **key1** в текстовый редактор, так как оба значения будут необходимы для команд позднее.
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -105,7 +106,7 @@ ms.locfileid: "37063431"
 
     Нажмите кнопку **Создать**.
 
-4. Введите следующий код в первую ячейку, заменяя значения заполнителя именем учетной записи, ключом и именем файловой системы.
+4. В следующем коде замените текст **ACCOUNT_NAME** и **ACCOUNT_KEY** значениями, сохраненными в начале работы с этим кратким руководством. Кроме того, замените текст **FILE_SYSTEM_NAME** именем, которым надо назвать файловую систему. Затем введите код в первую ячейку.
 
     ```scala
     spark.conf.set("fs.azure.account.key.<ACCOUNT_NAME>.dfs.core.windows.net", "<ACCOUNT_KEY>") 
@@ -122,17 +123,17 @@ ms.locfileid: "37063431"
 
 Прежде чем приступить к работе с этим разделом, выполните следующие предварительные требования.
 
-* Загрузите **small_radio_json.json** [из Github](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json).
-* Отправьте файл JSON примера с помощью **AzCopy версии 10** в учетную запись хранения больших двоичных объектов Azure и файловую систему, которые были созданы.
+Введите следующий код в ячейку записной книжки:
 
-    ```bash
-    set ACCOUNT_NAME=<ACCOUNT_NAME>
-    set ACCOUNT_KEY=<ACCOUNT_KEY>
-    azcopy cp "<LOCAL_FILE_PATH>\small_radio_json.json" https://<ACCOUNT_NAME>.dfs.core.windows.net/<CONTAINER_NAME> --recursive 
-    ```
+    %sh wget -P /tmp https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json
 
-> [!NOTE]
-> AzCopy версия 10 доступна для клиентов только в предварительной версии.
+В ячейке нажмите клавишу `Shift` + `Enter`, чтобы выполнить вход.
+
+Теперь в новую ячейку под этой ячейкой введите следующий код (замените **FILE_SYSTEM** и **ACCOUNT_NAME** значениями, использованными ранее):
+
+    dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfs://<FILE_SYSTEM>@<ACCOUNT_NAME>.dfs.core.windows.net/")
+
+В ячейке нажмите клавишу `Shift` + `Enter`, чтобы выполнить вход.
 
 ## <a name="run-a-spark-sql-job"></a>Выполнение задания SQL Spark
 

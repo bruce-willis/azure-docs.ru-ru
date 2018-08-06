@@ -1,25 +1,24 @@
 ---
 title: Руководство. Непрерывная интеграция и непрерывное развертывание из Jenkins на виртуальных машинах Azure с помощью Team Services | Документация Майкрософт
 description: В этом руководстве описано, как настроить непрерывную интеграцию (CI) и непрерывное развертывание (CD) приложения Node.js с помощью Jenkins на виртуальных машинах Azure из Release Management в Visual Studio Team Services или Microsoft Team Foundation Server.
-author: ahomer
-manager: douge
-editor: tysonn
+author: tomarcher
+manager: jpconnock
 tags: azure-resource-manager
 ms.assetid: ''
-ms.service: virtual-machines-linux
+ms.service: devops
 ms.devlang: na
 ms.topic: tutorial
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 10/19/2017
-ms.author: ahomer
-ms.custom: mvc
-ms.openlocfilehash: 6b74ab4d97df7e1e6b9bec8e3bcb150c99bd5b5c
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.date: 07/31/2018
+ms.author: tarcher
+ms.custom: jenkins
+ms.openlocfilehash: d3a4a81f60f4e70c2c7576c3176e2b4d6de08d04
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903457"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390601"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-visual-studio-team-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Visual Studio Team Services
 
@@ -170,7 +169,11 @@ ms.locfileid: "37903457"
 7. Зафиксируйте изменения.
 8. Через несколько минут вы увидите созданный выпуск на странице **Выпуски** в Team Services или Team Foundation Server. Откройте этот выпуск, чтобы увидеть, как выполняется развертывание. Поздравляем!
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="troubleshooting-the-jenkins-plugin"></a>Устранение неполадок подключаемого модуля Jenkins
+
+Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
+
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы автоматизировали развертывание приложения в Azure, используя сборку Jenkins и Team Services для выпуска. Вы научились выполнять следующие задачи:
 

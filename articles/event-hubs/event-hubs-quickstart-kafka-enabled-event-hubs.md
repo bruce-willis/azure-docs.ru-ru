@@ -1,5 +1,5 @@
 ---
-title: Потоковая передача данных в концентраторы событий Azure для экосистемы Kafka | Документация Майкрософт
+title: Потоковая передача данных в Центры событий Azure для Apache Kafka | Документация Майкрософт
 description: Потоковая передача данных в концентраторы событий с помощью протокола Kafka и API-интерфейсов.
 services: event-hubs
 documentationcenter: ''
@@ -11,23 +11,22 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/08/2018
+ms.date: 08/01/2018
 ms.author: bahariri
-ms.openlocfilehash: 8ef6240d19ce1ac1b891c95ce525a8bd211a2900
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: ec6061cac7188f3f94fa1ec0bf138b9398387099
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297229"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413626"
 ---
-# <a name="stream-into-event-hubs-for-the-kafka-ecosystem"></a>Потоковая передача данных в концентраторы событий для экосистемы Kafka
+# <a name="stream-into-event-hubs-for-the-apache-kafka"></a>Потоковая передача данных в Центры событий для Apache Kafka
+В этом кратком руководстве показано, как выполнять потоковую передачу данных в концентраторы событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с концентраторами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka версии 1.0.](https://kafka.apache.org/10/documentation.html)
 
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs).
 
-В этом кратком руководстве показано, как выполнять потоковую передачу данных в концентраторы событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с концентраторами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Концентраторы событий Azure для экосистемы Kafka поддерживают [Apache Kafka версии 1.0.](https://kafka.apache.org/10/documentation.html)
-
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже указаны требования для работы с этим кратким руководством.
 
@@ -36,6 +35,30 @@ ms.locfileid: "35297229"
 * [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив Maven.
 * [Git](https://www.git-scm.com/)
 * [Пространство имен концентраторов событий с поддержкой Kafka](event-hubs-create.md).
+
+## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен концентраторов событий с поддержкой Kafka
+
+1. Войдите на [портал Azure] и щелкните **Создать ресурс** в левой верхней части экрана.
+
+2. Найдите концентраторы событий и выберите отображаемые параметры:
+    
+    ![Поиск концентраторов событий на портале](./media/event-hubs-create-kafka-enabled/event-hubs-create-event-hubs.png)
+ 
+3. Укажите уникальное имя и включите Kafka в пространстве имен. Нажмите кнопку **Создать**.
+    
+    ![Создание пространства имен](./media/event-hubs-create-kafka-enabled/create-kafka-namespace.png)
+ 
+4. Создав пространство имен, на вкладке **Параметры** щелкните **Политики общего доступа** для получения строки подключения.
+
+    ![Выбор политик общего доступа](./media/event-hubs-create/create-event-hub7.png)
+
+5. Вы можете выбрать значение по умолчанию **RootManageSharedAccessKey** или добавить новую политику. Щелкните имя политики и скопируйте строку подключения. 
+    
+    ![Выбор политики](./media/event-hubs-create/create-event-hub8.png)
+ 
+6. Добавьте эту строку подключения в конфигурацию приложения Kafka.
+
+Теперь можно выполнять потоковую передачу событий из приложений, использующих протокол Kafka, в концентраторы событий.
 
 ## <a name="send-and-receive-messages-with-kafka-in-event-hubs"></a>Отправка и получение сообщений с использованием Kafka в концентраторах событий
 
@@ -78,8 +101,7 @@ ms.locfileid: "35297229"
 Если у кластера концентратора событий с поддержкой Kafka появятся события, можно начать получать их от объекта-получателя.
 
 ## <a name="next-steps"></a>Дополнительная информация
+В этой статье вы узнаете, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Для получения дополнительных сведений перейдите к следующему руководству:
 
-* [Что такое концентраторы событий?](event-hubs-what-is-event-hubs.md)
-* [Подробнее о концентраторах событий для экосистемы Kafka](event-hubs-for-kafka-ecosystem-overview.md)
-* Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к включенным концентраторам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
-* Дополнительные сведения о потоковой передаче во включенные концентраторы событий с поддержкой Kafka с помощью фреймворка [Apache Flink ](event-hubs-kafka-flink-tutorial.md) или [Akka Streams](event-hubs-kafka-akka-streams-tutorial.md).
+> [!div class="nextstepaction"]
+> [Использование Kafka MirrorMaker с концентраторами событий для экосистем Kafka](event-hubs-kafka-mirror-maker-tutorial.md)

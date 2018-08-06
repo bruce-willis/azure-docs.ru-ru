@@ -1,20 +1,19 @@
 ---
-title: Создание языковой модели с помощью службы распознавания речи в Microsoft Cognitive Services | Документы Майкрософт
+title: Как создать языковую модель с помощью службы "Речь" в Microsoft Cognitive Services
 description: В этом руководстве вы узнаете, как создать языковую модель с помощью службы распознавания речи в Microsoft Cognitive Services.
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: panosper
-ms.openlocfilehash: 85e67be406b3d9723476821adfb09fc4db8dc1d1
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 0161a691cbec45a87ade218d1707a2784d7f1cfc
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39068579"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283890"
 ---
 # <a name="tutorial-create-a-custom-language-model"></a>Руководство по созданию пользовательской языковой модели
 

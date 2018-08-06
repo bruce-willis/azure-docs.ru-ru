@@ -9,14 +9,14 @@ services: iot-accelerators
 ms.date: 07/19/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: acff6586f35f1c86cba8d519586d72247255ccd7
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 3138f0ebb6316e69c873a37d479ddc0279a361ef
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159389"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39285083"
 ---
-# <a name="troubleshoot-and-fix-device-issues"></a>Устранение неполадок и проблем с устройствами
+# <a name="tutorial-troubleshoot-and-fix-device-issues"></a>Руководство по устранению неполадок и проблем с устройствами
 
 В этом руководстве показано, как выявлять и устранять проблемы на подключенных устройствах Интернета вещей с помощью акселератора решений для удаленного мониторинга. С помощью оповещений в панели мониторинга акселератора решений вы можете выявлять проблемы, а затем устранять их с помощью удаленных заданий.
 
@@ -30,7 +30,7 @@ Contoso тестирует новый **прототип** устройства 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [iot-iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
+[!INCLUDE [iot-accelerators-tutorial-prereqs](../../includes/iot-accelerators-tutorial-prereqs.md)]
 
 ## <a name="investigate-an-alert"></a>Изучение оповещения
 
@@ -80,7 +80,7 @@ Contoso тестирует новый **прототип** устройства 
 
 [![Просмотр данных о снижении температуры](./media/iot-accelerators-remote-monitoring-maintain/jobresult-inline.png)](./media/iot-accelerators-remote-monitoring-maintain/jobresult-expanded.png#lightbox)
 
-[!INCLUDE [iot-iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
+[!INCLUDE [iot-accelerators-tutorial-cleanup](../../includes/iot-accelerators-tutorial-cleanup.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

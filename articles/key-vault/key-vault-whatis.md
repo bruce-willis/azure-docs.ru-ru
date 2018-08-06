@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 07/23/2018
+ms.date: 07/26/2018
 ms.author: barclayn
-ms.openlocfilehash: b34b05ae86aed199d80a86c8e1a073cb54b5e75f
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: cd9dd4d400177e511f23c2677b77198a50420a35
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226719"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283002"
 ---
 # <a name="what-is-azure-key-vault"></a>Что такое хранилище ключей Azure?
 
@@ -37,6 +37,8 @@ Azure Key Vault — это средство для безопасного хра
 - **[Azure Active Directory](../active-directory/active-directory-whatis.md)** — это служба Azure AD для данного клиента. Каждый каталог содержит один или несколько доменов. Каталог может иметь много подписок, связанных с ним, но только один клиент. 
 - **Идентификатор клиента Azure** — это уникальный способ идентификации Azure Active Directory в пределах подписки Azure. 
 - **Управляемое удостоверение службы** позволяет обеспечить безопасное хранение учетных данных, а также других ключей и секретов, но для их получения код должен пройти аутентификацию в Key Vault. Управляемое удостоверение службы (MSI) упрощает решение этой задачи, предоставляя службам Azure автоматически управляемое удостоверение в Azure Active Directory (Azure AD). Это удостоверение можно использовать для аутентификации хранилища ключей или любой службы, которая поддерживает аутентификацию Azure AD, не храня какие-либо учетные данные в коде. Дополнительные сведения об Управляемом удостоверении службы см. [здесь](../active-directory/managed-service-identity/overview.md)
+
+    ![Изображение компонента "Управляемое удостоверение службы"](./media/key-vault-whatis/msi.png)
 
 ## <a name="key-vault-roles"></a>Роли Key Vault
 

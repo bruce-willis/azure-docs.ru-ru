@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о маршрутизации содержимого на основе URL-адресов с помощью шлюза приложений Azure
+title: Общие сведения о маршрутизации содержимого на основе URL-адресов с помощью службы "Шлюз приложений Azure"
 description: Эта статься содержит общие сведения о маршрутизации содержимого на основе URL-адресов, настройки UrlPathMap и правила PathBasedRouting с помощью шлюза приложений.
 documentationcenter: na
 services: application-gateway
@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 4/23/2018
 ms.author: victorh
-ms.openlocfilehash: eaecb731d6f64bf7dd15d9a9b11739fd3fbc983e
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: f706e267675dbb3d5465977157f40824efc96e48
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32160551"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39389248"
 ---
 # <a name="azure-application-gatewaty-url-path-based-routing-overview"></a>Общие сведения о маршрутизации содержимого на основе URL-пути с помощью шлюза приложений Azure
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по установке изолированного клиента Service Fabric в Azure Service Fabric | Документы Майкрософт
+title: Руководство по установке изолированного клиента Service Fabric в Azure Service Fabric | Документация Майкрософт
 description: В этом руководстве показано, как установить изолированный клиент Service Fabric в кластере, созданном в предыдущем руководстве.
 services: service-fabric
 documentationcenter: .net
@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 05/11/2018
 ms.author: dastanfo
 ms.custom: mvc
-ms.openlocfilehash: 7ba5fa1d4c5b87d1c4828ee98dae36f415d37c20
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 36d65abb26435581f3e6c9c4a9fc46bb3dd538ce
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37344161"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39362788"
 ---
 # <a name="tutorial-install-and-create-service-fabric-cluster"></a>Руководство по установке и созданию кластера Service Fabric
 
@@ -133,15 +133,15 @@ Your cluster is successfully created! You can connect and manage your cluster us
 
 ## <a name="add-and-remove-nodes"></a>Добавление и удаление узлов
 
-Вы можете добавить узлы в изолированный кластер Service Fabric или удалить их из него в соответствии с изменениями потребностей компании. Подробные инструкции см. в статье [Добавление узлов в автономный кластер Service Fabric или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md).
+Вы можете добавить узлы в изолированный кластер Service Fabric или удалить их из него в соответствии с изменениями потребностей компании. Подробные инструкции статье [Добавление узлов в автономный кластер Service Fabric или удаление узлов из него](service-fabric-cluster-windows-server-add-remove-nodes.md) .
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из второй части в серии вы узнали не только о передаче больших объемов случайных данных в учетную запись хранения в параллельном режиме, но и о том, как выполнять такие задачи:
 
 > [!div class="checklist"]
 > * Настройка строки подключения
-> * Создание приложения
+> * создание приложения;
 > * Выполнение приложения
 > * Проверка количества подключений.
 
