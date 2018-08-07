@@ -7,7 +7,7 @@
 - name: Быстрый запуск
   items:
     - name: Создание профиля диспетчера трафика
-      href: traffic-manager-create-profile.md
+      href: quickstart-create-traffic-manager-profile.md
 - name: Учебники
   items:
     - name: 'Перенаправление трафика, исходя из географического расположения конечной точки'
