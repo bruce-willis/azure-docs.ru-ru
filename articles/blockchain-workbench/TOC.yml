@@ -46,10 +46,9 @@
       href: blockchain-workbench-database-views.md
     - name: API обмена сообщениями
       href: blockchain-workbench-messages-overview.md
-    - name: ИНТЕРФЕЙС REST API
+    - name: REST API
       href: 'https://docs.microsoft.com/rest/api/azure-blockchain-workbench'
 - name: Ресурсы
-  expanded: true
   items:
     - name: Блог
       href: 'https://azure.microsoft.com/blog/topics/blockchain/'
@@ -60,10 +59,12 @@
     - name: Форум
       href: 'https://aka.ms/workbenchforum'
     - name: Отзыв о продукте
-      href: 'https://feedback.azure.com/forums/586780-blockchain'
-    - name: Шаблоны решений
-      items:
-        - name: Консорциум Ethereum Proof-of-Work
-          href: ethereum-deployment-guide.md
-        - name: Консорциум Hyperledger Fabric
-          href: hyperledger-fabric-single-member-blockchain.md
+      href: 'https://aka.ms/blockchainuservoice'
+- name: Алгоритма консенсуса POA в Ethereum
+  href: ethereum-poa-deployment.md
+- name: Шаблоны решений
+  items:
+    - name: Алгоритма консенсуса POW в Ethereum
+      href: ethereum-deployment-guide.md
+    - name: Консорциум Hyperledger Fabric
+      href: hyperledger-fabric-single-member-blockchain.md

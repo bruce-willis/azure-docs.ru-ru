@@ -39,6 +39,8 @@
       items:
         - name: Обзор
           href: content-protection-overview.md
+        - name: Система с несколькими DRM и управлением доступом
+          href: design-multi-drm-system-with-access-control.md
     - name: Кодирование
       items:
         - name: Обзор

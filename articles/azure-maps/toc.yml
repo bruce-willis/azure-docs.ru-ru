@@ -40,6 +40,8 @@
       items:
         - name: Управление учетными записями и ключами
           href: how-to-manage-account-keys.md
+        - name: Просмотр метрик использования
+          href: how-to-view-api-usage.md
     - name: Получение данных карты из REST API
       items:
         - name: Поиск адреса
