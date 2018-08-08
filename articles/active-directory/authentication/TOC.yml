@@ -176,6 +176,8 @@
               href: howto-mfa-nps-extension-errors.md
     - name: Устранение неполадок
       items:
+        - name: Отключение конвергентной регистрации
+          href: howto-registration-mfa-sspr-converged-troubleshoot.md
         - name: Устранение неполадок с SSPR
           href: active-directory-passwords-troubleshoot.md
         - name: 'SSPR: часто задаваемые вопросы'

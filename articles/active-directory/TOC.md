@@ -401,10 +401,10 @@
 ### [Получение результатов проверок доступа](active-directory-azure-ad-controls-retrieve-access-review.md)
 
 ## Защита удостоверений
-### [Условный доступ](active-directory-conditional-access-azure-portal.md)
-#### [Начало работы](active-directory-conditional-access-azure-portal-get-started.md)
+### Условный доступ
+#### [Обзор](conditional-access/overview.md)
 #### Быстрое начало работы
-##### [Настройка отдельных облачных приложений MFA](conditional-access/app-based-mfa.md)
+##### [Требование многофакторной проверки подлинности для конкретных приложений](conditional-access/app-based-mfa.md)
 ##### [Обеспечение принятия условий использования](conditional-access/require-tou.md)
 ##### [Блокировка доступа при обнаружении риска безопасности сеанса](conditional-access/app-sign-in-risk.md)
 #### Учебники
@@ -418,15 +418,16 @@
 ##### [Политики условного доступа к службам Office 365 с устройств](active-directory-conditional-access-device-policies.md)
 #### Практические руководства
 ##### [Рекомендации по использованию хранилища данных SQL Azure](conditional-access/best-practices.md)
-##### [Настройка политик условного доступа для попыток доступа из ненадежных сетей](active-directory-conditional-access-untrusted-networks.md)
-##### [Настройка условного доступа на основе устройств](active-directory-conditional-access-policy-connected-applications.md)
-##### [Настройка условного доступа на основе приложений](active-directory-conditional-access-mam.md)
-##### [Условия использования для пользователей и приложений](active-directory-tou.md)
+##### [Требование многофакторной проверки подлинности при попытках доступа из ненадежных сетей](conditional-access/untrusted-networks.md)
+##### [Требование доступа с управляемых устройств](conditional-access/require-managed-devices.md)
+##### [Требование доступа к утвержденным клиентским приложениям](conditional-access/app-based-conditional-access.md)
+##### [Требование принятия условий использования для пользователей и приложений](active-directory-tou.md)
 ##### [Миграция классических политик](conditional-access/policy-migration.md)
 ##### [Настройка VPN-подключения](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)
 ##### [Настройка SharePoint и Exchange Online](active-directory-conditional-access-no-modern-authentication.md)
 ##### [Исправление](active-directory-conditional-access-device-remediation.md)
-#### [Технический справочник: условный доступ к приложениям Azure AD](active-directory-conditional-access-technical-reference.md)
+#### [Справочные материалы](conditional-access/technical-reference.md)
+##### [Технический справочник: условный доступ к приложениям Azure AD](conditional-access/technical-reference.md)
 #### [Часто задаваемые вопросы](conditional-access/faqs.md)
 
 ### Аутентификация на основе сертификата

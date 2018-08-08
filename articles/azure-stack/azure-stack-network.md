@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2018
+ms.date: 08/01/2018
 ms.author: jeffgilb
 ms.reviewer: wamota
-ms.openlocfilehash: b39a1f7b0de01c50b04072cc0de011928c6af786
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: f54849b9fef8ff09aa9b5b6254c92fc3c452ef4a
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39003619"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39414431"
 ---
 # <a name="network-connectivity"></a>Сетевое подключение
 В этой статье приводятся сведения об инфраструктуре сети Azure Stack, которые помогут решить, как лучше всего интегрировать Azure Stack с существующей сетевой средой. 
@@ -85,7 +85,7 @@ ms.locfileid: "39003619"
 ### <a name="ports-and-urls"></a>URL-адреса и порты
 Чтобы службы Azure Stack (такие как порталы, Azure Resource Manager, DNS и т. д.) были доступны для внешних сетей, необходимо разрешить входящий трафик к этим конечным точкам для определенных URL-адресов, портов и протоколов.
  
-Если в вашем развертывании прозрачный прокси-сервер перенаправляет соединения к традиционному прокси-серверу, необходимо разрешить определенные порты и URL-адреса для [исходящего](https://docs.microsoft.com/azure/azure-stack/azure-stack-integrate-endpoints#ports-and-protocols-inbound) и [входящего](https://docs.microsoft.com/azure/azure-stack/azure-stack-integrate-endpoints#ports-and-urls-outbound) трафика. К ним относятся порты и URL-адреса для идентификации, синдикации marketplace, исправления и обновления, регистрации и использования.
+Если в вашем развертывании прозрачный прокси-сервер перенаправляет соединения к традиционному прокси-серверу, необходимо разрешить определенные порты и URL-адреса для [исходящего](https://docs.microsoft.com/azure/azure-stack/azure-stack-integrate-endpoints#ports-and-protocols-inbound) и [входящего](https://docs.microsoft.com/azure/azure-stack/azure-stack-integrate-endpoints#ports-and-urls-outbound) трафика. К ним относятся порты и URL-адреса для идентификации и marketplace, а также для исправления и обновления, регистрации и использования данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Подключения к пограничной сети](azure-stack-border-connectivity.md)

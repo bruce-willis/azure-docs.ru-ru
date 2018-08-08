@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/11/2018
+ms.date: 08/01/2018
 ms.author: brenduns
 ms.reviewer: justini
-ms.openlocfilehash: 496aea1195885c582d3529d7ddb43210aad5fea1
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 0190298cbf6352feeb71e365f5815e174c9e30cc
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38990138"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413522"
 ---
 # <a name="azure-stack-1804-update"></a>Обновление 1804 для Azure Stack
 
@@ -80,7 +80,10 @@ ms.locfileid: "38990138"
 ## <a name="before-you-begin"></a>Перед началом работы    
 
 ### <a name="prerequisites"></a>Предварительные требования
-- Прежде чем применить обновление 1804 для Azure Stack, установите [обновление 1803](azure-stack-update-1803.md) для Azure Stack.    
+- Прежде чем применить обновление 1804 для Azure Stack, установите [обновление 1803](azure-stack-update-1803.md) для Azure Stack.  
+  
+- Установите последнюю доступную версию [обновления или исправления для версии 1803](azure-stack-update-1803.md#post-update-steps). 
+
 
 ### <a name="known-issues-with-the-update-process"></a>Известные проблемы с процессом обновления   
 - Во время установки обновления 1804 могут отображаться оповещения с заголовком *Error – Template for FaultType UserAccounts.New is missing* (Ошибка: отсутствует шаблон для FaultType UserAccounts.New).  Эти оповещения можно игнорировать. Они будут закрыты автоматически после завершения обновления до версии 1804.   
@@ -99,6 +102,8 @@ ms.locfileid: "38990138"
 Ниже перечислены известные проблемы после установки сборки **20180513.1**.
 
 #### <a name="portal"></a>Microsoft Azure
+- <!-- TBD - IS ASDK --> С этой версией Azure Stack невозможно установить обновления драйверов с помощью пакета расширения OEM.  Для этой проблемы нет решения.
+
 - <!-- 1272111 - IS --> Установка этой версии или обновление до нее могут привести к тому, что вы не сможете просматривать единицы масштабирования Azure Stack на портале администрирования.  
   Решение. Просмотрите сведения о единицах масштабирования, используя PowerShell. Дополнительные сведения см. в содержимом раздела [справки](https://docs.microsoft.com/powershell/azure/azure-stack/overview?view=azurestackps-1.3.0) по модулю Azure Stack версии 1.3.0. 
 

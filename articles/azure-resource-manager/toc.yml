@@ -16,7 +16,6 @@
     - name: Создание шаблонов — Visual Studio
       href: vs-azure-tools-resource-groups-deployment-projects-create-deploy.md
 - name: Учебники
-  expanded: true
   items:
     - name: Создание зашифрованной учетной записи хранения
       href: resource-manager-tutorial-create-encrypted-storage-accounts.md
@@ -52,10 +51,12 @@
               href: resource-manager-templates-outputs.md
         - name: Связанные и вложенные шаблоны
           href: resource-group-linked-templates.md
-        - name: Определение зависимости между ресурсами
+        - name: Зависимости ресурсов
           href: resource-group-define-dependencies.md
         - name: Развертывание нескольких экземпляров
           href: resource-group-create-multiple.md
+        - name: Создание группы ресурсов в шаблоне
+          href: create-resource-group-in-template.md
         - name: Обновление ресурса
           href: /azure/architecture/building-blocks/extending-templates/update-resource
     - name: Развертывание

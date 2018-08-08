@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/29/2018
+ms.date: 08/01/2018
 ms.author: carlrab
-ms.openlocfilehash: 2d6660e1064959f2d04424ae1c3e9bc668231c92
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: effb09cfc68961065ad0b4e4be52255bcd1fe4e0
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131327"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39414173"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU 
 
@@ -22,9 +22,12 @@ ms.locfileid: "37131327"
 
 Сведения об ограничениях ресурсов в модели приобретения на основе DTU для эластичных пулов см. в разделе [Ограничения ресурсов в модели приобретения на основе DTU — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md). Сведения об ограничениях ресурсов в модели приобретения на основе виртуальных ядер см. в разделах [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — одиночные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 
+> [!IMPORTANT]
+> Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
+
 ## <a name="single-database-storage-sizes-and-performance-levels"></a>Отдельная база данных: размеры хранилища и уровни производительности
 
-В следующих таблицах приведены доступные ресурсы для отдельных баз данных на каждом уровне служб и уровне производительности. Уровень обслуживания, уровень производительности и объем хранилища для одиночной базы данных можно задать с помощью [портала Azure](sql-database-servers-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [PowerShell](sql-database-servers-databases-manage.md#powershell-manage-logical-servers-and-databases), [Azure CLI](sql-database-servers-databases-manage.md#azure-cli-manage-logical-servers-and-databases) или [REST API](sql-database-servers-databases-manage.md#rest-api-manage-logical-servers-and-databases).
+В следующих таблицах приведены доступные ресурсы для отдельных баз данных на каждом уровне служб и уровне производительности. Уровень обслуживания, уровень производительности и объем хранилища для одиночной базы данных можно задать с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [PowerShell](sql-database-single-databases-manage.md#powershell-manage-logical-servers-and-databases), [Azure CLI](sql-database-single-databases-manage.md#azure-cli-manage-logical-servers-and-databases) или [REST API](sql-database-single-databases-manage.md#rest-api-manage-logical-servers-and-databases).
 
 ### <a name="basic-service-tier"></a>Уровень службы "Базовый"
 | **Уровень производительности** | **базовая;** |
@@ -77,12 +80,12 @@ ms.locfileid: "37131327"
 ## <a name="single-database-change-storage-size"></a>Отдельная база данных: изменение размера хранилища
 
 - Цена DTU для отдельной базы данных включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и уровни производительности](#single-database-storage-sizes-and-performance-levels).
-- Дополнительное хранилище для отдельной базы данных можно подготовить, увеличив ее максимальный размер с помощью [портала Azure](sql-database-servers-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update).
+- Дополнительное хранилище для отдельной базы данных можно подготовить, увеличив ее максимальный размер с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update).
 - Стоимость дополнительного хранилища для отдельной базы данных равна его объему, умноженному на цену единицы хранения этого хранилища для уровня служб. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
 ## <a name="single-database-change-dtus"></a>Отдельная база данных: изменение числа DTU
 
-После выбора первоначального уровня служб, уровня производительности и объема хранилища можно масштабировать отдельную базу данных динамически, исходя из ее фактического использования, с помощью [портала Azure](sql-database-servers-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update). 
+После выбора первоначального уровня служб, уровня производительности и объема хранилища можно масштабировать отдельную базу данных динамически, исходя из ее фактического использования, с помощью [портала Azure](sql-database-single-databases-manage.md#azure-portal-manage-logical-servers-and-databases), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update). 
 
 В следующем видео показано динамическое изменение уровня производительности для увеличения количества доступных DTU для отдельной базы данных.
 
@@ -106,7 +109,7 @@ ms.locfileid: "37131327"
 
 ## <a name="single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb"></a>Отдельная база данных: ограничения P11 и P15 при максимальном размере, превышающем 1 ТБ
 
-Максимальный размер больше 1 ТБ, для базы данных P11 и P15 поддерживается в следующих регионах: Виргиния (для обслуживания государственных организаций США), восточная Австралия, восточная Канада, восточная часть США 2, восточная Япония, Западная Европа, западная часть Соединенного Королевства, западная часть США, западная Япония, Республика Корея, Северная Европа, северо-центральный регион США, центральная Германия, центральная Канада, Центральная Франция, центральная часть США, центральный регион, юго-восточная Австралия, Юго-Восточная Азия, юго-центральный регион США, южная Бразилия и южная часть Соединенного Королевства. Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
+Максимальный размер больше 1 ТБ, для базы данных P11 и P15 поддерживается в следующих регионах: US Gov (Вирджиния), Восточная Австралия, Восточная Канада, восточная часть США 2, Восточная Япония, Западная Европа, западная часть Соединенного Королевства, западная часть США, Западная Япония, Республика Корея (центральный регион), Северная Европа, центрально-северная часть США, Центральная Германия, Центральная Канада, Центральная Франция, центральная часть США, Юго-Восточная Австралия, Юго-Восточная Азия, центрально-южная часть США, Южная Бразилия и южная часть Соединенного Королевства. Ниже приведены рекомендации и ограничения для баз данных P11 и P15 с максимальным размером, превышающим 1 ТБ.
 
 - Если при создании базы данных выбрать максимальный размер больше 1 ТБ (указав значение 4 ТБ или 4096 ГБ), то выполнение команды create завершится ошибкой, если база данных подготавливается в неподдерживаемом регионе.
 - Для существующих баз данных P11 или P15, расположенных в одном из поддерживаемых регионов, можно увеличить максимальный размер хранилища до 4 ТБ с шагом в 256 ГБ. Чтобы узнать, поддерживается ли в вашем регионе больший размер, используйте функцию [DATABASEPROPERTYEX](/sql/t-sql/functions/databasepropertyex-transact-sql) или проверьте размер базы данных на портале Azure. Обновление существующей базы данных P11 или P15 может выполнить только учетная запись субъекта уровня сервера или участники роли базы данных dbmanager. 

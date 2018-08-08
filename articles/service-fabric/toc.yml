@@ -553,8 +553,8 @@
                   href: service-fabric-cluster-scale-up-down.md
                 - name: Масштабирование программными средствами
                   href: service-fabric-cluster-programmatic-scaling.md
-                - name: Масштабирование и обновление виртуальных машин типа первичного узла
-                  href: service-fabric-cluster-upgrade-primary-nodetype-vm.md
+                - name: Развертывание масштабируемого набора виртуальных машин для типа узла
+                  href: virtual-machine-scale-set-scale-node-type-scale-out.md
             - name: Обновление
               href: service-fabric-cluster-upgrade.md
             - name: Настройка управления доступом
