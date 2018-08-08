@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/01/2017
 ms.author: daveba
-ms.openlocfilehash: e564f48b4b90cfcaa72ed51d5f210a71a4980360
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: ee4702733e775051cbbcace109bd1a7ffdf50e9c
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902951"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325461"
 ---
 # <a name="how-to-use-an-azure-vm-managed-service-identity-msi-for-token-acquisition"></a>Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера 
 
@@ -29,7 +29,7 @@ ms.locfileid: "37902951"
 
 Эта статья содержит различные примеры кода и скриптов для получения маркера, а также инструкции по обработке ситуаций с просроченным маркером и устранению ошибок HTTP. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -49,6 +49,7 @@ ms.locfileid: "37902951"
 |  |  |
 | -------------- | -------------------- |
 | [Получение маркера с использованием HTTP](#get-a-token-using-http) | Сведения о протоколе для конечной точки маркера MSI |
+| [Получение токена с помощью библиотеки Microsoft.Azure.Services.AppAuthentication для .NET](#get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net) | Пример использования библиотеки Microsoft.Azure.Services.AppAuthentication из клиента .NET
 | [Получение маркера с использованием C#](#get-a-token-using-c) | Пример использования конечной точки MSI REST от клиента C# |
 | [Получение маркера с использованием Go](#get-a-token-using-go) | Пример использования конечной точки MSI REST от клиента Go |
 | [Получение маркера с использованием Azure PowerShell](#get-a-token-using-azure-powershell) | Пример использования конечной точки MSI REST от клиента Azure PowerShell |
@@ -73,7 +74,9 @@ GET 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-0
 | `http://169.254.169.254/metadata/identity/oauth2/token` | Конечная точка MSI для службы метаданных экземпляров. |
 | `api-version`  | Параметр строки запроса, указывающий версию API для конечной точки IMDS. Используйте версию API `2018-02-01` или выше. |
 | `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Он также отображается в утверждении (аудитории) `aud` выданного маркера. В этом примере запрашивается маркер для доступа к Azure Resource Manager, который имеет универсальный код ресурса (URI) идентификатора приложения https://management.azure.com/. |
-| `Metadata` | Поле заголовка HTTP-запроса, требуемое MSI с целью устранения рисков от атак с подделкой запроса со стороны сервера (SSRF). Должно быть присвоено значение true (все в нижнем регистре).
+| `Metadata` | Поле заголовка HTTP-запроса, требуемое MSI с целью устранения рисков от атак с подделкой запроса со стороны сервера (SSRF). Должно быть присвоено значение true (все в нижнем регистре). |
+| `object_id` | (Необязательно.) Параметр строки запроса, указывающий object_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько пользовательских управляемых удостоверений.|
+| `client_id` | (Необязательно.) Параметр строки запроса, указывающий client_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько пользовательских управляемых удостоверений.|
 
 Пример запроса с использованием конечной точки расширения управляемых удостоверений службы (MSI) виртуальной машины (*будет объявлена устаревшей*).
 
@@ -87,7 +90,9 @@ Metadata: true
 | `GET` | HTTP-команда, указывающая, что необходимо извлечь данные из конечной точки. В этом случае используется маркер доступа OAuth. | 
 | `http://localhost:50342/oauth2/token` | Конечная точка MSI, в которой порт 50342 является портом по умолчанию, который можно настроить. |
 | `resource` | Параметр строки запроса, указывающий URI идентификатора приложения целевого ресурса. Он также отображается в утверждении (аудитории) `aud` выданного маркера. В этом примере запрашивается маркер для доступа к Azure Resource Manager, который имеет универсальный код ресурса (URI) идентификатора приложения https://management.azure.com/. |
-| `Metadata` | Поле заголовка HTTP-запроса, требуемое MSI с целью устранения рисков от атак с подделкой запроса со стороны сервера (SSRF). Должно быть присвоено значение true (все в нижнем регистре).
+| `Metadata` | Поле заголовка HTTP-запроса, требуемое MSI с целью устранения рисков от атак с подделкой запроса со стороны сервера (SSRF). Должно быть присвоено значение true (все в нижнем регистре).|
+| `object_id` | (Необязательно.) Параметр строки запроса, указывающий object_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько пользовательских управляемых удостоверений.|
+| `client_id` | (Необязательно.) Параметр строки запроса, указывающий client_id управляемого удостоверения, для которого требуется токен. Требуется, если виртуальная машина имеет несколько пользовательских управляемых удостоверений.|
 
 
 Пример ответа:
@@ -115,6 +120,26 @@ Content-Type: application/json
 | `not_before` | Период времени, когда маркер доступа вступает в силу и может быть принят. Дата представляется как количество секунд с 1970-01-01T0:0:0Z в формате UTC (соответствует утверждению `nbf` маркера). |
 | `resource` | Ресурс, для которого был запрошен маркер доступа, соответствует параметру строки запроса `resource`. |
 | `token_type` | Тип маркера, который является маркером доступа носителя, что значит, что ресурс может предоставлять доступ носителю этого маркера. |
+
+## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Получение токена с помощью библиотеки Microsoft.Azure.Services.AppAuthentication для .NET
+
+Самый простой способ для приложений и функций .NET работать с управляемыми удостоверениями службы заключается в использовании пакета Microsoft.Azure.Services.AppAuthentication. Эта библиотека также позволяет локально тестировать код на компьютере разработки с использованием учетной записи пользователя из Visual Studio, [Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest) или встроенной проверки подлинности Active Directory. Дополнительные сведения о параметрах локальной разработки с помощью этой библиотеки см. в [справочнике по Microsoft.Azure.Services.AppAuthentication]. В этом разделе показано, как начать работу с библиотекой в коде.
+
+1. Добавьте ссылки на пакеты NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) и [Microsoft.Azure.KeyVault](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) в приложение.
+
+2.  Добавьте в приложение следующий код:
+
+    ```csharp
+    using Microsoft.Azure.Services.AppAuthentication;
+    using Microsoft.Azure.KeyVault;
+    // ...
+    var azureServiceTokenProvider = new AzureServiceTokenProvider();
+    string accessToken = await azureServiceTokenProvider.GetAccessTokenAsync("https://management.azure.com/");
+    // OR
+    var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
+    ```
+    
+Дополнительные сведения о пакете Microsoft.Azure.Services.AppAuthentication и операциях, которые он предоставляет, см. в [справочнике Microsoft.Azure.Services.AppAuthentication ](/azure/key-vault/service-to-service-authentication) и [примерах службы приложений и хранилищах ключей с управляемым удостоверением службы .NET](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ## <a name="get-a-token-using-c"></a>Получение маркера с использованием C#
 

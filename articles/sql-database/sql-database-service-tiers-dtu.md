@@ -6,15 +6,15 @@ author: sachinpMSFT
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/28/2018
+ms.date: 08/01/2018
 manager: craigg
 ms.author: carlrab
-ms.openlocfilehash: d6dc641123e2bf840940f6246245a89fdd792db5
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 5d16763fc8f3331082b98216d25190b945d95b60
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131843"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39411826"
 ---
 # <a name="choosing-a-dtu-based-service-tier-performance-level-and-storage-resources"></a>Выбор уровня службы на основе DTU, уровень производительности и ресурсы хранилища 
 
@@ -48,6 +48,9 @@ ms.locfileid: "37131843"
 | Максимальное число DTU | 5 | 3000 | 4000 | |
 ||||||
 
+> [!IMPORTANT]
+> Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
+
 ## <a name="elastic-pool-edtu-storage-and-pooled-database-limits"></a>eDTU эластичного пула, хранилище и пределы для базы данных в пуле
 
 | | **базовая;** | **Стандартный** | **Премиальный** | 
@@ -61,6 +64,9 @@ ms.locfileid: "37131843"
 
 > [!IMPORTANT]
 > Хранилище ценовой категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, USGov — Айова, Северо-Восточная Германия, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+
+> [!IMPORTANT]
+> Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

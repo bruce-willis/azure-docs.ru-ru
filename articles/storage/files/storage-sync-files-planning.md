@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
-ms.openlocfilehash: 79f3787713d7615d8f5c42d1747dfa5ed96780cd
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 0493679575e9ff94ede1ad40c2bcadc6066afa6b
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214889"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399021"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Планирование развертывания службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -156,6 +156,10 @@ ms.locfileid: "39214889"
 
 В следующих решениях поддерживается пропуск автономных файлов:
 
+- [Защитник Windows](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus)
+    - Защитник Windows автоматически пропускает чтение таких файлов. Мы протестировали Защитник и обнаружили небольшую проблему — при добавлении сервера в существующую группу синхронизации файлы размером меньше 800 байт отзываются (скачиваются) на новый сервер. Эти файлы останутся на новом сервере и не будут передаваться, так как они не соответствуют требованиям к размерам для уровней (более 64 КБ).
+- [System Center Endpoint Protection (SCEP)](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-antivirus/configure-extension-file-exclusions-windows-defender-antivirus)
+    - SCEP работает так же, как Защитник (см. выше).
 - [Symantec Endpoint Protection](https://support.symantec.com/en_US/article.tech173752.html);
 - [McAfee EndPoint Security](https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/26000/PD26799/en_US/ens_1050_help_0-00_en-us.pdf) (дополнительные сведения см. в разделе о проверке только необходимых ресурсов на стр. 90 в PDF-файле);
 - [Kaspersky Anti-Virus](https://support.kaspersky.com/4684);

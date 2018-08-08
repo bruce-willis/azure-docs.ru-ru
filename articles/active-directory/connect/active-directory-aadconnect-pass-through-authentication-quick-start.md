@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 07/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 280d62f127c333ff195e921de380721170fd6a96
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 1b5640b790b07050336a990a06b66e5f89fcf768
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214988"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39308615"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Краткое руководство по сквозной проверке подлинности Azure Active Directory
 
@@ -45,7 +45,7 @@ ms.locfileid: "39214988"
 ### <a name="in-your-on-premises-environment"></a>В локальной среде
 
 1. Укажите сервер под управлением Windows Server 2012 R2 или более поздней версии для запуска Azure AD Connect. Добавьте этот сервер в тот же лес AD, что и пользователей, пароли которых требуется проверить.
-2. Установите [последнюю версию Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) на сервер, указанный на предыдущем шаге. Если вы уже используете Azure AD Connect, убедитесь, что установлена версия 1.1.644.0 или выше.
+2. Установите [последнюю версию Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) на сервер, указанный на предыдущем шаге. Если вы уже используете Azure AD Connect, убедитесь, что установлена версия 1.1.750.0 или выше.
 
     >[!NOTE]
     >В Azure AD Connect версий 1.1.557.0, 1.1.558.0, 1.1.561.0 и 1.1.614.0 есть проблема, связанная с синхронизацией хэшей паролей. Если вы _не_ собираетесь использовать синхронизацию хэшей паролей в сочетании со сквозной аутентификацией, прочитайте [заметки о выпуске Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history#116470).
@@ -73,7 +73,7 @@ ms.locfileid: "39214988"
 включить сквозную аутентификацию с помощью [Azure AD Connect](active-directory-aadconnect.md);
 
 >[!IMPORTANT]
->Ее можно включить на сервере-источнике или промежуточном сервере Azure AD Connect. Рекомендуется включить ее на сервере-источнике.
+>Ее можно включить на сервере-источнике или промежуточном сервере Azure AD Connect. Мы настоятельно рекомендуем включить ее на сервере-источнике. Если вы планируете настроить промежуточный сервер Azure AD Connect в будущем, **необходимо** также выбрать сквозную проверку подлинности в качестве параметра входа. Если выбрать другой вариант, сквозная проверка подлинности в клиенте будет **отключена**, что приведет к переопределению параметра на сервере-источнике.
 
 При первой установке Azure AD Connect выберите [пользовательский путь установки](active-directory-aadconnect-get-started-custom.md). На странице **Вход пользователя** в качестве **метода единого входа** выберите **Сквозная проверка подлинности**. После успешного завершения на том же сервере, где находится Azure AD Connect, будет установлен агент сквозной аутентификации. Кроме того, будет включена функция сквозной проверки подлинности на клиенте.
 
@@ -141,7 +141,7 @@ ms.locfileid: "39214988"
         RegisterConnector.ps1 -modulePath "C:\Program Files\Microsoft Azure AD Connect Authentication Agent\Modules\" -moduleName "AppProxyPSModule" -Authenticationmode Credentials -Usercredentials $cred -Feature PassthroughAuthentication
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
+- [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
 - [Текущие ограничения](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Узнайте о том, какие сценарии поддерживаются для сквозной аутентификации, а какие нет.
 - [Подробное техническое руководство](active-directory-aadconnect-pass-through-authentication-how-it-works.md). Поймите, как работает функция сквозной аутентификации.

@@ -1,27 +1,24 @@
 ---
-title: Управление параметрами двухфакторной проверки подлинности — Azure AD | Документация Майкрософт
+title: Управление настройками двухфакторной проверки подлинности в Azure Active Directory | Документация Майкрософт
 description: Управление использованием Многофакторной идентификации Azure, в том числе изменение контактных данных и настройка устройств.
-services: multi-factor-authentication
+services: active-directory
 keywords: многофакторная проверка подлинности клиента, проблемы с проверкой подлинности, идентификатор корреляции
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
 ms.reviewer: richagi
 ms.assetid: d3372d9a-9ad1-4609-bdcf-2c4ca9679a3b
-ms.service: multi-factor-authentication
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.service: active-directory
+ms.component: user-help
 ms.topic: conceptual
 ms.date: 05/23/2017
 ms.author: lizross
-ms.custom: end-user
-ms.openlocfilehash: ff48cb2cee5387f5dd5e0b89966a11fb76379337
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: c3fd74731dbed2c2f36d97b3cb42b383f8e4ca0f
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39057606"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345095"
 ---
 # <a name="manage-your-settings-for-two-step-verification"></a>Управление параметрами двухфакторной проверки подлинности
 Эта статья содержит информацию о том, как изменить параметры двухфакторной проверки подлинности или многофакторной идентификации. Если у вас возникают проблемы со входом в учетную запись, см. сведения об устранении неполадок в статье [Having trouble with two-step verification](multi-factor-authentication-end-user-troubleshoot.md) (Трудности с двухфакторной проверкой подлинности).

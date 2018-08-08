@@ -1,21 +1,20 @@
 ---
-title: Сведения о преобразовании речи в текст | Документация Майкрософт
+title: Сведения о преобразовании речи в текст
 description: Обзор возможностей API преобразования речи в текст.
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 2ed00377db80849a8355ccc895db12d006bea642
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: ba6710c8b5b8de1c63fa6778ea3853ab52365254
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069933"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325342"
 ---
 # <a name="about-the-speech-to-text-api"></a>Сведения об API преобразования речи в текст
 
@@ -33,7 +32,7 @@ API **преобразования речи в текст** предоставл
 
 - Настраиваемые языковые и акустические модели, которые позволяют адаптировать приложение к особенностям речи пользователей, среде общения и специализированному словарю.
 
-- Распознавание естественной речи. Благодаря интеграции с [Интеллектуальной службой распознавания речи](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS) вы можете извлекать из речи сведения о намерениях и сущностях. Пользователям не обязательно знать словарь, используемый приложением, а достаточно лишь своими словами описать свои требования.
+- Распознавание естественной речи. Благодаря интеграции со [службой "Распознавание речи"](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS) вы можете извлекать из речи сведения о намерениях и сущностях. Пользователям не обязательно знать словарь, используемый приложением, а достаточно лишь своими словами описать свои требования.
 
 ## <a name="api-capabilities"></a>Возможности API
 
@@ -51,4 +50,5 @@ API **преобразования речи в текст** предоставл
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)
-* [Распознавание речи в C#](quickstart-csharp-dotnet-windows.md)
+* [Краткое руководство. Распознавание речи в приложении C# для .NET Framework в Windows с помощью пакета SDK для службы "Речь"](quickstart-csharp-dotnet-windows.md)
+* [Распознавание намерений из речи с помощью пакета SDK службы "Речь" для C#](how-to-recognize-intents-from-speech-csharp.md)

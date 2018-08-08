@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: elioda
-ms.openlocfilehash: f335ffae153893a39312326738ee4188c3756ff4
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 19a129ec4646f13f1bd095dffd423f3b90bb32a7
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185481"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345466"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -79,7 +79,14 @@ ms.locfileid: "39185481"
 
   Дополнительные сведения о способах создания маркеров SAS см. в соответствующем разделе статьи [Управление доступом к Центру Интернета вещей][lnk-sas-tokens].
 
-  При тестировании также можно использовать средство [Device Explorer][lnk-device-explorer] или кроссплатформенное [расширение Azure IoT Toolkit для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) для быстрого создания маркера SAS, который можно скопировать и вставить в собственный код:
+  При тестировании также можно использовать кроссплатформенное [расширение Azure IoT Toolkit для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) или средство [Device Explorer][lnk-device-explorer] для быстрого создания токена SAS, который можно скопировать и вставить в собственный код:
+
+Для расширения Azure IoT Toolkit:
+
+  1. Разверните вкладку **AZURE IOT HUB DEVICES** (Устройства Центра Интернета вещей Azure) в левом нижнем углу Visual Studio Code.
+  2. Щелкните устройство правой кнопкой мыши и выберите **Generate SAS Token for Device** (Создать маркер безопасности SAS для этого устройства).
+  3. Задайте **время истечения срока действия** и нажмите клавишу "ВВОД".
+  4. Маркер SAS создается и копируется в буфер обмена.
 
 Для Device Explorer:
 
@@ -95,13 +102,6 @@ ms.locfileid: "39185481"
      Его часть используется в поле **Пароль** для подключения с использованием MQTT:
 
      `SharedAccessSignature sr={your hub name}.azure-devices.net%2Fdevices%2FMyDevice01%2Fapi-version%3D2016-11-14&sig=vSgHBMUG.....Ntg%3d&se=1456481802`
-     
-Для расширения Azure IoT Toolkit:
-
-  1. Разверните вкладку **AZURE IOT HUB DEVICES** (Устройства Центра Интернета вещей Azure) в левом нижнем углу Visual Studio Code.
-  2. Щелкните устройство правой кнопкой мыши и выберите **Generate SAS Token for Device** (Создать маркер безопасности SAS для этого устройства).
-  3. Задайте **время истечения срока действия** и нажмите клавишу "ВВОД".
-  4. Маркер SAS создается и копируется в буфер обмена.
 
 Для пакетов подключения и отключения MQTT Центр Интернета вещей создает событие в канале **мониторинга операций**. Это событие содержит дополнительные сведения, которые помогут устранить неполадки с подключением.
 

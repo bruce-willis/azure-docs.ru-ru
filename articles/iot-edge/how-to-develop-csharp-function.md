@@ -8,12 +8,12 @@ ms.date: 06/26/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3176a3a4acc6e9ca486d409d861f2ed0e63473ec
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: bf2d1af66cc3ecc35dafe3bcd43bf10399d71641
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056510"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39346721"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-azure-functions-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки Функций Azure для Azure IoT Edge
 
@@ -23,7 +23,7 @@ ms.locfileid: "39056510"
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows или Linux. Устройство IoT Edge может быть другим физическим устройством. Или вы можете имитировать устройство IoT Edge на компьютере разработки.
 
 > [!NOTE]
-> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Модули C# можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging). 
+> В этой статье об отладке показано, как присоединить процесс в контейнер модуля и выполнить отладку модуля с помощью VS Code. Функции C# можно отлаживать только в контейнерах amd64 Linux. С возможностями отладки Visual Studio Code можно ознакомиться в [этой статье](https://code.visualstudio.com/Docs/editor/debugging). 
 
 В этой статье в качестве основного средства разработки используется Visual Studio Code. Установите VS Code. Затем добавьте все необходимые расширения: 
 
@@ -71,7 +71,7 @@ VS Code принимает предоставленные сведения, со
 
 * В файле **deployment.template.json** указан новый модуль, а также пример модуля **tempSensor**, который имитирует данные для тестирования. Дополнительные сведения о том, как работают манифесты развертывания, см. в разделе [Сведения об использовании манифестов развертывания для развертывания модулей и установки маршрутов](module-composition.md).
 
-## <a name="devlop-your-module"></a>Разработка модуля
+## <a name="develop-your-module"></a>Разработка модуля
 
 Код Функции Azure по умолчанию, который поставляется с решением, находится в **modules** > **\<имя вашего модуля\>** > **EdgeHubTrigger-Csharp** > **run.csx**. Модуль и файл deployment.template.json настраиваются так, чтобы можно было собрать решение, передать его в реестр контейнеров и развернуть на устройстве, чтобы начать тестирование, не меняя код. Модуль просто принимает входные данные из источника (в данном случае модуль tempSensor имитирует данные) и передает их в Центр Интернета вещей. 
 

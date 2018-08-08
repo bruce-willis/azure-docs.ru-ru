@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: brenduns
 ms.reviewer: kivenkat
-ms.openlocfilehash: ddde2e6bad8a373df405ac05e78a5dbccd0257fc
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 4e77e187d969af7ea2a12754b18d4a218daceed6
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "34800646"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39411912"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack"></a>Обеспечение доступности масштабируемых наборов виртуальных машин в Azure Stack
 
@@ -31,10 +31,10 @@ ms.locfileid: "34800646"
 
 Azure Stack не поддерживает автоматическое масштабирование для масштабируемых наборов виртуальных машин. В масштабируемый набор можно добавить дополнительные экземпляры с помощью портала, шаблонов Resource Manager или PowerShell.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-- **Синдикация Marketplace**  
-    Регистрация Azure Stack в глобальной среде Azure для включения синдикации Marketplace. См. инструкции по [регистрации Azure Stack в Azure](azure-stack-registration.md).
+- **Marketplace**  
+    Зарегистрируйте Azure Stack в глобальной среде Azure, чтобы элементы стали доступны в Marketplace. См. инструкции по [регистрации Azure Stack в Azure](azure-stack-registration.md).
 - **Образ операционной системы**  
     При необходимости [добавьте образ виртуальной машины Windows Server 2016 в Azure Stack Marketplace](asdk/asdk-marketplace-item.md).
 

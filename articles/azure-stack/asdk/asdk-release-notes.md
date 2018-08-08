@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/04/2018
+ms.date: 07/30/2018
 ms.author: brenduns
 ms.reviewer: misainat
-ms.openlocfilehash: d86f0e96f64a56644b3161725f7f6a430568a72f
-ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
+ms.openlocfilehash: 2f732dfdfe9bf4aff2753114c3041f8f646421c2
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242705"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39344738"
 ---
 # <a name="azure-stack-development-kit-release-notes"></a>Заметки к выпуску Пакета средств разработки Azure Stack
 В этой статье содержатся сведения об улучшениях, исправлениях и известных проблемах Пакета средств разработки Azure Stack. Если вы не знаете, какая версия используется, проверьте ее [с помощью портала](.\.\azure-stack-updates.md#determine-the-current-version).
@@ -47,6 +47,8 @@ This build includes the following improvements and fixes for Azure Stack.
 ### <a name="known-issues"></a>Известные проблемы
  
 #### <a name="portal"></a>Microsoft Azure
+- <!-- TBD - IS ASDK --> С этой версией Azure Stack невозможно установить обновления драйверов с помощью пакета расширения OEM.  Для этой проблемы нет решения.
+ 
 - <!-- TBD - IS ASDK --> Не используйте новые типы административных подписок: *подписка для учета* и *подписка для контроля потребления*. Эти новые типы подписки появились в версии 1804, но они еще не готовы для использования. Продолжайте использовать тип подписки *Поставщик по умолчанию*.  
 
 - <!-- 2403291 - IS ASDK --> Возможно, вы не используете горизонтальную полосу прокрутки в нижней части административного и пользовательских порталов. Если не удается получить доступ к горизонтальной полосе прокрутки, с помощью строки навигации перейдите в предыдущую колонку портала, выбрав имя колонки, которую нужно просмотреть, в списке навигации в верхней левой части портала.
@@ -168,6 +170,8 @@ This build includes the following improvements and fixes for Azure Stack.
 ### <a name="known-issues"></a>Известные проблемы
  
 #### <a name="portal"></a>Microsoft Azure
+- <!-- TBD - IS ASDK --> С этой версией Azure Stack невозможно установить обновления драйверов с помощью пакета расширения OEM.  Для этой проблемы нет решения.
+ 
 - <!-- TBD - IS ASDK --> Возможность [открыть новый запрос на поддержку из раскрывающегося списка](.\.\azure-stack-manage-portals.md#quick-access-to-help-and-support) на портале администрирования недоступна. Вместо этого перейдите по следующей ссылке:     
     - Для Пакета средств разработки используйте ссылку https://aka.ms/azurestackforum.    
 

@@ -1,5 +1,5 @@
 ---
-title: Границы службы Language Understanding (LUIS) | Документы Майкрософт
+title: Границы службы "Распознавание речи" (LUIS) | Документация Майкрософт
 titleSuffix: Azure
 description: В этой статье приводятся известные ограничения LUIS.
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 05/07/2018
+ms.date: 07/31/2018
 ms.author: diberry
-ms.openlocfilehash: ea4f31094e27f1abbe57c212f262845fd16dd984
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 0a75c113f619aa70ba6c504f07afc8dc8a35b694
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225284"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399837"
 ---
 # <a name="luis-boundaries"></a>Границы LUIS
 У LUIS есть несколько областей границ. Первая — [граница модели](#model-boundaries), которая управляет намерениями, сущностями и возможностями в LUIS. Вторая область — [пределы квот](#key-limits) на основе типа ключа. Третья область границ — [сочетания клавиш](#keyboard-controls) для управления веб-сайтом LUIS. Четвертая область — [сопоставление региона мира](luis-reference-regions.md) между веб-сайтом разработки LUIS и API-интерфейсами [конечной точки](luis-glossary.md#endpoint) LUIS. 
@@ -31,7 +31,7 @@ ms.locfileid: "39225284"
 | Явный список | 50 для каждого приложения|
 | **[Иерархическая сущность](./luis-concept-entity-types.md) |100 с максимум десятью дочерними сущностями |
 | [Намерения][intents]|500 для каждого приложения<br>Приложение [на основе диспетчеризации](https://github.com/Microsoft/botbuilder-tools/tree/master/Dispatch) имеет 500 соответствующих источников диспетчеризации|
-| [Сущности списка](./luis-concept-entity-types.md) | Родитель: 50, потомок: 20 000 элементов. Каноническое имя — *макс. кол-во символов по умолчанию. Синонимы не имеют ограничений по длине. |
+| [Сущности списка](./luis-concept-entity-types.md) | Родитель: 50, потомок: 20 000 элементов. Каноническое имя — *макс. кол-во символов по умолчанию. Значения синонимов не имеют ограничений по длине. |
 | [Шаблоны](luis-concept-patterns.md)|500 шаблонов для каждого приложения.<br>Максимальная длина шаблона — 400 символов.<br>3 сущности Pattern.any для каждого шаблона<br>Максимум 2 вложенных необязательных текста в шаблоне|
 | [Pattern.Any](./luis-concept-entity-types.md)|100 для каждого приложения, 3 сущности pattern.any для каждого шаблона |
 | [Список фраз][phrase-list]|10 списков фраз, 5000 элементов для каждого списка|
@@ -41,6 +41,7 @@ ms.locfileid: "39225284"
 | **[Простая сущность](./luis-concept-entity-types.md)| 100 сущностей|
 | [Высказывание][utterances] | 500 символов|
 | [Высказывания][utterances] | 15 000 для каждого приложения|
+| [Версии](luis-concept-version.md)| без ограничений |
 | [Имя версии][luis-how-to-manage-versions] | 10 символов — только буквенно-цифровые и точка (.) |
 
 * Макс. кол-во символов по умолчанию — 50. 

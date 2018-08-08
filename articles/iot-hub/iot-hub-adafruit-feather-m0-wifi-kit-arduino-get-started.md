@@ -9,14 +9,15 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: rangv
-ms.openlocfilehash: 46763cbc53f70e25810a9849b71429a315a6fb7d
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: c9d786651198eeffd839f52b3d3c8e6c1a1168c4
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185369"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345426"
 ---
 # <a name="connect-adafruit-feather-m0-wifi-to-azure-iot-hub-in-the-cloud"></a>Подключение Adafruit Feather M0 WiFi к Центру Интернета вещей Azure в облаке
+
 [!INCLUDE [iot-hub-get-started-device-selector](../../includes/iot-hub-get-started-device-selector.md)]
 
 ![Подключение между датчиком BME280, платой Feather M0 WiFi и Центром Интернета вещей](media/iot-hub-adafruit-feather-m0-wifi-get-started/1_connection-m0-feather-m0-iot-hub.png)
@@ -61,6 +62,7 @@ ms.locfileid: "39185369"
 [!INCLUDE [iot-hub-get-started-create-hub-and-device](../../includes/iot-hub-get-started-create-hub-and-device.md)]
 
 ## <a name="connect-feather-m0-wifi-with-the-sensor-and-your-computer"></a>Подключение Feather M0 WiFi к датчику и компьютеру
+
 В этом разделе рассказывается о том, как подключить датчики к плате. Затем устройство подключается к компьютеру для дальнейшего использования.
 
 ### <a name="connect-a-dht22-temperature-and-humidity-sensor-to-feather-m0-wifi"></a>Подключение датчика температуры и влажности DHT22 к Feather M0 WiFi
@@ -74,7 +76,7 @@ ms.locfileid: "39185369"
 
 
 | Начало (датчик)           | Конец (плата)            | Цвет кабеля   |
-| -----------------------  | ---------------------- | ------------: |
+| -----------------------  | ---------------------- | ------------- |
 | VDD (вывод 27A)            | 3V (вывод 3A)            | Красный кабель     |
 | GND (вывод 29A)            | GND (вывод 6A)           | Черный кабель   |
 | SCK (вывод 30A)            | SCK (вывод 12A)          | Желтый кабель  |
@@ -83,8 +85,6 @@ ms.locfileid: "39185369"
 | CS (вывод 33A)             | GPIO 5 (вывод 15J)       | Оранжевый кабель  |
 
 Дополнительные сведения см. в статье [Adafruit BME280 Humidity + Barometric Pressure + Temperature Sensor Breakout](https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/wiring-and-test?view=all) (Выходы датчика влажности, атмосферного давления и температуры Adafruit BME280) и [Adafruit Feather M0 WiFi Pinouts](https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/pinouts) (Выводы платы Adafruit Feather M0 WiFi).
-
-
 
 Теперь работающий датчик должен быть подключен к Feather M0 WiFi.
 
@@ -136,6 +136,7 @@ ms.locfileid: "39185369"
 1. Откройте окно командной строки или терминала.
 
 2. Перейдите к папке, в которую необходимо сохранить пример приложения.
+
 3. Выполните следующую команду:
 
    ```bash
@@ -151,21 +152,21 @@ ms.locfileid: "39185369"
    ![Открытие примера приложения в Arduino IDE](media/iot-hub-adafruit-feather-m0-wifi-get-started/6_arduino-ide-open-sample-app.png)
 
 
-1. Щелкните **Файл** > **Параметры** (Windows или Linux) или **Arduino** > **Параметры** (Mac), скопируйте и вставьте ссылку ниже в параметр **Additional Boards Manager URLs** (Дополнительные URL-адреса для менеджера плат) в параметрах Arduino IDE.
+3. Щелкните **Файл** > **Параметры** (Windows или Linux) или **Arduino** > **Параметры** (Mac), скопируйте и вставьте ссылку ниже в параметр **Additional Boards Manager URLs** (Дополнительные URL-адреса для менеджера плат) в параметрах Arduino IDE.
    
    ```
    https://adafruit.github.io/arduino-board-index/package_adafruit_index.json
    ```
 
-1. Щелкните **Инструменты** > **Платы** > **Менеджер плат**, а затем установите `Arduino SAMD Boards` версии `1.6.2` или более новой. 
+4. Щелкните **Инструменты** > **Платы** > **Менеджер плат**, а затем установите `Arduino SAMD Boards` версии `1.6.2` или более новой. 
 
-1. Затем в том же окне установите пакет `Adafruit SAMD Boards`, чтобы добавить определения файлов платы.
+5. Затем в том же окне установите пакет `Adafruit SAMD Boards`, чтобы добавить определения файлов платы.
 
    ![Завершение установки пакета ESP8266](media/iot-hub-adafruit-feather-m0-wifi-get-started/7_arduino-ide-package-url.png)
 
-4. Щелкните **Инструменты** > **Платы** > **Adafruit M0 WiFi**.
+6. Щелкните **Инструменты** > **Платы** > **Adafruit M0 WiFi**.
 
-5. Установите драйверы (только для Windows). После подключения Feather M0 WiFi может потребоваться установить драйвер. Щелкните [ссылку для скачивания на веб-странице](https://github.com/adafruit/Adafruit_Windows_Drivers/releases/download/1.1/adafruit_drivers.exe), чтобы скачать установщик драйвера. Выполните соответствующие действия, чтобы установить необходимые драйверы.
+7. Установите драйверы (только для Windows). После подключения Feather M0 WiFi может потребоваться установить драйвер. Щелкните [ссылку для скачивания на веб-странице](https://github.com/adafruit/Adafruit_Windows_Drivers/releases/download/1.1/adafruit_drivers.exe), чтобы скачать установщик драйвера. Выполните соответствующие действия, чтобы установить необходимые драйверы.
 
 ### <a name="install-necessary-libraries"></a>Установка необходимых библиотек
 
@@ -182,7 +183,7 @@ ms.locfileid: "39185369"
    * `Adafruit BME280 Library`
    * `Adafruit Unified Sensor`
 
-3. Вручную установите `Adafruit_WINC1500`. Перейдите по [этой ссылке](https://github.com/adafruit/Adafruit_WINC1500) и нажмите кнопку **Clone or download** >  (Клонировать и скачать), а затем щелкните **Download ZIP** (Скачать ZIP-файл). Затем в интерфейсе IDE Arduino перейдите в меню **Sketch** (Эскиз)  > **Include Library** (Включить библиотеку)  > **Add .zip Library** (Добавить библиотеку ZIP) и добавьте ZIP-файл.
+3. Вручную установите `Adafruit_WINC1500`. Перейдите на веб-страницу [Adafruit_WINC1500](https://github.com/adafruit/Adafruit_WINC1500) и последовательно щелкните **Clone or download** (Клонировать или скачать)  >  **Download ZIP** (Скачать ZIP-файл). Затем в интерфейсе IDE Arduino перейдите в меню **Sketch** (Эскиз)  > **Include Library** (Включить библиотеку)  > **Add .zip Library** (Добавить библиотеку ZIP) и добавьте ZIP-файл.
 
 ### <a name="use-the-sample-application-if-you-dont-have-a-real-bme280-sensor"></a>Использование примера приложения при отсутствии физического датчика BME280
 
@@ -195,9 +196,10 @@ ms.locfileid: "39185369"
    ```c
    define SIMULATED_DATA true
    ```
+
    ![Настройка примера приложения для использования имитации данных](media/iot-hub-adafruit-feather-m0-wifi-get-started/8_arduino-ide-configure-app-use-simulated-data.png)
 
-3. Сохраните файл с помощью клавиш `Control-s`.
+3. Щелкните `Control-s`, чтобы сохранить файл.
 
 ### <a name="deploy-the-sample-application-to-feather-m0-wifi"></a>Развертывание примера приложения для Feather M0 WiFi
 
@@ -212,7 +214,9 @@ ms.locfileid: "39185369"
 1. В Arduino IDE щелкните **Инструменты** > **Монитор последовательного порта**.
 
 2. В окне монитора последовательного порта в правом нижнем углу в раскрывающемся списке слева выберите **No line ending** (Ничего не добавлять к отправляемой строке).
+
 3. В раскрывающемся списке справа выберите **115200 baud** (115200 бод).
+
 4. В поле ввода, расположенном в верхней части окна монитора последовательного порта, введете приведенные ниже сведения, а затем нажмите кнопку **Send** (Отправить).
 
    * Идентификатор SSID для подключения Wi-Fi.

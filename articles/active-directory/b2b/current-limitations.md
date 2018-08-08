@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.component: B2B
 ms.topic: article
 ms.date: 05/23/2017
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: 562076e9529ffeac4cb0f99c1ffd4d4866d0bd1a
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 34713f4bf43f047bdee8d87f2e4410d13ba3492d
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34267187"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39400097"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Ограничения службы совместной работы Azure Active Directory B2B
 К службе совместной работы Azure Active Directory B2B применяются ограничения, описанные в этой статье.
@@ -25,6 +25,9 @@ ms.locfileid: "34267187"
 
 ## <a name="instant-on"></a>Мгновенное включение
 В рабочих потоках службы совместной работы B2B пользователи добавляются в каталог и динамически обновляются в процессе активации приглашений, при назначении приложений и т. д. Операции обновления и записи обычно выполняются в одном экземпляре каталога и должны реплицироваться по всем экземплярам. Репликация будет завершена после обновления всех экземпляров. Иногда, когда объект записывается или обновляется в одном экземпляре, а вызов для извлечения этого объекта попадает на другой экземпляр, это вызывает задержку репликации. В таком случае выполните обновление или повторите попытку. Если вы пишете приложение с помощью нашего API, то повторы с некоторой задержкой являются хорошей защитной практикой для облегчения этой проблемы.
+
+## <a name="azure-ad-directories"></a>Каталоги Azure AD
+Для Azure AD B2B действуют ограничения каталогов служб Azure AD. Дополнительные сведения о количество каталогов, которые может создать пользователь, и количестве каталогов, с которыми может быть связан обычный или гостевой пользователь, см. в разделе [Ограничения службы Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

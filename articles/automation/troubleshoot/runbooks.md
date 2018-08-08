@@ -8,12 +8,12 @@ ms.date: 07/13/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: ea134cde8b174d020a0adf73256aec3a6c406eaa
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 48b2aab9d2a3937fb53a2e63efa26efc18a894f8
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237603"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413864"
 ---
 # <a name="troubleshoot-errors-with-runbooks"></a>Устранение ошибок c помощью модулей Runbook
 
@@ -94,6 +94,26 @@ Add-AzureAccount: AADSTS50079: Strong authentication enrollment (proof-up) is re
 Сведения об использовании сертификата с командлетами классической модели развертывания Azure см. в руководстве по [созданию и добавлению сертификатов для управления службами Azure](http://blogs.technet.com/b/orchestrator/archive/2014/04/11/managing-azure-services-with-the-microsoft-azure-automation-preview-service.aspx) Сведения об использовании субъекта-службы с командлетами диспетчера ресурсов Azure см. в статьях о [создании субъекта-службы с помощью портала Azure](../../azure-resource-manager/resource-group-create-service-principal-portal.md) и [аутентификации субъекта-службы в диспетчере ресурсов Azure](../../azure-resource-manager/resource-group-authenticate-service-principal.md).
 
 ## <a name="common-errors-when-working-with-runbooks"></a>Распространенные ошибки при работе с модулями Runbook
+
+### <a name="task-was-cancelled"></a>Сценарий. Выполнение модуля Runbook завершается ошибкой отмены задачи
+
+#### <a name="issue"></a>Проблема
+
+В модуле Runbook возникает ошибка, аналогичная приведенной ниже:
+
+```
+Exception: A task was canceled.
+```
+
+#### <a name="cause"></a>Причина:
+
+Это ошибка может быть вызвана использованием устаревших модулей Azure.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Эту ошибку можно устранить, обновив модули Azure до последней версии.
+
+В учетной записи службы автоматизации щелкните **Модули** и **Обновить модули Azure**. Обновление занимает примерно 15 минут. После его завершения перезапустите проблемный модуль.
 
 ### <a name="not-recognized-as-cmdlet"></a>Сценарий: сбой модуля Runbook из-за отсутствующего командлета
 

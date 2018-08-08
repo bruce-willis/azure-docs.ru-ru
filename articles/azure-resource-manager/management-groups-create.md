@@ -10,61 +10,64 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/09/2018
+ms.date: 07/31/2018
 ms.author: rithorn
-ms.openlocfilehash: f2b596b34aa18d20fa888ad40e82eccb90d5fd8c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: b35803de2cb503418d4373fe3429b81ec5474de4
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38465777"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358699"
 ---
 # <a name="create-management-groups-for-resource-organization-and-management"></a>Создание групп управления для упорядочения ресурсов и управления ими
-Группы управления — это контейнеры, которые помогают управлять доступом, политикой и соответствием требованиям в нескольких подписках. Создание таких контейнеров позволяет построить эффективную и экономную иерархию, которую можно использовать с [политикой Azure](../azure-policy/azure-policy-introduction.md) и [элементами управления доступом на основе ролей Azure](../role-based-access-control/overview.md). Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](management-groups-overview.md). 
 
-Функция групп управления предоставляется в общедоступной предварительной версии. Чтобы начать использование групп управления, войдите на [портал Azure](https://portal.azure.com) или воспользуйтесь [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups/0.0.1-preview), [Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az_extension_list_available) либо [REST API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview) для создания групп управления.   
+Группы управления — это контейнеры, которые помогают управлять доступом, политикой и соответствием требованиям в нескольких подписках. Создание таких контейнеров позволяет построить эффективную и экономную иерархию, которую можно использовать с [политикой Azure](../azure-policy/azure-policy-introduction.md) и [элементами управления доступом на основе ролей Azure](../role-based-access-control/overview.md). Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](management-groups-overview.md).
 
 Создание первой группы управления в каталоге может занять до 15 минут. Существуют процессы, выполняемые в первый раз при настройке службы групп управления в Azure для вашего каталога. По завершении процесса вы получите уведомление.  
 
-## <a name="how-to-create-a-management-group"></a>Как создать группу управления
+## <a name="create-a-management-group"></a>Создание группы управления
+
 Группу управления можно создать с помощью портала, PowerShell или Azure CLI.
 
 ### <a name="create-in-portal"></a>Создание на портале
 
 1. Войдите на [портал Azure](http://portal.azure.com).
 2. Выберите **Все службы** > **Группы управления**.
-3. На главной странице выберите **New Management group** (Создать группу управления). 
+3. На главной странице выберите **New Management group** (Создать группу управления).
 
-    ![Главная группа](media/management-groups/main.png) 
-4.  Заполните поле идентификатора группы управления. 
-    - **Идентификатор группы управления** — уникальный идентификатор каталога, используемый для отправки команд в этой группе управления. Идентификатор не редактируется после ее создания, так как он используется во всей системе Azure для идентификации этой группы. 
+    ![Главная группа](media/management-groups/main.png)
+4.  Заполните поле идентификатора группы управления.
+    - **Идентификатор группы управления** — уникальный идентификатор каталога, используемый для отправки команд в этой группе управления. Идентификатор не редактируется после ее создания, так как он используется во всей системе Azure для идентификации этой группы.
     - Поле отображаемого имени — это имя, которое отображается во всех разделах портала Azure. Отдельное отображаемое имя можно указать в необязательном поле при создании группы управления и изменить в любой момент.  
 
     ![Создание](media/management-groups/create_context_menu.png)  
 5.  Нажмите кнопку **Сохранить**.
 
-
 ### <a name="create-in-powershell"></a>Создание в PowerShell
-В PowerShell используются командлеты Add-AzureRmManagementGroups.   
+
+В PowerShell используются командлеты Add-AzureRmManagementGroups:
 
 ```azurepowershell-interactive
-C:\> New-AzureRmManagementGroup -GroupName Contoso 
+C:\> New-AzureRmManagementGroup -GroupName Contoso
 ```
+
 **GroupName** — уникальный создаваемый идентификатор. Этот идентификатор используется в других командах для ссылки на эту группу, и впоследствии его нельзя изменить.
 
-Если нужно, чтобы для группы управления на портале отображалось другое имя, следует добавить параметр **DisplayName** со строкой. Например, если нужно создать группу управления с именем (GroupName) Contoso и отображаемым именем (DisplayName) "Группа Contoso", необходимо использовать следующий командлет: 
+Если нужно, чтобы для группы управления на портале отображалось другое имя, следует добавить параметр **DisplayName** со строкой. Например, если нужно создать группу управления с именем (GroupName) Contoso и отображаемым именем (DisplayName) "Группа Contoso", необходимо использовать следующий командлет:
 
 ```azurepowershell-interactive
 C:\> New-AzureRmManagementGroup -GroupName Contoso -DisplayName "Contoso Group" -ParentId ContosoTenant
-``` 
+```
+
 Используйте параметр **ParentId**, чтобы создать эту группу управления под другим управлением.  
 
 ### <a name="create-in-azure-cli"></a>Создание в Azure CLI
-В Azure CLI используется команда az account management-group create. 
+
+В Azure CLI используется команда az account management-group create.
 
 ```azure-cli
 C:\ az account management-group create --group-name <YourGroupName>
-``` 
+```
 
 ---
 

@@ -10,12 +10,12 @@ ms.workload: web
 ms.topic: article
 ms.date: 06/28/2018
 ms.author: tdykstra
-ms.openlocfilehash: 31c0d8c43a1a7614ff1965853b8ce0a3997db6f4
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 5d30357e5308de0224590703bb5e68fbe73b882b
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37343242"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39343445"
 ---
 # <a name="how-to-prepare-for-an-inbound-ip-address-change"></a>Подготовка к изменению входящего IP-адреса
 
@@ -40,6 +40,8 @@ ms.locfileid: "37343242"
 2.  В меню навигации слева выберите **Службы приложений**.
 
 3.  Выберите в списке приложение Службы приложений Azure.
+
+4.  Если приложение является приложением-функцией, см. раздел [Function app inbound IP address](../azure-functions/ip-addresses.md#function-app-inbound-ip-address) (Входящий IP-адрес приложения-функции).
 
 4.  Под заголовком **Параметры** в области навигации слева щелкните **Свойства** и найдите раздел **Виртуальный IP-адрес**.
 

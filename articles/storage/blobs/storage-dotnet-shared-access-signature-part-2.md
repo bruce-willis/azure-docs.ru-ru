@@ -2,24 +2,19 @@
 title: Создание и использование подписанного URL-адреса (SAS) с хранилищем BLOB-объектов Azure | Документация Майкрософт
 description: В этом руководстве показано, как создать подписанные URL-адреса для использования с хранилищем больших двоичных объектов и как использовать их в клиентских приложениях.
 services: storage
-documentationcenter: ''
 author: tamram
-manager: timlt
-editor: tysonn
-ms.assetid: 491e0b3c-76d4-4149-9a80-bbbd683b1f3e
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: dotnet
 ms.topic: article
+ms.devlang: dotnet
 ms.date: 05/15/2017
 ms.author: tamram
-ms.openlocfilehash: 9dde12acde748c48b56f9f96ee772fca49954358
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: blobs
+ms.openlocfilehash: 6546553fa3537ac63d956dc5febfd77efe9fd34d
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23056799"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39400127"
 ---
 # <a name="shared-access-signatures-part-2-create-and-use-a-sas-with-blob-storage"></a>Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов
 
@@ -72,7 +67,7 @@ using Microsoft.WindowsAzure.Storage.Blob;
 ### <a name="generate-a-shared-access-signature-uri-for-a-container"></a>Создание универсального кода ресурса (URI) подписанного URL-адреса для контейнера
 Для начала мы добавим метод для создания подписанного URL-адреса для нового контейнера. В этом случае подпись не связана с хранимой политикой доступа, поэтому содержит сведения URI с указанием времени окончания срока действия подписи и предоставляемых ей разрешений.
 
-Во-первых, добавьте код для метода **Main()** , чтобы проверить подлинности доступа к вашей учетной записи хранения и создать новый контейнер:
+Во-первых, добавьте код для метода **Main()**, чтобы авторизовать доступ к вашей учетной записи хранения и создать новый контейнер:
 
 ```csharp
 static void Main(string[] args)

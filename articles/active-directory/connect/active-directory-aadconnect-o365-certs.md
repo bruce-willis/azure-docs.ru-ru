@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/20/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e8f6b30bb7cbe82159e86fa48721afce3f9477d8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4de24608ba9db174f343bf0d78029913e4b7868f
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34591503"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325689"
 ---
 # <a name="renew-federation-certificates-for-office-365-and-azure-active-directory"></a>Обновление сертификатов федерации для Office 365 и Azure AD
 ## <a name="overview"></a>Обзор
@@ -69,13 +69,19 @@ Azure AD пытается отслеживать метаданные федер
 >При использовании AD FS 2.0 необходимо сначала выполнить команду Add-Pssnapin Microsoft.Adfs.Powershell.
 
 ### <a name="step-2-confirm-that-ad-fs-and-azure-ad-are-in-sync"></a>Шаг 2. Убедитесь, что службы AD FS и Azure AD синхронизированы
-На сервере AD FS откройте командную строку Azure AD PowerShell и подключитесь к Azure AD.
+На сервере AD FS откройте командную строку MSOnline PowerShell и подключитесь к Azure AD.
 
 > [!NOTE]
-> Вы можете скачать Azure AD PowerShell [здесь](https://technet.microsoft.com/library/jj151815.aspx).
->
+> Командлеты MSOL являются частью модуля MSOnline PowerShell.
+> Модуль MSOnline PowerShell можно загрузить непосредственно из коллекции PowerShell.
+> 
 >
 
+    Install-Module MSOnline
+
+Подключитесь к Azure AD с помощью модуля PowerShell MSOnline.
+
+    Import-Module MSOnline
     Connect-MsolService
 
 Проверьте сертификаты, настроенные в AD FS, и свойства доверия Azure AD для указанного домена.
@@ -91,7 +97,7 @@ Azure AD пытается отслеживать метаданные федер
 
 | AutoCertificateRollover | Сертификаты синхронизированы с Azure AD | Метаданные федерации общедоступны | Срок действия | Действие |
 |:---:|:---:|:---:|:---:|:---:|
-| Yes |Yes |Yes |- |Никаких действий не требуется. См. раздел [Автоматическое возобновление действия сертификата для подписи маркера](#autorenew). |
+| Yes |Да |Yes |- |Никаких действий не требуется. См. раздел [Автоматическое возобновление действия сертификата для подписи маркера](#autorenew). |
 | Yes |Нет  |- |Менее 15 дней |Обновите немедленно. См. раздел [Возобновление действия сертификата для подписи маркера вручную](#manualrenew). |
 | Нет  |- |- |Менее 30 дней |Обновите немедленно. См. раздел [Возобновление действия сертификата для подписи маркера вручную](#manualrenew). |
 

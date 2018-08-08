@@ -8,14 +8,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: develop apps
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 08/01/2018
 ms.author: ninarn
-ms.openlocfilehash: 62b5f7470491027dbf5a1c60ee478268e969d1a8
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 1da4e8d94007653a43f187322c1d0e4077e337fa
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39113500"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39398943"
 ---
 # <a name="troubleshoot-diagnose-and-prevent-sql-connection-errors-and-transient-errors-for-sql-database"></a>Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL
 Эта статья содержит информацию о предотвращении, диагностике и устранении ошибок подключения и временных ошибок, которые происходят в клиентском приложении во время взаимодействия с базой данных SQL Azure. Узнайте, как настроить логику повторных попыток, создать строку подключения и настроить другие параметры подключения.
@@ -181,17 +181,21 @@ Connection Timeout = ConnectRetryCount * ConnectionRetryInterval
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
 
-### <a name="connection-adonet-461"></a>Подключение: ADO.NET 4.6.1
-Если для подключения к базе данных SQL программа использует классы ADO.NET, например **System.Data.SqlClient.SqlConnection**, мы рекомендуем использовать .NET Framework 4.6.1 или более позднюю версию.
+### <a name="connection-adonet-462-or-later"></a>Подключение: ADO.NET 4.6.2 или более поздней версии
+Если для подключения к Базе данных SQL программа применяет классы ADO.NET, например **System.Data.SqlClient.SqlConnection**, мы рекомендуем использовать .NET Framework 4.6.2 или более позднюю версию.
 
-ADO.NET 4.6.1:
+Начиная с ADO.NET 4.6.2:
+
+- Попытки повторного подключения для баз данных Azure SQL выполняются немедленно, чтобы повысить производительность приложений с поддержкой облака.
+
+Начиная с ADO.NET 4.6.1:
 
 * Предлагает повышенную надежность подключения к базам данных SQL с помощью метода **SqlConnection.Open**. В методе **Open** теперь реализованы лучшие механизмы повторных попыток при временных сбоях, в частности для некоторых ошибок, которые возникают при ожидании соединения.
 * Поддерживается работа с пулами подключений, а также эффективная проверка функционирования объекта соединения, который видит ваша программа.
 
 Когда вы используете объект соединения, входящий в пул подключений, программе следует временно закрывать подключение, если она его сейчас не использует. Повторное открытие подключения не требует высоких затрат, нужно просто создать новое подключение.
 
-Если вы используете пакет ADO.NET 4.0 или более раннюю версию, мы рекомендуем обновить его до последней версии. С ноября 2015 года доступна [версия ADO.NET 4.6.1](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx).
+Если вы используете пакет ADO.NET 4.0 или более раннюю версию, мы рекомендуем обновить его до последней версии. С августа 2018 года доступна [версия ADO.NET 4.6.2](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/).
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
 

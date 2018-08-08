@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/24/2017
 ms.author: cephalin
-ms.openlocfilehash: 16a6d8e34bdec6e597c5f04faf421d387a877bff
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 48e0e68794e83739835d97aa8a2b26516c660357
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34714890"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39345197"
 ---
 # <a name="buy-a-custom-domain-name-for-azure-web-apps"></a>Приобретение имени личного домена для веб-приложений Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "34714890"
 
 Эта статья предназначена для службы приложений Azure ("Веб-приложения", "Приложения API", "Мобильные приложения", Logic Apps). Сведения о виртуальной машине Azure или службе хранилища Azure см. в статье [Assign App Service domain to Azure VM or Azure Storage](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/31/assign-app-service-domain-to-azure-vm-or-azure-storage/) (Назначение домена службы приложений виртуальной машине Azure или службе хранилища Azure). Сведения об облачных службах см. в статье [Настройка пользовательского доменного имени для облачной службы Azure](../cloud-services/cloud-services-custom-domain-name-portal.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -77,6 +77,9 @@ ms.locfileid: "34714890"
 ![Подтверждение операции масштабирования](./media/app-service-web-tutorial-custom-domain/scale-notification.png)
 
 ## <a name="buy-the-domain"></a>Приобретение домена
+
+### <a name="pricing-information"></a>Сведения о ценах
+Сведения о ценах на домены Службы приложений Azure см. на [странице цен на Службу приложений](https://azure.microsoft.com/pricing/details/app-service/windows/) (прокрутите страницу вниз до раздела "Домен Службы приложений").
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 Откройте [портал Azure](https://portal.azure.com/) и войдите в систему, используя свою учетную запись Azure.

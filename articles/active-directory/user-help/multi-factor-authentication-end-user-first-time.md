@@ -1,27 +1,24 @@
 ---
-title: Настройка двухфакторной проверки подлинности — Azure AD | Документация Майкрософт
+title: Настройка двухфакторной проверки подлинности в Azure Active Directory | Документация Майкрософт
 description: Когда ваша компания настроит Многофакторную идентификацию Microsoft Azure, вам будет предложено зарегистрироваться для двухфакторной проверки подлинности. Узнайте, как настроить проверку подлинности.
-services: multi-factor-authentication
+services: active-directory
 keywords: как использовать каталог Azure, Active Directory в облаке, руководство по Active Directory
-documentationcenter: ''
 author: eross-msft
 manager: mtillman
 ms.reviewer: richagi
 ms.assetid: 46f83a6a-dbdd-4375-8dc4-e7ea77c16357
-ms.service: multi-factor-authentication
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
+ms.service: active-directory
+ms.component: user-help
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: lizross
-ms.custom: end-user
-ms.openlocfilehash: 1d0c60dedcb5eefb4ab9167b40c06c3616790719
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: d4ebecd11f4ca3d12a55cf25db31e31d7f528db8
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058526"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39343735"
 ---
 # <a name="set-up-my-account-for-two-step-verification"></a>Настройка учетной записи для двухфакторной проверки подлинности
 Двухфакторная проверка подлинности — это этап дополнительного обеспечения безопасности, который усиливает защиту учетной записи от несанкционированного доступа. Если вы читаете эту статью, скорее всего, вы получили по электронной почте уведомление о многофакторной проверке подлинности от администратора вашей организации или учебного заведения. Или, возможно, вы попытались выполнить вход и получили сообщение с просьбой настроить дополнительную проверку безопасности. В этом случае **вы не сможете войти в учетную запись, пока не завершите процесс автоматической регистрации**.

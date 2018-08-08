@@ -3,7 +3,7 @@ title: Мониторинг работоспособности Службы Azur
 description: В этой статье описывается, как можно легко просмотреть производительность контейнера AKS, чтобы быстро получить представление об использовании размещенной среды Kubernetes.
 services: log-analytics
 documentationcenter: ''
-author: MGoedtel
+author: mgoedtel
 manager: carmonm
 editor: ''
 ms.assetid: ''
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 07/18/2018
+ms.date: 07/30/2018
 ms.author: magoedte
-ms.openlocfilehash: 806487ec731a1b7fe02ccdfe6b285f5b2e119787
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: f84452af9c2c731d69d5805961266c46351a7687
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39249103"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39366102"
 ---
 # <a name="monitor-azure-kubernetes-service-aks-container-health-preview"></a>Мониторинг работоспособности контейнеров Службы Azure Kubernetes (AKS) (предварительная версия)
 
@@ -39,7 +39,7 @@ ms.locfileid: "39249103"
 
 - Новый или имеющийся кластер AKS.
 - Версия контейнерного Агента OMS для Linux: microsoft/oms:ciprod04202018 или более поздняя версия. Номер версии представлен датой в формате: *ммддгггг*. Этот агент устанавливается автоматически во время подключения службы работоспособности контейнеров. 
-- Рабочая область Log Analytics. Ее можно создать при включении мониторинга нового кластера AKS. Ее можно также создать с помощью [Azure Resource Manager](../log-analytics/log-analytics-template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портала Azure](../log-analytics/log-analytics-quick-create-workspace.md).
+- Рабочая область Log Analytics. Ее можно создать при включении мониторинга нового кластера AKS. Кроме того, средство подключения может создать рабочую область по умолчанию в стандартной группе ресурсов подписки кластера AKS. Если вы хотите создать ее самостоятельно, используйте [Azure Resource Manager](../log-analytics/log-analytics-template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../log-analytics/log-analytics-quick-create-workspace.md).
 - Пользователь с ролью "Участник" Log Analytics, позволяющий включить мониторинг контейнеров. Дополнительные сведения о том, как управлять доступом к рабочей области Log Analytics, см. в статье [Управление рабочими областями](../log-analytics/log-analytics-manage-access.md).
 
 ## <a name="components"></a>Компоненты 
@@ -47,14 +47,20 @@ ms.locfileid: "39249103"
 Возможность отслеживать производительность зависит от контейнерного Агента OMS для Linux, который собирает данные о событиях и производительности из всех узлов в кластере. Этот агент автоматически развертывается и регистрируется в указанной рабочей области Log Analytics после включения мониторинга контейнеров. 
 
 >[!NOTE] 
->Если вы уже развернули кластер AKS, то можете включить мониторинг с помощью предоставленного шаблона Azure Resource Manager, как показано далее в этой статье. Невозможно использовать `kubectl` для обновления, удаления, повторного развертывания или развертывания агента. 
+>Если вы уже развернули кластер AKS, то можете включить мониторинг с помощью Azure CLI или предоставив шаблон Azure Resource Manager, как показано далее в этой статье. Невозможно использовать `kubectl` для обновления, удаления, повторного развертывания или развертывания агента. 
 >
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 Войдите на [портале Azure](https://portal.azure.com). 
 
 ## <a name="enable-container-health-monitoring-for-a-new-cluster"></a>Включение мониторинга работоспособности контейнеров для нового кластера
-На портале Azure во время развертывания вы можете включить мониторинг для нового кластера AKS. Следуйте указаниям в статье [Краткое руководство. Развертывание кластера Службы контейнеров Azure (AKS)](../aks/kubernetes-walkthrough-portal.md). На странице **Мониторинг** для параметра **Включить мониторинг** выберите **Да**, а затем создайте рабочую область Log Analytics или выберите имеющуюся. 
+Во время развертывания вы можете включить мониторинг нового кластера AKS на портале Azure или с помощью Azure CLI. Чтобы включить мониторинг на портале, следуйте указаниям в статье [Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)](../aks/kubernetes-walkthrough-portal.md). На странице **Мониторинг** для параметра **Включить мониторинг** выберите **Да**, а затем создайте рабочую область Log Analytics или выберите имеющуюся. 
+
+Чтобы включить мониторинг нового кластера AKS, созданного с помощью Azure CLI, следуйте указаниям в разделе [Создание кластера AKS](../aks/kubernetes-walkthrough.md#create-aks-cluster).  
+
+>[!NOTE]
+>Если вы решили использовать Azure CLI, необходимо сначала установить интерфейс командной строки и использовать его локально. Необходимо запустить Azure CLI версии 2.0.27 или более поздней. Для определения версии выполните `az --version`. Если вам необходимо установить или обновить Azure CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli). 
+>
 
 После включения мониторинга и успешного выполнения всех задач настройки можно отслеживать производительность кластера одним из двух способов:
 
@@ -66,7 +72,20 @@ ms.locfileid: "39249103"
 После включения мониторинга может потребоваться подождать около 15 минут, прежде чем вы сможете просмотреть операционные данные кластера. 
 
 ## <a name="enable-container-health-monitoring-for-existing-managed-clusters"></a>Включение мониторинга работоспособности контейнеров для существующих управляемых кластеров
-Включить мониторинг уже развернутого кластера AKS можно с помощью портала Azure или предоставленного шаблона Azure Resource Manager, используя командлет PowerShell `New-AzureRmResourceGroupDeployment` или Azure CLI. 
+Включить мониторинг уже развернутого кластера AKS можно с помощью Azure CLI, портала или шаблона Azure Resource Manager, используя командлет PowerShell `New-AzureRmResourceGroupDeployment`. 
+
+### <a name="enable-monitoring-using-azure-cli"></a>Включение мониторинга с помощью Azure CLI
+Ниже показано, как включить мониторинг кластера AKS с помощью Azure CLI. В этом примере вы не обязаны предварительно создавать или указывать имеющуюся рабочую область. Эта команда упрощает процесс включения за счет создания рабочей области по умолчанию в стандартной группе ресурсов подписки кластера AKS, если эта область еще не создана в регионе.  Имя созданной рабочей области по умолчанию имеет формат *DefaultWorkspace-<GUID>-<Region>*.  
+
+```azurecli
+az aks enable-addons -a monitoring -n MyExistingManagedCluster -g MyExistingManagedClusterRG  
+```
+
+Результат должен выглядеть так:
+
+```azurecli
+provisioningState       : Succeeded
+```
 
 ### <a name="enable-monitoring-in-the-azure-portal"></a>Включение мониторинга на портале Azure
 Чтобы включить мониторинг контейнера AKS с помощью портала Azure, сделайте следующее:
@@ -297,6 +316,26 @@ User@aksuser:~$ kubectl get ds omsagent --namespace=kube-system
 NAME       DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
 omsagent   2         2         2         2            2           beta.kubernetes.io/os=linux   1d
 ```  
+
+## <a name="view-configuration-with-cli"></a>Просмотр конфигурации с помощью CLI
+С помощью команды `aks show` можно получить определенные сведения, например включено ли решение, идентификатор ресурса рабочей области Log Analytics, а также сводные данные о кластере.  
+
+```azurecli
+az aks show -g <resoourceGroupofAKSCluster> -n <nameofAksCluster>
+```
+
+Через несколько минут выполнение команды завершается и отображаются сведения о решении в формате JSON.  В результатах выполнения команды должен отобразиться профиль надстройки наблюдения. Вы должны увидеть результат, аналогичный следующему:
+
+```
+"addonProfiles": {
+    "omsagent": {
+      "config": {
+        "logAnalyticsWorkspaceResourceID": "/subscriptions/<WorkspaceSubscription>/resourceGroups/<DefaultWorkspaceRG>/providers/Microsoft.OperationalInsights/workspaces/<defaultWorkspaceName>"
+      },
+      "enabled": true
+    }
+  }
+```
 
 ## <a name="view-performance-utilization"></a>Просмотр данных об использовании производительности
 При открытии страницы работоспособности контейнера можно сразу просмотреть данные об использовании производительности всего кластера. Просмотреть сведения о кластере AKS можно посредством четырех перспектив:

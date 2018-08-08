@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 6/20/2018
 ms.author: victorh
-ms.openlocfilehash: 989ecf209dc5093b5e4c73f01f9e382fc1ad21e8
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: b8b5b1da902a854dacea7e3019e3fa1116f04212
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295534"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399150"
 ---
 # <a name="frequently-asked-questions-for-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -92,6 +92,8 @@ Set-AzureRmApplicationGateway -ApplicationGateway $gw
 **В. Поддерживает ли шлюз приложений заголовки X-Forwarded-For?**
 
 Да, шлюз приложений поддерживает заголовки X-Forwarded-For, X-Forwarded-Proto и X-Forwarded-Port в запросах, направленных к внутренней службе. Формат заголовка X-Forwarded-For представляет собой разделенный запятыми список вида "IP-адрес:порт". Допустимые значения для заголовка X-Forwarded-Proto — HTTP или HTTPS. Заголовок X-Forwarded-Port указывает порт, в котором запрос достигает шлюза приложений.
+
+Кроме того, в Шлюзе приложений вставляется заголовок X-Original-Host, содержащий исходный заголовок узла, с которым поступил запрос. Этот заголовок полезен в таких сценариях, как интеграция веб-сайта Azure, при которой заголовок узла входящих запросов изменяется, прежде чем трафик направляется к серверной части.
 
 **В. Сколько времени требуется для развертывания шлюза приложений? Работает ли шлюз приложений во время обновления?**
 

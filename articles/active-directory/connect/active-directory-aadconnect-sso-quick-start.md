@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/25/2018
+ms.date: 07/27/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: df936c697f500f5ab98becd1529cd321f9f3f5c4
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 24bda501f88d4f96fb558eeb6b21e437edd6d862
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259125"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325393"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 
@@ -49,7 +49,7 @@ ms.locfileid: "39259125"
     
 * **Включение современной аутентификации**. Для работы этой функции необходимо включить [современную аутентификацию](https://aka.ms/modernauthga) на клиенте.
 
-* **Использование последних версий клиентов Office 365**. Чтобы использовать автоматический вход для клиентов Office 365 (Outlook, Word, Excel и пр.), требуется версии 16.0.8730.xxxx или выше.
+* **Использование последних версий клиентов Office 365.** Чтобы использовать автоматический вход для клиентов Office 365 (Outlook, Word, Excel и пр.), вашим пользователям требуются версии 16.0.8730.xxxx и выше.
 
 ## <a name="step-2-enable-the-feature"></a>Шаг 2. Включение компонента
 
@@ -80,6 +80,9 @@ ms.locfileid: "39259125"
 4. Убедитесь, что функция **Эффективный единый вход** **включена**.
 
 ![Портал Azure: область "Azure AD Connect"](./media/active-directory-aadconnect-sso/sso10.png)
+
+>[!IMPORTANT]
+> При использовании функции простого единого входа в каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD). Для работы функции требуется учетная запись компьютера. Переместите учетную запись `AZUREADSSOACC` компьютера в подразделение (OU), где хранятся другие учетные записи компьютеров, чтобы управлять им таким же образом и избежать удаления.
 
 ## <a name="step-3-roll-out-the-feature"></a>Шаг 3. Развертывание компонента
 
@@ -194,7 +197,7 @@ Mozilla Firefox не выполняет аутентификацию Kerberos а
 
 Чтобы проверить функцию для конкретного пользователя, убедитесь, что соблюдаются все следующие условия:
   - Пользователь выполняет вход на корпоративном устройстве.
-  - Это устройство присоединено к домену Active Directory.
+  - Это устройство присоединено к домену Active Directory. Устройство _не_ требуется [присоединять к Azure AD](../active-directory-azureadjoin-overview.md).
   - У него должно быть прямое подключение к контроллеру домена по корпоративной проводной или беспроводной сети или через подключение удаленного доступа, например VPN-подключение.
   - Вы [развернули функцию](##step-3-roll-out-the-feature) для этого пользователя с помощью групповой политики.
 

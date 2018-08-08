@@ -1,21 +1,20 @@
 ---
-title: Создание пользовательских слов для активации | Документация Майкрософт
+title: Создание пользовательского слова для активации
 description: Создание пользовательских слов для активации с помощью пакета SDK для речевых устройств.
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.technology: speech
 ms.topic: article
 ms.date: 04/28/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 2575ed24bb931ca4da05dd6663b976406af590e6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 615a901c70fff92141442699ea6e4b8fce1c9ace
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35382891"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39282579"
 ---
 # <a name="create-a-custom-wake-word-using-speech-service"></a>Создание пользовательских слов для активации с помощью службы "Речь"
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: c7a5031fab10f44809f9533e43c3596d46dc77e3
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: c0c2e1748518b794916f1950c288ed1f4df628aa
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346031"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39309067"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure 
 База данных SQL Azure может выдавать журналы диагностики и метрик для упрощения мониторинга. Вы можете настроить Базу данных SQL для хранения сведений об использовании ресурсов, о рабочих ролях и сеансах, а также настроить подключение к одному из этих ресурсов Azure:
@@ -267,6 +267,8 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |Эластичный пул|Сведения о проценте использования DTU, используемых единицах DTU, ограничении DTU, проценте использования ЦП, проценте чтения физических данных, проценте записей в журнал, проценте сеансов, проценте рабочих ролей, хранилище, проценте хранилища, ограничении хранилища, проценте хранилища XTP. |
 |||
 
+### <a name="logs"></a>Журналы
+
 ### <a name="query-store-runtime-statistics"></a>Статистика среды выполнения хранилища запросов
 
 |Свойство|ОПИСАНИЕ|
@@ -460,6 +462,57 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |resource_owner_type_s|Владелец блокировки.|
 |blocked_process_filtered_s|Отчет о заблокированных процессах в формате XML.|
 |duration_d|Длительность блокировки в микросекундах.|
+
+### <a name="deadlocks-dataset"></a>Набор данных взаимоблокировки
+
+|Свойство|ОПИСАНИЕ|
+|---|---|
+|TenantId|Идентификатор клиента.|
+|SourceSystem|Всегда: Azure.|
+|TimeGenerated [UTC] |Метка времени, когда был записан журнал.|
+|type|Всегда: AzureDiagnostics.|
+|ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL.|
+|Категория|Имя категории. Всегда: Deadlocks.|
+|OperationName|Имя операции. Всегда: DeadlockEvent.|
+|Ресурс|Имя ресурса.|
+|ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES.|
+|SubscriptionId|GUID подписки, к которой относится база данных.|
+|ResourceGroup|Имя группы ресурсов, к которой принадлежит база данных.|
+|LogicalServerName_s|Имя сервера, к которому принадлежит база данных.|
+|ElasticPoolName_s|Имя эластичного пула, к которому принадлежит база данных (если она входит в пул).|
+|DatabaseName_s|Имя базы данных. |
+|ResourceId|Универсальный код ресурса (URI).|
+|deadlock_xml_s|Отчет о взаимоблокировке в формате XML.|
+
+### <a name="automatic-tuning-dataset"></a>Набор данных автоматической настройки
+
+|Свойство|ОПИСАНИЕ|
+|---|---|
+|TenantId|Идентификатор клиента.|
+|SourceSystem|Всегда: Azure.|
+|TimeGenerated [UTC]|Метка времени, когда был записан журнал.|
+|type|Всегда: AzureDiagnostics.|
+|ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL.|
+|Категория|Имя категории. Всегда: AutomaticTuning.|
+|Ресурс|Имя ресурса.|
+|ResourceType|Имя типа ресурса. Всегда: SERVERS/DATABASES.|
+|SubscriptionId|GUID подписки, к которой относится база данных.|
+|ResourceGroup|Имя группы ресурсов, к которой принадлежит база данных.|
+|LogicalServerName_s|Имя сервера, к которому принадлежит база данных.|
+|LogicalDatabaseName_s|Имя базы данных.|
+|ElasticPoolName_s|Имя эластичного пула, к которому принадлежит база данных (если она входит в пул).|
+|DatabaseName_s|Имя базы данных.|
+|ResourceId|Универсальный код ресурса (URI).|
+|RecommendationHash_s|Уникальный хэш рекомендаций по автоматической настройке.|
+|OptionName_s|Операция автоматической настройки.|
+|Schema_s|Схема базы данных.|
+|Table_s|Затронутая таблица.|
+|IndexName_s|Имя индекса.|
+|IndexColumns_s|Имя столбца.|
+|IncludedColumns_s|Включенные столбцы.|
+|EstimatedImpact_s|Предполагаемое влияние JSON-файла рекомендаций по автоматической настройке.|
+|Event_s|Тип события автоматической настройки.|
+|Timestamp_t|Метка времени последнего обновления.|
 
 ### <a name="intelligent-insights-dataset"></a>Набор данных Intelligent Insights
 Дополнительные сведения о [формате журнала Intelligent Insights](sql-database-intelligent-insights-use-diagnostics-log.md).

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/15/2018
+ms.date: 07/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 92b45c1038fd099926360dc80802ababf0e8ee93
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 6c0921a466864bf2b07711cfcd1eac397c5ced83
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37052772"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325359"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB или из нее с помощью фабрики данных Azure
 
@@ -165,6 +165,8 @@ ms.locfileid: "37052772"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство type приемника действия копирования должно иметь значение **DocumentDbCollectionSink**. |Yes |
+| writeBehavior |Описание способов записи данных в Cosmos DB. Допустимые значения: `insert` и `upsert`.<br/>Поведение **upsert** — замена документа, если документ с таким идентификатором уже существует. В противном случае вставьте его. Обратите внимание, что ADF автоматически создает идентификатор документа, если он не указан в исходном документе или сопоставлении столбцов). Это значит, что документ должен иметь идентификатор, чтобы обеспечить надлежащую работу upsert. |Нет (по умолчанию используется Insert) |
+| writeBatchSize | Фабрика данных использует [массовый исполнитель Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Cosmos DB. writeBatchSize определяет размер документов, которые мы каждый раз предоставляем в библиотеку. Вы можете попробовать увеличить writeBatchSize для повышения производительности. |Нет  |
 | nestingSeparator |Такой специальный символ в имени исходного столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает следующую структуру JSON в документе Cosmos DB: `"Name": {"First": "[value maps to this column from source]"}`, в которой nestedSeparator является точкой. |Нет (значение по умолчанию — точка `.`) |
 
 **Пример.**
@@ -191,7 +193,8 @@ ms.locfileid: "37052772"
                 "type": "<source type>"
             },
             "sink": {
-                "type": "DocumentDbCollectionSink"
+                "type": "DocumentDbCollectionSink",
+                "writeBehavior": "upsert"
             }
         }
     }

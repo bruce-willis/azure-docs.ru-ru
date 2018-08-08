@@ -1,21 +1,20 @@
 ---
-title: Поддерживаемые языки в службе "Речь" Microsoft Cognitive Services | Документация Майкрософт
+title: Поддерживаемые языки в службе "Речь" в Microsoft Cognitive Services
 description: Список языков, поддерживаемых службой "Речь".
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 04/28/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 06350decd9d9f15db7226b6f2c3580feb49a59d1
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 2a768846958f73ace22971f2f2ca8f886c9df252
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069580"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39282162"
 ---
 # <a name="supported-languages-for-speech-service"></a>Поддерживаемые языки для службы "Речь"
 

@@ -1,20 +1,19 @@
 ---
-title: API пакетного транскрибирования Azure | Документация Майкрософт для Azure
+title: API пакетного транскрибирования в Azure
 description: Примеры
 services: cognitive-services
 author: PanosPeriorellis
-manager: onano
 ms.service: cognitive-services
 ms.technology: Speech to Text
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: panosper
-ms.openlocfilehash: 9dd7479ae95f74123d9b762e42ec95e8dbf25818
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: f21973855ceb3a257627c147490ac50465c54020
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346450"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39281945"
 ---
 # <a name="batch-transcription"></a>Пакетное транскрибирование
 
@@ -178,4 +177,4 @@ WAV |  Stereo  |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Получение пробной версии службы "Речь"](https://azure.microsoft.com/try/cognitive-services/)
+* [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/)

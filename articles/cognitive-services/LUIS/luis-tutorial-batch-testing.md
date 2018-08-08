@@ -8,14 +8,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 07/16/2018
+ms.date: 07/25/2018
 ms.author: diberry
-ms.openlocfilehash: 0e1f5d29917ba381d4767faffb65847cd2ff210f
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: de33b4618eb31707d324098e894682dd254c8ee4
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237814"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358384"
 ---
 # <a name="improve-app-with-batch-test"></a>Улучшение приложения с помощью пакетного тестирования
 
@@ -31,9 +31,10 @@ ms.locfileid: "39237814"
 * Исправление ошибок 
 * Повторное тестирование пакета
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md#luis-website), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
+
 Если у вас нет приложения по управлению персоналом из раздела [Руководство. Проверка фрагментов речи конечной точки](luis-tutorial-review-endpoint-utterances.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл в формате JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории Github [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-review-HumanResources.json).
 
 Чтобы сохранить исходное приложение по управлению персоналом, клонируйте версию приложения на странице [Параметры](luis-how-to-manage-versions.md#clone-a-version) и назовите ее `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. 
@@ -41,6 +42,7 @@ ms.locfileid: "39237814"
 Обучите приложение.
 
 ## <a name="purpose-of-batch-testing"></a>Цель пакетного тестирования
+
 Пакетное тестирование позволяет проверить состояние активной, обученной модели с известным набором помеченных высказываний и сущностей. В пакетном файле в формате JSON добавьте высказывания и установите метки сущностей, которые нужно спрогнозировать внутри высказывания. 
 
 <!--The recommended test strategy for LUIS uses three separate sets of data: example utterances provided to the model, batch test utterances, and endpoint utterances. --> При использовании приложения, которое отличается от этого руководства, убедитесь, что вы *не* используете примеры высказываний, уже добавленных в намерение. Чтобы проверить высказывания пакетного тестирования по сравнению с примерами высказываний, [экспортируйте](luis-how-to-start-new-app.md#export-app) приложение. Сравните пример высказывания приложения с высказываниями пакетного тестирования. 
@@ -52,6 +54,7 @@ ms.locfileid: "39237814"
 * Разрешенные типы сущностей: только машинно-обученные сущности простых, иерархических (только родительских) и составных сущностей. Пакетное тестирование полезно только для машинно-обученных намерений и сущностей.
 
 ## <a name="create-a-batch-file-with-utterances"></a>Создание пакетного файла с высказываниями
+
 1. Создайте `HumanResources-jobs-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/). 
 
 2. В пакетный файл в формате JSON добавьте высказывания с **намерением**, которое должно быть спрогнозировано в тесте. 
@@ -62,15 +65,13 @@ ms.locfileid: "39237814"
 
 1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. 
 
-    [ ![Снимок экрана приложения LUIS с вкладкой "Test" (Тестировать), выделенной в верхней правой строке навигации](./media/luis-tutorial-batch-testing/hr-first-image.png)](./media/luis-tutorial-batch-testing/hr-first-image.png#lightbox)
-
 2. На правой панели щелкните ссылку **Batch testing panel** (Панель пакетного тестирования). 
 
-    [ ![Снимок экрана приложения LUIS с выделенной ссылкой "Batch test panel"](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png)](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png#lightbox) (Панель пакетного тестирования)
+    [![Снимок экрана приложения LUIS с выделенной ссылкой "Batch testing panel" (Панель пакетного тестирования)](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png)](./media/luis-tutorial-batch-testing/hr-batch-testing-panel-link.png#lightbox)
 
 3. Нажмите кнопку **Import dataset** (Импортировать набор данных).
 
-    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Import dataset"](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png#lightbox) (Импортировать набор данных)
+    [![Снимок экрана приложения LUIS с выделенной кнопкой "Import dataset" (Импортировать набор данных)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png)](./media/luis-tutorial-batch-testing/hr-import-dataset-button.png#lightbox)
 
 4. Выберите расположение файловой системы для файла `HumanResources-jobs-batch.json`.
 
@@ -80,15 +81,14 @@ ms.locfileid: "39237814"
 
 6. Нажмите кнопку **Запустить**. Дождитесь завершения теста.
 
-    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Run"](./media/luis-tutorial-batch-testing/hr-run-button.png)](./media/luis-tutorial-batch-testing/hr-run-button.png#lightbox) (Запустить)
-
 7. Щелкните **See results** (Просмотреть результаты).
 
 8. Просмотрите результаты на диаграмме и в условных обозначениях.
 
-    [ ![Снимок экрана приложения LUIS с результатами пакетного тестирования](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png)](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png#lightbox)
+    [![Снимок экрана приложения LUIS с результатами пакетного тестирования](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png)](./media/luis-tutorial-batch-testing/hr-intents-only-results-1.png#lightbox)
 
 ## <a name="review-batch-results"></a>Просмотр результатов пакетного тестирования
+
 Пакетная диаграмма отображает четыре квадранта результатов. В правой части диаграммы находится фильтр. По умолчанию фильтр устанавливается в первом намерении в списке. Фильтр содержит все намерения и только простые, иерархические (только родительские) и составные сущности. При выборе [раздела диаграммы](luis-concept-batch-test.md#batch-test-results) или точки внутри диаграммы соответствующие высказывания отображаются под диаграммой. 
 
 При наведении курсора на диаграмму с помощью колеса мыши можно увеличить или уменьшить отображение. Это полезно в тех случаях, когда на диаграмме собрано много плотно сгруппированных точек. 
@@ -96,6 +96,7 @@ ms.locfileid: "39237814"
 Диаграмма состоит из четырех квадрантов, два из которых выделены красным цветом. **Это разделы, требующие внимания**. 
 
 ### <a name="getjobinformation-test-results"></a>Результаты теста GetJobInformation
+
 Результаты теста **GetJobInformation**, отображаемые в фильтре, показывают, что 2 из четырех прогнозов были успешными. Выберите имя **False positive** (Ложное срабатывание) над верхним правым квадрантом, чтобы увидеть высказывания под диаграммой. 
 
 ![Высказывания пакетного тестирования службы LUIS](./media/luis-tutorial-batch-testing/hr-applyforjobs-false-positive-results.png)
@@ -109,6 +110,7 @@ ms.locfileid: "39237814"
 Высказывания, соответствующие верхней точке в разделе **Ложное срабатывание**, являются `Can I apply for any database jobs with this resume?` и `Can I apply for any database jobs with this resume?`. Для первого высказывания слово `resume` использовалось только в **ApplyForJob**. Для второго высказывания слово `apply` использовалось только в намерении **ApplyForJob**.
 
 ## <a name="fix-the-app-based-on-batch-results"></a>Исправление приложения на основе результатов пакетного тестирования
+
 Цель этого раздела — правильно спрогнозировать все высказывания для **GetJobInformation**, исправляя приложение. 
 
 По-видимому, быстрое исправление заключается в том, чтобы добавить эти высказывания пакетного файла к правильному намерению. Это не то, что нужно сделать. Нужно, чтобы служба LUIS правильно спрогнозировала эти высказывания, не добавляя их в качестве примеров. 
@@ -118,13 +120,10 @@ ms.locfileid: "39237814"
 Первый способ исправления заключается в добавлении дополнительных высказываний в **GetJobInformation**. Второй способ заключается в уменьшении веса слов типа `resume` и `apply` по отношению к намерению **ApplyForJob**. 
 
 ### <a name="add-more-utterances-to-getjobinformation"></a>Добавление дополнительных высказываний в **GetJobInformation**
+
 1. Закройте панель пакетного тестирования, нажав кнопку **Test** (Тестирование) на верхней панели навигации. 
 
-    [ ![Снимок экрана службы LUIS с выделенной кнопкой "Test" (Тестирование)](./media/luis-tutorial-batch-testing/hr-close-test-panel.png)](./media/luis-tutorial-batch-testing/hr-close-test-panel.png#lightbox)
-
 2. Выберите **GetJobInformation** из списка намерений. 
-
-    [ ![Снимок экрана службы LUIS с выделенной кнопкой "Test" (Тестирование)](./media/luis-tutorial-batch-testing/hr-select-intent-to-fix-1.png)](./media/luis-tutorial-batch-testing/hr-select-intent-to-fix-1.png#lightbox)
 
 3. Добавьте дополнительные высказывания, которые различаются по длине, подбору и расположению слов, поэтому обязательно включайте термины `resume`, `c.v.` и `apply`.
 
@@ -151,6 +150,7 @@ ms.locfileid: "39237814"
 4. Обучите приложение, выбрав **Train** (Обучать) в правом верхнем углу.
 
 ## <a name="verify-the-fix-worked"></a>Проверка применения исправления
+
 Чтобы проверить правильность прогнозирования высказываний пакетного тестирования, запустите пакетный тест еще раз.
 
 1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. Если результаты пакетного тестирования по-прежнему открыты, выберите **Назад к списку**.  
@@ -162,6 +162,7 @@ ms.locfileid: "39237814"
     ![Снимок экрана службы LUIS с выделенной кнопкой результатов пакетного тестирования](./media/luis-tutorial-batch-testing/hr-batch-test-intents-no-errors.png)
 
 ## <a name="create-batch-file-with-entities"></a>Создание пакетного файла с сущностями 
+
 Чтобы проверить сущности в пакетном тесте, они должны быть помечены в пакетном файле в формате JSON. Используются только машинно-обученные сущности: простые, иерархические (только родительские) и составные. Не добавляйте машинно-необученные сущности, потому что они всегда встречаются либо с помощью регулярных выражений, либо с явным текстовым совпадением.
 
 Изменение сущности для общего количества слов ([токенов](luis-glossary.md#token)) может повлиять на качество прогнозирования. Удостоверьтесь, что данные обучения, предоставленные намерению с помеченными высказываниями, включают в себя множество длин сущности. 
@@ -177,7 +178,7 @@ ms.locfileid: "39237814"
 
    [!code-json[Add the intents and entities to the batch test file](~/samples-luis/documentation-samples/tutorial-batch-testing/HumanResources-entities-batch.json "Add the intents and entities to the batch test file")]
 
-<!--TBD: when will the patterns fix be in for batch testing? -->
+
 ## <a name="run-the-batch-with-entities"></a>Запустите пакетный тест с сущностями
 
 1. Нажмите кнопку **Test** (Тестировать) в верхней панели навигации. 
@@ -192,11 +193,10 @@ ms.locfileid: "39237814"
 
 6. Нажмите кнопку **Запустить**. Дождитесь завершения теста.
 
-    [ ![Снимок экрана приложения LUIS с выделенной кнопкой "Run"](./media/luis-tutorial-batch-testing/hr-run-button.png)](./media/luis-tutorial-batch-testing/hr-run-button.png#lightbox) (Запустить)
-
 7. Щелкните **See results** (Просмотреть результаты).
 
 ## <a name="review-entity-batch-results"></a>Просмотр результатов пакетного тестирования сущностей
+
 Диаграмма открывается со всеми намерениями, которые были правильно спрогнозированы. Прокрутите вниз фильтр справа, чтобы найти прогнозирования ошибочных сущностей. 
 
 1. Выберите сущность **Job** в фильтре.
@@ -207,11 +207,12 @@ ms.locfileid: "39237814"
 
 2. Выберите **False Negative** (Ложный отрицательный результат) в левом нижнем квадранте диаграммы. Затем нажмите клавиши CTRL + Е для переключения в представление токена. 
 
-    [ ![Представления токенов прогнозов сущности](./media/luis-tutorial-batch-testing/token-view-entities.png)](./media/luis-tutorial-batch-testing/token-view-entities.png#lightbox)
+    [![Представление токена прогнозирования сущностей](./media/luis-tutorial-batch-testing/token-view-entities.png)](./media/luis-tutorial-batch-testing/token-view-entities.png#lightbox)
     
     При просмотре высказываний под диаграммой появляется непротиворечивая ошибка, когда имя задания включает `SQL`. Рассматривая примеры высказываний и список фраз Job, SQL используется только один раз и только как часть более крупного имени задания `sql/oracle database administrator`.
 
 ## <a name="fix-the-app-based-on-entity-batch-results"></a>Исправление приложения на основе результатов пакетного тестирования сущностей
+
 Исправление приложения требует, чтобы служба LUIS правильно определяла варианты задания SQL. Существует несколько вариантов исправления. 
 
 * Явным образом добавьте несколько примеров высказываний, которые используют SQL и помечают эти слова в качестве сущности Job. 
@@ -222,11 +223,12 @@ ms.locfileid: "39237814"
 Добавление [шаблона](luis-concept-patterns.md) до того, как сущность будет правильно спрогнозирована, не решит проблему. Это связано с тем, что шаблон не будет соответствовать, пока не будут обнаружены все сущности в шаблоне. 
 
 ## <a name="what-has-this-tutorial-accomplished"></a>Какие результаты работы с этим руководством?
+
 Точность прогнозирования приложения увеличилась путем поиска ошибок в пакете и исправления модели. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие **...** справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
+Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие **...** справа от имени приложения в списке и выберите пункт **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

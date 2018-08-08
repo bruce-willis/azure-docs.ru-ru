@@ -1,25 +1,22 @@
 ---
-title: Резервное копирование и восстановление с помощью приложения Microsoft Authenticator в Azure AD | Документация Майкрософт
+title: 'Резервное копирование и восстановление с помощью приложения Microsoft Authenticator: Azure Active Directory | Документация Майкрософт'
 description: Узнайте, как выполнять резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
-services: multi-factor-authentication
-documentationcenter: ''
+services: active-directory
 author: eross-msft
 manager: mtillman
-ms.service: multi-factor-authentication
+ms.component: user-help
+ms.service: active-directory
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: lizross
 ms.reviewer: olhaun
-ms.custom: end-user
-ms.openlocfilehash: a9c950ecafd2eb5f3aed1bee3707f57be6ec3b62
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 29226f0645a772ffe02e378c9b4df0a87909731a
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39058556"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358126"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
 
@@ -51,7 +48,7 @@ ms.locfileid: "39058556"
 ## <a name="recover-your-account-credentials-on-your-new-device"></a>Восстановление учетных данных на новое устройство
 Вы можете восстановить учетные данные из учетной записи iCloud, используя ту же учетную запись Майкрософт, которую вы указали для восстановления при настройке резервного копирования.
 
-**Восстановление информации из резервной копии**
+### <a name="to-recover-your-information"></a>Восстановление информации
 1.  На устройстве iOS откройте приложение Microsoft Authenticator и выберите действие **Начать восстановление** в нижней части экрана.
 
     ![Приложение Microsoft Authenticator и расположение элемента, позволяющего запустить восстановление данных](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-begin-recovery.png)
@@ -67,7 +64,7 @@ ms.locfileid: "39058556"
 
 Для личных учетных записей Майкрософт идентификацию можно подтвердить, введя пароль и альтернативный адреса электронной почты или номер телефона. Для рабочих или учебных учетных записей следует отсканировать QR-код, предоставленный поставщиком этой учетной записи.
 
-**Дополнительная проверка для личных учетных записей**
+### <a name="to-provide-additional-verification-for-personal-accounts"></a>Дополнительная проверка для личных учетных записей
 1.  На экране **Учетные записи** в приложении Microsoft Authenticator выберите стрелку раскрывающегося списка рядом с той учетной записью, которую нужно восстановить.
 
     ![Приложение Microsoft Authenticator со списком доступных учетных записей, рядом с которыми отображаются стрелки раскрывающихся списков](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-arrow.png)
@@ -76,7 +73,7 @@ ms.locfileid: "39058556"
 
     ![Приложение Microsoft Authenticator на странице ввода сведений для входа в систему](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-sign-in.png)
 
-**Дополнительная проверка для рабочих или учебных учетных записей**
+### <a name="to-provide-additional-verification-for-work-or-school-accounts"></a>Дополнительная проверка для рабочих или учебных учетных записей
 1.  На экране **Учетные записи** в приложении Microsoft Authenticator выберите стрелку раскрывающегося списка рядом с той учетной записью, которую нужно восстановить.
 
     ![Приложение Microsoft Authenticator со списком доступных учетных записей, рядом с которыми отображаются стрелки раскрывающихся списков](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-additonal-accts.png)
@@ -86,7 +83,7 @@ ms.locfileid: "39058556"
     ![Приложение Microsoft Authenticator на странице сканирования QR-кода](./media/microsoft-authenticator-app-backup-and-recovery/backup-and-recovery-scan-qr-code.png)
 
     >[!NOTE]
-    >Дополнительные сведения о том, как получить QR-код, см. в статье о [начале работы с приложением Microsoft Authenticator](https://docs.microsoft.com/en-us/azure/multi-factor-authentication/end-user/microsoft-authenticator-app-how-to).
+    >Дополнительные сведения о том, как получить QR-код, см. в [разделе "Добавление учетной записи в приложение" статьи "Начало работы с приложением Microsoft Authenticator"](https://docs.microsoft.com/azure/active-directory/user-help/microsoft-authenticator-app-how-to#add-accounts-to-the-app).
 
 ## <a name="troubleshooting-backup-and-recovery-problems"></a>Устранение неполадок с резервным копированием и восстановлением
 Есть несколько причин, по которым резервные копии могут оказаться недоступны.

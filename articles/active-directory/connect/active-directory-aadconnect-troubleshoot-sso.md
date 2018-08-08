@@ -9,15 +9,15 @@ ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
-ms.date: 07/25/2018
+ms.date: 07/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 563958458979d0a0a28046ce35d21bd58be631ce
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 65757abe13c45ce1a929c4648637f98360659030
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259302"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284876"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -76,7 +76,7 @@ ms.locfileid: "39259302"
 - Проверьте, включена ли функция простого единого входа в Azure AD Connect. Если функцию не удается включить (например, из-за заблокированного порта), обеспечьте соблюдение всех [предварительных требований](active-directory-aadconnect-sso-quick-start.md#step-1-check-the-prerequisites).
 - Если вы включили и [присоединение к Azure AD](../active-directory-azureadjoin-overview.md), и эффективный единый вход для клиента, убедитесь, что проблема не связана с присоединением к Azure AD. Единый вход при присоединении Azure AD имеет приоритет над эффективным единым входом, если устройство зарегистрировано в Azure AD и присоединено к домену. При едином входе с присоединением к Azure AD отображается плитка входа с надписью "Подключено к Windows".
 - Убедитесь, что URL-адрес Azure AD (https://autologon.microsoftazuread-sso.com) указан в параметрах зоны интрасети пользователя.
-- Убедитесь, что корпоративное устройство присоединено к домену Active Directory.
+- Убедитесь, что корпоративное устройство присоединено к домену Active Directory. Для функционирования простого единого входа устройство _не обязательно_ должно быть [присоединено к Azure AD](../active-directory-azureadjoin-overview.md).
 - Убедитесь, что пользователь вошел в систему с этого устройства с помощью доменной учетной записи Active Directory.
 - Убедитесь, что учетная запись пользователя относится к лесу Active Directory, в котором настроен простой единый вход.
 - Убедитесь, что устройство подключено к корпоративной сети.
@@ -120,8 +120,8 @@ ms.locfileid: "39259302"
 
 1. Вызовите `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
 
->[!NOTE]
->Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
+    >[!NOTE]
+    >Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
 
 2. Вызовите `Disable-AzureADSSOForest -OnPremCredentials $creds`. Эта команда удаляет учетную запись компьютера `AZUREADSSOACCT` с локального контроллера домена для конкретного леса Active Directory.
 3. Повторите предыдущие шаги для каждого леса Active Directory, в котором настроена эта функция.
@@ -129,12 +129,10 @@ ms.locfileid: "39259302"
 ### <a name="step-4-enable-seamless-sso-for-each-active-directory-forest"></a>Шаг 4. Включение простого единого входа для каждого леса Active Directory
 
 1. Вызовите `Enable-AzureADSSOForest`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
-
->[!NOTE]
->Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
-
+   >[!NOTE]
+   >Мы используем имя пользователя администратора домена, указанное в формате имени участника-пользователя (johndoe@contoso.com) или формате полного доменного имени учетной записи SAM (contoso\johndoe или contoso.com\johndoe), чтобы найти предполагаемый лес AD. Если вы используете полное доменное имя учетной записи SAM, то мы используем доменную часть имени пользователя, чтобы [найти контроллер домена администратора домена с помощью DNS](https://social.technet.microsoft.com/wiki/contents/articles/24457.how-domain-controllers-are-located-in-windows.aspx). Если же вы используете имя участника-пользователя, то мы [преобразуем его в полное доменное имя учетной записи SAM](https://docs.microsoft.com/windows/desktop/api/ntdsapi/nf-ntdsapi-dscracknamesa), прежде чем найти соответствующий контроллер домена.
 2. Повторите предыдущие шаги для каждого леса Active Directory, в котором должна быть настроена эта функция.
 
 ### <a name="step-5-enable-the-feature-on-your-tenant"></a>Шаг 5. Включить функцию в своем клиенте
 
-Чтобы включить эту функцию в клиенте, вызовите `Enable-AzureADSSO` и введите **true** в командной строке `Enable:`.
+Чтобы включить эту функцию на клиенте, вызовите `Enable-AzureADSSO -Enable $true`.

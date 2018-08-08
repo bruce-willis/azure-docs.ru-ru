@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Распознавание речи в приложении C# для .NET Core в Windows с помощью пакета SDK службы "Речь" в Cognitive Services | Документация Майкрософт
+title: Краткое руководство. Распознавание речи в приложении C# для .NET Core в Windows с помощью пакета SDK службы "Речь" в Cognitive Services
 titleSuffix: Microsoft Cognitive Services
 description: Узнайте, как распознавать речь в приложении C# для .NET Core в Windows с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: wolfma61
-manager: onano
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 50cf1bbbe529b30da6bfe39281d11eee1c788dd8
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 7790920b6553ba0e2738d693710bfc3a1d3b4f89
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259166"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325107"
 ---
 # <a name="quickstart-recognize-speech-in-c-under-net-core-on-windows-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C# для .NET Core в Windows с помощью пакета SDK для службы "Речь".
+
+[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как в Windows с помощью пакета SDK службы "Речь" в Cognitive Services создать консольное приложение C# для .NET Core, которое будет преобразовывать речь в текст.
 Приложение основано на [пакете SDK NuGet для Microsoft Cognitive Services](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
@@ -83,6 +84,6 @@ ms.locfileid: "39259166"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Translate speech using Speech service](how-to-translate-speech.md) (Перевод речи с помощью службы распознавания речи)
+- [Translate speech using Speech service](how-to-translate-speech-csharp.md) (Перевод речи с помощью службы распознавания речи)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

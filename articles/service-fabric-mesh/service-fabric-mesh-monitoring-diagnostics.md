@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 06/22/2018
 ms.author: srrengar
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 79e5622dd73e53854204675b435e99d187a3ab26
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 9f857c23b5500bc7790a0ff7fcf81eaec51f37c9
+ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075884"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39358329"
 ---
 # <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
 Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать приложения для микрослужб без управления виртуальными машинами, хранилищем или сетями. В мониторинге и диагностике для Сетки Service Fabric выделяют три основных типа диагностических данных.
@@ -40,7 +40,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> 
 ```
 
 > [!NOTE]
-> Для получения имени реплики можно использовать команду "az mesh servicereplica". Имена реплик — это возрастающие числа, начиная с 0.*
+> Для получения имени реплики можно использовать команду az mesh service-replica. Имена реплик — это возрастающие числа, начиная с 0.*
 
 Далее приводится пример просмотра журналов из контейнера VotingWeb.Code из приложения для голосования.
 
@@ -49,5 +49,5 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о Сетке Service Fabric см. в статье
-- [Сведения о Сетке Service Fabric](service-fabric-mesh-overview.md)
+Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот обзор:
+- [Обзор службы "Сетка Service Fabric"](service-fabric-mesh-overview.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/20/2018
 ms.author: msfussell
-ms.openlocfilehash: 4d248724597a411f7253be1ccca0be6b85db95af
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 3c8eac98414fa43213136940fb4c91694a78a2c1
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237185"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39397532"
 ---
 # <a name="dns-service-in-azure-service-fabric"></a>Служба DNS в Azure Service Fabric
 Служба DNS является необязательной системной службой, которую можно включить в кластере для обнаружения других служб с помощью протокола DNS. 
@@ -159,7 +159,7 @@ DNS-имя службы можно задать при ее создании с 
     -ServiceDnsName service1.application1
 ```
 
-## <a name="making-dns-queries-on-a-stateful-service-partition"></a>Создание DNS-запросов в секции службы с отслеживанием состояния
+## <a name="preview-making-dns-queries-on-a-stateful-service-partition"></a>Создание запросов DNS в секции службы с отслеживанием состояния (предварительная версия)
 Начиная с Service Fabric версии 6.3, служба DNS Service Fabric поддерживает запросы для секций службы.
 
 Для секций, которые будут использоваться в запросах DNS, применяются следующие ограничения именования:
@@ -249,6 +249,8 @@ public class ValuesController : Controller
 }
 ```
 
+## <a name="known-issues"></a>Известные проблемы
+* В Service Fabric 6.3 и более поздних версий возникает проблема с запросами DNS для служб, в именах которых содержится дефис в рамках имени DNS. Дополнительные сведения об этой проблеме см. [на сайте GitHub](https://github.com/Azure/service-fabric-issues/issues/1197). Эта проблема будет устранена в следующем обновлении 6.3. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения о взаимодействии служб в кластере см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними](service-fabric-connect-and-communicate-with-services.md).

@@ -7,20 +7,23 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 06/29/2018
+ms.date: 08/01/2018
 ms.author: carlrab
-ms.openlocfilehash: ea912d2b2297cf64b51ea4c50b36b3847fcc1bf8
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 128b4bc787cd882e719ee3332d285af44b15dfe2
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131894"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39412996"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
 Эта статья содержит подробные сведения об ограничениях для эластичных пулов и базах данных в пулах в службе "База данных SQL Azure" в модели приобретения на основе DTU. 
 
 Сведения об ограничениях ресурсов в модели приобретения на основе DTU см. в разделе [Ограничения ресурсов в модели приобретения на основе DTU — одиночные базы данных](sql-database-vcore-resource-limits-elastic-pools.md). Сведения об ограничениях ресурсов в модели приобретения на основе виртуальных ядер см. в разделах [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — одиночные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
+
+> [!IMPORTANT]
+> Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
 ## <a name="elastic-pool-storage-sizes-and-performance-levels"></a>Эластичный пул: размеры хранилища и уровни производительности
 

@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь" в Cognitive Services | Документация Майкрософт
+title: Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь" в Cognitive Services
 titleSuffix: Microsoft Cognitive Services
 description: Узнайте, как распознавать речь в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: wolfma61
-manager: onano
 ms.service: cognitive-services
 ms.technology: Speech
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 4a8c5f7053c1976233bf9de6a0c142885b73c8aa
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 7c93f9f450cc2d244a0d716401171cde02abf70b
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39071204"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39324577"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-windows-desktop-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь"
+
+[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Здесь описано, как создать консольное приложение на C ++ для Windows Desktop, которое использует пакет SDK для распознавания речи.
 Приложение основано на [пакете SDK (NuGet) для службы "Речь" в Microsoft Cognitive Services](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
@@ -94,4 +95,4 @@ ms.locfileid: "39071204"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные примеры можно найти на [странице с примерами](samples.md).
+* [Получить примеры](speech-sdk.md#get-the-samples)

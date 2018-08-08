@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 06/07/2018
+ms.date: 07/25/2018
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: 34b56c7435e2995f806828dce34f3d6bf425ca75
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 5d6254efbb6051bf4fcd01abd4fbf858b0211319
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449312"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39399946"
 ---
 # <a name="assigning-administrator-roles-in-azure-active-directory"></a>Назначение ролей администратора в Azure Active Directory
 
@@ -48,8 +48,6 @@ ms.locfileid: "37449312"
   > [!NOTE]
   > Чтобы развернуть политику условного доступа Exchange ActiveSync в Azure, у пользователя должны быть права глобального администратора.
   
-* **[Администратор службы Dynamics 365 / администратор служб CRM](#crm-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft CRM Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
-
 * **[Администраторы устройств](#device-administrators)**: пользователи с этой ролью становятся администраторами локальных компьютеров всех устройств с Windows 10, присоединенных к Azure Active Directory. Они не могут управлять объектами устройств в Azure Active Directory.
 
 * **[Читатели каталогов](#directory-readers)**: это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/active-directory-integrating-applications.md). Ее не следует назначать пользователям.
@@ -57,6 +55,8 @@ ms.locfileid: "37449312"
 * **[Учетные записи для синхронизации службы каталогов](#directory-synchronization-accounts)**: не используйте. Эта роль автоматически назначается службе Azure AD Connect, она не предназначена для любого другого использования.
 
 * **[Писатели в каталоги](#directory-writers)**: это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/active-directory-integrating-applications.md). Ее не следует назначать пользователям.
+
+* **[Администратор службы Dynamics 365 или администратор служб CRM:](#dynamics-365-service-administrator)** пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
 
 * **[Администратор службы Exchange](#exchange-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Exchange Online при наличии этой службы. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
@@ -267,11 +267,6 @@ ms.locfileid: "37449312"
 Может контролировать все аспекты служб Azure AD и Майкрософт, использующих удостоверения Azure AD. В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор организации". На [портале Azure](https://portal.azure.com)это "Глобальный администратор".
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
-  >
-  >
-
-  > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
   >
   >
@@ -357,27 +352,6 @@ ms.locfileid: "37449312"
 | microsoft.aad.directory/ConditionalAccessPolicy/Update | Изменение стандартных свойств для объектов ConditionalAccessPolicy в Azure Active Directory. |
 | microsoft.aad.directory/ConditionalAccessPolicy/Update/Owners | Изменение свойства ConditionalAccessPolicys.Owners в Azure Active Directory. |
 
-### <a name="crm-service-administrator"></a>Администратор службы CRM
-Может контролировать все аспекты продукта Dynamics 365.
-
-  > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
-  >
-  >
-
-  > [!NOTE]
-  > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
-  >
-  >
-
-| **Действия** | **Описание** |
-| --- | --- |
-| microsoft.aad.directory/Organization/Read/TrustedCAsForPasswordlessAuth | Чтение свойства Organizations.TrustedCAsForPasswordlessAuth в Azure Active Directory. |
-| microsoft.aad.accessservice/AllEntities/AllActions | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в Azure Access Control. |
-| microsoft.aad.servicehealth/AllEntities/AllActions | Чтение и настройка работоспособности служб Office 365. |
-| microsoft.aad.supporttickets/AllEntities/AllActions | Создание запросов в службу поддержки Office 365 и управление ими. |
-| microsoft.crm/AllEntities/AllActions | Управление всеми аспектами Dynamics 365. |
-
 ### <a name="device-administrators"></a>Администраторы устройств
 Члены этой роли добавляются в группу локальных администраторов на устройствах, присоединенных к Azure AD.
 
@@ -389,13 +363,8 @@ ms.locfileid: "37449312"
 | **Действия** | **Описание** |
 | --- | --- |
 
-### <a name="directory-reader"></a>Читатель каталога
+### <a name="directory-readers"></a>Читатели каталогов
 Может считывать сведения базового каталога. Предназначено для предоставления доступа к приложениям.
-
-  > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
-  >
-  >
 
 | **Действия** | **Описание** |
 | --- | --- |
@@ -449,11 +418,6 @@ ms.locfileid: "37449312"
 ### <a name="directory-synchronization-accounts"></a>Учетные записи синхронизации службы каталогов
 Используется только в службе Azure AD Connect.
 
-  > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
-  >
-  >
-
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/Policy/Create | Создание объектов Policy в Azure Active Directory. |
@@ -483,11 +447,6 @@ ms.locfileid: "37449312"
 ### <a name="directory-writer"></a>Редактор каталогов
 Может считывать и записывать сведения базового каталога. Предназначено для предоставления доступа к приложениям.
 
-  > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
-  >
-  >
-
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.directory/DirectorySetting/Create | Создание объектов DirectorySetting в Azure Active Directory. |
@@ -507,6 +466,27 @@ ms.locfileid: "37449312"
 | microsoft.aad.directory/User/Update | Изменение стандартных свойств для объектов User в Azure Active Directory. |
 | microsoft.aad.directory/User/Update/AppRoleAssignments | Изменение свойства Users.AppRoleAssignments в Azure Active Directory. |
 | microsoft.aad.directory/User/Update/Manager | Изменение свойства Users.Manager в Azure Active Directory. |
+
+### <a name="dynamics-365-service-administrator"></a>Администратор служб Dynamics 365
+Может контролировать все аспекты продукта Dynamics 365.
+
+  > [!NOTE]
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  >
+  >
+
+  > [!NOTE]
+  > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
+  >
+  >
+
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.aad.directory/Organization/Read/TrustedCAsForPasswordlessAuth | Чтение свойства Organizations.TrustedCAsForPasswordlessAuth в Azure Active Directory. |
+| microsoft.aad.accessservice/AllEntities/AllActions | Создание и удаление всех ресурсов, а также чтение и изменение стандартных свойств в Azure Access Control. |
+| microsoft.aad.servicehealth/AllEntities/AllActions | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.aad.supporttickets/AllEntities/AllActions | Создание запросов в службу поддержки Office 365 и управление ими. |
+| microsoft.crm/AllEntities/AllActions | Управление всеми аспектами Dynamics 365. |
 
 ### <a name="exchange-service-administrator"></a>Администратор службы Exchange
 Может контролировать все аспекты продукта Exchange.
@@ -783,6 +763,25 @@ ms.locfileid: "37449312"
 | microsoft.aad.directory/DirectoryRole/Update | Изменение стандартных свойств для объектов DirectoryRole в Azure Active Directory. |
 | microsoft.aad.privilegedrolemanagement/AllEntities/AllActions | Управление всеми аспектами для службы управления привилегированными пользователями. |
 
+### <a name="reports-reader"></a>Читатель отчетов
+Может просматривать отчеты о входах и аудите.
+
+  > [!NOTE]
+  > Эта роль наследует дополнительные разрешения у роли читателя каталогов.
+  >
+  >
+
+  > [!NOTE]
+  > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
+  >
+  >
+
+| **Действия** | **Описание** |
+| --- | --- |
+| microsoft.aad.reports/AllEntities/Read | Чтение отчетов Azure AD. |
+| microsoft.aad.servicehealth/AllEntities/AllActions | Чтение и настройка работоспособности служб Office 365. |
+| microsoft.office365.usagereports/AllEntities/Read | Чтение отчетов об использовании Office 365. |
+
 ### <a name="security-administrator"></a>Администратор безопасности
 Может просматривать отчеты и сведения о безопасности.
 
@@ -810,25 +809,6 @@ ms.locfileid: "37449312"
 | microsoft.aad.privilegedrolemanagement/AllEntities/Read | Чтение всех аспектов для управления привилегированными пользователями. |
 | microsoft.protectioncenter/AllEntities/Read | Чтение всех аспектов Центра защиты Office 365. |
 | microsoft.protectioncenter/AllEntities/Update | Управление Центром защиты Office 365. |
-
-### <a name="reports-reader"></a>Читатель отчетов
-Может просматривать отчеты о входах и аудите.
-
-  > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у роли читателя каталогов.
-  >
-  >
-
-  > [!NOTE]
-  > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.
-  >
-  >
-
-| **Действия** | **Описание** |
-| --- | --- |
-| microsoft.aad.reports/AllEntities/Read | Чтение отчетов Azure AD. |
-| microsoft.aad.servicehealth/AllEntities/AllActions | Чтение и настройка работоспособности служб Office 365. |
-| microsoft.office365.usagereports/AllEntities/Read | Чтение отчетов об использовании Office 365. |
 
 ### <a name="security-reader"></a>Чтение данных безопасности
 Может просматривать отчеты и сведения о безопасности в Azure AD и Office 365.

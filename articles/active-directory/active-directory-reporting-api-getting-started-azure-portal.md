@@ -16,12 +16,12 @@ ms.component: compliance-reports
 ms.date: 05/07/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: ce8630f5718a849f460b372d9e15b03902ac2117
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 89562e6a2bfb977585cec1925a5f306c69c3d1e8
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159685"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390676"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Начало работы с API отчетов Azure Active Directory
 
@@ -43,8 +43,6 @@ Azure Active Directory предоставляет разнообразные [о
 3. предоставьте разрешения;
 4. Сбор параметров конфигурации
 
-
- 
 Подробные инструкции см. в [предварительных требованиях для доступа к API отчетов Azure Active Directory](active-directory-reporting-api-prerequisites-azure-portal.md).
 
 ## <a name="apis-with-graph-explorer"></a>Использование API с песочницей Graph
@@ -55,9 +53,9 @@ Azure Active Directory предоставляет разнообразные [о
 
 ![Пользовательский интерфейс для изменения разрешений](./media/active-directory-reporting-api-getting-started-azure-portal/modify-permissions.png)
 
-## <a name="recommendation"></a>Рекомендации 
+## <a name="use-certificates-to-access-the-azure-ad-reporting-api"></a>Использование сертификатов для доступа к API отчетов Azure AD 
 
-Если вы планируете извлечь данные об отчетах без вмешательства пользователя, следует использовать API отчетов Azure AD с сертификатами.
+Если вы планируете получать данные отчетов без вмешательства пользователя, рекомендуем использовать API отчетов Azure AD с сертификатами.
 
 Подробные инструкции см. в статье о [получении данных с помощью API отчетов Azure AD с сертификатами](active-directory-reporting-api-with-certificates.md).
 
@@ -67,17 +65,13 @@ Azure Active Directory предоставляет разнообразные [о
 Ознакомьтесь с API отчетов:
    
    - [Использование примеров для API аудита](active-directory-reporting-api-audit-samples.md) 
- 
    - [Использование примеров для API отчетов о действиях при входе](active-directory-reporting-api-sign-in-activity-samples.md)
 
 
-## <a name="customize"></a>Настроить  
+## <a name="next-steps"></a>Дополнительная информация
 
-Создайте собственное решение: 
-   
-   - [Справочник по использованию API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
-
-   - [Справочник по использованию API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
-
+ * [Ссылка на API аудита](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/directoryaudit) 
+ * [Справочник по API отчетов о действиях при входе](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/signin)
+ * [Устранение ошибок в API отчетов Azure Active Directory](active-directory-reporting-troubleshoot-graph-api.md)
 
 

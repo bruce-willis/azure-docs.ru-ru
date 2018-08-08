@@ -2,7 +2,7 @@
 title: Мониторинг Функций Azure
 description: Сведения об использовании Azure Application Insights с решением "Функции Azure" для мониторинга выполнения функций.
 services: functions
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 tags: ''
@@ -14,12 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 09/15/2017
-ms.author: tdykstra
-ms.openlocfilehash: cbdb4691bac01843a451c988e09d77dd10f97461
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.author: glenga
+ms.openlocfilehash: ba820c594b5afb34c050c74de30300b0dfc8c3a6
+ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39344061"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -222,7 +223,7 @@ traces
       "categoryLevels": {
         "Host.Results": "Error",
         "Function": "Error",
-        "Host.Aggregator": "Information"
+        "Host.Aggregator": "Trace"
       }
     }
   }
@@ -232,7 +233,7 @@ traces
 В этом примере настраиваются следующие правила:
 
 1. Для журналов с категорией Host.Results или Function в Application Insights отправляются только данные с уровнем `Error` и выше. Данные журнала с уровнем `Warning` и ниже игнорируются.
-2. Для журналов с категорией Host.Aggregator в Application Insights отправляются только данные с уровнем `Information` и выше. Данные журнала с уровнем `Debug` и ниже игнорируются.
+2. В случае с журналами категории Host.Aggregator все журналы нужно отправлять в Application Insights. Уровень ведения журнала `Trace` — это то же, что в некоторых средствах ведения журналов именуется как `Verbose`. В файле *host.json* необходимо использовать `Trace`.
 3. Для всех остальных журналов в Application Insights отправляются данные с уровнем `Information` и выше.
 
 Значение категории в *host.json* управляет ведением журнала для всех категорий, название которых начинается с аналогичного значения. Например, значение Host в *host.json* управляет ведением журнала для Host.General, Host.Executor, Host.Results и т. д.
@@ -558,7 +559,7 @@ module.exports = function (context, req) {
 az login
 az account list
 az account set <subscriptionNameOrId>
-az appservice web log tail --resource-group <resource group name> --name <function app name>
+az webapp log tail --resource-group <resource group name> --name <function app name>
 ```
 
 Для Azure PowerShell используйте следующие команды, чтобы добавить учетную запись Azure, выбрать подписку и включить потоковую передачу файлов журнала:

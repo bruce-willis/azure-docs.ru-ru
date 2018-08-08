@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 07/26/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 88869fbeef0475f2c674e0f154a3624545182363
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 41e75fcfd0b88d5c37bb8dd6fcc16b1767b34dba
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213237"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39285363"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
 
@@ -30,12 +30,12 @@ ms.locfileid: "39213237"
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Простой единый вход можно использовать вместе с методами [синхронизация хэша паролей](active-directory-aadconnectsync-implement-password-hash-synchronization.md) или [сквозной проверки подлинности](active-directory-aadconnect-pass-through-authentication.md).
+Простой единый вход можно использовать вместе с методами [синхронизация хэша паролей](active-directory-aadconnectsync-implement-password-hash-synchronization.md) или [сквозной проверки подлинности](active-directory-aadconnect-pass-through-authentication.md). Простой единый вход _не_ применяется к службам федерации Active Directory (AD FS).
 
 ![Простой единый вход](./media/active-directory-aadconnect-sso/sso1.png)
 
 >[!IMPORTANT]
->Простой единый вход _не_ применяется к службам федерации Active Directory (AD FS).
+>Для функционирования простого единого входа устройство пользователя должно быть **присоединено к домену**. Устройство не обязательно должно быть [присоединено к Azure AD](../active-directory-azureadjoin-overview.md).
 
 ## <a name="key-benefits"></a>Основные преимущества
 
@@ -76,7 +76,9 @@ ms.locfileid: "39213237"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [**Краткое руководство**](active-directory-aadconnect-sso-quick-start.md). Настройка и подготовка к работе простого единого входа Azure AD.
+- [**План развертывания**](https://aka.ms/AuthenticationDeploymentPlan). Пошаговый план развертывания.
 - [**Техническое руководство по сквозной проверке подлинности Azure Active Directory**](active-directory-aadconnect-sso-how-it-works.md). Сведения о том, как работает эта функция.
 - [**Часто задаваемые вопросы**](active-directory-aadconnect-sso-faq.md). Ответы на часто задаваемые вопросы.
 - [**Устранение неполадок**](active-directory-aadconnect-troubleshoot-sso.md). Узнайте, как устранить самые распространенные проблемы с этой функцией.
 - [**UserVoice**](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Отправка запросов новых функций.
+

@@ -1,21 +1,20 @@
 ---
-title: Бесплатная пробная подписка на службу "Речь" | Документы Майкрософт
+title: Бесплатная пробная подписка на службу "Речь"
 description: Узнайте, как получить бесплатную пробную подписку на службу распознавания речи.
 titleSuffix: Microsoft Cognitive Services
 services: cognitive-services
 author: v-jerkin
-manager: noellelacharite
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: article
 ms.date: 05/17/2018
 ms.author: v-jerkin
-ms.openlocfilehash: 3feef04694336d9173b419285a96fcaef543e18f
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: ff9a258d42f25ded82545909cdeade119548148e
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "35383386"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39325213"
 ---
 # <a name="try-the-speech-service-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
@@ -130,10 +129,8 @@ ms.locfileid: "35383386"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Загрузите пакет SDK и примеры кода, чтобы ознакомиться с работой службы речи.
+Пройдите одно из 10-минутных руководств или ознакомьтесь с примерами пакета SDK.
 
 > [!div class="nextstepaction"]
-> [Пакеты SDK службы "Речь"](speech-sdk.md)
-
-> [!div class="nextstepaction"]
-> [Пример кода](samples.md)
+> [Краткое руководство по распознаванию речи в C#](quickstart-csharp-dotnet-windows.md)
+> [Примеры пакета SDK для распознавания речи](speech-sdk.md#get-the-samples)

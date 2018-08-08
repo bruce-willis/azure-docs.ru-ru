@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services | Документация Майкрософт
+title: Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services
 titleSuffix: Microsoft Cognitive Services
 description: Узнайте, как распознавать речь в приложении C++ для Linux с помощью пакета SDK службы "Речь" в Cognitive Services.
 services: cognitive-services
 author: wolfma61
-manager: onano
 ms.service: cognitive-services
 ms.technology: Speech
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: b5f5cdbe202b406c724a9f4f5787e566b432a66c
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 8f794f1d29b5fde9acd43fa4a018ccb39a8ccd25
+ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39116152"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39324784"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
+
+[!include[Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как в Linux (Ubuntu 16.04) с помощью пакета SDK службы "Речь" в Cognitive Services создать консольное приложение C++, которое будет преобразовывать речь в текст.
 
@@ -133,4 +134,4 @@ ms.locfileid: "39116152"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные примеры можно найти на [странице с примерами](samples.md).
+* [Получить примеры](speech-sdk.md#get-the-samples)

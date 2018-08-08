@@ -2,20 +2,17 @@
 title: Как подключить хранилище BLOB-объектов Azure в качестве файловой системы в Linux | Документация Майкрософт
 description: Подключение контейнера хранилища BLOB-объектов Azure с FUSE в Linux
 services: storage
-documentationcenter: linux
 author: seguler
-manager: jahogg
 ms.service: storage
-ms.devlang: bash
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: seguler
-ms.openlocfilehash: 1098eef15b559c30ef436d8e13bbe02bddb78649
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 9964aa4d263e0b75eb59b4e1434a9b3f0aac6ea1
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34072098"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39400187"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
@@ -79,7 +76,7 @@ sudo chown <youruser> /mnt/ramdisk/blobfusetmp
 ```
 
 ### <a name="use-an-ssd-for-temporary-path"></a>Использование диска SSD для временного пути
-В Azure можно использовать временные диски (SSD), доступные на виртуальной машине, чтобы обеспечить для blobfuse буфер с малой задержкой. В дистрибутивах Ubuntu этот временный диск подключен к "/mnt", тогда как в дистрибутивах RedHat и CentOS — к "/mnt/resource/".
+В Azure можно использовать временные диски (SSD), доступные на виртуальной машине, чтобы обеспечить для blobfuse буфер с малой задержкой. В дистрибутивах Ubuntu этот временный диск подключен к "/mnt", тогда как в дистрибутивах Red Hat и CentOS — к "/mnt/resource/".
 
 Для пользователя нужно настроить права доступа к временному пути.
 ```bash
