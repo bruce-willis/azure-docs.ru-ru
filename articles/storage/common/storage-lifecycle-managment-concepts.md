@@ -9,12 +9,12 @@ ms.workload: storage
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: yzheng
-ms.openlocfilehash: 9721935f005bbd9a5dc261fe801ecc14744b004f
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: ec314925635d34baa7b3edeeb397805964b6353d
+ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36752798"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39413133"
 ---
 # <a name="managing-the-azure-blob-storage-lifecycle-preview"></a>Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)
 
@@ -70,7 +70,7 @@ az feature register –-namespace Microsoft.Storage –-name DLM
 
 ## <a name="add-or-remove-policies"></a>Добавление или удаление политик 
 
-Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), REST API или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [ Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby]( https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
+Вы можете добавлять, изменять и (или) удалять политики с помощью портала Azure, [PowerShell](https://www.powershellgallery.com/packages/AzureRM.Storage/5.0.3-preview), [REST API](https://docs.microsoft.com/en-us/rest/api/storagerp/storageaccounts/createorupdatemanagementpolicies) или клиентских средств на следующих языках: [.NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/8.0.0-preview), [Python](https://pypi.org/project/azure-mgmt-storage/2.0.0rc3/), [Node.js]( https://www.npmjs.com/package/azure-arm-storage/v/5.0.0), [Ruby]( https://rubygems.org/gems/azure_mgmt_storage/versions/0.16.2). 
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -118,14 +118,14 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 В политике есть два обязательных параметра.
 
-| Имя параметра | Тип параметра | Заметки |
+| Имя параметра | Тип параметра | Примечания |
 |----------------|----------------|-------|
 | версия        | Строка, выраженная в виде `x.x` | Предварительная версия выпущена с номером 0.5 |
 | правила          | Массив объектов правил | Для каждой политики должно существовать хотя бы одно правило. В режиме предварительного просмотра для каждой политики можно указать до четырех правил. |
 
 В правиле определяются следующие обязательные параметры.
 
-| Имя параметра | Тип параметра | Заметки |
+| Имя параметра | Тип параметра | Примечания |
 |----------------|----------------|-------|
 | ИМЯ           | Строка | Имя правила может содержать любое сочетание буквенно-цифровых символов. В именах правил учитывается регистр. Имя должно быть уникальным в пределах политики. |
 | Тип           | Значение перечисления | В режиме предварительной версии допускается значение `Lifecycle` |
@@ -133,7 +133,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 ## <a name="rules"></a>Правила
 
-Каждое определение правила состоит из набора фильтров и набора действий. Следующий пример правила изменяет уровень для базовых блочных BLOB-объектов с префиксом имени `foo`. В политике эти правила определяются следующим образом:
+Каждое определение правила состоит из набора фильтров и набора действий. Следующий пример правила изменяет уровень для базовых блочных BLOB-объектов с префиксом имени `container1/foo`. В политике эти правила определяются следующим образом:
 
 - установить для BLOB-объекта холодный уровень доступа через 30 дней после последнего изменения;
 - установить для BLOB-объекта архивный уровень доступа через 90 дней после последнего изменения;
@@ -150,7 +150,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
       "definition": {
         "filters": {
           "blobTypes": [ "blockBlob" ],
-          "prefixMatch": [ "foo" ]
+          "prefixMatch": [ "container1/foo" ]
         },
         "actions": {
           "baseBlob": {
@@ -175,10 +175,10 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 В период предварительной версии поддерживаются следующие фильтры.
 
-| Имя фильтра | Тип фильтра | Заметки | Обязательный |
+| Имя фильтра | Тип фильтра | Примечания | Обязательный |
 |-------------|-------------|-------|-------------|
 | blobTypes   | Массив предустановленных значений перечисления. | Для предварительного выпуска поддерживается только `blockBlob`. | Yes |
-| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. | Если массив не определен, правило применяется ко всем BLOB-объектам в учетной записи. | Нет  |
+| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Строка префикса должно начинаться с имени контейнера. Например, если все большие двоичные объекты в разделе https://myaccount.blob.core.windows.net/mycontainer/mydir/... должны совпадать для правила, префикс будет mycontainer/mydir. | Если массив не определен, правило применяется ко всем BLOB-объектам в учетной записи. | Нет  |
 
 ### <a name="rule-actions"></a>Действия правила
 
@@ -207,7 +207,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 ### <a name="move-aging-data-to-a-cooler-tier"></a>Перемещение старых данных на более холодный уровень
 
-Следующий пример демонстрирует перемещение блочных BLOB-объектов с префиксом имени `foo` или `bar`. Эта политика перемещает BLOB-объекты, которые не изменялись более 30 дней, на холодный уровень, а которые не изменялись в течение 90 дней — на архивный уровень:
+Следующий пример демонстрирует перемещение блочных BLOB-объектов с префиксом имени `container1/foo` или `container2/bar`. Эта политика перемещает BLOB-объекты, которые не изменялись более 30 дней, на холодный уровень, а которые не изменялись в течение 90 дней — на архивный уровень:
 
 ```json
 {
@@ -220,7 +220,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
         {
           "filters": {
             "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "foo", "bar" ]
+            "prefixMatch": [ "container1/foo", "container2/bar" ]
           },
           "actions": {
             "baseBlob": {
@@ -236,7 +236,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 ### <a name="archive-data-at-ingest"></a>Архивация данных при поступлении 
 
-Третьи данные не используют или делают это редко, возможно даже единожды за весь срок хранения. Такие данные лучше архивировать сразу при поступлении в хранилище. Следующая политика жизненного цикла настроена так, чтобы архивировать данные при приеме. Этот пример перемещает поступающие в учетную запись BLOB-объекты с префиксом имени `archive` сразу на архивный уровень доступа. Для немедленного перемещения настраиваются действия, которые применяются к BLOB-объектов возрастом 0 дней после последнего изменения:
+Третьи данные не используют или делают это редко, возможно даже единожды за весь срок хранения. Такие данные лучше архивировать сразу при поступлении в хранилище. Следующая политика жизненного цикла настроена так, чтобы архивировать данные при приеме. Этот пример перемещает поступающие в учетную запись BLOB-объекты в пределах контейнера `archivecontainer` сразу на архивный уровень доступа. Для немедленного перемещения настраиваются действия, которые применяются к BLOB-объектов возрастом 0 дней после последнего изменения:
 
 ```json
 {
@@ -249,7 +249,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
         {
           "filters": {
             "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "archive" ]
+            "prefixMatch": [ "archivecontainer" ]
           },
           "actions": {
             "baseBlob": { 
@@ -292,7 +292,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
 
 ### <a name="delete-old-snapshots"></a>Удаление старых моментальных снимков
 
-Для данных, которые часто изменяются и используются на протяжении их существования, часто используются моментальные снимки для отслеживания ранних версий данных. Вы можете создать политику, которая удаляет старые моментальные снимки при достижении определенного возраста. Возраст моментального снимка определяется от момента создания моментального снимка. Это правило политики удаляет моментальные снимки BLOB-объектов с префиксом `activeData`, с момента создания которых прошло 90 или более дней.
+Для данных, которые часто изменяются и используются на протяжении их существования, часто используются моментальные снимки для отслеживания ранних версий данных. Вы можете создать политику, которая удаляет старые моментальные снимки при достижении определенного возраста. Возраст моментального снимка определяется от момента создания моментального снимка. Это правило политики удаляет моментальные снимки BLOB-объектов в пределах контейнера `activedata`, с момента создания которых прошло 90 или более дней.
 
 ```json
 {
@@ -305,7 +305,7 @@ Get-AzureRmStorageAccountManagementPolicy -ResourceGroupName [resourceGroupName]
         {
           "filters": {
             "blobTypes": [ "blockBlob" ],
-            "prefixMatch": [ "activeData" ]
+            "prefixMatch": [ "activedata" ]
           },
           "actions": {            
             "snapshot": {

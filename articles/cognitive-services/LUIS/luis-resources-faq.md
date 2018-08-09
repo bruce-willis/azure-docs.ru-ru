@@ -1,24 +1,24 @@
 ---
-title: Часто задаваемые вопросы об Интеллектуальной службе распознавания речи (LUIS) в Azure | Документация Майкрософт
-description: Ответы на часто задаваемые вопросы об Интеллектуальной службе распознавания речи (LUIS)
+title: Вопросы и ответы о службе "Распознавание речи" (LUIS) в Azure | Документация Майкрософт
+description: Ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS)
 author: diberry
 manager: cjgronlund
 services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 05/07/2018
+ms.date: 07/26/2018
 ms.author: diberry
-ms.openlocfilehash: 8e0d834b94ff902eb0c1e0ada2fb32d374cee12b
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 93ced2d0c79d80a631ad90aa3f5d2dc9f8c79c7e
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39239123"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390200"
 ---
-# <a name="language-understanding-faq"></a>Часто задаваемые вопросы об Интеллектуальной службе распознавания речи
+# <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
 
-В этой статье приведены ответы на часто задаваемые вопросы об Интеллектуальной службе распознавания речи (LUIS).
+В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 
 ## <a name="luis-authoring"></a>Разработка LUIS
 
@@ -147,6 +147,12 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 * Вы можете удалить высказывания из списка высказываний пользователя, предлагаемых LUIS на странице **Review endpoint utterances** (Проверка высказываний конечной точки). Высказывания, удаленные из этого списка, больше не будут выводиться как предлагаемые, но останутся в журналах.
 * При удалении учетной записи удаляются все приложения вместе с их примерами высказываний и журналами. Данные хранятся на серверах 60 дней, а затем удаляются без возможности восстановления.
 
+### <a name="does-microsoft-access-my-luis-app-data-for-its-own-purposes-for-example-to-enhance-luis-or-microsoft-in-general"></a>Получает ли корпорация Майкрософт доступ к моим данным приложения LUIS для своих целей, например для улучшения LUIS или других продуктов Майкрософт? 
+
+Нет. Модели данных приложения LUIS не используется LUIS для улучшения LUIS как платформы или корпорацией Майкрософт каким-либо способом. Данные каждого приложения являются отдельными, а их владельцем являются только пользователи, включая тех, которым предоставлен совместный доступ. 
+
+См. дополнительные сведения о [конфиденциальности пользователей](luis-reference-gdpr.md), [обеспечении дополнительных требований к безопасности](luis-concept-security.md#security-compliance) и [хранении данных](luis-concept-data-storage.md).
+
 ## <a name="language-and-translation-support"></a>Поддержка языка и преобразования 
 
 ### <a name="i-have-an-app-in-one-language-and-want-to-create-a-parallel-app-in-another-language-what-is-the-easiest-way-to-do-so"></a>У меня есть приложение на одном языке и я хочу создать параллельное приложение на другом языке. Какой самый простой способ сделать это?
@@ -175,22 +181,8 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 ### <a name="is-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба LUIS в локальной среде или в частном облаке?
 Нет. 
 
-## <a name="changes-to-the-docs"></a>Изменения в документации
 
-### <a name="where-did-the-tutorials-go"></a>Куда делись руководства? 
-Статьи, которые ранее находились в разделе руководств, перенесены в раздел руководств в документации. 
-
-|Учебник|
-|--|
-|Интеграция LUIS с ботом с помощью [C#](luis-csharp-tutorial-build-bot-framework-sample.md) и [Node.js](luis-nodejs-tutorial-build-bot-framework-sample.md)|
-|Application Insights в бот с помощью [C#](luis-tutorial-bot-csharp-appinsights.md) и [Node.js](luis-tutorial-function-appinsights.md)|
-|Создание приложения LUIS программным способом с помощью [Node.js](luis-tutorial-node-import-utterances-csv.md)|
-|Использование [составной сущности](luis-tutorial-composite-entity.md) для извлечения сгруппированных данных|
-|Добавление [списка сущностей](luis-tutorial-list-entity.md) для повышения уровня обнаружения сущностей с помощью Node.js|
-|Повышение точности прогноза с помощью [списка фраз](luis-quickstart-primary-and-secondary-data.md), [шаблонов](luis-tutorial-pattern.md) и [пакетного тестирования](luis-tutorial-batch-testing.md)|
-|[Проверка орфографии](luis-tutorial-batch-testing.md) с помощью API Bing для проверки орфографии версии 7
-
-### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции сборки 2018 г. я слышал о возможности или демоверсии Интеллектуальной службы распознавания речи, но не помню его названия. 
+### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции Build 2018 г. говорилось об одной функции или демоверсии службы "Распознавание речи", но я не помню ее названия. 
 
 На конференции сборки 2018 г были выпущены следующие возможности:
 
@@ -198,14 +190,14 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 |--|--|
 |Улучшения|Сущности [регулярного выражения](luis-concept-data-extraction.md##regular-expression-entity-data) и [ключевой фразы](luis-concept-data-extraction.md#key-phrase-extraction-entity-data)
 |Шаблоны|Шаблоны [понятие](luis-concept-patterns.md), [руководство](luis-tutorial-pattern.md), [инструкции](luis-how-to-model-intent-pattern.md)<br>Концепция сущности [Patterns.Any](luis-concept-entity-types.md), включающая понятие [явного списка](luis-concept-patterns.md#explicit-lists) для исключений<br>Концепция [ролей](luis-concept-roles.md)|
-|Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)<br>Интеграция [речи](https://docs.microsoft.com/azure/cognitive-services/speech) [подготовки речи](luis-how-to-publish-app.md#enable-speech-priming) в сочетании со [Speech SDK](https://aka.ms/SpeechSDK)|
+|Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)<br>Интеграция службы [Речь](https://docs.microsoft.com/azure/cognitive-services/speech) для подготовки речи в сочетании с [пакетом SDK службы "Речь"](https://aka.ms/SpeechSDK)|
 |Средство подготовки к отправке|Часть [BotBuilder-tools](https://github.com/Microsoft/botbuilder-tools), [инструмент](luis-concept-enterprise.md#when-you-need-to-combine-several-luis-and-qna-maker-apps) командной строки подготовки к отправке для объединения нескольких приложений LUIS и QnA Maker в одно приложение LUIS и улучшения распознавания намерений в ботах
 
 Включено создание дополнительных [API маршрутов](https://github.com/Microsoft/LUIS-Samples/blob/master/authoring-routes.md). 
 
 Видеоролики: 
 * [ Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
-* [ Build 2018: канал об искусственном интеллекте. Новые возможности Интеллектуальной службы распознавания речи](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
+* [Build 2018: канал об искусственном интеллекте. Новые возможности службы "Распознавание речи"](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
 * [Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU](https://channel9.msdn.com/events/Build/2018/BRK3208)
 * [ Build 2018. Обновления LUIS](https://channel9.msdn.com/events/Build/2018/THR3118/player)
 
@@ -216,4 +208,5 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 Дополнительную информацию о LUIS см. в следующих ресурсах:
 * [Вопросы Stack Overflow, помеченные LUIS](https://stackoverflow.com/questions/tagged/luis)
-* [Форум MSDN Интеллектуальной службы распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
+* 
+  [Форум MSDN, посвященный Интеллектуальной службе распознавания речи (LUIS)](https://social.msdn.microsoft.com/forums/azure/home?forum=LUIS) 
