@@ -2,23 +2,20 @@
 title: Руководство. Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием Hive в Azure HDInsight
 description: Сведения об извлечении данных из необработанного набора данных в формате CSV, преобразовании их с помощью Hive в HDInsight и загрузке преобразованных данных в базу данных SQL Azure с помощью Sqoop.
 services: storage
-documentationcenter: ''
 author: jamesbak
-manager: jahogg
 tags: azure-portal
 ms.component: data-lake-storage-gen2
 ms.service: storage
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/27/2018
 ms.author: jamesbak
 ms.custom: H1Hack27Feb2017,hdinsightactive,mvc
-ms.openlocfilehash: 4f71a4e0570695abbe580ffc16b3361d5cd71ac1
-ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
+ms.openlocfilehash: 376ac623c37183cdfbd6e27c54b0c726928237e2
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39136492"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526010"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-apache-hive-on-azure-hdinsight"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 

@@ -1,25 +1,19 @@
 ---
 title: Вывод списка ресурсов службы хранилища Azure с помощью клиентской библиотеки службы хранилища для C++ | Документация Майкрософт
 description: Узнайте, как использовать API-интерфейсов перечисления в клиентской библиотеке для службы хранилища Microsoft Azure для C++ для получения списка контейнеров, больших двоичных объектов, очередей, таблиц и сущностей.
-documentationcenter: .net
 services: storage
 author: dineshmurthy
-manager: jahogg
-editor: tysonn
-ms.assetid: 33563639-2945-4567-9254-bc4a7e80698f
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: dineshm
-ms.openlocfilehash: 9844412739f4f6f95416f81347f0f2eeeca62bea
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: 0a105122eccdfa671c806389908762941f23200c
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059669"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525313"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Перечисление ресурсов хранилища Azure в C++
 Операции перечисления необходимы для многих сценариев разработки с использованием хранилища Azure. В этой статье описано, как наиболее эффективно перечислять объекты в хранилище Azure с помощью API-интерфейсов, предоставленных в клиентской библиотеке для службы хранилища Microsoft Azure для C++.

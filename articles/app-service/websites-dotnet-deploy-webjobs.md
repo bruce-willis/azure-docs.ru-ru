@@ -3,7 +3,7 @@ title: Разработка и развертывание веб-заданий 
 description: Сведения о разработке и развертывании веб-заданий Azure в службе приложений Azure с помощью Visual Studio.
 services: app-service
 documentationcenter: ''
-author: tdykstra
+author: ggailey777
 manager: erikre
 editor: jimbe
 ms.assetid: a3a9d320-1201-4ac8-9398-b4c9535ba755
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/12/2017
 ms.author: glenga;david.ebbo;suwatch;pbatum;naren.soni
-ms.openlocfilehash: babe190c0865f5be4aeecb40ca48b52673c6920e
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: ccbf1241012fbac184de2fb0109dab4b5e618a52
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30161529"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579125"
 ---
 # <a name="develop-and-deploy-webjobs-using-visual-studio---azure-app-service"></a>Разработка и развертывание веб-заданий в службе приложений Azure с помощью Visual Studio
 
@@ -45,7 +45,7 @@ ms.locfileid: "30161529"
 
 ![Диаграмма, отображающая проект веб-задания, связанный с веб-проектом](./media/websites-dotnet-deploy-webjobs/link.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы используете Visual Studio 2015, установите [пакет Azure SDK для .NET (Visual Studio 2015)](https://azure.microsoft.com/downloads/).
 

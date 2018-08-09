@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: fcb7ec2e40b5c0e8794d2f4d70395dcbecca019c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 15fb39a74047bdeffed0076501f0129eb00de4e8
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38618956"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39443329"
 ---
 # <a name="diagnose-a-virtual-machine-network-routing-problem---azure-cli"></a>Диагностика проблем с маршрутизацией в сети виртуальной машины с помощью Azure CLI
 
@@ -36,13 +36,13 @@ ms.locfileid: "38618956"
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Прежде чем создать виртуальную машину, создайте группу ресурсов, которая будет содержать эту виртуальную машину. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+Прежде чем создать виртуальную машину, создайте группу ресурсов, которая будет содержать эту виртуальную машину. Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. В следующем примере создается виртуальная машина с именем *myVM*:
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). Также команда создает ключи SSH, если они не существуют в расположении ключей по умолчанию. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`. В следующем примере создается виртуальная машина с именем *myVM*:
 
 ```azurecli-interactive
 az vm create \
@@ -153,7 +153,7 @@ az network nic show-effective-route-table \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду [az group delete](/cli/azure/group#az_group_delete).
+Чтобы удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы, выполните команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 07/13/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 5686266774603413fc255c53a0d1ad30f9baa8eb
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 6d328d8a3556f565e7eac8ee079bd191b7dcadef
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173866"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39433448"
 ---
 # <a name="deploy-a-python-web-app-in-web-app-for-containers"></a>Развертывание веб-приложения Python в Веб-приложении для контейнеров
 
@@ -96,7 +96,7 @@ docker push <dockerhub_id>/flask-quickstart
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-Создайте [веб-приложение](../app-service-web-overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create). Замените *\<app name>* на глобально уникальное имя приложения и *\<dockerhub_id>* на идентификатор центра Docker.
+Создайте [веб-приложение](../app-service-web-overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create). Замените *\<app name>* на глобально уникальное имя приложения и *\<dockerhub_id>* на идентификатор центра Docker.
 
 ```azurecli-interactive
 az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app name> --deployment-container-image-name <dockerhub_id>/flask-quickstart
@@ -125,7 +125,7 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 
 Как указано в _Dockerfile_, контейнер ожидает передачи данных через порт 8000. Чтобы служба приложений перенаправляла запрос на правильный порт, необходимо установить параметр приложения *WEBSITES_PORT*.
 
-В Cloud Shell выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az_webapp_config_appsettings_set).
+В Cloud Shell выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set).
 
 
 ```azurecli-interactive

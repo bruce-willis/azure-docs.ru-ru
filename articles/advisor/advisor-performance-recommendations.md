@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
 ms.author: kumud
-ms.openlocfilehash: 3331c795cbb1c45820d4c86d287ef57b54f0ae6b
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: aca1c9125af6b4162c0a6647910c2877758cd42c
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247649"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599196"
 ---
 # <a name="advisor-performance-recommendations"></a>Рекомендации Azure Advisor по производительности
 
@@ -52,6 +52,14 @@ Azure Advisor объединяет практические рекомендац
 * обнаружение экземпляров, для которых совместное размещение ресурсов, например веб-приложений и баз данных, может повысить производительность и снизить стоимость. 
 
 Дополнительные сведения о рекомендациях по службам приложений см. в разделе [Рекомендации по использованию службы приложений Azure](https://azure.microsoft.com/documentation/articles/app-service-best-practices/).
+
+## <a name="remove-data-skew-on-your-sql-data-warehouse-table-to-increase-query-performance"></a>Устранение неравномерного распределения данных в таблице хранилища данных SQL для повышения производительности запросов
+
+Неравномерное распределение данных может привести к ненужному перемещению данных или нехватке ресурсов при выполнении рабочей нагрузки. Помощник определяет неравномерное распределение данных, превышающее 15 %, и рекомендует повторно распространить свои данные и пересмотреть выбранные ключи распределения таблиц. См. дополнительные сведения об [определении и устранении неравномерного распределения](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-distribute#how-to-tell-if-your-distribution-column-is-a-good-choice).
+
+## <a name="create-or-update-outdated-table-statistics-on-your-sql-data-warehouse-table-to-increase-query-performance"></a>Создание или обновление устаревшей статистики таблиц в таблице хранилища данных SQL для повышения производительности запросов
+
+Помощник определяет таблицы без актуальной [статистики таблиц](https://docs.microsoft.com/azure/sql-data-warehouse/sql-data-warehouse-tables-statistics) и рекомендует создать или обновить эту статистику. Оптимизатор запросов хранилища данных SQL использует актуальную статистику, чтобы оценить кратность или число строк в результате запроса. Это позволяет ему создать план запросов высокого качества для обеспечения максимальной производительности.
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Как получить доступ к рекомендации по производительности в Advisor
 

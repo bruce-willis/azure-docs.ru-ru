@@ -11,12 +11,12 @@ ms.service: functions
 ms.custom: mvc
 ms.devlang: azure-cli
 manager: cfowler
-ms.openlocfilehash: c5de0b1384958bc8553aa3722ad6a5829b69ab12
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fab67b503d060c8c01b5a3692c8a07b24c425c78
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38488705"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39437412"
 ---
 # <a name="create-a-function-on-linux-using-a-custom-image-preview"></a>Создание функции в Linux из пользовательского образа (предварительная версия)
 
@@ -26,7 +26,7 @@ ms.locfileid: "38488705"
 
 Из этого руководства вы узнаете, как с помощью решения "Функции Azure" создать пользовательский образ и отправить его в концентратор Docker. Затем этот образ станет источником для развертывания приложения-функции на платформе Linux. Сборка и отправка образа выполняются с помощью Docker. Чтобы создать приложение-функцию и развернуть образ из концентратора Docker, используйте Azure CLI. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Сборка пользовательского образа с помощью Docker.
@@ -38,7 +38,7 @@ ms.locfileid: "38488705"
 
 Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником необходимы указанные ниже компоненты.
 
@@ -161,7 +161,7 @@ v1.0.0: digest: sha256:be080d80770df71234eb893fbe4d... size: 2422
 
 ## <a name="create-and-deploy-the-custom-image"></a>Создание и развертывание пользовательского образа
 
-Выполнение функций происходит с помощью приложения-функции. Чтобы создать приложение-функцию из образа, размещенного в концентраторе Docker, используйте команду [az functionapp create](/cli/azure/functionapp#az_functionapp_create). 
+Выполнение функций происходит с помощью приложения-функции. Чтобы создать приложение-функцию из образа, размещенного в концентраторе Docker, используйте команду [az functionapp create](/cli/azure/functionapp#az-functionapp-create). 
 
 В следующей команде замените `<app_name>` уникальным именем вашего приложения функции, а `<storage_name>` — именем учетной записи хранения. `<app_name>` используется по умолчанию в качестве домена DNS для приложения-функции. Поэтому это имя должно быть уникальным для всех приложений в Azure. Как и раньше, `<docker-id>` обозначает имя учетной записи Docker.
 
@@ -196,7 +196,7 @@ az functionapp create --name <app_name> --storage-account  <storage_name>  --res
 
 Функции нужно предоставить строку подключения для подключения к учетной записи хранения по умолчанию. Если вы публикуете пользовательский образ в учетной записи частного контейнера, задайте эти параметры приложения через переменные среды в файле Dockerfile, используя [инструкции ENV](https://docs.docker.com/engine/reference/builder/#env) или аналогичный механизм. 
 
-В нашем случае `<storage_account>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account#show-connection-string). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az_functionapp_config_appsettings_set).
+В нашем случае `<storage_account>` — это имя созданной учетной записи хранения. Получите строку подключения, выполнив команду [az storage account show-connection-string](/cli/azure/storage/account#show-connection-string). Добавьте эти параметры приложения в приложение-функцию с помощью команды [az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-set).
 
 ```azurecli-interactive
 storageConnectionString=$(az storage account show-connection-string \

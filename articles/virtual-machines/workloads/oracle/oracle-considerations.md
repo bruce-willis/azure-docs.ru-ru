@@ -3,8 +3,8 @@ title: Решения Oracle в Microsoft Azure | Документация Ма�
 description: Узнайте о поддерживаемых конфигурациях и ограничениях решений Oracle в Microsoft Azure.
 services: virtual-machines-linux
 documentationcenter: ''
+author: romitgirdhar
 manager: jeconnoc
-author: rickstercdn
 tags: azure-resource-management
 ms.assetid: 5d71886b-463a-43ae-b61f-35c6fc9bae25
 ms.service: virtual-machines-windows
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/28/2017
-ms.author: rclaus
-ms.openlocfilehash: daed709b4b4be87ba75f5539bd31c666b3a37414
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.date: 08/02/2018
+ms.author: rogirdh
+ms.openlocfilehash: 6435c866f6cdf5abea3862a718579f3a6e4d7378
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34656352"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493070"
 ---
 # <a name="oracle-solutions-and-their-deployment-on-microsoft-azure"></a>Решения Oracle в Microsoft Azure и их развертывание
 В этой статье представлены сведения о развертывании различных решений Oracle в Microsoft Azure. Эти решения созданы на основе образов виртуальных машин, опубликованных Oracle в Azure Marketplace. Чтобы получить список доступных образов, выполните следующую команду:

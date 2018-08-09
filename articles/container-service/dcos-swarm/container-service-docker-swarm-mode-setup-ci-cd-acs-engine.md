@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: diegomrtnzg
 ms.custom: mvc
-ms.openlocfilehash: 01126f3eef988eb1787bafea92e7384aad1a703c
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6c41156383791fb7d72ac02dae919a25a0d15c84
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32179577"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39621068"
 ---
 # <a name="full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-visual-studio-team-services"></a>Полный конвейер непрерывной интеграции и развертывания многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Visual Studio Team Services
 
@@ -44,14 +44,14 @@ ms.locfileid: "32179577"
 7. Docker Swarm Mode в кластере запрашивает последнюю версию образов. 
 8. Новая версия приложения развертывается с помощью Docker Stack. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством вам потребуется выполнить следующие задачи:
 
 - [Создать кластер Swarm Mode в Службе контейнеров Azure с обработчиком ACS.](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acsengine-swarmmode)
 - [Подключиться к кластеру Swarm в службе контейнеров Azure.](../container-service-connect.md)
 - [Создать реестр контейнеров Azure](../../container-registry/container-registry-get-started-portal.md)
-- [Создать учетную запись и командный проект Visual Studio Team Services](https://www.visualstudio.com/en-us/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services)
+- [Создать учетную запись и командный проект Visual Studio Team Services](https://docs.microsoft.com/vsts/organizations/accounts/create-organization-msa-or-work-student)
 - [Скопировать репозиторий GitHub в свою учетную запись GitHub.](https://github.com/jcorioland/MyShop/tree/docker-linux)
 
 >[!NOTE]

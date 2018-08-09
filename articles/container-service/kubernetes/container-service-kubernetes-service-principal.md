@@ -9,21 +9,21 @@ ms.topic: get-started-article
 ms.date: 02/26/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: 84215daac950f602c815e1ffc5ae6dd5269d9bdf
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: efedb7cde06ed03ec330027a18b00bcc897919cf
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32167118"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39576925"
 ---
 # <a name="set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров
 
 [!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
 
-[Субъект-служба Azure Active Directory](../../active-directory/develop/active-directory-application-objects.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
+[Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
 
 
-В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI 2.0](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs#az_acs_create), чтобы одновременно создать кластер Kubernetes и субъект-службу.
+В этой статье показано, как настроить субъект-службу для кластера Kubernetes. Например, если вы установили и настроили [Azure CLI 2.0](/cli/azure/install-az-cli2), выполните команду [`az acs create`](/cli/azure/acs#az-acs-create), чтобы одновременно создать кластер Kubernetes и субъект-службу.
 
 
 ## <a name="requirements-for-the-service-principal"></a>Требования для субъекта-службы
@@ -96,7 +96,7 @@ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscrip
 
 ## <a name="option-2-generate-a-service-principal-when-creating-the-cluster-with-az-acs-create"></a>Вариант 2. Создание субъекта-службы при создании кластера с помощью `az acs create`
 
-При создании кластера Kubernetes с использованием команды [`az acs create`](/cli/azure/acs#az_acs_create) вы можете создать субъект-службу автоматически.
+При создании кластера Kubernetes с использованием команды [`az acs create`](/cli/azure/acs#az-acs-create) вы можете создать субъект-службу автоматически.
 
 Как и в случае с другими вариантами создания кластера Kubernetes, выполняя команду `az acs create`, вы можете указать параметры для существующего субъекта-службы. Но даже если вы не настроите эти параметры, Azure CLI создаст субъект-службу автоматически, который будет использоваться в Службе контейнеров. Субъект-служба создается открытым образом во время развертывания.
 
@@ -132,7 +132,7 @@ az acs create -n myClusterName -d myDNSPrefix -g myResourceGroup --generate-ssh-
 
 Учетные данные действительны на протяжении года с момента создания субъекта-службы, если только вы не указали срок действия с помощью параметра `--years` при создании субъекта-службы. По истечении срока действия учетных данных узлы кластера могут перейти в состояние **NotReady**.
 
-Чтобы проверить срок действия субъекта-службы, выполните команду [az ad app show](/cli/azure/ad/app#az_ad_app_show) с параметром `--debug` и найдите значение `endDate` для `passwordCredentials` в нижней части окна выходных данных:
+Чтобы проверить срок действия субъекта-службы, выполните команду [az ad app show](/cli/azure/ad/app#az-ad-app-show) с параметром `--debug` и найдите значение `endDate` для `passwordCredentials` в нижней части окна выходных данных:
 
 ```azurecli
 az ad app show --id <appId> --debug
@@ -146,7 +146,7 @@ az ad app show --id <appId> --debug
 ...
 ```
 
-Если срок действия учетных данных субъекта-службы истек, используйте команду [az ad sp reset-credentials](/cli/azure/ad/sp#az_ad_sp_reset_credentials), чтобы обновить их.
+Если срок действия учетных данных субъекта-службы истек, используйте команду [az ad sp reset-credentials](/cli/azure/ad/sp#az-ad-sp-reset-credentials), чтобы обновить их.
 
 ```azurecli
 az ad sp reset-credentials --name <appId>

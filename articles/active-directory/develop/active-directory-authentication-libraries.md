@@ -17,12 +17,12 @@ ms.date: 04/13/2018
 ms.author: celested
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: a01db6a0bebb670d0e30a4962ede6b12bba8e84e
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 33a9be83f7f79989ac09c3e7593a86ecb6c87507
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751247"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579196"
 ---
 # <a name="azure-active-directory-authentication-libraries"></a>Библиотеки проверки подлинности Azure Active Directory
 
@@ -83,6 +83,6 @@ ADAL упрощает проверку подлинности пользоват
 
 ## <a name="see-also"></a>См. также
 
-- [Руководство разработчика по Azure Active Directory](active-directory-developers-guide.md)
-- [Сценарии проверки подлинности в Azure Active Directory](active-directory-authentication-scenarios.md)
-- [Примеры кода Azure Active Directory](active-directory-code-samples.md)
+- [Руководство разработчика по Azure Active Directory](azure-ad-developers-guide.md)
+- [Сценарии проверки подлинности в Azure Active Directory](authentication-scenarios.md)
+- [Примеры кода Azure Active Directory](sample-v1-code.md)

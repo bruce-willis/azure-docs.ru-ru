@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/18/2018
 ms.author: apimpm
-ms.openlocfilehash: f5662a4082487137dfd642cc3264a90f8ab19054
-ms.sourcegitcommit: 3a4ebcb58192f5bf7969482393090cb356294399
+ms.openlocfilehash: 06350d30999cb056babbd001f98a6c3a5fdbac6c
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30928042"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39577000"
 ---
 # <a name="protect-an-api-by-using-oauth-20-with-azure-active-directory-and-api-management"></a>Защита API с помощью протокола OAuth 2.0 и службы управления API в Azure Active Directory
 
 В этом руководстве показано, как настроить имеющийся экземпляр управления API Azure для защиты API с помощью протокола OAuth 2.0 в Azure Active Directory. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить шаги в этой статье, необходимо иметь следующее:
 * Экземпляр управления API.
 * Публикуемый API, использующий экземпляр управления API (APIM).
@@ -193,10 +193,10 @@ ms.locfileid: "30928042"
 
 ## <a name="build-an-application-to-call-the-api"></a>Создание приложения для вызова API
 
-В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/active-directory-code-samples.md).
+В этом руководстве мы использовали консоль разработчика в APIM как пример клиентского приложения для вызова `Echo API`, защищенного OAuth 2.0. Чтобы узнать больше о том, как создать приложение и реализовать OAuth 2.0, изучите [примеры кода Azure Active Directory](../active-directory/develop/sample-v1-code.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/active-directory-authentication-scenarios.md).
+* Узнайте больше об [Azure Active Directory и OAuth 2.0](../active-directory/develop/authentication-scenarios.md).
 * См. другие [видео](https://azure.microsoft.com/documentation/videos/index/?services=api-management) об управлении API.
 * Другие способы защиты внутренней серверной службы см. в разделе [Взаимная проверка подлинности на основе сертификата](api-management-howto-mutual-certificates.md).
 

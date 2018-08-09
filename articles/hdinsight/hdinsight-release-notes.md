@@ -1,24 +1,20 @@
 ---
-title: Заметки о выпуске для Azure HDInsight | Документация Майкрософт
+title: Заметки о выпуске Azure HDInsight
 description: Последние заметки о выпуске Azure HDInsight. Ознакомьтесь с советами по разработке и подробными сведениями о Hadoop, Spark, R Server, Hive и т. д.
 services: hdinsight
-documentationcenter: ''
-editor: cgronlun
-manager: jhubbard
-author: nitinme
-tags: azure-portal
-ms.assetid: a363e5f6-dd75-476a-87fa-46beb480c1fe
+editor: jasonwhowell
+author: jasonwhowell
 ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 07/01/2018
-ms.author: nitinme
-ms.openlocfilehash: dd2d2373ee2c871075208672ffb1e374baa12669
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.author: jasonh
+ms.openlocfilehash: c6c320786611e9e2646000fb2272ced8fa90d194
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437830"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596041"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Заметки о выпуске Azure HDInsight
 
@@ -39,11 +35,11 @@ Azure HDInsight является одной из самых популярных
 
     a.  [**Новые функции в Spark 2.3**](https://spark.apache.org/releases/spark-release-2-3-0.html)
 
-    Б.  [**Новые функции в Kafka 1.0**](https://www.apache.org/dist/kafka/1.0.0/RELEASE_NOTES.html)
+    b.  [**Новые функции в Kafka 1.0**](https://www.apache.org/dist/kafka/1.0.0/RELEASE_NOTES.html)
 
-2.  ***Обновление R Server 9.1 до Служб машинного обучения 9.3***. В этом выпуске мы предоставили специалистам по анализу данных и инженерам лучшие проекты с открытым кодом, дополненные инновационными алгоритмами и возможностью легко вводить их в эксплуатацию, причем на любом удобном языке с сохранением скорости Apache Spark. Этот выпуск расширяет возможности, предлагаемые R Server, добавляя поддержку Python. В связи с этим имя кластера изменилось с R Server на Службы машинного обучения. 
+2.  ***Обновление R Server 9.1 до Служб машинного обучения 9.3***. В этом выпуске мы предоставили специалистам по анализу данных и инженерам лучшие проекты с открытым кодом, дополненные инновационными алгоритмами и возможностью легко вводить их в эксплуатацию, причем на любом удобном языке с сохранением скорости Apache Spark. Этот выпуск расширяет возможности, предлагаемые R Server, реализуя поддержку Python. Из-за этого имя кластера изменено с R Server на Службы машинного обучения. 
 
-3.  ***Поддержка хранилища Azure Data Lake поколения 2***. HDInsight теперь будет поддерживать предварительный выпуск хранилища Azure Data Lake поколения 2. Во всех регионах доступности клиентам будет предоставлена возможность выбрать учетную запись ADSL поколения 2, как основное или дополнительное хранилище для кластеров HDInsight.
+3.  ***Поддержка Azure Data Lake Storage поколения 2***. HDInsight теперь будет поддерживать предварительный выпуск Azure Data Lake Storage поколения 2. Во всех регионах доступности клиентам будет предоставлена возможность выбрать учетную запись ADSL поколения 2, как основное или дополнительное хранилище для кластеров HDInsight.
 
 4.  ***Обновления корпоративного пакета безопасности HDInsight (предварительная версия).*** Добавлена поддержка [конечных точек службы виртуальной сети](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview) (предварительная версия), хранилища BLOB-объектов Azure, ADLS поколения 1, Cosmos DB и базы данных Azure.
 

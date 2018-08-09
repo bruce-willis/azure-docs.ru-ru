@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: b83f452300295078e4edf797ec2ef2f0c5223031
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 08027326761736fe03e27b7a45ec11c0d514dc22
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39047479"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39439391"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-directions-on-microsoft"></a>Руководство. Интеграция Azure Active Directory с Directions on Microsoft
 
@@ -52,7 +52,7 @@ ms.locfileid: "39047479"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Directions on Microsoft из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-directions-on-microsoft-from-the-gallery"></a>Добавление Directions on Microsoft из коллекции
 Чтобы настроить интеграцию Directions on Microsoft с Azure AD, необходимо добавить Directions on Microsoft из коллекции в список управляемых приложений SaaS.
@@ -63,19 +63,19 @@ ms.locfileid: "39047479"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **Directions on Microsoft**.
+1. В поле поиска введите **Directions on Microsoft**.
 
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_search.png)
 
-5. В области результатов выберите **Directions on Microsoft** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. В области результатов выберите **Directions on Microsoft** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_addfromgallery.png)
 
@@ -89,10 +89,10 @@ ms.locfileid: "39047479"
 Чтобы настроить и проверить единый вход Microsoft Azure AD в Directions on Microsoft, выполните следующие стандартные действия.
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Directions on Microsoft](#creating-a-directions-on-microsoft-test-user)** требуется для создания в Directions on Microsoft пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Directions on Microsoft](#creating-a-directions-on-microsoft-test-user)** требуется для создания в Directions on Microsoft пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -104,11 +104,11 @@ ms.locfileid: "39047479"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Directions on Microsoft** выполните следующие действия:
+1. В разделе **Домены и URL-адреса приложения Directions on Microsoft** выполните следующие действия:
 
     ![Настройка единого входа](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_url.png)
 
@@ -127,15 +127,15 @@ ms.locfileid: "39047479"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Directions on Microsoft](mailto:service@DirectionsOnMicrosoft.com). 
  
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Настройка единого входа](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Настройка единого входа](./media/directions-microsoft-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **Directions on Microsoft**, отправьте в [службу поддержки Directions on Microsoft](mailto:service@DirectionsOnMicrosoft.com) скачанный **XML-файл метаданных**. Чтобы позволить службе поддержки Directions on Microsoft найти ваше членство федеративного веб-сайта, включите в сообщение электронной почты сведения о своей организации.
+1. Чтобы настроить единый вход на стороне **Directions on Microsoft**, отправьте в [службу поддержки Directions on Microsoft](mailto:service@DirectionsOnMicrosoft.com) скачанный **XML-файл метаданных**. Чтобы позволить службе поддержки Directions on Microsoft найти ваше членство федеративного веб-сайта, включите в сообщение электронной почты сведения о своей организации.
     
     >[!NOTE]
     >Единый вход Directions on Microsoft должна включить [служба поддержки клиентов Directions on Microsoft](mailto:service@DirectionsOnMicrosoft.com). Вы получите уведомление, когда такой единый вход будет включен.
@@ -155,15 +155,15 @@ ms.locfileid: "39047479"
 
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/create_aaduser_01.png) 
 
-2. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/create_aaduser_02.png) 
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
  
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/directions-microsoft-tutorial/create_aaduser_04.png) 
 
@@ -193,23 +193,23 @@ ms.locfileid: "39047479"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **Directions on Microsoft**.
+1. В списке приложений выберите **Directions on Microsoft**.
 
     ![Настройка единого входа](./media/directions-microsoft-tutorial/tutorial_directionsonmicrosoft_app.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 

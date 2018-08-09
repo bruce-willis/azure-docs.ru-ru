@@ -2,24 +2,18 @@
 title: Использование файлов Azure в Linux | Документы Майкрософт
 description: Узнайте, как подключить файловый ресурс Azure через протокол SMB в Linux.
 services: storage
-documentationcenter: na
 author: RenaShahMSFT
-manager: aungoo
-editor: tamram
-ms.assetid: 6edc37ce-698f-4d50-8fc1-591ad456175d
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 03/29/2018
 ms.author: renash
-ms.openlocfilehash: eda06fbb63352dd71cb0183ebdf683dc2f3a4a4c
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.component: files
+ms.openlocfilehash: 89343f3e4ec91dd32b24cdea6632cecd855cc6f8
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413847"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523229"
 ---
 # <a name="use-azure-files-with-linux"></a>Использование файлов Azure в Linux
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от Майкрософт. Файловые ресурсы Azure можно подключить в дистрибутивах Linux с помощью [SMB-клиента в ядре](https://wiki.samba.org/index.php/LinuxCIFS). В этой статье описаны два способа подключения файлового ресурса Azure: по запросу с помощью команды `mount` и при загрузке путем создания записи в `/etc/fstab`.

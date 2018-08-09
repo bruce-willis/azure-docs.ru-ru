@@ -2,24 +2,18 @@
 title: Восстановление задания импорта инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Узнайте, как восстановить задание импорта, созданное и выполняемое с помощью службы импорта и экспорта Azure.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: 38cc16bd-ad55-4625-9a85-e1726c35fd1b
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
-ms.openlocfilehash: c837713fd9e7d03287ae5a3644fd6bb47714c9d4
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: e2eb580df0a90e07e79c7f080ba31e5418fc5956
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059869"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523790"
 ---
 # <a name="repairing-an-import-job"></a>Исправление задания импорта
 Иногда службе импорта и экспорта Microsoft Azure не удается скопировать некоторые файлы или их части в службу BLOB-объектов Windows Azure. Это может происходить по следующим причинам:  

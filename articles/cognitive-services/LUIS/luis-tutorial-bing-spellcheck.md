@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 02/27/2018
 ms.author: diberry
-ms.openlocfilehash: 87882052ed7faf0a7d2a665d51afb20db7ee839c
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 19774d2a87e9c74f291f030aab09cb21fe4a931b
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39239157"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525228"
 ---
 # <a name="correct-misspelled-words-with-bing-spell-check"></a>Исправление орфографических ошибок с помощью проверки орфографии Bing
 
@@ -64,7 +64,7 @@ ms.locfileid: "39239157"
 
 URL-адрес конечной точки включает несколько значений, которые должны быть переданы правильно. Ключ API проверки орфографии Bing версии 7 — еще одно из этих значений. Необходимо задать для параметра **spellCheck** значение true, а для значения **bing-spell-check-subscription-key** — значение ключа:
 
-https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appID}?subscription-key={luisKey}&spellCheck=**true**&bing-spell-check-subscription-key=**{bingKey}**&verbose=true&timezoneOffset=0&q={utterance}
+`https://{region}.api.cognitive.microsoft.com/luis/v2.0/apps/{appID}?subscription-key={luisKey}&spellCheck=**true**&bing-spell-check-subscription-key=**{bingKey}**&verbose=true&timezoneOffset=0&q={utterance}`
 
 ## <a name="send-misspelled-utterance-to-luis"></a>Отправка фрагментов речи с орфографическими ошибками в LUIS
 1. В веб-браузере скопируйте предыдущую строку и замените `region`, `appId`, `luisKey` и `bingKey` собственными значениями. Убедитесь, что правильно выбрали регион конечной точки, если он отличается от [региона](luis-reference-regions.md) публикации.

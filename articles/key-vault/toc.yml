@@ -44,30 +44,24 @@
       href: key-vault-ovw-throttling.md
 - name: Практические руководства
   items:
-    - name: управление
-      items:
-        - name: Ведение журнала Azure Key Vault
-          href: key-vault-logging.md
-        - name: Доступ за брандмауэрами
-          href: key-vault-access-behind-firewall.md
-        - name: Доступность и избыточность
-          href: key-vault-disaster-recovery-guidance.md
-        - name: Изменение идентификатора клиента
-          href: key-vault-subscription-move-fix.md
-        - name: Создание и управление с помощью Azure CLI
-          href: key-vault-manage-with-cli2.md
-        - name: Обратимое удаление в Key Vault с помощью CLI
-          href: key-vault-soft-delete-cli.md
-        - name: Обратимое удаление в Key Vault с помощью Azure PowerShell
-          href: key-vault-soft-delete-powershell.md
-        - name: Использование групп для предоставления доступа
-          href: key-vault-group-permissions-for-apps.md
-        - name: Защита хранилища ключей
-          href: key-vault-secure-your-key-vault.md
-    - name: Автоматизация
-      items:
-        - name: Служба автоматизации Azure
-          href: automation-manage-key-vault.md
+    - name: Ведение журнала Azure Key Vault
+      href: key-vault-logging.md
+    - name: Доступ за брандмауэрами
+      href: key-vault-access-behind-firewall.md
+    - name: Доступность и избыточность
+      href: key-vault-disaster-recovery-guidance.md
+    - name: Изменение идентификатора клиента
+      href: key-vault-subscription-move-fix.md
+    - name: Создание и управление с помощью Azure CLI
+      href: key-vault-manage-with-cli2.md
+    - name: Обратимое удаление в Key Vault с помощью CLI
+      href: key-vault-soft-delete-cli.md
+    - name: Обратимое удаление в Key Vault с помощью Azure PowerShell
+      href: key-vault-soft-delete-powershell.md
+    - name: Использование групп для предоставления доступа
+      href: key-vault-group-permissions-for-apps.md
+    - name: Защита хранилища ключей
+      href: key-vault-secure-your-key-vault.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

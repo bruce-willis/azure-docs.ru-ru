@@ -1,19 +1,19 @@
 ---
 title: Конечные точки безопасности в службе подготовки устройств Интернета вещей | Документация Майкрософт
 description: Основные понятия. Управление доступом к службе подготовки устройств Интернета вещей для серверных приложений. Эта статья включает сведения о маркерах безопасности.
-author: dsk-2015
+author: wesmc7777
 manager: timlt
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
 ms.date: 09/28/2017
-ms.author: dkshir
-ms.openlocfilehash: e33f6b61f757c9d7f6a773141ad0deea363be2b7
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: wesmc
+ms.openlocfilehash: b4776ef3589d994fff692e450d252c491c20f7b2
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629394"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522872"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -174,7 +174,7 @@ var token = generateSasToken(endpoint, policyKey, policyName, 60);
 
 В следующей таблице указаны разрешения, с помощью которых можно управлять доступом к службе подготовки устройств Интернета вещей.
 
-| Разрешение | Заметки |
+| Разрешение | Примечания |
 | --- | --- |
 | **ServiceConfig** |Предоставляет доступ для изменения конфигурации службы. <br/>Это разрешение используется серверными облачными службами. |
 | **EnrollmentRead** |Предоставляет доступ на чтение к регистрации устройств и группам регистрации. <br/>Это разрешение используется серверными облачными службами. |

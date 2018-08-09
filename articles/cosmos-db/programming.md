@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: andrl
-ms.openlocfilehash: 2b6c4b3598013baaf3277cb7810edc009df27ce2
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 6374fcf1477d56b9803b63476f3fef38fc12def1
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238426"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618902"
 ---
 # <a name="azure-cosmos-db-server-side-programming-stored-procedures-database-triggers-and-udfs"></a>Программирование Azure Cosmos DB на стороне сервера: хранимые процедуры, триггеры баз данных и определяемые пользователем функции
 
@@ -394,7 +394,7 @@ client.replaceDocumentAsync(docToReplace.self,
 Пост-триггеры, как и пред-триггеры, связаны с операцией на документе и не принимают никаких входных параметров. Они запускаются **после** завершения операции и получают доступ к ответному сообщению, которое отправляется клиенту.   
 
 В следующем примере используются триггеры со срабатыванием после наступления события:
-```
+```javascript
 var updateMetadataTrigger = {
     id: "updateMetadata",
     serverScript: function updateMetadata() {
@@ -434,7 +434,7 @@ var updateMetadataTrigger = {
 
 ```
 Триггер можно зарегистрировать, как показано в следующем примере.
-```
+```javascript
 // register post-trigger
 client.createTriggerAsync('dbs/testdb/colls/testColl', updateMetadataTrigger)
     .then(function(createdTrigger) { 
@@ -844,4 +844,3 @@ foreach (Book book in client.CreateDocumentQuery(UriFactory.CreateDocumentCollec
 * [Безопасность и расширяемость переносной базы данных](http://dl.acm.org/citation.cfm?id=276339) 
 * [Сервис-ориентированная архитектура баз данных](http://dl.acm.org/citation.cfm?id=1066267&coll=Portal&dl=GUIDE) 
 * [Размещение среды выполнения .NET на Microsoft SQL server](http://dl.acm.org/citation.cfm?id=1007669)
-

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: c027aa3d980d22e60c24db68aceb49fbef59d101
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 61fb9904e69f5269c345b733ef2396294c6c790a
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39046184"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39448178"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство по интеграции Azure Active Directory с Perception United States (Non-UltiPro)
 
@@ -53,7 +53,7 @@ ms.locfileid: "39046184"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Perception United States (Non-UltiPro) из коллекции.
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-perception-united-states-non-ultipro-from-the-gallery"></a>Добавление Perception United States (Non-UltiPro) из коллекции
 Чтобы настроить интеграцию Perception United States (Non-UltiPro) с Azure AD, необходимо добавить Perception United States (Non-UltiPro) из коллекции в список управляемых приложений SaaS.
@@ -64,15 +64,15 @@ ms.locfileid: "39046184"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Perception United States (Non-UltiPro)**, выберите **Perception United States (Non-UltiPro)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. В поле поиска введите **Perception United States (Non-UltiPro)**, выберите **Perception United States (Non-UltiPro)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Perception United States (Non-UltiPro) в списке результатов](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_addfromgallery.png)
 
@@ -87,10 +87,10 @@ ms.locfileid: "39046184"
 Чтобы настроить и проверить единый вход Azure AD в Perception United States (Non-UltiPro), вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Perception United States (Non-UltiPro)](#create-a-perception-united-states-non-ultipro-test-user)** требуется для создания пользователя Britta Simon в Perception United States (Non-UltiPro), связанного с соответствующим представлением пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Perception United States (Non-UltiPro)](#create-a-perception-united-states-non-ultipro-test-user)** требуется для создания пользователя Britta Simon в Perception United States (Non-UltiPro), связанного с соответствующим представлением пользователя в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -102,11 +102,11 @@ ms.locfileid: "39046184"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Perception United States (Non-UltiPro)** выполните следующие действия:
+1. В разделе **Домены и URL-адреса приложения Perception United States (Non-UltiPro)** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа для приложения Perception United States (Non-UltiPro)](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_url.png)
 
@@ -117,15 +117,15 @@ ms.locfileid: "39046184"
     > [!NOTE] 
     > Это значение приведено для примера. Вы замените это значение на фактический URL-адрес ответа, который описывается далее в этом учебнике.
  
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/perceptionunitedstates-tutorial/tutorial_general_400.png)
 
-6. В разделе **Настройка Perception United States (Non-UltiPro)** щелкните **Настроить Perception United States (Non-UltiPro)**, чтобы открыть окно **Настройка единого входа**. Скопируйте значение **SAML Entity ID** (Идентификатор сущности SAML) из раздела **Краткий справочник**.
+1. В разделе **Настройка Perception United States (Non-UltiPro)** щелкните **Настроить Perception United States (Non-UltiPro)**, чтобы открыть окно **Настройка единого входа**. Скопируйте значение **SAML Entity ID** (Идентификатор сущности SAML) из раздела **Краткий справочник**.
 
     a. Приложению **Perception United States (Non-UltiPro)** необходимо значение **идентификатора сущности SAML**, которое вы скопировали, чтобы закодировать в формате URI. Чтобы получить значение, закодированное в формате URI, перейдите по ссылке **http://www.url-encode-decode.com/**.
 
@@ -137,13 +137,13 @@ ms.locfileid: "39046184"
 
     ![Настройка Perception United States (Non-UltiPro)](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_configure.png) 
 
-7. В другом окне браузера войдите на корпоративный веб-сайт Perception United States (Non-UltiPro) с правами администратора.
+1. В другом окне браузера войдите на корпоративный веб-сайт Perception United States (Non-UltiPro) с правами администратора.
 
-8. На главной панели инструментов щелкните **Account Settings** (Параметры учетной записи).
+1. На главной панели инструментов щелкните **Account Settings** (Параметры учетной записи).
 
     ![Пользователь Perception United States (Non-UltiPro)](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_user.png)
 
-9. На странице **Account Settings** (Параметры учетной записи) выполните следующие действия:
+1. На странице **Account Settings** (Параметры учетной записи) выполните следующие действия:
 
     ![Пользователь Perception United States (Non-UltiPro)](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_account.png)
 
@@ -155,7 +155,7 @@ ms.locfileid: "39046184"
 
     d. Выберите для параметра **SSO Identity Provider** (Поставщик удостоверений единого входа) значение **SAML 2.0**.
 
-10. На странице **настройки единого входа** сделайте следующее:
+1. На странице **настройки единого входа** сделайте следующее:
 
     ![Настройка единого входа Perception United States (Non-UltiPro)](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_ssoconfig.png)
 
@@ -169,7 +169,7 @@ ms.locfileid: "39046184"
 
     д. Нажмите кнопку **Upload Again** (Отправить еще раз), чтобы передать **XML-файл метаданных**.
 
-    f. Нажмите кнопку **Обновить**.
+    Е. Нажмите кнопку **Обновить**.
 
 
 > [!TIP]
@@ -187,15 +187,15 @@ ms.locfileid: "39046184"
 
     ![Кнопка "Azure Active Directory"](./media/perceptionunitedstates-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/perceptionunitedstates-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/perceptionunitedstates-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/perceptionunitedstates-tutorial/create_aaduser_04.png)
 
@@ -223,23 +223,23 @@ ms.locfileid: "39046184"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **Perception United States (Non-UltiPro)**.
+1. В списке приложений выберите **Perception United States (Non-UltiPro)**.
 
     ![Ссылка на Perception United States (Non-UltiPro) в списке "Приложения"](./media/perceptionunitedstates-tutorial/tutorial_perceptionunitedstates_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 04/17/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: f1388843f2c5d3ea607b876ece288db1370329a2
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 173588c0200666c52f3ac0a5d2e70d667cfe3294
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38461543"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39445567"
 ---
 # <a name="tutorial-secure-sql-database-connection-with-managed-service-identity"></a>Руководство. Безопасное подключение базы данных Azure SQL с использованием управляемого удостоверения службы
 
@@ -38,7 +38,7 @@ ms.locfileid: "38461543"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Эта статья является продолжением статьи [Руководство. Создание приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Если вы еще этого не сделали, сначала ознакомьтесь с этим руководством. Кроме того, вы можете адаптировать шаги для своего собственного приложения ASP.NET с базой данных SQL.
 
@@ -48,7 +48,7 @@ ms.locfileid: "38461543"
 
 ## <a name="enable-managed-service-identity"></a>Включение удостоверения управляемой службы
 
-Чтобы включить удостоверение службы для вашего приложения Azure, используйте команду [​​az webapp identity](/cli/azure/webapp/identity?view=azure-cli-latest#az_webapp_identity_assign) в Cloud Shell. В следующей команде замените *\<app name>*.
+Чтобы включить удостоверение службы для вашего приложения Azure, используйте команду [​​az webapp identity](/cli/azure/webapp/identity?view=azure-cli-latest#az-webapp-identity-assign) в Cloud Shell. В следующей команде замените *\<app name>*.
 
 ```azurecli-interactive
 az webapp identity assign --resource-group myResourceGroup --name <app name>
@@ -73,7 +73,7 @@ az ad sp show --id <principalid>
 
 ## <a name="grant-database-access-to-identity"></a>Предоставление доступа к базе данных
 
-Затем вы предоставляете доступ к базе данных удостоверению службы приложения, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az_sql_server_ad-admin_create) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>*.
+Затем вы предоставляете доступ к базе данных удостоверению службы приложения, используя команду [`az sql server ad-admin create`](/cli/azure/sql/server/ad-admin?view=azure-cli-latest#az-sql-server-ad-admin_create) в Cloud Shell. В следующей команде замените *\<server_name>* и <principalid_from_last_step>. Введите имя администратора вместо *\<admin_user>*.
 
 ```azurecli-interactive
 az sql server ad-admin create --resource-group myResourceGroup --server-name <server_name> --display-name <admin_user> --object-id <principalid_from_last_step>
@@ -83,7 +83,7 @@ az sql server ad-admin create --resource-group myResourceGroup --server-name <se
 
 ## <a name="modify-connection-string"></a>Изменение строки подключения
 
-Измените подключение, которое вы установили ранее для своего приложения, используя команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az_webapp_config_appsettings_set) в Cloud Shell. В следующей команде замените *\<app name>* на имя вашего приложения, а также *\<server_name>* и *\<db_name>* именами вашей базы данных SQL.
+Измените подключение, которое вы установили ранее для своего приложения, используя команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. В следующей команде замените *\<app name>* на имя вашего приложения, а также *\<server_name>* и *\<db_name>* именами вашей базы данных SQL.
 
 ```azurecli-interactive
 az webapp config connection-string set --resource-group myResourceGroup --name <app name> --settings MyDbConnection='Server=tcp:<server_name>.database.windows.net,1433;Database=<db_name>;' --connection-string-type SQLAzure

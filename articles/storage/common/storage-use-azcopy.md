@@ -2,24 +2,18 @@
 title: Копирование или перемещение данных в службу хранилища Azure с помощью AzCopy для Windows | Документация Майкрософт
 description: Утилита AzCopy для Windows позволяет копировать и перемещать данные в содержимое BLOB-объектов, таблиц и файлов и из него. Копируйте данные в хранилище Azure из локальных файлов, а также внутри учетной записи хранения и из одной такой учетной записи в другую. Легко переносите данные в хранилище Azure.
 services: storage
-documentationcenter: ''
 author: seguler
-manager: jahogg
-editor: tysonn
-ms.assetid: aa155738-7c69-4a83-94f8-b97af4461274
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/17/2018
 ms.author: seguler
-ms.openlocfilehash: 430979cf197138a9e239eba74e50e9f97d96cbf6
-ms.sourcegitcommit: 4f9fa86166b50e86cf089f31d85e16155b60559f
+ms.component: common
+ms.openlocfilehash: aaae191baaa7b712c77d93303ded777afe97c249
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34757610"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530596"
 ---
 # <a name="transfer-data-with-the-azcopy-on-windows"></a>Перенос данных с помощью AzCopy для Windows
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов, хранилища файлов и хранилища таблиц Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  
@@ -29,7 +23,7 @@ AzCopy — это служебная программа командной ст
 ## <a name="download-and-install-azcopy-on-windows"></a>Скачивание и установка AzCopy для Windows
 
 ### <a name="latest-preview-version-v800"></a>Последняя предварительная версия (8.0.0)
-Скачайте [последнюю предварительную версию AzCopy для Windows](http://aka.ms/downloadazcopypr). Эта предварительная версия обеспечивает значительное повышение производительности и установку пакетов .NET Core.
+Скачайте [последнюю предварительную версию AzCopy для Windows](https://aka.ms/downloadazcopypr). Эта предварительная версия обеспечивает значительное повышение производительности и установку пакетов .NET Core.
 
 #### <a name="azcopy-on-windows-80-preview-release-notes"></a>Заметки о выпуске предварительной версии AzCopy для Windows 8.0
 - В последней версии служба таблиц уже не поддерживается. Если вы используете функцию экспорта таблиц, скачайте стабильную версию.
@@ -37,7 +31,7 @@ AzCopy — это служебная программа командной ст
 - Значительное повышение производительности операций передачи и скачивания.
 
 ### <a name="latest-stable-version-v710"></a>Последняя стабильная версия (7.1.0)
-Скачайте [последнюю стабильную версию AzCopy для Windows](http://aka.ms/downloadazcopy).
+Скачайте [последнюю стабильную версию AzCopy для Windows](https://aka.ms/downloadazcopy).
 
 ### <a name="post-installation-step"></a>Действия после установки
 

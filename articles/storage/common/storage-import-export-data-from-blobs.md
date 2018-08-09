@@ -2,18 +2,18 @@
 title: Использование службы "Импорт и экспорт Azure" для экспорта данных из больших двоичных объектов Azure | Документация Майкрософт
 description: Сведения о создании заданий экспорта на портале Azure для передачи данных из больших двоичных объектов Azure.
 author: alkohli
-manager: twooley
 services: storage
 ms.service: storage
 ms.topic: article
 ms.date: 07/17/2018
 ms.author: alkohli
-ms.openlocfilehash: eb714086a0142d9780bd018d77dc880a430f240e
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.component: common
+ms.openlocfilehash: a7456bedeb6bc870ad5d6892fe697fb2dfcd3bc1
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39113764"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527810"
 ---
 # <a name="use-the-azure-importexport-service-to-export-data-from-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для экспорта данных из хранилища BLOB-объектов Azure
 В этой статье содержатся пошаговые инструкции по использованию службы "Импорт и экспорт Azure" для безопасного экспорта больших объемов данных из хранилища BLOB-объектов Azure. Эта служба требует отправки пустых дисков в центр обработки данных Azure. Служба экспортирует данные из учетной записи хранения на диски, а затем отправляет эти диски обратно.

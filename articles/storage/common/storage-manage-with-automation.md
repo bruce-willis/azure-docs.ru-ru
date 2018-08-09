@@ -2,24 +2,18 @@
 title: Управление хранилищем Azure RemoteApp с помощью службы автоматизации Azure
 description: Способы использования службы автоматизации Azure для управления хранилищем Azure при масштабировании.
 services: storage, automation
-documentationcenter: ''
 author: jodoglevy
-manager: eamono
-editor: ''
-ms.assetid: bac41c39-1d95-46aa-a481-ec17bbb21b40
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2016
 ms.author: eamono
-ms.openlocfilehash: 4649e42a628307e15f8b067503e4e8e13f16f1af
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: 82ec929c8d3055187a83179432fc601baa191cc4
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059549"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526374"
 ---
 # <a name="managing-azure-storage-using-azure-automation"></a>Управление хранилищем Azure RemoteApp с помощью службы автоматизации Azure
 В этом руководстве представлена служба автоматизации Azure и описано, как ее использовать, чтобы упростить управление BLOB-объектами, таблицами и запросами хранилища Azure.

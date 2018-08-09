@@ -2,24 +2,18 @@
 title: Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, что необходимо учесть при планировании развертывания службы "Файлы Azure".
 services: storage
-documentationcenter: ''
 author: wmgries
-manager: aungoo
-editor: tamram
-ms.assetid: 297f3a14-6b3a-48b0-9da4-db5907827fb5
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
-ms.openlocfilehash: c8da3f501d03a05ef5490197d4fd38ada01a4997
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.component: files
+ms.openlocfilehash: 00ce83a7ec52e24ce858c720e834b8396c2f808c
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39158445"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523971"
 ---
 # <a name="addremove-an-azure-file-sync-server-endpoint"></a>Добавление и удаление конечных точек сервера службы "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.

@@ -1,25 +1,20 @@
 ---
-title: Использование Apache Kafka в HDInsight с Центром Интернета вещей | Документация Майкрософт
+title: Использование Apache Kafka в HDInsight с Центром Интернета вещей
 description: Узнайте, как использовать Apache Kafka в HDInsight с Центром Интернета вещей. Проект Центра Интернета вещей Kafka Connect предоставляет соединитель источника и приемника для Kafka. Соединитель источника считывает данные из Центра Интернета вещей, а соединитель приемника записывает данные в Центр Интернета вещей.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: big-data
 ms.date: 05/15/2018
-ms.author: larryfr
-ms.openlocfilehash: 33fdb5b099efc40fec94a860b21cda75ced44fe9
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: c540e110a12e981aee992348445cd1032ba0ba77
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34267305"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618342"
 ---
 # <a name="use-apache-kafka-on-hdinsight-with-azure-iot-hub"></a>Использование Apache Kafka в HDInsight с Центром Интернета вещей
 
@@ -35,7 +30,7 @@ API Kafka Connect позволяет реализовать соединител
 
 Дополнительные сведения о API подключения см. по адресу: [https://kafka.apache.org/documentation/#connect](https://kafka.apache.org/documentation/#connect).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

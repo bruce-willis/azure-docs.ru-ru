@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/26/2018
 ms.author: barclayn
-ms.openlocfilehash: 210781b36f6215afc925266e597031d772a94002
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e3fe033de05ed42d221795159461048790e1cec8
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39059206"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493308"
 ---
 # <a name="azure-identity-management-and-access-control-security-best-practices"></a>Рекомендации по обеспечению безопасности за счет управления удостоверениями и контроля доступа Azure
 
@@ -133,7 +133,7 @@ ms.locfileid: "39059206"
 
 Организации, которые не используют принудительный контроль удостоверений для доступа к приложениям и не предоставляют разработчикам рекомендации о том, как безопасно интегрировать приложения с их системами управления идентификацией, более уязвимы к атакам кражи учетных данных, например [ненадежной аутентификации и управлению сеансами, описанными в статье о 10 основных открытых проектах безопасности веб-приложений (OWASP)](https://www.owasp.org/index.php/OWASP_Top_Ten_Cheat_Sheet).
 
-Дополнительные сведения о сценариях аутентификации для приложений SaaS см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/active-directory-authentication-scenarios.md).
+Дополнительные сведения о сценариях аутентификации для приложений SaaS см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 
 ## <a name="actively-monitor-for-suspicious-activities"></a>Активный мониторинг подозрительных действий
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 12/01/2017
 ms.author: daveba
-ms.openlocfilehash: ee4702733e775051cbbcace109bd1a7ffdf50e9c
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 42ac1cc7dd50f46ada263089437740e680928e70
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325461"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596058"
 ---
 # <a name="how-to-use-an-azure-vm-managed-service-identity-msi-for-token-acquisition"></a>Использование управляемого удостоверения службы (MSI) виртуальной машины Azure для получения маркера 
 
@@ -44,7 +44,7 @@ ms.locfileid: "39325461"
 
 ## <a name="overview"></a>Обзор
 
-Клиентское приложение может запрашивать [маркер доступа к приложению](../develop/active-directory-dev-glossary.md#access-token) для управляемого удостоверения службы, чтобы получить доступ к заданному ресурсу. Маркер создан на основе [субъекта-службы MSI](overview.md#how-does-it-work). Таким образом клиенту не нужно регистрироваться для получения маркера доступа для собственного субъекта-службы. Маркер подходит для использования в качестве маркера носителя при [выполнении вызовов между службами, требующих учетных данных клиента](../develop/active-directory-protocols-oauth-service-to-service.md).
+Клиентское приложение может запрашивать [маркер доступа к приложению](../develop/developer-glossary.md#access-token) для управляемого удостоверения службы, чтобы получить доступ к заданному ресурсу. Маркер создан на основе [субъекта-службы MSI](overview.md#how-does-it-work). Таким образом клиенту не нужно регистрироваться для получения маркера доступа для собственного субъекта-службы. Маркер подходит для использования в качестве маркера носителя при [выполнении вызовов между службами, требующих учетных данных клиента](../develop/v1-oauth2-client-creds-grant-flow.md).
 
 |  |  |
 | -------------- | -------------------- |

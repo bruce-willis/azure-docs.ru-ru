@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 06/25/2018
 ms.author: mabrigg
 ms.reviewer: sijuman
-ms.openlocfilehash: 1b59409e43a23dd63a6697a44a20df079a751516
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: e5dd41b34c41c442034e0a7ccb74c8d5b6583753
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866864"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39436715"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-20-in-azure-stack"></a>Использование профилей версий API и Azure CLI 2.0 в Azure Stack
 
@@ -38,7 +38,7 @@ az --version
 
 1. Получите корневой сертификат ЦС Azure Stack от [оператора Azure Stack](..\azure-stack-cli-admin.md#export-the-azure-stack-ca-root-certificate) и установите доверие к нему. Чтобы настроить доверие для корневого сертификата ЦС Azure Stack, добавьте его после существующего сертификата Python.
 
-2. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить [pip](https://pip.pypa.io) и модуль [certifi](https://pypi.org/project/certifi/). Вы можете использовать следующие команды Python из командной строки Bash:
+1. Найдите расположение сертификата на своем компьютере. Это расположение зависит от того, куда вы установили Python. Вам потребуется установить [pip](https://pip.pypa.io) и модуль [certifi](https://pypi.org/project/certifi/). Вы можете использовать следующие команды Python из командной строки Bash:
 
   ```bash  
     python -c "import certifi; print(certifi.where())"
@@ -60,9 +60,9 @@ sudo cat /var/lib/waagent/Certificates.pem >> ~/<yourpath>/cacert.pem
 
 1. Нужно настроить [подключение VPN к Azure Stack](azure-stack-connect-azure-stack.md).
 
-2. Скопируйте сертификат PEM, полученный от оператора Azure Stack, и запомните расположение этого файла (PATH_TO_PEM_FILE).
+1. Скопируйте сертификат PEM, полученный от оператора Azure Stack, и запомните расположение этого файла (PATH_TO_PEM_FILE).
 
-3. Выполните приведенные ниже команды с учетом ОС на рабочей станции разработчика.
+1. Выполните приведенные ниже команды с учетом ОС на рабочей станции разработчика.
 
 #### <a name="linux"></a>Linux
 
@@ -129,7 +129,7 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
         --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
       ```
 
-   Б. Чтобы зарегистрировать среду *пользователя*, используйте команду:
+   b. Чтобы зарегистрировать среду *пользователя*, используйте команду:
 
       ```azurecli
       az cloud register \ 
@@ -140,7 +140,7 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
         --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
       ```
 
-2. Следующие команды позволяют выбрать активную среду:
+1. Следующие команды позволяют выбрать активную среду:
 
    a. В среде *администратора облака* используйте такую команду:
 
@@ -149,21 +149,21 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
         -n AzureStackAdmin
       ```
 
-   Б. В среде *пользователя* используйте команду:
+   b. В среде *пользователя* используйте команду:
 
       ```azurecli
       az cloud set \
         -n AzureStackUser
       ```
 
-3. Укажите в конфигурации среды версию API-интерфейса, специально предназначенную для Azure Stack. Чтобы изменить эту конфигурацию, выполните следующую команду:
+1. Укажите в конфигурации среды версию API-интерфейса, специально предназначенную для Azure Stack. Чтобы изменить эту конфигурацию, выполните следующую команду:
 
    ```azurecli
    az cloud update \
      --profile 2017-03-09-profile
    ```
 
-4. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects). 
+1. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects). 
 
    * Для входа от имени *пользователя* можно указать имя пользователя и пароль непосредственно в команде `az login` или выполнить аутентификацию в браузере. Если для вашей учетной записи включена многофакторная аутентификация, возможным будет только второй вариант.
 

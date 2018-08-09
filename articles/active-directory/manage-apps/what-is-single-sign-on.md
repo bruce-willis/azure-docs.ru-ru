@@ -14,12 +14,12 @@ ms.date: 07/16/2018
 ms.author: barbkess
 ms.reviewer: asmalser
 ms.custom: it-pro
-ms.openlocfilehash: 4ad1416f79b8cf9c03904da5f9efc1d1aae475d9
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 1a7ecbe42857e522785d5919d46b783feae4caeb
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39364036"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494131"
 ---
 # <a name="what-is-application-access-and-single-sign-on-with-azure-active-directory"></a>Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?
 Благодаря единому входу пользователи получают доступ ко всем приложениям и ресурсам, необходимым для работы, выполнив только один вход с использованием одной учетной записи. После входа пользователю доступны все необходимые приложения без повторной проверки подлинности (например, ввода пароля).
@@ -112,7 +112,7 @@ Azure AD поддерживает единый вход на основе пар
 * **Добавление отсутствующего приложения.** С помощью категории "Пользовательские" в коллекции приложений на портале Azure можно подключить отсутствующее в списке приложение, которое использует ваша организация. Можно добавить любое приложение, поддерживающее протокол SAML 2.0 в качестве федеративного приложения, или любое приложения со страницей для входа на базе HTML в качестве приложения с паролем для единого входа. Дополнительные сведения см. в статье о [добавлении собственных приложений](../application-config-sso-how-to-configure-federated-sso-non-gallery.md).
 * **Добавление самостоятельно разработанного приложения.** Если вы самостоятельно разработали приложение, то с помощью рекомендаций в документации разработчика для Azure AD можно реализовать федеративный единый вход или выполнить подготовку с использованием API Graph Azure AD. Для получения дополнительных сведений см. следующие ресурсы.
   
-  * [Сценарии аутентификации в Azure Active Directory](../active-directory-authentication-scenarios.md)
+  * [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md)
   * [https://github.com/AzureADSamples/WebApp-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-MultiTenant-OpenIdConnect-DotNet)
   * [https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet)
   * [https://github.com/AzureADSamples/NativeClient-WebAPI-MultiTenant-WindowsStore](https://github.com/AzureADSamples/NativeClient-WebAPI-MultiTenant-WindowsStore)

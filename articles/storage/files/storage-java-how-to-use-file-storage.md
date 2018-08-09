@@ -2,24 +2,19 @@
 title: Разработка для файлов Azure с использованием языка Java | Документы Майкрософт
 description: Узнайте, как разрабатывать приложения и службы Java, использующие файлы Azure для хранения файлов данных.
 services: storage
-documentationcenter: java
 author: wmgries
-manager: aungoo
-editor: tamram
-ms.assetid: 3bfbfa7f-d378-4fb4-8df3-e0b6fcea5b27
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: renash
-ms.openlocfilehash: a9585bc77a73cbd84fb2efa201a5745c62f3360a
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.component: files
+ms.openlocfilehash: aa63a31f7f84502a29aad6b38f454ea1080127e0
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34738206"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530039"
 ---
 # <a name="develop-for-azure-files-with-java"></a>Разработка для файлов Azure с использованием языка Java
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -35,7 +30,7 @@ ms.locfileid: "34738206"
 * Передача, загрузка и удаление файлов.
 
 > [!Note]  
-> Так как к файлам Azure можно обращаться через SMB, вы можете создавать приложения, которые получают доступ к общей папке Azure с использованием стандартных классов ввода-вывода в Java. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Java для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/file-service-rest-api) для взаимодействия с файлами Azure.
+> Так как к файлам Azure можно обращаться через SMB, вы можете создавать приложения, которые получают доступ к общей папке Azure с использованием стандартных классов ввода-вывода в Java. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Java для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api) для взаимодействия с файлами Azure.
 
 ## <a name="create-a-java-application"></a>Создание приложения Java
 Для создания примеров вам потребуется комплект разработчика Java (JDK) и [Пакет SDK для службы хранилища Azure для Java](https://github.com/Azure/azure-storage-java). Вам также необходимо создать учетную запись хранилища Azure.
@@ -234,7 +229,7 @@ if ( file.deleteIfExists() ) {
 * [Azure for Java developers](/java/azure) (Azure для разработчиков Java)
 * [Пакет SDK для службы хранилища Azure для Java](https://github.com/azure/azure-storage-java)
 * [Microsoft Azure Storage SDK for Android](https://github.com/azure/azure-storage-android)
-* [справочнике по пакету SDK для клиента службы хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
+* [Справочник по пакету SDK для клиента хранилища Azure](http://dl.windowsazure.com/storage/javadoc/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355.aspx)
 * [Блог рабочей группы службы хранилища Azure](http://blogs.msdn.com/b/windowsazurestorage/)
 * [Приступая к работе со служебной программой командной строки AzCopy](../common/storage-use-azcopy.md)

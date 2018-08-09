@@ -2,24 +2,18 @@
 title: Шифрование на стороне клиента с помощью .NET для службы хранилища Microsoft Azure | Документация Майкрософт
 description: Клиентская библиотека хранилища Azure для .NET поддерживает шифрование на стороне клиента, а также интеграцию с хранилищем ключей Azure для обеспечения максимальной защиты ваших приложений службы хранилища Azure.
 services: storage
-documentationcenter: .net
 author: craigshoemaker
-manager: jeconnoc
-editor: tysonn
-ms.assetid: becfccca-510a-479e-a798-2044becd9a64
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: cshoe
-ms.openlocfilehash: 723ef31c0247d2b2b5e546b4e4fb3d91a516773c
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.component: common
+ms.openlocfilehash: 4d94096c82f56254c1cd40a2192b4309ce0c9f30
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30245453"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521736"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -68,7 +62,7 @@ ms.locfileid: "30245453"
 
 При скачивании зашифрованного двоичного объекта предполагается извлечение всего его содержимое с помощью методов **DownloadTo** **/BlobReadStream**\*. Зашифрованный ключ CEK расшифровывается и используется вместе с ключом IV (который в данном случае хранится как метаданные большого двоичного объекта) для передачи расшифрованных данных обратно пользователям.
 
-Скачивание произвольного диапазона (с помощью методов**downloadRange**\*) из зашифрованного большого двоичного объекта предполагает настройку диапазона на стороне пользователя, чтобы получить небольшой объем дополнительных данных, которые помогут расшифровать запрошенный диапазон.
+Скачивание произвольного диапазона (с помощью методов**downloadRange***) из зашифрованного большого двоичного объекта предполагает настройку диапазона на стороне пользователя, чтобы получить небольшой объем дополнительных данных, которые помогут расшифровать запрошенный диапазон.
 
 Все типы больших двоичных объектов (блочные, страничные и инкрементируемые) могут быть зашифрованы и расшифрованы с помощью этой схемы.
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: kumud
-ms.openlocfilehash: e469311609909e3453015702fca7d015a4e72398
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: dbefe5324acb699abb0e06b8f3f464a91a6fa2e2
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34273972"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39431136"
 ---
 #  <a name="load-balance-vms-across-all-availability-zones-using-azure-cli"></a>Балансировка нагрузки виртуальных машин по всем зонам доступности с помощью Azure CLI
 
@@ -39,7 +39,7 @@ ms.locfileid: "34273972"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupSLB* в расположении *westeurope*.
 
@@ -69,7 +69,7 @@ az network public-ip create \
 - правило подсистемы балансировки нагрузки, определяющее порядок распределения трафика между виртуальными машинами.
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
-Создайте подсистему балансировки нагрузки уровня "Стандартный" с помощью команды [az network lb create](/cli/azure/network/lb#az_network_lb_create). В следующем примере создается подсистема балансировки нагрузки *myLoadBalancer*, а адрес *myPublicIP* назначается внешней IP-конфигурации.
+Создайте подсистему балансировки нагрузки уровня "Стандартный" с помощью команды [az network lb create](/cli/azure/network/lb#az-network-lb-create). В следующем примере создается подсистема балансировки нагрузки *myLoadBalancer*, а адрес *myPublicIP* назначается внешней IP-конфигурации.
 
 ```azurecli-interactive
 az network lb create \
@@ -83,7 +83,7 @@ az network lb create \
 
 ## <a name="create-health-probe-on-port-80"></a>Создание проверки работоспособности на порте 80
 
-Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте проверку работоспособности с помощью команды az network lb probe create, чтобы отслеживать работоспособность виртуальных машин. Чтобы создать пробу работоспособности TCP, используйте команду [az network lb probe create](/cli/azure/network/lb/probe#az_network_lb_probe_create). В следующем примере создается проба TCP *myHealthProbe*.
+Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте проверку работоспособности с помощью команды az network lb probe create, чтобы отслеживать работоспособность виртуальных машин. Чтобы создать пробу работоспособности TCP, используйте команду [az network lb probe create](/cli/azure/network/lb/probe#az-network-lb-probe-create). В следующем примере создается проба TCP *myHealthProbe*.
 
 ```azurecli-interactive
 az network lb probe create \
@@ -95,7 +95,7 @@ az network lb probe create \
 ```
 
 ## <a name="create-load-balancer-rule-for-port-80"></a>Создание правила подсистемы балансировки нагрузки для порта 80
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](/cli/azure/network/lb/rule#az_network_lb_rule_create) создайте правило подсистемы балансировки нагрузки с именем *myLoadBalancerRuleWeb* для прослушивания порта 80, используемого внешним пулом *myFrontEndPool*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80.
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул IP-адресов для приема трафика, а также порты источника и назначения. С помощью команды [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) создайте правило подсистемы балансировки нагрузки с именем *myLoadBalancerRuleWeb* для прослушивания порта 80, используемого внешним пулом *myFrontEndPool*, и отправки трафика с балансировкой нагрузки внутреннему пулу адресов *myBackEndPool*, который также использует порт 80.
 
 ```azurecli-interactive
 az network lb rule create \
@@ -115,7 +115,7 @@ az network lb rule create \
 
 ### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
-С помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create) в группе ресурсов myResourceGroup создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*.
+С помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) в группе ресурсов myResourceGroup создайте виртуальную сеть с именем *myVnet*, содержащую подсеть *mySubnet*.
 
 
 ```azurecli-interactive
@@ -128,7 +128,7 @@ az network vnet create \
 
 ### <a name="create-a-network-security-group"></a>Создание группы безопасности сети
 
-Создайте группу безопасности сети с именем *myNetworkSecurityGroup* для определения входящих подключений к виртуальной сети с помощью команды [az network nsg create](/cli/azure/network/nsg#az_network_nsg_create).
+Создайте группу безопасности сети с именем *myNetworkSecurityGroup* для определения входящих подключений к виртуальной сети с помощью команды [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create).
 
 ```azurecli-interactive
 az network nsg create \
@@ -136,7 +136,7 @@ az network nsg create \
 --name myNetworkSecurityGroup
 ```
 
-Создайте правило группы безопасности сети с именем *myNetworkSecurityGroupRule* для порта 80 с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule#az_network_nsg_rule_create).
+Создайте правило группы безопасности сети с именем *myNetworkSecurityGroupRule* для порта 80 с помощью команды [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create).
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -153,7 +153,7 @@ az network nsg rule create \
 --priority 200
 ```
 ### <a name="create-nics"></a>Создание сетевых адаптеров
-Создайте три виртуальных сетевых адаптера с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. В следующем примере создаются шесть виртуальных сетевых адаптеров. (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением). Вы можете в любое время создать дополнительные виртуальные сетевые карты и виртуальные машины и добавить их в балансировщик нагрузки:
+Создайте три виртуальных сетевых адаптера с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. В следующем примере создаются шесть виртуальных сетевых адаптеров. (по одной виртуальной сетевой карте для каждой виртуальной машины, используемой приложением). Вы можете в любое время создать дополнительные виртуальные сетевые карты и виртуальные машины и добавить их в балансировщик нагрузки:
 
 ```azurecli-interactive
 for i in `seq 1 3`; do
@@ -217,7 +217,7 @@ runcmd:
 ```
 
 ### <a name="create-the-zonal-virtual-machines"></a>Создание зональных виртуальных машин
-Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create) в зонах 1, 2 и 3. В следующем примере создается виртуальная машина в каждой зоне и ключи SSH, если они не существуют.
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create) в зонах 1, 2 и 3. В следующем примере создается виртуальная машина в каждой зоне и ключи SSH, если они не существуют.
 
 Создайте виртуальную машину в каждой зоне (в зонах 1, 2 и 3) в расположении *westeurope*.
 
@@ -235,7 +235,7 @@ done
 ```
 ## <a name="test-the-load-balancer"></a>Тестирование подсистемы балансировки нагрузки
 
-Получите общедоступный IP-адрес подсистемы балансировки нагрузки, используя команду [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). 
+Получите общедоступный IP-адрес подсистемы балансировки нагрузки, используя команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). 
 
 ```azurecli-interactive
   az network public-ip show \

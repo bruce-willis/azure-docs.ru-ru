@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 2387cb6517675e59bc84c6283d31575c9a0aff60
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 6e1f586350a47b70da1b297b608feb9011363dec
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39043593"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39437533"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-brightspace-by-desire2learn"></a>Руководство. Интеграция Azure Active Directory с Brightspace (разработка Desire2Learn)
 
@@ -52,7 +52,7 @@ ms.locfileid: "39043593"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Brightspace by Desire2Learn из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-brightspace-by-desire2learn-from-the-gallery"></a>Добавление Brightspace by Desire2Learn из коллекции
 Чтобы настроить интеграцию Brightspace by Desire2Learn с Azure AD, необходимо добавить Brightspace by Desire2Learn из коллекции в список управляемых приложений SaaS.
@@ -63,19 +63,19 @@ ms.locfileid: "39043593"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **Brightspace by Desire2Learn**.
+1. В поле поиска введите **Brightspace by Desire2Learn**.
 
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_search.png)
 
-5. На панели результатов выберите **Brightspace by Desire2Learn** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На панели результатов выберите **Brightspace by Desire2Learn** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_addfromgallery.png)
 
@@ -89,10 +89,10 @@ ms.locfileid: "39043593"
 Чтобы настроить и проверить единый вход Azure AD в Brightspace by Desire2Learn, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Brightspace by Desire2Learn](#creating-a-brightspace-by-desire2learn-test-user)** нужно для того, чтобы в Brightspace by Desire2Learn также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Brightspace by Desire2Learn](#creating-a-brightspace-by-desire2learn-test-user)** нужно для того, чтобы в Brightspace by Desire2Learn также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -104,11 +104,11 @@ ms.locfileid: "39043593"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Brightspace by Desire2Learn** сделайте следующее.
+1. В разделе **Домены и URL-адреса приложения Brightspace by Desire2Learn** сделайте следующее.
 
     ![Настройка единого входа](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_url.png)
 
@@ -125,15 +125,15 @@ ms.locfileid: "39043593"
  
 
 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Настройка единого входа](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Настройка единого входа](./media/brightspace-desire2learn-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **Brightspace by Desire2Learn**, необходимо отправить скачанный **XML-файл метаданных** [группе поддержки Brightspace by Desire2Learn](https://www.d2l.com/contact/).
+1. Чтобы настроить единый вход на стороне **Brightspace by Desire2Learn**, необходимо отправить скачанный **XML-файл метаданных** [группе поддержки Brightspace by Desire2Learn](https://www.d2l.com/contact/).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -150,15 +150,15 @@ ms.locfileid: "39043593"
 
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/create_aaduser_01.png) 
 
-2. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/create_aaduser_02.png) 
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
  
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/brightspace-desire2learn-tutorial/create_aaduser_04.png) 
 
@@ -191,23 +191,23 @@ ms.locfileid: "39043593"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **Brightspace by Desire2Learn**.
+1. Из списка приложений выберите **Brightspace by Desire2Learn**.
 
     ![Настройка единого входа](./media/brightspace-desire2learn-tutorial/tutorial_brightspacebydesire2learn_app.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 

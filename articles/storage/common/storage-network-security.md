@@ -2,23 +2,18 @@
 title: Настройка брандмауэров службы хранилища Azure и виртуальных сетей | Документация Майкрософт
 description: Настройте многоуровневую сетевую безопасность для своей учетной записи.
 services: storage
-documentationcenter: ''
 author: cbrooksmsft
-manager: cbrooks
-editor: cbrooks
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage
 ms.date: 10/25/2017
 ms.author: cbrooks
-ms.openlocfilehash: 7c0675f78f11bf1e493683fa474cce20c2b2a288
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.component: common
+ms.openlocfilehash: 9eaaaaa4cc9be661cdc2ffde2b634e062c95a404
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39326121"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523263"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 Служба хранилища Azure предоставляет модель многоуровневой безопасности, которая обеспечивает безопасность учетных записей хранения, открывая к ним доступ только по определенным разрешенным сетям.  При настройке правил сети к учетной записи хранения могут получать доступ только приложения из разрешенных сетей.  Однако и из разрешенной сети доступ к учетной записи хранения имеют только приложения с надлежащим уровнем авторизации (допустимый ключ доступа или токен SAS).

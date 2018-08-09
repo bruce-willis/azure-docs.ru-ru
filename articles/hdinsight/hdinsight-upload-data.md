@@ -1,32 +1,27 @@
 ---
-title: Отправка данных для заданий Hadoop в HDInsight | Документация Майкрософт
+title: Отправка данных для заданий Hadoop в HDInsight
 description: Сведения об отправке данных и получении доступа к ним для заданий Hadoop в HDInsight с помощью интерфейса командной строки Azure, обозревателя хранилищ Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
 keywords: etl hadoop, вставка данных в hadoop, загрузка данных hadoop
-services: hdinsight,storage
-documentationcenter: ''
-tags: azure-portal
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 56b913ee-0f9a-4e9f-9eaf-c571f8603dd6
+services: hdinsight
+author: jasonwhowell
+editor: jasonwhowell
+ms.author: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jgao
-ms.openlocfilehash: 1734e9f0002ab7f33a8a67e44811352cb5c45fdc
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 01d9029eafbefbace80508d27fc3282558a299c9
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34202464"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596802"
 ---
 # <a name="upload-data-for-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Hadoop в HDInsight
 
 Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Store. Служба хранилища Azure и Azure Data Lake Store разработаны в качестве дополнения для HDFS. Они обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure и Azure Data Lake — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с кластерами Azure HDInsight][hdinsight-storage] и [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы необходимо ознакомиться со следующими требованиями:
 

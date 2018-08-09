@@ -2,24 +2,18 @@
 title: Перенос виртуальных машин в хранилище Azure класса Premium | Документация Майкрософт
 description: Перенесите существующие виртуальные машины в хранилище Azure класса Premium. Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
 services: storage
-documentationcenter: na
 author: yuemlu
-manager: tadb
-editor: tysonn
-ms.assetid: 272250b3-fd4e-41d2-8e34-fd8cc341ec87
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/27/2017
 ms.author: yuemlu
-ms.openlocfilehash: 36ff73d36c752fb342dcfff2360b4f6f7013740e
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.component: common
+ms.openlocfilehash: c6256fc209a4ffa5308dc3b24794f8295c57f4ef
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "27993920"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521784"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Перенос в хранилище Azure класса Premium (использующее неуправляемые диски)
 
@@ -46,7 +40,7 @@ ms.locfileid: "27993920"
 ## <a name="plan-the-migration-to-premium-storage"></a>Планирование переноса в хранилище класса Premium
 Сведения в этом разделе позволят вам подготовить среду к выполнению инструкций по переносу, описанных в этой статье, а также определить оптимальные типы виртуальных машин и дисков.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 * Вам понадобится подписка Azure. Если у вас нет подписки, можно оформить [бесплатную пробную](https://azure.microsoft.com/pricing/free-trial/) подписку на один месяц или посетить страницу [Цены Azure](https://azure.microsoft.com/pricing/), чтобы ознакомиться с дополнительными возможностями.
 * Чтобы выполнять командлеты PowerShell, вам потребуется модуль Microsoft Azure PowerShell. Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 * Если вы планируете использовать виртуальные машины Azure в хранилище класса Premium, эти машины должны поддерживать его. С этими виртуальными машинами можно использовать диски хранилища класса Premium и Standard. Диски хранилища Premium в будущем будут доступны с большим количеством типов виртуальных машин. Дополнительные сведения о всех доступных типах и размерах дисков виртуальной машины Azure см. в разделах [Размеры виртуальных машин](../../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) и [Размеры для облачных служб](../../cloud-services/cloud-services-sizes-specs.md).
@@ -95,7 +89,7 @@ ms.locfileid: "27993920"
 * [Сценарий 1. Перенос имеющихся виртуальных машин Azure в хранилище Azure класса Premium](#scenario1)
 * [Сценарий 2. Перенос виртуальных машин в хранилище Azure класса Premium с других платформ](#scenario2)
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Чтобы подготовить VHD к переносу, требуется следующее:
 
 * Подписка Azure, учетная запись хранения и контейнер в этой учетной записи хранения, куда будет скопирован VHD. Обратите внимание, что целевой учетной записью хранения может быть учетная запись хранения Standard или Premium в зависимости от требований.

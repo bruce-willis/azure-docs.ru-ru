@@ -11,18 +11,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: nitinme
-ms.openlocfilehash: 57c4d9ccc64c9644c3d333fad1262c997aeff5d1
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: bda52acc12aad3cad20143c319f557f11d760c42
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34624667"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39435158"
 ---
 # <a name="use-azure-data-lake-store-to-capture-data-from-event-hubs"></a>Запись данных из концентраторов событий с помощью Azure Data Lake Store
 
 В этой статье приведены сведения о записи данных, полученных концентратором событий Azure с помощью Azure Data Lake Store.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
@@ -39,17 +39,17 @@ ms.locfileid: "34624667"
 
     ![Обозреватель данных Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-open-data-explorer.png "Data Lake Store data explorer")
 
-2.  Выберите **Создать папку** и введите имя папки, в которую необходимо сохранять данные.
+1.  Выберите **Создать папку** и введите имя папки, в которую необходимо сохранять данные.
 
     ![Создание папки в Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-new-folder.png "Create a new folder in Data Lake Store")
 
-3. Назначьте разрешения в корневой папке Data Lake Store. 
+1. Назначьте разрешения в корневой папке Data Lake Store. 
 
     a. Щелкните **Обозреватель данных**, выберите корневую папку учетной записи Data Lake Store, а затем — **Доступ**.
 
     ![Назначение разрешений корневой папке Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-root.png "Assign permissions for Data Lake Store root")
 
-    Б. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    b. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
     ![Назначение разрешений корневой папке Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for Data Lake Store root")
     
@@ -64,13 +64,13 @@ ms.locfileid: "34624667"
 
     Последовательно выберите **ОК**.
 
-4. Назначьте разрешения папке в учетной записи Data Lake Store, в которой необходимо сохранить данные.
+1. Назначьте разрешения папке в учетной записи Data Lake Store, в которой необходимо сохранить данные.
 
     a. Щелкните **Обозреватель данных**, выберите папку в учетной записи Data Lake Store, а затем — **Доступ**.
 
     ![Назначение разрешений в папке Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-folder.png "Assign permissions for Data Lake Store folder")
 
-    Б. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    b. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
     ![Назначение разрешений в папке Data Lake Store](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for Data Lake Store folder")
     
@@ -86,17 +86,17 @@ ms.locfileid: "34624667"
 
 В этом разделе вы создаете концентратор событий в пространстве имен концентраторов событий. Кроме того, вы также настроите концентратор событий для записи данных в учетную запись Azure Data Lake Store. В этом разделе предполагается, что вы уже создали пространство имен концентраторов событий.
 
-2. В области **Обзор** пространства имен концентраторов событий выберите **Концентратор событий**.
+1. В области **Обзор** пространства имен концентраторов событий выберите **Концентратор событий**.
 
     ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-create-event-hub.png "Create Event Hub")
 
-3. Чтобы настроить концентратор событий для записи данных в Data Lake Store, укажите приведенные ниже значения.
+1. Чтобы настроить концентратор событий для записи данных в Data Lake Store, укажите приведенные ниже значения.
 
     ![Создание концентратора событий](./media/data-lake-store-archive-eventhub-capture/data-lake-store-configure-eventhub.png "Create Event Hub")
 
     a. Укажите имя концентратора событий.
     
-    Б. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
+    b. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
     
     c. Установите для параметра **Запись** значение **Включено**. Задайте **окно времени** (частота выполнения записи) и **окно размера** (размер данных для записи). 
     
@@ -104,7 +104,7 @@ ms.locfileid: "34624667"
 
     д. Оставьте стандартное значение параметра **Воспользуйтесь поиском, чтобы отфильтровать репликации**. Этот параметр определяет структуру папки, созданной в папке записи.
 
-    f. Нажмите кнопку **Создать**.
+    Е. Нажмите кнопку **Создать**.
 
 ## <a name="test-the-setup"></a>Тестирование настройки
 

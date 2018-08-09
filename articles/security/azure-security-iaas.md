@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/14/2018
 ms.author: barclayn
-ms.openlocfilehash: 37620e70377e3f1fbeeeb73aaa294c5f54cf5b3d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 7c28459aa04c67db8abda54d9f14eb417bd8ed60
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723776"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618603"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Рекомендации по безопасности для рабочих нагрузок IaaS в Azure
 
@@ -188,7 +188,7 @@ Security Compliance Manager является бесплатным инструм
 
 Для сред, размещенных отдельно от рабочей среды, вы можете использовать расширение антивредоносных программ, чтобы защитить виртуальные машины и облачные службы. Это расширение интегрируется с [центром безопасности Azure](../security-center/security-center-intro.md).
 
-[Антивредоносные программы Майкрософт](azure-security-antimalware.md) обладают такими возможностями, как обеспечение защиты в реальном времени, плановое сканирование, исправление вредоносных действий, обновление подписей, обновление модуля защиты, отправка образцов, сбор событий исключения и [поддержка PowerShell](https://msdn.microsoft.com/library/dn771715.aspx).
+[Антивредоносные программы Майкрософт](azure-security-antimalware.md) обладают такими возможностями, как обеспечение защиты в реальном времени, плановое сканирование, исправление вредоносных действий, обновление подписей, обновление модуля защиты, отправка образцов, сбор событий исключения и [поддержка PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/set-azureserviceantimalwareextension).
 
 ![Антивредоносные программы Azure](./media/azure-security-iaas/azantimalware.png)
 

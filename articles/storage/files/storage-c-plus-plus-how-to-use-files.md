@@ -2,24 +2,18 @@
 title: Разработка приложений службы файлов Azure с помощью C++ | Документация Майкрософт
 description: Сведения о разработке приложений и служб C++, хранящих файлы данных в службе файлов Azure.
 services: storage
-documentationcenter: .net
 author: renashahmsft
-manager: aungoo
-editor: tamram
-ms.assetid: a1e8c99e-47a6-43a9-9541-c9262eb00b38
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: renashahmsft
-ms.openlocfilehash: e0b5974780813eb4f3d67c42781db4d95829814d
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.component: files
+ms.openlocfilehash: 4543784c1de85cf86f3dfa912a33641541e0373a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34737577"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530456"
 ---
 # <a name="develop-for-azure-files-with-c"></a>Разработка приложений службы файлов Azure с помощью C++
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -31,13 +25,13 @@ ms.locfileid: "34737577"
 
 * Создание и удаление общих папок Azure.
 * Создание и удаление каталогов.
-* Перечисление файлов и каталогов в общей папке Azure.
+* Перечисление файлов и каталогов в общей папке Azure
 * Передача, загрузка и удаление файлов.
 * Установка квоты (максимального размера) для общей папки Azure.
 * Создайте подпись общего доступа (ключ SAS) для файла, который использует политику общего доступа, определенную в общей папке.
 
 > [!Note]  
-> Так как к службе файлов Azure можно обращаться через SMB, вы можете создавать простые приложения, которые получают доступ к общей папке Azure с использованием стандартных классов и функций ввода-вывода в C++. Из этой статьи вы узнаете, как создавать приложения, использующие пакет SDK C++ для службы хранилища Azure, который использует [REST API службы файлов](https://docs.microsoft.com/rest/api/storageservices/fileservices/file-service-rest-api) для взаимодействия со службой файлов Azure.
+> Так как к службе файлов Azure можно обращаться через SMB, вы можете создавать простые приложения, которые получают доступ к общей папке Azure с использованием стандартных классов и функций ввода-вывода в C++. Из этой статьи вы узнаете, как создавать приложения, использующие пакет SDK C++ для службы хранилища Azure, который использует [REST API службы файлов](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api) для взаимодействия со службой файлов Azure.
 
 ## <a name="create-a-c-application"></a>Создание приложения на C++
 Для создания примеров необходимо установить клиентскую библиотеку хранилища Azure версии 2.4.0 для C++. Вам также необходимо создать учетную запись хранилища Azure.
@@ -154,7 +148,7 @@ sub_directory.delete_directory_if_exists();
 directory.delete_directory_if_exists();
 ```
 
-## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure.
+## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure
 Получить список файлов и каталогов в общей папке довольно просто, вызвав метод **list_files_and_directorie** по ссылке **cloud_file_directory**. Для доступа к широкому набору свойств и методов возвращаемого объекта **list_file_and_directory_item** необходимо вызвать метод **list_file_and_directory_item.as_file**, чтобы получить объект **cloud_file**, или метод **list_file_and_directory_item.as_directory**, чтобы получить объект **cloud_file_directory**.
 
 Следующий код демонстрирует, как получить и вывести URI каждого элемента в корневом каталоге общей папки.

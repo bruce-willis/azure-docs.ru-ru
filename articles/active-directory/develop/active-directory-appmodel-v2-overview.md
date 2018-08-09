@@ -17,12 +17,12 @@ ms.date: 05/01/2017
 ms.author: celested
 ms.reviewer: hirsin, jmprieur, elisol, dastrock
 ms.custom: aaddev
-ms.openlocfilehash: 1c91c1ed8358f58ab7a4d9a697ec2d7933c4f137
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 8cf592ddd2c4a68e15856d968b77813604713b78
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36316744"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592046"
 ---
 # <a name="sign-in-microsoft-account-and-azure-active-directory-users-in-a-single-application"></a>Настройка входа пользователей с помощью учетной записи Майкрософт и Azure Active Directory в одном приложении
 Раньше разработчикам приложений, чтобы реализовать поддержку как личных учетных записей Майкрософт, так и рабочих учетных записей Azure Active Directory, необходимо было обеспечивать интеграцию с двумя отдельными системами. Конечная точка Azure Active Directory (Azure AD) версии 2.0 предлагает новую версию API аутентификации, которая упрощает этот процесс. Конечная точка Azure AD 2.0 обеспечивает вход из обоих типов учетных записей с применением интеграции. Приложения, использующие конечную точку Azure AD 2.0, также могут использовать интерфейсы REST API из [API Microsoft Graph](https://graph.microsoft.io) с помощью учетной записи любого из этих типов.
@@ -36,7 +36,7 @@ ms.locfileid: "36316744"
 ## <a name="learn-more-about-the-azure-ad-v20-endpoint"></a>Дополнительные сведения о конечной точке Azure AD версии 2.0
 Изучите возможные действия с конечной точкой Azure AD 2.0:
 
-* Узнайте о [типах приложений, которые можно создавать с помощью конечной точки Azure AD 2.0](active-directory-v2-flows.md).
+* Узнайте о [типах приложений, которые можно создавать с помощью конечной точки Azure AD 2.0](v2-app-types.md).
 * Ознакомьтесь с [ограничениями](active-directory-v2-limitations.md) конечной точки версии 2.0.
 * Просмотрите обзорное видео о конечной точке Azure AD версии 2.0:
 
@@ -46,12 +46,12 @@ ms.locfileid: "36316744"
 Узнайте больше о платформе конечной точки Azure AD версии 2.0:
 
 * [Справочник по протоколам Azure AD 2.0](active-directory-v2-protocols.md)
-* [Справочник по токенам Azure AD 2.0](active-directory-v2-tokens.md)
-* [Справочник по библиотекам проверки подлинности Azure AD 2.0](active-directory-v2-libraries.md)
-* [Области действия и разрешения в конечной точке Azure AD 2.0](active-directory-v2-scopes.md)
+* [Справочник по токенам Azure AD 2.0](v2-id-and-access-tokens.md)
+* [Справочник по библиотекам проверки подлинности Azure AD 2.0](reference-v2-libraries.md)
+* [Области действия и разрешения в конечной точке Azure AD 2.0](v2-permissions-and-consent.md)
 * [API-интерфейс Microsoft Graph](https://graph.microsoft.io)
 
 > [!NOTE]
-> Если вам нужно использовать вход только с рабочими или учебными учетными записями из Azure Active Directory, начните изучение с [руководства разработчика Azure AD](active-directory-developers-guide.md). Конечная точка Azure AD версии 2.0 предназначена для разработчиков, которым необходимо выполнять вход с использованием личных учетных записей Майкрософт.
+> Если вам нужно использовать вход только с рабочими или учебными учетными записями из Azure Active Directory, начните изучение с [руководства разработчика Azure AD](azure-ad-developers-guide.md). Конечная точка Azure AD версии 2.0 предназначена для разработчиков, которым необходимо выполнять вход с использованием личных учетных записей Майкрософт.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]

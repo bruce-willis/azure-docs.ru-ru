@@ -8,12 +8,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 07/14/2016
 ms.author: jjed
-ms.openlocfilehash: d95abab1d1a489deba2ebc260e1e32963aa5639e
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 2f52ed0ab302d1c3dad699258287f6edd7197cef
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31799538"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525626"
 ---
 # <a name="get-started-with-azure-search-in-java"></a>Начало работы с Поиском Azure в Java
 > [!div class="op_single_selector"]
@@ -104,7 +104,7 @@ ms.locfileid: "31799538"
 7. Нажмите кнопку **Готово**
 8. Выберите **Окно** > **Параметры** > **Java** > **Installed JREs** (Установленные JRE) > **Добавить...**.
 9. В окне **Add JRE** (Добавить JRE) выберите **Standard VM** (Стандартная виртуальная машина).
-10. Нажмите кнопку **Далее**.
+10. Щелкните **Далее**.
 11. В разделе "Определение JRE" в главном окне выберите **Каталог**.
 12. Перейдите в папку **Program Files** > **Java** и выберите ранее установленный пакет JDK. Важно выбрать пакет JDK в качестве JRE.
 13. В разделе "Установленные JRE" выберите пакет **JDK**. Ваши параметры должны выглядеть примерно так.
@@ -159,7 +159,7 @@ ms.locfileid: "31799538"
 
 Если у вас уже есть опыт работы со службой поиска Azure, вы можете использовать этот пример как фундамент для дальнейших исследований, таких как улучшение [страницы поиска](search-pagination-page-layout.md) или внедрение [фасетной навигации](search-faceted-navigation.md). Вы также можете улучшить страницу результатов поиска, добавив счетчики и пакетную обработку документов, чтобы пользователи могли просматривать результаты постранично.
 
-Новичок в Поиске Azure? Мы рекомендуем ознакомиться с другими учебниками, чтобы получить представление о том, что вы можете создать. Посетите нашу [страницу документации](https://azure.microsoft.com/documentation/services/search/) , чтобы найти дополнительные ресурсы. Вы также можете перейти по ссылкам в нашем [списке видео и учебников](search-video-demo-tutorial-list.md) , чтобы получить дополнительные сведения.
+Новичок в Поиске Azure? Мы рекомендуем ознакомиться с другими учебниками, чтобы получить представление о том, что вы можете создать. Посетите нашу [страницу документации](https://azure.microsoft.com/documentation/services/search/), чтобы найти дополнительные ресурсы. 
 
 <!--Image references-->
 [1]: ./media/search-get-started-java/create-search-portal-1.PNG

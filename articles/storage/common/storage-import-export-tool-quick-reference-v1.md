@@ -2,24 +2,18 @@
 title: Краткий справочник по командам для заданий импорта инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Справочник по командам инструмента импорта и экспорта Azure, которые наиболее часто используются для заданий импорта. Приведенная информация относится к инструменту импорта и экспорта версии 1.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: ''
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2017
 ms.author: muralikk
-ms.openlocfilehash: 370cf6fae7ae106e8341f65086c8b8187d335746
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: 16e0fa6f7336b39f63b00564d37c1be308bebb16
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059349"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526289"
 ---
 # <a name="quick-reference-for-frequently-used-commands-for-import-jobs"></a>Краткий справочник по часто используемым командам для заданий импорта
 Этот раздел содержит краткий справочник по часто используемым командам. Дополнительные сведения об использовании см. в разделе [Подготовка жестких дисков для задания импорта](../storage-import-export-tool-preparing-hard-drives-import-v1.md).  

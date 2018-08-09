@@ -17,16 +17,16 @@ ms.date: 07/24/2018
 ms.author: celested
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 49561434688806b3959824f87d1c81e07d7a7559
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 7d3796d8d4a5a2e292afaf9cd013ff04ffc082c5
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39238711"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39578676"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
-Azure Active Directory (Azure AD) позволяет приложению использовать для аутентификации свои учетные данные, например, в потоке предоставления учетных данных клиента OAuth 2.0 ([версия 1.0](active-directory-protocols-oauth-service-to-service.md), [версия 2.0](active-directory-v2-protocols-oauth-client-creds.md)) и потоке On-Behalf-Of ([версия 1.0](active-directory-protocols-oauth-on-behalf-of.md), [версия 2.0](active-directory-v2-protocols-oauth-on-behalf-of.md)).
+Azure Active Directory (Azure AD) позволяет приложению использовать для аутентификации свои учетные данные, например, в потоке предоставления учетных данных клиента OAuth 2.0 ([версия 1.0](v1-oauth2-client-creds-grant-flow.md), [версия 2.0](v2-oauth2-client-creds-grant-flow.md)) и потоке On-Behalf-Of ([версия 1.0](v1-oauth2-on-behalf-of-flow.md), [версия 2.0](v2-oauth2-on-behalf-of-flow.md)).
 
 Одной из форм учетных данных, которые приложение может использовать для аутентификации, является утверждение JSON Web Token (JWT), подписанное с помощью сертификата приложения.
 

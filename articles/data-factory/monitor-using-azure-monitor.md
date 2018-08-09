@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/12/2018
 ms.author: shlo
-ms.openlocfilehash: 1d1b21897975717db7b733e33b7700bc76e3e065
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 25bb455ea46fdc96e32e34d434dd844779b0b650
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046553"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495304"
 ---
 # <a name="alert-and-monitor-data-factories-using-azure-monitor"></a>Использование оповещений и мониторинг фабрик данных с помощью Azure Monitor
 Облачные приложения являются сложными и содержат множество подвижных частей. Мониторинг дает возможность отслеживать данные, чтобы обеспечить работоспособность приложения, а также позволяет предотвратить потенциальные проблемы или устранить неполадки. Кроме того, данные мониторинга можно использовать для получения подробных сведений о приложении. Эти знания могут помочь повысить его производительность и улучшить возможности обслуживания, а также автоматизировать действия, которые в противном случае выполнялись бы вручную.
@@ -62,7 +62,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 * Замените `{api-version}` на `2016-09-01`.
 * Замените `{resource-id}` идентификатором ресурса, параметры диагностики которого вы хотите изменить. Дополнительные сведения см. в статье [Управление ресурсами Azure через портал](../azure-resource-manager/resource-group-portal.md).
 * В качестве заголовка `Content-Type` установите `application/json`.
-* В качестве заголовка авторизации установите веб-маркер JSON, полученный из Azure Active Directory. Дополнительные сведения см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/active-directory-authentication-scenarios.md).
+* В качестве заголовка авторизации установите веб-маркер JSON, полученный из Azure Active Directory. Дополнительные сведения см. в статье [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md).
 
 **Текст**
 ```json

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 3caa9b6885b87664f4b63d629677e69f47768a29
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 8ee04008b62867c8eba68b1525cf50edec881cbc
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39052967"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39432639"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-five9-plus-adapter-cti-contact-center-agents"></a>Руководство по интеграции Azure Active Directory с Five9 Plus Adapter (CTI, Contact Center Agents)
 
@@ -52,7 +52,7 @@ ms.locfileid: "39052967"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Five9 Plus Adapter (CTI, Contact Center Agents) из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-five9-plus-adapter-cti-contact-center-agents-from-the-gallery"></a>Добавление Five9 Plus Adapter (CTI, Contact Center Agents) из коллекции
 Чтобы настроить интеграцию Five9 Plus Adapter (CTI, Contact Center Agents) с Azure AD, необходимо добавить Five9 Plus Adapter (CTI, Contact Center Agents) из коллекции в список управляемых приложений SaaS.
@@ -63,19 +63,19 @@ ms.locfileid: "39052967"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **Five9 Plus Adapter (CTI, Contact Center Agents)**.
+1. В поле поиска введите **Five9 Plus Adapter (CTI, Contact Center Agents)**.
 
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/tutorial_five9_search.png)
 
-5. На панели результатов выберите **Five9 Plus Adapter (CTI, Contact Center Agents)** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На панели результатов выберите **Five9 Plus Adapter (CTI, Contact Center Agents)** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/tutorial_five9_addfromgallery.png)
 
@@ -89,10 +89,10 @@ ms.locfileid: "39052967"
 Чтобы настроить и проверить единый вход Azure AD в Five9 Plus Adapter (CTI, Contact Center Agents), вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Five9 Plus Adapter (CTI, Contact Center Agents)](#creating-a-five9-plus-adapter-cti-contact-center-agents-test-user)** требуется для того, чтобы в Five9 Plus Adapter (CTI, Contact Center Agents) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Five9 Plus Adapter (CTI, Contact Center Agents)](#creating-a-five9-plus-adapter-cti-contact-center-agents-test-user)** требуется для того, чтобы в Five9 Plus Adapter (CTI, Contact Center Agents) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -104,11 +104,11 @@ ms.locfileid: "39052967"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/five9-tutorial/tutorial_five9_samlbase.png)
 
-3. В разделе **Домены и URL-адреса Five9 Plus Adapter (CTI, Contact Center Agents)** выполните следующие действия:
+1. В разделе **Домены и URL-адреса Five9 Plus Adapter (CTI, Contact Center Agents)** выполните следующие действия:
 
     ![Настройка единого входа](./media/five9-tutorial/tutorial_five9_url.png)
     
@@ -128,19 +128,19 @@ ms.locfileid: "39052967"
     | Для "Five9 Plus Adapter for Zendesk" | `https://app.five9.com/appsvcs/saml/SSO/alias/zd` |
     | Для "Five9 Plus Adapter for Agent Desktop Toolkit" | `https://app.five9.com/appsvcs/saml/SSO/alias/adt` |
 
-4. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
     ![Настройка единого входа](./media/five9-tutorial/tutorial_five9_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Настройка единого входа](./media/five9-tutorial/tutorial_general_400.png)
 
-6. В разделе **Настройка Five9 Plus Adapter (CTI, Contact Center Agents)** щелкните **Настроить Five9 Plus Adapter (CTI, Contact Center Agents)**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+1. В разделе **Настройка Five9 Plus Adapter (CTI, Contact Center Agents)** щелкните **Настроить Five9 Plus Adapter (CTI, Contact Center Agents)**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
 
     ![Настройка единого входа](./media/five9-tutorial/tutorial_five9_configure.png) 
 
-7. Чтобы настроить единый вход на стороне **Five9 Plus Adapter (CTI, Contact Center Agents)**, нужно отправить скачанный **сертификат (Base64), URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Five9 Plus Adapter (CTI, Contact Center Agents)](https://www.five9.com/about/contact). Для дальнейшей настройки единого входа выполните следующие действия в соответствии с адаптером:
+1. Чтобы настроить единый вход на стороне **Five9 Plus Adapter (CTI, Contact Center Agents)**, нужно отправить скачанный **сертификат (Base64), URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Five9 Plus Adapter (CTI, Contact Center Agents)](https://www.five9.com/about/contact). Для дальнейшей настройки единого входа выполните следующие действия в соответствии с адаптером:
 
     a. Руководство по администрированию "Five9 Plus Adapter for Agent Desktop Toolkit": [http://webapps.five9.com/assets/files/for_customers/documentation/integrations/agent-desktop-toolkit/plus-agent-desktop-toolkit-administrators-guide.pdf](http://webapps.five9.com/assets/files/for_customers/documentation/integrations/agent-desktop-toolkit/plus-agent-desktop-toolkit-administrators-guide.pdf)
     
@@ -164,15 +164,15 @@ ms.locfileid: "39052967"
 
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/create_aaduser_01.png) 
 
-2. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/create_aaduser_02.png) 
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
  
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/five9-tutorial/create_aaduser_04.png) 
 
@@ -200,23 +200,23 @@ ms.locfileid: "39052967"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **Five9 Plus Adapter (CTI, Contact Center Agents)**.
+1. В списке приложений выберите **Five9 Plus Adapter (CTI, Contact Center Agents)**.
 
     ![Настройка единого входа](./media/five9-tutorial/tutorial_five9_app.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 12/14/2017
 ms.author: lizross
-ms.openlocfilehash: e304242718478cae2670372a06abe07f926fbed2
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 787178b2c1582729249fcf549356fa7445f5ecbe
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054749"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494970"
 ---
 # <a name="azure-active-directory-faq"></a>Azure Active Directory: вопросы и ответы
 Azure Active Directory — это комплексная служба идентификации (IDaaS), охватывающая все аспекты идентификации, управления доступом и безопасности.
@@ -185,7 +185,7 @@ Azure Active Directory — это комплексная служба иден�
 
 Дополнительные сведения можно найти в разделе 
 
-* [Сценарии аутентификации в Azure Active Directory](../develop/active-directory-authentication-scenarios.md)
+* [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md)
 * [Протоколы проверки подлинности Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx)
 * [Принцип работы единого входа с Azure Active Directory](../manage-apps/what-is-single-sign-on.md#how-does-single-sign-on-with-azure-active-directory-work)
 

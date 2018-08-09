@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: dfee42f813989da2333720ac92313344343d57a7
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 12c825143f48b5558ea9b1d49ed8cea59d84f6af
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214035"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522787"
 ---
 # <a name="user-sign-in-with-azure-active-directory-pass-through-authentication"></a>Вход пользователей с помощью сквозной проверки подлинности Azure Active Directory
 
@@ -30,7 +30,7 @@ ms.locfileid: "39214035"
 
 >[!VIDEO https://www.youtube.com/embed/PyeAC85Gm7w]
 
-Сквозная аутентификация является альтернативой [синхронизации хэшей паролей Azure AD](active-directory-aadconnectsync-implement-password-hash-synchronization.md), которая также обеспечивает преимущество облачной аутентификации в организации. Тем не менее некоторые организации, желающие применить локальные политики безопасности и политики паролей Active Directory, могут вместо этого использовать сквозную аутентификацию. [В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
+Сквозная проверка подлинности является альтернативой [синхронизации хэшей паролей Azure AD](active-directory-aadconnectsync-implement-password-hash-synchronization.md), которая также обеспечивает преимущество облачной проверки подлинности в организации. Тем не менее некоторые организации, желающие применить локальные политики безопасности и политики паролей Active Directory, могут вместо этого использовать сквозную аутентификацию. [В этом руководстве](https://docs.microsoft.com/azure/security/azure-ad-choose-authn) вы можете ознакомиться со сравнением различных методов входа Azure AD и узнать, как выбрать правильный метод входа в систему для своей организации.
 
 ![Сквозная аутентификация Azure AD](./media/active-directory-aadconnect-pass-through-authentication/pta1.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "39214035"
 - *Безопасность*
   - Локальные пароли ни в каком виде не хранятся в облаке.
   - Агент устанавливает только исходящие подключения из вашей сети. Таким образом, вам не нужно устанавливать агент в сети периметра.
-  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../active-directory-conditional-access-conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
+  - Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
 - *Высокая доступность*
   - Дополнительные агенты можно установить на нескольких локальных серверах, чтобы достичь высокого уровня доступности запросов на вход.
 

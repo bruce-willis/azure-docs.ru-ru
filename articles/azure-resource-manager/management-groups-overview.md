@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 7/31/2018
 ms.author: rithorn
-ms.openlocfilehash: 146ded37dbf517528af23574cd5b9325f4b5f9d0
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: edc57d146ccb034ac3fd627386000a1953b0e558
+ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358775"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39480328"
 ---
 # <a name="organize-your-resources-with-azure-management-groups"></a>Упорядочение ресурсов с помощью групп управления Azure
 
@@ -82,7 +82,7 @@ ms.locfileid: "39358775"
 
 | Роль RBAC             | Создание | Переименование | Move | Delete | Назначение доступа | Назначение политики | чтение  |
 |:-------------------------- |:------:|:------:|:----:|:------:|:-------------:| :------------:|:-----:|
-|Владелец.                       | X      | X      | X    | X      | X             |               | X     |
+|Владелец.                       | X      | X      | X    | X      | X             | X             | X     |
 |участник;                 | X      | X      | X    | X      |               |               | X     |
 |Участник группы управления*             | X      | X      | X    | X      |               |               | X     |
 |читатель.                      |        |        |      |        |               |               | X     |
@@ -104,4 +104,4 @@ ms.locfileid: "39358775"
 - [Изменение, удаление групп управления и управление ими](management-groups-manage.md)
 - [Страница для установки модуля Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups/0.0.1-preview)
 - [Просмотр спецификации REST API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview)
-- [Установка расширения Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az_extension_list_available)
+- [Установка расширения Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-list-available)

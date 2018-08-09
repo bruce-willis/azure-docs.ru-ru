@@ -1,25 +1,21 @@
 ---
-title: Устранение ошибки нехватки памяти Hive в Azure HDInsight | Документы Майкрософт
+title: Устранение ошибки нехватки памяти Hive в Azure HDInsight
 description: Устраните ошибку нехватки памяти Hive в HDInsight. Пользовательский сценарий представляет собой запрос ко множеству больших таблиц.
 keywords: ошибка нехватки памяти, OOM, параметры Hive
 services: hdinsight
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 7bce3dff-9825-4fa0-a568-c52a9f7d1dad
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jgao
-ms.openlocfilehash: f2ae83d259b7567a4b5c39e76ed7610e2ee426f8
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.author: jasonh
+ms.openlocfilehash: 24b0258bac8c33b84b48655d8ecddd9061368b9a
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34200543"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592845"
 ---
 # <a name="fix-a-hive-out-of-memory-error-in-azure-hdinsight"></a>Устранение ошибки нехватки памяти Hive в Azure HDInsight
 

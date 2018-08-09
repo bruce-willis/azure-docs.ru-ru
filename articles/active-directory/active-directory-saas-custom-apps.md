@@ -15,16 +15,16 @@ ms.date: 07/30/2018
 ms.author: barbkess
 ms.reviewer: asmalser,luleon
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 640df9659dfa65d0eb2a65066085dd7dff7031ca
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: a2b1816a7f972e698d3872e6c252c09a4d5292ef
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39365559"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39578734"
 ---
 # <a name="configure-single-sign-on-to-applications-that-are-not-in-the-azure-active-directory-application-gallery"></a>Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory
 
-Эта статья о функциях, с помощью которых администраторы могут настроить единый вход для приложений, не принадлежащих к коллекции приложений Azure Active Directory, *без написания кода*. Эта возможность добавлена 18 ноября 2015 года в составе технической предварительной версии и включена в [Azure Active Directory Premium](fundamentals/active-directory-whatis.md). Если вам все же необходимо руководство для разработчиков по интеграции пользовательских приложений в Azure AD с использованием кода, см. статью [Сценарии аутентификации в Azure Active Directory](active-directory-authentication-scenarios.md).
+Эта статья о функциях, с помощью которых администраторы могут настроить единый вход для приложений, не принадлежащих к коллекции приложений Azure Active Directory, *без написания кода*. Эта возможность добавлена 18 ноября 2015 года в составе технической предварительной версии и включена в [Azure Active Directory Premium](fundamentals/active-directory-whatis.md). Если вам все же необходимо руководство для разработчиков по интеграции пользовательских приложений в Azure AD с использованием кода, см. статью [Сценарии аутентификации в Azure Active Directory](develop/authentication-scenarios.md).
 
 Коллекция приложений Azure Active Directory содержит список приложений, которые поддерживают единый вход с помощью Azure Active Directory. Эта функция описана в [этой статье](manage-apps/what-is-single-sign-on.md). Когда вы (как специалист ИТ-отдела или системный интегратор) найдете приложение, которое нужно подключить, сначала выполните пошаговые инструкции по включению единого входа, которые предложены на портале Azure.
 
@@ -148,7 +148,7 @@ ms.locfileid: "39365559"
 
 ### <a name="test-the-saml-application"></a>Тестирование приложения SAML
 
-Прежде чем тестировать приложение SAML, необходимо настроить его в Azure AD и назначить ему пользователей или группы. Дополнительные сведения о тестировании приложения SAML см. в статье [Отладка единого входа на основе SAML в приложениях в Azure Active Directory](develop/active-directory-saml-debugging.md).
+Прежде чем тестировать приложение SAML, необходимо настроить его в Azure AD и назначить ему пользователей или группы. Дополнительные сведения о тестировании приложения SAML см. в статье [Отладка единого входа на основе SAML в приложениях в Azure Active Directory](develop/howto-v1-debug-saml-sso-issues.md).
 
 ## <a name="password-single-sign-on"></a>Единый вход по паролю
 

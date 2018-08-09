@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: 5e7cf1b28e8f38f0539e0084e1f745e0dab4dec3
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 57a9f0516175b459723a3dcdb2e3766f0fa039c1
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763618"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495430"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
 Запрос службы диспетчера восстановления и отправка команд для нее.
@@ -51,7 +51,7 @@ ms.locfileid: "34763618"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. здесь: http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-rpm-delete"></a>sfctl rpm delete
@@ -73,7 +73,7 @@ ms.locfileid: "34763618"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. здесь: http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-rpm-list"></a>sfctl rpm list
@@ -96,8 +96,9 @@ ms.locfileid: "34763618"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. здесь: http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.

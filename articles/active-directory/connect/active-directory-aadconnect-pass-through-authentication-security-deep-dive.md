@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: ad4567ffb927694872d5b86dd38833466f944ca8
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: f220e0b6dd5abb596128ba84af89d0e725f66117
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39215090"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521971"
 ---
 # <a name="azure-active-directory-pass-through-authentication-security-deep-dive"></a>Руководство по безопасности сквозной аутентификации Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "39215090"
   - Полный список требований к сети см. в [кратком руководстве по сквозной проверке подлинности Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md#step-1-check-the-prerequisites).
 - Пароли, введенные пользователем во время входа, шифруются в облаке перед приемом локальными агентами аутентификации для проверки в Active Directory.
 - Канал HTTPS между Azure AD и локальным агентом аутентификации защищен взаимной аутентификацией.
-- Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../active-directory-conditional-access-conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
+- Защита учетных записей пользователей благодаря взаимодействию с [политиками условного доступа Azure AD](../active-directory-conditional-access-azure-portal.md), включая службу Многофакторной идентификацию (MFA), а также [блокированию устаревшей аутентификации](../conditional-access/conditions.md) и [фильтрации атак методом подбора пароля](../authentication/howto-password-smart-lockout.md).
 
 ## <a name="components-involved"></a>Участвующие компоненты
 
@@ -208,8 +208,8 @@ Azure AD размещает новую версию программного о�
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Текущие ограничения](active-directory-aadconnect-pass-through-authentication-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
-- [Краткое руководство](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure AD.
-- [Переход с AD FS на сквозную аутентификацию](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx). Подробное руководство по переходу с AD FS (или других технологий федерации) на сквозную аутентификацию.
+- [Краткое руководство по сквозной аутентификации Azure Active Directory](active-directory-aadconnect-pass-through-authentication-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
+- [Migrate from AD FS to Pass-through Authentication](https://github.com/Identity-Deployment-Guides/Identity-Deployment-Guides/blob/master/Authentication/Migrating%20from%20Federated%20Authentication%20to%20Pass-through%20Authentication.docx) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
 - [Принцип работы](active-directory-aadconnect-pass-through-authentication-how-it-works.md). Изучите основные принципы работы сквозной аутентификации Azure AD.
 - [Часто задаваемые вопросы](active-directory-aadconnect-pass-through-authentication-faq.md). Найдите ответы на часто задаваемые вопросы.

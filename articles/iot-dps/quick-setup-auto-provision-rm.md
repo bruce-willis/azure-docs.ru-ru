@@ -1,27 +1,27 @@
 ---
 title: Настройка подготовки устройств с помощью шаблона Azure Resource Manager | Документация Майкрософт
 description: Краткое руководство Azure. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью шаблона
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 06/18/2018
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 6bd1073012a68149d194e21e745604a43dfe92c0
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: e3aa2cf93e529fcc430162ac90be06a75690fb21
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219702"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523450"
 ---
 # <a name="set-up-the-iot-hub-device-provisioning-service-with-an-azure-resource-manager-template"></a>Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" c помощью шаблона Azure Resource Manager
 
 [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview) можно использовать, чтобы программно настраивать облачные ресурсы Azure, необходимые для подготовки устройств. В этих шагах показано, как создать Центр Интернета вещей, службу "Подготовка устройств к добавлению в Центр Интернета вещей" и связать обе службы с помощью шаблона Azure Resource Manager. В этом кратком руководстве для выполнения программных шагов, необходимых для создания группы ресурсов и развертывания шаблона, используется [Azure CLI 2.0](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-cli). Однако для развертывания шаблона также можно использовать [портал Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy-portal), [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy), .NET, Ruby или другие языки программирования. 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - Для этого краткого руководства требуется запустить Azure CLI локально. Требуется Azure CLI версии 2.0 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
@@ -301,7 +301,7 @@ ms.locfileid: "36219702"
 
 Используйте следующие команды Azure CLI для развертывания шаблонов и подтверждения развертывания.
 
-1. Чтобы [начать развертывание](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az_group_deployment_create) шаблона, выполните следующую команду:
+1. Чтобы [начать развертывание](https://docs.microsoft.com/cli/azure/group/deployment?view=azure-cli-latest#az-group-deployment-create) шаблона, выполните следующую команду:
     
     ```azurecli
      az group deployment create -g {your resource group name} --template-file template.json --parameters @parameters.json
@@ -312,7 +312,7 @@ ms.locfileid: "36219702"
    ![Выходные данные подготовки](./media/quick-setup-auto-provision-rm/output.png) 
 
 
-2. Чтобы проверить развертывание, выполните следующую [команду для перечисления ресурсов](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az_resource_list), после чего найдите новую службу подготовки и Центр Интернета вещей в выходных данных:
+2. Чтобы проверить развертывание, выполните следующую [команду для перечисления ресурсов](https://docs.microsoft.com/cli/azure/resource?view=azure-cli-latest#az-resource-list), после чего найдите новую службу подготовки и Центр Интернета вещей в выходных данных:
 
     ```azurecli
      az resource list -g {your resource group name}

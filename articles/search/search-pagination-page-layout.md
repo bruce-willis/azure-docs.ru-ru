@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 08/29/2016
 ms.author: heidist
-ms.openlocfilehash: 516760031918c667b39cc8b3dd94d91c42623efc
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 8953be2be77c14a82294e56ac60b8bc993ec6c2f
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32186884"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527075"
 ---
 # <a name="how-to-page-search-results-in-azure-search"></a>Разбивка результатов поиска на страницы в службе поиска Azure.
 В данной статье приводятся рекомендации по использованию API REST службы поиска Azure для реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации.
@@ -102,7 +102,6 @@ ms.locfileid: "32186884"
 * [REST API службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice)
 * [Операции с индексами](https://docs.microsoft.com/rest/api/searchservice/Index-operations)
 * [Операции с документом.](https://docs.microsoft.com/rest/api/searchservice/Document-operations)
-* [Поиск Azure: учебники, видеодемонстрации и примеры](search-video-demo-tutorial-list.md)
 * [Фасетная навигация в службе поиска Azure](search-faceted-navigation.md)
 
 <!--Image references-->

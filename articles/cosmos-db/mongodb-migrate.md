@@ -1,5 +1,5 @@
 ---
-title: Использование mongoimport и mongorestore с API Azure Cosmos DB для MongoDB | Документы Майкрософт
+title: Использование mongoimport и mongorestore с API Azure Cosmos DB для MongoDB | Документация Майкрософт
 description: Узнайте, как использовать mongoimport и mongorestore для импорта данных в учетную запись API для MongoDB.
 keywords: mongoimport, mongorestore
 services: cosmos-db
@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: bdaead6fe739d62340ca225aa1a6d8adf9e86cb9
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: a55727c58f8f9d4a05f547100875f18291328ea2
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100302"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39435328"
 ---
 # <a name="azure-cosmos-db-import-mongodb-data"></a>Azure Cosmos DB: импорт данных MongoDB 
 
@@ -45,8 +45,8 @@ ms.locfileid: "37100302"
 ## <a name="find-your-connection-string-information-host-port-username-and-password"></a>Поиск сведений о строке подключения (узел, порт, имя пользователя и пароль)
 
 1. В левой панели на [портале Azure](https://portal.azure.com) щелкните запись **Azure Cosmos DB**.
-2. На панели **Подписки** выберите имя своей учетной записи.
-3. В колонке **Строка подключения** щелкните **Строка подключения**.
+1. На панели **Подписки** выберите имя своей учетной записи.
+1. В колонке **Строка подключения** щелкните **Строка подключения**.
 
    На правой панели содержатся все сведения, необходимые для успешного подключения к учетной записи.
 
@@ -66,7 +66,7 @@ ms.locfileid: "37100302"
 
 ## <a name="import-data-to-the-api-for-mongodb-by-using-mongorestore"></a>Импорт данных в API для MongoDB с помощью mongorestore
 
-Чтобы восстановить данные в учетной записи API для MongoDB, используйте приведенный ниже шаблон для выполнения импорта. Укажите *узел*, *имя пользователя* и *пароль* своей учетной записи.
+Чтобы восстановить данные в API для учетной записи MongoDB, используйте следующий шаблон для выполнения импорта. Укажите *узел*, *имя пользователя* и *пароль* своей учетной записи.
 
 Шаблон:
 
@@ -102,11 +102,11 @@ ms.locfileid: "37100302"
         }
         ```
 
-2. Вычислите приблизительную стоимость ЕЗ при записи одного документа:
+1. Вычислите приблизительную стоимость ЕЗ при записи одного документа:
 
     a. Подключитесь к базе данных MongoDB в Azure Cosmos DB из оболочки MongoDB. Инструкции доступны в статье [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md).
     
-    Б. Выполните пример команды insert, используя один из примеров документов из оболочки MongoDB:
+    b. Выполните пример команды insert, используя один из примеров документов из оболочки MongoDB:
     
         ```db.coll.insert({ "playerId": "a067ff", "hashedid": "bb0091", "countryCode": "hk" })```
         
@@ -125,7 +125,7 @@ ms.locfileid: "37100302"
         
     d. Запишите значение RequestCharge (стоимость запроса).
     
-3. Определите задержку между вашим компьютером и облачной службой Azure Cosmos DB:
+1. Определите задержку между вашим компьютером и облачной службой Azure Cosmos DB:
     
     a. Включите ведение подробного журнала из оболочки MongoDB с помощью команды ```setVerboseShell(true)```.
     
@@ -135,9 +135,9 @@ ms.locfileid: "37100302"
         Fetched 1 record(s) in 100(ms)
         ```
         
-4. Перед выполнением переноса удалите вставленный документ, чтобы точно не было повторяющихся документов. Для удаления документов можно использовать команду ```db.coll.remove({})```.
+1. Перед выполнением переноса удалите вставленный документ, чтобы точно не было повторяющихся документов. Для удаления документов можно использовать команду ```db.coll.remove({})```.
 
-5. Вычислите приблизительные значения *batchSize* и *numInsertionWorkers*:
+1. Вычислите приблизительные значения *batchSize* и *numInsertionWorkers*:
 
     * Для расчета *batchSize* поделите общее число подготовленных ЕЗ на число ЕЗ, использованных для записи одного документа (на шаге 3).
     
@@ -157,7 +157,7 @@ ms.locfileid: "37100302"
     
     *numInsertionWorkers = (10000 ЕЗ x 0,1 с) / (24 x 10 ЕЗ) = 4,1666*
 
-6. Выполните окончательную команду переноса:
+1. Выполните окончательную команду переноса:
 
    ```
    mongoimport.exe --host comsosdb-mongodb-account.documents.azure.com:10255 -u comsosdb-mongodb-account -p wzRJCyjtLPNuhm53yTwaefawuiefhbauwebhfuabweifbiauweb2YVdl2ZFNZNv8IU89LqFVm5U0bw== --ssl --sslAllowInvalidCertificates --jsonArray --db dabasename --collection collectionName --file "C:\sample.json" --numInsertionWorkers 4 --batchSize 24
@@ -168,7 +168,7 @@ ms.locfileid: "37100302"
    mongorestore.exe --host comsosdb-mongodb-account.documents.azure.com:10255 -u comsosdb-mongodb-account -p wzRJCyjtLPNuhm53yTwaefawuiefhbauwebhfuabweifbiauweb2YVdl2ZFNZNv8IU89LqFVm5U0bw== --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07 --numInsertionWorkersPerCollection 4 --batchSize 24
    ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Вы можете перейти к следующему руководству, из которого вы узнаете, как запрашивать данные MongoDB с помощью Azure Cosmos DB. 
 

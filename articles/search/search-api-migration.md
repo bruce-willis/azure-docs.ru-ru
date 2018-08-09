@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: brjohnst
-ms.openlocfilehash: 3848f317fd6d760961756f132edf9cbcb5f431ee
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 2efe7769f68988f3c0d52c8806b78c1b96d8c639
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32181976"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620235"
 ---
 # <a name="upgrading-to-the-latest-azure-search-service-rest-api-version"></a>Обновление REST API службы поиска Azure до последней версии
 Если вы используете предыдущую версию [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/), эта статья поможет вам обновить приложения для использования следующей общедоступной версии API 2017-11-11.
@@ -31,7 +31,7 @@ ms.locfileid: "32181976"
 
 * [Синонимы](search-synonyms.md). Новая функция синонимов позволяет определить эквивалентные термины и расширить область действия запроса.
 * [Поддержка эффективной индексации текстовых больших двоичных объектов](https://docs.microsoft.com/azure/search/search-howto-indexing-azure-blob-storage#IndexingPlainText). Новый режим синтаксического анализа `text` для индексаторов больших двоичных объектов Azure значительно повышает производительность индексирования.
-* [API статистики службы](https://aka.ms/azure-search-stats). Просмотрите текущее использование и ограничения ресурсов в службе "Поиск Azure" с помощью этого нового API.
+* [API статистики службы](https://docs.microsoft.com/rest/api/searchservice/get-service-statistics). Просмотрите текущее использование и ограничения ресурсов в службе "Поиск Azure" с помощью этого нового API.
 
 <a name="UpgradeSteps"></a>
 

@@ -13,12 +13,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/05/2016
 ms.author: dariagrigoriu
-ms.openlocfilehash: d66b5aa4eb2ad90596dfe9e26bbc18996c967295
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: a17260770f0b2e0a73585ce4108bd5625ac22229
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "27778553"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39436154"
 ---
 # <a name="configure-deployment-credentials-for-azure-app-service"></a>Настройка учетных данных развертывания службы приложений Azure
 [Служба приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714) поддерживает два типа учетных данных для [развертывания локальной системы Git](app-service-deploy-local-git.md) и [развертывания FTP(S)](app-service-deploy-ftp.md). Это не то же, что учетные данные Azure Active Directory.
@@ -46,7 +46,7 @@ ms.locfileid: "27778553"
 1. На [портале Azure](https://portal.azure.com) щелкните "Служба приложений" > **&lt;любое_приложение>** > **Учетные данные развертывания**.
 
     > [!NOTE]
-    > Чтобы можно было открыть страницу учетных данных развертывания, на портале должно существовать хотя бы одно приложение. Настроить учетные данные на уровне пользователя без приложения можно с помощью [интерфейса командной строки Azure](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az_webapp_deployment_user_set).
+    > Чтобы можно было открыть страницу учетных данных развертывания, на портале должно существовать хотя бы одно приложение. Настроить учетные данные на уровне пользователя без приложения можно с помощью [интерфейса командной строки Azure](/cli/azure/webapp/deployment/user?view=azure-cli-latest#az-webapp-deployment-user-set).
 
 2. Укажите имя пользователя и пароль, а затем нажмите кнопку **Сохранить**.
 

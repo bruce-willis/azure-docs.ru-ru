@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 07/30/2018
+ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: 9da2454afa130c4c2ccab458099a90d78354b3e2
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 994bd6f2a041e25d15c7e0b4a216952cec4101fa
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358300"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39492829"
 ---
 # <a name="tutorial-3-add-regular-expression-entity"></a>Руководство: 3 Добавление сущности регулярного выражения
 В этом руководстве создается приложение, которое демонстрирует, как извлечь согласованно отформатированные данные из фразы с помощью сущности **регулярного выражения**.
@@ -110,15 +110,8 @@ LUIS помечает фразы, добавляемые в намерение. 
     Так как сущность не обучена с помощью машинного обучения, метка применяется к фразам и отображается на веб-сайте LUIS сразу же после создания.
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Для сущности регулярного выражения не требуется обучение, а для нового намерения и фразы требуется. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
-
-    ![Изображение кнопки обучения](./media/luis-quickstart-intents-regex-entity/train-button.png)
-
-2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
-
-    ![Изображение панели уведомления, свидетельствующей об успешном обучении](./media/luis-quickstart-intents-regex-entity/trained.png)
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 
@@ -237,9 +230,10 @@ LUIS помечает фразы, добавляемые в намерение. 
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, такое как чат-бот, может принимать результат с наивысшим показателем и номера форм, а также искать по стороннему API. LUIS не выполняет эту работу. LUIS только определяет намерение пользователя и извлекает данные о нем. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о списке сущности](luis-quickstart-intent-and-list-entity.md)

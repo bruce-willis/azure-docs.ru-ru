@@ -1,36 +1,33 @@
 ---
-title: Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight | Документация Майкрософт
+title: 'Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight '
 description: Узнайте, как загружать данные и выполнять интерактивные запросы в кластерах Spark в Azure HDInsight.
 services: azure-hdinsight
-author: mumian
-manager: cgronlun
-editor: cgronlun
-tags: azure-portal
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
-ms.devlang: na
 ms.topic: tutorial
-ms.author: jgao
+ms.author: jasonh
 ms.date: 05/17/2018
-ms.openlocfilehash: eeb0f8134d21d42c8401f58828160d613e8ef92b
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: e83c7a4ed5987108a74153897abe4839dd24418c
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302055"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39619436"
 ---
 # <a name="tutorial-load-data-and-run-queries-on-an-apache-spark-cluster-in-azure-hdinsight"></a>Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight
 
 В этом руководстве описывается, как создать кадр данных из CSV-файла и как выполнять интерактивные запросы Spark SQL к кластеру Apache Spark в HDInsight. В Spark кадр данных — это распределенная коллекция данных, упорядоченных в именованных столбцах. Она эквивалентна таблице в реляционной базе данных или фрейме данных в R/Python.
  
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Создание кадра данных из CSV-файла
 > * Выполнение запросов к кадру данных
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Изучите руководство по [созданию кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
 

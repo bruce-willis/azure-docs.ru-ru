@@ -3,7 +3,7 @@ title: Ведение журналов метрик и диагностики Б
 description: Сведения о настройке Базы данных SQL Azure для хранения данных статистики об использовании ресурсов, подключении и выполнении запросов.
 services: sql-database
 documentationcenter: ''
-author: Danimir
+author: danimir
 manager: craigg
 ms.service: sql-database
 ms.custom: monitor & tune
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: v-daljep
 ms.reviewer: carlrab
-ms.openlocfilehash: c0c2e1748518b794916f1950c288ed1f4df628aa
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: ba305b66d4b7230f2706136587c4183f81c5e9c3
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39309067"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525507"
 ---
 # <a name="azure-sql-database-metrics-and-diagnostics-logging"></a>Ведение журналов метрик и диагностики Базы данных SQL Azure 
 База данных SQL Azure может выдавать журналы диагностики и метрик для упрощения мониторинга. Вы можете настроить Базу данных SQL для хранения сведений об использовании ресурсов, о рабочих ролях и сеансах, а также настроить подключение к одному из этих ресурсов Azure:

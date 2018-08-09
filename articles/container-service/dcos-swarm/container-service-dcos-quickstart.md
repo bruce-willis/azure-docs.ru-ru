@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 12a6e34db4134ffdb38428c0a38d94351747cc48
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: ccc0836a296bb392e60dd0c973516a7087ff6ea5
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37900564"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39429332"
 ---
 # <a name="deploy-a-dcos-cluster"></a>Развертывание кластера DC/OS
 
@@ -26,7 +26,7 @@ DC/OS предоставляет распределенную платформу
 
 ## <a name="log-in-to-azure"></a>Вход в Azure 
 
-Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index#az_login) и следуйте инструкциям на экране.
+Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index#az-login) и следуйте инструкциям на экране.
 
 ```azurecli
 az login
@@ -34,7 +34,7 @@ az login
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -44,7 +44,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-dcos-cluster"></a>Создание кластера DC/OS
 
-Кластер DC/OS создается с помощью команды [az acs create](/cli/azure/acs#az_acs_create).
+Кластер DC/OS создается с помощью команды [az acs create](/cli/azure/acs#az-acs-create).
 
 В следующем примере создается кластер DC/OS с именем *myDCOSCluster* и ключи SSH, если они еще не существуют. Чтобы использовать определенный набор ключей, используйте параметр `--ssh-key-value`.  
 
@@ -52,7 +52,7 @@ az group create --name myResourceGroup --location eastus
 az acs create --orchestrator-type dcos --resource-group myResourceGroup --name myDCOSCluster --generate-ssh-keys
 ```
 
-В некоторых случаях, например при использовании ограниченной пробной версии, доступ подписки Azure к ресурсам Azure ограничен. Если происходит сбой развертывания из-за ограничения доступных ядер, уменьшите количество агентов по умолчанию, добавив `--agent-count 1` в команду [az acs create](/cli/azure/acs#az_acs_create). 
+В некоторых случаях, например при использовании ограниченной пробной версии, доступ подписки Azure к ресурсам Azure ограничен. Если происходит сбой развертывания из-за ограничения доступных ядер, уменьшите количество агентов по умолчанию, добавив `--agent-count 1` в команду [az acs create](/cli/azure/acs#az-acs-create). 
 
 Через несколько минут выполнение команды завершается, и отображаются сведения о развертывании.
 
@@ -157,7 +157,7 @@ az network public-ip list --resource-group myResourceGroup --query "[?contains(n
 
 ## <a name="delete-dcos-cluster"></a>Удаление кластера DC/OS
 
-Вы можете удалить ставшие ненужными группу ресурсов, кластер DC/OS и все связанные с ним ресурсы, выполнив команду [az group delete](/cli/azure/group#az_group_delete).
+Вы можете удалить ставшие ненужными группу ресурсов, кластер DC/OS и все связанные с ним ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli
 az group delete --name myResourceGroup --no-wait

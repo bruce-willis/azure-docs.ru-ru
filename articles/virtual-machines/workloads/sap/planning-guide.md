@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2016
 ms.author: sedusch
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7f1c2b028521983081ba5f276789af9701b568b7
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: da7d3898e1385119c8241efc89c68a6a60c29994
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972474"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39619096"
 ---
 # <a name="azure-virtual-machines-planning-and-implementation-for-sap-netweaver"></a>SAP NetWeaver на виртуальных машинах Windows. Руководство по планированию и внедрению
 [767598]:https://launchpad.support.sap.com/#/notes/767598
@@ -1017,7 +1017,7 @@ Microsoft Azure предусматривает несколько способо
 * Используйте *sysprep* в Windows или *waagent-deprovision* в Linux, чтобы подготовить к работе виртуальную машину. Процесс для Windows подробно описан в [техническом руководстве по Sysprep](https://technet.microsoft.com/library/cc766049.aspx), а для Linux — в разделе [Запись образа виртуальной машины Linux для его использования в качестве шаблона диспетчера ресурсов][capture-image-linux-step-2-create-vm-image].
 * Отправьте виртуальный жесткий диск с помощью Powershell или Azure CLI.
 * (Необязательно.) Создайте образ управляемого диска на основе виртуального жесткого диска с помощью PowerShell, Azure CLI или портала Azure.
-* Разверните виртуальную машину с помощью шаблона JSON, в котором указана ссылка на виртуальный жесткий диск образа, как показано в [примере шаблона JSON](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sap-2-tier-user-image/azuredeploy.json), или образ управляемого диска, как показано в [этом примере шаблона JSON](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-from-user-image/azuredeploy.json).
+* Разверните виртуальную машину с помощью шаблона JSON, в котором указана ссылка на виртуальный жесткий диск образа, как показано в [примере шаблона JSON](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sap-2-tier-user-image/azuredeploy.json), или образ управляемого диска, как показано в [этом примере шаблона JSON](https://github.com/Azure/azure-quickstart-templates/blob/master/sap-2-tier-user-image-md/azuredeploy.json).
 
 #### <a name="downloading-vhds-or-managed-disks-to-on-premises"></a>Загрузка виртуальных жестких дисков или управляемых дисков в локальную среду
 Инфраструктура как услуга (IaaS) Azure позволяет не только отправлять в нее виртуальные жесткие диски и системы SAP. Вы можете переместить систему SAP из Azure обратно в локальную среду.
@@ -1156,8 +1156,8 @@ az vm disk attach --disk <new disk name or managed disk id> --resource-group <re
 
 Далее представлен базовый логический поток командлета PowerShell.
 
-* Создайте контекст учетной записи хранения для **исходной** учетной записи хранения с помощью командлета *New-AzureStorageContext*. Дополнительные сведения см. здесь: <https://msdn.microsoft.com/library/dn806380.aspx>.
-* Создайте контекст учетной записи хранения для **целевой** учетной записи хранения с помощью командлета *New-AzureStorageContext*. Дополнительные сведения см. здесь: <https://msdn.microsoft.com/library/dn806380.aspx>.
+* Создайте контекст учетной записи хранения для **исходной** учетной записи хранения с помощью командлета *New-AzureStorageContext*. Дополнительные сведения см. здесь: <https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontext>.
+* Создайте контекст учетной записи хранения для **целевой** учетной записи хранения с помощью командлета *New-AzureStorageContext*. Дополнительные сведения см. здесь: <https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontext>.
 * Запустите копирование:
 
 ```powershell

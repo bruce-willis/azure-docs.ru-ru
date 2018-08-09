@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/25/2017
 ms.author: tomfitz
-ms.openlocfilehash: 430cadf0cc609ab3473b14115b2956553a677a26
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 1cc407e07aee307b00116aad1c44bf8e2b97e33e
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29848089"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39432479"
 ---
 # <a name="create-a-managed-application-definition-with-azure-cli"></a>Создание определения управляемого приложения с помощью Azure CLI
 
@@ -37,9 +37,9 @@ ms.locfileid: "29848089"
 
 В этом скрипте используется приведенная ниже команда для создания определения управляемого приложения. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [az managedapp definition create](https://docs.microsoft.com/cli/azure/managedapp/definition#az_managedapp_definition_create) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
+| [az managedapp definition create](https://docs.microsoft.com/cli/azure/managedapp/definition#az-managedapp-definition-create) | Позволяет создать определение управляемого приложения. Укажите пакет с необходимыми файлами. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

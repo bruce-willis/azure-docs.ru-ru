@@ -3,7 +3,7 @@ title: Создание резервных копий и восстановле�
 description: Узнайте, как создавать резервные копии и выполнять восстановление базы данных Oracle Database 12c в среде Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
-author: v-shiuma
+author: romitgirdhar
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 5/17/2017
-ms.author: rclaus
-ms.openlocfilehash: e01a347607b2c2ff82d15172756f32c9c6a474a8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.date: 08/02/2018
+ms.author: rogirdh
+ms.openlocfilehash: 93fbd5bbba91b45e1afd123a2466b249302e2354
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34656179"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39492846"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
 

@@ -2,18 +2,18 @@
 title: Использование службы "Импорт и экспорт Azure" для передачи данных в большие двоичные объекты Azure | Документация Майкрософт
 description: Сведения о создании заданий импорта и экспорта на портале Azure для передачи данных в большие двоичные объекты Azure и из них.
 author: alkohli
-manager: jeconnoc
 services: storage
 ms.service: storage
 ms.topic: article
 ms.date: 07/17/2018
 ms.author: alkohli
-ms.openlocfilehash: eea7e2779a169fa9a64cc7a5695e91999f219277
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.component: common
+ms.openlocfilehash: 2484d01c268757ef612ba7b397b80b8ea4c4e76a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39112837"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528145"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 

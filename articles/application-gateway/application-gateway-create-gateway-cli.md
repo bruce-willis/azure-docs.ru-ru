@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/25/2018
 ms.author: victorh
-ms.openlocfilehash: 791cc8bca95fc2264b485c23f30e24254067f513
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: ebe22f72d25b8f181e75a263df63fd5a0b4a6a6f
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33201833"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39436195"
 ---
 # <a name="create-an-application-gateway-using-the-azure-cli"></a>Создание шлюза приложений с помощью Azure CLI
 
@@ -31,7 +31,7 @@ ms.locfileid: "33201833"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupAG* в расположении *eastus*.
 
@@ -41,7 +41,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов 
 
-Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/vnet#az_vnet_create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/public-ip#az_public_ip_create).
+Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/vnet#az-vnet-create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/public-ip#az-public-ip-create).
 
 ```azurecli-interactive
 az network vnet create \
@@ -111,7 +111,7 @@ runcmd:
   - nodejs index.js
 ```
 
-Создайте сетевые интерфейсы с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create). Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
+Создайте сетевые интерфейсы с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create). Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create).
 
 ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -133,7 +133,7 @@ done
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/application-gateway#az_application_gateway_create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
+Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/application-gateway#az-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
 
 ```azurecli-interactive
 address1=$(az network nic show --name myNic1 --resource-group myResourceGroupAG | grep "\"privateIpAddress\":" | grep -oE '[^ ]+$' | tr -d '",')
@@ -161,7 +161,7 @@ az network application-gateway create \
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
 ```azurepowershell-interactive
 az network public-ip show \
@@ -175,7 +175,7 @@ az network public-ip show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Выполните команду [az group delete](/cli/azure/group#az_group_delete), чтобы удалить группу ресурсов, шлюз приложений и все связанные ресурсы, если они вам больше не нужны.
+Выполните команду [az group delete](/cli/azure/group#az-group-delete), чтобы удалить группу ресурсов, шлюз приложений и все связанные ресурсы, если они вам больше не нужны.
 
 ```azurecli-interactive 
 az group delete --name myResourceGroupAG

@@ -9,19 +9,19 @@ editor: daden
 ms.assetid: ''
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: daden
-ms.openlocfilehash: 450c033fbce3544cdc17ddc6d47ff726b01a4d3e
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7a13cafd3dcfb4637a5deae2c678c518019ad168
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832668"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39450674"
 ---
 # <a name="server-workload-forecasting-on-terabytes-of-data"></a>Прогнозирование рабочей нагрузки сервера на основе терабайтов данных
 
@@ -44,12 +44,12 @@ ms.locfileid: "34832668"
 В этом сценарии мы рассмотрим прогноз рабочей нагрузки для каждого компьютера (или сервера). В частности, вы используете данные сеансов для каждого сервера, чтобы спрогнозировать класс его рабочей нагрузки в будущем. Вы присвоите класс (низкий, средний или высокий) нагрузке каждого сервера с помощью классификатора случайного леса в [Apache Spark ML](https://spark.apache.org/docs/2.1.1/ml-guide.html). Методы и рабочий процесс машинного обучения в этом примере можно легко применять для решения других подобных проблем. 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Предварительные требования для выполнения этого сценария:
 
 * [Учетная запись Azure](https://azure.microsoft.com/free/) (доступны бесплатные пробные версии).
-* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md). Если у вас несколько подписок, вы можете [указать нужную подписку в качестве текущей активной подписки](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az_account_set).
+* Установленная копия [Azure Machine Learning Workbench](../service/overview-what-is-azure-ml.md). Чтобы установить эту программу и создать рабочую область, выполните инструкции из [краткого руководства по установке](../service/quickstart-installation.md). Если у вас несколько подписок, вы можете [указать нужную подписку в качестве текущей активной подписки](https://docs.microsoft.com/cli/azure/account?view=azure-cli-latest#az-account-set).
 * Windows 10 (если вы используете macOS, большинство инструкций будут аналогичными).
 * Виртуальная машина для обработки и анализа данных для Linux (Ubuntu), желательно в регионе "Восточная часть США", где расположены данные. Вы можете подготовить виртуальную машину для обработки и анализа данных Ubuntu, выполнив эти [инструкции](https://docs.microsoft.com/azure/machine-learning/data-science-virtual-machine/dsvm-ubuntu-intro). Просмотрите также это [краткое руководство](https://ms.portal.azure.com/#create/microsoft-ads.linux-data-science-vm-ubuntulinuxdsvmubuntu). Рекомендуем использовать виртуальную машину с как минимум 8 ядрами и 32 ГБ памяти. 
 

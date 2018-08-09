@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: e6d223b386aea3ca41931c600d16c16b53765f26
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: fd2505d6262948e193531d91222cdec319f33100
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39415687"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597159"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "39415687"
 
 **Примечания:**
 
-- Для доступа к ресурсам пользователям, включенным в политику условного доступа, нужна [поддерживаемая версия Microsoft Office для macOS](../active-directory-conditional-access-technical-reference.md#client-apps-condition). 
+- Для доступа к ресурсам пользователям, включенным в политику условного доступа, нужна [поддерживаемая версия Microsoft Office для macOS](../conditional-access/technical-reference.md#client-apps-condition). 
 
 - Во время первой попытки доступа пользователям предлагается зарегистрировать устройство с помощью корпоративного портала.
 
@@ -146,7 +146,7 @@ ms.locfileid: "39415687"
 
 **Вопрос. В области сведений о пользователе на портале Azure отображается запись устройства, а на устройстве указано, что оно зарегистрировано. Правильно ли оно настроено для применения условного доступа?**
 
-**Ответ.** Состояние присоединения устройства, показанное через deviceID, должно соответствовать тому, которое находится в Azure AD, и критериям условного доступа. См. дополнительные сведения о [требовании использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](../active-directory-conditional-access-policy-connected-applications.md).
+**Ответ.** Состояние присоединения устройства, показанное через deviceID, должно соответствовать тому, которое находится в Azure AD, и критериям условного доступа. См. дополнительные сведения о [требовании использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
 
 ---
 

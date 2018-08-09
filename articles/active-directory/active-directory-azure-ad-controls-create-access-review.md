@@ -10,16 +10,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.component: compliance-reports
+ms.component: compliance
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 853d8f09a94e46db218553500a50dc4ef1ec3d23
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 24df484a571e838eeaa9bd86ef69a3dd10843843
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37448277"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620966"
 ---
 # <a name="create-an-access-review-of-group-members-or-application-access-with-azure-ad"></a>Создание проверки доступа для участников группы или приложения с помощью Azure AD
 

@@ -2,24 +2,18 @@
 title: Общие сведения о службе файлов Azure | Документация Майкрософт
 description: Обзор службы файлов Azure, которая позволяет создавать и использовать общие сетевые ресурсы в облаке с помощью стандартного отраслевого протокола SMB.
 services: storage
-documentationcenter: ''
 author: RenaShahMSFT
-manager: aungoo
-editor: tamram
-ms.assetid: ''
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/19/2018
 ms.author: renash
-ms.openlocfilehash: b331a6fcc6efd07bf63135e917f9fe55560e4ec7
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.component: files
+ms.openlocfilehash: 7501d28d75f180f289f4e3e130e0a5f7219835b9
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39158290"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526027"
 ---
 # <a name="introduction-to-azure-files"></a>Общие сведения о службе файлов Azure
 Файлы Azure представляют собой полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью [стандартного отраслевого протокола SMB и протокола CIFS](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Кроме того, общие ресурсы службы "Файлы Azure" можно кэшировать на серверах Windows Server с помощью службы "Синхронизация файлов Azure" для быстрого доступа из расположения, где используются данные.

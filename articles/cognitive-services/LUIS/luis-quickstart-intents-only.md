@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 07/26/2018
+ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: 578fdb5593e75e3584e81d73d7643162f7af5cbc
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: de295a93d395cee4c4dfbea4f2e7f7338036feb8
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358144"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494379"
 ---
 # <a name="tutorial-1-build-app-with-custom-domain"></a>Руководство: 1. Создание приложения с личным доменом
 В этом руководстве мы создаем приложение, которое демонстрирует, как использовать **намерения** для определения _намерений_ пользователей на основе фраз (текста), которые они отправляют в приложение. В итоге вы получите конечную точку LUIS, работающую в облаке.
@@ -84,19 +84,15 @@ ms.locfileid: "39358144"
     В приложении, вызывающем LUIS (таком как чат-бот), если LUIS возвращает намерение **None** для фразы, бот может спросить, хочет ли пользователь завершить разговор. Чат-бот может также дать больше указаний для продолжения разговора, если пользователь хочет продолжить. 
 
 ## <a name="train-and-publish-the-app"></a>Обучение и публикация приложения
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить). 
 
-    ![Кнопка обучения](./media/luis-quickstart-intents-only/train-button.png)
-
-2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
-
-    ![Строка состояния "Обучение пройдено"](./media/luis-quickstart-intents-only/trained.png)
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-app-to-endpoint"></a>Публикация приложения в конечной точке
 
 [!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)] 
 
 ## <a name="query-endpoint-for-getjobinformation-intent"></a>Запрос к конечной точке для намерения GetJobInformation
+
 1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 2. Перейдите в конец URL-адреса и введите `I'm looking for a job with Natual Language Processing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает с фразами из примера в шаге 4, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `GetJobInformation` как самое подходящее. 
@@ -189,7 +185,8 @@ ms.locfileid: "39358144"
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может взять результат topScoringIntent и найти сведения (не хранятся в LUIS) для ответа на вопрос или завершить диалог. Это программные варианты для бота или вызывающего приложения. LUIS не выполняет эту работу. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Для этого выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

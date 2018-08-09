@@ -2,23 +2,18 @@
 title: Конструктивные шаблоны таблиц в службе хранилища Azure | Документация Майкрософт
 description: Использование шаблонов для решений для службы таблиц Azure.
 services: storage
-documentationcenter: na
 author: MarkMcGeeAtAquent
-manager: kfile
-ms.assetid: 8e228b0c-2998-4462-8101-9f16517393ca
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
 ms.date: 04/23/2018
 ms.author: sngun
-ms.openlocfilehash: db621cdd6d38cb2f235c45c9bfcb76677ed6ba17
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.component: tables
+ms.openlocfilehash: b06f5a66566c250eef608ddccc551aaebe24ef74
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227904"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522804"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
 В этой статье приводится описание некоторых шаблонов, которые подходят для использования с решениями для службы таблиц. Кроме того, вы увидите практическое решение ряда проблем и сможете выбрать компромиссный вариант из предлагаемых в других статьях о разработке для хранилища таблиц. На следующей схеме показаны связи между различными шаблонами.  

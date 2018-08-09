@@ -2,24 +2,19 @@
 title: Разработка для файлов Azure с помощью Python | Документы Майкрософт
 description: Узнайте, как разрабатывать приложения и службы Python, использующие файлы Azure для хранения данных файлов.
 services: storage
-documentationcenter: python
 author: wmgries
-manager: aungoo
-editor: tamram
-ms.assetid: 297f3a14-6b3a-48b0-9da4-db5907827fb5
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: article
 ms.date: 09/19/2017
 ms.author: tamram
-ms.openlocfilehash: 1102fd516b5497b4c482986b64fa7c96e9ccc54a
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.component: files
+ms.openlocfilehash: 7e5c85890585230961f52803b081c636c950c518
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34738267"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530273"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -30,11 +25,11 @@ ms.locfileid: "34738267"
 
 * создание файловых ресурсов Azure;
 * создание каталогов;
-* перечисление файлов и каталогов в файловом ресурсе Azure;
-* передача, загрузка и удаление файлов.
+* Перечисление файлов и каталогов в общей папке Azure
+* Передача, загрузка и удаление файлов.
 
 > [!Note]  
-> Так как к файлам Azure можно обращаться по протоколу SMB, вы можете создавать простые приложения, которые получают доступ к файловым ресурсам Azure с использованием стандартных классов ввода-вывода и функций Python. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Python для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/fileservices/file-service-rest-api) для взаимодействия с файлами Azure.
+> Так как к файлам Azure можно обращаться по протоколу SMB, вы можете создавать простые приложения, которые получают доступ к файловым ресурсам Azure с использованием стандартных классов ввода-вывода и функций Python. Из этой статьи вы узнаете, как создавать приложения на основе пакета SDK Python для службы хранилища Azure. Этот пакет SDK использует [API REST файлов Azure](https://docs.microsoft.com/rest/api/storageservices/file-service-rest-api) для взаимодействия с файлами Azure.
 
 ## <a name="download-and-install-azure-storage-sdk-for-python"></a>Скачивание и установка пакета SDK службы хранилища Azure для Python
 
@@ -84,7 +79,7 @@ file_service.create_share('myshare')
 file_service.create_directory('myshare', 'sampledir')
 ```
 
-## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>перечисление файлов и каталогов в файловом ресурсе Azure;
+## <a name="enumerate-files-and-directories-in-an-azure-file-share"></a>Перечисление файлов и каталогов в общей папке Azure
 Чтобы получить список файлов и каталогов в общем ресурсе, используйте метод **list\_directories\_and\_files**. Этот метод возвращает генератор. Приведенный далее код выводит в консоль **имя** каждого файла и каталога в общем ресурсе.
 
 ```python

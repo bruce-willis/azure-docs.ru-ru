@@ -3,7 +3,7 @@ title: Использование пакета SDK WebJobs Azure
 description: Ознакомьтесь со сведениями о написании кода для пакета SDK WebJobs. Создавайте задания фоновой обработки на основе событий, с помощью которых можно получить доступ к данным в службах Azure и сторонних службах.
 services: app-service\web, storage
 documentationcenter: .net
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 ms.service: app-service-web
@@ -12,13 +12,13 @@ ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
-ms.author: tdykstra
-ms.openlocfilehash: 08272ba7d828f744336723f25b482bf06b9e43dc
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.author: glenga
+ms.openlocfilehash: 3e06dc82baed4043ce490769aa0ec84ab3de8c24
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35234656"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39577017"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -32,7 +32,7 @@ ms.locfileid: "35234656"
 > 
 > Дополнительные сведения см. в разделе [Сравнение функций и веб-заданий](../azure-functions/functions-compare-logic-apps-ms-flow-webjobs.md#compare-functions-and-webjobs). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что вы прочитали руководство [Get started with the WebJobs SDK](webjobs-sdk-get-started.md) (Начало работы с пакетом SDK WebJobs).
 

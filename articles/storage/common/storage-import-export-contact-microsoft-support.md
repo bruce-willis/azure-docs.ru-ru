@@ -2,24 +2,18 @@
 title: Создание запроса или обращения в службу поддержки для задания импорта и экспорта Azure | Документация Майкрософт
 description: Узнайте, как записать в журнал запрос в службу поддержки при возникновении проблем, связанных с заданием импорта и экспорта.
 services: storsimple
-documentationcenter: ''
 author: alkohli
-manager: jeconnoc
-editor: ''
-ms.assetid: ''
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
 ms.date: 03/29/2018
 ms.author: alkohli;
-ms.openlocfilehash: b82adae5854aa836701e299a0aabd2b61e73ca99
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.component: common
+ms.openlocfilehash: 321f59b1fd7b408d13856d7345d5d00608e3d250
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30323657"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521087"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Создание запроса в службу поддержки для задания импорта и экспорта
 
@@ -46,7 +40,7 @@ ms.locfileid: "30323657"
         - Если вы выбрали **BLOB-объект**, щелкните **Ресурс**, **Имена контейнеров** (необязательно) и **План поддержки**.
             ![Выбор большого двоичного объекта](./media/storage-import-export-contact-microsoft-support/import-export-support2.png)
         - Если вы выбрали **Файл**, щелкните **Ресурс**, **Имена общих папок** (необязательно) и **План поддержки**. ![Выбор файла](./media/storage-import-export-contact-microsoft-support/import-export-support4.png)
-    4. Нажмите кнопку **Далее**.
+    4. Щелкните **Далее**.
 
 3. В разделе **Новый запрос в службу поддержки** выберите шаг 2 **Проблема**. В колонке **Проблема** сделайте следующее:
     
@@ -57,7 +51,7 @@ ms.locfileid: "30323657"
     5. Укажите дату и время начала для проблемы.
     6. В разделе **Отправка файла** щелкните значок папки, чтобы просмотреть другие файлы, которые необходимо отправить.
     7. Установите флажок **Предоставить диагностическую информацию**.
-    8. Нажмите кнопку **Далее**.
+    8. Щелкните **Далее**.
 
        ![Проблема](./media/storage-import-export-contact-microsoft-support/import-export-support5.png)
 

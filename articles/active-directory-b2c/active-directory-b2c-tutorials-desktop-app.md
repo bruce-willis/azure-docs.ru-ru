@@ -10,18 +10,18 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: ff9cfd0f1f3d8ee62b7f93d88023b3dedce3e7be
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 18db911782e03d17f0b2e2ace3f8b00ddfdebf70
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34711738"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599939"
 ---
 # <a name="tutorial-enable-desktop-app-authentication-with-accounts-using-azure-active-directory-b2c"></a>Руководство. Включение в классическом приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C
 
 В этом руководстве описано использование Azure Active Directory (Azure AD) B2C для входа и регистрации пользователей в классическом приложении Windows Presentation Foundation (WPF). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Зарегистрируйте пример классического приложения в клиенте Azure AD B2C.
@@ -30,14 +30,14 @@ ms.locfileid: "34711738"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Создайте свой собственный [клиент Azure AD B2C](active-directory-b2c-get-started.md).
 * [Установите Visual Studio 2017](https://www.visualstudio.com/downloads/), а также рабочие нагрузки **Разработка классических приложений .NET** и **ASP.NET и разработка веб-приложений**.
 
 ## <a name="register-desktop-app"></a>Регистрация классического приложения
 
-Приложения должны быть [зарегистрированы](../active-directory/develop/active-directory-dev-glossary.md#application-registration) в клиенте, чтобы иметь возможность получать [токены доступа](../active-directory/develop/active-directory-dev-glossary.md#access-token) от Azure Active Directory. При регистрации приложения создается [идентификатор](../active-directory/develop/active-directory-dev-glossary.md#application-id-client-id) для приложения в клиенте. 
+Приложения должны быть [зарегистрированы](../active-directory/develop/developer-glossary.md#application-registration) в клиенте, чтобы иметь возможность получать [токены доступа](../active-directory/develop/developer-glossary.md#access-token) от Azure Active Directory. При регистрации приложения создается [идентификатор](../active-directory/develop/developer-glossary.md#application-id-client-id) для приложения в клиенте. 
 
 Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
 
@@ -86,7 +86,7 @@ ms.locfileid: "34711738"
     | **Имя** | SiUpIn | Введите **имя** политики. К имени политики добавляется префикс **B2C_1_**. Используйте полное имя политики **B2C_1_SiUpIn** в примере кода. | 
     | **Поставщик удостоверений** | "Регистрация по электронной почте" | Поставщик удостоверений, используемый для идентификации пользователя. |
     | **Атрибуты входа** | "Отображаемое имя" и "Почтовый индекс" | Выберите атрибуты, получаемые от пользователя во время регистрации. |
-    | **Утверждения приложения** | "Отображаемое имя", "Почтовый индекс", User is new (Новый пользователь) и User's Object ID (Идентификатор объекта пользователя). | Выберите [утверждения](../active-directory/develop/active-directory-dev-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/active-directory-dev-glossary.md#access-token). |
+    | **Утверждения приложения** | "Отображаемое имя", "Почтовый индекс", User is new (Новый пользователь) и User's Object ID (Идентификатор объекта пользователя). | Выберите [утверждения](../active-directory/develop/developer-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/developer-glossary.md#access-token). |
 
 2. Нажмите кнопку **Создать**, чтобы создать политику. 
 
@@ -103,7 +103,7 @@ ms.locfileid: "34711738"
     | **Имя** | SiPe | Введите **имя** политики. К имени политики добавляется префикс **B2C_1_**. Используйте полное имя политики **B2C_1_SiPe** в примере кода. | 
     | **Поставщик удостоверений** | Локальная учетная запись для входа | Поставщик удостоверений, используемый для идентификации пользователя. |
     | **Атрибуты профиля** | "Отображаемое имя" и "Почтовый индекс" | Выберите атрибуты, которые пользователи смогут изменять во время редактирования профиля. |
-    | **Утверждения приложения** | "Отображаемое имя", "Почтовый индекс" и User's Object ID (Идентификатор объекта пользователя) | Выберите [утверждения](../active-directory/develop/active-directory-dev-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/active-directory-dev-glossary.md#access-token) после редактирования профиля. |
+    | **Утверждения приложения** | "Отображаемое имя", "Почтовый индекс" и User's Object ID (Идентификатор объекта пользователя) | Выберите [утверждения](../active-directory/develop/developer-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/developer-glossary.md#access-token) после редактирования профиля. |
 
 2. Нажмите кнопку **Создать**, чтобы создать политику. 
 
@@ -119,7 +119,7 @@ ms.locfileid: "34711738"
     | ------------ | ------- | -------------------------------------------------- |
     | **Имя** | SSPR | Введите **имя** политики. К имени политики добавляется префикс **B2C_1_**. Используйте полное имя политики **B2C_1_SSPR** в примере кода. | 
     | **Поставщик удостоверений** | Reset password using email address (Сброс пароля с использованием адреса электронной почты) | Поставщик удостоверений, используемый для идентификации пользователя. |
-    | **Утверждения приложения** | User's Object ID (Идентификатор объекта пользователя) | Выберите [утверждения](../active-directory/develop/active-directory-dev-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/active-directory-dev-glossary.md#access-token) после сброса пароля. |
+    | **Утверждения приложения** | User's Object ID (Идентификатор объекта пользователя) | Выберите [утверждения](../active-directory/develop/developer-glossary.md#claim), которые следует включить в [маркер доступа](../active-directory/develop/developer-glossary.md#access-token) после сброса пароля. |
 
 2. Нажмите кнопку **Создать**, чтобы создать политику. 
 

@@ -1,5 +1,5 @@
 ---
-title: Отправка пользовательских событий для службы "Сетка событий Azure" по гибридному подключению | Документы Майкрософт
+title: Отправка пользовательских событий для службы "Сетка событий Azure" по гибридному подключению | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Гибридное подключение используется для конечной точки.
 services: event-grid
 keywords: ''
@@ -8,12 +8,12 @@ ms.author: tomfitz
 ms.date: 06/29/2018
 ms.topic: tutorial
 ms.service: event-grid
-ms.openlocfilehash: ee504f805c536ba9a6186514206546c3df1f0f1a
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 544f5210adbea6791f9224a1e2be0743ce9995d5
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37127719"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39434152"
 ---
 # <a name="route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
@@ -29,7 +29,7 @@ ms.locfileid: "37127719"
 
 Темами событий сетки являются ресурсы Azure, которые необходимо поместить в группу ресурсов Azure. Группа ресурсов Azure — это логическая коллекция, в которой выполняется развертывание и администрирование ресурсов Azure.
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). 
 
 В следующем примере создается группа ресурсов с именем *gridResourceGroup* в расположении *westus2*.
 
@@ -114,7 +114,7 @@ curl -X POST -H "aeg-sas-key: $key" -d "$body" $endpoint
 az group delete --name gridResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Теперь, когда вы знаете, как создавать темы и подписки на события, ознакомьтесь с дополнительными сведениями о сетке событий, которые могут помочь вам:
 

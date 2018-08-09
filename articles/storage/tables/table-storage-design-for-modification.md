@@ -2,23 +2,18 @@
 title: Проектирование таблиц службы хранилища Azure для оптимизации изменения данных | Документация Майкрософт
 description: Проектирование таблиц для оптимизации изменения данных в хранилище таблиц Azure.
 services: storage
-documentationcenter: na
 author: MarkMcGeeAtAquent
-manager: kfile
-ms.assetid: 8e228b0c-2998-4462-8101-9f16517393ca
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
 ms.date: 04/23/2018
 ms.author: sngun
-ms.openlocfilehash: 6c008175f01521ce4f96d13e58244dc72d9f6990
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: tables
+ms.openlocfilehash: 5f67a8ffde24d3c3e39065806b07bdd5cba2857a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660382"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522049"
 ---
 # <a name="design-for-data-modification"></a>Разработка для изменения данных
 В этой статье рассматриваются вопросы разработки для оптимизации операций вставки, обновления и удаления. В некоторых случаях будет необходимо тщательно проанализировать модели оптимизации запросов и модели оптимизации изменения данных. Действия выполняются так же, как в модели для реляционных баз данных (несмотря на то, что в реляционной базе данных существуют другие методы управления компромиссами при разработке). В разделе [Шаблоны для разработки таблиц](#table-design-patterns) приводится описание шаблонов разработки для службы таблиц и рассматриваются некоторые компромиссные варианты. На практике вы увидите, что многие модели, оптимизированные для выполнения запросов к сущностям, также хорошо подходят для изменения сущностей.  

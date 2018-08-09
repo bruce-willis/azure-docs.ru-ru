@@ -1,19 +1,19 @@
 ---
 title: Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств к добавлению в Центр Интернета вещей Azure | Документация Майкрософт
 description: Сведения о проверке сертификатов ЦС X.509 с помощью службы подготовки устройств.
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 02/26/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 7dd4f8cc53d86933d10294dbbf55157d2b1cf290
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 709a53c0fc0814262cd7ce8bb0398be82ef81479
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39001785"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526853"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Как подтвердить владение сертификатами ЦС X.509 с помощью службы подготовки устройств
 

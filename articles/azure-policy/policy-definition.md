@@ -4,16 +4,16 @@ description: Описывается, как определение полити�
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 05/24/2018
+ms.date: 08/03/2018
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 7f01464c4b9063f20a83c3626d7f92a5e0524f7a
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: ced8ebad0122973595cdede4497cd200e3090043
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38989131"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524113"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -219,19 +219,6 @@ ms.locfileid: "38989131"
   - Пример: `tags.[Acct.CostCenter]`. **Acct.CostCenter** — это имя тега.
 - Список псевдонимов свойств указан в разделе [Псевдонимы](#aliases).
 
-### <a name="alternative-accessors"></a>Альтернативные методы доступа
-
-**Field** (поле) — основной метод доступа, используемый в правилах политики. Он непосредственно проверяет ресурс, который вычисляется. Однако политика поддерживает еще один метод доступа — **source**.
-
-```json
-"source": "action",
-"equals": "Microsoft.Compute/virtualMachines/write"
-```
-
-**Source** поддерживает только одно значение, **action**. Action возвращает действие авторизации запроса, который оценивается. Действия авторизации предоставляются в разделе авторизации [журнала действий](../monitoring-and-diagnostics/monitoring-activity-log-schema.md).
-
-Когда политика оценивает имеющиеся ресурсы в фоновом режиме, она задает в качестве **action** действие авторизации `/write` для типа ресурса.
-
 ### <a name="effect"></a>Результат
 
 Политика поддерживает следующие типы действий:
@@ -275,33 +262,44 @@ ms.locfileid: "38989131"
   $profileClient = New-Object -TypeName Microsoft.Azure.Commands.ResourceManager.Common.RMProfileClient -ArgumentList ($azProfile)
   $token = $profileClient.AcquireAccessToken($azContext.Subscription.TenantId)
   $authHeader = @{
-      'Content-Type'='application/json'
-      'Authorization'='Bearer ' + $token.AccessToken
+    'Authorization'='Bearer ' + $token.AccessToken
+  }
+
+  # Create a splatting variable for Invoke-RestMethod
+  $invokeRest = @{
+    Uri = 'https://management.azure.com/providers/?api-version=2017-08-01&$expand=resourceTypes/aliases'
+    Method = 'Get'
+    ContentType = 'application/json'
+    Headers = $authHeader
   }
 
   # Invoke the REST API
-  $response = Invoke-RestMethod -Uri 'https://management.azure.com/providers/?api-version=2017-08-01&$expand=resourceTypes/aliases' -Method Get -Headers $authHeader
+  $response = Invoke-RestMethod @invokeRest
 
-  # Create an Array List to hold discovered aliases
-  $aliases = New-Object System.Collections.ArrayList
+  # Create an List to hold discovered aliases
+  $aliases = [System.Collections.Generic.List[pscustomobject]]::new()
 
-  foreach ($ns in $response.value) {
-      foreach ($rT in $ns.resourceTypes) {
-          if ($rT.aliases) {
-              foreach ($obj in $rT.aliases) {
+  foreach ($ns in $response.value)
+  {
+      foreach ($rT in $ns.resourceTypes)
+      {
+          if ($rT.aliases)
+          {
+              foreach ($obj in $rT.aliases)
+              {
                   $alias = [PSCustomObject]@{
-                      Namespace       = $ns.namespace
-                      resourceType    = $rT.resourceType
-                      alias           = $obj.name
+                      Namespace    = $ns.namespace
+                      resourceType = $rT.resourceType
+                      alias        = $obj.name
                   }
-                  $aliases.Add($alias) | Out-Null
+                  $aliases.Add($alias)
               }
           }
       }
   }
 
-  # Output the list, sort, and format. You can customize with Where-Object to limit as desired.
-  $aliases | Sort-Object -Property Namespace, resourceType, alias | Format-Table
+  # Output the list and sort it by Namespace, resourceType and alias. You can customize with Where-Object to limit as desired.
+  $aliases | Sort-Object -Property Namespace, resourceType, alias
   ```
 
 - Инфраструктура CLI Azure
@@ -309,7 +307,10 @@ ms.locfileid: "38989131"
   ```azurecli-interactive
   # Login first with az login if not using Cloud Shell
 
-  # Get Azure Policy aliases for a specific Namespace
+  # List namespaces
+  az provider list --query [*].namespace
+
+  # Get Azure Policy aliases for a specific Namespace (such as Azure Automation -- Microsoft.Automation)
   az provider show --namespace Microsoft.Automation --expand "resourceTypes/aliases" --query "resourceTypes[].aliases[].name"
   ```
 

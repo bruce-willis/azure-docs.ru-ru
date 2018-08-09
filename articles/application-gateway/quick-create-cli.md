@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 99c3975c6ab2c7a20dfbab519dae575a2a61465f
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 282f6d965ea85b25f1eada1a63897734c6c7b298
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32160364"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39435270"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Краткое руководство. Направление веб-трафика с помощью шлюза приложений Azure и Azure CLI
 
@@ -34,7 +34,7 @@ ms.locfileid: "32160364"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Для ресурсов обязательно нужно создать группу ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az_group_create). 
+Для ресурсов обязательно нужно создать группу ресурсов. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). 
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupAG* в расположении *eastus*.
 
@@ -46,7 +46,7 @@ az group create --name myResourceGroupAG --location eastus
 
 Для шлюза приложений нужно создать виртуальную сеть, чтобы он мог обмениваться данными с другими ресурсами. Вы можете создать виртуальную сеть во время создания шлюза приложений. В этом примере создаются две подсети: одна предназначена для шлюза приложений, а другая — для виртуальных машин. 
 
-Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/vnet#az_vnet_create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/public-ip#az_public_ip_create).
+Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/vnet#az-vnet-create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/public-ip#az-public-ip-create).
 
 ```azurecli-interactive
 az network vnet create \
@@ -118,7 +118,7 @@ runcmd:
   - nodejs index.js
 ```
 
-Создайте сетевые интерфейсы с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create). Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
+Создайте сетевые интерфейсы с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create). Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create).
 
 ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -140,7 +140,7 @@ done
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/application-gateway#az_application_gateway_create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
+Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/application-gateway#az-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
 
 ```azurecli-interactive
 address1=$(az network nic show --name myNic1 --resource-group myResourceGroupAG | grep "\"privateIpAddress\":" | grep -oE '[^ ]+$' | tr -d '",')
@@ -168,7 +168,7 @@ az network application-gateway create \
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Для создания шлюза приложений не требуется устанавливать сервер NGINX. Но в рамках этого руководства он устанавливается для того, чтобы проверить, создан ли шлюз приложений. Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
+Для создания шлюза приложений не требуется устанавливать сервер NGINX. Но в рамках этого руководства он устанавливается для того, чтобы проверить, создан ли шлюз приложений. Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
 ```azurepowershell-interactive
 az network public-ip show \
@@ -184,7 +184,7 @@ az network public-ip show \
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Сначала просмотрите ресурсы, созданные вместе со шлюзом приложений. Затем вы можете удалить группу ресурсов, шлюз приложений и все связанные с ними ресурсы, если они больше не требуются. Для этого выполните команду [az group delete](/cli/azure/group#az_group_delete).
+Сначала просмотрите ресурсы, созданные вместе со шлюзом приложений. Затем вы можете удалить группу ресурсов, шлюз приложений и все связанные с ними ресурсы, если они больше не требуются. Для этого выполните команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive 
 az group delete --name myResourceGroupAG

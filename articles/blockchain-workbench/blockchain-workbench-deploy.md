@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: 57b610b40edff56207617e212d0eb6e591ad50d4
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 1a0bc85063a80854ff6b970b0a57a991acfb3750
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224302"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39593967"
 ---
 # <a name="deploy-azure-blockchain-workbench"></a>Развертывание Azure Blockchain Workbench
 
@@ -51,7 +51,7 @@ Blockchain Workbench позволяет развернуть реестр бло
 Для развертывания Blockchain Workbench необходима регистрация приложения в Azure AD. Чтобы зарегистрировать приложение, вам нужен клиент Azure Active Directory (Azure AD). Можно использовать существующий клиент или создать новый. Если вы используете существующий клиент Azure AD, для регистрации приложений и предоставления разрешений API Graph в клиенте Azure AD требуются определенные разрешения. Если у вас нет таких разрешений в существующем клиенте Azure AD, создайте новый клиент. 
 
 > [!IMPORTANT]
-> Workbench не обязательно развертывать в клиенте, который используется для регистрации приложения Azure AD. Workbench следует развернуть в клиенте, в котором у вас есть достаточно разрешений для развертывания ресурсов. Дополнительные сведения о клиентах Azure AD см. в статьях [Как получить клиент Azure Active Directory](../active-directory/develop/active-directory-howto-tenant.md) и [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-integrating-applications.md).
+> Workbench не обязательно развертывать в клиенте, который используется для регистрации приложения Azure AD. Workbench следует развернуть в клиенте, в котором у вас есть достаточно разрешений для развертывания ресурсов. Дополнительные сведения о клиентах Azure AD см. в статьях [Как получить клиент Azure Active Directory](../active-directory/develop/quickstart-create-new-tenant.md) и [Интеграция приложений с Azure Active Directory](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md).
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. В правом верхнем углу выберите свою учетную запись, а затем перейдите в нужный клиент Azure AD. Клиент должен находиться в клиенте администратора подписки, в которой развертывается Workbench, и иметь достаточные разрешения для регистрации приложения.
@@ -73,7 +73,7 @@ Blockchain Workbench позволяет развернуть реестр бло
 
 ### <a name="modify-application-manifest"></a>Изменение манифеста приложения
 
-Затем необходимо изменить манифест приложения, чтобы использовать роли приложения вместе с Azure AD для указания администраторов Blockchain Workbench.  Дополнительные сведения о манифесте приложения см. в статье [Манифест приложения Azure Active Directory](../active-directory/develop/active-directory-application-manifest.md).
+Затем необходимо изменить манифест приложения, чтобы использовать роли приложения вместе с Azure AD для указания администраторов Blockchain Workbench.  Дополнительные сведения о манифесте приложения см. в статье [Манифест приложения Azure Active Directory](../active-directory/develop/reference-app-manifest.md).
 
 1. Для зарегистрированного приложения выберите **Манифест** на панели сведений о зарегистрированных приложениях.
 2. Создайте GUID. Глобальный уникальный идентификатор можно создать с помощью команды PowerShell [guid] :: NewGuid () или командлета New-GUID. Кроме того, это можно сделать на веб-сайте GUID Generator.

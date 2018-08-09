@@ -9,11 +9,12 @@ ms.topic: article
 ms.date: 11/29/2017
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d729a45b28ad02a652c265974d46fe1aaf752198
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 24cccd4745d611196046168f0125e7ef2a184e15
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39576497"
 ---
 # <a name="push-your-first-image-to-a-private-docker-container-registry-using-the-docker-cli"></a>Отправка первого образа в частный реестр контейнеров Docker с помощью интерфейса командной строки Docker
 
@@ -21,20 +22,20 @@ ms.lasthandoff: 05/07/2018
 
 Выполняя следующие действия, вы скачаете официальный [образ Nginx](https://store.docker.com/images/nginx) из общедоступного реестра Docker Hub, поместите его в частный реестр контейнеров Azure, отправите его в свой реестр, а затем извлечете его от туда.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI 2.0](container-registry-get-started-azure-cli.md).
+* **Реестр контейнеров Azure.** Создайте реестр контейнеров в своей подписке Azure. Это можно сделать на [портале Azure](container-registry-get-started-portal.md) или с помощью [Azure CLI](container-registry-get-started-azure-cli.md).
 * **Интерфейс командной строки Docker**. Установите [Docker](https://docs.docker.com/engine/installation/), чтобы настроить локальный компьютер в качестве узла Docker и получить доступ к командам Docker CLI.
 
 ## <a name="log-in-to-a-registry"></a>Вход в раздел реестра
 
-Существуют [несколько способов выполнить аутентификацию](container-registry-authentication.md) в частном реестре контейнеров. При работе в командной строке мы рекомендуем выполнить команду Azure CLI [az acr login](/cli/azure/acr?view=azure-cli-latest#az_acr_login). Например, чтобы войти в реестр с именем *myregistry*, выполните следующую команду:
+Существуют [несколько способов выполнить аутентификацию](container-registry-authentication.md) в частном реестре контейнеров. При работе в командной строке мы рекомендуем выполнить команду Azure CLI [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login). Например, чтобы войти в реестр с именем *myregistry*, выполните следующую команду:
 
 ```azurecli
 az acr login --name myregistry
 ```
 
-Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/active-directory-application-objects.md) Azure Active Directory. Например, [назначение субъекта-службы](container-registry-authentication.md#service-principal) для реестра позволяет автоматизировать некоторые сценарии.
+Вы также можете выполнить вход с помощью команды [docker login](https://docs.docker.com/engine/reference/commandline/login/). Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, [назначение субъекта-службы](container-registry-authentication.md#service-principal) для реестра позволяет автоматизировать некоторые сценарии.
 
 ```Bash
 docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
@@ -115,7 +116,7 @@ docker run -it --rm -p 8080:80 myregistry.azurecr.io/samples/nginx
 docker rmi myregistry.azurecr.io/samples/nginx
 ```
 
-Чтобы удалить образы из реестра контейнеров Azure, выполните команду Azure CLI [az acr repository delete](/cli/azure/acr/repository#az_acr_repository_delete). Например, указанная ниже команда удаляет манифест, на который ссылается тег, любые связанные данные слоя и все другие теги, указывающие на манифест.
+Чтобы удалить образы из реестра контейнеров Azure, выполните команду Azure CLI [az acr repository delete](/cli/azure/acr/repository#az-acr-repository-delete). Например, указанная ниже команда удаляет манифест, на который ссылается тег, любые связанные данные слоя и все другие теги, указывающие на манифест.
 
 ```azurecli
 az acr repository delete --name myregistry --repository samples/nginx --tag latest --manifest

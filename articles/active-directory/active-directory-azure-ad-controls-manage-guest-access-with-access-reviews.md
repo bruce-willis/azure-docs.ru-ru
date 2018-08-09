@@ -11,16 +11,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.component: compliance-reports
+ms.component: compliance
 ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 452501d5da58d06093f22009c6ecc30e02f581a5
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 3f7580b39e0ce9b1b83b5bc8ee0ed897b77e030a
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38295645"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620013"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -34,7 +34,7 @@ ms.locfileid: "38295645"
 >
 >
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 
 
 Проверка доступа поддерживается в выпуске Azure AD Premium P2, включенном в Microsoft Enterprise Mobility + Security E5. Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](active-directory-editions.md). Для каждого пользователя, применяющего эту возможность, в том числе для создания и выполнения проверки доступа или подтверждения доступа, требуется лицензия. 

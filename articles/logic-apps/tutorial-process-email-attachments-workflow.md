@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
-ms.openlocfilehash: 2b0420302bc74d4534d712de618959ef68c76514
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 133cc9d8fa52bb655e9baaad53ee157fdc7524f7
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126374"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39429426"
 ---
 # <a name="process-emails-and-attachments-with-azure-logic-apps"></a>Обработка сообщений электронной почты и вложений с помощью Azure Logic Apps
 
@@ -82,7 +82,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
       ![Копирование имени и ключа учетной записи хранения](./media/tutorial-process-email-attachments-workflow/copy-save-storage-name-key.png)
 
-   Получить ключ доступа к учетной записи хранения также можно с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.storage/get-azurermstorageaccountkey) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/account/keys?view=azure-cli-latest.md#az_storage_account_keys_list). 
+   Получить ключ доступа к учетной записи хранения также можно с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.storage/get-azurermstorageaccountkey) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/account/keys?view=azure-cli-latest.md#az-storage-account-keys-list). 
 
 3. Создайте контейнер хранилища BLOB-объектов для вложений электронной почты.
    
@@ -100,7 +100,7 @@ Azure Logic Apps дает возможность автоматизироват�
 
       ![Созданный контейнер хранилища Azure](./media/tutorial-process-email-attachments-workflow/created-storage-container.png)
 
-   Контейнер хранилища также можно создать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontainer) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az_storage_container_create). 
+   Контейнер хранилища также можно создать с помощью [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontainer) или [Azure CLI](https://docs.microsoft.com/cli/azure/storage/container?view=azure-cli-latest#az-storage-container-create). 
 
 Подключите Обозреватель службы хранилища к учетной записи.
 

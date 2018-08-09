@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: aa1e4d588f367351f0bed10370c7d67d50dd9927
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 53e49099fd3486d51f021528c9354cf32f4952d2
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763057"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39492795"
 ---
 # <a name="sfctl-is"></a>sfctl is
 Запрос службы инфраструктуры и отправка команд для нее.
@@ -51,7 +51,7 @@ ms.locfileid: "34763057"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-is-query"></a>sfctl is query
@@ -74,8 +74,9 @@ ms.locfileid: "34763057"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на сайте http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.

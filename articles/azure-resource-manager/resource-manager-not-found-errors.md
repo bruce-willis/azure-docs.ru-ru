@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 06/06/2018
 ms.author: tomfitz
-ms.openlocfilehash: 494526ae2084053f23bb3a096ac7d089c47a731a
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: 176de6f19274dfd8a6cf0335bb4cf16a8baa874b
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823441"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525350"
 ---
 # <a name="resolve-not-found-errors-for-azure-resources"></a>Устранение ошибок с поиском ресурсов Azure
 
@@ -60,7 +60,7 @@ Resource Manager нужно получить свойства ресурса, н
 }
 ```
 
-Но следует избегать задания ненужных зависимостей. Ненужные зависимости могут замедлить развертывание, мешая параллельному развертыванию независимых между собой ресурсов. Кроме того, возможно образование циклических зависимостей, которые блокируют развертывание. Функция [reference](resource-group-template-functions-resource.md#reference) и функции [list*](resource-group-template-functions-resource.md#listkeys-listsecrets-and-list) создают неявную зависимость от ссылочного ресурса, когда этот ресурс развертывается в том же шаблоне и ссылается на его имя (а не на идентификатор ресурса). Таким образом можно использовать больше зависимостей, чем задано в свойстве **dependsOn**. Функция [resourceId](resource-group-template-functions-resource.md#resourceid) не создает неявную зависимость и не проверяет, существует ли ресурс. Функция [reference](resource-group-template-functions-resource.md#reference) и функции [list*](resource-group-template-functions-resource.md#listkeys-listsecrets-and-list) не создают неявную зависимость, когда ресурс ссылается на свой идентификатор ресурса. Чтобы создать неявную зависимость, передайте имя ресурса, развернутого в том же шаблоне.
+Но следует избегать задания ненужных зависимостей. Ненужные зависимости могут замедлить развертывание, мешая параллельному развертыванию независимых между собой ресурсов. Кроме того, возможно образование циклических зависимостей, которые блокируют развертывание. Функция [reference](resource-group-template-functions-resource.md#reference) и функции [list*](resource-group-template-functions-resource.md#list) создают неявную зависимость от ссылочного ресурса, когда этот ресурс развертывается в том же шаблоне и ссылается на его имя (а не на идентификатор ресурса). Таким образом можно использовать больше зависимостей, чем задано в свойстве **dependsOn**. Функция [resourceId](resource-group-template-functions-resource.md#resourceid) не создает неявную зависимость и не проверяет, существует ли ресурс. Функция [reference](resource-group-template-functions-resource.md#reference) и функции [list*](resource-group-template-functions-resource.md#list) не создают неявную зависимость, когда ресурс ссылается на свой идентификатор ресурса. Чтобы создать неявную зависимость, передайте имя ресурса, развернутого в том же шаблоне.
 
 При возникновении проблем с зависимостями необходимо узнать, в каком порядке развертываются ресурсы. Вот как можно просмотреть порядок операций развертывания.
 

@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 06/20/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: f1f10e0cb552dfa938b85280f3acb302b4591426
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 922c87f2d577aff86d51a1fde53f221ebd2fa82c
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295955"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39446696"
 ---
 # <a name="automate-resizing-uploaded-images-using-event-grid"></a>Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 
@@ -29,14 +29,14 @@ ms.locfileid: "36295955"
 
 ![Опубликованное веб-приложение в браузере Microsoft Edge](./media/resize-images-on-storage-blob-upload-event/tutorial-completed.png)
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создание общей учетной записи хранения Azure;
 > * развертывание бессерверного кода с помощью службы "Функции Azure";
 > * создание подписки на событие хранилища BLOB-объектов в службе "Сетка событий".
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -52,7 +52,7 @@ ms.locfileid: "36295955"
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
 
-Для службы "Функции Azure" требуется общая учетная запись хранения. Создайте отдельную общую учетную запись хранения в группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az_storage_account_create).
+Для службы "Функции Azure" требуется общая учетная запись хранения. Создайте отдельную общую учетную запись хранения в группе ресурсов с помощью команды [az storage account create](/cli/azure/storage/account#az-storage-account-create).
 
 Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. 
 
@@ -66,7 +66,7 @@ az storage account create --name <general_storage_account> \
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции  
 
-Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az_functionapp_create). 
+Для выполнения функций вам понадобится приложение-функция, предоставляющее среду для выполнения кода функции без сервера. Создайте приложение-функцию с помощью команды [az functionapp create](/cli/azure/functionapp#az-functionapp-create). 
 
 В следующей команде замените `<function_app>` уникальным именем своего приложения-функции везде, где встречается этот заполнитель. Имя приложения-функции используется по умолчанию в качестве его домена DNS. Поэтому оно должно быть уникальным среди всех приложений в Azure. Для `<general_storage_account>` замените имя созданной общей учетной записи хранения.
 

@@ -2,24 +2,18 @@
 title: Предварительный просмотр использования дисков для задания экспорта инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Узнайте, как использовать предварительный просмотр списка больших двоичных объектов, выбранных для задания экспорта в службе импорта и экспорта Azure.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: 7707d744-7ec7-4de8-ac9b-93a18608dc9a
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/15/2017
 ms.author: muralikk
-ms.openlocfilehash: 6ec74ae0b0931f3fed99a43f4f7e58f9d425b138
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: 21c0fd9b258100e769172332713769024fb12969
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059299"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520577"
 ---
 # <a name="previewing-drive-usage-for-an-export-job"></a>Предварительный просмотр использования дисков для задания экспорта
 Прежде чем создать задание импорта, необходимо выбрать набор больших двоичных объектов для экспорта. Служба импорта и экспорта Microsoft Azure позволяет использовать список путей к большим двоичным объектам или их префиксов для выбора больших двоичных объектов.  

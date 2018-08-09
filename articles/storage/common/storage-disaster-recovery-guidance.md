@@ -2,24 +2,19 @@
 title: Что делать в случае простоя службы хранилища Azure | Документация Майкрософт
 description: Что делать в случае простоя службы хранилища Azure
 services: storage
-documentationcenter: .net
 author: tamram
-manager: timlt
-editor: tysonn
-ms.assetid: 8f040b0f-8926-4831-ac07-79f646f31926
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 07/15/2018
 ms.author: tamram
-ms.openlocfilehash: 160fe756458e067125b9d696fd0cdb929774446e
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.component: common
+ms.openlocfilehash: bca4b13ea2a003ea428351bcff44944630387e1b
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39072040"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528016"
 ---
 # <a name="what-to-do-if-an-azure-storage-outage-occurs"></a>Что делать в случае простоя службы хранилища Azure
 Корпорация Майкрософт прилагает все усилия, чтобы наши службы были всегда доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные простои служб в одном или нескольких регионах. Ниже приведено общее руководство для служб хранилища Azure, которое поможет вам справиться с такими редкими ситуациями.

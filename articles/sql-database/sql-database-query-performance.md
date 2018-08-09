@@ -2,19 +2,20 @@
 title: Анализ производительности запросов для Базы данных SQL Azure | Документация Майкрософт
 description: Мониторинг производительности запросов определяет запросы, максимально использующие ресурсы процессора, в базе данных SQL Azure.
 services: sql-database
-author: stevestein
+author: danimir
 manager: craigg
 ms.service: sql-database
 ms.custom: monitor & tune
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.author: sstein
-ms.openlocfilehash: f608beb0834b1c838b082e92340ebf9b650d8b3f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: v-daljep
+ms.reviewer: carlrab
+ms.openlocfilehash: 5069b4e69c53ed93e9018cef2517f6125b838d12
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34648740"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524171"
 ---
 # <a name="azure-sql-database-query-performance-insight"></a>Анализ производительности запросов базы данных Azure SQL
 Управление производительностью реляционных баз данных и ее настройка являются сложной задачей, требующей значительного опыта и времени. Анализ производительности запросов позволяет тратить меньше времени на устранение неполадок с производительностью базы данных, предоставляя следующие возможности:
@@ -26,7 +27,7 @@ ms.locfileid: "34648740"
 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Для анализа производительности запросов в базе данных должно быть активно [хранилище запросов](https://msdn.microsoft.com/library/dn817826.aspx) . Если хранилище запросов не запущено, портал подаст запрос на его включение.
 
 ## <a name="permissions"></a>Разрешения

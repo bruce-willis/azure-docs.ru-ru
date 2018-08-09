@@ -8,14 +8,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.technology: luis
 ms.topic: article
-ms.date: 07/20/2018
+ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: ca4ed4444cd753c0fe22c6596dfd34d033b7b0cf
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 1587debecd82072c29d4caffc2b81629b1f52b0e
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237008"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527370"
 ---
 # <a name="tutorial-improve-app-with-patternany-entity"></a>Руководство. Улучшение приложения с помощью сущности Pattern.any
 
@@ -26,7 +26,7 @@ ms.locfileid: "39237008"
 * Создание шаблона, который использует сущность Pattern.any
 * Проверка улучшений прогнозирования
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения для управления персоналом из руководства по [ролям шаблона](luis-tutorial-pattern-roles.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-roles-HumanResources.json).
@@ -106,8 +106,9 @@ ms.locfileid: "39237008"
 
 4. Если сущность keyPhrase была удалена, ее необходимо добавить обратно в приложение. 
 
-5. Обучите приложение.
+## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="test-the-new-pattern-for-free-form-data-extraction"></a>Проверка извлечения произвольных данных для нового шаблона
 1. Выберите **Тестирование** на верхней панели навигации, чтобы открыть панель тестирования. 
@@ -123,7 +124,8 @@ ms.locfileid: "39237008"
 4. Закройте панель "Тестирование", нажав кнопку **Тестирование** на верхней панели навигации.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Чтобы это сделать, щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

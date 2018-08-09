@@ -3,18 +3,17 @@ title: Руководство для клиентов хранилища Azure D
 description: Хранилище Azure Data Lake поколения 2 (предварительная версия) предлагает собственный набор функций хранилища BLOB-объектов, который включает в себя многоуровневое хранение данных, управление жизненным циклом и улучшенные функции безопасности сети. Кроме того, хранилище Azure Data Lake поколения 1 имеет совместимую с Hadoop файловую систему.
 services: storage
 author: roygara
-manager: twooley
 ms.topic: article
 ms.author: rogarana
 ms.date: 06/27/2018
 ms.service: storage
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 786abbc10f21b137c328f10c5cbd20dce7653957
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: d247c2e96a45f0f6fceb64d4f3f274549c83ea66
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035621"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522430"
 ---
 # <a name="guidance-for-azure-data-lake-storage-gen1-customers"></a>Руководство для клиентов хранилища Azure Data Lake поколения 1
 

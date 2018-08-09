@@ -1,23 +1,20 @@
 ---
-title: Настройка репликации кластера HBase в виртуальных сетях Azure | Документация Майкрософт
+title: Настройка репликации кластера HBase в виртуальных сетях Azure
 description: Сведения о том, как настроить репликацию HBase с одной версии HDInsight на другую для балансировки нагрузки, обеспечения высокого уровня доступности, переноса или обновления без простоя и аварийного восстановления.
 services: hdinsight,virtual-network
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
-ms.author: jgao
-ms.openlocfilehash: f0367b67f141ca65ce2374722016d0fbea6c97d1
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.author: jasonh
+ms.openlocfilehash: 535b5dcc62020119cda3db36bfdbd707badfe549
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37951128"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39600311"
 ---
 # <a name="set-up-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера HBase в виртуальных сетях Azure
 
@@ -42,7 +39,7 @@ ms.locfileid: "37951128"
 
 Кластеры можно реплицировать с помощью скриптов [действий сценария](../hdinsight-hadoop-customize-cluster-linux.md), которые можно найти на [GitHub](https://github.com/Azure/hbase-utils/tree/master/replication).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Прежде чем приступать к изучению этого руководства, необходимо оформить подписку Azure. См. страницу о [получении бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## <a name="set-up-the-environments"></a>Настройка сред
@@ -89,7 +86,7 @@ ms.locfileid: "37951128"
 
 | Свойство | Значение |
 |----------|-------|
-| Расположение | Восток США |
+| Расположение | Восточная часть США |
 | Имя виртуальной сети | &lt;префикс_имени_кластера>-vnet2 |
 | Address space prefix | 10.2.0.0/16 |
 | Имя подсети | subnet 1 |

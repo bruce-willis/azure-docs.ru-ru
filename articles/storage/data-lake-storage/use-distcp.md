@@ -2,28 +2,24 @@
 title: Копирование данных в хранилище Azure Data Lake поколения 2 (предварительная версия) с помощью DistCp | Документация Майкрософт
 description: Использование средства DistCp для копирования данных из хранилища Azure Data Lake поколения 2 (предварительная версия) и обратно
 services: storage
-documentationcenter: ''
 author: seguler
-manager: jahogg
-editor: seguler
 ms.component: data-lake-storage-gen2
 ms.service: storage
-ms.devlang: na
 ms.topic: how-to
 ms.date: 06/27/2018
 ms.author: seguler
-ms.openlocfilehash: 073d81baca7e174872806301236f547329836c45
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 065c4c4315bda209484cc1b2449980e55d4ac798
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113482"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522702"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-data-lake-storage-gen2-preview"></a>Использование DistCp для копирования данных между большими двоичными объектами службы хранилища Azure и хранилищем Data Lake поколения 2 (предварительная версия)
 
 При наличии кластера HDInsight с доступом к Azure Data Lake Storage 2-го поколения (предварительная версия) можно использовать такие средства экосистемы Hadoop, как [DistCp](https://hadoop.apache.org/docs/stable/hadoop-distcp/DistCp.html), для копирования данных **из системы хранения данных кластера HDInsight (WASB) в учетную запись с поддержкой Data Lake Storage 2-го поколения и обратно**. В этой статье содержатся инструкции по использованию средства DistCp.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 * **Учетная запись службы хранилища Azure с включенной функцией хранилища Azure Data Lake (предварительная версия)**. Сведения по созданию учетной записи хранения Azure Data Lake Storage 2-го поколения (предварительная версия) см. [здесь](quickstart-create-account.md).

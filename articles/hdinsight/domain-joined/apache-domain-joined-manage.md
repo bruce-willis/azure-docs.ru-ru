@@ -2,21 +2,19 @@
 title: Управление присоединенными к домену кластерами HDInsight в Azure
 description: Узнайте, как управлять присоединенными к домену кластерами HDInsight
 services: hdinsight
-author: omidm1
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 6ebc4d2f-2f6a-4e1e-ab6d-af4db6b4c87c
 ms.service: hdinsight
+author: omidm1
+ms.author: omidm
+editor: jasonwhowell
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/17/2018
-ms.author: omidm
-ms.openlocfilehash: 31b58176a75918cf68cda695f27216031670493e
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 51feb7099328e366e59519ce108ccd9afc1e277e
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34160246"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597681"
 ---
 # <a name="manage-domain-joined-hdinsight-clusters"></a>Управление присоединенными к домену кластерами HDInsight
 Узнайте, что такое пользователи и роли в кластерах HDInsight, присоединенных к домену, и как управлять присоединенными к домену кластерами HDInsight.
@@ -100,7 +98,7 @@ ms.locfileid: "34160246"
 |Spark|Интерактивные задания и запросы, интерактивные задания PySpark|<ul><li>[Beeline](#beeline)</li><li>[Zeppelin с Livy](../spark/apache-spark-zeppelin-notebook.md)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
 |Spark|Сценарии пакетной службы — отправка Spark, PySpark|<ul><li>[Livy](../spark/apache-spark-livy-rest-interface.md)</li></ul>|
 |Интерактивный запрос (LLAP)|Interactive|<ul><li>[Beeline](#beeline)</li><li>[Представление Hive](../hadoop/apache-hadoop-use-hive-ambari-view.md)</li><li>[ODBC/JDBC – Power BI](../hadoop/apache-hadoop-connect-hive-power-bi.md)</li><li>[Инструменты Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md)</li></ul>|
-|Любой|Установка пользовательского приложения|<ul><li>[Действия сценариев](../hdinsight-hadoop-customize-cluster-linux.md)</li></ul>|
+|Любой|Установка пользовательского приложения|<ul><li>[Действия скрипта](../hdinsight-hadoop-customize-cluster-linux.md)</li></ul>|
 
    > [!NOTE]
    > В Корпоративном пакете безопасности записная книжка Jupyter не установлена или не поддерживается.
@@ -166,7 +164,7 @@ ms.locfileid: "34160246"
 
 * администратор кластера;
 * оператор кластера;
-* администратора служб;
+* Администратор служб
 * оператор службы;
 * пользователь кластера.
 

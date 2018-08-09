@@ -2,24 +2,18 @@
 title: Использование Azure CLI 1.0 со службой хранилища Azure | Документация Майкрософт
 description: Узнайте, как использовать интерфейс командной строки Azure (Azure CLI) версии 1.0 для создания учетных записей хранения и управления ими, а также для работы с большими двоичными объектами и файлами Azure в службе хранилища Azure. Azure CLI — это кроссплатформенное средство
 services: storage
-documentationcenter: na
 author: seguler
-manager: jahogg
-editor: tysonn
-ms.assetid: b502232a-e8f6-4d6c-befd-3476592e0e35
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/30/2017
 ms.author: seguler
-ms.openlocfilehash: 1e2c2dc45f2cb91ca225bf183ddde5fa2d1123c4
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.component: common
+ms.openlocfilehash: f406f12b3313670e8e2d89296f7c24478bb58c6c
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36936995"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521512"
 ---
 # <a name="using-the-azure-cli-10-with-azure-storage"></a>Использование Azure CLI 1.0 со службой хранилища Azure
 

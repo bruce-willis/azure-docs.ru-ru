@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 07/12/2018
 ms.author: brenduns
 ms.reviewer: alfredo
-ms.openlocfilehash: e38f0a5e8aa911a168ee7f648692c31ecb44d4dd
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 5a38f504a881662c19fe881058622392cf1bced0
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090614"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39576361"
 ---
 ## <a name="usage-reporting-infrastructure-for-cloud-service-providers"></a>Инфраструктура отчетов о потреблении для поставщиков облачных служб
 
@@ -65,5 +65,5 @@ Azure Stack применяет для потребления локальные 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - Информацию о программе для поставщиков облачных решений вы найдете [здесь](https://partnercenter.microsoft.com/en-us/partner/programs).
+ - Информацию о программе для поставщиков облачных решений вы найдете [здесь](https://partner.microsoft.com/solutions/microsoft-cloud-solutions).
  - Дополнительные сведения см. в статье об [использовании ресурсов и выставлении счетов в Azure Stack](azure-stack-billing-and-chargeback.md).

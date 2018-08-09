@@ -2,24 +2,18 @@
 title: Пример рабочего процесса подготовки жестких дисков для задания импорта инструмента импорта и экспорта Azure версии 1 | Документация Майкрософт
 description: Ознакомьтесь с пошаговым руководством, чтобы изучить полный процесс подготовки дисков для задания импорта в службе импорта и экспорта Azure.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: 6eb1b1b7-c69f-4365-b5ef-3cd5e05eb72a
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
-ms.openlocfilehash: 66e85bd3e9e43ae360d0507f5bdf3596abbeb7d1
-ms.sourcegitcommit: fa28ca091317eba4e55cef17766e72475bdd4c96
+ms.component: common
+ms.openlocfilehash: ae792df428d897277e15df9db3ff6f99a5b8859e
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2017
-ms.locfileid: "26741213"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527294"
 ---
 # <a name="sample-workflow-to-prepare-hard-drives-for-an-import-job"></a>Пример рабочего процесса подготовки жестких дисков для задания импорта
 В этом разделе рассматривается полный процесс подготовки дисков для задания импорта.  

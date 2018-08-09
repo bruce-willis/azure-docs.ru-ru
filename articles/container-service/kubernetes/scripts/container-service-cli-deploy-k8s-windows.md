@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/30/2017
 ms.author: nepeters
-ms.openlocfilehash: a2cc6e7f79f2443f1e203576673f0c2353b75ac8
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 7078b79685cbb8c593de4832377e841914082abe
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32161945"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39447264"
 ---
 # <a name="create-an-azure-container-service-kubernetes-windows-cluster"></a>Создание кластера Kubernetes Windows службы контейнеров Azure
 
@@ -58,10 +58,10 @@ az group delete --name myResourceGroup
 
 Чтобы создать развертывание, скрипт использует следующие команды. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az acs create](https://docs.microsoft.com/cli/azure/acs#az_acs_create) | Создает кластер ACS. |
+| [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az acs create](https://docs.microsoft.com/cli/azure/acs#az-acs-create) | Создает кластер ACS. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -3,17 +3,17 @@ title: Использование подписанных URL-адресов (SAS
 description: Сведения о делегировании доступа к ресурсам службы хранилища Azure, включая большие двоичные объекты, очереди, таблицы и файлы, с помощью подписанного URL-адреса (SAS).
 services: storage
 author: craigshoemaker
-manager: jeconnoc
 ms.service: storage
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: cshoe
-ms.openlocfilehash: ad313c11fb88ec7992220d43c25ca75bf65acc56
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.component: common
+ms.openlocfilehash: 315c5a88d16206414b6b81a83963cbb1f8b4424a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025655"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524760"
 ---
 # <a name="using-shared-access-signatures-sas"></a>Использование подписанных URL-адресов (SAS)
 

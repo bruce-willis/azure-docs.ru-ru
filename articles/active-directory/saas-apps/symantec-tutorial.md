@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 7eaf64c736201df044a2b34bcd88f2ed17047fb3
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: dbf21c7c22a9b3273a65f7e186a2ac02ccae6ba2
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36211841"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39436213"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-symantec-web-security-service-wss"></a>Руководство по интеграции Azure Active Directory с Symantec Web Security Service (WSS)
 
@@ -36,7 +36,7 @@ ms.locfileid: "36211841"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Symantec Web Security Service (WSS), вам потребуется:
 
@@ -56,7 +56,7 @@ ms.locfileid: "36211841"
 Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление из коллекции приложения Symantec Web Security Service (WSS)
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-symantec-web-security-service-wss-from-the-gallery"></a>Добавление Symantec Web Security Service (WSS) из коллекции
 Чтобы настроить интеграцию Symantec Web Security Service (WSS) с Azure AD, вам потребуется добавить Symantec Web Security Service (WSS) из коллекции в список управляемых приложений SaaS.
@@ -67,15 +67,15 @@ ms.locfileid: "36211841"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Symantec Web Security Service (WSS)**, затем выберите **Symantec Web Security Service (WSS)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. В поле поиска введите **Symantec Web Security Service (WSS)**, затем выберите **Symantec Web Security Service (WSS)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Служба Symantec Web Security Service (WSS) в списке результатов](./media/symantec-tutorial/tutorial_symantecwebsecurityservicewss_addfromgallery.png)
 
@@ -90,10 +90,10 @@ ms.locfileid: "36211841"
 Чтобы настроить и проверить единый вход Azure AD в Symantec Web Security Service (WSS), вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Symantec Web Security Service (WSS)](#create-a-symantec-web-security-service-wss-test-user)** требуется для того, чтобы в Symantec Web Security Service (WSS) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Symantec Web Security Service (WSS)](#create-a-symantec-web-security-service-wss-test-user)** требуется для того, чтобы в Symantec Web Security Service (WSS) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -105,30 +105,30 @@ ms.locfileid: "36211841"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/symantec-tutorial/tutorial_symantecwebsecurityservicewss_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Symantec Web Security Service (WSS)** сделайте следующее.
+1. В разделе **Домены и URL-адреса приложения Symantec Web Security Service (WSS)** сделайте следующее.
 
     ![Информация о домене и URL-адресах для единого входа в службе Symantec Web Security Service (WSS)](./media/symantec-tutorial/tutorial_symantecwebsecurityservicewss_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес `https://saml.threatpulse.net:8443/saml/saml_realm`.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://saml.threatpulse.net:8443/saml/saml_realm/bcsamlpost`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес `https://saml.threatpulse.net:8443/saml/saml_realm/bcsamlpost`.
 
     > [!NOTE]
     > Если по какой-либо причине предложенные значения **идентификатора** и **URL-адреса ответа** не работают, обратитесь в [службу поддержки Symantec Web Security Service (WSS)](https://www.symantec.com/contact-us).
 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/symantec-tutorial/tutorial_symantecwebsecurityservicewss_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/symantec-tutorial/tutorial_general_400.png)
     
-6. Чтобы настроить единый вход на стороне службы безопасности Symantec Web Symantec Web Security Service (WSS), воспользуйтесь электронной документацией по WSS. Скачанный **файл метаданных в формате XML** следует импортировать на портал WSS. Если вам потребуется помощь в использовании портала WSS, обратитесь в [службу поддержки Symantec Web Security Service (WSS)](https://www.symantec.com/contact-us).
+1. Чтобы настроить единый вход на стороне службы безопасности Symantec Web Symantec Web Security Service (WSS), воспользуйтесь электронной документацией по WSS. Скачанный **файл метаданных в формате XML** следует импортировать на портал WSS. Если вам потребуется помощь в использовании портала WSS, обратитесь в [службу поддержки Symantec Web Security Service (WSS)](https://www.symantec.com/contact-us).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -145,15 +145,15 @@ ms.locfileid: "36211841"
 
     ![Кнопка "Azure Active Directory"](./media/symantec-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/symantec-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/symantec-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/symantec-tutorial/create_aaduser_04.png)
 
@@ -184,23 +184,23 @@ ms.locfileid: "36211841"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **Symantec Web Security Service (WSS)**.
+1. Из списка приложений выберите **Symantec Web Security Service (WSS)**.
 
     ![Ссылка на Symantec Web Security Service (WSS) в списке приложений](./media/symantec-tutorial/tutorial_symantecwebsecurityservicewss_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

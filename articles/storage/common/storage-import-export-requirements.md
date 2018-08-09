@@ -2,18 +2,18 @@
 title: Требования для службы импорта и экспорта Azure | Документация Майкрософт
 description: Здесь объясняются требования к программному обеспечению и оборудованию для службы импорта и экспорта Azure.
 author: alkohli
-manager: jeconnoc
 services: storage
 ms.service: storage
 ms.topic: article
 ms.date: 07/19/2018
 ms.author: alkohli
-ms.openlocfilehash: a86d5c1513594f5bc0df03b8ca7671a1f9541b4d
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.component: common
+ms.openlocfilehash: 10e8fb6ac5bcce278de3924ebd3a0d9f90392217
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39308060"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528060"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "39308060"
 
 Служба импорта и экспорта Azure поддерживает следующие [учетные записи хранения Azure](storage-account-options.md):
 - Учетные записи хранения общего назначения версии 1 (как классическое развертывание, так и развертывание с помощью Azure Resource Manager).
-- Учетные записи хранения BLOB-объектов.
+- Учетные записи хранилища BLOB-объектов
 - Учетные записи хранения общего назначения версии 2.
 
 Каждое задание может использоваться для обмена данными только с одной учетной записью хранения. Другими словами, отдельное задание импорта и экспорта не может распространяться на несколько учетных записей хранения. Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-create-storage-account.md#create-a-storage-account).

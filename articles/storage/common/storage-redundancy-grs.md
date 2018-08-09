@@ -3,17 +3,17 @@ title: Геоизбыточное хранилище (GRS) для межреги
 description: Геоизбыточное хранилище (GRS) производит репликацию данных между двумя регионами, которые разделены сотнями километров. GRS обеспечивает защиту от сбоев оборудования в центре обработки данных, а также защиту от региональных сбоев.
 services: storage
 author: tolandmike
-manager: jeconnoc
 ms.service: storage
 ms.topic: article
 ms.date: 03/20/2018
 ms.author: jeking
-ms.openlocfilehash: bd9d807796eee0d66387e481fa81a04f9ded5548
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.component: common
+ms.openlocfilehash: db246fa670eeffdbf82248d627539087ecca5ad2
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39397439"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527319"
 ---
 # <a name="geo-redundant-storage-grs-cross-regional-replication-for-azure-storage"></a>Геоизбыточное хранилище (GRS). Межрегиональная репликация для службы хранилища Azure
 

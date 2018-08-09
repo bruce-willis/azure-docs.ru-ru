@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 07/26/2018
+ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: 4b842f9a00587e8a9771e6ca92806c09e711e6db
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: afad3fe725fddd0748cc206517a7274815cf1653
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345786"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495270"
 ---
 # <a name="tutorial-4-add-list-entity"></a>Руководство: 4. Добавление сущности списка
 В этом руководстве вы создадите приложение, демонстрирующее, как получить данные, соответствующие предварительно определенному списку. 
@@ -134,15 +134,8 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
     |Номер социального страхования в США|234-56-7891|
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
-
-    ![Обучение приложения](./media/luis-quickstart-intent-and-list-entity/train-button.png)
-
-2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
-
-    ![Обучение успешно выполнено](./media/luis-quickstart-intent-and-list-entity/trained.png)
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 
@@ -278,9 +271,10 @@ mv john.w.smith@mycompany from office b-1234 to office h-4452
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Выберите **Мои приложения** в верхнем меню слева. Щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-## <a name="next-steps"></a>Дальнейшие действия
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Добавление иерархической сущности в приложение](luis-quickstart-intent-and-hier-entity.md)

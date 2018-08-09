@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2017
 ms.author: jeedes
-ms.openlocfilehash: fe1960fb07a7cb62246f0eefe9563d6ee2b13f5c
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: c1a1126026f3d2618a0669e4bd69a84cc1c6c54c
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39045902"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39431629"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-confluence-by-resolution-gmbh"></a>Руководство по интеграции Azure Active Directory с SAML SSO for Confluence by resolution GmbH
 
@@ -52,7 +52,7 @@ ms.locfileid: "39045902"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление SAML SSO for Confluence by resolution GmbH из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-saml-sso-for-confluence-by-resolution-gmbh-from-the-gallery"></a>Добавление SAML SSO for Confluence by resolution GmbH из коллекции
 
@@ -64,19 +64,19 @@ ms.locfileid: "39045902"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **SAML SSO for Confluence by resolution GmbH**.
+1. В поле поиска введите **SAML SSO for Confluence by resolution GmbH**.
 
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_search.png)
 
-5. На панели результатов выберите **SAML SSO for Confluence by resolution GmbH** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. На панели результатов выберите **SAML SSO for Confluence by resolution GmbH** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_addfromgallery.png)
 
@@ -91,10 +91,10 @@ ms.locfileid: "39045902"
 Чтобы настроить и проверить единый вход Azure AD в SAML SSO for Confluence by resolution GmbH, требуется выполнить действия в следующих стандартных блоках.
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя SAML SSO for Confluence by resolution GmbH](#creating-a-saml-sso-for-confluence-by-resolution-gmbh-test-user)** требуется, чтобы создать в SAML SSO for Confluence by resolution GmbH пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя SAML SSO for Confluence by resolution GmbH](#creating-a-saml-sso-for-confluence-by-resolution-gmbh-test-user)** требуется, чтобы создать в SAML SSO for Confluence by resolution GmbH пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -106,11 +106,11 @@ ms.locfileid: "39045902"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_samlbase.png)
 
-3. Если вы хотите настроить приложение в режиме, инициированном **IdP**, то в разделе **Домены и URL-адреса приложения SAML SSO for Confluence by resolution GmbH** выполните следующие действия.
+1. Если вы хотите настроить приложение в режиме, инициированном **IdP**, то в разделе **Домены и URL-адреса приложения SAML SSO for Confluence by resolution GmbH** выполните следующие действия.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_url_1.png)
 
@@ -118,7 +118,7 @@ ms.locfileid: "39045902"
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<server-base-url>/plugins/servlet/samlsso`.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
+1. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_url_2.png)
 
@@ -127,55 +127,55 @@ ms.locfileid: "39045902"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки SAML SSO for Confluence by resolution GmbH](https://www.resolution.de/go/support) для получения этих значений. 
 
-5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_certificate.png) 
 
-6. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_general_400.png)    
     
-7. В другом окне браузера войдите на **портал администрирования SAML SSO for Confluence by resolution GmbH** с правами администратора.
+1. В другом окне браузера войдите на **портал администрирования SAML SSO for Confluence by resolution GmbH** с правами администратора.
 
-8. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
+1. Наведите указатель мыши на шестеренку и щелкните **Add-ons** (Надстройки).
     
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon1.png)
 
-9. Вы перейдете на страницу доступа с правами администратора. Введите пароль и нажмите кнопку **Confirm** (Подтвердить).
+1. Вы перейдете на страницу доступа с правами администратора. Введите пароль и нажмите кнопку **Confirm** (Подтвердить).
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon2.png)
 
-10. В разделе **ATLASSIAN MARKETPLACE** щелкните **Find new add-ons** (Найти новые надстройки). 
+1. В разделе **ATLASSIAN MARKETPLACE** щелкните **Find new add-ons** (Найти новые надстройки). 
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon.png)
 
-11. Найдите подключаемый модуль **SAML Single Sign On (SSO) for Confluence** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
+1. Найдите подключаемый модуль **SAML Single Sign On (SSO) for Confluence** и нажмите кнопку **Install** (Установить), чтобы установить новый подключаемый модуль SAML.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon7.png)
 
-12. Начнется установка подключаемого модуля. Нажмите кнопку **Закрыть**
+1. Начнется установка подключаемого модуля. Нажмите кнопку **Закрыть**
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon8.png)
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon9.png)
 
-13. Нажмите кнопку **Управление**.
+1.  Нажмите кнопку **Управление**.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon10.png)
     
-14. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
+1. Щелкните **Configure** (Настройка), чтобы настроить новый подключаемый модуль.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon11.png)
 
-15. Этот новый подключаемый модуль можно также найти на вкладке **USERS & SECURITY** (Пользователи и безопасность).
+1. Этот новый подключаемый модуль можно также найти на вкладке **USERS & SECURITY** (Пользователи и безопасность).
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon3.png)
     
-16. На странице **SAML SingleSignOn Plugin Configuration** (Конфигурация подключаемого модуля единого входа SAML) нажмите кнопку **Add new IdP** (Добавить новый поставщик удостоверений), чтобы настроить параметры поставщика удостоверений.
+1. На странице **SAML SingleSignOn Plugin Configuration** (Конфигурация подключаемого модуля единого входа SAML) нажмите кнопку **Add new IdP** (Добавить новый поставщик удостоверений), чтобы настроить параметры поставщика удостоверений.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon4.png)
 
-17. На странице **Choose your SAML Identity Provider** (Выбор поставщика удостоверений SAML) выполните следующие действия:
+1. На странице **Choose your SAML Identity Provider** (Выбор поставщика удостоверений SAML) выполните следующие действия:
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5a.png)
  
@@ -187,11 +187,11 @@ ms.locfileid: "39045902"
     
     d. Щелкните **Далее**.
     
-18. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
+1. На странице **Identity provider configuration** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5b.png)
 
-19. На странице **Import SAML IdP Metadata** (Импорт метаданных поставщика удостоверений SAML) выполните следующие действия:
+1. На странице **Import SAML IdP Metadata** (Импорт метаданных поставщика удостоверений SAML) выполните следующие действия:
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5c.png)
 
@@ -203,19 +203,19 @@ ms.locfileid: "39045902"
     
     d. Нажмите кнопку **Next** (Далее).
     
-20. На странице **User ID attribute and transformation** (Атрибут и преобразование идентификатора пользователя) нажмите кнопку **Next** (Далее).
+1. На странице **User ID attribute and transformation** (Атрибут и преобразование идентификатора пользователя) нажмите кнопку **Next** (Далее).
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon5d.png)
     
-21. На странице **User creation and update** (Создание и изменение пользователя) нажмите кнопку **Save & Next** (Сохранить и продолжить), чтобы сохранить параметры.   
+1. На странице **User creation and update** (Создание и изменение пользователя) нажмите кнопку **Save & Next** (Сохранить и продолжить), чтобы сохранить параметры.    
     
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon6a.png)
     
-22. На странице **Test your settings** (Проверка параметров) нажмите кнопку **Skip test & configure manually** (Пропустить проверку и настроить вручную), чтобы не выполнять проверку на этом этапе. Проверка будет выполнена на одном из следующих этапов, и для этого потребуется выполнить некоторые настройки на портале Azure. 
+1. На странице **Test your settings** (Проверка параметров) нажмите кнопку **Skip test & configure manually** (Пропустить проверку и настроить вручную), чтобы не выполнять проверку на этом этапе. Проверка будет выполнена на одном из следующих этапов, и для этого потребуется выполнить некоторые настройки на портале Azure. 
     
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon6b.png)
     
-23. В открывшемся окне с сообщением **Skipping the test means...** (Если вы пропустите проверку...) нажмите кнопку **OK**.
+1. В открывшемся окне с сообщением **Skipping the test means...** (Если вы пропустите проверку...) нажмите кнопку **OK**.
     
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/addon6c.png)
 
@@ -233,15 +233,15 @@ ms.locfileid: "39045902"
 
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/create_aaduser_01.png) 
 
-2. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
     
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/create_aaduser_02.png) 
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
  
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/samlssoconfluence-tutorial/create_aaduser_04.png) 
 
@@ -262,11 +262,11 @@ ms.locfileid: "39045902"
 
 1. Войдите на свой корпоративный сайт SAML SSO for Confluence by resolution GmbH с правами администратора.
 
-2. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
+1. Наведите указатель мыши на шестеренку и щелкните **User management** (Управление пользователями).
 
     ![Добавление сотрудника](./media/samlssoconfluence-tutorial/user1.png) 
 
-3. В разделе "Users" (Пользователи) выберите вкладку **Add users** (Добавление пользователей). На диалоговой странице **Add a User** (Добавление пользователя) выполните следующее.
+1. В разделе "Users" (Пользователи) выберите вкладку **Add users** (Добавление пользователей). На диалоговой странице **Add a User** (Добавление пользователя) выполните следующее.
 
     ![Добавление сотрудника](./media/samlssoconfluence-tutorial/user2.png) 
 
@@ -280,7 +280,7 @@ ms.locfileid: "39045902"
 
     д. Щелкните **Confirm Password** (Подтвердить пароль) и повторно введите пароль.
     
-    f. Нажмите кнопку **Добавить**.    
+    Е. Нажмите кнопку **Добавить**.    
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -294,23 +294,23 @@ ms.locfileid: "39045902"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **SAML SSO for Confluence by resolution GmbH**.
+1. Из списка приложений выберите **SAML SSO for Confluence by resolution GmbH**.
 
     ![Настройка единого входа](./media/samlssoconfluence-tutorial/tutorial_samlssoconfluence_app.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 

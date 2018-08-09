@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 70615726ed313884a977ae1b338d3c484fc32a1a
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 7a9adc8e9b7bcf69cce6b8ecf00e44477c1b0da3
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39326179"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39430745"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -105,21 +105,21 @@ ms.locfileid: "39326179"
     - Ключ приложения
     - Tenant ID
 
-2. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. Если вы предоставили группе с MSI роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
+1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. Если вы предоставили группе с MSI роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
-3. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL:
+1. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL:
     
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код:
+1. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код:
 
     ```sql
     EXEC sp_addrolemember [role name], [your application name];
     ```
 
-5. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
+1. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
 
 
 #### <a name="linked-service-example-that-uses-service-principal-authentication"></a>Пример использования аутентификации на основе субъекта-службы в связанной службе
@@ -168,21 +168,21 @@ ms.locfileid: "39326179"
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId "<your data factory service identity ID>"
     ```
 
-2. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали).
+1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали).
 
-3. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для группы Azure AD. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL. 
+1. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для группы Azure AD. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL. 
     
     ```sql
     CREATE USER [your Azure AD group name] FROM EXTERNAL PROVIDER;
     ```
 
-4. **Предоставьте группе Azure AD необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Например, запустите следующий код.
+1. **Предоставьте группе Azure AD необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Например, запустите следующий код.
 
     ```sql
     EXEC sp_addrolemember [role name], [your Azure AD group name];
     ```
 
-5. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
+1. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
 
 #### <a name="linked-service-example-that-uses-msi-authentication"></a>Пример использования проверки подлинности на основе MSI в связанной службе
 
@@ -398,13 +398,13 @@ PolyBase хранилища данных SQL напрямую поддержив
 Если требования не выполняются, фабрика данных Azure проверяет параметры и автоматически возвращается к механизму перемещения данных BULKINSERT.
 
 1. Тип **связанной службы источника** — **AzureStorage** или **AzureDataLakeStore** с проверкой подлинности на основе субъекта-службы.
-2. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
+1. Тип **входного набора данных** — **AzureBlob** или **AzureDataLakeStoreFile**. Тип формата в свойствах типа `type` — **OrcFormat**, **ParquetFormat** или **TextFormat** со следующими конфигурациями:
 
    1. Параметр `rowDelimiter` должен иметь значение **\n**.
-   2. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчание, а параметру `treatEmptyAsNull` не задается значение false.
-   3. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
-   4. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
-   5. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
+   1. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчание, а параметру `treatEmptyAsNull` не задается значение false.
+   1. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
+   1. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
+   1. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
 
     ```json
     "typeProperties": {

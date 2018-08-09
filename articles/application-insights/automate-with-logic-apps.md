@@ -1,22 +1,23 @@
 ---
-title: "Автоматизация процессов Azure Application Insights с помощью Logic Apps."
-description: "Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики."
+title: Автоматизация процессов Azure Application Insights с помощью Logic Apps.
+description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
 services: application-insights
-documentationcenter: 
+documentationcenter: ''
 author: mrbullwinkle
 manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: mbullwin
-ms.openlocfilehash: e17d8076a00cab2cf608fe1a690e4a780a69d56f
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.openlocfilehash: 4ae5adaf37f49e9909fa80fd31f088ed6ee1b081
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39450444"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
@@ -32,7 +33,7 @@ ms.lasthandoff: 02/21/2018
 
 ### <a name="step-1-create-a-logic-app"></a>Шаг 1. Создание приложения логики
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Щелкните **Создать ресурс**, выберите **Интернет и мобильные устройства**, а затем — **Logic App**.
+1. Щелкните **Создать ресурс**, выберите **Интернет и мобильные устройства**, а затем — **Logic App**.
 
     ![Окно создания приложения логики](./media/automate-with-logic-apps/logicapp1.png)
 
@@ -41,16 +42,16 @@ ms.lasthandoff: 02/21/2018
 
     ![Окно конструктора приложений логики](./media/automate-with-logic-apps/logicapp2.png)
 
-2. В поле **Частота** выберите **День**, а в поле **Интервал** введите **1**.
+1. В поле **Частота** выберите **День**, а в поле **Интервал** введите **1**.
 
     ![Окно "Повторение" в конструкторе приложений логики](./media/automate-with-logic-apps/step2b.png)
 
 ### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
 1. Выберите поле **+Новый шаг**, а затем щелкните **Добавить действие**.
 
-2. В поле поиска **Выберите действие** введите **Azure Application Insights**.
+1. В поле поиска **Выберите действие** введите **Azure Application Insights**.
 
-3. В разделе **Действия** выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
+1. В разделе **Действия** выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
 
     ![Окно "Выберите действие" в конструкторе приложений логики](./media/automate-with-logic-apps/flow2.png)
 
@@ -82,7 +83,7 @@ ms.lasthandoff: 02/21/2018
     | evaluate autocluster()
     ```
 
-2. В поле **Тип диаграммы** выберите **Таблица HTML**.
+1. В поле **Тип диаграммы** выберите **Таблица HTML**.
 
     ![Окно настройки запроса Analytics](./media/automate-with-logic-apps/flow4.png)
 
@@ -90,17 +91,17 @@ ms.lasthandoff: 02/21/2018
 
 1. Щелкните **Новый шаг**, а затем — **Добавить действие**.
 
-2. В поле поиска введите **Office 365 Outlook**.
+1. В поле поиска введите **Office 365 Outlook**.
 
-3. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
+1. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
 
     ![Выбор Office 365 Outlook](./media/automate-with-logic-apps/flow2b.png)
 
-4. В окне **Отправка сообщения электронной почты** выполните следующие действия:
+1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
    a. Введите адрес электронной почты получателя.
 
-   Б. Введите тему сообщения.
+   b. Введите тему сообщения.
 
    c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
 
@@ -108,11 +109,11 @@ ms.lasthandoff: 02/21/2018
 
       ![Конфигурация Office 365 Outlook](./media/automate-with-logic-apps/flow5.png)
 
-5. В меню динамического содержимого выполните следующее.
+1. В меню динамического содержимого выполните следующее.
 
     a. Выберите **Имя вложения**.
 
-    Б. Выберите **Содержимое вложения**.
+    b. Выберите **Содержимое вложения**.
     
     c. В поле **Является HTML** выберите значение **Да**.
 

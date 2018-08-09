@@ -9,12 +9,12 @@ ms.topic: article
 ms.workload: identity
 ms.date: 08/04/2017
 ms.author: alleonar
-ms.openlocfilehash: a9b80cae69c4e5852341385b98fcccc86d7959e9
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.openlocfilehash: b25d3d7bd5348d4e4ae5dc33362a9d0a2504236e
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "27927980"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39578608"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-cli"></a>Как использовать обратимое удаление в Key Vault с помощью интерфейса командной строки
 
@@ -23,7 +23,7 @@ ms.locfileid: "27927980"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure CLI 2.0. Если в вашей среде этот инструмент не установлен, ознакомьтесь с разделом [Управление Key Vault с помощью интерфейса командной строки 2.0](key-vault-manage-with-cli2.md).
 
@@ -104,7 +104,7 @@ az keyvault list-deleted
 Чтобы восстановить хранилище ключей, необходимо указать его имя, группу ресурсов и расположение. Запишите расположение и группу ресурсов удаленного хранилища ключей, так как их необходимо знать, чтобы осуществить восстановление.
 
 ```azurecli
-az keyvault recover --location westus --name ContosoVault
+az keyvault recover --location westus --resource-group ContosoRG --name ContosoVault
 ```
 
 После восстановления хранилища ключей вы получите новый ресурс с исходным идентификатором ресурса хранилища ключей. Если группа ресурсов, в которой находилось хранилище ключей, удалена, то перед восстановлением хранилища ключей нужно создать новую группу ресурсов с таким же именем.

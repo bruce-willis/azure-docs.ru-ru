@@ -15,18 +15,18 @@ ms.topic: tutorial
 ms.date: 02/28/2018
 ms.author: cephalin
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 4b5e432a9c553f5221f138b19a180f92420e6058
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: b468240d1a9aaf0511358433a8beee7e6442e145
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38317755"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39445027"
 ---
 # <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство. Размещение REST API с поддержкой CORS в службе приложений Azure
 
 [Служба приложений Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Кроме того, служба приложений включает встроенную поддержку [общего доступа к ресурсам независимо от источника (CORS)](https://wikipedia.org/wiki/Cross-Origin_Resource_Sharing) для API-интерфейсов RESTful. В этом руководстве рассматривается развертывание приложения API ASP.NET Core в службу приложений с поддержкой CORS. Вы настроите приложение с помощью программ командной строки и развернете его с помощью Git. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * создавать ресурсы службы приложений с помощью Azure CLI;
@@ -37,7 +37,7 @@ ms.locfileid: "38317755"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -168,7 +168,7 @@ dotnet run
 
 ### <a name="enable-cors"></a>Включение CORS 
 
-В Cloud Shell включите CORS для URL-адреса своего клиента с помощью команды [`az resource update`](/cli/azure/resource#az_resource_update). Замените заполнитель _&lt;appname>_ собственным значением.
+В Cloud Shell включите CORS для URL-адреса своего клиента с помощью команды [`az resource update`](/cli/azure/resource#az-resource-update). Замените заполнитель _&lt;appname>_ собственным значением.
 
 ```azurecli-interactive
 az resource update --name web --resource-group myResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<app_name> --set properties.cors.allowedOrigins="['http://localhost:5000']" --api-version 2015-06-01

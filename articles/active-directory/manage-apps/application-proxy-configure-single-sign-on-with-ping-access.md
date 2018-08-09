@@ -15,12 +15,12 @@ ms.date: 10/11/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: e7976cf0574952fdafbdc8b40db47af3a5420fd5
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: aae73816b883fe782eff27c56174c71f14c253c4
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39368822"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39577192"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -140,7 +140,7 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
 
 ### <a name="optional---update-graphapi-to-send-custom-fields"></a>Необязательно. Обновление API Graph для отправки настраиваемых полей
 
-Список маркеров безопасности, отправляемых Azure AD для проверки подлинности, см. в [справочнике по маркерам Azure AD](./../develop/active-directory-token-and-claims.md). Если требуется пользовательское утверждение для отправки других маркеров, используйте Graph Explorer или манифест приложения на портале Azure, чтобы задать в поле приложения *acceptMappedClaims* значение **True**.    
+Список маркеров безопасности, отправляемых Azure AD для проверки подлинности, см. в [справочнике по маркерам Azure AD](../develop/v1-id-and-access-tokens.md). Если требуется пользовательское утверждение для отправки других маркеров, используйте Graph Explorer или манифест приложения на портале Azure, чтобы задать в поле приложения *acceptMappedClaims* значение **True**.    
 
 В этом примере используется Graph Explorer.
 

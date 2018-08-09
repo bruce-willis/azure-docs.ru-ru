@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/05/2018
 ms.author: tomfitz
-ms.openlocfilehash: 475e1f0d481678f53c191a887c7cc56c28c4b361
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.openlocfilehash: 5b4d8317d565528f896bf6823ddaefd010d0a845
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37887435"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528635"
 ---
 # <a name="define-the-order-for-deploying-resources-in-azure-resource-manager-templates"></a>Определение порядка развертывания ресурсов в шаблонах Azure Resource Manager
 У заданного ресурса могут быть другие ресурсы, которые должны существовать до его развертывания. Например, сервер SQL Server должен существовать до развертывания базы данных SQL. Эта связь определяется путем пометки одного ресурса как зависимого от другого. Для определения зависимостей можно использовать элемент **dependsOn** или функцию **reference**. 
@@ -108,7 +108,7 @@ ms.locfileid: "37887435"
 ```
 
 ## <a name="reference-and-list-functions"></a>Функции list и reference
-[Функция reference](resource-group-template-functions-resource.md#reference) позволяет выражению получать его значение из других пар "имя JSON — значение" или ресурсов среды выполнения. [Функции list*](resource-group-template-functions-resource.md#listkeys-listsecrets-and-list) возвращают значение ресурса из списка операций.  Выражения и списки со ссылками неявно объявляют, что один ресурс зависит от другого, когда выходные ресурсы развернуты в одном шаблоне и обращаются друг к другу по именам (а не по идентификатору ресурса). При передаче идентификатора ресурса функциям list или reference неявные ссылки созданы не будут.
+[Функция reference](resource-group-template-functions-resource.md#reference) позволяет выражению получать его значение из других пар "имя JSON — значение" или ресурсов среды выполнения. [Функции list*](resource-group-template-functions-resource.md#list) возвращают значение ресурса из списка операций.  Выражения и списки со ссылками неявно объявляют, что один ресурс зависит от другого, когда выходные ресурсы развернуты в одном шаблоне и обращаются друг к другу по именам (а не по идентификатору ресурса). При передаче идентификатора ресурса функциям list или reference неявные ссылки созданы не будут.
 
 Общий формат функции reference выглядит следующим образом.
 

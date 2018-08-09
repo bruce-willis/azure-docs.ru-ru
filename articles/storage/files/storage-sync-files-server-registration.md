@@ -2,29 +2,23 @@
 title: Управление зарегистрированными серверами в службе "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, как зарегистрировать Windows Server или отменить его регистрацию в службе синхронизации хранилища службы синхронизации файлов Azure.
 services: storage
-documentationcenter: ''
 author: wmgries
-manager: aungoo
-editor: tamram
-ms.assetid: 297f3a14-6b3a-48b0-9da4-db5907827fb5
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
-ms.openlocfilehash: fde4f7eeb07dff1e44edcabec390ae2921ecf832
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.component: files
+ms.openlocfilehash: 468bd70682b1b36e906d32cd7bde58c78bdbb376
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39160932"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522005"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
 
-Следующая статья содержит сведения о регистрации сервера и управлении им в службе синхронизации хранилища. Сведения о полноценном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
+Следующая статья содержит сведения о регистрации сервера и управлении им в службе синхронизации хранилища. Сведения о комплексном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
 
 ## <a name="registerunregister-a-server-with-storage-sync-service"></a>Регистрация и отмена регистрации сервера в службе синхронизации хранилища
 Регистрация сервера в службе синхронизации файлов Azure устанавливает отношения доверия между Windows Server и Azure. На основе этой связи на сервере можно создать *конечные точки сервера*, которые представляют определенные папки, синхронизируемые с общим файловым ресурсом Azure (которые также называется *облачная конечная точка*). 

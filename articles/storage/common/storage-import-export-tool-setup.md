@@ -2,24 +2,18 @@
 title: Настройка инструмента импорта и экспорта Azure | Документация Майкрософт
 description: Узнайте, как настроить инструмент подготовки и исправления дисков для службы импорта и экспорта Azure.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: ''
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/29/2017
 ms.author: muralikk
-ms.openlocfilehash: 6b5febd051d0b956c90cb14c260dda1881adac3f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: c122d4bc0091eade90c2491c5893f7a2f5c9f455
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059769"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39526884"
 ---
 # <a name="setting-up-the-azure-importexport-tool"></a>Настройка инструмента импорта и экспорта Azure
 
@@ -29,7 +23,7 @@ ms.locfileid: "23059769"
 * После завершения задания импорта это средство можно использовать для восстановления поврежденных, отсутствующих или конфликтных больших двоичных объектов.
 * Это средство также позволяет восстанавливать на дисках поврежденные или отсутствующие файлы после завершения задания экспорта.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 При **подготовке дисков** для задания импорта необходимо выполнить следующие условия.
 

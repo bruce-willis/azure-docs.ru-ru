@@ -1,21 +1,20 @@
 ---
-title: Создание учетной записи хранения Azure Data Lake Gen2 (предварительная версия) | Документы Майкрософт
+title: Создание учетной записи хранения Azure Data Lake Gen2 (предварительная версия) | Документация Майкрософт
 description: Здесь показано, как быстро создавать учетную запись хранения с доступом к Azure Data Lake Gen2 (предварительная версия) с использованием портала Azure, Azure PowerShell или Azure CLI
 services: storage
 author: jamesbak
-manager: twooley
 ms.component: data-lake-storage-gen2
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: cf98d3097128a0f8934fc114bc37a517df118234
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 9d60b85051ff6e24c64f074ccd4fad055ba47ae8
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37085394"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523586"
 ---
 # <a name="quickstart-create-an-azure-data-lake-storage-gen2-preview-storage-account"></a>Краткое руководство. Создание учетной записи хранения Azure Data Lake Gen2 (предварительная версия)
 
@@ -30,9 +29,9 @@ ms.locfileid: "37085394"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-|           | Предварительное требование |
+|           | Предварительные требования |
 |-----------|--------------|
-|Microsoft Azure     | Нет         |
+|Microsoft Azure     | None         |
 |PowerShell | Для работы с этим кратким руководством требуется модуль Azure PowerShell **5.0.4-предварительная версия** или более поздней версии. Чтобы узнать, какая версия используется сейчас, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). |
 |Интерфейс командной строки        | Вы можете войти в Azure и выполнить команды Azure CLI одним из двух способов: <ul><li>Выполнить команды CLI на портале Azure в Azure Cloud Shell. </li><li>Установить CLI и выполнить команды CLI локально.</li></ul>|
 
@@ -211,7 +210,7 @@ az storage account create \
     --location westus2 \
     --sku Standard_LRS \
     --kind StorageV2 \
-    --Enable-hierarchical-namespace true
+    --hierarchical-namespace true
 ```
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
@@ -222,7 +221,7 @@ az storage account create \
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом кратком руководстве была создана учетная запись хранения Data Lake Storage Gen2. Сведения об отправке и скачивании больших двоичных объектов в учетную запись хранения и обратно см. в кратком руководстве по хранилищу BLOB-объектов.
 

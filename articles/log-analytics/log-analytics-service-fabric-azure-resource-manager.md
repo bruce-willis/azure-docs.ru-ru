@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: nini
 ms.component: na
-ms.openlocfilehash: 8296f0756aef7180efa777795cb361e653c0e4e3
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 9bc1f7d9eab73a086e664dcc520ecf26befbbf0e
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37128019"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39432897"
 ---
 # <a name="assess-service-fabric-applications-and-micro-services-with-the-azure-portal"></a>Оценка приложений и микрослужб Azure Service Fabric на портале Azure
 
@@ -39,15 +39,15 @@ ms.locfileid: "37128019"
 Чтобы начать работу с решением, необходимо подключить кластер Service Fabric к рабочей области Log Analytics. Рассмотрим три важных сценария.
 
 1. Если кластер Service Fabric не развернут, выполните действия, описанные в разделе ***Развертывание кластера Service Fabric, подключенного к рабочей области Log Analytics***. Так вы сможете развернуть новый кластер и настроить в нем функцию отчетности для Log Analytics.
-2. Если необходимо собрать счетчики производительности с узлов для использования других решений по управлению (включая решение по обеспечению безопасности в кластере Service Fabric), выполните действия, описанные в разделе, в котором объясняется, как ***развернуть кластер Service Fabric, подключенный к рабочей области Log Analytics с установленным расширением виртуальной машины***.
-3. Если кластер Service Fabric уже развернут и его нужно подключить к Log Analytics, выполните действия, описанные в разделе ***Добавление существующей учетной записи хранения в Log Analytics***.
+1. Если необходимо собрать счетчики производительности с узлов для использования других решений по управлению (включая решение по обеспечению безопасности в кластере Service Fabric), выполните действия, описанные в разделе, в котором объясняется, как ***развернуть кластер Service Fabric, подключенный к рабочей области Log Analytics с установленным расширением виртуальной машины***.
+1. Если кластер Service Fabric уже развернут и его нужно подключить к Log Analytics, выполните действия, описанные в разделе ***Добавление существующей учетной записи хранения в Log Analytics***.
 
 ## <a name="deploy-a-service-fabric-cluster-connected-to-a-log-analytics-workspace"></a>Развертывание кластера Service Fabric, подключенного к рабочей области Log Analytics
 Этот шаблон делает следующее:
 
 1. Развертывает кластер Azure Service Fabric, уже подключенный к рабочей области Log Analytics. При развертывании шаблона можно создать новую рабочую область Log Analytics или указать имя существующей.
-2. Добавляет учетную запись хранилища диагностики в рабочую область Log Analytics.
-3. Включает решение Service Fabric в рабочую область Log Analytics.
+1. Добавляет учетную запись хранилища диагностики в рабочую область Log Analytics.
+1. Включает решение Service Fabric в рабочую область Log Analytics.
 
 [![Развертывание в Azure](./media/log-analytics-service-fabric/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2Fservice-fabric-oms%2F%2Fazuredeploy.json)
 
@@ -66,9 +66,9 @@ ms.locfileid: "37128019"
 Этот шаблон делает следующее:
 
 1. Развертывает кластер Azure Service Fabric, уже подключенный к рабочей области Log Analytics. Вы можете создать новую рабочую область или использовать существующую.
-2. Добавляет учетные записи хранилища диагностики в рабочую область Log Analytics.
-3. Включает решение Service Fabric в рабочей области Log Analytics.
-4. Устанавливает расширение агента MMA в каждом масштабируемом наборе виртуальных машин в кластере Service Fabric. После установки агента MMA вы сможете просматривать метрики производительности своих узлов.
+1. Добавляет учетные записи хранилища диагностики в рабочую область Log Analytics.
+1. Включает решение Service Fabric в рабочей области Log Analytics.
+1. Устанавливает расширение агента MMA в каждом масштабируемом наборе виртуальных машин в кластере Service Fabric. После установки агента MMA вы сможете просматривать метрики производительности своих узлов.
 
 [![Развертывание в Azure](./media/log-analytics-service-fabric/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fazure%2Fazure-quickstart-templates%2Fmaster%2Fservice-fabric-vmss-oms%2F%2Fazuredeploy.json)
 
@@ -96,7 +96,7 @@ ms.locfileid: "37128019"
 
     ![Service Fabric](./media/log-analytics-service-fabric/10.png)
 
-    Б. Просмотрите аналогичные графики для доступной памяти на каждом узле, используя этот запрос:
+    b. Просмотрите аналогичные графики для доступной памяти на каждом узле, используя этот запрос:
 
     ```
     Type=Perf ObjectName=Memory CounterName="Available MBytes Memory" | measure avg(CounterValue) by Computer Interval 1HOUR.

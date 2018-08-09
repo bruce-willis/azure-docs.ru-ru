@@ -1,24 +1,19 @@
 ---
-title: Устранение неполадок в Hive с помощью Azure HDInsight | Документация Майкрософт
+title: Устранение неполадок в Hive с помощью Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с Apache Hive и Azure HDInsight.
 keywords: Azure HDInsight, Hive, вопросы и ответы, руководство по устранению неполадок, часто задаваемые вопросы
-services: Azure HDInsight
-documentationcenter: na
-author: dharmeshkakadia
-manager: ''
-editor: ''
-ms.assetid: 15B8D0F3-F2D3-4746-BDCB-C72944AA9252
+services: hdinsight
 ms.service: hdinsight
-ms.devlang: na
-ms.topic: article
-ms.date: 11/2/2017
+author: dharmeshkakadia
 ms.author: dharmeshkakadia
-ms.openlocfilehash: d397552285466dc038fe580a084e2d1d0d69bfe2
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.topic: conceptual
+ms.date: 11/2/2017
+ms.openlocfilehash: 832fab6c4f183ddad512c5e6e4309d70938a316b
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31407703"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39600029"
 ---
 # <a name="troubleshoot-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Hive с помощью Azure HDInsight
 

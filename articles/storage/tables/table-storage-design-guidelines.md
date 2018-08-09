@@ -2,23 +2,18 @@
 title: Рекомендации по разработке таблиц службы хранилища Azure | Документация Майкрософт
 description: Разработка службы таблиц Azure для поддержки эффективных операций чтения.
 services: storage
-documentationcenter: na
 author: SnehaGunda
-manager: kfile
-ms.assetid: 8e228b0c-2998-4462-8101-9f16517393ca
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
 ms.date: 04/23/2018
 ms.author: sngun
-ms.openlocfilehash: 5329d33aee1bb1a55e9982b1ba9e3e8329246980
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: tables
+ms.openlocfilehash: ef6d257aee532d4b6325bd3d2f619fd00824e06f
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660358"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525424"
 ---
 # <a name="guidelines-for-table-design"></a>Рекомендации по разработке таблиц
 

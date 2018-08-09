@@ -2,24 +2,18 @@
 title: Получение сведений о состоянии для задания импорта и экспорта Azure | Документация Майкрософт
 description: Узнайте, как получить сведения о состоянии заданий службы импорта и экспорта Microsoft Azure.
 author: muralikk
-manager: syadav
-editor: tysonn
 services: storage
-documentationcenter: ''
-ms.assetid: 22d7e5f0-94da-49b4-a1ac-dd4c14a423c2
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 12/16/2016
 ms.author: muralikk
-ms.openlocfilehash: 13169716c47cf9389c8f2651393ac744441bdd6f
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: 76b2f73442261da4c791aaae8532d7a0dbbb6d95
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23059909"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520612"
 ---
 # <a name="retrieving-state-information-for-an-importexport-job"></a>Получение сведений о состоянии задания импорта и экспорта
 Чтобы получить сведения о заданиях импорта и экспорта, можно вызвать операцию [Get Job](/rest/api/storageimportexport/jobs#Jobs_Get). Возвращаемые сведения включают:

@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 92089904941ae913f1992a4407083bfcae010f2d
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: a07a17105b4d84b51689e9636cfacc7a3b5428ad
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33887424"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528033"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -77,7 +77,7 @@ ms.locfileid: "33887424"
 После того как решение будет создано и протестировано, вы можете предоставить клиентам доступ к нему, используя следующие источники.
 
 - **Шаблоны быстрого запуска Azure**.  [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/resources/templates/) представляют набор шаблонов Resource Manager, предоставленные сообществом разработчиков через GitHub.  Чтобы предоставить доступ к решению, следуйте инструкциям в [руководстве по участию](https://github.com/Azure/azure-quickstart-templates/tree/master/1-CONTRIBUTION-GUIDE).
-- **Azure Marketplace**.  На [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) можно распространять решения среди других разработчиков, независимых поставщиков ПО и ИТ-специалистов, а также продавать решения.  Дополнительные сведения см. в статье [Как опубликовать предложение и управлять им в Azure Marketplace](../marketplace-publishing/marketplace-publishing-getting-started.md).
+- **Azure Marketplace**.  На [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/) можно распространять решения среди других разработчиков, независимых поставщиков ПО и ИТ-специалистов, а также продавать решения.  Дополнительные сведения см. в статье [Как опубликовать предложение и управлять им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
 
 
 

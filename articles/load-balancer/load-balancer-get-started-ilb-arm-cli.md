@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/27/2018
 ms.author: kumud
-ms.openlocfilehash: 92e464aa4e0dcb7199b6db44d2c28db5b6d1673c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: bd4dda835279a21509f77814f4d5f9e30e8a42c1
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38676092"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39439204"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli-20"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI 2.0 для распределения нагрузки между виртуальными машинами
 
@@ -110,7 +110,7 @@ ms.locfileid: "38676092"
 
 ### <a name="create-nics"></a>Создание сетевых адаптеров
 
-Создайте два сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create) и привяжите их к частному IP-адресу. 
+Создайте два сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create) и привяжите их к частному IP-адресу. 
 
 ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -130,7 +130,7 @@ done
 
 ### <a name="create-an-availability-set"></a>Создание группы доступности
 
-Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic#az_network_availabilityset_create).
+Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic#az-network-availabilityset-create).
 
  ```azurecli-interactive
   az vm availability-set create \
@@ -184,7 +184,7 @@ runcmd:
   - nodejs index.js
 ``` 
  
-Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create).
 
  ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -228,7 +228,7 @@ for i in `seq 1 2`; do
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ставшие ненужными группу ресурсов, подсистему балансировки нагрузки и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az_group_delete).
+Вы можете удалить ставшие ненужными группу ресурсов, подсистему балансировки нагрузки и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive 
   az group delete --name myResourceGroupILB

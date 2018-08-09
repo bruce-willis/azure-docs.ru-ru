@@ -1,25 +1,20 @@
 ---
-title: Установка сторонних приложений Hadoop в Azure HDInsight | Документация Майкрософт
+title: Установка сторонних приложений Hadoop в Azure HDInsight
 description: Сведения об установке сторонних приложений Hadoop в Azure HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: eaf5904d-41e2-4a5f-8bec-9dde069039c2
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jgao
-ms.openlocfilehash: 3ad112544a703a9b6ec37fa07cbd6df6976d5e26
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.author: jasonh
+ms.openlocfilehash: c4d8f6fb1804ff48899ebb96d4c4248f337b56ad
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34201920"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39591981"
 ---
 # <a name="install-third-party-hadoop-applications-on-azure-hdinsight"></a>Установка сторонних приложений Hadoop в Azure HDInsight
 
@@ -42,7 +37,7 @@ ms.locfileid: "34201920"
 
 В этой статье используется портал Azure. Вы можете экспортировать шаблон Azure Resource Manager с портала или получить его копию у поставщиков, а затем развернуть его с помощью Azure PowerShell и интерфейса командной строки Azure.  Ознакомьтесь со статьей [Создание кластеров Hadoop в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Если вы хотите установить приложение HDInsight в существующем кластере HDInsight, вы должны создать кластер HDInsight. Инструкции по созданию кластера см. в [этом разделе](hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster). Вы также можете установить приложения HDInsight во время создания кластера HDInsight.
 
 ## <a name="install-applications-to-existing-clusters"></a>Установка приложений в имеющиеся кластеры

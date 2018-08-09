@@ -11,20 +11,19 @@ ms.devlang: java
 ms.topic: quickstart
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 05/15/2018
+ms.date: 07/28/2018
 ms.author: routlaw, glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: df3c64938cfc5835fd9eb2f0bbed0135b611347f
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: a1ce9aa87d8f70d3d55daa3a8f46c6a7f706f78e
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37341527"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620738"
 ---
 # <a name="create-your-first-function-with-java-and-maven-preview"></a>Создание первой функции с помощью Java и Maven (предварительная версия)
 
-> [!NOTE] 
-> Сейчас доступна предварительная версия Java для Функций Azure.
+[!INCLUDE [functions-java-preview-note](../../includes/functions-java-preview-note.md)]
 
 В этом кратком руководстве содержится информация о том, как создать проект функции [без сервера](https://azure.microsoft.com/overview/serverless-computing/) с помощью Maven, локально протестировать и развернуть его в решении "Функции Azure". После выполнения этих действий, приложение-функция активированного HTTP будет запущена в Azure.
 
@@ -32,7 +31,7 @@ ms.locfileid: "37341527"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для разработки функций приложения с помощью Java, должны быть установлены следующие компоненты:
 
 -  [Java Developer Kit (JDK)](https://www.azul.com/downloads/zulu/) версии 8.

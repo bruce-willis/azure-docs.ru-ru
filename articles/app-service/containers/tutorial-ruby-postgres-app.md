@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 927c8f6d0fefbc592999487217c41aeecc96b0d9
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 925537b3dff852921aad1e74d009e09fc90c394a
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37950987"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39445082"
 ---
 # <a name="build-a-ruby-and-postgres-web-app-in-azure-app-service-on-linux"></a>Разработка веб-приложения на основе Ruby и Postgres в службе приложений Azure на платформе Linux
 
@@ -25,7 +25,7 @@ ms.locfileid: "37950987"
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание базы данных PostgreSQL в Azure
@@ -37,7 +37,7 @@ ms.locfileid: "37950987"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -123,7 +123,7 @@ rails server
 
 ### <a name="create-a-postgres-server"></a>Создание сервера Postgres
 
-Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create).
+Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-create).
 
 Выполните следующую команду в Cloud Shell и замените уникальное имя сервера заполнителем  *\<имя_сервера_postgres>*. Имя сервера должно быть уникальным на всех серверах в Azure. 
 
@@ -155,7 +155,7 @@ az postgres server create --location "West Europe" --resource-group myResourceGr
 
 ### <a name="configure-server-firewall"></a>Настройка брандмауэра сервера
 
-В Cloud Shell создайте правило брандмауэра для сервера Postgres, выполнив команду [`az postgres server firewall-rule create`](/cli/azure/postgres/server/firewall-rule?view=azure-cli-latest#az_postgres_server_firewall_rule_create), чтобы разрешить подключения клиентов. Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. Замените уникальное имя сервера заполнителем *\<имя_сервера_postgres>*.
+В Cloud Shell создайте правило брандмауэра для сервера Postgres, выполнив команду [`az postgres server firewall-rule create`](/cli/azure/postgres/server/firewall-rule?view=azure-cli-latest#az-postgres-server-firewall-rule-create), чтобы разрешить подключения клиентов. Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. Замените уникальное имя сервера заполнителем *\<имя_сервера_postgres>*.
 
 ```azurecli-interactive
 az postgres server firewall-rule create --resource-group myResourceGroup --server <postgres_server_name> --name AllowAllIps --start-ip-address 0.0.0.0 --end-ip-address 255.255.255.255
@@ -300,7 +300,7 @@ git commit -m "database.yml updates"
 
 ### <a name="configure-database-settings"></a>Настройка параметров базы данных
 
-В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az_webapp_config_appsettings_set) в Cloud Shell.
+В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell.
 
 Команда Cloud Shell ниже позволяет настроить параметры приложения `DB_HOST`, `DB_DATABASE`, `DB_USERNAME` и `DB_PASSWORD`. Замените заполнители _&lt;имя_приложения>_ и _&lt;имя_сервера_postgres>_.
 

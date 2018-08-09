@@ -1,8 +1,8 @@
 ---
 title: Регистрация устройств TPM в службе подготовки устройств Azure с помощью Node.js | Документация Майкрософт
 description: Краткое руководство по Azure. Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей Azure с помощью пакета SDK для службы Node.js
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 12/21/2017
 ms.topic: quickstart
 ms.service: iot-dps
@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: 0d7d36fc207b44163264adf62e6d3e29d43489b2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: feec3083ae924cbc87b34912d6aa0ceaa0555a18
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629615"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523052"
 ---
 # <a name="enroll-tpm-device-to-iot-hub-device-provisioning-service-using-nodejs-service-sdk"></a>Регистрация устройств TPM в службе подготовки устройств Центра Интернета вещей с помощью пакета SDK для службы Node.js
 
@@ -24,7 +24,7 @@ ms.locfileid: "34629615"
 
 В этой статье показано, как программными средствами создать отдельную регистрацию устройства TPM в службе подготовки устройств Центра Интернета вещей Azure с помощью [пакета SDK для службы Node.js](https://github.com/Azure/azure-iot-sdk-node) и примера приложения Node.js. С помощью этой записи отдельной регистрации вы можете по мере необходимости регистрировать имитированные устройства TPM в службе подготовки. В этой статье описана работа с компьютером под управлением Windows, но эта процедура применима как для Windows, так и для Linux.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Прежде чем продолжить, выполните инструкции по [настройке службы подготовки устройств Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md). 
 -  Убедитесь, что на вашем компьютере установлена платформа [Node.js 4.0 или более поздней версии](https://nodejs.org).

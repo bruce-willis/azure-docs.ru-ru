@@ -2,23 +2,18 @@
 title: Целевые показатели масштабируемости и производительности службы файлов Azure | Документация Майкрософт
 description: 'Ознакомьтесь с такими целевыми показателями масштабируемости и производительности службы файлов Аzure: емкость, частота запросов и предельная входящая и исходящая пропускная способность.'
 services: storage
-documentationcenter: na
 author: wmgries
-manager: aungoo
-editor: tamram
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage
 ms.date: 7/19/2018
 ms.author: wgries
-ms.openlocfilehash: 8937b0cfc620114c602278a3f8989ba1f3f60685
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.component: files
+ms.openlocfilehash: 57929b23e437e17ceb90196e3cfa59c16d518f5a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173730"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527443"
 ---
 # <a name="azure-files-scalability-and-performance-targets"></a>Целевые показатели масштабируемости и производительности службы файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предлагает полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого протокола SMB. В этой статье описываются целевые показатели масштабируемости и производительности службы файлов Azure и службы синхронизации файлов Azure.

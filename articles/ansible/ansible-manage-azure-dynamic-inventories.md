@@ -8,17 +8,17 @@ manager: routlaw
 ms.author: tarcher
 ms.date: 01/14/2018
 ms.topic: article
-ms.openlocfilehash: f29f4ec64b79738cae2ad684610f4817739825a9
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 35033f7a6a0340be4dff5fa0051fd3c5ddb3c0eb
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32153115"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39449423"
 ---
 # <a name="use-ansible-to-manage-your-azure-dynamic-inventories"></a>Управление динамическими списками Azure с помощью Ansible
 Ansible можно использовать для извлечения информации из различных источников (включая облачные источники, такие как Azure) в *динамический список*. В этой статье вы настроите динамический список Ansible Azure с помощью [Azure Cloud Shell](./ansible-run-playbook-in-cloudshell.md), создадите в нем две виртуальные машины, назначите одной из них тег и установите на ней Nginx.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
@@ -57,7 +57,7 @@ Ansible можно использовать для извлечения инфо
 ## <a name="tag-a-virtual-machine"></a>Добавление тега для виртуальной машины
 Можно [использовать теги](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags#azure-cli) для организации ресурсов Azure по определенным пользователем категориям. 
 
-Выполните приведенную ниже команду [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az_resource_tag), чтобы добавить тег для виртуальной машины `ansible-inventory-test-vm1` с ключом `nginx`:
+Выполните приведенную ниже команду [az resource tag](/cli/azure/resource?view=azure-cli-latest.md#az-resource-tag), чтобы добавить тег для виртуальной машины `ansible-inventory-test-vm1` с ключом `nginx`:
 
 ```azurecli-interactive
 az resource tag --tags nginx --id /subscriptions/<YourAzureSubscriptionID>/resourceGroups/ansible-inventory-test-rg/providers/Microsoft.Compute/virtualMachines/ansible-inventory-test-vm1
@@ -175,7 +175,7 @@ ansible-inventory-test-vm1 | SUCCESS => {
 ## <a name="test-nginx-installation"></a>Тестирование установки Nginx
 В этом разделе показано, как проверить Nginx, установленный на виртуальной машине.
 
-1. Извлеките IP-адрес виртуальной машины `ansible-inventory-test-vm1`, используя команду [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az_vm_list_ip_addresses). Возвращаемое значение (IP-адрес виртуальной машины) затем используется как параметр команды SSH, при помощи которого устанавливается подключение к виртуальной машине.
+1. Извлеките IP-адрес виртуальной машины `ansible-inventory-test-vm1`, используя команду [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm?view=azure-cli-latest#az-vm-list-ip-addresses). Возвращаемое значение (IP-адрес виртуальной машины) затем используется как параметр команды SSH, при помощи которого устанавливается подключение к виртуальной машине.
 
     ```azurecli-interactive
     ssh `az vm list-ip-addresses \

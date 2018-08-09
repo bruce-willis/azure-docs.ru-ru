@@ -1,8 +1,8 @@
 ---
 title: Подготовка устройства с помощью службы подготовки устройств для Центра Интернета вещей Azure (.NET) | Документация Майкрософт
 description: Подготовка устройства в одном Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей Azure (.NET)
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 09/05/2017
 ms.topic: tutorial
 ms.service: iot-dps
@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: e31c06268245946bd80e1328f4d7176f1e9a660f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 1d82ccdf85b34416dc630b9fcad969d87cc53ff1
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34629887"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520672"
 ---
 # <a name="enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
 
@@ -26,7 +26,7 @@ ms.locfileid: "34629887"
 > * запуск устройства;
 > * проверка регистрации устройства.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем продолжить, настройте устройство и его *аппаратный модуль безопасности*, как описано в руководстве [Set up a device to provision using the Azure IoT Hub Device Provisioning Service](./tutorial-set-up-device.md) (Настройка устройства для подготовки с помощью службы подготовки устройств для Центра Интернета вещей Azure).
 

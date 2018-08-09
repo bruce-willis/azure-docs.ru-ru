@@ -10,16 +10,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.component: protection
+ms.component: pim
 ms.date: 03/27/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 6aeb82ff1feb3521f3a09dc1b28186754568bb27
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: d7a9c0090d3bfaaf1161b6255c4c0b659c77d692
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442996"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620286"
 ---
 # <a name="enable-subscription-management-in-your-tenant"></a>Включение управления подписками в клиенте
 
@@ -29,7 +29,7 @@ ms.locfileid: "37442996"
 
 Чтобы включить управление подпиской, каждый пользователь с ролью глобального администратора должен выполнить приведенные ниже шаги. Когда вы активируете управление подписками для себя, можно добавить других глобальных администраторов, которым также может требоваться доступ к ресурсам. Параметр каталога, который включает доступ для всех участников с ролью глобальный администратор, отсутствует.
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на портал Azure с учетной записью подходящего или активного участника роли глобального администратора. Если учетная запись принадлежит подходящему глобальному администратору, то роль надо активировать, перед тем как перейди к следующему этапу.
 

@@ -8,14 +8,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.technology: luis
 ms.topic: article
-ms.date: 07/20/2018
+ms.date: 08/03/2018
 ms.author: diberry
-ms.openlocfilehash: 80f2d482a660992011549fe8dc76a09740da6ab1
-ms.sourcegitcommit: 194789f8a678be2ddca5397137005c53b666e51e
+ms.openlocfilehash: 2fd473226dca2576be79b90bc05d66599f759713
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39237831"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524150"
 ---
 # <a name="tutorial-improve-app-with-pattern-roles"></a>Руководство. Улучшение приложения с помощью ролей шаблона
 
@@ -27,7 +27,7 @@ ms.locfileid: "39237831"
 * Создание шаблона для высказываний с помощью простого объекта с ролями
 * Проверка улучшения прогнозирования для шаблона
 
-Для работы с этой статьей требуется бесплатная учетная запись [LUIS](luis-reference-regions.md), в которой вы создадите приложение LUIS.
+[!include[LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 Если у вас нет приложения для управления персоналом из руководства по [шаблонам](luis-tutorial-pattern.md), [импортируйте](luis-how-to-start-new-app.md#import-new-app) файл JSON в новое приложение на веб-сайте [LUIS](luis-reference-regions.md#luis-website). Приложение, которое следует импортировать, находится в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/custom-domain-patterns-HumanResources-v2.json).
@@ -125,23 +125,16 @@ ms.locfileid: "39237831"
     Если сущность keyPhrase была удалена, верните ее в приложение.
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Новые намерения и высказывания требуют обучения. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
-
-2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
-Чтобы получить прогноз LUIS в чат-боте или другом приложении, необходимо опубликовать приложение. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Publish** (Опубликовать). 
-
-2. Выберите слот "Production" (Рабочий) и нажмите кнопку **Publish** (Опубликовать).
-
-3. Когда публикация будет завершена, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
+[!include[LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
 ## <a name="query-the-endpoint-without-pattern"></a>Запрос конечной точки без шаблона
-1. В нижней части страницы **публикации** выберите ссылку на **конечную точку**. В результате откроется другое окно браузера с URL-адресом конечной точки в адресной строке. 
+
+1. [!include[LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
 
 2. Перейдите в конец URL-адреса и введите `Move Wayne Berry from Miami to Mount Vernon`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
@@ -388,7 +381,8 @@ ms.locfileid: "39237831"
 Оценка намерения теперь гораздо выше, и имена ролей являются частью ответа сущности.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Чтобы это сделать, щелкните многоточие (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -3,19 +3,18 @@ title: В этом документе описано, как выполнить 
 description: В этом руководстве содержатся сведения о том, как извлечь данные из предварительной версии Data Lake Storage Gen2 в Azure Databricks, преобразовывать их, а затем загрузить в хранилище данных SQL Azure.
 services: azure-databricks
 author: jamesbak
-manager: jahogg
 ms.component: data-lake-storage-gen2
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
 ms.date: 06/27/2018
 ms.author: jamesbak
-ms.openlocfilehash: 10aad06d4ac8d76dc023648e8d6c0366bff859e6
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: dcc0cb6d761fde5af16dbc86c674e2fc00dad58a
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37344713"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522294"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -49,7 +48,7 @@ ms.locfileid: "37344713"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com/).
+Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -336,7 +335,7 @@ ms.locfileid: "37344713"
 
 Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера завершается автоматически, если кластер был неактивным в течение определенного времени.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнить следующие задачи:
 

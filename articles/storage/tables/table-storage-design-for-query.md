@@ -2,23 +2,18 @@
 title: Проектирование таблиц службы хранилища Azure для запросов | Документация Майкрософт
 description: Проектирование таблиц для запросов в хранилище таблиц Azure.
 services: storage
-documentationcenter: na
 author: MarkMcGeeAtAquent
-manager: kfile
-ms.assetid: 8e228b0c-2998-4462-8101-9f16517393ca
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
 ms.date: 04/23/2018
 ms.author: sngun
-ms.openlocfilehash: b8d2033b0b29caddf165f4b582c7d0578109480c
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: tables
+ms.openlocfilehash: 8b4ae066edc1c62c25762b5c6feebce1ecfff5a2
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660398"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39521546"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
 в решениях службы таблиц может быть связана с большим количеством операций чтения, записи или сочетания этих двух видов нагрузки. В этой статье рассматриваются вопросы, которые необходимо учесть при разработке службы таблиц для эффективной поддержки операций чтения. Как правило, схема, поддерживающая операции чтения, также эффективна для операций записи. Тем не менее, при реализации поддержки операций записи следует придерживаться дополнительных рекомендаций, которые приводятся в статье [Design for data modification](table-storage-design-for-modification.md) (Проектирование изменения данных).
@@ -103,7 +98,7 @@ ms.locfileid: "34660398"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Конструктивные шаблоны таблиц](table-storage-design-patterns.md)
+- [Шаблоны для разработки таблиц](table-storage-design-patterns.md)
 - [Моделирование отношений](table-storage-design-modeling.md)
 - [Шифрование данных таблиц](table-storage-design-encrypt-data.md)
-- [Проектирование изменения данных](table-storage-design-for-modification.md)
+- [Разработка для изменения данных](table-storage-design-for-modification.md)

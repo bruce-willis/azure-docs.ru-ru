@@ -15,15 +15,15 @@ ms.topic: conceptual
 ms.date: 11/21/2016
 ms.author: richrund
 ms.component: na
-ms.openlocfilehash: 375ae9a82af4a1f8a86b529b597ed479388e66dc
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 6dcf3a5b26dc3c7e69721b2abb8a7d58767866d6
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129342"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579057"
 ---
 # <a name="manage-log-analytics-using-powershell"></a>Управление Log Analytics с помощью PowerShell
-[Командлеты PowerShell Log Analytics](https://msdn.microsoft.com/library/mt188224\(v=azure.300\).aspx) можно использовать для выполнения различных функций в Log Analytics как из командной строки, так и в составе сценария.  Примеры задач, которые можно выполнять с помощью PowerShell.
+[Командлеты PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/) можно использовать для выполнения различных функций в Log Analytics как из командной строки, так и в составе сценария.  Примеры задач, которые можно выполнять с помощью PowerShell.
 
 * Создание рабочей области
 * Добавление или удаление решения
@@ -37,14 +37,14 @@ ms.locfileid: "37129342"
 * Добавление агента Log Analytics в виртуальную машину Azure
 * Настройка Log Analytics для индексирования данных, собранных системой диагностики Azure
 
-Эта статья содержит два примера кода, иллюстрирующих некоторые доступные в PowerShell функции.  Сведения о других функциях см. в [справочнике по командлетам PowerShell Log Analytics](https://msdn.microsoft.com/library/mt188224\(v=azure.300\).aspx).
+Эта статья содержит два примера кода, иллюстрирующих некоторые доступные в PowerShell функции.  Сведения о других функциях см. в [справочнике по командлетам PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/).
 
 > [!NOTE]
 > Компонент Log Analytics раньше назывался Operational Insights, поэтому именно такое имя используется в командлетах.
 > 
 > 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Эти примеры работают с версией 2.3.0 или более поздней версией модуля AzureRm.OperationalInsights.
 
 
@@ -205,7 +205,7 @@ New-AzureRmOperationalInsightsCustomLogDataSource -ResourceGroupName $ResourceGr
 | Балансировщики нагрузки          | Yes | |
 | Logic Apps              | Yes | Yes |
 | группы сетевой безопасности; | Yes | |
-| Кэш Redis             |     | Yes |
+| кэш Redis;             |     | Yes |
 | Службы поиска         | Yes | Yes |
 | Пространство имен служебной шины   |     | Yes |
 | SQL (версия 12)               |     | Yes |
@@ -266,5 +266,5 @@ Remove-AzureRmOperationalInsightsStorageInsight -ResourceGroupName $workspace.Re
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://msdn.microsoft.com/library/mt188224\(v=azure.300\).aspx).
+* Дополнительные сведения об использовании PowerShell для настройки Log Analytics см. в [описании командлетов PowerShell Log Analytics](https://docs.microsoft.com/powershell/module/azurerm.operationalinsights/).
 

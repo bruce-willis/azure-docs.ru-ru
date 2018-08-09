@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 48f1a4950365c00b7bff8c804abd95fd7b7ab9b9
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: be6032d8c0ce7c20a080037fad216c4b540c90cb
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39069062"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39435603"
 ---
 # <a name="tutorial-enable-web-application-firewall-using-the-azure-cli"></a>Руководство. Включение брандмауэра веб-приложения с помощью Azure CLI
 
@@ -41,7 +41,7 @@ ms.locfileid: "39069062"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя команду [az group create](/cli/azure/group#az_group_create).
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов Azure с именем *myResourceGroupAG*, используя команду [az group create](/cli/azure/group#az-group-create).
 
 ```azurecli-interactive 
 az group create --name myResourceGroupAG --location eastus
@@ -49,7 +49,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 
-Виртуальная сеть и подсети используются для предоставления сетевого подключения к шлюзу приложений и его связанным ресурсам. Создайте виртуальную сеть с именем *myVNet* и подсеть с именем *myAGSubnet*, используя команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create) и [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az_network_public_ip_create).
+Виртуальная сеть и подсети используются для предоставления сетевого подключения к шлюзу приложений и его связанным ресурсам. Создайте виртуальную сеть с именем *myVNet* и подсеть с именем *myAGSubnet*, используя команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create) и [az network vnet subnet create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). Создайте общедоступный IP-адрес с именем *myAGPublicIPAddress* с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az-network-public-ip-create).
 
 ```azurecli-interactive
 az network vnet create \
@@ -73,7 +73,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway-with-a-waf"></a>Создание шлюза приложений с WAF
 
-Выполните команду [az network application-gateway create](/cli/azure/application-gateway#az_application_gateway_create), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPSddress*, созданным ранее.
+Выполните команду [az network application-gateway create](/cli/azure/application-gateway#az-application-gateway-create), чтобы создать шлюз приложений *myAppGateway*. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPSddress*, созданным ранее.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -108,7 +108,7 @@ az network application-gateway waf-config set \
 
 ## <a name="create-a-virtual-machine-scale-set"></a>создавать масштабируемый набор виртуальных машин;
 
-В этом примере вы создаете масштабируемый набор виртуальных машин, чтобы предоставить два сервера для внутреннего пула в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet*. Чтобы создать масштабируемый набор, выполните команду [az vmss create](/cli/azure/vmss#az_vmss_create).
+В этом примере вы создаете масштабируемый набор виртуальных машин, чтобы предоставить два сервера для внутреннего пула в шлюзе приложений. Виртуальные машины в масштабируемом наборе связаны с подсетью *myBackendSubnet*. Чтобы создать масштабируемый набор, выполните команду [az vmss create](/cli/azure/vmss#az-vmss-create).
 
 ```azurecli-interactive
 az vmss create \
@@ -144,7 +144,7 @@ az vmss extension set \
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
-Создайте учетную запись хранения с именем *myagstore1* с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_create).
+Создайте учетную запись хранения с именем *myagstore1* с помощью команды [az storage account create](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create).
 
 ```azurecli-interactive
 az storage account create \
@@ -157,7 +157,7 @@ az storage account create \
 
 ### <a name="configure-diagnostics"></a>Настройка диагностики
 
-Настройте диагностику для записи данных в журналы ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog и ApplicationGatewayFirewallLog. Замените `<subscriptionId>` своим идентификатором подписки, а затем настройте диагностику с помощью команды [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az_monitor_diagnostic_settings_create).
+Настройте диагностику для записи данных в журналы ApplicationGatewayAccessLog, ApplicationGatewayPerformanceLog и ApplicationGatewayFirewallLog. Замените `<subscriptionId>` своим идентификатором подписки, а затем настройте диагностику с помощью команды [az monitor diagnostic-settings create](/cli/azure/monitor/diagnostic-settings?view=azure-cli-latest#az-monitor-diagnostic-settings-create).
 
 ```azurecli-interactive
 appgwid=$(az network application-gateway show --name myAppGateway --resource-group myResourceGroupAG --query id -o tsv)
@@ -171,7 +171,7 @@ az monitor diagnostic-settings create --name appgwdiag --resource $appgwid \
 
 ## <a name="test-the-application-gateway"></a>Тестирование шлюза приложений
 
-Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
+Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
 ```azurepowershell-interactive
 az network public-ip show \

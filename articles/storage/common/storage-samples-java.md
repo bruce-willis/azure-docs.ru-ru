@@ -1,24 +1,20 @@
 ---
-title: "Примеры для службы хранилища Azure с использованием Java | Документация Майкрософт"
-description: "Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища Java."
+title: Примеры для службы хранилища Azure с использованием Java | Документация Майкрософт
+description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища Java.
 services: storage
-documentationcenter: na
 author: seguler
-manager: jahogg
-editor: tysonn
-ms.assetid: 
 ms.service: storage
 ms.devlang: java
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage
 ms.date: 01/12/2017
 ms.author: seguler
-ms.openlocfilehash: fd27e1ac9a773e7b0f5245aa74acdb0521cd098c
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.component: common
+ms.openlocfilehash: bdc25a7aeff88d058eaf3fddf6cec023edff3b9e
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530316"
 ---
 # <a name="azure-storage-samples-using-java"></a>Примеры для службы хранилища Azure с использованием Java
 
@@ -205,14 +201,14 @@ ms.lasthandoff: 10/11/2017
 
 Ознакомьтесь со следующими руководствами, если вам нужны инструкции по установке клиентских библиотек службы хранилища Azure и началу работы с ними.
 
-* [Getting Started with Azure Blob Service in Java](../blobs/storage-java-how-to-use-blob-storage.md) (Приступая к работе со службой BLOB-объектов Azure на языке Java)
-* [Getting Started with Azure Queue Service in Java](../storage-java-how-to-use-queue-storage.md) (Приступая к работе со службой очередей Azure на языке Java)
+* [Getting Started with Azure Blob Service in Java](../blobs/storage-quickstart-blobs-java.md) (Приступая к работе со службой BLOB-объектов Azure на языке Java)
+* [Getting Started with Azure Queue Service in Java](../queues/storage-java-how-to-use-queue-storage.md) (Приступая к работе со службой очередей Azure на языке Java)
 * [Getting Started with Azure Table Service in Java](../../cosmos-db/table-storage-how-to-use-java.md) (Приступая к работе со службой таблиц Azure на языке Java)
-* [Getting Started with Azure File Service in Java](../storage-java-how-to-use-file-storage.md) (Приступая к работе с файловой службой Azure на языке Java)
+* [Getting Started with Azure File Service in Java](../files/storage-java-how-to-use-file-storage.md) (Приступая к работе с файловой службой Azure на языке Java)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о примерах для других языков см. здесь:
 
-* .NET: [Azure Storage samples using .NET](../storage-samples-dotnet.md) (Примеры для службы хранилища Azure с использованием .NET)
-* Все остальные языки: [Azure Storage samples](../storage-samples.md) (Примеры для службы хранилища Azure)
+* .NET: [Azure Storage samples using .NET](storage-samples-dotnet.md) (Примеры для службы хранилища Azure с использованием .NET)
+* Все остальные языки: [Azure Storage samples](storage-samples.md) (Примеры для службы хранилища Azure)

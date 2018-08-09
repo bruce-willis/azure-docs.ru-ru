@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/21/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 151aa2f8065c7232284c560ff515afab40ae7f5c
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 7e71ff5f5da17165d5127f3547d8eb0756411b8c
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39415767"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597699"
 ---
 # <a name="introduction-to-device-management-in-azure-active-directory"></a>Общие сведения об управлении устройствами в Azure Active Directory
 
@@ -32,7 +32,7 @@ ms.locfileid: "39415767"
 
 С помощью устройств пользователи получают доступ к корпоративным ресурсам. В целях защиты корпоративных ресурсов ИТ-администраторам требуются возможности управления этими устройствами. Это позволит предоставлять пользователям доступ к ресурсам с устройств, которые соответствуют стандартам безопасности и нормативным требованиям. 
 
-Управление устройствами также лежит в основе [условного доступа с устройств](../active-directory-conditional-access-policy-connected-applications.md). Используя условный доступ на основе устройств, можно разрешать доступ к ресурсам в своей среде только управляемым устройствам.   
+Управление устройствами также лежит в основе [условного доступа с устройств](../conditional-access/require-managed-devices.md). Используя условный доступ на основе устройств, можно разрешать доступ к ресурсам в своей среде только управляемым устройствам.   
 
 В этой статье описывается, как работает управление устройствами в Azure Active Directory.
 
@@ -178,7 +178,7 @@ ms.locfileid: "39415767"
 
 - Чтобы получить общие сведения о том, как управлять устройствами на портале Azure, см. раздел [Управление устройствами с помощью портала Azure (предварительная версия)](device-management-azure-portal.md)
 
-- Дополнительные сведения об условном доступе на основе устройств см. в статье [Настройка политики условного доступа на основе устройств для подключенных к Azure Active Directory приложений](../active-directory-conditional-access-policy-connected-applications.md).
+- Дополнительные сведения об условном доступе на основе устройств см. в статье [Настройка политики условного доступа на основе устройств для подключенных к Azure Active Directory приложений](../conditional-access/require-managed-devices.md).
 
 - Чтобы настроить:
     - устройства Windows 10, зарегистрированные в Azure Active Directory, ознакомьтесь с разделом [Как настроить устройства Windows 10, зарегистрированные в Azure Active Directory](../user-help/device-management-azuread-registered-devices-windows10-setup.md);

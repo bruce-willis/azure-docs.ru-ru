@@ -7,14 +7,14 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 08/01/2018
+ms.date: 08/03/2018
 ms.author: carlrab
-ms.openlocfilehash: 51facd32fd7dbffe39fd959b0c8e9321d04657e0
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 8ddeedcde142a01cca9efa79ab08029aec798ceb
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412385"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39525296"
 ---
 # <a name="scale-single-database-resources-in-azure-sql-database"></a>Масштабирование ресурсов отдельной базы данных в Базе данных SQL Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "39412385"
 ## <a name="vcore-based-purchasing-model-change-storage-size"></a>Модель приобретения на основе виртуальных ядер: изменение размера хранилища
 
 - Хранилище может быть расширено до максимально возможного размера с шагом приращения в 1 ГБ. Минимальный настраиваемый размер хранилища данных составляет 5 ГБ. 
-- Хранилище для отдельной базы данных можно подготовить, увеличив или уменьшив ее максимальный размер с помощью [портала Azure](https://portal.azure.com), [Transact-SQL](/sql/t-sql/statements/alter-database-azure-sql-database#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update).
+- Хранилище для отдельной базы данных можно подготовить, увеличив или уменьшив ее максимальный размер с помощью [портала Azure](https://portal.azure.com), [Transact-SQL](/sql/t-sql/statements/alter-database-transact-sql?r#examples), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqldatabase), [Azure CLI](/cli/azure/sql/db#az_sql_db_update) или [REST API](/rest/api/sql/databases/update).
 - База данных SQL автоматически выделяет 30 % доступного места для хранения файлов журнала и 32 ГБ на виртуальное ядро для базы данных tempdb, но при этом их суммарный объем не должен превышать 384 ГБ. База данных tempdb находится на подключенном диске SSD на всех уровнях служб.
 - Стоимость хранилища для отдельной базы данных равна суммарному объему хранилища данных и журналов, умноженному на цену единицы хранения для этого уровня служб. Стоимость базы данных tempdb включена в стоимость виртуального ядра. Сведения о цене на дополнительное хранилище см. на [странице цен на Базу данных SQL](https://azure.microsoft.com/pricing/details/sql-database/).
 
