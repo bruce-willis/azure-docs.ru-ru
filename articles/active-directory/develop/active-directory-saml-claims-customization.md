@@ -17,12 +17,12 @@ ms.date: 07/11/2017
 ms.author: celested
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: db529bf1e8ea4363c84cb365444ca367d428b162
-ms.sourcegitcommit: 65b399eb756acde21e4da85862d92d98bf9eba86
+ms.openlocfilehash: 4d7c9246b694fc1b5623ecd198e4ced330e78dde
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36318426"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579424"
 ---
 # <a name="customizing-claims-issued-in-the-saml-token-for-enterprise-applications-in-azure-active-directory"></a>Настройка утверждений, выпущенных в токене SAML для корпоративных приложений в Azure Active Directory
 Сегодня Azure Active Directory поддерживает единый вход в большинстве корпоративных приложений, включая предварительно интегрированные приложения в коллекции приложений Azure AD, а также пользовательских приложениях. Когда пользователь проходит аутентификацию для приложения в Azure AD с помощью протокола SAML 2.0, Azure AD отправляет токен в приложение (через запрос HTTP POST). Затем приложение проверяет и использует маркер для входа пользователя вместо запроса имени пользователя и пароля. Эти маркеры SAML содержат элементы информации о пользователе, которые называются "утверждениями".
@@ -131,7 +131,7 @@ ms.locfileid: "36318426"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Указатель статьей по управлению приложениями в Azure Active Directory](../active-directory-apps-index.md)
 * [Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](../application-config-sso-how-to-configure-federated-sso-non-gallery.md)
-* [Отладка единого входа на основе SAML в приложения в Azure Active Directory](active-directory-saml-debugging.md)
+* [Отладка единого входа на основе SAML в приложения в Azure Active Directory](howto-v1-debug-saml-sso-issues.md)
 
 <!--Image references-->
 [1]: ./media/active-directory-saml-claims-customization/user-attribute-section.png

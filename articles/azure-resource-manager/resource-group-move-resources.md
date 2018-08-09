@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 4f73b6d735997b663ca6769aaceaf363b6d3eda7
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: 69614fe84941ea2003d39de165c692b812d10785
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37346490"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503586"
 ---
 # <a name="move-resources-to-new-resource-group-or-subscription"></a>Перемещение ресурсов в новую группу ресурсов или подписку
 
@@ -38,7 +38,7 @@ ms.locfileid: "37346490"
 
 Вот некоторые важные особенности, которые следует учитывать перед перемещением ресурса. Проверив эти условия, можно избежать ошибок.
 
-1. Исходная и целевая подписка должны существовать в пределах одного [клиента Azure Active Directory](../active-directory/active-directory-howto-tenant.md). Используя Azure PowerShell или командную строку Azure, можно убедиться, что обе подписки имеют один и тот же идентификатор клиента.
+1. Исходная и целевая подписка должны существовать в пределах одного [клиента Azure Active Directory](../active-directory/develop/quickstart-create-new-tenant.md). Используя Azure PowerShell или командную строку Azure, можно убедиться, что обе подписки имеют один и тот же идентификатор клиента.
 
   Для Azure PowerShell:
 
@@ -139,7 +139,7 @@ ms.locfileid: "37346490"
 * Data Lake Store
 * DNS
 * Служба "Сетка событий Azure"
-* Концентраторы событий
+* концентраторы событий;
 * Кластеры HDInsight — см. раздел [Ограничения HDInsight](#hdinsight-limitations).
 * Центры Интернета вещей;
 * Key Vault
@@ -155,13 +155,13 @@ ms.locfileid: "37346490"
 * Панели мониторинга на портале
 * Power BI (Power BI Embedded и коллекция рабочих областей Power BI)
 * Общедоступный IP-адрес — см. [ограничения общедоступного IP-адреса](#pip-limitations)
-* Кэш Redis
+* кэш Redis;
 * Планировщик
 * поиска
 * Служебная шина Azure
 * Service Fabric
 * Служба SignalR
-* Служба хранилища
+* Хранилище
 * Служба хранилища (классическая) — см. раздел [Ограничения классического развертывания](#classic-deployment-limitations).
 * Stream Analytics — задание Stream Analytics в состоянии выполнения нельзя переместить.
 * Сервер базы данных SQL — база данных и сервер должны находиться в одной группе ресурсов. При перемещении сервера SQL Server все его базы данных также перемещаются. Такое поведение также характерно для баз данных SQL Azure и баз данных хранилища данных SQL Azure.
@@ -412,7 +412,7 @@ Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId $webapp.Res
 
 ## <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure
 
-Чтобы переместить существующие ресурсы в другую группу или подписку, используйте команду [az resource move](/cli/azure/resource?view=azure-cli-latest#az_resource_move). Укажите идентификаторы перемещаемых ресурсов. В следующем примере показано, как переместить несколько ресурсов в новую группу ресурсов. В параметре `--ids` укажите перемещаемый список идентификаторов ресурсов с разделителями-пробелами.
+Чтобы переместить существующие ресурсы в другую группу или подписку, используйте команду [az resource move](/cli/azure/resource?view=azure-cli-latest#az-resource-move). Укажите идентификаторы перемещаемых ресурсов. В следующем примере показано, как переместить несколько ресурсов в новую группу ресурсов. В параметре `--ids` укажите перемещаемый список идентификаторов ресурсов с разделителями-пробелами.
 
 ```azurecli
 webapp=$(az resource show -g OldRG -n ExampleSite --resource-type "Microsoft.Web/sites" --query id --output tsv)

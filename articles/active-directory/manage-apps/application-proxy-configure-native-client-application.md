@@ -15,12 +15,12 @@ ms.date: 01/31/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 589cf1d297a335c36725917dd7012d877d1dcaeb
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 85a7b133655a3b1e4ca60c28e695e3057b293fdc
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39363083"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39504521"
 ---
 # <a name="how-to-enable-native-client-apps-to-interact-with-proxy-applications"></a>Включение собственных клиентских приложений для взаимодействия с приложениями прокси
 
@@ -30,7 +30,7 @@ ms.locfileid: "39363083"
 
 ![Связь между конечными пользователями, Azure Active Directory и опубликованными приложениями](./media/application-proxy-configure-native-client-application/richclientflow.png)
 
-Используйте библиотеку аутентификации Azure AD, которая отвечает за аутентификацию и поддерживает многие клиентские среды, для публикации собственных приложений. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../develop/active-directory-authentication-scenarios.md#native-application-to-web-api). 
+Используйте библиотеку аутентификации Azure AD, которая отвечает за аутентификацию и поддерживает многие клиентские среды, для публикации собственных приложений. Прокси приложения вписывается в [сценарий вызова веб-API собственным приложением](../develop/authentication-scenarios.md#native-application-to-web-api). 
 
 В этой статье рассматриваются четыре действия, которые нужно выполнить, чтобы опубликовать собственное приложение с помощью прокси приложения и библиотеки аутентификации Azure AD. 
 
@@ -48,7 +48,7 @@ ms.locfileid: "39363083"
    ![Создание регистрации приложения](./media/application-proxy-configure-native-client-application/create.png)
 5. Нажмите кнопку **Создать**.
 
-Дополнительные сведения о создании регистрации приложения см. в разделе [Интеграция приложений с Azure Active Directory](./../develop/active-directory-integrating-applications.md).
+Дополнительные сведения о создании регистрации приложения см. в разделе [Интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md).
 
 
 ## <a name="step-3-grant-access-to-other-applications"></a>Шаг 3. Предоставление доступа для других приложений
@@ -96,6 +96,6 @@ HttpResponseMessage response = await httpClient.GetAsync("< Proxy App API Url >"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о блок-схеме собственного приложения см. в разделе [Из нативного приложения к веб-интерфейсу API](../develop/active-directory-authentication-scenarios.md#native-application-to-web-api).
+Дополнительные сведения о блок-схеме собственного приложения см. в разделе [Из нативного приложения к веб-интерфейсу API](../develop/authentication-scenarios.md#native-application-to-web-api).
 
 Дополнительные сведения о настройке см. в статье [Как прокси приложения Azure AD предоставляет единый вход?](application-proxy-single-sign-on.md)

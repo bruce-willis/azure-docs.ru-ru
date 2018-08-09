@@ -15,17 +15,17 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: 6bb59e4b63933500bc8571dca2422eec6c3456ee
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 611f3e70425cd6c80f8a976606dc6cd592571c6e
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129763"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503474"
 ---
 # <a name="connect-configuration-manager-to-log-analytics"></a>Подключение Configuration Manager к Log Analytics
 Среду System Center Configuration Manager можно подключить к Azure Log Analytics для синхронизации данных коллекций устройств и указания этих коллекций в Log Analytics и службе автоматизации Azure.  
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Поддержка в Log Analytics текущей версии System Center Configuration Manager, версии 1606 или более поздних версий.  
 
@@ -65,7 +65,7 @@ ms.locfileid: "37129763"
 1. В рабочей области **Администрирование** в Configuration Manager выберите **Соединитель OMS**. Откроется **мастер добавления подключений к OMS**. Щелкните **Далее**.
 2. На экране **Общие** убедитесь, что вы выполнили следующие действия и указали сведения по каждому пункту, а затем щелкните **Далее**.
 
-   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../active-directory/active-directory-integrating-applications.md).
+   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md).
    2. На портале Azure вы создали секретный ключ приложения для зарегистрированного приложения в Azure Active Directory.  
    3. На портале Azure вы указали зарегистрированное веб-приложение с разрешением на доступ к OMS.  
       ![Страница "Общие" мастера подключений к OMS](./media/log-analytics-sccm/sccm-console-general01.png)

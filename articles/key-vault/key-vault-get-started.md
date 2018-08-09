@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 05/10/2018
 ms.author: barclayn
-ms.openlocfilehash: 58a283f1ce5bd2fd78c4fa2038c3998aea1598c9
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 2d959eb9c4f55624d0d0915dd5dea4c62ba1f8e5
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070357"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505719"
 ---
 # <a name="get-started-with-azure-key-vault"></a>Приступая к работе с хранилищем ключей Azure
 Это руководство поможет вам приступить к работе с Azure Key Vault с использованием PowerShell. Здесь также объясняется, как выполнить следующие задачи:
@@ -206,7 +206,7 @@ $secret.Id
 Теперь хранилище ключей и ключ или секрет готовы для использования в приложениях. Необходимо авторизовать приложения для их использования.  
 
 ## <a id="register"></a>Регистрация приложения в Azure Active Directory
-Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-integrating-applications.md) или [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md)
+Обычно этот шаг выполняет разработчик на отдельном компьютере. Он не относится исключительно к Azure Key Vault. Пошаговые инструкции по регистрации приложения с помощью Azure Active Directory см. в статье [Интеграция приложений с Azure Active Directory](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) или [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../azure-resource-manager/resource-group-create-service-principal-portal.md)
 
 > [!IMPORTANT]
 > Чтобы завершить прохождение этого учебника, учетная запись, хранилище и приложение, которое вы будете регистрировать на этом шаге, должны находиться в одном каталоге Azure.

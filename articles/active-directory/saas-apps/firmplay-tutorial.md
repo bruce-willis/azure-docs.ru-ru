@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2017
 ms.author: jeedes
-ms.openlocfilehash: dacc133f1c6d15aa1fc886ab9086109951478929
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6e3d8a3951a42e448eff005b055b3cf5169179f1
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219906"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39443455"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-firmplay---employee-advocacy-for-recruiting"></a>Руководство. Интеграция Azure Active Directory с FirmPlay — Employee Advocacy for Recruiting
 
@@ -33,7 +33,7 @@ ms.locfileid: "36219906"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с FirmPlay — Employee Advocacy for Recruiting, вам потребуются следующие компоненты:
 
@@ -55,7 +55,7 @@ ms.locfileid: "36219906"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление FirmPlay — Employee Advocacy for Recruiting из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 
 ## <a name="adding-firmplay---employee-advocacy-for-recruiting-from-the-gallery"></a>Добавление FirmPlay — Employee Advocacy for Recruiting из коллекции
@@ -67,19 +67,19 @@ ms.locfileid: "36219906"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Нажмите кнопку **Добавить** в верхней части диалогового окна.
+1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **FirmPlay — Employee Advocacy for Recruiting**.
+1. В поле поиска введите **FirmPlay — Employee Advocacy for Recruiting**.
 
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/tutorial_firmplay_001.png)
 
-5. На панели результатов выберите **FirmPlay — Employee Advocacy for Recruiting** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. На панели результатов выберите **FirmPlay — Employee Advocacy for Recruiting** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/tutorial_firmplay_0001.png)
 
@@ -94,10 +94,10 @@ ms.locfileid: "36219906"
 Чтобы настроить и проверить единый вход Azure AD в FirmPlay, выполните следующие действия.
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя FirmPlay — Employee Advocacy for Recruiting](#creating-a-firmplay---employee-advocacy-for-recruiting-test-user)** требуется для дублирования пользователя Britta Simon в FirmPlay, который связан с представлением этого пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя FirmPlay — Employee Advocacy for Recruiting](#creating-a-firmplay---employee-advocacy-for-recruiting-test-user)** требуется для дублирования пользователя Britta Simon в FirmPlay, который связан с представлением этого пользователя в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -109,44 +109,44 @@ ms.locfileid: "36219906"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_01.png)
 
-3. В текстовом поле **URL-адрес для входа** раздела **Домены и URL-адреса приложения FirmPlay — Employee Advocacy for Recruiting** введите URL-адрес в следующем формате: `https://<your-subdomain>.firmplay.com/`
+1. В текстовом поле **URL-адрес для входа** раздела **Домены и URL-адреса приложения FirmPlay — Employee Advocacy for Recruiting** введите URL-адрес в следующем формате: `https://<your-subdomain>.firmplay.com/`
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_02.png)
 
     > [!NOTE] 
     > Обратите внимание, что это значение используется только в качестве примера. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, обратитесь в [службу поддержки FirmPlay — Employee Advocacy for Recruiting](mailto:engineering@firmplay.com). 
 
-4. В разделе **Сертификат подписи SAML** щелкните **Создание нового сертификата**.
+1. В разделе **Сертификат подписи SAML** щелкните **Создание нового сертификата**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_03.png)     
 
-5. В диалоговом окне **Создание нового сертификата** щелкните значок календаря и выберите **дату окончания срока действия**. Затем нажмите кнопку **Сохранить**.
+1. В диалоговом окне **Создание нового сертификата** щелкните значок календаря и выберите **дату окончания срока действия**. Затем нажмите кнопку **Сохранить**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_general_300.png)
 
-6. В разделе **Сертификат подписи SAML** выберите **Make new certificate active** (Сделать новый сертификат активным) и нажмите кнопку **Сохранить**.
+1. В разделе **Сертификат подписи SAML** выберите **Make new certificate active** (Сделать новый сертификат активным) и нажмите кнопку **Сохранить**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_04.png)
 
-7. Во всплывающем окне **Rollover certificate** (Сертификат восстановления) нажмите кнопку **ОК**.
+1. Во всплывающем окне **Rollover certificate** (Сертификат восстановления) нажмите кнопку **ОК**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_general_400.png)
 
-8. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере. 
+1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере. 
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_05.png) 
 
-9. В разделе **конфигурации FirmPlay — Employee Advocacy for Recruiting** щелкните **Настроить FirmPlay — Employee Advocacy for Recruiting**, чтобы открыть диалоговое окно **Настройка входа**.
+1. В разделе **конфигурации FirmPlay — Employee Advocacy for Recruiting** щелкните **Настроить FirmPlay — Employee Advocacy for Recruiting**, чтобы открыть диалоговое окно **Настройка входа**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_06.png) 
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_07.png)
 
-10. Для настройки единого входа для своего приложения обратитесь в [службу поддержки FirmPlay — Employee Advocacy for Recruiting](mailto:engineering@firmplay.com) и укажите следующие сведения: 
+1. Для настройки единого входа для своего приложения обратитесь в [службу поддержки FirmPlay — Employee Advocacy for Recruiting](mailto:engineering@firmplay.com) и укажите следующие сведения: 
 
     • скачанный **файл сертификата**;
 
@@ -168,21 +168,21 @@ ms.locfileid: "36219906"
 
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/create_aaduser_01.png) 
 
-2. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
+1. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
     
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/create_aaduser_02.png) 
 
-3. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
+1. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
  
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/firmplay-tutorial/create_aaduser_04.png) 
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -207,23 +207,23 @@ ms.locfileid: "36219906"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **FirmPlay — Employee Advocacy for Recruiting**.
+1. В списке приложений выберите **FirmPlay — Employee Advocacy for Recruiting**.
 
     ![Настройка единого входа](./media/firmplay-tutorial/tutorial_firmplay_50.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 
 

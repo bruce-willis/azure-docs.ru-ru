@@ -15,20 +15,20 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
-ms.openlocfilehash: f739917b201d5255716d22930d7c4bd9e6602f37
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 62a55672a4326df585fc84699dfd72424be362dc
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224523"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627497"
 ---
 # <a name="configure-named-locations-in-azure-active-directory"></a>Настройка именованных расположений в Azure Active Directory
 
 С помощью именованных расположений можно пометить доверенные диапазоны IP-адресов в вашей организации. Именованные расположения в Azure Active Directory используются в следующих контекстах:
 
-- обнаружение [событий риска](active-directory-reporting-risk-events.md) для уменьшения количества ложных положительные результатов;  
+- обнаружение [событий риска](reports-monitoring/concept-risk-events.md) для уменьшения количества ложных положительные результатов;  
 
-- [условный доступ на основе расположения](active-directory-conditional-access-locations.md).
+- [условный доступ на основе расположения](conditional-access/location-condition.md).
 
 
 В этой статье объясняется, как настроить именованные расположения в конкретной среде.
@@ -97,8 +97,8 @@ ms.locfileid: "39224523"
 
 - [Условный доступ в Azure Active Directory](active-directory-conditional-access-azure-portal.md)
 
-- [Условия расположения в условном доступе Azure Active Directory](active-directory-conditional-access-locations.md)
+- [Условия расположения в условном доступе Azure Active Directory](conditional-access/location-condition.md)
 
-- [События риска Azure Active Directory](active-directory-reporting-risk-events.md)
+- [События риска Azure Active Directory](reports-monitoring/concept-risk-events.md)
 
-- [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](active-directory-reporting-security-risky-sign-ins.md)  
+- [Отчет о событиях входа, представляющих риск, на портале Azure Active Directory](reports-monitoring/concept-risky-sign-ins.md)  

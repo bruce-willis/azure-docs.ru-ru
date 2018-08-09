@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/13/2018
 ms.author: jeedes
-ms.openlocfilehash: e664d9d337b4709b320fdbe1d8e7bd71df3441f9
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: c5422c9894c66348d571b757e50073d2a5501c7b
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39048214"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39440104"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-attendance-management-services"></a>Руководство по интеграции Azure Active Directory с Attendance Management Services
 
@@ -53,7 +53,7 @@ ms.locfileid: "39048214"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Attendance Management Services из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-attendance-management-services-from-the-gallery"></a>Добавление Attendance Management Services из коллекции
 Чтобы настроить интеграцию Attendance Management Services с Azure AD, вам потребуется добавить Attendance Management Services из коллекции в список управляемых приложений SaaS.
@@ -64,15 +64,15 @@ ms.locfileid: "39048214"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Attendance Management Services**, выберите **Attendance Management Services** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. В поле поиска введите **Attendance Management Services**, выберите **Attendance Management Services** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Attendance Management Services в списке результатов](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_addfromgallery.png)
 
@@ -85,10 +85,10 @@ ms.locfileid: "39048214"
 Чтобы настроить и проверить единый вход Azure AD в Attendance Management Services, вам потребуется выполнить следующие действия.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Attendance Management Services](#create-an-attendance-management-service-test-user)** требуется для создания соответствующего пользователя Britta Simon в Attendance Management Services, связанного с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Attendance Management Services](#create-an-attendance-management-service-test-user)** требуется для создания соответствующего пользователя Britta Simon в Attendance Management Services, связанного с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -100,11 +100,11 @@ ms.locfileid: "39048214"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Attendance Management Services** выполните указанные ниже действия.
+1. В разделе **Домены и URL-адреса приложения Attendance Management Services** выполните указанные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа для Attendance Management Services](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_url.png)
 
@@ -115,25 +115,25 @@ ms.locfileid: "39048214"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь к [группу поддержки Attendance Management Services](http://www.obcnet.jp/) для получения этих значений.
 
-4. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/attendancemanagementservices-tutorial/tutorial_general_400.png)
 
-6. В разделе **Конфигурация Attendance Management Services** щелкните **Настроить Attendance Management Services**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Quick Reference** (Краткий справочник).
+1. В разделе **Конфигурация Attendance Management Services** щелкните **Настроить Attendance Management Services**, чтобы открыть окно **Настройка единого входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Quick Reference** (Краткий справочник).
 
     ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_configure.png) 
 
-7. В другом окне браузера войдите на свой корпоративный сайт Attendance Management Services в качестве администратора.
+1. В другом окне браузера войдите на свой корпоративный сайт Attendance Management Services в качестве администратора.
 
-8. Щелкните **SAML authentication** (Аутентификация SAML) в разделе **Security management** (Управление безопасностью).
+1. Щелкните **SAML authentication** (Аутентификация SAML) в разделе **Security management** (Управление безопасностью).
 
     ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/user1.png)
 
-9. Выполните следующие действия:
+1. Выполните следующие действия:
 
     ![Конфигурация Attendance Management Services](./media/attendancemanagementservices-tutorial/user2.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "39048214"
 
     д. Установите флажок **Disable password authentication** (Отключить проверку пароля).
 
-    f. Щелкните **Registration** (Регистрация).
+    Е. Щелкните **Registration** (Регистрация).
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения. После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -165,15 +165,15 @@ ms.locfileid: "39048214"
 
     ![Кнопка "Azure Active Directory"](./media/attendancemanagementservices-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/attendancemanagementservices-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/attendancemanagementservices-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/attendancemanagementservices-tutorial/create_aaduser_04.png)
 
@@ -193,15 +193,15 @@ ms.locfileid: "39048214"
 
 1. Войдите на свой корпоративный сайт Attendance Management Services в качестве администратора.
 
-2. Щелкните **User management** (Управление пользователями) в разделе **Security management** (Управление безопасностью).
+1. Щелкните **User management** (Управление пользователями) в разделе **Security management** (Управление безопасностью).
 
     ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user5.png)
 
-3. Щелкните **New rules login** (Создать имя для входа на основе правил).
+1. Щелкните **New rules login** (Создать имя для входа на основе правил).
 
     ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user3.png)
 
-4. В разделе **OBCiD information** (Сведения OBCiD) сделайте следующее.
+1. В разделе **OBCiD information** (Сведения OBCiD) сделайте следующее.
 
     ![Добавление сотрудника](./media/attendancemanagementservices-tutorial/user4.png)
 
@@ -224,23 +224,23 @@ ms.locfileid: "39048214"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **Attendance Management Services**.
+1. Из списка приложений выберите **Attendance Management Services**.
 
     ![Ссылка на Attendance Management Services в списке "Приложения"](./media/attendancemanagementservices-tutorial/tutorial_attendancemanagementservices_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

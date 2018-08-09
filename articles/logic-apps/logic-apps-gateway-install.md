@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 07/20/2018
 ms.reviewer: yshoukry, LADocs
 ms.suite: integration
-ms.openlocfilehash: 09e3879ed91a0e9c6d27940cae53f3e3f0397d7b
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: 616e3d81d577fd30e65117ec15c65250d3b3e27e
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145212"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503654"
 ---
 # <a name="install-the-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -84,7 +84,7 @@ ms.locfileid: "39145212"
   > [!TIP]
   > Если вы зарегистрировались для использования предложения Office 365 и не предоставили действительного рабочего адреса электронной почты, то адрес для входа может выглядеть следующим образом: `username@domain.onmicrosoft.com` 
   >
-  > Чтобы использовать учетную запись Майкрософт, которая содержит [стандартную подписку Visual Studio](https://visualstudio.microsoft.com/vs/pricing/), сначала [создайте каталог (клиент) в Azure Active Directory](../active-directory/develop/active-directory-howto-tenant.md) или используйте каталог по умолчанию с помощью учетной записи Майкрософт. 
+  > Чтобы использовать учетную запись Майкрософт, которая содержит [стандартную подписку Visual Studio](https://visualstudio.microsoft.com/vs/pricing/), сначала [создайте каталог (клиент) в Azure Active Directory](../active-directory/develop/quickstart-create-new-tenant.md) или используйте каталог по умолчанию с помощью учетной записи Майкрософт. 
   > Добавьте в каталог пользователя с паролем, а затем предоставьте этому пользователю доступ к своей подписке. 
   > Затем вы можете войти в систему во время установки шлюза, используя эти имя пользователя и пароль.
 

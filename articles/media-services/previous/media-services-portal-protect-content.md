@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/25/2017
 ms.author: juliako
-ms.openlocfilehash: 8603716d30e1061ca9d600f2c053e90ff50c2433
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: c46faf2298ebaac4f40fb1d18cbfca83076e0d4f
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785883"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39423558"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
@@ -33,7 +33,7 @@ ms.locfileid: "33785883"
 
 1. На [портале](https://portal.azure.com/) выберите свою учетную запись Служб мультимедиа.
 
-2. Выберите **Параметры** > **Защита контента**.
+1. Выберите **Параметры** > **Защита контента**.
 
     ![Защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "33785883"
 
     a. **PlayReady and Widevine with MPEG-DASH** (PlayReady и Widevine с MPEG-DASH): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine.
 
-    Б. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
+    b. **PlayReady and Widevine with MPEG-DASH + FairPlay with HLS** (PlayReady и Widevine с MPEG-DASH + FairPlay с HLS): динамически шифрует поток MPEG-DASH, используя системы DRM PlayReady и Widevine. Этот параметр также шифрует потоки HLS, используя FairPlay.
 
     c. **PlayReady only with Smooth Streaming, HLS and MPEG-DASH** (PlayReady только с Smooth Streaming, HLS и MPEG-DASH): динамически шифрует потоки Smooth Streaming, HLS и MPEG-DASH, используя систему DRM PlayReady.
 
@@ -110,11 +110,11 @@ ms.locfileid: "33785883"
     
     д. **FairPlay only with HLS** (FairPlay только с HLS): динамически шифрует поток HLS, используя FairPlay.
 
-2. Чтобы включить шифрование FairPlay на колонке **Глобальные параметры системы защиты содержимого**, выберите **Конфигурация FairPlay**. Выберите **Сертификат приложения** и введите **Секретный ключ приложения**.
+1. Чтобы включить шифрование FairPlay на колонке **Глобальные параметры системы защиты содержимого**, выберите **Конфигурация FairPlay**. Выберите **Сертификат приложения** и введите **Секретный ключ приложения**.
 
     ![Тип шифрования](./media/media-services-portal-content-protection/media-services-content-protection009.png)
 
-3. Выбрав вариант шифрования, нажмите кнопку **Применить**.
+1. Выбрав вариант шифрования, нажмите кнопку **Применить**.
 
 >[!NOTE] 
 >Если вы планируете воспроизводить HLS-поток с шифрованием AES в Safari, см. [эту запись блога](https://azure.microsoft.com/blog/how-to-make-token-authorized-aes-encrypted-hls-stream-working-in-safari/).

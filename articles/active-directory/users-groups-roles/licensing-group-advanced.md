@@ -14,12 +14,12 @@ ms.component: users-groups-roles
 ms.date: 06/02/2017
 ms.author: curtand
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ecb0919b68516fdb886ea745d963349ff29f83b4
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 15b52920774a878cd386ced5966d507768a8af70
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37867330"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627395"
 ---
 # <a name="scenarios-limitations-and-known-issues-using-groups-to-manage-licensing-in-azure-active-directory"></a>Сценарии, ограничения и известные проблемы при использовании групп для управления лицензированием в Azure Active Directory
 
@@ -146,13 +146,13 @@ ms.locfileid: "37867330"
 
 ## <a name="use-audit-logs-to-monitor-group-based-licensing-activity"></a>Использование журналов аудита для наблюдения за активностью лицензирования на основе групп
 
-Можно использовать [журналы аудита Azure AD](./../active-directory-reporting-activity-audit-logs.md#audit-logs) для просмотра всех операций, связанных с лицензированием на основе группы, включая следующие сведения:
+Можно использовать [журналы аудита Azure AD](../reports-monitoring/concept-audit-logs.md#audit-logs) для просмотра всех операций, связанных с лицензированием на основе группы, включая следующие сведения:
 - кто изменил лицензии для групп;
 - когда система приступила к обработке изменения в лицензии для группы и когда она завершила обработку;
 - какие изменения были внесены в лицензию в результате назначения лицензии группе.
 
 >[!NOTE]
-> Журналы аудита доступны в большинстве колонок в разделе Azure Active Directory на портале. В зависимости от того, где вы просматриваете их, можно предварительно применить фильтры для отображения только тех действий, которые связаны с контекстом колонки. Если ожидаемые результаты не отображаются, проверьте [параметры фильтрации](./../active-directory-reporting-activity-audit-logs.md#filtering-audit-logs) или перейдите к неотфильтрованным журналам аудита в разделе [ **Azure Active Directory > Действия > Журналы аудита**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Audit).
+> Журналы аудита доступны в большинстве колонок в разделе Azure Active Directory на портале. В зависимости от того, где вы просматриваете их, можно предварительно применить фильтры для отображения только тех действий, которые связаны с контекстом колонки. Если ожидаемые результаты не отображаются, проверьте [параметры фильтрации](../reports-monitoring/concept-audit-logs.md#filtering-audit-logs) или перейдите к неотфильтрованным журналам аудита в разделе [ **Azure Active Directory > Действия > Журналы аудита**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Audit).
 
 ### <a name="find-out-who-modified-a-group-license"></a>Определение автора изменения лицензии для группы
 

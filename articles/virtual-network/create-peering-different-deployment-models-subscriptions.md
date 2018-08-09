@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
 ms.author: jdial;anavin
-ms.openlocfilehash: 045b433fdea2cfb97f3002fbe692ea8e4988fbb4
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
+ms.openlocfilehash: 4883791a32a65746a72afb63755ecf608dc840d9
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34726420"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503831"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Создание пиринга виртуальных сетей с разными моделями развертывания в разных подписках
 
@@ -36,7 +36,7 @@ ms.locfileid: "34726420"
 
 Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. В этом руководстве используются виртуальные сети, существующие в одном и том же регионе. Это руководство по созданию пиринга между виртуальными сетями в одном регионе. Пиринг можно создавать между виртуальными сетями в разных [поддерживаемых регионах](virtual-network-manage-peering.md#cross-region). Рекомендуется ознакомиться с [требованиями и ограничениями пиринга](virtual-network-manage-peering.md#requirements-and-constraints) перед созданием пиринга виртуальных сетей.
 
-При создании пиринга между виртуальными сетями, которые существуют в разных подписках, эти подписки должны быть связаны с одним клиентом Azure Active Directory. Если у вас еще нет клиента Azure Active Directory, можно быстро [создать его](../active-directory/develop/active-directory-howto-tenant.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-new-azure-ad-tenant). Вы можете соединить виртуальные сети в разных подписках и с разными клиентами Azure Active Directory, используя [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
+При создании пиринга между виртуальными сетями, которые существуют в разных подписках, эти подписки должны быть связаны с одним клиентом Azure Active Directory. Если у вас еще нет клиента Azure Active Directory, можно быстро [создать его](../active-directory/develop/quickstart-create-new-tenant.md?toc=%2fazure%2fvirtual-network%2ftoc.json#create-a-new-azure-ad-tenant). Вы можете соединить виртуальные сети в разных подписках и с разными клиентами Azure Active Directory, используя [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
 Для создания пиринга виртуальных сетей можно использовать [портал Azure](#portal), [интерфейс командной строки](#cli) Azure (Azure CLI) или Azure [PowerShell](#powershell). Щелкните любую из предыдущих ссылок на инструмент, чтобы перейти непосредственно к инструкциям по созданию пиринга виртуальных сетей с помощью выбранного инструмента.
 

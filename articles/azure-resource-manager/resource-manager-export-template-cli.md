@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/23/2018
 ms.author: tomfitz
-ms.openlocfilehash: 1d73142931a5cfa84cb24df7a85c799a0f508385
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: d4a1a687700badc550d37bf74f6a7e1680388897
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358835"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39440321"
 ---
 # <a name="export-azure-resource-manager-templates-with-azure-cli"></a>Экспорт шаблонов Azure Resource Manager с помощью Azure CLI
 
@@ -45,7 +45,7 @@ az group deployment create \
 
 ## <a name="save-template-from-deployment-history"></a>Сохранение шаблона из журнала развертываний
 
-Шаблон можно извлечь из журнала развертываний с помощью команды [az group deployment export](/cli/azure/group/deployment#az_group_deployment_export). В следующем примере сохраняется шаблон, который вы ранее развернули:
+Шаблон можно извлечь из журнала развертываний с помощью команды [az group deployment export](/cli/azure/group/deployment#az-group-deployment-export). В следующем примере сохраняется шаблон, который вы ранее развернули:
 
 ```azurecli
 az group deployment export --name NewStorage --resource-group ExampleGroup
@@ -56,7 +56,7 @@ az group deployment export --name NewStorage --resource-group ExampleGroup
 
 ## <a name="export-resource-group-as-template"></a>Экспорт группы ресурсов в виде шаблона
 
-Вместо извлечения шаблона из журнала развертываний можно получить шаблон, который представляет текущее состояние группы ресурсов. Для этого используйте команду [az group export](/cli/azure/group#az_group_export). Эта команда используется, когда в группе ресурсов внесено много изменений и ни один из существующих шаблонов не содержит всех изменений. Он будет моментальным снимком группы ресурсов, который можно использовать для повторного развертывания в той же группе ресурсов. Чтобы использовать экспортированный шаблон для других решений, его необходимо значительно изменить.
+Вместо извлечения шаблона из журнала развертываний можно получить шаблон, который представляет текущее состояние группы ресурсов. Для этого используйте команду [az group export](/cli/azure/group#az-group-export). Эта команда используется, когда в группе ресурсов внесено много изменений и ни один из существующих шаблонов не содержит всех изменений. Он будет моментальным снимком группы ресурсов, который можно использовать для повторного развертывания в той же группе ресурсов. Чтобы использовать экспортированный шаблон для других решений, его необходимо значительно изменить.
 
 ```azurecli
 az group export --name ExampleGroup

@@ -1,25 +1,19 @@
 ---
-title: Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения | Документация Майкрософт
-description: Сведения об использовании Caffe в кластере Azure HDInsight Spark для выполнения распределенного глубокого обучения.
+title: Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
+description: Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 services: hdinsight
-documentationcenter: ''
-author: xiaoyongzhu
-manager: asadk
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 71dcd1ad-4cad-47ad-8a9d-dcb7fa3c2ff9
+author: jasonwhowell
+ms.author: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/17/2017
-ms.author: xiaoyzhu
-ms.openlocfilehash: 646d6e4b8980b780d4691fa258aa0d36ff309fd6
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: a7873996d83dbc79b4d44c58bd964c274f9c7709
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054332"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39622921"
 ---
 # <a name="use-caffe-on-azure-hdinsight-spark-for-distributed-deep-learning"></a>Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения
 

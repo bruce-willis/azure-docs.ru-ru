@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 235ba5fd1365ed8b400edce3db22420369540cce
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: d96fd1eacc98e88dc8578b259781cc661cf85933
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39052675"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39442835"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -64,15 +64,15 @@ ms.locfileid: "39052675"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Щелкните **Корпоративные приложения** > **Все приложения**.
+1. Щелкните **Корпоративные приложения** > **Все приложения**.
 
     ![Окно "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, выберите **Новое приложение** в верхней части окна.
+1. Чтобы добавить новое приложение, выберите **Новое приложение** в верхней части окна.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **E Sales Manager Remix**, а затем выберите **E Sales Manager Remix** в списке результатов и щелкните **Добавить**.
+1. В поле поиска введите **E Sales Manager Remix**, а затем выберите **E Sales Manager Remix** в списке результатов и щелкните **Добавить**.
 
     ![E Sales Manager Remix в списке результатов](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_addfromgallery.png)
 
@@ -92,11 +92,11 @@ ms.locfileid: "39052675"
 
     ![Ссылка "Единый вход"][4]
 
-2. В окне **Единый вход** в поле **Режим единого входа** выберите **Вход на основе SAML**.
+1. В окне **Единый вход** в поле **Режим единого входа** выберите **Вход на основе SAML**.
  
     ![Окно "Единый вход"](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_samlbase.png)
 
-3. В разделе **URL-адреса и домены E Sales Manager Remix** выполните следующие действия:
+1. В разделе **URL-адреса и домены E Sales Manager Remix** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа для E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_url.png)
 
@@ -109,47 +109,47 @@ ms.locfileid: "39052675"
     > [!NOTE] 
     > Приведенные выше значения используются только для примера. Замените их фактическими значениями URL-адреса входа и идентификатора. Обратитесь к [группе поддержки клиентов E Sales Manager Remix](mailto:esupport@softbrain.co.jp), чтобы получить эти значения.
 
-4. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)** и сохраните файл сертификата на компьютере.
 
     ![Ссылки для скачивания сертификата в кодировке Base64](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_certificate.png) 
 
-5. Установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и выберите атрибут **emailaddress**.
+1. Установите флажок **Просмотреть и изменить все другие атрибуты пользователей** и выберите атрибут **emailaddress**.
     
     ![Окно "Атрибуты пользователя"](./media/esalesmanagerremix-tutorial/configure1.png)
 
     Откроется окно **Изменение атрибута**.
 
-6. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в формате *\<пространство_имен>/\<имя>* и сохраните его, чтобы использовать далее в этом руководстве.
+1. Скопируйте из него значения параметров **Пространство имен** и **Имя**. Создайте значение в формате *\<пространство_имен>/\<имя>* и сохраните его, чтобы использовать далее в этом руководстве.
 
     ![Окно "Изменение атрибута"](./media/esalesmanagerremix-tutorial/configure2.png)
 
-7. В разделе **Конфигурация E Sales Manager Remix**  выберите **Настроить E Sales Manager Remix**.
+1. В разделе **Конфигурация E Sales Manager Remix**  выберите **Настроить E Sales Manager Remix**.
 
     ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_configure.png) 
 
     Откроется окно **Настройка единого входа**
 
-8. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
+1. Из раздела **Краткий справочник** скопируйте URL-адрес выхода и URL-адрес службы единого входа SAML.
 
-9. Щелкните **Сохранить**.
+1. Щелкните **Сохранить**.
 
     ![Кнопка "Сохранить"](./media/esalesmanagerremix-tutorial/tutorial_general_400.png)
 
-10. Войдите в приложение E Sales Manager Remix в качестве администратора.
+1. Войдите в приложение E Sales Manager Remix в качестве администратора.
 
-11. Выберите действие **To Administrator Menu** (К меню администратора) в правом верхнем углу.
+1. Выберите действие **To Administrator Menu** (К меню администратора) в правом верхнем углу.
 
     ![Команда "To Administrator Menu" (К меню администратора)](./media/esalesmanagerremix-tutorial/configure4.png)
 
-12. В левой области выберите **System settings** > **Cooperation with external system** (Параметры системы > Взаимодействие с внешней системой).
+1. В левой области выберите **System settings** > **Cooperation with external system** (Параметры системы > Взаимодействие с внешней системой).
 
     ![Ссылки "Параметры системы" и "Взаимодействие с внешней системой"](./media/esalesmanagerremix-tutorial/configure5.png)
     
-13. В окне **Cooperation with external system** (Взаимодействие с внешней системой) выберите **SAML**.
+1. В окне **Cooperation with external system** (Взаимодействие с внешней системой) выберите **SAML**.
 
     ![Окно "Взаимодействие с внешней системой"](./media/esalesmanagerremix-tutorial/configure6.png)
 
-14. В разделе **SAML authentication setting** (Настройка аутентификации SAML) выполните следующие действия:
+1. В разделе **SAML authentication setting** (Настройка аутентификации SAML) выполните следующие действия:
 
     ![Раздел "SAML authentication setting" (Настройка аутентификации SAML)](./media/esalesmanagerremix-tutorial/configure3.png)
     
@@ -163,7 +163,7 @@ ms.locfileid: "39052675"
 
     д. Чтобы передать скачанный с портала Azure сертификат, щелкните **File selection** (Выбор файла).
 
-    f. В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
+    Е. В поле **ID provider login URL** (URL-адрес входа поставщика удостоверений) вставьте URL-адрес службы единого входа SAML, скопированный на портале Azure.
 
     ж. В поле **Identity Provider Logout URL** (URL-адрес выхода поставщика удостоверений) вставьте URL-адрес выхода, скопированный на портале Azure.
 
@@ -183,17 +183,17 @@ ms.locfileid: "39052675"
 
     ![Ссылка на Azure Active Directory](./media/paloaltoadmin-tutorial/create_aaduser_01.png)
 
-2. Чтобы отобразить список активных пользователей, выберите **Пользователи и группы** > **Все пользователи**.
+1. Чтобы отобразить список активных пользователей, выберите **Пользователи и группы** > **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/paloaltoadmin-tutorial/create_aaduser_02.png)
 
-3. В верхней части окна **Все пользователи** выберите **Добавить**.
+1. В верхней части окна **Все пользователи** выберите **Добавить**.
 
     ![Кнопка "Добавить"](./media/paloaltoadmin-tutorial/create_aaduser_03.png)
     
     Откроется окно **Пользователь**.
 
-4. В окне **Пользователь** сделайте следующее.
+1. В окне **Пользователь** сделайте следующее.
 
     ![Окно пользователя](./media/paloaltoadmin-tutorial/create_aaduser_04.png)
 
@@ -209,15 +209,15 @@ ms.locfileid: "39052675"
 
 1. Войдите в приложение E Sales Manager Remix в качестве администратора.
 
-2. Выберите **To Administrator Menu** (К меню администратора) в меню в правом верхнем углу.
+1. Выберите **To Administrator Menu** (К меню администратора) в меню в правом верхнем углу.
 
     ![Конфигурация E Sales Manager Remix](./media/esalesmanagerremix-tutorial/configure4.png)
 
-3. Выберите **Your company's settings** > **Maintenance of departments and employees** (Параметры вашей компании > Обслуживание отделов и сотрудников), а затем щелкните **Employees registered** (Зарегистрированные сотрудники).
+1. Выберите **Your company's settings** > **Maintenance of departments and employees** (Параметры вашей компании > Обслуживание отделов и сотрудников), а затем щелкните **Employees registered** (Зарегистрированные сотрудники).
 
     ![Вкладка "Employees registered" (Зарегистрированные сотрудники)](./media/esalesmanagerremix-tutorial/user1.png)
 
-4. В разделе **New employee registration** (Регистрация нового сотрудника) сделайте следующее:
+1. В разделе **New employee registration** (Регистрация нового сотрудника) сделайте следующее:
     
     ![Раздел "New employee registration" (Регистрация нового сотрудника)](./media/esalesmanagerremix-tutorial/user2.png)
 
@@ -229,7 +229,7 @@ ms.locfileid: "39052675"
 
     d. Выберите **Регистрация**.
 
-5. Чтобы позднее выполнить вход от имени администратора, войдите с учетными данными пользователя с правами администратора, и в правом верхнем углу выберите действие **To Administrator Menu** (К меню администратора).
+1. Чтобы позднее выполнить вход от имени администратора, войдите с учетными данными пользователя с правами администратора, и в правом верхнем углу выберите действие **To Administrator Menu** (К меню администратора).
 
     ![Команда "To Administrator Menu" (К меню администратора)](./media/esalesmanagerremix-tutorial/configure4.png)
 
@@ -243,23 +243,23 @@ ms.locfileid: "39052675"
 
     ![Ссылки "Корпоративные приложения" и "Все приложения"][201] 
 
-2. Из списка **Приложения** выберите **E Sales Manager Remix**.
+1. Из списка **Приложения** выберите **E Sales Manager Remix**.
 
     ![Ссылка на приложение E Sales Manager Remix](./media/esalesmanagerremix-tutorial/tutorial_esalesmanagerremix_app.png)  
 
-3. В области слева выберите **Пользователи и группы**.
+1. В области слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**, затем в области **Добавление назначения** щелкните **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**, затем в области **Добавление назначения** щелкните **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В окне **Пользователи и группы** в списке **Пользователи** выберите **Britta Simon**.
+1. В окне **Пользователи и группы** в списке **Пользователи** выберите **Britta Simon**.
 
-6. Нажмите кнопку **Select** (Выбрать).
+1. Нажмите кнопку **Select** (Выбрать).
 
-7. В окне **Добавление назначения** выберите **Назначить**.
+1. В окне **Добавление назначения** выберите **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

@@ -16,12 +16,12 @@ ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 911e65719bff0a86e3280482296bbb320fd30377
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: fb52949bf5616c8639caa1f3fab860597648ec89
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801836"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39504596"
 ---
 # <a name="determine-hybrid-identity-lifecycle-adoption-strategy"></a>Определение стратегии выбора жизненного цикла гибридной идентификации
 В этом упражнении вы определите стратегию управления идентификацией для решений гибридной идентификации в соответствии с бизнес-требованиями, определенными в разделе [Определение задач управления гибридной идентификацией](active-directory-hybrid-identity-design-considerations-hybrid-id-management-tasks.md).
@@ -73,7 +73,7 @@ ms.locfileid: "34801836"
 
 ## <a name="integration-with-other-3rd-party-providers"></a>Интеграция со сторонними поставщиками
 
-Azure Active Directory предоставляет единый вход и расширенные возможности защиты доступа для тысяч приложений SaaS и локальных веб-приложений. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-integrating-applications.md).
+Azure Active Directory предоставляет единый вход и расширенные возможности защиты доступа для тысяч приложений SaaS и локальных веб-приложений. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](develop/quickstart-v1-integrate-apps-with-azure-ad.md).
 
 ## <a name="define-synchronization-management"></a>Организация управления синхронизацией
 Интеграция локальных каталогов с Azure AD помогает повысить продуктивность пользователей, так как используется единая идентификация для доступа к облачным и локальным ресурсам. Благодаря этой интеграции пользователи и организации получат следующие преимущества:

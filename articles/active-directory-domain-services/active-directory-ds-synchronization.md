@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: maheshu
-ms.openlocfilehash: 463113731d1c4b4d7dfb5b81d429a8b7ffb74b1b
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 87ee4f2cbdd09a9284668ea298c0b3c3b1439c15
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218866"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503021"
 ---
 # <a name="synchronization-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация в управляемом домене доменных служб Azure AD
 На следующей схеме показано, как работает синхронизация в управляемых доменах доменных служб Azure AD.
@@ -60,7 +60,7 @@ ms.locfileid: "36218866"
 ## <a name="how-specific-attributes-are-synchronized-to-your-managed-domain"></a>Синхронизация определенных атрибутов с управляемым доменом
 В следующей таблице перечислены некоторые распространенные атрибуты, а также описывается, как они синхронизируются с управляемым доменом.
 
-| Атрибут в управляемом домене | Источник | Заметки |
+| Атрибут в управляемом домене | Источник | Примечания |
 |:--- |:--- |:--- |
 | Имя участника-пользователя (UPN) |Атрибут UPN пользователя в клиенте Azure AD |Атрибут UPN из клиента Azure AD синхронизируется с управляемым доменом "как есть". Поэтому самый надежный способ входа в управляемый домен — это с помощью имени участника-пользователя. |
 | SAMAccountName |Атрибут mailNickname пользователя в клиенте Azure AD или автоматически созданный атрибут |Атрибут SAMAccountName формируется из атрибута mailNickname в клиенте Azure AD. Если несколько учетных записей пользователей имеют одинаковый атрибут mailNickname, то SAMAccountName создается автоматически. Если длина атрибута mailNickname пользователя или префикс имени участника-пользователя превышает 20 знаков, то SAMAccountName создается автоматически, чтобы не превышать ограничение в 20 знаков, установленное для атрибутов SAMAccountName. |

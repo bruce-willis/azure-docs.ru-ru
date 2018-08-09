@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/25/2017
 ms.author: jeedes
-ms.openlocfilehash: a5f599295c9a6b74f9cb0fbd81365da924aa7002
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 8676ae32de72a52f88d212d225610053b7ee5c4c
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39047150"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39441482"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-infor-retail--information-management"></a>Руководство. Интеграция Azure Active Directory с приложением Infor Retail – Information Management
 
@@ -53,7 +53,7 @@ ms.locfileid: "39047150"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Infor Retail – Information Management из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-infor-retail--information-management-from-the-gallery"></a>Добавление Infor Retail – Information Management из коллекции
 Чтобы настроить интеграцию Infor Retail – Information Management с Azure AD, необходимо добавить Infor Retail – Information Management из коллекции в список управляемых приложений SaaS.
@@ -64,15 +64,15 @@ ms.locfileid: "39047150"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Infor Retail – Information Management**, на панели результатов выберите **Infor Retail – Information Management** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. В поле поиска введите **Infor Retail – Information Management**, на панели результатов выберите **Infor Retail – Information Management** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Infor Retail – Information Management в списке результатов](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_addfromgallery.png)
 
@@ -87,10 +87,10 @@ ms.locfileid: "39047150"
 Чтобы настроить и проверить единый вход Azure AD в Infor Retail – Information Management, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Infor Retail – Information Management](#create-an-infor-retail--information-management-test-user)** требуется для создания пользователя Britta Simon в Infor Retail – Information Management, связанного с представлением этого же пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Infor Retail – Information Management](#create-an-infor-retail--information-management-test-user)** требуется для создания пользователя Britta Simon в Infor Retail – Information Management, связанного с представлением этого же пользователя в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -102,11 +102,11 @@ ms.locfileid: "39047150"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_samlbase.png)
 
-3. Если вы хотите настроить приложение в режиме, инициированном поставщиком удостоверений, то в разделе **Домены и URL-адреса приложения Infor Retail – Information Management** сделайте следующее:
+1. Если вы хотите настроить приложение в режиме, инициированном поставщиком удостоверений, то в разделе **Домены и URL-адреса приложения Infor Retail – Information Management** сделайте следующее:
 
     ![Поставщик удостоверений со сведениями для единого входа в разделе "Домены и URL-адреса приложения Infor Retail – Information Management"](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_url.png)
 
@@ -118,7 +118,7 @@ ms.locfileid: "39047150"
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.mingle.infor.com/sp/ACS.saml2`.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 
     ![Поставщика услуг со сведениями для единого входа в разделе "Домены и URL-адреса приложения Infor Retail – Information Management"](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_url1.png)
 
@@ -127,15 +127,15 @@ ms.locfileid: "39047150"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Infor Retail – Information Management](mailto:innovate@infor.com). 
 
-5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_certificate.png) 
 
-6. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/inforretailinformationmanagement-tutorial/tutorial_general_400.png)
     
-7. Чтобы настроить единый вход на стороне **Infor Retail – Information Management** , необходимо отправить скачанный **XML-файл метаданных** в [службу поддержки Infor Retail – Information Management](mailto:innovate@infor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Infor Retail – Information Management** , необходимо отправить скачанный **XML-файл метаданных** в [службу поддержки Infor Retail – Information Management](mailto:innovate@infor.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -152,15 +152,15 @@ ms.locfileid: "39047150"
 
     ![Кнопка "Azure Active Directory"](./media/inforretailinformationmanagement-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/inforretailinformationmanagement-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/inforretailinformationmanagement-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/inforretailinformationmanagement-tutorial/create_aaduser_04.png)
 
@@ -188,23 +188,23 @@ ms.locfileid: "39047150"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **Infor Retail – Information Management**.
+1. В списке приложений выберите **Infor Retail – Information Management**.
 
     ![В списке приложений выберите Infor Retail – Information Management.](./media/inforretailinformationmanagement-tutorial/tutorial_inforretailinformationmanagement_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

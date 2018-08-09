@@ -15,12 +15,12 @@ ms.workload: web
 ms.date: 6/7/2017
 ms.author: mlearned
 ms.custom: Jenkins
-ms.openlocfilehash: 2b568bd22858a42178e2821e0e97a3b4ebdfccd5
-ms.sourcegitcommit: 9d317dabf4a5cca13308c50a10349af0e72e1b7e
+ms.openlocfilehash: 1796e9f76e39334c8bbdd03463a0f91e9b47cb17
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28926936"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39421310"
 ---
 # <a name="deploy-to-azure-app-service-with-jenkins-and-the-azure-cli"></a>Развертывание в службу приложений Azure с помощью Jenkins и Azure CLI
 Для развертывания веб-приложения Java в Azure можно использовать Azure CLI в [конвейере Jenkins](https://jenkins.io/doc/book/pipeline/). В этом учебнике мы создадим конвейер CI/CD на виртуальной машине Azure, включая следующие задачи:
@@ -38,7 +38,7 @@ ms.locfileid: "28926936"
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 ## <a name="create-and-configure-jenkins-instance"></a>Создание и настройка экземпляра Jenkins
-Если у вас нет главного экземпляра, воспользуйтесь [шаблоном решений](install-jenkins-solution-template.md), который по умолчанию содержит необходимый подключаемый модуль [Учетные данные Azure](https://plugins.jenkins.io/azure-credentials). 
+Если у вас нет главного экземпляра Jenkins, воспользуйтесь [шаблоном решений](install-jenkins-solution-template.md), который по умолчанию содержит необходимый подключаемый модуль [Учетные данные Azure](https://plugins.jenkins.io/azure-credentials). 
 
 Подключаемый модуль учетных данных Azure позволяет хранить учетные данные субъекта-службы Microsoft Azure в Jenkins. В версии 1.2 добавлена соответствующая поддержка, поэтому конвейер Jenkins может получать учетные данные Azure. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "28926936"
 * На панели мониторинга Jenkins последовательно выберите **Manage Jenkins -> Plugin Manager ->** (Управление Jenkins -> Диспетчер подключаемых модулей) и выполните поиск **учетных данных Azure**. 
 * Если используется версия более ранняя, чем 1.2, обновите подключаемый модуль.
 
-В главном экземпляре Jenkins также требуются Java JDK и Maven. Чтобы выполнить установку, войдите в главный экземпляр с помощью SSH-подключения и выполните следующие команды:
+В главном экземпляре Jenkins также требуются Java JDK и Maven. Чтобы выполнить установку, войдите в главный экземпляр Jenkins с помощью SSH-подключения и выполните следующие команды:
 ```bash
 sudo apt-get install -y openjdk-7-jdk
 sudo apt-get install -y maven
@@ -63,7 +63,7 @@ sudo apt-get install -y maven
 
 ## <a name="create-an-azure-app-service-for-deploying-the-java-web-app"></a>Создание службы приложений Azure для развертывания веб-приложения Java
 
-Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью команды CLI [az appservice plan create](/cli/azure/appservice/plan#az_appservice_plan_create). От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют ресурсы, которые позволяют сэкономить при размещении нескольких приложений. 
+Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью команды CLI [az appservice plan create](/cli/azure/appservice/plan#az-appservice-plan-create). От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют ресурсы, которые позволяют сэкономить при размещении нескольких приложений. 
 
 ```azurecli-interactive
 az appservice plan create \
@@ -92,7 +92,7 @@ az appservice plan create \
 
 ### <a name="create-an-azure-web-app"></a>Создание веб-приложения Azure
 
- С помощью команды CLI [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create) создайте определение веб-приложения в плане службы приложений `myAppServicePlan`. Определение веб-приложения предоставляет URL-адрес для доступа к приложению и настраивает несколько параметров для развертывания кода в Azure. 
+ С помощью команды CLI [az webapp create](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create) создайте определение веб-приложения в плане службы приложений `myAppServicePlan`. Определение веб-приложения предоставляет URL-адрес для доступа к приложению и настраивает несколько параметров для развертывания кода в Azure. 
 
 ```azurecli-interactive
 az webapp create \
@@ -122,7 +122,7 @@ az webapp create \
 
 ### <a name="configure-java"></a>Настройка Java 
 
-Настройте конфигурацию среды выполнения Java, необходимую для работы приложения, с помощью команды [az appservice web config update](/cli/azure/appservice/web/config#az_appservice_web_config_update).
+Настройте конфигурацию среды выполнения Java, необходимую для работы приложения, с помощью команды [az appservice web config update](/cli/azure/appservice/web/config#az-appservice-web-config-update).
 
 Следующая команда настраивает веб-приложение для запуска в Java 8 JDK и [Apache Tomcat](http://tomcat.apache.org/) 8.0.
 

@@ -4,23 +4,23 @@ description: Из этой статьи вы узнаете, как добави
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
-ms.author: edett
-manager: jhubbard
+ms.author: anshan
+manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/21/2017
-ms.openlocfilehash: 1cc8518e84bd9fe7a1f03a2f5d6ccdbac8fb78e3
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: b6beecbf64cee925f62ac4c82919926fcb79940a
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36330600"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627378"
 ---
 # <a name="how-to-add-an-iot-hub-event-source-to-time-series-insights-environment"></a>Как добавить в среду службы "Аналитика временных рядов Azure" источник событий Центра Интернета вещей
 Из этой статьи вы узнаете, как с помощью портала Azure добавить в среду службы "Аналитика временных рядов" источник события, который считывает данные из Центра Интернета вещей.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 - Создайте среду "Аналитика временных рядов". Дополнительные сведения см. в статье о [создании среды службы "Аналитика временных рядов" на портале Azure](time-series-insights-get-started.md). 
 - Создайте Центр Интернета вещей. Дополнительные сведения о Центрах Интернета вещей см. в статье [Создание Центра Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-create-through-portal.md).
 - В Центр Интернета вещей должны отправляться активные события сообщений.
@@ -93,7 +93,7 @@ ms.locfileid: "36330600"
 
 11. Выберите **Создать**, чтобы добавить новый источник событий.
 
-   ![Нажмите кнопку "Создать"](media/time-series-insights-how-to-add-an-event-source-iothub/4-create-button.png)
+   ![Щелкните Создать. ](media/time-series-insights-how-to-add-an-event-source-iothub/4-create-button.png)
 
    После создания источника событий Time Series Insights автоматически запустит передачу данных в среду.
 

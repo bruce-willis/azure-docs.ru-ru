@@ -12,15 +12,15 @@ ms.component: domains
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: ergreenl
-ms.openlocfilehash: 8ae99534916ce258dcab01ce2e37db1ffd809381
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 72e22fbe61b4e30191bbac553709241e1b13f1f5
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358758"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502255"
 ---
 # <a name="suspended-domains"></a>Приостановленные домены
 Когда доменные службы Azure Active Directory (Azure AD DS) в течение длительного периода времени не обслуживают управляемый домен, его работа приостанавливается. Эта статья о том, почему работа управляемых доменов приостанавливается и каким образом можно ее возобновить.

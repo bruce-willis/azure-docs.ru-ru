@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2018
 ms.author: sethm
-ms.openlocfilehash: 9c38f74cd4499fad1feaadb6c1bbc99da791ebd6
-ms.sourcegitcommit: 11321f26df5fb047dac5d15e0435fce6c4fde663
+ms.openlocfilehash: 76c929f482659bb81e0cabb7fb6bffa5331082bf
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37888373"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502142"
 ---
 # <a name="active-directory-role-based-access-control-preview"></a>Управление доступом к Active Directory на основе ролей (предварительная версия)
 
@@ -57,7 +57,7 @@ Microsoft Azure предоставляет интегрированную сис
 
 Так как пример приложения — консольное приложение, необходимо зарегистрировать собственное приложение и добавить разрешения API для **Microsoft.EventHub** в набор необходимых разрешений. Собственным приложениям также необходим **URI перенаправления** в Azure AD, выступающий в качестве идентификатора. URI не должен быть сетевым адресом. В этом примере используйте `http://eventhubs.microsoft.com`, так как в образце кода уже используется этот URI.
 
-Подробные шаги по регистрации описаны в [этом руководстве](../active-directory/develop/active-directory-integrating-applications.md). Выполните следующие действия, чтобы зарегистрировать **собственное** приложение, а затем следуйте инструкциям по обновлению, чтобы добавить API **Microsoft.EventHub** к необходимым разрешениям. Выполняя эти действия, запишите значения **TenantId** и **ApplicationId**, так как они необходимы для запуска приложения.
+Подробные шаги по регистрации описаны в [этом руководстве](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md). Выполните следующие действия, чтобы зарегистрировать **собственное** приложение, а затем следуйте инструкциям по обновлению, чтобы добавить API **Microsoft.EventHub** к необходимым разрешениям. Выполняя эти действия, запишите значения **TenantId** и **ApplicationId**, так как они необходимы для запуска приложения.
 
 ### <a name="run-the-app"></a>Запуск приложения
 

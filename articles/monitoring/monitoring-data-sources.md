@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/05/2018
 ms.author: bwren
-ms.openlocfilehash: 262099bbe45e483efd269445aa8042b30668ebe3
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 48cbfac78b41b47419799584837e094d45757628
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036529"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627463"
 ---
 # <a name="sources-of-monitoring-data-in-azure"></a>Источники данных мониторинга в Azure
 Эта статья описывает данные, доступные для мониторинга работоспособности и производительности ресурсов Azure, а также выполняющихся на их базе приложений.  Эти данные можно собирать и анализировать с помощью средств, описанных в разделе [Сбор данных мониторинга в Azure](monitoring-data-collection.md).
@@ -42,7 +42,7 @@ ms.locfileid: "39036529"
 
 
 ### <a name="azure-active-directory-audit-logs"></a>Журналы аудита Azure Active Directory
-[Отчеты Azure Active Directory](../active-directory/active-directory-reporting-azure-portal.md) включают в себя журнал действий входа и журнал аудита изменений, внесенных в пределах конкретного клиента. Сейчас невозможно объединить данные аудита Azure Active Directory с другими данными мониторинга, так как они доступны только через Azure Active Directory и [API отчетов Azure Active Directory](../active-directory/active-directory-reporting-api-getting-started-azure-portal.md).
+[Отчеты Azure Active Directory](../active-directory/reports-monitoring/overview-reports.md) включают в себя журнал действий входа и журнал аудита изменений, внесенных в пределах конкретного клиента. Сейчас невозможно объединить данные аудита Azure Active Directory с другими данными мониторинга, так как они доступны только через Azure Active Directory и [API отчетов Azure Active Directory](../active-directory/reports-monitoring/concept-reporting-api.md).
 
 
 ## <a name="azure-services"></a>Службы Azure

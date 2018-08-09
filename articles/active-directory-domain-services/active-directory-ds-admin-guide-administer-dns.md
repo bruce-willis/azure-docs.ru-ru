@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: maheshu
-ms.openlocfilehash: d8559df366bdd9c1439f2ff8c7b7ebc1a7c66960
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: f20b2859f72087e208e8963fb18b297c7c670f4f
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36334196"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39504290"
 ---
 # <a name="administer-dns-on-an-azure-ad-domain-services-managed-domain"></a>Администрирование DNS в управляемых доменах доменных служб Azure AD
 Доменные службы Azure Active Directory включают DNS-сервер, который обеспечивает разрешение доменных имен (DNS) для управляемого домена. Иногда вам может потребоваться настроить DNS в управляемом домене. У вас может возникнуть необходимость создать записи DNS для компьютеров, не присоединенных к домену, настроить виртуальные IP-адреса для балансировщиков нагрузки или внешние DNS-серверы пересылки. По этой причине пользователи, принадлежащие к группе "Администраторы контроллера домена AAD", получают права на администрирование DNS в управляемом домене.

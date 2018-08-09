@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 05/23/2018
 ms.author: maheshu
-ms.openlocfilehash: 340193f191bbdbe658769f9265f9e63844481c32
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: b6651c038a2b3abd15b8b0587e6a0e95832401b1
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36265275"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502317"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 В этой статье показано, как включить доменные службы Azure Active Directory (Azure AD DS) с помощью портала Azure.

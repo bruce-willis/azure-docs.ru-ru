@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6cd6b139699b38a06a8e3f9fce5eb6e24fe24654
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 99f877a0002e9a631bcfdabdbea51fcf2ca1a2c1
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214181"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39626598"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
 
@@ -53,7 +53,7 @@ ms.locfileid: "39214181"
 
 ### <a name="sign-in-failure-reasons-on-the-azure-active-directory-admin-center-needs-premium-license"></a>Причины сбоя единого входа в центре администрирования Azure Active Directory (требуется лицензия Premium)
 
-Если к клиенту привязана лицензия Azure AD Premium, вы можете также изучить [отчет о действиях при входе](../active-directory-reporting-activity-sign-ins.md) в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/).
+Если к клиенту привязана лицензия Azure AD Premium, вы можете также изучить [отчет о действиях при входе](../reports-monitoring/concept-sign-ins.md) в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/).
 
 ![Центр администрирования Azure Active Directory — отчет о действиях входа](./media/active-directory-aadconnect-pass-through-authentication/pta4.png)
 

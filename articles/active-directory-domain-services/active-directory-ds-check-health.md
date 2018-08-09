@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/12/2018
 ms.author: ergreenl
-ms.openlocfilehash: ffb00ce85a06812dfc42dfbbba74f712c1877615
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a9248e2310e509bbc4f527608246b47543a03fc4
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36212395"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502183"
 ---
 # <a name="check-the-health-of-an-azure-ad-domain-services-managed-domain"></a>Проверка работоспособности управляемого домена доменных служб Azure AD
 

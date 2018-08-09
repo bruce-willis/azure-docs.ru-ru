@@ -6,17 +6,18 @@ author: ashannon7
 ms.service: time-series-insights
 ms.topic: tutorial
 ms.date: 06/04/2018
-ms.author: bryanla
-ms.openlocfilehash: b57e688b5f830c8c7d34315a68be94e4e4c99466
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.author: anshan
+manager: cshankar
+ms.openlocfilehash: 7faec1608845d218a738c70f147f79248a549dde
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295853"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39626778"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство. Создание среды службы "Аналитика временных рядов Azure"
 
-Это руководство поможет вам создать среду "Аналитика временных рядов" (TSI), заполненной данными из имитированных устройств. Из этого руководства вы узнаете, как выполнять такие задачи:
+Это руководство поможет вам создать среду "Аналитика временных рядов" (TSI), заполненной данными из имитированных устройств. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание среды TSI 
@@ -25,7 +26,7 @@ ms.locfileid: "36295853"
 > * запуск имитации устройств для потоковой передачи данных в среду TSI;
 > * проверка имитированных данных телеметрии.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
 

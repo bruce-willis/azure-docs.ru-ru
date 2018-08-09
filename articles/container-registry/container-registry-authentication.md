@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/23/2018
 ms.author: stevelas
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c8fcebae21d73db75e19bd1091faa8f389f0ba40
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 30ca8fe89105584b1062c5a068e107bdfde154fc
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32165523"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579526"
 ---
 # <a name="authenticate-with-a-private-docker-container-registry"></a>Аутентификация с помощью частного реестра контейнеров Docker
 
@@ -26,7 +26,7 @@ ms.locfileid: "32165523"
 
 ## <a name="individual-login-with-azure-ad"></a>Отдельный вход с помощью Azure AD
 
-При работе с реестром напрямую, например при извлечении образов на рабочую станцию разработки и отправке образов с нее, выполняйте аутентификацию с помощью команды [az acr login](/cli/azure/acr?view=azure-cli-latest#az_acr_login) в [Azure CLI](/cli/azure/install-azure-cli).
+При работе с реестром напрямую, например при извлечении образов на рабочую станцию разработки и отправке образов с нее, выполняйте аутентификацию с помощью команды [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login) в [Azure CLI](/cli/azure/install-azure-cli).
 
 ```azurecli
 az acr login --name <acrName>
@@ -36,7 +36,7 @@ az acr login --name <acrName>
 
 ## <a name="service-principal"></a>Субъект-служба
 
-Можно назначить [субъект-службу](../active-directory/develop/active-directory-application-objects.md) для реестра, и приложение или служба сможет использовать его для автоматической аутентификации. Использование субъектов-служб обеспечивает [доступ к реестру на основе ролей](../role-based-access-control/role-assignments-portal.md), и одному реестру можно назначить несколько субъектов-служб. Применение нескольких субъектов-служб позволяет определить разные права доступа для приложений.
+Можно назначить [субъект-службу](../active-directory/develop/app-objects-and-service-principals.md) для реестра, и приложение или служба сможет использовать его для автоматической аутентификации. Использование субъектов-служб обеспечивает [доступ к реестру на основе ролей](../role-based-access-control/role-assignments-portal.md), и одному реестру можно назначить несколько субъектов-служб. Применение нескольких субъектов-служб позволяет определить разные права доступа для приложений.
 
 Доступные роли:
 
@@ -51,7 +51,7 @@ az acr login --name <acrName>
   * *Участник*: решения непрерывной интеграции и развертывания (например, Visual Studio Team Services (VSTS) или Jenkins), создающие образы контейнеров и отправляющие их в реестр.
 
 > [!TIP]
-> Можно создать пароль субъекта-службы повторно, выполнив команду [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest#az_ad_sp_reset_credentials).
+> Можно создать пароль субъекта-службы повторно, выполнив команду [az ad sp reset-credentials](/cli/azure/ad/sp?view=azure-cli-latest#az-ad-sp-reset-credentials).
 >
 
 Вы можете также выполнить вход напрямую с помощью субъекта-службы. Укажите идентификатор и пароль приложения для субъекта-службы в команде `docker login`.
@@ -82,7 +82,7 @@ docker login myregistry.azurecr.io -u myAdminName -p myPassword1
 
 Docker рекомендует использовать параметр `--password-stdin` вместо передачи его в командной строке для повышения безопасности. Можно также указать только имя пользователя, без `-p`, а затем при появлении запроса ввести пароль.
 
-Чтобы включить учетную запись администратора для существующего реестра, можно использовать параметр `--admin-enabled` в команде [az acr update](/cli/azure/acr?view=azure-cli-latest#az_acr_update) в Azure CLI.
+Чтобы включить учетную запись администратора для существующего реестра, можно использовать параметр `--admin-enabled` в команде [az acr update](/cli/azure/acr?view=azure-cli-latest#az-acr-update) в Azure CLI.
 
 ```azurecli
 az acr update -n <acrName> --admin-enabled true

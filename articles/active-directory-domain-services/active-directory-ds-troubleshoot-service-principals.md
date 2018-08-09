@@ -12,15 +12,15 @@ ms.component: domain-services
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: ergreenl
-ms.openlocfilehash: 716be5b7f35ad1d163e99e92ec65dc906743803c
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 5bc1212cc6e894cd82a60abb42f92893c0bb2d43
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36219202"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579550"
 ---
 # <a name="troubleshoot-invalid-service-principal-configuration-for-your-managed-domain"></a>Устранение неполадок с недопустимой конфигурацией субъекта-службы для управляемого домена
 
@@ -30,7 +30,7 @@ ms.locfileid: "36219202"
 
 **Оповещение.** *Субъект-служба, необходимая для правильной работы доменных служб Azure AD, удалена из каталога Azure AD. Эта конфигурация влияет на возможность корпорации Майкрософт наблюдать за управляемым доменом, управлять им, обновлять и синхронизировать его.*
 
-[Субъекты-службы](../active-directory/develop/active-directory-application-objects.md) — приложения, которые корпорация Майкрософт использует для обновления и обслуживания управляемого домена, а также для управления им. При их удалении корпорация Майкрософт не сможет обслуживать домен.
+[Субъекты-службы](../active-directory/develop/app-objects-and-service-principals.md) — приложения, которые корпорация Майкрософт использует для обновления и обслуживания управляемого домена, а также для управления им. При их удалении корпорация Майкрософт не сможет обслуживать домен.
 
 
 ## <a name="check-for-missing-service-principals"></a>Проверка отсутствующих субъектов-служб

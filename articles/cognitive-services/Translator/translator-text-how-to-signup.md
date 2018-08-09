@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: nolachar
 ms.openlocfilehash: 2aa293acfa1a9e3fd95a64f6981bd8dc9747b6b6
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
+ms.lasthandoff: 08/02/2018
 ms.locfileid: "36265563"
 ---
 # <a name="how-to-sign-up-for-the-translator-text-api"></a>Регистрация для использования API перевода текстов
 
-## <a name="sign-in-to-the-azure-portal"></a>Выполните вход на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 - Нет учетной записи? Чтобы поэкспериментировать, вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/).
 - Уже есть учетная запись? [Вход](https://ms.portal.azure.com/)

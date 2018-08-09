@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/05/2017
 ms.author: john.papa
 ms.custom: mvc
-ms.openlocfilehash: f9464b2a839d1305057670ee7efe206e3bed771c
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: e561701aa8d54889797db08131c97d6c4108539f
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39248992"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39420120"
 ---
 # <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-4-create-an-azure-cosmos-db-account-using-the-azure-cli"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB. Часть 4. Создание учетной записи Azure Cosmos DB с помощью Azure CLI
 
@@ -50,7 +50,7 @@ ms.locfileid: "39248992"
 
 ## <a name="create-an-azure-cosmos-db-account"></a>создание учетной записи Azure Cosmos DB;
 
-Создайте учетную запись Azure Cosmos DB с помощью команды [`az cosmosdb create`](/cli/azure/cosmosdb#az_cosmosdb_create).
+Создайте учетную запись Azure Cosmos DB с помощью команды [`az cosmosdb create`](/cli/azure/cosmosdb#az-cosmosdb-create).
 
 ```azurecli-interactive
 az cosmosdb create --name <cosmosdb-name> --resource-group myResourceGroup --kind MongoDB

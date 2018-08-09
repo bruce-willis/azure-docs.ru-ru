@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 5c6a4ac68694c74f9a7ed99a2d7b4939b84dc33f
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 9d398d810a2d43b3754fd8950376c605d4654f38
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054885"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39621537"
 ---
 # <a name="article-index-for-application-management-in-azure-active-directory"></a>Указатель статей по управлению приложениями в Azure Active Directory
 В этой статье представлен полный список всех статей о различных функциях приложений в Azure Active Directory (Azure AD).
@@ -41,7 +41,7 @@ ms.locfileid: "39054885"
 
 | Область функций |  |
 |:---:| --- |
-| Федеративный единый вход |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](active-directory-saml-debugging.md) |
+| Федеративный единый вход |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](develop/howto-v1-debug-saml-sso-issues.md) |
 | Единый вход на основе пароля |[Устранение неполадок, связанных с расширением панели доступа для Internet Explorer](active-directory-saas-ie-troubleshooting.md) |
 | Прокси приложения |[Устранение неполадок прокси-сервера приложений](manage-apps/application-proxy-troubleshoot.md) |
 | Единый вход между локальным AD и Azure AD |[Устранение неполадок при синхронизации хэшированных паролей](connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md#troubleshoot-password-hash-synchronization)<br /><br />[Устранение неполадок обратной записи паролей](authentication/active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) |
@@ -54,10 +54,10 @@ ms.locfileid: "39054885"
 | Путеводитель по статьям |  |
 |:---:| --- |
 | Общие сведения о федеративном и других способах входа |[Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](manage-apps/what-is-single-sign-on.md) |
-| Тысячи приложений SaaS, предварительно интегрированных с Azure AD, для которых можно с легкостью настроить единый вход |[Начало работы с коллекцией приложений Azure AD](manage-apps/what-is-single-sign-on.md#get-started-with-the-azure-ad-application-gallery)<br /><br />[Полный список предварительно интегрированных приложений, поддерживающих федерацию](saas-apps/tutorial-list.md)<br /><br />[Добавление приложения в коллекцию приложений Azure Active Directory](active-directory-app-gallery-listing.md) |
+| Тысячи приложений SaaS, предварительно интегрированных с Azure AD, для которых можно с легкостью настроить единый вход |[Начало работы с коллекцией приложений Azure AD](manage-apps/what-is-single-sign-on.md#get-started-with-the-azure-ad-application-gallery)<br /><br />[Полный список предварительно интегрированных приложений, поддерживающих федерацию](saas-apps/tutorial-list.md)<br /><br />[Добавление приложения в коллекцию приложений Azure Active Directory](develop/howto-app-gallery-listing.md) |
 | Более 150 руководств по настройке единого входа для таких приложений, как [Salesforce](saas-apps/salesforce-tutorial.md), [ServiceNow](saas-apps/servicenow-tutorial.md), [Google Apps](saas-apps/google-apps-tutorial.md), [Workday](saas-apps/workday-tutorial.md) и многих других |[Список учебников по интеграции приложений SaaS с Azure Active Directory](saas-apps/tutorial-list.md) |
 | Настройка конфигурации единого входа вручную |[Настройка федеративного единого входа для приложений, которых нет в коллекции приложений Azure Active Directory](application-config-sso-how-to-configure-federated-sso-non-gallery.md)<br /><br />[Настройка утверждений, выпущенных в маркере SAML для предварительно интегрированных приложений](active-directory-saml-claims-customization.md) |
-| Руководство по устранению неполадок для федеративных приложений, использующих протокол SAML |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](active-directory-saml-debugging.md) |
+| Руководство по устранению неполадок для федеративных приложений, использующих протокол SAML |[Отладка единого входа на основе SAML в приложения в Azure Active Directory](develop/howto-v1-debug-saml-sso-issues.md) |
 | Настройка срока действия сертификата приложения и способы обновления сертификатов |[Управление сертификатами для федеративного единого входа в Azure Active Directory](manage-apps/manage-certificates-for-federated-single-sign-on.md) |
 
 Функция федеративного единого входа доступна для всех выпусков Azure AD, и ее можно использовать для 10 приложений на пользователя. [Azure AD Premium](https://azure.microsoft.com/pricing/details/active-directory/) поддерживает неограниченное количество приложений. Если ваша организация использует [Azure AD уровня "Базовый"](https://azure.microsoft.com/pricing/details/active-directory/) или [Azure AD уровня "Премиум"](https://azure.microsoft.com/pricing/details/active-directory/), то вы можете [использовать группы для предоставления доступа к федеративным приложениям](#managing-access-to-applications).
@@ -109,7 +109,7 @@ Azure AD Connect доступно для [всех выпусков Azure Active
 | Путеводитель по статьям |  |
 |:---:| --- |
 | Общие сведения о возможностях условного доступа, предлагаемых в Azure AD, Office 365 и Intune |[Управление рисками с помощью условного доступа](active-directory-conditional-access-azure-portal.md) |
-| Включение условного доступа для определенных типов ресурсов |[Условный доступ к приложениям SaaS](active-directory-conditional-access-azure-portal-get-started.md)<br /><br />[Условный доступ к службам Office 365](active-directory-conditional-access-device-policies.md)<br /><br />[Условный доступ к локальным приложениям](active-directory-conditional-access-azure-portal.md)<br /><br />[Работа с условным доступом](manage-apps/application-proxy-integrate-with-sharepoint-server.md) |
+| Включение условного доступа для определенных типов ресурсов |[Условный доступ к приложениям SaaS](conditional-access/app-based-conditional-access.md)<br /><br />[Условный доступ к службам Office 365](active-directory-conditional-access-device-policies.md)<br /><br />[Условный доступ к локальным приложениям](active-directory-conditional-access-azure-portal.md)<br /><br />[Работа с условным доступом](manage-apps/application-proxy-integrate-with-sharepoint-server.md) |
 | Регистрация устройств в Azure Active Directory для включения политики условного доступа на основе устройств |[Общие сведения о регистрации устройств Azure Active Directory](active-directory-conditional-access-device-registration-overview.md)<br /><br />[Включение автоматической регистрации присоединенных к домену устройств Windows](active-directory-conditional-access-automatic-device-registration.md)<br />— [Действия для устройств Windows 8.1](active-directory-conditional-access-automatic-device-registration-setup.md)<br />— [Действия для устройств Windows 7](active-directory-conditional-access-automatic-device-registration-setup.md) |
 
 | Использование приложения Microsoft Authenticator для двухфакторной проверки подлинности |[Начало работы с приложением Microsoft Authenticator](user-help/microsoft-authenticator-app-how-to.md) |
@@ -143,8 +143,8 @@ Cloud Discovery анализирует журналы трафика на осн
 
 | Путеводитель по статьям |  |
 |:---:| --- |
-| Рекомендации для ИТ-специалистов и разработчиков приложений по интеграции приложений с Azure AD |[Руководство для ИТ-специалистов по разработке приложений для Azure AD](active-directory-applications-guiding-developers-for-lob-applications.md)<br /><br />[Руководство разработчика по Azure Active Directory](active-directory-developers-guide.md) |
-| Практическое руководство для поставщиков приложений по добавлению приложений в коллекцию приложений Azure AD |[Добавление приложения в коллекцию приложений Azure Active Directory](active-directory-app-gallery-listing.md) |
+| Рекомендации для ИТ-специалистов и разработчиков приложений по интеграции приложений с Azure AD |[Руководство для ИТ-специалистов по разработке приложений для Azure AD](active-directory-applications-guiding-developers-for-lob-applications.md)<br /><br />[Руководство разработчика по Azure Active Directory](develop/azure-ad-developers-guide.md) |
+| Практическое руководство для поставщиков приложений по добавлению приложений в коллекцию приложений Azure AD |[Добавление приложения в коллекцию приложений Azure Active Directory](develop/howto-app-gallery-listing.md) |
 | Управление доступом к разработанным приложениям с помощью Azure Active Directory |[Включение назначения пользователей для разработанных приложений](active-directory-applications-guiding-developers-requiring-user-assignment.md)<br /><br />[Назначение пользователей для приложения](active-directory-applications-guiding-developers-assigning-users.md)<br /><br />[Azure AD и приложения: назначение групп для приложения](active-directory-applications-guiding-developers-assigning-groups.md) |
 
 Тех, кто разрабатывает потребительские приложения, может заинтересовать [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/). Благодаря этому решению вам не придется разрабатывать систему идентификации для управления пользователями. [Подробнее](../active-directory-b2c/active-directory-b2c-overview.md).

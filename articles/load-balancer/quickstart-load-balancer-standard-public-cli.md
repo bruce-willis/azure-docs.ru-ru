@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/20/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 48ed4270838a32c8060bf96a63fcfdd8c65f9689
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 2b6623b614a254635cb758f615271dac826f08b2
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38696129"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39439750"
 ---
 # <a name="quickstart-create-a-standard-load-balancer-to-load-balance-vms-using-azure-cli-20"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки уровня "Стандартный" с помощью Azure CLI 2.0 для распределения нагрузки между виртуальными машинами
 
@@ -149,7 +149,7 @@ ms.locfileid: "38696129"
 ```
 ### <a name="create-nics"></a>Создание сетевых адаптеров
 
-Создайте три сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. 
+Создайте три сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. 
 
 ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -171,7 +171,7 @@ done
 
 ### <a name="create-an-availability-set"></a>Создание группы доступности
 
-Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic#az_network_availabilityset_create).
+Создайте группу доступности с помощью команды [az vm availabilityset create](/cli/azure/network/nic#az-network-availabilityset-create).
 
  ```azurecli-interactive
   az vm availability-set create \
@@ -225,7 +225,7 @@ runcmd:
   - nodejs index.js
 ``` 
  
-Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
+Создайте виртуальные машины с помощью команды [az vm create](/cli/azure/vm#az-vm-create).
 
  ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -244,7 +244,7 @@ for i in `seq 1 2`; do
 
 ## <a name="test-the-load-balancer"></a>Тестирование подсистемы балансировки нагрузки
 
-Чтобы получить общедоступный IP-адрес подсистемы балансировки нагрузки, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az_network_public_ip_show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
+Чтобы получить общедоступный IP-адрес подсистемы балансировки нагрузки, используйте команду [az network public-ip show](/cli/azure/network/public-ip#az-network-public-ip-show). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
 ```azurecli-interactive
   az network public-ip show \
@@ -257,7 +257,7 @@ for i in `seq 1 2`; do
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Вы можете удалить ставшие ненужными группу ресурсов, подсистему балансировки нагрузки и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az_group_delete).
+Вы можете удалить ставшие ненужными группу ресурсов, подсистему балансировки нагрузки и все связанные с ними ресурсы, выполнив команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive 
   az group delete --name myResourceGroupSLB

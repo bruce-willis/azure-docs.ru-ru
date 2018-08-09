@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 07/13/2018
 ms.author: beverst;cephalin
 ms.custom: mvc
-ms.openlocfilehash: 20b549914daf71c0d23235b5c20ebb6f14367471
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: ce84498ab89891bd7b96cfcc6b0c7ac029c93cbd
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39172040"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39423085"
 ---
 # <a name="build-a-docker-python-and-postgresql-web-app-in-azure"></a>Создание в Azure веб-приложения Docker Python с подключением к базе данных PostgreSQL
 
@@ -133,7 +133,7 @@ INFO  [alembic.runtime.migration] Running upgrade  -> 791cd7d80402, empty messag
 
 ### <a name="create-an-azure-database-for-postgresql-server"></a>Создание сервера базы данных Azure для PostgreSQL
 
-Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az_postgres_server_create) в Cloud Shell.
+Создайте сервер PostgreSQL с помощью команды [`az postgres server create`](/cli/azure/postgres/server?view=azure-cli-latest#az-postgres-server-create) в Cloud Shell.
 
 В следующем примере команды замените *\<postgresql_name>* на уникальное имя сервера, а *\<admin_username>* и *\<admin_password>* замените учетными данными нужного пользователя. Это имя используется как часть конечной точки PostgreSQL (`https://<postgresql_name>.postgres.database.azure.com`), поэтому оно должно быть уникальным на всех серверах в Azure. Учетные данные пользователя нужны для учетной записи администратора базы данных. 
 
@@ -339,7 +339,7 @@ docker push <registry_name>.azurecr.io/flask-postgresql-sample
 
 ### <a name="create-a-web-app"></a>Создание веб-приложения
 
-В Cloud Shell создайте веб-приложение в рамках плана *myAppServicePlan* Службы приложений с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az_webapp_create).
+В Cloud Shell создайте веб-приложение в рамках плана *myAppServicePlan* Службы приложений с помощью команды [`az webapp create`](/cli/azure/webapp?view=azure-cli-latest#az-webapp-create).
 
 В следующей команде замените заполнитель *\<app_name>* уникальным именем приложения. Это имя используется в URL-адресе по умолчанию для веб-приложения, поэтому оно должно быть уникальным для всех приложений в службе приложений Azure.
 
@@ -368,7 +368,7 @@ az webapp create --name <app_name> --resource-group myResourceGroup --plan myApp
 
 Ранее в этом руководстве вы определили переменные среды для подключения к базе данных PostgreSQL.
 
-В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az_webapp_config_appsettings_set).
+В службе приложений переменные среды задаются в качестве _параметров приложения_ с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set).
 
 Код ниже указывает сведения о подключении к базе данных как параметры приложения. Он также использует переменную *WEBSITES_PORT* для порта 5000 контейнера, что позволяет контейнеру получать трафик HTTP через порт 80.
 
@@ -378,7 +378,7 @@ az webapp config appsettings set --name <app_name> --resource-group myResourceGr
 
 ### <a name="configure-custom-container-deployment"></a>Настройка развертывания пользовательского контейнера
 
-Несмотря на то что имя образа контейнера уже указано, необходимо также указать пользовательский URL-адрес реестра и учетные данные пользователя. В Cloud Shell выполните команду [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az_webapp_config_container_set).
+Несмотря на то что имя образа контейнера уже указано, необходимо также указать пользовательский URL-адрес реестра и учетные данные пользователя. В Cloud Shell выполните команду [az webapp config container set](/cli/azure/webapp/config/container?view=azure-cli-latest#az-webapp-config-container-set).
 
 ```azurecli-interactive
 az webapp config container set --resource-group myResourceGroup --name <app_name> --docker-registry-server-user "<registry_name>" --docker-registry-server-password "<registry_password>" --docker-registry-server-url "https://<registry_name>.azurecr.io"

@@ -13,12 +13,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: d7b832659272f01b6e939150fa89626620d5eab7
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 6e7de0a7b580c0028982895487117ab98d0cd612
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32153564"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503457"
 ---
 # <a name="configure-php-in-azure-app-service-web-apps"></a>Настройка PHP в веб-приложениях службы приложений Azure
 
@@ -102,7 +102,7 @@ ms.locfileid: "32153564"
 
 1. Добавьте параметр приложения для веб-приложения с помощью ключа `PHP_INI_SCAN_DIR` и значения `d:\home\site\ini`
 1. Создание файл `settings.ini` с помощью консоли Kudu (http://&lt;имя_узла&gt;.scm.azurewebsite.net) в каталоге `d:\home\site\ini`.
-1. Добавьте параметры конфигурации в файл `settings.ini` , используя тот же синтаксис, что и для файла php.ini. Например, если необходимо, чтобы параметр `curl.cainfo` указывал на файл `*.crt`, а параметр wincache.maxfilesize имел значение 512K, файл `settings.ini` должен содержать следующий текст:
+1. Добавьте параметры конфигурации в файл `settings.ini`, используя тот же синтаксис, что и для файла `php.ini`. Например, если необходимо, чтобы параметр `curl.cainfo` указывал на файл `*.crt`, а параметр wincache.maxfilesize имел значение 512K, файл `settings.ini` должен содержать следующий текст:
 
         ; Example Settings
         curl.cainfo="%ProgramFiles(x86)%\Git\bin\curl-ca-bundle.crt"
@@ -119,7 +119,7 @@ ms.locfileid: "32153564"
 1. Поместите файлы с расширением `.dll` в каталог `ext` (например, `php_xdebug.dll`). Убедитесь, что расширения совместимы с версией PHP по умолчанию, а также совместимы с VC9 и непотокобезопасной технологией (nts).
 1. Добавьте параметр приложения для веб-приложения с помощью ключа `PHP_INI_SCAN_DIR` и значения `d:\home\site\ini`
 1. Создайте файл `ini` в `d:\home\site\ini` с именем `extensions.ini`.
-1. Добавьте параметры конфигурации в файл `extensions.ini` , используя тот же синтаксис, что и для файла php.ini. Например, чтобы включить расширения MongoDB и XDebug, файл `extensions.ini` должен содержать следующий текст:
+1. Добавьте параметры конфигурации в файл `extensions.ini`, используя тот же синтаксис, что и для файла `php.ini`. Например, чтобы включить расширения MongoDB и XDebug, файл `extensions.ini` должен содержать следующий текст:
 
         ; Enable Extensions
         extension=d:\home\site\ext\php_mongo.dll

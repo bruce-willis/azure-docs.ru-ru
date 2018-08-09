@@ -2,18 +2,18 @@
 title: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 description: Сведения о клиентской библиотеке JavaScript для службы "Аналитика временных рядов Azure" и соответствующей модели программирования.
 author: ashannon7
-manager: timlt
+manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: tutorial
 ms.date: 06/05/2018
-ms.author: bryanla
-ms.openlocfilehash: 70e29b1a6b8a4443ae6545ec7960f1d2370218e3
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.author: anshan
+ms.openlocfilehash: 445584ef8f9a2534d7f183a4452df19ee87d0025
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969934"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627000"
 ---
 # <a name="tutorial-explore-the-azure-time-series-insights-javascript-client-library"></a>Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "38969934"
 > * клиентскую библиотеку TSI JavaScript;
 > * как пример приложения использует библиотеку для визуализации данных TSI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этом руководстве используется функция "Средства для разработчиков" (другое название — DevTools или F12), которая доступна в большинстве современных веб-браузеров, включая [Edge](/microsoft-edge/devtools-guide), [Chrome](https://developers.google.com/web/tools/chrome-devtools/), [FireFox](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools), [Safari](https://developer.apple.com/safari/tools/) и другие. При необходимости вы можете ознакомиться с ней в своем браузере, прежде чем продолжить.
 

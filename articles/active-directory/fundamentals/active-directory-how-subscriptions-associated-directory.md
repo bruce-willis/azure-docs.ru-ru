@@ -14,12 +14,12 @@ ms.date: 12/12/2017
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: bcae3f51e2245928c8110d06f3514177d57ac883
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 6b0933e9aa732cb9a01a454764fb0425465ec078
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449216"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503317"
 ---
 # <a name="how-to-associate-or-add-an-azure-subscription-to-azure-active-directory"></a>Как связать или добавить подписку Azure в Azure Active Directory
 
@@ -59,7 +59,7 @@ ms.locfileid: "37449216"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения о создании каталога Azure AD бесплатно см. в статье [Как получить клиент Azure Active Directory](../develop/active-directory-howto-tenant.md).
+* Дополнительные сведения о создании каталога Azure AD бесплатно см. в статье [Как получить клиент Azure Active Directory](../develop/quickstart-create-new-tenant.md).
 * Сведения о передаче прав владения выставлением счетов по подписке Azure см. в статье [Передача прав владения подпиской Azure другой учетной записи](../../billing/billing-subscription-transfer.md).
 * Дополнительные сведения о том, как осуществляется доступ к ресурсам в Microsoft Azure, см. в статье [Основные сведения о доступе к ресурсам в Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md).
 * Дополнительные сведения о назначении ролей в Azure AD см. в статье [Назначение ролей администратора в Azure Active Directory](../users-groups-roles/directory-assign-admin-roles.md).

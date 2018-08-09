@@ -8,12 +8,12 @@ ms.service: container-registry
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: marsma
-ms.openlocfilehash: 1272a4b547a4ba650678ce083a44bde3a5a3e583
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: a3932ff621782b8ab97f27ef052aeee8e1d2a3ac
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33768266"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39423510"
 ---
 # <a name="best-practices-for-azure-container-registry"></a>Рекомендации по использованию реестра контейнеров Azure
 
@@ -57,7 +57,7 @@ contoso.azurecr.io/marketing/2017-fall/concertpromotions/campaign:218.42
 
 | type | Пример сценария | Рекомендуемый метод |
 |---|---|---|
-| Отдельное удостоверение | Разработчик извлекает образы на свой компьютер для разработки или отправляет образы с него. | [az acr login](/cli/azure/acr?view=azure-cli-latest#az_acr_login) |
+| Отдельное удостоверение | Разработчик извлекает образы на свой компьютер для разработки или отправляет образы с него. | [az acr login](/cli/azure/acr?view=azure-cli-latest#az-acr-login) |
 | Удостоверение службы или автономное удостоверение | Конвейеры сборки и развертывания, в которых пользователь не участвует напрямую. | [Субъект-служба](container-registry-authentication.md#service-principal) |
 
 Более подробные сведения об аутентификации с помощью реестра контейнеров Azure см. в разделе [Аутентификация с помощью частного реестра контейнеров Docker](container-registry-authentication.md).
@@ -101,7 +101,7 @@ az acr repository delete --name myregistry --repository myapplication
 [registry-overview-quotas]: ./media/container-registry-best-practices/registry-overview-quotas.png
 
 <!-- LINKS - Internal -->
-[az-acr-repository-delete]: /cli/azure/acr/repository#az_acr_repository_delete
+[az-acr-repository-delete]: /cli/azure/acr/repository#az-acr-repository-delete
 [azure-cli]: /cli/azure
 [azure-portal]: https://portal.azure.com
 [container-registry-geo-replication]: container-registry-geo-replication.md

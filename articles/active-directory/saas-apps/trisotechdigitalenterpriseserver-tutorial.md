@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/16/2018
 ms.author: jeedes
-ms.openlocfilehash: f579f914496427febdf60c3a8d3dc368ef265a9d
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e36a4be3a95b67c040855171d4b167e495a22496
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39045331"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39439632"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-trisotech-digital-enterprise-server"></a>Руководство по интеграции Azure Active Directory с Trisotech Digital Enterprise Server
 
@@ -53,7 +53,7 @@ ms.locfileid: "39045331"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Trisotech Digital Enterprise Server из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-trisotech-digital-enterprise-server-from-the-gallery"></a>Добавление Trisotech Digital Enterprise Server из коллекции
 Чтобы настроить интеграцию Trisotech Digital Enterprise Server с Azure AD, необходимо добавить Trisotech Digital Enterprise Server из коллекции в список управляемых приложений SaaS.
@@ -64,15 +64,15 @@ ms.locfileid: "39045331"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Trisotech Digital Enterprise Server**, выберите **Trisotech Digital Enterprise Server** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. В поле поиска введите **Trisotech Digital Enterprise Server**, выберите **Trisotech Digital Enterprise Server** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Trisotech Digital Enterprise Server в списке результатов](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_addfromgallery.png)
 
@@ -85,10 +85,10 @@ ms.locfileid: "39045331"
 Чтобы настроить и проверить единый вход Azure AD в Trisotech Digital Enterprise Server, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Trisotech Digital Enterprise Server](#create-a-trisotech-digital-enterprise-server-test-user)** требуется для того, чтобы в Trisotech Digital Enterprise Server существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Trisotech Digital Enterprise Server](#create-a-trisotech-digital-enterprise-server-test-user)** требуется для того, чтобы в Trisotech Digital Enterprise Server существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -100,11 +100,11 @@ ms.locfileid: "39045331"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Trisotech Digital Enterprise Server** выполните следующие действия:
+1. В разделе **Домены и URL-адреса приложения Trisotech Digital Enterprise Server** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах приложения Trisotech Digital Enterprise Server](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_url.png)
 
@@ -115,25 +115,25 @@ ms.locfileid: "39045331"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Обратитесь в [клиентскую службу поддержки Trisotech Digital Enterprise Server](mailto:support@trisotech.com), чтобы получить эти значения.
 
-4. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот. 
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот. 
 
     ![Ссылка для скачивания сертификата](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_certificate.png)
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_general_400.png)
 
-6. В другом окне веб-браузера войдите на сайт компании Trisotech Digital Enterprise Server с правами администратора.
+1. В другом окне веб-браузера войдите на сайт компании Trisotech Digital Enterprise Server с правами администратора.
 
-7. Щелкните **значок меню**, а затем выберите **Administration** (Администрирование).
+1. Щелкните **значок меню**, а затем выберите **Administration** (Администрирование).
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user1.png)
 
-8. Выберите пункт **User Provider** (Поставщик пользователей).
+1. Выберите пункт **User Provider** (Поставщик пользователей).
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user2.png)
 
-9. В разделе **User Provider Configurations** (Конфигурация поставщика пользователей) выполните следующие действия:
+1. В разделе **User Provider Configurations** (Конфигурация поставщика пользователей) выполните следующие действия:
 
     ![Настройка единого входа](./media/trisotechdigitalenterpriseserver-tutorial/user3.png)
 
@@ -147,7 +147,7 @@ ms.locfileid: "39045331"
 
     д. Введите доменное имя в текстовое поле **Allowed Domains (empty means everyone)** (Разрешенные домены (если оставить это поле пустым, будут использоваться все домены)). Пользователям, которые соответствуют разрешенным доменам, будут автоматически назначены лицензии.
 
-    f. Нажмите кнопку **Сохранить**
+    Е. Нажмите кнопку **Сохранить**
 
  ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -161,15 +161,15 @@ ms.locfileid: "39045331"
 
     ![Кнопка "Azure Active Directory"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/trisotechdigitalenterpriseserver-tutorial/create_aaduser_04.png)
 
@@ -199,23 +199,23 @@ ms.locfileid: "39045331"
 
     ![Назначение пользователя][201] 
 
-2. В списке приложений выберите **Trisotech Digital Enterprise Server**.
+1. В списке приложений выберите **Trisotech Digital Enterprise Server**.
 
     ![Ссылка на приложение Trisotech Digital Enterprise Server в списке приложений](./media/trisotechdigitalenterpriseserver-tutorial/tutorial_trisotechdigitalenterpriseserver_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

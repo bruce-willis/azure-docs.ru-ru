@@ -9,12 +9,12 @@ ms.date: 06/27/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: c94479ca523f0097c8fbf94729f3a255ffc0c2bf
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 991113b4e3e501d6d058a83baa795a5d7cbaa585
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413227"
+ms.locfileid: "39439685"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge с кодом C# и его развертывание на имитированном устройстве
 
@@ -34,15 +34,15 @@ ms.locfileid: "39413227"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Устройство Azure IoT Edge:
+Устройство Azure IoT Edge.
 
 * В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
 
-Облачные ресурсы:
+Облачные ресурсы.
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
 
-Ресурсы разработки:
+Ресурсы разработки.
 
 * [Visual Studio Code](https://code.visualstudio.com/). 
 * [C# для расширения Visual Studio Code (на платформе OmniSharp)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
@@ -297,7 +297,7 @@ ms.locfileid: "39413227"
 Чтобы удалить только Центр Интернета вещей, выполните следующую команду, используя имена центра и группы ресурсов.
 
 ```azurecli-interactive
-az iot hub delete --name MyIoTHub --resource-group TestResources
+az iot hub delete --name {hub_name} --resource-group IoTEdgeResources
 ```
 
 

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/29/2018
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 0ba0e1f3d9e0f1cbb6ba4109a21fc29dc41df5fc
-ms.sourcegitcommit: 680964b75f7fff2f0517b7a0d43e01a9ee3da445
+ms.openlocfilehash: ed2d55b8346acb79563a882bbaf2f46110dcf1bb
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34603459"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39442723"
 ---
 # <a name="add-a-kubernetes-cluster-to-the-azure-stack-marketplace"></a>Добавление кластера Kubernetes в Azure Stack Marketplace
 
@@ -38,21 +38,21 @@ ms.locfileid: "34603459"
 
 1. Войдите на [портал администрирования.](https://adminportal.local.azurestack.external)
 
-2. Создайте базовый план. Инструкции см. в статье [Создание плана в Azure Stack](azure-stack-create-plan.md).
+1. Создайте базовый план. Инструкции см. в статье [Создание плана в Azure Stack](azure-stack-create-plan.md).
 
-3. Создайте предложение. Инструкции см. в статье [Создание предложения в Azure Stack](azure-stack-create-offer.md).
+1. Создайте предложение. Инструкции см. в статье [Создание предложения в Azure Stack](azure-stack-create-offer.md).
 
-4. Выберите **Предложения** и найдите созданное предложение.
+1. Выберите **Предложения** и найдите созданное предложение.
 
-5. В колонке "Предложение" выберите **Обзор**.
+1. В колонке "Предложение" выберите **Обзор**.
 
-6. Щелкните **Изменить состояние**. Щелкните **Общедоступный**.
+1. Щелкните **Изменить состояние**. Щелкните **Общедоступный**.
 
-7. Чтобы создать подписку, выберите **+ Создать** > **Предложения и планы** > **Подписки**.
+1. Чтобы создать подписку, выберите **+ Создать** > **Предложения и планы** > **Подписки**.
 
     a. Введите значение в поле **Отображаемое имя**.
 
-    Б. Введите значение в поле **Пользователь**. Используйте учетную запись Azure AD, связанную с вашим клиентом.
+    b. Введите значение в поле **Пользователь**. Используйте учетную запись Azure AD, связанную с вашим клиентом.
 
     c. **Описание поставщика**
 
@@ -66,13 +66,13 @@ ms.locfileid: "34603459"
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
-2. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
+1. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
 
-3. Выберите **+ Add from Azure** (Добавить из Azure).
+1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-4. Укажите `UbuntuServer`.
+1. Укажите `UbuntuServer`.
 
-5. Выберите сервер со следующим профилем:
+1. Выберите сервер со следующим профилем:
     - **Издатель** : Canonical
     - **Предложение**: UbuntuServer
     - **SKU**: 16.04 LTS
@@ -81,7 +81,7 @@ ms.locfileid: "34603459"
     > [!Note]  
     > Могут отображаться несколько версий Ubuntu Server 16.04 LTS. Необходимо добавить соответствующую версию. Для кластера Kubernetes требуется точная версия элемента.
 
-6. Выберите **Скачать**.
+1. Выберите **Скачать**.
 
 ## <a name="add-a-custom-script-for-linux"></a>Добавление настраиваемого скрипта для Linux
 
@@ -89,13 +89,13 @@ ms.locfileid: "34603459"
 
 1. Откройте [портал администрирования](https://adminportal.local.azurestack.external).
 
-2. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
+1. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
 
-3. Выберите **+ Add from Azure** (Добавить из Azure).
+1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-4. Укажите `Custom Script for Linux`.
+1. Укажите `Custom Script for Linux`.
 
-5. Выберите скрипт со следующим профилем:
+1. Выберите скрипт со следующим профилем:
     - **Предложение**: настраиваемый скрипт для Linux 2.0
     - **Версия**: 2.0.3
     - **Издатель**: корпорация Майкрософт
@@ -103,22 +103,22 @@ ms.locfileid: "34603459"
     > [!Note]  
     > Могут отображаться несколько версий настраиваемого скрипта для Linux. Необходимо добавить соответствующую версию. Для кластера Kubernetes требуется точная версия элемента.
 
-6. Выберите **Скачать**.
+1. Выберите **Скачать**.
 
 
 ## <a name="add-the-kubernetes-cluster-to-the-marketplace"></a>Добавление кластера Kubernetes в Marketplace
 
 1. Откройте [портал администрирования](https://adminportal.local.azurestack.external).
 
-2. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
+1. Щелкните **Больше служб** > **Marketplace Management (Управление Marketplace)**.
 
-3. Выберите **+ Add from Azure** (Добавить из Azure).
+1. Выберите **+ Add from Azure** (Добавить из Azure).
 
-4. Укажите `Kubernetes Cluster`.
+1. Укажите `Kubernetes Cluster`.
 
-5. Выберите `Kubernetes Cluster`.
+1. Выберите `Kubernetes Cluster`.
 
-6. Выберите **Скачать**.
+1. Выберите **Скачать**.
 
     > [!note]  
     > Для отображения элемента в Marketplace может потребоваться пять минут.
@@ -133,9 +133,9 @@ ms.locfileid: "34603459"
 
 1. Запомните имя текущего элемента, например `Microsoft.AzureStackKubernetesCluster.0.1.0`.
 
-2. Подключитесь к Azure Stack с помощью PowerShell.
+1. Подключитесь к Azure Stack с помощью PowerShell.
 
-3. Удалите элемент, выполнив следующий командлет PowerShell:
+1. Удалите элемент, выполнив следующий командлет PowerShell:
 
     ```PowerShell  
     $Itemname="Microsoft.AzureStackKubernetesCluster.0.1.0"

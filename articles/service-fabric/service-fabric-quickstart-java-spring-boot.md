@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 11/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 83cd90babaa5bcb396f792c7e933d38b3911cebb
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: cedc13cb18440eee32e333d395494043e2eca9d1
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970362"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39442519"
 ---
 # <a name="quickstart-deploy-a-java-spring-boot-application-to-service-fabric"></a>Краткое руководство: развертывание приложения Java Spring Boot в Service Fabric
 
@@ -38,7 +38,7 @@ Azure Service Fabric — это платформа распределенных 
 * Масштабирование приложения на несколько узлов
 * Отработка отказа службы без ущерба для ее доступности
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством сделайте следующее:
 
@@ -48,13 +48,13 @@ Azure Service Fabric — это платформа распределенных 
     
     b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#installation-methods)
 
-2. [установите Git](https://git-scm.com/);
-3. установка Yeoman;
+1. [установите Git](https://git-scm.com/);
+1. установка Yeoman;
 
     a. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
 
     b. [Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux#set-up-yeoman-generators-for-containers-and-guest-executables)
-4. Настройте среду Java:
+1. Настройте среду Java:
 
     a. [Mac](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-mac#create-your-application-on-your-mac-by-using-yeoman)
     
@@ -78,11 +78,11 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
 ## <a name="package-the-spring-boot-application"></a>Упаковка приложения Spring Boot 
 1. В клонированном экземпляре каталога `gs-spring-boot` выполните команду `yo azuresfguest`. 
 
-2. Введите следующие сведения для каждого запроса.
+1. Введите следующие сведения для каждого запроса.
 
     ![Записи Yeoman](./media/service-fabric-quickstart-java-spring-boot/yeomanspringboot.png)
 
-3. В папке `SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/code` создайте файл с именем `entryPoint.sh`. Добавьте в файл `entryPoint.sh` следующий код. 
+1. В папке `SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/code` создайте файл с именем `entryPoint.sh`. Добавьте в файл `entryPoint.sh` следующий код. 
 
     ```bash
     #!/bin/bash
@@ -91,7 +91,7 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     java -jar gs-spring-boot-0.1.0.jar
     ```
 
-4. Добавьте ресурс **Конечные точки** в файл `gs-spring-boot/SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/ServiceManifest.xml`
+1. Добавьте ресурс **Конечные точки** в файл `gs-spring-boot/SpringServiceFabric/SpringServiceFabric/SpringGettingStartedPkg/ServiceManifest.xml`
 
     ```xml 
         <Resources>
@@ -150,19 +150,19 @@ git clone https://github.com/spring-guides/gs-spring-boot.git
     
     ![Работоспособное состояние локального кластера](./media/service-fabric-quickstart-java-spring-boot/sfxlocalhost.png)
 
-2. Перейдите в папку `gs-spring-boot/SpringServiceFabric`.
-3. Выполните следующую команду, чтобы подключиться к локальному кластеру.
+1. Перейдите в папку `gs-spring-boot/SpringServiceFabric`.
+1. Выполните следующую команду, чтобы подключиться к локальному кластеру.
 
     ```bash
     sfctl cluster select --endpoint http://localhost:19080
     ```
-4. Выполните скрипт `install.sh`.
+1. Выполните скрипт `install.sh`.
 
     ```bash
     ./install.sh
     ```
 
-5. Откройте любой веб-браузер и перейдите к приложению по адресу **http://localhost:8080**.
+1. Откройте любой веб-браузер и перейдите к приложению по адресу **http://localhost:8080**.
 
     ![Локальная клиентская часть приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsflocalhost.png)
 
@@ -213,18 +213,18 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
 Теперь у вас готово приложение и кластер для него, и вы можете развернуть их в кластер прямо из командной строки.
 
 1. Перейдите в папку `gs-spring-boot/SpringServiceFabric`.
-2. Выполните следующую команду, чтобы подключиться к кластеру Azure.
+1. Выполните следующую команду, чтобы подключиться к кластеру Azure.
 
     ```bash
     sfctl cluster select --endpoint https://<ConnectionIPOrURL>:19080 --pem <path_to_certificate> --no-verify
     ```
-3. Выполните скрипт `install.sh`.
+1. Выполните скрипт `install.sh`.
 
     ```bash
     ./install.sh
     ```
 
-4. Откройте браузер и введите в адресную строку адрес приложения: **http://\<IP-адрес_или_URL-адрес_подключения>:8080**.
+1. Откройте браузер и введите в адресную строку адрес приложения: **http://\<IP-адрес_или_URL-адрес_подключения>:8080**.
 
     ![Локальная клиентская часть приложения](./media/service-fabric-quickstart-java-spring-boot/springbootsfazure.png)
 
@@ -239,13 +239,13 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
 Для масштабирования службы веб-интерфейса сделайте следующее:
 
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
-2. Щелкните многоточие рядом с узлом **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и выберите **Масштабировать службу**.
+1. Щелкните многоточие рядом с узлом **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и выберите **Масштабировать службу**.
 
     ![Масштабирование службы в Service Fabric Explorer](./media/service-fabric-quickstart-java-spring-boot/sfxscaleservicehowto.png)
 
     Теперь вы можете выбрать нужное количество экземпляров службы.
 
-3. Укажите здесь число **3** и щелкните **Масштабировать службу**.
+1. Укажите здесь число **3** и щелкните **Масштабировать службу**.
 
     Масштабирование службы можно настроить и с помощью командной строки, как описано ниже.
 
@@ -257,7 +257,7 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
     sfctl service update --service-id 'SpringServiceFabric~SpringGettingStarted' --instance-count 3 --stateless 
     ``` 
 
-4. Щелкните узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).
+1. Щелкните узел **fabric:/SpringServiceFabric/SpringGettingStarted** в представлении в виде дерева и разверните узел раздела (здесь отображается его идентификатор GUID).
 
     ![Масштабирование службы в Service Fabric Explorer завершено](./media/service-fabric-quickstart-java-spring-boot/sfxscaledservice.png)
 
@@ -270,10 +270,10 @@ openssl pkcs12 -in party-cluster-1486790479-client-cert.pfx -out party-cluster-1
 Чтобы продемонстрировать отработку отказа службы, с помощью Service Fabric Explorer моделируется перезагрузка узла. Убедитесь, что запущен только один экземпляр службы.
 
 1. Откройте Service Fabric Explorer в своем кластере (например, по ссылке `http://localhost:19080`).
-2. Нажмите кнопку с многоточием рядом с узлом, на котором запущен экземпляр этой службы, и выберите команду перезапуска узла.
+1. Нажмите кнопку с многоточием рядом с узлом, на котором запущен экземпляр этой службы, и выберите команду перезапуска узла.
 
     ![Service Fabric Explorer с командой перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/sfxhowtofailover.png)
-3. Этот экземпляр службы перемещается в другой узел без простоев в работе приложения.
+1. Этот экземпляр службы перемещается в другой узел без простоев в работе приложения.
 
     ![Service Fabric Explorer после успешного перезапуска узла](./media/service-fabric-quickstart-java-spring-boot/sfxfailedover.png)
 

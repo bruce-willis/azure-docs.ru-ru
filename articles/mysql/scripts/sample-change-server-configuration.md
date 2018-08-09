@@ -11,12 +11,12 @@ ms.devlang: azure-cli
 ms.topic: sample
 ms.custom: mvc
 ms.date: 02/28/2018
-ms.openlocfilehash: 8a119d611d4b2817ad85ebe30b88d11cce6fca9f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 75b1228df8bc19ced1d8377768c08048e6ef9150
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38652850"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39441662"
 ---
 # <a name="list-and-update-configurations-of-an-azure-database-for-mysql-server-using-azure-cli"></a>Перечисление и обновление конфигураций сервера базы данных Azure для MySQL с помощью Azure CLI
 В этом примере скрипта CLI перечисляются все доступные параметры конфигурации и их допустимые значения для сервера базы данных Azure для MySQL. Кроме того, здесь задается значение *innodb_lock_wait_timeout*, отличное от значения по умолчанию.
@@ -38,12 +38,12 @@ ms.locfileid: "38652850"
 
 | **Команда** | **Примечания** |
 |---|---|
-| [az group create](/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az mysql server create](/cli/azure/mysql/server#az_msql_server_create) | Создает сервер MySQL, на котором размещены базы данных. |
-| [az mysql server configuration list](/cli/azure/mysql/server/configuration#az_msql_server_configuration_list) | Перечисляет конфигурации сервера базы данных Azure для MySQL. |
-| [az mysql server configuration set](/cli/azure/mysql/server/configuration#az_msql_server_configuration_set) | Обновляет конфигурацию сервера базы данных Azure для MySQL. |
-| [az mysql server configuration show](/cli/azure/mysql/server/configuration#az_msql_server_configuration_show) | Отображает конфигурацию сервера базы данных Azure для MySQL. |
-| [az group delete](/cli/azure/group#az_group_delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az mysql server create](/cli/azure/mysql/server#az-msql-server-create) | Создает сервер MySQL, на котором размещены базы данных. |
+| [az mysql server configuration list](/cli/azure/mysql/server/configuration#az-msql-server-configuration-list) | Перечисляет конфигурации сервера базы данных Azure для MySQL. |
+| [az mysql server configuration set](/cli/azure/mysql/server/configuration#az-msql-server-configuration-set) | Обновляет конфигурацию сервера базы данных Azure для MySQL. |
+| [az mysql server configuration show](/cli/azure/mysql/server/configuration#az-msql-server-configuration-show) | Отображает конфигурацию сервера базы данных Azure для MySQL. |
+| [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).

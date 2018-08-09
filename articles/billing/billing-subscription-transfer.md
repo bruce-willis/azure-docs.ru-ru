@@ -14,15 +14,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/11/2018
+ms.date: 06/15/2018
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 110e2f611ba8bfc42fe17de6aa4487683db4a414
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 44e4bedd747c5a0010058efee595402448f6a30b
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34069883"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39507155"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -116,7 +116,7 @@ ms.locfileid: "34069883"
 
 ### <a name="does-everything-transfer-including-resource-groups-vms-disks-and-other-running-services"></a>Можно ли передать все группы ресурсов, виртуальные машины, диски и другие работающие службы?
 
-Все ресурсы, такие как виртуальные машины, диски и веб-сайты, перейдут к новому владельцу. Тем не менее нельзя передавать настроенные [роли администратора](billing-add-change-azure-subscription-administrator.md) и политики [управления доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md) между разными каталогами. Кроме того, не передается [регистрация приложений](../active-directory//develop/active-directory-integrating-applications.md) и другие службы для конкретного клиента.
+Все ресурсы, такие как виртуальные машины, диски и веб-сайты, перейдут к новому владельцу. Тем не менее нельзя передавать настроенные [роли администратора](billing-add-change-azure-subscription-administrator.md) и политики [управления доступом на основе ролей (RBAC)](../role-based-access-control/role-assignments-portal.md) между разными каталогами. Кроме того, не передается [регистрация приложений](../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md) и другие службы для конкретного клиента.
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 

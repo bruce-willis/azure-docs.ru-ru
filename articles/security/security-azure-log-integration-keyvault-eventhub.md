@@ -11,17 +11,17 @@ ms.topic: article
 ms.date: 06/07/2018
 ms.author: Barclayn
 ms.custom: AzLog
-ms.openlocfilehash: 3de876a8d06a52412bbbfd3ad922c2c4c6d8ec37
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: b91d405b8ada1446a477dc10a116b5dfdf349131
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35235963"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39440052"
 ---
 # <a name="azure-log-integration-tutorial-process-azure-key-vault-events-by-using-event-hubs"></a>Руководство по интеграции журналов Azure. Обработка событий Azure Key Vault с помощью концентраторов событий
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Скачивания AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в [этой записи блога](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/). 
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Загрузки AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 Службу интеграции журналов Azure можно использовать для получения зарегистрированных событий журнала и обеспечения их доступности для системы SIEM. В этом руководстве предоставляется поэтапный пример использования службы интеграции журналов Azure для обработки журналов, полученных из концентраторов событий.
 
@@ -54,25 +54,25 @@ ms.locfileid: "35235963"
 
 1. Подписка Azure и учетная запись для этой подписки с правами администратора. Если у вас нет подписки, вы можете [создать бесплатную учетную запись](https://azure.microsoft.com/free/).
  
-2. Система с доступом к Интернету, отвечающая требованиям к установке интеграции журналов Azure. Система может быть размещена в облачной службе или в локальной среде.
+1. Система с доступом к Интернету, отвечающая требованиям к установке интеграции журналов Azure. Система может быть размещена в облачной службе или в локальной среде.
 
-3. Установленная служба [интеграции журналов Azure](https://www.microsoft.com/download/details.aspx?id=53324). Чтобы установить службу:
+1. Установленная служба [интеграции журналов Azure](https://www.microsoft.com/download/details.aspx?id=53324). Чтобы установить службу:
 
    a. Подключитесь к системе, упомянутой в шаге 2, через удаленный рабочий стол.   
-   Б. Скопируйте в систему установщик интеграции журналов Azure. Можно [скачать файлы установки](https://www.microsoft.com/download/details.aspx?id=53324).   
+   b. Скопируйте в систему установщик интеграции журналов Azure. Можно [скачать файлы установки](https://www.microsoft.com/download/details.aspx?id=53324).   
    c. Запустите установщик и примите условия лицензионного соглашения на использование программного обеспечения корпорации Майкрософт.   
    d. Если вы указываете данные телеметрии, оставьте флажок установленным. Если вы не хотите отправлять сведения об использовании в корпорацию Майкрософт, снимите флажок.
    
    Дополнительные сведения о службе интеграции журналов Azure и действиях по ее установке см. в статье [Интеграция журналов Azure с ведением журнала системы диагностики Azure и пересылкой событий Windows](security-azure-log-integration-get-started.md).
 
-4. Последняя версия PowerShell.
+1. Последняя версия PowerShell.
  
    Если у вас установлен Windows Server 2016, по меньшей мере у вас есть PowerShell 5.0. Если вы используете другие версии Windows Server, может потребоваться установить более раннюю версию PowerShell. Чтобы проверить используемую версию, в окне PowerShell введите ```get-host```. Если версия PowerShell 5.0 не установлена, ее можно [скачать](https://www.microsoft.com/download/details.aspx?id=50395).
 
    При наличии PowerShell 5.0 (как минимум) перейдите к установке последней версии.
    
    a. В окне PowerShell введите команду ```Install-Module Azure```. Выполните действия по установке.    
-   Б. Введите команду ```Install-Module AzureRM```. Выполните действия по установке.
+   b. Введите команду ```Install-Module AzureRM```. Выполните действия по установке.
 
    Дополнительные сведения см. в статье [Установка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.0.0).
 
@@ -80,19 +80,19 @@ ms.locfileid: "35235963"
 ## <a name="create-supporting-infrastructure-elements"></a>Создание вспомогательных элементов инфраструктуры
 
 1. Откройте окно PowerShell с повышенными привилегиями и перейдите в каталог **C:\Program Files\Microsoft Azure Log Integration**.
-2. Импортируйте командлеты AzLog, выполнив сценарий LoadAzLogModule.ps1. Введите команду `.\LoadAzLogModule.ps1`. (Обратите внимание на ".\" в этой команде.) Вы увидите нечто вроде этого:</br>
+1. Импортируйте командлеты AzLog, выполнив сценарий LoadAzLogModule.ps1. Введите команду `.\LoadAzLogModule.ps1`. (Обратите внимание на ".\" в этой команде.) Вы увидите нечто вроде этого:</br>
 
    ![Список загруженных модулей](./media/security-azure-log-integration-keyvault-eventhub/loaded-modules.png)
 
-3. Введите команду `Connect-AzureRmAccount`. В окне входа введите учетные данные для подписки, которая будет использоваться в этом руководстве.
+1. Введите команду `Connect-AzureRmAccount`. В окне входа введите учетные данные для подписки, которая будет использоваться в этом руководстве.
 
    >[!NOTE]
    >Если вы выполняете вход в Azure с этого компьютера впервые, появится сообщение о предоставлении корпорации Майкрософт разрешения на сбор данных об использовании PowerShell. Рекомендуется включить эту функцию сбора данных, так как она будет использоваться для внесения улучшений в Azure PowerShell.
 
-4. После успешной проверки подлинности вы войдете в систему и увидите сведения, аналогичные приведенным на следующем снимке экрана. Запишите идентификатор подписки и имя подписки, так как они потребуются вам на следующих этапах.
+1. После успешной проверки подлинности вы войдете в систему и увидите сведения, аналогичные приведенным на следующем снимке экрана. Запишите идентификатор подписки и имя подписки, так как они потребуются вам на следующих этапах.
 
    ![Окно PowerShell](./media/security-azure-log-integration-keyvault-eventhub/login-azurermaccount.png)
-5. Создайте переменные для хранения значений, которые будут использоваться дальше. Введите следующие строки PowerShell. Может потребоваться настроить параметры в соответствии с вашей средой.
+1. Создайте переменные для хранения значений, которые будут использоваться дальше. Введите следующие строки PowerShell. Может потребоваться настроить параметры в соответствии с вашей средой.
     - ```$subscriptionName = ‘Visual Studio Ultimate with MSDN’``` (У вашей подписки может быть другое имя. Вы увидите его в составе выходных данных предыдущей команды.)
     - ```$location = 'West US'``` (Эта переменная будет использоваться для передачи расположения, в котором должны быть созданы ресурсы. Эту переменную можно изменить на любое необходимое расположение.)
     - ```$random = Get-Random```
@@ -100,32 +100,32 @@ ms.locfileid: "35235963"
     - ``` $storageName = $name``` (Эта переменная будет использоваться для имени учетной записи хранения.)
     - ```$rgname = $name ``` (Эта переменная будет использоваться для имени группы ресурсов.)
     - ``` $eventHubNameSpaceName = $name``` (Это имя пространства имен концентратора событий.)
-6. Укажите подписку, с которой вы будете работать:
+1. Укажите подписку, с которой вы будете работать:
     
     ```Select-AzureRmSubscription -SubscriptionName $subscriptionName```
-7. Создайте группу ресурсов:
+1. Создайте группу ресурсов:
     
     ```$rg = New-AzureRmResourceGroup -Name $rgname -Location $location```
     
    Если на этом этапе вы введете `$rg`, вы должны увидеть следующие выходные данные:
 
    ![Выходные данные после создания группы ресурсов](./media/security-azure-log-integration-keyvault-eventhub/create-rg.png)
-8. Создайте учетную запись хранения, которая будет использоваться для отслеживания сведений о состоянии:
+1. Создайте учетную запись хранения, которая будет использоваться для отслеживания сведений о состоянии:
     
     ```$storage = New-AzureRmStorageAccount -ResourceGroupName $rgname -Name $storagename -Location $location -SkuName Standard_LRS```
-9. Создайте пространство имен концентратора событий. Это необходимо для создания концентратора событий.
+1. Создайте пространство имен концентратора событий. Это необходимо для создания концентратора событий.
     
     ```$eventHubNameSpace = New-AzureRmEventHubNamespace -ResourceGroupName $rgname -NamespaceName $eventHubnamespaceName -Location $location```
-10. Получите идентификатор правила, который будет использоваться с поставщиком Insights:
+1. Получите идентификатор правила, который будет использоваться с поставщиком Insights:
     
     ```$sbruleid = $eventHubNameSpace.Id +'/authorizationrules/RootManageSharedAccessKey' ```
-11. Получите все возможные расположения Azure и добавьте имена в переменную, которая может использоваться в дальнейшем:
+1. Получите все возможные расположения Azure и добавьте имена в переменную, которая может использоваться в дальнейшем:
     
     a. ```$locationObjects = Get-AzureRMLocation```    
-    Б. ```$locations = @('global') + $locationobjects.location```
+    b. ```$locations = @('global') + $locationobjects.location```
     
     Если на этом этапе вы введете `$locations`, вы увидите имена расположений без дополнительных сведений, возвращенных командлетом Get-AzureRmLocation.
-12. Создайте профиль журнала Azure Resource Manager: 
+1. Создайте профиль журнала Azure Resource Manager: 
     
     ```Add-AzureRmLogProfile -Name $name -ServiceBusRuleId $sbruleid -Locations $locations```
     
@@ -142,7 +142,7 @@ ms.locfileid: "35235963"
 
    ```$kv = New-AzureRmKeyVault -VaultName $name -ResourceGroupName $rgname -Location $location ```
 
-2. Настройте ведение журнала для хранилища ключей:
+1. Настройте ведение журнала для хранилища ключей:
 
    ```Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId -ServiceBusRuleId $sbruleid -Enabled $true ```
 
@@ -153,13 +153,13 @@ ms.locfileid: "35235963"
 1. Отобразите текущие ключи хранилища:
     
    ```Get-AzureRmStorageAccountKey -Name $storagename -ResourceGroupName $rgname  | ft -a```
-2. Создайте ключ **key2**:
+1. Создайте ключ **key2**:
     
    ```New-AzureRmStorageAccountKey -Name $storagename -ResourceGroupName $rgname -KeyName key2```
-3. Отобразите ключи снова и обратите внимание, что ключ **key2** содержит другое значение:
+1. Отобразите ключи снова и обратите внимание, что ключ **key2** содержит другое значение:
     
    ```Get-AzureRmStorageAccountKey -Name $storagename -ResourceGroupName $rgname  | ft -a```
-4. Задайте и считайте секрет для создания дополнительных записей журнала:
+1. Задайте и считайте секрет для создания дополнительных записей журнала:
     
    a. ```Set-AzureKeyVaultSecret -VaultName $name -Name TestSecret -SecretValue (ConvertTo-SecureString -String 'Hi There!' -AsPlainText -Force)``` Б. ```(Get-AzureKeyVaultSecret -VaultName $name -Name TestSecret).SecretValueText```
 
@@ -171,14 +171,14 @@ ms.locfileid: "35235963"
 После того как для всех необходимых элементов настроено ведение журнала Key Vault в концентраторе событий, следует настроить интеграцию журнала Azure.
 
 1. ```$storage = Get-AzureRmStorageAccount -ResourceGroupName $rgname -Name $storagename```
-2. ```$eventHubKey = Get-AzureRmEventHubNamespaceKey -ResourceGroupName $rgname -NamespaceName $eventHubNamespace.name -AuthorizationRuleName RootManageSharedAccessKey```
-3. ```$storagekeys = Get-AzureRmStorageAccountKey -ResourceGroupName $rgname -Name $storagename```
-4. ``` $storagekey = $storagekeys[0].Value```
+1. ```$eventHubKey = Get-AzureRmEventHubNamespaceKey -ResourceGroupName $rgname -NamespaceName $eventHubNamespace.name -AuthorizationRuleName RootManageSharedAccessKey```
+1. ```$storagekeys = Get-AzureRmStorageAccountKey -ResourceGroupName $rgname -Name $storagename```
+1. ``` $storagekey = $storagekeys[0].Value```
 
 Выполните команду AzLog для каждого концентратора событий:
 
 1. ```$eventhubs = Get-AzureRmEventHub -ResourceGroupName $rgname -NamespaceName $eventHubNamespaceName```
-2. ```$eventhubs.Name | %{Add-AzLogEventSource -Name $sub' - '$_ -StorageAccount $storage.StorageAccountName -StorageKey $storageKey -EventHubConnectionString $eventHubKey.PrimaryConnectionString -EventHubName $_}```
+1. ```$eventhubs.Name | %{Add-AzLogEventSource -Name $sub' - '$_ -StorageAccount $storage.StorageAccountName -StorageKey $storageKey -EventHubConnectionString $eventHubKey.PrimaryConnectionString -EventHubName $_}```
 
 Приблизительно через минуту после выполнения двух последних команд вы должны увидеть созданные JSON-файлы. Их наличие можно проверить в каталоге **C:\users\AzLog\EventHubJson**.
 
