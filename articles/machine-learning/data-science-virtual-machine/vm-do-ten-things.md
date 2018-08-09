@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/04/2017
 ms.author: gokuma
-ms.openlocfilehash: 8d633a1d3d56f33aad24ca15aea08b5180a6be32
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: ce73d1ef5425ee2fe66655571a6d6bbbff372af5
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39368542"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502817"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -809,7 +809,7 @@ Azure Cosmos DB — это база данных NoSQL в облаке. Она 
 3. Скачайте средство миграции Azure Cosmos DB [отсюда](http://www.microsoft.com/downloads/details.aspx?FamilyID=cda7703a-2774-4c07-adcc-ad02ddc1a44d) и извлеките нужный вам каталог.
 4. Импортируйте данные JSON (данные о вулканах), хранящиеся в [общедоступном большом двоичном объекте](https://cahandson.blob.core.windows.net/samples/volcano.json), в Cosmos DB с помощью следующих параметров команды средства миграции (файл dtui.exe из каталога, в который вы установили средство миграции Cosmos DB). Введите исходное и целевое расположение со следующими параметрами:
    
-    /s:JsonFile /s.Files:https://cahandson.blob.core.windows.net/samples/volcano.json /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://[DocDBAccountName].documents.azure.com:443/;AccountKey=[[KEY];Database=volcano /t.Collection:volcano1
+    `/s:JsonFile /s.Files:https://cahandson.blob.core.windows.net/samples/volcano.json /t:DocumentDBBulk /t.ConnectionString:AccountEndpoint=https://[DocDBAccountName].documents.azure.com:443/;AccountKey=[[KEY];Database=volcano /t.Collection:volcano1`
 
 После импорта данных перейдите в Jupyter и откройте записную книжку *DocumentDBSample*, содержащую код Python для доступа к Azure Cosmos DB и выполнения базовых запросов. Дополнительные сведения о Cosmos DB см. на [странице документации](https://docs.microsoft.com/azure/cosmos-db/) службы.
 

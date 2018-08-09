@@ -17,12 +17,12 @@ ms.date: 01/07/2017
 ms.author: celested
 ms.reviewer: hirsin, dastrock
 ms.custom: aaddev
-ms.openlocfilehash: f406c63ddd326b819219e72ad304d6052c65106d
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: 1a909e1deb40c61f4f11ca041e1749499fd815bc
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39264615"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39504504"
 ---
 # <a name="azure-active-directory-v20-and-the-oauth-20-client-credentials-flow"></a>Azure Active Directory версии 2.0 и поток учетных данных клиента OAuth 2.0
 [Предоставление учетных данных клиента OAuth 2.0](http://tools.ietf.org/html/rfc6749#section-4.4), указанное в спецификации RFC 6749, которое иногда называют также *двусторонним OAuth*, можно использовать для доступа к интернет-ресурсам с помощью удостоверения приложения. Как правило, подобное предоставление используется для взаимодействия между серверами, которое должно выполняться в фоновом режиме без немедленного вмешательства пользователя. Приложения такого типа часто называют *управляющими программами* или *учетными записями служб*.
@@ -62,7 +62,7 @@ ms.locfileid: "39264615"
 Чтобы использовать разрешения приложения в приложении, выполните указания в следующих разделах.
 
 #### <a name="request-the-permissions-in-the-app-registration-portal"></a>Запрос разрешений на портале регистрации приложения
-1. Перейдите к приложению на [портале регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или [создайте приложение](active-directory-v2-app-registration.md), если это еще не сделано. При создании приложения потребуется использовать по крайней мере один секрет приложения.
+1. Перейдите к приложению на [портале регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/documentation/articles&deeplink=/appList) или [создайте приложение](quickstart-v2-register-an-app.md), если это еще не сделано. При создании приложения потребуется использовать по крайней мере один секрет приложения.
 2. Найдите раздел **Разрешения Microsoft Graph** и добавьте **разрешения приложения**, необходимые для приложения.
 3. **Сохраните** регистрацию приложения.
 

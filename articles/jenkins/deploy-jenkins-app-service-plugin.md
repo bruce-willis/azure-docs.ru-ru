@@ -8,12 +8,12 @@ manager: jpconnock
 ms.service: devops
 ms.custom: jenkins
 ms.date: 07/31/2018
-ms.openlocfilehash: 1b01eb760fa36c9f0fb6180c12dc3e5c1bf9de6f
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: f54e4e8f64fe444f264b547d5af475c533c5723f
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39391492"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39441686"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -65,7 +65,7 @@ sudo apt-get install -y maven
 Перед настройкой задания в Jenkins требуется план службы приложений Azure и веб-приложение для запуска приложения Java.
 
 
-1. Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью [команды Azure CLI](/cli/azure/appservice/plan#az_appservice_plan_create) `az appservice plan create`. От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют эти ресурсы. Эти ресурсы позволяют сэкономить при размещении нескольких приложений.
+1. Создайте план службы приложений Azure с ценовой категорией **Бесплатный** с помощью [команды Azure CLI](/cli/azure/appservice/plan#az-appservice-plan-create) `az appservice plan create`. От плана службы приложений зависят физические ресурсы, используемые для размещения приложений. Все приложения, назначенные плану службы приложений, совместно используют эти ресурсы. Эти ресурсы позволяют сэкономить при размещении нескольких приложений.
 2. Создайте веб-приложение. Воспользуйтесь [порталом Azure](/azure/app-service-web/web-sites-configure) или выполните следующую команду `az` Azure CLI:
     ```azurecli-interactive 
     az webapp create --name <myAppName> --resource-group <myResourceGroup> --plan <myAppServicePlan>

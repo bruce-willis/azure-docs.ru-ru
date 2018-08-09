@@ -2,34 +2,26 @@
 title: Включение безопасного TLS для клиента службы хранилища Azure | Документация Майкрософт
 description: Узнайте, как включить TLS 1.2 в клиенте службы хранилища Azure.
 services: storage
-documentationcenter: na
 author: fhryo-msft
-manager: cbrooks
-editor: fhryo-msft
-ms.assetid: ''
 ms.service: storage
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: storage
 ms.date: 06/25/2018
 ms.author: fryu
-ms.openlocfilehash: 6c313b6015a8a6dcc4ca5befb5fef70b047d0410
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.component: common
+ms.openlocfilehash: 47cc38226799c5fd3afa2e13e7731a7683b736ba
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37866531"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527523"
 ---
 # <a name="enable-secure-tls-for-azure-storage-client"></a>Включение безопасного TLS для клиента службы хранилища Azure
 
-Если вам нужно выполнять в службе хранилища Azure аудит соблюдения новых требований к соответствию и безопасности, учитывайте, что протоколы SSL 1.0, 2.0, 3.0 и TLS 1.0, распознаются как несовместимые протоколы взаимодействия.
-
-В протоколах SSL 1.0, 2.0 и 3.0 обнаружены неустранимые уязвимости. Их применение запрещено рекомендациями RFC. Протокол TLS 1.0 становится небезопасным из-за использования небезопасного блочного шифра (DES CBC и RC2 CBC) и поточного шифра (RC4). Также совет PCI предлагает переходить на более поздние версии TLS. Дополнительные сведения можно найти в статье [о протоколе TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security#SSL_1.0.2C_2.0_and_3.0).
+TLS и SSL являются протоколами шифрования, которые обеспечивает безопасность передачи данных по сети. В протоколах SSL 1.0, 2.0 и 3.0 обнаружены неустранимые уязвимости. Их применение запрещено рекомендациями RFC. Протокол TLS 1.0 становится небезопасным из-за использования небезопасного блочного шифра (DES CBC и RC2 CBC) и поточного шифра (RC4). Также совет PCI предлагает переходить на более поздние версии TLS. Дополнительные сведения можно найти в статье [о протоколе TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security#SSL_1.0.2C_2.0_and_3.0).
 
 В службе хранилища Azure протокол SSL 3.0 не используется с 2015 г. Сейчас в службе используется TLS 1.2 на общедоступных конечных точках HTTPS, но TLS 1.0 и TLS 1.1 пока поддерживаются для обеспечения обратной совместимости.
 
-Чтобы обеспечить безопасность и соответствие требованиям для подключения к службе хранилища Azure, необходимо включить TLS 1.2 на стороне клиента перед отправкой запросов на управление службой хранилища Azure.
+Чтобы обеспечить безопасность и соответствие требованиям для подключения к службе хранилища Azure, необходимо включить протокол TLS 1.2 или более поздней версии на стороне клиента перед отправкой запросов на управление службой хранилища Azure.
 
 ## <a name="enable-tls-12-in-net-client"></a>Включение TLS 1.2 в клиенте .NET
 
@@ -86,4 +78,5 @@ $listOfContainers
 ## <a name="see-also"></a>См. также
 
 * [Протокол TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security#SSL_1.0.2C_2.0_and_3.0)
+* [Соответствие протокола TLS требованиям PCI](https://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls)
 * [Включение протокола TLS в клиенте Java](https://www.java.com/en/configure_crypto.html)
