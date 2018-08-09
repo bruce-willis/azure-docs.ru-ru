@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/26/2018
 ms.author: sethm
-ms.openlocfilehash: 77acad8bd0a7ada13979db539b138e03d42dc031
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 3e4689aa4ef5cdbd52aa2c70b8ba754013cab3db
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37132320"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39425958"
 ---
 # <a name="quickstart-process-event-streams-using-azure-cli-and-java"></a>Краткое руководство. Обработка потоков событий с помощью Azure CLI и Java
 
@@ -87,7 +87,7 @@ git clone https://github.com/Azure/azure-event-hubs.git
 
 В завершение замените строку `"Your primary SAS key"` значением ключа SAS для политики из предыдущего шага.
 
-### <a name="build-the-application"></a>Создание приложения 
+### <a name="build-the-application"></a>создание приложения; 
 
 Вернитесь в папку `\azure-event-hubs\samples\Java\Basic\SimpleSend` и выполните следующую команду построения:
 
@@ -294,5 +294,5 @@ public void onEvents(PartitionContext context, Iterable<EventData> events) throw
 
 [бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install Azure CLI 2.0]: /cli/azure/install-azure-cli
-[az group create]: /cli/azure/group#az_group_create
+[az group create]: /cli/azure/group#az-group-create
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name
