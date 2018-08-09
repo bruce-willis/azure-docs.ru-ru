@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/09/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 65525114f46002c5b9300f6bbabcee06cc27ef3a
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: af48af596e86e0eb09fe45deabe13beedef57cd2
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39091144"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39307931"
 ---
 # <a name="access-the-kubernetes-dashboard-with-azure-kubernetes-service-aks"></a>Подключение панели мониторинга Kubernetes с помощью Службы Azure Kubernetes (AKS)
 
@@ -38,12 +38,14 @@ az aks browse --resource-group myResourceGroup --name myAKSCluster
 
 ### <a name="for-rbac-enabled-clusters"></a>Кластеры с поддержкой RBAC
 
-Если кластер AKS использует RBAC, необходимо создать *ClusterRoleBinding*(связи кластерных ролей) прежде чем правильно подключиться к панели мониторинга. Чтобы создать связь, используйте команду [kubectl create clusterrolebinding][kubectl-create-clusterrolebinding], как показано в следующем примере. 
+Если кластер AKS использует RBAC, необходимо создать *ClusterRoleBinding*(связи кластерных ролей) прежде чем правильно подключиться к панели мониторинга. По умолчанию панель мониторинга Kubernetes развертывается с минимальными правами доступа на чтение и отображает сообщения об ошибках доступа RBAC. Сейчас панель мониторинга Kubernetes не поддерживает пользовательские учетные данные для определения уровня доступа. Вместо этого она использует роли, предоставленные учетной записи службы. Администратор кластера может предоставить дополнительный доступ к учетной записи службы *kubernetes-dashboard*, однако это может послужить вектором для эскалации привилегий. Вы также можете интегрировать аутентификацию Azure Active Directory, чтобы предоставить более детальный уровень доступа.
+
+Чтобы создать связь, используйте команду [kubectl create clusterrolebinding][kubectl-create-clusterrolebinding], как показано в следующем примере. 
 
 > [!WARNING]
 > Этот пример привязки не применяется к дополнительной проверке подлинности и может привести к небезопасному использованию. Панель мониторинга Kubernetes доступна для любого пользователя, имеющего доступ к URL-адресу. Не предоставляйте публичный доступ к панели мониторинга Kubernetes.
 >
-> Вы можете использовать механизмы, например токены носителя или имя пользователя и пароль, для контроля доступа к панели мониторинга и проверки наличия у них необходимых разрешений. Это позволяет использовать более безопасные панели мониторинга. Дополнительные сведения об использовании разных методов проверки подлинности см. в статье о панели мониторинга Kubernetes [Access control][dashboard-authentication](Контроль доступа).
+> Дополнительные сведения об использовании разных методов проверки подлинности см. в статье о панели мониторинга Kubernetes [Access control][dashboard-authentication](Контроль доступа).
 
 ```console
 kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard

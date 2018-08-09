@@ -7,17 +7,17 @@ ms.author: aashishb
 manager: hjerez
 ms.reviewer: jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 09/12/2017
-ms.openlocfilehash: 7a76322d70f6b54d65a4b751a7187425cb4be821
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 5c1a884ebe6216c4e8099f2ada2182ccff68b63e
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834548"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39450334"
 ---
 # <a name="collect-model-data-by-using-data-collection"></a>Сбор данных модели с помощью функции сбора данных
 
@@ -56,7 +56,7 @@ ms.locfileid: "34834548"
     from azureml.datacollector import ModelDataCollector
     ```
 
-2. Добавьте в функцию `init()` следующие строки кода.
+1. Добавьте в функцию `init()` следующие строки кода.
     
     ```python
     global inputs_dc, prediction_dc
@@ -64,7 +64,7 @@ ms.locfileid: "34834548"
     prediction_dc = ModelDataCollector('model.pkl', identifier="prediction")
     ```
 
-3. Добавьте в функцию `run(input_df)` следующие строки кода.
+1. Добавьте в функцию `run(input_df)` следующие строки кода.
     
     ```python
     global inputs_dc, prediction_dc
@@ -74,13 +74,13 @@ ms.locfileid: "34834548"
 
     Убедитесь, что переменные `input_df` и `pred` (прогнозируемое значение `model.predict()`) инициализированы перед вызовом функции `collect()` для них.
 
-4. Используйте команду `az ml service create realtime` с параметром `--collect-model-data true` для создания веб-службы, работающей в реальном времени. Таким образом данные модели будут собираться при выполнении службы.
+1. Используйте команду `az ml service create realtime` с параметром `--collect-model-data true` для создания веб-службы, работающей в реальном времени. Таким образом данные модели будут собираться при выполнении службы.
 
      ```batch
     c:\temp\myIris> az ml service create realtime -f iris_score.py --model-file model.pkl -s service_schema.json -n irisapp -r python --collect-model-data true 
     ```
     
-5. Чтобы проверить, собираются ли данные, выполните команду `az ml service run realtime`.
+1. Чтобы проверить, собираются ли данные, выполните команду `az ml service run realtime`.
 
     ```
     C:\Temp\myIris> az ml service run realtime -i irisapp -d "ADD YOUR INPUT DATA HERE!!" 
@@ -90,15 +90,15 @@ ms.locfileid: "34834548"
 Чтобы просмотреть собранные данные в хранилище больших двоичных объектов, сделайте следующее:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-2. Выбор пункта **Все службы**.
-3. В поле поиска введите **учетные записи хранения** и нажмите клавишу ВВОД.
-4. В колонке поиска **Учетные записи хранения** выберите ресурс **Учетная запись хранения**. Чтобы определить учетную запись хранения, сделайте следующее.
+1. Выбор пункта **Все службы**.
+1. В поле поиска введите **учетные записи хранения** и нажмите клавишу ВВОД.
+1. В колонке поиска **Учетные записи хранения** выберите ресурс **Учетная запись хранения**. Чтобы определить учетную запись хранения, сделайте следующее.
 
     a. Перейдите в Azure Machine Learning Workbench, выберите рабочий проект и откройте командную строку из меню **Файл**.
     
-    Б. Введите `az ml env show -v` и проверьте значение *storage_account*. Это и есть имя учетной записи хранения.
+    b. Введите `az ml env show -v` и проверьте значение *storage_account*. Это и есть имя учетной записи хранения.
 
-5. В меню колонки ресурсов щелкните **Контейнеры**, а затем выберите контейнер **modeldata**. После первого запроса к веб-службе может пройти до 10 минут, прежде чем начнется передача данных в учетную запись хранения, поэтому нужно подождать. Потоки данных передаются в большие двоичные объекты по следующему пути контейнера:
+1. В меню колонки ресурсов щелкните **Контейнеры**, а затем выберите контейнер **modeldata**. После первого запроса к веб-службе может пройти до 10 минут, прежде чем начнется передача данных в учетную запись хранения, поэтому нужно подождать. Потоки данных передаются в большие двоичные объекты по следующему пути контейнера:
 
     `/modeldata/<subscription_id>/<resource_group_name>/<model_management_account_name>/<webservice_name>/<model_id>-<model_name>-<model_version>/<identifier>/<year>/<month>/<day>/data.csv`
 

@@ -1,31 +1,23 @@
 ---
 title: 'Изменение канала ExpressRoute с помощью PowerShell: классическая модель Azure | Документация Майкрософт'
 description: В этой статье описывается, как выполнить проверку состояния, обновление, удаление или отмену подготовки канала классической модели развертывания ExpressRoute.
-documentationcenter: na
 services: expressroute
 author: ganesr
-manager: timlt
-editor: ''
-tags: azure-service-management
-ms.assetid: 0134d242-6459-4dec-a2f1-4657c3bc8b23
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 11/08/2017
+ms.topic: conceptual
+ms.date: 07/26/2018
 ms.author: ganesr;cherylmc
-ms.openlocfilehash: 457bb74fa15d31fecbf668038ac880cafb8a897d
-ms.sourcegitcommit: b5c6197f997aa6858f420302d375896360dd7ceb
+ms.openlocfilehash: 407782ff59147f227f5f34bc3318333093b4f57e
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
-ms.locfileid: "24102840"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283577"
 ---
 # <a name="modify-an-expressroute-circuit-using-powershell-classic"></a>Изменение канала ExpressRoute с помощью PowerShell (классическая модель)
 
 > [!div class="op_single_selector"]
-> * [Портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
+> * [портал Azure](expressroute-howto-circuit-portal-resource-manager.md)
 > * [PowerShell](expressroute-howto-circuit-arm.md)
 > * [интерфейс командной строки Azure](howto-circuit-cli.md)
 > * [Видео — портал Azure](http://azure.microsoft.com/documentation/videos/azure-expressroute-how-to-create-an-expressroute-circuit)
@@ -42,7 +34,38 @@ ms.locfileid: "24102840"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Установите последние версии модулей PowerShell для управления службами Azure (SM). Пошаговые инструкции по настройке компьютера для использования модулей Azure PowerShell см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
+Установите последние версии модулей PowerShell управления службами Azure (SM) и модуля ExpressRoute.  Обратите внимание, что номер версии (в этом примере это 5.1.1) будет меняться по мере выпуска новых версий командлетов.
+
+```powershell
+Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\Azure\Azure.psd1'
+Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Azure\5.1.1\ExpressRoute\ExpressRoute.psd1'
+```
+
+Пошаговые инструкции настройки компьютера для использования модулей Azure PowerShell см. в статье [Общие сведения об Azure PowerShell](/powershell/azure/overview).
+
+Войдите в свою учетную запись Azure с помощью следующего примера.
+
+1. Откройте консоль PowerShell с повышенными правами и подключитесь к своей учетной записи. Для подключения используйте следующий пример кода:
+
+  ```powershel
+  Connect-AzureRmAccount
+  ```
+2. Просмотрите подписки учетной записи.
+
+  ```powershell
+  Get-AzureRmSubscription
+  ```
+3. При наличии нескольких подписок выберите подписку, которую вы хотите использовать.
+
+  ```powershell
+  Select-AzureRmSubscription -SubscriptionName "Replace_with_your_subscription_name"
+  ```
+
+4. Затем воспользуйтесь следующим командлетом, чтобы добавить подписку Azure в PowerShell для классической модели развертывания.
+
+  ```powershell
+  Add-AzureAccount
+  ```
 
 ## <a name="get-the-status-of-a-circuit"></a>Получение состояния канала
 

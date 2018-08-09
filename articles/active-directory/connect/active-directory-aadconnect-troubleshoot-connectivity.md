@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/12/2017
+ms.date: 07/18/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: d30006fae8a0d495909b9a53cf0bffb5cc824433
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 793a65347552782c4a3482b29d10e4c94ef85663
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38295402"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39263237"
 ---
 # <a name="troubleshoot-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения в Azure AD Connect
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
@@ -52,7 +52,7 @@ Azure AD Connect использует для аутентификации сов
 | \*.microsoftonline.com |HTTPS/443 |Используется для настройки каталога Azure AD, а также импорта и экспорта данных. |
 
 ## <a name="errors-in-the-wizard"></a>Ошибки в мастере
-Мастер установки использует два различных контекста безопасности. На странице **Подключение к Azure AD** он использует имя пользователя, выполнившего вход. На странице **Настройка** он переключается на [учетную запись, под которой работает служба модуля синхронизации](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-account). Если возникают проблемы, то обычно они проявляются уже на странице мастера **Подключение к Azure AD**, так как конфигурация прокси-сервера является глобальной.
+Мастер установки использует два различных контекста безопасности. На странице **Подключение к Azure AD** он использует имя пользователя, выполнившего вход. На странице **Настройка** он переключается на [учетную запись, под которой работает служба модуля синхронизации](active-directory-aadconnect-accounts-permissions.md#adsync-service-account). Если возникают проблемы, то обычно они проявляются уже на странице мастера **Подключение к Azure AD**, так как конфигурация прокси-сервера является глобальной.
 
 Ниже приведены наиболее распространенные ошибки, которые встречаются в мастере установки.
 
@@ -161,28 +161,28 @@ Azure AD Connect использует для аутентификации сов
 ### <a name="user-password-expired"></a>Срок действия пароля пользователя истек
 Срок действия ваших учетных данных истек. Измените пароль.
 
-### <a name="authorizationfailure"></a>AuthorizationFailure
-Неизвестная проблема.
+### <a name="authorization-failure"></a>"Authorization Failure" (Сбой авторизации)
+Не удалось авторизовать пользователя для выполнения действия в Azure AD.
 
 ### <a name="authentication-cancelled"></a>Проверка подлинности отменена
 Запрос многофакторной проверки подлинности (MFA) был отменен.
 
-### <a name="connecttomsonline"></a>ConnectToMSOnline
+### <a name="connect-to-ms-online-failed"></a>"Connect To MS Online Failed" (Не удалось подключиться к Microsoft Online)
 Проверка подлинности прошла успешно, но есть проблема с проверкой подлинности в Azure AD PowerShell.
 
-### <a name="azurerolemissing"></a>AzureRoleMissing
-Проверка подлинности прошла успешно. Вы не являетесь глобальным администратором.
+### <a name="azure-ad-global-admin-role-needed"></a>"Azure AD Global Admin Role Needed" (Требуется роль глобального администратора Azure AD)
+Пользователь успешно прошел аутентификацию. Однако ему не назначена роль глобального администратора. Вот [как можно назначить роль глобального администратора](../users-groups-roles/directory-assign-admin-roles.md) пользователю. 
 
-### <a name="privilegedidentitymanagement"></a>PrivilegedIdentityManagement
+### <a name="privileged-identity-management-enabled"></a>"Privileged Identity Management Enabled" (Включено управление привилегированными пользователями)
 Проверка подлинности прошла успешно. Было включено управление привилегированными пользователями, и в настоящее время вы не являетесь глобальным администратором. Дополнительные сведения см. в статье [Приступая к работе с управлением привилегированными пользователями Azure AD](../privileged-identity-management/pim-getting-started.md).
 
-### <a name="companyinfounavailable"></a>CompanyInfoUnavailable
+### <a name="company-information-unavailable"></a>"Company Information Unavailable" (Сведения об организации недоступны)
 Проверка подлинности прошла успешно. Не удалось получить от Azure AD сведения об организации.
 
-### <a name="retrievedomains"></a>RetrieveDomains
+### <a name="domain-information-unavailable"></a>"Domain Information Unavailable" (Сведения о домене недоступны)
 Проверка подлинности прошла успешно. Не удалось получить от Azure AD сведения о домене.
 
-### <a name="unexpected-exception"></a>Неожиданное исключение
+### <a name="unspecified-authentication-failure"></a>"Unspecified Authentication Failure" (Неопределенная ошибка аутентификации)
 Отображается как непредвиденная ошибка в мастере установки. Она может возникнуть при попытке использовать **учетную запись Майкрософт** вместо **учебной или рабочей учетной записи**.
 
 ## <a name="troubleshooting-steps-for-previous-releases"></a>Действия по устранению неполадок для предыдущих версий.

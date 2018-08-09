@@ -10,24 +10,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/09/2018
+ms.date: 07/31/2018
 ms.author: rithorn
-ms.openlocfilehash: 730f79ce0a70da92dbb6332ad824b17e6c2327ff
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: fab26fec44b671a9f779b114c1521bc8142d9427
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38488384"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39389404"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
 Группы управления — это контейнеры, которые помогают управлять доступом, политикой и соответствием требованиям в нескольких подписках. Вы можете создавать и удалять такие контейнеры и управлять ими, чтобы создать иерархии, которые можно использовать с [политикой Azure](../azure-policy/azure-policy-introduction.md) и [элементами управления доступом на основе ролей Azure](../role-based-access-control/overview.md). Дополнительные сведения о группах управления см. в статье [Упорядочение ресурсов с помощью групп управления Azure](management-groups-overview.md).
 
-Функция групп управления предоставляется в общедоступной предварительной версии. Чтобы начать использование групп управления, войдите на [портал Azure](https://portal.azure.com) или воспользуйтесь [Azure PowerShell](https://www.powershellgallery.com/packages/AzureRM.ManagementGroups/0.0.1-preview), [Azure CLI](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az_extension_list_available) либо [REST API](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/managementgroups/resource-manager/Microsoft.Management/preview/2018-01-01-preview) для управления группами управления.
-
 Чтобы внести изменения в группу управления, необходимо иметь роль владельца или участника в этой группе. Чтобы получить сведения об имеющихся разрешениях, выберите группу управления, а затем выберите **IAM**. Дополнительные сведения о ролях RBAC см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).
 
-[!INCLUDE [Handle personal data](../../includes/gdpr-intro-sentence.md)]
+[!INCLUDE [GDPR-related guidance](../../includes/gdpr-intro-sentence.md)]
 
 ## <a name="change-the-name-of-a-management-group"></a>Изменение имени группы управления
 
@@ -80,6 +78,7 @@ az account management-group update --name Contoso --display-name "Contoso Group"
 3. Выберите группу управления, которую требуется удалить.
 4. Нажмите кнопку **Удалить**.
     - Если значок неактивен, наведите указатель мыши на значок, чтобы узнать причину.
+
     ![Удаление группы](media/management-groups/delete.png)
 5. Откроется окно, в котором нужно подтвердить удаление группы управления.
 

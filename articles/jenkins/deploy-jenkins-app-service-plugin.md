@@ -1,26 +1,19 @@
 ---
-title: Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins | Документация Майкрософт
+title: Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins
 description: Узнайте, как развернуть веб-приложение Java в Azure в Jenkins с использованием подключаемого модуля Jenkins службы приложений Azure.
-services: app-service\web
-documentationcenter: ''
-author: mlearned
-manager: douge
-editor: ''
-ms.assetid: ''
-ms.service: multiple
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: web
-ms.date: 7/24/2017
-ms.author: mlearned
-ms.custom: Jenkins
-ms.openlocfilehash: 0128ad37e3ba66710279de42cf4eae0ce5431b5b
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: tarcher
+author: tomarcher
+manager: jpconnock
+ms.service: devops
+ms.custom: jenkins
+ms.date: 07/31/2018
+ms.openlocfilehash: 1b01eb760fa36c9f0fb6180c12dc3e5c1bf9de6f
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31418430"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39391492"
 ---
 # <a name="deploy-to-azure-app-service-by-using-the-jenkins-plugin"></a>Развертывание в службе приложений Azure с помощью подключаемого модуля Jenkins 
 
@@ -28,7 +21,7 @@ ms.locfileid: "31418430"
 * Git или FTP.
 * Docker для веб-приложений в Linux.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Настройка Jenkins для развертывания веб-приложений через Git или по протоколу FTP.
 > * Настройка Jenkins для развертывания веб-приложений для контейнеров.
@@ -228,6 +221,10 @@ sudo apt-get install -y maven
 
 3. Перейдите по адресу: http://&lt;имя_вашего_приложения>.azurewebsites.net/api/calculator/add?x=&lt;x>&y=&lt;y>. Замените &lt;x> и &lt;y> любыми числами для получения сумы x + y.
     
+## <a name="troubleshooting-the-jenkins-plugin"></a>Устранение неполадок подключаемого модуля Jenkins
+
+Если вы столкнулись с ошибками, которые касаются подключаемых модулей Jenkins, сообщите о проблеме конкретного компонента в [JENKS JIRA](https://issues.jenkins-ci.org/).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы выполнили развертывание в Azure с помощью подключаемого модуля Jenkins службы приложений Azure.

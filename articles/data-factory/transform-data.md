@@ -10,25 +10,28 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/16/2018
+ms.date: 07/31/2018
 ms.author: douglasl
-ms.openlocfilehash: afd1944006a08811075e8af8b1a641d00ee3c352
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: e3aefc23cd0f4d8043232214591155aa893f4522
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39112820"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390142"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 > [!div class="op_single_selector"]
 > * [Hive](transform-data-using-hadoop-hive.md)  
 > * [Pig](transform-data-using-hadoop-pig.md)  
 > * [MapReduce](transform-data-using-hadoop-map-reduce.md)  
-> * [Потоковая передача Hadoop](transform-data-using-hadoop-streaming.md)
-> * [Spark](transform-data-using-spark.md)
+> * [Потоковая передача HDInsight](transform-data-using-hadoop-streaming.md)
+> * [HDInsight Spark](transform-data-using-spark.md)
 > * [Машинное обучение](transform-data-using-machine-learning.md) 
 > * [Хранимая процедура](transform-data-using-stored-procedure.md)
 > * [Аналитика озера данных U-SQL](transform-data-using-data-lake-analytics.md)
+> * [Databricks Notebook](transform-data-databricks-notebook.md)
+> * [Databricks Jar](transform-data-databricks-jar.md)
+> * [Databricks Python](transform-data-databricks-python.md)
 > * [Пользовательские действия .NET](transform-data-using-dotnet-custom-activity.md)
 
 ## <a name="overview"></a>Обзор
@@ -63,6 +66,18 @@ C помощью действия хранимой процедуры SQL Serve
 
 ## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
 Действие U-SQL Data Lake Analytics запускает скрипт U-SQL для кластера Azure Data Lake Analytics. Дополнительные сведения см. в статье [Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics](transform-data-using-data-lake-analytics.md). 
+
+## <a name="databricks-notebook-activity"></a>Действие Notebook в Databricks
+
+Действие Azure Databricks Notebook в конвейере Фабрики данных позволяет запустить записную книжку Databricks в рабочей области Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью записной книжки Databricks](transform-data-databricks-notebook.md).
+
+## <a name="databricks-jar-activity"></a>Действие JAR в Databricks
+
+Действие Jar в Azure Databricks в конвейере Фабрики данных позволяет запустить файл Spark Jar в кластере Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью выполнения действий Jar в Azure Databricks](transform-data-databricks-jar.md).
+
+## <a name="databricks-python-activity"></a>Действие Python в Databricks
+
+Действие Python в Azure Databricks в конвейере Фабрики данных позволяет запустить файл Python в кластере Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью выполнения действий Python в Azure Databricks](transform-data-databricks-python.md).
 
 ## <a name="custom-activity"></a>Настраиваемое действие
 Если вам нужно преобразовать данные способом, который не поддерживается фабрикой данных Azure, то можно создать настраиваемое действие с собственной логикой обработки данных и использовать это действие в конвейере. Можно настроить запуск настраиваемого действия .NET с помощью пакетной службы Azure или кластера HDInsight. Дополнительные сведения см. в разделе [Использование настраиваемых действий в конвейере фабрики данных Azure](transform-data-using-dotnet-custom-activity.md). 

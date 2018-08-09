@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/26/2018
 ms.author: nepeters
 ms.custom: mvc
-ms.openlocfilehash: f58a8d76cc46ac25474c7b91e464974612876a06
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 8f14a7aabbdf815992e0777eaf5335a69570ce2e
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164964"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39429256"
 ---
 # <a name="deploy-and-use-azure-container-registry"></a>Развертывание реестра контейнеров Azure и его использование
 
@@ -39,13 +39,13 @@ ms.locfileid: "32164964"
 
 При развертывании реестра контейнеров Azure сначала необходимо создать группу ресурсов. Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). В этом примере создается группа ресурсов `myResourceGroup` в регионе `westeurope`.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В этом примере создается группа ресурсов `myResourceGroup` в регионе `westeurope`.
 
 ```azurecli
 az group create --name myResourceGroup --location westeurope
 ```
 
-Создайте реестр контейнеров Azure с помощью команды[az acr create](/cli/azure/acr#az_acr_create). Имя контейнера реестра **должно быть уникальным**.
+Создайте реестр контейнеров Azure с помощью команды[az acr create](/cli/azure/acr#az-acr-create). Имя контейнера реестра **должно быть уникальным**.
 
 ```azurecli
 az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
@@ -55,7 +55,7 @@ az acr create --resource-group myResourceGroup --name <acrName> --sku Basic
 
 ## <a name="container-registry-login"></a>Вход в реестр контейнеров
 
-Выполните команду [az acr login](https://docs.microsoft.com/cli/azure/acr#az_acr_login), чтобы войти в экземпляр ACR. Укажите уникальное имя реестра контейнеров, заданное для него при создании.
+Выполните команду [az acr login](https://docs.microsoft.com/cli/azure/acr#az-acr-login), чтобы войти в экземпляр ACR. Укажите уникальное имя реестра контейнеров, заданное для него при создании.
 
 ```azurecli
 az acr login --name <acrName>
@@ -124,7 +124,7 @@ docker push <acrLoginServer>/azure-vote-front:v1
 
 ## <a name="list-images-in-registry"></a>Перечисление образов в реестре
 
-Чтобы получить список образов, отправленных в реестр контейнеров Azure, выполните команду [az acr repository list](/cli/azure/acr/repository#az_acr_repository_list). Укажите в команде имя нужного экземпляра ACR.
+Чтобы получить список образов, отправленных в реестр контейнеров Azure, выполните команду [az acr repository list](/cli/azure/acr/repository#az-acr-repository-list). Укажите в команде имя нужного экземпляра ACR.
 
 ```azurecli
 az acr repository list --name <acrName> --output table

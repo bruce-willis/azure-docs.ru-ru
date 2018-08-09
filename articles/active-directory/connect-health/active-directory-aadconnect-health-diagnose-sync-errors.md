@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: zhiweiw
-ms.openlocfilehash: 4a6e0924492c26c9bad4ed0af207ad9764c3cc5c
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 3659572f46ae82d39a6c53246db2b6a536be32c8
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34831903"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39282947"
 ---
 # <a name="diagnose-and-remediate-duplicated-attribute-sync-errors"></a>Диагностика и устранение ошибок синхронизации повторяющихся атрибутов
 
@@ -127,6 +127,12 @@ ms.locfileid: "34831903"
 
 Выполнив описанные выше действия, пользователь может получить доступ к исходному ресурсу, который представляет собой ссылку на существующий объект. Значение **Diagnose status** (Состояние диагностики) в представлении списка будет изменено на **Ожидается синхронизация**. Ошибка синхронизации будет устранена после следующей синхронизации. Connect Health больше не будет отображать в представлении списка исправленную ошибку синхронизации.
 
+## <a name="failures-and-error-messages"></a>Ошибки и сообщения об ошибках
+**User with conflicting attribute is soft deleted in the Azure Active Directory. Ensure the user is hard deleted before retry.** (Пользователь с конфликтующим атрибутом обратимо удален из Azure Active Directory. Перед повторной попыткой убедитесь, что пользователь удален необратимо.)  
+Пользователь с конфликтующим атрибутом в Azure AD должен быть удален перед попыткой устранить ошибку. Узнайте, [как навсегда удалить пользователя из Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-users-restore), прежде чем повторить попытку исправления. Пользователь также будет автоматически необратимо удален через 30 дней после того, как он был обратимо удален. 
+
+**Updating source anchor to cloud-based user in your tenant is not supported.** (Обновление привязки к источнику в клиенте для облачного пользователя не поддерживается.)  
+У облачного пользователя в Azure AD не должно быть привязки к источнику. В этом случае обновление привязки к источнику не поддерживается. Требуется исправление вручную из локальной среды. 
 
 ## <a name="faq"></a>Часто задаваемые вопросы
 **Вопрос.** Что происходит при сбое применения действия **Применить исправление**?  

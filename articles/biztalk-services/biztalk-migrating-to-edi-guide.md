@@ -1,27 +1,23 @@
 ---
-title: Техническое руководство по переносу решений EDI для BizTalk Server в службы BizTalk | Документация Майкрософт
-description: Перенос EDI в MABS; Службы BizTalk Microsoft Azure
+title: Перенос решений EDI для BizTalk Server в службы BizTalk | Документация Майкрософт
+description: Узнайте, как переносить решения EDI для BizTalk Server в службы BizTalk Microsoft Azure (MABS)
 services: biztalk-services
-documentationcenter: na
-author: MandiOhlinger
-manager: anneta
-editor: ''
-ms.assetid: 61c179fa-3f37-495b-8016-dee7474fd3a6
 ms.service: biztalk-services
-ms.workload: integration
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: jonfancey
+ms.author: jonfan
+manager: jeconnoc
 ms.topic: article
-ms.date: 11/07/2016
-ms.author: mandia
-ms.openlocfilehash: aaa7028bb37ac4c2c313efce2afebc1dc5e814d2
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.date: 07/31/2018
+ms.reviewer: jonfan, LADocs
+ms.suite: integration
+ms.openlocfilehash: 4ce65f1b5dd22da031ebf6730b5efad2d04f91a0
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37860084"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39365593"
 ---
-# <a name="migrating-biztalk-server-edi-solutions-to-biztalk-services-technical-guide"></a>Перенос решений EDI для BizTalk Server в службы BizTalk: техническое руководство
+# <a name="migrate-biztalk-server-edi-solutions-to-biztalk-services-technical-guide"></a>Техническое руководство. Перенос решений EDI для BizTalk Server в службы BizTalk
 
 > [!INCLUDE [BizTalk Services is being retired, and replaced with Azure Logic Apps](../../includes/biztalk-services-retirement.md)]
 
@@ -34,7 +30,7 @@ ms.locfileid: "37860084"
 ## <a name="introduction"></a>Введение
 Электронный обмен данными (EDI) является одним из наиболее распространенных средств электронного обмена данными между предприятиями, его также называют транзакциями «бизнес — бизнес» или B2B. BizTalk Server поддерживает EDI более десяти лет с момента своего первоначального выпуска. С помощью служб BizTalk Microsoft продолжает поддерживать решения EDI на платформе Microsoft Azure. B2B-транзакции в основном являются внешними для организации и поэтому их легче реализовать на базе облачной платформы. Microsoft Azure предоставляет такую возможность посредством служб BizTalk.
 
-Хотя некоторые клиенты смотрят на службы BizTalk как на «зеленое поле» для новых решений EDI, у многих клиентов есть текущие решения EDI для BizTalk Server, которые они хотели бы перенести Azure. Поскольку EDI служб BizTalk построена на тех же основных понятиях, что и EDI для BizTalk Server (торговые партнеры, сущности, соглашения), артефакты EDI для BizTalk Server можно перенести в службы BizTalk.
+Хотя некоторые клиенты смотрят на службы BizTalk как на "зеленое поле" для новых решений EDI, у многих клиентов есть текущие решения EDI для BizTalk Server, которые они хотели бы перенести в Azure. Поскольку EDI служб BizTalk построена на тех же основных понятиях, что и EDI для BizTalk Server (торговые партнеры, сущности, соглашения), артефакты EDI для BizTalk Server можно перенести в службы BizTalk.
 
 В этом документе рассматриваются некоторые отличия, связанные с переносом артефактов EDI для BizTalk Server в службы BizTalk. Этот документ предполагает наличие у читателя практического опыта обработки EDI для BizTalk Server и соглашений между торговыми партнерами. Дополнительные сведения о EDI для BizTalk Server см. в статье [Управление торговыми партнерами с помощью BizTalk Server](https://msdn.microsoft.com/library/bb259970.aspx).
 
@@ -118,10 +114,7 @@ ms.locfileid: "37860084"
 ### <a name="routing-to-multiple-destinations"></a>Маршрутизация нескольким получателям
 Мосты служб BizTalk на данный момент не поддерживают маршрутизацию сообщений нескольким получателям с использованием модели публикации-подписки. Вместо этого сообщения от моста служб BizTalk можно направить в раздел служебной шины, который может иметь несколько подписок для получения сообщения на нескольких конечных точках.
 
-## <a name="conclusion"></a>Заключение
-Службы BizTalk Microsoft Azure регулярно обновляются для добавления новых функций и возможностей. С каждым обновлением мы рассчитываем на увеличение функциональности для облегчения создания решений полного цикла с помощью служб BizTalk и других технологий Azure.
-
 ## <a name="see-also"></a>См. также
-[Разработка корпоративных приложений с Azure](https://msdn.microsoft.com/library/azure/hh674490.aspx)
+[Бизнес-приложения](https://azure.microsoft.com/solutions/lob-applications)
 
 [EDImessageflow]: ./media/biztalk-migrating-to-edi-guide/IC719455.png

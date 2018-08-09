@@ -9,12 +9,12 @@ ms.date: 04/12/2018
 ms.topic: article
 ms.service: active-directory
 ms.workload: identity
-ms.openlocfilehash: d0d72694fe2d88e257a8684dc37a250bc0ad7f3f
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 7acf18c4624373dff8994a1996e9082770b90270
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38970995"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283693"
 ---
 # <a name="choose-the-right-authentication-method-for-your-azure-active-directory-hybrid-identity-solution"></a>Выбор правильного метода аутентификации для гибридного решения для идентификации Azure Active Directory 
 
@@ -106,9 +106,9 @@ Azure AD поддерживает следующие методы аутенти
 
     Развертывание синхронизации хэша паролей в дополнение к сквозной аутентификации дает еще одно преимущество. Это обеспечивает резервный метод аутентификации на случай, если основной метод аутентификации станет недоступен.
 
-* **Рекомендации**. Синхронизацию хэша паролей можно использовать в качестве резервного метода аутентификации для сквозной аутентификации на случай, если агентам не удается проверить учетные данные пользователя. В этом случае отработка отказа для синхронизации хэша паролей не происходит автоматически. Необходимо будет вручную переключить метод входа с помощью Azure AD Connect. 
+* **Рекомендации**. Синхронизацию хэша паролей можно использовать в качестве резервного метода аутентификации для сквозной аутентификации на случай, если агентам не удается проверить учетные данные пользователя из-за значительного сбоя в локальной среде. Отработка отказа для синхронизации хэша паролей не происходит автоматически. Необходимо использовать Azure AD Connect, чтобы вручную переключить метод входа. 
 
-    Сквозная аутентификация поддерживает только облачные приложения, которые используют современную аутентификацию и специальные протоколы Exchange Online. К этим протоколам относятся ActiveSync, POP3 и IMAP4. Например, Microsoft Office 2013 и более поздние версии поддерживают современную аутентификацию, а более ранние версии — нет. Дополнительные сведения о поддержке приложений Office приведены в статье [Updated Office 365 modern authentication](https://blogs.office.com/en-us/2015/11/19/updated-office-365-modern-authentication-public-preview/) (Обновленная современная аутентификация Office 365). Ознакомьтесь с [часто задаваемыми вопросами](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication-faq) и другими вопросами о сквозной аутентификации, включая поддержку альтернативного идентификатора.
+    Ознакомьтесь с [часто задаваемыми вопросами](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication-faq) и другими вопросами о сквозной аутентификации, включая поддержку альтернативного идентификатора.
 
 Ознакомьтесь с [реализацией сквозной аутентификации](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-pass-through-authentication), чтобы узнать о шагах по развертыванию.
 

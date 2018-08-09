@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/17/2018
 ms.author: apimpm
-ms.openlocfilehash: b06a179459a449762555879669d177f811cb9560
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 4135bd66e839037d7db694cb3c6df8f3905222e6
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090883"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283107"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -76,6 +76,7 @@ ms.locfileid: "39090883"
 
 7. Щелкните **Делегированные разрешения** рядом с только что добавленным приложением и установите флажок **Access Azure Service Management (preview)** (Доступ к управлению службами Azure (предварительная версия)).
 8. Нажмите кнопку **Выбрать**.
+9. Щелкните **Предоставить разрешения**.
 
 ### <a name="configuring-your-app"></a>Настройка приложения
 
@@ -92,7 +93,7 @@ namespace GetTokenResourceManagerRequests
         static void Main(string[] args)
         {
             var authenticationContext = new AuthenticationContext("https://login.microsoftonline.com/{tenant id}");
-            var result = authenticationContext.AcquireToken("https://management.azure.com/", {application id}, new Uri({redirect uri});
+            var result = authenticationContext.AcquireTokenAsync("https://management.azure.com/", "{application id}", new Uri("{redirect uri}"), new PlatformParameters(PromptBehavior.Auto)).Result;
 
             if (result == null) {
                 throw new InvalidOperationException("Failed to obtain the JWT token");
@@ -123,6 +124,8 @@ namespace GetTokenResourceManagerRequests
 
 ## <a name="calling-the-backup-and-restore-operations"></a>Вызов операций резервного копирования и восстановления
 
+Интерфейсы REST API: [служба управления API — резервное копирование](https://docs.microsoft.com/rest/api/apimanagement/apimanagementservice/backup) и [служба управления API — восстановление](https://docs.microsoft.com/rest/api/apimanagement/apimanagementservice/restore).
+
 Прежде чем выполнять операции резервного копирования и восстановления, описанные в следующих разделах, задайте заголовок запроса авторизации для вызова REST.
 
 ```csharp
@@ -132,24 +135,27 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 ### <a name="step1"> </a>Архивация службы управления API
 Чтобы выполнить архивацию службы управления API, отправьте следующий HTTP-запрос:
 
-`POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}`
+```
+POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup?api-version={api-version}
+```
 
 где:
 
 * `subscriptionId` — идентификатор подписки, содержащей службу управления API, для которой вы собираетесь выполнить резервное копирование;
 * `resourceGroupName` — имя группы ресурсов службы управления API Azure
 * `serviceName` — имя службы управления API, резервное копирование которой вы выполняете, на момент ее создания;
-* `api-version` замените `2014-02-14`.
+* `api-version` замените `2018-06-01-preview`.
 
 В тексте запроса укажите целевую учетную запись хранения Azure, ключ доступа, имя контейнера BLOB-объектов и имя резервной копии:
 
-```
-'{  
-    storageAccount : {storage account name for the backup},  
-    accessKey : {access key for the account},  
-    containerName : {backup container name},  
-    backupName : {backup blob name}  
-}'
+
+```json
+{
+  "storageAccount": "{storage account name for the backup}",
+  "accessKey": "{access key for the account}",
+  "containerName": "{backup container name}",
+  "backupName": "{backup blob name}"
+}
 ```
 
 Для заголовка запроса `Content-Type` установите значение `application/json`.
@@ -168,24 +174,26 @@ request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
 ### <a name="step2"> </a>Восстановление службы управления API
 Чтобы восстановить службу API Management из ранее созданной резервной копии, отправьте следующий HTTP-запрос:
 
-`POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}`
+```
+POST https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/restore?api-version={api-version}
+```
 
 где:
 
 * `subscriptionId` — идентификатор подписки, включающей в себя службу управления API, которую нужно восстановить из резервной копии;
 * `resourceGroupName` — строка в формате "Api-Default-{service-region}", где `service-region` — это регион Azure, в котором размещена восстанавливаемая из резервной копии служба управления API (например, `North-Central-US`);
 * `serviceName` — имя восстанавливаемой службы управления API на момент ее создания;
-* `api-version` замените `2014-02-14`.
+* `api-version` замените `2018-06-01-preview`.
 
 В тексте запроса укажите расположение файла резервной копии, т. е. учетную запись хранения Azure, ключ доступа, имя контейнера BLOB-объектов и имя резервной копии:
 
-```
-'{  
-    storageAccount : {storage account name for the backup},  
-    accessKey : {access key for the account},  
-    containerName : {backup container name},  
-    backupName : {backup blob name}  
-}'
+```json
+{
+  "storageAccount": "{storage account name for the backup}",
+  "accessKey": "{access key for the account}",
+  "containerName": "{backup container name}",
+  "backupName": "{backup blob name}"
+}
 ```
 
 Для заголовка запроса `Content-Type` установите значение `application/json`.

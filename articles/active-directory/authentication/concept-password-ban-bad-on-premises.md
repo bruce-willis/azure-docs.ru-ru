@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 07/11/2018
+ms.date: 07/25/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: jsimmons
-ms.openlocfilehash: 5d4062ff2c21deeb56eb4ae6e8386452608f85fa
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: fa6048800aad04b45b72c4da61ad9e8b94541502
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39158810"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39308482"
 ---
 # <a name="preview-enforce-azure-ad-password-protection-for-windows-server-active-directory"></a>Предварительная версия. Применение защиты паролем Azure AD для Windows Server Active Directory
 
@@ -37,6 +37,7 @@ ms.locfileid: "39158810"
 ## <a name="requirements"></a>Требования
 
 * Все компьютеры с установленными компонентами защиты паролем Azure AD, включая контроллеры домена, должны работать под управлением Windows Server 2012 или более поздней версии.
+* На всех компьютерах с установленными компонентами защиты паролем Azure AD, включая контроллеры домена, должна быть установлена универсальная среда выполнения C. Лучше всего это выполнить, установив все исправления на компьютеры с помощью Центра обновления Windows. В противном случае может быть установлен соответствующий пакет обновления для установленной операционной системы. Дополнительные сведения см. в разделе [Обновление для универсальной среды выполнения C в Windows](https://support.microsoft.com/en-us/help/2999226/update-for-universal-c-runtime-in-windows).
 * Необходимо настроить сетевое подключение минимум между одним контроллером домена в каждом домене и одним сервером, на котором установлена ​​прокси-служба защиты паролем Azure AD.
 * Все домены Active Directory, на которых работает программное обеспечение службы агента контроллера домена, должны использовать DFSR для репликации sysvol.
 * Учетная запись глобального администратора для регистрации прокси-службы защиты паролем Azure AD с помощью Azure Active Directory.
@@ -48,7 +49,7 @@ ms.locfileid: "39158810"
 
 Пользовательский список заблокированных паролей требует наличия лицензий Azure AD Basic.
 
-Защита паролем Azure AD для Windows Server Active Directory требует наличия лицензий Azure AD Premium. 
+Защита паролем Azure AD для Windows Server Active Directory требует наличия лицензий Azure AD Premium.
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на [сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
@@ -61,7 +62,7 @@ ms.locfileid: "39158810"
 * Для контроллеров домена подключение к Интернету не требуется. Подключение к Интернету требуется только для компьютеров, на которых работает прокси-служба защиты паролем Azure AD.
 * На контроллерах домена нет открытых сетевых портов.
 * Изменения схемы Active Directory не требуются.
-   * Это программное обеспечение использует имеющийся контейнер Active Directory и объекты схемы serviceConnectionPoint.
+* Это программное обеспечение использует имеющийся контейнер Active Directory и объекты схемы serviceConnectionPoint.
 * Минимальные требования домена Active Directory или функционального уровня леса (DFL\FFL) не установлены.
 * Программное обеспечение не создает и не требует предоставления учетных записей в доменах Active Directory, которые оно защищает.
 * Добавочное развертывание поддерживается с учетом такого компромисса: политика паролей применяется, только если установлен агент контроллера домена.

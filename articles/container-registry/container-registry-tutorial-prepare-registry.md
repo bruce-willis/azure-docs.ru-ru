@@ -9,11 +9,12 @@ ms.topic: tutorial
 ms.date: 04/30/2017
 ms.author: marsma
 ms.custom: mvc
-ms.openlocfilehash: afdee938145dacf50538ceb186957933fe7ec3bd
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 379878e261007eca13a4e455ef2b97237c81eeba
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39450034"
 ---
 # <a name="tutorial-prepare-a-geo-replicated-azure-container-registry"></a>Руководство. Подготовка геореплицированного реестра контейнеров Azure
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 05/07/2018
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Для работы с этим руководством нужна локальная установка Azure CLI версии 2.0.31 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Для работы с этим руководством нужна локальная установка Azure CLI версии 2.0.31 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 Вам потребуется понимание базовых понятий Docker, таких как контейнеры, образы контейнеров и основные команды CLI Docker. [Руководство по началу работы с Docker]( https://docs.docker.com/get-started/) содержит базовые сведения о контейнерах.
 
@@ -89,7 +90,7 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 
 Теперь, после настройки георепликации, создайте образ контейнера и отправьте его в свой реестр. Сначала войдите в свой экземпляр ACR, прежде чем отправлять в него образы.
 
-Выполните команду [az acr login](https://docs.microsoft.com/cli/azure/acr#az_acr_login), чтобы аутентифицировать и кэшировать учетные данные для вашего реестра. Замените `<acrName>` именем реестра, созданного ранее.
+Выполните команду [az acr login](https://docs.microsoft.com/cli/azure/acr#az-acr-login), чтобы аутентифицировать и кэшировать учетные данные для вашего реестра. Замените `<acrName>` именем реестра, созданного ранее.
 
 ```azurecli
 az acr login --name <acrName>

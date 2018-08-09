@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 04/24/2018
 ms.author: mabrigg
 ms.custom: mvc
-ms.openlocfilehash: 90b36183ba32e75e06d434098d26cb10f3736373
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: f6f2860b1ae1e88495e2dad3916a0216bf5d0726
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32156697"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39428797"
 ---
 # <a name="quickstart-create-a-linux-server-virtual-machine-by-using-azure-cli-in-azure-stack"></a>Краткое руководство. Создание виртуальной машины Linux с помощью Azure CLI в Azure Stack
 
@@ -32,7 +32,7 @@ ms.locfileid: "32156697"
 * установить веб-сервер NGINX и открыть его стандартную домашнюю страницу;
 * очистить неиспользуемые ресурсы.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Образ Linux в Azure Stack Marketplace**.
 
@@ -44,7 +44,7 @@ ms.locfileid: "32156697"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните команду [az group create](/cli/azure/group#az_group_create), чтобы создать группу ресурсов.
+Группа ресурсов — это логический контейнер, в котором вы можете развертывать ресурсы Azure Stack и управлять ими. Из пакета средств разработки или интегрированной системы Azure Stack выполните команду [az group create](/cli/azure/group#az-group-create), чтобы создать группу ресурсов.
 
 >[!NOTE]
  В примерах кода всем переменным уже присвоены значения. Но вы можете изменить эти значения, если потребуется.
@@ -57,7 +57,7 @@ az group create --name myResourceGroup --location local
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются имя администратора Demouser и пароль Demouser@123. Укажите вместо них значения, подходящие для вашей среды.
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az-vm-create). В следующем примере создаются виртуальная машина с именем myVM В этом примере используются имя администратора Demouser и пароль Demouser@123. Укажите вместо них значения, подходящие для вашей среды.
 
 ```cli
 az vm create \
@@ -90,7 +90,7 @@ ssh <publicIpAddress>
 
 ## <a name="install-the-nginx-web-server"></a>Установка веб-сервера NGINX
 
-Чтобы обновить ресурсы пакетов и установить последнюю версию пакета NGINX, выполните следующий скрипт:
+Чтобы обновить источники пакетов и установить последнюю версию пакета NGINX, выполните следующий скрипт:
 
 ```bash
 #!/bin/bash
@@ -110,7 +110,7 @@ apt-get -y install nginx
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Очистите ресурсы, которые вам больше не нужны. Для удаления этих ресурсов можно использовать команду [az group delete](/cli/azure/group#az_group_delete). Чтобы удалить группу ресурсов и все ресурсы в ней, выполните следующую команду:
+Очистите ресурсы, которые вам больше не нужны. Для удаления этих ресурсов можно использовать команду [az group delete](/cli/azure/group#az-group-delete). Чтобы удалить группу ресурсов и все ресурсы в ней, выполните следующую команду:
 
 ```cli
 az group delete --name myResourceGroup

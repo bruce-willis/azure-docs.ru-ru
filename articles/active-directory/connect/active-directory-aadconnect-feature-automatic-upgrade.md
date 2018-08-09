@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 06/16/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1cc58832d5f863f5bbfa6fc20d38b4be81ddad8f
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: cfb09718c545d55b31250070fed0c8adff9d3fed
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39089967"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39263952"
 ---
 # <a name="azure-ad-connect-automatic-upgrade"></a>Azure AD Connect: автоматическое обновление
 Эта функция появилась в сборке [1.1.105.0 (выпущенной в феврале 2016 года)](active-directory-aadconnect-version-history.md#111050).  Эта функция была обновлена в [сборке 1.1.561](active-directory-aadconnect-version-history.md#115610) и теперь поддерживает дополнительные, ранее не поддерживаемые, сценарии.
@@ -95,8 +95,8 @@ ms.locfileid: "39089967"
 | UpgradeNotSupportedInvalidPersistedState |Установка не является экспресс-установкой параметров или обновлением DirSync. |
 | UpgradeNotSupportedMetaverseSizeExceeeded |В метавселенной больше 100 000 объектов. |
 | UpgradeNotSupportedMultiForestSetup |Выполняется подключение к нескольким лесам. Экспресс-установка подключается только к одному лесу. |
-| UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |
-| UpgradeNotSupportedNonMsolAccount |[Учетная запись соединителя AD](active-directory-aadconnect-accounts-permissions.md#active-directory-account) больше не является учетной записью MSOL_ по умолчанию. |
+| UpgradeNotSupportedNonLocalDbInstall |Вы не используете базу данных SQL Server Express LocalDB. |d
+| UpgradeNotSupportedNonMsolAccount |[Учетная запись соединителя AD DS](active-directory-aadconnect-accounts-permissions.md#ad-ds-connector-account) больше не является учетной записью MSOL_ по умолчанию. |
 | UpgradeNotSupportedNotConfiguredSignInMethod | При настройке AAD Connect в качестве метода входа вы выбрали параметр *Не настраивать*. | 
 | UpgradeNotSupportedPtaSignInMethod | Вы выбрали сквозную проверку подлинности как метод входа. |
 | UpgradeNotSupportedStagingModeEnabled |Сервер настроен для работы в [промежуточном режиме](active-directory-aadconnectsync-operations.md#staging-mode). |

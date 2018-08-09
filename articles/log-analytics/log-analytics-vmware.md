@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: a538b23e829e309c10e745beef4fc8512c3294de
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 6ba37a026a3c8f50fa47b0775a2ad49ee75f2769
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37131433"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424654"
 ---
 # <a name="vmware-monitoring-preview-solution-in-log-analytics"></a>Решение для мониторинга VMware (предварительная версия) в Log Analytics | Microsoft Azure
 
@@ -49,29 +49,29 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ### <a name="configure-syslog-collection"></a>Настройка сбора системных журналов
 1. Настройте пересылку системных журналов для VSphere. Подробные сведения о настройке пересылки системных журналов в ESXi 5.0 и более поздних версиях см. [здесь](https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=2003322). Последовательно выберите **ESXi Host Configuration** > **Software** > **Advanced Settings** > **Syslog** (Конфигурация узла ESXi > Программное обеспечение > Дополнительные параметры > Системный журнал).
    ![vsphereconfig](./media/log-analytics-vmware/vsphere1.png)  
-2. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`.
-3. Откройте брандмауэр узла ESXi для системного журнала. Последовательно выберите **ESXi Host Configuration** > **Software** > **Security Profile** > **Firewall** и **Properties** (Конфигурация узла ESXi > Программное обеспечение > Профиль безопасности > Брандмауэр > Свойства).  
+1. В поле *Syslog.global.logHost* укажите сервер Linux и номер порта *1514*. Например, `tcp://hostname:1514` или `tcp://123.456.789.101:1514`.
+1. Откройте брандмауэр узла ESXi для системного журнала. Последовательно выберите **ESXi Host Configuration** > **Software** > **Security Profile** > **Firewall** и **Properties** (Конфигурация узла ESXi > Программное обеспечение > Профиль безопасности > Брандмауэр > Свойства).  
 
     ![vspherefw](./media/log-analytics-vmware/vsphere2.png)  
 
     ![vspherefwproperties](./media/log-analytics-vmware/vsphere3.png)  
-4. Проверьте консоль vSphere, чтобы удостовериться в правильной настройке системного журнала. Подтвердите на узле ESXI, что этот порт **1514** настроен.
-5. Скачайте и установите агент OMS для Linux на сервере Linux. Дополнительные сведения см. в [документации по агенту OMS для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux).
-6. Установив агента OMS для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Например: 
+1. Проверьте консоль vSphere, чтобы удостовериться в правильной настройке системного журнала. Подтвердите на узле ESXI, что этот порт **1514** настроен.
+1. Скачайте и установите агент OMS для Linux на сервере Linux. Дополнительные сведения см. в [документации по агенту OMS для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux).
+1. Установив агента OMS для Linux, перейдите в каталог /etc/opt/microsoft/omsagent/sysconf/omsagent.d и скопируйте файл vmware_esxi.conf в каталог /etc/opt/microsoft/omsagent/conf/omsagent.d. Измените владельца или группу и разрешения для файла. Например: 
 
     ```
     sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.d/vmware_esxi.conf /etc/opt/microsoft/omsagent/conf/omsagent.d
    sudo chown omsagent:omiusers /etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf
     ```
-7. Перезапустите агент OMS для Linux, выполнив `sudo /opt/microsoft/omsagent/bin/service_control restart`.
-8. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Например: 
+1. Перезапустите агент OMS для Linux, выполнив `sudo /opt/microsoft/omsagent/bin/service_control restart`.
+1. Проверьте подключение между сервером Linux и узлом ESXi, выполнив команду `nc` на узле ESXi. Например: 
 
     ```
     [root@ESXiHost:~] nc -z 123.456.789.101 1514
     Connection to 123.456.789.101 1514 port [tcp/*] succeeded!
     ```
 
-9. На портале Azure выполните следующий поиск по журналам: `VMware_CL`. Собирая данные системного журнала, Log Analytics сохраняет формат syslog. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
+1. На портале Azure выполните следующий поиск по журналам: `VMware_CL`. Собирая данные системного журнала, Log Analytics сохраняет формат syslog. На портале регистрируются некоторые поля, включая *Hostname* и *ProcessName*.  
 
     ![Тип](./media/log-analytics-vmware/type.png)  
 
@@ -191,15 +191,15 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
   1. Войдите на узел ESXi с помощью SSH и выполните следующую команду: `nc -z ipaddressofVM 1514`
 
       Если команда завершится ошибкой, скорее всего, параметры vSphere в расширенной конфигурации настроены неправильно. Сведения о том, как настроить узел ESXi для перенаправления системного журнала, см. в разделе [Настройка сбора системных журналов](#configure-syslog-collection).
-  2. Если подключение к порту системного журнала выполнено успешно, но данные не отображаются, перезагрузите системный журнал на узле ESXi с помощью SSH и выполните следующую команду: ` esxcli system syslog reload`
+  1. Если подключение к порту системного журнала выполнено успешно, но данные не отображаются, перезагрузите системный журнал на узле ESXi с помощью SSH и выполните следующую команду: ` esxcli system syslog reload`
 * Виртуальная машина с агентом OMS настроена неправильно. Чтобы проверить это, сделайте следующее:
 
   1. Log Analytics ожидает передачи данных через порт 1514. Чтобы проверить, что он открыт, выполните следующую команду: `netstat -a | grep 1514`
-  2. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
+  1. Вы увидите, что порт `1514/tcp` открыт. В противном случае проверьте, правильно ли установлен агент OMS. Если сведения о порте не отображаются, порт системного журнала не открыт на виртуальной машине.
 
     a. Убедитесь, что агент OMS запущен, с помощью `ps -ef | grep oms`. Если это не так, запустите его, выполнив команду ` sudo /opt/microsoft/omsagent/bin/service_control start`
 
-    Б. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
+    b. Откройте файл `/etc/opt/microsoft/omsagent/conf/omsagent.d/vmware_esxi.conf` .
 
     c. Убедитесь, что настройки пользователей и группы допустимы. Они должны выглядеть следующим образом: `-rw-r--r-- 1 omsagent omiusers 677 Sep 20 16:46 vmware_esxi.conf`
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: 9c8eda1c4a65465a93b9c3f9caf23a6663073f26
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: 06fe9f1fd65f70e41d528a513e44e61edb4a7e4f
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34159296"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39307914"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Вопросы и ответы о производительности приложений в веб-приложениях Azure
 
@@ -158,7 +158,7 @@ ms.locfileid: "34159296"
 
 Дополнительные сведения см. в статье [Настройка веб-приложений в службе приложений Azure](web-sites-configure.md).
 
-## <a name="why-does-my-request-time-out-after-240-seconds"></a>Почему после 240 секунд истекает время запроса?
+## <a name="why-does-my-request-time-out-after-230-seconds"></a>Почему через 230 секунд истекает время ожидания запроса?
 
 По умолчанию время ожидания простоя в Azure Load Balancer имеет значение 4 минуты. Обычно это логичное ограничение по времени отклика для веб-запроса. Если обработка веб-приложения также выполняется в фоновом режиме, мы советуем использовать веб-задания Azure. Веб-приложение Azure может вызывать веб-задания и получать уведомления при завершении фоновой обработки. Доступно несколько методов использования веб-заданий, в том числе очереди и триггеры.
 

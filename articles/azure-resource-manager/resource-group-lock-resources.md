@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: tomfitz
-ms.openlocfilehash: 1a0f813e1857d2f1c1cc36b34b6339d26fa91c13
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 7a630de281932358b0cecf841dc745a4d818aad4
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38488607"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424176"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Блокировка ресурсов для предотвращения непредвиденных изменений 
 
@@ -158,7 +158,7 @@ Remove-AzureRmResourceLock -LockId $lockId
 
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-Вы можете заблокировать развернутые ресурсы с помощью Azure CLI, выполнив команду [az lock create](/cli/azure/lock#az_lock_create).
+Вы можете заблокировать развернутые ресурсы с помощью Azure CLI, выполнив команду [az lock create](/cli/azure/lock#az-lock-create).
 
 Чтобы заблокировать ресурс, укажите имя и тип ресурса, а также имя группы ресурсов.
 
@@ -172,7 +172,7 @@ az lock create --name LockSite --lock-type CanNotDelete --resource-group example
 az lock create --name LockGroup --lock-type CanNotDelete --resource-group exampleresourcegroup
 ```
 
-Чтобы получить сведения о блокировке, выполните команду [az lock list](/cli/azure/lock#az_lock_list). Чтобы получить все блокировки в подписке, выполните следующую команду:
+Чтобы получить сведения о блокировке, выполните команду [az lock list](/cli/azure/lock#az-lock-list). Чтобы получить все блокировки в подписке, выполните следующую команду:
 
 ```azurecli
 az lock list
@@ -197,7 +197,7 @@ lockid=$(az lock show --name LockSite --resource-group exampleresourcegroup --re
 az lock delete --ids $lockid
 ```
 
-## <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+## <a name="rest-api"></a>REST API
 Вы можете заблокировать развернутые ресурсы с помощью [REST API для блокировок управления](https://docs.microsoft.com/rest/api/resources/managementlocks). REST API позволяет создавать и удалять блокировки и получать информацию о существующих блокировках.
 
 Чтобы создать блокировку, выполните следующую команду:

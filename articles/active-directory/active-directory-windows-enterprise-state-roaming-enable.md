@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: markvi
-ms.openlocfilehash: 81a404a19dc1604f0aa87ef86883d0c18edac5cd
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: bb2210619e481189fc88ca3bb6b8044a8f5d7e14
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39224893"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39262954"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 Enterprise State Roaming доступна для любой организации с лицензий Azure AD Premium или Enterprise Mobility + Security (EMS). Дополнительные сведения о том, как получить подписку Azure AD, см. на [странице продукта Azure Active Directory](https://azure.microsoft.com/services/active-directory).
@@ -56,7 +56,7 @@ Enterprise State Roaming доступна для любой организаци
 
 1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com/)
 
-2. Выберите **Azure Active Directory**&gt;**Пользователи и группы**&gt;**Все пользователи**.
+2. Выберите **Azure Active Directory** &gt; **Пользователи** &gt; **Все пользователи**.
 
 3. Выберите пользователя, а затем элемент **Устройства**.
 

@@ -1,5 +1,5 @@
 ---
-title: Использование Akka Streams с концентраторами событий Azure для экосистемы Kafka | Документация Майкрософт
+title: Использование Akka Streams с Центрами событий Azure для Apache Kafka | Документация Майкрософт
 description: Подключение Akka Streams к концентратору событий с поддержкой Kafka
 services: event-hubs
 documentationcenter: ''
@@ -13,20 +13,20 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 06/06/2018
 ms.author: bahariri
-ms.openlocfilehash: 9db27340a2210ea0be0564b15241952477e592ba
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: f6671e05c53b8be2e06eb969adc8a4d5736aff37
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35303184"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284461"
 ---
-# <a name="using-akka-streams-with-event-hubs-for-kafka-ecosystem"></a>Использование Akka Streams с концентраторами событий для экосистемы Kafka
+# <a name="using-akka-streams-with-event-hubs-for-apache-kafka"></a>Использование Akka Streams с Центрами событий для Apache Kafka
 
 Одним из ключевых преимуществ использования платформы Apache Kafka является экосистема платформ, к которым она может подключиться. Концентраторы событий с поддержкой Kafka сочетают в себе гибкость Kafka с масштабируемостью, согласованностью и поддержкой экосистемы Azure.
 
-В этом руководстве показано, как выполнять подключение Akka Streams к концентраторам событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Концентраторы событий Azure для экосистемы Kafka поддерживают [Apache Kafka версии 1.0.](https://kafka.apache.org/10/documentation.html)
+В этом руководстве показано, как выполнять подключение Akka Streams к концентраторам событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Центры событий Azure для платформы Kafka поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
@@ -134,6 +134,6 @@ mvn exec:java -Dexec.mainClass="AkkaTestConsumer"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Что такое концентраторы событий?](event-hubs-what-is-event-hubs.md)
-* [Подробнее о концентраторах событий для экосистемы Kafka](event-hubs-for-kafka-ecosystem-overview.md)
+* [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
 * Используйте [MirrorMaker](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330) для [потоковой передачи событий из локальной системы Kafka к концентраторам событий с поддержкой Kafka в облаке](event-hubs-kafka-mirror-maker-tutorial.md).
 * Узнайте, как выполнять потоковую передачу в концентраторы событий с поддержкой Kafka с помощью [собственных приложений Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md) или [Apache Flink](event-hubs-kafka-flink-tutorial.md).

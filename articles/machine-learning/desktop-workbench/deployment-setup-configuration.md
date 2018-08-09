@@ -7,16 +7,16 @@ ms.author: aashishb
 manager: hjerez
 ms.reviewer: jmartens, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 12/6/2017
-ms.openlocfilehash: bf96a6986abe858074decaaecfe38b3807822aab
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 150114184f6f04f22aa9da409758daa6a0d175b5
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830247"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368502"
 ---
 # <a name="model-management-setup"></a>Установка службы управления моделями
 
@@ -36,6 +36,14 @@ ms.locfileid: "34830247"
 На виртуальной машине для обработки и анализа данных подключитесь к командной строке и откройте ее. Введите `az ml -h` для просмотра параметров. Чтобы получить дополнительные сведения о командах, используйте параметр --help.
 
 В остальных системах необходимо установить CLI.
+
+>[!NOTE]
+> В Jupyter Notebook на DSVM Linux можно использовать Azure CLI и Azure ML CLI. Ниже приведен соответствующий формат команд.  **В частности, это доступно для Jupyter Notebook на DSVM Linux**.  Указанные команды обращаются к текущему ядру Python в Notebook (например, к среде conda `py35`).
+>```
+>import sys
+>! {sys.executable} -m azure.cli login
+>! {sys.executable} -m azure.cli ml -h
+>```
 
 ### <a name="installing-or-updating-on-windows"></a>Установка (или обновление) в Windows
 

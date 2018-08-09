@@ -1,5 +1,5 @@
 ---
-title: Создание концентраторов событий с поддержкой Kafka | Документация Майкрософт
+title: Создание Центров событий Azure с поддержкой Apache Kafka | Документация Майкрософт
 description: Сведения о создании пространства имен концентраторов событий Azure с поддержкой Kafka с помощью портала Azure.
 services: event-hubs
 documentationcenter: .net
@@ -10,24 +10,24 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: shvija
-ms.openlocfilehash: 7a05a89fdf99efb6470ee9c8695f349cf22b8ebb
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 79b6b879bd2332c044ce871e2c9a938c6b9c900c
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442133"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39285094"
 ---
-# <a name="create-kafka-enabled-event-hubs"></a>Создание концентраторов событий с поддержкой Kafka
+# <a name="create-apache-kafka-enabled-event-hubs"></a>Создание Центров событий с поддержкой Apache Kafka
 
 Концентраторы событий Azure представляют собой платформу как услугу (PaaS) для потока больших данных, которая принимает миллионы событий в секунду и предоставляет небольшую задержку и высокий уровень пропускной способности для аналитики и визуализации в режиме реального времени.
 
-Концентраторы событий Azure для экосистемы Kafka предоставляют конечную точку. Эта конечная точка позволяет вашему пространству имен концентраторов событий распознавать протокол [Apache Kafka](https://kafka.apache.org/intro) и API в собственном коде. Эта возможность позволяет подключиться к концентраторам событий, как к темам Kafka, не изменяя клиентов протокола или запустив собственные кластеры. Концентраторы событий для экосистемы Kafka поддерживают [Apache Kafka версии 1.0.](https://kafka.apache.org/10/documentation.html) и более поздние версии.
+Центры событий Azure предоставляют конечную точку Kafka. Эта конечная точка позволяет вашему пространству имен концентраторов событий распознавать протокол [Apache Kafka](https://kafka.apache.org/intro) и API в собственном коде. Эта возможность позволяет подключиться к концентраторам событий, как к темам Kafka, не изменяя клиентов протокола или запустив собственные кластеры. Центры событий поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html) и более поздние версии.
 
 В этой статье описывается создание пространства имен концентраторов событий и получение строки подключения, необходимой для подключения приложений Kafka к концентраторам событий с поддержкой Kafka.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатная учетная запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
 ## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен концентраторов событий с поддержкой Kafka
 
@@ -58,7 +58,7 @@ ms.locfileid: "37442133"
 Дополнительные сведения о концентраторах событий см. в следующих статьях:
 
 * [Потоковая передача данных в концентраторы событий для экосистемы Kafka](event-hubs-quickstart-kafka-enabled-event-hubs.md)
-* [Event Hubs for Kafka ecosystems](event-hubs-for-kafka-ecosystem-overview.md) (Концентраторы событий для экосистемы Kafka)
+* [Azure Event Hubs for Apache Kafka (preview)](event-hubs-for-kafka-ecosystem-overview.md) (Центры событий Azure для Apache Kafka (предварительный просмотр))
 * [Что такое концентраторы событий?](event-hubs-what-is-event-hubs.md)
 
 

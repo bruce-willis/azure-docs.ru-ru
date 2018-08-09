@@ -1,21 +1,21 @@
 ---
-title: Выполнение задач, объединенных в контейнеры, в службе "Экземпляры контейнеров Azure"
+title: Выполнение контейнерных задач в службе "Экземпляры контейнеров Azure" с помощью политики перезапуска
 description: Узнайте, как использовать Экземпляры контейнеров Azure для задач, выполняемых до завершения, включая сборку, тестирование или преобразование изображений.
 services: container-instances
 author: mmacy
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 11/16/2017
+ms.date: 07/26/2018
 ms.author: marsma
-ms.openlocfilehash: 3bbe3e891423b6ad62a1d1093daef304206f3d76
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: dd411ff38411c71cce2a8a63cc453c34e665a385
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32167135"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39262741"
 ---
-# <a name="run-a-containerized-task-in-azure-container-instances"></a>Выполнение задачи-контейнера в службе "Экземпляры контейнеров Azure"
+# <a name="run-containerized-tasks-with-restart-policies"></a>Выполнение контейнерных задач с помощью политики перезапуска
 
 Простота и скорость развертывания контейнеров в службе "Экземпляры контейнеров Azure" позволяет выполнять в экземпляре контейнера такие разовые задачи, как сборка, тестирование или преобразование изображений.
 

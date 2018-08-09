@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: 74ce913548fbcefdc441d0d2b772c864dacd4482
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: b20f19c504a7967d01d51d976315fa49c2317885
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38485450"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424808"
 ---
 # <a name="deploy-kubernetes-cluster-for-windows-containers"></a>Кластер Azure Kubernetes для Windows | Документация Майкрософт
 
@@ -34,7 +34,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. 
 
 В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
 
@@ -43,7 +43,7 @@ az group create --name myResourceGroup --location eastus
 ```
 
 ## <a name="create-kubernetes-cluster"></a>Создание кластера Kubernetes
-Создание кластера Kubernetes в Службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az_acs_create). 
+Создание кластера Kubernetes в Службе контейнеров Azure с помощью команды [az acs create](/cli/azure/acs#az-acs-create). 
 
 В следующем примере создается кластер с именем *myK8sCluster* с помощью одного главного узла Linux и двух узлов агентов Windows. В этом примере создаются ключи SSH, необходимые для подключения к главному узлу Linux. В этом примере используются имя администратора *azureuser* и его пароль *myPassword12* на узлах Windows. Измените эти значения в соответствии со своей средой. 
 
@@ -184,7 +184,7 @@ iis          10.0.111.25    13.64.158.233   80/TCP         22m
 
 
 ## <a name="delete-cluster"></a>Удаление кластера
-Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete](/cli/azure/group#az_group_delete).
+Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup

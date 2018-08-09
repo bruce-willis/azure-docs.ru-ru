@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: 32feac32af01e518ad6cede43cc4b4f00c097d3b
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: e07ed8f131697d6340b899ef76c988aed215556b
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39041285"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283417"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-smarteru"></a>Учебник. Интеграция Azure Active Directory со SmarterU
 
@@ -126,11 +126,11 @@ ms.locfileid: "39041285"
 
 7. На панели инструментов вверху щелкните **Параметры учетной записи**.
    
-    ![Параметры учетной записи](./media/smarteru-tutorial/IC777326.png "параметры учетной записи")
+    ![Параметры учетной записи](./media/smarteru-tutorial/accountsettings.png)
 
 8. На странице конфигурации учетной записи выполните следующие действия.
    
-    ![Внешняя авторизация](./media/smarteru-tutorial/IC777327.png "Внешняя авторизация") 
+    ![Внешняя авторизация](./media/smarteru-tutorial/externalauthorizationconfiguration.png) 
  
       a. Установите флажок **Включить внешнюю авторизацию**.
   
@@ -138,11 +138,13 @@ ms.locfileid: "39041285"
   
       c. В разделе **User Default Login** (Имя для входа пользователей по умолчанию) щелкните вкладку **SmarterU**.
   
-      d. Выберите **Включить Okta**.
+      d. Выберите **Включить SAML**.
   
-      д. Скопируйте содержимое скачанного файла метаданных и вставьте его в текстовое поле **Метаданные Okta** .
+      д. Скопируйте содержимое скачанного файла метаданных и вставьте его в текстовое поле **IdP Metadata** (Метаданные IdP).
+      
+      Е. Выберите **Identifier Attribute/Claim** (Атрибут или утверждение удостоверения).
   
-      f. Выберите команду **Сохранить**.
+      ж. Выберите команду **Сохранить**.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -193,7 +195,7 @@ ms.locfileid: "39041285"
 
 3. В разделе «Пользователи» выполните следующие действия:
    
-    ![Новый пользователь](./media/smarteru-tutorial/IC777329.png "Новый пользователь")  
+    ![Новый пользователь](./media/smarteru-tutorial/adduser.png)  
 
     a. Щелкните **+ Пользователь**.
     

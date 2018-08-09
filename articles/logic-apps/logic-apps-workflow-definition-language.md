@@ -1,29 +1,25 @@
 ---
-title: Схема языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
+title: Сведенья о схеме языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
 description: Написание пользовательских определений рабочих процессов для Azure Logic Apps с помощью языка определения рабочих процессов
 services: logic-apps
-author: ecfan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: 26c94308-aa0d-4730-97b6-de848bffff91
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: ''
-ms.devlang: ''
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
 ms.topic: reference
 ms.date: 04/30/2018
-ms.author: estfan
-ms.openlocfilehash: babe21db6acc2f7154857b4eb0a02356e89a8ca7
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: 0ac191f1191357ecc7292d51b298567f7f4e4786
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39059236"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39391230"
 ---
-# <a name="logic-apps-workflow-definitions-with-the-workflow-definition-language-schema"></a>Определения рабочих процессов приложений логики с помощью схемы языка определений рабочих процессов
+# <a name="schema-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведения о схеме языка определения рабочих процессов в Azure Logic Apps
 
-Когда вы создаете рабочий процесс приложения логики с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md), базовое определение вашего рабочего процесса описывает фактическую логику, выполняемую для этого приложения. Это описание следует структуре, которая определяется и проверяется с помощью схемы языка определения рабочих процессов, использующей формат [JSON (нотация объектов JavaScript)](https://www.json.org/). 
+Когда вы создаете рабочий процесс приложения логики с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md), базовое определение вашего рабочего процесса описывает фактическую логику, выполняемую для этого приложения. Это описание следует структуре, которая определена и проверена с помощью схемы языка определения рабочих процессов, использующей формат [JSON (нотация объектов JavaScript)](https://www.json.org/). 
   
 ## <a name="workflow-definition-structure"></a>Структура определения рабочего процесса
 
@@ -111,7 +107,7 @@ ms.locfileid: "39059236"
 | value | Yes | То же, что `type` | Возвращаемое значение в выходных данных. |  
 ||||| 
 
-Чтобы получить результат выполнения рабочего процесса, просмотрите журнал выполнения и подробности приложения логики на портале Azure или используйте [REST API рабочих процессов](https://docs.microsoft.com/rest/api/logic/workflows). Вы также можете передавать выходные данные во внешние системы, например, PowerBI, для создания панелей мониторинга. 
+Чтобы получить результат выполнения рабочего процесса, просмотрите журнал выполнения и подробности приложения логики на портале Azure или используйте [REST API рабочих процессов](https://docs.microsoft.com/rest/api/logic/workflows). Также можно передать выходные данные во внешние системы, например Power BI, для создания панели мониторинга. 
 
 <a name="expressions"></a>
 
@@ -226,7 +222,7 @@ ms.locfileid: "39059236"
 Вот лишь несколько примеров задач, которые вы можете выполнять с помощью функций: 
 
 | Задача | Синтаксис функции | Результат | 
-| ---- | --------------- | -------------- | 
+| ---- | --------------- | ------ | 
 | Возвращает строку символов в нижнем регистре. | toLower('<*текст*>') <p>Например, toLower('Hello'). | "hello" | 
 | Возвращение глобального уникального идентификатора (GUID). | guid() |"c2ecc88d-88c8-4096-912c-d6f2e2b138ce" | 
 |||| 

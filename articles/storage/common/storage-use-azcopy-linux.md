@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2018
 ms.author: seguler
-ms.openlocfilehash: 3ed449912df1e16b5c8f1dfa3c83b81eaf635227
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: f45630a99d9045d0909e11d4ccc1517782d39779
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035356"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39284465"
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Перенос данных с помощью AzCopy для Linux
 
@@ -348,6 +348,9 @@ azcopy \
     --include "ab" \
     --set-content-type
 ```
+
+### <a name="customizing-the-mime-content-type-mapping"></a>Настройка сопоставления типов содержимого MIME
+AzCopy использует файл конфигурации, содержащий сопоставление расширения файла с типом содержимого. При необходимости можно настроить это сопоставление и добавить новые пары. Сопоставление находится в файле ```/usr/lib/azcopy/AzCopyConfig.json```.
 
 ## <a name="blob-copy"></a>Большой двоичный объект: копирование
 ### <a name="copy-single-blob-within-storage-account"></a>Копирование большого двоичного объекта в пределах учетной записи хранения

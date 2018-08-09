@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: mcollier
 ms.component: ''
-ms.openlocfilehash: d916191ec6b475f9a19a48c62d69e4c8990a2d4c
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 9524d471388e69166191b6197fb295532b068092
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264431"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390560"
 ---
 # <a name="azure-monitoring-rest-api-walkthrough"></a>Пошаговое руководство по REST API Azure Monitor
 В этой статье показано, как выполнять аутентификацию таким образом, чтобы в коде можно было использовать [справочник по REST API Microsoft Azure Monitor](https://msdn.microsoft.com/library/azure/dn931943.aspx).         
@@ -231,7 +231,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/*{пространство_имен_поставщиков_ресурсов}*/*{тип_ресурса}*/*{имя_ресурса}*/providers/microsoft.insights/metrics?metric=*{метрика}*&timespan=*{время_начала/время_окончания}*&$filter=*{фильтр}*&resultType=metadata&api-version=*{версия_API}*
+**URI запроса**: https://management.azure.com/subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/*{пространство_имен_поставщиков_ресурсов}*/*{тип_ресурса}*/*{имя_ресурса}*/providers/microsoft.insights/metrics?metricnames=*{метрика}*&timespan=*{время_начала/время_окончания}*&$filter=*{фильтр}*&resultType=metadata&api-version=*{версия_API}*
 
 Например, чтобы получить список значений измерений, которые были созданы для параметра "API Name dimension" (Измерение имени API) метрики "Транзакции", где измерение GeoType = "Primary" в течение указанного интервала времени, используйте следующий запрос:
 
@@ -302,7 +302,7 @@ Invoke-RestMethod -Uri $request `
 
 **Метод**: GET
 
-**URI запроса**: https://management.azure.com/subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/*{пространство_имен_поставщиков_ресурсов}*/*{тип_ресурса}*/*{имя_ресурса}*/providers/microsoft.insights/metrics?metric=*{метрика}*&timespan=*{время_начала/время_окончания}*&$filter=*{фильтр}*&interval=*{интервал_времени}*&aggregation=*{агрегирование}*&api-version=*{версия_API}*
+**URI запроса**: https://management.azure.com/subscriptions/*{ИД_подписки}*/resourceGroups/*{имя_группы_ресурсов}*/providers/*{пространство_имен_поставщиков_ресурсов}*/*{тип_ресурса}*/*{имя_ресурса}*/providers/microsoft.insights/metrics?metricnames=*{метрика}*&timespan=*{время_начала/время_окончания}*&$filter=*{фильтр}*&interval=*{интервал_времени}*&aggregation=*{агрегирование}*&api-version=*{версия_API}*
 
 Например, чтобы вывести первые 3 API-интерфейса в убывающем порядке по величине показателя "Транзакции" в течение 5-минутного диапазона, где для GeoType установлено значение "Primary", используйте следующий запрос:
 

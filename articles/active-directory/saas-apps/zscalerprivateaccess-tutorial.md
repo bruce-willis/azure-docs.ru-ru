@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 4d262770dda0f6f70d2c5d8ea2a3095369a56b87
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: a967272442c4b05657fbd3567fe89a4eec8418f4
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36218036"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39425165"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-zpa"></a>Руководство по интеграции Azure Active Directory с Zscaler Private Access (ZPA)
 
@@ -33,7 +33,7 @@ ms.locfileid: "36218036"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Zscaler Private Access (ZPA), вам потребуется:
 
@@ -55,7 +55,7 @@ ms.locfileid: "36218036"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Zscaler Private Access (ZPA) из коллекции.
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 
 ## <a name="adding-zscaler-private-access-zpa-from-the-gallery"></a>Добавление Zscaler Private Access (ZPA) из коллекции
@@ -67,19 +67,19 @@ ms.locfileid: "36218036"
 
     ![Active Directory][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![ПРИЛОЖЕНИЯ][2]
     
-3. Нажмите кнопку **Добавить** в верхней части диалогового окна.
+1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
 
     ![ПРИЛОЖЕНИЯ][3]
 
-4. В поле поиска введите **Zscaler Private Access (ZPA)**.
+1. В поле поиска введите **Zscaler Private Access (ZPA)**.
 
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_001.png)
 
-5. На панели результатов выберите **Zscaler Private Access (ZPA)** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. На панели результатов выберите **Zscaler Private Access (ZPA)** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_0001.png)
 
@@ -94,10 +94,10 @@ ms.locfileid: "36218036"
 Чтобы настроить и проверить единый вход Azure AD в Zscaler Private Access (ZPA), вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Zscaler Private Access (ZPA)](#creating-a-zscaler-private-access-(zpa)-test-user)** требуется для создания в Zscaler Private Access (ZPA) пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Zscaler Private Access (ZPA)](#creating-a-zscaler-private-access-(zpa)-test-user)** требуется для создания в Zscaler Private Access (ZPA) пользователя Britta Simon, связанного с соответствующим пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -109,58 +109,58 @@ ms.locfileid: "36218036"
 
     ![Настройка единого входа][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_general_300.png)
     
-3. В разделе **Домены и URL-адреса приложения Zscaler Private Access (ZPA)** выполните следующее.
+1. В разделе **Домены и URL-адреса приложения Zscaler Private Access (ZPA)** выполните следующее.
     
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_01.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://samlsp.private.zscaler.com/auth/login?domain=<your-domain-name>`.
 
-    Б. В текстовом поле **Идентификатор** введите `https://samlsp.private.zscaler.com/auth/metadata`.
+    b. В текстовом поле **Идентификатор** введите `https://samlsp.private.zscaler.com/auth/metadata`.
 
     > [!NOTE] 
     > Обратите внимание, что значения, указанные выше, используются в качестве примера. Необходимо заменить эти значения фактическим URL-адресом для входа и идентификатором. Мы рекомендуем использовать для идентификатора уникальное значение URL-адреса. Обратитесь к [группе поддержки Zscaler Private Access (ZPA)](https://help.zscaler.com/zpa-submit-ticket), чтобы получить эти значения.
 
-4. В разделе **Сертификат подписи SAML** щелкните **Создание нового сертификата**.
+1. В разделе **Сертификат подписи SAML** щелкните **Создание нового сертификата**.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_general_400.png)     
 
-5. В диалоговом окне **Создание нового сертификата** щелкните значок календаря и выберите **дату окончания срока действия**. Затем нажмите кнопку **Сохранить**.
+1. В диалоговом окне **Создание нового сертификата** щелкните значок календаря и выберите **дату окончания срока действия**. Затем нажмите кнопку **Сохранить**.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_general_500.png)
 
-6. В разделе **Сертификат подписи SAML** выберите **Make new certificate active** (Сделать новый сертификат активным) и нажмите кнопку **Сохранить**.
+1. В разделе **Сертификат подписи SAML** выберите **Make new certificate active** (Сделать новый сертификат активным) и нажмите кнопку **Сохранить**.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_02.png)
 
-7. Во всплывающем окне **Rollover certificate** (Сертификат восстановления) нажмите кнопку **ОК**.
+1. Во всплывающем окне **Rollover certificate** (Сертификат восстановления) нажмите кнопку **ОК**.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_general_600.png)
 
-8. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_03.png) 
 
-9. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Private Access (ZPA) в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Private Access (ZPA) в качестве администратора.
 
-10. Выберите **Administrator** (Администратор) и щелкните **Idp Configuration** (Конфигурация IdP).
+1. Выберите **Administrator** (Администратор) и щелкните **Idp Configuration** (Конфигурация IdP).
 
     ![Настройка единого входа на стороне приложения](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_04.png)
 
-11. В разделе **Idp Configuration** (Конфигурация IdP) щелкните **Add New IDP Configuration** (Добавить новую конфигурацию IdP).
+1. В разделе **Idp Configuration** (Конфигурация IdP) щелкните **Add New IDP Configuration** (Добавить новую конфигурацию IdP).
 
     ![Настройка единого входа на стороне приложения](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_05.png)
 
-12. В разделе **New IDP Configuration** (Создание конфигурации IdP) выполните следующее.
+1. В разделе **New IDP Configuration** (Создание конфигурации IdP) выполните следующее.
 
     ![Настройка единого входа на стороне приложения](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_06.png)
 
     a. Чтобы отправить скачанный файл метаданных, щелкните **Select File** (Выбрать файл).
 
-    Б. Нажмите кнопку **Сохранить** .
+    b. Нажмите кнопку **Сохранить** .
     
 
 
@@ -175,21 +175,21 @@ ms.locfileid: "36218036"
 
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/create_aaduser_01.png) 
 
-2. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
+1. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
     
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/create_aaduser_02.png) 
 
-3. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
+1. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
  
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/create_aaduser_03.png) 
 
-4. На странице диалогового окна **Пользователь** выполните следующие действия.
+1. На странице диалогового окна **Пользователь** выполните следующие действия.
  
     ![Создание тестового пользователя Azure AD](./media/zscalerprivateaccess-tutorial/create_aaduser_04.png) 
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -214,23 +214,23 @@ ms.locfileid: "36218036"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **Zscaler Private Access (ZPA)**.
+1. Из списка приложений выберите **Zscaler Private Access (ZPA)**.
 
     ![Настройка единого входа](./media/zscalerprivateaccess-tutorial/tutorial_zscalerprivateaccess_50.png) 
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Назначение пользователя][202] 
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 
 

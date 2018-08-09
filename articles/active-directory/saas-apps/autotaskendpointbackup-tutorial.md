@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/11/2018
 ms.author: jeedes
-ms.openlocfilehash: 4c5284fbddc9808f54d49419cf1a6d7c5ae06b06
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 7173c5d772168f6ca0c117eba56e709935146c47
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39053902"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39428899"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-autotask-endpoint-backup"></a>Руководство по интеграции Azure Active Directory с Autotask Endpoint Backup
 
@@ -54,7 +54,7 @@ ms.locfileid: "39053902"
 Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Autotask Endpoint Backup из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-autotask-endpoint-backup-from-the-gallery"></a>Добавление Autotask Endpoint Backup из коллекции
 Чтобы настроить интеграцию Autotask Endpoint Backup с Azure AD, необходимо добавить Autotask Endpoint Backup из коллекции в список управляемых приложений SaaS.
@@ -65,15 +65,15 @@ ms.locfileid: "39053902"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Autotask Endpoint Backup**, на панели результатов выберите **Autotask Endpoint Backup** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+1. В поле поиска введите **Autotask Endpoint Backup**, на панели результатов выберите **Autotask Endpoint Backup** и нажмите кнопку **Добавить**, чтобы добавить приложение.
 
     ![Autotask Endpoint Backup в списке результатов](./media/autotaskendpointbackup-tutorial/tutorial_autotaskendpointbackup_addfromgallery.png)
 
@@ -86,10 +86,10 @@ ms.locfileid: "39053902"
 Чтобы настроить и проверить единый вход Azure AD в Autotask Endpoint Backup, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Autotask Endpoint Backup](#create-a-autotask-endpoint-backup-test-user)** нужно для того, чтобы в Autotask Endpoint Backup также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Autotask Endpoint Backup](#create-a-autotask-endpoint-backup-test-user)** нужно для того, чтобы в Autotask Endpoint Backup также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -101,11 +101,11 @@ ms.locfileid: "39053902"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
 
     ![Диалоговое окно "Единый вход"](./media/autotaskendpointbackup-tutorial/tutorial_autotaskendpointbackup_samlbase.png)
 
-3. В разделе **Домены и URL-адреса приложения Autotask Endpoint Backup** выполните следующие действия:
+1. В разделе **Домены и URL-адреса приложения Autotask Endpoint Backup** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа для приложения Autotask Endpoint Backup](./media/autotaskendpointbackup-tutorial/tutorial_autotaskendpointbackup_url.png)
 
@@ -116,15 +116,15 @@ ms.locfileid: "39053902"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm).
 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/autotaskendpointbackup-tutorial/tutorial_autotaskendpointbackup_certificate.png) 
 
-5. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/autotaskendpointbackup-tutorial/tutorial_general_400.png)
 
-6. Чтобы настроить единый вход на стороне **Autotask Endpoint Backup**, отправьте скачанный **XML-файл метаданных** [группе поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Autotask Endpoint Backup**, отправьте скачанный **XML-файл метаданных** [группе поддержки Autotask Endpoint Backup](https://backup.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -138,15 +138,15 @@ ms.locfileid: "39053902"
 
     ![Кнопка "Azure Active Directory"](./media/autotaskendpointbackup-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/autotaskendpointbackup-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/autotaskendpointbackup-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/autotaskendpointbackup-tutorial/create_aaduser_04.png)
 
@@ -174,23 +174,23 @@ ms.locfileid: "39053902"
 
     ![Назначение пользователя][201]
 
-2. Из списка приложений выберите **Autotask Endpoint Backup**.
+1. Из списка приложений выберите **Autotask Endpoint Backup**.
 
     ![Ссылка Autotask Endpoint Backup в списке приложений](./media/autotaskendpointbackup-tutorial/tutorial_autotaskendpointbackup_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

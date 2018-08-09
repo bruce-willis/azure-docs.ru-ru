@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 07/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: cd2578f2fd8217d513a693ef348a5c26a4b18623
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 118f9d7865728177f323078c036aee1884a61431
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126513"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390302"
 ---
 # <a name="running-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей runbook в гибридной рабочей роли Runbook
 
@@ -169,10 +169,10 @@ Get-AzureRmAutomationAccount | Select-Object AutomationAccountName
 
 ### <a name="create-signing-certificate"></a>Создание сертификата для подписи
 
-В следующем примере создается самозаверяющийся сертификат, который можно использовать для подписи модулей Runbook. Образец создает сертификат и экспортирует его. Позже сертификат импортируется в гибридную рабочую роль Runbook. Отпечаток также возвращается, он будет использоваться позже для указания сертификата.
+В следующем примере создается самозаверяющийся сертификат, который можно использовать для подписывания модулей runbook. Образец создает сертификат и экспортирует его. Позже сертификат импортируется в гибридную рабочую роль Runbook. Отпечаток также возвращается, он будет использоваться позже для указания сертификата.
 
 ```powershell
-# Create a self signed runbook that can be used for code signing
+# Create a self-signed certificate that can be used for code signing
 $SigningCert = New-SelfSignedCertificate -CertStoreLocation cert:\LocalMachine\my `
                                         -Subject "CN=contoso.com" `
                                         -KeyAlgorithm RSA `
@@ -211,14 +211,14 @@ Set-HybridRunbookWorkerSignatureValidation -Enable $true -TrustedCertStoreLocati
 
 ### <a name="sign-your-runbooks-using-the-certificate"></a>Вход в модули Runbook с помощью сертификата
 
-Гибридные рабочие роли Runbook настроены на использование только подписанных модулей Runbook. Необходимо подписать модули Runbook, которые будут использоваться в гибридной рабочей роли Runbook. Используйте следующий образец PowerShell для подписи модулей Runbook.
+С помощью гибридных рабочих ролей Runbook, которые настроены для использования только подписанных модулей runbook, необходимо подписать модули runbook, которые будут использоваться в гибридной рабочей роли Runbook. Используйте следующий образец PowerShell для подписи модулей Runbook.
 
 ```powershell
 $SigningCert = ( Get-ChildItem -Path cert:\LocalMachine\My\<CertificateThumbprint>)
 Set-AuthenticodeSignature .\TestRunbook.ps1 -Certificate $SigningCert
 ```
 
-После подписи модуля Runbook его нужно импортировать в учетную запись службы автоматизации Azure и опубликовать с блоком подписей. Чтобы узнать, как импортировать модули Runbook, см. [Creating or importing a runbook in Azure Automation](automation-creating-importing-runbook.md#importing-a-runbook-from-a-file-into-azure-automation) (Создание или импорт модуля Runbook в службу автоматизации Azure).
+После подписывания runbook его нужно импортировать в учетную запись службы автоматизации Azure и опубликовать с блоком подписей. Чтобы узнать, как импортировать модули runbook, ознакомьтесь с разделом [Creating or importing a runbook in Azure Automation](automation-creating-importing-runbook.md#importing-a-runbook-from-a-file-into-azure-automation) (Создание или импорт модуля Runbook в службу автоматизации Azure).
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 

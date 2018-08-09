@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/04/2017
 ms.author: gokuma
-ms.openlocfilehash: a5f0961a99eac805e82cbc5e5d61c485f8661ba0
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 8d633a1d3d56f33aad24ca15aea08b5180a6be32
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31595758"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39368542"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -64,9 +64,9 @@ ms.locfileid: "31595758"
 
 ![Установка PTVS](./media/vm-do-ten-things/PTVSSetup.png)
 
-Дополнительные сведения о создании сред Python см. в [документации по PTVS](https://github.com/Microsoft/PTVS/wiki/Selecting-and-Installing-Python-Interpreters#hey-i-already-have-an-interpreter-on-my-machine-but-ptvs-doesnt-seem-to-know-about-it).
+Дополнительные сведения о создании сред Python см. в [документации по PTVS](http://aka.ms/ptvsdocs).
 
-Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Anaconda 2.7 или 3.6). Для этого щелкните правой кнопкой мыши **Python environment** (Среда Python), выберите **Add/Remove Python Environments** (Добавление или удаление сред Python), а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти на странице [документации](https://github.com/Microsoft/PTVS/wiki) по продукту.
+Теперь вы можете создать новый проект Python. Щелкните **Файл** -> **Создать** -> **Проект** -> **Python** и выберите тип создаваемого приложения Python. Вы можете указать нужную версию среды Python для текущего проекта (Anaconda 2.7 или 3.6). Для этого щелкните правой кнопкой мыши **Python environment** (Среда Python), выберите **Add/Remove Python Environments** (Добавление или удаление сред Python), а затем выберите требуемую среду. Дополнительные сведения о работе с PTVS можно найти в [документации](http://aka.ms/ptvsdocs) по продукту.
 
 ## <a name="2-using-a-jupyter-notebook-to-explore-and-model-your-data-with-python-or-r"></a>2. Использование записной книжки Jupyter для изучения и моделирования данных с помощью Python или R
 Записная книжка Jupyter представляет собой мощную среду IDE с поддержкой браузера для изучения и моделирования данных. В записной книжке Jupyter можно использовать Python 2, Python 3 или R (с открытым исходным кодом и Microsoft R Server).
@@ -251,7 +251,7 @@ DSVM уже поставляется с набором клиентских ин
 
 ![Git в Visual Studio](./media/vm-do-ten-things/VSGit.PNG)
 
-Дополнительные сведения об использовании Git для работы с репозиторием GitHub доступны в ряде ресурсов на сайте github.com. Вы также найдете полезную информацию в этой [памятке](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf) .
+Дополнительные сведения об использовании Git для работы с репозиторием GitHub доступны в ряде ресурсов на сайте github.com. Вы также найдете полезную информацию в этой [памятке](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) .
 
 ## <a name="7-access-various-azure-data-and-analytics-services"></a>7. Доступ к различным службам данных и службам аналитики Azure
 ### <a name="azure-blob"></a>Большой двоичный объект Azure

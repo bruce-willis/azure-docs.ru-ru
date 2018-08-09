@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 06/26/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 8032fd2a0150597c55178648511c80233e63a911
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: a5ab49beed79a8ea3a7ded0848c09acad27a5fb1
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054732"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39390543"
 ---
 # <a name="develop-and-debug-nodejs-modules-with-azure-iot-edge-for-visual-studio-code"></a>Разработка и отладка модулей Node.js для Azure IoT Edge в Visual Studio Code
 
@@ -84,7 +84,8 @@ VS Code принимает предоставленные сведения, со
 
 В папке каждого модуля существует несколько файлов Docker для разных типов контейнеров. Вы можете использовать любой **DEBUG**-файл, чтобы создать модуль для тестирования. Сейчас модули C# поддерживают отладку только в контейнерах linux-amd64.
 
-1. В VS Code перейдите к файлу `deployment.template.json`. Замените модуль Node.js createOptions в файле **deployment.template.json** содержимым ниже и сохраните этот файл: 
+1. В VS Code перейдите к файлу `deployment.template.json`. Обновите URL-адрес образа модуля, добавив в конце **.debug**.
+2. Замените модуль Node.js createOptions в файле **deployment.template.json** содержимым ниже и сохраните этот файл: 
     ```json
     "createOptions": "{\"ExposedPorts\":{\"9229/tcp\":{}},\"HostConfig\":{\"PortBindings\":{\"9229/tcp\":[{\"HostPort\":\"9229\"}]}}}"
     ```

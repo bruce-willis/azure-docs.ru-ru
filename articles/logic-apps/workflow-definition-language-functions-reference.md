@@ -1,29 +1,25 @@
 ---
-title: Функции языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
+title: Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps | Документация Майкрософт
 description: Дополнительные сведения о возможности создания приложений логики с помощью языка определения рабочих процессов
 services: logic-apps
-author: ecfan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: ''
 ms.service: logic-apps
-ms.workload: logic-apps
-ms.tgt_pltfrm: na
-ms.devlang: na
+author: ecfan
+ms.author: estfan
+manager: jeconnoc
 ms.topic: reference
 ms.date: 04/25/2018
-ms.author: estfan; LADocs
-ms.openlocfilehash: 6f1871e1e135ecb9e7cb37c0bedff3737d3febb7
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.reviewer: klam, LADocs
+ms.suite: integration
+ms.openlocfilehash: 46ccf9484b76ec5f24dba470a194b5b83c32f013
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35301394"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39263782"
 ---
-# <a name="workflow-definition-language-functions-reference-for-azure-logic-apps"></a>Руководство по функциям языка определения рабочих процессов в Azure Logic Apps
+# <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
 
-В этой статье описываются функции, которые можно использовать при создании рабочих процессов с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Дополнительные сведения о функциях в определениях приложений логики см. в статье [Схема языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md#functions). 
+В этой статье описываются функции, которые можно использовать при создании автоматических рабочих процессов с помощью [Azure Logic Apps](../logic-apps/logic-apps-overview.md). Дополнительные сведения о функциях в определениях приложений логики см. в статье [Схема языка определения рабочих процессов в Azure Logic Apps](../logic-apps/logic-apps-workflow-definition-language.md#functions). 
 
 > [!NOTE]
 > В синтаксисе для определения параметров знак вопроса (?), который расположен после параметра, означает, что параметр является необязательным. Примеры см. в разделе о [getFutureTime()](#getFutureTime).

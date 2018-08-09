@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 90100461d7db93ece23bf2420a1b7e8c43da915b
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 94d443505c5c1634c9da00d455e0163b2762d969
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343055"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39426040"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск устойчивых функций в качестве веб-заданий
 
@@ -223,7 +223,7 @@ while (true)
   * `Microsoft.Azure.WebJobs.Extensions`
   * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
-2. Измените код метода `Main` для получения строки подключения к хранилищу и ключа инструментирования Application Insights из файла *appsettings.json* с помощью платформы конфигурации .NET Core.  Ниже приведен пример:
+1. Измените код метода `Main` для получения строки подключения к хранилищу и ключа инструментирования Application Insights из файла *appsettings.json* с помощью платформы конфигурации .NET Core.  Ниже приведен пример:
 
    ```cs
    static void Main(string[] args)

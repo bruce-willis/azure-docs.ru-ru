@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 1ca7d40bb3c358b374e354fa2c3ef77edba055c9
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 4a37ac6cdf5d13556c6a3e293c19c00ad36e4495
+ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971787"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39364171"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Примеры запросов для распространенных шаблонов использования Stream Analytics
 
@@ -24,6 +24,12 @@ ms.locfileid: "38971787"
 В конструкторе запросов можно использовать простую сквозную логику, чтобы перемещать данные события из одного входного потока в другое хранилище выходных данных. Или же можно выполнять комплексное сопоставление шаблонов и темпоральный анализ, чтобы вычислять статистические значения для различных периодов, как показано в примере TollApp. Вы можете объединить данные из нескольких источников, чтобы сгруппировать события потоковой передачи и выполнять поиск по статическим эталонным данным, что позволит повысить информативность значений событий. Также можно записать данные на несколько выходов.
 
 В этой статье описаны решения для нескольких стандартных шаблонов запросов на основе реальных сценариев. Документ не завершен и будет дополняться новыми шаблонами на постоянной основе.
+
+## <a name="work-with-complex-data-types-in-json-and-avro"></a>Работа со сложными типами данных в JSON и AVRO 
+Azure Stream Analytics поддерживает обработку событий в форматах CSV, JSON и Avro.
+Данные JSON и Avro могут содержать сложные типы, такие как вложенные объекты (записи) или массивы. О том, как работать с этими сложными типами данных, можно узнать на [этой странице MSDN](
+https://msdn.microsoft.com/azure/stream-analytics/reference/complex-data-types-stream-analytics).
+
 
 ## <a name="query-example-convert-data-types"></a>Пример запроса: преобразование типов данных
 **Описание.** Определите типы свойств для входного потока.

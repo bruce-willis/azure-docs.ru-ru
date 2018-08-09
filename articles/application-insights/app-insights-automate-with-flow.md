@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/25/2017
 ms.author: mbullwin
-ms.openlocfilehash: c92b50ee78c100a531a2973181251444b3810967
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 28228755f76f38ef2ed5e50c776a99427118e090
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35293780"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424557"
 ---
 # <a name="automate-azure-application-insights-processes-with-the-connector-for-microsoft-flow"></a>Автоматизация процессов Azure Application Insights с помощью соединителя для Microsoft Flow
 
@@ -35,19 +35,19 @@ ms.locfileid: "35293780"
 
 ### <a name="step-1-create-a-flow"></a>Шаг 1. Создание последовательности
 1. Войдите в службу [Microsoft Flow](http://flow.microsoft.com) и выберите **Мои последовательности**.
-2. Щелкните **Create a flow from blank** (Создать последовательность с нуля).
+1. Щелкните **Create a flow from blank** (Создать последовательность с нуля).
 
 ### <a name="step-2-create-a-trigger-for-your-flow"></a>Шаг 2. Создание триггера для последовательности
 1. Выберите **Расписание**, а затем **Расписание — повторение**.
-2. В поле **Частота** выберите **День**, а в поле **Интервал** введите **1**.
+1. В поле **Частота** выберите **День**, а в поле **Интервал** введите **1**.
 
     ![Диалоговое окно триггера Microsoft Flow](./media/app-insights-automate-with-flow/flow1.png)
 
 
 ### <a name="step-3-add-an-application-insights-action"></a>Шаг 3. Добавление действия Application Insights
 1. Выберите поле **+Новый шаг**, а затем щелкните **Добавить действие**.
-2. Выполните поиск по запросу **Azure Application Insights**.
-3. Выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
+1. Выполните поиск по запросу **Azure Application Insights**.
+1. Выберите **Azure Application Insights – Visualize Analytics query Preview** (Azure Application Insights — визуализация запроса Analytics [предварительная версия]).
 
     ![Окно запуска запроса Analytics](./media/app-insights-automate-with-flow/flow2.png)
 
@@ -84,16 +84,16 @@ ms.locfileid: "35293780"
 ### <a name="step-6-configure-the-flow-to-send-email"></a>Шаг 6. Настройка последовательности для отправки электронной почты
 
 1. Выберите поле **+Новый шаг**, а затем щелкните **Добавить действие**.
-2. Выполните поиск по запросу **Office 365 Outlook**.
-3. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
+1. Выполните поиск по запросу **Office 365 Outlook**.
+1. Щелкните **Office 365 Outlook – Send an email** (Office 365 Outlook — отправка сообщения электронной почты).
 
     ![Окно выбора Office 365 Outlook](./media/app-insights-automate-with-flow/flow2b.png)
 
-4. В окне **Отправка сообщения электронной почты** выполните следующие действия:
+1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
    a. Введите адрес электронной почты получателя.
 
-   Б. Введите тему сообщения.
+   b. Введите тему сообщения.
 
    c. Щелкните в любом месте в поле **Текст**, затем в открывшемся справа меню динамического содержимого выберите **Текст**.
 
@@ -101,11 +101,11 @@ ms.locfileid: "35293780"
 
     ![Конфигурация Office 365 Outlook](./media/app-insights-automate-with-flow/flow5.png)
 
-5. В меню динамического содержимого выполните следующее.
+1. В меню динамического содержимого выполните следующее.
 
     a. Выберите **Имя вложения**.
 
-    Б. Выберите **Содержимое вложения**.
+    b. Выберите **Содержимое вложения**.
     
     c. В поле **Является HTML** выберите значение **Да**.
 

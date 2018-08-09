@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/25/2017
 ms.author: daveba
-ms.openlocfilehash: 947e0140c7943954be5eb285bb7ec514b74e9022
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: a5da06eac7f4680282aad305f57cb9ca1c9d5730
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33929648"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424438"
 ---
 # <a name="assign-a-managed-service-identity-msi-access-to-a-resource-using-azure-cli"></a>Назначение доступа на основе управляемого удостоверения службы (MSI) для ресурса с помощью Azure CLI
 
@@ -27,7 +27,7 @@ ms.locfileid: "33929648"
 
 После настройки MSI для ресурса Azure можно предоставить доступ на основе MSI другому ресурсу, как и любому субъекту безопасности. В этом примере показано, как предоставить виртуальной машине или масштабируемому набору виртуальных машин Azure доступ на основе MSI к учетной записи хранения Azure с помощью Azure CLI.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [msi-qs-configure-prereqs](../../../includes/active-directory-msi-qs-configure-prereqs.md)]
 
@@ -43,13 +43,13 @@ ms.locfileid: "33929648"
 
 После включения MSI в ресурсе Azure, например на [виртуальной машине Azure](qs-configure-cli-windows-vm.md) или в [масштабируемом наборе виртуальных машин Azure](qs-configure-cli-windows-vmss.md), сделайте следующее: 
 
-1. Если вы используете Azure CLI в локальной консоли, сначала выполните вход в Azure с помощью команды [az login](/cli/azure/reference-index#az_login). Используйте учетную запись, связанную с подпиской Azure, с помощью которой нужно развернуть виртуальную машину или масштабируемый набор виртуальных машин.
+1. Если вы используете Azure CLI в локальной консоли, сначала выполните вход в Azure с помощью команды [az login](/cli/azure/reference-index#az-login). Используйте учетную запись, связанную с подпиской Azure, с помощью которой нужно развернуть виртуальную машину или масштабируемый набор виртуальных машин.
 
    ```azurecli-interactive
    az login
    ```
 
-2. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала мы используем команду [az resource list](/cli/azure/resource/#az_resource_list), чтобы получить субъект-службу для виртуальной машины с именем myVM:
+2. В этом примере мы предоставляем виртуальной машине Azure доступ к учетной записи хранения. Сначала мы используем команду [az resource list](/cli/azure/resource/#az-resource-list), чтобы получить субъект-службу для виртуальной машины с именем myVM:
 
    ```azurecli-interactive
    spID=$(az resource list -n myVM --query [*].identity.principalId --out tsv)
@@ -60,7 +60,7 @@ ms.locfileid: "33929648"
    spID=$(az resource list -n DevTestVMSS --query [*].identity.principalId --out tsv)
    ```
 
-3. После получения идентификатора субъекта-службы выполните команду [az role assignment create](/cli/azure/role/assignment#az_role_assignment_create), чтобы предоставить этой виртуальной машине или масштабируемому набору виртуальных машин доступ для чтения к учетной записи хранения myStorageAcct:
+3. После получения идентификатора субъекта-службы выполните команду [az role assignment create](/cli/azure/role/assignment#az-role-assignment-create), чтобы предоставить этой виртуальной машине или масштабируемому набору виртуальных машин доступ для чтения к учетной записи хранения myStorageAcct:
 
    ```azurecli-interactive
    az role assignment create --assignee $spID --role 'Reader' --scope /subscriptions/<mySubscriptionID>/resourceGroups/<myResourceGroup>/providers/Microsoft.Storage/storageAccounts/myStorageAcct

@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: Identity
-ms.date: 07/12/2017
+ms.date: 07/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1a6fe4fc7fd5f47bfd4bc4d9168f76c31c78b47b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 20c43669b9da24cea4b0b552a86ec7d5a77dc5a7
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34592482"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39264517"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
@@ -130,6 +130,38 @@ ms.locfileid: "34592482"
    > Не забудьте выполнить необходимые шаги синхронизации при первой возможности. Вы можете выполнить эти действия вручную с помощью Synchronization Service Manager или вернуть переопределения с помощью командлета Set-ADSyncSchedulerConnectorOverride.
 
 Чтобы добавить переопределения для полного импорта и полной синхронизации на произвольном соединителе, выполните следующий командлет: `Set-ADSyncSchedulerConnectorOverride -ConnectorIdentifier <Guid> -FullImportRequired $true -FullSyncRequired $true`
+
+## <a name="troubleshooting"></a>Устранение неполадок
+В следующем разделе приведены сведения об устранении неполадок, которые можно использовать, если у вас возникнет проблема с обновлением Azure AD Connect.
+
+### <a name="azure-active-directory-connector-missing-error-during-azure-ad-connect-upgrade"></a>Ошибка из-за отсутствия соединителя Azure Active Directory при обновлении Azure AD Connect
+
+При обновлении предыдущей версии Azure AD Connect в начале этого процесса может произойти приведенная ниже ошибка. 
+
+![Ошибка](./media/active-directory-aadconnect-upgrade-previous-version/error1.png)
+
+Эта ошибка происходит потому, что соединитель Azure Active Directory с идентификатором b891884f-051e-4a83-95af - 2544101c 9083 не существует в текущей конфигурации Azure AD Connect. Чтобы убедиться в этом, откройте окно PowerShell и выполните командлет `Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083`.
+
+```
+PS C:\> Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083
+Get-ADSyncConnector : Operation failed because the specified MA could not be found.
+At line:1 char:1
++ Get-ADSyncConnector -Identifier b891884f-051e-4a83-95af-2544101c9083
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ReadError: (Microsoft.Ident...ConnectorCmdlet:GetADSyncConnectorCmdlet) [Get-ADSyncConne
+   ctor], ConnectorNotFoundException
+    + FullyQualifiedErrorId : Operation failed because the specified MA could not be found.,Microsoft.IdentityManageme
+   nt.PowerShell.Cmdlet.GetADSyncConnectorCmdlet
+
+```
+
+Командлет PowerShell выдаст сообщение об ошибке **the specified MA could not be found** (Не удалось найти указанный MA).
+
+Причина заключается в том, что обновление текущей конфигурации Azure AD Connect не поддерживается. 
+
+Если требуется установить более новую версию Azure AD Connect, закройте мастер Azure AD Connect. Удалите существующий мастер Azure AD Connect. Выполните чистую установку более новой версии Azure AD Connect.
+
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об интеграции локальных удостоверений см. в статье [Подключение Active Directory к Azure Active Directory](active-directory-aadconnect.md).

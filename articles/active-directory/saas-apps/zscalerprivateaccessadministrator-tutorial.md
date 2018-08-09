@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/08/2018
 ms.author: jeedes
-ms.openlocfilehash: 0be7f71f5995be269bb630491003678e0640699b
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 61b469ba5f64a52b87843432dfe60fe1d83ffec2
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39055174"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39428389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-private-access-administrator"></a>Руководство по интеграции Azure Active Directory с Zscaler Private Access Administrator
 
@@ -53,7 +53,7 @@ ms.locfileid: "39055174"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Zscaler Private Access Administrator из коллекции
-2. настройка и проверка единого входа в Azure AD.
+1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-zscaler-private-access-administrator-from-the-gallery"></a>Добавление Zscaler Private Access Administrator из коллекции
 Чтобы настроить интеграцию Zscaler Private Access Administrator с Azure AD, необходимо добавить Zscaler Private Access Administrator из коллекции в список управляемых приложений SaaS.
@@ -64,15 +64,15 @@ ms.locfileid: "39055174"
 
     ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
     
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
 
-4. В поле поиска введите **Zscaler Private Access Administrator**, выберите **Zscaler Private Access Administrator** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+1. В поле поиска введите **Zscaler Private Access Administrator**, выберите **Zscaler Private Access Administrator** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Zscaler Private Access Administrator в списке результатов](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_addfromgallery.png)
 
@@ -85,10 +85,10 @@ ms.locfileid: "39055174"
 Чтобы настроить и проверить единый вход Azure AD в Zscaler Private Access Administrator, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Zscaler Private Access Administrator](#create-a-zscaler-private-access-administrator-test-user)** требуется для того, чтобы в Zscaler Private Access Administrator существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Создание тестового пользователя Zscaler Private Access Administrator](#create-a-zscaler-private-access-administrator-test-user)** требуется для того, чтобы в Zscaler Private Access Administrator существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -100,11 +100,11 @@ ms.locfileid: "39055174"
 
     ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
  
     ![Диалоговое окно "Единый вход"](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_samlbase.png)
 
-3. Если вы хотите настроить приложение в режиме, инициируемом **IdP**, то в разделе **Домены и URL-адреса приложения Zscaler Private Access Administrator** выполните следующие действия.
+1. Если вы хотите настроить приложение в режиме, инициируемом **IdP**, то в разделе **Домены и URL-адреса приложения Zscaler Private Access Administrator** выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_url.png)
 
@@ -116,32 +116,32 @@ ms.locfileid: "39055174"
 
     d. В текстовом поле **RelayState** введите значение `idpadminsso`.
 
-4.  Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, выполните следующие действия.
+1.  Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, выполните следующие действия.
 
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.private.zscaler.com/auth/sso`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Обратитесь к [группе поддержки Zscaler Private Access Administrator](https://help.zscaler.com/zpa-submit-ticket), чтобы получить эти значения.
  
-5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_certificate.png) 
 
-6. Нажмите кнопку **Сохранить** .
+1. Нажмите кнопку **Сохранить** .
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/zscalerprivateaccessadministrator-tutorial/tutorial_general_400.png)
 
-7. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Private Access Administrator в качестве администратора.
+1. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Private Access Administrator в качестве администратора.
 
-8. В верхней части страницы щелкните **Administration** (Администрирование) и перейдите в раздел **AUTHENTICATION** (Аутентификация). Щелкните **IdP Configuration** (Конфигурация IdP).
+1. В верхней части страницы щелкните **Administration** (Администрирование) и перейдите в раздел **AUTHENTICATION** (Аутентификация). Щелкните **IdP Configuration** (Конфигурация IdP).
 
     ![Администрирование Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_admin.png)
 
-9. В правом верхнем углу щелкните **Add IdP Configuration** (Добавить конфигурацию IdP). 
+1. В правом верхнем углу щелкните **Add IdP Configuration** (Добавить конфигурацию IdP). 
 
     ![Добавление IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_addpidp.png)
 
-10. На странице **Add IdP Configuration** (Добавление конфигурации IdP) выполните следующие действия.
+1. На странице **Add IdP Configuration** (Добавление конфигурации IdP) выполните следующие действия.
  
     ![Выбор IdP в Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_idpselect.png)
 
@@ -172,15 +172,15 @@ ms.locfileid: "39055174"
 
     ![Кнопка "Azure Active Directory"](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_01.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
 
     ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_02.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
 
     ![Кнопка "Добавить"](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_03.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
+1. В диалоговом окне **Пользователь** сделайте следующее.
 
     ![Диалоговое окно "Пользователь"](./media/zscalerprivateaccessadministrator-tutorial/create_aaduser_04.png)
 
@@ -200,19 +200,19 @@ ms.locfileid: "39055174"
 
 1. Войдите на свой корпоративный сайт Zscaler Private Access Administrator с правами администратора.
 
-2. В верхней части страницы щелкните **Administration** (Администрирование) и перейдите в раздел **AUTHENTICATION** (Аутентификация). Щелкните **IdP Configuration** (Конфигурация IdP).
+1. В верхней части страницы щелкните **Administration** (Администрирование) и перейдите в раздел **AUTHENTICATION** (Аутентификация). Щелкните **IdP Configuration** (Конфигурация IdP).
 
     ![Администрирование Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_admin.png)
 
-3. Щелкните **Administrators** (Администраторы) из левой части меню.
+1. Щелкните **Administrators** (Администраторы) из левой части меню.
 
     ![Администратор Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_adminstrator.png)
 
-4. В правом верхнем углу щелкните **Add Administrator** (Добавить администратора).
+1. В правом верхнем углу щелкните **Add Administrator** (Добавить администратора).
 
     ![Добавление администратора Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_addadmin.png)
 
-5. На странице **Add Administrator** (Добавление администратора) сделайте следующее.
+1. На странице **Add Administrator** (Добавление администратора) сделайте следующее.
 
     ![Администратор Zscaler Private Access Administrator](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_useradmin.png)
 
@@ -226,7 +226,7 @@ ms.locfileid: "39055174"
 
     д. В текстовое поле **Email** (Электронная почта) введите адрес электронной почты пользователя, например **BrittaSimon@contoso.com**.
 
-    f. В текстовом поле **Phone** (Телефон) введите номер телефона.
+    Е. В текстовом поле **Phone** (Телефон) введите номер телефона.
 
     ж. В текстовом поле **Timezone** (Часовой пояс) выберите часовой пояс.
 
@@ -244,23 +244,23 @@ ms.locfileid: "39055174"
 
     ![Назначение пользователя][201] 
 
-2. Из списка приложений выберите **Zscaler Private Access Administrator**.
+1. Из списка приложений выберите **Zscaler Private Access Administrator**.
 
     ![Ссылка на Zscaler Private Access Administrator в списке "Приложения"](./media/zscalerprivateaccessadministrator-tutorial/tutorial_zscalerprivateaccessadministrator_app.png)  
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В меню слева выберите **Пользователи и группы**.
 
     ![Ссылка "Пользователи и группы"][202]
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Область "Добавление назначения"][203]
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

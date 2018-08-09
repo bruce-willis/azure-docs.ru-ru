@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/16/2018
 ms.author: tomfitz
-ms.openlocfilehash: 562e8e49d769f15ba0b965bfb03c0d56076c78f1
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 8da582750b5e20ddd7018f59292e7342f1628c8c
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39091328"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39425389"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager | Microsoft Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "39091328"
 | Конфликт | Запрашиваемая операция не разрешена в текущем состоянии ресурса. Например, изменение размера диска разрешено только при создании или освобождении виртуальной машины. | |
 | DeploymentActive | Дождитесь завершения параллельного развертывания в эту группу ресурсов. | |
 | DeploymentFailed | Ошибка DeploymentFailed является общей ошибкой, которая не содержит сведений, необходимых для ее устранения. Найдите в сведениях об ошибке ее код, с помощью которого можно получить дополнительные сведения. | [Поиск кода ошибки](#find-error-code) |
-| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment#az_group_deployment_delete) в Azure CLI или с помощью командлета [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. | |
+| DeploymentQuotaExceeded | Если вы достигли предела в 800 развертываний на группу ресурсов, удалите из журнала те развертывания, которые больше не нужны. Вы можете удалить записи из журнала с помощью команды [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete) в Azure CLI или с помощью командлета [Remove-AzureRmResourceGroupDeployment](/powershell/module/azurerm.resources/remove-azurermresourcegroupdeployment) в PowerShell. Удаление записи из журнала развертывания не влияет на развертывание ресурсов. | |
 | DnsRecordInUse | Имя записи DNS должно быть уникальным. Предоставьте другое имя или измените имеющуюся запись. | |
 | ImageNotFound | Проверьте параметры образа виртуальной машины. |  |
 | InUseSubnetCannotBeDeleted | Эта ошибка возникает, когда вы пытаетесь обновить ресурс, но при обработке запроса удаляется и создается ресурс. Укажите все неизменяемые значения. | [Обновление ресурса](/azure/architecture/building-blocks/extending-templates/update-resource) |
@@ -70,7 +70,7 @@ ms.locfileid: "39091328"
 | RequestDisallowedByPolicy | Подписка включает в себя политику ресурсов, предотвращающую действие, которое вы пытаетесь выполнить во время развертывания. Найдите политику, которая блокирует действие. Измените развертывание в соответствии с ограничениями политики, если это возможно. | [Устранение ошибок с политиками](resource-manager-policy-requestdisallowedbypolicy-error.md) |
 | ReservedResourceName | Укажите ресурс, имя которого не включает в себя зарезервированное имя. | [Зарезервированные имена ресурсов](resource-manager-reserved-resource-name.md) |
 | ResourceGroupBeingDeleted | Дождитесь завершения удаления. | |
-| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Оно уже должно существовать в подписке. Проверьте контекст подписки. | [Azure CLI](/cli/azure/account?#az_account_set), [PowerShell](/powershell/module/azurerm.profile/set-azurermcontext) |
+| ResourceGroupNotFound | Проверьте имя целевой группы ресурсов для развертывания. Оно уже должно существовать в подписке. Проверьте контекст подписки. | [Azure CLI](/cli/azure/account?#az-account-set), [PowerShell](/powershell/module/azurerm.profile/set-azurermcontext) |
 | ResourceNotFound | Развертывание ссылается на ресурс, который не может быть разрешен. Убедитесь, что для функции **reference** указаны параметры, необходимые для вашего сценария. | [Устранение ошибок с поиском ресурсов](resource-manager-not-found-errors.md) |
 | ResourceQuotaExceeded | Развертывание пытается создать ресурсы, которые превышают квоту для подписки, группы ресурсов или региона. Если возможно, измените инфраструктуру, чтобы не превышать квоты. В противном случае запросите изменение квот. | [Устранение ошибок квот ресурсов](resource-manager-quota-errors.md) |
 | SkuNotAvailable | Выберите SKU (например, размер виртуальной машины), который доступен в выбранном расположении. | [Устранение ошибок, связанных с недоступностью номера SKU](resource-manager-sku-not-available-errors.md) |

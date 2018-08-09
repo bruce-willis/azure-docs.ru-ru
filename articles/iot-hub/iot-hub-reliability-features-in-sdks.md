@@ -12,12 +12,12 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: 7717c026b4c09f47159fe62640f9a2eedf409d30
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: d321e82560f7676f77ed9161c1bce0304b7d5914
+ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247687"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39397113"
 ---
 # <a name="how-to-manage-connectivity-and-reliable-messaging-using-azure-iot-hub-device-sdks"></a>Как управлять подключениями и надежным обменом сообщениями с помощью пакетов SDK для устройств центра Интернета вещей Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "39247687"
 
 - управление потерянным сетевым подключением;
 - управление переключением между разными сетевыми подключениями;
-- управление переподключением после временных сбоев подключения службы.
+- управление повторным подключением после ошибок временного подключения службы.
 
 Реализация может быть разной в зависимости от языка. Дополнительные сведения можно найти в связанной документации по API или описании конкретного пакета SDK.
 
@@ -116,3 +116,4 @@ ms.locfileid: "39247687"
 - [Использование пакета SDK для устройств Azure IoT для C](.\iot-hub-device-sdk-c-intro.md)
 - [Разработка приложений для устройств с ограниченным ресурсами](.\iot-hub-devguide-develop-for-constrained-devices.md)
 - [Разработка приложений для мобильных устройств](.\iot-hub-how-to-develop-for-mobile-devices.md)
+- [Detect and troubleshoot disconnects with Azure IoT Hub](iot-hub-troubleshoot-connectivity.md) (Обнаружение и устранение неполадок отключения Центра Интернета вещей Azure)

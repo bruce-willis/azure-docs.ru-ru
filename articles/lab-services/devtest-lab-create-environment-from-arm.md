@@ -12,18 +12,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/05/2018
+ms.date: 07/05/2018
 ms.author: spelluru
-ms.openlocfilehash: f73b6f594403ce51fcff4d757990afb3ce4a82bc
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 5ae7a0d3aa0606fd02bfbaa0dcebdfaed5d11eb7
+ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39004852"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39283104"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
 
-[Портал Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040) позволяет с легкостью [создать и добавить виртуальную машину в лабораторию](https://docs.microsoft.com/azure/devtest-lab/devtest-lab-add-vm). Этот вариант хорошо подходит, если одновременно создается только одна виртуальная машина. Но если среда содержит несколько виртуальных машин, каждую из них необходимо создавать отдельно. Для сценариев, где задействовано многоуровневое веб-приложение или ферма SharePoint, требуется механизм создания множества виртуальных машин одним действием. С помощью шаблонов Azure Resource Manager теперь можно определить инфраструктуру и конфигурацию решения Azure и многократно развернуть множество виртуальных машин в согласованном состоянии. Эта функция обеспечивает следующие преимущества:
+[Портал Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040) позволяет с легкостью и [вовремя добавлять виртуальную машину в лабораторию](https://docs.microsoft.com/azure/devtest-lab/devtest-lab-add-vm). Но если среда содержит несколько виртуальных машин, каждую из них необходимо создавать отдельно. Для сценариев, где задействовано многоуровневое веб-приложение или ферма SharePoint, требуется механизм создания множества виртуальных машин одним действием. С помощью шаблонов Azure Resource Manager теперь можно определить инфраструктуру и конфигурацию решения Azure и многократно развернуть множество виртуальных машин в согласованном состоянии. Эта функция обеспечивает следующие преимущества:
 
 - Шаблоны Azure Resource Manager загружаются непосредственно из репозитория системы управления версиями (GitHub или Team Services Git).
 - После настройки пользователи могут создать среду, выбрав шаблон Azure Resource Manager на портале Azure, как это делается для других типов [баз виртуальных машин](./devtest-lab-comparing-vm-base-image-types.md).
@@ -43,6 +43,8 @@ ms.locfileid: "39004852"
 
 При использования подходов "инфраструктура как код" и "конфигурация как код" управлять шаблонами среды рекомендуется в системе управления версиями. Служба Azure DevTest Labs следует этой рекомендации и загружает все шаблоны Azure Resource Manager непосредственно из репозиториев GitHub или VSTS Git. В результате шаблоны Resource Manager можно использовать в ходе всего цикла выпуска — от тестовой до рабочей среды.
 
+Изучите шаблоны, созданные командой DevTest Labs, в [общедоступном репозитории GitHub](https://github.com/Azure/azure-devtestlab/tree/master/Environments). В общедоступном репозитории можно просматривать шаблоны, к которым пользователи предоставили общий доступ и которые можно использовать напрямую или настроить в соответствии со своими потребностями. После создания шаблона сохраните его в этот репозиторий, чтобы поделиться с другими. Также можно настроить собственный репозиторий Git с помощью шаблонов, которые используются для настройки сред в облаке. 
+
 Существует несколько правил, которым необходимо следовать при упорядочивании шаблонов Azure Resource Manager в репозитории:
 
 - Имя файла основного шаблона должно быть `azuredeploy.json`. 
@@ -50,18 +52,18 @@ ms.locfileid: "39004852"
     ![Основные файлы шаблонов Azure Resource Manager](./media/devtest-lab-create-environment-from-arm/master-template.png)
 
 - Чтобы использовать значения параметров, определенные в файле параметров, имя этого файла должно быть `azuredeploy.parameters.json`.
-- Для создания значения URI parametersLink можно использовать параметры `_artifactsLocation` и `_artifactsLocationSasToken`, чтобы служба DevTest Labs автоматически управляла вложенными шаблонами. Дополнительные сведения см. в статье [Как служба Azure DevTest Labs упрощает развертывание вложенных шаблонов Resource Manager в тестовых средах](https://blogs.msdn.microsoft.com/devtestlab/2017/05/23/how-azure-devtest-labs-makes-nested-arm-template-deployments-easier-for-testing-environments/).
+- Для создания значения URI parametersLink можно использовать параметры `_artifactsLocation` и `_artifactsLocationSasToken`, чтобы служба DevTest Labs автоматически управляла вложенными шаблонами. Дополнительные сведения см. в статье [How Azure DevTest Labs makes nested Resource Manager template deployments easier for testing environments](https://blogs.msdn.microsoft.com/devtestlab/2017/05/23/how-azure-devtest-labs-makes-nested-arm-template-deployments-easier-for-testing-environments/) (Как команда Azure DevTest Labs упрощает развертывание вложенных шаблонов Resource Manager в тестовых средах).
 - Можно определить метаданные, чтобы указать отображаемое имя и описание шаблона. Эти метаданные должны находиться в файле с именем `metadata.json`. В следующем примере файла метаданных показано, как указать отображаемое имя и описание: 
 
-```json
-{
+    ```json
+    {
  
-"itemDisplayName": "<your template name>",
+        "itemDisplayName": "<your template name>",
  
-"description": "<description of the template>"
+        "description": "<description of the template>"
  
-}
-```
+    }
+    ```
 
 Ниже описаны шаги, которые помогут вам добавить в лабораторию репозиторий, используя портал Azure. 
 
@@ -150,7 +152,7 @@ ms.locfileid: "39004852"
 
 - Большинство политик не обрабатываются при развертывании шаблонов Resource Manager.
 
-   Например, может быть установлена политика лаборатории, указывающая, что пользователь может создать только пять виртуальных машин. Тем не менее, если пользователь развернет шаблон Resource Manager, который создает десятки виртуальных машин, это будет разрешено. К политикам, которые не обрабатываются, относятся следующие:
+   Например, может быть установлена политика лаборатории, указывающая, что пользователь может создать только пять виртуальных машин. Тем не менее пользователь может развернуть шаблон Resource Manager, который создает десятки виртуальных машин. К политикам, которые не обрабатываются, относятся следующие:
 
    - число виртуальных машин на пользователя;
    - число виртуальных машин уровня Premium на пользователя лаборатории;

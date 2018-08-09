@@ -9,18 +9,18 @@ ms.devlang: NA
 ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: luisca
-ms.openlocfilehash: dd9bb4cb2622651c2d1979166ad838b3b337d583
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: b428e6e7738c8a9052c3fcfe2ad5284bfd5293d6
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37343250"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39307999"
 ---
 # <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Пример создания пользовательского навыка с помощью API перевода текста
 
 В этом примере вы можете узнать, как создать пользовательский навык веб-API, принимающий текст на любом языке и переводящий его на английский язык. Этот пример использует [Функцию Azure](https://azure.microsoft.com/services/functions/) для заключения [API перевода текста](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) в оболочку, чтобы он реализовывал интерфейс пользовательского навыка.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 + Вы можете прочитать статью об [интерфейсе пользовательского навыка](cognitive-search-custom-skill-interface.md), если не знакомы с интерфейсом ввода-вывода, который должен реализовывать пользовательский навык.
 
@@ -244,6 +244,13 @@ POST https://localhost:7071/api/Translate
 
 1. На [портале Azure](https://portal.azure.com) перейдите в группу ресурсов и найдите опубликованную функцию перевода. В разделе **Управление** должны отображаться ключи узла. Выберите значок **копирования** для ключа узла *по умолчанию*.  
 
+## <a name="update-ssl-settings"></a>Обновление параметров SSL
+
+Для всех Функций Azure, созданных после 30 июня 2018 года, отключен протокол TLS 1.0, который в настоящее время несовместим с настраиваемыми навыками.
+
+1. На [портале Azure](https://portal.azure.com) перейдите в группу ресурсов и найдите опубликованную функцию перевода. В разделе **Функции платформы** должен отображаться протокол SSL.
+
+1. После выбора SSL следует изменить значение параметра **Минимальная версия TLS** на версию 1.0. Функции TLS 1.2 еще не поддерживаются как настраиваемые навыки.
 
 ## <a name="test-the-function-in-azure"></a>Тестирование функции в Azure
 

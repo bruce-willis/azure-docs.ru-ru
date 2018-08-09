@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 01/29/2018
 ms.author: danlep
-ms.openlocfilehash: 0923512d62a1efe31e08377b6c074df2e0618552
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 14910aaec43e82bb118b5012b382367eac970f73
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29848830"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39425621"
 ---
 # <a name="cli-example-create-a-batch-account-in-user-subscription-mode"></a>Пример использования CLI: создание учетной записи пакетной службы в режиме подписки пользователя
 
@@ -45,15 +45,15 @@ az group delete --name myResourceGroup
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [az role assignment create](/cli/azure/role#az_role_assignment_create); | Создайте новое назначение роли для пользователя, группы или субъекта-службы. |
-| [az group create](/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault#az_keyvault_create) | Создает хранилище ключей. |
-| [az keyvault set-policy](https://docs.microsoft.com/cli/azure/keyvault#az_keyvault_set_policy) | Обновляет политику безопасности указанного хранилища ключей. |
-| [az batch account create](/cli/azure/batch/account#az_batch_account_create) | Создает учетную запись пакетной службы.  |
-| [az batch account login](/cli/azure/batch/account#az_batch_account_login) | Выполняет проверку подлинности с помощью указанной учетной записи пакетной службы для дальнейшего взаимодействия с интерфейсом командной строки.  |
-| [az group delete](/cli/azure/group#az_group_delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
+| [az role assignment create](/cli/azure/role#az-role-assignment-create); | Создайте новое назначение роли для пользователя, группы или субъекта-службы. |
+| [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az keyvault create](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-create) | Создает хранилище ключей. |
+| [az keyvault set-policy](https://docs.microsoft.com/cli/azure/keyvault#az-keyvault-set-policy) | Обновляет политику безопасности указанного хранилища ключей. |
+| [az batch account create](/cli/azure/batch/account#az-batch-account-create) | Создает учетную запись пакетной службы.  |
+| [az batch account login](/cli/azure/batch/account#az-batch-account-login) | Выполняет проверку подлинности с помощью указанной учетной записи пакетной службы для дальнейшего взаимодействия с интерфейсом командной строки.  |
+| [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

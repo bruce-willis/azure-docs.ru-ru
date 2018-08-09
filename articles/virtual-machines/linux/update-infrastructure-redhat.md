@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/02/2018
 ms.author: borisb
-ms.openlocfilehash: b69cc226ca5b4f48747b033e0da5e7f991be112e
-ms.sourcegitcommit: 5b2ac9e6d8539c11ab0891b686b8afa12441a8f3
+ms.openlocfilehash: 570b820e21df6db70b9cadf33d5a120132be62ed
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30915474"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39426757"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -74,11 +74,11 @@ ms.locfileid: "30915474"
 
     a. Проверьте, содержит ли файл `/etc/yum.repos.d/rh-cloud.repo` ссылку на `rhui-[1-3].microsoft.com` в `baseurl` раздела `[rhui-microsoft-azure-rhel*]`. Если это так, то вы используете новую версию инфраструктуры RHUI Azure.
 
-    Б. Если он указывает на расположение с помощью шаблона `mirrorlist.*cds[1-4].cloudapp.net`, то требуется обновить конфигурацию. Вы используете устаревший моментальный снимок виртуальной машины. Его нужно обновить, чтобы в файле было указано расположение новой версии инфраструктуры RHUI в Azure.
+    b. Если он указывает на расположение с помощью шаблона `mirrorlist.*cds[1-4].cloudapp.net`, то требуется обновить конфигурацию. Вы используете устаревший моментальный снимок виртуальной машины. Его нужно обновить, чтобы в файле было указано расположение новой версии инфраструктуры RHUI в Azure.
 
-2. Доступ к размещенной в Azure инфраструктуре RHUI могут получать только виртуальные машины с IP-адресами в рамках (диапазонов IP-адресов центра обработки данных Azure) (https://www.microsoft.com/download/details.aspx?id=41653).
+1. Доступ к размещенной в Azure инфраструктуре RHUI могут получать только виртуальные машины с IP-адресами в рамках (диапазонов IP-адресов центра обработки данных Azure) (https://www.microsoft.com/download/details.aspx?id=41653).
  
-3. Если вы убедились, что IP-адрес подключаемой виртуальной машины находится в диапазоне IP-адресов Azure, но при использовании новой конфигурации вам по-прежнему не удается подключиться к инфраструктуре RHUI в Azure, обратитесь в службу поддержки Майкрософт или Red Hat.
+1. Если вы убедились, что IP-адрес подключаемой виртуальной машины находится в диапазоне IP-адресов Azure, но при использовании новой конфигурации вам по-прежнему не удается подключиться к инфраструктуре RHUI в Azure, обратитесь в службу поддержки Майкрософт или Red Hat.
 
 ### <a name="manual-update-procedure-to-use-the-azure-rhui-servers"></a>Процедура обновления вручную для использования серверов Azure RHUI
 Эта процедура приводится только для справки. Образы RHEL (PAYG) уже содержат правильную конфигурацию для подключения к инфраструктуре RHUI в Azure. Чтобы вручную обновить конфигурацию для использования серверов RHUI в Azure, выполните следующие действия.
@@ -89,13 +89,13 @@ ms.locfileid: "30915474"
    curl -o RPM-GPG-KEY-microsoft-azure-release https://download.microsoft.com/download/9/D/9/9d945f05-541d-494f-9977-289b3ce8e774/microsoft-sign-public.asc 
    ```
 
-2. Проверьте, действителен ли скачанный ключ.
+1. Проверьте, действителен ли скачанный ключ.
 
    ```bash
    gpg --list-packets --verbose < RPM-GPG-KEY-microsoft-azure-release
    ```
 
-3. Просмотрите выходные данные, а затем проверьте `keyid` и `user ID packet`.
+1. Просмотрите выходные данные, а затем проверьте `keyid` и `user ID packet`.
 
    ```bash
    Version: GnuPG v1.4.7 (GNU/Linux)
@@ -119,14 +119,14 @@ ms.locfileid: "30915474"
            data: [2047 bits]
    ```
 
-4. Установите открытый ключ.
+1. Установите открытый ключ.
 
    ```bash
    sudo install -o root -g root -m 644 RPM-GPG-KEY-microsoft-azure-release /etc/pki/rpm-gpg
    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-microsoft-azure-release
    ```
 
-5. Скачайте, проверьте и установить клиент диспетчера пакетов RPM (RPM).
+1. Скачайте, проверьте и установить клиент диспетчера пакетов RPM (RPM).
     
     >[!NOTE]
     >Версии пакетов меняются. Если вы вручную подключаетесь к инфраструктуре RHUI в Azure, то последнюю версию пакета клиента для каждого семейства RHEL можно узнать, подготовив последний образ из коллекции.
@@ -143,7 +143,7 @@ ms.locfileid: "30915474"
         curl -o azureclient.rpm https://rhui-1.microsoft.com/pulp/repos/microsoft-azure-rhel7/rhui-azure-rhel7-2.1-19.noarch.rpm  
         ```
 
-   Б. Выполните проверку.
+   b. Выполните проверку.
 
    ```bash
    rpm -Kv azureclient.rpm
@@ -165,7 +165,7 @@ ms.locfileid: "30915474"
     sudo rpm -U azureclient.rpm
     ```
 
-6. По завершении убедитесь, что вы можете получить доступ к инфраструктуре RHUI в Azure с виртуальной машины.
+1. По завершении убедитесь, что вы можете получить доступ к инфраструктуре RHUI в Azure с виртуальной машины.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/). 

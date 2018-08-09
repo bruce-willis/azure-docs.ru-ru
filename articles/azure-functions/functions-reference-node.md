@@ -3,7 +3,7 @@ title: Справочник разработчика JavaScript для Функ�
 description: Узнайте, как разрабатывать функции с помощью JavaScript.
 services: functions
 documentationcenter: na
-author: tdykstra
+author: ggailey777
 manager: cfowler
 editor: ''
 tags: ''
@@ -15,13 +15,13 @@ ms.topic: reference
 ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/04/2018
-ms.author: tdykstra
-ms.openlocfilehash: 78f29cd4a20861e40bb7f7f398979b8d93387a7b
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.author: glenga
+ms.openlocfilehash: b0e078e3e7f18e3370ff1bcd90935e7fece265f0
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33936632"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39391186"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -271,7 +271,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | Версия службы "Функции" | Версия Node.js | 
 |---|---|
 | 1.x | 6.11.2 (заблокировано средой выполнения) |
-| 2.x  |не ниже версии 8.4.0 с рекомендуемой текущей версией LTS 8.9.4. Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
+| 2.x  | _Активная версия LTS_ и _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.6.0). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
 
 Введя `process.version` из любой функции, можно увидеть текущую версию, которую использует среда выполнения.
 

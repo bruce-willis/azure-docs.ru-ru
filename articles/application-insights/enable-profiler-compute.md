@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 10/16/2017
 ms.reviewer: ramach
 ms.author: mbullwin
-ms.openlocfilehash: 9eb99ecea8efbbce322e61ac281cd534a112728b
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 2da281f52a85992c6fade360c94fbf473c38dc20
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37950677"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39424030"
 ---
 # <a name="enable-application-insights-profiler-for-azure-vms-service-fabric-and-azure-cloud-services"></a>Включение Application Insights Profiler на виртуальных машинах Azure, в Service Fabric и облачных службах Azure
 
@@ -44,11 +44,11 @@ ms.locfileid: "37950677"
 
 1. [Создайте новый ресурс Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-create-new-resource) или выберите имеющийся. 
 
-2. Перейдите к ресурсу Application Insights и скопируйте ключ инструментирования.
+1. Перейдите к ресурсу Application Insights и скопируйте ключ инструментирования.
 
    ![Расположение ключа инструментирования](./media/enable-profiler-compute/CopyAIKey.png)
 
-3. Чтобы завершить настройку экземпляра Application Insights для профилировщика, [включите профилировщик. Не нужно связывать веб-приложения, так как соответствующие инструкции предназначены для ресурса службы приложений. Включите профилировщик в области **настройки профилировщика**.
+1. Чтобы завершить настройку экземпляра Application Insights для профилировщика, [включите профилировщик. Не нужно связывать веб-приложения, так как соответствующие инструкции предназначены для ресурса службы приложений. Включите профилировщик в области **настройки профилировщика**.
 
 
 ## <a name="set-up-the-application-source-code"></a>Настройка исходного кода приложения
@@ -74,7 +74,7 @@ ms.locfileid: "37950677"
         ```
       Дополнительные сведения об этой глобальной конфигурации ключа инструментирования см. в статье [Using Service Fabric with Application Insights](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/blob/dev/appinsights/ApplicationInsights.md) (Использование Service Fabric с Application Insights).  
 
-  2. Для всех фрагментов кода, которые необходимо инструментировать, добавьте оператор `StartOperation<RequestTelemetry>` **USING**, как показано в следующем примере:
+  1. Для всех фрагментов кода, которые необходимо инструментировать, добавьте оператор `StartOperation<RequestTelemetry>` **USING**, как показано в следующем примере:
 
         ```csharp
         using Microsoft.ApplicationInsights;
@@ -143,7 +143,7 @@ ms.locfileid: "37950677"
 Чтобы настроить среду, сделайте следующее:
 1. Чтобы использовать [.NET Framework версии 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) и выше, разверните ОС версии `Windows Server 2012 R2` и выше.
 
-2. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания и добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`. Замените значение свойства `ApplicationInsightsProfiler` собственным ключом инструментирования Application Insights:  
+1. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания и добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`. Замените значение свойства `ApplicationInsightsProfiler` собственным ключом инструментирования Application Insights:  
 
       ```json
       "SinksConfig": {
@@ -165,13 +165,13 @@ ms.locfileid: "37950677"
 
 1. Чтобы использовать [.NET Framework версии 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) и выше, убедитесь, что в файлах *ServiceConfiguration.\*.cscfg* для параметра `osFamily` задано по меньшей мере значение 5.
 
-2. Найдите файл *diagnostics.wadcfgx* [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) для роли приложения, как показано ниже.  
+1. Найдите файл *diagnostics.wadcfgx* [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) для роли приложения, как показано ниже.  
 
    ![Расположение файла конфигурации диагностики](./media/enable-profiler-compute/cloudservice-solutionexplorer.png)  
 
    Если не удается найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines#enable-diagnostics-in-cloud-service-projects-before-deploying-them), чтобы узнать, как включить расширение диагностики в проекте облачных служб Azure.
 
-3. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
+1. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
 
       ```xml
       <WadCfg>
@@ -212,14 +212,14 @@ ms.locfileid: "37950677"
     Set-AzureRmVMDiagnosticsExtension -ResourceGroupName "MyRG" -VMName "MyVM" -DiagnosticsConfigurationPath $ConfigFilePath
     ```
 
-2. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`, выполнив следующие действия:  
+1. Если нужное приложение выполняется с помощью [IIS](https://www.microsoft.com/web/downloads/platform.aspx), необходимо включить компонент Windows `IIS Http Tracing`, выполнив следующие действия:  
 
    a. Установите удаленный доступ к среде, а затем используйте окно [Добавить функции Windows]( https://docs.microsoft.com/iis/configuration/system.webserver/tracing/) или выполните следующую команду в PowerShell (с правами администратора):  
 
     ```powershell
     Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All
     ```  
-   Б. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
+   b. Если не удается установить удаленный доступ, можно использовать [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli), чтобы выполнить следующую команду:  
 
     ```powershell
     az vm run-command invoke -g MyResourceGroupName -n MyVirtualMachineName --command-id RunPowerShellScript --scripts "Enable-WindowsOptionalFeature -FeatureName IIS-HttpTracing -Online -All"

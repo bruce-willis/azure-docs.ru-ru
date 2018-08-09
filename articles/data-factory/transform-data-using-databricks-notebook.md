@@ -13,12 +13,12 @@ ms.topic: get-started-article
 ms.date: 03/12/2018
 ms.author: abnarain
 ms.reviewer: douglasl
-ms.openlocfilehash: c3774774ff220153d1af9ec9f9807414efb3f7ce
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: efef0c4a8fd5a1cd08c5c15d5cb5cea9fc0ee9aa
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081816"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39426057"
 ---
 # <a name="run-a-databricks-notebook-with-the-databricks-notebook-activity-in-azure-data-factory"></a>Запуск записной книжки Databricks с помощью действия Databricks Notebook в фабрике данных Azure
 
@@ -26,13 +26,13 @@ ms.locfileid: "37081816"
 
 В этом руководстве вы выполните следующие шаги:
 
-  - Создадите фабрику данных.
+  - Создали фабрику данных.
 
   - создадите конвейер, который использует действие Databricks Notebook.
 
   - Активация выполнения конвейера.
 
-  - Выполнение мониторинга выполнения конвейера.
+  - Осуществили мониторинг выполнения конвейера.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -40,7 +40,7 @@ ms.locfileid: "37081816"
 
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/ingest-prepare-and-transform-using-azure-databricks-and-data-factory/player]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
   - **Создайте рабочую область Azure Databricks**. [Создайте рабочую область Databricks](https://docs.microsoft.com/azure/azure-databricks/quickstart-create-databricks-workspace-portal) или используйте существующую. Вы создадите записную книжку Python в рабочей области Azure Databricks. Затем запустите ее и передадите в нее параметры, используя фабрику данных Azure.
 
@@ -48,19 +48,19 @@ ms.locfileid: "37081816"
 
 1.  Запустите веб-браузер **Microsoft Edge** или **Google Chrome**. Сейчас только эти браузеры поддерживают пользовательский интерфейс фабрики данных.
 
-2.  В меню слева выберите **Создать**, **Данные+аналитика**, **Фабрика данных**.
+1.  В меню слева выберите **Создать**, **Данные+аналитика**, **Фабрика данных**.
 
     ![Создание фабрики данных](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image1.png)
 
-3.  На панели **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**.
+1.  На панели **Новая фабрика данных** введите **ADFTutorialDataFactory** в поле **Имя**.
 
     Имя фабрики данных Azure должно быть *глобально уникальным*. Если появится следующая ошибка, измените имя фабрики данных. (Например, используйте **\<yourname\>ADFTutorialDataFactory**.) Правила именования для артефактов службы "Фабрика данных" см. в [этой](https://docs.microsoft.com/azure/data-factory/naming-rules) статье.
 
     ![Указание имени для новой фабрики данных](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image2.png)
 
-4.  В поле **Подписка** выберите подписку Azure, в рамках которой вы хотите создать фабрику данных.
+1.  В поле **Подписка** выберите подписку Azure, в рамках которой вы хотите создать фабрику данных.
 
-5.  Для **группы ресурсов** выполните одно из следующих действий:
+1.  Для **группы ресурсов** выполните одно из следующих действий:
     
     - Выберите **Использовать существующий** и выберите существующую группу ресурсов из раскрывающегося списка.
     
@@ -70,19 +70,19 @@ ms.locfileid: "37081816"
 
 1.  Укажите **V2** при выборе **версии**.
 
-2.  В поле **Расположение** выберите расположение фабрики данных.
+1.  В поле **Расположение** выберите расположение фабрики данных.
 
     Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (такие как служба хранилища Azure и база данных SQL Azure) и вычислительные среды (например, HDInsight), используемые фабрикой данных, могут находиться в других регионах.
 
-3.  Кроме того, установите флажок **Закрепить на панели мониторинга**.
+1.  Кроме того, установите флажок **Закрепить на панели мониторинга**.
 
-4.  Нажмите кнопку **Создать**.
+1.  Нажмите кнопку **Создать**.
 
-5.  На панели мониторинга вы увидите приведенный ниже элемент с состоянием **Deploying data factory** (Развертывание фабрики данных).
+1.  На панели мониторинга вы увидите приведенный ниже элемент с состоянием **Deploying data factory** (Развертывание фабрики данных).
 
     ![](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image3.png)
 
-6.  Когда создание завершится, откроется страница **Фабрика данных**. Выберите элемент **Author & Monitor** (Создание и мониторинг), чтобы открыть на отдельной вкладке приложение пользовательского интерфейса службы "Фабрика данных".
+1.  Когда создание завершится, откроется страница **Фабрика данных**. Выберите элемент **Author & Monitor** (Создание и мониторинг), чтобы открыть на отдельной вкладке приложение пользовательского интерфейса службы "Фабрика данных".
 
     ![Запуск приложения пользовательского интерфейса фабрики данных](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image4.png)
 
@@ -96,31 +96,31 @@ ms.locfileid: "37081816"
 
     ![Изменение новой связанной службы](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image5.png)
 
-2.  В нижней части окна выберите **Подключения**, а затем **+ Создать**.
+1.  В нижней части окна выберите **Подключения**, а затем **+ Создать**.
     
     ![Создание подключения](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image6.png)
 
-3.  В окне **New Linked Service** (Новая связанная служба) выберите **Хранилище данных** \> **Azure Databricks** и щелкните **Продолжить**.
+1.  В окне **New Linked Service** (Новая связанная служба) выберите **Хранилище данных** \> **Azure Databricks** и щелкните **Продолжить**.
     
     ![Указание связанной службы Databricks](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image7.png)
 
-4.  В окне **New Linked Service** (Новая связанная служба) сделайте следующее:
+1.  В окне **New Linked Service** (Новая связанная служба) сделайте следующее:
     
     1.  В качестве **имени** введите ***AzureDatabricks\_LinkedService***.
     
-    2.  В разделе **Select cluster** (Выберите кластер) выберите **New Cluster** (Новый кластер).
+    1.  В разделе **Select cluster** (Выберите кластер) выберите **New Cluster** (Новый кластер).
     
-    3.  В поле **Domain/Region** (Домен или регион) выберите регион, в котором находится рабочее пространство Azure Databricks.
+    1.  В поле **Domain/Region** (Домен или регион) выберите регион, в котором находится рабочее пространство Azure Databricks.
     
-    4.  В поле **Cluster node type** (Тип узла кластера) выберите **Standard\_D3\_v2** для этого руководства.
+    1.  В поле **Cluster node type** (Тип узла кластера) выберите **Standard\_D3\_v2** для этого руководства.
     
-    5.  В поле **Маркер доступа** укажите маркер, сгенерированный из рабочей области Azure Databricks. Инструкции можно найти [здесь](https://docs.databricks.com/api/latest/authentication.html#generate-token).
+    1.  В поле **Маркер доступа** укажите маркер, сгенерированный из рабочей области Azure Databricks. Инструкции можно найти [здесь](https://docs.databricks.com/api/latest/authentication.html#generate-token).
     
-    6.  В поле **Версия кластера** выберите **бета-версию 4.0** (последняя версия).
+    1.  В поле **Версия кластера** выберите **бета-версию 4.0** (последняя версия).
     
-    7.  В качестве **числа рабочих узлов** введите **2**.
+    1.  В качестве **числа рабочих узлов** введите **2**.
     
-    8.  Нажмите кнопку **Готово**.
+    1.  Нажмите кнопку **Готово**.
 
         ![Завершение создания связанной службы](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image8.png)
 
@@ -130,37 +130,37 @@ ms.locfileid: "37081816"
 
     ![Кнопки для создания конвейера](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image9.png)
 
-2.  Создайте **параметр** для использования в **конвейере**. Позже вы передадите этот параметр в действие Databricks Notebook. В пустом конвейере щелкните вкладку **Параметры**, а затем — **Создать** и присвойте параметру имя **name**.
+1.  Создайте **параметр** для использования в **конвейере**. Позже вы передадите этот параметр в действие Databricks Notebook. В пустом конвейере щелкните вкладку **Параметры**, а затем — **Создать** и присвойте параметру имя **name**.
 
     ![Создание параметра](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image10.png)
 
     ![Создание параметра name](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image11.png)
 
-3.  На панели элементов **Действия** разверните узел **Databricks**. Перетащите действие **Notebook** с панели элементов **Действия** в область конструктора конвейера.
+1.  На панели элементов **Действия** разверните узел **Databricks**. Перетащите действие **Notebook** с панели элементов **Действия** в область конструктора конвейера.
 
     ![Перетаскивание записной книжки в область конструктора](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image12.png)
 
-4.  В свойствах для окна действия **Databricks** **Notebook** в нижней части страницы выполните следующие действия.
+1.  В свойствах для окна действия **Databricks** **Notebook** в нижней части страницы выполните следующие действия.
 
     a. Переключитесь на вкладку **Параметры** .
 
-    Б. Выберите **myAzureDatabricks\_LinkedService** (которая была создана в предыдущей процедуре).
+    b. Выберите **myAzureDatabricks\_LinkedService** (которая была создана в предыдущей процедуре).
 
     c. Выберите **путь к записной книжке** Databricks. Давайте создадим записную книжку и укажем путь. Чтобы получить путь к записной книжке, выполните следующие действия.
 
        1. Запуск рабочей области Azure Databricks
 
-       2. В рабочей области выберите команду **создания папки** и присвойте папке имя **adftutorial**.
+       1. В рабочей области выберите команду **создания папки** и присвойте папке имя **adftutorial**.
 
           ![Создание папки](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image13.png)
 
-       3. [Создайте записную книжку](https://docs.databricks.com/user-guide/notebooks/index.html#creating-a-notebook) (Python) с именем **mynotebook** в папке **adftutorial****,** выбрав команду **Создать**.
+       1. [Создайте записную книжку](https://docs.databricks.com/user-guide/notebooks/index.html#creating-a-notebook) (Python) с именем **mynotebook** в папке **adftutorial****,** выбрав команду **Создать**.
 
           ![Создание записной книжки](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image14.png)
 
           ![Указание свойств новой записной книжки](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image15.png)
 
-       4. В недавно созданной записной книжке mynotebook добавьте следующий код:
+       1. В недавно созданной записной книжке mynotebook добавьте следующий код:
 
            ```
            # Creating widgets for leveraging parameters, and printing the parameters
@@ -174,21 +174,21 @@ ms.locfileid: "37081816"
 
            ![Создание мини-приложений для параметров](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image16.png)
 
-       5. В этом случае **путь к записной книжке** — **/adftutorial/mynotebook**.
+       1. В этом случае **путь к записной книжке** — **/adftutorial/mynotebook**.
 
-5.  Вернитесь к **инструменту для создания пользовательского интерфейса фабрики данных**. Перейдите на вкладку **Параметры** в разделе **Действие Notebook1**. 
+1.  Вернитесь к **инструменту для создания пользовательского интерфейса фабрики данных**. Перейдите на вкладку **Параметры** в разделе **Действие Notebook1**. 
     
     a.  **Добавьте параметр** в действие записной книжки. Это тот же параметр, который был добавлен ранее в **конвейер**.
 
        ![Добавление параметра](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image17.png)
 
-    Б.  Присвойте параметру имя **input** и укажите в качестве значения выражение **@pipeline().parameters.name**.
+    b.  Присвойте параметру имя **input** и укажите в качестве значения выражение **@pipeline().parameters.name**.
 
-6.  Чтобы проверить работу конвейера, нажмите кнопку **Проверка** на панели инструментов. Чтобы закрыть окно проверки, нажмите кнопку **\>\>** (стрелка вправо).
+1.  Чтобы проверить работу конвейера, нажмите кнопку **Проверка** на панели инструментов. Чтобы закрыть окно проверки, нажмите кнопку **\>\>** (стрелка вправо).
 
     ![Проверка конвейера](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image18.png)
 
-7.  Выберите **Опубликовать все**. Пользовательский интерфейс фабрики данных опубликует сущности (связанные службы и конвейер) в службе фабрики данных Azure.
+1.  Выберите **Опубликовать все**. Пользовательский интерфейс фабрики данных опубликует сущности (связанные службы и конвейер) в службе фабрики данных Azure.
 
     ![Публикация новых сущностей фабрики данных](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image19.png)
 
@@ -202,15 +202,15 @@ ms.locfileid: "37081816"
 
 ![Указание значения для параметра name](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image21.png)
 
-## <a name="monitor-the-pipeline-run"></a>Выполнили мониторинг конвейера.
+## <a name="monitor-the-pipeline-run"></a>Мониторинг конвейера
 
 1.  Перейдите на вкладку **Мониторинг**. Убедитесь, что здесь отображается запуск конвейера. Для создания кластера заданий Databricks, где выполняется записная книжка, требуется приблизительно 5–8 минут.
 
     ![Мониторинг конвейера](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image22.png)
 
-2.  Периодически нажимайте **Обновить**, чтобы контролировать состояние выполнения конвейера.
+1.  Периодически нажимайте **Обновить**, чтобы контролировать состояние выполнения конвейера.
 
-3.  Чтобы увидеть выполнение действий, связанных с выполнением конвейера, выберите **View Activity Runs** (Просмотр выполнения действий) в столбце **Действия**.
+1.  Чтобы увидеть выполнение действий, связанных с выполнением конвейера, выберите **View Activity Runs** (Просмотр выполнения действий) в столбце **Действия**.
 
     ![Просмотр выполнений действий](media/transform-data-using-databricks-notebook/databricks-notebook-activity-image23.png)
 
@@ -230,7 +230,7 @@ ms.locfileid: "37081816"
 
 В этом примере конвейер запускает действие Databricks Notebook и передает в него параметр. Вы научились выполнять следующие задачи:
 
-  - Создадите фабрику данных.
+  - Создали фабрику данных.
 
   - создавать конвейер, который использует действие Databricks Notebook.
 

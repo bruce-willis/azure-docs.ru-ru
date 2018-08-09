@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: cephalin;dariac
-ms.openlocfilehash: 2ec08b45fab9987e9271c1ff3101eaf321dc84be
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 66d375022d200cc916c77c059fa64eb6dbbc17e2
+ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35234229"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39308152"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Развертывание приложения в службе приложений Azure с помощью FTP или FTPS
 
@@ -66,7 +66,7 @@ ms.locfileid: "35234229"
 
 На странице ресурсов приложения на [портале Azure](https://portal.azure.com) выберите **Параметры приложения** в области навигации слева.
 
-Чтобы отключить незашифрованный протокол FTP, выберите **Только FTPS**. Чтобы полностью отключить FTP и FTPS, выберите **Отключить**. По завершении щелкните **Сохранить**.
+Чтобы отключить незашифрованный протокол FTP, выберите **Только FTPS**. Чтобы полностью отключить FTP и FTPS, выберите **Отключить**. По завершении щелкните **Сохранить**. При использовании параметра **Только FTPS** необходимо принудительно использовать протокол TLS 1.1 или более поздней версии, перейдя к колонке **Параметры SSL** своего веб-приложения. Протокол TLS 1.0 не поддерживается для параметра **Только FTPS**.
 
 ![Отключение FTP(S)](./media/app-service-deploy-ftp/disable-ftp.png)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/15/2017
 ms.author: dekapur
-ms.openlocfilehash: 20526c1ddd55671f815dc39b3e03c4f9b2f91788
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 9c2534644a0627bac9765621691cbba6ffccfe35
+ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208657"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39391317"
 ---
 # <a name="upgrade-your-standalone-azure-service-fabric-cluster-on-windows-server"></a>Обновление автономного кластера Azure Service Fabric в Windows Server 
 > [!div class="op_single_selector"]
@@ -83,7 +83,7 @@ ms.locfileid: "34208657"
     Должен отобразиться результат следующего вида.
 
     ![Получение версий Service Fabric][getfabversions]
-3. Запустите обновление кластера до доступной версии с помощью команды Windows PowerShell [Start-ServiceFabricClusterUpgrade](https://msdn.microsoft.com/library/mt125872.aspx).
+3. Запустите обновление кластера до доступной версии с помощью команды Windows PowerShell [Start-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterupgrade).
 
     ```Powershell
 
@@ -101,9 +101,9 @@ ms.locfileid: "34208657"
     Get-ServiceFabricClusterUpgrade
     ```
 
-    Если требования политик работоспособности кластера не соблюдаются, выполняется откат обновления. О том, как указать пользовательские политики работоспособности для команды Start-ServiceFabricClusterUpgrade, можно узнать [из соответствующей документации](https://msdn.microsoft.com/library/mt125872.aspx).
+    Если требования политик работоспособности кластера не соблюдаются, выполняется откат обновления. О том, как указать пользовательские политики работоспособности для команды Start-ServiceFabricClusterUpgrade, можно узнать из [соответствующей документации](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterupgrade).
 
-Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
+    Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
 ### <a name="upgrade-clusters-that-have-no-connectivity-to-download-the-latest-code-and-configuration"></a>Обновление кластеров *без возможности подключения* для скачивания последней версии кода и конфигурации
 Выполните следующие действия, чтобы обновить до поддерживаемой версии кластер без возможности интернет-подключения к [Центру загрузки Майкрософт](http://download.microsoft.com).
@@ -121,7 +121,7 @@ ms.locfileid: "34208657"
 
         "fabricClusterAutoupgradeEnabled": false,
 
-См. дополнительные сведения об использовании [команды PowerShell Start-ServiceFabricClusterConfigurationUpgrade](https://msdn.microsoft.com/library/mt788302.aspx). Обязательно обновите параметр clusterConfigurationVersion в JSON, прежде чем запускать обновление конфигурации.
+См. дополнительные сведения об использовании [команды PowerShell Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обязательно обновите параметр clusterConfigurationVersion в JSON, прежде чем запускать обновление конфигурации.
 
 ```powershell
 
@@ -131,7 +131,7 @@ ms.locfileid: "34208657"
 
 #### <a name="cluster-upgrade-workflow"></a>Рабочий процесс обновления кластера
 
-1. Выполните командлет Get-ServiceFabricClusterUpgrade на одном из узлов в кластере и запишите значение TargetCodeVersion.
+1. Выполните командлет [Get-ServiceFabricClusterUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricclusterupgrade) на одном из узлов в кластере и запишите значение *TargetCodeVersion*.
 
 2. Выполните следующую команду с компьютера, подключенного к Интернету, чтобы получить список всех версий, совместимых с обновлением, для текущей версии и скачайте соответствующий пакет с помощью связанных ссылок для загрузки.
 
@@ -182,9 +182,9 @@ ms.locfileid: "34208657"
     Get-ServiceFabricClusterUpgrade
     ```
 
-    Если требования политик работоспособности кластера не соблюдаются, выполняется откат обновления. О том, как указать пользовательские политики работоспособности для команды Start-ServiceFabricClusterUpgrade, можно узнать из [соответствующей документации](https://msdn.microsoft.com/library/mt125872.aspx).
+    Если требования политик работоспособности кластера не соблюдаются, выполняется откат обновления. О том, как указать пользовательские политики работоспособности для команды Start-ServiceFabricClusterUpgrade, можно узнать из [соответствующей документации](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterupgrade).
 
-Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
+    Устранив проблемы, которые привели к откату, запустите обновление снова, выполнив уже описанные действия.
 
 
 ## <a name="upgrade-the-cluster-configuration"></a>Обновление конфигурации кластера
@@ -205,7 +205,7 @@ ms.locfileid: "34208657"
 
 Некоторые конфигурации невозможно обновить, например конечные точки, имена кластеров, IP-адреса узлов и т. д. Мы протестируем новый JSON-файл конфигурации кластера, используя старый файл. При наличии каких-либо проблем в окне PowerShell отобразятся сведения об ошибках.
 
-Чтобы обновить конфигурацию кластера, выполните команду Start-ServiceFabricClusterConfigurationUpgrade. Обновление конфигурации обрабатывает домен обновления.
+Чтобы обновить конфигурацию кластера, выполните команду [Start-ServiceFabricClusterConfigurationUpgrade](https://docs.microsoft.com/powershell/module/servicefabric/start-servicefabricclusterconfigurationupgrade). Обновление конфигурации обрабатывает домен обновления.
 
 ```powershell
 

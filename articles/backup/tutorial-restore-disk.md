@@ -10,15 +10,15 @@ ms.topic: tutorial
 ms.date: 4/17/2018
 ms.author: markgal
 ms.custom: mvc
-ms.openlocfilehash: 47f0b43ae074314ffb1727508bb534fdd79c1f7d
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 4a122aebd149131e97be5c593a51871b1a943577
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34607122"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39427425"
 ---
 # <a name="restore-a-disk-and-create-a-recovered-vm-in-azure"></a>Восстановление диска и создание восстановленной виртуальной машины в Azure
-Служба архивации Azure создает точки восстановления, которые хранятся в геоизбыточных хранилищах восстановления. Используя точку восстановления, можно восстановить всю виртуальную машину или только отдельные файлы. В этой статье описан процесс восстановления всей виртуальной машины с помощью CLI. Из этого руководства вы узнали, как выполнять такие задачи:
+Служба архивации Azure создает точки восстановления, которые хранятся в геоизбыточных хранилищах восстановления. Используя точку восстановления, можно восстановить всю виртуальную машину или только отдельные файлы. В этой статье описан процесс восстановления всей виртуальной машины с помощью CLI. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
 > * Составление списка и выбор точек восстановления
@@ -32,7 +32,7 @@ ms.locfileid: "34607122"
 Если вы решили установить и использовать интерфейс командной строки локально, то для работы с этим руководством вам понадобится Azure CLI 2.0.18 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этого руководства требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure. Для имитации случайного удаления виртуальной машины и процесса восстановления виртуальная машина создается на основе диска в точке восстановления. Если вам требуется виртуальная машина Linux, защищенная с помощью службы архивации Azure, см. раздел [Резервное копирование виртуальной машины в Azure с помощью интерфейса командной строки](quick-backup-vm-cli.md).
 
 
@@ -47,7 +47,7 @@ ms.locfileid: "34607122"
 ## <a name="list-available-recovery-points"></a>Список доступных точек восстановления
 Чтобы восстановить диск, выберите точку восстановления в качестве источника данных восстановления. Поскольку политика по умолчанию создает точку восстановления каждый день и хранит все точки в течение 30 дней, вы можете сохранить набор точек восстановления, а затем выбрать определенный момент времени для восстановления. 
 
-Чтобы просмотреть список доступных точек восстановления, используйте команду [az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az_backup_recoverypoint_list). **Имя** точки восстановления используется для восстановления дисков. В рамках этого руководства нам требуется последняя доступная точка восстановления. Параметр `--query [0].name` выбирает имя самой последней точки восстановления следующим образом:
+Чтобы просмотреть список доступных точек восстановления, используйте команду [az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list). **Имя** точки восстановления используется для восстановления дисков. В рамках этого руководства нам требуется последняя доступная точка восстановления. Параметр `--query [0].name` выбирает имя самой последней точки восстановления следующим образом:
 
 ```azurecli-interactive
 az backup recoverypoint list \
@@ -63,7 +63,7 @@ az backup recoverypoint list \
 ## <a name="restore-a-vm-disk"></a>Восстановление диска виртуальной машины
 Чтобы восстановить диск из точки восстановления, сначала необходимо создать учетную запись хранения Azure. Она используется для хранения восстановленного диска. Затем этот восстановленный диск используется для создания виртуальной машины.
 
-1. Создайте учетную запись хранения с помощью команды [az storage account create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
+1. Создайте учетную запись хранения с помощью команды [az storage account create](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-create). Имя учетной записи хранения следует указывать в нижнем регистре, оно должно быть глобально уникальным. Замените *mystorageaccount* собственным уникальным именем:
 
     ```azurecli-interactive
     az storage account create \
@@ -72,7 +72,7 @@ az backup recoverypoint list \
         --sku Standard_LRS
     ```
 
-2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az_backup_restore_restore_disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az_backup_recoverypoint_list):
+2. Восстановите диск из точки восстановления с помощью команды [az backup restore restore-disks](https://docs.microsoft.com/cli/azure/backup/restore?view=azure-cli-latest#az-backup-restore-restore-disks). Замените *mystorageaccount* именем учетной записи хранения, созданной с помощью предыдущей команды. Замените *myRecoveryPointName* именем точки восстановления, полученной в выходных данных предыдущей команды [az backup recoverypoint list](https://docs.microsoft.com/cli/azure/backup/recoverypoint?view=azure-cli-latest#az-backup-recoverypoint-list):
 
     ```azurecli-interactive
     az backup restore restore-disks \
@@ -86,7 +86,7 @@ az backup recoverypoint list \
 
 
 ## <a name="monitor-the-restore-job"></a>Мониторинг задания восстановления
-Чтобы отслеживать состояние задания восстановления, используйте команду [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az_backup_job_list):
+Чтобы отслеживать состояние задания восстановления, используйте команду [az backup job list](https://docs.microsoft.com/cli/azure/backup/job?view=azure-cli-latest#az-backup-job-list):
 
 ```azurecli-interactive 
 az backup job list \
@@ -111,7 +111,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
 ## <a name="convert-the-restored-disk-to-a-managed-disk"></a>Преобразование восстановленного диска в управляемый диск
 Задание восстановления создает неуправляемый диск. Чтобы создать виртуальную машину на основе диска, его сначала необходимо преобразовать в управляемый диск.
 
-1. Получите сведения о подключении для вашей учетной записи хранения с помощью команды [az storage account show-connection-string](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_show_connection_string). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
+1. Получите сведения о подключении для вашей учетной записи хранения с помощью команды [az storage account show-connection-string](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-show-connection-string). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
     
     ```azurecli-interactive
     export AZURE_STORAGE_CONNECTION_STRING=$( az storage account show-connection-string \
@@ -128,7 +128,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
     uri=$(az storage blob url --container-name $container --name $blob -o tsv)
     ```
 
-3. Теперь на основе восстановленного диска можно создать управляемый диск с помощью команды [az disk create](https://docs.microsoft.com/cli/azure/disk?view=azure-cli-latest#az_disk_create). Переменная *uri* из предыдущего шага используется как источник для управляемого диска.
+3. Теперь на основе восстановленного диска можно создать управляемый диск с помощью команды [az disk create](https://docs.microsoft.com/cli/azure/disk?view=azure-cli-latest#az-disk-create). Переменная *uri* из предыдущего шага используется как источник для управляемого диска.
 
     ```azurecli-interactive
     az disk create \
@@ -137,7 +137,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
         --source $uri
     ```
 
-4. Создав управляемый диск на основе восстановленного диска, выполните очистку неуправляемого диска и учетной записи хранения с помощью команды [az storage account delete](/cli/azure/storage/account?view=azure-cli-latest#az_storage_account_delete). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
+4. Создав управляемый диск на основе восстановленного диска, выполните очистку неуправляемого диска и учетной записи хранения с помощью команды [az storage account delete](/cli/azure/storage/account?view=azure-cli-latest#az-storage-account-delete). Замените *mystorageaccount* именем своей учетной записи хранения следующим образом:
 
     ```azurecli-interactive
     az storage account delete \
@@ -149,7 +149,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
 ## <a name="create-a-vm-from-the-restored-disk"></a>Создание виртуальной машины на основе восстановленного диска
 Последним шагом является создание виртуальной машины на основе управляемого диска.
 
-1. Создайте виртуальную машину на основе управляемого диска с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az_vm_create) следующим образом:
+1. Создайте виртуальную машину на основе управляемого диска с помощью команды [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create) следующим образом:
 
     ```azurecli-interactive
     az vm create \
@@ -159,7 +159,7 @@ fe5d0414  ConfigureBackup  Completed   myvm         2017-09-19T03:03:57  0:00:31
         --os-type linux
     ```
 
-2. Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm?view=azure-cli-latest#az_vm_list) следующим образом:
+2. Чтобы убедиться, что виртуальная машина была создана на основе восстановленного диска, перечислите виртуальные машины в группе ресурсов с помощью команды [az vm list](/cli/azure/vm?view=azure-cli-latest#az-vm-list) следующим образом:
 
     ```azurecli-interactive
     az vm list --resource-group myResourceGroup --output table

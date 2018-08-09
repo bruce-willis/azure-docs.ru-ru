@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/08/2018
 ms.author: brenduns
 ms.reviewer: alfredo
-ms.openlocfilehash: 18b34af8dc383cfa86017162ec48782f156156bc
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: efd1c1eafbff8bf56b16131e44cff6b03ce7338a
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39092698"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39264816"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
 
@@ -35,6 +35,13 @@ ms.locfileid: "39092698"
 
 Обратите внимание, что с клиентом можно связать только одну подписку Azure. Если добавить вторую подписку в существующий клиент, первая подписка перезаписывается. 
 
+### <a name="use-api-profiles"></a>Использование профилей API
+
+Командлеты, представленные в этой статье, требуют указания профиля API при выполнении PowerShell. Профили API представляют набор поставщиков ресурсов Azure и их версий API. Они помогают использовать правильную версию API при взаимодействии с несколькими облаками Azure, например, при работе с глобальным облаком Azure и Azure Stack. Профили задаются с помощью имени, которое соответствует их дате выпуска. В этой статье необходимо использовать профиль **2017-09-03**.
+
+Дополнительные сведения о профилях API и Azure Stack см. в статье [Управление профилями версий API в Azure Stack](user/azure-stack-version-profiles.md). Инструкции по началу работы и выполнению кода с профилем API с помощью PowerShell приведены в разделе [Использование профилей версий API и PowerShell в Azure Stack](user/azure-stack-version-profiles-powershell.md).
+
+### <a name="parameters"></a>Параметры
 
 | Параметр                  | ОПИСАНИЕ |
 |---                         | --- |

@@ -16,12 +16,12 @@ ms.date: 07/12/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: e2b8b1f63e4c23c0beeaff6fd246fa2ba8afe106
-ms.sourcegitcommit: 04fc1781fe897ed1c21765865b73f941287e222f
+ms.openlocfilehash: 6e0b00117c35cd5222c69e72819afb37f9ec14dd
+ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39036757"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39265070"
 ---
 # <a name="optional-claims-in-azure-ad-preview"></a>Необязательные утверждения в Azure AD (предварительная версия)
 
@@ -41,8 +41,8 @@ ms.locfileid: "39036757"
 
 | Тип учетной записи | Конечная точка версии 1.0                      | Конечная точка версии 2.0  |
 |--------------|------------------------------------|----------------|
-| MSA          | Недоступно. Вместо них используются запросы RPS | Поддержка будет реализована в ближайшее время |
-| AAD          | Поддерживаются                          | Поддерживаются      |
+| Личная учетная запись Майкрософт  | Недоступно. Вместо них используются запросы RPS | Поддержка будет реализована в ближайшее время |
+| Учетная запись Azure AD          | Поддерживаются                          | Поддерживаются      |
 
 ## <a name="standard-optional-claims-set"></a>Набор стандартных необязательных утверждений
 Набор необязательных утверждений доступен по умолчанию для использования приложениями, перечисленными ниже.  Чтобы добавить настраиваемые необязательные утверждения для приложения, ознакомьтесь с разделом [Расширения каталога](active-directory-optional-claims.md#Configuring-custom-claims-via-directory-extensions) ниже. 
