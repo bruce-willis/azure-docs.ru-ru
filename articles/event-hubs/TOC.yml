@@ -81,6 +81,10 @@
       href: event-hubs-dotnet-framework-getstarted-send.md
     - name: Получение событий с помощью .NET Framework
       href: event-hubs-dotnet-framework-getstarted-receive-eph.md
+    - name: Отправка событий с помощью Go
+      href: event-hubs-go-get-started-send.md
+    - name: Получение событий с помощью Go
+      href: event-hubs-go-get-started-receive-eph.md
     - name: Концентраторы событий для Apache Kafka
       items:
         - name: Создание концентраторов событий с поддержкой Apache Kafka

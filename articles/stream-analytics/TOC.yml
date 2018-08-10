@@ -96,6 +96,8 @@
           href: stream-analytics-monitor-and-manage-jobs-use-powershell.md
         - name: 'Мониторинг заданий: с помощью пакета Azure SDK для .NET'
           href: stream-analytics-monitor-jobs.md
+        - name: Мониторинг заданий в Visual Studio
+          href: stream-analytics-monitor-jobs-use-vs.md
     - name: Масштаб
       items:
         - name: Масштабирование с помощью единиц потоковой передачи
@@ -117,8 +119,10 @@
       items:
         - name: Средства установки
           href: stream-analytics-tools-for-visual-studio-install.md
-        - name: Разработка облачного задания
-          href: stream-analytics-tools-for-visual-studio.md
+        - name: Локальное тестирование задания
+          href: stream-analytics-vs-tools-local-run.md
+        - name: Просмотр заданий в Visual Studio
+          href: stream-analytics-vs-tools.md
         - name: Разработка задания Edge
           href: stream-analytics-tools-for-visual-studio-edge-jobs.md
         - name: Настройка конвейера CI/CD

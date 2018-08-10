@@ -131,13 +131,13 @@
           href: automation-linux-hrw-install.md
         - name: Запуск модулей Runbook в гибридной рабочей роли Runbook
           href: automation-hrw-run-runbooks.md
-    - name: Развертывание управления конфигурацией (DSC)
+    - name: Настройка состояния
       items:
-        - name: Общие сведения о платформе Desired State Configuration (DSC)
+        - name: Общие сведения о настройке состояния
           href: automation-dsc-overview.md
         - name: Приступая к работе
           href: automation-dsc-getting-started.md
-        - name: Настройка требуемого состояния серверов и управление смещением с помощью службы автоматизации Azure
+        - name: Настройка требуемого состояния серверов и управление смещением
           href: tutorial-configure-servers-desired-state.md
         - name: Подключение виртуальных машин для управления
           href: automation-dsc-onboarding.md
@@ -145,7 +145,7 @@
           href: automation-dsc-compile.md
         - name: Непрерывное развертывание с помощью Chocolatey
           href: automation-dsc-cd-chocolatey.md
-        - name: Пересылка данных отчетов Azure Automation DSC в OMS Log Analytics
+        - name: Пересылка данных отчетов о настройке состояния в Log Analytics
           href: automation-dsc-diagnostics.md
     - name: Управление общими ресурсами
       items:

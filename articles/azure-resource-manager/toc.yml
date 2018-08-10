@@ -32,6 +32,8 @@
       maintainContext: true
     - name: Шаблоны для обеспечения согласованности данных в облаке
       href: templates-cloud-consistency.md
+    - name: Режимы развертывания
+      href: deployment-modes.md
 - name: Практическое руководство
   items:
     - name: Создание шаблонов

@@ -1,4 +1,10 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 6995022626e2abe52e4fd72b401cbb01b5bc92e6
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39714941"
 documentType: LandingData
 title: Документация по поиску Azure
 metadata:
@@ -13,22 +19,16 @@ metadata:
   ms.topic: landing-page
   ms.date: 05/01/2018
   ms.author: heidist
-  ms.openlocfilehash: 7c03fba9071225453b059d6bcaf9cac1be9a9f02
-  ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 07/02/2018
-  ms.locfileid: "37341830"
 abstract:
-  description: Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев. <p/><b>Предварительная версия новой функции поиска с помощью служб Cognitive Services</b> Используйте предварительную версию REST API для привязки на алгоритмов на основе ИИ к конвейеру индексирования. Извлекайте данные и осуществляйте обработку естественного языка, а также изображений, чтобы преобразовать необработанное и неструктурированное содержимое в доступные для поиска материалы с помощью индексирования в службе "Поиск Azure". <p/>Начните работу с <a href="/azure/search/cognitive-search-quickstart-blob">ресурсами и примерами данных</a> или ознакомьтесь с дополнительными сведениями в статье с <a href="/azure/search/cognitive-search-concept-intro">основными понятиями</a>.
+  description: Узнайте, как создать решение для корпоративного поиска по частному разнородному контенту с помощью службы "Поиск Azure". В руководствах, справочниках по API и другой документации описано, как объединить доступное для поиска содержимое в один быстрый индекс, запрашиваемый с помощью расширяемого синтаксиса для различных сценариев. <p/><b>Предварительная версия новой функции поиска с помощью служб Cognitive Services</b> Используйте предварительную версию REST API для привязки на алгоритмов на основе ИИ к конвейеру индексирования. Извлекайте данные и осуществляйте обработку естественного языка, а также изображений, чтобы преобразовать необработанное и неструктурированное содержимое в доступные для поиска материалы с помощью индексирования в службе "Поиск Azure". <p/>Изучите возможности когнитивного поиска с помощью <a href="/azure/search/cognitive-search-quickstart-blob">ресурсов и примеров данных</a> или ознакомьтесь с <a href="/azure/search/cognitive-search-concept-intro">основными понятиями</a>.
   aside:
     image:
       alt: 
       height: 110
       src: https://docs.microsoft.com/azure/search/media/index/search-page-callouts3.png
       width: 250
-    title: Обзор службы "Поиск Azure" (9:32)
-    href: https://channel9.msdn.com/Events/Connect/2016/138/player
+    title: Что такое Поиск Azure (1:27)
+    href: https://channel9.msdn.com/Blogs/Azure/What-is-Azure-Search/player
     width: 250
 sections:
 - title: 5-минутные руководства по началу работы

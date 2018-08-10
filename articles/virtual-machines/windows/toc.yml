@@ -216,9 +216,9 @@
           href: nested-virtualization.md
     - name: Управление затратами
       items:
-        - name: Предоплата за использование виртуальных машин. Зарезервированные экземпляры
+        - name: Резервирования Azure — предварительная оплата виртуальных машин
           href: prepay-reserved-vm-instances.md
-        - name: Что такое зарезервированные экземпляры?
+        - name: Что такое резервирования Azure?
           href: ../../billing/billing-save-compute-costs-reservations.md
         - name: Гибкость размеров для экземпляров виртуальных машин
           href: reserved-vm-instance-size-flexibility.md

@@ -27,13 +27,13 @@
           href: search-import-data-rest-api.md
         - name: поиска
           href: search-query-rest-api.md
-        - name: Тестирование с помощью клиентов REST
+        - name: Использование Postman или Fiddler
           href: search-fiddler.md
 - name: Учебники
   items:
     - name: Использование встроенных средств
       href: search-get-started-portal.md
-    - name: Разработка функции поиска с помощью служб Cognitive Services
+    - name: Сведения об API когнитивного поиска
       href: cognitive-search-tutorial-blob.md
     - name: Индексирование больших двоичных объектов Azure
       href: search-semi-structured-data.md
@@ -143,12 +143,12 @@
           href: search-synonyms.md
     - name: Индексирование данных
       items:
-        - name: Сравнение индексирования при отправке и получении
+        - name: Загрузка данных
           href: search-what-is-data-import.md
-        - name: Мастер импорта (портал)
-          href: search-import-data-portal.md
         - name: Перестроение индекса
           href: search-howto-reindex.md
+        - name: Мастер импорта (портал)
+          href: search-import-data-portal.md
         - name: Индексирование больших наборов данных
           href: search-howto-large-index.md
         - name: Обработка одновременных обновлений
@@ -175,7 +175,7 @@
               href: search-indexer-field-mappings.md
     - name: Поиск данных
       items:
-        - name: Основы
+        - name: Типы и структура запросов
           href: search-query-overview.md
         - name: Обозреватель поиска (портал)
           href: search-explorer.md

@@ -228,9 +228,9 @@
           href: metrics-vm-usage-rest.md
     - name: Управление затратами
       items:
-        - name: Предоплата за использование виртуальных машин. Зарезервированные экземпляры
+        - name: Предварительная оплата виртуальных машин — резервирования Azure
           href: prepay-reserved-vm-instances.md
-        - name: Что такое зарезервированные экземпляры?
+        - name: Что такое резервирования Azure?
           href: ../../billing/billing-save-compute-costs-reservations.md
         - name: Гибкость размеров для экземпляров виртуальных машин
           href: reserved-vm-instance-size-flexibility.md

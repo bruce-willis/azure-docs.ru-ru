@@ -25,6 +25,8 @@
       href: app-service-web-get-started-java.md
     - name: Создание статического HTML-сайта
       href: app-service-web-get-started-html.md
+    - name: Запуск пользовательского контейнера Windows
+      href: app-service-web-get-started-windows-container.md
 - name: Учебники
   items:
     - name: Использование приложения с базой данных

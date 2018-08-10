@@ -110,9 +110,17 @@
     - name: Запрос данных
       items:
         - name: Документация по языкам
-          href: 'https://docs.loganalytics.io'
-        - name: Переход от устаревшего языка
-          href: log-analytics-log-search-transition.md
+          items:
+            - name: Переход от устаревшего языка
+              href: log-analytics-log-search-transition.md
+            - name: Начало работы с порталом Analytics
+              href: query-language/get-started-analytics-portal.md
+            - name: Начало работы с запросами
+              href: query-language/get-started-queries.md
+            - name: Поисковые запросы
+              href: query-language/search-queries.md
+            - name: Справочник по языку
+              href: 'https://docs.loganalytics.io'
         - name: Перекрестный поиск по ресурсам
           href: log-analytics-cross-workspace-search.md
         - name: Выполнение действий на основе результатов поиска

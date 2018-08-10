@@ -25,21 +25,29 @@
       href: ../azure-resource-manager/resource-group-using-tags.md?toc=/azure/billing/TOC.json
     - name: Общие сведения о предельной сумме расходов
       href: billing-spending-limit.md
-    - name: Экономия за счет использования зарезервированных экземпляров виртуальных машин
+    - name: Экономия средств за счет использования резервирований Azure
       items:
-        - name: Что такое зарезервированные экземпляры?
+        - name: Что такое резервирования Azure?
           href: billing-save-compute-costs-reservations.md
-        - name: Приобретение зарезервированного экземпляра
-          href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+        - name: Покупка резервирования
+          items:
+            - name: Виртуальная машина.
+              href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+            - name: База данных SQL
+              href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
         - name: Способ применения скидки
-          href: billing-understand-vm-reservation-charges.md
+          items:
+            - name: Зарезервированные экземпляры виртуальных машин
+              href: billing-understand-vm-reservation-charges.md
+            - name: Резервная мощность Базы данных SQL
+              href: billing-understand-reservation-charges.md
         - name: Расходы на программное обеспечение не входят в стоимость
           href: billing-reserved-instance-windows-software-costs.md
         - name: Использование для модели с оплатой по мере использования
           href: billing-understand-reserved-instance-usage.md
         - name: Использование для предприятия
           href: billing-understand-reserved-instance-usage-ea.md
-        - name: Управление зарезервированными экземплярами виртуальных машин
+        - name: Управление резервированиями Azure
           href: billing-manage-reserved-vm-instance.md
 - name: Управление учетной записью
   items:
@@ -132,7 +140,7 @@
     - name: Сценарии автоматизации выставления счетов
       href: billing-cost-management-automation-scenarios.md
       items:
-        - name: Управление затратами с помощью API управления бюждетом Azure
+        - name: Управление затратами с помощью API управления бюджетом Azure
           href: billing-cost-management-budget-scenario.md
     - name: Общие сведения об API выставления счетов Azure
       href: billing-usage-rate-card-overview.md

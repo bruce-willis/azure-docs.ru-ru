@@ -43,3 +43,9 @@
       href: 'https://registry.terraform.io/modules/Azure'
     - name: Справочник по Terraform
       href: 'http://aka.ms/terraform'
+- name: Ресурсы
+  items:
+    - name: Azure и Terraform
+      href: 'https://azure.microsoft.com/solutions/devops/terraform/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/'

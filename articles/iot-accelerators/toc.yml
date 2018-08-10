@@ -88,6 +88,8 @@
           href: iot-accelerators-time-series-insights.md
         - name: Анализ данных телеметрии с помощью Data Lake
           href: iot-accelerators-integrate-data-lake.md
+        - name: Настройка управления доступом на основе ролей
+          href: iot-accelerators-remote-monitoring-rbac.md
     - name: Удаленный мониторинг (предыдущая версия)
       items:
         - name: Что такое предварительно настроенные решения?

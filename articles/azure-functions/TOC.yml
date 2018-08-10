@@ -171,6 +171,8 @@
           href: functions-how-to-use-azure-function-app-settings.md
         - name: Установка версии среды выполнения
           href: set-runtime-version.md
+        - name: Отключение функции
+          href: disable-function.md
     - name: Мониторинг
       href: functions-monitoring.md
     - name: Интеграция

@@ -84,6 +84,8 @@
           href: sql-database-service-tiers-dtu.md
         - name: Ограничения ресурсов
           href: sql-database-resource-limits.md
+        - name: Предварительная оплата резервной мощности
+          href: sql-database-reserved-capacity.md
     - name: Логические серверы
       items:
         - name: Создание и управление
