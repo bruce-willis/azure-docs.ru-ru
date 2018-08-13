@@ -402,7 +402,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 11. Перетащите действие **Хранимая процедура** с панели элементов **Действия** в область конструктора конвейера. Присвойте новому действию имя **StoredProceduretoUpdateChangeTrackingActivity**. Это действие обновляет версию отслеживания изменений в таблице **table_store_ChangeTracking_version**.
 
     ![Действие хранимой процедуры — имя](./media/tutorial-incremental-copy-change-tracking-feature-portal/stored-procedure-activity-name.png)
-12. Перейдите на вкладку *Учетная запись SQL* и выберите **AzureSqlDatabaseLinkedService** в списке **Связанная служба**. 
+12. Перейдите на вкладку *Учетная запись SQL*\* и выберите **AzureSqlDatabaseLinkedService** в списке **Связанная служба**. 
 
     ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-change-tracking-feature-portal/sql-account-tab.png)
 13. Перейдите на вкладку **Хранимая процедура** и выполните здесь следующие действия: 
