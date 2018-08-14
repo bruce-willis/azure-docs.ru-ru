@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: bb5a005ba553d6392bf1427a4c2bba9ac5aad191
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: dc4cd28fe61c422f65f47c74c7cbc4686d73ab77
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358672"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39628840"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "39358672"
 - Скольким пользователям не удалось ее пройти?
 - С какими общими проблемами сталкиваются пользователи, проходя многофакторную проверку подлинности?
 
-Доступ к этим данным можно получить через [портал Azure](https://portal.azure.com) и [API отчетов](../active-directory-reporting-api-getting-started-azure-portal.md).
+Доступ к этим данным можно получить через [портал Azure](https://portal.azure.com) и [API отчетов](../reports-monitoring/concept-reporting-api.md).
 
 ![Облако](./media/howto-mfa-reporting/sign-in-report.png)
 

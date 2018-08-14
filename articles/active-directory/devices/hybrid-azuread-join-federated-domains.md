@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 1aa5c0f259fdb5fce449bc86f9cf293801b4770a
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: cc6d08de74097ba7566037664fd33d9be85ac390
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39368672"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39628994"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -38,8 +38,8 @@ ms.locfileid: "39368672"
 > [!div class="checklist"]
 > * Настройка гибридного присоединения к Azure AD.
 > * Включение устройств Windows нижнего уровня.
-> * Проверка регистрации.
-> * Устранение неполадок.
+> * Проверка регистрации
+> * Устранение неполадок
 
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -50,6 +50,7 @@ ms.locfileid: "39368672"
 
 -  [Как планировать гибридную реализацию присоединения к Azure Active Directory](hybrid-azuread-join-plan.md)
 
+-  [Как управлять гибридным присоединением устройства к Azure AD](hybrid-azuread-join-control.md)
 
 
 Для настройки сценария в этом руководстве вам понадобится следующее.
@@ -74,7 +75,7 @@ ms.locfileid: "39368672"
 - https://enterpriseregistration.windows.net
 - https://login.microsoftonline.com
 - https://device.login.microsoftonline.com
-- служба токенов безопасности вашей организации (федеративные домены);
+- служба токенов безопасности вашей организации (федеративные домены).
 - https://autologon.microsoftazuread-sso.com (если вы используете или планируете использовать простой единый вход).
 
 Если организации требуется доступ к Интернету через исходящий прокси-сервер, то начиная с Windows 10 версии 1709 можно настроить параметры прокси-сервера на компьютере с помощью объекта групповой политики (GPO). Если компьютер работает под управлением версии ОС, предшествующей Windows 10 версии 1709, необходимо реализовать автоматическое обнаружение веб-прокси (WPAD), чтобы обеспечить регистрацию устройств в Azure AD для компьютеров с Windows 10. 
@@ -145,11 +146,11 @@ ms.locfileid: "39368672"
 
 
 
-## <a name="enable-windows-down-level-devices"></a>Включение устройств Windows нижнего уровня
+## <a name="enable-windows-down-level-devices"></a>Включение устройств Windows нижнего уровня.
 
 Если некоторые из присоединенных к домену устройств являются устройствами Windows нижнего уровня, выполните указанные ниже действия.
 
-- Обновление параметров устройства.
+- Обновление параметров устройства
  
 - Настройка параметров локальной интрасети для регистрации устройств.
 
@@ -212,8 +213,8 @@ ms.locfileid: "39368672"
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими разделами:
 
-- [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](../device-management-troubleshoot-hybrid-join-windows-current.md)
-- [Troubleshooting hybrid Azure Active Directory joined down-level devices](../device-management-troubleshoot-hybrid-join-windows-legacy.md) (Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory)
+- [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
+- [Troubleshooting hybrid Azure Active Directory joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md) (Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory)
 
 
 
@@ -221,7 +222,7 @@ ms.locfileid: "39368672"
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного присоединения к Azure Active Directory для управляемых доменов](hybrid-azuread-join-managed-domains.md)
-> [Настройка гибридного присоединения к Azure Active Directory вручную](../device-management-hybrid-azuread-joined-devices-setup.md)
+> [Настройка гибридного присоединения к Azure Active Directory вручную](hybrid-azuread-join-manual-steps.md)
 
 
 

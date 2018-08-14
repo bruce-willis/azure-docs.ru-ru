@@ -15,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2017
-ms.openlocfilehash: 8ead74be1c1749d2c40d265af7c596e7a180a057
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 069a3022cf9b6423b95e8f9f35686965d2654be7
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835367"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39631084"
 ---
 # <a name="retrain-a-new-resource-manager-based-web-service-using-the-machine-learning-management-powershell-cmdlets"></a>Переобучение нового экземпляра Resource Manager с помощью командлетов PowerShell для управления машинным обучением
 При переобучении новой веб-службы следует обновить определение прогнозной веб-службы, чтобы оно ссылалось на новую обученную модель.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Необходимо настроить обучающий и прогнозный эксперименты, как показано в статье [Программное переобучение моделей машинного обучения](retrain-models-programmatically.md).
 
 > [!IMPORTANT]
@@ -34,7 +34,7 @@ ms.locfileid: "34835367"
 
 Дополнительную информацию о развертывании веб-служб см. в статье [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md).
 
-Для этого процесса требуется установить командлеты Машинного обучения Azure. Сведения по установке командлетов службы машинного обучения Azure см. по [этой ссылке](https://msdn.microsoft.com/library/azure/mt767952.aspx) на сайте MSDN.
+Для этого процесса требуется установить командлеты Машинного обучения Azure. Сведения по установке командлетов службы машинного обучения Azure см. по [этой ссылке](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/) на сайте MSDN.
 
 Вы скопировали из выходных данных переобучения следующие сведения:
 
@@ -54,7 +54,7 @@ ms.locfileid: "34835367"
 Сначала войдите в учетную запись Azure в среде PowerShell, используя командлет [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
 ## <a name="get-the-web-service-definition"></a>Получить определение веб-службы.
-Затем получите сведения о веб-службе, вызвав командлет [Get-AzureRmMlWebService](https://msdn.microsoft.com/library/mt619267.aspx) . Определение веб-службы — это внутреннее представление обученной модели веб-службы, которое нельзя изменить напрямую. Убедитесь, что извлекается определение веб-службы для прогнозного, а не обучающего эксперимента.
+Затем получите сведения о веб-службе, вызвав командлет [Get-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/get-azurermmlwebservice) . Определение веб-службы — это внутреннее представление обученной модели веб-службы, которое нельзя изменить напрямую. Убедитесь, что извлекается определение веб-службы для прогнозного, а не обучающего эксперимента.
 
     $wsd = Get-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'
 
@@ -73,7 +73,7 @@ ms.locfileid: "34835367"
 
 
 ## <a name="export-the-web-service-definition-as-json"></a>Экспортировать определение веб-службы в формате JSON.
-Чтобы изменить определение обученной модели для использования новой обученной модели, необходимо сначала воспользоваться командлетом [Export-AzureRmMlWebService](https://msdn.microsoft.com/library/azure/mt767935.aspx) и экспортировать его в файл в формате JSON.
+Чтобы изменить определение обученной модели для использования новой обученной модели, необходимо сначала воспользоваться командлетом [Export-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/export-azurermmlwebservice) и экспортировать его в файл в формате JSON.
 
     Export-AzureRmMlWebService -WebService $wsd -OutputFile "C:\temp\mlservice_export.json"
 
@@ -94,13 +94,13 @@ ms.locfileid: "34835367"
       },
 
 ## <a name="import-the-json-into-a-web-service-definition"></a>Импортировать JSON в определение веб-службы.
-Воспользуйтесь командлетом [Import-AzureRmMlWebService](https://msdn.microsoft.com/library/azure/mt767925.aspx) для преобразования измененного JSON-файла обратно в определение веб-службы, которое можно использовать для обновления определения веб-службы.
+Воспользуйтесь командлетом [Import-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/import-azurermmlwebservice) для преобразования измененного JSON-файла обратно в определение веб-службы, которое можно использовать для обновления определения веб-службы.
 
     $wsd = Import-AzureRmMlWebService -InputFile "C:\temp\mlservice_export.json"
 
 
 ## <a name="update-the-web-service-with-new-web-service-definition"></a>Обновить веб-службу с помощью нового определения веб-службы.
-Наконец, воспользуйтесь командлетом [Update-AzureRmMlWebService](https://msdn.microsoft.com/library/azure/mt767922.aspx) для обновления определения веб-службы.
+Наконец, воспользуйтесь командлетом [Update-AzureRmMlWebService](https://docs.microsoft.com/powershell/module/azurerm.machinelearning/update-azurermmlwebservice) для обновления определения веб-службы.
 
     Update-AzureRmMlWebService -Name 'RetrainSamplePre.2016.8.17.0.3.51.237' -ResourceGroupName 'Default-MachineLearning-SouthCentralUS'  -ServiceUpdates $wsd
 

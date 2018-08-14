@@ -9,19 +9,19 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: fa4005d1f09a2e0abca1e0083603d4335fb023c9
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 37edf60ed0b63b4ff97094a496a08a592cb46fc0
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902927"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39715426"
 ---
 # <a name="understand-outputs-from-azure-stream-analytics"></a>Описание выходных данных из Azure Stream Analytics
 В этой статье описываются разные типы выходных данных, доступные для задания Azure Stream Analytics. Выходные данные дают возможность сохранить и хранить результаты задания Stream Analytics. Используя выходные данные, можно выполнять расширенную бизнес-аналитику и хранить свои данные. 
 
 При составлении запроса Stream Analytics укажите имя выходных данных с помощью [предложение INTO](https://msdn.microsoft.com/azure/stream-analytics/reference/into-azure-stream-analytics). Можно использовать одни выходные данные на задание или несколько выходных данных для задания потоковой передачи, если требуется, указав в запросе несколько предложений INTO.
 
-Для создания, изменения и проверки выходных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-output-to-the-job), [Azure PowerShell](stream-analytics-quick-create-powershell.md#configure-output-to-the-job), [API .Net](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.management.streamanalytics.ioutputsoperations?view=azure-dotnet), [REST API](https://docs.microsoft.com/en-us/rest/api/streamanalytics/stream-analytics-output) и [Visual Studio](stream-analytics-tools-for-visual-studio.md).
+Для создания, изменения и проверки выходных данных задания Stream Analytics можно использовать [портал Azure](stream-analytics-quick-create-portal.md#configure-output-to-the-job), [Azure PowerShell](stream-analytics-quick-create-powershell.md#configure-output-to-the-job), [API .Net](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.streamanalytics.ioutputsoperations?view=azure-dotnet), [REST API](https://docs.microsoft.com/rest/api/streamanalytics/stream-analytics-output) и [Visual Studio](stream-analytics-quick-create-vs.md).
 
 Некоторые типы выходных данных поддерживают [секционирование](#partitioning), и [размер выходного пакета](#output-batch-size) изменяется для оптимизации пропускной способности.
 
@@ -69,7 +69,7 @@ Stream Analytics поддерживает [хранилище озера дан�
 | --- | --- |
 | Псевдоним выходных данных |Понятное имя, которое используется в запросах для направления выходных данных запроса в соответствующую базу данных. |
 | База данных | Имя базы данных, в которую отправляются выходные данные. |
-| имя сервера; | Имя сервера базы данных SQL. |
+| Имя сервера | Имя сервера базы данных SQL. |
 | Имя пользователя | Имя пользователя, который имеет право на запись в базу данных. |
 | Пароль | Пароль для подключения к базе данных. |
 | Таблица | Имя таблицы, в которую записываются выходные данные. В имени таблицы учитывается регистр символов, а схема этой таблицы должна точно соответствовать количеству и типам полей в выходных данных задания. |

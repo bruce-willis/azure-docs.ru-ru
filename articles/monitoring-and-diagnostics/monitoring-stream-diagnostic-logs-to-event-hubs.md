@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 5b4a15204a934bf55810fcdccd48a7a15a48c5ed
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 9d4d7633428cd174a31214db2db6b6d9928230bd
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39258190"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627922"
 ---
 # <a name="stream-azure-diagnostic-logs-to-an-event-hub"></a>Потоковая передача журналов диагностики Azure в концентратор событий
 **[Журналы диагностики Azure](monitoring-overview-of-diagnostic-logs.md)** можно передавать в режиме, близком к реальному времени, в любое приложение. Для этого достаточно использовать стандартный параметр Export to Event Hubs (Экспорт в службу "Концентраторы событий") на портале или включить идентификатор правила авторизации концентратора событий в параметрах диагностики с помощью командлетов Azure PowerShell или Azure CLI 2.0.
@@ -195,6 +195,6 @@ az monitor diagnostic-settings create --name <diagnostic name> \
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Руководство по потоковой передаче журналов Azure Active Directory с использованием Azure Monitor](../active-directory/reporting-azure-monitor-diagnostics-azure-event-hub.md)
+* [Руководство по потоковой передаче журналов Azure Active Directory с использованием Azure Monitor](../active-directory/reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md)
 * [Дополнительные сведения о журналах диагностики Azure](monitoring-overview-of-diagnostic-logs.md)
 * [Приступая к работе с концентраторами событий](../event-hubs/event-hubs-csharp-ephcs-getstarted.md)

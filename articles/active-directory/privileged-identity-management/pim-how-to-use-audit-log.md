@@ -9,19 +9,19 @@ editor: ''
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.component: protection
+ms.component: pim
 ms.date: 02/14/2017
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: ca6bb987c0f977746a8359dfd40cf7a3d643950a
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 922658f75a0d00998072c7bd8f2160e9db27f318
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38506354"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627796"
 ---
 # <a name="using-the-audit-log-in-pim"></a>Использование журнала аудита для управления привилегированными пользователями
-Вы можете использовать журнал аудита управления привилегированными пользователями (PIM) для просмотра всех назначенных пользователям и активированных ролей за определенный период времени. Если требуется просмотреть весь журнал аудита действий в клиенте, включая действия администратора, пользователя и действия при синхронизации, можно использовать [отчеты о доступе и использовании Azure Active Directory.](../active-directory-reporting-azure-portal.md)
+Вы можете использовать журнал аудита управления привилегированными пользователями (PIM) для просмотра всех назначенных пользователям и активированных ролей за определенный период времени. Если требуется просмотреть весь журнал аудита действий в клиенте, включая действия администратора, пользователя и действия при синхронизации, можно использовать [отчеты о доступе и использовании Azure Active Directory.](../reports-monitoring/overview-reports.md)
 
 ## <a name="navigate-to-the-audit-log"></a>Переход к журналу аудита
 На панели мониторинга [портала Azure](https://portal.azure.com) выберите приложение **Управление привилегированными пользователями Azure AD** . Чтобы открыть журнал аудита, на панели мониторинга PIM щелкните **Управление привилегированными ролями** > **Журнал аудита**.

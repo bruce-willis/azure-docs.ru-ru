@@ -3,7 +3,7 @@ title: Получение событий от концентраторов со�
 description: Узнайте основные сведения о получении событий от концентраторов событий с помощью Apache Storm.
 services: event-hubs
 documentationcenter: ''
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: java
 ms.devlang: multiple
 ms.topic: article
 ms.date: 04/12/2018
-ms.author: sethm
-ms.openlocfilehash: 6f558ff0613937d17f2dd7c2c9db6eb2de31ab9e
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: shvija
+ms.openlocfilehash: 3880ffe1b61b59e4d05e594a34e1119188177b56
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31405676"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40002769"
 ---
 # <a name="receive-events-from-event-hubs-using-apache-storm"></a>Получение событий из концентраторов событий с помощью Apache Storm
 
@@ -131,7 +131,7 @@ ms.locfileid: "31405676"
     }
     ```
     
-    Этот Storm Bolt регистрирует содержимое полученного события. Эго можно легко расширить для хранения кортежей в службе хранилища. В [примере использования HDInsight Storm с концентратором событий] для хранения данных в службе хранилища Azure и Power BI применяется одинаковый подход.
+    Этот Storm Bolt регистрирует содержимое полученного события. Эго можно легко расширить для хранения кортежей в службе хранилища. В [Пример использования HDInsight Storm с концентратором событий] для хранения данных в службе хранилища Azure и Power BI применяется одинаковый подход.
 11. Создайте класс с названием **LogTopology** и со следующим кодом:
     
     ```java
@@ -248,7 +248,7 @@ ms.locfileid: "31405676"
 <!-- Links -->
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
 [HDInsight Storm]: ../hdinsight/storm/apache-storm-overview.md
-[примере использования HDInsight Storm с концентратором событий]: https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/
+[Пример использования HDInsight Storm с концентратором событий]: https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/
 
 <!-- Images -->
 

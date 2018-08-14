@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 6c96cf220e34f1509375e5314e0b54e175575834
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: c5909c1f511d3a7816ebafc3ea8b326edb7f14e3
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39114214"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39629503"
 ---
 # <a name="azure-data-factory---json-scripting-reference"></a>Справочник по написанию скриптов JSON фабрики данных Azure
 > [!NOTE]
@@ -3733,7 +3733,7 @@ auto-
 | userName |Имя пользователя для проверки подлинности Windows. |Да (для проверки подлинности Windows) |
 | password |Пароль для проверки подлинности Windows. |Да (для проверки подлинности Windows) |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной системе HDFS. |Yes |
-| encryptedCredential |[New-AzureRMDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) выводит учетные данные доступа. |Нет  |
+| encryptedCredential |[New-AzureRMDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue) выводит учетные данные доступа. |Нет  |
 
 #### <a name="example-using-anonymous-authentication"></a>Пример: использование анонимной проверки подлинности
 
@@ -4463,7 +4463,7 @@ auto-
 }
 ```
 #### <a name="example---using-basic-authentication-with-encrypted-credentials"></a>Пример: использование обычной проверки подлинности и шифрования учетных данных
-Учетные данные можно зашифровать с помощью командлета [New-AzureRMDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) (Azure PowerShell 1.0) или [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/dn834940.aspx) (Azure PowerShell 0.9 или более ранней версии).  
+Учетные данные можно зашифровать с помощью командлета [New-AzureRMDataFactoryEncryptValue](https://docs.microsoft.com/powershell/module/azurerm.datafactories/new-azurermdatafactoryencryptvalue) (Azure PowerShell 1.0) или [New-AzureDataFactoryEncryptValue](https://msdn.microsoft.com/library/dn834940.aspx) (Azure PowerShell 0.9 или более ранней версии).  
 
 ```json
 {

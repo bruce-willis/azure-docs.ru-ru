@@ -14,12 +14,12 @@ ms.date: 04/06/2017
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 625894738b6cbf680baef0a1eeeea518586e4506
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 52ae7da666acaf234920a7f03afe3766f29a1e85
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37871443"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39629129"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в разделе [What is self-service signup for Azure Active Directory?](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-self-service-signup) (Что такое самостоятельная регистрация для Azure Active Directory?).
@@ -104,7 +104,7 @@ ms.locfileid: "37871443"
 
 #### <a name="more-information-about-rms-for-individuals"></a>Дополнительные сведения о службе RMS для частных лиц
 
-Что касается [RMS для частных лиц](/information-protection/understand-explore/rms-for-individuals), то для неуправляемого клиента, находящегося в том же регионе, что и принадлежащий вам клиент, автоматически созданный [ключ клиента Azure Information Protection](/information-protection/plan-design/plan-implement-tenant-key) и [шаблоны защиты по умолчанию](/information-protection/deploy-use/configure-usage-rights#rights-included-in-the-default-templates) перемещаются вместе с доменным именем. 
+Что касается [RMS для частных лиц](/azure/information-protection/rms-for-individuals), то для неуправляемого клиента, находящегося в том же регионе, что и принадлежащий вам клиент, автоматически созданный [ключ клиента Azure Information Protection](/azure/information-protection/plan-implement-tenant-key) и [шаблоны защиты по умолчанию](/azure/information-protection/configure-usage-rights#rights-included-in-the-default-templates) перемещаются вместе с доменным именем. 
 
 Ключ и шаблоны не перемещаются лишь в том случае, если неуправляемый клиент находится в другом регионе. Например, неуправляемый клиент находится в Европе, а ваш клиент находится в Северной Америке. 
 

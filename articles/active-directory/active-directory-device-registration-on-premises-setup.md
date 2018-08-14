@@ -17,12 +17,12 @@ ms.date: 07/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
 ms.custom: seohack1
-ms.openlocfilehash: fb4ac675462cf9946a0667e2956c4c0c75b591bf
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: f0a6e164ed6b2269ec223a18f37d3475316d3e77
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390353"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39629078"
 ---
 # <a name="setting-up-on-premises-conditional-access-by-using-azure-active-directory-device-registration"></a>Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory
 Когда требуется, чтобы пользователи присоединяли свои личные устройства к рабочей области в службе регистрации устройств Azure Active Directory (Azure AD), эти устройства можно помечать как известные организации. Ниже приведено пошаговое руководство по включению условного доступа к локальным приложениям с помощью служб федерации Active Directory (AD FS) в Windows Server 2012 R2.
@@ -165,7 +165,7 @@ ms.locfileid: "39390353"
 ### <a name="join-a-windows-7-device-by-using-azure-active-directory-device-registration"></a>Присоединение устройства Windows 7 с помощью службы регистрации устройств Active Directory Azure
 Чтобы зарегистрировать устройства Windows 7, присоединенные к домену, разверните [программный пакет регистрации устройств](https://www.microsoft.com/download/details.aspx?id=53554).
 
-Инструкции о том, как использовать этот пакет, приведены в разделе [Пакеты установщика Windows для компьютеров, не работающих на базе Windows 10](devices/hybrid-azuread-join-manual-steps.md#windows-installer-packages-for-non-windows-10-computers).
+Инструкции о том, как использовать этот пакет, приведены в разделе [Пакеты установщика Windows для компьютеров, не работающих на базе Windows 10](devices/hybrid-azuread-join-control.md#control-windows-down-level-devices).
 
 ## <a name="verify-that-registered-devices-are-written-back-to-active-directory"></a>Проверка обратной записи зарегистрированных устройств в Active Directory
 Просмотреть и убедиться, что объекты устройств были записаны в Active Directory посредством обратной записи, можно с помощью LDP.exe и ADSI Edit. Оба приложения доступны в инструментах администратора Active Directory.

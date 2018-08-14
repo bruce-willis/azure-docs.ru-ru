@@ -13,12 +13,12 @@ ms.workload: identity
 ms.component: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer, MarkMorow
-ms.openlocfilehash: 1d08518a23dfe4a9cc63bf3f35ee69ea1815595f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: c8c0f4c3f99aa413531f54c1807883fcd73f039a
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38239957"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627939"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 
@@ -380,7 +380,7 @@ MCAS позволяет вам анализировать файлы и уста
 
 4. Обратитесь за помощью в корпорацию Майкрософт, [открыв запрос в службу поддержки Azure](../../azure-supportability/how-to-create-azure-support-request.md).
 
-5. Посмотрите отчеты [о входах в систему Azure AD](../active-directory-reporting-azure-portal.md). Может произойти задержка между событием и его включением в отчет.
+5. Посмотрите отчеты [о входах в систему Azure AD](../reports-monitoring/overview-reports.md). Может произойти задержка между событием и его включением в отчет.
 
 6. В гибридных средах, если федерация и ваш сервер AD FS недоступны, вам может потребоваться временно переключиться с федеративной аутентификации на использование синхронизации хэша паролей. Это переключит федерацию домена обратно на управляемую аутентификацию до тех пор, пока сервер AD FS не станет доступным.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: e773435d89a511e6f1f369cc3fd5dc6f06507e45
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 7aa5b00d1497e384377ba4423431eac57c1aa4c9
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808763"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39630409"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о настройке и управлении для функции "Веб-приложения" в Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "34808763"
 
 ## <a name="why-do-i-see-the-message-partially-succeeded-when-i-try-to-back-up-my-web-app"></a>Почему при попытке выполнить резервное копирование веб-приложения отображается сообщение "Выполнено частично"?
 
-Часто резервное копирование может завершаться сбоем из-за того, что приложение использует некоторые файлы. Используемые файлы блокируются во время выполнения резервного копирования. Это препятствуют их резервному копированию и может привести к появлению сообщения "Выполнено частично". Можно предотвратить это, исключив файлы из процесса резервного копирования, и создать резервную копию только необходимых данных. Дополнительные сведения см. в статье [Backup just the important parts of your site with Azure web apps](http://www.zainrizvi.io/2015/06/05/creating-partial-backups-of-your-site-with-azure-web-apps/) (Резервное копирование только важных частей сайта с помощью функции "Веб-приложения Azure").
+Часто резервное копирование может завершаться сбоем из-за того, что приложение использует некоторые файлы. Используемые файлы блокируются во время выполнения резервного копирования. Это препятствуют их резервному копированию и может привести к появлению сообщения "Выполнено частично". Можно предотвратить это, исключив файлы из процесса резервного копирования, и создать резервную копию только необходимых данных. Дополнительные сведения см. в статье [Backup just the important parts of your site with Azure web apps](http://zainrizvi.io/blog/creating-partial-backups-of-your-site-with-azure-web-apps/) (Резервное копирование только важных частей сайта с помощью функции "Веб-приложения Azure").
 
 ## <a name="how-do-i-remove-a-header-from-the-http-response"></a>Как удалить заголовок ответа HTTP?
 
@@ -288,7 +288,7 @@ Invoke-AzureRmResourceAction -ResourceGroupName "<App Service Certificate Resour
 
 ## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Как перенаправить домен по умолчанию *.azurewebsites.net в пользовательский домен моего веб-приложения Azure?
 
-При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавляете к сайту имя пользовательского узла и не хотите предоставлять пользователям доступ к домену по умолчанию *.azurewebsites.net, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](http://www.zainrizvi.io/2016/04/07/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
+При создании нового веб-сайта с помощью функции "Веб-приложения" в Azure домен *sitename*.azurewebsites.net по умолчанию присваивается вашему сайту. Если вы добавляете к сайту имя пользовательского узла и не хотите предоставлять пользователям доступ к домену по умолчанию *.azurewebsites.net, можно перенаправить URL-адрес по умолчанию. Чтобы узнать, как перенаправлять весь трафик с домена веб-сайта по умолчанию в пользовательский домен, см. статью [Redirect the default domain to your custom domain in Azure web apps](http://zainrizvi.io/blog/block-default-azure-websites-domain/) (Перенаправление домена по умолчанию в пользовательский домен в службе "Веб-приложения" в Azure).
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Как определить, какая версия платформы .NET установлена в службе приложений?
 

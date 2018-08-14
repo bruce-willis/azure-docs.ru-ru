@@ -7,6 +7,7 @@
 | [Управление сообщениями Центра Интернета вещей][Mg_IoT_Hub_Msg]                  | Средство iothub-explorer               |
 | [Управление сообщениями Центра Интернета вещей][Mg_IoT_Toolkit]                  | Расширение "Набор средств Интернета вещей Azure" для VS Code|
 | [Управление устройством IoT][Mg_IoT_Dv]                        | Azure CLI 2.0 и расширение Интернета вещей|
+| [Управление устройством IoT][Mg_IoT_Dv_Toolkit]                | Расширение "Набор средств Интернета вещей Azure" для VS Code|
 | [Сохранение сообщений Центра Интернета вещей в службе хранилища Azure][Sv_IoT_Msg_Stor]  | Хранилище таблиц Azure                |
 | [Визуализации данных датчика][Vis_Data_PBI]                      | Microsoft Power BI                 |
 | [Визуализации данных датчика][Vis_Data_Web]                      | Веб-приложения Azure.                     |
@@ -21,6 +22,7 @@
 [Mg_IoT_Hub_Msg]: ../articles/iot-hub/iot-hub-explorer-cloud-device-messaging.md
 [Mg_IoT_Toolkit]: ../articles/iot-hub/iot-hub-vscode-iot-toolkit-cloud-device-messaging.md
 [Mg_IoT_Dv]: ../articles/iot-hub/iot-hub-device-management-iot-extension-azure-cli-2-0.md
+[Mg_IoT_Dv_Toolkit]: ../articles/iot-hub/iot-hub-device-management-iot-toolkit.md
 [Sv_IoT_Msg_Stor]: ../articles/iot-hub/iot-hub-store-data-in-azure-table-storage.md
 [Vis_Data_Web]: ../articles/iot-hub/iot-hub-live-data-visualization-in-web-apps.md
 [Vis_Data_PBI]: ../articles/iot-hub/iot-hub-live-data-visualization-in-power-bi.md

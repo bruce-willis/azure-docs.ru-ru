@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 7/31/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: a43b70d2ce7a8205903fb877ea056dea88ac8bb5
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: 2990ba290dfdaf45d8a341138ea515bad16d5b30
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389615"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39628177"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -50,11 +50,11 @@ Azure Monitor предоставляет единый конвейер для п
 
 ## <a name="how-do-i-set-up-azure-tenant-monitoring-data-to-be-streamed-to-an-event-hub"></a>Как настроить потоковую передачу данных мониторинга клиента Azure в концентратор событий?
 
-Сейчас данные мониторинга клиента Azure доступны только в Azure Active Directory. Вы можете использовать [отчеты Azure Active Directory](../active-directory/active-directory-reporting-azure-portal.md), которые включают в себя журнал действий входа и журнал аудита изменений, внесенных в пределах конкретного клиента.
+Сейчас данные мониторинга клиента Azure доступны только в Azure Active Directory. Вы можете использовать [отчеты Azure Active Directory](../active-directory/reports-monitoring/overview-reports.md), которые включают в себя журнал действий входа и журнал аудита изменений, внесенных в пределах конкретного клиента.
 
 ### <a name="stream-azure-active-directory-data-into-an-event-hub"></a>Потоковая передача данных Azure Active Directory в концентратор событий
 
-Для отправки данных из журнала Azure Active Directory в пространство имен концентраторов событий можно настроить параметры диагностики ресурсов клиента в клиенте AAD. [Следуйте этому руководству](../active-directory/reporting-azure-monitor-diagnostics-azure-event-hub.md), чтобы настроить параметр диагностики ресурсов клиента.
+Для отправки данных из журнала Azure Active Directory в пространство имен концентраторов событий можно настроить параметры диагностики ресурсов клиента в клиенте AAD. [Следуйте этому руководству](../active-directory/reports-monitoring/quickstart-azure-monitor-stream-logs-to-event-hub.md), чтобы настроить параметр диагностики ресурсов клиента.
 
 ## <a name="how-do-i-set-up-azure-subscription-monitoring-data-to-be-streamed-to-an-event-hub"></a>Как настроить потоковую передачу данных мониторинга подписки Azure в концентратор событий?
 
