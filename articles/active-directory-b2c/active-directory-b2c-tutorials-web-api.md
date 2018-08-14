@@ -4,23 +4,24 @@ description: Руководство по использованию Active Direc
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
-editor: ''
 ms.author: davidmu
 ms.date: 01/23/2018
 ms.custom: mvc
 ms.topic: tutorial
-ms.service: active-directory-b2c
-ms.openlocfilehash: f61a3b103d8738e1b86fb64aff99dab9c6986fdf
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.service: active-directory
+ms.component: B2C
+ms.openlocfilehash: 469a3662b5bc4db467dde3285d557ac8bbae368e
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39609095"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-from-a-web-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET из веб-приложения с помощью Azure Active Directory B2C
 
 В этом руководстве показано, как вызывать защищенный ресурс веб-API Azure Active Directory (Azure AD) B2C из веб-приложения ASP.NET.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Регистрация веб-API в клиенте Azure AD B2C.
@@ -30,26 +31,32 @@ ms.lasthandoff: 04/18/2018
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Ознакомьтесь с руководством [по использованию Azure Active Directory B2C для аутентификации пользователей в веб приложении ASP.NET](active-directory-b2c-tutorials-web-app.md).
 * Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
 ## <a name="register-web-api"></a>Регистрация веб-API
 
-Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/active-directory-dev-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/active-directory-dev-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/active-directory-dev-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/active-directory-dev-glossary.md#application-object) в клиенте. 
+Ресурсы веб-API необходимо зарегистрировать в клиенте, чтобы они могли принимать [запросы защищенных ресурсов](../active-directory/develop/developer-glossary.md#resource-server) от [клиентских приложений](../active-directory/develop/developer-glossary.md#client-application), которые представляют [токен доступа](../active-directory/develop/developer-glossary.md#access-token) из Azure Active Directory, и отвечать на них. Регистрация устанавливает [приложение и объект субъекта-службы](../active-directory/develop/developer-glossary.md#application-object) в клиенте. 
 
-Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
+1. Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор клиента Azure AD B2C.
 
-[!INCLUDE [active-directory-b2c-switch-b2c-tenant](../../includes/active-directory-b2c-switch-b2c-tenant.md)]
+2. Убедитесь, что используется каталог с вашим клиентом Azure AD B2C, переключившись на него в правом верхнем углу окна портала Azure. Выберите сведения о подписке, а затем выберите **Переключение каталога**.
 
-1. Выберите **Azure AD B2C** из списка служб на портале Azure.
+    ![Переключение каталогов](./media/active-directory-b2c-tutorials-web-api/switch-directories.png)
 
-2. В разделе параметров B2C щелкните **Приложения**, а затем — **Добавить**.
+3. Выберите каталог, содержащий ваш клиент.
+
+    ![Выбор каталога](./media/active-directory-b2c-tutorials-web-api/select-directory.png)
+
+4. Выберите **Все службы** в левом верхнем углу окна портала Azure, найдите службу **Azure AD B2C** и выберите ее. Нужно использовать клиент, созданный в рамках предыдущего руководства.
+
+5. Щелкните **Приложения**, а затем выберите **Добавить**.
 
     Чтобы зарегистрировать пример веб-API в клиенте, используйте следующие параметры.
     
-    ![Добавление нового API](media/active-directory-b2c-tutorials-web-api/web-api-registration.png)
+    ![Добавление нового API](./media/active-directory-b2c-tutorials-web-api/web-api-registration.png)
     
     | Параметр      | Рекомендуемое значение  | Описание                                        |
     | ------------ | ------- | -------------------------------------------------- |
@@ -57,10 +64,10 @@ ms.lasthandoff: 04/18/2018
     | **Включить веб-приложение или веб-интерфейс API** | Yes | Выберите **Да** для веб-API. |
     | **Разрешить неявный поток** | Yes | Выберите **Да**, так как API использует [вход в OpenID Connect](active-directory-b2c-reference-oidc.md). |
     | **URL-адрес ответа** | `https://localhost:44332` | URL-адреса ответа — это конечные точки, куда Azure AD B2C возвращает все токены, запрашиваемые вашим API. В этом руководстве пример веб-API выполняется локально (localhost) и прослушивает порт 44332. |
-    | **URI кода приложения** | myAPISample | URI уникально идентифицирует API в клиенте. Это позволяет регистрировать несколько API-интерфейсов в каждом клиенте. [Области](../active-directory/develop/active-directory-dev-glossary.md#scopes) управляют доступом к защищенному ресурсу API и определяются для каждого URI идентификатора приложения. |
+    | **URI кода приложения** | myAPISample | URI уникально идентифицирует API в клиенте. Это позволяет регистрировать несколько API-интерфейсов в каждом клиенте. [Области](../active-directory/develop/developer-glossary.md#scopes) управляют доступом к защищенному ресурсу API и определяются для каждого URI идентификатора приложения. |
     | **Собственный клиент** | Нет  | Так как это веб-API, а не собственный клиент, выберите "Нет". |
     
-3. Чтобы зарегистрировать API, щелкните **Создать**.
+6. Чтобы зарегистрировать API, щелкните **Создать**.
 
 Зарегистрированные API отобразятся в списке приложений для клиента Azure AD B2C. Выберите веб-API в списке. Откроется панель свойств веб-API.
 
@@ -72,7 +79,7 @@ ms.lasthandoff: 04/18/2018
 
 ## <a name="define-and-configure-scopes"></a>Определение и настройка областей
 
-[Области](../active-directory/develop/active-directory-dev-glossary.md#scopes) предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, некоторые пользователи могут иметь доступ на чтение и запись, тогда как другие пользователи могут иметь разрешения только на чтение. В этом руководстве вы определяете разрешения на чтение и запись для веб-API.
+[Области](../active-directory/develop/developer-glossary.md#scopes) предоставляют способ контроля доступа к защищенным ресурсам. Области используются веб-API для реализации управления доступом на уровне области. Например, пользователи веб-API могут иметь доступ на чтение и запись или доступ только на чтение. В этом руководстве также можно использовать области для определения разрешений на чтение и запись для веб-API.
 
 ### <a name="define-scopes-for-the-web-api"></a>Определение областей для веб-API
 
@@ -109,7 +116,7 @@ ms.lasthandoff: 04/18/2018
 
 5. Последовательно выберите **ОК**.
 
-**Пример веб-приложения** зарегистрирован для вызова защищенного **примера веб-API**. Пользователь [выполняет аутентификацию](../active-directory/develop/active-directory-dev-glossary.md#authentication) в Azure AD B2C для использования веб-приложения. Веб-приложение получает [предоставление авторизации](../active-directory/develop/active-directory-dev-glossary.md#authorization-grant) из Azure AD B2C для доступа к защищенному веб-API.
+**Пример веб-приложения** зарегистрирован для вызова защищенного **примера веб-API**. Пользователь [выполняет аутентификацию](../active-directory/develop/developer-glossary.md#authentication) в Azure AD B2C для использования веб-приложения. Веб-приложение получает [предоставление авторизации](../active-directory/develop/developer-glossary.md#authorization-grant) из Azure AD B2C для доступа к защищенному веб-API.
 
 ## <a name="update-code"></a>Обновление кода
 

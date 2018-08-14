@@ -1,31 +1,26 @@
 ---
-title: Руководство. Apache Kafka со Storm в HDInsight — Azure | Документация Майкрософт
+title: 'Руководство. Apache Kafka со Storm в HDInsight — Azure '
 description: Узнайте, как создать конвейер потоковой передачи с помощью Apache Storm и Apache Kafka в HDInsight. В этом руководстве используются компоненты KafkaBolt и KafkaSpout, чтобы выполнять потоковую передачу данных из Kafka.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: java
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.workload: big-data
 ms.date: 05/21/2018
-ms.author: larryfr
-ms.openlocfilehash: b973890caddf598d5ba4e96a04a18df46cdb5cf8
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: jasonh
+ms.openlocfilehash: a20cf616b119d208c9b2baa0f2cf608aa44c21ad
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626296"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39595167"
 ---
 # <a name="tutorial-use-apache-storm-with-kafka-on-hdinsight"></a>Руководство. Использование Apache Storm с Kafka в HDInsight
 
 В этом руководстве демонстрируется, как использовать топологию Apache Storm, чтобы cчитывать и записывать данные с использованием Apache Kafka в HDInsight. Здесь также показано, как сохранить данные в совместимое с HDFS хранилище в кластере Storm.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Использование Storm и Kafka
@@ -38,7 +33,7 @@ ms.locfileid: "34626296"
 > * Остановка топологий
 > * Очистка ресурсов
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт создания разделов Kafka. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka в HDInsight](./kafka/apache-kafka-get-started.md).
 

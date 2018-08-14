@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Настройка веб-приложения Azure для считывания секрета из Key Vault | Документация Майкрософт
-description: Краткое руководство по настройке веб-приложения ASP.Net Core для считывания секрета из Key Vault
+title: Краткое руководство Azure. Настройка веб-приложения Azure для настройки и получения секрета из Key Vault | Документация Майкрософт
+description: Краткое руководство по настройке веб-приложения ASP.NET Core для настройки и получения секрета из Key Vault
 services: key-vault
 author: prashanthyv
 manager: sumedhb
@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.date: 07/24/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 07a7bc5713f093e34a775aacab27094780ac6c7e
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 8b5624ae3083d92213b4ee919dc0860bf5ff4ab7
+ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247831"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39480208"
 ---
-# <a name="quickstart-set-and-read-a-secret-from-key-vault-in-a-net-web-app"></a>Краткое руководство. Установка и считывание секрета из Key Vault в веб-приложении .NET
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
 В этом кратком руководстве описано, как в веб-приложении Azure настроить чтение данных из хранилища ключей с помощью управляемых удостоверений службы. Вы узнаете, как выполнять следующие задачи:
 
@@ -56,7 +56,7 @@ az login
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 Выберите имя группы ресурсов для заполнителя.
 В следующем примере создается группа ресурсов с именем *<YourResourceGroupName>* в расположении *eastus*.

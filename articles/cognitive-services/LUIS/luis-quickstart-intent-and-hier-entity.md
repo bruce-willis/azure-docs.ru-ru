@@ -7,14 +7,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: luis
 ms.topic: tutorial
-ms.date: 07/26/2018
+ms.date: 08/02/2018
 ms.author: diberry
-ms.openlocfilehash: f4e03271f45c29ed2556256346e29c297be563cc
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 41f74ff00e4fad751d4a2b7ae96ebb048bbcdfcd
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345364"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39492704"
 ---
 # <a name="tutorial-5-add-hierarchical-entity"></a>Учебник. 5. Добавление иерархической сущности
 В этом руководстве создается приложение, которое показывает, как найти взаимосвязанные элементы данных с учетом контекста. 
@@ -119,15 +119,8 @@ mv Jill Jones from a-2349 to b-1298
     ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-quickstart-intent-and-hier-entity/hr-add-number-back-ddl.png)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
-Приложение LUIS не знает об изменениях намерений и сущностей (модели), пока не будет обучено. 
 
-1. В верхней правой части веб-сайта LUIS нажмите кнопку **Train** (Обучить).
-
-    ![Обучение приложения](./media/luis-quickstart-intent-and-hier-entity/train-button.png)
-
-2. Когда обучение будет завершено, в верхней части веб-сайта появится зеленая панель состояния, свидетельствующая об успешном результате.
-
-    ![Обучение успешно выполнено](./media/luis-quickstart-intent-and-hier-entity/trained.png)
+[!include[LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="publish-the-app-to-get-the-endpoint-url"></a>Публикация приложения для получения URL-адреса конечной точки
 
@@ -242,6 +235,10 @@ mv Jill Jones from a-2349 to b-1298
 
 Расположения в этом примере, такие как `a-1234`, соответствуют определенному формату и состоят из одной или двух букв, дефиса и серии из 4–5 цифр. Эти данные можно описать как сущность регулярного выражения с ролью для каждого расположения. Роли доступны для шаблонов. Вы можете создать шаблоны на основе этих фраз, а затем создать регулярное выражение для формата расположения и добавить его в шаблоны. <!-- Go to this tutorial to see how that is done -->
 
+## <a name="patterns-with-roles"></a>Шаблоны с использованием ролей
+
+[!include[LUIS Compare hierarchical entities to patterns with roles](../../../includes/cognitive-services-luis-hier-roles.md)]
+
 ## <a name="what-has-this-luis-app-accomplished"></a>Результаты работы этого приложения LUIS
 Это приложение, состоящее всего из нескольких намерений и иерархической сущности, идентифицировало намерение запроса на естественном языке и вернуло извлеченные данные. 
 
@@ -251,7 +248,8 @@ mv Jill Jones from a-2349 to b-1298
 Приложение LUIS уже выполнило этот запрос. Вызывающее приложение, например чат-бот, может принять результат намерения с наивысшим показателем и данные из сущности, чтобы выполнить следующий шаг. LUIS не выполняет программные действия за чат-бота или вызывающее приложение. LUIS только определяет намерение пользователя. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Удалите приложение LUIS, если оно больше не нужно. Для этого нажмите кнопку с многоточием (***...***) справа от имени приложения в списке и выберите **Удалить**. Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
+
+[!include[LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 

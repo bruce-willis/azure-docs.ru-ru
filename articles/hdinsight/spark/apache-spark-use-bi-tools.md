@@ -1,37 +1,32 @@
 ---
-title: Руководство. Анализ данных Apache Spark с использованием Power BI в Azure HDInsight | Документация Майкрософт
+title: 'Руководство. Анализ данных Apache Spark с использованием Power BI в Azure HDInsight '
 description: Визуализация хранимых данных Spark в кластерах HDInsight с помощью Microsoft Power BI
 services: hdinsight
-documentationcenter: ''
-author: mumian
-manager: cgronlun
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 1448b536-9bc8-46bc-bbc6-d7001623642a
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/07/2018
-ms.author: jgao
-ms.openlocfilehash: ece0132573f25f4d288309d2e7bb6710f8fd9519
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0b8024d8e5f239ff1bae2fe09f8cbe0a1b03a416
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33771173"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618732"
 ---
 # <a name="tutorial-analyze-spark-data-using-power-bi-in-hdinsight"></a>Руководство. Анализ данных Spark с использованием Power BI в HDInsight 
 
 Узнайте, как использовать Microsoft Power BI для визуализации данных в кластере Apache Spark в Azure HDInsight.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Визуализация данных Spark с помощью Power BI
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Выполните инструкции в [руководстве по загрузке данных и выполнению запросов в кластере Spark в Azure HDInsight](./apache-spark-load-data-run-query.md)**.
 * **Для Power BI**: [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) и [пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web) (необязательно).

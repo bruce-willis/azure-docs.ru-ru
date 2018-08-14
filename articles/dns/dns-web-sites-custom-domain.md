@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 7/20/2018
 ms.author: victorh
-ms.openlocfilehash: 9ebbc955bcb426738db598491266c2a1bcb9dd33
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: b39c2c672869bb446e58134a85130d10491fe047
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39204948"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39621119"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -56,7 +56,7 @@ ms.locfileid: "39204948"
 
 ## <a name="create-an-a-record-and-txt-record"></a>Создание записи A и TXT
 
-Запись A используется для сопоставления имени с IP-адресом. В следующем примере "@" назначается как запись A, используя IPv4-адрес веб-приложения. @ обычно представляет корневой домен.
+Запись A используется для сопоставления имени с IP-адресом. В следующем примере \@ назначается как запись A, используя IPv4-адрес веб-приложения. \@ обычно представляет корневой домен.
 
 ### <a name="get-the-ipv4-address"></a>Получение IPv4-адреса
 

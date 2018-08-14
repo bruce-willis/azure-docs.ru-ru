@@ -12,27 +12,25 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: multiple
 ms.workload: big-compute
-ms.date: 09/28/2017
+ms.date: 07/24/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: df808078ffe6eedf8abaa32a94edaaf1355b7fc6
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 2360c5a672975cec48f5c17b098125b8287799c3
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129910"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493702"
 ---
 # <a name="manage-batch-resources-with-azure-cli"></a>Управление ресурсами пакетной службы с помощью Azure CLI
 
-Azure CLI 2.0 — это новый интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Azure CLI 2.0 оптимизирован для администрирования ресурсов Azure и управления ими из командной строки. При помощи этого интерфейса вы можете управлять учетными записями пакетной службы Azure, а также такими ресурсами, как пулы, задания и задачи. Кроме того, Azure CLI позволяет создавать и выполнять скрипты для многих однотипных задач, выполняемых с помощью API-интерфейсов пакетной службы, портала Azure и командлетов PowerShell пакетной службы.
+Azure CLI 2.0 — это интерфейс командной строки Azure для управления ресурсами Azure. Его можно использовать в Windows, Linux и macOS. Azure CLI 2.0 оптимизирован для администрирования ресурсов Azure и управления ими из командной строки. При помощи этого интерфейса вы можете управлять учетными записями пакетной службы Azure, а также такими ресурсами, как пулы, задания и задачи. Кроме того, Azure CLI позволяет создавать и выполнять скрипты для многих однотипных задач, выполняемых с помощью API-интерфейсов пакетной службы, портала Azure и командлетов PowerShell пакетной службы.
 
 В этой статье содержатся общие сведения об использовании [Azure CLI версии 2.0](https://docs.microsoft.com/cli/azure) с пакетной службой. Общие сведения об использовании интерфейса командной строки с Azure см. в статье [Начало работы с Azure CLI 2.0](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli).
 
-Корпорация Майкрософт советует использовать последнюю версию Azure CLI — версию 2.0. Дополнительные сведения о ней см. в записи блога о [выпуске общедоступной версии Azure CLI 2.0](https://azure.microsoft.com/blog/announcing-general-availability-of-vm-storage-and-network-azure-cli-2-0/).
-
 ## <a name="set-up-the-azure-cli"></a>Настройка Azure CLI
 
-Чтобы установить Azure CLI, используйте указания в [этой статье](https://docs.microsoft.com/cli/azure/install-azure-cli).
+Можно также запустить последнюю версию Azure CLI в [Azure Cloud Shell](../cloud-shell/overview.md). Чтобы установить Azure CLI локально, используйте указания из статьи [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 > [!TIP]
 > Рекомендуем регулярно обновлять интерфейс командной строки Azure, чтобы использовать все преимущества обновлений и улучшений службы.
@@ -67,10 +65,10 @@ Azure CLI 2.0 — это новый интерфейс командной ст
 
 В Azure можно войти разными способами, описанными в статье [Вход с помощью Azure CLI 2.0](https://docs.microsoft.com/cli/azure/authenticate-azure-cli):
 
-1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az_authenticate_azure_cli_interactive_log_in) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
-2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az_authenticate_azure_cli_logging_in_with_a_service_principal) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
+1. [Интерактивный вход.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-interactive-log-in) Используйте этот способ, если вы самостоятельно выполняете команды Azure CLI из командной строки.
+2. [Вход с использованием субъекта-службы.](https://docs.microsoft.com/cli/azure/authenticate-azure-cli#az-authenticate-azure-cli-logging-in-with-a-service-principal) Используйте этот способ, если вы выполняете команды Azure CLI из скрипта или приложения.
 
-В рамках этого руководства мы покажем, как войти в Azure в интерактивном режиме. В окне командной строки введите [az login](https://docs.microsoft.com/cli/azure/reference-index#az_login):
+В рамках этого руководства мы покажем, как войти в Azure в интерактивном режиме. В окне командной строки введите [az login](https://docs.microsoft.com/cli/azure/reference-index#az-login):
 
 ```azurecli
 # Log in to Azure and authenticate interactively.
@@ -85,7 +83,7 @@ az login
 
 ### <a name="log-in-to-your-batch-account"></a>Вход в учетную запись пакетной службы
 
-Чтобы управлять ресурсами пакетной службы, такими как пулы, задания и задачи, с помощью Azure CLI, сначала необходимо войти в учетную запись пакетной службы и пройти проверку подлинности. Для этого используйте команду [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az_batch_account_login). 
+Чтобы управлять ресурсами пакетной службы, такими как пулы, задания и задачи, с помощью Azure CLI, сначала необходимо войти в учетную запись пакетной службы и пройти проверку подлинности. Для этого используйте команду [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az-batch-account-login). 
 
 Проверку подлинности в учетной записи пакетной службы можно пройти двумя способами:
 
@@ -97,7 +95,7 @@ az login
 
     Преимущество Azure AD заключается в том, что эта служба предоставляет управление доступом на основе ролей (RBAC). При использовании RBAC доступ пользователя зависит от назначенной роли, а не наличия ключей учетной записи. В этом случае управлять ключами не нужно. Вы просто назначаете роли RBAC, и Azure AD управляет параметрами доступа и проверки подлинности вместо вас.  
 
-     Чтобы войти в учетную запись пакетной службы с помощью Azure AD, вызовите команду [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az_batch_account_login): 
+     Чтобы войти в учетную запись пакетной службы с помощью Azure AD, вызовите команду [az batch account login](https://docs.microsoft.com/cli/azure/batch/account#az-batch-account-login): 
 
     ```azurecli
     az batch account login -g myresource group -n mybatchaccount
@@ -117,9 +115,9 @@ az login
 
 В примерах, приведенных в разделе [Примеры скриптов оболочки](#sample-shell-scripts), описано, как войти в учетную запись пакетной службы с помощью Azure CLI, использую и Azure AD, и общий ключ.
 
-## <a name="use-azure-batch-cli-templates-and-file-transfer-preview"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов (предварительная версия)
+## <a name="use-azure-batch-cli-extension-commands"></a>Использование команд расширения CLI для пакетной службы Azure
 
-Azure CLI можно использовать для запуска заданий пакетной службы без необходимости писать код. Файлы шаблона пакетной службы поддерживают создание пулов, заданий и задач с помощью Azure CLI. Вы также можете использовать Azure CLI для отправки входных файлов заданий в учетную запись хранения Azure, связанную с учетной записью пакетной службы, а также скачивания выходных файлов задания из нее. См. дополнительные сведения об [использовании шаблонов интерфейса командной строки для пакетной службы Azure и передаче файлов (предварительная версия)](batch-cli-templates.md).
+Установив расширение CLI для пакетной службы Azure, можно использовать Azure CLI для запуска заданий пакетной службы без необходимости писать код. Команды пакетной службы, поддерживаемые расширением, позволяют использовать шаблоны JSON для создания пулов, заданий и задач с помощью Azure CLI. Вы также можете использовать команды расширения CLI для отправки входных файлов заданий в учетную запись хранения Azure, связанную с учетной записью пакетной службы, а также скачивания выходных файлов задания из нее. Дополнительные сведения см. в статье [Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов (предварительная версия)](batch-cli-templates.md).
 
 ## <a name="script-examples"></a>Примеры скриптов
 
@@ -181,7 +179,7 @@ az batch task list --job-id job001
 
 * Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
 * Дополнительные сведения о ресурсах пакетной службы см. в статье [Разработка решений для крупномасштабных параллельных вычислений с использованием пакетной службы](batch-api-basics.md).
-* Дополнительные сведения о создании пулов, заданий и задач без написания кода с помощью шаблонов пакетной службы см. в руководстве по [использованию шаблонов интерфейса командной строки для пакетной службы Azure и передаче файлов (предварительная версия)](batch-cli-templates.md).
+* Дополнительные сведения о создании пулов, заданий и задач без написания кода с помощью шаблонов пакетной службы см. в руководстве [Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов (предварительная версия)](batch-cli-templates.md).
 
 [github_readme]: https://github.com/Azure/azure-xplat-cli/blob/dev/README.md
 [rest_api]: https://msdn.microsoft.com/library/azure/dn820158.aspx

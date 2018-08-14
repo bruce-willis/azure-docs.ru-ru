@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/15/2018
 ms.author: juliako
-ms.openlocfilehash: 2ceae5b530d1967ccca2b33c05c183302684be41
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 8bfe2fb7274fb8c6dcf977e8bd72af525d8ce8a5
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39116773"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528176"
 ---
 # <a name="use-drm-dynamic-encryption-and-license-delivery-service"></a>Использование динамического шифрования DRM и службы доставки лицензий
 
@@ -65,6 +65,7 @@ ms.locfileid: "39116773"
 Ниже перечислены необходимые условия для выполнения действий, описанных в этом учебнике.
 
 * Просмотрите статью [Обзор системы защиты содержимого](content-protection-overview.md).
+* Ознакомьтесь со статьей [Design of a multi-DRM content protection system with access control](design-multi-drm-system-with-access-control.md) (Разработка системы для защиты содержимого с поддержкой технологии Multi-DRM и управления доступом).
 * Установка Visual Studio Code или Visual Studio.
 * Создайте учетную запись Служб мультимедиа Azure, как описано в [этом руководстве](create-account-cli-quickstart.md).
 * Получите учетные данные, необходимые для использования API служб мультимедиа. Дополнительные сведения см. в разделе [Доступ к API Служб мультимедиа Azure с помощью Azure CLI](access-api-cli-how-to.md)
@@ -141,7 +142,7 @@ ms.locfileid: "39116773"
 
 После выполнения кодирования и установки политики ключа содержимого следующий шаг — это сделать видео на выходном ресурсе доступным для воспроизведения клиентами. Данное действие может быть выполнено в два этапа. 
 
-1. Создайте [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators)
+1. Создание [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators)
 2. Создайте URL-адрес потоковой передачи, который смогут использовать клиенты. 
 
 Процесс создания **StreamingLocator** называется публикацией. По умолчанию **StreamingLocator** допустим сразу после выполнения вызова API и действует, пока не будет удален, если не настроить дополнительное начальное и конечное время. 

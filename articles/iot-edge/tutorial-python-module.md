@@ -9,12 +9,12 @@ ms.date: 06/26/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 49fa81d89fb195e1caedc2348a8b0990022b0d0d
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 5766f9708d2439f42f9ad77169fd1fe7f7dc451e
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414272"
+ms.locfileid: "39439118"
 ---
 # <a name="tutorial-develop-and-deploy-a-python-iot-edge-module-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Python и его развертывание на имитированном устройстве
 
@@ -34,15 +34,21 @@ ms.locfileid: "39414272"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Устройство Azure IoT Edge, которое вы создали при работе с кратким руководством для [Linux](quickstart-linux.md).
+Устройство Azure IoT Edge.
 
-   >[!Note]
-   >Модули Python для Azure IoT Edge не поддерживают устройства Windows или ARM. 
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройства [Linux](quickstart-linux.md).
+* Модули Python для IoT Edge не поддерживают процессоры ARM или устройства Windows.
+
+Облачные ресурсы.
+
+* [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) цен. категории "Стандартный" в Azure. 
+
+Ресурсы разработки.
 
 * [Visual Studio Code](https://code.visualstudio.com/). 
 * [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).
 * [Расширение Visual Studio Code для Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python). 
-* [Docker](https://docs.docker.com/engine/installation/) на компьютере с Visual Studio Code. Для этого руководства достаточно выпуска Community Edition (CE). 
+* [Docker CE](https://docs.docker.com/engine/installation/). 
 * [Python](https://www.python.org/downloads/).
 * [PIP](https://pip.pypa.io/en/stable/installing/#installation) для установки пакетов Python (обычно входит в состав установки Python).
 
@@ -243,7 +249,7 @@ ms.locfileid: "39414272"
 Чтобы удалить только Центр Интернета вещей, выполните следующую команду, используя имена центра и группы ресурсов.
 
 ```azurecli-interactive
-az iot hub delete --name MyIoTHub --resource-group TestResources
+az iot hub delete --name {hub_name} --resource-group IoTEdgeResources
 ```
 
 

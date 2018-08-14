@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Создание Key Vault с помощью CLI | Документация Майкрософт
-description: Краткое руководство по созданию Azure Key Vault с помощью CLI
+title: Краткое руководство Azure. Настройка и получение секрета из Key Vault с помощью Azure CLI | Документация Майкрософт
+description: Краткое руководство по настройке и получению секрета из Azure Key Vault с помощью Azure CLI
 services: key-vault
 author: barclayn
 manager: mbaldwin
@@ -14,14 +14,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/10/2018
 ms.author: barclayn
-ms.openlocfilehash: ae8957e5bf87fc190076db87d4eaca0e7a757c5e
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: dc69d472e38bcc39de35204c26068a98e0549601
+ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34067662"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39480924"
 ---
-# <a name="quickstart-create-an-azure-key-vault-using-the-cli"></a>Краткое руководство. Создание Azure Key Vault с помощью CLI
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
 Azure Key Vault — это облачная служба, которая работает как защищенное хранилище секретов. Вы можете безопасно хранить ключи, пароли, сертификаты и другие секреты. Дополнительные сведения о хранилище ключей см. в статье [обзора](key-vault-overview.md). Azure CLI используется для создания ресурсов Azure и управления ими с помощью скриптов и команд. В рамках этого краткого руководства вы создадите хранилище ключей. После этого вы сохраните в нем секрет.
 

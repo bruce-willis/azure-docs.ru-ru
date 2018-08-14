@@ -1,28 +1,21 @@
 ---
-title: Подключение к Azure HDInsight с помощью средств Data Lake для Visual Studio | Документация Майкрософт
+title: Подключение к Azure HDInsight с помощью средств Data Lake для Visual Studio
 description: Узнайте, как установить и использовать средства Data Lake для Visual Studio, чтобы подключиться к кластерам Hadoop в Azure HDInsight, а затем выполнить запросы Hive.
 keywords: средства hadoop, запрос hive, visual studio, visual studio hadoop
-services: HDInsight
-documentationcenter: ''
-tags: azure-portal
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ce9c572a-1e98-46bf-9581-13a9767f1fa5
+services: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: na
 ms.topic: get-started-article
-ms.tgt_pltfrm: na
-ms.workload: big-data
 ms.date: 05/16/2018
-ms.author: jgao
-ms.openlocfilehash: 1707a681315fbb53f21df95664188463968bb855
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 9433c54cdbcc534f12fa78b9750cfdbc10682c51
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34202481"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599373"
 ---
 # <a name="use-data-lake-tools-for-visual-studio-to-connect-to-azure-hdinsight-and-run-hive-queries"></a>Подключение к Azure HDInsight и выполнение запросов Hive с помощью средств Data Lake для Visual Studio
 
@@ -34,7 +27,7 @@ ms.locfileid: "34202481"
 
 Средства Data Lake для Visual Studio можно использовать для доступа к Azure Data Lake Analytics и HDInsight. Дополнительные сведения см. в статье [Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio](../../data-lake-analytics/data-lake-analytics-data-lake-tools-get-started.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством и использования средств Data Lake для Visual Studio потребуются следующие компоненты:
 

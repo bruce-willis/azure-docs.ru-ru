@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Создание Key Vault с помощью портала | Документация Майкрософт
-description: Краткое руководство о создании Azure Key Vault с помощью портала
+title: Краткое руководство Azure. Настройка и получение секрета из Key Vault с помощью портала Azure | Документация Майкрософт
+description: Краткое руководство показывает, как настроить и получить секрет из Azure Key Vault с помощью портала Azure
 services: key-vault
 author: barclayn
 manager: mbaldwin
@@ -14,14 +14,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/10/2018
 ms.author: barclayn
-ms.openlocfilehash: 251cd7eaba439708e7ef4e1ee8ccbd7efe7d66bb
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 5a203f8c92a1dc03a50415e78e509eafa62ebf4c
+ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34068886"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39480104"
 ---
-# <a name="quickstart-create-a-key-vault-using-the-azure-portal"></a>Краткое руководство. Создание Key Vault с помощью портала Azure
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью портала Azure
 
 Azure Key Vault — это облачная служба, которая работает как защищенное хранилище секретов. Вы можете безопасно хранить ключи, пароли, сертификаты и другие секреты. Дополнительные сведения о хранилище ключей см. в статье [обзора](key-vault-overview.md). Создать хранилища Azure Key Vault и управлять ими можно на портале Azure. В рамках этого краткого руководства вы создадите хранилище ключей. После этого вы сохраните в нем секрет.
 

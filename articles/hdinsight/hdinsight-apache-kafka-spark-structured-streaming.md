@@ -1,23 +1,20 @@
 ---
-title: Руководство. Структурированная потоковая передача Apache Spark с Kafka в Azure HDInsight | Документация Майкрософт
+title: 'Руководство. Структурированная потоковая передача Apache Spark с Kafka в Azure HDInsight '
 description: Узнайте об использовании потоковой передачи Apache Spark для двунаправленного обмена данными с Apache Kafka. В этом руководстве показано, как выполнить потоковую передачу данных, используя записную книжку Jupyter из Spark в HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: ''
 ms.topic: tutorial
 ms.date: 05/08/2018
-ms.author: larryfr
-ms.openlocfilehash: 8c7c1b37102e94f00ac6077958952eb52b342668
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.author: jasonh
+ms.openlocfilehash: 47879350c56b9e8b943e1bff61359727746b697d
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33939260"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39598316"
 ---
 # <a name="tutorial-use-spark-structured-streaming-with-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Spark с Kafka в HDInsight
 
@@ -25,7 +22,7 @@ ms.locfileid: "33939260"
 
 Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Структурированная потоковая передача с помощью Kafka
@@ -36,7 +33,7 @@ ms.locfileid: "33939260"
 
 Выполнив инструкции, не забудьте удалить кластеры, чтобы избежать ненужных расходов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт работы с записными книжками Jupyter с Spark в HDInsight. Дополнительные сведения см. в статье [Выполнение интерактивных запросов в кластерах Spark в HDInsight](spark/apache-spark-load-data-run-query.md).
 

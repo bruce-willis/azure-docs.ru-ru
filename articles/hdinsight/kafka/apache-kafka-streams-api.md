@@ -1,24 +1,20 @@
 ---
-title: Руководство. Использование API Потоков Apache Kafka в Azure HDInsight | Документация Майкрософт
+title: 'Руководство. Использование API Потоков Apache Kafka в Azure HDInsight '
 description: Узнайте, как использовать API Потоков Apache Kafka в HDInsight. Этот API позволяет выполнять потоковую обработку между разделами в Kafka.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
-tags: azure-portal
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/17/2018
-ms.author: larryfr
-ms.openlocfilehash: 5391d6ae101a97e9b62215621267e591b2a995f5
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: d285575802dd830247533420154f6f5e868272a2
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34626400"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39621051"
 ---
 # <a name="tutorial-apache-kafka-streams-api"></a>Руководство. API Потоков Apache Kafka
 
@@ -31,7 +27,7 @@ ms.locfileid: "34626400"
 >
 > Дополнительные сведения о Потоках Kafka см. в [вводной документации ](https://kafka.apache.org/10/documentation/streams/) на сайте Apache.org.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Настройка среды разработки
@@ -40,7 +36,7 @@ ms.locfileid: "34626400"
 > * Настройка разделов Kafka.
 > * Выполнение кода
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Kafka в кластере HDInsight 3.6; Чтобы узнать, как создавать Kafka в кластере HDInsight, см. статью [Приступая к работе с Apache Kafka в HDInsight](apache-kafka-get-started.md).
 
@@ -225,7 +221,7 @@ public class Stream
 2. Чтобы отправить записи в раздел `test`, используйте следующую команду для запуска приложения-отправителя:
 
     ```bash
-    java -jar kafka-producer-consumer.jar producer $KAFKABROKERS
+    java -jar kafka-producer-consumer.jar producer test $KAFKABROKERS
     ```
 
 3. После завершения работы отправителя просмотрите сведения, хранящиеся в разделе `wordcounts`, с помощью следующей команды:

@@ -1,20 +1,20 @@
 ---
 title: Настройка подготовки устройств с помощью Azure CLI | Документация Майкрософт
 description: Краткое руководство Azure. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI
-author: bryanla
-ms.author: bryanla
+author: wesmc7777
+ms.author: wesmc
 ms.date: 02/26/2018
 ms.topic: quickstart
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 2cf611e12402b22587faa83fefc4651e7307c41c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: cf2e108aa7cab6be2996cb535d27d597e462617c
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38482141"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39626545"
 ---
 # <a name="set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
@@ -32,7 +32,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 В следующем примере создается группа ресурсов с именем *my-sample-resource-group* в расположении *westus*.
 
@@ -47,7 +47,7 @@ az group create --name my-sample-resource-group --location westus
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-Создайте Центр Интернета вещей с помощью команды [az iot hub create](/cli/azure/iot/hub#az_iot_hub_create). 
+Создайте Центр Интернета вещей с помощью команды [az iot hub create](/cli/azure/iot/hub#az-iot-hub-create).
 
 В следующем примере создается Центр Интернета вещей с именем *my-sample-hub* в расположении *westus*.  
 
@@ -57,7 +57,7 @@ az iot hub create --name my-sample-hub --resource-group my-sample-resource-group
 
 ## <a name="create-a-provisioning-service"></a>Создание службы подготовки устройств
 
-Создайте службу подготовки устройств с помощью команды [az iot dps create](/cli/azure/iot/dps#az_iot_dps_create). 
+Создайте службу подготовки устройств с помощью команды [az iot dps create](/cli/azure/iot/dps#az-iot-dps-create). 
 
 В следующем примере создается служба подготовки устройств с именем *my-sample-dps* в расположении *westus*.  
 
@@ -72,7 +72,7 @@ az iot dps create --name my-sample-dps --resource-group my-sample-resource-group
 
 ## <a name="get-the-connection-string-for-the-iot-hub"></a>Получение строки подключения для Центра Интернета вещей
 
-Необходимо связать строку подключения Центра Интернета вещей со службой подготовки устройств. Используйте команду [az iot hub show-connection-string](/cli/azure/iot/hub#az_iot_hub_show_connection_string), чтобы получить строку подключения. Ее выходные данные потребуются, чтобы задать переменную, необходимую для связывания двух ресурсов. 
+Необходимо связать строку подключения Центра Интернета вещей со службой подготовки устройств. Используйте команду [az iot hub show-connection-string](/cli/azure/iot/hub#az-iot-hub-show-connection-string), чтобы получить строку подключения. Ее выходные данные потребуются, чтобы задать переменную, необходимую для связывания двух ресурсов. 
 
 В следующем примере переменной *hubConnectionString* задается значение строки подключения для первичного ключа политики *iothubowner* в центре. Другую политику можно задать с помощью параметра `--policy-name`. Для извлечения строки подключения из выходных данных команды в Azure CLI в ней используются параметры [query](/cli/azure/query-azure-cli) и [output](/cli/azure/format-output-azure-cli#tsv-output-format).
 
@@ -92,7 +92,7 @@ echo $hubConnectionString
 
 ## <a name="link-the-iot-hub-and-the-provisioning-service"></a>Связывание Центра Интернета вещей со службой подготовки устройств
 
-Свяжите Центр Интернета вещей со службой подготовки устройств с помощью команды [az iot dps linked-hub create](/cli/azure/iot/dps/linked-hub#az_iot_dps_linked_hub_create). 
+Свяжите Центр Интернета вещей со службой подготовки устройств с помощью команды [az iot dps linked-hub create](/cli/azure/iot/dps/linked-hub#az-iot-dps-linked-hub-create). 
 
 В следующем примере связываются Центр Интернета вещей с именем *my-sample-hub* в расположении *westus* и служба подготовки устройств с именем *my-sample-dps*. В команде используется строка подключения для Центра Интернета вещей *my-sample-hub*, сохраненная в переменной *hubConnectionString* на предыдущем шаге.
 
@@ -102,7 +102,7 @@ az iot dps linked-hub create --dps-name my-sample-dps --resource-group my-sample
 
 ## <a name="verify-the-provisioning-service"></a>Проверка службы подготовки устройств
 
-Получите сведения о службе подготовки устройств, выполнив команду [az iot dps show](/cli/azure/iot/dps#az_iot_dps_show).
+Получите сведения о службе подготовки устройств, выполнив команду [az iot dps show](/cli/azure/iot/dps#az-iot-dps-show).
 
 В следующем примере возвращаются сведения о службе подготовки устройств с именем *my-sample-dps*. Связанный Центр Интернета вещей отображается в коллекции *properties.iotHubs*.
 
@@ -114,18 +114,18 @@ az iot dps show --name my-sample-dps
 
 Другие краткие руководства в этой коллекции созданы на основе этого документа. Если вы планируете продолжать работу с последующими краткими руководствами или обычными руководствами, не удаляйте созданные ресурсы. Если же вы не планируете продолжать работу, вы можете использовать команды ниже, чтобы удалить службу подготовки устройств, Центр Интернета вещей или группу ресурсов со всеми связанными ресурсами.
 
-Чтобы удалить службу подготовки устройств, выполните команду [az iot dps delete](/cli/azure/iot/dps#az_iot_dps_delete):
+Чтобы удалить службу подготовки устройств, выполните команду [az iot dps delete](/cli/azure/iot/dps#az-iot-dps-delete):
 
 ```azurecli-interactive
 az iot dps delete --name my-sample-dps --resource-group my-sample-resource-group
 ```
-Чтобы удалить Центр Интернета вещей, выполните команду [az iot hub delete](/cli/azure/iot/hub#az_iot_hub_delete):
+Чтобы удалить Центр Интернета вещей, выполните команду [az iot hub delete](/cli/azure/iot/hub#az-iot-hub-delete):
 
 ```azurecli-interactive
 az iot hub delete --name my-sample-hub --resource-group my-sample-resource-group
 ```
 
-Чтобы удалить группу ресурсов со всеми связанными ресурсами, выполните команду [az group delete](/cli/azure/group#az_group_delete):
+Чтобы удалить группу ресурсов со всеми связанными ресурсами, выполните команду [az group delete](/cli/azure/group#az-group-delete):
 
 ```azurecli-interactive
 az group delete --name my-sample-resource-group

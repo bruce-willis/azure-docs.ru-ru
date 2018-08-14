@@ -12,14 +12,14 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 04/03/2018
+ms.date: 08/07/2018
 ms.author: cephalin
-ms.openlocfilehash: 4bdb182d93b842bf94e75672b1d7b4cf4f6da253
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: e597ba5236fb2d7fea8649f423c4a952b01f87ee
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31589158"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599634"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service"></a>Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "31589158"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -241,7 +241,7 @@ Azure Active Directory используется в качестве постав
 
 Выполните те же действия для внешнего приложения, но пропустите последний шаг. Для интерфейсного приложения **идентификатор приложения** не требуется. Не закрывайте страницу **Параметры Azure Active Directory**.
 
-При необходимости перейдите по ссылке `http://<front_end_app_name>.azurewebsites.net`. Теперь она должна направить вас на страницу входа. После выполнения входа вы по-прежнему не сможете получить доступ к данным из серверного приложения, потому что вам все еще нужно сделать три вещи:
+При необходимости перейдите по ссылке `http://<front_end_app_name>.azurewebsites.net`. Теперь она должна направить вас на защищенную страницу входа. После выполнения входа вы по-прежнему не сможете получить доступ к данным из серверного приложения, потому что вам все еще нужно сделать три вещи:
 
 - Предоставить доступ из интерфейсной части к серверной.
 - Настроить службу приложений, чтобы вернуть доступный токен.
@@ -322,7 +322,7 @@ git commit -m "add authorization header for server code"
 git push frontend master
 ```
 
-Войдите в `http://<front_end_app_name>.azurewebsites.net` еще раз. На странице соглашения об использовании пользовательских данных нажмите кнопку **Принять**.
+Войдите в `https://<front_end_app_name>.azurewebsites.net` еще раз. На странице соглашения об использовании пользовательских данных нажмите кнопку **Принять**.
 
 Теперь вы можете создавать, читать, обновлять и удалять данные из серверного приложения прямо в приложении. Единственное отличие теперь в том, что оба приложения защищены проверкой подлинности и авторизацией службы приложений, включая вызовы между службами.
 
@@ -340,7 +340,7 @@ git push frontend master
 
 ### <a name="configure-cors"></a>Настройка CORS
 
-В Cloud Shell включите CORS для URL-адреса своего клиента с помощью команды [`az resource update`](/cli/azure/resource#az_resource_update). Замените заполнители _\<имя\_приложения\_серверной\_части>_ и  _\<имя\_приложения\_интерфейсной\_части>_.
+В Cloud Shell включите CORS для URL-адреса своего клиента с помощью команды [`az resource update`](/cli/azure/resource#az-resource-update). Замените заполнители _\<имя\_приложения\_серверной\_части>_ и  _\<имя\_приложения\_интерфейсной\_части>_.
 
 ```azurecli-interactive
 az resource update --name web --resource-group myAuthResourceGroup --namespace Microsoft.Web --resource-type config --parent sites/<back_end_app_name> --set properties.cors.allowedOrigins="['https://<front_end_app_name>.azurewebsites.net']" --api-version 2015-06-01
@@ -352,7 +352,7 @@ az resource update --name web --resource-group myAuthResourceGroup --namespace M
 
 В локальном репозитории откройте _wwwroot/index.html_.
 
-В строке 51 задайте для переменной `apiEndpoint` URL-адрес серверного приложения (`http://<back_end_app_name>.azurewebsites.net`). Замените _\<имя\_приложения\_серверной\_части>_ именем своего приложения в службе приложений.
+В строке 51 задайте для переменной `apiEndpoint` URL-адрес серверного приложения (`https://<back_end_app_name>.azurewebsites.net`). Замените _\<имя\_приложения\_серверной\_части>_ именем своего приложения в службе приложений.
 
 Откройте локальный репозиторий _wwwroot/app/scripts/todoListSvc.js_ и убедитесь, что `apiEndpoint` указан для всех вызовов API. Теперь приложение Angular.js вызывает серверные API-интерфейсы. 
 
@@ -406,9 +406,13 @@ git commit -m "add authorization header for Angular"
 git push frontend master
 ```
 
-Перейдите к `http://<front_end_app_name>.azurewebsites.net` еще раз. Теперь вы можете создавать, читать, обновлять и удалять данные с серверного приложения прямо в приложении Angular.js.
+Перейдите к `https://<front_end_app_name>.azurewebsites.net` еще раз. Теперь вы можете создавать, читать, обновлять и удалять данные с серверного приложения прямо в приложении Angular.js.
 
 Поздравляем! Код клиента теперь получает доступ к данным серверной части от имени пользователя, прошедшего проверку подлинности.
+
+## <a name="when-access-tokens-expire"></a>Когда истекает срок действия маркеров доступа
+
+Срок действия маркеров доступа истекает через некоторое время. Сведения об обновлении маркеров доступа без повторной проверки подлинности пользователей в приложении см. в разделе [Обновление токенов доступа](app-service-authentication-how-to.md#refresh-access-tokens).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
