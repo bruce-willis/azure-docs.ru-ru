@@ -100,7 +100,7 @@ ms.locfileid: "40038530"
    
     Дополнительные сведения о запросе сертификатов сервера см. в следующих разделах: 
    
-   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx).
+   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx), [Certreq](https://technet.microsoft.com/library/cc725793.aspx).
    * Средства безопасности для администрирования Windows Server 2012.
      
      [Средства безопасности для администрирования Windows Server 2012](https://technet.microsoft.com/library/jj730960.aspx)
