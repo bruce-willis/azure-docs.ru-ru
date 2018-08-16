@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: raynew
-ms.openlocfilehash: a91543dcea1fb9fb6a33b5a7bc3892a2bac7b241
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 37c4ce8638c8f0481151449317d6cd387b61b256
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36215789"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39622904"
 ---
 # <a name="refine-a-group-using-group-dependency-mapping"></a>Уточнение группы с помощью сопоставления зависимостей группы
 
@@ -39,7 +39,7 @@ ms.locfileid: "36215789"
 2. На странице **приветствия** нажмите кнопку **Далее**. На странице **Условия лицензии** нажмите кнопку **Принимаю**, чтобы принять условия лицензии.
 3. В поле **Конечная папка** оставьте или измените папку установки по умолчанию. Нажмите кнопку **Далее**. 
 4. В разделе **Параметры установки агента** последовательно выберите **Azure Log Analytics** > **Далее**. 
-5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Нажмите кнопку **Далее**.
+5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
 
 Вот как можно установить агент на компьютере Linux.
@@ -56,7 +56,7 @@ ms.locfileid: "36215789"
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-[Узнайте больше](../monitoring/monitoring-service-map-configure.md#supported-operating-systems) об операционных системах, поддерживаемых агентом зависимостей. 
+Узнайте больше о поддержке агента зависимостей для ОС [Windows](../monitoring/monitoring-service-map-configure.md#supported-windows-operating-systems) и [Linux](../monitoring/monitoring-service-map-configure.md#supported-linux-operating-systems).
 
 ## <a name="refine-the-group-based-on-dependency-visualization"></a>Уточнение группы на основе визуализации зависимостей
 После установки агентов на всех компьютерах группы можно визуализировать зависимости группы и уточнить ее, выполнив приведенные ниже действия.

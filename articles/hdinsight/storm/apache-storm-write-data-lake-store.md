@@ -1,24 +1,20 @@
 ---
-title: Запись данных Apache Storm в хранилище Azure или Data Lake Store для Azure HDInsight | Документация Майкрософт
-description: Сведения об использовании Apache Storm для записи данных в HDFS-совместимое хранилище для HDInsight. Хранилище Azure или Azure Data Lake Store предоставляет HDFS-совместимое хранилище для HDInsight. В этом документе и связанном примере демонстрируется, как компонент HdfsBolt можно использовать для записи в хранилище Storm по умолчанию в кластере HDInsight.
+title: Запись данных Apache Storm в службу хранилища или Data Lake Store в Azure HDInsight
+description: Сведения об использовании Apache Storm для записи данных в HDFS-совместимое хранилище для HDInsight.
 services: hdinsight
-documentationcenter: na
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 1df98653-a6c8-4662-a8c6-5d288fc4f3a6
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: 7a314ada1c25b57b6d1701bf414a42a58397e1f0
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 076c52022cd9305190a1d7683c7040a2efc1da04
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903138"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39619660"
 ---
 # <a name="write-to-hdfs-from-apache-storm-on-hdinsight"></a>Запись данных в HDFS из Apache Storm в HDInsight
 
@@ -58,7 +54,7 @@ HdfsBolt использует предоставленную схему файл
 
 Следующая таблица содержит примеры использования схемы файлов для разных сценариев.
 
-| Схема | Заметки |
+| Схема | Примечания |
 | ----- | ----- |
 | `wasb:///` | Учетная запись хранения по умолчанию — это контейнер больших двоичных объектов в учетной записи хранения Azure. |
 | `adl:///` | Учетная запись хранения по умолчанию представляет собой каталог в Azure Data Lake Store. Во время создания кластера укажите каталог в Data Lake Store, который является корнем системы HDFS кластера. Например, каталог `/clusters/myclustername/`. |

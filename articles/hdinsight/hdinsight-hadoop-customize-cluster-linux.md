@@ -1,25 +1,20 @@
 ---
-title: Настройка кластеров HDInsight с помощью действий скрипта — Azure | Документы Майкрософт
+title: Настройка кластеров HDInsight с помощью действий скриптов в Azure
 description: Добавление настраиваемых компонентов в кластеры HDInsight на основе Linux с помощью действий сценариев. Действия сценариев — это сценарии Bash, которые можно использовать для настройки конфигурации кластера или добавления дополнительных служб и служебных программ, таких как Hue, Solr или R.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 48e85f53-87c1-474f-b767-ca772238cc13
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.author: larryfr
-ms.openlocfilehash: 500b6ef33bb70cd5138067d88303b7db9121e867
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.author: jasonh
+ms.openlocfilehash: 0837029cbe22ba7f659efefb113ed47ae1cf2dfe
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37102088"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038674"
 ---
 # <a name="customize-linux-based-hdinsight-clusters-using-script-actions"></a>Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев
 
@@ -229,7 +224,7 @@ ms.locfileid: "37102088"
 
 ### <a name="use-a-script-action-during-cluster-creation-from-azure-powershell"></a>Использование действия сценария при создании кластера с помощью Azure PowerShell
 
-В этом разделе используется командлет [Add-AzureRmHDInsightScriptAction](https://msdn.microsoft.com/library/mt603527.aspx) для вызова сценариев, настраивающих кластер. Прежде чем продолжить, убедитесь, что вы установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для запуска командлетов HDInsight PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+В этом разделе используется командлет [Add-AzureRmHDInsightScriptAction](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/add-azurermhdinsightscriptaction) для вызова сценариев, настраивающих кластер. Прежде чем продолжить, убедитесь, что вы установили и настроили Azure PowerShell. Сведения о настройке рабочей станции для запуска командлетов HDInsight PowerShell см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 
 Следующий скрипт демонстрирует применение действия скрипта при создании кластера с помощью PowerShell:
 

@@ -3,12 +3,12 @@ layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
 description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Вы можете получить документацию, примеры кода, учебники и многое другое.
-ms.openlocfilehash: c7f46f9b22bd3696b7d281815687cca2b90b22b3
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 103d09b1a71239948c730f8dba47253741bbaa9c
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070065"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038586"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -323,7 +323,7 @@ ms.locfileid: "34070065"
                                         <li>
                                             <a href="/azure/redis-cache/">
                                                 <img src="media/index/RedisCache.svg" alt="" />
-                                                <p>Кэш Redis</p>
+                                                <p>кэш Redis;</p>
                                             </a>
                                         </li>
                                         <li>
@@ -356,7 +356,7 @@ ms.locfileid: "34070065"
                                         <li>
                                             <a href="/azure/app-service/">
                                                 <img src="media/index/AppService.svg" alt="" />
-                                                <p>Служба приложений Azure</p>
+                                                <p>Служба приложений</p>
                                             </a>
                                         </li>
                                         <li>
@@ -678,12 +678,12 @@ ms.locfileid: "34070065"
                             </li>
                             <li>
                                 <div class="group">
-                                    <h3>Служба хранилища</h3>
+                                    <h3>Хранилище</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>Служба хранилища</p>
+                                                <p>Хранилище</p>
                                             </a>
                                         </li>
                                         <li>
@@ -830,7 +830,7 @@ ms.locfileid: "34070065"
                                         <li>
                                             <a href="/azure/event-hubs/">
                                                 <img src="media/index/EventHubs.svg" alt="" />
-                                                <p>Концентраторы событий</p>
+                                                <p>концентраторы событий;</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1125,7 +1125,7 @@ ms.locfileid: "34070065"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Служба приложений Azure</h3>
+                                                    <h3>Служба приложений</h3>
                                                     <p>Развертывание веб-приложений на платформе Linux с помощью контейнеров</p>
                                                 </div>
                                             </div>
@@ -1752,7 +1752,7 @@ ms.locfileid: "34070065"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Служба приложений Azure</h3>
+                                                    <h3>Служба приложений</h3>
                                                     <p>Развертывание веб-приложений на платформе Linux с помощью контейнеров</p>
                                                 </div>
                                             </div>
@@ -1909,7 +1909,7 @@ ms.locfileid: "34070065"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Кэш Redis</h3>
+                                                    <h3>кэш Redis;</h3>
                                                     <p>Высокая производительность, доступ к данным с низкой задержкой для создания быстрых и масштабируемых приложений</p>
                                                 </div>
                                             </div>
@@ -2361,7 +2361,7 @@ ms.locfileid: "34070065"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Концентраторы событий</h3>
+                                                    <h3>концентраторы событий;</h3>
                                                     <p>Получение телеметрии от миллионов устройств</p>
                                                 </div>
                                             </div>
@@ -3150,10 +3150,10 @@ ms.locfileid: "34070065"
                                                     <a href="https://pypi.python.org/pypi/azure">Пакет SDK для Python</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="http://azure-sdk-for-python.readthedocs.io/en/latest/">Начало работы</a>
+                                                    <a href="https://docs.microsoft.com/python/azure/?view=azure-python">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="http://azure-sdk-for-python.readthedocs.io/en/latest/">Справочник по API</a>
+                                                    <a href="https://docs.microsoft.com/python/azure/?view=azure-python">Справочник по API</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://azure.microsoft.com/resources/samples/?platform=python">Получение примеров</a>
@@ -3427,7 +3427,7 @@ ms.locfileid: "34070065"
                                                     <a href="/dotnet/articles/core/docker/visual-studio-tools-for-docker">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780680">Загрузка для Visual Studio</a>
+                                                    <a href="https://marketplace.visualstudio.com/items?itemName=Click2CloudInc.Click2CloudDockerExtensionForVisualStudio2017">Загрузка для Visual Studio</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://go.microsoft.com/fwlink/?LinkId=780681">Загрузка для Visual Studio Code</a>
@@ -3502,13 +3502,13 @@ ms.locfileid: "34070065"
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-                                                    <a href="https://www.visualstudio.com/vs/python">Инструменты Python</a>
+                                                    <a href="http://aka.ms/ptvs">Инструменты Python</a>
                                                 </h3>
                                                 <p>
-                                                    <a href="https://github.com/Microsoft/PTVS/wiki/PTVS-Installation">Начало работы с Visual Studio</a>
+                                                    <a href="http://aka.ms/ptvsdocs">Начало работы с Visual Studio</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://marketplace.visualstudio.com/items?itemName=donjayamanne.python">Начало работы с Visual Studio Code</a>
+                                                    <a href="https://code.visualstudio.com/docs/python/python-tutorial">Начало работы с Visual Studio Code</a>
                                                 </p>
                                             </div>
                                         </div>

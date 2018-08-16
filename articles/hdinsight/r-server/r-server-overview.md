@@ -1,24 +1,20 @@
 ---
-title: Основные сведения о службах машинного обучения в Azure HDInsight | Документация Майкрософт
+title: Основные сведения о Службах машинного обучения в Azure HDInsight
 description: Узнайте, как с помощью служб машинного обучения в HDInsight создать приложения для анализа больших данных.
 services: hdinsight
-documentationcenter: ''
-author: nitinme
-manager: cgronlun
-editor: cgronlun
-ms.assetid: 6dc21bf5-4429-435f-a0fb-eea856e0ea96
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.author: nitinme
-ms.openlocfilehash: c952d64229102f99dde393bc9a6efda45fc1c717
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: c36277cdf20f9247a13c22f56281fd5aaae16120
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358857"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620030"
 ---
 # <a name="introduction-to-ml-services-and-open-source-r-capabilities-on-hdinsight"></a>Основные сведения о службах машинного обучения и возможностях открытого кода R в HDInsight
 

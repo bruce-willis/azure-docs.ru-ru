@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 06/26/2018
 ms.author: glenga
-ms.openlocfilehash: c7be9079da6be8d9d7f25b910ab07e905e8ac449
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 57011e1f7633688e00a4639ba36fd4442073161d
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126220"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618620"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -33,9 +33,9 @@ ms.locfileid: "39126220"
 
 + [Версия 1.x](#v1) поддерживает общедоступную (GA) версию 1.x среды выполнения. Эта версия поддерживается только на компьютерах с ОС Windows и устанавливается из [пакета npm](https://docs.npmjs.com/getting-started/what-is-npm). В этой версии можно создавать функции на экспериментальных языках, которые не имеют официальной поддержки. Дополнительные сведения см. в разделе [Supported languages in Azure Functions](supported-languages.md) (Поддерживаемые языки службы "Функции Azure")
 
-+ [Версия 2.x](#v2): поддерживает версию 2.x в среде выполнения. Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки. Как и среда выполнения 2.x эта версия основных инструментов на данный момент доступна для ознакомления.
++ [Версия 2.x](#v2): поддерживает версию [2.x среды выполнения](functions-versions.md). Эта версия поддерживает [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Использует диспетчеры пакетов определенной платформы или пакеты npm для установки. Как и среда выполнения 2.x эта версия основных инструментов на данный момент доступна для ознакомления. 
 
-Если иное не указано, примеры в этой статье предназначены для версии 2.x.
+Если иное не указано, примеры в этой статье предназначены для версии 2.x. Чтобы получать важные обновления версии 2.x, включая объявления о критических изменениях, перейдите в репозиторий [объявлений о Службе приложений Azure](https://github.com/Azure/app-service-announcements/issues).
 
 ## <a name="install-the-azure-functions-core-tools"></a>Установка основных инструментов Функций Azure
 

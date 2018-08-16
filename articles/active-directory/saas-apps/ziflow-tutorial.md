@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/09/2018
+ms.date: 08/07/2018
 ms.author: jeedes
-ms.openlocfilehash: fdde8cbec7fc249eecfcc0c1682bb5eed94c1585
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 460a52f240f6b3723f93e81a11a8cd1ccc6c30c9
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39050495"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39626699"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ziflow"></a>Руководство. Интеграция Azure Active Directory с Ziflow
 
@@ -101,20 +101,20 @@ ms.locfileid: "39050495"
     ![Ссылка "Настройка единого входа"][4]
 
 2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+
     ![Диалоговое окно "Единый вход"](./media/ziflow-tutorial/tutorial_ziflow_samlbase.png)
 
 3. В разделе **Домены и URL-адреса приложения Ziflow** выполните следующие действия:
 
     ![Сведения о домене и URL-адресах единого входа приложения Ziflow](./media/ziflow-tutorial/tutorial_ziflow_url.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.ziflow.io/#/login-sso/<Unique ID>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://ziflow-production.auth0.com/login/callback?connection=<UniqueID>`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<Unique ID>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `urn:auth0:ziflow-production:<UniqueID>`
 
-    > [!NOTE] 
-    > Приведенные выше значения используются только для примера. Замените их на уникальные значения идентификатора и URL-адреса входа, которые описываются далее в этом руководстве. Свяжитесь с [группой поддержки Ziflow](mailto:support@ziflow.com), чтобы получить значение дочернего домена в URL-адресе для входа.
-    
+    > [!NOTE]
+    > Приведенные выше значения используются только для примера. Замените их на уникальные значения идентификатора и URL-адреса входа, которые описываются далее в этом руководстве.
+
 4. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
     ![Ссылка для скачивания сертификата](./media/ziflow-tutorial/tutorial_ziflow_certificate.png) 
@@ -128,7 +128,6 @@ ms.locfileid: "39050495"
     ![Настройка Ziflow](./media/ziflow-tutorial/tutorial_ziflow_configure.png) 
 
 7. В другом окне браузера войдите в приложение Ziflow с правами администратора безопасности.
-
 
 8. Щелкните аватар в правом верхнем углу, а затем выберите **Manage account** (Управление учетной записью).
 
@@ -144,7 +143,7 @@ ms.locfileid: "39050495"
 
     a. Выберите в качестве **типа** значение **SAML2.0**.
 
-    В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    b. В текстовое поле **Sign-In URL** (URL-адрес входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. Отправьте сертификат в кодировке Base64, который был скачан с портала Azure, в поле **X509 Signing Certificate** (Сертификат для подписи X509).
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/22/2017
 ms.author: aljo
-ms.openlocfilehash: c2479dad013bfcb738e61e67cc8cf9584b4d11cc
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 1869b25756693a4a3626d713b6bd2adab035cea6
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204820"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39717863"
 ---
 # <a name="scale-a-service-fabric-cluster-in-or-out-using-auto-scale-rules-or-manually"></a>Масштабирование кластера Service Fabric с помощью правил автомасштабирования или вручную
 Наборы масштабирования виртуальных машин относятся к вычислительным ресурсам Azure. Их можно использовать для развертывания коллекции виртуальных машин и управления ею как набором. Каждый тип узла, определенный в кластере Service Fabric, настроен как отдельный набор масштабирования виртуальных машин. Каждый тип узла поддерживает возможность независимого масштабирования, имеет разные наборы открытых портов и собственные метрики емкости. Дополнительные сведения о типах узлов Service Fabric см. в этом [документе](service-fabric-cluster-nodetypes.md). Так как типы узлов Service Fabric в вашем кластере состоят из масштабируемых наборов виртуальных машин на сервере, для каждого типа узлов или масштабируемого набора необходимо настроить правила автомасштабирования.
@@ -53,7 +53,7 @@ Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <Virtual Machine sca
 Настройте автомасштабирование для каждого масштабируемого набора виртуальных машин согласно [этим инструкциям](../virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md).
 
 > [!NOTE]
-> Если тип узла имеет уровень надежности Gold или Silver, то в сценарии уменьшения масштаба необходимо вызывать [командлет Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate) с именем соответствующего узла.
+> Если тип узла имеет уровень надежности Gold или Silver, то в сценарии уменьшения масштаба необходимо вызывать [командлет Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate) с именем соответствующего узла. Для уровня надежности Bronze не рекомендуется уменьшать масштаб нескольких узлов одновременно.
 > 
 > 
 
@@ -92,7 +92,7 @@ Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <Virtual Machine sca
 4. При необходимости повторите шаги 1–3, но никогда не следует уменьшать число экземпляров в типах первичных узлов до значения меньше гарантируемого уровнем надежности. Ознакомьтесь с дополнительными сведениями об уровнях надежности [здесь](service-fabric-cluster-capacity.md).
 
 ## <a name="behaviors-you-may-observe-in-service-fabric-explorer"></a>Возможные варианты поведения в обозревателе Service Fabric
-При вертикальном масштабировании кластера в Service Fabric Explorer отражается число узлов (экземпляров масштабируемых наборов виртуальных машин), которые входят в кластер.  Тем не менее при уменьшении масштаба кластера удаленный узел или экземпляр виртуальной машины будет отображаться как неработоспособный, если не вызвать [командлет Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) с именем соответствующего узла.   
+При вертикальном масштабировании кластера в Service Fabric Explorer отражается число узлов (экземпляров масштабируемых наборов виртуальных машин), которые входят в кластер.  Тем не менее при уменьшении масштаба кластера удаленный узел или экземпляр виртуальной машины будет отображаться как неработоспособный, если не вызвать [командлет Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate) с именем соответствующего узла.   
 
 Вот как объясняется это поведение.
 
@@ -103,7 +103,7 @@ Get-AzureRmVmss -ResourceGroupName <RGname> -VMScaleSetName <Virtual Machine sca
 1) Выбрать уровень надежности Gold или Silver для типов узлов в кластере — это обеспечит интеграцию инфраструктуры. При уменьшении масштаба узлы будут удаляться из состояния системных служб (FM) автоматически.
 Дополнительные сведения об уровнях надежности см. [здесь](service-fabric-cluster-capacity.md).
 
-2) После уменьшения масштаба экземпляра виртуальной машины необходимо вызвать [командлет Remove-ServiceFabricNodeState](https://msdn.microsoft.com/library/mt125993.aspx).
+2) После уменьшения масштаба экземпляра виртуальной машины необходимо вызвать [командлет Remove-ServiceFabricNodeState](https://docs.microsoft.com/powershell/module/servicefabric/remove-servicefabricnodestate).
 
 > [!NOTE]
 > Для постоянной работы кластеров Service Fabric требуется определенное количество узлов, чтобы все время поддерживать доступность и сохранять состояние, которое называется "поддержание кворума". Поэтому обычно не рекомендуется завершать работу всех компьютеров в кластере, пока не будет выполнена [полная архивация состояния](service-fabric-reliable-services-backup-restore.md), так как это может быть небезопасно.

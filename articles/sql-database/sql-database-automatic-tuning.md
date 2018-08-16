@@ -2,19 +2,20 @@
 title: Автоматическая настройка базы данных SQL Azure | Документация Майкрософт
 description: База данных SQL анализирует SQL-запрос и автоматически подстраивается под рабочую нагрузку пользователей.
 services: sql-database
-author: jovanpop-msft
+author: danimir
 manager: craigg
 ms.service: sql-database
 ms.custom: monitor & tune
 ms.topic: conceptual
 ms.date: 04/01/2018
-ms.author: jovanpop
-ms.openlocfilehash: bef8d01bd4c220fac595177089088ff64ee3bc3b
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.author: v-daljep
+ms.reviewer: carlrab
+ms.openlocfilehash: dd6e8f5f46e9fdf6887cc2a0b0c7b15bbd00fabd
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34646649"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39626205"
 ---
 # <a name="automatic-tuning-in-azure-sql-database"></a>Автоматическая настройка в базе данных SQL Azure
 
@@ -76,6 +77,6 @@ ms.locfileid: "34646649"
 
 - Дополнительные сведения о том, как включить автоматическую настройку в базе данных SQL Azure, чтобы управлять рабочей нагрузкой, см. в статье [Включение автоматической настройки](sql-database-automatic-tuning-enable.md).
 - Дополнительные сведения о том, как вручную проверить и применить рекомендации автоматической настройки, см. в статье [Поиск и применение рекомендаций по производительности](sql-database-advisor-portal.md).
-- Дополнительные сведения о создании уведомлений по электронной почте для рекомендаций по автоматической настройке см. в статье [Уведомления по электронной почте об автоматической настройке](sql-database-automatic-tuning-email-notifications.md).
+- См. дополнительные сведения о [создании уведомлений по электронной почте для рекомендаций по автоматической настройке ](sql-database-automatic-tuning-email-notifications.md).
 - Дополнительные сведения о встроенном механизме аналитики, используемом для автоматической настройки, см. в записи блога [Artificial Intelligence tunes Azure SQL Databases](https://azure.microsoft.com/blog/artificial-intelligence-tunes-azure-sql-databases/) (Механизм искусственного интеллекта настраивает базы данных SQL Azure).
 - Дополнительные сведения о том, как автоматическая настройка работает в Базе данных SQL Azure и SQL Server 2017, см. в [этой статье](https://docs.microsoft.com/sql/relational-databases/automatic-tuning/automatic-tuning).

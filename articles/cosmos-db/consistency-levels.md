@@ -3,20 +3,20 @@ title: Уровни согласованности в Azure Cosmos DB | Доку
 description: В Azure Cosmos DB есть пять уровней согласованности, что позволяет сбалансировать компромиссы между согласованностью в конечном счете, доступностью и задержками.
 keywords: согласованность в конечном счете, azure cosmos db, azure, Microsoft Azure
 services: cosmos-db
-author: SnehaGunda
+author: aliuy
 manager: kfile
 ms.service: cosmos-db
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.author: sngun
+ms.author: andrl
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 20edcd5e8e3ec3a9d3d294f7a81a2e97b4958f50
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: e9503759b776bb045c4dc0357b1ab88be1294013
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857190"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038562"
 ---
 # <a name="tunable-data-consistency-levels-in-azure-cosmos-db"></a>Настраиваемые уровни согласованности данных в Azure Cosmos DB
 Служба Azure Cosmos DB была разработана "с нуля", при этом в ее основу заложены возможности глобального распространения данных для всех моделей данных. Служба гарантирует прогнозируемую низкую задержку и несколько четко определенных моделей нестрогой согласованности. Сейчас Azure Cosmos DB поддерживает пять уровней согласованности: строгий, с ограниченным устареванием, уровня сеанса, согласованность префиксов и согласованный в конечном счете. Все уровни кроме строгого называются моделями с нестрогой согласованностью. Строгий уровень представляет наиболее согласованную из доступных моделей. 

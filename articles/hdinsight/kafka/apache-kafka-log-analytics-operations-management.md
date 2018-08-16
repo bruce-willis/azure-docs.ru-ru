@@ -1,25 +1,20 @@
 ---
-title: Log Analytics для Apache Kafka в Azure HDInsight | Документация Майкрософт
+title: Log Analytics для Apache Kafka в Azure HDInsight
 description: Сведения о том, как использовать Log Analytics для анализа журналов из кластера Apache Kafka в Azure HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: ''
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: big-data
-ms.date: 05/01/2018
-ms.author: larryfr
-ms.openlocfilehash: 9f366631ced4392831ad9ed97898a88b3290cd22
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.date: 06/15/2018
+ms.openlocfilehash: 9421217383f390630687d8416512401487ad3f7e
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32772268"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39621394"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -40,7 +35,7 @@ ms.locfileid: "32772268"
     >
     > * Имя кластера HDInsight.
     > * Идентификатор рабочей области для Log Analytics. Идентификатор рабочей области можно найти в рабочей области Log Analytics.
-    > * Первичный ключ для подключения к Log Analytics. Чтобы определить первичный ключ, выберите свой экземпляр Log Analytics, а затем перейдите на __портал OMS__. На портале OMS выберите __Параметры__, __Подключенные источники__, а затем — __Серверы Linux__.
+    > * Первичный ключ для подключения к Log Analytics. Чтобы найти первичный ключ, откройте рабочую область на портале Azure и выберите __Дополнительные параметры__ в меню слева. В разделе "Дополнительные параметры" последовательно выберите __Подключенные источники__>__Серверы с Linux__.
 
 
 > [!IMPORTANT]

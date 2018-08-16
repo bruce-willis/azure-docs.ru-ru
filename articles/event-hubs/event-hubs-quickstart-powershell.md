@@ -2,7 +2,7 @@
 title: Краткое руководство Azure. Обработка потоков событий с помощью PowerShell | Документы Майкрософт
 description: В этом кратком руководстве описывается, как отправлять и получать события концентраторов событий Azure с помощью PowerShell и приводится пример приложения .NET.
 services: event-hubs
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
 editor: ''
 ms.service: event-hubs
@@ -10,19 +10,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/26/2018
-ms.author: sethm
-ms.openlocfilehash: 9216372038db7a6f97cfc8034f715b34de08d83c
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.author: shvija
+ms.openlocfilehash: fd2b8b2e8bd075e029a07519ced186424798fd9c
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37132448"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40003616"
 ---
 # <a name="quickstart-process-event-streams-using-powershell-and-net-standard"></a>Краткое руководство. Обработка потоков событий с помощью PowerShell и .NET Standard
 
 Концентраторы событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создать концентратор событий с помощью Azure PowerShell и как затем отправлять и получать данные из концентратора событий, используя пакет SDK для .NET Standard.
 
-Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись][], прежде чем начать работу.
+Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -156,7 +156,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 > [!div class="nextstepaction"]
 > [Визуализация аномальных данных в потоках данных концентраторов событий](event-hubs-tutorial-visualize-anomalies.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install and Configure Azure PowerShell]: https://docs.microsoft.com/powershell/azure/install-azurerm-ps
 [New-AzureRmResourceGroup]: https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name

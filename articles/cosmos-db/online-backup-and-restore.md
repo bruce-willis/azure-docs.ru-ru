@@ -3,19 +3,19 @@ title: Оперативные архивация и восстановление
 description: Узнайте, как автоматически архивировать и восстанавливать базы данных с помощью Azure Cosmos DB.
 keywords: архивация и восстановление, оперативная архивация
 services: cosmos-db
-author: SnehaGunda
+author: kanshiG
 manager: kfile
 ms.service: cosmos-db
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.author: sngun
-ms.openlocfilehash: 66b4f63e75773aa0c1857dfcc19e22b48a0c3537
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.author: govindk
+ms.openlocfilehash: 613c61d9b881b7d736a50cadbf313c1f9aac57c9
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343165"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038663"
 ---
 # <a name="automatic-online-backup-and-restore-with-azure-cosmos-db"></a>Автоматическая оперативная архивация и восстановление с помощью Azure Cosmos DB
 Azure Cosmos DB автоматически выполняет архивацию всех ваших данных с регулярными интервалами. Автоматическая архивация не влияет на производительность или доступность операций баз данных. Для обеспечения устойчивости в случае региональной аварии все архивные копии хранятся отдельно в другой службе хранилища, а также глобально реплицируются. Автоматические резервные копии предназначены для решения аварийного восстановления или сценариев, при которых контейнер Cosmos DB случайно удаляется и затем требуется восстановление данных.  

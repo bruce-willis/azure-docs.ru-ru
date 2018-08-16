@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 12/07/2017
+ms.date: 07/31/2018
 ms.author: aljo
-ms.openlocfilehash: e963b0f816d30411aa7d1e8c172ca0c2e5ddf0f1
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: ccdea2833a24aa9e2bdf4fadd12b19d78b40f999
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444367"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038519"
 ---
 # <a name="create-a-service-fabric-cluster-by-using-azure-resource-manager"></a>Создание кластера Service Fabric в Azure с помощью Azure Resource Manager 
 > [!div class="op_single_selector"]
@@ -75,7 +75,7 @@ Azure AD позволяет организациям (известным как 
 Для клиентских операций со стороны пользователя или администратора может быть указано любое количество дополнительных сертификатов. По умолчанию сертификат кластера имеет права администратора. Эти дополнительные сертификаты клиента не нужно устанавливать в кластере, их просто нужно указать как разрешенные в конфигурации кластера. Однако их необходимо установить на клиентских компьютерах для подключения к кластеру и выполнения операций управления.
 
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 Концепция создания безопасного кластер в Linux или Windows ничем не отличается. В этом руководстве рассматривается создание кластеров с помощью Azure PowerShell или интерфейса командной строки (CLI) Azure. Необходимые компоненты:
 
 -  [Azure PowerShell 4.1 или более поздняя версия][azure-powershell] либо [Azure CLI 2.0 или более поздняя версия][azure-CLI];
@@ -341,6 +341,9 @@ Azure AD позволяет организациям (известным как 
 .\SetupApplications.ps1 -TenantId '690ec069-8200-4068-9d01-5aaf188e557a' -ClusterName 'mycluster' -WebApplicationReplyUrl 'https://mycluster.westus.cloudapp.azure.com:19080/Explorer/index.html'
 ```
 
+> [!NOTE]
+> Для национальных облаков (Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо указать параметр `-Location`.
+
 Чтобы узнать TenantId, можно выполнить команду PowerShell `Get-AzureSubscription`. После выполнения этой команды для каждой подписки отображается TenantId.
 
 Значение ClusterName используется в качестве префикса для приложений Azure AD, создаваемых сценарием. Точное совпадение с именем реального кластера не требуется. Оно предназначено только для упрощения сопоставления артефактов Azure AD с кластером Service Fabric, с которым они используются.
@@ -370,6 +373,9 @@ https://&lt;cluster_domain&gt;:19080/Explorer
 Этот раздел предназначен для пользователей, желающих разработать пользовательский шаблон Resource Manager (RM) для кластера Service Fabric. При наличии шаблона вы по-прежнему можете использовать модули PowerShell или CLI для развертывания кластера. 
 
 Примеры шаблонов Resource Manager доступны в [образцах Azure на сайте GitHub](https://github.com/Azure-Samples/service-fabric-cluster-templates). Их можно использовать в качестве отправной точки для создания шаблона кластера.
+
+> [!NOTE]
+> Для национальных облаков (Azure для государственных организаций, Azure для Китая и Azure для Германии) также необходимо добавить `fabricSettings` в шаблон ARM: `AADLoginEndpoint`, `AADTokenEndpointFormat` и `AADCertEndpointFormat`.
 
 ### <a name="create-the-resource-manager-template"></a>Создание шаблона Resource Manager
 В этом руководстве используется пример шаблона [защищенного кластера с 5 узлами][service-fabric-secure-cluster-5-node-1-nodetype] и его параметры. Скачайте файлы `azuredeploy.json` и `azuredeploy.parameters.json` на компьютер и откройте их в текстовом редакторе.
@@ -675,7 +681,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName "myresourcegroup" -Templat
 Connect-ServiceFabricCluster -ConnectionEndpoint <endpoint> -KeepAliveIntervalInSec 10 -AzureActiveDirectory -ServerCertThumbprint <thumbprint>
 ```
 
-Дополнительные сведения о командлете Connect-ServiceFabricCluster см. в [этой статье](https://msdn.microsoft.com/library/mt125938.aspx).
+Дополнительные сведения о командлете Connect-ServiceFabricCluster см. в [этой статье](https://docs.microsoft.com/powershell/module/servicefabric/connect-servicefabriccluster).
 
 ### <a name="can-i-reuse-the-same-azure-ad-tenant-in-multiple-clusters"></a>Можно ли повторно использовать один и тот же клиент Azure AD в нескольких кластерах?
 Да. Не забудьте добавить URL-адрес Service Fabric Explorer в (веб-)приложение кластера. В противном случае — Service Fabric Explorer не работает.
@@ -694,7 +700,7 @@ FabricClient и FabricGateway выполняют взаимную аутенти
 [aad-graph-api-docs]:https://msdn.microsoft.com/library/azure/ad/graph/api/api-catalog
 [azure-portal]: https://portal.azure.com/
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
-[active-directory-howto-tenant]: ../active-directory/active-directory-howto-tenant.md
+[active-directory-howto-tenant]:../active-directory/develop/quickstart-create-new-tenant.md
 [service-fabric-visualizing-your-cluster]: service-fabric-visualizing-your-cluster.md
 [service-fabric-manage-application-in-visual-studio]: service-fabric-manage-application-in-visual-studio.md
 [sf-aad-ps-script-download]:http://servicefabricsdkstorage.blob.core.windows.net/publicrelease/MicrosoftAzureServiceFabric-AADHelpers.zip
@@ -714,4 +720,3 @@ FabricClient и FabricGateway выполняют взаимную аутенти
 [sfx-select-certificate-dialog]: ./media/service-fabric-cluster-creation-via-arm/sfx-select-certificate-dialog.png
 [sfx-reply-address-not-match]: ./media/service-fabric-cluster-creation-via-arm/sfx-reply-address-not-match.png
 [web-application-reply-url]: ./media/service-fabric-cluster-creation-via-arm/web-application-reply-url.png
-

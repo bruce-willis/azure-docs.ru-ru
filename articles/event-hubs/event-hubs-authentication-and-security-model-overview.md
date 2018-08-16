@@ -3,7 +3,7 @@ title: Обзор аутентификации концентраторов со
 description: Обзор проверки подлинности концентраторов событий и модели безопасности.
 services: event-hubs
 documentationcenter: na
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
 editor: ''
 ms.assetid: 93841e30-0c5c-4719-9dc1-57a4814342e7
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/30/2018
-ms.author: sethm
-ms.openlocfilehash: 5264930dcb802c2a58abc179bdd0041acc9f58d0
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.author: shvija
+ms.openlocfilehash: 484b5109678b04943e59b0e6bc516926f5d61838
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32311375"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40003161"
 ---
 # <a name="event-hubs-authentication-and-security-model-overview"></a>Обзор проверки подлинности концентраторов событий и модели безопасности
 
@@ -111,11 +111,13 @@ SharedAccessSignature sr=contoso&sig=nPzdNN%2Gli0ifrfJwaK4mkK0RqAB%2byJUlt%2bGFm
 
 Чтобы узнать больше о концентраторах событий, посетите следующие разделы:
 
-* [Event Hubs overview]
+* 
+  [Общие сведения о Центрах событий]
 * [Обзор подписанных URL-адресов]
-* [Примеры приложений, использующие концентраторы событий]
+* [Примеры приложений, использующих концентраторы событий]
 
-[Event Hubs overview]: event-hubs-what-is-event-hubs.md
-[Примеры приложений, использующие концентраторы событий]: https://github.com/Azure/azure-event-hubs/tree/master/samples
+
+  [Общие сведения о Центрах событий]: event-hubs-what-is-event-hubs.md
+[Примеры приложений, использующих концентраторы событий]: https://github.com/Azure/azure-event-hubs/tree/master/samples
 [Обзор подписанных URL-адресов]: ../service-bus-messaging/service-bus-sas.md
 

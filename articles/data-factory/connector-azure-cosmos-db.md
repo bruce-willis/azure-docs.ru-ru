@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/28/2018
 ms.author: jingwang
-ms.openlocfilehash: 6c0921a466864bf2b07711cfcd1eac397c5ced83
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 1afd64fbd7019164f0e1f5c850f2dcd8250cdbfc
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325359"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39600342"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB или из нее с помощью фабрики данных Azure
 
@@ -35,9 +35,9 @@ ms.locfileid: "39325359"
 В частности, Azure Cosmos DB поддерживает:
 
 - [API SQL](https://docs.microsoft.com/azure/cosmos-db/documentdb-introduction) для Cosmos DB.
-- Импорт и экспорт документов JSON "как есть", копирование данных в набор табличных данных и из него, например базу данных SQL, CSV-файлы и т. д.
+- Импорт и экспорт документов JSON "как есть", копирование данных в набор табличных данных и из него, например базу данных SQL, CSV-файлы и т. д. Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Cosmos DB либо из них см. в разделе [Импорт и экспорт документов JSON](#importexport-json-documents).
 
-Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Cosmos DB либо из них см. в разделе [Импорт и экспорт документов JSON](#importexport-json-documents).
+Фабрика данных интегрируется с [библиотекой массового исполнителя Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started), чтобы обеспечить оптимальную производительность при операциях записи в Cosmos DB.
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -166,7 +166,7 @@ ms.locfileid: "39325359"
 |:--- |:--- |:--- |
 | Тип | Свойство type приемника действия копирования должно иметь значение **DocumentDbCollectionSink**. |Yes |
 | writeBehavior |Описание способов записи данных в Cosmos DB. Допустимые значения: `insert` и `upsert`.<br/>Поведение **upsert** — замена документа, если документ с таким идентификатором уже существует. В противном случае вставьте его. Обратите внимание, что ADF автоматически создает идентификатор документа, если он не указан в исходном документе или сопоставлении столбцов). Это значит, что документ должен иметь идентификатор, чтобы обеспечить надлежащую работу upsert. |Нет (по умолчанию используется Insert) |
-| writeBatchSize | Фабрика данных использует [массовый исполнитель Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Cosmos DB. writeBatchSize определяет размер документов, которые мы каждый раз предоставляем в библиотеку. Вы можете попробовать увеличить writeBatchSize для повышения производительности. |Нет  |
+| writeBatchSize | Фабрика данных использует [библиотеку массового исполнителя Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Cosmos DB. writeBatchSize определяет размер документов, которые мы каждый раз предоставляем в библиотеку. Вы можете попробовать увеличить writeBatchSize для повышения производительности. |Нет, значение по умолчанию — 10 000. |
 | nestingSeparator |Такой специальный символ в имени исходного столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает следующую структуру JSON в документе Cosmos DB: `"Name": {"First": "[value maps to this column from source]"}`, в которой nestedSeparator является точкой. |Нет (значение по умолчанию — точка `.`) |
 
 **Пример.**

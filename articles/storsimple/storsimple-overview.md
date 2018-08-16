@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 07/10/2017
 ms.author: v-sharos@microsoft.com
-ms.openlocfilehash: b0d6a797e4fe84ce2cb969d001ff96177f6ac641
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: 946b5a568d98367daec0244968b962618f22ae76
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37097052"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038511"
 ---
 # <a name="storsimple-8000-series-a-hybrid-cloud-storage-solution"></a>Серия StorSimple 8000: решение гибридного облачного хранилища
 ## <a name="overview"></a>Обзор
@@ -57,7 +57,7 @@ StorSimple использует [многоуровневое хранилище
 * **Облачное устройство StorSimple**, также известное как виртуальный модуль StorSimple, — это версия программного обеспечения устройства StorSimple, которая реплицирует архитектуру и большинство возможностей физического гибридного запоминающего устройства. Облачное устройство StorSimple выполняется на одном узле в виртуальной машине Azure. Виртуальные устройства класса Premium, использующие преимущества хранилища класса Premium Azure, доступны в обновлении 2 и более поздних версий.
 * **Служба диспетчера устройств StorSimple** — расширение портала Azure, которое позволяет управлять обычным или облачным устройством StorSimple в одном веб-интерфейсе. Вы можете использовать службу диспетчера устройств StorSimple для создания служб и управления ими, просмотра устройств, политик архивации и каталога резервных копий и управления ими, просмотра оповещений, управления томами.
 * **Windows PowerShell для StorSimple** — интерфейс командной строки, который можно использовать для управления устройством StorSimple. Windows PowerShell для StorSimple содержит функции, которые позволяют зарегистрировать устройство StorSimple, настроить сетевой интерфейс на устройстве, установить определенные типы обновлений, устранить неполадки с устройством в сеансе поддержки и изменить состояние устройства. Вы можете получить доступ к Windows PowerShell для StorSimple, подключившись к последовательной консоли, или с помощью удаленного взаимодействия Windows PowerShell.
-* **Командлеты Azure PowerShell для StorSimple** — коллекция командлетов Windows PowerShell, которые позволяют автоматизировать задачи обновления и миграции из командной строки. Дополнительные сведения о командлетах Azure PowerShell для StorSimple см. в [справочной документации по командлетам](/powershell/module/azure/?view=azuresmps-3.7.0#azure).
+* **Командлеты Azure PowerShell для StorSimple** — коллекция командлетов Windows PowerShell, которые позволяют автоматизировать задачи обновления и миграции из командной строки. Дополнительные сведения о командлетах Azure PowerShell для StorSimple см. в [справочной документации по командлетам](/powershell/module/servicemanagement/azure/?view=azuresmps-3.7.0#azure).
 * **Диспетчер моментальных снимков StorSimple** — оснастка консоли управления (MMC), которая использует группы томов и службу теневого копирования томов Windows для создания резервных копий, согласованных с приложениями. Кроме того, вы можете использовать диспетчер моментальных снимков StorSimple для создания расписания архивации и клонирования или восстановления томов.
 * **Адаптер StorSimple для SharePoint** — это средство, которое прозрачно распространяет хранилище и функцию защиты данных Microsoft Azure StorSimple на фермы SharePoint Server и при этом предоставляет возможности просмотра и управления StorSimple с портала администрирования SharePoint.
 
@@ -126,7 +126,7 @@ Windows PowerShell для StorSimple предоставляет интерфей
 Дополнительные сведения см. в статье [Администрирование устройства с помощью Windows PowerShell для StorSimple](storsimple-8000-windows-powershell-administration.md).
 
 ## <a name="azure-powershell-storsimple-cmdlets"></a>Командлеты Azure PowerShell для StorSimple
-Командлеты Azure PowerShell для StorSimple — это набор командлетов Windows PowerShell, которые позволяют автоматизировать задачи обслуживания и миграции из командной строки. Дополнительные сведения о командлетах Azure PowerShell для StorSimple см. в [справочной документации по командлетам](/powershell/module/azure/?view=azuresmps-3.7.0).
+Командлеты Azure PowerShell для StorSimple — это набор командлетов Windows PowerShell, которые позволяют автоматизировать задачи обслуживания и миграции из командной строки. Дополнительные сведения о командлетах Azure PowerShell для StorSimple см. в [справочной документации по командлетам](/powershell/module/servicemanagement/azure/?view=azuresmps-3.7.0).
 
 ## <a name="storsimple-snapshot-manager"></a>Диспетчер моментальных снимков StorSimple
 Диспетчер моментальных снимков StorSimple — это оснастка консоли управления (MMC), которую можно использовать для создания согласованных резервных копий на момент времени для локальных и облачных данных. Оснастка выполняется на узле Windows Server. Вы можете использовать диспетчер моментальных снимков StorSimple для следующего.

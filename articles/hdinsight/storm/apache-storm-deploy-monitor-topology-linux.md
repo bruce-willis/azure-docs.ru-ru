@@ -1,26 +1,22 @@
 ---
-title: Развертывание топологий Apache Storm в HDInsight на основе Linux и управление ими | Документация Майкрософт
+title: Развертывание и администрирование топологий Apache Storm в Azure HDInsight
 description: Узнайте, как развертывать и отслеживать топологии Apache Storm, а также управлять ими с помощью панели мониторинга Storm в HDInsight на основе Linux. Использование инструментов Hadoop для Visual Studio.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 35086e62-d6d8-4ccf-8cae-00073464a1e1
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.author: larryfr
-ms.openlocfilehash: 53433e6a677a2576a11209075f397bb5f246b875
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: cf3de9899cdefd5761bb31f64bcb537b12eb4df3
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129291"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39619470"
 ---
-# <a name="deploy-and-manage-apache-storm-topologies-on-hdinsight"></a>Развертывание топологий Apache Storm в HDInsight и управление ими
+# <a name="deploy-and-manage-apache-storm-topologies-on-azure-hdinsight"></a>Развертывание и администрирование топологий Apache Storm в Azure HDInsight 
 
 С помощью этого документа вы ознакомитесь с основами управления и мониторинга топологий Storm, работающих в Storm в кластерах HDInsight.
 
@@ -30,7 +26,7 @@ ms.locfileid: "37129291"
 > Сведения о развертывании и мониторинге топологий в HDInsight под управлением Windows см. в статье [Развертывание топологий Apache Storm в HDInsight под управлением Windows и управление ими](apache-storm-deploy-monitor-topology.md).
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Storm под управлением Linux в кластере HDInsight.** Инструкции по созданию кластера см. в статье [Руководство по Apache Storm в HDInsight: начало работы с анализом больших объемов данных в HDInsight с помощью примеров Storm Starter](apache-storm-tutorial-get-started-linux.md).
 

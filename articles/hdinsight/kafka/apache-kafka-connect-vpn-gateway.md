@@ -1,26 +1,20 @@
 ---
-title: Подключение к Kafka с помощью виртуальных сетей в Azure HDInsight | Документация Майкрософт
+title: Подключение к Kafka с помощью виртуальных сетей в Azure HDInsight
 description: Узнайте, как подключиться напрямую к Kafka в HDInsight с помощью виртуальной сети Azure. Узнайте, как подключиться к Kafka из клиентов разработки с помощью шлюза VPN или из клиентов в локальной сети, используя устройство шлюза VPN.
 services: hdinsight
-documentationCenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
 ms.service: hdinsight
-ms.devlang: ''
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: big-data
 ms.date: 05/02/2018
-ms.author: larryfr
-ms.openlocfilehash: 2740b5cf483fe3fbc2644510461863b939ffaae3
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.openlocfilehash: 61732a7ac4daa9f3425d3f7f3b689be57d46b8cd
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32779317"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620269"
 ---
 # <a name="connect-to-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Подключение к Kafka в HDInsight с помощью виртуальной сети Azure
 

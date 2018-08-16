@@ -1,25 +1,20 @@
 ---
-title: Установка опубликованного приложения Dataiku DDS в Azure HDInsight | Документация Майкрософт
+title: Установка опубликованного приложения Dataiku DDS в Azure HDInsight
 description: Установка и использование стороннего приложения Hadoop Dataiku DDS.
 services: hdinsight
-documentationcenter: ''
 author: ashishthaps
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: facee9187528fa0c6a74f71ee73636dc23ca35ba
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 8d01b94ce4af6e3f5bcdc05ce84ef6deb1d3cae6
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31394624"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39598777"
 ---
 # <a name="install-published-application---dataiku-dds"></a>Установка опубликованного приложения Dataiku DDS
 
@@ -35,7 +30,7 @@ Dataiku [Data Science Studio (DSS)](https://www.dataiku.com/dss/features/connect
 
 Вы можете использовать DSS для сборки проектов, которые будут создавать задания MapReduce или Spark. Эти задания выполняются как обычные задания MapReduce или Spark на HDInsight, поэтому кластер можно масштабировать по запросу.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для установки этого приложения на новый кластер HDInsight или на имеющийся кластер требуется следующая конфигурация:
 

@@ -1,25 +1,20 @@
 ---
-title: Развертывание топологий Apache Storm в HDInsight и управление ими | Документация Майкрософт
-description: Узнайте, как развертывать и отслеживать топологии Apache Storm, а также управлять ими с помощью панели мониторинга Storm в HDInsight. Использование инструментов Hadoop для Visual Studio.
+title: Развертывание и администрирование топологий Apache Storm в Azure HDInsight
+description: Узнайте, как развертывать, отслеживать и администрировать топологии Apache Storm с помощью панели мониторинга Storm в HDInsight для Windows. Использование инструментов Hadoop для Visual Studio.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 5e542072-f014-42aa-82d6-2694a76df520
 ms.service: hdinsight
-ms.devlang: java
+author: jasonwhowell
+editor: jasonwhowell
 ms.topic: conceptual
 ms.date: 03/01/2017
-ms.author: larryfr
+ms.author: jasonh
 ROBOTS: NOINDEX
-ms.openlocfilehash: 55c92e6408522b8a96a37dbedd99d929af1e49fb
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 1ad1d6662d276039ae1e01e49c60fc06682cb54a
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31414989"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39622822"
 ---
 # <a name="deploy-and-manage-apache-storm-topologies-on-windows-based-hdinsight"></a>Развертывание топологий Apache Storm в HDInsight под управлением Windows и управление ими
 
@@ -32,7 +27,7 @@ ms.locfileid: "31414989"
 >
 > Сведения о развертывании топологий Storm и управлении ими с помощью кластера HDInsight под управлением Linux см. в статье [Развертывание топологий Apache Storm в HDInsight под управлением Linux и управление ими](apache-storm-deploy-monitor-topology-linux.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Apache Storm в HDInsight** — инструкции по созданию кластера представлены в статье [Начало работы с Apache Storm в HDInsight](apache-storm-tutorial-get-started-linux.md).
 
@@ -160,7 +155,7 @@ ms.locfileid: "31414989"
    > Топологии Storm выполняются, пока не будут удалены или пока не будет удален кластер.
 
 
-## <a name="rest-api"></a>ИНТЕРФЕЙС REST API
+## <a name="rest-api"></a>REST API
 
 Пользовательский интерфейс Storm построен на базе REST API, поэтому функциональность отслеживания и управления можно реализовать аналогичным образом с помощью API. С помощью REST API можно создать пользовательские средства для отслеживания топологий Storm и управления ими.
 

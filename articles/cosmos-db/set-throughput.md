@@ -2,19 +2,19 @@
 title: Подготовка пропускной способности для Azure Cosmos DB | Документация Майкрософт
 description: Узнайте, как задать подготовленную пропускную способность для контейнеров, коллекций, графов и таблиц Azure Cosmos DB.
 services: cosmos-db
-author: SnehaGunda
+author: aliuy
 manager: kfile
 ms.service: cosmos-db
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/03/2018
-ms.author: sngun
-ms.openlocfilehash: a454bfc06cf119d43e545a5a911a2f6686fb755b
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.author: andrl
+ms.openlocfilehash: 2c3e4806aef506ef9016699b46eadd5f8a187224
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600165"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038455"
 ---
 # <a name="set-and-get-throughput-for-azure-cosmos-db-containers-and-database"></a>Настройка и получение пропускной способности контейнеров и базы данных Azure Cosmos DB
 
@@ -262,20 +262,6 @@ API MongoDB поддерживает пользовательскую коман
 > Если размер и количество индексированных свойств для типов элемента существенно отличаются, запишите затраты единиц запросов для соответствующей операции, выполняемой с каждым *типом* стандартного элемента.
 > 
 > 
-
-## <a id="RequestchargeGraphAPI"></a>Получение сведений о затратах единиц запроса для учетных записей Gremlin API 
-
-Ниже приведен пример того, как получить сведения о затратах единиц запроса для учетных записей Gremlin API с помощью библиотеки Gremlin.Net. 
-
-```csharp
-
-var response = await gremlinClient.SubmitAsync<int>(requestMsg, bindings);
-                var resultSet = response.AsResultSet();
-                var statusAttributes= resultSet.StatusAttributes;
-```
-
-Помимо представленного выше метода, для расчета единиц запросов можно использовать заголовок "x-ms-total-request-charge".
-
 
 ## <a name="throughput-faq"></a>Часто задаваемые вопросы о пропускной способности
 

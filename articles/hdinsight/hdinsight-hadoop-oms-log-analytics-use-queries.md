@@ -1,24 +1,20 @@
 ---
-title: Запрос Azure Log Analytics для мониторинга кластеров Azure HDInsight | Документация Майкрософт
+title: Запрос в Azure Log Analytics для мониторинга кластеров Azure HDInsight
 description: Узнайте, как выполнять запросы в Azure Log Analytics для мониторинга заданий, выполняемых в кластере HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: nitinme
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/21/2018
-ms.author: nitinme
-ms.openlocfilehash: 61467d702f3123085fd7e067a8d56c30331c5bc6
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.date: 06/15/2018
+ms.author: jasonh
+ms.openlocfilehash: 2d2de3c2e2b291ec1f5ad170350f19e9e0582eaa
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31401104"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39609315"
 ---
 # <a name="query-azure-log-analytics-to-monitor-hdinsight-clusters"></a>Запрос в Azure Log Analytics для мониторинга кластеров HDInsight
 
@@ -28,28 +24,19 @@ ms.locfileid: "31401104"
 * [Поиск определенных сообщений журнала](#search-for-specific-log-messages).
 * [Создание оповещений о событиях](#create-alerts-for-tracking-events).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-* Для использования Log Analytics необходимо настроить кластер HDInsight. Инструкции см. в статье [Use Azure Log Analytics to monitor HDInsight clusters (Preview)](hdinsight-hadoop-oms-log-analytics-tutorial.md) (Использование Azure Log Analytics для мониторинга кластеров HDInsight (предварительная версия)).
-
-* Необходимо добавить решение по управлению, связанное с кластером HDInsight, в рабочую область [Log Analytics](../operations-management-suite/operations-management-suite-overview.md) согласно инструкциям в статье [Добавление решений по управлению кластерами HDInsight в Log Analytics](hdinsight-hadoop-oms-log-analytics-management-solutions.md).
+* Вы должны настроить кластер HDInsight для использования Azure Log Analytics и добавить в рабочую область решения для управления Log Analytics, связанные с кластером HDInsight. Инструкции см. в статье [Use Azure Log Analytics to monitor HDInsight clusters (Preview)](hdinsight-hadoop-oms-log-analytics-tutorial.md) (Использование Azure Log Analytics для мониторинга кластеров HDInsight (предварительная версия)).
 
 ## <a name="analyze-hdinsight-cluster-metrics"></a>Анализ метрик кластера HDInsight
 
 Узнайте, как выполнить поиск определенных метрик для кластера HDInsight.
 
-1. Откройте кластер HDInsight, связанный с Azure Log Analytics, на портале Azure.
-2. Щелкните **Мониторинг**, а затем — **Открыть панель мониторинга OMS**.
+1. Откройте рабочую область OMS, которая связана с вашим кластером HDInsight на портале Azure.
+2. Выберите плитку **Поиск по журналам**.
+3. В поле поиска всех метрик введите следующий запрос для поиска всех доступных метрик для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите кнопку **ЗАПУСК**.
 
-    ![Открытие панели мониторинга OMS](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "Открытие панели мониторинга OMS")
-
-2. Выберите **Поиск по журналу** в меню слева.
-
-    ![Открытие поиска по журналам](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "Открытие поиска по журналам")
-
-3. В поле поиска всех метрик введите следующий запрос для поиска всех доступных метрик для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите клавишу **ВВОД**.
-
-        `search *` 
+        search *
 
     ![Поиск всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics.png "Поиск всех метрик")
 
@@ -57,12 +44,10 @@ ms.locfileid: "31401104"
 
     ![Выходные данные поиска всех метрик](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-metrics-output.png "Выходные данные поиска всех метрик")
 
-5. В левой области в категории **Тип** выберите метрику, которую необходимо изучить подробнее, и нажмите кнопку **Применить**. На следующем снимке экрана показано, что выбран тип `metrics_resourcemanager_queue_root_default_CL`. 
+5. В левой области в категории **Тип** выберите метрику, которую необходимо изучить подробнее, и нажмите кнопку **Применить**. На следующем снимке экрана показано, что выбран тип `metrics_resourcemanager_queue_root_default_CL`.
 
     > [!NOTE]
     > Чтобы найти необходимую метрику, может потребоваться нажать кнопку **[+] Дополнительно**. Кроме того, кнопка **Применить** находится в нижней части списка, поэтому нужно прокрутить вниз, чтобы увидеть ее.
-    > 
-    >    
 
     Обратите внимание, что запрос в текстовом поле изменяется на тот, который показан в выделенном поле на следующем снимке экрана:
 
@@ -80,16 +65,9 @@ ms.locfileid: "31401104"
 
 Узнайте, как искать сообщения об ошибках за определенный интервал времени. Эти шаги являются всего лишь одним примером того, как можно получить сообщение об ошибке, которое вас интересует. Для поиска нужных ошибок можно использовать любое доступное свойство.
 
-1. Откройте кластер HDInsight, связанный с Azure Log Analytics, на портале Azure.
-2. Щелкните **Мониторинг**, а затем **Открыть панель мониторинга OMS**.
-
-    ![Открытие панели мониторинга OMS](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "Открытие панели мониторинга OMS")
-
-2. На начальном экране портала OMS щелкните **Поиск по журналам**.
-
-    ![Открытие поиска по журналам](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "Открытие поиска по журналам")
-
-3. Введите следующий запрос для поиска всех сообщений об ошибках для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите клавишу **ВВОД**. 
+1. Откройте рабочую область OMS, которая связана с вашим кластером HDInsight на портале Azure.
+2. Выберите плитку **Поиск по журналам**.
+3. Введите следующий запрос для поиска всех сообщений об ошибках для всех кластеров HDInsight, настроенных для использования Azure Log Analytics, а затем нажмите клавишу **ЗАПУСК**. 
 
          search "Error"
 
@@ -97,8 +75,8 @@ ms.locfileid: "31401104"
 
     ![Выходные данные поиска всех ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-all-errors-output.png "Выходные данные поиска всех ошибок")
 
-5. В левой области в категории **Тип** найдите тип ошибки, который необходимо изучить подробнее, и нажмите кнопку **Применить**.  Обратите внимание, что результаты уточнены и показывают только ошибки выбранного типа.
-7. Можно получить более подробную информацию о конкретном списке ошибок, используя параметры, доступные на панели слева. Например, 
+4. В левой области в категории **Тип** найдите тип ошибки, который необходимо изучить подробнее, и нажмите кнопку **Применить**.  Обратите внимание, что результаты уточнены и показывают только ошибки выбранного типа.
+5. Можно получить более подробную информацию о конкретном списке ошибок, используя параметры, доступные на панели слева. Например: 
 
     - чтобы просмотреть сообщения об ошибках из определенного рабочего узла, сделайте следующее:
 
@@ -108,46 +86,40 @@ ms.locfileid: "31401104"
 
         ![Выходные данные поиска конкретных ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-time.png "Выходные данные поиска конкретных ошибок")
 
-9. Чтобы просмотреть определенную ошибку, сделайте следующее. Щелкните **[+]show more** ([+] больше), чтобы просмотреть фактическое сообщение об ошибке.
+6. Чтобы просмотреть определенную ошибку, сделайте следующее. Щелкните **[+]show more** ([+] больше), чтобы просмотреть фактическое сообщение об ошибке.
 
     ![Выходные данные поиска конкретных ошибок](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-search-specific-error-arrived.png "Выходные данные поиска конкретных ошибок")
 
 ## <a name="create-alerts-for-tracking-events"></a>Создание оповещений для отслеживания событий
 
-Первым шагом создания оповещения является получение запроса, на основе которого активируется оповещение. Для простоты воспользуемся следующим запросом, который предоставляет список приложений, в которых возник сбой, запущенных на кластерах HDInsight.
+Первым шагом создания оповещения является получение запроса, на основе которого активируется оповещение. Для создания оповещения можно использовать любой запрос.
 
-    metrics_resourcemanager_queue_root_default_CL | where AppsFailed_d > 0
+1. Откройте рабочую область Log Analytics, которая связана с вашим кластером HDInsight на портале Azure.
+2. Выберите плитку **Поиск по журналам**.
+3. Выполните следующий запрос, на основе которого требуется создать оповещение, а затем нажмите клавишу **ЗАПУСК**.
 
-Для создания оповещения можно использовать любой запрос.
+        metrics_resourcemanager_queue_root_default_CL | where AppsFailed_d > 0
 
-1. Откройте кластер HDInsight, связанный с Azure Log Analytics, на портале Azure.
-2. Щелкните **Мониторинг**, а затем — **Открыть панель мониторинга OMS**.
+    Запрос вернет список запущенных на кластерах HDInsight приложений, в которых возник сбой.
 
-    ![Открытие панели мониторинга OMS](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-open-oms-dashboard.png "Открытие панели мониторинга OMS")
-
-2. На начальном экране портала OMS щелкните **Поиск по журналам**.
-
-    ![Открытие поиска по журналам](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-click-log-search.png "Открытие поиска по журналам")
-
-3. Выполните следующий запрос, на основе которого требуется создать оповещение, а затем нажмите клавишу **ВВОД**.
-
-        metrics_resourcemanager_queue_root-default-CL | where AppsFailed_d > 0
-
-4. В верхней части страницы щелкните **Оповещение**.
+4. Выберите **Новое правило генерации оповещений** в верхней части страницы.
 
     ![Ввод запроса для создания оповещения](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert-query.png "Ввод запроса для создания оповещения")
 
-4. В окне **Добавить правило оповещения** введите запрос и другие сведения, чтобы создать оповещение, а затем щелкните **Сохранить**.
+5. В окне **Создать правило** введите запрос и другие сведения, чтобы создать оповещение, а затем щелкните **Создать правило генерации оповещений**.
 
     ![Ввод запроса для создания оповещения](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-create-alert.png "Ввод запроса для создания оповещения")
 
-    На снимке экрана показана конфигурация для отправки уведомления по электронной почте, когда запрос оповещения вернет выходные данные.
+Чтобы изменить или удалить оповещение:
 
-5. Имеющееся оповещение можно изменить или удалить. Для этого на любой странице портала OMS щелкните значок **Параметры**.
+1. Откройте рабочую область Log Analytics на портале Azure.
+2. В меню слева выберите **Оповещение**.
+3. Выберите оповещение, которое требуется изменить или удалить.
+4. Доступны следующие варианты: **Сохранить**, **Отменить**, **Отключить** и **Удалить**.
 
-    ![Ввод запроса для создания оповещения](./media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png "Ввод запроса для создания оповещения")
+    ![Удаление и изменение оповещения HDInsight в OMS Log Analytics](media/hdinsight-hadoop-oms-log-analytics-use-queries/hdinsight-log-analytics-edit-alert.png)
 
-6. На странице **Параметры** щелкните **Оповещения**, чтобы просмотреть созданные оповещения. Оповещения также можно отключить, изменить или удалить. Дополнительные сведения см. в статье [Работа с правилами генерации оповещений в Log Analytics](../log-analytics/log-analytics-alerts-creating.md).
+Дополнительные сведения см. в статье [Работа с правилами генерации оповещений в Log Analytics](../log-analytics/log-analytics-alerts-creating.md).
 
 ## <a name="see-also"></a>См. также
 

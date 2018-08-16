@@ -1,24 +1,20 @@
 ---
-title: Средства Data Lake для Visual Studio с песочницей Hortonworks — Azure HDInsight | Документы Майкрософт
+title: Использование средств Data Lake для Visual Studio с песочницей Hortonworks в Azure HDInsight
 description: Узнайте, как использовать средства Azure Data Lake для Visual Studio с песочницей Hortonworks, работающей в локальной виртуальной машине. С помощью этих средств можно создавать и выполнять задания Hive и Pig в песочнице и просматривать выходные данные и журнал задания.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
-ms.assetid: e3434c45-95d1-4b96-ad4c-fb59870e2ff0
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.author: larryfr
-ms.openlocfilehash: a4c1f5a8100d5d4017e56ef129aa4f4826746868
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.author: jasonh
+ms.openlocfilehash: 53bd629bcdf272e97c03dfb60c2693158698b837
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33886737"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597385"
 ---
 # <a name="use-the-azure-data-lake-tools-for-visual-studio-with-the-hortonworks-sandbox"></a>Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks
 
@@ -26,7 +22,7 @@ Azure Data Lake включает в себя средства для работ�
 
 Использование песочницы Hortonworks позволяет работать с Hadoop локально в среде разработки. Если вам необходимо развернуть решение в нужном масштабе после его разработки, можно перейти к кластеру HDInsight.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Песочница Hortonworks, работающая в виртуальной машине в среде разработки. Приведенные в этом документе сведения протестированы с использованием песочницы, работающей в Oracle VirtualBox. Сведения о настройке песочницы см. в статье [Начало работы с песочницей Hadoop, эмулятором на виртуальной машине](hadoop/apache-hadoop-emulator-get-started.md) .
 

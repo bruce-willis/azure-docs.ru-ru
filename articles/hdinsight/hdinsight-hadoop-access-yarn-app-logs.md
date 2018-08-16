@@ -1,25 +1,20 @@
 ---
-title: Программный доступ к журналам приложений Hadoop YARN в Azure | Документы Майкрософт
+title: Доступ к журналам приложений Hadoop YARN с помощью программных средств в Azure
 description: Программный доступ к журналам приложений в кластере Hadoop в HDInsight.
 services: hdinsight
-documentationcenter: ''
-tags: azure-portal
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 0198d6c9-7767-4682-bd34-42838cf48fc5
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/25/2017
-ms.author: jgao
+ms.author: jasonh
 ROBOTS: NOINDEX
-ms.openlocfilehash: aab7865548c034cb550874c31977b05936dc45b9
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 42484f2a93ab5effdcafca0f0769c3fb4cdbb926
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31403940"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39600189"
 ---
 # <a name="access-yarn-application-logs-on-windows-based-hdinsight"></a>Доступ к журналам приложений YARN в HDInsight под управлением Windows
 Из этой статьи вы узнаете, как получить доступ к журналам приложений YARN, завершивших работу в кластере Hadoop под управлением Windows в Azure HDInsight.
@@ -29,7 +24,7 @@ ms.locfileid: "31403940"
 >
 
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 * Кластер HDInsight на платформе Windows См.  статью [Создание кластеров Hadoop под управлением Windows в HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
 ## <a name="yarn-timeline-server"></a>Сервер временной шкалы YARN

@@ -2,19 +2,19 @@
 title: Визуализация аномалий данных в событиях реального времени, отправляемых в концентраторы событий Azure | Документы Майкрософт
 description: Руководство. Визуализация аномалий данных в событиях реального времени, отправляемых в концентраторы событий Microsoft Azure
 services: event-hubs
-author: robinsh
+author: ShubhaVijayasarathy
 manager: timlt
-ms.author: robinsh
-ms.date: 06/26/2018
+ms.author: shvija
+ms.date: 08/08/2018
 ms.topic: tutorial
 ms.service: event-hubs
 ms.custom: mvc
-ms.openlocfilehash: 28c03d12954b172388a92dd0c3f6aed2266ffaf7
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 04a9a3b3df44814d680f01595d70ced08a946591
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37132773"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40004119"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Руководство. Визуализация аномалий данных в событиях реального времени, отправляемых в концентраторы событий Azure
 
@@ -30,18 +30,18 @@ ms.locfileid: "37132773"
 > * Настройка задания Stream Analytics для обработки этих транзакций
 > * Настройка визуализации Power BI для отображения результатов
 
-Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись][], прежде чем начать работу.
+Для работы с этим руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-- Установите [Visual Studio](https://www.visualstudio.com/). 
+- Установить [Visual Studio](https://www.visualstudio.com/). 
 - Вам понадобится учетная запись Power BI для анализа выходных данных из задания Stream Analytics. Доступна [бесплатная пробная версия Power BI](https://app.powerbi.com/signupredirect?pbi_source=web).
 
 ## <a name="set-up-resources"></a>Настройка ресурсов
 
-Для этого руководства вам понадобится пространство имен концентраторов событий и концентратор событий. Создать эти ресурсы можно в интерфейсе командной строки (CLI) Azure или с помощью Azure PowerShell. Используйте для всех ресурсов одну и ту же группу ресурсов и расположение. Это позволит по завершении удалить все за один шаг, просто удалив группу ресурсов.
+Для этого руководства вам понадобится пространство имен концентраторов событий и концентратор событий. Создать эти ресурсы можно в интерфейсе командной строки (CLI) Azure или с помощью Azure PowerShell. Используйте те же группу ресурсов и расположение для всех ресурсов. Затем в конце, удалив группу ресурсов, можно удалить все данные за один шаг.
 
 В следующих разделах описано, как выполнить эти необходимые шаги. Следуя инструкциям по командной строке *или* PowerShell, выполните следующие действия:
 
@@ -164,13 +164,13 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 4. Замените **имя концентратора событий** именем вашего концентратора. Нажмите клавишу F5 для запуска приложения. Оно начнет отправлять события в концентратор, пока не отправит 1000 событий. В некоторых случаях для извлечения данных приложение должно быть в запущенном состоянии. Эти случаи указаны в следующих инструкциях, где это необходимо.
 
-## <a name="set-up-azure-stream-analytics"></a>Настройка Azure Stream Analytics
+## <a name="set-up-azure-stream-analytics"></a>Настройка Azure Stream Analytics
 
 Теперь мы можем начать передачу данных в концентратор событий. Чтобы использовать эти данные в визуализации Power BI, сначала создайте задание Stream Analytics для получения данных, которые затем будут передаваться в визуализацию.
 
-### <a name="create-the-stream-analytics-job"></a>Создание задания Stream Analytics
+### <a name="create-the-stream-analytics-job"></a>Создание задания Stream Analytics
 
-1. На портале Azure щелкните **Создать ресурс**. Введите **stream analytics** в поле поиска и нажмите клавишу **ВВОД**. Выберите **Задание Stream Analytics**. В панели задания Stream Analytics щелкните **Создать**. 
+1. На портале Azure щелкните **Создать ресурс**. Введите **stream analytics** в поле поиска и нажмите клавишу **ВВОД**. Выберите **Задание Stream Analytics**. В панели задания Stream Analytics щелкните **Создать**. 
 
 2. Введите для задания следующие данные.
 
@@ -184,9 +184,9 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
    ![Снимок экрана с созданием задания Stream Analytics.](./media/event-hubs-tutorial-visualize-anomalies/stream-analytics-add-job.png)
 
-    Для остальных полей оставьте значения по умолчанию. Щелкните **Создать**. 
+    Для остальных полей оставьте значения по умолчанию. Нажмите кнопку **Создать**. 
 
-### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
+### <a name="add-an-input-to-the-stream-analytics-job"></a>Добавление входных данных в задание Stream Analytics
 
 Если вам необходимо быстро перейти к панели **задания Stream Analytics** на портале, щелкните **Группа ресурсов** и выберите свою группу (**ContosoResourcesEH**). Это действие отобразит все ресурсы в группе, и вы сможете выбрать свое задание Stream Analytics. 
 
@@ -215,13 +215,13 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
    ![Снимок экрана с добавлением входного потока для задания Stream Analytics.](./media/event-hubs-tutorial-visualize-anomalies/stream-analytics-inputs.png)
 
-5. Щелкните **Сохранить**.
+5. Выберите команду **Сохранить**.
 
-### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
+### <a name="add-an-output-to-the-stream-analytics-job"></a>Добавление выходных данных в задание Stream Analytics
 
 1. В разделе **Топология задания** щелкните **Выходные данные**. Это поле содержит имя выходного потока, используемого при определении запроса для данных.
 
-2. На панели **выходных данных** щелкните **Добавить** и выберите **Power BI**. На появившемся экране заполните следующие поля.
+2. На панели **выходных данных** щелкните **Добавить** и выберите **Power BI**. На появившемся экране заполните следующие поля.
 
    **Выходной псевдоним**: **contosooutputs**. Уникальный псевдоним для выходных данных. 
 
@@ -237,9 +237,9 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 4. Для остальных полей оставьте значения по умолчанию.
 
-5. Щелкните **Сохранить**.
+5. Выберите команду **Сохранить**.
 
-### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса для задания Stream Analytics
+### <a name="configure-the-query-of-the-stream-analytics-job"></a>Настройка запроса задания Stream Analytics
 
 Этот запрос используется для получения данных, которые в итоге отправляются на визуализацию в Power BI. В запросе используются псевдонимы **contosoinputs** и **contosooutputs**, которые мы задали ранее при настройке задания. Запрос извлекает транзакции с кредитными картами, которые он считает мошенническими, то есть в случаях, когда транзакции с одним номером кредитной карты происходят в разных местах в течение одного пятисекундного интервала.
 
@@ -274,25 +274,25 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 2. В панели запроса щелкните точки рядом с входными данными **contosoinputs** и выберите **Образец данных с входа**.
 
-3. Укажите, что необходимы данные за три минуты, и нажмите кнопку **ОК**. Дождитесь уведомления о том, что выборка данных получена.
+3. Укажите, что необходимы данные за три минуты, и нажмите кнопку **ОК**. Дождитесь уведомления о выборке данных.
 
-4. Щелкните **Тест** и посмотрите, приходят ли результаты. Результаты отобразятся в разделе **Результаты** в нижней панели справа сразу под запросом.
+4. Щелкните **Тест** и убедитесь, что вы получаете результаты. Результаты отобразятся в разделе **Результаты** в нижней панели справа сразу под запросом.
 
 5. Закройте панель запроса.
 
-### <a name="run-the-stream-analytics-job"></a>Запуск задания Stream Analytics
+### <a name="run-the-stream-analytics-job"></a>Выполнение задания Stream Analytics
 
-В задании Stream Analytics щелкните **Запуск**, **Сейчас** и снова **Запуск**. После запуска состояние задания изменится с **Остановлено** на **Выполняется**.
+В задании Stream Analytics щелкните **Запуск**, **Сейчас** и снова **Запуск**. После успешного запуска состояние задания **Остановлено** изменится на **Выполняется**.
 
 ## <a name="set-up-the-power-bi-visualizations"></a>Настройка визуализаций Power BI
 
 1. Запустите приложение для обнаружения аномалий, чтобы отправлять данные в концентратор событий, пока вы настраиваете визуализацию Power BI. Возможно, потребуется запустить приложение несколько раз, так как при каждом запуске оно генерирует только 1000 транзакций.
 
-2. Войдите в свою учетную запись [Power BI](https://powerbi.microsoft.com/).
+2. Выполните вход в учетную запись [Power BI](https://powerbi.microsoft.com/).
 
 3. Перейдите в раздел **Моя рабочая область**.
 
-4. Щелкните **Наборы данных**.
+4. Нажмите кнопку **Наборы данных**.
 
    Вы должны увидеть набор данных, указанный при создании выходных данных для задания Stream Analytics (**contosoehdataset**). Вывод набора данных в первый раз может занять 5–10 минут.
 
@@ -318,7 +318,7 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
    Щелкните **Далее**.
 
-10. Задайте заголовок **Случаи мошенничества** и подзаголовок **Сумма за последние несколько минут**. Щелкните **Применить**. В результате плитка появится на панели мониторинга.
+10. Задайте заголовок **Случаи мошенничества** и подзаголовок **Сумма за последние несколько минут**. Нажмите кнопку **Применить**. В результате плитка появится на панели мониторинга.
 
     ![Снимок экрана с указанием заголовка и подзаголовка для плитки панели мониторинга.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-tile-details.png)
 
@@ -347,13 +347,13 @@ Write-Host "Connection string is " $eventHubKey.PrimaryConnectionString
 
 Если вы хотите удалить все созданные ресурсы, удалите данные визуализации Power BI, а затемгруппу ресурсов. Удаление группы ресурсов приведет к удалению всех ресурсов, которые она содержит. В нашем случае будут удалены концентратор событий, пространство имен концентратора событий, задание Stream Analytics и сама группа ресурсов. 
 
-### <a name="clean-up-resources-in-the-power-bi-visualization"></a>Очистка ресурсов в визуализации Power BI
+### <a name="clean-up-resources-in-the-power-bi-visualization"></a>Очистка ресурсов в визуализации Power BI
 
 Войдите в учетную запись Power BI. Перейдите в раздел **Моя рабочая область**. В строке с именем вашей панели мониторинга щелкните значок корзины. Затем перейдите к **наборам данных** и щелкните значок корзины для удаления набора (**contosoehdataset**).
 
-### <a name="clean-up-resources-using-azure-cli"></a>Очистка ресурсов с помощью Azure CLI
+### <a name="clean-up-resources-using-azure-cli"></a>Очистка ресурсов с помощью Azure CLI
 
-Чтобы удалить группу ресурсов, выполните команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
+Чтобы удалить группу ресурсов, используйте команду [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name $resourceGroup
@@ -367,9 +367,9 @@ az group delete --name $resourceGroup
 Remove-AzureRmResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнять следующие задачи:
+Из этого руководства вы узнали, как выполнить следующие задачи:
 > [!div class="checklist"]
 > * Создание пространства имен концентраторов событий
 > * Создание концентратора событий
@@ -382,4 +382,4 @@ Remove-AzureRmResourceGroup -Name $resourceGroup
 > [!div class="nextstepaction"]
 > [Приступая к отправке событий в концентраторы событий Azure на платформе .NET Standard](event-hubs-dotnet-standard-getstarted-send.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio

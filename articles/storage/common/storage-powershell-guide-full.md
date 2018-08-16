@@ -2,23 +2,18 @@
 title: Использование Azure PowerShell со службой хранилища Azure | Документация Майкрософт
 description: Узнайте, как использовать командлеты Azure PowerShell для службы хранилища Azure.
 services: storage
-documentationcenter: na
 author: roygara
-manager: jeconnoc
-ms.assetid: f4704f58-abc6-4f89-8b6d-1b1659746f5a
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
-ms.date: 11/02/2017
+ms.date: 06/13/2018
 ms.author: rogarana
-ms.openlocfilehash: 951b69877718c5da3c165c24c297906a1ad9a976
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: common
+ms.openlocfilehash: 6cf7f35e60502d0e21ffa2b777f1700a57add965
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34652507"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038407"
 ---
 # <a name="using-azure-powershell-with-azure-storage"></a>Использование Azure PowerShell со службой хранилища Azure
 
@@ -55,7 +50,7 @@ Connect-AzureRmAccount
 
 ## <a name="list-the-storage-accounts-in-the-subscription"></a>Вывод списка учетных записей хранения в подписке
 
-Выполните командлет [Get-AzureRMStorageAccount](/powershell/module/azurerm.resources/get-azurermstorageaccount), чтобы получить список учетных записей хранения в текущей подписке. 
+Выполните командлет [Get-AzureRMStorageAccount](/powershell/module/azurerm.storage/Get-AzureRmStorageAccount), чтобы получить список учетных записей хранения в текущей подписке. 
 
 ```powershell
 Get-AzureRMStorageAccount | Select StorageAccountName, Location
@@ -108,11 +103,11 @@ $ctx = $storageAccount.Context
 
 В этом сценарии используются следующие командлеты PowerShell. 
 
-*   [Get-AzureRmLocation](/powershell/module/azurerm.storage/Get-AzureRmLocation) — для получения списка допустимых расположений. В этом примере в качестве расположения используется `eastus`.
+*   [Get-AzureRmLocation](/powershell/module/azurerm.resources/get-azurermlocation) — для получения списка допустимых расположений. В этом примере в качестве расположения используется `eastus`.
 
-*   [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/New-AzureRmResourceGroup) — для создания группы ресурсов. Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Наша группа ресурсов называется `teststoragerg`. 
+*   [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) — для создания группы ресурсов. Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Наша группа ресурсов называется `teststoragerg`. 
 
-*   [New-AzureRmStorageAccount](/powershell/module/azurerm.resources/New-AzureRmStorageAcccount) — для создания фактической учетной записи хранения. В этом примере используется `testpshstorage`.
+*   [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount) — для создания учетной записи хранения. В этом примере используется `testpshstorage`.
 
 Имя SKU определяет тип репликации учетной записи хранения (например, локально избыточное хранилище). Дополнительные сведения о репликации см. в статье [Репликация службы хранилища Azure](storage-redundancy.md).
 
@@ -128,7 +123,7 @@ $ctx = $storageAccount.Context
 
 ### <a name="storage-account-properties"></a>Свойства учетной записи хранения
 
-Чтобы изменить параметры для учетной записи хранения, используйте командлет [Set-AzureRmStorageAccount](/powershell/module/azurerm.resources/Set-AzureRmStorageAccount). Несмотря на то что невозможно изменить расположение учетной записи хранения или группу ресурсов, в которой она находится, вы можете изменить множество других свойств. Ниже перечислены некоторые свойства, которые можно изменить с помощью PowerShell.
+Чтобы изменить параметры для учетной записи хранения, используйте командлет [Set-AzureRmStorageAccount](/powershell/module/azurerm.storage/set-azurermstorageaccount). Несмотря на то что невозможно изменить расположение учетной записи хранения или группу ресурсов, в которой она находится, вы можете изменить множество других свойств. Ниже перечислены некоторые свойства, которые можно изменить с помощью PowerShell.
 
 * **Личный домен**, присвоенный учетной записи хранения.
 
@@ -220,7 +215,6 @@ Remove-AzureRmStorageAccount -ResourceGroup $resourceGroup -AccountName $storage
 API таблицы Azure Cosmos DB предоставляет расширенные функции для хранения таблиц, такие как комплексные возможности глобального распределения, низкие задержки операций чтения и записи, автоматическое вторичное индексирование и выделенная пропускная способность. 
 
 * Дополнительные сведения см. в статье [Знакомство со службой Azure Cosmos DB. API таблицы](../../cosmos-db/table-introduction.md). 
-* Чтобы узнать, как использовать PowerShell для выполнения операций API таблицы Azure Cosmos DB, см. статью [Perform Azure Cosmos DB Table API operations with Azure PowerShell](../../cosmos-db/table-powershell.md) (Выполнение операций в API таблицы Azure Cosmos DB с помощью Azure PowerShell).
 
 ## <a name="independent-cloud-deployments-of-azure"></a>Независимые облачные развертывания Azure
 

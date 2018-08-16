@@ -10,14 +10,14 @@ ms.service: functions
 ms.workload: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/24/2018
+ms.date: 07/29/2018
 ms.author: glenga
-ms.openlocfilehash: 8ba12f21d76d8deded047f40489c46657c9380b8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 6bf6621d650ad590cd1134bc79fcdecdc3fd0963
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38602123"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39622642"
 ---
 # <a name="azure-functions-runtime-versions-overview"></a>Обзор версий среды выполнения для решения "Функции Azure"
 
@@ -26,7 +26,9 @@ ms.locfileid: "38602123"
 | Среда выполнения | Status |
 |---------|---------|
 |1.x|Общедоступная версия (GA)|
-|2.x|Предварительный просмотр|
+|2.x|Предварительная версия<sup>*</sup>|
+
+<sup>*</sup>Чтобы получать важные обновления версии 2.x, включая объявления о критических изменениях, перейдите в репозиторий [объявлений о Службе приложений Azure](https://github.com/Azure/app-service-announcements/issues).
 
 > [!NOTE] 
 > Содержимое в этой статье относится к облачной службе "Функции Azure". Сведения о выполнении Функций Azure в локальной среде см. в статье [Обзор среды выполнения Функций Azure](functions-runtime-overview.md).

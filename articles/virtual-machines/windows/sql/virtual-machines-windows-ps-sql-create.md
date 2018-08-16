@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/15/2018
 ms.author: jroth
-ms.openlocfilehash: 2f0d9c42e32f2dd1181eac8d74c324b5ff2b0c53
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: bb7a0b8c2d0511088282e180a108f8d925f0e4e8
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33944524"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038626"
 ---
 # <a name="how-to-provision-sql-server-virtual-machines-with-azure-powershell"></a>Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell
 
@@ -130,7 +130,7 @@ New-AzureRmResourceGroup -Name $ResourceGroupName -Location $Location
 ```
 
 ## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
-Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создадим один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](/powershell/module/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Выполните командлет [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount), чтобы создать стандартную учетную запись хранения в новой группе ресурсов. При этом имя учетной записи хранения, номер SKU хранилища и расположение определяются в переменных, инициализированных ранее.
+Виртуальной машине требуются ресурсы хранения для диска операционной системы, а также файлов данных и журналов SQL Server. Для упрощения создадим один диск для всех ресурсов. Позже можно будет подключить дополнительные диски, выполнив командлет [Add-Azure Disk](/powershell/module/servicemanagement/azure/add-azuredisk), чтобы поместить файлы данных и журналов SQL Server на выделенные диски. Выполните командлет [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/new-azurermstorageaccount), чтобы создать стандартную учетную запись хранения в новой группе ресурсов. При этом имя учетной записи хранения, номер SKU хранилища и расположение определяются в переменных, инициализированных ранее.
 
 Выполните следующий командлет, чтобы создать учетную запись хранения.
 

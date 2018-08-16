@@ -1,26 +1,21 @@
 ---
-title: Пример топологии Java для Apache Storm в Azure HDInsight | Документация Майкрософт
+title: Пример топологии Java для Apache Storm в Azure HDInsight
 description: Узнайте, как создать топологии Apache Storm на языке Java с помощью создания примера топологии подсчета слов.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
+author: jasonwhowell
+editor: jasonwhowell
 keywords: apache storm, пример apache storm, storm java, пример топологии storm
-ms.assetid: a8838f29-9c08-4fd9-99ef-26655d1bf6d7
 ms.service: hdinsight
-ms.devlang: java
 ms.topic: conceptual
 ms.date: 02/20/2018
-ms.author: larryfr
+ms.author: jasonh
 ms.custom: H1Hack27Feb2017,hdinsightactive,hdiseo17may2017
-ms.openlocfilehash: 02277d8398fe5e3f3cfd1244e53cc80c4b627fa3
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 9376d80e3c856df570f3709ca52c353b81579100
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857428"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39619011"
 ---
 # <a name="create-an-apache-storm-topology-in-java"></a>Создание топологии Apache Storm на языке Java
 
@@ -31,7 +26,7 @@ ms.locfileid: "37857428"
 > [!NOTE]
 > Полная версия примеров топологии Storm, созданных в этом документе, доступна по адресу [https://github.com/Azure-Samples/hdinsight-java-storm-wordcount](https://github.com/Azure-Samples/hdinsight-java-storm-wordcount).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Java Developer Kit (JDK) версии 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
@@ -81,7 +76,7 @@ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DgroupI
 
 ## <a name="add-maven-repositories"></a>Добавление репозиториев Maven
 
-Решение HDInsight основано на платформе данных Hortonworks Data Platform (HDP), поэтому мы рекомендуем использовать репозиторий Hortonworks для скачивания зависимостей для проектов Apache Storm. Добавьте в файл __pom.xml__ приведенный ниже код XML после строки `<url>http://maven.apache.org</url>`.
+Решение HDInsight основано на платформе данных Hortonworks Data Platform (HDP), поэтому мы рекомендуем использовать репозиторий Hortonworks для скачивания зависимостей для проектов Apache Storm. Добавьте в файл __pom.xml__ приведенный ниже код XML после строки  `<url>http://maven.apache.org</url>`.
 
 ```xml
 <repositories>

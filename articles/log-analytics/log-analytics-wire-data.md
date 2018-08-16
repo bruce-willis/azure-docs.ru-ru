@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/09/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: f44f47129a1d989422d25b7f0c5c55c1d229c07e
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 1cf67b61d330363690aea1da706e8cce4700ddcd
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129012"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39618688"
 ---
 # <a name="wire-data-20-preview-solution-in-log-analytics"></a>Решение Wire Data 2.0 (предварительная версия) в Log Analytics
 
@@ -56,22 +56,20 @@ ms.locfileid: "37129012"
 
 ## <a name="connected-sources"></a>Подключенные источники
 
-Решение "Данные передачи" получает данные от агента зависимостей Майкрософт. Агент зависимостей является зависимым от агента OMS ввиду подключений к Log Analytics. Это означает, что сначала на сервере нужно установить и настроить агент OMS, после чего можно будет установить агент зависимостей. В приведенной ниже таблице описаны подключенные источники, которые поддерживаются решением "Данные передачи".
+Решение "Данные передачи" получает данные от агента зависимостей Майкрософт. Dependency Agent зависит от агента Log Analytics, что касается подключений к Log Analytics. Это означает, что сначала на сервере нужно установить и настроить агент Log Analytics, после чего можно будет установить Dependency Agent. В приведенной ниже таблице описаны подключенные источники, которые поддерживаются решением "Данные передачи".
 
 | **Подключенный источник** | **Поддерживаются** | **Описание** |
 | --- | --- | --- |
-| Агенты Windows | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Windows. <br><br> Помимо [агента OMS](log-analytics-windows-agent.md) для агентов Windows необходим агент зависимостей Майкрософт. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../monitoring/monitoring-service-map-configure.md#supported-operating-systems). |
-| Агенты Linux | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Linux.<br><br> Помимо [агента OMS](log-analytics-quick-collect-linux-computer.md) для агентов Linux необходим агент зависимостей Майкрософт. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../monitoring/monitoring-service-map-configure.md#supported-operating-systems). |
-| Группа управления System Center Operations Manager | Yes | Решение "Данные передачи" анализирует и собирает данные из агентов Windows и Linux в подключенной [группе управления System Center Operations Manager](log-analytics-om-agents.md). <br><br> Требуется прямое подключение из агента System Center Operations Manager к Log Analytics. Данные пересылаются из группы управления в Log Analytics. |
+| Агенты Windows | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Windows. <br><br> Кроме [агента Log Analytics для Windows](log-analytics-windows-agent.md) агентам Windows требуется Microsoft Dependency Agent. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../monitoring/monitoring-service-map-configure.md#supported-windows-operating-systems). |
+| Агенты Linux | Yes | Решение "Данные передачи" анализирует и собирает данные из компьютеров агентов Linux.<br><br> Кроме [агента Log Analytics для Linux](log-analytics-quick-collect-linux-computer.md) агентам Linux требуется Microsoft Dependency Agent. Полный список версий операционных систем см. в разделе [Поддерживаемые операционные системы](../monitoring/monitoring-service-map-configure.md#supported-linux-operating-systems). |
+| Группа управления System Center Operations Manager | Yes | Решение "Данные передачи" анализирует и собирает данные из агентов Windows и Linux в подключенной [группе управления System Center Operations Manager](log-analytics-om-agents.md). <br><br> Требуется прямое подключение из агента System Center Operations Manager к Log Analytics. |
 | Учетная запись хранения Azure. | Нет  | Решение "Данные передачи" собирает данные из компьютеров агента, поэтому данные из службы хранилища Azure не собираются. |
 
 В ОС Windows System Center Operations Manager и Log Analytics используют Microsoft Monitoring Agent для сбора и отправки данных. В зависимости от контекста этот агент называется агентом System Center Operations Manager, агентом OMS, агентом Log Analytics, MMA или прямым агентом. System Center Operations Manager и Log Analytics предоставляют немного разные версии MMA. В каждой из этих версий предусмотрена возможность отправлять отчеты в System Center Operations Manager, Log Analytics или в оба решения.
 
-В ОС Linux агент OMS для Linux собирает и отправляет данные в Log Analytics. "Данные передачи" можно использовать на серверах с прямыми агентами OMS или на серверах, подключенных к Log Analytics через группы управления System Center Operations Manager.
+В ОС Linux агент Log Analytics для Linux собирает и отправляет данные в Log Analytics. "Данные передачи" можно использовать на серверах с агентами, напрямую подключенными к Log Analytics, или на серверах, подключенных к Log Analytics через группы управления System Center Operations Manager.
 
-В этой статье мы будем называть все эти агенты — как в Linux, так и в Windows, подключенные к группе управления System Center Operations Manager или непосредственно к Log Analytics — _агентами OMS_. Имя конкретного развернутого агента будет использоваться, только если оно требуется в контексте.
-
-Агент зависимостей самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные в решении"Данные передачи" всегда передаются агентом OMS в Log Analytics, напрямую или через шлюз OMS.
+Агент зависимостей самостоятельно не передает данные и не требует внесения изменений в брандмауэры или порты. Данные в решении"Данные передачи" всегда передаются агентом Log Analytics в Log Analytics напрямую или через шлюз OMS.
 
 ![Схема передачи данных агентами](./media/log-analytics-wire-data/agents.png)
 
@@ -80,11 +78,11 @@ ms.locfileid: "37129012"
 - Если у ваших агентов System Center Operations Manager есть доступ к Log Analytics через Интернет, никаких дополнительных настроек не требуется.
 - Если у агентов System Center Operations Manager нет доступа к Log Analytics через Интернет, необходимо настроить шлюз OMS для работы с System Center Operations Manager.
 
-При использовании Direct Agent необходимо настроить агент OMS для подключения к Log Analytics или шлюзу OMS. Шлюз OMS можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666).
+Если компьютеры Windows или Linux не могут подключиться напрямую к службе, необходимо настроить агент Log Analytics таким образом, чтобы он подключался к Log Analytics через шлюз OMS. Шлюз OMS можно скачать в [Центре загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=52666).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-- Требуется предложение решения [Insight and Analytics](https://www.microsoft.com/cloud-platform/operations-management-suite-pricing).
+- Требуется предложение решения [Аналитика](https://www.microsoft.com/cloud-platform/operations-management-suite-pricing).
 - Если вы используете предыдущую версию решения "Данные передачи", сначала необходимо ее удалить. Тем не менее все данные, зафиксированные с помощью исходного решения "Данные передачи", по-прежнему будут доступны в Wire Data 2.0 и для поиска по журналам.
 - Для установки или удаления агента зависимостей требуются права администратора.
 - Агент зависимостей нужно установить на компьютер с 64-разрядной операционной системой.

@@ -2,26 +2,26 @@
 title: Краткое руководство Azure. Обработка потоков событий с помощью Azure CLI | Документы Майкрософт
 description: В этом кратком руководстве вы узнаете, как обрабатывать потоки событий с помощью Azure CLI.
 services: event-hubs
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.devlang: java
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/26/2018
-ms.author: sethm
-ms.openlocfilehash: 3e4689aa4ef5cdbd52aa2c70b8ba754013cab3db
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.author: shvija
+ms.openlocfilehash: 7a15b252727589194da90af729a74e1baad7094f
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425958"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40004571"
 ---
 # <a name="quickstart-process-event-streams-using-azure-cli-and-java"></a>Краткое руководство. Обработка потоков событий с помощью Azure CLI и Java
 
 Концентраторы событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создавать ресурсы концентраторов событий с помощью Azure CLI, а также как отправлять и получать потоки событий из концентратора событий с помощью кода Java.
 
-Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись][], прежде чем начать работу.
+Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -292,7 +292,7 @@ public void onEvents(PartitionContext context, Iterable<EventData> events) throw
 > [!div class="nextstepaction"]
 > [Визуализация аномальных данных в потоках данных концентраторов событий](event-hubs-tutorial-visualize-anomalies.md)
 
-[бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install Azure CLI 2.0]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az-group-create
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name

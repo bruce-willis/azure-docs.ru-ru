@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 03/12/2018
 ms.author: magoedte
 ms.component: na
-ms.openlocfilehash: bdbcfca64c2e680dfdf8feefe1bafdefb84981f4
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: 975b3d30f242b877512312f8a5a030bde9349287
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39125826"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40003653"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -154,7 +154,7 @@ ms.locfileid: "39125826"
     ```
 
 4. [Переместите сценарий настройки MMAgent.ps1](../automation/automation-dsc-getting-started.md#importing-a-configuration-into-azure-automation) в учетную запись автоматизации. 
-5. [Назначьте компьютер Windows или узел](../automation/automation-dsc-getting-started.md#onboarding-an-azure-vm-for-management-with-azure-automation-dsc) конфигурации. В течение 15 минут узел проверит свою конфигурацию, а агент будет помещен в узел.
+5. [Назначьте компьютер Windows или узел](../automation/automation-dsc-getting-started.md#onboarding-an-azure-vm-for-management-with-azure-automation-state-configuration) конфигурации. В течение 15 минут узел проверит свою конфигурацию, а агент будет помещен в узел.
 
 ## <a name="verify-agent-connectivity-to-log-analytics"></a>Проверка подключения к Log Analytics
 

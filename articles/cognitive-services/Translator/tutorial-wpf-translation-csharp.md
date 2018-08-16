@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: tutorial
 ms.date: 07/20/2018
 ms.author: nolachar
-ms.openlocfilehash: 5dc9478516f4e9850543a6ee129fef0f1d3ee4f7
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 353c1d91b7925a84667ef1bb7c38ab87c6a89cc1
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39214923"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39716378"
 ---
 # <a name="tutorial-write-a-wpf-application-for-translator-text-using-c35"></a>Руководство. Написание приложения WPF для API перевода текстов с использованием C#
 
@@ -666,9 +666,9 @@ private async void TranslateButton_Click(object sender, EventArgs e)
 Заголовок HTTP с именем `X-ClientTraceId` не является обязательным. Значение должно быть идентификатором GUID. Идентификатор трассировки клиента полезен для отслеживания запросов, когда что-то не работает должным образом. Однако, чтобы быть полезным, значение X-ClientTraceID должно быть записано клиентом. Идентификатор трассировки клиента и дата запросов могут помочь Майкрософт диагностировать проблемы, которые могут возникнуть.
 
 > [!NOTE]
-> В этом руководстве основное внимание уделяется службе Microsoft Translator, поэтому подробно не описываются методы `DetectLanguage()` и `CorrectSpelling()`. Службы "Анализ текста" и "Проверка орфографии Bing" предоставляют ответы в JSON, а не XML, и для службы "Анализ текста" требуется, чтобы запрос был отформатирован как JSON. Эти характеристики составляют большинство отличий кода от методов, которые здесь обсуждались.
+> В этом руководстве основное внимание уделяется службе Microsoft Translator, поэтому подробно не описываются методы `DetectLanguage()` и `CorrectSpelling()`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Microsoft Translator Text API reference](http://docs.microsofttranslator.com/text-translate.html) (Руководство по API для работы с текстами Microsoft Translator)
+> [Microsoft Translator Text API reference](https://docs.microsoft.com/azure/cognitive-services/Translator/reference/v3-0-reference) (Руководство по API для работы с текстами Microsoft Translator)

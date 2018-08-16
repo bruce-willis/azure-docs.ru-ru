@@ -1,25 +1,20 @@
 ---
-title: 'Мониторинг производительности кластера: Azure HDInsight | Документация Майкрософт'
+title: Мониторинг производительности кластера в Azure HDInsight
 description: Описывается, как отслеживать кластер HDInsight для обеспечения необходимой емкости и производительности.
 services: hdinsight
-documentationcenter: ''
-tags: azure-portal
 author: maxluk
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/27/2017
 ms.author: maxluk
-ms.openlocfilehash: 9bf49631da58de86ffa1881bca976cab86677805
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 5f0c390fb5749ec5a7dbf3ca7eb541c0aa1133e9
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31403752"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599577"
 ---
 # <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
 

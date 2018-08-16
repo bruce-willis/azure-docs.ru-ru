@@ -3,7 +3,7 @@ title: Обзор емкости концентраторов событий Azu
 description: Обзор емкости концентраторов событий Microsoft Azure уровня Dedicated.
 services: event-hubs
 documentationcenter: na
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
 editor: ''
 ms.assetid: ''
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: sethm
-ms.openlocfilehash: 7009710328c96660accdcf9c88313ad92d25d41c
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.author: shvija
+ms.openlocfilehash: 1a7a7593e80f08296e3163e528e880f343366b8a
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32311422"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40005710"
 ---
 # <a name="overview-of-event-hubs-dedicated"></a>Обзор концентраторов событий уровня Dedicated
 

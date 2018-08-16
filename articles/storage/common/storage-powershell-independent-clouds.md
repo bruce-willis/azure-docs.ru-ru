@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: f3f827958c0c5d71846d8f0d4184ef88b7f0a932
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 229ca187f98fd4c7e085c994b5896ae4a6a50748
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39527409"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038383"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "39527409"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Запустите командлет [Get-AzureEnvironment](/powershell/module/azure/Get-AzureRmEnvironment) , чтобы просмотреть доступные среды Azure:
+Запустите командлет [Get-AzureEnvironment](/powershell/module/servicemanagement/azure/Get-AzureRmEnvironment) , чтобы просмотреть доступные среды Azure:
    
 ```powershell
 Get-AzureRmEnvironment

@@ -11,17 +11,18 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 03/23/2018
 ms.author: sngun
-ms.openlocfilehash: d18e6dd9464ef103157a8532215fa797ab282437
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: cdf3edf5bfd8d13f71c25b8bf0bbf0ea3d992a5d
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38543860"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39628160"
 ---
 # <a name="_Toc395783175"></a>Создание веб-приложения Node.js с использованием Azure Cosmos DB
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)
 > * [Node.js](sql-api-nodejs-application.md)
+> * [Node.js — предварительная версия 2.0](sql-api-nodejs-application-preview.md)
 > * [Java](sql-api-java-application.md)
 > * [Python](sql-api-python-application.md)
 > 
@@ -62,15 +63,21 @@ ms.locfileid: "38543860"
 1. Откройте предпочитаемый терминал, например командную строку Node.js.
 2. Перейдите в каталог, в котором будет сохранено новое приложение.
 3. С помощью генератора Express создайте новое приложение с именем **todo**.
-   
-        express todo
+
+   ```bash
+   express todo
+   ```
 4. Откройте новый каталог **todo** и установите зависимости.
-   
-        cd todo
-        npm install
+
+   ```bash
+    cd todo
+    npm install
+   ```
 5. Запустите новое приложение.
-   
-        npm start
+
+   ```bash
+   npm start
+   ```
 6. Новое приложение можно просмотреть, перейдя в браузере по адресу [http://localhost:3000](http://localhost:3000).
    
     ![Изучение Node.js — снимок экрана приложения "Привет, мир" в окне браузера](./media/sql-api-nodejs-application/cosmos-db-node-js-express.png)
@@ -81,11 +88,15 @@ ms.locfileid: "38543860"
 Файл **package.json** является одним из файлов, создаваемых в корневой папке проекта. Этот файл содержит список дополнительных модулей, необходимых для приложения Node.js. Позднее, при развертывании этого приложения на веб-сайтах Azure, этот файл будет использоваться для определения модулей, которые должны быть установлены в Azure для поддержки вашего приложения. Для этого учебного примера нам нужно установить еще два пакета.
 
 1. Вернувшись в терминал, установите модуль **async** с помощью npm.
-   
-        npm install async --save
+
+   ```bash
+   npm install async --save
+   ```
 2. Установите модуль **documentdb** с помощью npm. В этом модуле заключена вся "магия" Azure Cosmos DB.
-   
-        npm install documentdb --save
+
+   ```bash
+   npm install documentdb --save
+   ```
 
 ## <a name="_Toc395783180"></a>Шаг 4. Использование службы Azure Cosmos DB в приложении Node
 После завершения начальной установки и настройки давайте перейдем к собственно написанию кода приложения, использующего Azure Cosmos DB.
@@ -377,7 +388,7 @@ ms.locfileid: "38543860"
     var DocumentDBClient = require('documentdb').DocumentClient;
     var config = require('./config');
     var TaskList = require('./routes/tasklist');
-    var TaskModel = require('./models/taskModel');
+    var TaskModel = require('./models/task-model');
     ```
 3. Этот код определяет используемый файл конфигурации, продолжая считывать из него значения в переменные, которыми мы вскоре воспользуемся.
 4. Замените следующие две строки в файле **app.js** :

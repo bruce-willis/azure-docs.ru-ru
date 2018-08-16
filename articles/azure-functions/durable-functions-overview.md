@@ -14,12 +14,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/30/2018
 ms.author: azfuncdf
-ms.openlocfilehash: a760e66d40d7af7178ec9a2d5fc14afec2a55b10
-ms.sourcegitcommit: 7827d434ae8e904af9b573fb7c4f4799137f9d9b
+ms.openlocfilehash: 25f7cf6de4f217219e510ae00ce21762e755d2e8
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39115403"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627412"
 ---
 # <a name="durable-functions-overview"></a>Обзор устойчивых функций
 
@@ -44,7 +44,7 @@ ms.locfileid: "39115403"
 
 Устойчивые функции позволяют реализовать этот шаблон в коде кратко.
 
-#### <a name="c"></a>C#
+#### <a name="c-script"></a>Сценарии C#
 
 ```cs
 public static async Task<object> Run(DurableOrchestrationContext ctx)
@@ -62,6 +62,8 @@ public static async Task<object> Run(DurableOrchestrationContext ctx)
     }
 }
 ```
+> [!NOTE]
+> При записи предкомпилированная устойчивая функция в C# будет немного отличаться от примера скрипта C#, приведенного ранее. Для предкомпилированной функции в C# потребуется, чтобы параметры устойчивых функций были указаны с соответствующими атрибутами. Например, параметр `DurableOrchestrationContext` нужно указать с атрибутом `[OrchestrationTrigger]`. Если не оформить параметры должным образом, среда выполнения не сможет включить переменные в функции, что приведет к ошибке. Дополнительные примеры см. [здесь](https://github.com/Azure/azure-functions-durable-extension/blob/master/samples).
 
 #### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
 
@@ -88,7 +90,7 @@ module.exports = df(function*(ctx) {
 
 При использовании обычных функций развертывание можно выполнить за счет отправки функцией нескольких сообщений в очередь. Тем не менее войти обратно является намного более сложной задачей. Вам нужно будет написать код для отслеживания момента, когда функции, активируемые очередью, завершаются и их выходные значения сохраняются. Расширение устойчивых функций обрабатывает этот шаблон с помощью относительно простого кода.
 
-#### <a name="c"></a>C#
+#### <a name="c-script"></a>Сценарии C#
 
 ```cs
 public static async Task Run(DurableOrchestrationContext ctx)
@@ -203,7 +205,7 @@ public static async Task<HttpResponseMessage> Run(
 
 Устойчивые функции позволяют создать несколько мониторов, которые наблюдают за произвольными конечными точками, используя несколько строк кода. Работа мониторов может приостановиться, если выполнено определенное условие, или ее можно завершить с помощью параметра [DurableOrchestrationClient](durable-functions-instance-management.md). Также их интервал ожидания может измениться в зависимости от некоторых условий (например, экспоненциального откладывания). В следующем коде реализуется простой монитор.
 
-#### <a name="c"></a>C#
+#### <a name="c-script"></a>Сценарии C#
 
 ```cs
 public static async Task Run(DurableOrchestrationContext ctx)
@@ -271,7 +273,7 @@ module.exports = df(function*(ctx) {
 
 Этот шаблон может быть реализован с помощью функции оркестратора. Оркестратор будет использовать [устойчивый таймер](durable-functions-timers.md), чтобы запросить одобрение и начать эскалацию в случае истечения времени ожидания. Он будет ждать [внешнее событие](durable-functions-external-events.md) в виде уведомления, созданного в результате какого-либо участия пользователя.
 
-#### <a name="c"></a>C#
+#### <a name="c-script"></a>Сценарии C#
 
 ```cs
 public static async Task Run(DurableOrchestrationContext ctx)

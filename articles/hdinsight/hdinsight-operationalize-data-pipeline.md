@@ -1,24 +1,20 @@
 ---
-title: Ввод в эксплуатацию конвейера аналитики данных в Azure | Документация Майкрософт
+title: Ввод в эксплуатацию конвейера аналитики данных в Azure
 description: Узнайте, как установить и запустить пример конвейера данных, который активируется с помощью новых данных и возвращает точные результаты.
 services: hdinsight
-documentationcenter: ''
-author: ashishthaps
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
 ms.service: hdinsight
-ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
-ms.date: 01/11/2018
+author: ashishthaps
 ms.author: ashishth
-ms.openlocfilehash: 7ac1ed0db15d91ef8af009c879c3634148826286
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+editor: jasonwhowell
+ms.custom: hdinsightactive
+ms.topic: conceptual
+ms.date: 01/11/2018
+ms.openlocfilehash: 68329ec01548a986ff4e41c23ab2298bda522eef
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31392193"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038506"
 ---
 # <a name="operationalize-a-data-analytics-pipeline"></a>Ввод в эксплуатацию конвейера аналитики данных
 

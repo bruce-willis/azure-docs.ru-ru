@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: b3c74631515301498aedcb035fae32b0a451e308
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 44cae95cfd01f8d6fbd6ddb4a11e9af290042ffa
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424783"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038639"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-intralinks"></a>Руководство. Интеграция Azure Active Directory с Intralinks
 
@@ -115,7 +115,7 @@ ms.locfileid: "39424783"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<company name>.Intralinks.com/?PartnerIdpId=https://sts.windows.net/<AzureADTenantID>`.
 
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения данного значения обратитесь к [группе поддержки Intralinks](https://www.intralinks.com/contact-1). 
+    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения данного значения обратитесь к [группе поддержки Intralinks](https://www.intralinks.com/contact). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -125,7 +125,7 @@ ms.locfileid: "39424783"
 
     ![Настройка единого входа](./media/intralinks-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Intralinks**, отправьте [группе поддержки Intralinks](https://www.intralinks.com/contact-1) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Intralinks**, отправьте [группе поддержки Intralinks](https://www.intralinks.com/contact) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -163,7 +163,7 @@ ms.locfileid: "39424783"
  
 ### <a name="creating-an-intralinks-test-user"></a>Создание тестового пользователя Intralinks
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Intralinks. Обратитесь к [группе поддержки Intralinks](https://www.intralinks.com/contact-1), чтобы добавить пользователей на платформу Intralinks.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Intralinks. Обратитесь к [группе поддержки Intralinks](https://www.intralinks.com/contact), чтобы добавить пользователей на платформу Intralinks.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -237,7 +237,7 @@ ms.locfileid: "39424783"
  
     ![Настройка единого входа](./media/intralinks-tutorial/tutorial_intralinks_linkedsignon.png)
 
-1. Получите от [команды Intralinks](https://www.intralinks.com/contact-1) URL-адрес единого входа, инициируемого поставщиком услуг, для другого приложения Intralinks. Затем введите этот URL-адрес в разделе **Настройка URL-адреса для единого входа**, как показано ниже. 
+1. Получите от [команды Intralinks](https://www.intralinks.com/contact) URL-адрес единого входа, инициируемого поставщиком услуг, для другого приложения Intralinks. Затем введите этот URL-адрес в разделе **Настройка URL-адреса для единого входа**, как показано ниже. 
     
      ![Настройка единого входа](./media/intralinks-tutorial/tutorial_intralinks_customappurl.png)
     

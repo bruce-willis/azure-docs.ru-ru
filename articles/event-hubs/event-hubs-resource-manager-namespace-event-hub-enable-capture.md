@@ -13,13 +13,13 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 01/30/2018
-ms.author: sethm
-ms.openlocfilehash: c241b8c38aab355729cd1bea318e70e85cf4ff1f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: shvija
+ms.openlocfilehash: d133ce2cb7bb8f17f4d6e342fd6b7b22e1403539
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38578867"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40005637"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 
@@ -426,7 +426,8 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 Дополнительные сведения о концентраторах событий см. в следующих источниках:
 
-* [Event Hubs overview](event-hubs-what-is-event-hubs.md)
+* 
+  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
 * [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
 

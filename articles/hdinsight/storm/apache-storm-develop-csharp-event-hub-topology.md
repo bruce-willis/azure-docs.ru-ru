@@ -1,25 +1,20 @@
 ---
-title: Обработка событий из концентраторов событий Azure с помощью Storm в HDInsight | Документация Майкрософт
+title: Обработка событий из Центров событий с помощью Storm в Azure HDInsight
 description: Узнайте, как обрабатывать данные службы концентраторов событий Azure с использованием топологии C# Storm, созданной в Visual Studio с помощью средств HDInsight для Visual Studio.
 services: hdinsight,notification hubs
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 67f9d08c-eea0-401b-952b-db765655dad0
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
-ms.custom: ''
-ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 11/27/2017
-ms.author: larryfr
+ms.author: jasonh
 ROBOTS: NOINDEX
-ms.openlocfilehash: 475a63937ed09b4ce875465c0eb3488ce92c38be
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 24bcc33570a5e62769223c5827556bab1967ae5a
+ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31419546"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39620388"
 ---
 # <a name="process-events-from-azure-event-hubs-with-storm-on-hdinsight-c"></a>Обработка событий из службы концентраторов событий Azure с помощью Storm в HDInsight (C#)
 
@@ -111,7 +106,7 @@ topologyBuilder.SetJavaBolt(
 
 Вы можете загрузить полную версию проекта, созданного в этом руководстве, с сайта [GitHub](https://github.com/Azure-Samples/hdinsight-dotnet-java-storm-eventhub). Но вам нужно будет указать параметры конфигурации, выполнив действия, описанные в этом учебнике.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 
 * [Кластер Apache Storm в HDInsight версии 3.5 или 3.6](apache-storm-tutorial-get-started-linux.md).
 

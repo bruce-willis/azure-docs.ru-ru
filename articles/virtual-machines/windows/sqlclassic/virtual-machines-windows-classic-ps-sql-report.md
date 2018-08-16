@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
-ms.openlocfilehash: edfae3a56bc13e4c41a1676bfc0f4e8cf4cd9d30
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: c688de79c985eda9b0898d0f7d989de58f7dbc71
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31425084"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038530"
 ---
 # <a name="use-powershell-to-create-an-azure-vm-with-a-native-mode-report-server"></a>Использование PowerShell для создания виртуальной машины Azure с помощью сервера отчетов, работающего в собственном режиме
 > [!IMPORTANT] 
@@ -40,7 +40,7 @@ ms.locfileid: "31425084"
   * Для увеличения квоты на ядра обратитесь в [службу поддержки Azure](https://azure.microsoft.com/support/options/). Дополнительные сведения о размере виртуальной машины см. в разделе [Размеры виртуальных машин в Azure](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 * **Сценарии Windows PowerShell**: в данном разделе предполагается, что вы обладаете базовыми навыками работы с Windows PowerShell. Дополнительные сведения об использовании Windows PowerShell см. в следующих разделах:
   
-  * [Запуск Windows PowerShell в Windows Server](https://technet.microsoft.com/library/hh847814.aspx)
+  * [Запуск Windows PowerShell в Windows Server](https://docs.microsoft.com/powershell/scripting/setup/starting-windows-powershell)
   * [Приступая к работе с Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx)
 
 ## <a name="step-1-provision-an-azure-virtual-machine"></a>Шаг 1. Подготовка виртуальной машины Azure
@@ -67,7 +67,7 @@ ms.locfileid: "31425084"
    * **Размер: A3**. Это рекомендуемый размер виртуальной машины для рабочих нагрузок SQL Server. Если виртуальная машина используется только в качестве сервера отчетов, размера A2 достаточно, если только сервер отчетов не обрабатывает большой объем данных. Для получения информации о ценах на виртуальные машины см. страницу [Цены на виртуальные машины](https://azure.microsoft.com/pricing/details/virtual-machines/).
    * **Имя нового пользователя**. Указанное имя используется как имя администратора виртуальной машины.
    * **Новый пароль** и **Подтверждение**. Этот пароль используется для учетной записи администратора, поэтому рекомендуется использовать надежный пароль.
-   * Нажмите кнопку **Далее**. ![next](./media/virtual-machines-windows-classic-ps-sql-report/IC692021.gif)
+   * Щелкните **Далее**. ![next](./media/virtual-machines-windows-classic-ps-sql-report/IC692021.gif)
 7. На следующей странице измените следующие поля:
    
    * **Облачная служба**: выберите **Создать новую облачную службу**.
@@ -100,7 +100,7 @@ ms.locfileid: "31425084"
    
     Дополнительные сведения о запросе сертификатов сервера см. в следующих разделах: 
    
-   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx), [Certreq](https://technet.microsoft.com/library/cc725793.aspx)
+   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx).
    * Средства безопасности для администрирования Windows Server 2012.
      
      [Средства безопасности для администрирования Windows Server 2012](https://technet.microsoft.com/library/jj730960.aspx)
@@ -512,7 +512,7 @@ ms.locfileid: "31425084"
    
    1. Щелкните **Изменение базы данных**.
    2. Щелкните элемент **Создать новую базу данных сервера отчетов** и нажмите кнопку **Далее**.
-   3. Оставьте значение по умолчанию для параметра **Имя сервера**, в качестве которого используется имя виртуальной машины, а также оставьте для параметра **Тип проверки подлинности** значение по умолчанию **Текущий пользователь** — **Встроенная система безопасности**. Нажмите кнопку **Далее**.
+   3. Оставьте значение по умолчанию для параметра **Имя сервера**, в качестве которого используется имя виртуальной машины, а также оставьте для параметра **Тип проверки подлинности** значение по умолчанию **Текущий пользователь** — **Встроенная система безопасности**. Щелкните **Далее**.
    4. Оставьте значение по умолчанию для параметра **Имя базы данных** — **ReportServer** и нажмите кнопку **Далее**.
    5. Оставьте для параметра **Тип проверки подлинности** значение по умолчанию **Учетные данные службы** и нажмите кнопку **Далее**.
    6. Щелкните элемент **Далее** on the **Далее** .
@@ -586,7 +586,7 @@ ms.locfileid: "31425084"
   
   * [Microsoft SQL Server Data Tools — бизнес-аналитика для Visual Studio 2013](https://www.microsoft.com/download/details.aspx?id=42313)
   * [Microsoft SQL Server Data Tools — Business Intelligence для Visual Studio 2012](https://www.microsoft.com/download/details.aspx?id=36843)
-  * [SQL Server Data Tools и SQL Server Business Intelligence (SSDT-BI)](http://curah.microsoft.com/30004/sql-server-data-tools-ssdt-and-sql-server-business-intelligence)
+  * [SQL Server Data Tools и SQL Server Business Intelligence (SSDT-BI)](https://docs.microsoft.com/sql/ssdt/previous-releases-of-sql-server-data-tools-ssdt-and-ssdt-bi)
 * **SQL Server Data Tools: удаленно**. Создайте на локальном компьютере проект служб Reporting Services в SQL Server Data Tools, содержащий отчеты служб Reporting Services. Настройте проект для подключения к URL-адресу веб-службы.
   
     ![свойства проекта SSDT для проекта SSRS](./media/virtual-machines-windows-classic-ps-sql-report/IC650114.gif)
@@ -598,7 +598,7 @@ ms.locfileid: "31425084"
 
 ## <a name="more-information"></a>Дополнительные сведения
 ### <a name="resources"></a>Ресурсы
-* Аналогичные материалы, относящиеся к развертыванию SQL Server Business Intelligence и SharePoint 2013 с одним сервером, см. в статье [Use Windows PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013](https://msdn.microsoft.com/library/azure/dn385843.aspx) (Использование PowerShell для создания ВМ Azure с помощью SQL Server BI и SharePoint 2013).
+* Аналогичные материалы, относящиеся к развертыванию SQL Server Business Intelligence и SharePoint 2013 с одним сервером, см. в статье [Use Windows PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013](https://blogs.technet.microsoft.com/ptsblog/2013/10/24/use-powershell-to-create-a-windows-azure-vm-with-sql-server-bi-and-sharepoint-2013/) (Использование PowerShell для создания ВМ Azure с помощью SQL Server BI и SharePoint 2013).
 * Похожие материалы о развертывании SQL Server Business Intelligence и SharePoint 2013 с несколькими серверами см. в статье [Deploy SQL Server Business Intelligence in Azure Virtual Machines](https://msdn.microsoft.com/library/dn321998.aspx) (Развертывание Server Business Intelligence на виртуальных машинах Azure).
 * Общие сведения о развертываниях SQL Server Business Intelligence на виртуальных машинах Azure см. в статье [SQL Server Business Intelligence на виртуальных машинах Azure](virtual-machines-windows-classic-ps-sql-bi.md).
 * Дополнительные сведения о стоимости вычислений Azure см. на вкладке "Виртуальные машины" [калькулятора цен Azure](https://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines).

@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 08/07/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9c59db56ad78818d9b6165d27fd2e64f0bfd902c
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 29ed96044ceaa914db3f8b7090a1be5f65827e54
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39283229"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39627480"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Часто задаваемые вопросы о простом едином входе Azure Active Directory
 
@@ -40,19 +40,20 @@ ms.locfileid: "39283229"
 
 ## <a name="what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso"></a>Какие приложения используют возможность параметра `domain_hint` или `login_hint` простого единого входа?
 
-Ниже приведен неполный список приложений, отправляющих эти параметры в Azure AD и тем самым обеспечивающих автоматический вход пользователей с помощью простого единого входа (то есть пользователю не требуется вводить имя пользователя):
+Ниже приведен неполный список приложений, которые могут отправить эти параметры в Azure AD и тем самым обеспечить автоматический вход пользователей с помощью простого единого входа (то есть пользователю не требуется вводить имя пользователя или пароль):
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| Панель доступа | myapps.microsoft.com/contoso.com |
-| Outlook on Web | outlook.office365.com/contoso.com |
+| Панель доступа | https://myapps.microsoft.com/contoso.com |
+| Outlook on Web | https://outlook.office365.com/contoso.com |
+| Портал Office 365 | https://portal.office.com?domain_hint=contoso.com |
 
 Кроме того, пользователи могут использовать автоматический единый вход, если приложение отправляет запросы на вход на клиентские конечные точки Azure AD, то есть https://login.microsoftonline.com/contoso.com/<..> или https://login.microsoftonline.com/<tenant_ID>/<..>, вместо обычной конечной точки Azure AD (https://login.microsoftonline.com/common/<...>). Ниже приведен неполный список приложений, которые выполняют такие типы запросов на вход.
 
 | имя приложения; | Используемый URL-адрес приложения |
 | -- | -- |
-| SharePoint Online | contoso.sharepoint.com |
-| Портал Azure | portal.azure.com/contoso.com |
+| SharePoint Online | https://contoso.sharepoint.com |
+| Портал Azure | https://portal.azure.com/contoso.com |
 
 В приведенных выше таблицах замените contoso.com своим доменным именем, чтобы получить соответствующие URL-адреса приложений для своего клиента.
 

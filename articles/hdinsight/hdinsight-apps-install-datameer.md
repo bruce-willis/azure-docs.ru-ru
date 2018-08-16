@@ -1,25 +1,20 @@
 ---
-title: Установка опубликованного приложения Datameer в Azure HDInsight | Документация Майкрософт
+title: Установка опубликованного приложения Datameer в Azure HDInsight
 description: Установка и использование стороннего приложения Datameer на базе платформы Hadoop.
 services: hdinsight
-documentationcenter: ''
 author: ashishthaps
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: 5008056ae2274d058706649f286b91b71feadc27
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 7b75170349f41b0fa611d5e748353484c7fea2e0
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31401315"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39598594"
 ---
 # <a name="install-published-application---datameer"></a>Установка опубликованного приложения Datameer
 
@@ -29,7 +24,7 @@ ms.locfileid: "31401315"
 
 Datameer — это собственное приложение на платформе Hadoop, расширяющее имеющиеся возможности Azure HDInsight и предоставляющее быструю интеграцию, подготовку и анализ структурированных и неструктурированных данных. Datameer может получить доступ к более чем 70 источникам и форматам (структурированным, частично структурированным и неструктурированным). Вы можете напрямую передать данные или извлекать их по требованию, используя уникальные ссылки на данные. Функциональность самообслуживания и привычный интерфейс электронной таблицы Datameer упрощают технологии больших данных и ускоряют формирование аналитических сведений. Интерфейс электронной таблицы предоставляет простой механизм для ввода декларативных формул, которые затем преобразуются в оптимизированные задания Hadoop. Благодаря Datameer, а также навыкам работы со средствами бизнес-аналитики и Excel вы можете быстро использовать Hadoop в облаке. Дополнительные сведения см. в [документации по Datameer](http://www.datameer.com/documentation/display/DAS50/Home?ls=Partners&lsd=Microsoft&c=Partners&cd=Microsoft).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для установки этого приложения на новый кластер HDInsight или на имеющийся кластер требуется следующая конфигурация:
 

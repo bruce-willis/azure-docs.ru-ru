@@ -1,28 +1,25 @@
 ---
 title: Настройка политик Hive в присоединенном к домену кластере Azure HDInsight
-description: Дополнительные сведения
+description: Узнайте, как настроить политики Apache Ranger для Hive в присоединенной к домену службе Azure HDInsight.
 services: hdinsight
-author: omidm1
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 3fade1e5-c2e1-4ad5-b371-f95caea23f6d
 ms.service: hdinsight
+author: omidm1
+ms.author: omidm
+editor: jasonwhowell
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/17/2018
-ms.author: omidm
-ms.openlocfilehash: bd99e5fda80663b37c60d972742b16c27b92cf55
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 8579c3c13ace1f97d2400a4fc6e2e9a63c2c4d26
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31592681"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39599696"
 ---
 # <a name="configure-hive-policies-in-domain-joined-hdinsight"></a>Настройка политик Hive в присоединенном к домену кластере HDInsight
 Узнайте, как настроить политики Apache Ranger для Hive. В этой статье вы создадите две политики Ranger, чтобы ограничить доступ к таблице hivesampletable. Таблица hivesampletable поставляется с кластерами HDInsight. После настройки политик подключитесь к таблицам Hive в HDInsight с помощью Excel и драйвера ODBC.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Присоединенный к домену кластер HDInsight. См. статью [Configure Domain-joined HDInsight clusters](apache-domain-joined-configure.md) (Настройка присоединенных к домену кластеров HDInsight).
 * Рабочая станция с Office 2016, Office 2013 профессиональный плюс, Office 365 профессиональный плюс, Excel 2013 автономный или Office 2010 профессиональный плюс.
 

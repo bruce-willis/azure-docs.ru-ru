@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: d5b31529c9ccfdc5d7871ec860a97d964ece69f8
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 5c865ff5c83626f13bb4fb9df7c1533371733540
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435699"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038458"
 ---
 # <a name="connection-assets-in-azure-automation"></a>Ресурсы подключений в службе автоматизации Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "37435699"
 
 |Действия|ОПИСАНИЕ|
 |---|---|
-|[Get-AutomationConnection](/powershell/module/azure/get-azureautomationconnection?view=azuresmps-3.7.0)|Получает подключение для использования. Возвращает хэш-таблицу со свойствами подключения.|
+|[Get-AutomationConnection](/powershell/module/servicemanagement/azure/get-azureautomationconnection?view=azuresmps-3.7.0)|Получает подключение для использования. Возвращает хэш-таблицу со свойствами подключения.|
 
 >[!NOTE] 
 >Не следует использовать переменные в параметре –Name для командлета **Get-AutomationConnection**, так как это может усложнить обнаружение зависимостей между модулями Runbook или конфигурациями DSC и ресурсами подключений во время разработки.

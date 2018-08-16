@@ -5,15 +5,15 @@ services: iot-edge
 author: kgremban
 ms.service: iot-edge
 ms.topic: include
-ms.date: 06/27/2018
+ms.date: 08/14/2018
 ms.author: kgremban
 ms.custom: include file
-ms.openlocfilehash: 3e7fcde204966e5a6a8154ab307807652cfa0419
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 06e2be14cf7592edf373b6f679ac5d9ff3c87269
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37086217"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "40161462"
 ---
 Одной из ключевых возможностей Azure IoT Edge является развертывание модулей на устройствах IoT Edge из облака. Модуль IoT Edge — это исполняемый пакет, который реализован как контейнер. В этом разделе вы развернете модуль, при помощи которого создаются данные телеметрии для имитированного устройства. 
 
@@ -33,12 +33,12 @@ ms.locfileid: "37086217"
    ```json
    {
        "routes": {
-           "route": "FROM /* INTO $upstream"
+           "route": "FROM /messages/* INTO $upstream"
        }
    }
    ```
 
-1. В окне **Review Deployment** (Проверка развертывания) выберите **Отправить**.
+1. В окне **Проверка развертывания** выберите **Отправить**.
 1. Вернитесь на страницу сведений об устройстве и выберите **Обновить**. Помимо модуля edgeAgent, который был создан при первом запуске службы, должен отобразиться еще один модуль среды выполнения с именем **edgeHub**, а также модуль **tempSensor**. 
 
    ![Отображение tempSensor в списке развернутых модулей](./media/iot-edge-deploy-module/deployed-modules.png)

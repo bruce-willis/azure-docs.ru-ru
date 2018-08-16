@@ -7,11 +7,11 @@
 > 
 > 
 
-Выполните командлет [**Connect-AzureRmAccount**](http://msdn.microsoft.com/library/mt619267.aspx). Откроется окно входа, в котором нужно ввести свои учетные данные. Используйте для входа те же учетные данные, что и для входа на портал Azure.
+Выполните командлет [**Connect-AzureRmAccount**](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount). Откроется окно входа, в котором нужно ввести свои учетные данные. Используйте для входа те же учетные данные, что и для входа на портал Azure.
 
     Connect-AzureRmAccount
 
-Если у вас несколько подписок, то используйте командлет [**Set-AzureRmContext**](http://msdn.microsoft.com/library/mt619263.aspx), чтобы выбрать подписку, которую будет использовать сеанс PowerShell. Чтобы узнать, какую подписку использует текущий сеанс PowerShell, выполните командлет [**Get-AzureRmContext**](http://msdn.microsoft.com/library/mt619265.aspx). Чтобы просмотреть все подписки, выполните командлет [**Get-AzureRmSubscription**](http://msdn.microsoft.com/library/mt619284.aspx).
+Если у вас несколько подписок, то используйте командлет [**Set-AzureRmContext**](https://docs.microsoft.com/powershell/module/azurerm.profile/set-azurermcontext), чтобы выбрать подписку, которую будет использовать сеанс PowerShell. Чтобы узнать, какую подписку использует текущий сеанс PowerShell, выполните командлет [**Get-AzureRmContext**](https://docs.microsoft.com/powershell/module/azurerm.profile/get-azurermcontext). Чтобы просмотреть все подписки, выполните командлет [**Get-AzureRmSubscription**](https://docs.microsoft.com/powershell/module/servicemanagement/azurerm.profile/get-azurermsubscription).
 
     Set-AzureRmContext -SubscriptionId '4cac86b0-1e56-bbbb-aaaa-000000000000'
 

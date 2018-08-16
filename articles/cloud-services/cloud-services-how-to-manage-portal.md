@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 3e4520df5c1ca8477abf5a9c4b4e7e124bb38282
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: e9f4153c68f0a2a4ce83f900ff63152311163ff6
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39005763"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038578"
 ---
 # <a name="manage-cloud-services-in-the-azure-portal"></a>Управление облачными службами с помощью портала Azure
 В области **Облачные службы** портала Azure вы можете:
@@ -83,7 +83,7 @@ ms.locfileid: "39005763"
 
 - Если вы хотите использовать статический IP-адрес для вашего рабочего слота, необходимо также зарезервировать такой адрес для промежуточного слота. В противном случае переключение завершится ошибкой.
 
-- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/azure/get-azurerole?view=azuresmps-3.7.0) в Windows PowerShell.
+- Все экземпляры роли должны быть запущены перед выполнением переключения. Состояние экземпляров можно проверить в колонке **Обзор** на портале Azure. Также можно использовать команду [Get-AzureRole](/powershell/module/servicemanagement/azure/get-azurerole?view=azuresmps-3.7.0) в Windows PowerShell.
 
 Обратите внимание, что обновления гостевой ОС и операции восстановления службы также могут быть причиной сбоя переключения развертывания. Дополнительные сведения см. в статье [Устранение неполадок, которые могут возникнуть при развертывании облачной службы](cloud-services-troubleshoot-deployment-problems.md).
 

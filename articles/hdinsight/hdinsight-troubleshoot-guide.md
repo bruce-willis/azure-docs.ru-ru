@@ -1,23 +1,18 @@
 ---
-title: Руководства по устранению неполадок с HDInsight | Документация Майкрософт
+title: Руководства по устранению неполадок с Azure HDInsight
 description: Устранение неполадок рабочих нагрузок Hadoop с помощью Azure HDInsight. В документации с пошаговыми инструкциями показано, как с помощью HDInsight устранять распространенные неполадки с Hive, Spark, YARN, HBase, HDFS и Storm.
 services: hdinsight
-author: arijitt
-manager: arijitt
-layout: LandingPage
-ms.assetid: ''
+author: jasonwhowell
+ms.author: jasonh
 ms.service: hdinsight
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: landing - page
+ms.topic: conceptual
 ms.date: 11/2/2017
-ms.author: arijitt
-ms.openlocfilehash: cff2dbca1afc0b37d183b2ea48669eea12b0a9f3
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.openlocfilehash: f105cfa2f311bdd49ad46f1947fcf90dd009a713
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36286754"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597564"
 ---
 # <a name="troubleshoot-by-using-azure-hdinsight"></a>Устранение неполадок при помощи Azure HDInsight
 
