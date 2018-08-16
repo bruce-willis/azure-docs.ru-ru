@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6e791051fb82197a770bff05f636159c638e3b9a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 9700a76284e2ee2a652ae0dbcbaa2885ab515f79
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34627857"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596561"
 ---
 # <a name="customize-the-remote-monitoring-solution-accelerator"></a>Настройка акселератора решений для удаленного мониторинга
 
@@ -34,6 +34,8 @@ ms.locfileid: "34627857"
     ```sh
     az network nsg rule update --name SSH --nsg-name {your solution name}-nsg --resource-group {your solution name} --access Allow
     ```
+
+    Включать доступ по протоколу SSH нужно только во время тестирования и разработки. Если доступ по протоколу SSH включен, [его нужно отключить при первой возможности](../security/azure-security-network-security-best-practices.md#disable-rdpssh-access-to-azure-virtual-machines).
 
 1. Используя портал Azure или [командную строку Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), найдите имя и общедоступный IP-адрес виртуальной машины. Например: 
 
@@ -461,5 +463,5 @@ See the [Connect an external visualization tool](https://github.com/Azure/azure-
 
 Более подробные сведения об акселераторе решений для удаленного мониторинга см. в статье [Архитектура предварительно настроенного решения удаленного мониторинга](iot-accelerators-remote-monitoring-sample-walkthrough.md).
 
-Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md).
-<!-- Next tutorials in the sequence -->
+Дополнительные сведения о настройке решения для удаленного мониторинга см. в статье [Настройка и повторное развертывание микрослужбы](iot-accelerators-microservices-example.md)
+<!-- Next tutorials in the sequence -->.

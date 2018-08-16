@@ -6,12 +6,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 07/06/2018
 ms.author: ramamill
-ms.openlocfilehash: bc0ec09e28c5540eb919ac4e5f970f877ae27e44
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 094c1776c0760c04d85aff6ad3d812a2ad7afa56
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37919093"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39527003"
 ---
 # <a name="install-the-mobility-service"></a>Установка службы Mobility 
 
@@ -26,9 +26,10 @@ ms.locfileid: "37919093"
 
 
 >[!IMPORTANT]
-> Начиная с версии 9.7.0.0 установщик службы Mobility Service также устанавливает последнюю доступную версию [агента виртуальных машин Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) на виртуальных машинах Windows. Если при отработке отказа компьютер переходит в Azure, выполняется предварительное требование агента, связанное с использованием любого расширения виртуальной машины.
+> Начиная с версии 9.7.0.0 установщик службы Mobility Service также устанавливает последнюю доступную версию [агента виртуальных машин Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) на **виртуальных машинах Windows**. Если при отработке отказа компьютер переходит в Azure, выполняется предварительное требование агента, связанное с использованием любого расширения виртуальной машины.
+> </br>На **виртуальных машинах Linux** агент WALinuxAgent нужно установить вручную.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед установкой службы Mobility Service вручную на сервере выполните следующие обязательные действия:
 1. Войдите на сервер конфигурации и откройте окно командной строки с правами администратора.
 2. Откройте каталог bin и создайте файл с парольной фразой.
@@ -42,11 +43,14 @@ ms.locfileid: "37919093"
 
 ### <a name="mobility-service-installer-to-operating-system-mapping"></a>Сопоставление установщика Mobility Service с операционной системой
 
+Список версий операционной системы с совместимым пакетом службы Mobility Service см. в таблице [поддерживаемых операционных систем для виртуальных машин VMware и физических серверов](vmware-physical-azure-support-matrix.md#replicated-machines).
+
 | Имя шаблона файла установщика| Операционная система |
 |---|--|
 |Microsoft-ASR\_UA\*Windows\*release.exe | Windows Server 2008 R2 с пакетом обновления 1 (64-разрядная версия) </br> Windows Server 2012 (64-разрядная версия) </br> Windows Server 2012 R2 (64-разрядная версия) </br> Windows Server 2016 (64-разрядная версия) |
-|Microsoft-ASR\_UA\*RHEL6-64*release.tar.gz| Red Hat Enterprise Linux (RHEL) 6.4, 6.5, 6.6, 6.7, 6.8, 6.9 (только 64-разрядная версия) </br> CentOS 6.4, 6.5, 6.6, 6.7, 6.8, 6.9 (только 64-разрядная версия) |
-|Microsoft-ASR\_UA\*RHEL7-64\*release.tar.gz | Red Hat Enterprise Linux (RHEL) 7.1, 7.2, 7.3 (только 64-разрядная версия) </br> CentOS 7.0, 7.1, 7.2, 7.3 (только 64-разрядная версия) |
+|Microsoft-ASR\_UA\*RHEL6-64\*release.tar.gz | Red Hat Enterprise Linux (RHEL) 6.* (только 64-разрядная версия) </br> CentOS 6.* (только 64-разрядная версия) |
+|Microsoft-ASR\_UA\*RHEL7-64\*release.tar.gz | Red Hat Enterprise Linux (RHEL) 7.* (только 64-разрядная версия) </br> CentOS 7.* (только 64-разрядная версия) |
+|Microsoft-ASR\_UA\*SLES12-64\*release.tar.gz | SUSE Linux Enterprise Server 12 с пакетами обновлений 1, 2 и 3 (только 64-разрядная версия)|
 |Microsoft-ASR\_UA\*SLES11-SP3-64\*release.tar.gz| SUSE Linux Enterprise Server 11 SP3 (только 64-разрядная версия)|
 |Microsoft-ASR\_UA\*SLES11-SP4-64\*release.tar.gz| SUSE Linux Enterprise Server 11 SP4 (только 64-разрядная версия)|
 |Microsoft-ASR\_UA\*OL6-64\*release.tar.gz | Oracle Enterprise Linux 6.4, 6.5 (только 64-разрядная версия)|
@@ -54,7 +58,6 @@ ms.locfileid: "37919093"
 |Microsoft-ASR\_UA\*UBUNTU-16.04-64\*release.tar.gz | Сервер Ubuntu Linux 16.04 LTS (только 64-разрядная версия)|
 |Microsoft-ASR_UA\*DEBIAN7-64\*release.tar.gz | Debian 7 (только 64-разрядная версия)|
 |Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8 (только 64-разрядная версия)|
-
 
 ## <a name="install-mobility-service-manually-by-using-the-gui"></a>Установка службы Mobility Service вручную с помощью графического пользовательского интерфейса
 

@@ -1,25 +1,20 @@
 ---
-title: Использование Hadoop Pig в HDInsight | Документация Майкрософт
+title: Использование Hadoop Pig в HDInsight
 description: Научитесь использовать Pig с Hadoop в HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: acfeb52b-4b81-4a7d-af77-3e9908407404
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.author: larryfr
-ms.openlocfilehash: d030bdaf4c68a7e2ec9d11cdd8a2f55eccfbd67d
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 7f469efb536f8c2dfc95cfe1770544b93c06b29f
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37081173"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39597265"
 ---
 # <a name="use-pig-with-hadoop-on-hdinsight"></a>Использование Pig с Hadoop в HDInsight
 

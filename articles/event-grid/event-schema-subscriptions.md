@@ -6,20 +6,28 @@ author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 07/19/2018
+ms.date: 08/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: 3303050311a30473bb973ac4f49bbeb707c16a33
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 6eb5cd9a086522bfe5125189f87a2498dda0ef7e
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173815"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493580"
 ---
 # <a name="azure-event-grid-event-schema-for-subscriptions"></a>Схема событий службы "Сетка событий Azure" для подписок
 
 В этой статье описаны свойства и схема для событий подписки Azure. Введение в схемы событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
 Подписки и группы ресурсов Azure выдают одинаковые типы событий. Типы событий связаны с изменениями в ресурсах. Основное различие в том, что группы ресурсов выдают события для ресурсов в пределах группы ресурсов, а подписки Azure — для ресурсов во всей подписке.
+
+События ресурса создаются для операций PUT, PATCH и DELETE, которые отправляются в `management.azure.com`. Операции POST и GET не создают события. Операции, передаваемые в плоскость данных (например, в `myaccount.blob.core.windows.net`), не создают события.
+
+При оформлении подписки на события, связанные с подпиской Azure, ваша конечная точка получает все события для этой подписки. Это могут быть как события, которые вы хотите просмотреть, например обновление виртуальной машины, так и менее важные события, например появление новой записи в журнале развертывания. Вы можете получать все события в конечной точке и написать код, который обрабатывает нужные события, или задать фильтр при создании подписки на события.
+
+Для программной обработки события можно отсортировать по значению `operationName`. Например, конечная точка событий может обрабатывать только события для операций `Microsoft.Compute/virtualMachines/write` или `Microsoft.Storage/storageAccounts/write`.
+
+Тема события — это идентификатор ресурса, который является целевым объектом операции. Для фильтрации событий ресурса укажите идентификатор ресурса при создании подписки на события. Примеры скриптов см. в статьях об оформлении подписки и фильтрации для группы ресурсов с помощью [PowerShell](scripts/event-grid-powershell-resource-group-filter.md) и [Azure CLI](scripts/event-grid-cli-resource-group-filter.md). Чтобы выполнить фильтрацию по типу ресурсов, используйте значение в следующем формате: `/subscriptions/<subscription-id>/resourcegroups/<resource-group>/providers/Microsoft.Compute/virtualMachines`
 
 ## <a name="available-event-types"></a>Доступные типы событий
 
@@ -36,7 +44,7 @@ ms.locfileid: "39173815"
 
 ## <a name="example-event"></a>Пример события
 
-В следующем примере показана схема события создания ресурса: 
+В следующем примере показана схема события **ResourceWriteSuccess**. Та же схема используется для событий **ResourceWriteFailure** и **ResourceWriteCancel** с разными значениями для `eventType`.
 
 ```json
 [{
@@ -96,7 +104,7 @@ ms.locfileid: "39173815"
 }]
 ```
 
-Схема события удаления ресурса аналогична:
+В следующем примере показана схема события **ResourceDeleteSuccess**. Та же схема используется для событий **ResourceDeleteFailure** и **ResourceDeleteCancel** с разными значениями для `eventType`.
 
 ```json
 [{
@@ -184,7 +192,7 @@ ms.locfileid: "39173815"
 | authorization | object | Запрошенная авторизация для операции. |
 | claims | object | Свойства утверждений. Дополнительные сведения см. в [спецификациях JWT](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html). |
 | correlationId | строка | Идентификатор операции для устранения неполадок. |
-| httpRequest | object | Подробные сведения об операции. |
+| httpRequest | object | Подробные сведения об операции. Этот объект включается только при обновлении существующего ресурса или при удалении ресурса. |
 | resourceProvider | строка | Поставщик ресурсов, выполняющий операцию. |
 | resourceUri | строка | URI ресурса в операции. |
 | operationName | строка | Операция, которая выполнена. |

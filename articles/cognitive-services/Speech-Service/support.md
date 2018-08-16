@@ -8,22 +8,27 @@ ms.component: custom-speech
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: wolfma
-ms.openlocfilehash: 2f8cbb5b436930f89ece1a18d4e1e54a88b02650
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: e24008a2208d8dcfbb7f86c66bb7de39f3c75790
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39286179"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528193"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
 Вы только начинаете изучать возможности службы "Речь"? Или вы реализуете в приложении новую функцию? Вот несколько подсказок, как получить справку для разработчика.
 
 > [!div class="checklist"]
+> * Будьте в курсе последних разработок в *Microsoft Cognitive Services* и следите за последними новостями о *службе "Речь"*.
 > * Прежде всего нужно проверить, есть ли ответ на ваш вопрос в сообществе или документация по функции, которую вы намерены реализовать.
 > * Если вам не удается найти нужный ответ, можно задать вопрос на сайте *Stack Overflow*.
 > * Если возникла проблема с одним из примеров, опубликованных на сайте GitHub, создайте запрос на сайте *GitHub*.
 > * Поищите решение на форуме *User Voice*.
+
+## <a name="stay-informed"></a>Следите за новостями
+
+Новости о Microsoft Cognitive Services собраны в [блоге по Cognitive Services](https://azure.microsoft.com/en-us/blog/topics/cognitive-services/). Последние новости о службе "Речь" см. в [этом блоге](https://azure.microsoft.com/en-us/blog/tag/speech-service/).
 
 ## <a name="search"></a>поиска
 

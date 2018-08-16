@@ -1,23 +1,20 @@
 ---
-title: Установка Presto в кластерах Azure HDInsight на платформе Linux | Документация Майкрософт
+title: Установка Presto в кластерах Azure HDInsight на основе Linux
 description: Узнайте, как устанавливать Presto и Airpal в кластерах HDInsight Hadoop на основе Linux с помощью действий сценария.
 services: hdinsight
-documentationcenter: ''
-author: nitinme
-manager: jhubbard
-editor: cgronlun
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/21/2018
-ms.author: nitinme
-ms.openlocfilehash: 32b7925b7414f00dfdd7d5c8a45b3601bf58942e
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: ea777b13348b84aaeb7cb7628a4d0aac9f5705bd
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31401820"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39591427"
 ---
 # <a name="install-and-use-presto-on-hdinsight-hadoop-clusters"></a>Установка и использование Presto в кластерах HDInsight Hadoop
 
@@ -43,7 +40,7 @@ ms.locfileid: "31401820"
 
 1. Начните подготовку кластера с помощью действий, описанных в статье [Создание кластеров под управлением Linux в HDInsight с помощью портала Azure](hdinsight-hadoop-create-linux-clusters-portal.md). Убедитесь, что создаете кластер с помощью процесса создания **пользовательского** кластера. Кластер должен соответствовать следующим требованиям.
 
-    * Это должен быть кластер Hadoop в HDInsight версии 3.5.
+    * Это должен быть кластер Hadoop в HDInsight версии 3.6.
 
     * Он должен использовать хранилище Azure в качестве хранилища данных. Использование Presto в кластере с Azure Data Lake Store в качестве хранилища пока не поддерживается. 
 

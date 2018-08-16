@@ -1,25 +1,20 @@
 ---
-title: Создание кластеров Hadoop с помощью REST API Azure | Документы Майкрософт
+title: Создание кластеров Hadoop с помощью REST API Azure в Azure
 description: Узнайте, как создавать кластеры HDInsight, отправив шаблоны Azure Resource Manager в Azure REST API.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 98be5893-2c6f-4dfa-95ec-d4d8b5b7dcb5
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/02/2018
-ms.author: larryfr
-ms.openlocfilehash: 9c2779c692e944bed62d7ae9b76bb8929e62e5f3
-ms.sourcegitcommit: ca05dd10784c0651da12c4d58fb9ad40fdcd9b10
+ms.author: jasonh
+ms.openlocfilehash: 06aa88dec705288edfbe6fecdd92ca31807ed015
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32775859"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39593423"
 ---
 # <a name="create-hadoop-clusters-using-the-azure-rest-api"></a>Создание кластеров Hadoop с помощью Azure REST API
 
@@ -301,7 +296,7 @@ curl -X "POST" "https://login.microsoftonline.com/$TENANTID/oauth2/token" \
 
 * Задайте `$SUBSCRIPTIONID` для идентификатора подписки, полученного при создании субъекта-службы.
 * Для маркера доступа, полученного на предыдущем этапе, задайте `$ACCESSTOKEN`.
-* Замените `DATACENTERLOCATION` центром обработки данных, в котором вы хотите создать группу ресурсов и ресурсы. Например, "Южно-центральный регион США".
+* Замените `DATACENTERLOCATION` центром обработки данных, в котором вы хотите создать группу ресурсов и ресурсы. Например, "Центрально-южная часть США".
 * Задайте для `$RESOURCEGROUPNAME` имя, которое хотите использовать для этой группы:
 
 ```bash

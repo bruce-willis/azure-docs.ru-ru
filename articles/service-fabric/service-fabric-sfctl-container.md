@@ -12,17 +12,17 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: cd3725ac547a1ed1fd9207dc48ba3b6227e85ef1
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 27108d27ee27346e4cba44e6778faff56df70a36
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763982"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495134"
 ---
 # <a name="sfctl-container"></a>Контейнер sfctl
-Команды, связанные с контейнером, следует выполнять в узле кластера.
+Выполнение связанных с контейнером команд в узле кластера.
 
 ## <a name="commands"></a>Команды
 
@@ -41,7 +41,7 @@ ms.locfileid: "34763982"
 | --application-id [обязательный параметр] | Удостоверение приложения. |
 | --code-package-instance-id [обязательный параметр] | Идентификатор экземпляра пакета кода, который можно получить с помощью команды service code-package-list. |
 | --code-package-name [обязательный параметр] | Имя пакета кода. |
-| --container-api-uri-path [обязательный параметр] | URI-адрес интерфейса REST API контейнера (вставьте {ID} вместо имени и идентификатора контейнера). |
+| --container-api-uri-path [обязательный параметр] | Путь URI интерфейса REST API контейнера (вставьте {id} вместо имени или идентификатора контейнера). |
 | --node-name [обязательный параметр] | Имя узла. |
 | --service-manifest-name [обязательный параметр] | Имя манифеста службы. |
 | --container-api-body | Текст HTTP-запроса к интерфейсу REST API контейнера. |
@@ -56,7 +56,7 @@ ms.locfileid: "34763982"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. здесь: http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
 
 ## <a name="sfctl-container-logs"></a>sfctl container logs
@@ -81,8 +81,9 @@ ms.locfileid: "34763982"
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
-| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. здесь: http\://jmespath.org/. |
+| --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.

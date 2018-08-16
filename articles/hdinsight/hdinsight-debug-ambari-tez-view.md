@@ -1,24 +1,20 @@
 ---
-title: Использование представления Ambari Tez в HDInsight — Azure | Документы Майкрософт
+title: Использование представления Ambari Tez в HDInsight в Azure
 description: Узнайте, как использовать представление Ambari Tez для отладки заданий Tez в HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 9c39ea56-670b-4699-aba0-0f64c261e411
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: 98874377f31a435e7dd9736410c123ef623928d0
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: de8e40081f92ade236c0c6f3b8d12a77ab13a82a
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31401596"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39594259"
 ---
 # <a name="use-ambari-views-to-debug-tez-jobs-on-hdinsight"></a>Отладка заданий Tez в HDInsight с помощью представлений Ambari 
 
@@ -27,7 +23,7 @@ ms.locfileid: "31401596"
 > [!IMPORTANT]
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md#hdinsight-windows-retirement)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Кластер HDInsight под управлением Linux. Инструкции по созданию кластера см. в статье [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Современный веб-браузер, который поддерживает HTML5.

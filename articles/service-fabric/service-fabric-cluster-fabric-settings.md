@@ -14,15 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 07/25/2018
 ms.author: aljo
-ms.openlocfilehash: 5628315423db1f0064d0e6b77f061d8e674757aa
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: 9e4d65875085ec293813e2683acde095ae112b75
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39309159"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503712"
 ---
-# <a name="customize-service-fabric-cluster-settings-and-fabric-upgrade-policy"></a>Настройка параметров кластера Service Fabric и политики обновления структур
-В этом документе описывается, как настроить различные параметры структуры и политику обновления структур для кластера Service Fabric. Их можно настроить на [портале Azure](https://portal.azure.com) или с помощью шаблона Azure Resource Manager.
+# <a name="customize-service-fabric-cluster-settings"></a>Настройка параметров кластера Service Fabric
+В этой статье описывается, как настроить различные параметры структуры для кластера Service Fabric. Для кластеров, размещенных в Azure, можно настроить параметры на [портале Azure](https://portal.azure.com) или использовать шаблон Azure Resource Manager. Для автономных кластеров настройте параметры, обновив файл ClusterConfig.json и выполнив обновление конфигурации в своем кластере. 
 
 > [!NOTE]
 > Не все параметры доступны на портале. Если один из параметров, перечисленных ниже, недоступен на портале, настройте его с помощью шаблона Azure Resource Manager.
@@ -35,14 +35,14 @@ ms.locfileid: "39309159"
 - **NotAllowed**. Эти параметры невозможно изменить. Чтобы изменить эти параметры, нужно удалить кластер и создать новый. 
 
 ## <a name="customize-cluster-settings-using-resource-manager-templates"></a>Настройка параметров кластера с помощью шаблонов Resource Manager
-Ниже приведены шаги, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*.
+Ниже приведены шаги, с помощью которых можно добавить новый параметр *MaxDiskQuotaInMB* в раздел *Diagnostics*, используя обозреватель ресурсов Azure.
 
 1. Перейдите на сайт https://resources.azure.com.
 2. Перейдите к подписке, развернув **subscriptions** -> **\<Ваша подписка>** -> **resourceGroups** -> **\<Ваша группа ресурсов >** -> **providers** -> **Microsoft.ServiceFabric** -> **clusters** -> **\<Имя вашего кластера>**
 3. В правом верхнем углу выберите пункт **Чтение и запись**.
 4. Выберите **Изменить** и обновите элемент JSON `fabricSettings`, а затем добавьте новый элемент.
 
-```
+```json
       {
         "name": "Diagnostics",
         "parameters": [
@@ -53,6 +53,36 @@ ms.locfileid: "39309159"
         ]
       }
 ```
+
+Вы также можете настроить параметры кластера с помощью Azure Resource Manager одним из следующих способов:
+
+- Экспортируйте и обновите шаблон Resource Manager с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template).
+- Экспортируйте и обновите шаблон Resource Manager с помощью [PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell).
+- Экспортируйте и обновите шаблон Resource Manager с помощью [Azure CLI](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-cli).
+- Чтобы изменить параметр напрямую, используйте команды Azure RM PowerShell [​​Set-AzureRmServiceFabricSetting](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/Set-AzureRmServiceFabricSetting) и [Remove-AzureRmServiceFabricSetting](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/Remove-AzureRmServiceFabricSetting).
+- чтобы изменить параметр напрямую, используйте команды Azure CLI [az sf cluster setting](https://docs.microsoft.com/cli/azure/sf/cluster/setting).
+
+## <a name="customize-cluster-settings-for-standalone-clusters"></a>Настройка параметров для автономных кластеров
+Автономные кластеры настраиваются с помощью файла ClusterConfig.json. Дополнительные сведения см. в статье [Параметры конфигурации для изолированного кластера Windows](./service-fabric-cluster-manifest.md).
+
+Вы можете добавлять, обновлять или удалять параметры в разделе `fabricSettings` [свойств кластера](./service-fabric-cluster-manifest.md#cluster-properties) в ClusterConfig.json. 
+
+Например, следующий JSON добавляет новый параметр *MaxDiskQuotaInMB* в разделе *Diagnostics* в строке `fabricSettings`:
+
+```json
+      {
+        "name": "Diagnostics",
+        "parameters": [
+          {
+            "name": "MaxDiskQuotaInMB",
+            "value": "65536"
+          }
+        ]
+      }
+```
+
+После того как вы изменили параметры в файле ClusterConfig.json, следуйте указаниям в разделе [Обновление конфигурации кластера](./service-fabric-cluster-upgrade-windows-server.md#upgrade-the-cluster-configuration), чтобы применить настройки к вашему кластеру. 
+
 
 Ниже приведен упорядоченный по разделам список параметров Fabric, которые можно настраивать.
 

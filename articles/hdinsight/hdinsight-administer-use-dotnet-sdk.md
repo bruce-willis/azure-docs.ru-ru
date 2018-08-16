@@ -1,25 +1,20 @@
 ---
-title: Управление кластерами Hadoop в HDInsight с помощью пакета SDK для .NET — Azure | Документация Майкрософт
+title: Управление кластерами Hadoop в HDInsight с помощью пакета SDK для .NET в Azure
 description: Узнайте, как осуществлять управление кластерами Hadoop в HDInsight с помощью пакета SDK для HDInsight .NET.
 services: hdinsight
-editor: cgronlun
-manager: jhubbard
-tags: azure-portal
-author: mumian
-documentationcenter: ''
-ms.assetid: fd134765-c2a0-488a-bca6-184d814d78e9
+editor: jasonwhowell
+author: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jgao
-ms.openlocfilehash: 08c9d16570a923c79c81cebb8669a43488129d9a
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.author: jasonh
+ms.openlocfilehash: 481ee363c4ee48bb85bca991b6d4912560d82312
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37017943"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39590890"
 ---
 # <a name="manage-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Hadoop в HDInsight с помощью пакета SDK для .NET
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]

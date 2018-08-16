@@ -4,21 +4,19 @@ description: Узнайте, как использовать портал Azure 
 services: azure-resource-manager,azure-portal
 documentationcenter: ''
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/08/2017
+ms.date: 08/03/2018
 ms.author: tomfitz
-ms.openlocfilehash: 79bc42394513efc2ac03ea9d7170f035d71edb4f
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: c16d584f17aa2c209c9c0ec94d35f6fe78ba1907
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34603735"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494094"
 ---
 # <a name="deploy-resources-with-resource-manager-templates-and-azure-portal"></a>Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure
 
@@ -79,6 +77,9 @@ ms.locfileid: "34603735"
 ## <a name="deploy-resources-from-custom-template"></a>Развертывание ресурсов с помощью настраиваемого шаблона
 
 Если вы хотите выполнить развертывание без использования шаблонов из Marketplace, создайте настраиваемый шаблон, определяющий инфраструктуру для вашего решения. Дополнительные сведения о создании шаблонов см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
+
+> [!NOTE]
+> Интерфейс портала не поддерживает использование ссылок на [секрет из Key Vault](resource-manager-keyvault-parameter.md). Вместо этого используйте [PowerShell](resource-group-template-deploy.md) или [Azure CLI](resource-group-template-deploy-cli.md), чтобы развернуть шаблон локально или на основе внешнего URI.
 
 1. Чтобы развернуть настроенный шаблон на портале, выберите **Создать ресурс** и начните поиск по словам **Развертывание шаблона**, пока не появится соответствующий пункт.
 

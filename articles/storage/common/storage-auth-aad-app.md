@@ -1,21 +1,21 @@
 ---
-title: Аутентификации с помощью Azure AD из приложения службы хранилища (предварительная версия) | Документация Майкрософт
-description: Аутентификации с помощью Azure AD из приложения службы хранилища (предварительная версия).
+title: Проверка подлинности с помощью Azure Active Directory для доступа к данным больших двоичных объектов и очередей из приложений (предварительная версия) | Документация Майкрософт
+description: Использование Azure Active Directory для проверки подлинности из приложения и последующей авторизации запросов к ресурсам службы хранилища Azure (предварительная версия).
 services: storage
 author: tamram
-manager: jeconnoc
 ms.service: storage
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 06/12/2018
 ms.author: tamram
-ms.openlocfilehash: 1bf4a8bba3b93c16f67d46f65292709ef2a1bba2
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.component: common
+ms.openlocfilehash: d065dd6db361c5c348713c6e1ceabe3a4c42c312
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34660315"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39577710"
 ---
-# <a name="authenticate-with-azure-ad-from-an-azure-storage-application-preview"></a>Аутентификации с помощью Azure AD из приложения службы хранилища (предварительная версия)
+# <a name="authenticate-with-azure-active-directory-from-an-azure-storage-application-preview"></a>Проверка подлинности с помощью Azure Active Directory из приложения службы хранилища (предварительная версия)
 
 Ключевым преимуществом использования Azure Active Directory (Azure AD) со службой хранилища Azure является то, что учетные данные больше не нужно хранить в коде. Вместо этого можно запросить маркер доступа OAuth 2.0 из Azure AD. Azure AD осуществляет аутентификацию субъекта безопасности (пользователя, группы или субъекта-службы), запустившего приложение. Если аутентификация пройдена успешно, Azure AD возвращает маркер доступа приложению, и затем приложение может использовать его для авторизации запросов к службе хранилища Azure.
 
@@ -23,10 +23,10 @@ ms.locfileid: "34660315"
 
 Прежде чем субъект безопасности сможет проходить аутентификацию из приложения службы хранилища Azure, нужно настроить параметры управления доступом на основе ролей (RBAC) для этого субъекта безопасности. Служба хранилища Azure определяет роли RBAC, которые включают в себя разрешения для контейнеров и очередей. При назначении роли RBAC субъекту безопасности ему предоставляется доступ к соответствующему ресурсу. Дополнительные сведения см. в разделе [Manage access rights to Azure Storage data with RBAC (Preview)](storage-auth-aad-rbac.md) (Управление правами доступа к данным в службе хранилища Azure с помощью RBAC (предварительная версия)).
 
-Общие сведения о процессе предоставления кода OAuth 2.0 представлены в разделе [Авторизация доступа к веб-приложениям Azure Active Directory с помощью потока предоставления кода OAuth 2.0](../../active-directory/develop/active-directory-protocols-oauth-code.md).
+Общие сведения о процессе предоставления кода OAuth 2.0 представлены в разделе [Авторизация доступа к веб-приложениям Azure Active Directory с помощью потока предоставления кода OAuth 2.0](../../active-directory/develop/v1-protocols-oauth-code.md).
 
 > [!IMPORTANT]
-> Эта предварительная версия не предназначена для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред не будут доступны до выпуска общедоступной версии интеграции Azure AD для службы хранилища Azure. Если интеграция Azure AD пока не поддерживается для вашего сценария, продолжайте использовать в приложениях авторизацию по общему ключу или маркеры SAS. Дополнительные сведения о предварительной версии см. в статье [Аутентификация доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)](storage-auth-aad.md).
+> Эта предварительная версия не предназначена для использования в рабочей среде. Соглашения об уровне обслуживания (SLA) для рабочих сред не будут доступны до выпуска общедоступной версии интеграции с Azure AD для службы хранилища Azure. Если интеграция с Azure AD пока не поддерживается для вашего сценария, продолжайте использовать в приложениях авторизацию по общему ключу или маркеры SAS. Дополнительные сведения о предварительной версии см. в статье об [аутентификации доступа к службе хранилища Azure с помощью Azure Active Directory (предварительная версия)](storage-auth-aad.md).
 >
 > На этапе предварительной версии распространение назначенных ролей RBAC может занимать до пяти минут.
 
@@ -34,9 +34,9 @@ ms.locfileid: "34660315"
 
 При использовании Azure AD для предоставления доступа к ресурсам хранилища в первую очередь необходимо зарегистрировать клиентское приложение в клиенте Azure AD. Зарегистрировав приложение, вы сможете вызвать [библиотеку аутентификации Azure Active Directory ](../../active-directory/active-directory-authentication-libraries.md) (ADAL) из кода. Эта библиотека предоставляет API для аутентификации с помощью Azure AD в приложении. Регистрация приложения также дает возможность авторизовать вызовы из этого приложения к интерфейсам API службы хранилища Azure с помощью маркера доступа.
 
-При регистрации приложения вы отправляете сведения о приложении в Azure AD. После этого служба Azure AD предоставляет идентификатор клиента (также называемый *идентификатором приложения*), позволяющий связать с ней приложение во время выполнения. Дополнительные сведения об идентификаторе клиента см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../../active-directory/develop/active-directory-application-objects.md).
+При регистрации приложения вы отправляете сведения о приложении в Azure AD. После этого служба Azure AD предоставляет идентификатор клиента (также называемый *идентификатором приложения*), позволяющий связать с ней приложение во время выполнения. Дополнительные сведения об идентификаторе клиента см. в статье [Объекты приложения и субъекта-службы в Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md).
 
-Чтобы зарегистрировать приложение службы хранилища Azure, выполните инструкции, приведенные в разделе [Добавление приложения](../../active-directory/develop/active-directory-integrating-applications.md#adding-an-application) статьи [Интеграция приложений с Azure Active Directory](../../active-directory/active-directory-integrating-applications.md). При регистрации приложения как собственного вы можете указать любой допустимый универсальный код ресурса (URI) в качестве **URI перенаправления**. Реальную конечную точку указывать необязательно.
+Чтобы зарегистрировать приложение службы хранилища Azure, выполните инструкции, приведенные в разделе [Добавление приложения](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md#adding-an-application) статьи [Интеграция приложений с Azure Active Directory](../../active-directory/active-directory-integrating-applications.md). При регистрации приложения как собственного вы можете указать любой допустимый универсальный код ресурса (URI) в качестве **URI перенаправления**. Реальную конечную точку указывать необязательно.
 
 ![Снимок экрана регистрации приложения службы хранилища в Azure AD](./media/storage-auth-aad-app/app-registration.png)
 
@@ -44,7 +44,7 @@ ms.locfileid: "34660315"
 
 ![Снимок экрана с идентификатором клиента](./media/storage-auth-aad-app/app-registration-client-id.png)
 
-Дополнительные сведения о регистрации приложения в Azure AD см. в разделе [Интеграция приложений с Azure Active Directory](../../active-directory/develop/active-directory-integrating-applications.md). 
+Дополнительные сведения о регистрации приложения в Azure AD см. в разделе [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md). 
 
 ## <a name="grant-your-registered-app-permissions-to-azure-storage"></a>Предоставление зарегистрированному приложению разрешений для службы хранилища Azure
 
@@ -104,15 +104,22 @@ ms.locfileid: "34660315"
 
 ### <a name="add-references-and-using-statements"></a>Добавление ссылок и инструкций using  
 
-В Visual Studio установите предварительную версию клиентской библиотеки службы хранилища Azure. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**. Введите приведенную ниже команду в консоли.
+В Visual Studio установите предварительную версию клиентской библиотеки службы хранилища Azure. В меню **Сервис** выберите **Диспетчер пакетов NuGet**, а затем — **Консоль диспетчера пакетов**. Введите следующую команду в консоли, чтобы установить последнюю версию клиентской библиотеки для .NET:
 
 ```
-Install-Package https://www.nuget.org/packages/WindowsAzure.Storage/9.2.0  
+Install-Package WindowsAzure.Storage
+```
+
+Также установите последнюю версию ADAL:
+
+```
+Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
 ```
 
 Далее добавьте приведенные ниже инструкции using в код.
 
 ```dotnet
+using System.Globalization;
 using Microsoft.IdentityModel.Clients.ActiveDirectory; //ADAL client library for getting the access token
 using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
@@ -120,13 +127,17 @@ using Microsoft.WindowsAzure.Storage.Blob;
 
 ### <a name="get-an-oauth-token-from-azure-ad"></a>Получение токена OAuth из Azure AD
 
-Добавьте метод, который запрашивает токен из Azure AD. Чтобы запросить токен, вызовите метод [AuthenticationContext.AcquireTokenAsync](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync).
+Добавьте метод, который запрашивает токен из Azure AD. Чтобы запросить токен, вызовите метод [AuthenticationContext.AcquireTokenAsync](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory.authenticationcontext.acquiretokenasync). Убедитесь, что вы получили следующие значения на выполненных ранее шагах:
+
+- идентификатор клиента (каталога);
+- идентификатор клиента (приложения);
+- URI перенаправления клиента.
 
 ```dotnet
 static string GetUserOAuthToken()
 {
-    const string ResourceId = "https://storage.azure.com/"; // Storage resource endpoint
-    const string AuthEndpoint = "https://login.microsoftonline.com/{0}/oauth2/token"; // Azure AD OAuth endpoint
+    const string ResourceId = "https://storage.azure.com/";
+    const string AuthEndpoint = "https://login.microsoftonline.com/{0}/oauth2/token";
     const string TenantId = "<tenant-id>"; // Tenant or directory ID
 
     // Construct the authority string from the Azure AD OAuth endpoint and the tenant ID. 

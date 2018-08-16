@@ -9,18 +9,21 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 05/31/2018
 ms.author: sethm
-ms.openlocfilehash: 517c1376415466f5ce0e3c854f6c91f60cdab9f8
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: d27cb7a870a1a03e89ea35aa3ebe3a777483cf67
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247629"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579465"
 ---
 # <a name="azure-service-bus-metrics-in-azure-monitor-preview"></a>Метрики служебной шины Azure в Azure Monitor (предварительная версия)
 
 Метрики служебной шины предоставляют состояние ресурсов в подписке Azure. Используя обширный набор данных метрик, можно оценить общую работоспособность ресурсов служебной шины не только на уровне пространства имен, но также и на уровне сущности. Эти статистические данные могут быть важны, так как они позволяют отслеживать состояние служебной шины. Кроме того, метрики могут помочь в устранении первопричин проблем без необходимости обращения в службу поддержки Azure.
 
 Azure Monitor предоставляет унифицированный пользовательский интерфейс для мониторинга различных служб Azure. Дополнительные сведения см. в разделе [Обзор мониторинга в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview.md). Ознакомьтесь также с примером [получения данных метрик Azure Monitor с помощью .NET](https://github.com/Azure-Samples/monitor-dotnet-metrics-api) на сайте GitHub.
+
+> [!IMPORTANT]
+> Если в течение двух часов не было взаимодействия с сущностью, в результатах метрики будет отображаться значение "0", пока сущность не станет активной.
 
 ## <a name="access-metrics"></a>Доступ к метрикам
 

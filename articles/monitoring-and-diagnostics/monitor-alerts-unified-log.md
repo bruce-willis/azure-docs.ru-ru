@@ -8,19 +8,23 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: f36f05789424cfd3213525dd501333f852a0d9c2
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: fd278ad6865c871ed0a5ed9272c9fadfca0f38db
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38971726"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39440435"
 ---
 # <a name="log-alerts-in-azure-monitor---alerts"></a>Оповещения журнала в Azure Monitor. Интерфейс оповещений 
-В это статье рассматриваются оповещения журнала — один из типов оповещений, которые поддерживаются в новом интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений. См. дополнительные сведения об [использовании оповещений на основе метрик практически в реальном времени и журналов](monitoring-near-real-time-metric-alerts.md).
+В это статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в новой системе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
 
 
-Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) или [Application Insights](../application-insights/app-insights-cloudservices.md#view-azure-diagnostic-events).
+Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) или [Application Insights](../application-insights/app-insights-cloudservices.md#view-azure-diagnostic-events). Сведения о ценах на оповещения журнала см. на странице [цен на Azure Monitor](https://azure.microsoft.com/en-us/pricing/details/monitor/). В счетах Azure оповещения журнала представлены типом `microsoft.insights/scheduledqueryrules`. Кроме того:
+- Для оповещений журнала Application Insights указываются точное имя оповещения, группа ресурсов и свойства оповещения.
+- Для оповещений журнала Log Analytics указываются имя оповещения в формате `<WorkspaceName>|<savedSearchId>|<scheduleId>|<ActionId>`, группа ресурсов и свойства оповещения.
 
+    > [!NOTE]
+    > Имена всех сохраненных поисковых запросов, отчетов и действий, создаваемых с помощью API Log Analytics, должны быть в нижнем регистре. Если используются недопустимые символы, такие как `<, >, %, &, \, ?, /`, в счете они будут заменены символом `_`.
 
 ## <a name="log-search-alert-rule---definition-and-types"></a>Правило генерации оповещений для поиска по журналам: определения и типы
 
@@ -104,7 +108,7 @@ ms.locfileid: "38971726"
 - Шаблоны Azure Resource Manager
 
 ### <a name="azure-portal"></a>Портал Azure
-С появлением [нового интерфейса оповещений Azure](monitoring-overview-unified-alerts.md) пользователи могут управлять всеми типами оповещений на портале Azure из единого расположений с помощью аналогичных действий. См. дополнительные сведения об [использование нового интерфейса оповещений Azure](monitor-alerts-unified-usage.md).
+С появлением [новых оповещений Azure](monitoring-overview-unified-alerts.md) пользователи могут централизованно и согласованно управлять всеми типами оповещений на портале Azure. См. дополнительные сведения об [использование нового интерфейса оповещений Azure](monitor-alerts-unified-usage.md).
 
 Кроме того, пользователи могут совершенствовать свои запросы на выбранной платформе аналитики в Azure и затем *импортировать их для использования в интерфейсе оповещений, сохранив запрос*. Вот как это сделать:
 - *Для Application Insights.* Перейдите на портал аналитики, проверьте запрос и его результаты. Затем сохраните его с уникальным именем в области *Общие запросы*.
@@ -131,7 +135,7 @@ API-интерфейсы, предоставляемые для оповещен
  
 
 ## <a name="next-steps"></a>Дополнительная информация
-* сведения об [оповещениях журналов в Azure](monitor-alerts-unified-log-webhook.md);
-* сведения о новом интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md);
+* Информация о [веб-перехватчиках в оповещениях журналов в Azure](monitor-alerts-unified-log-webhook.md).
+* Сведения о новых [оповещениях Azure](monitoring-overview-unified-alerts.md).
 * Дополнительные сведения об [Application Insights](../application-insights/app-insights-analytics.md).
 * Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-overview.md).    

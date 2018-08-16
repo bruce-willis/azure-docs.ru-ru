@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 06/18/2018
 ms.author: martincoetzer
-ms.openlocfilehash: b15fff6e868bfac973f9d2a7277f0fac1e29d845
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 2a6c94d902c639a2529e501347876d63a3f56d7e
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36940022"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505615"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Пять шагов по защите инфраструктуры удостоверений
 
@@ -78,7 +78,7 @@ ms.locfileid: "36940022"
 
 ### <a name="implement-ad-fs-extranet-lockout"></a>Реализация блокировки экстрасети служб федерации Active Directory
 
-Организации, настраивающие приложения для проверки подлинности непосредственно в Azure AD, пользуются [интеллектуальной блокировкой Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords). Если вы используете службы федерации Active Directory, реализуйте [блокировку экстрасети](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-lockout-protection) AD FS. Блокировка экстрасети обеспечивает защиту от атак методом подбора, направленных на AD FS, и в то же время не позволяет блокировать пользователей в Active Directory.
+Организации, настраивающие приложения для проверки подлинности непосредственно в Azure AD, пользуются [интеллектуальной блокировкой Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-secure-passwords). Если вы используете AD FS в Windows Server 2012 R2, реализуйте [защиту блокировки экстрасетей](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-ad-fs-extranet-soft-lockout-protection) в AD FS. Если же AD FS используется в Windows Server 2016, реализуйте [смарт-блокировку экстрасетей](https://support.microsoft.com/en-us/help/4096478/extranet-smart-lockout-feature-in-windows-server-2016). Смарт-блокировка экстрасетей для AD FS обеспечивает защиту от атак методом подбора, направленных на AD FS, и в то же время не позволяет блокировать пользователей в Active Directory.
 
 ### <a name="take-advantage-of-intrinsically-secure-easier-to-use-credentials"></a>Использование преимуществ безопасных по сути и простых в применении учетных данных
 

@@ -1,24 +1,18 @@
 ---
-title: Устранение неполадок в Spark с помощью Azure HDInsight | Документация Майкрософт
+title: Устранение неполадок со Spark в Azure HDInsight
 description: Получите ответы на распространенные вопросы о работе с Apache Spark и Azure HDInsight.
-keywords: Azure HDInsight, Spark, часто задаваемые вопросы, руководство по устранению неполадок, распространенные проблемы, конфигурация приложения, Ambari
-services: Azure HDInsight
-documentationcenter: na
-author: arijitt
-manager: ''
-editor: ''
-ms.assetid: 25D89586-DE5B-4268-B5D5-CC2CE12207ED
-ms.service: multiple
-ms.devlang: na
-ms.topic: article
+services: hdinsight
+ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+ms.topic: conceptual
 ms.date: 11/2/2017
-ms.author: arijitt
-ms.openlocfilehash: 15fe5e6d2acdb8d782342b21f5db81443c44843d
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.openlocfilehash: 7c7f89864d9394ff4527f9a0354b9276f7c01c49
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34164539"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39591743"
 ---
 # <a name="troubleshoot-spark-by-using-azure-hdinsight"></a>Устранение неполадок в Spark с помощью Azure HDInsight
 

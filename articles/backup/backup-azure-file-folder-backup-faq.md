@@ -7,19 +7,17 @@ manager: shreeshd
 keywords: резервное копирование и аварийное восстановление; служба архивации
 ms.service: backup
 ms.topic: conceptual
-ms.date: 6/25/2018
-ms.author: trinadhk
-ms.openlocfilehash: ac6d2a8a152f3c6e22be962b867ef58421eda47b
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.date: 8/6/2018
+ms.author: saurse;trinadhk
+ms.openlocfilehash: 177e44bce7d8f159892d78c7003945ba55ef4b84
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37016494"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39577887"
 ---
 # <a name="questions-about-the-azure-backup-agent"></a>Вопросы об агенте службы Azure Backup
 В этой статье содержатся ответы на часто задаваемые вопросы, которые помогут вам быстро ознакомиться с компонентами агента службы Azure Backup. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
-
-[!INCLUDE [backup-upgrade-mars-agent.md](../../includes/backup-upgrade-mars-agent.md)]
 
 ## <a name="configure-backup"></a>Настройка резервного копирования
 ### <a name="where-can-i-download-the-latest-azure-backup-agent-br"></a>Откуда можно скачать последнюю версию агента службы архивации Azure? <br/>
@@ -66,6 +64,10 @@ ms.locfileid: "37016494"
 ### <a name="does-the-azure-backup-agent-work-on-a-server-that-uses-windows-server-2012-deduplication-br"></a>Работает ли агент службы архивации Azure на сервере, где используется дедупликация Windows Server 2012? <br/>
 Да. При подготовке операции резервного копирования служба агента преобразует дедуплицированные данные в обычные. Затем она оптимизирует данные для резервного копирования, шифрует их и отправляет зашифрованные данные в службу онлайн-архивации.
 
+## <a name="prerequisites-and-dependencies"></a>Необходимые компоненты и зависимости
+### <a name="what-features-of-microsoft-azure-recovery-services-mars-agent-require-net-framework-452-and-higher"></a>Для каких функций агента Служб восстановления Microsoft Azure (MARS) требуется .NET Framework 4.5.2 и более поздних версий?
+.NET Framework 4.5.2 или более поздних версий требуется для функции [мгновенного восстановления](backup-azure-restore-windows-server.md#use-instant-restore-to-recover-data-to-the-same-machine), которая позволяет восстанавливать отдельные файлы и папки из мастера *восстановления данных*.
+
 ## <a name="backup"></a>Azure Backup
 ### <a name="how-do-i-change-the-cache-location-specified-for-the-azure-backup-agentbr"></a>Как изменить расположение кэша, указанное для агента службы архивации Azure?<br/>
 Выполните действия ниже, чтобы изменить расположение кэша.
@@ -93,7 +95,7 @@ ms.locfileid: "37016494"
 Для папки кэша не рекомендуется использовать следующие расположения:
 
 * Сетевая папка или съемный носитель. Папка кэша должна быть локальной по отношению к серверу, которому требуется резервное копирование с помощью оперативного резервного копирования. Сетевые расположения и съемные носители (например, USB-накопители) не поддерживаются.
-* Автономные тома. Папка кэша должна быть подключена к сети, если планируется резервное копирование с помощью агента службы Azure Backup.
+* Автономные тома. Если планируется резервное копирование с помощью агента службы Azure Backup, папку кэша нужно подключить к сети.
 
 ### <a name="are-there-any-attributes-of-the-cache-folder-that-are-not-supportedbr"></a>Существуют ли неподдерживаемые атрибуты папки кэша?<br/>
 Для папки кэша не поддерживаются следующие атрибуты и их комбинации:
@@ -111,8 +113,7 @@ ms.locfileid: "37016494"
 
 ## <a name="manage-backups"></a>Управление резервными копиями
 ### <a name="what-happens-if-i-rename-a-windows-server-that-is-backing-up-data-to-azurebr"></a>Что произойдет, если переименовать сервер Windows, выполняющий резервное копирование данных в службу Azure?<br/>
-Если переименовать сервер, остановятся все настроенные процессы резервного копирования.
-Зарегистрируйте новое имя сервера в хранилище службы архивации. После регистрации нового имени в хранилище сначала выполняется операция *полного* резервного копирования. Если вам нужно восстановить резервные копии данных из хранилища со старым именем сервера, установите флажок [**Другой сервер**](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine) в мастере **восстановления данных**.
+Если переименовать сервер, остановятся все настроенные процессы резервного копирования. Зарегистрируйте новое имя сервера в хранилище службы архивации. После регистрации нового имени в хранилище сначала выполняется операция *полного* резервного копирования. Если вам нужно восстановить резервные копии данных из хранилища со старым именем сервера, установите флажок [**Другой сервер**](backup-azure-restore-windows-server.md#use-instant-restore-to-restore-data-to-an-alternate-machine) в мастере **восстановления данных**.
 
 ### <a name="what-is-the-maximum-file-path-length-that-can-be-specified-in-backup-policy-using-azure-backup-agent-br"></a>Какой максимальной длины может быть путь к файлу, определяемый в политике резервного копирования Azure с помощью агента службы архивации Azure? <br/>
 Агент службы архивации Azure использует NTFS. Длина [пути к файлам ограничивается настройками API Windows](https://msdn.microsoft.com/library/aa365247.aspx#fully_qualified_vs._relative_paths). Если длина пути к файлам превышает длину, разрешенную API Windows, сделайте резервную копию родительской папки или дискового накопителя.  

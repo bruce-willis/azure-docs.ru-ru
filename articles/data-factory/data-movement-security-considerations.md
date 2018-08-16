@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: 70225fd59248939c9ea1d5c7c267cdf0da3303e7
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: b05eef79e94cff74b1e02243cd7c8d94e5acbb3c
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37342408"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493976"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -54,10 +54,13 @@ ms.locfileid: "37342408"
 - **Хранение учетных данных в Azure Key Vault**. Учетные данные хранилища также можно хранить в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/). Фабрика данных получает учетные данные во время выполнения действия. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md).
 
 ### <a name="data-encryption-in-transit"></a>Шифрование данных при передаче
-Если облачное хранилище данных поддерживает протоколы HTTPS или TLS, то передача всех данных между службами перемещения данных в фабрике данных и облачным хранилищем данных выполняется через эти защищенные каналы.
+Если облачное хранилище данных поддерживает протоколы HTTPS или TLS, то передача всех данных между службами перемещения данных в Фабрике данных и облачным хранилищем данных выполняется через эти защищенные каналы.
 
 > [!NOTE]
 > Во время передачи данных в базу данных и из нее все подключения к базе данных SQL Azure и хранилищу данных SQL Azure должны быть зашифрованы (с помощью SSL или TLS). Разрабатывая конвейер с помощью JSON, добавьте свойство "encryption" и в строке подключения задайте для него значение **true**. Для службы хранилища Azure вы можете использовать в строке подключения протокол **HTTPS**.
+
+> [!NOTE]
+> Для TLS используется версия 1.2.
 
 ### <a name="data-encryption-at-rest"></a>Шифрование неактивных данных
 Некоторые хранилища данных поддерживают шифрование неактивных данных. Мы рекомендуем включить механизм шифрования данных для этих хранилищ данных. 

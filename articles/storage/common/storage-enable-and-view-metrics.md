@@ -2,23 +2,19 @@
 title: Включение метрик хранилища на портале Azure | Документация Майкрософт
 description: Как включить метрики хранилища для служб больших двоичных объектов, очередей, таблиц и файлов.
 services: storage
-documentationcenter: ''
 author: roygara
-manager: jeconnoc
-editor: tysonn
-ms.assetid: 0407adfc-2a41-4126-922d-b76e90b74563
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/14/2017
 ms.author: rogarana
-ms.openlocfilehash: 0caa4eff80877ad4bf8d501a276e82922b1a84c7
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.component: common
+ms.openlocfilehash: a12f2f3775808edb2045be5a1d955280f515ff7d
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530426"
 ---
 # <a name="enabling-azure-storage-metrics-and-viewing-metrics-data"></a>Включение метрик хранилища Azure и просмотр данных метрик
 [!INCLUDE [storage-selector-portal-enable-and-view-metrics](../../../includes/storage-selector-portal-enable-and-view-metrics.md)]
@@ -115,8 +111,8 @@ blobClient.SetServiceProperties(properties);
 
 > [!NOTE]
 > Начиная с [Microsoft Azure Storage Explorer](http://storageexplorer.com/) версии 0.8.0 можно просматривать и скачивать таблицы метрик аналитики.
-> 
-> 
+>
+>
 
 Чтобы получить доступ к таблицам аналитики программными средствами, обратите внимание, что таблицы аналитики не отображаются в списке всех таблиц в учетной записи хранения. Можно обратиться к ним непосредственно по имени или использовать [API CloudAnalyticsClient](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.analytics.cloudanalyticsclient.aspx) в клиентской библиотеке .NET для запроса имен таблиц.
 
@@ -148,6 +144,8 @@ blobClient.SetServiceProperties(properties);
 * Типом запроса является либо all, в случае чего это строка сводки, либо он определяет конкретный API, например QueryEntity или UpdateEntity.
 
 В примере данных выше показаны все записи за одну минуту (начиная с 11:00). Таким образом, если сложить количество запросов QueryEntities, количество запросов QueryEntity и количество запросов UpdateEntity, в сумме получится семь, и эта сумма отображается в строке user:All. Аналогичным образом можно определить среднюю сквозную задержку 104.4286 в строке user:All, вычислив ((143,8 * 5) + 3 + 9)/7.
+
+Следует учитывать, что **параметры ежечасных метрик BLOB-объектов** применимы к **метрикам емкости BLOB-объектов** ($MetricsCapacityBlob) и **ежечасным метрикам транзакций BLOB-объектов** ($MetricsHourPrimaryTransactionsBlob). Оба параметра включаются или отключаются вместе и используют ту же политику хранения.
 
 ## <a name="metrics-alerts"></a>Оповещения метрик
 Рекомендуется настроить оповещения на [портале Azure](https://portal.azure.com), чтобы метрики хранилища могли автоматически уведомлять вас о всех важных изменениях в поведении служб хранилища. Если скачивание этих метрик в формате с разделителями происходит с помощью средства обозревателя хранилища, для анализа данных можно использовать Microsoft Excel. Список доступных инструментов Storage Explorer см. в разделе [Клиентские инструменты службы хранилища Azure](storage-explorers.md). Можно настроить оповещения в области **Правила оповещения**, доступной в разделе **Мониторинг** в области меню учетной записи хранения.

@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/17/2017
 ms.author: juliako
-ms.openlocfilehash: a7f20c22b39458134d3dcd42b7e13860c03bad58
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 08b7f50c3051c174158cff0b4c591a2b22fb4ab4
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33785913"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39502708"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD
  
 API служб мультимедиа Azure — это REST API. Его можно использовать для выполнения операций с ресурсами мультимедиа с помощью REST API или доступных клиентских пакетов SDK. Службы мультимедиа Azure предлагают клиентский пакет SDK служб мультимедиа для Microsoft .NET. Чтобы получить разрешение для доступа к ресурсам служб мультимедиа и API служб мультимедиа, вы должны пройти аутентификацию. 
 
-Службы мультимедиа поддерживают [аутентификацию на основе Azure Active Directory (Azure AD)](../../active-directory/active-directory-whatis.md). Служба REST служб мультимедиа Azure требует, чтобы у пользователя или приложения, выполняющего запросы REST API, была роль **участника** или **владельца** для доступа к ресурсам. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
+Службы мультимедиа поддерживают [аутентификацию на основе Azure Active Directory (Azure AD)](../../active-directory/fundamentals/active-directory-whatis.md). Служба REST служб мультимедиа Azure требует, чтобы у пользователя или приложения, выполняющего запросы REST API, была роль **участника** или **владельца** для доступа к ресурсам. Дополнительные сведения см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../../role-based-access-control/overview.md).  
 
 > [!IMPORTANT]
 > Службы мультимедиа в настоящее время поддерживают модель аутентификации с помощью службы контроля доступа Azure. Тем не менее авторизация посредством службы контроля доступа будет объявлена устаревшей 1 июня 2018 года. Мы рекомендуем как можно быстрее перейти на использование модели аутентификации Azure AD.
@@ -100,7 +100,7 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 При использовании аутентификации субъекта-службы для реализации потребительских сценариев аутентификация обычно осуществляется на среднем уровне (через API), а не непосредственно в мобильном или классическом приложении. 
 
-Чтобы использовать этот метод, создайте приложение Azure AD и субъект-службу в собственном клиенте. После создания приложения назначьте ему роль владельца или участника для доступа к учетной записи служб мультимедиа. Это можно сделать с помощью портала Azure, Azure CLI или сценария PowerShell. Можно также использовать существующее приложение Azure AD. Вы можете зарегистрировать приложение Azure AD и субъект-службу и управлять ими [на портале Azure](media-services-portal-get-started-with-aad.md). Это можно также сделать с помощью [Azure CLI 2.0](media-services-use-aad-auth-to-access-ams-api.md) или [PowerShell](media-services-powershell-create-and-configure-aad-app.md). 
+Чтобы использовать этот метод, создайте приложение Azure AD и субъект-службу в собственном клиенте. После создания приложения назначьте ему роль владельца или участника для доступа к учетной записи служб мультимедиа. Это можно сделать с помощью портала Azure, Azure CLI или сценария PowerShell. Можно также использовать существующее приложение Azure AD. Вы можете зарегистрировать приложение Azure AD и субъект-службу и управлять ими [на портале Azure](media-services-portal-get-started-with-aad.md). Это можно также сделать с помощью [Azure CLI](media-services-use-aad-auth-to-access-ams-api.md) или [PowerShell](media-services-powershell-create-and-configure-aad-app.md). 
 
 ![Приложения среднего уровня](./media/media-services-use-aad-auth-to-access-ams-api/media-services-principal-service-aad-app1.png)
 
@@ -146,8 +146,8 @@ API служб мультимедиа Azure — это REST API. Его можн
 
 Ниже приведены обзорные статьи, посвященные понятиям аутентификации Azure AD: 
 
-- [Основы проверки подлинности в Azure AD](../../active-directory/develop/active-directory-authentication-scenarios.md#basics-of-authentication-in-azure-ad)
-- [Интеграция приложений с Azure Active Directory](../../active-directory/develop/active-directory-integrating-applications.md)
+- [Основы проверки подлинности в Azure AD](../../active-directory/develop/authentication-scenarios.md#basics-of-authentication-in-azure-ad)
+- [Интеграция приложений с Azure Active Directory](../../active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad.md)
 - [Управление доступом на основе ролей с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md)
 
 ## <a name="next-steps"></a>Дополнительная информация

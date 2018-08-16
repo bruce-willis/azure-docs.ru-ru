@@ -1,25 +1,21 @@
 ---
-title: Создание кластеров HBase в виртуальной сети Azure | Документация Майкрософт
+title: Создание кластеров HBase в виртуальной сети в Azure
 description: Приступите к работе с HBase в Azure HDInsight. Узнайте, как создать кластеры HDInsight HBase в виртуальной сети Azure.
 keywords: ''
 services: hdinsight,virtual-network
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 8de8e446-f818-4e61-8fad-e9d38421e80d
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.author: jgao
-ms.openlocfilehash: edcfa47eee0f085bad415be0d9b112bbc33c3eca
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.author: jasonh
+ms.openlocfilehash: 33aba330735c53499a472f7e90d350c4edd54c41
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31521611"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592913"
 ---
 # <a name="create-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров HBase в HDInsight в виртуальной сети Azure
 Узнайте, как создавать кластеры Azure HDInsight HBase в [виртуальной сети Azure][1].
@@ -30,7 +26,7 @@ ms.locfileid: "31521611"
 * повышение производительности без необходимости организации пропуска трафика через множество шлюзов и подсистемы балансировки нагрузки;
 * возможность обработки конфиденциальной информации более безопасным способом, без необходимости организации общедоступной конечной точки.
 
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 Перед началом работы с этим руководством необходимо иметь следующее:
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).

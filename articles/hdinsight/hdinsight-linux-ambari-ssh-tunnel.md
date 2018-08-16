@@ -1,24 +1,20 @@
 ---
-title: Использование туннелирования SSH для доступа к Azure HDInsight | Документация Майкрософт
+title: Использование туннелирования SSH для доступа к Azure HDInsight
 description: Узнайте, как безопасно просматривать веб-ресурсы, размещенные на узлах HDInsight под управлением Linux, с помощью туннеля SSH.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-ms.assetid: 879834a4-52d0-499c-a3ae-8d28863abf65
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.author: larryfr
-ms.openlocfilehash: 797538a6d023e1a4b95680057eb0f72489290f40
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.author: jasonh
+ms.openlocfilehash: 75ef1dfecb92ed19925e514812bfc40b6066b0e1
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32311528"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39595255"
 ---
 # <a name="use-ssh-tunneling-to-access-ambari-web-ui-jobhistory-namenode-oozie-and-other-web-uis"></a>Использование туннелирования SSH для доступа к пользовательскому веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим пользовательским веб-интерфейсам
 
@@ -45,7 +41,7 @@ ms.locfileid: "32311528"
 
 С помощью [туннелирования Secure Shell (SSH)](https://en.wikipedia.org/wiki/Tunneling_protocol#Secure_Shell_tunneling) порт на локальном компьютере подключается к головному узлу в HDInsight. Трафик, отправленный в локальный порт, маршрутизируется по SSH-подключению к головному узлу. на котором запрос разрешается так же, как если бы он был создан на головном узле. Ответ рабочей станции отправляется обратно через туннель.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Клиент SSH. В большинстве систем клиент SSH предоставляется с помощью команды `ssh`. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 

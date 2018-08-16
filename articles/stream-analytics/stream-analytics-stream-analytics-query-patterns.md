@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 4a37ac6cdf5d13556c6a3e293c19c00ad36e4495
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 7f171fa1eb8c91b55119d0308b57fe3d3e70261b
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39364171"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39578897"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Примеры запросов для распространенных шаблонов использования Stream Analytics
 
@@ -27,8 +27,7 @@ ms.locfileid: "39364171"
 
 ## <a name="work-with-complex-data-types-in-json-and-avro"></a>Работа со сложными типами данных в JSON и AVRO 
 Azure Stream Analytics поддерживает обработку событий в форматах CSV, JSON и Avro.
-Данные JSON и Avro могут содержать сложные типы, такие как вложенные объекты (записи) или массивы. О том, как работать с этими сложными типами данных, можно узнать на [этой странице MSDN](
-https://msdn.microsoft.com/azure/stream-analytics/reference/complex-data-types-stream-analytics).
+Данные JSON и Avro могут содержать сложные типы, такие как вложенные объекты (записи) или массивы. Сведения о том, как работать с этими сложными типами данных, см. в статье [Parse JSON and Avro data in Azure Stream Analytics](stream-analytics-parsing-json.md) (Анализ данных JSON и AVRO в Azure Stream Analytics).
 
 
 ## <a name="query-example-convert-data-types"></a>Пример запроса: преобразование типов данных

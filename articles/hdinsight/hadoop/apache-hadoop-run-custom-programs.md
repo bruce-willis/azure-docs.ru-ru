@@ -1,24 +1,20 @@
 ---
-title: Запуск настраиваемых программ MapReduce в Azure HDInsight | Документация Майкрософт
+title: Запуск настраиваемых программ MapReduce в Azure HDInsight
 description: Когда и как запускать настраиваемые программы MapReduce в HDInsight.
 services: hdinsight
-documentationcenter: ''
 author: ashishthaps
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/04/2017
 ms.author: ashishth
-ms.openlocfilehash: 94d199642b409a2fd087ec1543651031a907d09f
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 87eb4c8380c0a542d52ffb4a77bcc317407ea545
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31403038"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39594480"
 ---
 # <a name="run-custom-mapreduce-programs"></a>Запуск настраиваемых программ MapReduce
 

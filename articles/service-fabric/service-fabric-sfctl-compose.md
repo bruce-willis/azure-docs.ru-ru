@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: cc3d3e35ce3dd457d981dfe9420be765cf9fc45a
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 3ce0b63c579412d9d8d35b835803becab09f7ef4
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763414"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494158"
 ---
 # <a name="sfctl-compose"></a>sfctl compose
 Создание, удаление приложений Docker Compose и управление ими.
@@ -62,7 +62,7 @@ ms.locfileid: "34763414"
 ## <a name="sfctl-compose-list"></a>sfctl compose list
 Возвращает список развертываний Compose, созданных в кластере Service Fabric.
 
-Возвращает состояние развертываний Compose, которые были созданы или в процессе создания в кластере Service Fabric. Ответ содержит имя, состояние и другие сведения о развертывании Compose. Если сведения о списке развертывания не помещаются на странице, возвращается одна страница результатов и маркер продолжения, который можно использовать для получения следующей страницы.
+Возвращает состояние развертываний Compose, которые были созданы или в процессе создания в кластере Service Fabric. Ответ содержит имя, состояние и другие сведения о развертывании Compose. Если список развертываний не помещается на странице, возвращается одна страница результатов и маркер продолжения, который можно использовать для получения следующей страницы.
 
 ### <a name="arguments"></a>Аргументы
 
@@ -187,7 +187,6 @@ ms.locfileid: "34763414"
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
 | --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
-
 
 
 ## <a name="next-steps"></a>Дополнительная информация

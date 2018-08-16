@@ -9,12 +9,12 @@ ms.custom: DBs & servers
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: carlrab
-ms.openlocfilehash: 5a7e00e84e5165296bcad83c515fc2af315954be
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 068ecf8283b92873542a7cb9ab2202212fd2ad2c
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414448"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495515"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-elastic-pools"></a>Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер
 
@@ -148,4 +148,5 @@ ms.locfileid: "39414448"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).

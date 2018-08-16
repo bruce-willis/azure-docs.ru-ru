@@ -1,25 +1,20 @@
 ---
-title: Выполнение запроса Hive с помощью драйвера JDBC в Azure HDInsight | Документы Майкрософт
+title: Выполнение запроса Hive с помощью драйвера JDBC в Azure HDInsight
 description: Используйте драйвер JDBC из приложения Java для отправки запросов Hive в Hadoop на основе HDInsight. Подключение можно осуществлять программными средствами и из клиента SQL SQuirrel.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 928f8d2a-684d-48cb-894c-11c59a5599ae
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: java
 ms.topic: conceptual
 ms.date: 04/02/2018
-ms.author: larryfr
-ms.openlocfilehash: 9700408dad36591fc26aa159524f33965b9d1324
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: 9c7881d0cc4f0c2c13f34fa8909d15dec1bf121a
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31399421"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39591675"
 ---
 # <a name="query-hive-through-the-jdbc-driver-in-hdinsight"></a>Выполнение запроса Hive с помощью драйвера JDBC в HDInsight
 
@@ -29,7 +24,7 @@ ms.locfileid: "31399421"
 
 Дополнительные сведения об интерфейсе JDBC Hive см. в статье [HiveJDBCInterface](https://cwiki.apache.org/confluence/display/Hive/HiveJDBCInterface).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Hadoop в кластере HDInsight.
 

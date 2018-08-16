@@ -9,12 +9,12 @@ ms.date: 06/25/2018
 ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: 07c0347793f6541a3e047f3f357d0d1b05dc3bca
-ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
+ms.openlocfilehash: d0ae7fbb22f6d98662f83968158182d447a75394
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39136187"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39501973"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 Сетка Azure Service Fabric — это полностью управляемая служба, которая позволяет разработчикам развертывать приложения для микрослужб без управления виртуальными машинами, хранилищем или сетями. Эта статья содержит ответы на часто задаваемые вопросы.
@@ -83,7 +83,7 @@ ms.locfileid: "39136187"
 
 Другие известные проблемы с DNS при запуске кластера разработки Service Fabric в Windows 10 описаны здесь: [Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2017](/azure/service-fabric/service-fabric-how-to-debug-windows-containers).
 
-**При использовании модуля интерфейса командной строки _ImportError возникает ошибка: не удается импортировать имя "sdk_no_wait"**
+**При использовании модуля интерфейса командной строки ImportError возникает ошибка "Не удается импортировать имя "sdk_no_wait"**
 
 Если вы используете версию интерфейса командной строки, предшествующую версии 2.0.30, может произойти приведенная ниже ошибка.
 

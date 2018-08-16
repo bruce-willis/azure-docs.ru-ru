@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 5afa34a5eadf5367b3ab28749735197ca6ed82bd
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 588a0686eda1966582b82a4673a8b6805453c94c
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35263207"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39441448"
 ---
 # <a name="create-a-log-alert-with-a-resource-manager-template"></a>Создание оповещения журнала с помощью шаблона Resource Manager
 В этой статье показано, как программно управлять [оповещениями журнала](monitor-alerts-unified-log.md) в соответствующем масштабе в Azure с помощью [шаблона Azure Resource Manager](..//azure-resource-manager/resource-group-authoring-templates.md) и [Azure PowerShell](../azure-resource-manager/resource-group-template-deploy.md) или [Azure CLI](../azure-resource-manager/resource-group-template-deploy-cli.md). Сейчас функция "Оповещения Azure" поддерживает оповещения журнала в запросах из [Azure Log Analytics](../log-analytics/log-analytics-tutorial-viewdata.md) и [Azure Application Insights](../application-insights/app-insights-analytics-tour.md).
@@ -27,7 +27,7 @@ ms.locfileid: "35263207"
 ### <a name="using-azure-resource-manager-template"></a>Использование шаблона Azure Resource Manager
 Оповещения журнала для Log Analytics создаются правилами генерации оповещений, которые выполняют сохраненный поиск через равные промежутки времени. Если результаты запроса соответствуют указанным условиям, то создается запись оповещения и выполняются одно или несколько действий. 
 
-Шаблон ресурсов для [сохраненного поиска Log Analytics](../log-analytics/log-analytics-log-searches.md) и [оповещений Log Analytics](../log-analytics/log-analytics-alerts.md) доступен в разделе документации по Log Analytics. Узнайте больше о [добавлении сохраненных поисков и оповещений Log Analytics](../operations-management-suite/operations-management-suite-solutions-resources-searches-alerts.md), включая демонстрационные примеры и сведения о схеме.
+Шаблон ресурсов для сохраненного поиска Log Analytics и оповещений Log Analytics доступен в разделе документации по Log Analytics. Дополнительные сведения см. в статье [Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)](../operations-management-suite/operations-management-suite-solutions-resources-searches-alerts.md), которая содержит демонстрационные примеры и сведения о схеме.
 
 ### <a name="using-resource-template-via-apipowershell"></a>Использование шаблона ресурсов с помощью API или PowerShell
 В службе Log Analytics используется REST API, поддерживающий RESTful. К нему можно получить доступ с помощью REST API Azure Resource Manager. Следовательно, к этому API можно обратиться из командной строки PowerShell, и он будет выдавать результаты поиска в формате JSON, позволяя программно использовать эти результаты различными способами.

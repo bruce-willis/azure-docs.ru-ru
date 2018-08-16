@@ -13,18 +13,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/14/2018
 ms.author: mikhegn
-ms.openlocfilehash: 437c38a8e674fcdf06e26a7191ceecef9d901470
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 180bd3709cc9ffefb17f78e337e6f6995024fdcf
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38968326"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39523433"
 ---
 # <a name="how-to-debug-windows-containers-in-azure-service-fabric-using-visual-studio-2017"></a>Практическое руководство. Отладка контейнеров Windows в Azure Service Fabric с помощью Visual Studio 2017
 
 С помощью Visual Studio 2017 с обновлением 7 (15.7) можно выполнять отладку приложений .NET в контейнерах, используемых в качестве служб Service Fabric. В этой статье показано, как настроить среду, а затем выполнить отладку приложения .NET в контейнере, выполняемом в локальном кластере Service Fabric.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * В Windows 10 выполните это краткое руководство, чтобы [настроить Windows 10 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-10).
 * В Windows Server 2016 выполните это краткое руководство, чтобы [настроить Windows 2016 для запуска контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/quick-start/quick-start-windows-server).
@@ -34,20 +34,20 @@ ms.locfileid: "38968326"
 
 1. Убедитесь, что Docker для службы Windows выполняется, прежде чем переходить к следующему шагу.
 
-1. Чтобы обеспечить поддержку разрешения DNS между контейнерами, необходимо будет настроить локальный кластер разработки, используя имя компьютера.
+1. Чтобы обеспечить поддержку разрешения DNS между контейнерами, необходимо будет настроить локальный кластер разработки, используя имя компьютера. Также эти действия необходимо выполнить, если нужно обратиться к службам через обратный прокси-сервер.
     1. Откройте PowerShell от имени администратора.
-    1. Перейдите в папку установки SDK кластера, как правило `C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup`.
-    1. Выполните сценарий `DevClusterSetup.ps1` с параметром `-UseMachineName`.
+    2. Откройте папку установки SDK кластера, как правило `C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup`.
+    3. Выполните сценарий `DevClusterSetup.ps1` с параметром `-UseMachineName`.
 
-    ``` PowerShell
-      C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1 -UseMachineName
-    ```
+       ``` PowerShell
+         C:\Program Files\Microsoft SDKs\Service Fabric\ClusterSetup\DevClusterSetup.ps1 -UseMachineName
+       ```
 
     > [!NOTE]
     > `-CreateOneNodeCluster` можно использовать, чтобы настроить кластер с одним узлом. По умолчанию будет создан локальный кластер с пятью узлами.
     >
 
-    Дополнительные сведения о службе DNS в Service Fabric см. в [этой статье](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice).
+    Дополнительные сведения о службе DNS в Service Fabric см. в [этой статье](https://docs.microsoft.com/azure/service-fabric/service-fabric-dnsservice). Дополнительные сведения об использовании обратного прокси-сервера Service Fabric из служб, запущенных в контейнере, см. в разделе [Специальные действия для служб с общим доступом к портам](service-fabric-reverseproxy.md#special-handling-for-services-running-in-containers).
 
 ### <a name="known-limitations-when-debugging-containers-in-service-fabric"></a>Известные ограничения при отладке контейнеров в Service Fabric
 

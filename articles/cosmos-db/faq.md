@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/03/2018
 ms.author: sngun
-ms.openlocfilehash: b792798c64ed0a2eb12a16d868d8a17302466fea
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 053e72ce81f69b267c72ded572e8912a1a09d2e6
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39215362"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579703"
 ---
 # <a name="azure-cosmos-db-faq"></a>Вопросы и ответы об Azure Cosmos DB
 ## <a name="azure-cosmos-db-fundamentals"></a>Основные сведения об Azure Cosmos DB
@@ -448,7 +448,7 @@ Azure Cosmos DB — это система на основе соглашений
 
 ## <a name="develop-against-the-graph-api"></a>Разработка с использованием API Graph
 ### <a name="how-can-i-apply-the-functionality-of-graph-api-to-azure-cosmos-db"></a>Как можно использовать функции API Graph в Azure Cosmos DB?
-Чтобы использовать эти функции, можно применить библиотеку расширений API Graph. Эта библиотека называется Microsoft Azure Graphs. Она доступна в NuGet. 
+Чтобы использовать эти функции, можно применить библиотеку расширений API Graph. Эта библиотека называется Microsoft Azure Graphs. Она доступна в [NuGet](https://www.nuget.org/packages/Microsoft.Azure.Graphs). 
 
 ### <a name="it-looks-like-you-support-the-gremlin-graph-traversal-language-do-you-plan-to-add-more-forms-of-query"></a>Похоже, предусмотрена поддержка Gremlin как обходного языка. Планируете ли вы добавить дополнительные варианты запросов?
 Да, в будущем мы планируем добавить другие механизмы выполнения запросов. 

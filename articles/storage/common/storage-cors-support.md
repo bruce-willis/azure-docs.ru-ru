@@ -2,29 +2,24 @@
 title: Поддержка общего доступа к ресурсам независимо от источника (CORS) | Документация Майкрософт
 description: Узнайте, как включить поддержку CORS для служб хранилища Microsoft Azure.
 services: storage
-documentationcenter: .net
 author: cbrooksmsft
-manager: carmonm
-editor: tysonn
-ms.assetid: a0229595-5b64-4898-b8d6-fa2625ea6887
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 2/22/2017
 ms.author: cbrooks
-ms.openlocfilehash: 8d189d3ec3e6081dd37b912824f287cd75f39b35
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.component: common
+ms.openlocfilehash: fd5df50128885f6a96e68c8ad46204bc21d80264
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
-ms.locfileid: "23059849"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530476"
 ---
 # <a name="cross-origin-resource-sharing-cors-support-for-the-azure-storage-services"></a>Поддержка общего доступа к ресурсам независимо от источника (CORS) для служб хранилища Azure
 Начиная с версии 2013-08-15, службы хранилища Azure поддерживают общий доступ к ресурсам независимо от источника (CORS) для служб BLOB-объектов, таблиц, очередей и файлов. CORS является функцией HTTP, которая позволяет веб-приложению, работающему в одном домене, обращаться к ресурсам из другого домена. Веб-браузеры реализуют ограничение безопасности под названием [политика одного источника](http://www.w3.org/Security/wiki/Same_Origin_Policy), которое не позволяет веб-странице вызывать интерфейсы API из другого домена; CORS обеспечивает безопасный способ, который разрешает одному домену (исходному домену) вызывать интерфейсы API в другом домене. Дополнительные сведения о спецификации CORS см. на [этом сайте](http://www.w3.org/TR/cors/).
 
-Чтобы задать правила CORS отдельно для каждой службы хранилища, обратитесь к разделам [Set Blob Service Properties](https://msdn.microsoft.com/library/hh452235.aspx) (Задание свойств службы BLOB-объектов), [Set Queue Service Properties](https://msdn.microsoft.com/library/hh452232.aspx) (Задание свойств службы очередей) и [Set Table Service Properties](https://msdn.microsoft.com/library/hh452240.aspx) (Задание свойств службы таблиц). Как только будут заданы правила CORS для службы, прошедший аутентификацию запрос к службе из другого домена будет оценен для определения его допустимости согласно заданным правилам.
+Чтобы задать правила CORS отдельно для каждой службы хранилища, обратитесь к разделам [Set Blob Service Properties](https://msdn.microsoft.com/library/hh452235.aspx) (Задание свойств службы BLOB-объектов), [Set Queue Service Properties](https://msdn.microsoft.com/library/hh452232.aspx) (Задание свойств службы очередей) и [Set Table Service Properties](https://msdn.microsoft.com/library/hh452240.aspx) (Задание свойств службы таблиц). Как только будут заданы правила CORS для службы, прошедший авторизацию запрос к службе из другого домена будет оценен для определения его допустимости согласно заданным правилам.
 
 > [!NOTE]
 > Обратите внимание, что CORS не является механизмом аутентификации. Любой запрос к ресурсу хранилища, в котором включен механизм CORS, должен иметь правильную подпись аутентификации или быть направлен к открытому ресурсу.
@@ -171,11 +166,11 @@ ms.locfileid: "23059849"
 | **Заголовок исходного домена есть в запросе** |**Правила CORS, заданные для этой службы** |**Существует соответствующее правило, которое допускает все исходные домены(*)** |**Существует соответствующее правило для точно совпадающего исходного домена** |**Ответ содержит заголовок Vary, которому присвоено значение Origin** |**Ответ содержит Access-Control-Allowed-Origin: "*"** |**Ответ содержит Access-Control-Exposed-Headers** |
 | Нет  |Нет  |Нет  |Нет  |Нет  |Нет  |Нет  |
 | Нет  |Yes |Нет  |Нет  |Yes |Нет  |Нет  |
-| Нет  |Yes |Yes |Нет  |Нет  |Yes |Yes |
-| Yes |Нет  |Нет  |Нет  |Нет  |Нет  |Нет  |
-| Yes |Yes |Нет  |Yes |Yes |Нет  |Yes |
-| Yes |Yes |Нет  |Нет  |Yes |Нет  |Нет  |
-| Yes |Yes |Yes |Нет  |Нет  |Yes |Yes |
+| Нет  |Yes |Да |Нет  |Нет  |Yes |Да |
+| Да |Нет  |Нет  |Нет  |Нет  |Нет  |Нет  |
+| Yes |Да |Нет  |Yes |Да |Нет  |Yes |
+| Да |Да |Нет  |Нет  |Yes |Нет  |Нет  |
+| Yes |Да |Да |Нет  |Нет  |Yes |Yes |
 
 ## <a name="billing-for-cors-requests"></a>Выставление счетов за запросы CORS
 Если в учетной записи вы включили CORS для какой-либо службы хранилища (вызвав операцию [Set Blob Service Properties](https://msdn.microsoft.com/library/hh452235.aspx) (Задание свойств службы BLOB-объектов), [Set Queue Service Properties](https://msdn.microsoft.com/library/hh452232.aspx) (Задание свойств службы очередей) или [Set Table Service Properties](https://msdn.microsoft.com/library/hh452240.aspx) (Задание свойств службы таблиц)), то за успешно выполненные предварительные запросы будет взиматься плата. Для максимального сокращения расходов рекомендуется установить большее значение для элемента **MaxAgeInSeconds** в правилах CORS, чтобы агент пользователя кэшировал запрос.

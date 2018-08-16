@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: acade3d828c785af9468baa30086d3b79542f9b7
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: f24d273afa47466fe53b93d9c9c22bbcb1fc6959
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763978"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493525"
 ---
 # <a name="sfctl-property"></a>Свойство sfctl
 Хранение и запрос свойств с именами Service Fabric.
@@ -115,7 +115,7 @@ ms.locfileid: "34763978"
 | --name-id [обязательный параметр] | Имя Service Fabric без указания схемы универсального кода ресурса (URI) 'fabric\:'. |
 | --property-name [обязательный параметр] | Имя свойства Service Fabric. |
 | --value [обязательный параметр] | Описывает значение свойства Service Fabric. Это строка JSON. <br><br> Строка json имеет два поля данных, "Вид" и "Значение". Значение "Вид" должно быть первым элементом в строке JSON и может принимать значения "двоичное", "целое64", "двойное", "строка" или "Guid". Значение должно иметь возможность сериализации данных типов. Значения "Вид" и "Данные" необходимо указать как строки. |
-| --custom-id-type | Идентификатор типа пользовательского свойства. Используя это свойство, пользователь может пометить тип значения свойства. |
+| --custom-id-type | Идентификатор пользовательского типа свойства. Используя это свойство, пользователь может пометить тип значения свойства. |
 | --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
@@ -127,6 +127,7 @@ ms.locfileid: "34763978"
 | --output -o | Формат выходных данных.  Допустимые значения\: json, jsonc, table, tsv.  Значение по умолчанию\: json. |
 | --query | Строка запроса JMESPath. Дополнительные сведения и примеры см. на веб-сайте http\://jmespath.org/. |
 | --verbose | Повышение уровня детализации ведения журнала. Используйте параметр --debug, чтобы получить полные журналы отладки. |
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Настройте](service-fabric-cli.md) интерфейс командной строки Service Fabric.

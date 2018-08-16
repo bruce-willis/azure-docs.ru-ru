@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 04/02/2018
 ms.author: liydu
-ms.openlocfilehash: ee8ff1acbaf5d97d62d6811e8e8abc86017b32fe
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: fc74613e00adc459f7a7b0a16c6f773fe4bf601d
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34632617"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39593661"
 ---
 # <a name="send-messages-to-an-mqtt-server"></a>Отправка сообщений на сервер MQTT
 
@@ -37,7 +37,7 @@ ms.locfileid: "34632617"
 
 ## <a name="open-the-project-folder"></a>Открытие папки проекта
 
-1. Отключите устройство DevKit от компьютера, если оно подключено.
+1. Если устройство DevKit подключено к компьютеру, отключите его.
 
 2. Запустите VSCode.
 
@@ -57,7 +57,7 @@ ms.locfileid: "34632617"
 ![device-upload](media/iot-hub-arduino-iot-devkit-az3166-mqtt-helloworld/device-upload.jpg)
 
 > [!NOTE]
-> Вы можете увидеть сообщение об ошибке "Error: AZ3166: Unknown package" (Ошибка AZ3166: неизвестный пакет). Такая ошибка возникает, если индекс пакета платы неправильно обновлен. Чтобы устранить эту ошибку, ознакомьтесь с этими [часто задаваемыми вопросами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#development).
+> Вы можете увидеть сообщение об ошибке "Error: AZ3166: Unknown package" (Ошибка AZ3166: неизвестный пакет). Такая ошибка возникает, если индекс пакета платы неправильно обновлен. Чтобы устранить эту ошибку, ознакомьтесь с [разделом по разработке](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/#development) в статье с часто задаваемыми вопросами об IoT DevKit.
 
 ## <a name="test-the-project"></a>Тестирование проекта
 
@@ -75,15 +75,15 @@ Serial Monitor отобразит все сообщения, отправлен�
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 
-Если вы столкнулись с проблемами, то можете ознакомиться с [часто задаваемыми вопросами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или попросить помощь по одному из таких каналов:
+Если вы столкнулись с проблемами, ознакомьтесь с [вопросами и ответами](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) об IoT DevKit или используйте один из следующих каналов связи:
 
 * [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
 * [Stackoverflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
 ## <a name="see-also"></a>См. также
 
-* [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке]({{"/docs/getting-started/" | absolute_url }})
-* [Shake, Shake: получение сообщений из Twitter]({{"/docs/projects/shake-shake/" | absolute_url }})
+* [Подключение платы IoT DevKit AZ3166 к Центру Интернета вещей Azure в облаке](iot-hub-arduino-iot-devkit-az3166-get-started.md)
+* [Shake, Shake: получение сообщений из Twitter](iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

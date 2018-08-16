@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 5/3/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 94d60325fa53668628ddefa68e8ce313c4fa75c6
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: e19c1cb7b297d2537e969e0dd632dae3e1c3d211
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34797851"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39594368"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -34,31 +34,24 @@ ms.locfileid: "34797851"
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
-<table>
-
-<tr><td>**Скачать пакет SDK**</td><td>[NPM](https://www.npmjs.com/package/documentdb)</td></tr>
-
-<tr><td>**Документация по API**</td><td>[Справочная документация по API Node.js](https://docs.microsoft.com/javascript/api/documentdb/?view=azure-node-latest)</td></tr>
-
-<tr><td>**Инструкции по установке пакета SDK**</td><td>[Инструкции по установке](http://azure.github.io/azure-documentdb-node/)</td></tr>
-
-<tr><td>**Участие в разработке пакета SDK**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
-
-<tr><td>**Примеры**</td><td>[Примеры кода Node.js](sql-api-nodejs-samples.md)</td></tr>
-
-<tr><td>**Учебник по началу работы**</td><td>[Приступая к работе с пакетом SDK для Node.js](sql-api-nodejs-get-started.md)</td></tr>
-
-<tr><td>**Учебник по веб-приложениям**</td><td>[Создание веб-приложения Node.js с использованием Azure Cosmos DB](sql-api-nodejs-application.md)</td></tr>
-
-<tr><td>**Текущая поддерживаемая платформа**</td><td> 
-[Node.js v6.x](https://nodejs.org/en/blog/release/v6.10.3/)<br/> 
-[Node.js версии 4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)<br/> 
-[Node.js версии 0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/> 
-[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/) 
-</td></tr>
-</table></br>
+|Ресурс  |Ссылка  |
+|---------|---------|
+|Пакет SDK для скачивания  |   [NPM](https://www.npmjs.com/package/@azure/cosmos) 
+|Документация по API  |  [Справочная документация по пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/%40azure/cosmos/?view=azure-node-latest)
+|Инструкции по установке пакета SDK  |  [Инструкции по установке](https://github.com/Azure/azure-cosmos-js#installation)
+|Участие в разработке пакета SDK | [GitHub](https://github.com/Azure/azure-cosmos-js/tree/master)
+| Примеры | [Примеры кода Node.js](sql-api-nodejs-samples-preview.md)
+| Руководство по началу работы | [Приступая к работе с пакетом SDK для JavaScript](sql-api-nodejs-get-started-preview.md)
+| Руководство по веб-приложениям | [Создание веб-приложения Node.js с использованием Azure Cosmos DB](sql-api-nodejs-application-preview.md)
+| Текущая поддерживаемая платформа | [Node.js версии 6.x](https://nodejs.org/en/blog/release/v6.10.3/) — является обязательной для пакета SDK версии 2.0.0 и более поздних версий.<br/>[Node.js версии 4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)<br/> [Node.js версии 0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/> [Node.js версии 0.10](https://nodejs.org/en/blog/release/v0.10.0/) 
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="2.0.0-3"/>2.0.0 — 3</a>
+* Версия-кандидат 1 общедоступной предварительной версии пакета SDK 2.0.0 для JavaScript.
+* Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (Database, Container и Item). 
+* Поддержка [обещаний](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises). 
+* Пакет SDK преобразован в TypeScript.
 
 ### <a name="1.14.4"/>1.14.4</a>
 * Исправлена документация npm.
@@ -201,6 +194,7 @@ ms.locfileid: "34797851"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.0.0 — 3 (релиз-кандидат)](#2.0.0-3) |2 августа, 2018 г. |--- |
 | [1.14.4](#1.14.4) |3 мая 2018 г. |--- |
 | [1.14.3](#1.14.3) |3 мая 2018 г. |--- |
 | [1.14.2](#1.14.2) |21 декабря 2017 г. |--- |

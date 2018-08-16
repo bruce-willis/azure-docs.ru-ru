@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 08/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 9934e9757b5def444afb39d110e490aa6516521f
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 52bbf93d73af281f3959e056a4d5b959e7286cb5
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045081"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39590336"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -37,15 +37,17 @@ ms.locfileid: "37045081"
 - Копирование данных из **InfoCubes и QueryCubes** (включая запросы BEx) с помощью запросов многомерных выражений.
 - Копирование данных с помощью базовой проверки подлинности.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель SAP Business Warehouse, сделайте следующее:
 
 - Настроить локальную среду выполнения интеграции. Дополнительные сведения см. в статье [Создание и настройка локальной среды выполнения интеграции](create-self-hosted-integration-runtime.md).
-- Установите **библиотеку SAP NetWeaver** на компьютере среды выполнения интеграции. Библиотеку SAP Netweaver можно получить у администратора SAP или непосредственно на странице [SAP Software Download Center](https://support.sap.com/swdc) (Центр загрузки программного обеспечения SAP). Найдите **примечание к SAP № 1025361**, чтобы узнать адрес для скачивания самой последней версии. Убедитесь, что выбрана **64-разрядная** библиотека SAP NetWeaver, которая соответствует установке интеграции среды выполнения. Установите все файлы, включенные в состав пакета SDK RFC для SAP NetWeaver, согласно примечанию к SAP. Библиотека SAP NetWeaver также включена в состав клиентских инструментов SAP.
+- Установите **библиотеку SAP NetWeaver** на компьютере среды выполнения интеграции. Библиотеку SAP Netweaver можно получить у администратора SAP или непосредственно на странице [SAP Software Download Center](https://support.sap.com/swdc) (Центр загрузки программного обеспечения SAP). Найдите **примечание к SAP № 1025361**, чтобы узнать адрес для скачивания самой последней версии. Убедитесь, что выбрана **64-разрядная** библиотека SAP NetWeaver, которая соответствует установленной среде Integration Runtime. Установите все файлы, включенные в состав пакета SDK RFC для SAP NetWeaver, согласно примечанию к SAP. Библиотека SAP NetWeaver также включена в состав клиентских инструментов SAP.
 
-> [!TIP]
-> Поместите библиотеки DLL, извлеченные из пакета SDK RFC для NetWeaver, в папку system32.
+>[!TIP]
+>Чтобы устранить неполадки с подключением к SAP BW, проверьте следующее:
+>- В папке %windir%\system32 хранятся все библиотеки зависимостей, извлеченные из пакета SDK для NetWeaver RFC. Как правило, это библиотеки icudt34.dll, icuin34.dll, icuuc34.dll, libicudecnumber.dll, librfc32.dll, libsapucum.dll, sapcrypto.dll, sapcryto_old.dll и sapnwrfc.dll.
+>- На компьютере с локальной средой выполнения интеграции включены порты (как правило, 3300 и 3201), необходимые для подключения к серверу SAP.
 
 ## <a name="getting-started"></a>Приступая к работе
 

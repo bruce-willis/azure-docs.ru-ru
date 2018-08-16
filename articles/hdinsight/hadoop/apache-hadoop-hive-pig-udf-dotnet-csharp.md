@@ -1,25 +1,20 @@
 ---
-title: Использование C# с Hive и Pig в Hadoop в HDInsight — Azure | Документы Майкрософт
+title: Использование C# с Hive и Pig в Hadoop в HDInsight в Azure
 description: Узнайте, как использовать определяемые пользователем функции C# при потоковой передаче Hive и Pig в Azure HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: d83def76-12ad-4538-bb8e-3ba3542b7211
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: b776b214b9d46293a3ab97ad226dffd3107f3430
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: a2a5581f62a4aa2d9af8302907a144573fd8d3b8
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31404041"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596785"
 ---
 # <a name="use-c-user-defined-functions-with-hive-and-pig-streaming-on-hadoop-in-hdinsight"></a>Использование определяемых пользователем функций C# при потоковой передаче Hive и Pig в Hadoop HDInsight.
 
@@ -30,7 +25,7 @@ ms.locfileid: "31404041"
 
 Hive и Pig могут передавать данные во внешние приложения для обработки. Этот процесс называется _потоковой передачей_. При использовании приложения .NET данные передаются в него через поток STDIN, после чего приложение возвращает результаты через поток STDOUT. Для чтения и записи с помощью потоков STDIN и STDOUT можно использовать `Console.ReadLine()` и `Console.WriteLine()` из консольного приложения.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5.
 

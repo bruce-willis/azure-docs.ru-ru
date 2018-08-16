@@ -1,26 +1,21 @@
 ---
-title: Высокая доступность для Hadoop в Azure HDInsight | Документация Майкрософт
+title: Высокий уровень доступности для Hadoop в Azure HDInsight
 description: Узнайте, как использование дополнительного головного узла позволяет повысить надежность и доступность кластеров HDInsight. Узнайте, как это влияет на службы Hadoop, такие как Ambari и Hive, и научитесь подключаться к каждому отдельному головному узлу с помощью SSH.
 services: hdinsight
-editor: cgronlun
-manager: cgronlun
-author: Blackmist
-documentationcenter: ''
-tags: azure-portal
+editor: jasonwhowell
+author: jasonwhowell
 keywords: Высокая доступность Hadoop
-ms.assetid: 99c9f59c-cf6b-4529-99d1-bf060435e8d4
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.author: larryfr
-ms.openlocfilehash: 835e649959164aee5cc8edb1f2e34170d8a321f1
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.author: jasonh
+ms.openlocfilehash: ad42c1acd795d15bbbe951d90ec9b6b09695cd0a
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046685"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592589"
 ---
 # <a name="availability-and-reliability-of-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Hadoop в HDInsight
 

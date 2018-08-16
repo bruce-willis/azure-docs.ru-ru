@@ -1,25 +1,20 @@
 ---
-title: Мониторинг и управление кластерами Azure HDInsight с помощью веб-интерфейса Ambari | Документация Майкрософт
+title: Мониторинг и администрирование кластеров Azure HDInsight с помощью веб-интерфейса Ambari
 description: Узнайте, как использовать Ambari для наблюдения за кластерами HDInsight на платформе Linux и управления их функционированием. В этом документе рассказывается об использовании веб-интерфейса Ambari, предоставляемого с кластерами HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 4787f3cc-a650-4dc3-9d96-a19a67aad046
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/23/2018
-ms.author: larryfr
-ms.openlocfilehash: 8c58607e191d58d1cb6706569b909a4d709b14b3
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: e0efab2caa4f214d407cf8c4f09bfa5f4f619e8d
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31405272"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39591843"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Ambari
 
@@ -233,7 +228,6 @@ Apache Ambari упрощает управление кластером Hadoop и
 
 Представления Ambari позволяют разработчикам подключать элементы пользовательского интерфейса к веб-интерфейсу Ambari, используя [Ambari Views Framework](https://cwiki.apache.org/confluence/display/AMBARI/Views). HDInsight предлагает следующие представления с типами кластеров Hadoop:
 
-* Диспетчер очередей Yarn. Диспетчер очередей предоставляет простой пользовательский интерфейс для просмотра и изменения очередей Yarn.
 
 * Представление Hive. Представление Hive позволяет выполнять запросы Hive прямо из браузера. Можно сохранять запросы, просматривать результаты, сохранять их в хранилище кластера или загружать результаты в локальную систему. Дополнительные сведения об использовании представлений Hive см. [здесь](hadoop/apache-hadoop-use-hive-ambari-view.md).
 

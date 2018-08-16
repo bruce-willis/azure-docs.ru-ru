@@ -9,12 +9,12 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: 889762ae0b401438f25546738268c584ddd58389
-ms.sourcegitcommit: 15bfce02b334b67aedd634fa864efb4849fc5ee2
+ms.openlocfilehash: 88bf82805ba46abf79b7899e0428a83485062302
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "35382957"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39504973"
 ---
 # <a name="call-bing-custom-search-endpoint-python"></a>Конечная точка службы пользовательского поиска Bing (Python)
 
@@ -34,13 +34,18 @@ ms.locfileid: "35382957"
 Чтобы вызвать конечную точку службы пользовательского поиска Bing, выполните следующие действия.
 
 1. Создайте каталог для своего кода.
+
 2. Из командной строки или терминала с правами администратора перейдите в эту папку.
+
 3. Установите модуль Python **requests**.
+
     <pre>
     pip install pipenv
     pipenv install requests
     </pre>
+    
 7. Создайте файл BingCustomSearch.py и скопируйте в него приведенный ниже код.
+
 8. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом и идентификатором конфигурации (см. шаг 1).
 
     ``` Python

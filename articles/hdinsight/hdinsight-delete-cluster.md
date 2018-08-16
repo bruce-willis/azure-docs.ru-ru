@@ -1,24 +1,20 @@
 ---
-title: Удаление кластера HDInsight в Azure | Документы Майкрософт
+title: Как удалить кластер HDInsight в Azure
 description: Сведения о различных способах удаления кластера HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlun
-editor: cgronlun
-ms.assetid: 55f7838b-9786-47ff-96db-1b64437bd0bb
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/22/2018
-ms.author: larryfr
+ms.author: jasonh
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 01c59d4970bca54417c9b860ec177ecf5a37d8c5
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 1d376b365d8755cfea8718d6d0a50cfa6008fdc3
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31398804"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39596024"
 ---
 # <a name="delete-an-hdinsight-cluster-using-your-browser-powershell-or-the-azure-cli"></a>Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI
 

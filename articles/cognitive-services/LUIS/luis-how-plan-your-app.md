@@ -1,6 +1,6 @@
 ---
 title: Планирование приложений LUIS | Документы Майкрософт
-description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в службе Language Understanding Intelligent Services (LUIS).
+description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
 author: diberry
 manager: cjgronlund
@@ -9,12 +9,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 05/07/2017
 ms.author: diberry
-ms.openlocfilehash: 8cafe2be190988cbcbe8da616fe17c9a35c722f3
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: cba156d784bfcdd2586073ab5562faf604569cd8
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226029"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505534"
 ---
 # <a name="plan-your-luis-app"></a>Планирование приложения LUIS
 
@@ -65,7 +65,7 @@ ms.locfileid: "39226029"
 
 ![Предварительно созданная сущность Number](./media/luis-plan-your-app/number-entity.png)
 
-Дополнительные сведения об извлечении сущностей регулярных выражений из ответа на запрос JSON конечной точки см. в статье [Извлечение данных](luis-concept-data-extraction.md#prebuilt-entity-data). 
+Дополнительные сведения об извлечении предварительно созданной сущности из ответа на запрос JSON конечной точки см. в разделе [Извлечение данных](luis-concept-data-extraction.md#prebuilt-entity-data). 
 
 ### <a name="list-entity"></a>Сущность списка 
 Сущность списка — это явно указанный список значений. Каждое значение состоит из одного или нескольких синонимов. В приложении для путешествия можно создать сущность списка, представляющую названия аэропортов.

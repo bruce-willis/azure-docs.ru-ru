@@ -1,25 +1,20 @@
 ---
-title: 'Разрешение пользователям доступа к Ambari Views: Azure HDInsight | Документация Майкрософт'
+title: Предоставление пользователям доступа к представлениям Ambari в Azure HDInsight
 description: Как управлять разрешениями пользователей и групп Ambari для кластеров HDInsight, присоединенных к домену.
 services: hdinsight
-documentationcenter: ''
-tags: azure-portal
 author: maxluk
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 09/26/2017
 ms.author: maxluk
-ms.openlocfilehash: 0e7eb7fa57630e5ae52d4bf5e4321456c6bff54a
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: a0f8cf062ed08f0dfa57107baf29724a8e58d0af
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31401056"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592131"
 ---
 # <a name="authorize-users-for-ambari-views"></a>Разрешение пользователям доступа к Ambari Views
 
@@ -93,7 +88,7 @@ ms.locfileid: "31401056"
 
 * администратор кластера;
 * оператор кластера;
-* администратора служб;
+* Администратор служб
 * оператор службы;
 * пользователь кластера.
 

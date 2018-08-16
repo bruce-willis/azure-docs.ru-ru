@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 11/03/2017
 ms.author: bharatn
-ms.openlocfilehash: bec2e443b920a1f163b7b328197d3688d207ed35
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: 521a7b90b971ff3ba867945a4713b1f6dc8dbebc
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39309125"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39503525"
 ---
 # <a name="reverse-proxy-in-azure-service-fabric"></a>Обратный прокси-сервер в Azure Service Fabric
 Обратный прокси-сервер, встроенный в Azure Service Fabric, помогает микрослужбам, работающим в кластере Service Fabric, обнаруживать другие службы с конечными точками HTTP и взаимодействовать с этими службами.
@@ -146,184 +146,23 @@ http://10.0.0.5:10592/3f0d39ad-924b-4233-b4a7-02617c6308a6-130834621071472715/
 
 Этот заголовок ответа HTTP указывает обычную ситуацию возникновения ошибки "HTTP 404", в которой запрошенный ресурс не существует, и обратный прокси-сервер не будет пытаться повторно разрешить адрес службы.
 
-## <a name="setup-and-configuration"></a>Установка и настройка
+## <a name="special-handling-for-services-running-in-containers"></a>Специальные действия для служб, запущенных в контейнерах
 
-### <a name="enable-reverse-proxy-via-azure-portal"></a>Включение обратного прокси-сервера на портале Azure
+Чтобы создать [URL-адрес обратного прокси-сервера](#uri-format-for-addressing-services-by-using-the-reverse-proxy) для запущенных в контейнерах служб, можно использовать переменную среды `Fabric_NodeIPOrFQDN`, как в следующем коде:
 
-Во время создания нового кластера Service Fabric на портале Azure можно включить обратный прокси-сервер.
-Во время **создания кластера Service Fabric** на шаге 2 ("Конфигурация кластера" > "Конфигурация типа узла") установите флажок возле параметра "Включить обратный прокси-сервер".
-Для настройки безопасного обратного прокси-сервера можно указать SSL-сертификат на шаге 3 ("Безопасность" > "Настройка параметров безопасности кластера"): установите флажок возле параметра "Включить SSL-сертификат для обратного прокси-сервера" и введите сведения о сертификате.
-
-### <a name="enable-reverse-proxy-via-azure-resource-manager-templates"></a>Включение обратного прокси-сервера с помощью шаблонов Azure Resource Manager
-
-Обратный прокси-сервер можно включить для кластера в Service Fabric с помощью [шаблона Azure Resource Manager](service-fabric-cluster-creation-via-arm.md).
-
-В статье [Configure HTTPS Reverse Proxy in a secure cluster](https://github.com/ChackDan/Service-Fabric/tree/master/ARM%20Templates/ReverseProxySecureSample/README.md#configure-https-reverse-proxy-in-a-secure-cluster) (Настройка обратного прокси-сервера HTTPS в защищенном кластере) приведены примеры шаблонов Azure Resource Manager для настройки защищенного обратного прокси-сервера с сертификатом и обработки смены сертификатов.
-
-Сначала следует получить шаблон для кластера, который требуется развернуть. Можно использовать примеры шаблонов или создать пользовательский шаблон Resource Manager. Затем можно включить обратный прокси-сервер, выполнив следующие действия.
-
-1. Определите порт обратного прокси-сервера в разделе [Parameters](../azure-resource-manager/resource-group-authoring-templates.md) шаблона.
-
-    ```json
-    "SFReverseProxyPort": {
-        "type": "int",
-        "defaultValue": 19081,
-        "metadata": {
-            "description": "Endpoint for Service Fabric Reverse proxy"
-        }
-    },
-    ```
-2. Укажите порт для каждого типа узлов в подразделе [Cluster](../azure-resource-manager/resource-group-authoring-templates.md) **раздела типов ресурсов**.
-
-    Порт идентифицируется по имени параметра reverseProxyEndpointPort.
-
-    ```json
-    {
-        "apiVersion": "2016-09-01",
-        "type": "Microsoft.ServiceFabric/clusters",
-        "name": "[parameters('clusterName')]",
-        "location": "[parameters('clusterLocation')]",
-        ...
-       "nodeTypes": [
-          {
-           ...
-           "reverseProxyEndpointPort": "[parameters('SFReverseProxyPort')]",
-           ...
-          },
-        ...
-        ],
-        ...
-    }
-    ```
-3. Для обращения к обратному прокси-серверу извне кластера Azure настройте правила Azure Load Balancer для порта, указанного на шаге 1.
-
-    ```json
-    {
-        "apiVersion": "[variables('lbApiVersion')]",
-        "type": "Microsoft.Network/loadBalancers",
-        ...
-        ...
-        "loadBalancingRules": [
-            ...
-            {
-                "name": "LBSFReverseProxyRule",
-                "properties": {
-                    "backendAddressPool": {
-                        "id": "[variables('lbPoolID0')]"
-                    },
-                    "backendPort": "[parameters('SFReverseProxyPort')]",
-                    "enableFloatingIP": "false",
-                    "frontendIPConfiguration": {
-                        "id": "[variables('lbIPConfig0')]"
-                    },
-                    "frontendPort": "[parameters('SFReverseProxyPort')]",
-                    "idleTimeoutInMinutes": "5",
-                    "probe": {
-                        "id": "[concat(variables('lbID0'),'/probes/SFReverseProxyProbe')]"
-                    },
-                    "protocol": "tcp"
-                }
-            }
-        ],
-        "probes": [
-            ...
-            {
-                "name": "SFReverseProxyProbe",
-                "properties": {
-                    "intervalInSeconds": 5,
-                    "numberOfProbes": 2,
-                    "port":     "[parameters('SFReverseProxyPort')]",
-                    "protocol": "tcp"
-                }
-            }  
-        ]
-    }
-    ```
-4. Чтобы настроить SSL-сертификаты для порта обратного прокси-сервера, добавьте сертификат в свойство ***reverseProxyCertificate*** в подразделе **Cluster** [раздела типов ресурсов](../resource-group-authoring-templates.md).
-
-    ```json
-    {
-        "apiVersion": "2016-09-01",
-        "type": "Microsoft.ServiceFabric/clusters",
-        "name": "[parameters('clusterName')]",
-        "location": "[parameters('clusterLocation')]",
-        "dependsOn": [
-            "[concat('Microsoft.Storage/storageAccounts/', parameters('supportLogStorageAccountName'))]"
-        ],
-        "properties": {
-            ...
-            "reverseProxyCertificate": {
-                "thumbprint": "[parameters('sfReverseProxyCertificateThumbprint')]",
-                "x509StoreName": "[parameters('sfReverseProxyCertificateStoreName')]"
-            },
-            ...
-            "clusterState": "Default",
-        }
-    }
-    ```
-
-### <a name="supporting-a-reverse-proxy-certificate-thats-different-from-the-cluster-certificate"></a>Поддержка сертификата обратного прокси-сервера, отличного от сертификата кластера
- Если сертификат обратного прокси-сервера отличается от сертификата, который защищает кластер, то указанный ранее сертификат необходимо установить на виртуальную машину и добавить в список управления доступом (ACL), чтобы предоставить Service Fabric к нему доступ. Для этого вы можете использовать **virtualMachineScaleSets** в [разделе типов ресурсов](../resource-group-authoring-templates.md). Чтобы установить сертификат, добавьте его в osProfile. Раздел extension шаблона позволяет обновить сертификат в списке управления доступом.
-
-  ```json
-  {
-    "apiVersion": "[variables('vmssApiVersion')]",
-    "type": "Microsoft.Compute/virtualMachineScaleSets",
-    ....
-      "osProfile": {
-          "adminPassword": "[parameters('adminPassword')]",
-          "adminUsername": "[parameters('adminUsername')]",
-          "computernamePrefix": "[parameters('vmNodeType0Name')]",
-          "secrets": [
-            {
-              "sourceVault": {
-                "id": "[parameters('sfReverseProxySourceVaultValue')]"
-              },
-              "vaultCertificates": [
-                {
-                  "certificateStore": "[parameters('sfReverseProxyCertificateStoreValue')]",
-                  "certificateUrl": "[parameters('sfReverseProxyCertificateUrlValue')]"
-                }
-              ]
-            }
-          ]
-        }
-   ....
-   "extensions": [
-          {
-              "name": "[concat(parameters('vmNodeType0Name'),'_ServiceFabricNode')]",
-              "properties": {
-                      "type": "ServiceFabricNode",
-                      "autoUpgradeMinorVersion": false,
-                      ...
-                      "publisher": "Microsoft.Azure.ServiceFabric",
-                      "settings": {
-                        "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
-                        "nodeTypeRef": "[parameters('vmNodeType0Name')]",
-                        "dataPath": "D:\\\\SvcFab",
-                        "durabilityLevel": "Bronze",
-                        "testExtension": true,
-                        "reverseProxyCertificate": {
-                          "thumbprint": "[parameters('sfReverseProxyCertificateThumbprint')]",
-                          "x509StoreName": "[parameters('sfReverseProxyCertificateStoreValue')]"
-                        },
-                  },
-                  "typeHandlerVersion": "1.0"
-              }
-          },
-      ]
-    }
-  ```
-> [!NOTE]
-> Чтобы в существующем кластере включить обратный прокси-сервер с сертификатом, отличающимся от сертификата кластера, необходимо сначала установить сертификат обратного прокси-сервера и обновить список управления доступом в кластере. Выполните развертывание [шаблона Azure Resource Manager](service-fabric-cluster-creation-via-arm.md), используя описанные выше параметры, прежде чем начинать развертывание для включения обратного прокси-сервера с помощью шагов 1–4.
+```csharp
+    var fqdn = Environment.GetEnvironmentVariable("Fabric_NodeIPOrFQDN");
+    var serviceUrl = $"http://{fqdn}:19081/DockerSFApp/UserApiContainer";
+```
+По умолчанию переменная `Fabric_NodeIPOrFQDN` для локального кластера имеет значение localhost. Запустите локальный кластер, указав параметр `-UseMachineName`, чтобы гарантировать, что контейнеры имеют доступ к обратному прокси-серверу, работающему на узле. Дополнительные сведения см. в разделе [Настройка среды разработчика для отладки контейнеров](service-fabric-how-to-debug-windows-containers.md#configure-your-developer-environment-to-debug-containers).
 
 ## <a name="next-steps"></a>Дополнительная информация
+* [Установка и настройка обратного прокси-сервера в кластере](service-fabric-reverseproxy-setup.md)
+* [Подключение к защищенной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * Пример обмена данными по протоколу HTTP между службами представлен в [примере проекта на сайте GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started).
-* [Подключение к безопасной службе с помощью обратного прокси-сервера](service-fabric-reverseproxy-configure-secure-communication.md)
 * [Удаленное взаимодействие службы с Reliable Services](service-fabric-reliable-services-communication-remoting.md)
 * [Начало работы со службами веб-API Microsoft Azure Service Fabric с саморазмещением OWIN](service-fabric-reliable-services-communication-webapi.md)
 * [Коммуникационный стек WCF для надежных служб](service-fabric-reliable-services-communication-wcf.md)
-* Дополнительные параметры конфигурации обратного прокси-сервера описаны в разделе о ApplicationGateway/Http статьи [Настройка параметров кластера Service Fabric и политики обновления структур](service-fabric-cluster-fabric-settings.md).
 
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png

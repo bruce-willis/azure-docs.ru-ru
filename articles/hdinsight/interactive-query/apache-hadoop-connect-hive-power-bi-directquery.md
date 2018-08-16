@@ -1,25 +1,21 @@
 ---
-title: Визуализация данных Hive из кластера Interactive Query с помощью Power BI в Azure HDInsight | Документация Майкрософт
+title: Визуализация данных Hive из кластера Interactive Query с помощью Power BI в Azure HDInsight
 description: Сведения о визуализации данных Hive из кластера Interactive Query, обрабатываемых Azure HDInsight, с помощью Microsoft Power BI.
 keywords: hdinsight,hadoop,hive,интерактивный запрос,interactive hive,LLAP,directquery
 services: hdinsight
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
 ms.service: hdinsight
-ms.custom: hdinsightactive,
-ms.devlang: na
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
+ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/14/2018
-ms.author: jgao
-ms.openlocfilehash: b8da1f17b9e477caf9031cf94ee14f3a181e247e
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 4dcfcb5e70b9eb6626be1f3528781a8c5b1bd5c4
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31407968"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39593032"
 ---
 # <a name="visualize-interactive-query-hive-data-with-microsoft-power-bi-using-direct-query-in-azure-hdinsight"></a>Визуализация данных Hive из кластера Interactive Query с Microsoft Power BI с использованием прямого запроса в Azure HDInsight
 
@@ -29,7 +25,7 @@ ms.locfileid: "31407968"
 
 Можно использовать [драйвер Hive ODBC](../hadoop/apache-hadoop-connect-hive-power-bi.md) для импорта с помощью универсального соединителя ODBC в Power BI Desktop. Но этот драйвер не рекомендуется для рабочих нагрузок бизнес-аналитик, с учетом того что ядро запросов Hive не является интерактивным. Для лучшей производительности используйте [соединитель интерактивных запросов HDInsight ](./apache-hadoop-connect-hive-power-bi-directquery.md) и [соединитель HDInsight Spark](https://docs.microsoft.com/power-bi/spark-on-hdinsight-with-direct-connect).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить действия, указанные в этой статье, вам потребуется:
 
 * **Кластер HDInsight.** Это может быть кластер HDInsight с Hive или новый кластер Interactive Query. Сведения о создании кластеров см. в [этом разделе](../hadoop/apache-hadoop-linux-tutorial-get-started.md#create-cluster).

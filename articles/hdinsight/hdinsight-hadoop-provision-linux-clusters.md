@@ -1,26 +1,21 @@
 ---
-title: Установка кластера для Hadoop, Spark, Kafka, HBase или служб машинного обучения в Azure HDInsight | Документация Майкрософт
+title: Установка кластера для Hadoop, Spark, Kafka, HBase или служб машинного обучения в Azure HDInsight
 description: Сведения об установке кластеров Hadoop, Kafka, Spark, HBase, служб машинного обучения или Storm для HDInsight из браузера, с помощью Azure CLI, Azure PowerShell, REST или пакета SDK.
 keywords: установка кластера hadoop, установка кластера kafka, установка кластера spark, что такое кластер hadoop
 services: hdinsight
-documentationcenter: ''
-author: mumian
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 23a01938-3fe5-4e2e-8e8b-3368e1bbe2ca
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.author: jgao
-ms.openlocfilehash: eddbd3f171cee9df9ff306368df47501ff9dcfca
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.author: jasonh
+ms.openlocfilehash: 0cb3840c0ce40e062b4de0b7bbd5c9e324d6081f
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051599"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39595847"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-hadoop-spark-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий
 
@@ -37,7 +32,7 @@ ms.locfileid: "37051599"
 ## <a name="cluster-setup-methods"></a>Способы установки кластера
 В приведенной ниже таблице представлены различные способы установки кластера HDInsight.
 
-| Метод создания кластеров | браузер | Команда | ИНТЕРФЕЙС REST API | SDK | 
+| Метод создания кластеров | браузер | Команда | REST API | SDK | 
 | --- |:---:|:---:|:---:|:---:|
 | [портал Azure](hdinsight-hadoop-create-linux-clusters-portal.md) |✔ |&nbsp; |&nbsp; |&nbsp; |
 | [Фабрика данных Azure](hdinsight-hadoop-create-linux-clusters-adf.md) |✔ |✔ |✔ |✔ |

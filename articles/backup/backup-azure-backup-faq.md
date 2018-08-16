@@ -7,14 +7,14 @@ manager: carmonm
 keywords: резервное копирование и аварийное восстановление; служба архивации
 ms.service: backup
 ms.topic: conceptual
-ms.date: 8/1/2018
+ms.date: 8/2/2018
 ms.author: markgal
-ms.openlocfilehash: 33a3a1c0fd375f6ed88e13f910c46e71f216b892
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 5fd0cb92bd35b1f238e4080d2c9e8caf781b8131
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412957"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39493874"
 ---
 # <a name="questions-about-the-azure-backup-service"></a>Вопросы о службе архивации Azure
 Эта статья содержит ответы на часто задаваемые вопросы о компонентах службы Azure Backup. В некоторых ответах приведены ссылки на статьи, содержащие более подробные сведения. Вы можете задать вопросы о службе архивации Azure, щелкнув **Комментарии** (справа). Комментарии отображаются в конце статьи. Чтобы оставлять комментарии, нужна учетная запись Livefyre. Кроме того, их также можно задать на [форуме для обсуждений](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
@@ -29,6 +29,9 @@ ms.locfileid: "39412957"
 
 ### <a name="are-there-limits-on-the-number-of-serversmachines-that-can-be-registered-against-each-vault-br"></a>Существует ли ограничение на число серверов и компьютеров, которые можно зарегистрировать в каждом хранилище? <br/>
 Вы можете зарегистрировать не более 1000 виртуальных машин Azure в одном хранилище. Если вы используете агент MAB, вы можете зарегистрировать не более 50 агентов в одном хранилище. Кроме того, вы можете зарегистрировать 50 серверов MAB и (или) DPM в хранилище.
+
+### <a name="can-i-use-a-rest-api-to-query-the-size-of-protected-items-in-a-vault-br"></a>Можно ли с помощью REST API узнать размер защищенных элементов в хранилище? <br/>
+Да, в [этой статье](https://t.co/2lgIrIaF0J) приведены сведения, которые можно получить из хранилища Служб восстановления.
 
 ### <a name="if-my-organization-has-one-vault-how-can-i-isolate-one-servers-data-from-another-server-when-restoring-databr"></a>Если у моей организации есть одно хранилище, как изолировать восстановление данных определенного сервера от других серверов?<br/>
 Все серверы, зарегистрированные в одном и том же хранилище, могут восстанавливать данные резервных копий, созданные другими серверами, для которых *используется одна парольная фраза*. Если вам нужно изолировать восстановление данных резервной копии сервера от других серверов в организации, настройте для него уникальную парольную фразу. Например, серверы отдела по работе с персоналом могут использовать одну зашифрованную парольную фразу, серверы бухгалтерии — другую, а серверы-хранилища — третью.
@@ -57,6 +60,8 @@ ms.locfileid: "39412957"
 
 Да. Для резервного копирования VMware vCenter и ESXi в облако Azure можно использовать Azure Backup Server. Сведения о поддерживаемых версиях VMware см. в статье [Таблица защиты посредством Azure Backup Server](backup-mabs-protection-matrix.md). Пошаговые инструкции см. в статье [Резервное копирование сервера VMware с помощью Azure Backup Server](backup-azure-backup-server-vmware.md).
 
+### <a name="do-i-need-a-separate-license-to-recover-a-full-on-premises-vmwarehyper-v-cluster-from-dpm-or-azure-backup-serverbr"></a>Требуется ли отдельная лицензия для восстановления полного локального кластера VMware или Hyper-V из DPM или Azure Backup Server?<br/>
+Для защиты VMware или Hyper-V отдельная лицензия не требуется. Если вы пользуетесь System Center, виртуальные машины VMware можно защитить с помощью DPM. Если вы не пользуетесь System Center, виртуальные машины VMware можно защитить с помощью Azure Backup Server (с оплатой по мере использования).
 
 ## <a name="azure-backup-server-and-system-center-data-protection-manager"></a>Azure Backup Server и System Center Data Protection Manager
 ### <a name="can-i-use-azure-backup-server-to-create-a-bare-metal-recovery-bmr-backup-for-a-physical-server-br"></a>Можно ли использовать Azure Backup Server, чтобы создать резервную копию для восстановления исходного состояния физического сервера? <br/>
@@ -90,6 +95,9 @@ ms.locfileid: "39412957"
 
 ### <a name="why-is-the-size-of-the-data-transferred-to-the-recovery-services-vault-smaller-than-the-data-i-backed-upbr"></a>Почему размер данных, переданных в хранилище служб восстановления, меньше размера резервной копии данных?<br/>
  Все данные, для которых создается резервная копия из агента службы Azure Backup, а также из SCDPM или Azure Backup Server, сжимаются и шифруются перед передачей. После сжатия и шифрования данные, которые попадают в хранилище служб восстановления, становятся на 30–40 % меньше.
+
+### <a name="can-i-delete-individual-files-from-a-recovery-point-in-the-vaultbr"></a>Можно ли удалить отдельные файлы из точки восстановления в хранилище?<br/>
+Нет, Azure Backup не поддерживает удаление или очистку отдельных элементов из хранимых резервных копий.
 
 ## <a name="what-can-i-back-up"></a>Ограничения, связанные с резервным копированием
 ### <a name="which-operating-systems-does-azure-backup-support-br"></a>Какие операционные системы поддерживает Azure Backup? <br/>

@@ -6,14 +6,14 @@ author: saurabhsensharma
 manager: shivamg
 ms.service: backup
 ms.topic: conceptual
-ms.date: 7/25/2018
+ms.date: 8/6/2018
 ms.author: saurse
-ms.openlocfilehash: a1c9df57ddebbb1cf471f705acfbd6651c151d7b
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: ddde297de49edb5f6543d03dfdb972771533301b
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247284"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39576191"
 ---
 # <a name="restore-files-to-a-windows-server-or-windows-client-machine-using-resource-manager-deployment-model"></a>Восстановление файлов на сервере Windows Server или клиентском компьютере Windows с помощью модели развертывания Resource Manager
 
@@ -51,6 +51,8 @@ ms.locfileid: "39247284"
 4. В области **Выбор режима восстановления** выберите **Отдельные файлы и папки**, а затем нажмите кнопку **Далее**.
 
     ![Обзор файлов](./media/backup-azure-restore-windows-server/samemachine_selectrecoverymode_instantrestore.png)
+> [!IMPORTANT]
+> Для параметра восстановления *отдельных файлов и папок* требуется .NET Framework 4.5.2 или более поздней версии. Если параметр *Отдельные файлы и папки* не отображается, обновите .NET Framework до версии 4.5.2 или выше и повторите попытку.
 
 5. В области **Выбор тома и даты** выберите диск, содержащий файлы и (или) папки, который необходимо восстановить.
 
@@ -67,7 +69,7 @@ ms.locfileid: "39247284"
     ![Варианты восстановления](./media/backup-azure-restore-windows-server/samemachine_browserecover_instantrestore.png)
 
 
-8. В проводнике Windows скопируйте файлы и (или) папки, которые требуется восстановить, и вставьте их в любую локальную папку на сервере или компьютере. Вы можете можно открыть или передать потоком эти файлы непосредственно из тома восстановления и затем убедиться, что восстанавливаются правильные версии.
+8. В проводнике Windows скопируйте файлы и (или) папки, которые требуется восстановить, и вставьте их в любую локальную папку на сервере или компьютере. Вы можете открыть или передать потоком эти файлы непосредственно из тома восстановления и затем убедиться, что восстанавливаются правильные версии.
 
     ![Копирование и вставка файлов и папок из подключенного тома в локальное расположение](./media/backup-azure-restore-windows-server/samemachine_copy_instantrestore.png)
 

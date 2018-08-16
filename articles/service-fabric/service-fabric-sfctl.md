@@ -12,17 +12,17 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: 456257e54da83ac629039b714cc74f9dafda2174
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: b6e3c769307f037c9f31dbb3f1a86675145ec1f6
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763278"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495413"
 ---
 # <a name="sfctl"></a>sfctl
-Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 6.2.
+Команды для управления кластерами и сущностями Service Fabric. Эта версия совместима со средой выполнения Service Fabric 6.3.
 
 В командах используется шаблон "существительное — глагол". Дополнительные сведения см. в подгруппах.
 

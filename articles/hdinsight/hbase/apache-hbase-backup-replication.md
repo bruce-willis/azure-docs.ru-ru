@@ -1,25 +1,20 @@
 ---
-title: Настройка резервного копирования и репликации HBase и Phoenix в Azure HDInsight | Документация Майкрософт
+title: Настройка резервного копирования и репликации HBase и Phoenix в Azure HDInsight
 description: Сведения о настройке резервного копирования и репликации HBase и Phoenix.
 services: hdinsight
-documentationcenter: ''
-tags: azure-portal
 author: ashishthaps
-manager: jhubbard
-editor: cgronlun
-ms.assetid: ''
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: f43edaf16784e5ba5cc3d2b39df285582954210b
-ms.sourcegitcommit: d78bcecd983ca2a7473fff23371c8cfed0d89627
+ms.openlocfilehash: b9557dcd34ad59ae50240b76ae75df4ef3f39a5b
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34165338"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592964"
 ---
 # <a name="set-up-backup-and-replication-for-hbase-and-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации HBase и Phoenix в HDInsight
 

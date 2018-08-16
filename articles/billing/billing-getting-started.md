@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/24/2018
 ms.author: tonguyen
-ms.openlocfilehash: e4db9911697a4d79032b7a6358db642112a5a54e
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: dc516aa64399447973cefa47e913193adce2f8f5
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37062178"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528271"
 ---
 # <a name="prevent-unexpected-charges-with-azure-billing-and-cost-management"></a>Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure
 
@@ -121,7 +121,7 @@ ms.locfileid: "37062178"
 
 ### <a name="turn-on-and-check-out-azure-advisor-recommendations"></a>Включите Azure Advisor и ознакомьтесь с рекомендациями
 
-[Azure Advisor](../advisor/advisor-overview.md) — это предварительная версия функции, которая помогает снизить затраты, определяя ресурсы с низким уровнем использования. Включите ее на портале Azure:
+[Помощник по Azure](../advisor/advisor-overview.md) — это функция, которая помогает сократить затраты, определяя ресурсы с низким уровнем использования. Посетите страницу Помощника на портале Azure:
 
 ![Снимок экрана кнопки Azure Advisor на портале Azure](./media/billing-getting-started/advisor-button.PNG)
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 8295abfae8d82a7c7762c6b27a8bac7487f6afff
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 470779f80e998c3908cf28328cfb415d98c5e06c
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36335287"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39579261"
 ---
 # <a name="a-tour-of-analytics-in-application-insights"></a>Знакомство с аналитикой в Application Insights
 [Аналитика](app-insights-analytics.md) — это мощный инструмент поиска [Application Insights](app-insights-overview.md). На этих страницах описан язык запросов Log Analytics.
@@ -226,7 +226,7 @@ ms.locfileid: "36335287"
 
 ### <a name="convert-to-local-time"></a>Преобразование в местное время
 
-Метки времени всегда указываются в формате UTC. Поэтому, если вы находитесь на тихоокеанском побережье США зимой, то запрос может быть следующим:
+Метки времени всегда указываются в формате UTC. Поэтому, если вы находитесь на тихоокеанском побережье США зимой, то разница со временем в формате UTC будет составлять -8 часов и запрос может быть следующим:
 
 ```AIQL
 
@@ -238,7 +238,7 @@ ms.locfileid: "36335287"
 ## <a name="summarizehttpsdocsloganalyticsiodocslanguage-referencetabular-operatorssummarize-operator-aggregate-groups-of-rows"></a>Оператор [Summarize](https://docs.loganalytics.io/docs/Language-Reference/Tabular-operators/summarize-operator): агрегирование групп строк
 `Summarize` применяет указанную *функцию агрегирования* для групп строк.
 
-Например, время, требуемое веб-приложению для ответа на запрос, указано в поле `duration`. Давайте рассмотрим среднее время ответа для всех запросов:
+Например, время, требуемое веб-приложению для ответа на запрос, указано в поле `duration`. Давайте рассмотрим среднее время отклика для всех запросов:
 
 ![](./media/app-insights-analytics-tour/410.png)
 
@@ -461,7 +461,7 @@ ms.locfileid: "36335287"
 ## <a name="join"></a>Объединение
 Имеется доступ к нескольким таблицам, включая запросы и исключения.
 
-Чтобы найти исключения, связанные с запросом, который завершился неудачно, можно соединить таблицы по `session_Id`.
+Чтобы найти исключения, связанные с запросом, который завершился неудачно, можно соединить таблицы по `operation_Id`.
 
 ```AIQL
 

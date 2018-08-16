@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 08/03/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 1b5640b790b07050336a990a06b66e5f89fcf768
-ms.sourcegitcommit: cfff72e240193b5a802532de12651162c31778b6
+ms.openlocfilehash: 5a93a21c3884d742479bdd30417a846942cb1ed1
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39308615"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524096"
 ---
 # <a name="azure-active-directory-pass-through-authentication-quick-start"></a>Краткое руководство по сквозной проверке подлинности Azure Active Directory
 
@@ -62,6 +62,7 @@ ms.locfileid: "39308615"
     | --- | --- |
     | **80** | Скачивание списков отзыва сертификатов при проверке SSL-сертификата. |
     | **443** | Обработка всего исходящего трафика для службы. |
+    | **8080** (необязательно) | Агенты аутентификации передают данные о своем состоянии каждые десять минут через порт 8080, если порт 443 недоступен. Это данные о состоянии отображаются на портале Azure AD. Порт 8080 _не_ используется для входа пользователей в систему. |
    
     Если брандмауэр применяет правила в соответствии с отправляющими трафик пользователями, откройте эти порты для трафика, поступающего от служб Windows, которые работают как сетевая служба.
    - Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, то добавьте подключения к **\*msappproxy.net** и **\*servicebus.windows.net** в список разрешений. Если нет, разрешите доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/28/2018
 ms.author: terrylan
-ms.openlocfilehash: a6800b18d1bb588c747d4e9ef7049ac4cbb82f60
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 5a0f0594a9ccb27a0f76a679e454e9a3ffe19a43
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213478"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505398"
 ---
 # <a name="azure-network-architecture"></a>Сетевая архитектура Azure
 Сетевая архитектура Azure соответствует модифицированной версии стандартной модели Core/Distribution/Access (базовый уровень/уровень распостранения/уровень доступа) с отдельными аппаратными слоями. Слои включают:

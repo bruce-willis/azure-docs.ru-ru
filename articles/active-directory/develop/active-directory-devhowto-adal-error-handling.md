@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/27/2017
 ms.custom: ''
-ms.openlocfilehash: 27315262ff64b640acc3af16a26fc3887d852a00
-ms.sourcegitcommit: e14229bb94d61172046335972cfb1a708c8a97a5
+ms.openlocfilehash: b28e1931b9f615ae0eebe40b101f1959e9fcb40a
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34157645"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39593049"
 ---
 # <a name="error-handling-best-practices-for-azure-active-directory-authentication-library-adal-clients"></a>Руководство по обработке ошибок для клиентов библиотеки аутентификации Active Directory (ADAL)
 
@@ -44,8 +44,8 @@ AcquireTokenSilent предпринимает попытку получит то
 
 ### <a name="application-scenarios"></a>Сценарии приложений
 
-- Приложения [собственного клиента](active-directory-dev-glossary.md#native-client) (iOS, Android, классические приложения .NET или Xamarin).
-- Приложения [веб-клиента](active-directory-dev-glossary.md#web-client), вызывающие [ресурсы](active-directory-dev-glossary.md#resource-server) (.NET).
+- Приложения [собственного клиента](developer-glossary.md#native-client) (iOS, Android, классические приложения .NET или Xamarin).
+- Приложения [веб-клиента](developer-glossary.md#web-client), вызывающие [ресурсы](developer-glossary.md#resource-server) (.NET).
 
 ### <a name="error-cases-and-actionable-steps"></a>Сценарии ошибок и практические действия
 
@@ -579,19 +579,14 @@ window.Logging = {
 ## <a name="related-content"></a>Связанная информация
 
 * [Руководство разработчика по Azure Active Directory][AAD-Dev-Guide]
-* [Azure Active Directory Authentication Libraries][AAD-Auth-Libraries] (Библиотеки аутентификации Azure Active Directory)
-* [Azure AD Authentication Scenarios][AAD-Auth-Scenarios] (Сценарии аутентификации в Azure Active Directory)
+* [Библиотеки проверки подлинности Azure Active Directory][AAD-Auth-Libraries]
+* [Сценарии проверки подлинности в Azure AD][AAD-Auth-Scenarios]
 * [Интеграция приложений с Azure Active Directory][AAD-Integrating-Apps]
 
 Оставляйте свои замечания и пожелания в разделе ниже. Они помогают нам улучшать содержимое веб-сайта.
 
-[![Кнопка "Войти"][AAD-Sign-In]][AAD-Sign-In]
-<!--Reference style links -->
-[AAD-Auth-Libraries]: ./active-directory-authentication-libraries.md
-[AAD-Auth-Scenarios]: ./active-directory-authentication-scenarios.md
-[AAD-Dev-Guide]: ./active-directory-developers-guide.md
-[AAD-Integrating-Apps]: ./active-directory-integrating-applications.md
-[AZURE-portal]: https://portal.azure.com
+[![Кнопка для входа][AAD-Sign-In]][AAD-Sign-In]
+<!--Reference style links --> [AAD-Auth-Libraries]: ./active-directory-authentication-libraries.md [AAD-Auth-Scenarios]:authentication-scenarios.md [AAD-Dev-Guide]:azure-ad-developers-guide.md [AAD-Integrating-Apps]:quickstart-v1-integrate-apps-with-azure-ad.md [AZURE-portal]: https://portal.azure.com
 
 <!--Image references-->
 [AAD-Sign-In]:./media/active-directory-devhowto-multi-tenant-overview/sign-in-with-microsoft-light.png

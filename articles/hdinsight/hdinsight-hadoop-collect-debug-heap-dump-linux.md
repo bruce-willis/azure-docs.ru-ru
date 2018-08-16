@@ -1,25 +1,20 @@
 ---
-title: Включение дампов кучи для служб Hadoop в HDInsight — Azure | Документы Майкрософт
+title: Включение дампов кучи для служб Hadoop в HDInsight в Azure
 description: Включение дампов кучи для служб Hadoop с кластеров HDInsight, работающих под управлением Linux, для отладки и анализа.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 8f151adb-f687-41e4-aca0-82b551953725
+author: jasonwhowell
+editor: jasonwhowell
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: cd906736f2642d764c2b72a0572f63d675613c81
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: e96cda8560d6fffa3475e7b3130ebc5954548eac
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31405129"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39592896"
 ---
 # <a name="enable-heap-dumps-for-hadoop-services-on-linux-based-hdinsight"></a>Включение дампов кучи для служб Hadoop в HDInsight под управлением Linux
 

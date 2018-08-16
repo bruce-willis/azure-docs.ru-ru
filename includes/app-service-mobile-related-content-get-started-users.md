@@ -1,6 +1,6 @@
 * [Проверка подлинности и авторизация в службе приложений Azure](../articles/app-service/app-service-authentication-overview.md)
 * Добавление функции аутентификации для мобильного приложения: [iOS][ios-get-started-users], [Android][android-get-started-users], [Windows Universal][windows-get-started-users], [Xamarin.Android][xamarin-android-get-started-users], [Xamarin.iOS][xamarin-ios-get-started-users], [Xamarin.Forms][xamarin-forms-get-started-users], [Cordova][cordova-get-started-users]  
-  Узнайте, как добавить проверку подлинности службы приложений в мобильное приложение.
+  Узнайте, как добавить проверку подлинности Службы приложений Azure в мобильное приложение.
 
 [android-get-started-users]: ../articles/app-service-mobile/app-service-mobile-android-get-started-users.md
 [cordova-get-started-users]: ../articles/app-service-mobile/app-service-mobile-cordova-get-started-users.md

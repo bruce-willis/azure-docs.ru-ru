@@ -14,15 +14,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: 8907619b802d93cee4463a80155f38ce9030948f
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 682e2969725b6ade39f639c7a9fff95ec64703a2
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37129677"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39492951"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.
+Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history).
+
+
+## <a name="august-2018"></a>Август 2018 г. 
+*  Агент Azure AD Connect Health для синхронизации (версия 3.1.7.0) выпущен вместе с Azure AD Connect версии 1.1.880.0.    
+   1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
 
 ## <a name="june-2018"></a>Июнь 2018 г. 
 **Новые функции предварительной версии:** 
@@ -30,10 +36,10 @@ ms.locfileid: "37129677"
 
 **Обновление агента:** 
 *  Агент Azure AD Connect Health для AD DS (версия 3.1.7.0).    
-   1. Исправление проблемы с высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework.
-
+   1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
+   
 *   Агент Azure AD Connect Health для AD FS (версия 3.1.7.0).  
-   1. Исправление проблемы с высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework.  
+   1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
    2. Исправления по результатам тестов для сервера-получателя ADFS Server 2016.
    
 *   Агент Azure AD Connect Health для AD FS (версия 3.1.2.0).  
@@ -51,7 +57,7 @@ ms.locfileid: "37129677"
  2. Повышение конфиденциальности агентов.  
  3. Исправления ошибок и общие улучшения.
 
-* Агент Azure AD Connect Health для синхронизации (версия 3.0.164.0) выпущен вместе с Azure AD Connect версии 1.1.819.0.
+* Агент Azure AD Connect Health для синхронизации (версия 3.0.164.0) выпущен вместе с Azure AD Connect версии 1.1.819.0. 
  1. Повышение конфиденциальности агентов.  
  2. Исправления ошибок и общие улучшения.
 
@@ -68,7 +74,7 @@ ms.locfileid: "37129677"
 *   Агент Azure AD Connect Health для AD FS (версия 3.0.176.0).
   1. Повышение доступности агента. 
   2. Исправления ошибок и общие улучшения.
-* Агент Azure AD Connect Health для Sync (версия 3.0.176.0).
+* Агент Azure AD Connect Health для синхронизации (версия 3.0.129.0) выпущен вместе с Azure AD Connect версии 1.1.750.0.  
   1. Повышение доступности агента. 
   2. Исправления ошибок и общие улучшения.
 

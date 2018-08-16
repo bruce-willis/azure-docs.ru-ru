@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
 ms.reviewer: librown
-ms.openlocfilehash: 3303a0fb1ca4c4a8f6695c2e4338c1b0a0fc9f40
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: a6df90a1ae1dddbf7f76a7ef6c7e13d9e645dd9c
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358638"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39528431"
 ---
 # <a name="sign-in-with-your-phone-not-your-password"></a>Вход с использованием телефона вместо ввода пароля
 
@@ -70,7 +70,7 @@ ms.locfileid: "39358638"
 
 ### <a name="to-use-phone-sign-in-to-sign-in-to-your-personal-account"></a>Использование функции входа на телефоне для входа в личную учетную запись
 
-1.  Перейдите на страницу входа в личную учетную запись Майкрософт и вместо того, чтобы вводить пароль, выберите ссылку **Использовать приложение**.
+1.  Перейдите на страницу входа в личную учетную запись Майкрософт и вместо того, чтобы вводить пароль, выберите ссылку **Использовать приложение Microsoft Authenticator**.
 
     Майкрософт отправит уведомление на ваш телефон. 
 

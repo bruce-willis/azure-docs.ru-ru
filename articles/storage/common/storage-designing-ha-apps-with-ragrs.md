@@ -2,24 +2,19 @@
 title: Проектирование высокодоступных приложений с использованием геоизбыточного хранилища с доступом на чтение Azure (RA-GRS) | Документация Майкрософт
 description: Как использовать хранилище RA-GRS Azure для разработки высокодоступного приложения, достаточно гибкого для обработки сбоев.
 services: storage
-documentationcenter: .net
 author: tamram
-manager: timlt
-editor: tysonn
-ms.assetid: 8f040b0f-8926-4831-ac07-79f646f31926
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/21/2018
 ms.author: tamram
-ms.openlocfilehash: f7f3f2d99e5582a1bcb672cc176258dfff9c3217
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.component: common
+ms.openlocfilehash: afcda23faf4e9f0999442fa91d3c016e446c04db
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30322936"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524548"
 ---
 # <a name="designing-highly-available-applications-using-ra-grs"></a>Проектирование высокодоступных приложений с использованием RA-GRS
 
@@ -27,7 +22,9 @@ ms.locfileid: "30322936"
 
 [!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
 
-В этой статье мы рассмотрим GRS и RA-GRS. При использовании GRS три копии ваших данных хранятся в основном регионе, выбранном при настройке учетной записи хранения. Три дополнительные копии сохраняются асинхронно в дополнительном регионе, заданном Azure. Хранилище RA-GRS похоже на GRS, за исключением того, что у вас есть доступ на чтение к дополнительной копии. Дополнительные сведения о различных вариантах обеспечения избыточности в службе хранилища Azure см. в статье [Репликация службы хранилища Azure](https://docs.microsoft.com/azure/storage/storage-redundancy). В статье о репликации также показано связывание основных и дополнительных регионов.
+В этой статье мы рассмотрим GRS и RA-GRS. При использовании GRS три копии ваших данных хранятся в основном регионе, выбранном при настройке учетной записи хранения. Три дополнительные копии сохраняются асинхронно в дополнительном регионе, заданном Azure. RA-GRS обеспечивает геоизбыточное хранилище с доступом на чтение к дополнительной копии.
+
+Сведения о том, с какой дополнительной копией сопоставляется каждый основной регион, см. в статье [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
 
 Эта статья содержит фрагменты кода и ссылку на полный пример в конце, который можно скачать и запустить.
 

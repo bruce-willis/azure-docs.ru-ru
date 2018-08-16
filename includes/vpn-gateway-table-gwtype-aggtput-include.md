@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 08/02/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: fad9b990b6ff1021efdaf8aadeb1e19d8a55871d
-ms.sourcegitcommit: dc646da9fbefcc06c0e11c6a358724b42abb1438
+ms.openlocfilehash: 4cbbb64489acf23c1248e35269e1441dd2a6878e
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39138133"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39513820"
 ---
 |**SKU**   | **Туннели<br>S2S или "виртуальная сеть — виртуальная сеть"** | **Подключения<br>P2S** | **Эталонная агрегированная<br>пропускная способность** |
 |---       | ---                             | ---                    | ---                         |
@@ -24,7 +24,7 @@ ms.locfileid: "39138133"
 
 * (*)Используйте [Виртуальную глобальную сеть](../articles/virtual-wan/virtual-wan-about.md), если требуется больше 30 VPN-туннелей S2S.
 
-* (\*\*)Если требуются дополнительные подключения, обратитесь в службу поддержки
+* (**) Если требуются дополнительные подключения, обратитесь в службу поддержки. Это относится только к IKEv2, количество подключений для SSTP увеличить невозможно.
 
 * Эталонная агрегированная пропускная способность основана на измерениях нескольких туннелей, агрегированных для одного шлюза. Определенное значение пропускной способности не может гарантироваться. Оно зависит от характеристик интернет-трафика и особенностей работы вашего приложения.
 

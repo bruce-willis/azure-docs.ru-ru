@@ -12,23 +12,23 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/20/2018
+ms.date: 07/30/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: af9a2e47a5e91d9b32a787f8f40ba06b5a1596e7
-ms.sourcegitcommit: a5eb246d79a462519775a9705ebf562f0444e4ec
+ms.openlocfilehash: f6ba0fccc6fadffb5f4d1a22b2c2fbcc38f9f0df
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39265052"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39494987"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
 
 ## <a name="what-is-password-hash-synchronization"></a>Что такое синхронизация хэшированных паролей
-Чем больше у вас паролей, которые нужно помнить, тем выше вероятность того, что в какой-то момент из-за забытого пароля работа остановится. Чем больше паролей необходимо помнить, тем выше вероятность забыть один из них. Вопросы и звонки о восстановлении паролей и прочие проблемы, связанные с паролями, забирают больше всего ресурсов службы технической поддержки.
+Чем больше у вас паролей, которые нужно помнить, тем выше вероятность того, что в какой-то момент из-за забытого пароля работа остановится. Чем больше паролей необходимо помнить, тем выше вероятность забыть один из них. Вопросы и звонки, касающиеся восстановления паролей, и прочие проблемы, связанные с паролями, требуют больше всего ресурсов службы технической поддержки.
 
-Синхронизация хэшированных паролей предназначена для синхронизации пользовательских паролей между локальным экземпляром службы Active Directory и облачным экземпляром службы Azure AD.
+Синхронизация хэша паролей — это функция для синхронизации хэша пользовательских паролей между локальным экземпляром службы Active Directory и облачным экземпляром службы Azure AD.
 Эту функцию можно использовать для входа в службы Azure AD, например Office 365, Microsoft Intune, CRM Online и доменные службы Azure Active Directory (Azure AD DS). Вы можете входить в службу с помощью пароля, который используется на локальном экземпляре Active Directory.
 
 ![Что такое Azure AD Connect?](./media/active-directory-aadconnectsync-implement-password-hash-synchronization/arch1.png)

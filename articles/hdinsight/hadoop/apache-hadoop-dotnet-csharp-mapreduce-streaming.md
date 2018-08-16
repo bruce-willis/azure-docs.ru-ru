@@ -1,25 +1,20 @@
 ---
-title: Использование C# с MapReduce в Hadoop HDInsight в Azure | Документация Майкрософт
+title: Использование C# с MapReduce в Hadoop в HDInsight в Azure
 description: Узнайте, как использовать C# для создания решений MapReduce, использующих Hadoop в Azure HDInsight.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: d83def76-12ad-4538-bb8e-3ba3542b7211
+author: jasonwhowell
+editor: jasonwhowell
 ms.custom: hdinsightactive
 ms.service: hdinsight
-ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: 7287972ccf63f33a8cf08065f8d5d30ee1b1afb5
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.author: jasonh
+ms.openlocfilehash: 7c9a4a0fdbc362a1c2856e35f112deaabddeb229
+ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31400883"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39594385"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-hadoop-in-hdinsight"></a>Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight
 
@@ -48,7 +43,7 @@ ms.locfileid: "31400883"
 
 Дополнительные сведения см. в документации по [потоковой передаче Hadoop (https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html)](https://hadoop.apache.org/docs/r2.7.1/hadoop-streaming/HadoopStreaming.html).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Опыт написания и выполнения сборки кода C#, предназначенного для платформы .NET Framework 4.5. В этом руководстве используется Visual Studio 2017.
 

@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/27/2018
+ms.date: 08/01/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 24bda501f88d4f96fb558eeb6b21e437edd6d862
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 4710e30ad38485f47c115ac2e0e914e91c96d582
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325393"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39522187"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory — быстрый запуск
 
@@ -57,9 +57,12 @@ ms.locfileid: "39325393"
 
 В случае выполнения новой установки Azure AD Connect выберите [пользовательский путь установки](active-directory-aadconnect-get-started-custom.md). На странице **Вход пользователя** установите флажок **Включить единый вход**.
 
+>[!NOTE]
+> Этот флажок можно будет установить, если для единого входа используется метод **Синхронизация хэшей паролей** или **Сквозная проверка подлинности**.
+
 ![Azure AD Connect: страница "Вход пользователя"](./media/active-directory-aadconnect-sso/sso8.png)
 
-Если уже имеется установленный экземпляр Azure AD Connect, выберите страницу **Смена имени пользователя для входа** в Azure AD Connect и нажмите кнопку **Далее**.
+Если уже имеется установленный экземпляр Azure AD Connect, выберите страницу **Смена имени пользователя для входа** в Azure AD Connect и нажмите кнопку **Далее**. Если используется Azure AD Connect версии 1.1.880.0 или выше, флажок **Включить единый вход** будет установлен по умолчанию. Если же вы используете предыдущие версии Azure AD Connect, установите флажок **Включить единый вход**.
 
 ![Azure AD Connect: страница "Смена имени пользователя для входа"](./media/active-directory-aadconnect-user-signin/changeusersignin.png)
 

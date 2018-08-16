@@ -6,14 +6,14 @@ author: Christina-Kang
 manager: timlt
 ms.service: service-fabric
 ms.topic: conceptual
-ms.date: 05/23/2018
+ms.date: 07/31/2018
 ms.author: bikang
-ms.openlocfilehash: 0c5509d323f14a6bb62f465fa23584ca927e0e61
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 370c8521127ffc28cc1b604c217544bccc82d705
+ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34763363"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39495948"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -21,11 +21,11 @@ ms.locfileid: "34763363"
 
 [!INCLUDE [links to azure cli and service fabric cli](../../includes/service-fabric-sfctl.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем начать установку, убедитесь, что в вашей среде установлены Python и pip. Дополнительные сведения см. в [кратком руководстве по началу работы с pip](https://pip.pypa.io/en/latest/quickstart/) и официальной [документации по установке Python](https://wiki.python.org/moin/BeginnersGuide/Download).
 
-Интерфейс командной строки поддерживает Python версий 2.7, 3.5 и 3.6. Python 3.6 является рекомендуемой версией, так как поддержка Python 2.7 скоро будет прекращена.
+Интерфейс командной строки поддерживает Python версий 2.7, 3.5, 3.6 и 3.7. Python 3 является рекомендуемой версией, так как поддержка Python 2.7 скоро будет прекращена.
 
 ### <a name="service-fabric-target-runtime"></a>Целевая среда выполнения Service Fabric
 
@@ -33,7 +33,8 @@ ms.locfileid: "34763363"
 
 | Версия интерфейса командной строки   | Поддерживаемая версия среды выполнения |
 |---------------|---------------------------|
-| Последняя (~=5)  | Последняя (~=6.2)            |
+| Последняя (~=6)  | Последняя (~=6.3)            |
+| 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
 | 3.0.0         | 6,0                       |
 | 1.1.0         | 5.6, 5.7                  |
@@ -56,11 +57,11 @@ pip install -I sfctl==1.1.0
 
 Для Windows 10, Windows Server 2016 и Windows Server 2012 R2 используйте стандартные официальные инструкции по установке. Установщик Python также по умолчанию устанавливает pip.
 
-1. Перейдите на официальную [страницу загрузок Python](https://www.python.org/downloads/) и скачайте последний выпуск Python 3.6.
+1. Перейдите на официальную [страницу загрузок Python](https://www.python.org/downloads/) и скачайте последний выпуск Python 3.7.
 
 2. Запустите установщик.
 
-3. В нижней части окна запроса выберите **Add Python 3.6 to PATH** (Добавить Python 3.6 в PATH).
+3. В нижней части окна запроса выберите **Add Python 3.7 to PATH** (Добавить Python 3.7 в PATH).
 
 4. Выберите **Install Now** (Установить сейчас) и завершите установку.
 
@@ -113,7 +114,7 @@ sudo pip3 install sfctl
 
 ### <a name="red-hat-enterprise-linux-74-service-fabric-preview-support"></a>Red Hat Enterprise Linux 7.4 (поддержка предварительной версии Service Fabric)
 
-Чтобы установить Service Fabric CLI в RedHat, выполните следующие команды:
+Чтобы установить интерфейс командной строки Service Fabric в Red Hat, выполните следующие команды:
 
 ```bash
 sudo yum install -y python34
@@ -133,7 +134,7 @@ sudo pip3 install sfctl
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Затем с помощью терминала установите Python 3.6, pip и интерфейс командной строки Service Fabric, выполнив следующие команды:
+Затем с помощью терминала установите Python 3.7, pip и интерфейс командной строки Service Fabric, выполнив следующие команды:
 
 ```bash
 brew install python3

@@ -9,12 +9,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 07/16/2018
 ms.author: wolfma
-ms.openlocfilehash: 587ae9f6452f85dee867047e47ccc272ee508b81
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: 8b257a6f4c32b4013ac0478d82dc1f7f32675b9b
+ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39325196"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39578166"
 ---
 # <a name="quickstart-recognize-speech-in-c-under-net-framework-on-windows-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C# для .NET Framework в Windows с помощью пакета SDK для службы "Речь".
 
@@ -48,7 +48,7 @@ ms.locfileid: "39325196"
 
     ![Установка пакета Microsoft.CognitiveServices.Speech NuGet](media/sdk/qs-csharp-dotnet-windows-03-nuget-install-0.5.0.png "Установка пакета Nuget")
 
-1. Примите условия лицензии в появившемся диалоговом окне.
+1. Примите условия отображаемой лицензии.
 
     ![Принять лицензию](media/sdk/qs-csharp-dotnet-windows-04-nuget-license.png "Принять лицензию")
 
@@ -76,7 +76,7 @@ ms.locfileid: "39325196"
 
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
-1. Откройте `Program.cs` в проекте Visual Studio и замените весь код в этом файле приведенным ниже кодом.
+1. Откройте файл `Program.cs` и замените все содержимое приведенным ниже кодом.
 
     [!code-csharp[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/csharp-dotnet-windows/helloworld/Program.cs#code)]
 

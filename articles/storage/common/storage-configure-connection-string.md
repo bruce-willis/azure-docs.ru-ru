@@ -1,25 +1,19 @@
 ---
 title: Настройка строки подключения для службы хранилища Azure | Документация Майкрософт
-description: Настройка строки подключения для учетной записи хранения Azure. Строка подключения содержит сведения, необходимые для аутентификации при доступе к учетной записи хранения из приложения во время выполнения.
+description: Настройка строки подключения для учетной записи хранения Azure. Строка подключения содержит сведения, необходимые для авторизации при доступе к учетной записи хранения из приложения во время выполнения.
 services: storage
-documentationcenter: ''
 author: craigshoemaker
-manager: jeconnoc
-editor: tysonn
-ms.assetid: ecb0acb5-90a9-4eb2-93e6-e9860eda5e53
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 04/12/2017
 ms.author: cshoe
-ms.openlocfilehash: dee0fd68ccaf80ff6e44ee10fa24bb19e220d0d5
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.component: common
+ms.openlocfilehash: 1c6ba727bf9c19b5da0d0d0313377d5d4ad1e2ac
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30240835"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39530466"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
@@ -32,7 +26,7 @@ ms.locfileid: "30240835"
 [!INCLUDE [storage-account-key-note-include](../../../includes/storage-account-key-note-include.md)]
 
 ## <a name="storing-your-connection-string"></a>Хранение строки подключения
-Приложению требуется доступ к строке подключения в среде выполнения, чтобы выполнять аутентификацию запросов к службе хранилища Azure. Есть несколько вариантов для хранения строки подключения.
+Приложению требуется доступ к строке подключения во время выполнения, чтобы выполнять авторизацию запросов к службе хранилища Azure. Есть несколько вариантов для хранения строки подключения.
 
 * Приложение, работающее на настольном компьютере или на устройстве, может хранить строку подключения в файле **app.config** или **web.config**. Добавьте строку подключения в раздел **AppSettings** в этих файлах.
 * Приложение, работающее в облачной службе Azure, может хранить строку подключения в [файле схемы конфигурации службы Azure (.cscfg)](https://msdn.microsoft.com/library/ee758710.aspx). Добавьте строку подключения в раздел **ConfigurationSettings** файла конфигурации службы.

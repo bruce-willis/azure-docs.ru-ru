@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 304476e2d6862fbb6a859ae6fefe96d177b1111b
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: f20e102ee1d100ea02da53fe460b56f8f8390418
+ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35264261"
+ms.lasthandoff: 08/02/2018
+ms.locfileid: "39426699"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](monitor-alerts-unified-usage.md) можно [настроить конфигурацию с помощью групп действий](monitoring-action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -53,6 +53,8 @@ ms.locfileid: "35264261"
 | Идентификатор приложения |#applicationid |Идентификатор вашего приложения Application Insight. |
 | Идентификатор подписки |#subscriptionid |Идентификатор подписки Azure, используемой с Application Insights. 
 
+> [!NOTE]
+> LinkToSearchResults передает из URL-адреса такие параметры, как SearchQuery, время начала и завершения интервала поиска, на портал Azure для просмотра данных в разделе аналитики. На портале Azure применяется ограничение на размер URL-адреса (приблизительно 2000 символов). Но если значения параметров превышают это ограничение, откроется сам портал. Пользователи могут ввести сведения вручную, чтобы просмотреть результаты на портале Analytics, либо получить результаты с помощью программных средств, используя [REST API для Application Insights Analytics](https://dev.applicationinsights.io/documentation/Using-the-API) или [для Log Analytics](https://dev.loganalytics.io/reference). 
 
 Например, можно указать следующие пользовательские полезные данные, содержащие один параметр — *text*.  Служба, вызываемая этим действием webhook, будет ожидать этот параметр.
 

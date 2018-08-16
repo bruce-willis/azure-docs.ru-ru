@@ -14,17 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: tomfitz
-ms.openlocfilehash: f1271a6afba91cf75820f2e4b973b7cd42782449
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: d3d2375b0b633beb56232e518202b09777f60cc8
+ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34824342"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39524514"
 ---
 # <a name="resource-functions-for-azure-resource-manager-templates"></a>Функции для работы с ресурсами в шаблонах Azure Resource Manager
 
 Диспетчер ресурсов предоставляет следующие функции для получения значений ресурсов:
 
+* [listAccountSas](#list)
 * [listKeys](#listkeys)
 * [listSecrets](#list)
 * [list*](#list)
@@ -39,7 +40,9 @@ ms.locfileid: "34824342"
 <a id="listkeys" />
 <a id="list" />
 
-## <a name="listkeys-listsecrets-and-list"></a>listKeys, listSecrets и list*
+## <a name="listaccountsas-listkeys-listsecrets-and-list"></a>listAccountSas, listKeys, listSecrets и list*
+`listAccountSas(resourceName or resourceIdentifier, apiVersion, functionValues)`
+
 `listKeys(resourceName or resourceIdentifier, apiVersion)`
 
 `listSecrets(resourceName or resourceIdentifier, apiVersion)`
@@ -54,6 +57,7 @@ ms.locfileid: "34824342"
 |:--- |:--- |:--- |:--- |
 | имя_ресурса или идентификатор_ресурса |Yes |строка |Уникальный идентификатор ресурса. |
 | версия_API |Yes |строка |Версия API для состояния среды выполнения ресурса. Как правило, указывается в формате **гггг-мм-дд**. |
+| functionValues |Нет  |object | Объект, содержащий значения для функции. Предоставляйте этот объект только для функций, которые поддерживают прием объекта с параметрами, например **listAccountSas** в учетной записи хранения. | 
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -80,7 +84,7 @@ ms.locfileid: "34824342"
 
 ### <a name="remarks"></a>Примечания
 
-Любая операция, которая начинается с **list**, может быть использована в шаблоне как функция. Это относится не только к listKeys, но и к таким операциям, как `list`, `listAdminKeys` и `listStatus`. Но нельзя использовать операции **list**, требующие значения в тексте запроса. Например, для операции [перечисления SAS учетной записи](/rest/api/storagerp/storageaccounts#StorageAccounts_ListAccountSAS) требуются параметры текста запроса, такие как *signedExpiry*, поэтому ее нельзя использовать внутри шаблона.
+Любая операция, которая начинается с **list**, может быть использована в шаблоне как функция. Это относится не только к listKeys, но и к таким операциям, как `list`, `listAdminKeys` и `listStatus`. Для операции [перечисления SAS учетной записи](/rest/api/storagerp/storageaccounts#StorageAccounts_ListAccountSAS) требуются параметры текста запроса, такие как *signedExpiry*. Чтобы использовать эту функцию в шаблоне, укажите объект со значениями параметров текста.
 
 Чтобы определить, какие типы ресурсов поддерживают операцию list, можно использовать следующие варианты:
 
@@ -100,37 +104,67 @@ ms.locfileid: "34824342"
 
 ### <a name="example"></a>Пример
 
-В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) показано, как получить в разделе выходных данных первичный и вторичный ключи из учетной записи хранения.
+В следующем [примере шаблона](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/listkeys.json) показано, как получить в разделе выходных данных первичный и вторичный ключи из учетной записи хранения. Он также возвращает маркер SAS для учетной записи хранения. Чтобы получить этот маркер, он передает объект функции listAccountSas. В этом примере показано, как использовать функции перечисления. Как правило, нужно использовать токен SAS в значении ресурса, а не возвращать его в качестве выходного значения. Выходные значения хранятся в истории развертывания и не являются безопасными. Вы должны указать время истечения срока действия в будущем для успешного развертывания.
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-      "storageAccountName": { 
-          "type": "string"
-      }
-  },
-  "resources": [
-    {
-      "name": "[parameters('storageAccountName')]",
-      "type": "Microsoft.Storage/storageAccounts",
-      "apiVersion": "2016-12-01",
-      "sku": {
-        "name": "Standard_LRS"
-      },
-      "kind": "Storage",
-      "location": "[resourceGroup().location]",
-      "tags": {},
-      "properties": {
-      }
-    }
-  ],
-  "outputs": {
-      "referenceOutput": {
-          "type": "object",
-          "value": "[listKeys(parameters('storageAccountName'), '2016-12-01')]"
-      }
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storagename": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "defaultValue": "southcentralus"
+        },
+        "requestContent": {
+            "type": "object",
+            "defaultValue": {
+                "signedServices": "b",
+                "signedResourceType": "c",
+                "signedPermission": "r",
+                "signedExpiry": "2018-08-20T11:00:00Z",
+                "signedResourceTypes": "s"
+            }
+    },
+    "resources": [
+        {
+            "apiVersion": "2018-02-01",
+            "name": "[parameters('storagename')]",
+            "location": "[parameters('location')]",
+            "type": "Microsoft.Storage/storageAccounts",
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2",
+            "properties": {
+                "supportsHttpsTrafficOnly": false,
+                "accessTier": "Hot",
+                "encryption": {
+                    "services": {
+                        "blob": {
+                            "enabled": true
+                        },
+                        "file": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            },
+            "dependsOn": []
+        }
+    ],
+    "outputs": {
+        "keys": {
+            "type": "object",
+            "value": "[listKeys(parameters('storagename'), '2018-02-01')]"
+        },
+        "accountSAS": {
+            "type": "object",
+            "value": "[listAccountSas(parameters('storagename'), '2018-02-01', parameters('requestContent'))]"
+        }
     }
 }
 ``` 
@@ -138,13 +172,13 @@ ms.locfileid: "34824342"
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
 ```azurecli-interactive
-az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/listkeys.json --parameters storageAccountName=<your-storage-account>
+az group deployment create -g functionexamplegroup --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/listkeys.json --parameters storagename=<your-storage-account>
 ```
 
 Развернуть этот пример шаблона с помощью PowerShell можно так:
 
 ```powershell
-New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/listkeys.json -storageAccountName <your-storage-account>
+New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/listkeys.json -storagename <your-storage-account>
 ```
 
 <a id="providers" />

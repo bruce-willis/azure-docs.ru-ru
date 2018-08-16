@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 07/25/2018
 ms.author: douglasl
-ms.openlocfilehash: 9c45b428a6d2060243f1eba9a284c7eb1b1b21c0
-ms.sourcegitcommit: c2c64fc9c24a1f7bd7c6c91be4ba9d64b1543231
+ms.openlocfilehash: 9bcc73d262f4bc455c923fe0eb7c04c7cf090830
+ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39259108"
+ms.lasthandoff: 08/03/2018
+ms.locfileid: "39505367"
 ---
 # <a name="monitor-an-integration-runtime-in-azure-data-factory"></a>Мониторинг среды выполнения интеграции в фабрике данных Azure  
 **Среда выполнения интеграции** — это инфраструктура вычислений, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. В фабрике данных предусмотрено три типа сред выполнения интеграции:
@@ -87,7 +87,7 @@ Get-AzureRmDataFactoryV2IntegrationRuntime -DataFactoryName MyDataFactory -Resou
 
 Увеличьте масштаб, увеличив количество узлов. При увеличении количества узлов предельным числом одновременно выполняемых заданий является сумма предельных значений одновременных заданий всех доступных узлов.  Например, если один узел позволяет запускать не более двенадцати одновременно выполняемых заданий, то добавив три похожих узла, вы сможете выполнять 48 одновременных заданий (то есть 4 x 12). Предельное число одновременно выполняемых заданий рекомендуется увеличить, только если на каждом узле прослеживается низкое потребление ресурсов при использовании значений по умолчанию.
 
-Вы можете переопределить полученное значение по умолчанию на портале Azure. Выберите Author (Создание) > Подключения > Integration Runtimes (Среды выполнения интеграции) > EDI > Узлы > Modify concurrent job value per node (Изменить значение числа параллельных заданий на каждом узле). Для этого можно также использовать команду PowerShell [update-azurermdatafactoryv2integrationruntimenode](https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactoryv2/update-azurermdatafactoryv2integrationruntimenode?view=azurermps-6.4.0#examples).
+Вы можете переопределить полученное значение по умолчанию на портале Azure. Выберите "Создать" > "Подключения" > "Среды выполнения интеграции" > "Изменить" > "Узлы" > "Изменить число параллельных заданий на каждом узле". Для этого можно также использовать команду PowerShell [update-azurermdatafactoryv2integrationruntimenode](https://docs.microsoft.com/en-us/powershell/module/azurerm.datafactoryv2/update-azurermdatafactoryv2integrationruntimenode?view=azurermps-6.4.0#examples).
   
 ### <a name="status-per-node"></a>Состояние (на одном узле)
 В следующей таблице приведены возможные состояния узла локальной среды выполнения интеграции:
