@@ -131,7 +131,7 @@ ms.locfileid: "40002769"
     }
     ```
     
-    Этот Storm Bolt регистрирует содержимое полученного события. Эго можно легко расширить для хранения кортежей в службе хранилища. В [Пример использования HDInsight Storm с концентратором событий] для хранения данных в службе хранилища Azure и Power BI применяется одинаковый подход.
+    Этот Storm Bolt регистрирует содержимое полученного события. Эго можно легко расширить для хранения кортежей в службе хранилища. В [примере использования HDInsight Storm с концентратором событий] для хранения данных в службе хранилища Azure и Power BI применяется одинаковый подход.
 11. Создайте класс с названием **LogTopology** и со следующим кодом:
     
     ```java
@@ -248,7 +248,7 @@ ms.locfileid: "40002769"
 <!-- Links -->
 [Event Hubs overview]: event-hubs-what-is-event-hubs.md
 [HDInsight Storm]: ../hdinsight/storm/apache-storm-overview.md
-[Пример использования HDInsight Storm с концентратором событий]: https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/
+[примере использования HDInsight Storm с концентратором событий]: https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/
 
 <!-- Images -->
 
