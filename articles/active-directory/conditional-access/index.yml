@@ -1,0 +1,62 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 9e78d534579a89f0fc97830616d7b5cd550253f7
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "40177338"
+documentType: LandingData
+title: Документация по условному доступу в Azure AD
+metadata:
+  document_id: 
+  title: 'Документация по условному доступу в Azure AD: руководства, краткие инструкции, основные понятия, справочники | Документация Майкрософт'
+  description: Узнайте, как настроить и протестировать политики условного доступа для Azure Active Directory.
+  services: active-directory
+  ms.component: authentication
+  author: MarkusVi
+  manager: mtillman
+  ms.service: active-directory
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 08/14/2018
+  ms.author: markvi
+abstract:
+  description: Узнайте, как соблюсти баланс между безопасностью и производительностью, настроив условный доступ в Azure AD. Благодаря политикам условного доступа вы можете определить, как будет осуществляться доступ к вашим облачным приложениям. С помощью решений, касающихся доступа, можно получить ответы на следующие вопросы:<ul><li>Каково расположение пользователя в сети?</li><li>Была ли предпринята попытка доступа с управляемого устройства?</li><li>Из какого клиентского приложения предпринята попытка подключения?</li><li>Была ли предпринята попытка доступа с помощью входа, представляющего риск?</li></ul>Перечисленные ниже ресурсы помогут вам быстро приступить к работе.
+  aside:
+    image:
+      alt: 
+      height: 110
+      src: ./media/index/video.png
+      width: 246
+    title: Описание условного доступа
+    href: https://www.youtube.com/watch?v=A7IrxAH87wc
+    width: 246
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как настроить политики условного доступа для распространенных сценариев доступа.
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: ./media/index/i_security-management.png
+      text: Требование многофакторной проверки подлинности для конкретных приложений
+      href: app-based-mfa.md
+    - image:
+        src: ./media/index/i_security-management.png
+      text: Блокировка доступа при обнаружении риска безопасности сеанса
+      href: app-sign-in-risk.md
+    - image:
+        src: ./media/index/i_security-management.png
+      text: Обеспечение принятия условий использования
+      href: require-tou.md
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как перенести классические политики условного доступа.
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/conditional-access/policy-migration-mfa">Перенос классической политики, которая требует применения многофакторной проверки подлинности</a>
