@@ -1,0 +1,52 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 153c3884d3802259fafac82650d79534472d7641
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "40209115"
+documentType: LandingData
+title: Документация по управлению пользователями Azure Active Directory
+metadata:
+  document_id: 
+  title: Документация по пользователям, группам, ролям и лицензиям Azure Active Directory
+  description: Узнайте, как управлять аутентификацией в облачных службах Azure в своем клиенте с помощью администрирования пользователей, групп, ролей и лицензий.
+  services: active-directory
+  ms.component: users-groups-roles
+  author: curtand
+  manager: mtillman
+  ms.service: active-directory
+  ms.topic: landing-page
+  ms.date: 08/12/2018
+  ms.author: curtand
+abstract:
+  description: Средства управления пользователями Azure AD, такие как создание групп и назначение ролей администратора, помогают быстрее справляться с основными задачами и способствуют развитию. Вы можете назначать лицензии или права доступа к приложениям SaaS группам, а не отдельным пользователям, или делегировать разрешения, чтобы распределять задачи управления удостоверениями Azure AD.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: Узнайте, как использовать средства управления в Azure Active Directory
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/fundamentals/add-users-azure-active-directory">Добавление пользователей в Azure AD</a>
+    - html: <a href="/azure/active-directory/fundamentals/license-users-groups">Назначение лицензий пользователям</a>
+    - html: <a href="/azure/active-directory/fundamentals/active-directory-get-started-premium">Регистрация для использования Azure AD Premium</a>
+    - html: <a href="/azure/active-directory/users-groups-roles/groups-quickstart-expiration">Настройка срока действия для созданных пользователями групп</a>
+    - html: <a href="/azure/active-directory/users-groups-roles/groups-quickstart-naming-policy">Настройка политики именования для созданных пользователями групп</a>
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: Узнайте, как динамически заполнять группы в Azure Active Directory
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="/azure/active-directory/users-groups-roles/groups-dynamic-tutorial">Создание динамически заполняемой группы</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Ссылки для справки
+      html: <p><a href="https://docs.microsoft.com/powershell/module/azuread/?view=azureadps-2.0">Командлеты Azure AD PowerShell</a></p>

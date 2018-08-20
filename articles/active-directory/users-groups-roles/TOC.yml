@@ -1,0 +1,167 @@
+items:
+- name: Документация по управлению пользователями
+  href: index.yml
+- name: Обзор
+  items:
+  - name: Управление удостоверениями Azure
+    href: ../fundamentals/identity-fundamentals.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+- name: Быстрое начало работы
+  items:
+  - name: Добавление пользователей в Azure AD
+    href: ../fundamentals/add-users-azure-active-directory.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Назначение лицензий пользователям
+    href: ../fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Настройка срока действия групп
+    href: groups-quickstart-expiration.md
+  - name: Настройка политики именования групп
+    href: groups-quickstart-naming-policy.md
+- name: Учебники
+  items:
+  - name: Создание динамически заполняемой группы
+    href: groups-dynamic-tutorial.md
+- name: Основные понятия
+  items:
+  - name: Делегирование ролей администратора Azure AD
+    href: roles-concept-delegation.md
+  - name: Принципы лицензирования на основе групп
+    href: ../fundamentals/active-directory-licensing-whatis-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Сравнение разрешений пользователей по умолчанию
+    href: ../fundamentals/users-default-permissions.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Роли администратора Azure и Azure AD
+    href: ../../role-based-access-control/rbac-and-directory-admin-roles.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Ограничения службы
+    href: directory-service-limits-restrictions.md
+  expanded: true
+- name: Практические руководства
+  items:
+  - name: Управление пользователями
+    items:
+    - name: Добавление новых пользователей в Azure AD
+      href: ../fundamentals/add-users-azure-active-directory.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление профилями пользователей
+      href: ../fundamentals/active-directory-users-profile-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Совместное использование учетных записей
+      href: ../active-directory-sharing-accounts.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Назначение пользователям ролей администратора
+      href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: восстановить удаленного пользователя;
+      href: ../fundamentals/active-directory-users-restore.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Добавление пользователей B2B
+      href: ../b2b/what-is-b2b.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Назначение роли пользователю B2B
+      href: ../b2b/add-guest-to-role.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Динамические группы и B2B
+      href: ../b2b/use-dynamic-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Управление каталогом
+    items:
+    - name: Администрирование каталога
+      href: ../fundamentals/active-directory-administer.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Удаление каталога
+      href: directory-delete-howto.md
+    - name: Несколько каталогов
+      href: licensing-directory-independence.md
+    - name: Самостоятельная регистрация
+      href: directory-self-service-signup.md
+    - name: Смена каталога
+      href: domains-admin-takeover.md
+    - name: Azure AD Connect
+      href: ../connect/active-directory-aadconnect.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Настройка фирменной символики компании
+      href: ../fundamentals/customize-branding.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Управление группами
+    items:
+    - name: Управление доступом с помощью групп
+      href: ../fundamentals/active-directory-manage-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление группами на портале Azure
+      href: ../fundamentals/active-directory-groups-create-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление группами в PowerShell для Graph (версия 2)
+      href: groups-settings-v2-cmdlets.md
+    - name: Управление группами в PowerShell MSOnline
+      href: groups-settings-cmdlets.md
+    - name: Управление членами группы
+      href: ../fundamentals/active-directory-groups-members-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление владельцами групп
+      href: ../fundamentals/active-directory-accessmanagement-managing-group-owners.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление группами в группах
+      href: ../fundamentals/active-directory-groups-membership-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Включение доступа для групп в приложениях SaaS
+      href: groups-saasapps.md
+    - name: Восстановление удаленных групп
+      href: ../fundamentals/active-directory-groups-restore-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Управление параметрами группы
+      href: ../fundamentals/active-directory-groups-settings-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Динамические группы
+      items:
+      - name: Создание динамической группы
+        href: groups-create-rule.md
+      - name: Синтаксис и свойства правил
+        href: groups-dynamic-membership.md
+      - name: Изменение типа членства в группе
+        href: groups-change-type.md
+      - name: Устранение неполадок
+        href: groups-troubleshooting.md
+    - name: Настройка групп, созданных пользователем
+      href: groups-self-service-management.md
+  - name: Назначение лицензий
+    items:
+    - name: Назначение лицензий пользователям
+      href: ../fundamentals/license-users-groups.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Назначение лицензий группе
+      href: licensing-groups-assign.md
+    - name: Устранение проблем с лицензированием группы
+      href: licensing-groups-resolve-problems.md
+    - name: Изменение пользователей для лицензирования группы
+      href: licensing-groups-migrate-users.md
+    - name: Изменение лицензий для пользователя
+      href: licensing-groups-change-licenses.md
+    - name: Дополнительные сценарии
+      href: licensing-group-advanced.md
+    - name: Лицензирование группы с помощью PowerShell
+      href: licensing-ps-examples.md
+    - name: Справочные сведения о продукте и плане службы
+      href: licensing-service-plan-reference.md
+  - name: Роли администратора в Azure AD
+    items:
+    - name: Справочные сведения о ролях и разрешениях
+      href: directory-assign-admin-roles.md
+    - name: Просмотр участников роли
+      href: directory-manage-roles-portal.md
+    - name: Назначение роли пользователю
+      href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Защита роли администратора
+      items:
+      - name: Планирование безопасности ролей
+        href: directory-admin-roles-secure.md
+      - name: Создание учетных записей для экстренных ситуаций
+        href: directory-emergency-access.md
+    - name: Административные единицы
+      href: directory-administrative-units.md
+    - name: Настройка времени существования маркеров
+      href: ../active-directory-configurable-token-lifetimes.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+  - name: Интеграция служб с Azure AD
+    items:
+    - name: Интеграция LinkedIn с Azure AD
+      href: linkedin-integration.md
+  - name: Устранение неполадок
+    items:
+    - name: Получение поддержки для Azure AD
+      href: ../fundamentals/active-directory-troubleshooting-support-howto.md?context=azure/active-directory/users-groups-roles/context/ugr-context
+    - name: Устранение неполадок с группами
+      href: groups-troubleshooting.md
+    - name: Устранение неполадок с лицензированием группы
+      href: licensing-groups-resolve-problems.md
+  expanded: true
+- name: Справочные материалы
+  items:
+  - name: API Graph
+    href: https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/azure_ad_overview
+  - name: Azure AD CLI
+    href: https://docs.microsoft.com/cli/azure/ad
+  - name: Azure AD PowerShell для Graph
+    href: https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0
+ms.openlocfilehash: bb524817600d2ab8c41ab5153c0b7865472e9134
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "40209101"
