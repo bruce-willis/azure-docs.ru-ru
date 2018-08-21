@@ -467,4 +467,4 @@ searchItemRenderers = {
 > [Руководство для мобильного приложения для визуального поиска](computer-vision-web-search-tutorial.md)
 
 > [!div class="nextstepaction"]
-> [Web Search API v7 reference](//docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference) (Справка по API Bing для поиска в Интернете версии 7)
+> [Справка по API Bing для поиска в Интернете версии 7](//docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference)
