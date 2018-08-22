@@ -1,6 +1,6 @@
 ---
-title: Развертывание в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания
-description: Дополнительные сведения о развертывании в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания
+title: Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
+description: Сведения о развертывании в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания.
 services: app-service\web
 documentationcenter: ''
 author: tomarcher
@@ -15,70 +15,70 @@ ms.workload: web
 ms.date: 07/23/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 472622f78303593b7a4d5d5136aa47f34a1f44b1
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 384681ae0ba212b485022ac81743528f96075ec8
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39227931"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39716466"
 ---
-# <a name="deploy-to-azure-kubernetes-service-aks-using-jenkins-and-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания
+# <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
-Служба Azure Kubernetes (AKS) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими, даже если вы никогда не оркестрировали контейнеры. AKS также устраняет нагрузку на текущие операции и техническое обслуживание за счет подготовки, обновления и масштабирования ресурсов по требованию без отключения ваших приложений. Дополнительные сведения о AKS, см. в разделе [Служба Azure Kubernetes (AKS)](/azure/aks/).
+Служба Azure Kubernetes (AKS) управляет размещенной средой Kubernetes, позволяя быстро и легко развертывать контейнерные приложения и управлять ими. Вам не обязательно быть экспертом в оркестрации контейнеров. AKS также устраняет нагрузку на текущие операции и техническое обслуживание за счет подготовки, обновления и масштабирования ресурсов по требованию. Нет необходимости в отключении ваших приложений. Дополнительные сведения об AKS см. в разделе [Служба Azure Kubernetes (AKS)](/azure/aks/).
 
-Сине-зеленое развертывание — это шаблон непрерывной поставки DevOps, который предполагает сохранение существующей (синей) версии, при развертывании новой (зеленой). Как правило, этот шаблон использует балансировку нагрузки для прямого увеличения объема трафика в зеленом развертывании. Если во время мониторинга обнаруживается ошибка, трафик перенаправляется на оставшееся синее развертывание. Дополнительные сведения о непрерывной поставке см. в статье [What is Continuous Delivery](/azure/devops/what-is-continuous-delivery) (Что такое непрерывная поставка).
+Сине-зеленое развертывание — это шаблон непрерывной поставки Azure DevOps, который предполагает сохранение существующей (синей) версии при развертывании новой (зеленой). Как правило, этот шаблон использует балансировку нагрузки для прямого увеличения объема трафика в зеленом развертывании. Если во время мониторинга обнаруживается ошибка, трафик перенаправляется на оставшееся синее развертывание. Дополнительные сведения о непрерывной поставке см. в статье [Что такое непрерывная поставка](/azure/devops/what-is-continuous-delivery).
 
-В этом руководстве вы узнаете, как выполнять следующие задачи при развертывании AKS с помощью Jenkins и сине-зеленого шаблона развертывания.
+Из этого руководства вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
 > * Знакомство с шаблоном сине-зеленого развертывания
-> * Создание управляемого кластера Kubernetes
+> * Создание управляемого кластера Kubernetes.
 > * Запуск примера скрипта для настройки кластера Kubernetes
 > * Настройка кластера Kubernetes вручную
 > * Создание и запуск задания Jenkins
 
 ## <a name="prerequisites"></a>Предварительные требования
 - [Учетная запись GitHub](https://github.com). Вам понадобится учетная запись GitHub, чтобы клонировать пример из репозитория.
-- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используется Azure CLI 2.0.
+- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
 - [Chocolatey](https://chocolatey.org). Это диспетчер пакетов, используемый для установки kubectl.
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Интерфейс командной строки для выполнения команд кластеров Kubernetes.
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/). Небольшой процессор командной строки JSON.
 
 ## <a name="clone-the-sample-app-from-github"></a>Клонирование примера приложения из GitHub
 
-Пример приложения, демонстрирующий развертывание в AKS с помощью Jenkins и сине-зеленого шаблона, который находится в репозитории Майкрософт в GitHub. В этом разделе вы создадите вилку этого репозитория в GitHub, и клонируете приложения в свою локальную систему.
+В репозитории Майкрософт в GitHub вы можете найти пример приложения, демонстрирующий развертывание в AKS с помощью Jenkins и сине-зеленого шаблона. В этом разделе вы создадите вилку этого репозитория в GitHub, и клонируете приложения в свою локальную систему.
 
 1. В репозитории GitHub найдите пример приложения [todo-app-java-on-azure](https://github.com/microsoft/todo-app-java-on-azure.git).
 
-    ![Пример приложения в репозитории Майкрософт в GitHub.](./media/jenkins-aks-blue-green-deployment/github-sample-msft.png)
+    ![Снимок экрана примера приложения в репозитории Майкрософт в GitHub](./media/jenkins-aks-blue-green-deployment/github-sample-msft.png)
 
 1. Чтобы создать вилку репозитория в вашей учетной записи GitHub, выберите **Fork** (Вилка) в верхнем правом углу страницы, и следуйте инструкциям.
 
-    ![Создание разветвление примера приложения в учетной записи GitHub.](./media/jenkins-aks-blue-green-deployment/github-sample-msft-fork.png)
+    ![Снимок экрана с командой создания вилки в GitHub](./media/jenkins-aks-blue-green-deployment/github-sample-msft-fork.png)
 
 1. После ветвления репозитория можно увидеть, что имя учетной записи меняется на имя вашей учетной записи, а заметка указывает точку ветвления репозитория (Майкрософт).
 
-    ![Пример приложения после ветвления в другую учетную запись GitHub.](./media/jenkins-aks-blue-green-deployment/github-sample-msft-forked.png)
+    ![Снимок экрана с именем учетной записи GitHub и заметкой](./media/jenkins-aks-blue-green-deployment/github-sample-msft-forked.png)
 
-1. Выберите команду **Clone or download** (Клонировать или загрузить).
+1. Выберите **Clone or download**(Клонировать или скачать).
 
-    ![GitHub позволяет быстро клонировать или загрузить репозиторий.](./media/jenkins-aks-blue-green-deployment/github-sample-clone.png)
+    ![Снимок экрана с командой клонирования или скачивания репозитория в GitHub](./media/jenkins-aks-blue-green-deployment/github-sample-clone.png)
 
-1. В окне **Clone with HTTPS** (Клонирование с использованием HTTPS) щелкните значок копирования.
+1. В окне **Clone with HTTPS** (Клонирование с использованием HTTPS) щелкните значок **копирования**.
 
-    ![Скопируйте URL-адрес клона в буфер обмена.](./media/jenkins-aks-blue-green-deployment/github-sample-copy.png)
+    ![Снимок экрана с параметром копирования URL-адреса клона в буфер обмена в GitHub](./media/jenkins-aks-blue-green-deployment/github-sample-copy.png)
 
-1. Откройте терминал или окно Bash.
+1. Откройте терминал или окно Git Bash.
 
 1. Выберите каталог, где вы хотите сохранить локальную копию (клон) репозитория.
 
 1. С помощью команды `git clone` клонируйте URL-адрес, скопированный ранее.
 
-    ![Введите "git clone" и URL-адрес клона, чтобы создать клон репозитория.](./media/jenkins-aks-blue-green-deployment/git-clone-command.png)
+    ![Снимок экрана с командой Git Bash — git clone](./media/jenkins-aks-blue-green-deployment/git-clone-command.png)
 
-1. Выберите ключ &lt;Ввод>, чтобы начать процесс клонирования.
+1. Нажмите клавишу ВВОД, чтобы начать процесс клонирования.
 
-    ![С помощью команды "git clone" создается личная копия репозитория, которую можно протестировать](./media/jenkins-aks-blue-green-deployment/git-clone-results.png)
+    ![Снимок экрана с результатами команды Git Bash — git clone](./media/jenkins-aks-blue-green-deployment/git-clone-results.png)
 
 1. Перейдите в только что созданный каталог, содержащий клон исходного кода приложения.
 
@@ -88,33 +88,33 @@ ms.locfileid: "39227931"
 
 - Использование Azure CLI 2.0 для создания управляемого кластера Kubernetes.
 - Узнайте, как настроить кластер с помощью скрипта установки или вручную.
-- Создание Реестра контейнеров Azure.
+- Создайте экземпляр службы "Реестр контейнеров Azure".
 
 > [!NOTE]   
-> Сейчас служба AKS доступна в предварительной версии. Дополнительный сведения о включении предварительной версии для подписки Azure см. в разделе [Quickstart: Deploy an Azure Kubernetes Service (AKS) cluster ](/azure/aks/kubernetes-walkthrough#enabling-aks-preview-for-your-azure-subscription) (Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)).
+> Сейчас служба AKS доступна в предварительной версии. Сведения о включении предварительной версии для подписки Azure см. в статье [Краткое руководство по развертыванию кластера службы Azure Kubernetes (AKS)](/azure/aks/kubernetes-walkthrough#enabling-aks-preview-for-your-azure-subscription).
 
 ### <a name="use-the-azure-cli-20-to-create-a-managed-kubernetes-cluster"></a>Использование Azure CLI 2.0 для создания управляемого кластера Kubernetes
-Для создания управляемого кластера Kubernetes с [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) убедитесь, что вы используете Azure CLI версии 2.0.25 или более поздней версии.
+Для создания управляемого кластера Kubernetes с [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) убедитесь, что вы используете Azure CLI версии 2.0.25 или более поздней версии.
 
-1. Войдите в учетную запись Azure. После ввода команды `az login` вам предоставляются инструкции, в которых объясняется, как завершить вход. 
+1. Войдите в учетную запись Azure. После ввода следующей команды вы получите инструкции, в которых объясняется, как завершить вход. 
     
     ```bash
     az login
     ```
 
-1. При выполнении команды `az login` на предыдущем шаге отображается список всех ваших подписок Azure (вместе с идентификаторами подписки). На этом шаге вы по умолчанию задаете подписку Azure. Замените местозаполнитель &lt;your-subscription-id> на нужный идентификатор подписки Azure. 
+1. При выполнении команды `az login` на предыдущем шаге появляется список всех ваших подписок Azure (вместе с идентификаторами подписки). На этом шаге вы по умолчанию задаете подписку Azure. Замените местозаполнитель &lt;your-subscription-id> на нужный идентификатор подписки Azure. 
 
     ```bash
     az account set -s <your-subscription-id>
     ```
 
-1. Создайте группу ресурсов. Замените местозаполнитель &lt;your-resource-group-name> именем вашей новой группы ресурсов, а &lt;your-location> — расположением. Команда `az account list-locations` отображает все расположениях Azure. Во время предварительной версии AKS доступны не все расположения. Если ввести расположение, которое является недопустимым в настоящее время, в сообщении об ошибке будут отображаться доступные расположения.
+1. Создайте группу ресурсов. Замените местозаполнитель &lt;your-resource-group-name> именем вашей новой группы ресурсов, а &lt;your-location> — расположением. Команда `az account list-locations` отображает все расположениях Azure. Во время предварительной версии AKS доступны не все расположения. Если ввести расположение, которое является недопустимым в настоящее время, в сообщении об ошибке отобразятся доступные расположения.
 
     ```bash
     az group create -n <your-resource-group-name> -l <your-location>
     ```
 
-1. Создание кластера Kubernetes. Замените &lt;your-resource-group-name> именем группы ресурсов, созданной на предыдущем шаге, а &lt;you-kubernetes-cluster-name> замените именем своего нового кластера. (Процесс может занять несколько минут).
+1. Создание кластера Kubernetes. Замените &lt;your-resource-group-name> именем группы ресурсов, созданной на предыдущем шаге, а &lt;your-kubernetes-cluster-name> — именем своего нового кластера. (Процесс может занять несколько минут).
 
     ```bash
     az aks create -g <your-resource-group-name> -n <your-kubernetes-cluster-name> --generate-ssh-keys --node-count 2
@@ -122,7 +122,7 @@ ms.locfileid: "39227931"
 
 ### <a name="set-up-the-kubernetes-cluster"></a>Настройка кластера Kubernetes
 
-Настройку сине-зеленого развертывания в AKS можно выполнить либо с помощью сценария установки, ранее предоставленного в примере клонирования, либо вручную. В этом разделе вы узнаете, как использовать оба этих способа.
+Вы можете настроить сине-зеленое развертывание в AKS вручную или с помощью сценария установки, ранее предоставленного в примере клонирования. В этом разделе вы узнаете, как использовать оба этих способа.
 
 #### <a name="set-up-the-kubernetes-cluster-via-the-sample-setup-script"></a>Настройка кластера Kubernetes с помощью примера сценария установки
 1. Измените файл **deploy/aks/setup/setup.sh**, заменив следующие местозаполнители соответствующими значениями для своей среды: 
@@ -132,7 +132,7 @@ ms.locfileid: "39227931"
     - **&lt;расположение>**
     - **&lt;суффикс имени dns>**
 
-    ![Сценарий setup.sh содержит несколько местозаполнителей, которые можно изменить для вашей среды.](./media/jenkins-aks-blue-green-deployment/edit-setup-script.png)
+    ![Снимок экрана со сценарием setup.sh в bash с несколькими выделенными заполнителями](./media/jenkins-aks-blue-green-deployment/edit-setup-script.png)
 
 1. Выполните сценарий установки.
 
@@ -157,11 +157,11 @@ ms.locfileid: "39227931"
     kubectl apply -f  test-endpoint-green.yml
     ```
 
-1. Обновление DNS-имени для общедоступной и тестовой конечных точек. При создании кластера Kubernetes создается [дополнительная группа ресурсов](https://github.com/Azure/AKS/issues/3) по такому шаблону: **MC_&lt;your-resource-group-name>_&lt;your-kubernetes-cluster-name>_&lt;your-location>**.
+1. Обновление DNS-имени для общедоступной и тестовой конечных точек. При создании кластера Kubernetes также создается [дополнительная группа ресурсов](https://github.com/Azure/AKS/issues/3) по такому шаблону: **MC_&lt;имя_вашей_группы_ресурсов>_&lt;имя_кластера_kubernetes>_&lt;ваше_расположение>**.
 
-    Поиск общедоступного IP-адреса в группе ресурсов
+    Найдите общедоступные IP-адреса в группе ресурсов.
 
-    ![Общедоступный IP-адрес в группе ресурсов](./media/jenkins-aks-blue-green-deployment/publicip.png)
+    ![Снимок экрана с общедоступными IP-адресами в группе ресурсов](./media/jenkins-aks-blue-green-deployment/publicip.png)
 
     Для каждой из служб найдите внешний IP-адрес, выполнив следующую команду:
     
@@ -183,17 +183,17 @@ ms.locfileid: "39227931"
     az network public-ip update --dns-name todoapp-green --ids /subscriptions/<your-subscription-id>/resourceGroups/MC_<resourcegroup>_<aks>_<location>/providers/Microsoft.Network/publicIPAddresses/kubernetes-<ip-address>
     ```
 
-    DNS-имя должно быть уникальным для каждой подписки. Команду `<your-dns-name-suffix>` можно использовать для обеспечения уникальности имени.
+    DNS-имя должно быть уникальным для каждой подписки. Для обеспечения уникальности имени вы можете использовать `<your-dns-name-suffix>`.
 
-### <a name="create-azure-container-registry"></a>Создание Реестра контейнеров Azure
+### <a name="create-an-instance-of-container-registry"></a>Создание экземпляра Реестра контейнеров
 
-1. Чтобы создать Реестр контейнеров Azure, выполните команду `az acr create`. После создания Реестра контейнеров Azure, используйте `login server` в качестве URL-адреса реестра Docker в следующем разделе.
+1. Чтобы создать экземпляр Реестра контейнеров, выполните команду `az acr create`. В следующем разделе можно использовать `login server` как URL-адрес реестра Docker.
 
     ```bash
     az acr create -n <your-registry-name> -g <your-resource-group-name>
     ```
 
-1. Выполните команду `az acr credential`, чтобы отобразить учетные данные вашего Реестра контейнеров Azure. Запомните имя пользователя и пароль реестра Docker, так как они понадобятся в следующем разделе.
+1. Выполните команду `az acr credential`, чтобы отобразить учетные данные вашего Реестра контейнеров. Запомните имя пользователя и пароль реестра Docker, так как они вам понадобятся в следующем разделе.
 
     ```bash
     az acr credential show -n <your-registry-name>
@@ -201,7 +201,7 @@ ms.locfileid: "39227931"
 
 ## <a name="prepare-the-jenkins-server"></a>Подготовка сервера Jenkins
 
-В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. В статье [Security implications of building on master](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) (Влияние безопасности построения на образец) о Jenkins рекомендуется использовать [Агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [Агент контейнера Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. 
+В этом разделе вы узнаете, как подготовить сервер Jenkins для выполнения сборки, удобной для тестирования. Тем не менее следует использовать [агент виртуальной машины Azure](https://plugins.jenkins.io/azure-vm-agents) или [агент контейнеров Azure](https://plugins.jenkins.io/azure-container-agents) для выполнения развертывания агента и запуска сборки. Дополнительные сведения см. в статье [Влияние безопасности построения на образец](https://wiki.jenkins.io/display/JENKINS/Security+implication+of+building+on+master) о Jenkins.
 
 1. Разверните [Jenkins Master в Azure](https://aka.ms/jenkins-on-azure).
 
@@ -211,7 +211,7 @@ ms.locfileid: "39227931"
    sudo apt-get install git maven 
    ```
    
-1. [Установите Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce). Убедитесь, что пользователь `jenkins` имеет разрешение на выполнение команды `docker`.
+1. [Установите Docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce). Убедитесь, что пользователь `jenkins` имеет разрешение на выполнение команд `docker`.
 
 1. [Установите kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/).
 
@@ -228,15 +228,15 @@ ms.locfileid: "39227931"
     1. Выберите **Управление Jenkins > Управление подключаемыми модулями > Доступно**.
     1. Выполните поиск и установите подключаемый модуль службы контейнеров Azure.
 
-1. Необходимо добавить учетные данные, которые будут использоваться для управления ресурсами в Azure. Если у вас еще нет подключаемого модуля, установите подключаемый модуль **Учетные данные Azure**.
+1. Добавьте учетные данные для управления ресурсами в Azure. Если у вас еще нет подключаемого модуля, установите подключаемый модуль **Учетные данные Azure**.
 
-1. Добавьте учетные данные субъекта-службы Azure в качестве типа или вида **Субъекта-службы Microsoft Azure**.
+1. Добавьте учетные данные субъекта-службы Azure в качестве типа **субъекта-службы Microsoft Azure**.
 
-1. Добавьте имя пользователя и пароль реестра Docker в Azure (согласно данным, полученным в разделе **Создание Реестра контейнеров Azure**) в качестве типа или вида **Имени пользователя с паролем**.
+1. Добавьте имя пользователя и пароль реестра Docker в Azure (согласно данным, полученным в разделе "Создание экземпляра Реестра контейнеров") в качестве типа **имени пользователя с паролем**.
 
 ## <a name="edit-the-jenkinsfile"></a>Изменение Jenkinsfile
 
-1. В репозитории перейдите к `/deploy/aks/` и откройте `Jenkinsfile`
+1. В репозитории перейдите к `/deploy/aks/` и откройте `Jenkinsfile`.
 
 2. Обновите файл следующим образом:
 
@@ -252,7 +252,7 @@ ms.locfileid: "39227931"
     def dockerRegistry = '<your-acr-name>.azurecr.io'
     ```
     
-    И обновите идентификатор учетных данных записи контроля доступа:
+    Обновите идентификатор учетных данных Реестра контейнеров:
     
     ```groovy
     def dockerCredentialId = '<your-acr-credential-id>'
@@ -261,34 +261,34 @@ ms.locfileid: "39227931"
 ## <a name="create-the-job"></a>Создание задания
 1. Добавьте новое задание в типе **Pipeline** (Конвейер).
 
-1. Выберите **Pipeline > Definition > Pipeline script from SCM** (Конвейер > Определение > Сценарий конвейера из SCM).
+1. Выберите **Pipeline** > **Definition** > **Pipeline script from SCM** (Конвейер > Определение > Сценарий конвейера из SCM).
 
-1. Введите URL-адрес репозитория SCM с &lt;your-forked-repo>
+1. Введите URL-адрес репозитория SCM с &lt;вашим разветвлением репозитория>.
 
 1. Введите следующий путь к сценарию: `deploy/aks/Jenkinsfile`.
 
 ## <a name="run-the-job"></a>Выполнение задания
 
-1. Убедитесь, что ваш проект успешно выполнен в локальной среде. [Выполнение проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it)
+1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Вот инструкции [выполнения проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
 
-1. Выполните задания Jenkins При выполнении задания Jenkins в первый раз, Jenkins развернет приложение todo в Синей среде, которая является неактивной по умолчанию. 
+1. Выполните задания Jenkins При выполнении задания в первый раз Jenkins развертывает приложение списка задач в синей среде, которая является неактивной по умолчанию. 
 
-1. Чтобы убедиться, что задание выполнено, перейдите на URL-адрес:
+1. Чтобы убедиться, что задание выполнено, перейдите по URL-адресам:
     - Общедоступная конечная точка: `http://aks-todoapp<your-dns-name-suffix>.<your-location>.cloudapp.azure.com`
     - Синяя конечная точка: `http://aks-todoapp-blue<your-dns-name-suffix>.<your-location>.cloudapp.azure.com`
     - Зеленая конечная точка: `http://aks-todoapp-green<your-dns-name-suffix>.<your-location>.cloudapp.azure.com`
 
-Общедоступная и синяя тестовая конечные точки имеют одно и тоже обновление, а зеленая конечная точка по умолчанию показывает изображение tomcat. 
+Общедоступная и синяя тестовая конечные точки имеют одно и то же обновление, а зеленая конечная точка по умолчанию показывает изображение tomcat. 
 
-Если сборка выполняется более одного раза, она циклически проходит через сине-зеленое развертывание. Другими словами, при текущей синей среде задание будет развертываться и тестироваться в зеленой среде, и обновлять общедоступную конечную точку приложения для направления трафика в зеленую среду, если во время тестировании не обнаружено ошибок.
+Если сборка выполняется более одного раза, она циклически проходит через сине-зеленое развертывание. Другими словами, если текущая среда синяя, задание развертывает и проверяет зеленую среду. Затем, если при тестировании не обнаружено ошибок, задание обновляет общедоступную конечную точку приложения для направления трафика в зеленую среду.
 
 ## <a name="additional-information"></a>Дополнительная информация
 
-За дополнительными сведениями о развертывании без простоя, см. [quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-jenkins-aks-zero-downtime-deployment) (шаблон быстрого запуска). 
+Дополнительные сведения о развертывании без простоя см. в [шаблоне быстрого запуска](https://github.com/Azure/azure-quickstart-templates/tree/master/301-jenkins-aks-zero-downtime-deployment). 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите все ресурсы Azure, создание в этом руководстве, если они вам больше не нужны.
+Если вам больше не нужны ресурсы, созданные для этого руководства, вы можете удалить их.
 
 ```bash
 az group delete -y --no-wait -n <your-resource-group-name>
@@ -300,7 +300,7 @@ az group delete -y --no-wait -n <your-resource-group-name>
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы узнали, как развертывать службу Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания. Дополнительные сведения о поставщике Jenkins в Azure, см. в разделе Jenkins на сайте Azure.
+В этом руководстве вы узнали, как развертывать AKS с использованием Jenkins и сине-зеленого шаблона развертывания. Дополнительные сведения о поставщике Jenkins в Azure, см. в разделе Jenkins на сайте Azure.
 
 > [!div class="nextstepaction"]
 > [Jenkins в Azure](/azure/jenkins/)

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: ellacroi
-ms.openlocfilehash: ce862758d97737d16ef26ca7172cad39f8d8336a
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 46cd5dbc044cbd0b7e38e5f0d0c8aa1916387a2d
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39359536"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038479"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -55,23 +55,8 @@ ms.locfileid: "39359536"
 
 ## <a name="sample-template-code"></a>Пример кода шаблона
 
-```
+![](https://raw.githubusercontent.com/ellacroi/azure-docs-pr/lu-images-again-dangit-all/articles/marketplace/media/marketplace-publishers-guide/tracking-sample-code-for-lu-1.PNG?token=Ak8ZDB0JzsBdUGlKEIeHNJRS7b0BWn4Gks5bbMwwwA%3D%3D)
 
-{ // add this resource to the mainTemplate.json (do not add the entire file)
-      "apiVersion": "2018-02-01",
-      "name": "pid-XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", // use your GUID here
-      "type": "Microsoft.Resources/deployments",
-      "properties": {
-        "mode": "Incremental",
-        "template": {
-          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-          "contentVersion": "1.0.0.0",
-          "resources": []
-        }
-      }
-    } // remove all comments from the file when done
-
-```
 
 ## <a name="method-2-azure-resource-manager-apis"></a>Метод 2. Интерфейсы API Azure Resource Manager
 
@@ -81,6 +66,8 @@ ms.locfileid: "39359536"
 
 **Как добавить тег для развертывания с помощью интерфейсов API Azure Resource Manager**: в случае, если вы используете этот способ, при проектировании вызовы API будут содержать GUID в заголовке запроса агента пользователя. GUID должен быть добавлен для каждого предложения или номера SKU.  Строка должна содержать префикс pid- и созданный партнером GUID.   
 
+![](https://raw.githubusercontent.com/ellacroi/azure-docs-pr/lu-images-again-dangit-all/articles/marketplace/media/marketplace-publishers-guide/tracking-sample-guid-for-lu-2.PNG?token=Ak8ZDDiokRcj4PJj0aMkZmfF8BdOuOTzks5bbM35wA%3D%3D)
+
 >[!Note] 
 >Формат GUID для вставки в агент пользователя: pid-eb7927c8-dd66-43e1-b0cf-c346a422063 // Введите свой идентификатор GUID после pid-.
 
@@ -88,13 +75,7 @@ ms.locfileid: "39359536"
 
 **Пример с использованием пакета SDK для Python:** для Python нужно использовать атрибут config. Вы можете добавить только в агент пользователя. Вот пример: 
 
-```python
-
-client = azure.mgmt.servicebus.ServiceBusManagementClient(**parameters)
-        client.config.add_user_agent("pid-eb7927c8-dd66-43e1-b0cf-c346a422063")
-
-
-```
+![](https://raw.githubusercontent.com/ellacroi/azure-docs-pr/lu-images-again-dangit-all/articles/marketplace/media/marketplace-publishers-guide/python-for-lu.PNG?token=Ak8ZDK5Um4J6oY-7x25tuBpa168BEiYMks5bbMuUwA%3D%3D)
 
 >Это нужно сделать для каждого клиента, так как глобальная статическая конфигурация отсутствует. (Вы можете создать фабрику клиентов, чтобы обеспечить правильную настройку всех клиентов.) 
 >[Дополнительная справочная информация](https://github.com/Azure/azure-cli/blob/7402fb2c20be2cdbcaa7bdb2eeb72b7461fbcc30/src/azure-cli-core/azure/cli/core/commands/client_factory.py#L70-L79).
@@ -123,13 +104,38 @@ export AZURE_HTTP_USER_AGENT='pid-eb7927c8-dd66-43e1-b0cf-c346a422063'
 
 Регистрация всех идентификаторов GUID шаблонов будет выполняться с помощью Портала Cloud Partner (CPP) Azure Marketplace. 
 
-Зарегистрируйтесь в [Azure Marketplace](http://aka.ms/listonazuremarketplace) сегодня и получите доступ к Порталу Cloud Partner.
+1. Зарегистрируйтесь в [Azure Marketplace](http://aka.ms/listonazuremarketplace) сегодня и получите доступ к Порталу Cloud Partner.
 
-*   Партнеры должны будут [создать профиль в CPP](https://docs.microsoft.com/azure/marketplace/become-publisher), и им будет предложено опубликовать предложение в Azure Marketplace или AppSource. 
-*   Партнеры смогут зарегистрировать несколько идентификаторов GUID. 
-*   Партнеры также будут иметь возможность зарегистрировать GUID для предложений или шаблонов решения, расположенного не в marketplace.
+ *  Партнеры должны будут [создать профиль в CPP](https://docs.microsoft.com/azure/marketplace/become-publisher), и им будет предложено опубликовать предложение в Azure Marketplace или AppSource. 
+ *  Партнеры смогут зарегистрировать несколько идентификаторов GUID. 
+ *  Партнеры также будут иметь возможность зарегистрировать GUID для предложений или шаблонов решения, расположенного не в marketplace.
+ 
+2. Войдите на [портал Cloud Partner](https://cloudpartner.azure.com/).
+3. В правом верхнем углу портала щелкните значок своей учетной записи и нажмите кнопку **Publisher profile** (Профиль издателя).
 
-После добавления GUID в шаблон или агент пользователя и регистрации этого GUID в CPP будут отслеживаться все развертывания. 
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-image-for-lu.png)
+
+4. На странице профиля щелкните **Add Tracking GUID** (Добавить GUID отслеживания).
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/last-lu-images-i-hope/articles/marketplace/media/marketplace-publishers-guide/guid-how-to-add-tracking.png)
+
+5. В развернутом поле **Tracking GUID**  (GUID отслеживания) укажите GUID отслеживания (только GUID, без префикса pid-), а в поле **Custom Description** (Пользовательское описание) введите имя или описание предложения.
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-login.png)
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-example.png)
+
+6. Чтобы зарегистрировать более одного идентификатора GUID, повторно щелкните **Add Tracking GUID** (Добавить GUID отслеживания). Откроется другое развернутое поле. 
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-example-add.png)
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-example-description.png)
+
+7. Завершив редактирование, щелкните **Save** (Сохранить), чтобы сохранить изменения. 
+
+![](https://github.com/ellacroi/azure-docs-pr/blob/more-lu-images/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-save.png)
+
+
 
 ## <a name="verification-of-guid-deployment"></a>Проверка развертывания по GUID 
 
@@ -204,15 +210,18 @@ GUID (глобальный уникальный идентификатор) — 
 Чтобы получить помощь, выполните следующие действия.
  1. Посетите страницу службы поддержки: [go.microsoft.com/fwlink/?linkid=844975](https://go.microsoft.com/fwlink/?linkid=844975).
  2. Для устранения проблем с сопоставлением данных об использовании выберите тип проблемы **Marketplace Onboarding** (Подключение к MARKETPLACE) и категорию **Other** (Другое), затем щелкните **Start Request** (Отправить запрос). 
->[!Note]
->Для проблем с доступом к Порталу Cloud Partner Azure Marketplace выберите тип проблемы **Marketplace Onboarding** (Подключение к MARKETPLACE) и категорию **Access Problem** (Проблема с доступом), затем нажмите кнопку **Start Request** (Отправить запрос).
- 3. Заполните обязательные поля на следующей странице и щелкните **Continue** (Продолжить).
- 4. Заполните свободные текстовые поля на следующей странице.  
+
+Для проблем с доступом к Порталу Cloud Partner Azure Marketplace выберите тип проблемы **Marketplace Onboarding** (Подключение к MARKETPLACE) и категорию **Access Problem** (Проблема с доступом), затем нажмите кнопку **Start Request** (Отправить запрос).
+
+ ![](https://github.com/ellacroi/azure-docs-pr/blob/last-lu-images-i-hope/articles/marketplace/media/marketplace-publishers-guide/lu-article-incident.png)
  
 
+ 3. Заполните обязательные поля на следующей странице и щелкните **Continue** (Продолжить).
+ 4. Заполните свободные текстовые поля на следующей странице. **Важно!** Укажите название инцидента **ISV Usage Tracking** (Отслеживание использования продукта независимого поставщика программного обеспечения) и подробно опишите свою проблему в большом текстовом поле ниже.  Заполните остальные поля формы и щелкните **Submit** (Отправить). 
  
->[!Important] 
->Укажите название инцидента **ISV Usage Tracking** (Отслеживание использования продукта независимого поставщика программного обеспечения) и подробно опишите свою проблему в большом текстовом поле ниже.  Заполните остальные поля формы и щелкните **Submit** (Отправить).
+  ![](https://github.com/qianw211/azure-docs-pr/blob/MyImgAdded-2/articles/marketplace/media/marketplace-publishers-guide/guid-dev-center-help.png)
+
+ 
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: TomSh
-ms.openlocfilehash: e4144ca0d87abda3d9f8de47e56af59d0e4af312
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: a499f609e517d880b3a942ac6dc3eb0dc10b69e7
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36938372"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038535"
 ---
 # <a name="azure-logging-and-auditing"></a>Ведение журналов и аудит Azure
 
@@ -60,7 +60,7 @@ Azure предоставляет множество настраиваемых �
 
 ![Схема журналов действий](./media/azure-log-audit/azure-log-audit-fig1.png)
 
-События из журнала действий можно получить с помощью портала Azure, [Azure CLI](https://docs.microsoft.com/azure/storage/storage-azure-cli), командлетов PowerShell или [REST API Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough). Данные в журналах действий хранятся в течение 19 дней.
+События из журнала действий можно получить с помощью портала Azure, [Azure CLI](https://docs.microsoft.com/azure/storage/storage-azure-cli), командлетов PowerShell или [REST API Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-rest-api-walkthrough). Данные в журналах действий хранятся в течение 90 дней.
 
 Сценарии интеграции для события журнала действий:
 
@@ -323,7 +323,7 @@ Log Analytics — это служба в Azure, которая помогает 
 |Application Insights||     Соединитель|  Соединитель|  [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [(предварительная версия)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
 |Учетные записи для службы автоматизации Azure| Microsoft.Automation/<br>AutomationAccounts|    Диагностика||       [Дополнительные сведения](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|
 |Учетные записи для пакетной службы Azure|  Microsoft.Batch/<br>batchAccounts|  Диагностика|    Диагностика||
-|Классические облачные службы||       Служба хранилища||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
+|Классические облачные службы||       Хранилище||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
 |Cognitive Services|    Microsoft.CognitiveServices/<br>accounts|       Диагностика|||
 |Аналитика озера данных Azure| Microsoft.DataLakeAnalytics/<br>accounts|   Диагностика|||
 |Хранилище озера данных Azure| Microsoft.DataLakeStore/<br>accounts|   Диагностика|||
@@ -337,10 +337,10 @@ Log Analytics — это служба в Azure, которая помогает 
 |Хранилища восстановления|   Microsoft.RecoveryServices/<br>vaults|||[Служба анализа служб восстановления Azure (предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
 |Службы поиска|   Microsoft.Search/<br>searchServices|    Диагностика|    Диагностика||
 |Пространство имен служебной шины| Microsoft.ServiceBus/<br>namespaces|    Диагностика|Диагностика|    [Служба анализа служебной шины (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
-|Service Fabric||       Служба хранилища||    [Анализ Service Fabric (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-service-fabric)|
+|Service Fabric||       Хранилище||    [Анализ Service Fabric (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-service-fabric)|
 |SQL (версия 12)| Microsoft.Sql/<br>servers/<br>databases||       Диагностика||
 ||Microsoft.Sql/<br>servers/<br>elasticPools||||
-|Служба хранилища|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
+|Хранилище|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
 |Виртуальные машины Azure|    Microsoft.Compute/<br>virtualMachines|  Добавочный номер|  Добавочный номер||
 ||||Диагностика||
 |наборы для масштабирования виртуальных машин|    Microsoft.Compute/<br>virtualMachines    ||Диагностика||

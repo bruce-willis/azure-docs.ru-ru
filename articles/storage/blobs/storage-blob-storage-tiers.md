@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/11/2017
 ms.author: kuhussai
 ms.component: blobs
-ms.openlocfilehash: 5d12b9f04dc1cc5017ab4c9ff1bde9b84ac24cfe
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: b3279006d1ff947b76dd8fbba1438972e5f3ad8b
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39400107"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39630968"
 ---
 # <a name="azure-blob-storage-hot-cool-and-archive-storage-tiers"></a>Хранилище BLOB-объектов Azure: горячий, холодный и архивный уровни
 
@@ -71,6 +71,9 @@ BLOB-объекты всех трех уровней хранилища могу
 
 > [!NOTE]
 > Архивное хранилище и распределение BLOB-объектов по уровням поддерживают только большие двоичные объекты. Уровень большого двоичного объекта, который содержит моментальные снимки, изменить нельзя.
+
+### <a name="blob-lifecycle-management"></a>Управление жизненным циклом большого двоичного объекта
+Для управления жизненным циклом в хранилище BLOB-объектов (предварительная версия) используется политика с широкими возможностями на основе правил, позволяющая настроить перенос данных на оптимальный уровень доступа и действия, выполняемые с данными в конце жизненного цикла. Дополнительные сведения см. в статье [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts).  
 
 ### <a name="blob-level-tiering-billing"></a>Выставление счетов за распределение BLOB-объектов по уровням
 
@@ -187,6 +190,8 @@ BLOB-объекты всех трех уровней хранилища могу
 ### <a name="evaluate-hot-cool-and-archive-in-gpv2-blob-storage-accounts"></a>Оценка горячего, холодного и архивного уровней в учетной записи хранилища BLOB-объектов GPv2
 
 [Доступность продуктов по регионам](https://azure.microsoft.com/regions/#services)
+
+[Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts)
 
 [Оценка использования текущих учетных записей хранения путем включения метрик службы хранилища Azure](../common/storage-enable-and-view-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 

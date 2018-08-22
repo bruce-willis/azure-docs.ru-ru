@@ -1,5 +1,5 @@
 ---
-title: Затраты на программное обеспечение Windows в зарезервированных экземплярах Azure | Документация Майкрософт
+title: Затраты на программное обеспечение Windows при резервировании в Azure | Документация Майкрософт
 description: Узнайте, какие счетчики программного обеспечения Windows не учитываются в затратах на зарезервированные экземпляры виртуальных машин Azure.
 services: billing
 documentationcenter: ''
@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/09/2018
 ms.author: manshuk
-ms.openlocfilehash: 6602424e2b2e4a4c2c3c51b5cb4bb1024a39d2e0
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 8ff2d126fd491ddc40f6223b6d4ec1fc4505b8fb
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064467"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39630117"
 ---
-# <a name="windows-software-costs-not-included-with-azure-reserved-instances"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость зарезервированных экземпляров Azure
+# <a name="windows-software-costs-not-included-with-azure-reservations"></a>Затраты на программное обеспечение Windows, которые не включены в стоимость резервирования в Azure
 
-Если не применяется преимущество гибридного использования Azure для зарезервированного экземпляра виртуальной машины, плата будет взиматься за единицы измерения программного обеспечения Windows (см. раздел ниже).
+Если не применяется преимущество гибридного использования Azure для зарезервированных экземпляров виртуальных машин, плата будет взиматься за единицы измерения программного обеспечения Windows (см. раздел ниже).
 
-## <a name="windows-software-meters-not-included-in-reserved-instance-cost"></a>Счетчики программного обеспечения Windows, не учитываемые в затратах на зарезервированный экземпляр
+## <a name="windows-software-meters-not-included-in-reservation-cost"></a>Единицы измерения программного обеспечения Windows, не учитываемые в затратах на резервирование
 
 | Значение MeterId | Значение MeterName в файле использования | Какой виртуальной машиной используется |
 | ------- | ------------------------| --- |
@@ -53,14 +53,14 @@ ms.locfileid: "37064467"
 Стоимость каждой из этих единиц измерения можно узнать с помощью API Azure RateCard. Сведения о том, как узнать тарифы на единицы измерения в Azure, см. в статье [Get price and metadata information for resources used in an Azure subscription](https://msdn.microsoft.com/library/azure/mt219004) (Получение сведений о ценах и метаданных для ресурсов, используемых в подписке Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о зарезервированных экземплярах Azure см. в следующих статьях:
+Дополнительные сведения о резервировании в Azure см. в следующих статьях.
 
-- [Основные сведения об Azure Reserved VM Instances](billing-save-compute-costs-reservations.md)
-- [Предоплата за использование виртуальных машин с помощью Azure Reserved VM Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
-- [Управление службой Azure Reserved VM Instances](billing-manage-reserved-vm-instance.md)
+- [Основные сведения о резервировании в Azure](billing-save-compute-costs-reservations.md)
+- [Предоплата виртуальных машин с помощью Azure Reserved Virtual Machine Instances](../virtual-machines/windows/prepay-reserved-vm-instances.md)
+- [Управление зарезервированными экземплярами в Azure](billing-manage-reserved-vm-instance.md)
 - [Сведения о применении скидки на зарезервированный экземпляр виртуальной машины](billing-understand-vm-reservation-charges.md)
 - [Использование зарезервированного экземпляра виртуальной машины для подписки с оплатой по мере использования](billing-understand-reserved-instance-usage.md)
-- [Общие сведения об использовании зарезервированных экземпляров с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
+- [Общие сведения об использовании зарезервированных экземпляров Azure с Соглашением о регистрации Enterprise](billing-understand-reserved-instance-usage-ea.md)
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 

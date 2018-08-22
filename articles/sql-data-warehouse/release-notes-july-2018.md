@@ -1,5 +1,5 @@
 ---
-title: 'Хранилище данных SQL Azure: заметки о выпуске за июнь 2018 г. | Документация Майкрософт'
+title: 'Хранилище данных SQL Azure: заметки о выпуске за июль 2018 г. | Документация Майкрософт'
 description: Заметки о выпуске для хранилища данных SQL Azure.
 services: sql-data-warehouse
 author: twounder
@@ -7,15 +7,15 @@ manager: craigg-msft
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 07/27/2018
+ms.date: 08/06/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: b410722ff444c19572f61996c4a4d059ae831f5f
-ms.sourcegitcommit: 7ad9db3d5f5fd35cfaa9f0735e8c0187b9c32ab1
+ms.openlocfilehash: ce1e33a2888b2d0798fb0fe6df87476001e6f7b2
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39326087"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39630268"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-july-2018"></a>Что нового в Хранилище данных SQL Azure? Июль 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с июля 2018 г.
@@ -122,7 +122,7 @@ GO
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как [его создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
+Теперь, когда вам уже известны некоторые сведения о хранилище данных SQL, узнайте о том, как его [создать][create a SQL Data Warehouse]. Если вы раньше не работали с Azure, используйте [глоссарий Azure][Azure glossary], чтобы узнать значение новых терминов. Или ознакомьтесь со следующими ресурсами, посвященными хранилищу данных SQL.  
 
 * [Истории успеха клиентов]
 * [Блоги]

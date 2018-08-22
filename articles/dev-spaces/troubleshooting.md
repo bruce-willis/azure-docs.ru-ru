@@ -11,12 +11,12 @@ ms.topic: article
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: b2ef450a429b26843cf770a6243c6f4de932de43
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: 61bc081ca3221c0d588b7b7a2d9482d2fc70c0d5
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247334"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038623"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -63,6 +63,26 @@ azds remove -g <resource group name> -n <cluster name>
 2. Измените значение параметра **Степень подробности сообщений при сборке проекта MSBuild** на **Подробно** или **Диагностика**.
 
     ![Снимок экрана диалогового окна "Сервис > Параметры"](media/common/VerbositySetting.PNG)
+    
+## <a name="dns-name-resolution-fails-for-a-public-url-associated-with-a-dev-spaces-service"></a>Сбой разрешения DNS-имен для общедоступных URL-адресов, связанных со службой Dev Spaces
+
+Если это возникает, то при попытке подключения к общедоступным URL-адресам, связанным со службой Dev Spaces, может появиться сообщение об ошибке в вашем веб-браузере: «Не удается отобразить страницу» или «Этот сайт недоступен».
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+
+Чтобы вывести список всех URL-адресов, связанных со службами Dev Spaces, можно использовать следующую команду:
+
+```cmd
+azds list-uris
+```
+
+Если URL-адрес находится в режиме*Ожидание*, это значит, что Dev Spaces по-прежнему ожидает завершения регистрации DNS. Иногда для выполнения этого действия требуется несколько минут. Для каждой службы Dev Spaces также открывается туннель localhost, который можно использовать во время ожидания регистрации DNS.
+
+Если URL-адрес остается в режиме*Ожидание* более 5 минут, это может указывать на проблему, связанную с контроллером входящего трафика NGINX, который отвечает за загрузку общедоступной конечной точки. Чтобы удалить pod, на котором работает контроллер NGINX, можно использовать следующую команду: Он будет создан заново автоматически.
+
+```cmd
+kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-ingress
+```
 
 ## <a name="error-required-tools-and-configurations-are-missing"></a>Ошибка Required tools and configurations are missing (Отсутствуют необходимые средства и конфигурации)
 

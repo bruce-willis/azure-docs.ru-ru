@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: eugenesh
-ms.openlocfilehash: 752df29200a5e020ccf10f511ae2f02c0d72bd48
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 5b4cd1c592c4cd965a0b5d9e4fb8eef84a6bea91
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34363008"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40003287"
 ---
 # <a name="indexing-json-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов JSON с помощью индексатора BLOB-объектов службы поиска Azure
 В этой статье показано, как настроить индексатор больших двоичных объектов в службе поиска Azure для извлечения структурированного содержимого из больших двоичных объектов JSON в хранилище BLOB-объектов Azure.
@@ -35,7 +35,7 @@ ms.locfileid: "34363008"
 
 ### <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
 
-Первым шагом является указание сведений о подключении к источнику данных, используемых индексатором. Тип источника данных, указанный здесь как `azureblob`, определяет, какие поведения извлечения данных инициируются индексатором. Для индексирования больших двоичных объектов JSON источник данных представляет собой определение, одинаковое для обоих документов JSON и массивов. 
+Первым шагом является указание сведений о подключении к источнику данных, используемых индексатором. Тип источника данных, указанный здесь как `azureblob`, определяет, какие поведения извлечения данных инициируются индексатором. Для индексирования больших двоичных объектов JSON определение источника будет одинаковым как для документов, так и массивов JSON. 
 
     POST https://[service name].search.windows.net/datasources?api-version=2017-11-11
     Content-Type: application/json
@@ -76,7 +76,7 @@ ms.locfileid: "34363008"
     {
         "article" : {
             "text" : "A hopefully useful article explaining how to parse JSON blobs",
-            "datePublished" : "2016-04-13"
+            "datePublished" : "2016-04-13",
             "tags" : [ "search", "storage", "howto" ]    
         }
     }

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 03/04/2018
 ms.author: glenga
-ms.openlocfilehash: b0e078e3e7f18e3370ff1bcd90935e7fece265f0
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: 1a4b970b07514619b2d81a0483546ac64d07927f
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39391186"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40005481"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -94,7 +94,9 @@ context.bindings.myOutput = {
 context.done([err],[propertyBag])
 ```
 
-Информирует среду выполнения о завершении выполнения кода. Необходимо вызвать метод `context.done`, или в противном случае среда выполнения не узнает, что функция завершена, и время ожидания выполнения истечет. 
+Информирует среду выполнения о завершении выполнения кода. Если в функции используется объявление `async function` (доступно в Node 8 и выше в Функциях версии 2.x), нет необходимости в использовании `context.done()`. Обратный вызов `context.done` выполняется неявным образом.
+
+Если функция не является асинхронной, **необходимо вызвать метод `context.done`**, чтобы сообщить среде выполнения, что функция выполнена. Если этот метод отсутствует, истечет время ожидания выполнения.
 
 Метод `context.done` позволяет передавать в среду выполнения пользовательское сообщение об ошибке, а также контейнер свойств, которые перезапишут свойства объекта `context.bindings`.
 

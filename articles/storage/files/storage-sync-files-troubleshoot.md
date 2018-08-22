@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: jeffpatt
 ms.component: files
-ms.openlocfilehash: 1475e1955a282581c66235c13d4dbe7153735a35
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: e0c9708107139ec899cd5902a68ff90b57b741f7
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526748"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40005925"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -674,6 +674,12 @@ if ($fileShare -eq $null) {
 2. Проверьте наличие **гибридной службы "Синхронизация файлов"** в списке с ролью **модуля чтения и доступа к данным**. 
 
     ![Снимок экрана субъекта-службы гибридной службы "Синхронизация файлов" на вкладке управления доступом учетной записи хранения](media/storage-sync-files-troubleshoot/file-share-inaccessible-3.png)
+
+    Если **Hybrid File Sync Service** не отображается в списке, сделайте следующее:
+
+    - Щелкните **Добавить**.
+    - В поле **Роль** выберите **Модуль чтения и доступ к данным**.
+    - В поле **выбора** введите фразу **Hybrid File Sync Service**, выберите роль и нажмите кнопку **Сохранить**.
 
 # <a name="powershelltabpowershell"></a>[PowerShell](#tab/powershell)
 ```PowerShell    

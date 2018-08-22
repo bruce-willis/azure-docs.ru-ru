@@ -3,27 +3,22 @@ title: Обзор интерфейсов API концентраторов соб
 description: Обзор API для платформы .NET Standard
 services: event-hubs
 documentationcenter: na
-author: sethmanheim
+author: ShubhaVijayasarathy
 manager: timlt
-editor: ''
-ms.assetid: a173f8e4-556c-42b8-b856-838189f7e636
 ms.service: event-hubs
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 12/19/2017
-ms.author: sethm
-ms.openlocfilehash: 855f6e7f401621d7f923d68215ca880c05d38629
-ms.sourcegitcommit: f46cbcff710f590aebe437c6dd459452ddf0af09
+ms.date: 06/13/2018
+ms.author: shvija
+ms.openlocfilehash: d44cdf9204ac041a12cecce995efef71272204e6
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2017
-ms.locfileid: "26783005"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40007569"
 ---
 # <a name="event-hubs-net-standard-api-overview"></a>Обзор API концентраторов событий для платформы .NET Standard
 
-В этой статье перечислены некоторые ключевые клиентские API концентраторов событий для .NET Standard. В настоящее время существует две клиентские библиотеки .NET Standard:
+В этой статье перечислены некоторые ключевые [клиентские API Центров событий Azure для .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/). Сейчас существует две клиентские библиотеки .NET Standard для Центров событий:
 
 * [Microsoft.Azure.EventHubs.](/dotnet/api/microsoft.azure.eventhubs) Предоставляет все основные операции среды выполнения.
 * [Microsoft.Azure.EventHubs.Processor.](/dotnet/api/microsoft.azure.eventhubs.processor) Расширяет функциональные возможности, позволяя отслеживать обработанные события. Это самый простой способ чтения из концентратора событий.
@@ -37,13 +32,13 @@ ms.locfileid: "26783005"
 Объект [EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient) создается из строки подключения. В следующем примере показан самый простой способ создания клиента:
 
 ```csharp
-var eventHubClient = EventHubClient.CreateFromConnectionString("{Event Hubs connection string}");
+var eventHubClient = EventHubClient.CreateFromConnectionString("Event Hubs connection string");
 ```
 
 Чтобы изменить строку подключения программными средствами, можно использовать класс [EventHubsConnectionStringBuilder](/dotnet/api/microsoft.azure.eventhubs.eventhubsconnectionstringbuilder) и передать строку подключения в качестве параметра в [EventHubClient.CreateFromConnectionString](/dotnet/api/microsoft.azure.eventhubs.eventhubclient#Microsoft_Azure_EventHubs_EventHubClient_CreateFromConnectionString_System_String_).
 
 ```csharp
-var connectionStringBuilder = new EventHubsConnectionStringBuilder("{Event Hubs connection string}")
+var connectionStringBuilder = new EventHubsConnectionStringBuilder("Event Hubs connection string")
 {
     EntityPath = EhEntityPath
 };
@@ -186,6 +181,7 @@ public class SimpleEventProcessor : IEventProcessor
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Дополнительные сведения о сценариях концентраторов событий см. в разделах, ссылки на которые указаны ниже.
 
 * [Что такое концентраторы событий Azure?](event-hubs-what-is-event-hubs.md)

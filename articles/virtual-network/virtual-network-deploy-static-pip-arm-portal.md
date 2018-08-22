@@ -4,71 +4,86 @@ description: Узнайте, как создать виртуальную маш
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: timlt
+manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
 ms.assetid: e9546bcc-f300-428f-b94a-056c5bd29035
 ms.service: virtual-network
-ms.devlang: na
+ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 02/04/2016
+ms.date: 08/08/2018
 ms.author: jdial
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 524293f9a1ded73ee7cb6ba4f53208a9f9c54ffa
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 9b6db45e38267c70adef3f5a341b8b918b9e78fb
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38670990"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39714433"
 ---
-# <a name="create-a-vm-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
+# <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Создание виртуальной машины со статическим общедоступным IP-адресом с помощью портала Azure
 
-> [!div class="op_single_selector"]
-> * [портал Azure](virtual-network-deploy-static-pip-arm-portal.md)
-> * [PowerShell](virtual-network-deploy-static-pip-arm-ps.md)
-> * [интерфейс командной строки Azure](virtual-network-deploy-static-pip-arm-cli.md)
-> * [PowerShell (классическая модель)](virtual-networks-reserved-public-ip.md)
+Вы можете создать виртуальную машину со статическим общедоступным IP-адресом. Общедоступный IP-адрес позволяет подключиться к виртуальной машине из Интернета. Присвойте статический общедоступный IP-адрес, а не динамический, чтобы гарантировать, что адрес никогда не изменится. Дополнительные сведения о [статических общедоступных IP-адресах](virtual-network-ip-addresses-overview-arm.md#allocation-method). Чтобы изменить общедоступный IP-адрес, присвоенный существующей виртуальной машине, с динамического на статический или использовать частные IP-адреса, см. статью [Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure](virtual-network-network-interface-addresses.md). За использование общедоступных IP-адресов взимается [номинальная плата](https://azure.microsoft.com/pricing/details/ip-addresses). Кроме того, существует [ограничение](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) на число общедоступных IP-адресов, которые можно использовать в рамках одной подписки.
 
-[!INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../../includes/virtual-network-deploy-static-pip-intro-include.md)]
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
-> [!NOTE]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для большинства новых развертываний мы рекомендуем использовать эту модель вместо классической.
+Войдите на портал Azure по адресу https://portal.azure.com.
 
-[!INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../../includes/virtual-network-deploy-static-pip-scenario-include.md)]
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-## <a name="create-a-vm-with-a-static-public-ip"></a>Создание виртуальной машины со статическим общедоступным IP-адресом
+1. Выберите **+ Создать ресурс** в верхнем левом углу окна портала Azure.
+2. Выберите **Вычисления**, а затем выберите **Виртуальная машина Windows Server 2016** или другую операционную систему по своему выбору.
+3. Введите или выберите следующие значения, примите значения по умолчанию для остальных параметров и нажмите кнопку **ОК**:
 
-Чтобы создать виртуальную машину со статическим общедоступным IP-адресом на портале Azure, сделайте следующее:
+    |Параметр|Значение|
+    |---|---|
+    |ИМЯ|myVM|
+    |Имя пользователя| Введите выбранное имя пользователя.|
+    |Пароль| Введите выбранный пароль. Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-the-password-requirements-when-creating-a-vm).|
+    |Подписка| Выберите свою подписку.|
+    |Группа ресурсов| Щелкните **Использовать существующую** и выберите **myResourceGroup**.|
+    |Расположение| Выберите **Восточная часть США**.|
 
-1. В браузере откройте [портал Azure](https://portal.azure.com) и при необходимости войдите с помощью учетной записи Azure.
-2. В верхнем левом углу портала щелкните **Создать ресурс**>>**Вычисления**>**Windows Server 2012 R2 Datacenter**.
-3. В списке **Выбор модели развертывания** выберите **Resource Manager** и нажмите кнопку **Создать**.
-4. В области **Основы** введите сведения о виртуальной машине, согласно примеру, и нажмите кнопку **ОК**.
-   
-    ![Портал Azure — основы](./media/virtual-network-deploy-static-pip-arm-portal/figure1.png)
-5. В области **Выбор размера** выберите **A1 Standard**, как показано ниже, а затем щелкните **Выбрать**.
-   
-    ![Портал Azure — выбор размера](./media/virtual-network-deploy-static-pip-arm-portal/figure2.png)
-6. В области **Параметры** щелкните **Общедоступный IP-адрес**, а затем в области **Создать общедоступный IP-адрес** в разделе **Назначения** выберите **Статический**, как показано ниже. Затем нажмите кнопку **ОК**.
-   
-    ![Портал Azure — создание общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/figure3.png)
-7. В области **Параметры** нажмите кнопку **ОК**.
-8. Просмотрите область **Сводка** (показана ниже), а затем нажмите кнопку **ОК**.
-   
-    ![Портал Azure — создание общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/figure4.png)
-9. Обратите внимание на новую плитку на панели мониторинга.
-   
-    ![Портал Azure — создание общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/figure5.png)
-10. После создания виртуальной машины область **Параметры** будет выглядеть следующим образом:
-    
-    ![Портал Azure — создание общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/figure6.png)
+4. Выберите размер виртуальной машины и щелкните **Выбрать**.
+5. В разделе **Параметры** выберите **Общедоступный IP-адрес**.
+6. Введите *myPublicIpAddress*, выберите **Статический**, а затем — **ОК**, как показано на следующем снимке экрана:
 
-## <a name="set-ip-addresses-within-the-operating-system"></a>Настройка IP-адресов в операционной системе
+   ![Выбор значения "Статический"](./media/virtual-network-deploy-static-pip-arm-portal/select-static.png)
 
-Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе. Не рекомендуем статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе за исключением ситуаций, когда это необходимо, например при [назначении нескольких IP-адресов виртуальной машине Windows](virtual-network-multiple-ip-addresses-portal.md). Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному [сетевому интерфейсу](virtual-network-network-interface-addresses.md#change-ip-address-settings) Azure. Иначе соединение с виртуальной машиной может быть потеряно. Ознакомьтесь с дополнительными сведениями о параметрах [частных IP-адресов](virtual-network-network-interface-addresses.md#private).
+   Если общедоступный IP-адрес должен принадлежать к SKU "Стандартный", выберите **Стандартный** в разделе **SKU**. Дополнительные сведения о [номерах SKU общедоступных IP-адресов](virtual-network-ip-addresses-overview-arm.md#sku). Если виртуальная машина добавляется в серверный пул общедоступной подсистемы Azure Load Balancer, номера SKU общедоступных IP-адресов виртуальной машины и подсистемы балансировки нагрузки должны совпадать. Подробные сведения см. в статье [Что такое Azure Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#skus).
+
+6. Выберите порт или оставьте пустое поле в разделе **Выберите общедоступные входящие порты**. Порт 3389 выбран для обеспечения удаленного доступа к виртуальной машине Windows Server из Интернета. Открытие порта 3389 из Интернета не рекомендуется для производственных рабочих нагрузок.
+
+   ![Выбор порта](./media/virtual-network-deploy-static-pip-arm-portal/select-port.png)
+
+7. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
+8. На странице **Сводка** выберите **Создать**. Развертывание виртуальной машины занимает несколько минут.
+9. После развертывания виртуальной машины введите *myPublicIpAddress* в поле поиска в верхней части портала. При появлении пункта **myPublicIpAddress** в результатах поиска выберите его.
+10. Присвоенный общедоступный IP-адрес и присвоенный адрес виртуальной машины **myVM** можно просмотреть в колонке, как показано на следующем снимке экрана:
+
+    ![Просмотр общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-overview.png)
+
+    Платформа Azure присвоила общедоступный IP-адрес из адресов, используемых в регионе, в котором вы создали виртуальную машину. Вы можете загрузить список диапазонов (префиксов) для облаков Azure: [общедоступное](https://www.microsoft.com/download/details.aspx?id=56519), облако [правительства США](https://www.microsoft.com/download/details.aspx?id=57063), облако для [Китая](https://www.microsoft.com/download/details.aspx?id=57062) и [Германии](https://www.microsoft.com/download/details.aspx?id=57064).
+
+11. Выберите **Конфигурация**, чтобы убедиться, что выбрано значение **Статический**.
+
+    ![Просмотр общедоступного IP-адреса](./media/virtual-network-deploy-static-pip-arm-portal/public-ip-configuration.png)
+
+> [!WARNING]
+Не изменяйте параметры IP-адресов в операционной системе виртуальной машины. Общедоступные IP-адреса Azure не поддерживаются в операционной системе. Вы можете добавлять параметры частных IP-адресов в операционную систему, но это рекомендуется делать только при необходимости и только после прочтения раздела о [добавлении частных IP-адресов в операционную систему](virtual-network-network-interface-addresses.md#private).
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Удалите группу ресурсов и все содержащиеся в ней ресурсы, когда она станет не нужна.
+
+1. В поле **Поиск** в верхней части портала введите *myResourceGroup*. Когда группа ресурсов **myResourceGroup** появится в результатах поиска, выберите ее.
+2. Выберите **Удалить группу ресурсов**.
+3. Введите *myResourceGroup* в поле **TYPE THE RESOURCE GROUP NAME:** (Введите имя группы ресурсов:) и нажмите кнопку **Удалить**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Виртуальная машина, созданная в этой статье, может принимать и передавать любой сетевой трафик. Вы можете определить правила безопасности, ограничивающие входящий и исходящий трафик в группе безопасности сети для сетевого интерфейса и (или) подсети. Дополнительные сведения о группах безопасности сети см. [в этой статье](security-overview.md).
+- Дополнительные сведения об [общедоступных IP-адресах в Azure](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses)
+- Дополнительные сведения обо всех [параметрах общедоступных IP-адресов](virtual-network-public-ip-address.md#create-a-public-ip-address)
+- Дополнительные сведения о [частных IP-адресах](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) и назначении [статического частного IP-адреса](virtual-network-network-interface-addresses.md#add-ip-addresses) виртуальной машине Azure
+- Дополнительные сведения о создании виртуальных машин [Linux](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json) и [Windows](../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fvirtual-network%2ftoc.json)

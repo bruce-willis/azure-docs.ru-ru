@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/04/2017
 ms.author: dstefan
-ms.openlocfilehash: fa399e3644e1050a4f264890583a388f7abd84ed
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 3ae2e883e3e27adc167b7e831ca53d3cd1572257
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39049475"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038687"
 ---
 # <a name="azure-active-directory-proof-of-concept-playbook-building-blocks"></a>Сборник тренировочных заданий по подтверждению концепции для Azure Active Directory: стандартные блоки
 
@@ -41,7 +41,7 @@ ms.locfileid: "39049475"
 
 | Предварительные требования | Ресурсы |
 | --- | --- |
-| Определен клиент Azure AD с действительной подпиской Azure | [Как получить клиент Azure Active Directory](active-directory-howto-tenant.md)<br/>**Примечание.** Если у вас уже есть среда с лицензиями Azure AD Premium, вы можете получить подписку нулевой емкости по адресу https://aka.ms/accessaad <br/>Дополнительные сведения см. по ссылкам https://blogs.technet.microsoft.com/enterprisemobility/2016/02/26/azure-ad-mailbag-azure-subscriptions-and-azure-ad-2/ и https://technet.microsoft.com/library/dn832618.aspx |
+| Определен клиент Azure AD с действительной подпиской Azure | [Как получить клиент Azure Active Directory](develop/quickstart-create-new-tenant.md)<br/>**Примечание.** Если у вас уже есть среда с лицензиями Azure AD Premium, вы можете получить подписку нулевой емкости по адресу https://aka.ms/accessaad <br/>Дополнительные сведения см. по ссылкам https://blogs.technet.microsoft.com/enterprisemobility/2016/02/26/azure-ad-mailbag-azure-subscriptions-and-azure-ad-2/ и https://technet.microsoft.com/library/dn832618.aspx |
 | Домены определены и проверены | [Добавление имени личного домена в Azure Active Directory](active-directory-domains-add-azure-portal.md)<br/>**Примечание.** Некоторые рабочие нагрузки, такие как Power BI, могли уже подготовить клиент Azure AD. Чтобы проверить, связан ли заданный домен с каким-либо клиентом, перейдите по адресу https://login.microsoftonline.com/{domain}/v2.0/.well-known/openid-configuration. Если вы успешно получили ответ, значит домен уже назначен клиенту и может потребоваться перехват. В этом случае за дальнейшими указаниями обратитесь в корпорацию Майкрософт. Дополнительные сведения о вариантах перехвата см. в статье [Что такое самостоятельная регистрация для Azure?](users-groups-roles/directory-self-service-signup.md). |
 | Включена пробная версия EMS или Azure AD Premium | [Бесплатная пробная версия Azure Active Directory Premium на один месяц](https://azure.microsoft.com/trial/get-started-active-directory/) |
 | Вы назначили лицензии Azure AD Premium или EMS пользователям подтверждения концепции | [Самостоятельное лицензирование и лицензирование пользователей в Azure Active Directory](active-directory-licensing-get-started-azure-portal.md) |
@@ -159,7 +159,7 @@ ms.locfileid: "39049475"
 | Подождите несколько минут, пока подготовка закончится.  В это время можно просмотреть отчеты о подготовке. |  |
 | Выполните вход по адресу https://myapps.microsoft.com/ как тестовый пользователь, обладающий доступом | [Что такое панель доступа?](user-help/active-directory-saas-access-panel-introduction.md) |
 | Щелкните элемент для только что созданного приложения. Подтвердите доступ. |  |
-| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](active-directory-reporting-activity-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md) |
+| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](reports-monitoring/concept-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](reports-monitoring/reference-reports-data-retention.md) |
 
 ### <a name="considerations"></a>Рекомендации
 
@@ -185,13 +185,13 @@ ms.locfileid: "39049475"
 | --- | --- |
 | Установите расширение браузера. | [Расширение "Панель доступа" для Internet Explorer](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access%20Panel%20Extension.msi)<br/>[Расширение "Панель доступа" для Chrome](https://go.microsoft.com/fwLink/?LinkID=311859&clcid=0x409)<br/>[Расширение "Панель доступа" для Firefox](https://go.microsoft.com/fwLink/?LinkID=626998&clcid=0x409) |
 | Настройте приложение из коллекции. | [Новые возможности управления корпоративными приложениями в Azure Active Directory: обновленная и усовершенствованная коллекция приложений](active-directory-enterprise-apps-whats-new-azure-portal.md#improvements-to-the-azure-active-directory-application-gallery) |
-| Настройте единый вход с паролем. | [Управление параметрами единого входа для корпоративных приложений на новом портале Azure: вход на основе пароля](manage-apps/configure-single-sign-on-portal.md#password-based-sign-on) |
+| Настройте единый вход с паролем. | [Управление параметрами единого входа для корпоративных приложений на новом портале Azure: вход на основе пароля](manage-apps/what-is-single-sign-on.md#how-does-single-sign-on-with-azure-active-directory-work)|
 | Назначьте приложение группе, указанной в предварительных требованиях. | [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) |
 | Выполните вход по адресу https://myapps.microsoft.com/ как тестовый пользователь, обладающий доступом |  |
 | Щелкните элемент для только что созданного приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](user-help/active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
 | Укажите учетные данные приложения. | [Что такое панель доступа? Единый вход по паролю без предоставления идентификатора](user-help/active-directory-saas-access-panel-introduction.md#password-based-sso-without-identity-provisioning) |
 | Закройте браузер и повторите вход. На этот раз пользователь должен получить возможность легкого доступа к приложению. |  |
-| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](active-directory-reporting-activity-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md) |
+| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](reports-monitoring/concept-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](reports-monitoring/reference-reports-data-retention.md) |
 
 ### <a name="considerations"></a>Рекомендации
 
@@ -220,10 +220,10 @@ ms.locfileid: "39049475"
 | --- | --- |
 | Установите расширение браузера. | [Расширение "Панель доступа" для Internet Explorer](https://account.activedirectory.windowsazure.com/Applications/Installers/x64/Access%20Panel%20Extension.msi)<br/>[Расширение "Панель доступа" для Chrome](https://go.microsoft.com/fwLink/?LinkID=311859&clcid=0x409)<br/>[Расширение "Панель доступа" для Firefox](https://go.microsoft.com/fwLink/?LinkID=626998&clcid=0x409) |
 | Настройте приложение из коллекции. | [Новые возможности управления корпоративными приложениями в Azure Active Directory: обновленная и усовершенствованная коллекция приложений](active-directory-enterprise-apps-whats-new-azure-portal.md#improvements-to-the-azure-active-directory-application-gallery) |
-| Настройте единый вход с паролем. | [Управление параметрами единого входа для корпоративных приложений на новом портале Azure: вход на основе пароля](manage-apps/configure-single-sign-on-portal.md#password-based-sign-on) |
+| Настройте единый вход с паролем. | [Управление параметрами единого входа для корпоративных приложений на новом портале Azure: вход на основе пароля](manage-apps/what-is-single-sign-on.md#how-does-single-sign-on-with-azure-active-directory-work)|
 | Назначьте приложение группе, указанной в предварительных требованиях, пока задаете для нее учетные данные. | [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](manage-apps/assign-user-or-group-access-portal.md) |
 | Входите в качестве разных пользователей, обращающихся к приложению как **к общей учетной записи.**  |  |
-| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](active-directory-reporting-activity-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](active-directory-reporting-retention.md) |
+| При необходимости вы также можете просмотреть отчеты об использовании приложения. Обратите внимание, что имеется некоторая задержка, поэтому для отражения трафика в отчетах нужно немного подождать. | [Отчеты о действиях входа на портале Azure Active Directory: использование управляемых приложений](reports-monitoring/concept-sign-ins.md#usage-of-managed-applications)<br/>[Политики хранения отчетов Azure Active Directory](reports-monitoring/reference-reports-data-retention.md) |
 
 
 ### <a name="considerations"></a>Рекомендации
@@ -452,9 +452,9 @@ ms.locfileid: "39049475"
 | Шаг | Ресурсы |
 | --- | --- |
 | Перейдите на портал управления Azure AD: колонка условного доступа. | [Портал управления Azure AD: условный доступ](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/Policies) |
-| Создайте политику условного доступа:<br/>— Нацельтесь на пользователей подтверждения концепции в разделе "Пользователи и группы".<br/>— Нацельтесь на приложение подтверждения концепции в разделе "Облачные приложения".<br/>— Нацельтесь на все расположения, кроме надежных, в разделе "Условия" -> "Расположения". **Примечание.** Надежные IP-адреса настраиваются на [портале Многофакторной идентификации](https://account.activedirectory.windowsazure.com/UserManagement/MfaSettings.aspx).<br/>— Запросите Многофакторную идентификацию в разделе "Предоставление". | [Начало работы с условным доступом в Azure Active Directory: настройка политики](active-directory-conditional-access-azure-portal-get-started.md#policy-configuration-steps) |
-| Обратитесь к приложению из корпоративной сети. | [Начало работы с условным доступом в Azure Active Directory: тестирование политики](active-directory-conditional-access-azure-portal-get-started.md#testing-the-policy) |
-| Обратитесь к приложению из общедоступной сети. | [Начало работы с условным доступом в Azure Active Directory: тестирование политики](active-directory-conditional-access-azure-portal-get-started.md#testing-the-policy) |
+| Создайте политику условного доступа:<br/>— Нацельтесь на пользователей подтверждения концепции в разделе "Пользователи и группы".<br/>— Нацельтесь на приложение подтверждения концепции в разделе "Облачные приложения".<br/>— Нацельтесь на все расположения, кроме надежных, в разделе "Условия" -> "Расположения". **Примечание.** Надежные IP-адреса настраиваются на [портале Многофакторной идентификации](https://account.activedirectory.windowsazure.com/UserManagement/MfaSettings.aspx).<br/>— Запросите Многофакторную идентификацию в разделе "Предоставление". | [Создание политики условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-mfa#create-your-conditional-access-policy) |
+| Обратитесь к приложению из корпоративной сети. | [Проверка политики условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-mfa#test-your-conditional-access-policy) |
+| Обратитесь к приложению из общедоступной сети. | [Проверка политики условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/app-based-mfa#test-your-conditional-access-policy) |
 
 ### <a name="considerations"></a>Рекомендации
 
@@ -500,17 +500,17 @@ ms.locfileid: "39049475"
 | Предварительные требования | Ресурсы |
 | --- | --- |
 | Устройство с установленным браузером Tor. | [Скачайте браузер Tor](https://www.torproject.org/projects/torbrowser.html.en#downloads) |
-| Получите доступ к пользователю подтверждения концепции для выполнения входа. | [Тренировочное задание по защите идентификации Azure Active Directory](active-directory-identityprotection-playbook.md) |
+| Получите доступ к пользователю подтверждения концепции для выполнения входа. | [Тренировочное задание по защите идентификации Azure Active Directory](identity-protection/playbook.md) |
 
 ### <a name="steps"></a>Действия
 
 | Шаг | Ресурсы |
 | --- | --- |
 | Откройте браузер Tor. | [Скачайте браузер Tor](https://www.torproject.org/projects/torbrowser.html.en#downloads) |
-| Выполните вход по адресу https://myapps.microsoft.com с учетной записью пользователя для подтверждения концепции | [Тренировочное задание по защите идентификации Azure Active Directory: моделирование событий риска](active-directory-identityprotection-playbook.md#simulating-risk-events) |
+| Выполните вход по адресу https://myapps.microsoft.com с учетной записью пользователя для подтверждения концепции | [Тренировочное задание по защите идентификации Azure Active Directory: моделирование событий риска](identity-protection/playbook.md#simulating-risk-events) |
 | Подождите 5–7 минут. |  |
 | Выполните вход по адресу https://portal.azure.com как глобальный администратор и откройте колонку защиты идентификации | https://aka.ms/aadipgetstarted |
-| Откройте колонку событий риска. Вы должны увидеть запись в разделе "Попытки входа с анонимных IP-адресов".  | [Тренировочное задание по защите идентификации Azure Active Directory: моделирование событий риска](active-directory-identityprotection-playbook.md#simulating-risk-events) |
+| Откройте колонку событий риска. Вы должны увидеть запись в разделе "Попытки входа с анонимных IP-адресов".  | [Тренировочное задание по защите идентификации Azure Active Directory: моделирование событий риска](identity-protection/playbook.md#simulating-risk-events) |
 
 ### <a name="considerations"></a>Рекомендации
 
@@ -534,14 +534,14 @@ ms.locfileid: "39049475"
 | Шаг | Ресурсы |
 | --- | --- |
 | Выполните вход по адресу https://portal.azure.com как глобальный администратор и откройте колонку защиты идентификации | https://aka.ms/aadipgetstarted |
-| Включите политику риска для входа:<br/>— Назначено: пользователь подтверждения концепции<br/>— Условия: риск входа средний или выше (вход из анонимного расположения относится к среднему уровню риска)<br/>— Элементы управления: требовать Многофакторную идентификацию | [Тренировочное задание по защите идентификации Azure Active Directory: риск при входе](active-directory-identityprotection-playbook.md) |
+| Включите политику риска для входа:<br/>— Назначено: пользователь подтверждения концепции<br/>— Условия: риск входа средний или выше (вход из анонимного расположения относится к среднему уровню риска)<br/>— Элементы управления: требовать Многофакторную идентификацию | [Тренировочное задание по защите идентификации Azure Active Directory: риск при входе](identity-protection/playbook.md) |
 | Откройте браузер Tor. | [Скачайте браузер Tor](https://www.torproject.org/projects/torbrowser.html.en#downloads) |
 | Выполните вход по адресу https://myapps.microsoft.com с учетной записью пользователя для подтверждения концепции |  |
-| Обратите внимание на запрос Многофакторной идентификации. | [Процедуры входа с защитой идентификации Azure AD: восстановление входа, представлявшего риск](active-directory-identityprotection-flows.md#risky-sign-in-recovery)
+| Обратите внимание на запрос Многофакторной идентификации. | [Процедуры входа с защитой идентификации Azure AD: восстановление входа, представлявшего риск](identity-protection/flows.md#risky-sign-in-recovery)
 
 ### <a name="considerations"></a>Рекомендации
 
-Эта возможность является частью Azure AD Premium P2 и (или) EMS E5. Дополнительные сведения о событиях риска: [События риска Azure Active Directory](active-directory-reporting-risk-events.md)
+Эта возможность является частью Azure AD Premium P2 и (или) EMS E5. Дополнительные сведения о событиях риска: [События риска Azure Active Directory](reports-monitoring/concept-risk-events.md)
 
 ## <a name="configuring-certificate-based-authentication"></a>Настройка проверки подлинности на основе сертификата
 

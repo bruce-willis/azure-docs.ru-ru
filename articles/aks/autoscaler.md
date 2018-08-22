@@ -9,16 +9,18 @@ ms.topic: article
 ms.date: 07/19/18
 ms.author: sakthivetrivel
 ms.custom: mvc
-ms.openlocfilehash: 4f8df8e7004ca3cee832b6230dc153b21e2a6c18
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: d121f2744292ba64436f0722ae60cc3bc2b8dfa7
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186719"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39714134"
 ---
 # <a name="cluster-autoscaler-on-azure-kubernetes-service-aks---preview"></a>Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS) — предварительная версия
 
-Служба Azure Kubernetes (AKS) предоставляет гибкое решение для развертывания управляемого кластера Kubernetes в Azure. По мере роста потребления ресурсов автомасштабирование кластера позволяет кластеру увеличиваться, удовлетворяя этому спросу с учетом заданных ограничений. Служба автомасштабирования кластера реализует масштабирование узлов агента на основе ожидающих модулей pod. Эта служба периодически проверяет ожидающие модули pod или пустые узлы кластера и увеличивает размер кластера, если это возможно. По умолчанию служба автомасштабирования кластера проверяет наличие ожидающих модулей каждые 10 секунд и удаляет узел в том случае, если он был не нужен в течение более 10 минут. При использовании с горизонтальным автомасштабирование модулей pod основного будет обновлять реплики pod и ресурсы по требованию. Если узлов не хватает или ненужные узлы использованы при масштабировании модулей pod, служба автомасштабирования кластера сообщит об этом и запланирует модули pod в новом наборе узлов.
+Служба Azure Kubernetes (AKS) предоставляет гибкое решение для развертывания управляемого кластера Kubernetes в Azure. По мере роста потребления ресурсов автомасштабирование кластера позволяет кластеру увеличиваться, удовлетворяя этому спросу с учетом заданных ограничений. Служба автомасштабирования кластера реализует масштабирование узлов агента на основе ожидающих модулей pod. Эта служба периодически проверяет ожидающие модули pod или пустые узлы кластера и увеличивает размер кластера, если это возможно. По умолчанию служба автомасштабирования кластера проверяет наличие ожидающих модулей каждые 10 секунд и удаляет узел в том случае, если он был не нужен в течение более 10 минут. При использовании с [горизонтальным автомасштабированием модулей pod](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/) эта операция масштабирования будет обновлять реплики pod и ресурсы по требованию. Если узлов не хватает или ненужные узлы использованы при масштабировании модулей pod, служба автомасштабирования кластера сообщит об этом и запланирует модули pod в новом наборе узлов.
+
+В этой статье описывается развертывание автомасштабирования кластера на узлах агента. Однако, так как автомасштабирование кластера развертывается в пространстве имен системы Kube, автомасштабирование не будет уменьшать масштаб узла, на котором работает модуль pod.
 
 > [!IMPORTANT]
 > Интеграция автомасштабирования кластера Azure Kubernetes (AKS) в данный момент находится в стадии **предварительной версии**. Предварительные версии предоставляются при условии, что вы принимаете [дополнительные условия использования](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
@@ -32,41 +34,70 @@ ms.locfileid: "39186719"
 
 ## <a name="gather-information"></a>Сбор сведений
 
-Ниже перечислены все сведения, которые нужно указать при настройке автомасштабирования.
+Чтобы создать разрешения для выполнения автомасштабирования в кластере, запустите следующий скрипт bash:
 
-- *Идентификатор подписки*. Идентификатор, соответствующий подписке, которая используется для этого кластера
-- *Имя группы ресурсов*. Имя группы ресурсов, которой принадлежит кластер 
-- *Имя кластера*. Имя, присвоенное кластеру
-- *Идентификатор клиента*. Идентификатор приложения, предоставленный на этапе создания разрешения
-- *Секрет клиента*. Секрет приложения, предоставленный на этапе создания разрешения
-- *Идентификатор клиента*. Идентификатор владельца учетной записи
-- *Группа ресурсов узла*. Имя группы ресурсов, которая содержит узлы агента в кластере
-- *Имя пула узлов*. Имя масштабируемого пула узлов
-- *Минимальное количество узлов*. Минимальное количество узлов в кластере
-- *Максимальное количество узлов*. Максимальное количество узлов в кластере
-- *Тип виртуальной машины*. Служба, используемая для создания кластера Kubernetes
+```sh
+#! /bin/bash
+ID=`az account show --query id -o json`
+SUBSCRIPTION_ID=`echo $ID | tr -d '"' `
 
-Получите идентификатор подписки с помощью команды: 
+TENANT=`az account show --query tenantId -o json`
+TENANT_ID=`echo $TENANT | tr -d '"' | base64`
 
-``` azurecli
-az account show --query id
+read -p "What's your cluster name? " cluster_name
+read -p "Resource group name? " resource_group
+
+CLUSTER_NAME=`echo $cluster_name | base64`
+RESOURCE_GROUP=`echo $resource_group | base64`
+
+PERMISSIONS=`az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/$SUBSCRIPTION_ID" -o json`
+CLIENT_ID=`echo $PERMISSIONS | sed -e 's/^.*"appId"[ ]*:[ ]*"//' -e 's/".*//' | base64`
+CLIENT_SECRET=`echo $PERMISSIONS | sed -e 's/^.*"password"[ ]*:[ ]*"//' -e 's/".*//' | base64`
+
+SUBSCRIPTION_ID=`echo $ID | tr -d '"' | base64 `
+
+CLUSTER_INFO=`az aks show --name $cluster_name  --resource-group $resource_group -o json`
+NODE_RESOURCE_GROUP=`echo $CLUSTER_INFO | sed -e 's/^.*"nodeResourceGroup"[ ]*:[ ]*"//' -e 's/".*//' | base64`
+
+echo "---
+apiVersion: v1
+kind: Secret
+metadata:
+    name: cluster-autoscaler-azure
+    namespace: kube-system
+data:
+    ClientID: $CLIENT_ID
+    ClientSecret: $CLIENT_SECRET
+    ResourceGroup: $RESOURCE_GROUP
+    SubscriptionID: $SUBSCRIPTION_ID
+    TenantID: $TENANT_ID
+    VMType: QUtTCg==
+    ClusterName: $CLUSTER_NAME
+    NodeResourceGroup: $NODE_RESOURCE_GROUP
+---"
 ```
 
-Создайте набор учетных данных Azure, выполнив следующую команду:
+После выполнения шагов в скрипте ваши данные будут выведены в виде секрета. Это может выглядеть следующим образом:
 
-```console
-$ az ad sp create-for-rbac --role="Contributor" --scopes="/subscriptions/<subscription-id>" --output json
-
-"appId": <app-id>,
-"displayName": <display-name>,
-"name": <name>,
-"password": <app-password>,
-"tenant": <tenant-id>
+```yaml
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cluster-autoscaler-azure
+  namespace: kube-system
+data:
+  ClientID: <base64-encoded-client-id>
+  ClientSecret: <base64-encoded-client-secret>$
+  ResourceGroup: <base64-encoded-resource-group>  SubscriptionID: <base64-encode-subscription-id>
+  TenantID: <base64-encoded-tenant-id>
+  VMType: QUtTCg==
+  ClusterName: <base64-encoded-clustername>
+  NodeResourceGroup: <base64-encoded-node-resource-group>
+---
 ```
 
-Идентификатор приложения, пароль и идентификатор владельца будут использоваться как clientID, clientSecret и tenantID на следующих этапах.
-
-Получите имя пула узлов, выполнив следующую команду. 
+Затем получите имя пула узлов, выполнив следующую команду. 
 
 ```console
 $ kubectl get nodes --show-labels
@@ -81,49 +112,7 @@ aks-nodepool1-37756013-0   Ready     agent     1h        v1.10.3   agentpool=nod
 
 Затем извлеките значение метки **agentpool**. По умолчанию имя пула узлов кластера — nodepool1.
 
-Чтобы получить имя группы ресурсов узла, извлеките значение метки **kubernetes.azure.com<span></span>/cluster**. Имя группы ресурсов узла имеет вид MC_[группа_ресурсов]\_[имя_кластера]_[расположение].
-
-Параметр vmType определяет используемую службу — в этом примере AKS.
-
-Теперь у вас есть следующие данные:
-
-- SubscriptionID
-- ResourceGroup
-- ClusterName
-- ClientID
-- ClientSecret
-- идентификатор клиента;
-- NodeResourceGroup
-- VMType
-
-Далее нужно закодировать эти значения, используя метод base64. Например, чтобы закодировать значение VMType, используя метод base64, выполните такую команду:
-
-```console
-$ echo AKS | base64
-QUtTCg==
-```
-
-## <a name="create-secret"></a>Создание секрета
-Используя эти данные, создайте секрет для развертывания с помощью значений, полученных в предыдущих шагах, в таком формате:
-
-```yaml
----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: cluster-autoscaler-azure
-  namespace: kube-system
-data:
-  ClientID: <base64-encoded-client-id>
-  ClientSecret: <base64-encoded-client-secret>
-  ResourceGroup: <base64-encoded-resource-group>
-  SubscriptionID: <base64-encode-subscription-id>
-  TenantID: <base64-encoded-tenant-id>
-  VMType: QUtTCg==
-  ClusterName: <base64-encoded-clustername>
-  NodeResourceGroup: <base64-encoded-node-resource-group>
----
-```
+Теперь с помощью секрета и пула узлов вы можете создать схему развертывания.
 
 ## <a name="create-a-deployment-chart"></a>Создание схемы развертывания
 
@@ -324,10 +313,10 @@ spec:
 Запустите службу автомасштабирования кластера, выполнив команду
 
 ```console
-kubectl create -f cluster-autoscaler-containerservice.yaml
+kubectl create -f aks-cluster-autoscaler.yaml
 ```
 
-Чтобы проверить, работает ли автомасштабирование кластера, выполните следующую команду и просмотрите список модулей pod. Если есть модуль pod, заблокированный работающей службой cluster-autoscaler, значит автомасштабирование кластера развернуто.
+Чтобы проверить, работает ли автомасштабирование кластера, выполните следующую команду и просмотрите список модулей pod. В нем должен присутствовать модуль pod, заблокированный работающей службой cluster-autoscaler. Если он есть, значит автомасштабирование кластера развернуто.
 
 ```console
 kubectl -n kube-system get pods
@@ -338,6 +327,68 @@ kubectl -n kube-system get pods
 ```console
 kubectl -n kube-system describe configmap cluster-autoscaler-status
 ```
+
+## <a name="interpreting-the-cluster-autoscaler-status"></a>Интерпретация состояния автомасштабирования кластера
+
+```console
+$ kubectl -n kube-system describe configmap cluster-autoscaler-status
+Name:         cluster-autoscaler-status
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  cluster-autoscaler.kubernetes.io/last-updated=2018-07-25 22:59:22.661669494 +0000 UTC
+
+Data
+====
+status:
+----
+Cluster-autoscaler status at 2018-07-25 22:59:22.661669494 +0000 UTC:
+Cluster-wide:
+  Health:      Healthy (ready=1 unready=0 notStarted=0 longNotStarted=0 registered=1 longUnregistered=0)
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+  ScaleUp:     NoActivity (ready=1 registered=1)
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+  ScaleDown:   NoCandidates (candidates=0)
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+
+NodeGroups:
+  Name:        nodepool1
+  Health:      Healthy (ready=1 unready=0 notStarted=0 longNotStarted=0 registered=1 longUnregistered=0 cloudProviderTarget=1 (minSize=1, maxSize=5))
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+  ScaleUp:     NoActivity (ready=1 cloudProviderTarget=1)
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+  ScaleDown:   NoCandidates (candidates=0)
+               LastProbeTime:      2018-07-25 22:59:22.067828801 +0000 UTC
+               LastTransitionTime: 2018-07-25 00:38:36.41372897 +0000 UTC
+
+
+Events:  <none>
+```
+
+Состояние автомасштабирования кластера можно просмотреть на двух разных уровнях: на уровне кластера и каждой группы узлов. Так как в настоящее время AKS поддерживает только один пул узлов, эти метрики одинаковы.
+
+* Указанное состояние работоспособности относится ко всем узлам. Если автомасштабирование кластера пытается создать или удалить узлы в кластере, состояние изменится на Unhealthy (Неработоспособный). Вот описание состояния разных узлов:
+    * Ready означает, что узел готов к планированию модулей.
+    * Unready означает, что после запуска узла произошел сбой.
+    * NotStarted означает, что узел еще не полностью запущен.
+    * LongNotStarted означает, что узел не удалось запустить в разумных пределах.
+    * Registered означает, что узел зарегистрирован в группе.
+    * Unregistered означает, что узел присутствует на стороне поставщика кластера, но не зарегистрирован в Kubernetes.
+  
+* Параметр ScaleUp позволяет проверить, когда кластер определяет, что необходимо увеличить его масштаб.
+    * Переход — это изменение числа узлов в кластере или состояния узла.
+    * Количество готовых узлов — это количество доступных и готовых узлов в кластере. 
+    * CloudProviderTarget — это количество узлов, рабочую нагрузку которых по определению автомасштабирования кластера необходимо обработать.
+
+* Параметр ScaleDown позволяет проверить наличие кандидатов для уменьшения масштаба. 
+    * Кандидат для уменьшения масштаба — это узел, удаление которого по определению автомасштабирования кластера не повлияет на способность кластера обрабатывать рабочую нагрузку. 
+    * Приведенные значения времени показывают последнюю проверку кластера на наличие кандидатов для уменьшения масштаба и последний переход.
+
+Наконец, в разделе "Events" отображаются любые события увеличения или уменьшения масштаба (неудавшиеся или успешные), а также время выполнения автомасштабирования кластера.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

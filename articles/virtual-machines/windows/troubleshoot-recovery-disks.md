@@ -11,30 +11,34 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 11/03/2017
+ms.date: 08/09/2018
 ms.author: genli
-ms.openlocfilehash: 1e87704e7d8cf3c7cc21e537d36f95a97265061b
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 9845476e23396eecc4149f3e856c40b0f80f13cb
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903522"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40004772"
 ---
 # <a name="troubleshoot-a-windows-vm-by-attaching-the-os-disk-to-a-recovery-vm-using-azure-powershell"></a>Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью Azure PowerShell
-Если возникает проблема с загрузкой или диском на виртуальной машине Windows в Azure, возможно, вам нужно устранить неполадки, связанные с самим виртуальным жестким диском. Например, такая ситуация может возникнуть из-за сбоя обновления приложения, который мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure PowerShell подключить виртуальный жесткий диск к другой виртуальной машине Windows для устранения ошибок, а затем восстановить исходную виртуальную машину.
+Если возникает проблема с загрузкой или диском на виртуальной машине Windows в Azure, возможно, вам нужно устранить неполадки, связанные с самим диском. Например, такая ситуация может возникнуть из-за сбоя обновления приложения, который мешает успешно загрузить виртуальную машину. В этой статье подробно описано, как с помощью Azure PowerShell подключить диск к другой виртуальной машине Windows для устранения ошибок, а затем исправить исходную виртуальную машину. 
+
+> [!Important]
+> Скрипты в этой статье применяются только к виртуальным машинам, которые используют [управляемый диск](managed-disks-overview.md). 
 
 
 ## <a name="recovery-process-overview"></a>Обзор процесса восстановления
+Теперь мы можем использовать Azure PowerShell, чтобы изменить диск операционной системы для виртуальной машины. Больше не нужно удалять и повторно создавать виртуальную машину.
+
 Процесс устранения неполадок выглядит следующим образом.
 
-1. Удалите виртуальную машину, на которой возникли проблемы, сохранив ее виртуальные жесткие диски.
-2. Присоедините и подключите виртуальный жесткий диск к другой виртуальной машине Windows для устранения неполадок.
-3. Подключитесь к этой виртуальной машине. Измените файлы или запустите средства, которые нужны для устранения неполадок на исходном виртуальном жестком диске.
-4. Отключите и отсоедините виртуальный жесткий диск от виртуальной машины, на которой выполняется устранение неполадок.
-5. Создайте другую виртуальную машину, используя исходный виртуальный жесткий диск.
-
-Сведения о виртуальной машине, используемой управляемый диск, см. в разделе [Устранение неполадок виртуальной машины с управляемым диском путем подключения нового диска операционной системы](#troubleshoot-a-managed-disk-vm-by-attaching-a-new-os-disk).
-
+1. Остановите затронутую виртуальную машину.
+2. Создайте моментальный снимок, используя диск ОС виртуальной машины.
+3. Создайте диск из моментального снимка диска операционной системы.
+4. Подключите диск как диск данных к виртуальной машине для восстановления.
+5. Подключитесь к виртуальной машине восстановления. Измените файлы или запустите средства, которые нужны для устранения неполадок на скопированном диске ОС.
+6. Отключите и отсоедините диск от виртуальной машины восстановления.
+7. Измените диск операционной системы для затронутой виртуальной машины.
 
 Убедитесь, что у вас установлена и настроена [последняя версия Azure PowerShell](/powershell/azure/overview) и выполнен вход в подписку.
 
@@ -42,8 +46,7 @@ ms.locfileid: "37903522"
 Connect-AzureRmAccount
 ```
 
-В следующих примерах замените имена параметров собственными значениями. Используемые имена параметров: `myResourceGroup`, `mystorageaccount` и `myVM`.
-
+В следующих примерах замените имена параметров собственными значениями. 
 
 ## <a name="determine-boot-issues"></a>Выявление проблем при загрузке
 Вы можете просмотреть снимок экрана виртуальной машины в Azure, чтобы устранить неполадки загрузки. Этот снимок экрана может помочь определить, почему виртуальная машина не загружается. Приведенный ниже пример получает снимок экрана виртуальной машины Windows `myVM`, расположенной в группе ресурсов `myResourceGroup`.
@@ -55,78 +58,115 @@ Get-AzureRmVMBootDiagnosticsData -ResourceGroupName myResourceGroup `
 
 Просмотрите его, чтобы определить причину сбоя загрузки виртуальной машины. Обратите внимание на соответствующие сообщения об ошибках или коды ошибок.
 
+## <a name="stop-the-vm"></a>Остановка виртуальной машины
 
-## <a name="view-existing-virtual-hard-disk-details"></a>Просмотр сведений для существующего виртуального жесткого диска
-Прежде чем присоединить виртуальный жесткий диск к другой виртуальной машине, следует определить имя этого виртуального жесткого диска.
-
-В следующем примере возвращаются сведения о виртуальной машине `myVM` в группе ресурсов `myResourceGroup`:
+В следующем примере прекращается работа виртуальной машины `myVM` из группы ресурсов `myResourceGroup`:
 
 ```powershell
-Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVM"
+Stop-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVM"
 ```
 
-Найдите `Vhd URI` в разделе `StorageProfile` выходных данных предыдущей команды. Приведенный ниже усеченный пример выходных данных содержит `Vhd URI` в конце блока кода.
+Подождите завершения удаления виртуальной машины перед выполнением следующего шага.
+
+
+## <a name="create-a-snapshot-from-the-os-disk-of-the-vm"></a>Создание моментального снимка на основе диска ОС виртуальной машины
+
+В следующем примере создается моментальный снимок с именем `mySnapshot` из диска операционной системы виртуальной машины "myVM". 
 
 ```powershell
-RequestId                     : 8a134642-2f01-4e08-bb12-d89b5b81a0a0
-StatusCode                    : OK
-ResourceGroupName             : myResourceGroup
-Id                            : /subscriptions/guid/resourceGroups/myResourceGroup/providers/Microsoft.Compute/virtualMachines/myVM
-Name                          : myVM
-Type                          : Microsoft.Compute/virtualMachines
-...
-StorageProfile                :
-  ImageReference              :
-    Publisher                 : MicrosoftWindowsServer
-    Offer                     : WindowsServer
-    Sku                       : 2016-Datacenter
-    Version                   : latest
-  OsDisk                      :
-    OsType                    : Windows
-    Name                      : myVM
-    Vhd                       :
-      Uri                     : https://mystorageaccount.blob.core.windows.net/vhds/myVM.vhd
-    Caching                   : ReadWrite
-    CreateOption              : FromImage
+$resourceGroupName = 'myResourceGroup' 
+$location = 'eastus' 
+$vmName = 'myVM'
+$snapshotName = 'mySnapshot'  
+
+#Get the VM
+$vm = get-azurermvm `
+-ResourceGroupName $resourceGroupName `
+-Name $vmName
+
+#Create the snapshot configuration for the OS disk
+$snapshot =  New-AzureRmSnapshotConfig `
+-SourceUri $vm.StorageProfile.OsDisk.ManagedDisk.Id `
+-Location $location `
+-CreateOption copy
+
+#Take the snapshot
+New-AzureRmSnapshot `
+   -Snapshot $snapshot `
+   -SnapshotName $snapshotName `
+   -ResourceGroupName $resourceGroupName 
 ```
 
+Моментальный снимок — это полная копия виртуального жесткого диска, доступная только для чтения. Его нельзя присоединить к виртуальной машине. На следующем шаге мы создадим диск из этого моментального снимка.
 
-## <a name="delete-existing-vm"></a>Удаление существующей виртуальной машины
-Виртуальные жесткие диски и виртуальные машины — это разные ресурсы в Azure. Виртуальный жесткий диск является местом хранения операционной системы, приложений и конфигурации. Виртуальная машина — это просто метаданные, которые определяют размер или расположение объекта, а также ссылки на ресурсы, такие как виртуальные жесткие диски или виртуальные сетевые адаптеры. При присоединении виртуального жесткого диска к виртуальной машине для него регистрируется аренда. Диски данных можно присоединять и отсоединять во время работы виртуальной машины, но диск операционной системы отсоединить невозможно, пока ресурс виртуальной машины не будет удален. Аренда сохраняет привязку диска операционной системы к виртуальной машине, даже когда эта виртуальная машина остановлена или отменено ее распределение.
+## <a name="create-a-disk-from-the-snapshot"></a>Создание диска из моментального снимка
 
-Поэтому для восстановления виртуальной машины нужно прежде всего удалить ресурс виртуальной машины. Удаление виртуальной машины не повлияет на виртуальные жесткие диски, размещенные в учетной записи хранения. После удаления виртуальной машины присоедините виртуальный жесткий диск к другой виртуальной машине, чтобы устранить неполадки.
-
-В следующем примере виртуальная машина `myVM` удаляется из группы ресурсов `myResourceGroup`:
+Этот скрипт создает управляемый диск с именем `newOSDisk` из моментального снимка `mysnapshot`.  
 
 ```powershell
-Remove-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVM"
+#Set the context to the subscription Id where Managed Disk will be created
+#You can skip this step if the subscription is already selected
+
+$subscriptionId = 'yourSubscriptionId'
+
+Select-AzureRmSubscription -SubscriptionId $SubscriptionId
+
+#Provide the name of your resource group
+$resourceGroupName ='myResourceGroup'
+
+#Provide the name of the snapshot that will be used to create Managed Disks
+$snapshotName = 'mySnapshot' 
+
+#Provide the name of the Managed Disk
+$diskName = 'newOSDisk'
+
+#Provide the size of the disks in GB. It should be greater than the VHD file size.
+$diskSize = '128'
+
+#Provide the storage type for Managed Disk. PremiumLRS or StandardLRS.
+$storageType = 'StandardLRS'
+
+#Provide the Azure region (e.g. westus) where Managed Disks will be located.
+#This location should be same as the snapshot location
+#Get all the Azure location using command below:
+#Get-AzureRmLocation
+$location = 'eastus'
+
+$snapshot = Get-AzureRmSnapshot -ResourceGroupName $resourceGroupName -SnapshotName $snapshotName 
+ 
+$diskConfig = New-AzureRmDiskConfig -AccountType $storageType -Location $location -CreateOption Copy -SourceResourceId $snapshot.Id
+ 
+New-AzureRmDisk -Disk $diskConfig -ResourceGroupName $resourceGroupName -DiskName $diskName
 ```
+Теперь у вас есть копия исходного диска ОС. Вы можете подключить диск к другой виртуальной машине Windows для устранения неполадок.
 
-Дождитесь, пока удаление завершится, прежде чем присоединять виртуальный жесткий диск к другой виртуальной машине. Чтобы присоединить виртуальный жесткий диск к другой виртуальной машине, необходимо снять аренду, которая привязывает диск к виртуальной машине.
+## <a name="attach-the-disk-to-another-windows-vm-for-troubleshooting"></a>Подключение диска к другой виртуальной Машине Windows для устранения неполадок
 
-
-## <a name="attach-existing-virtual-hard-disk-to-another-vm"></a>Присоединение существующего виртуального жесткого диска к другой виртуальной машине
-В следующих нескольких шагах описывается использование другой виртуальной машины для устранения неполадок. Присоедините существующий виртуальный жесткий диск к виртуальной машине для устранения неполадок, чтобы просматривать и изменять содержимое диска. Этот процесс позволяет, например, исправить ошибки конфигурации или изучить дополнительные журналы протоколов или системы. Выберите или создайте другую виртуальную машину, которая будет использоваться для устранения неполадок.
-
-При присоединении существующего виртуального жесткого диска укажите URL-адрес диска, полученный в предыдущей команде `Get-AzureRmVM`. В следующем примере существующий виртуальный жесткий диск присоединяется к виртуальной машине для устранения неполадок `myVMRecovery` в группе ресурсов `myResourceGroup`:
-
-```powershell
-$myVM = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVMRecovery"
-Add-AzureRmVMDataDisk -VM $myVM -CreateOption "Attach" -Name "DataDisk" -DiskSizeInGB $null `
-    -VhdUri "https://mystorageaccount.blob.core.windows.net/vhds/myVM.vhd"
-Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
-```
+Теперь мы подключим копию исходного диска ОС к виртуальной машине как диск данных. Этот процесс позволяет исправить на диске ошибки конфигурации или изучить дополнительные файлы журналов приложения или системы. В следующем примере диск с именем `newOSDisk` подключается к виртуальной машине `RecoveryVM`.
 
 > [!NOTE]
-> Для добавления диска необходимо указать его размер. Так как мы подключаем существующий диск, `-DiskSizeInGB` имеет значение `$null`. Это значение обеспечивает правильное подключение диска данных без необходимости определять его фактический размер.
+> Чтобы подключить диск, копия исходного диска ОС и виртуальная машина восстановления должны находиться в одном расположении.
 
+```powershell
+$rgName = "myResourceGroup"
+$vmName = "RecoveryVM"
+$location = "eastus" 
+$dataDiskName = "newOSDisk"
+$disk = Get-AzureRmDisk -ResourceGroupName $rgName -DiskName $dataDiskName 
 
-## <a name="mount-the-attached-data-disk"></a>Подключение присоединенного диска данных
+$vm = Get-AzureRmVM -Name $vmName -ResourceGroupName $rgName 
 
-1. Подключитесь к виртуальной машине для устранения неполадок по протоколу RDP, используя соответствующие учетные данные. Следующий пример скачивает RDP-файл подключения для виртуальной машины `myVMRecovery` в группе ресурсов `myResourceGroup` и сохраняет его в паку `C:\Users\ops\Documents`.
+$vm = Add-AzureRmVMDataDisk -CreateOption Attach -Lun 0 -VM $vm -ManagedDiskId $disk.Id
+
+Update-AzureRmVM -VM $vm -ResourceGroupName $rgName
+```
+
+## <a name="connect-to-the-recovery-vm-and-fix-issues-on-the-attached-disk"></a>Подключение к виртуальной машине восстановления и устранение неполадок на подключенном диске
+
+1. Подключитесь к виртуальной машине восстановления по протоколу RDP, используя соответствующие учетные данные. Следующий пример скачивает RDP-файл подключения для виртуальной машины `RecoveryVM` в группе ресурсов `myResourceGroup` и сохраняет его в паку `C:\Users\ops\Documents`.
 
     ```powershell
-    Get-AzureRMRemoteDesktopFile -ResourceGroupName "myResourceGroup" -Name "myVMRecovery" `
+    Get-AzureRMRemoteDesktopFile -ResourceGroupName "myResourceGroup" -Name "RecoveryVM" `
         -LocalPath "C:\Users\ops\Documents\myVMRecovery.rdp"
     ```
 
@@ -136,7 +176,7 @@ Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
     Get-Disk
     ```
 
-    В следующем примере выходных данных показан виртуальный жесткий диск, подключенный как диск **2**. (Для просмотра буква диска можно также использовать `Get-Volume`).
+    В следующем примере выходных данных показан диск, подключенный как диск **2**. (Для просмотра буква диска можно также использовать `Get-Volume`).
 
     ```powershell
     Number   Friendly Name   Serial Number   HealthStatus   OperationalStatus   Total Size   Partition
@@ -144,15 +184,13 @@ Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
     ------   -------------   -------------   ------------   -----------------   ----------   ----------
     0        Virtual HD                                     Healthy             Online       127 GB MBR
     1        Virtual HD                                     Healthy             Online       50 GB MBR
-    2        Msft Virtu...                                  Healthy             Online       127 GB MBR
+    2        newOSDisk                                  Healthy             Online       127 GB MBR
     ```
 
-## <a name="fix-issues-on-original-virtual-hard-disk"></a>Устранение неполадок на исходном виртуальном жестком диске
-Теперь, когда существующий виртуальный жесткий диск подключен, вы можете выполнить любые необходимые действия по обслуживанию и (или) устранению неполадок. После устранения проблем выполните следующие действия.
+После подключения копии исходного диска ОС вы можете выполнить любые необходимые действия по устранению неполадок и обслуживанию. После устранения проблем выполните следующие действия.
 
-
-## <a name="unmount-and-detach-original-virtual-hard-disk"></a>Отключение и отсоединение исходного виртуального жесткого диска
-После устранения ошибок отключите и отсоедините существующий виртуальный жесткий диск от виртуальной машины, использованный для устранения неполадок. Виртуальный жесткий диск нельзя использовать с другой виртуальной машиной, пока вы не отмените аренду, присоединяющую виртуальный жесткий диск к виртуальной машине для устранения неполадок.
+## <a name="unmount-and-detach-original-os-disk"></a>Отключение и отсоединение исходного диска ОС
+После устранения ошибок отключите и отсоедините существующий диск от виртуальной машины восстановления. Диск нельзя использовать с другой виртуальной машиной, пока вы не отмените аренду, присоединяющую диск к виртуальной машине восстановления.
 
 1. Из сеанса RDP отключите диск данных на виртуальной машине восстановления. Для этого нужен номер диска из предыдущего командлета `Get-Disk`. Используйте `Set-Disk`, чтобы отключить диск.
 
@@ -171,46 +209,49 @@ Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
     2        Msft Virtu...                                  Healthy             Offline      127 GB MBR
     ```
 
-2. Выйдите из сеанса RDP. Из сеанса Azure PowerShell удалите виртуальный жесткий диск с виртуальной машины для устранения неполадок.
+2. Выйдите из сеанса RDP. В рамках сеанса Azure PowerShell удалите диск с именем `newOSDisk` из виртуальной машины "RecoveryVM".
 
     ```powershell
-    $myVM = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVMRecovery"
-    Remove-AzureRmVMDataDisk -VM $myVM -Name "DataDisk"
+    $myVM = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "RecoveryVM"
+    Remove-AzureRmVMDataDisk -VM $myVM -Name "newOSDisk"
     Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
     ```
 
+## <a name="change-the-os-disk-for-the-affected-vm"></a>Изменение диска операционной системы для затронутой виртуальной машины
 
-## <a name="create-vm-from-original-hard-disk"></a>Создание виртуальной машины из исходного жесткого диска
-Чтобы создать виртуальную машину из исходного виртуального жесткого диска, используйте [этот шаблон Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-specialized-vhd-existing-vnet). Фактический шаблон JSON доступен по следующей ссылке:
+Для переключения дисков ОС можно использовать Azure PowerShell. Нет необходимости удалять и повторно создавать виртуальную машину.
 
-- https://github.com/Azure/azure-quickstart-templates/blob/master/201-vm-specialized-vhd-new-or-existing-vnet/azuredeploy.json
-
-Этот шаблон развертывает виртуальную машину в существующую виртуальную сеть, используя URL-адрес виртуального жесткого диска из использованной выше команды. В следующем примере шаблон развертывается в группе ресурсов `myResourceGroup`:
+Этот пример останавливает виртуальную машину `myVM`, а затем присваивает диск `newOSDisk` в качестве нового диска ОС. 
 
 ```powershell
-New-AzureRmResourceGroupDeployment -Name myDeployment -ResourceGroupName myResourceGroup `
-  -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vm-specialized-vhd-existing-vnet/azuredeploy.json
+# Get the VM 
+$vm = Get-AzureRmVM -ResourceGroupName myResourceGroup -Name myVM 
+
+# Make sure the VM is stopped\deallocated
+Stop-AzureRmVM -ResourceGroupName myResourceGroup -Name $vm.Name -Force
+
+# Get the new disk that you want to swap in
+$disk = Get-AzureRmDisk -ResourceGroupName myResourceGroup -Name newDisk
+
+# Set the VM configuration to point to the new disk  
+Set-AzureRmVMOSDisk -VM $vm -ManagedDiskId $disk.Id -Name $disk.Name 
+
+# Update the VM with the new OS disk
+Update-AzureRmVM -ResourceGroupName myResourceGroup -VM $vm 
+
+# Start the VM
+Start-AzureRmVM -Name $vm.Name -ResourceGroupName myResourceGroup
 ```
 
-Укажите сведения в ответ на запросы шаблона, такие как имя виртуальной машины, тип операционной системы и размер виртуальной машины. Используется то же значение `osDiskVhdUri`, что и при присоединении существующего виртуального жесткого диска к виртуальной машине для устранения неполадок.
+## <a name="verify-and-enable-boot-diagnostics"></a>Проверка и включение диагностики загрузки
 
-
-## <a name="re-enable-boot-diagnostics"></a>Восстановление диагностики загрузки
-
-При создании виртуальной машины на основе существующего виртуального жесткого диска диагностика загрузки не всегда автоматически включена. В следующем примере на виртуальной машине `myVMDeployed` в группе ресурсов `myResourceGroup` включается расширение диагностики:
+В следующем примере на виртуальной машине `myVMDeployed` в группе ресурсов `myResourceGroup` включается расширение диагностики:
 
 ```powershell
 $myVM = Get-AzureRmVM -ResourceGroupName "myResourceGroup" -Name "myVMDeployed"
 Set-AzureRmVMBootDiagnostics -ResourceGroupName myResourceGroup -VM $myVM -enable
 Update-AzureRmVM -ResourceGroup "myResourceGroup" -VM $myVM
 ```
-
-## <a name="troubleshoot-a-managed-disk-vm-by-attaching-a-new-os-disk"></a>Устранение неполадок виртуальной машины с управляемым диском путем подключения нового диска операционной системы
-1. Остановите затронутую виртуальную машину Windows с управляемым диском.
-2. [Создайте моментальный снимок управляемого диска](snapshot-copy-managed-disk.md) операционной системы виртуальной машины.
-3. [Создайте управляемый диск на основе моментального снимка](../scripts/virtual-machines-windows-powershell-sample-create-managed-disk-from-snapshot.md).
-4. [Подключите управляемый диск в качестве диска данных виртуальной машины](attach-disk-ps.md).
-5. [Замените диск данных из шага 4 на диск операционной системы](os-disk-swap.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 При возникновении проблем с подключением к виртуальной машине ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Для устранения проблем с доступом к приложениям, выполняющимся на виртуальной машине, прочитайте статью [Устранение неполадок доступа к приложению, выполняющемуся в виртуальной машине Azure](troubleshoot-app-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

@@ -7,18 +7,18 @@ manager: craigg
 ms.service: sql-database
 ms.custom: DBs & servers
 ms.topic: conceptual
-ms.date: 08/01/2018
+ms.date: 08/03/2018
 ms.author: carlrab
-ms.openlocfilehash: effb09cfc68961065ad0b4e4be52255bcd1fe4e0
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: fae9f0aaa001c233a6687dda5cd5b7c0128ff8b0
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39414173"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038391"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU 
 
-Эта статья содержит подробные сведения об ограничениях для эластичных пулов в базе данных SQL Azure в модели приобретения на основе DTU.
+Эта статья содержит подробные сведения об ограничениях ресурсов для отдельных баз данных в Базе данных SQL Azure при использовании модели приобретения на основе единиц передачи данных.
 
 Сведения об ограничениях ресурсов в модели приобретения на основе DTU для эластичных пулов см. в разделе [Ограничения ресурсов в модели приобретения на основе DTU — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md). Сведения об ограничениях ресурсов в модели приобретения на основе виртуальных ядер см. в разделах [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — одиночные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов в модели приобретения на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).
 

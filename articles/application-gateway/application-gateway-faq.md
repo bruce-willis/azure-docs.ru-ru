@@ -7,14 +7,14 @@ manager: jpconnock
 ms.service: application-gateway
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 6/20/2018
+ms.date: 8/10/2018
 ms.author: victorh
-ms.openlocfilehash: b8b5b1da902a854dacea7e3019e3fa1116f04212
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 858427bfd2a9b4c40ddf7054e09d98bcf5c1a992
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39399150"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038682"
 ---
 # <a name="frequently-asked-questions-for-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -122,6 +122,12 @@ Set-AzureRmApplicationGateway -ApplicationGateway $gw
 * Исходящее подключение к Интернету не может быть заблокировано.
 
 * Трафик из тега AzureLoadBalancer должен быть разрешен.
+
+**В. Поддерживаются ли определяемые пользователем маршруты в подсети шлюза приложений?**
+
+Определяемые пользователем маршруты (UDR) поддерживаются в подсети шлюза приложений, если они не влияют на сквозной обмен данными "запрос — ответ".
+
+Например, можно настроить UDR в подсети шлюза приложений, чтобы указать устройство брандмауэра для проверки пакетов, но необходимо убедиться, что после проверки пакет достигнет места назначения. Невыполнение этого требования может привести к неправильному выполнению пробы работоспособности или некорректной маршрутизации трафика. Это касается полученных маршрутов или маршрутов 0.0.0.0/0 по умолчанию, которые распространяются в виртуальной сети с помощью ExpressRoute или VPN-шлюзов.
 
 **В. Какие у шлюза приложений ограничения? Можно ли увеличить эти ограничения?**
 

@@ -12,44 +12,61 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 07/03/2018
+ms.date: 08/03/2018
 ms.author: damaerte
-ms.openlocfilehash: 5e318a0f64033aa0c4b306e547c11e1994afa229
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: aad474195060c01a3f9d85e6f9037b568b0c16ad
+ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37861471"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39630392"
 ---
 # <a name="powershell-in-azure-cloud-shell-for-windows-users"></a>PowerShell в Azure Cloud Shell для пользователей Windows
 
-В мае 2018 года были [объявлены](https://azure.microsoft.com/blog/pscloudshellrefresh/) изменения для PowerShell в Azure Cloud Shell.  Теперь работа с PowerShell в Azure Cloud Shell выполняется на PowerShell Core 6 в Linux.
-В результате этого изменения некоторые аспекты поведения PowerShell в Cloud Shell отличаются от того, что вам знакомо по Windows PowerShell 5.1.
+В мае 2018 года были [объявлены](https://azure.microsoft.com/blog/pscloudshellrefresh/) изменения для PowerShell в Azure Cloud Shell.
+Теперь работа с PowerShell в Azure Cloud Shell выполняется на базе [PowerShell Core 6](https://github.com/powershell/powershell) в среде Linux.
+В связи с этим изменением могут возникать некоторые отличия в работе с PowerShell в Cloud Shell, по сравнению с ожидаемыми данными на Windows PowerShell.
 
-## <a name="case-sensitivity"></a>Чувствительность к регистру
+## <a name="file-system-case-sensitivity"></a>Учет регистра файловой системы
 
-В Windows не учитывается регистр для путей в файловой системе.  В Linux файловая система учитывает регистр.
-Это означает, что `file.txt` и `FILE.txt` ранее считались одним и тем же файлом, но теперь будут разными.
-Необходимо использовать правильный регистр для завершения `tab` в файловой системе.  Та часть синтаксиса, которая обрабатывается PowerShell, например командлеты `tab`, используется без учета регистра. 
+Регистр файловой системы Windows не учитывается, тогда как в Linux регистр учитывается.
+`file.txt` и `FILE.txt` ранее считались одним и тем же файлом, но теперь будут разными.
+Необходимо использовать правильный регистр для завершения `tab-completing` в файловой системе.
+Та часть, которая обрабатывается PowerShell, например имена командлетов `tab-completing`, параметры и значения, используется без учета регистра.
 
-## <a name="windows-powershell-alias-vs-linux-utilities"></a>Псевдонимы Windows PowerShell и служебные программы Linux
+## <a name="windows-powershell-aliases-vs-linux-utilities"></a>Псевдонимы Windows PowerShell и служебные программы Linux
 
-Существующие команды в Linux, такие как `ls`, `sort` и `sleep` имеют приоритет над одноименными псевдонимами PowerShell.  Ниже приведены распространенные псевдонимы, которые теперь удаляются, и эквивалентные им команды.  
+Имена некоторых имеющихся псевдонимов PowerShell совпадают с именами встроенных команд Linux, например `cat`,`ls`, `sort`, `sleep` и т. д. Псевдонимы PowerShell Core 6, которые противоречат встроенным командам Linux, удалены.
+Ниже приведены распространенные псевдонимы, которые были удалены, а также их эквивалентные команды:  
 
 |Удаленный псевдоним   |Эквивалентная команда   |
 |---|---|
+|`cat`    | `Get-Content` |
+|`curl`   | `Invoke-WebRequest` |
+|`diff`   | `Compare-Object` |
 |`ls`     | `dir` <br> `Get-ChildItem` |
-|`sort`   | `Sort-Object` |
+|`mv`     | `Move-Item`   |
+|`rm`     | `Remove-Item` |
 |`sleep`  | `Start-Sleep` |
+|`sort`   | `Sort-Object` |
+|`wget`   | `Invoke-WebRequest` |
 
-## <a name="persisting-home-vs-homeclouddrive"></a>Сохраняемая переменная $home и $home\clouddrive
+## <a name="persisting-home"></a>Сохранение $HOME
 
-Для пользователей, которые использовали на облачном диске сохраняемые скрипты и другие файлы, теперь между сеансами сохраняется значение домашнего каталога $HOME.
+Пользователи могут заранее сохранить сценарии и другие файлы только на своем облачном диске.
+Теперь каталог пользователя $HOME также сохраняется между сеансами.
 
 ## <a name="powershell-profile"></a>Профиль PowerShell
 
-По умолчанию профиль PowerShell не создается.  Чтобы создать профиль, создайте каталог `PowerShell` в `$HOME/.config`.  В `$HOME/.config/PowerShell` вы сможете создать свой профиль с именем `Microsoft.PowerShell_profile.ps1`.
+Профиль PowerShell не создается по умолчанию.
+Чтобы создать профиль, создайте каталог `PowerShell` в `$HOME/.config`.
+
+```azurepowershell-interactive
+mkdir (Split-Path $profile.CurrentUserAllHosts)
+```
+
+В `$HOME/.config/PowerShell` вы сможете создать свой профиль: `profile.ps1` и/или `Microsoft.PowerShell_profile.ps1`.
 
 ## <a name="whats-new-in-powershell-core-6"></a>Новые возможности в PowerShell Core 6
 
-Дополнительные сведения о новинках в PowerShell Core 6 приводятся в [документации по PowerShell](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6) и в записи блога [Getting Started with PowerShell Core](https://blogs.msdn.microsoft.com/powershell/2017/06/09/getting-started-with-powershell-core-on-windows-mac-and-linux/) (Приступая к работе с PowerShell Core).
+Дополнительные сведения о новинках в PowerShell Core 6 можно получить в [документах PowerShell](https://docs.microsoft.com/powershell/scripting/whats-new/what-s-new-in-powershell-core-60?view=powershell-6) и в записи блога [Getting Started with PowerShell Core on Windows, Mac, and Linux](https://blogs.msdn.microsoft.com/powershell/2017/06/09/getting-started-with-powershell-core-on-windows-mac-and-linux/) (приступая к работе с PowerShell Core в Windows, Mac и Linux).

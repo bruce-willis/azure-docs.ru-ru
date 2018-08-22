@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 04/05/2018
 ms.author: laevenso
 ms.custom: mvc
-ms.openlocfilehash: 7ee5198b070fee6b6ce04d9fc2639ba23ae93296
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: 7fb60f3c440b4804ad8c5e6c013ecfa454358833
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34070572"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39716123"
 ---
 # <a name="using-gpus-on-aks"></a>Использование GPU в AKS
 
@@ -270,6 +270,64 @@ Adding run metadata for 499
 ```
 $ kubectl delete jobs samples-tf-mnist-demo
 job "samples-tf-mnist-demo" deleted
+```
+
+## <a name="troubleshoot"></a>Устранение неполадок
+
+В некоторых сценариях в разделе Capacity могут не отображаться ресурсы GPU. Например: после обновления кластера до Kubernetes версии 1.10 или создания нового кластера Kubernetes версии 1.10 ожидаемый ресурс `nvidia.com/gpu` отсутствует в разделе `Capacity` при выполнении `kubectl describe node <node-name>`. 
+
+Чтобы устранить эту проблему, примените после подготовки или обновления указанный ниже набор daemonset. `nvidia.com/gpu` отобразится как планируемый ресурс. 
+
+Скопируйте манифест и сохраните его с именем **nvidia-device-plugin-ds.yaml**. Для указанного ниже тега образа `image: nvidia/k8s-device-plugin:1.10` обновите тег в соответствии с используемой версией Kubernetes. Например, для Kubernetes версии 1.11 используйте тег `1.11`.
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  labels:
+    kubernetes.io/cluster-service: "true"
+  name: nvidia-device-plugin
+  namespace: kube-system
+spec:
+  template:
+    metadata:
+      # Mark this pod as a critical add-on; when enabled, the critical add-on scheduler
+      # reserves resources for critical add-on pods so that they can be rescheduled after
+      # a failure.  This annotation works in tandem with the toleration below.
+      annotations:
+        scheduler.alpha.kubernetes.io/critical-pod: ""
+      labels:
+        name: nvidia-device-plugin-ds
+    spec:
+      tolerations:
+      # Allow this pod to be rescheduled while the node is in "critical add-ons only" mode.
+      # This, along with the annotation above marks this pod as a critical add-on.
+      - key: CriticalAddonsOnly
+        operator: Exists
+      containers:
+      - image: nvidia/k8s-device-plugin:1.10 # Update this tag to match your Kubernetes version
+        name: nvidia-device-plugin-ctr
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+        volumeMounts:
+          - name: device-plugin
+            mountPath: /var/lib/kubelet/device-plugins
+      volumes:
+        - name: device-plugin
+          hostPath:
+            path: /var/lib/kubelet/device-plugins
+      nodeSelector:
+        beta.kubernetes.io/os: linux
+        accelerator: nvidia
+```
+
+Выполните команду [kubectl apply][kubectl-apply], чтобы создать daemonset.
+
+```
+$ kubectl apply -f nvidia-device-plugin-ds.yaml
+daemonset "nvidia-device-plugin" created
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

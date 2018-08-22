@@ -1,25 +1,20 @@
 ---
-title: Советы по использованию Hadoop в HDInsight на платформе Linux в Azure | Документация Майкрософт
+title: Советы по использованию Hadoop в HDInsight под управлением Linux в Azure
 description: Советы по использованию кластеров HDInsight (Hadoop) на базе Linux в привычной среде Linux, выполняемой в облаке Azure.
 services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: jhubbard
-editor: cgronlun
-tags: azure-portal
-ms.assetid: c41c611c-5798-4c14-81cc-bed1e26b5609
 ms.service: hdinsight
+author: jasonwhowell
+ms.author: jasonh
+editor: jasonwhowell
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/27/2018
-ms.author: larryfr
-ms.openlocfilehash: 3ad7aa01200bf2bf4a63a380b2b883983c8622d6
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.date: 08/09/2018
+ms.openlocfilehash: 85741e91ab074ca45fef79e7e946a74824a1734f
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31405397"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038554"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -28,7 +23,7 @@ ms.locfileid: "31405397"
 > [!IMPORTANT]
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 При выполнении многих действий, описанных в этом документе, используются следующие служебные программы, которые может потребоваться установить в системе:
 
@@ -103,18 +98,21 @@ ms.locfileid: "31405397"
 
 ## <a name="hdfs-azure-storage-and-data-lake-store"></a>HDFS, служба хранилища Azure и Data Lake Store
 
-В большинстве дистрибутив Hadoop распределенная файловая система Hadoop реализуется на базе локального хранилища на компьютерах в кластере. Использование локального хранилища в случае облачного решения с почасовой или поминутной платой за вычислительные ресурсы может оказаться весьма затратным.
+В большинстве дистрибутивов Hadoop данные хранятся в распределенной файловой системе Hadoop, реализованной на базе локального хранилища на компьютерах в кластере. Использование локального хранилища в случае облачного решения с почасовой или поминутной платой за вычислительные ресурсы может оказаться весьма затратным.
 
-В качестве хранилища по умолчанию HDInsight использует большие двоичные объекты в службе хранилища Azure или Azure Data Lake Store. Эти службы предоставляют следующие преимущества:
+При использовании HDInsight файлы данных хранятся в облаке с использованием хранилища BLOB-объектов Azure и (при необходимости) Azure Data Lake Storage, что позволяет обеспечить масштабируемость и устойчивость. Эти службы предоставляют следующие преимущества:
 
 * недорогое долговременное хранение;
 * доступность из внешних служб, например веб-сайтов, служебных программ для отправки или скачивания файлов, пакетов SDK для различных языков и веб-браузеров.
+* емкость, рассчитанная на файлы большого размера, и большое масштабируемое хранилище.
 
-Учетная запись хранения Azure может содержать до 4,75 ТБ, хотя размер отдельных больших двоичных объектов (то есть файлов с точки зрения HDInsight) не должен превышать 195 ГБ. Хранилище Azure Data Lake Store может динамически увеличиваться и вмещать несколько триллионов файлов, размер любого из которых может быть более петабайта. Подробные сведения см. в [статье о больших двоичных объектах](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) и в описании [Data Lake Store](https://azure.microsoft.com/services/data-lake-store/).
+Подробные сведения см. в [статье о больших двоичных объектах](https://docs.microsoft.com/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs) и в описании [Data Lake Store](https://azure.microsoft.com/services/data-lake-store/).
 
 Если вы используете службу хранилища Azure или Data Lake Store, для доступа к данным не требуется никаких специальных действий в HDInsight. Например, следующая команда отображает список файлов в папке `/example/data`, даже если она хранится в службе хранилища Azure или в Data Lake Store:
 
     hdfs dfs -ls /example/data
+
+В HDInsight ресурсы хранилища данных (хранилище BLOB-объектов Azure и Azure Data Lake Storage) отделены от вычислительных ресурсов. Поэтому вы можете при необходимости создавать кластеры HDInsight для выполнения вычислений, а затем удалить кластер после завершения работы, пока файлы данных безопасно хранятся в облачном хранилище столько времени, сколько вам нужно.
 
 ### <a name="uri-and-scheme"></a>Схема и URI
 

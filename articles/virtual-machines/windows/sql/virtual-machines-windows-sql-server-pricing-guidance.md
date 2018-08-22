@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
-ms.date: 07/02/2018
+ms.date: 08/09/2018
 ms.author: jroth
-ms.openlocfilehash: e9033724f62b383ce70488b98a3a8919e3cb198a
-ms.sourcegitcommit: 756f866be058a8223332d91c86139eb7edea80cc
+ms.openlocfilehash: a748532de7e8b8e910e335b67a693c4470861bf1
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37345283"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40003565"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure
 
@@ -90,9 +90,12 @@ ms.locfileid: "37345283"
 >
 >Она не включает в себя дополнительные расходы на лицензирование SQL Server для выпусков Web, Standard и Enterprise. Чтобы получить самую точную расчетную стоимость, выберите свою операционную систему и выпуск SQL Server на странице расценок для [Windows](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) или [Linux](https://azure.microsoft.com/pricing/details/virtual-machines/linux/).
 
-## <a name="bring-your-own-license-byol"></a>Использование собственных лицензий (BYOL)
+## <a id="byol"></a> Использование собственных лицензий (BYOL)
 
 **Использование собственной лицензии SQL Server посредством License Mobility** (**BYOL**) означает использование на виртуальной машине Azure существующей корпоративной лицензии SQL Server в рамках программы Software Assurance. При использовании виртуальной машины SQL Server с BYOL взимается только плата за выполнение виртуальной машины, но не за лицензию SQL Server, так как вы уже приобрели лицензии и участвуете в программе Software Assurance в рамках программы корпоративного лицензирования.
+
+> [!IMPORTANT]
+> Для образов BYOL требуется соглашение Enterprise с подпиской Software Assurance. Сейчас эти образы не предоставляются в рамках программы Azure Cloud Solution Partner (CSP).
 
 > [!NOTE]
 > Сейчас образы BYOL доступны только для виртуальных машин Windows. Но вы можете вручную установить SQL Server на виртуальной машине только с ОС Linux. Дополнительные сведения см. в статье [Часто задаваемые вопросы об SQL Server на виртуальных машинах Linux в Azure](../../linux/sql/sql-server-linux-faq.md).

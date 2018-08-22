@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/31/2018
+ms.date: 08/08/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: b9acc829439578f2f86dfbd51164cb3eaf923c2a
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 55818bf3c6997925fbac32f913d573d630bc20f4
+ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39368872"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "40004384"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -49,6 +49,9 @@ ms.locfileid: "39368872"
 -  [Общие сведения об управлении устройствами в Azure Active Directory](../device-management-introduction.md)
     
 -  [Как планировать гибридную реализацию присоединения к Azure Active Directory](hybrid-azuread-join-plan.md)
+
+-  [Как управлять гибридным присоединением устройства к Azure AD](hybrid-azuread-join-control.md)
+  
 
 Чтобы настроить сценарий в этой статье, вам потребуется [последняя версия Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) (1.1.819.0 или более поздняя версия). 
  
@@ -101,7 +104,7 @@ ms.locfileid: "39368872"
 
     ![Параметры устройств](./media/hybrid-azuread-join-managed-domains/15.png)
 
-6. На странице **SCP** выполните приведенные ниже действия для каждого леса, который требуется с помощью Azure AD Connect подключить к точке подключения службы, после чего щелкните **Далее**. 
+6. На странице **SCP** выполните приведенные ниже действия с каждым лесом, для которого требуется с помощью Azure AD Connect настроить конечную точку подключения службы, после чего щелкните **Далее**. 
 
     ![SCP](./media/hybrid-azuread-join-managed-domains/16.png)
 
@@ -156,8 +159,6 @@ ms.locfileid: "39368872"
 
 - `https://device.login.microsoftonline.com`
 
-- `https://device.login.microsoftonline.com`
-
 - `https://autologon.microsoftazuread-sso.com`.
 
 Кроме того, необходимо включить параметр **Allow updates to status bar via script** (Разрешить обновление строки состояния с помощью сценария) в локальной зоне интрасети пользователя.
@@ -191,14 +192,13 @@ ms.locfileid: "39368872"
 
 Если возникают проблемы с настройкой гибридного присоединения к Azure AD для устройств Windows, присоединенных к домену, ознакомьтесь со следующими разделами:
 
-- [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](../device-management-troubleshoot-hybrid-join-windows-current.md)
-- [Troubleshooting hybrid Azure Active Directory joined down-level devices](../device-management-troubleshoot-hybrid-join-windows-legacy.md) (Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory)
-
+- [Устранение неполадок на устройствах под управлением Windows 10 и Windows Server 2016 с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-current.md)
+- [Troubleshooting hybrid Azure Active Directory joined down-level devices](troubleshoot-hybrid-join-windows-legacy.md) (Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory)
 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Настройка гибридного присоединения к Azure Active Directory для федеративных доменов](hybrid-azuread-join-federated-domains.md)
-> [Настройка гибридного присоединения к Azure Active Directory вручную](../device-management-hybrid-azuread-joined-devices-setup.md)
+> [Настройка гибридного присоединения к Azure Active Directory вручную](hybrid-azuread-join-manual-steps.md)
 

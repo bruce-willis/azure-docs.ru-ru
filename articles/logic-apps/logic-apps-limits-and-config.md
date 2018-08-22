@@ -7,15 +7,15 @@ author: ecfan
 ms.author: estfan
 manager: jeconnoc
 ms.topic: article
-ms.date: 07/31/2018
+ms.date: 08/10/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 644d382b87b0cc7c60cc8917edbaeff34b222718
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: b60b25e1692e065276d731d6cad8700373f1c456
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39390744"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038671"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -69,6 +69,14 @@ ms.locfileid: "39390744"
 2. В разделе **Параметры среды выполнения** в списке **Срок хранения журнала в днях** выберите **Пользовательский**. 
 
 3. Введите необходимое число дней или перетащите ползунок на это число дней.
+
+<a name="disable-delete"></a>
+
+## <a name="disabling-or-deleting-logic-apps"></a>Отключение или удаление приложений логики
+
+При отключении приложения логики новые экземпляры запуска не создаются. Работа всех выполняющихся и ожидающих выполнения запусков будет продолжаться до завершения, что может занять некоторое время.
+
+При удалении приложения логики новые экземпляры запуска не создаются. Всех выполняющиеся и ожидающие выполнения запуски будут отменены. При наличии тысяч операций запуска отмена может занять значительное время.
 
 <a name="looping-debatching-limits"></a>
 

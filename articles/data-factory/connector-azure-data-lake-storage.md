@@ -8,14 +8,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 06/26/2018
+ms.date: 08/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 110bfe4b98045149bb52af2ad6f1156ea6d4018d
-ms.sourcegitcommit: 150a40d8ba2beaf9e22b6feff414f8298a8ef868
+ms.openlocfilehash: 65495209714c37e5e166545ed7ed029e36c258c0
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37035326"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038602"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen2-preview-using-azure-data-factory-preview"></a>Копирование данных в хранилище Azure Data Lake Gen2 (предварительная версия) или из нее с помощью фабрики данных (предварительная версия)
 
@@ -30,7 +30,10 @@ ms.locfileid: "37035326"
 Этот соединитель в частности поддерживает следующее.
 
 - Копирование данных с помощью ключа учетной записи.
-- Копирование файлов "как есть" или анализ файлов, или создание файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
+- Копирование файлов "как есть", анализ файлов или создание файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
+
+>[!TIP]
+>Сейчас при включенном иерархическом пространстве имен отсутствует взаимодействие между операциями API хранилища BLOB-объектов и API ADLS 2-го поколения. Может произойти ошибка "ErrorCode=FilesystemNotFound" с сообщением такого содержания: "Указанная файловая система отсутствует". Эта ошибка возникает, если указанная принимающая файловая система была создана с помощью API хранилища BLOB-объектов, а не API ADLS 2-го поколения. Чтобы устранить эту проблему, укажите новую файловую систему с именем, которое не используется для контейнера BLOB-объектов, и ADF автоматически создаст эту файловую систему при копировании данных.
 
 ## <a name="get-started"></a>Начало работы
 

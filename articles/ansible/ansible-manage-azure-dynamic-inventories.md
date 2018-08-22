@@ -6,14 +6,14 @@ keywords: ansible, azure, разработка и операции, bash, clouds
 author: tomarcher
 manager: routlaw
 ms.author: tarcher
-ms.date: 01/14/2018
+ms.date: 08/09/2018
 ms.topic: article
-ms.openlocfilehash: 35033f7a6a0340be4dff5fa0051fd3c5ddb3c0eb
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5f4793759bfba68c8a01d682b6b13de5cb96a8f6
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449423"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "40038522"
 ---
 # <a name="use-ansible-to-manage-your-azure-dynamic-inventories"></a>Управление динамическими списками Azure с помощью Ansible
 Ansible можно использовать для извлечения информации из различных источников (включая облачные источники, такие как Azure) в *динамический список*. В этой статье вы настроите динамический список Ansible Azure с помощью [Azure Cloud Shell](./ansible-run-playbook-in-cloudshell.md), создадите в нем две виртуальные машины, назначите одной из них тег и установите на ней Nginx.
@@ -31,6 +31,9 @@ Ansible можно использовать для извлечения инфо
 1. Откройте [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
 
 1. Создайте группу ресурсов Azure для хранения виртуальных машин, используемых в этом руководстве.
+
+    > [!IMPORTANT]  
+    > Имя группы ресурсов Azure, создаваемой на этом этапе, должно содержать только строчные символы. В противном случае создание динамического списка завершится ошибкой.
 
     ```azurecli-interactive
     az group create --resource-group ansible-inventory-test-rg --location eastus
@@ -183,7 +186,7 @@ ansible-inventory-test-vm1 | SUCCESS => {
     --query [0].virtualMachine.network.publicIpAddresses[0].ipAddress -o tsv`
     ```
 
-1. Команда [nginx -v](https://nginx.org/en/docs/switches.html) обычно используется для печати версии Nginx. Тем не менее ее также можно использовать, чтобы определить, установлен ли Nginx. Введите ее при установленном подключении к виртуальной машине `ansible-inventory-test-vm1`.
+1. Подключившись к виртуальной машине `ansible-inventory-test-vm1`, выполните команду [nginx -v](https://nginx.org/en/docs/switches.html), чтобы узнать, установлен ли веб-сервер Nginx.
 
     ```azurecli-interactive
     nginx -v

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 06/08/2018
 ms.author: glenga
-ms.openlocfilehash: 5f629ea791a839e1eca25e7487ea395638d136ab
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 6afc54bfcbef4d0714e9a09d0aa27ea4829d4dd5
+ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39344636"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39715392"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -279,7 +279,7 @@ public static void EventGridTest([EventGridTrigger] JObject eventGridEvent, Trac
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-Чтобы создать подписку с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create).
+Чтобы создать подписку с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest), используйте команду [az eventgrid event-subscription create](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-create).
 
 Для команды нужен URL-адрес конечной точки, который вызывает функцию. В следующем примере показан шаблон URL-адреса:
 
@@ -340,7 +340,7 @@ http://{functionappname}.azurewebsites.net/admin/host/systemkeys/eventgridextens
 4. [Создайте запрос](#generate-a-request) и скопируйте текст запроса из приложения средства просмотра.
 5. [Вручную вставьте запрос](#manually-post-the-request) в URL-адрес localhost функции триггера службы "Сетка событий".
 
-Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update).
+Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
 
 ### <a name="create-a-viewer-web-app"></a>Создание веб-приложения средства просмотра
 
@@ -406,7 +406,7 @@ http://localhost:7071/admin/extensions/EventGridExtensionConfig?functionName={fu
 5. [Создайте подписку службы "Сетка событий"](#create-a-subscription), которая отправляет события в конечную точку ngrok.
 6. [Активируйте событие](#trigger-an-event).
 
-Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update).
+Закончив тестирование, можно использовать ту же подписку для рабочей среды, обновив конечную точку. Используйте команду Azure CLI [az eventgrid event-subscription update](https://docs.microsoft.com/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az-eventgrid-event-subscription-update).
 
 ### <a name="create-an-ngrok-endpoint"></a>Создание конечной точки ngrok
 
@@ -432,7 +432,7 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
                               0       0       0.00    0.00    0.00    0.00
 ```
 
-Для подписки службы "Сетка событий" используется URL-адрес https://{поддомен}.ngrok.io.
+Для подписки службы "Сетка событий" используется URL-адрес `https://{subdomain}.ngrok.io`.
 
 ### <a name="run-the-event-grid-trigger-function"></a>Запуск функций триггера службы "Сетка событий"
 
@@ -440,12 +440,16 @@ Connections                   ttl     opn     rt1     rt5     p50     p90
 
 ### <a name="create-a-subscription"></a>Создание подписки
 
-Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ей конечную точку ngrok, используя следующий шаблон:
+Создайте подписку службы "Сетка событий" типа, который необходимо протестировать, и присвойте ее конечной точке ngrok.
 
+Для Функций версии 1.x используйте этот шаблон конечной точки:
 ```
 https://{subdomain}.ngrok.io/admin/extensions/EventGridExtensionConfig?functionName={functionname}
 ``` 
-
+А для Функций версии 2.x используйте этот шаблон конечной точки:
+```
+https://{subdomain}.ngrok.io/runtime/webhooks/EventGridExtensionConfig?functionName={functionName}
+``` 
 Для параметра `functionName` нужно указать имя, заданное в атрибуте `FunctionName`.
 
 Ниже приведен пример с использованием Azure CLI:
