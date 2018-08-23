@@ -17,12 +17,12 @@ ms.date: 07/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
 ms.custom: seohack1
-ms.openlocfilehash: f0a6e164ed6b2269ec223a18f37d3475316d3e77
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 38d024de0fd2490d33f7c06498d3ff8d0d06e503
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39629078"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143072"
 ---
 # <a name="setting-up-on-premises-conditional-access-by-using-azure-active-directory-device-registration"></a>Настройка локального условного доступа с помощью регистрации устройств в Azure Active Directory
 Когда требуется, чтобы пользователи присоединяли свои личные устройства к рабочей области в службе регистрации устройств Azure Active Directory (Azure AD), эти устройства можно помечать как известные организации. Ниже приведено пошаговое руководство по включению условного доступа к локальным приложениям с помощью служб федерации Active Directory (AD FS) в Windows Server 2012 R2.
@@ -48,7 +48,7 @@ ms.locfileid: "39629078"
 * Лицензия на Azure Active Directory Premium.
 * Службы федерации Windows Server 2012 R2, настроенные для единого входа в Azure AD.
 * Прокси-служба веб-приложения Windows Server 2012 R2. 
-* Microsoft Azure Active Directory Connect [(Скачать Azure AD Connect)](http://www.microsoft.com/en-us/download/details.aspx?id=47594).
+* Microsoft Azure Active Directory Connect [(Скачать Azure AD Connect)](http://www.microsoft.com/download/details.aspx?id=47594).
 * Проверенный домен.
 
 ## <a name="known-issues-in-this-release"></a>Известные проблемы в этом выпуске

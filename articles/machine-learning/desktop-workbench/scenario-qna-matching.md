@@ -3,25 +3,21 @@ title: Сопоставление вопросов и ответов с помо
 description: Как использовать различные действующие методы машинного обучения для сопоставления открытых запросов с уже существующими парами часто задаваемых вопросов и ответов.
 services: machine-learning
 documentationcenter: ''
-author: mezmicrosoft
-editor: mezmicrosoft
-ms.assetid: ''
-ms.reviewer: garyericson, jasonwhowell, mldocs
+author: rastala
+ms.author: roastala
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
-ms.author: mez
-manager: tihazen
-ms.openlocfilehash: 3695657d819f52ef04468a0f1a44828403c65373
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 33d95e0c17e8b9b18313cb0854532337ec76cfd1
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34835106"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142740"
 ---
 #  <a name="q--a-matching-using-azure-machine-learning-workbench"></a>Сопоставление вопросов и ответов с помощью Azure Machine Learning Workbench
 На открытые вопросы часто трудно найти ответ, и для этого требуются ручные действия профильных специалистов. Чтобы сократить нагрузку на внутренних специалистов, компании часто создают списки часто задаваемых вопросов (FAQ) для помощи пользователям. В этом примере показаны различные действующие методы машинного обучения, которые сопоставляют открытые запросы и уже существующие пары часто задаваемых вопросов и ответов на них. В этом примере показан несложный процесс разработки, позволяющий создать такое решение с использованием Azure Machine Learning Workbench. 
@@ -41,7 +37,7 @@ ms.locfileid: "34835106"
 4. Обучение моделей классификации текста и оценка их эффективности.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Предварительные требования для выполнения этого сценария:
 

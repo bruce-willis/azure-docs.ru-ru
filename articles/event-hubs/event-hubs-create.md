@@ -1,27 +1,27 @@
 ---
 title: Создание концентратора событий Azure | Документация Майкрософт
-description: Узнайте, как создать пространство имен концентраторов событий Azure и концентратор событий с помощью портала Azure.
+description: Узнайте, как создать пространство имен Центров событий Azure и концентратор событий с помощью портала Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
-ms.date: 05/29/2017
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: fb2020f7bfc8521e141adb4eefbc227e8123a269
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 5b468e1758d752cd3001c85b328d064369429499
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40002626"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42142718"
 ---
-# <a name="create-an-event-hubs-namespace-and-an-event-hub-using-the-azure-portal"></a>Создание пространства имен концентраторов событий и концентратора событий с помощью портала Azure
+# <a name="create-an-event-hubs-namespace-and-an-event-hub-using-the-azure-portal"></a>Создание пространства имен Центров событий и концентратора событий с помощью портала Azure
 
-## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен концентраторов событий
+## <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
 1. Войдите на [портал Azure][Azure portal] и щелкните **Создать ресурс** в левой верхней части экрана.
-2. Последовательно выберите **Интернет вещей** и **Концентраторы событий**.
+2. Последовательно выберите **Интернет вещей** и **Центры событий**.
    
     ![](./media/event-hubs-create/create-event-hub9.png)
 
@@ -45,11 +45,11 @@ ms.locfileid: "40002626"
 
 ## <a name="create-an-event-hub"></a>Создание концентратора событий
 
-1. В списке пространств имен концентраторов событий щелкните созданное пространство имен.      
+1. В списке пространств имен Центров событий щелкните созданное пространство имен.      
    
     ![](./media/event-hubs-create/create-event-hub2.png) 
 
-2. В колонке пространства имен щелкните **Концентраторы событий**.
+2. В колонке пространства имен щелкните **Центры событий**.
    
     ![](./media/event-hubs-create/create-event-hub3.png)
 
@@ -62,10 +62,9 @@ ms.locfileid: "40002626"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о концентраторах событий см. в следующих статьях:
+Дополнительные сведения о Центрах событий см. в следующих статьях:
 
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
-* [Общие сведения об API концентраторов событий](event-hubs-api-overview.md)
+* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения об API Центров событий](event-hubs-api-overview.md)
 
 [Azure portal]: https://portal.azure.com/

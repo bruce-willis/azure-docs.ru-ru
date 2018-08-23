@@ -9,12 +9,12 @@ ms.custom: DBs & servers
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: carlrab
-ms.openlocfilehash: fae9f0aaa001c233a6687dda5cd5b7c0128ff8b0
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: b8c1a0a0c4f2b3b33338f1f76245fd4bcb66ad61
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038391"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146820"
 ---
 # <a name="resource-limits-for-single-databases-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для одиночных баз данных в модели приобретения на основе DTU 
 
@@ -42,7 +42,7 @@ ms.locfileid: "40038391"
 
 ### <a name="standard-service-tier"></a>Уровень службы "Стандартный"
 | **Уровень производительности** | **S0** | **S1** | **S2** | **S3** |
-| :--- |---:| ---:|---:|---:|---:|
+| :--- |---:| ---:|---:|---:|
 | Максимальное количество DTU | 10 | 20 | 50 | 100 |
 | Включенный объем хранилища (ГБ) | 250 | 250 | 250 | 250 |
 | Варианты максимального объема хранилища (ГБ) | 250 | 250 | 250 | 250, 500, 750, 1024 |
@@ -53,7 +53,7 @@ ms.locfileid: "40038391"
 
 ### <a name="standard-service-tier-continued"></a>Уровень служб "Стандартный" (продолжение)
 | **Уровень производительности** | **S4** | **S6** | **S7** | **S9** | **S12** |
-| :--- |---:| ---:|---:|---:|---:|---:|
+| :--- |---:| ---:|---:|---:|---:|
 | Максимальное количество DTU | 200 | 400 | 800 | 1600 | 3000 |
 | Включенный объем хранилища (ГБ) | 250 | 250 | 250 | 250 | 250 |
 | Варианты максимального объема хранилища (ГБ) | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 | 250, 500, 750, 1024 |
@@ -124,6 +124,7 @@ ms.locfileid: "40038391"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 - Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-service-tiers.md#what-are-database-transaction-units-dtus).
 - Сведения об ограничениях на размер базы данных tempdb см. здесь: https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database.

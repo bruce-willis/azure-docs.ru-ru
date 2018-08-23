@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 11/14/2017
 ms.author: alkohli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6685c5ab7768176a0c8e7084c8512d5345732d9a
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 2126ff7ffd503e1d7b30997f3f32f30429cffefb
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38477930"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42142978"
 ---
 # <a name="deploy-storsimple-virtual-array---prepare-the-azure-portal"></a>Развертывание виртуального массива StorSimple. Подготовка портала Azure
 
@@ -55,7 +55,7 @@ ms.locfileid: "38477930"
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве файлового сервера](http://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayFileServerConfigurationChecklist.pdf).
 * Скачайте [контрольный список для настройки виртуального массива StorSimple в качестве сервера iSCSI](http://download.microsoft.com/download/E/E/6/EE690BB0-B442-4B84-8165-4731EE727ACF/MicrosoftAzureStorSimpleVirtualArrayiSCSIServerConfigurationChecklist.pdf).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Ниже приведены предварительные требования для настройки службы диспетчера устройств StorSimple, виртуального массива StorSimple и сети центра обработки данных.
 
@@ -144,7 +144,7 @@ ms.locfileid: "38477930"
 
 Это необязательный шаг. Выполните его, только если вы автоматически не создавали учетную запись хранения для службы.
 
-Если требуется создать учетную запись хранения Azure в другом регионе, то см. пошаговые инструкции в разделе [Создайте учетную запись хранения](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+Если требуется создать учетную запись хранения Azure в другом регионе, то см. пошаговые инструкции в разделе [Создайте учетную запись хранения](../storage/common/storage-quickstart-create-account.md).
 
 Чтобы добавить имеющуюся учетную запись хранения Microsoft Azure, на [портале Azure](https://ms.portal.azure.com/) на странице службы диспетчера устройств StorSimple выполните следующие действия.
 

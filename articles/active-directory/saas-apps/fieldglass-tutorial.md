@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 446eac2bf6eed10f919d6c64de1d7b9dbba1f35d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a14aeb55d9e5756660708e9e63a867a66a54a7b6
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39420365"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42443958"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fieldglass"></a>Руководство по интеграции Azure Active Directory с Fieldglass
 
@@ -121,7 +121,7 @@ ms.locfileid: "39420365"
     | `https://<company name>.fgvms.com/<company name>`|
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Fieldglass](http://www.fieldglass.com/solutions/support).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Fieldglass](https://www.fieldglass.com/customer-support).
  
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -135,7 +135,7 @@ ms.locfileid: "39420365"
 
     ![Настройка единого входа](./media/fieldglass-tutorial/tutorial_fieldglass_configure.png) 
 
-1. Для настройки единого входа на стороне **Fieldglass** необходимо отправить загруженный **сертификат (Base64)**, а также **URL-адрес выхода и идентификатор сущности SAML** в [службу поддержки Fieldglass](http://www.fieldglass.com/solutions/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Для настройки единого входа на стороне **Fieldglass** необходимо отправить загруженный **сертификат (Base64)**, а также **URL-адрес выхода и идентификатор сущности SAML** в [службу поддержки Fieldglass](https://www.fieldglass.com/customer-support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
 > Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
@@ -173,7 +173,7 @@ ms.locfileid: "39420365"
  
 ### <a name="creating-a-fieldglass-test-user"></a>Создание тестового пользователя Fieldglass
 
-Цель этого раздела — создать пользователя с именем Britta Simon в FieldGlass. Обратитесь в [службу поддержки FieldGlass](http://www.fieldglass.com/solutions/support), чтобы добавить пользователей в учетную запись FieldGlass.
+Цель этого раздела — создать пользователя с именем Britta Simon в FieldGlass. Обратитесь в [службу поддержки FieldGlass](https://www.fieldglass.com/customer-support), чтобы добавить пользователей в учетную запись FieldGlass.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

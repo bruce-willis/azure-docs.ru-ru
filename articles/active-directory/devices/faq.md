@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: fd2505d6262948e193531d91222cdec319f33100
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 72035c2f13f5a2a749feabbb26db5500f6c3fc0a
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39597159"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143304"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -99,12 +99,12 @@ ms.locfileid: "39597159"
 
 **Вопрос. Пользователи не могут выполнять поиск принтеров с устройств, присоединенных к Azure AD. Как включить печать с таких устройств?**
 
-**Ответ**. Сведения о развертывании принтеров для устройств, присоединенных к Azure AD, см. в статье [Гибридная облачная печать](https://docs.microsoft.com/en-us/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy). Для развертывания гибридной облачной печати вам потребуется локальный сервер Windows Server. В настоящее время облачная служба печати недоступна. 
+**Ответ**. Сведения о развертывании принтеров для устройств, присоединенных к Azure AD, см. в статье [Гибридная облачная печать](https://docs.microsoft.com/windows-server/administration/hybrid-cloud-print/hybrid-cloud-print-deploy). Для развертывания гибридной облачной печати вам потребуется локальный сервер Windows Server. В настоящее время облачная служба печати недоступна. 
 
 ---
 
 **Вопрос. Как подключиться к удаленному устройству Azure AD? **
-**Ответ. Подробные сведения **см. в статьеhttps://docs.microsoft.com/en-us/windows/client-management/connect-to-remote-aadj-pc.
+**Ответ. Подробные сведения **см. в статьеhttps://docs.microsoft.com/windows/client-management/connect-to-remote-aadj-pc.
 
 ---
 

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5dc1a4bc1de3560338e1734e73ad04910535be5b
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 751175e46e13d6046cd6f459e1405a876fdce39a
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36751308"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143054"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа, например сообщение об ошибке для пользователя или сложный объект, предназначенный для использования другим рабочим процессом. Windows PowerShell предоставляет [несколько потоков](http://blogs.technet.com/heyscriptingguy/archive/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell.aspx) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure по-разному работает с каждым из этих потоков, и необходимо следовать рекомендациям по их использованию при создании Runbook.
@@ -175,7 +175,7 @@ Windows PowerShell использует [привилегированные пе
 На портале Azure на вкладке "Задания" Runbook можно просмотреть подробную информацию о задании Runbook. Помимо общей информации о задании, сводка задания содержит входные параметры и [поток вывода](#output-stream), а также все возникшие исключения. Кроме [подробного потока](#verbose-stream) и [записей о ходе выполнения](#progress-records), журнал содержит сообщения из [потока вывода](#output-stream) и [потоков предупреждений и ошибок](#warning-and-error-streams), если для runbook настроено добавление в журнал подробных сообщений и записей о ходе выполнения.
 
 ### <a name="windows-powershell"></a>Windows PowerShell
-В Windows PowerShell выходные данные и сообщения из Runbook можно извлечь с помощью командлета [Get AzureAutomationJobOutput](https://msdn.microsoft.com/library/mt603476.aspx) . Для этого командлета требуется идентификатор задания, также у него есть параметр Stream, в котором указывается возвращаемый поток. Можно указать значение **Any** для возврата всех потоков для задания.
+В Windows PowerShell выходные данные и сообщения из Runbook можно извлечь с помощью командлета [Get AzureAutomationJobOutput](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationjoboutput) . Для этого командлета требуется идентификатор задания, также у него есть параметр Stream, в котором указывается возвращаемый поток. Можно указать значение **Any** для возврата всех потоков для задания.
 
 В следующем примере запускается пример Runbook и ожидается его завершение. После завершения его поток вывода собирается из задания.
 

@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: hero-article
 ms.date: 07/24/2018
-ms.openlocfilehash: e6d84229af459d18df8d9dfd7f048f6075ea47f3
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: fd7f9095d7ac00de3ad031f08db49785863176a1
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39594602"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41918155"
 ---
 # <a name="create-hadoop-cluster-with-secure-transfer-storage-accounts-in-azure-hdinsight"></a>Создание кластера Hadoop с помощью учетных записей хранения с безопасной передачей в Azure HDInsight
 
@@ -24,7 +24,7 @@ ms.locfileid: "39594602"
 Для работы с этим руководством вам потребуется:
 
 * **Подписка Azure**: чтобы создать бесплатную пробную учетную запись (на один месяц), перейдите по адресу [azure.microsoft.com/free](https://azure.microsoft.com/free).
-* **Учетная запись хранения Azure с включенной безопасной передачей**. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md).
+* **Учетная запись хранения Azure с включенной безопасной передачей**. Инструкции см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md) и [Требование безопасной передачи](../storage/common/storage-require-secure-transfer.md).
 * **Контейнер больших двоичных объектов в учетной записи хранения**. 
 
 ## <a name="create-cluster"></a>Создание кластера

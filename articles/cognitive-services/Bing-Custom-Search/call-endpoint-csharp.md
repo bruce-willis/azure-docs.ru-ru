@@ -9,18 +9,18 @@ ms.component: bing-custom-search
 ms.topic: article
 ms.date: 05/07/2018
 ms.author: v-brapel
-ms.openlocfilehash: be4cc79d16b9a22124f16878b11ca04a916f98ae
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 87970e1c5e8487f9afca2acc680bdfeb610dc89f
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380996"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "41944436"
 ---
 # <a name="call-bing-custom-search-endpoint-c"></a>Конечная точка службы "Пользовательский поиск Bing" (C#)
 
 В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра пользовательского поиска с помощью C# для вызова конечной точки службы "Пользовательский поиск Bing". 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 -  Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
 -  Установлена среда [.NET Core](https://www.microsoft.com/net/download/core).
@@ -119,15 +119,17 @@ ms.locfileid: "35380996"
     }
     ```
 6. Запустите сборку приложения с помощью следующей команды. Запишите путь к DLL, на который ссылаются выходные данные команды.
+
     <pre>
     dotnet build 
     </pre>
 7. Запустите приложения с помощью следующей команды, заменив **PATH TO OUTPUT** значением пути, записанным на шаге сборки.
+
     <pre>    
     dotnet **PATH TO OUTPUT**
     </pre>
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Настройка размещенного на серверах пользовательского интерфейса](./hosted-ui.md)
-- [Использование маркеров оформления для выделения текста](./hit-highlighting.md)
+- [Настройка размещенного пользовательского интерфейса](./hosted-ui.md)
+- [Use decoration markers to highlight text](./hit-highlighting.md) (Использование маркеров оформления для выделения текста)
 - [Разбивка веб-страниц на страницы](./page-webpages.md)

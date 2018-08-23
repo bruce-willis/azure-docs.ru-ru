@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: eb46347e82063d2e990b319ab108cf257c7e6b88
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 4c7dddcb5e39eb1f72fb59af753ab167bc44d3e3
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440632"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246764"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "39440632"
 * Создайте конвейер с действием Spark, который ссылается на созданную связанную службу HDInsight. Конфигурация действия выполняется на основе набора данных, созданного на предыдущем шаге в качестве выходного набора данных. На основе этого набора настраивается расписание (ежечасно, ежедневно). Исходя из сказанного выше, вы должны определить выходной набор данных, даже если действие не выдает выходные данные.
 
 ### <a name="prerequisites"></a>Предварительные требования
-1. Создайте учетную запись хранения общего назначения, следуя указаниям в [этом разделе](../../storage/common/storage-create-storage-account.md#create-a-storage-account).
+1. Создайте учетную запись хранения общего назначения, следуя указаниям в [этом разделе](../../storage/common/storage-quickstart-create-account.md).
 
 1. Создайте кластер Spark в HDInsight, следуя инструкциям в [этом руководстве](../../hdinsight/spark/apache-spark-jupyter-spark-sql.md). Свяжите учетную запись хранения, созданную на шаге 1, с этим кластером.
 

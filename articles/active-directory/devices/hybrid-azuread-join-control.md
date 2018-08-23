@@ -16,14 +16,14 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 9ffc84009adfca60e9ae6b188b65b15e874e7d9c
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: d49b5404f1a2b4ac7fa4cc170ccc010a28bf98a2
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622176"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42142962"
 ---
-# <a name="how-to-control-the-hybrid-azure-ad-join-of-your-devices"></a>Как управлять гибридным присоединением устройств к Azure AD
+# <a name="how-to-control-the-hybrid-azure-ad-join-of-your-devices"></a>Как управлять гибридным присоединением устройства к Azure AD
 
 Гибридное присоединение к Azure AD — это процесс автоматической регистрации ваших локальных присоединенных к домену устройств в Azure AD. Бывают случаи, когда не нужно, чтобы все ваши устройства регистрировались автоматически. Например, это актуально во время начального развертывания, когда необходимо убедиться, что все работает правильно.
 
@@ -116,7 +116,7 @@ ms.locfileid: "39622176"
 
 ## <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня
 
-Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл), опубликованный на странице [Microsoft Workplace Join for non-Windows 10 computers](https://www.microsoft.com/en-us/download/details.aspx?id=53554) (Microsoft Workplace Join для компьютеров под управлением ОС, отличной от Windows 10).
+Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл), опубликованный на странице [Microsoft Workplace Join for non-Windows 10 computers](https://www.microsoft.com/download/details.aspx?id=53554) (Microsoft Workplace Join для компьютеров под управлением ОС, отличной от Windows 10).
 
 Для развертывания пакета используйте систему распространения программного обеспечения, например System Center Configuration Manager. Этот пакет поддерживает параметры стандартной автоматической установки с использованием параметра quiet. В [System Center Configuration Manager](https://www.microsoft.com/cloud-platform/system-center-configuration-manager) доступны дополнительные преимущества предыдущих версий, такие как возможность отслеживать ход выполнения регистрации.
 

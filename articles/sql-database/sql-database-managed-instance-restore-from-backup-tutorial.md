@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 07/06/2018
 ms.author: bonova
 manager: craigg
-ms.openlocfilehash: 1d8db471a3f8ebf9dbcce77b101a2688f2570fd6
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 5dd8b1f662f1ae6d6502743c6d976db4b58e962f
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37949890"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918951"
 ---
 # <a name="restore-a-database-backup-to-an-azure-sql-database-managed-instance"></a>Восстановление резервной копии базы данных в Управляемый экземпляр Базы данных SQL Azure
 
@@ -27,9 +27,9 @@ ms.locfileid: "37949890"
 > * Создание учетной записи хранения Azure и передача файла резервной копии
 > * Восстановление базы данных Wide World Importers из файла резервной копии
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
-В этом руководстве в качестве начальной точки используются ресурсы, созданные в руководстве по [созданию Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-create-tutorial-portal.md).
+В этом руководстве в качестве начальной точки используются ресурсы, созданные в руководстве по [созданию Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 
 ## <a name="download-the-wide-world-importers---standard-backup-file"></a>Загрузка Wide World Importers — стандартного файла резервной копии
 

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/17/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 75ff9ec8cdf4cd2747ab00f2c23de509607a5429
-ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
+ms.openlocfilehash: a0f6ca72e6d3e487e85d16a6860e0d84003a9aa8
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/13/2018
-ms.locfileid: "40100813"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40260596"
 ---
 1. Нажмите кнопку **Создать** в верхнем левом углу портала Azure, а затем выберите **Вычисления** > **Приложение-функция**. 
 
@@ -31,7 +31,7 @@ ms.locfileid: "40100813"
     | **ОС** | Windows | Бессерверное размещение в данный момент доступно только при выполнении в Windows. Размещение в среде Linux описывается в разделе [Создание первой функции, выполняемой в Linux, с помощью Azure CLI (предварительная версия)](../articles/azure-functions/functions-create-first-azure-function-azure-cli-linux.md). |
     | **[План размещения](../articles/azure-functions/functions-scale.md)** | План потребления | План размещения, который определяет выделение ресурсов в приложении-функции. В **плане потребления** по умолчанию ресурсы добавляются динамически в соответствии с потребностями функций. При таком [бессерверном](https://azure.microsoft.com/overview/serverless-computing/) размещении вы платите только за время выполнения функций. Когда выполняется план службы приложений необходимо управлять [масштабированием приложения-функции](../articles/azure-functions/functions-scale.md).  |
     | **Местоположение.** | Западная Европа | Выберите ближайший [регион](https://azure.microsoft.com/regions/) или регион рядом с другими службами, к которому получают доступ ваши функции. |
-    | **[Учетная запись хранения](../articles/storage/common/storage-create-storage-account.md#create-a-storage-account)** |  Глобально уникальное имя |  Имя учетной записи хранения, используемой вашим приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../articles/azure-functions/functions-scale.md#storage-account-requirements). |
+    | **[Учетная запись хранения](../articles/storage/common/storage-quickstart-create-account.md)** |  Глобально уникальное имя |  Имя учетной записи хранения, используемой вашим приложением-функцией. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв. Можно также использовать существующую учетную запись при условии, что она соответствует [требованиям учетной записи хранилища](../articles/azure-functions/functions-scale.md#storage-account-requirements). |
 
 3. Выберите **Создать**, чтобы подготовить и развернуть приложение-функцию.
 

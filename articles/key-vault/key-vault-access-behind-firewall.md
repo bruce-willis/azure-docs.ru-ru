@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/07/2017
 ms.author: ambapat
-ms.openlocfilehash: d017c0d9940288cb5eeaa45694b324f93b9bb144
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.openlocfilehash: 6bb757fe072f0fc3ecbda5ae125aa2bf928479fb
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34736254"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41920596"
 ---
 # <a name="access-azure-key-vault-behind-a-firewall"></a>Доступ к хранилищу ключей Azure из-за брандмауэра
 ### <a name="q-my-key-vault-client-application-needs-to-be-behind-a-firewall-what-ports-hosts-or-ip-addresses-should-i-open-to-enable-access-to-a-key-vault"></a>Вопрос. Мое клиентское приложение хранилища ключей должно находиться за брандмауэром. Какие порты, узлы или IP-адреса следует открыть для получения доступа к хранилищу ключей?
@@ -43,7 +43,7 @@ ms.locfileid: "34736254"
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись с помощью Azure AD (например, user@contoso.com) |**Глобально:**<br> login.microsoftonline.com:443<br><br> **Azure для Китая:**<br> login.chinacloudapi.cn:443<br><br>**Azure для правительства США:**<br> login.microsoftonline.us:443<br><br>**Azure для Германии:**<br> login.microsoftonline.de:443 |
 | Пользователь или субъект-служба, использующие рабочую или учебную учетную запись, а также службы федерации Active Directory (AD FS) или другую федеративную конечную точку (например, user@contoso.com) |Все конечные точки для рабочей или учебной учетной записи, а также службы федерации Active Directory или другие федеративные конечные точки |
 
-Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](/documentation/articles/active-directory-authentication-scenarios/), [Интеграция приложений с Azure Active Directory](/documentation/articles/active-directory-integrating-applications/) и [Руководство разработчика по Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx).  
+Есть и другие возможные сложные сценарии. Дополнительные сведения см. в статьях [Сценарии аутентификации в Azure Active Directory](../active-directory/develop/authentication-scenarios.md), [Интеграция приложений с Azure Active Directory](../active-directory/develop/active-directory-how-to-integrate.md) и [Руководство разработчика по Azure Active Directory](https://msdn.microsoft.com/library/azure/dn151124.aspx).  
 
 ## <a name="key-vault-management"></a>Управление хранилищем ключей
 Для управления хранилищем ключей (операции CRUD и настройка политики доступа) клиентскому приложению хранилища ключей требуется доступ к конечной точке Azure Resource Manager.  

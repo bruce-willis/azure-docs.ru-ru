@@ -9,12 +9,12 @@ ms.author: xshi
 ms.date: 06/27/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: a895f21bc061763b1d5d45b2bedb44fc932190dc
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 212de83a88f5a8114454761121ee3f22830d2448
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345229"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42142926"
 ---
 # <a name="use-visual-studio-code-to-develop-and-debug-c-modules-for-azure-iot-edge"></a>Использование Visual Studio Code для разработки и отладки модулей C# для Azure IoT Edge
 
@@ -72,7 +72,7 @@ VS Code принимает предоставленные сведения, со
 
 * В файле **deployment.template.json** указан новый модуль, а также пример модуля **tempSensor**, который имитирует данные для тестирования. Дополнительные сведения о том, как работают манифесты развертывания, см. в разделе [Сведения об использовании манифестов развертывания для развертывания модулей и установки маршрутов](module-composition.md). 
 
-## <a name="devlop-your-module"></a>Разработка модуля
+## <a name="develop-your-module"></a>Разработка модуля
 
 Код Функции Azure по умолчанию, который поставляется с решением, находится в **modules** > **\<имя вашего модуля\>** > **Program.cs**. Модуль и файл deployment.template.json настраиваются так, чтобы можно было собрать решение, передать его в реестр контейнеров и развернуть на устройстве, чтобы начать тестирование, не меняя код. Модуль просто принимает входные данные из источника (в данном случае модуль tempSensor имитирует данные) и передает их в Центр Интернета вещей. 
 

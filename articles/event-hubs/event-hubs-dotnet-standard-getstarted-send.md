@@ -1,6 +1,6 @@
 ---
-title: Отправка событий в концентраторы событий Azure с помощью .NET Standard | Документация Майкрософт
-description: Узнайте, как начать работу с отправкой событий в концентраторы событий на платформе .NET Standard.
+title: Отправка событий в Центры событий Azure с помощью .NET Standard | Документация Майкрософт
+description: Узнайте, как начать работу с отправкой событий в Центры событий на платформе .NET Standard.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -12,16 +12,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/01/2018
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: 0f18ed663eff9199aa32597566db905cef912a71
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 4cd2fdb2bd8b6a15bc8dc3e4594971a61e1889e7
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40004717"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41920903"
 ---
-# <a name="get-started-sending-messages-to-azure-event-hubs-in-net-standard"></a>Приступая к отправке событий в концентраторы событий Azure на платформе .NET Standard
+# <a name="get-started-sending-messages-to-azure-event-hubs-in-net-standard"></a>Приступая к отправке событий в Центры событий Azure на платформе .NET Standard
 
 > [!NOTE]
 > Этот пример можно найти на сайте [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender).
@@ -37,7 +37,7 @@ ms.locfileid: "40004717"
 
 В этом руководстве для отправки сообщений в концентратор событий мы напишем консольное приложение C# в Visual Studio.
 
-## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен концентраторов событий и концентратора событий
+## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
 
 Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-quickstart-portal.md), а затем вернитесь к этому руководству.
 
@@ -47,7 +47,7 @@ ms.locfileid: "40004717"
 
 ![Новый проект][1]
 
-## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для концентраторов событий
+## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
 
 Добавьте пакет NuGet библиотеки .NET Standard [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) в проект, сделав следующее: 
 
@@ -64,7 +64,7 @@ ms.locfileid: "40004717"
     using System.Threading.Tasks;
     ```
 
-2. Добавьте в класс `Program` константы для строки подключения концентраторов событий и пути сущности (имя отдельного концентратора событий). Замените заполнители в скобках соответствующими значениями, которые были получены при создании концентратора событий. Убедитесь, что `{Event Hubs connection string}` — это строка подключения на уровне пространства имен, а не концентратора событий. 
+2. Добавьте в класс `Program` константы для строки подключения Центров событий и пути сущности (имя отдельного концентратора событий). Замените заполнители в скобках соответствующими значениями, которые были получены при создании концентратора событий. Убедитесь, что `{Event Hubs connection string}` — это строка подключения на уровне пространства имен, а не концентратора событий. 
 
     ```csharp
     private static EventHubClient eventHubClient;
@@ -199,13 +199,12 @@ ms.locfileid: "40004717"
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о концентраторах событий см. по следующим ссылкам:
+Дополнительные сведения о Центрах событий см. по следующим ссылкам:
 
 * 
   [Получение событий из Центров событий](event-hubs-dotnet-standard-getstarted-receive-eph.md)
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 
 [1]: ./media/event-hubs-dotnet-standard-getstarted-send/netcoresnd.png

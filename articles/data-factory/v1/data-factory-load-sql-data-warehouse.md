@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 6a7f31cf541bc1cccd3a5d565a0d3a223ccd3aee
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 5fb4034d49982d600fe5b0de17d0b198e3ee653e
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045173"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246724"
 ---
 # <a name="load-1-tb-into-azure-sql-data-warehouse-under-15-minutes-with-data-factory"></a>Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных менее чем за 15 минут
 > [!NOTE]
@@ -46,8 +46,8 @@ ms.locfileid: "37045173"
 >
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
-* Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-create-storage-account.md#create-a-storage-account).
+## <a name="prerequisites"></a>Предварительные требования
+* Хранилище BLOB-объектов Azure: в этом эксперименте хранилище BLOB-объектов Azure (GRS) используется для хранения тестового набора данных TPC-H.  Если у вас нет учетной записи хранения Azure, узнайте, как [создать учетную запись хранения](../../storage/common/storage-quickstart-create-account.md).
 * Данные [TPC-H](http://www.tpc.org/tpch/): в качестве тестового набора данных мы будем использовать TPC-H.  Для этого необходимо использовать `dbgen` из набора средств TPC-H. Это поможет создать набор данных.  Можно скачать исходный код `dbgen` из [инструментов TPC](http://www.tpc.org/tpc_documents_current_versions/current_specifications.asp) и скомпилировать его или скачать скомпилированный двоичный файл с сайта [GitHub](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/TPCHTools).  Выполните dbgen.exe с приведенными ниже командами, чтобы создать неструктурированный файл размером в 1 ТБ для таблицы `lineitem`, распределенной на 10 файлов.
 
   * `Dbgen -s 1000 -S **1** -C 10 -T L -v`
@@ -143,7 +143,7 @@ ms.locfileid: "37045173"
 
 1. В качестве **имени задачи** введите **CopyFromBlobToAzureSqlDataWarehouse**.
 2. Выберите параметр **Run once now** (Запустить сейчас один раз).   
-3. Нажмите кнопку **Далее**.  
+3. Щелкните **Далее**.  
 
     ![Мастер копирования — страница "Свойства"](media/data-factory-load-sql-data-warehouse/copy-wizard-properties-page.png)
 
@@ -185,7 +185,7 @@ ms.locfileid: "37045173"
 
 ## <a name="step-4-performance-settings"></a>Шаг 4. Настройки производительности
 
-Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Нажмите кнопку **Далее**.
+Флажок **Allow polybase** (Разрешить использование PolyBase) установлен по умолчанию.  Щелкните **Далее**.
 
 ![Мастер копирования — страница сопоставления столбцов](media/data-factory-load-sql-data-warehouse/performance-settings-page.png)
 

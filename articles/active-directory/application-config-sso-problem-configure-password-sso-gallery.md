@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.openlocfilehash: 01b77fc2521c221594a38b3731694115adf82e2c
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600811"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617331"
 ---
 # <a name="problem-configuring-password-single-sign-on-for-an-azure-ad-gallery-application"></a>Проблема при настройке единого входа по паролю для приложения из коллекции Azure AD
 

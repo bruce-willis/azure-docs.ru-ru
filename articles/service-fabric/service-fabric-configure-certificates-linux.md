@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 06/26/2018
 ms.author: v-jamebr
-ms.openlocfilehash: 2d6d387ed12e7261d09669686c0710786a4302dd
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 97f33a1c0c42b534dafd1e4ed378b655b339395a
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37025559"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143193"
 ---
 # <a name="certificates-and-security-on-linux-clusters"></a>Сертификаты и безопасность в кластерах Linux
 
@@ -31,7 +31,7 @@ Service Fabric обычно ожидает, что сертификаты X.509 
 
 Для кластеров Linux платформа Service Fabric ожидает, что сертификаты должны быть либо PEM-файлом, содержащим сертификат и закрытый ключ, либо CRT-файлом, который содержит сертификат, и KEY-файлом, который содержит закрытый ключ. Все файлы должны быть в формате PEM. 
 
-Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-via-arm.md#create-a-service-fabric-cluster-resource-manager-template) или команд [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/?view=latest#service_fabric), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
+Если вы устанавливаете сертификат из Azure Key Vault с помощью [шаблона Resource Manager](./service-fabric-cluster-creation-create-template.md) или команд [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.servicefabric/?view=latest#service_fabric), то сертификат установится в правильном формате в каталог */var/lib/sfcerts* на каждом узле. Если вы устанавливаете сертификат другим способом, то вам следует убедиться в его правильной установке на узлах кластера.
 
 ## <a name="certificates-referenced-in-the-application-manifest"></a>Сертификаты, на которые имеются ссылки в манифесте приложения
 

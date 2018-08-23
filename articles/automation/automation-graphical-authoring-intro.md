@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b0517af9f8066d2d5849b0ffe3d4a0d00afdad44
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: afc1ec8e171bc602f2698b4a36f249bc454cbed9
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37437881"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42143545"
 ---
 # <a name="graphical-authoring-in-azure-automation"></a>Графическая разработка в службе автоматизации Azure
 
@@ -322,7 +322,7 @@ $ActivityOutput['Activity Label'].PropertyName
 
 Каждый входной параметр определяется с помощью свойств, указанных в следующей таблице:
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 |:--- |:--- |
 | ИМЯ |Уникальное имя параметра. Оно может содержать только буквы или цифры и не может содержать пробел. |
 | ОПИСАНИЕ |Необязательное описание входного параметра. |
@@ -332,7 +332,7 @@ $ActivityOutput['Activity Label'].PropertyName
 
 ### <a name="runbook-output"></a>Выходные данные Runbook
 
-Данные, созданные каким-либо действием,которые не имеют исходящей связи, сохраняются в [выходных данных runbook](http://msdn.microsoft.com/library/azure/dn879148.aspx). Выходные данные сохраняются заданием Runbook и доступны родительскому модулю Runbook, если Runbook используется как дочерний.
+Данные, созданные каким-либо действием,которые не имеют исходящей связи, сохраняются в [выходных данных runbook](https://docs.microsoft.com/azure/automation/automation-runbook-output-and-messages). Выходные данные сохраняются заданием Runbook и доступны родительскому модулю Runbook, если Runbook используется как дочерний.
 
 ## <a name="powershell-expressions"></a>Выражения PowerShell
 

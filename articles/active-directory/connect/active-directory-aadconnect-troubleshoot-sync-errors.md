@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 05/31/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c38187221e7cd4e3244199e713f41be0005eb024
-ms.sourcegitcommit: b7290b2cede85db346bb88fe3a5b3b316620808d
+ms.openlocfilehash: 5b6eefbeb279b76717c775cc220f088612908add
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34801887"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42147002"
 ---
 # <a name="troubleshooting-errors-during-synchronization"></a>Устранение ошибок синхронизации
 При синхронизации данных удостоверений Windows Server Active Directory (AD DS) с Azure Active Directory (Azure AD) могут возникать ошибки. В этой статье предоставляются общие сведения о различных типах ошибок синхронизации, некоторые возможные сценарии возникновения этих ошибок, а также возможные способы их устранения. Здесь содержатся сведения о распространенных типах ошибок, возможно, рассматриваются не все возможные ошибки.
@@ -74,14 +74,14 @@ ms.locfileid: "34801887"
 2. Для атрибута **userPrincipalName** Григория задано значение **bobs@contoso.com**.
 3. **abcdefghijklmnopqrstuv==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect на основе атрибута **objectGUID** из локального каталога Active Directory, который является атрибутом **immutableId** Григория в Azure AD.
 4. Для атрибута **proxyAddresses** Григория используются следующие значения.
-   * smtp: bobs@contoso.com
+   * smtp: bobs@contoso.com.
    * smtp: bob.smith@contoso.com
    * **smtp: bob@contoso.com**
 5. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
 6. Для атрибута **userPrincipalName** Артема задано значение **bobt@contoso.com**.
 7. **abcdefghijkl0123456789==** — это атрибут **sourceAnchor**, вычисленный Azure AD Connect с использованием атрибута **objectGUID** Артема из локального каталога AD. Объект Артема Кузнецова пока не синхронизирован с Azure AD.
 8. Для атрибута proxyAddresses Артема используются следующие значения:
-   * smtp: bobt@contoso.com
+   * smtp: bobt@contoso.com.
    * smtp: bob.taylor@contoso.com
    * **smtp: bob@contoso.com**
 9. Во время синхронизации Azure AD Connect определит добавление Артема Кузнецова в локальный каталог AD и отправит запрос на изменение аналогичных настроек в Azure AD.
@@ -105,7 +105,7 @@ ms.locfileid: "34801887"
 >
 
 #### <a name="related-articles"></a>Связанные статьи
-* [Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/en-us/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
+* [Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
 
 ### <a name="objecttypemismatch"></a>ObjectTypeMismatch
 #### <a name="description"></a>ОПИСАНИЕ
@@ -144,7 +144,7 @@ ms.locfileid: "34801887"
 1. Пользователь **Григорий Авдеев** синхронизирован в Azure AD из локального каталога AD в домене contoso.com.
 2. Для атрибута **userPrincipalName** Григория в локальном каталоге задано значение **bobs@contoso.com**.
 3. Для атрибута **proxyAddresses** Григория используются следующие значения.
-   * smtp: bobs@contoso.com
+   * smtp: bobs@contoso.com.
    * smtp: bob.smith@contoso.com
    * **smtp: bob@contoso.com**
 4. В локальный каталог AD добавлен новый пользователь **Артем Кузнецов**.
@@ -163,7 +163,7 @@ ms.locfileid: "34801887"
 4. Если изменения внесены в локальном каталоге AD, выполните их синхронизацию c Azure AD Connect. Это позволит устранить ошибку.
 
 #### <a name="related-articles"></a>Связанные статьи
--[Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/en-us/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
+-[Duplicate or invalid attributes prevent directory synchronization in Office 365](https://support.microsoft.com/kb/2647098) (Запрет синхронизации службы каталогов в Office 365 из-за повторяющихся или недопустимых атрибутов)
 
 ## <a name="data-validation-failures"></a>Сбой проверки данных
 ### <a name="identitydatavalidationfailed"></a>IdentityDataValidationFailed
@@ -172,7 +172,7 @@ ms.locfileid: "34801887"
 
 #### <a name="scenarios"></a>Сценарии
 a. Значение атрибута userPrincipalName содержит недопустимые или неподдерживаемые символы.
-Б. Атрибут userPrincipalName не соответствует требуемому формату.
+b. Атрибут userPrincipalName не соответствует требуемому формату.
 
 #### <a name="how-to-fix-identitydatavalidationfailed-error"></a>Как устранить ошибку IdentityDataValidationFailed
 a. Убедитесь, что для значения атрибута userPrincipalName указаны поддерживаемые символы и значение соответствует требуемому формату.
@@ -200,7 +200,7 @@ a. Убедитесь, что для значения атрибута userPrinc
 2. Разрешите выполнить следующий цикл синхронизации. В этот раз синхронизация пройдет успешно, а для атрибута userPrincipalName Григория будет задано значение bob@fabrikam.com (как и ожидалось).
 
 #### <a name="related-articles"></a>Связанные статьи
-* [Изменения не синхронизируются с помощью инструмента синхронизации Azure Active Directory после изменения имени участника-пользователя или учетной записи пользователя для использования другого федеративного домена](https://support.microsoft.com/en-us/help/2669550/changes-aren-t-synced-by-the-azure-active-directory-sync-tool-after-you-change-the-upn-of-a-user-account-to-use-a-different-federated-domain)
+* [Изменения не синхронизируются с помощью инструмента синхронизации Azure Active Directory после изменения имени участника-пользователя или учетной записи пользователя для использования другого федеративного домена](https://support.microsoft.com/help/2669550/changes-aren-t-synced-by-the-azure-active-directory-sync-tool-after-you-change-the-upn-of-a-user-account-to-use-a-different-federated-domain)
 
 ## <a name="largeobject"></a>LargeObject
 ### <a name="description"></a>ОПИСАНИЕ

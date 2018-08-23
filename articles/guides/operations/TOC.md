@@ -78,7 +78,7 @@
 ### [Использование хранилища файлов Azure в Linux](../../storage/files/storage-how-to-use-files-linux.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### [Начало работы с хранилищем таблиц Azure](../../cosmos-db/table-storage-how-to-use-dotnet.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### [Начало работы с хранилищем очередей Azure](../../storage/queues/storage-dotnet-how-to-use-queues.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-### [создать учетную запись хранения;](../../storage/common/storage-create-storage-account.md#create-a-storage-account)
+### [создать учетную запись хранения;](../../storage/common/storage-quickstart-create-account.md)
 ### [Использование Azure PowerShell со службой хранилища Azure](../../storage/common/storage-powershell-guide-full.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### [Использование Azure CLI со службой хранилища Azure](../../storage/common/storage-azure-cli.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 ### [Клиентские инструменты службы хранилища Azure](../../storage/common/storage-explorers.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)

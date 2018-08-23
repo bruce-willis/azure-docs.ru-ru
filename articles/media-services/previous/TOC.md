@@ -40,7 +40,7 @@
 ## [Настройка Postman](media-rest-apis-with-postman.md)
 ### [Коллекция для операций потокового воспроизведения по запросу](postman-collection.md)
 ### [Коллекция для операций потоковой трансляции в прямом эфире](postman-live-streaming-collection.md)
-### [Среда](postman-environment.md)
+### [Environment](postman-environment.md)
 ## Передача содержимого
 ### Отправка файлов в учетную запись
 #### [портал Azure](media-services-portal-upload-files.md)
@@ -230,7 +230,7 @@
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=media-services)
 ## [Azure PowerShell (Resource Manager)](/powershell/module/azurerm.media)
-## [Azure PowerShell (управление службами)](/powershell/module/azure/?view=azuresmps-3.7.0)
+## [Azure PowerShell (управление службами)](/powershell/module/servicemanagement/azure/?view=azuresmps-3.7.0)
 ## [.NET](/dotnet/api/microsoft.windowsazure.mediaservices.client)
 ## [REST](/rest/api/media/mediaservice)
 ## спецификации;

@@ -3,19 +3,19 @@ ms.assetid: ''
 title: Как использовать обратимое удаление в Azure Key Vault с помощью PowerShell
 description: Примеры использования обратимого удаления с фрагментами кода для PowerShell.
 services: key-vault
-author: lleonard-msft
+author: bryanla
 manager: mbaldwin
 ms.service: key-vault
 ms.topic: article
 ms.workload: identity
 ms.date: 08/21/2017
-ms.author: alleonar
-ms.openlocfilehash: 48569e31e6400e3ec8958e0bceda1fd3b72207ea
-ms.sourcegitcommit: 2a70752d0987585d480f374c3e2dba0cd5097880
+ms.author: bryanla
+ms.openlocfilehash: 174a5b41e6a48ea74cd813746b7c070463a8185b
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2018
-ms.locfileid: "27927997"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143531"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "27927997"
 - Поддержка восстанавливаемого удаления хранилища ключей
 - Поддержка восстанавливаемого удаления объектов хранилища ключей (например, ключей, секретов и сертификатов).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Azure PowerShell 4.0.0 или более поздней версии. Если этот инструмент у вас не установлен, чтобы установить его и связать с подпиской Azure, прочитайте статью [Общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). 
 

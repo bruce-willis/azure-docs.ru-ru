@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: c43c15131afb5fbf346b0137dac566f5331c65a2
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: f89c97f1220c0e949912a3002021eca20f91441d
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33776378"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143700"
 ---
 # <a name="register-the-current-user-for-push-notifications-by-using-aspnet"></a>Регистрация текущего пользователя для push-уведомлений с помощью ASP.NET
 > [!div class="op_single_selector"]
@@ -107,7 +107,7 @@ ms.locfileid: "33776378"
     Таким образом задается маркер устройства для запроса.
    
    > [!NOTE]
-   > На этом этапе в методе не должно быть никакого другого кода. Если в методе **registerNativeWithDeviceToken** уже есть вызов, добавленный при прохождении учебника [Приступая к работе с концентраторами уведомлений](/manage/services/notification-hubs/get-started-notification-hubs-ios/) , этот вызов нужно закомментировать или удалить.
+   > На этом этапе в методе не должно быть никакого другого кода. Если в методе **registerNativeWithDeviceToken** уже есть вызов, добавленный при прохождении учебника [Приступая к работе с концентраторами уведомлений](notification-hubs-ios-apple-push-notification-apns-get-started.md) , этот вызов нужно закомментировать или удалить.
    > 
    > 
 8. В файле PushToUserAppDelegate.m добавьте следующий метод обработчика:
@@ -218,6 +218,6 @@ ms.locfileid: "33776378"
 [1]: ./media/notification-hubs-ios-aspnet-register-user-push-notifications/notification-hub-user-aspnet-ios2.png
 
 <!-- URLs. -->
-[Уведомление пользователей с помощью концентраторов уведомлений]: /manage/services/notification-hubs/notify-users-aspnet
+[Уведомление пользователей с помощью концентраторов уведомлений]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
 
-[Приступая к работе с концентраторами уведомлений]: /manage/services/notification-hubs/get-started-notification-hubs-ios
+[Приступая к работе с концентраторами уведомлений]: notification-hubs-ios-apple-push-notification-apns-get-started.md

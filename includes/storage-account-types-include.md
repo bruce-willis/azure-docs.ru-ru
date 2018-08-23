@@ -1,3 +1,20 @@
+---
+title: включение файла
+description: включение файла
+services: storage
+author: tamram
+ms.service: storage
+ms.topic: include
+ms.date: 08/20/2018
+ms.author: tamram
+ms.custom: include file
+ms.openlocfilehash: f60c23e34962396d4ea6e030912d1ca3f3e4571b
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40258495"
+---
 Существует два типа учетных записей хранения:
 
 ### <a name="general-purpose-storage-accounts"></a>Учетные записи хранения общего назначения
@@ -25,5 +42,5 @@
 
 Прежде чем создавать учетную запись хранения, вам необходимо оформить подписку Azure, которая дает доступ к различным службам Azure. Вы можете начать работу с Azure с [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/). Как только вы решите приобрести план подписки, можете выбрать из множества [вариантов приобретения](https://azure.microsoft.com/pricing/purchase-options/). Если вы являетесь [подписчиком MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), то получаете бесплатно ежемесячные кредиты, которые можно использовать для служб Azure, включая хранилище Azure. Дополнительные сведения о ценах см. на странице [Цены на хранилища Azure](https://azure.microsoft.com/pricing/details/storage/).
 
-Чтобы узнать, как создать стандартную учетную запись хранения, см. раздел [Создание учетной записи хранения](../articles/storage/common/storage-create-storage-account.md#create-a-storage-account). В рамках одной подписки можно создать до 200 учетных записей хранения с уникальными именами. Сведения об ограничениях учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../articles/storage/common/storage-scalability-targets.md).
+Чтобы узнать, как создать стандартную учетную запись хранения, см. раздел [Создание учетной записи хранения](../articles/storage/common/storage-quickstart-create-account.md). В рамках одной подписки можно создать до 200 учетных записей хранения с уникальными именами. Сведения об ограничениях учетной записи хранения см. в статье [Целевые показатели масштабируемости и производительности службы хранилища Azure](../articles/storage/common/storage-scalability-targets.md).
 

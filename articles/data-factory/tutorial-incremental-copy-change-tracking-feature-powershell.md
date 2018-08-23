@@ -1,5 +1,5 @@
 ---
-title: Добавочное копирование данных с помощью решения "Отслеживание изменений" | Документы Майкрософт
+title: Добавочное копирование данных с помощью решения "Отслеживание изменений" | Документация Майкрософт
 description: 'В этом руководстве вы создадите конвейер фабрики данных Azure, который пошагово копирует разностные данные из нескольких таблиц в локальной базе данных SQL Server в базу данных SQL Azure. '
 services: data-factory
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 09250a3ffc851b97c64642eb3076e9f40621a588
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.openlocfilehash: 8003f76c9483c06fbc7f594e98c3cd0e6fc8acf7
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082720"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41920115"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -27,8 +27,8 @@ ms.locfileid: "37082720"
 
 > [!div class="checklist"]
 > * подготовите исходное хранилище данных;
-> * Создание фабрики данных.
-> * создадите связанные службы; 
+> * Создали фабрику данных.
+> * Создали связанные службы. 
 > * создадите источник, приемник и наборы данных отслеживания изменений;
 > * создадите, запустите и начнете мониторинг конвейера полного копирования;
 > * добавите или обновите данные в исходной таблице;
@@ -71,7 +71,7 @@ ms.locfileid: "37082720"
 ## <a name="prerequisites"></a>Предварительные требования
 * Установите Azure PowerShell. Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
 * **База данных SQL Azure**. Используйте базу данных как **исходное** хранилище данных. Если у вас нет базы данных SQL Azure, вы можете создать ее, выполнив шаги из статьи [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md).
-* **Учетная запись хранения Azure.** В этом руководстве в качестве **приемника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-create-storage-account.md#create-a-storage-account). Создайте контейнер с именем **adftutorial**. 
+* **Учетная запись хранения Azure.** В этом руководстве в качестве **приемника** будет использоваться хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, ознакомьтесь с разделом [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md). Создайте контейнер с именем **adftutorial**. 
 
 ### <a name="create-a-data-source-table-in-your-azure-sql-database"></a>Создание таблицы источника данных в базе данных SQL Azure
 1. Запустите **SQL Server Management Studio** и подключитесь к Azure SQL Server. 
@@ -661,7 +661,7 @@ PersonID Name    Age    SYS_CHANGE_VERSION    SYS_CHANGE_OPERATION
 ```
 
     
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Перейдите к следующему руководству, чтобы узнать о преобразовании данных с помощью кластера Spark в Azure:
 
 > [!div class="nextstepaction"]

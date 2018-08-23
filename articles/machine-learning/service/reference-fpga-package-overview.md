@@ -2,18 +2,18 @@
 title: Пакет FPGA для аппаратного ускорения службы "Машинное обучение Azure"
 description: Сведения о пакетах Python, доступных для пользователей службы "Машинное обучение Azure".
 ms.service: machine-learning
-ms.component: studio
+ms.component: core
 ms.topic: conceptual
 ms.reviewer: jmartens
-ms.author: routlaw
-author: rloutlaw
+ms.author: tedway
+author: tedway
 ms.date: 05/07/2018
-ms.openlocfilehash: e680ef34be1d5dae2942c432de5e81fe620bbdc4
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: a81f5f811058f3c7940da79419b9801225716e6b
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832984"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42143779"
 ---
 # <a name="azure-machine-learning-hardware-acceleration-package"></a>Пакет аппаратного ускорения для службы "Машинное обучение Azure"
 
@@ -25,7 +25,7 @@ ms.locfileid: "34832984"
 
 + развертывание моделей в [программируемые пользователем вентильные матрицы (FPGA)](concept-accelerate-with-fpgas.md) в Azure для обеспечения сверхнизкой задержки.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -40,18 +40,18 @@ ms.locfileid: "34832984"
 
 2. Установите [Anaconda (Python 3.6)](https://conda.io/miniconda.html).
 
-3. Чтобы скачать предварительно настроенную среду Anaconda, выполните следующую команду из командной строки Git:
+   Чтобы скачать предварительно настроенную среду Anaconda, выполните следующую команду из командной строки Git:
 
     ```
     git clone https://aka.ms/aml-real-time-ai
     ```
-5. Чтобы создать среду, откройте **командную строку Anaconda** и выполните следующую команду:
+1. Чтобы создать среду, откройте **командную строку Anaconda** и выполните следующую команду:
 
     ```
     conda env create -f aml-real-time-ai/environment.yml
     ```
 
-6. Включите среду, выполнив следующую команду:
+1. Включите среду, выполнив следующую команду:
 
     ```
     conda activate amlrealtimeai

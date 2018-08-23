@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 517e7ae3871a1ed816ea407ad47c9033a1bb5a0e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 0e78b00e49b2ef468e693abfdcde8a138313ba63
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33776895"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918265"
 ---
 # <a name="tutorial-push-localized-notifications-to-windows-apps-by-using-azure-notification-hubs"></a>Руководство по отправке локализованных уведомлений в приложения Windows с помощью Центров уведомлений Azure
 > [!div class="op_single_selector"]
@@ -35,14 +35,14 @@ ms.locfileid: "33776895"
 
 Когда вы завершите работу с руководством, в мобильном приложении можно будет зарегистрироваться в интересующих вас категориях, а также указать язык получения уведомлений. Внутреннее приложение отправляет уведомления, локализованные на указанном языке и с учетом устройства. 
 
-Из этого руководства вы узнаете, как выполнять такие задачи: 
+Из этого руководства вы узнаете, как выполнять следующие задачи: 
 
 > [!div class="checklist"]
-> * обновление приложения Windows для поддержки информации о языковом стандарте;
+> * Обновление приложения Windows для поддержки информации о языковом стандарте
 > * обновление внутреннего приложения для отправки локализованных уведомлений;
 > * Тестирование приложения
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Выполните инструкции в руководстве [Отправка push-уведомлений на конкретные устройства (универсальная платформа Windows)](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md). 
 
 В руководстве [Отправка push-уведомлений на конкретные устройства (универсальная платформа Windows)](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md) создается приложение, использующее **теги** для подписки на уведомления в разных новостных **категориях**. В этом руководстве будут продемонстрированы способы использования **шаблонов** Центров уведомлений, которые позволяют легко доставлять **локализованные** уведомления об экстренных новостях.
@@ -274,9 +274,9 @@ private static async void SendTemplateNotificationAsync()
 
 <!-- URLs. -->
 [Mobile Service]: /develop/mobile/tutorials/get-started
-[Notify users with Notification Hubs: ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Notify users with Notification Hubs: Mobile Services]: /manage/services/notification-hubs/notify-users
-[Use Notification Hubs to send breaking news]: /notification-hubs/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns
+[Notify users with Notification Hubs: ASP.NET]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
+[Notify users with Notification Hubs: Mobile Services]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
+[Use Notification Hubs to send breaking news]: notification-hubs/notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
 
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [My Applications]: http://go.microsoft.com/fwlink/p/?LinkId=262039

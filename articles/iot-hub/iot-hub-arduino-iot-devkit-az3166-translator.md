@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/28/2018
 ms.author: liydu
-ms.openlocfilehash: acfff95afacfa1e5c75a799ba84d64cfa0579f66
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: cd67e612dd020ba600e33ac8baf77bc094d8afd3
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39592097"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142739"
 ---
 # <a name="use-iot-devkit-az3166-with-azure-functions-and-cognitive-services-to-make-a-language-translator"></a>Использование IoT DevKit AZ3166 с Функциями Azure и Cognitive Services для создания переводчика
 
@@ -122,10 +122,6 @@ ms.locfileid: "39592097"
 ![mini-solution-voice-to-tweet-diagram](media/iot-hub-arduino-iot-devkit-az3166-translator/diagram.png)
 
 В эскизе Arduino записывается ваш голос. Затем отправляется HTTP-запрос для активации экземпляра Функции Azure. В экземпляре Функции Azure для перевода вызывается API переводчика речи Cognitive Services. Когда в экземпляр Функции Azure поступает текст перевода, на устройство отправляется сообщение C2D (из облака). После этого перевод отображается на экране.
-
-## <a name="change-device-id"></a>Изменение идентификатора устройства
-
-**AZ3166** — это стандартный идентификатор устройства, зарегистрированный в Центре Интернета вещей Azure. Чтобы изменить идентификатор устройства, см. сведения в разделе о [настройке идентификатора устройства IoT для DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/customize-device-id/).
 
 ## <a name="problems-and-feedback"></a>Проблемы и обратная связь
 

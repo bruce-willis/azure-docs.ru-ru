@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: b19d02e7d2bcbd696a7256c06b067f976fd36161
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 05ec147e705da4951735616881ad19ad265b403d
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37931734"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41919198"
 ---
 # <a name="tutorial-create-a-development-infrastructure-on-a-linux-vm-in-azure-with-jenkins-github-and-docker"></a>Руководство. Создание инфраструктуры развертывания на виртуальной машине Linux в Azure с помощью Jenkins, GitHub и Docker
 
@@ -151,7 +151,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 - В разделе **General** (Общие) выберите **проект GitHub** и введите URL-адрес разветвления репозитория, например *https://github.com/cynthn/nodejs-docs-hello-world*.
 - В разделе **Source code management** (Управление исходным кодом) выберите **Git** и введите URL-адрес *GIT-файла* разветвления репозитория, например *https://github.com/cynthn/nodejs-docs-hello-world.git*.
 - В разделе **Build Triggers** (Создание триггеров) выберите **GitHub hook trigger for GITScm polling** (Обработчик триггера Github для опроса GITScm).
-- В разделе **Build** (Сборка) щелкните **Add build step** (Добавить шаг сборки). Выберите **Execute shell** (Выполнение оболочки), затем введите `echo "Testing"` в командном окне.
+- В разделе **Build** (Сборка) щелкните **Add build step** (Добавить шаг сборки). Выберите **Execute shell** (Выполнение оболочки), затем введите `echo "Test"` в командном окне.
 - В нижней части окна заданий нажмите кнопку **Save** (Сохранить).
 
 

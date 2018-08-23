@@ -9,12 +9,12 @@ ms.component: translator-speech
 ms.topic: article
 ms.date: 07/17/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 8bf904b2029790d64a806fcf4a7e4860579a5a2f
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: a24ccd456df533542e7cbd2315fc1050cd82afbf
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39204856"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "41929715"
 ---
 # <a name="quickstart-for-microsoft-translator-speech-api-with-python"></a>Краткое руководство по API перевода речи Microsoft с помощью Python 
 <a name="HOLTop"></a>
@@ -27,7 +27,7 @@ ms.locfileid: "39204856"
 
 Также потребуется установить [пакет websocket-client](https://pypi.python.org/pypi/websocket-client) для Python.
 
-Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно. Такой WAV-файл можно получить из [API преобразования текста в речь](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-apis#text-to-speech).
+Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно. 
 
 Необходимо иметь [учетную запись Cognitive Services API](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с **Microsoft Translator Speech API**. Вам понадобится платный ключ подписки, доступный из [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServices).
 
@@ -132,4 +132,4 @@ client.run_forever()
 ## <a name="see-also"></a>См. также 
 
 [Microsoft Translator Speech API](../overview.md) (API перевода речи Microsoft)
-[API Reference](http://docs.microsofttranslator.com/speech-translate.html) (Ссылка на API)
+[API Reference](https://docs.microsoft.com/azure/cognitive-services/translator-speech/reference) (Ссылка на API)

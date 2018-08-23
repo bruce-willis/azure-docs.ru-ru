@@ -10,12 +10,12 @@ ms.author: ghogen
 ms.date: 05/11/2018
 ms.topic: include
 manager: douge
-ms.openlocfilehash: 0f64bcecadf5979e9983028354c41457771020bd
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: aeb4ff26b05a5542fd77ac32589c8f8efb622798
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "40129353"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "40165707"
 ---
 ## <a name="create-a-kubernetes-cluster-enabled-for-azure-dev-spaces"></a>Создание и включение кластера Kubernetes для Azure Dev Spaces
 
@@ -28,7 +28,7 @@ ms.locfileid: "40129353"
     - **Сведения о кластере.** Для кластера AKS укажите имя, регион (сейчас нужно выбрать EastUS, Central US, WestEurope, WestUS2, CanadaCentral или CanadaEast), версию и префикс имени DNS.
     - **Масштаб**. Выберите размер виртуальной машины для узлов агента AKS и количество узлов. Если вы только начинаете работать с Azure Dev Spaces, одного узла будет достаточно, чтобы ознакомиться с функциями. После развертывания кластера вы сможете легко изменить количество узлов в любое время. Обратите внимание, что размер виртуальной машины невозможно изменить после создания кластера AKS. Но после развертывания кластера AKS можно легко создать новый кластер с виртуальными машинами большего размера и с помощью Dev Spaces выполнить повторное развертывание в большем кластере, если требуется масштабировать ресурсы.
 
-   Выберите Kubernetes 1.10.3 или более поздней версии.
+   Выберите Kubernetes 1.9.6 или более поздней версии.
 
    ![Параметры конфигурации Kubernetes](../media/common/Kubernetes-Create-Cluster-2.PNG)
 

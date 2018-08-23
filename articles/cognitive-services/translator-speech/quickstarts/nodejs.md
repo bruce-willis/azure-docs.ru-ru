@@ -9,12 +9,12 @@ ms.component: translator-speech
 ms.topic: article
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: 0c0f3120811bba164a07783bc7ce3b7af389fd2b
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: e652ee1e201e60d0d75f10bb8fceb4fbcd205381
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39205220"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41929835"
 ---
 # <a name="quickstart-for-microsoft-translator-speech-api-with-nodejs"></a>Краткое руководство по API перевода речи Microsoft с помощью Node.js 
 <a name="HOLTop"></a>
@@ -169,4 +169,4 @@ connect();
 ## <a name="see-also"></a>См. также 
 
 [Microsoft Translator Speech API](../overview.md) (API перевода речи Microsoft)
-[API Reference](http://docs.microsofttranslator.com/speech-translate.html) (Ссылка на API)
+[API Reference](https://docs.microsoft.com/azure/cognitive-services/translator-speech/reference) (Ссылка на API)

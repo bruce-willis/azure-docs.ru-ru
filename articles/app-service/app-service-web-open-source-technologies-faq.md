@@ -15,31 +15,18 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/11/2018
 ms.author: genli
-ms.openlocfilehash: 747ee61d2620e7f79353207c0e44bcea36df30ee
-ms.sourcegitcommit: c52123364e2ba086722bc860f2972642115316ef
+ms.openlocfilehash: d65a33dc13d0b91a9ace04dab0be6c37bcd2188f
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2018
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617640"
 ---
 # <a name="open-source-technologies-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о технологиях с открытым кодом в веб-приложениях Azure
 
 В этой статье содержатся ответы на часто задаваемые вопросы о проблемах, связанных с технологиями с открытым кодом, в [веб-приложениях службы приложений Azure](https://azure.microsoft.com/services/app-service/web/).
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
-
-## <a name="my-cleardb-database-is-down-how-do-i-resolve-this"></a>База данных ClearDB не работает. Как решить эту проблему?
-
-По вопросам, связанным с базами данных, обращайтесь в [службу поддержки ClearDB](https://www.cleardb.com/developers/help/support). 
-
-Ответы на часто задаваемые вопросы о базе данных ClearDB см. в [этой статье](https://docs.microsoft.com/azure/store-cleardb-faq/).
-
-## <a name="why-wasnt-my-cleardb-database-migrated-during-my-subscription-migration"></a>Почему не удалось перенести базу данных ClearDB при переносе подписки?
-
-При переносе ресурсов из одной подписки в другую действуют некоторые ограничения. База данных ClearDB MySQL — это сторонняя служба, и она не перемещается при переносе подписки Azure.
-
-Если вы не перенесли базу данных MySQL до переноса ресурсов Azure, база данных ClearDB MySQL может быть недоступной. Чтобы избежать этого, сначала вручную перенесите свою базу данных ClearDB, а затем перенесите подписку веб-приложения.
-
-Дополнительные сведения см. в статье [Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure](https://docs.microsoft.com/azure/store-cleardb-faq/).
 
 ## <a name="how-do-i-turn-on-php-logging-to-troubleshoot-php-issues"></a>Как включить ведение журнала PHP, чтобы устранить неполадки с приложением PHP?
 
@@ -65,16 +52,7 @@ ms.lasthandoff: 05/11/2018
 Дополнительные сведения см. в записи блога [Enable WordPress error logs](https://blogs.msdn.microsoft.com/azureossds/2015/10/09/logging-php-errors-in-wordpress-2/) (Включение журналов ошибок WordPress).
 
 ## <a name="how-do-i-log-python-application-errors-in-apps-that-are-hosted-in-app-service"></a>Как включить ведение журнала ошибок в приложениях Python, размещенных в службе приложений?
-
-Чтобы включить запись ошибок в приложении Python, сделайте следующее:
-
-1. На портале Azure перейдите к своему веб-приложению и выберите **Параметры**.
-2. На вкладке **Параметры** щелкните **Параметры приложения**.
-3. В разделе **Параметры приложения** введите следующую пару "ключ — значение":
-    * Ключ: WSGI_LOG.
-    * Значение: D:\home\site\wwwroot\logs.txt (введите собственное имя файла).
-
-Теперь ошибки должны отображаться в файле logs.txt в папке wwwroot.
+[!INCLUDE [web-sites-python-troubleshooting-wsgi-error-log](../../includes/web-sites-python-troubleshooting-wsgi-error-log.md)]
 
 ## <a name="how-do-i-change-the-version-of-the-nodejs-application-that-is-hosted-in-app-service"></a>Как изменить версию приложения Node.js, размещенного в службе приложений?
 

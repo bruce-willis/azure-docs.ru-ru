@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/12/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: be4ac20f578dc670a3d9c83124504c37e57ee9bf
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 952550225f2bdd8559d72a9d283993451ae7f60b
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37108779"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616349"
 ---
 # <a name="tutorial-package-and-deploy-containers-as-a-service-fabric-application-using-yeoman"></a>Руководство. Упаковка и развертывание контейнеров в виде приложений Service Fabric с помощью Yeoman
 
@@ -31,7 +31,7 @@ ms.locfileid: "37108779"
 > * установка Yeoman;
 > * создание пакета приложения с помощью Yeoman;
 > * настройка параметров в пакете приложения для контейнеров;
-> * Создание приложения
+> * создание приложения;
 > * развертывание и запуск приложения;
 > * очистка приложения.
 
@@ -47,18 +47,18 @@ Service Fabric предоставляет средства формирован�
 1. Установите Node.js и NPM на компьютере. Обратите внимание на то, что пользователям Mac OSX придется воспользоваться диспетчером пакетов Homebrew.
 
     ```bash
-    curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash –
-    sudo apt-get install -y nodejs 
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+    nvm install node 
     ```
 2. Установите на компьютере генератор шаблонов Yeoman из NPM.
 
     ```bash
-    sudo npm install -g yo
+    npm install -g yo
     ```
 3. Установите генератор контейнеров Yeoman для Service Fabric.
 
-    ```bash
-    sudo npm install -g generator-azuresfcontainer
+    ```bash 
+    npm install -g generator-azuresfcontainer
     ```
 
 ## <a name="package-a-docker-image-container-with-yeoman"></a>Упаковка контейнера образов Docker с помощью Yeoman
@@ -380,7 +380,7 @@ sfctl cluster select --endpoint https://linh1x87d1d.westus.cloudapp.azure.com:19
  </ServiceManifest>
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве несколько контейнеров было упаковано в приложение Service Fabric с помощью Yeoman. Затем это приложение было развернуто и запущено в кластере Service Fabric. Были выполнены следующие действия:
 

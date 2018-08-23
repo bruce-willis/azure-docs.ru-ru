@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 07/24/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 15bc320bd82ea21ff608fcc834ba51b9bc7b6dea
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 6709fb8ae328f749b367c58f95b8a9ef8da9bc65
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39716150"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143733"
 ---
 # <a name="manage-user-access-in-azure-active-directory-b2c"></a>Управление доступом пользователей в Azure Active Directory B2C
 
@@ -46,7 +46,7 @@ ms.locfileid: "39716150"
 
 Ниже приведен пример последовательности взаимодействия с пользователем для получения родительского согласия.
 
-1. Операция в [API Graph Azure Active Directory](https://msdn.microsoft.com/en-us/library/azure/ad/graph/api/api-catalog) определяет, что пользователь является несовершеннолетним, и возвращает приложению данные этого пользователя в виде неподписанного маркера JSON.
+1. Операция в [API Graph Azure Active Directory](https://msdn.microsoft.com/library/azure/ad/graph/api/api-catalog) определяет, что пользователь является несовершеннолетним, и возвращает приложению данные этого пользователя в виде неподписанного маркера JSON.
 
 2. Приложение обрабатывает полученный маркер JSON и отображает несовершеннолетнему пользователю сообщение, что для некоторых действий требуется родительское согласие, а также предлагает возможность предоставить такое согласие в сети. 
 
@@ -56,7 +56,7 @@ ms.locfileid: "39716150"
 
 5. Если несовершеннолетний или взрослый отменяет согласие, можно использовать API Graph Azure AD для изменения значения параметра **consetProvidedForMinor** на **Отказано**. Кроме того, приложение может удалить учетную запись несовершеннолетнего при отзыве разрешения. Также есть возможность настроить последовательность взаимодействия с пользователем, чтобы прошедший аутентификацию несовершеннолетний (или его родитель, использующий учетною запись несовершеннолетнего) мог отозвать согласие. Azure AD B2C сохраняет для параметра **consentProvidedForMinor** значение **denied**.
 
-Дополнительные сведения об утверждениях **legalAgeGroupClassification**, **consentProvidedForMinor** и **ageGroup** см. в разделе [User resource type](https://developer.microsoft.com/en-us/graph/docs/api-reference/beta/resources/user) (Типы ресурсов пользователя). Дополнительные сведения о пользовательских атрибутах см. в статье [Azure Active Directory B2C: использование настраиваемых атрибутов для сбора данных о потребителях](active-directory-b2c-reference-custom-attr.md). При обращении к дополнительным атрибутам с помощью API Graph Azure AD необходимо использовать полную версию атрибута, например *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
+Дополнительные сведения об утверждениях **legalAgeGroupClassification**, **consentProvidedForMinor** и **ageGroup** см. в разделе [User resource type](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/user) (Типы ресурсов пользователя). Дополнительные сведения о пользовательских атрибутах см. в статье [Azure Active Directory B2C: использование настраиваемых атрибутов для сбора данных о потребителях](active-directory-b2c-reference-custom-attr.md). При обращении к дополнительным атрибутам с помощью API Graph Azure AD необходимо использовать полную версию атрибута, например *extension_18b70cf9bb834edd8f38521c2583cd86_dateOfBirth*: *2011-01-01T00:00:00Z*.
 
 ## <a name="gather-date-of-birth-and-country-data"></a>Сбор сведений о дате рождения и стране пребывания
 

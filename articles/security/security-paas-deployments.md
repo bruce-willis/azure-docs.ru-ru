@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/21/2017
 ms.author: terrylan
-ms.openlocfilehash: f19c52629a997687692eef9bce2e13b2b7894052
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: da5d59aaaea8e6186609eb5f3419fba5e67d4279
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31794741"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143055"
 ---
 # <a name="securing-paas-deployments"></a>Защита развернутых служб PaaS
 
@@ -101,7 +101,7 @@ ms.locfileid: "31794741"
 
 - [службе приложений Azure](security-paas-applications-using-app-services.md)
 - [База данных SQL Azure и хранилище данных SQL](security-paas-applications-using-sql.md)
-- Хранилище Azure
+- [Хранилище Azure](security-paas-applications-using-storage.md)
 - Кэш Redis для Azure
 - Azure Service Bus
 - Брандмауэры веб-приложения

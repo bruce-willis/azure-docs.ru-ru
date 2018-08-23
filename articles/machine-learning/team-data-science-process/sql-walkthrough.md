@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/29/2017
 ms.author: deguhath
-ms.openlocfilehash: dae8549cb951a463688869454e2f4c71103c1363
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: 6e58429567e447002b1c9191bb8e50a4351649a9
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39226399"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246801"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Процесс обработки и анализа данных группы на практике: использование SQL Server
 В этом руководстве представлено пошаговое руководство по процессу создания и развертывания модели машинного обучения с помощью SQL Server и общедоступного набора данных [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/). Процедура соответствует стандартному рабочему процессу обработки и аналитики данных: прием и анализ данных, разработка функций для упрощения обучения, а затем сборка и развертывание модели.
@@ -70,7 +70,7 @@ ms.locfileid: "39226399"
 
 Чтобы настроить среду научной обработки данных в Azure, выполните следующие действия.
 
-1. [создать учетную запись хранения;](../../storage/common/storage-create-storage-account.md)
+1. [создать учетную запись хранения;](../../storage/common/storage-quickstart-create-account.md)
 2. [Создание рабочей области машинного обучения Azure](../studio/create-workspace.md)
 3. [Подготовьте виртуальную машину для обработки и анализа данных](../data-science-virtual-machine/setup-sql-server-virtual-machine.md), которая будет служить сервером SQL Server и сервером IPython Notebook.
    

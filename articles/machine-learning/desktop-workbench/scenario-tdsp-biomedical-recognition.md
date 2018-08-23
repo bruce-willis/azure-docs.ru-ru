@@ -3,25 +3,25 @@ title: Распознавание биомедицинских сущносте�
 description: Краткое руководство по проекту командного процесса обработки и анализа данных. В этом руководстве объясняется, как использовать глубинное обучение для распознавания биомедицинских сущностей с помощью Azure Machine Learning Workbench.
 services: machine-learning
 documentationcenter: ''
-author: bradsev
+author: deguhath
+ms.author: deguhath
 manager: cgronlun
 editor: cgronlun
 ms.assetid: ''
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/10/2017
-ms.author: bradsev
-ms.openlocfilehash: ae8c8ed9d397df0c82b74f051ff14729c0f41623
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: f6ce43c2d290bacee10e102cc6c382981db9917f
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34837286"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142742"
 ---
 # <a name="biomedical-entity-recognition-using-team-data-science-process-tdsp-template"></a>Распознавание биомедицинских сущностей с помощью шаблона командного процесса обработки и анализа данных (TDSP)
 
@@ -92,7 +92,7 @@ ms.locfileid: "34837286"
 [https://github.com/Azure/MachineLearningSamples-BiomedicalEntityExtraction](https://github.com/Azure/MachineLearningSamples-BiomedicalEntityExtraction)
 
 
-## <a name="prerequisites"></a>предварительным требованиям 
+## <a name="prerequisites"></a>Предварительные требования 
 
 * Подписка [Azure](https://azure.microsoft.com/free/).
 * Azure Machine Learning Workbench. Сведения см. в [руководстве по установке](../service/quickstart-installation.md). Сейчас Azure Machine Learning Workbench можно установить только в следующих операционных системах: 

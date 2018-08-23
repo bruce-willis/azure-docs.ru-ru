@@ -12,21 +12,21 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 08/15/2018
 ms.author: anwestg
-ms.openlocfilehash: 8671cba484a779e8d7cd0172df141497bb396a97
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: f48872d1853dfd4c40022f42c8e237973ac70fe6
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359039"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41946534"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack"></a>Автономное обновление службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]
-> Прежде чем развертывать Cлужбу приложений Azure, примените обновление 1802 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack.
+> Прежде чем развертывать службу приложений Azure, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.3.
 >
 >
 
@@ -44,7 +44,7 @@ ms.locfileid: "34359039"
 
 Чтобы обновить поставщик ресурсов службы приложений в среде Azure Stack, выполните следующие задачи:
 
-1. Загрузите [установщик службы приложений](https://aka.ms/appsvcupdate2installer).
+1. Загрузите [установщик службы приложений](https://aka.ms/appsvcupdate3installer).
 2. Создайте автономный пакет обновления.
 3. Запустите установщик службы приложений (appservice.exe) и завершите обновление.
 

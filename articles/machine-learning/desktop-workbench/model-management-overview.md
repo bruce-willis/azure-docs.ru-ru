@@ -2,21 +2,19 @@
 title: Общие сведения о службе управления моделями Машинного обучения Azure | Документация Майкрософт
 description: В этом документе описаны основные понятия службы управления моделями для Машинного обучения Azure.
 services: machine-learning
-author: nk773
-ms.author: padou
-manager: mwinkle
-ms.reviewer: jasonwhowell, mldocs
+author: hjerezmsft
+ms.author: hjerez
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 09/20/2017
-ms.openlocfilehash: 6fac3fa0207d942c5a7f5fa438ba8262ea5b7a22
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 041f7147f171514d941555ff2f6144bac2062b06
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832233"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146730"
 ---
 # <a name="azure-machine-learning-model-management"></a>Служба управления моделями Машинного обучения Azure
 

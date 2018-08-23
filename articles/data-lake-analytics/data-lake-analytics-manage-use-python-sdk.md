@@ -10,12 +10,12 @@ editor: jasonwhowell
 ms.assetid: d4213a19-4d0f-49c9-871c-9cd6ed7cf731
 ms.topic: conceptual
 ms.date: 06/08/2018
-ms.openlocfilehash: 2f3912069b54b3ad761493f02336d8d58866f53a
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: c6f97f7bad6eada962623e7efc5d7ed010dc9ebe
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35261466"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143398"
 ---
 # <a name="manage-azure-data-lake-analytics-using-python"></a>Управление Azure Data Lake Analytics с помощью Python
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "35261466"
 
 * Используйте 64-разрядную версию Python.
 * Можно использовать стандартную распространяемую версию Python, опубликованную в **[разделе загрузок на сайте Python.org](https://www.python.org/downloads/)**. 
-* Многим разработчикам удобнее использовать **[распространяемую версию Anaconda Python](https://www.continuum.io/downloads)**.  
+* Многим разработчикам удобнее использовать **[распространяемую версию Anaconda Python](https://www.anaconda.com/download/)**.  
 * При написании данной статьи использовалась версия 3.6 стандартного распространяемого пакета Python
 
 ## <a name="install-azure-python-sdk"></a>Установка пакета Azure SDK для Python

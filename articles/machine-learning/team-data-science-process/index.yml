@@ -1,25 +1,24 @@
 ### YamlMime:YamlDocument
+ms.openlocfilehash: 51680005cf1cc414271203f006731167053a702f
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41929248"
 documentType: LandingData
-title: Документация по процессу обработки и анализа данных группы
 metadata:
-  title: Документация по процессу обработки и анализа данных группы
+  author: cjgronlund
   description: Узнайте, как использовать процесс обработки и анализа данных группы.
-  services: machine-learning
-  author: bradsev
   manager: cgronlun
-  ms.service: machine-learning
+  ms.author: carolyn.gronlund
   ms.component: team-data-science-process
-  ms.tgt_pltfrm: na
-  ms.devlang: na
-  ms.topic: landing-page
   ms.date: 01/18/2018
-  ms.author: bradsev
-  ms.openlocfilehash: ceacb3138fdaf15a2c616aea2cdf55a73e0b73bf
-  ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
-  ms.translationtype: HT
-  ms.contentlocale: ru-RU
-  ms.lasthandoff: 06/07/2018
-  ms.locfileid: "34837520"
+  ms.devlang: na
+  ms.service: machine-learning
+  ms.tgt_pltfrm: na
+  ms.topic: landing-page
+  services: machine-learning
+  title: Документация по процессу обработки и анализа данных группы
 abstract:
   description: Процесс обработки и анализа данных группы (TDSP) является гибкой итеративной методикой обработки и анализа данных для эффективной доставки решений прогнозной аналитики и интеллектуальных приложений. TDSP позволяет улучшить обучение и совместную работу в группах. Он содержит избранные рекомендации и структуры от Майкрософт и других разработчиков в отрасли, которые обеспечивают успешную реализацию решений по обработке и анализу данных. Все это — чтобы помочь компаниям полностью использовать преимущества их программ аналитики.
 sections:

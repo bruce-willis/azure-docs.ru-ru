@@ -5,15 +5,15 @@ services: service-bus-relay
 author: clemensv
 ms.service: service-bus-relay
 ms.topic: include
-ms.date: 05/02/2018
+ms.date: 08/16/2018
 ms.author: clemensv
 ms.custom: include file
-ms.openlocfilehash: 4a3f38e1423db0755d8c76f8850e41173d250f43
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: e07d82b8a3aea4f0db0f5a071d78ea360cd611ab
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33904992"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "40177259"
 ---
 ### <a name="create-a-console-application"></a>Создание консольного приложение
 
@@ -36,6 +36,7 @@ ms.locfileid: "33904992"
     using System.IO;
     using System.Threading;
     using System.Threading.Tasks;
+    using System.Net.Http;
     using Microsoft.Azure.Relay;
     ```
 2. Добавьте константы в класс `Program`, чтобы получить сведения о гибридном подключении. Замените заполнители в скобках значениями, которые получены при создании гибридного подключения. Необходимо использовать полное имя пространства имен.
@@ -63,7 +64,7 @@ ms.locfileid: "33904992"
         };
         request.Headers.Add("ServiceBusAuthorization", token);
         var response = await client.SendAsync(request);
-        Console.WriteLine(await response.Content.ReadAsStringAsync());
+        Console.WriteLine(await response.Content.ReadAsStringAsync());        Console.ReadLine();
     }
     ```
 4. В метод `Main` в классе `Program` добавьте следующую строку кода.

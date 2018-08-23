@@ -3,7 +3,7 @@ title: Управление доступом к ресурсам каждого 
 description: Узнайте, как администратор служб или клиент может управлять доступом на основе ролей.
 services: azure-stack
 documentationcenter: ''
-author: brenduns
+author: PatAltimore
 manager: femila
 editor: ''
 ms.assetid: cccac19a-e1bf-4e36-8ac8-2228e8487646
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/10/2018
-ms.author: brenduns
+ms.date: 08/15/2018
+ms.author: patricka
 ms.reviewer: ''
-ms.openlocfilehash: 026c686b1d5654aa50dd63b9addd619dd5322da0
-ms.sourcegitcommit: 6cf20e87414dedd0d4f0ae644696151e728633b6
+ms.openlocfilehash: 2e36f52568d349aeecd47f90bf9431f096cc4fdc
+ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34808151"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41954632"
 ---
 # <a name="manage-access-to-resources-with-azure-stack-role-based-access-control"></a>Управление доступом к ресурсам с помощью управления доступом на основе ролей Azure Stack
 

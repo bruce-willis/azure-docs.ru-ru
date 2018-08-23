@@ -16,18 +16,18 @@ ms.topic: tutorial
 ms.date: 10/05/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: dc6fba89571515d0d2d7ed3ecc35c3065405056b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 44faad125053f9292f97f8794b14eb8f842c6b4b
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38696809"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41924787"
 ---
 # <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli-20"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure CLI 2.0
 
 В этом руководстве показано, как повысить доступность и надежность решений виртуальных машин в Azure с помощью групп доступности. При развертывании виртуальных машин в Azure группа доступности распределяет их между несколькими изолированными аппаратными кластерами. Таким образом, в случае сбоя оборудования или программного обеспечения в Azure затрагивается только группа виртуальных машин, а общее решение остается доступным для использования.
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * "Создать группу доступности"
@@ -94,7 +94,7 @@ done
 
 ## <a name="check-for-available-vm-sizes"></a>Знакомство с доступными размерами виртуальной машины
 
-В группу доступности можно добавить дополнительные виртуальные машины позднее, когда станут доступны нужные размеры виртуальных машин для оборудования. Выполните команду [az vm availability-set list-sizes](/cli/azure/availability-set#az_availability_set_list_sizes) для получения списка всех доступных размеров в аппаратном кластере для группы доступности.
+В группу доступности можно добавить дополнительные виртуальные машины позднее, когда станут доступны нужные размеры виртуальных машин для оборудования. Выполните команду [az vm availability-set list-sizes](/cli/azure/vm/availability-set#az-vm-availability-set-list-sizes) для получения списка всех доступных размеров в аппаратном кластере для группы доступности.
 
 ```azurecli-interactive
 az vm availability-set list-sizes \

@@ -10,12 +10,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 93440b8a1c9fd1b386931e5998c70133071a079e
-ms.sourcegitcommit: 3017211a7d51efd6cd87e8210ee13d57585c7e3b
+ms.openlocfilehash: 14b51cc2ad2e8e0f294e5e73e542001e30d21c9d
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34823050"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918807"
 ---
 # <a name="azure-dev-spaces"></a>Рабочие среды Azure для разработчиков
 Рабочие среды Azure Dev Spaces предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. С минимальной настройкой компьютера разработчика можно итеративно запускать и проводить отладку контейнера непосредственно из службы Azure Kubernetes (AKS). Разрабатывайте приложения для Windows, Mac или Linux с помощью таких привычных средств, как Visual Studio, Visual Studio Code или из командной строки.

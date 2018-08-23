@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: article
 ms.date: 08/05/2018
 ms.author: juliako
-ms.openlocfilehash: ce8ba5b192b857b10b5c1e6327fc330744e8fa83
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: 66ba79926a949371cb2280de408835862dd1a099
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "40187374"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41937537"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -46,9 +46,9 @@ ms.locfileid: "40187374"
 
 * Регистрация поставщика ресурсов Сетки событий с помощью портала Azure.
 
-        In the Azure portal, go to **Subscriptions** > [subscription] > **ResourceProviders** > **Microsoft.EventGrid**. If not in the "Registered" state, click **Register**. It takes a couple of minutes to register. 
+    На портале Azure последовательно выберите **Подписки** > [подписка] > **ResourceProviders** > **Microsoft.EventGrid**. Если не отображается состояние "Зарегистрировано", щелкните **Зарегистрировать**. Регистрация займет несколько минут. 
 
-        ![EventGrid](./media/create-account/event-grid.png)
+    ![Сетка событий](./media/create-account/event-grid.png)
 
 ## <a name="connect-to-azure"></a>Подключение к Azure
 

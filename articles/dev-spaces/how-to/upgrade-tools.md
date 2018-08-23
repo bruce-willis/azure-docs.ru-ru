@@ -12,12 +12,12 @@ ms.technology: azds-kubernetes
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 manager: douge
-ms.openlocfilehash: bcf36e14a12119dd13b8e566bc0a5b0ac96925c5
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 10838528d79caa49abc541b4fcd38fea3c24d68f
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37934126"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143865"
 ---
 # <a name="how-to-upgrade-azure-dev-spaces-tools"></a>Обновление средств Azure Dev Spaces
 

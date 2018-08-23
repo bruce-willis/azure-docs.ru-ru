@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 04/11/2018
 ms.author: subramar
-ms.openlocfilehash: 59dc090053c78dbddc1854f21db39f66df7bc91c
-ms.sourcegitcommit: 0fa8b4622322b3d3003e760f364992f7f7e5d6a9
+ms.openlocfilehash: 7427af3e814752801c4738675f7cd2263843f9b8
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37020551"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617092"
 ---
 # <a name="create-your-first-azure-service-fabric-application"></a>Создание первого приложения Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "37020551"
 
 Service Fabric предоставляет пакеты SDK для создания служб в среде Linux с помощью .NET Core и Java. В этом руководстве показано, как создать приложение для Linux, а также службу C# с помощью .NET Core 2.0.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Перед началом работы [настройте среду разработки Linux](service-fabric-get-started-linux.md). Если вы используете Mac OS X, вы можете [настроить универсальную среду Linux на виртуальной машине с помощью Vagrant](service-fabric-get-started-mac.md).
 
 Также необходимо установить [интерфейс командной строки Service Fabric](service-fabric-cli.md)
@@ -41,27 +41,19 @@ Service Fabric предоставляет средства формирован�
 
 1. Установите Node.js и NPM на компьютере.
 
-   Ubuntu
    ```bash
-   curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash –
-   sudo apt-get install -y nodejs 
+   curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash 
+   nvm install node 
    ```
-
-   Red Hat Enterprise Linux 7.4 (поддержка предварительной версии Service Fabric)
-   ```bash
-   sudo yum install nodejs
-   sudo yum install npm
-   ```
-
 2. Установите на компьютере генератор шаблонов [Yeoman](http://yeoman.io/) из NPM.
 
   ```bash
-  sudo npm install -g yo
+  npm install -g yo
   ```
 3. Установите генератор приложений C# Service Fabric Yeoman из NPM.
 
   ```bash
-  sudo npm install -g generator-azuresfcsharp
+  npm install -g generator-azuresfcsharp
   ```
 
 ## <a name="create-the-application"></a>Создание приложения
@@ -78,7 +70,7 @@ Service Fabric предоставляет средства формирован�
 >
 >
 
-## <a name="build-the-application"></a>Создание приложения
+## <a name="build-the-application"></a>создание приложения;
 Шаблоны Service Fabric для Yeoman включают скрипт сборки, с помощью которого можно создать приложение из терминала (после перемещения в папку приложения).
 
   ```sh

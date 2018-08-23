@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: cc9dad4584c8edc47181e4a73ffe11a2e08de2f1
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: b60e4f3547e049dc35c08ce115bdfcbbf6ebb18a
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34620818"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246654"
 ---
 # <a name="use-case---customer-profiling"></a>Вариант использования: профилирование клиентов
 Фабрика данных Azure — одна из многочисленных служб, используемых для внедрения набора аналитических инструментов Cortana Intelligence Suite для ускорителей решений.  Дополнительные сведения см. на сайте [Cortana Intelligence Suite](http://www.microsoft.com/cortanaanalytics). В этом документе описан простой вариант использования, позволяющий понять, как фабрика данных Azure помогает решать типичные проблемы аналитики.
@@ -32,7 +32,7 @@ Contoso — это компания, которая создает игры дл
 В этом решении компания Contoso хочет оценить эффективность маркетинговой кампании, которую она недавно запустила. Начнем с необработанных журналов игр, обработаем и дополним их данными о географическом положении. Затем присоединим к ним рекламные ссылочные данные. И, наконец, скопируем их в Базу данных SQL Azure для анализа эффективности кампании.
 
 ## <a name="deploy-solution"></a>Развертывание решения
-Для реализации этого сценария требуется только [подписка Azure](https://azure.microsoft.com/pricing/free-trial/), [учетная запись хранения BLOB-объектов](../../storage/common/storage-create-storage-account.md#create-a-storage-account) и [База данных SQL](../../sql-database/sql-database-get-started.md). На домашней странице фабрики данных разверните конвейер профилирования клиентов из элемента **Примеры конвейеров**.
+Для реализации этого сценария требуется только [подписка Azure](https://azure.microsoft.com/pricing/free-trial/), [учетная запись хранения BLOB-объектов](../../storage/common/storage-quickstart-create-account.md) и [База данных SQL](../../sql-database/sql-database-get-started.md). На домашней странице фабрики данных разверните конвейер профилирования клиентов из элемента **Примеры конвейеров**.
 
 1. Создайте или откройте существующую фабрику данных. Инструкции по созданию фабрики данных см. в статье [Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 2. В колонке **ФАБРИКА ДАННЫХ** для этой фабрики данных щелкните элемент **Примеры конвейеров**.

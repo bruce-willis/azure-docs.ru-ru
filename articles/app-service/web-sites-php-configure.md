@@ -13,12 +13,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: 6e7de0a7b580c0028982895487117ab98d0cd612
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 028a8f35b6ffc4b429725e91045e70112f2bdabd
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39503457"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143537"
 ---
 # <a name="configure-php-in-azure-app-service-web-apps"></a>Настройка PHP в веб-приложениях службы приложений Azure
 
@@ -189,7 +189,7 @@ ms.locfileid: "39503457"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительную информацию можно найти в [Центре разработчика PHP](/develop/php/).
+Дополнительную информацию можно найти в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
 > [!NOTE]
 > Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://azure.microsoft.com/try/app-service/), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.

@@ -8,12 +8,12 @@ ms.date: 02/15/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 261c26290a4a7c4b8bb22ada7f97470a6efa7a91
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: 9064e0da6dde6c4b30235adf771f06a4f25d709a
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39576327"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42144387"
 ---
 # <a name="understand-azure-iot-edge-modules"></a>Общие сведения о модулях IoT Edge Azure
 
@@ -33,7 +33,11 @@ Azure IoT Edge позволяет развертывать *модули* биз
 
 ![Образы модулей в облаке — экземпляры модулей на устройствах][1]
 
-На практике образы модулей существуют как образы контейнеров в хранилище данных, а экземпляры модулей реализованы как контейнеры на устройствах. По мере роста возможностей для использования Azure IoT Edge будут появляться новые типы образов и экземпляров модулей. Например, устройства с ограниченными ресурсами не могут выполнять контейнеры, поэтому для них следует использовать образы модулей в виде библиотек DLL и экземпляры в виде исполняемых файлов. 
+На практике образы модулей существуют как образы контейнеров в хранилище данных, а экземпляры модулей реализованы как контейнеры на устройствах. 
+
+<!--
+As use cases for Azure IoT Edge grow, new types of module images and instances will be created. For example, resource constrained devices cannot run containers so may require module images that exist as dynamic link libraries and instances that are executables. 
+-->
 
 ## <a name="module-identities"></a>Идентификаторы модулей
 

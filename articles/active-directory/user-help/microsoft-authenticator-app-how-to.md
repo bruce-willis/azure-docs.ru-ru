@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
 ms.reviewer: librown
-ms.openlocfilehash: 8afd743f6010822709bf3d49f7a3bbcd51b19edf
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: c8e14091d7a3fb5b925735824b1dd3ce26f034e8
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39346493"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143594"
 ---
 # <a name="get-started-with-the-microsoft-authenticator-app"></a>Начало работы с приложением Microsoft Authenticator
 
-Приложение Microsoft Authenticator помогает предотвратить несанкционированный доступ к учетным записям и мошеннические транзакции, предоставляя дополнительный уровень безопасности рабочей или учебной учетной записи (например, alain@contoso.com) или личной учетной записи Майкрософт (например, alain@outlook.com). Вы можете использовать его как второй метод проверки или замену пароля при использовании входа с телефона. Дополнительные сведения о настройке и использовании функции входа с телефона без пароля см. в статье [Вход с использованием телефона вместо ввода пароля](microsoft-authenticator-app-phone-signin-faq.md).
+Приложение Microsoft Authenticator помогает предотвратить несанкционированный доступ к учетным записям и мошеннические транзакции, предоставляя дополнительный уровень безопасности рабочей или учебной учетной записи (например, alain@contoso.com) или личной учетной записи Майкрософт (например, alain@outlook.com).
 
 При использовании приложения для двухфакторной проверки подлинности оно может работать одним из двух способов:
 
@@ -110,8 +110,6 @@ ms.locfileid: "39346493"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Если у вас еще есть общие вопросы о приложении, ознакомьтесь со статьей [Часто задаваемые вопросы о приложении Microsoft Authenticator](microsoft-authenticator-app-faq.md).
-
-- Если у вас есть дополнительные вопросы о входе с телефона, ознакомьтесь со статьей [Вход с использованием телефона вместо ввода пароля](microsoft-authenticator-app-phone-signin-faq.md).
 
 - Дополнительные сведения о двухфакторной проверке подлинности см. в статье [Настройка учетной записи для двухфакторной проверки подлинности](multi-factor-authentication-end-user-first-time.md).
 

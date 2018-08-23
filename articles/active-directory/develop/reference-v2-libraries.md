@@ -17,12 +17,12 @@ ms.date: 04/13/2018
 ms.author: celested
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 1450cffca7a4cfa57856c75cdcc9e106958ea043
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: f3ac6050ca73f96facd621823dc4bad413b139c7
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600928"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143734"
 ---
 # <a name="azure-active-directory-v20-authentication-libraries"></a>Библиотеки проверки подлинности Azure Active Directory версии 2.0
 
@@ -44,7 +44,7 @@ ms.locfileid: "39600928"
 
 ## <a name="library-support"></a>Поддержка библиотек
 
-Так как при использовании конечной точки версии 2.0 можно выбрать любую библиотеку, соответствующую стандартам, важно знать, куда обратиться за поддержкой. Проблемы и запросы возможностей в коде библиотеки отправляются владельцу библиотеки. Проблемы и запросы возможностей в реализации протокола на стороне службы отправляются в корпорацию Майкрософт. [Зарегистрируйте запрос функции](https://feedback.azure.com/forums/169401-azure-active-directory) для дополнительных компонентов, которые вы хотите добавить в протокол. [Создайте запрос в службу поддержки](https://docs.microsoft.com/en-us/azure/azure-supportability/how-to-create-azure-support-request) при обнаружении проблемы несовместимости конечной точки версии 2.0 Azure AD с OAuth 2.0 и OpenID Connect 1.0.
+Так как при использовании конечной точки версии 2.0 можно выбрать любую библиотеку, соответствующую стандартам, важно знать, куда обратиться за поддержкой. Проблемы и запросы возможностей в коде библиотеки отправляются владельцу библиотеки. Проблемы и запросы возможностей в реализации протокола на стороне службы отправляются в корпорацию Майкрософт. [Зарегистрируйте запрос функции](https://feedback.azure.com/forums/169401-azure-active-directory) для дополнительных компонентов, которые вы хотите добавить в протокол. [Создайте запрос в службу поддержки](https://docs.microsoft.com/azure/azure-supportability/how-to-create-azure-support-request) при обнаружении проблемы несовместимости конечной точки версии 2.0 Azure AD с OAuth 2.0 и OpenID Connect 1.0.
 
 Для библиотек предусмотрено две категории поддержки:
 

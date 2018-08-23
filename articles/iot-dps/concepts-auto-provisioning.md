@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: timlt
-ms.openlocfilehash: 9a45f8269e0ca2bc4188016af0ace06831c762b6
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 025e447995d302c24ab2a7d1c8668857cb47ffdd
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521284"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42144393"
 ---
 # <a name="auto-provisioning-concepts"></a>Принципы автоматической подготовки устройств
 
@@ -62,7 +62,7 @@ ms.locfileid: "39521284"
 [![Последовательность автоматической подготовки устройства](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png)](./media/concepts-auto-provisioning/sequence-auto-provision-device-vs.png#lightbox) 
 
 > [!NOTE]
-> При необходимости изготовитель может также выполнить операцию "регистрации удостоверения устройства" с помощью интерфейсов API службы подготовки устройств (а не с помощью оператора). Подробное описание этой процедуры и многое другое можно найти в видео [Zero touch device registration with Azure IoT](https://myignite.microsoft.com/sessions/55087) (Автоматическая регистрация устройств в Azure IoT) (начиная с 41-й минуты).
+> При необходимости изготовитель может также выполнить операцию "регистрации удостоверения устройства" с помощью интерфейсов API службы подготовки устройств (а не с помощью оператора). Подробное описание этой процедуры и многое другое можно найти в видео [Zero touch device registration with Azure IoT](https://youtu.be/cSbDRNg72cU?t=2460) (Автоматическая регистрация устройств в Azure IoT) (начиная с 41-й минуты).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

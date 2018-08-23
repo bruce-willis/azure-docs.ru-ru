@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 5/4/18
 ms.author: barbkess
 ms.reviewer: japere,asteen
-ms.openlocfilehash: 00dade0926f9f2601757ac637e21737027f24c45
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 642f07be0eb58e4d10630bc4482d26bd00e08a94
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36332615"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143423"
 ---
 # <a name="install-the-access-panel-browser-extension"></a>Установка расширения браузера для панели доступа
 
@@ -87,8 +87,8 @@ ms.locfileid: "36332615"
        В списке **Недавно использованные** отобразятся последние три запущенные приложения.
        
 * Чтобы использовать внутренние URL-адреса компании во время удаленного доступа, выполните следующие действия.
-    1. [Настройте прокси приложения](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-enable) на вашем клиенте.
-    2. [Опубликуйте приложение](https://docs.microsoft.com/en-us/azure/active-directory/application-proxy-publish-azure-portal) и URL-адрес с помощью прокси приложения.
+    1. [Настройте прокси приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable) на вашем клиенте.
+    2. [Опубликуйте приложение](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-azure-portal) и URL-адрес с помощью прокси приложения.
     3. Установите расширение и войдите в него, выбрав "Войти", чтобы приступить к работе.
     4. Теперь вы можете просматривать внутренний URL-адрес компании даже при удаленном подключении.
 

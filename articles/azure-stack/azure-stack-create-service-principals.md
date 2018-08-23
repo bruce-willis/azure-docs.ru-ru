@@ -3,7 +3,7 @@ title: Создание субъекта-службы для Azure Stack | До�
 description: Описывается создание субъекта-службы, который можно использовать в Azure Resource Manager в сочетании с контролем доступа на основе ролей для управления доступом к ресурсам.
 services: azure-resource-manager
 documentationcenter: na
-author: mattbriggs
+author: sethmanheim
 manager: femila
 ms.assetid: 7068617b-ac5e-47b3-a1de-a18c918297b6
 ms.service: azure-resource-manager
@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/21/2018
-ms.author: mabrigg
-ms.openlocfilehash: 0db3f19c99b786d7f32f126ad7bd70efc999a751
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.date: 08/22/2018
+ms.author: sethm
+ms.openlocfilehash: f7233d6a27b9ec3d58f33f7032bbec7a646d24f7
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37444279"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42366125"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -136,6 +136,10 @@ ms.locfileid: "37444279"
     -CertificateThumbprint $ServicePrincipal.Thumbprint `
     -ApplicationId $ServicePrincipal.ClientId `
     -TenantId $TenantID
+
+    # Output the SPN details
+    $ServicePrincipal
+
    ```
 
 2. Когда работа службы автоматизации завершится, будут отображены необходимые сведения для использования имени субъекта-службы. 

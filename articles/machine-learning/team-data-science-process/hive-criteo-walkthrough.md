@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: deguhath
-ms.openlocfilehash: 4c368c3f06347b1164731d056a7341bdabb759b4
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: b368bf76516b0b6f87ad8ff57ca886a44b71926c
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "34837350"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42142746"
 ---
 # <a name="the-team-data-science-process-in-action---using-an-azure-hdinsight-hadoop-cluster-on-a-1-tb-dataset"></a>Процесс обработки и анализа данных группы на практике: использование кластера Azure HDInsight Hadoop с набором данных объемом 1 ТБ
 
@@ -64,7 +64,7 @@ ms.locfileid: "34837350"
 
 Настройте среду обработки и анализа данных Azure, чтобы создавать решения для прогнозной аналитики с помощью кластеров HDInsight, выполнив три шага:
 
-1. [Создание учетной записи хранения.](../../storage/common/storage-create-storage-account.md) Эта учетная запись хранения используется для хранения данных в хранилище BLOB-объектов Azure. Здесь хранятся данные, используемые в кластерах HDInsight.
+1. [Создание учетной записи хранения.](../../storage/common/storage-quickstart-create-account.md) Эта учетная запись хранения используется для хранения данных в хранилище BLOB-объектов Azure. Здесь хранятся данные, используемые в кластерах HDInsight.
 2. [Настройка кластеров Azure HDInsight Hadoop для обработки и анализа данных.](customize-hadoop-cluster.md) На этом шаге создается кластер Azure HDInsight Hadoop и на всех узлах устанавливается 64-разрядный дистрибутив Anaconda Python 2.7. При настройке кластера HDInsight следует выполнить два важных шага (описанных в этом разделе).
    
    * Во время создания кластера HDInsight необходимо связать учетную запись хранения, созданную на шаге 1, с этим кластером. Эта учетная запись хранения используется для доступа к данным, которые можно обработать в пределах кластера.

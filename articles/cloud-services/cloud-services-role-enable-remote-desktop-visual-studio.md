@@ -7,16 +7,17 @@ manager: douge
 ms.assetid: f5727ebe-9f57-4d7d-aff1-58761e8de8c1
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
+ms.custom: vs-azure
 ms.topic: conceptual
-ms.workload: azure
+ms.workload: azure-vs
 ms.date: 03/06/2018
 ms.author: ghogen
-ms.openlocfilehash: fe8b2b59616246743b38aa3b7a7972c092529b5d
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 87c7029836bf28464fd48e17480119a4dcb1201c
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31788472"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143579"
 ---
 # <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Включение подключения к удаленному рабочему столу для роли в облачных службах Azure с помощью Visual Studio
 

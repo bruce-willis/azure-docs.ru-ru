@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 5b9ef9691d3d9b9aaced3ad2aaa54e6cfc03fa14
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 254c68c45a06022588ade6ab6f005989205ff405
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857452"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42146814"
 ---
 # <a name="security-frame-configuration-management--mitigations"></a>Механизм безопасности. Управление конфигурацией | Устранение угроз 
 | Продукт или служба | Статья |
@@ -606,7 +606,7 @@ public void ConfigureServices(IServiceCollection services)
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com) |
 | **Действия** | <p>Если не задать ограничение на использование системных ресурсов, они могут исчерпаться, что в конечном счете может привести к отказу в обслуживании.</p><ul><li>**Пояснение.** Windows Communication Foundation (WCF) предоставляет возможность регулировать количество запросов на обслуживание. Слишком большое количество клиентских запросов может привести к переполнению системы, в результате чего ее ресурсы могут исчерпаться. С другой стороны, при недостаточном количестве запросов к службе пользователи могут перестать использовать ее. Для каждой службы следует настроить необходимый объем ресурсов.</li><li>**Рекомендации.** Включите функцию регулирования служб WCF и задайте ограничения, соответствующие вашему приложению.</li></ul>|
 
 ### <a name="example"></a>Пример
@@ -629,7 +629,7 @@ public void ConfigureServices(IServiceCollection services)
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/vulncat/index.html) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com) |
 | **Действия** | Используя метаданные, злоумышленники могут получить сведения о системе и спланировать тип атаки. Службы WCF могут предоставлять метаданные. В этих метаданных содержится подробное описание службы, и поэтому их не следует передавать в рабочих средах. Свойства `HttpGetEnabled` / `HttpsGetEnabled` класса ServiceMetaData определяют, будет ли служба предоставлять метаданные. | 
 
 ### <a name="example"></a>Пример

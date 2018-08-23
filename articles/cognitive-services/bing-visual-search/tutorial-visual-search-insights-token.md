@@ -9,20 +9,20 @@ ms.component: bing-visual-search
 ms.topic: article
 ms.date: 06/21/2018
 ms.author: rosh
-ms.openlocfilehash: 578fa90f504920030b488d2b8fa3a2d0232cccce
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 8f6e7f7e88ae78fe7e8a9be4adefd689dd26d0f9
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36753629"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41929779"
 ---
 # <a name="tutorial-bing-visual-search-sdk-imageinsightstoken-and-results"></a>Руководство по ImageInsightsToken в пакете SDK для визуального поиска Bing и результаты применения
 В пакет SDK для визуального поиска входит возможность поиска изображений в Интернете из предыдущей операции поиска, возвращающей `ImageInsightsToken`.  В этом примере показано получение `ImageInsightsToken` и использование токена в последующих операциях поиска.  Код отправляет `ImageInsightsToken` в Bing и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.
 
-## <a name="prerequisites"></a>предварительным требованиям
-Visual Studio 2017. При необходимости скачать бесплатную версию сообщества можно здесь: https://www.visualstudio.com/vs/community/.
+## <a name="prerequisites"></a>Предварительные требования
+Visual Studio 2017. При необходимости можно скачать бесплатную версию сообщества. Ее можно найти по адресу https://www.visualstudio.com/vs/community/.
 Для проверки подлинности вызовов пакета SDК требуется ключ API Cognitive Services. Зарегистрируйтесь для получения ключа бесплатной пробной версии. Ключ бесплатной пробной версии действует в течение семи дней с одним вызовом в секунду. Для производственной эксплуатации следует приобрести ключ доступа. Ознакомьтесь также со сведениями о ценах.
-Поддерживается возможность запуска пакета SDK для .NET Core, приложений .NET Core 1.1. Скачать Core, Framework и среду выполнения можно здесь: https://www.microsoft.com/net/download/.
+Поддерживается возможность запуска пакета SDK для .NET Core, приложений .NET Core 1.1. Загрузить .NET Core, Framework и среду выполнения можно по адресу https://www.microsoft.com/net/download/.
 
 ##<a name="application-dependencies"></a>Зависимости приложения
 Чтобы настроить консольное приложение с помощью пакета SDK для поиска в Интернете Bing, в Visual Studio в обозревателе решений перейдите к параметру "Управление пакетами NuGet". Добавьте следующие пакеты:
@@ -33,7 +33,7 @@ Visual Studio 2017. При необходимости скачать беспл
 
 * Microsoft.Rest.ClientRuntime
 * Microsoft.Rest.ClientRuntime.Azure
-* Newtonsoft.Json
+* Newtonsoft.Json.
 
 ## <a name="get-the-imageinsightstoken-from-image-search"></a>Получение токена ImageInsightsToken из поиска изображений
 В этом примере используется токен `ImageInsightsToken`, полученный с помощью следующего метода.  Дополнительные сведения об этом вызове см. в статье [Краткое руководство по пакету SDK для поиска изображений для C#](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-image-search/image-search-sdk-quickstart).
@@ -283,4 +283,4 @@ namespace VisualSearchFeatures
 
 ```
 ## <a name="next-steps"></a>Дополнительная информация
-[Ответ визуального поиска](https://review.docs.microsoft.com/en-us/azure/cognitive-services/bing-visual-search/overview?branch=pr-en-us-44614#the-response)
+[Ответ визуального поиска](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/overview#the-response)

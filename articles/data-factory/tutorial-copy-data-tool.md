@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: hero-article
 ms.date: 06/21/2018
 ms.author: jingwang
-ms.openlocfilehash: f7dd560a40eda2439e88d66771e2e22c90442bfd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6e63973f2545abefc030edc4c6bb6b35c28729f7
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421521"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41920777"
 ---
 # <a name="copy-data-from-azure-blob-storage-to-a-sql-database-by-using-the-copy-data-tool"></a>Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL Azure с помощью средства копирования данных
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -38,7 +38,7 @@ ms.locfileid: "39421521"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* **Учетная запись хранения Azure**. В этом руководстве в качестве _исходного_ используйте хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+* **Учетная запись хранения Azure**. В этом руководстве в качестве _исходного_ используйте хранилище BLOB-объектов. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-quickstart-create-account.md).
 * **База данных SQL Azure**. Базу данных SQL Azure используйте в качестве _принимающего_ хранилища данных. Если у вас нет базы данных SQL, см. инструкции по [ее созданию](../sql-database/sql-database-get-started-portal.md).
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Создание большого двоичного объекта и таблицы SQL

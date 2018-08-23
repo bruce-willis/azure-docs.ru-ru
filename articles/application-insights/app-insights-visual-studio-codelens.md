@@ -1,23 +1,26 @@
 ---
-title: "Телеметрия Application Insights в Visual Studio CodeLens | Документация Майкрософт"
-description: "Быстро получайте доступ к телеметрии запросов и исключений Application Insights с помощью CodeLens в Visual Studio."
+title: Телеметрия Application Insights в Visual Studio CodeLens | Документация Майкрософт
+description: Быстро получайте доступ к телеметрии запросов и исключений Application Insights с помощью CodeLens в Visual Studio.
 services: application-insights
 documentationcenter: .net
-author: numberbycolors
+author: mrbullwinkle
 manager: carmonm
 ms.assetid: 93559e44-23cb-4b9d-8425-60f7f0d0a82c
 ms.service: application-insights
-ms.workload: tbd
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/17/2017
+ms.reviewer: daviste
 ms.author: mbullwin
-ms.openlocfilehash: 418c391f896ac60f509b963f0aff70ad699fc43b
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 7df49258895aa0dfa5c8cc592914ba6998a97cb8
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42442116"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
 Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.

@@ -1,5 +1,5 @@
 ---
-title: Получение событий от концентраторов событий Azure с помощью библиотеки .NET Standard | Документация Майкрософт
+title: Получение событий от Центров событий Azure с помощью библиотеки .NET Standard | Документация Майкрософт
 description: Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
 services: event-hubs
 documentationcenter: na
@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/28/2017
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: 40e81058b539b0ad6d642a6f7b22d75304fe5cdf
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 03acd63ff00f0a3017297d1998289c8e68f0f290
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40002721"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41919585"
 ---
 # <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-standard"></a>Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
 
@@ -33,12 +33,12 @@ ms.locfileid: "40002721"
 * [Microsoft Visual Studio 2015 или Microsoft Visual Studio 2017](http://www.visualstudio.com). В примерах в этом руководстве используется Visual Studio 2017, но также поддерживается Visual Studio 2015.
 * [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](http://www.microsoft.com/net/core).
 * Подписка Azure.
-* Пространство имен концентраторов событий Azure и концентратор событий.
+* Пространство имен Центров событий Azure и концентратор событий.
 * Учетная запись хранения Azure.
 
-## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен концентраторов событий и концентратора событий  
+## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий  
 
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен концентраторов событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к этому руководству.  
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к этому руководству.  
 
 ## <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure  
 
@@ -57,7 +57,7 @@ ms.locfileid: "40002721"
 
 ![Новый проект][2]
 
-## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для концентраторов событий
+## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
 
 Чтобы добавить в проект пакеты NuGet стандартной библиотеки .NET [**Microsoft.Azure.EventHubs**](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) и [**Microsoft.Azure.EventHubs.Processor**](https://www.nuget.org/packages/Microsoft.Azure.EventHubs.Processor/), выполните следующие действия: 
 
@@ -192,9 +192,9 @@ ms.locfileid: "40002721"
                 Console.WriteLine("Registering EventProcessor...");
 
                 var eventProcessorHost = new EventProcessorHost(
-                    EhEntityPath,
+                    EventHubName,
                     PartitionReceiver.DefaultConsumerGroupName,
-                    EhConnectionString,
+                    EventHubConnectionString,
                     StorageConnectionString,
                     StorageContainerName);
 
@@ -216,12 +216,11 @@ ms.locfileid: "40002721"
 Поздравляем! Теперь вы можете получать сообщения из концентратора событий с помощью узла EventProcessorHost.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о концентраторах событий см. в следующих источниках:
+Дополнительные сведения о Центрах событий см. в следующих источниках:
 
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 
 [1]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/event-hubs-python1.png
 [2]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png

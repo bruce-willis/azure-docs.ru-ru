@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: eefb07136215d79b7c351dd4498bfeb79b6833de
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 27f271a20af2bb9910f1cf7d63e6033d78e67b83
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39413759"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918122"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
 
@@ -86,8 +86,6 @@ ms.locfileid: "39413759"
 Вы создали и назначили политику конфигурации устройства, чтобы активировать ссылку сброса пароля в окне входа в систему, используя Intune.
 
 ## <a name="configure-reset-password-link-using-the-registry"></a>Настройка ссылки сброса пароля с помощью реестра
-
-Рекомендуем использовать этот способ только для проверки изменения параметра.
 
 1. Войдите в компьютер Windows, используя учетные данные администратора
 2. Запустите **regedit** от имени администратора.

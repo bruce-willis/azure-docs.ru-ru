@@ -1,8 +1,8 @@
 ---
-title: Импорт данных Cassandra в Azure Cosmos DB | Документы Майкрософт
+title: Импорт данных Cassandra в Azure Cosmos DB | Документация Майкрософт
 description: Сведения об использовании команды CQL Copy для копирования данных Cassandra в Azure Cosmos DB.
 services: cosmos-db
-author: govindk
+author: kanshiG
 manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-cassandra
@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/15/2017
 ms.author: govindk
 ms.custom: mvc
-ms.openlocfilehash: 73c9f1fc26f5cb36cc475a66b67705c6177bebf8
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: b53328875f2242faba369dea0df655bc78117009
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37095678"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41917955"
 ---
 # <a name="azure-cosmos-db-import-cassandra-data"></a>Azure Cosmos DB: импорт данных Cassandra
 
@@ -88,7 +88,7 @@ ms.locfileid: "37095678"
 
 Для данных, хранящихся в существующем кластере виртуальных машин Azure, можно применить импорт данных с помощью Spark. Для этого следует настроить Spark в качестве промежуточного звена для однократного или регулярного приема данных. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как выполнять следующие задачи.
 

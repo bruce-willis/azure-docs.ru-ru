@@ -13,12 +13,12 @@ ms.date: 06/13/2018
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 44781c976afa94ebe3c8df8c7fd70c3e16956916
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: b1d3439412e324c71687c43aa9e47c520cb72262
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37871302"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143433"
 ---
 # <a name="delete-an-azure-active-directory-tenant"></a>Удаление клиента Azure Active Directory
 При удалении клиента удаляются и все содержащиеся в нем ресурсы. Вы должны подготовить клиента к удалению и свести к минимуму связанные с ним ресурсы. Только глобальный администратор Azure Active Directory (Azure AD) может удалить клиента Azure AD с портала.
@@ -63,7 +63,7 @@ ms.locfileid: "37871302"
 
 Вы можете поместить подписку в состояние **Отозвано**, чтобы удалить ее через три дня с помощью центра администрирования Microsoft Store для бизнеса. Вскоре эта возможность будет доступна в центре администрирования Office 365.
 
-1. Войдите в [центр администрирования Microsoft Store для бизнеса](https://businessstore.microsoft.com/en-us/manage/) с помощью учетной записи глобального администратора в клиенте. Если вы пытаетесь удалить клиент Contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, войдите с именем участника-пользователя, например admin@contoso.onmicrosoft.com.
+1. Войдите в [центр администрирования Microsoft Store для бизнеса](https://businessstore.microsoft.com/manage/) с помощью учетной записи глобального администратора в клиенте. Если вы пытаетесь удалить клиент Contoso с начальным доменом по умолчанию contoso.onmicrosoft.com, войдите с именем участника-пользователя, например admin@contoso.onmicrosoft.com.
 
 2. Перейдите на вкладку **Управление** и выберите **Продукты и услуги**, затем выберите подписку, которую нужно отменить. Нажмите **Отменить** и обновите страницу.
   

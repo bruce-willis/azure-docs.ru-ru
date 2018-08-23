@@ -14,17 +14,17 @@ ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: barbkess
 ms.reviewer: asmalser
-ms.openlocfilehash: e3be74fbb571a806fc03a92d0b1b373e35d196be
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 3231792ed1cb7f80cd2a106faf3760c48dd13c19
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39363620"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146839"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Руководство по отчетам об автоматической подготовке учетных записей пользователей
 
 
-Azure Active Directory включает в себя [службу подготовки учетных записей пользователей](active-directory-saas-app-provisioning.md), которая помогает автоматизировать подготовку и отзыв учетных записей пользователей в приложениях SaaS и других системах для комплексного управления жизненным циклом удостоверений. Azure AD поддерживает предварительно интегрированные соединители для подготовки пользователей для всех приложений и систем в разделе "Избранные" [коллекции приложений Azure AD](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=featured).
+Azure Active Directory включает в себя [службу подготовки учетных записей пользователей](active-directory-saas-app-provisioning.md), которая помогает автоматизировать подготовку и отзыв учетных записей пользователей в приложениях SaaS и других системах для комплексного управления жизненным циклом удостоверений. Azure AD поддерживает предварительно интегрированные соединители для подготовки пользователей для всех приложений и систем в разделе "Избранные" [коллекции приложений Azure AD](https://azuremarketplace.microsoft.com/marketplace/apps/category/azure-active-directory-apps?page=1&subcategories=featured).
 
 В этой статье описывается, как проверить состояние заданий подготовки после их настройки и устранить неполадки при подготовке отдельных пользователей и групп.
 

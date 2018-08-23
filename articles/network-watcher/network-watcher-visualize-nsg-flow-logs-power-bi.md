@@ -3,8 +3,8 @@ title: Визуализация журналов потоков для груп�
 description: В этой статье описывается визуализация журналов потоков для групп безопасности сети с помощью Power BI.
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: timlt
+author: mattreatMSFT
+manager: vitinnan
 editor: ''
 ms.assetid: 1e4f95fa-f5f0-4e03-bc25-008fbfc4934c
 ms.service: network-watcher
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
-ms.author: jdial
-ms.openlocfilehash: 19bd7ed4bab915d7918a192a046653666cfaa498
-ms.sourcegitcommit: c7215d71e1cdeab731dd923a9b6b6643cee6eb04
+ms.author: mareat
+ms.openlocfilehash: 8f5bb54e12348fd915b2c4413bbacdc083a2a879
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2017
-ms.locfileid: "24878587"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142977"
 ---
 # <a name="visualizing-network-security-group-flow-logs-with-power-bi"></a>Визуализация журналов потоков для групп безопасности сети с помощью Power BI
 
@@ -108,7 +108,7 @@ ms.locfileid: "24878587"
 
 Вы можете настроить этот шаблон в соответствии с конкретными потребностями. Есть очень много способов применить Power BI в сочетании с журналами потоков для групп безопасности сети. 
 
-## <a name="notes"></a>Заметки
+## <a name="notes"></a>Примечания
 
 * Журналы по умолчанию хранятся в следующем расположении: `https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/`
 

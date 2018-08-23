@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: ace7f11eeea081077855a409824272b4b55f3c33
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: ca920a93d754254390a5c5c5a066be3144b47fc7
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39247233"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41920747"
 ---
 # <a name="tutorial-use-a-windows-vm-managed-service-identity-to-access-azure-sql"></a>Руководство. Доступ к SQL Azure с помощью Управляемого удостоверения службы виртуальной машины Windows
 
@@ -44,7 +44,7 @@ ms.locfileid: "39247233"
 
 ## <a name="create-a-windows-virtual-machine-in-a-new-resource-group"></a>Создание виртуальной машины Windows в новой группе ресурсов
 
-В рамках этого руководства мы создадим виртуальную машину Windows.  Управляемое удостоверение службы можно также включить на имеющейся виртуальной машине.
+В рамках этого руководства мы создадим виртуальную машину Windows.  Управляемое удостоверение службы можно также активировать на имеющейся виртуальной машине.
 
 1.  Нажмите кнопку **Создать ресурс** в верхнем левом углу окна портала Azure.
 2.  Выберите **Вычисления**, а затем — **Windows Server 2016 Datacenter**. 
@@ -55,13 +55,13 @@ ms.locfileid: "39247233"
 
     ![Замещающий текст](media/msi-tutorial-windows-vm-access-arm/msi-windows-vm.png)
 
-## <a name="enable-managed-service-identity-on-your-vm"></a>Активация Управляемого удостоверения службы на виртуальной машине 
+## <a name="enable-managed-service-identity-on-your-vm"></a>Активация управляемого удостоверения службы на виртуальной машине 
 
 Управляемое удостоверение службы на виртуальной машине позволяет получить маркеры доступа из Azure AD без необходимости указывать в коде учетные данные. Активация Управляемого удостоверения службы сообщает Azure о создании управляемого удостоверения для виртуальной машины. Как правило, включение Управляемого удостоверения службы имеет две цели: регистрацию виртуальной машины в Azure Active Directory для создания управляемого удостоверения и его настройку на этой виртуальной машине.
 
 1.  Выберите **виртуальную машину**, на которой необходимо активировать Управляемое удостоверение службы.  
 2.  В левой области навигации щелкните **Конфигурация**. 
-3.  Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и активировать Управляемое удостоверение службы, нажмите кнопку **Да**. Чтобы отключить, нажмите кнопку "Нет". 
+3.  Появится страница **Managed Service Identity** (Управляемое удостоверение службы). Чтобы зарегистрировать и включить управляемое удостоверение службы, нажмите кнопку **Да**. Чтобы отключить его, нажмите кнопку "Нет". 
 4.  Нажмите кнопку **Сохранить**, чтобы сохранить конфигурацию.  
     ![Замещающий текст](media/msi-tutorial-linux-vm-access-arm/msi-linux-extension.png)
 
@@ -147,8 +147,8 @@ b83305de-f496-49ca-9427-e77512f6cc64 0b67a6d6-6090-4ab4-b423-d6edda8e5d9f DevTes
 
 В следующем шаге потребуется [Microsoft SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) (SSMS). Прежде чем начать, советуем ознакомиться со следующими статьями, содержащими общие сведения об интеграции Azure AD:
 
-- [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](/azure/sql-database/sql-database-ssms-mfa-authentication.md)
-- [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](/azure/sql-database/sql-database-aad-authentication-configure.md)
+- [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](/azure/sql-database/sql-database-ssms-mfa-authentication)
+- [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](/azure/sql-database/sql-database-aad-authentication-configure)
 
 1.  Запустите среду SQL Server Management Studio.
 2.  В диалоговом окне **Подключение к серверу** в поле **Имя сервера** введите имя сервера SQL.

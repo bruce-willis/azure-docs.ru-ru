@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 92b505e698f2d56a2678ac53f42bb49dbaf22463
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: cc87985404ef8c9ee625f32b359e6ac1a29e73ae
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39046776"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143311"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jira-saml-sso-by-microsoft"></a>Руководство по интеграции Azure Active Directory с JIRA SAML SSO by Microsoft
 
@@ -148,7 +148,7 @@ ms.locfileid: "39046776"
 
     ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon1.png)
 
-8. Скачайте подключаемый модуль из [Центра загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=56506). Вручную передайте подключаемый модуль, предоставленный корпорацией Майкрософт, воспользовавшись меню **Upload add-on** (Отправка надстройки). Загрузка подключаемого модуля выполняется в соответствии с [соглашением об обслуживании Майкрософт](https://www.microsoft.com/en-us/servicesagreement/).
+8. Скачайте подключаемый модуль из [Центра загрузки Майкрософт](https://www.microsoft.com/download/details.aspx?id=56506). Вручную передайте подключаемый модуль, предоставленный корпорацией Майкрософт, воспользовавшись меню **Upload add-on** (Отправка надстройки). Загрузка подключаемого модуля выполняется в соответствии с [соглашением об обслуживании Майкрософт](https://www.microsoft.com/servicesagreement/).
 
     ![Настройка единого входа](./media/jiramicrosoft-tutorial/addon12.png)
 
@@ -176,7 +176,7 @@ ms.locfileid: "39046776"
 
     д. Если выбран параметр **Идентификатор пользователя указан в элементе Attribute**, то в текстовом поле **Имя атрибута** введите имя атрибута, в котором ожидается идентификатор пользователя.
 
-    f. При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
+    Е. При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
 
     ж. В поле **Доменное имя** введите доменное имя, если вы используете вход на основе AD FS.
 

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0bc414d42acd665e52f3f76037dffe225344b23d
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 00143ab1f4aaba0f700e084d9225570c28713d0d
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195300"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143523"
 ---
 # <a name="starting-a-runbook-in-azure-automation"></a>Запуск модуля Runbook в службе автоматизации Azure
 Следующая таблица поможет определить метод запуска модуля runbook в службе автоматизации Azure, наиболее подходящий для конкретной ситуации. Данная статья содержит сведения о запуске модуля Runbook с помощью портала Azure и Windows PowerShell. Сведения об остальных методах приведены в другой документации, доступной по ссылкам, которые указаны ниже.
@@ -22,7 +22,7 @@ ms.locfileid: "34195300"
 | **МЕТОД** | **ХАРАКТЕРИСТИКИ** |
 | --- | --- |
 | [портал Azure](#starting-a-runbook-with-the-azure-portal) |<li>Простейший способ с интерактивным пользовательским интерфейсом.<br> <li>Форма для предоставления значений простых параметров.<br> <li>Легко отслеживать состояние задания.<br> <li>Доступ с аутентификацией в Azure. |
-| [Windows PowerShell](https://msdn.microsoft.com/library/dn690259.aspx) |<li>Вызов из командной строки с помощью командлетов Windows PowerShell.<br> <li>Может быть добавлено в автоматическое решение, состоящее из нескольких шагов.<br> <li>Запрос проходит проверку подлинности с помощью сертификата или по протоколу OAuth.<br> <li>Необходимо предоставить значения простых и сложных параметров.<br> <li>Отслеживание состояния задания.<br> <li>Для поддержки командлетов PowerShell необходим клиент. |
+| [Windows PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/start-azureautomationrunbook) |<li>Вызов из командной строки с помощью командлетов Windows PowerShell.<br> <li>Может быть добавлено в автоматическое решение, состоящее из нескольких шагов.<br> <li>Запрос проходит проверку подлинности с помощью сертификата или по протоколу OAuth.<br> <li>Необходимо предоставить значения простых и сложных параметров.<br> <li>Отслеживание состояния задания.<br> <li>Для поддержки командлетов PowerShell необходим клиент. |
 | [API-интерфейс в службе автоматизации Azure](https://msdn.microsoft.com/library/azure/mt662285.aspx) |<li>Наиболее гибкий и наиболее сложный метод.<br> <li>Вызов из любого пользовательского кода, который может выполнять HTTP-запросы.<br> <li>Запрос проходит проверку подлинности с помощью сертификата или по протоколу OAuth.<br> <li>Необходимо предоставить значения простых и сложных параметров. *При вызове модуля runbook Python с помощью API полезные данные JSON необходимо сериализовать.*<br> <li>Отслеживание состояния задания. |
 | [Объекты Webhook](automation-webhooks.md) |<li>Запуск Runbook из одного HTTP-запроса.<br> <li>Проверка подлинности с помощью токена безопасности в URL-адресе.<br> <li>Клиент не может переопределять значения параметров, указанные при создании Webhook. Runbook может определить один параметр, который содержит сведения об HTTP-запросе.<br> <li>Отсутствует возможность отслеживать состояния задания через URL-адрес webhook. |
 | [Ответ на оповещение Azure](../log-analytics/log-analytics-alerts.md) |<li>Запуск Runbook в ответ на оповещение Azure.<br> <li>Настройка веб-перехватчика для Runbook и ссылки на оповещение.<br> <li>Проверка подлинности с помощью токена безопасности в URL-адресе. |
@@ -41,13 +41,13 @@ ms.locfileid: "34195300"
 5. На странице **Задание** можно просмотреть состояние задания runbook.
 
 ## <a name="starting-a-runbook-with-windows-powershell"></a>Запуск модуля Runbook с помощью Windows PowerShell
-Чтобы запустить модуль Runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx) . В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook.
+Чтобы запустить модуль Runbook с помощью Windows PowerShell, воспользуйтесь командлетом [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) . В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook.
 
 ```
 Start-AzureRmAutomationRunbook -AutomationAccountName "MyAutomationAccount" -Name "Test-Runbook" -ResourceGroupName "ResourceGroup01"
 ```
 
-Командлет Start-AzureRmAutomationRunbook возвращает объект задания, который позволяет отслеживать его состояние после запуска. Используйте командлет [Get-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt619440.aspx), чтобы определить состояние задания, и [Get-AzureRmAutomationJobOutput](https://msdn.microsoft.com/library/mt603476.aspx), чтобы получить его выходные данные. В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook и после его завершения выводится результат.
+Командлет Start-AzureRmAutomationRunbook возвращает объект задания, который позволяет отслеживать его состояние после запуска. Используйте командлет [Get-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjob), чтобы определить состояние задания, и [Get-AzureRmAutomationJobOutput](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationjoboutput), чтобы получить его выходные данные. В следующем примере кода будет запущен модуль Runbook с именем Test-Runbook и после его завершения выводится результат.
 
 ```
 $runbookName = "Test-Runbook"

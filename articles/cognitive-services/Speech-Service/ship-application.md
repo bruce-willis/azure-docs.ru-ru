@@ -9,12 +9,12 @@ ms.component: speech-service
 ms.topic: article
 ms.date: 06/07/2018
 ms.author: wolfma
-ms.openlocfilehash: df6224208e93f4a332247440933b3a4d11c1bb43
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: 65ff0e47cf7a53d519bfd0c50ea4c3ebd09a5766
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39283037"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41929809"
 ---
 # <a name="shipping-an-application"></a>Доставка приложения
 
@@ -31,7 +31,7 @@ ms.locfileid: "39283037"
 - [Win32](https://aka.ms/vs/15/release/vc_redist.x86.exe)
 - [x64](https://aka.ms/vs/15/release/vc_redist.x64.exe)
 
-Если приложение использует управляемый код, на целевом компьютере требуется `.Net Framework 4.6.1` или более поздней версии.
+Если приложение использует управляемый код, на целевом компьютере требуется `.NET Framework 4.6.1` или более поздней версии.
 
 Для ввода с микрофона необходимо установить библиотеки Media Foundation. Эти библиотеки входят в Windows 10 и Windows Server 2016. Пакет SDK для службы "Речь" можно использовать без этих библиотек, если в качестве аудиоустройства ввода не используется микрофон.
 

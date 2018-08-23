@@ -1,23 +1,25 @@
 ---
-title: "Отладка приложений с помощью Azure Application Insights в Visual Studio |Документы Майкрософт"
-description: "Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде."
+title: Отладка приложений с помощью Azure Application Insights в Visual Studio |Документы Майкрософт
+description: Анализ производительности веб-приложения и диагностика во время отладки и в рабочей среде.
 services: application-insights
 documentationcenter: .net
 author: mrbullwinkle
 manager: carmonm
 ms.assetid: 2059802b-1131-477e-a7b4-5f70fb53f974
 ms.service: application-insights
-ms.workload: tbd
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: mbullwin
-ms.openlocfilehash: 656c62e7227eef967696715f0882114631249c6c
-ms.sourcegitcommit: e462e5cca2424ce36423f9eff3a0cf250ac146ad
+ms.openlocfilehash: 1b00c57ee0890319d70bd7634d301a6472b8416e
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2017
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42443921"
 ---
 # <a name="debug-your-applications-with-azure-application-insights-in-visual-studio"></a>Отладка приложений с помощью Azure Application Insights в Visual Studio
 В Visual Studio 2015 и более поздних версиях можно анализировать производительность веб-приложения ASP.NET и диагностировать проблемы во время отладки и в рабочей среде с помощью телеметрии из [Azure Application Insights](app-insights-overview.md).

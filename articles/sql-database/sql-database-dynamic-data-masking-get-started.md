@@ -9,12 +9,12 @@ ms.custom: security
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: ronitr
-ms.openlocfilehash: e5ed226c0d2f849e59abcf3b46c9ec6fb7cc679a
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 714fe94d295157f0d4d90139da98254f46794731
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645255"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42143533"
 ---
 # <a name="sql-database-dynamic-data-masking"></a>Динамическое маскирование данных базы данных SQL Azure
 
@@ -49,7 +49,7 @@ ms.locfileid: "34645255"
 Система рекомендаций DDM помечает в базе данных поля, которые могут содержать конфиденциальные данные и являются хорошими кандидатами на применение маскирования. Список рекомендуемых для маскирования столбцов в вашей базе данных см. на портале в колонке «Динамическое маскирование данных». Вам нужно только щелкнуть **Добавить маску** для одного или нескольких столбцов, а затем щелкнуть **Сохранить**, чтобы применить маски к выбранным полям.
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-powershell-cmdlets"></a>Настройка динамического маскирования данных для базы данных с помощью командлетов Powershell
-См. статью с описанием [командлетов базы данных SQL Azure](https://msdn.microsoft.com/library/azure/mt574084.aspx).
+См. статью с описанием [командлетов базы данных SQL Azure](https://docs.microsoft.com/powershell/module/azurerm.sql).
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-rest-api"></a>Настройка динамической маскировки данных для базы данных с помощью REST API
 См. статью с описанием [операций для баз данных SQL Azure](https://msdn.microsoft.com/library/dn505719.aspx).

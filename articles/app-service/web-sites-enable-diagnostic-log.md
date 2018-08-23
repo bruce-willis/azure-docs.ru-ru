@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/06/2016
 ms.author: cephalin
-ms.openlocfilehash: 0eefb8ecb7c9641b3e025054f54e2b7cf97b94bd
-ms.sourcegitcommit: 30221e77dd199ffe0f2e86f6e762df5a32cdbe5f
+ms.openlocfilehash: 37b11eea5c37103c0bc296a5f466658fbc77ed24
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39206009"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143281"
 ---
 # <a name="enable-diagnostics-logging-for-web-apps-in-azure-app-service"></a>Включение ведения журнала диагностики для веб-приложений в службе приложений Azure
 ## <a name="overview"></a>Обзор
@@ -171,7 +171,7 @@ Visual Studio Application Insights предоставляет средства �
 Чтобы просмотреть список доступных путей, используйте параметр -ListPath.
 
 > [!NOTE]
-> Если компонент Azure PowerShell не установлен или не настроен для использования подписки Azure, ознакомьтесь с разделом [Использование Azure PowerShell](/develop/nodejs/how-to-guides/powershell-cmdlets/).
+> Если компонент Azure PowerShell не установлен или не настроен для использования подписки Azure, ознакомьтесь с разделом [Использование Azure PowerShell](http://azure.microsoft.com/develop/nodejs/how-to-guides/powershell-cmdlets/).
 >
 >
 

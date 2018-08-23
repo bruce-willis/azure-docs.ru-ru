@@ -7,16 +7,17 @@ manager: douge
 assetId: 4a58e2c6-7a79-4051-8a2c-99182ff8b881
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
-ms.workload: azure
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 03/21/2017
 ms.author: ghogen
-ms.openlocfilehash: c02e80a97fe5943019f446299e370bf029a01ff4
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 2f82663f6b53c6d4e32b8d655dcbd67a321d91ed
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31795098"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146705"
 ---
 # <a name="retain-a-constant-virtual-ip-address-for-an-azure-cloud-service"></a>Сохранение постоянного виртуального IP-адреса для облачной службы Azure
 При обновлении облачной службы, размещенной в Azure, необходимо убедиться в том, что виртуальный IP-адрес (VIP) службы не изменяется. Многие службы управления доменом используют службу доменных имен (DNS) для регистрации доменных имен. Регистрация с помощью DNS возможна, только если виртуальный IP-адрес остается неизменным. Проверить, изменяется ли виртуальный IP-адрес облачной службы при обновлении, можно с помощью **мастера публикации** в инструментах Azure. Дополнительные сведения об управлении доменами DNS для облачных служб см. в статье [Настройка пользовательского доменного имени для облачной службы Azure](cloud-services/cloud-services-custom-domain-name-portal.md).

@@ -3,7 +3,7 @@ title: Восстановление после катастрофической 
 description: Если катастрофический сбой приводит к отказу Azure Stack, вы можете восстановить данные инфраструктуры при повторном развертывании Azure Stack.
 services: azure-stack
 documentationcenter: ''
-author: mattbriggs
+author: jeffgilb
 manager: femila
 editor: ''
 ms.assetid: 2ECE8580-0BDE-4D4A-9120-1F6771F2E815
@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 4/20/2017
-ms.author: mabrigg
+ms.date: 07/17/2018
+ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: f1582efa7d357f6f535c562a656ec17024357320
-ms.sourcegitcommit: d76d9e9d7749849f098b17712f5e327a76f8b95c
+ms.openlocfilehash: ed89468d65f35d0a8cda90da365e8625f46e3f92
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242875"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41947757"
 ---
 # <a name="recover-from-catastrophic-data-loss"></a>Восстановление после катастрофической потери данных
 

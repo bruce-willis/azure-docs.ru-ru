@@ -4,14 +4,14 @@ description: Сведения о выполнении отработки ава�
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 07/06/2018
+ms.date: 08/13/2018
 ms.author: raynew
-ms.openlocfilehash: af8062fc0134975542c8a5ec420c790f33996154
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 33cbe29771573bd234548f549ed6027fb5801945
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37920177"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41918112"
 ---
 # <a name="run-a-disaster-recovery-drill-to-azure"></a>Выполнение отработки аварийного восстановления в Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "37920177"
 > * Подготовка к подключению к виртуальным машинам Azure после отработки отказа
 > * Запуск тестовой отработки отказа для одного компьютера
 
-В этом руководстве рассматривается:
+
 
 ## <a name="verify-vm-properties"></a>Проверка свойств виртуальной машины
 

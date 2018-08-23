@@ -7,18 +7,19 @@ author: ggailey777
 manager: cfowler
 editor: ''
 ms.service: functions
-ms.workload: na
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.tgt_pltfrm: dotnet
 ms.devlang: na
 ms.topic: article
 ms.date: 05/23/2018
 ms.author: glenga
-ms.openlocfilehash: 155062a702d45683be9009a366b4e5fcaf80335f
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 06cf0334fbc0f21f5ce6865ee88faed64ccbc8e7
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425798"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42444849"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -51,7 +52,7 @@ ms.locfileid: "39425798"
 
 * Активная подписка Azure. Если у вас нет подписки Azure, воспользуйтесь [бесплатными учетными записями](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-* Учетная запись хранения Azure. Чтобы создать учетную запись хранения, см. раздел [Создайте учетную запись хранения](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+* Учетная запись хранения Azure. Чтобы создать учетную запись хранения, см. раздел [Создайте учетную запись хранения](../storage/common/storage-quickstart-create-account.md).
 
 ### <a name="check-your-tools-version"></a>Проверка версии инструментов
 
@@ -142,7 +143,7 @@ ms.locfileid: "39425798"
 
 1. Убедитесь, что вы [настроили проект для локальной разработки](#configure-the-project-for-local-development).
 
-2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](functions-triggers-bindings.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера концентраторов событий см. в [справочной статье о привязках концентраторов событий](functions-bindings-event-hubs.md).
+2. Добавьте соответствующий пакет расширений NuGet для конкретной привязки. Дополнительные сведения см. в разделе [Локальная разработка на C# с помощью Visual Studio или VS Code](functions-triggers-bindings.md#local-csharp). Требования к пакету NuGet для определенной привязки можно найти в соответствующей справочной статье. Например, требования к пакету для триггера Центров событий см. в [справочной статье о привязках Центров событий](functions-bindings-event-hubs.md).
 
 3. Если для привязки требуются параметры приложения, добавьте их в коллекцию **Values** в [файле с локальными параметрами](functions-run-local.md#local-settings-file). Эти значения используются, если функция выполняется локально. Если же функция выполняется в приложении-функции в Azure, используются [параметры приложения-функции](#function-app-settings).
 

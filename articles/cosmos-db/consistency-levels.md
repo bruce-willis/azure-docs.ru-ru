@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/27/2018
 ms.author: andrl
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e9503759b776bb045c4dc0357b1ab88be1294013
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 8d95790dc09f6d26c6ae749ed0cd386053c5cb35
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038562"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42146669"
 ---
 # <a name="tunable-data-consistency-levels-in-azure-cosmos-db"></a>Настраиваемые уровни согласованности данных в Azure Cosmos DB
 Служба Azure Cosmos DB была разработана "с нуля", при этом в ее основу заложены возможности глобального распространения данных для всех моделей данных. Служба гарантирует прогнозируемую низкую задержку и несколько четко определенных моделей нестрогой согласованности. Сейчас Azure Cosmos DB поддерживает пять уровней согласованности: строгий, с ограниченным устареванием, уровня сеанса, согласованность префиксов и согласованный в конечном счете. Все уровни кроме строгого называются моделями с нестрогой согласованностью. Строгий уровень представляет наиболее согласованную из доступных моделей. 
@@ -132,7 +132,7 @@ ms.locfileid: "40038562"
 * ["Replicated Data Consistency Explained Through Baseball" (Объяснение согласованности при репликации данных на примере бейсбола), Даг Терри (Doug Terry) — видео](https://www.youtube.com/watch?v=gluIh8zd26I)
 * ["Replicated Data Consistency Explained Through Baseball" (Объяснение согласованности при репликации данных на примере бейсбола), Даг Терри (Doug Terry) — документ](http://research.microsoft.com/pubs/157411/ConsistencyAndBaseballReport.pdf)
 * [Гарантии на уровне сеанса для репликации слабо согласованных данных](http://dl.acm.org/citation.cfm?id=383631) (Session guarantees for weakly consistent replicated data)
-* [Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is only part of the story](http://computer.org/csdl/mags/co/2012/02/mco2012020037-abs.html) (Компромиссы согласованности в современных распределенных системах проектирования баз данных: теорема CAP — это только начало)
+* [Consistency Tradeoffs in Modern Distributed Database Systems Design: CAP is only part of the story](https://www.computer.org/web/csdl/index/-/csdl/mags/co/2012/02/mco2012020037-abs.html) (Компромиссы согласованности в современных распределенных системах проектирования баз данных: теорема CAP — это только начало)
 * [Probabilistic Bounded Staleness (PBS) for Practical Partial Quorums](http://vldb.org/pvldb/vol5/p776_peterbailis_vldb2012.pdf)
 * [Eventual Consistent - Revisited](http://allthingsdistributed.com/2008/12/eventually_consistent.html) (Возвращаясь к вопросу об итоговой согласованности)
 * ["The Load, Capacity, and Availability of Quorum Systems" (Нагрузка, емкость и доступность в кворумных системах), журнал SIAM Journal on Computing](http://epubs.siam.org/doi/abs/10.1137/S0097539795281232)

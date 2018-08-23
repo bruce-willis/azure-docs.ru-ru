@@ -10,12 +10,12 @@ ms.component: design
 ms.date: 04/17/2018
 ms.author: cakarst
 ms.reviewer: igorstan
-ms.openlocfilehash: 5ceb8cfd8efea66dbf17b8c522316b9a010e437d
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 33e4a405547fcdd797ddfdf6aba6c6c1c126b742
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31799453"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42143529"
 ---
 # <a name="designing-extract-load-and-transform-elt-for-azure-sql-data-warehouse"></a>Разработка процесса извлечения, загрузки и преобразования (ELT) для хранилища данных SQL Azure
 
@@ -101,7 +101,7 @@ PolyBase загружает данные из текстовых файлов с
 ## <a name="load-to-a-staging-table"></a>Загрузка в промежуточную таблицу
 Чтобы поместить данные в хранилище данных, сначала загрузите их в промежуточную таблицу. С помощью промежуточной таблицы вы можете обрабатывать ошибки без влияния на рабочие таблицы, а также избежать запуска операций отката в рабочей таблице. Промежуточная таблица также предоставляет возможность использовать хранилище данных SQL для запуска преобразований перед вставкой данных в рабочие таблицы.
 
-Чтобы выполнить загрузку с помощью T-SQL, запустите инструкцию T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse.md). Эта команда вставит результаты инструкции select в новую таблицу. После выбора из внешней таблицы с помощью этой инструкции будет выполнен импорт внешних данных. 
+Чтобы выполнить загрузку с помощью T-SQL, запустите инструкцию T-SQL [CREATE TABLE AS SELECT (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse). Эта команда вставит результаты инструкции select в новую таблицу. После выбора из внешней таблицы с помощью этой инструкции будет выполнен импорт внешних данных. 
 
 В примере ниже ext.Date является внешней таблицей. Все строки импортируются в новую таблицу с именем dbo.Date.
 

@@ -8,18 +8,19 @@ manager: craigg
 ms.assetid: 7398c0c9-7a03-4628-94b3-f2aaef4a72c5
 ms.service: data-factory
 ms.workload: data-services
+ms.custom: vs-azure
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: hero-article
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 02c9d3715d8c4632bf19512cd9ffee64e4a22e8a
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 41ffd50f791cd380cd66a6eb5cb3c013da9bc43a
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37047026"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42282319"
 ---
 # <a name="tutorial-create-a-data-factory-by-using-visual-studio"></a>Руководство: создание фабрики данных с помощью Visual Studio
 > [!div class="op_single_selector" title="Tools/SDKs"]
@@ -59,7 +60,7 @@ ms.locfileid: "37047026"
 4. Создать фабрику данных с именем **DataFactoryUsingVS**. Развертывание фабрики данных и всех сущностей фабрики данных, таких как связанные службы, таблицы и конвейеры.
 5. После публикации для мониторинга конвейера вы можете использовать колонки портала Azure и приложение мониторинга и управления. 
   
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 1. Прочтите [обзорную статью](data-factory-build-your-first-pipeline.md) и выполните **предварительные требования** . Чтобы перейти к статье, вы также можете выбрать в раскрывающемся списке в верхней области параметр **Обзор и предварительные требования**. После выполнения предварительных требований вам необходимо снова вернуться к этой статье. Для этого выберите в раскрывающемся списке параметр **Visual Studio**.
 2. Создавать экземпляры фабрики данных может пользователь с ролью [Участник фабрики данных](../../role-based-access-control/built-in-roles.md#data-factory-contributor) на уровне подписки или группы ресурсов.  
 3. На вашем компьютере должны быть установлены следующие компоненты:

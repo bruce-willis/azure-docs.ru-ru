@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: multiple
 ms.date: 8/04/2017
 ms.author: cawa
-ms.openlocfilehash: e2772cc2c59b93c7e523eaa0127dcf4ea0bc589e
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 8d76a2144234591792359ed8dd4a0779e6a2fc5c
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34208691"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42143518"
 ---
 # <a name="configure-secure-connections-to-a-service-fabric-cluster-from-visual-studio"></a>Настройка безопасных подключений к кластеру Service Fabric из Visual Studio
 Узнайте, как использовать Azure Visual Studio для безопасного доступа к кластеру Service Fabric с настроенной политикой контроля доступа.
@@ -46,7 +46,7 @@ ms.locfileid: "34208691"
    
    Так как вы добавляете информацию о сертификате в XML-файл профиля публикации вручную, запишите имя хранилища сертификатов, расположение хранилища и отпечаток сертификата. Эти значения нужно будет указать в качестве имени и расположения хранилища сертификатов. Дополнительные сведения см. в статье [Практическое руководство. Извлечение отпечатка сертификата](https://msdn.microsoft.com/library/ms734695\(v=vs.110\).aspx).
    
-   Параметры *ClusterConnectionParameters* позволяют задать параметры PowerShell для подключения к кластеру Service Fabric. Допустимы все значения параметров, которые принимаются командлетом Connect-ServiceFabricCluster. Список доступных параметров см. в статье [Connect-ServiceFabricCluster](https://msdn.microsoft.com/library/mt125938.aspx).
+   Параметры *ClusterConnectionParameters* позволяют задать параметры PowerShell для подключения к кластеру Service Fabric. Допустимы все значения параметров, которые принимаются командлетом Connect-ServiceFabricCluster. Список доступных параметров см. в статье [Connect-ServiceFabricCluster](https://docs.microsoft.com/powershell/module/servicefabric/connect-servicefabriccluster).
    
    При публикации на удаленный кластер необходимо указать соответствующие параметры для этого конкретного кластера. Ниже приведен пример небезопасного подключения к кластеру:
    

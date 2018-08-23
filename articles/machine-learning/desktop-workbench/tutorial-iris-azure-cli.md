@@ -2,20 +2,20 @@
 title: Руководство по функциям предварительной версии служб машинного обучения Azure. Интерфейс командной строки | Документация Майкрософт
 description: В этом руководстве рассматриваются все шаги, необходимые для выполнения полной классификации цветков ириса с помощью интерфейса командной строки.
 services: machine-learning
-author: ahgyger
-ms.author: ahgyger
-manager: haining
-ms.reviewer: garyericson, jasonwhowell, mldocs
+author: jpe316
+ms.author: jordane
 ms.service: machine-learning
+ms.component: core
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: tutorial
 ms.date: 10/15/2017
-ms.openlocfilehash: 05238c27a5654ae24c619b52d769abbf90b940e7
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 10fe861682da6c1d1ac701a565cef11f9b44cd1e
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41920623"
 ---
 # <a name="tutorial-classifying-iris-using-the-command-line-interface"></a>Руководство по классификации цветков ириса с помощью интерфейса командной строки
 Служба "Машинное обучение Azure" (предварительная версия) — это полнофункциональное интегрированное аналитическое решение для специалистов по обработке и анализу данных. Оно помогает подготавливать данные, разрабатывать эксперименты и развертывать модели в масштабе облака.
@@ -28,7 +28,7 @@ ms.lasthandoff: 04/19/2018
 > * повышения уровня и регистрации обученной модели;
 > * развертывания веб-службы для оценки новых данных.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником необходимы указанные ниже компоненты.
 - Доступ к подписке Azure и разрешение для создания в ней ресурсов. 
   
@@ -252,7 +252,7 @@ $ az ml service create realtime -m asset_download/model.pkl -f score_iris.py -r 
 Используя идентификатор веб-службы из выходных данных предыдущего шага, можно вызвать веб-службу и протестировать ее. 
 
 ```azure-cli
-# Get web service usage infomration
+# Get web service usage information 
 $ az ml service usage realtime -i <web service id>
 
 # Call the web service with the run command:

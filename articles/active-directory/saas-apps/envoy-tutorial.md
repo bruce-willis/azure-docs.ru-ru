@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2017
 ms.author: jeedes
-ms.openlocfilehash: c3a91509238534bed37cfd169c66f37732546bfb
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 06cccaeaea3ff43bd5a4100ef0d4628e8cc77254
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425125"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42144395"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-envoy"></a>Руководство. Интеграция Azure Active Directory с Envoy
 
@@ -110,7 +110,7 @@ ms.locfileid: "39425125"
 
     ![Сведения о домене и URL-адресах единого входа приложения Envoy](./media/envoy-tutorial/tutorial_envoy_url.png)
 
-    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<tenant-name>.Envoy.com`
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://app.envoy.com/a/saml/auth/<company-ID-from-Envoy>`
     
     > [!NOTE] 
     > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес входа. Для получения этого значения обратитесь в [службу поддержки клиентов Envoy](https://envoy.com/contact/).

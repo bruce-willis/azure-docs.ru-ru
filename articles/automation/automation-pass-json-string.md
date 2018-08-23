@@ -10,12 +10,12 @@ ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
 keywords: powershell, runbook, json, служба автоматизации azure
-ms.openlocfilehash: 9fa60a56ecbff802e69e01e038bb45c7a6639873
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 1bdeef02621924bbb7af1e676d2b275229761081
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37435769"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42146802"
 ---
 # <a name="pass-a-json-object-to-an-azure-automation-runbook"></a>Передача объекта JSON в модуль runbook службы автоматизации Azure
 
@@ -23,10 +23,10 @@ ms.locfileid: "37435769"
 Например, можно создать файл JSON, который содержит все параметры, которые необходимо передать в модуль runbook.
 Чтобы сделать это, необходимо преобразовать файл JSON в строку, а затем преобразовать строку в объект PowerShell перед передачей содержимого файла в модуль runbook.
 
-В этом примере мы создадим сценарий PowerShell, который вызывает [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx) для запуска модуля runbook PowerShell, передавая содержимое файла JSON в runbook.
+В этом примере мы создадим сценарий PowerShell, который вызывает [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook) для запуска модуля runbook PowerShell, передавая содержимое файла JSON в runbook.
 Модуль runbook PowerShell запускает виртуальную машину Azure, получая параметры для нее из переданного файла JSON.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется:
 
 * Подписка Azure. Если у вас ее нет, [активируйте преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или <a href="/pricing/free-account/" target="_blank">[зарегистрируйте бесплатную учетную запись](https://azure.microsoft.com/free/).

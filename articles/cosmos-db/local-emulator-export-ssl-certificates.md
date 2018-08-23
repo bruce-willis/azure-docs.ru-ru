@@ -1,23 +1,22 @@
 ---
-title: Экспорт сертификатов эмулятора Azure Cosmos DB | Документы Майкрософт
+title: Экспорт сертификатов эмулятора Azure Cosmos DB | Документация Майкрософт
 description: При разработке на языках и в средах выполнения, не использующих хранилище сертификатов Windows, вам потребуется экспортировать SSL-сертификаты и управлять ими. В этой статье приведены пошаговые инструкции.
 services: cosmos-db
 keywords: Эмулятор Azure Cosmos DB
-author: voellm
+author: David-Noble-at-work
 manager: kfile
 editor: ''
 ms.service: cosmos-db
 ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/06/2017
-ms.author: tvoellm
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 237ab0ed99793f54574c4b81e883acb8c2bc57a9
-ms.sourcegitcommit: d1eefa436e434a541e02d938d9cb9fcef4e62604
+ms.author: danoble
+ms.openlocfilehash: 45a909b910fe45d87833b0f3c6ba652503a1d212
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37082107"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41924777"
 ---
 # <a name="export-the-azure-cosmos-db-emulator-certificates-for-use-with-java-python-and-nodejs"></a>Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js
 
@@ -54,7 +53,7 @@ ms.locfileid: "37082107"
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 3)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-3.png)
 
-4. Нажмите кнопку **Далее**.
+4. Щелкните **Далее**.
 
     ![Экспорт данных в локальном эмуляторе Azure Cosmos DB (шаг 4)](./media/local-emulator-export-ssl-certificates/database-local-emulator-export-step-4.png)
 
@@ -90,7 +89,7 @@ ms.locfileid: "37082107"
 
 По умолчанию при подключении к локальному эмулятору [пакет SDK Node.js (версии 1.10.1 или выше)](sql-api-sdk-node.md) для API SQL не использует SSL-сертификат. Однако если вы хотите реализовать проверку SSL, используйте примеры, приведенные в [документации по Node.js](https://nodejs.org/api/tls.html#tls_tls_connect_options_callback).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве вы выполнили следующее:
 

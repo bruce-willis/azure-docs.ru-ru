@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/14/2018
 ms.author: brenduns
 ms.reviewer: jeffgo
-ms.openlocfilehash: 101686149c0e3faaf442c58f4002cbbfe0e72eaa
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: da1619c5dc536ee143a8cc5ed17e995bc2d1eab7
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "35630026"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41946542"
 ---
 # <a name="create-and-publish-a-marketplace-item"></a>Создание и публикация элемента Marketplace
 
@@ -102,7 +102,7 @@ ms.locfileid: "35630026"
 
 6. Чтобы удалить элемент Marketplace, используйте командлет **Remove-AzureRMGalleryItem**. Пример:
    
-        Remove-AzureRMGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  –Verbose
+        Remove-AzsGalleryItem -Name Microsoft.SimpleTemplate.1.0.0  –Verbose
    
    > [!NOTE]
    > После удаления элемента пользовательский интерфейс Marketplace может отобразить ошибку. Чтобы устранить эту ошибку, щелкните **Параметры** на портале. Затем щелкните **Отменить изменения** в разделе **Настройка портала**.
@@ -130,7 +130,7 @@ ms.locfileid: "35630026"
 ### <a name="images"></a>Образы
 В Marketplace используются следующие значки:
 
-| ИМЯ | Ширина | Высота: | Заметки |
+| ИМЯ | Ширина | Высота: | Примечания |
 | --- | --- | --- | --- |
 | Широкий |255 пикселей |115 пикселей |Обязательный |
 | большой |115 пикселей |115 пикселей |Обязательный |

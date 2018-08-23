@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 06/27/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 9d398d810a2d43b3754fd8950376c605d4654f38
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: cde70518164c386697127b079979b5b3b76ae088
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621537"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42143736"
 ---
 # <a name="article-index-for-application-management-in-azure-active-directory"></a>Указатель статей по управлению приложениями в Azure Active Directory
 В этой статье представлен полный список всех статей о различных функциях приложений в Azure Active Directory (Azure AD).
@@ -96,7 +96,7 @@ ms.locfileid: "39621537"
 |:---:| --- |
 | Общие сведения о параметрах единого входа, представленных в Azure AD Connect, а также сведения об управлении гибридными средами |[Параметры входа в Azure AD Connect](active-directory-aadconnect-user-signin.md) |
 | Общие рекомендации по управлению средами с помощью локальной службы Active Directory и Azure Active Directory |[Рекомендации по разработке архитектуры гибридной идентификации в Azure AD](active-directory-hybrid-identity-design-considerations-overview.md)<br /><br />[Интеграция локальных удостоверений с Azure Active Directory](active-directory-aadconnect.md) |
-| Руководство по реализации единого входа с помощью синхронизации паролей |[Реализация синхронизации паролей с помощью Azure AD Connect](connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md)<br /><br />[Устранение неполадок синхронизации паролей](https://support.microsoft.com/en-us/kb/2855271) |
+| Руководство по реализации единого входа с помощью синхронизации паролей |[Реализация синхронизации паролей с помощью Azure AD Connect](connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md)<br /><br />[Устранение неполадок синхронизации паролей](https://support.microsoft.com/kb/2855271) |
 | Руководство по реализации единого входа с помощью обратной записи паролей |[Приступая к работе с компонентами управления паролями](authentication/quickstart-sspr.md)<br /><br />[Устранение неполадок в обратной записи паролей](authentication/active-directory-passwords-troubleshoot.md#troubleshoot-password-writeback) |
 | Руководство по реализации единого входа с использованием сторонних поставщиков удостоверений |[Список совместимых сторонних поставщиков удостоверений, которых можно использовать для реализации единого входа](https://aka.ms/ssoproviders) |
 | Каким образом пользователи Windows 10 могут получить преимущества единого входа с помощью присоединения к Azure AD |[Использование возможностей облачных служб на устройствах с Windows 10 с помощью присоединения к Azure Active Directory](active-directory-azureadjoin-overview.md) |

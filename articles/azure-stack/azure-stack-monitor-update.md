@@ -12,14 +12,14 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/18/2017
+ms.date: 08/17/2018
 ms.author: mabrigg
-ms.openlocfilehash: 96eebf340f13f2f5e9e922fee8032d04fce1d130
-ms.sourcegitcommit: 0e1c4b925c778de4924c4985504a1791b8330c71
+ms.openlocfilehash: 8f384a79811c9a9b104acb98c8f6b6e162946ab8
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2018
-ms.locfileid: "27621867"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41947950"
 ---
 # <a name="monitor-updates-in-azure-stack-using-the-privileged-endpoint"></a>Мониторинг обновлений в Azure Stack с помощью привилегированной конечной точки
 
@@ -32,7 +32,6 @@ ms.locfileid: "27621867"
 | Командлет  | ОПИСАНИЕ  |
 |---------|---------|
 | `Get-AzureStackUpdateStatus` | Возвращает состояние выполняемого в настоящее время, завершенного или невыполненного обновления. Предоставляет общее состояние операции обновления и XML-документ, описывающий текущий шаг и соответствующее состояние. |
-| `Get-AzureStackUpdateVerboseLog` | Возвращает подробные журналы, созданные обновлением. |
 | `Resume-AzureStackUpdate` | Возобновляет невыполненные обновления с точки, в которой произошел сбой. В некоторых сценариях может потребоваться выполнить шаги по устранению рисков, прежде чем продолжить обновление.         |
 | | |
 
@@ -78,7 +77,6 @@ ms.locfileid: "27621867"
    CommandType     Name                                               Version    Source                                                  PSComputerName
     -----------     ----                                               -------    ------                                                  --------------
    Function        Get-AzureStackUpdateStatus                         0.0        Microsoft.Azurestack.UpdateManagement                   Contoso-ercs01
-   Function        Get-AzureStackUpdateVerboseLog                     0.0        Microsoft.Azurestack.UpdateManagement                   Contoso-ercs01
    Function        Resume-AzureStackUpdate                            0.0        Microsoft.Azurestack.UpdateManagement                   Contoso-ercs01
    ``` 
 
@@ -159,29 +157,6 @@ $updateStatus.SelectNodes("//Step[@Status='InProgress']")
     Status        : InProgress
     Task          : Task
 ```
-
-### <a name="get-the-verbose-progress-log"></a>Получение журнала подробных сведений о ходе выполнения
-
-Вы можете записать журнал в файл для проверки. Это может помочь диагностировать сбой обновления.
-
-```powershell
-$log = Invoke-Command -Session $pepSession -ScriptBlock { Get-AzureStackUpdateVerboseLog }
-
-$log > ".\UpdateVerboseLog.txt" 
-```
-
-### <a name="actively-view-the-verbose-logging"></a>Активный просмотр ведения подробного журнала
-
-Чтобы активно просматривать подробный журнал во время выполнения обновления и переходить к последним записям, выполните следующие команды для входа в сеанс в интерактивном режиме и отображения журнала:
-
-```powershell
-Enter-PSSession -Session $pepSession 
-
-Get-AzureStackUpdateVerboseLog -Wait 
-```
-Журнал обновляется каждые 60 секунд, и новое содержимое (если доступно) записывается в консоль. 
-
-Во время длительных фоновых процессов выходные данные консоли могут не записываться на консоль в течение некоторого времени. Чтобы отменить интерактивный вывод данных, нажмите клавиши CTRL+C. 
 
 ### <a name="resume-a-failed-update-operation"></a>Возобновление операции в случае сбоя
 

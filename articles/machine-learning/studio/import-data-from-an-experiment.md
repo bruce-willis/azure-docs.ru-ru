@@ -4,7 +4,8 @@ description: В статье описывается, как сохранить �
 keywords: импорт данных, данные, источники данных, обучающие данные
 services: machine-learning
 documentationcenter: ''
-author: bradsev
+author: deguhath
+ms.author: deguhath
 manager: jhubbard
 editor: cgronlun
 ms.assetid: 7da9dcec-5693-4bb6-8166-15904e7f75c3
@@ -15,13 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.author: bradsev
-ms.openlocfilehash: 8279b13270d4bba990e6670acd714be19118e98c
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 5007657da11cb45c6511780398c5425d14dca900
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34834834"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246809"
 ---
 # <a name="import-your-data-into-azure-machine-learning-studio-from-another-experiment"></a>Импорт данных в студию машинного обучения Azure из другой среды
 [!INCLUDE [import-data-into-aml-studio-selector](../../../includes/machine-learning-import-data-into-aml-studio.md)]

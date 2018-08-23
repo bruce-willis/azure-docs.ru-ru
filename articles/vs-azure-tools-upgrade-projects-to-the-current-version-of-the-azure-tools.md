@@ -7,16 +7,17 @@ manager: douge
 assetId: 1d64070a-078d-468a-87f4-e6715de6475f
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
-ms.workload: azure
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 11/18/2016
 ms.author: ghogen
-ms.openlocfilehash: 738c9d12beed6ba73872d520cb16bd3a6c813a35
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 19d6edd9f5aa4fd33611a25143f36c6365c26761
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31791398"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146581"
 ---
 # <a name="how-to-upgrade-projects-to-the-current-version-of-the-azure-tools-for-visual-studio"></a>Обновление проектов до текущей версии инструментов Azure для Visual Studio
 ## <a name="overview"></a>Обзор

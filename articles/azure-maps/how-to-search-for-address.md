@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 8b7d2119e1eef8532c30b0a45ae2684493462277
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: fe3bb3a778a42696cd15f9e4265448479bf043a1
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38990019"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42142920"
 ---
 # <a name="how-to-find-an-address-using-the-azure-maps-search-service"></a>Как найти адрес с помощью службы поиска по Картам Azure
 
@@ -164,19 +164,11 @@ API по умолчанию для службы поиска — API [поиск
 
     | Ключ | Значение |
     |-----|------------|
-    | spatialKeys | Да |
-
-    Если задан параметр запроса [spatialKeys](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#search_getsearchaddressreverse_uri_parameters), ответ содержит закрытые сведения о геопространственном ключе для указанного расположения.
-
-6. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
-
-    | Ключ | Значение |
-    |-----|------------|
     | returnSpeedLimit | Да |
     
     Если задан параметр запроса [returnSpeedLimit](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#search_getsearchaddressreverse_uri_parameters), в ответе возвращаются сведения об установленном ограничении скорости.
 
-7. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
+6. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
 
     | Ключ | Значение |
     |-----|------------|
@@ -184,7 +176,7 @@ API по умолчанию для службы поиска — API [поиск
 
     Если задан параметр запроса [returnRoadUse](https://docs.microsoft.com/rest/api/maps/search/getsearchaddressreverse#search_getsearchaddressreverse_uri_parameters), в ответе возвращается массив использования пути для обратных геокодов на уровне улицы.
 
-8. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
+7. Добавьте следующую пару "ключ-значение" в раздел **Параметры** и нажмите кнопку **Отправить**:
 
     | Ключ | Значение |
     |-----|------------|

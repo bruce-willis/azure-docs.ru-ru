@@ -1,6 +1,6 @@
 ---
-title: Создание пространства имен концентраторов событий Azure и включение записи с помощью шаблона | Документация Майкрософт
-description: Создание пространства имен концентраторов событий Azure с одним концентратором событий и включение записи с помощью шаблона Azure Resource Manager.
+title: Создание пространства имен Центров событий Azure и включение функции "Сбор" с помощью шаблона | Документация Майкрософт
+description: Создание пространства имен Центров событий Azure с одним концентратором событий и включение функции "Сбор" с помощью шаблона Azure Resource Manager.
 services: event-hubs
 documentationcenter: .net
 author: ShubhaVijayasarathy
@@ -12,18 +12,18 @@ ms.devlang: tbd
 ms.topic: get-started-article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 01/30/2018
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: d133ce2cb7bb8f17f4d6e342fd6b7b22e1403539
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: c8341b40ba7616add1415178a2f0775fbbc66ec1
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005637"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41919827"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 
-Из этой статьи вы узнаете, как с помощью шаблона Azure Resource Manager создать пространство имен [концентраторов событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий и включить для него [функцию записи](event-hubs-capture-overview.md). Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+Из этой статьи вы узнаете, как с помощью шаблона Azure Resource Manager создать пространство имен [Центров событий](event-hubs-what-is-event-hubs.md) с одним экземпляром концентратора событий и включить для него [функцию "Сбор"](event-hubs-capture-overview.md). Здесь вы узнаете, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
 В этой статье также показано, как настроить запись событий в хранилище BLOB-объектов Azure или Azure Data Lake Store в зависимости от выбранного назначения.
 
@@ -37,17 +37,17 @@ ms.locfileid: "40005637"
 - [шаблон для развертывания концентратора событий и включения записи в Azure Data Lake Store][Event Hub and enable Capture to Azure Data Lake Store template].
 
 > [!NOTE]
-> Чтобы узнать о новых шаблонах, изучите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните в ней поиск по запросу "концентраторы событий".
+> Чтобы узнать о новых шаблонах, изучите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните в ней поиск по запросу "Центры событий".
 > 
 > 
 
 ## <a name="what-will-you-deploy"></a>Что вы развернете?
 
-С помощью этого шаблона вы развернете пространство имен концентраторов событий с концентратором событий и включите [запись концентраторов событий](event-hubs-capture-overview.md). Функция записи концентраторов событий позволяет автоматически доставлять потоковые данные из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store с указанным интервалом времени или размера. Чтобы включить запись данных из концентраторов событий в службу хранилища Azure, нажмите эту кнопку:
+С помощью этого шаблона вы развернете пространство имен Центров событий с концентратором событий и включите [функцию "Сбор" в Центрах событий](event-hubs-capture-overview.md). Функция "Сбор" в Центрах событий позволяет автоматически доставлять потоковые данные из Центров событий в хранилище BLOB-объектов Azure или Azure Data Lake Store с указанным интервалом времени или размера. Чтобы включить функцию "Сбор" в Центрах событий для передачи данных в службу хранилища Azure, нажмите эту кнопку:
 
 [![Развертывание в Azure](./media/event-hubs-resource-manager-namespace-event-hub/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-eventhubs-create-namespace-and-enable-capture%2Fazuredeploy.json)
 
-Чтобы включить запись данных из концентраторов событий в Azure Data Lake Store, нажмите эту кнопку:
+Чтобы включить функцию "Сбор" в Центрах событий для передачи данных в Azure Data Lake Store, нажмите эту кнопку:
 
 [![Развертывание в Azure](./media/event-hubs-resource-manager-namespace-event-hub/deploybutton.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-eventhubs-create-namespace-and-enable-capture-for-adls%2Fazuredeploy.json)
 
@@ -59,7 +59,7 @@ ms.locfileid: "40005637"
 
 ### <a name="eventhubnamespacename"></a>eventHubNamespaceName
 
-Имя создаваемого пространства имен концентраторов событий.
+Имя создаваемого пространства имен Центров событий.
 
 ```json
 "eventHubNamespaceName":{  
@@ -72,7 +72,7 @@ ms.locfileid: "40005637"
 
 ### <a name="eventhubname"></a>eventHubName
 
-Имя концентратора событий, создаваемого в пространстве имен концентраторов событий.
+Имя концентратора событий, создаваемого в пространстве имен Центров событий.
 
 ```json
 "eventHubName":{  
@@ -149,7 +149,7 @@ ms.locfileid: "40005637"
 
 ### <a name="capturetime"></a>captureTime
 
-Интервал времени, согласно которому функция записи концентраторов событий начинает запись данных.
+Интервал времени, в пределах которого функция "Сбор" в Центрах событий начинает сбор данных.
 
 ```json
 "captureTime":{
@@ -180,7 +180,7 @@ ms.locfileid: "40005637"
 
 ### <a name="capturenameformat"></a>captureNameFormat
 
-Формат имени, используемый функцией записи концентраторов событий, для записи файлов Avro. Обратите внимание, что в формате имени для функции записи должны быть поля `{Namespace}`, `{EventHub}`, `{PartitionId}`, `{Year}`, `{Month}`, `{Day}`, `{Hour}`, `{Minute}`, и `{Second}`. Они могут быть размещены в любом порядке, с разделителями или без них.
+Формат имени, используемый функцией "Сбор" в Центрах событий, для записи файлов Avro. Обратите внимание, что в формате имени для функции записи должны быть поля `{Namespace}`, `{EventHub}`, `{PartitionId}`, `{Year}`, `{Month}`, `{Day}`, `{Hour}`, `{Minute}`, и `{Second}`. Они могут быть размещены в любом порядке, с разделителями или без них.
  
 ```json
 "captureNameFormat": {
@@ -239,7 +239,7 @@ ms.locfileid: "40005637"
 
 ### <a name="subscriptionid"></a>subscriptionId
 
-Идентификатор подписки для пространства имен концентраторов событий и Azure Data Lake Store. Оба ресурса должны использовать один и тот же идентификатор подписки.
+Идентификатор подписки для пространства имен Центров событий и Azure Data Lake Store. Оба ресурса должны использовать один и тот же идентификатор подписки.
 
 ```json
 "subscriptionId": {
@@ -265,7 +265,7 @@ ms.locfileid: "40005637"
 
 ### <a name="datalakefolderpath"></a>dataLakeFolderPath
 
-Путь к целевой папке для записываемых событий. Это папка в Data Lake Store, в которую будут отправляться события во время операции записи. Чтобы настроить разрешения для этой папки, ознакомьтесь со статьей [Запись данных из концентраторов событий с помощью Azure Data Lake Store](../data-lake-store/data-lake-store-archive-eventhub-capture.md).
+Путь к целевой папке для записываемых событий. Это папка в Data Lake Store, в которую будут отправляться события во время операции записи. Чтобы настроить разрешения для этой папки, ознакомьтесь со статьей [Сбор данных из Центров событий с помощью Azure Data Lake Store](../data-lake-store/data-lake-store-archive-eventhub-capture.md).
 
 ```json
 "dataLakeFolderPath": {
@@ -390,13 +390,13 @@ ms.locfileid: "40005637"
 
 ## <a name="powershell"></a>PowerShell
 
-Разверните шаблон, чтобы включить запись данных из концентраторов событий в службу хранилища Azure.
+Разверните шаблон, чтобы включить функцию "Сбор" в Центрах событий для передачи данных в службу хранилища Azure.
  
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json
 ```
 
-Разверните шаблон, чтобы включить запись данных из концентраторов событий в Azure Data Lake Store.
+Разверните шаблон, чтобы включить функцию "Сбор" в Центрах событий для передачи данных в Azure Data Lake Store.
 
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName \<resource-group-name\> -TemplateFile https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture-for-adls/azuredeploy.json
@@ -422,14 +422,13 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Функцию записи концентраторов событий можно включить с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Enable Event Hubs Capture using the Azure portal](event-hubs-capture-enable-through-portal.md) (Включение функции записи концентраторов событий с помощью портала Azure).
+Функцию "Сбор" в Центрах событий можно включить с помощью [портала Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Включение функции "Сбор" в Центрах событий с помощью портала Azure](event-hubs-capture-enable-through-portal.md).
 
-Дополнительные сведения о концентраторах событий см. в следующих источниках:
+Дополнительные сведения о Центрах событий см. в следующих источниках:
 
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 
 [Authoring Azure Resource Manager templates]: ../azure-resource-manager/resource-group-authoring-templates.md
 [Azure Quickstart Templates]:  https://azure.microsoft.com/documentation/templates/?term=event+hubs

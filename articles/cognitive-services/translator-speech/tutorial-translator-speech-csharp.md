@@ -11,12 +11,12 @@ ms.devlang: csharp
 ms.topic: article
 ms.date: 3/5/2018
 ms.author: v-jerkin
-ms.openlocfilehash: e82c5c5ccfa6b7de8a9ec111140dad1a40ad44f6
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 010ad8b5ceeaf046c8d361ff352e6058154a482d
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380616"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41936762"
 ---
 # <a name="tutorial-microsoft-translator-wpf-application-in-c"></a>Руководство. Приложение WPF Microsoft Translator на языке C#
 
@@ -30,7 +30,7 @@ ms.locfileid: "35380616"
 
 Файл решения Visual Studio для этого приложения [доступный в GitHub](https://github.com/MicrosoftTranslator/SpeechTranslator).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством необходим любой выпуск Visual Studio 2017, включая Community Edition. 
 
@@ -357,7 +357,7 @@ private void Connect()
 }
 ```
 
-Значительная часть `Connect()` включает создание экземпляра `SpeechClientOptions` (см. `SpeechClientOptions.cs`) для хранения параметров перевода. Параметры содержат сведения, необходимые для подключения к службе (например, ключ проверки подлинности и имя узла), и функции, используемые для перевода. Здесь поля сопоставляются с полями заголовков и параметрами HTTP, предоставляемыми [API перевода речи](http://docs.microsofttranslator.com/speech-translate.html).
+Значительная часть `Connect()` включает создание экземпляра `SpeechClientOptions` (см. `SpeechClientOptions.cs`) для хранения параметров перевода. Параметры содержат сведения, необходимые для подключения к службе (например, ключ проверки подлинности и имя узла), и функции, используемые для перевода. Здесь поля сопоставляются с полями заголовков и параметрами HTTP, предоставляемыми [API перевода речи](https://docs.microsoft.com/azure/cognitive-services/translator-speech/reference).
 
 `Connect()` также создает и инициализирует входное аудиоустройство (переменная `sampleProvider`), которое служит источником речи для перевода. Это устройство соответствует такому аппаратному устройству ввода, как, например, микрофон, или файлу WAVE, содержащему аудиоданные.
 
@@ -431,4 +431,4 @@ private async Task ConnectAsync(SpeechClientOptions options, bool suspendInputAu
 Этот пример кода представляет собой приложение с расширенными возможностями и демонстрирует использование API перевода речи. Таким образом, имеется довольно много составных элементов, с которыми следует разобраться. Вы ознакомились с наиболее важными моментами. В остальном может быть полезно установить несколько точек останова в Visual Studio и изучить процесс перевода. Разобравшись с примером приложения, вы сможете использовать в своих приложениях службу "Перевод речи".
 
 > [!div class="nextstepaction"]
-> [Microsoft Translator Speech API reference](http://docs.microsofttranslator.com/speech-translate.html) (Справочник по API перевода речи Microsoft)
+> [Microsoft Translator Speech API reference](https://docs.microsoft.com/azure/cognitive-services/translator-speech/reference) (Справочник по API перевода речи Microsoft)

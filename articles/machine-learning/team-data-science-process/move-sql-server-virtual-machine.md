@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: deguhath
-ms.openlocfilehash: 229e2c07a3e8d83fc01dc5f1542fd250cb4678f7
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 2c26c26f201e9b500018b4851ac0bc462820a8e5
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34838982"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40246711"
 ---
 # <a name="move-data-to-sql-server-on-an-azure-virtual-machine"></a>Перемещение данных в SQL Server на виртуальной машине Azure
 В этой статье описаны варианты перемещения данных из неструктурированных файлов (в формате CSV или TSV) или с локального сервера SQL Server на сервер SQL Server на виртуальной машине Azure. Эти задачи перемещения данных в облако являются этапом процесса обработки и анализа данных группы.
@@ -41,7 +41,7 @@ ms.locfileid: "34838982"
 Обратите внимание на то, что в этом документе предполагается выполнение команд SQL в среде SQL Server Management Studio или в обозревателе базы данных Visual Studio.
 
 > [!TIP]
-> Вы также можете воспользоваться [фабрикой данных Azure](https://azure.microsoft.com/services/data-factory/), чтобы создать и назначить конвейер, который переносит данные в виртуальную машину SQL Server в среде Azure. Дополнительные сведения см. в статье [Перемещение данных с помощью действия копирования](../../data-factory/v1/data-factory-data-movement-activities.md).
+> Вы также можете воспользоваться [фабрикой данных Azure](https://azure.microsoft.com/services/data-factory/), чтобы создать и назначить конвейер, который переносит данные в виртуальную машину SQL Server в среде Azure. Дополнительные сведения см. в статье [Перемещение данных с помощью действия копирования](../../data-factory/copy-activity-overview.md).
 >
 >
 
@@ -49,7 +49,7 @@ ms.locfileid: "34838982"
 Для выполнения действий, описанных в этом учебнике, вам необходимо следующее.
 
 * **Подписка Azure**. Если у вас нет подписки, вы можете зарегистрироваться для получения [бесплатной пробной версии](https://azure.microsoft.com/pricing/free-trial/).
-* **Azure storage account**. Учетная запись хранения Azure будет использоваться для хранения данных в этом учебнике. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-create-storage-account.md#create-a-storage-account). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. Ознакомьтесь с разделом [Управление ключами доступа к хранилищу](../../storage/common/storage-create-storage-account.md#manage-your-storage-access-keys).
+* **Azure storage account**. Учетная запись хранения Azure будет использоваться для хранения данных в этом учебнике. Если у вас ее нет, см. раздел [Создание учетной записи хранения](../../storage/common/storage-quickstart-create-account.md). После создания учетной записи хранения необходимо получить ключ, используемый для доступа к хранилищу. Ознакомьтесь с разделом [Управление ключами доступа к хранилищу](../../storage/common/storage-create-storage-account.md#manage-your-storage-access-keys).
 * Подготовленный **SQL Server на виртуальной машине Azure**. Инструкции см. в статье [Настройка SQL Server на виртуальной машине Azure как сервера IPython Notebook для расширенной аналитики](../data-science-virtual-machine/setup-sql-server-virtual-machine.md).
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 

@@ -1,3 +1,4 @@
+items:
 - name: Документация по процессу обработки и анализа данных группы
   href: index.yml
 - name: Обзор
@@ -5,281 +6,281 @@
 - name: Жизненный цикл
   href: lifecycle.md
   items:
-    - name: 1. Коммерческий аспект.
-      href: lifecycle-business-understanding.md
-    - name: 2. Получение и изучение данных
-      href: lifecycle-data.md
-    - name: 3. Моделирование
-      href: lifecycle-modeling.md
-    - name: 4. Развертывание
-      href: lifecycle-deployment.md
-    - name: 5. Приемка клиентом
-      href: lifecycle-acceptance.md
+  - name: 1. Коммерческий аспект.
+    href: lifecycle-business-understanding.md
+  - name: 2. Получение и изучение данных
+    href: lifecycle-data.md
+  - name: 3. Моделирование
+    href: lifecycle-modeling.md
+  - name: 4. Развертывание
+    href: lifecycle-deployment.md
+  - name: 5. Приемка клиентом
+    href: lifecycle-acceptance.md
 - name: Роли и задачи
   href: roles-tasks.md
   items:
-    - name: Руководитель группы
-      href: group-manager-tasks.md
-    - name: Руководитель команды
-      href: team-lead-tasks.md
-    - name: руководитель проектной группы.
-      href: project-lead-tasks.md
-    - name: Отдельный участник
-      href: project-ic-tasks.md
+  - name: Руководитель группы
+    href: group-manager-tasks.md
+  - name: Руководитель команды
+    href: team-lead-tasks.md
+  - name: руководитель проектной группы.
+    href: project-lead-tasks.md
+  - name: Отдельный участник
+    href: project-ic-tasks.md
 - name: Планирование проекта
   href: team-data-science-process-project-templates.md
 - name: Разработка
   items:
-    - name: Гибкая разработка
-      href: agile-development.md
-    - name: Совместное программирование с помощью Git
-      href: collaborative-coding-with-git.md
-    - name: Выполнение задач обработки и анализа данных
-      href: execute-data-science-tasks.md
-    - name: Тестирование кода
-      href: code-test.md
-    - name: Отслеживание хода выполнения
-      href: track-progress.md
+  - name: Гибкая разработка
+    href: agile-development.md
+  - name: Совместное программирование с помощью Git
+    href: collaborative-coding-with-git.md
+  - name: Выполнение задач обработки и анализа данных
+    href: execute-data-science-tasks.md
+  - name: Тестирование кода
+    href: code-test.md
+  - name: Отслеживание хода выполнения
+    href: track-progress.md
 - name: Ввод в эксплуатацию
   items:
-    - name: "DevOps\_— CI/CD"
-      href: ci-cd-flask.md
+  - name: DevOps — CI/CD
+    href: ci-cd-flask.md
 - name: Рабочие примеры
   href: walkthroughs.md
   items:
-    - name: Машинное обучение Azure
-      href: walkthroughs-aml-with-tdsp.md
-      items:
-        - name: Классификация тональностей с помощью Keras & Scikit-Learn
-          href: predict-twitter-sentiment.md
-        - name: Классификация тональностей с помощью пакета текстовой аналитики AML
-          href: predict-twitter-sentiment-amltextpackage.md
-        - name: Классификация доходов в США
-          href: ../desktop-workbench/scenario-tdsp-classifying-us-incomes.md
-          maintainContext: true
-        - name: Распознавание биомедицинских форм
-          href: ../desktop-workbench/scenario-tdsp-biomedical-recognition.md
-          maintainContext: true
-        - name: Классификация изображений рака кожи с помощью пакета визуализации AML
-          href: isic-image-classification.md
-          maintainContext: true
-    - name: Spark с PySpark и Scala;
-      href: walkthroughs-spark.md
-      items:
-        - name: Изучение и моделирование данных
-          href: spark-data-exploration-modeling.md
-        - name: Расширенное исследование и моделирование данных
-          href: spark-advanced-data-exploration-modeling.md
-        - name: Оценка моделей
-          href: spark-model-consumption.md
-    - name: Hive с HDInsight Hadoop
-      href: walkthroughs-hdinsight-hadoop.md
-    - name: U-SQL с Azure Data Lake
-      href: walkthroughs-azure-data-lake.md
-    - name: 'R, Python и T-SQL с SQL Server'
-      href: walkthroughs-sql-server.md
-    - name: T-SQL и Python с хранилищем данных SQL
-      href: walkthroughs-sql-data-warehouse.md
+  - name: Машинное обучение Azure
+    href: walkthroughs-aml-with-tdsp.md
+    items:
+    - name: Классификация тональностей с помощью Keras & Scikit-Learn
+      href: predict-twitter-sentiment.md
+    - name: Классификация тональностей с помощью пакета текстовой аналитики AML
+      href: predict-twitter-sentiment-amltextpackage.md
+    - name: Классификация доходов в США
+      href: ../desktop-workbench/scenario-tdsp-classifying-us-incomes.md
+      maintainContext: true
+    - name: Распознавание биомедицинских форм
+      href: ../desktop-workbench/scenario-tdsp-biomedical-recognition.md
+      maintainContext: true
+    - name: Классификация изображений рака кожи с помощью пакета визуализации AML
+      href: isic-image-classification.md
+      maintainContext: true
+  - name: Spark с PySpark и Scala;
+    href: walkthroughs-spark.md
+    items:
+    - name: Изучение и моделирование данных
+      href: spark-data-exploration-modeling.md
+    - name: Расширенное исследование и моделирование данных
+      href: spark-advanced-data-exploration-modeling.md
+    - name: Оценка моделей
+      href: spark-model-consumption.md
+  - name: Hive с HDInsight Hadoop
+    href: walkthroughs-hdinsight-hadoop.md
+  - name: U-SQL с Azure Data Lake
+    href: walkthroughs-azure-data-lake.md
+  - name: R, Python и T-SQL с SQL Server
+    href: walkthroughs-sql-server.md
+  - name: T-SQL и Python с хранилищем данных SQL
+    href: walkthroughs-sql-data-warehouse.md
 - name: Техническое оборудование и средства
   items:
-    - name: Средства просмотра данных и моделирования (GitHub)
-      href: 'https://github.com/Azure/Azure-TDSP-Utilities'
+  - name: Средства просмотра данных и моделирования (GitHub)
+    href: https://github.com/Azure/Azure-TDSP-Utilities
 - name: Обучение
   items:
-    - name: Для специалистов по обработке и анализу данных
-      href: team-data-science-process-for-data-scientists.md
-    - name: Для DevOps
-      href: team-data-science-process-for-devops.md
+  - name: Для специалистов по обработке и анализу данных
+    href: team-data-science-process-for-data-scientists.md
+  - name: Для DevOps
+    href: team-data-science-process-for-devops.md
 - name: Практическое руководство
   items:
-    - name: Настройка сред для обработки и анализа данных
-      href: environment-setup.md
-      items:
-        - name: Учетные записи хранения Azure
-          href: ../../storage/common/storage-create-storage-account.md
-          maintainContext: true
-        - name: Платформы и инструменты
-          href: platforms-and-tools.md
-        - name: Использование R и Python в кластерах HDInsight
-          items:
-            - name: Общие сведения о Spark в HDInsight
-              href: ../../hdinsight/spark/apache-spark-overview.md
-              maintainContext: true
-            - name: Создание кластера Apache Spark в Azure HDInsight
-              href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md
-              maintainContext: true
-            - name: Программные ядра PySpark для записной книжки Jupyter
-              href: ../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md
-              maintainContext: true
-            - name: R Server в HDInsight
-              href: ../../hdinsight/r-server/r-server-overview.md
-              maintainContext: true
-            - name: Приступая к работе с R Server в HDInsight
-              href: ../../hdinsight/r-server/r-server-get-started.md
-              maintainContext: true
-        - name: Рабочая область службы "Машинное обучение Azure"
-          href: ../studio/create-workspace.md
-          maintainContext: true
-    - name: Анализ потребностей бизнеса
-      items:
-        - name: Определение своего сценария
-          href: plan-your-environment.md
-    - name: Получение и интерпретация данных
-      items:
-        - name: Управление логистикой данных
-          items:
-            - name: Обзор
-              href: ingest-data.md
-            - name: Хранилище BLOB-объектов
-              href: move-azure-blob.md
-            - name: Использование Обозревателя службы хранилища
-              href: move-data-to-azure-blob-using-azure-storage-explorer.md
-            - name: Использование AzCopy
-              href: move-data-to-azure-blob-using-azcopy.md
-            - name: Использование Python
-              href: ../../storage/blobs/storage-python-how-to-use-blob-storage.md
-              maintainContext: true
-            - name: Использование SSIS
-              href: move-data-to-azure-blob-using-ssis.md
-            - name: Перемещение в виртуальную машину
-              href: move-sql-server-virtual-machine.md
-            - name: Перемещение в базу данных SQL
-              href: move-sql-azure.md
-            - name: Загрузка в таблицы Hive
-              href: move-hive-tables.md
-            - name: Загрузка из локальной базы данных SQL
-              href: move-sql-azure-adf.md
-            - name: Загрузка из секционированных таблиц SQL
-              href: parallel-load-sql-partitioned-tables.md
-        - name: Изучение и визуализация данных
-          items:
-            - name: Подготовка данных
-              href: prepare-data.md
-            - name: Изучение данных
-              items:
-                - name: Обзор
-                  href: explore-data.md
-                - name: Использование Pandas
-                  href: explore-data-blob.md
-                - name: Использование виртуальной машины SQL
-                  href: explore-data-sql-server.md
-                - name: Использование таблиц Hive
-                  href: explore-data-hive-tables.md
-            - name: Пример данных
-              items:
-                - name: Обзор
-                  href: sample-data.md
-                - name: Использование хранилища BLOB-объектов
-                  href: sample-data-blob.md
-                - name: Использование сервера SQL
-                  href: sample-data-sql-server.md
-                - name: Использование таблиц Hive
-                  href: sample-data-hive.md
-            - name: Обработка данных
-              items:
-                - name: Доступ с помощью Python
-                  href: python-data-access.md
-                - name: Обработка данных больших двоичных объектов
-                  href: data-blob.md
-                - name: Использование Azure Data Lake
-                  href: data-lake-walkthrough.md
-                - name: Использование виртуальной машины SQL
-                  href: sql-server-virtual-machine.md
-                - name: Использование конвейера данных
-                  href: automated-data-pipeline-cheat-sheet.md
-                - name: Использование Spark
-                  href: spark-overview.md
-                - name: Использование Scala и Spark
-                  href: scala-walkthrough.md
-    - name: Разработка моделей
-      items:
-        - name: Разработка функций
-          items:
-            - name: Обзор
-              href: create-features.md
-            - name: Использование SQL и Python
-              href: create-features-sql-server.md
-            - name: Использование запросов Hive
-              href: create-features-hive.md
-        - name: Выбор функций
-          href: select-features.md
-        - name: Создание и обучение моделей
-          items:
-            - name: Выбор алгоритмов
-              href: ../studio/algorithm-choice.md
-              maintainContext: true
-            - name: Памятка по алгоритмам
-              href: ../studio/algorithm-cheat-sheet.md
-              maintainContext: true
-    - name: Развертывание моделей в рабочей среде
-      href: deploy-models-in-production.md
-    - name: Использование TDSP в службе "Машинное обучение Azure"
-      href: ../desktop-workbench/how-to-use-tdsp-in-azure-ml.md
+  - name: Настройка сред для обработки и анализа данных
+    href: environment-setup.md
+    items:
+    - name: Учетные записи хранения Azure
+      href: ../../storage/common/storage-create-storage-account.md
       maintainContext: true
+    - name: Платформы и инструменты
+      href: platforms-and-tools.md
+    - name: Использование R и Python в кластерах HDInsight
+      items:
+      - name: Общие сведения о Spark в HDInsight
+        href: ../../hdinsight/spark/apache-spark-overview.md
+        maintainContext: true
+      - name: Создание кластера Apache Spark в Azure HDInsight
+        href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md
+        maintainContext: true
+      - name: Программные ядра PySpark для записной книжки Jupyter
+        href: ../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md
+        maintainContext: true
+      - name: R Server в HDInsight
+        href: ../../hdinsight/r-server/r-server-overview.md
+        maintainContext: true
+      - name: Приступая к работе с R Server в HDInsight
+        href: ../../hdinsight/r-server/r-server-get-started.md
+        maintainContext: true
+    - name: Рабочая область службы "Машинное обучение Azure"
+      href: ../studio/create-workspace.md
+      maintainContext: true
+  - name: Анализ потребностей бизнеса
+    items:
+    - name: Определение своего сценария
+      href: plan-your-environment.md
+  - name: Получение и интерпретация данных
+    items:
+    - name: Управление логистикой данных
+      items:
+      - name: Обзор
+        href: ingest-data.md
+      - name: Хранилище BLOB-объектов
+        href: move-azure-blob.md
+      - name: Использование Обозревателя службы хранилища
+        href: move-data-to-azure-blob-using-azure-storage-explorer.md
+      - name: Использование AzCopy
+        href: move-data-to-azure-blob-using-azcopy.md
+      - name: Использование Python
+        href: ../../storage/blobs/storage-python-how-to-use-blob-storage.md
+        maintainContext: true
+      - name: Использование SSIS
+        href: move-data-to-azure-blob-using-ssis.md
+      - name: Перемещение в виртуальную машину
+        href: move-sql-server-virtual-machine.md
+      - name: Перемещение в базу данных SQL
+        href: move-sql-azure.md
+      - name: Загрузка в таблицы Hive
+        href: move-hive-tables.md
+      - name: Загрузка из локальной базы данных SQL
+        href: move-sql-azure-adf.md
+      - name: Загрузка из секционированных таблиц SQL
+        href: parallel-load-sql-partitioned-tables.md
+    - name: Изучение и визуализация данных
+      items:
+      - name: Подготовка данных
+        href: prepare-data.md
+      - name: Изучение данных
+        items:
+        - name: Обзор
+          href: explore-data.md
+        - name: Использование Pandas
+          href: explore-data-blob.md
+        - name: Использование виртуальной машины SQL
+          href: explore-data-sql-server.md
+        - name: Использование таблиц Hive
+          href: explore-data-hive-tables.md
+      - name: Пример данных
+        items:
+        - name: Обзор
+          href: sample-data.md
+        - name: Использование хранилища BLOB-объектов
+          href: sample-data-blob.md
+        - name: Использование сервера SQL
+          href: sample-data-sql-server.md
+        - name: Использование таблиц Hive
+          href: sample-data-hive.md
+      - name: Обработка данных
+        items:
+        - name: Доступ с помощью Python
+          href: python-data-access.md
+        - name: Обработка данных больших двоичных объектов
+          href: data-blob.md
+        - name: Использование Azure Data Lake
+          href: data-lake-walkthrough.md
+        - name: Использование виртуальной машины SQL
+          href: sql-server-virtual-machine.md
+        - name: Использование конвейера данных
+          href: automated-data-pipeline-cheat-sheet.md
+        - name: Использование Spark
+          href: spark-overview.md
+        - name: Использование Scala и Spark
+          href: scala-walkthrough.md
+  - name: Разработка моделей
+    items:
+    - name: Разработка функций
+      items:
+      - name: Обзор
+        href: create-features.md
+      - name: Использование SQL и Python
+        href: create-features-sql-server.md
+      - name: Использование запросов Hive
+        href: create-features-hive.md
+    - name: Выбор функций
+      href: select-features.md
+    - name: Создание и обучение моделей
+      items:
+      - name: Выбор алгоритмов
+        href: ../studio/algorithm-choice.md
+        maintainContext: true
+      - name: Памятка по алгоритмам
+        href: ../studio/algorithm-cheat-sheet.md
+        maintainContext: true
+  - name: Развертывание моделей в рабочей среде
+    href: deploy-models-in-production.md
+  - name: Использование TDSP в службе "Машинное обучение Azure"
+    href: ../desktop-workbench/how-to-use-tdsp-in-azure-ml.md
+    maintainContext: true
 - name: Сопутствующие материалы
   items:
-    - name: "Машинное обучение Azure\_— AML"
-      href: 'https://docs.microsoft.com/en-us/azure/machine-learning/service/'
-    - name: Набор средств Microsoft Cognitive Toolkit (CNTK)
-      href: 'https://docs.microsoft.com/cognitive-toolkit/'
-      maintainContext: true
-    - name: Партнерские решения Cortana Intelligence
+  - name: Машинное обучение Azure — AML
+    href: https://docs.microsoft.com/en-us/azure/machine-learning/service/
+  - name: Набор средств Microsoft Cognitive Toolkit (CNTK)
+    href: https://docs.microsoft.com/cognitive-toolkit/
+    maintainContext: true
+  - name: Коллекция решений ИИ Azure
+    href: https://gallery.azure.ai
+  - name: Cortana Analytics
+    items:
+    - name: Обнаружение аномалий
+      href: apps-anomaly-detection-api.md
+    - name: Cognitive Services
+      href: https://docs.microsoft.com/azure/cognitive-services/
+    - name: диагностическое обслуживание;
       items:
-        - name: Коллекция решений ИИ Azure
-          href: 'https://gallery.azure.ai'
-        - name: Руководство по публикации Cortana Intelligence
-          href: cortana-intelligence-appsource-publishing-guide.md
-        - name: Средство оценки решений Cortana Intelligence
-          href: cortana-intelligence-appsource-evaluation-tool.md
-    - name: Cortana Analytics
+      - name: Обзор
+        href: cortana-analytics-playbook-predictive-maintenance.md
+      - name: Архитектура
+        href: cortana-analytics-architecture-predictive-maintenance.md
+      - name: Техническое руководство
+        href: cortana-analytics-technical-guide-predictive-maintenance.md
+    - name: Телеметрические данные автомобиля
       items:
-        - name: Обнаружение аномалий
-          href: apps-anomaly-detection-api.md
-        - name: Cognitive Services
-          href: 'https://docs.microsoft.com/azure/cognitive-services/'
-        - name: диагностическое обслуживание;
-          items:
-            - name: Обзор
-              href: cortana-analytics-playbook-predictive-maintenance.md
-            - name: Архитектура
-              href: cortana-analytics-architecture-predictive-maintenance.md
-            - name: Техническое руководство
-              href: cortana-analytics-technical-guide-predictive-maintenance.md
-        - name: Телеметрические данные автомобиля
-          items:
-            - name: Обзор
-              href: cortana-analytics-playbook-vehicle-telemetry.md
-            - name: Подробный обзор типов
-              href: cortana-analytics-playbook-vehicle-telemetry-deep-dive.md
-            - name: Настройка
-              href: cortana-analytics-playbook-vehicle-telemetry-powerbi.md
+      - name: Обзор
+        href: cortana-analytics-playbook-vehicle-telemetry.md
+      - name: Подробный обзор типов
+        href: cortana-analytics-playbook-vehicle-telemetry-deep-dive.md
+      - name: Настройка
+        href: cortana-analytics-playbook-vehicle-telemetry-powerbi.md
 - name: Ресурсы
   items:
-    - name: Блоги
-      items:
-        - name: Последние обновления для TDSP
-          href: 'https://blogs.technet.microsoft.com/machinelearning/2017/10/09/the-microsoft-team-data-science-process-tdsp-recent-updates/'
-        - name: Использование TDSP в Машинном обучении Azure
-          href: 'https://blogs.technet.microsoft.com/machinelearning/2017/09/25/using-the-team-data-science-process-tdsp-in-azure-machine-learning/'
-        - name: Служебные программы для обработки и анализа данных версии 0.11 для TDSP
-          href: 'https://blogs.technet.microsoft.com/machinelearning/2017/01/11/announcing-data-science-utilities-version-0-11-for-the-team-data-science-process/'
-        - name: Новейшие служебные программы для TDSP
-          href: 'https://blogs.technet.microsoft.com/machinelearning/2017/04/05/latest-rev-of-utilities-for-microsoft-team-data-science-process-tdsp-now-available/'
-        - name: Шаблон планирования проекта по обработке и анализу данных
-          href: 'https://blogs.msdn.microsoft.com/buckwoody/2017/10/24/a-data-science-microsoft-project-template-you-can-use-in-your-solutions/'
-        - name: Блог про Cortana Intelligence и машинное обучение
-          href: 'https://blogs.technet.microsoft.com/machinelearning/'
-    - name: 'Организации, использующие TDSP'
-      items:
-        - name: New Signature
-          href: 'https://newsignature.com/services/professional-services/advanced-analytics/'
-        - name: Blue Granite
-          href: 'https://www.blue-granite.com/blog/getting-more-from-your-data-science-teams-organization-and-process-considerations'
-    - name: Связанные ресурсы корпорации Майкрософт
-      items:
-        - name: Форум MSDN
-          href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=MachineLearning'
-        - name: Переполнение стека
-          href: 'http://stackoverflow.com/questions/tagged/azure-machine-learning'
-        - name: Видеоролики
-          href: 'https://azure.microsoft.com/resources/videos/index/?services=machine-learning'
+  - name: Блоги
+    items:
+    - name: Последние обновления для TDSP
+      href: https://blogs.technet.microsoft.com/machinelearning/2017/10/09/the-microsoft-team-data-science-process-tdsp-recent-updates/
+    - name: Использование TDSP в Машинном обучении Azure
+      href: https://blogs.technet.microsoft.com/machinelearning/2017/09/25/using-the-team-data-science-process-tdsp-in-azure-machine-learning/
+    - name: Служебные программы для обработки и анализа данных версии 0.11 для TDSP
+      href: https://blogs.technet.microsoft.com/machinelearning/2017/01/11/announcing-data-science-utilities-version-0-11-for-the-team-data-science-process/
+    - name: Новейшие служебные программы для TDSP
+      href: https://blogs.technet.microsoft.com/machinelearning/2017/04/05/latest-rev-of-utilities-for-microsoft-team-data-science-process-tdsp-now-available/
+    - name: Шаблон планирования проекта по обработке и анализу данных
+      href: https://blogs.msdn.microsoft.com/buckwoody/2017/10/24/a-data-science-microsoft-project-template-you-can-use-in-your-solutions/
+    - name: Блог про Cortana Intelligence и машинное обучение
+      href: https://blogs.technet.microsoft.com/machinelearning/
+  - name: Организации, использующие TDSP
+    items:
+    - name: New Signature
+      href: https://newsignature.com/services/professional-services/advanced-analytics/
+    - name: Blue Granite
+      href: https://www.blue-granite.com/blog/getting-more-from-your-data-science-teams-organization-and-process-considerations
+  - name: Связанные ресурсы корпорации Майкрософт
+    items:
+    - name: Форум MSDN
+      href: https://social.msdn.microsoft.com/forums/azure/home?forum=MachineLearning
+    - name: Переполнение стека
+      href: http://stackoverflow.com/questions/tagged/azure-machine-learning
+    - name: Видеоролики
+      href: https://azure.microsoft.com/resources/videos/index/?services=machine-learning
+ms.openlocfilehash: e56588897af72e9816e3a9096d9881f46ecdc85e
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41927003"

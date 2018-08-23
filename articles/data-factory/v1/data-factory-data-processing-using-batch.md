@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 77bb891dd8e7d6a3cb6363b06eaf361d09db594c
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6ad3b4c1f59f5c46fd31aa24d6d2ceb4d7411abd
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422423"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42142865"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -91,10 +91,10 @@ ms.locfileid: "39422423"
 Если у вас нет подписки Azure, можно быстро создать бесплатную пробную учетную запись. Дополнительные сведения см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 
 #### <a name="azure-storage-account"></a>Учетная запись хранения Azure.
-Учетная запись хранения используется в этом руководстве для хранения данных. Если у вас нет учетной записи хранения, [создайте ее](../../storage/common/storage-create-storage-account.md#create-a-storage-account). В примере решения используется хранилище BLOB-объектов.
+Учетная запись хранения используется в этом руководстве для хранения данных. Если у вас нет учетной записи хранения, [создайте ее](../../storage/common/storage-quickstart-create-account.md). В примере решения используется хранилище BLOB-объектов.
 
 #### <a name="azure-batch-account"></a>Учетная запись пакетной службы Azure
-Создайте учетную запись пакетной службы с помощью [портала Azure](http://portal.azure.com/). Дополнительные сведения см. в [этой статье](../../batch/batch-account-create-portal.md). Запишите ключ и имя учетной записи пакетной службы. Для создания учетной записи пакетной службы можно также воспользоваться командлетом [New-AzureRmBatchAccount](https://msdn.microsoft.com/library/mt603749.aspx). Инструкции по использованию этого командлета см. в статье [Управление ресурсами пакетной службы с помощью командлетов PowerShell](../../batch/batch-powershell-cmdlets-get-started.md).
+Создайте учетную запись пакетной службы с помощью [портала Azure](http://portal.azure.com/). Дополнительные сведения см. в [этой статье](../../batch/batch-account-create-portal.md). Запишите ключ и имя учетной записи пакетной службы. Для создания учетной записи пакетной службы можно также воспользоваться командлетом [New-AzureRmBatchAccount](https://docs.microsoft.com/powershell/module/azurerm.batch/new-azurermbatchaccount). Инструкции по использованию этого командлета см. в статье [Управление ресурсами пакетной службы с помощью командлетов PowerShell](../../batch/batch-powershell-cmdlets-get-started.md).
 
 В примере решения используется пакетная служба (косвенно, через конвейер фабрики данных) для параллельной обработки данных в пуле вычислительных узлов (управляемой коллекции виртуальных машин).
 
