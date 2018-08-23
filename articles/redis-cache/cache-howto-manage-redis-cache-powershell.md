@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: wesmc
-ms.openlocfilehash: fcadac344e2e05c3f6cdd9003b87b819d7933fba
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 980a183261c394bd83292170ab133fe17229013d
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36937440"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142489"
 ---
 # <a name="manage-azure-redis-cache-with-azure-powershell"></a>Управление кэшем Redis для Azure с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -28,13 +28,13 @@ ms.locfileid: "36937440"
 > 
 > 
 
-В этом разделе демонстрируется выполнение таких обычных задач, как создание, обновление и масштабирование экземпляров кэша Redis для Azure, повторное создание ключей доступа и просмотр сведений о кэшах.  См. полный список [командлетов PowerShell для работы с кэшем Redis для Azure](https://msdn.microsoft.com/library/azure/mt634513.aspx).
+В этом разделе демонстрируется выполнение таких обычных задач, как создание, обновление и масштабирование экземпляров кэша Redis для Azure, повторное создание ключей доступа и просмотр сведений о кэшах.  См. полный список [командлетов PowerShell для работы с кэшем Redis для Azure](https://docs.microsoft.com/powershell/module/azurerm.rediscache/?view=azurermps-6.6.0).
 
 [!INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]
 
 Дополнительные сведения о классической модели развертывания см. в статье [Azure Resource Manager vs. classic deployment: Understand deployment models and the state of your resources](../azure-resource-manager/resource-manager-deployment-model.md) (Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Если вы уже установили Azure PowerShell, необходимо использовать Azure PowerShell 1.0.0 или более поздней версии. Установленную версию Azure PowerShell можно узнать в командной строке Azure PowerShell с помощью такой команды:
 
     Get-Module azure | format-table version
@@ -156,7 +156,7 @@ ms.locfileid: "36937440"
 | databases |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
 
 ## <a name="to-create-a-redis-cache"></a>Создание кэша Redis
-Новые экземпляры кэша Redis для Azure создаются с помощью командлета [New-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634517.aspx) .
+Новые экземпляры кэша Redis для Azure создаются с помощью командлета [New-AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/new-azurermrediscache?view=azurermps-6.6.0) .
 
 > [!IMPORTANT]
 > Когда кэш Redis создается в подписке с использованием портала Azure впервые, портал регистрирует пространство имен `Microsoft.Cache` для этой подписки. Если первый кэш Redis создается в подписке с использованием PowerShell, необходимо зарегистрировать пространство имен с помощью представленной ниже команды, иначе команды `New-AzureRmRedisCache` и `Get-AzureRmRedisCache` завершатся неудачей.
@@ -256,14 +256,14 @@ ms.locfileid: "36937440"
 <a name="databases"></a>
 
 ## <a name="to-configure-the-databases-setting-during-cache-creation"></a>Настройка параметров баз данных в процессе создания кэша
-Параметр `databases` можно настроить только при создании кэша. В следующем примере создается кэш Premium P3 (26 ГБ) на 48 баз данных, использующих командлет [New AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634517.aspx) .
+Параметр `databases` можно настроить только при создании кэша. В следующем примере создается кэш Premium P3 (26 ГБ) на 48 баз данных, использующих командлет [New AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/New-AzureRmRedisCache?view=azurermps-6.6.0) .
 
     New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "North Central US" -Sku Premium -Size P3 -RedisConfiguration @{"databases" = "48"}
 
-Дополнительные сведения о свойстве `databases` см. в разделе [Конфигурация сервера Redis по умолчанию](cache-configure.md#default-redis-server-configuration). Дополнительные сведения о создании кэша с помощью командлета [New-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634517.aspx) см. в предыдущем разделе [Создание кэша Redis](#to-create-a-redis-cache).
+Дополнительные сведения о свойстве `databases` см. в разделе [Конфигурация сервера Redis по умолчанию](cache-configure.md#default-redis-server-configuration). Дополнительные сведения о создании кэша с помощью командлета [New-AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/new-azurermrediscache?view=azurermps-6.6.0) см. в предыдущем разделе [Создание кэша Redis](#to-create-a-redis-cache).
 
 ## <a name="to-update-a-redis-cache"></a>Обновление кэша Redis
-Экземпляры кэша Redis для Azure обновляются с помощью командлета [Set-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634518.aspx) .
+Экземпляры кэша Redis для Azure обновляются с помощью командлета [Set-AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/Set-AzureRmRedisCache?view=azurermps-6.6.0) .
 
 Чтобы увидеть список доступных параметров свойства `Set-AzureRmRedisCache`и их описания, выполните следующую команду:
 
@@ -382,7 +382,7 @@ ms.locfileid: "36937440"
     Set-AzureRmRedisCache : Conflict: The resource '...' is not in a stable state, and is currently unable to accept the update request.
 
 ## <a name="to-get-information-about-a-redis-cache"></a>Получение сведений о кэше Redis
-Вы можете получить сведения об использовании кэша с помощью командлета [Get-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634514.aspx) .
+Вы можете получить сведения об использовании кэша с помощью командлета [Get-AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/get-azurermrediscache?view=azurermps-6.6.0) .
 
 Чтобы увидеть список доступных параметров свойства `Get-AzureRmRedisCache`и их описания, выполните следующую команду:
 
@@ -458,7 +458,7 @@ ms.locfileid: "36937440"
     ShardCount         :
 
 ## <a name="to-retrieve-the-access-keys-for-a-redis-cache"></a>Получение ключей доступа для кэша Redis
-Для получения ключей доступа к кэшу вы можете использовать командлет [Get-AzureRmRedisCacheKey](https://msdn.microsoft.com/library/azure/mt634516.aspx) .
+Для получения ключей доступа к кэшу вы можете использовать командлет [Get-AzureRmRedisCacheKey](https://docs.microsoft.com/powershell/module/azurerm.rediscache/Get-AzureRmRedisCacheKey?view=azurermps-6.6.0) .
 
 Чтобы увидеть список доступных параметров свойства `Get-AzureRmRedisCacheKey`и их описания, выполните следующую команду:
 
@@ -498,7 +498,7 @@ ms.locfileid: "36937440"
     SecondaryKey : ABhfB757JgjIgt785JgKH9865eifmekfnn649303JKL=
 
 ## <a name="to-regenerate-access-keys-for-your-redis-cache"></a>Повторное создание ключей доступа для кэша Redis
-Для повторного создания ключей доступа к кэшу вы можете использовать командлет [New-AzureRmRedisCacheKey](https://msdn.microsoft.com/library/azure/mt634512.aspx) .
+Для повторного создания ключей доступа к кэшу вы можете использовать командлет [New-AzureRmRedisCacheKey](https://docs.microsoft.com/powershell/module/azurerm.rediscache/New-AzureRmRedisCacheKey?view=azurermps-6.6.0) .
 
 Чтобы увидеть список доступных параметров свойства `New-AzureRmRedisCacheKey`и их описания, выполните следующую команду:
 
@@ -548,7 +548,7 @@ ms.locfileid: "36937440"
     SecondaryKey : c53hj3kh4jhHjPJk8l0jji785JgKH9865eifmekfnn6=
 
 ## <a name="to-delete-a-redis-cache"></a>Удаление кэша Redis
-Для удаления кэша Redis используйте командлет [Remove-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634515.aspx) .
+Для удаления кэша Redis используйте командлет [Remove-AzureRmRedisCache](https://docs.microsoft.com/powershell/module/azurerm.rediscache/remove-azurermrediscache?view=azurermps-6.6.0) .
 
 Чтобы увидеть список доступных параметров свойства `Remove-AzureRmRedisCache`и их описания, выполните следующую команду:
 
@@ -780,7 +780,7 @@ ms.locfileid: "36937440"
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об использовании Windows PowerShell с Azure см. в следующих ресурсах:
 
-* [Документация по командлету кэша Redis для Azure на MSDN](https://msdn.microsoft.com/library/azure/mt634513.aspx)
+* [Документация по командлету кэша Redis для Azure на MSDN](https://docs.microsoft.com/powershell/module/azurerm.rediscache/?view=azurermps-6.6.0)
 * [Командлеты диспетчера ресурсов Azure](http://go.microsoft.com/fwlink/?LinkID=394765): узнайте, как использовать командлеты в модуле диспетчера ресурсов Azure.
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md): узнайте, как создавать группы ресурсов и управлять ими на портале Azure.
 * [Блог Azure](https://azure.microsoft.com/en-us/blog/): узнайте о новых возможностях в Azure.

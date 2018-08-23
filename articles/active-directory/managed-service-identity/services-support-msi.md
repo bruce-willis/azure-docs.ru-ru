@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: active-directory
 ms.component: msi
 manager: mtillman
-ms.openlocfilehash: 74fb9e784122dadd1ad2f6f29a497398eacf7464
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 9e49e7cdb9157fea2ae29d015bd84d391c73e71b
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412888"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142606"
 ---
 # <a name="services-that-support-managed-service-identity"></a>Службы, поддерживающие управляемое удостоверение службы 
 
@@ -44,6 +44,6 @@ ms.locfileid: "39412888"
 | Хранилище ключей Azure | https://vault.azure.net | Доступна | Сентябрь 2017 г. | |
 | Azure Data Lake; | https://datalake.azure.net/ | Доступна | Сентябрь 2017 г. | |
 | Azure SQL | https://database.windows.net/ | Доступна | Октябрь 2017 г. | |
-| Концентраторы событий Azure | https://eventhubs.azure.net | Доступна | Декабрь 2017 г. | |
+| Центры событий Azure | https://eventhubs.azure.net | Доступна | Декабрь 2017 г. | |
 | Azure Service Bus | https://servicebus.azure.net | Доступна | Декабрь 2017 г. | |
-| Хранилище Azure | https://storage.azure.com/ | Предварительный просмотр | Май 2018 г. | |
+| Хранилище Azure | https://azure.microsoft.com/services/storage/ | Предварительный просмотр | Май 2018 г. | |

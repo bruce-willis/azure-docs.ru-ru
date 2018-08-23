@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: andrl
-ms.openlocfilehash: 6374fcf1477d56b9803b63476f3fef38fc12def1
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 6296eb423f24762ed32a21ef40852dc1a9dd8f36
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39618902"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144600"
 ---
 # <a name="azure-cosmos-db-server-side-programming-stored-procedures-database-triggers-and-udfs"></a>Программирование Azure Cosmos DB на стороне сервера: хранимые процедуры, триггеры баз данных и определяемые пользователем функции
 
@@ -98,7 +98,7 @@ client.executeStoredProcedureAsync('dbs/testdb/colls/testColl/sprocs/helloWorld'
     });
 ```
 
-Контекст объекта предоставляет доступ ко всем операциям, которые можно выполнить в хранилище Cosmos DB, а также доступ к объектам запросов и ответов. В этом примере вы применяете объект ответа, чтобы создать текст ответа для отправки клиенту. Более подробные сведения см. в [документации к серверному пакету SDK JavaScript для Azure Cosmos DB](http://azure.github.io/azure-documentdb-js-server/).  
+Контекст объекта предоставляет доступ ко всем операциям, которые можно выполнить в хранилище Cosmos DB, а также доступ к объектам запросов и ответов. В этом примере вы применяете объект ответа, чтобы создать текст ответа для отправки клиенту. Более подробные сведения см. в [документации к серверному пакету SDK JavaScript для Azure Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/).  
 
 Подробнее остановимся на этом примере и добавим в хранимую процедуру дополнительную функциональность для баз данных. Хранимые процедуры могут создавать, обновлять, читать, запрашивать и удалять документы и приложения внутри коллекции.    
 
@@ -591,7 +591,7 @@ client.createUserDefinedFunctionAsync('dbs/testdb/colls/testColl', taxUdf)
 * Поток управления (например if, for или while)
 * вызовы функций.
 
-Чтобы узнать больше, ознакомьтесь с [документацией по JavaScript в серверной части](http://azure.github.io/azure-documentdb-js-server/).
+Чтобы узнать больше, ознакомьтесь с [документацией по JavaScript в серверной части](https://azure.github.io/azure-cosmosdb-js-server/).
 
 ### <a name="example-write-a-stored-procedure-using-the-javascript-query-api"></a>Пример создания хранимой процедуры с помощью API запросов в JavaScript
 В следующем образце кода приведен пример использования API запросов в JavaScript для создания хранимой процедуры. Хранимая процедура вставляет заданный входным параметром документ, после чего обновляет метаданные документа с помощью метода `__.filter()` , а также на основе свойств размера входного документа minSize, maxSize и totalSize.
@@ -674,7 +674,7 @@ function insertDocumentAndUpdateMetadata(doc) {
 
 
 ## <a name="runtime-support"></a>Поддержка времени выполнения
-[Серверный API JavaScript для Azure Cosmos DB](http://azure.github.io/azure-documentdb-js-server/) поддерживает большинство возможностей языка JavaScript в соответствии со стандартами [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm).
+[Серверный API JavaScript для Azure Cosmos DB](https://azure.github.io/azure-cosmosdb-js-server/) поддерживает большинство возможностей языка JavaScript в соответствии со стандартами [ECMA-262](http://www.ecma-international.org/publications/standards/Ecma-262.htm).
 
 ### <a name="security"></a>Безопасность
 Хранимые процедуры и триггеры JavaScript выполняются в изолированной среде, поэтому действия одного сценария не оказывают какого-либо воздействия на другие сценарии, за счет изоляции снимков транзакций на уровне базы данных. Среды выполнения объединяются в пул, но удаляются из контекста после каждого запуска. Следовательно, они гарантированно безопасны от появления непреднамеренных побочных эффектов друг для друга.
@@ -683,7 +683,7 @@ function insertDocumentAndUpdateMetadata(doc) {
 Хранимые процедуры, триггеры и пользовательские функции неявно прекомпилированы в формате байт-кода, чтобы избежать затрат на компиляцию во время каждого вызова сценария. Предварительная компиляция гарантирует высокую скорость и низкие затраты на вызовы хранимых процедур.
 
 ## <a name="client-sdk-support"></a>Поддержка клиентских пакетов SDK
-В дополнение к API Azure Cosmos DB для [Node.js](sql-api-sdk-node.md) Azure Cosmos DB поддерживает [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](http://azure.github.io/azure-documentdb-js/) и [пакеты SDK для Python](sql-api-sdk-python.md) для API SQL. Хранимые процедуры, триггеры и пользовательские функции могут быть созданы и выполнены с использованием любого из этих пакетов SDK. В следующем примере показано, как создать и выполнить хранимую процедуру с помощью клиента .NET. Обратите внимание, что типы .NET передаются в хранимую процедуру и возвращаются в виде объектов JSON.
+В дополнение к API Azure Cosmos DB для [Node.js](sql-api-sdk-node.md) Azure Cosmos DB поддерживает [.NET](sql-api-sdk-dotnet.md), [.NET Core](sql-api-sdk-dotnet-core.md), [Java](sql-api-sdk-java.md), [JavaScript](sql-api-sdk-node.md) и [пакеты SDK для Python](sql-api-sdk-python.md) для API SQL. Хранимые процедуры, триггеры и пользовательские функции могут быть созданы и выполнены с использованием любого из этих пакетов SDK. В следующем примере показано, как создать и выполнить хранимую процедуру с помощью клиента .NET. Обратите внимание, что типы .NET передаются в хранимую процедуру и возвращаются в виде объектов JSON.
 
 ```javascript
 var markAntiquesSproc = new StoredProcedure
@@ -828,7 +828,7 @@ foreach (Book book in client.CreateDocumentQuery(UriFactory.CreateDocumentCollec
 Здесь в заголовке x-ms-documentdb-pre-trigger-include указан триггер со срабатыванием до наступления события, который будет запущен при запросе. Соответственно, любые триггер со срабатыванием после наступления события могут быть приведены заголовке x-ms-documentdb-post-trigger-include. Для данного запроса могут быть определены оба вида триггеров.
 
 ## <a name="sample-code"></a>Пример кода
-Дополнительные примеры кода, используемого на стороне сервера (включая операции [массового удаления](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/bulkDelete.js) и [обновления](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples/stored-procedures/update.js)), представлены в [репозитории GitHub](https://github.com/Azure/azure-documentdb-js-server/tree/master/samples).
+Дополнительные примеры кода, используемого на стороне сервера (включая операции [массового удаления](https://github.com/Azure/azure-cosmosdb-js-server/blob/master/samples/stored-procedures/bulkDelete.js) и [обновления](https://github.com/Azure/azure-cosmosdb-js-server/blob/master/samples/stored-procedures/update.js)), представлены в [репозитории GitHub](https://github.com/Azure/azure-cosmosdb-js-server/tree/master/samples).
 
 Вы создали отличную хранимую процедуру и хотите ей поделиться? Внесите ее в репозиторий и создайте запрос на вытягивание! 
 

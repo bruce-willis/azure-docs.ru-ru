@@ -2,21 +2,19 @@
 title: Создание Экспериментирования в Машинном обучении с помощью шаблона Azure Resource Manager | Документы Microsoft
 description: В этой статье приведен пример создания учетной записи службы "Экспериментирование в Машинном обучении Azure" с помощью шаблона Azure Resource Manager.
 services: machine-learning
-author: ahgyger
-ms.author: ahgyger
-manager: haining
-ms.reviewer: jmartens, jasonwhowell, mldocs
+author: hning86
+ms.author: haining
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.topic: article
 ms.date: 11/14/2017
-ms.openlocfilehash: 65efee0eea5e2595ef8833788281c5ba60ca3a43
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: 7938eaa0e06c9a33034a7388d02845d60967774e
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34830788"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144596"
 ---
 # <a name="configure-the-azure-machine-learning-experimentation-service"></a>Настройка службы "Экспериментирование в Машинном обучении Azure"
 

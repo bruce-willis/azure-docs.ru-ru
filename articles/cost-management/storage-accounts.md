@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: cost-management
 manager: carmonm
 ms.custom: ''
-ms.openlocfilehash: e37604e5cd36cfed016ef596060459011ec32d35
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: dab7100c97fab7e086352916ec222ec70a0d0400
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35297841"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42142506"
 ---
 # <a name="configure-storage-accounts-for-cost-management"></a>Настройка учетных записей хранения для службы "Управление затратами"
 
@@ -23,11 +23,11 @@ ms.locfileid: "35297841"
 
 Отчеты службы "Управление затратами" можно сохранять на портале Cloudyn, в службе хранилища Azure или контейнерах хранилища AWS. За сохранение отчетов на портале Cloudyn не требуется плата. Тем не менее сохранение отчетов в хранилище вашего поставщика облачных служб является необязательным и требует дополнительных затрат. Эта статья поможет вам настроить учетные записи хранения Azure и контейнеры хранилища Amazon Web Services (AWS) для хранения отчетов.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Необходима учетная запись хранения Azure или контейнер хранилища Amazon.
 
-Если у вас нет учетной записи хранения Azure, то вам потребуется ее создать. Сведения о создании учетной записи хранения Azure см. в разделе [Создайте учетную запись хранения](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+Если у вас нет учетной записи хранения Azure, то вам потребуется ее создать. Сведения о создании учетной записи хранения Azure см. в разделе [Создайте учетную запись хранения](../storage/common/storage-quickstart-create-account.md).
 
 Если у вас нет контейнера службы Simple Storage Service (S3) AWS, его необходимо создать. Дополнительные сведения о создании контейнера S3 см. в статье [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) (Создание контейнера).
 

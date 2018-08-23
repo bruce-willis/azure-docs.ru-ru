@@ -2,16 +2,17 @@
 title: Репликация приложений с помощью SQL Server и Azure Site Recovery | Документы Майкрософт
 description: В этой статье рассматривается репликация SQL Server с помощью возможностей аварийного восстановления SQL Server и Azure Site Recovery.
 services: site-recovery
+author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 07/22/2018
 ms.author: raynew
-ms.openlocfilehash: fecf7366417a8a592578a425d8b028249c2681d7
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: 23cf9430f82be860cb9acbfac42163f9243b2d0f
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39216365"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42139908"
 ---
 # <a name="protect-sql-server-using-sql-server-disaster-recovery-and-azure-site-recovery"></a>Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery
 

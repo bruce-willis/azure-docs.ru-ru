@@ -11,17 +11,17 @@ ms.component: user-help
 ms.topic: overview
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 9d269cf00eca4107ea5ccc122b92295b8855cf68
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 3b937eb5498a16e35455ed245696e66e53224969
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39347347"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42022777"
 ---
 # <a name="reset-password-overview"></a>Общие сведения о сбросе пароля
 
 >[!Important]
->Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory).
+>Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
 Если вы забыли пароль, никогда не получали его от службы поддержки своей компании или ваша учетная запись была заблокирована, используйте сведения для защиты и мобильное устройство, чтобы сбросить пароль.
 

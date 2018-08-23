@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/04/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 9dda6d45caf69734eb135779c8bac00fea721efd
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 17029f51be9fed8fc36c5f919ece84acbf0461d9
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37901064"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42145180"
 ---
 # <a name="dcos-agent-pools-for-azure-container-service"></a>Пулы агентов DC/OS для службы контейнеров Azure
 Кластеры DC/OS службы контейнеров Azure содержат узлы агентов в двух пулах —общедоступном и частном. Приложение может быть развернуто в любом пуле, что повлияет на доступность между компьютерами в службе контейнеров. Компьютеры можно подключить к Интернету (общедоступный пул) или только к внутренней сети (частный пул). В этой статье приводятся общие сведения о причинах использования общедоступных и частных пулов.
@@ -24,7 +24,7 @@ ms.locfileid: "37901064"
 
 * **Общедоступные агенты**: общедоступные узлы агентов выполняют приложения и службы DC/OS в общедоступной сети. 
 
-Дополнительные сведения о сетевой безопасности DC/OS см. в [документации по DC/OS](https://dcos.io/docs/1.7/administration/securing-your-cluster/).
+Дополнительные сведения о сетевой безопасности DC/OS см. в [документации по DC/OS](https://dcos.io/docs/1.8/administration/securing-your-cluster/).
 
 ## <a name="deploy-agent-pools"></a>Развертывание пулов агента
 

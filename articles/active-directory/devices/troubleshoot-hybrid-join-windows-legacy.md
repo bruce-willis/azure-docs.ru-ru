@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/23/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: 1121bc9e34f0e544ba5d7acb9179944ee2382efd
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: aad2b4c3edcdc488257940062e8861613ece25e8
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39415737"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42144697"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -57,7 +57,7 @@ ms.locfileid: "39415737"
 
 - Можно получить несколько записей для устройства на вкладке сведения о пользователе в результате повторной установки операционной системы или повторной регистрации вручную. 
 
-- В случае с ОС Windows 7 с пакетом обновления 1 (SP1) или Windows Server 2008 R2 с пакетом обновления 1 (SP1) убедитесь, что обновление [KB4284842](https://support.microsoft.com/en-us/help/4284842) уже установлено. Это обновление предотвращает ошибки будущих проверок подлинности из-за потери доступа клиента к защищенными ключам после изменения пароля.
+- В случае с ОС Windows 7 с пакетом обновления 1 (SP1) или Windows Server 2008 R2 с пакетом обновления 1 (SP1) убедитесь, что обновление [KB4284842](https://support.microsoft.com/help/4284842) уже установлено. Это обновление предотвращает ошибки будущих проверок подлинности из-за потери доступа клиента к защищенными ключам после изменения пароля.
 
 ## <a name="step-1-retrieve-the-registration-status"></a>Шаг 1. Получение сведений о состоянии регистрации 
 

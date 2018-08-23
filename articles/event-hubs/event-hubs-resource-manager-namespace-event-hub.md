@@ -1,6 +1,6 @@
 ---
-title: Создание пространства имен и группы потребителей концентраторов событий Azure с помощью шаблона | Документация Майкрософт
-description: Создание пространства имен концентраторов событий c концентратором событий и группой потребителей с помощью шаблонов Azure Resource Manager.
+title: Создание пространства имен и группы потребителей Центров событий Azure с помощью шаблона | Документация Майкрософт
+description: Создание пространства имен Центров событий c концентратором событий и группой потребителей с помощью шаблонов Azure Resource Manager.
 services: event-hubs
 documentationcenter: .net
 author: ShubhaVijayasarathy
@@ -12,31 +12,31 @@ ms.devlang: tbd
 ms.topic: article
 ms.tgt_pltfrm: dotnet
 ms.workload: na
-ms.date: 04/30/2018
+ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: 2edcb89c6468896c2e878f61ed8330917037c3eb
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 4feb75fd885efa86470f0e38e129eefe81c64271
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40002924"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42144565"
 ---
-# <a name="create-an-event-hubs-namespace-with-event-hub-and-consumer-group-using-an-azure-resource-manager-template"></a>Создание пространства имен концентраторов событий с концентратором событий и группой потребителей с помощью шаблона Azure Resource Manager
+# <a name="create-an-event-hubs-namespace-with-event-hub-and-consumer-group-using-an-azure-resource-manager-template"></a>Создание пространства имен Центров событий с концентратором событий и группой потребителей с помощью шаблона Azure Resource Manager
 
-Из этой статьи вы узнаете, как с помощью шаблона Azure Resource Manager создать пространство имен типа [концентраторы событий](event-hubs-what-is-event-hubs.md) с одним концентратором событий и одной группой потребителей. Здесь показано, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
+Из этой статьи вы узнаете, как с помощью шаблона Azure Resource Manager создать пространство имен типа [Центры событий](event-hubs-what-is-event-hubs.md) с одним концентратором событий и одной группой потребителей. Здесь показано, как определить развертываемые ресурсы и параметры, указываемые при развертывании. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями.
 
 Дополнительные сведения о создании шаблонов см. в статье о [создании шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates].
 
 Полный шаблон приведен в разделе [Event Hub and consumer group template][Event Hub and consumer group template] (Шаблон концентратора событий и группы потребителей) на сайте GitHub.
 
 > [!NOTE]
-> Чтобы узнать о новых шаблонах, изучите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните в ней поиск по запросу "концентраторы событий".
+> Чтобы узнать о новых шаблонах, изучите коллекцию [Шаблоны быстрого запуска Azure][Azure Quickstart Templates] и выполните в ней поиск по запросу "Центры событий".
 > 
 > 
 
 ## <a name="what-will-you-deploy"></a>Что вы развернете?
 
-С помощью этого шаблона вы развернете пространство имен "Концентраторы событий" с концентратором событий и группой потребителей.
+С помощью этого шаблона вы развернете пространство имен Центров событий с концентратором событий и группой потребителей.
 
 Чтобы выполнить развертывание автоматически, нажмите следующую кнопку.
 
@@ -50,7 +50,7 @@ ms.locfileid: "40002924"
 
 ### <a name="eventhubnamespacename"></a>eventHubNamespaceName
 
-Имя создаваемого пространства имен концентраторов событий.
+Имя создаваемого пространства имен Центров событий.
 
 ```json
 "eventHubNamespaceName": {
@@ -60,7 +60,7 @@ ms.locfileid: "40002924"
 
 ### <a name="eventhubname"></a>eventHubName
 
-Имя концентратора событий, создаваемого в пространстве имен концентраторов событий.
+Имя концентратора событий, создаваемого в пространстве имен Центров событий.
 
 ```json
 "eventHubName": {
@@ -153,12 +153,11 @@ azure group deployment create \<my-resource-group\> \<my-deployment-name\> --tem
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о концентраторах событий см. в следующих источниках:
+Дополнительные сведения о Центрах событий см. в следующих источниках:
 
-* 
-  [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
+* [Общие сведения о Центрах событий](event-hubs-what-is-event-hubs.md)
 * [Создание концентратора событий](event-hubs-create.md)
-* [Часто задаваемые вопросы о концентраторах событий](event-hubs-faq.md)
+* [Часто задаваемые вопросы о Центрах событий](event-hubs-faq.md)
 
 [Authoring Azure Resource Manager templates]: ../azure-resource-manager/resource-group-authoring-templates.md
 [Azure Quickstart Templates]:  https://azure.microsoft.com/documentation/templates/?term=event+hubs

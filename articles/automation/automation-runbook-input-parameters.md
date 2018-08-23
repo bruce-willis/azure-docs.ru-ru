@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 1d11b7d8f008c8ba000530e0486562882bfe3db3
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: bc03bbf63427061c8d9f9e96ebcd9dce84f9fccf
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34193899"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42144980"
 ---
 # <a name="runbook-input-parameters"></a>Входные параметры Runbook
 
@@ -80,7 +80,7 @@ Param
 
 [**Аутентификация модулей Runbook в Azure с помощью учетной записи запуска от имени Azure**](automation-sec-configure-azure-runas-account.md).
 
-Получение свойств виртуальной машины с помощью командлета [**Get-AzureRmVm**](https://msdn.microsoft.com/library/mt603718.aspx).
+Получение свойств виртуальной машины с помощью командлета [**Get-AzureRmVm**](https://docs.microsoft.com/powershell/module/azurerm.compute/get-azurermvm).
 
 Для вывода имен виртуальных машин можно использовать действие [**Write-Output**](https://technet.microsoft.com/library/hh849921.aspx). Действие **Get-AzureRmVm** принимает два параметра — **имя виртуальной машины** и **имя группы ресурсов**. Так как при каждом запуске модуля Runbook для этих параметров могут требоваться различные значения, вы можете добавить в модуль входные параметры. Их добавление предусматривает три шага:
 
@@ -147,7 +147,7 @@ Param
 
 #### <a name="start-a-published-runbook-by-using-powershell-cmdlets-and-assign-parameters"></a>Запуск опубликованного модуля Runbook с помощью командлетов PowerShell и назначение параметров
 
-* **Командлеты Azure Resource Manager**. Модуль Runbook службы автоматизации, созданный в группе ресурсов, можно запустить с помощью командлета [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/library/mt603661.aspx).
+* **Командлеты Azure Resource Manager**. Модуль Runbook службы автоматизации, созданный в группе ресурсов, можно запустить с помощью командлета [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook).
   
   **Пример.**
   
@@ -156,7 +156,7 @@ Param
   
   Start-AzureRmAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” –ResourceGroupName $resourceGroupName -Parameters $params
   ```
-* **Командлеты для классической модели развертывания Azure.** Модуль runbook службы автоматизации, созданный в группе ресурсов по умолчанию, можно запустить с помощью командлета [Start-AzureAutomationRunbook](https://msdn.microsoft.com/library/dn690259.aspx).
+* **Командлеты для классической модели развертывания Azure.** Модуль runbook службы автоматизации, созданный в группе ресурсов по умолчанию, можно запустить с помощью командлета [Start-AzureAutomationRunbook](https://docs.microsoft.com/powershell/module/servicemanagement/azure/start-azureautomationrunbook).
   
   **Пример.**
   

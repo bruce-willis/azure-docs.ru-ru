@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/15/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 70d5c777f98a1e09125c7ef42ba597009bde084b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: c13da6ff7c864ffa365dbad33d6eb0cf2e35fa42
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34194344"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42144991"
 ---
 # <a name="certificate-assets-in-azure-automation"></a>Сертификация активов в службе автоматизации Azure
 
@@ -83,7 +83,7 @@ New-AzureRmAutomationCertificate -AutomationAccountName "MyAutomationAccount" -N
 
 ## <a name="using-a-certificate"></a>Использование сертификата
 
-Чтобы использовать сертификат, примените действие **Get-AutomationCertificate**. Нельзя использовать командлет [Get-AzureRmAutomationCertificate](https://msdn.microsoft.com/library/mt603765.aspx), так как он возвращает сведения о ресурсе сертификата, но не сам сертификат.
+Чтобы использовать сертификат, примените действие **Get-AutomationCertificate**. Нельзя использовать командлет [Get-AzureRmAutomationCertificate](https://docs.microsoft.com/powershell/module/azurerm.automation/get-azurermautomationcertificate?view=azurermps-6.6.0), так как он возвращает сведения о ресурсе сертификата, но не сам сертификат.
 
 ### <a name="textual-runbook-sample"></a>Пример текстового Runbook
 

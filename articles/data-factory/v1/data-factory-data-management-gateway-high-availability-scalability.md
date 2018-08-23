@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: b9ec9867e9abd188142067e593c925e3c8acdd0b
-ms.sourcegitcommit: a1e1b5c15cfd7a38192d63ab8ee3c2c55a42f59c
+ms.openlocfilehash: 58f612906af55575e9d42307af924ea0a8501ca1
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37113346"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146018"
 ---
 # <a name="data-management-gateway---high-availability-and-scalability-preview"></a>Шлюз управления данными: высокий уровень доступности и масштабируемость (предварительная версия)
 > [!NOTE]
@@ -169,7 +169,7 @@ ms.locfileid: "37113346"
 - Поддерживаются групповые сертификаты. Например, если вы используете полное доменное имя **node1.domain.contoso.com**, в сертификате можно указать имя субъекта ***.domain.contoso.com**.
 - Мы не рекомендуем использовать сертификаты с альтернативным именем субъекта (SAN), так как в текущей реализации применяется только последнее из альтернативных имен, а остальные игнорируются. (например, Если у вас есть сертификат SAN с альтернативными именами субъекта **node1.domain.contoso.com** и **node2.domain.contoso.com**, его можно применить только для компьютера с полным доменным именем **node2.domain.contoso.com**.
 - Поддержка ключа любого размера, поддерживаемого Windows Server 2012 R2 для SSL-сертификатов.
-- Сертификаты с ключами CNG не поддерживаются. Не поддерживаются сертификаты на основе ключей CNG.
+- Сертификаты с ключами CNG не поддерживаются.
 
 #### <a name="faq-when-would-i-not-enable-this-encryption"></a>Часто задаваемые вопросы: когда не нужно включать шифрование?
 Шифрование может повысить расходы на инфраструктуру (за счет оплаты общего сертификата). Этих расходов можно избежать, не используя шифрование в следующих случаях:

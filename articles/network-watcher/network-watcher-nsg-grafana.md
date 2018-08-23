@@ -3,8 +3,8 @@ title: Управление журналами потоков для групп 
 description: Управляйте журналами потоков для групп безопасности сети и анализируйте их с помощью наблюдателя за сетями и Grafana.
 services: network-watcher
 documentationcenter: na
-author: kumudD
-manager: timlt
+author: mattreatMSFT
+manager: vitinnan
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/15/2017
-ms.author: kumud
-ms.openlocfilehash: 44cf074223c88b8fa539144c0d948e68ae6cbd13
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.author: mareat
+ms.openlocfilehash: e375476536e7fe150e3aabcae7cee942deac02d5
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23036529"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42146055"
 ---
 # <a name="manage-and-analyze-network-security-group-flow-logs-using-network-watcher-and-grafana"></a>Управление журналами потоков для групп безопасности сети и их анализ с помощью наблюдателя за сетями и Grafana
 
@@ -63,7 +63,7 @@ Logstash позволяет преобразовать формат журнал
 
 3. Добавьте в этот файл содержимое ниже. Измените имя учетной записи хранения и ключ доступа, введя значения для своей учетной записи хранения:
 
-    ```bash
+   ```bash
     input {
       azureblob
       {
@@ -133,9 +133,10 @@ Logstash позволяет преобразовать формат журнал
         index => "nsg-flow-logs"
       }
     }
-    ```
+   ```
 
-Предоставленный файл конфигурации Logstash состоит из трех частей: данные входа, фильтр и данные выхода. В разделе входа описан источник, из которого в Logstash поступают журналы для обработки. В нашем примере используется подключаемый модуль входа для "azureblob" (устанавливается на следующих этапах), который предоставляет доступ к файлам журнала потоков для групп безопасности сети. Файлы хранятся в формате JSON в хранилище BLOB-объектов. 
+Предоставленный файл конфигурации Logstash состоит из трех частей: данные входа, фильтр и данные выхода.
+В разделе входа описан источник, из которого в Logstash поступают журналы для обработки. В нашем примере используется подключаемый модуль входа для "azureblob" (устанавливается на следующих этапах), который предоставляет доступ к файлам журнала потоков для групп безопасности сети. Файлы хранятся в формате JSON в хранилище BLOB-объектов. 
 
 Затем в разделе фильтра каждый файл журнала потоков преобразовывается в плоскую структуру, чтобы каждый отдельный кортеж потока и связанные свойства стали отдельным событием Logstash.
 

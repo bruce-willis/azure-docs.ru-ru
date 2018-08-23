@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 7d7d3f6a773fad0b0d4ba0593230af5ff5a1e443
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 01ff741cd47e26000e971fd4a417d5ac1f11284e
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792459"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42024080"
 ---
 # <a name="quickstart-scale-compute-in-azure-sql-data-warehouse-using-t-sql"></a>Краткое руководство. Масштабирование вычислительных ресурсов в хранилище данных SQL Azure с помощью T-SQL
 
@@ -25,7 +25,7 @@ ms.locfileid: "31792459"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms.md) (SSMS).
+Скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
  
 ## <a name="create-a-data-warehouse"></a>Создание хранилища данных
 
@@ -33,7 +33,7 @@ ms.locfileid: "31792459"
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Подключение к серверу от имени администратора сервера
 
-В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms.md) (SSMS).
+В этом разделе для подключения к серверу SQL Azure используется [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
 
 1. Откройте среду SQL Server Management Studio.
 
@@ -42,8 +42,8 @@ ms.locfileid: "31792459"
    | Параметр       | Рекомендуемое значение | ОПИСАНИЕ | 
    | ------------ | ------------------ | ------------------------------------------------- | 
    | Тип сервера | Ядро СУБД | Это обязательное значение |
-   | имя сервера; | Полное имя сервера | Ниже приведен пример: **mynewserver-20171113.database.windows.net**. |
-   | Authentication | проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
+   | Имя сервера | Полное имя сервера | Ниже приведен пример: **mynewserver-20171113.database.windows.net**. |
+   | Authentication | Проверка подлинности SQL Server | В рамках работы с этим руководством мы настроили только один тип аутентификации — аутентификацию SQL. |
    | Вход | Учетная запись администратора сервера | Это учетная запись, указанная при создании сервера. |
    | Пароль | Пароль учетной записи администратора сервера | Это пароль, указанный при создании сервера. |
 

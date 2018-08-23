@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/26/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: ccc0836a296bb392e60dd0c973516a7087ff6ea5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: c2c1ef83ade7040e16f54b87f63f6eb27714bf2a
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39429332"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42023510"
 ---
 # <a name="deploy-a-dcos-cluster"></a>Развертывание кластера DC/OS
 
@@ -78,7 +78,7 @@ sudo ssh -i ~/.ssh/id_rsa -fNL 80:localhost:80 -p 2200 azureuser@$ip
 
 ## <a name="install-dcos-cli"></a>Установка интерфейса командной строки DC/OS
 
-Интерфейс командной строки DC/OS используется для управления кластером DC/OS из командной строки. Установите интерфейс командной строки DC/OS с помощью команды [az acs dcos install-cli](/azure/acs/dcos#install-cli). Если вы используете Azure CloudShell, то интерфейс командной строки DC/OS уже установлен. 
+Интерфейс командной строки DC/OS используется для управления кластером DC/OS из командной строки. Установите интерфейс командной строки DC/OS с помощью команды [az acs dcos install-cli](/cli/azure/acs/dcos#az-acs-dcos-install-cli). Если вы используете Azure CloudShell, то интерфейс командной строки DC/OS уже установлен. 
 
 При запуске интерфейса командной строки Azure в macOS или Linux может потребоваться выполнить эту команду с sudo.
 

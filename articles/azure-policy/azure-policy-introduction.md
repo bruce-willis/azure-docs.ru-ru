@@ -9,12 +9,12 @@ ms.topic: overview
 ms.service: azure-policy
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: e00af59c39219cf6efd14a1c6b2d831fc8addf5a
-ms.sourcegitcommit: f86e5d5b6cb5157f7bde6f4308a332bfff73ca0f
+ms.openlocfilehash: 405f69ae1c37e478758d984ddf7dc0e267910fef
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39364434"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022769"
 ---
 # <a name="what-is-azure-policy"></a>Что такое служба "Политика Azure"?
 
@@ -119,19 +119,7 @@ ms.locfileid: "39364434"
 
 ## <a name="maximum-count-of-policy-objects"></a>Максимальное количество объектов политики
 
-Ниже приведено максимальное количество для каждого типа объекта для службы "Политика Azure". Запись _Область_ означает либо подписку, либо группу управления.
-
-| Where | Что | Максимальное количество |
-|---|---|---|
-| Область | Определения политик | 250 |
-| Область | Определения инициатив | 100 |
-| Клиент | Определения инициатив | 1000 |
-| Область | Назначения инициатив или политик | 100 |
-| Определение политики | Параметры | 20 |
-| Определение инициативы | Политики | 100 |
-| Определение инициативы | Параметры | 100 |
-| Назначения инициатив или политик | Исключения (не области) | 100 |
-| Правило политики | Вложенные условные выражения | 512 |
+[!INCLUDE [policy-limits](../../includes/azure-policy-limits.md)]
 
 ## <a name="recommendations-for-managing-policies"></a>Рекомендации по управлению политиками
 

@@ -10,15 +10,16 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.date: 03/24/2017
-ms.author: mbullwin; vitalyg
-ms.openlocfilehash: 53753a3202362c73356e8e39bfca9d813f6387e0
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.reviewer: vitalyg
+ms.author: mbullwin
+ms.openlocfilehash: 3c706b88ec9e67a607a75733833c67e62eebb724
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33869909"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "42146012"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -326,9 +327,12 @@ ms.locfileid: "33869909"
 ## <a name="how-do-i-know-whether-sampling-is-in-operation"></a>Как узнать, действует ли выборка
 Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](app-insights-analytics.md) :
 
-    requests | where timestamp > ago(1d)
-    | summarize 100/avg(itemCount) by bin(timestamp, 1h) 
-    | render areachart 
+```
+union * 
+| where timestamp > ago(1d)
+| summarize 100/avg(itemCount) by bin(timestamp, 1h), itemType
+| render timechart 
+```
 
 Для каждой сохранившейся записи `itemCount` обозначает число исходных записей, которые эта запись представляет (1 + число предыдущих удаленных записей). 
 

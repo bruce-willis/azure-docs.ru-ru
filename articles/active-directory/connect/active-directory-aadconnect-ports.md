@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/02/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 317c94abdf14d3d88e07e32ab16769bd1f641438
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 55100d14ab7acbff87a726615ad9fa8b1fe9a3c8
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34591302"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42145930"
 ---
 # <a name="hybrid-identity-required-ports-and-protocols"></a>Порты и протоколы, необходимые для гибридной идентификации
 Следующий документ представляет собой технический справочник по портам и протоколам, которые необходимы для реализации решения для гибридной идентификации. Используйте приведенный ниже рисунок и соответствующую таблицу.
@@ -83,7 +83,7 @@ ms.locfileid: "34591302"
 |HTTP|80|Разрешение исходящего трафика HTTP для проверки безопасности, например SSL. Оно также требуется для правильной работы автоматического обновления соединителя.
 |HTTPS|443| Исходящий трафик HTTPS необходимо включить для выполнения таких операций, как включение и отключение функций, регистрация соединителей, скачивание обновлений соединителя и обработка всех запросов пользователя на вход.
 
-Кроме того, Azure AD Connect требуется возможность устанавливать прямые IP-подключения к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653).
+Кроме того, Azure AD Connect требуется возможность устанавливать прямые IP-подключения к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653).
 
 ### <a name="table-6b---password-hash-sync-with-sso"></a>Таблица 6b. Синхронизация хэша паролей с помощью SSO
 
@@ -91,7 +91,7 @@ ms.locfileid: "34591302"
 | --- | --- | ---
 |HTTPS|443| Включение регистрации SSO (требуется только для процесса регистрации SSO).
 
-Кроме того, Azure AD Connect требуется возможность устанавливать прямые IP-подключения к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/en-us/download/details.aspx?id=41653). Опять же, это необходимо только для процесса регистрации единого входа.
+Кроме того, Azure AD Connect требуется возможность устанавливать прямые IP-подключения к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Опять же, это необходимо только для процесса регистрации единого входа.
 
 ## <a name="table-7a--7b---azure-ad-connect-health-agent-for-ad-fssync-and-azure-ad"></a>Таблицы 7а и 7б. Агент Azure AD Connect Health для AD FS и синхронизации и Azure AD
 В следующих таблицах описываются конечные точки, порты и протоколы, необходимые для взаимодействия между агентами Azure AD Connect Health и Azure AD.

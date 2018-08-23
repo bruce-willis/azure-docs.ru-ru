@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: cephalin;dariagrigoriu
-ms.openlocfilehash: d83d1ad74d04356f73f18a744c2d1509b5efc280
-ms.sourcegitcommit: 4e36ef0edff463c1edc51bce7832e75760248f82
+ms.openlocfilehash: 4d3f1c66c6403720bf02c80af1d6833dc3cee3f1
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35233850"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42142486"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 В этой статье показано, как настроить непрерывное развертывание для [службы приложений Azure](app-service-web-overview.md). Служба приложений обеспечивает непрерывное развертывание из BitBucket, GitHub и [Visual Studio Team Services (VSTS)](https://www.visualstudio.com/team-services/), выбирая самые последние обновления из существующего репозитория в одной из этих служб.
@@ -62,7 +62,7 @@ ms.locfileid: "35233850"
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
-В зависимости от [ценовой категории](/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](web-sites-staged-publishing.md) или нет, затем нажмите **Продолжить**.
+В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](web-sites-staged-publishing.md) или нет, затем нажмите **Продолжить**.
 
 ### <a name="finish-configuration"></a>Завершение настройки
 
@@ -119,7 +119,7 @@ ms.locfileid: "35233850"
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
-В зависимости от [ценовой категории](/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](web-sites-staged-publishing.md) или нет, затем нажмите **Продолжить**. 
+В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](web-sites-staged-publishing.md) или нет, затем нажмите **Продолжить**. 
 
 ### <a name="finish-configuration"></a>Завершение настройки
 

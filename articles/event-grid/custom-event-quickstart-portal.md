@@ -8,12 +8,12 @@ ms.author: tomfitz
 ms.date: 07/05/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: 4fef565dbd78cf3559cd47ed6c59800c8e6f9c9d
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: ec85a866279412232aa23fad8f975d1642525772
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37869149"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42022495"
 ---
 # <a name="create-and-route-custom-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"
 
@@ -41,7 +41,7 @@ ms.locfileid: "37869149"
 
    ![Начальные шаги](./media/custom-event-quickstart-portal/select-create.png)
 
-1. Укажите уникальное имя для пользовательского раздела. Имя раздела должно быть уникальным, так как оно представлено записью службы доменных имен (DNS). Не используйте имя, указанное на изображении. Вместо этого создайте собственное имя. Выберите один из [поддерживаемых регионов](overview.md). Укажите имя для группы ресурсов. Нажмите кнопку **Создать**.
+1. Укажите уникальное имя для пользовательского раздела. Имя раздела должно быть уникальным, так как оно представлено записью службы доменных имен (DNS). Не используйте имя, указанное на изображении. Вместо этого создайте собственное имя. Укажите имя для группы ресурсов. Нажмите кнопку **Создать**.
 
    ![Настройка значений раздела сетки событий](./media/custom-event-quickstart-portal/create-custom-topic.png)
 

@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 07/23/2018
 ms.custom: mvc
-ms.openlocfilehash: a302c0c6c4ecbaff2d11d852caf9e1e1500931b8
-ms.sourcegitcommit: 44fa77f66fb68e084d7175a3f07d269dcc04016f
+ms.openlocfilehash: cd6a3b768077880d47462d1db559a4884cceb84a
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39225352"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42023461"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "39225352"
    - Выберите **Тип учетной записи**: **Хранилище BLOB-объектов**
    - Выберите имя **группы ресурсов**. Используйте группу ресурсов, в которой создана рабочая область Databricks.
    
-   Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account). 
+   Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md). 
 
 3. Создайте контейнер хранилища в учетной записи хранилища BLOB-объектов и отправьте туда пример файла JSON. Для передачи файла также можно использовать портал Azure или [Обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
 

@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: b4fc67acae83573db772923a94cdbb6b1c4a301f
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: b6f1185a94f865578d9a6514fb6841f8811b2230
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159847"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42144576"
 ---
 # <a name="frequently-asked-questions-about-azure-multi-factor-authentication"></a>Часто задаваемые вопросы о Многофакторной идентификации Azure
 
@@ -218,7 +218,7 @@ ms.locfileid: "39159847"
 
 Если на этой странице нет ответа на ваш вопрос, оставьте его в разделе с комментариями ниже. Вы также можете использовать другие методы получения помощи.
 
-* В [базе знаний службы технической поддержки Майкрософт](https://www.microsoft.com/en-us/Search/result.aspx?form=mssupport&q=phonefactor&form=mssupport) можно искать решения распространенных технических проблем.
+* В [базе знаний службы технической поддержки Майкрософт](https://www.microsoft.com/Search/result.aspx?form=mssupport&q=phonefactor&form=mssupport) можно искать решения распространенных технических проблем.
 * [На форумах по Azure Active Directory](https://social.msdn.microsoft.com/Forums/azure/newthread?category=windowsazureplatform&forum=WindowsAzureAD&prof=required)вы можете искать и просматривать ответы участников сообщества на технические вопросы, а также задавать собственные.
 * Если вы являетесь клиентом устаревшей версии PhoneFactor и у вас есть вопросы по сбросу пароля или вам нужна помощь, используйте ссылку [сброс пароля](mailto:phonefactorsupport@microsoft.com) , чтобы открыть обращение в службу поддержки.
 * Обратитесь в специализированную [службу поддержки клиентов сервера Многофакторной идентификации Azure (PhoneFactor)](https://support.microsoft.com/oas/default.aspx?prid=14947). Вы можете облегчить нам задачу, если при обращении предоставите максимально полные сведения о проблеме. Вы можете сообщить нам, на какой странице возникла ошибка, а также какой точный код ошибки, идентификатор сеанса и идентификатор пользователя, получившего эту ошибку.

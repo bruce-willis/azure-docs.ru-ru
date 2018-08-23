@@ -2,22 +2,20 @@
 title: Краткое руководство по инструментам Visual Studio для службы "Машинное обучение" в Azure | Документация Майкрософт
 description: Из этой статьи вы узнаете, как приступить к работе с инструментами Visual Studio для службы "Машинное обучение", в частности как создать эксперимент, обучить модель и ввести веб-службу в эксплуатацию.
 services: machine-learning
-author: ahgyger
-ms.author: ahgyger
-manager: haining
-ms.reviewer: garyericson, jasonwhowell, mldocs
+ms.workload: data-services
+author: chris-lauren
+ms.author: chris.lauren
 ms.service: machine-learning
 ms.component: core
-ms.workload: data-services
-ms.custom: mvc
+ms.custom: mvc, vs-azure
 ms.topic: quickstart
 ms.date: 11/15/2017
-ms.openlocfilehash: 735bfd911a738d4e71974f5cdcd94afa50acc502
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 94bca4d7670b1ec6fba5057b8295f7a3caac2968
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37932988"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42024374"
 ---
 # <a name="visual-studio-tools-for-ai"></a>Инструменты Visual Studio для ИИ
 Инструменты Visual Studio для ИИ — это расширение для разработки, тестирования и развертывания решений с использованием глубокого обучения и ИИ. Они обеспечивают простую интеграцию со службой "Машинного обучения Azure", в частности, просмотр журнала выполнения, в котором подробно описываются результаты предыдущего обучения и пользовательские метрики. Они предоставляют обозреватель примеров, позволяющий просматривать и загружать новые проекты с помощью [Microsoft Cognitive Toolkit (ранее — CNTK)](http://www.microsoft.com/en-us/cognitive-toolkit), [Google TensorFlow](https://www.tensorflow.org) и других платформ глубокого обучения. И, наконец они предоставляют обозреватель для целевых объектов вычислений, что дает возможность отправлять задания для обучения моделей в удаленных средах, например, на виртуальных машин Azure или серверах Linux с графическими процессорами. Кроме того, они предоставляют простой доступ к службе [Azure Batch AI (предварительная версия)](https://docs.microsoft.com/azure/batch-ai/).

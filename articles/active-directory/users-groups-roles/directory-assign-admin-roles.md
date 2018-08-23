@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 07/25/2018
+ms.date: 08/21/2018
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
-ms.openlocfilehash: c6c388bb98d189d91703c0ce82971b3ec4da4150
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 6c97d7c2f901110421f9fc5d0a1d4468d832c472
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39505517"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42142523"
 ---
 # <a name="assigning-administrator-roles-in-azure-active-directory"></a>Назначение ролей администратора в Azure Active Directory
 
@@ -59,7 +59,7 @@ ms.locfileid: "39505517"
 
 * **[Писатели в каталоги](#directory-writers)**: это устаревшая роль, которая будет назначаться приложениям, не поддерживающим [платформу предоставления разрешений](../develop/quickstart-v1-integrate-apps-with-azure-ad.md). Ее не следует назначать пользователям.
 
-* **[Администратор службы Dynamics 365 или администратор служб CRM:](#dynamics-365-service-administrator)** пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/en-us/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
+* **[Администратор службы Dynamics 365 или администратор служб CRM:](#dynamics-365-service-administrator)** пользователи с этой ролью имеют глобальные разрешения в Microsoft Dynamics 365 Online при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Использование роли администратора службы для управления клиентом](https://docs.microsoft.com/dynamics365/customer-engagement/admin/use-service-admin-role-manage-tenant).
 
 * **[Администратор службы Exchange](#exchange-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Exchange Online при наличии этой службы. Дополнительные сведения см. в статье [Роли администраторов в Office 365](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d).
 
@@ -74,7 +74,7 @@ ms.locfileid: "39505517"
 
 * **[Администратор Information Protection](#information-protection-administrator)**: эта роль предусматривает наличие всех разрешений в службе Azure Information Protection. Эта роль позволяет настраивать метки для политики Azure Information Protection, управлять шаблонами защиты и активировать защиту. Эта роль не предоставляет разрешений в центре защиты идентификации, службе управления привилегированными пользователями, службе отслеживания работоспособности служб Office 365, а также Центре безопасности и соответствия требованиям Office 365.
 
-* **[Администратор службы Intune](#intune-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Intune Online при наличии этой службы. Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/en-us/intune/role-based-access-control).
+* **[Администратор службы Intune](#intune-service-administrator)**: у пользователей с этой ролью есть глобальные разрешения в Microsoft Intune Online при наличии этой службы. Кроме того, администраторы этой роли могут управлять пользователями и устройствами, чтобы связать политику, а также создавать группы и управлять ими. Дополнительные сведения см. в статье [Управление доступом на основе ролей (RBAC) с помощью Microsoft Intune](https://docs.microsoft.com/intune/role-based-access-control).
 
 * **[Читатель Центра сообщений](#message-center-reader)**: пользователи с этой ролью могут отслеживать уведомления и рекомендации по обновлениям работоспособности в [Центре сообщений Office 365](https://support.office.com/article/Message-center-in-Office-365-38FB3333-BFCC-4340-A37B-DEDA509C2093) для своей организации в настроенных службах, таких как Exchange, Intune и Microsoft Teams. Читатели Центра сообщений еженедельно получают по электронной почте хэш-коды публикаций, обновлений и могут размещать общедоступные публикации в центре сообщений в Office 365. В Azure AD у пользователей с этой ролью будет только доступ на чтение данных в службах Azure AD, например данных пользователей и групп. 
 
@@ -89,7 +89,7 @@ ms.locfileid: "39505517"
   >
   >
   
-* **[Администратор службы Power BI](#power-bi-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Power BI при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Основные сведения о роли администратора Power BI](https://docs.microsoft.com/en-us/power-bi/service-admin-role).
+* **[Администратор службы Power BI](#power-bi-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Power BI при наличии этой службы, а также возможность управлять запросами в службу поддержки и отслеживать работоспособность служб. Дополнительные сведения см. в статье [Основные сведения о роли администратора Power BI](https://docs.microsoft.com/power-bi/service-admin-role).
 
 * **[Администратор привилегированных ролей](#privileged-role-administrator)**: пользователи с этой ролью могут управлять назначением ролей в Azure Active Directory, а также в Azure AD Privileged Identity Management. Кроме того, эта роль позволяет управлять всеми аспектами управления привилегированными пользователями.
 
@@ -163,7 +163,7 @@ ms.locfileid: "39505517"
 Может создавать любые аспекты регистрации приложений и работы с корпоративными приложениями и управлять ими.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -198,7 +198,7 @@ ms.locfileid: "39505517"
 Может создавать регистрации приложений независимо от значения параметра **Пользователи могут регистрировать приложения**.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -213,7 +213,7 @@ ms.locfileid: "39505517"
 Может выполнять основные задачи по выставлению счетов, например изменять платежную информацию.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -235,7 +235,7 @@ ms.locfileid: "39505517"
 Может задавать и контролировать любые аспекты регистрации приложений и работы с корпоративными приложениями, за исключением прокси приложения.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -318,7 +318,7 @@ ms.locfileid: "39505517"
 Может просматривать и изменять конфигурацию соответствия требованиям и отчеты в Azure AD и Office 365.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -341,7 +341,7 @@ ms.locfileid: "39505517"
 Может контролировать возможности условного доступа.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -360,7 +360,7 @@ ms.locfileid: "39505517"
 Пользователи с этой ролью становятся администраторами локальных компьютеров на всех устройствах с Windows 10, присоединенных к Azure Active Directory. Они не могут управлять объектами устройств в Azure Active Directory.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -472,7 +472,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта Dynamics 365.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -493,7 +493,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта Exchange.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -536,7 +536,7 @@ ms.locfileid: "39505517"
 Может сбрасывать пароли пользователей, не являющихся администраторами, и пароли администраторов службы поддержки.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -553,7 +553,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта Azure Information Protection.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -574,7 +574,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта Intune.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -615,7 +615,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта "Skype для бизнеса".
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -654,7 +654,7 @@ ms.locfileid: "39505517"
 Не используйте (не предназначено для общего применения).
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -690,7 +690,7 @@ ms.locfileid: "39505517"
 Не используйте (не предназначено для общего применения).
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -729,7 +729,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты продукта Power BI.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -750,7 +750,7 @@ ms.locfileid: "39505517"
 Может управлять назначением ролей в Azure AD.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -787,7 +787,7 @@ ms.locfileid: "39505517"
 Может просматривать отчеты и сведения о безопасности.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -836,7 +836,7 @@ ms.locfileid: "39505517"
 Может просматривать сведения о работоспособности служб и работать с запросами в службу поддержки.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -856,7 +856,7 @@ ms.locfileid: "39505517"
 Может контролировать все аспекты службы SharePoint.
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 
@@ -876,7 +876,7 @@ ms.locfileid: "39505517"
 Может управлять всеми аспектами пользователей и групп
 
   > [!NOTE]
-  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/en-us/azure/active-directory/users-default-permissions).
+  > Эта роль наследует дополнительные разрешения у [роли пользователя](https://docs.microsoft.com/azure/active-directory/users-default-permissions).
   >
   >
 

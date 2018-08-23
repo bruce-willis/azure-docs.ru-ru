@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 243f0b8206166e3e054dfc423259bd3444d8a2db
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: 7082edf43e53766d32bd967d0b894f6439eaa492
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31589838"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42139930"
 ---
 # <a name="azure-api-management-faqs"></a>Часто задаваемые вопросы о службе управления API Azure
 Ознакомьтесь с ответами на часто задаваемые вопросы, шаблонами и рекомендациями относительно службы управления API Azure.
@@ -78,7 +78,7 @@ ms.locfileid: "31589838"
 
 * [REST API службы управления API](https://msdn.microsoft.com/library/azure/dn776326.aspx);
 * [SDK для библиотеки управления службой ApiManagement Microsoft Azure](http://aka.ms/apimsdk);
-* командлетов PowerShell для [развертывания служб](https://msdn.microsoft.com/library/mt619282.aspx) и [управления ими](https://msdn.microsoft.com/library/mt613507.aspx).
+* командлетов PowerShell для [развертывания служб](https://docs.microsoft.com/powershell/module/wds) и [управления ими](https://docs.microsoft.com/powershell/azure/servicemanagement/overview).
 
 ### <a name="how-do-i-add-a-user-to-the-administrators-group"></a>Как добавить пользователя в группу администраторов?
 Есть несколько способов добавления пользователя в эту группу:
@@ -87,7 +87,7 @@ ms.locfileid: "31589838"
 2. Перейдите в группу ресурсов, где содержится экземпляр службы управления API, который нужно обновить.
 3. В службе управления API назначьте роль **Api Management Contributor** (Участник управления API) пользователю.
 
-Теперь добавленный участник сможет использовать [командлеты](https://msdn.microsoft.com/library/mt613507.aspx) Azure PowerShell. Войдите в систему от имени администратора:
+Теперь добавленный участник сможет использовать [командлеты](https://docs.microsoft.com/powershell/azure/overview) Azure PowerShell. Войдите в систему от имени администратора:
 
 1. Используйте командлет `Connect-AzureRmAccount`, чтобы войти.
 2. Задайте контекст для подписки, содержащей службу, используя `Set-AzureRmContext -SubscriptionID <subscriptionGUID>`.

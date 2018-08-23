@@ -14,18 +14,18 @@ ms.topic: quickstart
 ms.date: 03/23/2018
 ms.author: nitinme
 ms.custom: mvc
-ms.openlocfilehash: 8c1d4dd01d489413d1e0a0121b25e9506e5d6139
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 573d8f6927cbd17c0f095bccf5132674faf94928
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30233682"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42022726"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
 В этом руководстве объясняется, как создать рабочую область Azure Databricks с помощью шаблона Azure Resource Manager. Рабочая область используется для создания кластера Apache Spark и запуска задания Spark в кластере Databricks. Дополнительные сведения об Azure Databricks см. в статье [Что такое Azure Databricks?](what-is-azure-databricks.md).
 
-В этом кратком руководстве в рамках задания Spark вы проанализируете данные об использовании платных и бесплатных подписок на радиоканал на основе демографических данных.
+При помощи этого краткого руководства в рамках задания Spark вы проанализируете данные подписки на радиоканал, чтобы получить сведения о соотношении бесплатного и оплачиваемого использования в зависимости от демографических данных.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -43,7 +43,7 @@ ms.locfileid: "30233682"
 
     Укажите следующие значения. 
      
-    |Свойство  |ОПИСАНИЕ  |
+    |Свойство  |Описание  |
     |---------|---------|
     |**Подписка**     | Выберите подписку Azure в раскрывающемся списке.        |
     |**Группа ресурсов**     | Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся. Группа ресурсов — это контейнер, содержащий связанные ресурсы для решения Azure. Дополнительные сведения см. в [обзоре группы ресурсов Azure](../azure-resource-manager/resource-group-overview.md). |
@@ -83,7 +83,7 @@ ms.locfileid: "30233682"
 
 Прежде чем приступить к работе с этим разделом, выполните следующие предварительные требования.
 
-* [Создайте учетную запись хранения BLOB-объектов Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account). 
+* [Создайте учетную запись хранения BLOB-объектов Azure](../storage/common/storage-quickstart-create-account.md). 
 * Скачайте образец файла JSON с [сайта GitHub](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json). 
 * Отправьте пример JSON-файла в созданную учетную запись хранения BLOB-объектов Azure. Для передачи файлов можно использовать [обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
 
@@ -178,7 +178,7 @@ ms.locfileid: "30233682"
 
 ![Завершение работы кластера Databricks](./media/quickstart-create-databricks-workspace-portal/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера автоматически завершается, если кластер был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, это можно сделать автоматически, выбрав флажок **Terminate after __ minutes of inactivity** (Завершить работу после __ минут бездействия) во время создания кластера. В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

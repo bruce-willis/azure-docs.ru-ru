@@ -9,12 +9,12 @@ ms.date: 07/12/2018
 ms.topic: quickstart
 ms.service: service-fabric-mesh
 manager: timlt
-ms.openlocfilehash: 5359920ab32fab65df0466474aec2d305bcf633c
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: a740672ea948bd86efce92c534e0f95f65563438
+ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39091056"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42024079"
 ---
 # <a name="quickstart-deploy-hello-world-to-service-fabric-mesh"></a>Краткое руководство. Развертывание приложения Hello World в Сетке Service Fabric
 
@@ -27,7 +27,7 @@ ms.locfileid: "39091056"
 Если у вас еще нет учетной записи Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="set-up-service-fabric-mesh-cli"></a>Настройка CLI для Сетки Service Fabric 
-Для выполнения инструкций этого краткого руководства можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Установите модуль расширения Сетки CLI Azure Service Fabric, выполнив следующие [инструкции](service-fabric-mesh-howto-setup-cli.md).
+Для выполнения инструкций этого краткого руководства можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Установите модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив следующие [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 Войдите в Azure и настройте подписку.
@@ -57,7 +57,7 @@ az mesh deployment create --resource-group myResourceGroup --template-uri https:
 `helloWorldApp has been deployed successfully on helloWorldNetwork with public ip address <IP Address>` 
 
 ## <a name="open-the-application"></a>Запуск приложения
-После успешного развертывания приложения скопируйте общедоступный IP-адрес службы конечной точки из выхода CLI.  Откройте IP-адрес в веб-браузере. Отображается веб-страница с логотипом Сетки Azure Service Fabric.
+После успешного развертывания приложения скопируйте общедоступный IP-адрес службы конечной точки из выхода CLI. Откройте IP-адрес в веб-браузере. Отображается веб-страница с логотипом Сетки Azure Service Fabric.
 
 ## <a name="check-the-application-details"></a>Проверка сведений о приложении
 Состояние приложения можно проверить с помощью команды `az mesh app show`. Эта команда предоставляет полезную информацию, которую можно отслеживать.
@@ -86,7 +86,7 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о создании и развертывании приложений Сетки Service Fabric, см. в руководстве.
+Дополнительные сведения о создании и развертывании приложений службы "Сетка Service Fabric" доступны в руководстве.
 > [!div class="nextstepaction"]
 > [Создание и развертывание веб-приложения на базе нескольких служб](service-fabric-mesh-tutorial-create-dotnetcore.md)
 

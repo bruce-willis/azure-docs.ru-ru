@@ -11,19 +11,19 @@ ms.component: user-help
 ms.topic: overview
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: b2a7ce113b509bb734edb204896f2ee5603e8e80
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.openlocfilehash: 77756a062d02b723444e5cc9e3a45df1f3719378
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39389741"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42023088"
 ---
 # <a name="security-info-preview-overview"></a>Обзор сведений для защиты (предварительная версия)
 
 [!INCLUDE[preview-notice](../../../includes/active-directory-end-user-preview-notice-security-info.md)]
 
 >[!Important]
->Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory).
+>Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
 Настройте сведения о двухфакторной проверке подлинности и сбросе пароля в **сведениях для защиты**. После первоначальной настройки сведений для защиты вам не придется выполнять ее повторно. Однако вы можете редактировать сведения и изменить метод по умолчанию в любое время.
 
@@ -31,7 +31,7 @@ ms.locfileid: "39389741"
 
 |Статья |ОПИСАНИЕ |
 |------|------------|
-|[Настройка сведений для защиты для использования телефонных звонков](security-info-setup-phone-number.md)| В статье по этой ссылке описывается, как настроить номер телефона как метод.|
+|[Настройка использования звонков в сведениях для защиты](security-info-setup-phone-number.md)| В статье по этой ссылке описывается, как настроить номер телефона как метод.|
 |[Настройка сведений для защиты для использования обмена сообщениями](security-info-setup-text-msg.md)|В статье по этой ссылке описывается, как настроить номер телефона как метод.|
 |[Настройка сведений для защиты для использования приложения проверки подлинности](security-info-setup-auth-app.md)|В статье по этой ссылке описывается, как настроить приложение для проверки подлинности как метод.|
 |[Настройка сведений для защиты для использования электронной почты](security-info-setup-email.md)|В статье по этой ссылке описывается, как настроить адрес электронной почты для сброса пароля.|

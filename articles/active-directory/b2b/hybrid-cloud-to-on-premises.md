@@ -6,16 +6,16 @@ ms.service: active-directory
 ms.component: B2B
 ms.topic: article
 ms.date: 04/20/2018
-ms.author: twooley
-author: twooley
+ms.author: mimart
+author: msmimart
 manager: mtillman
 ms.reviewer: sasubram
-ms.openlocfilehash: f34bb9eaa04491dfbef8fac711690d1b19677d89
-ms.sourcegitcommit: 96089449d17548263691d40e4f1e8f9557561197
+ms.openlocfilehash: 9c9cde23f8f8dc557b99d2f1508c923aaa2dce91
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34259720"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146040"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -79,7 +79,7 @@ ms.locfileid: "34259720"
 
 ## <a name="license-considerations"></a>Рекомендации по лицензированию
 
-Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/en-us/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
+Убедитесь, что вы правильно настроили клиентские лицензии (CAL) для внешних гостевых пользователей, которые обращаются к локальным приложениям. Дополнительные сведения см. в разделе "Лицензии External Connector" статьи [Клиентские лицензии и лицензии на управление](https://www.microsoft.com/licensing/product-licensing/client-access-license.aspx). Конкретные требования к лицензированию вы можете обсудить с представителем Microsoft или локальным торговым посредником.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

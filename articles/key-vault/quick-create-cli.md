@@ -14,12 +14,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 05/10/2018
 ms.author: barclayn
-ms.openlocfilehash: dc69d472e38bcc39de35204c26068a98e0549601
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.openlocfilehash: 958fbd507efeb161b169c01abf32012883017f18
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480924"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42023227"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
@@ -100,4 +100,4 @@ az group delete --name ContosoResourceGroup
 В этом кратком руководстве вы создали Key Vault и сохранили в нем секрет. Чтобы получить дополнительные сведения о Key Vault и о том, как вы можете использовать его в своих приложениях, ознакомьтесь с руководством по веб-приложениям, работающим с Key Vault.
 
 > [!div class="nextstepaction"]
-> Чтобы узнать, как считать секрет из Key Vault с помощью веб-приложения, используя удостоверения управляемой службы, перейдите к [следующему руководству](tutorial-web-application-keyvault.md).
+> Чтобы узнать, как считать секрет из Key Vault с помощью веб-приложения, используя удостоверения управляемой службы, перейдите к [следующему руководству](quick-create-net.md).

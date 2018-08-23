@@ -13,12 +13,12 @@ ms.date: 09/07/2017
 ms.author: lizross
 ms.reviewer: piotrci
 ms.custom: it-pro;
-ms.openlocfilehash: c15cbb632410eb0b6867677d7802960033dfdd44
-ms.sourcegitcommit: 301855e018cfa1984198e045872539f04ce0e707
+ms.openlocfilehash: a5ede142b7f3dd314d1a6b3eb8f100ec55a4ea4e
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36268388"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42023848"
 ---
 # <a name="quickstart-sign-up-for-azure-active-directory-premium"></a>Краткое руководство: регистрация для работы с Azure Active Directory Premium
 Чтобы начать работу с Azure Active Directory (Azure AD) Premium, вы можете приобрести лицензии и связать их с подпиской Azure. Если вы создаете новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD в соответствии с инструкциями в следующих разделах. 
@@ -46,7 +46,7 @@ Enterprise Mobility + Security (EMS) — это эффективное сре
 ### <a name="microsoft-volume-licensing"></a>Корпоративное лицензирование Microsoft
 Служба Azure Active Directory Premium доступна в рамках [соглашения Microsoft Enterprise](https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx) (250 и больше лицензий) или программы [Open Volume License](https://www.microsoft.com/en-us/licensing/licensing-programs/open-license.aspx) (5–250 лицензий).
 
-Дополнительные сведения о возможностях корпоративного лицензирования см. на странице [How to purchase through Volume Licensing](https://www.microsoft.com/en-us/Licensing/how-to-buy/how-to-buy.aspx) (Как приобрести лицензии по программе корпоративного лицензирования).
+Дополнительные сведения о возможностях корпоративного лицензирования см. на странице [How to purchase through Volume Licensing](https://www.microsoft.com/en-us/licensing/how-to-buy/how-to-buy.aspx) (Как приобрести лицензии по программе корпоративного лицензирования).
 
 > [!NOTE]
 > Выпуски Azure Active Directory Premium и Basic доступны для клиентов в Китае, использующих доступный по всему миру экземпляр Azure Active Directory. Эти выпуски в настоящее время не поддерживает служба Microsoft Azure под управлением 21Vianet в Китае. Чтобы получить дополнительную информацию, свяжитесь с нами на [форуме Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 41513f89838aca2dfabbc19072e973aa12cd0010
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 155aa8ac1ee01ba46297e66763e0c0501ead32e2
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436392"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42145002"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workfront"></a>Руководство. Интеграция Azure Active Directory с Workfront
 
@@ -117,7 +117,7 @@ ms.locfileid: "39436392"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.attasksandbox.com/SAML2`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Workfront](https://www.workfront.com/contact-us/). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [службу поддержки клиентов Workfront](https://www.workfront.com/services-and-support). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 

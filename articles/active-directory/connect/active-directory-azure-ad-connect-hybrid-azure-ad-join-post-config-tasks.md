@@ -4,7 +4,7 @@ description: В этом документе описываются задачи 
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: samueld
+manager: mtillman
 editor: billmath
 ms.assetid: ''
 ms.service: active-directory
@@ -12,15 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/27/2018
+ms.date: 08/10/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9949275b18206ca66f38bab036337a00fdde6ee5
-ms.sourcegitcommit: a06c4177068aafc8387ddcd54e3071099faf659d
+ms.openlocfilehash: 05cb6d10a7e4269cbe5f9c97ef70cd9eb5a4d68e
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/09/2018
-ms.locfileid: "37916553"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42144575"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Задачи постконфигурации для гибридного присоединения устройств к Azure AD
 
@@ -62,7 +62,7 @@ ms.locfileid: "37916553"
 
 ## <a name="6-enable-azure-ad-seamless-sso-for-windows-down-level-devices"></a>6. Включение простого единого входа Azure AD для устройств Windows нижнего уровня
 
-Если в организации используется синхронизация хэшей паролей или сквозная проверка подлинности для входа в Azure AD, включите простой единый вход Azure AD с этим методом входа для проверки подлинности устройств Windows нижнего уровня: https://docs.microsoft.com/en-us/azure/active-directory/connect/active-directory-aadconnect-sso. 
+Если в организации используется синхронизация хэшей паролей или сквозная проверка подлинности для входа в Azure AD, включите простой единый вход Azure AD с этим методом входа для проверки подлинности устройств Windows нижнего уровня: https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-sso. 
 
 ## <a name="7-set-azure-ad-policy-for-windows-down-level-devices"></a>7. Настройка политики Azure AD для устройств Windows нижнего уровня
 
@@ -81,7 +81,7 @@ ms.locfileid: "37916553"
 
 ## <a name="9-install-microsoft-workplace-join-on-windows-down-level-devices"></a>9. Установка Microsoft Workplace Join на устройствах Windows нижнего уровня
 
-Установщик создает в системе устройства запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после проверки подлинности с использованием встроенной проверки подлинности Windows. Центр скачивания находится по ссылке https://www.microsoft.com/en-us/download/details.aspx?id=53554. 
+Установщик создает в системе устройства запланированную задачу, которая выполняется в контексте пользователя. Задача запускается в момент входа пользователя в систему Windows. Эта задача автоматически присоединяет устройство к Azure AD, используя учетные данные пользователя, после проверки подлинности с использованием встроенной проверки подлинности Windows. Центр скачивания находится по ссылке https://www.microsoft.com/download/details.aspx?id=53554. 
 
 ## <a name="10-configure-group-policy-to-allow-device-registration"></a>10. Настройка групповой политики для разрешения регистрации устройств
 

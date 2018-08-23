@@ -7,16 +7,17 @@ manager: douge
 ms.assetid: 92ee2f9e-ec49-4c7a-900d-620abe5e9d8a
 ms.prod: visual-studio-dev15
 ms.technology: vs-azure
-ms.workload: azure
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ghogen
-ms.openlocfilehash: 7656f0ea7ddc283d430eacdccb60a1a2df6e3b70
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 084ba64389e2f3f8d62b77697df368dac7e09eac
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31798987"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42145016"
 ---
 # <a name="prepare-to-publish-or-deploy-a-cloud-service-from-visual-studio"></a>Подготовка к публикации или развертыванию облачной службы из Visual Studio
 
@@ -43,7 +44,7 @@ ms.locfileid: "31798987"
 1. Выберите **+ Добавить**, а затем введите необходимые сведения (DNS-имя, подписку, группу ресурсов и расположение). В этот момент не требуется отправлять пакет, так как это будет сделано в Visual Studio позже.
 1. Чтобы завершить процесс, выберите **Создать**.
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 Учетная запись хранения предоставляет доступ к службам BLOB-объектов, очередей и таблиц. Учетную запись хранения можно создать с помощью Visual Studio или [портала Azure](https://portal.azure.com/).
 

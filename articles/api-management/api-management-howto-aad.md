@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2018
 ms.author: apimpm
-ms.openlocfilehash: 6c288e4492ac56436d40d1e3db98af8eb7b173c8
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d4eb8f3e805d96a276851052b74cac90465d1185
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436324"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142711"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "39436324"
     Справа появится область **Создание**. Здесь вам нужно ввести информацию о приложении Azure AD.
 1. Введите имя приложения.
 1. Выберите в качестве типа приложения **Веб-приложение или API**.
-1. В поле URL-адреса входа введите URL-адрес входа на свой портал разработчика. В данном примере URL-адрес входа — https://apimwithaad.portal.azure-api.net/signin.
+1. В поле URL-адреса входа введите URL-адрес входа на свой портал разработчика. В данном примере URL-адрес входа — `https://apimwithaad.portal.azure-api.net/signin`.
 1. Выберите **Создать**, чтобы создать приложение.
 1. Чтобы найти приложение, выберите **Регистрация приложений** и выполните поиск по имени.
 

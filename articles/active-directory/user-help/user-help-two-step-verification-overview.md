@@ -11,17 +11,17 @@ ms.component: user-help
 ms.topic: overview
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: e61c96d754c240df89607db0cf84dca0e0ccd17e
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: de5c9810b234a93643321d1ba299a66a3ae965a3
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39347423"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42023901"
 ---
 # <a name="two-step-verification-overview"></a>Обзор двухфакторной проверки подлинности
 
 >[!Important]
->Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory).
+>Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
 Вы получили сообщение электронной почты от сотрудника ИТ-отдела или даже от самого начальника о том, что для вашей учетной записи будет действовать дополнительная проверка безопасности. Что это значит? Это значит, что ваша организация принимает дополнительные меры, чтобы исключить вероятность того, что кто-то другой может выполнить вход от вашего имени. Эта дополнительная проверка, также известная как двухфакторная проверка подлинности, выполняется с использованием имени пользователя, пароля, мобильного устройства или телефона.
 

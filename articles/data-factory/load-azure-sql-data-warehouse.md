@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 4322f1837c9b7fffba180f7106911d010a9ad8aa
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8525dd443e80bb7d67bc48cc007ab1632ee3e611
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448542"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42144706"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Загрузка данных в службу "Хранилище данных SQL Azure" с помощью службы "Фабрика данных Azure"
 
@@ -40,7 +40,7 @@ ms.locfileid: "39448542"
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Хранилище данных SQL Azure. В этом хранилище данных содержатся данные, копируемые из базы данных SQL. Если у вас нет хранилища данных SQL Azure, см. руководство [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](../sql-data-warehouse/sql-data-warehouse-get-started-tutorial.md).
 * База данных SQL Azure. В этом руководстве демонстрационные данные Adventure Works LT копируются из базы данных SQL Azure. Вы можете создать базу данных SQL, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
-* Учетная запись хранения Azure. Учетная запись хранения Azure используется в качестве _промежуточного_ хранилища больших двоичных объектов в операции массового копирования. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+* Учетная запись хранения Azure. Учетная запись хранения Azure используется в качестве _промежуточного_ хранилища больших двоичных объектов в операции массового копирования. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-quickstart-create-account.md).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
 

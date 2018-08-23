@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/18/2018
 ms.author: kumud
-ms.openlocfilehash: b3a9bbe8b88df4ac7dcb96903341e92261a2649b
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: c969dbc347f0463f6f675a11f69776948d45a9e2
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39532003"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42023070"
 ---
 # <a name="quickstart-create-a-traffic-manager-profile-for-a-highly-available-web-application"></a>Краткое руководство. Создание профиля диспетчера трафика для обеспечения высокодоступного веб-приложения
 
@@ -128,7 +128,7 @@ ms.locfileid: "39532003"
 В этом кратком руководстве вы создали профиль диспетчера трафика, который позволяет перенаправлять пользовательский трафик для обеспечения высокодоступного веб-приложения. Дополнительные сведения о маршрутизации трафика см. в руководствах по диспетчеру трафика.
 
 > [!div class="nextstepaction"]
-> [Руководства по диспетчеру трафика](traffic-manager-configure-performance-routing-method.md)
+> [Руководства по диспетчеру трафика](tutorial-traffic-manager-improve-website-response.md)
 
 
 

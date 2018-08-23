@@ -12,12 +12,12 @@ ms.component: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: c6340133971a226002ce11ae1521bdc88e3e7975
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 86cc98721681750617e374679c38ad29cf5a2362
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39343294"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42146043"
 ---
 # <a name="manage-app-passwords-for-two-step-verification"></a>Управление паролями приложения для двухфакторной проверки подлинности
 
@@ -38,7 +38,7 @@ ms.locfileid: "39343294"
 
 При первой регистрации двухфакторной проверки подлинности вам предоставляется пароль приложения. Если вам требуется несколько паролей, вы можете создать дополнительные пароли в зависимости от способа использования двухфакторной проверки подлинности:
 
-- **Вы используете двухфакторную проверку подлинности для учетной записи Microsoft Azure.** Вы можете создавать и удалять пароли приложений на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Пароли приложений и двухшаговая проверка](https://support.microsoft.com/en-us/help/12409/microsoft-account-app-passwords-two-step-verification).
+- **Вы используете двухфакторную проверку подлинности для учетной записи Microsoft Azure.** Вы можете создавать и удалять пароли приложений на [портале Azure](https://portal.azure.com). Дополнительные сведения см. в статье [Пароли приложений и двухшаговая проверка](https://support.microsoft.com/help/12409/microsoft-account-app-passwords-two-step-verification).
 
 - **Вы используете двухфакторную проверку подлинности для личной учетной записи Майкрософт.** Вы можете создавать и удалять пароли приложений для учетной записи Майкрософт на [этой странице](https://account.microsoft.com/account/). Дополнительные сведения см. в статье [Пароли приложений и двухшаговая проверка](https://support.microsoft.com/help/12409/microsoft-account-app-passwords-two-step-verification).
 

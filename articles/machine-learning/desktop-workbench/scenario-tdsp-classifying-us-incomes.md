@@ -3,25 +3,25 @@ title: 'Классификация доходов: командный проце
 description: Использование шаблона командного процесса обработки и анализа данных для создания проекта по классификации доходов граждан США в службе "Машинное обучение Microsoft Azure".
 services: machine-learning
 documentationcenter: ''
-author: bradsev
+author: deguhath
+ms.author: deguhath
 manager: cgronlun
 editor: cgronlun
 ms.assetid: ''
 ms.reviewer: garyericson, jasonwhowell, mldocs
 ms.service: machine-learning
-ms.component: desktop-workbench
+ms.component: core
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2017
-ms.author: bradsev
-ms.openlocfilehash: 3b1d2be46b2f142adff966991997891e44e850ec
-ms.sourcegitcommit: 944d16bc74de29fb2643b0576a20cbd7e437cef2
+ms.openlocfilehash: edc3fc5e2a625a14bcb48b03f32cd99069a0ad53
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34832685"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42145950"
 ---
 # <a name="income-classification-with-team-data-science-process-tdsp-project"></a>Проект по классификации доходов с использованием командного процесса обработки и анализа данных (TDSP)
 
@@ -50,7 +50,7 @@ ms.locfileid: "34832685"
 
 ![](./media/scenario-tdsp-classifying-us-incomes/tdsp-lifecycle.jpg)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 ### <a name="required-subscription-hardware-software"></a>Вам потребуются: подписка, оборудование и программное обеспечение
 1. [Подписка](https://azure.microsoft.com) Azure. Для выполнения этого примера вы можете получить [бесплатную подписку](https://azure.microsoft.com/free/?v=17.16&WT.srch=1&WT.mc_id=AID559320_SEM_cZGgGOIg).
 2. [Виртуальная машина Azure для обработки и анализа данных под управлением Windows Server 2016](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.windows-data-science-vm) (размер виртуальной машины: [DS3_V2](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), 4 виртуальных процессора и 14 ГБ ОЗУ). Решение тестировалось на виртуальной машине Azure для обработки и анализа данных, но, вероятнее всего, будет успешно работать на любом компьютере под управлением Windows 10.

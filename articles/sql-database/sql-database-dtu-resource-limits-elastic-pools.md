@@ -9,12 +9,12 @@ ms.custom: DBs & servers
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: carlrab
-ms.openlocfilehash: 128b4bc787cd882e719ee3332d285af44b15dfe2
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 0920489daf99445a9d715d0858cf68ae45e6a178
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412996"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42146020"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
@@ -128,6 +128,7 @@ ms.locfileid: "39412996"
 ## <a name="next-steps"></a>Дополнительная информация
 
 - См. [часто задаваемые вопросы о службе "База данных SQL"](sql-database-faq.md).
+- Сведения об ограничениях на уровнях сервера и подписки см. в статье [Обзор ограничений ресурсов базы данных SQL Azure](sql-database-resource-limits.md).
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 - Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](sql-database-service-tiers.md#what-are-database-transaction-units-dtus).
 - Сведения об ограничениях на размер базы данных tempdb см. здесь: https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database.

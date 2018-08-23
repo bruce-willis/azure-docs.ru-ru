@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: big-compute
 ms.date: 07/22/2016
 ms.author: danlep
-ms.openlocfilehash: 73ad78fc73a7605f8feaf114ebdfac5023cc91b6
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 9032a0b68c4c8789010b0304b64a63d4924521fb
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37342432"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142706"
 ---
 # <a name="run-openfoam-with-microsoft-hpc-pack-on-a-linux-rdma-cluster-in-azure"></a>Выполнение заданий OpenFoam в кластере Linux RDMA в Azure с помощью пакета Microsoft HPC
 В этой статье показан один из способов запуска OpenFoam на виртуальных машинах Azure. Здесь мы развернем кластер пакета Microsoft HPC в Azure с использованием вычислительных узлов Linux и запустим задание [OpenFoam](http://openfoam.com/), используя библиотеку Intel MPI. Для вычислительных узлов можно использовать виртуальные машины Azure с поддержкой RDMA. Так они смогут взаимодействовать по сети Azure RDMA. Другие варианты запуска OpenFoam в Azure включают в себя полностью настроенные коммерческие образы, доступные на сайте Marketplace, например образ [OpenFoam 2.3 на основе CentOS 6](https://azuremarketplace.microsoft.com/marketplace/apps/cfd-direct.cfd-direct-from-the-cloud) от UberCloud, и запуск посредством [пакетной службы Azure](https://blogs.technet.microsoft.com/windowshpc/2016/07/20/introducing-mpi-support-for-linux-on-azure-batch/). 
@@ -36,7 +36,7 @@ OpenFOAM (англ. Open Field Operation and Manipulation) — это пакет
 > 
 > 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * **Кластер пакета HPC с вычислительными узлами Linux с поддержкой RDMA**. Разверните кластер пакета HPC с вычислительными узлами размером A8, A9, H16r или H16rm под управлением Linux, используя [шаблон Azure Resource Manager](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterlinuxcn/) или [сценарий Azure PowerShell](hpcpack-cluster-powershell-script.md). Предварительные требования и необходимые действия для обоих вариантов см. в статье [Начало работы с вычислительными узлами Linux в кластере пакета HPC в Azure](hpcpack-cluster.md). Если вы выбрали вариант со сценарием PowerShell, просмотрите один из примеров файлов конфигурации в конце этой статьи. Используйте его, чтобы развернуть кластер пакета HPC Azure, состоящий из головного узла Windows Server 2012 R2 размера А8 и двух вычислительных узлов размера А8 под управлением SUSE Linux Enterprise Server 12. Вместо используемых в файле имен подписки и службы подставьте свои значения. 
   
   **Дополнительные сведения**
@@ -46,7 +46,7 @@ OpenFOAM (англ. Open Field Operation and Manipulation) — это пакет
   * После развертывания узлов Linux установите SSH-подключение для выполнения дополнительных задач администрирования. Сведения о SSH-подключении для каждой виртуальной машины Linux можно найти на портале Azure.  
 * **Intel MPI**. Для запуска OpenFOAM на вычислительных узлах SLES 12 HPC в Azure вам потребуется установить библиотеку среды выполнения Intel MPI Library 5, которую можно скачать с сайта [Intel.com](https://software.intel.com/en-us/intel-mpi-library/). (Среда выполнения Intel MPI 5 предустановлена в образах на основе CentOS для HPC.)  Позже установите Intel MPI на вычислительные узлы Linux, если это будет необходимо. Для этого после регистрации на сайте Intel перейдите по ссылке в письме с подтверждением на соответствующую веб-страницу. Затем скопируйте ссылку для скачивания TGZ-файла для соответствующей версии Intel MPI. В этой статье используется Intel MPI версии 5.0.3.048.
 * **Исходный пакет OpenFOAM.** Загрузите исходный пакет OpenFOAM для Linux на сайте [OpenFOAM Foundation](http://openfoam.org/download/2-3-1-source/). В этой статье используется пакет версии 2.3.1, доступный для загрузки в виде файла OpenFOAM-2.3.1.tgz. Инструкции по распаковке и компиляции OpenFOAM на вычислительных узлах Linux приведены далее в этой статье.
-* **EnSight** (необязательно). Для просмотра результатов моделирования OpenFOAM скачайте и установите программу [EnSight](https://www.ceisoftware.com/download/), предназначенную для визуализации и анализа данных. Сведения о лицензировании и загрузке приведены на сайте EnSight.
+* **EnSight** (необязательно). Для просмотра результатов моделирования OpenFOAM скачайте и установите программу [EnSight](https://ensighttransfe.wpengine.com/direct-access-downloads/), предназначенную для визуализации и анализа данных. Сведения о лицензировании и загрузке приведены на сайте EnSight.
 
 ## <a name="set-up-mutual-trust-between-compute-nodes"></a>Настройка взаимного доверия между вычислительными узлами
 Чтобы задание выполнялось на нескольких узлах Linux одновременно, сначала необходимо настроить взаимное доверие узлов (через протокол **rsh** или **ssh**). При создании кластера HPC с помощью сценария развертывания Microsoft HPC IaaS сценарий автоматически настраивает постоянное взаимное доверие для указанной учетной записи администратора. Для учетных записей пользователей без прав администратора, создаваемых в домене кластера, взаимное доверие между узлами должно создаваться в момент назначения им задания и уничтожаться после завершения задания. Чтобы реализовать это для всех пользователей, укажите пару ключей RSA в кластере, который пакет HPC использует для установления отношения доверия.
@@ -362,7 +362,7 @@ clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
 10. После завершения задания результаты можно будет найти в папке C:\OpenFoam\sloshingTank3D, а файлы журнала — в папке C:\OpenFoam.
 
 ## <a name="view-results-in-ensight"></a>Просмотр результатов в EnSight
-Для отображения и анализа результатов заданий OpenFOAM можно использовать [EnSight](https://www.ceisoftware.com/). Дополнительные сведения о визуализации и анимации в EnSight см. в этом [видеоролике](http://www.ceisoftware.com/wp-content/uploads/screencasts/vof_visualization/vof_visualization.html).
+Для отображения и анализа результатов заданий OpenFOAM можно использовать [EnSight](http://www.ensight.com/). Дополнительные сведения о визуализации и анимации в EnSight см. в этом [видеоролике](http://www.ensight.com/ensight.com/envideo/).
 
 1. Установив программное обеспечение EnSight на головном узле, запустите его.
 2. Откройте файл C:\OpenFoam\sloshingTank3D\EnSight\sloshingTank3D.case.

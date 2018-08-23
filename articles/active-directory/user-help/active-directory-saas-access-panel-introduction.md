@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 05/11/18
 ms.author: lizross
 ms.reviewer: asteen
-ms.openlocfilehash: a5b96279993c35aad4cc49c52950576f12dd15ce
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: f69830deb4d2c74b5fe1c85ad8c9452097dd2a1e
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39345949"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42145934"
 ---
 # <a name="what-is-the-access-panel"></a>Что такое панель доступа?
 
@@ -79,7 +79,7 @@ ms.locfileid: "39345949"
 - В приложение можно войти напрямую по **URL-адресу входа**. При использовании URL-адреса приложения расширение обнаруживает это действие и предоставляет возможность входа в систему через него.
 - Вы также можете запускать приложения из панели доступа, используя функцию *быстрого поиска* в расширении. 
 - В разделе **Recently Used** (Недавно использованные) расширения отображаются три приложения, запущенные последними.
-- Вы можете использовать внутренний URL-адрес компании при удаленном подключении через [прокси приложения](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-get-started)
+- Вы можете использовать внутренний URL-адрес компании при удаленном подключении через [прокси приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-get-started)
 
 > [!NOTE]
 > Дополнительные функции доступны только для Edge, Chrome и Firefox.
@@ -97,8 +97,8 @@ ms.locfileid: "39345949"
 5. Выберите **Sign in to get started** (Войдите, чтобы начать работу).
 
 Чтобы использовать внутренний URL-адрес компании во время удаленного доступа с помощью расширения, выполните следующие действия:
-1. [Настройте прокси приложения](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-application-proxy-enable) на вашем клиенте.
-2. [Опубликуйте приложение](https://docs.microsoft.com/en-us/azure/active-directory/application-proxy-publish-azure-portal) и URL-адрес с помощью прокси приложения.
+1. [Настройте прокси приложения](https://docs.microsoft.com/azure/active-directory/active-directory-application-proxy-enable) на вашем клиенте.
+2. [Опубликуйте приложение](https://docs.microsoft.com/azure/active-directory/application-proxy-publish-azure-portal) и URL-адрес с помощью прокси приложения.
 3. Установите расширение и войдите в него, выбрав "Войти", чтобы начать.
 4. Теперь вы можете перейти по внутреннему URL-адресу компании даже при удаленном подключении.
 

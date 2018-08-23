@@ -3,6 +3,8 @@ title: Создание пространства разработки Kubernetes
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
+ms.custom: vs-azure
+ms.workload: azure-vs
 ms.component: azds-kubernetes
 author: ghogen
 ms.author: ghogen
@@ -11,12 +13,12 @@ ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 452746e897f95f12a25522ea9f37ca0254a12d6d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 155f823b53ac6a6e391b1f4f71994d896070092a
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38612875"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42110193"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core-and-visual-studio"></a>Начало работы в Azure Dev Spaces и .NET Core и Visual Studio
 

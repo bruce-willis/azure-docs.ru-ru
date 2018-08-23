@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: fd278ad6865c871ed0a5ed9272c9fadfca0f38db
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: fd1fb978fb47c69b2eb672bc27baee73dfdd0a29
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440435"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42145023"
 ---
 # <a name="log-alerts-in-azure-monitor---alerts"></a>Оповещения журнала в Azure Monitor. Интерфейс оповещений 
 В это статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в новой системе [оповещений Azure](monitoring-overview-unified-alerts.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
@@ -87,7 +87,7 @@ ms.locfileid: "39440435"
 #### <a name="example"></a>Пример
 Рассмотрим ситуацию, где оповещение должно создаваться, когда использование процессора на компьютере превышает 90 % три раза в течение 30 минут.  Необходимо создать правило генерации оповещений со следующими сведениями:  
 
-- **Запрос:** Perf | where ObjectName == "Processor" and CounterName == "% Processor Time" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5 m), Computer<br>
+- **Запрос:** Perf | where ObjectName == "Processor" and CounterName == "% Processor Time" | summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 5m), Computer<br>
 - **Период:** 30 минут.<br>
 - **Частота предупреждений:** 5 минут.<br>
 - **Объединенное значение:** больше 90.<br>
@@ -136,6 +136,6 @@ API-интерфейсы, предоставляемые для оповещен
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](monitor-alerts-unified-log-webhook.md).
-* Сведения о новых [оповещениях Azure](monitoring-overview-unified-alerts.md).
+* сведения о новом интерфейсе [оповещений Azure](monitoring-overview-unified-alerts.md);
 * Дополнительные сведения об [Application Insights](../application-insights/app-insights-analytics.md).
 * Дополнительные сведения о [Log Analytics](../log-analytics/log-analytics-overview.md).    

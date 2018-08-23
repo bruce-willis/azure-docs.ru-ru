@@ -12,12 +12,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/25/2018
 ms.author: victorh
-ms.openlocfilehash: ebe22f72d25b8f181e75a263df63fd5a0b4a6a6f
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 90c589bce48db11278d034249d1a7a7cc918a074
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436195"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42140117"
 ---
 # <a name="create-an-application-gateway-using-the-azure-cli"></a>Создание шлюза приложений с помощью Azure CLI
 
@@ -41,7 +41,7 @@ az group create --name myResourceGroupAG --location eastus
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов 
 
-Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/vnet#az-vnet-create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/public-ip#az-public-ip-create).
+Создайте виртуальную сеть и подсеть, выполнив команду [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). Создайте общедоступный IP-адрес с помощью команды [az network public-ip create](/cli/azure/network/public-ip#az-public-ip-create).
 
 ```azurecli-interactive
 az network vnet create \
@@ -133,7 +133,7 @@ done
 
 ## <a name="create-the-application-gateway"></a>Создание шлюза приложений
 
-Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/application-gateway#az-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
+Создайте шлюз приложений с помощью команды [az network application-gateway create](/cli/azure/network/application-gateway#az-application-gateway-create). При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Частные IP-адреса сетевых интерфейсов добавляются как внутренний пул шлюза приложений.
 
 ```azurecli-interactive
 address1=$(az network nic show --name myNic1 --resource-group myResourceGroupAG | grep "\"privateIpAddress\":" | grep -oE '[^ ]+$' | tr -d '",')

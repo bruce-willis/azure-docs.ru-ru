@@ -10,12 +10,12 @@ ms.component: implement
 ms.date: 04/11/2018
 ms.author: elbutter
 ms.reviewer: igorstan
-ms.openlocfilehash: ceda0399ae98e2a36fd41b954a741e0379c77fe7
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 344cb1bed56b0b6af7bd3704f8674ae30695f885
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31797164"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142603"
 ---
 # <a name="best-practices-for-using-elastic-query-in-azure-sql-database-to-access-data-in-azure-sql-data-warehouse"></a>Рекомендации по использованию эластических запросов в базе данных SQL Azure для получения доступа к данным в хранилище данных SQL Azure
 Ознакомьтесь с рекомендациями для получения доступа к данным в хранилище данных SQL Azure из базы данных SQL Azure с помощью эластичных запросов. 

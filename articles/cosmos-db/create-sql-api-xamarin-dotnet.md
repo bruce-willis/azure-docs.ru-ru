@@ -2,7 +2,7 @@
 title: Azure Cosmos DB. Создание приложения со списком дел с помощью Xamarin | Документация Майкрософт
 description: В этой статье представлен пример кода Xamarin, который можно использовать для подключения и выполнения запросов к Azure Cosmos DB.
 services: cosmos-db
-author: SnehaGunda
+author: codemillmatt
 manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
@@ -10,13 +10,13 @@ ms.custom: quick start connect, mvc
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/30/2018
-ms.author: sngun
-ms.openlocfilehash: b224a40f1ed5e778da6429d44a449d3f9ffdf16d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: masoucou
+ms.openlocfilehash: 2be4ab0b65827c3d6a906b31e063d8618e12ca0c
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38543906"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42022865"
 ---
 # <a name="azure-cosmos-db-build-a-todo-app-with-xamarin"></a>Azure Cosmos DB. Создание приложения со списком дел с помощью Xamarin
 
@@ -29,7 +29,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ![Приложение со списком дел Xamarin в iOS](./media/create-sql-api-xamarin-dotnet/ios-todo-screen.png)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы разрабатываете приложение в Windows, но еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить рабочие нагрузки **Разработка для Azure** и **Разработка мобильных приложений на .NET**.
 

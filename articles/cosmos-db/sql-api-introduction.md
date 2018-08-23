@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 05/22/2017
 ms.author: rafats
-ms.openlocfilehash: 8aeab32597d396273cae16bf2c6d98b73828f6f8
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: 4b469d306c4cd642e375e4eb15b0d26df828b308
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34796848"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022413"
 ---
 # <a name="introduction-to-azure-cosmos-db-sql-api"></a>Общие сведения об Azure Cosmos DB: API SQL
 
@@ -68,10 +68,10 @@ Azure Cosmos DB предоставляет ресурсы с помощью и�
 | Загрузка | Документация |
 | --- | --- |
 | [ПАКЕТ SDK .NET](http://go.microsoft.com/fwlink/?LinkID=402989) |[Библиотека для .NET](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet) |
-| [Пакет SDK для Node.js](http://go.microsoft.com/fwlink/?LinkID=402990) |[Библиотека для Node.js](http://azure.github.io/azure-documentdb-node/) |
+| [Пакет SDK для Node.js](http://go.microsoft.com/fwlink/?LinkID=402990) |[Библиотека для Node.js](https://github.com/Azure/azure-cosmosdb-node) |
 | [Пакет SDK для Java](http://go.microsoft.com/fwlink/?LinkID=402380) |[Библиотека для Java](/java/api/com.microsoft.azure.documentdb) |
-| [Пакет SDK для JavaScript](http://go.microsoft.com/fwlink/?LinkID=402991) |[Библиотека для JavaScript](http://azure.github.io/azure-documentdb-js/) |
-| Недоступно |[Пакет SDK для серверного JavaScript](http://azure.github.io/azure-documentdb-js-server/) |
+| [Пакет SDK для JavaScript](https://github.com/Azure/azure-cosmos-js) |[Библиотека для JavaScript](https://github.com/Azure/azure-cosmos-js) |
+| Недоступно |[Пакет SDK для серверного JavaScript](https://github.com/Azure/azure-cosmosdb-js-server) |
 | [Пакет SDK для Python](https://pypi.python.org/pypi/pydocumentdb) |[Библиотека для Python](http://azure.github.io/azure-documentdb-python/) |
 | Недоступно | [API для MongoDB](mongodb-introduction.md)
 

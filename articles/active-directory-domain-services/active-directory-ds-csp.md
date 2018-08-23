@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/08/2017
 ms.author: maheshu
-ms.openlocfilehash: 63244a8f767f71d0f9be80aad09f06f14c4d3acf
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 8d87312591f44bac5fd9a4ff63eccc19333a870c
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39503977"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42142592"
 ---
 # <a name="azure-active-directory-ad-domain-services-for-azure-cloud-solution-providers-csp"></a>Доменные службы Azure Active Directory (AD) для поставщиков облачных решений Azure (Azure CSP)
 В этой статье описывается, как использовать доменные службы Azure AD в подписке Azure CSP.
@@ -87,7 +87,7 @@ Azure CSP — это программа для партнеров корпора
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Зарегистрируйтесь в программе Azure CSP](https://partnercenter.microsoft.com/partner/programs) и приступите к формированию компании с помощью Azure CSP.
+* [Зарегистрируйтесь в программе Azure CSP](https://docs.microsoft.com/partner-center/enrolling-in-the-csp-program) и приступите к формированию компании с помощью Azure CSP.
 * Просмотрите список [служб Azure, доступных в Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services).
 * [Включение доменных служб Azure AD с помощью PowerShell](active-directory-ds-enable-using-powershell.md)
 * [Приступая к работе с доменными службами Azure AD](active-directory-ds-getting-started.md)

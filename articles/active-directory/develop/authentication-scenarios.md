@@ -17,12 +17,12 @@ ms.date: 07/26/2018
 ms.author: celested
 ms.reviewer: jmprieur, andret, nacanuma, hirsin
 ms.custom: aaddev
-ms.openlocfilehash: dda0d8e9496eb310f6d2a2791977e9de0eea6503
-ms.sourcegitcommit: 615403e8c5045ff6629c0433ef19e8e127fe58ac
+ms.openlocfilehash: fc6c97906525b2f575a18ce5357eb3e10bfb4887
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39578530"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "42145011"
 ---
 # <a name="authentication-scenarios-for-azure-ad"></a>Сценарии проверки подлинности в Azure AD
 
@@ -52,7 +52,7 @@ Azure Active Directory (Azure AD) упрощает процесс проверк
 * Azure AD — это поставщик удостоверений, обеспечивающий проверку подлинности удостоверений пользователей и приложений, которые существуют в каталоге организации, и в конечном счете выдает маркеры безопасности после успешной проверки подлинности этих пользователей и приложений.
 * Приложение, желающее передать проверку подлинности системе Azure AD, должно быть зарегистрировано в Azure AD, которая регистрирует и уникально идентифицирует данное приложение в каталоге.
 * Использование разработчиками библиотек проверки подлинности Azure AD с открытым кодом позволяет упростить выполнение проверки подлинности благодаря обработке библиотеками данных протокола. Дополнительные сведения см. в статье [Библиотеки проверки подлинности в Azure Active Directory](active-directory-authentication-libraries.md).
-* Как только пользователь прошел проверку подлинности, приложение должно проверить маркер безопасности пользователя, чтобы убедиться, что проверка подлинности прошла успешно. На [GitHub](https://github.com/Azure-Samples?q=active-directory) есть примеры необходимых действий приложения для различных языков и платформ. Если вы создаете веб-приложение в ASP.NET, см. [руководство по добавлению возможности входа в веб-приложение ASP.NET](https://docs.microsoft.com/en-us/azure/active-directory/develop/guidedsetups/active-directory-aspnetwebapp). Если вы создаете ресурс веб-API в ASP.NET, см. [руководство по началу работы с веб-API](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-webapi-dotnet).
+* Как только пользователь прошел проверку подлинности, приложение должно проверить маркер безопасности пользователя, чтобы убедиться, что проверка подлинности прошла успешно. На [GitHub](https://github.com/Azure-Samples?q=active-directory) есть примеры необходимых действий приложения для различных языков и платформ. Если вы создаете веб-приложение в ASP.NET, см. [руководство по добавлению возможности входа в веб-приложение ASP.NET](https://docs.microsoft.com/azure/active-directory/develop/guidedsetups/active-directory-aspnetwebapp). Если вы создаете ресурс веб-API в ASP.NET, см. [руководство по началу работы с веб-API](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devquickstarts-webapi-dotnet).
 * Последовательность запросов и ответов для процедуры проверки подлинности определяется применяемым протоколом проверки подлинности, например OAuth 2.0, OpenID Connect, WS-Federation или SAML 2.0. Подробные сведения об этих протоколах см. в статье [Протоколы проверки подлинности Azure Active Directory](active-directory-authentication-protocols.md), а также в разделах ниже.
 
 > [!NOTE]

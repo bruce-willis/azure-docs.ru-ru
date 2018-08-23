@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: cephalin
-ms.openlocfilehash: 6b71aa004095a94bea84623fd2b5dbdfc1f81af0
-ms.sourcegitcommit: d1f35f71e6b1cbeee79b06bfc3a7d0914ac57275
+ms.openlocfilehash: 34ee673ee1cf870e376ac8c954a9f3fc468abaa2
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2018
-ms.locfileid: "29461848"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42144982"
 ---
 # <a name="troubleshoot-slow-web-app-performance-issues-in-azure-app-service"></a>Устранение причин низкой производительности веб-приложения в службе приложений Azure
 Эта статья поможет устранить причины снижения производительности веб-приложения, размещенного в [службе приложений Azure](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -91,7 +91,7 @@ Microsoft Azure информирует о каждом случае прерыв
 - редакторы исходного кода, например [Visual Studio Team Services](https://www.visualstudio.com/products/what-is-visual-studio-online-vs.aspx); 
 - инструменты управления для подключенных ресурсов, таких как база данных MySQL, подключенная к веб-приложению.
 
-Также доступно расширение сайта для мониторинга производительности [Azure Application Insights](/services/application-insights/). Чтобы использовать Application Insights, перестройте код с помощью пакета SDK. Кроме того, вы можете установить расширение, которое предоставляет доступ к дополнительным данным. Пакет SDK позволяет писать код для более подробного отслеживания использования и производительности приложения. Дополнительные сведения см. в разделе о [мониторинге производительности в веб-приложениях](../application-insights/app-insights-web-monitor-performance.md).
+Также доступно расширение сайта для мониторинга производительности [Azure Application Insights](https://azure.microsoft.com/services/application-insights/). Чтобы использовать Application Insights, перестройте код с помощью пакета SDK. Кроме того, вы можете установить расширение, которое предоставляет доступ к дополнительным данным. Пакет SDK позволяет писать код для более подробного отслеживания использования и производительности приложения. Дополнительные сведения см. в разделе о [мониторинге производительности в веб-приложениях](../application-insights/app-insights-web-monitor-performance.md).
 
 <a name="collect" />
 

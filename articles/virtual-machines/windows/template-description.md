@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: cynthn
-ms.openlocfilehash: 50fb5eeea5e3d6a2f991e92ae9c188822ddb40b0
-ms.sourcegitcommit: 1362e3d6961bdeaebed7fb342c7b0b34f6f6417a
+ms.openlocfilehash: 18a9709893533c2c0b606077a126437282f9195e
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31528738"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42142485"
 ---
 # <a name="virtual-machines-in-an-azure-resource-manager-template"></a>Виртуальные машины в шаблоне Azure Resource Manager
 
@@ -280,7 +280,7 @@ Resource Manager параллельно развертывает все ресу
 При определении ресурса виртуальной машины используются несколько элементов профиля. Некоторые являются обязательными, а другие — необязательными. Например, элементы hardwareProfile, osProfile, storageProfile и networkProfile являются обязательными, а diagnosticsProfile — необязательным. С помощью этих профилей задаются следующие параметры:
    
 - [размер;](sizes.md)
-- [имя](/architecture/best-practices/naming-conventions) и учетные данные;
+- [имя](/azure/architecture/best-practices/naming-conventions) и учетные данные;
 - диск и [параметры операционной системы;](cli-ps-findimage.md)
 - [сетевой интерфейс;](../../virtual-network/virtual-network-deploy-multinic-classic-ps.md) 
 - диагностика загрузки.
