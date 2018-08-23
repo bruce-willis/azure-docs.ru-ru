@@ -1,309 +1,346 @@
+items:
 - name: Документация по Azure Log Analytics
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Log Analytics?
-      href: log-analytics-overview.md
+  - name: Что такое Log Analytics?
+    href: log-analytics-overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Сбор данных виртуальных машин Azure
-      href: log-analytics-quick-collect-azurevm.md
-    - name: Сбор данных с гибридных компьютеров Linux
-      href: log-analytics-quick-collect-linux-computer.md
-    - name: Сбор данных с гибридных компьютеров Windows
-      href: log-analytics-quick-collect-windows-computer.md
+  - name: Сбор данных виртуальных машин Azure
+    href: log-analytics-quick-collect-azurevm.md
+  - name: Сбор данных с гибридных компьютеров Linux
+    href: log-analytics-quick-collect-linux-computer.md
+  - name: Сбор данных с гибридных компьютеров Windows
+    href: log-analytics-quick-collect-windows-computer.md
+  expanded: true
 - name: Учебники
   items:
-    - name: 1. Анализ данных
-      href: log-analytics-tutorial-viewdata.md
-    - name: 2. Визуализация данных
-      href: log-analytics-tutorial-dashboards.md
-    - name: 3. Создание оповещений о данных
-      href: log-analytics-tutorial-response.md
+  - name: 1. Анализ данных
+    href: log-analytics-tutorial-viewdata.md
+  - name: 2. Визуализация данных
+    href: log-analytics-tutorial-dashboards.md
+  - name: 3. Создание оповещений о данных
+    href: log-analytics-tutorial-response.md
 - name: Примеры
   items:
-    - name: Azure PowerShell
-      href: powershell-samples.md
+  - name: Azure PowerShell
+    href: powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Переход на портал OMS
-      items:
-        - name: Обзор
-          href: log-analytics-oms-portal-transition.md
-        - name: Часто задаваемые вопросы
-          href: log-analytics-oms-portal-faq.md
-    - name: Часто задаваемые вопросы по Log Analytics
-      href: log-analytics-faq.md
-    - name: Время приема данных
-      href: log-analytics-data-ingestion-time.md
-    - name: Защита данных
-      href: log-analytics-data-security.md
-    - name: Управление доступом
-      href: log-analytics-manage-access.md
-    - name: Общие сведения об агентах
-      href: ../monitoring/monitoring-overview-azure-agents.md
-    - name: Мониторинг гибридных сред
-      href: log-analytics-concept-hybrid.md
-    - name: Функции для поставщиков услуг
-      href: log-analytics-service-providers.md
-    - name: Поиск по журналам
-      items:
-        - name: Обзор поиска по журналу
-          href: log-analytics-log-search.md
-        - name: Порталы поиска по журналам
-          href: log-analytics-log-search-portals.md
+  - name: Переход на портал OMS
+    items:
+    - name: Обзор
+      href: log-analytics-oms-portal-transition.md
+    - name: Часто задаваемые вопросы
+      href: log-analytics-oms-portal-faq.md
+  - name: Часто задаваемые вопросы по Log Analytics
+    href: log-analytics-faq.md
+  - name: Время приема данных
+    href: log-analytics-data-ingestion-time.md
+  - name: Защита данных
+    href: log-analytics-data-security.md
+  - name: Управление доступом
+    href: log-analytics-manage-access.md
+  - name: Общие сведения об агентах
+    href: ../monitoring/monitoring-overview-azure-agents.md
+  - name: Мониторинг гибридных сред
+    href: log-analytics-concept-hybrid.md
+  - name: Функции для поставщиков услуг
+    href: log-analytics-service-providers.md
+  - name: Поиск по журналам
+    items:
+    - name: Обзор поиска по журналу
+      href: log-analytics-log-search.md
+    - name: Порталы поиска по журналам
+      href: log-analytics-log-search-portals.md
 - name: Практические руководства
   items:
-    - name: Создание рабочей области
+  - name: Создание рабочей области
+    items:
+    - name: Использование портала Azure
+      href: log-analytics-quick-create-workspace.md
+  - name: Сбор данных
+    items:
+    - name: Подключенные источники
       items:
-        - name: Использование портала Azure
-          href: log-analytics-quick-create-workspace.md
-    - name: Сбор данных
+      - name: Агенты Windows
+        href: log-analytics-agent-windows.md
+      - name: Расширение виртуальной машины для Windows
+        href: ../virtual-machines/windows/extensions-oms.md
+      - name: Расширение виртуальной машины для Linux
+        href: ../virtual-machines/linux/extensions-oms.md
+      - name: Ресурсы Azure
+        href: log-analytics-azure-storage.md
+      - name: Ресурсы Azure PaaS
+        href: log-analytics-collect-azurepass-posh.md
+      - name: Данные диагностики и журнала из службы хранилища Azure
+        href: log-analytics-azure-storage-iis-table.md
+      - name: Operations Manager
+        href: log-analytics-om-agents.md
+      - name: Менеджер конфигураций
+        href: log-analytics-sccm.md
+      - name: Шлюз OMS
+        href: log-analytics-oms-gateway.md
+    - name: Источники данных
       items:
-        - name: Подключенные источники
-          items:
-            - name: Агенты Windows
-              href: log-analytics-agent-windows.md
-            - name: Расширение виртуальной машины для Windows
-              href: ../virtual-machines/windows/extensions-oms.md
-            - name: Расширение виртуальной машины для Linux
-              href: ../virtual-machines/linux/extensions-oms.md
-            - name: Ресурсы Azure
-              href: log-analytics-azure-storage.md
-            - name: Ресурсы Azure PaaS
-              href: log-analytics-collect-azurepass-posh.md
-            - name: Данные диагностики и журнала из службы хранилища Azure
-              href: log-analytics-azure-storage-iis-table.md
-            - name: Operations Manager
-              href: log-analytics-om-agents.md
-            - name: Менеджер конфигураций
-              href: log-analytics-sccm.md
-            - name: Шлюз OMS
-              href: log-analytics-oms-gateway.md
-        - name: Источники данных
-          items:
-            - name: Обзор источников данных
-              href: log-analytics-data-sources.md
-            - name: События Windows
-              href: log-analytics-data-sources-windows-events.md
-            - name: Настраиваемые данные JSON
-              href: log-analytics-data-sources-json.md
-            - name: Сбор данных о производительности
-              href: log-analytics-data-sources-collectd.md
-            - name: Оповещения Nagios и Zabbix
-              href: log-analytics-data-sources-alerts-nagios-zabbix.md
-            - name: syslog
-              href: log-analytics-data-sources-syslog.md
-            - name: Счетчики производительности
-              href: log-analytics-data-sources-performance-counters.md
-            - name: Производительность приложений Linux
-              href: log-analytics-data-sources-linux-applications.md
-            - name: Журналы IIS
-              href: log-analytics-data-sources-iis-logs.md
-            - name: Пользовательские журналы
-              href: log-analytics-data-sources-custom-logs.md
-            - name: Настраиваемые поля
-              href: log-analytics-custom-fields.md
-            - name: API сборщика данных
-              href: log-analytics-data-collector-api.md
-    - name: Запрос данных
+      - name: Обзор источников данных
+        href: log-analytics-data-sources.md
+      - name: События Windows
+        href: log-analytics-data-sources-windows-events.md
+      - name: Настраиваемые данные JSON
+        href: log-analytics-data-sources-json.md
+      - name: Сбор данных о производительности
+        href: log-analytics-data-sources-collectd.md
+      - name: Оповещения Nagios и Zabbix
+        href: log-analytics-data-sources-alerts-nagios-zabbix.md
+      - name: syslog
+        href: log-analytics-data-sources-syslog.md
+      - name: Счетчики производительности
+        href: log-analytics-data-sources-performance-counters.md
+      - name: Производительность приложений Linux
+        href: log-analytics-data-sources-linux-applications.md
+      - name: Журналы IIS
+        href: log-analytics-data-sources-iis-logs.md
+      - name: Пользовательские журналы
+        href: log-analytics-data-sources-custom-logs.md
+      - name: Настраиваемые поля
+        href: log-analytics-custom-fields.md
+      - name: API сборщика данных
+        href: log-analytics-data-collector-api.md
+      - name: Пример конвейера API сборщика данных
+        href: log-analytics-create-pipeline-datacollector-api.md
+  - name: Запрос данных
+    items:
+    - name: Документация по языкам
       items:
-        - name: Документация по языкам
-          items:
-            - name: Переход от устаревшего языка
-              href: log-analytics-log-search-transition.md
-            - name: Начало работы с порталом Analytics
-              href: query-language/get-started-analytics-portal.md
-            - name: Начало работы с запросами
-              href: query-language/get-started-queries.md
-            - name: Поисковые запросы
-              href: query-language/search-queries.md
-            - name: Справочник по языку
-              href: 'https://docs.loganalytics.io'
-        - name: Перекрестный поиск по ресурсам
-          href: log-analytics-cross-workspace-search.md
-        - name: Выполнение действий на основе результатов поиска
-          href: log-analytics-log-search-takeaction.md
-        - name: Использование групп компьютеров
-          href: log-analytics-computer-groups.md
-        - name: Соединитель для Microsoft Flow
-          href: log-analytics-flow-tutorial.md
-        - name: API поиска по журналам
-          href: 'https://dev.loganalytics.io/'
-    - name: Анализ данных
+      - name: Переход от устаревшего языка
+        href: log-analytics-log-search-transition.md
+      - name: Справочник по языку
+        href: https://docs.loganalytics.io
+      - name: Начало работы
+        items:
+        - name: Начало работы с порталом Analytics
+          href: query-language/get-started-analytics-portal.md
+        - name: Начало работы с запросами
+          href: query-language/get-started-queries.md
+        - name: Поисковые запросы
+          href: query-language/search-queries.md
+        - name: Полезные операторы
+          href: query-language/useful-operators.md
+      - name: Занятия
+        items:
+        - name: Операции со строками
+          href: query-language/string-operations.md
+        - name: Операции с датой и временем
+          href: query-language/datetime-operations.md
+        - name: Статистические функции
+          href: query-language/aggregations.md
+        - name: Расширенные статистические функции
+          href: query-language/advanced-aggregations.md
+        - name: Соединения
+          href: query-language/joins.md
+        - name: JSON и структуры данных
+          href: query-language/json-data-structures.md
+        - name: Составление расширенных запросов
+          href: query-language/advanced-query-writing.md
+        - name: Схемы и диаграммы
+          href: query-language/charts.md
+      - name: Памятки
+        items:
+        - name: SQL
+          href: query-language/sql-cheatsheet.md
+        - name: Splunk
+          href: query-language/splunk-cheatsheet.md
+    - name: Перекрестный поиск по ресурсам
+      href: log-analytics-cross-workspace-search.md
+    - name: Выполнение действий на основе результатов поиска
+      href: log-analytics-log-search-takeaction.md
+    - name: Использование групп компьютеров
+      href: log-analytics-computer-groups.md
+    - name: Соединитель для Microsoft Flow
+      href: log-analytics-flow-tutorial.md
+    - name: API поиска по журналам
+      href: https://dev.loganalytics.io/
+  - name: Анализ данных
+    items:
+    - name: Панели мониторинга
+      href: log-analytics-dashboards.md
+    - name: «Просмотреть конструктор»
       items:
-        - name: Панели мониторинга
-          href: log-analytics-dashboards.md
-        - name: «Просмотреть конструктор»
-          items:
-            - name: Обзор
-              href: log-analytics-view-designer.md
-            - name: Справочник по плиткам
-              href: log-analytics-view-designer-tiles.md
-            - name: Справочник по элементам визуализации
-              href: log-analytics-view-designer-parts.md
-            - name: Фильтры
-              href: log-analytics-view-designer-filters.md
-        - name: Power BI
-          href: log-analytics-powerbi.md
-    - name: Создание оповещений
+      - name: Обзор
+        href: log-analytics-view-designer.md
+      - name: Справочник по плиткам
+        href: log-analytics-view-designer-tiles.md
+      - name: Справочник по элементам визуализации
+        href: log-analytics-view-designer-parts.md
+      - name: Фильтры
+        href: log-analytics-view-designer-filters.md
+    - name: Power BI
+      href: log-analytics-powerbi.md
+  - name: Создание оповещений
+    items:
+    - name: Основные сведения об оповещениях журналов
+      href: ../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md
+    - name: Создание оповещения журнала
+      href: ../monitoring-and-diagnostics/monitor-alerts-unified-usage.md
+    - name: Действия веб-перехватчика для оповещений журнала
+      href: ../monitoring-and-diagnostics/monitor-alerts-unified-log-webhook.md
+    - name: Создание оповещения журнала с помощью шаблона Resource Manager
+      href: ../monitoring-and-diagnostics/monitor-alerts-unified-log-template.md
+    - name: Копирование оповещений из Log Analytics в оповещения Azure
+      href: ../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md
+  - name: управление
+    items:
+    - name: Обработка персональных данных
+      href: log-analytics-personal-data-mgmt.md
+    - name: Управление агентами
+      href: log-analytics-agent-manage.md
+    - name: Управление затратами на рабочую область
       items:
-        - name: Основные сведения об оповещениях журналов
-          href: ../monitoring-and-diagnostics/monitoring-overview-unified-alerts.md
-        - name: Создание оповещения журнала
-          href: ../monitoring-and-diagnostics/monitor-alerts-unified-usage.md
-        - name: Действия веб-перехватчика для оповещений журнала
-          href: ../monitoring-and-diagnostics/monitor-alerts-unified-log-webhook.md
-        - name: Создание оповещения журнала с помощью шаблона Resource Manager
-          href: ../monitoring-and-diagnostics/monitor-alerts-unified-log-template.md
-        - name: Копирование оповещений из Log Analytics в оповещения Azure
-          href: ../monitoring-and-diagnostics/monitoring-alerts-extend-tool.md
-    - name: управление
+      - name: Объем данных и хранение
+        href: log-analytics-manage-cost-storage.md
+      - name: Мониторинг использования
+        href: log-analytics-usage.md
+    - name: Удаление рабочей области
+      href: log-analytics-manage-del-workspace.md
+  - name: Устранение неполадок
+    items:
+    - name: Устранение неполадок с расширением виртуальной машины
+      href: log-analytics-azure-vmext-troubleshoot.md
+    - name: Устранение неполадок агента Linux
+      href: log-analytics-agent-linux-support.md
+  - name: Использование решений
+    items:
+    - name: Установка решений
+      href: ../monitoring/monitoring-solutions.md?toc=%2fazure%2flog-analytics%2ftoc.json
+    - name: Список решений
+      href: ../monitoring/monitoring-solutions-inventory.md?toc=%2fazure%2flog-analytics%2ftoc.json
+    - name: Целевые решения
+      href: ../monitoring/monitoring-solution-targeting.md?toc=%2fazure%2flog-analytics%2ftoc.json
+    - name: Руководства по решениям
       items:
-        - name: Обработка персональных данных
-          href: log-analytics-personal-data-mgmt.md
-        - name: Управление агентами
-          href: log-analytics-agent-manage.md
-        - name: Управление затратами на рабочую область
-          items:
-            - name: Объем данных и хранение
-              href: log-analytics-manage-cost-storage.md
-            - name: Мониторинг использования
-              href: log-analytics-usage.md
-        - name: Удаление рабочей области
-          href: log-analytics-manage-del-workspace.md
-    - name: Устранение неполадок
-      items:
-        - name: Устранение неполадок с расширением виртуальной машины
-          href: log-analytics-azure-vmext-troubleshoot.md
-        - name: Устранение неполадок агента Linux
-          href: log-analytics-agent-linux-support.md
-    - name: Использование решений
-      items:
-        - name: Установка решений
-          href: ../monitoring/monitoring-solutions.md?toc=%2fazure%2flog-analytics%2ftoc.json
-        - name: Список решений
-          href: ../monitoring/monitoring-solutions-inventory.md?toc=%2fazure%2flog-analytics%2ftoc.json
-        - name: Целевые решения
-          href: ../monitoring/monitoring-solution-targeting.md?toc=%2fazure%2flog-analytics%2ftoc.json
-        - name: Руководства по решениям
-          items:
-            - name: Журналы действий Azure
-              items:
-                - name: Analytics
-                  href: log-analytics-activity.md
-                - name: Сбор данных в разных подписках
-                  href: log-analytics-activity-logs-subscriptions.md
-            - name: Оценка AD
-              href: log-analytics-ad-assessment.md
-            - name: Состояние репликации AD
-              href: log-analytics-ad-replication-status.md
-            - name: Работоспособность агента
-              href: ../monitoring/monitoring-solution-agenthealth.md?toc=%2fazure%2flog-analytics%2ftoc.json
-            - name: Управление оповещениями
-              href: log-analytics-solution-alert-management.md
-            - name: Соединитель Application Insights
-              href: log-analytics-app-insights-connector.md
-            - name: Azure SQL Analytics
-              href: log-analytics-azure-sql.md
-            - name: Аналитика веб-приложений Azure
-              href: log-analytics-azure-web-apps-analytics.md
-            - name: Емкость и производительность
-              href: log-analytics-capacity.md
-            - name: Отслеживание изменений
-              href: log-analytics-change-tracking.md
-            - name: Контейнеры
-              href: log-analytics-containers.md
-            - name: Аналитика DNS
-              href: log-analytics-dns.md
-            - name: Соединитель управления ИТ-службами
-              href: log-analytics-itsmc-overview.md
-              items:
-                - name: Подключения управления ИТ-службами
-                  href: log-analytics-itsmc-connections.md
-            - name: Key Vault
-              href: log-analytics-azure-key-vault.md
-            - name: Сообщения B2B для приложений логики
-              items:
-                - name: Решение "Сообщения Logic Apps B2B"
-                  href: ../logic-apps/logic-apps-track-b2b-messages-omsportal.md?toc=%2fazure%2flog-analytics%2ftoc.json
-                - name: Настраиваемая схема отслеживания Logic Apps B2B
-                  href: ../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md?toc=%2fazure%2flog-analytics%2ftoc.json
-            - name: Анализ сетевой активности
-              href: log-analytics-azure-networking-analytics.md
-            - name: Монитор производительности сети
-              items:
-                - name: Обзор решения
-                  href: log-analytics-network-performance-monitor.md
-                - name: Мониторинг производительности
-                  href: log-analytics-network-performance-monitor-performance-monitor.md
-                - name: Конечная точка службы
-                  href: log-analytics-network-performance-monitor-service-endpoint.md
-                - name: ExpressRoute
-                  href: log-analytics-network-performance-monitor-expressroute.md
-                - name: Цены
-                  href: log-analytics-network-performance-monitor-pricing-faq.md
-            - name: Office 365
-              href: ../monitoring/monitoring-solution-office-365.md?toc=%2fazure%2flog-analytics%2ftoc.json
-            - name: Проверка работоспособности SCOM
-              href: log-analytics-scom-assessment.md
-            - name: Аудит безопасности
-              href: ../security-center/security-center-intro.md
-            - name: Service Fabric с использованием Azure PowerShell
-              href: log-analytics-service-fabric.md
-              items:
-                - name: Service Fabric с использованием Azure Resource Manager
-                  href: log-analytics-service-fabric-azure-resource-manager.md
-            - name: Схема услуги
-              items:
-                - name: Использование
-                  href: ../monitoring/monitoring-service-map.md?toc=%2fazure%2flog-analytics%2ftoc.json
-                - name: Настройка
-                  href: ../monitoring/monitoring-service-map-configure.md?toc=%2fazure%2flog-analytics%2ftoc.json
-                - name: Интеграция с Operations Manager
-                  href: ../monitoring/monitoring-service-map-scom.md?toc=%2fazure%2flog-analytics%2ftoc.json
-            - name: Проверка работоспособности SQL
-              href: log-analytics-sql-assessment.md
-            - name: Surface Hub
-              href: log-analytics-surface-hubs.md
-            - name: управление обновлениями;
-              href: ../automation/automation-update-management.md?toc=%2fazure%2flog-analytics%2ftoc.json
-            - name: VMware
-              href: log-analytics-vmware.md
-            - name: Аналитика Windows
-              items:
-                - name: Поддержка обновлений
-                  href: 'https://technet.microsoft.com/itpro/windows/manage/update-compliance-get-started'
-                - name: Проверка готовности к обновлению
-                  href: 'https://technet.microsoft.com/itpro/windows/deploy/upgrade-readiness-get-started'
-            - name: Проводные данные
-              href: log-analytics-wire-data.md
-    - name: Разработка
-      items:
-        - name: Командлеты PowerShell
-          href: log-analytics-powershell-workspace-configuration.md
-        - name: Шаблоны диспетчера ресурсов
-          href: log-analytics-template-workspace-configuration.md
-        - name: API оповещений
-          href: log-analytics-api-alerts.md
+      - name: Журналы действий Azure
+        items:
+        - name: Analytics
+          href: log-analytics-activity.md
+        - name: Сбор данных в разных подписках
+          href: log-analytics-activity-logs-subscriptions.md
+      - name: Оценка AD
+        href: log-analytics-ad-assessment.md
+      - name: Состояние репликации AD
+        href: log-analytics-ad-replication-status.md
+      - name: Работоспособность агента
+        href: ../monitoring/monitoring-solution-agenthealth.md?toc=%2fazure%2flog-analytics%2ftoc.json
+      - name: Управление оповещениями
+        href: log-analytics-solution-alert-management.md
+      - name: Соединитель Application Insights
+        href: log-analytics-app-insights-connector.md
+      - name: Azure SQL Analytics
+        href: log-analytics-azure-sql.md
+      - name: Аналитика веб-приложений Azure
+        href: log-analytics-azure-web-apps-analytics.md
+      - name: Емкость и производительность
+        href: log-analytics-capacity.md
+      - name: Отслеживание изменений
+        href: log-analytics-change-tracking.md
+      - name: Контейнеры
+        href: log-analytics-containers.md
+      - name: Аналитика DNS
+        href: log-analytics-dns.md
+      - name: Соединитель управления ИТ-службами
+        href: log-analytics-itsmc-overview.md
+        items:
+        - name: Подключения управления ИТ-службами
+          href: log-analytics-itsmc-connections.md
+      - name: Key Vault
+        href: log-analytics-azure-key-vault.md
+      - name: Сообщения B2B для приложений логики
+        items:
+        - name: Решение "Сообщения Logic Apps B2B"
+          href: ../logic-apps/logic-apps-track-b2b-messages-omsportal.md?toc=%2fazure%2flog-analytics%2ftoc.json
+        - name: Настраиваемая схема отслеживания Logic Apps B2B
+          href: ../logic-apps/logic-apps-track-integration-account-custom-tracking-schema.md?toc=%2fazure%2flog-analytics%2ftoc.json
+      - name: Анализ сетевой активности
+        href: log-analytics-azure-networking-analytics.md
+      - name: Монитор производительности сети
+        items:
+        - name: Обзор решения
+          href: log-analytics-network-performance-monitor.md
+        - name: Мониторинг производительности
+          href: log-analytics-network-performance-monitor-performance-monitor.md
+        - name: Конечная точка службы
+          href: log-analytics-network-performance-monitor-service-endpoint.md
+        - name: ExpressRoute
+          href: log-analytics-network-performance-monitor-expressroute.md
+        - name: Цены
+          href: log-analytics-network-performance-monitor-pricing-faq.md
+      - name: Office 365
+        href: ../monitoring/monitoring-solution-office-365.md?toc=%2fazure%2flog-analytics%2ftoc.json
+      - name: Проверка работоспособности SCOM
+        href: log-analytics-scom-assessment.md
+      - name: Аудит безопасности
+        href: ../security-center/security-center-intro.md
+      - name: Service Fabric с использованием Azure PowerShell
+        href: log-analytics-service-fabric.md
+        items:
+        - name: Service Fabric с использованием Azure Resource Manager
+          href: log-analytics-service-fabric-azure-resource-manager.md
+      - name: Схема услуги
+        items:
+        - name: Использование
+          href: ../monitoring/monitoring-service-map.md?toc=%2fazure%2flog-analytics%2ftoc.json
+        - name: Настройка
+          href: ../monitoring/monitoring-service-map-configure.md?toc=%2fazure%2flog-analytics%2ftoc.json
+        - name: Интеграция с Operations Manager
+          href: ../monitoring/monitoring-service-map-scom.md?toc=%2fazure%2flog-analytics%2ftoc.json
+      - name: Проверка работоспособности SQL
+        href: log-analytics-sql-assessment.md
+      - name: Surface Hub
+        href: log-analytics-surface-hubs.md
+      - name: управление обновлениями;
+        href: ../automation/automation-update-management.md?toc=%2fazure%2flog-analytics%2ftoc.json
+      - name: VMware
+        href: log-analytics-vmware.md
+      - name: Аналитика Windows
+        items:
+        - name: Поддержка обновлений
+          href: https://technet.microsoft.com/itpro/windows/manage/update-compliance-get-started
+        - name: Проверка готовности к обновлению
+          href: https://technet.microsoft.com/itpro/windows/deploy/upgrade-readiness-get-started
+      - name: Проводные данные
+        href: log-analytics-wire-data.md
+  - name: Разработка
+    items:
+    - name: Командлеты PowerShell
+      href: log-analytics-powershell-workspace-configuration.md
+    - name: Шаблоны диспетчера ресурсов
+      href: log-analytics-template-workspace-configuration.md
+    - name: API оповещений
+      href: log-analytics-api-alerts.md
 - name: Справочные материалы
   items:
-    - name: Справочник по языку
-      href: 'https://docs.loganalytics.io/docs/Language-Reference'
-    - name: Azure PowerShell
-      href: /powershell/module/azurerm.operationalinsights
-    - name: REST
-      href: /rest/api/loganalytics
+  - name: Справочник по языку
+    href: https://docs.loganalytics.io/docs/Language-Reference
+  - name: Azure PowerShell
+    href: /powershell/module/azurerm.operationalinsights
+  - name: REST
+    href: /rest/api/loganalytics
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/log-analytics/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?product=log-analytics'
-    - name: Аналитика Windows
-      href: 'https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics'
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/log-analytics/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=log-analytics
+  - name: Аналитика Windows
+    href: https://www.microsoft.com/en-us/WindowsForBusiness/windows-analytics
+ms.openlocfilehash: 7f3e05c3eda4cdbfd7e0edcf61a7f1f6934be8e6
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42110167"

@@ -1,165 +1,176 @@
+items:
 - name: Документация по выставлению счетов и управлению затратами в Azure
   href: index.md
 - name: Сведения о выставлении счетов в Azure
-  expanded: true
   items:
-    - name: Интерпретация счета
-      href: billing-understand-your-bill.md
-    - name: Получение счетов и сведений об использовании
-      href: billing-download-azure-invoice-daily-usage-date.md
-    - name: Плата за использование ресурсов сторонних разработчиков
-      href: billing-understand-your-azure-marketplace-charges.md
-    - name: Сведения об условиях использования
-      href: billing-understand-your-usage.md
-    - name: Сведения о счетах
-      href: billing-understand-your-invoice.md
+  - name: Интерпретация счета
+    href: billing-understand-your-bill.md
+  - name: Получение счетов и сведений об использовании
+    href: billing-download-azure-invoice-daily-usage-date.md
+  - name: Плата за использование ресурсов сторонних разработчиков
+    href: billing-understand-your-azure-marketplace-charges.md
+  - name: Сведения об условиях использования
+    href: billing-understand-your-usage.md
+  - name: Сведения о счетах
+    href: billing-understand-your-invoice.md
+  expanded: true
 - name: Управление затратами
   items:
-    - name: Предотвращение непредвиденных расходов
-      href: billing-getting-started.md
-    - name: Настройка платежных оповещений
-      href: billing-set-up-alerts.md
-    - name: Расчет цены
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Использование тегов ресурсов
-      href: ../azure-resource-manager/resource-group-using-tags.md?toc=/azure/billing/TOC.json
-    - name: Общие сведения о предельной сумме расходов
-      href: billing-spending-limit.md
-    - name: Экономия средств за счет использования резервирований Azure
+  - name: Предотвращение непредвиденных расходов
+    href: billing-getting-started.md
+  - name: Настройка платежных оповещений
+    href: billing-set-up-alerts.md
+  - name: Расчет цены
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Использование тегов ресурсов
+    href: ../azure-resource-manager/resource-group-using-tags.md?toc=/azure/billing/TOC.json
+  - name: Общие сведения о предельной сумме расходов
+    href: billing-spending-limit.md
+  - name: Анализ затрат
+    href: billing-cost-analysis.md
+  - name: Экономия средств за счет использования резервирований Azure
+    items:
+    - name: Что такое резервирования Azure?
+      href: billing-save-compute-costs-reservations.md
+    - name: Покупка резервирования
       items:
-        - name: Что такое резервирования Azure?
-          href: billing-save-compute-costs-reservations.md
-        - name: Покупка резервирования
-          items:
-            - name: Виртуальная машина.
-              href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
-            - name: База данных SQL
-              href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
-        - name: Способ применения скидки
-          items:
-            - name: Зарезервированные экземпляры виртуальных машин
-              href: billing-understand-vm-reservation-charges.md
-            - name: Резервная мощность Базы данных SQL
-              href: billing-understand-reservation-charges.md
-        - name: Расходы на программное обеспечение не входят в стоимость
-          href: billing-reserved-instance-windows-software-costs.md
-        - name: Использование для модели с оплатой по мере использования
-          href: billing-understand-reserved-instance-usage.md
-        - name: Использование для предприятия
-          href: billing-understand-reserved-instance-usage-ea.md
-        - name: Управление резервированиями Azure
-          href: billing-manage-reserved-vm-instance.md
+      - name: Виртуальная машина.
+        href: ../virtual-machines/windows/prepay-reserved-vm-instances.md?toc=/azure/billing/TOC.json
+      - name: База данных SQL
+        href: ../sql-database/sql-database-reserved-capacity.md?toc=/azure/billing/TOC.json
+    - name: Способ применения скидки
+      items:
+      - name: Зарезервированные экземпляры виртуальных машин
+        href: billing-understand-vm-reservation-charges.md
+      - name: Резервная мощность Базы данных SQL
+        href: billing-understand-reservation-charges.md
+    - name: Расходы на программное обеспечение не входят в стоимость
+      href: billing-reserved-instance-windows-software-costs.md
+    - name: Использование для модели с оплатой по мере использования
+      href: billing-understand-reserved-instance-usage.md
+    - name: Использование для предприятия
+      href: billing-understand-reserved-instance-usage-ea.md
+    - name: Управление резервированиями Azure
+      href: billing-manage-reserved-vm-instance.md
 - name: Управление учетной записью
   items:
-    - name: Бесплатная учетная запись
-      items:
-        - name: Создание бесплатных служб
-          href: billing-create-free-services-included-free-account.md
-        - name: Предотвращение расходов
-          href: billing-avoid-charges-free-account.md
-        - name: Проверка использования
-          href: billing-check-free-service-usage.md
-        - name: Обновление подписки
-          href: billing-upgrade-azure-subscription.md
-        - name: Общие сведения о сопоставлении единиц измерения
-          href: billing-understand-free-service-meter-mapping.md
-    - name: Изменение профиля
-      href: billing-how-to-change-azure-account-profile.md
-    - name: Доступ к данным для выставления счетов
-      href: billing-manage-access.md
-    - name: Привязка идентификатора партнера
-      href: billing-partner-admin-link-started.md
-    - name: Просмотр учетных записей выставления счетов
-      href: billing-view-all-accounts.md
-    - name: Решение проблемы просроченных платежей
-      href: billing-azure-subscription-past-due-balance.md
-    - name: "Регистрация с помощью учетной записи Office\_365"
-      href: billing-use-existing-office-365-account-azure-subscription.md
-    - name: Оформление подписки на Office 365 с помощью учетной записи Azure
-      href: billing-use-existing-azure-account-for-office-365-subscription.md
+  - name: Бесплатная учетная запись
+    items:
+    - name: Создание бесплатных служб
+      href: billing-create-free-services-included-free-account.md
+    - name: Предотвращение расходов
+      href: billing-avoid-charges-free-account.md
+    - name: Проверка использования
+      href: billing-check-free-service-usage.md
+    - name: Обновление подписки
+      href: billing-upgrade-azure-subscription.md
+    - name: Общие сведения о сопоставлении единиц измерения
+      href: billing-understand-free-service-meter-mapping.md
+  - name: Изменение профиля
+    href: billing-how-to-change-azure-account-profile.md
+  - name: Доступ к данным для выставления счетов
+    href: billing-manage-access.md
+  - name: Привязка идентификатора партнера
+    href: billing-partner-admin-link-started.md
+  - name: Просмотр учетных записей выставления счетов
+    href: billing-view-all-accounts.md
+  - name: Решение проблемы просроченных платежей
+    href: billing-azure-subscription-past-due-balance.md
+  - name: Регистрация с помощью учетной записи Office 365
+    href: billing-use-existing-office-365-account-azure-subscription.md
+  - name: Оформление подписки на Office 365 с помощью учетной записи Azure
+    href: billing-use-existing-azure-account-for-office-365-subscription.md
 - name: Управление подпиской
   items:
-    - name: Повторная активация подписки
-      href: billing-subscription-become-disable.md
-    - name: Передача владения
-      href: billing-subscription-transfer.md
-    - name: Отмена подписки
-      href: billing-how-to-cancel-azure-subscription.md
-    - name: Изменение кредитной карты
-      href: billing-how-to-change-credit-card.md
-    - name: Изменение администратора
-      href: billing-add-change-azure-subscription-administrator.md
-    - name: Изменение предложения подписки
-      href: billing-how-to-switch-azure-offer.md
-    - name: Оплата по счету
-      href: billing-how-to-pay-by-invoice.md
-    - name: Создание групп управления
-      href: ../azure-resource-manager/management-groups-create.md?toc=/azure/billing/TOC.json
-    - name: Перемещение ресурсов Azure
-      href: ../azure-resource-manager/resource-group-move-resources.md?toc=/azure/billing/TOC.json
-    - name: Создание корпоративных подписок
-      href: ../azure-resource-manager/programmatically-create-subscription.md?toc=/azure/billing/TOC.json
-    - name: Экспорт сведений о подписке
-      href: billing-export-subscriptions.md
-    - name: Привязка клиента Azure AD
-      href: ../active-directory/active-directory-how-subscriptions-associated-directory.md?toc=/azure/billing/TOC.json
-    - name: Ограничения и квоты
-      href: ../azure-subscription-service-limits.md?toc=/azure/billing/TOC.json
+  - name: Повторная активация подписки
+    href: billing-subscription-become-disable.md
+  - name: Передача владения
+    href: billing-subscription-transfer.md
+  - name: Отмена подписки
+    href: billing-how-to-cancel-azure-subscription.md
+  - name: Изменение кредитной карты
+    href: billing-how-to-change-credit-card.md
+  - name: Изменение администратора
+    href: billing-add-change-azure-subscription-administrator.md
+  - name: Изменение предложения подписки
+    href: billing-how-to-switch-azure-offer.md
+  - name: Оплата по счету
+    href: billing-how-to-pay-by-invoice.md
+  - name: Создание групп управления
+    href: ../azure-resource-manager/management-groups-create.md?toc=/azure/billing/TOC.json
+  - name: Перемещение ресурсов Azure
+    href: ../azure-resource-manager/resource-group-move-resources.md?toc=/azure/billing/TOC.json
+  - name: Создание корпоративных подписок
+    href: ../azure-resource-manager/programmatically-create-subscription.md?toc=/azure/billing/TOC.json
+  - name: Экспорт сведений о подписке
+    href: billing-export-subscriptions.md
+  - name: Привязка клиента Azure AD
+    href: ../active-directory/active-directory-how-subscriptions-associated-directory.md?toc=/azure/billing/TOC.json
+  - name: Ограничения и квоты
+    href: ../azure-subscription-service-limits.md?toc=/azure/billing/TOC.json
 - name: Устранение неполадок
   items:
-    - name: Подписки не найдены
-      href: billing-no-subscriptions-found.md
-    - name: Карта не принимается
-      href: 'https://support.microsoft.com/en-us/help/4042960'
-    - name: Проблемы с регистрацией
-      href: 'https://support.microsoft.com/en-us/help/4042959'
-    - name: Проблемы входа
-      href: 'https://support.microsoft.com/en-us/help/4042961'
-    - name: Просмотр стоимости Enterprise отключен
-      href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
-    - name: Обратитесь в службу поддержки.
-      href: ../azure-supportability/how-to-create-azure-support-request.md
+  - name: Подписки не найдены
+    href: billing-no-subscriptions-found.md
+  - name: Карта не принимается
+    href: https://support.microsoft.com/en-us/help/4042960
+  - name: Проблемы с регистрацией
+    href: https://support.microsoft.com/en-us/help/4042959
+  - name: Проблемы входа
+    href: https://support.microsoft.com/en-us/help/4042961
+  - name: Просмотр стоимости Enterprise отключен
+    href: billing-enterprise-mgmt-grp-troubleshoot-cost-view.md
+  - name: Обратитесь в службу поддержки.
+    href: ../azure-supportability/how-to-create-azure-support-request.md
 - name: Примеры
   items:
-    - name: REST API
-      items:
-        - name: Просмотр корпоративных затрат
-          href: billing-review-enterprise-billing.md
-        - name: Просмотр данных об использовании подписки
-          href: billing-review-subscription-billing.md
-    - name: Примеры для .NET
-      items:
-        - name: Пример кода API счетов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-core-invoice-download'
-        - name: Пример кода API использования ресурсов
-          href: 'https://github.com/Azure-Samples/billing-dotnet-usage-api'
-        - name: Пример кода API RateCard
-          href: 'https://github.com/Azure-Samples/billing-dotnet-ratecard-api'
+  - name: REST API
+    items:
+    - name: Просмотр корпоративных затрат
+      href: billing-review-enterprise-billing.md
+    - name: Просмотр данных об использовании подписки
+      href: billing-review-subscription-billing.md
+    - name: Просмотр данных использования ресурсов
+      href: billing-review-service-usage-api.md
+  - name: Примеры для .NET
+    items:
+    - name: Пример кода API счетов
+      href: https://github.com/Azure-Samples/billing-dotnet-core-invoice-download
+    - name: Пример кода API использования ресурсов
+      href: https://github.com/Azure-Samples/billing-dotnet-usage-api
+    - name: Пример кода API RateCard
+      href: https://github.com/Azure-Samples/billing-dotnet-ratecard-api
 - name: Справочные материалы
   items:
-    - name: Сценарии автоматизации выставления счетов
-      href: billing-cost-management-automation-scenarios.md
-      items:
-        - name: Управление затратами с помощью API управления бюджетом Azure
-          href: billing-cost-management-budget-scenario.md
-    - name: Общие сведения об API выставления счетов Azure
-      href: billing-usage-rate-card-overview.md
-      items:
-        - name: REST API выставления счетов Azure
-          href: 'https://docs.microsoft.com/rest/api/billing'
-        - name: 'Партнерское решение: Cloud Cruiser'
-          href: billing-usage-rate-card-partner-solution-cloudcruiser.md
-    - name: Общие сведения об API потребления ресурсов Azure
-      href: billing-consumption-api-overview.md
-      items:
-        - name: REST API потребления Azure
-          href: 'https://docs.microsoft.com/rest/api/consumption'
-        - name: REST API RateCard
-          href: 'https://msdn.microsoft.com/library/azure/mt219005.aspx'
-        - name: REST API использования ресурсов
-          href: 'https://msdn.microsoft.com/library/azure/mt219003.aspx'
-    - name: Общие сведения о корпоративной отчетности
-      href: billing-enterprise-api.md
-      items:
-        - name: REST API для корпоративной отчетности
-          href: 'https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary'
+  - name: Сценарии автоматизации выставления счетов
+    href: billing-cost-management-automation-scenarios.md
+    items:
+    - name: Управление затратами с помощью API управления бюджетом Azure
+      href: billing-cost-management-budget-scenario.md
+  - name: Общие сведения об API выставления счетов Azure
+    href: billing-usage-rate-card-overview.md
+    items:
+    - name: REST API выставления счетов Azure
+      href: https://docs.microsoft.com/rest/api/billing
+    - name: 'Партнерское решение: Cloud Cruiser'
+      href: billing-usage-rate-card-partner-solution-cloudcruiser.md
+  - name: Общие сведения об API потребления ресурсов Azure
+    href: billing-consumption-api-overview.md
+    items:
+    - name: REST API потребления Azure
+      href: https://docs.microsoft.com/rest/api/consumption
+    - name: REST API RateCard
+      href: https://msdn.microsoft.com/library/azure/mt219005.aspx
+    - name: REST API использования ресурсов
+      href: https://msdn.microsoft.com/library/azure/mt219003.aspx
+  - name: Общие сведения о корпоративной отчетности
+    href: billing-enterprise-api.md
+    items:
+    - name: REST API для корпоративной отчетности
+      href: https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-balance-summary
+ms.openlocfilehash: 5d7d56325201cbf3c851a843ea4d4393dea4bb40
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41929075"

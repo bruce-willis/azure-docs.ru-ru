@@ -9,7 +9,8 @@
 ## [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure](tutorial-sql-server-to-managed-instance.md)
 
 # Практические руководства
-## [Использование PowerShell для миграции с сервера SQL Server](howto-sql-server-to-azure-sql-powershell.md)
+## [Перенос данных из SQL Server в базу данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-powershell.md)
+## [Перенос данных из SQL Server в управляемый экземпляр базы данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-mi-powershell.md)
 
 # Ресурсы
 ## [Отзывы на User Voice](https://feedback.azure.com/forums/906100-azure-database-migration-service)

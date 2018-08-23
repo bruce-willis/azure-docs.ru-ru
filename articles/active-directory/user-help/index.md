@@ -10,12 +10,12 @@ ms.component: user-help
 ms.topic: landing-page
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 00232a24310b13658fbfa04d2d410e7039c42bfe
-ms.sourcegitcommit: 99a6a439886568c7ff65b9f73245d96a80a26d68
+ms.openlocfilehash: 3ee8834a2ff8b9126fea38b19df115474c36a9e9
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39358406"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41927224"
 ---
 # <a name="user-help-for-authentication-apps-and-device-management"></a>Справка для пользователей по управлению проверкой подлинности, приложениями и устройствами
 
@@ -87,7 +87,6 @@ ms.locfileid: "39358406"
                         <h3>Справка по приложению Microsoft Authenticator</h3>
                         <p>
                         <a href="/azure/active-directory/user-help/microsoft-authenticator-app-how-to">Начало работы</a><br/>
-                        <a href="/azure/active-directory/user-help/microsoft-authenticator-app-phone-signin-faq">Часто задаваемые вопросы о входе с телефона</a><br/>
                         <a href="/azure/active-directory/user-help/microsoft-authenticator-app-backup-and-recovery">Резервное копирование и восстановление учетных данных</a>
                         </p>
                     </div>
@@ -117,8 +116,8 @@ ms.locfileid: "39358406"
                     <div class="cardText">
                         <h3>Справка по управлению устройствами</h3>
                         <p>
-                        <a href="/azure/active-directory/user-help/device-management-azuread-joined-devices-setup">Присоединение устройств</a><br/>
-                        <a href="/azure/active-directory/user-help/device-management-azuread-registered-devices-windows10-setup">Регистрация устройств Windows 10</a>
+                        <a href="/azure/active-directory/user-help/user-help-join-device-on-network">Присоединение рабочего устройства</a><br/>
+                        <a href="/azure/active-directory/user-help/user-help-register-device-on-network">Регистрация личного устройства для работы</a>
                         </p>
                     </div>
                 </div>

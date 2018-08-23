@@ -1,98 +1,107 @@
+items:
 - name: Документация по управляемым приложениям Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения об управляемых приложениях Azure
-      href: overview.md
+  - name: Сведения об управляемых приложениях Azure
+    href: overview.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание управляемого приложения
-      href: managed-apps-quickstart-cli.md
+  - name: Создание управляемого приложения
+    href: managed-apps-quickstart-cli.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Создание файлов управляемого приложения
-      href: publish-service-catalog-app.md
-    - name: Создание приложения для Marketplace
-      href: publish-marketplace-app.md
+  - name: Создание файлов управляемого приложения
+    href: publish-service-catalog-app.md
+  - name: Создание приложения для Marketplace
+    href: publish-marketplace-app.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
-      href: cli-samples.md
-    - name: Azure PowerShell
-      href: powershell-samples.md
-    - name: Решения для управляемых приложений
-      href: sample-projects.md
+  - name: Инфраструктура CLI Azure
+    href: cli-samples.md
+  - name: Azure PowerShell
+    href: powershell-samples.md
+  - name: Решения для управляемых приложений
+    href: sample-projects.md
 - name: Практические руководства
   items:
-    - name: Определение пользовательского интерфейса
-      href: create-uidefinition-overview.md
-    - name: Обновление управляемых ресурсов
-      href: update-managed-resources.md
-    - name: Публикация с помощью портала
-      href: publish-portal.md
-    - name: Использование секрета из Key Vault
-      href: key-vault-access.md
+  - name: Создание интерфейса портала
+    href: create-uidefinition-overview.md
+  - name: Тестирование интерфейса портала
+    href: test-createuidefinition.md
+  - name: Обновление управляемых ресурсов
+    href: update-managed-resources.md
+  - name: Публикация с помощью портала
+    href: publish-portal.md
+  - name: Использование секрета из Key Vault
+    href: key-vault-access.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/managedapp
-    - name: PowerShell
-      href: /powershell/module/azurerm.resources
-    - name: REST
-      href: /rest/api/resources/
-    - name: Функции пользовательского интерфейса
-      href: create-uidefinition-functions.md
-    - name: Элементы пользовательского интерфейса
-      href: create-uidefinition-elements.md
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/managedapp
+  - name: PowerShell
+    href: /powershell/module/azurerm.resources
+  - name: REST
+    href: /rest/api/resources/
+  - name: Функции пользовательского интерфейса
+    href: create-uidefinition-functions.md
+  - name: Элементы пользовательского интерфейса
+    href: create-uidefinition-elements.md
+    items:
+    - name: Common
       items:
-        - name: Common
-          items:
-            - name: DropDown
-              href: microsoft-common-dropdown.md
-            - name: FileUpload
-              href: microsoft-common-fileupload.md
-            - name: InfoBox
-              href: microsoft-common-infobox.md
-            - name: OptionsGroup
-              href: microsoft-common-optionsgroup.md
-            - name: PasswordBox
-              href: microsoft-common-passwordbox.md
-            - name: Раздел
-              href: microsoft-common-section.md
-            - name: TextBlock
-              href: microsoft-common-textblock.md
-            - name: TextBox
-              href: microsoft-common-textbox.md
-        - name: Службы вычислений
-          items:
-            - name: CredentialsCombo
-              href: microsoft-compute-credentialscombo.md
-            - name: SizeSelector
-              href: microsoft-compute-sizeselector.md
-            - name: UserNameTextBox
-              href: microsoft-compute-usernametextbox.md
-        - name: Сеть
-          items:
-            - name: AvailabilityZoneDropDown
-              href: microsoft-network-availabilityzonedropdown.md
-            - name: PublicIPAddressCombo
-              href: microsoft-network-publicipaddresscombo.md
-            - name: VirtualNetworkCombo
-              href: microsoft-network-virtualnetworkcombo.md
-        - name: Служба хранилища
-          items:
-            - name: MultiStorageAccountCombo
-              href: microsoft-storage-multistorageaccountcombo.md
-            - name: StorageAccountSelector
-              href: microsoft-storage-storageaccountselector.md
+      - name: DropDown
+        href: microsoft-common-dropdown.md
+      - name: FileUpload
+        href: microsoft-common-fileupload.md
+      - name: InfoBox
+        href: microsoft-common-infobox.md
+      - name: OptionsGroup
+        href: microsoft-common-optionsgroup.md
+      - name: PasswordBox
+        href: microsoft-common-passwordbox.md
+      - name: Раздел
+        href: microsoft-common-section.md
+      - name: TextBlock
+        href: microsoft-common-textblock.md
+      - name: TextBox
+        href: microsoft-common-textbox.md
+    - name: Службы вычислений
+      items:
+      - name: CredentialsCombo
+        href: microsoft-compute-credentialscombo.md
+      - name: SizeSelector
+        href: microsoft-compute-sizeselector.md
+      - name: UserNameTextBox
+        href: microsoft-compute-usernametextbox.md
+    - name: Сеть
+      items:
+      - name: AvailabilityZoneDropDown
+        href: microsoft-network-availabilityzonedropdown.md
+      - name: PublicIPAddressCombo
+        href: microsoft-network-publicipaddresscombo.md
+      - name: VirtualNetworkCombo
+        href: microsoft-network-virtualnetworkcombo.md
+    - name: служба хранилища.
+      items:
+      - name: MultiStorageAccountCombo
+        href: microsoft-storage-multistorageaccountcombo.md
+      - name: StorageAccountSelector
+        href: microsoft-storage-storageaccountselector.md
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/managed-applications/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-managedapps'
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/managed-applications/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-managedapps
+ms.openlocfilehash: c468b30361163d39b94af999c9767cbc491a06ac
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41927692"

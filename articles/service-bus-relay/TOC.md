@@ -5,14 +5,12 @@
 ## [Часто задаваемые вопросы](relay-faq.md)
 
 # Быстрое начало работы
-## [Создание пространства имен](relay-create-namespace-portal.md)
 ## [Создание гибридных локальные и облачных приложений](service-bus-dotnet-hybrid-app-using-service-bus-relay.md)
 ## через гибридные подключения
 ### [Соединения WebSocket в .NET](relay-hybrid-connections-dotnet-get-started.md)
 ### [.NET HTTP](relay-hybrid-connections-http-requests-dotnet-get-started.md)
 ### [Соединения WebSocket в Node](relay-hybrid-connections-node-get-started.md)
 ### [Node HTTP](relay-hybrid-connections-http-requests-node-get-started.md)
-## [Ретранслятор WCF](relay-wcf-dotnet-get-started.md)
 ## [Руководство по ретранслятору WCF](service-bus-relay-tutorial.md)
 ## [Учебник по REST для ретранслятора WCF](service-bus-relay-rest-tutorial.md)
 
@@ -22,6 +20,8 @@
 #### [Миграция из ACS в SAS](relay-migrate-acs-sas.md)
 ### [Протокол гибридных подключений](relay-hybrid-connections-protocol.md)
 ## Разработка
+### [Создание пространства имен](relay-create-namespace-portal.md)
+### [Предоставление доступа к службам WCF внешним клиентам с помощью Ретранслятора WCF](relay-wcf-dotnet-get-started.md)
 ### [Доступные интерфейсы API](relay-api-overview.md)
 #### [.NET](relay-hybrid-connections-dotnet-api-overview.md)
 #### [Node](relay-hybrid-connections-node-ws-api-overview.md)

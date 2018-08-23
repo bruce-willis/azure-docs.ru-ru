@@ -74,9 +74,9 @@
 #### [Управление версиями клиента и сервера](app-service-mobile-client-and-server-versioning.md)
 
 ### Среда службы приложений
-#### [Создание веб-приложения в среде служб приложений](../app-service/environment/app-service-web-how-to-create-a-web-app-in-an-ase.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-#### [Создание среды службы приложений с внутренней подсистемой балансировки нагрузки с помощью шаблонов Azure Resource Manager](../app-service/environment/app-service-app-service-environment-create-ilb-ase-resourcemanager.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-#### [Создание внутренней подсистемы балансировки нагрузки](../app-service/environment/app-service-environment-with-internal-load-balancer.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+#### [Создание веб-приложения в среде служб приложений](../app-service/environment/intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+#### [Создание и использование внутренней подсистемы балансировки нагрузки](../app-service/environment/create-ilb-ase.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+#### [Создание среды ASE с помощью шаблона](../app-service/environment/create-from-template.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## Развертывание
 ### [Развертывание синхронизации облака](../app-service/app-service-deploy-content-sync.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)

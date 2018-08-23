@@ -180,7 +180,9 @@
 
 ### Миграция
 #### [Подписки и учетные записи хранения](storsimple-8000-migrate-classic-azure-portal.md)
-#### [С устройств серии 5000–7000 ](storsimple-8000-migrate-from-5000-7000.md)
+#### [С устройств серии 5000–7000 ](storsimple-8000-migration-options.md)
+##### [На устройства StorSimple серии 8000](storsimple-8000-migrate-from-5000-7000.md)
+##### [В службу "Синхронизация файлов Azure"](storsimple-5000-7000-afs-migration.md)
 #### [С других запоминающих устройств](http://download.microsoft.com/download/9/4/A/94AB8165-CCC4-430B-801B-9FD40C8DA340/Migrating Data to StorSimple Volumes_09-02-15.pdf)
 
 ### Блокировка изменений

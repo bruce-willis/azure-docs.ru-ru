@@ -1,199 +1,218 @@
+items:
 - name: Принципы работы Azure IoT
   href: ../iot-fundamentals/index.yml
 - name: Документация по службе подготовки устройств для Центра Интернета вещей Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о подготовке устройств Интернета вещей
-      href: about-iot-dps.md
+  - name: Сведения о Службе подготовки устройств к добавлению в Центр Интернета вещей
+    href: about-iot-dps.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Настройка автоматической подготовки в Azure CLI
-      href: quick-setup-auto-provision-cli.md
-    - name: Настройка автоматической подготовки на портале
-      href: quick-setup-auto-provision.md
-    - name: Настройка автоматической подготовки на портале
-      href: quick-setup-auto-provision-rm.md
-    - name: Автоматическая подготовка имитированного устройства
+  - name: Настройка автоматической подготовки в Azure CLI
+    href: quick-setup-auto-provision-cli.md
+  - name: Настройка автоматической подготовки на портале
+    href: quick-setup-auto-provision.md
+  - name: Настройка автоматической подготовки на портале
+    href: quick-setup-auto-provision-rm.md
+  - name: Автоматическая подготовка имитированного устройства
+    items:
+    - name: Аттестация доверенного платформенного модуля
       items:
-        - name: Аттестация доверенного платформенного модуля
-          items:
-            - name: C
-              href: quick-create-simulated-device.md
-            - name: Java
-              href: quick-create-simulated-device-tpm-java.md
-            - name: 'C#'
-              href: quick-create-simulated-device-tpm-csharp.md
-            - name: Node.js
-              href: quick-create-simulated-device-tpm-node.md
-            - name: Python
-              href: quick-create-simulated-device-tpm-python.md
-        - name: Аттестация X.509
-          items:
-            - name: C
-              href: quick-create-simulated-device-x509.md
-            - name: Java
-              href: quick-create-simulated-device-x509-java.md
-            - name: 'C#'
-              href: quick-create-simulated-device-x509-csharp.md
-            - name: Node.js
-              href: quick-create-simulated-device-x509-node.md
-            - name: Python
-              href: quick-create-simulated-device-x509-python.md
-    - name: Регистрация устройств с помощью API-интерфейсов службы подготовки
+      - name: C
+        href: quick-create-simulated-device.md
+      - name: Java
+        href: quick-create-simulated-device-tpm-java.md
+      - name: C#
+        href: quick-create-simulated-device-tpm-csharp.md
+      - name: Node.js
+        href: quick-create-simulated-device-tpm-node.md
+      - name: Python
+        href: quick-create-simulated-device-tpm-python.md
+    - name: Аттестация X.509
       items:
-        - name: Аттестация доверенного платформенного модуля
-          items:
-            - name: Java
-              href: quick-enroll-device-tpm-java.md
-            - name: 'C#'
-              href: quick-enroll-device-tpm-csharp.md
-            - name: Node.js
-              href: quick-enroll-device-tpm-node.md
-            - name: Python
-              href: quick-enroll-device-tpm-python.md
-        - name: Аттестация X.509
-          items:
-            - name: Java
-              href: quick-enroll-device-x509-java.md
-            - name: 'C#'
-              href: quick-enroll-device-x509-csharp.md
-            - name: Node.js
-              href: quick-enroll-device-x509-node.md
-            - name: Python
-              href: quick-enroll-device-x509-python.md
+      - name: C
+        href: quick-create-simulated-device-x509.md
+      - name: Java
+        href: quick-create-simulated-device-x509-java.md
+      - name: C#
+        href: quick-create-simulated-device-x509-csharp.md
+      - name: Node.js
+        href: quick-create-simulated-device-x509-node.md
+      - name: Python
+        href: quick-create-simulated-device-x509-python.md
+  - name: Регистрация устройств с помощью API-интерфейсов службы подготовки
+    items:
+    - name: Аттестация доверенного платформенного модуля
+      items:
+      - name: Java
+        href: quick-enroll-device-tpm-java.md
+      - name: C#
+        href: quick-enroll-device-tpm-csharp.md
+      - name: Node.js
+        href: quick-enroll-device-tpm-node.md
+      - name: Python
+        href: quick-enroll-device-tpm-python.md
+    - name: Аттестация X.509
+      items:
+      - name: Java
+        href: quick-enroll-device-x509-java.md
+      - name: C#
+        href: quick-enroll-device-x509-csharp.md
+      - name: Node.js
+        href: quick-enroll-device-x509-node.md
+      - name: Python
+        href: quick-enroll-device-x509-python.md
+  expanded: true
 - name: Учебники
   items:
-    - name: 1. Настройка облачных ресурсов
-      href: tutorial-set-up-cloud.md
-    - name: 2. Настройка устройства
-      href: tutorial-set-up-device.md
-    - name: 3. Подготовка устройства для центра Интернета вещей
-      items:
-        - name: C
-          href: tutorial-provision-device-to-hub.md
-        - name: 'C#'
-          href: tutorial-net-provision-device-to-hub.md
-    - name: 4. Подготовка устройств для нескольких центров
-      href: tutorial-provision-multiple-hubs.md
-    - name: 5. Подготовка групповых регистраций
-      href: tutorial-group-enrollments.md
+  - name: 1. Настройка облачных ресурсов
+    href: tutorial-set-up-cloud.md
+  - name: 2. Настройка устройства
+    href: tutorial-set-up-device.md
+  - name: 3. Подготовка устройства для центра Интернета вещей
+    items:
+    - name: C
+      href: tutorial-provision-device-to-hub.md
+    - name: C#
+      href: tutorial-net-provision-device-to-hub.md
+  - name: 4. Подготовка устройств для нескольких центров
+    href: tutorial-provision-multiple-hubs.md
+  - name: 5. Подготовка групповых регистраций
+    href: tutorial-group-enrollments.md
 - name: Основные понятия
   items:
-    - name: Автоматическая подготовка
-      href: concepts-auto-provisioning.md
-    - name: Устройства
-      href: concepts-device.md
-    - name: Безопасность
-      href: concepts-security.md
-    - name: Service
-      href: concepts-service.md
-    - name: Аттестация доверенного платформенного модуля
-      href: concepts-tpm-attestation.md
+  - name: Автоматическая подготовка
+    href: concepts-auto-provisioning.md
+  - name: Устройства
+    href: concepts-device.md
+  - name: Безопасность
+    href: concepts-security.md
+  - name: Service
+    href: concepts-service.md
+  - name: Аттестация доверенного платформенного модуля
+    href: concepts-tpm-attestation.md
 - name: Практические руководства
   items:
-    - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
-      href: how-to-connect-mxchip-iot-devkit.md
-    - name: Управление конфигурацией подготовки устройств
-      items:
-        - name: Настройка проверенных сертификатов ЦС
-          href: how-to-verify-certificates.md
-        - name: Управление отзывами
-          href: how-to-unprovision-devices.md
-        - name: Управление отзывами регистраций
-          href: how-to-revoke-device-access-portal.md
-        - name: Управление регистрациями с помощью портала
-          href: how-to-manage-enrollments.md
-        - name: Управление регистрациями с помощью пакетов SDK для служб
-          href: how-to-manage-enrollments-sdks.md
-    - name: Управление службой подготовки устройств
-      items:
-        - name: Настройка службы подготовки устройств с помощью Azure CLI
-          href: how-to-manage-dps-with-cli.md
-        - name: Управление доступом к API службы подготовки
-          href: how-to-control-access.md
-    - name: Подготовка устройств IoT Edge
-      items:
-        - name: Linux
-          href: ../iot-edge/how-to-auto-provision-simulated-device-linux.md
-          maintainContext: true
-        - name: Windows
-          href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
-          maintainContext: true
-    - name: Использование механизмов аттестации и пакетов SDK
-      href: use-hsm-with-sdk.md
-    - name: Использование пакетов SDK для разработки
-      href: how-to-use-sdk-tools.md
+  - name: Подключение MXChip IoT DevKit к Центру Интернета вещей
+    href: how-to-connect-mxchip-iot-devkit.md
+  - name: Управление конфигурацией службы подготовки устройств
+    items:
+    - name: Управление регистрациями с помощью портала
+      href: how-to-manage-enrollments.md
+    - name: Управление регистрациями с помощью пакетов SDK для служб
+      href: how-to-manage-enrollments-sdks.md
+    - name: Настройка проверенных сертификатов ЦС
+      href: how-to-verify-certificates.md
+    - name: Развертывание сертификатов устройств
+      href: how-to-roll-certificates.md
+    - name: Управление отзывами регистраций
+      href: how-to-revoke-device-access-portal.md
+    - name: Управление отзывами
+      href: how-to-unprovision-devices.md
+  - name: Управление службой подготовки устройств
+    items:
+    - name: Настройка службы подготовки устройств с помощью Azure CLI
+      href: how-to-manage-dps-with-cli.md
+    - name: Управление доступом к API службы подготовки
+      href: how-to-control-access.md
+  - name: Подготовка устройств IoT Edge
+    items:
+    - name: Linux
+      href: ../iot-edge/how-to-auto-provision-simulated-device-linux.md
+      maintainContext: true
+    - name: Windows
+      href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
+      maintainContext: true
+  - name: Использование механизмов аттестации и пакетов SDK
+    href: use-hsm-with-sdk.md
+  - name: Использование пакетов SDK для разработки
+    href: how-to-use-sdk-tools.md
 - name: Справочные материалы
   items:
-    - name: REST
-      href: /rest/api/iot-dps
+  - name: REST API
+    href: /rest/api/iot-dps
+  - name: Пакет SDK Azure IoT для C
+    href: https://github.com/Azure/azure-iot-sdk-c
+  - name: Пакет SDK Azure IoT для Python
+    href: https://github.com/Azure/azure-iot-sdk-python
+  - name: Пакет SDK Azure IoT для Node.js
+    href: https://github.com/Azure/azure-iot-sdk-node
+  - name: Пакет SDK Azure IoT для Java
+    href: https://github.com/Azure/azure-iot-sdk-java
+  - name: Пакет SDK Azure IoT для .NET
+    href: https://github.com/Azure/azure-iot-sdk-csharp
 - name: Сопутствующие материалы
   items:
-    - name: Решения
-      items:
-        - name: Акселераторы решений для Интернета вещей
-          href: /azure/iot-suite
-        - name: IoT Central
-          href: 'https://docs.microsoft.com/microsoft-iot-central/'
-    - name: Службы платформы
-      items:
-        - name: Центр Интернета вещей
-          href: /azure/iot-hub
-        - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
-          href: /azure/iot-dps
-        - name: Карты
-          href: /azure/azure-maps
-        - name: Пакеты SDK службы
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
-          href: /azure/time-series-insights
-    - name: Edge
-      items:
-        - name: IoT Edge
-          href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
-          href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
+  - name: Решения
+    items:
+    - name: Акселераторы решений для Интернета вещей
+      href: /azure/iot-suite
+    - name: IoT Central
+      href: https://docs.microsoft.com/microsoft-iot-central/
+  - name: Службы платформы
+    items:
+    - name: Центр Интернета вещей
+      href: /azure/iot-hub
+    - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
+      href: /azure/iot-dps
+    - name: Карты
+      href: /azure/azure-maps
+    - name: Пакеты SDK службы
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks
+    - name: Аналитика временных рядов Azure
+      href: /azure/time-series-insights
+  - name: Edge
+    items:
+    - name: IoT Edge
+      href: /azure/iot-edge
+    - name: Пакеты SDK для устройств IoT
+      href: /azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks
 - name: Ресурсы
   items:
-    - name: 'Примеры Azure IoT для C# (.NET)'
-      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/'
-    - name: Примеры Azure IoT для Node.js
-      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-node/'
-    - name: Примеры Azure IoT для Java
-      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-java/'
-    - name: Примеры Azure IoT для Python
-      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-python/'
-    - name: Примеры Azure IoT для платформы iOS
-      href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
-    - name: Центр Интернета вещей Azure
-      href: 'https://azure.microsoft.com/services/iot-hub/'
-    - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
-      href: 'https://catalog.azureiotsuite.com/'
-    - name: Центр разработчика IoT Azure
-      href: 'https://azure.microsoft.com/develop/iot/'
-    - name: Запросы данных клиентов
-      href: iot-dps-customer-data-requests.md
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=iot'
-    - name: Обозреватель устройств
-      href: 'https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer'
-    - name: Средство iothub-diagnostics
-      href: 'https://github.com/Azure/iothub-diagnostics'
-    - name: Схема обучения
-      href: 'https://azure.microsoft.com/documentation/learning-paths/iot-hub/'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureiothub'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/iot-hub/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?product=iot-hub'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-iot-hub'
-    - name: Технические примеры использования
-      href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=iot-hub'
+  - name: Примеры Azure IoT для C# (.NET)
+    href: https://azure.microsoft.com/resources/samples/azure-iot-samples-csharp/
+  - name: Примеры Azure IoT для Node.js
+    href: https://azure.microsoft.com/resources/samples/azure-iot-samples-node/
+  - name: Примеры Azure IoT для Java
+    href: https://azure.microsoft.com/resources/samples/azure-iot-samples-java/
+  - name: Примеры Azure IoT для Python
+    href: https://azure.microsoft.com/resources/samples/azure-iot-samples-python/
+  - name: Примеры Azure IoT для платформы iOS
+    href: https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/
+  - name: Центр Интернета вещей Azure
+    href: https://azure.microsoft.com/services/iot-hub/
+  - name: Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT
+    href: https://catalog.azureiotsuite.com/
+  - name: Центр разработчика IoT Azure
+    href: https://azure.microsoft.com/develop/iot/
+  - name: Запросы данных клиентов
+    href: iot-dps-customer-data-requests.md
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=iot
+  - name: Обозреватель устройств
+    href: https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer
+  - name: Средство iothub-diagnostics
+    href: https://github.com/Azure/iothub-diagnostics
+  - name: Схема обучения
+    href: https://azure.microsoft.com/documentation/learning-paths/iot-hub/
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureiothub
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/iot-hub/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=iot-hub
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-iot-hub
+  - name: Технические примеры использования
+    href: https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=iot-hub
+ms.openlocfilehash: 0a4369214f26622c2a30136a814b8e788e187144
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41927277"

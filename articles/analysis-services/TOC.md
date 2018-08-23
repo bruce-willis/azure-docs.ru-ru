@@ -34,6 +34,7 @@
 ### [Настройка псевдонима имени сервера](analysis-services-server-alias.md)
 ### [Настройка горизонтального масштабирования](analysis-services-scale-out.md)
 ### [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)
+### [Использование шлюза для источников данных в виртуальной сети Azure](analysis-services-vnet-gateway.md)
 ### [Управление сервером](analysis-services-manage.md)
 ### [Отслеживание метрик службы](analysis-services-monitor.md)
 ### [Настройка журнала ведения диагностики](analysis-services-logging.md)

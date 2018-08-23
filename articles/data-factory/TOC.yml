@@ -1,447 +1,453 @@
-- name: Документация по Фабрике данных
+items:
+- name: Документация по фабрике данных
   href: index.yml
 - name: Перейти к документации по версии 1
   href: v1/data-factory-introduction.md
 - name: Обзор
   items:
-    - name: Основные сведения о Фабрике данных
-      href: introduction.md
-    - name: Сравнение текущей версии с версией 1
-      href: compare-versions.md
+  - name: Основные сведения о фабрике данных
+    href: introduction.md
+  - name: Сравнение текущей версии с версией 1
+    href: compare-versions.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание фабрики данных с помощью пользовательского интерфейса
-      href: quickstart-create-data-factory-portal.md
-    - name: "Создание фабрики данных\_— средство копирования данных"
-      href: quickstart-create-data-factory-copy-data-tool.md
-    - name: Создание фабрики данных с помощью Microsoft Azure PowerShell
-      href: quickstart-create-data-factory-powershell.md
-    - name: Создание фабрики данных с помощью .NET
-      href: quickstart-create-data-factory-dot-net.md
-    - name: Создание фабрики данных с помощью Python
-      href: quickstart-create-data-factory-python.md
-    - name: Создание фабрики данных с помощью REST
-      href: quickstart-create-data-factory-rest-api.md
-    - name: Создание фабрики данных с помощью шаблона Resource Manager
-      href: quickstart-create-data-factory-resource-manager-template.md
+  - name: Создание фабрики данных с помощью пользовательского интерфейса
+    href: quickstart-create-data-factory-portal.md
+  - name: Создание фабрики данных — средство копирования данных
+    href: quickstart-create-data-factory-copy-data-tool.md
+  - name: Создание фабрики данных с помощью Microsoft Azure PowerShell
+    href: quickstart-create-data-factory-powershell.md
+  - name: Создание фабрики данных с помощью .NET
+    href: quickstart-create-data-factory-dot-net.md
+  - name: Создание фабрики данных с помощью Python
+    href: quickstart-create-data-factory-python.md
+  - name: Создание фабрики данных с помощью REST
+    href: quickstart-create-data-factory-rest-api.md
+  - name: Создание фабрики данных с помощью шаблона Resource Manager
+    href: quickstart-create-data-factory-resource-manager-template.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Копирование данных в облаке
+  - name: Копирование данных в облаке
+    items:
+    - name: Средство копирования данных
+      href: tutorial-copy-data-tool.md
+    - name: Пользовательский интерфейс
+      href: tutorial-copy-data-portal.md
+    - name: .NET
+      href: tutorial-copy-data-dot-net.md
+  - name: Копирование локальных данных в облако
+    items:
+    - name: Средство копирования данных
+      href: tutorial-hybrid-copy-data-tool.md
+    - name: Пользовательский интерфейс
+      href: tutorial-hybrid-copy-portal.md
+    - name: Azure PowerShell
+      href: tutorial-hybrid-copy-powershell.md
+  - name: Копирование данных в пакетном режиме
+    items:
+    - name: Пользовательский интерфейс
+      href: tutorial-bulk-copy-portal.md
+    - name: Azure PowerShell
+      href: tutorial-bulk-copy.md
+  - name: Копирование данных с приращением
+    href: tutorial-incremental-copy-overview.md
+    items:
+    - name: 1. Копирование из одной таблицы
       items:
-        - name: Средство копирования данных
-          href: tutorial-copy-data-tool.md
-        - name: Пользовательский интерфейс
-          href: tutorial-copy-data-portal.md
-        - name: .NET
-          href: tutorial-copy-data-dot-net.md
-    - name: Копирование локальных данных в облако
+      - name: Пользовательский интерфейс
+        href: tutorial-incremental-copy-portal.md
+      - name: Azure PowerShell
+        href: tutorial-incremental-copy-powershell.md
+    - name: 2. Копирование из нескольких таблиц
       items:
-        - name: Средство копирования данных
-          href: tutorial-hybrid-copy-data-tool.md
-        - name: Пользовательский интерфейс
-          href: tutorial-hybrid-copy-portal.md
-        - name: Azure PowerShell
-          href: tutorial-hybrid-copy-powershell.md
-    - name: Копирование данных в пакетном режиме
+      - name: Пользовательский интерфейс
+        href: tutorial-incremental-copy-multiple-tables-portal.md
+      - name: Azure PowerShell
+        href: tutorial-incremental-copy-multiple-tables-powershell.md
+    - name: 3. Использование функции отслеживания изменений
       items:
-        - name: Пользовательский интерфейс
-          href: tutorial-bulk-copy-portal.md
-        - name: Azure PowerShell
-          href: tutorial-bulk-copy.md
-    - name: Копирование данных с приращением
-      href: tutorial-incremental-copy-overview.md
+      - name: Пользовательский интерфейс
+        href: tutorial-incremental-copy-change-tracking-feature-portal.md
+      - name: Azure PowerShell
+        href: tutorial-incremental-copy-change-tracking-feature-powershell.md
+  - name: Преобразование данных в облаке
+    items:
+    - name: HDInsight Spark
       items:
-        - name: 1. Копирование из одной таблицы
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-powershell.md
-        - name: 2. Копирование из нескольких таблиц
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-multiple-tables-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-multiple-tables-powershell.md
-        - name: 3. Использование функции отслеживания изменений
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-incremental-copy-change-tracking-feature-portal.md
-            - name: Azure PowerShell
-              href: tutorial-incremental-copy-change-tracking-feature-powershell.md
-    - name: Преобразование данных в облаке
+      - name: Пользовательский интерфейс
+        href: tutorial-transform-data-spark-portal.md
+      - name: Azure PowerShell
+        href: tutorial-transform-data-spark-powershell.md
+    - name: Databricks Notebook
       items:
-        - name: HDInsight Spark
-          items:
-            - name: Пользовательский интерфейс
-              href: tutorial-transform-data-spark-portal.md
-            - name: Azure PowerShell
-              href: tutorial-transform-data-spark-powershell.md
-        - name: Databricks Notebook
-          items:
-            - name: Пользовательский интерфейс
-              href: transform-data-using-databricks-notebook.md
-    - name: Преобразование данных в виртуальной сети
-      items:
-        - name: Пользовательский интерфейс
-          href: tutorial-transform-data-hive-virtual-network-portal.md
-        - name: Azure PowerShell
-          href: tutorial-transform-data-hive-virtual-network.md
-    - name: Добавление ветвления и цепочек действий
-      items:
-        - name: Пользовательский интерфейс
-          href: tutorial-control-flow-portal.md
-        - name: .NET
-          href: tutorial-control-flow.md
-    - name: Запуск пакетов служб SSIS в Azure
-      items:
-        - name: Пользовательский интерфейс
-          href: tutorial-deploy-ssis-packages-azure.md
-        - name: Azure PowerShell
-          href: tutorial-deploy-ssis-packages-azure-powershell.md
+      - name: Пользовательский интерфейс
+        href: transform-data-using-databricks-notebook.md
+  - name: Преобразование данных в виртуальной сети
+    items:
+    - name: Пользовательский интерфейс
+      href: tutorial-transform-data-hive-virtual-network-portal.md
+    - name: Azure PowerShell
+      href: tutorial-transform-data-hive-virtual-network.md
+  - name: Добавление ветвления и цепочек действий
+    items:
+    - name: Пользовательский интерфейс
+      href: tutorial-control-flow-portal.md
+    - name: .NET
+      href: tutorial-control-flow.md
+  - name: Запуск пакетов служб SSIS в Azure
+    items:
+    - name: Пользовательский интерфейс
+      href: tutorial-deploy-ssis-packages-azure.md
+    - name: Azure PowerShell
+      href: tutorial-deploy-ssis-packages-azure-powershell.md
 - name: Примеры
   items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/en-us/resources/samples/?service=data-factory'
-    - name: Azure PowerShell
-      href: samples-powershell.md
+  - name: Примеры кода
+    href: https://azure.microsoft.com/en-us/resources/samples/?service=data-factory
+  - name: Azure PowerShell
+    href: samples-powershell.md
 - name: Основные понятия
   items:
-    - name: Конвейеры и действия
-      href: concepts-pipelines-activities.md
-    - name: Наборы данных и связанные службы
-      href: concepts-datasets-linked-services.md
-    - name: Выполнение конвейеров и триггеры
-      href: concepts-pipeline-execution-triggers.md
-    - name: Среда выполнения интеграции
-      href: concepts-integration-runtime.md
-    - name: Правила именования
-      href: naming-rules.md
+  - name: Конвейеры и действия
+    href: concepts-pipelines-activities.md
+  - name: Наборы данных и связанные службы
+    href: concepts-datasets-linked-services.md
+  - name: Выполнение конвейеров и триггеры
+    href: concepts-pipeline-execution-triggers.md
+  - name: Среда выполнения интеграции
+    href: concepts-integration-runtime.md
+  - name: Правила именования
+    href: naming-rules.md
 - name: Практические руководства
   items:
-    - name: Автор
+  - name: Автор
+    items:
+    - name: Визуальная разработка фабрик данных
+      href: author-visually.md
+    - name: Непрерывная интеграция и развертывание
+      href: continuous-integration-deployment.md
+    - name: Последовательная разработка и отладка
+      href: iterative-development-debugging.md
+  - name: Соединители
+    items:
+    - name: Веб-служба Amazon Marketplace
+      href: connector-amazon-marketplace-web-service.md
+    - name: Amazon Redshift
+      href: connector-amazon-redshift.md
+    - name: Amazon S3
+      href: connector-amazon-simple-storage-service.md
+    - name: Хранилище больших двоичных объектов Azure
+      href: connector-azure-blob-storage.md
+    - name: Azure Cosmos DB
+      href: connector-azure-cosmos-db.md
+    - name: Хранилище Azure Data Lake Gen1
+      href: connector-azure-data-lake-store.md
+    - name: Хранилище Azure Data Lake Gen2
+      href: connector-azure-data-lake-storage.md
+    - name: База данных Azure для MySQL
+      href: connector-azure-database-for-mysql.md
+    - name: База данных Azure для PostgreSQL
+      href: connector-azure-database-for-postgresql.md
+    - name: Хранилище файлов Azure
+      href: connector-azure-file-storage.md
+    - name: Поиск Azure
+      href: connector-azure-search.md
+    - name: Базы данных SQL Azure
+      href: connector-azure-sql-database.md
+    - name: Хранилище данных SQL Azure
+      href: connector-azure-sql-data-warehouse.md
+    - name: Хранилище таблиц Azure
+      href: connector-azure-table-storage.md
+    - name: Cassandra
+      href: connector-cassandra.md
+    - name: Common Data Service для приложений
+      href: connector-dynamics-crm-office-365.md
+    - name: Concur
+      href: connector-concur.md
+    - name: Couchbase
+      href: connector-couchbase.md
+    - name: DB2
+      href: connector-db2.md
+    - name: Drill
+      href: connector-drill.md
+    - name: Dynamics 365
+      href: connector-dynamics-crm-office-365.md
+    - name: Dynamics CRM
+      href: connector-dynamics-crm-office-365.md
+    - name: Файловая система
+      href: connector-file-system.md
+    - name: FTP
+      href: connector-ftp.md
+    - name: GE Historian
+      href: connector-odbc.md#ge-historian-source
+    - name: Google BigQuery
+      href: connector-google-bigquery.md
+    - name: Greenplum
+      href: connector-greenplum.md
+    - name: hbase
+      href: connector-hbase.md
+    - name: HDFS
+      href: connector-hdfs.md
+    - name: Hive
+      href: connector-hive.md
+    - name: HTTP
+      href: connector-http.md
+    - name: HubSpot
+      href: connector-hubspot.md
+    - name: Impala
+      href: connector-impala.md
+    - name: Informix
+      href: connector-odbc.md#ibm-informix-source
+    - name: Jira
+      href: connector-jira.md
+    - name: Magento
+      href: connector-magento.md
+    - name: MariaDB
+      href: connector-mariadb.md
+    - name: Marketo
+      href: connector-marketo.md
+    - name: Microsoft Access
+      href: connector-odbc.md#microsoft-access-source
+    - name: MongoDB
+      href: connector-mongodb.md
+    - name: MySQL
+      href: connector-mysql.md
+    - name: Netezza
+      href: connector-netezza.md
+    - name: OData
+      href: connector-odata.md
+    - name: ODBC
+      href: connector-odbc.md
+    - name: Oracle
+      href: connector-oracle.md
+    - name: Oracle Eloqua
+      href: connector-oracle-eloqua.md
+    - name: Oracle Responsys
+      href: connector-oracle-responsys.md
+    - name: Paypal
+      href: connector-paypal.md
+    - name: Phoenix
+      href: connector-phoenix.md
+    - name: PostgreSQL
+      href: connector-postgresql.md
+    - name: Presto
+      href: connector-presto.md
+    - name: QuickBooks
+      href: connector-quickbooks.md
+    - name: Salesforce
+      href: connector-salesforce.md
+    - name: Облачная служба Salesforce
+      href: connector-salesforce.md
+    - name: Salesforce Marketing Cloud
+      href: connector-salesforce-marketing-cloud.md
+    - name: SAP Business Warehouse
+      href: connector-sap-business-warehouse.md
+    - name: SAP Cloud for Customer
+      href: connector-sap-cloud-for-customer.md
+    - name: SAP ECC
+      href: connector-sap-ecc.md
+    - name: SAP HANA
+      href: connector-sap-hana.md
+    - name: ServiceNow
+      href: connector-servicenow.md
+    - name: SFTP
+      href: connector-sftp.md
+    - name: Shopify
+      href: connector-shopify.md
+    - name: Spark
+      href: connector-spark.md
+    - name: SQL Server;
+      href: connector-sql-server.md
+    - name: Маркер
+      href: connector-square.md
+    - name: Sybase
+      href: connector-sybase.md
+    - name: Teradata
+      href: connector-teradata.md
+    - name: Vertica
+      href: connector-vertica.md
+    - name: Веб-таблица
+      href: connector-web-table.md
+    - name: Xero
+      href: connector-xero.md
+    - name: Zoho
+      href: connector-zoho.md
+  - name: Копирование данных
+    items:
+    - name: Копирование данных с помощью действия копирования
+      href: copy-activity-overview.md
+    - name: Средство копирования данных
+      href: copy-data-tool.md
+    - name: Загрузить хранилище Data Lake Gen2
+      href: load-azure-data-lake-storage-gen2.md
       items:
-        - name: Визуальная разработка фабрик данных
-          href: author-visually.md
-        - name: Непрерывная интеграция и развертывание
-          href: continuous-integration-deployment.md
-        - name: Последовательная разработка и отладка
-          href: iterative-development-debugging.md
-    - name: Соединители
-      items:
-        - name: Веб-служба Amazon Marketplace
-          href: connector-amazon-marketplace-web-service.md
-        - name: Amazon Redshift
-          href: connector-amazon-redshift.md
-        - name: Amazon S3
-          href: connector-amazon-simple-storage-service.md
-        - name: Хранилище больших двоичных объектов Azure
-          href: connector-azure-blob-storage.md
-        - name: Azure Cosmos DB
-          href: connector-azure-cosmos-db.md
-        - name: Хранилище Azure Data Lake Gen1
-          href: connector-azure-data-lake-store.md
-        - name: Хранилище Azure Data Lake Gen2
-          href: connector-azure-data-lake-storage.md
-        - name: База данных Azure для MySQL
-          href: connector-azure-database-for-mysql.md
-        - name: База данных Azure для PostgreSQL
-          href: connector-azure-database-for-postgresql.md
-        - name: Хранилище файлов Azure
-          href: connector-azure-file-storage.md
-        - name: Поиск Azure
-          href: connector-azure-search.md
-        - name: Базы данных SQL Azure
-          href: connector-azure-sql-database.md
-        - name: "Хранилище данных SQL\_Azure"
-          href: connector-azure-sql-data-warehouse.md
-        - name: Хранилище таблиц Azure
-          href: connector-azure-table-storage.md
-        - name: Cassandra
-          href: connector-cassandra.md
-        - name: Common Data Service для приложений
-          href: connector-dynamics-crm-office-365.md
-        - name: Concur
-          href: connector-concur.md
-        - name: Couchbase
-          href: connector-couchbase.md
-        - name: DB2
-          href: connector-db2.md
-        - name: Drill
-          href: connector-drill.md
-        - name: "Dynamics\_365"
-          href: connector-dynamics-crm-office-365.md
-        - name: Dynamics CRM
-          href: connector-dynamics-crm-office-365.md
-        - name: Файловая система
-          href: connector-file-system.md
-        - name: FTP
-          href: connector-ftp.md
-        - name: GE Historian
-          href: 'connector-odbc.md#ge-historian-source'
-        - name: Google BigQuery
-          href: connector-google-bigquery.md
-        - name: Greenplum
-          href: connector-greenplum.md
-        - name: hbase
-          href: connector-hbase.md
-        - name: HDFS
-          href: connector-hdfs.md
-        - name: Hive
-          href: connector-hive.md
-        - name: HTTP
-          href: connector-http.md
-        - name: HubSpot
-          href: connector-hubspot.md
-        - name: Impala
-          href: connector-impala.md
-        - name: Informix
-          href: 'connector-odbc.md#ibm-informix-source'
-        - name: Jira
-          href: connector-jira.md
-        - name: Magento
-          href: connector-magento.md
-        - name: MariaDB
-          href: connector-mariadb.md
-        - name: Marketo
-          href: connector-marketo.md
-        - name: Microsoft Access
-          href: 'connector-odbc.md#microsoft-access-source'
-        - name: MongoDB
-          href: connector-mongodb.md
-        - name: MySQL
-          href: connector-mysql.md
-        - name: Netezza
-          href: connector-netezza.md
-        - name: OData
-          href: connector-odata.md
-        - name: ODBC
-          href: connector-odbc.md
-        - name: Oracle
-          href: connector-oracle.md
-        - name: Oracle Eloqua
-          href: connector-oracle-eloqua.md
-        - name: Oracle Responsys
-          href: connector-oracle-responsys.md
-        - name: Paypal
-          href: connector-paypal.md
-        - name: Phoenix
-          href: connector-phoenix.md
-        - name: PostgreSQL
-          href: connector-postgresql.md
-        - name: Presto
-          href: connector-presto.md
-        - name: QuickBooks
-          href: connector-quickbooks.md
-        - name: Salesforce
-          href: connector-salesforce.md
-        - name: Облачная служба Salesforce
-          href: connector-salesforce.md
-        - name: Salesforce Marketing Cloud
-          href: connector-salesforce-marketing-cloud.md
-        - name: SAP Business Warehouse
-          href: connector-sap-business-warehouse.md
-        - name: SAP Cloud for Customer
-          href: connector-sap-cloud-for-customer.md
-        - name: SAP ECC
-          href: connector-sap-ecc.md
-        - name: SAP HANA
-          href: connector-sap-hana.md
-        - name: ServiceNow
-          href: connector-servicenow.md
-        - name: SFTP
-          href: connector-sftp.md
-        - name: Shopify
-          href: connector-shopify.md
-        - name: Spark
-          href: connector-spark.md
-        - name: SQL Server;
-          href: connector-sql-server.md
-        - name: Маркер
-          href: connector-square.md
-        - name: Sybase
-          href: connector-sybase.md
-        - name: Teradata
-          href: connector-teradata.md
-        - name: Vertica
-          href: connector-vertica.md
-        - name: Веб-таблица
-          href: connector-web-table.md
-        - name: Xero
-          href: connector-xero.md
-        - name: Zoho
-          href: connector-zoho.md
-    - name: Копирование данных
-      items:
-        - name: Копирование данных с помощью действия копирования
-          href: copy-activity-overview.md
-        - name: Средство копирования данных
-          href: copy-data-tool.md
-          items: null
-        - name: Загрузить хранилище Data Lake Gen2
-          href: load-azure-data-lake-storage-gen2.md
-          items:
-            - name: Копирование из хранилища Data Lake Gen1
-              href: load-azure-data-lake-storage-gen2-from-gen1.md
-        - name: Загрузка хранилища данных SQL Azure
-          href: load-azure-sql-data-warehouse.md
-        - name: Загрузить хранилище Data Lake Gen1
-          href: load-azure-data-lake-store.md
-        - name: Чтение или запись секционированных данных
-          href: how-to-read-write-partitioned-data.md
-        - name: Поддержка сжатия и форматирования
-          href: supported-file-formats-and-compression-codecs.md
-        - name: Сопоставление типа и схемы
-          href: copy-activity-schema-and-type-mapping.md
-        - name: Отказоустойчивость
-          href: copy-activity-fault-tolerance.md
-        - name: Производительность и настройка
-          href: copy-activity-performance.md
-    - name: Преобразование данных
-      href: transform-data.md
-      items:
-        - name: Действие Hive HDInsight
-          href: transform-data-using-hadoop-hive.md
-        - name: Действие Pig HDInsight
-          href: transform-data-using-hadoop-pig.md
-        - name: Действие MapReduce HDInsight
-          href: transform-data-using-hadoop-map-reduce.md
-        - name: Действие потоковой передачи HDInsight
-          href: transform-data-using-hadoop-streaming.md
-        - name: Действие HDInsight Spark
-          href: transform-data-using-spark.md
-        - name: Действие выполнения пакета машинного обучения
-          href: transform-data-using-machine-learning.md
-        - name: Действия ресурса обновления машинного обучения
-          href: update-machine-learning-models.md
-        - name: Действие хранимой процедуры
-          href: transform-data-using-stored-procedure.md
-        - name: Действие U-SQL Data Lake
-          href: transform-data-using-data-lake-analytics.md
-        - name: Действие Databricks Notebook
-          href: transform-data-databricks-notebook.md
-        - name: Действие JAR в Databricks
-          href: transform-data-databricks-jar.md
-        - name: Действие Python в Databricks
-          href: transform-data-databricks-python.md
-        - name: Настраиваемое действие
-          href: transform-data-using-dotnet-custom-activity.md
-        - name: Связанные службы вычислений
-          href: compute-linked-services.md
-    - name: Поток управления
-      items:
-        - name: Действие выполнения работы
-          href: control-flow-execute-pipeline-activity.md
-        - name: Активность фильтра
-          href: control-flow-filter-activity.md
-        - name: Действие For Each
-          href: control-flow-for-each-activity.md
-        - name: Действие получения метаданных
-          href: control-flow-get-metadata-activity.md
-        - name: Действие условия If
-          href: control-flow-if-condition-activity.md
-        - name: Действие поиска
-          href: control-flow-lookup-activity.md
-        - name: Действие Until
-          href: control-flow-until-activity.md
-        - name: Действие Wait
-          href: control-flow-wait-activity.md
-        - name: Веб-действие
-          href: control-flow-web-activity.md
-        - name: Язык выражений
-          href: control-flow-expression-language-functions.md
-        - name: Системные переменные
-          href: control-flow-system-variables.md
-    - name: Безопасность
-      items:
-        - name: Вопросы безопасности при перемещении данных
-          href: data-movement-security-considerations.md
-        - name: Хранение учетных данных в Azure Key Vault
-          href: store-credentials-in-key-vault.md
-        - name: Шифрование учетных данных для локальной среды выполнения интеграции
-          href: encrypt-credentials-self-hosted-integration-runtime.md
-        - name: Удостоверение службы фабрики данных
-          href: data-factory-service-identity.md
-    - name: Отслеживание и управление
-      items:
-        - name: Визуальный мониторинг
-          href: monitor-visually.md
-        - name: Мониторинг с помощью Azure Monitor
-          href: monitor-using-azure-monitor.md
-        - name: Мониторинг с помощью OMS
-          href: data-factory-monitor-oms.md
-        - name: Мониторинг с помощью пакетов SDK
-          href: monitor-programmatically.md
-        - name: Мониторинг среды выполнения интеграции
-          href: monitor-integration-runtime.md
-        - name: Мониторинг среды выполнения интеграции Azure Integration Services
-          href: 'monitor-integration-runtime.md#azure-ssis-integration-runtime'
-        - name: Повторная настройка среды выполнения интеграции Azure-SSIS
-          href: manage-azure-ssis-integration-runtime.md
-    - name: Создание среды выполнения интеграции
-      items:
-        - name: Среда выполнения интеграции Azure
-          href: create-azure-integration-runtime.md
-        - name: Среда выполнения интеграции с самостоятельным размещением
-          href: create-self-hosted-integration-runtime.md
-        - name: Среда выполнения интеграции Azure SSIS
-          href: create-azure-ssis-integration-runtime.md
-    - name: Запуск пакетов служб SSIS в Azure
-      items:
-        - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
-          href: how-to-invoke-ssis-package-ssis-activity.md
-        - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры
-          href: how-to-invoke-ssis-package-stored-procedure-activity.md
-        - name: Планирование среды выполнения интеграции Azure-SSIS
-          href: how-to-schedule-azure-ssis-integration-runtime.md
-        - name: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
-          href: join-azure-ssis-integration-runtime-virtual-network.md
-        - name: Включение аутентификации Azure AD для среды выполнения интеграции Azure Integration Services
-          href: enable-aad-authentication-azure-ssis-ir.md
-        - name: Настройка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
-          href: how-to-configure-azure-ssis-ir-enterprise-edition.md
-        - name: Настройка среды выполнения интеграции Azure Integration Services
-          href: how-to-configure-azure-ssis-ir-custom-setup.md
-        - name: Установка лицензированных компонентов для среды выполнения интеграции Azure Integration Services
-          href: how-to-develop-azure-ssis-ir-licensed-components.md
-        - name: Настройка высокой производительности среды выполнения интеграции Azure Integration Services
-          href: configure-azure-ssis-integration-runtime-performance.md
-        - name: Настройка аварийного восстановления для среды выполнения интеграции Azure Integration Services
-          href: configure-bcdr-azure-ssis-integration-runtime.md
-    - name: Создание триггеров
-      items:
-        - name: Создание триггера расписания
-          href: how-to-create-schedule-trigger.md
-        - name: Создание триггера "переворачивающегося" окна
-          href: how-to-create-tumbling-window-trigger.md
-        - name: Создание триггера на основе событий
-          href: how-to-create-event-trigger.md
+      - name: Копирование из хранилища Data Lake Gen1
+        href: load-azure-data-lake-storage-gen2-from-gen1.md
+    - name: Загрузка хранилища данных SQL Azure
+      href: load-azure-sql-data-warehouse.md
+    - name: Загрузить хранилище Data Lake Gen1
+      href: load-azure-data-lake-store.md
+    - name: Чтение или запись секционированных данных
+      href: how-to-read-write-partitioned-data.md
+    - name: Поддержка сжатия и форматирования
+      href: supported-file-formats-and-compression-codecs.md
+    - name: Сопоставление типа и схемы
+      href: copy-activity-schema-and-type-mapping.md
+    - name: Отказоустойчивость
+      href: copy-activity-fault-tolerance.md
+    - name: Производительность и настройка
+      href: copy-activity-performance.md
+  - name: Преобразование данных
+    href: transform-data.md
+    items:
+    - name: Действие Hive HDInsight
+      href: transform-data-using-hadoop-hive.md
+    - name: Действие Pig HDInsight
+      href: transform-data-using-hadoop-pig.md
+    - name: Действие MapReduce HDInsight
+      href: transform-data-using-hadoop-map-reduce.md
+    - name: Действие потоковой передачи HDInsight
+      href: transform-data-using-hadoop-streaming.md
+    - name: Действие HDInsight Spark
+      href: transform-data-using-spark.md
+    - name: Действие выполнения пакета машинного обучения
+      href: transform-data-using-machine-learning.md
+    - name: Действия ресурса обновления машинного обучения
+      href: update-machine-learning-models.md
+    - name: Действие хранимой процедуры
+      href: transform-data-using-stored-procedure.md
+    - name: Действие U-SQL Data Lake
+      href: transform-data-using-data-lake-analytics.md
+    - name: Действие Databricks Notebook
+      href: transform-data-databricks-notebook.md
+    - name: Действие JAR в Databricks
+      href: transform-data-databricks-jar.md
+    - name: Действие Python в Databricks
+      href: transform-data-databricks-python.md
+    - name: Настраиваемое действие
+      href: transform-data-using-dotnet-custom-activity.md
+    - name: Связанные службы вычислений
+      href: compute-linked-services.md
+  - name: Поток управления
+    items:
+    - name: Действие выполнения работы
+      href: control-flow-execute-pipeline-activity.md
+    - name: Активность фильтра
+      href: control-flow-filter-activity.md
+    - name: Действие For Each
+      href: control-flow-for-each-activity.md
+    - name: Действие получения метаданных
+      href: control-flow-get-metadata-activity.md
+    - name: Действие условия If
+      href: control-flow-if-condition-activity.md
+    - name: Действие поиска
+      href: control-flow-lookup-activity.md
+    - name: Действие Until
+      href: control-flow-until-activity.md
+    - name: Действие Wait
+      href: control-flow-wait-activity.md
+    - name: Веб-действие
+      href: control-flow-web-activity.md
+    - name: Язык выражений
+      href: control-flow-expression-language-functions.md
+    - name: Системные переменные
+      href: control-flow-system-variables.md
+  - name: Безопасность
+    items:
+    - name: Вопросы безопасности при перемещении данных
+      href: data-movement-security-considerations.md
+    - name: Хранение учетных данных в Azure Key Vault
+      href: store-credentials-in-key-vault.md
+    - name: Шифрование учетных данных для локальной среды выполнения интеграции
+      href: encrypt-credentials-self-hosted-integration-runtime.md
+    - name: Удостоверение службы фабрики данных
+      href: data-factory-service-identity.md
+  - name: Отслеживание и управление
+    items:
+    - name: Визуальный мониторинг
+      href: monitor-visually.md
+    - name: Мониторинг с помощью Azure Monitor
+      href: monitor-using-azure-monitor.md
+    - name: Мониторинг с помощью пакетов SDK
+      href: monitor-programmatically.md
+    - name: Мониторинг среды выполнения интеграции
+      href: monitor-integration-runtime.md
+    - name: Мониторинг среды выполнения интеграции Azure Integration Services
+      href: monitor-integration-runtime.md#azure-ssis-integration-runtime
+    - name: Повторная настройка среды выполнения интеграции Azure-SSIS
+      href: manage-azure-ssis-integration-runtime.md
+  - name: Создание среды выполнения интеграции
+    items:
+    - name: Среда выполнения интеграции Azure
+      href: create-azure-integration-runtime.md
+    - name: Среда выполнения интеграции с самостоятельным размещением
+      href: create-self-hosted-integration-runtime.md
+    - name: Среда выполнения интеграции Azure SSIS
+      href: create-azure-ssis-integration-runtime.md
+  - name: Запуск пакетов служб SSIS в Azure
+    items:
+    - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
+      href: how-to-invoke-ssis-package-ssis-activity.md
+    - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры
+      href: how-to-invoke-ssis-package-stored-procedure-activity.md
+    - name: Планирование среды выполнения интеграции Azure-SSIS
+      href: how-to-schedule-azure-ssis-integration-runtime.md
+    - name: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
+      href: join-azure-ssis-integration-runtime-virtual-network.md
+    - name: Включение аутентификации Azure AD для среды выполнения интеграции Azure Integration Services
+      href: enable-aad-authentication-azure-ssis-ir.md
+    - name: Настройка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
+      href: how-to-configure-azure-ssis-ir-enterprise-edition.md
+    - name: Настройка среды выполнения интеграции Azure Integration Services
+      href: how-to-configure-azure-ssis-ir-custom-setup.md
+    - name: Установка лицензированных компонентов для среды выполнения интеграции Azure Integration Services
+      href: how-to-develop-azure-ssis-ir-licensed-components.md
+    - name: Настройка высокой производительности среды выполнения интеграции Azure Integration Services
+      href: configure-azure-ssis-integration-runtime-performance.md
+    - name: Настройка аварийного восстановления для среды выполнения интеграции Azure Integration Services
+      href: configure-bcdr-azure-ssis-integration-runtime.md
+    - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
+      href: how-to-clean-up-ssisdb-logs-with-elastic-jobs.md
+  - name: Создание триггеров
+    items:
+    - name: Создание триггера расписания
+      href: how-to-create-schedule-trigger.md
+    - name: Создание триггера "переворачивающегося" окна
+      href: how-to-create-tumbling-window-trigger.md
+    - name: Создание триггера на основе событий
+      href: how-to-create-event-trigger.md
 - name: Справочные материалы
   items:
-    - name: .NET
-      href: /dotnet/api/microsoft.azure.management.datafactory
-    - name: PowerShell
-      href: /powershell/module/azurerm.datafactoryv2/
-    - name: REST API
-      href: /rest/api/datafactory
-    - name: Python
-      href: /python/api/overview/azure/datafactory?view=azure-python
+  - name: .NET
+    href: /dotnet/api/microsoft.azure.management.datafactory
+  - name: PowerShell
+    href: /powershell/module/azurerm.datafactoryv2/
+  - name: REST API
+    href: /rest/api/datafactory
+  - name: Python
+    href: /python/api/overview/azure/datafactory?view=azure-python
 - name: Ресурсы
   items:
-    - name: "Задать вопрос\_— форум MSDN"
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc'
-    - name: "Задать вопрос\_— Stack Overflow"
-      href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
-    - name: Запрос функции
-      href: 'https://feedback.azure.com/forums/270578-azure-data-factory'
-    - name: Часто задаваемые вопросы
-      href: frequently-asked-questions.md
-    - name: Стратегия
-      href: 'https://azure.microsoft.com/en-us/roadmap/?tag=data-factory'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/data-factory/'
-    - name: Доступность по регионам
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Варианты поддержки
-      href: 'https://azure.microsoft.com/support/options/'
+  - name: Задать вопрос — форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataFactory&filter=alltypes&sort=lastpostdesc
+  - name: Задать вопрос — Stack Overflow
+    href: https://stackoverflow.com/questions/tagged/azure-data-factory
+  - name: Запрос функции
+    href: https://feedback.azure.com/forums/270578-azure-data-factory
+  - name: Часто задаваемые вопросы
+    href: frequently-asked-questions.md
+  - name: Стратегия
+    href: https://azure.microsoft.com/en-us/roadmap/?tag=data-factory
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/data-factory/
+  - name: Доступность по регионам
+    href: https://azure.microsoft.com/global-infrastructure/services/
+  - name: Варианты поддержки
+    href: https://azure.microsoft.com/support/options/
+ms.openlocfilehash: 78285fe91ab5a05085df051931b06f3deceff7ec
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616655"

@@ -1,277 +1,286 @@
+items:
 - name: Документация по функциям
   href: index.yml
 - name: Обзор
   items:
-    - name: О функциях
-      href: functions-overview.md
-    - name: Сравнение с бессерверными службами
-      href: functions-compare-logic-apps-ms-flow-webjobs.md
+  - name: О функциях
+    href: functions-overview.md
+  - name: Сравнение с бессерверными службами
+    href: functions-compare-logic-apps-ms-flow-webjobs.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: 'Создание функции: портал'
-      href: functions-create-first-azure-function.md
-    - name: Создание функций (Visual Studio)
-      href: functions-create-your-first-function-visual-studio.md
-    - name: 'Создание функции: Java/Maven'
-      href: functions-create-first-java-maven.md
-    - name: 'Создание функции: Azure CLI'
-      href: functions-create-first-azure-function-azure-cli.md
-    - name: 'Создание функции: Linux'
-      href: functions-create-first-azure-function-azure-cli-linux.md
-    - name: триггеры;
-      items:
-        - name: Хранилище BLOB-объектов
-          href: functions-create-storage-blob-triggered-function.md
-        - name: Azure Cosmos DB
-          href: functions-create-cosmos-db-triggered-function.md
-        - name: Таймер
-          href: functions-create-scheduled-function.md
-        - name: Универсальный веб-перехватчик
-          href: functions-create-generic-webhook-triggered-function.md
-        - name: Объект webhook GitHub
-          href: functions-create-github-webhook-triggered-function.md
-        - name: Хранилище очередей
-          href: functions-create-storage-queue-triggered-function.md
-    - name: Интеграция
-      items:
-        - name: Хранилище
-          href: functions-integrate-storage-queue-output-binding.md
-        - name: Azure Cosmos DB
-          href: functions-integrate-store-unstructured-data-cosmosdb.md
+  - name: 'Создание функции: портал'
+    href: functions-create-first-azure-function.md
+  - name: Создание функций (Visual Studio)
+    href: functions-create-your-first-function-visual-studio.md
+  - name: 'Создание функции: Java/Maven'
+    href: functions-create-first-java-maven.md
+  - name: 'Создание функции: Azure CLI'
+    href: functions-create-first-azure-function-azure-cli.md
+  - name: 'Создание функции: Linux'
+    href: functions-create-first-azure-function-azure-cli-linux.md
+  - name: триггеры;
+    items:
+    - name: Хранилище BLOB-объектов
+      href: functions-create-storage-blob-triggered-function.md
+    - name: Azure Cosmos DB
+      href: functions-create-cosmos-db-triggered-function.md
+    - name: Таймер
+      href: functions-create-scheduled-function.md
+    - name: Универсальный веб-перехватчик
+      href: functions-create-generic-webhook-triggered-function.md
+    - name: Объект webhook GitHub
+      href: functions-create-github-webhook-triggered-function.md
+    - name: Хранилище очередей
+      href: functions-create-storage-queue-triggered-function.md
+  - name: Интеграция
+    items:
+    - name: служба хранилища.
+      href: functions-integrate-storage-queue-output-binding.md
+    - name: Azure Cosmos DB
+      href: functions-integrate-store-unstructured-data-cosmosdb.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Использование функций Azure с Logic Apps
-      href: functions-twitter-email.md
-    - name: Создание бессерверного API
-      href: functions-create-serverless-api.md
-    - name: Создание определения OpenAPI
-      href: functions-openapi-definition.md
-    - name: Изменение размера изображения с помощью службы "Сетка событий"
-      href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
-    - name: Создание бессерверного веб-приложения
-      href: 'https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database'
-    - name: Функции в Linux
-      items:
-        - name: Пользовательский образ
-          href: functions-create-function-linux-custom-image.md
-        - name: Устройства IoT Edge
-          href: ../iot-edge/tutorial-deploy-function.md?toc=%2fazure%2fazure-functions%2ftoc.json
+  - name: Использование функций Azure с Logic Apps
+    href: functions-twitter-email.md
+  - name: Создание бессерверного API
+    href: functions-create-serverless-api.md
+  - name: Создание определения OpenAPI
+    href: functions-openapi-definition.md
+  - name: Изменение размера изображения с помощью службы "Сетка событий"
+    href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
+  - name: Создание бессерверного веб-приложения
+    href: https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database
+  - name: Функции в Linux
+    items:
+    - name: Пользовательский образ
+      href: functions-create-function-linux-custom-image.md
+    - name: Устройства IoT Edge
+      href: ../iot-edge/tutorial-deploy-function.md?toc=%2fazure%2fazure-functions%2ftoc.json
 - name: Примеры
   items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/en-us/resources/samples/?service=functions'
-    - name: Инфраструктура CLI Azure
-      href: functions-cli-samples.md
+  - name: Примеры кода
+    href: https://azure.microsoft.com/en-us/resources/samples/?service=functions
+  - name: Инфраструктура CLI Azure
+    href: functions-cli-samples.md
+  - name: Рекомендации по работе с Функциями Azure
+    href: https://docs.microsoft.com/sandbox/functions-recipes/
 - name: Основные понятия
   items:
-    - name: Сравнение 1.x и 2.x
-      href: functions-versions.md
-    - name: Масштабирование и размещение
-      href: functions-scale.md
-    - name: Триггеры и привязки
-      href: functions-triggers-bindings.md
-    - name: Языки
-      items:
-        - name: Поддерживаемые языки
-          href: supported-languages.md
-        - name: 'C# (библиотека классов)'
-          href: functions-dotnet-class-library.md
-        - name: 'Скрипт C# (.csx)'
-          href: functions-reference-csharp.md
-        - name: 'F#'
-          href: functions-reference-fsharp.md
-        - name: JavaScript
-          href: functions-reference-node.md
-        - name: Java
-          href: functions-reference-java.md
+  - name: Сравнение 1.x и 2.x
+    href: functions-versions.md
+  - name: Масштабирование и размещение
+    href: functions-scale.md
+  - name: Триггеры и привязки
+    href: functions-triggers-bindings.md
+  - name: Языки
+    items:
+    - name: Поддерживаемые языки
+      href: supported-languages.md
+    - name: C# (библиотека классов)
+      href: functions-dotnet-class-library.md
+    - name: Скрипт C# (.csx)
+      href: functions-reference-csharp.md
+    - name: F#
+      href: functions-reference-fsharp.md
+    - name: JavaScript
+      href: functions-reference-node.md
+    - name: Java
+      href: functions-reference-java.md
+  - name: Диагностика
+    href: ../app-service/app-service-diagnostics.md
+  - name: Рекомендации по производительности
+    href: functions-best-practices.md
+  - name: Прокси функций
+    href: functions-proxies.md
+  - name: IP-адреса;
+    href: ip-addresses.md
+  - name: Функции в локальной среде
+    href: functions-runtime-overview.md
+  - name: Устойчивые функции
+    items:
+    - name: Обзор
+      href: durable-functions-overview.md
+    - name: Типы функций и возможности
+      href: durable-functions-types-features-overview.md
+    - name: Привязки
+      href: durable-functions-bindings.md
+    - name: Контрольные точки и воспроизведение
+      href: durable-functions-checkpointing-and-replay.md
+    - name: Настраиваемое значение состояния оркестрации
+      href: durable-functions-custom-orchestration-status.md
+    - name: Управление экземплярами
+      href: durable-functions-instance-management.md
+    - name: API HTTP
+      href: durable-functions-http-api.md
+    - name: Обработка ошибок
+      href: durable-functions-error-handling.md
     - name: Диагностика
-      href: ../app-service/app-service-diagnostics.md
-    - name: Рекомендации по производительности
-      href: functions-best-practices.md
-    - name: Прокси функций
-      href: functions-proxies.md
-    - name: IP-адреса;
-      href: ip-addresses.md
-    - name: Функции в локальной среде
-      href: functions-runtime-overview.md
-    - name: Устойчивые функции
-      items:
-        - name: Обзор
-          href: durable-functions-overview.md
-        - name: Типы функций и возможности
-          href: durable-functions-types-features-overview.md
-        - name: Привязки
-          href: durable-functions-bindings.md
-        - name: Контрольные точки и воспроизведение
-          href: durable-functions-checkpointing-and-replay.md
-        - name: Настраиваемое значение состояния оркестрации
-          href: durable-functions-custom-orchestration-status.md
-        - name: Управление экземплярами
-          href: durable-functions-instance-management.md
-        - name: API HTTP
-          href: durable-functions-http-api.md
-        - name: Обработка ошибок
-          href: durable-functions-error-handling.md
-        - name: Диагностика
-          href: durable-functions-diagnostics.md
-        - name: Таймеры
-          href: durable-functions-timers.md
-        - name: Внешние события
-          href: durable-functions-external-events.md
-        - name: Нескончаемые оркестрации
-          href: durable-functions-eternal-orchestrations.md
-        - name: Одноэкземплярные оркестрации
-          href: durable-functions-singletons.md
-        - name: Вложенные оркестрации
-          href: durable-functions-sub-orchestrations.md
-        - name: Центры задач
-          href: durable-functions-task-hubs.md
-        - name: Управление версиями
-          href: durable-functions-versioning.md
-        - name: Производительность и масштаб
-          href: durable-functions-perf-and-scale.md
-        - name: Аварийное восстановление и географическое распределение
-          href: durable-functions-disaster-recovery-geo-distribution.md
+      href: durable-functions-diagnostics.md
+    - name: Таймеры
+      href: durable-functions-timers.md
+    - name: Внешние события
+      href: durable-functions-external-events.md
+    - name: Нескончаемые оркестрации
+      href: durable-functions-eternal-orchestrations.md
+    - name: Одноэкземплярные оркестрации
+      href: durable-functions-singletons.md
+    - name: Вложенные оркестрации
+      href: durable-functions-sub-orchestrations.md
+    - name: Центры задач
+      href: durable-functions-task-hubs.md
+    - name: Управление версиями
+      href: durable-functions-versioning.md
+    - name: Производительность и масштаб
+      href: durable-functions-perf-and-scale.md
+    - name: Аварийное восстановление и географическое распределение
+      href: durable-functions-disaster-recovery-geo-distribution.md
 - name: Практические руководства
   items:
-    - name: Разработка
-      items:
-        - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
-          href: functions-reference.md
-        - name: Функции тестирования
-          href: functions-test-a-function.md
-        - name: Локальная разработка и отладка
-          href: functions-develop-local.md
-        - name: Разработка в Visual Studio
-          href: functions-develop-vs.md
-        - name: Разработка основных инструментов
-          href: functions-run-local.md
-        - name: Разработка в IntelliJ IDEA
-          href: functions-create-maven-intellij.md
-        - name: Разработка в Eclipse
-          href: functions-create-maven-eclipse.md
-        - name: Управление подключениями
-          href: manage-connections.md
-        - name: Обработка ошибок
-          href: functions-bindings-error-pages.md
-    - name: Развертывание
-      items:
-        - name: Непрерывное развертывание
-          href: functions-continuous-deployment.md
-        - name: Развертывание из ZIP-файла при помощи push-запросов
-          href: deployment-zip-push.md
-        - name: Автоматическое развертывание ресурсов
-          href: functions-infrastructure-as-code.md
-        - name: Функции в локальной среде
-          href: functions-runtime-install.md
-    - name: Настройка
-      items:
-        - name: Управление приложением-функцией
-          href: functions-how-to-use-azure-function-app-settings.md
-        - name: Установка версии среды выполнения
-          href: set-runtime-version.md
-        - name: Отключение функции
-          href: disable-function.md
-    - name: Мониторинг
-      href: functions-monitoring.md
-    - name: Интеграция
-      items:
-        - name: Подключение к базе данных SQL
-          href: functions-scenario-database-table-cleanup.md
-        - name: "Создание определения OpenAPI\_2.0"
-          href: functions-api-definition-getting-started.md
-        - name: Экспорт в PowerApps и Microsoft Flow
-          href: app-service-export-api-to-powerapps-and-flow.md
-        - name: Вызов функции из PowerApps
-          href: functions-powerapps-scenario.md
-        - name: Вызов функции из Microsoft Flow
-          href: functions-flow-scenario.md
-        - name: Использование удостоверения управляемой службы
-          href: ../app-service/app-service-managed-service-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
-    - name: Устойчивые функции
-      items:
-        - name: Install
-          href: durable-functions-install.md
-        - name: Построение цепочек
-          href: durable-functions-sequence.md
-        - name: Развертывание/вход
-          href: durable-functions-cloud-backup.md
-        - name: Мониторы
-          href: durable-functions-monitor.md
-        - name: Участие пользователя
-          href: durable-functions-phone-verification.md
-        - name: Модульное тестирование
-          href: durable-functions-unit-testing.md
-        - name: Публикация событий
-          href: durable-functions-event-publishing.md
-        - name: Использование пакета SDK для веб-заданий
-          href: durable-functions-webjobs-sdk.md
+  - name: Разработка
+    items:
+    - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
+      href: functions-reference.md
+    - name: Функции тестирования
+      href: functions-test-a-function.md
+    - name: Локальная разработка и отладка
+      href: functions-develop-local.md
+    - name: Разработка в Visual Studio
+      href: functions-develop-vs.md
+    - name: Разработка основных инструментов
+      href: functions-run-local.md
+    - name: Разработка в IntelliJ IDEA
+      href: functions-create-maven-intellij.md
+    - name: Разработка в Eclipse
+      href: functions-create-maven-eclipse.md
+    - name: Управление подключениями
+      href: manage-connections.md
+    - name: Обработка ошибок
+      href: functions-bindings-error-pages.md
+  - name: Развертывание
+    items:
+    - name: Непрерывное развертывание
+      href: functions-continuous-deployment.md
+    - name: Развертывание из ZIP-файла при помощи push-запросов
+      href: deployment-zip-push.md
+    - name: Автоматическое развертывание ресурсов
+      href: functions-infrastructure-as-code.md
+    - name: Функции в локальной среде
+      href: functions-runtime-install.md
+  - name: Настройка
+    items:
+    - name: Управление приложением-функцией
+      href: functions-how-to-use-azure-function-app-settings.md
+    - name: Установка версии среды выполнения
+      href: set-runtime-version.md
+    - name: Отключение функции
+      href: disable-function.md
+  - name: Мониторинг
+    href: functions-monitoring.md
+  - name: Интеграция
+    items:
+    - name: Подключение к базе данных SQL
+      href: functions-scenario-database-table-cleanup.md
+    - name: Создание определения OpenAPI 2.0
+      href: functions-api-definition-getting-started.md
+    - name: Экспорт в PowerApps и Microsoft Flow
+      href: app-service-export-api-to-powerapps-and-flow.md
+    - name: Вызов функции из PowerApps
+      href: functions-powerapps-scenario.md
+    - name: Вызов функции из Microsoft Flow
+      href: functions-flow-scenario.md
+    - name: Использование удостоверения управляемой службы
+      href: ../app-service/app-service-managed-service-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
+  - name: Устойчивые функции
+    items:
+    - name: Install
+      href: durable-functions-install.md
+    - name: Построение цепочек
+      href: durable-functions-sequence.md
+    - name: Развертывание/вход
+      href: durable-functions-cloud-backup.md
+    - name: Мониторы
+      href: durable-functions-monitor.md
+    - name: Участие пользователя
+      href: durable-functions-phone-verification.md
+    - name: Модульное тестирование
+      href: durable-functions-unit-testing.md
+    - name: Публикация событий
+      href: durable-functions-event-publishing.md
+    - name: Использование пакета SDK для веб-заданий
+      href: durable-functions-webjobs-sdk.md
 - name: Справочные материалы
   items:
-    - name: Привязки
+  - name: Привязки
+    items:
+    - name: Хранилище BLOB-объектов
+      href: functions-bindings-storage-blob.md
+    - name: Azure Cosmos DB
       items:
-        - name: Хранилище BLOB-объектов
-          href: functions-bindings-storage-blob.md
-        - name: Azure Cosmos DB
-          items:
-            - name: Функции 1.x
-              href: functions-bindings-cosmosdb.md
-            - name: Функции 2.x
-              href: functions-bindings-cosmosdb-v2.md
-        - name: Сетка событий Azure
-          href: functions-bindings-event-grid.md
-        - name: концентраторы событий;
-          href: functions-bindings-event-hubs.md
-        - name: Внешний файл
-          href: functions-bindings-external-file.md
-        - name: Внешняя таблица
-          href: functions-bindings-external-table.md
-        - name: HTTP и вызовы webhook
-          href: functions-bindings-http-webhook.md
-        - name: Microsoft Graph
-          href: functions-bindings-microsoft-graph.md
-        - name: Мобильные приложения
-          href: functions-bindings-mobile-apps.md
-        - name: Центры уведомлений
-          href: functions-bindings-notification-hubs.md
-        - name: Хранилище очередей
-          href: functions-bindings-storage-queue.md
-        - name: SendGrid
-          href: functions-bindings-sendgrid.md
-        - name: Служебная шина Azure
-          href: functions-bindings-service-bus.md
-        - name: Хранилище таблиц
-          href: functions-bindings-storage-table.md
-        - name: Таймер
-          href: functions-bindings-timer.md
-        - name: Twilio
-          href: functions-bindings-twilio.md
-    - name: Справочник по host.json
-      href: functions-host-json.md
-    - name: Справочник по параметрам приложения
-      href: functions-app-settings.md
-    - name: Справочник по OpenAPI
-      href: functions-api-definition.md
+      - name: Функции 1.x
+        href: functions-bindings-cosmosdb.md
+      - name: Функции 2.x
+        href: functions-bindings-cosmosdb-v2.md
+    - name: Сетка событий Azure
+      href: functions-bindings-event-grid.md
+    - name: Центры событий;
+      href: functions-bindings-event-hubs.md
+    - name: Внешний файл
+      href: functions-bindings-external-file.md
+    - name: Внешняя таблица
+      href: functions-bindings-external-table.md
+    - name: HTTP и вызовы webhook
+      href: functions-bindings-http-webhook.md
+    - name: Microsoft Graph
+      href: functions-bindings-microsoft-graph.md
+    - name: Мобильные приложения
+      href: functions-bindings-mobile-apps.md
+    - name: Центры уведомлений
+      href: functions-bindings-notification-hubs.md
+    - name: Хранилище очередей
+      href: functions-bindings-storage-queue.md
+    - name: SendGrid
+      href: functions-bindings-sendgrid.md
+    - name: Служебная шина Azure
+      href: functions-bindings-service-bus.md
+    - name: Хранилище таблиц
+      href: functions-bindings-storage-table.md
+    - name: Таймер
+      href: functions-bindings-timer.md
+    - name: Twilio
+      href: functions-bindings-twilio.md
+  - name: Справочник по host.json
+    href: functions-host-json.md
+  - name: Справочник по параметрам приложения
+    href: functions-app-settings.md
+  - name: Справочник по OpenAPI
+    href: functions-api-definition.md
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=compute'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/functions/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Доступ по регионам
-      href: 'https://azure.microsoft.com/regions/services/'
-    - name: Видеоролики
-      href: 'https://www.youtube.com/c/AzureFunctions'
-    - name: Форум MSDN
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-functions'
-    - name: Twitter
-      href: 'https://twitter.com/azurefunctions'
-    - name: Репозиторий GitHub для функций Azure
-      href: 'https://github.com/Azure/Azure-Functions/'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/en-us/updates/?product=functions&updatetype=&platform='
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=compute
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/functions/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Доступ по регионам
+    href: https://azure.microsoft.com/regions/services/
+  - name: Видеоролики
+    href: https://www.youtube.com/c/AzureFunctions
+  - name: Форум MSDN
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-functions
+  - name: Twitter
+    href: https://twitter.com/azurefunctions
+  - name: Репозиторий GitHub для функций Azure
+    href: https://github.com/Azure/Azure-Functions/
+  - name: Обновления службы
+    href: https://azure.microsoft.com/en-us/updates/?product=functions&updatetype=&platform=
+ms.openlocfilehash: 3eb52c481185c50d935991b5163d130925bd6eeb
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41927997"

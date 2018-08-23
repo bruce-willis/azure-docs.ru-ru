@@ -1,218 +1,227 @@
+items:
 - name: Документация по Azure Resource Manager
   href: index.md
 - name: Обзор
   items:
-    - name: Что такое Resource Manager?
-      href: resource-group-overview.md
-    - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
-      href: resource-manager-deployment-model.md
+  - name: Что такое Resource Manager?
+    href: resource-group-overview.md
+  - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
+    href: resource-manager-deployment-model.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Создание шаблонов — портал
-      href: resource-manager-quickstart-create-templates-use-the-portal.md
-    - name: Создание шаблонов — VS Code
-      href: resource-manager-quickstart-create-templates-use-visual-studio-code.md
-    - name: Создание шаблонов — Visual Studio
-      href: vs-azure-tools-resource-groups-deployment-projects-create-deploy.md
+  - name: Создание шаблонов — портал
+    href: resource-manager-quickstart-create-templates-use-the-portal.md
+  - name: Создание шаблонов — VS Code
+    href: resource-manager-quickstart-create-templates-use-visual-studio-code.md
+  - name: Создание шаблонов — Visual Studio
+    href: vs-azure-tools-resource-groups-deployment-projects-create-deploy.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Создание зашифрованной учетной записи хранения
-      href: resource-manager-tutorial-create-encrypted-storage-accounts.md
-    - name: Создание нескольких ресурсов
-      href: resource-manager-tutorial-create-templates-with-dependent-resources.md
+  - name: Создание зашифрованной учетной записи хранения
+    href: resource-manager-tutorial-create-encrypted-storage-accounts.md
+  - name: Создание нескольких ресурсов
+    href: resource-manager-tutorial-create-templates-with-dependent-resources.md
 - name: Основные понятия
   items:
-    - name: Поставщики и типы ресурсов
-      href: resource-manager-supported-services.md
-    - name: Группы управления
-      href: management-groups-overview.md
-    - name: Система управления подписками
-      href: /azure/architecture/cloud-adoption-guide/subscription-governance
-      maintainContext: true
-    - name: Шаблоны для обеспечения согласованности данных в облаке
-      href: templates-cloud-consistency.md
-    - name: Режимы развертывания
-      href: deployment-modes.md
+  - name: Поставщики и типы ресурсов
+    href: resource-manager-supported-services.md
+  - name: Группы управления
+    href: management-groups-overview.md
+  - name: Система управления подписками
+    href: /azure/architecture/cloud-adoption-guide/subscription-governance
+    maintainContext: true
+  - name: Шаблоны для обеспечения согласованности данных в облаке
+    href: templates-cloud-consistency.md
+  - name: Режимы развертывания
+    href: deployment-modes.md
 - name: Практическое руководство
   items:
-    - name: Создание шаблонов
+  - name: Создание шаблонов
+    items:
+    - name: Разделы шаблона
+      href: resource-group-authoring-templates.md
       items:
-        - name: Разделы шаблона
-          href: resource-group-authoring-templates.md
-          items:
-            - name: Параметры
-              href: resource-manager-templates-parameters.md
-            - name: Переменные
-              href: resource-manager-templates-variables.md
-            - name: Функции Azure
-              href: 'resource-group-authoring-templates.md#functions'
-            - name: Ресурсы
-              href: resource-manager-templates-resources.md
-            - name: outputs
-              href: resource-manager-templates-outputs.md
-        - name: Связанные и вложенные шаблоны
-          href: resource-group-linked-templates.md
-        - name: Зависимости ресурсов
-          href: resource-group-define-dependencies.md
-        - name: Развертывание нескольких экземпляров
-          href: resource-group-create-multiple.md
-        - name: Создание группы ресурсов в шаблоне
-          href: create-resource-group-in-template.md
-        - name: Обновление ресурса
-          href: /azure/architecture/building-blocks/extending-templates/update-resource
-    - name: Развертывание
+      - name: Параметры
+        href: resource-manager-templates-parameters.md
+      - name: Переменные
+        href: resource-manager-templates-variables.md
+      - name: Функции Azure
+        href: resource-group-authoring-templates.md#functions
+      - name: Ресурсы
+        href: resource-manager-templates-resources.md
+      - name: outputs
+        href: resource-manager-templates-outputs.md
+    - name: Связанные и вложенные шаблоны
+      href: resource-group-linked-templates.md
+    - name: Зависимости ресурсов
+      href: resource-group-define-dependencies.md
+    - name: Развертывание нескольких экземпляров
+      href: resource-group-create-multiple.md
+    - name: Создание группы ресурсов в шаблоне
+      href: create-resource-group-in-template.md
+    - name: Создание ресурсов в подписке
+      href: deploy-to-subscription.md
+    - name: Обновление ресурса
+      href: /azure/architecture/building-blocks/extending-templates/update-resource
+  - name: Развертывание
+    items:
+    - name: Azure PowerShell
       items:
-        - name: Azure PowerShell
-          items:
-            - name: Развертывание шаблона
-              href: resource-group-template-deploy.md
-            - name: Развертывание частного шаблона с помощью маркера SAS
-              href: resource-manager-powershell-sas-token.md
-            - name: Экспорт шаблона и повторное развертывание
-              href: resource-manager-export-template-powershell.md
-        - name: Инфраструктура CLI Azure
-          items:
-            - name: Развертывание шаблона
-              href: resource-group-template-deploy-cli.md
-            - name: Развертывание частного шаблона с помощью маркера SAS
-              href: resource-manager-cli-sas-token.md
-            - name: Экспорт шаблона и повторное развертывание
-              href: resource-manager-export-template-cli.md
-        - name: Портал Azure
-          items:
-            - name: Развертывание ресурсов
-              href: resource-group-template-deploy-portal.md
-            - name: Экспорт шаблона
-              href: resource-manager-export-template.md
-        - name: REST API
-          href: resource-group-template-deploy-rest.md
-        - name: Несколько подписок или групп ресурсов
-          href: resource-manager-cross-resource-group-deployment.md
-        - name: Непрерывная интеграция с Visual Studio Team Services
-          href: ../vs-azure-tools-resource-groups-ci-in-vsts.md
-          maintainContext: true
-        - name: Передача безопасных значений в процессе развертывания
-          href: resource-manager-keyvault-parameter.md
-    - name: управление
+      - name: Развертывание шаблона
+        href: resource-group-template-deploy.md
+      - name: Развертывание частного шаблона с помощью маркера SAS
+        href: resource-manager-powershell-sas-token.md
+      - name: Экспорт шаблона и повторное развертывание
+        href: resource-manager-export-template-powershell.md
+    - name: Инфраструктура CLI Azure
       items:
-        - name: Azure PowerShell
-          href: powershell-azure-resource-manager.md
-        - name: Инфраструктура CLI Azure
-          href: cli-azure-resource-manager.md
-        - name: Портал Azure
-          href: resource-group-portal.md
-        - name: Организация ресурсов с помощью тегов
-          href: resource-group-using-tags.md
-        - name: Перемещение ресурсов в новую группу или подписку
-          href: resource-group-move-resources.md
-        - name: Создание подписок EA
-          href: programmatically-create-subscription.md
-        - name: Предоставление доступа для создания подписок EA
-          href: grant-access-to-create-subscription.md
-        - name: Создание групп управления
-          href: management-groups-create.md
-        - name: Администрирование групп управления
-          href: management-groups-manage.md
-    - name: Контроль доступа
+      - name: Развертывание шаблона
+        href: resource-group-template-deploy-cli.md
+      - name: Развертывание частного шаблона с помощью маркера SAS
+        href: resource-manager-cli-sas-token.md
+      - name: Экспорт шаблона и повторное развертывание
+        href: resource-manager-export-template-cli.md
+    - name: Портал Azure
       items:
-        - name: Создание субъекта-службы
-          items:
-            - name: Azure PowerShell
-              href: resource-group-authenticate-service-principal.md
-            - name: Инфраструктура CLI Azure
-              href: /cli/azure/create-an-azure-service-principal-azure-cli
-              maintainContext: true
-            - name: Портал Azure
-              href: resource-group-create-service-principal-portal.md
-        - name: API проверки подлинности для доступа к подпискам
-          href: resource-manager-api-authentication.md
-        - name: Блокировка ресурсов
-          href: resource-group-lock-resources.md
-    - name: Аудит
+      - name: Развертывание ресурсов
+        href: resource-group-template-deploy-portal.md
+      - name: Экспорт шаблона
+        href: resource-manager-export-template.md
+    - name: REST API
+      href: resource-group-template-deploy-rest.md
+    - name: Несколько подписок или групп ресурсов
+      href: resource-manager-cross-resource-group-deployment.md
+    - name: Непрерывная интеграция с Visual Studio Team Services
+      href: ../vs-azure-tools-resource-groups-ci-in-vsts.md
+      maintainContext: true
+    - name: Передача безопасных значений в процессе развертывания
+      href: resource-manager-keyvault-parameter.md
+  - name: управление
+    items:
+    - name: Azure PowerShell
+      href: powershell-azure-resource-manager.md
+    - name: Инфраструктура CLI Azure
+      href: cli-azure-resource-manager.md
+    - name: Портал Azure
+      href: resource-group-portal.md
+    - name: Организация ресурсов с помощью тегов
+      href: resource-group-using-tags.md
+    - name: Перемещение ресурсов в новую группу или подписку
+      href: resource-group-move-resources.md
+    - name: Создание подписок EA
+      href: programmatically-create-subscription.md
+    - name: Предоставление доступа для создания подписок EA
+      href: grant-access-to-create-subscription.md
+    - name: Создание групп управления
+      href: management-groups-create.md
+    - name: Администрирование групп управления
+      href: management-groups-manage.md
+  - name: Контроль доступа
+    items:
+    - name: Создание субъекта-службы
       items:
-        - name: Просмотр журналов действий
-          href: resource-group-audit.md
-        - name: Просмотр операций развертывания
-          href: resource-manager-deployment-operations.md
-    - name: Устранение неполадок
-      items:
-        - name: Устранение ошибок развертывания
-          href: resource-manager-common-deployment-errors.md
-        - name: AccountNameInvalid
-          href: resource-manager-storage-account-name-errors.md
-        - name: InvalidTemplate
-          href: resource-manager-invalid-template-errors.md
-        - name: Проблемы с развертыванием в Linux
-          href: ../virtual-machines/linux/troubleshoot-deploy-vm.md
-        - name: NoRegisteredProviderFound
-          href: resource-manager-register-provider-errors.md
-        - name: NotFound
-          href: resource-manager-not-found-errors.md
-        - name: ParentResourceNotFound
-          href: resource-manager-parent-resource-errors.md
-        - name: Проблемы подготовки и распределения в Linux
-          href: ../virtual-machines/linux/troubleshoot-deployment-new-vm.md
-        - name: Проблемы подготовки и распределения в Windows
-          href: ../virtual-machines/windows/troubleshoot-deployment-new-vm.md
-        - name: RequestDisallowedByPolicy
-          href: resource-manager-policy-requestdisallowedbypolicy-error.md
-        - name: ReservedResourceName
-          href: resource-manager-reserved-resource-name.md
-        - name: ResourceQuotaExceeded
-          href: resource-manager-quota-errors.md
-        - name: SkuNotAvailable
-          href: resource-manager-sku-not-available-errors.md
-        - name: Проблемы с развертыванием в Windows
-          href: ../virtual-machines/windows/troubleshoot-deploy-vm.md
+      - name: Azure PowerShell
+        href: resource-group-authenticate-service-principal.md
+      - name: Инфраструктура CLI Azure
+        href: /cli/azure/create-an-azure-service-principal-azure-cli
+        maintainContext: true
+      - name: Портал Azure
+        href: resource-group-create-service-principal-portal.md
+    - name: API проверки подлинности для доступа к подпискам
+      href: resource-manager-api-authentication.md
+    - name: Блокировка ресурсов
+      href: resource-group-lock-resources.md
+  - name: Аудит
+    items:
+    - name: Просмотр журналов действий
+      href: resource-group-audit.md
+    - name: Просмотр операций развертывания
+      href: resource-manager-deployment-operations.md
+  - name: Устранение неполадок
+    items:
+    - name: Устранение ошибок развертывания
+      href: resource-manager-common-deployment-errors.md
+    - name: AccountNameInvalid
+      href: resource-manager-storage-account-name-errors.md
+    - name: InvalidTemplate
+      href: resource-manager-invalid-template-errors.md
+    - name: Проблемы с развертыванием в Linux
+      href: ../virtual-machines/linux/troubleshoot-deploy-vm.md
+    - name: NoRegisteredProviderFound
+      href: resource-manager-register-provider-errors.md
+    - name: NotFound
+      href: resource-manager-not-found-errors.md
+    - name: ParentResourceNotFound
+      href: resource-manager-parent-resource-errors.md
+    - name: Проблемы подготовки и распределения в Linux
+      href: ../virtual-machines/linux/troubleshoot-deployment-new-vm.md
+    - name: Проблемы подготовки и распределения в Windows
+      href: ../virtual-machines/windows/troubleshoot-deployment-new-vm.md
+    - name: RequestDisallowedByPolicy
+      href: resource-manager-policy-requestdisallowedbypolicy-error.md
+    - name: ReservedResourceName
+      href: resource-manager-reserved-resource-name.md
+    - name: ResourceQuotaExceeded
+      href: resource-manager-quota-errors.md
+    - name: SkuNotAvailable
+      href: resource-manager-sku-not-available-errors.md
+    - name: Проблемы с развертыванием в Windows
+      href: ../virtual-machines/windows/troubleshoot-deploy-vm.md
+  - name: Запросы на регулирование
+    href: resource-manager-request-limits.md
+  - name: Отслеживание асинхронных операций
+    href: resource-manager-async-operations.md
 - name: Справочные материалы
   items:
-    - name: Справочник по шаблонам
-      href: subtoc/toc.yml
-    - name: Функции шаблонов
-      href: resource-group-template-functions.md
-      items:
-        - name: Функции массива и объекта
-          href: resource-group-template-functions-array.md
-        - name: Функции сравнения
-          href: resource-group-template-functions-comparison.md
-        - name: Функции развертывания
-          href: resource-group-template-functions-deployment.md
-        - name: Логические функции
-          href: resource-group-template-functions-logical.md
-        - name: Числовые функции
-          href: resource-group-template-functions-numeric.md
-        - name: Функции для работы с ресурсами
-          href: resource-group-template-functions-resource.md
-        - name: Строковые функции
-          href: resource-group-template-functions-string.md
-    - name: PowerShell
-      href: /powershell/module/azurerm.resources
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/resource
-    - name: .NET
-      href: /dotnet/api/microsoft.azure.management.resourcemanager
-    - name: Java
-      href: /java/api/com.microsoft.azure.management.resources
-    - name: Python
-      href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/resourcemanagement.html'
-    - name: REST
-      href: /rest/api/resources/
+  - name: Справочник по шаблонам
+    href: subtoc/toc.yml
+  - name: Функции шаблонов
+    href: resource-group-template-functions.md
+    items:
+    - name: Функции массива и объекта
+      href: resource-group-template-functions-array.md
+    - name: Функции сравнения
+      href: resource-group-template-functions-comparison.md
+    - name: Функции развертывания
+      href: resource-group-template-functions-deployment.md
+    - name: Логические функции
+      href: resource-group-template-functions-logical.md
+    - name: Числовые функции
+      href: resource-group-template-functions-numeric.md
+    - name: Функции для работы с ресурсами
+      href: resource-group-template-functions-resource.md
+    - name: Строковые функции
+      href: resource-group-template-functions-string.md
+  - name: PowerShell
+    href: /powershell/module/azurerm.resources
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/resource
+  - name: .NET
+    href: /dotnet/api/microsoft.azure.management.resourcemanager
+  - name: Java
+    href: /java/api/com.microsoft.azure.management.resources
+  - name: Python
+    href: http://azure-sdk-for-python.readthedocs.io/en/latest/resourcemanagement.html
+  - name: REST
+    href: /rest/api/resources/
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=monitoring-management'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Обновления службы
-      href: 'https://azure.microsoft.com/updates/?product=azure-resource-manager'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-resource-manager'
-    - name: Управление персональными данными
-      href: resource-manager-personal-data.md
-    - name: Запросы на регулирование
-      href: resource-manager-request-limits.md
-    - name: Отслеживание асинхронных операций
-      href: resource-manager-async-operations.md
-    - name: Видеоролики
-      href: 'https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager'
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/?category=monitoring-management
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Обновления службы
+    href: https://azure.microsoft.com/updates/?product=azure-resource-manager
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-resource-manager
+  - name: Управление персональными данными
+    href: resource-manager-personal-data.md
+  - name: Видеоролики
+    href: https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager
+ms.openlocfilehash: 5fa8d844b62554331c2feb66aea3826c05f353e2
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41927168"

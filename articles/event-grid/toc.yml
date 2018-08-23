@@ -1,156 +1,171 @@
+items:
 - name: Документация по службе "Сетка событий"
   href: index.yml
 - name: Обзор
   items:
-    - name: Сведения о службе "Сетка событий Azure"
-      href: overview.md
-    - name: Сравнение служб обмена сообщениями
-      href: compare-messaging-services.md
+  - name: Сведения о службе "Сетка событий Azure"
+    href: overview.md
+  - name: Сравнение служб обмена сообщениями
+    href: compare-messaging-services.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: "События хранилища BLOB-объектов\_— Azure CLI"
+  - name: События хранилища
+    items:
+    - name: Инфраструктура CLI Azure
       href: ../storage/blobs/storage-blob-event-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
-    - name: "События хранилища BLOB-объектов\_— PowerShell"
+    - name: PowerShell
       href: ../storage/blobs/storage-blob-event-quickstart-powershell.md?toc=%2fazure%2fevent-grid%2ftoc.json
-    - name: "События хранилища BLOB-объектов\_— портал"
+    - name: Microsoft Azure
       href: blob-event-quickstart-portal.md
-    - name: "Пользовательские события\_— Azure CLI"
+  - name: Настраиваемые события
+    items:
+    - name: Инфраструктура CLI Azure
       href: custom-event-quickstart.md
-    - name: "Пользовательские события\_— PowerShell"
+    - name: PowerShell
       href: custom-event-quickstart-powershell.md
-    - name: "Пользовательские события\_— портал"
+    - name: Microsoft Azure
       href: custom-event-quickstart-portal.md
-    - name: Отправка событий в хранилище очередей
-      href: custom-event-to-queue-storage.md
-    - name: Отправка событий в службу "Концентраторы событий"
-      href: custom-event-to-eventhub.md
+  - name: Хранилище очередей в качестве обработчика событий
+    href: custom-event-to-queue-storage.md
+  - name: Центры событий в качестве обработчика событий
+    href: custom-event-to-eventhub.md
+  - name: События реестра контейнеров
+    href: ../container-registry/container-registry-event-grid-quickstart.md?toc=%2fazure%2fevent-grid%2ftoc.json
+  expanded: true
 - name: Учебники
   items:
-    - name: Сообщение электронной почты при изменении виртуальной машины
-      href: monitor-virtual-machine-changes-event-grid-logic-app.md
-    - name: Изменение размера переданных изображений
-      href: resize-images-on-storage-blob-upload-event.md
-    - name: Активация модуля runbook службы автоматизации
-      href: ensure-tags-exists-on-new-virtual-machines.md
-    - name: Сообщение электронной почты при добавлении устройства Центра Интернета вещей
-      href: publish-iot-hub-events-to-logic-apps.md
-    - name: Ответ на события службы "Служебная шина"
-      href: ../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json
-    - name: Потоковая передача данных из концентраторов событий
-      href: event-grid-event-hubs-integration.md
-    - name: События маршрутизации Служб мультимедиа
-      href: ../media-services/latest/job-state-events-cli-how-to.md?toc=%2fazure%2fevent-grid%2ftoc.json
-    - name: Маршрутизация для гибридного подключения
-      href: custom-event-to-hybrid-connection.md
+  - name: Сообщение электронной почты при изменении виртуальной машины
+    href: monitor-virtual-machine-changes-event-grid-logic-app.md
+  - name: Изменение размера переданных изображений
+    href: resize-images-on-storage-blob-upload-event.md
+  - name: Активация модуля runbook службы автоматизации
+    href: ensure-tags-exists-on-new-virtual-machines.md
+  - name: Сообщение электронной почты при добавлении устройства Центра Интернета вещей
+    href: publish-iot-hub-events-to-logic-apps.md
+  - name: Ответ на события службы "Служебная шина"
+    href: ../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json
+  - name: Потоковая передача данных из Центров событий
+    href: event-grid-event-hubs-integration.md
+  - name: События маршрутизации Служб мультимедиа
+    href: ../media-services/latest/job-state-events-cli-how-to.md?toc=%2fazure%2fevent-grid%2ftoc.json
+  - name: Маршрутизация для гибридного подключения
+    href: custom-event-to-hybrid-connection.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
-      href: cli-samples.md
-      items:
-        - name: Создание пользовательского раздела
-          href: scripts/event-grid-cli-create-custom-topic.md
-        - name: Подписка на события подписки Azure
-          href: scripts/event-grid-cli-azure-subscription.md
-        - name: Подписка на события хранилища BLOB-объектов
-          href: scripts/event-grid-cli-blob.md
-        - name: Подписка на события пользовательского раздела
-          href: scripts/event-grid-cli-subscribe-custom-topic.md
-        - name: Подписка на события группы ресурсов
-          href: scripts/event-grid-cli-resource-group.md
-        - name: Подписка и фильтрация событий для группы ресурсов
-          href: scripts/event-grid-cli-resource-group-filter.md
-    - name: Azure PowerShell
-      href: powershell-samples.md
-      items:
-        - name: Создание пользовательского раздела
-          href: scripts/event-grid-powershell-create-custom-topic.md
-        - name: Подписка на события подписки Azure
-          href: scripts/event-grid-powershell-azure-subscription.md
-        - name: Подписка на события хранилища BLOB-объектов
-          href: scripts/event-grid-powershell-blob.md
-        - name: Подписка на события пользовательского раздела
-          href: scripts/event-grid-powershell-subscribe-custom-topic.md
-        - name: Подписка на события группы ресурсов
-          href: scripts/event-grid-powershell-resource-group.md
-        - name: Подписка и фильтрация событий для группы ресурсов
-          href: scripts/event-grid-powershell-resource-group-filter.md
-    - name: Шаблоны диспетчера ресурсов
-      href: template-samples.md
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=event-grid'
+  - name: Инфраструктура CLI Azure
+    href: cli-samples.md
+    items:
+    - name: Создание пользовательского раздела
+      href: scripts/event-grid-cli-create-custom-topic.md
+    - name: Подписка на события подписки Azure
+      href: scripts/event-grid-cli-azure-subscription.md
+    - name: Подписка на события хранилища BLOB-объектов
+      href: scripts/event-grid-cli-blob.md
+    - name: Подписка на события пользовательского раздела
+      href: scripts/event-grid-cli-subscribe-custom-topic.md
+    - name: Подписка на события группы ресурсов
+      href: scripts/event-grid-cli-resource-group.md
+    - name: Подписка и фильтрация событий для группы ресурсов
+      href: scripts/event-grid-cli-resource-group-filter.md
+  - name: Azure PowerShell
+    href: powershell-samples.md
+    items:
+    - name: Создание пользовательского раздела
+      href: scripts/event-grid-powershell-create-custom-topic.md
+    - name: Подписка на события подписки Azure
+      href: scripts/event-grid-powershell-azure-subscription.md
+    - name: Подписка на события хранилища BLOB-объектов
+      href: scripts/event-grid-powershell-blob.md
+    - name: Подписка на события пользовательского раздела
+      href: scripts/event-grid-powershell-subscribe-custom-topic.md
+    - name: Подписка на события группы ресурсов
+      href: scripts/event-grid-powershell-resource-group.md
+    - name: Подписка и фильтрация событий для группы ресурсов
+      href: scripts/event-grid-powershell-resource-group-filter.md
+  - name: Шаблоны диспетчера ресурсов
+    href: template-samples.md
+  - name: Примеры кода
+    href: https://azure.microsoft.com/resources/samples/?sort=0&service=event-grid
 - name: Основные понятия
   items:
-    - name: Основные понятия службы "Сетка событий Azure"
-      href: concepts.md
-    - name: Безопасность и проверка подлинности
-      href: security-authentication.md
-    - name: Доставка и повторные попытки доставки
-      href: delivery-and-retry.md
-    - name: Источники событий
-      href: event-sources.md
-    - name: Обработчики событий
-      href: event-handlers.md
+  - name: Основные понятия службы "Сетка событий Azure"
+    href: concepts.md
+  - name: Безопасность и проверка подлинности
+    href: security-authentication.md
+  - name: Доставка и повторные попытки доставки
+    href: delivery-and-retry.md
+  - name: Источники событий
+    href: event-sources.md
+  - name: Обработчики событий
+    href: event-handlers.md
 - name: Практические руководства
   items:
-    - name: Публикация в пользовательском разделе
-      href: post-to-custom-topic.md
-    - name: Получение событий в конечной точке HTTP
-      href: receive-events.md
-    - name: Обработка недоставленных сообщений и повторные попытки
-      href: manage-event-delivery.md
-    - name: Мониторинг доставки событий
-      href: monitor-event-delivery.md
-    - name: Обращение к подпискам на события
-      href: query-event-subscriptions.md
-    - name: Сопоставление настраиваемых полей со схемой
-      href: input-mappings.md
-    - name: Использование схемы CloudEvents
-      href: cloudevents-schema.md
+  - name: Публикация в пользовательском разделе
+    href: post-to-custom-topic.md
+  - name: Получение событий в конечной точке HTTP
+    href: receive-events.md
+  - name: Обработка недоставленных сообщений и повторные попытки
+    href: manage-event-delivery.md
+  - name: Мониторинг доставки событий
+    href: monitor-event-delivery.md
+  - name: Обращение к подпискам на события
+    href: query-event-subscriptions.md
+  - name: Подписка через портал
+    href: subscribe-through-portal.md
+  - name: Сопоставление настраиваемых полей со схемой
+    href: input-mappings.md
+  - name: Использование схемы CloudEvents
+    href: cloudevents-schema.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
-      href: /cli/azure/eventgrid
-    - name: PowerShell
-      href: /powershell/module/azurerm.eventgrid
-    - name: REST
-      href: /rest/api/eventgrid
-    - name: Схема подписки
-      href: subscription-creation-schema.md
-    - name: Схема событий
-      href: event-schema.md
-      items:
-        - name: Подписки Azure
-          href: event-schema-subscriptions.md
-        - name: Хранилище BLOB-объектов
-          href: event-schema-blob-storage.md
-        - name: Реестр контейнеров
-          href: event-schema-container-registry.md
-        - name: концентраторы событий;
-          href: event-schema-event-hubs.md
-        - name: Центр Интернета вещей
-          href: event-schema-iot-hub.md
-        - name: Службы мультимедиа
-          href: ../media-services/latest/media-services-event-schemas.md?toc=%2fazure%2fevent-grid%2ftoc.json
-        - name: Группы ресурсов
-          href: event-schema-resource-groups.md
-        - name: Служебная шина Azure
-          href: event-schema-service-bus.md
-    - name: Ресурсы шаблона
-      items:
-        - name: Подписки на события
-          href: /azure/templates/microsoft.eventgrid/eventsubscriptions
-        - name: Разделы
-          href: /azure/templates/microsoft.eventgrid/topics
-    - name: Пакеты SDK
-      href: sdk-overview.md
+  - name: Инфраструктура CLI Azure
+    href: /cli/azure/eventgrid
+  - name: PowerShell
+    href: /powershell/module/azurerm.eventgrid
+  - name: REST
+    href: /rest/api/eventgrid
+  - name: Схема подписки
+    href: subscription-creation-schema.md
+  - name: Схема событий
+    href: event-schema.md
+    items:
+    - name: Подписки Azure
+      href: event-schema-subscriptions.md
+    - name: Хранилище BLOB-объектов
+      href: event-schema-blob-storage.md
+    - name: Реестр контейнеров
+      href: event-schema-container-registry.md
+    - name: Центры событий;
+      href: event-schema-event-hubs.md
+    - name: Центр Интернета вещей
+      href: event-schema-iot-hub.md
+    - name: Службы мультимедиа
+      href: ../media-services/latest/media-services-event-schemas.md?toc=%2fazure%2fevent-grid%2ftoc.json
+    - name: Группы ресурсов
+      href: event-schema-resource-groups.md
+    - name: Служебная шина Azure
+      href: event-schema-service-bus.md
+  - name: Ресурсы шаблона
+    items:
+    - name: Подписки на события
+      href: /azure/templates/microsoft.eventgrid/eventsubscriptions
+    - name: Разделы
+      href: /azure/templates/microsoft.eventgrid/topics
+  - name: Пакеты SDK
+    href: sdk-overview.md
 - name: Ресурсы
   items:
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/'
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/event-grid/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-eventgrid'
+  - name: Стратегия развития Azure
+    href: https://azure.microsoft.com/roadmap/
+  - name: Цены
+    href: https://azure.microsoft.com/pricing/details/event-grid/
+  - name: Калькулятор цен
+    href: https://azure.microsoft.com/pricing/calculator/
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-eventgrid
+ms.openlocfilehash: b0a5cba2ea053ef50507597f1b47326e4d66d860
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616574"

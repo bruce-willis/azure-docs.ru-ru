@@ -82,34 +82,9 @@
 #### [Получение технической поддержки для B2B](b2b/get-support.md)
 
 ## [Управление группами и членами](fundamentals/active-directory-manage-groups.md)
-### Управление группами
-#### [портал Azure](fundamentals/active-directory-groups-create-azure-portal.md)
-#### [Azure AD PowerShell для Graph (версия 2)](users-groups-roles/groups-settings-v2-cmdlets.md)
-#### [Azure AD PowerShell MSOnline](users-groups-roles/groups-settings-cmdlets.md)
-### [Управление членами группы](fundamentals/active-directory-groups-members-azure-portal.md)
-### [Управление владельцами групп](fundamentals/active-directory-accessmanagement-managing-group-owners.md)
-### [Управление членством в группах](fundamentals/active-directory-groups-membership-azure-portal.md)
-### [Назначение лицензий с помощью групп](fundamentals/active-directory-licensing-whatis-azure-portal.md)
-#### [Назначение лицензий группе](users-groups-roles/licensing-groups-assign.md)
-#### [Поиск и устранение проблем с лицензированием групп](users-groups-roles/licensing-groups-resolve-problems.md)
-#### [Перевод отдельных лицензированных пользователей на групповое лицензирование](users-groups-roles/licensing-groups-migrate-users.md)
-#### [Перенос пользователей между лицензиями на продукт](users-groups-roles/licensing-groups-change-licenses.md)
-#### [Дополнительные сценарии группового лицензирования](users-groups-roles/licensing-group-advanced.md)
-#### [Примеры Azure PowerShell для группового лицензирования](users-groups-roles/licensing-ps-examples.md)
-#### [Справочник по продуктам и планам службы в Azure AD](users-groups-roles/licensing-service-plan-reference.md)
-### [Настройка срока действия групп Office 365](users-groups-roles/groups-lifecycle.md)
-### [Принудительное применение политики именования для групп](users-groups-roles/groups-naming-policy.md)
-### [Просмотр всех групп](fundamentals/active-directory-groups-view-azure-portal.md)
-### [Включение доступа для групп в приложениях SaaS](users-groups-roles/groups-saasapps.md)
+### [Управление группами](fundamentals/active-directory-groups-create-azure-portal.md)
 ### [Восстановление удаленной группы Office 365](fundamentals/active-directory-groups-restore-azure-portal.md)
 ### [Управление параметрами группы](fundamentals/active-directory-groups-settings-azure-portal.md)
-### [Настройка групп самообслуживания](users-groups-roles/groups-self-service-management.md)
-### Динамические группы
-#### [Создание динамической группы](users-groups-roles/groups-create-rule.md)
-#### [Синтаксис и свойства правил](users-groups-roles/groups-dynamic-membership.md)
-#### [Изменение типа членства в группе](users-groups-roles/groups-change-type.md)
-#### [Устранение неполадок](users-groups-roles/groups-troubleshooting.md)
-
 ## [Управление отчетами](reports-monitoring/overview-reports.md)
 ### [Действие входа](reports-monitoring/concept-sign-ins.md)
 ### [Действие аудита](reports-monitoring/concept-audit-logs.md)
@@ -137,15 +112,13 @@
 #### [Интерпретация схемы журнала аудита событий входа в систему в Azure Monitor](reports-monitoring/reference-azure-monitor-sign-ins-log-schema.md)
 
 ### Устранение неполадок
-#### [Отсутствующие данные аудита](reports-monitoring/troubleshoot-missing-audit-data.md)
+#### [Отсутствующие данные в журналах действий Azure AD](reports-monitoring/troubleshoot-missing-audit-data.md)
 #### [Отсутствующие данные в файлах для скачивания](reports-monitoring/troubleshoot-missing-data-download.md)
 #### [Ошибки пакетов содержимого журналов действий Azure AD](reports-monitoring/troubleshoot-content-pack.md)
 #### [Ошибки в API отчетов Azure AD](reports-monitoring/troubleshoot-graph-api.md)
 
 ### [Программный доступ](reports-monitoring/concept-reporting-api.md)
 #### [Предварительные требования](reports-monitoring/howto-configure-prerequisites-for-reporting-api.md)
-#### [Примеры аудита](reports-monitoring/sample-audit-api.md)
-#### [Примеры входа](reports-monitoring/sample-sign-in-api.md)
 #### [Использование сертификатов](reports-monitoring/tutorial-access-api-with-certificates.md)
 
 ## [Управление паролями](authentication/concept-sspr-howitworks.md)
@@ -235,13 +208,14 @@
 ### Управление корпоративными приложениями
 #### [Добавление приложения](manage-apps/add-application-portal.md)
 #### [Просмотр приложений клиента](manage-apps/view-applications-portal.md)
+#### [Настройка единого входа](manage-apps/configure-single-sign-on-portal.md)
 #### [Назначение пользователей](manage-apps/assign-user-or-group-access-portal.md)
 #### [Настройка фирменной символики](manage-apps/change-name-or-logo-portal.md)
 #### [Отключение входа пользователей](manage-apps/disable-user-sign-in-portal.md)
 #### [Удаление пользователей](manage-apps/remove-user-or-group-access-portal.md)
 
 #### [Управление подготовкой учетной записи пользователя](manage-apps/configure-automatic-user-provisioning-portal.md)
-#### [Управление параметрами единого входа для корпоративных приложений](manage-apps/configure-single-sign-on-portal.md)
+
 #### [Расширенные параметры подписи сертификатов для приложений SAML](manage-apps/certificate-signing-options.md)
 #### [Скрытие приложения в интерфейсе пользователя](manage-apps/hide-application-from-user-portal.md)
 ### [Настройка автоматического ускорения входа с помощью политики обнаружения домашней области](manage-apps/configure-authentication-for-federated-users-portal.md)
@@ -363,12 +337,7 @@
 ### [Azure AD Connect](./connect/active-directory-aadconnect.md)
 ### Имена пользовательских доменов
 #### [Краткое руководство](fundamentals/add-custom-domain.md)
-#### [Добавление имен личных доменов](users-groups-roles/domains-manage.md)
 ### [Администрирование каталога](fundamentals/active-directory-administer.md)
-### [Удаление каталога](users-groups-roles/directory-delete-howto.md)
-### [Несколько каталогов](users-groups-roles/licensing-directory-independence.md)
-### [Самостоятельная регистрация](users-groups-roles/directory-self-service-signup.md)
-### [Взятие под контроль неуправляемого каталога](users-groups-roles/domains-admin-takeover.md)
 ### [Enterprise State Roaming.](active-directory-windows-enterprise-state-roaming-overview.md)
 #### [Включение](active-directory-windows-enterprise-state-roaming-enable.md)
 #### [Параметры групповой политики](active-directory-windows-enterprise-state-roaming-group-policy-settings.md)
@@ -379,14 +348,6 @@
 
 ### [Интеграция локальных удостоверений с помощью Azure AD Connect](./connect/active-directory-aadconnect.md)
 
-## Делегирование доступа к ресурсам
-### [Роли администратора](users-groups-roles/directory-assign-admin-roles.md)
-#### [Просмотр членов роли администратора](users-groups-roles//directory-manage-roles-portal.md)
-#### [Назначение роли администратора пользователю](fundamentals/active-directory-users-assign-role-azure-portal.md)
-#### [Сравнение пользовательских разрешений члена и гостя](fundamentals/users-default-permissions.md)
-### [Защита роли администратора](users-groups-roles/directory-admin-roles-secure.md)  
-#### [Создание учетных записей администраторов для аварийного доступа](users-groups-roles/directory-emergency-access.md)
-### [Административные единицы](users-groups-roles/directory-administrative-units.md)
 ### [Настройка времени существования маркеров](active-directory-configurable-token-lifetimes.md)
 
 ## Проверки доступа
@@ -401,35 +362,6 @@
 ### [Получение результатов проверок доступа](active-directory-azure-ad-controls-retrieve-access-review.md)
 
 ## Защита удостоверений
-### Условный доступ
-#### [Обзор](conditional-access/overview.md)
-#### Быстрое начало работы
-##### [Требование многофакторной проверки подлинности для конкретных приложений](conditional-access/app-based-mfa.md)
-##### [Обеспечение принятия условий использования](conditional-access/require-tou.md)
-##### [Блокировка доступа при обнаружении риска безопасности сеанса](conditional-access/app-sign-in-risk.md)
-#### Учебники
-##### [Перенос классической политики MFA](conditional-access/policy-migration-mfa.md)
-#### Основные понятия
-##### [Базовая защита](conditional-access/baseline-protection.md)
-##### [Условия](conditional-access/conditions.md)
-##### [Условия расположения](conditional-access/location-condition.md)
-##### [Элементы управления](conditional-access/controls.md)
-##### [Средство"Что если"](conditional-access/what-if-tool.md)
-##### [Политики условного доступа к службам Office 365 с устройств](active-directory-conditional-access-device-policies.md)
-#### Практические руководства
-##### [Рекомендации по использованию хранилища данных SQL Azure](conditional-access/best-practices.md)
-##### [Требование многофакторной проверки подлинности при попытках доступа из ненадежных сетей](conditional-access/untrusted-networks.md)
-##### [Требование доступа с управляемых устройств](conditional-access/require-managed-devices.md)
-##### [Требование доступа к утвержденным клиентским приложениям](conditional-access/app-based-conditional-access.md)
-##### [Требование принятия условий использования для пользователей и приложений](active-directory-tou.md)
-##### [Миграция классических политик](conditional-access/policy-migration.md)
-##### [Настройка VPN-подключения](https://docs.microsoft.com/windows-server/remote/remote-access/vpn/always-on-vpn/deploy/always-on-vpn-deploy)
-##### [Настройка SharePoint и Exchange Online](active-directory-conditional-access-no-modern-authentication.md)
-##### [Исправление](active-directory-conditional-access-device-remediation.md)
-#### [Справочные материалы](conditional-access/technical-reference.md)
-##### [Технический справочник: условный доступ к приложениям Azure AD](conditional-access/technical-reference.md)
-#### [Часто задаваемые вопросы](conditional-access/faqs.md)
-
 ### Аутентификация на основе сертификата
 #### [Android](active-directory-certificate-based-authentication-android.md)
 #### [iOS](active-directory-certificate-based-authentication-ios.md)
@@ -449,9 +381,6 @@
 #### [Microsoft Graph](identity-protection/graph-get-started.md)
 ### [управление привилегированными пользователями;](privileged-identity-management/pim-configure.md?toc=%2fazure%2factive-directory%2ftoc.json)
 
-## Интеграция других служб с Azure AD 
-### [Интеграция LinkedIn с Azure AD](users-groups-roles/linkedin-integration.md)
-
 ## [Развертывание AD FS в Azure](active-directory-aadconnect-azure-adfs.md)
 ### [Высокая доступность](active-directory-adfs-in-azure-with-azure-traffic-manager.md)
 ### [Изменение хэш-алгоритма подписи](active-directory-federation-sha256-guidance.md)
@@ -464,13 +393,11 @@
 ### [Сборник тренировочных заданий по PoC: реализация](active-directory-playbook-implementation.md)
 ### [Сборник тренировочных заданий по PoC: стандартные блоки](active-directory-playbook-building-blocks.md)
 
-
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)
 ## [Командлеты Azure PowerShell](/powershell/azure/overview)
 ## [Справочник по API Java](/java/api)
 ## [API для .NET](/active-directory/adal/microsoft.identitymodel.clients.activedirectory)
-## [Ограничения службы](users-groups-roles/directory-service-limits-restrictions.md)
 
 # Сопутствующие материалы
 ## [Многофакторная идентификация](/azure/multi-factor-authentication/)
