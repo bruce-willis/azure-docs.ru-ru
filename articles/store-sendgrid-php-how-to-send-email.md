@@ -14,12 +14,12 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 10/30/2014
 ms.author: elmer.thomas@sendgrid.com; erika.berkland@sendgrid.com; vibhork; matt.bernier@sendgrid.com
-ms.openlocfilehash: bceec3e85a54eb0e8b542d40ab20536ab41a50f0
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 846002264d5f709f7cef6bba67927fc8959a9ccb
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38718946"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42146951"
 ---
 # <a name="how-to-use-the-sendgrid-email-service-from-php"></a>Как использовать службу электронной почты SendGrid в языке PHP
 В этом руководстве показано, как выполнять типовые задачи программирования для службы электронной почты SendGrid в Azure. Примеры написаны на PHP.
@@ -387,7 +387,7 @@ SendGrid поддерживает дополнительные функцион�
 * Библиотека SendGrid для PHP: <https://github.com/sendgrid/sendgrid-php>
 * Специальное предложение SendGrid для клиентов Azure: <https://sendgrid.com/windowsazure.html>
 
-Дополнительную информацию можно найти также в [Центре разработчика PHP](/develop/php/).
+Дополнительную информацию можно найти также в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
 [https://sendgrid.com]: https://sendgrid.com
 [https://sendgrid.com/transactional-email/pricing]: https://sendgrid.com/transactional-email/pricing

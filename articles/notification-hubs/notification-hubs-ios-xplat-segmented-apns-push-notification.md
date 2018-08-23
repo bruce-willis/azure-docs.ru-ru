@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: f6096238deb2186edfac2eb9d1c9a9e76db07553
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 6db7862a115179552a2dd57c07af66b3b5aa10e3
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38308525"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42144408"
 ---
 # <a name="tutorial-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Отправка push-уведомлений на определенные устройства iOS с помощью службы "Центры уведомлений Azure"
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "38308525"
 > * отправка уведомлений с устройства;
 > * Запуск приложения и создание уведомлений
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В этом разделе используется приложение, созданное при выполнении заданий в статье [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started]. Прежде чем приступить к этому руководству, вы должны изучить раздел [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure][get-started].
 
 ## <a name="add-category-selection-to-the-app"></a>Добавление возможности выбора категорий в приложение
@@ -235,7 +235,7 @@ ms.locfileid: "38308525"
 Теперь приложение может сохранять набор категорий в локальном хранилище устройства и использовать его для регистрации в концентраторе уведомлений всякий раз при запуске приложения. Пользователь может изменить выбранные категории во время выполнения и щелкнуть метод **подписки** для обновления регистрации устройства. Далее вы можете обновить приложение для отправки уведомлений об экстренных новостях непосредственно в само приложение.
 
 ## <a name="optional-send-tagged-notifications"></a>(Необязательно.) Отправка уведомлений с тегами
-Если у вас нет доступа к Visual Studio, можно перейти к следующему разделу и отправлять уведомления из самого приложения. Вы также можете отправлять правильные шаблонные уведомления с [портал Azure] с помощью вкладки "Отладка" для центра уведомлений. 
+Если у вас нет доступа к Visual Studio, можно перейти к следующему разделу и отправлять уведомления из самого приложения. Вы также можете отправлять правильные шаблонные уведомления с [портала Azure] с помощью вкладки "Отладка" для центра уведомлений. 
 
 [!INCLUDE [notification-hubs-send-categories-template](../../includes/notification-hubs-send-categories-template.md)]
 
@@ -361,5 +361,5 @@ ms.locfileid: "38308525"
 [Notify users with Notification Hubs]: notification-hubs-aspnet-backend-ios-notify-users.md
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/dn530749.aspx
 [Notification Hubs How-To for iOS]: http://msdn.microsoft.com/library/jj927168.aspx
-[get-started]: /manage/services/notification-hubs/get-started-notification-hubs-ios/
-[портал Azure]: https://portal.azure.com
+[get-started]: notification-hubs-ios-apple-push-notification-apns-get-started.md
+[портала Azure]: https://portal.azure.com

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 4c537b06c4ff50d90d9fd5a847b378038f252790
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: 94e8e813b537d304e62854b81979d433d0645115
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38972280"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41917970"
 ---
 # <a name="tutorial-push-notifications-to-xamarinandroid-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения Xamarin.Android с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "38972280"
 > * создадите приложение Xamarin.Android и подключите его к центру уведомлений;
 > * отправите тестовые уведомления с портала Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - [Visual Studio с Xamarin] на компьютере Windows или [Visual Studio для Mac] на компьютере OS X.
@@ -100,8 +100,8 @@ ms.locfileid: "38972280"
 
 1. Подготовьте следующую информацию для вашего приложения Android и концентратора уведомлений.
    
-   * **Прослушивание строки подключения**. На [портал Azure] на панели мониторинга выберите **Просмотреть строки подключения**. Для этого значения скопируйте строку подключения *DefaultListenSharedAccessSignature*.
-   * **Имя центра** — это имя вашего центра на [портал Azure]. Например, *mynotificationhub2*.
+   * **Прослушивание строки подключения**. На [портале Azure] на панели мониторинга выберите **Просмотреть строки подключения**. Для этого значения скопируйте строку подключения *DefaultListenSharedAccessSignature*.
+   * **Имя центра** — это имя вашего центра на [портале Azure]. Например, *mynotificationhub2*.
      
 2. В окне **обозревателя решений** щелкните **проект** правой кнопкой мыши, выберите **Добавить**, а затем — **Класс**. 
 4. Создайте класс **Constants.cs** для вашего проекта Xamarin и определите в классе следующие постоянные значения. Замените значения заполнителей на собственные значения.
@@ -239,7 +239,7 @@ ms.locfileid: "38972280"
 16. **Запустите** приложение на устройстве или в загруженном эмуляторе.
 
 ## <a name="send-test-notification-from-the-azure-portal"></a>Отправка тестового уведомления с портала Azure
-Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портале Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
 ![Портал Azure — тестовая отправка](media/partner-xamarin-notification-hubs-android-get-started/send-test-notification.png)
 
@@ -289,11 +289,11 @@ Push-уведомления обычно отправляются в серве�
 [Visual Studio с Xamarin]: https://docs.microsoft.com/visualstudio/install/install-visual-studio
 [Visual Studio для Mac]: https://www.visualstudio.com/vs/visual-studio-mac/
 
-[портал Azure]: https://portal.azure.com/
+[портале Azure]: https://portal.azure.com/
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for Android]: http://msdn.microsoft.com/library/dn282661.aspx
 
-[Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
-[Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
+[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
 [GitHub]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/Xamarin/GetStartedXamarinAndroid

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
-ms.openlocfilehash: c688de79c985eda9b0898d0f7d989de58f7dbc71
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 32be46fb0c41909ce8a8014b13843970555d366f
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038530"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42143764"
 ---
 # <a name="use-powershell-to-create-an-azure-vm-with-a-native-mode-report-server"></a>Использование PowerShell для создания виртуальной машины Azure с помощью сервера отчетов, работающего в собственном режиме
 > [!IMPORTANT] 
@@ -100,7 +100,7 @@ ms.locfileid: "40038530"
    
     Дополнительные сведения о запросе сертификатов сервера см. в следующих разделах: 
    
-   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx), [Certreq](https://technet.microsoft.com/library/cc725793.aspx).
+   * Использование [Certreq](https://technet.microsoft.com/library/cc725793.aspx).[Certreq](https://technet.microsoft.com/library/cc725793.aspx)
    * Средства безопасности для администрирования Windows Server 2012.
      
      [Средства безопасности для администрирования Windows Server 2012](https://technet.microsoft.com/library/jj730960.aspx)
@@ -599,7 +599,6 @@ ms.locfileid: "40038530"
 ## <a name="more-information"></a>Дополнительные сведения
 ### <a name="resources"></a>Ресурсы
 * Аналогичные материалы, относящиеся к развертыванию SQL Server Business Intelligence и SharePoint 2013 с одним сервером, см. в статье [Use Windows PowerShell to Create an Azure VM With SQL Server BI and SharePoint 2013](https://blogs.technet.microsoft.com/ptsblog/2013/10/24/use-powershell-to-create-a-windows-azure-vm-with-sql-server-bi-and-sharepoint-2013/) (Использование PowerShell для создания ВМ Azure с помощью SQL Server BI и SharePoint 2013).
-* Похожие материалы о развертывании SQL Server Business Intelligence и SharePoint 2013 с несколькими серверами см. в статье [Deploy SQL Server Business Intelligence in Azure Virtual Machines](https://msdn.microsoft.com/library/dn321998.aspx) (Развертывание Server Business Intelligence на виртуальных машинах Azure).
 * Общие сведения о развертываниях SQL Server Business Intelligence на виртуальных машинах Azure см. в статье [SQL Server Business Intelligence на виртуальных машинах Azure](virtual-machines-windows-classic-ps-sql-bi.md).
 * Дополнительные сведения о стоимости вычислений Azure см. на вкладке "Виртуальные машины" [калькулятора цен Azure](https://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines).
 

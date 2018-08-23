@@ -14,15 +14,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 95793aac3c25563e3af39f3c47cebdd06e25e35f
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: c9d1874fb611b349403736593fdc9eccc45d2d4d
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777959"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42144406"
 ---
 # <a name="send-cross-platform-notifications-to-users-with-notification-hubs"></a>Отправка кроссплатформенных уведомлений пользователям с помощью центров уведомлений
-В предыдущем руководстве под названием [Уведомление пользователей посредством концентраторов уведомлений с помощью серверной части .NET] вы научились отправлять push-уведомления на все устройства, которые зарегистрированы для конкретного пользователя, прошедшего проверку. В этом учебнике для отправки уведомления на каждую поддерживаемую платформу клиента требовалось несколько запросов. Концентраторы уведомлений Azure поддерживают шаблоны, которые позволяют указать, каким образом конкретное устройство должно получать уведомления. Этот метод упрощает отправку кроссплатформенных уведомлений. 
+В предыдущем руководстве под названием [Уведомление пользователей с помощью концентраторов уведомлений] вы научились отправлять push-уведомления на все устройства, которые зарегистрированы для конкретного пользователя, прошедшего проверку. В этом учебнике для отправки уведомления на каждую поддерживаемую платформу клиента требовалось несколько запросов. Концентраторы уведомлений Azure поддерживают шаблоны, которые позволяют указать, каким образом конкретное устройство должно получать уведомления. Этот метод упрощает отправку кроссплатформенных уведомлений. 
 
 В этой статье рассказывается, как воспользоваться преимуществами шаблонов для отправки в одном запросе независимых от платформы уведомлений, предназначенных для всех платформ. Дополнительные сведения о шаблонах см. в статье [Общие сведения о концентраторах уведомлений][Templates].
 
@@ -105,12 +105,12 @@ ms.locfileid: "33777959"
 
 
 <!-- URLs. -->
-[Push to users ASP.NET]: /manage/services/notification-hubs/notify-users-aspnet
-[Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
+[Push to users ASP.NET]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
+[Push to users Mobile Services]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
 [Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
 [Use Notification Hubs to send breaking news]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
-[Уведомление пользователей посредством концентраторов уведомлений с помощью серверной части .NET]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
+[Уведомление пользователей с помощью концентраторов уведомлений]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
