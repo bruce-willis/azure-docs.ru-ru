@@ -2,7 +2,7 @@
 title: Создание веб-приложения с использованием .NET и API MongoDB в Azure Cosmos DB | Документация Майкрософт
 description: В этой статье представлен пример кода .NET, который можно использовать для подключения и выполнения запросов к API MongoDB в Azure Cosmos DB.
 services: cosmos-db
-author: SnehaGunda
+author: slyons
 manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
@@ -10,13 +10,13 @@ ms.custom: quick start connect, mvc
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/22/2018
-ms.author: sngun
-ms.openlocfilehash: 2e0de0f15612b21345bd8df6f9808222ec328c3d
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: sclyon
+ms.openlocfilehash: a87b4c50beea21f9d7721b60ae691eeafaedfc05
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38542627"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "42024078"
 ---
 # <a name="azure-cosmos-db-build-a-mongodb-api-web-app-with-net-and-the-azure-portal"></a>Azure Cosmos DB. Создание веб-приложения API MongoDB с использованием языка .NET и портала Azure
 

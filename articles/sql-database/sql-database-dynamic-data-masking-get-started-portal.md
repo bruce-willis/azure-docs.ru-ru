@@ -9,16 +9,16 @@ ms.custom: security
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.author: ronitr
-ms.openlocfilehash: 9b47345278bd74449c16e4e17ed1748dba489f82
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 8f7720555a3cfc39ce9e9b5ad2c392bab74b64ca
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34645520"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42142942"
 ---
 # <a name="get-started-with-sql-database-dynamic-data-masking-with-the-azure-portal"></a>Приступая к работе с динамическим маскированием данных в базе данных SQL на портале Azure
 
-В этой статье показано, как реализовать [динамическое маскирование данных](sql-database-dynamic-data-masking-get-started.md) с помощью портала Azure. Динамическое маскирование данных можно также реализовать с помощью [командлетов для базы данных SQL Azure](https://msdn.microsoft.com/library/azure/mt574084.aspx) или [REST API](https://msdn.microsoft.com/library/dn505719.aspx).
+В этой статье показано, как реализовать [динамическое маскирование данных](sql-database-dynamic-data-masking-get-started.md) с помощью портала Azure. Динамическое маскирование данных можно также реализовать с помощью [командлетов для базы данных SQL Azure](https://docs.microsoft.com/powershell/module/azurerm.sql/) или [REST API](https://msdn.microsoft.com/library/dn505719.aspx).
 
 
 ## <a name="set-up-dynamic-data-masking-for-your-database-using-the-azure-portal"></a>Настройка динамического маскирования данных для базы данных с помощью портала Azure
@@ -54,4 +54,4 @@ ms.locfileid: "34645520"
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Обзор динамического маскирования данных см. в разделе [Динамическое маскирование данных](sql-database-dynamic-data-masking-get-started.md).
-* Динамическое маскирование данных можно также реализовать с помощью [командлетов для базы данных SQL Azure](https://msdn.microsoft.com/library/azure/mt574084.aspx) или [REST API](https://msdn.microsoft.com/library/dn505719.aspx).
+* Динамическое маскирование данных можно также реализовать с помощью [командлетов для базы данных SQL Azure](https://docs.microsoft.com/powershell/module/azurerm.sql/) или [REST API](https://msdn.microsoft.com/library/dn505719.aspx).

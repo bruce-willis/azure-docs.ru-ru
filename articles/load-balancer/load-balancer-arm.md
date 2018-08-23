@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: 599c016763fde6f1dc8221fffa554cf68e8c498f
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 43db9db3842d05fa13c3be92df14b905d2ddfc17
+ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31790395"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "42142919"
 ---
 # <a name="using-azure-resource-manager-support-with-azure-load-balancer"></a>Использование поддержки Azure Resource Manager с Azure Load Balancer
 
@@ -61,7 +61,7 @@ Azure Load Balancer с Resource Manager содержит следующие до
 
 Приступая к работе с командлетами, программами командной строки и интерфейсами REST API на основе Azure Resource Manager
 
-* [Сетевые командлеты Azure](https://msdn.microsoft.com/library/azure/mt163510.aspx) можно использовать для создания подсистемы балансировки нагрузки.
+* [Сетевые командлеты Azure](https://docs.microsoft.com/powershell/module/azurerm.network#networking) можно использовать для создания подсистемы балансировки нагрузки.
 * [Создание подсистемы балансировки нагрузки с помощью диспетчера ресурсов Azure](load-balancer-get-started-ilb-arm-ps.md)
 * [Использование Azure CLI с диспетчером ресурсов Azure (ARM)](../xplat-cli-azure-resource-manager.md)
 * [Интерфейсы API REST подсистемы балансировки нагрузки](https://msdn.microsoft.com/library/azure/mt163651.aspx)

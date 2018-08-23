@@ -12,21 +12,21 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/18/2018
+ms.date: 08/15/2018
 ms.author: anwestg
-ms.openlocfilehash: c822f25e25953b8709f481e51d6a63e6a912a60a
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: f12eb7d74d9c47567c72cddda8d2813f394fb1de
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358818"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41947946"
 ---
 # <a name="update-azure-app-service-on-azure-stack"></a>Обновление Службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]
-> Прежде чем развертывать Cлужбу приложений Azure, примените обновление 1804 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack.
+> Прежде чем развертывать службу приложений Azure, примените обновление 1807 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.3.
 >
 >
 
@@ -55,7 +55,7 @@ ms.locfileid: "34358818"
 
 Чтобы обновить развертывание Службы приложений Azure в Azure Stack, сделайте следующее:
 
-1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate2installer).
+1. Скачайте [установщик Службы приложений](https://aka.ms/appsvcupdate3installer).
 
 2. Запустите файл appservice.exe от имени администратора.
 

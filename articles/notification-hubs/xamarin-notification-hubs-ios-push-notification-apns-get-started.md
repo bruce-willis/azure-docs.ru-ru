@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: cebb73fedffe3b5f0a11c919ff39d1d2acd462d3
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.openlocfilehash: ac8e5240f4544ccbb7256acbc6e70f00eff15092
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969533"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918383"
 ---
 # <a name="tutorial-push-notifications-to-xamarinios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения Xamarin.iOS с помощью Центров уведомлений Azure
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
@@ -40,7 +40,7 @@ ms.locfileid: "38969533"
 > * настройка push-уведомлений iOS в центре уведомлений;
 > * отправка тестовых push-уведомлений.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 - последняя версия [Xcode][Install Xcode];
@@ -215,7 +215,7 @@ ms.locfileid: "38969533"
 13. Запустите приложение на устройстве.
 
 ## <a name="send-test-push-notifications"></a>Отправка тестовых push-уведомлений
-Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портал Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
+Можно проверить, поступают ли в приложение уведомления, с помощью параметра *Тестовая отправка* на [портале Azure]. Этот параметр позволяет отправить на устройство тестовое push-уведомление.
 
 ![Портал Azure — тестовая отправка][30]
 
@@ -253,12 +253,12 @@ Push-уведомления обычно отправляются во внут�
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 [Visual Studio для Mac]: https://www.visualstudio.com/vs/visual-studio-mac/
-[Use Notification Hubs to push notifications to users]: /manage/services/notification-hubs/notify-users-aspnet
-[Use Notification Hubs to send breaking news]: /manage/services/notification-hubs/breaking-news-dotnet
+[Use Notification Hubs to push notifications to users]: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
+[Use Notification Hubs to send breaking news]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
 
 [Local and Push Notification Programming Guide]:https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/HandlingRemoteNotifications.html#//apple_ref/doc/uid/TP40008194-CH6-SW1
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 [GitHub]: https://github.com/xamarin/mobile-samples/tree/master/Azure/NotificationHubs
-[портал Azure]: https://portal.azure.com
+[портале Azure]: https://portal.azure.com
