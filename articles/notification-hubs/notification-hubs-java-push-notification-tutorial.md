@@ -14,17 +14,17 @@ ms.devlang: java
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: 88e3ab3cc03cc1e760672120bc5c484af1ba4722
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: fe20cf9c9137dc1ca41d3b8e2445bac079fb33fc
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33778381"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "42143402"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-В этой статье описаны основные функции нового, полностью поддерживаемого официального пакета SDK для Java Центра уведомлений Azure. Это проект с открытым кодом. Вы можете просмотреть весь код пакета SDK в [пакете SDK для Java]. 
+В этой статье описаны основные функции нового, полностью поддерживаемого официального пакета SDK для Java Центра уведомлений Azure. Это проект с открытым кодом. Вы можете просмотреть весь код пакета SDK в [пакет SDK для Java]. 
 
 Вы можете обращаться ко всем функциям центров уведомлений из серверной части Java/PHP/Python/Ruby, используя интерфейс REST в соответствии с описанием в разделе MSDN [Интерфейсы API REST центров уведомлений](http://msdn.microsoft.com/library/dn223264.aspx). Пакет SDK для Java предоставляет тонкую оболочку для этих интерфейсов REST на Java. 
 
@@ -279,7 +279,7 @@ API установки — это альтернативный механизм 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". На данном этапе можно сделать следующее.
 
-* Скачайте полный [пакете SDK для Java], содержащий весь код пакета SDK. 
+* Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK. 
 * Попробуйте разные примеры:
   * [Приступая к работе с центрами уведомлений]
   * [Отправка экстренных новостей]
@@ -287,12 +287,12 @@ API установки — это альтернативный механизм 
   * [Отправка уведомлений проверенным пользователям]
   * [Отправка кроссплатформенных уведомлений проверенным пользователям]
 
-[пакете SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
-[Get started tutorial]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[Приступая к работе с центрами уведомлений]: http://www.windowsazure.com/manage/services/notification-hubs/getting-started-windows-dotnet/
-[Отправка экстренных новостей]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-dotnet/
-[Отправка локализованных экстренных новостей]: http://www.windowsazure.com/manage/services/notification-hubs/breaking-news-localized-dotnet/
-[Отправка уведомлений проверенным пользователям]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users/
-[Отправка кроссплатформенных уведомлений проверенным пользователям]: http://www.windowsazure.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/
+[пакет SDK для Java]: https://github.com/Azure/azure-notificationhubs-java-backend
+[Get started tutorial]: notification-hubs-ios-apple-push-notification-apns-get-started.md
+[Приступая к работе с центрами уведомлений]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
+[Отправка экстренных новостей]: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
+[Отправка локализованных экстренных новостей]: notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md
+[Отправка уведомлений проверенным пользователям]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
+[Отправка кроссплатформенных уведомлений проверенным пользователям]: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
 [Maven]: http://maven.apache.org/
 
