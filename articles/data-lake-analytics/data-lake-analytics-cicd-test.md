@@ -121,7 +121,7 @@ Azure Data Lake предоставляет язык U-SQL, который объ
 
 ### <a name="run-u-sql-test-cases-in-visual-studio-team-service"></a>Запуск тестовых случаев U-SQL в Visual Studio Team Service
 
-Перед тестированием U-SQL убедитесь, что `CPPSDK` загружен на компьютер сборки, а затем передайте путь `CPPSDK` в USqlScriptTestRunner (cppSdkFolderFullPath: @"").
+Перед тестированием U-SQL убедитесь, что `CPPSDK` загружен на компьютер сборки, а затем передайте путь `CPPSDK` в USqlScriptTestRunner (cppSdkFolderFullPath: \@"").
 
 **Что такое CPPSDK?**
 
