@@ -1,7 +1,7 @@
 # Обзор
 ## [О сетях Azure](networking-overview.md)
 ## Архитектура
-### [Виртуальные центры данных](networking-virtual-datacenter.md)
+### [Виртуальные центры данных](/azure/architecture/vdc/networking-virtual-datacenter)
 ### [Асимметричная маршрутизация с использованием нескольких сетевых путей](../expressroute/expressroute-asymmetric-routing.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Проектирование безопасной сети](../best-practices-network-security.md?toc=%2fazure%2fnetworking%2ftoc.json)
 ### [Звездообразная топология](https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke)

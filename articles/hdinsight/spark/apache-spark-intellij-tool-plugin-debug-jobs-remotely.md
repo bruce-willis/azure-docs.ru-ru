@@ -54,7 +54,7 @@ ms.locfileid: "39618926"
 1. В пользовательском интерфейсе Ambari выберите **Hosts** (Узлы).
 
     ![Выборе "Hosts" (Узлы) в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/ambari-hosts.png)
-1. Отобразится список головных узлов, рабочих узлов и узлов zookeeper. Головные узлы отличаются наличием префикса **hn***. Выберите первый головной узел.
+1. Отобразится список головных узлов, рабочих узлов и узлов zookeeper. Головные узлы отличаются наличием префикса **hn**\*. Выберите первый головной узел.
 
     ![Поиск головного узла в Ambari](./media/apache-spark-intellij-tool-plugin-debug-jobs-remotely/cluster-headnodes.png)
 1. В области **Summary** (Сводка) в нижней части открывшейся страницы скопируйте значения **IP Address** (IP-адрес) и **Hostname** (Имя узла) для головного узла.

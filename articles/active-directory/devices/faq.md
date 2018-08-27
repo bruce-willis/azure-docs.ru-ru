@@ -103,8 +103,8 @@ ms.locfileid: "42143304"
 
 ---
 
-**Вопрос. Как подключиться к удаленному устройству Azure AD? **
-**Ответ. Подробные сведения **см. в статьеhttps://docs.microsoft.com/windows/client-management/connect-to-remote-aadj-pc.
+**Вопрос. Как подключиться к удаленному устройству Azure AD?**
+**Ответ.** Подробные сведения см. в статьеhttps://docs.microsoft.com/windows/client-management/connect-to-remote-aadj-pc.
 
 ---
 

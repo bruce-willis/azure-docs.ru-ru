@@ -1,30 +1,34 @@
-# Приступая к работе с Azure
-## [Общие сведения об облачных вычислениях](azure-operations-guide.md#cloud-computing-overview)
-### [Регионы Azure](https://azure.microsoft.com/regions/)
-## [Службы](azure-operations-guide.md#azure-services)
-### [Сервисная документация по Azure](https://docs.microsoft.com/azure)
-## [Основные понятия](azure-operations-guide.md#azure-key-concepts)
-### [Общие сведения о портале Microsoft Azure](https://azure.microsoft.com/documentation/articles/azure-portal-overview/) 
-### [Управление ресурсами Azure с помощью портала](https://docs.microsoft.com/azure/azure-portal/resource-group-portal)
-### [Как установить и настроить Azure PowerShell](/powershell/azure/install-azurerm-ps)
-### [Установка Azure CLI](/cli/azure/install-azure-cli.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-### [Справочник по пакету SDK Azure для REST](https://docs.microsoft.com/rest/api/index)
+# Azure для ИТ-операторов
+## [Приступая к работе с Azure](azure-operations-guide.md) 
+## Быстрое начало работы
+### Виртуальные машины
+#### [Виртуальные машины Windows](../../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+#### [Виртуальные машины Linux](../../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json) 
+### Виртуальные сети
+#### [Создание виртуальной сети с помощью портала Azure](../../virtual-network/quick-create-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Хранилище](https://docs.microsoft.com/azure/storage/)
+### Безопасность
+#### [Использование назначений ролей для управления ресурсами](../../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 
-## [Подписки](azure-operations-guide.md#azure-subscriptions)
+## Учебники
+### Виртуальные машины
+#### [Создание и администрирование виртуальной машины Windows](../../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+#### [Создание и администрирование виртуальных машин Linux](../../virtual-machines/linux/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+#### [Конвейер CI/CD в Jenkins](../../virtual-machines/linux/tutorial-jenkins-github-docker-cicd.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+#### [Балансировка нагрузки виртуальных машин Linux в Azure для создания высокодоступного приложения](../../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Создание шаблонов диспетчера ресурсов Azure](../../resource-group-authoring-templates.md?toc=%2fazure%2fguides%2foperations%2ftoc.json) 
+## Практические руководства
 ### [Как скачать счет на оплату и данные о ежедневном использовании ресурсов Azure](../../billing/billing-download-azure-invoice-daily-usage-date.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-### [Получение сведений о потреблении ресурсов](../../billing/billing-usage-rate-card-overview.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-### [Калькулятор цен в Интернете](http://azure.microsoft.com/pricing/calculator)
-### [Настройка платежных оповещений](../../billing/billing-set-up-alerts.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 
 ## [Azure Resource Manager](azure-operations-guide.md#azure-resource-manager)
 
 ### [Создание шаблонов диспетчера ресурсов Azure](../../resource-group-authoring-templates.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-###[Развертывание шаблонов с помощью портала Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-###[Развертывание шаблонов с помощью PowerShell](../../azure-resource-manager/resource-group-template-deploy.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-###[Развертывание шаблонов с помощью Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Развертывание шаблонов с помощью портала Azure](../../azure-resource-manager/resource-group-template-deploy-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Развертывание шаблонов с помощью PowerShell](../../azure-resource-manager/resource-group-template-deploy.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Развертывание шаблонов с помощью Azure CLI](../../azure-resource-manager/resource-group-template-deploy-cli.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 
 ## [Безопасность (RBAC)](azure-operations-guide.md#security-of-azure-resource)
-###[Использование назначений ролей для управления ресурсами](../../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
+### [Использование назначений ролей для управления ресурсами](../../role-based-access-control/role-assignments-portal.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 
 ## [Виртуальные машины](azure-operations-guide.md#azure-virtual-machines)
 ### [Размеры виртуальных машин для Windows](../../virtual-machines/windows/sizes.md?toc=%2fazure%2fguides%2foperations%2ftoc.json) 
@@ -38,7 +42,7 @@
 ### Руководства по работе с виртуальными машинами Windows
 #### [Создание и администрирование виртуальных машин](../../virtual-machines/windows/tutorial-manage-vm.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 #### [Создание и администрирование дисков](../../virtual-machines/windows/tutorial-manage-data-disk.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
-#### [Автоматизация настройки](../../virtual-machines/windows/tutorial-automate-vm-deployment.md
+#### [Автоматизация настройки](../../virtual-machines/windows/tutorial-automate-vm-deployment.md)
 #### [Создание образов виртуальных машин](../../virtual-machines/windows/tutorial-custom-images.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 #### [Высокодоступные виртуальные машины](../../virtual-machines/windows/tutorial-availability-sets.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)
 #### [Создание масштабируемого набора виртуальных машин](../../virtual-machines/windows/tutorial-create-vmss.md?toc=%2fazure%2fguides%2foperations%2ftoc.json)

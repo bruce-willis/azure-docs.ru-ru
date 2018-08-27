@@ -54,6 +54,7 @@
 #### [Добавление пользователей B2B администраторами](b2b/add-users-administrator.md)
 #### [Добавление пользователей B2B информационными работниками](b2b/add-users-information-worker.md)
 #### [API и настройка](b2b/customize-invitation-api.md)
+#### [Федерация Google](b2b/google-federation.md)
 #### [Примеры кода и сценариев Azure PowerShell](b2b/code-samples.md)
 #### [Пример самостоятельной регистрации на портале](b2b/self-service-portal.md)
 #### [Сообщение электронной почты с приглашением](b2b/invitation-email-elements.md)
