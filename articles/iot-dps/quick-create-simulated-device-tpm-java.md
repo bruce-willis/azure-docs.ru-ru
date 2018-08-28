@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: java
 ms.custom: mvc
-ms.openlocfilehash: a75087c980a98726cc9f871c78b5cd6cb9278643
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 18342b7f3980bcd43b386c3282dda6ebf17eebba
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090697"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022492"
 ---
 # <a name="create-and-provision-a-simulated-tpm-device-using-java-device-sdk-for-azure-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства доверенного платформенного модуля с помощью пакета SDK службы устройства Java для службы подготовки устройств Центра Интернета вещей Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "39090697"
 
 Если вы не знакомы с процессом автоматической подготовки, обязательно прочтите статью [Принципы автоматической подготовки устройств](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить, выполните инструкции по [настройке службы "Подготовка устройств к добавлению в Центр Интернета вещей" на портале Azure](./quick-setup-auto-provision.md). 
 
-[!INCLUDE [IoT DPS basic](../../includes/iot-dps-basic.md)]
+[!INCLUDE [IoT Device Provisioning Service basic](../../includes/iot-dps-basic.md)]
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
@@ -64,7 +64,7 @@ ms.locfileid: "39090697"
 
 1. Войдите на портал Azure, нажмите кнопку **Все ресурсы** в меню слева и откройте службу подготовки устройств. Запишите значения параметров _Область идентификатора_ и _Provisioning Service Global Endpoint_ (Глобальная конечная точка службы подготовки).
 
-    ![Сведения о DPS](./media/java-quick-create-simulated-device/extract-dps-endpoints.png)
+    ![Сведения о службе подготовки устройств](./media/java-quick-create-simulated-device/extract-dps-endpoints.png)
 
 1. Измените `src/main/java/samples/com/microsoft/azure/sdk/iot/ProvisioningTpmSample.java`, добавив значения параметров _Область идентификатора_ и _Provisioning Service Global Endpoint_ (Глобальная конечная точка службы подготовки), как было указано ранее.  
 

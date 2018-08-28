@@ -9,13 +9,13 @@ manager: kfile
 editor: jasonwhowell
 ms.assetid: ad8a6992-02c7-47d4-a108-62fc5a0777a3
 ms.topic: get-started-article
-ms.date: 05/02/2018
-ms.openlocfilehash: 0acaace474d62f18b9b6ca4aaae324405a2f43db
-ms.sourcegitcommit: c722760331294bc8532f8ddc01ed5aa8b9778dec
+ms.date: 08/13/2018
+ms.openlocfilehash: 852840fc29589292e7a74390026b78b15f81e721
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34735799"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41917636"
 ---
 # <a name="develop-u-sql-scripts-by-using-data-lake-tools-for-visual-studio"></a>Разработка скриптов U-SQL с помощью средств Data Lake для Visual Studio
 [!INCLUDE [get-started-selector](../../includes/data-lake-analytics-selector-get-started.md)]
@@ -36,7 +36,7 @@ ms.locfileid: "34735799"
 >    - [для Visual Studio 2013 и 2015.](https://www.microsoft.com/en-us/download/details.aspx?id=49504)
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * **Visual Studio**: поддерживаются все выпуски, кроме Express.
     * Visual Studio 2017
@@ -52,16 +52,20 @@ ms.locfileid: "34735799"
 ## <a name="connect-to-an-azure-data-lake-analytics-account"></a>Подключение к учетной записи Azure Data Lake Analytics
 
 1. Откройте Visual Studio.
-2. Откройте обозреватель сервера, последовательно выбрав пункты **Представление** > **Обозреватель сервера**.
-3. Щелкните правой кнопкой мыши **Azure**. Затем выберите **Подключиться к подписке Microsoft Azure** и следуйте инструкциям.
-4. В обозревателе сервера последовательно выберите пункты **Azure** > **Data Lake Analytics**. Отобразится список учетных записей Data Lake Analytics.
 
+2. Откройте обозреватель сервера, последовательно выбрав пункты **Представление** > **Обозреватель сервера**.
+
+3. Щелкните правой кнопкой мыши **Azure**. Затем выберите **Подключиться к подписке Microsoft Azure** и следуйте инструкциям.
+
+4. В обозревателе сервера последовательно выберите пункты **Azure** > **Data Lake Analytics**. Отобразится список учетных записей Data Lake Analytics.
 
 ## <a name="write-your-first-u-sql-script"></a>Создание первого скрипта U-SQL
 
 Ниже приводится простой скрипт U-SQL. Он определяет небольшой набор данных и по умолчанию записывает его в хранилище Data Lake Store как файл с именем `/data.csv`.
 
 ```
+USE DATABASE master;
+USE SCHEMA dbo;
 @a  = 
     SELECT * FROM 
         (VALUES
@@ -74,7 +78,7 @@ OUTPUT @a
     USING Outputters.Csv();
 ```
 
-### <a name="submit-a-data-lake-analytics-job"></a>Отправка задания аналитики озера данных
+## <a name="submit-a-data-lake-analytics-job"></a>Отправка задания аналитики озера данных
 
 1. Выберите **Файл** > **Создать** > **Проект**.
 
@@ -87,31 +91,35 @@ OUTPUT @a
     ![Отправка проекта U-SQL в Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job.png)
 
 5. В левом верхнем углу окна **Script.usql** выберите **Отправить**.
-6. Проверьте **учетную запись Analytics** и выберите **Отправить**. По завершении отправки ее результаты появятся в окне результатов средств Data Lake для Visual Studio.
 
-    ![Отправка проекта U-SQL в Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job-advanced.png)
-7. Чтобы отобразились сведения о последнем состоянии задания, нажмите кнопку **Обновить**. Если задание завершилось успешно, отобразятся параметры **Граф задания**, **Операции с метаданными**, **Журнал состояний** и **Диагностика**:
+6. После отправки задания откроется вкладка **Представление задания**, на которой отображается ход выполнения задания. Чтобы отобразились сведения о последнем состоянии задания, нажмите кнопку **Обновить**.
 
     ![График выполнения задания аналитики озера данных U-SQL в Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-performance-graph.png)
 
    * В окне **Сводные данные задания** представлена сводка задания.   
-   * В окне **Сведения о задании** содержатся более конкретные сведения о задании, в частности о скрипте, ресурсах и вершинах.
    * В окне **Граф задания** визуализируется ход выполнения задания.
    * В окне **Операции с метаданными** представлены сведения обо всех действиях, выполненных в каталоге U-SQL.
    * В окне **Данные** отображаются все входные и выходные данные.
+   * **Состояние журнала** отображает сведения о временной шкале и состоянии.
+   * **Анализ единиц использования аналитики** отображает, какое количество единиц использовались в задании и симуляторах анализа разных стратегий выделения этих единиц.
    * В окне **Диагностика** представлены данные расширенного анализа для выполнения задания и оптимизации производительности.
 
-### <a name="to-check-job-state"></a>Проверка состояния задания
+## <a name="check-job-status"></a>Проверка состояния задания
 
-1. В обозревателе сервера последовательно выберите пункты **Azure** > **Data Lake Analytics**. 
+1. В обозревателе сервера последовательно выберите пункты **Azure** > **Data Lake Analytics**.
+
 2. Разверните окно имени учетной записи Data Lake Analytics.
+
 3. Дважды щелкните **Задания**.
+
 4. Выберите задание, отправленное ранее.
 
-### <a name="to-see-the-output-of-a-job"></a>Просмотр выходных данных задания
+## <a name="see-the-job-output"></a>Просмотр выходных данных задания
 
 1. В обозревателе сервера перейдите к отправленному заданию.
-2. Перейдите на вкладку **Данные**.
+
+2. Перейдите на вкладку **Данные** .
+
 3. На вкладке **Job Outputs** (Выходные данные задания) выберите файл `"/data.csv"`.
 
 ## <a name="next-steps"></a>Дополнительная информация

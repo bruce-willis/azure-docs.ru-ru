@@ -8,14 +8,14 @@ ms.service: cosmos-db
 ms.component: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: sample
-ms.date: 03/14/2018
+ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: d0c587b3d43f7511775a4a114bead96348372bc5
-ms.sourcegitcommit: 0408c7d1b6dd7ffd376a2241936167cc95cfe10f
+ms.openlocfilehash: c084a08ffef868af751d065c5857a9b67a12485f
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36959973"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "41918159"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-net"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -31,15 +31,15 @@ ms.locfileid: "36959973"
 * вставка, обновление и удаление записей;
 * Запросы к таблицам
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим примером требуются следующие компоненты:
 
 * [Microsoft Visual Studio](https://www.visualstudio.com/downloads/)
-* [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/). Это обязательный пакет в предварительной версии, который поддерживается в рабочих средах. 
-* [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table).
+* [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/). Обязательный пакет в предварительной версии, который поддерживается в рабочих средах. 
+* [Библиотека таблиц Microsoft Azure CosmosDB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Эта библиотека сейчас доступна только для .NET Standard, но не для .NET Core.
 * [Диспетчер конфигураций Azure для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/)
-* [Учетная запись хранения Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account)
+* [Учетная запись хранения Azure](../storage/common/storage-quickstart-create-account.md)
 
 [!INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -50,17 +50,14 @@ ms.locfileid: "36959973"
 [!INCLUDE [cosmos-db-create-azure-service-account](../../includes/cosmos-db-create-azure-service-account.md)]
 
 ### <a name="create-an-azure-storage-account"></a>Создание учетной записи хранения Azure
-Самый простой способ создать первую учетную запись хранения Azure — воспользоваться [порталом Azure](https://portal.azure.com). Дополнительную информацию см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md#create-a-storage-account).
+* Самый простой способ создать первую учетную запись хранения Azure — воспользоваться [порталом Azure](https://portal.azure.com). Дополнительную информацию см. в статье [Об учетных записях хранения Azure](../storage/common/storage-quickstart-create-account.md).
 
-Кроме того, создать учетную запись хранения Azure можно с помощью [Azure PowerShell](../storage/common/storage-powershell-guide-full.md), [Azure CLI](../storage/common/storage-azure-cli.md) или [клиентской библиотеки поставщика ресурсов хранилища для .NET](/dotnet/api/microsoft.azure.management.storage).
+* Кроме того, создать учетную запись хранения Azure можно с помощью [Azure PowerShell](../storage/common/storage-powershell-guide-full.md), [Azure CLI](../storage/common/storage-azure-cli.md) или [клиентской библиотеки поставщика ресурсов хранилища для .NET](/dotnet/api/microsoft.azure.management.storage).
 
-Если вы не хотите сейчас создавать учетную запись хранения, код можно протестировать в локальной среде с помощью эмулятора хранения Azure. Дополнительные сведения см. в статье [Использование эмулятора хранения Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
+* Если вы не хотите сейчас создавать учетную запись хранения, код можно протестировать в локальной среде с помощью эмулятора хранения Azure. Дополнительные сведения см. в статье [Использование эмулятора хранения Azure для разработки и тестирования](../storage/common/storage-use-emulator.md).
 
 ### <a name="create-an-azure-cosmos-db-table-api-account"></a>Создание учетной записи API таблиц Azure Cosmos DB
 [!INCLUDE [cosmos-db-create-tableapi-account](../../includes/cosmos-db-create-tableapi-account.md)]
-
-## <a name="set-up-your-development-environment"></a>Настройка среды разработки
-Теперь настройте среду разработки в Visual Studio для работы с примерами кода из этого руководства.
 
 ### <a name="create-a-windows-console-application-project"></a>Создание нового проекта консольного приложения Windows
 В Visual Studio создайте новое консольное приложение Windows. Ниже показано, как создать консольное приложение в Visual Studio 2017 г. Эти же действия можно выполнить и в других версиях Visual Studio.
@@ -75,17 +72,19 @@ ms.locfileid: "36959973"
 
 Вы можете использовать библиотеку таблиц Azure Cosmos DB в любом приложении .NET, в том числе в облачной службе Azure, веб-приложении Azure, классическом или мобильном приложении. Для упрощения в этом руководстве мы будем использовать консольное приложение.
 
-### <a name="use-nuget-to-install-the-required-packages"></a>Установка необходимых пакетов с помощью NuGet
+### <a name="install-the-required-nuget-packages"></a>Установка необходимых пакетов NuGet
 Для работы с этим примером рекомендуется использовать в проекте три пакета:
 
-* [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common). 
-* [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Этот пакет предоставляет программный доступ к ресурсам данных в вашей учетной записи хранилища таблиц или API таблиц Azure Cosmos DB.
+* [Общая библиотека службы хранилища Azure для .NET (предварительная версия)](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common). — Следует использовать версию, которая меньше или равна 9.0.0.1 (<= 9.0.0.1).
+
+* [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Этот пакет предоставляет программный доступ к ресурсам данных в вашей учетной записи хранилища таблиц или API таблиц Azure Cosmos DB. Эта библиотека сейчас доступна только для .NET Standard, но не для .NET Core.
+
 * [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) — этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
-Вы можете использовать NuGet для установки обоих пакетов. Выполните следующие действия.
+Чтобы получить пакеты NuGet, сделайте следующее:
 
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
-2. Выполните поиск в Интернете по запросу "Microsoft.Azure.Storage.Common" и выберите **Установить**, чтобы установить общую библиотеку службы хранилища Azure для .NET (предварительная версия) и ее зависимости. Убедитесь, что установлен флажок **Включить предварительные выпуски**, так как используется предварительная версия пакета.
+2. Выполните поиск в Интернете по запросу Microsoft.Azure.Storage.Common, выберите версию <= 9.0.0.1 и щелкните **Установить**, чтобы установить общую библиотеку службы хранилища Azure для .NET (предварительная версия) и ее зависимости. Убедитесь, что установлен флажок **Включить предварительные выпуски**, так как используется предварительная версия пакета.
 3. Выполните поиск в Интернете по запросу "Microsoft.Azure.CosmosDB.Table" и выберите **Установить**, чтобы установить библиотеку таблиц Microsoft Azure Cosmos DB.
 4. Выполните поиск в Интернете по запросу "WindowsAzure.ConfigurationManager" и нажмите кнопку **Установить**, чтобы установить библиотеку диспетчера конфигураций Microsoft Azure.
 

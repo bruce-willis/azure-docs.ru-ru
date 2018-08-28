@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Обработка потоков событий с помощью PowerShell | Документы Майкрософт
-description: В этом кратком руководстве описывается, как отправлять и получать события концентраторов событий Azure с помощью PowerShell и приводится пример приложения .NET.
+title: Краткое руководство по Azure. Создание концентратора событий с помощью PowerShell | Документация Майкрософт
+description: В этом кратком руководстве объясняется, как создать концентратор событий с помощью Azure PowerShell и как затем отправлять и получать данные, используя .NET Standard.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/26/2018
 ms.author: shvija
-ms.openlocfilehash: fd2b8b2e8bd075e029a07519ced186424798fd9c
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: a8a29484af7c95e9cffa1c7048c0f7b8d642c868
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40003616"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42023244"
 ---
-# <a name="quickstart-process-event-streams-using-powershell-and-net-standard"></a>Краткое руководство. Обработка потоков событий с помощью PowerShell и .NET Standard
+# <a name="quickstart-create-an-event-hub-using-azure-powershell"></a>Краткое руководство. Создание концентратора событий с помощью Azure PowerShell
 
-Концентраторы событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создать концентратор событий с помощью Azure PowerShell и как затем отправлять и получать данные из концентратора событий, используя пакет SDK для .NET Standard.
+Центры событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создать концентратор событий с помощью Azure PowerShell и как затем отправлять и получать данные из концентратора событий, используя пакет SDK для .NET Standard.
 
 Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
 
@@ -47,9 +47,9 @@ ms.locfileid: "40003616"
 New-AzureRmResourceGroup –Name myResourceGroup –Location eastus
 ```
 
-### <a name="create-an-event-hubs-namespace"></a>Создание пространства имен концентраторов событий
+### <a name="create-an-event-hubs-namespace"></a>Создание пространства имен в Центрах событий
 
-После создания группы ресурсов создайте пространство имен концентраторов событий в этой группе ресурсов. Пространство имен концентраторов событий предоставляет уникальное полное доменное имя, в котором можно создать концентратор событий. Замените значение `namespace_name` уникальным именем вашего пространства имен:
+После создания группы ресурсов создайте пространство имен Центров событий в этой группе ресурсов. Пространство имен Центров событий предоставляет уникальное полное доменное имя, в котором можно создать концентратор событий. Замените значение `namespace_name` уникальным именем вашего пространства имен:
 
 ```azurepowershell-interactive
 New-AzureRmEventHubNamespace -ResourceGroupName myResourceGroup -NamespaceName namespace_name -Location eastus
@@ -57,7 +57,7 @@ New-AzureRmEventHubNamespace -ResourceGroupName myResourceGroup -NamespaceName n
 
 ### <a name="create-an-event-hub"></a>Создание концентратора событий
 
-Теперь, когда у вас есть пространство имен концентраторов событий, создайте концентратор событий в этом пространстве имен:
+Теперь, когда у вас есть пространство имен Центров событий, создайте концентратор событий в этом пространстве имен:
 
 ```azurepowershell-interactive
 New-AzureRmEventHub -ResourceGroupName myResourceGroup -NamespaceName namespace_name -EventHubName eventhub_name
@@ -65,7 +65,7 @@ New-AzureRmEventHub -ResourceGroupName myResourceGroup -NamespaceName namespace_
 
 ### <a name="create-a-storage-account-for-event-processor-host"></a>Создание учетной записи хранения для узла обработчика событий
 
-Узел обработчика событий упрощает прием событий от концентраторов событий путем управления контрольными точками и параллельными приемниками. Для создания контрольных точек узлу обработчика событий требуется учетная запись хранения. Чтобы создать учетную запись хранения и получить ее ключи, выполните следующие команды:
+Узел обработчика событий упрощает прием событий от Центров событий путем управления контрольными точками и параллельными приемниками. Для создания контрольных точек узлу обработчика событий требуется учетная запись хранения. Чтобы создать учетную запись хранения и получить ее ключи, выполните следующие команды:
 
 ```azurepowershell-interactive
 # Create a standard general purpose storage account 
@@ -83,13 +83,13 @@ Get-AzureRmStorageAccountKey -ResourceGroupName myResourceGroup -Name storage_ac
 Get-AzureRmEventHubKey -ResourceGroupName myResourceGroup -NamespaceName namespace_name -Name RootManageSharedAccessKey
 ```
 
-## <a name="stream-into-event-hubs"></a>Потоковая передача в концентраторы событий
+## <a name="stream-into-event-hubs"></a>Потоковая передача в Центры событий
 
-Теперь вы можете запустить потоковую передачу в концентраторы событий. Примеры можно загрузить или клонировать из [репозитория концентраторов событий GitHub](https://github.com/Azure/azure-event-hubs)
+Теперь вы можете запустить потоковую передачу в Центры событий. Примеры можно загрузить или клонировать из [репозитория Центров событий GitHub](https://github.com/Azure/azure-event-hubs)
 
 ### <a name="ingest-events"></a>Отправка событий
 
-Чтобы начать потоковую передачу событий, загрузите пример [SampleSender](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) из GitHub или клонируйте [репозиторий концентраторов событий на GitHub](https://github.com/Azure/azure-event-hubs), выполнив следующую команду:
+Чтобы начать потоковую передачу событий, загрузите пример [SampleSender](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) из GitHub или клонируйте [репозиторий Центров событий на GitHub](https://github.com/Azure/azure-event-hubs), выполнив следующую команду:
 
 ```bash
 git clone https://github.com/Azure/azure-event-hubs.git
@@ -113,7 +113,7 @@ private const string EhEntityPath = "Event Hub name";
 
 ### <a name="receive-and-process-events"></a>Прием и обработка событий
 
-Теперь загрузите образец приемника узла обработчика событий, который принимает сообщения, отправленные вами. Загрузите пример [SampleEphReceiver](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver) из GitHub или клонируйте [репозиторий концентраторов событий на GitHub](https://github.com/Azure/azure-event-hubs), выполнив следующую команду:
+Теперь загрузите образец приемника узла обработчика событий, который принимает сообщения, отправленные вами. Загрузите пример [SampleEphReceiver](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver) из GitHub или клонируйте [репозиторий Центров событий на GitHub](https://github.com/Azure/azure-event-hubs), выполнив следующую команду:
 
 ```bash
 git clone https://github.com/Azure/azure-event-hubs.git
@@ -137,7 +137,7 @@ private const string StorageAccountKey = "Storage account key";
 
 ![][4]
 
-На портале Azure можно посмотреть скорость, с которой события обрабатываются в данном пространстве имен концентраторов событий, как это изображено ниже:
+На портале Azure можно посмотреть скорость, с которой события обрабатываются в данном пространстве имен Центров событий, как это изображено ниже:
 
 ![][5]
 
@@ -151,10 +151,10 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этой статьи вы создали пространство имен концентраторов событий и другие ресурсы, необходимые для отправки и получения событий в концентраторе событий. Для получения дополнительных сведений перейдите к следующему руководству:
+С помощью этой статьи вы создали пространство имен Центров событий и другие ресурсы, необходимые для отправки и получения событий в концентраторе событий. Для получения дополнительных сведений перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Визуализация аномальных данных в потоках данных концентраторов событий](event-hubs-tutorial-visualize-anomalies.md)
+> [Визуализация аномальных данных в потоках данных Центров событий](event-hubs-tutorial-visualize-anomalies.md)
 
 [создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install and Configure Azure PowerShell]: https://docs.microsoft.com/powershell/azure/install-azurerm-ps

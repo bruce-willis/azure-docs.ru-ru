@@ -1,5 +1,5 @@
 ---
-title: Настройка подготовки устройств с помощью Azure CLI | Документация Майкрософт
+title: Настройка службы подготовки устройств с помощью Azure CLI | Документация Майкрософт
 description: Краткое руководство Azure. Настройка службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI
 author: wesmc7777
 ms.author: wesmc
@@ -9,16 +9,16 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: cf2e108aa7cab6be2996cb535d27d597e462617c
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: c9e3bbbc4fbe8a9aade3364d6cbe9e93b5798595
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626545"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022350"
 ---
 # <a name="set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
-Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описываются сведения об использовании Azure CLI для создания Центра Интернета вещей и службы подготовки устройств к добавлению в этот центр, а также сведения о связывании этих двух служб. 
+Azure CLI используется для создания ресурсов Azure и управления ими из командной строки или с помощью скриптов. В этом кратком руководстве описано создание Центра Интернета вещей и службы "Подготовка устройств к добавлению в Центр Интернета вещей" с помощью Azure CLI, а также связывание этих двух служб. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

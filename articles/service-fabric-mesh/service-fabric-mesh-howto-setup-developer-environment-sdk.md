@@ -1,24 +1,24 @@
 ---
-title: Настройка среды разработки Windows для приложений Сетки Service Fabric | Документация Майкрософт
+title: Настройка среды разработки Windows для создания приложений Сетки Service Fabric | Документация Майкрософт
 description: Настройте среду разработки Windows таким образом, чтобы можно было создавать приложение Сетки Service Fabric и разворачивать его в Сетке Azure Service Fabric.
 services: service-fabric-mesh
 keywords: ''
 author: tylermsft
 ms.author: twhitney
-ms.date: 07/20/2018
+ms.date: 08/08/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
-manager: timlt
-ms.openlocfilehash: 589bef1894a3bee1e6974a0ea2516200fae2891f
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+manager: jeconnoc
+ms.openlocfilehash: e95c0ad90503410601cc0764fdc559579a1dd13d
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185549"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41918788"
 ---
-# <a name="set-up-your-windows-development-environment-to-build-service-fabric-applications"></a>Чтобы создавать приложения Service Fabric, настройте среду разработки Windows
+# <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
 
-Чтобы создавать и запускать приложения Service Fabric на компьютере для разработки Windows, установите среду выполнения Service Fabric, пакет SDK и средства.
+Чтобы создавать и запускать приложения Сетки Azure Service Fabric на компьютере для разработки Windows, установите среду выполнения Сетки Service Fabric, пакет SDK и инструменты.
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
@@ -31,28 +31,30 @@ ms.locfileid: "39185549"
 
 ## <a name="visual-studio"></a>Visual Studio
 
-Для развертывания приложений Service Fabric требуется Visual Studio 2017. [Его версия должна быть не ниже 15.6.0][download-visual-studio] и включать следующие рабочие нагрузки.
+Для развертывания приложений сетки Service Fabric требуется Visual Studio 2017. [Его версия должна быть не ниже 15.6.0][download-visual-studio] и включать следующие рабочие нагрузки.
 
-- ASP.NET и веб-разработка.
-- разработка Azure.
- 
-## <a name="windows-10---install-docker"></a>Windows 10 — установка Docker
+* ASP.NET и веб-разработка.
+* разработка Azure.
+
+## <a name="install-docker"></a>Установка Docker
+
+#### <a name="windows-10"></a>Windows 10
 
 Скачайте и установите последнюю версию [Docker Community Edition для Windows][download-docker] для поддержки контейнерных приложений Service Fabric, используемого Сеткой Service Fabric.
 
-Во время процесса установки при появлении запроса выберите **Использовать контейнеры Windows вместо контейнеров Linux**. Если на компьютере не включен Hyper-V, установка Docker предложит его включить. Если будет предложено, щелкните **OK**.
+Во время процесса установки при появлении запроса выберите **Использовать контейнеры Windows вместо контейнеров Linux**.
 
-## <a name="windows-server-2016---install-hyper-v-and-docker"></a>Windows Server 2016 — установка Hyper-V и Docker
+Если на компьютере не включен Hyper-V, при установке Docker его будет предложено включить. Если будет предложено, щелкните **OK**.
 
-**Установка Hyper-V**
+#### <a name="windows-server-2016"></a>Windows Server 2016
 
-Чтобы установить Hyper-V, сначала откройте PowerShell как администратор и выполните следующую команду, а затем перезагрузите компьютер. Дополнительные сведения см. в статье [Install Docker Enterprise Edition for Windows Server][download-docker-server] (Установка Docker Enterprise Edition для Windows).
+Если у вас не включена роль Hyper-V, откройте PowerShell как администратор и выполните следующую команду, а затем перезагрузите компьютер. Дополнительные сведения см. в статье [Install Docker Enterprise Edition for Windows Server][download-docker-server] (Установка Docker Enterprise Edition для Windows).
 
 ```powershell
 Install-WindowsFeature -Name Hyper-V -IncludeManagementTools
 ```
 
-**Установка Docker**
+Перезагрузите компьютер.
 
 Чтобы установить Docker, запустите PowerShell как администратор и выполните следующую команду.
 
@@ -61,8 +63,6 @@ Install-Module DockerMsftProvider -Force
 Install-Package Docker -ProviderName DockerMsftProvider -Force
 Install-WindowsFeature Containers
 ```
-
-Перезагрузите компьютер.
 
 ## <a name="sdk-and-tools"></a>Пакет SDK и средства
 

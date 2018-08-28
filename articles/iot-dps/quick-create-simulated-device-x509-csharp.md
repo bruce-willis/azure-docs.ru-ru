@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 28e6158a3dcd4cee98c380c53a1a345983bdf4f7
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: cc8db9a11aa4c942f0dcee3dce320a5bb77cf14a
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090825"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022415"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C# для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "39090825"
 
 Если вы не знакомы с процессом автоматической подготовки, обязательно прочтите статью [Принципы автоматической подготовки устройств](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить, выполните инструкции по [настройке службы "Подготовка устройств к добавлению в Центр Интернета вещей" на портале Azure](./quick-setup-auto-provision.md). 
 
-[!INCLUDE [IoT DPS basic](../../includes/iot-dps-basic.md)]
+[!INCLUDE [IoT Device Provisioning Service basic](../../includes/iot-dps-basic.md)]
 
 <a id="setupdevbox"></a>
 ## <a name="prepare-the-development-environment"></a>Подготовка среды разработки 
@@ -87,7 +87,7 @@ ms.locfileid: "39090825"
 
 1. Выберите колонку **Обзор** службы подготовки и запишите значение **_области идентификатора_**.
 
-    ![Извлечение информации о конечной точке диагностики DPS из колонки портала](./media/quick-create-simulated-device-x509-csharp/copy-scope.png) 
+    ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device-x509-csharp/copy-scope.png) 
 
 
 2. Введите следующую команду, чтобы создать и запустить пример подготавливаемого устройства X.509. Замените значение `<IDScope>` значением области идентификатора для службы подготовки. 

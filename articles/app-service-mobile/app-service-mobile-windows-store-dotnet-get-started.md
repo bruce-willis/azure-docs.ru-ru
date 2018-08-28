@@ -12,36 +12,36 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: hero-article
-ms.date: 10/01/2016
+ms.date: 08/17/2018
 ms.author: crdun
-ms.openlocfilehash: 508989e0e2daeac7922d61ff692ee4579139cfc8
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 28a741393fd4b7b4076449c90575f8a4ab30e0fc
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38307227"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "41918967"
 ---
 # <a name="create-a-windows-app"></a>Создание приложения Windows
+
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 ## <a name="overview"></a>Обзор
+
 В этом руководстве показано, как добавить облачную серверную службу в универсальную платформу Windows (UWP). Дополнительные сведения см. в статье [Общие сведения о мобильных приложениях](app-service-mobile-value-prop.md). Ниже приведены снимки экрана готового приложения.
 
-![Готовое классическое приложение](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-quickstart-completed-desktop.png)   
-Выполняется на настольном компьютере.
-
-![Готовое приложение для телефона](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-quickstart-completed.png)  
-Выполняется на телефоне.
+![Готовое классическое приложение](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-quickstart-completed-desktop.png)
 
 Изучение этого руководства является необходимым условием для работы со всеми остальными руководствами, посвященными мобильным приложениям UWP.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим учебником требуется:
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, можно зарегистрироваться для получения бесплатной пробной версии Azure и получить до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* [Visual Studio Community 2015] или более поздней версии.
+* [Visual Studio Community 2017].
 
 ## <a name="create-a-new-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
+
 Чтобы создать серверную часть мобильного приложения, выполните указанные ниже действия.
 
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
@@ -49,28 +49,29 @@ ms.locfileid: "38307227"
 Итак, вы подготовили серверную часть мобильного Azure, которая может использоваться мобильными клиентскими приложениями. Теперь скачайте серверный проект со списком простых задач и опубликуйте его в Azure.
 
 ## <a name="configure-the-server-project"></a>Настройка серверного проекта
+
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
 ## <a name="download-and-run-the-client-project"></a>Скачивание и выполнение клиентского проекта
-Настроив серверную часть мобильного приложения, можно создать новое клиентское приложение или изменить существующее приложение, чтобы подключиться к Azure. В этом разделе вы загрузите проект шаблона UWP, который настроен для подключения к серверной части мобильного приложения.
+
+Настроив серверную часть мобильного приложения, можно создать новое клиентское приложение или изменить существующее приложение, чтобы подключиться к Azure. В этом разделе вы загрузите приме проекта приложения UWP, который настроен для подключения к серверной части мобильного приложения.
 
 1. Вернитесь в колонку **Быстрый запуск** серверной части мобильного приложения и последовательно выберите элементы **Создать новое приложение** > **Загрузить**. Затем извлеките сжатые файлы проекта на локальный компьютер.
 
     ![Загрузка проекта быстрого запуска Windows](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-app-windows-quickstart.png)
-2. (Необязательно) Добавьте в то же решение проект приложения UWP в качестве серверного проекта. Это упрощает отладку и тестирование приложения и серверной части в одном решении Visual Studio, если вам это потребуется. Чтобы добавить в решение проект приложения UWP, необходимо использовать Visual Studio 2015 или более поздней версии.
-3. Задав приложение UWP как запускаемый проект, нажмите клавишу F5, чтобы развернуть и запустить приложение.
-4. В приложении в поле **Insert a TodoItem** (Вставить TodoItem) введите содержательный текст, например *Работа с руководством*, и нажмите кнопку **Сохранить**.
+
+2. Откройте проект UWP и нажмите клавишу F5, чтобы развернуть и запустить приложение.
+3. В приложении в поле **Insert a TodoItem** (Вставить TodoItem) введите содержательный текст, например *Работа с руководством*, и нажмите кнопку **Сохранить**.
 
     ![Полный быстрый запуск Windows — классическая версия](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-quickstart-startup.png)
 
     В результате будет отправлен запрос POST к серверной части нового мобильного приложения, размещенного в Azure.
-5. (Необязательно) Остановите приложение и перезапустите его на другом устройстве или эмуляторе мобильных устройств.
 
-    ![Полный быстрый запуск Windows — мобильная версия](./media/app-service-mobile-windows-store-dotnet-get-started/mobile-quickstart-completed.png)
-
-    Обратите внимание, что данные, сохраненные на предыдущем этапе, загружаются из Azure после запуска приложения UWP.
+> [!TIP]
+> При использовании серверной части .NET можно добавить проект приложения UWP в то же решение, в которое добавлен серверный проект. Это упрощает отладку и тестирование приложения и серверной части в одном решении Visual Studio. Чтобы добавить в серверное решение проект приложения UWP, требуется Visual Studio 2017.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 * [Добавление аутентификации в приложение](app-service-mobile-windows-store-dotnet-get-started-users.md)  
   Узнайте больше о проверке подлинности пользователей приложения с помощью поставщика удостоверений.
 * [Добавление push-уведомлений в приложение](app-service-mobile-windows-store-dotnet-get-started-push.md)  
@@ -83,4 +84,4 @@ ms.locfileid: "38307227"
 <!-- URLs. -->
 [Mobile App SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [Azure portal]: https://portal.azure.com/
-[Visual Studio Community 2015]: https://go.microsoft.com/fwLink/p/?LinkID=534203
+[Visual Studio Community 2017]: https://go.microsoft.com/fwLink/p/?LinkID=534203

@@ -1,6 +1,6 @@
 ---
-title: Руководство по настройке веб-приложения Azure для считывания секрета из хранилища ключей | Документация Майкрософт
-description: Руководство по настройке приложения Node.js для считывания секрета из Key Vault
+title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node | Документация Майкрософт
+description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node
 services: key-vault
 documentationcenter: ''
 author: prashanthyv
@@ -8,19 +8,19 @@ manager: sumedhb
 ms.service: key-vault
 ms.workload: identity
 ms.topic: quickstart
-ms.date: 08/01/2018
+ms.date: 08/08/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: cc43081463667eba06af6538f3d78f16544ed2a5
-ms.sourcegitcommit: 96f498de91984321614f09d796ca88887c4bd2fb
+ms.openlocfilehash: 4592b256dfda75e81a94034545cd54dbf0d71532
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39412248"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "42022546"
 ---
-# <a name="quickstart-how-to-set-and-read-a-secret-from-key-vault-in-a-node-web-app"></a>Краткое руководство. Установка и считывание секрета из Key Vault в веб-приложении Node.js 
+# <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-a-node-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node 
 
-В этом кратком руководстве показано, как хранить секрет в Key Vault и как его получать с помощью веб-приложения. Это веб-приложение может выполняться локально или в Azure. Это краткое руководство использует Node.js и Управляемые удостоверения служб (MSI)
+В этом кратком руководстве описывается, как хранить секрет в Key Vault и как его получать с помощью веб-приложения. Чтобы просмотреть значение секрета, необходимо выполнить это действие в Azure. Это краткое руководство использует Node.js и Управляемые удостоверения служб (MSI)
 
 > [!div class="checklist"]
 > * создание Key Vault;
@@ -31,6 +31,9 @@ ms.locfileid: "39412248"
 > * предоставление разрешений, необходимых веб-приложению для чтения данных из Key Vault.
 
 Прежде чем продолжить, убедитесь, что изучены [основные понятия](key-vault-whatis.md#basic-concepts).
+
+>[!NOTE]
+Чтобы понять, почему в этой статье приводятся именно такие рекомендации, необходимо знать несколько основных понятий. Key Vault — это центральный репозиторий для хранения секретов программным способом. Но, чтобы воспользоваться возможностями Key Vault, приложения или пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. Следуя рекомендациям по безопасности, первый секрет должен также периодически меняться. Но благодаря [Управляемому удостоверению службы](../active-directory/managed-service-identity/overview.md) приложения, работающие в Azure, получают удостоверение, которое автоматически управляется службой Azure. Это помогает устранить **проблему введения секрета**, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -49,7 +52,7 @@ az login
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 Выберите имя группы ресурсов для заполнителя.
 В следующем примере создается группа ресурсов с именем *<YourResourceGroupName>* в расположении *eastus*.
@@ -123,8 +126,6 @@ git clone https://github.com/Azure-Samples/key-vault-node-quickstart.git
     ```
     # Bash
     az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "NODE|6.9" --deployment-local-git
-    # PowerShell
-    az --% webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app_name> --runtime "NODE|6.9"
     ```
     Когда веб-приложение будет создано, в Azure CLI отобразится примерно следующее:
     ```

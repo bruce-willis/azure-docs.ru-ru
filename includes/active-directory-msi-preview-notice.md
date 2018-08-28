@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 04/24/2018
 ms.author: daveba
 ms.custom: include file
-ms.openlocfilehash: e1f55b26e7e9f76ae4bc3f6d4af98c8110c3d37a
-ms.sourcegitcommit: d4c076beea3a8d9e09c9d2f4a63428dc72dd9806
+ms.openlocfilehash: 3004e2e4db12b7b5beb7ab024562d4e285c99a50
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39399980"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "40238759"
 ---
 |  |
 |--|
-|Управляемое удостоверение службы — это функция Azure Active Directory, доступная в режиме общедоступной предварительной версии. Прежде чем начинать, ознакомьтесь с [известными проблемами](/azure/active-directory/managed-service-identity/known-issues). См. дополнительные сведения об [условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).|
+|Управляемое удостоверение службы — это функция Azure Active Directory. Каждая [служба Azure, которая поддерживает Управляемое удостоверение службы](/azure/active-directory/managed-service-identity/services-support-msi), работает в соответствии с собственной временной шкалой. Прежде чем начать работу, обязательно проверьте состояние [доступности](/azure/active-directory/managed-service-identity/services-support-msi) управляемых удостоверений для своего ресурса и ознакомьтесь с [известными проблемами](/azure/active-directory/managed-service-identity/known-issues).|
 |  |

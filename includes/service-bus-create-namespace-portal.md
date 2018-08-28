@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 07/03/2018
 ms.author: sethm
 ms.custom: include file
-ms.openlocfilehash: a110998505ed49c36e1ec722b1dfbf0969def060
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 6fb9b5cd1379f39796f984f0436900f629c66436
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37449564"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "40209501"
 ---
 Чтобы приступить к использованию сущностей обмена сообщениями в служебной шине в Azure, сначала необходимо создать пространство имен с уникальным для Azure именем. Пространство имен предоставляет контейнер для адресации ресурсов служебной шины в вашем приложении.
 
@@ -39,7 +39,7 @@ ms.locfileid: "37449564"
 3. В окне **Политики общего доступа** щелкните **RootManageSharedAccessKey**.
    
     ![Сведения о подключении][connection-info]
-4. В окне **Policy: RootManageSharedAccessKey** (Политика: RootManageSharedAccessKey) нажмите кнопку копирования рядом с полем **Строка подключения — первичный ключ**, чтобы скопировать строку подключения в буфер обмена для последующего использования. Вставьте на время эти значения в Блокноте или любом другом месте.
+4. В окне **Policy: RootManageSharedAccessKey** (Политика: RootManageSharedAccessKey) нажмите кнопку копирования рядом с полем **Первичная строка подключения**, чтобы скопировать строку подключения в буфер обмена для последующего использования. Вставьте на время эти значения в Блокноте или любом другом месте.
    
     ![Строка подключения][connection-string]
 

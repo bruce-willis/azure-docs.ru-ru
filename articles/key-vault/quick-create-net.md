@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Настройка веб-приложения Azure для настройки и получения секрета из Key Vault | Документация Майкрософт
-description: Краткое руководство по настройке веб-приложения ASP.NET Core для настройки и получения секрета из Key Vault
+title: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node | Документация Майкрософт
+description: Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения Node
 services: key-vault
 author: prashanthyv
 manager: sumedhb
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 07/24/2018
 ms.author: barclayn
 ms.custom: mvc
-ms.openlocfilehash: 8b5624ae3083d92213b4ee919dc0860bf5ff4ab7
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.openlocfilehash: 0188d06e5c58287e1040f6a15456d3ffe291b04a
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480208"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42023027"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-a-net-web-app"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью веб-приложения .NET
 
@@ -28,7 +28,10 @@ ms.locfileid: "39480208"
 > * [включение удостоверений управляемой службы;](../active-directory/managed-service-identity/overview.md)
 > * предоставление разрешений, необходимых веб-приложению для чтения данных из Key Vault.
 
-Прежде чем продолжить, прочитайте [Базовые концепции](key-vault-whatis.md#basic-concepts), особенно [Управляемое удостоверение службы](../active-directory/managed-service-identity/overview.md).
+Прежде чем мы продолжим, ознакомьтесь с [основными понятиями](key-vault-whatis.md#basic-concepts).
+
+>[!NOTE]
+Чтобы понять, почему в этой статье приводятся именно такие рекомендации, необходимо знать несколько основных понятий. Key Vault — это центральный репозиторий для хранения секретов программным способом. Но, чтобы воспользоваться возможностями Key Vault, приложения или пользователи должны сначала пройти в нем аутентификацию, т. е. предоставить секрет. Следуя рекомендациям по безопасности, первый секрет должен также периодически меняться. Но благодаря [Управляемому удостоверению службы](../active-directory/managed-service-identity/overview.md) приложения, работающие в Azure, получают удостоверение, которое автоматически управляется службой Azure. Это помогает устранить **проблему введения секрета**, чтобы пользователи и приложения могли следовать рекомендациям и не беспокоиться об изменении первого секрета.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -165,6 +168,8 @@ az webapp identity assign --name "keyvaultdotnetcorequickstart" --resource-group
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --secret-permissions get
 
 ```
+
+**Теперь при запуске приложения должно отображаться извлеченное значение секрета.**
 
 ## <a name="next-steps"></a>Дополнительная информация
 

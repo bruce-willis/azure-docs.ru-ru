@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 05/09/2018
 ms.author: bonova
 manager: craigg
-ms.openlocfilehash: e337a5c7c203e2e1048149dfeff71436a4d2752f
-ms.sourcegitcommit: 3c3488fb16a3c3287c3e1cd11435174711e92126
+ms.openlocfilehash: a019b21c130bebfe27925e90d7f7843d92654e01
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34850616"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41924806"
 ---
 # <a name="create-an-azure-sql-database-managed-instance-in-the-azure-portal"></a>Создание управляемого экземпляра базы данных SQL Azure на портале Azure
 
@@ -33,15 +33,17 @@ ms.locfileid: "34850616"
 > * Подключение к виртуальной машине
 > * Установка SSMS и подключение к управляемому экземпляру
 
+> [!Note]
+> Этом руководстве описано, как настроить сеть, подсети, экземпляр и виртуальную машину с помощью портала Azure (процесс может быть продолжительным). См. дополнительные сведения о том, как [создать сети и виртуальные машины, используемые для доступа к экземпляру, нажав на кнопку "Развернуть в Azure"](sql-database-managed-instance-get-started.md).
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
 > [!IMPORTANT]
 > Список регионов, в которых сейчас доступен Управляемый экземпляр см. в статье[Migrate your databases to a fully managed service with Azure SQL Database Managed Instance](https://azure.microsoft.com/blog/migrate-your-databases-to-a-fully-managed-service-with-azure-sql-database-managed-instance/) (Перенос баз данных в полностью управляемую службу при помощи Управляемого экземпляра Базы данных SQL Azure).
  
-## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портал Azure](https://portal.azure.com/#create/Microsoft.SQLManagedInstance).
+Войдите на [портале Azure](https://portal.azure.com/#create/Microsoft.SQLManagedInstance).
 
 ## <a name="whitelist-your-subscription"></a>Добавление подписки в список разрешенных
 
@@ -160,7 +162,7 @@ ms.locfileid: "34850616"
 2. Найдите **Управляемый экземпляр**, а затем выберите **Azure SQL Database Managed Instance (preview)** (Управляемый экземпляр базы данных SQL Azure (предварительная версия)).
 3. Нажмите кнопку **Создать**.
 
-   ![создание управляемого экземпляра](./media/sql-database-managed-instance-tutorial/managed-instance-create.png)
+   ![Создание управляемого экземпляра](./media/sql-database-managed-instance-tutorial/managed-instance-create.png)
 
 4. Выберите свою подписку и проверьте, чтобы для условий предварительной версии было выбрано значение **Принято**.
 
@@ -302,7 +304,7 @@ ms.locfileid: "34850616"
 8. При появлении запроса щелкните **Установить**.
 9. По завершении установки щелкните **Закрыть**.
 10. Откройте среду SSMS.
-11. В диалоговом окне **подключения к серверу** введите **имя узла* для управляемого экземпляра в поле **Имя сервера**, для типа аутентификации выберите **Проверка подлинности SQL Server**, введите имя пользователя и пароль, а затем нажмите кнопку **Подключиться**.
+11. В диалоговом окне **Подключение к серверу** введите ***имя узла** для Управляемого экземпляра в поле **Имя сервера**, для типа аутентификации выберите **Проверка подлинности SQL Server**, введите имя пользователя и пароль, а затем нажмите кнопку **Подключиться**.
 
     ![подключение SSMS](./media/sql-database-managed-instance-tutorial/ssms-connect.png)  
 

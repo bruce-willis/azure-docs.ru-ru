@@ -12,14 +12,14 @@ ms.topic: hero-article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/07/2018
+ms.date: 08/20/2018
 ms.author: terrylan
-ms.openlocfilehash: b0e674eb161af41a848f0456a033d615293a9947
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 117fc5cb6583c4e3eed0c9506bda470400941f61
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39622795"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41918534"
 ---
 # <a name="integrate-security-solutions-in-azure-security-center"></a>Интеграция решений по обеспечению безопасности в центре безопасности Azure
 В этом документе описана процедура управления решениями по обеспечению безопасности, подключенными к центру безопасности Azure, и добавления новых решений.
@@ -38,7 +38,11 @@ ms.locfileid: "39622795"
 - брандмауэр следующего поколения ([Check Point](https://www.checkpoint.com/products/vsec-microsoft-azure/), [Barracuda](https://campus.barracuda.com/product/nextgenfirewallf/article/NGF/AzureDeployment/), [Fortinet](http://docs.fortinet.com/d/fortigate-fortios-handbook-the-complete-guide-to-fortios-5.2), [Cisco](http://www.cisco.com/c/en/us/td/docs/security/firepower/quick_start/azure/ftdv-azure-qsg.html) и [Palo Alto Networks](https://www.paloaltonetworks.com/products));
 - Оценка уязвимостей ([Qualys](https://www.qualys.com/public-clouds/microsoft-azure/) и [Rapid7](https://www.rapid7.com/products/insightvm/)).
 
-Интеграция защиты конечных точек может различаться в зависимости от решения. В следующей таблице приведены дополнительные сведения о каждом решении:
+> [!NOTE]
+> Центр безопасности не устанавливает Microsoft Monitoring Agent на виртуальные модули партнеров, так как большинство поставщиков систем безопасности запрещают выполнение внешних агентов на своих модулях.
+>
+>
+
 
 | Защита конечных точек               | Платформы                             | Установка центра безопасности | Обнаружение центра безопасности |
 |-----------------------------------|---------------------------------------|------------------------------|---------------------------|
@@ -68,9 +72,9 @@ ms.locfileid: "39622795"
 
 2. В меню **Microsoft Azure** выберите пункт **Центр безопасности**. Откроется окно **Security Center - Overview** (Центр безопасности — обзор).
 
-  ![Обзор центра безопасности](./media/security-center-partner-integration/overview.png)
+3. В меню центра безопасности выберите пункт **Решения безопасности**.
 
-3. В разделе **Обзор** выберите **Решения безопасности**.
+  ![Обзор центра безопасности](./media/security-center-partner-integration/overview.png)
 
 В разделе **Решения безопасности** можно просмотреть сведения о работоспособности встроенного решения по обеспечению безопасности Azure и выполнить основные задачи управления. Вы также можете подключить другие типы источников данных безопасности, такие как оповещения службы "Защита идентификации Azure Active Directory" и журналы брандмауэра в общем формате событий (CEF).
 

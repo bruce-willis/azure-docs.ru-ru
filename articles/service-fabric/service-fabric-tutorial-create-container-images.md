@@ -16,25 +16,25 @@ ms.workload: na
 ms.date: 09/15/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: a2814ff299d1bfb003b6133e2b75b47a312f8728
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 15fcea6ca8f9c66ee4907018a11481b6c714b81a
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37114046"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616289"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric в Linux
 
 Это руководство представляет собой первую часть цикла руководств, посвященного использованию контейнеров в кластере Service Fabric на платформе Linux. В этом руководстве выполняется подготовка многоконтейнерного приложения к использованию в Service Fabric. В последующих руководствах созданные образы используются как часть приложения Service Fabric. Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 > [!div class="checklist"]
-> * клонирование источника приложения из GitHub;
-> * создание образа контейнера из источника приложения;
+> * клонирование исходного кода приложения из GitHub;
+> * создание образа контейнера из исходного кода приложения;
 > * развертывание экземпляра реестра контейнеров Azure;
 > * добавление тегов к образу контейнера для реестра контейнеров Azure;
 > * передача образа в реестр контейнеров Azure.
 
-Из этой серии руководств вы узнаете, как выполнить следующие задачи:
+Из этого цикла руководств вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
 > * создание образов контейнеров для Service Fabric;
@@ -68,6 +68,8 @@ cd service-fabric-containers/Linux/container-tutorial/
 ```bash
 docker build -t azure-vote-front .
 ```
+> [!Note]
+> Если вам отказано в доступе, ознакомьтесь с [этой](https://docs.docker.com/install/linux/linux-postinstall/#manage-docker-as-a-non-root-user) документацией о том, как работать с Docker без прав sudo.
 
 Для выполнения этой команды может потребоваться некоторое время, так как нужно извлечь все необходимые зависимости из Docker Hub. После завершения выполните команду [docker images](https://docs.docker.com/engine/reference/commandline/images/), чтобы увидеть созданные образы.
 
@@ -204,7 +206,7 @@ azure-vote-front
 
 По завершении работы с этим руководством образ контейнера будет сохранен в частном экземпляре реестра контейнеров Azure. В следующих руководствах мы развернем этот образ из ACR в кластер Service Fabric.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 В этом руководстве приложение было извлечено из Github, а также были созданы образы контейнеров, которые затем были помещены в реестр. Были выполнены следующие действия:
 

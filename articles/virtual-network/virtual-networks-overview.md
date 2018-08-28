@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 3/23/2018
+ms.date: 8/8/2018
 ms.author: jdial
 ms.custom: mvc
-ms.openlocfilehash: 851c8c1eb13497355038ef4a8d5f1f9326c8c3bc
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 179db61777fe60ae53d7fee553c8124d7a9f7abf
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33781186"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "42022945"
 ---
 # <a name="what-is-azure-virtual-network"></a>Что такое виртуальная сеть Azure?
 
@@ -37,7 +37,10 @@ ms.locfileid: "33781186"
 
 ## <a name="communicate-with-the-internet"></a>Обмен данными через Интернет
 
-По умолчанию все ресурсы в виртуальной сети могут устанавливать исходящие подключения к Интернету. Можно также установить входящее подключение к ресурсу, присвоив ему общедоступный IP-адрес. Дополнительные сведения см. в статье об [общедоступных IP-адресах](virtual-network-public-ip-address.md).
+По умолчанию все ресурсы в виртуальной сети могут устанавливать исходящие подключения к Интернету. Можно также установить входящее подключение к ресурсу, присвоив ему общедоступный IP-адрес, или общедоступный экземпляр Load Balancer. Общедоступный IP-адрес или общедоступную подсистему балансировки нагрузки также можно использовать для управления исходящими подключениями.  См. дополнительные сведения об [исходящих интернет-подключениях](../load-balancer/load-balancer-outbound-connections.md), [общедоступных IP-адресах](virtual-network-public-ip-address.md) и [Load Balancer](../load-balancer/load-balancer-overview.md).
+
+>[!NOTE]
+>При использовании только внутреннего экземпляра [Load Balancer (цен. категория "Стандартный")](../load-balancer/load-balancer-standard-overview.md) исходящие подключения будут недоступными, пока вы не настроите для [исходящих подключений](../load-balancer/load-balancer-outbound-connections.md) использование общедоступного IP-адреса уровня экземпляра или общедоступного экземпляра Load Balancer.
 
 ## <a name="communicate-between-azure-resources"></a>Обмен данными между ресурсами Azure
 

@@ -1,6 +1,6 @@
 ---
-title: Добавление конечной точки HTTPS в приложение Service Fabric в Azure | Документы Майкрософт
-description: В этом руководстве вы узнаете, как добавить конечную точку HTTPS в интерфейсную веб-службу ASP.NET Core и развернуть приложение в кластере.
+title: Добавление конечной точки HTTPS в приложение Service Fabric в Azure с использованием Kestrel | Документация Майкрософт
+description: Из этого руководства вы узнаете, как добавить конечную точку HTTPS в интерфейсную веб-службу ASP.NET Core с использованием Kestrel и развернуть приложение в кластере.
 services: service-fabric
 documentationcenter: .net
 author: rwike77
@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 04/12/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 309a43d3383658029f4fe7f90f869888bac67bb1
-ms.sourcegitcommit: 5892c4e1fe65282929230abadf617c0be8953fd9
+ms.openlocfilehash: 70bbeabe2c2b14e8e0dcccac9ffa63f2e19230a2
+ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37130056"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41918115"
 ---
-# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service"></a>Руководство. Добавление конечной точки HTTPS к интерфейсной службе веб-API ASP.NET Core
+# <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
 Это руководство представляет собой первую часть цикла.  Вы узнаете, как включить HTTPS в службе ASP.NET Core, работающей в Service Fabric. Когда вы закончите, у вас будет приложение для голосования с внешним веб-интерфейсом ASP.NET Core с поддержкой HTTPS, прослушивающего порт 443. Если вы не хотите вручную создавать приложение для голосования в статье [Руководство по развертыванию приложения в кластере Service Fabric в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md), вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/).
 
@@ -36,7 +36,7 @@ ms.locfileid: "37130056"
 > * Открытие порта 443 в подсистеме балансировки нагрузки Azure
 > * Развертывание приложения в удаленном кластере.
 
-Из этого цикла руководств вы узнаете, как выполнять такие задачи:
+Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * [Создание приложения .NET Service Fabric](service-fabric-tutorial-deploy-app-to-party-cluster.md).
 > * [Развертывание приложения в удаленном кластере](service-fabric-tutorial-deploy-app-to-party-cluster.md).
@@ -44,13 +44,13 @@ ms.locfileid: "37130056"
 > * [Настройка непрерывной интеграции и непрерывного развертывания с помощью Visual Studio Team Services](service-fabric-tutorial-deploy-app-with-cicd-vsts.md).
 > * [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Установите Visual Studio 2017](https://www.visualstudio.com/) версии 15.5 или более поздней версии, а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
-* [Установка пакета SDK для Service Fabric](service-fabric-get-started.md)
+* [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
 

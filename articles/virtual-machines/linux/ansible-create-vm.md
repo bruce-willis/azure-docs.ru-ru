@@ -1,69 +1,200 @@
 ---
-title: Использование Ansible для создания базовой виртуальной машины Linux в Azure | Документы Майкрософт
-description: Узнайте, как использовать Ansible для создания базовой виртуальной машины Linux в Azure и управления ею.
-services: virtual-machines-linux
-documentationcenter: virtual-machines
-author: cynthn
+title: Создание виртуальной машины Linux в Azure с помощью Ansible
+description: Узнайте, как создать виртуальную машину Linux в Azure с помощью Ansible
+ms.service: ansible
+keywords: ansible, azure, devops, virtual machine
+author: tomarcher
 manager: jeconnoc
-editor: na
-tags: azure-resource-manager
-ms.assetid: ''
-ms.service: virtual-machines-linux
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: vm-linux
-ms.workload: infrastructure
-ms.date: 05/30/2018
-ms.author: cynthn
-ms.openlocfilehash: 35dfe8348718e0edf8683f7eeddf286831697d89
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.author: tarcher
+ms.topic: quickstart
+ms.date: 08/21/2018
+ms.openlocfilehash: a60ba863dbbd308219f4229319fb98c72180114d
+ms.sourcegitcommit: 76797c962fa04d8af9a7b9153eaa042cf74b2699
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37931435"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "40250659"
 ---
-# <a name="create-a-basic-virtual-machine-in-azure-with-ansible"></a>Создание базовой виртуальной машины в Azure с помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления виртуальными машинами в Azure так же, как любым другим ресурсом. В этой статье показано, как создать базовую виртуальную машину с помощью Ansible. Вы также можете узнать, как [создать готовую среду виртуальных машин с помощью Ansible](ansible-create-complete-vm.md).
+# <a name="use-ansible-to-create-a-linux-virtual-machine-in-azure"></a>Создание виртуальной машины Linux в Azure с помощью Ansible
+Используя декларативный язык, Ansible позволяет автоматизировать создание, конфигурацию и развертывание ресурсов Azure с помощью *сборников схем*. В каждом разделе этой статьи описано, как может выглядеть сборник схем Ansible для создания и конфигурации различных аспектов виртуальной машины Linux. [Полный сборник схем Ansible](#complete-sample-ansible-playbook) указан в конце этой статьи.
 
+## <a name="prerequisites"></a>Предварительные требования
 
-## <a name="prerequisites"></a>предварительным требованиям
-Для управления ресурсами Azure с помощью Ansible необходимо следующее:
+- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-- Ansible и модули SDK Python для Azure, установленные в системе узла.
-    - Установленный экземпляр Ansible в [CentOS 7.4](ansible-install-configure.md#centos-74), [Ubuntu 16.04 LTS](ansible-install-configure.md#ubuntu-1604-lts) или [SLES 12 SP2](ansible-install-configure.md#sles-12-sp2).
-- Учетные данные Azure, настроенные для использования в Ansible.
-    - [Создание учетных данных Azure и настройка Ansible](ansible-install-configure.md#create-azure-credentials)
-- Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. 
-    - Если вам необходимо выполнить обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). Вы также можете использовать [Azure Cloud Shell](/azure/cloud-shell/quickstart) из своего браузера.
+- **Настройте Azure Cloud Shell** или **установите и настройте Ansible на виртуальной машине Linux**
 
+  **Настройте Azure Cloud Shell**
 
-## <a name="create-supporting-azure-resources"></a>Создание вспомогательных ресурсов Azure
-В этом примере вы создадите модуль runbook, который развертывает виртуальную машину в существующей инфраструктуре. Сначала создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). В следующем примере создается группа ресурсов с именем *myResourceGroup* в расположении *eastus*.
+  1. **Настройте Azure Cloud Shell.** Если вы еще не работали с Azure Cloud Shell, см. статью [Краткое руководство по Bash в Azure Cloud Shell](/azure/cloud-shell/quickstart), в которой объясняется, как запустить и настроить Cloud Shell. 
 
-```azurecli
-az group create --name myResourceGroup --location eastus
+  **--ИЛИ--**
+
+  **Установите и настройте Ansible на виртуальной машине Linux**
+
+  1. **Установите Ansible.** Установите Ansible на [поддерживаемую платформу Linux](/azure/virtual-machines/linux/ansible-install-configure#install-ansible-on-an-azure-linux-virtual-machine).
+
+  1. **Настройка Ansible** - [Создание учетных данных Azure](/azure/virtual-machines/linux/ansible-install-configure#create-azure-credentials).
+
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
+Для Ansible требуется группа ресурсов, в которой будут развертываться все ресурсы. В следующем разделе примера сборника схем Ansible описывается создание группы ресурсов `myResourceGroup` в расположении `eastus`:
+
+```yaml
+- name: Create resource group
+    azure_rm_resourcegroup:
+      name: myResourceGroup
+      location: eastus
 ```
 
-Создайте виртуальную сеть для виртуальной машины с помощью команды [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
+## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+При создании виртуальной машины Azure вам потребуется [виртуальная сеть](/azure/virtual-network/virtual-networks-overview). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как будет предоставляться доступ к виртуальным машинам по виртуальной сети. В следующем разделе примера сборника схем Ansible описывается создание виртуальной сети `myVnet` в адресном пространстве `10.0.0.0/16`:
 
-```azurecli
-az network vnet create \
-  --resource-group myResourceGroup \
-  --name myVnet \
-  --address-prefix 10.0.0.0/16 \
-  --subnet-name mySubnet \
-  --subnet-prefix 10.0.1.0/24
+```yaml
+- name: Create virtual network
+  azure_rm_virtualnetwork:
+    resource_group: myResourceGroup
+    name: myVnet
+    address_prefixes: "10.0.0.0/16"
+```
+
+Все ресурсы Azure, развернутые в виртуальной сети, также развертываются в [подсети](/azure/virtual-network/virtual-network-manage-subnet) этой виртуальной сети. 
+
+В следующем разделе примера сборника схем Ansible описывается создание подсети `mySubnet` в виртуальной сети `myVnet`:
+
+```yaml
+- name: Add subnet
+  azure_rm_subnet:
+    resource_group: myResourceGroup
+    name: mySubnet
+    address_prefix: "10.0.1.0/24"
+    virtual_network: myVnet
+```
+
+## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
+[Общедоступные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) позволяют устанавливать входящее подключение от интернет-ресурсов к ресурсам Azure. Также они позволяют устанавливать исходящее подключение от ресурсов Azure к Интернету и общедоступным службам Azure с использованием IP-адреса, назначенного ресурсу. Адрес остается назначенным ресурсу, пока вы не отмените его назначение. Если общедоступный IP-адрес не назначен ресурсу, ресурс по-прежнему может устанавливать внешнее подключение к Интернету, но при этом Azure динамически назначает доступный IP-адрес, который не предназначен для этого ресурса. 
+
+В следующем разделе примера сборника схем Ansible описывается создание общедоступного IP-адреса `myPublicIP`:
+
+```yaml
+- name: Create public IP address
+  azure_rm_publicipaddress:
+    resource_group: myResourceGroup
+    allocation_method: Static
+    name: myPublicIP
+```
+
+## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
+[Группа безопасности сети](/azure/virtual-network/security-overview) позволяет отфильтровать входящий и исходящий сетевой трафик ресурсов Azure в виртуальной сети Azure. В этой группе содержатся правила безопасности, которые разрешают или запрещают исходящий и входящий сетевой трафик нескольких типов ресурсов Azure. 
+
+В следующем разделе примера сборника схем Ansible описывается создание группы безопасности сети `myNetworkSecurityGroup` и определение правила, разрешающего передачу трафика SSH через TCP-порт 22:
+
+```yaml
+- name: Create Network Security Group that allows SSH
+  azure_rm_securitygroup:
+    resource_group: myResourceGroup
+    name: myNetworkSecurityGroup
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 1001
+        direction: Inbound
 ```
 
 
-## <a name="create-and-run-ansible-playbook"></a>Создание и запуск скрипта playbook Ansible
-Создайте скрипт playbook Ansible с именем *azure_create_vm.yml* и вставьте приведенное ниже содержимое. В этом примере создается одна виртуальная машина и настраиваются учетные данные SSH. Введите собственные данные полного открытого ключа в паре *key_data* следующим образом:
+## <a name="create-a-virtual-network-interface-card"></a>Создание виртуального сетевого интерфейса
+Виртуальный сетевой интерфейс позволяет виртуальной машине подключаться к определенной виртуальной сети, общедоступному IP-адресу и группе безопасности сети. 
+
+В следующем разделе примера сборника схем Ansible описывается создание виртуального сетевого интерфейса `myNIC`, подключенного к созданным ресурсам виртуальной сети:
+
+```yaml
+- name: Create virtual network inteface card
+  azure_rm_networkinterface:
+    resource_group: myResourceGroup
+    name: myNIC
+    virtual_network: myVnet
+    subnet: mySubnet
+    public_ip_name: myPublicIP
+    security_group: myNetworkSecurityGroup
+```
+
+## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+Последний шаг — создание виртуальной машины, которая использует все ресурсы, созданные при работе с предыдущими разделами этой статьи. 
+
+Пример сборника схем Ansible, представленный в этом разделе, позволяет создать виртуальную машину `myVM` и подключить карточку виртуального сетевого интерфейса `myNIC`. Замените заполнитель &lt;your-key-data> собственными полными данными общедоступного ключа.
+
+```yaml
+- name: Create VM
+  azure_rm_virtualmachine:
+    resource_group: myResourceGroup
+    name: myVM
+    vm_size: Standard_DS1_v2
+    admin_username: azureuser
+    ssh_password_enabled: false
+    ssh_public_keys:
+      - path: /home/azureuser/.ssh/authorized_keys
+        key_data: <your-key-data>
+    network_interfaces: myNIC
+    image:
+      offer: CentOS
+      publisher: OpenLogic
+      sku: '7.5'
+      version: latest
+```
+
+## <a name="complete-sample-ansible-playbook"></a>Завершение примера сборника схем Ansible
+
+В этом разделе указан весь пример сборника схем Ansible, созданный при работе с этой статьей. 
 
 ```yaml
 - name: Create Azure VM
   hosts: localhost
   connection: local
   tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: myResourceGroup
+      location: eastus
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: myResourceGroup
+      name: myVnet
+      address_prefixes: "10.0.0.0/16"
+  - name: Add subnet
+    azure_rm_subnet:
+      resource_group: myResourceGroup
+      name: mySubnet
+      address_prefix: "10.0.1.0/24"
+      virtual_network: myVnet
+  - name: Create public IP address
+    azure_rm_publicipaddress:
+      resource_group: myResourceGroup
+      allocation_method: Static
+      name: myPublicIP
+    register: output_ip_address
+  - name: Dump public IP for VM which will be created
+    debug:
+      msg: "The public IP is {{ output_ip_address.state.ip_address }}."
+  - name: Create Network Security Group that allows SSH
+    azure_rm_securitygroup:
+      resource_group: myResourceGroup
+      name: myNetworkSecurityGroup
+      rules:
+        - name: SSH
+          protocol: Tcp
+          destination_port_range: 22
+          access: Allow
+          priority: 1001
+          direction: Inbound
+  - name: Create virtual network inteface card
+    azure_rm_networkinterface:
+      resource_group: myResourceGroup
+      name: myNIC
+      virtual_network: myVnet
+      subnet: mySubnet
+      public_ip_name: myPublicIP
+      security_group: myNetworkSecurityGroup
   - name: Create VM
     azure_rm_virtualmachine:
       resource_group: myResourceGroup
@@ -71,9 +202,10 @@ az network vnet create \
       vm_size: Standard_DS1_v2
       admin_username: azureuser
       ssh_password_enabled: false
-      ssh_public_keys: 
+      ssh_public_keys:
         - path: /home/azureuser/.ssh/authorized_keys
-          key_data: "ssh-rsa AAAAB3Nz{snip}hwhqT9h"
+          key_data: <your-key-data>
+      network_interfaces: myNIC
       image:
         offer: CentOS
         publisher: OpenLogic
@@ -81,27 +213,82 @@ az network vnet create \
         version: latest
 ```
 
-Чтобы создать виртуальную машину с помощью Ansible, запустите скрипт playbook следующим образом:
+## <a name="run-the-sample-ansible-playbook"></a>Запуск примера сборника схем Ansible
 
-```bash
-ansible-playbook azure_create_vm.yml
-```
+В этом разделе рассматривается запуск примера сборника схем Ansible, представленного в этой статье.
 
-Ниже приведен пример выходных данных, в котором показано, что виртуальная машина успешно создана:
+1. Войдите на [портале Azure](http://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-```bash
-PLAY [Create Azure VM] ****************************************************
+1. Откройте [Cloud Shell](/azure/cloud-shell/overview).
 
-TASK [Gathering Facts] ****************************************************
-ok: [localhost]
+1. Создайте файл (для хранения сборника схем) под названием `azure_create_complete_vm.yml` и откройте его в редакторе VI следующим образом:
 
-TASK [Create VM] **********************************************************
-changed: [localhost]
+  ```azurecli-interactive
+  vi azure_create_complete_vm.yml
+  ```
 
-PLAY RECAP ****************************************************************
-localhost                  : ok=2    changed=1    unreachable=0    failed=0
-```
+1. Нажмите ключ **I**, чтобы войти в режим вставки.
 
+1. Вставьте [полный пример сборника схем Ansible](#complete-sample-ansible-playbook) в редактор.
+
+1. Выйдите из режима вставки, нажав клавишу **Esc**.
+
+1. Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
+
+    ```bash
+    :wq
+    ```
+
+1. Запустите пример сборника схем Ansible.
+
+  ```bash
+  ansible-playbook azure_create_complete_vm.yml
+  ```
+
+1. Результат должен быть аналогичным приведенному ниже. Здесь видно, что виртуальная машина успешно создана:
+
+  ```bash
+  PLAY [Create Azure VM] ****************************************************
+
+  TASK [Gathering Facts] ****************************************************
+  ok: [localhost]
+
+  TASK [Create resource group] *********************************************
+  changed: [localhost]
+
+  TASK [Create virtual network] *********************************************
+  changed: [localhost]
+
+  TASK [Add subnet] *********************************************************
+  changed: [localhost]
+
+  TASK [Create public IP address] *******************************************
+  changed: [localhost]
+
+  TASK [Dump public IP for VM which will be created] ********************************************************************
+  ok: [localhost] => {
+      "msg": "The public IP is <ip-address>."
+  }
+
+  TASK [Create Network Security Group that allows SSH] **********************
+  changed: [localhost]
+
+  TASK [Create virtual network inteface card] *******************************
+  changed: [localhost]
+
+  TASK [Create VM] **********************************************************
+  changed: [localhost]
+
+  PLAY RECAP ****************************************************************
+  localhost                  : ok=8    changed=7    unreachable=0    failed=0
+  ```
+
+1. Команда SSH используется для доступа к виртуальной машине Linux. Замените заполнитель &lt;ip-address> IP-адресом из предыдущего шага.
+
+  ```bash
+  ssh azureuser@<ip-address>
+  ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом примере создается виртуальная машина в существующей группе ресурсов с уже развернутой виртуальной сетью. Более подробный пример использования Ansible для создания вспомогательных ресурсов, таких как виртуальная сеть и правила группы безопасности сети, см. в статье [Создание готовой среды виртуальных машин с помощью Ansible](ansible-create-complete-vm.md).
+> [!div class="nextstepaction"] 
+> [Управление виртуальной машиной Linux в Azure с помощью Ansible](./ansible-manage-linux-vm.md)

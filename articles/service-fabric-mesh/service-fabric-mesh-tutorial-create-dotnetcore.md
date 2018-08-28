@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/17/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: d48d7625221dfb96e0119ef0d42b3b0a8d04baba
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: 59ff3434e7b984f4530ad4f8b03b27991d3a9c1c
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185675"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41918133"
 ---
 # <a name="tutorial-create-debug-and-deploy-a-multi-service-web-application-to-service-fabric-mesh"></a>Руководство. Создание, отладка и развертывание веб-приложения на базе нескольких служб в Сетке Service Fabric
 
@@ -227,7 +227,7 @@ public static class DataContext
 
 ### <a name="add-a-controller"></a>Добавление контроллера
 
-Контроллер по умолчанию, который обрабатывает запросы HTPP и создает ответ HTTP, был предоставлен шаблоном во время создания проекта **ToDoService**. В **обозревателе решений** в разделе **ToDoService** откройте папку **Контроллеры**, чтобы увидеть файл **ValuesController.cs**. 
+Контроллер по умолчанию, который обрабатывает запросы HTPP и создает ответ HTTP, был предоставлен шаблоном при создании проекта **ToDoService**. В **обозревателе решений** в разделе **ToDoService** откройте папку **Контроллеры**, чтобы увидеть файл **ValuesController.cs**. 
 
 Щелкните правой кнопкой мыши файл **ValuesController.cs**, а затем — **Переименовать**. Переименуйте файл на `ToDoController.cs`. Если появится запрос на переименование всех ссылок, нажмите кнопку **Да**.
 
@@ -314,7 +314,8 @@ public class ToDoController : Controller
 </div>
 ```
 
-Откройте код страницы индексов в **обозревателе решений**, открыв страницу **Index.cshtml**, а затем — файл **Index.cshtml.cs**. В верхней части файла **Index.cshtml.cs** добавьте `using System.Net.Http;`.
+Откройте код страницы индексов в **обозревателе решений**, открыв страницу **Index.cshtml**, а затем — файл **Index.cshtml.cs**.
+В верхней части файла **Index.cshtml.cs** добавьте `using System.Net.Http;`.
 
 Замените содержимое `public class IndexModel` на:
 
@@ -336,7 +337,7 @@ public class IndexModel : PageModel
         }
     }
 
-    private static string backendDNSName = $"{Environment.GetEnvironmentVariable("ServiceName")}";
+    private static string backendDNSName = $"{Environment.GetEnvironmentVariable("ToDoServiceName")}";
     private static Uri backendUrl = new Uri($"http://{backendDNSName}:{Environment.GetEnvironmentVariable("ApiHostPort")}/api/todo");
 }
 ```
@@ -346,7 +347,7 @@ public class IndexModel : PageModel
 Для взаимодействия с серверной службой требуется ее URL-адрес. В целях этого руководства следующий фрагмент кода (который определен выше как часть IndexModel) считывает переменные среды для составления URL-адреса:
 
 ```csharp
-private static string backendDNSName = $"{Environment.GetEnvironmentVariable("ServiceName")}";
+private static string backendDNSName = $"{Environment.GetEnvironmentVariable("ToDoServiceName")}";
 private static Uri backendUrl = new Uri($"http://{backendDNSName}:{Environment.GetEnvironmentVariable("ApiHostPort")}/api/todo");
 ```
 

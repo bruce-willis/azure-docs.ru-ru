@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 07/17/2018
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: bb0e3ee685d5a52a9f372e99d97f3608f67c17c0
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: d50b84ac61210fc89665341ae0c2de3fc4ce0c11
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39185403"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42022872"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
@@ -127,7 +127,7 @@ ms.locfileid: "39185403"
 
     Как видно из результата изображенного на снимке экрана, имя учетной записи хранения это — *3tqebj3slyfyestandardsa*. 
 
-7. Чтобы перечислить учетные записи хранения, которые были созданы, выполните следующую команду PowerShell.
+7. Чтобы перечислить учетные записи хранения, которые были созданы, выполните следующую команду CLI:
 
     ```cli
     az storage account show --resource-group <ResourceGroupName> --name <StorageAccountName>

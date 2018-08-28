@@ -9,14 +9,14 @@ ms.component: cosmosdb-table
 ms.custom: quickstart connect, mvc
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 04/10/2018
+ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: e70501be61455e9707fcf57d1996729097a0641f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 020345f5f5de3235a0fb34f1efc27efd771a842d
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38582389"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42023773"
 ---
 # <a name="quickstart-build-a-table-api-app-with-net-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблицы с помощью .NET и Azure Cosmos DB 
 
@@ -24,7 +24,7 @@ ms.locfileid: "38582389"
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Azure Cosmos DB. 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 
@@ -117,7 +117,7 @@ Azure Cosmos DB — это глобально распределенная мн
 1. Щелкните правой кнопкой мыши проект **TableStorage** в **обозревателе решений** Visual Studio и выберите **Управление пакетами NuGet**. 
 
    ![Управление пакетами NuGet](media/create-table-dotnet/azure-cosmosdb-manage-nuget.png)
-2. В поле **обзора** NuGet введите *Microsoft.Azure.CosmosDB.Table*. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB.
+2. В поле **обзора** NuGet введите *Microsoft.Azure.CosmosDB.Table*. Это запрос для поиска клиентской библиотеки API таблицы Cosmos DB. Обратите внимание, что на данный момент эта библиотека доступна только для .NET Standard и пока недоступна для .NET Core.
    
    ![Вкладка "Обзор" NuGet](media/create-table-dotnet/azure-cosmosdb-nuget-browse.png)
 

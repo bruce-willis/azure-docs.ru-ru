@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство Azure. Обработка потоков событий с помощью Azure CLI | Документы Майкрософт
-description: В этом кратком руководстве вы узнаете, как обрабатывать потоки событий с помощью Azure CLI.
+title: Краткое руководство по Azure. Создание концентратора событий с помощью Azure CLI | Документация Майкрософт
+description: В этом кратком руководстве описано создание концентратора событий с помощью Azure CLI, а также последующая отправка и получение событий с использованием Java.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
@@ -10,16 +10,16 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/26/2018
 ms.author: shvija
-ms.openlocfilehash: 7a15b252727589194da90af729a74e1baad7094f
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 0607c9a65febdb5890eb49808a0fcef582deb37e
+ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40004571"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "42022508"
 ---
-# <a name="quickstart-process-event-streams-using-azure-cli-and-java"></a>Краткое руководство. Обработка потоков событий с помощью Azure CLI и Java
+# <a name="quickstart-create-an-event-hub-using-azure-cli"></a>Краткое руководство. Создание концентратора событий с помощью Azure CLI
 
-Концентраторы событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создавать ресурсы концентраторов событий с помощью Azure CLI, а также как отправлять и получать потоки событий из концентратора событий с помощью кода Java.
+Центры событий Azure — это высокомасштабируемая платформа потоковой передачи данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. В этом кратком руководстве показано, как создавать ресурсы Центров событий с помощью Azure CLI, а также как отправлять и получать потоки событий из концентратора событий с помощью кода Java.
 
 Для работы с этим кратким руководством вам потребуется подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись][], прежде чем начать работу.
 
@@ -47,7 +47,7 @@ az account set --subscription MyAzureSub
 
 ## <a name="provision-resources"></a>Подготовка ресурсов
 
-Выполните следующие команды, чтобы подготовить ресурсы концентраторов событий. Не забудьте заменить заполнители `myResourceGroup`, `namespaceName`, `eventHubName` и `storageAccountName` правильными значениями:
+Выполните следующие команды, чтобы подготовить ресурсы Центров событий. Не забудьте заменить заполнители `myResourceGroup`, `namespaceName`, `eventHubName` и `storageAccountName` правильными значениями:
 
 ```azurecli-interactive
 # Create a resource group
@@ -71,17 +71,17 @@ az eventhubs namespace authorization-rule keys list --resource-group myResourceG
 
 Сохраните и вставьте строку подключения во временное расположение, например в Блокноте, для последующего использования.
 
-## <a name="stream-into-event-hubs"></a>Потоковая передача в концентраторы событий
+## <a name="stream-into-event-hubs"></a>Потоковая передача в Центры событий
 
 Следующий шаг заключается в загрузке примера кода, который отправляет поток событий в концентратор событий, а также получает эти события с помощью узла обработчика событий. Сначала отправим сообщения:
 
-Выполните следующую команду, которая клонирует [репозиторий GitHub для концентраторов событий](https://github.com/Azure/azure-event-hubs):
+Выполните следующую команду, которая клонирует [репозиторий GitHub для Центров событий](https://github.com/Azure/azure-event-hubs):
 
 ```bash
 git clone https://github.com/Azure/azure-event-hubs.git
 ```
 
-Перейдите в папку **SimpleSend**: `\azure-event-hubs\samples\Java\Basic\SimpleSend\src\main\java\com\microsoft\azure\eventhubs\samples\SimpleSend`. Откройте файл SimpleSend.java и замените строку `"Your Event Hubs namaspace name"` пространством имен концентраторов событий, полученным в разделе "Создание пространства имен концентраторов событий" этой статьи.
+Перейдите в папку **SimpleSend**: `\azure-event-hubs\samples\Java\Basic\SimpleSend\src\main\java\com\microsoft\azure\eventhubs\samples\SimpleSend`. Откройте файл SimpleSend.java и замените строку `"Your Event Hubs namaspace name"` пространством имен Центров событий, полученным в разделе "Создание пространства имен Центров событий" этой статьи.
 
 Замените строку `"Your event hub"` именем концентратора событий, созданного в этом пространстве имен, а строку `"Your policy name"` — именем политики общего доступа для пространства имен. Если вы не создавали новую политику, то используется политика по умолчанию **RootManageSharedAccessKey**. 
 
@@ -99,7 +99,7 @@ mvn clean package -DskipTests
 
 Теперь загрузите образец узла обработчика событий, который принимает сообщения, отправленные вами. Перейдите в папку **EventProcessorSample**: `\azure-event-hubs\samples\Java\Basic\EventProcessorSample\src\main\java\com\microsoft\azure\eventhubs\samples\eventprocessorsample`.
 
-В файле EventProcessorSample.java замените значение `----EventHubsNamespaceName-----` пространством имен концентраторов событий, полученным в разделе "Создание пространства имен концентраторов событий" этой статьи. 
+В файле EventProcessorSample.java замените значение `----EventHubsNamespaceName-----` пространством имен Центров событий, полученным в разделе "Создание пространства имен Центров событий" этой статьи. 
 
 Замените остальные строковые значения в этом файле: замените `----EventHubName-----` именем концентратора событий, созданного в этом пространстве имен, а строку `-----SharedAccessSignatureKeyName-----` — именем политики общего доступа для пространства имен. Если вы не создавали новую политику, то используется политика по умолчанию **RootManageSharedAccessKey**.
 
@@ -167,7 +167,7 @@ byte[] payloadBytes = gson.toJson(payload).getBytes(Charset.defaultCharset());
 EventData sendEvent = EventData.create(payloadBytes);  
 ```
 
-В этой строке кода создается клиент концентраторов событий:
+В этой строке кода создается клиент Центров событий:
 
 ```java
 final EventHubClient ehClient = EventHubClient.createSync(connStr.toString(), executorService);
@@ -200,7 +200,7 @@ try {
 
 ### <a name="receive"></a>Получение 
 
-Операция получения происходит в файле EventProcessorSample.java. Вначале в нем объявляются константы для хранения имени пространства имен концентраторов событий и других учетных данных:
+Операция получения происходит в файле EventProcessorSample.java. Вначале в нем объявляются константы для хранения имени пространства имен Центров событий и других учетных данных:
 
 ```java
 String consumerGroupName = "$Default";
@@ -287,10 +287,10 @@ public void onEvents(PartitionContext context, Iterable<EventData> events) throw
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-С помощью этой статьи вы создали пространство имен концентраторов событий и другие ресурсы, необходимые для отправки и получения событий в концентраторе событий. Для получения дополнительных сведений перейдите к следующему руководству:
+С помощью этой статьи вы создали пространство имен Центров событий и другие ресурсы, необходимые для отправки и получения событий в концентраторе событий. Для получения дополнительных сведений перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
-> [Визуализация аномальных данных в потоках данных концентраторов событий](event-hubs-tutorial-visualize-anomalies.md)
+> [Визуализация аномальных данных в потоках данных Центров событий](event-hubs-tutorial-visualize-anomalies.md)
 
 [создайте бесплатную учетную запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [Install Azure CLI 2.0]: /cli/azure/install-azure-cli

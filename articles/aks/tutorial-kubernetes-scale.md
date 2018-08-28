@@ -1,49 +1,47 @@
 ---
 title: Руководство по Kubernetes в Azure. Масштабирование приложения
-description: Руководство по AKS. Масштабирование приложения
+description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как выполнить масштабирование узлов и модулей pod в Kubernetes и реализовать горизонтальное автомасштабирование модулей pod.
 services: container-service
-author: dlepow
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
-ms.date: 02/22/2018
-ms.author: danlep
+ms.date: 08/14/2018
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 61654ae972965800909544554cc93dae511e1ff1
-ms.sourcegitcommit: fc5555a0250e3ef4914b077e017d30185b4a27e6
+ms.openlocfilehash: 5ffe7b4c7830500e5eeeeb61c57730d9a0d9df47
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39480278"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918261"
 ---
-# <a name="tutorial-scale-application-in-azure-kubernetes-service-aks"></a>Руководство. Масштабирование приложения в службе Azure Kubernetes
+# <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)
 
-Если вы выполнили инструкции в руководствах, то у вас имеется работающий кластер Kubernetes в AKS и вы развернули в нем приложение Vote Azure.
-
-В этом руководстве (часть 5 из 7) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вам предстоят следующие задачи:
+Если вы выполнили инструкции в руководствах, то у вас имеется работающий кластер Kubernetes в AKS и вы развернули в нем приложение Vote Azure. В этом руководстве (часть 5 из 7) описывается масштабирование pod, содержащихся в приложении, и их автомасштабирование. Вы также узнаете, как масштабировать количество узлов виртуальной машины Azure, чтобы менять емкость кластера для размещения рабочих нагрузок. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Масштабирование узлов Kubernetes Azure
-> * масштабирование pod Kubernetes вручную;
-> * настройка автомасштабирования pod, в которых выполняется интерфейсная часть приложения;
+> * Масштабирование узлов Kubernetes.
+> * Масштабирование модулей pod Kubernetes вручную для выполнения приложения.
+> * Настройка модулей pod для автоматического масштабирования, которые запускают внешний интерфейс приложения.
 
 В последующих руководствах описано, как обновить приложение Azure для голосования до новой версии.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В предыдущих руководствах приложение было упаковано в образ контейнера, этот образ был передан в реестр контейнеров Azure и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes.
+В предыдущих руководствах приложение было упаковано в образ контейнера, этот образ был передан в реестр контейнеров Azure и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes. Если вы не выполнили эти действия и хотите продолжить работу, вернитесь к руководству по [созданию образов контейнеров (часть 1)][aks-tutorial-prepare-app].
 
-Если вы не выполнили эти действия и хотите продолжить работу, вернитесь к руководству по [созданию образов контейнеров (часть 1)][aks-tutorial-prepare-app].
+Для выполнения задач из этого руководства требуется Azure CLI 2.0.38 или более поздняя версия. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="manually-scale-pods"></a>Масштабирование pod вручную
 
-К настоящему моменту было развернуто по отдельной реплике внешнего приложения Vote Azure и экземпляра Redis. Чтобы проверить это, выполните команду [kubectl get][kubectl-get].
+В рамках предыдущих руководств были развернуты внешний интерфейс приложения Azure для голосования и экземпляр Redis, а также создана одна реплика. Чтобы просмотреть число и состояние модулей pod в кластере, используйте команду [kubectl get][kubectl-get] следующим образом:
 
-```azurecli
+```console
 kubectl get pods
 ```
 
-Выходные данные:
+В следующем примере выходных данных показано по одному интерфейсному и серверному модулю pod:
 
 ```
 NAME                               READY     STATUS    RESTARTS   AGE
@@ -51,22 +49,18 @@ azure-vote-back-2549686872-4d2r5   1/1       Running   0          31m
 azure-vote-front-848767080-tf34m   1/1       Running   0          31m
 ```
 
-Вручную измените число групп pod в развертывании `azure-vote-front`, выполнив команду [kubectl scale][kubectl-scale]. В этом примере их число увеличивается до 5.
+Чтобы вручную изменить количество модулей pod в развертывании *azure-vote-front*, используйте команду [kubectl scale][kubectl-scale]. В следующем примере увеличивает число интерфейсных модулей pod до *5*.
 
-```azurecli
+```console
 kubectl scale --replicas=5 deployment/azure-vote-front
 ```
 
-Выполните команду [kubectl get pods][kubectl-get] и проверьте, что Kubernetes создает новые группы pod. Дополнительные pod будут запущены примерно через минуту.
+Выполните команду [kubectl get pods][kubectl-get] еще раз, чтобы убедиться, что Kubernetes создает дополнительные модули pod. Они становятся доступными примерно через минуту.
 
-```azurecli
-kubectl get pods
-```
+```console
+$ kubectl get pods
 
-Выходные данные:
-
-```
-NAME                                READY     STATUS    RESTARTS   AGE
+                                    READY     STATUS    RESTARTS   AGE
 azure-vote-back-2606967446-nmpcf    1/1       Running   0          15m
 azure-vote-front-3309479140-2hfh0   1/1       Running   0          3m
 azure-vote-front-3309479140-bzt05   1/1       Running   0          3m
@@ -86,7 +80,7 @@ kubectl create -f metrics-server/deploy/1.8+/
 
 Чтобы использовать инструмент автомасштабирования, для ваших pod необходимо определить запросы и лимиты ресурсов ЦП. В развертывании `azure-vote-front` каждый контейнер внешнего приложения запрашивает 0,25 ресурсов ЦП с лимитом в 0,5 ресурсов ЦП. Параметры имеют следующий вид.
 
-```YAML
+```yaml
 resources:
   requests:
      cpu: 250m
@@ -94,26 +88,22 @@ resources:
      cpu: 500m
 ```
 
-В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа групп pod в развертывании `azure-vote-front`. Если использование ЦП превышает 50 %, то инструмент автомасштабирования увеличивает число pod максимум до 10.
+В следующем примере используется команда [kubectl autoscale][kubectl-autoscale] для автомасштабирования числа модулей pod в развертывании *azure-vote-front*. Если загрузка ЦП превышает 50 %, то инструмент автомасштабирования увеличивает число модулей pod максимум до 10 экземпляров:
 
-```azurecli
+```console
 kubectl autoscale deployment azure-vote-front --cpu-percent=50 --min=3 --max=10
 ```
 
-Выполните следующую команду, чтобы просмотреть состояние инструмента автомасштабирования.
-
-```azurecli
-kubectl get hpa
-```
-
-Выходные данные:
+Чтобы просмотреть состояние инструмента автомасштабирования, используйте команду `kubectl get hpa` следующим образом:
 
 ```
+$ kubectl get hpa
+
 NAME               REFERENCE                     TARGETS    MINPODS   MAXPODS   REPLICAS   AGE
 azure-vote-front   Deployment/azure-vote-front   0% / 50%   3         10        3          2m
 ```
 
-Через несколько минут минимальной нагрузки на приложение Vote Azure число реплик pod автоматически уменьшится до 3.
+Через несколько минут при минимальной нагрузке на приложение Azure для голосования число реплик модуля pod автоматически уменьшится до 3. Вы можете использовать команду `kubectl get pods` еще раз, чтобы увидеть ненужные модули pod, которые были удалены.
 
 ## <a name="manually-scale-aks-nodes"></a>Масштабирование узлов AKS вручную
 
@@ -145,14 +135,14 @@ az aks scale --resource-group=myResourceGroup --name=myAKSCluster --node-count 3
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. Были рассмотрены такие задачи:
+В этом руководстве вы использовали различные возможности масштабирования кластера Kubernetes. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * масштабирование pod Kubernetes вручную;
-> * настройка автомасштабирования pod, в которых выполняется интерфейсная часть приложения;
-> * Масштабирование узлов Kubernetes Azure
+> * Масштабирование узлов Kubernetes.
+> * Масштабирование модулей pod Kubernetes вручную для выполнения приложения.
+> * Настройка модулей pod для автоматического масштабирования, которые запускают внешний интерфейс приложения.
 
-Перейдите к следующему руководству, чтобы узнать об обновлении приложения в Kubernetes.
+Перейдите к следующему руководству, чтобы узнать, как обновить приложение в Kubernetes.
 
 > [!div class="nextstepaction"]
 > [Обновление приложения в Kubernetes][aks-tutorial-update-app]
@@ -168,3 +158,5 @@ az aks scale --resource-group=myResourceGroup --name=myAKSCluster --node-count 3
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
 [aks-tutorial-update-app]: ./tutorial-kubernetes-app-update.md
+[az-aks-scale]: /cli/azure/aks#az-aks-scale
+[azure-cli-install]: /cli/azure/install-azure-cli

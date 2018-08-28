@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: 1d82ccdf85b34416dc630b9fcad969d87cc53ff1
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 84072c7e5f7aa37e89fc1b93c1585167dd6d9f4b
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39520672"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41918521"
 ---
 # <a name="enroll-the-device-to-an-iot-hub-using-the-azure-iot-hub-provisioning-service-client-net"></a>Регистрация устройства в Центре Интернета вещей с помощью клиента службы подготовки для Центра Интернета вещей Azure (.NET)
 
@@ -62,7 +62,7 @@ ms.locfileid: "39520672"
     
 1. В обозревателе решений щелкните правой кнопкой мыши проект **DeviceProvisioning** и выберите пункт **Manage NuGet Packages…** (Управление пакетами NuGet...).
 
-1. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите **microsoft.azure.devices.client**. Примите условия использования, затем выберите запись и щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices.Provisioning.Service**. В результате выполняется скачивание и установка пакета NuGet [SDK для службы подготовки устройств Azure Интернета вещей](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/) и его зависимостей, а также добавляется соответствующая ссылка.
+1. В окне **Диспетчер пакетов NuGet** выберите **Обзор** и найдите **microsoft.azure.devices.client**. Примите условия использования, затем выберите запись и щелкните **Установить**, чтобы установить пакет **Microsoft.Azure.Devices.Provisioning.Service**. В результате выполняется скачивание и установка пакета [SDK NuGet для службы подготовки устройств Интернета вещей Azure](https://www.nuget.org/packages/Microsoft.Azure.Devices.Provisioning.Service/) и его зависимостей, а также добавляется соответствующая ссылка.
 
 1. Добавьте следующие инструкции `using` в начало файла **Program.cs** :
    
@@ -70,10 +70,10 @@ ms.locfileid: "39520672"
     using Microsoft.Azure.Devices.Provisioning.Service;
     ```
 
-1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения DPS, записанной в предыдущем разделе.
+1. Добавьте следующие поля в класс **Program** . Замените значение заполнителя строкой подключения службы подготовки устройств, записанной в предыдущем разделе.
    
     ```csharp
-    static readonly string ServiceConnectionString = "{DPS connection string}";
+    static readonly string ServiceConnectionString = "{Device Provisioning Service connection string}";
 
     private const string SampleRegistrationId = "sample-individual-csharp";
     private const string SampleTpmEndorsementKey =
@@ -228,7 +228,7 @@ ms.locfileid: "39520672"
 Запустите устройство, чтобы разрешить клиентскому приложению начать регистрацию в службе подготовки устройств.  
 
 
-## <a name="verify-the-device-is-registered"></a>проверка регистрации устройства.
+## <a name="verify-the-device-is-registered"></a>Проверка регистрации устройства
 
 После загрузки устройства необходимо выполнить следующие действия. Дополнительные сведения о примере приложения имитации доверенного платформенного модуля (TPM) см. на странице [dps_client_sample](https://github.com/Azure/azure-iot-device-auth/blob/master/dps_client/samples/dps_client_sample/dps_client_sample.c). 
 

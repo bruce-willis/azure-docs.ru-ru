@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: sample
 ms.date: 10/16/2017
 ms.author: sngun
-ms.openlocfilehash: 066826661381f40af2943359eb75abae8306bb7b
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 9ee5c7a008f375beffd6bbdf00cca8b28752b1fb
+ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855589"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "41919157"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db"></a>Примеры Azure PowerShell для базы данных Azure Cosmos DB
 
@@ -28,6 +28,8 @@ ms.locfileid: "37855589"
 |[Создание учетной записи API SQL](scripts/create-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API SQL. |
 |[Создание учетной записи API MongoDB](scripts/create-mongodb-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API MongoDB. |
 |[Создание учетной записи API Gremlin](scripts/create-graph-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Gremlin. |
+|[Создание учетной записи API Cassandra](scripts/create-and-configure-cassandra-database.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Cassandra. |
+|[Создание учетной записи API таблицы](scripts/create-table-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API таблицы. |
 |**Масштабирование Azure Cosmos DB**||
 |[Replicate an Azure Cosmos DB database account in multiple regions and configure failover priorities using PowerShell](scripts/scale-multiregion-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Репликация учетной записи базы данных Azure Cosmos DB в нескольких регионах и настройка приоритетов отработки отказа с помощью PowerShell)|Глобально реплицирует данные учетной записи в нескольких регионах с указанным приоритетом отработки отказа.|
 |**Безопасность базы данных Azure Cosmos DB**||

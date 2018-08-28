@@ -1,6 +1,6 @@
-﻿---
-title: Создание веб-приложения ASP.NET Core в Azure | Документация Майкрософт
-description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение ASP.NET по умолчанию.
+---
+title: Создание веб-приложения C# ASP.NET Core в Azure | Документация Майкрософт
+description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение C# ASP.NET по умолчанию.
 services: app-service\web
 documentationcenter: ''
 author: cephalin
@@ -12,14 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 06/14/2017
+ms.date: 06/11/2018
 ms.author: cephalin
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 91f6fd077146e94833a5527f03ac710352e4fd9c
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.custom: mvc, devcenter, vs-azure
+ms.openlocfilehash: 811f4df807292b9d539084a049cc643dbee07a7e
+ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42432061"
 ---
 # <a name="create-an-aspnet-core-web-app-in-azure"></a>Создание веб-приложения ASP.NET Core в Azure
 
@@ -35,17 +36,13 @@ ms.lasthandoff: 04/05/2018
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
-* Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с указанными ниже рабочими нагрузками:
-    - **ASP.NET и веб-разработка;**
-    - **разработка Azure.**
+Установите <a href="https://www.visualstudio.com/downloads/" target="_blank">Visual Studio 2017</a> с рабочей нагрузкой **ASP.NET и веб-разработка**.
 
-    ![ASP.NET и веб-разработка, разработка Azure (в разделе Web & Cloud (Сеть и облако))](media/app-service-web-tutorial-dotnet-sqldatabase/workloads.png)
-
-Если вы уже установили Visual Studio, добавьте в него рабочие нагрузки. Для этого последовательно выберите **Инструменты** > **Get Tools and Features (Получить инструменты и функции)**.
+Если вы уже установили Visual Studio, включите рабочие нагрузки. Для этого последовательно выберите **Инструменты** > **Получить инструменты и функции**.
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
@@ -62,10 +59,6 @@ ms.lasthandoff: 04/05/2018
 Нажмите кнопку **ОК**.
 
 ![Диалоговое окно "Новый проект ASP.NET"](./media/app-service-web-get-started-dotnet/razor-pages-aspnet-dialog.png)
-
-После создания проекта ASP.NET Core отобразится страница приветствия ASP.NET Core с множеством ссылок на ресурсы, которые помогут вам приступить к работе. 
-
-![Страница приветствия](./media/app-service-web-get-started-dotnet/aspnet-core-welcome-page.png)
 
 В меню последовательно выберите пункты **Отладка > Запуск без отладки**, чтобы запустить веб-приложение локально.
 
@@ -85,11 +78,10 @@ ms.lasthandoff: 04/05/2018
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-В диалоговом окне **Создать службу приложений** выберите **Добавить учетную запись** и выполните вход в подписку Azure. Если вы уже вошли в систему, выберите учетную запись, содержащую необходимую подписку, в раскрывающемся меню.
+В диалоговом окне **Создание службы приложений** щелкните **Добавить учетную запись**, а затем войдите в подписку Azure. Если вы уже вошли в систему, выберите учетную запись, содержащую необходимую подписку, в раскрывающемся меню.
 
 > [!NOTE]
 > Если вы уже выполнили вход, пока не нажимайте кнопку **Создать**.
->
 >
    
 ![Вход в Azure](./media/app-service-web-get-started-dotnet/sign-in-azure.png)
@@ -151,7 +143,8 @@ ms.lasthandoff: 04/05/2018
 
 Чтобы выполнить повторное развертывание в Azure, щелкните правой кнопкой мыши проект **myFirstAzureWebApp** в **обозревателе решений**, а затем выберите **Опубликовать**.
 
-На странице публикации выберите команду **Опубликовать**.
+На странице сводных сведений публикации выберите **Опубликовать**.
+![Страница сводных сведений публикации в Visual Studio](./media/app-service-web-get-started-dotnet/publish-summary-page.png)
 
 По завершении публикации Visual Studio открывает в браузере страницу с URL-адресом веб-приложения.
 

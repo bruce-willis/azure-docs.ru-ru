@@ -4,17 +4,17 @@ description: В этом кратком руководстве описано, �
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-ms.date: 05/11/2018
+ms.date: 08/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
 manager: kfile
-ms.openlocfilehash: 830b3d4226440a68c7de62170d2ffc28082315c2
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 1e466b2945793f866aad4e6f0ace3d7379226830
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37902910"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42022645"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-portal"></a>Краткое руководство по созданию задания Stream Analytics с помощью портала Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "37902910"
 
    ```json
    {
-     "time": "2018-01-26T21:18:52.0000000",
+     "time": "2018-08-19T21:18:52.0000000",
      "dspl": "sensorC",
      "temp": 87,
      "hmdt": 44
@@ -146,6 +146,16 @@ ms.locfileid: "37902910"
 3. В этом примере запрос считывает данные из большого двоичного объекта и копирует его в новый файл в этом же объекте. Нажмите кнопку **Сохранить**.  
 
    ![Настройка преобразования задания](./media/stream-analytics-quick-create-portal/configure-job-transformation.png)
+
+## <a name="configure-late-arrival-policy"></a>Настройка политики для событий, наступивших с задержкой
+
+1. Перейдите к заданию Stream Analytics, которое вы создали ранее.
+
+2. В меню **Настройка** выберите **Упорядочение событий**.
+
+3. Задайте для параметра **События, поступающие с опозданием** значение "20 дней" и щелкните **Сохранить**.
+
+   ![Настройка политики для событий, наступивших с задержкой](./media/stream-analytics-quick-create-portal/configure-late-policy.png)
 
 ## <a name="start-the-stream-analytics-job-and-check-the-output"></a>Запуск задания Stream Analytics и просмотр выходных данных
 

@@ -2,24 +2,18 @@
 title: Использование общей папки Azure в Windows | Документация Майкрософт
 description: Узнайте, как использовать общую папку Azure в Windows и Windows Server.
 services: storage
-documentationcenter: na
 author: RenaShahMSFT
-manager: aungoo
-editor: tamram
-ms.assetid: ''
 ms.service: storage
-ms.workload: storage
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: get-started-article
 ms.date: 06/07/2018
 ms.author: renash
-ms.openlocfilehash: 54e084e6480c872ff6dd4625b8c87d5a60a181ba
-ms.sourcegitcommit: e3d5de6d784eb6a8268bd6d51f10b265e0619e47
+ms.component: files
+ms.openlocfilehash: 96ad812aff8f6ea4f47035188940730e5dc2992c
+ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39392273"
+ms.lasthandoff: 08/11/2018
+ms.locfileid: "41920580"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -52,20 +46,11 @@ ms.locfileid: "39392273"
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам потребуется первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.
 
-* **Убедитесь, что порт 445 открыт**: для протокола SMB требуется, чтобы TCP-порт 445 был открыт, в противном случае подключение будет невозможно. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
+* **Убедитесь, что порт 445 открыт**: для протокола SMB требуется, чтобы TCP-порт 445 был открыт, в противном случае подключение будет невозможно. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Не забудьте заменить `your-storage-account-name` соответствующим именем для своей учетной записи хранения.
 
     ```PowerShell
-    $resourceGroupName = "<your-resource-group-name>"
-    $storageAccountName = "<your-storage-account-name>"
-
-    # This command requires you to be logged into your Azure account, run Login-AzureRmAccount if you haven't
-    # already logged in.
-    $storageAccount = Get-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
-
-    # The ComputerName, or host, is <storage-account>.file.core.windows.net for Azure Public Regions.
-    # $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as soverign clouds
-    # or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
-    Test-NetConnection -ComputerName [System.Uri]::new($storageAccount.Context.FileEndPoint).Host -Port 445
+    Test-NetConnection -ComputerName <your-storage-account-name>.core.windows.net -Port 445
+    
     ```
 
     Если установка прошла успешно, отобразятся следующие выходные данные.
@@ -208,6 +193,26 @@ Remove-PSDrive -Name <desired-drive-letter>
     ![Общая папка Azure теперь подключена](./media/storage-how-to-use-files-windows/4_MountOnWindows10.png)
 
 7. Когда вы будете готовы отключить общую папку Azure, это можно сделать, щелкнув правой кнопкой мыши запись для общей папки в разделе проводника **Сетевые расположения** и выбрав параметр **Отключить**.
+
+### <a name="accessing-share-snapshots-from-windows"></a>Доступ к моментальным снимкам общих файловых ресурсов из Windows
+Если вы уже создали моментальные снимки общего файлового ресурса вручную или автоматически с помощью скрипта или такой службы, как Azure Backup, вы можете просмотреть предыдущие версии общего ресурса, каталога или определенного файла из подключенного общего файлового ресурса в Windows. Вы можете создать его с помощью [портала Azure](storage-how-to-use-files-portal.md), [Azure PowerShell](storage-how-to-use-files-powershell.md) или [Azure CLI](storage-how-to-use-files-cli.md).
+
+#### <a name="list-previous-versions"></a>Вывод списка предыдущих версий
+Перейдите к элементу или родительскому элементу, который требуется восстановить. Дважды щелкните для перехода к нужному каталогу. Щелкните правой кнопкой мыши и выберите в меню пункт **Свойства**.
+
+![Контекстное меню для выбранного каталога](./media/storage-how-to-use-files-windows/snapshot-windows-previous-versions.png)
+
+Выберите пункт **Предыдущие версии**, чтобы просмотреть список моментальных снимков общих ресурсов для этого каталога. Вывод списка может занять несколько секунд в зависимости от скорости сети и количества моментальных снимков в каталоге.
+
+![Вкладка "Предыдущие версии"](./media/storage-how-to-use-files-windows/snapshot-windows-list.png)
+
+Чтобы открыть тот или иной моментальный снимок, нажмите кнопку **Открыть**. 
+
+![Открытый моментальный снимок](./media/storage-how-to-use-files-windows/snapshot-browse-windows.png)
+
+#### <a name="restore-from-a-previous-version"></a>Восстановление из предыдущей версии
+Нажмите кнопку **Восстановить**, чтобы рекурсивно скопировать содержимое всего каталога на момент создания моментального снимка общего ресурса в исходном расположении.
+ ![Кнопка "Восстановить" в предупреждении](./media/storage-how-to-use-files-windows/snapshot-windows-restore.png) 
 
 ## <a name="securing-windowswindows-server"></a>Обеспечение безопасности Windows или Windows Server
 Чтобы подключить общую папку Azure в Windows, порт 445 должен быть доступен. Многие организации блокируют порт 445 из-за угроз безопасности, присущих SMB 1. SMB 1, также известный как CIFS (Common Internet File System), является устаревшим протоколом файловой системы, включенным в Windows и Windows Server. SMB 1 — это устаревший, неэффективный и, самое главное, небезопасный протокол. Хорошей новостью является то, что компонент "Файлы Azure" не поддерживает SMB 1, а все поддерживаемые версии Windows и Windows Server позволяют удалить или отключить этот протокол. Мы всегда [настоятельно рекомендуем](https://aka.ms/stopusingsmb1) удалять или отключать клиент и сервер SMB 1 в Windows перед использованием общей папки Azure в рабочей среде.

@@ -1,23 +1,23 @@
 ---
-title: Интеграция службы "Сетка событий Azure" и концентраторов событий
-description: Описывается, как перенести данные в хранилище данных SQL с помощью службы "Сетка событий Azure" и концентраторов событий
+title: Интеграция службы "Сетка событий Azure" и Центров событий
+description: Описывается, как перенести данные в хранилище данных SQL с помощью службы "Сетка событий Azure" и Центров событий
 services: event-grid
 author: tfitzmac
 manager: timlt
 ms.service: event-grid
 ms.topic: tutorial
-ms.date: 05/04/2018
+ms.date: 08/22/2018
 ms.author: tomfitz
-ms.openlocfilehash: 41cd2f1081cbe8d8fca9d6afa77b87f9aa1017d3
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.openlocfilehash: 432436ee13519cf342313ad369c168ba764f9264
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34302945"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42616521"
 ---
 # <a name="stream-big-data-into-a-data-warehouse"></a>Потоковая передача больших данных в хранилище данных
 
-[Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления приложений и служб. В [примере записи концентраторов событий и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как легко перенести данные из концентратора событий в хранилище данных SQL с помощью записи концентраторов событий Azure и службы "Сетка событий Azure".
+[Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Store, и переноса данных в другие репозитории данных. В [примере функции "Сбор" в Центрах событий и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью функции "Сбор" в Центрах событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища больших двоичных объектов в хранилище данных SQL.
 
 ![Обзор приложений](media/event-grid-event-hubs-integration/overview.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "34302945"
 ]
 ```
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством требуется:
 
@@ -75,7 +75,7 @@ ms.locfileid: "34302945"
 
 ## <a name="deploy-the-infrastructure"></a>Развертывание инфраструктуры
 
-Чтобы упростить работу с этой статьей, разверните необходимую инфраструктуру с помощью шаблона Resource Manager. Чтобы просмотреть развернутые ресурсы, просмотрите [шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/event-grid/EventHubsDataMigration.json). Используйте один из [поддерживаемых регионов](overview.md) в качестве расположения группы ресурсов.
+Чтобы упростить работу с этой статьей, разверните необходимую инфраструктуру с помощью шаблона Resource Manager. Чтобы просмотреть развернутые ресурсы, просмотрите [шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/event-grid/EventHubsDataMigration.json).
 
 Для интерфейса командной строки Azure:
 
@@ -151,7 +151,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
    ![Добавить подписку](media/event-grid-event-hubs-integration/add-event-grid-subscription.png)
 
-9. Присвойте имя подписке для службы "Сетка событий". Используйте тип события **Пространства имен концентраторов событий**. Укажите значения для экземпляра пространства имен в службе "Концентраторы событий". Оставьте для конечной точки подписчика указанное значение. Нажмите кнопку **Создать**.
+9. Присвойте имя подписке для службы "Сетка событий". Используйте тип события **Пространства имен Центров событий**. Укажите значения для экземпляра пространства имен в службе "Центры событий". Оставьте для конечной точки подписчика указанное значение. Нажмите кнопку **Создать**.
 
    ![Создание подписки](media/event-grid-event-hubs-integration/set-subscription-values.png)
 
@@ -185,5 +185,5 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Общие сведения о службе "Сетка событий" см. в разделе [Общие сведения о службе "Сетка событий Azure"](overview.md).
-* Общие сведения о записи концентраторов событий см. в статье [Включение записи концентраторов событий с помощью портала Azure](../event-hubs/event-hubs-capture-enable-through-portal.md).
-* Дополнительные сведения о настройке и запуске примера см. в [примере записи концентраторов событий и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).
+* Общие сведения о функции "Сбор" в Центрах событий см. в статье [Включение функции "Сбор" в Центрах событий с помощью портала Azure](../event-hubs/event-hubs-capture-enable-through-portal.md).
+* Дополнительные сведения о настройке и запуске примера см. в [примере использования функции "Сбор" в Центрах событий и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).

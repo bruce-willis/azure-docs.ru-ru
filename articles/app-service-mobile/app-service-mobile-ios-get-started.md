@@ -12,30 +12,35 @@ ms.workload: na
 ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: hero-article
-ms.date: 10/01/2016
+ms.date: 08/17/2018
 ms.author: crdun
-ms.openlocfilehash: 970ad90aa14d5778e8b232e32aa1dacf32789988
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 9809b51f1279c99de69cd1c219ffc57351ff21ef
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38593109"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "41920906"
 ---
 # <a name="create-an-ios-app"></a>Создание приложения iOS
+
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
 
 ## <a name="overview"></a>Обзор
-В этом руководстве показано, как добавить облачную серверную службу [мобильных приложений Azure](app-service-mobile-value-prop.md)в приложение iOS. Сначала мы создадим новую серверную часть мобильного приложения. Затем мы воспользуемся простым приложением iOS *Список дел* для хранения данных в Azure.
+
+В этом руководстве показано, как добавить облачную серверную службу [Мобильные приложения службы приложений](app-service-mobile-value-prop.md) в приложение iOS. Сначала в Azure создается мобильный внутренний сервер. Затем скачивается простой пример приложения iOS со *списком задач*, в котором хранятся данные в Azure.
 
 Для работы с этим учебником требуется [учетная запись Azure](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="step-i-create-a-new-azure-mobile-app-backend"></a>Шаг 1. Создание серверной части мобильного приложения Azure
+
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
 ## <a name="step-ii-configure-the-backend-project"></a>Шаг 2. Настройка проекта серверной части
+
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
 ## <a name="step-iii-download-and-run-the-ios-app"></a>Шаг 3. Скачивание и запуск приложения iOS
+
 [!INCLUDE [app-service-mobile-ios-run-app](../../includes/app-service-mobile-ios-run-app.md)]
 
 <!-- URLs -->

@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 6e90d20053a8ccfcafc7648d81c61e9313ec57ab
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 998bc7cb7e3289a85a9ffc315f7c1f5e568a75cb
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523365"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41918273"
 ---
 # <a name="set-up-a-device-to-provision-using-the-azure-iot-hub-device-provisioning-service"></a>Настройка устройства для подготовки с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -149,7 +149,7 @@ ms.locfileid: "39523365"
 
 1. На портале Azure выберите колонку **Обзор** службы подготовки устройств и скопируйте значение **_области идентификатора_**. *Область идентификаторов* создается службой и гарантирует уникальность. Она неизменяемая и используется для уникальной идентификации идентификаторов регистрации.
 
-    ![Извлечение информации о конечной точке диагностики DPS из колонки портала](./media/tutorial-set-up-device/extract-dps-endpoints.png) 
+    ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/tutorial-set-up-device/extract-dps-endpoints.png) 
 
 1. В *обозревателе решений* Visual Studio перейдите в папку **Provision\_Samples**. Выберите пример проекта с именем **prov\_dev\_client\_sample** и откройте исходный файл **prov\_dev\_client\_sample.c**.
 

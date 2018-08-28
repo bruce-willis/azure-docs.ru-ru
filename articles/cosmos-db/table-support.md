@@ -10,12 +10,12 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 11/15/2017
 ms.author: sngun
-ms.openlocfilehash: 1ebf244aeb00b1eb87b846a5bb1db6bd4f954e26
-ms.sourcegitcommit: 6116082991b98c8ee7a3ab0927cf588c3972eeaa
+ms.openlocfilehash: a6ac954caa8341d6d949811f0bb9d7e68c0b5aac
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34798174"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42022497"
 ---
 # <a name="developing-with-azure-cosmos-db-table-api-and-azure-table-storage"></a>Разработка с использованием API таблиц Azure Cosmos DB и хранилища таблиц Azure
 
@@ -26,7 +26,7 @@ API таблиц Azure Cosmos DB и хранилище таблиц Azure исп
 ## <a name="developing-with-the-azure-cosmos-db-table-api"></a>Разработка с использованием API таблиц Azure Cosmos DB
 
 В настоящее время [API таблиц в Azure Cosmos DB](table-introduction.md) содержит четыре пакета SDK для разработки: 
-- Пакет SDK для .NET [Microsoft.Azure.CosmosDB.Table](https://aka.ms/tableapinuget). Эта библиотека включает в себя те же классы и подписи методов, что и [пакет SDK WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage). Кроме того, она может подключаться к учетным записям Azure Cosmos DB через API таблиц. 
+- Пакет SDK для .NET [Microsoft.Azure.CosmosDB.Table](https://aka.ms/tableapinuget). Эта библиотека включает в себя те же классы и подписи методов, что и [пакет SDK WindowsAzure.Storage](https://www.nuget.org/packages/WindowsAzure.Storage). Кроме того, она может подключаться к учетным записям Azure Cosmos DB через API таблиц. Обратите внимание, что на данный момент библиотека `Microsoft.Azure.CosmosDB.Table` доступна только для .NET Standard и недоступна для .NET Core.
 - [Пакет SDK для Python](table-sdk-python.md). Новый пакет SDK для Python в Azure Cosmos DB — единственный пакет SDK, который поддерживает хранилище таблиц Azure в Python. Этот пакет SDK подключается к хранилищу таблиц Azure и API таблиц Azure Cosmos DB.
 - [Пакет SDK для Java](table-sdk-java.md). Этот пакет SDK для службы хранилища Azure может подключаться к учетным записям Azure Cosmos DB с помощью API таблиц.
 - [Пакет SDK для Node.js](table-sdk-nodejs.md). Этот пакет SDK для службы хранилища Azure может подключаться к учетным записям Azure Cosmos DB с помощью API таблиц.

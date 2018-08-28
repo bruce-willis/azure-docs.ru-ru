@@ -7,12 +7,12 @@ ms.service: dns
 ms.topic: tutorial
 ms.date: 7/20/2018
 ms.author: victorh
-ms.openlocfilehash: b39c2c672869bb446e58134a85130d10491fe047
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 2abe6c11b2a6fe9a9146f5c5689597fe3e29fa82
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39621119"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41920068"
 ---
 # <a name="tutorial-create-dns-records-in-a-custom-domain-for-a-web-app"></a>Руководство. Создание записей DNS для веб-приложения в личном домене 
 
@@ -88,7 +88,7 @@ New-AzureRMDnsRecordSet -ZoneName contoso.com -ResourceGroupName MyAzureResource
 
 ## <a name="create-the-cname-record"></a>Создание записи CNAME
 
-Если вашим доменом уже управляет Azure DNS (см. статью [Делегирование домена в Azure DNS](dns-domain-delegation.md)), можно использовать следующий пример, чтобы создать запись CNAME для contoso.azurewebsites.net.
+Если вашим доменом уже управляет Azure DNS (см. статью о [делегировании домена в Azure DNS](dns-domain-delegation.md)), можно использовать следующий пример, чтобы создать запись CNAME для contoso.azurewebsites.net.
 
 Откройте Azure PowerShell и создайте новую запись CNAME. В этом примере будет создан набор записей CNAME со сроком жизни 600 секунд в зоне DNS с именем "contoso.com" и псевдонимом для веб-приложения contoso.azurewebsites.net.
 

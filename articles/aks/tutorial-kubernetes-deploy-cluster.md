@@ -1,36 +1,38 @@
 ---
 title: Руководство по Kubernetes в Azure. Развертывание кластера
-description: Руководство по AKS. Развертывание кластера
+description: В этом руководстве по Службе Azure Kubernetes (AKS) вы создаете кластер AKS и используете kubectl для подключения к главному узлу Kubernetes.
 services: container-service
 author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
-ms.date: 06/29/2018
+ms.date: 08/14/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: c8698f16138e9baeb9c9c1142a5d0c8937a69d1b
-ms.sourcegitcommit: 4597964eba08b7e0584d2b275cc33a370c25e027
+ms.openlocfilehash: 80b011f9df389098095f58c02008da891b2aa8a7
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37341405"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41920890"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Руководство. Развертывание кластера службы Azure Kubernetes
 
-Kubernetes предоставляет распределенную платформу для контейнерных приложений. AKS позволяет быстро подготовить производственный кластер Kubernetes. В этом руководстве (третья часть из восьми) кластер Kubernetes развертывается в AKS. В частности, рассматриваются такие шаги:
+Kubernetes предоставляет распределенную платформу для контейнерных приложений. AKS позволяет быстро подготовить производственный кластер Kubernetes. В этом руководстве (третья часть из восьми) кластер Kubernetes развертывается в AKS. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создание субъекта-службы для взаимодействия ресурсов;
-> * развертывание кластера AKS Kubernetes;
-> * установка интерфейса командной строки Kubernetes (kubectl);
-> * настройка kubectl.
+> * Создание субъекта-службы для взаимодействия ресурсов.
+> * Развертывание кластера AKS.
+> * Установка интерфейса командной строки Kubernetes (kubectl).
+> * Настройка kubectl для подключения к кластеру AKS.
 
 В последующих руководствах приложение Azure для голосования развертывается в кластере, масштабируется и обновляется.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В предыдущих руководствах образ контейнера был создан и передан в экземпляр реестра контейнеров Azure. Если вы не выполнили эти действия, вы можете ознакомиться со статьей [Руководство. Подготовка приложения для службы Azure Kubernetes][aks-tutorial-prepare-app].
+В предыдущих руководствах образ контейнера был создан и передан в экземпляр реестра контейнеров Azure. Если вы не выполнили эти действия, вы можете ознакомиться со статьей [Prepare application for Azure Container Service (AKS)][aks-tutorial-prepare-app] (Подготовка приложений для службы контейнеров Azure (AKS)).
+
+Для выполнения задач из этого руководства требуется Azure CLI 2.0.44 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
@@ -63,73 +65,71 @@ az ad sp create-for-rbac --skip-assignment
 Сначала получите идентификатор ресурса ACR с помощью команды [az acr show][]. Измените имя реестра `<acrName>` на имя реестра своего экземпляра ACR, а имя группы ресурсов — на имя той группы ресурсов, в которой находится экземпляр ACR.
 
 ```azurecli
-az acr show --name <acrName> --resource-group myResourceGroup --query "id" --output tsv
+az acr show --resource-group myResourceGroup --name <acrName> --query "id" --output tsv
 ```
 
-Чтобы предоставить кластеру AKS соответствующие права доступа для использования образов, хранящихся в ACR, создайте назначение роли с помощью команды [az role assignment create][]. Замените `<appId`> и `<acrId>` на значения, собранных на предыдущих двух шагах.
+Чтобы предоставить кластеру AKS соответствующие права доступа для использования образов, хранящихся в ACR, создайте назначение ролей с помощью команды [az role assignment create][]. Замените `<appId`> и `<acrId>` на значения, собранных на предыдущих двух шагах.
 
 ```azurecli
-az role assignment create --assignee <appId> --role Reader --scope <acrId>
+az role assignment create --assignee <appId> --scope <acrId> --role Reader
 ```
 
-## <a name="create-kubernetes-cluster"></a>Создание кластера Kubernetes
+## <a name="create-a-kubernetes-cluster"></a>Создание кластера Kubernetes
 
-Теперь создайте кластер AKS с помощью команды [az aks create][]. В следующем примере создается кластер с именем *myAKSCluster* в группе ресурсов *myResourceGroup*. Эта группа ресурсов была создана в [предыдущем руководстве][aks-tutorial-prepare-acr]. Укажите собственные `<appId>` и `<password>` из предыдущего шага, на котором вы создали субъект-службу.
+Кластеры AKS могут использовать управление доступом на основе ролей (RBAC) Kubernetes. Эти элементы управления позволяют определять доступ к ресурсам на основе ролей, назначенных пользователям. Разрешения могут быть объединены, если пользователю назначено несколько ролей. Разрешения могут охватывать одно пространство имен или весь кластер. Сейчас RBAC Kubernetes находится на этапе предварительной версии для кластеров AKS. По умолчанию Azure CLI автоматически включает RBAC при создании кластера AKS.
+
+Создайте кластер AKS с помощью команды [az aks create][]. В следующем примере в группе ресурсов *myResourceGroup* создается кластер с именем *myAKSCluster*. Эта группа ресурсов была создана в [предыдущем руководстве][aks-tutorial-prepare-acr]. Укажите собственные значения `<appId>` и `<password>` из предыдущего шага, на котором был создан субъект-служба.
 
 ```azurecli
 az aks create \
-    --name myAKSCluster \
     --resource-group myResourceGroup \
+    --name myAKSCluster \
     --node-count 1 \
-    --generate-ssh-keys \
     --service-principal <appId> \
-    --client-secret <password>
+    --client-secret <password> \
+    --generate-ssh-keys
 ```
 
 Через несколько минут развертывание завершится и отобразятся сведения о развертывании AKS в формате JSON.
 
-## <a name="install-the-kubectl-cli"></a>Установка интерфейса командной строки kubectl
+## <a name="install-the-kubernetes-cli"></a>Установка интерфейса командной строки Kubernetes
 
-Для подключения к кластеру Kubernetes с клиентского компьютера используйте средство [kubectl][kubectl] (клиент командной строки Kubernetes).
+Для подключения к кластеру Kubernetes с локального компьютера используйте средство [kubectl][kubectl] (клиент командной строки Kubernetes).
 
-Если вы используете Azure Cloud Shell, клиент kubectl уже установлен. Его также можно установить локально с помощью команды[az aks install-cli][]:
+Если вы используете Azure Cloud Shell, `kubectl` уже установлен. Его также можно установить локально с помощью команды [az aks install-cli][]:
 
 ```azurecli
 az aks install-cli
 ```
 
-## <a name="connect-with-kubectl"></a>Подключение с помощью kubectl
+## <a name="connect-to-cluster-using-kubectl"></a>Подключение к кластеру с помощью kubectl
 
-Чтобы настроить подключение kubectl к кластеру Kubernetes, выполните команду [az aks get-credentials][]. В следующем примере возвращаются учетные данные для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*:
-
-```azurecli
-az aks get-credentials --name myAKSCluster --resource-group myResourceGroup
-```
-
-Чтобы проверить подключение к кластеру, выполните команду [kubectl get nodes][kubectl-get].
+Чтобы настроить `kubectl` для подключения к кластеру Kubernetes, выполните команду [az aks get-credentials][]. В следующем примере возвращаются учетные данные для имени кластера AKS *myAKSCluster* в группе ресурсов *myResourceGroup*:
 
 ```azurecli
-kubectl get nodes
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```
 
-Выходные данные:
+Чтобы проверить подключение к кластеру, выполните команду [kubectl get nodes][kubectl-get]:
 
 ```
+$ kubectl get nodes
+
 NAME                       STATUS    ROLES     AGE       VERSION
-aks-nodepool1-66427764-0   Ready     agent     9m        v1.9.6
+aks-nodepool1-66427764-0   Ready     agent     9m        v1.9.9
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы развернули кластер Kubernetes в AKS. Были выполнены следующие действия:
+В этом руководстве вы развернули кластер Kubernetes в AKS и настроили `kubectl` для подключения к нему. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создан субъект-службы для взаимодействия ресурсов;
-> * развернут кластер AKS;
-> * установлен интерфейс командной строки Kubernetes (kubectl);
-> * настроен kubectl.
+> * Создание субъекта-службы для взаимодействия ресурсов.
+> * Развертывание кластера AKS.
+> * Установка интерфейса командной строки Kubernetes (kubectl).
+> * Настройка kubectl для подключения к кластеру AKS.
 
-Перейдите к следующему руководству, чтобы узнать о выполнении приложения в кластере.
+Перейдите к следующему руководству, чтобы узнать, как развертывать приложения в кластер.
 
 > [!div class="nextstepaction"]
 > [Развертывание приложений в Kubernetes][aks-tutorial-deploy-app]
@@ -144,7 +144,8 @@ aks-nodepool1-66427764-0   Ready     agent     9m        v1.9.6
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
 [az ad sp create-for-rbac]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
 [az acr show]: /cli/azure/acr#az-acr-show
-[az role assignment create]: /cli/azure/role/assignment#az-role-assignment-create
+[az role assignment create]: /cli/azure/role/assignment#az-role-assignment-create;
 [az aks create]: /cli/azure/aks#az-aks-create
 [az aks install-cli]: /cli/azure/aks#az-aks-install-cli
 [az aks get-credentials]: /cli/azure/aks#az-aks-get-credentials
+[azure-cli-install]: /cli/azure/install-azure-cli

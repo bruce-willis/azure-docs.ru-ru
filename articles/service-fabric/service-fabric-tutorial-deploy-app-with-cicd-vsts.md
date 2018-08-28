@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 12/13/2017
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: f3cc4f518278cca915e40bd691c6a7674219916e
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 2122b6d9c385e1137d0fc6df5229975359fa20d5
+ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37109398"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "41918489"
 ---
 # <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и непрерывным развертыванием в кластере Service Fabric
 
@@ -48,9 +48,9 @@ ms.locfileid: "37109398"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * [Установите Visual Studio 2017](https://www.visualstudio.com/), а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
-* [Установка пакета SDK для Service Fabric](service-fabric-get-started.md)
+* [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 * Создайте кластер Service Fabric с Windows, например с помощью [этого руководства](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
-* Создайте [учетную запись Team Services](https://www.visualstudio.com/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services).
+* Создайте [учетную запись Team Services](https://docs.microsoft.com/vsts/organizations/accounts/create-organization-msa-or-work-student).
 
 ## <a name="download-the-voting-sample-application"></a>Скачивание примера приложения для голосования
 
@@ -94,7 +94,13 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 Откройте веб-браузер и перейдите к новому командному проекту по адресу: [https://&lt;учетная_запись&gt;.visualstudio.com/Voting/Voting%20Team/_git/Voting](https://myaccount.visualstudio.com/Voting/Voting%20Team/_git/Voting).
 
-Перейдите на вкладку **Сборка и выпуск**, выберите **Сборки** и щелкните **+Новое определение**.  В области **Выбор шаблона** выберите шаблон **Приложение Azure Service Fabric** и нажмите кнопку **Применить**.
+Перейдите на вкладку **Сборка и выпуск**, выберите **Сборки** и щелкните **Новый конвейер**.
+
+![Новый конвейер][new-pipeline]
+
+Выберите **VSTS Git** как источник, командный проект **Voting**, репозиторий **Voting** и ветвь **master** по умолчанию  или сборки, выполняемые вручную или по расписанию.  Затем нажмите кнопку **Продолжить**.
+
+В области **Выбор шаблона** выберите шаблон **Приложение Azure Service Fabric** и нажмите кнопку **Применить**.
 
 ![Выбор шаблона сборки][select-build-template]
 
@@ -102,7 +108,9 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ![Выбор задач][save-and-queue]
 
-В разделе **Триггеры** включите непрерывную интеграцию, включив параметр **Состояние триггера**.  Щелкните **Сохранить и поместить в очередь**, чтобы выполнить сборку вручную.
+В разделе **Триггеры** включите непрерывную интеграцию, установив флажок **Включить непрерывную интеграцию**. В **фильтрах ветвей** щелкните **+Добавить** и **спецификация ветви** будет по умолчанию назначена ветви **master**. Щелкните **Сохранить и поместить в очередь**, чтобы выполнить сборку вручную.
+
+В диалоговом окне **сохранения конвейера сборки и очереди** нажмите щелкните **Сохранить и поместить в очередь**.
 
 ![Выбор триггеров][save-and-queue2]
 
@@ -110,7 +118,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ### <a name="create-a-release-definition"></a>Создание определения выпуска
 
-Перейдите на вкладку **Сборка и выпуск**, выберите **Выпуски** и щелкните **+Новое определение**.  В области **Выбор шаблона** выберите шаблон **Развертывание Azure Service Fabric** в списке и нажмите кнопку **Применить**.
+Перейдите на вкладку **Сборка и выпуск**, выберите **Выпуски** и щелкните **Новый конвейер**.  В области **Выбор шаблона** выберите шаблон **Развертывание Azure Service Fabric** в списке и нажмите кнопку **Применить**.
 
 ![Выбор шаблона выпуска][select-release-template]
 
@@ -134,7 +142,9 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ![Включение триггера][enable-trigger]
 
-Чтобы создать выпуск вручную, последовательно выберите **+Выпуск** -> **Создать выпуск** -> **Создать**.  Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по адресу [http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/](http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/).  Обратите внимание на версию приложения, в данном случае "1.0.0.20170616.3".
+Чтобы создать выпуск вручную, последовательно выберите **+Выпуск** -> **Создать выпуск** -> **Создать**. Ход создания можно отслеживать на вкладке **Выпуски**.
+
+Убедитесь, что развертывание выполнено успешно и приложение выполняется в кластере.  Откройте браузер и перейдите по ссылке [http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/](http://mysftestcluster.southcentralus.cloudapp.azure.com:19080/Explorer/).  Обратите внимание на версию приложения, в данном случае "1.0.0.20170616.3".
 
 ## <a name="commit-and-push-changes-trigger-a-release"></a>Фиксация и отправка изменений, создание выпуска
 
@@ -188,6 +198,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 [publish-app-profile]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/PublishAppProfile.png
 [push-git-repo]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/PublishGitRepo.png
 [publish-code]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/PublishCode.png
+[new-pipeline]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/NewPipeline.png
 [select-build-template]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SelectBuildTemplate.png
 [save-and-queue]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SaveAndQueue.png
 [save-and-queue2]: ./media/service-fabric-tutorial-deploy-app-with-cicd-vsts/SaveAndQueue2.png

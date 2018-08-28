@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию кластера Spark в HDInsight с помощью портала Azure
+title: Краткое руководство по созданию кластера Spark в HDInsight с использованием портала Azure
 description: В этом кратком руководстве показано, как использовать портал Azure для создания кластера Apache Spark в Azure HDInsight и выполнить SQL-запрос Spark.
 services: azure-hdinsight
 author: jasonwhowell
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: jasonh
 ms.custom: mvc
-ms.openlocfilehash: d3883bb667a208d724586da185cb8a877a4f03d5
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.openlocfilehash: 395c8182846c3afaa230fd2035fc17dfd7624af1
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39619113"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42022486"
 ---
 # <a name="quickstart-create-a-spark-cluster-in-hdinsight-using-the-azure-portal"></a>Краткое руководство по созданию кластера Spark в HDInsight с помощью портала Azure
 Узнайте, как создать кластер Apache Spark в Azure HDInsight и как выполнять SQL-запросы Spark к таблицам Hive. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. Сведения о Spark в HDInsight см. в [этой статье](apache-spark-overview.md).

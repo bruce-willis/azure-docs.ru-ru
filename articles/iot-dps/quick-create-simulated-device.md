@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по подготовке имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью C | Документация Майкрософт
+title: Подготовка имитированного устройства доверенного платформенного модуля в Центре Интернета вещей Azure с помощью C | Документация Майкрософт
 description: В этом кратком руководстве вы создадите и подготовите имитированное устройство доверенного платформенного модуля с помощью пакета SDK для устройства C для Службы подготовки устройств к добавлению в Центр Интернета вещей Azure
 author: wesmc7777
 ms.author: wesmc
@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 15c0ce5a545b0bd6b2d1f320b50e9990f8278296
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 4e03268db32b4be6900234abe58e7a308110520a
+ms.sourcegitcommit: 3f8f973f095f6f878aa3e2383db0d296365a4b18
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39091471"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "42024275"
 ---
 # <a name="quickstart-provision-a-simulated-tpm-device-using-the-azure-iot-c-sdk"></a>Краткое руководство по подготовке имитированного устройства доверенного платформенного модуля с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -147,7 +147,7 @@ ms.locfileid: "39091471"
 
 1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и скопируйте значение **_области идентификатора_**.
 
-    ![Извлечение информации о конечной точке диагностики DPS из портала](./media/quick-create-simulated-device/extract-dps-endpoints.png) 
+    ![Извлеките сведения о конечной точке службы подготовки устройств с портала](./media/quick-create-simulated-device/extract-dps-endpoints.png) 
 
 2. В окне *Обозреватель решений* Visual Studio перейдите в папку **Provision\_Samples**. Разверните пример проекта с именем **prov\_dev\_client\_sample**. Разверните **исходные файлы** и откройте **prov\_dev\_client\_sample.c**.
 

@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 2f0d3c592cf8e265c215c49c291d3ef420112a15
-ms.sourcegitcommit: e32ea47d9d8158747eaf8fee6ebdd238d3ba01f7
+ms.openlocfilehash: 40d6d149d07f55784e8428eb0faa943814195a47
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39090866"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42023522"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство по подготовке имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -143,7 +143,7 @@ ms.locfileid: "39090866"
 
 1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и запишите значение **_области идентификатора_**.
 
-    ![Извлечение информации о конечной точке диагностики DPS из колонки портала](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
+    ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
 
 2. В окне *Обозреватель решений* Visual Studio перейдите в папку **Provision\_Samples**. Разверните пример проекта с именем **prov\_dev\_client\_sample**. Разверните **исходные файлы** и откройте **prov\_dev\_client\_sample.c**.
 

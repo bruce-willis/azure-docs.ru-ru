@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
 manager: douge
-ms.openlocfilehash: 2a13a326aee29d002be18a3f40c4be9b4f2da4f1
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 7ff3a2b3547874fd10d35867574c020500c48cd4
+ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523341"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "42023516"
 ---
 # <a name="quickstart-create-a-kubernetes-dev-space-with-azure-dev-spaces-net-core-and-vs-code"></a>Краткое руководство по созданию среды разработки Kubernetes с помощью Azure Dev Spaces (.NET Core и VS Code)
 
@@ -32,7 +32,7 @@ ms.locfileid: "39523341"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-- [Кластер Kubernetes](https://ms.portal.azure.com/#create/microsoft.aks), работающий с Kubernetes 1.10.3, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром **Маршрутизация HTTP для приложений**.
+- [Кластер Kubernetes](https://ms.portal.azure.com/#create/microsoft.aks), работающий с Kubernetes 1.9.6 или выше, в регионах EastUS, CentralUS, WestUS2, WestEurope, CanadaCentral или CanadaEast, с включенным параметром **Маршрутизация HTTP для приложений**.
 
   ![Не забудьте включить параметр "Маршрутизация приложений HTTP".](media/common/Kubernetes-Create-Cluster-3.PNG)
 
@@ -44,7 +44,7 @@ Azure CLI и расширение Azure Dev Spaces могут устанавли
 
 Вот как можно настроить Azure Dev Spaces:
 
-1. Установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.0.38 или более поздней).
+1. Установите [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) (версии 2.0.43 или выше).
 1. Настройка Dev Spaces в кластере AKS: `az aks use-dev-spaces -g MyResourceGroup -n MyAKS`
 1. Загрузите [расширение Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) для VS Code. Один раз щелкните "Установить" на странице расширения в Marketplace и еще раз — в VS Code.
 

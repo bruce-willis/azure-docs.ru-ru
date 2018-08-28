@@ -1,54 +1,52 @@
 ---
 title: Руководство по Kubernetes в Azure. Обновление приложения
-description: Руководство по AKS. Обновление приложения
+description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как обновить имеющееся развертывание приложения для AKS с помощью новой версии кода приложения.
 services: container-service
 author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
-ms.date: 02/24/2018
+ms.date: 08/14/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 2fcb2f5041b97b7e267f55340bf0cb0b8d2f457b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b2dd52fec112b879e072d3ac5598dd7978e68cbc
+ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449389"
+ms.lasthandoff: 08/15/2018
+ms.locfileid: "41918120"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство. Обновление приложения в службе Azure Kubernetes
 
 После развертывания приложения в Kubernetes его можно обновить, указав новый образ контейнера или версию образа. При этом обновление выполняется поэтапно, поэтому одновременно обновляется только часть развертывания. Такое поэтапное обновление позволяет приложению продолжать работать во время обновления. Оно также обеспечивает механизм отката на случай, если произойдет сбой развертывания.
 
-В этом руководстве (часть 7 из 8) обновляется пример приложения Vote Azure. Здесь будут выполнены следующие задачи:
+В этом руководстве (часть 7 из 8) обновляется пример приложения Vote Azure. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Обновление кода внешнего приложения.
 > * Создание обновленного образа контейнера.
-> * Отправка образа контейнера в реестр контейнеров Azure.
+> * Передача образа контейнера в Реестр контейнеров Azure.
 > * Развертывание обновленного образа контейнера.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В предыдущих руководствах приложение было упаковано в образ контейнера, образ был передан в реестр контейнеров Azure и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes.
+В рамках предыдущих руководств приложение было упаковано в образ контейнера, который был передан в Реестр контейнеров Azure (ACR), и был создан кластер Kubernetes. Затем приложение было запущено в кластере Kubernetes.
 
-Также был клонирован репозиторий приложения, включая исходный код приложения и предварительно созданный файл Docker Compose, используемый в этом руководстве. Проверьте, создали ли вы клон репозитория и изменили ли каталоги на клонированный каталог. Внутри репозитория находится каталог `azure-vote` и файл `docker-compose.yaml`.
+Кроме того, был клонирован репозиторий приложения, включая исходный код приложения и предварительно созданный файл Docker Compose, используемый в этом руководстве. Проверьте, создали ли вы клон репозитория и изменили ли каталоги на клонированный каталог. Если вы не выполнили эти действия и хотите продолжить изучение материала, вернитесь к руководству по [созданию образов контейнеров][aks-tutorial-prepare-app].
 
-Если вы не выполнили эти действия и хотите продолжить изучение материала, вернитесь к руководству по [созданию образов контейнеров][aks-tutorial-prepare-app].
+Для выполнения задач из этого руководства требуется Azure CLI 2.0.44 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
-## <a name="update-application"></a>Обновление приложения
+## <a name="update-an-application"></a>Обновление приложения
 
-Для задач этого руководства в приложение внесены изменения, и обновленное приложение развернуто в кластере Kubernetes.
-
-Исходный код приложения можно найти в каталоге `azure-vote`. Откройте файл `config_file.cfg` в любом редакторе кода или текста. В этом примере используется `vi` .
+Внесите изменения в пример приложения, а затем обновите уже развернутую версию в кластере AKS. Пример исходного кода приложения можно найти в каталоге *azure-vote*. Откройте файл *config_file.cfg* с помощью редактора, например `vi`:
 
 ```console
 vi azure-vote/azure-vote/config_file.cfg
 ```
 
-Измените значения для `VOTE1VALUE` и `VOTE2VALUE`, а затем сохраните файл.
+Измените значения параметров *VOTE1VALUE* и *VOTE2VALUE* на другие цвета. В следующем примере показаны обновленные значения с цветами:
 
-```console
+```
 # UI Configurations
 TITLE = 'Azure Voting App'
 VOTE1VALUE = 'Blue'
@@ -58,53 +56,49 @@ SHOWHOST = 'false'
 
 Сохраните и закройте файл.
 
-## <a name="update-container-image"></a>Обновление образа контейнера
+## <a name="update-the-container-image"></a>Обновление образа контейнера
 
-Используйте команду [docker-compose][docker-compose] для повторного создания образа внешнего приложения и запуска обновленного приложения. Аргумент `--build` указывает Docker Compose, что требуется повторно создать образ приложения.
+Используйте команду [docker-compose][docker-compose] для повторного создания образа внешнего приложения и проверки обновленного приложения. Аргумент `--build` указывает Docker Compose, что требуется повторно создать образ приложения.
 
 ```console
 docker-compose up --build -d
 ```
 
-## <a name="test-application-locally"></a>Локальное тестирование приложения
+## <a name="test-the-application-locally"></a>Локальное тестирование приложения
 
-Перейдите к http://localhost:8080, чтобы увидеть обновленное приложение.
+Чтобы убедиться, что обновленный образ контейнера показывает изменения, откройте в локальном веб-браузере http://localhost:8080.
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated.png)
 
-## <a name="tag-and-push-images"></a>Пометка и отправка образов
+Обновленные значения цвета, заданные в файле *config_file.cfg*, отображаются в запущенном приложении.
 
-Добавьте к образу `azure-vote-front` тег loginServer реестра контейнеров.
+## <a name="tag-and-push-the-image"></a>Пометка и отправка образов
 
-Получите имя сервера входа, выполнив команду [az acr list](/cli/azure/acr#az-acr-list).
+Чтобы правильно использовать этот обновленный образ, добавьте к образу *azure-vote-front* имя сервера для входа реестра ACR в виде тега. Получите имя сервера для входа, выполнив команду [az acr list](/cli/azure/acr#az_acr_list).
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
 ```
 
-Используйте команду [docker tag][docker-tag], чтобы добавить тег для образа. Замените `<acrLoginServer>` именем сервера входа реестра контейнеров Azure или именем узла общедоступного реестра. Также обратите внимание на то, что образ обновлен до версии `v2`.
+Используйте команду [docker tag][docker-tag], чтобы добавить тег для образа. Замените `<acrLoginServer>` именем сервера для входа ACR или именем узла общедоступного реестра и обновите версию образа до *:v2* следующим образом:
 
 ```console
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v2
 ```
 
-Используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера входа реестра контейнеров Azure. Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что выполнена команда [az acr login][az-acr-login].
+Теперь используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера для входа ACR. Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что выполнена команда [az acr login][az-acr-login].
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v2
 ```
 
-## <a name="deploy-update-application"></a>Развертывание обновленного приложения
+## <a name="deploy-the-updated-application"></a>Развертывание обновленного приложения
 
-Чтобы обеспечить максимальное время доступности, должны быть запущены несколько экземпляров группы контейнеров приложения. Проверьте эту конфигурацию с помощью команды [kubectl get pod][kubectl-get].
-
-```
-kubectl get pod
-```
-
-Выходные данные:
+Чтобы обеспечить максимальное время доступности, должны быть запущены несколько экземпляров группы контейнеров приложения. Проверьте число запущенных экземпляров внешнего интерфейса с помощью команды [kubectl get pods][kubectl-get]:
 
 ```
+$ kubectl get pods
+
 NAME                               READY     STATUS    RESTARTS   AGE
 azure-vote-back-217588096-5w632    1/1       Running   0          10m
 azure-vote-front-233282510-b5pkz   1/1       Running   0          10m
@@ -112,28 +106,29 @@ azure-vote-front-233282510-dhrtr   1/1       Running   0          10m
 azure-vote-front-233282510-pqbfk   1/1       Running   0          10m
 ```
 
-Если у вас нет нескольких pod, выполняющих образ azure-vote-front, измените масштаб развертывания `azure-vote-front`.
+Если у вас нет нескольких модулей pod внешнего интерфейса, измените масштаб развертывания *azure-vote-front* следующим образом:
 
-
-```azurecli
+```console
 kubectl scale --replicas=3 deployment/azure-vote-front
 ```
 
-Чтобы обновить приложение, используйте команду [kubectl set][kubectl-set]. Обновите `<acrLoginServer>`, используя имя сервера входа или имя узла реестра контейнеров.
+Чтобы обновить приложение, используйте команду [kubectl set][kubectl-set]. Обновите `<acrLoginServer>`, используя имя сервера для входа или имя узла реестра контейнеров, и укажите версию приложения *v2*:
 
-```azurecli
+```console
 kubectl set image deployment azure-vote-front azure-vote-front=<acrLoginServer>/azure-vote-front:v2
 ```
 
 Для мониторинга развертывания используйте команду [kubectl get pod][kubectl-get]. По мере развертывания обновленного приложения ваши группы контейнеров прекращают работу и воссоздаются с новым образом контейнера.
 
-```azurecli
-kubectl get pod
+```console
+kubectl get pods
 ```
 
-Выходные данные:
+В следующем примере выходных данных показано завершение работы модулей pod и запуск новых экземпляров в ходе развертывания:
 
 ```
+$ kubectl get pods
+
 NAME                               READY     STATUS        RESTARTS   AGE
 azure-vote-back-2978095810-gq9g0   1/1       Running       0          5m
 azure-vote-front-1297194256-tpjlg  1/1       Running       0          1m
@@ -141,29 +136,29 @@ azure-vote-front-1297194256-tptnx  1/1       Running       0          5m
 azure-vote-front-1297194256-zktw9  1/1       Terminating   0          1m
 ```
 
-## <a name="test-updated-application"></a>Тестирование обновленного приложения
+## <a name="test-the-updated-application"></a>Проверка обновленного приложения
 
-Получите внешний IP-адрес службы `azure-vote-front`.
+Чтобы просмотреть обновленное приложение, сначала нужно получить внешний IP-адрес службы `azure-vote-front`:
 
-```azurecli
+```console
 kubectl get service azure-vote-front
 ```
 
-Перейдите по IP-адресу, чтобы увидеть обновленное приложение.
+Теперь откройте IP-адрес в локальном веб-браузере.
 
 ![Схема кластера Kubernetes в Аzure](media/container-service-kubernetes-tutorials/vote-app-updated-external.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы обновили приложение и развернули это обновление в кластер Kubernetes. Были выполнены следующие задачи:
+В этом руководстве вы обновили приложение и развернули это обновление в кластер Kubernetes. Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Обновление кода внешнего приложения.
 > * Создание обновленного образа контейнера.
-> * Отправка образа контейнера в реестр контейнеров Azure.
-> * Развертывание обновленного приложения.
+> * Передача образа контейнера в Реестр контейнеров Azure.
+> * Развертывание обновленного образа контейнера.
 
-Перейдите к следующему руководству, чтобы узнать об обновлении Kubernetes до новой версии.
+Перейдите к следующему руководству, чтобы узнать, как обновить кластер AKS до новой версии Kubernetes.
 
 > [!div class="nextstepaction"]
 > [Обновление Kubernetes][aks-tutorial-upgrade]
@@ -178,4 +173,5 @@ kubectl get service azure-vote-front
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
 [aks-tutorial-upgrade]: ./tutorial-kubernetes-upgrade-cluster.md
-[az-acr-login]: https://docs.microsoft.com/cli/azure/acr#az-acr-login
+[az-acr-login]: /cli/azure/acr#az_acr_login
+[azure-cli-install]: /cli/azure/install-azure-cli

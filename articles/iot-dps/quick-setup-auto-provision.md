@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: f4bae9ba41f61223a8e18e88e30b8fbf89eff1a9
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: ce1586e472e1d1ea5ddd9ca5a426b1bea2b5b931
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39527598"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42022633"
 ---
 # <a name="set-up-the-iot-hub-device-provisioning-service-with-the-azure-portal"></a>Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "39527598"
     * **Расположение**. Выберите ближайшее расположение для устройства.
     * **Закрепить на панели мониторинга**. Выберите этот параметр, чтобы закрепить экземпляр на панель мониторинга, что облегчит его поиск.
 
-    ![Ввод основных сведений об экземпляре службы подготовки устройств в колонке портала](./media/quick-setup-auto-provision/create-iot-dps-portal.png)  
+    ![Ввод основных сведений об экземпляре службы подготовки устройств в колонке на портале](./media/quick-setup-auto-provision/create-iot-dps-portal.png)  
 
 4. После успешного развертывания службы автоматически откроется колонка сводки службы.
 
@@ -61,7 +61,7 @@ ms.locfileid: "39527598"
     * **Центр Интернета вещей**. Выберите Центр Интернета вещей, который требуется связать с новым экземпляром службы подготовки устройств.
     * **Политика доступа**. Выберите **iothubowner** в качестве учетных данных для установления связи с Центром Интернета вещей.  
 
-    ![Связывание имени центра с экземпляром службы подготовки устройств в колонке портала](./media/quick-setup-auto-provision/link-iot-hub-to-dps-portal.png)  
+    ![Связывание имени центра с экземпляром службы подготовки устройств в колонке на портале](./media/quick-setup-auto-provision/link-iot-hub-to-dps-portal.png)  
 
 3. Теперь вы выбранный центр будет отображается в колонке **Связанные Центры Интернета вещей**. Может потребоваться щелкнуть **Обновить**, чтобы **связанные Центры Интернета вещей** отобразились.
 

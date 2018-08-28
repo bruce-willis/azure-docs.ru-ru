@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/13/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: cb38285a009d8dfba175de6e3037970e6111d929
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.openlocfilehash: e6f67c8900a7ee1728b474651b47d278cdfa51eb
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37096133"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "42023994"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
@@ -66,7 +66,7 @@ ms.locfileid: "37096133"
 
 ## <a name="development-tooling-integration"></a>Интеграция средств разработки
 
-Kubernetes обладает обширной экосистемой средств разработки и управления. К ним можно отнести Helm, Draft а также расширение Kubernetes для Visual Studio Code Вместе со службой Azure Kubernetes эти средства будут работать бесперебойно.
+Kubernetes обладает обширной экосистемой средств разработки и управления. К ним можно отнести Helm, Draft а также расширение Kubernetes для Visual Studio Code Вместе со Службой Azure Kubernetes эти средства будут работать бесперебойно.
 
 Кроме того, рабочие среды Azure Dev Spaces предоставляют быстрый итеративный интерфейс разработки Kubernetes для команд. Для того, чтобы запускать и отлаживать контейнеры непосредственно в службе Azure Kubernetes (AKS) требуется минимальная конфигурация.
 
@@ -90,7 +90,7 @@ Kubernetes обладает обширной экосистемой средст
 
 ## <a name="storage-volume-support"></a>Поддержка тома хранилища
 
-Служба Azure Kubernetes (AKS) поддерживает подключаемые тома хранения для постоянных данных. Кластеры AKS создаются с поддержкой файлов и дисков Azure.
+Служба Azure Kubernetes (AKS) поддерживает подключение томов хранилища для постоянных данных. Кластеры AKS создаются с поддержкой файлов и дисков Azure.
 
 Дополнительные сведения см. в статьях [Использование постоянных томов со службой файлов Azure][azure-files] и [Постоянные тома с дисками Azure][azure-disk].
 
@@ -104,7 +104,7 @@ Kubernetes обладает обширной экосистемой средст
 
 ## <a name="regulatory-compliance"></a>Соблюдение нормативных требований
 
-Azure Kubernetes Service (AKS) соответствует всем требованиям SOC, а также ISO, HIPPA, HITRUST.
+Служба Azure Kubernetes (AKS) соответствует всем требованиям стандартов SOC и ISO.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -131,7 +131,7 @@ Azure Kubernetes Service (AKS) соответствует всем требов�
 [aks-scale]: ./scale-cluster.md
 [aks-upgrade]: ./upgrade-cluster.md
 [azure-dev-spaces]: https://docs.microsoft.com/en-us/azure/dev-spaces/azure-dev-spaces
-[azure-devops]: https://docs.microsoft.com/en-us/vsts/pipelines/actions/azure-devops-project-aks?view=vsts
+[azure-devops]: https://docs.microsoft.com/en-us/azure/devops-project/overview
 [azure-disk]: ./azure-disks-dynamic-pv.md
 [azure-files]: ./azure-files-dynamic-pv.md
 [container-health]: ../monitoring/monitoring-container-health.md

@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/14/2017
 ms.author: dekapur
 ms.custom: mvc
-ms.openlocfilehash: 8a98b12a42dff186c9226df39ce02c71cbc40c7e
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.openlocfilehash: 30dd3f4a467f19efd2edc7ca26305ee2e7ff05a5
+ms.sourcegitcommit: 974c478174f14f8e4361a1af6656e9362a30f515
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113329"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41920620"
 ---
 # <a name="tutorial-monitor-and-diagnose-an-aspnet-core-application-on-service-fabric-using-application-insights"></a>Руководство. Мониторинг и диагностика приложения ASP.NET Core в Service Fabric с помощью Application Insights
 
@@ -29,7 +29,7 @@ ms.locfileid: "37113329"
 В четвертом руководстве из цикла вы узнаете, как выполнять такие задачи:
 > [!div class="checklist"]
 > * настройка Application Insights для приложения;
-> * сбора данных телеметрии ответов для трассировки связи по протоколу HTTP между службами;
+> * сбор данных телеметрии ответов для трассировки связи по протоколу HTTP между службами;
 > * использование функции карты приложений в Application Insights;
 > * добавление настраиваемых событий с помощью API Application Insights.
 
@@ -100,7 +100,7 @@ Application Insights — это платформа для управления �
 3. Выполните поиск `Microsoft.ApplicationInsights.ServiceFabric.Native` и щелкните соответствующий пакет NuGet.
 
 >[!NOTE]
->Если у вас нет предустановленного пакета Application Insights, вам нужно установить пакет Microsoft.ServiceFabric.Diagnistics.Internal таким же образом.
+>Если у вас нет предустановленного пакета Application Insights, вам нужно установить пакет Microsoft.ServiceFabric.Diagnostics.Internal таким же образом
 
 4. Справа установите флажки рядом с двумя службами в приложении, **VotingWeb** и **VotingData**, и нажмите кнопку **Установить**.
     ![Пакет SDK ИИ для Nuget](./media/service-fabric-tutorial-monitoring-aspnet/ai-sdk-nuget-new.png)
@@ -113,7 +113,8 @@ Application Insights — это платформа для управления �
     using Microsoft.ApplicationInsights.ServiceFabric;
     ```
 
-    2. Добавьте `.AddSingleton<ITelemetryInitializer>((serviceProvider) => FabricTelemetryInitializerExtension.CreateFabricTelemetryInitializer(serviceContext))` во вложенную инструкцию *return* метода *CreateServiceInstanceListeners()* или *CreateServiceReplicaListeners()* в разделе *ConfigureServices* > *services*, между двумя объявленными одноэлементными службами. При этом в данные телеметрии будет добавлен *контекст службы*, что позволит определить источник данных телеметрии в Application Insights. Вложенная инструкция *return* в *VotingWeb.cs* должна выглядеть следующим образом.
+    2. Во вложенную инструкцию *return* метода *CreateServiceInstanceListeners()* или *CreateServiceReplicaListeners()* в разделе *ConfigureServices* > *services*, между двумя объявленными одноэлементными службами добавьте `.AddSingleton<ITelemetryInitializer>((serviceProvider) => FabricTelemetryInitializerExtension.CreateFabricTelemetryInitializer(serviceContext))`
+    При этом в данные телеметрии будет добавлен *контекст службы*, что позволит лучше понять источник данных телеметрии в Application Insights. Вложенная инструкция *return* в *VotingWeb.cs* должна выглядеть следующим образом.
 
     ```csharp
     return new WebHostBuilder()

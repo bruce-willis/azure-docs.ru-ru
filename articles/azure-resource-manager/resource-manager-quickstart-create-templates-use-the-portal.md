@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 07/17/2018
+ms.date: 08/22/2018
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: d5bb5ed45363216bb1bcd39f85157a3eed68c2f9
-ms.sourcegitcommit: b9786bd755c68d602525f75109bbe6521ee06587
+ms.openlocfilehash: fcae6d656f6e309b0fdcd60db743d3bebf3cd5a9
+ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39126868"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "42617044"
 ---
 # <a name="quickstart-create-and-deploy-azure-resource-manager-templates-by-using-the-azure-portal"></a>Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure
 
@@ -78,7 +78,9 @@ ms.locfileid: "39126868"
 
 ## <a name="edit-and-deploy-the-template"></a>Редактирование и развертывание шаблона
 
-В этом разделе вы откроете сохраненный шаблон из библиотеки шаблонов, отредактируете его на портале и развернете измененный шаблон. Чтобы изменить более сложный шаблон, рекомендуем использовать Visual Studio Code, который предоставляет более широкие возможности редактирования.
+В этом разделе вы откроете сохраненный шаблон из библиотеки шаблонов, отредактируете его на портале и развернете измененный шаблон. Чтобы изменить более сложный шаблон, рекомендуем использовать [Visual Studio Code](./resource-manager-quickstart-create-templates-use-visual-studio-code.md) с более широкими возможностями редактирования.
+
+В Azure требуется, чтобы каждая служба Azure имела уникальное имя. Развертывание завершится сбоем, если ввести имя учетной записи хранения, которое уже существует. Чтобы избежать этого, используйте для создания уникального имени учетной записи хранения вызов функции шаблона (uniquestring()).
 
 1. На портале Azure в меню слева выберите **Все службы**, потом в поле фильтра введите **шаблон**, а затем щелкните **Шаблоны (ПРЕДВАРИТЕЛЬНАЯ ВЕРСИЯ)**.
 
@@ -177,6 +179,14 @@ ms.locfileid: "39126868"
 
 10. Щелкните **Приобрести**.
 11. Чтобы просмотреть состояние развертывания, щелкните значок колокольчика (уведомления) в верхней части экрана.
+
+    ![Развертывание шаблонов Azure Resource Manager — уведомление](./media/resource-manager-quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-portal-notification.png)
+
+12. Выберите **Перейти к группе ресурсов** в области уведомлений. Появится приблизительно такой экран:
+
+    ![Развертывание шаблонов Azure Resource Manager — группа ресурсов](./media/resource-manager-quickstart-create-templates-use-the-portal/azure-resource-manager-template-tutorial-portal-deployment-resource-group.png)
+
+    Вы увидите, что развертывание выполнено успешно и что в группе ресурсов есть только одна учетная запись хранения. Имя учетной записи хранения — это уникальная строка, созданная с помощью шаблона. Дополнительные сведения об использовании учетных записей хранения Azure см. в руководстве по [отправке, скачиванию и составлению списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

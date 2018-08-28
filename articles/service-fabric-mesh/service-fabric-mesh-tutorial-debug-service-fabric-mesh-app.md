@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 07/17/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: ad6812f25ee33bf723ed86d4ec32ca6898d01774
-ms.sourcegitcommit: bf522c6af890984e8b7bd7d633208cb88f62a841
+ms.openlocfilehash: c519d24a8401823039f3d6598276890ec6498bbc
+ms.sourcegitcommit: 1aedb52f221fb2a6e7ad0b0930b4c74db354a569
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39186744"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41919820"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-web-application"></a>Руководство. Отладка веб-приложения Сетки Azure Service Fabric
 
@@ -74,9 +74,17 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 
 **Советы по отладке**
 
-* Если обнаружилось, что  **локальный кластер Service Fabric не работает**, убедитесь, что служба Service Local Custer Manager (SLCM) запущена. Для этого на панели задач щелкните правой кнопкой мыши значок SLCM, затем нажмите **Start Local Cluster** (Запустить Локальный кластер). После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
-* Если при запуске приложения появится ошибка **404**, это скорее всего означает, что переменные среды в **service.yaml** неверны. Убедитесь, что `ApiHostPort`и `ServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore#create-environment-variables).
-* Если возникают ошибки сборки в **service.yaml**, убедитесь, что для задания отступов строки используются пробелы, а не символы табуляции. Кроме того, теперь необходимо создать приложение, используя английский языковой стандарт.
+Сейчас есть проблема, которая приводит сбою подключения к службе при вызове `using (HttpResponseMessage response = client.GetAsync("").GetAwaiter().GetResult())`. Это может произойти при каждом изменении IP-адреса узла. Чтобы устранить эту проблему:
+
+1. Удалите приложения из локального кластера (в Visual Studio выберите **Сборка** > **Очистить решение**).
+2. Выберите в диспетчере локального кластера Service Fabric **Остановить локальный кластер** и **Запустить локальный кластер**.
+3. Повторно разверните приложение (в Visual Studio нажмите **F5**).
+
+Если обнаружилось, что  **локальный кластер Service Fabric не работает**, убедитесь, что диспетчер локального кластера Service Fabric запущен. Для этого на панели задач щелкните правой кнопкой мыши соответствующий значок, затем нажмите **Запустить Локальный кластер**. После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
+
+Если при запуске приложения появится ошибка **404**, это может значить, что переменные среды в **service.yaml** неправильные. Убедитесь, что `ApiHostPort`и `ToDoServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-tutorial-create-dotnetcore#create-environment-variables).
+
+Если возникают ошибки сборки в **service.yaml**, убедитесь, что для задания отступов строки используются пробелы, а не символы табуляции. Кроме того, теперь необходимо создать приложение, используя английский языковой стандарт.
 
 ### <a name="debug-in-visual-studio"></a>Отладка в Visual Studio
 

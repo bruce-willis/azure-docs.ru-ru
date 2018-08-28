@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/10/2018
 ms.author: daveba
-ms.openlocfilehash: 9cc7683b260a9afbe4aee006a22af9c4834c4eb1
-ms.sourcegitcommit: 156364c3363f651509a17d1d61cf8480aaf72d1a
+ms.openlocfilehash: db4d423a09b6b37fd0ba88d466319cb5da4fdedf
+ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39248393"
+ms.lasthandoff: 08/18/2018
+ms.locfileid: "41920106"
 ---
 # <a name="tutorial-use-a-user-assigned-managed-service-identity-on-a-windows-vm-to-access-azure-resource-manager"></a>Руководство по получению доступа к Azure Resource Manager с помощью назначаемого пользователем Управляемого удостоверения службы на виртуальной машине Windows
 
@@ -42,8 +42,12 @@ ms.locfileid: "39248393"
 - Если вы не работали с управляемым удостоверением службы, изучите [общие сведения](overview.md). **Обратите внимание на [различия между системным и пользовательским удостоверениями](overview.md#how-does-it-work)**.
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 - Для выполнения требуемых операций по созданию ресурсов и управлению ролями учетной записи в этом руководстве нужно предоставить учетной записи разрешения "Владелец" в соответствующей области (подписка или группа ресурсов). Прочитайте раздел [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](/azure/role-based-access-control/role-assignments-portal), если нуждаетесь в помощи с назначением ролей.
-
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.7 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+- Чтобы локально установить и использовать PowerShell для работы с этим руководством, вам понадобится модуль Azure PowerShell 5.7.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). 
+- Если модуль PowerShell запущен локально, также сделайте следующее: 
+    - Выполните команду `Login-AzureRmAccount`, чтобы создать подключение к Azure.
+    - Установите [PowerShellGet последней версии](/powershell/gallery/installing-psget#for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget).
+    - Выполните `Install-Module -Name PowerShellGet -AllowPrerelease`, чтобы получить предварительную версию модуля `PowerShellGet` (может потребоваться `Exit` из текущего сеанса PowerShell после выполнения этой команды для установки модуля `AzureRM.ManagedServiceIdentity`).
+    - Выполните `Install-Module -Name AzureRM.ManagedServiceIdentity -AllowPrerelease`, чтобы установить предварительную версию модуля `AzureRM.ManagedServiceIdentity` для выполнения операций с удостоверением, назначаемым пользователем, в рамках этой статьи.
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
@@ -83,10 +87,10 @@ New-AzureRmVm `
 [!INCLUDE[ua-character-limit](~/includes/managed-identity-ua-character-limits.md)]
 
 ```azurepowershell-interactive
-Get-AzureRmUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1
+New-AzureRmUserAssignedIdentity -ResourceGroupName myResourceGroupVM -Name ID1
 ```
 
-Ответ содержит подробные сведения о созданном пользовательском удостоверении, приведенном в следующем примере. Запишите значение `Id` пользовательского удостоверения, так как оно будет использоваться на следующем шаге.
+Ответ содержит подробные сведения о созданном пользовательском удостоверении, приведенном в следующем примере. Запишите значения `Id` и `ClientId` для удостоверения, назначаемого пользователем, так как они будут использоваться на следующих этапах:
 
 ```azurepowershell
 {
@@ -148,10 +152,10 @@ CanDelegate: False
 
 4. Теперь, когда создано **подключение к удаленному рабочему столу** с виртуальной машиной, откройте **PowerShell** в удаленном сеансе.
 
-5. С помощью команды PowerShell `Invoke-WebRequest` выполните запрос к локальной конечной точке Управляемого удостоверения службы, чтобы получить маркер доступа к Azure Resource Manager.
+5. С помощью команды PowerShell `Invoke-WebRequest` выполните запрос к локальной конечной точке Управляемого удостоверения службы, чтобы получить маркер доступа к Azure Resource Manager.  Значение `client_id` возвращается при [создании управляемого удостоверения, назначаемого пользователем](#create-a-user-assigned-identity).
 
     ```azurepowershell
-    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=73444643-8088-4d70-9532-c3a0fdc190fz&resource=https://management.azure.com' -Method GET -Headers @{Metadata="true"}
+    $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&client_id=af825a31-b0e0-471f-baea-96de555632f9&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
     $content = $response.Content | ConvertFrom-Json
     $ArmToken = $content.access_token
     ```
@@ -166,7 +170,7 @@ CanDelegate: False
 Ответ содержит сведения об определенной группе ресурсов, подобные следующему примеру:
 
 ```json
-{"id":"/subscriptions/<SUBSCRIPTIONID>/resourceGroups/TestRG","name":"myResourceGroupVM","location":"eastus","properties":{"provisioningState":"Succeeded"}}
+{"id":"/subscriptions/<SUBSCRIPTIONID>/resourceGroups/myResourceGroupVM","name":"myResourceGroupVM","location":"eastus","properties":{"provisioningState":"Succeeded"}}
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

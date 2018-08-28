@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: ccc699a500cbaf20c9b90d71e7c730e617bc572c
-ms.sourcegitcommit: 727a0d5b3301fe20f20b7de698e5225633191b06
+ms.openlocfilehash: c2c80790fa3e7c20408346fbebf60c39879a94df
+ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39145542"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41918816"
 ---
 # <a name="configure-cloud-resources-for-device-provisioning-with-the-iot-hub-device-provisioning-service"></a>Настройка облачных ресурсов для подготовки устройств с помощью службы подготовки устройств для Центра Интернета вещей
 
@@ -48,7 +48,7 @@ ms.locfileid: "39145542"
    | **Группа ресурсов** | myResourceGroup | Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). |
    | **Местоположение.** | Любое допустимое расположение | Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/). |   
 
-   ![Ввод основных сведений о DPS на портале](./media/tutorial-set-up-cloud/create-iot-dps-portal.png)
+   ![Ввод основных сведений о службе подготовки устройств на портале](./media/tutorial-set-up-cloud/create-iot-dps-portal.png)
 
 5. Нажмите кнопку **Создать**. Через несколько секунд создастся экземпляр Службы подготовки устройств и отобразится страница **Обзор**.
 6. На странице **Обзор** нового экземпляра службы скопируйте значение **Область идентификатора**. Оно понадобится позднее. Это значение используется для определения идентификаторов регистрации и гарантирует, что идентификатор регистрации является уникальным.
