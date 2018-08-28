@@ -1,0 +1,79 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: ff1a5c52def0c6955ff90b92c0d4b2de44ea4a51
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42889527"
+documentType: LandingData
+title: Документация по API Bing для поиска в Интернете
+metadata:
+  document_id: 6111ada8-aec2-11e7-abc4-cec278b6b50a
+  title: Документация по API Bing для поиска в Интернете. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Узнайте, как использовать Поиск в Интернете Bing для получения результатов из Интернета, соответствующих запросам пользователя. В руководствах описано, как создавать приложения, использующие эту службу.
+  services: cognitive-services
+  author: v-jerkin
+  manager: cgronlun
+  ms.service: bing-web-search
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 10/10/2017
+  ms.author: v-jerkin
+abstract:
+  description: API Bing для поиска в Интернете работает по тому же принципу, что и служба Bing, которая возвращает результаты поиска, определенные как соответствующие запросу пользователя. Результаты поиска содержат веб-страницы, но также могут содержать изображения, видео и многое другое.
+sections:
+- title: 5-минутные руководства по началу работы
+  items:
+  - type: paragraph
+    text: 'Начните работу с API Bing для поиска в Интернете, составив запрос и просмотрев ответ в формате JSON:'
+  - type: list
+    style: icon48
+    items:
+    - image:
+        src: media/index/logo_csharp.svg
+      href: quickstarts/csharp
+      text: C&#35;
+    - image:
+        src: https://docs.microsoft.com/en-us/media/logos/logo_gopher.svg
+      href: quickstarts/go
+      text: Go
+    - image:
+        src: media/index/logo_java.svg
+      href: quickstarts/java
+      text: Java
+    - image:
+        src: media/index/logo_nodejs.svg
+      href: quickstarts/nodejs
+      text: Node.js
+    - image:
+        src: media/index/logo_php.svg
+      href: quickstarts/php
+      text: PHP
+    - image:
+        src: media/index/logo_python.svg
+      href: quickstarts/python
+      text: Python
+    - image:
+        src: media/index/logo_ruby.svg
+      href: quickstarts/ruby
+      text: Ruby
+- title: Пошаговые руководства
+  items:
+  - type: paragraph
+    text: 'Инструкции по разработке приложений с использованием API Bing для поиска в Интернете:'
+  - type: list
+    style: unordered
+    items:
+    - html: <a href="tutorial-bing-web-search-single-page-app">Одностраничное веб-приложение</a> | <a href="tutorial-bing-web-search-single-page-app-source">Исходный код</a>
+    - html: <a href="computer-vision-web-search-tutorial.md">Мобильное приложение "Визуальный поиск"</a>
+- title: Справочные материалы
+  items:
+  - type: list
+    style: cards
+    className: cardsD
+    items:
+    - title: Интерфейсы API
+      html: <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference">API Bing для поиска в Интернете версии 7</a></p><p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v5-reference/">API Bing для поиска в Интернете версии 5</a></p>
+    - title: Пакеты SDK
+      html: <p><a href="sdk.md">Пакет SDK для Поиска Bing</a></p>

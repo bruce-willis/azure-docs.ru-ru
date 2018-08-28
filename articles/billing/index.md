@@ -12,16 +12,19 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 05/24/2018
 ms.author: cwatson
-ms.openlocfilehash: b04cb7ca3e8e7b292efaed66096c206b268a034a
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: db2c6f9995356abc233e971a2fae5a1ee6233ed1
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39626188"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42915702"
 ---
 # <a name="azure-billing-and-cost-management-documentation"></a>Документация по выставлению счетов и управлению затратами в Azure
 
 Узнайте, как расшифровывать счета Azure, отслеживать использование и расходы, а также управлять учетными записями и подписками.
+
+> [!div class="nextstepaction"]
+> [Помогите нам улучшить документацию по управлению счетами и подписками в Azure](https://go.microsoft.com/fwlink/p/?linkid=2010091)
 
 <ul class="panelContent cardsF">
     <li>
@@ -101,7 +104,7 @@ ms.locfileid: "39626188"
                         <p>
                         <a href="/azure/billing/billing-manage-access">Доступ к данным для выставления счетов</a><br/>
                         <a href="/azure/billing/billing-how-to-pay-by-invoice">Оплата по счету</a><br/>
-                        <a href="/azure/billing/billing-manage-reserved-vm-instance">Управление резервированиями Azure</a><br/>
+                        <a href="/azure/billing/billing-manage-reserved-vm-instance">Управление зарезервированными экземплярами в Azure</a><br/>
                         <a href="/azure/billing/billing-understand-reserved-instance-usage-ea">Использование резервирований Azure</a>
                         </p>
                     </div>

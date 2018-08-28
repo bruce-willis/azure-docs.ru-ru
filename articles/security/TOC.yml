@@ -40,22 +40,35 @@ items:
     - name: Шифрование неактивных данных
       href: azure-security-encryption-atrest.md
     - name: Шифрование дисков для виртуальных машин IaaS
-      href: azure-security-disk-encryption-overview.md
       items:
-      - name: Предварительные требования для шифрования дисков
-        href: azure-security-disk-encryption-prerequisites.md
-      - name: Шифрование дисков для виртуальных машин Windows
-        href: azure-security-disk-encryption-windows.md
-      - name: Шифрование дисков для виртуальных машин Linux
-        href: azure-security-disk-encryption-linux.md
+      - name: Общие сведения о шифровании дисков Azure
+        href: azure-security-disk-encryption-overview.md
+      - name: Быстрое начало работы
+        items:
+        - name: Шифрование виртуальных машин с помощью Azure PowerShell
+          href: quick-encrypt-vm-powershell.md
+      - name: Дисковое шифрование Azure
+        items:
+        - name: Предварительные требования для шифрования дисков
+          href: azure-security-disk-encryption-prerequisites.md
+        - name: Шифрование дисков для виртуальных машин Windows
+          href: azure-security-disk-encryption-windows.md
+        - name: Шифрование дисков для виртуальных машин Linux
+          href: azure-security-disk-encryption-linux.md
       - name: Приложение для шифрования дисков
         href: azure-security-disk-encryption-appendix.md
       - name: Часто задаваемые вопросы о шифровании дисков
         href: azure-security-disk-encryption-faq.md
       - name: Устранение неполадок
         href: azure-security-disk-encryption-tsg.md
-    - name: Шифрование виртуальной машины Azure
-      href: ../security-center/security-center-disk-encryption.md?toc=/azure/security/toc.json&bc=/azure/security/breadcrumb/toc.json
+      - name: Шифрование дисков Azure с использованием приложения Azure AD (предыдущий выпуск)
+        items:
+        - name: Предварительные требования для шифрования дисков с использованием приложения Azure AD
+          href: azure-security-disk-encryption-prerequisites-aad.md
+        - name: Шифрование дисков виртуальных машин Windows с использованием приложения Azure AD
+          href: azure-security-disk-encryption-windows-aad.md
+        - name: Шифрование дисков виртуальных машин Linux с использованием приложения Azure AD
+          href: azure-security-disk-encryption-linux-aad.md
   - name: Безопасность службы хранилища Azure
     href: security-storage-overview.md
   - name: Руководство по безопасности хранилища
@@ -303,9 +316,9 @@ items:
         href: azure-security-threat-modeling-tool-sensitive-data.md
       - name: Управление сеансом
         href: azure-security-threat-modeling-tool-session-management.md
-ms.openlocfilehash: 0ec99adbb53dda738eeaa3edb5bd181b8a91c0e7
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: cb321a012d89f87022d66f50c3bc8fdcc921d6d6
+ms.sourcegitcommit: f1e6e61807634bce56a64c00447bf819438db1b8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41927110"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42887839"

@@ -1,359 +1,376 @@
+items:
 - name: Документация оператора по Azure Stack
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое Azure Stack?
-      href: azure-stack-poc.md
-    - name: Заметки о выпуске
-      items:
-        - name: Обновление 1805
-          href: azure-stack-update-1805.md
-        - name: Обновление 1804
-          href: azure-stack-update-1804.md
-        - name: Обновление 1803
-          href: azure-stack-update-1803.md
+  - name: Что такое Azure Stack?
+    href: azure-stack-poc.md
+  - name: Заметки о выпуске
+    items:
+    - name: Обновление 1807
+      href: azure-stack-update-1807.md
+    - name: Обновление 1805
+      href: azure-stack-update-1805.md
+    - name: Обновление 1804
+      href: azure-stack-update-1804.md
+    - name: Обновление 1803
+      href: azure-stack-update-1803.md
 - name: Быстрое начало работы
-  expanded: true
   items:
-    - name: Оценка Azure Stack
-      href: azure-stack-deploy-overview.md
+  - name: Оценка Azure Stack
+    href: azure-stack-deploy-overview.md
+  expanded: true
 - name: Учебники
   items:
-    - name: Предложение по виртуальным машинам
-      href: azure-stack-tutorial-tenant-vm.md
-    - name: Предложение по базам данных SQL
-      href: azure-stack-tutorial-sql-server.md
-    - name: Предложение по веб-приложениям
-      href: azure-stack-tutorial-app-service.md
+  - name: Предложение по виртуальным машинам
+    href: azure-stack-tutorial-tenant-vm.md
+  - name: Предложение по базам данных SQL
+    href: azure-stack-tutorial-sql-server.md
+  - name: Предложение по веб-приложениям
+    href: azure-stack-tutorial-app-service.md
 - name: Основные понятия
   items:
-    - name: Интеграция центра обработки данных
+  - name: Интеграция центра обработки данных
+    items:
+    - name: Общие рекомендации по интеграции Azure Stack
+      href: azure-stack-datacenter-integration.md
+    - name: Модели подключения для развертывания Azure Stack
+      href: azure-stack-connection-models.md
+    - name: Рекомендации по развертыванию с подключением
+      href: azure-stack-connected-deployment.md
+    - name: Рекомендации по развертыванию без подключения
+      href: azure-stack-disconnected-deployment.md
+    - name: Интеграция сетей Центра обработки данных
       items:
-        - name: Общие рекомендации по интеграции Azure Stack
-          href: azure-stack-datacenter-integration.md
-        - name: Модели подключения для развертывания Azure Stack
-          href: azure-stack-connection-models.md
-        - name: Рекомендации по развертыванию с подключением
-          href: azure-stack-connected-deployment.md
-        - name: Рекомендации по развертыванию без подключения
-          href: azure-stack-disconnected-deployment.md
-        - name: Интеграция сетей Центра обработки данных
-          items:
-            - name: Сетевая интеграция
-              href: azure-stack-network.md
-            - name: Пограничное подключение
-              href: azure-stack-border-connectivity.md
-            - name: Интеграция DNS
-              href: azure-stack-integrate-dns.md
-            - name: Интеграция брандмауэра
-              href: azure-stack-firewall.md
-              items:
-                - name: Публикации конечных точек
-                  href: azure-stack-integrate-endpoints.md
-        - name: Интеграция удостоверений
-          items:
-            - name: Выбор поставщика удостоверений
-              href: azure-stack-integrate-identity.md
-            - name: Проверка удостоверения Azure
-              href: azure-stack-validate-identity.md
-        - name: Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack
-          href: azure-stack-pki-certs.md
-          items:
-            - name: Создание сертификатов PKI
-              href: azure-stack-get-pki-certs.md
-            - name: Подготовка сертификатов PKI Azure Stack
-              href: azure-stack-prepare-pki-certs.md
-            - name: Проверка сертификатов PKI
-              href: azure-stack-validate-pki-certs.md
-            - name: Исправление сертификатов PKI
-              href: azure-stack-remediate-certs.md
-        - name: Ресурсы развертывания
-          items:
-            - name: О подключении для развертывания
-              href: deployment-networking.md
-        - name: Проверка регистрации в Azure
-          href: azure-stack-validate-registration.md
-          items:
-            - name: Справочник по командлетам Start-AzsReadiness
-              href: azure-stack-azsreadiness-cmdlet.md
-            - name: Просмотр отчета о готовности
-              href: azure-stack-validation-report.md
-        - name: Внешний мониторинг
-          href: azure-stack-integrate-monitor.md
-        - name: Интеграция решений для обеспечения безопасности
-          href: azure-stack-integrate-security.md
-    - name: Политика обслуживания
-      href: azure-stack-servicing-policy.md
-    - name: Основные возможности и концепции
-      href: azure-stack-key-features.md
-    - name: Основы администрирования
-      href: azure-stack-manage-basics.md
+      - name: Сетевая интеграция
+        href: azure-stack-network.md
+      - name: Пограничное подключение
+        href: azure-stack-border-connectivity.md
+      - name: Интеграция DNS
+        href: azure-stack-integrate-dns.md
+      - name: Интеграция брандмауэра
+        href: azure-stack-firewall.md
+        items:
+        - name: Публикации конечных точек
+          href: azure-stack-integrate-endpoints.md
+    - name: Интеграция удостоверений
+      items:
+      - name: Выбор поставщика удостоверений
+        href: azure-stack-integrate-identity.md
+      - name: Проверка удостоверения Azure
+        href: azure-stack-validate-identity.md
+    - name: Требования к инфраструктуре открытых ключей (PKI) для развертывания Azure Stack
+      href: azure-stack-pki-certs.md
+      items:
+      - name: Создание сертификатов PKI
+        href: azure-stack-get-pki-certs.md
+      - name: Подготовка сертификатов PKI Azure Stack
+        href: azure-stack-prepare-pki-certs.md
+      - name: Проверка сертификатов PKI
+        href: azure-stack-validate-pki-certs.md
+      - name: Исправление сертификатов PKI
+        href: azure-stack-remediate-certs.md
+    - name: Ресурсы развертывания
+      items:
+      - name: О подключении для развертывания
+        href: deployment-networking.md
+    - name: Проверка регистрации в Azure
+      href: azure-stack-validate-registration.md
+      items:
+      - name: Справочник по командлетам Start-AzsReadiness
+        href: azure-stack-azsreadiness-cmdlet.md
+      - name: Просмотр отчета о готовности
+        href: azure-stack-validation-report.md
+    - name: Внешний мониторинг
+      href: azure-stack-integrate-monitor.md
+    - name: Внешний аудит
+      items:
+      - name: Переадресация системного журнала
+        href: azure-stack-integrate-security.md
+      - name: Аудит устройства
+        href: azure-stack-integrate-physical-device-auditing.md
+  - name: Политика обслуживания
+    href: azure-stack-servicing-policy.md
+  - name: Основные возможности и концепции
+    href: azure-stack-key-features.md
+  - name: Основы администрирования
+    href: azure-stack-manage-basics.md
 - name: Практические руководства
   items:
-    - name: Настройка коллекции телеметрии
-      href: azure-stack-telemetry.md
-    - name: Регистрация Azure Stack
-      href: azure-stack-registration.md
-    - name: управление
+  - name: Настройка коллекции телеметрии
+    href: azure-stack-telemetry.md
+  - name: Регистрация Azure Stack
+    href: azure-stack-registration.md
+  - name: управление
+    items:
+    - name: Управление регионами
+      href: azure-stack-region-management.md
+    - name: Использование портала администрирования
+      href: azure-stack-manage-portals.md
+    - name: Подключение к Azure Stack
+      href: azure-stack-connect-azure-stack.md
+    - name: Включение CLI для пользователей
+      href: azure-stack-cli-admin.md
+    - name: Настройка среды управления
       items:
-        - name: Управление регионами
-          href: azure-stack-region-management.md
-        - name: Использование портала администрирования
-          href: azure-stack-manage-portals.md
-        - name: Подключение к Azure Stack
-          href: azure-stack-connect-azure-stack.md
-        - name: Включение CLI для пользователей
-          href: azure-stack-cli-admin.md
-        - name: Настройка среды управления
-          items:
-            - name: Установка PowerShell для Azure Stack
-              href: azure-stack-powershell-install.md
-            - name: Загрузка средств
-              href: azure-stack-powershell-download.md
-            - name: Настройка облачной операционной среды PowerShell
-              href: azure-stack-powershell-configure-admin.md
-        - name: Конечная точка привилегированного доступа
-          href: azure-stack-privileged-endpoint.md
-        - name: Управление обновлениями
-          items:
-            - name: Обзор управления обновлениями
-              href: azure-stack-updates.md
-            - name: установка обновлений;
-              href: azure-stack-apply-updates.md
-            - name: Мониторинг состояния обновления
-              href: azure-stack-monitor-update.md
-        - name: Мониторинг работоспособности и оповещений
-          href: azure-stack-monitor-health.md
-        - name: Управление сетевыми ресурсами
-          href: azure-stack-viewing-public-ip-address-consumption.md
-        - name: Изменение владельца пользовательской подписки
-          href: azure-stack-change-subscription-owner.md
-        - name: Запуск и остановка Azure Stack
-          href: azure-stack-start-and-stop.md
-        - name: Управление емкостями
-          items:
-            - name: Управление ресурсами хранилища
-              href: azure-stack-manage-storage-accounts.md
-            - name: Управление емкостью хранилища
-              href: azure-stack-manage-storage-shares.md
-            - name: Управление объемом физической памяти
-              href: azure-stack-manage-storage-physical-memory-capacity.md
-        - name: Замена оборудования
-          items:
-            - name: Действия с узлами
-              href: azure-stack-node-actions.md
-            - name: Замена узла
-              href: azure-stack-replace-node.md
-            - name: Замена диска
-              href: azure-stack-replace-disk.md
-            - name: Замена компонента
-              href: azure-stack-replace-component.md
-        - name: Резервное копирование для Azure Stack
-          href: azure-stack-backup-infrastructure-backup.md
-          items:
-            - name: Включение резервного копирования для Azure Stack с консоли администрирования
-              href: azure-stack-backup-enable-backup-console.md
-            - name: Включение резервного копирования для Azure Stack с помощью PowerShell
-              href: azure-stack-backup-enable-backup-powershell.md
-            - name: Резервное копирование для Azure Stack
-              href: azure-stack-backup-back-up-azure-stack.md
-            - name: Резервное копирование файлов и приложений в Azure Stack
-              href: ..\backup\backup-mabs-files-applications-azure-stack.md?toc=%2fazure%2fazure-stack%2ftoc.json
-            - name: Восстановление после катастрофической потери данных
-              href: azure-stack-backup-recover-data.md
-            - name: Рекомендации по резервному копированию
-              href: azure-stack-backup-best-practices.md
-            - name: Справочник по резервному копированию
-              href: azure-stack-backup-reference.md
-    - name: 'Безопасность, соответствие требованиям и удостоверения'
+      - name: Установка PowerShell для Azure Stack
+        href: azure-stack-powershell-install.md
+      - name: Загрузка средств
+        href: azure-stack-powershell-download.md
+      - name: Настройка облачной операционной среды PowerShell
+        href: azure-stack-powershell-configure-admin.md
+    - name: Конечная точка привилегированного доступа
+      href: azure-stack-privileged-endpoint.md
+    - name: Управление обновлениями
       items:
-        - name: Обзор безопасности
-          href: azure-stack-security-foundations.md
-        - name: Удостоверение
-          items:
-            - name: Общие сведения об удостоверениях
-              href: azure-stack-identity-overview.md
-            - name: Архитектура удостоверений
-              href: azure-stack-identity-architecture.md
-            - name: Управление RBAC
-              href: azure-stack-manage-permissions.md
-            - name: "Добавление пользователей для Azure\_AD"
-              href: azure-stack-add-new-user-aad.md
-            - name: "Добавление пользователей для AD\_FS"
-              href: azure-stack-add-users-adfs.md
-            - name: Создание субъектов-служб
-              href: Azure-stack-create-service-principals.md
-            - name: Включение поддержки мультитенантности
-              href: azure-stack-enable-multitenancy.md
-        - name: Смена секретов
-          href: azure-stack-rotate-secrets.md
-        - name: Обновление антивирусных программ
-          href: azure-stack-security-av.md
-    - name: Предложение служб
+      - name: Обзор управления обновлениями
+        href: azure-stack-updates.md
+      - name: установка обновлений;
+        href: azure-stack-apply-updates.md
+      - name: Мониторинг состояния обновления
+        href: azure-stack-monitor-update.md
+    - name: Мониторинг работоспособности и оповещений
+      href: azure-stack-monitor-health.md
+    - name: Управление сетевыми ресурсами
+      href: azure-stack-viewing-public-ip-address-consumption.md
+    - name: Изменение владельца пользовательской подписки
+      href: azure-stack-change-subscription-owner.md
+    - name: Запуск и остановка Azure Stack
+      href: azure-stack-start-and-stop.md
+    - name: Управление емкостями
       items:
-        - name: Обзор предложений служб
-          href: azure-stack-offer-services-overview.md
-        - name: 'Создание планов, предложений и квот'
-          items:
-            - name: 'Обзор планов, предложений, квот и подписок'
-              href: azure-stack-plan-offer-quota-overview.md
-            - name: Создание плана
-              href: azure-stack-create-plan.md
-            - name: Создание дополнительного плана
-              href: create-add-on-plan.md
-            - name: Создание предложения
-              href: azure-stack-create-offer.md
-            - name: Подписка на предложение
-              href: azure-stack-subscribe-plan-provision-vm.md
-            - name: Делегирование предложений в Azure Stack
-              href: azure-stack-delegated-provider.md
-            - name: Типы квот
-              href: azure-stack-quota-types.md
-        - name: Обзор служб PaaS
-          href: azure-stack-tools-paas-services.md
-        - name: Предложение SQL как PaaS
-          href: azure-stack-sql-resource-provider.md
-          items:
-            - name: Развертывание поставщика ресурсов SQL Server.
-              href: azure-stack-sql-resource-provider-deploy.md
-            - name: Добавление серверов размещения SQL
-              href: azure-stack-sql-resource-provider-hosting-servers.md
-            - name: Создание баз данных SQL
-              href: azure-stack-sql-resource-provider-databases.md
-            - name: Обновление поставщика ресурсов SQL Server
-              href: azure-stack-sql-resource-provider-update.md
-            - name: Поддержка поставщика ресурсов SQL Server
-              href: azure-stack-sql-resource-provider-maintain.md
-            - name: Удаление поставщика ресурсов SQL Server
-              href: azure-stack-sql-resource-provider-remove.md
-        - name: Предложение MySQL как PaaS
-          href: azure-stack-mysql-resource-provider.md
-          items:
-            - name: Развертывание поставщика ресурсов MySQL Server
-              href: azure-stack-mysql-resource-provider-deploy.md
-            - name: Добавление серверов размещения MySQL
-              href: azure-stack-mysql-resource-provider-hosting-servers.md
-            - name: Создание базы данных MySQL
-              href: azure-stack-mysql-resource-provider-databases.md
-            - name: Обновление поставщика ресурсов MySQL Server
-              href: azure-stack-mysql-resource-provider-update.md
-            - name: Обслуживание поставщика ресурсов MySQL Server
-              href: azure-stack-mysql-resource-provider-maintain.md
-            - name: Удаление поставщика ресурсов MySQL Server
-              href: azure-stack-mysql-resource-provider-remove.md
-        - name: Предложение службы приложений как PaaS
-          items:
-            - name: Обзор Службы приложений Azure в Azure Stack
-              href: azure-stack-app-service-overview.md
-            - name: Планирование загрузки
-              href: azure-stack-app-service-capacity-planning.md
-            - name: Необходимые условия
-              href: azure-stack-app-service-before-you-get-started.md
-            - name: Распространение Службы приложений Azure в доменах сбоя Azure Stack
-              href: azure-stack-app-service-fault-domain-update.md
-            - name: Развертывание поставщика ресурсов службы приложений
-              href: azure-stack-app-service-deploy.md
-            - name: Автономное развертывание службы приложений
-              href: azure-stack-app-service-deploy-offline.md
-            - name: Обновление службы приложений
-              href: azure-stack-app-service-update.md
-            - name: Автономное обновление службы приложений
-              href: azure-stack-app-service-update-offline.md
-            - name: Добавление рабочих веб-ролей
-              href: azure-stack-app-service-add-worker-roles.md
-            - name: Настройка источников развертывания
-              href: azure-stack-app-service-configure-deployment-sources.md
-            - name: Служба приложений в заметках о выпуске обновления 1 Azure Stack
-              href: azure-stack-app-service-release-notes-update-one.md
-            - name: "Служба приложений в заметках о выпуске обновления\_2 Azure Stack"
-              href: azure-stack-app-service-release-notes-update-two.md
-        - name: Развертывание Ethereum
-          href: azure-stack-ethereum.md
-        - name: Заполнение Marketplace
-          items:
-            - name: Обзор Marketplace
-              href: azure-stack-marketplace.md
-            - name: Скачивание элементов Marketplace
-              href: azure-stack-download-azure-marketplace-item.md
-            - name: Элементы Microsoft Azure Marketplace для Azure Stack
-              href: azure-stack-marketplace-azure-items.md
-            - name: Создание и публикация элемента Marketplace
-              href: azure-stack-create-and-publish-marketplace-item.md
-            - name: Использование средства публикации в Marketplace
-              href: azure-stack-marketplace-publisher.md
-            - name: Поддерживаемые операционные системы на виртуальной машине для Azure Stack
-              href: azure-stack-supported-os.md
-            - name: Добавление пользовательского образа виртуальной машины
-              href: azure-stack-add-vm-image.md
-            - name: Добавление масштабируемого набора виртуальных машин
-              href: azure-stack-compute-add-scalesets.md
-            - name: Развертывание виртуальных машин Linux
-              href: azure-stack-linux.md
-            - name: Добавление виртуальной машины Red Hat
-              href: azure-stack-redhat-create-upload-vhd.md
-            - name: Предложение кластера Kubernetes
-              href: azure-stack-solution-template-kubernetes-cluster-add.md
-        - name: Потребление и выставление счетов
-          href: azure-stack-billing-and-chargeback.md
-          items:
-            - name: Управление потреблением и выставлением счетов в качестве поставщика облачных служб
-              href: azure-stack-add-manage-billing-as-a-csp.md
-              items:
-                - name: Добавление клиентов для потребления и выставления счетов
-                  href: azure-stack-csp-howto-register-tenants.md
-                - name: Управление регистрацией клиента
-                  href: azure-stack-csp-ref-operations.md
-            - name: Справочник по потреблению и выставлению счетов
-              items:
-                - name: Отчеты по данным об использовании
-                  href: azure-stack-usage-reporting.md
-                - name: Инфраструктура отчетов о потреблении для поставщиков облачных служб
-                  href: azure-stack-csp-ref-infrastructure.md
-                - name: API использования поставщика
-                  href: azure-stack-provider-resource-api.md
-                - name: API использования клиента
-                  href: azure-stack-tenant-resource-usage-api.md
-                - name: Часто задаваемые вопросы об использовании
-                  href: azure-stack-usage-related-faq.md
-        - name: Подключение к Azure
-          items:
-            - name: Подключение с помощью виртуальной частной сети
-              href: azure-stack-connect-vpn.md
-            - name: Сведения о VPN-шлюзах
-              href: azure-stack-vpn-gateway-about-vpn-gateways.md
-            - name: Параметры VPN-шлюза
-              href: azure-stack-vpn-gateway-settings.md
-            - name: Подключение с помощью ExpressRoute
-              href: azure-stack-connect-expressroute.md
-    - name: Устранение неполадок
+      - name: Управление ресурсами хранилища
+        href: azure-stack-manage-storage-accounts.md
+      - name: Управление емкостью хранилища
+        href: azure-stack-manage-storage-shares.md
+      - name: Управление объемом физической памяти
+        href: azure-stack-manage-storage-physical-memory-capacity.md
+      - name: Добавление узлов единиц масштабирования
+        href: azure-stack-add-scale-node.md
+    - name: Замена оборудования
       items:
-        - name: Известные проблемы
-          href: azure-stack-troubleshooting.md
-        - name: Диагностика в Azure Stack
-          href: azure-stack-diagnostics.md
-        - name: Проверка для Azure Stack
-          href: azure-stack-diagnostic-test.md
+      - name: Действия с узлами
+        href: azure-stack-node-actions.md
+      - name: Замена узла
+        href: azure-stack-replace-node.md
+      - name: Замена диска
+        href: azure-stack-replace-disk.md
+      - name: Замена компонента
+        href: azure-stack-replace-component.md
+    - name: Резервное копирование для Azure Stack
+      href: azure-stack-backup-infrastructure-backup.md
+      items:
+      - name: Включение резервного копирования для Azure Stack с консоли администрирования
+        href: azure-stack-backup-enable-backup-console.md
+      - name: Включение резервного копирования для Azure Stack с помощью PowerShell
+        href: azure-stack-backup-enable-backup-powershell.md
+      - name: Резервное копирование для Azure Stack
+        href: azure-stack-backup-back-up-azure-stack.md
+      - name: Резервное копирование файлов и приложений в Azure Stack
+        href: ..\backup\backup-mabs-files-applications-azure-stack.md?toc=%2fazure%2fazure-stack%2ftoc.json
+      - name: Восстановление после катастрофической потери данных
+        href: azure-stack-backup-recover-data.md
+      - name: Рекомендации по резервному копированию
+        href: azure-stack-backup-best-practices.md
+      - name: Справочник по резервному копированию
+        href: azure-stack-backup-reference.md
+  - name: Безопасность, соответствие требованиям и удостоверения
+    items:
+    - name: Обзор безопасности
+      href: azure-stack-security-foundations.md
+    - name: Удостоверение
+      items:
+      - name: Общие сведения об удостоверениях
+        href: azure-stack-identity-overview.md
+      - name: Архитектура удостоверений
+        href: azure-stack-identity-architecture.md
+      - name: Управление RBAC
+        href: azure-stack-manage-permissions.md
+      - name: Добавление пользователей для Azure AD
+        href: azure-stack-add-new-user-aad.md
+      - name: Добавление пользователей для AD FS
+        href: azure-stack-add-users-adfs.md
+      - name: Создание субъектов-служб
+        href: Azure-stack-create-service-principals.md
+      - name: Включение поддержки мультитенантности
+        href: azure-stack-enable-multitenancy.md
+    - name: Смена секретов
+      href: azure-stack-rotate-secrets.md
+    - name: Обновление антивирусных программ
+      href: azure-stack-security-av.md
+  - name: Предложение служб
+    items:
+    - name: Обзор предложений служб
+      href: azure-stack-offer-services-overview.md
+    - name: Создание планов, предложений и квот
+      items:
+      - name: Обзор планов, предложений, квот и подписок
+        href: azure-stack-plan-offer-quota-overview.md
+      - name: Создание плана
+        href: azure-stack-create-plan.md
+      - name: Создание дополнительного плана
+        href: create-add-on-plan.md
+      - name: Создание предложения
+        href: azure-stack-create-offer.md
+      - name: Подписка на предложение
+        href: azure-stack-subscribe-plan-provision-vm.md
+      - name: Делегирование предложений в Azure Stack
+        href: azure-stack-delegated-provider.md
+      - name: Типы квот
+        href: azure-stack-quota-types.md
+    - name: Обзор служб PaaS
+      href: azure-stack-tools-paas-services.md
+    - name: Предложение SQL как PaaS
+      href: azure-stack-sql-resource-provider.md
+      items:
+      - name: Развертывание поставщика ресурсов SQL Server.
+        href: azure-stack-sql-resource-provider-deploy.md
+      - name: Добавление серверов размещения SQL
+        href: azure-stack-sql-resource-provider-hosting-servers.md
+      - name: Создание баз данных SQL
+        href: azure-stack-sql-resource-provider-databases.md
+      - name: Обновление поставщика ресурсов SQL Server
+        href: azure-stack-sql-resource-provider-update.md
+      - name: Поддержка поставщика ресурсов SQL Server
+        href: azure-stack-sql-resource-provider-maintain.md
+      - name: Удаление поставщика ресурсов SQL Server
+        href: azure-stack-sql-resource-provider-remove.md
+    - name: Предложение MySQL как PaaS
+      href: azure-stack-mysql-resource-provider.md
+      items:
+      - name: Развертывание поставщика ресурсов MySQL Server
+        href: azure-stack-mysql-resource-provider-deploy.md
+      - name: Добавление серверов размещения MySQL
+        href: azure-stack-mysql-resource-provider-hosting-servers.md
+      - name: Создание базы данных MySQL
+        href: azure-stack-mysql-resource-provider-databases.md
+      - name: Обновление поставщика ресурсов MySQL Server
+        href: azure-stack-mysql-resource-provider-update.md
+      - name: Обслуживание поставщика ресурсов MySQL Server
+        href: azure-stack-mysql-resource-provider-maintain.md
+      - name: Удаление поставщика ресурсов MySQL Server
+        href: azure-stack-mysql-resource-provider-remove.md
+    - name: Предложение службы приложений как PaaS
+      items:
+      - name: Обзор Службы приложений Azure в Azure Stack
+        href: azure-stack-app-service-overview.md
+      - name: Планирование загрузки
+        href: azure-stack-app-service-capacity-planning.md
+      - name: Необходимые условия
+        href: azure-stack-app-service-before-you-get-started.md
+      - name: Распространение Службы приложений Azure в доменах сбоя Azure Stack
+        href: azure-stack-app-service-fault-domain-update.md
+      - name: Развертывание поставщика ресурсов службы приложений
+        href: azure-stack-app-service-deploy.md
+      - name: Автономное развертывание службы приложений
+        href: azure-stack-app-service-deploy-offline.md
+      - name: Обновление службы приложений
+        href: azure-stack-app-service-update.md
+      - name: Автономное обновление службы приложений
+        href: azure-stack-app-service-update-offline.md
+      - name: Добавление рабочих веб-ролей
+        href: azure-stack-app-service-add-worker-roles.md
+      - name: Настройка источников развертывания
+        href: azure-stack-app-service-configure-deployment-sources.md
+      - name: Служба приложений в заметках о выпуске обновления 1 Azure Stack
+        href: azure-stack-app-service-release-notes-update-one.md
+      - name: Служба приложений в заметках о выпуске обновления 2 Azure Stack
+        href: azure-stack-app-service-release-notes-update-two.md
+      - name: Служба приложений Azure в заметках о выпуске обновления 3 Azure Stack
+        href: azure-stack-app-service-release-notes-update-three.md
+    - name: Развертывание Ethereum
+      href: azure-stack-ethereum.md
+    - name: Заполнение Marketplace
+      items:
+      - name: Обзор Marketplace
+        href: azure-stack-marketplace.md
+      - name: Скачивание элементов Marketplace
+        href: azure-stack-download-azure-marketplace-item.md
+      - name: Элементы Microsoft Azure Marketplace для Azure Stack
+        href: azure-stack-marketplace-azure-items.md
+      - name: Создание и публикация элемента Marketplace
+        href: azure-stack-create-and-publish-marketplace-item.md
+      - name: Использование средства публикации в Marketplace
+        href: azure-stack-marketplace-publisher.md
+      - name: Поддерживаемые операционные системы на виртуальной машине для Azure Stack
+        href: azure-stack-supported-os.md
+      - name: Добавление пользовательского образа виртуальной машины
+        href: azure-stack-add-vm-image.md
+      - name: Добавление масштабируемого набора виртуальных машин
+        href: azure-stack-compute-add-scalesets.md
+      - name: Развертывание виртуальных машин Linux
+        href: azure-stack-linux.md
+      - name: Добавление виртуальной машины Red Hat
+        href: azure-stack-redhat-create-upload-vhd.md
+      - name: Предложение кластера Kubernetes
+        href: azure-stack-solution-template-kubernetes-cluster-add.md
+    - name: Потребление и выставление счетов
+      href: azure-stack-billing-and-chargeback.md
+      items:
+      - name: Управление потреблением и выставлением счетов в качестве поставщика облачных служб
+        href: azure-stack-add-manage-billing-as-a-csp.md
+        items:
+        - name: Добавление клиентов для потребления и выставления счетов
+          href: azure-stack-csp-howto-register-tenants.md
+        - name: Управление регистрацией клиента
+          href: azure-stack-csp-ref-operations.md
+      - name: Справочник по потреблению и выставлению счетов
+        items:
+        - name: Отчеты по данным об использовании
+          href: azure-stack-usage-reporting.md
+        - name: Инфраструктура отчетов о потреблении для поставщиков облачных служб
+          href: azure-stack-csp-ref-infrastructure.md
+        - name: API использования поставщика
+          href: azure-stack-provider-resource-api.md
+        - name: API использования клиента
+          href: azure-stack-tenant-resource-usage-api.md
+        - name: Часто задаваемые вопросы об использовании
+          href: azure-stack-usage-related-faq.md
+    - name: Подключение к Azure
+      items:
+      - name: Подключение с помощью виртуальной частной сети
+        href: azure-stack-connect-vpn.md
+      - name: Сведения о VPN-шлюзах
+        href: azure-stack-vpn-gateway-about-vpn-gateways.md
+      - name: Параметры VPN-шлюза
+        href: azure-stack-vpn-gateway-settings.md
+      - name: Подключение с помощью ExpressRoute
+        href: azure-stack-connect-expressroute.md
+  - name: Устранение неполадок
+    items:
+    - name: Известные проблемы
+      href: azure-stack-troubleshooting.md
+    - name: Диагностика в Azure Stack
+      href: azure-stack-diagnostics.md
+    - name: Проверка для Azure Stack
+      href: azure-stack-diagnostic-test.md
 - name: Справочные материалы
   items:
-    - name: PowerShell для Azure Stack
-      href: /powershell/azure/azure-stack/overview?view=azurestackps-1.2.9
+  - name: PowerShell для Azure Stack
+    href: /powershell/azure/azure-stack/overview?view=azurestackps-1.2.9
 - name: Сопутствующие материалы
   items:
-    - name: Документация пользователя по Azure Stack
-      href: /azure/azure-stack/user/
-    - name: Документация ASDK
-      href: /azure/azure-stack/asdk/
+  - name: Документация пользователя по Azure Stack
+    href: /azure/azure-stack/user/
+  - name: Документация ASDK
+    href: /azure/azure-stack/asdk/
 - name: Ресурсы
   items:
-    - name: План выхода продуктов Azure Stack
-      href: 'https://azure.microsoft.com/roadmap/?tag=azure-stack'
-    - name: Форум MSDN по Azure Stack
-      href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack'
-    - name: Отзывы о документации по Azure Stack
-      href: 'https://feedback.azure.com/forums/344565-azure-stack?category_id=160275'
-    - name: Сведения о ценах
-      href: 'https://azure.microsoft.com/overview/azure-stack/how-to-buy/'
-    - name: Переполнение стека
-      href: 'http://stackoverflow.com/questions/tagged/azure-stack'
-    - name: Обучение и сертификация
-      href: 'https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert'
+  - name: План выхода продуктов Azure Stack
+    href: https://azure.microsoft.com/roadmap/?tag=azure-stack
+  - name: Форум MSDN по Azure Stack
+    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureStack
+  - name: Отзывы о документации по Azure Stack
+    href: https://feedback.azure.com/forums/344565-azure-stack?category_id=160275
+  - name: Сведения о ценах
+    href: https://azure.microsoft.com/overview/azure-stack/how-to-buy/
+  - name: Переполнение стека
+    href: http://stackoverflow.com/questions/tagged/azure-stack
+  - name: Обучение и сертификация
+    href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
+ms.openlocfilehash: 1bb070bc7414623ab065a0fccb441f22b2fb4827
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42916385"

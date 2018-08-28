@@ -5,8 +5,18 @@ items:
   items:
   - name: Сведения о хранилище данных SQL Azure
     href: sql-data-warehouse-overview-what-is.md
+  - name: Архитектура Хранилище данных SQL Azure
+    href: massively-parallel-processing-mpp-architecture.md
+  - name: Единицы использования хранилища данных
+    href: what-is-a-data-warehouse-unit-dwu-cdwu.md
   - name: Краткий справочник
     href: cheat-sheet.md
+  - name: Рекомендации
+    href: sql-data-warehouse-best-practices.md
+  - name: Ограничения емкости
+    href: sql-data-warehouse-service-capacity-limits.md
+  - name: Часто задаваемые вопросы
+    href: sql-data-warehouse-overview-faq.md
 - name: Заметки о выпуске
   items:
   - name: Август 2018 г.
@@ -33,7 +43,7 @@ items:
       href: pause-and-resume-compute-portal.md
     - name: PowerShell
       href: pause-and-resume-compute-powershell.md
-  - name: Наращивание и сокращение ресурсов
+  - name: Масштаб
     items:
     - name: Microsoft Azure
       href: quickstart-scale-compute-portal.md
@@ -78,18 +88,6 @@ items:
     items:
     - name: Обзор
       href: sql-data-warehouse-overview-develop.md
-    - name: Компоненты хранилища данных
-      href: sql-data-warehouse-overview-workload.md
-    - name: Рекомендации
-      href: sql-data-warehouse-best-practices.md
-    - name: Архитектура MPP
-      href: massively-parallel-processing-mpp-architecture.md
-    - name: Единицы использования хранилища данных
-      href: what-is-a-data-warehouse-unit-dwu-cdwu.md
-    - name: Ограничения емкости
-      href: sql-data-warehouse-service-capacity-limits.md
-    - name: Часто задаваемые вопросы
-      href: sql-data-warehouse-overview-faq.md
     - name: Таблицы
       items:
       - name: Обзор
@@ -112,14 +110,6 @@ items:
         href: sql-data-warehouse-tables-statistics.md
       - name: Временные таблицы
         href: sql-data-warehouse-tables-temporary.md
-    - name: Запросы
-      items:
-      - name: Динамический SQL
-        href: sql-data-warehouse-develop-dynamic-sql.md
-      - name: Группировка по параметрам
-        href: sql-data-warehouse-develop-group-by-options.md
-      - name: Метки
-        href: sql-data-warehouse-develop-label.md
     - name: Элементы языка T-SQL
       items:
       - name: Циклы
@@ -136,6 +126,14 @@ items:
         href: sql-data-warehouse-develop-variable-assignment.md
       - name: Views
         href: sql-data-warehouse-develop-views.md
+  - name: Выполнение запроса
+    items:
+    - name: Динамический SQL
+      href: sql-data-warehouse-develop-dynamic-sql.md
+    - name: Группировка по параметрам
+      href: sql-data-warehouse-develop-group-by-options.md
+    - name: Метки
+      href: sql-data-warehouse-develop-label.md
   - name: Управление рабочей нагрузкой
     items:
     - name: Классы ресурсов и управление рабочими нагрузками
@@ -278,9 +276,9 @@ items:
       href: sql-data-warehouse-partner-data-integration.md
     - name: Управление данными
       href: sql-data-warehouse-partner-data-management.md
-ms.openlocfilehash: e9148d92614cf0c383ab1e915cce3e16bb9ff7c0
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: bdda7231ea4703b33c8547e493cbd47b68cf9aab
+ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42745220"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42915131"
