@@ -14,18 +14,18 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: ryanwi
-ms.openlocfilehash: 6fe314125440096d21a1276defd082c4e1997b8e
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 50ece1d1f74ace494e6bebb84f9f121c1fad7a6c
+ms.sourcegitcommit: a2ae233e20e670e2f9e6b75e83253bd301f5067c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34642688"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41918114"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по развертыванию приложения .NET в контейнере Windows в Azure Service Fabric
 
 В этом руководстве рассматривается, как поместить имеющееся приложение ASP.NET в контейнер и упаковать его в качестве приложения Service Fabric.  Запустите контейнеры локально в кластере разработки Service Fabric, а затем разверните приложение в Azure.  Приложение сохраняет данные в [базе данных SQL Azure](/azure/sql-database/sql-database-technical-overview). 
 
-Из этого руководства вы узнаете, как выполнять такие задачи:
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Помещение имеющегося приложения в контейнер с использованием Visual Studio.
@@ -33,7 +33,7 @@ ms.locfileid: "34642688"
 > * Создание реестра контейнеров Azure.
 > * Развертывание приложения Service Fabric в Azure.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 2. Установите [Docker CE для Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description), чтобы иметь возможность запускать контейнеры в Windows 10.
@@ -122,7 +122,7 @@ Write-Host "Server name is $servername"
 >Вы можете использовать любой SQL Server для локальной отладки, который доступен с вашего узла. Тем не менее **localdb** не поддерживает взаимодействие типа `container -> host`. Если для создания конечной сборки веб-приложения вы хотите использовать другую базу данных SQL, добавьте еще одну строку подключения в файле *web.release.config*.
 
 ## <a name="run-the-containerized-application-locally"></a>Выполнение контейнеризованного приложения локально
-Нажмите клавишу **F5**, чтобы запустить и отладить приложение в контейнере в локальном кластере разработки Service Fabric. Нажмите кнопку **Да**, если отображается окно сообщения с запросом на групповое чтение ServiceFabricAllowedUsers и присвойте необходимые разрешения для каталога проекта Visual Studio.
+Нажмите клавишу **F5**, чтобы запустить и отладить приложение в контейнере в локальном кластере разработки Service Fabric. Нажмите кнопку **Да**, если появится окно сообщения с запросом на предоставление группе ServiceFabricAllowedUsers разрешений на чтение и выполнение в каталоге проекта Visual Studio.
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 Теперь, когда приложение выполняется локально, запустите подготовку к развертыванию в Azure.  Образы контейнеров должны храниться в реестре контейнеров.  Создайте [реестр контейнеров Azure](/azure/container-registry/container-registry-intro) с помощью следующего скрипта. Имя реестра контейнеров отображается другим подпискам Azure, поэтому оно должно быть уникальным.
@@ -223,6 +223,9 @@ $vnetRuleObject1 = New-AzureRmSqlServerVirtualNetworkRule `
 Отслеживайте ход развертывания в окне вывода.  После развертывания приложения откройте браузер и введите адрес кластера и порт приложения. Например, http://http://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/.
 
 ![Веб-пример Fabrikam][fabrikam-web-page-deployed]
+
+## <a name="set-up-continuous-integration-and-deployment-cicd-with-a-service-fabric-cluster"></a>Настройка непрерывной интеграции и развертывания (CI/CD) с помощью кластера Service Fabric
+См. дополнительные сведения о том, как использовать VSTS для настройки [развертывания приложений CI/CD в кластере Service Fabric](service-fabric-tutorial-deploy-app-with-cicd-vsts.md). Процесс, описанный в этом руководстве, такой же и для проекта (FabrikamFiber). Просто пропустите загрузку примера Voting и замените FabrikamFiber именем репозитория вместо Voting.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы не забудьте удалить все созданные ресурсы.  Простейший способ — это удалить группы ресурсов, которые содержат кластер Service Fabric, базу данных SQL Azure и службу "Реестр контейнеров Azure".
