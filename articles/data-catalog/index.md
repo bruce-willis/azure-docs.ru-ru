@@ -1,5 +1,5 @@
 ---
-title: Документация по каталогу данных Azure. Руководства и справочник по API | Документация Майкрософт
+title: 'Документация по Каталогу данных Azure: руководства и справочник по API'
 description: Узнайте, как создавать и настраивать каталог данных, используемые организацией для поиска, распознавания и использования источников данных. Руководства, справочники по API и другая документация.
 services: data-catalog
 author: czeumault
@@ -7,16 +7,15 @@ manager: carolz
 layout: LandingPage
 ms.assetid: ''
 ms.service: data-catalog
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: landing-page
+ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: carolz
-ms.openlocfilehash: 7ec21b9b55015c247cef3f216dbb14f4ddc30e8d
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 5c409b3905b6d75502cfb40bd278865e2673aa27
+ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43050302"
 ---
 # <a name="data-catalog-documentation"></a>Документация по каталогу данных
 

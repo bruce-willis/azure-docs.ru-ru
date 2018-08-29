@@ -7,8 +7,8 @@
 # Учебники
 ## [Перенос баз данных с сервера SQL Server в базу данных SQL Azure в автономном режиме](tutorial-sql-server-to-azure-sql.md)
 ## [Перенос баз данных с сервера SQL Server в базу данных SQL Azure через Интернет](tutorial-sql-server-azure-sql-online.md)
-## [Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure](tutorial-sql-server-to-managed-instance.md)
-## [Миграция с MySQL в базу данных Azure для MySQL](tutorial-mysql-azure-mysql-online.md)
+## [Перенос баз данных с SQL Server в Управляемый экземпляр Базы данных SQL Azure в автономном режиме](tutorial-sql-server-to-managed-instance.md)
+## [Миграция с MySQL в базу данных Azure для MySQL через Интернет](tutorial-mysql-azure-mysql-online.md)
 
 # Практические руководства
 ## [Перенос данных из SQL Server в базу данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-powershell.md)
